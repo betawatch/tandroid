@@ -1,40 +1,35 @@
 // default package
 
-import android.content.Context;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class fc5 {
+    public final wxb a;
+    public long b;
+    public boolean c;
+    public int d;
+    public long e;
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public long k;
+    public long l;
+    public boolean m;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class fc5 extends sq4 {
-    public final /* synthetic */ oc5 r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fc5(oc5 oc5Var, Context context, int i) {
-        super(context, i);
-        this.r = oc5Var;
+    public fc5(wxb wxbVar) {
+        this.a = wxbVar;
     }
 
-    @Override // sq4
-    public final void a(wc5 wc5Var) {
-        super.a(wc5Var);
-        this.r.v0();
-    }
-
-    @Override // sq4
-    public final void b() {
-        super.b();
-        this.r.v0();
-    }
-
-    @Override // sq4
-    public final void c(wc5 wc5Var) {
-        oc5 oc5Var = this.r;
-        if (wc5Var == oc5Var.Y) {
-            oc5Var.Y = null;
+    public final void a(int i) {
+        long j = this.l;
+        if (j != -9223372036854775807L) {
+            long j2 = this.b;
+            long j3 = this.k;
+            if (j2 != j3) {
+                int i2 = (int) (j2 - j3);
+                this.a.a(j, this.m ? 1 : 0, i2, i, null);
+            }
         }
-        if (wc5Var == oc5Var.Z) {
-            oc5Var.Z = null;
-        }
-        super.c(wc5Var);
-        oc5Var.v0();
     }
 }

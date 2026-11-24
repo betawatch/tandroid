@@ -1,98 +1,138 @@
 // default package
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class us9 extends Drawable {
-    public int a = nm7.d4;
-    public final /* synthetic */ b66 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ rc2 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+public final class us9 extends View {
+    public ts9 a;
+    public final lm b;
+    public final il0 c;
+    public h19 d;
+    public boolean e;
+    public final Path f;
+    public final RectF h;
+    public final RectF n;
+    public boolean r;
+    public final /* synthetic */ vs9 s;
 
-    public us9(b66 b66Var, int[] iArr, rc2 rc2Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = b66Var;
-        this.c = iArr;
-        this.d = rc2Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public us9(vs9 vs9Var, Context context) {
+        super(context);
+        this.s = vs9Var;
+        this.b = new lm(this, 0L, 260L, s33.h);
+        this.f = new Path();
+        this.h = new RectF();
+        this.n = new RectF();
+        ote.a(this);
+        kl0 kl0Var = vs9Var.w;
+        if (kl0Var != null) {
+            il0 c = kl0Var.c(this, null, false);
+            c.p(vs9Var.x);
+            c.u(gl.L(5.0f));
+            c.s = false;
+            gl0 gl0Var = c.h0;
+            if (gl0Var != null) {
+                gl0Var.g(false);
+            }
+            ug8.r(c, gl.L(6.0f), 4.0f);
+            this.c = c;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
+    public final void a(boolean z, boolean z2) {
+        if (this.e == z) {
             return;
         }
-        RectF rectF = gm.P;
-        rectF.set(getBounds());
-        float f = rectF.left;
-        CornerPathEffect cornerPathEffect = b66.w;
-        rectF.left = f - (gm.L(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        b66 b66Var = this.b;
-        rc2 rc2Var = this.d;
-        if (rc2Var == null || !rc2Var.L0()) {
-            canvas.drawPath(b66Var, this.i);
-        } else {
-            m37 m37Var = rc2Var.L6;
-            if (m37Var == null || m37Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], rc2Var.getPaddingTop() + iArr2[1]);
-                rc2Var.M0(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - rc2Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
+        this.e = z;
+        ts9 ts9Var = this.a;
+        if (ts9Var != null) {
+            ts9Var.o = z;
+            lm lmVar = this.b;
+            if (z2) {
+                ts9Var.h = ts9Var.M;
+                ts9Var.f = ts9Var.N;
+                ts9Var.g = ts9Var.O;
+                lmVar.e(true, 0.0f);
             } else {
-                canvas.save();
-                rc2Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -rc2Var.L6.r);
-                canvas.drawPaint(rc2Var.L6.c);
-                canvas.restore();
+                lmVar.e(true, 1.0f);
             }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
-            }
+            invalidate();
         }
-        canvas.clipPath(b66Var);
-        this.j.draw(canvas);
-        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.r) {
+            return;
+        }
+        ts9 ts9Var = this.a;
+        if (ts9Var != null) {
+            ts9Var.a();
+        }
+        this.r = true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.a = i;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.r) {
+            ts9 ts9Var = this.a;
+            if (ts9Var != null) {
+                ts9Var.b();
+            }
+            this.r = false;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        vs9 vs9Var = this.s;
+        Paint paint = vs9Var.y;
+        int width = (getWidth() - this.a.z) / 2;
+        int height = getHeight();
+        ts9 ts9Var = this.a;
+        int i = ts9Var.A;
+        int i2 = (height - i) / 2;
+        il0 il0Var = this.c;
+        if (il0Var != null) {
+            Rect rect = gl.Q;
+            rect.set(width, i2, ts9Var.z + width, i + i2);
+            RectF rectF = this.n;
+            rectF.set(rect);
+            RectF rectF2 = this.h;
+            boolean equals = rectF.equals(rectF2);
+            Path path = this.f;
+            if (!equals) {
+                rectF2.set(rectF);
+                i19.h(rectF2, rectF, path);
+            }
+            rect.inset(-gl.L(4.0f), -gl.L(4.0f));
+            rect.right = gl.L(1.0f) + rect.right;
+            il0Var.setBounds(rect);
+            canvas.save();
+            canvas.clipPath(path);
+            il0Var.draw(canvas);
+            wjb wjbVar = vs9Var.c;
+            paint.setColor((wjbVar == null ? !bkb.I.o() : !wjbVar.a()) ? -1 : 687865855);
+            canvas.drawPath(path, paint);
+            canvas.restore();
+        }
+        this.a.d(canvas, width, i2, this.b.e(false, 1.0f), 1.0f, false, false, 0.0f);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        int L = gl.L(8.67f);
+        ts9 ts9Var = this.a;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(L + (ts9Var != null ? ts9Var.z : gl.L(44.33f)), TLObject.FLAG_30), i2);
     }
 }

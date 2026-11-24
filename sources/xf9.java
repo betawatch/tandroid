@@ -1,84 +1,135 @@
 // default package
 
 import android.view.View;
+import java.util.ArrayList;
+import java.util.IdentityHashMap;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xf9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ch9 b;
-    public final /* synthetic */ ll0 c;
-    public final /* synthetic */ int d;
+public final class xf9 implements gk7 {
+    public final int a;
+    public final xl3 b;
+    public k27 c;
+    public oac d;
+    public String e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
 
-    public /* synthetic */ xf9(ch9 ch9Var, ll0 ll0Var, int i, byte b) {
-        this.a = b;
-        this.b = ch9Var;
-        this.c = ll0Var;
-        this.d = i;
+    public xf9(int i, jm6 jm6Var, xl3 xl3Var) {
+        this.a = i;
+        this.b = xl3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View C1;
-        byte b = this.a;
-        int i = this.d;
-        ll0 ll0Var = this.c;
-        ch9 ch9Var = this.b;
-        switch (b) {
-            case 0:
-                C1 = ll0Var != null ? ch9Var.C1(ll0Var) : null;
-                if (C1 instanceof xk9) {
-                    xk9 xk9Var = (xk9) C1;
-                    xk9Var.A();
-                    xk9Var.getEditText().setSelection(Math.min(i, xk9Var.getEditText().length()));
-                    break;
+    public static boolean c(jm6 jm6Var) {
+        if (!jm6Var.b) {
+            ArrayList arrayList = jm6Var.q;
+            ArrayList arrayList2 = (arrayList == null || arrayList.isEmpty()) ? jm6Var.p : jm6Var.q;
+            if (arrayList2 != null) {
+                int size = arrayList2.size();
+                for (int i = 0; i < size; i++) {
+                    mac macVar = (mac) arrayList2.get(i);
+                    if (macVar != null) {
+                        if (macVar.a == 0) {
+                            byte b = macVar.b;
+                            if ((b & 1) != 0 || (b & 4) != 0) {
+                                return true;
+                            }
+                        }
+                        ArrayList arrayList3 = macVar.k;
+                        if (arrayList3 != null && !arrayList3.isEmpty()) {
+                            return true;
+                        }
+                    }
                 }
-                break;
-            case 1:
-                C1 = ll0Var != null ? ch9Var.C1(ll0Var) : null;
-                if (C1 instanceof xk9) {
-                    xk9 xk9Var2 = (xk9) C1;
-                    xk9Var2.A();
-                    xk9Var2.getEditText().setSelection(Math.min(i, xk9Var2.getEditText().length()));
-                    break;
-                }
-                break;
-            case 2:
-                View C12 = ch9Var.C1(ll0Var);
-                if (C12 instanceof xk9) {
-                    xk9 xk9Var3 = (xk9) C12;
-                    xk9Var3.A();
-                    xk9Var3.getEditText().setSelection(Math.max(0, Math.min(i, xk9Var3.getEditText().length())));
-                    break;
-                }
-                break;
-            case 3:
-                View C13 = ch9Var.C1(ll0Var);
-                if (C13 instanceof xk9) {
-                    xk9 xk9Var4 = (xk9) C13;
-                    xk9Var4.A();
-                    xk9Var4.getEditText().setSelection(Math.max(0, Math.min(i, xk9Var4.getEditText().length())));
-                    break;
-                }
-                break;
-            case 4:
-                View C14 = ch9Var.C1(ll0Var);
-                if (C14 instanceof xk9) {
-                    xk9 xk9Var5 = (xk9) C14;
-                    xk9Var5.A();
-                    xk9Var5.getEditText().setSelection(Math.max(0, Math.min(i, xk9Var5.getEditText().length())));
-                    break;
-                }
-                break;
-            default:
-                View C15 = ch9Var.C1(ll0Var);
-                if (C15 instanceof xk9) {
-                    xk9 xk9Var6 = (xk9) C15;
-                    xk9Var6.A();
-                    xk9Var6.getEditText().setSelection(Math.max(0, Math.min(i, xk9Var6.getEditText().length())));
-                    break;
-                }
-                break;
+            }
+        }
+        return false;
+    }
+
+    public final void a() {
+        if (this.n || this.h) {
+            return;
+        }
+        this.h = true;
+        if (this.c != null && this.d != null) {
+            try {
+                MediaController.w().d(this.c);
+            } catch (Throwable unused) {
+            }
+        }
+        d();
+    }
+
+    public final void b() {
+        if (this.n) {
+            return;
+        }
+        this.n = true;
+        d();
+        xl3 xl3Var = this.b;
+        ye9 ye9Var = (ye9) xl3Var.d;
+        IdentityHashMap identityHashMap = ye9Var.i4;
+        iy6 iy6Var = (iy6) xl3Var.b;
+        identityHashMap.remove(iy6Var);
+        iy6Var.a = (byte) 3;
+        ye9Var.r4((lk0) xl3Var.c, iy6Var);
+        ye9Var.p3.onContentChanged();
+    }
+
+    public final void d() {
+        kk7 f = kk7.f(this.a);
+        f.n(this, kk7.Z1);
+        f.n(this, kk7.a2);
+        f.n(this, kk7.b2);
+    }
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        xl3 xl3Var = this.b;
+        lk0 lk0Var = (lk0) xl3Var.c;
+        iy6 iy6Var = (iy6) xl3Var.b;
+        ye9 ye9Var = (ye9) xl3Var.d;
+        if (this.h || this.n || i2 != this.a || objArr.length == 0 || objArr[0] != this.c) {
+            return;
+        }
+        if (i != kk7.a2) {
+            if (i == kk7.b2) {
+                b();
+                return;
+            }
+            return;
+        }
+        long longValue = ((Long) objArr[3]).longValue();
+        iy6Var.f = ((Float) objArr[4]).floatValue();
+        View C1 = ye9Var.C1(lk0Var);
+        if (C1 instanceof vf9) {
+            C1.requestLayout();
+            C1.invalidate();
+        }
+        if (longValue > 0) {
+            this.n = true;
+            d();
+            String str = this.e;
+            oac oacVar = this.d;
+            int i3 = oacVar.k;
+            int i4 = oacVar.l;
+            int ceil = (int) Math.ceil(oacVar.r / 1000.0d);
+            ye9Var.i4.remove(iy6Var);
+            iy6Var.b = true;
+            iy6Var.e = str;
+            if (i3 > 0) {
+                iy6Var.j = i3;
+            }
+            if (i4 > 0) {
+                iy6Var.k = i4;
+            }
+            iy6Var.l = 0;
+            iy6Var.m = 0;
+            iy6Var.f = 0.0f;
+            ye9Var.o4(lk0Var);
+            ye9Var.O4((lk0) xl3Var.c, iy6Var, str, true, iy6Var.j, iy6Var.k, ceil);
         }
     }
 }

@@ -1,176 +1,85 @@
 // default package
 
-import android.media.MediaCodecInfo;
-import android.media.MediaCodecList;
-import android.os.Build;
-import j$.util.Map;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.messenger.voip.NativeInstance;
+import android.view.View;
+import android.widget.FrameLayout;
+import j$.util.Objects;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class d11 {
-    public final NativeInstance a;
-    public volatile boolean f;
-    public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final Set c = Collections.newSetFromMap(new ConcurrentHashMap());
-    public volatile Set d = Collections.EMPTY_SET;
-    public final CopyOnWriteArrayList e = new CopyOnWriteArrayList();
-    public final HashMap g = new HashMap();
-    public final HashMap h = new HashMap();
-    public final HashMap i = new HashMap();
-    public final HashSet j = new HashSet();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class d11 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ m21 b;
 
-    public d11(NativeInstance nativeInstance) {
-        this.a = nativeInstance;
+    public d11(m21 m21Var, boolean z) {
+        this.b = m21Var;
+        this.a = z;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x005e, code lost:
-    
-        continue;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static String c(String str) {
-        boolean z;
-        for (MediaCodecInfo mediaCodecInfo : new MediaCodecList(0).getCodecInfos()) {
-            if (!mediaCodecInfo.isEncoder()) {
-                String[] supportedTypes = mediaCodecInfo.getSupportedTypes();
-                int length = supportedTypes.length;
-                int i = 0;
-                while (true) {
-                    if (i >= length) {
-                        break;
-                    }
-                    if (supportedTypes[i].equalsIgnoreCase(str)) {
-                        if (Build.VERSION.SDK_INT >= 29) {
-                            z = mediaCodecInfo.isHardwareAccelerated();
-                        } else {
-                            String lowerCase = mediaCodecInfo.getName().toLowerCase();
-                            z = (lowerCase.startsWith("omx.google.") || lowerCase.startsWith("c2.android.") || lowerCase.contains(".sw.")) ? false : true;
-                        }
-                        if (z) {
-                            return mediaCodecInfo.getName();
-                        }
-                    } else {
-                        i++;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        i11 i11Var;
+        m21 m21Var = this.b;
+        q11 q11Var = m21Var.e;
+        q11Var.removeOnLayoutChangeListener(this);
+        if (m21Var.l) {
+            q11Var.onShow();
+            d dVar = m21Var.g;
+            boolean z = this.a;
+            if (z && (dVar instanceof jec)) {
+                dVar = ((jec) dVar).b0();
+            }
+            FrameLayout frameLayout = m21Var.h;
+            if (dVar == null || (i11Var = dVar.getBulletinDelegate()) == null) {
+                if (frameLayout != null) {
+                    Object tag = frameLayout.getTag(R.id.bulletin_delegate_tag);
+                    if (tag instanceof i11) {
+                        i11Var = (i11) tag;
                     }
                 }
+                i11Var = null;
             }
-        }
-        return null;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0027, code lost:
-    
-        if (r11 < r0.longValue()) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x004a, code lost:
-    
-        if (r11 <= r2.longValue()) goto L20;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a(long j, v01 v01Var) {
-        if (!this.f) {
-            String str = v01Var.a;
-            if (this.d.contains(str) && !this.c.contains(str)) {
-                Long l = (Long) this.i.get(str);
-                if (l != null) {
-                }
-                pd0 a = pd0.a(v01Var.e, v01Var.d);
-                if (a == null || a.c <= 0) {
-                    Map.-EL.merge(this.g, v01Var.a, Long.valueOf(j), new x01((byte) 0));
-                    return false;
-                }
-                Map.-EL.merge(this.h, v01Var.a, Long.valueOf(j), new x01((byte) 0));
-                c11 c11Var = (c11) this.b.get(v01Var.a);
-                if (c11Var == null) {
-                    c11Var = new c11(this, v01Var.a);
-                    this.b.put(v01Var.a, c11Var);
-                }
-                c11 c11Var2 = c11Var;
-                byte[] bArr = v01Var.d;
-                int i = a.b;
-                c11Var2.c.post(new o77((Object) c11Var2, j, (Object) Arrays.copyOfRange(bArr, i, a.c + i), a.a, (byte) 3));
-                return true;
+            m21Var.p = i11Var;
+            byte b = 1;
+            if (i11Var == null && dVar != null) {
+                i11Var = new xf0(dVar, b);
+                m21Var.p = i11Var;
             }
-            Long l2 = (Long) this.h.get(str);
-            if (this.j.contains(str)) {
-                if (this.b.containsKey(str)) {
-                    if (l2 != null) {
-                    }
+            yla ylaVar = m21Var.d;
+            if (ylaVar == null || !ylaVar.f) {
+                m21Var.o = i11Var != null ? i11Var.e(m21Var.a) : 0;
+            }
+            i11 i11Var2 = m21Var.p;
+            if (i11Var2 != null) {
+                i11Var2.g(m21Var);
+            }
+            if (dVar != null) {
+                dVar.setupBulletinGlass(m21Var);
+            }
+            if (na7.c1().getBoolean("view_animations", true) && !m21Var.s) {
+                if (q11Var != null && m21Var.q == null) {
+                    m21Var.q = q11Var.createTransition();
                 }
+                q11Var.transitionRunningEnter = true;
+                q11Var.delegate = m21Var.p;
+                q11Var.invalidate();
+                p11 p11Var = m21Var.q;
+                Objects.requireNonNull(q11Var);
+                p11Var.f(q11Var, new b11(q11Var, (byte) 1), new nv0(this, (byte) 7), new i42((byte) 2, this, z));
+                return;
             }
-        }
-        Map.-EL.merge(this.g, v01Var.a, Long.valueOf(j), new x01((byte) 0));
-        return false;
-    }
-
-    public final void b(String str, Throwable th) {
-        if (e21.a) {
-            fc4.e("[BroadcastHwVideo] " + str + " falls back to software", th);
-        }
-        this.c.add(str);
-        HashSet hashSet = new HashSet(this.d);
-        hashSet.remove(str);
-        this.d = hashSet;
-        e(str);
-    }
-
-    public final void d(long j, int i, long j2) {
-        long[] jArr = {j, j2, i};
-        CopyOnWriteArrayList copyOnWriteArrayList = this.e;
-        copyOnWriteArrayList.add(jArr);
-        long nanoTime = System.nanoTime() / 1000000;
-        while (copyOnWriteArrayList.size() > 2 && ((long[]) copyOnWriteArrayList.get(1))[1] <= nanoTime) {
-            copyOnWriteArrayList.remove(0);
-        }
-        Iterator it = copyOnWriteArrayList.iterator();
-        long[] jArr2 = null;
-        while (it.hasNext()) {
-            long[] jArr3 = (long[]) it.next();
-            if (jArr3[1] > nanoTime) {
-                break;
-            } else {
-                jArr2 = jArr3;
+            i11 i11Var3 = m21Var.p;
+            q11Var.delegate = i11Var3;
+            if (i11Var3 != null && !z) {
+                i11Var3.b(q11Var.getHeight());
             }
-        }
-        if (jArr2 != null) {
-            HashSet hashSet = this.j;
-            ArrayList arrayList = new ArrayList(hashSet);
-            int size = arrayList.size();
-            int i2 = 0;
-            while (i2 < size) {
-                Object obj = arrayList.get(i2);
-                i2++;
-                String str = (String) obj;
-                HashMap hashMap = this.h;
-                Long l = (Long) hashMap.get(str);
-                if (l == null || jArr2[0] > l.longValue()) {
-                    hashSet.remove(str);
-                    hashMap.remove(str);
-                    this.i.remove(str);
-                    e(str);
-                }
+            m21Var.l();
+            q11Var.onEnterTransitionStart();
+            q11Var.onEnterTransitionEnd();
+            if (m21Var.u) {
+                m21Var.i(true);
             }
-        }
-    }
-
-    public final void e(String str) {
-        c11 c11Var = (c11) this.b.remove(str);
-        if (c11Var != null) {
-            c11Var.c.post(new a11(c11Var, (byte) 0));
         }
     }
 }

@@ -6,23 +6,23 @@ import android.content.Intent;
 import android.os.IBinder;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class StoryUploadingService extends Service implements jm7 {
-    public an7 a;
+public class StoryUploadingService extends Service implements gk7 {
+    public xk7 a;
     public String b;
     public float c;
     public int d = -1;
 
     public StoryUploadingService() {
-        nm7.e().a(this, nm7.F5);
+        kk7.e().a(this, kk7.D5);
     }
 
-    @Override // jm7
+    @Override // gk7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
         String str;
-        if (i != nm7.E5) {
-            if (i == nm7.F5 && (str = this.b) != null && str.equals((String) objArr[0])) {
+        if (i != kk7.C5) {
+            if (i == kk7.D5 && (str = this.b) != null && str.equals((String) objArr[0])) {
                 stopSelf();
                 return;
             }
@@ -34,16 +34,16 @@ public class StoryUploadingService extends Service implements jm7 {
         }
         float floatValue = ((Float) objArr[1]).floatValue();
         this.c = floatValue;
-        an7 an7Var = this.a;
+        xk7 xk7Var = this.a;
         int round = Math.round(floatValue * 100.0f);
         boolean z = this.c <= 0.0f;
-        an7Var.n = (byte) 100;
-        an7Var.o = round;
-        an7Var.p = z;
+        xk7Var.n = (byte) 100;
+        xk7Var.o = round;
+        xk7Var.p = z;
         try {
-            new sn7(a.b).e(null, 33, this.a.b());
+            new pl7(a.b).e(null, 33, this.a.b());
         } catch (Throwable th) {
-            fc4.g(th, true);
+            fa4.g(th, true);
         }
     }
 
@@ -59,73 +59,73 @@ public class StoryUploadingService extends Service implements jm7 {
             stopForeground(true);
         } catch (Exception unused) {
         }
-        new sn7(a.b).b(33, null);
-        nm7.e().n(this, nm7.F5);
-        nm7.f(this.d).n(this, nm7.E5);
-        if (e21.a) {
-            fc4.b("upload story destroy");
+        new pl7(a.b).b(33, null);
+        kk7.e().n(this, kk7.D5);
+        kk7.f(this.d).n(this, kk7.C5);
+        if (w01.a) {
+            fa4.b("upload story destroy");
         }
     }
 
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i, int i2) {
-        int i3 = nm7.E5;
+        int i3 = kk7.C5;
         this.b = intent.getStringExtra("path");
         int i4 = this.d;
-        int intExtra = intent.getIntExtra("currentAccount", z8c.t0);
+        int intExtra = intent.getIntExtra("currentAccount", y6c.t0);
         this.d = intExtra;
-        if (!z8c.q(intExtra)) {
+        if (!y6c.q(intExtra)) {
             stopSelf();
             return 2;
         }
         if (i4 != this.d) {
             if (i4 != -1) {
-                nm7.f(i4).n(this, i3);
+                kk7.f(i4).n(this, i3);
             }
             int i5 = this.d;
             if (i5 != -1) {
-                nm7.f(i5).a(this, i3);
+                kk7.f(i5).a(this, i3);
             }
         }
         if (this.b == null) {
             stopSelf();
             return 2;
         }
-        if (e21.a) {
-            fc4.b("start upload story");
+        if (w01.a) {
+            fa4.b("start upload story");
         }
         if (this.a == null) {
-            lo7.c();
-            an7 an7Var = new an7(a.b, null);
-            this.a = an7Var;
-            an7Var.F.icon = R.drawable.stat_sys_upload;
-            an7Var.F.when = System.currentTimeMillis();
-            an7 an7Var2 = this.a;
-            an7Var2.y = lo7.k0;
-            an7Var2.e(jb6.M0(org.telegram.messenger.beta.R.string.AppName, null));
-            this.a.k(jb6.M0(2131744137, null));
-            this.a.d(jb6.M0(2131744137, null));
+            im7.c();
+            xk7 xk7Var = new xk7(a.b, null);
+            this.a = xk7Var;
+            xk7Var.F.icon = R.drawable.stat_sys_upload;
+            xk7Var.F.when = System.currentTimeMillis();
+            xk7 xk7Var2 = this.a;
+            xk7Var2.y = im7.k0;
+            xk7Var2.e(k96.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            this.a.k(k96.M0(2131744211, null));
+            this.a.d(k96.M0(2131744211, null));
         }
         this.c = 0.0f;
-        an7 an7Var3 = this.a;
-        an7Var3.n = (byte) 100;
-        an7Var3.o = 0;
-        an7Var3.p = false;
+        xk7 xk7Var3 = this.a;
+        xk7Var3.n = (byte) 100;
+        xk7Var3.o = 0;
+        xk7Var3.p = false;
         try {
-            startForeground(33, an7Var3.b());
+            startForeground(33, xk7Var3.b());
         } catch (Throwable th) {
-            fc4.g(th, true);
+            fa4.g(th, true);
         }
         try {
-            new sn7(a.b).e(null, 33, this.a.b());
+            new pl7(a.b).e(null, 33, this.a.b());
         } catch (Throwable th2) {
-            fc4.g(th2, true);
+            fa4.g(th2, true);
         }
         return 2;
     }
 
     public final void onTimeout(int i, int i2) {
-        fc4.b("StoryUploadingService timeout, type = " + i2);
+        fa4.b("StoryUploadingService timeout, type = " + i2);
         try {
             stopForeground(true);
         } catch (Throwable unused) {

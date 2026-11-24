@@ -1,23 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class de3 {
-    public final int a;
-    public final uzb b;
-    public final int c;
-    public final go4 d;
+public final class de3 {
+    public static final de3 c = new de3(new ie7(18));
+    public static final String d;
+    public static final String e;
+    public final int a = 0;
+    public final int b = 0;
 
-    public de3(int i, uzb uzbVar, int i2) {
-        this.a = i;
-        this.b = uzbVar;
-        this.c = i2;
-        this.d = uzbVar.d[i2];
+    static {
+        String str = g8c.a;
+        d = "1";
+        e = "2";
     }
 
-    public abstract int a();
+    public de3(ie7 ie7Var) {
+    }
 
-    public boolean b(de3 de3Var) {
-        return false;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof de3)) {
+            return false;
+        }
+        de3 de3Var = (de3) obj;
+        return this.a == de3Var.a && this.b == de3Var.b;
+    }
+
+    public final int hashCode() {
+        return (((16337 + this.a) * 31) + this.b) * 31;
     }
 }

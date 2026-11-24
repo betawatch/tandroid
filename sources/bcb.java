@@ -1,48 +1,35 @@
 // default package
 
-import android.os.SystemClock;
+import org.webrtc.SurfaceTextureHelper;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class bcb {
-    public final int a;
-    public int b;
-    public boolean c;
-    public long d;
-    public final /* synthetic */ oa0 e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class bcb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ SurfaceTextureHelper b;
 
-    public bcb(oa0 oa0Var, int i) {
-        this.e = oa0Var;
-        this.a = i;
+    public /* synthetic */ bcb(SurfaceTextureHelper surfaceTextureHelper, byte b) {
+        this.a = b;
+        this.b = surfaceTextureHelper;
     }
 
-    public final void a() {
-        oa0 oa0Var = this.e;
-        dfb dfbVar = (dfb) oa0Var.f;
-        h74 h74Var = (h74) oa0Var.a;
-        int v0 = h74Var.v0();
-        if (!h74Var.s() || h74Var.h() == 1 || h74Var.h() == 4 || v0 == 0 || v0 == 1) {
-            if (this.c) {
-                dfbVar.g(4);
-            }
-            this.c = false;
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        SurfaceTextureHelper surfaceTextureHelper = this.b;
+        switch (b) {
+            case 0:
+                surfaceTextureHelper.lambda$stopListening$1();
+                break;
+            case 1:
+                surfaceTextureHelper.lambda$dispose$6();
+                break;
+            case 2:
+                surfaceTextureHelper.lambda$returnTextureFrame$5();
+                break;
+            default:
+                surfaceTextureHelper.lambda$forceFrame$3();
+                break;
         }
-        ((bfb) oa0Var.d).getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z = this.c;
-        int i = this.a;
-        if (z && this.b == v0) {
-            if (elapsedRealtime - this.d >= i) {
-                ((c74) oa0Var.c).a.t1(new u64(2, new ccb(4, i), 1003));
-                return;
-            }
-            return;
-        }
-        this.c = true;
-        this.d = elapsedRealtime;
-        this.b = v0;
-        dfbVar.g(4);
-        dfbVar.a.sendEmptyMessageDelayed(4, i);
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzko implements zzjt {
     public static final zzko zza = new zzko();
@@ -16,7 +16,7 @@ public final class zzko implements zzjt {
                 zzizVar.zzc().zze(i, new zzcs());
                 return;
             } else {
-                i2d.d(4, 3, null);
+                fvc.c(4, 3, null);
                 return;
             }
         }
@@ -26,7 +26,7 @@ public final class zzko implements zzjt {
         }
         String str = (String) zza2;
         if (str == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -35,7 +35,7 @@ public final class zzko implements zzjt {
         }
         zzcs zzcsVar = (zzcs) zza3;
         if (zzcsVar == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         byte[] zzd = zzhd.zza(zzizVar.zzb(), zzcsVar).zzd();

@@ -1,55 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class q3f {
-    public static String a(efd efdVar) {
-        String str;
-        StringBuilder sb = new StringBuilder(efdVar.size());
-        for (int i = 0; i < efdVar.size(); i++) {
-            int j = efdVar.j(i);
-            if (j == 34) {
-                str = "\\\"";
-            } else if (j == 39) {
-                str = "\\'";
-            } else if (j != 92) {
-                switch (j) {
-                    case 7:
-                        str = "\\a";
-                        break;
-                    case 8:
-                        str = "\\b";
-                        break;
-                    case 9:
-                        str = "\\t";
-                        break;
-                    case 10:
-                        str = "\\n";
-                        break;
-                    case 11:
-                        str = "\\v";
-                        break;
-                    case 12:
-                        str = "\\f";
-                        break;
-                    case 13:
-                        str = "\\r";
-                        break;
-                    default:
-                        if (j < 32 || j > 126) {
-                            sb.append('\\');
-                            sb.append((char) (((j >>> 6) & 3) + 48));
-                            sb.append((char) (((j >>> 3) & 7) + 48));
-                            j = (j & 7) + 48;
-                        }
-                        sb.append((char) j);
-                        continue;
-                }
-            } else {
-                str = "\\\\";
-            }
-            sb.append(str);
+    public static /* synthetic */ boolean a(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
         }
-        return sb.toString();
+        return true;
     }
 }

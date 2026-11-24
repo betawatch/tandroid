@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class e0 extends EditTextBoldCursor {
     public final /* synthetic */ g0 M1;
@@ -15,7 +15,7 @@ public final class e0 extends EditTextBoldCursor {
         this.M1 = g0Var;
     }
 
-    @Override // vu3, android.view.View
+    @Override // lt3, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         float rawX = obtain.getRawX();

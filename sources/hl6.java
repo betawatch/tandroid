@@ -1,166 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class hl6 implements tt6, st6 {
-    public final rz6 a;
-    public final long b;
-    public final mx6 c;
-    public rh0 d;
-    public tt6 e;
-    public st6 f;
-    public long h = -9223372036854775807L;
-    public boolean n;
+import android.net.Uri;
+import org.telegram.messenger.MediaController;
 
-    public hl6(rz6 rz6Var, mx6 mx6Var, long j) {
-        this.a = rz6Var;
-        this.c = mx6Var;
-        this.b = j;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class hl6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ p8c b;
+    public final /* synthetic */ Uri c;
+
+    public /* synthetic */ hl6(p8c p8cVar, Uri uri, byte b) {
+        this.a = b;
+        this.b = p8cVar;
+        this.c = uri;
     }
 
-    @Override // st6
-    public final void a(tt6 tt6Var) {
-        st6 st6Var = this.f;
-        String str = hac.a;
-        st6Var.a(this);
-    }
-
-    @Override // r6a
-    public final void b(s6a s6aVar) {
-        st6 st6Var = this.f;
-        String str = hac.a;
-        st6Var.b(this);
-    }
-
-    @Override // tt6
-    public final long c(t74[] t74VarArr, boolean[] zArr, jr9[] jr9VarArr, boolean[] zArr2, long j) {
-        long j2 = this.h;
-        if (j2 != -9223372036854775807L && j == this.b) {
-            j = j2;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Uri uri = this.c;
+        p8c p8cVar = this.b;
+        switch (b) {
+            case 0:
+                String[] strArr = MediaController.W1;
+                p8cVar.a(uri);
+                break;
+            default:
+                String[] strArr2 = MediaController.W1;
+                p8cVar.a(uri);
+                break;
         }
-        this.h = -9223372036854775807L;
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.c(t74VarArr, zArr, jr9VarArr, zArr2, j);
-    }
-
-    public final void d(rz6 rz6Var) {
-        long j = this.h;
-        if (j == -9223372036854775807L) {
-            j = this.b;
-        }
-        rh0 rh0Var = this.d;
-        rh0Var.getClass();
-        tt6 c = rh0Var.c(rz6Var, this.c, j);
-        this.e = c;
-        if (this.n) {
-            c.e();
-        }
-        if (this.f != null) {
-            this.e.o(this, j);
-        }
-    }
-
-    @Override // tt6
-    public final void e() {
-        this.n = true;
-        tt6 tt6Var = this.e;
-        if (tt6Var != null) {
-            tt6Var.e();
-        }
-    }
-
-    @Override // s6a
-    public final boolean f() {
-        tt6 tt6Var = this.e;
-        return tt6Var != null && tt6Var.f();
-    }
-
-    @Override // s6a
-    public final long g() {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.g();
-    }
-
-    @Override // tt6
-    public final long h(long j, jx9 jx9Var) {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.h(j, jx9Var);
-    }
-
-    @Override // tt6
-    public final void j() {
-        tt6 tt6Var = this.e;
-        if (tt6Var != null) {
-            tt6Var.j();
-            return;
-        }
-        rh0 rh0Var = this.d;
-        if (rh0Var != null) {
-            rh0Var.k();
-        }
-    }
-
-    @Override // tt6
-    public final long k(long j) {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.k(j);
-    }
-
-    @Override // tt6
-    public final void l(long j) {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        tt6Var.l(j);
-    }
-
-    @Override // tt6
-    public final long n() {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.n();
-    }
-
-    @Override // tt6
-    public final void o(st6 st6Var, long j) {
-        this.f = st6Var;
-        tt6 tt6Var = this.e;
-        if (tt6Var != null) {
-            long j2 = this.h;
-            if (j2 == -9223372036854775807L) {
-                j2 = this.b;
-            }
-            tt6Var.o(this, j2);
-        }
-    }
-
-    @Override // tt6
-    public final vzb q() {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.q();
-    }
-
-    @Override // s6a
-    public final boolean r(sa6 sa6Var) {
-        tt6 tt6Var = this.e;
-        return tt6Var != null && tt6Var.r(sa6Var);
-    }
-
-    @Override // s6a
-    public final long s() {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        return tt6Var.s();
-    }
-
-    @Override // s6a
-    public final void t(long j) {
-        tt6 tt6Var = this.e;
-        String str = hac.a;
-        tt6Var.t(j);
     }
 }

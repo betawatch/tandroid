@@ -1,27 +1,33 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n54 implements lv8 {
+public final /* synthetic */ class n54 implements x56, us2 {
     public final /* synthetic */ byte a;
-    public final lq5 b;
+    public final /* synthetic */ float b;
 
-    public /* synthetic */ n54(lq5 lq5Var, byte b) {
+    public /* synthetic */ n54(float f, byte b) {
         this.a = b;
-        this.b = lq5Var;
+        this.b = f;
     }
 
-    @Override // mv8
-    public final Object get() {
+    @Override // us2
+    public final void accept(Object obj) {
         byte b = this.a;
-        lq5 lq5Var = this.b;
+        float f = this.b;
+        ad8 ad8Var = (ad8) obj;
         switch (b) {
-            case 0:
-                return new m54((nv8) lq5Var.a);
+            case 1:
+                ad8Var.c(f);
+                break;
             default:
-                return new va6((Context) lq5Var.a);
+                ad8Var.R(f);
+                break;
         }
+    }
+
+    @Override // x56
+    public final void invoke(Object obj) {
+        ((mc8) obj).q(this.b);
     }
 }

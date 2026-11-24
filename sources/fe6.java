@@ -1,46 +1,356 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class fe6 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ mh6 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+import android.os.Bundle;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ fe6(mh6 mh6Var, int i, boolean z, boolean z2) {
-        this.b = mh6Var;
-        this.c = i;
-        this.d = z;
-        this.e = z2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fe6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qe6 b;
+    public final /* synthetic */ TLRPC.TL_auth_signIn c;
+
+    public /* synthetic */ fe6(qe6 qe6Var, TLRPC.TL_auth_signIn tL_auth_signIn, byte b) {
+        this.a = b;
+        this.b = qe6Var;
+        this.c = tL_auth_signIn;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.e;
-        boolean z2 = this.d;
-        boolean z3 = this.c;
-        mh6 mh6Var = this.b;
-        switch (b) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                mh6Var.L1(z3, z2, z);
+                final byte b = 0;
+                final qe6 qe6Var = this.b;
+                final TLRPC.TL_auth_signIn tL_auth_signIn = this.c;
+                gl.c3(new Runnable() { // from class: he6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i;
+                        int i2;
+                        int i3;
+                        int i4;
+                        byte b2 = b;
+                        TLRPC.TL_auth_signIn tL_auth_signIn2 = tL_auth_signIn;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        final qe6 qe6Var2 = qe6Var;
+                        final byte b3 = 0;
+                        final byte b4 = 1;
+                        switch (b2) {
+                            case 0:
+                                byte b5 = qe6Var2.i0;
+                                mf6 mf6Var = qe6Var2.v0;
+                                qe6Var2.y(false);
+                                if (tL_error2 != null) {
+                                    String str = tL_error2.text;
+                                    qe6Var2.h0 = str;
+                                    if (!str.contains("SESSION_PASSWORD_NEEDED")) {
+                                        qe6Var2.g0 = false;
+                                        mf6Var.J1(false, true);
+                                        if ((b5 == 3 && ((i3 = qe6Var2.j0) == 4 || i3 == 2 || i3 == 17 || i3 == 16)) || ((b5 == 2 && ((i2 = qe6Var2.j0) == 4 || i2 == 3)) || (b5 == 4 && ((i = qe6Var2.j0) == 2 || i == 17 || i == 16)))) {
+                                            qe6Var2.r();
+                                        }
+                                        if (b5 == 15) {
+                                            kk7.e().a(qe6Var2, kk7.i4);
+                                        } else if (b5 == 2) {
+                                            gl.y3(true);
+                                            kk7.e().a(qe6Var2, kk7.i4);
+                                        } else if (b5 == 3) {
+                                            gl.x3(true);
+                                            kk7.e().a(qe6Var2, kk7.j4);
+                                            gl.c3(new ql3((byte) 27));
+                                        }
+                                        qe6Var2.f0 = true;
+                                        if (b5 != 3) {
+                                            if (tL_error2.text.contains("PHONE_NUMBER_INVALID")) {
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131748987, "InvalidPhoneNumber"));
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
+                                                qe6Var2.w();
+                                                break;
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
+                                                qe6Var2.d(true);
+                                                mf6Var.I1(0, true, null, true);
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131752009, "CodeExpired"));
+                                            } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131750670, "FloodWait"));
+                                            } else {
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131751093, "ErrorOccurred") + "\n" + tL_error2.text);
+                                            }
+                                            int i5 = 0;
+                                            while (true) {
+                                                fj2 fj2Var = qe6Var2.f;
+                                                sj2[] sj2VarArr = fj2Var.f;
+                                                if (i5 >= sj2VarArr.length) {
+                                                    fj2Var.e = false;
+                                                    sj2VarArr[0].requestFocus();
+                                                    break;
+                                                } else {
+                                                    sj2VarArr[i5].setText("");
+                                                    i5++;
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        TL_account.getPassword getpassword = new TL_account.getPassword();
+                                        i4 = ((d) mf6Var).currentAccount;
+                                        ConnectionsManager.getInstance(i4).sendRequest(getpassword, new fe6(qe6Var2, tL_auth_signIn2, b4), 10);
+                                        qe6Var2.t();
+                                        qe6Var2.s();
+                                    }
+                                } else {
+                                    qe6Var2.g0 = false;
+                                    mf6Var.J1(false, true);
+                                    qe6Var2.t();
+                                    qe6Var2.s();
+                                    if (tLObject2 instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+                                        TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject2).terms_of_service;
+                                        if (tL_help_termsOfService != null) {
+                                            mf6Var.s0 = tL_help_termsOfService;
+                                        }
+                                        final Bundle bundle = new Bundle();
+                                        bundle.putString("phoneFormated", qe6Var2.d);
+                                        bundle.putString("phoneHash", qe6Var2.c);
+                                        bundle.putString("code", tL_auth_signIn2.phone_code);
+                                        qe6Var2.o(new Runnable() { // from class: ke6
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                byte b6 = b3;
+                                                Bundle bundle2 = bundle;
+                                                qe6 qe6Var3 = qe6Var2;
+                                                switch (b6) {
+                                                    case 0:
+                                                        qe6Var3.v0.I1(5, true, bundle2, false);
+                                                        break;
+                                                    default:
+                                                        qe6Var3.v0.I1(6, true, bundle2, false);
+                                                        break;
+                                                }
+                                            }
+                                        });
+                                    } else {
+                                        qe6Var2.o(new kz5(qe6Var2, tLObject2, (byte) 23));
+                                    }
+                                }
+                                if (b5 == 3) {
+                                    gl.T();
+                                    gl.x3(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                qe6Var2.g0 = false;
+                                mf6 mf6Var2 = qe6Var2.v0;
+                                mf6Var2.J1(false, true);
+                                if (tL_error2 != null) {
+                                    mf6Var2.y1(k96.M0(2131745878, null), tL_error2.text);
+                                    break;
+                                } else {
+                                    TL_account.Password password = (TL_account.Password) tLObject2;
+                                    if (!TwoStepVerificationActivity.a0(password, true)) {
+                                        ij.u0(mf6Var2.getParentActivity(), k96.M0(2131743581, "UpdateAppAlert"), true);
+                                        break;
+                                    } else {
+                                        final Bundle bundle2 = new Bundle();
+                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                                        password.serializeToStream(serializedData);
+                                        bundle2.putString("password", Utilities.f(serializedData.toByteArray()));
+                                        bundle2.putString("phoneFormated", qe6Var2.d);
+                                        bundle2.putString("phoneHash", qe6Var2.c);
+                                        bundle2.putString("code", tL_auth_signIn2.phone_code);
+                                        qe6Var2.o(new Runnable() { // from class: ke6
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                byte b6 = b4;
+                                                Bundle bundle22 = bundle2;
+                                                qe6 qe6Var3 = qe6Var2;
+                                                switch (b6) {
+                                                    case 0:
+                                                        qe6Var3.v0.I1(5, true, bundle22, false);
+                                                        break;
+                                                    default:
+                                                        qe6Var3.v0.I1(6, true, bundle22, false);
+                                                        break;
+                                                }
+                                            }
+                                        });
+                                        break;
+                                    }
+                                }
+                        }
+                    }
+                });
                 break;
             default:
-                boolean z4 = mh6Var.K;
-                mh6Var.K = z3;
-                mh6Var.L1(z2, z, true);
-                mh6Var.K = z4;
+                final byte b2 = 1;
+                final qe6 qe6Var2 = this.b;
+                final TLRPC.TL_auth_signIn tL_auth_signIn2 = this.c;
+                gl.c3(new Runnable() { // from class: he6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i;
+                        int i2;
+                        int i3;
+                        int i4;
+                        byte b22 = b2;
+                        TLRPC.TL_auth_signIn tL_auth_signIn22 = tL_auth_signIn2;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        final qe6 qe6Var22 = qe6Var2;
+                        final byte b3 = 0;
+                        final byte b4 = 1;
+                        switch (b22) {
+                            case 0:
+                                byte b5 = qe6Var22.i0;
+                                mf6 mf6Var = qe6Var22.v0;
+                                qe6Var22.y(false);
+                                if (tL_error2 != null) {
+                                    String str = tL_error2.text;
+                                    qe6Var22.h0 = str;
+                                    if (!str.contains("SESSION_PASSWORD_NEEDED")) {
+                                        qe6Var22.g0 = false;
+                                        mf6Var.J1(false, true);
+                                        if ((b5 == 3 && ((i3 = qe6Var22.j0) == 4 || i3 == 2 || i3 == 17 || i3 == 16)) || ((b5 == 2 && ((i2 = qe6Var22.j0) == 4 || i2 == 3)) || (b5 == 4 && ((i = qe6Var22.j0) == 2 || i == 17 || i == 16)))) {
+                                            qe6Var22.r();
+                                        }
+                                        if (b5 == 15) {
+                                            kk7.e().a(qe6Var22, kk7.i4);
+                                        } else if (b5 == 2) {
+                                            gl.y3(true);
+                                            kk7.e().a(qe6Var22, kk7.i4);
+                                        } else if (b5 == 3) {
+                                            gl.x3(true);
+                                            kk7.e().a(qe6Var22, kk7.j4);
+                                            gl.c3(new ql3((byte) 27));
+                                        }
+                                        qe6Var22.f0 = true;
+                                        if (b5 != 3) {
+                                            if (tL_error2.text.contains("PHONE_NUMBER_INVALID")) {
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131748987, "InvalidPhoneNumber"));
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
+                                                qe6Var22.w();
+                                                break;
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
+                                                qe6Var22.d(true);
+                                                mf6Var.I1(0, true, null, true);
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131752009, "CodeExpired"));
+                                            } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131750670, "FloodWait"));
+                                            } else {
+                                                mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131751093, "ErrorOccurred") + "\n" + tL_error2.text);
+                                            }
+                                            int i5 = 0;
+                                            while (true) {
+                                                fj2 fj2Var = qe6Var22.f;
+                                                sj2[] sj2VarArr = fj2Var.f;
+                                                if (i5 >= sj2VarArr.length) {
+                                                    fj2Var.e = false;
+                                                    sj2VarArr[0].requestFocus();
+                                                    break;
+                                                } else {
+                                                    sj2VarArr[i5].setText("");
+                                                    i5++;
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        TL_account.getPassword getpassword = new TL_account.getPassword();
+                                        i4 = ((d) mf6Var).currentAccount;
+                                        ConnectionsManager.getInstance(i4).sendRequest(getpassword, new fe6(qe6Var22, tL_auth_signIn22, b4), 10);
+                                        qe6Var22.t();
+                                        qe6Var22.s();
+                                    }
+                                } else {
+                                    qe6Var22.g0 = false;
+                                    mf6Var.J1(false, true);
+                                    qe6Var22.t();
+                                    qe6Var22.s();
+                                    if (tLObject2 instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+                                        TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject2).terms_of_service;
+                                        if (tL_help_termsOfService != null) {
+                                            mf6Var.s0 = tL_help_termsOfService;
+                                        }
+                                        final Bundle bundle = new Bundle();
+                                        bundle.putString("phoneFormated", qe6Var22.d);
+                                        bundle.putString("phoneHash", qe6Var22.c);
+                                        bundle.putString("code", tL_auth_signIn22.phone_code);
+                                        qe6Var22.o(new Runnable() { // from class: ke6
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                byte b6 = b3;
+                                                Bundle bundle22 = bundle;
+                                                qe6 qe6Var3 = qe6Var22;
+                                                switch (b6) {
+                                                    case 0:
+                                                        qe6Var3.v0.I1(5, true, bundle22, false);
+                                                        break;
+                                                    default:
+                                                        qe6Var3.v0.I1(6, true, bundle22, false);
+                                                        break;
+                                                }
+                                            }
+                                        });
+                                    } else {
+                                        qe6Var22.o(new kz5(qe6Var22, tLObject2, (byte) 23));
+                                    }
+                                }
+                                if (b5 == 3) {
+                                    gl.T();
+                                    gl.x3(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                qe6Var22.g0 = false;
+                                mf6 mf6Var2 = qe6Var22.v0;
+                                mf6Var2.J1(false, true);
+                                if (tL_error2 != null) {
+                                    mf6Var2.y1(k96.M0(2131745878, null), tL_error2.text);
+                                    break;
+                                } else {
+                                    TL_account.Password password = (TL_account.Password) tLObject2;
+                                    if (!TwoStepVerificationActivity.a0(password, true)) {
+                                        ij.u0(mf6Var2.getParentActivity(), k96.M0(2131743581, "UpdateAppAlert"), true);
+                                        break;
+                                    } else {
+                                        final Bundle bundle2 = new Bundle();
+                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                                        password.serializeToStream(serializedData);
+                                        bundle2.putString("password", Utilities.f(serializedData.toByteArray()));
+                                        bundle2.putString("phoneFormated", qe6Var22.d);
+                                        bundle2.putString("phoneHash", qe6Var22.c);
+                                        bundle2.putString("code", tL_auth_signIn22.phone_code);
+                                        qe6Var22.o(new Runnable() { // from class: ke6
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                byte b6 = b4;
+                                                Bundle bundle22 = bundle2;
+                                                qe6 qe6Var3 = qe6Var22;
+                                                switch (b6) {
+                                                    case 0:
+                                                        qe6Var3.v0.I1(5, true, bundle22, false);
+                                                        break;
+                                                    default:
+                                                        qe6Var3.v0.I1(6, true, bundle22, false);
+                                                        break;
+                                                }
+                                            }
+                                        });
+                                        break;
+                                    }
+                                }
+                        }
+                    }
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ fe6(mh6 mh6Var, boolean z, boolean z2, boolean z3) {
-        this.b = mh6Var;
-        this.c = z;
-        this.d = z2;
-        this.e = z3;
     }
 }

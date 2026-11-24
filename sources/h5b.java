@@ -1,14 +1,9 @@
 // default package
 
-import android.text.StaticLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final class h5b {
-    public cn a;
-    public StaticLayout b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
+public interface h5b {
+    void c(w5b w5bVar, boolean z, boolean z2, boolean z3, boolean z4, TLRPC.InputPeer inputPeer, int i, a5b a5bVar, kya kyaVar);
 }

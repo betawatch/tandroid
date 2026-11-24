@@ -1,25 +1,40 @@
 // default package
 
-import java.io.IOException;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ubb extends Exception {
-    public final String a;
+public class ubb extends ze3 {
+    public AlertDialog B0;
+    public DialogInterface.OnCancelListener C0;
+    public AlertDialog D0;
 
-    public ubb(String str, String str2) {
-        super(str, null);
-        this.a = str2;
+    @Override // ze3
+    public final Dialog P() {
+        AlertDialog alertDialog = this.B0;
+        if (alertDialog != null) {
+            return alertDialog;
+        }
+        this.s0 = false;
+        AlertDialog alertDialog2 = this.D0;
+        if (alertDialog2 != null) {
+            return alertDialog2;
+        }
+        Context n = n();
+        fre.h(n);
+        AlertDialog create = new AlertDialog.Builder(n).create();
+        this.D0 = create;
+        return create;
     }
 
-    @Override // java.lang.Throwable
-    public final String toString() {
-        String str = this.a;
-        return b10.j(new StringBuilder(), super.toString(), str != null ? b10.h("; request-id: ", str) : "");
-    }
-
-    public ubb(String str, String str2, IOException iOException) {
-        super(str, iOException);
-        this.a = str2;
+    @Override // ze3, android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        DialogInterface.OnCancelListener onCancelListener = this.C0;
+        if (onCancelListener != null) {
+            onCancelListener.onCancel(dialogInterface);
+        }
     }
 }

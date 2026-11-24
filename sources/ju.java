@@ -1,46 +1,60 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ju implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ jm7 d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ju extends w39 {
+    public final /* synthetic */ mu c;
 
-    public /* synthetic */ ju(oc7 oc7Var, long j, int i) {
-        this.d = oc7Var;
-        this.b = j;
-        this.c = i;
+    public ju(mu muVar) {
+        this.c = muVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        jm7 jm7Var = this.d;
-        switch (b) {
-            case 0:
-                gm.c3(new o77((o) jm7Var, tLObject, this.c, this.b, (byte) 2));
-                break;
-            default:
-                oc7 oc7Var = (oc7) jm7Var;
-                oc7Var.i5.remove(this.b + "_" + this.c);
-                if (tL_error == null && tLObject != null) {
-                    oc7Var.T3((TLRPC.Updates) tLObject, false);
-                    break;
-                }
-                break;
+    @Override // w39
+    public final int b() {
+        TL_iv.pageBlockCollage pageblockcollage = this.c.s;
+        if (pageblockcollage == null) {
+            return 0;
+        }
+        return pageblockcollage.items.size();
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        ArrayList<TL_iv.PageBlock> arrayList = this.c.s.items;
+        return arrayList.get((arrayList.size() - i) - 1) instanceof TL_iv.pageBlockPhoto ? 0 : 1;
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        mu muVar = this.c;
+        lu luVar = muVar.w;
+        ArrayList<TL_iv.PageBlock> arrayList = muVar.s.items;
+        TL_iv.PageBlock pageBlock = arrayList.get((arrayList.size() - i) - 1);
+        int i2 = s49Var.f;
+        View view = s49Var.a;
+        if (i2 == 0) {
+            cv cvVar = (cv) view;
+            cvVar.S = (c27) luVar.b.get(pageBlock);
+            cvVar.a((TL_iv.pageBlockPhoto) pageBlock, muVar.x.F.cached_page, false, true);
+        } else {
+            xv xvVar = (xv) view;
+            xvVar.U = (c27) luVar.b.get(pageBlock);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            xvVar.b(pageblockvideo, (yv) muVar.y.E.f(pageblockvideo.video_id), false, true);
         }
     }
 
-    public /* synthetic */ ju(o oVar, int i, long j) {
-        this.d = oVar;
-        this.c = i;
-        this.b = j;
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        mu muVar = this.c;
+        dx dxVar = muVar.x;
+        o oVar = muVar.y;
+        return new y29(i != 0 ? new xv(muVar.getContext(), oVar, dxVar, 2) : new cv(muVar.getContext(), oVar, dxVar, 2));
     }
 }

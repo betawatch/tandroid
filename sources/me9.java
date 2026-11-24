@@ -1,29 +1,93 @@
 // default package
 
-import android.text.Editable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public interface me9 {
-    boolean G(ne9 ne9Var);
+public final class me9 extends fib {
+    public final /* synthetic */ we9 F0;
+    public final /* synthetic */ ye9 G0;
 
-    void H();
+    public me9(ye9 ye9Var, we9 we9Var) {
+        this.G0 = ye9Var;
+        this.F0 = we9Var;
+    }
 
-    void M(CharSequence charSequence);
+    @Override // rib
+    public final boolean B() {
+        ye9 ye9Var = this.G0;
+        CharSequence q = ye9Var.v3.q();
+        if (q == null || q.length() == 0) {
+            return true;
+        }
+        ye9Var.f5(q);
+        return true;
+    }
 
-    void S(Editable editable);
+    @Override // rib
+    public final void C() {
+        ye9 ye9Var = this.G0;
+        CharSequence q = ye9Var.v3.q();
+        if (q != null && q.length() > 0) {
+            ye9Var.f5(q);
+        }
+        ye9Var.A2();
+    }
 
-    void W(ne9 ne9Var);
+    @Override // fib, rib
+    public final void E() {
+        super.E();
+        this.F0.e();
+    }
 
-    boolean Z(boolean z);
+    @Override // rib
+    public final void G() {
+        this.G0.c4();
+    }
 
-    void d(ne9 ne9Var);
+    @Override // rib
+    public final boolean I() {
+        if (Z()) {
+            return true;
+        }
+        return this.G0.V4();
+    }
 
-    boolean i();
+    @Override // rib
+    public final void J(float f, float f2) {
+        ye9 ye9Var = this.G0;
+        ye9Var.A3 = true;
+        ye9Var.B3 = f;
+        ye9Var.C3 = f2;
+    }
 
-    void k(int i, int i2);
+    @Override // rib
+    public final boolean i() {
+        int size;
+        ye9 ye9Var = this.G0;
+        me9 me9Var = ye9Var.v3;
+        ArrayList arrayList = ye9Var.t3;
+        boolean z = false;
+        if (!arrayList.isEmpty() && me9Var.w() && me9Var.p0 == 0 && me9Var.q0 == 0 && me9Var.r0 <= 0 && me9Var.s0 == (size = arrayList.size() - 1)) {
+            lk0 lk0Var = (lk0) arrayList.get(size);
+            String l = wi9.n(lk0Var.b) ? yi9.l(wi9.h(lk0Var.b)) : "";
+            boolean z2 = !l.isEmpty();
+            if (me9Var.t0 == z2) {
+                if (me9Var.u0 >= (z2 ? l.length() : wi9.y(lk0Var.b).length())) {
+                    z = true;
+                }
+            }
+        }
+        return !z;
+    }
 
-    void r(ne9 ne9Var, int i, int i2);
+    @Override // rib
+    public final int n() {
+        return this.G0.getPaddingBottom();
+    }
 
-    boolean v(ne9 ne9Var);
+    @Override // rib
+    public final int o() {
+        return this.G0.getPaddingTop();
+    }
 }

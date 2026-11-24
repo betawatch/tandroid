@@ -19,14 +19,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     final class Data {
         long access_hash;
         long callId;
@@ -54,13 +54,13 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        bc4.G(this.currentAccount).f0(new ts9(this, savecalldebug, (byte) 20), file.getAbsolutePath());
+        ba4.G(this.currentAccount).f0(new nu9(this, savecalldebug, (byte) 19), file.getAbsolutePath());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$done$2(Data data, File file, TL_phone.saveCallDebug savecalldebug) {
         File file2 = new File(data.logPath);
-        Typeface typeface = gm.a;
+        Typeface typeface = gl.a;
         try {
             BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file2));
             try {
@@ -72,7 +72,7 @@ public class VoIPDebugToSend {
                         if (read == -1) {
                             gZIPOutputStream.close();
                             bufferedInputStream.close();
-                            gm.c3(new gcc(this, file, savecalldebug, (byte) 7));
+                            gl.c3(new wbc(this, file, savecalldebug, (byte) 4));
                             return;
                         }
                         gZIPOutputStream.write(bArr, 0, read);
@@ -82,21 +82,21 @@ public class VoIPDebugToSend {
             } finally {
             }
         } catch (FileNotFoundException e) {
-            fc4.g(e, true);
+            fa4.g(e, true);
         } catch (IOException e2) {
-            fc4.g(e2, true);
+            fa4.g(e2, true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$3(final Data data, final TL_phone.saveCallDebug savecalldebug, TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (e21.a) {
-            fc4.b("Sent debug logs, response = " + tLObject);
+        if (w01.a) {
+            fa4.b("Sent debug logs, response = " + tLObject);
         }
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        final File file = new File(b10.j(new StringBuilder(), data.logPath, ".gzip"));
+        final File file = new File(b00.j(new StringBuilder(), data.logPath, ".gzip"));
         Utilities.g.c(new Runnable() { // from class: org.telegram.messenger.voip.c
             @Override // java.lang.Runnable
             public final void run() {
@@ -129,7 +129,7 @@ public class VoIPDebugToSend {
     public void push(long j, long j2, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(sic.e(String.valueOf(j)));
+                finalState.debugLog = VoIPService.getStringFromFile(rgc.e(String.valueOf(j)));
             } catch (Exception e) {
                 e.printStackTrace();
             }

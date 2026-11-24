@@ -2,20 +2,20 @@ package com.google.android.gms.vision.clearcut;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class LoggingConnectionCallbacks implements f05, g05 {
-    @Override // f05
+public class LoggingConnectionCallbacks implements ey4, fy4 {
+    @Override // ey4
     public void onConnected(Bundle bundle) {
         throw new NoSuchMethodError();
     }
 
-    @Override // g05
-    public void onConnectionFailed(ot2 ot2Var) {
+    @Override // fy4
+    public void onConnectionFailed(ds2 ds2Var) {
         throw new NoSuchMethodError();
     }
 
-    @Override // f05
+    @Override // ey4
     public void onConnectionSuspended(int i) {
         throw new NoSuchMethodError();
     }

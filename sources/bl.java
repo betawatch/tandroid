@@ -1,6 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class bl {
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class bl extends CharacterStyle {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ wjb c;
+
+    public bl(boolean z, int i, wjb wjbVar) {
+        this.a = z;
+        this.b = i;
+        this.c = wjbVar;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        if (this.a) {
+            textPaint.setTypeface(gl.o());
+        }
+        textPaint.setColor(bkb.v0(this.b, this.c));
+    }
 }

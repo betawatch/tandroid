@@ -1,40 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class j6d {
-    public static final li0 a = new li0("GoogleSignInCommon", new String[0]);
+public final class j6d extends r6d {
+    public final transient int r;
+    public final transient int s;
+    public final /* synthetic */ r6d w;
 
-    public static Intent a(Context context, GoogleSignInOptions googleSignInOptions) {
-        a.a("getSignInIntent()", new Object[0]);
-        SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
-        Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
-        intent.setPackage(context.getPackageName());
-        intent.setClass(context, SignInHubActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("config", signInConfiguration);
-        intent.putExtra("config", bundle);
-        return intent;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j6d(r6d r6dVar, int i, int i2) {
+        super((byte) 2);
+        this.w = r6dVar;
+        this.r = i;
+        this.s = i2;
     }
 
-    public static void b(Context context) {
-        k6d.r1(context).s1();
-        Set set = h05.a;
-        synchronized (set) {
-        }
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            ((h05) it.next()).b();
-        }
-        i05.a();
+    @Override // java.util.List
+    public final Object get(int i) {
+        k4f.a(i, this.s);
+        return this.w.get(i + this.r);
+    }
+
+    @Override // kzc
+    public final int q() {
+        return this.w.s() + this.r + this.s;
+    }
+
+    @Override // kzc
+    public final int s() {
+        return this.w.s() + this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s;
+    }
+
+    @Override // kzc
+    public final Object[] v() {
+        return this.w.v();
+    }
+
+    @Override // r6d, java.util.List
+    /* renamed from: y, reason: merged with bridge method [inline-methods] */
+    public final r6d subList(int i, int i2) {
+        k4f.c(i, i2, this.s);
+        int i3 = this.r;
+        return this.w.subList(i + i3, i2 + i3);
     }
 }

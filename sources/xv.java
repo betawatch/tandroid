@@ -1,208 +1,395 @@
 // default package
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Point;
 import android.text.Layout;
-import android.view.KeyEvent;
+import android.text.TextUtils;
 import android.view.MotionEvent;
+import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.io.File;
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class xv extends ViewGroup implements fkb, dx {
-    public CheckBoxBase E;
-    public final ui5 a;
-    public final ey b;
-    public bx c;
-    public b59 d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
-    public boolean s;
-    public int w;
-    public vx x;
-    public boolean y;
+public final class xv extends FrameLayout implements sp3, eib {
+    public static final /* synthetic */ int W = 0;
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public final int L;
+    public TL_iv.pageBlockVideo M;
+    public yv N;
+    public TL_iv.PageBlock O;
+    public TLRPC.Document P;
+    public boolean Q;
+    public boolean R;
+    public boolean S;
+    public boolean T;
+    public c27 U;
+    public boolean V;
+    public final vg5 a;
+    public final dx b;
+    public bw c;
+    public bw d;
+    public final ImageReceiver e;
+    public final FrameLayout f;
+    public final ix h;
+    public final TextureView n;
+    public final RadialProgress2 r;
+    public final eu s;
+    public final byte w;
+    public boolean x;
+    public int y;
 
-    public xv(Activity activity, ui5 ui5Var, ey eyVar) {
-        super(activity);
-        this.a = ui5Var;
-        this.b = eyVar;
+    /* JADX WARN: Multi-variable type inference failed */
+    public xv(Context context, vg5 vg5Var, dx dxVar, int i) {
+        super(context);
+        this.a = vg5Var;
+        this.b = dxVar;
         setWillNotDraw(false);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.e = imageReceiver;
+        imageReceiver.G0 = true;
+        imageReceiver.H0 = true;
+        this.w = i;
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, null);
+        this.r = radialProgress2;
+        radialProgress2.d = -1;
+        radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
+        this.L = up3.q(((o) vg5Var).Y).k();
+        eu euVar = new eu(context, vg5Var, dxVar, 1);
+        this.s = euVar;
+        ix ixVar = new ix(context);
+        this.h = ixVar;
+        ixVar.setResizeMode(0);
+        TextureView textureView = new TextureView(context);
+        this.n = textureView;
+        textureView.setOpaque(false);
+        FrameLayout frameLayout = new FrameLayout(getContext());
+        this.f = frameLayout;
+        ixVar.addView(textureView, nme.e(-1, -2, 1));
+        frameLayout.addView(ixVar, nme.e(-1, -1, 17));
+        addView(frameLayout, nme.c(-2.0f, -1));
+        addView(euVar, nme.c(-2.0f, -1));
     }
 
-    public final int a() {
-        vx vxVar = this.x;
-        if ((vxVar != null ? vxVar.i : null) == null) {
-            return 0;
+    private int getIconForCurrentState() {
+        int i = this.J;
+        if (i == 0) {
+            return 2;
         }
-        ui5 ui5Var = this.a;
-        ey eyVar = this.b;
-        if (eyVar == null || !eyVar.H) {
-            ui5Var.getClass();
-            return hg9.y(12.0f, this.x.c.f, (gm.L(15.0f) + this.x.c.c) - ((int) Math.ceil(r0.d.getLineWidth(0))));
+        if (i == 1) {
+            return 3;
         }
-        int h = wi8.h(ui5Var, 15.0f, getMeasuredWidth());
-        wx wxVar = this.x.c;
-        return (h - wxVar.c) - (gm.L(12.0f) * wxVar.f);
+        if (i == 2) {
+            return 8;
+        }
+        return i == 3 ? 0 : 4;
     }
 
-    @Override // dx
-    public int getBoundLeft() {
-        int boundLeft;
-        this.a.getClass();
-        int L = gm.L(18.0f);
-        int min = this.E != null ? Math.min(ConnectionsManager.DEFAULT_DATACENTER_ID, (this.e - gm.L(26.0f)) - L) : Integer.MAX_VALUE;
-        vx vxVar = this.x;
-        if (vxVar != null && vxVar.i != null) {
-            min = Math.min(min, (this.x.i.k() + a()) - L);
+    @Override // sp3
+    public final void B(boolean z) {
+        e(false);
+    }
+
+    @Override // sp3
+    public final void N(String str) {
+        this.r.o(true, 1.0f);
+        if (!this.Q) {
+            e(true);
+        } else {
+            this.J = 2;
+            a();
         }
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            min = Math.min(min, (bxVar.k() + bxVar.s) - L);
-        }
-        b59 b59Var = this.d;
-        if (b59Var != null) {
-            KeyEvent.Callback callback = b59Var.a;
-            if ((callback instanceof dx) && (boundLeft = ((dx) callback).getBoundLeft()) != -1) {
-                min = Math.min(min, this.n + boundLeft);
+    }
+
+    public final void a() {
+        int i = ((o) this.a).Y;
+        int i2 = this.J;
+        ImageReceiver imageReceiver = this.e;
+        RadialProgress2 radialProgress2 = this.r;
+        if (i2 == 0) {
+            this.T = false;
+            radialProgress2.o(false, 0.0f);
+            boolean z = this.Q;
+            dx dxVar = this.b;
+            if (z) {
+                imageReceiver.Z(gl5.b(this.P), null, gl5.c(ba4.w(this.P.thumbs, 40, false, null, false), this.P), "80_80_b", null, this.P.size, null, dxVar.F, 1);
+            } else {
+                ba4.G(i).X(this.P, dxVar.F, 1, 1);
             }
+            this.J = 1;
+            radialProgress2.setIcon(getIconForCurrentState(), true, true);
+            invalidate();
+            return;
         }
-        if (min == Integer.MAX_VALUE) {
-            return -1;
-        }
-        return min;
-    }
-
-    @Override // dx
-    public int getBoundRight() {
-        int boundRight;
-        this.a.getClass();
-        int L = gm.L(18.0f);
-        vx vxVar = this.x;
-        int max = (vxVar == null || vxVar.i == null) ? Integer.MIN_VALUE : Math.max(TLObject.FLAG_31, this.x.i.l() + a() + L);
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            max = Math.max(max, bxVar.l() + bxVar.s + L);
-        }
-        b59 b59Var = this.d;
-        if (b59Var != null) {
-            KeyEvent.Callback callback = b59Var.a;
-            if ((callback instanceof dx) && (boundRight = ((dx) callback).getBoundRight()) != -1) {
-                max = Math.max(max, this.n + boundRight);
+        if (i2 != 1) {
+            if (i2 == 2) {
+                imageReceiver.u0 = true;
+                imageReceiver.w0(false);
+                this.J = -1;
+                radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                return;
             }
+            return;
         }
-        if (max == Integer.MIN_VALUE) {
-            return -1;
+        this.T = true;
+        if (this.Q) {
+            imageReceiver.c();
+        } else {
+            ba4.G(i).f(this.P);
         }
-        return max;
+        this.J = 0;
+        radialProgress2.setIcon(getIconForCurrentState(), false, true);
+        invalidate();
     }
 
-    @Override // dx
-    public int getLastLineBoundRight() {
-        int lastLineBoundRight;
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            return wi8.C(this.a, 18.0f, bxVar.m() + bxVar.s);
+    public final void b(TL_iv.pageBlockVideo pageblockvideo, yv yvVar, boolean z, boolean z2) {
+        vg5 vg5Var;
+        VideoPlayerHolderBase videoPlayerHolderBase;
+        TL_iv.pageBlockVideo pageblockvideo2 = this.M;
+        if (pageblockvideo2 != null && (videoPlayerHolderBase = (vg5Var = this.a).x) != null && vg5Var.y == this) {
+            vf6 vf6Var = vg5Var.E;
+            long j = pageblockvideo2.video_id;
+            yv a = yv.a(videoPlayerHolderBase, this);
+            this.N = a;
+            vf6Var.k(a, j);
         }
-        b59 b59Var = this.d;
-        if (b59Var != null) {
-            KeyEvent.Callback callback = b59Var.a;
-            if ((callback instanceof dx) && (lastLineBoundRight = ((dx) callback).getLastLineBoundRight()) != -1) {
-                return this.n + lastLineBoundRight;
+        this.M = pageblockvideo;
+        this.N = yvVar;
+        TLRPC.Document document = null;
+        this.O = null;
+        this.R = z;
+        dx dxVar = this.b;
+        if (dxVar != null) {
+            document = cx.a(dxVar.F, pageblockvideo.video_id);
+            this.P = document;
+        } else {
+            this.P = null;
+        }
+        this.Q = k27.J4(document) || k27.s3(this.P, false);
+        this.x = z2;
+        this.s.setVisibility(4);
+        e(false);
+        requestLayout();
+    }
+
+    public final void c(yv yvVar) {
+        Bitmap bitmap;
+        Bitmap bitmap2;
+        Bitmap bitmap3;
+        yv yvVar2 = this.N;
+        if (yvVar2 != null && (bitmap2 = yvVar.b) != null && (bitmap3 = yvVar2.b) != null && bitmap2 != bitmap3) {
+            bitmap3.recycle();
+            yvVar2 = this.N;
+            yvVar2.b = null;
+        }
+        if (yvVar2 != null && yvVar.b == null && (bitmap = yvVar2.b) != null) {
+            yvVar.a = yvVar2.a;
+            yvVar.b = bitmap;
+        }
+        this.N = yvVar;
+    }
+
+    public final void d() {
+        VideoPlayerHolderBase videoPlayerHolderBase;
+        int visibility = getVisibility();
+        ImageReceiver imageReceiver = this.e;
+        if (visibility == 0 && isAttachedToWindow()) {
+            if (this.V) {
+                return;
             }
+            this.V = true;
+            imageReceiver.I();
+            e(false);
+            return;
         }
-        return -1;
-    }
-
-    public /* bridge */ /* synthetic */ int getMinWidth() {
-        return wi8.a(this);
-    }
-
-    @Override // android.view.View, nkb
-    public final void invalidate() {
-        super.invalidate();
-        b59 b59Var = this.d;
-        if (b59Var != null) {
-            b59Var.a.invalidate();
+        if (this.V) {
+            this.V = false;
+            TL_iv.pageBlockVideo pageblockvideo = this.M;
+            vg5 vg5Var = this.a;
+            if (pageblockvideo != null && (videoPlayerHolderBase = vg5Var.x) != null && vg5Var.y == this) {
+                vf6 vf6Var = vg5Var.E;
+                long j = pageblockvideo.video_id;
+                yv a = yv.a(videoPlayerHolderBase, this);
+                c(a);
+                vf6Var.k(a, j);
+            }
+            imageReceiver.K();
+            up3.q(((o) vg5Var).Y).v(this);
         }
     }
 
-    @Override // fkb
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        return super.drawChild(canvas, view, j);
+    }
+
+    public final void e(boolean z) {
+        int i = ((o) this.a).Y;
+        String r = ba4.r(null, this.P);
+        ba4.G(i);
+        File I = ba4.I(this.P);
+        ba4.G(i);
+        boolean z2 = true;
+        boolean z3 = I.exists() || ba4.J(this.P, null, true, true).exists();
+        boolean isEmpty = TextUtils.isEmpty(r);
+        RadialProgress2 radialProgress2 = this.r;
+        if (isEmpty) {
+            radialProgress2.setIcon(4, false, false);
+            return;
+        }
+        if (z3) {
+            up3.q(i).v(this);
+            if (this.Q) {
+                this.J = -1;
+            } else {
+                this.J = 3;
+            }
+            radialProgress2.setIcon(getIconForCurrentState(), false, z);
+        } else {
+            up3.q(i).a(r, null, this);
+            yv yvVar = this.N;
+            float f = 0.0f;
+            if (yvVar == null || yvVar.b == null) {
+                if (ba4.G(i).S(r)) {
+                    this.J = 1;
+                    Float s = fl5.z().s(r);
+                    if (s != null) {
+                        f = s.floatValue();
+                    }
+                } else if (!this.T && this.S && this.Q) {
+                    this.J = 1;
+                } else {
+                    this.J = 0;
+                }
+                radialProgress2.setIcon(getIconForCurrentState(), z2, z);
+                radialProgress2.o(false, f);
+            } else {
+                this.J = -1;
+            }
+            z2 = false;
+            radialProgress2.setIcon(getIconForCurrentState(), z2, z);
+            radialProgress2.o(false, f);
+        }
+        invalidate();
+    }
+
+    public View getChannelCell() {
+        return this.s;
+    }
+
+    public TL_iv.pageBlockVideo getCurrentBlock() {
+        return this.M;
+    }
+
+    public ImageReceiver getImageView() {
+        return this.e;
+    }
+
+    @Override // sp3
+    public int getObserverTag() {
+        return this.L;
+    }
+
+    public TextureView getTextureView() {
+        return this.n;
+    }
+
+    @Override // sp3
+    public final void i(long j, long j2) {
+        this.r.o(true, Math.min(1.0f, j / j2));
+        if (this.J != 1) {
+            e(true);
+        }
+    }
+
+    @Override // eib
     public final void k(ArrayList arrayList) {
-        b59 b59Var = this.d;
-        if (b59Var != null) {
-            KeyEvent.Callback callback = b59Var.a;
-            if (callback instanceof fkb) {
-                ((fkb) callback).k(arrayList);
-            }
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            arrayList.add(bwVar);
         }
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            arrayList.add(bxVar);
+        bw bwVar2 = this.d;
+        if (bwVar2 != null) {
+            arrayList.add(bwVar2);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.i(this);
+        d();
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.i(this);
+        }
+        bw bwVar2 = this.d;
+        if (bwVar2 != null) {
+            bwVar2.i(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.f(this);
+        d();
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.f(this);
+        }
+        bw bwVar2 = this.d;
+        if (bwVar2 != null) {
+            bwVar2.f(this);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.x != null) {
-            int measuredWidth = getMeasuredWidth();
-            bx bxVar = this.x.i;
-            ui5 ui5Var = this.a;
-            if (bxVar != null) {
-                canvas.save();
-                ey eyVar = this.b;
-                if (eyVar == null || !eyVar.H) {
-                    ui5Var.getClass();
-                    int L = gm.L(15.0f);
-                    vx vxVar = this.x;
-                    canvas.translate(hg9.y(12.0f, this.x.c.f, (L + vxVar.c.c) - ((int) Math.ceil(vxVar.i.d.getLineWidth(0)))), (this.f + this.h) - (this.y ? gm.L(1.0f) : 0));
-                } else {
-                    int h = wi8.h(ui5Var, 15.0f, measuredWidth);
-                    wx wxVar = this.x.c;
-                    canvas.translate((h - wxVar.c) - (gm.L(12.0f) * wxVar.f), (this.f + this.h) - (this.y ? gm.L(1.0f) : 0));
-                }
-                this.x.i.d(canvas, this);
-                canvas.restore();
+        if (this.M != null) {
+            ImageReceiver imageReceiver = this.e;
+            if (!imageReceiver.B() || imageReceiver.i1 != 1.0f) {
+                canvas.drawRect(imageReceiver.Q0, o.q1);
             }
-            CheckBoxBase checkBoxBase = this.E;
-            if (checkBoxBase != null) {
-                checkBoxBase.e(this.e - gm.L(26.0f), this.f, gm.L(20.0f), gm.L(20.0f));
-                this.E.a(canvas);
-            }
-            if (this.c != null) {
+            imageReceiver.h(canvas, null);
+            bw bwVar = this.c;
+            vg5 vg5Var = this.a;
+            int i = 0;
+            if (bwVar != null) {
                 canvas.save();
-                canvas.translate(this.e, this.f);
-                o.s(ui5Var, canvas, this, 0);
+                canvas.translate(this.y, this.E);
+                o.s(vg5Var, canvas, this, 0);
                 this.c.d(canvas, this);
                 canvas.restore();
+                i = 1;
+            }
+            if (this.d != null) {
+                canvas.save();
+                canvas.translate(this.y, this.E + this.F);
+                o.s(vg5Var, canvas, this, i);
+                this.d.d(canvas, this);
+                canvas.restore();
+            }
+            o.r(canvas, vg5Var, this.M, getMeasuredHeight());
+            super.onDraw(canvas);
+            if (imageReceiver.R0) {
+                this.r.draw(canvas);
             }
         }
     }
@@ -210,314 +397,325 @@ public final class xv extends ViewGroup implements fkb, dx {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
         accessibilityNodeInfo.setEnabled(true);
-        bx bxVar = this.c;
-        if (bxVar == null) {
-            return;
+        StringBuilder sb = new StringBuilder(k96.M0(2131753930, null));
+        if (this.c != null) {
+            sb.append(", ");
+            sb.append(this.c.d.getText());
         }
-        accessibilityNodeInfo.setText(o.g(this.a, this.b, bxVar));
+        accessibilityNodeInfo.setText(sb.toString());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        b59 b59Var = this.d;
-        if (b59Var != null) {
-            View view = b59Var.a;
-            int i5 = this.n;
-            view.layout(i5, this.r, view.getMeasuredWidth() + i5, this.d.a.getMeasuredHeight() + this.r);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0347  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0352  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0364  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0370  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0392  */
-    @Override // android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x004d  */
+    @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onMeasure(int i, int i2) {
         int i3;
-        ui5 ui5Var;
         int i4;
+        TL_iv.pageBlockVideo pageblockvideo;
         int L;
-        int L2;
         int i5;
-        bx bxVar;
-        bw bwVar;
-        bx bxVar2;
-        bx bxVar3;
-        b59 b59Var;
-        gkb gkbVar;
-        int size;
-        int size2 = View.MeasureSpec.getSize(i);
-        vx vxVar = this.x;
-        int i6 = 1;
-        if (vxVar != null) {
-            this.c = null;
-            int i7 = vxVar.j;
-            ui5 ui5Var2 = this.a;
-            int i8 = 0;
-            if (i7 == 0 && vxVar.c.f == 0) {
-                ui5Var2.getClass();
-                i3 = gm.L(10.0f);
-            } else {
-                i3 = 0;
-            }
-            this.f = i3;
-            this.h = 0;
-            wx wxVar = this.x.c;
-            if (wxVar.d != size2 || wxVar.e != gda.V0) {
-                wxVar.d = size2;
-                wxVar.e = gda.V0;
-                wxVar.c = 0;
-                int size3 = wxVar.b.size();
-                boolean z = true;
-                for (int i9 = 0; i9 < size3; i9++) {
-                    vx vxVar2 = (vx) this.x.c.b.get(i9);
-                    String str = vxVar2.f;
-                    if (str != null) {
-                        if (vxVar2.a && "•".equalsIgnoreCase(str)) {
-                            vxVar2.i = null;
-                        } else {
-                            ui5 ui5Var3 = ui5Var2;
-                            bx m = o.m(ui5Var3, this, vxVar2.f, null, wi8.h(ui5Var2, 54.0f, size2), this.f, this.x, this.b);
-                            ui5Var2 = ui5Var3;
-                            vxVar2.i = m;
-                            wx wxVar2 = this.x.c;
-                            wxVar2.c = Math.max(wxVar2.c, (int) Math.ceil(m.d.getLineWidth(0)));
-                            z = false;
-                        }
-                    }
-                }
-                if (o.p1 != null && !z) {
-                    wx wxVar3 = this.x.c;
-                    wxVar3.c = Math.max(wxVar3.c, (int) Math.ceil(r2.measureText("00.")));
-                }
-            }
-            vx vxVar3 = this.x;
-            this.y = !vxVar3.c.a.ordered;
-            if (vxVar3.a) {
-                if (this.E == null) {
-                    ui5Var2.getClass();
-                    CheckBoxBase checkBoxBase = new CheckBoxBase(20, null, this);
-                    this.E = checkBoxBase;
-                    checkBoxBase.h(cmb.Xl, cmb.y5, cmb.j7);
-                    this.E.d(10);
-                    this.E.k(true);
-                    this.E.i(gm.L(5.0f));
-                }
-                this.E.f(-1, this.x.b, false);
-            } else {
-                this.E = null;
-            }
-            ey eyVar = this.b;
-            if (eyVar == null || !eyVar.H) {
-                ui5Var2.getClass();
-                int L3 = gm.L((this.E == null ? 0 : 26) + 24);
-                wx wxVar4 = this.x.c;
-                this.e = hg9.y(12.0f, wxVar4.f, L3 + wxVar4.c);
-            } else {
-                ui5Var2.getClass();
-                this.e = gm.L(18 + (this.E == null ? 0 : 26));
-            }
-            int h = wi8.h(ui5Var2, 18.0f, size2) - this.e;
-            if (eyVar != null && eyVar.H) {
-                int L4 = gm.L(6.0f);
-                wx wxVar5 = this.x.c;
-                h -= (gm.L(12.0f) * wxVar5.f) + (L4 + wxVar5.c);
-            }
-            vx vxVar4 = this.x;
-            ui5 ui5Var4 = ui5Var2;
-            TL_iv.RichText richText = vxVar4.e;
-            if (richText != null) {
-                ui5Var = ui5Var4;
-                bx n = o.n(this.a, this, null, richText, h, 0, vxVar4, (eyVar == null || !eyVar.H) ? Layout.Alignment.ALIGN_NORMAL : oya.a(), 0, this.b);
-                this.c = n;
-                if (n != null && n.d.getLineCount() > 0) {
-                    bx bxVar4 = this.x.i;
-                    if (bxVar4 != null && bxVar4.d.getLineCount() > 0) {
-                        this.h = (gm.L(2.5f) + this.x.i.d.getLineAscent(0)) - this.c.d.getLineAscent(0);
-                    }
-                    L = gm.L(8.0f) + this.c.d.getHeight();
-                    if (b10.f(1, this.x.c.b) == this.x) {
-                        L += gm.L(8.0f);
-                    }
-                    vx vxVar5 = this.x;
-                    i6 = (vxVar5.j == 0 || vxVar5.c.f != 0) ? L : gm.L(10.0f) + L;
-                    bxVar3 = this.c;
-                    if (bxVar3 != null) {
-                        bxVar3.s = this.e;
-                        bxVar3.w = this.f;
-                    }
-                    b59Var = this.d;
-                    if (b59Var != null && (b59Var.a instanceof fkb) && (gkbVar = ((o) ui5Var).Q0) != null) {
-                        ArrayList arrayList = gkbVar.A0;
-                        arrayList.clear();
-                        ((fkb) this.d.a).k(arrayList);
-                        size = arrayList.size();
-                        while (i8 < size) {
-                            Object obj = arrayList.get(i8);
-                            i8++;
-                            qkb qkbVar = (qkb) obj;
-                            if (qkbVar instanceof bx) {
-                                bx bxVar5 = (bx) qkbVar;
-                                bxVar5.s += this.n;
-                                bxVar5.w += this.r;
-                            }
-                        }
-                    }
-                }
-                L = 0;
-                if (b10.f(1, this.x.c.b) == this.x) {
-                }
-                vx vxVar52 = this.x;
-                if (vxVar52.j == 0) {
-                }
-                bxVar3 = this.c;
-                if (bxVar3 != null) {
-                }
-                b59Var = this.d;
-                if (b59Var != null) {
-                    ArrayList arrayList2 = gkbVar.A0;
-                    arrayList2.clear();
-                    ((fkb) this.d.a).k(arrayList2);
-                    size = arrayList2.size();
-                    while (i8 < size) {
-                    }
-                }
-            } else {
-                ui5Var = ui5Var4;
-                TL_iv.PageBlock pageBlock = vxVar4.d;
-                if (pageBlock != null) {
-                    int i10 = this.e;
-                    this.n = i10;
-                    int i11 = this.f;
-                    this.r = i11;
-                    b59 b59Var2 = this.d;
-                    if (b59Var2 != null) {
-                        View view = b59Var2.a;
-                        if (view instanceof bw) {
-                            this.r = i11 - gm.L(8.0f);
-                            if (eyVar == null || !eyVar.H) {
-                                this.n -= gm.L(18.0f);
-                            }
-                            h += gm.L(18.0f);
-                            i5 = 0 - gm.L(8.0f);
-                        } else {
-                            if ((view instanceof vv) || (view instanceof qw) || (view instanceof vw) || (view instanceof rw)) {
-                                if (eyVar == null || !eyVar.H) {
-                                    this.n = i10 - gm.L(18.0f);
-                                }
-                                L2 = gm.L(18.0f);
-                            } else if (o.I(pageBlock)) {
-                                this.n = 0;
-                                this.r = 0;
-                                this.f = 0;
-                                vx vxVar6 = this.x;
-                                i5 = ((vxVar6.j == 0 && vxVar6.c.f == 0) ? 0 - gm.L(10.0f) : 0) - gm.L(8.0f);
-                                h = size2;
-                            } else {
-                                if (this.d.a instanceof uw) {
-                                    this.n -= gm.L(18.0f);
-                                    L2 = gm.L(36.0f);
-                                }
-                                i5 = 0;
-                            }
-                            h += L2;
-                            i5 = 0;
-                        }
-                        this.d.a.measure(View.MeasureSpec.makeMeasureSpec(h, TLObject.FLAG_30), 0);
-                        if ((this.d.a instanceof bw) && (bxVar = this.x.i) != null && bxVar.d.getLineCount() > 0 && (bxVar2 = (bwVar = (bw) this.d.a).c) != null && bxVar2.d.getLineCount() > 0) {
-                            this.h = (gm.L(2.5f) + this.x.i.d.getLineAscent(0)) - bwVar.c.d.getLineAscent(0);
-                        }
-                        vx vxVar7 = this.x;
-                        if (vxVar7.d instanceof TL_iv.pageBlockDetails) {
-                            this.s = true;
-                            this.r = 0;
-                            if (vxVar7.j == 0 && vxVar7.c.f == 0) {
-                                i5 -= gm.L(10.0f);
-                            }
-                            i5 -= gm.L(8.0f);
-                        } else {
-                            View view2 = this.d.a;
-                            if (view2 instanceof aw) {
-                                this.s = ((aw) view2).w;
-                            } else if (view2 instanceof xv) {
-                                this.s = ((xv) view2).s;
-                            }
-                        }
-                        if (this.s && this.x.i != null) {
-                            this.f = ((this.d.a.getMeasuredHeight() - this.x.i.d.getHeight()) / 2) - gm.L(4.0f);
-                            this.y = false;
-                        }
-                        i4 = this.d.a.getMeasuredHeight() + i5;
+        int i6;
+        int i7;
+        dx dxVar;
+        boolean z;
+        float f;
+        int i8;
+        int i9;
+        int i10;
+        Bitmap bitmap;
+        boolean z2;
+        float f2;
+        float f3;
+        float f4;
+        int i11;
+        int size = View.MeasureSpec.getSize(i);
+        char c = 2;
+        byte b = this.w;
+        int i12 = 1;
+        if (b == 1) {
+            size = ((View) getParent()).getMeasuredWidth();
+            i4 = ((View) getParent()).getMeasuredHeight();
+        } else {
+            if (b != 2) {
+                i3 = size;
+                i4 = 0;
+                int i13 = ((o) this.a).Y;
+                pageblockvideo = this.M;
+                ImageReceiver imageReceiver = this.e;
+                if (pageblockvideo != null) {
+                    if (b != 0 || (i11 = pageblockvideo.level) <= 0) {
+                        this.y = gl.L(18.0f);
+                        L = i3 - gl.L(36.0f);
+                        i5 = 0;
+                        i6 = i3;
                     } else {
-                        i4 = 0;
+                        i5 = gl.L(18.0f) + gl.L(i11 * 14);
+                        this.y = i5;
+                        i6 = ug8.B(18.0f, i5, i3);
+                        L = i6;
                     }
-                    L = i4 + gm.L(8.0f);
-                    if (b10.f(1, this.x.c.b) == this.x) {
+                    TLRPC.Document document = this.P;
+                    dx dxVar2 = this.b;
+                    if (document != null) {
+                        int L2 = gl.L(48.0f);
+                        TLRPC.PhotoSize w = ba4.w(this.P.thumbs, 48, false, null, false);
+                        if (b == 0) {
+                            int size2 = this.P.attributes.size();
+                            int i14 = 0;
+                            f = 2.0f;
+                            while (true) {
+                                if (i14 >= size2) {
+                                    z2 = false;
+                                    break;
+                                }
+                                char c2 = c;
+                                if (this.P.attributes.get(i14) instanceof TLRPC.TL_documentAttributeVideo) {
+                                    i4 = (int) ((i6 / r13.w) * r13.h);
+                                    z2 = true;
+                                    break;
+                                } else {
+                                    i14++;
+                                    c = c2;
+                                }
+                            }
+                            if (w != null) {
+                                f2 = w.w;
+                                f3 = w.h;
+                            } else {
+                                f2 = 100.0f;
+                                f3 = 100.0f;
+                            }
+                            if (!z2) {
+                                i4 = (int) ((i6 / f2) * f3);
+                            }
+                            if (this.O instanceof TL_iv.pageBlockCover) {
+                                i4 = Math.min(i4, i6);
+                                f4 = 100.0f;
+                            } else {
+                                Point point = gl.q;
+                                f4 = 100.0f;
+                                int max = (int) ((Math.max(point.x, point.y) - gl.L(56.0f)) * 0.9f);
+                                if (i4 > max) {
+                                    i6 = (int) ((max / f3) * f2);
+                                    i5 += ((i3 - i5) - i6) / 2;
+                                    i4 = max;
+                                }
+                            }
+                            if (i4 == 0) {
+                                i4 = gl.L(f4);
+                            } else if (i4 < L2) {
+                                i4 = L2;
+                            }
+                        } else {
+                            f = 2.0f;
+                            if (b == 2) {
+                                if ((this.U.l & 2) == 0) {
+                                    i6 -= gl.L(2.0f);
+                                }
+                                if ((this.U.l & 8) == 0) {
+                                    int i15 = i6;
+                                    i8 = i4;
+                                    i4 -= gl.L(2.0f);
+                                    i9 = i5;
+                                    i10 = i15;
+                                    imageReceiver.I0 = this.P;
+                                    imageReceiver.i0(i9, (!this.x || b == 1 || b == 2 || this.M.level > 0) ? 0 : gl.L(8.0f), i10, i4);
+                                    if (!this.R) {
+                                        if (this.Q) {
+                                            yv yvVar = this.N;
+                                            if (yvVar == null || (bitmap = yvVar.b) == null) {
+                                                this.S = up3.q(i13).c(4, this.P.size);
+                                                ba4.G(i13);
+                                                File I = ba4.I(this.P);
+                                                ba4.G(i13);
+                                                File J = ba4.J(this.P, null, true, true);
+                                                if (this.S || I.exists() || J.exists()) {
+                                                    imageReceiver.O = null;
+                                                    imageReceiver.Y(null, null, gl5.b(this.P), "200_200_pframe", gl5.c(w, this.P), "80_80_b", null, this.P.size, null, dxVar2.F, 1);
+                                                } else {
+                                                    imageReceiver.O = gl5.b(this.P);
+                                                    imageReceiver.Y(null, null, null, null, gl5.c(w, this.P), "80_80_b", null, this.P.size, null, dxVar2.F, 1);
+                                                }
+                                            } else {
+                                                imageReceiver.O = null;
+                                                imageReceiver.f0(bitmap);
+                                            }
+                                        } else {
+                                            imageReceiver.O = null;
+                                            imageReceiver.Z(null, null, gl5.c(w, this.P), "80_80_b", null, 0L, null, dxVar2 != null ? dxVar2.F : null, 1);
+                                        }
+                                    }
+                                    imageReceiver.S0 = true;
+                                    float f5 = L2;
+                                    float f6 = f;
+                                    int z3 = (int) oo1.z(imageReceiver.N0, f5, f6, imageReceiver.L0);
+                                    this.G = z3;
+                                    int z4 = (int) oo1.z(imageReceiver.O0, f5, f6, imageReceiver.M0);
+                                    this.H = z4;
+                                    this.r.p(z3, z4, z3 + L2, L2 + z4);
+                                    i7 = i8;
+                                }
+                            }
+                        }
+                        i9 = i5;
+                        i10 = i6;
+                        i8 = i4;
+                        imageReceiver.I0 = this.P;
+                        imageReceiver.i0(i9, (!this.x || b == 1 || b == 2 || this.M.level > 0) ? 0 : gl.L(8.0f), i10, i4);
+                        if (!this.R) {
+                        }
+                        imageReceiver.S0 = true;
+                        float f52 = L2;
+                        float f62 = f;
+                        int z32 = (int) oo1.z(imageReceiver.N0, f52, f62, imageReceiver.L0);
+                        this.G = z32;
+                        int z42 = (int) oo1.z(imageReceiver.O0, f52, f62, imageReceiver.M0);
+                        this.H = z42;
+                        this.r.p(z32, z42, z32 + L2, L2 + z42);
+                        i7 = i8;
+                    } else {
+                        i7 = i4;
                     }
-                    vx vxVar522 = this.x;
-                    if (vxVar522.j == 0) {
+                    int L3 = (int) (imageReceiver.M0 + imageReceiver.O0 + gl.L(8.0f));
+                    this.E = L3;
+                    if (b == 0) {
+                        TL_iv.pageBlockVideo pageblockvideo2 = this.M;
+                        bw m = o.m(this.a, this, null, pageblockvideo2.caption.text, L, L3, pageblockvideo2, this.b);
+                        this.c = m;
+                        if (m != null) {
+                            int height = this.c.d.getHeight() + gl.L(4.0f);
+                            this.F = height;
+                            i7 = de9.w(4.0f, height, i7);
+                            bw bwVar = this.c;
+                            bwVar.s = this.y;
+                            bwVar.w = this.E;
+                        }
+                        int i16 = i7;
+                        TL_iv.pageBlockVideo pageblockvideo3 = this.M;
+                        dxVar = dxVar2;
+                        bw n = o.n(this.a, this, null, pageblockvideo3.caption.credit, L, 0, pageblockvideo3, (dxVar2 == null || !dxVar2.H) ? Layout.Alignment.ALIGN_NORMAL : lwa.a(), 0, this.b);
+                        this.d = n;
+                        if (n != null) {
+                            i7 = this.d.d.getHeight() + gl.L(4.0f) + i16;
+                            bw bwVar2 = this.d;
+                            bwVar2.s = this.y;
+                            bwVar2.w = this.E + this.F;
+                        } else {
+                            i7 = i16;
+                        }
+                    } else {
+                        dxVar = dxVar2;
                     }
-                    bxVar3 = this.c;
-                    if (bxVar3 != null) {
+                    if (!this.x && b == 0 && this.M.level <= 0) {
+                        i7 += gl.L(8.0f);
                     }
-                    b59Var = this.d;
-                    if (b59Var != null) {
+                    if ((this.O instanceof TL_iv.pageBlockCover) && dxVar != null) {
+                        ArrayList arrayList = dxVar.e;
+                        if (arrayList.size() > 1 && (arrayList.get(1) instanceof TL_iv.pageBlockChannel)) {
+                            z = true;
+                            i12 = (b != 2 || z) ? i7 : gl.L(8.0f) + i7;
+                        }
+                    }
+                    z = false;
+                    if (b != 2) {
                     }
                 }
-                L = 0;
-                if (b10.f(1, this.x.c.b) == this.x) {
+                eu euVar = this.s;
+                euVar.measure(i, i2);
+                euVar.setTranslationY(imageReceiver.O0 - gl.L(39.0f));
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.f.getLayoutParams();
+                layoutParams.leftMargin = (int) imageReceiver.L0;
+                layoutParams.topMargin = (int) imageReceiver.M0;
+                layoutParams.width = (int) imageReceiver.N0;
+                layoutParams.height = (int) imageReceiver.O0;
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+            }
+            float f7 = this.U.f;
+            Point point2 = gl.q;
+            i4 = (int) Math.ceil(f7 * Math.max(point2.x, point2.y) * 0.5f);
+        }
+        i3 = size;
+        int i132 = ((o) this.a).Y;
+        pageblockvideo = this.M;
+        ImageReceiver imageReceiver2 = this.e;
+        if (pageblockvideo != null) {
+        }
+        eu euVar2 = this.s;
+        euVar2.measure(i, i2);
+        euVar2.setTranslationY(imageReceiver2.O0 - gl.L(39.0f));
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.f.getLayoutParams();
+        layoutParams2.leftMargin = (int) imageReceiver2.L0;
+        layoutParams2.topMargin = (int) imageReceiver2.M0;
+        layoutParams2.width = (int) imageReceiver2.N0;
+        layoutParams2.height = (int) imageReceiver2.O0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x006b, code lost:
+    
+        if (r1 <= (gl.L(48.0f) + r0)) goto L29;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float x = motionEvent.getX();
+        float y = motionEvent.getY();
+        eu euVar = this.s;
+        int visibility = euVar.getVisibility();
+        dx dxVar = this.b;
+        if (visibility != 0 || y <= euVar.getTranslationY() || y >= euVar.getTranslationY() + gl.L(39.0f)) {
+            if (motionEvent.getAction() == 0 && this.e.H(x, y)) {
+                if (this.J != -1) {
+                    if (x >= this.G && x <= gl.L(48.0f) + r2) {
+                        if (y >= this.H) {
+                        }
+                    }
                 }
-                vx vxVar5222 = this.x;
-                if (vxVar5222.j == 0) {
+                if (this.J != 0) {
+                    this.I = true;
                 }
-                bxVar3 = this.c;
-                if (bxVar3 != null) {
+                this.K = true;
+                invalidate();
+            } else if (motionEvent.getAction() == 1) {
+                if (this.I) {
+                    this.I = false;
+                    this.a.b(dxVar, this.M);
+                } else if (this.K) {
+                    this.K = false;
+                    playSoundEffect(0);
+                    a();
+                    invalidate();
                 }
-                b59Var = this.d;
-                if (b59Var != null) {
+            } else if (motionEvent.getAction() == 3) {
+                this.I = false;
+            }
+            if (!this.I && !this.K) {
+                if (!o.i(this.a, this.b, motionEvent, this, this.c, this.y, this.E)) {
+                    if (!o.i(this.a, this.b, motionEvent, this, this.d, this.y, this.E + this.F) && !super.onTouchEvent(motionEvent)) {
+                        return false;
+                    }
                 }
             }
+        } else if (dxVar != null && dxVar.G != null) {
+            motionEvent.getAction();
+            return true;
         }
-        setMeasuredDimension(size2, i6);
+        return true;
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (o.i(this.a, this.b, motionEvent, this, this.c, this.e, this.f)) {
-            return true;
-        }
-        return super.onTouchEvent(motionEvent);
+    public void setVisibility(int i) {
+        super.setVisibility(i);
+        d();
     }
 
-    public void setBlock(vx vxVar) {
-        vx vxVar2 = this.x;
-        ey eyVar = this.b;
-        if (vxVar2 != vxVar) {
-            this.x = vxVar;
-            b59 b59Var = this.d;
-            if (b59Var != null) {
-                removeView(b59Var.a);
-                this.d = null;
-            }
-            TL_iv.PageBlock pageBlock = this.x.d;
-            if (pageBlock != null && eyVar != null) {
-                int I = ey.I(pageBlock);
-                this.w = I;
-                u69 x = eyVar.x(this, I);
-                this.d = (b59) x;
-                addView(x.a);
-            }
-        }
-        TL_iv.PageBlock pageBlock2 = this.x.d;
-        if (pageBlock2 != null && eyVar != null) {
-            eyVar.H(this.w, this.d, pageBlock2, 0, 0, false);
-        }
-        requestLayout();
+    @Override // sp3
+    public final void l(long j, long j2) {
     }
 }

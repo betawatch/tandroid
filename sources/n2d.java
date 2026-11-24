@@ -1,7 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import com.google.android.gms.common.api.Scope;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class n2d extends u1d implements o2d {
-    public static final /* synthetic */ int i = 0;
+public abstract class n2d {
+    public static final op5 a;
+    public static final yn b;
+
+    static {
+        wn wnVar = new wn();
+        op5 op5Var = new op5((byte) 2);
+        a = op5Var;
+        new Scope(1, "profile");
+        new Scope(1, "email");
+        b = new yn("SignIn.API", op5Var, wnVar);
+    }
 }

@@ -1,89 +1,62 @@
 // default package
 
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.view.LayoutInflater;
-import org.telegram.messenger.beta.R;
+import java.util.Timer;
+import java.util.TimerTask;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ox2 extends ContextWrapper {
-    public int a;
-    public Resources.Theme b;
-    public LayoutInflater c;
-    public Resources d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ox2 extends TimerTask {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public ox2(Context context, int i) {
-        super(context);
-        this.a = i;
+    public /* synthetic */ ox2(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    public final void a() {
-        if (this.b == null) {
-            this.b = getResources().newTheme();
-            Resources.Theme theme = getBaseContext().getTheme();
-            if (theme != null) {
-                this.b.setTo(theme);
-            }
-        }
-        this.b.applyStyle(this.a, true);
-    }
-
-    @Override // android.content.ContextWrapper
-    public final void attachBaseContext(Context context) {
-        super.attachBaseContext(context);
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final AssetManager getAssets() {
-        return getResources().getAssets();
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final Resources getResources() {
-        Resources resources = this.d;
-        if (resources != null) {
-            return resources;
-        }
-        Resources resources2 = super.getResources();
-        this.d = resources2;
-        return resources2;
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final Object getSystemService(String str) {
-        if (!"layout_inflater".equals(str)) {
-            return getBaseContext().getSystemService(str);
-        }
-        LayoutInflater layoutInflater = this.c;
-        if (layoutInflater != null) {
-            return layoutInflater;
-        }
-        LayoutInflater cloneInContext = LayoutInflater.from(getBaseContext()).cloneInContext(this);
-        this.c = cloneInContext;
-        return cloneInContext;
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final Resources.Theme getTheme() {
-        Resources.Theme theme = this.b;
-        if (theme != null) {
-            return theme;
-        }
-        if (this.a == 0) {
-            this.a = R.style.Theme_AppCompat_Light;
-        }
-        a();
-        return this.b;
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final void setTheme(int i) {
-        if (this.a != i) {
-            this.a = i;
-            a();
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                try {
+                    ((Timer) ((v22) this.c).h).cancel();
+                    ((v22) this.c).h = null;
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                }
+                Utilities.g.c(new gu2((v22) this.c, (String) this.b, (byte) 4));
+                return;
+            case 1:
+                dq5 dq5Var = (dq5) this.c;
+                try {
+                    dq5Var.f.cancel();
+                    dq5Var.f = null;
+                } catch (Exception e2) {
+                    fa4.g(e2, true);
+                }
+                gl.c3(new cq5(this, (String) this.b, (byte) 0));
+                return;
+            case 2:
+                synchronized (((MediaController) this.c).x1) {
+                    gl.c3(new oh6((Object) this, this.b, (byte) 6));
+                }
+                return;
+            default:
+                sr9 sr9Var = (sr9) this.c;
+                try {
+                    sr9Var.n.cancel();
+                    sr9Var.n = null;
+                } catch (Exception e3) {
+                    fa4.g(e3, true);
+                }
+                String str = (String) this.b;
+                sr9Var.getClass();
+                gl.c3(new tj9(sr9Var, str, (byte) 11));
+                return;
         }
     }
 }

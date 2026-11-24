@@ -14,7 +14,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -46,7 +46,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -57,7 +57,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;
@@ -70,7 +70,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     public AndroidVideoDecoder(MediaCodecWrapperFactory mediaCodecWrapperFactory, String str, VideoCodecMimeType videoCodecMimeType, int i, EglBase.Context context) {
         if (!isSupportedColorFormat(i)) {
-            u36.j(hg9.j(i, "Unsupported color format: "));
+            w26.j(de9.k(i, "Unsupported color format: "));
             throw null;
         }
         Logging.d(TAG, "ctor name: " + str + " type: " + videoCodecMimeType + " color format: " + i + " context: " + context);
@@ -85,7 +85,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private VideoFrame.Buffer copyI420Buffer(ByteBuffer byteBuffer, int i, int i2, int i3, int i4) {
         boolean z;
         if (i % 2 != 0) {
-            bh7.j(hg9.j(i, "Stride is not divisible by two: "));
+            fi7.g(de9.k(i, "Stride is not divisible by two: "));
             return null;
         }
         int i5 = (i3 + 1) / 2;
@@ -95,8 +95,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         int i9 = i * i2;
         int i10 = i7 * i6;
         int i11 = i9 + i10;
-        int z2 = kt6.z(i7, i2, 2, i9);
-        int i12 = z2 + i10;
+        int y = ls6.y(i7, i2, 2, i9);
+        int i12 = y + i10;
         VideoFrame.I420Buffer allocateI420Buffer = allocateI420Buffer(i3, i4);
         try {
             byteBuffer.limit(i8);
@@ -114,10 +114,10 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                     dataU.put(byteBuffer);
                 }
                 byteBuffer.limit(i12);
-                byteBuffer.position(z2);
+                byteBuffer.position(y);
                 copyPlane(byteBuffer.slice(), i7, allocateI420Buffer.getDataV(), allocateI420Buffer.getStrideV(), i5, i6);
                 if (i2 % 2 == 1) {
-                    byteBuffer.position(((i6 - 1) * i7) + z2);
+                    byteBuffer.position(((i6 - 1) * i7) + y);
                     ByteBuffer dataV = allocateI420Buffer.getDataV();
                     dataV.position(allocateI420Buffer.getStrideV() * i6);
                     dataV.put(byteBuffer);
@@ -125,7 +125,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 return allocateI420Buffer;
             } catch (Throwable th) {
                 th = th;
-                fc4.g(th, z);
+                fa4.g(th, z);
                 return allocateI420Buffer;
             }
         } catch (Throwable th2) {

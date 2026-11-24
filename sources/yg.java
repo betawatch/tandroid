@@ -1,260 +1,192 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.text.TextUtils;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.SystemClock;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.json.JSONObject;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.StickersActivity;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yg implements ee, fu2, ni7, mac, es6, yeb, NativeInstance.PayloadCallback {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class yg implements i8c {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ yg(int i, Context context, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        this.a = (byte) 17;
-        this.b = i;
-        this.c = context;
-        this.d = tL_messages_stickerSet;
+    public /* synthetic */ yg(int i, long j, f53 f53Var, Context context, TLRPC.Photo photo) {
+        this.c = i;
+        this.d = j;
+        this.e = photo;
+        this.b = context;
+        this.f = f53Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002c  */
-    @Override // fu2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void accept(Object obj) {
-        q8a q8aVar;
-        tx6 tx6Var = (tx6) this.c;
-        sw6 sw6Var = (sw6) this.d;
-        try {
-            q8aVar = (q8a) ((t76) obj).get();
-            jte.l(q8aVar, "SessionResult must not be null");
-        } catch (InterruptedException e) {
-            e = e;
-            ncd.g("MediaSessionStub", "Session operation failed", e);
-            q8aVar = new q8a(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
-        } catch (CancellationException e2) {
-            ncd.g("MediaSessionStub", "Session operation cancelled", e2);
-            q8aVar = new q8a(1);
-        } catch (ExecutionException e3) {
-            e = e3;
-            ncd.g("MediaSessionStub", "Session operation failed", e);
-            q8aVar = new q8a(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
-        }
-        oz6.W(tx6Var, sw6Var, this.b, q8aVar);
-    }
-
-    @Override // ni7
-    public final void b(Canvas canvas) {
-        tj9 tj9Var = (tj9) this.c;
-        View view = (View) this.d;
-        AtomicReference atomicReference = tj9Var.E;
-        StaticLayout staticLayout = tj9Var.b;
-        ArrayList arrayList = tj9Var.x;
-        rna.g(view, false, this.b, 0, atomicReference, 0, staticLayout, arrayList, canvas, false);
-        boa.a(canvas, tj9Var.b);
-        gn.drawAnimatedEmojis(canvas, tj9Var.b, tj9Var.F, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
-    }
-
-    @Override // yeb
-    public final Object e() {
-        za0 za0Var = (za0) this.c;
-        ((in3) za0Var.d).E((rb0) this.d, this.b + 1, false);
-        return null;
-    }
-
-    @Override // es6
-    public final void f(String str, ArrayList arrayList) {
-        d3b d3bVar = (d3b) this.c;
-        HashMap hashMap = (HashMap) this.d;
-        e3b e3bVar = d3bVar.a;
-        int i = e3bVar.Q;
-        HashMap hashMap2 = e3bVar.J;
-        if (this.b == i) {
-            int size = arrayList.size();
-            boolean z = false;
-            for (int i2 = 0; i2 < size; i2++) {
-                String str2 = ((ds6) arrayList.get(i2)).a;
-                ArrayList arrayList2 = (ArrayList) hashMap.get(str2);
-                if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    d3bVar.a();
-                    if (!hashMap2.containsKey(arrayList2)) {
-                        hashMap2.put(arrayList2, str2);
-                        e3bVar.K.add(arrayList2);
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                e3bVar.f();
-            }
-        }
-    }
-
-    @Override // mac
-    public final void h(Object obj, TLRPC.Document document, Boolean bool) {
-        Context context = (Context) this.c;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
-        int i = this.b;
-        String V = k47.V(document, "😀", Integer.valueOf(i));
-        String str = TextUtils.isEmpty(V) ? "😀" : V;
-        he heVar = new he(3, null, context);
-        TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = new TLRPC.TL_stickers_addStickerToSet();
-        tL_stickers_addStickerToSet.stickerset = hs6.b0(tL_messages_stickerSet.set);
-        tL_stickers_addStickerToSet.sticker = hs6.c0(document, str);
-        ConnectionsManager.getInstance(z8c.t0).sendRequest(tL_stickers_addStickerToSet, new ev0((Object) heVar, i, (Object) document, obj, (Object) tL_stickers_addStickerToSet, (byte) 13));
-        try {
-            heVar.q(350L);
-        } catch (Exception unused) {
-        }
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        int i2 = this.b;
-        Object obj = this.d;
-        Object obj2 = this.c;
+        long j = this.d;
+        int i = this.c;
+        byte b2 = 0;
+        Object obj3 = this.f;
+        Object obj4 = this.b;
+        Object obj5 = this.e;
         switch (b) {
             case 0:
-                hk hkVar = (hk) obj2;
-                af7 af7Var = (af7) obj;
-                String trim = hkVar.getText().toString().trim();
-                if (trim.length() <= i2 && !trim.isEmpty()) {
-                    af7Var.a(trim);
-                    heVar.dismiss();
-                    break;
-                } else {
-                    gm.z3(hkVar);
-                    break;
+                TLRPC.Photo photo = (TLRPC.Photo) obj5;
+                Context context = (Context) obj4;
+                f53 f53Var = (f53) obj3;
+                Integer num = (Integer) obj;
+                TL_account.reportProfilePhoto reportprofilephoto = new TL_account.reportProfilePhoto();
+                reportprofilephoto.peer = na7.q1(i).h1(j);
+                TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                tL_inputPhoto.id = photo.id;
+                tL_inputPhoto.file_reference = photo.file_reference;
+                tL_inputPhoto.access_hash = photo.access_hash;
+                reportprofilephoto.photo_id = tL_inputPhoto;
+                reportprofilephoto.message = "";
+                if (num.intValue() == 0) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonSpam();
+                } else if (num.intValue() == 1) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonViolence();
+                } else if (num.intValue() == 2) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonChildAbuse();
+                } else if (num.intValue() == 5) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonPornography();
+                } else if (num.intValue() == 3) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonIllegalDrugs();
+                } else if (num.intValue() == 4) {
+                    reportprofilephoto.reason = new TLRPC.TL_inputReportReasonPersonalDetails();
                 }
+                ConnectionsManager.getInstance(i).sendRequest(reportprofilephoto, null);
+                new u21(f11.a(context), f53Var).E(f53Var).j();
                 break;
             case 1:
-                j51 j51Var = (j51) obj2;
-                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) obj;
-                String obj3 = j51Var.getText().toString();
-                if (obj3.length() <= 32) {
-                    q51 d = q51.d(i2);
-                    TL_account.TL_businessChatLink c = d.c(tL_businessChatLink.link);
-                    if (c != null) {
-                        TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
-                        tL_inputBusinessChatLink.message = c.message;
-                        tL_inputBusinessChatLink.entities = c.entities;
-                        tL_inputBusinessChatLink.title = obj3;
-                        d.b(c, tL_inputBusinessChatLink, null);
+                Context context2 = (Context) obj4;
+                wjb wjbVar = (wjb) obj5;
+                av4 av4Var = (av4) obj3;
+                gt4 gt4Var = (gt4) obj;
+                if (gt4Var != null) {
+                    int i2 = this.c;
+                    y6c.h(i2);
+                    long n = cf3.n(gt4Var.e.peer);
+                    long j2 = this.d;
+                    if (j2 != n && j2 != 0 && n != 0) {
+                        wy wyVar = new wy(context2, i2, gt4Var, j2, av4Var);
+                        TLObject V1 = n >= 0 ? na7.q1(i2).V1(Long.valueOf(n)) : na7.q1(i2).K0(Long.valueOf(-n));
+                        TLObject V12 = j2 >= 0 ? na7.q1(i2).V1(Long.valueOf(j2)) : na7.q1(i2).K0(Long.valueOf(-j2));
+                        LinearLayout j3 = de9.j(context2, 1);
+                        j3.addView(new uqa(context2, V1, V12), nme.t(-1, -2, 48, 0, -4, 0, 0));
+                        TextView textView = new TextView(context2);
+                        kk7.i(textView);
+                        textView.setText(k96.M0(2131750289, null));
+                        int i3 = bkb.i5;
+                        tb4.w(textView, i3, wjbVar, 1, 20.0f);
+                        textView.setGravity(k96.a0 ? 5 : 3);
+                        j3.addView(textView, nme.d(-2, -2.0f, (k96.a0 ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
+                        TextView textView2 = new TextView(context2);
+                        zkb.X(textView2, i3, wjbVar);
+                        textView2.setTextSize(1, 16.0f);
+                        de9.r(null, null, 2131750288, new Object[]{cf3.s(n), cf3.s(j2)}, textView2);
+                        j3.addView(textView2, nme.t(-1, -2, 48, 24, 4, 24, 4));
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wjbVar, context2);
+                        alertDialog$Builder.n(j3);
+                        alertDialog$Builder.j(k96.M0(2131751759, null), new l0(wyVar, (byte) 22));
+                        alertDialog$Builder.g(k96.M0(2131752577, null), null);
+                        alertDialog$Builder.a.show();
+                        break;
+                    } else if (gt4Var.e.bid_date > 0 && !gt4Var.f()) {
+                        ty tyVar = new ty(context2, wjbVar, null, gt4Var);
+                        tyVar.i2 = av4Var;
+                        tyVar.show();
+                        break;
+                    } else {
+                        new ez(context2, wjbVar, j2, gt4Var.d, av4Var).show();
+                        break;
                     }
-                    heVar.dismiss();
-                    break;
-                } else {
-                    gm.z3(j51Var);
-                    break;
                 }
+                break;
             case 2:
-                yv1 yv1Var = (yv1) obj2;
-                yv1Var.getMessagesController().G3(yv1Var.e, yv1Var.f, this.b, false, !r4[1], ((boolean[]) obj)[0]);
-                u31 B = c41.B(yv1Var, true, null, null, yv1Var.Ba);
-                B.j();
-                y21 y21Var = B.e;
-                y21Var.postDelayed(new j21(y21Var, (byte) 2), 550L);
-                break;
-            case 3:
-                ((yv1) obj2).C9(i2, (k47) obj);
-                break;
-            case 4:
-            case 5:
-            case 9:
-            case 12:
-            case 13:
-            default:
-                ((StickersActivity) obj2).k0(i2, (ArrayList) obj);
-                break;
-            case 6:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                g95 g95Var = ((d85) obj2).r1.b;
-                g95Var.T2.C(i2, editTextBoldCursor.getText().toString());
-                gm.t1(editTextBoldCursor);
-                g95Var.c1().j(i2 == 0 ? 39 : 100, 0L, null);
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().playStartRecordSound();
-                    break;
-                }
-                break;
-            case 7:
-                LaunchActivity launchActivity = (LaunchActivity) obj2;
-                HashMap hashMap = (HashMap) obj;
-                String str = LaunchActivity.C1;
-                ArrayList arrayList = launchActivity.e0;
-                if (!arrayList.isEmpty() && gm.H1((d) b10.f(1, arrayList))) {
-                    pc6 pc6Var = new pc6(0);
-                    pc6Var.M0 = new ji((Object) hashMap, i2, (byte) 10);
-                    launchActivity.t0(pc6Var);
-                    break;
-                }
-                break;
-            case 8:
-                ((pc6) obj2).I0(900, i2, (TLRPC.User) obj);
-                break;
-            case 10:
-                goc.M0(i2, (ylb) obj, (Context) obj2);
-                break;
-            case 11:
-                ((PasscodeActivity) obj2).r0((lp7) obj, i2);
-                break;
-            case 14:
-                ru9 ru9Var = (ru9) obj2;
-                TLRPC.Reaction reaction = (TLRPC.Reaction) obj;
-                String obj4 = ru9Var.getText().toString();
-                if (obj4.length() <= 12) {
-                    oc7.r1(i2).q4(k39.d(reaction), obj4);
-                    heVar.dismiss();
+                w25 w25Var = (w25) obj5;
+                p8c p8cVar = (p8c) obj4;
+                JSONObject jSONObject = (JSONObject) obj3;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_error != null || !(bool instanceof TLRPC.TL_boolTrue)) {
+                    p8cVar.a(w25.z(tL_error, "submitResponse"));
                     break;
                 } else {
-                    gm.z3(ru9Var);
-                    break;
+                    boolean optBoolean = jSONObject.optBoolean("disconnect");
+                    long j4 = this.d;
+                    int i4 = this.c;
+                    if (!optBoolean) {
+                        w25Var.d(i4, j4, p8cVar);
+                        break;
+                    } else {
+                        TL_wallet.tonConnectCloseSession tonconnectclosesession = new TL_wallet.tonConnectCloseSession();
+                        tonconnectclosesession.session_id = j4;
+                        w25Var.f.sendRequestTyped(tonconnectclosesession, new hc(b2), new g25(w25Var, p8cVar, j4, i4, (byte) 1));
+                        break;
+                    }
                 }
-            case 15:
-                ((SessionsActivity) obj2).k0(i2, (boolean[]) obj);
+                break;
+            default:
+                kw8 kw8Var = (kw8) obj5;
+                jw8 jw8Var = (jw8) obj3;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (kw8Var.x == ((int[]) obj4)[0]) {
+                    kw8Var.x = 0;
+                }
+                if (jw8Var != null && kw8.h(i).get(j) == jw8Var) {
+                    if (tL_error2 == null) {
+                        jw8Var.b = SystemClock.elapsedRealtime();
+                    } else {
+                        kw8.h(i).remove(j);
+                    }
+                }
+                if (tL_error2 != null) {
+                    fa4.d("QrShare: setShareTheme " + tL_error2.text);
+                    if (!kw8Var.F) {
+                        vw8 vw8Var = kw8Var.b;
+                        vw8Var.getClass();
+                        vw8Var.d1(R.drawable.msg_warning, k96.M0(2131751093, null), null);
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback
-    public final void run(int i, String str) {
-        ((VoIPService) this.c).lambda$createGroupInstance$69(this.b, (boolean[]) this.d, i, str);
+    public /* synthetic */ yg(w25 w25Var, p8c p8cVar, JSONObject jSONObject, long j, int i) {
+        this.e = w25Var;
+        this.b = p8cVar;
+        this.f = jSONObject;
+        this.d = j;
+        this.c = i;
     }
 
-    public /* synthetic */ yg(Object obj, int i, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
-        this.d = obj2;
+    public /* synthetic */ yg(kw8 kw8Var, int[] iArr, jw8 jw8Var, int i, long j) {
+        this.e = kw8Var;
+        this.b = iArr;
+        this.f = jw8Var;
+        this.c = i;
+        this.d = j;
     }
 
-    public /* synthetic */ yg(Object obj, Object obj2, int i, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.b = i;
+    public /* synthetic */ yg(Context context, wjb wjbVar, int i, long j, av4 av4Var) {
+        this.b = context;
+        this.e = wjbVar;
+        this.c = i;
+        this.d = j;
+        this.f = av4Var;
     }
 }

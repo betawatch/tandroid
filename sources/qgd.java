@@ -1,17 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class qgd {
-    public static final o94 a;
-    public static final o94 b;
-    public static final o94[] c;
+    public static final /* synthetic */ int a = 0;
 
     static {
-        o94 o94Var = new o94("EXECUTE", 1L);
-        a = o94Var;
-        o94 o94Var2 = new o94("INIT", 1L);
-        b = o94Var2;
-        c = new o94[]{o94Var, o94Var2};
+        qgd.class.getClassLoader();
+    }
+
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
+        }
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

@@ -1,49 +1,56 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
+import android.view.ViewGroup;
+import java.util.WeakHashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class qo extends ro {
-    public final /* synthetic */ byte b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class qo implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bp b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qo(String str, byte b) {
-        super(str, (byte) 1);
-        this.b = b;
+    public /* synthetic */ qo(bp bpVar, byte b) {
+        this.a = b;
+        this.b = bpVar;
     }
 
-    @Override // ro
-    public final void b(int i, Object obj) {
-        switch (this.b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
+        byte b = this.a;
+        bp bpVar = this.b;
+        switch (b) {
             case 0:
-                ((Paint) obj).setAlpha(i);
-                break;
-            case 1:
-                ((Paint) obj).setColor(i);
-                break;
-            case 2:
-                ((Drawable) obj).setAlpha(i);
+                if ((bpVar.j0 & 1) != 0) {
+                    bpVar.j(0);
+                }
+                if ((bpVar.j0 & TLObject.FLAG_12) != 0) {
+                    bpVar.j(kk7.s1);
+                }
+                bpVar.i0 = false;
+                bpVar.j0 = 0;
                 break;
             default:
-                ((ShapeDrawable) obj).getPaint().setAlpha(i);
+                bpVar.F.showAtLocation(bpVar.E, 55, 0, 0);
+                afc afcVar = bpVar.H;
+                if (afcVar != null) {
+                    afcVar.b();
+                }
+                if (bpVar.J && (viewGroup = bpVar.K) != null) {
+                    WeakHashMap weakHashMap = jdc.a;
+                    if (viewGroup.isLaidOut()) {
+                        bpVar.E.setAlpha(0.0f);
+                        afc a = jdc.a(bpVar.E);
+                        a.a(1.0f);
+                        bpVar.H = a;
+                        a.d(new ro(this, (byte) 0));
+                        break;
+                    }
+                }
+                bpVar.E.setAlpha(1.0f);
+                bpVar.E.setVisibility(0);
                 break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Integer.valueOf(((Paint) obj).getAlpha());
-            case 1:
-                return Integer.valueOf(((Paint) obj).getColor());
-            case 2:
-                return Integer.valueOf(((Drawable) obj).getAlpha());
-            default:
-                return Integer.valueOf(((ShapeDrawable) obj).getPaint().getAlpha());
         }
     }
 }

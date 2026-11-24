@@ -1,21 +1,30 @@
 // default package
 
-import android.media.MediaFormat;
-import java.nio.ByteBuffer;
-import java.util.List;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class tqe {
-    public static void a(MediaFormat mediaFormat, String str, int i) {
-        if (i != -1) {
-            mediaFormat.setInteger(str, i);
-        }
+public final class tqe {
+    public final jqe a;
+    public final Integer b;
+
+    public /* synthetic */ tqe(v8b v8bVar) {
+        this.a = (jqe) v8bVar.b;
+        this.b = (Integer) v8bVar.c;
     }
 
-    public static void b(MediaFormat mediaFormat, List list) {
-        for (int i = 0; i < list.size(); i++) {
-            mediaFormat.setByteBuffer(hg9.j(i, "csd-"), ByteBuffer.wrap((byte[]) list.get(i)));
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof tqe)) {
+            return false;
+        }
+        tqe tqeVar = (tqe) obj;
+        return cqe.a(this.a, tqeVar.a) && cqe.a(this.b, tqeVar.b) && cqe.a(null, null) && cqe.a(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
     }
 }

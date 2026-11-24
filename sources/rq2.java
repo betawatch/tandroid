@@ -1,28 +1,50 @@
 // default package
 
-import android.os.Parcel;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class rq2 extends RuntimeException {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public rq2(String str, Parcel parcel) {
-        super(r2.toString());
-        int dataPosition = parcel.dataPosition();
-        int dataSize = parcel.dataSize();
-        int length = str.length();
-        StringBuilder sb = new StringBuilder(length + 13 + String.valueOf(dataPosition).length() + 6 + String.valueOf(dataSize).length());
-        sb.append(str);
-        sb.append(" Parcel: pos=");
-        sb.append(dataPosition);
-        sb.append(" size=");
-        sb.append(dataSize);
+public final class rq2 extends yq7 implements Serializable {
+    public final Comparator[] a;
+
+    public rq2(v41 v41Var, v41 v41Var2) {
+        this.a = new Comparator[]{v41Var, v41Var2};
     }
 
-    public rq2() {
-        super("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i = 0;
+        while (true) {
+            Comparator[] comparatorArr = this.a;
+            if (i >= comparatorArr.length) {
+                return 0;
+            }
+            int compare = comparatorArr[i].compare(obj, obj2);
+            if (compare != 0) {
+                return compare;
+            }
+            i++;
+        }
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof rq2) {
+            return Arrays.equals(this.a, ((rq2) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.a);
+    }
+
+    public final String toString() {
+        return b00.j(new StringBuilder("Ordering.compound("), Arrays.toString(this.a), ")");
     }
 }

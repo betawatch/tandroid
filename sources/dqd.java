@@ -1,14 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class dqd {
-    public void b() {
+public final class dqd extends b4 {
+    public static final Parcelable.Creator<dqd> CREATOR = new rpd((byte) 1);
+    public final int a;
+    public final int b;
+
+    public dqd(int i, int i2) {
+        this.a = i;
+        this.b = i2;
     }
 
-    public void c(fk0 fk0Var) {
-    }
-
-    public void a(int i, CharSequence charSequence) {
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        jte.q(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        jte.s(parcel, r);
     }
 }

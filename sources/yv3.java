@@ -1,20 +1,27 @@
 // default package
 
-import android.webkit.JavascriptInterface;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class yv3 {
-    public final /* synthetic */ zv3 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public abstract class yv3 {
+    public byte a;
+    public float b;
+    public float c;
+    public float d = 0.0f;
+    public int e = 0;
+    public final RectF f = new RectF();
+    public final n41 g;
+    public final lm h;
 
-    public yv3(zv3 zv3Var) {
-        this.a = zv3Var;
+    public yv3(cw3 cw3Var) {
+        this.g = new n41(cw3Var);
+        this.h = new lm(350L, cw3Var, s33.h);
     }
 
-    @JavascriptInterface
-    public void postEvent(String str, String str2) {
-        if ("loaded".equals(str)) {
-            gm.c3(new bi3(this, (byte) 22));
-        }
+    public abstract void a(Canvas canvas, float f, float f2);
+
+    public void b(boolean z) {
     }
 }

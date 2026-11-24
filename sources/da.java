@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class da {
     public static final da c = new da(new ba[0]);
@@ -12,7 +12,7 @@ public final class da {
     public final ba[] b;
 
     static {
-        ba baVar = new ba(-1, new int[0], new bt6[0], new long[0], new String[0], new ca[0]);
+        ba baVar = new ba(-1, new int[0], new br6[0], new long[0], new String[0], new ca[0]);
         int[] iArr = baVar.d;
         int length = iArr.length;
         int max = Math.max(0, length);
@@ -23,11 +23,11 @@ public final class da {
         int max2 = Math.max(0, length2);
         long[] copyOf2 = Arrays.copyOf(jArr, max2);
         Arrays.fill(copyOf2, length2, max2, -9223372036854775807L);
-        bt6[] bt6VarArr = (bt6[]) Arrays.copyOf(baVar.c, 0);
+        br6[] br6VarArr = (br6[]) Arrays.copyOf(baVar.c, 0);
         String[] strArr = (String[]) Arrays.copyOf(baVar.f, 0);
         ca[] caVarArr = baVar.g;
-        d = new ba(0, copyOf, bt6VarArr, copyOf2, strArr, (ca[]) Arrays.copyOf(caVarArr, Math.max(0, caVarArr.length)));
-        String str = hac.a;
+        d = new ba(0, copyOf, br6VarArr, copyOf2, strArr, (ca[]) Arrays.copyOf(caVarArr, Math.max(0, caVarArr.length)));
+        String str = g8c.a;
         e = "1";
     }
 

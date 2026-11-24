@@ -1,18 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class pu8 extends so4 {
-    public final /* synthetic */ uu8 b;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pu8(uu8 uu8Var, ix9 ix9Var) {
-        super(ix9Var);
-        this.b = uu8Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class pu8 extends b4 {
+    public static final Parcelable.Creator<pu8> CREATOR = new t4d((byte) 29);
+    public final String a;
+    public final String b;
+    public final String c;
+
+    public pu8(String str, String str2, String str3) {
+        fre.h(str);
+        this.a = str;
+        fre.h(str2);
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // so4, ix9
-    public final long h() {
-        return this.b.U;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof pu8)) {
+            return false;
+        }
+        pu8 pu8Var = (pu8) obj;
+        return cqe.a(this.a, pu8Var.a) && cqe.a(this.b, pu8Var.b) && cqe.a(this.c, pu8Var.c);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c});
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("PublicKeyCredentialRpEntity{\n id='");
+        sb.append(this.a);
+        sb.append("', \n name='");
+        sb.append(this.b);
+        sb.append("', \n icon='");
+        return b00.j(sb, this.c, "'}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.l(parcel, 3, this.b);
+        jte.l(parcel, 4, this.c);
+        jte.s(parcel, r);
     }
 }

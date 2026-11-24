@@ -1,10 +1,13 @@
 // default package
 
-import android.view.View;
+import android.view.KeyEvent;
+import android.widget.EditText;
+import android.widget.TextView;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class kpc implements View.OnClickListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class kpc implements TextView.OnEditorActionListener {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -13,33 +16,72 @@ public final /* synthetic */ class kpc implements View.OnClickListener {
         this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
         byte b = this.a;
         Object obj = this.b;
         switch (b) {
             case 0:
-                npc npcVar = (npc) obj;
-                if (!npcVar.y && npcVar.r && !npcVar.h.b()) {
-                    npcVar.h.setProgress(0.0f);
-                    npcVar.h.d();
-                    break;
+                qpc qpcVar = (qpc) obj;
+                if (i == 6) {
+                    u41 u41Var = qpcVar.e0;
+                    if (u41Var.e0) {
+                        u41Var.performClick();
+                        return true;
+                    }
                 }
-                break;
-            case 1:
-                ((brc) obj).b(!r2.E);
-                break;
-            case 2:
-                mrc mrcVar = ((qrc) obj).c;
-                mrcVar.requestFocus();
-                gm.E3(mrcVar);
-                break;
+                return false;
             default:
-                quc qucVar = (quc) obj;
-                qucVar.a.c(!r3.b(), true);
-                qucVar.c.setEnabled(qucVar.a.b());
-                qucVar.c.animate().alpha(qucVar.a.b() ? 1.0f : 0.5f).start();
-                break;
+                lqc lqcVar = (lqc) obj;
+                EditText editText = lqcVar.a;
+                boolean z = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
+                if (i != 5 && !z) {
+                    return false;
+                }
+                if (keyEvent != null && (keyEvent.getAction() != 1 || keyEvent.isCanceled())) {
+                    return true;
+                }
+                String lowerCase = editText.getText().toString().trim().toLowerCase();
+                if (!lowerCase.isEmpty() && lqcVar.b()) {
+                    lqcVar.setError(false);
+                    lqcVar.a();
+                    Runnable runnable = lqcVar.r;
+                    if (runnable == null) {
+                        return true;
+                    }
+                    editText.post(runnable);
+                    return true;
+                }
+                String str = null;
+                if (!lowerCase.isEmpty()) {
+                    String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
+                    int length = mnemonicWordlist.length;
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 < length) {
+                            String str2 = mnemonicWordlist[i2];
+                            if (str2.startsWith(lowerCase)) {
+                                str = str2;
+                            } else {
+                                i2++;
+                            }
+                        }
+                    }
+                }
+                if (str == null) {
+                    lqcVar.setError(true);
+                    return true;
+                }
+                editText.setText(str);
+                editText.setSelection(str.length());
+                lqcVar.setError(false);
+                lqcVar.a();
+                Runnable runnable2 = lqcVar.r;
+                if (runnable2 == null) {
+                    return true;
+                }
+                editText.post(runnable2);
+                return true;
         }
     }
 }

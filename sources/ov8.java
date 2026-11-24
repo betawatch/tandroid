@@ -1,53 +1,44 @@
 // default package
 
-import java.util.Locale;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ov8 implements hp7, jp7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tv8 b;
+public final class ov8 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final /* synthetic */ ew8 c;
 
-    public /* synthetic */ ov8(tv8 tv8Var, byte b) {
-        this.a = b;
-        this.b = tv8Var;
-    }
-
-    @Override // hp7
-    public final String c(int i) {
-        byte b = this.a;
-        tv8 tv8Var = this.b;
-        switch (b) {
-            case 0:
-                return tv8Var.P ? jb6.a0("MilesShort", null, 2131748184, Integer.valueOf(i)) : jb6.a0("KMetersShort", null, 2131748818, Integer.valueOf(i));
-            default:
-                if (!tv8Var.P) {
-                    if (i == 1) {
-                        return jb6.a0("MetersShort", null, 2131748199, 50);
-                    }
-                    if (i > 1) {
-                        i--;
-                    }
-                    return jb6.a0("MetersShort", null, 2131748199, Integer.valueOf(i * 100));
-                }
-                if (i == 1) {
-                    return jb6.a0("FootsShort", null, 2131750533, Integer.valueOf(nm7.Y3));
-                }
-                if (i > 1) {
-                    i--;
-                }
-                Locale locale = Locale.US;
-                return hg9.j(i, ".");
-        }
-    }
-
-    @Override // jp7
-    public final void g(lp7 lp7Var, int i) {
-        tv8 tv8Var = this.b;
-        try {
-            tv8Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        tv8Var.c(true);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ov8(ew8 ew8Var, Context context) {
+        super(context);
+        this.c = ew8Var;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(ew8Var.y);
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(gl.o());
+        textView.setSingleLine();
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity(16);
+        addView(textView, nme.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextColor(-1);
+        textView2.setTextSize(1, 13.0f);
+        textView2.setTypeface(gl.o());
+        textView2.setGravity(17);
+        textView2.setPadding(gl.L(10.0f), 0, gl.L(10.0f), 0);
+        textView2.setText(k96.M0(2131743637, null));
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        gradientDrawable.setColor(620756991);
+        gradientDrawable.setCornerRadius(gl.L(13.0f));
+        textView2.setBackground(gradientDrawable);
+        textView2.setOnClickListener(new ik8(this, (byte) 4));
+        addView(textView2, nme.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
     }
 }

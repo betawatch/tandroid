@@ -1,55 +1,76 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final class poc extends io {
-    public final /* synthetic */ byte s;
-    public final /* synthetic */ soc w;
+public final /* synthetic */ class poc implements i8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ toc b;
+    public final /* synthetic */ c01 c;
+    public final /* synthetic */ c d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ poc(soc socVar, Context context, byte b) {
-        super(context, false, true, true, true, true);
-        this.s = b;
-        this.w = socVar;
+    public /* synthetic */ poc(toc tocVar, c01 c01Var, c cVar, byte b) {
+        this.a = b;
+        this.b = tocVar;
+        this.c = c01Var;
+        this.d = cVar;
     }
 
-    public final /* synthetic */ void e(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
-    public final /* synthetic */ void f(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
-    @Override // io, android.view.View
-    public final void onDraw(Canvas canvas) {
-        byte b = this.s;
-        byte b2 = 6;
-        soc socVar = this.w;
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        c cVar = this.d;
+        c01 c01Var = this.c;
+        toc tocVar = this.b;
         switch (b) {
             case 0:
-                float c = getDrawable().c();
-                float a = socVar.a();
-                float min = (((c > 0.0f ? Math.min(1.0f, socVar.V / c) : 1.0f) - a) * socVar.U) + a;
-                socVar.b = min;
-                int save = canvas.save();
-                canvas.scale(min, min, 0.0f, getHeight() / 2.0f);
-                float e = (1.0f - socVar.U) * socVar.g0.e(false, socVar.e0);
-                ho drawable = getDrawable();
-                Objects.requireNonNull(drawable);
-                socVar.c(e, new lcc(drawable, b2), new qhc((Object) this, (Object) canvas, (byte) 17));
-                canvas.restoreToCount(save);
-                break;
+                y05 y05Var = (y05) obj;
+                String str = (String) obj2;
+                c01Var.c(false);
+                if (y05Var != null) {
+                    bpc bpcVar = new bpc();
+                    bpcVar.h = true;
+                    ArrayList arrayList = bpcVar.a;
+                    arrayList.clear();
+                    if (!y05Var.d()) {
+                        arrayList.addAll(y05Var.f());
+                    }
+                    bpcVar.Z();
+                    bpcVar.f = new mhc(tocVar, cVar, (byte) 23);
+                    tocVar.presentFragment(bpcVar);
+                    break;
+                } else {
+                    u21.b0(tocVar).f0(str != null ? str : "NULL_ERROR", false);
+                    break;
+                }
             default:
-                float e2 = (1.0f - socVar.U) * socVar.g0.e(false, socVar.e0);
-                ho drawable2 = getDrawable();
-                Objects.requireNonNull(drawable2);
-                socVar.c(e2, new lcc(drawable2, b2), new qhc((Object) this, (Object) canvas, (byte) 18));
-                break;
+                v05 v05Var = (v05) obj;
+                String str2 = (String) obj2;
+                c01Var.c(false);
+                if (v05Var != null) {
+                    if (!tocVar.f) {
+                        tocVar.e.add(v05Var);
+                        bpc bpcVar2 = new bpc();
+                        y05 y05Var2 = v05Var.b;
+                        ArrayList arrayList2 = bpcVar2.a;
+                        arrayList2.clear();
+                        if (!y05Var2.d()) {
+                            arrayList2.addAll(y05Var2.f());
+                        }
+                        bpcVar2.Z();
+                        bpcVar2.f = new wbc(tocVar, cVar, v05Var, (byte) 18);
+                        tocVar.presentFragment(bpcVar2);
+                        break;
+                    } else {
+                        v05Var.close();
+                        break;
+                    }
+                } else {
+                    u21.b0(tocVar).f0(str2 != null ? str2 : "NULL_ERROR", false);
+                    break;
+                }
         }
     }
 }

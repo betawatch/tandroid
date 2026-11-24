@@ -1,16 +1,26 @@
 // default package
 
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class z1c extends xna {
-    @Override // xna, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        boa.a(canvas, getLayout());
-        canvas.restore();
+public final class z1c implements ValueAnimator.AnimatorUpdateListener {
+    public int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ d2c c;
+
+    public z1c(d2c d2cVar, int i) {
+        this.c = d2cVar;
+        this.b = i;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
+        d2c d2cVar = this.c;
+        d2cVar.O = true;
+        d2cVar.n.scrollBy(0, floatValue - this.a);
+        d2cVar.O = false;
+        this.a = floatValue;
     }
 }

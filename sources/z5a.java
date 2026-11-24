@@ -1,39 +1,9 @@
 // default package
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final class z5a {
-    public long A;
-    public int B;
-    public Uri a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public TLRPC.Photo g;
-    public int h;
-    public ArrayList i;
-    public ArrayList j;
-    public rcc k;
-    public no6 l;
-    public TLRPC.BotInlineResult m;
-    public HashMap n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
-    public TLRPC.VideoSize v;
-    public long w;
-    public boolean x;
-    public jo6 y;
-    public long z;
+    public final cv5 serializer() {
+        return y5a.a;
+    }
 }

@@ -1,15 +1,27 @@
 // default package
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class gf5 extends ViewOutlineProvider {
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float L = gm.L(12.0f);
-        outline.setRoundRect(0, 0, view.getWidth(), (int) (view.getHeight() + L), L);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class gf5 {
+    public final Uri a;
+    public final fm4 b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final String h;
+
+    public gf5(Uri uri, fm4 fm4Var, String str, String str2, String str3, String str4, String str5, String str6) {
+        this.a = uri;
+        this.b = fm4Var;
+        this.c = str;
+        this.d = str2;
+        this.e = str3;
+        this.f = str4;
+        this.g = str5;
+        this.h = str6;
     }
 }

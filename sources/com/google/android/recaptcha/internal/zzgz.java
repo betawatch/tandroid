@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -58,12 +58,12 @@ public final class zzgz implements zzgs {
                 Iterator it2 = zzd.iterator();
                 it2.getClass();
                 if (it2.hasNext()) {
-                    pla plaVar = new pla(it2, null);
-                    q6a q6aVar = new q6a();
-                    q6aVar.c = plaVar.create(q6aVar, q6aVar);
-                    it = q6aVar;
+                    oja ojaVar = new oja(it2, null);
+                    o4a o4aVar = new o4a();
+                    o4aVar.c = ojaVar.create(o4aVar, o4aVar);
+                    it = o4aVar;
                 } else {
-                    it = m34.a;
+                    it = b24.a;
                 }
                 while (it.hasNext()) {
                     arrayList.add((List) it.next());
@@ -106,7 +106,7 @@ public final class zzgz implements zzgs {
             } else if (i == 1) {
                 zzi.zzr(zzk.zzg());
             } else if (i != 2) {
-                throw new rq2();
+                throw new gp2();
             }
             arrayList.add(zzgpVar);
         }
@@ -114,7 +114,7 @@ public final class zzgz implements zzgs {
             byte[] zzd = ((zzwq) zzi.zzk()).zzd();
             try {
                 int i2 = zzby.zza;
-                if (!((zzha) fpe.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+                if (!((zzha) cne.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                     return;
                 }
                 zzgoVar.zza(arrayList);
@@ -135,7 +135,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i = zzby.zza;
-            srd.b(((zzcr) fpe.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
+            ppd.b(((zzcr) cne.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

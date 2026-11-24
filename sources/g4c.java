@@ -1,58 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class g4c {
-    public final byte[] a = new byte[10];
-    public boolean b;
-    public int c;
-    public long d;
-    public int e;
-    public int f;
-    public int g;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-    public final void a(yzb yzbVar, xzb xzbVar) {
-        if (this.c > 0) {
-            yzbVar.a(this.d, this.e, this.f, this.g, xzbVar);
-            this.c = 0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public class g4c extends URLSpan {
+    public final boolean a;
+    public final vib b;
+    public TLObject c;
+    public String d;
+
+    public g4c(String str, vib vibVar) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = vibVar;
+    }
+
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            d01.t(view.getContext(), url);
+        } else {
+            d01.q(view.getContext(), Uri.parse("https://t.me/".concat(url.substring(1))), true, true);
         }
     }
 
-    public final void b(yzb yzbVar, long j, int i, int i2, int i3, xzb xzbVar) {
-        jte.o("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i2 + i3);
-        if (this.b) {
-            int i4 = this.c;
-            int i5 = i4 + 1;
-            this.c = i5;
-            if (i4 == 0) {
-                this.d = j;
-                this.e = i;
-                this.f = 0;
-            }
-            this.f += i2;
-            this.g = i3;
-            if (i5 >= 16) {
-                a(yzbVar, xzbVar);
-            }
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        vib vibVar = this.b;
+        if (vibVar != null) {
+            vibVar.a(textPaint);
         }
+        textPaint.setUnderlineText(i == color && !this.a);
     }
 
-    public final void c(t84 t84Var) {
-        if (this.b) {
-            return;
-        }
-        byte[] bArr = this.a;
-        t84Var.b(0, 10, bArr);
-        t84Var.i();
-        if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
-            byte b = bArr[7];
-            if ((b & 254) == 186) {
-                r1 = 40 << ((bArr[((b & 255) == 187 ? 1 : 0) != 0 ? '\t' : '\b'] >> 4) & 7);
-            }
-        }
-        if (r1 == 0) {
-            return;
-        }
-        this.b = true;
+    public g4c(String str, int i) {
+        this(str, (vib) null);
+        this.a = true;
+    }
+
+    public g4c(String str) {
+        this(str, (vib) null);
     }
 }

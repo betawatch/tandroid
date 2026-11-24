@@ -1,98 +1,50 @@
 // default package
 
-import android.os.Handler;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.TimeUnit;
+import java.util.function.LongSupplier;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class ur2 extends rh0 {
-    public final HashMap i = new HashMap();
-    public Handler j;
-
-    @Override // rh0
-    public final void e() {
-        for (tr2 tr2Var : this.i.values()) {
-            tr2Var.a.d(tr2Var.b);
-        }
-    }
-
-    @Override // rh0
-    public final void g() {
-        for (tr2 tr2Var : this.i.values()) {
-            tr2Var.a.f(tr2Var.b);
-        }
-    }
-
-    @Override // rh0
-    public void k() {
-        Iterator it = this.i.values().iterator();
-        while (it.hasNext()) {
-            ((tr2) it.next()).a.k();
-        }
-    }
-
-    @Override // rh0
-    public void q() {
-        HashMap hashMap = this.i;
-        for (tr2 tr2Var : hashMap.values()) {
-            rh0 rh0Var = tr2Var.a;
-            sr2 sr2Var = tr2Var.c;
-            rh0Var.p(tr2Var.b);
-            rh0Var.s(sr2Var);
-            rh0Var.r(sr2Var);
-        }
-        hashMap.clear();
-    }
-
-    public abstract rz6 u(Integer num, rz6 rz6Var);
-
-    public abstract void x(Integer num, rh0 rh0Var, bqb bqbVar);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ur2 extends cr2 {
+    public int d;
+    public fr e;
+    public TimeUnit f;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v2, types: [rr2, sz6] */
-    public final void y(final Integer num, rh0 rh0Var) {
-        HashMap hashMap = this.i;
-        jte.f(!hashMap.containsKey(num));
-        ?? r1 = new sz6() { // from class: rr2
-            @Override // sz6
-            public final void a(rh0 rh0Var2, bqb bqbVar) {
-                ur2.this.x(num, rh0Var2, bqbVar);
-            }
-        };
-        sr2 sr2Var = new sr2(this, num);
-        hashMap.put(num, new tr2(rh0Var, r1, sr2Var));
-        Handler handler = this.j;
-        handler.getClass();
-        rh0Var.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) rh0Var.c.d;
-        uz6 uz6Var = new uz6();
-        uz6Var.a = handler;
-        uz6Var.b = sr2Var;
-        copyOnWriteArrayList.add(uz6Var);
-        Handler handler2 = this.j;
-        handler2.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = rh0Var.d.c;
-        es3 es3Var = new es3();
-        es3Var.a = handler2;
-        es3Var.b = sr2Var;
-        copyOnWriteArrayList2.add(es3Var);
-        we8 we8Var = this.g;
-        we8Var.getClass();
-        eb3 eb3Var = this.h;
-        eb3Var.getClass();
-        rh0Var.l(r1, we8Var, eb3Var);
-        if (this.b.isEmpty()) {
-            rh0Var.d(r1);
+    /* JADX WARN: Type inference failed for: r4v1, types: [tr2] */
+    /* JADX WARN: Type inference failed for: r5v0, types: [cr2, ur2] */
+    public final vr2 u(qr2 qr2Var) {
+        if (this.e == null) {
+            long j = this.d;
+            r(j >= 0 && j <= Long.MAX_VALUE, Long.valueOf(j));
         }
+        if (this.f == null) {
+            throw new IllegalStateException("ConfigTime " + s() + " without a unit");
+        }
+        String s = s();
+        fr frVar = this.e;
+        if (frVar == null) {
+            final long j2 = this.d;
+            frVar = new LongSupplier(j2) { // from class: tr2
+                public final /* synthetic */ int a;
+
+                {
+                    this.a = (int) j2;
+                }
+
+                @Override // java.util.function.LongSupplier
+                public final long getAsLong() {
+                    return this.a;
+                }
+            };
+        }
+        vr2 vr2Var = new vr2(s, frVar, this.f, this.a);
+        q(qr2Var, vr2Var);
+        return vr2Var;
     }
 
-    public long v(long j, Integer num) {
-        return j;
-    }
-
-    public int w(int i, Integer num) {
-        return i;
+    public final void v(long j) {
+        this.d = (int) j;
+        this.e = null;
     }
 }

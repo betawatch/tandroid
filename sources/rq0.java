@@ -1,21 +1,28 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class rq0 {
-    public final long a;
-    public final int b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public Runnable f;
-    public TLRPC.TL_textWithEntities g;
-    public k47 h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class rq0 implements LocationListener {
+    public final /* synthetic */ LocationManager a;
+    public final /* synthetic */ LocationListener[] b;
+    public final /* synthetic */ p8c c;
+    public final /* synthetic */ tq0 d;
 
-    public rq0(long j, int i) {
-        this.a = j;
-        this.b = i;
+    public rq0(tq0 tq0Var, LocationManager locationManager, LocationListener[] locationListenerArr, p8c p8cVar) {
+        this.d = tq0Var;
+        this.a = locationManager;
+        this.b = locationListenerArr;
+        this.c = p8cVar;
+    }
+
+    @Override // android.location.LocationListener
+    public final void onLocationChanged(Location location) {
+        this.a.removeUpdates(this.b[0]);
+        this.d.getClass();
+        this.c.a(tq0.g(location));
     }
 }

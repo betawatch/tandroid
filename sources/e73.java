@@ -1,14 +1,75 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class e73 extends iya {
-    public final Object b;
-    public final int c;
+public final class e73 extends ccb implements gq4 {
+    public final /* synthetic */ byte a = 1;
+    public boolean b;
+    public /* synthetic */ Object c;
 
-    public e73(int i, int i2, Object obj) {
-        super(i2);
-        this.b = obj;
-        this.c = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e73(v73 v73Var, fw2 fw2Var) {
+        super(3, fw2Var);
+        this.c = v73Var;
+    }
+
+    @Override // gq4
+    public final Object a(Object obj, Object obj2, Object obj3) {
+        byte b = this.a;
+        g5c g5cVar = g5c.a;
+        switch (b) {
+            case 0:
+                return new e73((v73) this.c, (fw2) obj3).invokeSuspend(g5cVar);
+            default:
+                ((Boolean) obj2).getClass();
+                e73 e73Var = new e73(3, (fw2) obj3);
+                e73Var.c = (oa4) obj;
+                return e73Var.invokeSuspend(g5cVar);
+        }
+    }
+
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        byte b = this.a;
+        bx2 bx2Var = bx2.a;
+        switch (b) {
+            case 0:
+                boolean z = this.b;
+                if (!z) {
+                    qse.b(obj);
+                    v73 v73Var = (v73) this.c;
+                    this.b = true;
+                    if (v73Var.b(this) == bx2Var) {
+                        return bx2Var;
+                    }
+                } else {
+                    if (!z) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    qse.b(obj);
+                }
+                return g5c.a;
+            default:
+                boolean z2 = this.b;
+                if (z2) {
+                    if (z2) {
+                        qse.b(obj);
+                        return obj;
+                    }
+                    sc8.j("call to 'resume' before 'invoke' with coroutine");
+                    return null;
+                }
+                qse.b(obj);
+                oa4 oa4Var = (oa4) this.c;
+                this.b = true;
+                oa4Var.getClass();
+                Object a = oa4.a(oa4Var, this);
+                return a == bx2Var ? bx2Var : a;
+        }
+    }
+
+    public /* synthetic */ e73(int i, fw2 fw2Var) {
+        super(i, fw2Var);
     }
 }

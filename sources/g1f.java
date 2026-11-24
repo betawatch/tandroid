@@ -1,31 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.SortedSet;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class g1f {
-    public static z0f a;
-
-    public static synchronized uze a(jye jyeVar) {
-        uze uzeVar;
-        synchronized (g1f.class) {
-            z0f z0fVar = a;
-            if (z0fVar == null) {
-                z0fVar = new z0f((byte) 0);
-                a = z0fVar;
+    public static boolean a(Comparator comparator, Collection collection) {
+        Object obj;
+        comparator.getClass();
+        collection.getClass();
+        if (collection instanceof SortedSet) {
+            obj = ((SortedSet) collection).comparator();
+            if (obj == null) {
+                obj = cld.b;
             }
-            uzeVar = (uze) z0fVar.c(jyeVar);
-        }
-        return uzeVar;
-    }
-
-    public static void b(int i, Object[] objArr) {
-        for (int i2 = 0; i2 < i; i2++) {
-            if (objArr[i2] == null) {
-                StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 9);
-                sb.append("at index ");
-                sb.append(i2);
-                throw new NullPointerException(sb.toString());
+        } else {
+            if (!(collection instanceof vjd)) {
+                return false;
             }
+            obj = ((vjd) collection).s;
         }
+        return comparator.equals(obj);
     }
 }

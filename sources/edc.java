@@ -1,48 +1,31 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class edc extends b4 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public static final ce6 d = new ce6("VideoInfo", null);
-    public static final Parcelable.Creator<edc> CREATOR = new urd((byte) 9);
-
-    public edc(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
+public abstract class edc {
+    public static CharSequence a(View view) {
+        return view.getAccessibilityPaneTitle();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof edc)) {
-            return false;
-        }
-        edc edcVar = (edc) obj;
-        return this.b == edcVar.b && this.a == edcVar.a && this.c == edcVar.c;
+    public static boolean b(View view) {
+        return view.isAccessibilityHeading();
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.a), Integer.valueOf(this.c)});
+    public static boolean c(View view) {
+        return view.isScreenReaderFocusable();
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        mve.q(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        mve.q(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        mve.s(parcel, r);
+    public static void d(View view, boolean z) {
+        view.setAccessibilityHeading(z);
+    }
+
+    public static void e(View view, CharSequence charSequence) {
+        view.setAccessibilityPaneTitle(charSequence);
+    }
+
+    public static void f(View view, boolean z) {
+        view.setScreenReaderFocusable(z);
     }
 }

@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class o5e implements cq7 {
-    public static final o5e a = new o5e();
+import java.util.AbstractMap;
 
-    static {
-        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class o5e extends u3e {
+    public final /* synthetic */ u5e r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o5e(u5e u5eVar) {
+        super((byte) 5);
+        this.r = u5eVar;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i) {
+        u5e u5eVar = this.r;
+        p1f.a(i, u5eVar.x);
+        Object[] objArr = u5eVar.w;
+        int i2 = i << 1;
+        Object obj = objArr[i2];
+        obj.getClass();
+        Object obj2 = objArr[i2 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.r.x;
     }
 }

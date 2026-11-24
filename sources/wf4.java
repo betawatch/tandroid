@@ -1,56 +1,13 @@
 // default package
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
+import java.io.Serializable;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface wf4 {
-    ByteBuffer a();
-
-    boolean e();
-
-    boolean f();
-
-    float getBlurAngle();
-
-    float getBlurExcludeBlurSize();
-
-    PointF getBlurExcludePoint();
-
-    float getBlurExcludeSize();
-
-    int getBlurType();
-
-    float getContrastValue();
-
-    float getEnhanceValue();
-
-    float getExposureValue();
-
-    float getFadeValue();
-
-    float getGrainValue();
-
-    float getHighlightsValue();
-
-    float getSaturationValue();
-
-    float getShadowsValue();
-
-    float getSharpenValue();
-
-    float getSoftenSkinValue();
-
-    int getTintHighlightsColor();
-
-    float getTintHighlightsIntensityValue();
-
-    int getTintShadowsColor();
-
-    float getTintShadowsIntensityValue();
-
-    float getVignetteValue();
-
-    float getWarmthValue();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class wf4 implements Comparator, Serializable {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return Float.compare(((vf4) obj).c, ((vf4) obj2).c);
+    }
 }

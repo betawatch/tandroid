@@ -1,27 +1,35 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class vxb implements rt8 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ wxb b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class vxb {
+    public final byte a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
 
-    public vxb(wxb wxbVar, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = wxbVar;
-        this.a = tL_forumTopic;
+    /* JADX WARN: Multi-variable type inference failed */
+    public vxb(int i, int i2, int i3, byte[] bArr) {
+        this.a = i;
+        this.b = bArr;
+        this.c = i2;
+        this.d = i3;
     }
 
-    @Override // rt8
-    public final void v() {
-        zxb zxbVar = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        zxbVar.Z(tL_forumTopic.id);
-        gm.d3(new b7b(this, tL_forumTopic, (byte) 21), 300L);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || vxb.class != obj.getClass()) {
+            return false;
+        }
+        vxb vxbVar = (vxb) obj;
+        return this.a == vxbVar.a && this.c == vxbVar.c && this.d == vxbVar.d && Arrays.equals(this.b, vxbVar.b);
     }
 
-    @Override // rt8
-    public final void f(zo7 zo7Var) {
+    public final int hashCode() {
+        return ((((Arrays.hashCode(this.b) + (this.a * 31)) * 31) + this.c) * 31) + this.d;
     }
 }

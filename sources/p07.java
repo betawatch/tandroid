@@ -1,53 +1,90 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.widget.HeaderViewListAdapter;
+import android.widget.ListAdapter;
+import androidx.appcompat.view.menu.ListMenuItemView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class p07 implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class p07 extends er3 {
+    public final byte E;
+    public b07 F;
+    public c07 G;
+    public final byte y;
 
-    public /* synthetic */ p07(x07 x07Var, boolean z, o07 o07Var, String str, boolean z2) {
-        this.d = x07Var;
-        this.b = z;
-        this.e = o07Var;
-        this.f = str;
-        this.c = z2;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        switch (b) {
-            case 0:
-                x07 x07Var = (x07) obj3;
-                x07Var.getClass();
-                gm.c3(new zq6(x07Var, this.b, (o07) obj2, (String) obj, tL_error, tLObject, this.c));
-                break;
-            default:
-                wsa wsaVar = (wsa) obj3;
-                wsaVar.getClass();
-                gm.c3(new zq6(wsaVar, tLObject, this.b, (TLRPC.Document) obj2, this.c, tL_error, (TL_stars.saveStarGift) obj));
-                break;
+    public p07(Context context, boolean z) {
+        super(context, z);
+        if (1 == o07.a(context.getResources().getConfiguration())) {
+            this.y = (byte) 21;
+            this.E = (byte) 22;
+        } else {
+            this.y = (byte) 22;
+            this.E = (byte) 21;
         }
     }
 
-    public /* synthetic */ p07(wsa wsaVar, boolean z, TLRPC.Document document, boolean z2, TL_stars.saveStarGift savestargift) {
-        this.d = wsaVar;
-        this.b = z;
-        this.e = document;
-        this.c = z2;
-        this.f = savestargift;
+    @Override // er3, android.view.View
+    public final boolean onHoverEvent(MotionEvent motionEvent) {
+        vz6 vz6Var;
+        int i;
+        int pointToPosition;
+        int i2;
+        if (this.F != null) {
+            ListAdapter adapter = getAdapter();
+            if (adapter instanceof HeaderViewListAdapter) {
+                HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
+                i = headerViewListAdapter.getHeadersCount();
+                vz6Var = (vz6) headerViewListAdapter.getWrappedAdapter();
+            } else {
+                vz6Var = (vz6) adapter;
+                i = 0;
+            }
+            c07 item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i2 = pointToPosition - i) < 0 || i2 >= vz6Var.getCount()) ? null : vz6Var.getItem(i2);
+            c07 c07Var = this.G;
+            if (c07Var != item) {
+                yz6 yz6Var = vz6Var.a;
+                if (c07Var != null) {
+                    this.F.i(yz6Var, c07Var);
+                }
+                this.G = item;
+                if (item != null) {
+                    this.F.q(yz6Var, item);
+                }
+            }
+        }
+        return super.onHoverEvent(motionEvent);
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i, KeyEvent keyEvent) {
+        ListMenuItemView listMenuItemView = (ListMenuItemView) getSelectedView();
+        if (listMenuItemView != null) {
+            if (i == this.y) {
+                if (listMenuItemView.isEnabled() && listMenuItemView.getItemData().hasSubMenu()) {
+                    performItemClick(listMenuItemView, getSelectedItemPosition(), getSelectedItemId());
+                }
+                return true;
+            }
+            if (i == this.E) {
+                setSelection(-1);
+                ListAdapter adapter = getAdapter();
+                (adapter instanceof HeaderViewListAdapter ? (vz6) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (vz6) adapter).a.c(false);
+                return true;
+            }
+        }
+        return super.onKeyDown(i, keyEvent);
+    }
+
+    public void setHoverListener(b07 b07Var) {
+        this.F = b07Var;
+    }
+
+    @Override // er3, android.widget.AbsListView
+    public /* bridge */ /* synthetic */ void setSelector(Drawable drawable) {
+        super.setSelector(drawable);
     }
 }

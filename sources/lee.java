@@ -1,118 +1,81 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.os.SystemClock;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.tgnet.ConnectionsManager;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class lee extends mi6 {
-    public boolean d = true;
-    public final mze e;
-    public final pdd f;
-    public final b6f g;
-    public final b0f h;
-
-    public lee(im5 im5Var, pdd pddVar, b6f b6fVar) {
-        ite.i(im5Var, "ImageLabelerOptions can not be null");
-        this.f = pddVar;
-        this.g = b6fVar;
-        eod eodVar = new eod((byte) 5);
-        eodVar.b = Float.valueOf(im5Var.a);
-        this.e = new mze(eodVar);
-        this.h = new b0f(cg7.c().b(), (byte) 1);
+public abstract class lee {
+    public static boolean a(double d) {
+        if (qee.b(d)) {
+            return d == 0.0d || 52 - Long.numberOfTrailingZeros(qee.a(d)) <= Math.getExponent(d);
+        }
+        return false;
     }
 
-    @Override // lg7
-    public final synchronized void b() {
-        this.f.zzb();
-        b6f b6fVar = this.g;
-        eq eqVar = new eq();
-        eqVar.c = wue.b;
-        rhb rhbVar = new rhb((byte) 19, false);
-        rhbVar.b = this.e;
-        eed eedVar = ped.f;
-        Object[] objArr = {bve.b};
-        r2f.a(1, objArr);
-        rhbVar.c = new ihd(1, objArr);
-        eqVar.d = new dze(rhbVar);
-        mlb.c(1, new de1(b6fVar, new ry(eqVar, 0), hve.e, b6fVar.b(), (byte) 3));
-    }
-
-    @Override // lg7
-    public final synchronized void c() {
-        this.f.zzc();
-        this.d = true;
-        b6f b6fVar = this.g;
-        eq eqVar = new eq();
-        eqVar.c = wue.b;
-        mlb.c(1, new de1(b6fVar, new ry(eqVar, 0), hve.d, b6fVar.b(), (byte) 3));
-    }
-
-    @Override // mi6
-    public final Object e(gq5 gq5Var) {
-        ArrayList e;
-        synchronized (this) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            try {
-                e = this.f.e(gq5Var);
-                f(bve.b, gq5Var, elapsedRealtime);
-                this.d = false;
-            } catch (dg7 e2) {
-                f(e2.a == 14 ? bve.c : bve.d, gq5Var, elapsedRealtime);
-                throw e2;
+    public static boolean b(double d) {
+        if (d > 0.0d && qee.b(d)) {
+            long a = qee.a(d);
+            if ((a & (a - 1)) == 0) {
+                return true;
             }
         }
-        return e;
+        return false;
     }
 
-    public final void f(bve bveVar, gq5 gq5Var, long j) {
-        long elapsedRealtime = SystemClock.elapsedRealtime() - j;
-        b6f b6fVar = this.g;
-        hve hveVar = hve.b;
-        b6fVar.getClass();
-        long elapsedRealtime2 = SystemClock.elapsedRealtime();
-        boolean z = false;
-        if (b6fVar.c(hveVar, elapsedRealtime2)) {
-            b6fVar.i.put(hveVar, Long.valueOf(elapsedRealtime2));
-            eq eqVar = new eq();
-            eqVar.c = wue.b;
-            uqd uqdVar = new uqd((byte) 8);
-            sm2 sm2Var = new sm2((byte) 23, z);
-            sm2Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            sm2Var.c = bveVar;
-            sm2Var.d = Boolean.valueOf(this.d);
-            Boolean bool = Boolean.TRUE;
-            sm2Var.e = bool;
-            sm2Var.f = bool;
-            uqdVar.b = new ote(sm2Var);
-            Bitmap bitmap = gq5Var.a;
-            ite.h(bitmap);
-            int allocationByteCount = bitmap.getAllocationByteCount();
-            xab xabVar = new xab((byte) 17, z);
-            xabVar.b = mse.b;
-            xabVar.c = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            uqdVar.d = new wse(xabVar);
-            uqdVar.c = this.e;
-            eqVar.e = new sye(uqdVar);
-            mlb.c(1, new de1(b6fVar, new ry(eqVar, 0), hveVar, b6fVar.b(), (byte) 3));
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int c(double d) {
+        boolean b;
+        RoundingMode roundingMode = RoundingMode.CEILING;
+        gre.e("x must be positive and finite", d > 0.0d && qee.b(d));
+        int exponent = Math.getExponent(d);
+        if (Math.getExponent(d) < -1022) {
+            return c(d * 4.503599627370496E15d) - 52;
         }
-        uqd uqdVar2 = new uqd((byte) 1);
-        uqdVar2.d = this.e;
-        uqdVar2.b = bveVar;
-        uqdVar2.c = Boolean.valueOf(this.d);
-        mlb.c(1, new v5f(this.g, new frd(uqdVar2), elapsedRealtime));
-        long currentTimeMillis = System.currentTimeMillis();
-        b0f b0fVar = this.h;
-        short s = bveVar.a;
-        long j2 = currentTimeMillis - elapsedRealtime;
-        synchronized (b0fVar) {
-            long elapsedRealtime3 = SystemClock.elapsedRealtime();
-            if (b0fVar.b.get() == -1 || elapsedRealtime3 - b0fVar.b.get() > 1800000) {
-                b0fVar.a.i(new nib(0, Arrays.asList(new uf7(24305, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new vh2((Object) b0fVar, elapsedRealtime3, (byte) 11));
-            }
+        switch (dp3.a[roundingMode.ordinal()]) {
+            case 1:
+                ioe.b(b(d));
+                return !r2 ? exponent + 1 : exponent;
+            case 2:
+                if (!r2) {
+                }
+                break;
+            case 3:
+                r2 = !b(d);
+                if (!r2) {
+                }
+                break;
+            case 4:
+                r2 = exponent < 0;
+                b = b(d);
+                r2 &= !b;
+                if (!r2) {
+                }
+                break;
+            case 5:
+                r2 = exponent >= 0;
+                b = b(d);
+                r2 &= !b;
+                if (!r2) {
+                }
+                break;
+            case 6:
+            case 7:
+            case 8:
+                double longBitsToDouble = Double.longBitsToDouble((Double.doubleToRawLongBits(d) & 4503599627370495L) | 4607182418800017408L);
+                if (longBitsToDouble * longBitsToDouble > 2.0d) {
+                    r2 = true;
+                }
+                if (!r2) {
+                }
+                break;
+            default:
+                wn4.f();
+                return 0;
         }
     }
 }

@@ -7,17 +7,17 @@ import androidx.car.app.navigation.model.PanModeDelegateImpl;
 import androidx.car.app.utils.e;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class PanModeDelegateImpl implements qw7 {
+public class PanModeDelegateImpl implements pu7 {
     private final IPanModeListener mStub;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class PanModeListenerStub extends IPanModeListener.Stub {
-        private final rw7 mListener;
+        private final qu7 mListener;
 
-        public PanModeListenerStub(rw7 rw7Var) {
+        public PanModeListenerStub(qu7 qu7Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -27,8 +27,8 @@ public class PanModeDelegateImpl implements qw7 {
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
         public void onPanModeChanged(final boolean z, IOnDoneCallback iOnDoneCallback) {
-            e.c(iOnDoneCallback, "onPanModeChanged", new s89() { // from class: androidx.car.app.navigation.model.a
-                @Override // s89
+            e.c(iOnDoneCallback, "onPanModeChanged", new q69() { // from class: androidx.car.app.navigation.model.a
+                @Override // q69
                 public final Object a() {
                     Object lambda$onPanModeChanged$0;
                     lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z);
@@ -38,21 +38,21 @@ public class PanModeDelegateImpl implements qw7 {
         }
     }
 
-    private PanModeDelegateImpl(rw7 rw7Var) {
-        this.mStub = new PanModeListenerStub(rw7Var);
+    private PanModeDelegateImpl(qu7 qu7Var) {
+        this.mStub = new PanModeListenerStub(qu7Var);
     }
 
-    public static qw7 create(rw7 rw7Var) {
-        return new PanModeDelegateImpl(rw7Var);
+    public static pu7 create(qu7 qu7Var) {
+        return new PanModeDelegateImpl(qu7Var);
     }
 
-    public void sendPanModeChanged(boolean z, fr7 fr7Var) {
+    public void sendPanModeChanged(boolean z, cp7 cp7Var) {
         try {
             IPanModeListener iPanModeListener = this.mStub;
             Objects.requireNonNull(iPanModeListener);
             iPanModeListener.onPanModeChanged(z, e.a());
         } catch (RemoteException e) {
-            rjb.m(e);
+            sdb.b(e);
         }
     }
 

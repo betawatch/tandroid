@@ -1,70 +1,23 @@
 // default package
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class q66 implements cx5 {
-    public final cx5 a;
-    public final p66 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class q66 {
+    public final n55 a;
+    public boolean c;
+    public volatile boolean d;
+    public Thread e;
+    public final ConcurrentLinkedQueue b = new ConcurrentLinkedQueue();
+    public long f = 1;
 
-    public q66(cx5 cx5Var) {
-        ebb ebbVar = ebb.a;
-        this.a = cx5Var;
-        this.b = new p66(ebb.b, cx5Var.d());
+    public q66(n55 n55Var) {
+        this.a = n55Var;
     }
 
-    @Override // cx5
-    public final void b(c40 c40Var, Object obj) {
-        Map map = (Map) obj;
-        map.getClass();
-        map.size();
-        p66 p66Var = this.b;
-        c40 a = c40Var.a(p66Var);
-        Map map2 = (Map) obj;
-        map2.getClass();
-        int i = 0;
-        for (Map.Entry entry : map2.entrySet()) {
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            int i2 = i + 1;
-            a.i(p66Var, i, ebb.a, key);
-            i += 2;
-            a.i(p66Var, i2, this.a, value);
-        }
-        a.l(p66Var);
-    }
-
-    @Override // cx5
-    public final Object c(jif jifVar) {
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int size = linkedHashMap.size() << 1;
-        jif a = jifVar.a(d());
-        while (true) {
-            int b = a.b(d());
-            if (b == -1) {
-                a.o(d());
-                return linkedHashMap;
-            }
-            int i = b + size;
-            LinkedHashMap linkedHashMap2 = linkedHashMap;
-            ebb ebbVar = ebb.a;
-            p66 p66Var = this.b;
-            Object k = a.k(p66Var, i, ebbVar, null);
-            int b2 = a.b(p66Var);
-            if (b2 == i + 1) {
-                boolean containsKey = linkedHashMap2.containsKey(k);
-                cx5 cx5Var = this.a;
-                linkedHashMap2.put(k, (!containsKey || (cx5Var.d().e() instanceof dl8)) ? a.k(p66Var, b2, cx5Var, null) : a.k(p66Var, b2, cx5Var, sk6.a(linkedHashMap2, k)));
-            } else {
-                c1b.a(b10.g(i, b2, "Value must follow key in a map, index for key: ", ", returned index for value: "));
-            }
-        }
-    }
-
-    @Override // cx5
-    public final y6a d() {
-        return this.b;
+    public static boolean a() {
+        return DictationAsr.E() && na7.c1().getBoolean("asr_live_captions", false);
     }
 }

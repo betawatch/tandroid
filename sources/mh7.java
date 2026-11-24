@@ -1,51 +1,44 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class mh7 implements lf7 {
-    public final float a;
-    public final lh7 b;
-    public final lh7 c;
+public final class mh7 implements la1, akc {
+    public final na1 a;
+    public final /* synthetic */ nh7 b;
 
-    public mh7(float f, lh7 lh7Var, lh7 lh7Var2) {
-        this.a = f;
-        this.b = lh7Var;
-        this.c = lh7Var2;
+    public mh7(nh7 nh7Var, na1 na1Var) {
+        this.b = nh7Var;
+        this.a = na1Var;
     }
 
-    @Override // lf7
-    public final go4 a() {
-        return null;
+    @Override // akc
+    public final void a(nv9 nv9Var, int i) {
+        this.a.a(nv9Var, i);
     }
 
-    @Override // lf7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof mh7)) {
-            return false;
+    @Override // la1
+    public final lo5 b(Object obj, gq4 gq4Var) {
+        nh7 nh7Var = this.b;
+        ma1 ma1Var = new ma1(nh7Var, this);
+        lo5 E = this.a.E((g5c) obj, ma1Var);
+        if (E != null) {
+            nh7.h.set(nh7Var, null);
         }
-        mh7 mh7Var = (mh7) obj;
-        return Float.compare(this.a, mh7Var.a) == 0 && Objects.equals(this.b, mh7Var.b) && Objects.equals(this.c, mh7Var.c);
+        return E;
     }
 
-    public final int hashCode() {
-        int floatToIntBits = Float.floatToIntBits(this.a) * 31;
-        lh7 lh7Var = this.b;
-        int hashCode = (floatToIntBits + (lh7Var != null ? lh7Var.hashCode() : 0)) * 31;
-        lh7 lh7Var2 = this.c;
-        return hashCode + (lh7Var2 != null ? lh7Var2.hashCode() : 0);
+    @Override // la1
+    public final void e(Object obj) {
+        this.a.e(obj);
     }
 
-    public final String toString() {
-        return "ReplayGain Xing/Info: peak=" + this.a + ", field 1=" + this.b + ", field 2=" + this.c;
+    @Override // fw2
+    public final sw2 getContext() {
+        return this.a.e;
     }
 
-    @Override // lf7
-    public final void b(ht6 ht6Var) {
+    @Override // fw2
+    public final void resumeWith(Object obj) {
+        this.a.resumeWith(obj);
     }
 }

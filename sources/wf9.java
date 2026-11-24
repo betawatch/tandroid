@@ -1,29 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wf9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ch9 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+public abstract class wf9 {
+    public static final HashMap a = new HashMap();
+    public static final HashMap b = new HashMap();
 
-    public /* synthetic */ wf9(ch9 ch9Var, int i, int i2, byte b) {
-        this.a = b;
-        this.b = ch9Var;
-        this.c = i;
-        this.d = i2;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.U1(this.c, this.d);
-                break;
-            default:
-                this.b.g4(this.c, this.d);
-                break;
+    public static synchronized void a(ArrayList arrayList, ArrayList arrayList2) {
+        synchronized (wf9.class) {
+            a.clear();
+            b.clear();
+            int i = 0;
+            if (arrayList != null) {
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    TLRPC.Photo photo = (TLRPC.Photo) obj;
+                    if (photo != null) {
+                        a.put(Long.valueOf(photo.id), photo);
+                    }
+                }
+            }
+            if (arrayList2 != null) {
+                int size2 = arrayList2.size();
+                while (i < size2) {
+                    Object obj2 = arrayList2.get(i);
+                    i++;
+                    TLRPC.Document document = (TLRPC.Document) obj2;
+                    if (document != null) {
+                        b.put(Long.valueOf(document.id), document);
+                    }
+                }
+            }
         }
     }
 }

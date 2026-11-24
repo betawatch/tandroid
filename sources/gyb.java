@@ -1,42 +1,21 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class gyb extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ oyb b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class gyb extends ShapeDrawable.ShaderFactory {
+    public final /* synthetic */ mj5 a;
 
-    public /* synthetic */ gyb(oyb oybVar, byte b) {
-        this.a = b;
-        this.b = oybVar;
+    public gyb(mj5 mj5Var) {
+        this.a = mj5Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        oyb oybVar = this.b;
-        switch (b) {
-            case 0:
-                if (oybVar.b0 == animator) {
-                    oybVar.b0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                if (oybVar.k0 == animator) {
-                    oybVar.k0 = null;
-                }
-                oybVar.b(1.0f);
-                break;
-            default:
-                if (oybVar.K == animator) {
-                    oybVar.K = null;
-                    break;
-                }
-                break;
-        }
+    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
+    public final Shader resize(int i, int i2) {
+        mj5 mj5Var = this.a;
+        return new LinearGradient(0.0f, 0.0f, 0.0f, i2, mj5Var.a, mj5Var.b, Shader.TileMode.CLAMP);
     }
 }

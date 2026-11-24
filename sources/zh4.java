@@ -1,87 +1,97 @@
 // default package
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.security.keystore.KeyGenParameterSpec;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPairGenerator;
-import java.util.Iterator;
-import java.util.Locale;
-import org.telegram.messenger.a;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zh4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
+public final class zh4 {
+    public final ji0 a;
+    public final ni0 b;
+    public ki0 c;
+    public final int d;
 
-    public /* synthetic */ zh4(byte b, boolean z) {
-        this.a = b;
-        this.b = z;
+    public zh4(li0 li0Var, ni0 ni0Var, long j, long j2, long j3, long j4, long j5, int i) {
+        this.b = ni0Var;
+        this.d = i;
+        this.a = new ji0(li0Var, j, j2, j3, j4, j5);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 1;
-        boolean z = this.b;
-        switch (b) {
-            case 0:
-                KeyPairGenerator keyPairGenerator = jie.b;
-                if (keyPairGenerator == null) {
-                    try {
-                        keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
-                        jie.b = keyPairGenerator;
-                    } catch (Exception e) {
-                        fc4.g(e, true);
-                        keyPairGenerator = null;
+    public static int b(int i, byte[] bArr) {
+        return ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8) | (bArr[i + 3] & 255);
+    }
+
+    public static int c(ja3 ja3Var, long j, m11 m11Var) {
+        if (j == ja3Var.d) {
+            return 0;
+        }
+        m11Var.a = j;
+        return 1;
+    }
+
+    public final int a(ja3 ja3Var, m11 m11Var) {
+        boolean z;
+        while (true) {
+            ki0 ki0Var = this.c;
+            ki0Var.getClass();
+            long j = ki0Var.f;
+            long j2 = ki0Var.g;
+            long j3 = ki0Var.h;
+            long j4 = j2 - j;
+            long j5 = this.d;
+            ni0 ni0Var = this.b;
+            if (j4 <= j5) {
+                this.c = null;
+                ni0Var.f();
+                return c(ja3Var, j, m11Var);
+            }
+            long j6 = j3 - ja3Var.d;
+            if (j6 < 0 || j6 > 262144) {
+                z = false;
+            } else {
+                ja3Var.l((int) j6, false);
+                z = true;
+            }
+            if (!z) {
+                return c(ja3Var, j3, m11Var);
+            }
+            ja3Var.f = 0;
+            mi0 d = ni0Var.d(ja3Var, ki0Var.b);
+            int i = d.a;
+            long j7 = d.b;
+            long j8 = d.c;
+            if (i == -3) {
+                this.c = null;
+                ni0Var.f();
+                return c(ja3Var, j3, m11Var);
+            }
+            if (i == -2) {
+                ki0Var.d = j7;
+                ki0Var.f = j8;
+                ki0Var.h = ki0.a(ki0Var.b, j7, ki0Var.e, j8, ki0Var.g, ki0Var.c);
+            } else {
+                if (i != -1) {
+                    if (i != 0) {
+                        sc8.j("Invalid case");
+                        return 0;
                     }
-                }
-                if (keyPairGenerator != null) {
-                    try {
-                        Locale locale = Locale.getDefault();
-                        Locale locale2 = Locale.ENGLISH;
-                        Locale.setDefault(locale2);
-                        Resources resources = a.b.getResources();
-                        Configuration configuration = resources.getConfiguration();
-                        configuration.setLocale(locale2);
-                        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-                        keyPairGenerator.initialize(new KeyGenParameterSpec.Builder("tmessages_passcode", 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
-                        keyPairGenerator.generateKeyPair();
-                        Locale.setDefault(locale);
-                        Resources resources2 = a.b.getResources();
-                        Configuration configuration2 = resources2.getConfiguration();
-                        configuration2.setLocale(locale);
-                        resources2.updateConfiguration(configuration2, resources2.getDisplayMetrics());
-                        gm.c3(new zh4(b2, z));
-                        break;
-                    } catch (InvalidAlgorithmParameterException e2) {
-                        fc4.g(e2, true);
-                        return;
-                    } catch (Exception e3) {
-                        if (e3.getClass().getName().equals("android.security.KeyStoreException")) {
-                            return;
-                        }
-                        fc4.g(e3, true);
-                        return;
+                    long j9 = j8 - ja3Var.d;
+                    if (j9 >= 0 && j9 <= 262144) {
+                        ja3Var.l((int) j9, false);
                     }
+                    this.c = null;
+                    ni0Var.f();
+                    return c(ja3Var, j8, m11Var);
                 }
-                break;
-            case 1:
-                nm7.e().k(nm7.Q1, Boolean.valueOf(z));
-                break;
-            case 2:
-                Iterator it = e86.n.iterator();
-                while (it.hasNext()) {
-                    qac qacVar = (qac) it.next();
-                    if (qacVar != null) {
-                        qacVar.a(Boolean.valueOf(z));
-                    }
-                }
-                break;
-            default:
-                nm7.e().k(nm7.r4, Boolean.FALSE, Boolean.valueOf(z));
-                break;
+                ki0Var.e = j7;
+                ki0Var.g = j8;
+                ki0Var.h = ki0.a(ki0Var.b, ki0Var.d, j7, ki0Var.f, j8, ki0Var.c);
+            }
+        }
+    }
+
+    public final void d(long j) {
+        ki0 ki0Var = this.c;
+        if (ki0Var == null || ki0Var.a != j) {
+            ji0 ji0Var = this.a;
+            this.c = new ki0(j, ji0Var.a.c(j), ji0Var.c, ji0Var.d, ji0Var.e, ji0Var.f);
         }
     }
 }

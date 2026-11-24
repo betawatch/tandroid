@@ -1,44 +1,94 @@
 // default package
 
-import android.view.DisplayCutout;
-import android.view.WindowInsets;
-import j$.util.Objects;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class pzc extends ozc {
-    public pzc(wzc wzcVar, WindowInsets windowInsets) {
-        super(wzcVar, windowInsets);
+public final class pzc extends kzc implements Set, j$.util.Set {
+    public static final Object[] w;
+    public static final pzc x;
+    public transient ozc n;
+    public final transient Object[] r;
+    public final transient Object[] s;
+
+    static {
+        Object[] objArr = new Object[0];
+        w = objArr;
+        x = new pzc(objArr, objArr);
     }
 
-    @Override // tzc
-    public wzc a() {
-        return wzc.h(null, this.c.consumeDisplayCutout());
+    public pzc(Object[] objArr, Object[] objArr2) {
+        super((byte) 0);
+        this.r = objArr;
+        this.s = objArr2;
     }
 
-    @Override // tzc
-    public vp3 e() {
-        DisplayCutout displayCutout = this.c.getDisplayCutout();
-        if (displayCutout == null) {
-            return null;
-        }
-        return new vp3(displayCutout);
-    }
-
-    @Override // nzc, tzc
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof pzc)) {
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj == null) {
             return false;
         }
-        pzc pzcVar = (pzc) obj;
-        return Objects.equals(this.c, pzcVar.c) && Objects.equals(this.g, pzcVar.g) && nzc.B(this.h, pzcVar.h);
+        int length = this.s.length;
+        return false;
     }
 
-    @Override // tzc
-    public int hashCode() {
-        return this.c.hashCode();
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (set.size() == 0) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
+    }
+
+    @Override // kzc
+    public final int h(Object[] objArr) {
+        System.arraycopy(this.r, 0, objArr, 0, 0);
+        return 0;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return 0;
+    }
+
+    @Override // kzc
+    public final int i() {
+        return 0;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        ozc ozcVar = this.n;
+        if (ozcVar == null) {
+            lzc lzcVar = nzc.n;
+            ozcVar = ozc.s;
+            this.n = ozcVar;
+        }
+        return ozcVar.listIterator(0);
+    }
+
+    @Override // kzc
+    public final int j() {
+        return 0;
+    }
+
+    @Override // kzc
+    public final Object[] k() {
+        return this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return 0;
     }
 }

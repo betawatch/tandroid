@@ -1,14 +1,51 @@
 // default package
 
-import java.util.LinkedHashSet;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class kcd {
-    public final LinkedHashSet a = new LinkedHashSet();
-    public final yv6 b;
+public final class kcd extends ncd {
+    public final transient int h;
+    public final transient int n;
+    public final /* synthetic */ ncd r;
 
-    public kcd(yv6 yv6Var) {
-        this.b = yv6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kcd(ncd ncdVar, int i, int i2) {
+        super((byte) 1);
+        this.r = ncdVar;
+        this.h = i;
+        this.n = i2;
+    }
+
+    @Override // java.util.List
+    public final Object get(int i) {
+        i4f.a(i, this.n);
+        return this.r.get(i + this.h);
+    }
+
+    @Override // x8d
+    public final int i() {
+        return this.r.j() + this.h + this.n;
+    }
+
+    @Override // x8d
+    public final int j() {
+        return this.r.j() + this.h;
+    }
+
+    @Override // x8d
+    public final Object[] k() {
+        return this.r.k();
+    }
+
+    @Override // ncd, java.util.List
+    /* renamed from: l */
+    public final ncd subList(int i, int i2) {
+        i4f.b(i, i2, this.n);
+        int i3 = this.h;
+        return this.r.subList(i + i3, i2 + i3);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.n;
     }
 }

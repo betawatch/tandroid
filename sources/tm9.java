@@ -1,32 +1,35 @@
 // default package
 
-import java.nio.ByteBuffer;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final class tm9 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final Object f;
+public final class tm9 implements zn9 {
+    public final um9 a;
+    public final zn9 b;
 
-    public tm9(int i, int i2, int i3, int i4, int i5, int i6, byte[] bArr) {
-        this.a = i2;
-        this.b = i3;
-        this.c = i4;
-        this.d = i5;
-        this.f = bArr;
-        this.e = i6;
+    public tm9(um9 um9Var, zn9 zn9Var) {
+        this.a = um9Var;
+        this.b = zn9Var;
     }
 
-    public tm9(int i, int i2, int i3, int i4, int i5, ByteBuffer byteBuffer) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        this.e = i5;
-        this.f = byteBuffer;
+    @Override // zn9
+    public final void a(int i, int i2) {
+        if (this.a.W != i || this.a.X != i2) {
+            this.a.W = i;
+            this.a.X = i2;
+            gl.c3(new zk9(this, (byte) 5));
+        }
+        this.b.a(i, i2);
+    }
+
+    @Override // zn9
+    public final boolean b() {
+        return this.b.b();
+    }
+
+    @Override // zn9
+    public final Surface getSurface() {
+        return this.b.getSurface();
     }
 }

@@ -1,55 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.content.DialogInterface;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class a01 extends dx9 {
-    public final /* synthetic */ byte n0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class a01 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a01(Context context, tnb tnbVar) {
-        super(tnbVar, context, false);
-        this.n0 = (byte) 3;
+    public /* synthetic */ a01(int i, byte b) {
+        this.a = b;
+        this.b = i;
     }
 
-    @Override // dx9, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.n0) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        byte b = this.a;
+        int i = this.b;
+        switch (b) {
             case 0:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            case 1:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            case 2:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
+                ConnectionsManager.getInstance(y6c.t0).cancelRequest(i, true);
                 break;
             default:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
+                k96 D0 = k96.D0();
+                if (i != 0) {
+                    Iterator it = D0.T.entrySet().iterator();
+                    while (it.hasNext()) {
+                        h96 h96Var = (h96) ((Map.Entry) it.next()).getValue();
+                        if (h96Var.c == i) {
+                            ConnectionsManager.getInstance(h96Var.d).cancelRequest(i, true);
+                            it.remove();
+                            h96Var.a();
+                            break;
+                        }
+                    }
+                    break;
                 }
                 break;
         }
-        return d(motionEvent);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ a01(Context context, boolean z, ylb ylbVar, byte b) {
-        super(ylbVar, context, z);
-        this.n0 = b;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ a01(Context context) {
-        super(context);
-        this.n0 = (byte) 1;
     }
 }

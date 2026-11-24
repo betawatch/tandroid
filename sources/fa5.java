@@ -1,51 +1,36 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class fa5 extends AnimatorListenerAdapter {
+public final /* synthetic */ class fa5 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ha5 b;
+    public final /* synthetic */ qa5 b;
 
-    public /* synthetic */ fa5(ha5 ha5Var, byte b) {
+    public /* synthetic */ fa5(qa5 qa5Var, byte b) {
         this.a = b;
-        this.b = ha5Var;
+        this.b = qa5Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        ha5 ha5Var = this.b;
+        qa5 qa5Var = this.b;
         switch (b) {
             case 0:
-                ha5Var.F = false;
-                ha5Var.invalidate();
+                qa5Var.finishFragment();
                 break;
             case 1:
-                ga5 ga5Var = ha5Var.b0;
-                float f = ha5Var.W ? 0.0f : 1.0f;
-                ha5Var.a0 = f;
-                ga5Var.setAlpha(f);
-                ga5Var.setVisibility(ha5Var.W ? 8 : 0);
-                ha5Var.a.invalidate();
+                qa5Var.j0();
+                qa5Var.f0();
                 break;
             case 2:
-                super.onAnimationEnd(animator);
-                ha5Var.H0 = null;
-                da5 da5Var = ha5Var.a;
-                da5Var.setRotationY(0.0f);
-                if (!ha5Var.I0) {
-                    da5Var.d.clearImage();
-                    break;
-                }
-                break;
-            case 3:
-                ha5Var.F = false;
+                qa5Var.getClass();
+                qa5Var.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             default:
-                ha5Var.F = false;
+                qa5Var.n.postOnAnimation(new fa5(qa5Var, (byte) 1));
                 break;
         }
     }

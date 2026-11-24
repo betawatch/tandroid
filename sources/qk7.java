@@ -1,14 +1,20 @@
 // default package
 
-import androidx.core.widget.NestedScrollView;
+import android.app.Notification;
+import android.graphics.drawable.Icon;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class qk7 {
-    public static void a(NestedScrollView nestedScrollView, float f) {
-        try {
-            nestedScrollView.setFrameContentVelocity(f);
-        } catch (LinkageError unused) {
-        }
+    public static void a(Notification.BigPictureStyle bigPictureStyle, Icon icon) {
+        bigPictureStyle.bigPicture(icon);
+    }
+
+    public static void b(Notification.BigPictureStyle bigPictureStyle, CharSequence charSequence) {
+        bigPictureStyle.setContentDescription(charSequence);
+    }
+
+    public static void c(Notification.BigPictureStyle bigPictureStyle, boolean z) {
+        bigPictureStyle.showBigPictureWhenCollapsed(z);
     }
 }

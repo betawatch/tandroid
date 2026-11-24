@@ -1,22 +1,44 @@
 // default package
 
-import java.util.Date;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import com.google.android.gms.tasks.Task;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class sxe {
-    public static wm9 a(String str) {
-        JSONObject jSONObject = new JSONObject(str);
-        String a = qwe.a(jSONObject.getString("id"));
-        long j = jSONObject.getLong("created");
-        jSONObject.getBoolean("livemode");
-        String str2 = "card".equals(qwe.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
-        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
-        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
-        zd1 zd1Var = new zd1(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, qwe.a(jSONObject2.optString("name")), qwe.a(jSONObject2.optString("address_line1")), qwe.a(jSONObject2.optString("address_line2")), qwe.a(jSONObject2.optString("address_city")), qwe.a(jSONObject2.optString("address_state")), qwe.a(jSONObject2.optString("address_zip")), qwe.a(jSONObject2.optString("address_country")), uwe.a(qwe.a(jSONObject2.optString("brand"))), qwe.a(jSONObject2.optString("last4")), qwe.a(jSONObject2.optString("fingerprint")), uwe.b(qwe.a(jSONObject2.optString("funding"))), qwe.a(jSONObject2.optString("country")), qwe.a(jSONObject2.optString("currency")));
-        new Date(j * 1000);
-        return new wm9(a, valueOf, zd1Var, str2);
+public final class sxe {
+    public static shf j;
+    public static final c6d k;
+    public final String a;
+    public final String b;
+    public final zwe c;
+    public final sfa d;
+    public final Task e;
+    public final Task f;
+    public final String g;
+    public final int h;
+    public final HashMap i = new HashMap();
+
+    static {
+        Object[] objArr = {"optional-module-barcode", "com.google.android.gms.vision.barcode"};
+        objArr[0].getClass();
+        objArr[1].getClass();
+        k = new c6d(objArr);
+    }
+
+    public sxe(Context context, sfa sfaVar, zwe zweVar, String str) {
+        this.a = context.getPackageName();
+        this.b = om2.a(context);
+        this.d = sfaVar;
+        this.c = zweVar;
+        ize.k();
+        this.g = str;
+        l69.x();
+        this.e = l69.I(new ke7(this, (byte) 5));
+        l69.x();
+        sfaVar.getClass();
+        this.f = l69.I(new ixe(sfaVar, (byte) 0));
+        c6d c6dVar = k;
+        this.h = c6dVar.containsKey(str) ? ds3.d(context, (String) c6dVar.get(str), false) : -1;
     }
 }

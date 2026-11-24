@@ -1,9 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class se9 implements dla {
-    @Override // dla
-    public final void L(int i, boolean z) {
+public final class se9 {
+    public final /* synthetic */ ye9 a;
+
+    public se9(ye9 ye9Var) {
+        this.a = ye9Var;
     }
 }

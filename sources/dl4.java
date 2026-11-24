@@ -1,28 +1,78 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.List;
+import org.telegram.ui.ActionBar.d;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class dl4 {
-    public final String a;
-    public final int b = 2;
-    public final Runnable c;
-    public final float d;
-    public final float e;
-    public final ro f;
+public final /* synthetic */ class dl4 implements p8c {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ ui5 b;
+    public final /* synthetic */ pz1 c;
 
-    public dl4(String str, float f, float f2, ro roVar) {
-        this.a = str;
-        this.d = f;
-        this.e = f2;
-        this.f = roVar;
+    public /* synthetic */ dl4(pz1 pz1Var, ui5 ui5Var) {
+        this.c = pz1Var;
+        this.b = ui5Var;
     }
 
-    public dl4(String str) {
-        this.a = str;
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x003d  */
+    @Override // p8c
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Object obj) {
+        boolean z;
+        byte b = this.a;
+        ui5 ui5Var = this.b;
+        switch (b) {
+            case 0:
+                this.c.a(ui5Var.getLastFragment());
+                break;
+            default:
+                Integer num = (Integer) obj;
+                List fragmentStack = ui5Var.getFragmentStack();
+                boolean z2 = true;
+                d dVar = null;
+                for (int size = fragmentStack.size() - 1; size >= 0; size--) {
+                    dVar = (d) fragmentStack.get(size);
+                    if (!(dVar instanceof cj3) && !(dVar instanceof ah6)) {
+                        if (z2) {
+                            dVar.finishFragment();
+                            z2 = false;
+                        } else {
+                            dVar.removeSelfFromStack();
+                        }
+                    }
+                    d dVar2 = dVar;
+                    d dVar3 = !(dVar2 instanceof ah6) ? ((ah6) dVar2).K : dVar2;
+                    z = dVar3 instanceof cj3;
+                    pz1 pz1Var = this.c;
+                    if (z) {
+                        pz1Var.a(dVar2);
+                        break;
+                    } else {
+                        cj3 cj3Var = (cj3) dVar3;
+                        cj3Var.e3();
+                        gl.d3(new hn1(cj3Var, num, pz1Var, dVar2, (byte) 21), 80L);
+                        break;
+                    }
+                }
+                d dVar22 = dVar;
+                if (!(dVar22 instanceof ah6)) {
+                }
+                z = dVar3 instanceof cj3;
+                pz1 pz1Var2 = this.c;
+                if (z) {
+                }
+                break;
+        }
     }
 
-    public dl4(String str, Runnable runnable) {
-        this.a = str;
-        this.c = runnable;
+    public /* synthetic */ dl4(ui5 ui5Var, pz1 pz1Var) {
+        this.b = ui5Var;
+        this.c = pz1Var;
     }
 }

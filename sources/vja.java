@@ -1,48 +1,71 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vja implements t66, m7 {
-    public final /* synthetic */ yja a;
+import java.util.Map;
 
-    public /* synthetic */ vja(yja yjaVar) {
-        this.a = yjaVar;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class vja implements Map.Entry, Comparable {
+    public final Comparable a;
+    public Object b;
+    public final /* synthetic */ uja c;
+
+    public vja(uja ujaVar, Comparable comparable, Object obj) {
+        this.c = ujaVar;
+        this.a = comparable;
+        this.b = obj;
     }
 
-    @Override // t66
-    public final void A() {
-        yja yjaVar = this.a;
-        yjaVar.d();
-        yjaVar.a.invalidate();
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return this.a.compareTo(((vja) obj).a);
     }
 
-    @Override // m7
-    public final void h(int i) {
-        c6 c6Var = this.a.a.W;
-        if (c6Var != null) {
-            c6Var.b(i);
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (obj != this) {
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = entry.getKey();
+                Comparable comparable = this.a;
+                if (comparable == null ? key == null : comparable.equals(key)) {
+                    Object obj2 = this.b;
+                    Object value = entry.getValue();
+                    if (obj2 == null ? value == null : obj2.equals(value)) {
+                    }
+                }
+            }
+            return false;
         }
+        return true;
     }
 
-    @Override // t66
-    public final boolean l() {
-        return false;
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.a;
     }
 
-    @Override // t66
-    public final boolean m(float f) {
-        return false;
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.b;
     }
 
-    @Override // t66
-    public final void c() {
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        Comparable comparable = this.a;
+        int hashCode = comparable == null ? 0 : comparable.hashCode();
+        Object obj = this.b;
+        return hashCode ^ (obj != null ? obj.hashCode() : 0);
     }
 
-    @Override // t66
-    public final void j(boolean z) {
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        this.c.c();
+        Object obj2 = this.b;
+        this.b = obj;
+        return obj2;
     }
 
-    @Override // t66
-    public final void o() {
+    public final String toString() {
+        return this.a + "=" + this.b;
     }
 }

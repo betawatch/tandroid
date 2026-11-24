@@ -1,43 +1,37 @@
 // default package
 
-import java.io.Serializable;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class zeb implements d26, Serializable {
-    public pr4 a;
-    public volatile Object b;
-    public final Object c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class zeb extends ViewGroup.MarginLayoutParams {
+    public bfb a;
+    public bfb b;
 
-    public zeb(pr4 pr4Var) {
-        pr4Var.getClass();
-        this.a = pr4Var;
-        this.b = nf5.d;
-        this.c = this;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zeb() {
+        super(-2, -2);
+        bfb bfbVar = bfb.e;
+        this.a = bfbVar;
+        this.b = bfbVar;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = bfbVar;
+        this.b = bfbVar;
     }
 
-    @Override // d26
-    public final Object getValue() {
-        Object obj;
-        Object obj2 = this.b;
-        nf5 nf5Var = nf5.d;
-        if (obj2 != nf5Var) {
-            return obj2;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        synchronized (this.c) {
-            obj = this.b;
-            if (obj == nf5Var) {
-                pr4 pr4Var = this.a;
-                pr4Var.getClass();
-                obj = pr4Var.invoke();
-                this.b = obj;
-                this.a = null;
-            }
+        if (obj == null || zeb.class != obj.getClass()) {
+            return false;
         }
-        return obj;
+        zeb zebVar = (zeb) obj;
+        return this.b.equals(zebVar.b) && this.a.equals(zebVar.a);
     }
 
-    public final String toString() {
-        return this.b != nf5.d ? String.valueOf(getValue()) : "Lazy value not initialized yet.";
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

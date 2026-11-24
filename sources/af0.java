@@ -1,148 +1,666 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.MediaController;
+import java.lang.reflect.Array;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class af0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class af0 {
+    public int a;
+    public int b;
+    public int c;
+    public Object d;
 
-    public /* synthetic */ af0(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public af0(ak2 ak2Var) {
+        this.c = 0;
+        Charset charset = mp5.a;
+        this.d = ak2Var;
+        ak2Var.b = this;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        View view;
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((kc0) obj).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                break;
-            case 1:
-                gs0 gs0Var = (gs0) obj;
-                gs0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gs0Var.f.invalidate();
-                break;
-            case 2:
-                yv1 yv1Var = (yv1) obj;
-                yv1Var.Ia = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yv1Var.m1.invalidate();
-                break;
-            case 3:
-                bm2 bm2Var = (bm2) obj;
-                bm2Var.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                bm2Var.p.invalidate();
-                break;
-            case 4:
-                nk3 nk3Var = (nk3) obj;
-                nk3Var.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view2 = nk3Var.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            case 5:
-                mq3 mq3Var = (mq3) obj;
-                mq3Var.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mq3Var.I = true;
-                mq3Var.invalidate();
-                break;
-            case 6:
-                pu9 pu9Var = ((ht5) obj).e.n1;
-                int i = pu9Var.D1;
-                if (i != -1 && (view = pu9Var.E1) != null) {
-                    pu9Var.l1(i, view);
-                    pu9Var.invalidate();
-                    break;
-                }
-                break;
-            case 7:
-                ((du5) obj).y = valueAnimator.getAnimatedFraction();
-                break;
-            case 8:
-                MediaController mediaController = (MediaController) obj;
-                mediaController.Q1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mediaController.m0();
-                break;
-            case 9:
-                rc7 rc7Var = (rc7) obj;
-                rc7Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rc7Var.invalidate();
-                int i2 = 0;
-                while (i2 < 2) {
-                    rc7Var.c[i2].setTranslationX(gm.U1(rc7Var.e, 0, -gm.L(62.0f)));
-                    rc7Var.c[i2].setVisibility(0);
-                    float f = 0.0f;
-                    rc7Var.c[i2].setAlpha(gm.R1(i2 == 0 ? 1.0f : 0.0f, i2 == 1 ? 1.0f : 0.0f, rc7Var.e));
-                    rc7Var.d[i2].setTranslationX(gm.U1(rc7Var.e, 0, -gm.L(62.0f)));
-                    rc7Var.d[i2].setVisibility(0);
-                    TextView textView = rc7Var.d[i2];
-                    float f2 = i2 == 0 ? 1.0f : 0.0f;
-                    if (i2 == 1) {
-                        f = 1.0f;
-                    }
-                    textView.setAlpha(gm.R1(f2, f, rc7Var.e));
-                    i2++;
-                }
-                break;
-            case 10:
-                cj8 cj8Var = (cj8) obj;
-                cj8Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cj8Var.e();
-                break;
-            case 11:
-                ((zi8) obj).setOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 12:
-                p1a p1aVar = (p1a) obj;
-                p1aVar.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p1aVar.invalidate();
-                break;
-            case 13:
-                sha shaVar = (sha) obj;
-                shaVar.C0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                shaVar.invalidate();
-                break;
-            case 14:
-                joa joaVar = (joa) obj;
-                joaVar.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                joaVar.I = true;
-                joaVar.invalidate();
-                break;
-            case 15:
-                ((rob) obj).z0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 16:
-                wgc wgcVar = (wgc) obj;
-                View[] viewArr = wgcVar.e;
-                if (wgcVar.y) {
-                    float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    wgcVar.c = abs;
-                    mgc mgcVar = wgcVar.N;
-                    if (mgcVar != null) {
-                        mgcVar.f(abs, wgcVar.d, wgcVar.b);
-                    }
-                }
-                wgcVar.x(false);
-                break;
-            default:
-                phc phcVar = (phc) obj;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                phcVar.K = floatValue;
-                ohc ohcVar = phcVar.j0;
-                if (ohcVar != null) {
-                    ((shc) ohcVar).b.e0.d(phcVar.Q, floatValue);
-                }
-                phcVar.invalidate();
-                break;
+    public static void F(int i) {
+        if ((i & 3) != 0) {
+            throw new zp5("Failed to parse the message.");
         }
+    }
+
+    public static void G(int i) {
+        if ((i & 7) != 0) {
+            throw new zp5("Failed to parse the message.");
+        }
+    }
+
+    public final void A(int i) {
+        if (((ak2) this.d).b() != i) {
+            throw zp5.e();
+        }
+    }
+
+    public final void B(int i) {
+        if ((this.a & 7) != i) {
+            throw zp5.b();
+        }
+    }
+
+    public final synchronized void C(int i) {
+        boolean z = i < this.a;
+        this.a = i;
+        if (z) {
+            E();
+        }
+    }
+
+    public final boolean D() {
+        int i;
+        ak2 ak2Var = (ak2) this.d;
+        if (ak2Var.c() || (i = this.a) == this.b) {
+            return false;
+        }
+        return ak2Var.x(i);
+    }
+
+    public final synchronized void E() {
+        int max = Math.max(0, g8c.g(this.a, 65536) - this.b);
+        int i = this.c;
+        if (max >= i) {
+            return;
+        }
+        Arrays.fill((mj[]) this.d, max, i, (Object) null);
+        this.c = max;
+    }
+
+    public final synchronized mj a() {
+        mj mjVar;
+        int i = this.b + 1;
+        this.b = i;
+        int i2 = this.c;
+        if (i2 > 0) {
+            mj[] mjVarArr = (mj[]) this.d;
+            int i3 = i2 - 1;
+            this.c = i3;
+            mjVar = mjVarArr[i3];
+            mjVar.getClass();
+            ((mj[]) this.d)[this.c] = null;
+        } else {
+            mj mjVar2 = new mj(0, new byte[65536]);
+            mj[] mjVarArr2 = (mj[]) this.d;
+            if (i > mjVarArr2.length) {
+                this.d = (mj[]) Arrays.copyOf(mjVarArr2, mjVarArr2.length << 1);
+            }
+            mjVar = mjVar2;
+        }
+        return mjVar;
+    }
+
+    public final bf0 b() {
+        return ((bf0[]) this.d)[this.a];
+    }
+
+    public final int c() {
+        int i = this.c;
+        if (i != 0) {
+            this.a = i;
+            this.c = 0;
+        } else {
+            i = ((ak2) this.d).u();
+            this.a = i;
+        }
+        return (i == 0 || i == this.b) ? ConnectionsManager.DEFAULT_DATACENTER_ID : i >>> 3;
+    }
+
+    public final byte[][] d(int i, int i2) {
+        int i3 = this.b * i2;
+        byte[][] bArr = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, i3, this.c * i);
+        for (int i4 = 0; i4 < i3; i4++) {
+            int i5 = (i3 - i4) - 1;
+            byte[] bArr2 = ((bf0[]) this.d)[i4 / i2].a;
+            int length = bArr2.length * i;
+            byte[] bArr3 = new byte[length];
+            for (int i6 = 0; i6 < length; i6++) {
+                bArr3[i6] = bArr2[i6 / i];
+            }
+            bArr[i5] = bArr3;
+        }
+        return bArr;
+    }
+
+    public final void e(Object obj, nq9 nq9Var, b74 b74Var) {
+        int i = this.b;
+        this.b = ((this.a >>> 3) << 3) | 4;
+        try {
+            nq9Var.h(obj, this, b74Var);
+            if (this.a == this.b) {
+            } else {
+                throw new zp5("Failed to parse the message.");
+            }
+        } finally {
+            this.b = i;
+        }
+    }
+
+    public final void f(Object obj, nq9 nq9Var, b74 b74Var) {
+        ak2 ak2Var = (ak2) this.d;
+        int v = ak2Var.v();
+        if (ak2Var.a >= 100) {
+            throw new zp5("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+        }
+        int e = ak2Var.e(v);
+        ak2Var.a++;
+        nq9Var.h(obj, this, b74Var);
+        ak2Var.a(0);
+        ak2Var.a--;
+        ak2Var.d(e);
+    }
+
+    public final void g(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Boolean.valueOf(ak2Var.f()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Boolean.valueOf(ak2Var.f()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final f51 h() {
+        B(2);
+        return ((ak2) this.d).g();
+    }
+
+    public final void i(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        if ((this.a & 7) != 2) {
+            throw zp5.b();
+        }
+        do {
+            lp5Var.add(h());
+            if (ak2Var.c()) {
+                return;
+            } else {
+                u = ak2Var.u();
+            }
+        } while (u == this.a);
+        this.c = u;
+    }
+
+    public final void j(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 1) {
+            do {
+                lp5Var.add(Double.valueOf(ak2Var.h()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int v = ak2Var.v();
+        G(v);
+        int b = ak2Var.b() + v;
+        do {
+            lp5Var.add(Double.valueOf(ak2Var.h()));
+        } while (ak2Var.b() < b);
+    }
+
+    public final void k(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Integer.valueOf(ak2Var.i()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Integer.valueOf(ak2Var.i()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final Object l(kyc kycVar, Class cls, b74 b74Var) {
+        ak2 ak2Var = (ak2) this.d;
+        switch (kycVar.ordinal()) {
+            case 0:
+                B(1);
+                return Double.valueOf(ak2Var.h());
+            case 1:
+                B(5);
+                return Float.valueOf(ak2Var.l());
+            case 2:
+                B(0);
+                return Long.valueOf(ak2Var.n());
+            case 3:
+                B(0);
+                return Long.valueOf(ak2Var.w());
+            case 4:
+                B(0);
+                return Integer.valueOf(ak2Var.m());
+            case 5:
+                B(1);
+                return Long.valueOf(ak2Var.k());
+            case 6:
+                B(5);
+                return Integer.valueOf(ak2Var.j());
+            case 7:
+                B(0);
+                return Boolean.valueOf(ak2Var.f());
+            case 8:
+                B(2);
+                return ak2Var.t();
+            case 9:
+            default:
+                w26.j("unsupported field type.");
+                return null;
+            case 10:
+                B(2);
+                nq9 a = ft8.c.a(cls);
+                fs4 a2 = a.a();
+                f(a2, a, b74Var);
+                a.c(a2);
+                return a2;
+            case 11:
+                return h();
+            case 12:
+                B(0);
+                return Integer.valueOf(ak2Var.v());
+            case 13:
+                B(0);
+                return Integer.valueOf(ak2Var.i());
+            case 14:
+                B(5);
+                return Integer.valueOf(ak2Var.o());
+            case 15:
+                B(1);
+                return Long.valueOf(ak2Var.p());
+            case 16:
+                B(0);
+                return Integer.valueOf(ak2Var.q());
+            case 17:
+                B(0);
+                return Long.valueOf(ak2Var.r());
+        }
+    }
+
+    public final void m(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 2) {
+            int v = ak2Var.v();
+            F(v);
+            int b = ak2Var.b() + v;
+            do {
+                lp5Var.add(Integer.valueOf(ak2Var.j()));
+            } while (ak2Var.b() < b);
+            return;
+        }
+        if (i != 5) {
+            throw zp5.b();
+        }
+        do {
+            lp5Var.add(Integer.valueOf(ak2Var.j()));
+            if (ak2Var.c()) {
+                return;
+            } else {
+                u = ak2Var.u();
+            }
+        } while (u == this.a);
+        this.c = u;
+    }
+
+    public final void n(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 1) {
+            do {
+                lp5Var.add(Long.valueOf(ak2Var.k()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int v = ak2Var.v();
+        G(v);
+        int b = ak2Var.b() + v;
+        do {
+            lp5Var.add(Long.valueOf(ak2Var.k()));
+        } while (ak2Var.b() < b);
+    }
+
+    public final void o(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 2) {
+            int v = ak2Var.v();
+            F(v);
+            int b = ak2Var.b() + v;
+            do {
+                lp5Var.add(Float.valueOf(ak2Var.l()));
+            } while (ak2Var.b() < b);
+            return;
+        }
+        if (i != 5) {
+            throw zp5.b();
+        }
+        do {
+            lp5Var.add(Float.valueOf(ak2Var.l()));
+            if (ak2Var.c()) {
+                return;
+            } else {
+                u = ak2Var.u();
+            }
+        } while (u == this.a);
+        this.c = u;
+    }
+
+    public final void p(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Integer.valueOf(ak2Var.m()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Integer.valueOf(ak2Var.m()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final void q(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Long.valueOf(ak2Var.n()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Long.valueOf(ak2Var.n()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final void r(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 2) {
+            int v = ak2Var.v();
+            F(v);
+            int b = ak2Var.b() + v;
+            do {
+                lp5Var.add(Integer.valueOf(ak2Var.o()));
+            } while (ak2Var.b() < b);
+            return;
+        }
+        if (i != 5) {
+            throw zp5.b();
+        }
+        do {
+            lp5Var.add(Integer.valueOf(ak2Var.o()));
+            if (ak2Var.c()) {
+                return;
+            } else {
+                u = ak2Var.u();
+            }
+        } while (u == this.a);
+        this.c = u;
+    }
+
+    public final void s(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 1) {
+            do {
+                lp5Var.add(Long.valueOf(ak2Var.p()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int v = ak2Var.v();
+        G(v);
+        int b = ak2Var.b() + v;
+        do {
+            lp5Var.add(Long.valueOf(ak2Var.p()));
+        } while (ak2Var.b() < b);
+    }
+
+    public final void t(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Integer.valueOf(ak2Var.q()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Integer.valueOf(ak2Var.q()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final void u(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Long.valueOf(ak2Var.r()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Long.valueOf(ak2Var.r()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final void v(lp5 lp5Var, boolean z) {
+        String s;
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        if ((this.a & 7) != 2) {
+            throw zp5.b();
+        }
+        do {
+            if (z) {
+                B(2);
+                s = ak2Var.t();
+            } else {
+                B(2);
+                s = ak2Var.s();
+            }
+            lp5Var.add(s);
+            if (ak2Var.c()) {
+                return;
+            } else {
+                u = ak2Var.u();
+            }
+        } while (u == this.a);
+        this.c = u;
+    }
+
+    public final void w(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Integer.valueOf(ak2Var.v()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Integer.valueOf(ak2Var.v()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final void x(lp5 lp5Var) {
+        int u;
+        ak2 ak2Var = (ak2) this.d;
+        int i = this.a & 7;
+        if (i == 0) {
+            do {
+                lp5Var.add(Long.valueOf(ak2Var.w()));
+                if (ak2Var.c()) {
+                    return;
+                } else {
+                    u = ak2Var.u();
+                }
+            } while (u == this.a);
+            this.c = u;
+            return;
+        }
+        if (i != 2) {
+            throw zp5.b();
+        }
+        int b = ak2Var.b() + ak2Var.v();
+        do {
+            lp5Var.add(Long.valueOf(ak2Var.w()));
+        } while (ak2Var.b() < b);
+        A(b);
+    }
+
+    public final synchronized void y(mj mjVar) {
+        mj[] mjVarArr = (mj[]) this.d;
+        int i = this.c;
+        this.c = i + 1;
+        mjVarArr[i] = mjVar;
+        this.b--;
+    }
+
+    public final synchronized void z(ly0 ly0Var) {
+        while (ly0Var != null) {
+            mj[] mjVarArr = (mj[]) this.d;
+            int i = this.c;
+            this.c = i + 1;
+            mj mjVar = (mj) ly0Var.c;
+            mjVar.getClass();
+            mjVarArr[i] = mjVar;
+            this.b--;
+            ly0Var = (ly0) ly0Var.d;
+            if (ly0Var == null || ((mj) ly0Var.c) == null) {
+                ly0Var = null;
+            }
+        }
+    }
+
+    public af0() {
+        this.c = 0;
+        this.d = new mj[100];
     }
 }

@@ -1,68 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.util.Log;
-import java.io.IOException;
-import java.io.InputStream;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class i5 {
     public String a;
     public String b;
 
-    public i5(hi2 hi2Var) {
-        Context context = (Context) hi2Var.b;
-        int e = bo2.e(context, "com.google.firebase.crashlytics.unity_version", "string");
-        if (e != 0) {
-            this.a = "Unity";
-            String string = context.getResources().getString(e);
-            this.b = string;
-            String h = b10.h("Unity Editor version is: ", string);
-            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", h, null);
-                return;
-            }
-            return;
-        }
-        if (context.getAssets() != null) {
-            try {
-                InputStream open = context.getAssets().open("flutter_assets/NOTICES.Z");
-                if (open != null) {
-                    open.close();
-                }
-                this.a = "Flutter";
-                this.b = null;
-                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                    Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
+    public i5(String str, String str2, byte b) {
+        switch (b) {
+            case 1:
+                this.a = str;
+                this.b = str2;
+                if (str.length() > 0) {
                     return;
                 }
+                w26.j("userId should not be empty");
+                throw null;
+            default:
+                this.a = str;
+                this.b = str2;
                 return;
-            } catch (IOException unused) {
-            }
         }
-        this.a = null;
-        this.b = null;
     }
 
-    public final zy8 a() {
+    public final yw8 a() {
         if ("first_party".equals(this.b)) {
-            u36.j("Serialized doc id must be provided for first party products.");
+            w26.j("Serialized doc id must be provided for first party products.");
             return null;
         }
         if (this.a == null) {
-            u36.j("Product id must be provided.");
+            w26.j("Product id must be provided.");
             return null;
         }
         if (this.b != null) {
-            return new zy8(this);
+            return new yw8(this);
         }
-        u36.j("Product type must be provided.");
+        w26.j("Product type must be provided.");
         return null;
-    }
-
-    public /* synthetic */ i5(String str, String str2) {
-        this.a = str;
-        this.b = str2;
     }
 }

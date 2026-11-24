@@ -1,38 +1,87 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vm5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wm5 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+public final class vm5 extends ym5 {
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ wm5 e;
 
-    public /* synthetic */ vm5(wm5 wm5Var, long j, long j2, byte b) {
-        this.a = b;
-        this.b = wm5Var;
-        this.c = j;
-        this.d = j2;
+    public /* synthetic */ vm5(wm5 wm5Var, byte b) {
+        this.d = b;
+        this.e = wm5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // gm5, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        byte b = this.d;
+        wm5 wm5Var = this.e;
+        switch (b) {
             case 0:
-                wm5 wm5Var = this.b;
-                ConcurrentHashMap concurrentHashMap = wm5Var.i.u;
-                String str = wm5Var.a;
-                long j = this.c;
-                long j2 = this.d;
-                concurrentHashMap.put(str, new long[]{j, j2});
-                gm.c3(new vm5(wm5Var, j, j2, (byte) 1));
-                break;
+                if (obj instanceof vn7) {
+                    vn7 vn7Var = (vn7) obj;
+                    if (vn7Var.a() > 0) {
+                        if (((c69) wm5Var).e.b(vn7Var.a) == vn7Var.a()) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
             default:
-                wm5 wm5Var2 = this.b;
-                nm7.f(wm5Var2.h).k(nm7.X1, wm5Var2.a, Long.valueOf(this.c), Long.valueOf(this.d));
-                break;
+                return ((c69) wm5Var).contains(obj);
+        }
+    }
+
+    @Override // ym5, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        switch (this.d) {
+            case 0:
+                return this.e.hashCode();
+            default:
+                return super.hashCode();
+        }
+    }
+
+    @Override // gm5
+    public final int i(int i, Object[] objArr) {
+        return h().i(i, objArr);
+    }
+
+    @Override // gm5
+    public final boolean m() {
+        switch (this.d) {
+            case 0:
+                return false;
+            default:
+                return true;
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    /* renamed from: n, reason: merged with bridge method [inline-methods] */
+    public final v5c iterator() {
+        return h().listIterator(0);
+    }
+
+    @Override // ym5
+    public final mm5 r() {
+        return new kn5(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        byte b = this.d;
+        wm5 wm5Var = this.e;
+        switch (b) {
+            case 0:
+                c69 c69Var = (c69) wm5Var;
+                vm5 vm5Var = c69Var.h;
+                if (vm5Var == null) {
+                    vm5Var = new vm5(c69Var, (byte) 1);
+                    c69Var.h = vm5Var;
+                }
+                return vm5Var.size();
+            default:
+                return ((c69) wm5Var).e.c;
         }
     }
 }

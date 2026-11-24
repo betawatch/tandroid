@@ -1,23 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class nwd {
-    public static ay2 a(ay2 ay2Var, by2 by2Var) {
-        by2Var.getClass();
-        if (rr5.a(ay2Var.getKey(), by2Var)) {
-            return ay2Var;
+public final class nwd implements zn7 {
+    public static final nwd a = new nwd();
+
+    static {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return null;
-    }
-
-    public static cy2 b(ay2 ay2Var, by2 by2Var) {
-        by2Var.getClass();
-        return rr5.a(ay2Var.getKey(), by2Var) ? k34.a : ay2Var;
-    }
-
-    public static cy2 c(ay2 ay2Var, cy2 cy2Var) {
-        cy2Var.getClass();
-        return cy2Var == k34.a ? ay2Var : (cy2) cy2Var.fold(ay2Var, new qn2((byte) 1));
+        throw null;
     }
 }

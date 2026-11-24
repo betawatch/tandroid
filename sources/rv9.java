@@ -1,11 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface rv9 {
-    void finish();
+public final class rv9 {
+    public final long a;
+    public final long b;
 
-    void j(float f);
+    public rv9(long j, long j2) {
+        this.a = j;
+        this.b = j2;
+    }
 
-    void w(hg3 hg3Var);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && rv9.class == obj.getClass()) {
+            rv9 rv9Var = (rv9) obj;
+            if (this.a == rv9Var.a && this.b == rv9Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
+    }
 }

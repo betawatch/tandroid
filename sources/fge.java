@@ -1,33 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class fge {
-    public static final void a(vb1 vb1Var, px2 px2Var, boolean z) {
-        Object r = vb1Var.r();
-        Throwable f = vb1Var.f(r);
-        Object sc9Var = f != null ? new sc9(f) : vb1Var.g(r);
-        if (!z) {
-            px2Var.resumeWith(sc9Var);
-            return;
+public final class fge implements zn7 {
+    public static final fge a = new fge();
+
+    static {
+        yjb.y(yjb.q(kkd.class, new cjd(1)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        px2Var.getClass();
-        rp3 rp3Var = (rp3) px2Var;
-        qx2 qx2Var = rp3Var.e;
-        Object obj = rp3Var.h;
-        cy2 context = qx2Var.getContext();
-        Object c = gfd.c(context, obj);
-        y6c c2 = c != gfd.a ? t1e.c(qx2Var, context, c) : null;
-        try {
-            qx2Var.resumeWith(sc9Var);
-            if (c2 == null || c2.S()) {
-                gfd.a(context, c);
-            }
-        } catch (Throwable th) {
-            if (c2 == null || c2.S()) {
-                gfd.a(context, c);
-            }
-            throw th;
-        }
+        throw null;
     }
 }

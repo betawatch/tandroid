@@ -1,120 +1,60 @@
 // default package
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.view.MotionEvent;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.webrtc.MediaStreamTrack;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextPaint;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class es1 extends u17 {
-    public boolean V;
-    public final /* synthetic */ yv1 W;
+public final class es1 extends tib {
+    public final /* synthetic */ mu1 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public es1(yv1 yv1Var, Context context, long j, long j2, yv1 yv1Var2, ylb ylbVar) {
-        super(context, j, j2, yv1Var2, ylbVar);
-        this.W = yv1Var;
-        this.V = true;
+    public es1(mu1 mu1Var, wjb wjbVar, Activity activity) {
+        super(activity);
+        this.L = mu1Var;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = gl.L(24.0f);
+        this.e = new OvershootInterpolator();
+        this.I = new cib(this, (byte) 1);
+        this.K = new Path();
+        int v0 = bkb.v0(bkb.xj, wjbVar);
+        int alpha = Color.alpha(v0);
+        textPaint.setTextSize(gl.L(15.0f));
+        textPaint.setColor(v0);
+        paint.setColor(v0);
+        paint.setAlpha((int) (alpha * 0.14d));
+        int L = gl.L(6.0f);
+        int i = bkb.vj;
+        ShapeDrawable b0 = bkb.b0(L, bkb.v0(i, wjbVar));
+        vkb M = zkb.M(i);
+        setBackground(b0);
+        zkb.j(this, b0, M, null, wjbVar);
     }
 
-    @Override // u17
-    public final boolean a() {
-        yv1 yv1Var = this.W;
-        return yv1Var.T.getVisibility() != 0 || yv1Var.C3;
+    public final void d() {
+        int i = -(gl.L(16.0f) + getMeasuredHeight());
+        mu1 mu1Var = this.L;
+        setTranslationY((mu1Var.a0.getTop() - mu1Var.m1.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i)));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() <= 0.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // tib, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        d();
     }
 
-    @Override // u17
-    public final void j() {
-        this.W.ad();
-    }
-
-    @Override // u17
-    public final void k(TLRPC.BotInlineResult botInlineResult) {
-        yv1 yv1Var = this.W;
-        if (yv1Var.getParentActivity() == null || botInlineResult.content == null) {
-            return;
-        }
-        if (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && !botInlineResult.type.equals("web_player_video")) {
-            yv1Var.Oa(0, botInlineResult.content.url, null, null, false);
-            return;
-        }
-        int[] g1 = k47.g1(botInlineResult);
-        kq1 kq1Var = yv1Var.gb;
-        String str = botInlineResult.title;
-        if (str == null) {
-            str = "";
-        }
-        String str2 = str;
-        String str3 = botInlineResult.description;
-        String str4 = botInlineResult.content.url;
-        zv3.I0(yv1Var, null, kq1Var, str2, str3, str4, str4, g1[0], g1[1], -1, yv1Var.Y7());
-    }
-
-    @Override // u17
-    public final void l(boolean z) {
-        String M0;
-        yv1 yv1Var = this.W;
-        ms1 ms1Var = yv1Var.a0;
-        if (ms1Var != null) {
-            k17 adapter = getAdapter();
-            TLRPC.User user = adapter.x0;
-            if (user != null) {
-                M0 = user.bot_inline_placeholder;
-            } else {
-                String str = adapter.r0;
-                M0 = (str == null || !str.equals("gif")) ? null : jb6.M0(2131745498, null);
-            }
-            ms1Var.setCaption(M0);
-            ay1 ay1Var = yv1Var.a0.F2;
-            if (ay1Var != null) {
-                if (!z) {
-                    ay1Var.e = false;
-                    return;
-                }
-                ay1Var.e = true;
-                ay1Var.b = System.currentTimeMillis();
-                ay1Var.invalidateSelf();
-            }
-        }
-    }
-
-    @Override // u17
-    public final void m() {
-        yv1 yv1Var = this.W;
-        if (yv1Var.r5 && ((getAdapter().S == null || yv1Var.s5 || yv1Var.t5) && yv1Var.h != null && getAdapter().S != null)) {
-            SharedPreferences d1 = oc7.d1();
-            if (!d1.getBoolean("secretbot", false)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, yv1Var.Ba, yv1Var.getParentActivity());
-                String M0 = jb6.M0(R.string.AppName, null);
-                he heVar = alertDialog$Builder.a;
-                heVar.S = M0;
-                heVar.U = jb6.M0(2131745428, null);
-                alertDialog$Builder.j(jb6.M0(2131747564, null), null);
-                yv1Var.showDialog(heVar);
-                d1.edit().putBoolean("secretbot", true).commit();
-            }
-        }
-        yv1Var.ad();
-    }
-
-    @Override // u17
-    public final void n(boolean z) {
-        if (this.V != z) {
-            yv1 yv1Var = this.W;
-            gm.P3(yv1Var.s1, !yv1Var.isInPreviewMode() && z, false);
-            this.V = z;
-        }
+    @Override // tib, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        d();
     }
 }

@@ -1,43 +1,24 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class m72 extends v46 {
-    public final /* synthetic */ l32 r;
+public final class m72 extends m8 {
+    public final /* synthetic */ o72 o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m72(l32 l32Var, Context context) {
-        super(context);
-        this.r = l32Var;
+    public m72(o72 o72Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = o72Var;
     }
 
-    @Override // v46
-    public final int k(int i, View view) {
-        int i2;
-        v72 v72Var = (v72) this.r.V;
-        if (v72Var.W0) {
-            i = -1;
+    @Override // m8, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        mu1 mu1Var = this.o.H;
+        if (mu1Var != null) {
+            mu1Var.r6(false, true, 0.0f);
         }
-        int k = super.k(i, view);
-        if (v72Var.W0) {
-            k += gm.L(160.0f);
-        }
-        if (!v72Var.W0) {
-            k = hg9.f(7.0f, v72Var.S0 - gm.m, k);
-        }
-        if (v72Var.W0 && k == 0 && (i2 = v72Var.X0) >= 0) {
-            v72Var.k0(i2);
-            v72Var.X0 = -1;
-        }
-        v72Var.W0 = false;
-        return k;
-    }
-
-    @Override // v46
-    public final int m(int i) {
-        return super.m(i) << 1;
     }
 }

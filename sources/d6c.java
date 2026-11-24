@@ -1,39 +1,174 @@
 // default package
 
-import android.text.TextPaint;
+import java.lang.reflect.Field;
+import java.nio.Buffer;
+import java.nio.ByteOrder;
+import java.security.AccessController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class d6c extends g6c {
-    public static boolean h = true;
-    public final int e;
-    public final wkb f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class d6c {
+    public static final Unsafe a;
+    public static final Class b;
+    public static final c6c c;
+    public static final boolean d;
+    public static final boolean e;
+    public static final long f;
+    public static final boolean g;
 
-    public d6c(String str, int i, wkb wkbVar) {
-        super(str, (wkb) null);
-        this.e = i;
-        this.f = wkbVar;
-    }
-
-    @Override // g6c, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i = this.e;
-        if (i == 2) {
-            textPaint.setColor(-1);
-        } else {
-            boolean z = h;
-            if (i == 1) {
-                textPaint.setColor(cmb.w0(null, z ? cmb.Xc : cmb.Vc, false));
-            } else {
-                textPaint.setColor(cmb.w0(null, z ? cmb.Wc : cmb.Uc, false));
+    static {
+        Unsafe unsafe;
+        c6c c6cVar = null;
+        try {
+            unsafe = (Unsafe) AccessController.doPrivileged(new q2((byte) 1));
+        } catch (Throwable unused) {
+            unsafe = null;
+        }
+        a = unsafe;
+        b = wj.a;
+        boolean d2 = d(Long.TYPE);
+        boolean d3 = d(Integer.TYPE);
+        if (unsafe != null) {
+            if (!wj.a()) {
+                c6cVar = new b6c(unsafe);
+            } else if (d2) {
+                c6cVar = new a6c(unsafe, (byte) 1);
+            } else if (d3) {
+                c6cVar = new a6c(unsafe, (byte) 0);
             }
         }
-        wkb wkbVar = this.f;
-        if (wkbVar != null) {
-            wkbVar.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+        c = c6cVar;
+        d = c6cVar == null ? false : c6cVar.i();
+        e = c6cVar == null ? false : c6cVar.h();
+        f = a(byte[].class);
+        a(boolean[].class);
+        b(boolean[].class);
+        a(int[].class);
+        b(int[].class);
+        a(long[].class);
+        b(long[].class);
+        a(float[].class);
+        b(float[].class);
+        a(double[].class);
+        b(double[].class);
+        a(Object[].class);
+        b(Object[].class);
+        Field c2 = c();
+        if (c2 != null && c6cVar != null) {
+            c6cVar.a.objectFieldOffset(c2);
         }
+        g = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
+    }
+
+    public static int a(Class cls) {
+        if (e) {
+            return c.a.arrayBaseOffset(cls);
+        }
+        return -1;
+    }
+
+    public static void b(Class cls) {
+        if (e) {
+            c.a.arrayIndexScale(cls);
+        }
+    }
+
+    public static Field c() {
+        Field field;
+        Field field2;
+        if (wj.a()) {
+            try {
+                field2 = Buffer.class.getDeclaredField("effectiveDirectAddress");
+            } catch (Throwable unused) {
+                field2 = null;
+            }
+            if (field2 != null) {
+                return field2;
+            }
+        }
+        try {
+            field = Buffer.class.getDeclaredField("address");
+        } catch (Throwable unused2) {
+            field = null;
+        }
+        if (field == null || field.getType() != Long.TYPE) {
+            return null;
+        }
+        return field;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static boolean d(Class cls) {
+        if (!wj.a()) {
+            return false;
+        }
+        try {
+            Class cls2 = b;
+            Class cls3 = Boolean.TYPE;
+            cls2.getMethod("peekLong", cls, cls3);
+            cls2.getMethod("pokeLong", cls, Long.TYPE, cls3);
+            Class cls4 = Integer.TYPE;
+            cls2.getMethod("pokeInt", cls, cls4, cls3);
+            cls2.getMethod("peekInt", cls, cls3);
+            cls2.getMethod("pokeByte", cls, Byte.TYPE);
+            cls2.getMethod("peekByte", cls);
+            cls2.getMethod("pokeByteArray", cls, byte[].class, cls4, cls4);
+            cls2.getMethod("peekByteArray", cls, byte[].class, cls4, cls4);
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public static boolean e(Object obj, long j) {
+        return ((byte) ((f(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & kk7.d4)) != 0;
+    }
+
+    public static int f(Object obj, long j) {
+        return c.a.getInt(obj, j);
+    }
+
+    public static long g(Object obj, long j) {
+        return c.a.getLong(obj, j);
+    }
+
+    public static Object h(Object obj, long j) {
+        return c.a.getObject(obj, j);
+    }
+
+    public static void i(Throwable th) {
+        Logger.getLogger(d6c.class.getName()).log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
+    }
+
+    public static void j(byte[] bArr, long j, byte b2) {
+        c.e(f + j, bArr, b2);
+    }
+
+    public static void k(long j, Object obj, byte b2) {
+        long j2 = (-4) & j;
+        int f2 = f(obj, j2);
+        int i = ((~((int) j)) & 3) << 3;
+        m(obj, (f2 & (~(kk7.d4 << i))) | ((b2 & 255) << i), j2);
+    }
+
+    public static void l(long j, Object obj, byte b2) {
+        long j2 = (-4) & j;
+        int i = (((int) j) & 3) << 3;
+        m(obj, (f(obj, j2) & (~(kk7.d4 << i))) | ((b2 & 255) << i), j2);
+    }
+
+    public static void m(Object obj, int i, long j) {
+        c.a.putInt(obj, j, i);
+    }
+
+    public static void n(Object obj, long j, long j2) {
+        c.a.putLong(obj, j, j2);
+    }
+
+    public static void o(Object obj, long j, Object obj2) {
+        c.a.putObject(obj, j, obj2);
     }
 }

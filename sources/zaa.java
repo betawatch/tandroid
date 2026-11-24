@@ -1,48 +1,15 @@
 // default package
 
-import android.graphics.Color;
-import android.opengl.GLES20;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final class zaa {
-    public int a;
-    public HashMap b;
+    public final yaa[] a;
+    public final String b;
+    public final String[] c;
 
-    public static void a(int i, int i2) {
-        GLES20.glUniform4f(i, Color.red(i2) / 255.0f, Color.green(i2) / 255.0f, Color.blue(i2) / 255.0f, Color.alpha(i2) / 255.0f);
-    }
-
-    public static az8 b(int i, String str) {
-        int glCreateShader = GLES20.glCreateShader(i);
-        GLES20.glShaderSource(glCreateShader, str);
-        GLES20.glCompileShader(glCreateShader);
-        int[] iArr = new int[1];
-        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
-        if (iArr[0] == 0 && e21.a) {
-            fc4.d(GLES20.glGetShaderInfoLog(glCreateShader));
-        }
-        int i2 = iArr[0];
-        az8 az8Var = new az8((byte) 5);
-        az8Var.b = glCreateShader;
-        az8Var.c = i2;
-        return az8Var;
-    }
-
-    public static void c(int i, int i2, int i3) {
-        if (i != 0) {
-            GLES20.glDeleteShader(i);
-        }
-        if (i2 != 0) {
-            GLES20.glDeleteShader(i2);
-        }
-        if (i3 != 0) {
-            GLES20.glDeleteProgram(i);
-        }
-    }
-
-    public final int d(String str) {
-        return ((Integer) this.b.get(str)).intValue();
+    public zaa(yaa[] yaaVarArr, String str, String[] strArr) {
+        this.a = yaaVarArr;
+        this.b = str;
+        this.c = strArr;
     }
 }

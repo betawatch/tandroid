@@ -1,30 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hm9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ km9 b;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_phone;
 
-    public /* synthetic */ hm9(km9 km9Var, byte b) {
-        this.a = b;
-        this.b = km9Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hm9 implements NativeInstance.PayloadCallback, NativeInstance.VideoSourcesCallback {
+    public final /* synthetic */ nm9 a;
+
+    public /* synthetic */ hm9(nm9 nm9Var) {
+        this.a = nm9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        km9 km9Var = this.b;
-        switch (b) {
-            case 0:
-                if (km9Var.W != 0) {
-                    km9Var.V = true;
-                    break;
-                }
-                break;
-            default:
-                km9Var.c();
-                break;
+    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
+    public final void run(long j, int[] iArr) {
+        nm9 nm9Var = this.a;
+        if (nm9Var.P == null) {
+            return;
         }
+        TL_phone.getGroupParticipants getgroupparticipants = new TL_phone.getGroupParticipants();
+        getgroupparticipants.call = nm9Var.f;
+        getgroupparticipants.offset = "";
+        int i = 0;
+        while (i < iArr.length) {
+            i = tb4.g(iArr[i], i, 1, getgroupparticipants.sources);
+        }
+        ConnectionsManager.getInstance(nm9Var.e).sendRequest(getgroupparticipants, new w47((Object) nm9Var, (Object) iArr, j, (byte) 14));
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback
+    public final void run(int i, String str) {
+        this.a.s(i, str);
     }
 }

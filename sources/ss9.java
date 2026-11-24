@@ -1,36 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public class ss9 extends b2 implements my2 {
-    public final px2 e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ss9 {
+    public h19 a;
+    public int b;
+    public String c;
+    public int d;
 
-    public ss9(px2 px2Var, cy2 cy2Var) {
-        super(cy2Var, true);
-        this.e = px2Var;
-    }
-
-    @Override // ov5
-    public final boolean A() {
-        return true;
-    }
-
-    @Override // ov5
-    public void f(Object obj) {
-        r5c.c(fne.a(this.e), cvd.a(obj));
-    }
-
-    @Override // ov5
-    public void g(Object obj) {
-        this.e.resumeWith(cvd.a(obj));
-    }
-
-    @Override // my2
-    public final my2 getCallerFrame() {
-        px2 px2Var = this.e;
-        if (px2Var instanceof my2) {
-            return (my2) px2Var;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ss9)) {
+            return false;
         }
-        return null;
+        ss9 ss9Var = (ss9) obj;
+        return this.b == ss9Var.b && this.a.h == ss9Var.a.h && this.d == ss9Var.d;
     }
 }

@@ -1,10 +1,51 @@
 // default package
 
-import java.util.List;
+import java.util.Arrays;
 
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface rod extends List {
-    List c();
+public final class rod {
+    public final /* synthetic */ byte a;
+    public Object b;
+    public Object c;
+    public Object d;
 
-    rod g();
+    public /* synthetic */ rod(String str) {
+        this.a = (byte) 4;
+        vk9 vk9Var = new vk9((byte) 28, false);
+        this.c = vk9Var;
+        this.d = vk9Var;
+        this.b = str;
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 4:
+                StringBuilder sb = new StringBuilder(32);
+                sb.append((String) this.b);
+                sb.append('{');
+                vk9 vk9Var = (vk9) ((vk9) this.c).d;
+                String str = "";
+                while (vk9Var != null) {
+                    Object obj = vk9Var.c;
+                    sb.append(str);
+                    String str2 = (String) vk9Var.b;
+                    if (str2 != null) {
+                        sb.append(str2);
+                        sb.append('=');
+                    }
+                    if (obj == null || !obj.getClass().isArray()) {
+                        sb.append(obj);
+                    } else {
+                        sb.append((CharSequence) Arrays.deepToString(new Object[]{obj}), 1, r2.length() - 1);
+                    }
+                    vk9Var = (vk9) vk9Var.d;
+                    str = ", ";
+                }
+                sb.append('}');
+                return sb.toString();
+            default:
+                return super.toString();
+        }
+    }
 }

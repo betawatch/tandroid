@@ -1,113 +1,192 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.LocusId;
-import android.content.pm.ShortcutInfo;
-import android.os.Build;
-import android.os.PersistableBundle;
-import android.text.TextUtils;
-import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class pia {
-    public final qia a;
+public final class pia implements kp5 {
+    public final nh7 a = new nh7();
+    public final i4d b = new i4d((byte) 7);
+    public final v39 c = new v39(new oia(2, null), 5);
 
-    public pia(Context context, ShortcutInfo shortcutInfo) {
-        n58[] n58VarArr;
-        String string;
-        qia qiaVar = new qia();
-        this.a = qiaVar;
-        qiaVar.a = context;
-        qiaVar.b = shortcutInfo.getId();
-        shortcutInfo.getPackage();
-        Intent[] intents = shortcutInfo.getIntents();
-        qiaVar.c = (Intent[]) Arrays.copyOf(intents, intents.length);
-        qiaVar.d = shortcutInfo.getActivity();
-        qiaVar.e = shortcutInfo.getShortLabel();
-        qiaVar.f = shortcutInfo.getLongLabel();
-        qiaVar.g = shortcutInfo.getDisabledMessage();
-        if (Build.VERSION.SDK_INT >= 28) {
-            shortcutInfo.getDisabledReason();
-        } else {
-            shortcutInfo.isEnabled();
-        }
-        qiaVar.j = shortcutInfo.getCategories();
-        PersistableBundle extras = shortcutInfo.getExtras();
-        td6 td6Var = null;
-        if (extras == null || !extras.containsKey("extraPersonCount")) {
-            n58VarArr = null;
-        } else {
-            int i = extras.getInt("extraPersonCount");
-            n58VarArr = new n58[i];
-            int i2 = 0;
-            while (i2 < i) {
-                StringBuilder sb = new StringBuilder("extraPerson_");
-                int i3 = i2 + 1;
-                sb.append(i3);
-                PersistableBundle persistableBundle = extras.getPersistableBundle(sb.toString());
-                String string2 = persistableBundle.getString("name");
-                String string3 = persistableBundle.getString("uri");
-                String string4 = persistableBundle.getString("key");
-                boolean z = persistableBundle.getBoolean("isBot");
-                boolean z2 = persistableBundle.getBoolean("isImportant");
-                n58 n58Var = new n58();
-                n58Var.a = string2;
-                n58Var.b = null;
-                n58Var.c = string3;
-                n58Var.d = string4;
-                n58Var.e = z;
-                n58Var.f = z2;
-                n58VarArr[i2] = n58Var;
-                i2 = i3;
-            }
-        }
-        qiaVar.i = n58VarArr;
-        shortcutInfo.getUserHandle();
-        shortcutInfo.getLastChangedTimestamp();
-        int i4 = Build.VERSION.SDK_INT;
-        if (i4 >= 30) {
-            shortcutInfo.isCached();
-        }
-        shortcutInfo.isDynamic();
-        shortcutInfo.isPinned();
-        shortcutInfo.isDeclaredInManifest();
-        shortcutInfo.isImmutable();
-        shortcutInfo.isEnabled();
-        shortcutInfo.hasKeyFieldsOnly();
-        qia qiaVar2 = this.a;
-        if (i4 < 29) {
-            PersistableBundle extras2 = shortcutInfo.getExtras();
-            if (extras2 != null && (string = extras2.getString("extraLocusId")) != null) {
-                td6Var = new td6(string);
-            }
-        } else if (shortcutInfo.getLocusId() != null) {
-            LocusId locusId = shortcutInfo.getLocusId();
-            nte.a(locusId, "locusId cannot be null");
-            String id = locusId.getId();
-            if (TextUtils.isEmpty(id)) {
-                u36.j("id cannot be empty");
-                throw null;
-            }
-            td6Var = new td6(id);
-        }
-        qiaVar2.k = td6Var;
-        this.a.m = shortcutInfo.getRank();
-        this.a.n = shortcutInfo.getExtras();
+    public pia(String str) {
     }
 
-    public final qia a() {
-        qia qiaVar = this.a;
-        if (TextUtils.isEmpty(qiaVar.e)) {
-            u36.j("Shortcut must have a non-empty label");
-            return null;
+    @Override // kp5
+    public final Object a(u73 u73Var) {
+        return new Integer(((AtomicInteger) this.b.a).incrementAndGet());
+    }
+
+    @Override // kp5
+    public final Object b(fw2 fw2Var) {
+        return new Integer(((AtomicInteger) this.b.a).get());
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005a, code lost:
+    
+        if (r8 != r5) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x005c, code lost:
+    
+        return r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x004e, code lost:
+    
+        if (r8 != r5) goto L20;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
+    /* JADX WARN: Type inference failed for: r6v0, types: [pia] */
+    /* JADX WARN: Type inference failed for: r6v1 */
+    /* JADX WARN: Type inference failed for: r6v6, types: [nh7] */
+    @Override // kp5
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object c(qp4 qp4Var, fw2 fw2Var) {
+        mia miaVar;
+        int i;
+        Object obj;
+        Object obj2;
+        try {
+            if (fw2Var instanceof mia) {
+                miaVar = (mia) fw2Var;
+                int i2 = miaVar.e;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    miaVar.e = i2 - TLObject.FLAG_31;
+                    Object obj3 = miaVar.c;
+                    i = miaVar.e;
+                    bx2 bx2Var = bx2.a;
+                    if (i != 0) {
+                        qse.b(obj3);
+                        miaVar.a = qp4Var;
+                        nh7 nh7Var = this.a;
+                        miaVar.b = nh7Var;
+                        miaVar.e = 1;
+                        Object d = nh7Var.d(miaVar);
+                        obj = nh7Var;
+                    } else {
+                        if (i != 1) {
+                            if (i != 2) {
+                                sc8.j("call to 'resume' before 'invoke' with coroutine");
+                                return null;
+                            }
+                            Object obj4 = (lh7) miaVar.a;
+                            qse.b(obj3);
+                            obj2 = obj4;
+                            return obj3;
+                        }
+                        Object obj5 = miaVar.b;
+                        qp4Var = (qp4) miaVar.a;
+                        qse.b(obj3);
+                        obj = obj5;
+                    }
+                    miaVar.a = obj;
+                    miaVar.b = null;
+                    miaVar.e = 2;
+                    obj3 = qp4Var.invoke(miaVar);
+                    obj2 = obj;
+                }
+            }
+            if (i != 0) {
+            }
+            miaVar.a = obj;
+            miaVar.b = null;
+            miaVar.e = 2;
+            obj3 = qp4Var.invoke(miaVar);
+            obj2 = obj;
+        } finally {
+            ((nh7) this).f(null);
         }
-        Intent[] intentArr = qiaVar.c;
-        if (intentArr != null && intentArr.length != 0) {
-            return qiaVar;
+        miaVar = new mia(this, fw2Var);
+        Object obj32 = miaVar.c;
+        i = miaVar.e;
+        bx2 bx2Var2 = bx2.a;
+    }
+
+    @Override // kp5
+    public final hk4 d() {
+        return this.c;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
+    @Override // kp5
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object e(eq4 eq4Var, fw2 fw2Var) {
+        nia niaVar;
+        int i;
+        nh7 nh7Var;
+        boolean z;
+        Throwable th;
+        if (fw2Var instanceof nia) {
+            niaVar = (nia) fw2Var;
+            int i2 = niaVar.e;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                niaVar.e = i2 - TLObject.FLAG_31;
+                Object obj = niaVar.c;
+                i = niaVar.e;
+                if (i != 0) {
+                    qse.b(obj);
+                    nh7 nh7Var2 = this.a;
+                    boolean e = nh7Var2.e();
+                    try {
+                        Object valueOf = Boolean.valueOf(e);
+                        niaVar.a = nh7Var2;
+                        niaVar.b = e;
+                        niaVar.e = 1;
+                        Object invoke = eq4Var.invoke(valueOf, niaVar);
+                        Object obj2 = bx2.a;
+                        if (invoke == obj2) {
+                            return obj2;
+                        }
+                        nh7Var = nh7Var2;
+                        z = e;
+                        obj = invoke;
+                    } catch (Throwable th2) {
+                        nh7Var = nh7Var2;
+                        z = e;
+                        th = th2;
+                        if (z) {
+                            nh7Var.f(null);
+                        }
+                        throw th;
+                    }
+                } else {
+                    if (i != 1) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    z = niaVar.b;
+                    nh7Var = niaVar.a;
+                    try {
+                        qse.b(obj);
+                    } catch (Throwable th3) {
+                        th = th3;
+                        if (z) {
+                        }
+                        throw th;
+                    }
+                }
+                if (z) {
+                    nh7Var.f(null);
+                }
+                return obj;
+            }
         }
-        u36.j("Shortcut must have an intent");
-        return null;
+        niaVar = new nia(this, fw2Var);
+        Object obj3 = niaVar.c;
+        i = niaVar.e;
+        if (i != 0) {
+        }
+        if (z) {
+        }
+        return obj3;
     }
 }

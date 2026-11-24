@@ -1,50 +1,32 @@
 // default package
 
-import j$.util.Objects;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class jw5 {
-    public final String a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class jw5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rw5 b;
 
-    public jw5(String str, byte b) {
+    public /* synthetic */ jw5(rw5 rw5Var, byte b) {
+        this.a = b;
+        this.b = rw5Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        rw5 rw5Var = this.b;
         switch (b) {
-            case 1:
-                this.a = str;
+            case 0:
+                rw5Var.Z1.setTranslationY(0.0f);
                 break;
             default:
-                str.getClass();
-                this.a = str;
+                rw5Var.c2 = false;
+                rw5Var.Z1.setTranslationY(0.0f);
+                rw5Var.j0();
                 break;
         }
-    }
-
-    public static CharSequence c(Object obj) {
-        Objects.requireNonNull(obj);
-        return obj instanceof CharSequence ? (CharSequence) obj : obj.toString();
-    }
-
-    public final void a(StringBuilder sb, Iterator it) {
-        try {
-            if (it.hasNext()) {
-                sb.append(c(it.next()));
-                while (it.hasNext()) {
-                    sb.append((CharSequence) this.a);
-                    sb.append(c(it.next()));
-                }
-            }
-        } catch (IOException e) {
-            bh7.j(e);
-        }
-    }
-
-    public final String b(List list) {
-        Iterator it = list.iterator();
-        StringBuilder sb = new StringBuilder();
-        a(sb, it);
-        return sb.toString();
     }
 }

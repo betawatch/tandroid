@@ -1,11 +1,9 @@
 // default package
 
-import android.view.MenuItem;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public interface w17 {
-    boolean B(y17 y17Var, MenuItem menuItem);
+    iz8 a(Class cls);
 
-    void T1(y17 y17Var);
+    boolean b(Class cls);
 }

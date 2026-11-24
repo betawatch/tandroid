@@ -10,7 +10,7 @@ import org.webrtc.PeerConnection;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class PeerConnectionFactory {
     private static final String TAG = "PeerConnectionFactory";
@@ -28,7 +28,7 @@ public class PeerConnectionFactory {
     private volatile ThreadInfo signalingThread;
     private volatile ThreadInfo workerThread;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class Builder {
         private AudioDecoderFactoryFactory audioDecoderFactoryFactory;
         private AudioDeviceModule audioDeviceModule;
@@ -76,7 +76,7 @@ public class PeerConnectionFactory {
                 this.audioDecoderFactoryFactory = audioDecoderFactoryFactory;
                 return this;
             }
-            u36.j("PeerConnectionFactory.Builder does not accept a null AudioDecoderFactoryFactory.");
+            w26.j("PeerConnectionFactory.Builder does not accept a null AudioDecoderFactoryFactory.");
             return null;
         }
 
@@ -90,7 +90,7 @@ public class PeerConnectionFactory {
                 this.audioEncoderFactoryFactory = audioEncoderFactoryFactory;
                 return this;
             }
-            u36.j("PeerConnectionFactory.Builder does not accept a null AudioEncoderFactoryFactory.");
+            w26.j("PeerConnectionFactory.Builder does not accept a null AudioEncoderFactoryFactory.");
             return null;
         }
 
@@ -99,7 +99,7 @@ public class PeerConnectionFactory {
                 this.audioProcessingFactory = audioProcessingFactory;
                 return this;
             }
-            gxc.d("PeerConnectionFactory builder does not accept a null AudioProcessingFactory.");
+            fvc.f("PeerConnectionFactory builder does not accept a null AudioProcessingFactory.");
             return null;
         }
 
@@ -139,7 +139,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class InitializationOptions {
         final Context applicationContext;
         final boolean enableInternalTracer;
@@ -149,7 +149,7 @@ public class PeerConnectionFactory {
         final NativeLibraryLoader nativeLibraryLoader;
         final String nativeLibraryName;
 
-        /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+        /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
         public static class Builder {
             private final Context applicationContext;
             private boolean enableInternalTracer;
@@ -209,7 +209,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class Options {
         public static final int ADAPTER_TYPE_ANY = 32;
         public static final int ADAPTER_TYPE_CELLULAR = 4;
@@ -235,7 +235,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class ThreadInfo {
         final Thread thread;
         final int tid;
@@ -255,7 +255,7 @@ public class PeerConnectionFactory {
         if (j != 0) {
             this.nativeFactory = j;
         } else {
-            zo4.k("Failed to initialize PeerConnectionFactory!");
+            wn4.j("Failed to initialize PeerConnectionFactory!");
             throw null;
         }
     }
@@ -267,7 +267,7 @@ public class PeerConnectionFactory {
     /* JADX INFO: Access modifiers changed from: private */
     public static void checkInitializeHasBeenCalled() {
         if (!NativeLibrary.isLoaded() || ContextUtils.getApplicationContext() == null) {
-            dq9.m("PeerConnectionFactory.initialize was not called before creating a PeerConnectionFactory.");
+            sc8.j("PeerConnectionFactory.initialize was not called before creating a PeerConnectionFactory.");
         }
     }
 
@@ -275,7 +275,7 @@ public class PeerConnectionFactory {
         if (this.nativeFactory != 0) {
             return;
         }
-        dq9.m("PeerConnectionFactory has been disposed.");
+        sc8.j("PeerConnectionFactory has been disposed.");
     }
 
     public static String fieldTrialsFindFullName(String str) {

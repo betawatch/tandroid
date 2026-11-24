@@ -1,32 +1,23 @@
 // default package
 
-import android.content.Intent;
-import android.os.Binder;
-import android.os.Process;
-import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.FirebaseMessagingService;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n0d extends Binder {
-    public final k44 a;
-
-    public n0d(k44 k44Var) {
-        this.a = k44Var;
+public abstract class n0d extends tzc {
+    @Override // tzc
+    public final boolean a(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i != 2) {
+            return false;
+        }
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle = (Bundle) yzc.a(parcel);
+        yzc.b(parcel);
+        b(bundle);
+        return true;
     }
 
-    public final void a(o0d o0dVar) {
-        if (Binder.getCallingUid() != Process.myUid()) {
-            throw new SecurityException("Binding only allowed within app");
-        }
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "service received new intent via bind strategy");
-        }
-        Intent intent = o0dVar.a;
-        FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.a.b;
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        firebaseMessagingService.a.execute(new pz2(firebaseMessagingService, intent, taskCompletionSource, (byte) 20));
-        taskCompletionSource.getTask().addOnCompleteListener(new kc((byte) 1), new lcc(o0dVar, (byte) 15));
-    }
+    public abstract void b(Bundle bundle);
 }

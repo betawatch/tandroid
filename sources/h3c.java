@@ -1,44 +1,75 @@
 // default package
 
-import java.util.HashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class h3c {
-    public final rb0 a;
-    public final String b;
-    public final d44 c;
-    public final z0c d;
-    public final i3c e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class h3c implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ p3c b;
 
-    public h3c(rb0 rb0Var, String str, d44 d44Var, z0c z0cVar, i3c i3cVar) {
-        this.a = rb0Var;
-        this.b = str;
-        this.c = d44Var;
-        this.d = z0cVar;
-        this.e = i3cVar;
+    public /* synthetic */ h3c(p3c p3cVar, byte b) {
+        this.a = b;
+        this.b = p3cVar;
     }
 
-    public final void a(na0 na0Var, j3c j3cVar) {
-        z0c z0cVar = this.d;
-        if (z0cVar == null) {
-            gxc.d("Null transformer");
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final byte b2 = 0;
+        final byte b3 = 1;
+        final p3c p3cVar = this.b;
+        switch (b) {
+            case 0:
+                gl.c3(new Runnable() { // from class: j3c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b4 = b2;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        p3c p3cVar2 = p3cVar;
+                        switch (b4) {
+                            case 0:
+                                p3cVar2.o0(tLObject2, tL_error2);
+                                break;
+                            default:
+                                p3cVar2.p0(tLObject2, tL_error2);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                gl.c3(new k3c(p3cVar, tL_error, b2));
+                break;
+            case 2:
+                gl.c3(new k3c(p3cVar, tL_error, b3));
+                break;
+            case 3:
+                gl.c3(new k3c(p3cVar, tL_error, (byte) 2));
+                break;
+            default:
+                p3cVar.getClass();
+                gl.c3(new Runnable() { // from class: j3c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b4 = b3;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        p3c p3cVar2 = p3cVar;
+                        switch (b4) {
+                            case 0:
+                                p3cVar2.o0(tLObject2, tL_error2);
+                                break;
+                            default:
+                                p3cVar2.p0(tLObject2, tL_error2);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        i3c i3cVar = this.e;
-        kd3 kd3Var = i3cVar.c;
-        rb0 b = this.a.b(na0Var.c);
-        oa0 oa0Var = new oa0();
-        oa0Var.h = new HashMap();
-        oa0Var.f = Long.valueOf(i3cVar.a.a());
-        oa0Var.g = Long.valueOf(i3cVar.b.a());
-        oa0Var.a = this.b;
-        oa0Var.e = new z34(this.c, (byte[]) z0cVar.apply(na0Var.b));
-        oa0Var.c = na0Var.a;
-        hb0 hb0Var = na0Var.d;
-        if (hb0Var != null) {
-            oa0Var.d = hb0Var.a;
-        }
-        kd3Var.b.execute(new xo1(kd3Var, b, j3cVar, oa0Var.b(), (byte) 12));
     }
 }

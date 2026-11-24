@@ -1,13 +1,13 @@
 // default package
 
-import android.media.MediaCodec;
-import android.media.MediaFormat;
-import java.nio.ByteBuffer;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public interface zn9 {
-    void l(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo);
+    void a(int i, int i2);
 
-    void o(MediaFormat mediaFormat);
+    boolean b();
+
+    Surface getSurface();
 }

@@ -11,7 +11,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.p;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class y7 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -30,7 +30,7 @@ public final class y7 extends AnimatorListenerAdapter {
         Object obj = this.c;
         switch (b) {
             case 1:
-                AnimatorSet[] animatorSetArr = ((he) obj).G;
+                AnimatorSet[] animatorSetArr = ((hd) obj).G;
                 boolean z = this.b;
                 AnimatorSet animatorSet = animatorSetArr[z ? 1 : 0];
                 if (animatorSet != null && animatorSet.equals(animator)) {
@@ -39,44 +39,44 @@ public final class y7 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                rl0 rl0Var = (rl0) obj;
-                AnimatorSet animatorSet2 = rl0Var.h;
+                rk0 rk0Var = (rk0) obj;
+                AnimatorSet animatorSet2 = rk0Var.h;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    rl0Var.h = null;
+                    rk0Var.h = null;
                     break;
                 }
                 break;
             case 13:
-                ((fj1) obj).r = null;
+                ((yh1) obj).r = null;
                 break;
             case 14:
-                yv1 yv1Var = (yv1) obj;
-                AnimatorSet animatorSet3 = yv1Var.W0;
+                mu1 mu1Var = (mu1) obj;
+                AnimatorSet animatorSet3 = mu1Var.W0;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    yv1Var.W0 = null;
+                    mu1Var.W0 = null;
                     break;
                 }
                 break;
             case 15:
-                ((i22) obj).V2 = null;
+                ((x02) obj).V2 = null;
                 break;
             case 16:
-                ((ba2) obj).h = null;
+                ((p82) obj).h = null;
                 break;
             case 17:
                 this.b = true;
                 break;
             case 23:
-                ((po2) obj).y = null;
+                ((en2) obj).y = null;
                 break;
             case 24:
-                ((tu2) obj).x = null;
+                ((it2) obj).x = null;
                 break;
             case 25:
-                lx2 lx2Var = (lx2) obj;
-                AnimatorSet animatorSet4 = lx2Var.T;
+                bw2 bw2Var = (bw2) obj;
+                AnimatorSet animatorSet4 = bw2Var.T;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    lx2Var.T = null;
+                    bw2Var.T = null;
                     break;
                 }
                 break;
@@ -90,7 +90,7 @@ public final class y7 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         float f;
         View m;
-        cj1 cj1Var;
+        vh1 vh1Var;
         RadialProgressView radialProgressView;
         RadialProgressView radialProgressView2;
         RadialProgressView radialProgressView3;
@@ -100,11 +100,11 @@ public final class y7 extends AnimatorListenerAdapter {
             case 0:
                 a8 a8Var = (a8) obj;
                 f = this.b ? 1.0f : 0.0f;
-                a8Var.setTextColor(on2.f(f, -1, -9194260));
-                a8Var.setIconColor(on2.f(f, -1, -9194260));
+                a8Var.setTextColor(bm2.f(f, -1, -9194260));
+                a8Var.setIconColor(bm2.f(f, -1, -9194260));
                 break;
             case 1:
-                AnimatorSet[] animatorSetArr = ((he) obj).G;
+                AnimatorSet[] animatorSetArr = ((hd) obj).G;
                 boolean z = this.b;
                 AnimatorSet animatorSet = animatorSetArr[z ? 1 : 0];
                 if (animatorSet != null && animatorSet.equals(animator)) {
@@ -117,242 +117,242 @@ public final class y7 extends AnimatorListenerAdapter {
                 boolean z2 = this.b;
                 f = z2 ? 1.0f : 0.0f;
                 oVar.a1 = f;
-                oVar.r0.setTranslationY(((1.0f - f) * gm.L(51.0f)) + oVar.q0);
+                oVar.r0.setTranslationY(((1.0f - f) * gl.L(51.0f)) + oVar.q0);
                 if (!z2) {
                     oVar.r0.setVisibility(8);
                     break;
                 }
                 break;
             case 3:
-                ((c30) obj).a[this.b ? 1 : 0].setVisibility(8);
+                ((c20) obj).a[this.b ? 1 : 0].setVisibility(8);
                 break;
             case 4:
-                bd0 bd0Var = (bd0) obj;
+                bc0 bc0Var = (bc0) obj;
                 if (!this.b) {
-                    bd0Var.setVisibility(4);
-                    yh4 yh4Var = ((rc0) bd0Var).H;
-                    if (yh4Var.a) {
-                        yh4Var.a = false;
-                        if (((rc0) yh4Var.d).getParent() != null) {
-                            ((WindowManager) yh4Var.c).removeView((rc0) yh4Var.d);
+                    bc0Var.setVisibility(4);
+                    xf4 xf4Var = ((rb0) bc0Var).H;
+                    if (xf4Var.a) {
+                        xf4Var.a = false;
+                        if (((rb0) xf4Var.d).getParent() != null) {
+                            ((WindowManager) xf4Var.c).removeView((rb0) xf4Var.d);
                         }
-                        rc0 rc0Var = (rc0) yh4Var.d;
-                        rc0Var.F = true;
-                        yc0 yc0Var = rc0Var.E;
-                        if (yc0Var != null) {
-                            if (yc0Var.g) {
-                                yc0Var.g = false;
-                                yc0Var.b.n(yc0Var.a, yc0Var.e);
+                        rb0 rb0Var = (rb0) xf4Var.d;
+                        rb0Var.F = true;
+                        yb0 yb0Var = rb0Var.E;
+                        if (yb0Var != null) {
+                            if (yb0Var.g) {
+                                yb0Var.g = false;
+                                yb0Var.b.n(yb0Var.a, yb0Var.e);
                             }
-                            rc0Var.E = null;
+                            rb0Var.E = null;
                         }
-                        yh4Var.d = null;
-                        ((ViewGroup) yh4Var.b).requestDisallowInterceptTouchEvent(false);
-                        yh4Var.b = null;
-                        yh4Var.c = null;
+                        xf4Var.d = null;
+                        ((ViewGroup) xf4Var.b).requestDisallowInterceptTouchEvent(false);
+                        xf4Var.b = null;
+                        xf4Var.c = null;
                         break;
                     }
                 }
                 break;
             case 5:
-                rl0 rl0Var = (rl0) obj;
-                AnimatorSet animatorSet2 = rl0Var.h;
+                rk0 rk0Var = (rk0) obj;
+                AnimatorSet animatorSet2 = rk0Var.h;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     if (!this.b) {
-                        rl0Var.c.setVisibility(4);
+                        rk0Var.c.setVisibility(4);
                         break;
                     } else {
-                        rl0Var.b.setVisibility(4);
+                        rk0Var.b.setVisibility(4);
                         break;
                     }
                 }
                 break;
             case 6:
-                ks0 ks0Var = (ks0) obj;
+                kr0 kr0Var = (kr0) obj;
                 boolean z3 = this.b;
-                ks0Var.x = z3 ? 1.0f : 0.0f;
-                ks0Var.r.setTranslationY(gm.L(z3 ? 0.0f : -42.0f));
-                ks0Var.n.setTranslationY(gm.L(z3 ? 42.0f : 0.0f));
+                kr0Var.x = z3 ? 1.0f : 0.0f;
+                kr0Var.r.setTranslationY(gl.L(z3 ? 0.0f : -42.0f));
+                kr0Var.n.setTranslationY(gl.L(z3 ? 42.0f : 0.0f));
                 break;
             case 7:
-                gs0 gs0Var = (gs0) obj;
-                o7c o7cVar = gs0Var.h;
-                yr0 yr0Var = gs0Var.f;
-                bs0 bs0Var = gs0Var.w;
-                gs0Var.b = false;
+                gr0 gr0Var = (gr0) obj;
+                o5c o5cVar = gr0Var.h;
+                yq0 yq0Var = gr0Var.f;
+                br0 br0Var = gr0Var.w;
+                gr0Var.b = false;
                 boolean z4 = this.b;
                 if (z4) {
-                    int i = gs0Var.e;
-                    gs0Var.d = i;
-                    gs0Var.a0.E = i;
-                    gda.E(i);
+                    int i = gr0Var.e;
+                    gr0Var.d = i;
+                    gr0Var.a0.E = i;
+                    gba.E(i);
                 }
-                int b2 = bs0Var.b();
+                int b2 = br0Var.b();
                 if (z4) {
-                    o7cVar.x1(gs0Var.d);
-                    yr0Var.b0();
-                    if (bs0Var.b() == b2) {
-                        gm.V3(yr0Var);
+                    o5cVar.x1(gr0Var.d);
+                    yq0Var.b0();
+                    if (br0Var.b() == b2) {
+                        gl.V3(yq0Var);
                     } else {
-                        bs0Var.f();
+                        br0Var.f();
                     }
                 }
-                gs0Var.r.setVisibility(8);
-                int i2 = gs0Var.T;
+                gr0Var.r.setVisibility(8);
+                int i2 = gr0Var.T;
                 if (i2 >= 0) {
-                    if (z4 && (m = gs0Var.s.m(i2)) != null) {
-                        gs0Var.U = m.getTop();
+                    if (z4 && (m = gr0Var.s.m(i2)) != null) {
+                        gr0Var.U = m.getTop();
                     }
-                    o7cVar.g1(gs0Var.T, (-yr0Var.getPaddingTop()) + gs0Var.U);
+                    o5cVar.g1(gr0Var.T, (-yq0Var.getPaddingTop()) + gr0Var.U);
                 }
                 super.onAnimationEnd(animator);
                 break;
             case 8:
-                wx0 wx0Var = (wx0) obj;
-                wx0Var.S0 = this.b ? 1.0f : 0.0f;
-                wx0Var.h();
+                ow0 ow0Var = (ow0) obj;
+                ow0Var.S0 = this.b ? 1.0f : 0.0f;
+                ow0Var.h();
                 break;
             case 9:
-                u51 u51Var = (u51) obj;
-                if (animator == u51Var.g) {
-                    u51Var.g = null;
-                    u51Var.j = this.b ? 1.0f : 0.0f;
-                    u51Var.b();
+                n41 n41Var = (n41) obj;
+                if (animator == n41Var.g) {
+                    n41Var.g = null;
+                    n41Var.j = this.b ? 1.0f : 0.0f;
+                    n41Var.b();
                     break;
                 }
                 break;
             case 10:
-                b61 b61Var = (b61) obj;
-                b61Var.Q = this.b ? 1.0f : 0.0f;
-                b61Var.invalidate();
+                u41 u41Var = (u41) obj;
+                u41Var.Q = this.b ? 1.0f : 0.0f;
+                u41Var.invalidate();
                 break;
             case 11:
-                pc1 pc1Var = (pc1) obj;
+                ib1 ib1Var = (ib1) obj;
                 boolean z5 = this.b;
                 if (!z5) {
-                    pc1Var.r.setVisibility(8);
-                    lc1 lc1Var = pc1Var.N;
-                    if (lc1Var != null) {
-                        lc1Var.setVisibility(8);
+                    ib1Var.r.setVisibility(8);
+                    eb1 eb1Var = ib1Var.N;
+                    if (eb1Var != null) {
+                        eb1Var.setVisibility(8);
                     }
                 }
                 if (z5) {
-                    pc1Var.f.getEditText().setAllowDrawCursor(true);
+                    ib1Var.f.getEditText().setAllowDrawCursor(true);
                 }
-                pc1Var.c(z5);
+                ib1Var.c(z5);
                 break;
             case 12:
-                ((qf1) obj).d.setVisibility(this.b ? 0 : 8);
+                ((ie1) obj).d.setVisibility(this.b ? 0 : 8);
                 break;
             case 13:
-                fj1 fj1Var = (fj1) obj;
-                if (fj1Var.r != null && (cj1Var = fj1Var.n) != null) {
+                yh1 yh1Var = (yh1) obj;
+                if (yh1Var.r != null && (vh1Var = yh1Var.n) != null) {
                     if (this.b) {
-                        cj1Var.setVisibility(4);
+                        vh1Var.setVisibility(4);
                     } else {
-                        fj1Var.s.setVisibility(4);
+                        yh1Var.s.setVisibility(4);
                     }
-                    fj1Var.r = null;
+                    yh1Var.r = null;
                     break;
                 }
                 break;
             case 14:
-                yv1 yv1Var = (yv1) obj;
-                AnimatorSet animatorSet3 = yv1Var.W0;
+                mu1 mu1Var = (mu1) obj;
+                AnimatorSet animatorSet3 = mu1Var.W0;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
                     if (!this.b) {
-                        yv1Var.J0.setVisibility(4);
+                        mu1Var.J0.setVisibility(4);
                         break;
                     } else {
-                        (yv1Var.F0 ? yv1Var.G0 : yv1Var.E0).setVisibility(4);
+                        (mu1Var.F0 ? mu1Var.G0 : mu1Var.E0).setVisibility(4);
                         break;
                     }
                 }
                 break;
             case 15:
-                i22 i22Var = (i22) obj;
-                if (i22Var.V2 != null) {
+                x02 x02Var = (x02) obj;
+                if (x02Var.V2 != null) {
                     if (!this.b) {
-                        r7 r7Var = i22Var.b3;
+                        r7 r7Var = x02Var.b3;
                         if (r7Var != null) {
                             r7Var.setVisibility(4);
                         }
-                        if (i22Var.N2 != 0 || !i22Var.n3) {
-                            i22Var.X2.setVisibility(4);
+                        if (x02Var.N2 != 0 || !x02Var.n3) {
+                            x02Var.X2.setVisibility(4);
                             break;
                         }
-                    } else if (i22Var.P2) {
-                        a22 a22Var = i22Var.v2;
-                        if (a22Var == null || a22Var.M()) {
-                            i22Var.u3.setVisibility(4);
+                    } else if (x02Var.P2) {
+                        p02 p02Var = x02Var.v2;
+                        if (p02Var == null || p02Var.N()) {
+                            x02Var.u3.setVisibility(4);
                             break;
                         }
                     }
                 }
                 break;
             case 16:
-                ba2 ba2Var = (ba2) obj;
-                if (ba2Var.h != null && (radialProgressView = ba2Var.n) != null) {
+                p82 p82Var = (p82) obj;
+                if (p82Var.h != null && (radialProgressView = p82Var.n) != null) {
                     if (!this.b) {
                         radialProgressView.setVisibility(4);
-                        ba2Var.f.setVisibility(4);
+                        p82Var.f.setVisibility(4);
                     }
-                    ba2Var.h = null;
+                    p82Var.h = null;
                     break;
                 }
                 break;
             case 17:
-                ua2 ua2Var = (ua2) obj;
+                i92 i92Var = (i92) obj;
                 if (!this.b) {
-                    bf0 bf0Var = ua2Var.h;
-                    ua2Var.h = ua2Var.n;
-                    ua2Var.n = bf0Var;
-                    bf0Var.setVisibility(8);
-                    ua2Var.n.setAlpha(0.0f);
-                    ua2Var.h.setVisibility(0);
-                    ua2Var.h.setAlpha(1.0f);
+                    be0 be0Var = i92Var.h;
+                    i92Var.h = i92Var.n;
+                    i92Var.n = be0Var;
+                    be0Var.setVisibility(8);
+                    i92Var.n.setAlpha(0.0f);
+                    i92Var.h.setVisibility(0);
+                    i92Var.h.setAlpha(1.0f);
                     break;
                 }
                 break;
             case 18:
-                rc2 rc2Var = (rc2) obj;
-                yc2 yc2Var = rc2Var.ub;
-                int b3 = yc2Var.b();
-                int i3 = rc2Var.Cb;
+                gb2 gb2Var = (gb2) obj;
+                nb2 nb2Var = gb2Var.ub;
+                int b3 = nb2Var.b();
+                int i3 = gb2Var.Cb;
                 if (i3 == b3) {
-                    rc2Var.Fb = false;
-                    yc2Var.b2 = i3;
+                    gb2Var.Fb = false;
+                    nb2Var.b2 = i3;
                     break;
                 } else {
-                    rc2Var.C0(i3, b3, this.b);
+                    gb2Var.C0(i3, b3, this.b);
                     break;
                 }
             case 19:
                 boolean z6 = this.b;
-                ne2 ne2Var = (ne2) obj;
-                if (animator == ne2Var.e) {
+                cd2 cd2Var = (cd2) obj;
+                if (animator == cd2Var.e) {
                     f = z6 ? 1.0f : 0.0f;
-                    ne2Var.d = f;
-                    ne2Var.setShown(f);
+                    cd2Var.d = f;
+                    cd2Var.setShown(f);
                     if (!z6) {
-                        ne2Var.setVisibility(8);
+                        cd2Var.setVisibility(8);
                     }
-                    ne2Var.a(true);
+                    cd2Var.a(true);
                     break;
                 }
                 break;
             case 20:
-                if2 if2Var = (if2) obj;
-                if2Var.Z1 = this.b ? 1.0f : 0.0f;
-                if2Var.C1.setTranslationY((-gm.L(7.0f)) * if2Var.Z1);
+                xd2 xd2Var = (xd2) obj;
+                xd2Var.Z1 = this.b ? 1.0f : 0.0f;
+                xd2Var.C1.setTranslationY((-gl.L(7.0f)) * xd2Var.Z1);
                 break;
             case 21:
-                wl2 wl2Var = (wl2) obj;
-                hx hxVar = wl2Var.a;
+                jk2 jk2Var = (jk2) obj;
+                hw hwVar = jk2Var.a;
                 boolean z7 = this.b;
-                wl2Var.d = z7 ? 1.0f : 0.0f;
-                hxVar.invalidate();
-                hxVar.setVisibility(z7 ? 0 : 8);
+                jk2Var.d = z7 ? 1.0f : 0.0f;
+                hwVar.invalidate();
+                hwVar.setVisibility(z7 ? 0 : 8);
                 break;
             case 22:
                 if (!this.b) {
@@ -361,82 +361,82 @@ public final class y7 extends AnimatorListenerAdapter {
                 }
                 break;
             case 23:
-                po2 po2Var = (po2) obj;
-                if (po2Var.y != null && (radialProgressView2 = po2Var.E) != null) {
+                en2 en2Var = (en2) obj;
+                if (en2Var.y != null && (radialProgressView2 = en2Var.E) != null) {
                     if (!this.b) {
                         radialProgressView2.setVisibility(4);
-                        po2Var.w.setVisibility(4);
+                        en2Var.w.setVisibility(4);
                     }
-                    po2Var.y = null;
+                    en2Var.y = null;
                     break;
                 }
                 break;
             case 24:
-                tu2 tu2Var = (tu2) obj;
-                if (tu2Var.x != null && (radialProgressView3 = tu2Var.s) != null) {
+                it2 it2Var = (it2) obj;
+                if (it2Var.x != null && (radialProgressView3 = it2Var.s) != null) {
                     if (!this.b) {
                         radialProgressView3.setVisibility(4);
-                        tu2Var.w.setVisibility(4);
+                        it2Var.w.setVisibility(4);
                     }
-                    tu2Var.x = null;
+                    it2Var.x = null;
                     break;
                 }
                 break;
             case 25:
-                lx2 lx2Var = (lx2) obj;
-                AnimatorSet animatorSet4 = lx2Var.T;
+                bw2 bw2Var = (bw2) obj;
+                AnimatorSet animatorSet4 = bw2Var.T;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    lx2Var.T = null;
+                    bw2Var.T = null;
                     if (!this.b) {
-                        lx2Var.setBackgroundColor(0);
+                        bw2Var.setBackgroundColor(0);
                         break;
                     }
                 }
                 break;
             case 26:
                 if (this.b) {
-                    ((u43) obj).d(false, false, true, false);
+                    ((j33) obj).d(false, false, true, false);
                     break;
                 }
                 break;
             case 27:
-                x53 x53Var = (x53) obj;
-                v29 v29Var = x53Var.n;
-                x53Var.k();
-                x53Var.l();
+                m43 m43Var = (m43) obj;
+                t09 t09Var = m43Var.n;
+                m43Var.k();
+                m43Var.l();
                 boolean z8 = this.b;
-                x53Var.a(z8);
-                x53Var.m.invalidateOutline();
-                x53Var.j = z8 ? 1.0f : 0.0f;
+                m43Var.a(z8);
+                m43Var.m.invalidateOutline();
+                m43Var.j = z8 ? 1.0f : 0.0f;
                 if (z8) {
-                    x53Var.k = true;
-                    x53Var.a.invalidate();
+                    m43Var.k = true;
+                    m43Var.a.invalidate();
                 }
-                v29Var.setCustomEmojiEnterProgress(Utilities.i(x53Var.j, 1.0f, 0.0f));
+                t09Var.setCustomEmojiEnterProgress(Utilities.i(m43Var.j, 1.0f, 0.0f));
                 if (!z8) {
-                    v29Var.setImportantForAccessibility(0);
-                    v29Var.setSkipDraw(false);
-                    x53Var.f();
+                    t09Var.setImportantForAccessibility(0);
+                    t09Var.setSkipDraw(false);
+                    m43Var.f();
                     Runtime.getRuntime().gc();
-                    byte b4 = x53Var.y;
-                    v29Var.setCustomEmojiReactionsBackground((b4 == 4 || b4 == 5) ? false : true);
+                    byte b4 = m43Var.y;
+                    t09Var.setCustomEmojiReactionsBackground((b4 == 4 || b4 == 5) ? false : true);
                 }
-                x53Var.C = false;
+                m43Var.C = false;
                 break;
             case 28:
-                ih3 ih3Var = (ih3) obj;
-                ih3Var.e0 = this.b ? 1.0f : 0.0f;
-                ih3Var.b();
+                vf3 vf3Var = (vf3) obj;
+                vf3Var.e0 = this.b ? 1.0f : 0.0f;
+                vf3Var.b();
                 break;
             default:
-                jz3 jz3Var = (jz3) obj;
-                mz3 mz3Var = jz3Var.O;
-                if (mz3Var.U && !jz3Var.h) {
-                    if (!this.b && !jz3Var.n) {
-                        jz3Var.setBackground(null);
+                zx3 zx3Var = (zx3) obj;
+                cy3 cy3Var = zx3Var.O;
+                if (cy3Var.U && !zx3Var.h) {
+                    if (!this.b && !zx3Var.n) {
+                        zx3Var.setBackground(null);
                         break;
-                    } else if (jz3Var.getBackground() == null) {
-                        jz3Var.setBackground(cmb.Y(mz3Var.k(), 8, 8));
+                    } else if (zx3Var.getBackground() == null) {
+                        zx3Var.setBackground(bkb.Y(cy3Var.k(), 8, 8));
                         break;
                     }
                 }
@@ -450,7 +450,7 @@ public final class y7 extends AnimatorListenerAdapter {
             case 28:
                 super.onAnimationStart(animator);
                 try {
-                    ((ih3) this.c).performHapticFeedback(3);
+                    ((vf3) this.c).performHapticFeedback(3);
                     break;
                 } catch (Exception unused) {
                     return;
@@ -468,8 +468,8 @@ public final class y7 extends AnimatorListenerAdapter {
         this.b = i;
     }
 
-    public y7(ua2 ua2Var) {
+    public y7(i92 i92Var) {
         this.a = (byte) 17;
-        this.c = ua2Var;
+        this.c = i92Var;
     }
 }

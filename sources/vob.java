@@ -1,130 +1,197 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.ImageView;
-import java.util.Arrays;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vob extends ImageView {
-    public static final ny1 x = new ny1(Float.class, "radius", 4);
-    public final Paint a;
-    public final Matrix b;
-    public RadialGradient c;
+public final class vob extends d implements gk7 {
+    public q5c a;
+    public LinearLayout b;
+    public x15 c;
     public boolean d;
-    public float e;
-    public float f;
-    public float h;
-    public s09 n;
-    public ColorFilter r;
-    public final int[] s;
-    public final int[] w;
+    public String e;
+    public String f;
+    public boolean h;
+    public String n;
 
-    public vob(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-        this.s = new int[2];
-        this.w = new int[2];
-    }
-
-    public static void a(Bitmap bitmap, View view, s09 s09Var) {
-        Drawable drawable = s09Var.getDrawable();
-        if (drawable != null && s09Var.isAttachedToWindow() && bitmap.isMutable()) {
-            int[] iArr = new int[2];
-            RectF rectF = new RectF(drawable.getBounds());
-            s09Var.getImageMatrix().mapRect(rectF);
-            s09Var.getLocationInWindow(iArr);
-            rectF.offset(s09Var.getPaddingLeft() + iArr[0], s09Var.getPaddingTop() + iArr[1]);
-            if (view != null) {
-                view.getLocationInWindow(iArr);
-                rectF.offset(-iArr[0], -iArr[1]);
-            }
-            int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
-            int min = Math.min(bitmap.getWidth(), ((int) Math.ceil(rectF.right)) + 1);
-            int max2 = Math.max(0, ((int) Math.floor(rectF.top)) - 1);
-            int min2 = Math.min(bitmap.getHeight(), ((int) Math.ceil(rectF.bottom)) + 1);
-            if (max >= min || max2 >= min2) {
-                return;
-            }
-            int i = min - max;
-            int[] iArr2 = new int[i];
-            for (int i2 = max2; i2 < min2; i2++) {
-                Arrays.fill(iArr2, bitmap.getPixel(max - 1, i2));
-                bitmap.setPixels(iArr2, 0, i, max, i2, i, 1);
-            }
+    public final void Y(ArrayList arrayList, l5c l5cVar) {
+        boolean z = this.d && !TextUtils.isEmpty(this.e);
+        wob b = wob.b(this.currentAccount);
+        ArrayList arrayList2 = b.d;
+        if (!z) {
+            l5cVar.V();
+            String M0 = k96.M0(2131743879, null);
+            c4c c4cVar = new c4c(9);
+            c4cVar.d = -1;
+            c4cVar.m = M0;
+            c4cVar.L(this.h);
+            arrayList.add(c4cVar);
+            l5cVar.U();
+            arrayList.add(c4c.C(k96.a0(null, null, 2131743878, b.d(this.n, true))));
         }
-    }
-
-    public final void b(float f, float f2, boolean z) {
-        this.e = f;
-        this.f = f2;
-        this.d = z;
-        RadialGradient radialGradient = this.c;
-        Paint paint = this.a;
-        if (radialGradient == null) {
-            RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{-16777216, -16777216, 0}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-            this.c = radialGradient2;
-            paint.setShader(radialGradient2);
+        l5cVar.V();
+        if (!z) {
+            oo1.o(2131743877, null, arrayList);
         }
-        paint.setXfermode(new PorterDuffXfermode(z ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (this.h >= 1.0f || this.d) {
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-            super.onDraw(canvas);
-            s09 s09Var = this.n;
-            Drawable drawable = s09Var != null ? s09Var.getDrawable() : 0;
-            if (drawable != 0 && this.n.isAttachedToWindow()) {
-                this.n.getLocationInWindow(this.s);
-                getLocationInWindow(this.w);
-                ColorFilter colorFilter = drawable.getColorFilter();
-                canvas.save();
-                canvas.translate(this.n.getPaddingLeft() + (r4[0] - r3[0]), this.n.getPaddingTop() + (r4[1] - r3[1]));
-                canvas.concat(this.n.getImageMatrix());
-                drawable.setColorFilter(this.r);
-                drawable.draw(canvas);
-                drawable.setColorFilter(colorFilter);
-                canvas.restore();
-                if ((drawable instanceof Animatable) && ((Animatable) drawable).isRunning()) {
-                    invalidate();
+        boolean z2 = true;
+        int i = 0;
+        while (true) {
+            b.g();
+            if (i >= arrayList2.size()) {
+                break;
+            }
+            b.g();
+            TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList2.get(i);
+            CharSequence e = wob.e(tL_timezone, false);
+            if (z) {
+                String replace = gl.I3(tL_timezone.name).toLowerCase().replace("/", " ");
+                String lowerCase = gl.I3(this.e).toLowerCase();
+                if (de9.t(" ", lowerCase, replace) || replace.startsWith(lowerCase)) {
+                    e = gl.u1(e, this.e, this.resourceProvider);
+                } else {
+                    i++;
                 }
             }
-            float f = this.h;
-            if (f >= 1.0f) {
-                float f2 = f / 100.0f;
-                Matrix matrix = this.b;
-                matrix.setScale(f2, f2);
-                matrix.postTranslate(this.e, this.f);
-                this.c.setLocalMatrix(matrix);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
-            }
-            canvas.restoreToCount(saveLayer);
+            String f = wob.f(tL_timezone);
+            c4c c4cVar2 = new c4c(10);
+            c4cVar2.d = i;
+            c4cVar2.m = e;
+            c4cVar2.o = f;
+            c4cVar2.L(TextUtils.equals(tL_timezone.id, this.n));
+            c4cVar2.g = !this.h || z;
+            arrayList.add(c4cVar2);
+            z2 = false;
+            i++;
+        }
+        l5cVar.U();
+        if (z2) {
+            arrayList.add(c4c.m(this.b));
+        } else {
+            arrayList.add(c4c.C(null));
         }
     }
 
-    public void setRadius(float f) {
-        this.h = f;
-        invalidate();
+    public final void Z(c4c c4cVar, View view) {
+        if (c4cVar.d == -1) {
+            boolean z = this.h;
+            this.h = !z;
+            if (!z) {
+                String str = this.f;
+                this.n = str;
+                x15 x15Var = this.c;
+                if (x15Var != null) {
+                    x15Var.a(str);
+                }
+            }
+            ((ahb) view).setChecked(this.h);
+            this.a.g3.O(true);
+            return;
+        }
+        if (view.isEnabled()) {
+            wob b = wob.b(this.currentAccount);
+            ArrayList arrayList = b.d;
+            int i = c4cVar.d;
+            if (i >= 0) {
+                b.g();
+                if (i < arrayList.size()) {
+                    b.g();
+                    TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(c4cVar.d);
+                    this.h = false;
+                    String str2 = tL_timezone.id;
+                    this.n = str2;
+                    x15 x15Var2 = this.c;
+                    if (x15Var2 != null) {
+                        x15Var2.a(str2);
+                    }
+                    if (this.d) {
+                        this.simpleActionBar.n(true);
+                    }
+                    this.a.g3.O(true);
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(k96.M0(2131743875, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new kk8(this, (byte) 19));
+        xha a = this.simpleActionBar.t().a(1, R.drawable.outline_header_search);
+        a.N();
+        a.C0 = new q10(this, (byte) 22);
+        a.setSearchFieldHint(k96.M0(2131745644, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        q5c q5cVar = new q5c(this, new n4b(this, (byte) 6), new hza(this, (byte) 16), null);
+        this.a = q5cVar;
+        q5cVar.r1();
+        this.a.setSectionsDrawBackground(true);
+        frameLayout.addView(this.a, nme.c(-1.0f, -1));
+        this.a.setOnScrollListener(new vdb(this, (byte) 2));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(1);
+        this.b.setMinimumHeight(gl.L(500.0f));
+        be0 be0Var = new be0(context);
+        be0Var.getImageReceiver().A1 = false;
+        hq6.d0(this.currentAccount).e2(be0Var, "RestrictedEmoji", "🌖", "130_130");
+        this.b.addView(be0Var, nme.t(kk7.N1, kk7.N1, 49, 0, 42, 0, 12));
+        TextView textView = new TextView(context);
+        textView.setText(k96.M0(2131743876, null));
+        zkb.X(textView, bkb.x6, this.resourceProvider);
+        textView.setTextSize(1, 15.0f);
+        this.b.addView(textView, nme.t(-2, -2, 49, 0, 0, 0, 0));
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        q5c q5cVar;
+        l5c l5cVar;
+        if (i != kk7.s3 || (q5cVar = this.a) == null || (l5cVar = q5cVar.g3) == null) {
+            return;
+        }
+        l5cVar.O(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final o39 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onFragmentCreate() {
+        String c = wob.b(this.currentAccount).c();
+        this.f = c;
+        this.h = TextUtils.equals(c, this.n);
+        getNotificationCenter().b(this, kk7.s3);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        getNotificationCenter().n(this, kk7.s3);
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

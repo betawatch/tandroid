@@ -1,42 +1,36 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public interface zl1 {
-    void C(cm1 cm1Var, int i);
+public final /* synthetic */ class zl1 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
 
-    void I(long j);
+    public /* synthetic */ zl1(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, byte b) {
+        this.a = b;
+        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+    }
 
-    void J(cm1 cm1Var);
-
-    long a();
-
-    void b0(cm1 cm1Var);
-
-    long d();
-
-    boolean f();
-
-    void g0(cm1 cm1Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str);
-
-    void h(cm1 cm1Var);
-
-    boolean j0(cm1 cm1Var, float f, float f2);
-
-    void l(cm1 cm1Var, String str);
-
-    void n(cm1 cm1Var, int i, int i2);
-
-    void o(cm1 cm1Var);
-
-    void r(cm1 cm1Var, TLRPC.Document document, TLRPC.VideoSize videoSize);
-
-    d w();
-
-    void x(TLRPC.TL_chatInviteExported tL_chatInviteExported);
-
-    void y(cm1 cm1Var, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.b;
+        switch (b) {
+            case 0:
+                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                break;
+            case 1:
+                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                break;
+            case 2:
+                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                break;
+            default:
+                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                break;
+        }
+    }
 }

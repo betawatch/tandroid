@@ -1,35 +1,24 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class pa7 implements we7 {
-    public final /* synthetic */ oc7 a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ TLRPC.InputPeer e;
-    public final /* synthetic */ long f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class pa7 extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ pa7(oc7 oc7Var, long j, int i, boolean z, TLRPC.InputPeer inputPeer, long j2) {
-        this.a = oc7Var;
-        this.b = j;
-        this.c = i;
-        this.d = z;
-        this.e = inputPeer;
-        this.f = j2;
+    static {
+        b4c.h(new pa7());
     }
 
-    @Override // we7
-    public final void a(int i) {
-        oc7 oc7Var = this.a;
-        long e = oc7Var.getUserConfig().e();
-        long j = this.b;
-        if (j == e) {
-            oc7Var.E1().b();
-        }
-        oc7Var.U(j, 2, this.c, Math.max(0, i), this.d, this.e, this.f);
-        oc7Var.F(1);
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        ((qa7) view).a((t1b) c4cVar.H);
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new qa7(context, wjbVar);
     }
 }

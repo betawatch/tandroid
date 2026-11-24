@@ -1,77 +1,39 @@
 // default package
 
-import android.text.Editable;
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.TextWatcher;
-import android.widget.EditText;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class qz3 implements TextWatcher {
-    public final EditText a;
-    public pz3 b;
-    public boolean c = true;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class qz3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ t14 c;
 
-    public qz3(EditText editText) {
-        this.a = editText;
+    public /* synthetic */ qz3(t14 t14Var, boolean z, byte b) {
+        this.a = b;
+        this.c = t14Var;
+        this.b = z;
     }
 
-    public static void a(EditText editText, int i) {
-        int length;
-        if (i == 1 && editText != null && editText.isAttachedToWindow()) {
-            Editable editableText = editText.getEditableText();
-            int selectionStart = Selection.getSelectionStart(editableText);
-            int selectionEnd = Selection.getSelectionEnd(editableText);
-            wx3 a = wx3.a();
-            if (editableText == null) {
-                length = 0;
-            } else {
-                a.getClass();
-                length = editableText.length();
-            }
-            a.e(0, length, editableText);
-            if (selectionStart < 0) {
-                if (selectionEnd >= 0) {
-                    Selection.setSelection(editableText, selectionEnd);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        t14 t14Var = this.c;
+        boolean z = this.b;
+        switch (b) {
+            case 0:
+                if (!z) {
+                    t14Var.y.setVisibility(4);
+                    break;
                 }
-            } else if (selectionEnd >= 0) {
-                Selection.setSelection(editableText, selectionStart, selectionEnd);
-            } else {
-                Selection.setSelection(editableText, selectionStart);
-            }
+                break;
+            default:
+                if (!z) {
+                    t14Var.E.setVisibility(4);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        EditText editText = this.a;
-        if (editText.isInEditMode() || !this.c || wx3.j == null || i2 > i3 || !(charSequence instanceof Spannable)) {
-            return;
-        }
-        int b = wx3.a().b();
-        if (b != 0) {
-            if (b == 1) {
-                wx3.a().e(i, i3 + i, (Spannable) charSequence);
-                return;
-            } else if (b != 3) {
-                return;
-            }
-        }
-        wx3 a = wx3.a();
-        pz3 pz3Var = this.b;
-        if (pz3Var == null) {
-            pz3Var = new pz3(editText);
-            this.b = pz3Var;
-        }
-        a.f(pz3Var);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

@@ -1,131 +1,266 @@
 // default package
 
-import android.graphics.RectF;
-import android.net.Uri;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.view.View;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import java.util.Map;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class i98 implements ee, kac, gla, OnCompleteListener, ke3, pac, ku4, Vector.TLDeserializer, NativeInstance.AudioLevelsCallback, v84 {
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ i98(byte b) {
-        this.a = b;
+public class i98 implements o98 {
+    @Override // o98
+    public CharSequence B(int i) {
+        return null;
     }
 
-    public static /* synthetic */ void g() {
-        throw new IllegalArgumentException();
+    @Override // o98
+    public int D(int i, oac oacVar) {
+        return -1;
     }
 
-    public static /* synthetic */ void h(Object obj, Object obj2, String str) {
-        throw new rq2(str + obj + obj2);
-    }
-
-    @Override // pac
-    public final Object b(c6c c6cVar, View view, Integer num, Float f, Float f2) {
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-        return TL_iv.RichText.TLdeserialize(inputSerializedData, i, z);
-    }
-
-    @Override // v84
-    public final s84[] e(Uri uri, Map map) {
-        return new s84[]{new bd3()};
-    }
-
-    @Override // ke3
-    public final void f(nv8 nv8Var) {
-        nv8Var.get().getClass();
-        throw new ClassCastException();
-    }
-
-    @Override // gla
-    public final void i(int i) {
-        gda.X0 = i;
-        gda.x();
-    }
-
-    @Override // kac
-    public final Object j(Integer num, Object obj) {
-        return num.intValue() == 0 ? nxa.b1(false, jb6.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : jb6.E(r4.intValue(), ',');
-    }
-
-    @Override // ku4
-    public final Object l(Object obj) {
-        int i = yb9.f2;
+    @Override // o98
+    public int G() {
         return 0;
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public final void onComplete(Task task) {
-        gda.i = SystemClock.elapsedRealtime();
-        if (task.isSuccessful()) {
-            String str = (String) task.getResult();
-            if (TextUtils.isEmpty(str)) {
-                return;
-            }
-            PushListenerController.sendRegistrationToServer(2, str);
-            return;
-        }
-        if (e21.a) {
-            fc4.b("Failed to get regid");
-        }
-        gda.g = "__FIREBASE_FAILED__";
-        PushListenerController.sendRegistrationToServer(2, null);
+    @Override // o98
+    public boolean H() {
+        return true;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        switch (this.a) {
-            case 0:
-                heVar.dismiss();
-                break;
-            case 1:
-                heVar.dismiss();
-                break;
-            case 2:
-            case 3:
-            case 6:
-            default:
-                heVar.dismiss();
-                break;
-            case 4:
-                RectF rectF = ProfileActivity.e7;
-                heVar.dismiss();
-                break;
-            case 5:
-                heVar.dismiss();
-                break;
-            case 7:
-                heVar.dismiss();
-                break;
-        }
+    @Override // o98
+    public boolean J() {
+        return false;
     }
 
-    public /* synthetic */ i98(Object obj, byte b) {
-        this.a = b;
+    @Override // o98
+    public boolean K() {
+        return this instanceof ms1;
     }
 
-    @Override // gla
-    public final void m() {
+    @Override // o98
+    public p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
+        return null;
     }
 
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
+    @Override // o98
+    public boolean N() {
+        return true;
+    }
+
+    @Override // o98
+    public boolean O() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean P() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean Q() {
+        return this instanceof k0b;
+    }
+
+    @Override // o98
+    public int R(Object obj) {
+        return -1;
+    }
+
+    @Override // o98
+    public int S(int i) {
+        return -1;
+    }
+
+    @Override // o98
+    public boolean T() {
+        return !(this instanceof gs1);
+    }
+
+    @Override // o98
+    public final boolean U() {
+        return !(this instanceof is1);
+    }
+
+    @Override // o98
+    public k27 V() {
+        return null;
+    }
+
+    @Override // o98
+    public boolean Z() {
+        return false;
+    }
+
+    @Override // o98
+    public long a() {
+        return 0L;
+    }
+
+    @Override // o98
+    public boolean b() {
+        return false;
+    }
+
+    @Override // o98
+    public String b0() {
+        return null;
+    }
+
+    @Override // o98
+    public CharSequence c0(int i) {
+        return null;
+    }
+
+    @Override // o98
+    public ArrayList d() {
+        return null;
+    }
+
+    @Override // o98
+    public boolean h() {
+        return !(this instanceof gs1);
+    }
+
+    @Override // o98
+    public boolean i() {
+        return false;
+    }
+
+    @Override // o98
+    public jl5 k(int i) {
+        return null;
+    }
+
+    @Override // o98
+    public boolean l() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean o() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean p() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean q() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean s() {
+        return !(this instanceof m82);
+    }
+
+    @Override // o98
+    public boolean t() {
+        return !(this instanceof v42);
+    }
+
+    @Override // o98
+    public HashMap u() {
+        return null;
+    }
+
+    @Override // o98
+    public boolean v() {
+        return false;
+    }
+
+    @Override // o98
+    public boolean w(int i) {
+        return false;
+    }
+
+    @Override // o98
+    public int x() {
+        return -1;
+    }
+
+    @Override // o98
+    public boolean y() {
+        return !(this instanceof o02);
+    }
+
+    @Override // o98
+    public boolean z() {
+        return false;
+    }
+
+    @Override // o98
+    public void C() {
+    }
+
+    @Override // o98
+    public void F() {
+    }
+
+    @Override // o98
+    public void I() {
+    }
+
+    @Override // o98
+    public void W() {
+    }
+
+    @Override // o98
+    public void e() {
+    }
+
+    @Override // o98
+    public void j() {
+    }
+
+    @Override // o98
+    public void m() {
+    }
+
+    @Override // o98
+    public void n() {
+    }
+
+    @Override // o98
+    public void r() {
+    }
+
+    @Override // o98
+    public void A(int i) {
+    }
+
+    @Override // o98
+    public void E(boolean z) {
+    }
+
+    @Override // o98
+    public void X(int i) {
+    }
+
+    @Override // o98
+    public void Y(int i) {
+    }
+
+    @Override // o98
+    public void a0(int i) {
+    }
+
+    @Override // o98
+    public void c(oac oacVar) {
+    }
+
+    @Override // o98
+    public void f(CharSequence charSequence) {
+    }
+
+    @Override // o98
+    public void g(String str, String str2, boolean z) {
+    }
+
+    @Override // o98
+    public void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
     }
 }

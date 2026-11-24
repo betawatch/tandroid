@@ -1,53 +1,115 @@
 // default package
 
 import android.content.Context;
-import android.graphics.SurfaceTexture;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
+import android.text.Editable;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import android.view.MotionEvent;
+import java.util.ArrayList;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final class lpc extends ft4 {
-    public final /* synthetic */ npc j0;
+public final class lpc extends EditTextBoldCursor {
+    public final lm M1;
+    public final lm N1;
+    public float O1;
+    public float P1;
+    public final /* synthetic */ ppc Q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lpc(npc npcVar, Context context) {
-        super(context, 1, 4);
-        this.j0 = npcVar;
+    public lpc(ppc ppcVar, Context context) {
+        super(context);
+        this.Q1 = ppcVar;
+        this.M1 = new lm(180L, this, s33.h);
+        this.N1 = new lm(320L, this, ppc.T);
+        this.O1 = 1.0f;
     }
 
-    @Override // ft4
-    public final void h() {
-        npc npcVar = this.j0;
-        if (npcVar.e == this) {
-            npcVar.h();
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void n(Canvas canvas, GradientDrawable gradientDrawable) {
+        gradientDrawable.setCornerRadius(gl.N(1.5f));
+        int lineBaseline = getLayout().getLineBaseline(0);
+        Rect bounds = gradientDrawable.getBounds();
+        float f = lineBaseline;
+        int round = Math.round(((bounds.top - lineBaseline) * this.O1) + f);
+        int round2 = Math.round(((bounds.bottom - lineBaseline) * this.O1) + f);
+        int i = bounds.left;
+        int width = bounds.width();
+        if (this.P1 > 0.0f) {
+            float f2 = i;
+            i = Math.round((((((((getWidth() + getScrollX()) - getCompoundPaddingLeft()) - getCompoundPaddingRight()) - getPaint().measureText("0")) - width) - f2) * this.P1) + f2);
+        }
+        gradientDrawable.setBounds(i, round, width + i, round2);
+        gradientDrawable.draw(canvas);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0082  */
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float lineLeft;
+        int size;
+        Editable text = getText();
+        int max = Math.max(TextUtils.indexOf((CharSequence) text, '.'), TextUtils.indexOf((CharSequence) text, ','));
+        int i = 0;
+        this.O1 = this.M1.e(false, (max < 0 || getSelectionStart() <= max) ? 1.0f : 0.6363636f);
+        this.P1 = this.N1.d(length() == 0);
+        super.onDraw(canvas);
+        ppc ppcVar = this.Q1;
+        if (ppcVar.J >= 1.0f) {
+            return;
+        }
+        TextPaint paint = getPaint();
+        float textSize = paint.getTextSize();
+        float compoundPaddingLeft = getCompoundPaddingLeft();
+        if (length() != 0) {
+            if (getLayout() != null) {
+                lineLeft = getLayout().getLineLeft(0);
+            }
+            float f = compoundPaddingLeft;
+            int baseline = getBaseline();
+            ArrayList arrayList = ppcVar.M;
+            size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                npc npcVar = (npc) obj;
+                paint.setTextSize(npcVar.b ? (28.0f * textSize) / 44.0f : textSize);
+                npcVar.c.b(canvas, paint, npcVar.a, f, baseline);
+            }
+            paint.setTextSize(textSize);
+        }
+        lineLeft = getScrollX() + ppcVar.O;
+        compoundPaddingLeft += lineLeft;
+        float f2 = compoundPaddingLeft;
+        int baseline2 = getBaseline();
+        ArrayList arrayList2 = ppcVar.M;
+        size = arrayList2.size();
+        while (i < size) {
+        }
+        paint.setTextSize(textSize);
+    }
+
+    @Override // lt3, android.widget.TextView
+    public final void onSelectionChanged(int i, int i2) {
+        super.onSelectionChanged(i, i2);
+        if (i != i2) {
+            this.Q1.b();
         }
     }
 
-    @Override // ft4, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-        int round = Math.round(Math.min(i, i2) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        super.onSurfaceTextureAvailable(surfaceTexture, round, round);
-    }
-
-    @Override // ft4, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
-        int round = Math.round(Math.min(i, i2) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        this.E = round;
-        this.y = round;
-    }
-
-    @Override // ft4, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int round = Math.round(Math.min(getWidth(), getHeight()) * 3.5f);
-        if (round > 0) {
-            surfaceTexture.setDefaultBufferSize(round, round);
-        }
-    }
-
-    @Override // ft4, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.j0.y && super.onTouchEvent(motionEvent);
+        if (motionEvent.getActionMasked() == 0) {
+            this.Q1.b();
+            this.N1.a(length() == 0);
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

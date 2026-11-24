@@ -1,32 +1,78 @@
 // default package
 
-import java.io.IOException;
+import android.text.TextUtils;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class fk2 extends IOException {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public fk2(long j, int i, long j2) {
-        super("Illegal clipping: ".concat(r4));
-        String str;
-        if (i != 0) {
-            if (i == 1) {
-                str = "not seekable to start";
-            } else if (i != 2) {
-                str = "unknown";
-            } else {
-                jte.p((j == -9223372036854775807L || j2 == -9223372036854775807L) ? false : true);
-                str = "start exceeds end. Start time: " + j + ", End time: " + j2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class fk2 {
+    public static ArrayList f;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int[] d;
+    public final ArrayList e = new ArrayList();
+
+    public fk2(String str) {
+        str = str == null ? "." : str;
+        this.a = str;
+        String[] split = str.split("/");
+        int length = split.length;
+        this.c = length;
+        this.d = new int[length];
+        int i = 0;
+        for (int i2 = 0; i2 < split.length; i2++) {
+            this.d[i2] = split[i2].length();
+            i = Math.max(i, split[i2].length());
+        }
+        this.b = i;
+        for (int i3 = 0; i3 < split.length; i3++) {
+            for (int i4 = 0; i4 < split[i3].length(); i4++) {
+                this.e.add(new ek2(this, i4, i3));
             }
-        } else {
-            str = "invalid period count";
         }
     }
 
-    public fk2(int i) {
-        this(-9223372036854775807L, i, -9223372036854775807L);
+    public static ArrayList a() {
+        if (f == null) {
+            ArrayList arrayList = new ArrayList();
+            f = arrayList;
+            arrayList.add(new fk2("./."));
+            f.add(new fk2(".."));
+            f.add(new fk2("../."));
+            f.add(new fk2("./.."));
+            f.add(new fk2("././."));
+            f.add(new fk2("..."));
+            f.add(new fk2("../.."));
+            f.add(new fk2("./../.."));
+            f.add(new fk2("../../."));
+            f.add(new fk2("../../.."));
+            boolean z = w01.a;
+        }
+        return f;
+    }
+
+    public static int b() {
+        ArrayList a = a();
+        int size = a.size();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = a.get(i2);
+            i2++;
+            i = Math.max(i, ((fk2) obj).e.size());
+        }
+        return i;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof fk2)) {
+            return false;
+        }
+        return TextUtils.equals(this.a, ((fk2) obj).a);
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

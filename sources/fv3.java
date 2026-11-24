@@ -1,56 +1,45 @@
 // default package
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.d0;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fv3 implements DialogInterface.OnClickListener {
+public final class fv3 extends kse {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ViewGroup b;
 
-    public /* synthetic */ fv3(Object obj, int i, byte b) {
+    public /* synthetic */ fv3(ViewGroup viewGroup, byte b) {
         this.a = b;
-        this.c = obj;
-        this.b = i;
+        this.b = viewGroup;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
+    @Override // kse
+    public final void a() {
         byte b = this.a;
-        int i2 = this.b;
-        Object obj = this.c;
+        ViewGroup viewGroup = this.b;
         switch (b) {
             case 0:
-                kv3 kv3Var = (kv3) ((hi2) obj).c;
-                if (i == 0) {
-                    kv3Var.e.remove(i2 - kv3Var.n);
-                    kv3Var.e0();
-                    jv3 jv3Var = kv3Var.f;
-                    if (jv3Var != null) {
-                        jv3Var.a();
-                        break;
-                    }
-                }
+                ((jv3) viewGroup).j3 = false;
                 break;
             case 1:
-                ((NotificationsSettingsActivity) obj).C0(i2, i);
+                ((ew8) viewGroup).w = false;
                 break;
             default:
-                ThemeActivity themeActivity = (ThemeActivity) obj;
-                themeActivity.getClass();
-                SharedPreferences.Editor edit = oc7.d1().edit();
-                edit.putInt("sortContactsBy", i);
-                edit.commit();
-                d0 d0Var = themeActivity.a;
-                if (d0Var != null) {
-                    d0Var.g(i2);
-                    break;
-                }
+                ((tx9) viewGroup).y1 = false;
+                break;
+        }
+    }
+
+    @Override // kse
+    public final void b() {
+        byte b = this.a;
+        ViewGroup viewGroup = this.b;
+        switch (b) {
+            case 0:
+                ((jv3) viewGroup).j3 = true;
+                break;
+            case 2:
+                ((tx9) viewGroup).y1 = true;
                 break;
         }
     }

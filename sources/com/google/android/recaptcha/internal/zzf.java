@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzf extends eeb implements fs4 {
+final class zzf extends ccb implements eq4 {
     int zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ zzg zzc;
@@ -10,23 +10,23 @@ final class zzf extends eeb implements fs4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzf(long j, zzg zzgVar, String str, px2 px2Var) {
-        super(2, px2Var);
+    public zzf(long j, zzg zzgVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = j;
         this.zzc = zzgVar;
         this.zzd = str;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzf zzfVar = new zzf(this.zzb, this.zzc, this.zzd, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzf zzfVar = new zzf(this.zzb, this.zzc, this.zzd, fw2Var);
         zzfVar.zze = obj;
         return zzfVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzf) create((zzgr) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzf) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x002f, code lost:
@@ -37,33 +37,33 @@ final class zzf extends eeb implements fs4 {
     
         return r6;
      */
-    @Override // og0
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         Object a;
         int i = this.zza;
-        ly2 ly2Var = ly2.a;
+        bx2 bx2Var = bx2.a;
         try {
             if (i == 0) {
-                tue.b(obj);
+                qse.b(obj);
                 zzgr zzgrVar = (zzgr) this.zze;
                 long j = this.zzb;
                 zze zzeVar = new zze(zzgrVar, this.zzc, this.zzd, null);
                 this.zza = 1;
-                a = oxe.a(j, zzeVar, this);
+                a = mve.a(j, zzeVar, this);
             } else {
                 if (i != 1) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    tue.b(obj);
+                    qse.b(obj);
                     throw zzcgVar;
                 }
-                tue.b(obj);
+                qse.b(obj);
                 a = obj;
             }
-            Object obj2 = ((tc9) a).a;
-            tue.b(obj2);
+            Object obj2 = ((ta9) a).a;
+            qse.b(obj2);
             return (zzxx) obj2;
         } catch (Exception e) {
             zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), null, 8, null));
@@ -72,7 +72,7 @@ final class zzf extends eeb implements fs4 {
             long j2 = this.zzb;
             this.zze = zza;
             this.zza = 2;
-            if (zzgVar.zze(str, j2, e, this) != ly2Var) {
+            if (zzgVar.zze(str, j2, e, this) != bx2Var) {
                 throw zza;
             }
         }

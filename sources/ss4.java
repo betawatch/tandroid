@@ -1,7 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Context;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface ss4 extends im4 {
-    im4 D(int i, w11 w11Var);
+public final class ss4 extends y13 {
+    public final Context e;
+    public o13 f;
+    public Executor g;
+    public CancellationSignal h;
+    public final x03 i;
+
+    public ss4(Context context) {
+        context.getClass();
+        this.e = context;
+        this.i = new x03(this, new Handler(Looper.getMainLooper()), (byte) 4);
+    }
 }

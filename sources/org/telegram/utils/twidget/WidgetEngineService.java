@@ -21,43 +21,43 @@ import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipFile;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class WidgetEngineService extends Service {
     public static volatile String b;
     public static String c;
-    public static final ThreadPoolExecutor d = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new y30((byte) 11));
+    public static final ThreadPoolExecutor d = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new x20((byte) 11));
     public static volatile boolean e;
     public static boolean f;
     public static volatile boolean h;
     public final n a = new n(this);
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static final class Forked extends WidgetEngineService {
     }
 
-    public static byte[] c(lcc lccVar, String str) {
+    public static byte[] c(dkc dkcVar, String str) {
         if (str.contains("..") || str.startsWith("/")) {
-            u36.j("Invalid bundle path");
+            w26.j("Invalid bundle path");
             return null;
         }
-        InputStream h2 = lccVar.h("WidgetJS/".concat(str));
+        InputStream b2 = dkcVar.b("WidgetJS/".concat(str));
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] bArr = new byte[TLObject.FLAG_14];
             while (true) {
-                int read = h2.read(bArr);
+                int read = b2.read(bArr);
                 if (read == -1) {
                     byte[] byteArray = byteArrayOutputStream.toByteArray();
-                    h2.close();
+                    b2.close();
                     return byteArray;
                 }
                 byteArrayOutputStream.write(bArr, 0, read);
             }
         } catch (Throwable th) {
-            if (h2 != null) {
+            if (b2 != null) {
                 try {
-                    h2.close();
+                    b2.close();
                 } catch (Throwable th2) {
                     th.addSuppressed(th2);
                 }
@@ -97,12 +97,12 @@ public class WidgetEngineService extends Service {
     public static void e(String str) {
         SystemClock.uptimeMillis();
         if (!WidgetSandboxNative.available()) {
-            dq9.m("libtwidget is missing");
+            sc8.j("libtwidget is missing");
             return;
         }
         ZipFile zipFile = new ZipFile(str);
         try {
-            f(new lcc(zipFile, (byte) 11));
+            f(new dkc(zipFile, (byte) 7));
             zipFile.close();
             String[] strArr = {"WidgetEngineBackend", "WidgetSandboxBackend", "WidgetSandboxIntl", "WidgetPng", "IWidgetEngine$Stub", "IWidgetEngineCallback$Stub$Proxy"};
             for (int i = 0; i < 6; i++) {
@@ -118,10 +118,10 @@ public class WidgetEngineService extends Service {
     /* JADX INFO: Access modifiers changed from: private */
     public static native void exitNow(int i);
 
-    public static synchronized String f(lcc lccVar) {
+    public static synchronized String f(dkc dkcVar) {
         String[] strArr;
         int i;
-        lcc lccVar2 = lccVar;
+        dkc dkcVar2 = dkcVar;
         synchronized (WidgetEngineService.class) {
             String str = c;
             if (str != null) {
@@ -129,10 +129,10 @@ public class WidgetEngineService extends Service {
             }
             try {
                 try {
-                    InputStream h2 = lccVar2.h("manifest.txt");
+                    InputStream b2 = dkcVar2.b("manifest.txt");
                     try {
-                        String a = iyc.a(h2);
-                        h2.close();
+                        String a = hwc.a(b2);
+                        b2.close();
                         String[] split = a.split("\n");
                         int length = split.length;
                         byte[] bArr = null;
@@ -146,7 +146,7 @@ public class WidgetEngineService extends Service {
                                 i = length;
                             } else {
                                 String[] split2 = str2.split(" ", 2);
-                                byte[] c2 = c(lccVar2, split2[1]);
+                                byte[] c2 = c(dkcVar2, split2[1]);
                                 StringBuilder sb = new StringBuilder();
                                 byte[] digest = MessageDigest.getInstance("SHA-256").digest(c2);
                                 int length2 = digest.length;
@@ -177,7 +177,7 @@ public class WidgetEngineService extends Service {
                                 }
                             }
                             i2++;
-                            lccVar2 = lccVar;
+                            dkcVar2 = dkcVar;
                             split = strArr;
                             length = i;
                         }
@@ -218,10 +218,10 @@ public class WidgetEngineService extends Service {
                 f = true;
                 h = !z;
                 SystemClock.uptimeMillis();
-                qfd.a();
+                odd.a();
                 d.prestartCoreThread();
                 try {
-                    f(new lcc(assets, (byte) 12));
+                    f(new dkc(assets, (byte) 8));
                 } catch (RuntimeException e2) {
                     Log.e("WidgetEngine", "bundles", e2);
                 }
@@ -253,7 +253,7 @@ public class WidgetEngineService extends Service {
         if (WidgetSandboxNative.available()) {
             SystemClock.uptimeMillis();
         } else {
-            dq9.m("libtwidget is missing");
+            sc8.j("libtwidget is missing");
         }
     }
 

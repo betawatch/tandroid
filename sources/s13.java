@@ -1,43 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Context;
+import android.os.CancellationSignal;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class s13 {
-    public final /* synthetic */ byte a;
-    public final String b;
-    public final String c;
+public interface s13 {
+    boolean isAvailableOnDevice();
 
-    public s13(String str, String str2, byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                ite.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
-                this.b = str;
-                this.c = (str2 == null || str2.length() <= 0) ? null : str2;
-                return;
-            default:
-                this.b = str;
-                this.c = str2;
-                if (str.length() > 0) {
-                    return;
-                }
-                u36.j("userId should not be empty");
-                throw null;
-        }
-    }
+    void onCreateCredential(Context context, i03 i03Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var);
 
-    public final String toString() {
-        switch (this.a) {
-            case 3:
-                return this.b + ", " + this.c;
-            default:
-                return super.toString();
-        }
-    }
+    void onGetCredential(Context context, si8 si8Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var);
 
-    public /* synthetic */ s13(String str, String str2, byte b, boolean z) {
-        this.a = b;
-        this.b = str;
-        this.c = str2;
-    }
+    void onGetCredential(Context context, ws4 ws4Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var);
+
+    void onPrepareCredential(ws4 ws4Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var);
 }

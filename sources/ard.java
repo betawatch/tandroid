@@ -1,27 +1,80 @@
 // default package
 
-/* loaded from: classes.dex */
-public final class ard implements ssd {
-    public ssd[] a;
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Collection;
 
-    @Override // ssd
-    public final boolean zza(Class cls) {
-        for (ssd ssdVar : this.a) {
-            if (ssdVar.zza(cls)) {
-                return true;
-            }
-        }
-        return false;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class ard extends AbstractCollection implements Serializable {
+    public static final Object[] a = new Object[0];
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // ssd
-    public final iwd zzb(Class cls) {
-        for (ssd ssdVar : this.a) {
-            if (ssdVar.zza(cls)) {
-                return ssdVar.zzb(cls);
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract int h(Object[] objArr);
+
+    public abstract int i();
+
+    public int j() {
+        return 0;
+    }
+
+    public boolean k() {
+        return true;
+    }
+
+    public abstract Object[] l();
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] l = l();
+            if (l != null) {
+                return Arrays.copyOfRange(l, j(), i(), objArr.getClass());
             }
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
+        } else if (length > size) {
+            objArr[size] = null;
         }
-        String name = cls.getName();
-        throw new UnsupportedOperationException(name.length() != 0 ? "No factory is available for message type: ".concat(name) : new String("No factory is available for message type: "));
+        h(objArr);
+        return objArr;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
     }
 }

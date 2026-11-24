@@ -1,47 +1,67 @@
 // default package
 
-import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final /* synthetic */ class ya7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ he c;
+    public final /* synthetic */ ad7 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ ya7(Activity activity, he heVar, byte b) {
+    public /* synthetic */ ya7(ad7 ad7Var, ArrayList arrayList, ArrayList arrayList2, byte b) {
         this.a = b;
-        this.b = activity;
-        this.c = heVar;
+        this.b = ad7Var;
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        he heVar = this.c;
-        Activity activity = this.b;
+        ArrayList arrayList = this.d;
+        ArrayList arrayList2 = this.c;
+        ad7 ad7Var = this.b;
         switch (b) {
             case 0:
-                if (!activity.isFinishing()) {
-                    try {
-                        heVar.dismiss();
-                        break;
-                    } catch (Exception e) {
-                        fc4.g(e, true);
-                    }
-                }
-                break;
-            default:
+                SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
-                    if (!activity.isFinishing()) {
-                        heVar.dismiss();
-                        break;
+                    try {
+                        sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
+                        int size = arrayList2.size();
+                        for (int i = 0; i < size; i++) {
+                            sQLitePreparedStatement.requery();
+                            sQLitePreparedStatement.bindInteger(1, ((Integer) arrayList.get(i)).intValue());
+                            sQLitePreparedStatement.bindLong(2, ((Long) arrayList2.get(i)).longValue());
+                            sQLitePreparedStatement.step();
+                        }
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    } catch (Exception e) {
+                        ad7Var.n(e, true);
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                            return;
+                        }
+                        return;
                     }
-                } catch (Exception e2) {
-                    fc4.g(e2, true);
+                } catch (Throwable th) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th;
+                }
+            default:
+                if (!arrayList2.isEmpty()) {
+                    ad7Var.getMessagesController().b4(arrayList2, true);
+                }
+                if (arrayList.isEmpty()) {
                     return;
                 }
-                break;
+                ad7Var.getMessagesController().V3(arrayList, true);
+                return;
         }
     }
 }

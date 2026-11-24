@@ -1,55 +1,48 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class fg4 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ View d;
-
-    public fg4(bya byaVar, float f, int i) {
-        this.a = (byte) 1;
-        this.d = byaVar;
-        this.b = f;
-        this.c = i;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        float f = this.b;
-        int i = this.c;
-        View view = this.d;
-        switch (b) {
-            case 0:
-                gg4 gg4Var = (gg4) view;
-                gg4Var.b(i == 5 ? 0.0f : -f, i + 1);
-                gg4Var.E = 0.0f;
-                gg4Var.invalidate();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public class fg4 extends v30 {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public fg4(int i, String str) {
+        super(str, r0);
+        String str2;
+        switch (i) {
+            case 55501:
+                str2 = "The carrier associated with this SIM is not supported.";
                 break;
-            case 1:
-                bya byaVar = (bya) view;
-                byaVar.d0 = f;
-                if (byaVar.getValue() != i) {
-                    byaVar.e(byaVar.getValue());
-                }
-                byaVar.invalidate();
+            case 55502:
+                str2 = "Invalid digital credential response.";
+                break;
+            case 55503:
+                str2 = "Integrity check failed in an unexpected place.";
+                break;
+            case 55504:
+                str2 = "Preflight check failed - we could not mint a digital credentials request on the server.";
+                break;
+            case 55505:
+                str2 = "The API is not supported - this API with the specified parameters is not intended to be called at this time.";
+                break;
+            case 55506:
+                str2 = "The Android Credential Manager has failed unexpectedly.";
+                break;
+            case 55507:
+                str2 = "Invalid test number ID(s) - might be empty, expired or duplicated.";
+                break;
+            case 55508:
+                str2 = "Test session already enabled - `enableTestSession` should only be called once.";
+                break;
+            case 55509:
+                str2 = "An Activity context is required to call this API.";
                 break;
             default:
-                ((puc) view).c(i, f, false);
+                str2 = "An unexpected error has occurred.";
                 break;
         }
-    }
-
-    public /* synthetic */ fg4(View view, int i, float f, byte b) {
-        this.a = b;
-        this.d = view;
-        this.c = i;
-        this.b = f;
+        Throwable th = new Throwable(str2);
+        fre.g(str, "Detail message must not be empty");
     }
 }

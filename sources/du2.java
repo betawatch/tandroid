@@ -1,47 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class du2 {
+import java.util.ArrayList;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class du2 implements Runnable {
     public final /* synthetic */ byte a;
-    public String b;
+    public final /* synthetic */ qu2 b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ HashMap e;
 
-    public /* synthetic */ du2(String str, byte b) {
-        this.a = b;
-        this.b = str;
+    public /* synthetic */ du2(qu2 qu2Var, ArrayList arrayList, HashMap hashMap, HashMap hashMap2) {
+        this.a = (byte) 4;
+        this.b = qu2Var;
+        this.d = arrayList;
+        this.c = hashMap;
+        this.e = hashMap2;
     }
 
-    public static du2 a(yw7 yw7Var) {
-        String str;
-        yw7Var.O(2);
-        int A = yw7Var.A();
-        int i = A >> 1;
-        byte b = 1;
-        int A2 = ((A & 1) << 5) | ((yw7Var.A() >> 3) & 31);
-        if (i == 4 || i == 5 || i == 7 || i == 8) {
-            str = "dvhe";
-        } else if (i == 9) {
-            str = "dvav";
-        } else {
-            if (i != 10) {
-                return null;
-            }
-            str = "dav1";
-        }
-        StringBuilder sb = new StringBuilder(str);
-        sb.append(i < 10 ? ".0" : ".");
-        sb.append(i);
-        sb.append(A2 < 10 ? ".0" : ".");
-        sb.append(A2);
-        return new du2(sb.toString(), b);
-    }
-
-    public final String toString() {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        HashMap hashMap = this.e;
+        HashMap hashMap2 = this.c;
+        ArrayList arrayList = this.d;
+        qu2 qu2Var = this.b;
+        switch (b) {
+            case 0:
+                qu2Var.E(hashMap2, arrayList, hashMap, true);
+                qu2Var.N();
+                qu2Var.getNotificationCenter().k(25, new Object[0]);
+                qu2Var.getNotificationCenter().k(26, new Object[0]);
+                break;
+            case 1:
+                qu2Var.E(hashMap2, arrayList, hashMap, true);
+                qu2Var.N();
+                qu2Var.getNotificationCenter().k(25, new Object[0]);
+                qu2Var.getNotificationCenter().k(26, new Object[0]);
+                break;
             case 2:
-                return "<" + this.b + '>';
+                qu2Var.E(hashMap2, arrayList, hashMap, true);
+                break;
+            case 3:
+                qu2Var.E(hashMap2, arrayList, hashMap, true);
+                qu2Var.getNotificationCenter().k(26, new Object[0]);
+                break;
             default:
-                return super.toString();
+                qu2Var.d0 = arrayList;
+                qu2Var.e0 = hashMap2;
+                qu2Var.c0 = hashMap;
+                break;
         }
+    }
+
+    public /* synthetic */ du2(qu2 qu2Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, byte b) {
+        this.a = b;
+        this.b = qu2Var;
+        this.c = hashMap;
+        this.d = arrayList;
+        this.e = hashMap2;
     }
 }

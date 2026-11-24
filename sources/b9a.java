@@ -1,38 +1,64 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.SessionsActivity;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class b9a implements qac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ SessionsActivity b;
+public final class b9a extends View {
+    public int a;
+    public final int b;
+    public boolean c;
+    public boolean d;
 
-    public /* synthetic */ b9a(SessionsActivity sessionsActivity, byte b) {
-        this.a = b;
-        this.b = sessionsActivity;
+    public b9a(Context context, de9 de9Var) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.a = 12;
+        int i = this.b;
+        if (i == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i);
+        }
     }
 
-    @Override // qac
-    public final void a(Object obj) {
-        byte b = this.a;
-        SessionsActivity sessionsActivity = this.b;
-        switch (b) {
-            case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                if (connectedbots != null) {
-                    sessionsActivity.f = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.r0();
-                        sessionsActivity.a.f();
-                        break;
-                    }
-                }
-                break;
-            default:
-                sessionsActivity.n0((Boolean) obj);
-                break;
+    private int getBackgroundResId() {
+        boolean z = this.c;
+        boolean z2 = this.d;
+        return z ? z2 ? R.drawable.greydivider : R.drawable.greydivider_bottom : z2 ? R.drawable.greydivider_top : R.drawable.transparent;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(this.a), TLObject.FLAG_30));
+    }
+
+    public void setSize(int i) {
+        this.a = i;
+    }
+
+    public b9a(Context context, Object obj) {
+        this(context, (de9) null);
+    }
+
+    public b9a(Context context) {
+        this(context, (de9) null);
+    }
+
+    public b9a(Context context, int i, int i2) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.b = i;
+        this.a = 12;
+        if (i == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i);
         }
     }
 }

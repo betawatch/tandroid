@@ -1,47 +1,7 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class gkc implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hkc b;
-
-    public /* synthetic */ gkc(hkc hkcVar, byte b) {
-        this.a = b;
-        this.b = hkcVar;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        hkc hkcVar = this.b;
-        switch (b) {
-            case 0:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                hkcVar.d = intValue;
-                hkcVar.e = intValue;
-                hkcVar.f = intValue;
-                hkcVar.h = intValue;
-                hkcVar.n = intValue;
-                hkcVar.invalidate();
-                break;
-            default:
-                hkcVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hkcVar.d = gm.U1(floatValue, hkcVar.G, gm.L(56.0f));
-                hkcVar.e = gm.U1(floatValue, hkcVar.G, gm.L(36.0f));
-                hkcVar.f = gm.U1(floatValue, hkcVar.G, gm.L(60.0f));
-                hkcVar.h = gm.U1(floatValue, hkcVar.G, gm.L(36.0f));
-                hkcVar.n = gm.U1(floatValue, hkcVar.G, gm.L(64.0f));
-                hkcVar.r = gm.U1(floatValue, 0, gm.L(50.0f));
-                hkcVar.s = gm.U1(floatValue, 0, gm.L(20.0f));
-                hkcVar.w = gm.U1(floatValue, 0, 0);
-                hkcVar.x = gm.U1(floatValue, 0, gm.L(-20.0f));
-                hkcVar.y = gm.U1(floatValue, 0, gm.L(-40.0f));
-                hkcVar.invalidate();
-                break;
-        }
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class gkc {
+    public static final yn a = new yn("Wallet.API", new op5((byte) 12), new wn());
 }

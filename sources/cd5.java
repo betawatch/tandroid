@@ -1,216 +1,314 @@
 // default package
 
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import org.telegram.messenger.ImageReceiver;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class cd5 implements cr3 {
-    public boolean E;
-    public TLRPC.MessageExtendedMedia F;
-    public String G;
-    public final RadialProgress2 H;
-    public int I;
-    public final int J;
-    public final int K;
-    public int L;
-    public uib M;
-    public boolean N;
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public final rc2 e;
-    public final ImageReceiver f;
-    public boolean h;
-    public final int n;
-    public final int r;
-    public final float[] s = new float[8];
-    public String w;
-    public final boolean x;
-    public final boolean y;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class cd5 {
+    public static volatile cd5[] g = new cd5[4];
+    public static final Object[] h = new Object[4];
+    public final int a;
+    public final bd5 b;
+    public final bd5 c;
+    public final bd5 d;
+    public final SharedPreferences e;
+    public final ArrayList f;
 
-    public cd5(rc2 rc2Var, k47 k47Var, TLRPC.MessageExtendedMedia messageExtendedMedia, boolean z, int i, int i2) {
-        int i3;
-        boolean z2;
-        this.I = 4;
-        this.K = 0;
-        this.L = 0;
-        this.e = rc2Var;
-        this.x = z;
-        this.y = false;
-        if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
-            TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
-            z2 = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && k47.J4(messageMedia.document);
-            this.y = z2;
-            i3 = (int) Math.max(1L, Math.round(k47.H0(messageMedia.document)));
-            this.K = i3;
-        } else if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview) {
-            TLRPC.TL_messageExtendedMediaPreview tL_messageExtendedMediaPreview = (TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia;
-            z2 = (tL_messageExtendedMediaPreview.flags & 4) != 0;
-            this.y = z2;
-            i3 = tL_messageExtendedMediaPreview.video_duration;
-            this.K = i3;
-        } else {
-            i3 = 0;
-            z2 = false;
-        }
-        if (z2) {
-            this.L = i3;
-            this.M = new uib(gm.g0(i3, true, false), 12.0f, null);
-        }
-        ImageReceiver imageReceiver = new ImageReceiver(rc2Var);
-        this.f = imageReceiver;
-        imageReceiver.p1 = null;
-        this.n = i;
-        this.r = i2;
-        this.J = er3.q(rc2Var.a6).k();
-        c(messageExtendedMedia, k47Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(rc2Var, rc2Var.getResourcesProvider());
-        this.H = radialProgress2;
-        int a = a();
-        this.I = a;
-        radialProgress2.setIcon(a, false, false);
-    }
-
-    public final int a() {
-        return (!this.y || this.E) ? 4 : 0;
-    }
-
-    public final void b(int i) {
-        if (i != this.I) {
-            this.I = i;
-            this.H.setIcon(i, true, true);
+    static {
+        for (int i = 0; i < 4; i++) {
+            h[i] = new Object();
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(TLRPC.MessageExtendedMedia messageExtendedMedia, k47 k47Var) {
-        boolean z;
-        TLRPC.Document document;
-        TLRPC.Document document2;
-        if (this.F == messageExtendedMedia) {
-            return;
+    public cd5(int i) {
+        ArrayList arrayList = new ArrayList();
+        this.f = arrayList;
+        this.a = i;
+        this.b = new bd5(i);
+        this.c = new bd5(i);
+        this.d = new bd5(i);
+        SharedPreferences sharedPreferences = a.b.getSharedPreferences("hashtag_search_history" + i, 0);
+        this.e = sharedPreferences;
+        int i2 = sharedPreferences.getInt("count", 0);
+        arrayList.clear();
+        arrayList.ensureCapacity(i2);
+        for (int i3 = 0; i3 < i2; i3++) {
+            String string = sharedPreferences.getString("e_" + i3, "");
+            if (!string.startsWith("#") && !string.startsWith("$")) {
+                string = "#".concat(string);
+            }
+            arrayList.add(string);
         }
-        this.F = messageExtendedMedia;
-        this.E = false;
-        int i = this.n;
-        int i2 = this.r;
-        String n = td4.n(i, i2, "_");
-        boolean z2 = messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview;
-        ImageReceiver imageReceiver = this.f;
-        if (z2) {
-            this.h = true;
-            this.w = null;
-            imageReceiver.d0(gn5.f(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, k47Var.k), n.concat("_b2"), null, null, k47Var, 0);
-            ColorMatrix colorMatrix = new ColorMatrix();
-            colorMatrix.setSaturation(1.4f);
-            gm.h(colorMatrix, -0.1f);
-            imageReceiver.p1 = new ColorMatrixColorFilter(colorMatrix);
-            return;
+    }
+
+    public static cd5 a(int i) {
+        cd5 cd5Var;
+        cd5 cd5Var2 = g[i];
+        if (cd5Var2 != null) {
+            return cd5Var2;
         }
-        if (!(messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia)) {
-            return;
-        }
-        boolean z3 = k47Var.j2;
-        this.h = z3;
-        if (z3) {
-            n = n.concat("_b3");
-        }
-        imageReceiver.p1 = null;
-        TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
-        this.w = k47.U0(messageMedia);
-        if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-            TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
-            TLRPC.PhotoSize w = bc4.w(tL_messageMediaPhoto.photo.sizes, gm.Y0(false), true, null, true);
-            TLRPC.PhotoSize w2 = bc4.w(tL_messageMediaPhoto.photo.sizes, Math.min(i, i2) / 100, false, w, false);
-            gn5 i3 = gn5.i(w, tL_messageMediaPhoto.photo);
-            gn5 i4 = gn5.i(w2, tL_messageMediaPhoto.photo);
-            String str = n;
-            imageReceiver.Z(i3, str, i4, str, null, 0L, null, k47Var, 0);
-            return;
-        }
-        if (!(messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
-            return;
-        }
-        TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) messageMedia;
-        boolean z4 = this.h;
-        boolean z5 = this.y;
-        boolean z6 = this.x;
-        if (!z4 && !z6 && z5) {
-            boolean z7 = gda.a;
-            if (e86.e(1024)) {
-                z = true;
-                this.E = z;
-                if (z6 && z5 && (document2 = tL_messageMediaDocument.document) != null) {
-                    TLRPC.PhotoSize w3 = bc4.w(document2.thumbs, gm.Y0(false), true, null, true);
-                    TLRPC.PhotoSize w4 = bc4.w(tL_messageMediaDocument.document.thumbs, Math.min(i, i2), false, w3, false);
-                    gn5 b = gn5.b(tL_messageMediaDocument.document);
-                    gn5 c = gn5.c(w3, tL_messageMediaDocument.document);
-                    gn5 c2 = gn5.c(w4, tL_messageMediaDocument.document);
-                    boolean z8 = this.E;
-                    gn5 gn5Var = z8 ? b : null;
-                    String str2 = n;
-                    imageReceiver.Y(gn5Var, n.concat(z8 ? "_g" : ""), c, str2, c2, str2, null, 0L, null, k47Var, 0);
-                    return;
-                }
-                document = tL_messageMediaDocument.document;
-                if (document == null) {
-                    TLRPC.PhotoSize w5 = bc4.w(document.thumbs, gm.Y0(false), true, null, true);
-                    TLRPC.PhotoSize w6 = bc4.w(tL_messageMediaDocument.document.thumbs, Math.min(i, i2), false, w5, false);
-                    gn5 c3 = gn5.c(w5, tL_messageMediaDocument.document);
-                    gn5 c4 = gn5.c(w6, tL_messageMediaDocument.document);
-                    String str3 = n;
-                    imageReceiver.Z(c3, str3, c4, str3, null, 0L, null, k47Var, 0);
-                    return;
-                }
-                return;
+        synchronized (h[i]) {
+            cd5Var = g[i];
+            if (cd5Var == null) {
+                cd5[] cd5VarArr = g;
+                cd5 cd5Var3 = new cd5(i);
+                cd5VarArr[i] = cd5Var3;
+                cd5Var = cd5Var3;
             }
         }
-        z = false;
-        this.E = z;
-        if (z6) {
+        return cd5Var;
+    }
+
+    public final bd5 b(int i) {
+        if (i == 1) {
+            return this.b;
         }
-        document = tL_messageMediaDocument.document;
-        if (document == null) {
+        if (i == 2) {
+            return this.c;
+        }
+        if (i == 3) {
+            return this.d;
+        }
+        wn4.j("Unknown search type");
+        return null;
+    }
+
+    public final void c(String str) {
+        if (str.startsWith("#") || str.startsWith("$")) {
+            ArrayList arrayList = this.f;
+            int indexOf = arrayList.indexOf(str);
+            if (indexOf != -1) {
+                if (indexOf == 0) {
+                    return;
+                } else {
+                    arrayList.remove(indexOf);
+                }
+            }
+            arrayList.add(0, str);
+            if (arrayList.size() >= 100) {
+                arrayList.subList(99, arrayList.size()).clear();
+            }
+            d();
         }
     }
 
-    @Override // cr3
-    public final int getObserverTag() {
-        return this.J;
+    public final void d() {
+        SharedPreferences.Editor edit = this.e.edit();
+        edit.clear();
+        ArrayList arrayList = this.f;
+        edit.putInt("count", arrayList.size());
+        for (int i = 0; i < arrayList.size(); i++) {
+            edit.putString(de9.k(i, "e_"), (String) arrayList.get(i));
+        }
+        edit.apply();
     }
 
-    @Override // cr3
-    public final void i(long j, long j2) {
-        float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
-        this.F.downloadProgress = min;
-        this.H.o(true, min);
-        b(min < 1.0f ? 3 : a());
-        this.e.invalidate();
-    }
-
-    @Override // cr3
-    public final void l(long j, long j2) {
-        float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
-        this.F.uploadProgress = min;
-        this.H.o(true, min);
-        b(min < 1.0f ? 3 : this.x ? 6 : a());
-        this.e.invalidate();
-    }
-
-    @Override // cr3
-    public final void A(boolean z) {
-    }
-
-    @Override // cr3
-    public final void N(String str) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void e(final int i, final int i2, final int i3, String str) {
+        final String str2;
+        String str3;
+        final String str4;
+        final cd5 cd5Var;
+        TLRPC.TL_channels_searchPosts tL_channels_searchPosts;
+        final bd5 b = b(i2);
+        String str5 = b.k;
+        if (str5 == null && str == null) {
+            return;
+        }
+        if (str == null) {
+            str2 = str5;
+        } else {
+            if (str.isEmpty()) {
+                return;
+            }
+            if (!TextUtils.equals(str, b.k)) {
+                b.a();
+            } else if (b.f) {
+                return;
+            }
+            str2 = str;
+        }
+        b.k = str2;
+        int indexOf = str2.indexOf(64);
+        TLObject tLObject = null;
+        if (indexOf >= 0) {
+            String substring = str2.substring(indexOf + 1);
+            str3 = str2.substring(0, indexOf);
+            str4 = substring;
+        } else {
+            str3 = str2;
+            str4 = null;
+        }
+        b.f = true;
+        boolean isEmpty = TextUtils.isEmpty(str4);
+        int i4 = this.a;
+        if (isEmpty) {
+            cd5Var = this;
+        } else {
+            TLObject a2 = na7.q1(i4).a2(str4);
+            if (a2 == null) {
+                t79 a = na7.q1(i4).Y1().a(str4, null, new p8c() { // from class: xc5
+                    @Override // p8c
+                    public final void a(Object obj) {
+                        cd5 cd5Var2 = cd5.this;
+                        int i5 = cd5Var2.a;
+                        bd5 bd5Var = b;
+                        String str6 = bd5Var.k;
+                        String str7 = str2;
+                        if (TextUtils.equals(str6, str7)) {
+                            TLObject a22 = na7.q1(i5).a2(str4);
+                            int i6 = i;
+                            if (a22 != null) {
+                                cd5Var2.e(i6, i2, i3, str7);
+                                return;
+                            }
+                            if (r5[0] == bd5Var.e) {
+                                bd5Var.e = null;
+                                bd5Var.f = false;
+                                bd5Var.n = true;
+                                bd5Var.m = 0;
+                                kk7.f(i5).k(kk7.H0, Integer.valueOf(i6), Integer.valueOf(bd5Var.m), Boolean.valueOf(bd5Var.n), Integer.valueOf(bd5Var.b()), Integer.valueOf(bd5Var.l), 0);
+                            }
+                        }
+                    }
+                });
+                b.e = a;
+                final Runnable[] runnableArr = {a};
+                return;
+            }
+            cd5Var = this;
+            tLObject = a2;
+        }
+        if (i2 == 1) {
+            TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
+            tL_messages_searchGlobal.limit = 21;
+            tL_messages_searchGlobal.q = str2;
+            tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+            tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+            tL_channels_searchPosts = tL_messages_searchGlobal;
+            if (b.i != null) {
+                tL_messages_searchGlobal.offset_rate = b.g;
+                tL_messages_searchGlobal.offset_id = b.h;
+                tL_messages_searchGlobal.offset_peer = na7.q1(i4).k1(b.i);
+                tL_channels_searchPosts = tL_messages_searchGlobal;
+            }
+        } else if (tLObject != null) {
+            TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
+            tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+            tL_messages_search.peer = na7.i1(tLObject);
+            tL_messages_search.q = str3;
+            tL_messages_search.limit = 21;
+            int i5 = b.h;
+            tL_channels_searchPosts = tL_messages_search;
+            if (i5 != 0) {
+                tL_messages_search.offset_id = i5;
+                tL_channels_searchPosts = tL_messages_search;
+            }
+        } else {
+            TLRPC.TL_channels_searchPosts tL_channels_searchPosts2 = new TLRPC.TL_channels_searchPosts();
+            tL_channels_searchPosts2.flags |= 1;
+            tL_channels_searchPosts2.hashtag = str2;
+            tL_channels_searchPosts2.limit = 21;
+            tL_channels_searchPosts2.offset_peer = new TLRPC.TL_inputPeerEmpty();
+            tL_channels_searchPosts = tL_channels_searchPosts2;
+            if (b.i != null) {
+                tL_channels_searchPosts2.offset_rate = b.g;
+                tL_channels_searchPosts2.offset_id = b.h;
+                tL_channels_searchPosts2.offset_peer = na7.q1(i4).k1(b.i);
+                tL_channels_searchPosts = tL_channels_searchPosts2;
+            }
+        }
+        int sendRequest = ConnectionsManager.getInstance(i4).sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: yc5
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                if (!(tLObject2 instanceof TLRPC.messages_Messages)) {
+                    return;
+                }
+                final TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
+                final ArrayList arrayList = new ArrayList();
+                ArrayList<TLRPC.Message> arrayList2 = messages_messages.messages;
+                int size = arrayList2.size();
+                int i6 = 0;
+                while (true) {
+                    final cd5 cd5Var2 = cd5.this;
+                    if (i6 >= size) {
+                        final int[] iArr = r4;
+                        final bd5 bd5Var = b;
+                        final int i7 = i;
+                        final int i8 = i3;
+                        gl.c3(new Runnable() { // from class: zc5
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                int i9 = cd5.this.a;
+                                int i10 = iArr[0];
+                                bd5 bd5Var2 = bd5Var;
+                                int i11 = bd5Var2.d;
+                                HashMap hashMap = bd5Var2.b;
+                                if (i10 == i11) {
+                                    bd5Var2.d = -1;
+                                    bd5Var2.f = false;
+                                    TLRPC.messages_Messages messages_messages2 = messages_messages;
+                                    bd5Var2.g = messages_messages2.next_rate;
+                                    ArrayList arrayList3 = arrayList;
+                                    int size2 = arrayList3.size();
+                                    int i12 = 0;
+                                    while (i12 < size2) {
+                                        Object obj = arrayList3.get(i12);
+                                        i12++;
+                                        k27 k27Var = (k27) obj;
+                                        ad5 ad5Var = new ad5(k27Var.k);
+                                        Integer num = (Integer) hashMap.get(ad5Var);
+                                        if (num == null) {
+                                            int i13 = bd5Var2.j;
+                                            bd5Var2.j = i13 - 1;
+                                            num = Integer.valueOf(i13);
+                                            hashMap.put(ad5Var, num);
+                                            bd5Var2.a.add(k27Var);
+                                        }
+                                        TLRPC.Message message = k27Var.k;
+                                        message.realId = message.id;
+                                        message.id = num.intValue();
+                                    }
+                                    if (!messages_messages2.messages.isEmpty()) {
+                                        TLRPC.Message message2 = (TLRPC.Message) b00.f(1, messages_messages2.messages);
+                                        bd5Var2.h = message2.realId;
+                                        bd5Var2.i = message2.peer_id;
+                                    }
+                                    ad7.Y(i9).j1(messages_messages2.users, messages_messages2.chats, true, true);
+                                    na7.q1(i9).b4(messages_messages2.users, false);
+                                    na7.q1(i9).V3(messages_messages2.chats, false);
+                                    bd5Var2.n = messages_messages2.messages.size() < 21;
+                                    bd5Var2.m = Math.max(messages_messages2.count, messages_messages2.messages.size());
+                                    kk7 f = kk7.f(i9);
+                                    Integer valueOf = Integer.valueOf(arrayList3.size());
+                                    int i14 = i7;
+                                    f.k(kk7.C, 0L, valueOf, arrayList3, Boolean.FALSE, 0, 0, 0, 0, 2, Boolean.TRUE, Integer.valueOf(i14), Integer.valueOf(i8), 0, 0, 7);
+                                    kk7.f(i9).k(kk7.H0, Integer.valueOf(i14), Integer.valueOf(bd5Var2.m), Boolean.valueOf(bd5Var2.n), Integer.valueOf(bd5Var2.b()), Integer.valueOf(bd5Var2.l), 0);
+                                }
+                            }
+                        });
+                        return;
+                    }
+                    TLRPC.Message message = arrayList2.get(i6);
+                    i6++;
+                    k27 k27Var = new k27(cd5Var2.a, message, null, null, null, null, null, true, true, 0L, false, false, false, i2);
+                    if (k27Var.z2()) {
+                        k27Var.S2 = true;
+                    }
+                    k27Var.J5(str2, false);
+                    arrayList.add(k27Var);
+                }
+            }
+        });
+        b.d = sendRequest;
+        final int[] iArr = {sendRequest};
     }
 }

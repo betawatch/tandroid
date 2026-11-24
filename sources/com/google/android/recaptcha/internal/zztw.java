@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class zztw implements zzug {
     private final zzts zza;
@@ -202,7 +202,7 @@ final class zztw implements zzug {
         if (i == i2) {
             return;
         }
-        i2d.j("Failed to parse the message.");
+        fvc.i("Failed to parse the message.");
     }
 
     @Override // com.google.android.recaptcha.internal.zzug
@@ -212,7 +212,7 @@ final class zztw implements zzug {
             Map.Entry entry = (Map.Entry) zzf.next();
             zzsc zzscVar = (zzsc) entry.getKey();
             if (zzscVar.zze() != zzvh.zzi) {
-                dq9.m("Found invalid MessageSet item.");
+                sc8.j("Found invalid MessageSet item.");
                 return;
             }
             zzscVar.zzg();

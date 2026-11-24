@@ -1,46 +1,39 @@
 // default package
 
-import android.view.WindowInsets;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class ozc extends nzc {
-    public iq5 n;
+public final class ozc extends nzc {
+    public static final ozc s = new ozc(new Object[0]);
+    public final transient Object[] r;
 
-    public ozc(wzc wzcVar, WindowInsets windowInsets) {
-        super(wzcVar, windowInsets);
-        this.n = null;
+    public ozc(Object[] objArr) {
+        super((byte) 0);
+        this.r = objArr;
     }
 
-    @Override // tzc
-    public wzc b() {
-        return wzc.h(null, this.c.consumeStableInsets());
+    @Override // java.util.List
+    public final Object get(int i) {
+        qye.a(i, 0);
+        Object obj = this.r[i];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    @Override // tzc
-    public wzc c() {
-        return wzc.h(null, this.c.consumeSystemWindowInsets());
+    @Override // nzc, kzc
+    public final int h(Object[] objArr) {
+        System.arraycopy(this.r, 0, objArr, 0, 0);
+        return 0;
     }
 
-    @Override // tzc
-    public final iq5 i() {
-        iq5 iq5Var = this.n;
-        if (iq5Var != null) {
-            return iq5Var;
-        }
-        WindowInsets windowInsets = this.c;
-        iq5 b = iq5.b(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
-        this.n = b;
-        return b;
+    @Override // kzc
+    public final Object[] k() {
+        return this.r;
     }
 
-    @Override // tzc
-    public boolean n() {
-        return this.c.isConsumed();
-    }
-
-    @Override // tzc
-    public void s(iq5 iq5Var) {
-        this.n = iq5Var;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return 0;
     }
 }

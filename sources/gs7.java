@@ -1,221 +1,62 @@
 // default package
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class gs7 {
-    public final byte a;
-    public final int b;
-    public final boolean c;
-    public final int d;
-    public final long e;
-    public final long f;
-    public final long g;
-    public final long h;
-    public long i;
-    public final int j;
-    public boolean k;
-    public final String l;
-    public final int m;
+public final class gs7 extends TextView {
+    public boolean a;
+    public Drawable b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public gs7(int i, int i2, boolean z, int i3, long j, long j2, long j3, long j4, int i4, String str, int i5) {
-        this.a = i;
-        this.b = i2;
-        this.c = z;
-        this.d = i3;
-        this.e = j;
-        this.f = j2;
-        this.g = j3;
-        this.h = j4;
-        this.j = i4;
-        this.l = TextUtils.isEmpty(str) ? null : str;
-        this.m = i5;
+    public gs7(Context context) {
+        super(context);
+        setTextColor(-1);
+        setTextSize(1, 14.0f);
+        setCurrent(false);
+        setEllipsize(TextUtils.TruncateAt.END);
+        setSingleLine();
     }
 
-    public static String a(TL_wallet.WalletOnchainGiftAction walletOnchainGiftAction) {
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCreate) {
-            return ((TL_wallet.walletOnchainGiftActionOfferCreate) walletOnchainGiftAction).counterparty_address;
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferAccept) {
-            return ((TL_wallet.walletOnchainGiftActionOfferAccept) walletOnchainGiftAction).counterparty_address;
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCancel) {
-            return ((TL_wallet.walletOnchainGiftActionOfferCancel) walletOnchainGiftAction).counterparty_address;
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferDecline) {
-            return ((TL_wallet.walletOnchainGiftActionOfferDecline) walletOnchainGiftAction).counterparty_address;
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferExpire) {
-            return ((TL_wallet.walletOnchainGiftActionOfferExpire) walletOnchainGiftAction).counterparty_address;
-        }
-        return null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x008b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static gs7 c(TL_wallet.walletTransaction wallettransaction) {
-        int i;
-        long j;
-        TL_wallet.nftItem nftitem;
-        if (wallettransaction == null) {
-            return null;
-        }
-        TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
-        if (!(walletTransactionPeer instanceof TL_wallet.walletTransactionPeerOnchainGift)) {
-            return null;
-        }
-        TL_wallet.WalletOnchainGiftAction walletOnchainGiftAction = ((TL_wallet.walletTransactionPeerOnchainGift) walletTransactionPeer).action;
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionBuy) {
-            long j2 = wallettransaction.amount;
-            int i2 = (j2 > 0 || (j2 == 0 && !wallettransaction.incoming)) ? 1 : 0;
-            long abs = Math.abs(j2);
-            if (i2 != 0 && wallettransaction.amount > 0 && (nftitem = wallettransaction.nft) != null) {
-                TL_stars.StarGift starGift = nftitem.gift;
-                if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                    i = fs7.f((TL_stars.TL_starGiftUnique) starGift);
-                    if (i > 0 || i >= 10000) {
-                        j = 0;
-                    } else {
-                        abs = new BigDecimal(wallettransaction.amount).multiply(BigDecimal.valueOf(10000L)).divide(BigDecimal.valueOf(10000 - i), 0, RoundingMode.HALF_UP).longValue();
-                        j = abs - wallettransaction.amount;
-                    }
-                    return new gs7(i2, R.drawable.wallet_transaction_swap, true, i2 == 0 ? wallettransaction.amount > 0 ? 0 : -1 : 1, wallettransaction.amount, abs, j, 0L, 0, null, i2 == 0 ? 2131749491 : 2131749483);
-                }
-            }
-            i = -1;
-            if (i > 0) {
-            }
-            j = 0;
-            return new gs7(i2, R.drawable.wallet_transaction_swap, true, i2 == 0 ? wallettransaction.amount > 0 ? 0 : -1 : 1, wallettransaction.amount, abs, j, 0L, 0, null, i2 == 0 ? 2131749491 : 2131749483);
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionChangePrice) {
-            TL_wallet.walletOnchainGiftActionChangePrice walletonchaingiftactionchangeprice = (TL_wallet.walletOnchainGiftActionChangePrice) walletOnchainGiftAction;
-            boolean hasOldPrice = walletonchaingiftactionchangeprice.hasOldPrice();
-            long j3 = wallettransaction.amount;
-            if (!hasOldPrice) {
-                return new gs7(3, R.drawable.wallet_transaction_out, false, -1, j3, walletonchaingiftactionchangeprice.new_price, 0L, 0L, 0, null, 0);
-            }
-            gs7 gs7Var = new gs7(9, R.drawable.wallet_transaction_reprice, true, 0, j3, walletonchaingiftactionchangeprice.new_price, 0L, 0L, 0, null, 0);
-            gs7Var.i = walletonchaingiftactionchangeprice.old_price;
-            return gs7Var;
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionDelist) {
-            return new gs7(4, R.drawable.wallet_transaction_in, true, 1, wallettransaction.amount, 0L, 0L, 0L, 0, null, 0);
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCreate) {
-            TL_wallet.walletOnchainGiftActionOfferCreate walletonchaingiftactionoffercreate = (TL_wallet.walletOnchainGiftActionOfferCreate) walletOnchainGiftAction;
-            long j4 = wallettransaction.amount;
-            return new gs7(5, R.drawable.wallet_transaction_out, false, 0, -(j4 != 0 ? Math.abs(j4) : walletonchaingiftactionoffercreate.amount), walletonchaingiftactionoffercreate.price, walletonchaingiftactionoffercreate.service_fee, 0L, walletonchaingiftactionoffercreate.expires_at, walletonchaingiftactionoffercreate.counterparty_address, 2131742703);
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferAccept) {
-            TL_wallet.walletOnchainGiftActionOfferAccept walletonchaingiftactionofferaccept = (TL_wallet.walletOnchainGiftActionOfferAccept) walletOnchainGiftAction;
-            boolean z = walletonchaingiftactionofferaccept.buyer;
-            long j5 = wallettransaction.amount;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, gl.L(-1.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        if (this.a) {
+            int D = ug8.D(16.0f, getHeight(), 2);
+            boolean z = k96.a0;
+            Drawable drawable = this.b;
             if (z) {
-                return new gs7(0, R.drawable.wallet_transaction_swap, true, 1, -(j5 != 0 ? Math.abs(j5) : walletonchaingiftactionofferaccept.price + walletonchaingiftactionofferaccept.service_fee), walletonchaingiftactionofferaccept.price, walletonchaingiftactionofferaccept.service_fee, 0L, 0, walletonchaingiftactionofferaccept.counterparty_address, 2131749483);
+                drawable.setBounds(gl.L(7.0f), D, gl.L(23.0f), gl.L(16.0f) + D);
+            } else {
+                drawable.setBounds(getWidth() - gl.L(23.0f), D, getWidth() - gl.L(7.0f), gl.L(16.0f) + D);
             }
-            return new gs7(2, R.drawable.wallet_transaction_swap, true, 0, j5 != 0 ? Math.abs(j5) : walletonchaingiftactionofferaccept.price, walletonchaingiftactionofferaccept.price, walletonchaingiftactionofferaccept.service_fee, 0L, 0, walletonchaingiftactionofferaccept.counterparty_address, 2131749491);
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCancel) {
-            TL_wallet.walletOnchainGiftActionOfferCancel walletonchaingiftactionoffercancel = (TL_wallet.walletOnchainGiftActionOfferCancel) walletOnchainGiftAction;
-            gs7 d = d(6, wallettransaction, walletonchaingiftactionoffercancel.refund_amount, walletonchaingiftactionoffercancel.price, walletonchaingiftactionoffercancel.fine, walletonchaingiftactionoffercancel.counterparty_address);
-            d.k = (walletonchaingiftactionoffercancel.flags & 4) != 0;
-            return d;
-        }
-        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferDecline) {
-            TL_wallet.walletOnchainGiftActionOfferDecline walletonchaingiftactionofferdecline = (TL_wallet.walletOnchainGiftActionOfferDecline) walletOnchainGiftAction;
-            return d(7, wallettransaction, walletonchaingiftactionofferdecline.refund_amount, walletonchaingiftactionofferdecline.price, 0L, walletonchaingiftactionofferdecline.counterparty_address);
-        }
-        if (!(walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferExpire)) {
-            return null;
-        }
-        TL_wallet.walletOnchainGiftActionOfferExpire walletonchaingiftactionofferexpire = (TL_wallet.walletOnchainGiftActionOfferExpire) walletOnchainGiftAction;
-        return d(8, wallettransaction, walletonchaingiftactionofferexpire.refund_amount, walletonchaingiftactionofferexpire.price, 0L, walletonchaingiftactionofferexpire.counterparty_address);
-    }
-
-    public static gs7 d(int i, TL_wallet.walletTransaction wallettransaction, long j, long j2, long j3, String str) {
-        long j4 = wallettransaction.amount;
-        return new gs7(i, R.drawable.wallet_transaction_in, true, 0, j4 != 0 ? Math.abs(j4) : j, j2, 0L, j3, 0, str, 2131742703);
-    }
-
-    public static SpannableStringBuilder f(int i, long j) {
-        return nxa.b1(true, jb6.a0(null, null, i, "⭐️ " + c.s(j, false)), 0.7f, null);
-    }
-
-    public final CharSequence b() {
-        byte b = this.a;
-        long j = this.e;
-        long j2 = this.f;
-        switch (b) {
-            case 0:
-                if (j2 == 0) {
-                    j2 = Math.abs(j);
-                }
-                return f(2131742743, j2);
-            case 1:
-                if (j != 0) {
-                    j2 = Math.abs(j);
-                }
-                return f(2131742732, j2);
-            case 2:
-                return f(2131742742, Math.abs(j));
-            case 3:
-                return j2 != 0 ? f(2131742736, j2) : jb6.M0(2131742737, null);
-            case 4:
-                return jb6.M0(2131742735, null);
-            case 5:
-                return jb6.M0(2131742738, null);
-            case 6:
-                return jb6.M0(2131742741, null);
-            case 7:
-                return jb6.M0(2131742740, null);
-            case 8:
-                return jb6.M0(2131742739, null);
-            case 9:
-                return f(2131742734, j2);
-            default:
-                return "";
+            this.b.draw(canvas);
         }
     }
 
-    public final String e() {
-        switch (this.a) {
-            case 0:
-                return jb6.M0(2131742729, null);
-            case 1:
-                return jb6.M0(2131742726, null);
-            case 2:
-                return jb6.M0(2131742731, null);
-            case 3:
-                return jb6.M0(2131742728, null);
-            case 4:
-                return jb6.M0(2131742727, null);
-            case 5:
-                return jb6.M0(2131742738, null);
-            case 6:
-                return jb6.M0(2131742741, null);
-            case 7:
-                return jb6.M0(2131742740, null);
-            case 8:
-                return jb6.M0(2131742739, null);
-            case 9:
-                return jb6.M0(2131742730, null);
-            default:
-                return "";
+    public void setCurrent(boolean z) {
+        this.a = z;
+        if (z) {
+            setPadding(gl.L(k96.a0 ? 27.0f : 12.0f), gl.L(6.0f), gl.L(k96.a0 ? 12.0f : 27.0f), gl.L(6.0f));
+            setBackground(sjb.d(0, sjb.b(1090519039), gl.L(32.0f)));
+        } else {
+            setPadding(gl.L(24.0f), gl.L(14.0f), gl.L(24.0f), gl.L(14.0f));
+            setBackground(sjb.d(0, sjb.b(-14145495), 0.0f));
         }
+        if (this.a && this.b == null) {
+            Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);
+            this.b = drawable;
+            drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

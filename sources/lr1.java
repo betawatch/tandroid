@@ -1,45 +1,67 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lr1 implements we7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class lr1 extends vs9 {
+    public final /* synthetic */ mu1 J;
 
-    public /* synthetic */ lr1(byte b, Object obj, boolean z) {
-        this.a = b;
-        this.c = obj;
-        this.b = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lr1(mu1 mu1Var, Context context, mu1 mu1Var2, int i, long j, wjb wjbVar) {
+        super(context, mu1Var2, i, j, wjbVar);
+        this.J = mu1Var;
     }
 
-    @Override // we7
-    public final void a(int i) {
-        byte b = this.a;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                yv1 yv1Var = ((nr1) obj).b;
-                if (i > 0 && yv1Var.getParentActivity() != null) {
-                    c41.b0(yv1Var).m(this.b ? b41.H : b41.J, i, 0, 0, yv1Var.Ba).j();
-                    break;
-                }
-                break;
-            default:
-                mr1 mr1Var = (mr1) obj;
-                yv1 yv1Var2 = mr1Var.b.b;
-                if (i < 50) {
-                    yv1Var2.Ha(yv1Var2.s4, true);
-                    break;
-                } else {
-                    TLRPC.Chat chat = yv1Var2.e;
-                    TLRPC.User user = yv1Var2.f;
-                    boolean z = this.b;
-                    ik.r(yv1Var2, true, chat, user, false, false, false, z, new cd1(mr1Var, z));
-                    break;
-                }
+    @Override // vs9
+    public final void b(boolean z) {
+        mu1 mu1Var = this.J;
+        mu1Var.z5();
+        mu1Var.x5();
+        sr1 sr1Var = mu1Var.Bb;
+        if (sr1Var != null) {
+            sr1Var.setTranslationY(mu1Var.T9 + getCurrentHeight());
         }
+        if (z) {
+            mu1Var.aa = true;
+            mu1Var.Fc();
+        }
+    }
+
+    @Override // vs9
+    public final boolean f(h19 h19Var) {
+        int i;
+        mu1 mu1Var = this.J;
+        mu1Var.F3 = h19Var;
+        mu1Var.G3 = h19Var != null;
+        if (h19Var == null) {
+            hq6 mediaDataController = mu1Var.getMediaDataController();
+            mediaDataController.Z0.clear();
+            mediaDataController.a1.clear();
+            mediaDataController.b1.clear();
+            mu1Var.yb(false);
+            mu1Var.bd(0, 0, -1);
+        }
+        mu1Var.ed();
+        mu1Var.Rc();
+        mu1Var.I3 = mu1Var.k0.getSearchField().getText().toString();
+        hq6 mediaDataController2 = mu1Var.getMediaDataController();
+        String str = mu1Var.I3;
+        long j = mu1Var.l6;
+        long j2 = mu1Var.d7;
+        i = ((d) mu1Var).classGuid;
+        mediaDataController2.Z1(str, j, j2, i, 0, mu1Var.s4, false, mu1Var.D3, mu1Var.E3, (TextUtils.isEmpty(mu1Var.I3) && mu1Var.F3 == null) ? false : true, mu1Var.F3);
+        gl.t1(mu1Var.k0.getSearchField());
+        return true;
+    }
+
+    @Override // vs9
+    public final void h(boolean z) {
+        super.h(z);
+        mu1 mu1Var = this.J;
+        r7 r7Var = mu1Var.k0;
+        g(r7Var != null && r7Var.w() && a() && mu1Var.J3 == null);
     }
 }

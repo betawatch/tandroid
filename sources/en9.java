@@ -1,36 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class en9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ un9 b;
-    public final /* synthetic */ Exception c;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-    public /* synthetic */ en9(un9 un9Var, Exception exc, byte b) {
-        this.a = b;
-        this.b = un9Var;
-        this.c = exc;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class en9 extends ViewOutlineProvider {
+    public final /* synthetic */ on9 a;
+
+    public en9(on9 on9Var) {
+        this.a = on9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Exception exc = this.c;
-        un9 un9Var = this.b;
-        switch (b) {
-            case 0:
-                un9Var.h(exc);
-                break;
-            case 1:
-                un9Var.h(exc);
-                break;
-            case 2:
-                un9Var.h(exc);
-                break;
-            default:
-                un9Var.h(exc);
-                break;
-        }
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), (1.0f - this.a.U) * gl.L(12.0f));
     }
 }

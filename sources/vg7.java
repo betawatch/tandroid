@@ -1,27 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.io.Serializable;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class vg7 extends p2 implements Runnable {
-    public final Runnable n;
-
-    public vg7(Runnable runnable) {
-        runnable.getClass();
-        this.n = runnable;
-    }
-
-    @Override // t2
-    public final String j() {
-        return "task=[" + this.n + "]";
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            this.n.run();
-        } catch (Throwable th) {
-            m(th);
-            throw th;
-        }
+public final class vg7 implements qbb, Serializable {
+    @Override // qbb
+    public final Object get() {
+        return new ArrayList(2);
     }
 }

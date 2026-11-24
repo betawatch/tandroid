@@ -1,36 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class kc8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mc8 b;
+import android.os.Bundle;
+import java.util.ArrayList;
 
-    public /* synthetic */ kc8(mc8 mc8Var, byte b) {
-        this.a = b;
-        this.b = mc8Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class kc8 {
+    public static final kc8 b = new jc8().b();
+    public static final String c;
+    public final gi4 a;
+
+    static {
+        String str = g8c.a;
+        c = "0";
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        mc8 mc8Var = this.b;
-        switch (b) {
-            case 0:
-                mc8Var.d.a(false);
-                break;
-            default:
-                Runnable runnable = mc8Var.I;
-                mc8Var.I = null;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                Runnable runnable2 = mc8Var.J;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
+    public kc8(gi4 gi4Var) {
+        this.a = gi4Var;
+    }
+
+    public final boolean a(int i) {
+        return this.a.a.get(i);
+    }
+
+    public final Bundle b() {
+        Bundle bundle = new Bundle();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int i = 0;
+        while (true) {
+            gi4 gi4Var = this.a;
+            if (i >= gi4Var.a.size()) {
+                bundle.putIntegerArrayList(c, arrayList);
+                return bundle;
+            }
+            arrayList.add(Integer.valueOf(gi4Var.a(i)));
+            i++;
         }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof kc8) {
+            return this.a.equals(((kc8) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

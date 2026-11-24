@@ -2,16 +2,16 @@
 
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c implements yy5, ee, jp7, hp7 {
+public final /* synthetic */ class c implements yw5, ed, fn7, dn7 {
     public final /* synthetic */ byte a;
 
     public /* synthetic */ c(byte b) {
         this.a = b;
     }
 
-    @Override // hp7
+    @Override // dn7
     public final String c(int i) {
         switch (this.a) {
             case 18:
@@ -67,24 +67,24 @@ public final /* synthetic */ class c implements yy5, ee, jp7, hp7 {
         return String.format("%02d", Integer.valueOf(i));
     }
 
-    @Override // yy5
-    public final void o(Exception exc) {
+    @Override // yw5
+    public final void n(Exception exc) {
         switch (this.a) {
             case 0:
-                fc4.g(exc, true);
+                fa4.g(exc, true);
                 break;
             default:
-                fc4.g(exc, true);
+                fa4.g(exc, true);
                 break;
         }
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        heVar.dismiss();
+    @Override // ed
+    public final void u(hd hdVar, int i) {
+        hdVar.dismiss();
     }
 
-    @Override // jp7
-    public final void g(lp7 lp7Var, int i) {
+    @Override // fn7
+    public final void i(hn7 hn7Var, int i) {
     }
 }

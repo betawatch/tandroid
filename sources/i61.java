@@ -1,54 +1,54 @@
 // default package
 
-import java.io.InputStream;
-import java.util.ArrayDeque;
-import java.util.Arrays;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class i61 {
-    public static byte[] a(ArrayDeque arrayDeque, int i) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
-        }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i) {
-            return bArr;
-        }
-        int length = i - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i - length, min);
-            length -= min;
-        }
-        return copyOf;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class i61 extends fx0 {
+    public static final /* synthetic */ int m1 = 0;
+    public final /* synthetic */ byte l1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i61(int i, wjb wjbVar, Context context, boolean z) {
+        super(i, wjbVar, context, z);
+        this.l1 = (byte) 2;
     }
 
-    public static byte[] b(InputStream inputStream) {
-        inputStream.getClass();
-        ArrayDeque arrayDeque = new ArrayDeque(20);
-        int i = 128;
-        int i2 = 0;
-        while (i2 < 2147483639) {
-            int min = Math.min(i, 2147483639 - i2);
-            byte[] bArr = new byte[min];
-            arrayDeque.add(bArr);
-            int i3 = 0;
-            while (i3 < min) {
-                int read = inputStream.read(bArr, i3, min - i3);
-                if (read == -1) {
-                    return a(arrayDeque, i2);
+    @Override // fx0
+    public final boolean E() {
+        switch (this.l1) {
+            case 0:
+                return false;
+            default:
+                return super.E();
+        }
+    }
+
+    @Override // fx0
+    public final void p0() {
+        switch (this.l1) {
+            case 2:
+                super.p0();
+                try {
+                    int v0 = bkb.v0(bkb.g5, this.J0);
+                    if (this.H0 != v0) {
+                        L(v0);
+                        break;
+                    }
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                    return;
                 }
-                i3 += read;
-                i2 += read;
-            }
-            i = ine.d(i * (i < 4096 ? 4 : 2));
+                break;
+            default:
+                super.p0();
+                break;
         }
-        if (inputStream.read() == -1) {
-            return a(arrayDeque, 2147483639);
-        }
-        throw new OutOfMemoryError("input is too large to fit in a byte array");
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i61(byte b, Context context, boolean z) {
+        super(context, z);
+        this.l1 = b;
     }
 }

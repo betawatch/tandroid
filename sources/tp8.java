@@ -1,42 +1,50 @@
 // default package
 
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tp8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ up8 b;
+    public final /* synthetic */ lca b;
 
-    public /* synthetic */ tp8(up8 up8Var, byte b) {
+    public /* synthetic */ tp8(lca lcaVar, byte b) {
         this.a = b;
-        this.b = up8Var;
+        this.b = lcaVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        up8 up8Var = this.b;
+        lca lcaVar = this.b;
         switch (b) {
             case 0:
-                ProfileActivity profileActivity = up8Var.t0;
-                gp8 gp8Var = profileActivity.Y5;
-                if (gp8Var != null) {
-                    gp8Var.dismiss();
-                    profileActivity.Y5 = null;
-                    break;
+                wsa wsaVar = lcaVar.e;
+                wsaVar.getClass();
+                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
+                int i = wsaVar.a;
+                reorderstargiftcollections.peer = na7.q1(i).h1(wsaVar.b);
+                ArrayList arrayList = wsaVar.e;
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
                 }
+                ConnectionsManager.getInstance(i).sendRequest(reorderstargiftcollections, null);
+                wsaVar.j();
+                break;
+            case 1:
+                lcaVar.setReorderingCollections(true);
+                break;
+            case 2:
+                lcaVar.a();
                 break;
             default:
-                try {
-                    r59 currentListView = up8Var.n0.O.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().f();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
+                lcaVar.p();
                 break;
         }
     }

@@ -1,17 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
+import java.util.HashSet;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final class a1c {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float[] g;
-    public float[] h;
-    public float[] i;
-    public float[] j;
-    public float[] k;
+    public HashSet a;
+    public HashSet b;
+    public HashSet c;
 }

@@ -1,33 +1,37 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class uxc {
-    public final ArrayList a = new ArrayList();
-
-    public final synchronized boolean a(int i, int i2, boolean z) {
-        int i3 = 0;
-        while (true) {
-            if (i3 >= this.a.size()) {
-                break;
-            }
-            int[] iArr = (int[]) this.a.get(i3);
-            if (iArr[0] != i) {
-                i3++;
-            } else {
-                if (iArr[1] == i2 && iArr[2] == z && i3 == 0) {
-                    return false;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class uxc {
+    public static int a(int i) {
+        int statusBars;
+        int i2 = 0;
+        for (int i3 = 1; i3 <= 512; i3 <<= 1) {
+            if ((i & i3) != 0) {
+                if (i3 == 1) {
+                    statusBars = WindowInsets.Type.statusBars();
+                } else if (i3 == 2) {
+                    statusBars = WindowInsets.Type.navigationBars();
+                } else if (i3 == 4) {
+                    statusBars = WindowInsets.Type.captionBar();
+                } else if (i3 == 8) {
+                    statusBars = WindowInsets.Type.ime();
+                } else if (i3 == 16) {
+                    statusBars = WindowInsets.Type.systemGestures();
+                } else if (i3 == 32) {
+                    statusBars = WindowInsets.Type.mandatorySystemGestures();
+                } else if (i3 == 64) {
+                    statusBars = WindowInsets.Type.tappableElement();
+                } else if (i3 == 128) {
+                    statusBars = WindowInsets.Type.displayCutout();
+                } else if (i3 == 512) {
+                    statusBars = WindowInsets.Type.systemOverlays();
                 }
-                this.a.remove(i3);
+                i2 |= statusBars;
             }
         }
-        this.a.add(0, new int[]{i, i2, z ? 1 : 0});
-        while (this.a.size() > 4) {
-            ArrayList arrayList = this.a;
-            arrayList.remove(arrayList.size() - 1);
-        }
-        return true;
+        return i2;
     }
 }

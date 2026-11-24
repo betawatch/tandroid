@@ -12,12 +12,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class k9 extends FrameLayout {
-    public final ho a;
+    public final gn a;
     public final Paint b;
-    public final ry2 c;
+    public final hx2 c;
     public final Drawable d;
     public final int e;
     public int f;
@@ -26,18 +26,18 @@ public final class k9 extends FrameLayout {
         super(activity);
         Paint paint = new Paint(1);
         this.b = paint;
-        this.c = new ry2(new l0(this, (byte) 4));
+        this.c = new hx2(new l0(this, (byte) 4));
         this.e = i;
         this.d = activity.getResources().getDrawable(R.drawable.filled_gift_sell_24).mutate();
-        ho hoVar = new ho(false, false, false);
-        this.a = hoVar;
-        hoVar.N = gm.q.x;
-        hoVar.setCallback(this);
-        hoVar.x(gm.o());
-        hoVar.w(gm.L(14.0f));
-        hoVar.u(-1);
-        hoVar.b = 3;
-        paint.setShader(new LinearGradient(0.0f, 0.0f, gm.L(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        gn gnVar = new gn(false, false, false);
+        this.a = gnVar;
+        gnVar.N = gl.q.x;
+        gnVar.setCallback(this);
+        gnVar.x(gl.o());
+        gnVar.w(gl.L(14.0f));
+        gnVar.u(-1);
+        gnVar.b = 3;
+        paint.setShader(new LinearGradient(0.0f, 0.0f, gl.L(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
     public final void a(int i) {
@@ -50,31 +50,31 @@ public final class k9 extends FrameLayout {
     }
 
     public final void b(long j) {
-        ho hoVar = this.a;
+        gn gnVar = this.a;
         if (j == 0) {
-            hoVar.t(jb6.M0(2131750269, null), true, true);
+            gnVar.t(k96.M0(2131750320, null), true, true);
         } else {
             int i = (int) j;
-            hoVar.t(j > 3600 ? gm.g0(i, false, false) : gm.h0(i, false), isAttachedToWindow(), true);
+            gnVar.t(j > 3600 ? gl.g0(i, false, false) : gl.h0(i, false), isAttachedToWindow(), true);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth() - gm.L(14.0f);
-        ho hoVar = this.a;
-        int c = measuredWidth - ((int) hoVar.c());
-        int L = c - gm.L(30.0f);
+        int measuredWidth = getMeasuredWidth() - gl.L(14.0f);
+        gn gnVar = this.a;
+        int c = measuredWidth - ((int) gnVar.c());
+        int L = c - gl.L(30.0f);
         canvas.save();
         canvas.translate(L, 0.0f);
-        canvas.drawRoundRect(0.0f, 0.0f, getWidth() - L, getHeight(), gm.L(14.0f), gm.L(14.0f), this.b);
+        canvas.drawRoundRect(0.0f, 0.0f, getWidth() - L, getHeight(), gl.L(14.0f), gl.L(14.0f), this.b);
         canvas.restore();
-        hoVar.setBounds(c, 0, getMeasuredWidth() - gm.L(8.0f), getMeasuredHeight() - gm.L(1.0f));
-        hoVar.draw(canvas);
-        int L2 = gm.L(-22.0f) + c;
-        int L3 = gm.L(5.0f);
-        int L4 = gm.L(-4.0f) + c;
-        int L5 = gm.L(23.0f);
+        gnVar.setBounds(c, 0, getMeasuredWidth() - gl.L(8.0f), getMeasuredHeight() - gl.L(1.0f));
+        gnVar.draw(canvas);
+        int L2 = gl.L(-22.0f) + c;
+        int L3 = gl.L(5.0f);
+        int L4 = gl.L(-4.0f) + c;
+        int L5 = gl.L(23.0f);
         Drawable drawable = this.d;
         drawable.setBounds(L2, L3, L4, L5);
         drawable.draw(canvas);
@@ -95,7 +95,7 @@ public final class k9 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gm.L(172.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(28.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.L(172.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View

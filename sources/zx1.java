@@ -1,55 +1,30 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class zx1 extends d02 {
-    public final Rect G;
-    public final /* synthetic */ ChatActivityEnterView H;
+public final class zx1 extends p1c {
+    public final /* synthetic */ ay1 p1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zx1(ChatActivityEnterView chatActivityEnterView, Activity activity) {
-        super(activity, 24);
-        this.H = chatActivityEnterView;
-        this.G = new Rect();
+    public zx1(ay1 ay1Var, Context context, d dVar, d2c d2cVar, wjb wjbVar) {
+        super(context, dVar, d2cVar, wjbVar);
+        this.p1 = ay1Var;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        int i = ChatActivityEnterView.z7;
-        ChatActivityEnterView chatActivityEnterView = this.H;
-        if (chatActivityEnterView.g0()) {
-            if (chatActivityEnterView.p1 == null) {
-                Drawable mutate = getResources().getDrawable(R.drawable.input_dictation).mutate();
-                chatActivityEnterView.p1 = mutate;
-                mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            }
-            int measuredWidth = getMeasuredWidth() / 2;
-            int measuredHeight = getMeasuredHeight() / 2;
-            int L = gm.L(12.0f);
-            chatActivityEnterView.p1.setBounds(measuredWidth - L, measuredHeight - L, measuredWidth + L, measuredHeight + L);
-            chatActivityEnterView.p1.draw(canvas);
-            return;
+    @Override // p1c, fx0, android.app.Dialog, android.content.DialogInterface, zf0
+    public final void dismiss() {
+        super.dismiss();
+        ChatActivityEnterView chatActivityEnterView = this.p1.a;
+        if (chatActivityEnterView.Q3 == this) {
+            chatActivityEnterView.Q3 = null;
         }
-        if (!chatActivityEnterView.b1) {
-            super.draw(canvas);
-            return;
+        hy1 hy1Var = chatActivityEnterView.P3;
+        if (hy1Var != null) {
+            hy1Var.m(false);
         }
-        int measuredWidth2 = getMeasuredWidth();
-        int measuredHeight2 = getMeasuredHeight();
-        Rect rect = this.G;
-        rect.set(0, 0, measuredWidth2, measuredHeight2);
-        rect.inset(gm.L(7.5f), gm.L(7.5f));
-        Drawable drawable = getCurrentState() == b02.b ? chatActivityEnterView.D4 : chatActivityEnterView.C4;
-        drawable.setBounds(rect);
-        drawable.draw(canvas);
     }
 }

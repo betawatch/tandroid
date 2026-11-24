@@ -1,28 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class bk6 implements w37 {
-    public w37[] a;
+public interface bk6 {
+    public static final i2f z = new i2f(21);
 
-    @Override // w37
-    public final j19 a(Class cls) {
-        for (w37 w37Var : this.a) {
-            if (w37Var.b(cls)) {
-                return w37Var.a(cls);
-            }
-        }
-        rjb.j("No factory is available for message type: ".concat(cls.getName()));
-        return null;
-    }
+    long a();
 
-    @Override // w37
-    public final boolean b(Class cls) {
-        for (w37 w37Var : this.a) {
-            if (w37Var.b(cls)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    long h();
+
+    boolean next();
 }

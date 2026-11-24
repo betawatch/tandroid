@@ -1,19 +1,23 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Arrays;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class one {
-    public static final Object a(lj7 lj7Var, ni8 ni8Var, Serializable serializable) {
-        lj7Var.getClass();
-        ni8Var.getClass();
-        Object obj = lj7Var.a.get(ni8Var);
-        if (obj instanceof byte[]) {
-            byte[] bArr = (byte[]) obj;
-            obj = Arrays.copyOf(bArr, bArr.length);
-        }
-        return obj == null ? serializable : obj;
+    public static mp2 a(String str, String str2) {
+        y90 y90Var = new y90(str, str2);
+        lp2 b = mp2.b(y90.class);
+        b.e = true;
+        b.f = new kp2(y90Var, (byte) 1);
+        return b.b();
+    }
+
+    public static mp2 b(String str, w44 w44Var) {
+        lp2 b = mp2.b(y90.class);
+        b.e = true;
+        b.a(wd3.b(Context.class));
+        b.f = new h45(str, w44Var, (byte) 11);
+        return b.b();
     }
 }

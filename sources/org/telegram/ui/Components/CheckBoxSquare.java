@@ -9,7 +9,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public class CheckBoxSquare extends View {
     public final RectF a;
@@ -24,20 +24,20 @@ public class CheckBoxSquare extends View {
     public int s;
     public int w;
     public int x;
-    public final ylb y;
+    public final wjb y;
 
-    public CheckBoxSquare(ylb ylbVar, Context context, boolean z) {
+    public CheckBoxSquare(wjb wjbVar, Context context, boolean z) {
         super(context);
-        this.y = ylbVar;
-        if (cmb.o0 == null) {
-            cmb.Q(context);
+        this.y = wjbVar;
+        if (bkb.o0 == null) {
+            bkb.Q(context);
         }
         boolean z2 = this.r;
-        this.s = z2 ? cmb.x5 : cmb.X6;
-        this.w = z2 ? cmb.v5 : cmb.V6;
-        this.x = z2 ? cmb.w5 : cmb.W6;
+        this.s = z2 ? bkb.x5 : bkb.X6;
+        this.w = z2 ? bkb.v5 : bkb.V6;
+        this.x = z2 ? bkb.w5 : bkb.W6;
         this.a = new RectF();
-        Bitmap createBitmap = Bitmap.createBitmap(gm.L(18.0f), gm.L(18.0f), Bitmap.Config.ARGB_4444);
+        Bitmap createBitmap = Bitmap.createBitmap(gl.L(18.0f), gl.L(18.0f), Bitmap.Config.ARGB_4444);
         this.b = createBitmap;
         this.c = new Canvas(createBitmap);
         this.r = z;
@@ -86,42 +86,42 @@ public class CheckBoxSquare extends View {
             return;
         }
         int i = this.s;
-        ylb ylbVar = this.y;
-        int v0 = cmb.v0(i, ylbVar);
-        int v02 = cmb.v0(this.w, ylbVar);
+        wjb wjbVar = this.y;
+        int v0 = bkb.v0(i, wjbVar);
+        int v02 = bkb.v0(this.w, wjbVar);
         float f3 = this.d;
         if (f3 <= 0.5f) {
             f2 = f3 / 0.5f;
-            cmb.o0.setColor(Color.rgb(Color.red(v0) + ((int) ((Color.red(v02) - Color.red(v0)) * f2)), Color.green(v0) + ((int) ((Color.green(v02) - Color.green(v0)) * f2)), Color.blue(v0) + ((int) ((Color.blue(v02) - Color.blue(v0)) * f2))));
+            bkb.o0.setColor(Color.rgb(Color.red(v0) + ((int) ((Color.red(v02) - Color.red(v0)) * f2)), Color.green(v0) + ((int) ((Color.green(v02) - Color.green(v0)) * f2)), Color.blue(v0) + ((int) ((Color.blue(v02) - Color.blue(v0)) * f2))));
             f = f2;
         } else {
-            cmb.o0.setColor(v02);
+            bkb.o0.setColor(v02);
             f = 2.0f - (f3 / 0.5f);
             f2 = 1.0f;
         }
         if (this.n) {
-            cmb.o0.setColor(cmb.v0(this.r ? cmb.y5 : cmb.Y6, ylbVar));
+            bkb.o0.setColor(bkb.v0(this.r ? bkb.y5 : bkb.Y6, wjbVar));
         }
-        float L = gm.L(1.0f) * f;
+        float L = gl.L(1.0f) * f;
         RectF rectF = this.a;
-        rectF.set(L, L, gm.L(18.0f) - L, gm.L(18.0f) - L);
+        rectF.set(L, L, gl.L(18.0f) - L, gl.L(18.0f) - L);
         Bitmap bitmap = this.b;
         bitmap.eraseColor(0);
-        float L2 = gm.L(4.0f);
-        float L3 = gm.L(4.0f);
-        Paint paint = cmb.o0;
+        float L2 = gl.L(4.0f);
+        float L3 = gl.L(4.0f);
+        Paint paint = bkb.o0;
         Canvas canvas2 = this.c;
         canvas2.drawRoundRect(rectF, L2, L3, paint);
         if (f2 != 1.0f) {
-            float min = Math.min(gm.L(7.0f), (gm.L(7.0f) * f2) + L);
-            rectF.set(gm.L(1.33f) + min, gm.L(1.33f) + min, gm.L(16.66f) - min, gm.L(16.66f) - min);
-            canvas2.drawRoundRect(rectF, gm.L(3.0f), gm.L(3.0f), cmb.m0);
+            float min = Math.min(gl.L(7.0f), (gl.L(7.0f) * f2) + L);
+            rectF.set(gl.L(1.33f) + min, gl.L(1.33f) + min, gl.L(16.66f) - min, gl.L(16.66f) - min);
+            canvas2.drawRoundRect(rectF, gl.L(3.0f), gl.L(3.0f), bkb.m0);
         }
         if (this.d > 0.5f) {
-            cmb.n0.setColor(cmb.v0(this.x, ylbVar));
+            bkb.n0.setColor(bkb.v0(this.x, wjbVar));
             float f4 = 1.0f - f;
-            canvas2.drawLine(gm.L(7.0f), (int) gm.N(13.0f), (int) (gm.L(7.0f) - (gm.L(3.0f) * f4)), (int) (gm.N(13.0f) - (gm.L(3.0f) * f4)), cmb.n0);
-            canvas2.drawLine((int) gm.N(7.0f), (int) gm.N(13.0f), (int) ((gm.L(7.0f) * f4) + gm.N(7.0f)), (int) (gm.N(13.0f) - (gm.L(7.0f) * f4)), cmb.n0);
+            canvas2.drawLine(gl.L(7.0f), (int) gl.N(13.0f), (int) (gl.L(7.0f) - (gl.L(3.0f) * f4)), (int) (gl.N(13.0f) - (gl.L(3.0f) * f4)), bkb.n0);
+            canvas2.drawLine((int) gl.N(7.0f), (int) gl.N(13.0f), (int) ((gl.L(7.0f) * f4) + gl.N(7.0f)), (int) (gl.N(13.0f) - (gl.L(7.0f) * f4)), bkb.n0);
         }
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
     }

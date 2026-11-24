@@ -1,49 +1,11 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class f48 implements u29 {
-    public final /* synthetic */ a58 a;
+public interface f48 {
+    void e(ArrayList arrayList);
 
-    public f48(a58 a58Var) {
-        this.a = a58Var;
-    }
-
-    @Override // u29
-    public final void g(View view, k39 k39Var, boolean z, boolean z2) {
-        ud7 ud7Var = new ud7(this, k39Var, view, (byte) 19);
-        if (z) {
-            ud7Var.run();
-        } else {
-            this.a.d0(ud7Var);
-        }
-    }
-
-    @Override // u29
-    public final boolean h() {
-        return true;
-    }
-
-    @Override // u29
-    public final boolean l() {
-        ((fab) this.a.G1).b(false);
-        return false;
-    }
-
-    @Override // u29
-    public final boolean s() {
-        return false;
-    }
-
-    @Override // u29
-    public final void o() {
-    }
-
-    @Override // u29
-    public final void m(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
-    }
+    void r();
 }

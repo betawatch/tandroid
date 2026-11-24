@@ -3,29 +3,29 @@ package com.google.android.play.core.integrity;
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class ai extends p2d {
+final class ai extends n0d {
     final /* synthetic */ aj a;
-    private final s2d b;
+    private final q0d b;
     private final TaskCompletionSource c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ai(aj ajVar, TaskCompletionSource taskCompletionSource) {
         super("com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback");
         this.a = ajVar;
-        this.b = new s2d("OnRequestIntegrityTokenCallback");
+        this.b = new q0d("OnRequestIntegrityTokenCallback");
         this.c = taskCompletionSource;
     }
 
-    @Override // p2d
+    @Override // n0d
     public final void b(Bundle bundle) {
         k kVar;
         String str;
         this.a.a.d(this.c);
         this.b.b("onRequestIntegrityToken", new Object[0]);
         kVar = this.a.f;
-        ap a = kVar.a(bundle);
+        zn a = kVar.a(bundle);
         if (a != null) {
             this.c.trySetException(a);
             return;

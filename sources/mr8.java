@@ -1,84 +1,84 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mr8 implements egc {
-    public final /* synthetic */ tr8 a;
+public final class mr8 extends c6 {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ pr8 b;
 
-    public mr8(tr8 tr8Var) {
-        this.a = tr8Var;
+    public mr8(pr8 pr8Var, String str) {
+        this.b = pr8Var;
+        this.a = str;
     }
 
-    @Override // egc
-    public final void a(int i) {
-        tr8 tr8Var = this.a;
-        int i2 = tr8Var.p1;
-        boolean z = i >= i2;
-        if (i != i2) {
-            tr8Var.p1 = i;
-        }
-        xb7 xb7Var = tr8Var.T0;
-        if (xb7Var != null) {
-            sr8 sr8Var = tr8Var.E0;
-            xb7Var.b(i - (sr8Var != null ? sr8Var.j() : 0), z);
-        }
-    }
-
-    @Override // egc
-    public final void b(float f, int i, int i2) {
-        gn5 gn5Var;
-        tr8 tr8Var = this.a;
-        tr8Var.B(f, i);
-        if (i2 == 0) {
-            int k = tr8Var.E0.k(i);
-            if (tr8Var.j1) {
-                k--;
+    @Override // c6
+    public final void b(int i) {
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        pr8 pr8Var = this.b;
+        long j = pr8Var.h;
+        long j2 = pr8Var.f;
+        String str = this.a;
+        if (i == -1) {
+            if (!pr8Var.n && pr8Var.r) {
+                i8 = ((d) pr8Var).currentAccount;
+                na7.q1(i8).W3.edit().putInt("notify2_" + str, 0).apply();
             }
-            tr8Var.getCurrentItemView();
-            int childCount = tr8Var.getChildCount();
-            for (int i3 = 0; i3 < childCount; i3++) {
-                View childAt = tr8Var.getChildAt(i3);
-                if (childAt instanceof bf0) {
-                    sr8 sr8Var = tr8Var.E0;
-                    int k2 = sr8Var.k(sr8Var.d.indexOf(childAt));
-                    if (tr8Var.j1) {
-                        k2--;
+        } else if (i == 1) {
+            i2 = ((d) pr8Var).currentAccount;
+            SharedPreferences sharedPreferences = na7.q1(i2).W3;
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putBoolean("custom_" + str, true);
+            i3 = ((d) pr8Var).currentAccount;
+            TLRPC.Dialog dialog = (TLRPC.Dialog) na7.q1(i3).R.f(j2);
+            if (pr8Var.r) {
+                edit.putInt("notify2_" + str, 0);
+                if (j == 0) {
+                    i7 = ((d) pr8Var).currentAccount;
+                    ad7.Y(i7).B1(j2, 0L);
+                    if (dialog != null) {
+                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
                     }
-                    ImageReceiver imageReceiver = ((bf0) childAt).getImageReceiver();
-                    boolean z = imageReceiver.u0;
-                    if (k2 >= 0 && k2 < tr8Var.X0.size()) {
-                        if (k2 == k) {
-                            if (!z) {
-                                imageReceiver.u0 = true;
-                                imageReceiver.w0(false);
-                            }
-                            gn5 gn5Var2 = (gn5) tr8Var.X0.get(k2);
-                            if (gn5Var2 != null) {
-                                bc4 G = bc4.G(tr8Var.M0);
-                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = gn5Var2.f;
-                                if (tL_fileLocationToBeDeprecated != null) {
-                                    bc4.K.c(new pv3(G, tL_fileLocationToBeDeprecated, (byte) 23));
-                                }
-                            }
-                        } else if (z) {
-                            kn m = imageReceiver.m();
-                            if (m != null && (gn5Var = (gn5) tr8Var.X0.get(k2)) != null) {
-                                m.y(gn5Var.j, false, true);
-                            }
-                            imageReceiver.u0 = false;
-                            imageReceiver.x0();
-                        }
+                }
+            } else {
+                edit.putInt("notify2_" + str, 2);
+                if (j == 0) {
+                    i4 = ((d) pr8Var).currentAccount;
+                    im7.n(i4).N(j2);
+                    i5 = ((d) pr8Var).currentAccount;
+                    ad7.Y(i5).B1(j2, 1L);
+                    if (dialog != null) {
+                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
+                        dialog.notify_settings = tL_peerNotifySettings;
+                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
             }
+            edit.apply();
+            i6 = ((d) pr8Var).currentAccount;
+            im7.n(i6).c0(pr8Var.f, pr8Var.h, true);
+            if (pr8Var.s != null) {
+                vm7 vm7Var = new vm7();
+                vm7Var.d = j2;
+                vm7Var.b = true;
+                int g = ls6.g("notify2_", str, sharedPreferences, 0);
+                vm7Var.c = g;
+                if (g != 0) {
+                    vm7Var.a = ls6.g("notifyuntil_", str, sharedPreferences, 0);
+                }
+                pr8Var.s.h(vm7Var);
+            }
         }
-    }
-
-    @Override // egc
-    public final void c(int i) {
+        pr8Var.finishFragment();
     }
 }

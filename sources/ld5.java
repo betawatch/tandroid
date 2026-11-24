@@ -1,172 +1,207 @@
 // default package
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.os.Build;
+import android.text.TextUtils;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ld5 extends q59 {
-    public final Context c;
-    public final /* synthetic */ pd5 d;
-
-    public ld5(pd5 pd5Var, Context context) {
-        this.d = pd5Var;
-        this.c = context;
-    }
-
-    @Override // y59
-    public final void A(u69 u69Var) {
-        View view = u69Var.a;
-        if (view instanceof ij6) {
-            ((ij6) view).a();
-        }
-    }
-
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        View view = u69Var.a;
-        if ((view instanceof ij6) && this.d.Z1.contains(Long.valueOf(((ij6) view).getUserId()))) {
-            return false;
-        }
-        int i = u69Var.f;
-        return i == 0 || i == 1;
-    }
-
-    @Override // y59
-    public final int b() {
-        return this.d.l2;
-    }
-
-    @Override // y59
-    public final int d(int i) {
-        pd5 pd5Var = this.d;
-        if (i >= pd5Var.e2 && i < pd5Var.f2) {
-            return 0;
-        }
-        if (i >= pd5Var.h2 && i < pd5Var.i2) {
-            return 0;
-        }
-        if (i == pd5Var.c2) {
-            return 1;
-        }
-        if (i == pd5Var.j2 || i == pd5Var.g2) {
-            return 2;
-        }
-        if (i == 0) {
-            return 3;
-        }
-        if (i == pd5Var.d2) {
-            return 4;
-        }
-        return i == pd5Var.k2 ? 5 : 0;
-    }
-
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        TLObject tLObject;
-        int i2;
-        pd5 pd5Var = this.d;
-        ArrayList arrayList = pd5Var.R1;
-        int i3 = u69Var.f;
-        View view = u69Var.a;
-        if (i3 == 0) {
-            ij6 ij6Var = (ij6) view;
-            ij6Var.setTag(Integer.valueOf(i));
-            int i4 = pd5Var.e2;
-            if (i < i4 || i >= pd5Var.f2) {
-                int i5 = pd5Var.h2;
-                tLObject = (i < i5 || i >= pd5Var.i2) ? null : (TLObject) pd5Var.S1.get(i - i5);
-            } else {
-                tLObject = (TLObject) arrayList.get(i - i4);
-            }
-            if (i < pd5Var.e2 || i >= (i2 = pd5Var.f2)) {
-                i2 = pd5Var.i2;
-            }
-            TLRPC.User W1 = oc7.r1(pd5Var.a).W1(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? k47.B1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
-            if (W1 != null) {
-                ij6Var.setCustomImageVisible(pd5Var.Z1.contains(Long.valueOf(W1.id)));
-                ij6Var.c(W1, null, null, i != i2 - 1);
-                return;
-            }
-            return;
-        }
-        if (i3 == 1) {
-            fj6 fj6Var = (fj6) view;
-            if (i == pd5Var.c2) {
-                if ((!pd5Var.W1 || pd5Var.X1) && pd5Var.j2 == -1 && !arrayList.isEmpty()) {
-                    r2 = true;
-                }
-                fj6Var.b(R.drawable.msg_link, 7, jb6.M0(2131743074, null), r2);
-                return;
-            }
-            return;
-        }
-        if (i3 == 2) {
-            l55 l55Var = (l55) view;
-            if (i == pd5Var.j2) {
-                l55Var.setText(jb6.M0(2131752278, null));
-            } else if (i == pd5Var.g2) {
-                if (pd5Var.b2) {
-                    l55Var.setText(jb6.M0(2131742488, null));
-                } else {
-                    l55Var.setText(jb6.M0(2131749213, null));
-                }
-            }
-        }
-    }
+public class ld5 extends FrameLayout {
+    public int a;
+    public final byte b;
+    public final byte c;
+    public final TextView d;
+    public final hn e;
+    public final jia f;
+    public int h;
+    public final boolean n;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v4, types: [fj6] */
-    /* JADX WARN: Type inference failed for: r8v5, types: [android.view.View, l55] */
-    /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r8v9, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r9v5, types: [tk4] */
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        ij6 ij6Var;
-        if (i != 0) {
-            Context context = this.c;
-            if (i == 1) {
-                ?? fj6Var = new fj6(context);
-                int i2 = cmb.fh;
-                fj6Var.a(i2, i2);
-                fj6Var.setDividerColor(cmb.Wg);
-                ij6Var = fj6Var;
-            } else if (i == 2) {
-                ?? l55Var = new l55(context, null);
-                anb.h(cmb.Zg, null, l55Var);
-                l55Var.setTextColor(cmb.Gh);
-                ij6Var = l55Var;
-            } else if (i == 3) {
-                ?? view = new View(context);
-                view.setLayoutParams(new g69(-1, gm.L(56.0f)));
-                ij6Var = view;
-            } else if (i != 5) {
-                ij6Var = new View(context);
-            } else {
-                ?? tk4Var = new tk4(context, null);
-                tk4Var.setViewType(6);
-                tk4Var.setIsSingleCell(true);
-                tk4Var.e(cmb.Vg, cmb.Hh, cmb.Zg);
-                ij6Var = tk4Var;
-            }
+    public ld5(Context context, int i, int i2, int i3, int i4, boolean z, boolean z2, wjb wjbVar) {
+        super(context);
+        this.h = 40;
+        this.b = i2;
+        this.c = i4;
+        this.n = z2;
+        if (z2) {
+            hn hnVar = new hn(getContext(), false, false, false);
+            this.e = hnVar;
+            hnVar.setTextSize(gl.L(14.0f));
+            hnVar.setTypeface(gl.o());
+            hnVar.setGravity((k96.a0 ? 5 : 3) | 16);
+            zkb.U(hnVar, i, wjbVar);
+            hnVar.setTag(Integer.valueOf(i));
+            hnVar.getDrawable().r(true, false);
+            float f = i2;
+            addView(hnVar, nme.d(-1, this.h - i3, (k96.a0 ? 5 : 3) | 48, f, i3, f, z ? 0.0f : i4));
         } else {
-            ij6 ij6Var2 = new ij6(this.c, 6, 2, false, null);
-            ij6Var2.setCustomRightImage(R.drawable.msg_invited);
-            ij6Var2.setNameColor(cmb.w0(null, cmb.dh, false));
-            int w0 = cmb.w0(null, cmb.bh, false);
-            int w02 = cmb.w0(null, cmb.fh, false);
-            ij6Var2.P = true;
-            ij6Var2.I = w0;
-            ij6Var2.J = w02;
-            ij6Var2.setDividerColor(cmb.Wg);
-            ij6Var = ij6Var2;
+            TextView textView = new TextView(getContext());
+            this.d = textView;
+            ir2.t(textView, 1, 14.0f);
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setGravity((k96.a0 ? 5 : 3) | 16);
+            textView.setMinHeight(gl.L(this.h - i3));
+            zkb.X(textView, i, wjbVar);
+            textView.setTag(Integer.valueOf(i));
+            float f2 = i2;
+            addView(textView, nme.d(-1, -1.0f, (k96.a0 ? 5 : 3) | 48, f2, i3, f2, z ? 0.0f : i4));
         }
-        return new b59(ij6Var);
+        if (z) {
+            jia jiaVar = new jia(getContext());
+            this.f = jiaVar;
+            jiaVar.setTextSize(13);
+            jiaVar.setGravity((k96.a0 ? 3 : 5) | 48);
+            float f3 = i2;
+            addView(jiaVar, nme.d(-1, -1.0f, (k96.a0 ? 3 : 5) | 48, f3, 21.0f, f3, i4));
+        }
+        WeakHashMap weakHashMap = jdc.a;
+        new xcc(R.id.tag_accessibility_heading, Boolean.class, 0, 28, (byte) 2).a(this, Boolean.TRUE);
+    }
+
+    public final void a(ArrayList arrayList, boolean z) {
+        TextView textView = this.d;
+        if (arrayList != null) {
+            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) View.ALPHA, z ? 1.0f : 0.5f));
+        } else {
+            textView.setAlpha(z ? 1.0f : 0.5f);
+        }
+    }
+
+    public final void b(boolean z) {
+        super.setEnabled(z);
+        this.d.animate().alpha(z ? 1.0f : 0.5f).start();
+    }
+
+    public final void c(CharSequence charSequence, boolean z) {
+        int i;
+        boolean z2 = k96.a0;
+        if (this.n) {
+            i = z2 ? 5 : 3;
+            hn hnVar = this.e;
+            hnVar.setGravity(i | 16);
+            hnVar.c(charSequence, z, true);
+            return;
+        }
+        i = z2 ? 5 : 3;
+        TextView textView = this.d;
+        textView.setGravity(i | 16);
+        textView.setText(charSequence);
+    }
+
+    public float getAnimatedWidth() {
+        return this.e.getDrawable().c();
+    }
+
+    public TextView getTextView() {
+        return this.d;
+    }
+
+    public jia getTextView2() {
+        return this.f;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (Build.VERSION.SDK_INT >= 28) {
+            accessibilityNodeInfo.setHeading(true);
+        } else {
+            AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+            if (collectionItemInfo != null) {
+                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), collectionItemInfo.getRowSpan(), collectionItemInfo.getColumnIndex(), collectionItemInfo.getColumnSpan(), true));
+            }
+        }
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), 0);
+    }
+
+    public void setBottomMargin(int i) {
+        float f = i;
+        ((FrameLayout.LayoutParams) this.d.getLayoutParams()).bottomMargin = gl.L(f);
+        jia jiaVar = this.f;
+        if (jiaVar != null) {
+            ((FrameLayout.LayoutParams) jiaVar.getLayoutParams()).bottomMargin = gl.L(f);
+        }
+    }
+
+    public void setHeight(int i) {
+        this.h = i;
+        int L = gl.L(i);
+        TextView textView = this.d;
+        int i2 = L - ((FrameLayout.LayoutParams) textView.getLayoutParams()).topMargin;
+        if (textView.getMinHeight() != i2) {
+            textView.setMinHeight(i2);
+            requestLayout();
+        }
+    }
+
+    public void setOnWidthUpdateListener(Runnable runnable) {
+        this.e.setOnWidthUpdatedListener(runnable);
+    }
+
+    public void setText(CharSequence charSequence) {
+        c(charSequence, false);
+    }
+
+    public void setText2(CharSequence charSequence) {
+        jia jiaVar = this.f;
+        if (jiaVar == null) {
+            return;
+        }
+        jiaVar.l(charSequence, false);
+    }
+
+    public void setTextColor(int i) {
+        TextView textView = this.d;
+        if (textView != null) {
+            textView.setTextColor(i);
+        }
+        hn hnVar = this.e;
+        if (hnVar != null) {
+            hnVar.setTextColor(i);
+        }
+    }
+
+    public void setTextSize(float f) {
+        if (!this.n) {
+            this.d.setTextSize(1, f);
+        } else {
+            this.e.setTextSize(gl.L(f));
+        }
+    }
+
+    public void setTopMargin(int i) {
+        ((FrameLayout.LayoutParams) this.d.getLayoutParams()).topMargin = gl.L(i);
+        setHeight(this.h);
+    }
+
+    public ld5(Context context, wjb wjbVar) {
+        this(context, bkb.K6, 20, 7, false, wjbVar);
+    }
+
+    public ld5(Context context, int i) {
+        this(context, bkb.K6, i, 7, false, null);
+    }
+
+    public ld5(Context context, int i, int i2, int i3, boolean z, wjb wjbVar) {
+        this(context, i, i2, i3, 0, z, false, wjbVar);
+    }
+
+    public ld5(Context context) {
+        this(context, bkb.K6, 20, 7, false, null);
     }
 }

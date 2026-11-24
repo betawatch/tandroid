@@ -7,14 +7,14 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpCapabilities;
 import org.webrtc.RtpParameters;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class RtpTransceiver {
     private RtpReceiver cachedReceiver;
     private RtpSender cachedSender;
     private long nativeRtpTransceiver;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum RtpTransceiverDirection {
         SEND_RECV(0),
         SEND_ONLY(1),
@@ -34,7 +34,7 @@ public class RtpTransceiver {
                     return rtpTransceiverDirection;
                 }
             }
-            u36.j(hg9.j(i, "Uknown native RtpTransceiverDirection type"));
+            w26.j(de9.k(i, "Uknown native RtpTransceiverDirection type"));
             return null;
         }
 
@@ -53,7 +53,7 @@ public class RtpTransceiver {
         if (this.nativeRtpTransceiver != 0) {
             return;
         }
-        dq9.m("RtpTransceiver has been disposed.");
+        sc8.j("RtpTransceiver has been disposed.");
     }
 
     private static native RtpTransceiverDirection nativeCurrentDirection(long j);
@@ -144,7 +144,7 @@ public class RtpTransceiver {
         nativeStopStandard(this.nativeRtpTransceiver);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static final class RtpTransceiverInit {
         private final RtpTransceiverDirection direction;
         private final List<RtpParameters.Encoding> sendEncodings;

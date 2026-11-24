@@ -1,22 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class bob extends rob {
-    public final /* synthetic */ yv1 m2;
-    public final /* synthetic */ boolean n2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class bob implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kob b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bob(Object obj, yv1 yv1Var, boolean z) {
-        super(obj, null, true);
-        this.m2 = yv1Var;
-        this.n2 = z;
+    public /* synthetic */ bob(kob kobVar, byte b) {
+        this.a = b;
+        this.b = kobVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        wv1 wv1Var = this.m2.Ba;
-        wv1Var.q(wv1Var.f, wv1Var.g, false, Boolean.valueOf(this.n2), false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        kob kobVar = this.b;
+        switch (b) {
+            case 0:
+                iob iobVar = kobVar.N;
+                if (iobVar != null) {
+                    long j = iobVar.a;
+                    if (j > 0) {
+                        kobVar.I = j;
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                eob eobVar = kobVar.a;
+                if (eobVar != null) {
+                    eobVar.p1();
+                    break;
+                }
+                break;
+            default:
+                eob eobVar2 = kobVar.a;
+                if (eobVar2 != null) {
+                    eobVar2.K();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -6,12 +6,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -28,7 +28,7 @@ public class TLJsonBuilder {
             serializable.serializeToJson(tLJsonBuilder);
             return tLJsonBuilder.result2;
         } catch (Exception e) {
-            fc4.g(e, true);
+            fa4.g(e, true);
             return null;
         }
     }
@@ -37,7 +37,7 @@ public class TLJsonBuilder {
         try {
             this.result2.putOpt(str, obj);
         } catch (JSONException e) {
-            fc4.g(e, true);
+            fa4.g(e, true);
         }
     }
 

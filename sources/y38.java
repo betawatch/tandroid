@@ -1,53 +1,30 @@
 // default package
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.d;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class y38 implements f42 {
-    public final /* synthetic */ a58 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class y38 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ b48 b;
 
-    public y38(a58 a58Var) {
-        this.a = a58Var;
+    public /* synthetic */ y38(b48 b48Var, byte b) {
+        this.a = b;
+        this.b = b48Var;
     }
 
-    @Override // f42
-    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2) {
-        j5 accountInstance;
-        a58 a58Var = this.a;
-        TL_stories.StoryItem storyItem = a58Var.E1.a;
-        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        b48 b48Var = this.b;
+        switch (b) {
+            case 0:
+                b48Var.w1 = null;
+                break;
+            default:
+                b48Var.x1 = null;
+                break;
         }
-        accountInstance = a58Var.getAccountInstance();
-        a6a.U(i, a58Var.r1, 0L, j2, 0L, accountInstance, null, null, null, null, null, null, null, null, str, null, arrayList, arrayList, null, null, null, null, storyItem, z, false);
-        a58Var.a0(j2 <= 0);
-    }
-
-    @Override // f42
-    public final void y() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-            intent.setType("*/*");
-            d dVar = this.a.z0.f;
-            if (dVar.getParentActivity() == null) {
-                return;
-            }
-            dVar.getParentActivity().startActivityForResult(intent, 21);
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
-    }
-
-    @Override // f42
-    public final void S() {
-    }
-
-    @Override // f42
-    public final void m(ArrayList arrayList, boolean z, int i, long j) {
     }
 }

@@ -1,115 +1,187 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import android.text.Editable;
-import android.text.TextPaint;
 import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class mrc extends EditTextBoldCursor {
-    public final ln M1;
-    public final ln N1;
-    public float O1;
-    public float P1;
-    public final /* synthetic */ qrc Q1;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class mrc extends n39 {
+    public final Context c;
+    public final /* synthetic */ WallpapersListActivity d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mrc(qrc qrcVar, Context context) {
-        super(context);
-        this.Q1 = qrcVar;
-        this.M1 = new ln(180L, this, d53.h);
-        this.N1 = new ln(320L, this, qrc.T);
-        this.O1 = 1.0f;
+    public mrc(WallpapersListActivity wallpapersListActivity, Context context) {
+        this.d = wallpapersListActivity;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void n(Canvas canvas, GradientDrawable gradientDrawable) {
-        gradientDrawable.setCornerRadius(gm.N(1.5f));
-        int lineBaseline = getLayout().getLineBaseline(0);
-        Rect bounds = gradientDrawable.getBounds();
-        float f = lineBaseline;
-        int round = Math.round(((bounds.top - lineBaseline) * this.O1) + f);
-        int round2 = Math.round(((bounds.bottom - lineBaseline) * this.O1) + f);
-        int i = bounds.left;
-        int width = bounds.width();
-        if (this.P1 > 0.0f) {
-            float f2 = i;
-            i = Math.round((((((((getWidth() + getScrollX()) - getCompoundPaddingLeft()) - getCompoundPaddingRight()) - getPaint().measureText("0")) - width) - f2) * this.P1) + f2);
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return s49Var.f == 0;
+    }
+
+    @Override // w39
+    public final int b() {
+        return this.d.a;
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        int i2;
+        WallpapersListActivity wallpapersListActivity = this.d;
+        i2 = wallpapersListActivity.uploadImageRow;
+        if (i == i2 || i == wallpapersListActivity.h || i == wallpapersListActivity.b || i == wallpapersListActivity.e) {
+            return 0;
         }
-        gradientDrawable.setBounds(i, round, width + i, round2);
-        gradientDrawable.draw(canvas);
+        return (i == wallpapersListActivity.f || i == wallpapersListActivity.n) ? 3 : 2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0082  */
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, vu3, android.widget.TextView, android.view.View
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x014c, code lost:
+    
+        if (((int) (r6.h * 100.0f)) == ((int) (r13.V * 100.0f))) goto L89;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0122, code lost:
+    
+        if (r6.f == r13.U) goto L79;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0130, code lost:
+    
+        if (r6.a == null) goto L83;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0155  */
+    @Override // w39
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onDraw(Canvas canvas) {
-        float lineLeft;
-        int size;
-        Editable text = getText();
-        int max = Math.max(TextUtils.indexOf((CharSequence) text, '.'), TextUtils.indexOf((CharSequence) text, ','));
-        int i = 0;
-        this.O1 = this.M1.e(false, (max < 0 || getSelectionStart() <= max) ? 1.0f : 0.6363636f);
-        this.P1 = this.N1.d(length() == 0);
-        super.onDraw(canvas);
-        qrc qrcVar = this.Q1;
-        if (qrcVar.J >= 1.0f) {
+    public final void t(s49 s49Var, int i) {
+        int i2;
+        long j;
+        Object obj;
+        TLRPC.WallPaper wallPaper;
+        String str;
+        pha phaVar;
+        TLRPC.WallPaperSettings wallPaperSettings;
+        WallpapersListActivity wallpapersListActivity = this.d;
+        ArrayList arrayList = wallpapersListActivity.b0;
+        int i3 = s49Var.f;
+        View view = s49Var.a;
+        if (i3 == 0) {
+            wgb wgbVar = (wgb) view;
+            i2 = wallpapersListActivity.uploadImageRow;
+            if (i == i2) {
+                wgbVar.o(R.drawable.msg_photos, k96.M0(2131745464, null), true);
+                return;
+            }
+            if (i == wallpapersListActivity.b) {
+                wgbVar.o(R.drawable.msg_palette, k96.M0(2131745346, null), false);
+                return;
+            }
+            if (i == wallpapersListActivity.e) {
+                wgbVar.k(k96.M0(2131745915, null), false);
+                return;
+            } else {
+                if (i == wallpapersListActivity.h) {
+                    wgbVar.o(R.drawable.msg_background, "Choose from gallery", false);
+                    wgbVar.j(10);
+                    return;
+                }
+                return;
+            }
+        }
+        if (i3 != 2) {
+            if (i3 == 3) {
+                mhb mhbVar = (mhb) view;
+                if (i == wallpapersListActivity.f) {
+                    mhbVar.setText(k96.M0(2131745912, null));
+                    return;
+                } else {
+                    if (i == wallpapersListActivity.n) {
+                        mhbVar.setText("Upload your own background for the channel.");
+                        return;
+                    }
+                    return;
+                }
+            }
             return;
         }
-        TextPaint paint = getPaint();
-        float textSize = paint.getTextSize();
-        float compoundPaddingLeft = getCompoundPaddingLeft();
-        if (length() != 0) {
-            if (getLayout() != null) {
-                lineLeft = getLayout().getLineLeft(0);
+        qqc qqcVar = (qqc) view;
+        int i4 = i - wallpapersListActivity.c;
+        byte b = wallpapersListActivity.O;
+        int i5 = i4 * b;
+        qqcVar.d(b, i5 == 0, i5 / b == wallpapersListActivity.d - 1);
+        for (int i6 = 0; i6 < wallpapersListActivity.O; i6++) {
+            int i7 = i5 + i6;
+            Object obj2 = i7 < arrayList.size() ? arrayList.get(i7) : null;
+            if (obj2 instanceof TLRPC.TL_wallPaper) {
+                TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
+                vjb vjbVar = bkb.I.j0;
+                obj = (wallpapersListActivity.P.equals(tL_wallPaper.slug) && (!wallpapersListActivity.P.equals(tL_wallPaper.slug) || (wallPaperSettings = tL_wallPaper.settings) == null || (wallpapersListActivity.Q == bkb.Y0(wallPaperSettings.background_color) && wallpapersListActivity.R == bkb.Y0(tL_wallPaper.settings.second_background_color) && wallpapersListActivity.S == bkb.Y0(tL_wallPaper.settings.third_background_color) && wallpapersListActivity.T == bkb.Y0(tL_wallPaper.settings.fourth_background_color) && (wallpapersListActivity.R == 0 || wallpapersListActivity.S != 0 || wallpapersListActivity.U == gl.q1(tL_wallPaper.settings.rotation, false) || !tL_wallPaper.pattern || Math.abs(bkb.S0(((float) tL_wallPaper.settings.intensity) / 100.0f) - wallpapersListActivity.V) <= 0.001f)))) ? tL_wallPaper : null;
+                j = tL_wallPaper.id;
+            } else {
+                j = 0;
+                if (obj2 instanceof krc) {
+                    krc krcVar = (krc) obj2;
+                    if (!"d".equals(krcVar.a) || (str = wallpapersListActivity.P) == null || !str.equals(krcVar.a)) {
+                        if (krcVar.b == wallpapersListActivity.Q) {
+                            int i8 = krcVar.c;
+                            int i9 = wallpapersListActivity.R;
+                            if (i8 == i9) {
+                                if (krcVar.d == wallpapersListActivity.S) {
+                                    if (krcVar.e == wallpapersListActivity.T) {
+                                        if (i9 != 0) {
+                                        }
+                                        if ("c".equals(wallpapersListActivity.P)) {
+                                        }
+                                        if (!"c".equals(wallpapersListActivity.P)) {
+                                            if (TextUtils.equals(wallpapersListActivity.P, krcVar.a)) {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        obj = null;
+                        wallPaper = krcVar.k;
+                        if (wallPaper != null) {
+                            j = wallPaper.id;
+                        }
+                    }
+                    obj = obj2;
+                    wallPaper = krcVar.k;
+                    if (wallPaper != null) {
+                    }
+                } else {
+                    obj = ((obj2 instanceof lrc) && wallpapersListActivity.P.equals(((lrc) obj2).a)) ? obj2 : null;
+                }
             }
-            float f = compoundPaddingLeft;
-            int baseline = getBaseline();
-            ArrayList arrayList = qrcVar.M;
-            size = arrayList.size();
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                orc orcVar = (orc) obj;
-                paint.setTextSize(orcVar.b ? (28.0f * textSize) / 44.0f : textSize);
-                orcVar.c.b(canvas, paint, orcVar.a, f, baseline);
+            qqcVar.e(obj2, wallpapersListActivity.r ? 1 : 0, i6, obj);
+            phaVar = ((d) wallpapersListActivity).simpleActionBar;
+            if (phaVar.x()) {
+                qqcVar.c(i6, wallpapersListActivity.f0.indexOfKey(j) >= 0, !wallpapersListActivity.g0);
+            } else {
+                qqcVar.c(i6, false, !wallpapersListActivity.g0);
             }
-            paint.setTextSize(textSize);
         }
-        lineLeft = getScrollX() + qrcVar.O;
-        compoundPaddingLeft += lineLeft;
-        float f2 = compoundPaddingLeft;
-        int baseline2 = getBaseline();
-        ArrayList arrayList2 = qrcVar.M;
-        size = arrayList2.size();
-        while (i < size) {
-        }
-        paint.setTextSize(textSize);
     }
 
-    @Override // vu3, android.widget.TextView
-    public final void onSelectionChanged(int i, int i2) {
-        super.onSelectionChanged(i, i2);
-        if (i != i2) {
-            this.Q1.b();
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        View wgbVar;
+        Context context = this.c;
+        if (i == 0) {
+            wgbVar = new wgb(context);
+        } else if (i != 3) {
+            wgbVar = new u12(this, context, (byte) 1);
+            wgbVar.setTag(-33024);
+        } else {
+            wgbVar = new mhb(context);
         }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getActionMasked() == 0) {
-            this.Q1.b();
-            this.N1.a(length() == 0);
-        }
-        return super.onTouchEvent(motionEvent);
+        return new y29(wgbVar);
     }
 }

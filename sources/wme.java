@@ -1,19 +1,66 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class wme implements cq7 {
-    public static final wme a = new wme();
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class wme extends dzc implements IInterface {
+    public final int b;
+
+    public wme(byte[] bArr) {
+        super("com.google.android.gms.common.internal.ICertData", (byte) 6);
+        fre.b(bArr.length == 25);
+        this.b = Arrays.hashCode(bArr);
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static byte[] U(String str) {
+        try {
+            return str.getBytes("ISO-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            fi7.g(e);
+            return null;
         }
-        throw null;
+    }
+
+    public abstract byte[] T();
+
+    @Override // dzc
+    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
+        if (i == 1) {
+            bo7 bo7Var = new bo7(T());
+            parcel2.writeNoException();
+            mgd.b(parcel2, bo7Var);
+            return true;
+        }
+        if (i != 2) {
+            return false;
+        }
+        parcel2.writeNoException();
+        parcel2.writeInt(this.b);
+        return true;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof wme) {
+            try {
+                wme wmeVar = (wme) obj;
+                if (wmeVar.b == this.b) {
+                    return Arrays.equals(T(), (byte[]) bo7.U(new bo7(wmeVar.T())));
+                }
+            } catch (RemoteException e) {
+                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.b;
     }
 }

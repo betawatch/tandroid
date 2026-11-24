@@ -1,36 +1,19 @@
 // default package
 
-import android.content.ClipData;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.ContentInfo;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class mw2 implements nw2 {
-    public final ContentInfo.Builder a;
+public final class mw2 {
+    public final byte a;
+    public final String b;
 
-    public mw2(ClipData clipData, int i) {
-        this.a = lw2.a(clipData, i);
+    /* JADX WARN: Multi-variable type inference failed */
+    public mw2(int i) {
+        this.a = i;
+        this.b = null;
     }
 
-    @Override // nw2
-    public final rw2 build() {
-        return new rw2(new pw2(this.a.build()));
-    }
-
-    @Override // nw2
-    public final void c(Uri uri) {
-        this.a.setLinkUri(uri);
-    }
-
-    @Override // nw2
-    public final void d(int i) {
-        this.a.setFlags(i);
-    }
-
-    @Override // nw2
-    public final void setExtras(Bundle bundle) {
-        this.a.setExtras(bundle);
+    public mw2(String str) {
+        this.a = (byte) 1;
+        this.b = str;
     }
 }

@@ -1,27 +1,14 @@
 // default package
 
-import android.media.VolumeProvider;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ulc extends VolumeProvider {
-    public final /* synthetic */ dz3 a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ulc(dz3 dz3Var, int i, int i2, int i3) {
-        super(i, i2, i3);
-        this.a = dz3Var;
-    }
-
-    @Override // android.media.VolumeProvider
-    public final void onAdjustVolume(int i) {
-        dz3 dz3Var = this.a;
-        ((wz4) ((in3) dz3Var.f).d).a.post(new uz4(dz3Var, i, (byte) 1));
-    }
-
-    @Override // android.media.VolumeProvider
-    public final void onSetVolumeTo(int i) {
-        dz3 dz3Var = this.a;
-        ((wz4) ((in3) dz3Var.f).d).a.post(new uz4(dz3Var, i, (byte) 0));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ulc extends ShapeDrawable.ShaderFactory {
+    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
+    public final Shader resize(int i, int i2) {
+        return new LinearGradient(0.0f, 0.0f, 0.0f, i2, -765355, -2148011, Shader.TileMode.CLAMP);
     }
 }

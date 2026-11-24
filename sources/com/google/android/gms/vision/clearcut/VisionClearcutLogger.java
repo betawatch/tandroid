@@ -4,32 +4,32 @@ import android.content.Context;
 import android.util.Log;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
-    private final tj2 zza;
+    private final fi2 zza;
     private boolean zzb = true;
 
     public VisionClearcutLogger(Context context) {
-        this.zza = new tj2(context);
+        this.zza = new fi2(context);
     }
 
-    public final void zza(int i, a4e a4eVar) {
-        tme tmeVar;
-        a4eVar.getClass();
+    public final void zza(int i, x1e x1eVar) {
+        rke rkeVar;
+        x1eVar.getClass();
         try {
-            int h = a4eVar.h();
+            int h = x1eVar.h();
             byte[] bArr = new byte[h];
-            nle nleVar = new nle(h, bArr);
-            hye hyeVar = hye.c;
-            hyeVar.getClass();
-            zye a = hyeVar.a(a4eVar.getClass());
-            eod eodVar = nleVar.a;
-            if (eodVar == null) {
-                eodVar = new eod(nleVar);
+            lje ljeVar = new lje(h, bArr);
+            fwe fweVar = fwe.c;
+            fweVar.getClass();
+            xwe a = fweVar.a(x1eVar.getClass());
+            g6e g6eVar = ljeVar.a;
+            if (g6eVar == null) {
+                g6eVar = new g6e(ljeVar);
             }
-            a.d(a4eVar, eodVar);
-            if (nleVar.e() != 0) {
+            a.d(x1eVar, g6eVar);
+            if (ljeVar.e() != 0) {
                 throw new IllegalStateException("Did not write as much data as expected.");
             }
             if (i < 0 || i > 3) {
@@ -42,40 +42,40 @@ public class VisionClearcutLogger {
             }
             try {
                 if (this.zzb) {
-                    tj2 tj2Var = this.zza;
-                    tj2Var.getClass();
-                    ef0 ef0Var = new ef0(tj2Var, bArr);
-                    ((uee) ef0Var.e).c = i;
-                    ef0Var.a();
+                    fi2 fi2Var = this.zza;
+                    fi2Var.getClass();
+                    ee0 ee0Var = new ee0(fi2Var, bArr);
+                    ((tce) ee0Var.e).c = i;
+                    ee0Var.a();
                     return;
                 }
-                z3e k = a4e.k();
+                w1e k = x1e.k();
                 try {
-                    tme tmeVar2 = tme.b;
-                    if (tmeVar2 == null) {
-                        synchronized (tme.class) {
-                            tmeVar = tme.b;
-                            if (tmeVar == null) {
-                                tmeVar = poe.a();
-                                tme.b = tmeVar;
+                    rke rkeVar2 = rke.b;
+                    if (rkeVar2 == null) {
+                        synchronized (rke.class) {
+                            rkeVar = rke.b;
+                            if (rkeVar == null) {
+                                rkeVar = mme.a();
+                                rke.b = rkeVar;
                             }
                         }
-                        tmeVar2 = tmeVar;
+                        rkeVar2 = rkeVar;
                     }
-                    k.c(bArr, h, tmeVar2);
+                    k.c(bArr, h, rkeVar2);
                     String obj = k.toString();
                     if (Log.isLoggable("Vision", 6)) {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
                 } catch (Exception e) {
-                    coe.a(e, "Parsing error", new Object[0]);
+                    ame.a(e, "Parsing error", new Object[0]);
                 }
             } catch (Exception e2) {
-                i2e.a.a(e2);
-                coe.a(e2, "Failed to log", new Object[0]);
+                f0e.a.a(e2);
+                ame.a(e2, "Failed to log", new Object[0]);
             }
         } catch (IOException e3) {
-            String name = a4e.class.getName();
+            String name = x1e.class.getName();
             StringBuilder sb = new StringBuilder(name.length() + 72);
             sb.append("Serializing ");
             sb.append(name);

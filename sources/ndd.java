@@ -1,134 +1,57 @@
 // default package
 
-import android.content.Context;
-import java.lang.ref.ReferenceQueue;
-import java.util.Set;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ndd implements lr2, mae, mt3 {
-    public final /* synthetic */ byte a;
+public abstract class ndd extends BasePendingResult {
+    public v39 o;
+    public final boolean p;
+    public final /* synthetic */ i69 q;
 
-    public /* synthetic */ ndd(byte b) {
-        this.a = b;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ndd(i69 i69Var, boolean z) {
+        super(null);
+        this.q = i69Var;
+        this.p = z;
     }
 
-    public static boolean b(int i, byte[] bArr) {
-        int i2;
-        int i3 = 0;
-        while (true) {
-            if (i3 >= i) {
-                break;
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult
+    public final /* synthetic */ ua9 d(Status status) {
+        return new vcd(status, (byte) 1);
+    }
+
+    public abstract void n();
+
+    public final f9d o() {
+        v39 v39Var = this.o;
+        if (v39Var != null) {
+            return v39Var;
+        }
+        v39 v39Var2 = new v39(this, (byte) 26);
+        this.o = v39Var2;
+        return v39Var2;
+    }
+
+    public final void p() {
+        if (!this.p) {
+            Iterator it = this.q.h.iterator();
+            if (it.hasNext()) {
+                throw ls6.l(it);
             }
-            if (bArr[i3] >= 0) {
-                i3++;
-            } else {
-                while (i3 < i) {
-                    int i4 = i3 + 1;
-                    i2 = bArr[i3];
-                    if (i2 < 0) {
-                        if (i2 >= -32) {
-                            if (i2 >= -16) {
-                                if (i4 < i - 2) {
-                                    int i5 = i3 + 2;
-                                    int i6 = bArr[i4];
-                                    if (i6 <= -65) {
-                                        if ((((i6 + nm7.w1) + (i2 << 28)) >> 30) == 0) {
-                                            int i7 = i3 + 3;
-                                            if (bArr[i5] <= 65471) {
-                                                i3 += 4;
-                                                if (bArr[i7] > 65471) {
-                                                }
-                                            }
-                                        }
-                                    }
-                                    i2 = -1;
-                                    break;
-                                }
-                                i2 = jjf.a(bArr, i4, i);
-                                break;
-                            }
-                            if (i4 < i - 1) {
-                                int i8 = i3 + 2;
-                                char c = bArr[i4];
-                                if (c <= 65471 && ((i2 != -32 || c >= 65440) && (i2 != -19 || c < 65440))) {
-                                    i3 += 3;
-                                    if (bArr[i8] > 65471) {
-                                    }
-                                }
-                                i2 = -1;
-                                break;
-                            }
-                            i2 = jjf.a(bArr, i4, i);
-                            break;
-                        }
-                        if (i4 < i) {
-                            if (i2 >= -62) {
-                                i3 += 2;
-                                if (bArr[i4] > 65471) {
-                                }
-                            }
-                            i2 = -1;
-                            break;
-                        }
-                        break;
-                    }
-                    i3 = i4;
-                }
+            Iterator it2 = this.q.i.iterator();
+            while (it2.hasNext()) {
+                ((h69) it2.next()).f();
             }
         }
-        i2 = 0;
-        return i2 == 0;
-    }
-
-    @Override // lr2
-    public final Object X(sm2 sm2Var) {
-        switch (this.a) {
-            case 0:
-                return new eg7();
-            default:
-                hj2 hj2Var = new hj2();
-                sw swVar = new sw((byte) 15);
-                ReferenceQueue referenceQueue = hj2Var.a;
-                Set set = hj2Var.b;
-                set.add(new lpd(hj2Var, referenceQueue, set, swVar));
-                Thread thread = new Thread(new tnd(referenceQueue, set, (byte) 16), "MlKitCleaner");
-                thread.setDaemon(true);
-                thread.start();
-                return hj2Var;
-        }
-    }
-
-    @Override // mt3
-    public final pd0 a(Context context, String str, lt3 lt3Var) {
-        pd0 pd0Var = new pd0();
-        pd0Var.a = lt3Var.b(context, str);
-        int i = 1;
-        int a = lt3Var.a(context, str, true);
-        pd0Var.b = a;
-        int i2 = pd0Var.a;
-        if (i2 == 0) {
-            i2 = 0;
-            if (a == 0) {
-                i = 0;
-                pd0Var.c = i;
-                return pd0Var;
+        try {
+            synchronized (this.q.a) {
+                n();
             }
+        } catch (m8d unused) {
+            a(new vcd(new Status(2100, null, null, null), (byte) 1));
         }
-        if (a < i2) {
-            i = -1;
-        }
-        pd0Var.c = i;
-        return pd0Var;
-    }
-
-    @Override // mae
-    public final wce zzb(Class cls) {
-        throw new IllegalStateException("This should never be called.");
-    }
-
-    @Override // mae
-    public final boolean zzc(Class cls) {
-        return false;
     }
 }

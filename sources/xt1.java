@@ -1,21 +1,60 @@
 // default package
 
-import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class xt1 extends hg5 {
-    public final /* synthetic */ yv1 X0;
+public final class xt1 extends kse {
+    public k27 a;
+    public int b = 0;
+    public boolean c = true;
+    public int d = 0;
+    public int e;
+    public boolean f;
+    public int g;
+    public final /* synthetic */ mu1 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xt1(yv1 yv1Var, Activity activity) {
-        super(activity, 3);
-        this.X0 = yv1Var;
+    public xt1(mu1 mu1Var) {
+        this.h = mu1Var;
     }
 
-    @Override // hg5, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        setTranslationY(((-getTop()) - gm.L(120.0f)) + this.X0.R1);
+    @Override // kse
+    public final void a() {
+        k27 k27Var = this.a;
+        mu1 mu1Var = this.h;
+        vs1 vs1Var = mu1Var.D0;
+        if (k27Var != null) {
+            vs1Var.O();
+            int indexOf = mu1Var.M6.indexOf(this.a) + mu1Var.D0.K;
+            if (indexOf >= 0) {
+                mu1Var.C0.h1(indexOf, (int) ((this.e + this.g) - mu1Var.P9), this.f);
+            }
+        } else {
+            vs1Var.O();
+            mu1Var.C0.h1(this.b, this.d, this.c);
+        }
+        this.a = null;
+        mu1Var.B3 = true;
+        mu1Var.ud(false);
+        gl.c3(new hq1(this, (byte) 5));
+    }
+
+    @Override // kse
+    public final void c() {
+        mu1 mu1Var = this.h;
+        mu1Var.fa = mu1Var.getNotificationCenter().q(mu1.td, mu1Var.fa, true);
+        jr1 jr1Var = mu1Var.Ta;
+        if (jr1Var.n) {
+            jr1Var.d();
+        }
+    }
+
+    @Override // kse
+    public final void d(View view) {
+        if (view instanceof gb2) {
+            gb2 gb2Var = (gb2) view;
+            gb2Var.setDelegate(null);
+            gb2Var.setResourcesProvider(null);
+        }
     }
 }

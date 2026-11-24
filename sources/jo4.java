@@ -1,91 +1,129 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import java.util.Locale;
-import org.telegram.tgnet.TLRPC;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class jo4 extends URLSpan {
-    public static final /* synthetic */ int e = 0;
-    public final String a;
-    public final TLRPC.TL_messageEntityFormattedDate b;
-    public final wkb c;
-    public final boolean d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class jo4 extends odc {
+    public static final c6e h = new c6e();
+    public final boolean e;
+    public final HashMap b = new HashMap();
+    public final HashMap c = new HashMap();
+    public final HashMap d = new HashMap();
+    public boolean f = false;
+    public boolean g = false;
 
-    public jo4(jo4 jo4Var, boolean z) {
-        super(jo4Var.a);
-        this.a = jo4Var.a;
-        this.b = jo4Var.b;
-        this.c = jo4Var.c;
-        this.d = z;
+    public jo4(boolean z) {
+        this.e = z;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v0 */
-    /* JADX WARN: Type inference failed for: r4v1 */
-    /* JADX WARN: Type inference failed for: r4v2 */
-    /* JADX WARN: Type inference failed for: r4v3, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r4v4 */
-    /* JADX WARN: Type inference failed for: r4v5 */
-    public static CharSequence a(CharSequence charSequence, boolean z) {
-        if (charSequence instanceof Spanned) {
-            Spanned spanned = (Spanned) charSequence;
-            jo4[] jo4VarArr = (jo4[]) spanned.getSpans(0, spanned.length(), jo4.class);
-            int length = jo4VarArr.length;
-            ?? r4 = 0;
-            int i = 0;
-            while (i < length) {
-                jo4 jo4Var = jo4VarArr[i];
-                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = jo4Var.b;
-                if (tL_messageEntityFormattedDate.flags != 0 && (jo4Var.d != z || (z && tL_messageEntityFormattedDate.relative))) {
-                    if (r4 == 0) {
-                        charSequence = new SpannableStringBuilder(spanned);
-                        r4 = charSequence;
-                    }
-                    int spanStart = r4.getSpanStart(jo4Var);
-                    int spanEnd = r4.getSpanEnd(jo4Var);
-                    String A = z ? jb6.A(jo4Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : jo4Var.a;
-                    r4.removeSpan(jo4Var);
-                    r4.replace(spanStart, spanEnd, A);
-                    r4.setSpan(new jo4(jo4Var, z), spanStart, A.length() + spanStart, 33);
+    @Override // odc
+    public final void b() {
+        if (go4.K(3)) {
+            Log.d("FragmentManager", "onCleared called for " + this);
+        }
+        this.f = true;
+    }
+
+    public final void c(bn4 bn4Var, boolean z) {
+        if (go4.K(3)) {
+            Log.d("FragmentManager", "Clearing non-config state for " + bn4Var);
+        }
+        e(bn4Var.e, z);
+    }
+
+    public final void d(String str, boolean z) {
+        if (go4.K(3)) {
+            Log.d("FragmentManager", "Clearing non-config state for saved state of Fragment " + str);
+        }
+        e(str, z);
+    }
+
+    public final void e(String str, boolean z) {
+        HashMap hashMap = this.c;
+        jo4 jo4Var = (jo4) hashMap.get(str);
+        if (jo4Var != null) {
+            if (z) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.addAll(jo4Var.c.keySet());
+                int size = arrayList.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    jo4Var.d((String) obj, true);
                 }
-                i++;
-                r4 = r4;
+            }
+            jo4Var.b();
+            hashMap.remove(str);
+        }
+        HashMap hashMap2 = this.d;
+        sdc sdcVar = (sdc) hashMap2.get(str);
+        if (sdcVar != null) {
+            sdcVar.a();
+            hashMap2.remove(str);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || jo4.class != obj.getClass()) {
+            return false;
+        }
+        jo4 jo4Var = (jo4) obj;
+        return this.b.equals(jo4Var.b) && this.c.equals(jo4Var.c) && this.d.equals(jo4Var.d);
+    }
+
+    public final void f(bn4 bn4Var) {
+        if (this.g) {
+            if (go4.K(2)) {
+                Log.v("FragmentManager", "Ignoring removeRetainedFragment as the state is already saved");
+            }
+        } else {
+            if (this.b.remove(bn4Var.e) == null || !go4.K(2)) {
+                return;
+            }
+            Log.v("FragmentManager", "Updating retained Fragments: Removed " + bn4Var);
+        }
+    }
+
+    public final int hashCode() {
+        return this.d.hashCode() + ((this.c.hashCode() + (this.b.hashCode() * 31)) * 31);
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("FragmentManagerViewModel{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append("} Fragments (");
+        Iterator it = this.b.values().iterator();
+        while (it.hasNext()) {
+            sb.append(it.next());
+            if (it.hasNext()) {
+                sb.append(", ");
             }
         }
-        return charSequence;
-    }
-
-    public static CharSequence b(SpannableStringBuilder spannableStringBuilder) {
-        return a(spannableStringBuilder, false);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        wkb wkbVar = this.c;
-        if (wkbVar != null) {
-            wkbVar.a(textPaint);
+        sb.append(") Child Non Config (");
+        Iterator it2 = this.c.keySet().iterator();
+        while (it2.hasNext()) {
+            sb.append((String) it2.next());
+            if (it2.hasNext()) {
+                sb.append(", ");
+            }
         }
-        textPaint.setUnderlineText(i == color);
-    }
-
-    public jo4(String str, wkb wkbVar, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
-        super(str);
-        this.a = str;
-        this.b = tL_messageEntityFormattedDate;
-        this.c = wkbVar;
-        this.d = false;
-    }
-
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
+        sb.append(") ViewModelStores (");
+        Iterator it3 = this.d.keySet().iterator();
+        while (it3.hasNext()) {
+            sb.append((String) it3.next());
+            if (it3.hasNext()) {
+                sb.append(", ");
+            }
+        }
+        sb.append(')');
+        return sb.toString();
     }
 }

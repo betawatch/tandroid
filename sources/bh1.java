@@ -1,282 +1,145 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.util.SparseArray;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bh1 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
-    public final /* synthetic */ Object w;
-    public final /* synthetic */ Object x;
-    public final /* synthetic */ Object y;
+public final class bh1 extends FrameLayout implements tjb {
+    public jia a;
+    public tgb b;
+    public tl c;
+    public wjb d;
+    public boolean e;
+    public int f;
 
-    public /* synthetic */ bh1(b61 b61Var, TLObject tLObject, int i, long j, my0 my0Var, TL_payments.starRefProgram starrefprogram, long j2, boolean z, Context context, ylb ylbVar, TLRPC.User user, TLRPC.TL_error tL_error) {
-        this.n = b61Var;
-        this.d = tLObject;
-        this.b = i;
-        this.f = j;
-        this.r = my0Var;
-        this.s = starrefprogram;
-        this.h = j2;
-        this.e = z;
-        this.w = context;
-        this.x = ylbVar;
-        this.y = user;
-        this.c = tL_error;
+    public final void a(int i, int i2, boolean z) {
+        if (i2 < 0) {
+            b(null);
+        } else if (i2 < 7) {
+            this.f = bkb.v0(bkb.q8[i2], this.d);
+        } else {
+            na7 q1 = na7.q1(i);
+            ea7 ea7Var = z ? q1.E3 : q1.F3;
+            b(ea7Var != null ? ea7Var.d(i2) : null);
+        }
+        invalidate();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TL_payments.connectedBotStarRef connectedbotstarref;
-        d S;
-        ArrayList arrayList;
-        byte b = this.a;
-        Object obj = this.y;
-        Object obj2 = this.x;
-        long j = this.h;
-        Object obj3 = this.w;
-        Object obj4 = this.s;
-        boolean z = this.e;
-        Object obj5 = this.r;
-        TLObject tLObject = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        Object obj6 = this.n;
-        switch (b) {
-            case 0:
-                my0 my0Var = (my0) obj5;
-                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
-                Context context = (Context) obj3;
-                ylb ylbVar = (ylb) obj2;
-                TLRPC.User user = (TLRPC.User) obj;
-                ((b61) obj6).setLoading(false);
-                if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
-                    if (tL_error != null) {
-                        wi8.u(my0Var.F, ylbVar, tL_error, false);
-                        break;
-                    }
-                } else {
-                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    int i = this.b;
-                    ku0 g = ku0.g(i);
-                    long j2 = this.f;
-                    hu0 d = g.d(j2);
-                    int i2 = d.a;
-                    oc7.r1(i2).d4(connectedstarrefbots.users, false);
-                    d.c = 0;
-                    d.h = false;
-                    d.d = false;
-                    ArrayList arrayList2 = d.e;
-                    arrayList2.clear();
-                    if (d.i != 0) {
-                        ConnectionsManager.getInstance(i2).cancelRequest(d.i, true);
-                        d.i = 0;
-                    }
-                    d.g = false;
-                    d.c = connectedstarrefbots.count;
-                    arrayList2.addAll(connectedstarrefbots.connected_bots);
-                    d.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= d.c;
-                    d.h = false;
-                    nm7.f(i2).k(nm7.O3, Long.valueOf(d.b));
-                    d.a();
-                    my0Var.dismiss();
-                    int i3 = 0;
-                    while (true) {
-                        if (i3 < connectedstarrefbots.connected_bots.size()) {
-                            connectedbotstarref = connectedstarrefbots.connected_bots.get(i3);
-                            if (connectedbotstarref.bot_id != starrefprogram.bot_id) {
-                                i3++;
-                            }
-                        } else {
-                            connectedbotstarref = null;
-                        }
-                    }
-                    if ((j != j2 || z) && (S = LaunchActivity.S()) != null && (!(S instanceof mh1) || ((mh1) S).S != j2)) {
-                        S.presentFragment(new mh1(j2));
-                    }
-                    if (connectedbotstarref != null) {
-                        iu0 e = ku0.g(i).e(j2);
-                        long j3 = connectedbotstarref.bot_id;
-                        ArrayList arrayList3 = e.e;
-                        int i4 = 0;
-                        while (true) {
-                            if (i4 < arrayList3.size()) {
-                                if (((TL_payments.starRefProgram) arrayList3.get(i4)).bot_id == j3) {
-                                    arrayList3.remove(i4);
-                                    e.c--;
-                                    nm7.f(e.a).k(nm7.N3, Long.valueOf(e.b));
-                                } else {
-                                    i4++;
-                                }
-                            }
-                        }
-                        new c41(mh1.K0(context, i, connectedbotstarref, j2, ylbVar).F, ylbVar).V(Arrays.asList(user), jb6.M0(2131754332, null), jb6.M0(2131754333, null), null).j();
-                        break;
-                    }
-                }
-                break;
-            default:
-                o42 o42Var = (o42) obj6;
-                j5 j5Var = (j5) obj5;
-                String str = (String) obj4;
-                ArrayList arrayList4 = (ArrayList) obj3;
-                ArrayList arrayList5 = (ArrayList) obj2;
-                ArrayList arrayList6 = (ArrayList) obj;
-                ArrayList arrayList7 = o42Var.Q;
-                SparseArray sparseArray = o42Var.P;
-                ArrayList arrayList8 = o42Var.N;
-                HashMap hashMap = o42Var.R;
-                ArrayList arrayList9 = o42Var.M;
-                ArrayList arrayList10 = o42Var.O;
-                p42 p42Var = o42Var.Y;
-                if (this.b == o42Var.U) {
-                    o42Var.T = false;
-                    c42 c42Var = p42Var.M;
-                    if (tL_error == null) {
-                        d42 d42Var = p42Var.r;
-                        c42Var.e(false, true);
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                        o42Var.H = messages_messages.next_rate;
-                        int i5 = j5Var.a;
-                        d42 d42Var2 = d42Var;
-                        cf7.Y(i5).j1(messages_messages.users, messages_messages.chats, true, true);
-                        oc7.r1(i5).d4(messages_messages.users, false);
-                        oc7.r1(i5).X3(messages_messages.chats, false);
-                        if (!z) {
-                            arrayList10.clear();
-                            sparseArray.clear();
-                            arrayList7.clear();
-                            hashMap.clear();
-                        }
-                        int i6 = messages_messages.count;
-                        o42Var.L = str;
-                        int size = arrayList4.size();
-                        int i7 = 0;
-                        while (i7 < size) {
-                            k47 k47Var = (k47) arrayList4.get(i7);
-                            String str2 = k47Var.Y;
-                            ArrayList arrayList11 = (ArrayList) hashMap.get(str2);
-                            ArrayList arrayList12 = arrayList4;
-                            if (arrayList11 == null) {
-                                arrayList = new ArrayList();
-                                hashMap.put(str2, arrayList);
-                                arrayList7.add(str2);
-                            } else {
-                                arrayList = arrayList11;
-                            }
-                            arrayList.add(k47Var);
-                            arrayList10.add(k47Var);
-                            sparseArray.put(k47Var.e1(), k47Var);
-                            i7++;
-                            arrayList4 = arrayList12;
-                        }
-                        if (arrayList10.size() > i6) {
-                            i6 = arrayList10.size();
-                        }
-                        o42Var.W = arrayList10.size() >= i6;
-                        if (arrayList10.isEmpty()) {
-                            if (TextUtils.isEmpty(o42Var.L) && this.f == 0 && j == 0) {
-                                xna xnaVar = c42Var.d;
-                                l66 l66Var = c42Var.e;
-                                xnaVar.setText(jb6.M0(2131745535, null));
-                                l66Var.setVisibility(0);
-                                l66Var.setText(jb6.M0(2131745540, null));
-                            } else {
-                                xna xnaVar2 = c42Var.d;
-                                l66 l66Var2 = c42Var.e;
-                                xnaVar2.setText(jb6.M0(2131745534, null));
-                                l66Var2.setVisibility(0);
-                                l66Var2.setText(jb6.M0(2131745541, null));
-                            }
-                        }
-                        if (!z) {
-                            arrayList9.clear();
-                            if (arrayList5 != null) {
-                                arrayList9.addAll(arrayList5);
-                            }
-                            if (str.length() >= 3 && (jb6.M0(2131745635, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
-                                int i8 = 0;
-                                while (true) {
-                                    if (i8 >= arrayList9.size()) {
-                                        arrayList9.add(0, z8c.h(z8c.t0).f());
-                                    } else if (!(arrayList9.get(i8) instanceof TLRPC.User) || z8c.h(z8c.t0).f().id != ((TLRPC.User) arrayList9.get(i8)).id) {
-                                        i8++;
-                                    }
-                                }
-                            }
-                            arrayList8.clear();
-                            arrayList8.addAll(arrayList6);
-                            o42Var.a0(arrayList9, arrayList8, TextUtils.isEmpty(o42Var.L));
-                        }
-                        int i9 = -1;
-                        int i10 = 0;
-                        View view = null;
-                        while (true) {
-                            d42 d42Var3 = d42Var2;
-                            if (i10 >= size) {
-                                if (view != null) {
-                                    d42Var3.removeView(view);
-                                }
-                                if ((p42Var.K.getVisibility() == 0 && d42Var3.getChildCount() <= 1) || view != null) {
-                                    p42Var.getViewTreeObserver().addOnPreDrawListener(new m42(o42Var, (tk4) view, i9, (byte) 0));
-                                }
-                                o42Var.f();
-                                break;
-                            } else {
-                                View childAt = d42Var3.getChildAt(i10);
-                                if (childAt instanceof tk4) {
-                                    i9 = RecyclerView.R(childAt);
-                                    view = childAt;
-                                }
-                                i10++;
-                                d42Var2 = d42Var3;
-                            }
-                        }
-                    } else {
-                        c42Var.d.setText(jb6.M0(2131745534, null));
-                        c42Var.e.setVisibility(0);
-                        c42Var.e.setText(jb6.M0(2131745541, null));
-                        c42Var.e(false, true);
-                        break;
-                    }
-                }
-                break;
+    public final void b(da7 da7Var) {
+        wjb wjbVar = this.d;
+        if (da7Var != null) {
+            this.f = da7Var.e(0, wjbVar);
+            return;
+        }
+        int i = bkb.r8;
+        if (gl.B(bkb.v0(i, wjbVar)) > 0.8f) {
+            this.f = bkb.v0(bkb.m6, wjbVar);
+        } else if (gl.B(bkb.v0(i, wjbVar)) < 0.2f) {
+            this.f = bkb.p1(0.5f, bkb.v0(bkb.z8, wjbVar));
+        } else {
+            this.f = bkb.v(bkb.v0(bkb.c6, wjbVar), bkb.p1(0.7f, a18.y0(bkb.v0(i, wjbVar))));
         }
     }
 
-    public /* synthetic */ bh1(o42 o42Var, int i, TLRPC.TL_error tL_error, TLObject tLObject, j5 j5Var, boolean z, String str, ArrayList arrayList, long j, long j2, ArrayList arrayList2, ArrayList arrayList3) {
-        this.n = o42Var;
-        this.b = i;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.r = j5Var;
-        this.e = z;
-        this.s = str;
-        this.w = arrayList;
-        this.f = j;
-        this.h = j2;
-        this.x = arrayList2;
-        this.y = arrayList3;
+    public final void c(long j, boolean z, boolean z2) {
+        tl tlVar = this.c;
+        if (j == 0) {
+            tlVar.g(null, z2);
+            if (this.b == null) {
+                this.b = new tgb(k96.M0(2131752299, null), 16.0f, null);
+            }
+        } else {
+            tlVar.j(j, z2);
+            this.b = null;
+        }
+        tlVar.m(z, z2);
+    }
+
+    public final void d(TLRPC.Document document) {
+        tl tlVar = this.c;
+        if (document == null) {
+            tlVar.g(null, false);
+            if (this.b == null) {
+                this.b = new tgb(k96.M0(2131752299, null), 16.0f, null);
+            }
+        } else {
+            tlVar.i(document, false);
+            this.b = null;
+        }
+        tlVar.m(false, false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        wjb wjbVar = this.d;
+        super.dispatchDraw(canvas);
+        f();
+        tl tlVar = this.c;
+        tlVar.k(Integer.valueOf(this.f));
+        tgb tgbVar = this.b;
+        if (tgbVar != null) {
+            canvas2 = canvas;
+            tgbVar.c((getMeasuredWidth() - this.b.j()) - gl.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, bkb.v0(bkb.p6, wjbVar), canvas2);
+        } else {
+            canvas2 = canvas;
+            tlVar.draw(canvas2);
+        }
+        if (this.e) {
+            Paint d = wjbVar != null ? wjbVar.d("paintDivider") : bkb.j0;
+            if (d != null) {
+                canvas2.drawLine(k96.a0 ? 0.0f : gl.L(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(23.0f) : 0), getMeasuredHeight() - 1, d);
+            }
+        }
+    }
+
+    public final void e(int i) {
+        jia jiaVar = this.a;
+        if (i <= 0) {
+            jiaVar.i(null);
+            return;
+        }
+        jiaVar.i(new gc(i, this.d, getContext(), false));
+        jiaVar.setDrawablePadding(gl.L(6.0f));
+    }
+
+    public final void f() {
+        tl tlVar = this.c;
+        tlVar.setBounds((getWidth() - tlVar.s) - gl.L(21.0f), (getHeight() - tlVar.s) / 2, getWidth() - gl.L(21.0f), (getHeight() + tlVar.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.c.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(50.0f), TLObject.FLAG_30));
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        jia jiaVar = this.a;
+        if (jiaVar != null) {
+            jiaVar.setTextColor(bkb.v0(bkb.F6, this.d));
+        }
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

@@ -14,13 +14,13 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class j extends FrameLayout implements fkb {
+public final class j extends FrameLayout implements eib {
     public final i a;
-    public final tvc b;
-    public bx c;
-    public bx d;
+    public final stc b;
+    public bw c;
+    public bw d;
     public int e;
     public int f;
     public int h;
@@ -28,14 +28,14 @@ public final class j extends FrameLayout implements fkb {
     public int r;
     public boolean s;
     public TL_iv.pageBlockEmbed w;
-    public final ey x;
+    public final dx x;
     public final /* synthetic */ o y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(o oVar, Activity activity, ey eyVar) {
+    public j(o oVar, Activity activity, dx dxVar) {
         super(activity);
         this.y = oVar;
-        this.x = eyVar;
+        this.x = dxVar;
         byte b = 0;
         setWillNotDraw(false);
         if (Looper.myLooper() != Looper.getMainLooper()) {
@@ -43,9 +43,9 @@ public final class j extends FrameLayout implements fkb {
             this.a = null;
             return;
         }
-        tvc tvcVar = new tvc(activity, false, new qv(this));
-        this.b = tvcVar;
-        addView(tvcVar);
+        stc stcVar = new stc(activity, false, new qu(this));
+        this.b = stcVar;
+        addView(stcVar);
         oVar.O.add(this);
         i iVar = new i(this, activity);
         this.a = iVar;
@@ -56,8 +56,8 @@ public final class j extends FrameLayout implements fkb {
         iVar.addJavascriptInterface(new ArticleViewer$BlockEmbedCell$TelegramWebviewProxy(this), "TelegramWebviewProxy");
         iVar.getSettings().setMixedContentMode(0);
         CookieManager.getInstance().setAcceptThirdPartyCookies(iVar, true);
-        iVar.setWebChromeClient(new rv(this, b));
-        iVar.setWebViewClient(new sv(this, b));
+        iVar.setWebChromeClient(new ru(this, b));
+        iVar.setWebViewClient(new su(this, b));
         addView(iVar);
     }
 
@@ -71,38 +71,38 @@ public final class j extends FrameLayout implements fkb {
                     iVar.destroy();
                 }
             } catch (Exception e) {
-                fc4.g(e, true);
+                fa4.g(e, true);
             }
         }
         this.w = null;
-        tvc tvcVar = this.b;
-        if (tvcVar != null) {
-            tvcVar.b();
+        stc stcVar = this.b;
+        if (stcVar != null) {
+            stcVar.b();
         }
     }
 
-    @Override // fkb
+    @Override // eib
     public final void k(ArrayList arrayList) {
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            arrayList.add(bxVar);
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            arrayList.add(bwVar);
         }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            arrayList.add(bxVar2);
+        bw bwVar2 = this.d;
+        if (bwVar2 != null) {
+            arrayList.add(bwVar2);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.i(this);
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.i(this);
         }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            bxVar2.i(this);
+        bw bwVar2 = this.d;
+        if (bwVar2 != null) {
+            bwVar2.i(this);
         }
     }
 
@@ -112,23 +112,23 @@ public final class j extends FrameLayout implements fkb {
         if (!this.y.W) {
             this.w = null;
         }
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.f(this);
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.f(this);
         }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            bxVar2.f(this);
+        bw bwVar2 = this.d;
+        if (bwVar2 != null) {
+            bwVar2.f(this);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.w != null) {
-            bx bxVar = this.c;
+            bw bwVar = this.c;
             o oVar = this.y;
             int i = 0;
-            if (bxVar != null) {
+            if (bwVar != null) {
                 canvas.save();
                 canvas.translate(this.e, this.f);
                 o.s(oVar, canvas, this, 0);
@@ -150,7 +150,7 @@ public final class j extends FrameLayout implements fkb {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb = new StringBuilder(jb6.M0(2131754867, null));
+        StringBuilder sb = new StringBuilder(k96.M0(2131754867, null));
         if (this.c != null) {
             sb.append(", ");
             sb.append(this.c.d.getText());
@@ -169,12 +169,12 @@ public final class j extends FrameLayout implements fkb {
             int i5 = this.n;
             iVar.layout(i5, 0, iVar.getMeasuredWidth() + i5, iVar.getMeasuredHeight());
         }
-        tvc tvcVar = this.b;
-        if (tvcVar == null || tvcVar.getParent() != this) {
+        stc stcVar = this.b;
+        if (stcVar == null || stcVar.getParent() != this) {
             return;
         }
         int i6 = this.n;
-        tvcVar.layout(i6, 0, tvcVar.getMeasuredWidth() + i6, tvcVar.getMeasuredHeight());
+        stcVar.layout(i6, 0, stcVar.getMeasuredWidth() + i6, stcVar.getMeasuredHeight());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x013a  */
@@ -189,25 +189,25 @@ public final class j extends FrameLayout implements fkb {
         int i5;
         int i6;
         int L;
-        bx bxVar;
+        bw bwVar;
         int size = View.MeasureSpec.getSize(i);
         TL_iv.pageBlockEmbed pageblockembed = this.w;
         if (pageblockembed != null) {
             if (pageblockembed.level > 0) {
-                int L2 = gm.L(18.0f) + gm.L(r15 * 14);
+                int L2 = gl.L(18.0f) + gl.L(r15 * 14);
                 this.n = L2;
                 this.e = L2;
-                i4 = wi8.B(18.0f, L2, size);
+                i4 = ug8.B(18.0f, L2, size);
                 i5 = i4;
             } else {
                 this.n = 0;
-                this.e = gm.L(18.0f);
-                int L3 = size - gm.L(36.0f);
+                this.e = gl.L(18.0f);
+                int L3 = size - gl.L(36.0f);
                 if (this.w.full_width) {
                     i4 = size;
                 } else {
-                    i4 = size - gm.L(36.0f);
-                    this.n = gm.L(18.0f) + this.n;
+                    i4 = size - gl.L(36.0f);
+                    this.n = gl.L(18.0f) + this.n;
                 }
                 i5 = L3;
             }
@@ -216,27 +216,27 @@ public final class j extends FrameLayout implements fkb {
             float f = i7 == 0 ? 1.0f : size / i7;
             int i8 = this.r;
             if (i8 != 0) {
-                i6 = gm.L(i8);
+                i6 = gl.L(i8);
             } else {
                 float f2 = pageblockembed2.h;
                 if (i7 == 0) {
-                    f2 = gm.L(f2);
+                    f2 = gl.L(f2);
                 }
                 i6 = (int) (f2 * f);
             }
             if (i6 == 0) {
-                i6 = gm.L(10.0f);
+                i6 = gl.L(10.0f);
             }
             int i9 = i6;
             i iVar = this.a;
             if (iVar != null) {
                 iVar.measure(View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30));
             }
-            tvc tvcVar = this.b;
-            if (tvcVar != null && tvcVar.getParent() == this) {
-                tvcVar.measure(View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(10.0f) + i9, TLObject.FLAG_30));
+            stc stcVar = this.b;
+            if (stcVar != null && stcVar.getParent() == this) {
+                stcVar.measure(View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(10.0f) + i9, TLObject.FLAG_30));
             }
-            int L4 = gm.L(8.0f) + i9;
+            int L4 = gl.L(8.0f) + i9;
             this.f = L4;
             TL_iv.pageBlockEmbed pageblockembed3 = this.w;
             TL_iv.RichText richText = pageblockembed3.caption.text;
@@ -244,46 +244,46 @@ public final class j extends FrameLayout implements fkb {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
             o oVar = this.y;
             jVar = this;
-            bx n = o.n(oVar, jVar, null, richText, i5, L4, pageblockembed3, alignment, 0, this.x);
+            bw n = o.n(oVar, jVar, null, richText, i5, L4, pageblockembed3, alignment, 0, this.x);
             jVar.c = n;
             if (n != null) {
-                int height = jVar.c.d.getHeight() + gm.L(4.0f);
+                int height = jVar.c.d.getHeight() + gl.L(4.0f);
                 jVar.h = height;
-                i9 = hg9.v(4.0f, height, i9);
+                i9 = de9.w(4.0f, height, i9);
             } else {
                 jVar.h = 0;
             }
             TL_iv.pageBlockEmbed pageblockembed4 = jVar.w;
             TL_iv.RichText richText2 = pageblockembed4.caption.credit;
             if (jVar.x.H) {
-                alignment = oya.a();
+                alignment = lwa.a();
             }
-            bx n2 = o.n(oVar, jVar, null, richText2, i5, 0, pageblockembed4, alignment, 0, jVar.x);
+            bw n2 = o.n(oVar, jVar, null, richText2, i5, 0, pageblockembed4, alignment, 0, jVar.x);
             jVar.d = n2;
             if (n2 != null) {
-                i9 += jVar.d.d.getHeight() + gm.L(4.0f);
-                bx bxVar2 = jVar.d;
-                bxVar2.s = jVar.e;
-                bxVar2.w = jVar.h;
+                i9 += jVar.d.d.getHeight() + gl.L(4.0f);
+                bw bwVar2 = jVar.d;
+                bwVar2.s = jVar.e;
+                bwVar2.w = jVar.h;
             }
-            i3 = gm.L(5.0f) + i9;
+            i3 = gl.L(5.0f) + i9;
             TL_iv.pageBlockEmbed pageblockembed5 = jVar.w;
             int i10 = pageblockembed5.level;
             if (i10 <= 0 || pageblockembed5.bottom) {
                 if (i10 == 0 && jVar.c != null) {
-                    L = gm.L(8.0f);
+                    L = gl.L(8.0f);
                 }
-                bxVar = jVar.c;
-                if (bxVar != null) {
-                    bxVar.s = jVar.e;
-                    bxVar.w = jVar.f;
+                bwVar = jVar.c;
+                if (bwVar != null) {
+                    bwVar.s = jVar.e;
+                    bwVar.w = jVar.f;
                 }
             } else {
-                L = gm.L(8.0f);
+                L = gl.L(8.0f);
             }
             i3 += L;
-            bxVar = jVar.c;
-            if (bxVar != null) {
+            bwVar = jVar.c;
+            if (bwVar != null) {
             }
         } else {
             jVar = this;
@@ -294,11 +294,11 @@ public final class j extends FrameLayout implements fkb {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        bx bxVar = this.c;
+        bw bwVar = this.c;
         int i = this.e;
         int i2 = this.f;
         o oVar = this.y;
-        if (o.i(oVar, this.x, motionEvent, this, bxVar, i, i2)) {
+        if (o.i(oVar, this.x, motionEvent, this, bwVar, i, i2)) {
             return true;
         }
         return o.i(oVar, this.x, motionEvent, this, this.d, this.e, this.f + this.h) || super.onTouchEvent(motionEvent);

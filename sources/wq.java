@@ -1,23 +1,15 @@
 // default package
 
-import android.view.View;
+import android.text.StaticLayout;
+import android.text.TextDirectionHeuristic;
+import android.text.TextDirectionHeuristics;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class wq {
-    public static int a(View view) {
-        return view.getTextAlignment();
-    }
-
-    public static int b(View view) {
-        return view.getTextDirection();
-    }
-
-    public static void c(View view, int i) {
-        view.setTextAlignment(i);
-    }
-
-    public static void d(View view, int i) {
-        view.setTextDirection(i);
+public class wq extends yq {
+    @Override // yq
+    public void a(StaticLayout.Builder builder, TextView textView) {
+        builder.setTextDirection((TextDirectionHeuristic) zq.e(textView, TextDirectionHeuristics.FIRSTSTRONG_LTR, "getTextDirectionHeuristic"));
     }
 }

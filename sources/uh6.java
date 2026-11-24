@@ -1,23 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class uh6 implements cx5 {
-    public static final uh6 a = new uh6();
-    public static final el8 b = new el8("kotlin.Long", dl8.e);
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-    @Override // cx5
-    public final void b(c40 c40Var, Object obj) {
-        c40Var.e(((Number) obj).longValue());
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class uh6 extends taa {
+    public final /* synthetic */ vh6 U2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uh6(vh6 vh6Var, Context context, String str, String str2, wjb wjbVar) {
+        super(context, null, str, false, str2, false, wjbVar);
+        this.U2 = vh6Var;
     }
 
-    @Override // cx5
-    public final Object c(jif jifVar) {
-        return Long.valueOf(jifVar.g());
-    }
-
-    @Override // cx5
-    public final y6a d() {
-        return b;
+    @Override // taa
+    public final void L0(vf6 vf6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        String a0;
+        yh6 yh6Var = this.U2.L;
+        if (z) {
+            if (vf6Var == null || vf6Var.m() != 1) {
+                a0 = k96.a0(null, null, 2131748995, k96.G(i, "Chats", new Object[0]));
+            } else {
+                long j = ((TLRPC.Dialog) vf6Var.n(0)).id;
+                a0 = (j == 0 || j == yh6Var.getUserConfig().e()) ? k96.M0(2131748993, null) : k96.a0(null, null, 2131748992, yh6Var.getMessagesController().y1(j, true));
+            }
+            m21 Q = u21.b0(yh6Var).Q(R.raw.forward, 36, gl.S2(a0));
+            Q.r = false;
+            Q.k(true);
+        }
     }
 }

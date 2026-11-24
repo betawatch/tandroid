@@ -1,36 +1,18 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import java.io.File;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class f30 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ h30 b;
-    public final /* synthetic */ String c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class f30 {
+    public final long a;
+    public final File b;
+    public long c;
+    public boolean d = true;
+    public boolean e;
 
-    public /* synthetic */ f30(h30 h30Var, String str, byte b) {
-        this.a = b;
-        this.b = h30Var;
-        this.c = str;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                h30 h30Var = this.b;
-                String str = this.c;
-                h30Var.f = null;
-                gm.c3(new f30(h30Var, str, (byte) 1));
-                break;
-            default:
-                h30 h30Var2 = this.b;
-                String str2 = this.c;
-                h30Var2.getClass();
-                Utilities.g.c(new g30(h30Var2, str2, new ArrayList(h30Var2.n.q2)));
-                break;
-        }
+    public f30(long j, File file) {
+        this.a = j;
+        this.b = file;
     }
 }

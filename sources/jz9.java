@@ -1,27 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class jz9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pz b;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ jz9(pz pzVar, byte b) {
-        this.a = b;
-        this.b = pzVar;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class jz9 extends b4c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        b4c.h(new jz9());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        pz pzVar = this.b;
-        switch (b) {
-            case 0:
-                gm.E3(((ny9) pzVar.f2).h);
-                break;
-            default:
-                pzVar.requestFocus();
-                break;
-        }
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        kz9 kz9Var = (kz9) view;
+        kz9Var.setUser((TLRPC.User) c4cVar.H);
+        kz9Var.c(c4cVar.e, false);
+        kz9Var.setDivider(z);
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new kz9(context, true, false, wjbVar, false);
     }
 }

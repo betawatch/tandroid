@@ -1,49 +1,66 @@
 // default package
 
-import android.os.Parcel;
+import android.os.Bundle;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ohd {
-    public byte a;
-    public Object b;
+public abstract class ohd {
+    public static final f84 a;
+    public static final f84[] b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ohd(int i, Object obj) {
-        this.a = i;
-        this.b = obj;
+    static {
+        f84 f84Var = new f84("register", -1, 1L, true);
+        a = f84Var;
+        b = new f84[]{f84Var, new f84("unregister", -1, 1L, true)};
     }
 
-    public final String a(j9f j9fVar) {
-        nkd nkdVar = (nkd) this.b;
-        byte b = this.a;
-        try {
-            if (nkdVar.E == null) {
-                throw null;
-            }
-            bcd bcdVar = nkdVar.E;
-            String packageName = nkdVar.C.getPackageName();
-            String str = b != 2 ? b != 3 ? b != 4 ? b != 5 ? b != 6 ? "QUERY_PRODUCT_DETAILS_ASYNC" : "START_CONNECTION" : "IS_FEATURE_SUPPORTED" : "CONSUME_ASYNC" : "ACKNOWLEDGE_PURCHASE" : "LAUNCH_BILLING_FLOW";
-            wjd wjdVar = new wjd(j9fVar);
-            fbd fbdVar = (fbd) bcdVar;
-            Parcel X = fbdVar.X();
-            X.writeString(packageName);
-            X.writeString(str);
-            int i = dbd.a;
-            X.writeStrongBinder(wjdVar);
-            try {
-                fbdVar.b.transact(1, X, null, 1);
-                X.recycle();
-                return "billingOverrideService.getBillingOverride";
-            } catch (Throwable th) {
-                X.recycle();
-                throw th;
-            }
-        } catch (Exception e) {
-            nkdVar.E(95, 28, sld.p);
-            yid.i("BillingClientTesting", "An error occurred while retrieving billing override.", e);
-            j9fVar.a(0);
-            return "billingOverrideService.getBillingOverride";
+    public static Parcelable a(String str, Bundle bundle) {
+        ClassLoader classLoader = ohd.class.getClassLoader();
+        fre.h(classLoader);
+        bundle.setClassLoader(classLoader);
+        Bundle bundle2 = bundle.getBundle("map_state");
+        if (bundle2 == null) {
+            return null;
         }
+        bundle2.setClassLoader(classLoader);
+        return bundle2.getParcelable(str);
+    }
+
+    public static void b(Bundle bundle, Bundle bundle2) {
+        if (bundle == null || bundle2 == null) {
+            return;
+        }
+        Parcelable a2 = a("MapOptions", bundle);
+        if (a2 != null) {
+            c(bundle2, "MapOptions", a2);
+        }
+        Parcelable a3 = a("StreetViewPanoramaOptions", bundle);
+        if (a3 != null) {
+            c(bundle2, "StreetViewPanoramaOptions", a3);
+        }
+        Parcelable a4 = a("camera", bundle);
+        if (a4 != null) {
+            c(bundle2, "camera", a4);
+        }
+        if (bundle.containsKey("position")) {
+            bundle2.putString("position", bundle.getString("position"));
+        }
+        if (bundle.containsKey("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT")) {
+            bundle2.putBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", bundle.getBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", false));
+        }
+    }
+
+    public static void c(Bundle bundle, String str, Parcelable parcelable) {
+        ClassLoader classLoader = ohd.class.getClassLoader();
+        fre.h(classLoader);
+        bundle.setClassLoader(classLoader);
+        Bundle bundle2 = bundle.getBundle("map_state");
+        if (bundle2 == null) {
+            bundle2 = new Bundle();
+        }
+        bundle2.setClassLoader(classLoader);
+        bundle2.putParcelable(str, parcelable);
+        bundle.putBundle("map_state", bundle2);
     }
 }

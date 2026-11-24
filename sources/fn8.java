@@ -1,37 +1,21 @@
 // default package
 
-import android.os.Handler;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class fn8 implements e36 {
-    public static final fn8 r = new fn8();
-    public int a;
-    public int b;
-    public Handler e;
-    public boolean c = true;
-    public boolean d = true;
-    public final g36 f = new g36(this);
-    public final q78 h = new q78(this, 26);
-    public final lj4 n = new lj4(this);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class fn8 extends kx9 {
+    public final /* synthetic */ ProfileActivity e;
 
-    public final void a() {
-        int i = this.b + 1;
-        this.b = i;
-        if (i == 1) {
-            if (this.c) {
-                this.f.e(u26.ON_RESUME);
-                this.c = false;
-            } else {
-                Handler handler = this.e;
-                handler.getClass();
-                handler.removeCallbacks(this.h);
-            }
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fn8(ProfileActivity profileActivity, en8 en8Var) {
+        super(en8Var);
+        this.e = profileActivity;
     }
 
-    @Override // e36
-    public final g36 m() {
-        return this.f;
+    @Override // kx9, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.T5 = null;
     }
 }

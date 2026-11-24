@@ -1,30 +1,25 @@
 // default package
 
-import android.hardware.biometrics.BiometricPrompt;
-import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class j35 extends BiometricPrompt$AuthenticationCallback {
-    public final /* synthetic */ l35 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class j35 {
+    public final ki7 a;
+    public final h35 b;
+    public final long c = SystemClock.uptimeMillis();
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public Runnable g;
+    public sm3 h;
 
-    public j35(l35 l35Var) {
-        this.a = l35Var;
+    public j35(ki7 ki7Var, h35 h35Var) {
+        this.a = ki7Var;
+        this.b = h35Var;
     }
 
-    public final void onAuthenticationError(int i, CharSequence charSequence) {
-        l35 l35Var = this.a;
-        if (!l35Var.f() || l35Var.f) {
-            return;
-        }
-        if (i == 10 || i == 5) {
-            l35Var.c("AUTH_CANCELED");
-        } else {
-            l35Var.a();
-        }
-    }
-
-    public final void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
-        this.a.c(null);
+    public final boolean a() {
+        return SystemClock.uptimeMillis() - this.c < 700;
     }
 }

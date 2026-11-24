@@ -9,12 +9,12 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class LocationRequest extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<LocationRequest> CREATOR = new yhf((byte) 8);
+    public static final Parcelable.Creator<LocationRequest> CREATOR = new xff((byte) 8);
     public final WorkSource E;
-    public final epd F;
+    public final bnd F;
     public int a;
     public long b;
     public long c;
@@ -29,7 +29,7 @@ public final class LocationRequest extends b4 implements ReflectedParcelable {
     public final String x;
     public final boolean y;
 
-    public LocationRequest(int i, long j, long j2, long j3, long j4, long j5, int i2, float f, boolean z, long j6, int i3, int i4, String str, boolean z2, WorkSource workSource, epd epdVar) {
+    public LocationRequest(int i, long j, long j2, long j3, long j4, long j5, int i2, float f, boolean z, long j6, int i3, int i4, String str, boolean z2, WorkSource workSource, bnd bndVar) {
         this.a = i;
         this.b = j;
         this.c = j2;
@@ -44,7 +44,7 @@ public final class LocationRequest extends b4 implements ReflectedParcelable {
         this.x = str;
         this.y = z2;
         this.E = workSource;
-        this.F = epdVar;
+        this.F = bndVar;
     }
 
     public static String c(long j) {
@@ -52,10 +52,10 @@ public final class LocationRequest extends b4 implements ReflectedParcelable {
         if (j == Long.MAX_VALUE) {
             return "∞";
         }
-        StringBuilder sb2 = vrd.a;
+        StringBuilder sb2 = spd.a;
         synchronized (sb2) {
             sb2.setLength(0);
-            vrd.a(j, sb2);
+            spd.a(j, sb2);
             sb = sb2.toString();
         }
         return sb;
@@ -76,7 +76,7 @@ public final class LocationRequest extends b4 implements ReflectedParcelable {
             return false;
         }
         if ((i == 105 || this.b == locationRequest.b) && this.c == locationRequest.c && b() == locationRequest.b()) {
-            return (!b() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.w == locationRequest.w && this.y == locationRequest.y && this.E.equals(locationRequest.E) && fse.a(this.x, locationRequest.x) && fse.a(this.F, locationRequest.F);
+            return (!b() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.w == locationRequest.w && this.y == locationRequest.y && this.E.equals(locationRequest.E) && cqe.a(this.x, locationRequest.x) && cqe.a(this.F, locationRequest.F);
         }
         return false;
     }
@@ -92,124 +92,124 @@ public final class LocationRequest extends b4 implements ReflectedParcelable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String toString() {
-        epd epdVar;
+        bnd bndVar;
         int intValue;
         String str;
         String str2;
-        StringBuilder s = td4.s("Request[");
+        StringBuilder r = tb4.r("Request[");
         int i = this.a;
         if (i == 105) {
-            s.append(d1f.a(i));
+            r.append(bze.a(i));
         } else {
-            s.append("@");
+            r.append("@");
             boolean b = b();
             long j = this.b;
             if (b) {
-                vrd.a(j, s);
-                s.append("/");
-                vrd.a(this.d, s);
+                spd.a(j, r);
+                r.append("/");
+                spd.a(this.d, r);
             } else {
-                vrd.a(j, s);
+                spd.a(j, r);
             }
-            s.append(" ");
-            s.append(d1f.a(this.a));
+            r.append(" ");
+            r.append(bze.a(this.a));
         }
         if (this.a == 105 || this.c != this.b) {
-            s.append(", minUpdateInterval=");
-            s.append(c(this.c));
+            r.append(", minUpdateInterval=");
+            r.append(c(this.c));
         }
         float f = this.h;
         if (f > 0.0d) {
-            s.append(", minUpdateDistance=");
-            s.append(f);
+            r.append(", minUpdateDistance=");
+            r.append(f);
         }
         boolean z = false;
         boolean z2 = this.a == 105;
         long j2 = this.r;
         if (!z2 ? j2 != this.b : j2 != Long.MAX_VALUE) {
-            s.append(", maxUpdateAge=");
-            s.append(c(this.r));
+            r.append(", maxUpdateAge=");
+            r.append(c(this.r));
         }
         long j3 = this.e;
         if (j3 != Long.MAX_VALUE) {
-            s.append(", duration=");
-            vrd.a(j3, s);
+            r.append(", duration=");
+            spd.a(j3, r);
         }
         int i2 = this.f;
         if (i2 != Integer.MAX_VALUE) {
-            s.append(", maxUpdates=");
-            s.append(i2);
+            r.append(", maxUpdates=");
+            r.append(i2);
         }
         int i3 = this.w;
         if (i3 != 0) {
-            s.append(", ");
+            r.append(", ");
             if (i3 == 0) {
                 str2 = "THROTTLE_BACKGROUND";
             } else if (i3 == 1) {
                 str2 = "THROTTLE_ALWAYS";
             } else {
                 if (i3 != 2) {
-                    i98.g();
+                    sc8.e();
                     return null;
                 }
                 str2 = "THROTTLE_NEVER";
             }
-            s.append(str2);
+            r.append(str2);
         }
         int i4 = this.s;
         if (i4 != 0) {
-            s.append(", ");
+            r.append(", ");
             if (i4 == 0) {
                 str = "GRANULARITY_PERMISSION_LEVEL";
             } else if (i4 == 1) {
                 str = "GRANULARITY_COARSE";
             } else {
                 if (i4 != 2) {
-                    i98.g();
+                    sc8.e();
                     return null;
                 }
                 str = "GRANULARITY_FINE";
             }
-            s.append(str);
+            r.append(str);
         }
         if (this.n) {
-            s.append(", waitForAccurateLocation");
+            r.append(", waitForAccurateLocation");
         }
         if (this.y) {
-            s.append(", bypass");
+            r.append(", bypass");
         }
         String str3 = this.x;
         if (str3 != null) {
-            s.append(", moduleId=");
-            s.append(str3);
+            r.append(", moduleId=");
+            r.append(str3);
         }
-        Method method = r0d.d;
+        Method method = qyc.d;
         WorkSource workSource = this.E;
         if (method != null) {
             try {
                 Object invoke = method.invoke(workSource, null);
-                ite.h(invoke);
+                fre.h(invoke);
                 z = ((Boolean) invoke).booleanValue();
             } catch (Exception e) {
                 Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e);
             }
             if (!z) {
-                s.append(", ");
-                s.append(workSource);
+                r.append(", ");
+                r.append(workSource);
             }
-            epdVar = this.F;
-            if (epdVar != null) {
-                s.append(", impersonation=");
-                s.append(epdVar);
+            bndVar = this.F;
+            if (bndVar != null) {
+                r.append(", impersonation=");
+                r.append(bndVar);
             }
-            s.append(']');
-            return s.toString();
+            r.append(']');
+            return r.toString();
         }
-        Method method2 = r0d.c;
+        Method method2 = qyc.c;
         if (method2 != null) {
             try {
                 Object invoke2 = method2.invoke(workSource, null);
-                ite.h(invoke2);
+                fre.h(invoke2);
                 intValue = ((Integer) invoke2).intValue();
             } catch (Exception e2) {
                 Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e2);
@@ -219,58 +219,58 @@ public final class LocationRequest extends b4 implements ReflectedParcelable {
             }
             if (!z) {
             }
-            epdVar = this.F;
-            if (epdVar != null) {
+            bndVar = this.F;
+            if (bndVar != null) {
             }
-            s.append(']');
-            return s.toString();
+            r.append(']');
+            return r.toString();
         }
         intValue = 0;
         if (intValue == 0) {
         }
         if (!z) {
         }
-        epdVar = this.F;
-        if (epdVar != null) {
+        bndVar = this.F;
+        if (bndVar != null) {
         }
-        s.append(']');
-        return s.toString();
+        r.append(']');
+        return r.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
+        int r = jte.r(parcel, 20293);
         int i2 = this.a;
-        mve.q(parcel, 1, 4);
+        jte.q(parcel, 1, 4);
         parcel.writeInt(i2);
         long j = this.b;
-        mve.q(parcel, 2, 8);
+        jte.q(parcel, 2, 8);
         parcel.writeLong(j);
         long j2 = this.c;
-        mve.q(parcel, 3, 8);
+        jte.q(parcel, 3, 8);
         parcel.writeLong(j2);
-        mve.q(parcel, 6, 4);
+        jte.q(parcel, 6, 4);
         parcel.writeInt(this.f);
-        mve.q(parcel, 7, 4);
+        jte.q(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        mve.q(parcel, 8, 8);
+        jte.q(parcel, 8, 8);
         parcel.writeLong(this.d);
-        mve.q(parcel, 9, 4);
+        jte.q(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        mve.q(parcel, 10, 8);
+        jte.q(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j3 = this.r;
-        mve.q(parcel, 11, 8);
+        jte.q(parcel, 11, 8);
         parcel.writeLong(j3);
-        mve.q(parcel, 12, 4);
+        jte.q(parcel, 12, 4);
         parcel.writeInt(this.s);
-        mve.q(parcel, 13, 4);
+        jte.q(parcel, 13, 4);
         parcel.writeInt(this.w);
-        mve.l(parcel, 14, this.x);
-        mve.q(parcel, 15, 4);
+        jte.l(parcel, 14, this.x);
+        jte.q(parcel, 15, 4);
         parcel.writeInt(this.y ? 1 : 0);
-        mve.k(parcel, 16, this.E, i);
-        mve.k(parcel, 17, this.F, i);
-        mve.s(parcel, r);
+        jte.k(parcel, 16, this.E, i);
+        jte.k(parcel, 17, this.F, i);
+        jte.s(parcel, r);
     }
 }

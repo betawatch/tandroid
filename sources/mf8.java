@@ -1,97 +1,230 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mf8 extends View {
-    public final Drawable a;
-    public final fn0 b;
-    public final byte c;
-    public nf8 d;
+public final class mf8 implements hy1 {
+    public final /* synthetic */ PopupNotificationActivity a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public mf8(Context context, int i) {
-        super(context);
-        this.b = new fn0(380L, this, d53.h);
-        this.c = i;
-        Drawable d = b10.d(context, R.drawable.outline_poll_attach_24);
-        this.a = d;
-        anb.x(this, d, cmb.n7, null, PorterDuff.Mode.SRC_IN);
+    public mf8(PopupNotificationActivity popupNotificationActivity) {
+        this.a = popupNotificationActivity;
     }
 
-    public final void a(nf8 nf8Var, boolean z) {
-        nf8 nf8Var2;
-        nf8 nf8Var3;
-        this.b.a(nf8Var != null, z);
-        if (isAttachedToWindow() && (nf8Var3 = this.d) != null) {
-            nf8Var3.b();
+    @Override // hy1
+    public final bu1 D() {
+        return null;
+    }
+
+    @Override // hy1
+    public final boolean H0() {
+        return false;
+    }
+
+    @Override // hy1
+    public final boolean M() {
+        return true;
+    }
+
+    @Override // hy1
+    public final boolean Q0() {
+        return false;
+    }
+
+    @Override // hy1
+    public final void W0() {
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        k27 k27Var = popupNotificationActivity.R;
+        if (k27Var != null) {
+            na7.q1(k27Var.K1).H4(0, popupNotificationActivity.L, k27.B0(popupNotificationActivity.R.k), 0L, null);
         }
-        this.d = nf8Var;
-        if (!isAttachedToWindow() || (nf8Var2 = this.d) == null) {
+    }
+
+    @Override // hy1
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // hy1
+    public final int h() {
+        return 0;
+    }
+
+    @Override // hy1
+    public final TLRPC.Peer i() {
+        return null;
+    }
+
+    @Override // hy1
+    public final int o0() {
+        return 0;
+    }
+
+    @Override // hy1
+    public final TL_stories.StoryItem t0() {
+        return null;
+    }
+
+    @Override // hy1
+    public final void u(CharSequence charSequence, boolean z, int i, int i2, long j) {
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        ArrayList arrayList = popupNotificationActivity.b0;
+        if (popupNotificationActivity.R == null) {
             return;
         }
-        nf8Var2.a(this);
+        int i3 = popupNotificationActivity.T;
+        if (i3 >= 0 && i3 < arrayList.size()) {
+            arrayList.remove(popupNotificationActivity.T);
+        }
+        na7.q1(popupNotificationActivity.R.K1).l3(k27.B0(popupNotificationActivity.R.k), popupNotificationActivity.R.e1(), Math.max(0, popupNotificationActivity.R.e1()), popupNotificationActivity.R.k.date, true, 0L, 0, true, 0);
+        popupNotificationActivity.R = null;
+        popupNotificationActivity.f();
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        nf8 nf8Var = this.d;
-        if (nf8Var != null) {
-            nf8Var.a(this);
-        }
+    @Override // hy1
+    public final boolean u0(long j) {
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        nf8 nf8Var = this.d;
-        if (nf8Var != null) {
-            nf8Var.b();
-        }
+    @Override // hy1
+    public final TLRPC.TL_channels_sendAsPeers v() {
+        return null;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f = this.b.e;
-        if (f < 1.0f) {
-            canvas.save();
-            float f2 = 1.0f - f;
-            canvas.scale(f2, f2, width, height);
-            this.a.draw(canvas);
-            canvas.restore();
-        }
-        if (f > 0.0f) {
-            float f3 = this.c;
-            int L = gm.L(f3);
-            int width2 = (getWidth() - L) / 2;
-            int height2 = (getHeight() - L) / 2;
-            canvas.save();
-            canvas.translate(width2, height2);
-            canvas.scale(f, f, gm.L(f3) / 2.0f, gm.L(f3) / 2.0f);
-            nf8 nf8Var = this.d;
-            if (nf8Var != null) {
-                nf8Var.c(canvas, gm.L(f3), gm.L(f3));
-            }
-            canvas.restore();
-        }
+    @Override // hy1
+    public final boolean y0() {
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        int L = gm.L(24.0f);
-        int i5 = (i - L) / 2;
-        int i6 = (i2 - L) / 2;
-        this.a.setBounds(i5, i6, i5 + L, L + i6);
+    @Override // hy1
+    public final void B() {
+    }
+
+    @Override // hy1
+    public final void G0() {
+    }
+
+    @Override // hy1
+    public final void H() {
+    }
+
+    @Override // hy1
+    public final void I0() {
+    }
+
+    @Override // hy1
+    public final void K0() {
+    }
+
+    @Override // hy1
+    public final void L0() {
+    }
+
+    @Override // hy1
+    public final void R0() {
+    }
+
+    @Override // hy1
+    public final void S() {
+    }
+
+    @Override // hy1
+    public final void U() {
+    }
+
+    @Override // hy1
+    public final void a() {
+    }
+
+    @Override // hy1
+    public final void e() {
+    }
+
+    @Override // hy1
+    public final void e1() {
+    }
+
+    @Override // hy1
+    public final void g0() {
+    }
+
+    @Override // hy1
+    public final void g1() {
+    }
+
+    @Override // hy1
+    public final void j() {
+    }
+
+    @Override // hy1
+    public final void n() {
+    }
+
+    @Override // hy1
+    public final void o1() {
+    }
+
+    @Override // hy1
+    public final void p1() {
+    }
+
+    @Override // hy1
+    public final void r() {
+    }
+
+    @Override // hy1
+    public final void s1() {
+    }
+
+    @Override // hy1
+    public final void y() {
+    }
+
+    @Override // hy1
+    public final void P0(CharSequence charSequence) {
+    }
+
+    @Override // hy1
+    public final void f1(int i) {
+    }
+
+    @Override // hy1
+    public final void j1(boolean z) {
+    }
+
+    @Override // hy1
+    public final void k(float f) {
+    }
+
+    @Override // hy1
+    public final void m(boolean z) {
+    }
+
+    @Override // hy1
+    public final void n0(int i) {
+    }
+
+    @Override // hy1
+    public final void z(boolean z) {
+    }
+
+    @Override // hy1
+    public final void w(float f, int i) {
+    }
+
+    @Override // hy1
+    public final void C0(CharSequence charSequence, boolean z, boolean z2) {
+    }
+
+    @Override // hy1
+    public final void O0(View view, CharSequence charSequence, boolean z) {
+    }
+
+    @Override // hy1
+    public final void k1(int i, int i2, int i3, long j, long j2, boolean z) {
     }
 }

@@ -1,229 +1,284 @@
 // default package
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.CheckBoxBase;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class en4 extends q59 {
-    public final /* synthetic */ ln4 c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class en4 extends wp2 {
+    public final pj4 K;
+    public boolean M;
+    public boolean N;
+    public final g16 L = new g16(this);
+    public boolean O = true;
 
-    public en4(ln4 ln4Var) {
-        this.c = ln4Var;
-    }
+    public en4() {
+        final byte b = 1;
+        this.K = new pj4(new dn4(this), b);
+        ((oo) this.e.d).f("android:support:lifecycle", new op2(this, b));
+        final byte b2 = 0;
+        o(new vs2(this) { // from class: cn4
+            public final /* synthetic */ en4 b;
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        if (u69Var.f != 2) {
-            return false;
+            {
+                this.b = this;
+            }
+
+            @Override // vs2
+            public final void accept(Object obj) {
+                byte b3 = b2;
+                en4 en4Var = this.b;
+                switch (b3) {
+                    case 0:
+                        en4Var.K.T();
+                        break;
+                    default:
+                        en4Var.K.T();
+                        break;
+                }
+            }
+        });
+        this.F.add(new vs2(this) { // from class: cn4
+            public final /* synthetic */ en4 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // vs2
+            public final void accept(Object obj) {
+                byte b3 = b;
+                en4 en4Var = this.b;
+                switch (b3) {
+                    case 0:
+                        en4Var.K.T();
+                        break;
+                    default:
+                        en4Var.K.T();
+                        break;
+                }
+            }
+        });
+        pp2 pp2Var = new pp2(this, b);
+        yv2 yv2Var = this.b;
+        yv2Var.getClass();
+        if (((wp2) yv2Var.c) != null) {
+            pp2Var.a();
         }
-        int b = u69Var.b();
-        ln4 ln4Var = this.c;
-        return b >= ln4Var.m2 && u69Var.b() <= ln4Var.n2;
+        ((CopyOnWriteArraySet) yv2Var.b).add(pp2Var);
     }
 
-    @Override // y59
-    public final int b() {
-        return this.c.j2;
-    }
-
-    @Override // y59
-    public final int d(int i) {
-        if (i == 0) {
-            return 0;
+    public static boolean v(go4 go4Var) {
+        boolean z = false;
+        for (bn4 bn4Var : go4Var.c.s()) {
+            if (bn4Var != null) {
+                dn4 dn4Var = bn4Var.L;
+                if ((dn4Var == null ? null : dn4Var.e) != null) {
+                    z |= v(bn4Var.l());
+                }
+                if (bn4Var.e0.b.compareTo(v06.d) >= 0) {
+                    g16 g16Var = bn4Var.e0;
+                    g16Var.d("setCurrentState");
+                    g16Var.f(v06.c);
+                    z = true;
+                }
+            }
         }
-        ln4 ln4Var = this.c;
-        if (i == ln4Var.k2 || i == ln4Var.o2 || i == ln4Var.s2) {
-            return 1;
-        }
-        return (i == ln4Var.l2 || i == ln4Var.p2) ? 3 : 2;
+        return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00f4  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00f7  */
-    @Override // y59
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0037, code lost:
+    
+        if (r0.equals("--list-dumpables") == false) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0046, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT < 33) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0040, code lost:
+    
+        if (r0.equals("--dump-dumpable") != false) goto L24;
+     */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    @Override // android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void t(u69 u69Var, int i) {
-        ArrayList arrayList;
-        TLRPC.Peer peer;
-        long j;
-        TLRPC.Chat chat;
-        String str;
-        String str2;
-        TLRPC.Chat chat2;
-        CheckBoxBase checkBoxBase;
-        float f;
-        String M0;
-        TLRPC.Chat chat3;
-        ln4 ln4Var = this.c;
-        ArrayList arrayList2 = ln4Var.b2;
-        d dVar = ln4Var.r1;
-        int i2 = u69Var.f;
-        View view = u69Var.a;
-        if (i2 != 2) {
-            if (i2 == 3) {
-                in4 in4Var = (in4) view;
-                if (i == ln4Var.p2) {
-                    in4Var.b(jb6.M0(2131750594, null), false);
-                    in4Var.a("", null);
-                    return;
-                } else {
-                    ln4Var.t2 = in4Var;
-                    ln4Var.d1();
-                    return;
-                }
+    public final void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        super.dump(str, fileDescriptor, printWriter, strArr);
+        if (strArr != null && strArr.length != 0) {
+            String str2 = strArr[0];
+            switch (str2.hashCode()) {
+                case -645125871:
+                    if (str2.equals("--translation") && Build.VERSION.SDK_INT >= 31) {
+                    }
+                    break;
+                case 100470631:
+                    break;
+                case 472614934:
+                    break;
+                case 1159329357:
+                    if (str2.equals("--contentcapture") && Build.VERSION.SDK_INT >= 29) {
+                    }
+                    break;
+                case 1455016274:
+                    if (str2.equals("--autofill") && Build.VERSION.SDK_INT >= 26) {
+                    }
+                    break;
             }
-            if (i2 != 1) {
-                if (i2 == 0) {
-                    ln4Var.i2 = (kn4) view;
-                    ln4Var.c1(false);
-                    return;
-                }
-                return;
-            }
-            njb njbVar = (njb) view;
-            njbVar.setForeground(cmb.W0(ln4Var.getContext(), R.drawable.greydivider, cmb.a7));
-            if (i == ln4Var.s2 || i == ln4Var.k2 || arrayList2 == null || arrayList2.isEmpty()) {
-                njbVar.setFixedSize(12);
-                njbVar.setText("");
-                return;
-            }
-            njbVar.setFixedSize(0);
-            if (ln4Var.W1) {
-                njbVar.setText(jb6.M0(2131750586, null));
-                return;
-            } else {
-                njbVar.setText(jb6.M0(2131750587, null));
-                return;
-            }
+            return;
         }
-        xc5 xc5Var = (xc5) view;
-        int i3 = ln4Var.m2;
-        if (i < i3 || i > ln4Var.n2) {
-            int i4 = ln4Var.q2;
-            if (i >= i4 && i <= ln4Var.r2 && (arrayList = ln4Var.e2) != null) {
-                peer = (TLRPC.Peer) arrayList.get(i - i4);
-            }
-            peer = null;
-        } else {
-            if (arrayList2 != null) {
-                peer = (TLRPC.Peer) arrayList2.get(i - i3);
-            }
-            peer = null;
+        printWriter.print(str);
+        printWriter.print("Local FragmentActivity ");
+        printWriter.print(Integer.toHexString(System.identityHashCode(this)));
+        printWriter.println(" State:");
+        String str3 = str + "  ";
+        printWriter.print(str3);
+        printWriter.print("mCreated=");
+        printWriter.print(this.M);
+        printWriter.print(" mResumed=");
+        printWriter.print(this.N);
+        printWriter.print(" mStopped=");
+        printWriter.print(this.O);
+        if (getApplication() != null) {
+            new sk4(this, f()).n(str3, printWriter);
         }
-        if (peer != null) {
-            if (!(peer instanceof TLRPC.TL_peerUser)) {
-                if (peer instanceof TLRPC.TL_peerChat) {
-                    j = -peer.chat_id;
-                    chat3 = dVar.getMessagesController().L0(Long.valueOf(peer.chat_id));
-                } else if (peer instanceof TLRPC.TL_peerChannel) {
-                    j = -peer.channel_id;
-                    chat3 = dVar.getMessagesController().L0(Long.valueOf(peer.channel_id));
-                }
-                str = null;
-                chat = chat3;
-                str2 = str;
-                chat2 = chat;
-                if (chat2 instanceof TLRPC.Chat) {
-                }
-                xc5Var.setTag(Long.valueOf(j));
-                checkBoxBase = xc5Var.getCheckBox().getCheckBoxBase();
-                if (ln4Var.c2.contains(Long.valueOf(j))) {
-                }
-                if (checkBoxBase.h != f) {
-                }
-                xc5Var.c(ln4Var.d2.contains(Long.valueOf(j)), false);
-                xc5Var.d(chat2, str, str2);
-            }
-            j = peer.user_id;
-            TLRPC.User W1 = dVar.getMessagesController().W1(Long.valueOf(peer.user_id));
-            str = m9c.r(W1);
-            if (W1 == null || !W1.bot) {
-                str2 = jb6.M0(2131750676, null);
-                chat2 = W1;
-            } else {
-                str2 = jb6.M0(2131750708, null);
-                chat2 = W1;
-            }
-            if (chat2 instanceof TLRPC.Chat) {
-                TLRPC.Chat chat4 = chat2;
-                String str3 = chat4.title;
-                if (chat4.participants_count != 0) {
-                    boolean V = sd2.V(chat4);
-                    int i5 = chat4.participants_count;
-                    M0 = V ? jb6.H(',', "Subscribers", i5) : jb6.H(',', "Members", i5);
-                } else {
-                    M0 = sd2.V(chat4) ? jb6.M0(2131752260, null) : jb6.M0(2131748395, null);
-                }
-                str2 = M0;
-                str = str3;
-            }
-            xc5Var.setTag(Long.valueOf(j));
-            checkBoxBase = xc5Var.getCheckBox().getCheckBoxBase();
-            f = ln4Var.c2.contains(Long.valueOf(j)) ? 0.5f : 1.0f;
-            if (checkBoxBase.h != f) {
-                checkBoxBase.h = f;
-                checkBoxBase.b();
-            }
-            xc5Var.c(ln4Var.d2.contains(Long.valueOf(j)), false);
-            xc5Var.d(chat2, str, str2);
-        }
-        j = 0;
-        chat = null;
-        str = null;
-        str2 = str;
-        chat2 = chat;
-        if (chat2 instanceof TLRPC.Chat) {
-        }
-        xc5Var.setTag(Long.valueOf(j));
-        checkBoxBase = xc5Var.getCheckBox().getCheckBoxBase();
-        if (ln4Var.c2.contains(Long.valueOf(j))) {
-        }
-        if (checkBoxBase.h != f) {
-        }
-        xc5Var.c(ln4Var.d2.contains(Long.valueOf(j)), false);
-        xc5Var.d(chat2, str, str2);
+        ((dn4) this.K.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v3, types: [android.view.View, in4] */
-    /* JADX WARN: Type inference failed for: r8v4, types: [android.view.View, xc5] */
-    /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View, njb] */
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        kn4 kn4Var;
-        kn4 kn4Var2;
-        ln4 ln4Var = this.c;
-        if (i == 0) {
-            kn4Var = new kn4(ln4Var, ln4Var.getContext(), (ln4Var.U1 instanceof TL_chatlists.TL_chatlists_chatlistInviteAlready) || ln4Var.V1 != null, ln4Var.a2, ln4Var.Y1, ln4Var.Z1);
-            ln4Var.i2 = kn4Var;
-        } else {
-            kn4Var = null;
-            if (i == 1) {
-                ?? njbVar = new njb(ln4Var.getContext());
-                anb.h(cmb.Z6, null, njbVar);
-                kn4Var2 = njbVar;
-            } else if (i == 2) {
-                ?? xc5Var = new xc5(ln4Var.getContext(), 1, 0, false);
-                anb.h(cmb.c6, null, xc5Var);
-                kn4Var2 = xc5Var;
-            } else if (i == 3) {
-                ?? in4Var = new in4(ln4Var.getContext());
-                anb.h(cmb.c6, null, in4Var);
-                kn4Var2 = in4Var;
-            }
-            kn4Var = kn4Var2;
+    @Override // wp2, android.app.Activity
+    public void onActivityResult(int i, int i2, Intent intent) {
+        this.K.T();
+        super.onActivityResult(i, i2, intent);
+    }
+
+    @Override // wp2, vp2, android.app.Activity
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        this.L.e(u06.ON_CREATE);
+        ho4 ho4Var = ((dn4) this.K.b).d;
+        ho4Var.H = false;
+        ho4Var.I = false;
+        ho4Var.O.g = false;
+        ho4Var.u(1);
+    }
+
+    @Override // android.app.Activity, android.view.LayoutInflater.Factory
+    public final View onCreateView(String str, Context context, AttributeSet attributeSet) {
+        fn4 fn4Var = (fn4) ((dn4) this.K.b).d.f.onCreateView(null, str, context, attributeSet);
+        return fn4Var == null ? super.onCreateView(str, context, attributeSet) : fn4Var;
+    }
+
+    @Override // android.app.Activity
+    public void onDestroy() {
+        super.onDestroy();
+        ((dn4) this.K.b).d.l();
+        this.L.e(u06.ON_DESTROY);
+    }
+
+    @Override // wp2, android.app.Activity, android.view.Window.Callback
+    public final boolean onMenuItemSelected(int i, MenuItem menuItem) {
+        if (super.onMenuItemSelected(i, menuItem)) {
+            return true;
         }
-        return new b59(kn4Var);
+        if (i == 6) {
+            return ((dn4) this.K.b).d.j();
+        }
+        return false;
+    }
+
+    @Override // android.app.Activity
+    public void onPause() {
+        super.onPause();
+        this.N = false;
+        ((dn4) this.K.b).d.u(5);
+        this.L.e(u06.ON_PAUSE);
+    }
+
+    @Override // android.app.Activity
+    public final void onPostResume() {
+        super.onPostResume();
+        this.L.e(u06.ON_RESUME);
+        ho4 ho4Var = ((dn4) this.K.b).d;
+        ho4Var.H = false;
+        ho4Var.I = false;
+        ho4Var.O.g = false;
+        ho4Var.u(7);
+    }
+
+    @Override // wp2, android.app.Activity
+    public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
+        this.K.T();
+        super.onRequestPermissionsResult(i, strArr, iArr);
+    }
+
+    @Override // android.app.Activity
+    public void onResume() {
+        pj4 pj4Var = this.K;
+        pj4Var.T();
+        super.onResume();
+        this.N = true;
+        ((dn4) pj4Var.b).d.A(true);
+    }
+
+    @Override // android.app.Activity
+    public void onStart() {
+        pj4 pj4Var = this.K;
+        pj4Var.T();
+        dn4 dn4Var = (dn4) pj4Var.b;
+        super.onStart();
+        this.O = false;
+        if (!this.M) {
+            this.M = true;
+            ho4 ho4Var = dn4Var.d;
+            ho4Var.H = false;
+            ho4Var.I = false;
+            ho4Var.O.g = false;
+            ho4Var.u(4);
+        }
+        dn4Var.d.A(true);
+        this.L.e(u06.ON_START);
+        ho4 ho4Var2 = dn4Var.d;
+        ho4Var2.H = false;
+        ho4Var2.I = false;
+        ho4Var2.O.g = false;
+        ho4Var2.u(5);
+    }
+
+    @Override // android.app.Activity
+    public final void onStateNotSaved() {
+        this.K.T();
+    }
+
+    @Override // android.app.Activity
+    public void onStop() {
+        super.onStop();
+        this.O = true;
+        while (v(u())) {
+        }
+        ho4 ho4Var = ((dn4) this.K.b).d;
+        ho4Var.I = true;
+        ho4Var.O.g = true;
+        ho4Var.u(4);
+        this.L.e(u06.ON_STOP);
+    }
+
+    public final ho4 u() {
+        return ((dn4) this.K.b).d;
+    }
+
+    @Override // android.app.Activity, android.view.LayoutInflater.Factory2
+    public final View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+        fn4 fn4Var = (fn4) ((dn4) this.K.b).d.f.onCreateView(view, str, context, attributeSet);
+        return fn4Var == null ? super.onCreateView(view, str, context, attributeSet) : fn4Var;
     }
 }

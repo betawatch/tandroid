@@ -1,50 +1,20 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class h2d extends u1d {
-    @Override // u1d
-    public final boolean a(int i, Parcel parcel, Parcel parcel2, int i2) {
-        if (i == 2) {
-            Parcelable.Creator creator = Bundle.CREATOR;
-            Bundle bundle = (Bundle) z1d.a(parcel);
-            z1d.b(parcel);
-            e(bundle);
-            return true;
-        }
-        if (i == 3) {
-            Parcelable.Creator creator2 = Bundle.CREATOR;
-            Bundle bundle2 = (Bundle) z1d.a(parcel);
-            z1d.b(parcel);
-            c(bundle2);
-            return true;
-        }
-        if (i == 4) {
-            Parcelable.Creator creator3 = Bundle.CREATOR;
-            Bundle bundle3 = (Bundle) z1d.a(parcel);
-            z1d.b(parcel);
-            d(bundle3);
-            return true;
-        }
-        if (i != 5) {
-            return false;
-        }
-        Parcelable.Creator creator4 = Bundle.CREATOR;
-        Bundle bundle4 = (Bundle) z1d.a(parcel);
-        z1d.b(parcel);
-        b(bundle4);
-        return true;
+public final class h2d {
+    public final w56 a;
+    public final f84[] b;
+    public final boolean c;
+    public final short d;
+    public final /* synthetic */ t59 e;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public h2d(t59 t59Var, w56 w56Var, f84[] f84VarArr, boolean z, int i) {
+        this.e = t59Var;
+        this.a = w56Var;
+        this.b = f84VarArr;
+        this.c = z;
+        this.d = i;
     }
-
-    public abstract void b(Bundle bundle);
-
-    public abstract void c(Bundle bundle);
-
-    public abstract void d(Bundle bundle);
-
-    public abstract void e(Bundle bundle);
 }

@@ -1,75 +1,47 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class mt0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ au0 b;
+public final class mt0 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ er7 d;
 
-    public /* synthetic */ mt0(au0 au0Var, byte b) {
-        this.a = b;
-        this.b = au0Var;
+    public mt0(EditTextBoldCursor editTextBoldCursor, int i, er7 er7Var) {
+        this.b = editTextBoldCursor;
+        this.c = i;
+        this.d = er7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        au0 au0Var = this.b;
-        switch (b) {
-            case 0:
-                mt0 mt0Var = au0Var.t0;
-                int currentTime = au0Var.getConnectionsManager().getCurrentTime();
-                au0Var.b0.setEnabled(au0Var.Z > 0 || au0Var.Q > currentTime);
-                int i = au0Var.Q;
-                tb tbVar = au0Var.b0;
-                if (currentTime >= i) {
-                    tbVar.g(null, true);
-                    au0Var.b0.i(nxa.Z0(false, au0Var.Y ? jb6.M0(2131752922, null) : jb6.H(' ', "BotStarsButtonWithdrawShort", (int) au0Var.Z), au0Var.d0), true, true);
-                    break;
-                } else {
-                    tbVar.i(jb6.M0(2131752921, null), true, true);
-                    if (au0Var.s0 == null) {
-                        au0Var.s0 = new SpannableStringBuilder("l");
-                        pn2 pn2Var = new pn2(R.drawable.mini_switch_lock, 0);
-                        pn2Var.n = 1;
-                        au0Var.s0.setSpan(pn2Var, 0, 1, 33);
-                    }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) au0Var.s0).append((CharSequence) au0.x0(au0Var.Q - currentTime));
-                    au0Var.b0.g(spannableStringBuilder, true);
-                    u31 u31Var = au0Var.k0;
-                    if (u31Var != null) {
-                        y21 y21Var = u31Var.e;
-                        if ((y21Var instanceof b31) && y21Var.isAttachedToWindow()) {
-                            hg9.q(null, null, 2131752905, new Object[]{au0.x0(au0Var.Q - currentTime)}, ((b31) au0Var.k0.e).b);
-                        }
-                    }
-                    gm.r(mt0Var);
-                    gm.d3(mt0Var, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                au0Var.u0();
-                break;
-            case 2:
-                l11.u(au0Var.getParentActivity(), jb6.M0(2131752909, null));
-                break;
-            case 3:
-                au0Var.s0();
-                break;
-            case 4:
-                l11.u(au0Var.getParentActivity(), jb6.M0(2131752985, null));
-                break;
-            case 5:
-                l11.u(au0Var.getParentActivity(), jb6.M0(2131753005, null));
-                break;
-            default:
-                au0Var.c0.setLoading(false);
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        CharSequence text = editTextBoldCursor.getText();
+        if (!this.a) {
+            int length = text.length();
+            int i = this.c;
+            if (length > i) {
+                this.a = true;
+                text = text.subSequence(0, i);
+                editTextBoldCursor.setText(text);
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                this.a = false;
+            }
         }
+        this.d.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(text));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

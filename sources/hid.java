@@ -1,43 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class hid extends h9d {
-    public final transient Object[] e;
+public final class hid extends xfd {
+    public final transient qid c;
+    public final transient kid d;
 
-    public hid(Object[] objArr) {
-        super((byte) 2);
-        this.e = objArr;
+    public hid(qid qidVar, kid kidVar) {
+        this.c = qidVar;
+        this.d = kidVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x001b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x001c A[RETURN] */
-    @Override // h9d, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object get(Object obj) {
-        Object obj2;
-        if (obj != null) {
-            Object[] objArr = this.e;
-            Object obj3 = objArr[0];
-            obj3.getClass();
-            if (obj3.equals(obj)) {
-                obj2 = objArr[1];
-                obj2.getClass();
-                if (obj2 != null) {
-                    return null;
-                }
-                return obj2;
-            }
-        }
-        obj2 = null;
-        if (obj2 != null) {
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.c.get(obj) != null;
     }
 
-    @Override // java.util.Map
+    @Override // ned
+    public final int h(Object[] objArr) {
+        return this.d.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.d.listIterator(0);
+    }
+
+    @Override // xfd, ned
+    public final efd k() {
+        return this.d;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return 1;
+        return this.c.h;
     }
 }

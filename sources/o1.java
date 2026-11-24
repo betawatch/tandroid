@@ -34,7 +34,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class o1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -50,7 +50,7 @@ public final class o1 implements Runnable {
         boolean z;
         boolean z2;
         boolean z3;
-        xo3[] xo3VarArr;
+        nn3[] nn3VarArr;
         int i;
         byte b;
         int i2;
@@ -63,10 +63,10 @@ public final class o1 implements Runnable {
         switch (this.a) {
             case 0:
                 s1 s1Var = (s1) this.b;
-                m66 m66Var = s1Var.x;
-                if (m66Var != null) {
-                    CharacterStyle characterStyle = m66Var.i;
-                    final String url = characterStyle instanceof g6c ? ((g6c) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+                m46 m46Var = s1Var.x;
+                if (m46Var != null) {
+                    CharacterStyle characterStyle = m46Var.i;
+                    final String url = characterStyle instanceof g4c ? ((g4c) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
                     try {
                         s1Var.performHapticFeedback(0, 2);
                     } catch (Exception unused) {
@@ -75,10 +75,10 @@ public final class o1 implements Runnable {
                     final float f = s1Var.y;
                     if (s1Var.getContext() != null) {
                         final ClickableSpan clickableSpan = (ClickableSpan) s1Var.x.i;
-                        my0 h = hg9.h(1, null, s1Var.getContext(), false);
+                        fx0 h = de9.h(1, null, s1Var.getContext(), false);
                         h.P = url;
                         h.Q = false;
-                        CharSequence[] charSequenceArr = {jb6.M0(2131747550, null), jb6.M0(2131751704, null)};
+                        CharSequence[] charSequenceArr = {k96.M0(2131747624, null), k96.M0(2131751755, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: m1
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i5) {
@@ -90,14 +90,14 @@ public final class o1 implements Runnable {
                                 }
                                 if (i5 == 1) {
                                     String str = url;
-                                    gm.g(str);
-                                    if (gm.C3()) {
+                                    gl.g(str);
+                                    if (gl.C3()) {
                                         if (str.startsWith("@")) {
-                                            ts2.u(null, 2131743352, c41.b0(dVar), R.raw.copy, 36);
+                                            ir2.v(null, 2131743426, u21.b0(dVar), R.raw.copy, 36);
                                         } else if (str.startsWith("#") || str.startsWith("$")) {
-                                            ts2.u(null, 2131749119, c41.b0(dVar), R.raw.copy, 36);
+                                            ir2.v(null, 2131749170, u21.b0(dVar), R.raw.copy, 36);
                                         } else {
-                                            ts2.u(null, 2131748678, c41.b0(dVar), R.raw.copy, 36);
+                                            ir2.v(null, 2131748729, u21.b0(dVar), R.raw.copy, 36);
                                         }
                                     }
                                 }
@@ -129,331 +129,331 @@ public final class o1 implements Runnable {
                 gbVar.m.start();
                 return;
             case 3:
-                n20 n20Var = (n20) this.b;
-                i30 i30Var = n20Var.E;
+                n10 n10Var = (n10) this.b;
+                i20 i20Var = n10Var.E;
                 if (MediaController.w().v0 != null) {
-                    int i5 = i30Var.C2 + 1;
-                    i30Var.C2 = i5;
+                    int i5 = i20Var.C2 + 1;
+                    i20Var.C2 = i5;
                     if (i5 != 1) {
                         if (i5 != 2) {
                             MediaController.w().l0(true, 13.0f);
                             return;
                         } else {
                             MediaController.w().l0(true, 7.0f);
-                            gm.d3(this, 2000L);
+                            gl.d3(this, 2000L);
                             return;
                         }
                     }
-                    n20Var.w = true;
-                    i30Var.A2 = 1;
+                    n10Var.w = true;
+                    i20Var.A2 = 1;
                     if (MediaController.w().C()) {
-                        i30Var.S0();
-                    } else if (i30Var.A2 == 1) {
-                        gm.r(i30Var.H2);
-                        i30Var.E2 = 0L;
+                        i20Var.S0();
+                    } else if (i20Var.A2 == 1) {
+                        gl.r(i20Var.H2);
+                        i20Var.E2 = 0L;
                     }
                     MediaController.w().l0(true, 4.0f);
-                    gm.d3(this, 2000L);
+                    gl.d3(this, 2000L);
                     return;
                 }
                 return;
             case 4:
-                i30 i30Var2 = (i30) this.b;
-                ndc ndcVar = MediaController.w().j0;
-                long U = ndcVar == null ? 0L : ndcVar.U();
+                i20 i20Var2 = (i20) this.b;
+                lbc lbcVar = MediaController.w().j0;
+                long U = lbcVar == null ? 0L : lbcVar.U();
                 if (U == 0 || U == -9223372036854775807L) {
-                    i30Var2.D2 = System.currentTimeMillis();
+                    i20Var2.D2 = System.currentTimeMillis();
                     return;
                 }
-                float f2 = i30Var2.B2;
+                float f2 = i20Var2.B2;
                 long currentTimeMillis = System.currentTimeMillis();
-                long j = currentTimeMillis - i30Var2.D2;
-                i30Var2.D2 = currentTimeMillis;
-                long j2 = currentTimeMillis - i30Var2.E2;
-                int i6 = i30Var2.C2;
+                long j = currentTimeMillis - i20Var2.D2;
+                i20Var2.D2 = currentTimeMillis;
+                long j2 = currentTimeMillis - i20Var2.E2;
+                int i6 = i20Var2.C2;
                 float f3 = ((long) ((f2 * r1) + (((i6 == 1 ? 3L : i6 == 2 ? 6L : 12L) * j) - j))) / U;
                 if (f3 < 0.0f) {
                     f3 = 0.0f;
                 }
-                i30Var2.B2 = f3;
-                k47 k47Var = MediaController.w().v0;
-                if (k47Var != null && k47Var.I3()) {
+                i20Var2.B2 = f3;
+                k27 k27Var = MediaController.w().v0;
+                if (k27Var != null && k27Var.I3()) {
                     if (!MediaController.w().C()) {
-                        MediaController.w().v0.b0 = i30Var2.B2;
+                        MediaController.w().v0.b0 = i20Var2.B2;
                     }
-                    i30Var2.W0(k47Var, false);
+                    i20Var2.W0(k27Var, false);
                 }
-                if (i30Var2.A2 == 1 && i30Var2.C2 > 0 && MediaController.w().C()) {
-                    if (j2 > 200 || i30Var2.B2 == 0.0f) {
-                        i30Var2.E2 = currentTimeMillis;
+                if (i20Var2.A2 == 1 && i20Var2.C2 > 0 && MediaController.w().C()) {
+                    if (j2 > 200 || i20Var2.B2 == 0.0f) {
+                        i20Var2.E2 = currentTimeMillis;
                         MediaController.w().h0(MediaController.w().v0, f3);
                     }
-                    if (i30Var2.C2 <= 0 || i30Var2.B2 <= 0.0f) {
+                    if (i20Var2.C2 <= 0 || i20Var2.B2 <= 0.0f) {
                         return;
                     }
-                    gm.d3(i30Var2.H2, 16L);
+                    gl.d3(i20Var2.H2, 16L);
                     return;
                 }
                 return;
             case 5:
                 UsersSelectActivity usersSelectActivity = new UsersSelectActivity(null);
-                usersSelectActivity.P = new vh6();
+                usersSelectActivity.P = new vf6();
                 usersSelectActivity.Q = new ArrayList();
                 usersSelectActivity.y = (byte) 1;
                 usersSelectActivity.H = false;
-                v70 v70Var = (v70) this.b;
-                usersSelectActivity.T = v70Var.Z();
-                usersSelectActivity.n = new l0(this, (byte) 26);
-                v70Var.presentFragment(usersSelectActivity);
+                v60 v60Var = (v60) this.b;
+                usersSelectActivity.T = v60Var.Y();
+                usersSelectActivity.n = new l0(this, (byte) 24);
+                v60Var.presentFragment(usersSelectActivity);
                 return;
             case 6:
-                s76 s76Var = (s76) this.b;
-                os3 os3Var = s76Var.c;
-                n80 n80Var = s76Var.a;
-                if (s76Var.E) {
-                    if (s76Var.x) {
-                        s76Var.x = false;
+                s56 s56Var = (s56) this.b;
+                er3 er3Var = s56Var.c;
+                n70 n70Var = s56Var.a;
+                if (s56Var.E) {
+                    if (s56Var.x) {
+                        s56Var.x = false;
                         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-                        n80Var.d = currentAnimationTimeMillis;
-                        n80Var.f = -1L;
-                        n80Var.e = currentAnimationTimeMillis;
-                        n80Var.g = 0.5f;
+                        n70Var.d = currentAnimationTimeMillis;
+                        n70Var.f = -1L;
+                        n70Var.e = currentAnimationTimeMillis;
+                        n70Var.g = 0.5f;
                     }
-                    if ((n80Var.f > 0 && AnimationUtils.currentAnimationTimeMillis() > n80Var.f + n80Var.h) || !s76Var.e()) {
-                        s76Var.E = false;
+                    if ((n70Var.f > 0 && AnimationUtils.currentAnimationTimeMillis() > n70Var.f + n70Var.h) || !s56Var.e()) {
+                        s56Var.E = false;
                         return;
                     }
-                    if (s76Var.y) {
-                        s76Var.y = false;
+                    if (s56Var.y) {
+                        s56Var.y = false;
                         long uptimeMillis = SystemClock.uptimeMillis();
                         MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
-                        os3Var.onTouchEvent(obtain);
+                        er3Var.onTouchEvent(obtain);
                         obtain.recycle();
                     }
-                    if (n80Var.e == 0) {
-                        zo4.k("Cannot compute scroll delta before calling start()");
+                    if (n70Var.e == 0) {
+                        wn4.j("Cannot compute scroll delta before calling start()");
                         return;
                     }
                     long currentAnimationTimeMillis2 = AnimationUtils.currentAnimationTimeMillis();
-                    float a = n80Var.a(currentAnimationTimeMillis2);
-                    long j3 = currentAnimationTimeMillis2 - n80Var.e;
-                    n80Var.e = currentAnimationTimeMillis2;
-                    s76Var.G.scrollListBy((int) (j3 * ((a * 4.0f) + ((-4.0f) * a * a)) * n80Var.c));
-                    WeakHashMap weakHashMap = kfc.a;
-                    os3Var.postOnAnimation(this);
+                    float a = n70Var.a(currentAnimationTimeMillis2);
+                    long j3 = currentAnimationTimeMillis2 - n70Var.e;
+                    n70Var.e = currentAnimationTimeMillis2;
+                    s56Var.G.scrollListBy((int) (j3 * ((a * 4.0f) + ((-4.0f) * a * a)) * n70Var.c));
+                    WeakHashMap weakHashMap = jdc.a;
+                    er3Var.postOnAnimation(this);
                     return;
                 }
                 return;
             case 7:
-                hg0 hg0Var = (hg0) this.b;
-                eg0 eg0Var = hg0Var.b;
-                if (eg0Var == null) {
-                    eg0Var = new eg0(hg0Var, b2);
-                    hg0Var.b = eg0Var;
+                hf0 hf0Var = (hf0) this.b;
+                ef0 ef0Var = hf0Var.b;
+                if (ef0Var == null) {
+                    ef0Var = new ef0(hf0Var, b2);
+                    hf0Var.b = ef0Var;
                 }
-                int i7 = hg0Var.c + 1;
-                hg0Var.c = i7;
-                eg0Var.b = i7;
-                hg0Var.postDelayed(eg0Var, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                int i7 = hf0Var.c + 1;
+                hf0Var.c = i7;
+                ef0Var.b = i7;
+                hf0Var.postDelayed(ef0Var, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 8:
-                for (Thread thread : dl0.w.keySet()) {
+                for (Thread thread : dk0.w.keySet()) {
                     if (!thread.isAlive()) {
-                        dl0.w.remove(thread);
+                        dk0.w.remove(thread);
                     }
                 }
-                if (dl0.w.isEmpty()) {
-                    dl0.x = false;
+                if (dk0.w.isEmpty()) {
+                    dk0.x = false;
                     return;
                 } else {
-                    gm.d3(((dl0) this.b).p, 5000L);
+                    gl.d3(((dk0) this.b).p, 5000L);
                     return;
                 }
             case 9:
-                my0 my0Var = (my0) this.b;
-                if (my0Var.H != this || (z = my0Var.J)) {
+                fx0 fx0Var = (fx0) this.b;
+                if (fx0Var.H != this || (z = fx0Var.J)) {
                     return;
                 }
-                my0Var.H = null;
+                fx0Var.H = null;
                 if (z) {
                     return;
                 }
-                my0Var.b.setVisibility(0);
-                if (my0Var.j0()) {
+                fx0Var.b.setVisibility(0);
+                if (fx0Var.j0()) {
                     return;
                 }
-                if (my0Var.K) {
-                    my0Var.c.setLayerType(2, null);
+                if (fx0Var.K) {
+                    fx0Var.c.setLayerType(2, null);
                 }
-                boolean z6 = my0Var.V0;
-                ViewGroup viewGroup = my0Var.b;
+                boolean z6 = fx0Var.V0;
+                ViewGroup viewGroup = fx0Var.b;
                 if (z6) {
-                    viewGroup.setTranslationX(gm.L(48.0f));
-                    my0Var.b.setAlpha(0.0f);
-                    my0Var.b.setTranslationY(0.0f);
+                    viewGroup.setTranslationX(gl.L(48.0f));
+                    fx0Var.b.setAlpha(0.0f);
+                    fx0Var.b.setTranslationY(0.0f);
                 } else {
-                    viewGroup.setTranslationY(Math.max(0, Math.min(gm.n, my0Var.O())) + gm.L(10.0f) + my0Var.P() + my0Var.f);
+                    viewGroup.setTranslationY(Math.max(0, Math.min(gl.n, fx0Var.P())) + gl.L(10.0f) + fx0Var.Q() + fx0Var.f);
                 }
-                my0Var.e0();
-                my0Var.B0 = (byte) 1;
-                ValueAnimator valueAnimator2 = my0Var.C0;
+                fx0Var.e0();
+                fx0Var.B0 = (byte) 1;
+                ValueAnimator valueAnimator2 = fx0Var.C0;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(my0Var.D0, 1.0f);
-                my0Var.C0 = ofFloat;
-                ofFloat.addUpdateListener(new ay0(my0Var, (byte) 0));
-                my0Var.A0 = new AnimatorSet();
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(fx0Var.D0, 1.0f);
+                fx0Var.C0 = ofFloat;
+                ofFloat.addUpdateListener(new sw0(fx0Var, (byte) 0));
+                fx0Var.A0 = new AnimatorSet();
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(my0Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(my0Var.b, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(my0Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
-                ofFloat2.addUpdateListener(new ay0(my0Var, (byte) 1));
+                arrayList.add(ObjectAnimator.ofFloat(fx0Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(fx0Var.b, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(fx0Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
+                ofFloat2.addUpdateListener(new sw0(fx0Var, (byte) 1));
                 arrayList.add(ofFloat2);
-                arrayList.add(ObjectAnimator.ofInt(my0Var.Z, so.d, my0Var.p0 ? my0Var.q0 : 0));
-                arrayList.add(my0Var.C0);
-                my0Var.B(arrayList, true);
-                my0Var.A0.playTogether(arrayList);
-                boolean z7 = my0Var.V0;
-                AnimatorSet animatorSet = my0Var.A0;
+                arrayList.add(ObjectAnimator.ofInt(fx0Var.Z, rn.d, fx0Var.p0 ? fx0Var.q0 : 0));
+                arrayList.add(fx0Var.C0);
+                fx0Var.C(arrayList, true);
+                fx0Var.A0.playTogether(arrayList);
+                boolean z7 = fx0Var.V0;
+                AnimatorSet animatorSet = fx0Var.A0;
                 if (z7) {
                     animatorSet.setDuration(250L);
-                    my0Var.A0.setInterpolator(d53.f);
+                    fx0Var.A0.setInterpolator(s33.f);
                 } else {
-                    animatorSet.setDuration(my0Var.k0);
-                    my0Var.A0.setInterpolator(my0Var.l0);
+                    animatorSet.setDuration(fx0Var.k0);
+                    fx0Var.A0.setInterpolator(fx0Var.l0);
                 }
-                my0Var.A0.setStartDelay(my0Var.E ? 0L : 20L);
-                my0Var.A0.setInterpolator(my0Var.l0);
-                my0Var.M0.d();
-                my0Var.A0.addListener(new fy0(my0Var, (byte) 0));
-                if (my0Var.L0) {
-                    nm7.e().k(99, 512);
+                fx0Var.A0.setStartDelay(fx0Var.E ? 0L : 20L);
+                fx0Var.A0.setInterpolator(fx0Var.l0);
+                fx0Var.M0.d();
+                fx0Var.A0.addListener(new yw0(fx0Var, (byte) 0));
+                if (fx0Var.L0) {
+                    kk7.e().k(98, 512);
                 }
-                my0Var.A0.start();
+                fx0Var.A0.start();
                 return;
             case 10:
                 BubbleActivity bubbleActivity = (BubbleActivity) this.b;
                 if (bubbleActivity.Z == this) {
-                    if (gm.n2(true)) {
-                        if (e21.a) {
-                            fc4.b("lock app");
+                    if (gl.n2(true)) {
+                        if (w01.a) {
+                            fa4.b("lock app");
                         }
                         bubbleActivity.A();
-                    } else if (e21.a) {
-                        fc4.b("didn't pass lock check");
+                    } else if (w01.a) {
+                        fa4.b("didn't pass lock check");
                     }
                     bubbleActivity.Z = null;
                     return;
                 }
                 return;
             case 11:
-                lb1 lb1Var = (lb1) this.b;
-                CameraView cameraView = lb1Var.d;
-                if (cameraView == null || lb1Var.O || cameraView.getCameraSession() == null) {
+                da1 da1Var = (da1) this.b;
+                CameraView cameraView = da1Var.d;
+                if (cameraView == null || da1Var.O || cameraView.getCameraSession() == null) {
                     return;
                 }
-                lb1Var.f.post(new yt0(this, (byte) 16));
+                da1Var.f.post(new nv0(this, (byte) 13));
                 return;
             case 12:
-                zb1 zb1Var = (zb1) this.b;
-                zb1Var.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                zb1Var.f.performHapticFeedback(0);
-                Runnable runnable = zb1Var.j;
+                ra1 ra1Var = (ra1) this.b;
+                ra1Var.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                ra1Var.f.performHapticFeedback(0);
+                Runnable runnable = ra1Var.j;
                 if (runnable != null) {
                     runnable.run();
                     return;
                 }
                 return;
             case 13:
-                gd1 gd1Var = (gd1) this.b;
-                kd1 kd1Var = gd1Var.f;
-                if (kd1Var == null || gd1Var.e == null) {
+                yb1 yb1Var = (yb1) this.b;
+                cc1 cc1Var = yb1Var.f;
+                if (cc1Var == null || yb1Var.e == null) {
                     return;
                 }
-                float[] fArr = gd1Var.h;
-                float[] fArr2 = gd1Var.g;
-                float width = kd1Var.getWidth();
-                float height = kd1Var.getHeight();
+                float[] fArr = yb1Var.h;
+                float[] fArr2 = yb1Var.g;
+                float width = cc1Var.getWidth();
+                float height = cc1Var.getHeight();
                 float f4 = Float.MAX_VALUE;
                 float f5 = -3.4028235E38f;
                 int i8 = 0;
                 while (i8 < 4) {
-                    gd1Var.d(kd1Var, i8 % 2 == 0 ? 0.0f : width, i8 < 2 ? 0.0f : height);
+                    yb1Var.d(cc1Var, i8 % 2 == 0 ? 0.0f : width, i8 < 2 ? 0.0f : height);
                     f4 = Math.min(f4, fArr2[1]);
                     f5 = Math.max(f5, fArr2[1]);
                     i8++;
                 }
                 float f6 = width / 2.0f;
                 float f7 = height / 2.0f;
-                float d = gd1Var.d(kd1Var, f6, f7);
+                float d = yb1Var.d(cc1Var, f6, f7);
                 float f8 = fArr2[1];
-                float d2 = gd1Var.d(kd1Var, width, f7) - d;
+                float d2 = yb1Var.d(cc1Var, width, f7) - d;
                 float f9 = fArr2[1] - f8;
                 float hypot = width <= 0.0f ? 1.0f : ((float) Math.hypot(d2, f9)) / f6;
-                gd1.g(kd1Var, fArr);
-                gd1Var.e.d(d, f8, f4, f5, (float) Math.toDegrees(Math.atan2(f9, d2)), hypot, kd1Var.getEditText().getPaint(), kd1Var.getEditText().getCurrentTextColor(), fArr[0], fArr[1], fArr[2], kd1Var.getEditText().getLayout() != null ? kd1Var.getEditText().getLayout().getAlignment() : null);
-                ViewParent parent = kd1Var.getParent();
-                ad1 ad1Var = gd1Var.e;
+                yb1.g(cc1Var, fArr);
+                yb1Var.e.d(d, f8, f4, f5, (float) Math.toDegrees(Math.atan2(f9, d2)), hypot, cc1Var.getEditText().getPaint(), cc1Var.getEditText().getCurrentTextColor(), fArr[0], fArr[1], fArr[2], cc1Var.getEditText().getLayout() != null ? cc1Var.getEditText().getLayout().getAlignment() : null);
+                ViewParent parent = cc1Var.getParent();
+                tb1 tb1Var = yb1Var.e;
                 if (parent == null) {
-                    ad1Var.e(null, null);
+                    tb1Var.e(null, null);
                 } else {
-                    ad1Var.e(kd1Var.x(-1), kd1Var.x(1));
+                    tb1Var.e(cc1Var.x(-1), cc1Var.x(1));
                 }
-                gd1Var.e.postOnAnimation(this);
+                yb1Var.e.postOnAnimation(this);
                 return;
             case 14:
-                kd1 kd1Var2 = (kd1) this.b;
-                if (kd1Var2.isAttachedToWindow()) {
-                    kd1Var2.z();
-                    kd1Var2.postOnAnimation(this);
+                cc1 cc1Var2 = (cc1) this.b;
+                if (cc1Var2.isAttachedToWindow()) {
+                    cc1Var2.z();
+                    cc1Var2.postOnAnimation(this);
                     return;
                 }
                 return;
             case 15:
-                o42 o42Var = (o42) this.b;
-                if (o42Var.T) {
-                    o42Var.O.clear();
-                    o42Var.Q.clear();
-                    o42Var.R.clear();
-                    o42Var.f();
+                c32 c32Var = (c32) this.b;
+                if (c32Var.T) {
+                    c32Var.O.clear();
+                    c32Var.Q.clear();
+                    c32Var.R.clear();
+                    c32Var.f();
                     return;
                 }
                 return;
             case 16:
-                w62 w62Var = (w62) this.b;
-                x62 x62Var = w62Var.Q;
-                if (x62Var.K == null || x62Var.L) {
+                l52 l52Var = (l52) this.b;
+                m52 m52Var = l52Var.Q;
+                if (m52Var.K == null || m52Var.L) {
                     return;
                 }
-                int computeVerticalScrollOffset = x62Var.r.computeVerticalScrollOffset();
-                boolean z8 = x62Var.r.computeVerticalScrollExtent() + computeVerticalScrollOffset >= (w62Var.e() - w62Var.r) + w62Var.n;
-                float max = Math.max(0.0f, (x62Var.F - Math.max(0, computeVerticalScrollOffset - x62Var.getListTopPadding())) - gm.L(52.0f));
-                float max2 = Math.max(0.0f, ((x62Var.r.getMeasuredHeight() - (x62Var.F - computeVerticalScrollOffset)) - x62Var.getListTopPadding()) - gm.L(84.0f));
-                float L = gm.L(32.0f);
-                float L2 = (max >= L || computeVerticalScrollOffset <= x62Var.getListTopPadding()) ? max2 < L ? gm.L(6.0f) * (1.0f - (max2 / L)) : 0.0f : (-(1.0f - (max / L))) * gm.L(6.0f);
+                int computeVerticalScrollOffset = m52Var.r.computeVerticalScrollOffset();
+                boolean z8 = m52Var.r.computeVerticalScrollExtent() + computeVerticalScrollOffset >= (l52Var.e() - l52Var.r) + l52Var.n;
+                float max = Math.max(0.0f, (m52Var.F - Math.max(0, computeVerticalScrollOffset - m52Var.getListTopPadding())) - gl.L(52.0f));
+                float max2 = Math.max(0.0f, ((m52Var.r.getMeasuredHeight() - (m52Var.F - computeVerticalScrollOffset)) - m52Var.getListTopPadding()) - gl.L(84.0f));
+                float L = gl.L(32.0f);
+                float L2 = (max >= L || computeVerticalScrollOffset <= m52Var.getListTopPadding()) ? max2 < L ? gl.L(6.0f) * (1.0f - (max2 / L)) : 0.0f : (-(1.0f - (max / L))) * gl.L(6.0f);
                 int i9 = (int) L2;
-                if (Math.abs(i9) > 0 && x62Var.r.canScrollVertically(i9) && (L2 <= 0.0f || !z8)) {
-                    x62Var.F += L2;
-                    x62Var.r.scrollBy(0, i9);
-                    w62Var.invalidate();
+                if (Math.abs(i9) > 0 && m52Var.r.canScrollVertically(i9) && (L2 <= 0.0f || !z8)) {
+                    m52Var.F += L2;
+                    m52Var.r.scrollBy(0, i9);
+                    l52Var.invalidate();
                 }
-                w62Var.M = true;
-                w62Var.postDelayed(this, 15L);
+                l52Var.M = true;
+                l52Var.postDelayed(this, 15L);
                 return;
             case 17:
-                v72 v72Var = (v72) this.b;
-                o1 o1Var = v72Var.V0;
-                ng8 ng8Var = v72Var.h1;
-                if (ng8Var != null) {
-                    EditTextBoldCursor editField = ng8Var.getEditField();
-                    if (v72Var.I || editField == null || !v72Var.H || v72Var.f1 || gm.D || gm.E || !gm.O1()) {
+                k62 k62Var = (k62) this.b;
+                o1 o1Var = k62Var.V0;
+                le8 le8Var = k62Var.h1;
+                if (le8Var != null) {
+                    EditTextBoldCursor editField = le8Var.getEditField();
+                    if (k62Var.I || editField == null || !k62Var.H || k62Var.f1 || gl.D || gl.E || !gl.O1()) {
                         return;
                     }
                     editField.requestFocus();
-                    gm.E3(editField);
-                    gm.r(o1Var);
-                    gm.d3(o1Var, 100L);
+                    gl.E3(editField);
+                    gl.r(o1Var);
+                    gl.d3(o1Var, 100L);
                     return;
                 }
                 return;
@@ -478,54 +478,54 @@ public final class o1 implements Runnable {
                 contactsActivity.g0 = false;
                 return;
             case 20:
-                mg3 mg3Var = (mg3) this.b;
-                mg3Var.o0.onDismiss(mg3Var.w0);
+                ze3 ze3Var = (ze3) this.b;
+                ze3Var.o0.onDismiss(ze3Var.w0);
                 return;
             case 21:
-                gm.r(this);
-                un3 un3Var = (un3) this.b;
-                if (un3Var.r != 1 || un3Var.s == null) {
+                gl.r(this);
+                jm3 jm3Var = (jm3) this.b;
+                if (jm3Var.r != 1 || jm3Var.s == null) {
                     return;
                 }
-                Editable text = un3Var.f.a.F0.getText();
+                Editable text = jm3Var.f.a.F0.getText();
                 boolean z9 = text != null && text.toString().trim().length() > 0;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
-                boolean z10 = un3Var.s.getRightMode() == 2;
-                long j4 = un3Var.r0;
+                boolean z10 = jm3Var.s.getRightMode() == 2;
+                long j4 = jm3Var.r0;
                 if (uptimeMillis2 - j4 >= 300) {
                     if (z10) {
-                        if (!z9 || un3Var.U > j4) {
-                            un3Var.s.setRightMode(0);
-                            un3Var.r0 = uptimeMillis2;
+                        if (!z9 || jm3Var.U > j4) {
+                            jm3Var.s.setRightMode(0);
+                            jm3Var.r0 = uptimeMillis2;
                         }
-                    } else if (z9 && uptimeMillis2 - un3Var.U > 1200 && uptimeMillis2 - un3Var.q0 > 1200) {
-                        un3Var.s.setRightMode(2);
-                        un3Var.r0 = uptimeMillis2;
+                    } else if (z9 && uptimeMillis2 - jm3Var.U > 1200 && uptimeMillis2 - jm3Var.q0 > 1200) {
+                        jm3Var.s.setRightMode(2);
+                        jm3Var.r0 = uptimeMillis2;
                     }
                 }
-                gm.d3(this, 50L);
+                gl.d3(this, 50L);
                 return;
             case 22:
-                xn3 xn3Var = (xn3) this.b;
-                xn3Var.j1 = false;
-                if (xn3Var.isAttachedToWindow() && xn3Var.getVisibility() == 0) {
-                    xn3Var.invalidate();
-                    xn3Var.j1 = true;
-                    xn3Var.postOnAnimation(this);
+                mm3 mm3Var = (mm3) this.b;
+                mm3Var.j1 = false;
+                if (mm3Var.isAttachedToWindow() && mm3Var.getVisibility() == 0) {
+                    mm3Var.invalidate();
+                    mm3Var.j1 = true;
+                    mm3Var.postOnAnimation(this);
                     return;
                 }
                 return;
             case 23:
-                ap3 ap3Var = (ap3) this.b;
-                TextView textView = ap3Var.a;
+                qn3 qn3Var = (qn3) this.b;
+                TextView textView = qn3Var.a;
                 Editable editableText = textView.getEditableText();
                 if (editableText == null) {
-                    ap3Var.g = false;
+                    qn3Var.g = false;
                     return;
                 }
                 long uptimeMillis3 = SystemClock.uptimeMillis();
-                yo3[] yo3VarArr = (yo3[]) editableText.getSpans(0, editableText.length(), yo3.class);
-                int length = yo3VarArr.length;
+                on3[] on3VarArr = (on3[]) editableText.getSpans(0, editableText.length(), on3.class);
+                int length = on3VarArr.length;
                 int i10 = 0;
                 boolean z11 = false;
                 while (true) {
@@ -533,79 +533,79 @@ public final class o1 implements Runnable {
                     if (i10 >= length) {
                         boolean z12 = z5;
                         float f10 = 0.5f;
-                        xo3[] xo3VarArr2 = (xo3[]) editableText.getSpans(0, editableText.length(), xo3.class);
-                        int length2 = xo3VarArr2.length;
+                        nn3[] nn3VarArr2 = (nn3[]) editableText.getSpans(0, editableText.length(), nn3.class);
+                        int length2 = nn3VarArr2.length;
                         int i12 = 0;
                         while (i12 < length2) {
-                            xo3 xo3Var = xo3VarArr2[i12];
-                            int spanStart = editableText.getSpanStart(xo3Var);
-                            int spanEnd = editableText.getSpanEnd(xo3Var);
+                            nn3 nn3Var = nn3VarArr2[i12];
+                            int spanStart = editableText.getSpanStart(nn3Var);
+                            int spanEnd = editableText.getSpanEnd(nn3Var);
                             if (spanStart < 0 || spanEnd <= spanStart) {
-                                xo3VarArr = xo3VarArr2;
+                                nn3VarArr = nn3VarArr2;
                                 i = length2;
                                 b = b2;
-                                editableText.removeSpan(xo3Var);
+                                editableText.removeSpan(nn3Var);
                             } else {
                                 b = b2;
-                                if (kt6.x(uptimeMillis3 - xo3Var.a, 750.0f, 1.0f, 0.0f) >= 1.0f) {
-                                    editableText.removeSpan(xo3Var);
-                                    xo3VarArr = xo3VarArr2;
+                                if (ls6.w(uptimeMillis3 - nn3Var.a, 750.0f, 1.0f, 0.0f) >= 1.0f) {
+                                    editableText.removeSpan(nn3Var);
+                                    nn3VarArr = nn3VarArr2;
                                     i = length2;
                                 } else {
-                                    long j5 = xo3Var.b;
+                                    long j5 = nn3Var.b;
                                     if (j5 <= 0) {
-                                        j5 = xo3Var.a;
+                                        j5 = nn3Var.a;
                                     }
                                     if (uptimeMillis3 >= j5 - 16) {
-                                        if (!xo3Var.e) {
-                                            xo3Var.e = z12;
-                                            mn3 mn3Var = ap3Var.h;
-                                            if (mn3Var != null) {
-                                                un3 un3Var2 = mn3Var.b;
-                                                float[] fArr3 = un3Var2.D0;
-                                                ln lnVar = un3Var2.Y;
-                                                if (lnVar == null || lnVar.c < 0.2f || !un3Var2.s(fArr3) || (layout = un3Var2.f.a.F0.getLayout()) == null || spanEnd > layout.getText().length()) {
-                                                    xo3VarArr = xo3VarArr2;
+                                        if (!nn3Var.e) {
+                                            nn3Var.e = z12;
+                                            bm3 bm3Var = qn3Var.h;
+                                            if (bm3Var != null) {
+                                                jm3 jm3Var2 = bm3Var.b;
+                                                float[] fArr3 = jm3Var2.D0;
+                                                lm lmVar = jm3Var2.Y;
+                                                if (lmVar == null || lmVar.c < 0.2f || !jm3Var2.s(fArr3) || (layout = jm3Var2.f.a.F0.getLayout()) == null || spanEnd > layout.getText().length()) {
+                                                    nn3VarArr = nn3VarArr2;
                                                     i = length2;
                                                 } else {
                                                     int lineForOffset = layout.getLineForOffset(spanStart);
                                                     float primaryHorizontal = layout.getPrimaryHorizontal(spanStart);
                                                     float primaryHorizontal2 = layout.getLineForOffset(spanEnd) == lineForOffset ? layout.getPrimaryHorizontal(spanEnd) : layout.getLineRight(lineForOffset);
-                                                    xo3VarArr = xo3VarArr2;
-                                                    zn3 zn3Var = un3Var2.x;
+                                                    nn3VarArr = nn3VarArr2;
+                                                    om3 om3Var = jm3Var2.x;
                                                     float f11 = primaryHorizontal + fArr3[b];
                                                     i = length2;
                                                     float lineTop = layout.getLineTop(lineForOffset) + fArr3[1];
                                                     float max3 = Math.max(primaryHorizontal, primaryHorizontal2) + fArr3[b];
                                                     float lineBottom = layout.getLineBottom(lineForOffset) + fArr3[1];
-                                                    int i13 = ((int) (un3Var2.Q * 2.5f)) + 2;
-                                                    Random random = zn3Var.t;
+                                                    int i13 = ((int) (jm3Var2.Q * 2.5f)) + 2;
+                                                    Random random = om3Var.t;
                                                     int i14 = i13 + (random.nextFloat() < f10 ? (byte) 1 : b);
                                                     int i15 = b;
                                                     while (i15 < i14) {
-                                                        zn3 zn3Var2 = zn3Var;
+                                                        om3 om3Var2 = om3Var;
                                                         float max4 = (Math.max(1.0f, max3 - f11) * random.nextFloat()) + f11;
-                                                        float A = td4.A(lineBottom, lineTop, wi8.e(random, 0.85f, 0.15f), lineTop);
-                                                        float L3 = gm.L((random.nextFloat() * 7.0f) + 3.0f);
+                                                        float A = tb4.A(lineBottom, lineTop, ug8.e(random, 0.85f, 0.15f), lineTop);
+                                                        float L3 = gl.L((random.nextFloat() * 7.0f) + 3.0f);
                                                         double nextFloat = ((random.nextFloat() - f10) * 2.2f) - 1.5707963267948966d;
-                                                        zn3Var2.j(max4, A, ((float) Math.cos(nextFloat)) * L3, ((float) Math.sin(nextFloat)) * L3, wi8.e(random, 0.55f, 0.45f), wi8.e(random, f10, 0.55f));
+                                                        om3Var2.j(max4, A, ((float) Math.cos(nextFloat)) * L3, ((float) Math.sin(nextFloat)) * L3, ug8.e(random, 0.55f, 0.45f), ug8.e(random, f10, 0.55f));
                                                         i15++;
                                                         lineTop = lineTop;
-                                                        zn3Var = zn3Var2;
+                                                        om3Var = om3Var2;
                                                         i14 = i14;
                                                         f10 = 0.5f;
                                                     }
                                                 }
                                                 i2 = 33;
-                                                editableText.setSpan(xo3Var, spanStart, spanEnd, i2);
+                                                editableText.setSpan(nn3Var, spanStart, spanEnd, i2);
                                             }
                                         }
-                                        xo3VarArr = xo3VarArr2;
+                                        nn3VarArr = nn3VarArr2;
                                         i = length2;
                                         i2 = i11;
-                                        editableText.setSpan(xo3Var, spanStart, spanEnd, i2);
+                                        editableText.setSpan(nn3Var, spanStart, spanEnd, i2);
                                     } else {
-                                        xo3VarArr = xo3VarArr2;
+                                        nn3VarArr = nn3VarArr2;
                                         i = length2;
                                     }
                                     z11 = true;
@@ -613,47 +613,47 @@ public final class o1 implements Runnable {
                             }
                             i12++;
                             b2 = b;
-                            xo3VarArr2 = xo3VarArr;
+                            nn3VarArr2 = nn3VarArr;
                             length2 = i;
                             i11 = 33;
                             f10 = 0.5f;
                             z12 = true;
                         }
-                        wo3[] wo3VarArr = (wo3[]) editableText.getSpans(b2, editableText.length(), wo3.class);
-                        for (wo3 wo3Var : wo3VarArr) {
-                            if (wo3Var.a != 0) {
-                                int spanStart2 = editableText.getSpanStart(wo3Var);
-                                int spanEnd2 = editableText.getSpanEnd(wo3Var);
+                        mn3[] mn3VarArr = (mn3[]) editableText.getSpans(b2, editableText.length(), mn3.class);
+                        for (mn3 mn3Var : mn3VarArr) {
+                            if (mn3Var.a != 0) {
+                                int spanStart2 = editableText.getSpanStart(mn3Var);
+                                int spanEnd2 = editableText.getSpanEnd(mn3Var);
                                 if (spanStart2 >= 0 && spanEnd2 > spanStart2) {
-                                    long j6 = wo3Var.a;
+                                    long j6 = mn3Var.a;
                                     if (j6 == 0 || uptimeMillis3 < j6 + 300) {
-                                        editableText.setSpan(wo3Var, spanStart2, spanEnd2, 33);
+                                        editableText.setSpan(mn3Var, spanStart2, spanEnd2, 33);
                                         z11 = true;
                                     }
                                 }
-                                editableText.removeSpan(wo3Var);
+                                editableText.removeSpan(mn3Var);
                             }
                         }
-                        zo3 zo3Var = ap3Var.j;
-                        if (zo3Var == null || ap3Var.m <= 0.0f || editableText.getSpanStart(zo3Var) < 0) {
+                        pn3 pn3Var = qn3Var.j;
+                        if (pn3Var == null || qn3Var.m <= 0.0f || editableText.getSpanStart(pn3Var) < 0) {
                             z2 = false;
                             z3 = z11;
                         } else {
                             z2 = false;
-                            editableText.setSpan(ap3Var.j, 0, editableText.length(), 18);
+                            editableText.setSpan(qn3Var.j, 0, editableText.length(), 18);
                             z3 = true;
                         }
                         if (z3) {
                             textView.postOnAnimation(this);
                             return;
                         } else {
-                            ap3Var.g = z2;
+                            qn3Var.g = z2;
                             return;
                         }
                     }
-                    yo3 yo3Var = yo3VarArr[i10];
-                    int spanStart3 = editableText.getSpanStart(yo3Var);
-                    int spanEnd3 = editableText.getSpanEnd(yo3Var);
+                    on3 on3Var = on3VarArr[i10];
+                    int spanStart3 = editableText.getSpanStart(on3Var);
+                    int spanEnd3 = editableText.getSpanEnd(on3Var);
                     if (spanStart3 < 0 || spanEnd3 <= spanStart3) {
                         z4 = z5;
                         i3 = i10;
@@ -662,77 +662,77 @@ public final class o1 implements Runnable {
                         i3 = i10;
                         z4 = z5;
                         i4 = length;
-                        if (uptimeMillis3 < (Math.max(0, yo3Var.c - 1) * 22) + yo3Var.a + 320) {
-                            editableText.setSpan(yo3Var, spanStart3, spanEnd3, 33);
+                        if (uptimeMillis3 < (Math.max(0, on3Var.c - 1) * 22) + on3Var.a + 320) {
+                            editableText.setSpan(on3Var, spanStart3, spanEnd3, 33);
                             z11 = z4;
                             i10 = i3 + 1;
                             z5 = z4;
                             length = i4;
                         }
                     }
-                    editableText.removeSpan(yo3Var);
+                    editableText.removeSpan(on3Var);
                     i10 = i3 + 1;
                     z5 = z4;
                     length = i4;
                 }
                 break;
             case 24:
-                if (!((op3) this.b).a.isEmpty()) {
+                if (!((eo3) this.b).a.isEmpty()) {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     int i16 = 0;
-                    while (i16 < ((op3) this.b).a.size()) {
-                        np3 np3Var = (np3) ((op3) this.b).a.get(i16);
-                        if (np3Var.getLastTaskTime() < elapsedRealtime - 30000) {
-                            np3Var.recycle();
-                            ((op3) this.b).a.remove(i16);
-                            ((op3) this.b).e--;
+                    while (i16 < ((eo3) this.b).a.size()) {
+                        do3 do3Var = (do3) ((eo3) this.b).a.get(i16);
+                        if (do3Var.getLastTaskTime() < elapsedRealtime - 30000) {
+                            do3Var.recycle();
+                            ((eo3) this.b).a.remove(i16);
+                            ((eo3) this.b).e--;
                             i16--;
                         }
                         i16++;
                     }
                 }
-                if (((op3) this.b).a.isEmpty() && ((op3) this.b).c.isEmpty()) {
-                    ((op3) this.b).h = false;
+                if (((eo3) this.b).a.isEmpty() && ((eo3) this.b).c.isEmpty()) {
+                    ((eo3) this.b).h = false;
                     return;
                 } else {
                     Utilities.e.d(this, 30000L);
-                    ((op3) this.b).h = true;
+                    ((eo3) this.b).h = true;
                     return;
                 }
             case 25:
-                er3 er3Var = (er3) this.b;
-                er3Var.J.clear();
-                er3Var.getNotificationCenter().k(nm7.f5, new Object[0]);
+                up3 up3Var = (up3) this.b;
+                up3Var.J.clear();
+                up3Var.getNotificationCenter().k(kk7.d5, new Object[0]);
                 return;
             case 26:
-                xn xnVar = (xn) this.b;
-                xnVar.a(true);
-                xnVar.invalidateSelf();
+                xm xmVar = (xm) this.b;
+                xmVar.a(true);
+                xmVar.invalidateSelf();
                 return;
             case 27:
-                os3 os3Var2 = (os3) this.b;
-                os3Var2.x = null;
-                os3Var2.drawableStateChanged();
+                er3 er3Var2 = (er3) this.b;
+                er3Var2.x = null;
+                er3Var2.drawableStateChanged();
                 return;
             case 28:
-                cv3 cv3Var = (cv3) this.b;
-                o1 o1Var2 = cv3Var.Q;
-                wu3 wu3Var = cv3Var.a;
-                if (cv3Var.E || wu3Var == null || !cv3Var.O || cv3Var.w || gm.D || gm.E || !gm.O1()) {
+                rt3 rt3Var = (rt3) this.b;
+                o1 o1Var2 = rt3Var.Q;
+                mt3 mt3Var = rt3Var.a;
+                if (rt3Var.E || mt3Var == null || !rt3Var.O || rt3Var.w || gl.D || gl.E || !gl.O1()) {
                     return;
                 }
-                wu3Var.requestFocus();
-                gm.E3(wu3Var);
-                gm.r(o1Var2);
-                gm.d3(o1Var2, 100L);
+                mt3Var.requestFocus();
+                gl.E3(mt3Var);
+                gl.r(o1Var2);
+                gl.d3(o1Var2, 100L);
                 return;
             default:
-                yh4 yh4Var = (yh4) ((i8) this.b).d;
-                if (!yh4Var.a || ((ArrayList) yh4Var.c).isEmpty() || ((AnimatorSet) yh4Var.d).isRunning()) {
+                xf4 xf4Var = (xf4) ((i8) this.b).d;
+                if (!xf4Var.a || ((ArrayList) xf4Var.c).isEmpty() || ((AnimatorSet) xf4Var.d).isRunning()) {
                     return;
                 }
                 try {
-                    ((AnimatorSet) yh4Var.d).start();
+                    ((AnimatorSet) xf4Var.d).start();
                     return;
                 } catch (Exception unused2) {
                     return;

@@ -1,29 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.CancellationSignal;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n13 extends o13 {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n13(CharSequence charSequence, byte b) {
-        super(charSequence, "androidx.credentials.TYPE_CREATE_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION");
-        switch (b) {
-            case 2:
-                super(charSequence, "android.credentials.CreateCredentialException.TYPE_UNKNOWN");
-                break;
-            case 3:
-                super(charSequence, "androidx.credentials.TYPE_CREATE_CREDENTIAL_UNSUPPORTED_EXCEPTION");
-                break;
-            default:
-                break;
-        }
+public final class n13 implements qp4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ n13(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public n13(CharSequence charSequence, String str) {
-        super(charSequence, str);
-        if (str.length() > 0) {
-            return;
+    @Override // qp4
+    public final Object invoke(Object obj) {
+        byte b = this.a;
+        g5c g5cVar = g5c.a;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                ((CancellationSignal) obj2).cancel();
+                break;
+            default:
+                ((na1) obj2).resumeWith(g5cVar);
+                break;
         }
-        u36.j("type must not be empty");
-        throw null;
+        return g5cVar;
     }
 }

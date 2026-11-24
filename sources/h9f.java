@@ -1,149 +1,73 @@
 // default package
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class h9f extends zad implements List, RandomAccess {
-    public static final v4f f = new v4f(lhf.r, 0);
+public final class h9f extends bgb implements jg0 {
+    public TaskCompletionSource d;
+    public final /* synthetic */ fhd[] e;
 
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
-        throw new UnsupportedOperationException();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h9f(fhd[] fhdVarArr) {
+        super(null, false, 9004);
+        this.e = fhdVarArr;
     }
 
-    @Override // java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        Object next;
-        Object next2;
-        int i;
-        if (obj == this) {
-            return true;
+    @Override // jg0
+    public final void a(ua9 ua9Var) {
+        Exception kg4Var;
+        Status status = (Status) ua9Var;
+        boolean b = status.b();
+        TaskCompletionSource taskCompletionSource = this.d;
+        if (b) {
+            taskCompletionSource.setResult(null);
+            return;
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (0; i < size; i + 1) {
-                        Object obj2 = get(i);
-                        Object obj3 = list.get(i);
-                        i = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i + 1 : 0;
-                    }
-                    return true;
-                }
-                v4f listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || ((next = listIterator.next()) != (next2 = it.next()) && (next == null || !next.equals(next2)))) {
-                            break;
-                        }
-                    } else if (!it.hasNext()) {
-                        return true;
-                    }
-                }
-            }
+        String str = status.b;
+        if (str == null || str.isEmpty()) {
+            str = "User Action indexing error, please try again.";
         }
-        return false;
-    }
-
-    @Override // zad
-    public int h(Object[] objArr) {
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            objArr[i] = get(i);
+        switch (status.a) {
+            case 17510:
+                kg4Var = new kg4(str);
+                break;
+            case 17511:
+                kg4Var = new kg4(str);
+                break;
+            case 17512:
+            default:
+                kg4Var = new fg4(str);
+                break;
+            case 17513:
+                kg4Var = new kg4(str);
+                break;
+            case 17514:
+                kg4Var = new y4d(str);
+                break;
         }
-        return size;
+        taskCompletionSource.setException(kg4Var);
     }
 
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
+    @Override // bgb
+    public final void c(xx4 xx4Var, TaskCompletionSource taskCompletionSource) {
+        this.d = taskCompletionSource;
+        h5d h5dVar = (h5d) ((i6d) xx4Var).k();
+        x43 x43Var = new x43(this);
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken("com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch");
+        int i = pgd.a;
+        obtain.writeStrongBinder(x43Var);
+        obtain.writeTypedArray(this.e, 0);
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            h5dVar.a.transact(7, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain.recycle();
+            obtain2.recycle();
         }
-        return i;
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            if (obj.equals(get(i))) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: l, reason: merged with bridge method [inline-methods] */
-    public h9f subList(int i, int i2) {
-        s3f.b(i, i2, size());
-        int i3 = i2 - i;
-        return i3 == size() ? this : i3 == 0 ? lhf.r : new z6f(this, i, i3);
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: m, reason: merged with bridge method [inline-methods] */
-    public final v4f listIterator(int i) {
-        int size = size();
-        if (i >= 0 && i <= size) {
-            return isEmpty() ? f : new v4f(this, i);
-        }
-        wa3.i(s3f.c(i, size, "index"));
-        return null;
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
-        throw new UnsupportedOperationException();
     }
 }

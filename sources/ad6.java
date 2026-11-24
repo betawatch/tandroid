@@ -1,975 +1,919 @@
 // default package
 
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.text.TextUtils;
-import java.io.Serializable;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Scope;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Locale;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.b;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ad6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Serializable d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ad6 extends jja {
+    public Bundle E;
+    public boolean F;
+    public GoogleSignInAccount G;
+    public int H;
+    public int I;
+    public String J;
+    public String K;
+    public String L;
+    public String M;
+    public String N;
+    public boolean O;
+    public int P;
+    public final boolean Q;
+    public final zc6 R;
+    public boolean S;
+    public final uc6 T;
+    public final uc6 U;
+    public final uc6 V;
+    public boolean W;
+    public final yc6 a;
+    public final /* synthetic */ mf6 a0;
+    public final TextView b;
+    public final wla c;
+    public final TextView d;
+    public final FrameLayout e;
+    public final TextView f;
+    public final FrameLayout h;
+    public final wb n;
+    public final wb r;
+    public final TextView s;
+    public final nf6 w;
+    public final ry8 x;
+    public boolean y;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ad6(cf7 cf7Var, String str, int i, Object[] objArr, CountDownLatch countDownLatch) {
-        this.a = (byte) 2;
-        this.c = cf7Var;
-        this.d = str;
-        this.b = i;
-        this.e = objArr;
-        this.f = countDownLatch;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:373:0x058d, code lost:
-    
-        if ("ru".equals(r2) == false) goto L288;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x03a0 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x03c9 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x03e9 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x045f A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0483  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x04a8 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x04cf A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x04e3 A[Catch: Exception -> 0x0715, TRY_ENTER, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x04f2 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0528 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x0542 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x05b9 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:385:0x05de A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x05f7 A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:395:0x060d A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:400:0x061b A[Catch: Exception -> 0x0715, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:414:0x0655  */
-    /* JADX WARN: Removed duplicated region for block: B:416:0x0657 A[Catch: Exception -> 0x0715, TRY_LEAVE, TryCatch #7 {Exception -> 0x0715, blocks: (B:84:0x0231, B:86:0x0239, B:88:0x023f, B:91:0x024b, B:94:0x0256, B:96:0x0279, B:98:0x027d, B:100:0x0283, B:102:0x0289, B:104:0x0296, B:105:0x029a, B:107:0x029d, B:109:0x02a7, B:114:0x02aa, B:116:0x02b0, B:118:0x02bc, B:120:0x02c6, B:123:0x02d9, B:124:0x02d4, B:127:0x02db, B:135:0x069b, B:211:0x02e3, B:230:0x02f2, B:232:0x0310, B:233:0x0314, B:235:0x031a, B:238:0x0322, B:240:0x032c, B:241:0x0330, B:243:0x0336, B:244:0x033a, B:246:0x034f, B:248:0x0359, B:250:0x0369, B:251:0x0371, B:253:0x0377, B:255:0x0381, B:257:0x0391, B:258:0x039a, B:260:0x03a0, B:262:0x03aa, B:264:0x03ba, B:265:0x03c3, B:267:0x03c9, B:269:0x03cf, B:271:0x03d9, B:273:0x03df, B:274:0x03e2, B:276:0x03e9, B:278:0x03f3, B:280:0x0401, B:281:0x0407, B:283:0x040d, B:285:0x0417, B:287:0x0427, B:288:0x0430, B:290:0x0436, B:292:0x0440, B:294:0x0450, B:295:0x0459, B:297:0x045f, B:299:0x0465, B:301:0x046f, B:303:0x0475, B:304:0x0478, B:305:0x047d, B:308:0x0484, B:310:0x048c, B:312:0x049b, B:315:0x04a2, B:317:0x04a8, B:319:0x04ae, B:320:0x04b1, B:322:0x04b6, B:324:0x04bc, B:325:0x04bf, B:327:0x04c5, B:329:0x04cf, B:330:0x04d5, B:333:0x04e3, B:335:0x04e9, B:336:0x04ec, B:338:0x04f2, B:340:0x04fc, B:342:0x0502, B:343:0x0505, B:344:0x0508, B:346:0x0512, B:348:0x0518, B:349:0x051b, B:350:0x051e, B:352:0x0528, B:354:0x052e, B:355:0x0531, B:356:0x0534, B:358:0x0542, B:360:0x0548, B:361:0x054b, B:365:0x0566, B:368:0x0579, B:370:0x057f, B:372:0x0587, B:374:0x05ae, B:376:0x05b9, B:378:0x05c1, B:380:0x05d5, B:383:0x05d8, B:385:0x05de, B:386:0x05e1, B:387:0x05ed, B:389:0x05f7, B:391:0x05fd, B:392:0x0600, B:393:0x0603, B:395:0x060d, B:397:0x0613, B:398:0x0616, B:400:0x061b, B:402:0x0625, B:404:0x062b, B:405:0x062e, B:406:0x0631, B:408:0x063b, B:410:0x0641, B:411:0x0644, B:412:0x0647, B:416:0x0657, B:417:0x058f, B:419:0x059b, B:421:0x05a1, B:451:0x0214), top: B:450:0x0214 }] */
-    /* JADX WARN: Removed duplicated region for block: B:425:0x05e5  */
-    /* JADX WARN: Removed duplicated region for block: B:426:0x04d4  */
-    /* JADX WARN: Removed duplicated region for block: B:427:0x04c4  */
-    @Override // java.lang.Runnable
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x02e2  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02f9  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0091  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        Location location;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue2;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue3;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue4;
-        String str;
-        String str2;
-        List<Address> list;
-        String format;
-        String str3;
-        String str4;
-        String str5;
-        String str6;
-        String str7;
-        String str8;
-        String str9;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue5;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue6;
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue7;
-        String M0;
-        Locale locale;
-        String str10;
-        String str11;
-        Address address;
-        String str12;
-        String str13;
-        String str14;
-        String str15;
-        String str16;
-        String str17;
-        boolean z;
-        String subThoroughfare;
-        boolean z2;
-        String thoroughfare;
-        String locality;
-        String countryName;
-        boolean z3;
-        String str18;
-        StringBuilder sb;
-        StringBuilder sb2;
-        String countryName2;
-        String locality2;
-        String sb3;
-        String str19;
-        String str20;
-        String str21;
-        String str22;
-        String str23;
-        NativeByteBuffer byteBufferValue;
-        SQLitePreparedStatement sQLitePreparedStatement;
-        TLRPC.MessageMedia messageMedia;
-        boolean z4 = true;
-        switch (this.a) {
-            case 0:
-                Locale locale2 = (Locale) this.c;
-                Location location2 = (Location) this.e;
-                byte b = this.b;
-                Locale locale3 = (Locale) this.d;
-                qc6 qc6Var = (qc6) this.f;
-                StringBuilder sb4 = new StringBuilder();
-                TL_stories.TL_geoPointAddress tL_geoPointAddress = new TL_stories.TL_geoPointAddress();
-                TL_stories.TL_geoPointAddress tL_geoPointAddress2 = new TL_stories.TL_geoPointAddress();
-                try {
-                    List<Address> fromLocation = new Geocoder(a.b, locale2).getFromLocation(location2.getLatitude(), location2.getLongitude(), 1);
-                    if (b != 2) {
-                        list = null;
-                    } else if (locale3 == locale2) {
-                        list = fromLocation;
-                    } else {
-                        try {
-                            list = new Geocoder(a.b, locale3).getFromLocation(location2.getLatitude(), location2.getLongitude(), 1);
-                        } catch (Exception unused) {
-                            location = location2;
-                            tL_messageMediaVenue = null;
-                            tL_messageMediaVenue2 = null;
-                            str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                            str = str2;
-                            tL_messageMediaVenue4 = tL_messageMediaVenue;
-                            tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                            gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                            return;
+    public ad6(mf6 mf6Var, Context context, boolean z) {
+        super(context);
+        int i;
+        this.a0 = mf6Var;
+        this.T = new uc6(this, (byte) 4);
+        this.U = new uc6(this, (byte) 6);
+        this.V = new uc6(this, (byte) 7);
+        this.Q = z;
+        final byte b = 1;
+        setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        ry8 ry8Var = new ry8(context);
+        this.x = ry8Var;
+        if (!z || mf6Var.G == 3) {
+            ry8Var.f(R.raw.email_check_inbox, 120, 120, null);
+        } else {
+            ry8Var.f(R.raw.email_setup_heart, 120, 120, null);
+        }
+        final byte b2 = 0;
+        ry8Var.setAutoRepeat(false);
+        frameLayout.addView(ry8Var, nme.e(120, 120, 1));
+        if (!gl.M1()) {
+            Point point = gl.q;
+            if (point.x <= point.y || gl.O1()) {
+                i = 0;
+                frameLayout.setVisibility(i);
+                addView(frameLayout, nme.e(-1, -2, 1));
+                TextView textView = new TextView(context);
+                this.b = textView;
+                ir2.t(textView, 1, 18.0f);
+                textView.setText(k96.M0(mf6Var.G != 3 ? 2131752131 : z ? 2131743380 : 2131752133, null));
+                textView.setGravity(17);
+                textView.setLineSpacing(gl.L(2.0f), 1.0f);
+                addView(textView, nme.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
+                wla wlaVar = new wla(null, context, false);
+                this.c = wlaVar;
+                wlaVar.setTextSize(1, 14.0f);
+                wlaVar.setGravity(17);
+                wlaVar.setLineSpacing(gl.L(2.0f), 1.0f);
+                addView(wlaVar, nme.t(-2, -2, 1, 24, 8, 24, 0));
+                yc6 yc6Var = new yc6((byte) 0, context, this);
+                this.a = yc6Var;
+                addView(yc6Var, nme.t(-2, 42, 1, 0, !z ? 48 : 32, 0, 0));
+                TextView textView2 = new TextView(context);
+                this.d = textView2;
+                textView2.setGravity(17);
+                textView2.setTextSize(1, 14.0f);
+                textView2.setLineSpacing(gl.L(2.0f), 1.0f);
+                textView2.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+                final byte b3 = 2;
+                textView2.setMaxLines(2);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d ");
+                Drawable drawable = context.getDrawable(R.drawable.googleg_standard_color_18);
+                drawable.setBounds(0, gl.L(9.0f), gl.L(18.0f), gl.L(27.0f));
+                spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
+                spannableStringBuilder.setSpan(new lx2(b3), 1, 2, 33);
+                spannableStringBuilder.append((CharSequence) k96.M0(2131745129, null));
+                textView2.setText(spannableStringBuilder);
+                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: xc6
+                    public final /* synthetic */ ad6 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i2;
+                        byte b4 = b2;
+                        ad6 ad6Var = this.b;
+                        switch (b4) {
+                            case 0:
+                                kk7.e().a(new xb0(ad6Var, (byte) 1), kk7.e5);
+                                Context context2 = ad6Var.getContext();
+                                HashSet hashSet = new HashSet();
+                                HashMap hashMap = new HashMap();
+                                String str = w01.h;
+                                fre.f(str);
+                                hashSet.add(GoogleSignInOptions.x);
+                                if (hashSet.contains(GoogleSignInOptions.F)) {
+                                    Scope scope = GoogleSignInOptions.E;
+                                    if (hashSet.contains(scope)) {
+                                        hashSet.remove(scope);
+                                    }
+                                }
+                                hashSet.add(GoogleSignInOptions.y);
+                                u84 a = aje.a(context2, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                                a.k().addOnCompleteListener(new h45(ad6Var, a, (byte) 17));
+                                break;
+                            case 1:
+                                ad6Var.o();
+                                break;
+                            default:
+                                TextView textView3 = ad6Var.f;
+                                if (textView3.getVisibility() == 0 && textView3.getAlpha() == 1.0f) {
+                                    ad6Var.p(false);
+                                    TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                    tL_auth_resendCode.phone_number = ad6Var.M;
+                                    tL_auth_resendCode.phone_code_hash = ad6Var.N;
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("phone", ad6Var.J);
+                                    bundle.putString("ephone", ad6Var.K);
+                                    bundle.putString("phoneFormated", ad6Var.M);
+                                    i2 = ((d) ad6Var.a0).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(tL_auth_resendCode, new k45(ad6Var, bundle, tL_auth_resendCode, (byte) 7), 10);
+                                    break;
+                                }
+                                break;
                         }
                     }
-                    if (fromLocation.size() > 0) {
-                        Address address2 = fromLocation.get(0);
-                        Address address3 = (list == null || list.size() < 1) ? null : list.get(0);
-                        if (b == 1) {
-                            ArrayList arrayList = new ArrayList();
-                            try {
-                                str23 = address2.getAddressLine(0);
-                            } catch (Exception unused2) {
-                                str23 = null;
-                            }
-                            if (TextUtils.isEmpty(str23)) {
-                                try {
-                                    arrayList.add(address2.getSubThoroughfare());
-                                } catch (Exception unused3) {
-                                }
-                                try {
-                                    arrayList.add(address2.getThoroughfare());
-                                } catch (Exception unused4) {
-                                }
-                                try {
-                                    arrayList.add(address2.getAdminArea());
-                                } catch (Exception unused5) {
-                                }
-                                try {
-                                    arrayList.add(address2.getCountryName());
-                                } catch (Exception unused6) {
-                                }
-                            } else {
-                                arrayList.add(str23);
-                            }
-                            int i = 0;
-                            while (i < arrayList.size()) {
-                                if (arrayList.get(i) != null) {
-                                    String[] split = ((String) arrayList.get(i)).split(", ");
-                                    if (split.length > 1) {
-                                        arrayList.remove(i);
-                                        for (String str24 : split) {
-                                            arrayList.add(i, str24);
-                                            i++;
-                                        }
-                                    }
-                                }
-                                i++;
-                            }
-                            int i2 = 0;
-                            while (i2 < arrayList.size()) {
-                                if (TextUtils.isEmpty((CharSequence) arrayList.get(i2)) || arrayList.indexOf(arrayList.get(i2)) != i2 || ((String) arrayList.get(i2)).matches("^\\s*\\d{4,}\\s*$")) {
-                                    arrayList.remove(i2);
-                                    i2--;
-                                }
-                                i2++;
-                            }
-                            format = arrayList.isEmpty() ? null : TextUtils.join(", ", arrayList);
-                            str3 = format;
-                            sb3 = null;
-                            str5 = null;
-                            str18 = null;
-                            str11 = null;
-                            str17 = null;
-                        } else {
-                            StringBuilder sb5 = new StringBuilder();
-                            StringBuilder sb6 = new StringBuilder();
-                            StringBuilder sb7 = new StringBuilder();
-                            StringBuilder sb8 = new StringBuilder();
-                            String locality3 = address2.getLocality();
-                            if (TextUtils.isEmpty(locality3)) {
-                                locality3 = address2.getAdminArea();
-                            }
-                            if (TextUtils.isEmpty(locality3)) {
-                                locality3 = address2.getSubAdminArea();
-                            }
-                            String str25 = locality3;
-                            if (address3 != null) {
-                                String locality4 = address3.getLocality();
-                                if (TextUtils.isEmpty(locality4)) {
-                                    locality4 = address3.getAdminArea();
-                                }
-                                if (TextUtils.isEmpty(locality4)) {
-                                    locality4 = address3.getSubAdminArea();
-                                }
-                                String str26 = locality4;
-                                locale = locale2;
-                                str10 = address3.getAdminArea();
-                                str11 = str26;
-                            } else {
-                                locale = locale2;
-                                str10 = null;
-                                str11 = null;
-                            }
-                            if (TextUtils.equals(address2.getThoroughfare(), str25)) {
-                                address = address3;
-                            } else {
-                                address = address3;
-                                if (!TextUtils.equals(address2.getThoroughfare(), address2.getCountryName())) {
-                                    str12 = address2.getThoroughfare();
-                                    if (TextUtils.isEmpty(str12) || TextUtils.equals(address2.getSubLocality(), str25)) {
-                                        str13 = str12;
-                                    } else {
-                                        str13 = str12;
-                                        if (!TextUtils.equals(address2.getSubLocality(), address2.getCountryName())) {
-                                            str14 = address2.getSubLocality();
-                                            if (TextUtils.isEmpty(str14) || TextUtils.equals(address2.getLocality(), str25)) {
-                                                str15 = str14;
-                                            } else {
-                                                str15 = str14;
-                                                if (!TextUtils.equals(address2.getLocality(), address2.getCountryName())) {
-                                                    str16 = address2.getLocality();
-                                                    if (!TextUtils.isEmpty(str16) || TextUtils.equals(str16, str25) || TextUtils.equals(str16, address2.getCountryName())) {
-                                                        sb8 = null;
-                                                    } else {
-                                                        if (sb8.length() > 0) {
-                                                            sb8.append(", ");
-                                                        }
-                                                        sb8.append(str16);
-                                                    }
-                                                    if (address != null) {
-                                                        String thoroughfare2 = (TextUtils.equals(address.getThoroughfare(), str25) || TextUtils.equals(address.getThoroughfare(), address.getCountryName())) ? null : address.getThoroughfare();
-                                                        if (!TextUtils.isEmpty(thoroughfare2) || TextUtils.equals(address.getSubLocality(), str25)) {
-                                                            str19 = thoroughfare2;
-                                                        } else {
-                                                            str19 = thoroughfare2;
-                                                            if (!TextUtils.equals(address.getSubLocality(), address.getCountryName())) {
-                                                                str20 = address.getSubLocality();
-                                                                if (TextUtils.isEmpty(str20) || TextUtils.equals(address.getLocality(), str25)) {
-                                                                    str21 = str20;
-                                                                } else {
-                                                                    str21 = str20;
-                                                                    if (!TextUtils.equals(address.getLocality(), address.getCountryName())) {
-                                                                        str22 = address.getLocality();
-                                                                        if (!TextUtils.isEmpty(str22) || TextUtils.equals(str22, str10) || TextUtils.equals(str22, address.getCountryName())) {
-                                                                            sb4 = null;
-                                                                        } else {
-                                                                            if (sb4.length() > 0) {
-                                                                                sb4.append(", ");
-                                                                            }
-                                                                            sb4.append(str22);
-                                                                        }
-                                                                        if (!TextUtils.isEmpty(sb4)) {
-                                                                            int i3 = 0;
-                                                                            while (true) {
-                                                                                String[] strArr = dd6.Q;
-                                                                                str17 = str10;
-                                                                                if (i3 < 19) {
-                                                                                    if (strArr[i3].equalsIgnoreCase(sb4.toString())) {
-                                                                                        sb8 = null;
-                                                                                        sb4 = null;
-                                                                                    } else {
-                                                                                        i3++;
-                                                                                        str10 = str17;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                            if (TextUtils.isEmpty(str25)) {
-                                                                                z = true;
-                                                                            } else {
-                                                                                if (sb7.length() > 0) {
-                                                                                    sb7.append(", ");
-                                                                                }
-                                                                                sb7.append(str25);
-                                                                                if (sb8 != null) {
-                                                                                    if (sb8.length() > 0) {
-                                                                                        sb8.append(", ");
-                                                                                    }
-                                                                                    sb8.append(str25);
-                                                                                }
-                                                                                z = false;
-                                                                            }
-                                                                            subThoroughfare = address2.getSubThoroughfare();
-                                                                            if (TextUtils.isEmpty(subThoroughfare)) {
-                                                                                z2 = false;
-                                                                            } else {
-                                                                                sb5.append(subThoroughfare);
-                                                                                z2 = true;
-                                                                            }
-                                                                            thoroughfare = address2.getThoroughfare();
-                                                                            boolean z5 = z;
-                                                                            if (!TextUtils.isEmpty(thoroughfare)) {
-                                                                                if (sb5.length() > 0) {
-                                                                                    sb5.append(" ");
-                                                                                }
-                                                                                sb5.append(thoroughfare);
-                                                                                z2 = true;
-                                                                            }
-                                                                            if (!z2) {
-                                                                                String adminArea = address2.getAdminArea();
-                                                                                if (!TextUtils.isEmpty(adminArea)) {
-                                                                                    if (sb5.length() > 0) {
-                                                                                        sb5.append(", ");
-                                                                                    }
-                                                                                    sb5.append(adminArea);
-                                                                                }
-                                                                                String subAdminArea = address2.getSubAdminArea();
-                                                                                if (!TextUtils.isEmpty(subAdminArea)) {
-                                                                                    if (sb5.length() > 0) {
-                                                                                        sb5.append(", ");
-                                                                                    }
-                                                                                    sb5.append(subAdminArea);
-                                                                                }
-                                                                            }
-                                                                            locality = address2.getLocality();
-                                                                            if (!TextUtils.isEmpty(locality)) {
-                                                                                if (sb5.length() > 0) {
-                                                                                    sb5.append(", ");
-                                                                                }
-                                                                                sb5.append(locality);
-                                                                            }
-                                                                            String countryCode = address2.getCountryCode();
-                                                                            countryName = address2.getCountryName();
-                                                                            if (TextUtils.isEmpty(countryName)) {
-                                                                                z3 = z2;
-                                                                                str18 = countryCode;
-                                                                                sb = sb8;
-                                                                                sb2 = sb5;
-                                                                            } else {
-                                                                                if (sb5.length() > 0) {
-                                                                                    sb5.append(", ");
-                                                                                }
-                                                                                sb5.append(countryName);
-                                                                                z3 = z2;
-                                                                                String language = locale.getLanguage();
-                                                                                str18 = countryCode;
-                                                                                if ("US".equals(address2.getCountryCode())) {
-                                                                                    sb = sb8;
-                                                                                    sb2 = sb5;
-                                                                                } else {
-                                                                                    sb = sb8;
-                                                                                    sb2 = sb5;
-                                                                                    if ("AE".equals(address2.getCountryCode())) {
-                                                                                    }
-                                                                                    if (!"GB".equals(address2.getCountryCode()) || !"en".equals(language)) {
-                                                                                        if ("US".equals(address2.getCountryCode())) {
-                                                                                            countryName = "USA";
-                                                                                        }
-                                                                                        if (sb7.length() > 0) {
-                                                                                            sb7.append(", ");
-                                                                                        }
-                                                                                        sb7.append(countryName);
-                                                                                    }
-                                                                                    String[] split2 = countryName.split(" ");
-                                                                                    countryName = "";
-                                                                                    for (String str27 : split2) {
-                                                                                        if (str27.length() > 0) {
-                                                                                            countryName = countryName + str27.charAt(0);
-                                                                                        }
-                                                                                    }
-                                                                                    if (sb7.length() > 0) {
-                                                                                    }
-                                                                                    sb7.append(countryName);
-                                                                                }
-                                                                                if (!"en".equals(language)) {
-                                                                                    if (!"uk".equals(language)) {
-                                                                                        break;
-                                                                                    }
-                                                                                }
-                                                                                String[] split22 = countryName.split(" ");
-                                                                                countryName = "";
-                                                                                while (r2 < r3) {
-                                                                                }
-                                                                                if (sb7.length() > 0) {
-                                                                                }
-                                                                                sb7.append(countryName);
-                                                                            }
-                                                                            countryName2 = address2.getCountryName();
-                                                                            if (!TextUtils.isEmpty(countryName2)) {
-                                                                                if (sb6.length() > 0) {
-                                                                                    sb6.append(", ");
-                                                                                }
-                                                                                sb6.append(countryName2);
-                                                                            }
-                                                                            locality2 = address2.getLocality();
-                                                                            if (!TextUtils.isEmpty(locality2)) {
-                                                                                if (sb6.length() > 0) {
-                                                                                    sb6.append(", ");
-                                                                                }
-                                                                                sb6.append(locality2);
-                                                                            }
-                                                                            if (!z3) {
-                                                                                String adminArea2 = address2.getAdminArea();
-                                                                                if (!TextUtils.isEmpty(adminArea2)) {
-                                                                                    if (sb6.length() > 0) {
-                                                                                        sb6.append(", ");
-                                                                                    }
-                                                                                    sb6.append(adminArea2);
-                                                                                }
-                                                                                String subAdminArea2 = address2.getSubAdminArea();
-                                                                                if (!TextUtils.isEmpty(subAdminArea2)) {
-                                                                                    if (sb6.length() > 0) {
-                                                                                        sb6.append(", ");
-                                                                                    }
-                                                                                    sb6.append(subAdminArea2);
-                                                                                }
-                                                                            }
-                                                                            format = sb2.toString();
-                                                                            str3 = sb6.toString();
-                                                                            sb3 = sb7.toString();
-                                                                            str5 = sb == null ? null : sb.toString();
-                                                                            z4 = z5;
-                                                                        }
-                                                                    }
-                                                                }
-                                                                str22 = str21;
-                                                                if (TextUtils.isEmpty(str22)) {
-                                                                }
-                                                                sb4 = null;
-                                                                if (!TextUtils.isEmpty(sb4)) {
-                                                                }
-                                                            }
-                                                        }
-                                                        str20 = str19;
-                                                        if (TextUtils.isEmpty(str20)) {
-                                                        }
-                                                        str21 = str20;
-                                                        str22 = str21;
-                                                        if (TextUtils.isEmpty(str22)) {
-                                                        }
-                                                        sb4 = null;
-                                                        if (!TextUtils.isEmpty(sb4)) {
-                                                        }
-                                                    }
-                                                    str17 = str10;
-                                                    if (TextUtils.isEmpty(str25)) {
-                                                    }
-                                                    subThoroughfare = address2.getSubThoroughfare();
-                                                    if (TextUtils.isEmpty(subThoroughfare)) {
-                                                    }
-                                                    thoroughfare = address2.getThoroughfare();
-                                                    boolean z52 = z;
-                                                    if (!TextUtils.isEmpty(thoroughfare)) {
-                                                    }
-                                                    if (!z2) {
-                                                    }
-                                                    locality = address2.getLocality();
-                                                    if (!TextUtils.isEmpty(locality)) {
-                                                    }
-                                                    String countryCode2 = address2.getCountryCode();
-                                                    countryName = address2.getCountryName();
-                                                    if (TextUtils.isEmpty(countryName)) {
-                                                    }
-                                                    countryName2 = address2.getCountryName();
-                                                    if (!TextUtils.isEmpty(countryName2)) {
-                                                    }
-                                                    locality2 = address2.getLocality();
-                                                    if (!TextUtils.isEmpty(locality2)) {
-                                                    }
-                                                    if (!z3) {
-                                                    }
-                                                    format = sb2.toString();
-                                                    str3 = sb6.toString();
-                                                    sb3 = sb7.toString();
-                                                    if (sb == null) {
-                                                    }
-                                                    z4 = z52;
-                                                }
-                                            }
-                                            str16 = str15;
-                                            if (TextUtils.isEmpty(str16)) {
-                                            }
-                                            sb8 = null;
-                                            if (address != null) {
-                                            }
-                                            str17 = str10;
-                                            if (TextUtils.isEmpty(str25)) {
-                                            }
-                                            subThoroughfare = address2.getSubThoroughfare();
-                                            if (TextUtils.isEmpty(subThoroughfare)) {
-                                            }
-                                            thoroughfare = address2.getThoroughfare();
-                                            boolean z522 = z;
-                                            if (!TextUtils.isEmpty(thoroughfare)) {
-                                            }
-                                            if (!z2) {
-                                            }
-                                            locality = address2.getLocality();
-                                            if (!TextUtils.isEmpty(locality)) {
-                                            }
-                                            String countryCode22 = address2.getCountryCode();
-                                            countryName = address2.getCountryName();
-                                            if (TextUtils.isEmpty(countryName)) {
-                                            }
-                                            countryName2 = address2.getCountryName();
-                                            if (!TextUtils.isEmpty(countryName2)) {
-                                            }
-                                            locality2 = address2.getLocality();
-                                            if (!TextUtils.isEmpty(locality2)) {
-                                            }
-                                            if (!z3) {
-                                            }
-                                            format = sb2.toString();
-                                            str3 = sb6.toString();
-                                            sb3 = sb7.toString();
-                                            if (sb == null) {
-                                            }
-                                            z4 = z522;
-                                        }
-                                    }
-                                    str14 = str13;
-                                    if (TextUtils.isEmpty(str14)) {
-                                    }
-                                    str15 = str14;
-                                    str16 = str15;
-                                    if (TextUtils.isEmpty(str16)) {
-                                    }
-                                    sb8 = null;
-                                    if (address != null) {
-                                    }
-                                    str17 = str10;
-                                    if (TextUtils.isEmpty(str25)) {
-                                    }
-                                    subThoroughfare = address2.getSubThoroughfare();
-                                    if (TextUtils.isEmpty(subThoroughfare)) {
-                                    }
-                                    thoroughfare = address2.getThoroughfare();
-                                    boolean z5222 = z;
-                                    if (!TextUtils.isEmpty(thoroughfare)) {
-                                    }
-                                    if (!z2) {
-                                    }
-                                    locality = address2.getLocality();
-                                    if (!TextUtils.isEmpty(locality)) {
-                                    }
-                                    String countryCode222 = address2.getCountryCode();
-                                    countryName = address2.getCountryName();
-                                    if (TextUtils.isEmpty(countryName)) {
-                                    }
-                                    countryName2 = address2.getCountryName();
-                                    if (!TextUtils.isEmpty(countryName2)) {
-                                    }
-                                    locality2 = address2.getLocality();
-                                    if (!TextUtils.isEmpty(locality2)) {
-                                    }
-                                    if (!z3) {
-                                    }
-                                    format = sb2.toString();
-                                    str3 = sb6.toString();
-                                    sb3 = sb7.toString();
-                                    if (sb == null) {
-                                    }
-                                    z4 = z5222;
-                                }
-                            }
-                            str12 = null;
-                            if (TextUtils.isEmpty(str12)) {
-                            }
-                            str13 = str12;
-                            str14 = str13;
-                            if (TextUtils.isEmpty(str14)) {
-                            }
-                            str15 = str14;
-                            str16 = str15;
-                            if (TextUtils.isEmpty(str16)) {
-                            }
-                            sb8 = null;
-                            if (address != null) {
-                            }
-                            str17 = str10;
-                            if (TextUtils.isEmpty(str25)) {
-                            }
-                            subThoroughfare = address2.getSubThoroughfare();
-                            if (TextUtils.isEmpty(subThoroughfare)) {
-                            }
-                            thoroughfare = address2.getThoroughfare();
-                            boolean z52222 = z;
-                            if (!TextUtils.isEmpty(thoroughfare)) {
-                            }
-                            if (!z2) {
-                            }
-                            locality = address2.getLocality();
-                            if (!TextUtils.isEmpty(locality)) {
-                            }
-                            String countryCode2222 = address2.getCountryCode();
-                            countryName = address2.getCountryName();
-                            if (TextUtils.isEmpty(countryName)) {
-                            }
-                            countryName2 = address2.getCountryName();
-                            if (!TextUtils.isEmpty(countryName2)) {
-                            }
-                            locality2 = address2.getLocality();
-                            if (!TextUtils.isEmpty(locality2)) {
-                            }
-                            if (!z3) {
-                            }
-                            format = sb2.toString();
-                            str3 = sb6.toString();
-                            sb3 = sb7.toString();
-                            if (sb == null) {
-                            }
-                            z4 = z52222;
-                        }
-                        str7 = sb3;
-                        str4 = str18;
-                        str6 = str11;
-                        str8 = str17;
-                    } else {
-                        format = b == 1 ? null : String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(location2.getLongitude()));
-                        str3 = format;
-                        str4 = null;
-                        str5 = null;
-                        str6 = null;
-                        z4 = true;
-                        str7 = null;
-                        str8 = null;
+                });
+                FrameLayout frameLayout2 = new FrameLayout(context);
+                this.h = frameLayout2;
+                gl.T3(frameLayout2, mf6Var.G == 3 && !z, 1.0f, true, false);
+                wb wbVar = new wb(context, (byte) 24);
+                this.n = wbVar;
+                wbVar.setText(k96.M0(2131748545, null));
+                wbVar.setGravity(17);
+                wbVar.setTextSize(1, 14.0f);
+                wbVar.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+                wbVar.setMaxLines(2);
+                wbVar.setOnClickListener(new v16(this, context, (byte) 4));
+                frameLayout2.addView(wbVar);
+                wb wbVar2 = new wb(context, (byte) 25);
+                this.r = wbVar2;
+                wbVar2.setGravity(17);
+                wbVar2.setTextSize(1, 14.0f);
+                wbVar2.setLineSpacing(gl.L(2.0f), 1.0f);
+                wbVar2.setMaxLines(3);
+                wbVar2.setOnClickListener(new View.OnClickListener(this) { // from class: xc6
+                    public final /* synthetic */ ad6 b;
+
+                    {
+                        this.b = this;
                     }
-                    String str28 = format;
-                    String str29 = str3;
-                    if (TextUtils.isEmpty(str7)) {
-                        location = location2;
-                        str9 = str29;
-                        tL_messageMediaVenue5 = null;
-                    } else {
-                        tL_messageMediaVenue5 = new TLRPC.TL_messageMediaVenue();
-                        try {
-                            TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
-                            tL_messageMediaVenue5.geo = tL_geoPoint;
-                            location = location2;
-                            str9 = str29;
-                            try {
-                                tL_geoPoint.lat = location.getLatitude();
-                                tL_messageMediaVenue5.geo._long = location.getLongitude();
-                                tL_messageMediaVenue5.query_id = -1L;
-                                tL_messageMediaVenue5.title = str7;
-                                tL_messageMediaVenue5.icon = z4 ? "country" : "city";
-                                tL_messageMediaVenue5.emoji = dd6.b(str4);
-                                if (z4) {
-                                    tL_messageMediaVenue6 = null;
-                                    try {
-                                        M0 = jb6.M0(2131751691, null);
-                                    } catch (Exception unused7) {
-                                        tL_messageMediaVenue2 = tL_messageMediaVenue6;
-                                        tL_messageMediaVenue = tL_messageMediaVenue5;
-                                        str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                                        str = str2;
-                                        tL_messageMediaVenue4 = tL_messageMediaVenue;
-                                        tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                                        gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                                        return;
-                                    }
-                                } else {
-                                    M0 = jb6.M0(2131747328, null);
-                                }
-                                tL_messageMediaVenue5.address = M0;
-                                tL_messageMediaVenue5.geoAddress = tL_geoPointAddress;
-                                tL_geoPointAddress.country_iso2 = str4;
-                                if (!z4) {
-                                    if (!TextUtils.isEmpty(str8)) {
-                                        tL_geoPointAddress.flags |= 1;
-                                        tL_geoPointAddress.state = str8;
-                                    }
-                                    if (!TextUtils.isEmpty(str6)) {
-                                        tL_geoPointAddress.flags |= 2;
-                                        tL_geoPointAddress.city = str6;
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i2;
+                        byte b4 = b;
+                        ad6 ad6Var = this.b;
+                        switch (b4) {
+                            case 0:
+                                kk7.e().a(new xb0(ad6Var, (byte) 1), kk7.e5);
+                                Context context2 = ad6Var.getContext();
+                                HashSet hashSet = new HashSet();
+                                HashMap hashMap = new HashMap();
+                                String str = w01.h;
+                                fre.f(str);
+                                hashSet.add(GoogleSignInOptions.x);
+                                if (hashSet.contains(GoogleSignInOptions.F)) {
+                                    Scope scope = GoogleSignInOptions.E;
+                                    if (hashSet.contains(scope)) {
+                                        hashSet.remove(scope);
                                     }
                                 }
-                            } catch (Exception unused8) {
-                                tL_messageMediaVenue = tL_messageMediaVenue5;
-                                tL_messageMediaVenue2 = null;
-                                str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                                str = str2;
-                                tL_messageMediaVenue4 = tL_messageMediaVenue;
-                                tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                                gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                                return;
-                            }
-                        } catch (Exception unused9) {
-                            location = location2;
+                                hashSet.add(GoogleSignInOptions.y);
+                                u84 a = aje.a(context2, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                                a.k().addOnCompleteListener(new h45(ad6Var, a, (byte) 17));
+                                break;
+                            case 1:
+                                ad6Var.o();
+                                break;
+                            default:
+                                TextView textView3 = ad6Var.f;
+                                if (textView3.getVisibility() == 0 && textView3.getAlpha() == 1.0f) {
+                                    ad6Var.p(false);
+                                    TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                    tL_auth_resendCode.phone_number = ad6Var.M;
+                                    tL_auth_resendCode.phone_code_hash = ad6Var.N;
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("phone", ad6Var.J);
+                                    bundle.putString("ephone", ad6Var.K);
+                                    bundle.putString("phoneFormated", ad6Var.M);
+                                    i2 = ((d) ad6Var.a0).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(tL_auth_resendCode, new k45(ad6Var, bundle, tL_auth_resendCode, (byte) 7), 10);
+                                    break;
+                                }
+                                break;
                         }
                     }
-                    try {
-                        if (TextUtils.isEmpty(str5)) {
-                            tL_messageMediaVenue7 = null;
-                        } else {
-                            TLRPC.TL_messageMediaVenue tL_messageMediaVenue8 = new TLRPC.TL_messageMediaVenue();
-                            try {
-                                TLRPC.TL_geoPoint tL_geoPoint2 = new TLRPC.TL_geoPoint();
-                                tL_messageMediaVenue8.geo = tL_geoPoint2;
-                                tL_geoPoint2.lat = location.getLatitude();
-                                tL_messageMediaVenue8.geo._long = location.getLongitude();
-                                tL_messageMediaVenue8.query_id = -1L;
-                                tL_messageMediaVenue8.title = str5;
-                                tL_messageMediaVenue8.icon = "pin";
-                                tL_messageMediaVenue8.address = jb6.M0(2131747193, null);
-                                tL_messageMediaVenue8.geoAddress = tL_geoPointAddress2;
-                                tL_geoPointAddress2.country_iso2 = str4;
-                                if (!TextUtils.isEmpty(str8)) {
-                                    tL_geoPointAddress2.flags |= 1;
-                                    tL_geoPointAddress2.state = str8;
-                                }
-                                if (!TextUtils.isEmpty(str6)) {
-                                    tL_geoPointAddress2.flags |= 2;
-                                    tL_geoPointAddress2.city = str6;
-                                }
-                                if (!TextUtils.isEmpty(sb4)) {
-                                    tL_geoPointAddress2.flags |= 4;
-                                    tL_geoPointAddress2.street = sb4.toString();
-                                }
-                                tL_messageMediaVenue7 = tL_messageMediaVenue8;
-                            } catch (Exception unused10) {
-                                tL_messageMediaVenue2 = tL_messageMediaVenue8;
-                                tL_messageMediaVenue = tL_messageMediaVenue5;
-                                str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                                str = str2;
-                                tL_messageMediaVenue4 = tL_messageMediaVenue;
-                                tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                                gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                                return;
-                            }
-                        }
-                        if (tL_messageMediaVenue5 == null && tL_messageMediaVenue7 == null) {
-                            try {
-                                String c = dd6.c(location.getLongitude(), location.getLatitude());
-                                if (c != null) {
-                                    TLRPC.TL_messageMediaVenue tL_messageMediaVenue9 = new TLRPC.TL_messageMediaVenue();
-                                    try {
-                                        TLRPC.TL_geoPoint tL_geoPoint3 = new TLRPC.TL_geoPoint();
-                                        tL_messageMediaVenue9.geo = tL_geoPoint3;
-                                        tL_geoPoint3.lat = location.getLatitude();
-                                        tL_messageMediaVenue9.geo._long = location.getLongitude();
-                                        tL_messageMediaVenue9.query_id = -1L;
-                                        tL_messageMediaVenue9.title = c;
-                                        tL_messageMediaVenue9.icon = "pin";
-                                        tL_messageMediaVenue9.emoji = "🌊";
-                                        tL_messageMediaVenue9.address = "Ocean";
-                                        tL_messageMediaVenue5 = tL_messageMediaVenue9;
-                                    } catch (Exception unused11) {
-                                        tL_messageMediaVenue2 = tL_messageMediaVenue7;
-                                        tL_messageMediaVenue = tL_messageMediaVenue9;
-                                        str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                                        str = str2;
-                                        tL_messageMediaVenue4 = tL_messageMediaVenue;
-                                        tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                                        gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                                        return;
+                });
+                wbVar2.setPadding(0, gl.L(16.0f), 0, gl.L(16.0f));
+                wbVar2.setVisibility(8);
+                frameLayout2.addView(wbVar2);
+                TextView textView3 = new TextView(context);
+                this.f = textView3;
+                textView3.setGravity(17);
+                textView3.setTextSize(1, 14.0f);
+                textView3.setLineSpacing(gl.L(2.0f), 1.0f);
+                textView3.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+                textView3.setMaxLines(2);
+                textView3.setText(k96.M0(2131745928, null));
+                textView3.setOnClickListener(new View.OnClickListener(this) { // from class: xc6
+                    public final /* synthetic */ ad6 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i2;
+                        byte b4 = b3;
+                        ad6 ad6Var = this.b;
+                        switch (b4) {
+                            case 0:
+                                kk7.e().a(new xb0(ad6Var, (byte) 1), kk7.e5);
+                                Context context2 = ad6Var.getContext();
+                                HashSet hashSet = new HashSet();
+                                HashMap hashMap = new HashMap();
+                                String str = w01.h;
+                                fre.f(str);
+                                hashSet.add(GoogleSignInOptions.x);
+                                if (hashSet.contains(GoogleSignInOptions.F)) {
+                                    Scope scope = GoogleSignInOptions.E;
+                                    if (hashSet.contains(scope)) {
+                                        hashSet.remove(scope);
                                     }
                                 }
-                            } catch (Exception unused12) {
-                                tL_messageMediaVenue2 = tL_messageMediaVenue7;
-                                tL_messageMediaVenue = tL_messageMediaVenue5;
-                                str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                                str = str2;
-                                tL_messageMediaVenue4 = tL_messageMediaVenue;
-                                tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                                gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                                return;
-                            }
+                                hashSet.add(GoogleSignInOptions.y);
+                                u84 a = aje.a(context2, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                                a.k().addOnCompleteListener(new h45(ad6Var, a, (byte) 17));
+                                break;
+                            case 1:
+                                ad6Var.o();
+                                break;
+                            default:
+                                TextView textView32 = ad6Var.f;
+                                if (textView32.getVisibility() == 0 && textView32.getAlpha() == 1.0f) {
+                                    ad6Var.p(false);
+                                    TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                    tL_auth_resendCode.phone_number = ad6Var.M;
+                                    tL_auth_resendCode.phone_code_hash = ad6Var.N;
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("phone", ad6Var.J);
+                                    bundle.putString("ephone", ad6Var.K);
+                                    bundle.putString("phoneFormated", ad6Var.M);
+                                    i2 = ((d) ad6Var.a0).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(tL_auth_resendCode, new k45(ad6Var, bundle, tL_auth_resendCode, (byte) 7), 10);
+                                    break;
+                                }
+                                break;
                         }
-                        tL_messageMediaVenue3 = tL_messageMediaVenue7;
-                        tL_messageMediaVenue4 = tL_messageMediaVenue5;
-                        str = str9;
-                        str2 = str28;
-                    } catch (Exception unused13) {
-                        tL_messageMediaVenue6 = null;
-                        tL_messageMediaVenue2 = tL_messageMediaVenue6;
-                        tL_messageMediaVenue = tL_messageMediaVenue5;
-                        str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
-                        str = str2;
-                        tL_messageMediaVenue4 = tL_messageMediaVenue;
-                        tL_messageMediaVenue3 = tL_messageMediaVenue2;
-                        gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                        return;
                     }
-                } catch (Exception unused14) {
-                    location = location2;
-                    tL_messageMediaVenue = null;
-                    tL_messageMediaVenue2 = null;
+                });
+                gl.T3(textView3, false, 1.0f, true, false);
+                nf6 nf6Var = new nf6(context);
+                this.w = nf6Var;
+                vk9.c(nf6Var);
+                zc6 zc6Var = new zc6(context, b2);
+                this.R = zc6Var;
+                Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
+                s33 s33Var = ls3.e;
+                loadAnimation.setInterpolator(s33Var);
+                zc6Var.setInAnimation(loadAnimation);
+                Animation loadAnimation2 = AnimationUtils.loadAnimation(context, R.anim.text_out);
+                loadAnimation2.setInterpolator(s33Var);
+                zc6Var.setOutAnimation(loadAnimation2);
+                FrameLayout frameLayout3 = new FrameLayout(context);
+                this.e = frameLayout3;
+                frameLayout3.addView(textView3, nme.e(-2, -2, 17));
+                zc6Var.addView(frameLayout3);
+                TextView textView4 = new TextView(context);
+                this.s = textView4;
+                textView4.setText(k96.M0(2131742598, "WrongCode"));
+                textView4.setLineSpacing(gl.L(2.0f), 1.0f);
+                textView4.setTextSize(1, 15.0f);
+                textView4.setGravity(49);
+                textView4.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+                zc6Var.addView(textView4);
+                FrameLayout frameLayout4 = new FrameLayout(context);
+                if (z) {
+                    frameLayout4.addView(zc6Var, nme.e(-1, -2, 48));
+                    frameLayout4.addView(frameLayout2, nme.e(-1, -2, 48));
+                    frameLayout4.addView(nf6Var, nme.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, 16.0f));
+                    frameLayout4.addView(textView2, nme.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
+                } else {
+                    frameLayout4.addView(zc6Var, nme.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
                 }
-                gm.c3(new e77((Object) qc6Var, str2, (Object) str, (Object) tL_messageMediaVenue4, (Object) tL_messageMediaVenue3, (Object) location, (byte) 15));
-                return;
-            case 1:
-                hs6 hs6Var = (hs6) this.c;
-                boolean[] zArr = (boolean[]) this.d;
-                ArrayList arrayList2 = (ArrayList) this.e;
-                byte b2 = this.b;
-                int[] iArr = (int[]) this.f;
-                ArrayList[] arrayListArr = hs6Var.H;
-                if (zArr[0]) {
-                    return;
-                }
-                zArr[0] = true;
-                for (int i4 = 0; i4 < arrayList2.size(); i4++) {
-                    hs6Var.h1(((TLRPC.TL_messages_stickerSet) arrayList2.get(i4)).set.id, false);
-                    ((TLRPC.TL_messages_stickerSet) arrayList2.get(i4)).set.archived = false;
-                    arrayListArr[b2].add(iArr[i4], (TLRPC.TL_messages_stickerSet) arrayList2.get(i4));
-                    hs6Var.J.k((TLRPC.TL_messages_stickerSet) arrayList2.get(i4), ((TLRPC.TL_messages_stickerSet) arrayList2.get(i4)).set.id);
-                    hs6Var.K.k((TLRPC.TL_messages_stickerSet) arrayList2.get(i4), ((TLRPC.TL_messages_stickerSet) arrayList2.get(i4)).set.id);
-                    hs6Var.O.put(((TLRPC.TL_messages_stickerSet) arrayList2.get(i4)).set.short_name, (TLRPC.TL_messages_stickerSet) arrayList2.get(i4));
-                    hs6Var.U.l(((TLRPC.TL_messages_stickerSet) arrayList2.get(i4)).set.id);
-                }
-                ArrayList arrayList3 = arrayListArr[b2];
-                int i5 = hs6Var.Z[b2];
-                long[] jArr = hs6Var.Y;
-                long s = hs6.s(arrayList3);
-                jArr[b2] = s;
-                hs6Var.M1(b2, i5, s, arrayList3);
-                hs6Var.getNotificationCenter().k(61, Integer.valueOf(b2), Boolean.TRUE);
-                return;
-            case 2:
-                cf7 cf7Var = (cf7) this.c;
-                String str30 = (String) this.d;
-                byte b3 = this.b;
-                Object[] objArr = (Object[]) this.e;
-                CountDownLatch countDownLatch = (CountDownLatch) this.f;
-                try {
-                    try {
-                        String a = Utilities.a(str30);
-                        if (a != null) {
-                            SQLiteDatabase sQLiteDatabase = cf7Var.b;
-                            Locale locale4 = Locale.US;
-                            SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT data, parent FROM sent_files_v2 WHERE uid = '" + a + "' AND type = " + ((int) b3), new Object[0]);
-                            if (queryFinalized.next() && (byteBufferValue = queryFinalized.byteBufferValue(0)) != null) {
-                                TLRPC.MessageMedia TLdeserialize = TLRPC.MessageMedia.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                byteBufferValue.reuse();
-                                if (TLdeserialize instanceof TLRPC.TL_messageMediaDocument) {
-                                    objArr[0] = ((TLRPC.TL_messageMediaDocument) TLdeserialize).document;
-                                } else if (TLdeserialize instanceof TLRPC.TL_messageMediaPhoto) {
-                                    objArr[0] = ((TLRPC.TL_messageMediaPhoto) TLdeserialize).photo;
-                                }
-                                if (objArr[0] != null) {
-                                    objArr[1] = queryFinalized.stringValue(1);
-                                }
+                addView(frameLayout4, nme.l(1.0f, -1, 0));
+            }
+        }
+        i = 8;
+        frameLayout.setVisibility(i);
+        addView(frameLayout, nme.e(-1, -2, 1));
+        TextView textView5 = new TextView(context);
+        this.b = textView5;
+        ir2.t(textView5, 1, 18.0f);
+        textView5.setText(k96.M0(mf6Var.G != 3 ? 2131752131 : z ? 2131743380 : 2131752133, null));
+        textView5.setGravity(17);
+        textView5.setLineSpacing(gl.L(2.0f), 1.0f);
+        addView(textView5, nme.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
+        wla wlaVar2 = new wla(null, context, false);
+        this.c = wlaVar2;
+        wlaVar2.setTextSize(1, 14.0f);
+        wlaVar2.setGravity(17);
+        wlaVar2.setLineSpacing(gl.L(2.0f), 1.0f);
+        addView(wlaVar2, nme.t(-2, -2, 1, 24, 8, 24, 0));
+        yc6 yc6Var2 = new yc6((byte) 0, context, this);
+        this.a = yc6Var2;
+        addView(yc6Var2, nme.t(-2, 42, 1, 0, !z ? 48 : 32, 0, 0));
+        TextView textView22 = new TextView(context);
+        this.d = textView22;
+        textView22.setGravity(17);
+        textView22.setTextSize(1, 14.0f);
+        textView22.setLineSpacing(gl.L(2.0f), 1.0f);
+        textView22.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+        final byte b32 = 2;
+        textView22.setMaxLines(2);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("d ");
+        Drawable drawable2 = context.getDrawable(R.drawable.googleg_standard_color_18);
+        drawable2.setBounds(0, gl.L(9.0f), gl.L(18.0f), gl.L(27.0f));
+        spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
+        spannableStringBuilder2.setSpan(new lx2(b32), 1, 2, 33);
+        spannableStringBuilder2.append((CharSequence) k96.M0(2131745129, null));
+        textView22.setText(spannableStringBuilder2);
+        textView22.setOnClickListener(new View.OnClickListener(this) { // from class: xc6
+            public final /* synthetic */ ad6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i2;
+                byte b4 = b2;
+                ad6 ad6Var = this.b;
+                switch (b4) {
+                    case 0:
+                        kk7.e().a(new xb0(ad6Var, (byte) 1), kk7.e5);
+                        Context context2 = ad6Var.getContext();
+                        HashSet hashSet = new HashSet();
+                        HashMap hashMap = new HashMap();
+                        String str = w01.h;
+                        fre.f(str);
+                        hashSet.add(GoogleSignInOptions.x);
+                        if (hashSet.contains(GoogleSignInOptions.F)) {
+                            Scope scope = GoogleSignInOptions.E;
+                            if (hashSet.contains(scope)) {
+                                hashSet.remove(scope);
                             }
-                            queryFinalized.dispose();
                         }
-                    } finally {
-                        countDownLatch.countDown();
-                    }
-                } catch (Exception e) {
-                    cf7Var.n(e, true);
+                        hashSet.add(GoogleSignInOptions.y);
+                        u84 a = aje.a(context2, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                        a.k().addOnCompleteListener(new h45(ad6Var, a, (byte) 17));
+                        break;
+                    case 1:
+                        ad6Var.o();
+                        break;
+                    default:
+                        TextView textView32 = ad6Var.f;
+                        if (textView32.getVisibility() == 0 && textView32.getAlpha() == 1.0f) {
+                            ad6Var.p(false);
+                            TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                            tL_auth_resendCode.phone_number = ad6Var.M;
+                            tL_auth_resendCode.phone_code_hash = ad6Var.N;
+                            Bundle bundle = new Bundle();
+                            bundle.putString("phone", ad6Var.J);
+                            bundle.putString("ephone", ad6Var.K);
+                            bundle.putString("phoneFormated", ad6Var.M);
+                            i2 = ((d) ad6Var.a0).currentAccount;
+                            ConnectionsManager.getInstance(i2).sendRequest(tL_auth_resendCode, new k45(ad6Var, bundle, tL_auth_resendCode, (byte) 7), 10);
+                            break;
+                        }
+                        break;
                 }
-                return;
-            default:
-                cf7 cf7Var2 = (cf7) this.c;
-                String str31 = (String) this.d;
-                TLObject tLObject = (TLObject) this.e;
-                byte b4 = this.b;
-                String str32 = (String) this.f;
-                try {
-                    String a2 = Utilities.a(str31);
-                    if (a2 != null) {
-                        if (tLObject instanceof TLRPC.Photo) {
-                            messageMedia = new TLRPC.TL_messageMediaPhoto();
-                            messageMedia.photo = (TLRPC.Photo) tLObject;
-                            messageMedia.flags |= 1;
-                        } else if (tLObject instanceof TLRPC.Document) {
-                            messageMedia = new TLRPC.TL_messageMediaDocument();
-                            messageMedia.document = (TLRPC.Document) tLObject;
-                            messageMedia.flags |= 1;
-                        } else {
-                            messageMedia = null;
-                        }
-                        if (messageMedia == null) {
-                            return;
-                        }
-                        sQLitePreparedStatement = cf7Var2.b.executeFast("REPLACE INTO sent_files_v2 VALUES(?, ?, ?, ?)");
-                        try {
-                            try {
-                                sQLitePreparedStatement.requery();
-                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(messageMedia.getObjectSize());
-                                messageMedia.serializeToStream(nativeByteBuffer);
-                                sQLitePreparedStatement.bindString(1, a2);
-                                sQLitePreparedStatement.bindInteger(2, b4);
-                                sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
-                                sQLitePreparedStatement.bindString(4, str32);
-                                sQLitePreparedStatement.step();
-                                nativeByteBuffer.reuse();
-                            } catch (Exception e2) {
-                                e = e2;
-                                cf7Var2.n(e, true);
-                                if (sQLitePreparedStatement == null) {
-                                    return;
-                                }
-                                sQLitePreparedStatement.dispose();
-                                return;
+            }
+        });
+        FrameLayout frameLayout22 = new FrameLayout(context);
+        this.h = frameLayout22;
+        gl.T3(frameLayout22, mf6Var.G == 3 && !z, 1.0f, true, false);
+        wb wbVar3 = new wb(context, (byte) 24);
+        this.n = wbVar3;
+        wbVar3.setText(k96.M0(2131748545, null));
+        wbVar3.setGravity(17);
+        wbVar3.setTextSize(1, 14.0f);
+        wbVar3.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+        wbVar3.setMaxLines(2);
+        wbVar3.setOnClickListener(new v16(this, context, (byte) 4));
+        frameLayout22.addView(wbVar3);
+        wb wbVar22 = new wb(context, (byte) 25);
+        this.r = wbVar22;
+        wbVar22.setGravity(17);
+        wbVar22.setTextSize(1, 14.0f);
+        wbVar22.setLineSpacing(gl.L(2.0f), 1.0f);
+        wbVar22.setMaxLines(3);
+        wbVar22.setOnClickListener(new View.OnClickListener(this) { // from class: xc6
+            public final /* synthetic */ ad6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i2;
+                byte b4 = b;
+                ad6 ad6Var = this.b;
+                switch (b4) {
+                    case 0:
+                        kk7.e().a(new xb0(ad6Var, (byte) 1), kk7.e5);
+                        Context context2 = ad6Var.getContext();
+                        HashSet hashSet = new HashSet();
+                        HashMap hashMap = new HashMap();
+                        String str = w01.h;
+                        fre.f(str);
+                        hashSet.add(GoogleSignInOptions.x);
+                        if (hashSet.contains(GoogleSignInOptions.F)) {
+                            Scope scope = GoogleSignInOptions.E;
+                            if (hashSet.contains(scope)) {
+                                hashSet.remove(scope);
                             }
-                        } catch (Throwable th) {
-                            th = th;
-                            if (sQLitePreparedStatement != null) {
-                                sQLitePreparedStatement.dispose();
-                            }
-                            throw th;
                         }
-                    } else {
-                        sQLitePreparedStatement = null;
-                    }
-                    if (sQLitePreparedStatement == null) {
-                        return;
-                    }
-                } catch (Exception e3) {
-                    e = e3;
-                    sQLitePreparedStatement = null;
-                } catch (Throwable th2) {
-                    th = th2;
-                    sQLitePreparedStatement = null;
-                    if (sQLitePreparedStatement != null) {
-                    }
-                    throw th;
+                        hashSet.add(GoogleSignInOptions.y);
+                        u84 a = aje.a(context2, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                        a.k().addOnCompleteListener(new h45(ad6Var, a, (byte) 17));
+                        break;
+                    case 1:
+                        ad6Var.o();
+                        break;
+                    default:
+                        TextView textView32 = ad6Var.f;
+                        if (textView32.getVisibility() == 0 && textView32.getAlpha() == 1.0f) {
+                            ad6Var.p(false);
+                            TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                            tL_auth_resendCode.phone_number = ad6Var.M;
+                            tL_auth_resendCode.phone_code_hash = ad6Var.N;
+                            Bundle bundle = new Bundle();
+                            bundle.putString("phone", ad6Var.J);
+                            bundle.putString("ephone", ad6Var.K);
+                            bundle.putString("phoneFormated", ad6Var.M);
+                            i2 = ((d) ad6Var.a0).currentAccount;
+                            ConnectionsManager.getInstance(i2).sendRequest(tL_auth_resendCode, new k45(ad6Var, bundle, tL_auth_resendCode, (byte) 7), 10);
+                            break;
+                        }
+                        break;
                 }
-                sQLitePreparedStatement.dispose();
-                return;
+            }
+        });
+        wbVar22.setPadding(0, gl.L(16.0f), 0, gl.L(16.0f));
+        wbVar22.setVisibility(8);
+        frameLayout22.addView(wbVar22);
+        TextView textView32 = new TextView(context);
+        this.f = textView32;
+        textView32.setGravity(17);
+        textView32.setTextSize(1, 14.0f);
+        textView32.setLineSpacing(gl.L(2.0f), 1.0f);
+        textView32.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+        textView32.setMaxLines(2);
+        textView32.setText(k96.M0(2131745928, null));
+        textView32.setOnClickListener(new View.OnClickListener(this) { // from class: xc6
+            public final /* synthetic */ ad6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i2;
+                byte b4 = b32;
+                ad6 ad6Var = this.b;
+                switch (b4) {
+                    case 0:
+                        kk7.e().a(new xb0(ad6Var, (byte) 1), kk7.e5);
+                        Context context2 = ad6Var.getContext();
+                        HashSet hashSet = new HashSet();
+                        HashMap hashMap = new HashMap();
+                        String str = w01.h;
+                        fre.f(str);
+                        hashSet.add(GoogleSignInOptions.x);
+                        if (hashSet.contains(GoogleSignInOptions.F)) {
+                            Scope scope = GoogleSignInOptions.E;
+                            if (hashSet.contains(scope)) {
+                                hashSet.remove(scope);
+                            }
+                        }
+                        hashSet.add(GoogleSignInOptions.y);
+                        u84 a = aje.a(context2, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                        a.k().addOnCompleteListener(new h45(ad6Var, a, (byte) 17));
+                        break;
+                    case 1:
+                        ad6Var.o();
+                        break;
+                    default:
+                        TextView textView322 = ad6Var.f;
+                        if (textView322.getVisibility() == 0 && textView322.getAlpha() == 1.0f) {
+                            ad6Var.p(false);
+                            TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                            tL_auth_resendCode.phone_number = ad6Var.M;
+                            tL_auth_resendCode.phone_code_hash = ad6Var.N;
+                            Bundle bundle = new Bundle();
+                            bundle.putString("phone", ad6Var.J);
+                            bundle.putString("ephone", ad6Var.K);
+                            bundle.putString("phoneFormated", ad6Var.M);
+                            i2 = ((d) ad6Var.a0).currentAccount;
+                            ConnectionsManager.getInstance(i2).sendRequest(tL_auth_resendCode, new k45(ad6Var, bundle, tL_auth_resendCode, (byte) 7), 10);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        gl.T3(textView32, false, 1.0f, true, false);
+        nf6 nf6Var2 = new nf6(context);
+        this.w = nf6Var2;
+        vk9.c(nf6Var2);
+        zc6 zc6Var2 = new zc6(context, b2);
+        this.R = zc6Var2;
+        Animation loadAnimation3 = AnimationUtils.loadAnimation(context, R.anim.text_in);
+        s33 s33Var2 = ls3.e;
+        loadAnimation3.setInterpolator(s33Var2);
+        zc6Var2.setInAnimation(loadAnimation3);
+        Animation loadAnimation22 = AnimationUtils.loadAnimation(context, R.anim.text_out);
+        loadAnimation22.setInterpolator(s33Var2);
+        zc6Var2.setOutAnimation(loadAnimation22);
+        FrameLayout frameLayout32 = new FrameLayout(context);
+        this.e = frameLayout32;
+        frameLayout32.addView(textView32, nme.e(-2, -2, 17));
+        zc6Var2.addView(frameLayout32);
+        TextView textView42 = new TextView(context);
+        this.s = textView42;
+        textView42.setText(k96.M0(2131742598, "WrongCode"));
+        textView42.setLineSpacing(gl.L(2.0f), 1.0f);
+        textView42.setTextSize(1, 15.0f);
+        textView42.setGravity(49);
+        textView42.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(16.0f));
+        zc6Var2.addView(textView42);
+        FrameLayout frameLayout42 = new FrameLayout(context);
+        if (z) {
+        }
+        addView(frameLayout42, nme.l(1.0f, -1, 0));
+    }
+
+    @Override // jja
+    public final void g() {
+        if (this.I != 0) {
+            gl.r(this.V);
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ad6(pg0 pg0Var, Serializable serializable, Object obj, int i, Serializable serializable2, byte b) {
-        this.a = b;
-        this.c = pg0Var;
-        this.d = serializable;
-        this.e = obj;
-        this.b = i;
-        this.f = serializable2;
+    @Override // jja
+    public String getHeaderName() {
+        return k96.M0(2131743380, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ad6(Locale locale, Location location, int i, Locale locale2, qc6 qc6Var) {
-        this.a = (byte) 0;
-        this.c = locale;
-        this.e = location;
-        this.b = i;
-        this.d = locale2;
-        this.f = qc6Var;
+    @Override // jja
+    public final void h(String str) {
+        TLRPC.TL_auth_signIn tL_auth_signIn;
+        int i;
+        if (this.F) {
+            return;
+        }
+        gl.r(this.U);
+        yc6 yc6Var = this.a;
+        byte b = 1;
+        yc6Var.e = true;
+        sj2[] sj2VarArr = yc6Var.f;
+        byte b2 = 0;
+        if (sj2VarArr != null) {
+            for (sj2 sj2Var : sj2VarArr) {
+                sj2Var.B(0.0f);
+            }
+        }
+        String code = yc6Var.getCode();
+        int length = code.length();
+        mf6 mf6Var = this.a0;
+        if (length == 0 && this.G == null) {
+            if (mf6Var.getParentActivity() == null) {
+                return;
+            }
+            try {
+                yc6Var.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            for (sj2 sj2Var2 : yc6Var.f) {
+                sj2Var2.A(1.0f);
+            }
+            yc6Var.f[0].requestFocus();
+            gl.A3(10.0f, yc6Var, new uc6(this, b));
+            return;
+        }
+        this.F = true;
+        mf6Var.A1(0, true);
+        if (mf6Var.G == 3) {
+            TL_account.verifyEmail verifyemail = new TL_account.verifyEmail();
+            verifyemail.purpose = new TLRPC.TL_emailVerifyPurposeLoginChange();
+            TLRPC.TL_emailVerificationCode tL_emailVerificationCode = new TLRPC.TL_emailVerificationCode();
+            tL_emailVerificationCode.code = code;
+            verifyemail.verification = tL_emailVerificationCode;
+            tL_auth_signIn = verifyemail;
+        } else if (this.O) {
+            TL_account.verifyEmail verifyemail2 = new TL_account.verifyEmail();
+            TLRPC.TL_emailVerifyPurposeLoginSetup tL_emailVerifyPurposeLoginSetup = new TLRPC.TL_emailVerifyPurposeLoginSetup();
+            tL_emailVerifyPurposeLoginSetup.phone_number = this.M;
+            tL_emailVerifyPurposeLoginSetup.phone_code_hash = this.N;
+            verifyemail2.purpose = tL_emailVerifyPurposeLoginSetup;
+            TLRPC.TL_emailVerificationCode tL_emailVerificationCode2 = new TLRPC.TL_emailVerificationCode();
+            tL_emailVerificationCode2.code = code;
+            verifyemail2.verification = tL_emailVerificationCode2;
+            tL_auth_signIn = verifyemail2;
+        } else {
+            TLRPC.TL_auth_signIn tL_auth_signIn2 = new TLRPC.TL_auth_signIn();
+            tL_auth_signIn2.phone_number = this.M;
+            tL_auth_signIn2.phone_code_hash = this.N;
+            if (this.G != null) {
+                TLRPC.TL_emailVerificationGoogle tL_emailVerificationGoogle = new TLRPC.TL_emailVerificationGoogle();
+                tL_emailVerificationGoogle.token = this.G.b;
+                tL_auth_signIn2.email_verification = tL_emailVerificationGoogle;
+            } else {
+                TLRPC.TL_emailVerificationCode tL_emailVerificationCode3 = new TLRPC.TL_emailVerificationCode();
+                tL_emailVerificationCode3.code = code;
+                tL_auth_signIn2.email_verification = tL_emailVerificationCode3;
+            }
+            tL_auth_signIn2.flags |= 2;
+            tL_auth_signIn = tL_auth_signIn2;
+        }
+        yc6Var.e = true;
+        sj2[] sj2VarArr2 = yc6Var.f;
+        if (sj2VarArr2 != null) {
+            for (sj2 sj2Var3 : sj2VarArr2) {
+                sj2Var3.B(0.0f);
+            }
+        }
+        i = ((d) mf6Var).currentAccount;
+        ConnectionsManager.getInstance(i).sendRequest(tL_auth_signIn, new rc6(this, code, b2), 10);
+    }
+
+    @Override // jja
+    public final void j() {
+        if (this.y) {
+            this.y = false;
+        } else {
+            gl.d3(new uc6(this, (byte) 8), mf6.A0);
+        }
+    }
+
+    @Override // jja
+    public final void k(Bundle bundle) {
+        Bundle bundle2 = bundle.getBundle("emailcode_params");
+        this.E = bundle2;
+        if (bundle2 != null) {
+            m(bundle2, true);
+        }
+        String string = bundle.getString("emailcode_code");
+        if (string != null) {
+            this.a.setText(string);
+        }
+    }
+
+    @Override // jja
+    public final void l(Bundle bundle) {
+        String code = this.a.getCode();
+        if (code != null && code.length() != 0) {
+            bundle.putString("emailcode_code", code);
+        }
+        Bundle bundle2 = this.E;
+        if (bundle2 != null) {
+            bundle.putBundle("emailcode_params", bundle2);
+        }
+    }
+
+    @Override // jja
+    public final void m(Bundle bundle, boolean z) {
+        if (bundle != null) {
+            this.E = bundle;
+            this.M = bundle.getString("phoneFormated");
+            this.N = this.E.getString("phoneHash");
+            this.J = this.E.getString("phone");
+            this.K = this.E.getString("ephone");
+            this.O = this.E.getBoolean("setup");
+            this.P = this.E.getInt("length");
+            this.L = this.E.getString("email");
+            this.H = this.E.getInt("resetAvailablePeriod");
+            this.I = this.E.getInt("resetPendingDate");
+            mf6 mf6Var = this.a0;
+            byte b = mf6Var.G;
+            int i = 8;
+            FrameLayout frameLayout = this.h;
+            wla wlaVar = this.c;
+            if (b == 3) {
+                wlaVar.setText(k96.a0(null, null, 2131752130, this.L));
+                gl.T3(frameLayout, false, 1.0f, true, false);
+            } else if (this.Q) {
+                wlaVar.setText(k96.a0(null, null, 2131743379, this.L));
+                gl.T3(frameLayout, false, 1.0f, true, false);
+            } else {
+                gl.T3(frameLayout, true, 1.0f, true, false);
+                this.n.setVisibility(this.I == 0 ? 0 : 8);
+                this.r.setVisibility(this.I != 0 ? 0 : 8);
+                if (this.I != 0) {
+                    q();
+                }
+            }
+            int i2 = this.P;
+            yc6 yc6Var = this.a;
+            yc6Var.b(i2, 1);
+            for (sj2 sj2Var : yc6Var.f) {
+                sj2Var.setShowSoftInputOnFocusCompat(gl.A1());
+                sj2Var.addTextChangedListener(new b7(this, (byte) 27));
+                sj2Var.setOnFocusChangeListener(new ls0(this, (byte) 6));
+            }
+            yc6Var.setText("");
+            if (!this.O && mf6Var.G != 3) {
+                String string = this.E.getString("emailPattern");
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
+                int indexOf = string.indexOf(42);
+                int lastIndexOf = string.lastIndexOf(42);
+                if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
+                    vib vibVar = new vib();
+                    vibVar.a |= 256;
+                    vibVar.b = indexOf;
+                    int i3 = lastIndexOf + 1;
+                    vibVar.c = i3;
+                    spannableStringBuilder.setSpan(new wib(vibVar, 0), indexOf, i3, 0);
+                }
+                wlaVar.setText(gl.m0(k96.M0(2131752132, null), spannableStringBuilder));
+            }
+            if (bundle.getBoolean("googleSignInAllowed") && b.b.hasServices()) {
+                i = 0;
+            }
+            this.w.setVisibility(i);
+            this.d.setVisibility(i);
+            mf6Var.L1(yc6Var.f[0]);
+            yc6Var.requestFocus();
+            if (!z && bundle.containsKey("nextType")) {
+                gl.d3(this.U, bundle.getInt("timeout"));
+            }
+            if (this.I != 0) {
+                gl.d3(this.V, 1000L);
+            }
+        }
+    }
+
+    public final void n(Runnable runnable) {
+        if (this.G != null) {
+            runnable.run();
+            return;
+        }
+        int i = 0;
+        while (true) {
+            yc6 yc6Var = this.a;
+            if (i >= yc6Var.f.length) {
+                yc6Var.postDelayed(new kz5(this, runnable, (byte) 15), (r2.length * 75) + 400);
+                return;
+            } else {
+                yc6Var.postDelayed(new sm3((Object) this, i, (byte) 17), i * 75);
+                i++;
+            }
+        }
+    }
+
+    public final void o() {
+        if (this.W) {
+            return;
+        }
+        this.W = true;
+        Bundle bundle = new Bundle();
+        bundle.putString("phone", this.J);
+        bundle.putString("ephone", this.K);
+        bundle.putString("phoneFormated", this.M);
+        TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail = new TLRPC.TL_auth_resetLoginEmail();
+        tL_auth_resetLoginEmail.phone_number = this.M;
+        tL_auth_resetLoginEmail.phone_code_hash = this.N;
+        this.a0.getConnectionsManager().sendRequest(tL_auth_resetLoginEmail, new sc6(this, bundle, tL_auth_resetLoginEmail, (byte) 0), 10);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(this.T);
+        removeCallbacks(this.U);
+    }
+
+    public final void p(boolean z) {
+        gl.R3(this.f, z);
+        gl.R3(this.h, (z || this.a0.G == 3 || this.Q) ? false : true);
+        nf6 nf6Var = this.w;
+        if (nf6Var.getVisibility() != 8) {
+            nf6Var.setLayoutParams(nme.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, z ? 8.0f : 16.0f));
+            nf6Var.requestLayout();
+        }
+    }
+
+    public final void q() {
+        String a0;
+        int currentTimeMillis = (int) (this.I - (System.currentTimeMillis() / 1000));
+        int i = this.I;
+        byte b = 0;
+        wb wbVar = this.r;
+        if (i <= 0 || currentTimeMillis <= 0) {
+            wbVar.setVisibility(0);
+            wbVar.setText(k96.M0(2131748539, null));
+            gl.d3(new uc6(this, b), 1000L);
+            return;
+        }
+        int i2 = currentTimeMillis / 86400;
+        int i3 = currentTimeMillis % 86400;
+        int i4 = i3 / 3600;
+        int i5 = i3 % 3600;
+        int i6 = i5 / 60;
+        int i7 = i5 % 60;
+        if (i4 >= 16) {
+            i2++;
+        }
+        if (i2 != 0) {
+            a0 = k96.a0(null, null, 2131748542, k96.G(i2, "Days", new Object[0]));
+        } else {
+            StringBuilder sb = new StringBuilder(i4 != 0 ? String.format(Locale.ROOT, "%02d:", Integer.valueOf(i4)) : "");
+            Locale locale = Locale.ROOT;
+            sb.append(String.format(locale, "%02d:", Integer.valueOf(i6)));
+            sb.append(String.format(locale, "%02d", Integer.valueOf(i7)));
+            a0 = k96.a0(null, null, 2131748542, sb.toString());
+        }
+        String a02 = k96.a0(null, null, 2131748541, a0);
+        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(a02);
+        int indexOf = a02.indexOf(42);
+        int lastIndexOf = a02.lastIndexOf(42);
+        if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
+            valueOf.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
+            valueOf.replace(indexOf, indexOf + 1, (CharSequence) "");
+            valueOf.setSpan(new cm4(bkb.p6, this.a0.getResourceProvider()), indexOf, lastIndexOf - 1, 33);
+        }
+        wbVar.setText(valueOf);
+        gl.d3(this.V, 1000L);
+    }
+
+    @Override // jja
+    public final void updateColors() {
+        this.b.setTextColor(bkb.w0(null, bkb.F6, false));
+        int i = bkb.C6;
+        this.c.setTextColor(bkb.w0(null, i, false));
+        int i2 = bkb.p6;
+        this.d.setTextColor(bkb.w0(null, i2, false));
+        this.w.updateColors();
+        this.f.setTextColor(bkb.w0(null, i2, false));
+        this.n.setTextColor(bkb.w0(null, i2, false));
+        this.r.setTextColor(bkb.w0(null, i, false));
+        this.s.setTextColor(bkb.w0(null, bkb.p7, false));
+        this.a.invalidate();
     }
 }

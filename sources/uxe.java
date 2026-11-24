@@ -1,19 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class uxe implements cq7 {
-    public static final uxe a = new uxe();
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public abstract class uxe {
+    public static udc a(View view, wdc wdcVar) {
+        udc udcVar = wdcVar.b;
+        if (udcVar != null) {
+            return udcVar;
         }
-        throw null;
+        View rootView = view.getRootView();
+        if (view == rootView) {
+            w26.j("Cannot add OnPostDrawListener to root view");
+            return null;
+        }
+        if (!(rootView instanceof ViewGroup)) {
+            return null;
+        }
+        ViewGroup viewGroup = (ViewGroup) rootView;
+        udc udcVar2 = (udc) viewGroup.getTag(R.id.tag_view_on_post_draw_root_state);
+        if (udcVar2 == null) {
+            rj4 rj4Var = new rj4(viewGroup.getContext());
+            udc udcVar3 = new udc(rj4Var);
+            viewGroup.setTag(R.id.tag_view_on_post_draw_root_state, udcVar3);
+            if (viewGroup instanceof FrameLayout) {
+                viewGroup.addView(rj4Var, new FrameLayout.LayoutParams(1, 1, 17));
+            } else {
+                viewGroup.addView(rj4Var, new ViewGroup.LayoutParams(1, 1));
+            }
+            udcVar2 = udcVar3;
+        }
+        wdcVar.b = udcVar2;
+        return udcVar2;
     }
 }

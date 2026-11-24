@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.IntegrityTokenRequest;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class am extends IntegrityTokenRequest.Builder {
     private String a;
@@ -15,7 +15,7 @@ final class am extends IntegrityTokenRequest.Builder {
         if (str != null) {
             return new ao(str, this.b, anVar, anVar);
         }
-        dq9.m("Missing required properties: nonce");
+        sc8.j("Missing required properties: nonce");
         return null;
     }
 
@@ -31,7 +31,7 @@ final class am extends IntegrityTokenRequest.Builder {
             this.a = str;
             return this;
         }
-        gxc.d("Null nonce");
+        fvc.f("Null nonce");
         return null;
     }
 }

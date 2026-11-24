@@ -1,49 +1,80 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class oe6 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mh6 b;
+public final class oe6 extends qc6 {
+    public final /* synthetic */ byte e;
+    public final /* synthetic */ jja f;
 
-    public /* synthetic */ oe6(mh6 mh6Var, byte b) {
-        this.a = b;
-        this.b = mh6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oe6(qe6 qe6Var, Context context, byte b) {
+        super(qe6Var.v0, context);
+        this.e = b;
+        switch (b) {
+            case 1:
+                this.f = qe6Var;
+                super(qe6Var.v0, context);
+                break;
+            default:
+                this.f = qe6Var;
+                break;
+        }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        mh6 mh6Var = this.b;
+    @Override // qc6
+    public final boolean a() {
+        byte b = this.e;
+        jja jjaVar = this.f;
         switch (b) {
             case 0:
-                if (mh6Var.d == animator) {
-                    mh6Var.d = null;
-                    break;
-                }
-                break;
+                return ((qe6) jjaVar).l0;
+            case 1:
+                return ((qe6) jjaVar).l0;
             default:
-                mh6Var.c.setVisibility(8);
-                if (mh6Var.d == animator) {
-                    mh6Var.d = null;
-                    break;
-                }
-                break;
+                return ((qd6) jjaVar).N;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
+    @Override // qc6
+    public final boolean b() {
+        byte b = this.e;
+        jja jjaVar = this.f;
+        switch (b) {
             case 0:
-                this.b.c.setVisibility(0);
+                if (getVisibility() == 0) {
+                    qe6 qe6Var = (qe6) jjaVar;
+                    if (qe6Var.b0 <= 0 || qe6Var.U == null) {
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                qe6 qe6Var2 = (qe6) jjaVar;
+                if (isClickable() && getVisibility() == 0 && !qe6Var2.g0) {
+                    oe6 oe6Var = qe6Var2.w;
+                    if ((oe6Var == null || oe6Var.getVisibility() == 8) && !qe6Var2.l0) {
+                        break;
+                    }
+                }
                 break;
             default:
-                super.onAnimationStart(animator);
+                if (getVisibility() == 0) {
+                    qd6 qd6Var = (qd6) jjaVar;
+                    if (qd6Var.Q <= 0 || qd6Var.O == null) {
+                        break;
+                    }
+                }
                 break;
         }
+        return true;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oe6(qd6 qd6Var, Context context) {
+        super(qd6Var.b0, context);
+        this.e = (byte) 2;
+        this.f = qd6Var;
     }
 }

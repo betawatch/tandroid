@@ -1,51 +1,51 @@
 // default package
 
-import android.os.Looper;
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicLong;
+import android.util.Range;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class vac {
-    public static final ExecutorService a;
+public final class vac {
+    public long a;
+    public long b;
+    public double c;
+    public Range d;
 
-    static {
-        pd3 pd3Var = new pd3(new AtomicLong(1L), (byte) 1);
-        ThreadPoolExecutor.DiscardPolicy discardPolicy = new ThreadPoolExecutor.DiscardPolicy();
-        ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), pd3Var, discardPolicy));
-        Runtime.getRuntime().addShutdownHook(new Thread(new g64(unconfigurableExecutorService, (byte) 1), "Crashlytics Shutdown Hook for awaitEvenIfOnMainThread task continuation executor"));
-        a = unconfigurableExecutorService;
+    public vac() {
+        Range range = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d));
+        this.d = range;
+        this.c = ((Double) range.getUpper()).doubleValue();
+        this.a = -9223372036854775807L;
+        this.b = -9223372036854775807L;
     }
 
-    public static void a(Task task) {
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        task.continueWith(a, new wta(countDownLatch, (byte) 29));
-        Looper mainLooper = Looper.getMainLooper();
-        Looper myLooper = Looper.myLooper();
-        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-        if (mainLooper == myLooper) {
-            countDownLatch.await(3000L, timeUnit);
-        } else {
-            countDownLatch.await(4000L, timeUnit);
-        }
-        if (task.isSuccessful()) {
-            task.getResult();
-        } else {
-            if (task.isCanceled()) {
-                throw new CancellationException("Task is already canceled");
+    public final void a(long j, long j2) {
+        double doubleValue;
+        gre.f(j != -9223372036854775807L);
+        gre.f(j2 != -9223372036854775807L);
+        long j3 = this.a;
+        if (j3 != -9223372036854775807L) {
+            if (this.b != -9223372036854775807L && j != j3) {
+                doubleValue = (j2 - r4) / (j - j3);
+                this.c = (((Double) this.d.clamp(Double.valueOf(doubleValue))).doubleValue() * 0.20000000298023224d) + (this.c * 0.800000011920929d);
+                this.a = j;
+                this.b = j2;
             }
-            if (!task.isComplete()) {
-                throw new TimeoutException();
-            }
-            dq9.o(task.getException());
         }
+        doubleValue = ((Double) this.d.getUpper()).doubleValue();
+        this.c = (((Double) this.d.clamp(Double.valueOf(doubleValue))).doubleValue() * 0.20000000298023224d) + (this.c * 0.800000011920929d);
+        this.a = j;
+        this.b = j2;
+    }
+
+    public final void b() {
+        this.c = ((Double) this.d.getUpper()).doubleValue();
+        this.a = -9223372036854775807L;
+        this.b = -9223372036854775807L;
+    }
+
+    public final void c(float f) {
+        gre.f(f > 0.0f);
+        this.d = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d / f));
+        b();
     }
 }

@@ -1,33 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class x2f {
-    public old a(wqd wqdVar) {
-        return (old) tld.d.getAndSet(wqdVar, old.d);
+public final class x2f {
+    public final String a;
+    public final String b;
+    public final boolean c;
+
+    public x2f(String str, String str2, boolean z) {
+        fre.f(str);
+        this.a = str;
+        fre.f(str2);
+        this.b = str2;
+        this.c = z;
     }
 
-    public wld b(wqd wqdVar) {
-        return (wld) tld.c.getAndSet(wqdVar, wld.c);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof x2f)) {
+            return false;
+        }
+        x2f x2fVar = (x2f) obj;
+        return cqe.a(this.a, x2fVar.a) && cqe.a(this.b, x2fVar.b) && cqe.a(null, null) && this.c == x2fVar.c;
     }
 
-    public void c(wld wldVar, wld wldVar2) {
-        tld.b.lazySet(wldVar, wldVar2);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, 4225, Boolean.valueOf(this.c)});
     }
 
-    public void d(wld wldVar, Thread thread) {
-        tld.a.lazySet(wldVar, thread);
-    }
-
-    public boolean e(wqd wqdVar, old oldVar, old oldVar2) {
-        return z2f.a(tld.d, wqdVar, oldVar, oldVar2);
-    }
-
-    public boolean f(cmd cmdVar, Object obj, Object obj2) {
-        return z2f.a(tld.e, cmdVar, obj, obj2);
-    }
-
-    public boolean g(cmd cmdVar, wld wldVar, wld wldVar2) {
-        return z2f.a(tld.c, cmdVar, wldVar, wldVar2);
+    public final String toString() {
+        String str = this.a;
+        if (str != null) {
+            return str;
+        }
+        fre.h(null);
+        throw null;
     }
 }

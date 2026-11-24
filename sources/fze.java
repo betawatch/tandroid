@@ -1,24 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class fze {
-    public static final Object a(ss9 ss9Var, ss9 ss9Var2, fs4 fs4Var) {
-        Object qq2Var;
-        Object C;
-        try {
-            r5c.a(2, fs4Var);
-            qq2Var = fs4Var.invoke(ss9Var2, ss9Var);
-        } catch (Throwable th) {
-            qq2Var = new qq2(th, false);
+    public static void a(int i, Object[] objArr) {
+        for (int i2 = 0; i2 < i; i2++) {
+            if (objArr[i2] == null) {
+                fvc.f(de9.k(i2, "at index "));
+                return;
+            }
         }
-        ly2 ly2Var = ly2.a;
-        if (qq2Var == ly2Var || (C = ss9Var.C(qq2Var)) == hcd.b) {
-            return ly2Var;
-        }
-        if (C instanceof qq2) {
-            throw ((qq2) C).a;
-        }
-        return hcd.a(C);
     }
 }

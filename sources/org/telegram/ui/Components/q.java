@@ -31,52 +31,52 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class q extends zq5 {
+public final class q extends zo5 {
     public static final /* synthetic */ int N0 = 0;
     public float A0;
     public float B0;
     public int C0;
     public int D0;
-    public final rq5 E;
+    public final ro5 E;
     public boolean E0;
-    public final nt1 F;
+    public final as1 F;
     public boolean F0;
     public final LinearLayout G;
     public float G0;
-    public final pk4 H;
+    public final ki4 H;
     public int H0;
-    public final pk4 I;
+    public final ki4 I;
     public long I0;
     public final ImageView J;
     public boolean J0;
-    public final rk4 K;
+    public final mi4 K;
     public boolean K0;
     public final int[] L;
-    public final pq5 L0;
+    public final po5 L0;
     public final Matrix M;
-    public final lj4 M0;
+    public final gi3 M0;
     public final float[] N;
     public final Paint O;
     public final int P;
-    public un9 Q;
-    public sn9 R;
-    public tn9 S;
-    public mn9 T;
-    public mib U;
-    public rcc V;
-    public tq5 W;
+    public ul9 Q;
+    public sl9 R;
+    public tl9 S;
+    public ml9 T;
+    public lgb U;
+    public oac V;
+    public to5 W;
     public boolean a0;
     public boolean b0;
     public AnimatorSet c0;
     public ValueAnimator d0;
     public ValueAnimator e0;
-    public final vq5 f;
-    public final p09 f0;
-    public p09 g0;
+    public final vo5 f;
+    public final oy8 f0;
+    public oy8 g0;
     public final int h;
-    public p09 h0;
+    public oy8 h0;
     public boolean i0;
     public boolean j0;
     public boolean k0;
@@ -94,17 +94,17 @@ public final class q extends zq5 {
     public boolean t0;
     public long u0;
     public int v0;
-    public final sq5 w;
+    public final so5 w;
     public Bitmap w0;
-    public final xm9 x;
+    public final wk9 x;
     public long x0;
     public final FrameLayout y;
     public float y0;
     public float z0;
 
-    public q(Context context, vq5 vq5Var, ylb ylbVar, boolean z) {
+    public q(Context context, vo5 vo5Var, wjb wjbVar, boolean z) {
         super(context);
-        this.h = z8c.t0;
+        this.h = y6c.t0;
         this.L = new int[2];
         this.M = new Matrix();
         this.N = new float[9];
@@ -113,59 +113,59 @@ public final class q extends zq5 {
         this.D0 = -1;
         this.G0 = Float.NaN;
         final byte b = 0;
-        this.L0 = new pq5(this, (byte) 0);
-        this.M0 = new lj4(this);
-        this.f = vq5Var;
-        this.n = vq5Var.getClassGuid();
-        this.r = vq5Var.x();
-        this.s = vq5Var.getFragmentView();
+        this.L0 = new po5(this, (byte) 0);
+        this.M0 = new gi3(this);
+        this.f = vo5Var;
+        this.n = vo5Var.getClassGuid();
+        this.r = vo5Var.y();
+        this.s = vo5Var.getFragmentView();
         setWillNotDraw(false);
-        rk4 rk4Var = new rk4(context, null, this, null);
-        this.K = rk4Var;
-        rk4Var.o = 0.5f;
-        rk4Var.n = rk4.f(0.5f);
-        rk4Var.g();
-        addView(rk4Var.b, qoe.e(-1, -1, nm7.D1));
-        sq5 sq5Var = new sq5(this, context);
-        this.w = sq5Var;
-        xm9 xm9Var = new xm9(context);
-        this.x = xm9Var;
+        mi4 mi4Var = new mi4(context, null, this, null);
+        this.K = mi4Var;
+        mi4Var.o = 0.5f;
+        mi4Var.n = mi4.f(0.5f);
+        mi4Var.g();
+        addView(mi4Var.b, nme.e(-1, -1, kk7.D1));
+        so5 so5Var = new so5(this, context);
+        this.w = so5Var;
+        wk9 wk9Var = new wk9(context);
+        this.x = wk9Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.y = frameLayout;
-        rq5 rq5Var = new rq5(b, context, this);
+        ro5 ro5Var = new ro5(b, context, this);
         final byte b2 = 1;
-        rq5Var.setOpaque(true);
-        rq5Var.setClickable(true);
-        rq5Var.setCameraDistance(gm.L(8000.0f));
+        ro5Var.setOpaque(true);
+        ro5Var.setClickable(true);
+        ro5Var.setCameraDistance(gl.L(8000.0f));
         byte b3 = 6;
-        rq5Var.setOutlineProvider(new xj(b3));
-        rq5Var.setClipToOutline(true);
-        this.E = rq5Var;
-        frameLayout.addView(rq5Var, qoe.e(-1, -1, nm7.D1));
+        ro5Var.setOutlineProvider(new xi(b3));
+        ro5Var.setClipToOutline(true);
+        this.E = ro5Var;
+        frameLayout.addView(ro5Var, nme.e(-1, -1, kk7.D1));
         Paint paint = new Paint(1);
         paint.setColor(671088640);
-        nt1 nt1Var = new nt1(this, context, paint);
-        this.F = nt1Var;
-        nt1Var.setOutlineProvider(new xj((byte) 5));
-        nt1Var.setClipToOutline(true);
-        frameLayout.addView(nt1Var, qoe.e(-1, -1, nm7.D1));
-        xm9Var.addView(frameLayout, qoe.d(-1, -1.0f, nm7.D1, 14.0f, 14.0f, 14.0f, 14.0f));
-        sq5Var.addView(xm9Var, qoe.e(-1, -1, nm7.D1));
-        int i = gm.v;
-        addView(sq5Var, new FrameLayout.LayoutParams(i, i, 17));
-        addView(rk4Var.c, qoe.e(-1, -1, nm7.D1));
+        as1 as1Var = new as1(this, context, paint);
+        this.F = as1Var;
+        as1Var.setOutlineProvider(new xi((byte) 5));
+        as1Var.setClipToOutline(true);
+        frameLayout.addView(as1Var, nme.e(-1, -1, kk7.D1));
+        wk9Var.addView(frameLayout, nme.d(-1, -1.0f, kk7.D1, 14.0f, 14.0f, 14.0f, 14.0f));
+        so5Var.addView(wk9Var, nme.e(-1, -1, kk7.D1));
+        int i = gl.v;
+        addView(so5Var, new FrameLayout.LayoutParams(i, i, 17));
+        addView(mi4Var.c, nme.e(-1, -1, kk7.D1));
         LinearLayout linearLayout = new LinearLayout(context);
         this.G = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setPadding(gm.L(6.0f), gm.L(6.0f), gm.L(6.0f), gm.L(6.0f));
-        addView(linearLayout, qoe.d(-2, 56.0f, 83, 1.0f, 0.0f, 0.0f, 0.0f));
-        pk4 pk4Var = new pk4(context);
-        this.H = pk4Var;
+        linearLayout.setPadding(gl.L(6.0f), gl.L(6.0f), gl.L(6.0f), gl.L(6.0f));
+        addView(linearLayout, nme.d(-2, 56.0f, 83, 1.0f, 0.0f, 0.0f, 0.0f));
+        ki4 ki4Var = new ki4(context);
+        this.H = ki4Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        pk4Var.setScaleType(scaleType);
-        pk4Var.setContentDescription(jb6.M0(2131754751, null));
-        linearLayout.addView(pk4Var, qoe.o(44, 44));
-        pk4Var.setOnClickListener(new View.OnClickListener(this) { // from class: qq5
+        ki4Var.setScaleType(scaleType);
+        ki4Var.setContentDescription(k96.M0(2131754751, null));
+        linearLayout.addView(ki4Var, nme.o(44, 44));
+        ki4Var.setOnClickListener(new View.OnClickListener(this) { // from class: qo5
             public final /* synthetic */ q b;
 
             {
@@ -174,44 +174,44 @@ public final class q extends zq5 {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                tn9 tn9Var;
-                mn9 mn9Var;
-                tn9 tn9Var2;
+                tl9 tl9Var;
+                ml9 ml9Var;
+                tl9 tl9Var2;
                 int i2;
                 byte b4 = b;
                 boolean z2 = true;
                 q qVar = this.b;
                 switch (b4) {
                     case 0:
-                        un9 un9Var = qVar.Q;
-                        if (un9Var != null && (tn9Var = qVar.S) != null && (mn9Var = qVar.T) != null && tn9Var.a == 3 && !tn9Var.f && !qVar.q0) {
-                            nn9 nn9Var = mn9Var.a;
-                            nn9 nn9Var2 = nn9.a;
-                            if (nn9Var == nn9Var2) {
-                                nn9Var2 = nn9.b;
+                        ul9 ul9Var = qVar.Q;
+                        if (ul9Var != null && (tl9Var = qVar.S) != null && (ml9Var = qVar.T) != null && tl9Var.a == 3 && !tl9Var.f && !qVar.q0) {
+                            nl9 nl9Var = ml9Var.a;
+                            nl9 nl9Var2 = nl9.a;
+                            if (nl9Var == nl9Var2) {
+                                nl9Var2 = nl9.b;
                             }
-                            un9Var.getClass();
-                            un9.v();
-                            int i3 = un9Var.a0;
+                            ul9Var.getClass();
+                            ul9.v();
+                            int i3 = ul9Var.a0;
                             if (i3 != 7 && i3 != 8 && i3 != 9 && i3 != 10) {
-                                if (un9Var.r != nn9Var2) {
-                                    un9Var.m.b("camera facing requested: " + un9Var.r + " -> " + nn9Var2 + ", state=" + hg9.A(un9Var.a0));
-                                    un9Var.r = nn9Var2;
-                                    int i4 = un9Var.a0;
+                                if (ul9Var.r != nl9Var2) {
+                                    ul9Var.m.b("camera facing requested: " + ul9Var.r + " -> " + nl9Var2 + ", state=" + de9.A(ul9Var.a0));
+                                    ul9Var.r = nl9Var2;
+                                    int i4 = ul9Var.a0;
                                     if (i4 == 3 || i4 == 2) {
-                                        un9Var.e();
-                                        bm9 bm9Var = un9Var.l;
-                                        bm9Var.E = nn9Var2;
-                                        Handler handler = bm9Var.n;
-                                        if (!bm9Var.U || handler == null) {
+                                        ul9Var.e();
+                                        ak9 ak9Var = ul9Var.l;
+                                        ak9Var.E = nl9Var2;
+                                        Handler handler = ak9Var.n;
+                                        if (!ak9Var.U || handler == null) {
                                             z2 = false;
                                         } else {
-                                            handler.post(new il9(bm9Var, nn9Var2, (byte) 2));
+                                            handler.post(new tj9(ak9Var, nl9Var2, (byte) 0));
                                         }
-                                        un9Var.y = z2;
+                                        ul9Var.y = z2;
                                     }
-                                    un9Var.n();
-                                    un9Var.o();
+                                    ul9Var.n();
+                                    ul9Var.o();
                                 }
                                 qVar.f0.H(0);
                                 qVar.f0.start();
@@ -220,21 +220,21 @@ public final class q extends zq5 {
                         }
                         break;
                     default:
-                        un9 un9Var2 = qVar.Q;
-                        if (un9Var2 != null && (tn9Var2 = qVar.S) != null && qVar.T != null) {
-                            boolean z3 = !tn9Var2.g;
-                            bm9 bm9Var2 = un9Var2.l;
-                            un9.v();
-                            if (un9Var2.a0 == 3 && !un9Var2.y && (i2 = un9Var2.b0) != 1) {
-                                un9Var2.w = z3;
+                        ul9 ul9Var2 = qVar.Q;
+                        if (ul9Var2 != null && (tl9Var2 = qVar.S) != null && qVar.T != null) {
+                            boolean z3 = !tl9Var2.g;
+                            ak9 ak9Var2 = ul9Var2.l;
+                            ul9.v();
+                            if (ul9Var2.a0 == 3 && !ul9Var2.y && (i2 = ul9Var2.b0) != 1) {
+                                ul9Var2.w = z3;
                                 if (i2 == 3) {
-                                    un9Var2.w(z3);
-                                    bm9Var2.S(false);
+                                    ul9Var2.w(z3);
+                                    ak9Var2.S(false);
                                 } else {
-                                    un9Var2.w(false);
-                                    bm9Var2.S(z3);
+                                    ul9Var2.w(false);
+                                    ak9Var2.S(z3);
                                 }
-                                un9Var2.o();
+                                ul9Var2.o();
                                 qVar.A();
                                 break;
                             }
@@ -243,11 +243,11 @@ public final class q extends zq5 {
                 }
             }
         });
-        pk4 pk4Var2 = new pk4(context);
-        this.I = pk4Var2;
-        pk4Var2.setScaleType(scaleType);
-        linearLayout.addView(pk4Var2, qoe.o(44, 44));
-        pk4Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qq5
+        ki4 ki4Var2 = new ki4(context);
+        this.I = ki4Var2;
+        ki4Var2.setScaleType(scaleType);
+        linearLayout.addView(ki4Var2, nme.o(44, 44));
+        ki4Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qo5
             public final /* synthetic */ q b;
 
             {
@@ -256,44 +256,44 @@ public final class q extends zq5 {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                tn9 tn9Var;
-                mn9 mn9Var;
-                tn9 tn9Var2;
+                tl9 tl9Var;
+                ml9 ml9Var;
+                tl9 tl9Var2;
                 int i2;
                 byte b4 = b2;
                 boolean z2 = true;
                 q qVar = this.b;
                 switch (b4) {
                     case 0:
-                        un9 un9Var = qVar.Q;
-                        if (un9Var != null && (tn9Var = qVar.S) != null && (mn9Var = qVar.T) != null && tn9Var.a == 3 && !tn9Var.f && !qVar.q0) {
-                            nn9 nn9Var = mn9Var.a;
-                            nn9 nn9Var2 = nn9.a;
-                            if (nn9Var == nn9Var2) {
-                                nn9Var2 = nn9.b;
+                        ul9 ul9Var = qVar.Q;
+                        if (ul9Var != null && (tl9Var = qVar.S) != null && (ml9Var = qVar.T) != null && tl9Var.a == 3 && !tl9Var.f && !qVar.q0) {
+                            nl9 nl9Var = ml9Var.a;
+                            nl9 nl9Var2 = nl9.a;
+                            if (nl9Var == nl9Var2) {
+                                nl9Var2 = nl9.b;
                             }
-                            un9Var.getClass();
-                            un9.v();
-                            int i3 = un9Var.a0;
+                            ul9Var.getClass();
+                            ul9.v();
+                            int i3 = ul9Var.a0;
                             if (i3 != 7 && i3 != 8 && i3 != 9 && i3 != 10) {
-                                if (un9Var.r != nn9Var2) {
-                                    un9Var.m.b("camera facing requested: " + un9Var.r + " -> " + nn9Var2 + ", state=" + hg9.A(un9Var.a0));
-                                    un9Var.r = nn9Var2;
-                                    int i4 = un9Var.a0;
+                                if (ul9Var.r != nl9Var2) {
+                                    ul9Var.m.b("camera facing requested: " + ul9Var.r + " -> " + nl9Var2 + ", state=" + de9.A(ul9Var.a0));
+                                    ul9Var.r = nl9Var2;
+                                    int i4 = ul9Var.a0;
                                     if (i4 == 3 || i4 == 2) {
-                                        un9Var.e();
-                                        bm9 bm9Var = un9Var.l;
-                                        bm9Var.E = nn9Var2;
-                                        Handler handler = bm9Var.n;
-                                        if (!bm9Var.U || handler == null) {
+                                        ul9Var.e();
+                                        ak9 ak9Var = ul9Var.l;
+                                        ak9Var.E = nl9Var2;
+                                        Handler handler = ak9Var.n;
+                                        if (!ak9Var.U || handler == null) {
                                             z2 = false;
                                         } else {
-                                            handler.post(new il9(bm9Var, nn9Var2, (byte) 2));
+                                            handler.post(new tj9(ak9Var, nl9Var2, (byte) 0));
                                         }
-                                        un9Var.y = z2;
+                                        ul9Var.y = z2;
                                     }
-                                    un9Var.n();
-                                    un9Var.o();
+                                    ul9Var.n();
+                                    ul9Var.o();
                                 }
                                 qVar.f0.H(0);
                                 qVar.f0.start();
@@ -302,21 +302,21 @@ public final class q extends zq5 {
                         }
                         break;
                     default:
-                        un9 un9Var2 = qVar.Q;
-                        if (un9Var2 != null && (tn9Var2 = qVar.S) != null && qVar.T != null) {
-                            boolean z3 = !tn9Var2.g;
-                            bm9 bm9Var2 = un9Var2.l;
-                            un9.v();
-                            if (un9Var2.a0 == 3 && !un9Var2.y && (i2 = un9Var2.b0) != 1) {
-                                un9Var2.w = z3;
+                        ul9 ul9Var2 = qVar.Q;
+                        if (ul9Var2 != null && (tl9Var2 = qVar.S) != null && qVar.T != null) {
+                            boolean z3 = !tl9Var2.g;
+                            ak9 ak9Var2 = ul9Var2.l;
+                            ul9.v();
+                            if (ul9Var2.a0 == 3 && !ul9Var2.y && (i2 = ul9Var2.b0) != 1) {
+                                ul9Var2.w = z3;
                                 if (i2 == 3) {
-                                    un9Var2.w(z3);
-                                    bm9Var2.S(false);
+                                    ul9Var2.w(z3);
+                                    ak9Var2.S(false);
                                 } else {
-                                    un9Var2.w(false);
-                                    bm9Var2.S(z3);
+                                    ul9Var2.w(false);
+                                    ak9Var2.S(z3);
                                 }
-                                un9Var2.o();
+                                ul9Var2.o();
                                 qVar.A();
                                 break;
                             }
@@ -325,28 +325,28 @@ public final class q extends zq5 {
                 }
             }
         });
-        int L = gm.L(z ? 24.0f : 28.0f);
+        int L = gl.L(z ? 24.0f : 28.0f);
         this.P = L;
-        p09 p09Var = new p09(R.raw.roundcamera_flip, L, L);
-        this.f0 = p09Var;
-        p09Var.setCallback(pk4Var);
-        p09Var.H(p09Var.e[0] - 1);
-        pk4Var.setImageDrawable(p09Var);
+        oy8 oy8Var = new oy8(R.raw.roundcamera_flip, L, L);
+        this.f0 = oy8Var;
+        oy8Var.setCallback(ki4Var);
+        oy8Var.H(oy8Var.e[0] - 1);
+        ki4Var.setImageDrawable(oy8Var);
         A();
         if (!z) {
-            rk4Var.a(pk4Var);
-            rk4Var.a(pk4Var2);
-        } else if (ylbVar != null && !ylbVar.a()) {
-            pk4Var.setInvert(0.6f);
-            pk4Var2.setInvert(0.6f);
+            mi4Var.a(ki4Var);
+            mi4Var.a(ki4Var2);
+        } else if (wjbVar != null && !wjbVar.a()) {
+            ki4Var.setInvert(0.6f);
+            ki4Var2.setInvert(0.6f);
         }
         ImageView imageView = new ImageView(context);
         this.J = imageView;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.video_mute);
         imageView.setAlpha(0.0f);
-        addView(imageView, qoe.e(48, 48, 17));
-        rq5Var.setOnTouchListener(new a7(this, b3));
+        addView(imageView, nme.e(48, 48, 17));
+        ro5Var.setOnTouchListener(new a7(this, b3));
         super.setVisibility(4);
     }
 
@@ -359,33 +359,33 @@ public final class q extends zq5 {
     }
 
     private long getCurrentDurationMs() {
-        tn9 tn9Var;
-        un9 un9Var = this.Q;
-        if (un9Var == null || (tn9Var = this.S) == null) {
+        tl9 tl9Var;
+        ul9 ul9Var = this.Q;
+        if (ul9Var == null || (tl9Var = this.S) == null) {
             return 0L;
         }
-        return tn9Var.a == 3 ? un9Var.j() : tn9Var.b;
+        return tl9Var.a == 3 ? ul9Var.j() : tl9Var.b;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setRecordingUiFrameClockActive(boolean z) {
-        ms1 ms1Var;
+        ar1 ar1Var;
         if (z != this.J0) {
             this.J0 = z;
             this.I0 = 0L;
-            pq5 pq5Var = this.L0;
+            po5 po5Var = this.L0;
             if (z) {
-                fi2.d().a(30, pq5Var);
+                rg2.d().a(30, po5Var);
             } else {
-                fi2.d().g(pq5Var);
+                rg2.d().g(po5Var);
             }
             if (this.d != z) {
                 this.d = z;
-                xq5 xq5Var = this.c;
-                if (xq5Var == null || (ms1Var = ((yv1) ((ni6) xq5Var).b).a0) == null) {
+                xo5 xo5Var = this.c;
+                if (xo5Var == null || (ar1Var = ((mu1) ((l69) xo5Var).b).a0) == null) {
                     return;
                 }
-                ms1Var.setRoundVideoUiFrameClockActive(z);
+                ar1Var.setRoundVideoUiFrameClockActive(z);
             }
         }
     }
@@ -394,86 +394,86 @@ public final class q extends zq5 {
     public void setScreenFlashEnabled(boolean z) {
         Activity parentActivity = this.f.getParentActivity();
         if (parentActivity == null) {
-            parentActivity = gm.W(getContext());
+            parentActivity = gl.W(getContext());
         }
         if (parentActivity == null) {
             return;
         }
         WindowManager.LayoutParams attributes = parentActivity.getWindow().getAttributes();
         float f = this.G0;
-        rk4 rk4Var = this.K;
+        mi4 mi4Var = this.K;
         if (z) {
             if (Float.isNaN(f)) {
                 this.G0 = attributes.screenBrightness;
             }
             attributes.screenBrightness = 1.0f;
-            rk4Var.c(null);
+            mi4Var.c(null);
         } else {
             if (!Float.isNaN(f)) {
                 attributes.screenBrightness = this.G0;
                 this.G0 = Float.NaN;
             }
-            rk4Var.d();
+            mi4Var.d();
         }
         parentActivity.getWindow().setAttributes(attributes);
     }
 
     public final void A() {
-        tn9 tn9Var = this.S;
+        tl9 tl9Var = this.S;
         int i = this.P;
-        pk4 pk4Var = this.I;
-        if (tn9Var == null || !tn9Var.g) {
+        ki4 ki4Var = this.I;
+        if (tl9Var == null || !tl9Var.g) {
             if (this.g0 == null) {
-                p09 p09Var = new p09(R.raw.roundcamera_flash_on, i, i);
-                this.g0 = p09Var;
-                p09Var.setCallback(pk4Var);
+                oy8 oy8Var = new oy8(R.raw.roundcamera_flash_on, i, i);
+                this.g0 = oy8Var;
+                oy8Var.setCallback(ki4Var);
             }
-            pk4Var.setImageDrawable(this.g0);
+            ki4Var.setImageDrawable(this.g0);
             return;
         }
         if (this.h0 == null) {
-            p09 p09Var2 = new p09(R.raw.roundcamera_flash_off, i, i);
-            this.h0 = p09Var2;
-            p09Var2.setCallback(pk4Var);
+            oy8 oy8Var2 = new oy8(R.raw.roundcamera_flash_off, i, i);
+            this.h0 = oy8Var2;
+            oy8Var2.setCallback(ki4Var);
         }
-        pk4Var.setImageDrawable(this.h0);
+        ki4Var.setImageDrawable(this.h0);
     }
 
     public final void B() {
-        ms1 ms1Var;
-        tn9 tn9Var = this.S;
-        if (tn9Var != null) {
-            long j = tn9Var.d;
-            if (tn9Var.a == 3) {
-                long min = Math.min(j, (SystemClock.elapsedRealtime() + tn9Var.b) - tn9Var.c);
+        ar1 ar1Var;
+        tl9 tl9Var = this.S;
+        if (tl9Var != null) {
+            long j = tl9Var.d;
+            if (tl9Var.a == 3) {
+                long min = Math.min(j, (SystemClock.elapsedRealtime() + tl9Var.b) - tl9Var.c);
                 this.x0 = min;
                 this.x.setProgress(min / j);
-                xq5 xq5Var = this.c;
-                if (xq5Var == null || (ms1Var = ((yv1) ((ni6) xq5Var).b).a0) == null || !ms1Var.Z1) {
+                xo5 xo5Var = this.c;
+                if (xo5Var == null || (ar1Var = ((mu1) ((l69) xo5Var).b).a0) == null || !ar1Var.Z1) {
                     return;
                 }
-                ms1Var.Y1 = min;
-                zz1 zz1Var = ms1Var.Z0;
-                if (zz1Var != null && zz1Var.r) {
-                    zz1Var.h = min;
-                    zz1Var.invalidate();
+                ar1Var.Y1 = min;
+                my1 my1Var = ar1Var.Z0;
+                if (my1Var != null && my1Var.r) {
+                    my1Var.h = min;
+                    my1Var.invalidate();
                 }
-                wz1 wz1Var = ms1Var.b2;
-                if (wz1Var != null && wz1Var.f) {
-                    if (!wz1Var.e) {
-                        long j2 = wz1Var.h;
+                jy1 jy1Var = ar1Var.b2;
+                if (jy1Var != null && jy1Var.f) {
+                    if (!jy1Var.e) {
+                        long j2 = jy1Var.h;
                         if (j2 >= 0) {
-                            if (!wz1Var.c) {
-                                wz1Var.a = wz1.a(Math.max(0L, min - j2));
+                            if (!jy1Var.c) {
+                                jy1Var.a = jy1.a(Math.max(0L, min - j2));
                             }
-                            wz1Var.invalidate();
+                            jy1Var.invalidate();
                         }
                     }
-                    wz1Var.h = min;
-                    wz1Var.a = 1.0f;
-                    wz1Var.invalidate();
+                    jy1Var.h = min;
+                    jy1Var.a = 1.0f;
+                    jy1Var.invalidate();
                 }
-                ChatActivityEnterView.SlideTextView slideTextView = ms1Var.a2;
+                ChatActivityEnterView.SlideTextView slideTextView = ar1Var.a2;
                 if (slideTextView == null || !slideTextView.H || slideTextView.n == 1.0f) {
                     return;
                 }
@@ -483,46 +483,46 @@ public final class q extends zq5 {
     }
 
     public final void d() {
-        tn9 tn9Var;
-        rcc rccVar;
-        if (this.Q == null || (tn9Var = this.S) == null || (rccVar = this.V) == null) {
+        tl9 tl9Var;
+        oac oacVar;
+        if (this.Q == null || (tl9Var = this.S) == null || (oacVar = this.V) == null) {
             return;
         }
-        long j = tn9Var.b;
-        long max = Math.max(0L, rccVar.a);
+        long j = tl9Var.b;
+        long max = Math.max(0L, oacVar.a);
         long j2 = this.V.b;
         if (j2 >= 0) {
             j = Math.min(j, j2);
         }
-        un9 un9Var = this.Q;
-        un9Var.getClass();
-        un9.v();
-        if (un9Var.a0 == 5) {
-            long max2 = Math.max(0L, Math.min(un9Var.I, max));
-            long max3 = Math.max(max2, Math.min(un9Var.I, j));
-            if (max3 - max2 >= Math.min(800L, un9Var.I)) {
-                un9Var.K = max2;
-                un9Var.L = max3;
-                h74 h74Var = un9Var.W;
-                if (h74Var != null) {
-                    h74Var.k1(max2);
+        ul9 ul9Var = this.Q;
+        ul9Var.getClass();
+        ul9.v();
+        if (ul9Var.a0 == 5) {
+            long max2 = Math.max(0L, Math.min(ul9Var.I, max));
+            long max3 = Math.max(max2, Math.min(ul9Var.I, j));
+            if (max3 - max2 >= Math.min(800L, ul9Var.I)) {
+                ul9Var.K = max2;
+                ul9Var.L = max3;
+                y54 y54Var = ul9Var.W;
+                if (y54Var != null) {
+                    y54Var.k1(max2);
                 }
-                un9Var.d.getClass();
-                un9Var.o();
+                ul9Var.d.getClass();
+                ul9Var.o();
             }
         }
     }
 
     public final Bitmap e(Bitmap bitmap) {
-        rq5 rq5Var = this.E;
-        if (rq5Var.getWidth() > 0 && rq5Var.getHeight() > 0) {
+        ro5 ro5Var = this.E;
+        if (ro5Var.getWidth() > 0 && ro5Var.getHeight() > 0) {
             Matrix matrix = this.M;
-            rq5Var.getTransform(matrix);
+            ro5Var.getTransform(matrix);
             if (!matrix.isIdentity()) {
                 float[] fArr = this.N;
                 matrix.getValues(fArr);
-                float width = bitmap.getWidth() / rq5Var.getWidth();
-                float height = bitmap.getHeight() / rq5Var.getHeight();
+                float width = bitmap.getWidth() / ro5Var.getWidth();
+                float height = bitmap.getHeight() / ro5Var.getHeight();
                 fArr[1] = (width / height) * fArr[1];
                 fArr[2] = fArr[2] * width;
                 fArr[3] = (height / width) * fArr[3];
@@ -540,15 +540,15 @@ public final class q extends zq5 {
     }
 
     public final void f(boolean z) {
-        un9 un9Var;
-        if (p() || (un9Var = this.Q) == null || !un9Var.a()) {
+        ul9 ul9Var;
+        if (p() || (ul9Var = this.Q) == null || !ul9Var.a()) {
             return;
         }
         this.W = null;
         s(z ? 0 : 6);
-        mib mibVar = this.U;
-        if (mibVar != null) {
-            mibVar.d(true);
+        lgb lgbVar = this.U;
+        if (lgbVar != null) {
+            lgbVar.d(true);
         }
         this.U = null;
         MediaController.w().X(false);
@@ -576,42 +576,42 @@ public final class q extends zq5 {
         }
     }
 
-    @Override // zq5
+    @Override // zo5
     public View getButtonsLayout() {
         return this.G;
     }
 
-    @Override // zq5
-    public wq5 getCameraContainer() {
+    @Override // zo5
+    public wo5 getCameraContainer() {
         return this.w;
     }
 
-    @Override // zq5
+    @Override // zo5
     public RectF getCameraRect() {
-        rq5 rq5Var = this.E;
+        ro5 ro5Var = this.E;
         int[] iArr = this.L;
-        rq5Var.getLocationOnScreen(iArr);
-        return new RectF(iArr[0], iArr[1], rq5Var.getWidth() + r2, rq5Var.getHeight() + iArr[1]);
+        ro5Var.getLocationOnScreen(iArr);
+        return new RectF(iArr[0], iArr[1], ro5Var.getWidth() + r2, ro5Var.getHeight() + iArr[1]);
     }
 
-    @Override // zq5
+    @Override // zo5
     public View getMuteImageView() {
         return this.J;
     }
 
-    @Override // zq5
+    @Override // zo5
     public Paint getPaint() {
         return this.x.getPaint();
     }
 
-    @Override // zq5
+    @Override // zo5
     public TextureView getTextureView() {
         return this.E;
     }
 
     public final void h(float f, int i) {
-        tn9 tn9Var;
-        if (this.Q == null || (tn9Var = this.S) == null || tn9Var.a != 5) {
+        tl9 tl9Var;
+        if (this.Q == null || (tl9Var = this.S) == null || tl9Var.a != 5) {
             return;
         }
         d();
@@ -624,43 +624,43 @@ public final class q extends zq5 {
             return;
         }
         if (i == 2) {
-            un9 un9Var = this.Q;
+            ul9 ul9Var = this.Q;
             long j = (long) (f * this.S.b);
-            un9Var.getClass();
-            un9.v();
-            if (un9Var.a0 != 5 || un9Var.W == null) {
+            ul9Var.getClass();
+            ul9.v();
+            if (ul9Var.a0 != 5 || ul9Var.W == null) {
                 return;
             }
-            long j2 = un9Var.K;
-            un9Var.W.k1(Math.max(j2, Math.min(Math.max(j2, un9Var.L - 1), j)));
-            un9Var.d.getClass();
+            long j2 = ul9Var.K;
+            ul9Var.W.k1(Math.max(j2, Math.min(Math.max(j2, ul9Var.L - 1), j)));
+            ul9Var.d.getClass();
         }
     }
 
-    public final rcc i(File file, long j, lib libVar) {
-        pn9 pn9Var;
-        rcc rccVar = new rcc();
-        rccVar.a = -1L;
-        rccVar.b = -1L;
-        rccVar.r = j;
-        rccVar.q = Math.max(1L, libVar == null ? file.length() : libVar.a);
-        rccVar.s = true;
-        un9 un9Var = this.Q;
-        rccVar.n = (un9Var == null || (pn9Var = un9Var.u) == null) ? (byte) 30 : pn9Var.a;
-        sn9 sn9Var = this.R;
-        short s = sn9Var == null ? (short) 480 : sn9Var.a;
-        rccVar.h = s;
-        rccVar.k = s;
-        rccVar.i = s;
-        rccVar.l = s;
-        rccVar.o = file.getAbsolutePath();
-        if (libVar != null) {
-            rccVar.w = libVar.b;
-            rccVar.x = libVar.c;
-            rccVar.y = libVar.d;
-            rccVar.z = libVar.e;
+    public final oac i(File file, long j, kgb kgbVar) {
+        pl9 pl9Var;
+        oac oacVar = new oac();
+        oacVar.a = -1L;
+        oacVar.b = -1L;
+        oacVar.r = j;
+        oacVar.q = Math.max(1L, kgbVar == null ? file.length() : kgbVar.a);
+        oacVar.s = true;
+        ul9 ul9Var = this.Q;
+        oacVar.n = (ul9Var == null || (pl9Var = ul9Var.u) == null) ? (byte) 30 : pl9Var.a;
+        sl9 sl9Var = this.R;
+        short s = sl9Var == null ? (short) 480 : sl9Var.a;
+        oacVar.h = s;
+        oacVar.k = s;
+        oacVar.i = s;
+        oacVar.l = s;
+        oacVar.o = file.getAbsolutePath();
+        if (kgbVar != null) {
+            oacVar.w = kgbVar.b;
+            oacVar.x = kgbVar.c;
+            oacVar.y = kgbVar.d;
+            oacVar.z = kgbVar.e;
         }
-        return rccVar;
+        return oacVar;
     }
 
     public final void j() {
@@ -671,18 +671,18 @@ public final class q extends zq5 {
             valueAnimator.cancel();
         }
         if (this.Q == null || !p()) {
-            un9 un9Var = this.Q;
-            if (un9Var != null) {
-                un9Var.s();
+            ul9 ul9Var = this.Q;
+            if (ul9Var != null) {
+                ul9Var.s();
                 this.Q = null;
             }
         } else {
             this.b0 = true;
             this.Q.s();
         }
-        mib mibVar = this.U;
-        if (mibVar != null && !this.b0) {
-            mibVar.d(!this.m0);
+        lgb lgbVar = this.U;
+        if (lgbVar != null && !this.b0) {
+            lgbVar.d(!this.m0);
             this.U = null;
         }
         setScreenFlashEnabled(false);
@@ -691,41 +691,41 @@ public final class q extends zq5 {
     }
 
     public final void k() {
-        tn9 tn9Var;
-        if (this.W == null || this.a0 || this.Q == null || (tn9Var = this.S) == null) {
+        tl9 tl9Var;
+        if (this.W == null || this.a0 || this.Q == null || (tl9Var = this.S) == null) {
             return;
         }
-        int i = tn9Var.a;
+        int i = tl9Var.a;
         if (i == 5) {
             d();
         } else if (i != 3) {
             return;
         }
-        un9 un9Var = this.Q;
+        ul9 ul9Var = this.Q;
         boolean z = this.l0;
         boolean z2 = !z;
-        un9Var.getClass();
-        un9.v();
-        int i2 = un9Var.a0;
+        ul9Var.getClass();
+        ul9.v();
+        int i2 = ul9Var.a0;
         boolean z3 = false;
         if (i2 == 3 || i2 == 5) {
-            un9Var.m.b("finish requested: state=" + hg9.A(un9Var.a0) + ", includeAudio=" + z2 + ", durationMs=" + un9Var.j() + ", trim=" + un9Var.K + ".." + un9Var.L);
-            un9Var.B = z2;
-            if (un9Var.a0 == 3) {
-                un9Var.I = un9Var.j();
-                un9Var.A = true;
-                un9Var.e();
-                un9Var.i.removeCallbacks(un9Var.X);
-                un9Var.x(7);
-                boolean W = un9Var.l.W();
-                un9Var.E = W;
+            ul9Var.m.b("finish requested: state=" + de9.A(ul9Var.a0) + ", includeAudio=" + z2 + ", durationMs=" + ul9Var.j() + ", trim=" + ul9Var.K + ".." + ul9Var.L);
+            ul9Var.B = z2;
+            if (ul9Var.a0 == 3) {
+                ul9Var.I = ul9Var.j();
+                ul9Var.A = true;
+                ul9Var.e();
+                ul9Var.i.removeCallbacks(ul9Var.X);
+                ul9Var.x(7);
+                boolean W = ul9Var.l.W();
+                ul9Var.E = W;
                 if (!W) {
-                    un9Var.h(new IllegalStateException("Unable to stop the camera segment"));
+                    ul9Var.h(new IllegalStateException("Unable to stop the camera segment"));
                 }
             } else {
-                un9Var.t();
-                un9Var.x(7);
-                un9Var.j.execute(new jn9(un9Var, un9Var.U, un9Var.l() || z, un9Var.V, z2, un9Var.l() ? 1 : 2, un9Var.T));
+                ul9Var.t();
+                ul9Var.x(7);
+                ul9Var.j.execute(new jl9(ul9Var, ul9Var.U, ul9Var.l() || z, ul9Var.V, z2, ul9Var.l() ? 1 : 2, ul9Var.T));
             }
             z3 = true;
         }
@@ -747,30 +747,30 @@ public final class q extends zq5 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.B0, 0.0f);
             this.d0 = ofFloat;
             ofFloat.setDuration(350L);
-            this.d0.addUpdateListener(new oq5(this, (byte) 1));
+            this.d0.addUpdateListener(new oo5(this, (byte) 1));
             this.d0.start();
         }
     }
 
     public final void m() {
         j();
-        sq5 sq5Var = this.w;
-        sq5Var.setTranslationX(0.0f);
+        so5 so5Var = this.w;
+        so5Var.setTranslationX(0.0f);
         this.z0 = 0.0f;
-        sq5Var.setTranslationY(0.0f + this.y0);
-        sq5Var.setImageReceiver(null);
+        so5Var.setTranslationY(0.0f + this.y0);
+        so5Var.setImageReceiver(null);
         MediaController.w().b0();
     }
 
     public final void n(boolean z) {
         if (this.p0) {
             this.p0 = false;
-            nt1 nt1Var = this.F;
-            nt1Var.animate().cancel();
+            as1 as1Var = this.F;
+            as1Var.animate().cancel();
             if (z) {
-                nt1Var.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
+                as1Var.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
             } else {
-                nt1Var.setAlpha(0.0f);
+                as1Var.setAlpha(0.0f);
             }
         }
     }
@@ -778,10 +778,10 @@ public final class q extends zq5 {
     public final void o() {
         if (this.o0) {
             this.o0 = false;
-            nt1 nt1Var = this.F;
-            nt1Var.invalidate();
-            nt1Var.animate().cancel();
-            nt1Var.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
+            as1 as1Var = this.F;
+            as1Var.invalidate();
+            as1Var.animate().cancel();
+            as1Var.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
         }
     }
 
@@ -801,20 +801,20 @@ public final class q extends zq5 {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        int i3 = ((float) (View.MeasureSpec.getSize(i2) - getPaddingBottom())) > ((float) View.MeasureSpec.getSize(i)) * 1.3f ? gm.v : gm.u;
+        int i3 = ((float) (View.MeasureSpec.getSize(i2) - getPaddingBottom())) > ((float) View.MeasureSpec.getSize(i)) * 1.3f ? gl.v : gl.u;
         if (this.H0 != i3) {
             this.H0 = i3;
-            sq5 sq5Var = this.w;
-            sq5Var.getLayoutParams().width = gm.L(28.0f) + i3;
-            sq5Var.getLayoutParams().height = gm.L(28.0f) + i3;
-            ((FrameLayout.LayoutParams) this.J.getLayoutParams()).topMargin = (i3 / 2) - gm.L(24.0f);
+            so5 so5Var = this.w;
+            so5Var.getLayoutParams().width = gl.L(28.0f) + i3;
+            so5Var.getLayoutParams().height = gl.L(28.0f) + i3;
+            ((FrameLayout.LayoutParams) this.J.getLayoutParams()).topMargin = (i3 / 2) - gl.L(24.0f);
         }
         super.onMeasure(i, i2);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
-        rk4 rk4Var = this.K;
-        rk4Var.b.measure(makeMeasureSpec, makeMeasureSpec2);
-        rk4Var.c.measure(makeMeasureSpec, makeMeasureSpec2);
+        mi4 mi4Var = this.K;
+        mi4Var.b.measure(makeMeasureSpec, makeMeasureSpec2);
+        mi4Var.c.measure(makeMeasureSpec, makeMeasureSpec2);
     }
 
     @Override // android.view.View
@@ -824,41 +824,41 @@ public final class q extends zq5 {
 
     @Override // android.view.View
     public final void onWindowVisibilityChanged(int i) {
-        un9 un9Var;
-        tn9 tn9Var;
+        ul9 ul9Var;
+        tl9 tl9Var;
         super.onWindowVisibilityChanged(i);
-        if (i == 0 || (un9Var = this.Q) == null || (tn9Var = this.S) == null) {
+        if (i == 0 || (ul9Var = this.Q) == null || (tl9Var = this.S) == null) {
             return;
         }
-        if (tn9Var.a == 3) {
+        if (tl9Var.a == 3) {
             r();
-        } else if (tn9Var.e) {
-            un9Var.p();
+        } else if (tl9Var.e) {
+            ul9Var.p();
         }
     }
 
     public final boolean p() {
-        un9 un9Var;
-        if (this.W == null || !this.a0 || (un9Var = this.Q) == null) {
+        ul9 ul9Var;
+        if (this.W == null || !this.a0 || (ul9Var = this.Q) == null) {
             return false;
         }
-        un9.v();
-        int i = un9Var.a0;
-        new tn9(i, un9Var.I, un9Var.J, un9Var.q, un9Var.z, un9Var.y, un9Var.w);
+        ul9.v();
+        int i = ul9Var.a0;
+        new tl9(i, ul9Var.I, ul9Var.J, ul9Var.q, ul9Var.z, ul9Var.y, ul9Var.w);
         return i == 7;
     }
 
     public final void q() {
         if (this.q0 && this.t0 && this.r0 && this.s0) {
             this.q0 = false;
-            fc4.b("RoundVideo camera flip completed: elapsedMs=" + getCameraFlipElapsedMs());
+            fa4.b("RoundVideo camera flip completed: elapsedMs=" + getCameraFlipElapsedMs());
             z();
         }
     }
 
     public final void r() {
-        tn9 tn9Var;
-        if (this.Q == null || (tn9Var = this.S) == null || tn9Var.a != 3) {
+        tl9 tl9Var;
+        if (this.Q == null || (tl9Var = this.S) == null || tl9Var.a != 3) {
             return;
         }
         s(2);
@@ -870,15 +870,15 @@ public final class q extends zq5 {
             return;
         }
         this.k0 = true;
-        nm7.f(this.h).k(nm7.n2, Integer.valueOf(this.n), Integer.valueOf(i));
+        kk7.f(this.h).k(kk7.m2, Integer.valueOf(this.n), Integer.valueOf(i));
     }
 
-    @Override // zq5
+    @Override // zo5
     public void setInternalPadding(int i) {
         setPadding(0, 0, 0, i);
     }
 
-    @Override // zq5
+    @Override // zo5
     public void setIsMessageTransition(boolean z) {
         this.w.getClass();
     }
@@ -887,11 +887,11 @@ public final class q extends zq5 {
     public void setVisibility(int i) {
         super.setVisibility(i);
         this.G.setAlpha(0.0f);
-        sq5 sq5Var = this.w;
-        sq5Var.setAlpha(0.0f);
-        sq5Var.setScaleX(0.1f);
-        sq5Var.setScaleY(0.1f);
-        sq5Var.setTranslationX(0.0f);
+        so5 so5Var = this.w;
+        so5Var.setAlpha(0.0f);
+        so5Var.setScaleX(0.1f);
+        so5Var.setScaleY(0.1f);
+        so5Var.setTranslationX(0.0f);
         ImageView imageView = this.J;
         imageView.setAlpha(0.0f);
         imageView.setScaleX(1.0f);
@@ -905,15 +905,15 @@ public final class q extends zq5 {
                 activity.getWindow().clearFlags(128);
             }
         } catch (Exception e) {
-            fc4.g(e, true);
+            fa4.g(e, true);
         }
     }
 
     public final void t(boolean z) {
         Bitmap bitmap;
         Bitmap bitmap2;
-        rq5 rq5Var = this.E;
-        if (!rq5Var.isAvailable() || (bitmap = rq5Var.getBitmap(nm7.J2, nm7.J2)) == null) {
+        ro5 ro5Var = this.E;
+        if (!ro5Var.isAvailable() || (bitmap = ro5Var.getBitmap(kk7.J2, kk7.J2)) == null) {
             return;
         }
         try {
@@ -963,7 +963,7 @@ public final class q extends zq5 {
         if ((i == 1 || i == 4) && this.W == null) {
             long currentDurationMs = getCurrentDurationMs();
             if (currentDurationMs < 800) {
-                nm7.f(this.h).k(nm7.t2, Integer.valueOf(this.n), Boolean.TRUE, Integer.valueOf((int) currentDurationMs));
+                kk7.f(this.h).k(kk7.s2, Integer.valueOf(this.n), Boolean.TRUE, Integer.valueOf((int) currentDurationMs));
                 f(false);
                 return;
             }
@@ -971,7 +971,7 @@ public final class q extends zq5 {
                 s(5);
             }
             this.j0 = false;
-            this.W = new tq5(i2, i3, j, j2, z);
+            this.W = new to5(i2, i3, j, j2, z);
             k();
         }
     }
@@ -981,7 +981,7 @@ public final class q extends zq5 {
             return;
         }
         setVisibility(0);
-        this.x.getPaint().setAlpha(nm7.d4);
+        this.x.getPaint().setAlpha(kk7.d4);
         this.m0 = false;
         this.l0 = false;
         this.W = null;
@@ -990,7 +990,7 @@ public final class q extends zq5 {
         this.k0 = false;
         this.x0 = 0L;
         this.x.setProgress(0.0f);
-        nt1 nt1Var = this.F;
+        as1 as1Var = this.F;
         if (!this.o0) {
             if (this.w0 == null) {
                 try {
@@ -1000,73 +1000,73 @@ public final class q extends zq5 {
             }
             Bitmap bitmap = this.w0;
             if (bitmap != null) {
-                nt1Var.setImageBitmap(bitmap);
+                as1Var.setImageBitmap(bitmap);
             } else {
-                nt1Var.setImageResource(R.drawable.icplaceholder);
+                as1Var.setImageResource(R.drawable.icplaceholder);
             }
             this.o0 = true;
-            nt1Var.animate().cancel();
-            nt1Var.setAlpha(1.0f);
-            nt1Var.invalidate();
+            as1Var.animate().cancel();
+            as1Var.setAlpha(1.0f);
+            as1Var.invalidate();
         }
-        this.U = new mib(this.h, this.r);
-        this.R = (sn9) yed.d.a();
-        ln9 ln9Var = new ln9(getContext(), this.E);
-        ln9Var.c = new File(org.telegram.messenger.a.h(), "cache");
-        ln9Var.d = (nn9) yed.i.a();
-        ln9Var.e = this.R;
-        ln9Var.h = yed.g.a();
-        ln9Var.f = (on9) yed.e.a();
-        ln9Var.g = (pn9) yed.f.a();
-        in0 in0Var = yed.h;
-        in0Var.a();
-        ln9Var.i = in0Var.d;
-        lj4 lj4Var = this.M0;
-        ln9Var.j = lj4Var;
-        mib mibVar = this.U;
-        ln9Var.k = mibVar;
-        ln9Var.l = new wx4((Object) this, (byte) 14);
-        if (ln9Var.d == null) {
-            dq9.m("Initial camera is required");
+        this.U = new lgb(this.h, this.r);
+        this.R = (sl9) wcd.d.a();
+        ll9 ll9Var = new ll9(getContext(), this.E);
+        ll9Var.c = new File(org.telegram.messenger.a.h(), "cache");
+        ll9Var.d = (nl9) wcd.i.a();
+        ll9Var.e = this.R;
+        ll9Var.h = wcd.g.a();
+        ll9Var.f = (ol9) wcd.e.a();
+        ll9Var.g = (pl9) wcd.f.a();
+        im0 im0Var = wcd.h;
+        im0Var.a();
+        ll9Var.i = im0Var.d;
+        gi3 gi3Var = this.M0;
+        ll9Var.j = gi3Var;
+        lgb lgbVar = this.U;
+        ll9Var.k = lgbVar;
+        ll9Var.l = new ry4((Object) this, (byte) 11);
+        if (ll9Var.d == null) {
+            sc8.j("Initial camera is required");
             return;
         }
-        if (ln9Var.e == null) {
-            dq9.m("Output resolution is required");
+        if (ll9Var.e == null) {
+            sc8.j("Output resolution is required");
             return;
         }
-        if (ln9Var.h <= 0) {
-            dq9.m("Video bitrate is required");
+        if (ll9Var.h <= 0) {
+            sc8.j("Video bitrate is required");
             return;
         }
-        if (ln9Var.f == null) {
-            dq9.m("Camera resolution is required");
+        if (ll9Var.f == null) {
+            sc8.j("Camera resolution is required");
             return;
         }
-        if (ln9Var.g == null) {
-            dq9.m("Frame rate is required");
+        if (ll9Var.g == null) {
+            sc8.j("Frame rate is required");
             return;
         }
-        if (lj4Var == null) {
-            dq9.m("Session listener is required");
+        if (gi3Var == null) {
+            sc8.j("Session listener is required");
             return;
         }
-        if (mibVar == null) {
-            dq9.m("Output listener is required");
+        if (lgbVar == null) {
+            sc8.j("Output listener is required");
             return;
         }
-        this.Q = new un9(ln9Var);
+        this.Q = new ul9(ll9Var);
         MediaController.w().X(true);
-        un9 un9Var = this.Q;
-        un9Var.getClass();
-        un9.v();
-        if (un9Var.a0 == 1) {
+        ul9 ul9Var = this.Q;
+        ul9Var.getClass();
+        ul9.v();
+        if (ul9Var.a0 == 1) {
             try {
-                un9Var.m.b("start requested");
-                un9Var.c(true);
-                un9Var.x(2);
-                un9Var.l.V(un9Var.U, 0L, un9Var.r);
+                ul9Var.m.b("start requested");
+                ul9Var.c(true);
+                ul9Var.x(2);
+                ul9Var.l.V(ul9Var.U, 0L, ul9Var.r);
             } catch (Exception e) {
-                un9Var.h(e);
+                ul9Var.h(e);
             }
         }
         w(true);
@@ -1075,9 +1075,9 @@ public final class q extends zq5 {
     public final void w(boolean z) {
         float f;
         float f2;
-        uq5 uq5Var = this.a;
-        if (uq5Var != null) {
-            ((gm1) uq5Var).b.od.a(z, true);
+        uo5 uo5Var = this.a;
+        if (uo5Var != null) {
+            ((yk1) uo5Var).b.ed.a(z, true);
         }
         AnimatorSet animatorSet = this.c0;
         if (animatorSet != null) {
@@ -1088,19 +1088,19 @@ public final class q extends zq5 {
         if (pipRoundVideoView != null) {
             pipRoundVideoView.e(!z);
         }
-        sq5 sq5Var = this.w;
+        so5 so5Var = this.w;
         if (z && !this.n0) {
-            sq5Var.setTranslationX(0.0f);
+            so5Var.setTranslationX(0.0f);
             float measuredHeight = getMeasuredHeight() * 0.5f;
             this.z0 = measuredHeight;
-            sq5Var.setTranslationY(measuredHeight + this.y0);
+            so5Var.setTranslationY(measuredHeight + this.y0);
         }
         this.n0 = z;
         View view = this.s;
         if (view != null) {
             view.invalidate();
         }
-        float L = (z || Math.max(getCurrentDurationMs(), this.x0) <= 300) ? 0.0f : gm.L(24.0f) - (getMeasuredWidth() * 0.5f);
+        float L = (z || Math.max(getCurrentDurationMs(), this.x0) <= 300) ? 0.0f : gl.L(24.0f) - (getMeasuredWidth() * 0.5f);
         if (z) {
             f2 = 0.0f;
             f = 1.0f;
@@ -1109,14 +1109,14 @@ public final class q extends zq5 {
             f2 = 1.0f;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(f, f2);
-        ofFloat.addUpdateListener(new oq5(this, (byte) 0));
+        ofFloat.addUpdateListener(new oo5(this, (byte) 0));
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c0 = animatorSet2;
         float[] fArr = {z ? 1.0f : 0.0f};
         LinearLayout linearLayout = this.G;
         Property property = View.ALPHA;
-        byte b = 6;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, fArr), ObjectAnimator.ofFloat(sq5Var, (Property<sq5, Float>) property, z ? 1.0f : 0.0f), ObjectAnimator.ofFloat(sq5Var, (Property<sq5, Float>) View.SCALE_X, z ? 1.0f : 0.1f), ObjectAnimator.ofFloat(sq5Var, (Property<sq5, Float>) View.SCALE_Y, z ? 1.0f : 0.1f), ObjectAnimator.ofFloat(sq5Var, (Property<sq5, Float>) View.TRANSLATION_X, L), ObjectAnimator.ofFloat(this.J, (Property<ImageView, Float>) property, (this.l0 && z) ? 1.0f : 0.0f), ofFloat);
+        byte b = 4;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, fArr), ObjectAnimator.ofFloat(so5Var, (Property<so5, Float>) property, z ? 1.0f : 0.0f), ObjectAnimator.ofFloat(so5Var, (Property<so5, Float>) View.SCALE_X, z ? 1.0f : 0.1f), ObjectAnimator.ofFloat(so5Var, (Property<so5, Float>) View.SCALE_Y, z ? 1.0f : 0.1f), ObjectAnimator.ofFloat(so5Var, (Property<so5, Float>) View.TRANSLATION_X, L), ObjectAnimator.ofFloat(this.J, (Property<ImageView, Float>) property, (this.l0 && z) ? 1.0f : 0.0f), ofFloat);
         this.c0.setDuration(180L);
         this.c0.setInterpolator(new DecelerateInterpolator());
         if (z) {
@@ -1130,32 +1130,32 @@ public final class q extends zq5 {
     public final void x() {
         if (this.F0) {
             this.F0 = false;
-            nm7.e().k(nm7.k1, 512);
+            kk7.e().k(kk7.j1, 512);
         }
     }
 
     public final void y() {
-        tn9 tn9Var;
-        un9 un9Var = this.Q;
-        if (un9Var == null || (tn9Var = this.S) == null) {
+        tl9 tl9Var;
+        ul9 ul9Var = this.Q;
+        if (ul9Var == null || (tl9Var = this.S) == null) {
             return;
         }
-        int i = tn9Var.a;
+        int i = tl9Var.a;
         if (i == 3) {
             r();
             return;
         }
         if (i == 5) {
-            un9.v();
-            if (un9Var.a0 != 5 || un9Var.L - un9Var.K >= un9Var.q) {
+            ul9.v();
+            if (ul9Var.a0 != 5 || ul9Var.L - ul9Var.K >= ul9Var.q) {
                 return;
             }
-            un9Var.Q++;
-            un9Var.D = false;
-            un9Var.m.b("resume requested: trim=" + un9Var.K + ".." + un9Var.L + ", sourceDurationMs=" + un9Var.I);
-            un9Var.t();
-            un9Var.x(6);
-            un9Var.j.execute(new aa7((Object) un9Var, un9Var.l(), (Object) un9Var.U, (Object) un9Var.T, (Object) un9Var.V, (byte) 18));
+            ul9Var.Q++;
+            ul9Var.D = false;
+            ul9Var.m.b("resume requested: trim=" + ul9Var.K + ".." + ul9Var.L + ", sourceDurationMs=" + ul9Var.I);
+            ul9Var.t();
+            ul9Var.x(6);
+            ul9Var.j.execute(new z77((Object) ul9Var, ul9Var.l(), (Object) ul9Var.U, (Object) ul9Var.T, (Object) ul9Var.V, (byte) 18));
             this.V = null;
             this.j0 = true;
             this.k0 = false;
@@ -1163,12 +1163,12 @@ public final class q extends zq5 {
     }
 
     public final void z() {
-        mn9 mn9Var;
-        tn9 tn9Var = this.S;
+        ml9 ml9Var;
+        tl9 tl9Var = this.S;
         boolean z = false;
-        boolean z2 = (tn9Var == null || tn9Var.a != 3 || tn9Var.f || this.q0) ? false : true;
+        boolean z2 = (tl9Var == null || tl9Var.a != 3 || tl9Var.f || this.q0) ? false : true;
         this.H.setEnabled(z2);
-        if (z2 && (mn9Var = this.T) != null && mn9Var.b != 1) {
+        if (z2 && (ml9Var = this.T) != null && ml9Var.b != 1) {
             z = true;
         }
         this.I.setEnabled(z);

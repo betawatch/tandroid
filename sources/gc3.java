@@ -1,32 +1,23 @@
 // default package
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gc3 implements di8 {
-    public final /* synthetic */ byte a;
+public final class gc3 extends yo {
+    public final /* synthetic */ byte c;
 
-    @Override // di8
-    public final boolean apply(Object obj) {
-        switch (this.a) {
-            case 0:
-                if (((Map.Entry) obj).getKey() != null) {
-                    break;
-                }
-                break;
+    @Override // yo
+    public final int h(int i, int i2) {
+        switch (this.c) {
             case 1:
-                if (((String) obj) != null) {
-                    break;
-                }
-                break;
+                return i % i2;
             default:
-                nr5 nr5Var = (nr5) obj;
-                if (nr5Var.b.equals("com.apple.iTunes") && nr5Var.c.equals("iTunSMPB")) {
-                    break;
-                }
-                break;
+                return super.h(i, i2);
         }
-        return true;
+    }
+
+    @Override // yo
+    public final int i(int i) {
+        byte b = this.c;
+        return 1;
     }
 }

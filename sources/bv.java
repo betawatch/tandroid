@@ -3,485 +3,166 @@
 import android.app.Activity;
 import android.graphics.Canvas;
 import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class bv extends View implements cr3, fkb {
-    public int E;
-    public int F;
-    public int G;
-    public int H;
-    public byte I;
-    public boolean J;
-    public final int K;
-    public TL_iv.pageBlockAudio L;
-    public TLRPC.Document M;
-    public k47 N;
-    public final ui5 a;
-    public final ey b;
-    public bx c;
-    public bx d;
-    public final RadialProgress2 e;
-    public final ax9 f;
-    public boolean h;
-    public int n;
-    public final int r;
-    public int s;
-    public String w;
-    public bx x;
-    public StaticLayout y;
+public final class bv extends View implements eib, dw {
+    public final vg5 a;
+    public final dx b;
+    public bw c;
+    public int d;
+    public int e;
+    public TL_iv.pageBlockParagraph f;
 
-    public bv(Activity activity, ui5 ui5Var, ey eyVar) {
+    public bv(Activity activity, vg5 vg5Var, dx dxVar) {
         super(activity);
-        this.r = gm.L(58.0f);
-        this.a = ui5Var;
-        this.b = eyVar;
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, null);
-        this.e = radialProgress2;
-        radialProgress2.setCircleRadius(gm.L(24.0f));
-        this.K = er3.q(((o) ui5Var).Y).k();
-        ax9 ax9Var = new ax9(this);
-        this.f = ax9Var;
-        ax9Var.h = new l0(this, (byte) 21);
+        this.a = vg5Var;
+        this.b = dxVar;
     }
 
-    private int getIconForCurrentState() {
-        byte b = this.I;
-        if (b == 1) {
-            return 1;
+    @Override // dw
+    public int getBoundLeft() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
         }
-        if (b == 2) {
-            return 2;
-        }
-        return b == 3 ? 3 : 0;
+        return ug8.h(this.a, 18.0f, bwVar.k() + bwVar.s);
     }
 
-    @Override // cr3
-    public final void A(boolean z) {
-        a(true);
+    @Override // dw
+    public int getBoundRight() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.C(this.a, 18.0f, bwVar.l() + bwVar.s);
     }
 
-    @Override // cr3
-    public final void N(String str) {
-        this.e.o(true, 1.0f);
-        a(true);
+    @Override // dw
+    public int getLastLineBoundRight() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.C(this.a, 18.0f, bwVar.m() + bwVar.s);
     }
 
-    public final void a(boolean z) {
-        int i = ((o) this.a).Y;
-        String r = bc4.r(null, this.M);
-        bc4.G(i);
-        boolean exists = bc4.J(this.M, null, true, true).exists();
-        boolean isEmpty = TextUtils.isEmpty(r);
-        RadialProgress2 radialProgress2 = this.e;
-        if (isEmpty) {
-            radialProgress2.setIcon(4, false, false);
-            return;
-        }
-        if (exists) {
-            er3.q(i).v(this);
-            boolean D = MediaController.w().D(this.N);
-            if (!D || (D && MediaController.w().C())) {
-                this.I = (byte) 0;
-            } else {
-                this.I = (byte) 1;
-            }
-            radialProgress2.setIcon(getIconForCurrentState(), false, z);
-        } else {
-            er3.q(i).a(r, null, this);
-            if (bc4.G(i).S(r)) {
-                this.I = (byte) 3;
-                Float s = fn5.z().s(r);
-                if (s != null) {
-                    radialProgress2.o(z, s.floatValue());
-                } else {
-                    radialProgress2.o(z, 0.0f);
-                }
-                radialProgress2.setIcon(getIconForCurrentState(), true, z);
-            } else {
-                this.I = (byte) 2;
-                radialProgress2.o(z, 0.0f);
-                radialProgress2.setIcon(getIconForCurrentState(), false, z);
-            }
-        }
-        b();
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return ug8.a(this);
     }
 
-    public final void b() {
-        k47 k47Var;
-        int i;
-        if (this.M == null || (k47Var = this.N) == null) {
-            return;
-        }
-        ax9 ax9Var = this.f;
-        if (!ax9Var.e) {
-            ax9Var.g(k47Var.b0);
-        }
-        if (!MediaController.w().D(this.N)) {
-            int i2 = 0;
-            while (true) {
-                if (i2 >= this.M.attributes.size()) {
-                    i = 0;
-                    break;
-                }
-                TLRPC.DocumentAttribute documentAttribute = this.M.attributes.get(i2);
-                if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
-                    i = (int) documentAttribute.duration;
-                    break;
-                }
-                i2++;
-            }
-        } else {
-            i = this.N.i0;
-        }
-        String g0 = gm.g0(i, false, false);
-        String str = this.w;
-        if (str == null || !str.equals(g0)) {
-            this.w = g0;
-            TextPaint textPaint = o.g1;
-            textPaint.setTextSize(gm.L(16.0f));
-            this.y = new StaticLayout(g0, textPaint, (int) Math.ceil(textPaint.measureText(g0)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        }
-        TextPaint textPaint2 = o.g1;
-        ((o) this.a).getClass();
-        textPaint2.setColor(cmb.w0(null, cmb.F6, false));
-        invalidate();
-    }
-
-    public k47 getMessageObject() {
-        return this.N;
-    }
-
-    @Override // cr3
-    public int getObserverTag() {
-        return this.K;
-    }
-
-    @Override // cr3
-    public final void i(long j, long j2) {
-        this.e.o(true, Math.min(1.0f, j / j2));
-        if (this.I != 3) {
-            a(true);
-        }
-    }
-
-    @Override // fkb
+    @Override // eib
     public final void k(ArrayList arrayList) {
-        bx bxVar = this.x;
-        if (bxVar != null) {
-            arrayList.add(bxVar);
-        }
-        bx bxVar2 = this.c;
-        if (bxVar2 != null) {
-            arrayList.add(bxVar2);
-        }
-        bx bxVar3 = this.d;
-        if (bxVar3 != null) {
-            arrayList.add(bxVar3);
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            arrayList.add(bwVar);
         }
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        a(false);
-        bx bxVar = this.x;
-        if (bxVar != null) {
-            bxVar.i(this);
-        }
-        bx bxVar2 = this.c;
-        if (bxVar2 != null) {
-            bxVar2.i(this);
-        }
-        bx bxVar3 = this.d;
-        if (bxVar3 != null) {
-            bxVar3.i(this);
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.i(this);
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        er3.q(((o) this.a).Y).v(this);
-        bx bxVar = this.x;
-        if (bxVar != null) {
-            bxVar.f(this);
-        }
-        bx bxVar2 = this.c;
-        if (bxVar2 != null) {
-            bxVar2.f(this);
-        }
-        bx bxVar3 = this.d;
-        if (bxVar3 != null) {
-            bxVar3.f(this);
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.f(this);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.L == null) {
+        if (this.f == null) {
             return;
         }
-        int i = cmb.Ye;
-        int i2 = cmb.Ze;
-        int i3 = cmb.kd;
-        int i4 = cmb.ld;
-        RadialProgress2 radialProgress2 = this.e;
-        radialProgress2.g(i, i2, i3, i4);
-        int i5 = cmb.re;
-        ui5 ui5Var = this.a;
-        ((o) ui5Var).getClass();
-        radialProgress2.d = cmb.u0(i5);
-        radialProgress2.draw(canvas);
-        canvas.save();
-        canvas.translate(this.E, this.F);
-        int i6 = cmb.ke;
-        ((o) ui5Var).getClass();
-        int u0 = cmb.u0(i6);
-        int i7 = cmb.le;
-        ((o) ui5Var).getClass();
-        int u02 = cmb.u0(i7);
-        int i8 = cmb.ne;
-        ((o) ui5Var).getClass();
-        int u03 = cmb.u0(i8);
-        ((o) ui5Var).getClass();
-        int u04 = cmb.u0(i8);
-        int i9 = cmb.me;
-        ((o) ui5Var).getClass();
-        int u05 = cmb.u0(i9);
-        ax9 ax9Var = this.f;
-        ax9Var.f(u0, u02, u03, u04, u05);
-        ax9Var.b(canvas);
-        canvas.restore();
-        if (this.y != null) {
+        bw bwVar = this.c;
+        vg5 vg5Var = this.a;
+        if (bwVar != null) {
             canvas.save();
-            canvas.translate(gm.L(54.0f) + this.G, gm.L(6.0f) + this.F);
-            this.y.draw(canvas);
-            canvas.restore();
-        }
-        int i10 = 0;
-        if (this.x != null) {
-            canvas.save();
-            this.x.s = gm.L(54.0f) + this.G;
-            this.x.w = this.F - gm.L(16.0f);
-            bx bxVar = this.x;
-            canvas.translate(bxVar.s, bxVar.w);
-            o.s(ui5Var, canvas, this, 0);
-            this.x.d(canvas, this);
-            canvas.restore();
-            i10 = 1;
-        }
-        bx bxVar2 = this.c;
-        int i11 = this.r;
-        if (bxVar2 != null) {
-            canvas.save();
-            bx bxVar3 = this.c;
-            int i12 = this.n;
-            bxVar3.s = i12;
-            bxVar3.w = i11;
-            canvas.translate(i12, i11);
-            o.s(ui5Var, canvas, this, i10);
+            canvas.translate(this.d, this.e);
+            o.s(vg5Var, canvas, this, 0);
             this.c.d(canvas, this);
             canvas.restore();
-            i10++;
         }
-        if (this.d != null) {
-            canvas.save();
-            bx bxVar4 = this.d;
-            int i13 = this.n;
-            bxVar4.s = i13;
-            bxVar4.w = i11 + this.s;
-            canvas.translate(i13, i11 + r5);
-            o.s(ui5Var, canvas, this, i10);
-            this.d.d(canvas, this);
-            canvas.restore();
-        }
-        o.r(canvas, ui5Var, this.L, getMeasuredHeight());
+        o.r(canvas, vg5Var, this.f, getMeasuredHeight());
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb = new StringBuilder(jb6.M0(2131754873, null));
-        if (this.x != null) {
-            sb.append(", ");
-            sb.append(this.x.d.getText());
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return;
         }
-        if (this.c != null) {
-            sb.append(", ");
-            sb.append(this.c.d.getText());
-        }
-        if (this.d != null) {
-            sb.append(", ");
-            sb.append(this.d.d.getText());
-        }
-        accessibilityNodeInfo.setText(sb);
+        accessibilityNodeInfo.setText(o.g(this.a, this.b, bwVar));
     }
 
     @Override // android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
-        int L;
+        Layout.Alignment a;
         int size = View.MeasureSpec.getSize(i);
-        int L2 = gm.L(54.0f);
-        TL_iv.pageBlockAudio pageblockaudio = this.L;
-        if (pageblockaudio != null) {
-            if (pageblockaudio.level > 0) {
-                L = gm.L(18.0f) + gm.L(r0 * 14);
-                this.n = L;
+        TL_iv.pageBlockParagraph pageblockparagraph = this.f;
+        if (pageblockparagraph != null) {
+            int i4 = pageblockparagraph.level;
+            vg5 vg5Var = this.a;
+            i3 = 0;
+            if (i4 == 0) {
+                vg5Var.getClass();
+                this.e = gl.L(8.0f);
+                vg5Var.getClass();
+                this.d = gl.L(18.0f);
             } else {
-                L = gm.L(18.0f);
-                this.n = L;
+                this.e = 0;
+                vg5Var.getClass();
+                this.d = gl.L((this.f.level * 14) + 18);
             }
-            int L3 = (size - L) - gm.L(18.0f);
-            int L4 = gm.L(44.0f);
-            this.G = gm.L(16.0f);
-            int L5 = gm.L(5.0f);
-            this.H = L5;
-            int i4 = this.G;
-            this.e.p(i4, L5, i4 + L4, L5 + L4);
-            TL_iv.pageBlockAudio pageblockaudio2 = this.L;
-            bx m = o.m(this.a, this, null, pageblockaudio2.caption.text, L3, this.r, pageblockaudio2, this.b);
-            this.c = m;
-            if (m != null) {
-                int height = this.c.d.getHeight() + gm.L(8.0f);
-                this.s = height;
-                L2 = hg9.v(8.0f, height, L2);
+            if (this.f.text instanceof TL_iv.textMath) {
+                a = Layout.Alignment.ALIGN_CENTER;
+            } else {
+                dx dxVar = this.b;
+                a = (dxVar == null || !dxVar.H) ? Layout.Alignment.ALIGN_NORMAL : lwa.a();
             }
-            i3 = L2;
-            TL_iv.pageBlockAudio pageblockaudio3 = this.L;
-            bx n = o.n(this.a, this, null, pageblockaudio3.caption.credit, L3, this.r + this.s, pageblockaudio3, this.b.H ? oya.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
-            this.d = n;
+            Layout.Alignment alignment = a;
+            TL_iv.RichText richText = this.f.text;
+            vg5 vg5Var2 = this.a;
+            bw n = o.n(vg5Var2, this, null, richText, ug8.h(vg5Var2, 18.0f, size) - this.d, this.e, this.f, alignment, 0, this.b);
+            this.c = n;
             if (n != null) {
-                i3 += this.d.d.getHeight() + gm.L(4.0f);
+                int height = n.d.getHeight();
+                i3 = this.f.level > 0 ? ug8.C(vg5Var, 8.0f, height) : ug8.C(vg5Var, 16.0f, height);
+                bw bwVar = this.c;
+                bwVar.s = this.d;
+                bwVar.w = this.e;
             }
-            if (!this.h && this.L.level <= 0) {
-                i3 += gm.L(8.0f);
-            }
-            String w1 = this.N.w1(false);
-            String y1 = this.N.y1(false);
-            int v = hg9.v(50.0f, this.G, L4);
-            this.E = v;
-            int L6 = (size - v) - gm.L(18.0f);
-            if (TextUtils.isEmpty(y1) && TextUtils.isEmpty(w1)) {
-                this.x = null;
-                this.F = ((L4 - gm.L(30.0f)) / 2) + this.H;
-            } else {
-                SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(y1) || TextUtils.isEmpty(w1)) ? !TextUtils.isEmpty(y1) ? new SpannableStringBuilder(y1) : new SpannableStringBuilder(w1) : new SpannableStringBuilder(td4.q(w1, " - ", y1));
-                if (!TextUtils.isEmpty(w1)) {
-                    spannableStringBuilder.setSpan(new z5c(gm.o()), 0, w1.length(), 18);
-                }
-                CharSequence ellipsize = TextUtils.ellipsize(spannableStringBuilder, cmb.N2, L6, TextUtils.TruncateAt.END);
-                bx bxVar = new bx(this.a);
-                this.x = bxVar;
-                bxVar.d = new StaticLayout(ellipsize, o.g1, L6, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                this.x.n = this.L;
-                this.F = gm.L(11.0f) + ((L4 - gm.L(30.0f)) / 2) + this.H;
-            }
-            this.f.h(L6, gm.L(30.0f));
         } else {
             i3 = 1;
         }
         setMeasuredDimension(size, i3);
-        b();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0066, code lost:
-    
-        if (r1 <= (gm.L(48.0f) + r0)) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
-    
-        r18.J = true;
-        invalidate();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x006a, code lost:
-    
-        if (r18.I == 0) goto L23;
-     */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        if (this.f.e(motionEvent.getX() - this.E, motionEvent.getY() - this.F, motionEvent.getAction())) {
-            if (motionEvent.getAction() == 0) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-            }
-            invalidate();
-            return true;
-        }
-        if (motionEvent.getAction() == 0) {
-            if (this.I != -1) {
-                if (x >= this.G && x <= gm.L(48.0f) + r2) {
-                    if (y >= this.H) {
-                    }
-                }
-            }
-        } else if (motionEvent.getAction() == 1) {
-            if (this.J) {
-                this.J = false;
-                playSoundEffect(0);
-                int i = ((o) this.a).Y;
-                byte b = this.I;
-                ey eyVar = this.b;
-                RadialProgress2 radialProgress2 = this.e;
-                if (b == 0) {
-                    if (eyVar != null && MediaController.w().n0(eyVar.w, this.N, 0L, false, null, 0L)) {
-                        this.I = (byte) 1;
-                        radialProgress2.setIcon(getIconForCurrentState(), false, true);
-                        invalidate();
-                    }
-                } else if (b == 1) {
-                    if (MediaController.w().Q(this.N, true)) {
-                        this.I = (byte) 0;
-                        radialProgress2.setIcon(getIconForCurrentState(), false, true);
-                        invalidate();
-                    }
-                } else if (b == 2) {
-                    radialProgress2.o(false, 0.0f);
-                    bc4.G(i).X(this.M, eyVar == null ? null : eyVar.F, 1, 1);
-                    this.I = (byte) 3;
-                    radialProgress2.setIcon(getIconForCurrentState(), true, true);
-                    invalidate();
-                } else if (b == 3) {
-                    bc4.G(i).f(this.M);
-                    this.I = (byte) 2;
-                    radialProgress2.setIcon(getIconForCurrentState(), false, true);
-                    invalidate();
-                }
-                invalidate();
-            }
-        } else if (motionEvent.getAction() == 3) {
-            this.J = false;
-        }
-        if (!this.J) {
-            if (!o.i(this.a, this.b, motionEvent, this, this.c, this.n, this.r)) {
-                if (!o.i(this.a, this.b, motionEvent, this, this.d, this.n, this.r + this.s) && !super.onTouchEvent(motionEvent)) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
     }
 
-    @Override // cr3
-    public final void l(long j, long j2) {
+    public void setBlock(TL_iv.pageBlockParagraph pageblockparagraph) {
+        this.f = pageblockparagraph;
+        requestLayout();
     }
 }

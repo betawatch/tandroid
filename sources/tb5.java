@@ -1,70 +1,53 @@
 // default package
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class tb5 extends lka {
-    public float N0;
-    public final /* synthetic */ int O0;
-    public final /* synthetic */ wb5 P0;
+public final class tb5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vb5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tb5(wb5 wb5Var, Context context, int i) {
-        super(context);
-        this.P0 = wb5Var;
-        this.O0 = i;
+    public /* synthetic */ tb5(vb5 vb5Var, byte b) {
+        this.a = b;
+        this.b = vb5Var;
     }
 
-    @Override // android.view.View
-    public final float getAlpha() {
-        return this.N0;
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        this.N0 = f;
-        wb5 wb5Var = this.P0;
-        lka[] lkaVarArr = wb5Var.d;
-        if (this.O0 != 4) {
-            super.setAlpha((1.0f - lkaVarArr[4].getFullAlpha()) * f);
-            return;
-        }
-        float fullAlpha = lkaVarArr[4].getFullAlpha();
-        if (wb5Var.c()) {
-            float f2 = wb5Var.f0;
-            if (f2 > 0.0f) {
-                super.setAlpha(1.0f - f2);
-                return;
-            }
-        }
-        if (fullAlpha > 0.0f) {
-            super.setAlpha(Math.max(f, fullAlpha));
-        } else {
-            super.setAlpha(f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        vb5 vb5Var = this.b;
+        switch (b) {
+            case 0:
+                if (vb5Var.c0 == animator) {
+                    vb5Var.c0 = null;
+                    vb5Var.b();
+                    break;
+                }
+                break;
+            default:
+                if (vb5Var.b0 == animator) {
+                    vb5Var.b0 = null;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // lka
-    public final void setFullAlpha(float f) {
-        super.setFullAlpha(f);
-        int i = 0;
-        while (true) {
-            lka[] lkaVarArr = this.P0.d;
-            if (i >= lkaVarArr.length) {
-                return;
-            }
-            lka lkaVar = lkaVarArr[i];
-            lkaVar.setAlpha(lkaVar.getAlpha());
-            i++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                ub5 ub5Var = this.b.a0;
+                if (ub5Var != null) {
+                    ((r78) ub5Var).a.f0.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        if (this.O0 == 4 && getFullAlpha() > 0.0f) {
-            f = 0.0f;
-        }
-        super.setTranslationY(f);
     }
 }

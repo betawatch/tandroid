@@ -1,96 +1,163 @@
 // default package
 
-import android.util.SparseArray;
-import java.util.ArrayList;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fo7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lo7 b;
-    public final /* synthetic */ int c;
+public final class fo7 {
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
+    public final int g;
+    public final boolean h;
 
-    public /* synthetic */ fo7(lo7 lo7Var, int i, byte b) {
-        this.a = b;
-        this.b = lo7Var;
-        this.c = i;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        lo7 lo7Var = this.b;
-        switch (b) {
-            case 0:
-                lo7Var.getClass();
-                nm7.e().k(nm7.K4, Integer.valueOf(lo7Var.currentAccount));
-                lo7Var.getNotificationCenter().k(nm7.d2, Integer.valueOf(i));
-                break;
-            case 1:
-                nm7.e().k(nm7.K4, Integer.valueOf(lo7Var.currentAccount));
-                lo7Var.getNotificationCenter().k(nm7.d2, Integer.valueOf(i));
-                break;
-            case 2:
-                nm7.e().k(nm7.K4, Integer.valueOf(lo7Var.currentAccount));
-                lo7Var.getNotificationCenter().k(nm7.d2, Integer.valueOf(i));
-                break;
-            case 3:
-                nm7.e().k(nm7.K4, Integer.valueOf(lo7Var.currentAccount));
-                lo7Var.getNotificationCenter().k(nm7.d2, Integer.valueOf(i));
-                break;
-            case 4:
-                if (lo7Var.J == 0) {
-                    lo7Var.w.clear();
-                    nm7.e().k(nm7.h4, new Object[0]);
-                }
-                nm7.e().k(nm7.K4, Integer.valueOf(lo7Var.currentAccount));
-                lo7Var.getNotificationCenter().k(nm7.d2, Integer.valueOf(i));
-                break;
-            case 5:
-                vh6 vh6Var = lo7Var.c;
-                ArrayList arrayList = lo7Var.a;
-                int i2 = 0;
-                boolean z = false;
-                while (i2 < arrayList.size()) {
-                    k47 k47Var = (k47) arrayList.get(i2);
-                    if (k47Var.J && Math.abs(k47Var.e1()) == i) {
-                        arrayList.remove(i2);
-                        SparseArray sparseArray = (SparseArray) vh6Var.f(k47.B0(k47Var.k));
-                        if (sparseArray != null) {
-                            sparseArray.remove(k47Var.e1());
-                            if (sparseArray.size() <= 0) {
-                                vh6Var.l(k47.B0(k47Var.k));
-                            }
-                        }
-                        ArrayList arrayList2 = new ArrayList();
-                        arrayList2.add(Integer.valueOf(k47Var.e1()));
-                        lo7Var.getMessagesStorage().D(arrayList2, k47.B0(k47Var.k));
-                        i2--;
-                        z = true;
+    public fo7(eo7 eo7Var) {
+        boolean z;
+        boolean e;
+        byte b;
+        byte b2;
+        byte b3;
+        byte b4 = eo7Var.a;
+        ByteBuffer byteBuffer = eo7Var.b;
+        boolean z2 = true;
+        gre.f(b4 == 1);
+        int remaining = byteBuffer.remaining();
+        byte[] bArr = new byte[remaining];
+        byteBuffer.asReadOnlyBuffer().get(bArr);
+        qd1 qd1Var = new qd1(remaining, bArr);
+        this.g = qd1Var.f(3);
+        qd1Var.m();
+        boolean e2 = qd1Var.e();
+        this.a = e2;
+        if (e2) {
+            qd1Var.f(5);
+            this.b = false;
+            this.h = false;
+        } else {
+            if (qd1Var.e()) {
+                qd1Var.n(64);
+                if (qd1Var.e()) {
+                    int i = 0;
+                    while (!qd1Var.e()) {
+                        i++;
                     }
-                    i2++;
+                    if (i < 32) {
+                        qd1Var.n(i);
+                    }
                 }
-                if (z) {
-                    lo7Var.Z(false);
-                    break;
+                boolean e3 = qd1Var.e();
+                this.b = e3;
+                if (e3) {
+                    qd1Var.n(47);
                 }
-                break;
-            case 6:
-                lo7Var.getClass();
-                vh6 vh6Var2 = new vh6();
-                vh6Var2.k(wpe.a(Integer.valueOf(i)), 0L);
-                lo7Var.M(vh6Var2, false);
-                break;
-            case 7:
-                if (e21.a) {
-                    fc4.b("set last online from other device = " + i);
+            } else {
+                this.b = false;
+            }
+            this.h = qd1Var.e();
+            int f = qd1Var.f(5);
+            for (int i2 = 0; i2 <= f; i2++) {
+                qd1Var.n(12);
+                if (i2 == 0) {
+                    if (qd1Var.f(5) > 7) {
+                        qd1Var.e();
+                    }
+                } else if (qd1Var.f(5) > 7) {
+                    qd1Var.m();
                 }
-                lo7Var.M = i;
-                break;
-            default:
-                lo7Var.h(i);
-                break;
+                if (this.b) {
+                    qd1Var.m();
+                }
+                if (this.h && qd1Var.e()) {
+                    if (i2 == 0) {
+                        qd1Var.f(4);
+                    } else {
+                        qd1Var.n(4);
+                    }
+                }
+            }
         }
+        int f2 = qd1Var.f(4);
+        int f3 = qd1Var.f(4);
+        qd1Var.n(f2 + 1);
+        qd1Var.n(f3 + 1);
+        if (this.a) {
+            this.c = false;
+            z = false;
+        } else {
+            z = qd1Var.e();
+            this.c = z;
+        }
+        if (z) {
+            qd1Var.n(4);
+            qd1Var.n(3);
+        }
+        qd1Var.n(3);
+        if (this.a) {
+            this.e = true;
+            this.d = true;
+            this.f = 0;
+        } else {
+            qd1Var.n(4);
+            boolean e4 = qd1Var.e();
+            if (e4) {
+                qd1Var.n(2);
+            }
+            if (qd1Var.e()) {
+                this.d = true;
+                e = true;
+            } else {
+                e = qd1Var.e();
+                this.d = e;
+            }
+            if (!e) {
+                this.e = true;
+            } else if (qd1Var.e()) {
+                this.e = true;
+            } else {
+                this.e = qd1Var.e();
+            }
+            if (e4) {
+                this.f = qd1Var.f(3) + 1;
+            } else {
+                this.f = 0;
+            }
+        }
+        qd1Var.n(3);
+        boolean e5 = (this.g == 2 && qd1Var.e()) ? qd1Var.e() : false;
+        boolean e6 = this.g != 1 ? qd1Var.e() : false;
+        if (qd1Var.e()) {
+            b2 = (byte) qd1Var.f(8);
+            b3 = (byte) qd1Var.f(8);
+            b = (byte) qd1Var.f(8);
+        } else {
+            b = 0;
+            b2 = 0;
+            b3 = 0;
+        }
+        if (e6) {
+            qd1Var.m();
+        } else if (b2 != 1 || b3 != 13 || b != 0) {
+            qd1Var.m();
+            int i3 = this.g;
+            if (i3 == 0) {
+                r1 = true;
+            } else if (i3 == 1) {
+                z2 = false;
+            } else if (e5) {
+                boolean e7 = qd1Var.e();
+                z2 = e7 ? qd1Var.e() : false;
+                r1 = e7;
+            } else {
+                z2 = false;
+                r1 = true;
+            }
+            if (r1 && z2) {
+                qd1Var.f(2);
+            }
+        }
+        qd1Var.m();
     }
 }

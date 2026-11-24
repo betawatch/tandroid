@@ -1,39 +1,72 @@
 // default package
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class uu1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ iv1 b;
-    public final /* synthetic */ TLRPC.Chat c;
+public abstract class uu1 extends FrameLayout {
+    public final tu1 a;
+    public final ui5 b;
+    public View c;
+    public int d;
+    public boolean e;
 
-    public /* synthetic */ uu1(iv1 iv1Var, TLRPC.Chat chat, byte b) {
-        this.a = b;
-        this.b = iv1Var;
-        this.c = chat;
+    public uu1(Context context, ui5 ui5Var, Bundle bundle) {
+        super(context);
+        this.e = true;
+        this.b = ui5Var;
+        tu1 tu1Var = new tu1(this, bundle);
+        this.a = tu1Var;
+        tu1Var.mb = true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.Chat chat = this.c;
-        iv1 iv1Var = this.b;
-        switch (b) {
-            case 0:
-                iv1Var.n(chat);
-                break;
-            case 1:
-                iv1Var.a(chat);
-                break;
-            case 2:
-                iv1Var.a.Aa(chat);
-                break;
-            default:
-                c41.b0(iv1Var.a).Q(R.raw.contact_check, 36, jb6.a0(null, null, 2131742499, chat.title)).k(true);
-                break;
+    public void a() {
+        int i;
+        tu1 tu1Var = this.a;
+        if (tu1Var.onFragmentCreate()) {
+            this.c = tu1Var.fragmentView;
+            tu1Var.setParentLayout(this.b);
+            View view = this.c;
+            if (view == null) {
+                this.c = tu1Var.createView(getContext());
+            } else {
+                ViewGroup viewGroup = (ViewGroup) view.getParent();
+                if (viewGroup != null) {
+                    tu1Var.onRemoveFromParent();
+                    viewGroup.removeView(this.c);
+                }
+            }
+            jq1 jq1Var = tu1Var.A0;
+            if (jq1Var != null && (i = this.d) != 0) {
+                jq1Var.setPadding(0, i, 0, 0);
+            }
+            tu1Var.wa();
+            addView(this.c, nme.c(-1.0f, -1));
+            if (this.e) {
+                tu1Var.onResume();
+            }
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+    }
+
+    public void setTopPadding(int i) {
+        this.d = i;
+    }
+
+    public void b(boolean z) {
     }
 }

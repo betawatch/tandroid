@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzja {
     private final Map zza = new LinkedHashMap();
@@ -16,7 +16,7 @@ public final class zzja {
 
     private final List zzh(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(mm2.c(list2, 10));
+        ArrayList arrayList = new ArrayList(al2.c(list2, 10));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add(zza((zzzt) it.next()));
@@ -40,27 +40,27 @@ public final class zzja {
                 if (zzo.length == 1) {
                     return Byte.valueOf(zzo[0]);
                 }
-                i2d.d(4, 6, null);
+                fvc.c(4, 6, null);
                 return null;
             case 3:
                 String zzO = zzztVar.zzO();
                 if (zzO.length() == 1) {
                     return Character.valueOf(zzO.charAt(0));
                 }
-                i2d.d(4, 6, null);
+                fvc.c(4, 6, null);
                 return null;
             case 4:
                 int zzj = zzztVar.zzj();
                 if (zzj >= -32768 && zzj <= 32767) {
                     return Short.valueOf((short) zzj);
                 }
-                i2d.d(4, 6, null);
+                fvc.c(4, 6, null);
                 return null;
             case 5:
                 return Integer.valueOf(zzztVar.zzk());
             case 6:
             case 8:
-                i2d.d(4, 6, null);
+                fvc.c(4, 6, null);
                 return null;
             case 7:
                 return Long.valueOf(zzztVar.zzl());
@@ -71,7 +71,7 @@ public final class zzja {
             case 11:
                 return zzztVar.zzP();
             default:
-                i2d.d(4, 5, null);
+                fvc.c(4, 5, null);
             case 12:
                 return null;
         }
@@ -86,8 +86,8 @@ public final class zzja {
     }
 
     public final void zzd(int i, Object obj) {
-        zze(nm7.C2, obj);
-        this.zzb.add(Integer.valueOf(nm7.C2));
+        zze(kk7.C2, obj);
+        this.zzb.add(Integer.valueOf(kk7.C2));
     }
 
     public final void zze(int i, Object obj) {
@@ -96,7 +96,7 @@ public final class zzja {
 
     public final Class[] zzf(List list) {
         List zzh = zzh(list);
-        ArrayList arrayList = new ArrayList(mm2.c(zzh, 10));
+        ArrayList arrayList = new ArrayList(al2.c(zzh, 10));
         Iterator it = zzh.iterator();
         while (it.hasNext()) {
             arrayList.add(zziy.zza(it.next()));

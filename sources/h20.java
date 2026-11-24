@@ -1,190 +1,236 @@
 // default package
 
-import android.graphics.PointF;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h20 implements it3 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class h20 extends n39 {
+    public final Activity c;
+    public ArrayList d = new ArrayList();
+    public String e;
+    public f20 f;
+    public boolean h;
+    public final /* synthetic */ i20 n;
 
-    public /* synthetic */ h20(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public h20(i20 i20Var, Activity activity) {
+        this.n = i20Var;
+        this.c = activity;
     }
 
-    @Override // it3
-    public final void a(zna znaVar, float f, float f2) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((i30) obj).M1.setBufferedProgress(f / 1000.0f);
-                break;
-            case 1:
-                u31 u31Var = (u31) obj;
-                u31Var.p = (int) f;
-                u31Var.l();
-                break;
-            case 2:
-                if (Math.abs(f) > ((y21) obj).getWidth()) {
-                    znaVar.d();
-                    break;
-                }
-                break;
-            case 3:
-                i22 i22Var = (i22) ((q12) obj).d;
-                a22 a22Var = i22Var.w2;
-                if (a22Var == i22Var.g2 || a22Var == i22Var.h2 || (i22Var.z1 && i22Var.q3 != null)) {
-                    i22Var.K1(1);
-                }
-                i22Var.w2.m(i22Var.i4);
-                i22Var.X0.g();
-                i22Var.b.invalidate();
-                break;
-            case 4:
-                c52 c52Var = (c52) obj;
-                c52Var.n0 = f;
-                c52Var.m0();
-                break;
-            case 5:
-                ll4 ll4Var = (ll4) obj;
-                float f3 = f / 1000.0f;
-                su suVar = ll4Var.a;
-                suVar.setPivotX(gm.L(28.0f));
-                suVar.setPivotY(gm.L(28.0f));
-                suVar.setScaleX(f3);
-                suVar.setScaleY(f3);
-                suVar.setAlpha(pqe.a(f3, 0.0f, 1.0f));
-                ll4Var.invalidate();
-                break;
-            case 6:
-                ry5 ry5Var = (ry5) obj;
-                float f4 = f / 1000.0f;
-                ry5Var.t1 = f4;
-                tu7 tu7Var = ry5Var.l1;
-                tu7Var.setAlpha(f4);
-                tu7Var.invalidate();
-                ry5Var.T0.invalidate();
-                ry5Var.k1.getTypefaceCell().setAlpha(1.0f - ry5Var.t1);
-                break;
-            case 7:
-                bh6 bh6Var = ((mh6) obj).c0;
-                if (bh6Var != null) {
-                    int i = bh6.G;
-                    View view = bh6Var.c;
-                    ViewGroup viewGroup = bh6Var.b;
-                    PointF pointF = bh6Var.E;
-                    zgc.b(view, viewGroup, pointF);
-                    wp4 wp4Var = bh6Var.h;
-                    wp4Var.setTranslationX(pointF.x);
-                    wp4Var.setTranslationY(pointF.y);
-                    bh6Var.requestLayout();
-                    break;
-                }
-                break;
-            case 8:
-                xv7 xv7Var = (xv7) obj;
-                float f5 = f / 1000.0f;
-                xv7Var.j1 = f5;
-                tu7 tu7Var2 = xv7Var.c1;
-                tu7Var2.setAlpha(f5);
-                tu7Var2.invalidate();
-                xv7Var.K0.invalidate();
-                xv7Var.b1.getTypefaceCell().setAlpha(1.0f - xv7Var.j1);
-                break;
-            case 9:
-                ((ah7) obj).x();
-                break;
-            case 10:
-                t18 t18Var = (t18) obj;
-                float f6 = f / 100.0f;
-                t18Var.b = f6;
-                TextView textView = t18Var.d.V;
-                if (textView != null) {
-                    textView.setAlpha((f6 * 0.2f) + 0.8f);
-                }
-                t18Var.invalidate();
-                break;
-            case 11:
-                eb8 eb8Var = (eb8) obj;
-                eb8Var.c0 = f;
-                eb8Var.e0 = f2;
-                eb8Var.G();
-                break;
-            case 12:
-                vb8 vb8Var = (vb8) obj;
-                int L = vb8Var.e > vb8Var.f ? gm.L(48.0f) : 0;
-                vdc vdcVar = vb8Var.s.q3;
-                int measuredWidth = (int) (((vb8Var.getMeasuredWidth() - gm.L(16.0f)) - f) - L);
-                int measuredHeight = vb8Var.getMeasuredHeight();
-                vdcVar.h = measuredWidth;
-                vdcVar.i = measuredHeight;
-                View view2 = vdcVar.v;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            case 13:
-                dj3 dj3Var = (dj3) obj;
-                dj3Var.E = f / 1000.0f;
-                dj3Var.invalidate();
-                break;
-            case 14:
-                ((op9) obj).k(f);
-                break;
-            case 15:
-                mw9 mw9Var = (mw9) obj;
-                vdc vdcVar2 = mw9Var.r.P;
-                int measuredWidth2 = (int) (((mw9Var.getMeasuredWidth() - gm.L(16.0f)) - f) - 0.0f);
-                int measuredHeight2 = mw9Var.getMeasuredHeight();
-                vdcVar2.h = measuredWidth2;
-                vdcVar2.i = measuredHeight2;
-                View view3 = vdcVar2.v;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
-            case 16:
-                wca wcaVar = (wca) obj;
-                float f7 = f / 1000.0f;
-                lka lkaVar = wcaVar.c;
-                lkaVar.setAlpha(f7);
-                qz8 qz8Var = wcaVar.b;
-                float f8 = 1.0f - f7;
-                qz8Var.setAlpha(f8);
-                lkaVar.setTranslationX(f8 * (-gm.L(10.0f)));
-                qz8Var.setTranslationX(f7 * gm.L(10.0f));
-                break;
-            case 17:
-                l5b l5bVar = (l5b) obj;
-                l5bVar.d0 = f;
-                l5bVar.f0 = f2;
-                break;
-            case 18:
-                m0c m0cVar = (m0c) obj;
-                m0cVar.H = f;
-                m0cVar.c();
-                break;
-            case 19:
-                xqc xqcVar = (xqc) obj;
-                xqcVar.e = f;
-                xqcVar.setScaleX(f);
-                xqcVar.setScaleY(f);
-                break;
-            case 20:
-                rrc rrcVar = (rrc) obj;
-                rrcVar.c0 = f;
-                rrcVar.G0();
-                break;
-            default:
-                ((qrc) obj).d.setConversionWobble(f);
-                break;
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return (this.n.o2 && s49Var.b() == 0) ? false : true;
+    }
+
+    public final void E(String str) {
+        if (this.f != null) {
+            Utilities.g.a(this.f);
+            this.f = null;
         }
+        if (str == null) {
+            this.e = null;
+            this.d.clear();
+            f();
+        } else {
+            co3 co3Var = Utilities.g;
+            f20 f20Var = new f20(this, str, (byte) 0);
+            this.f = f20Var;
+            co3Var.d(f20Var, 300L);
+        }
+    }
+
+    @Override // w39
+    public final int b() {
+        int size;
+        i20 i20Var = this.n;
+        boolean z = i20Var.o2;
+        if (i20Var.p1) {
+            size = this.d.size();
+        } else {
+            if (i20Var.q2.size() <= 1) {
+                return 0;
+            }
+            size = i20Var.q2.size();
+        }
+        return size + (z ? 1 : 0);
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        return (this.n.o2 && i == 0) ? 1 : 0;
+    }
+
+    @Override // w39
+    public final void f() {
+        super.f();
+        i20 i20Var = this.n;
+        View view = i20Var.o1;
+        p10 p10Var = i20Var.r1;
+        final byte b = 1;
+        if ((i20Var.q2.size() > 1) != this.h) {
+            boolean z = i20Var.q2.size() > 1;
+            this.h = z;
+            if (z) {
+                p10Var.setVisibility(0);
+                p10Var.setTranslationY(gl.q.y);
+                p10Var.animate().translationY(0.0f).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: e20
+                    public final /* synthetic */ h20 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        byte b2 = r2;
+                        h20 h20Var = this.b;
+                        switch (b2) {
+                            case 0:
+                                h20Var.n.b.invalidate();
+                                break;
+                            default:
+                                h20Var.n.b.invalidate();
+                                break;
+                        }
+                    }
+                }).setDuration(420L).setInterpolator(s33.h).start();
+            } else {
+                p10Var.animate().translationY(gl.q.y).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: e20
+                    public final /* synthetic */ h20 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        byte b2 = b;
+                        h20 h20Var = this.b;
+                        switch (b2) {
+                            case 0:
+                                h20Var.n.b.invalidate();
+                                break;
+                            default:
+                                h20Var.n.b.invalidate();
+                                break;
+                        }
+                    }
+                }).setDuration(420L).setInterpolator(s33.h).withEndAction(new oz(this, (byte) 2)).start();
+            }
+        }
+        int size = i20Var.q2.size();
+        k10 k10Var = i20Var.x1;
+        if (size > 1) {
+            zkb.h(bkb.Hj, i20Var.J0, k10Var);
+            view.setVisibility(0);
+            p10Var.setPadding(0, p10Var.getPaddingTop(), 0, gl.L(231.0f));
+        } else {
+            zkb.h(bkb.Hj, i20Var.J0, k10Var);
+            view.setVisibility(0);
+            p10Var.setPadding(0, p10Var.getPaddingTop(), 0, 0);
+        }
+        i20Var.u1.setVisibility((i20Var.q1 && i20Var.t1.b() == 0) ? (byte) 0 : (byte) 8);
+        i20Var.T0();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0024, code lost:
+    
+        if ((r11 + 1) < r9.d.size()) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0061, code lost:
+    
+        r11 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x005f, code lost:
+    
+        r11 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x005d, code lost:
+    
+        if (((r0.q2.size() - r11) - 2) >= 0) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x0043, code lost:
+    
+        if ((r11 + 1) < r0.q2.size()) goto L24;
+     */
+    @Override // w39
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(s49 s49Var, int i) {
+        k27 k27Var;
+        boolean z;
+        i20 i20Var = this.n;
+        if (i20Var.o2) {
+            if (i == 0) {
+                return;
+            } else {
+                i--;
+            }
+        }
+        j20 j20Var = (j20) s49Var.a;
+        byte b = 1;
+        if (i20Var.p1) {
+            k27Var = (k27) this.d.get(i);
+        } else if (i20Var.p2 == null ? !gba.K0 : gba.K0) {
+            ArrayList arrayList = i20Var.q2;
+            k27Var = (k27) arrayList.get((arrayList.size() - i) - 1);
+        } else {
+            k27Var = (k27) i20Var.q2.get(i);
+        }
+        if (k27Var != null) {
+            k27Var.J5(this.e, true);
+        }
+        f8 f8Var = i20Var.I0() ? new f8(this, j20Var, b) : null;
+        zkb.h(bkb.g5, i20Var.J0, j20Var);
+        boolean I0 = i20Var.I0();
+        b0 b0Var = (i20Var.I0() || i20Var.s2 || k27Var.e1() <= 0) ? null : new b0(this, j20Var, k27Var, (byte) 10);
+        RadialProgress2 radialProgress2 = j20Var.I;
+        ImageView imageView = j20Var.w;
+        j20Var.x = k27Var;
+        if (j20Var.y != z) {
+            j20Var.invalidate();
+        }
+        j20Var.y = z;
+        imageView.setImageResource(I0 ? R.drawable.list_reorder : R.drawable.ic_ab_other);
+        imageView.setVisibility((I0 || b0Var != null) ? 0 : 8);
+        imageView.setOnClickListener(b0Var);
+        imageView.setOnTouchListener(f8Var);
+        TLRPC.Document F0 = k27Var.F0();
+        TLRPC.PhotoSize w = F0 != null ? ba4.w(F0.thumbs, 90, false, null, false) : null;
+        if ((w instanceof TLRPC.TL_photoSize) || (w instanceof TLRPC.TL_photoSizeProgressive)) {
+            radialProgress2.i(w, F0, k27Var);
+        } else {
+            String u0 = k27Var.u0(true);
+            if (TextUtils.isEmpty(u0)) {
+                radialProgress2.i(null, null, null);
+            } else {
+                radialProgress2.h(u0);
+            }
+        }
+        j20Var.requestLayout();
+        j20Var.b(false, false);
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        Activity activity = this.c;
+        if (i != 1) {
+            return new y29(new j20(MediaController.w().D0 == null ? 0 : 1, this.n.J0, activity));
+        }
+        d62 d62Var = new d62(activity, (byte) 3);
+        d62Var.setTag(-33024);
+        return new y29(d62Var);
     }
 }

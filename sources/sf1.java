@@ -1,139 +1,129 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.TextView;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.UndoView;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class sf1 extends l66 {
-    public final /* synthetic */ byte M;
-    public final /* synthetic */ Object N;
+public final /* synthetic */ class sf1 implements p8c {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ sf1(byte b, Context context, Object obj) {
-        super(context, null);
-        this.M = b;
-        this.N = obj;
+    public /* synthetic */ sf1(int i, long j, fx0 fx0Var, wjb wjbVar, Context context, TL_payments.connectedBotStarRef connectedbotstarref) {
+        this.d = i;
+        this.f = connectedbotstarref;
+        this.g = fx0Var;
+        this.c = context;
+        this.b = j;
+        this.e = wjbVar;
     }
 
-    @Override // l66
-    public final int a() {
-        switch (this.M) {
-            case 4:
-                return ((UndoView) this.N).a;
-            default:
-                return super.a();
-        }
-    }
-
-    @Override // l66
-    public final int c() {
-        switch (this.M) {
-            case 3:
-                Integer num = ((njb) this.N).d;
-                if (num == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.c();
-    }
-
-    @Override // l66, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        byte b = this.M;
-        Object obj = this.N;
-        switch (b) {
-            case 2:
-                super.onDraw(canvas);
-                ((oh2) obj).f();
-                break;
-            case 3:
-                njb njbVar = (njb) obj;
-                njbVar.b();
-                super.onDraw(canvas);
-                njbVar.a();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v0, types: [android.widget.TextView, java.lang.Object, l66, sf1] */
-    /* JADX WARN: Type inference failed for: r9v0, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r9v1, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r9v3, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r9v4, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r9v6, types: [android.text.SpannableStringBuilder] */
-    @Override // l66, android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        byte b = this.M;
-        Object obj = this.N;
-        int i = 0;
+    @Override // p8c
+    public final void a(Object obj) {
+        int i;
+        SpannableStringBuilder S2;
+        byte b = this.a;
+        long j = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.c;
+        Object obj4 = this.g;
+        Object obj5 = this.f;
         switch (b) {
             case 0:
-                if (charSequence != 0) {
-                    charSequence = gm.S2(charSequence.toString());
-                    int indexOf = charSequence.toString().indexOf(10);
-                    if (indexOf >= 0) {
-                        charSequence.replace(indexOf, indexOf + 1, " ");
-                        charSequence.setSpan(new do4(cmb.o7, ((tf1) obj).e.getResourceProvider()), 0, indexOf, 33);
-                    }
-                    z5c[] z5cVarArr = (z5c[]) charSequence.getSpans(0, charSequence.length(), z5c.class);
-                    while (i < z5cVarArr.length) {
-                        charSequence.setSpan(new z31(this, (byte) 1), charSequence.getSpanStart(z5cVarArr[i]), charSequence.getSpanEnd(z5cVarArr[i]), 33);
-                        charSequence.removeSpan(z5cVarArr[i]);
-                        i++;
+                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
+                fx0 fx0Var = (fx0) obj4;
+                Context context = (Context) obj3;
+                wjb wjbVar = (wjb) obj2;
+                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
+                int i2 = this.d;
+                long j2 = this.b;
+                if (connectedbotstarref2 != null) {
+                    fx0Var.dismiss();
+                    eg1.J0(context, i2, connectedbotstarref2, j2, wjbVar);
+                    break;
+                } else {
+                    TLRPC.User V1 = na7.q1(i2).V1(Long.valueOf(connectedbotstarref.bot_id));
+                    if (V1 != null) {
+                        na7.q1(i2).Z2(V1, 0, true, new qf1(fx0Var, context, i2, j2, wjbVar, (byte) 1));
+                        break;
                     }
                 }
-                super.setText(charSequence, bufferType);
                 break;
             case 1:
-                fj1 fj1Var = (fj1) obj;
-                if (charSequence != 0) {
-                    charSequence = gm.S2(charSequence.toString());
-                    int indexOf2 = charSequence.toString().indexOf(10);
-                    if (indexOf2 >= 0) {
-                        charSequence.replace(indexOf2, indexOf2 + 1, " ");
-                        charSequence.setSpan(new do4(cmb.o7, fj1Var.getResourceProvider()), 0, indexOf2, 33);
-                    }
-                    z5c[] z5cVarArr2 = (z5c[]) charSequence.getSpans(0, charSequence.length(), z5c.class);
-                    EditTextBoldCursor editTextBoldCursor = fj1Var.y;
-                    String obj2 = (editTextBoldCursor == null || editTextBoldCursor.getText() == null) ? "" : fj1Var.y.getText().toString();
-                    while (i < z5cVarArr2.length) {
-                        charSequence.setSpan(new q1((Object) this, (Object) obj2, (byte) 2), charSequence.getSpanStart(z5cVarArr2[i]), charSequence.getSpanEnd(z5cVarArr2[i]), 33);
-                        charSequence.removeSpan(z5cVarArr2[i]);
-                        i++;
-                    }
+                pc7 pc7Var = (pc7) obj5;
+                Context context2 = (Context) obj3;
+                wjb wjbVar2 = (wjb) obj2;
+                u21 u21Var = (u21) obj4;
+                String str = (String) obj;
+                if (str != null) {
+                    vp7.g(j);
+                    pc7Var.run();
+                    cq7.q(context2, this.d, wjbVar2, u21Var, str, null);
+                    break;
                 }
-                super.setText(charSequence, bufferType);
-                break;
-            case 2:
-                super.setText(gw3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
                 break;
             default:
-                super.setText(charSequence, bufferType);
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
+                int[] iArr = (int[]) obj3;
+                ArrayList arrayList = (ArrayList) obj2;
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
+                qvb qvbVar = ((bvb) obj5).b;
+                if (tL_messages_invitedUsers2 != null) {
+                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
+                }
+                int i3 = iArr[0] + 1;
+                iArr[0] = i3;
+                if (i3 == this.d) {
+                    if (!tL_messages_invitedUsers.missing_invitees.isEmpty()) {
+                        TLRPC.Chat K0 = qvbVar.getMessagesController().K0(Long.valueOf(j));
+                        i = ((d) qvbVar).currentAccount;
+                        ij.f(i, K0, tL_messages_invitedUsers);
+                        break;
+                    } else {
+                        u21 b0 = u21.b0(qvbVar);
+                        TLRPC.Chat K02 = qvbVar.getMessagesController().K0(Long.valueOf(j));
+                        b0.getClass();
+                        if (arrayList.size() == 0) {
+                            S2 = null;
+                        } else if (arrayList.size() != 1) {
+                            S2 = hc2.V(K02) ? gl.S2(k96.G(arrayList.size(), "AddedMembersToChannel", new Object[0])) : gl.S2(k96.G(arrayList.size(), "AddedSubscribersToChannel", new Object[0]));
+                        } else if (hc2.V(K02)) {
+                            S2 = gl.S2(k96.a0("HasBeenAddedToChannel", null, 2131749172, "**" + l7c.k((TLRPC.User) arrayList.get(0), true) + "**"));
+                        } else {
+                            S2 = gl.S2(k96.a0("HasBeenAddedToGroup", null, 2131749171, "**" + l7c.k((TLRPC.User) arrayList.get(0), true) + "**"));
+                        }
+                        b0.V(arrayList, S2, null, null).j();
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sf1(njb njbVar, Context context, i66 i66Var, ylb ylbVar) {
-        super(context, i66Var, ylbVar);
-        this.M = (byte) 3;
-        this.N = njbVar;
+    public /* synthetic */ sf1(long j, pc7 pc7Var, Context context, int i, wjb wjbVar, u21 u21Var) {
+        this.b = j;
+        this.f = pc7Var;
+        this.c = context;
+        this.d = i;
+        this.e = wjbVar;
+        this.g = u21Var;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sf1(UndoView undoView, Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.M = (byte) 4;
-        this.N = undoView;
+    public /* synthetic */ sf1(bvb bvbVar, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i, ArrayList arrayList, long j) {
+        this.f = bvbVar;
+        this.g = tL_messages_invitedUsers;
+        this.c = iArr;
+        this.d = i;
+        this.e = arrayList;
+        this.b = j;
     }
 }

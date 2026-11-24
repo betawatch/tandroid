@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzge implements zzdw {
     private final zzfp zza;
@@ -17,12 +17,12 @@ public final class zzge implements zzdw {
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zza(String str, RecaptchaAction recaptchaAction, long j, px2 px2Var) {
+    public final Object zza(String str, RecaptchaAction recaptchaAction, long j, fw2 fw2Var) {
         return new zzhg(new zzgc(this, j, str, recaptchaAction, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zzb(long j, px2 px2Var) {
+    public final Object zzb(long j, fw2 fw2Var) {
         return new zzhg(new zzgd(this, j, null));
     }
 }

@@ -1,19 +1,32 @@
 // default package
 
-import android.media.MediaCodec;
+import android.os.StrictMode;
+import java.util.Locale;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class y43 {
-    public final MediaCodec.CryptoInfo a;
-    public final MediaCodec.CryptoInfo.Pattern b = z2.b();
+public final class y43 implements ThreadFactory {
+    public static final ThreadFactory e = Executors.defaultThreadFactory();
+    public final AtomicLong a = new AtomicLong();
+    public final String b;
+    public final byte c;
+    public final StrictMode.ThreadPolicy d;
 
-    public y43(MediaCodec.CryptoInfo cryptoInfo) {
-        this.a = cryptoInfo;
+    /* JADX WARN: Multi-variable type inference failed */
+    public y43(String str, int i, StrictMode.ThreadPolicy threadPolicy) {
+        this.b = str;
+        this.c = i;
+        this.d = threadPolicy;
     }
 
-    public final void a(int i, int i2) {
-        this.b.set(i, i2);
-        this.a.setPattern(this.b);
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread newThread = e.newThread(new gu2((Object) this, (Object) runnable, (byte) 25));
+        Locale locale = Locale.ROOT;
+        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
+        return newThread;
     }
 }

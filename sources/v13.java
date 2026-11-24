@@ -1,29 +1,33 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class v13 extends b4 {
-    public static final Parcelable.Creator<v13> CREATOR = new f41((byte) 12);
-    public final String a;
-    public final Bundle b;
+public final /* synthetic */ class v13 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ w13 b;
+    public final /* synthetic */ us4 c;
 
-    public v13(String str, Bundle bundle) {
-        str.getClass();
-        bundle.getClass();
-        this.a = str;
-        this.b = bundle;
+    public /* synthetic */ v13(w13 w13Var, us4 us4Var, byte b) {
+        this.a = b;
+        this.b = w13Var;
+        this.c = us4Var;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 1, this.a);
-        mve.b(parcel, 2, this.b);
-        mve.s(parcel, r);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        us4 us4Var = this.c;
+        w13 w13Var = this.b;
+        switch (b) {
+            case 0:
+                w13Var.e().M(us4Var);
+                break;
+            case 1:
+                w13Var.e().M(us4Var);
+                break;
+            default:
+                w13Var.e().M(us4Var);
+                break;
+        }
     }
 }

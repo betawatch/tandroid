@@ -1,26 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aoc implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boc b;
+    public final /* synthetic */ koc b;
 
-    public /* synthetic */ aoc(boc bocVar, byte b) {
+    public /* synthetic */ aoc(koc kocVar, byte b) {
         this.a = b;
-        this.b = bocVar;
+        this.b = kocVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        ync j;
         byte b = this.a;
-        boc bocVar = this.b;
+        koc kocVar = this.b;
         switch (b) {
             case 0:
-                gm.c3(new aoc(bocVar, (byte) 1));
+                if (kocVar.r0 && kocVar.h0 != null) {
+                    kocVar.r0 = false;
+                    kocVar.q0 = true;
+                    kocVar.removeCallbacks(kocVar.C1);
+                    ((oa6) kocVar.d.b).X();
+                    kocVar.getParent().requestDisallowInterceptTouchEvent(true);
+                    kocVar.performHapticFeedback(4);
+                    ync j2 = kocVar.j(kocVar.h0);
+                    if (j2 != null) {
+                        j2.o();
+                        j2.animate().scaleX(0.94f).scaleY(0.94f).setDuration(100L).start();
+                    }
+                    kocVar.f0();
+                    break;
+                }
+                break;
+            case 1:
+                kocVar.t0 = false;
+                kocVar.h0 = null;
+                kocVar.f0();
+                break;
+            case 2:
+                kocVar.Q();
                 break;
             default:
-                bocVar.a();
+                joc jocVar = kocVar.h0;
+                if (jocVar != null && !kocVar.n0) {
+                    if (!kocVar.v0) {
+                        if (kocVar.q0 && (j = kocVar.j(jocVar)) != null) {
+                            kocVar.S(j);
+                            break;
+                        }
+                    } else {
+                        kocVar.o0 = true;
+                        kocVar.i0 = jocVar;
+                        kocVar.C0 = Float.NaN;
+                        kocVar.F0 = Float.NaN;
+                        kocVar.D0 = 0.0f;
+                        kocVar.M0 = false;
+                        kocVar.E0 = jocVar.i.b;
+                        jocVar.q.a(0.0f);
+                        joc jocVar2 = kocVar.h0;
+                        ioc iocVar = jocVar2.l;
+                        iocVar.d = 260.0f;
+                        iocVar.e = 0.58f;
+                        iocVar.b = 1.0f;
+                        long j3 = kocVar.O0 + 1;
+                        kocVar.O0 = j3;
+                        jocVar2.I = j3;
+                        ml mlVar = jocVar2.c;
+                        mlVar.v0 = true;
+                        mlVar.w0(false);
+                        kocVar.performHapticFeedback(0);
+                        kocVar.f0();
+                        break;
+                    }
+                }
                 break;
         }
     }

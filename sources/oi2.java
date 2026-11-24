@@ -1,62 +1,89 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class oi2 implements ix9 {
-    public final int a;
-    public final int[] b;
-    public final long[] c;
-    public final long[] d;
-    public final long[] e;
-    public final long f;
+public final class oi2 implements ip9 {
+    public final ip9 a;
+    public final boolean b;
+    public boolean c;
+    public final /* synthetic */ pi2 d;
 
-    public oi2(int[] iArr, long[] jArr, long[] jArr2, long[] jArr3) {
-        this.b = iArr;
-        this.c = jArr;
-        this.d = jArr2;
-        this.e = jArr3;
-        int length = iArr.length;
-        this.a = length;
-        if (length <= 0) {
-            this.f = 0L;
-        } else {
-            int i = length - 1;
-            this.f = jArr2[i] + jArr3[i];
+    public oi2(pi2 pi2Var, ip9 ip9Var, boolean z) {
+        this.d = pi2Var;
+        this.a = ip9Var;
+        this.b = z;
+    }
+
+    @Override // ip9
+    public final int a() {
+        int a = this.a.a();
+        if (this.d.r != Long.MIN_VALUE) {
+            a |= 1;
         }
+        return this.b ? (a & (-3)) | 4 : a;
     }
 
-    @Override // ix9
-    public final boolean c() {
-        return true;
+    @Override // ip9
+    public final void b() {
+        this.a.b();
     }
 
-    @Override // ix9
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // ix9
-    public final hx9 f(long j) {
-        long[] jArr = this.e;
-        int f = hac.f(jArr, j, true);
-        long j2 = jArr[f];
-        long[] jArr2 = this.c;
-        kx9 kx9Var = new kx9(j2, jArr2[f]);
-        if (j2 >= j || f == this.a - 1) {
-            return new hx9(kx9Var, kx9Var);
+    @Override // ip9
+    public final int h(sk4 sk4Var, z83 z83Var, int i) {
+        pi2 pi2Var = this.d;
+        if (pi2Var.c()) {
+            return -3;
         }
-        int i = f + 1;
-        return new hx9(kx9Var, new kx9(jArr[i], jArr2[i]));
+        if (this.c) {
+            z83Var.setFlags(4);
+            return -4;
+        }
+        long s = pi2Var.s();
+        int h = this.a.h(sk4Var, z83Var, i);
+        if (pi2Var.h != -9223372036854775807L && h != -3) {
+            pi2Var.h = -9223372036854775807L;
+        }
+        if (h != -5) {
+            long j = pi2Var.r;
+            if (j == Long.MIN_VALUE || ((h != -4 || z83Var.e < j) && !(h == -3 && s == Long.MIN_VALUE && !z83Var.d))) {
+                return h;
+            }
+            z83Var.clear();
+            z83Var.setFlags(4);
+            this.c = true;
+            return -4;
+        }
+        long j2 = pi2Var.n;
+        long j3 = pi2Var.r;
+        fm4 fm4Var = (fm4) sk4Var.c;
+        fm4Var.getClass();
+        int i2 = fm4Var.S;
+        int i3 = fm4Var.R;
+        if (i3 != 0 || i2 != 0) {
+            if (j2 != 0) {
+                i3 = 0;
+            }
+            if (j3 != Long.MIN_VALUE) {
+                i2 = 0;
+            }
+            em4 a = fm4Var.a();
+            a.Q = i3;
+            a.R = i2;
+            sk4Var.c = new fm4(a);
+        }
+        return -5;
     }
 
-    @Override // ix9
-    public final long h() {
-        return this.f;
+    @Override // ip9
+    public final boolean j() {
+        return !this.d.c() && this.a.j();
     }
 
-    public final String toString() {
-        return "ChunkIndex(length=" + this.a + ", sizes=" + Arrays.toString(this.b) + ", offsets=" + Arrays.toString(this.c) + ", timeUs=" + Arrays.toString(this.e) + ", durationsUs=" + Arrays.toString(this.d) + ")";
+    @Override // ip9
+    public final int n(long j) {
+        if (this.d.c()) {
+            return -3;
+        }
+        return this.a.n(j);
     }
 }

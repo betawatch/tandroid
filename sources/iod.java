@@ -1,19 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.nio.charset.Charset;
+
 /* loaded from: classes.dex */
-public final class iod implements cq7 {
-    public static final iod a = new iod();
+public final class iod {
+    public static final sid b = new sid((byte) 1);
+    public final xod a;
 
-    static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)), 4)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public iod() {
+        pqd pqdVar;
+        try {
+            pqdVar = (pqd) Class.forName("com.google.protobuf.DescriptorMessageInfoFactory").getDeclaredMethod("getInstance", null).invoke(null, null);
+        } catch (Exception unused) {
+            pqdVar = b;
         }
-        throw null;
+        pqd[] pqdVarArr = {sid.b, pqdVar};
+        xod xodVar = new xod();
+        xodVar.a = pqdVarArr;
+        Charset charset = ejd.a;
+        this.a = xodVar;
     }
 }

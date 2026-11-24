@@ -1,46 +1,36 @@
 // default package
 
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class f20 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ i30 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ h20 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ f20(i30 i30Var, TLRPC.TL_error tL_error, byte b) {
+    public /* synthetic */ f20(h20 h20Var, String str, byte b) {
         this.a = b;
-        this.b = i30Var;
-        this.c = tL_error;
+        this.b = h20Var;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        FrameLayout frameLayout;
-        ylb ylbVar;
-        byte b = this.a;
-        TLRPC.TL_error tL_error = this.c;
-        i30 i30Var = this.b;
-        switch (b) {
+        switch (this.a) {
             case 0:
-                frameLayout = (FrameLayout) i30Var.b;
-                ylbVar = i30Var.J0;
-                break;
-            case 1:
-                frameLayout = (FrameLayout) i30Var.b;
-                ylbVar = i30Var.J0;
-                break;
-            case 2:
-                frameLayout = (FrameLayout) i30Var.b;
-                ylbVar = i30Var.J0;
+                h20 h20Var = this.b;
+                String str = this.c;
+                h20Var.f = null;
+                gl.c3(new f20(h20Var, str, (byte) 1));
                 break;
             default:
-                frameLayout = (FrameLayout) i30Var.b;
-                ylbVar = i30Var.J0;
+                h20 h20Var2 = this.b;
+                String str2 = this.c;
+                h20Var2.getClass();
+                Utilities.g.c(new g20(h20Var2, str2, new ArrayList(h20Var2.n.q2)));
                 break;
         }
-        wi8.u(frameLayout, ylbVar, tL_error, false);
     }
 }

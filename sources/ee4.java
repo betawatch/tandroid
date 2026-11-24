@@ -1,64 +1,55 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ee4 extends FrameLayout implements vlb {
-    public Paint a;
-    public float[] b;
-    public Path c;
-    public float d;
+public final class ee4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ View d;
 
-    public final void a(float f, float f2) {
-        float[] fArr = this.b;
-        fArr[7] = f;
-        fArr[6] = f;
-        fArr[1] = f;
-        fArr[0] = f;
-        fArr[5] = f2;
-        fArr[4] = f2;
-        fArr[3] = f2;
-        fArr[2] = f2;
+    public ee4(yva yvaVar, float f, int i) {
+        this.a = (byte) 1;
+        this.d = yvaVar;
+        this.b = f;
+        this.c = i;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        Path path = this.c;
-        path.rewind();
-        RectF rectF = gm.P;
-        rectF.set(0.0f, 0.0f, measuredWidth - gm.U1(this.d, 0, gm.L(4.0f)), getMeasuredHeight());
-        a(gm.L(8.0f), gm.U1(this.d, 0, gm.L(8.0f)));
-        float[] fArr = this.b;
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(rectF, fArr, direction);
-        Paint paint = this.a;
-        canvas.drawPath(path, paint);
-        path.rewind();
-        rectF.set(measuredWidth + gm.U1(this.d, 0, gm.L(4.0f)), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        a(gm.U1(this.d, 0, gm.L(8.0f)), gm.L(8.0f));
-        path.addRoundRect(rectF, fArr, direction);
-        canvas.drawPath(path, paint);
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        try {
-            this.a.setColor(cmb.w0(null, cmb.Ei, false));
-            invalidate();
-        } catch (Exception e) {
-            fc4.g(e, true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        float f = this.b;
+        int i = this.c;
+        View view = this.d;
+        switch (b) {
+            case 0:
+                fe4 fe4Var = (fe4) view;
+                fe4Var.b(i == 5 ? 0.0f : -f, i + 1);
+                fe4Var.E = 0.0f;
+                fe4Var.invalidate();
+                break;
+            case 1:
+                yva yvaVar = (yva) view;
+                yvaVar.d0 = f;
+                if (yvaVar.getValue() != i) {
+                    yvaVar.e(yvaVar.getValue());
+                }
+                yvaVar.invalidate();
+                break;
+            default:
+                ((nsc) view).c(i, f, false);
+                break;
         }
     }
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+    public /* synthetic */ ee4(View view, int i, float f, byte b) {
+        this.a = b;
+        this.d = view;
+        this.c = i;
+        this.b = f;
     }
 }

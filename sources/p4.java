@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class p4 extends View.AccessibilityDelegate {
     public final q4 a;
@@ -33,7 +33,7 @@ public final class p4 extends View.AccessibilityDelegate {
 
     @Override // android.view.View.AccessibilityDelegate
     public final AccessibilityNodeProvider getAccessibilityNodeProvider(View view) {
-        ni6 a = this.a.a(view);
+        l69 a = this.a.a(view);
         if (a != null) {
             return (AccessibilityNodeProvider) a.b;
         }
@@ -53,9 +53,9 @@ public final class p4 extends View.AccessibilityDelegate {
         Object obj;
         int i;
         u4 u4Var = new u4(accessibilityNodeInfo);
-        WeakHashMap weakHashMap = kfc.a;
+        WeakHashMap weakHashMap = jdc.a;
         if (Build.VERSION.SDK_INT >= 28) {
-            tag = Boolean.valueOf(ffc.c(view));
+            tag = Boolean.valueOf(edc.c(view));
         } else {
             tag = view.getTag(R.id.tag_screen_reader_focusable);
             if (!Boolean.class.isInstance(tag)) {
@@ -65,7 +65,7 @@ public final class p4 extends View.AccessibilityDelegate {
         Boolean bool = (Boolean) tag;
         u4Var.n(bool != null && bool.booleanValue());
         if (Build.VERSION.SDK_INT >= 28) {
-            tag2 = Boolean.valueOf(ffc.b(view));
+            tag2 = Boolean.valueOf(edc.b(view));
         } else {
             tag2 = view.getTag(R.id.tag_accessibility_heading);
             if (!Boolean.class.isInstance(tag2)) {
@@ -76,7 +76,7 @@ public final class p4 extends View.AccessibilityDelegate {
         u4Var.k(bool2 != null && bool2.booleanValue());
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 28) {
-            tag3 = ffc.a(view);
+            tag3 = edc.a(view);
         } else {
             tag3 = view.getTag(R.id.tag_accessibility_pane_title);
             if (!CharSequence.class.isInstance(tag3)) {
@@ -85,14 +85,14 @@ public final class p4 extends View.AccessibilityDelegate {
         }
         u4Var.m((CharSequence) tag3);
         if (i2 >= 30) {
-            obj = hfc.b(view);
+            obj = gdc.b(view);
         } else {
             Object tag4 = view.getTag(R.id.tag_state_description);
             obj = CharSequence.class.isInstance(tag4) ? tag4 : null;
         }
         CharSequence charSequence = (CharSequence) obj;
         if (i2 >= 30) {
-            via.v(accessibilityNodeInfo, charSequence);
+            tga.v(accessibilityNodeInfo, charSequence);
         } else {
             accessibilityNodeInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY", charSequence);
         }

@@ -1,277 +1,365 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.media.AudioAttributes;
+import android.media.AudioDeviceInfo;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioTrack;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Pair;
+import j$.util.Objects;
+import java.math.RoundingMode;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l40 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
+public final class l40 implements s00 {
+    public static final qbb k = vue.a(new k40((byte) 0));
+    public final Context a;
+    public final ie7 b;
+    public final m93 c;
+    public final l69 d;
+    public a66 e;
+    public adb f;
+    public rz g;
+    public uz h;
+    public Looper i;
+    public Context j;
 
-    public /* synthetic */ l40(int i, long j, long j2, String str) {
-        this.a = (byte) 2;
-        this.b = i;
-        this.e = str;
-        this.c = j;
-        this.d = j2;
+    public l40(wtc wtcVar) {
+        Context context = (Context) wtcVar.a;
+        this.a = context;
+        m93 m93Var = (m93) wtcVar.b;
+        m93Var.getClass();
+        this.c = m93Var;
+        this.b = (ie7) wtcVar.c;
+        this.g = (rz) wtcVar.d;
+        this.d = context == null ? null : new l69(this, (byte) 8);
+        this.f = adb.a;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:72:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0231 A[Catch: Exception -> 0x0289, TryCatch #0 {Exception -> 0x0289, blocks: (B:13:0x003a, B:16:0x0093, B:18:0x00d0, B:20:0x00d6, B:25:0x00de, B:31:0x00ed, B:35:0x00fa, B:37:0x00fe, B:39:0x0130, B:40:0x0139, B:42:0x0146, B:43:0x0137, B:47:0x014a, B:49:0x015b, B:51:0x016e, B:53:0x017a, B:54:0x018b, B:57:0x0198, B:59:0x019c, B:62:0x0237, B:63:0x019f, B:65:0x01a3, B:68:0x01af, B:70:0x022a, B:74:0x0231, B:76:0x0235, B:81:0x01c0, B:83:0x01cd, B:85:0x01da, B:88:0x01e9, B:89:0x01f6, B:91:0x01fb, B:94:0x020c, B:97:0x0219, B:98:0x0222, B:100:0x0245, B:102:0x024d, B:104:0x0271, B:107:0x027b, B:110:0x00b6), top: B:12:0x003a }] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor queryFinalized;
-        long j;
-        long j2;
-        int i;
-        int i2;
-        long j3;
-        byte b = this.a;
-        int i3 = 0;
-        int i4 = 2;
-        long j4 = this.d;
-        long j5 = this.c;
-        int i5 = this.b;
-        Object obj = this.e;
-        switch (b) {
-            case 0:
-                o40 o40Var = (o40) ((lx6) obj).c;
-                String str = hac.a;
-                xa3 xa3Var = ((c74) o40Var).a.s;
-                tk U = xa3Var.U();
-                xa3Var.V(U, 1011, new ua3(U, this.b, this.c, this.d));
-                break;
-            case 1:
-                xa3 xa3Var2 = ((hf0) obj).b;
-                eq eqVar = xa3Var2.d;
-                tk R = xa3Var2.R(((mo5) eqVar.b).isEmpty() ? null : (rz6) lne.b((mo5) eqVar.b));
-                xa3Var2.V(R, 1006, new hg(R, this.b, this.c, this.d));
-                break;
-            case 2:
-                nm7.f(i5).k(nm7.X1, (String) obj, Long.valueOf(j5), Long.valueOf(j4));
-                break;
-            case 3:
-                hs6 hs6Var = (hs6) obj;
-                hs6Var.getClass();
-                try {
-                    int[] iArr = new int[9];
-                    iArr[0] = -1;
-                    iArr[1] = -1;
-                    iArr[2] = -1;
-                    iArr[3] = -1;
-                    iArr[4] = -1;
-                    iArr[5] = -1;
-                    iArr[6] = -1;
-                    iArr[7] = -1;
-                    iArr[8] = -1;
-                    int i6 = 8;
-                    int[] iArr2 = new int[9];
-                    iArr2[0] = -1;
-                    iArr2[1] = -1;
-                    iArr2[2] = -1;
-                    iArr2[3] = -1;
-                    iArr2[4] = -1;
-                    iArr2[5] = -1;
-                    iArr2[6] = -1;
-                    iArr2[7] = -1;
-                    iArr2[8] = -1;
-                    int i7 = 7;
-                    int[] iArr3 = new int[9];
-                    iArr3[0] = 0;
-                    iArr3[1] = 0;
-                    iArr3[2] = 0;
-                    iArr3[3] = 0;
-                    iArr3[4] = 0;
-                    iArr3[5] = 0;
-                    iArr3[6] = 0;
-                    iArr3[7] = 0;
-                    iArr3[8] = 0;
-                    long j6 = this.c;
-                    int i8 = 4;
-                    long j7 = this.d;
-                    if (j6 != 0) {
-                        SQLiteDatabase sQLiteDatabase = hs6Var.getMessagesStorage().b;
-                        Locale locale = Locale.US;
-                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT type, count, old FROM media_counts_topics WHERE uid = " + j7 + " AND topic_id = " + j6, new Object[0]);
-                    } else {
-                        SQLiteDatabase sQLiteDatabase2 = hs6Var.getMessagesStorage().b;
-                        Locale locale2 = Locale.US;
-                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT type, count, old FROM media_counts_v2 WHERE uid = " + j7, new Object[0]);
-                    }
-                    while (queryFinalized.next()) {
-                        int intValue = queryFinalized.intValue(0);
-                        if (intValue >= 0 && intValue < 9) {
-                            int intValue2 = queryFinalized.intValue(1);
-                            iArr[intValue] = intValue2;
-                            iArr2[intValue] = intValue2;
-                            iArr3[intValue] = queryFinalized.intValue(2);
-                        }
-                    }
-                    queryFinalized.dispose();
-                    if (!pg3.B(j7)) {
-                        TLRPC.TL_messages_getSearchCounters tL_messages_getSearchCounters = new TLRPC.TL_messages_getSearchCounters();
-                        tL_messages_getSearchCounters.peer = hs6Var.getMessagesController().i1(j7);
-                        if (j6 != 0) {
-                            if (j7 == hs6Var.getUserConfig().e()) {
-                                tL_messages_getSearchCounters.saved_peer_id = hs6Var.getMessagesController().i1(j6);
-                                tL_messages_getSearchCounters.flags |= 4;
-                            } else {
-                                tL_messages_getSearchCounters.top_msg_id = (int) j6;
-                                tL_messages_getSearchCounters.flags |= 1;
-                            }
-                        }
-                        int i9 = 0;
-                        boolean z = false;
-                        while (i9 < 9) {
-                            if (tL_messages_getSearchCounters.peer == null) {
-                                iArr[i9] = i3;
-                            } else if (iArr[i9] == -1 || iArr3[i9] == 1) {
-                                if (i9 == 0) {
-                                    i = i3;
-                                    tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPhotoVideo());
-                                } else {
-                                    i = i3;
-                                    if (i9 == 1) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterDocument());
-                                    } else if (i9 == i4) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterRoundVoice());
-                                    } else if (i9 == 3) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterUrl());
-                                    } else if (i9 == i8) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterMusic());
-                                    } else {
-                                        ArrayList<TLRPC.MessagesFilter> arrayList = tL_messages_getSearchCounters.filters;
-                                        if (i9 == 6) {
-                                            i2 = i4;
-                                            arrayList.add(new TLRPC.TL_inputMessagesFilterPhotos());
-                                        } else {
-                                            i2 = i4;
-                                            if (i9 == i7) {
-                                                arrayList.add(new TLRPC.TL_inputMessagesFilterVideo());
-                                            } else if (i9 == i6) {
-                                                arrayList.add(new TLRPC.TL_inputMessagesFilterPoll());
-                                            } else {
-                                                arrayList.add(new TLRPC.TL_inputMessagesFilterGif());
-                                            }
-                                        }
-                                        if (iArr[i9] != -1) {
-                                            z = true;
-                                        } else if (iArr3[i9] == 1) {
-                                            iArr[i9] = -1;
-                                        }
-                                        i9++;
-                                        i4 = i2;
-                                        i3 = i;
-                                        i6 = 8;
-                                        i7 = 7;
-                                        i8 = 4;
-                                    }
-                                }
-                                i2 = i4;
-                                if (iArr[i9] != -1) {
-                                }
-                                i9++;
-                                i4 = i2;
-                                i3 = i;
-                                i6 = 8;
-                                i7 = 7;
-                                i8 = 4;
-                            }
-                            i = i3;
-                            i2 = i4;
-                            i9++;
-                            i4 = i2;
-                            i3 = i;
-                            i6 = 8;
-                            i7 = 7;
-                            i8 = 4;
-                        }
-                        if (tL_messages_getSearchCounters.filters.isEmpty()) {
-                            j = j7;
-                            j2 = j6;
-                        } else {
-                            ConnectionsManager connectionsManager = hs6Var.getConnectionsManager();
-                            qp6 qp6Var = new qp6(hs6Var, iArr, j7, j6, (byte) 1);
-                            hs6Var = hs6Var;
-                            j = j7;
-                            j2 = j6;
-                            hs6Var.getConnectionsManager().bindRequestToGuid(connectionsManager.sendRequest(tL_messages_getSearchCounters, qp6Var), i5);
-                        }
-                        if (!z || hs6Var.getConnectionsManager().getConnectionState() != 3) {
-                            gm.c3(new wp6(hs6Var, j, j2, iArr2, (byte) 1));
-                            break;
-                        }
-                    } else {
-                        int i10 = 0;
-                        while (i10 < 9) {
-                            if (iArr[i10] == -1) {
-                                SQLiteDatabase sQLiteDatabase3 = hs6Var.getMessagesStorage().b;
-                                Locale locale3 = Locale.US;
-                                SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT COUNT(mid) FROM media_v4 WHERE uid = " + j7 + " AND type = " + i10 + " LIMIT 1", new Object[0]);
-                                if (queryFinalized2.next()) {
-                                    iArr[i10] = queryFinalized2.intValue(0);
-                                } else {
-                                    iArr[i10] = 0;
-                                }
-                                queryFinalized2.dispose();
-                                j3 = j6;
-                                long j8 = j7;
-                                hs6Var.K1(i10, iArr[i10], j8, j3);
-                                j7 = j8;
-                            } else {
-                                j3 = j6;
-                            }
-                            i10++;
-                            j6 = j3;
-                        }
-                        gm.c3(new wp6(hs6Var, j7, j6, iArr, (byte) 0));
-                        break;
-                    }
-                } catch (Exception e) {
-                    fc4.g(e, true);
-                    return;
+    public final j40 a(r00 r00Var) {
+        Context context;
+        Context context2;
+        try {
+            int i = r00Var.h;
+            int i2 = r00Var.i;
+            if (i2 == -1 || (context2 = this.a) == null || Build.VERSION.SDK_INT < 34) {
+                context = null;
+            } else {
+                Context context3 = this.j;
+                if (context3 == null || context3.getDeviceId() != i2) {
+                    this.j = context2.createDeviceContext(i2);
                 }
-                break;
-            case 4:
-                ((oc7) obj).m0(this.c, this.b, this.d);
-                break;
-            default:
-                qwb qwbVar = (qwb) obj;
-                long j9 = -j5;
-                TLRPC.TL_forumTopic f = qwbVar.f(j9, j4);
-                if (f != null) {
-                    f.unread_mentions_count = i5;
-                    qwbVar.y(j9, true);
-                    break;
-                }
-                break;
+                context = this.j;
+                i = 0;
+            }
+            AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(r00Var.d ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : r00Var.g.b()).setAudioFormat(new AudioFormat.Builder().setSampleRate(r00Var.b).setChannelMask(r00Var.c).setEncoding(r00Var.a).build()).setTransferMode(1).setBufferSizeInBytes(r00Var.f).setSessionId(i);
+            int i3 = Build.VERSION.SDK_INT;
+            if (i3 >= 29) {
+                sessionId.setOffloadedPlayback(r00Var.e);
+            }
+            if (i3 >= 34 && context != null) {
+                sessionId.setContext(context);
+            }
+            AudioTrack build = sessionId.build();
+            if (build.getState() == 1) {
+                return new j40(build, r00Var, this.d, this.f);
+            }
+            try {
+                build.release();
+            } catch (Exception unused) {
+            }
+            throw new p00();
+        } catch (IllegalArgumentException | UnsupportedOperationException e) {
+            throw new p00(e);
         }
     }
 
-    public /* synthetic */ l40(pg0 pg0Var, long j, long j2, int i, byte b) {
-        this.a = b;
-        this.e = pg0Var;
-        this.c = j;
-        this.d = j2;
-        this.b = i;
+    public final o00 b(n00 n00Var) {
+        e(n00Var);
+        fm4 fm4Var = (fm4) n00Var.a;
+        nz nzVar = (nz) n00Var.b;
+        k00 a = this.c.a(nzVar, fm4Var);
+        o00 o00Var = new o00();
+        byte b = 0;
+        o00Var.d = (byte) 0;
+        String str = fm4Var.t;
+        int i = fm4Var.Q;
+        if (!Objects.equals(str, "audio/raw") ? this.g.c(nzVar, fm4Var) != null : i == 2) {
+            b = 2;
+        }
+        o00Var.d = b;
+        boolean z = a.a;
+        o00Var.a = z;
+        boolean z2 = a.b;
+        o00Var.b = z2;
+        boolean z3 = a.c;
+        o00Var.c = z3;
+        if (!z && (z2 || z3)) {
+            sc8.j("Secondary offload attribute fields are true but primary isFormatSupportedForOffload is false");
+            return null;
+        }
+        o00 o00Var2 = new o00();
+        o00Var2.a = o00Var.a;
+        o00Var2.b = o00Var.b;
+        o00Var2.c = o00Var.c;
+        o00Var2.d = o00Var.d;
+        return o00Var2;
     }
 
-    public /* synthetic */ l40(Object obj, int i, long j, long j2, byte b) {
-        this.a = b;
-        this.e = obj;
-        this.b = i;
-        this.c = j;
-        this.d = j2;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x016b  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x016d  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00bb  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final r00 c(n00 n00Var) {
+        char c;
+        int i;
+        boolean z;
+        boolean z2;
+        int i2;
+        boolean z3;
+        int b;
+        int i3;
+        fm4 fm4Var = (fm4) n00Var.a;
+        boolean z4 = n00Var.d;
+        nz nzVar = (nz) n00Var.b;
+        e(n00Var);
+        String str = fm4Var.t;
+        int i4 = fm4Var.O;
+        int i5 = fm4Var.N;
+        int i6 = fm4Var.P;
+        int i7 = fm4Var.Q;
+        if (Objects.equals(str, "audio/raw")) {
+            gre.f(g8c.N(i7));
+            if (i4 == -1) {
+                i4 = g8c.t(i5);
+            }
+            i = g8c.u(i7) * i5;
+            z = false;
+            c = 0;
+        } else {
+            k00 a = z4 ? this.c.a(nzVar, fm4Var) : k00.d;
+            if (z4 && a.a) {
+                str.getClass();
+                int c2 = ud7.c(str, fm4Var.l);
+                if (i4 == -1) {
+                    i4 = g8c.t(i5);
+                }
+                if ((c2 == 11 || c2 == 12) && i6 >= 16000 && !((Boolean) k.get()).booleanValue()) {
+                    if (c2 == 12 && i5 == 2) {
+                        i4 = 4;
+                    }
+                    i6 /= 2;
+                    c2 = 10;
+                }
+                z = a.b;
+                i7 = c2;
+                i = -1;
+                c = 1;
+                z2 = true;
+                i2 = fm4Var.k;
+                if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr") && i2 == -1) {
+                    i2 = 768000;
+                }
+                gre.p(AudioTrack.getMinBufferSize(i6, i4, i7) == -2);
+                if (i == -1) {
+                    i = 1;
+                }
+                double d = !z2 ? 8.0d : 1.0d;
+                this.b.getClass();
+                if (c != 0) {
+                    z3 = true;
+                    b = gle.b(((500000 * i6) * i) / 1000000);
+                } else if (c == 1) {
+                    z3 = true;
+                    int b2 = yfe.b(i7);
+                    gre.p(b2 != -2147483647);
+                    b = gle.b((50000000 * b2) / 1000000);
+                } else {
+                    if (c != 2) {
+                        sc8.e();
+                        return null;
+                    }
+                    int i8 = i7 == 5 ? 500000 : i7 == 8 ? 1000000 : 250000;
+                    if (i2 != -1) {
+                        RoundingMode roundingMode = RoundingMode.CEILING;
+                        i3 = cle.b(i2, 8);
+                    } else {
+                        int b3 = yfe.b(i7);
+                        gre.p(b3 != -2147483647);
+                        i3 = b3;
+                    }
+                    z3 = true;
+                    b = gle.b((i8 * i3) / 1000000);
+                }
+                int max = (((Math.max(r5, (int) (b * d)) + i) - 1) / i) * i;
+                q00 q00Var = new q00();
+                nz nzVar2 = nz.i;
+                q00Var.i = -1;
+                q00Var.b = i6;
+                q00Var.c = i4;
+                q00Var.a = i7;
+                q00Var.f = max;
+                q00Var.h = n00Var.e;
+                q00Var.g = nzVar;
+                boolean z5 = z3;
+                q00Var.e = c != z5 ? z5 : false;
+                q00Var.d = n00Var.g;
+                q00Var.j = z2;
+                q00Var.k = z;
+                q00Var.i = n00Var.f;
+                return new r00(q00Var);
+            }
+            Pair c3 = this.g.c(nzVar, fm4Var);
+            if (c3 == null) {
+                throw new m00("Unable to configure passthrough for: " + fm4Var);
+            }
+            i7 = ((Integer) c3.first).intValue();
+            i4 = ((Integer) c3.second).intValue();
+            c = 2;
+            i = -1;
+            z = false;
+        }
+        z2 = false;
+        i2 = fm4Var.k;
+        if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr")) {
+            i2 = 768000;
+        }
+        gre.p(AudioTrack.getMinBufferSize(i6, i4, i7) == -2);
+        if (i == -1) {
+        }
+        if (!z2) {
+        }
+        this.b.getClass();
+        if (c != 0) {
+        }
+        int max2 = (((Math.max(r5, (int) (b * d)) + i) - 1) / i) * i;
+        q00 q00Var2 = new q00();
+        nz nzVar22 = nz.i;
+        q00Var2.i = -1;
+        q00Var2.b = i6;
+        q00Var2.c = i4;
+        q00Var2.a = i7;
+        q00Var2.f = max2;
+        q00Var2.h = n00Var.e;
+        q00Var2.g = nzVar;
+        boolean z52 = z3;
+        q00Var2.e = c != z52 ? z52 : false;
+        q00Var2.d = n00Var.g;
+        q00Var2.j = z2;
+        q00Var2.k = z;
+        q00Var2.i = n00Var.f;
+        return new r00(q00Var2);
+    }
+
+    public final void d() {
+        ska skaVar;
+        a66 a66Var = this.e;
+        if (a66Var != null) {
+            a66Var.d();
+        }
+        uz uzVar = this.h;
+        if (uzVar != null) {
+            Context context = uzVar.a;
+            if (uzVar.k) {
+                uzVar.h = null;
+                i00.e(context).unregisterAudioDeviceCallback(uzVar.d);
+                if (Build.VERSION.SDK_INT >= 32 && (skaVar = uzVar.g) != null) {
+                    skaVar.e();
+                    uzVar.g = null;
+                }
+                context.unregisterReceiver(uzVar.e);
+                tz tzVar = uzVar.f;
+                if (tzVar != null) {
+                    tzVar.a.unregisterContentObserver(tzVar);
+                }
+                uzVar.k = false;
+            }
+        }
+    }
+
+    public final void e(n00 n00Var) {
+        rz b;
+        AudioDeviceInfo audioDeviceInfo = (AudioDeviceInfo) n00Var.c;
+        nz nzVar = (nz) n00Var.b;
+        f();
+        uz uzVar = this.h;
+        if (uzVar == null) {
+            Context context = this.a;
+            if (context != null) {
+                uz uzVar2 = new uz(context, new l0(this, (byte) 23), nzVar, audioDeviceInfo);
+                this.h = uzVar2;
+                if (uzVar2.k) {
+                    b = uzVar2.h;
+                    b.getClass();
+                } else {
+                    byte b2 = 1;
+                    uzVar2.k = true;
+                    tz tzVar = uzVar2.f;
+                    if (tzVar != null) {
+                        tzVar.a.registerContentObserver(tzVar.b, false, tzVar);
+                    }
+                    Context context2 = uzVar2.a;
+                    AudioManager e = i00.e(context2);
+                    sz szVar = uzVar2.d;
+                    Handler handler = uzVar2.c;
+                    e.registerAudioDeviceCallback(szVar, handler);
+                    if (Build.VERSION.SDK_INT >= 32 && uzVar2.g == null) {
+                        uzVar2.g = new ska(context2, new oz(uzVar2, b2), Boolean.valueOf(g8c.Q(context2)));
+                    }
+                    b = rz.b(context2, context2.registerReceiver(uzVar2.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), uzVar2.j, uzVar2.i, uzVar2.a());
+                    uzVar2.h = b;
+                }
+                this.g = b;
+            }
+        } else {
+            if (audioDeviceInfo != null && !audioDeviceInfo.equals(uzVar.i)) {
+                uzVar.i = audioDeviceInfo;
+                Context context3 = uzVar.a;
+                nz nzVar2 = uzVar.j;
+                List a = uzVar.a();
+                w59 w59Var = rz.e;
+                uzVar.b(rz.b(context3, context3.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), nzVar2, audioDeviceInfo, a));
+            }
+            uz uzVar3 = this.h;
+            if (!Objects.equals(nzVar, uzVar3.j)) {
+                uzVar3.j = nzVar;
+                Context context4 = uzVar3.a;
+                AudioDeviceInfo audioDeviceInfo2 = uzVar3.i;
+                List a2 = uzVar3.a();
+                w59 w59Var2 = rz.e;
+                uzVar3.b(rz.b(context4, context4.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), nzVar, audioDeviceInfo2, a2));
+            }
+        }
+        this.g.getClass();
+    }
+
+    public final void f() {
+        if (this.a == null) {
+            return;
+        }
+        Looper myLooper = Looper.myLooper();
+        Looper looper = this.i;
+        boolean z = looper == null || looper == myLooper;
+        String name = looper == null ? "null" : looper.getThread().getName();
+        String name2 = myLooper != null ? myLooper.getThread().getName() : "null";
+        if (z) {
+            this.i = myLooper;
+        } else {
+            sc8.j(nue.a("AudioTrackAudioOutputProvider accessed on multiple threads: %s and %s", name, name2));
+        }
     }
 }

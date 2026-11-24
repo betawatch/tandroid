@@ -1,57 +1,38 @@
 // default package
 
-import android.text.TextUtils;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class vad {
-    public static final String[] a = {"bluestacks", "memuhyperv", "virtualbox"};
+public abstract class vad extends x8d implements Set {
+    public transient aad f;
 
-    public static boolean a() {
-        File file = new File("/proc/bus/input/devices");
-        ArrayList arrayList = null;
-        if (file.canRead()) {
-            try {
-                ArrayList arrayList2 = new ArrayList();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-                while (true) {
-                    String readLine = bufferedReader.readLine();
-                    if (readLine == null) {
-                        break;
-                    }
-                    if (readLine.startsWith("N: Name=\"")) {
-                        String substring = readLine.substring(9, readLine.length() - 1);
-                        if (!TextUtils.isEmpty(substring)) {
-                            arrayList2.add(substring);
-                        }
-                    }
-                }
-                bufferedReader.close();
-                arrayList = arrayList2;
-            } catch (IOException e) {
-                fc4.g(e, true);
-            }
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this || obj == this) {
+            return true;
         }
-        if (arrayList != null) {
-            int size = arrayList.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                String str = (String) obj;
-                for (int i2 = 0; i2 < 3; i2++) {
-                    if (str.toLowerCase().contains(a[i2])) {
-                        return true;
-                    }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
                 }
+            } catch (ClassCastException | NullPointerException unused) {
             }
         }
         return false;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        Iterator it = iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i += next != null ? next.hashCode() : 0;
+        }
+        return i;
     }
 }

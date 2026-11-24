@@ -2,64 +2,64 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.play.core.integrity.StandardIntegrityException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzbe extends eeb implements fs4 {
+final class zzbe extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzbo zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbe(zzbo zzboVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzbe(zzbo zzboVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzboVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        return new zzbe(this.zzc, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzbe(this.zzc, fw2Var);
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbe) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzbe) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r9v29, types: [g7c, java.lang.Object] */
-    @Override // og0
+    /* JADX WARN: Type inference failed for: r9v29, types: [g5c, java.lang.Object] */
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzcd zzcdVar;
-        e79 e79Var;
+        c59 c59Var;
         try {
             if (this.zzb != 0) {
-                e79Var = (e79) this.zza;
-                tue.b(obj);
+                c59Var = (c59) this.zza;
+                qse.b(obj);
             } else {
-                tue.b(obj);
-                e79Var = new e79();
-                zzbd zzbdVar = new zzbd(this.zzc, e79Var, null);
-                this.zza = e79Var;
+                qse.b(obj);
+                c59Var = new c59();
+                zzbd zzbdVar = new zzbd(this.zzc, c59Var, null);
+                this.zza = c59Var;
                 this.zzb = 1;
-                Object a = oxe.a(60000L, zzbdVar, this);
-                ly2 ly2Var = ly2.a;
-                if (a == ly2Var) {
-                    return ly2Var;
+                Object a = mve.a(60000L, zzbdVar, this);
+                bx2 bx2Var = bx2.a;
+                if (a == bx2Var) {
+                    return bx2Var;
                 }
             }
-            this = g7c.a;
+            this = g5c.a;
             return this;
         } catch (Exception e) {
             zzbo zzboVar = this.zzc;
-            mq2 zzf = zzboVar.zzf();
-            Throwable th = (Throwable) e79Var.a;
+            bp2 zzf = zzboVar.zzf();
+            Throwable th = (Throwable) c59Var.a;
             if (th == null) {
                 th = e;
             }
-            ((nq2) zzf).P(th);
+            ((cp2) zzf).P(th);
             zzboVar.zzc = zzbp.zza;
             zzce zzceVar = zzce.zzb;
-            Throwable th2 = (Throwable) e79Var.a;
+            Throwable th2 = (Throwable) c59Var.a;
             if (th2 == null) {
                 th2 = e;
             }

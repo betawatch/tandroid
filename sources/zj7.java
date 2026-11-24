@@ -1,47 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class zj7 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final float g;
-    public final int h;
-    public final int i;
-    public final boolean j;
-    public final boolean k;
-    public final int l;
-    public final int m;
-    public final int n;
-    public final boolean o;
-    public final int p;
-    public final int q;
-    public final int r;
-    public final int s;
+import android.content.AsyncQueryHandler;
+import android.os.Message;
 
-    public zj7(int i, int i2, int i3, int i4, int i5, int i6, float f, int i7, int i8, boolean z, boolean z2, int i9, int i10, int i11, boolean z3, int i12, int i13, int i14, int i15) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        this.e = i5;
-        this.f = i6;
-        this.g = f;
-        this.h = i7;
-        this.i = i8;
-        this.j = z;
-        this.k = z2;
-        this.l = i9;
-        this.m = i10;
-        this.n = i11;
-        this.o = z3;
-        this.p = i12;
-        this.q = i13;
-        this.r = i14;
-        this.s = i15;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class zj7 extends AsyncQueryHandler {
+    @Override // android.content.AsyncQueryHandler, android.os.Handler
+    public final void handleMessage(Message message) {
+        try {
+            super.handleMessage(message);
+        } catch (Throwable unused) {
+        }
     }
 }

@@ -1,41 +1,23 @@
 // default package
 
-import org.telegram.messenger.video.VideoPlayerHolderBase;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pdc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VideoPlayerHolderBase b;
+public final class pdc {
+    public final pd5 a = new pd5(27);
+    public final LinkedHashMap b = new LinkedHashMap();
+    public final LinkedHashSet c = new LinkedHashSet();
+    public volatile boolean d;
 
-    public /* synthetic */ pdc(VideoPlayerHolderBase videoPlayerHolderBase, byte b) {
-        this.a = b;
-        this.b = videoPlayerHolderBase;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        VideoPlayerHolderBase videoPlayerHolderBase = this.b;
-        switch (b) {
-            case 0:
-                videoPlayerHolderBase.lambda$new$13();
-                break;
-            case 1:
-                videoPlayerHolderBase.lambda$start$1();
-                break;
-            case 2:
-                videoPlayerHolderBase.lambda$new$14();
-                break;
-            case 3:
-                videoPlayerHolderBase.lambda$play$6();
-                break;
-            case 4:
-                videoPlayerHolderBase.lambda$pause$4();
-                break;
-            default:
-                videoPlayerHolderBase.lambda$loopBack$9();
-                break;
+    public static void a(AutoCloseable autoCloseable) {
+        if (autoCloseable != null) {
+            try {
+                yjb.w(autoCloseable);
+            } catch (Exception e) {
+                sdb.b(e);
+            }
         }
     }
 }

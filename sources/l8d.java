@@ -1,51 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class l8d extends t8d {
-    public final transient int r;
-    public final transient int s;
-    public final /* synthetic */ t8d w;
+public final class l8d extends r7d {
+    public final transient f7d r;
+    public final transient Object[] s;
+    public final transient int w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l8d(t8d t8dVar, int i, int i2) {
+    public l8d(f7d f7dVar, Object[] objArr, int i) {
         super((byte) 2);
-        this.w = t8dVar;
-        this.r = i;
-        this.s = i2;
+        this.r = f7dVar;
+        this.s = objArr;
+        this.w = i;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        m6f.a(i, this.s);
-        return this.w.get(i + this.r);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.r.get(key))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // l1d
-    public final int q() {
-        return this.w.s() + this.r + this.s;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        r6d r6dVar = this.n;
+        if (r6dVar == null) {
+            r6dVar = new h8d(this);
+            this.n = r6dVar;
+        }
+        return r6dVar.listIterator(0);
     }
 
-    @Override // l1d
-    public final int s() {
-        return this.w.s() + this.r;
+    @Override // kzc
+    public final int p(Object[] objArr) {
+        r6d r6dVar = this.n;
+        if (r6dVar == null) {
+            r6dVar = new h8d(this);
+            this.n = r6dVar;
+        }
+        return r6dVar.p(objArr);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.s;
-    }
-
-    @Override // l1d
-    public final Object[] v() {
-        return this.w.v();
-    }
-
-    @Override // t8d, java.util.List
-    /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public final t8d subList(int i, int i2) {
-        m6f.c(i, i2, this.s);
-        int i3 = this.r;
-        return this.w.subList(i + i3, i2 + i3);
+        return this.w;
     }
 }

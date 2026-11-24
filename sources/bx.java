@@ -1,233 +1,63 @@
 // default package
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Stack;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.tgnet.tl.TL_iv;
+import android.widget.FrameLayout;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class bx implements qkb, mi7, wgb {
-    public SpannableStringBuilder E;
-    public int F = -1;
-    public int G = -1;
-    public int H = -1;
-    public cn I;
-    public ArrayList J;
-    public Stack K;
-    public AtomicReference L;
-    public View M;
-    public final ui5 a;
-    public View b;
-    public boolean c;
-    public StaticLayout d;
-    public b66 e;
-    public b66 f;
-    public b66 h;
-    public TL_iv.PageBlock n;
-    public TL_iv.RichText r;
-    public int s;
-    public int w;
-    public int x;
-    public CharSequence y;
+public final class bx extends FrameLayout {
+    public final av9 a;
+    public final byte b;
+    public final byte c;
+    public int d;
+    public final TextPaint e;
+    public final /* synthetic */ o f;
 
-    public bx(ui5 ui5Var) {
-        this.a = ui5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bx(o oVar, Context context) {
+        super(context);
+        this.f = oVar;
+        this.b = (byte) 12;
+        this.c = (byte) 30;
+        setWillNotDraw(false);
+        TextPaint textPaint = new TextPaint(1);
+        this.e = textPaint;
+        textPaint.setTextSize(gl.L(16.0f));
+        av9 av9Var = new av9(null, context, false);
+        this.a = av9Var;
+        av9Var.setReportChanges(true);
+        av9Var.setSeparatorsCount(19);
+        av9Var.setDelegate(new qx4(this));
+        addView(av9Var, nme.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
-    @Override // qkb, mi7
-    public final Layout a() {
-        return this.d;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
     }
 
-    @Override // wgb
-    public final int b() {
-        return 0;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int w0 = bkb.w0(null, bkb.H6, false);
+        TextPaint textPaint = this.e;
+        textPaint.setColor(w0);
+        canvas.drawText(String.valueOf(gba.V0), getMeasuredWidth() - gl.L(39.0f), gl.L(28.0f), textPaint);
     }
 
-    @Override // qkb
-    public final Rect c() {
-        return null;
-    }
-
-    @Override // wgb
-    public final void d(Canvas canvas, View view) {
-        float width;
-        Object obj;
-        TL_iv.RichText richText;
-        this.c = true;
-        this.b = view;
-        ui5 ui5Var = this.a;
-        float f = 0.0f;
-        if (ui5Var.F.isEmpty()) {
-            this.h = null;
-        } else {
-            ox oxVar = (ox) ui5Var.F.get(ui5Var.H);
-            if (oxVar.c != this.n || ((obj = oxVar.b) != (richText = this.r) && (!(obj instanceof String) || richText != null))) {
-                this.h = null;
-            } else if (-1 != oxVar.a) {
-                b66 b66Var = new b66(0);
-                this.h = b66Var;
-                b66Var.n = false;
-                b66Var.d(this.d, oxVar.a, 0.0f);
-                this.h.o = 0;
-                StaticLayout staticLayout = this.d;
-                int i = oxVar.a;
-                staticLayout.getSelectionPath(i, ui5Var.G.length() + i, this.h);
-                this.h.n = true;
-            }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int size = View.MeasureSpec.getSize(i);
+        if (this.d != size) {
+            int i3 = gba.V0;
+            byte b = this.b;
+            this.a.setProgress((i3 - b) / (this.c - b));
+            this.d = size;
         }
-        b66 b66Var2 = this.h;
-        if (b66Var2 != null) {
-            canvas.drawPath(b66Var2, o.A1);
-        }
-        b66 b66Var3 = this.e;
-        if (b66Var3 != null) {
-            canvas.drawPath(b66Var3, o.z1);
-        }
-        b66 b66Var4 = this.f;
-        if (b66Var4 != null) {
-            canvas.drawPath(b66Var4, o.B1);
-        }
-        if (ui5Var.c.h(canvas, this)) {
-            view.invalidate();
-        }
-        if (ui5Var.d == this && ui5Var.b == null && ui5Var.h) {
-            int lineCount = this.d.getLineCount();
-            StaticLayout staticLayout2 = this.d;
-            if (lineCount == 1) {
-                width = staticLayout2.getLineWidth(0);
-                f = this.d.getLineLeft(0);
-            } else {
-                width = staticLayout2.getWidth();
-            }
-            canvas.drawRect((-gm.L(2.0f)) + f, 0.0f, f + width + gm.L(2.0f), this.d.getHeight(), o.y1);
-        }
-        ArrayList arrayList = this.J;
-        if (arrayList == null || arrayList.isEmpty()) {
-            this.d.draw(canvas);
-        } else {
-            rna.g(view, false, this.d.getPaint().getColor(), 0, this.L, 0, this.d, this.J, canvas, false);
-        }
-        this.c = false;
-    }
-
-    @Override // mi7
-    public final View e() {
-        View view = this.M;
-        return view != null ? view : this.b;
-    }
-
-    @Override // wgb
-    public final void f(View view) {
-        if (view == null) {
-            view = this.M;
-        }
-        gn.release(view, this.I);
-        this.M = null;
-    }
-
-    @Override // wgb
-    public final void g(int i) {
-        this.x = i;
-    }
-
-    @Override // qkb
-    public final CharSequence getPrefix() {
-        return this.y;
-    }
-
-    @Override // qkb
-    public final int getRow() {
-        return this.x;
-    }
-
-    @Override // qkb
-    public final CharSequence getText() {
-        return this.d.getText();
-    }
-
-    @Override // qkb
-    public final int getX() {
-        return this.s;
-    }
-
-    @Override // qkb
-    public final int getY() {
-        return this.w;
-    }
-
-    @Override // wgb
-    public final void h(int i) {
-        this.w = i;
-    }
-
-    @Override // wgb
-    public final void i(View view) {
-        this.M = view;
-        StaticLayout staticLayout = this.d;
-        if (staticLayout != null) {
-            this.I = gn.update(0, view, false, this.I, staticLayout);
-        }
-    }
-
-    @Override // wgb
-    public final void j(int i) {
-        this.s = i;
-    }
-
-    public final int k() {
-        int i = this.F;
-        if (i != -1) {
-            return i;
-        }
-        this.F = this.d.getWidth();
-        int i2 = 0;
-        while (true) {
-            int lineCount = this.d.getLineCount();
-            int i3 = this.F;
-            if (i2 >= lineCount) {
-                return i3;
-            }
-            this.F = Math.min(i3, (int) this.d.getLineLeft(i2));
-            i2++;
-        }
-    }
-
-    public final int l() {
-        int i = this.G;
-        if (i != -1) {
-            return i;
-        }
-        int i2 = 0;
-        this.G = 0;
-        while (true) {
-            int lineCount = this.d.getLineCount();
-            int i3 = this.G;
-            if (i2 >= lineCount) {
-                return i3;
-            }
-            this.G = Math.max(i3, (int) this.d.getLineRight(i2));
-            i2++;
-        }
-    }
-
-    public final int m() {
-        int i = this.H;
-        if (i != -1) {
-            return i;
-        }
-        this.H = 0;
-        if (this.d.getLineCount() > 0) {
-            this.H = Math.max(this.H, (int) this.d.getLineRight(r1.getLineCount() - 1));
-        }
-        return this.H;
     }
 }

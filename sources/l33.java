@@ -1,42 +1,75 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class l33 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ o33 b;
-    public final /* synthetic */ Throwable c;
+import android.graphics.drawable.Drawable;
 
-    public /* synthetic */ l33(o33 o33Var, Throwable th, byte b) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class l33 implements Drawable.Callback {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ m33 b;
+
+    public /* synthetic */ l33(m33 m33Var, byte b) {
         this.a = b;
-        this.b = o33Var;
-        this.c = th;
+        this.b = m33Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
         byte b = this.a;
-        Throwable th = this.c;
-        o33 o33Var = this.b;
+        m33 m33Var = this.b;
         switch (b) {
             case 0:
-                a33 a33Var = o33Var.f;
-                if (a33Var != null) {
-                    a33Var.A(new l23(new h1((byte) 26), th.getMessage()));
-                    return;
-                } else {
-                    rr5.e("callback");
-                    throw null;
+                if (m33Var.c < 1.0f) {
+                    m33Var.invalidateSelf();
+                    break;
                 }
+                break;
             default:
-                a33 a33Var2 = o33Var.f;
-                if (a33Var2 != null) {
-                    a33Var2.A(new n13(th.getMessage(), (byte) 2));
-                    return;
-                } else {
-                    rr5.e("callback");
-                    throw null;
+                if (m33Var.c > 0.0f) {
+                    m33Var.invalidateSelf();
+                    break;
                 }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+        byte b = this.a;
+        m33 m33Var = this.b;
+        switch (b) {
+            case 0:
+                if (m33Var.c < 1.0f) {
+                    m33Var.scheduleSelf(runnable, j);
+                    break;
+                }
+                break;
+            default:
+                if (m33Var.c > 0.0f) {
+                    m33Var.scheduleSelf(runnable, j);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        byte b = this.a;
+        m33 m33Var = this.b;
+        switch (b) {
+            case 0:
+                if (m33Var.c < 1.0f) {
+                    m33Var.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+            default:
+                if (m33Var.c > 0.0f) {
+                    m33Var.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
         }
     }
 }

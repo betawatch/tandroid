@@ -4,7 +4,7 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class Destination {
     private final CarText mAddress;
@@ -48,7 +48,7 @@ public final class Destination {
         return "[name: " + CarText.toShortString(this.mName) + ", address: " + CarText.toShortString(this.mAddress) + ", image: " + this.mImage + "]";
     }
 
-    public Destination(mf3 mf3Var) {
+    public Destination(ae3 ae3Var) {
         throw null;
     }
 }

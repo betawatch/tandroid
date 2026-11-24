@@ -1,60 +1,44 @@
 // default package
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.os.Build;
-import android.view.Surface;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class rd8 extends Surface {
-    public static int d;
-    public static boolean e;
-    public final boolean a;
-    public final qd8 b;
-    public boolean c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class rd8 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ImageReceiver b;
 
-    public rd8(qd8 qd8Var, SurfaceTexture surfaceTexture, boolean z) {
-        super(surfaceTexture);
-        this.b = qd8Var;
-        this.a = z;
+    public /* synthetic */ rd8(ImageReceiver imageReceiver, byte b) {
+        this.a = b;
+        this.b = imageReceiver;
     }
 
-    public static int a(Context context) {
-        try {
-            int i = Build.VERSION.SDK_INT;
-            if ((i < 24 || (i < 26 && ("samsung".equals(Build.MANUFACTURER) || "XT1650".equals(Build.MODEL) || !context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")))) ? false : xke.b("EGL_EXT_protected_content")) {
-                return xke.b("EGL_KHR_surfaceless_context") ? 1 : 2;
-            }
-            return 0;
-        } catch (dy4 e2) {
-            ncd.c("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e2.getMessage());
-            return 0;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        byte b = this.a;
+        ImageReceiver imageReceiver = this.b;
+        switch (b) {
+            case 0:
+                imageReceiver.I();
+                break;
+            default:
+                imageReceiver.I();
+                break;
         }
     }
 
-    public static synchronized boolean b(Context context) {
-        boolean z;
-        synchronized (rd8.class) {
-            if (!e) {
-                d = a(context);
-                e = true;
-            }
-            z = d != 0;
-        }
-        return z;
-    }
-
-    @Override // android.view.Surface
-    public final void release() {
-        super.release();
-        synchronized (this.b) {
-            if (!this.c) {
-                qd8 qd8Var = this.b;
-                qd8Var.b.getClass();
-                qd8Var.b.sendEmptyMessage(2);
-                this.c = true;
-            }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        byte b = this.a;
+        ImageReceiver imageReceiver = this.b;
+        switch (b) {
+            case 0:
+                imageReceiver.K();
+                break;
+            default:
+                imageReceiver.K();
+                break;
         }
     }
 }

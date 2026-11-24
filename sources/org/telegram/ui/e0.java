@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class e0 extends q59 {
+public final class e0 extends n39 {
     public final Context c;
-    public bmb d;
+    public akb d;
     public ArrayList e;
     public final /* synthetic */ ThemeActivity f;
 
@@ -20,12 +20,12 @@ public final class e0 extends q59 {
         f();
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
+    @Override // n39
+    public final boolean D(s49 s49Var) {
         return false;
     }
 
-    @Override // y59
+    @Override // w39
     public final int b() {
         if (this.e.isEmpty()) {
             return 0;
@@ -33,48 +33,48 @@ public final class e0 extends q59 {
         return this.e.size() + 1;
     }
 
-    @Override // y59
+    @Override // w39
     public final int d(int i) {
         return i == b() - 1 ? 1 : 0;
     }
 
-    @Override // y59
+    @Override // w39
     public final void f() {
-        this.d = this.f.f == 1 ? cmb.J : cmb.B0();
+        this.d = this.f.f == 1 ? bkb.J : bkb.B0();
         this.e = new ArrayList(this.d.c0);
         super.f();
     }
 
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        View view = u69Var.a;
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        View view = s49Var.a;
         int d = d(i);
         if (d == 0) {
             ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
-            bmb bmbVar = this.d;
-            amb ambVar = (amb) this.e.get(i);
-            innerAccentView.d = bmbVar;
-            innerAccentView.e = ambVar;
+            akb akbVar = this.d;
+            zjb zjbVar = (zjb) this.e.get(i);
+            innerAccentView.d = akbVar;
+            innerAccentView.e = zjbVar;
             innerAccentView.a(false);
             return;
         }
         if (d != 1) {
             return;
         }
-        omb ombVar = (omb) view;
-        bmb bmbVar2 = this.d;
-        int i2 = omb.c;
-        ombVar.getClass();
-        if (bmbVar2.X >= 8) {
-            ombVar.b = new int[]{bmbVar2.j(6), bmbVar2.j(4), bmbVar2.j(7), bmbVar2.j(2), bmbVar2.j(0), bmbVar2.j(5), bmbVar2.j(3)};
+        nkb nkbVar = (nkb) view;
+        akb akbVar2 = this.d;
+        int i2 = nkb.c;
+        nkbVar.getClass();
+        if (akbVar2.X >= 8) {
+            nkbVar.b = new int[]{akbVar2.j(6), akbVar2.j(4), akbVar2.j(7), akbVar2.j(2), akbVar2.j(0), akbVar2.j(5), akbVar2.j(3)};
         } else {
-            ombVar.b = new int[7];
+            nkbVar.b = new int[7];
         }
     }
 
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
         Context context = this.c;
-        return i != 0 ? new b59(new omb(context)) : new b59(new ThemeActivity.InnerAccentView(context));
+        return i != 0 ? new y29(new nkb(context)) : new y29(new ThemeActivity.InnerAccentView(context));
     }
 }

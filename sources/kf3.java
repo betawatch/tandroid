@@ -1,13 +1,36 @@
 // default package
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-@Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes.dex */
-public @interface kf3 {
-    int objectTypeIndication() default -1;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class kf3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vf3 b;
 
-    int[] tags();
+    public /* synthetic */ kf3(vf3 vf3Var, byte b) {
+        this.a = b;
+        this.b = vf3Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        vf3 vf3Var = this.b;
+        switch (b) {
+            case 0:
+                vf3Var.q(true, false);
+                break;
+            case 1:
+                je5 je5Var = vf3Var.K;
+                if (je5Var != null) {
+                    je5Var.f(true);
+                }
+                vf3Var.f0.presentFragment(new PremiumPreviewFragment(0, "stories"));
+                break;
+            default:
+                vf3Var.c();
+                break;
+        }
+    }
 }

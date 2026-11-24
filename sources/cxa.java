@@ -1,135 +1,48 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.text.SpannableString;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class cxa extends LinearLayout implements jm7 {
-    public long a;
-    public final int b;
-    public final mh2 c;
-    public SpannableString d;
-    public long e;
-    public ValueAnimator f;
+public final class cxa {
+    public final oi4 a;
+    public k26 b;
+    public final int c;
+    public final /* synthetic */ dxa d;
 
-    public cxa(int i, ylb ylbVar, Context context) {
-        super(context);
-        this.e = -1L;
-        this.b = i;
-        this.a = z8c.h(i).e();
-        setOrientation(1);
-        setGravity(21);
-        TextView textView = new TextView(context);
-        int i2 = cmb.F6;
-        anb.X(textView, i2, ylbVar);
-        ts2.q(13.0f, 1, 2131744844, textView, null);
-        textView.setGravity(5);
-        textView.setTypeface(gm.o());
-        addView(textView, qoe.r(-2, -2, 5));
-        mh2 mh2Var = new mh2(this, context, context.getResources().getDrawable(R.drawable.star_small_inner).mutate());
-        this.c = mh2Var;
-        mh2Var.n = true;
-        mh2Var.getDrawable().r(false, true);
-        mh2Var.setTypeface(gm.o());
-        anb.U(mh2Var, i2, ylbVar);
-        mh2Var.setTextSize(gm.L(13.0f));
-        mh2Var.setGravity(5);
-        mh2Var.setPadding(gm.L(19.0f), 0, 0, 0);
-        addView(mh2Var, qoe.t(-2, 20, 5, 0, -2, 0, 0));
-        a(false);
-        setPadding(gm.L(15.0f), gm.L(4.0f), gm.L(15.0f), gm.L(4.0f));
-    }
-
-    public final void a(boolean z) {
-        long j;
-        boolean z2;
-        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
-        int i = this.b;
-        jva v = jva.v(i, false);
-        mh2 mh2Var = this.c;
-        mh2Var.a();
-        if (this.a == z8c.h(i).e()) {
-            z2 = !v.e;
-            j = v.m().amount;
-        } else {
-            TLRPC.TL_payments_starsRevenueStats h = ku0.g(i).h(this.a, false);
-            boolean z3 = h == null || h.status == null;
-            j = (h == null || (tL_starsRevenueStatus = h.status) == null) ? 0L : tL_starsRevenueStatus.current_balance.amount;
-            z2 = z3;
-        }
-        long j2 = this.e;
-        if (j > j2 && j2 != -1) {
-            ValueAnimator valueAnimator = this.f;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.9f, 1.0f);
-            this.f = ofFloat;
-            ofFloat.addUpdateListener(new rha(this, (byte) 8));
-            this.f.addListener(new c39(this, (byte) 22));
-            this.f.setDuration(320L);
-            this.f.setInterpolator(new OvershootInterpolator());
-            this.f.start();
-        }
-        if (!z2) {
-            mh2Var.setText(jb6.E(j, ' '));
-            this.e = j;
-            return;
-        }
-        if (this.d == null) {
-            SpannableString spannableString = new SpannableString("x");
-            this.d = spannableString;
-            spannableString.setSpan(new ta6(gm.L(48.0f), mh2Var), 0, this.d.length(), 33);
-        }
-        mh2Var.c(this.d, z, true);
-        this.e = -1L;
-    }
-
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == nm7.A3) {
-            a(true);
-        } else if (i == nm7.E3 && ((Long) objArr[0]).longValue() == this.a) {
-            a(true);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a(false);
-        int i = this.b;
-        nm7.f(i).b(this, nm7.A3);
-        nm7.f(i).b(this, nm7.E3);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        int i = this.b;
-        nm7.f(i).n(this, nm7.A3);
-        nm7.f(i).n(this, nm7.E3);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(a.getCurrentActionBarHeight(), TLObject.FLAG_30));
-    }
-
-    public void setDialogId(long j) {
-        if (this.a != j) {
-            this.a = j;
-            a(true);
-        }
+    public cxa(dxa dxaVar, int i) {
+        this.d = dxaVar;
+        this.c = i;
+        oi4 oi4Var = new oi4(dxaVar.getContext());
+        oi4Var.c = true;
+        TextPaint textPaint = new TextPaint(1);
+        oi4Var.e = textPaint;
+        oi4Var.f = new Paint(1);
+        Paint paint = new Paint(1);
+        oi4Var.h = paint;
+        Paint paint2 = new Paint(1);
+        oi4Var.n = paint2;
+        oi4Var.x = gl.L(35.0f);
+        oi4Var.y = gl.L(22.0f);
+        oi4Var.E = gl.L(8.0f);
+        oi4Var.F = gl.L(3.5f);
+        oi4Var.G = new RectF();
+        oi4Var.H = 0.0f;
+        textPaint.setTextSize(gl.L(14.0f));
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
+        paint.setStrokeWidth(gl.N(1.5f));
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStrokeWidth(gl.L(2.0f));
+        this.a = oi4Var;
+        oi4Var.setPadding(gl.L(16.0f), 0, gl.L(16.0f), 0);
+        dxaVar.h.addView(oi4Var);
+        dxaVar.n.add(this);
     }
 }

@@ -1,87 +1,47 @@
 // default package
 
-import android.os.Handler;
-import android.os.Looper;
-import android.text.TextUtils;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ite {
-    public static void a(String str, boolean z) {
-        if (z) {
+public final class ite {
+    public static ate a(Object obj, Object obj2) {
+        ate ateVar = (ate) obj;
+        ate ateVar2 = (ate) obj2;
+        if (!ateVar2.isEmpty()) {
+            if (!ateVar.a) {
+                if (ateVar.isEmpty()) {
+                    ateVar = new ate();
+                } else {
+                    ate ateVar3 = new ate(ateVar);
+                    ateVar3.a = true;
+                    ateVar = ateVar3;
+                }
+            }
+            ateVar.c();
+            if (!ateVar2.isEmpty()) {
+                ateVar.putAll(ateVar2);
+            }
+        }
+        return ateVar;
+    }
+
+    public static void b(Object obj, Object obj2) {
+        ate ateVar = (ate) obj;
+        if (obj2 != null) {
+            fyb.g();
             return;
         }
-        u36.j(str);
-    }
-
-    public static void b(boolean z) {
-        if (z) {
+        if (ateVar.isEmpty()) {
             return;
         }
-        i98.g();
-    }
-
-    public static void c(boolean z, String str, Object... objArr) {
-        if (!z) {
-            throw new IllegalArgumentException(String.format(str, objArr));
+        Iterator it = ateVar.entrySet().iterator();
+        if (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            entry.getKey();
+            entry.getValue();
+            throw new NoSuchMethodError();
         }
-    }
-
-    public static void d(Handler handler) {
-        Looper myLooper = Looper.myLooper();
-        if (myLooper != handler.getLooper()) {
-            String name = myLooper != null ? myLooper.getThread().getName() : "null current looper";
-            String name2 = handler.getLooper().getThread().getName();
-            StringBuilder sb = new StringBuilder(String.valueOf(name).length() + String.valueOf(name2).length() + 35 + 1);
-            kt6.v(sb, "Must be called on ", name2, " thread, but got ", name);
-            rjb.l(sb, ".");
-        }
-    }
-
-    public static void e(String str) {
-        if (Looper.getMainLooper() == Looper.myLooper()) {
-            return;
-        }
-        dq9.m(str);
-    }
-
-    public static void f(String str) {
-        if (TextUtils.isEmpty(str)) {
-            u36.j("Given String is empty or null");
-        }
-    }
-
-    public static void g(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
-            u36.j(str2);
-        }
-    }
-
-    public static void h(Object obj) {
-        if (obj != null) {
-            return;
-        }
-        gxc.d("null reference");
-    }
-
-    public static void i(Object obj, String str) {
-        if (obj != null) {
-            return;
-        }
-        gxc.d(str);
-    }
-
-    public static void j(String str, boolean z) {
-        if (z) {
-            return;
-        }
-        dq9.m(str);
-    }
-
-    public static void k(boolean z) {
-        if (z) {
-            return;
-        }
-        rjb.h();
     }
 }

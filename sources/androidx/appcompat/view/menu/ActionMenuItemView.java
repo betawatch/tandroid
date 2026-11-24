@@ -13,18 +13,18 @@ import android.view.View;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends sr implements u27, View.OnClickListener, c9 {
+public class ActionMenuItemView extends sq implements u07, View.OnClickListener, c9 {
     public boolean E;
     public boolean F;
     public final int G;
     public int H;
     public final int I;
-    public c27 n;
+    public c07 n;
     public CharSequence r;
     public Drawable s;
-    public x17 w;
+    public xz6 w;
     public w8 x;
     public x8 y;
 
@@ -32,7 +32,7 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
         super(context, attributeSet, 0);
         Resources resources = context.getResources();
         this.E = f();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, k09.c, 0, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, jy8.c, 0, 0);
         this.G = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         obtainStyledAttributes.recycle();
         this.I = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);
@@ -41,15 +41,15 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
         setSaveEnabled(false);
     }
 
-    @Override // u27
-    public final void a(c27 c27Var) {
-        this.n = c27Var;
-        setIcon(c27Var.getIcon());
-        setTitle(c27Var.getTitleCondensed());
-        setId(c27Var.a);
-        setVisibility(c27Var.isVisible() ? 0 : 8);
-        setEnabled(c27Var.isEnabled());
-        if (c27Var.hasSubMenu() && this.x == null) {
+    @Override // u07
+    public final void a(c07 c07Var) {
+        this.n = c07Var;
+        setIcon(c07Var.getIcon());
+        setTitle(c07Var.getTitleCondensed());
+        setId(c07Var.a);
+        setVisibility(c07Var.isVisible() ? 0 : 8);
+        setEnabled(c07Var.isEnabled());
+        if (c07Var.hasSubMenu() && this.x == null) {
             this.x = new w8(this);
         }
     }
@@ -90,9 +90,9 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            wxe.a(this, z3 ? null : this.n.e);
+            uve.a(this, z3 ? null : this.n.e);
         } else {
-            wxe.a(this, charSequence2);
+            uve.a(this, charSequence2);
         }
     }
 
@@ -101,16 +101,16 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
         return Button.class.getName();
     }
 
-    @Override // u27
-    public c27 getItemData() {
+    @Override // u07
+    public c07 getItemData() {
         return this.n;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        x17 x17Var = this.w;
-        if (x17Var != null) {
-            x17Var.a(this.n);
+        xz6 xz6Var = this.w;
+        if (xz6Var != null) {
+            xz6Var.a(this.n);
         }
     }
 
@@ -121,7 +121,7 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
         g();
     }
 
-    @Override // sr, android.widget.TextView, android.view.View
+    @Override // sq, android.widget.TextView, android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
         boolean isEmpty = TextUtils.isEmpty(getText());
@@ -160,11 +160,11 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
     public void setExpandedFormat(boolean z) {
         if (this.F != z) {
             this.F = z;
-            c27 c27Var = this.n;
-            if (c27Var != null) {
-                y17 y17Var = c27Var.n;
-                y17Var.k = true;
-                y17Var.p(true);
+            c07 c07Var = this.n;
+            if (c07Var != null) {
+                yz6 yz6Var = c07Var.n;
+                yz6Var.k = true;
+                yz6Var.p(true);
             }
         }
     }
@@ -190,8 +190,8 @@ public class ActionMenuItemView extends sr implements u27, View.OnClickListener,
         g();
     }
 
-    public void setItemInvoker(x17 x17Var) {
-        this.w = x17Var;
+    public void setItemInvoker(xz6 xz6Var) {
+        this.w = xz6Var;
     }
 
     @Override // android.widget.TextView, android.view.View

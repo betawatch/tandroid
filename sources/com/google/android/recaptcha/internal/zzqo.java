@@ -6,7 +6,7 @@ import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -38,7 +38,7 @@ final class zzqo extends zzqq {
             while (i2 < min) {
                 int read = this.zzf.read(bArr, i2, min - i2);
                 if (read == -1) {
-                    i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+                    fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                     return null;
                 }
                 this.zzl += read;
@@ -69,9 +69,9 @@ final class zzqo extends zzqq {
             return;
         }
         if (i > (ConnectionsManager.DEFAULT_DATACENTER_ID - this.zzl) - this.zzj) {
-            i2d.j("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
+            fvc.i("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
         } else {
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         }
     }
 
@@ -80,7 +80,7 @@ final class zzqo extends zzqq {
         int i3 = i2 + i;
         int i4 = this.zzh;
         if (i3 <= i4) {
-            dq9.m(td4.o(i, "refillBuffer() called when ", " bytes were already available in buffer"));
+            sc8.j(tb4.n(i, "refillBuffer() called when ", " bytes were already available in buffer"));
             return false;
         }
         int i5 = this.zzl;
@@ -148,13 +148,13 @@ final class zzqo extends zzqq {
         int i3 = this.zzj;
         int i4 = i2 + i3 + i;
         if ((-2147483647) + i4 > 0) {
-            i2d.j("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
+            fvc.i("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
             return null;
         }
         int i5 = this.zzm;
         if (i4 > i5) {
             zzB((i5 - i2) - i3);
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             return null;
         }
         int i6 = this.zzh - i3;
@@ -178,7 +178,7 @@ final class zzqo extends zzqq {
             try {
                 int read = this.zzf.read(bArr, i6, i - i6);
                 if (read == -1) {
-                    i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+                    fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                     return null;
                 }
                 this.zzl += read;
@@ -206,7 +206,7 @@ final class zzqo extends zzqq {
             return;
         }
         if (i < 0) {
-            i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
             return;
         }
         int i5 = this.zzl;
@@ -214,7 +214,7 @@ final class zzqo extends zzqq {
         int i7 = this.zzm;
         if (i6 + i > i7) {
             zzB((i7 - i5) - i3);
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             return;
         }
         this.zzl = i6;
@@ -283,7 +283,7 @@ final class zzqo extends zzqq {
                     if (zza() < 0) {
                     }
                 }
-                i2d.j("CodedInputStream encountered a malformed varint.");
+                fvc.i("CodedInputStream encountered a malformed varint.");
                 return false;
             }
             for (int i4 = 0; i4 < 10; i4++) {
@@ -293,7 +293,7 @@ final class zzqo extends zzqq {
                 if (bArr[i5] < 0) {
                 }
             }
-            i2d.j("CodedInputStream encountered a malformed varint.");
+            fvc.i("CodedInputStream encountered a malformed varint.");
             return false;
             return true;
         }
@@ -318,7 +318,7 @@ final class zzqo extends zzqq {
             zzB(4);
             return true;
         }
-        i2d.a();
+        haf.a();
         return false;
     }
 
@@ -350,17 +350,17 @@ final class zzqo extends zzqq {
     @Override // com.google.android.recaptcha.internal.zzqq
     public final int zze(int i) {
         if (i < 0) {
-            i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
             return 0;
         }
         int i2 = this.zzl + this.zzj + i;
         if (i2 < 0) {
-            i2d.j("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
+            fvc.i("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
             return 0;
         }
         int i3 = this.zzm;
         if (i2 > i3) {
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             return 0;
         }
         this.zzm = i2;
@@ -479,7 +479,7 @@ final class zzqo extends zzqq {
         if ((zzj >>> 3) != 0) {
             return zzj;
         }
-        i2d.j("Protocol message contained an invalid tag (zero).");
+        fvc.i("Protocol message contained an invalid tag (zero).");
         return 0;
     }
 
@@ -601,7 +601,7 @@ final class zzqo extends zzqq {
                 return j;
             }
         }
-        i2d.j("CodedInputStream encountered a malformed varint.");
+        fvc.i("CodedInputStream encountered a malformed varint.");
         return 0L;
     }
 
@@ -634,7 +634,7 @@ final class zzqo extends zzqq {
             return zzqm.zzb;
         }
         if (zzj < 0) {
-            i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
             return null;
         }
         byte[] zzQ = zzQ(zzj);
@@ -675,7 +675,7 @@ final class zzqo extends zzqq {
             return "";
         }
         if (zzj < 0) {
-            i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
             return null;
         }
         if (zzj > this.zzh) {
@@ -701,7 +701,7 @@ final class zzqo extends zzqq {
                 return "";
             }
             if (zzj < 0) {
-                i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+                fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                 return null;
             }
             i = 0;
@@ -721,6 +721,6 @@ final class zzqo extends zzqq {
         if (this.zzk == i) {
             return;
         }
-        i2d.j("Protocol message end-group tag did not match expected tag.");
+        fvc.i("Protocol message end-group tag did not match expected tag.");
     }
 }

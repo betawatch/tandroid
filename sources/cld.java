@@ -1,19 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class cld implements cq7 {
-    public static final cld a = new cld();
+import java.io.Serializable;
 
-    static {
-        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)), 4)), 5)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class cld extends kld implements Serializable {
+    public static final cld b = new cld(0);
+    public static final cld c = new cld(1);
+    public final /* synthetic */ byte a;
+
+    public /* synthetic */ cld(byte b2) {
+        this.a = b2;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // kld
+    public final kld a() {
+        switch (this.a) {
+            case 0:
+                return c;
+            default:
+                return b;
         }
-        throw null;
+    }
+
+    @Override // java.util.Comparator
+    public final /* bridge */ /* synthetic */ int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Comparable comparable = (Comparable) obj;
+                Comparable comparable2 = (Comparable) obj2;
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            default:
+                Comparable comparable3 = (Comparable) obj;
+                Comparable comparable4 = (Comparable) obj2;
+                comparable3.getClass();
+                if (comparable3 == comparable4) {
+                    return 0;
+                }
+                return comparable4.compareTo(comparable3);
+        }
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                return "Ordering.natural()";
+            default:
+                return "Ordering.natural().reverse()";
+        }
     }
 }

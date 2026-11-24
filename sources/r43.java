@@ -1,32 +1,60 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class r43 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ u43 e;
+public final class r43 extends View implements tjb {
+    public final TextPaint a;
+    public final TextPaint b;
+    public final String c;
+    public final String d;
+    public final Rect e;
 
-    public r43(u43 u43Var, boolean z, boolean z2, boolean z3, boolean z4) {
-        this.e = u43Var;
-        this.a = z;
-        this.b = z2;
-        this.c = z3;
-        this.d = z4;
+    public r43(Context context, String str, String str2) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        this.e = new Rect();
+        this.c = str;
+        this.d = str2;
+        textPaint.setTextSize(gl.L(24.0f));
+        textPaint2.setTextSize(gl.L(14.0f));
+        textPaint.setColor(bkb.w0(null, bkb.F6, false));
+        textPaint2.setColor(bkb.w0(null, bkb.G6, false));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        u43 u43Var = this.e;
-        u43Var.G = false;
-        if (this.a) {
-            return;
-        }
-        u43Var.d(this.b, this.c, this.d, true);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.b;
+        String str = this.d;
+        float measureText = textPaint.measureText(str);
+        TextPaint textPaint2 = this.a;
+        String str2 = this.c;
+        float measureText2 = textPaint2.measureText(str2);
+        int length = str2.length();
+        Rect rect = this.e;
+        textPaint2.getTextBounds(str2, 0, length, rect);
+        textPaint.getTextBounds(str, 0, str.length(), rect);
+        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
+        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        this.a.setColor(bkb.w0(null, bkb.F6, false));
+        this.b.setColor(bkb.w0(null, bkb.G6, false));
+        invalidate();
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

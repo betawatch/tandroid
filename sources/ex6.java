@@ -1,14 +1,10 @@
 // default package
 
-import android.content.Context;
-import android.media.session.MediaSession;
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class ex6 extends cx6 {
-    @Override // bx6
-    public MediaSession a(Context context, String str, Bundle bundle) {
-        return ul1.f(context, str, bundle);
+public final /* synthetic */ class ex6 implements as2 {
+    @Override // as2
+    public final t56 run() {
+        return am5.b;
     }
 }

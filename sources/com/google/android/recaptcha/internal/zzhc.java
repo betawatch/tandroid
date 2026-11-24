@@ -9,20 +9,20 @@ import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
-    private final d26 zza;
+    private final d06 zza;
 
     public zzhc() {
         int i = zzby.zza;
-        this.zza = fpe.b(zzhb.zza);
+        this.zza = cne.b(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
         for (zzwn zzwnVar : zzwq.zzk(bArr).zzl()) {
             String str = "INIT_TOTAL";
-            List b = lm2.b("INIT_TOTAL", "EXECUTE_TOTAL");
+            List b = zk2.b("INIT_TOTAL", "EXECUTE_TOTAL");
             switch (zzwnVar.zzaa()) {
                 case 2:
                     str = "UNKNOWN";
@@ -107,7 +107,7 @@ public final class zzhc implements zzha {
                 case 29:
                     str = "POST_EXECUTE";
                     break;
-                case nm7.S /* 30 */:
+                case kk7.S /* 30 */:
                     str = "SIGNAL_MANAGER_INITIALIZATION";
                     break;
                 case 31:

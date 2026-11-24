@@ -1,42 +1,46 @@
 // default package
 
-import java.util.WeakHashMap;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class m76 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ o76 b;
+public final class m76 extends n76 implements b16 {
+    public final e16 e;
+    public final /* synthetic */ hh7 f;
 
-    public /* synthetic */ m76(o76 o76Var, byte b) {
-        this.a = b;
-        this.b = o76Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m76(hh7 hh7Var, e16 e16Var, co7 co7Var) {
+        super(hh7Var, co7Var);
+        this.f = hh7Var;
+        this.e = e16Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        o76 o76Var = this.b;
-        switch (b) {
-            case 0:
-                os3 os3Var = o76Var.c;
-                if (os3Var != null) {
-                    os3Var.setListSelectionHidden(true);
-                    os3Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                os3 os3Var2 = o76Var.c;
-                if (os3Var2 != null) {
-                    WeakHashMap weakHashMap = kfc.a;
-                    if (os3Var2.isAttachedToWindow() && o76Var.c.getCount() > o76Var.c.getChildCount() && o76Var.c.getChildCount() <= o76Var.y) {
-                        o76Var.P.setInputMethodMode(2);
-                        o76Var.f();
-                        break;
-                    }
-                }
-                break;
+    @Override // b16
+    public final void b(e16 e16Var, u06 u06Var) {
+        e16 e16Var2 = this.e;
+        v06 v06Var = e16Var2.m().b;
+        if (v06Var == v06.a) {
+            this.f.h(this.a);
+            return;
         }
+        v06 v06Var2 = null;
+        while (v06Var2 != v06Var) {
+            a(e());
+            v06Var2 = v06Var;
+            v06Var = e16Var2.m().b;
+        }
+    }
+
+    @Override // n76
+    public final void c() {
+        this.e.m().b(this);
+    }
+
+    @Override // n76
+    public final boolean d(e16 e16Var) {
+        return this.e == e16Var;
+    }
+
+    @Override // n76
+    public final boolean e() {
+        return this.e.m().b.compareTo(v06.d) >= 0;
     }
 }

@@ -1,30 +1,33 @@
 // default package
 
-import com.google.android.gms.location.LocationRequest;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class o05 implements nj5 {
-    public LocationRequest a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class o05 implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ i8c h;
+    public final /* synthetic */ c n;
 
-    public final void a() {
-        this.a.c = 1000L;
+    public o05(c cVar, String str, long j, String str2, byte[] bArr, i8c i8cVar) {
+        this.n = cVar;
+        this.c = str;
+        this.d = j;
+        this.e = str2;
+        this.f = bArr;
+        this.h = i8cVar;
     }
 
-    public final void b() {
-        LocationRequest locationRequest = this.a;
-        long j = locationRequest.c;
-        long j2 = locationRequest.b;
-        if (j == j2 / 6) {
-            locationRequest.c = 166L;
+    @Override // java.lang.Runnable
+    public final synchronized void run() {
+        if (this.a) {
+            return;
         }
-        if (locationRequest.r == j2) {
-            locationRequest.r = 1000L;
-        }
-        locationRequest.b = 1000L;
-    }
-
-    public final void c() {
-        this.a.a = 100;
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new ae2((Object) this, (Object) this.h, (byte) 20));
     }
 }

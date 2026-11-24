@@ -1,30 +1,23 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class r5f {
-    public final o5f a;
-    public final Integer b;
+    public final bdf a;
+    public final p5f b;
+    public final v4f c;
+    public final yaf d;
+    public final mbf e;
+    public final jbf f;
+    public final ssd g;
 
-    public /* synthetic */ r5f(rhb rhbVar) {
-        this.a = (o5f) rhbVar.b;
-        this.b = (Integer) rhbVar.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof r5f)) {
-            return false;
-        }
-        r5f r5fVar = (r5f) obj;
-        return fse.a(this.a, r5fVar.a) && fse.a(this.b, r5fVar.b) && fse.a(null, null) && fse.a(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
+    public /* synthetic */ r5f(ntb ntbVar) {
+        this.a = (bdf) ntbVar.a;
+        this.b = (p5f) ntbVar.b;
+        this.c = (v4f) ntbVar.c;
+        this.d = (yaf) ntbVar.d;
+        this.e = (mbf) ntbVar.e;
+        this.f = (jbf) ntbVar.f;
+        this.g = (ssd) ntbVar.h;
     }
 }

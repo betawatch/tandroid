@@ -1,123 +1,216 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Wallet.c;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Dictation.DictationLid;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tm3 implements jac {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class tm3 implements Runnable {
+    public final /* synthetic */ byte a = 3;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ tm3(wm3 wm3Var, boolean[] zArr, long j, um3 um3Var) {
-        this.c = wm3Var;
-        this.d = zArr;
-        this.b = j;
+    public /* synthetic */ tm3(um3 um3Var, boolean z, float[] fArr, long j, int i) {
         this.e = um3Var;
+        this.d = z;
+        this.f = fArr;
+        this.c = j;
+        this.b = i;
     }
 
-    @Override // jac
-    public final void a(Object obj, Object obj2) {
-        TLRPC.TL_textWithEntities tL_textWithEntities;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00c2  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        TL_stories.StoryItem storyItem;
+        SQLiteCursor queryFinalized;
         byte b = this.a;
-        long j = this.b;
-        Object obj3 = this.e;
-        Object obj4 = this.c;
-        Object obj5 = this.d;
+        r4 = null;
+        r4 = null;
+        r4 = null;
+        r4 = null;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        p2b a = null;
+        int i = this.b;
+        long j = this.c;
+        boolean z = this.d;
+        Object obj = this.f;
+        Object obj2 = this.e;
         switch (b) {
             case 0:
-                boolean[] zArr = (boolean[]) obj5;
-                um3 um3Var = (um3) obj3;
-                TLRPC.TL_composedMessageWithAI tL_composedMessageWithAI = (TLRPC.TL_composedMessageWithAI) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                ((wm3) obj4).b = -1;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    if (tL_composedMessageWithAI != null && (tL_textWithEntities = tL_composedMessageWithAI.result_text) != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-                        gm.d3(new rd3(um3Var, tL_composedMessageWithAI, (byte) 15), Math.max(0L, 900 - (System.currentTimeMillis() - j)));
-                        break;
-                    } else {
-                        um3Var.c(tL_error, null);
-                        break;
-                    }
-                }
-                break;
+                um3 um3Var = (um3) obj2;
+                float[] fArr = (float[]) obj;
+                ExecutorService executorService = DictationLid.a;
+                um3Var.a(z ? fArr : null, j, i);
+                return;
             case 1:
-                hs6 hs6Var = (hs6) obj4;
-                TL_aicompose.inputAiComposeStyle inputaicomposestyle = (TL_aicompose.inputAiComposeStyle) obj5;
-                TL_aicompose.inputAiComposeStyle inputaicomposestyle2 = (TL_aicompose.inputAiComposeStyle) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (tL_error2 != null) {
-                    fc4.d("aicompose.setChatStyle failed: " + tL_error2.text);
-                    hs6Var.k();
-                    if (hs6.j((TL_aicompose.inputAiComposeStyle) hs6Var.r1.f(j), inputaicomposestyle)) {
-                        hs6Var.F1(j, inputaicomposestyle2);
-                        break;
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                TLObject tLObject = (TLObject) obj;
+                String str = LaunchActivity.C1;
+                if (tLObject instanceof TL_stories.TL_stories_stories) {
+                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 >= tL_stories_stories.stories.size()) {
+                            storyItem = null;
+                        } else if (tL_stories_stories.stories.get(i2).id == i) {
+                            storyItem = tL_stories_stories.stories.get(i2);
+                        } else {
+                            i2++;
+                        }
+                    }
+                    if (storyItem != null) {
+                        storyItem.dialogId = j;
+                        d Q = LaunchActivity.Q();
+                        if (Q != null) {
+                            if (Q instanceof cj3) {
+                                try {
+                                    a = p2b.a(((cj3) Q).F0.h);
+                                } catch (Exception unused) {
+                                }
+                            }
+                            p2b p2bVar = a;
+                            Q.getOrCreateStoryViewer().y();
+                            ArrayList arrayList = new ArrayList();
+                            arrayList.add(Long.valueOf(j));
+                            if (z) {
+                                Q.getOrCreateStoryViewer().w1 = true;
+                            }
+                            Q.getOrCreateStoryViewer().K(launchActivity, storyItem, arrayList, 0, null, null, p2bVar, false);
+                            return;
+                        }
+                        return;
                     }
                 }
-                break;
+                u21.Y().Q(R.raw.error, 36, k96.M0(2131744366, null)).k(false);
+                return;
             case 2:
-                wsa wsaVar = (wsa) obj4;
-                he heVar = (he) obj5;
-                yw4 yw4Var = (yw4) obj3;
-                TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                if (stargiftdepositpayload != null) {
-                    hs5 hs5Var = new hs5(wsaVar, new boolean[1], heVar, yw4Var, this.b, stargiftdepositpayload);
-                    e6a e6aVar = new e6a((Object) new Runnable[]{c.C(wsaVar.a).j(stargiftdepositpayload, new s87(e6aVar, hs5Var, (byte) 11))}, (Object) hs5Var, (byte) 16);
-                    gm.d3(e6aVar, 5000L);
-                    break;
-                } else {
-                    heVar.dismiss();
-                    new c41(yw4Var.c, wsaVar.J0).g0(tL_error3, false);
-                    break;
+                ad7 ad7Var = (ad7) obj2;
+                String str2 = (String) obj;
+                if (z) {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = ad7Var.b;
+                        StringBuilder sb = new StringBuilder();
+                        Locale locale = Locale.US;
+                        sb.append("SELECT " + str2 + " FROM dialogs WHERE did = ");
+                        sb.append(j);
+                        queryFinalized = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
+                        try {
+                            try {
+                                r2 = queryFinalized.next() ? Math.max(0, queryFinalized.intValue(0)) : 0;
+                                queryFinalized.dispose();
+                            } catch (SQLiteException e) {
+                                e = e;
+                                e.printStackTrace();
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                if (queryFinalized == null) {
+                                    queryFinalized.dispose();
+                                    return;
+                                }
+                                return;
+                            }
+                        } catch (Throwable th) {
+                            th = th;
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            if (queryFinalized != null) {
+                                queryFinalized.dispose();
+                            }
+                            throw th;
+                        }
+                    } catch (SQLiteException e2) {
+                        e = e2;
+                        queryFinalized = null;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        queryFinalized = null;
+                        if (sQLitePreparedStatement != null) {
+                        }
+                        if (queryFinalized != null) {
+                        }
+                        throw th;
+                    }
+                }
+                int i3 = r2 + i;
+                SQLiteDatabase sQLiteDatabase2 = ad7Var.getMessagesStorage().b;
+                Locale locale2 = Locale.US;
+                SQLitePreparedStatement executeFast = sQLiteDatabase2.executeFast("UPDATE dialogs SET " + str2 + " = ? WHERE did = ?");
+                try {
+                    executeFast.bindInteger(1, i3);
+                    executeFast.bindLong(2, j);
+                    executeFast.step();
+                    executeFast.dispose();
+                    return;
+                } catch (SQLiteException e3) {
+                    e = e3;
+                    queryFinalized = null;
+                    sQLitePreparedStatement = executeFast;
+                    e.printStackTrace();
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    if (queryFinalized == null) {
+                    }
+                } catch (Throwable th3) {
+                    th = th3;
+                    queryFinalized = null;
+                    sQLitePreparedStatement = executeFast;
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    if (queryFinalized != null) {
+                    }
+                    throw th;
                 }
             default:
-                boolean[] zArr2 = (boolean[]) obj5;
-                r97 r97Var = (r97) obj4;
-                cyc cycVar = (cyc) obj3;
-                TLRPC.TL_messages_botWidgetQueryAnswer tL_messages_botWidgetQueryAnswer = (TLRPC.TL_messages_botWidgetQueryAnswer) obj;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    gm.r(r97Var);
-                    if (tL_messages_botWidgetQueryAnswer == null) {
-                        String str = tL_error4 != null ? tL_error4.text : "";
-                        cycVar.b("WIDGET_RESPONSE_TIMEOUT".equals(str) ? 1 : (str == null || !str.startsWith("FLOOD_WAIT")) ? 3 : 2, null, j);
-                        break;
-                    } else {
-                        cycVar.b(0, wxc.D(tL_messages_botWidgetQueryAnswer.result), j);
-                        break;
-                    }
-                }
-                break;
+                ((ad7) obj2).A1(this.c, (List) obj, this.d, true, this.b);
+                return;
         }
     }
 
-    public /* synthetic */ tm3(hs6 hs6Var, long j, TL_aicompose.inputAiComposeStyle inputaicomposestyle, TL_aicompose.inputAiComposeStyle inputaicomposestyle2) {
-        this.c = hs6Var;
-        this.b = j;
-        this.d = inputaicomposestyle;
-        this.e = inputaicomposestyle2;
+    public /* synthetic */ tm3(ad7 ad7Var, long j, List list, boolean z, int i) {
+        this.e = ad7Var;
+        this.c = j;
+        this.f = list;
+        this.d = z;
+        this.b = i;
     }
 
-    public /* synthetic */ tm3(wsa wsaVar, he heVar, yw4 yw4Var, long j) {
-        this.c = wsaVar;
-        this.d = heVar;
-        this.e = yw4Var;
-        this.b = j;
+    public /* synthetic */ tm3(ad7 ad7Var, boolean z, String str, long j, int i, String str2) {
+        this.e = ad7Var;
+        this.d = z;
+        this.f = str;
+        this.c = j;
+        this.b = i;
     }
 
-    public /* synthetic */ tm3(boolean[] zArr, r97 r97Var, cyc cycVar, long j) {
-        this.d = zArr;
-        this.c = r97Var;
-        this.e = cycVar;
-        this.b = j;
+    public /* synthetic */ tm3(LaunchActivity launchActivity, TLObject tLObject, int i, long j, boolean z) {
+        this.e = launchActivity;
+        this.f = tLObject;
+        this.b = i;
+        this.c = j;
+        this.d = z;
     }
 }

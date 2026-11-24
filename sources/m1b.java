@@ -1,13 +1,30 @@
 // default package
 
-import android.graphics.Bitmap;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class m1b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ g2b b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class m1b {
-    public Bitmap a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
+    public /* synthetic */ m1b(g2b g2bVar, byte b) {
+        this.a = b;
+        this.b = g2bVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        g2b g2bVar = this.b;
+        switch (b) {
+            case 0:
+            default:
+                g2bVar.R = false;
+                g2bVar.S = null;
+                break;
+            case 1:
+                g2bVar.s = true;
+                g2bVar.l.edit().putBoolean("read_loaded", true).apply();
+                break;
+        }
+    }
 }

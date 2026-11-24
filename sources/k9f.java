@@ -1,20 +1,31 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class k9f implements uc9 {
-    public final Status a;
-    public final u6d b;
-
-    public k9f(Status status, u6d u6dVar) {
-        this.a = status;
-        this.b = u6dVar;
+public final class k9f extends ezc {
+    public final yi5 Z(bo7 bo7Var, String str, int i, bo7 bo7Var2) {
+        Parcel R = R();
+        mgd.b(R, bo7Var);
+        R.writeString(str);
+        R.writeInt(i);
+        mgd.b(R, bo7Var2);
+        Parcel P = P(R, 2);
+        yi5 T = bo7.T(P.readStrongBinder());
+        P.recycle();
+        return T;
     }
 
-    @Override // uc9
-    public final Status a() {
-        return this.a;
+    public final yi5 a0(bo7 bo7Var, String str, int i, bo7 bo7Var2) {
+        Parcel R = R();
+        mgd.b(R, bo7Var);
+        R.writeString(str);
+        R.writeInt(i);
+        mgd.b(R, bo7Var2);
+        Parcel P = P(R, 3);
+        yi5 T = bo7.T(P.readStrongBinder());
+        P.recycle();
+        return T;
     }
 }

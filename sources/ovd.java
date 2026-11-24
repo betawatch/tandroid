@@ -1,19 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ovd extends x23 {
-    public final cg7 b;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public ovd(cg7 cg7Var) {
-        super((byte) 4);
-        this.b = cg7Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ovd extends b4 {
+    public static final Parcelable.Creator<ovd> CREATOR = new rpd((byte) 24);
+    public final int a;
+    public final kpd b;
+
+    public ovd(int i, kpd kpdVar) {
+        this.a = i;
+        this.b = kpdVar;
     }
 
-    @Override // x23
-    public final Object a(Object obj) {
-        tgf b = bhf.b();
-        cg7 cg7Var = this.b;
-        return new yoe(cg7Var, (hcb) obj, b, new rhb(cg7Var.b(), (byte) 23));
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        jte.k(parcel, 3, this.b, i);
+        jte.s(parcel, r);
     }
 }

@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements jm7 {
-    public fv a;
-    public lh4 b;
-    public hu5 c;
+public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements gk7 {
+    public fu a;
+    public kf4 b;
+    public is5 c;
     public UndoView d;
     public boolean e;
     public boolean f;
@@ -42,76 +42,31 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements
     @Override // org.telegram.ui.ActionBar.d
     public final void addThemeColorKeys(HashSet hashSet) {
         super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(cmb.j7));
-        hashSet.add(Integer.valueOf(cmb.M6));
-        hashSet.add(Integer.valueOf(cmb.n6));
-        hashSet.add(Integer.valueOf(cmb.Ki));
-        hashSet.add(Integer.valueOf(cmb.y6));
-        hashSet.add(Integer.valueOf(cmb.F6));
-        hashSet.add(Integer.valueOf(cmb.K6));
-        hashSet.add(Integer.valueOf(cmb.c7));
-        hashSet.add(Integer.valueOf(cmb.h6));
-        hashSet.add(Integer.valueOf(cmb.s8));
-        hashSet.add(Integer.valueOf(cmb.z8));
-        hashSet.add(Integer.valueOf(cmb.u8));
-        hashSet.add(Integer.valueOf(cmb.r8));
+        hashSet.add(Integer.valueOf(bkb.j7));
+        hashSet.add(Integer.valueOf(bkb.M6));
+        hashSet.add(Integer.valueOf(bkb.n6));
+        hashSet.add(Integer.valueOf(bkb.Ki));
+        hashSet.add(Integer.valueOf(bkb.y6));
+        hashSet.add(Integer.valueOf(bkb.F6));
+        hashSet.add(Integer.valueOf(bkb.K6));
+        hashSet.add(Integer.valueOf(bkb.c7));
+        hashSet.add(Integer.valueOf(bkb.h6));
+        hashSet.add(Integer.valueOf(bkb.s8));
+        hashSet.add(Integer.valueOf(bkb.z8));
+        hashSet.add(Integer.valueOf(bkb.u8));
+        hashSet.add(Integer.valueOf(bkb.r8));
     }
 
-    public final void c0(tk5 tk5Var) {
-        int size = getMessagesController().S0().size();
-        if ((size - 1 >= getMessagesController().l4.Z0.f() && !getUserConfig().p()) || size >= getMessagesController().l4.a1.f()) {
-            showDialog(new i46(3, this.currentAccount, null, getParentActivity(), this));
-        } else if (tk5Var != null) {
-            ((ActionBarLayout) tk5Var).S(new qf4(null, null));
+    public final void b0(ui5 ui5Var) {
+        int size = getMessagesController().R0().size();
+        if ((size - 1 >= getMessagesController().k4.Z0.f() && !getUserConfig().p()) || size >= getMessagesController().k4.a1.f()) {
+            showDialog(new h26(3, this.currentAccount, null, getParentActivity(), this));
+        } else if (ui5Var != null) {
+            ((ActionBarLayout) ui5Var).S(new pd4(null, null));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        byte b = 1;
-        setHasOwnBackground(true);
-        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(jb6.M0(2131750628, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new fh2(this, (byte) 18));
-        tk5 tk5Var = this.parentLayout;
-        if (tk5Var != null && ((ActionBarLayout) tk5Var).U0) {
-            this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_close);
-        }
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        fv fvVar = new fv((byte) 21, context, (Object) this);
-        this.a = fvVar;
-        fvVar.r1();
-        this.a.setClipChildren(false);
-        sc3 sc3Var = new sc3();
-        sc3Var.n(350L);
-        sc3Var.o(d53.h);
-        sc3Var.C = false;
-        sc3Var.m = false;
-        this.a.setItemAnimator(sc3Var);
-        this.a.setSectionsDrawBackground(true);
-        ((sc3) this.a.getItemAnimator()).C = false;
-        this.a.setLayoutManager(new u46(1, false));
-        this.a.setVerticalScrollBarEnabled(false);
-        hu5 hu5Var = new hu5(new hg4(this));
-        this.c = hu5Var;
-        hu5Var.h(this.a);
-        frameLayout.addView(this.a, qoe.c(-1.0f, -1));
-        fv fvVar2 = this.a;
-        lh4 lh4Var = new lh4(this, context);
-        this.b = lh4Var;
-        fvVar2.setAdapter(lh4Var);
-        this.a.setOnItemClickListener(new x92((Object) this, (Object) context, (byte) 28));
-        if (this.f) {
-            g0(false);
-            this.f = false;
-            this.a.w0(this.b.b() - 1);
-            gm.d3(new eh4(this, b), 200L);
-        }
-        return this.fragmentView;
-    }
-
-    public final UndoView d0() {
+    public final UndoView c0() {
         if (getParentActivity() == null) {
             return null;
         }
@@ -119,98 +74,143 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements
             FrameLayout frameLayout = (FrameLayout) this.fragmentView;
             UndoView undoView = new UndoView(getParentActivity());
             this.d = undoView;
-            frameLayout.addView(undoView, qoe.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
+            frameLayout.addView(undoView, nme.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
             this.d.setTranslationY(-getBottomInset());
         }
         return this.d;
     }
 
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == nm7.O2) {
-            g0(true);
-        } else if (i == nm7.S2) {
-            g0(true);
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        byte b = 1;
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(k96.M0(2131750679, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new vm2(this, (byte) 17));
+        ui5 ui5Var = this.parentLayout;
+        if (ui5Var != null && ((ActionBarLayout) ui5Var).U0) {
+            this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        fu fuVar = new fu((byte) 21, context, (Object) this);
+        this.a = fuVar;
+        fuVar.r1();
+        this.a.setClipChildren(false);
+        gb3 gb3Var = new gb3();
+        gb3Var.n(350L);
+        gb3Var.o(s33.h);
+        gb3Var.C = false;
+        gb3Var.m = false;
+        this.a.setItemAnimator(gb3Var);
+        this.a.setSectionsDrawBackground(true);
+        ((gb3) this.a.getItemAnimator()).C = false;
+        this.a.setLayoutManager(new t26(1, false));
+        this.a.setVerticalScrollBarEnabled(false);
+        is5 is5Var = new is5(new ge4(this));
+        this.c = is5Var;
+        is5Var.h(this.a);
+        frameLayout.addView(this.a, nme.c(-1.0f, -1));
+        fu fuVar2 = this.a;
+        kf4 kf4Var = new kf4(this, context);
+        this.b = kf4Var;
+        fuVar2.setAdapter(kf4Var);
+        this.a.setOnItemClickListener(new v82((Object) this, (Object) context, (byte) 27));
+        if (this.f) {
+            f0(false);
+            this.f = false;
+            this.a.w0(this.b.b() - 1);
+            gl.d3(new df4(this, b), 200L);
+        }
+        return this.fragmentView;
     }
 
-    public final void e0(Context context, View view, int i) {
-        jh4 jh4Var;
+    public final void d0(Context context, View view, int i) {
+        hf4 hf4Var;
         if (i >= 0) {
             ArrayList arrayList = this.n;
-            if (i >= arrayList.size() || (jh4Var = (jh4) arrayList.get(i)) == null) {
+            if (i >= arrayList.size() || (hf4Var = (hf4) arrayList.get(i)) == null) {
                 return;
             }
-            int i2 = jh4Var.a;
+            int i2 = hf4Var.a;
             byte b = 4;
             if (i2 != 6) {
                 if (i2 != 2) {
                     if (i2 == 4) {
-                        c0(getParentLayout());
+                        b0(getParentLayout());
                         return;
                     }
                     return;
                 }
-                ub7 ub7Var = jh4Var.d;
-                if (ub7Var == null || ub7Var.d()) {
+                t97 t97Var = hf4Var.d;
+                if (t97Var == null || t97Var.d()) {
                     return;
                 }
-                if (ub7Var.p) {
-                    showDialog(new i46(3, this.currentAccount, null, context, this));
+                if (t97Var.p) {
+                    showDialog(new h26(3, this.currentAccount, null, context, this));
                     return;
                 } else {
-                    presentFragment(new qf4(ub7Var, null));
+                    presentFragment(new pd4(t97Var, null));
                     return;
                 }
             }
             if (!getUserConfig().p()) {
-                showDialog(new kj8((org.telegram.ui.ActionBar.d) this, 35, true));
+                showDialog(new jh8((org.telegram.ui.ActionBar.d) this, 35, true));
                 return;
             }
             TLRPC.TL_messages_toggleDialogFilterTags tL_messages_toggleDialogFilterTags = new TLRPC.TL_messages_toggleDialogFilterTags();
-            tL_messages_toggleDialogFilterTags.enabled = !getMessagesController().m4;
-            oc7 messagesController = getMessagesController();
+            tL_messages_toggleDialogFilterTags.enabled = !getMessagesController().l4;
+            na7 messagesController = getMessagesController();
             boolean z = tL_messages_toggleDialogFilterTags.enabled;
             SharedPreferences.Editor edit = messagesController.X3.edit();
-            messagesController.m4 = z;
+            messagesController.l4 = z;
             edit.putBoolean("folderTags", z).apply();
-            getConnectionsManager().sendRequest(tL_messages_toggleDialogFilterTags, new cx3(this, tL_messages_toggleDialogFilterTags, b));
-            ((bjb) view).setChecked(getMessagesController().m4);
-            lh4 lh4Var = this.b;
+            getConnectionsManager().sendRequest(tL_messages_toggleDialogFilterTags, new rv3(this, tL_messages_toggleDialogFilterTags, b));
+            ((ahb) view).setChecked(getMessagesController().l4);
+            kf4 kf4Var = this.b;
             int i3 = this.s;
-            lh4Var.l(i3, this.w - i3);
+            kf4Var.l(i3, this.w - i3);
         }
     }
 
-    public final void f0(eh4 eh4Var) {
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == kk7.N2) {
+            f0(true);
+        } else if (i == kk7.R2) {
+            f0(true);
+        }
+    }
+
+    public final void e0(df4 df4Var) {
         if (!this.e) {
-            if (eh4Var != null) {
-                eh4Var.run();
+            if (df4Var != null) {
+                df4Var.run();
                 return;
             }
             return;
         }
         int i = 0;
         this.e = false;
-        getNotificationCenter().k(nm7.O2, new Object[0]);
+        getNotificationCenter().k(kk7.N2, new Object[0]);
         getMessagesStorage().v1();
         TLRPC.TL_messages_updateDialogFiltersOrder tL_messages_updateDialogFiltersOrder = new TLRPC.TL_messages_updateDialogFiltersOrder();
-        ArrayList S0 = getMessagesController().S0();
-        int size = S0.size();
+        ArrayList R0 = getMessagesController().R0();
+        int size = R0.size();
         while (i < size) {
-            ub7 ub7Var = (ub7) S0.get(i);
-            i = td4.g(ub7Var.a, i, 1, tL_messages_updateDialogFiltersOrder.order);
+            t97 t97Var = (t97) R0.get(i);
+            i = tb4.g(t97Var.a, i, 1, tL_messages_updateDialogFiltersOrder.order);
         }
-        getConnectionsManager().sendRequest(tL_messages_updateDialogFiltersOrder, new tg(eh4Var, (byte) 28));
+        getConnectionsManager().sendRequest(tL_messages_updateDialogFiltersOrder, new tf(df4Var, (byte) 27));
     }
 
-    public final void g0(boolean z) {
+    public final void f0(boolean z) {
         this.showTagsRow = -1;
-        fv fvVar = this.a;
-        if (fvVar != null) {
-            ArrayList arrayList = fvVar.L2;
+        fu fuVar = this.a;
+        if (fuVar != null) {
+            ArrayList arrayList = fuVar.L2;
             if (arrayList == null) {
-                fvVar.L2 = new ArrayList();
+                fuVar.L2 = new ArrayList();
             } else {
                 arrayList.clear();
             }
@@ -221,94 +221,94 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements
         arrayList2.addAll(arrayList3);
         arrayList3.clear();
         ArrayList arrayList4 = getMessagesController().M0;
-        ArrayList S0 = getMessagesController().S0();
+        ArrayList R0 = getMessagesController().R0();
         byte b = 0;
-        arrayList3.add(new jh4(1, false));
-        if (!arrayList4.isEmpty() && S0.size() < 10) {
+        arrayList3.add(new hf4(1, false));
+        if (!arrayList4.isEmpty() && R0.size() < 10) {
             int size = arrayList3.size();
-            String M0 = jb6.M0(2131750653, null);
-            jh4 jh4Var = new jh4(0, false);
-            jh4Var.c = M0;
-            arrayList3.add(jh4Var);
+            String M0 = k96.M0(2131750704, null);
+            hf4 hf4Var = new hf4(0, false);
+            hf4Var.c = M0;
+            arrayList3.add(hf4Var);
             for (int i = 0; i < arrayList4.size(); i++) {
                 TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = (TLRPC.TL_dialogFilterSuggested) arrayList4.get(i);
-                jh4 jh4Var2 = new jh4(5, false);
-                jh4Var2.e = tL_dialogFilterSuggested;
-                arrayList3.add(jh4Var2);
+                hf4 hf4Var2 = new hf4(5, false);
+                hf4Var2.e = tL_dialogFilterSuggested;
+                arrayList3.add(hf4Var2);
             }
-            fv fvVar2 = this.a;
-            if (fvVar2 != null) {
-                fvVar2.L2.add(Long.valueOf(gm.u2(size, arrayList3.size() - 1)));
+            fu fuVar2 = this.a;
+            if (fuVar2 != null) {
+                fuVar2.L2.add(Long.valueOf(gl.u2(size, arrayList3.size() - 1)));
             }
-            jh4 jh4Var3 = new jh4(3, false);
-            jh4Var3.c = null;
-            arrayList3.add(jh4Var3);
+            hf4 hf4Var3 = new hf4(3, false);
+            hf4Var3.c = null;
+            arrayList3.add(hf4Var3);
         }
-        if (S0.isEmpty()) {
+        if (R0.isEmpty()) {
             this.w = -1;
             this.s = -1;
         } else {
             this.s = arrayList3.size();
-            String M02 = jb6.M0(2131750628, null);
-            jh4 jh4Var4 = new jh4(0, false);
-            jh4Var4.c = M02;
-            arrayList3.add(jh4Var4);
+            String M02 = k96.M0(2131750679, null);
+            hf4 hf4Var4 = new hf4(0, false);
+            hf4Var4.c = M02;
+            arrayList3.add(hf4Var4);
             this.r = arrayList3.size();
-            for (int i2 = 0; i2 < S0.size(); i2++) {
-                ub7 ub7Var = (ub7) S0.get(i2);
-                jh4 jh4Var5 = new jh4(2, false);
-                jh4Var5.d = ub7Var;
-                arrayList3.add(jh4Var5);
-                if (oc7.r1(this.currentAccount).m4 && ((ub7) S0.get(i2)).m >= 0) {
+            for (int i2 = 0; i2 < R0.size(); i2++) {
+                t97 t97Var = (t97) R0.get(i2);
+                hf4 hf4Var5 = new hf4(2, false);
+                hf4Var5.d = t97Var;
+                arrayList3.add(hf4Var5);
+                if (na7.q1(this.currentAccount).l4 && ((t97) R0.get(i2)).m >= 0) {
                     this.y = true;
                 }
             }
             int size2 = arrayList3.size();
             this.w = size2;
-            fv fvVar3 = this.a;
-            if (fvVar3 != null) {
-                fvVar3.L2.add(Long.valueOf(gm.u2(this.s, (size2 - 1) + (S0.size() >= getMessagesController().l4.a1.f() ? 0 : 1))));
+            fu fuVar3 = this.a;
+            if (fuVar3 != null) {
+                fuVar3.L2.add(Long.valueOf(gl.u2(this.s, (size2 - 1) + (R0.size() >= getMessagesController().k4.a1.f() ? 0 : 1))));
             }
         }
-        if (S0.size() < getMessagesController().l4.a1.f()) {
-            String M03 = jb6.M0(2131751653, null);
-            jh4 jh4Var6 = new jh4(4, false);
-            jh4Var6.c = M03;
-            arrayList3.add(jh4Var6);
+        if (R0.size() < getMessagesController().k4.a1.f()) {
+            String M03 = k96.M0(2131751704, null);
+            hf4 hf4Var6 = new hf4(4, false);
+            hf4Var6.c = M03;
+            arrayList3.add(hf4Var6);
         }
-        jh4 jh4Var7 = new jh4(3, false);
-        jh4Var7.c = null;
-        arrayList3.add(jh4Var7);
+        hf4 hf4Var7 = new hf4(3, false);
+        hf4Var7.c = null;
+        arrayList3.add(hf4Var7);
         this.x = arrayList3.size();
         this.showTagsRow = arrayList3.size();
-        String M04 = jb6.M0(2131750557, null);
-        jh4 jh4Var8 = new jh4(6, false);
-        jh4Var8.c = M04;
-        arrayList3.add(jh4Var8);
-        CharSequence N2 = !getUserConfig().p() ? gm.N2(jb6.M0(2131750555, null), cmb.K6, 2, new eh4(this, b), null) : jb6.M0(2131750556, null);
-        jh4 jh4Var9 = new jh4(3, false);
-        jh4Var9.c = N2;
-        arrayList3.add(jh4Var9);
-        lh4 lh4Var = this.b;
-        if (lh4Var != null) {
+        String M04 = k96.M0(2131750608, null);
+        hf4 hf4Var8 = new hf4(6, false);
+        hf4Var8.c = M04;
+        arrayList3.add(hf4Var8);
+        CharSequence N2 = !getUserConfig().p() ? gl.N2(k96.M0(2131750606, null), bkb.K6, 2, new df4(this, b), null) : k96.M0(2131750607, null);
+        hf4 hf4Var9 = new hf4(3, false);
+        hf4Var9.c = N2;
+        arrayList3.add(hf4Var9);
+        kf4 kf4Var = this.b;
+        if (kf4Var != null) {
             if (z) {
-                lh4Var.E(arrayList2, arrayList3);
+                kf4Var.E(arrayList2, arrayList3);
             } else {
-                lh4Var.f();
+                kf4Var.f();
             }
         }
     }
 
     @Override // org.telegram.ui.ActionBar.d
-    public final r59 getListViewForSimpleGlass() {
+    public final o39 getListViewForSimpleGlass() {
         return this.a;
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new cnb(this.a, 16, new Class[]{jf5.class, nh4.class, mh4.class}, (Paint) null, (Drawable[]) null, (bnb) null, cmb.c6));
-        arrayList.add(new cnb(this.a, 196608, new Class[]{hh4.class}, new String[]{"optionsImageView"}, (Drawable[]) null, (bnb) null, cmb.Li));
+        arrayList.add(new blb(this.a, 16, new Class[]{ld5.class, mf4.class, lf4.class}, (Paint) null, (Drawable[]) null, (alb) null, bkb.c6));
+        arrayList.add(new blb(this.a, 196608, new Class[]{ff4.class}, new String[]{"optionsImageView"}, (Drawable[]) null, (alb) null, bkb.Li));
         return arrayList;
     }
 
@@ -319,21 +319,21 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements
 
     @Override // org.telegram.ui.ActionBar.d
     public final boolean onFragmentCreate() {
-        g0(false);
-        getMessagesController().g3(true, null);
-        getNotificationCenter().b(this, nm7.O2);
-        getNotificationCenter().b(this, nm7.S2);
+        f0(false);
+        getMessagesController().e3(true, null);
+        getNotificationCenter().b(this, kk7.N2);
+        getNotificationCenter().b(this, kk7.R2);
         if (getMessagesController().M0.isEmpty()) {
-            getMessagesController().h3();
+            getMessagesController().f3();
         }
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, nm7.O2);
-        getNotificationCenter().n(this, nm7.S2);
-        f0(null);
+        getNotificationCenter().n(this, kk7.N2);
+        getNotificationCenter().n(this, kk7.R2);
+        e0(null);
         super.onFragmentDestroy();
     }
 
@@ -348,9 +348,9 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.d implements
     @Override // org.telegram.ui.ActionBar.d
     public final void onResume() {
         super.onResume();
-        lh4 lh4Var = this.b;
-        if (lh4Var != null) {
-            lh4Var.f();
+        kf4 kf4Var = this.b;
+        if (kf4Var != null) {
+            kf4Var.f();
         }
     }
 

@@ -1,10 +1,15 @@
 // default package
 
-import android.os.Binder;
-import android.os.IInterface;
+import android.graphics.drawable.BitmapDrawable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class bl5 extends Binder implements cl5, IInterface {
-    public static final /* synthetic */ int a = 0;
+public final class bl5 {
+    public final BitmapDrawable a;
+    public final String b;
+
+    public bl5(String str, BitmapDrawable bitmapDrawable) {
+        this.b = str;
+        this.a = bitmapDrawable;
+    }
 }

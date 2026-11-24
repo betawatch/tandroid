@@ -5,19 +5,19 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnClickListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class OnClickDelegateImpl implements br7 {
+public class OnClickDelegateImpl implements yo7 {
     private final boolean mIsParkedOnly;
     private final IOnClickListener mListener;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class OnClickListenerStub extends IOnClickListener.Stub {
-        private final cr7 mOnClickListener;
+        private final zo7 mOnClickListener;
 
-        public OnClickListenerStub(cr7 cr7Var) {
-            this.mOnClickListener = cr7Var;
+        public OnClickListenerStub(zo7 zo7Var) {
+            this.mOnClickListener = zo7Var;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -32,27 +32,27 @@ public class OnClickDelegateImpl implements br7 {
         }
     }
 
-    private OnClickDelegateImpl(cr7 cr7Var, boolean z) {
-        this.mListener = new OnClickListenerStub(cr7Var);
+    private OnClickDelegateImpl(zo7 zo7Var, boolean z) {
+        this.mListener = new OnClickListenerStub(zo7Var);
         this.mIsParkedOnly = z;
     }
 
-    public static br7 create(cr7 cr7Var) {
-        return new OnClickDelegateImpl(cr7Var, cr7Var instanceof ParkedOnlyOnClickListener);
+    public static yo7 create(zo7 zo7Var) {
+        return new OnClickDelegateImpl(zo7Var, zo7Var instanceof ParkedOnlyOnClickListener);
     }
 
-    @Override // br7
+    @Override // yo7
     public boolean isParkedOnly() {
         return this.mIsParkedOnly;
     }
 
-    public void sendClick(fr7 fr7Var) {
+    public void sendClick(cp7 cp7Var) {
         try {
             IOnClickListener iOnClickListener = this.mListener;
             Objects.requireNonNull(iOnClickListener);
             iOnClickListener.onClick(androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            rjb.m(e);
+            sdb.b(e);
         }
     }
 

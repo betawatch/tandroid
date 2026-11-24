@@ -1,92 +1,77 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Scope;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class b6d extends zz4 {
-    public final GoogleSignInOptions F;
+public final class b6d extends v5c implements ListIterator {
+    public final int b;
+    public int c;
+    public final r6d d;
 
-    public b6d(Context context, Looper looper, ovb ovbVar, GoogleSignInOptions googleSignInOptions, f05 f05Var, g05 g05Var) {
-        super(91, f05Var, g05Var, ovbVar, context, looper);
-        y05 y05Var;
-        Set<Scope> set = (Set) ovbVar.b;
-        if (googleSignInOptions != null) {
-            y05Var = new y05();
-            y05Var.a = new HashSet();
-            y05Var.h = new HashMap();
-            y05Var.a = new HashSet(googleSignInOptions.b);
-            y05Var.b = googleSignInOptions.e;
-            y05Var.c = googleSignInOptions.f;
-            y05Var.d = googleSignInOptions.d;
-            y05Var.e = googleSignInOptions.h;
-            y05Var.f = googleSignInOptions.c;
-            y05Var.g = googleSignInOptions.n;
-            y05Var.h = GoogleSignInOptions.c(googleSignInOptions.r);
-            y05Var.i = googleSignInOptions.s;
-        } else {
-            y05Var = new y05();
-            y05Var.a = new HashSet();
-            y05Var.h = new HashMap();
-        }
-        y05Var.i = u5d.a();
-        if (!set.isEmpty()) {
-            for (Scope scope : set) {
-                HashSet hashSet = y05Var.a;
-                hashSet.add(scope);
-                hashSet.addAll(Arrays.asList(new Scope[0]));
-            }
-        }
-        HashSet hashSet2 = y05Var.a;
-        if (hashSet2.contains(GoogleSignInOptions.F)) {
-            Scope scope2 = GoogleSignInOptions.E;
-            if (hashSet2.contains(scope2)) {
-                hashSet2.remove(scope2);
-            }
-        }
-        if (y05Var.d && (y05Var.f == null || !hashSet2.isEmpty())) {
-            hashSet2.add(GoogleSignInOptions.y);
-        }
-        this.F = new GoogleSignInOptions(3, new ArrayList(hashSet2), y05Var.f, y05Var.d, y05Var.b, y05Var.c, y05Var.e, y05Var.g, y05Var.h, y05Var.i);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b6d(r6d r6dVar, int i) {
+        super((byte) 6);
+        int size = r6dVar.size();
+        k4f.b(i, size);
+        this.b = size;
+        this.c = i;
+        this.d = r6dVar;
     }
 
-    @Override // hh0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
+    public final Object a(int i) {
+        return this.d.get(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            w26.g();
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.signin.internal.ISignInService");
-        return queryLocalInterface instanceof l6d ? (l6d) queryLocalInterface : new l6d(iBinder, "com.google.android.gms.auth.api.signin.internal.ISignInService", (byte) 2);
+        int i = this.c;
+        this.c = i + 1;
+        return a(i);
     }
 
-    @Override // hh0
-    public final int i() {
-        return 12451000;
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
     }
 
-    @Override // hh0
-    public final String l() {
-        return "com.google.android.gms.auth.api.signin.internal.ISignInService";
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            w26.g();
+            return null;
+        }
+        int i = this.c - 1;
+        this.c = i;
+        return a(i);
     }
 
-    @Override // hh0
-    public final Intent m() {
-        return j6d.a(this.h, this.F);
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
     }
 
-    @Override // hh0
-    public final String n() {
-        return "com.google.android.gms.auth.api.signin.service.START";
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

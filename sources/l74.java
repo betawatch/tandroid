@@ -1,23 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class l74 {
-    public final /* synthetic */ r74 a;
+public interface l74 {
+    public static final i2f v = new i2f(19);
 
-    public l74(r74 r74Var) {
-        this.a = r74Var;
-    }
+    wxb S(int i, int i2);
 
-    public final void a() {
-        r74 r74Var = this.a;
-        if (!r74Var.M) {
-            if (r74Var.U) {
-                r74Var.T.getClass();
-            } else if (!r74Var.k0) {
-                return;
-            }
-        }
-        r74Var.h.h(2);
-    }
+    void g0(fv9 fv9Var);
+
+    void z();
 }

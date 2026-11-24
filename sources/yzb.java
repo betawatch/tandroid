@@ -1,19 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface yzb {
-    void a(long j, int i, int i2, int i3, xzb xzbVar);
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-    void b(yw7 yw7Var, int i, int i2);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class yzb extends wla {
+    public final xl3 V;
+    public final /* synthetic */ b0c W;
 
-    int c(s73 s73Var, int i, boolean z);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yzb(b0c b0cVar, Context context) {
+        super(context);
+        this.W = b0cVar;
+        this.V = new xl3((byte) 7);
+    }
 
-    void d(long j);
-
-    void e(int i, yw7 yw7Var);
-
-    int f(s73 s73Var, int i, boolean z);
-
-    void g(go4 go4Var);
+    @Override // wla, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int L = gl.L(8.0f) + this.W.d.getWidth();
+        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - L, getHeight(), kk7.d4, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        ama.a(canvas, getLayout());
+        canvas.restore();
+        RectF rectF = gl.P;
+        rectF.set((getWidth() - L) - gl.L(24.0f), 0.0f, getWidth() - L, getHeight());
+        this.V.s(canvas, rectF, 2, 1.0f);
+        canvas.restore();
+    }
 }

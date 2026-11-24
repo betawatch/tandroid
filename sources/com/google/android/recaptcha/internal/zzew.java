@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzew extends eeb implements fs4 {
+final class zzew extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ long zzc;
@@ -11,74 +11,74 @@ final class zzew extends eeb implements fs4 {
     final /* synthetic */ zzye zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzew(long j, zzfp zzfpVar, zzgr zzgrVar, zzye zzyeVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzew(long j, zzfp zzfpVar, zzgr zzgrVar, zzye zzyeVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = j;
         this.zzd = zzfpVar;
         this.zze = zzgrVar;
         this.zzf = zzyeVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        return new zzew(this.zzc, this.zzd, this.zze, this.zzf, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzew(this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzew) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzew) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0055  */
-    @Override // og0
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        e79 e79Var;
-        e79 e79Var2;
+        c59 c59Var;
+        c59 c59Var2;
         long j;
         zzev zzevVar;
         Object zzc;
         zzcg zzcgVar;
         if (this.zzb != 0) {
-            e79Var2 = (e79) this.zza;
+            c59Var2 = (c59) this.zza;
             try {
-                tue.b(obj);
+                qse.b(obj);
                 zzc = obj;
             } catch (Exception e) {
                 e = e;
-                zzcgVar = (zzcg) e79Var2.a;
+                zzcgVar = (zzcg) c59Var2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
                 }
                 throw zzcgVar;
             }
         } else {
-            tue.b(obj);
-            e79 e79Var3 = new e79();
+            qse.b(obj);
+            c59 c59Var3 = new c59();
             try {
                 j = this.zzc;
-                zzevVar = new zzev(this.zze, this.zzd, this.zzf, e79Var3, null);
-                e79Var = e79Var3;
+                zzevVar = new zzev(this.zze, this.zzd, this.zzf, c59Var3, null);
+                c59Var = c59Var3;
             } catch (Exception e2) {
                 e = e2;
-                e79Var = e79Var3;
+                c59Var = c59Var3;
             }
             try {
-                this.zza = e79Var;
+                this.zza = c59Var;
                 this.zzb = 1;
                 zzc = zzcx.zzc(j, 20, 100L, 1000L, 2.0d, zzevVar, this);
-                ly2 ly2Var = ly2.a;
-                if (zzc == ly2Var) {
-                    return ly2Var;
+                bx2 bx2Var = bx2.a;
+                if (zzc == bx2Var) {
+                    return bx2Var;
                 }
-                e79Var2 = e79Var;
+                c59Var2 = c59Var;
             } catch (Exception e3) {
                 e = e3;
-                e79Var2 = e79Var;
-                zzcgVar = (zzcg) e79Var2.a;
+                c59Var2 = c59Var;
+                zzcgVar = (zzcg) c59Var2.a;
                 if (zzcgVar != null) {
                 }
             }

@@ -1,59 +1,268 @@
 // default package
 
-import org.telegram.ui.PasscodeActivity;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import j$.util.Objects;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xw0 implements dla {
+public final class xw0 extends TextView {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public Object b;
 
-    public /* synthetic */ xw0(Object obj, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xw0(Context context, byte b) {
+        super(context);
         this.a = b;
-        this.b = obj;
+        switch (b) {
+            case 4:
+                super(context);
+                this.b = new su2(this, (byte) 2);
+                break;
+            default:
+                break;
+        }
     }
 
-    @Override // dla
-    public final void L(int i, boolean z) {
-        ch6 ch6Var;
-        hx7 hx7Var;
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                nx0 nx0Var = ((wx0) obj).x;
-                if (i > gm.L(20.0f)) {
-                    nx0Var.d(nx0Var.getTopActionBarOffsetY() + (-nx0Var.getOffsetY()));
-                    break;
-                }
-                break;
-            case 1:
-                mh6 mh6Var = (mh6) obj;
-                if (i > gm.L(20.0f) && mh6Var.s1()) {
-                    gm.t1(mh6Var.fragmentView);
-                }
-                if (i <= gm.L(20.0f) && (ch6Var = mh6Var.U) != null) {
-                    ch6Var.run();
-                    mh6Var.U = null;
-                    break;
-                }
-                break;
+    public final /* synthetic */ void a(Canvas canvas) {
+        super.onDraw(canvas);
+    }
+
+    public final void b(int i) {
+        FragmentContextView fragmentContextView = (FragmentContextView) this.b;
+        if (fragmentContextView.N != i) {
+            nn4 nn4Var = fragmentContextView.d;
+            nn4Var.setPadding(nn4Var.getPaddingLeft(), fragmentContextView.d.getPaddingTop(), (fragmentContextView.d.getPaddingRight() - fragmentContextView.N) + i, fragmentContextView.d.getPaddingBottom());
+            fragmentContextView.N = i;
+        }
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
             case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                if (i >= gm.L(20.0f) && (hx7Var = passcodeActivity.U) != null) {
-                    hx7Var.run();
-                    passcodeActivity.U = null;
+                super.draw(canvas);
+                int L = gl.L(1.0f);
+                RectF rectF = gl.P;
+                float f = L;
+                rectF.set(f, f, getWidth() - L, getHeight() - L);
+                ((FragmentContextView) this.b).O.a(gl.L(16.0f), canvas, rectF, this);
+                break;
+            case 5:
+                super.draw(canvas);
+                h7a h7aVar = (h7a) this.b;
+                wd1 wd1Var = h7aVar.c;
+                if (wd1Var.g <= 1.0f) {
+                    SessionsActivity sessionsActivity = h7aVar.f;
+                    if (sessionsActivity.W && sessionsActivity.X) {
+                        RectF rectF2 = gl.P;
+                        rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                        wd1Var.f = getMeasuredWidth();
+                        wd1Var.a(gl.L(8.0f), canvas, rectF2, null);
+                        invalidate();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.draw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.a) {
+            case 4:
+                super.onAttachedToWindow();
+                kk7.e().b((su2) this.b, kk7.k4);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.a) {
+            case 4:
+                super.onDetachedFromWindow();
+                kk7.e().n((su2) this.b, kk7.k4);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.onDraw(canvas);
+                wd1 wd1Var = (wd1) this.b;
+                if (wd1Var == null) {
+                    wd1Var = new wd1();
+                    this.b = wd1Var;
+                    wd1Var.k = false;
+                    wd1Var.m = 2.0f;
+                }
+                wd1Var.f = getMeasuredWidth();
+                RectF rectF = gl.P;
+                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                ((wd1) this.b).a(gl.L(22.0f), canvas, rectF, null);
+                invalidate();
+                break;
+            case 6:
+                super.onDraw(canvas);
+                Paint paint = (Paint) this.b;
+                paint.setColor(getCurrentTextColor());
+                RectF rectF2 = gl.P;
+                rectF2.set(gl.L(1.0f), gl.L(1.0f), getMeasuredWidth() - gl.L(1.0f), getMeasuredHeight() - gl.L(1.0f));
+                canvas.drawRoundRect(rectF2, gl.L(4.0f), gl.L(4.0f), paint);
+                break;
+            case 9:
+                smc smcVar = (smc) this.b;
+                float e = smcVar.h0.e(false, smcVar.f0);
+                TextPaint paint2 = getPaint();
+                Objects.requireNonNull(paint2);
+                smcVar.c(e, new wb1(paint2, (byte) 2), new mhc(this, canvas, (byte) 14));
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 8:
+                super.onLayout(z, i, i2, i3, i4);
+                if (z) {
+                    ((hgc) this.b).y();
                     break;
                 }
                 break;
             default:
-                hsc hscVar = (hsc) obj;
-                if (i <= gm.L(20.0f)) {
-                    i = 0;
-                }
-                hscVar.n = i;
-                hscVar.onInsets(hscVar.r, hscVar.s, hscVar.w, hscVar.x);
+                super.onLayout(z, i, i2, i3, i4);
                 break;
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i, i2);
+                fx0 fx0Var = (fx0) this.b;
+                if (fx0Var.R) {
+                    int measuredHeight = getMeasuredHeight();
+                    ViewGroup viewGroup = fx0Var.O;
+                    if (viewGroup != null) {
+                        ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).topMargin = measuredHeight;
+                        break;
+                    } else if (fx0Var.b != null) {
+                        for (int i3 = 1; i3 < fx0Var.b.getChildCount(); i3++) {
+                            View childAt = fx0Var.b.getChildAt(i3);
+                            if (childAt instanceof zw0) {
+                                ((ViewGroup.MarginLayoutParams) childAt.getLayoutParams()).topMargin = measuredHeight;
+                                measuredHeight = gl.L(48.0f) + measuredHeight;
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                super.onMeasure(i, i2);
+                b(getMeasuredWidth());
+                break;
+            case 7:
+                super.onMeasure(i, i2);
+                if (k96.a0) {
+                    ((ozb) this.b).b.setPivotX(getMeasuredWidth());
+                    break;
+                }
+                break;
+            case 10:
+                super.onMeasure(i, i2);
+                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((qpc) this.b).Y));
+                break;
+            case 11:
+                super.onMeasure(i, i2);
+                ((ssc) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 2:
+                super.onSizeChanged(i, i2, i3, i4);
+                ((FragmentContextView) this.b).O.f = getWidth();
+                break;
+            default:
+                super.onSizeChanged(i, i2, i3, i4);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 3:
+                if (Math.abs(((h85) this.b).O.getAlpha() - 1.0f) <= 0.001f) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i);
+                if (i != 0) {
+                    b(0);
+                    ((FragmentContextView) this.b).N = 0;
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xw0(Activity activity, Paint paint) {
+        super(activity);
+        this.a = (byte) 6;
+        this.b = paint;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xw0(byte b, Context context, Object obj) {
+        super(context);
+        this.a = b;
+        this.b = obj;
     }
 }

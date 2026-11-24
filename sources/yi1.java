@@ -1,40 +1,70 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yi1 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ fj1 b;
+public final class yi1 extends FrameLayout {
+    public final wjb a;
+    public final fm b;
+    public final TextView c;
+    public final TextView d;
+    public final DecimalFormat e;
+    public boolean f;
 
-    public /* synthetic */ yi1(fj1 fj1Var, byte b) {
-        this.a = b;
-        this.b = fj1Var;
+    public yi1(Context context, wjb wjbVar) {
+        super(context);
+        this.a = wjbVar;
+        LinearLayout j = de9.j(context, 1);
+        addView(j, nme.d(-1, -2.0f, kk7.D1, 17.0f, 9.0f, 130.0f, 9.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        zkb.X(textView, bkb.F6, wjbVar);
+        j.addView(textView, nme.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        zkb.X(textView2, bkb.x6, wjbVar);
+        j.addView(textView2, nme.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
+        fm fmVar = new fm(context);
+        this.b = fmVar;
+        fmVar.setTypeface(gl.o());
+        fmVar.setTextSize(1, 13.0f);
+        addView(fmVar, nme.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
+        decimalFormatSymbols.setDecimalSeparator('.');
+        DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
+        this.e = decimalFormat;
+        decimalFormat.setMinimumFractionDigits(2);
+        decimalFormat.setMaximumFractionDigits(12);
+        decimalFormat.setGroupingUsed(false);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        fj1 fj1Var = this.b;
-        switch (b) {
-            case 0:
-                gm.c3(new y31(fj1Var, tLObject, (byte) 28));
-                break;
-            case 1:
-                gm.c3(new y31(fj1Var, tL_error, (byte) 26));
-                break;
-            case 2:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    gm.c3(new wi1(fj1Var, (byte) 3));
-                    break;
-                }
-                break;
-            default:
-                gm.c3(new tv0(fj1Var, tL_error, tLObject, (byte) 20));
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.f) {
+            wjb wjbVar = this.a;
+            Paint d = wjbVar != null ? wjbVar.d("paintDivider") : bkb.j0;
+            if (d != null) {
+                canvas.drawLine(k96.a0 ? 0.0f : gl.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(17.0f) : 0), getMeasuredHeight() - 1, d);
+            }
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 }

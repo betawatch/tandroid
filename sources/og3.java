@@ -1,31 +1,36 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class og3 {
-    public static final SparseArray a = new SparseArray(6);
+public final /* synthetic */ class og3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cj3 b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ LaunchActivity d;
 
-    public static SpannableStringBuilder a(int i, CharSequence charSequence, boolean z) {
-        SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
-        if (z) {
-            spannableStringBuilder.insert(0, (CharSequence) "* \u2068");
-        } else {
-            spannableStringBuilder.insert(0, (CharSequence) "* ");
+    public /* synthetic */ og3(cj3 cj3Var, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity, byte b) {
+        this.a = b;
+        this.b = cj3Var;
+        this.c = tL_attachMenuBot;
+        this.d = launchActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        LaunchActivity launchActivity = this.d;
+        TLRPC.TL_attachMenuBot tL_attachMenuBot = this.c;
+        cj3 cj3Var = this.b;
+        switch (b) {
+            case 0:
+                cj3Var.Y3(tL_attachMenuBot, launchActivity);
+                break;
+            default:
+                cj3Var.a4(tL_attachMenuBot, launchActivity);
+                break;
         }
-        SparseArray sparseArray = a;
-        pn2 pn2Var = (pn2) sparseArray.get(i);
-        if (pn2Var == null) {
-            pn2Var = new pn2(i, 0);
-            pn2Var.a(cmb.Yl);
-            sparseArray.put(i, pn2Var);
-        }
-        spannableStringBuilder.setSpan(pn2Var, 0, 1, 33);
-        if (z) {
-            spannableStringBuilder.append((char) 8297);
-        }
-        return spannableStringBuilder;
     }
 }

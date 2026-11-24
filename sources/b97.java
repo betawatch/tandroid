@@ -1,189 +1,164 @@
 // default package
 
-import android.util.SparseIntArray;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class b97 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class b97 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ oc7 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
-    public final /* synthetic */ vh6 h;
-    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ b97(oc7 oc7Var, int i, ArrayList arrayList, boolean z, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, vh6 vh6Var, TLRPC.TL_messages_dialogs tL_messages_dialogs, byte b) {
-        this.a = b;
-        this.b = oc7Var;
-        this.c = i;
-        this.d = arrayList;
-        this.e = z;
-        this.f = tL_messages_peerDialogs;
-        this.h = vh6Var;
-        this.n = tL_messages_dialogs;
+    public /* synthetic */ b97(int i, HashSet hashSet, d dVar) {
+        this.a = (byte) 3;
+        this.b = i;
+        this.c = hashSet;
+        this.d = dVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x017a  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z;
-        int i;
-        int i2;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        int i3;
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        int i = 0;
+        int i2 = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        switch (b) {
             case 0:
-                oc7 oc7Var = this.b;
-                ArrayList arrayList3 = oc7Var.y;
-                vh6 vh6Var = oc7Var.R;
-                SparseIntArray sparseIntArray = oc7Var.h2;
-                int i4 = this.c;
-                sparseIntArray.delete(i4);
-                ArrayList arrayList4 = this.d;
-                oc7Var.n(arrayList4);
-                ArrayList V0 = oc7Var.V0(i4);
-                int i5 = 0;
-                int i6 = 0;
-                boolean z2 = false;
-                int i7 = this.e;
-                while (i5 < V0.size()) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) V0.get(i5);
-                    if (!(dialog instanceof TLRPC.TL_dialogFolder)) {
-                        if (pg3.B(dialog.id)) {
-                            if (i7 < arrayList4.size()) {
-                                arrayList4.add(i7, dialog);
-                            } else {
-                                arrayList4.add(dialog);
-                            }
-                            i7++;
-                        } else if (dialog.pinned) {
-                            i6 = Math.max(dialog.pinnedNum, i6);
-                            dialog.pinned = false;
-                            dialog.pinnedNum = 0;
-                            i7++;
-                            z2 = true;
-                        } else if (dialog.id != oc7Var.s2) {
-                            ArrayList arrayList5 = new ArrayList();
-                            if (arrayList4.isEmpty()) {
-                                TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = this.f;
-                                oc7Var.d4(tL_messages_peerDialogs.users, false);
-                                oc7Var.X3(tL_messages_peerDialogs.chats, false);
-                                ArrayList arrayList6 = new ArrayList();
-                                ArrayList arrayList7 = new ArrayList();
-                                int size = arrayList4.size();
-                                int i8 = 0;
-                                z = false;
-                                ArrayList arrayList8 = arrayList4;
-                                while (i8 < size) {
-                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList8.get(i8);
-                                    dialog2.pinnedNum = (size - i8) + i6;
-                                    ArrayList arrayList9 = arrayList6;
-                                    arrayList5.add(Long.valueOf(dialog2.id));
-                                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) vh6Var.f(dialog2.id);
-                                    if (dialog3 != null) {
-                                        dialog3.pinned = true;
-                                        dialog3.pinnedNum = dialog2.pinnedNum;
-                                        arrayList6 = arrayList9;
-                                        arrayList6.add(Long.valueOf(dialog2.id));
-                                        arrayList7.add(Integer.valueOf(dialog2.pinnedNum));
-                                        arrayList = arrayList8;
-                                        i = size;
-                                        i2 = i8;
-                                    } else {
-                                        i = size;
-                                        arrayList6 = arrayList9;
-                                        i2 = i8;
-                                        vh6Var.k(dialog2, dialog2.id);
-                                        ArrayList arrayList10 = (ArrayList) this.h.f(dialog2.id);
-                                        oc7Var.S.k(arrayList10, dialog2.id);
-                                        if (arrayList10 != null) {
-                                            int i9 = 0;
-                                            arrayList8 = arrayList8;
-                                            while (i9 < arrayList10.size()) {
-                                                k47 k47Var = (k47) arrayList10.get(i9);
-                                                if (k47Var != null) {
-                                                    i3 = i9;
-                                                    if (k47Var.k.peer_id.channel_id == 0) {
-                                                        oc7Var.V.put(k47Var.e1(), k47Var);
-                                                        oc7Var.O = Math.min(oc7Var.O, k47Var.k.date);
-                                                        long j = k47Var.k.random_id;
-                                                        if (j != 0) {
-                                                            arrayList2 = arrayList8;
-                                                            oc7Var.T.k(k47Var, j);
-                                                        }
-                                                    }
-                                                    arrayList2 = arrayList8;
-                                                } else {
-                                                    arrayList2 = arrayList8;
-                                                    i3 = i9;
-                                                }
-                                                i9 = i3 + 1;
-                                                arrayList8 = arrayList2;
-                                            }
-                                        }
-                                        arrayList = arrayList8;
-                                        oc7Var.i4.c(dialog2.id);
-                                        z = true;
-                                    }
-                                    i8 = i2 + 1;
-                                    size = i;
-                                    arrayList8 = arrayList;
-                                    z2 = true;
-                                }
-                                cf7 messagesStorage = oc7Var.getMessagesStorage();
-                                messagesStorage.a.c(new zc7(messagesStorage, arrayList6, arrayList7, (byte) 0));
-                            } else {
-                                z = false;
-                            }
-                            if (z2) {
-                                if (z) {
-                                    arrayList3.clear();
-                                    int m = vh6Var.m();
-                                    for (int i10 = 0; i10 < m; i10++) {
-                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) vh6Var.n(i10);
-                                        if (oc7Var.u0.h(dialog4.id) < 0) {
-                                            arrayList3.add(dialog4);
-                                        }
-                                    }
-                                }
-                                oc7Var.b5(null);
-                                oc7Var.getNotificationCenter().k(3, new Object[0]);
-                            }
-                            cf7 messagesStorage2 = oc7Var.getMessagesStorage();
-                            messagesStorage2.a.c(new ad7(messagesStorage2, arrayList5, i4));
-                            oc7Var.getMessagesStorage().a1(this.n, 1);
-                            oc7Var.getUserConfig().x(i4, true);
-                            oc7Var.getUserConfig().u(false);
+                na7 na7Var = (na7) obj2;
+                String str = (String) obj;
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    if (w01.a) {
+                        fa4.b("account " + na7Var.currentAccount + " registered for push, push type: " + i2);
+                    }
+                    na7Var.getUserConfig().d = true;
+                    gba.f = str;
+                    gba.e = i2;
+                    na7Var.getUserConfig().u(false);
+                }
+                gl.c3(new f67(na7Var, (byte) 10));
+                break;
+            case 1:
+                TLRPC.Chat chat = (TLRPC.Chat) obj2;
+                p8c p8cVar = (p8c) obj;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    ArrayList arrayList = new ArrayList();
+                    ArrayList arrayList2 = new ArrayList();
+                    while (i < vector.objects.size()) {
+                        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) vector.objects.get(i);
+                        arrayList.add(tL_premiumGiftCodeOption);
+                        String str2 = tL_premiumGiftCodeOption.store_product;
+                        if (str2 != null) {
+                            i5 i5Var = new i5();
+                            i5Var.b = "inapp";
+                            i5Var.a = str2;
+                            arrayList2.add(i5Var.a());
+                        }
+                        i++;
+                    }
+                    boolean isEmpty = arrayList2.isEmpty();
+                    int i3 = this.b;
+                    if (!isEmpty && on0.j()) {
+                        ci0.h().o(arrayList2, new zm(arrayList, chat, i3, p8cVar));
+                        break;
+                    } else {
+                        gl.c3(new gn0(chat, i3, arrayList, p8cVar, (byte) 1));
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                gl.c3(new tn6((d) obj2, tLObject, this.b, obj, (byte) 9));
+                break;
+            case 3:
+                gl.c3(new i57((Object) tLObject, this.b, obj2, (Object) tL_error, obj, (byte) 6));
+                break;
+            case 4:
+                mt9 mt9Var = (mt9) obj2;
+                mt9Var.getClass();
+                gl.c3(new tn6((n39) mt9Var, this.b, tLObject, (String) obj, (byte) 21));
+                break;
+            case 5:
+                l94 l94Var = (l94) obj2;
+                k94 k94Var = (k94) obj;
+                l94Var.z0 = false;
+                if (!(tLObject instanceof Vector)) {
+                    if (tL_error != null) {
+                        if (!tL_error.text.equals("FILE_TOKEN_INVALID") && !tL_error.text.equals("REQUEST_TOKEN_INVALID")) {
+                            l94Var.h(0, false);
+                            break;
+                        } else {
+                            l94Var.u0 = false;
+                            l94Var.c(k94Var, false, false);
+                            l94Var.q(i2);
                             break;
                         }
                     }
-                    i5++;
-                    i7 = i7;
+                } else {
+                    Vector vector2 = (Vector) tLObject;
+                    if (!vector2.objects.isEmpty()) {
+                        if (l94Var.q0 == null) {
+                            l94Var.q0 = new HashMap();
+                        }
+                        while (i < vector2.objects.size()) {
+                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector2.objects.get(i);
+                            l94Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
+                            i++;
+                        }
+                    }
+                    l94Var.q(i2);
+                    break;
                 }
-                ArrayList arrayList52 = new ArrayList();
-                if (arrayList4.isEmpty()) {
+                break;
+            case 6:
+                gl.c3(new tn6((d) obj2, tLObject, this.b, obj, (byte) 23));
+                break;
+            case 7:
+                gl.c3(new tn6((n39) obj2, this.b, tLObject, (String) obj, (byte) 27));
+                break;
+            case 8:
+                hq6 hq6Var = (hq6) obj2;
+                p8c p8cVar2 = (p8c) obj;
+                boolean z = tLObject instanceof TLRPC.TL_messages_stickerSet;
+                int i4 = this.b;
+                if (!z) {
+                    hq6Var.A1(i4, null, false, (int) (System.currentTimeMillis() / 1000), 0L, new mn0(p8cVar2, (byte) 8));
+                    break;
+                } else {
+                    ArrayList arrayList3 = new ArrayList();
+                    arrayList3.add((TLRPC.TL_messages_stickerSet) tLObject);
+                    hq6Var.A1(i4, arrayList3, false, (int) (System.currentTimeMillis() / 1000), hq6.s(arrayList3), new mn0(p8cVar2, (byte) 7));
+                    break;
                 }
-                if (z2) {
-                }
-                cf7 messagesStorage22 = oc7Var.getMessagesStorage();
-                messagesStorage22.a.c(new ad7(messagesStorage22, arrayList52, i4));
-                oc7Var.getMessagesStorage().a1(this.n, 1);
-                oc7Var.getUserConfig().x(i4, true);
-                oc7Var.getUserConfig().u(false);
+            case 9:
+                gl.c3(new q76(obj2, (Object) tLObject, this.b, obj, (byte) 5));
+                break;
+            case 10:
+                gl.c3(new q76(obj2, this.b, (Object) tLObject, obj, (byte) 27));
+                break;
+            case 11:
+                ((VoIPService) obj2).lambda$startConferenceGroupCall$37(i2, (String) obj, tLObject, tL_error);
+                break;
             default:
-                gm.c3(new b97(this.b, this.c, this.d, this.e, this.f, this.h, this.n, (byte) 0));
+                ((VoIPService) obj2).lambda$editCallMember$86(i2, (Runnable) obj, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ b97(Object obj, int i, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
     }
 }

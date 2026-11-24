@@ -1,39 +1,55 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.PipRoundVideoView;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class zc8 extends aob {
+    public static final Object j = new Object();
+    public final br6 e;
+    public final boolean f;
+    public final boolean g;
+    public final wq6 h;
+    public final long i;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class zc8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PipRoundVideoView b;
-
-    public /* synthetic */ zc8(PipRoundVideoView pipRoundVideoView, byte b) {
-        this.a = b;
-        this.b = pipRoundVideoView;
+    public zc8(ad8 ad8Var) {
+        this.e = ad8Var.u();
+        this.f = ad8Var.c0();
+        this.g = ad8Var.u0();
+        this.h = ad8Var.P0() ? wq6.f : null;
+        this.i = g8c.T(ad8Var.z());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        PipRoundVideoView pipRoundVideoView = this.b;
-        switch (b) {
-            case 0:
-                if (animator.equals(pipRoundVideoView.r)) {
-                    pipRoundVideoView.r = null;
-                    break;
-                }
-                break;
-            default:
-                pipRoundVideoView.a(false);
-                Runnable runnable = pipRoundVideoView.s;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
+    @Override // aob
+    public final int b(Object obj) {
+        return j != obj ? -1 : 0;
+    }
+
+    @Override // aob
+    public final xnb f(int i, xnb xnbVar, boolean z) {
+        da daVar = da.c;
+        Object obj = j;
+        xnbVar.h(obj, obj, 0, this.i, 0L, false);
+        return xnbVar;
+    }
+
+    @Override // aob
+    public final int h() {
+        return 1;
+    }
+
+    @Override // aob
+    public final Object l(int i) {
+        return j;
+    }
+
+    @Override // aob
+    public final znb m(int i, znb znbVar, long j2) {
+        znbVar.b(j, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, this.f, this.g, this.h, 0L, this.i, 0, 0, 0L);
+        znbVar.j = false;
+        return znbVar;
+    }
+
+    @Override // aob
+    public final int o() {
+        return 1;
     }
 }

@@ -1,72 +1,62 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ah2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hh2 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ah2 implements fv9 {
+    public final int a;
+    public final int[] b;
+    public final long[] c;
+    public final long[] d;
+    public final long[] e;
+    public final long f;
 
-    public /* synthetic */ ah2(hh2 hh2Var, byte b) {
-        this.a = b;
-        this.b = hh2Var;
+    public ah2(int[] iArr, long[] jArr, long[] jArr2, long[] jArr3) {
+        this.b = iArr;
+        this.c = jArr;
+        this.d = jArr2;
+        this.e = jArr3;
+        int length = iArr.length;
+        this.a = length;
+        if (length <= 0) {
+            this.f = 0L;
+        } else {
+            int i = length - 1;
+            this.f = jArr2[i] + jArr3[i];
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        hh2 hh2Var = this.b;
-        switch (b) {
-            case 0:
-                hh2Var.K.manage_stories = !r1.manage_stories;
-                hh2Var.c.g3.O(true);
-                hh2Var.a0(true);
-                break;
-            case 1:
-                TL_account.TL_businessBotRights tL_businessBotRights = hh2Var.K;
-                tL_businessBotRights.transfer_stars = true;
-                tL_businessBotRights.transfer_and_upgrade_gifts = true;
-                tL_businessBotRights.change_gift_settings = true;
-                tL_businessBotRights.sell_gifts = true;
-                tL_businessBotRights.view_gifts = true;
-                hh2Var.c.g3.O(true);
-                hh2Var.a0(true);
-                break;
-            case 2:
-                TL_account.TL_businessBotRights tL_businessBotRights2 = hh2Var.K;
-                tL_businessBotRights2.edit_username = true;
-                tL_businessBotRights2.edit_profile_photo = true;
-                tL_businessBotRights2.edit_bio = true;
-                tL_businessBotRights2.edit_name = true;
-                hh2Var.c.g3.O(true);
-                hh2Var.a0(true);
-                break;
-            case 3:
-                hh2Var.c.g3.O(true);
-                hh2Var.a0(true);
-                break;
-            default:
-                String obj = hh2Var.f.getText().toString();
-                String str = hh2Var.E;
-                if (str == null || !TextUtils.equals(str, obj)) {
-                    hh2Var.y = false;
-                    if (!TextUtils.isEmpty(obj)) {
-                        bu9 bu9Var = hh2Var.d;
-                        hh2Var.E = obj;
-                        int i = hh2Var.F;
-                        hh2Var.F = i + 1;
-                        bu9Var.h(obj, true, false, true, false, false, 0L, false, 0, i, 0L, null);
-                        break;
-                    } else {
-                        hh2Var.E = null;
-                        hh2Var.d.b();
-                        hh2Var.c.g3.O(true);
-                        break;
-                    }
-                }
-                break;
+    @Override // fv9
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // fv9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // fv9
+    public final ev9 f(long j) {
+        long[] jArr = this.e;
+        int f = g8c.f(jArr, j, true);
+        long j2 = jArr[f];
+        long[] jArr2 = this.c;
+        hv9 hv9Var = new hv9(j2, jArr2[f]);
+        if (j2 >= j || f == this.a - 1) {
+            return new ev9(hv9Var, hv9Var);
         }
+        int i = f + 1;
+        return new ev9(hv9Var, new hv9(jArr[i], jArr2[i]));
+    }
+
+    @Override // fv9
+    public final long h() {
+        return this.f;
+    }
+
+    public final String toString() {
+        return "ChunkIndex(length=" + this.a + ", sizes=" + Arrays.toString(this.b) + ", offsets=" + Arrays.toString(this.c) + ", timeUs=" + Arrays.toString(this.e) + ", durationsUs=" + Arrays.toString(this.d) + ")";
     }
 }

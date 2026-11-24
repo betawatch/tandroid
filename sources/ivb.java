@@ -1,33 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ivb extends ehc {
-    public boolean a = false;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ jvb c;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ivb(jvb jvbVar, int i) {
-        this.c = jvbVar;
-        this.b = i;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ivb extends ja {
+    public final TLRPC.TL_forumTopic c;
+
+    public ivb(int i, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i, true);
+        this.c = tL_forumTopic;
     }
 
-    @Override // ehc, dhc
-    public final void a() {
-        this.a = true;
-    }
-
-    @Override // ehc, dhc
-    public final void b() {
-        this.c.a.setVisibility(0);
-    }
-
-    @Override // dhc
-    public final void c() {
-        if (this.a) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.c.a.setVisibility(this.b);
+        if (obj != null && ivb.class == obj.getClass()) {
+            ivb ivbVar = (ivb) obj;
+            int i = this.a;
+            if (i == ivbVar.a && i == 0 && this.c.id == ivbVar.c.id) {
+                return true;
+            }
+        }
+        return false;
     }
 }

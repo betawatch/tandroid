@@ -1,15 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class wia {
-    public final String a;
-    public final String b;
-    public final qia c;
+    public static final wia c = new wia(-1, -1);
+    public final int a;
+    public final int b;
 
-    public wia(qia qiaVar, String str, String str2) {
-        this.c = qiaVar;
-        this.a = str;
-        this.b = str2;
+    static {
+        new wia(0, 0);
+        String str = g8c.a;
+    }
+
+    public wia(int i, int i2) {
+        gre.f((i == -1 || i >= 0) && (i2 == -1 || i2 >= 0));
+        this.a = i;
+        this.b = i2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof wia) {
+            wia wiaVar = (wia) obj;
+            if (this.a == wiaVar.a && this.b == wiaVar.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i = this.a;
+        return this.b ^ ((i << 16) | (i >>> 16));
+    }
+
+    public final String toString() {
+        return this.a + "x" + this.b;
     }
 }

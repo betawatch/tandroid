@@ -1,38 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final class lyc {
-    public final pxc a;
-    public final myc[] b;
-    public final double c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final syc g;
-    public final boolean h;
-    public final boolean i;
+    public static final lyc a;
+    public static final lyc b;
+    public static final lyc c;
+    public static final lyc d;
+    public static final lyc e;
+    public static final lyc f;
+    public static final lyc h;
+    public static final lyc n;
+    public static final lyc r;
+    public static final /* synthetic */ lyc[] s;
 
-    public lyc(pxc pxcVar, myc[] mycVarArr, double d, int i, int i2, float f, float f2, int i3, int i4, int i5, syc sycVar, boolean z, boolean z2) {
-        this.g = sycVar;
-        this.h = z;
-        this.i = z2;
-        this.a = pxcVar;
-        this.b = mycVarArr;
-        this.c = d;
-        this.d = i;
-        this.e = i2;
-        this.f = i5;
+    static {
+        lyc lycVar = new lyc("INT", 0);
+        a = lycVar;
+        lyc lycVar2 = new lyc("LONG", 1);
+        b = lycVar2;
+        lyc lycVar3 = new lyc("FLOAT", 2);
+        c = lycVar3;
+        lyc lycVar4 = new lyc("DOUBLE", 3);
+        d = lycVar4;
+        lyc lycVar5 = new lyc("BOOLEAN", 4);
+        e = lycVar5;
+        lyc lycVar6 = new lyc("STRING", 5);
+        f = lycVar6;
+        f51 f51Var = f51.c;
+        lyc lycVar7 = new lyc("BYTE_STRING", 6);
+        h = lycVar7;
+        lyc lycVar8 = new lyc("ENUM", 7);
+        n = lycVar8;
+        lyc lycVar9 = new lyc("MESSAGE", 8);
+        r = lycVar9;
+        s = new lyc[]{lycVar, lycVar2, lycVar3, lycVar4, lycVar5, lycVar6, lycVar7, lycVar8, lycVar9};
     }
 
-    public final boolean a() {
-        if (this.a.e()) {
-            for (myc mycVar : this.b) {
-                if (mycVar.a.e()) {
-                }
-            }
-            return true;
-        }
-        return false;
+    public static lyc valueOf(String str) {
+        return (lyc) Enum.valueOf(lyc.class, str);
+    }
+
+    public static lyc[] values() {
+        return (lyc[]) s.clone();
     }
 }

@@ -1,27 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class q26 {
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public final int a;
-    public final long b;
-    public final d8a c;
-
-    static {
-        String str = hac.a;
-        d = "0";
-        e = "1";
-        f = "4";
-        g = "5";
-    }
-
-    public q26(int i, long j, d8a d8aVar) {
-        this.a = i;
-        this.b = j;
-        this.c = d8aVar;
-    }
+    public int a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
 }

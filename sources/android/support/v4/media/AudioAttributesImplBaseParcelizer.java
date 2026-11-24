@@ -2,14 +2,14 @@ package android.support.v4.media;
 
 import androidx.media.AudioAttributesImplBase;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class AudioAttributesImplBaseParcelizer extends androidx.media.AudioAttributesImplBaseParcelizer {
-    public static AudioAttributesImplBase read(zbc zbcVar) {
-        return androidx.media.AudioAttributesImplBaseParcelizer.read(zbcVar);
+    public static AudioAttributesImplBase read(y9c y9cVar) {
+        return androidx.media.AudioAttributesImplBaseParcelizer.read(y9cVar);
     }
 
-    public static void write(AudioAttributesImplBase audioAttributesImplBase, zbc zbcVar) {
-        androidx.media.AudioAttributesImplBaseParcelizer.write(audioAttributesImplBase, zbcVar);
+    public static void write(AudioAttributesImplBase audioAttributesImplBase, y9c y9cVar) {
+        androidx.media.AudioAttributesImplBaseParcelizer.write(audioAttributesImplBase, y9cVar);
     }
 }

@@ -1,19 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class i5e implements cq7 {
-    public static final i5e a = new i5e();
+public final class i5e extends u3e {
+    public static final i5e w = new i5e(0, new Object[0]);
+    public final transient Object[] r;
+    public final transient int s;
 
-    static {
-        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)));
+    public i5e(int i, Object[] objArr) {
+        super((byte) 5);
+        this.r = objArr;
+        this.s = i;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.util.List
+    public final Object get(int i) {
+        p1f.a(i, this.s);
+        Object obj = this.r[i];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // u3e, kzc
+    public final int p(Object[] objArr) {
+        Object[] objArr2 = this.r;
+        int i = this.s;
+        System.arraycopy(objArr2, 0, objArr, 0, i);
+        return i;
+    }
+
+    @Override // kzc
+    public final int q() {
+        return this.s;
+    }
+
+    @Override // kzc
+    public final int s() {
+        return 0;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s;
+    }
+
+    @Override // kzc
+    public final Object[] x() {
+        return this.r;
     }
 }

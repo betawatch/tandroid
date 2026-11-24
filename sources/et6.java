@@ -1,52 +1,29 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class et6 extends b4 {
-    public final long a;
-    public final long b;
-    public final boolean c;
-    public final boolean d;
-    public static final ce6 e = new ce6("MediaLiveSeekableRange", null);
-    public static final Parcelable.Creator<et6> CREATOR = new jid((byte) 1);
+public final class et6 extends s49 {
+    public final View v;
+    public final ImageView w;
+    public final ProgressBar x;
+    public final TextView y;
+    public final /* synthetic */ ft6 z;
 
-    public et6(long j, long j2, boolean z, boolean z2) {
-        this.a = Math.max(j, 0L);
-        this.b = Math.max(j2, 0L);
-        this.c = z;
-        this.d = z2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof et6)) {
-            return false;
-        }
-        et6 et6Var = (et6) obj;
-        return this.a == et6Var.a && this.b == et6Var.b && this.c == et6Var.c && this.d == et6Var.d;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Long.valueOf(this.b), Boolean.valueOf(this.c), Boolean.valueOf(this.d)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 2, 8);
-        parcel.writeLong(this.a);
-        mve.q(parcel, 3, 8);
-        parcel.writeLong(this.b);
-        mve.q(parcel, 4, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        mve.q(parcel, 5, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        mve.s(parcel, r);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public et6(ft6 ft6Var, View view) {
+        super(view);
+        this.z = ft6Var;
+        this.v = view;
+        this.w = (ImageView) view.findViewById(R.id.mr_picker_route_icon);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_picker_route_progress_bar);
+        this.x = progressBar;
+        this.y = (TextView) view.findViewById(R.id.mr_picker_route_name);
+        voe.i(ft6Var.r.n, progressBar);
     }
 }

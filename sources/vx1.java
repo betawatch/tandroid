@@ -1,47 +1,32 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class vx1 implements gk, h59 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class vx1 extends mu1 {
+    public boolean wd;
+    public final /* synthetic */ TLRPC.User xd;
+    public final /* synthetic */ TLRPC.User yd;
+    public final /* synthetic */ long zd;
 
-    public /* synthetic */ vx1(ChatActivityEnterView chatActivityEnterView, byte b) {
-        this.a = b;
-        this.b = chatActivityEnterView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vx1(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j) {
+        super(bundle);
+        this.xd = user;
+        this.yd = user2;
+        this.zd = j;
     }
 
-    @Override // h59
-    public final boolean g(int i, View view) {
-        if (!(view instanceof cq0)) {
-            return false;
+    @Override // mu1, org.telegram.ui.ActionBar.d
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.wd) {
+            return;
         }
-        String str = ((cq0) view).getCommand() + " ";
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        chatActivityEnterView.setFieldText(str);
-        chatActivityEnterView.n0.c();
-        return true;
-    }
-
-    @Override // gk
-    public final void y(int i, int i2, boolean z) {
-        switch (this.a) {
-            case 0:
-                this.b.x1(z, i, i2, 0L, true);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                boolean x1 = chatActivityEnterView.x1(z, i, i2, 0L, true);
-                j67 j67Var = chatActivityEnterView.M0;
-                if (j67Var != null) {
-                    j67Var.f(!x1);
-                    chatActivityEnterView.M0 = null;
-                    break;
-                }
-                break;
-        }
+        this.wd = true;
+        u21.b0(this).I(R.raw.contact_check, k96.a0(null, null, 2131751727, l7c.r(this.xd)), gl.N2(k96.a0(null, null, 2131751728, l7c.r(this.yd)), -1, 0, new et(this, this.zd, (byte) 6), null)).j();
     }
 }

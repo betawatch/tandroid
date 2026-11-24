@@ -5,16 +5,16 @@ import android.graphics.drawable.BitmapDrawable;
 import java.io.File;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class s implements etc {
+public final class s implements crc {
     public final /* synthetic */ ThemeEditorView a;
 
     public s(ThemeEditorView themeEditorView) {
         this.a = themeEditorView;
     }
 
-    @Override // etc
+    @Override // crc
     public final void a() {
         int i = 0;
         while (true) {
@@ -25,9 +25,9 @@ public final class s implements etc {
                 editorAlert.F0(true);
                 return;
             } else {
-                cnb cnbVar = (cnb) themeEditorView.e.get(i);
-                int w0 = cmb.w0(cnbVar.i, cnbVar.e, false);
-                cnbVar.h = w0;
+                blb blbVar = (blb) themeEditorView.e.get(i);
+                int w0 = bkb.w0(blbVar.i, blbVar.e, false);
+                blbVar.h = w0;
                 if (i == 0) {
                     themeEditorView.n.l1.c(w0);
                 }
@@ -36,34 +36,34 @@ public final class s implements etc {
         }
     }
 
-    @Override // etc
+    @Override // crc
     public final void b(File file, Bitmap bitmap, boolean z) {
-        bmb bmbVar = this.a.o;
-        cmb.km.delete(cmb.De);
-        cmb.km.delete(cmb.Ee);
-        cmb.km.delete(cmb.Fe);
-        cmb.km.delete(cmb.Ge);
-        cmb.km.delete(cmb.He);
-        cmb.g0 = null;
-        bmbVar.v(null);
+        akb akbVar = this.a.o;
+        bkb.km.delete(bkb.De);
+        bkb.km.delete(bkb.Ee);
+        bkb.km.delete(bkb.Fe);
+        bkb.km.delete(bkb.Ge);
+        bkb.km.delete(bkb.He);
+        bkb.g0 = null;
+        akbVar.v(null);
         if (bitmap == null) {
-            cmb.e0 = null;
-            cmb.d0 = null;
-            cmb.v1(bmbVar, false, false, false);
-            cmb.s1(true);
+            bkb.e0 = null;
+            bkb.d0 = null;
+            bkb.v1(akbVar, false, false, false);
+            bkb.s1(true);
             return;
         }
-        cmb.e0 = new BitmapDrawable(bitmap);
-        cmb.v1(bmbVar, false, false, false);
-        int[] q = gm.q(cmb.e0);
+        bkb.e0 = new BitmapDrawable(bitmap);
+        bkb.v1(akbVar, false, false, false);
+        int[] q = gl.q(bkb.e0);
         int i = q[0];
-        cmb.b0 = i;
-        cmb.W = i;
+        bkb.b0 = i;
+        bkb.W = i;
         int i2 = q[1];
-        cmb.c0 = i2;
-        cmb.a0 = i2;
-        cmb.h();
-        cmb.g(cmb.d0);
-        nm7.e().k(nm7.D4, new Object[0]);
+        bkb.c0 = i2;
+        bkb.a0 = i2;
+        bkb.h();
+        bkb.g(bkb.d0);
+        kk7.e().k(kk7.B4, new Object[0]);
     }
 }

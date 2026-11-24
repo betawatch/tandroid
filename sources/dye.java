@@ -1,54 +1,83 @@
 // default package
 
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.content.res.XmlResourceParser;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
-import org.xmlpull.v1.XmlPullParser;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.File;
+import java.io.FileOutputStream;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class dye {
-    public static kq a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i) {
-        kq kqVar;
-        String attributeValue = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str);
-        byte b = 3;
-        Object obj = null;
-        int i2 = 0;
-        if (attributeValue != null) {
-            TypedValue typedValue = new TypedValue();
-            typedArray.getValue(i, typedValue);
-            int i3 = typedValue.type;
-            if (i3 >= 28 && i3 <= 31) {
-                return new kq(obj, obj, typedValue.data, b);
-            }
+    public static volatile File a;
+
+    public static File a(String str) {
+        File file = a;
+        if (file == null) {
+            file = new File(a.b.getCacheDir(), "wallpaper/image");
+            a = file;
+        }
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        return new File(file, str);
+    }
+
+    public static Bitmap b(String str) {
+        File a2 = a(str);
+        Bitmap bitmap = null;
+        if (!a2.exists()) {
+            return null;
+        }
+        try {
+            bitmap = BitmapFactory.decodeFile(a2.getAbsolutePath());
+        } catch (Throwable th) {
+            fa4.g(th, true);
+        }
+        if (bitmap == null) {
+            a2.delete();
+        }
+        return bitmap;
+    }
+
+    public static String c(long j) {
+        StringBuilder o = ug8.o(j, "photo_", "_w");
+        ConcurrentHashMap concurrentHashMap = zqc.a;
+        Point point = gl.q;
+        o.append(Math.min(1440, Math.min(point.x, point.y)));
+        return o.toString();
+    }
+
+    public static void d(String str, Bitmap bitmap) {
+        if (bitmap == null || bitmap.isRecycled()) {
+            return;
+        }
+        File a2 = a(str);
+        File parentFile = a2.getParentFile();
+        StringBuilder k = b00.k(str, ".");
+        k.append(Thread.currentThread().getId());
+        k.append(".tmp");
+        File file = new File(parentFile, k.toString());
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
             try {
-                kqVar = kq.g(typedArray.getResources(), typedArray.getResourceId(i, 0), theme);
-            } catch (Exception e) {
-                Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e);
-                kqVar = null;
+                if (bitmap.hasAlpha() ? bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream) : bitmap.compress(Bitmap.CompressFormat.JPEG, 92, fileOutputStream)) {
+                    fileOutputStream.flush();
+                    fileOutputStream.getFD().sync();
+                    fileOutputStream.close();
+                    if (file.renameTo(a2)) {
+                    }
+                } else {
+                    fileOutputStream.close();
+                }
+            } finally {
             }
-            if (kqVar != null) {
-                return kqVar;
+        } finally {
+            try {
+            } finally {
             }
         }
-        return new kq(obj, obj, i2, b);
-    }
-
-    public static String b(TypedArray typedArray, XmlResourceParser xmlResourceParser, String str, int i) {
-        if (xmlResourceParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null) {
-            return typedArray.getString(i);
-        }
-        return null;
-    }
-
-    public static boolean c(XmlPullParser xmlPullParser, String str) {
-        return xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null;
-    }
-
-    public static TypedArray d(Resources resources, Resources.Theme theme, AttributeSet attributeSet, int[] iArr) {
-        return theme == null ? resources.obtainAttributes(attributeSet, iArr) : theme.obtainStyledAttributes(attributeSet, iArr, 0, 0);
     }
 }

@@ -1,49 +1,31 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class gg2 extends ft5 implements fg2 {
+    public final ig2 e;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class gg2 implements he2 {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ wg2 d;
-
-    public gg2(wg2 wg2Var, TLObject tLObject, long j, boolean z) {
-        this.d = wg2Var;
-        this.a = tLObject;
-        this.b = j;
-        this.c = z;
+    public gg2(ig2 ig2Var) {
+        this.e = ig2Var;
     }
 
-    @Override // he2
-    public final void a(TLRPC.User user) {
-        this.d.w0(user);
+    @Override // fg2
+    public final boolean a(Throwable th) {
+        return j().m(th);
     }
 
-    @Override // he2
-    public final void b(int i, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-        }
-        wg2 wg2Var = this.d;
-        pg2 pg2Var = wg2Var.m1;
-        if (pg2Var != null) {
-            long j = this.b;
-            if (i == 1) {
-                pg2Var.b(j);
-            } else {
-                pg2Var.c(j, tLObject);
-            }
-        }
-        if (this.c) {
-            wg2Var.removeSelfFromStack();
-        }
+    @Override // fg2
+    public final bt5 getParent() {
+        return j();
+    }
+
+    @Override // ft5
+    public final boolean k() {
+        return true;
+    }
+
+    @Override // ft5
+    public final void l(Throwable th) {
+        ((pt5) this.e).i(j());
     }
 }

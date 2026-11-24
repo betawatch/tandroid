@@ -1,120 +1,195 @@
 // default package
 
-import java.io.DataInputStream;
-import java.io.EOFException;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ui6 {
-    public final /* synthetic */ byte a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e;
-    public Object f;
+public final class ui6 extends ild {
+    public int a;
+    public final TL_iv.PageBlock b;
+    public TL_iv.textConcat c = new TL_iv.textConcat();
 
-    public ui6(h61 h61Var, ui6 ui6Var, String str) {
-        this.a = (byte) 0;
-        this.b = h61Var;
-        this.c = ui6Var;
-        this.d = str;
-        this.e = new DataInputStream(h61Var);
+    public ui6(TL_iv.PageBlock pageBlock) {
+        this.b = pageBlock;
     }
 
-    public void a(knd kndVar) {
-        kndVar.v(this);
+    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
+        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
     }
 
-    public final void b(ui6 ui6Var) {
-        ui6Var.g();
-        ui6Var.e(this);
-        ui6 ui6Var2 = (ui6) this.d;
-        if (ui6Var2 == null) {
-            this.c = ui6Var;
-            this.d = ui6Var;
+    @Override // ild
+    public final void a(ik0 ik0Var) {
+        int i = this.a;
+        if (i >= 64) {
+            return;
+        }
+        this.a = i + 1;
+        try {
+            v(ik0Var);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // ild
+    public final void b(x01 x01Var) {
+        int i = this.a;
+        if (i >= 64) {
+            return;
+        }
+        this.a = i + 1;
+        try {
+            v(x01Var);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // ild
+    public final void c(cj2 cj2Var) {
+        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+        textfixed.text = xi6.l(cj2Var.h);
+        w(textfixed);
+    }
+
+    @Override // ild
+    public final void d(o43 o43Var) {
+        if (o43Var instanceof x8b) {
+            TL_iv.textStrike textstrike = new TL_iv.textStrike();
+            textstrike.text = y(o43Var);
+            w(textstrike);
+        } else if (o43Var instanceof ts5) {
+            w(xi6.h(((ts5) o43Var).g));
         } else {
-            ui6Var2.f = ui6Var;
-            ui6Var.e = ui6Var2;
-            this.d = ui6Var;
+            v(o43Var);
         }
     }
 
-    public final ti6 c() {
-        h61 h61Var = (h61) this.b;
-        DataInputStream dataInputStream = (DataInputStream) this.e;
-        ti6 ti6Var = (ti6) this.f;
-        if (ti6Var != null) {
-            while (ti6Var.i() > 0) {
-                if (((a19) ((h61) ti6Var.b)).skip(ti6Var.i()) == 0) {
-                    throw new EOFException("Cannot skip atom");
-                }
-            }
+    @Override // ild
+    public final void e(u14 u14Var) {
+        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+        textitalic.text = y(u14Var);
+        w(textitalic);
+    }
+
+    @Override // ild
+    public final void i(bk5 bk5Var) {
+        w(y(bk5Var));
+    }
+
+    @Override // ild
+    public final void k(y46 y46Var) {
+        if (!(y46Var instanceof qs5)) {
+            v(y46Var);
+            return;
         }
-        int readInt = dataInputStream.readInt();
-        byte[] bArr = new byte[4];
-        dataInputStream.readFully(bArr);
-        ti6 ti6Var2 = new ti6(readInt == 1 ? new a19(h61Var, 16L, dataInputStream.readLong() - 16) : new a19(h61Var, 8L, readInt - 8), this, new String(bArr, "ISO8859_1"), (byte) 0);
-        this.f = ti6Var2;
-        return ti6Var2;
-    }
-
-    public final ti6 d(String str) {
-        ti6 c = c();
-        String str2 = (String) c.d;
-        if (str2.matches(str)) {
-            return c;
+        if (!this.c.texts.isEmpty()) {
+            w(xi6.l("\n"));
         }
-        wa3.d(td4.r("atom type mismatch, expected ", str, ", got ", str2));
-        return null;
+        w(xi6.h(((qs5) y46Var).g));
+        w(xi6.l("\n"));
     }
 
-    public void e(ui6 ui6Var) {
-        this.b = ui6Var;
-    }
-
-    public String f() {
-        return "";
-    }
-
-    public final void g() {
-        ui6 ui6Var = (ui6) this.e;
-        if (ui6Var != null) {
-            ui6Var.f = (ui6) this.f;
-        } else {
-            ui6 ui6Var2 = (ui6) this.b;
-            if (ui6Var2 != null) {
-                ui6Var2.c = (ui6) this.f;
-            }
+    @Override // ild
+    public final void l(f56 f56Var) {
+        int i = this.a;
+        if (i >= 64) {
+            return;
         }
-        ui6 ui6Var3 = (ui6) this.f;
-        if (ui6Var3 != null) {
-            ui6Var3.e = ui6Var;
-        } else {
-            ui6 ui6Var4 = (ui6) this.b;
-            if (ui6Var4 != null) {
-                ui6Var4.d = ui6Var;
-            }
-        }
-        this.b = null;
-        this.f = null;
-        this.e = null;
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 1:
-                return getClass().getSimpleName() + "{" + f() + "}";
-            default:
-                return super.toString();
+        this.a = i + 1;
+        try {
+            v(f56Var);
+        } finally {
+            this.a--;
         }
     }
 
-    public ui6() {
-        this.a = (byte) 1;
-        this.b = null;
-        this.c = null;
-        this.d = null;
-        this.e = null;
-        this.f = null;
+    @Override // ild
+    public final void m(xq7 xq7Var) {
+        int i = this.a;
+        if (i >= 64) {
+            return;
+        }
+        this.a = i + 1;
+        try {
+            v(xq7Var);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // ild
+    public final void n(tu7 tu7Var) {
+        if (!this.c.texts.isEmpty()) {
+            w(xi6.l("\n\n"));
+        }
+        v(tu7Var);
+    }
+
+    @Override // ild
+    public final void o(ugb ugbVar) {
+        w(xi6.l(ugbVar.g));
+    }
+
+    @Override // ild
+    public final void q(cj2 cj2Var) {
+        w(xi6.l(cj2Var.h));
+    }
+
+    @Override // ild
+    public final void r(u14 u14Var) {
+        w(xi6.l("\n"));
+    }
+
+    @Override // ild
+    public final void s(bk5 bk5Var) {
+        String str = bk5Var.h;
+        if (str == null) {
+            str = "";
+        }
+        String trim = str.trim();
+        if (trim.startsWith("mailto:")) {
+            TL_iv.RichText textemail = new TL_iv.textEmail();
+            textemail.text = y(bk5Var);
+            textemail.email = trim.substring(7);
+            w(textemail);
+            return;
+        }
+        if (trim.startsWith("tel:")) {
+            TL_iv.textPhone textphone = new TL_iv.textPhone();
+            textphone.text = y(bk5Var);
+            textphone.phone = trim.substring(4);
+            w(textphone);
+            return;
+        }
+        TL_iv.RichText texturl = new TL_iv.textUrl();
+        texturl.text = y(bk5Var);
+        texturl.url = trim;
+        w(texturl);
+    }
+
+    @Override // ild
+    public final void t(u14 u14Var) {
+        w(xi6.l(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
+    }
+
+    @Override // ild
+    public final void u(u14 u14Var) {
+        TL_iv.textBold textbold = new TL_iv.textBold();
+        textbold.text = y(u14Var);
+        w(textbold);
+    }
+
+    public final void w(TL_iv.RichText richText) {
+        this.c.texts.add(richText);
+    }
+
+    public final TL_iv.RichText y(tg6 tg6Var) {
+        TL_iv.textConcat textconcat = this.c;
+        this.c = new TL_iv.textConcat();
+        v(tg6Var);
+        TL_iv.RichText x = x(this.c);
+        this.c = textconcat;
+        return x;
     }
 }

@@ -1,435 +1,153 @@
 // default package
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.EnumMap;
-import java.util.Set;
-import java.util.regex.Pattern;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.RectF;
+import android.net.Uri;
+import android.view.TextureView;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class pk2 implements w0d {
-    static {
-        Pattern.compile("[0-9]+");
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class pk2 {
+    public int a;
+    public final lm b;
+    public final ImageReceiver c;
+    public ok2 d;
+    public TextureView e;
+    public boolean f;
+    public ek2 h;
+    public boolean m;
+    public f4b n;
+    public ValueAnimator o;
+    public final /* synthetic */ qk2 p;
+    public volatile long g = -1;
+    public boolean i = false;
+    public final RectF j = new RectF();
+    public final RectF k = new RectF();
+    public float l = 1.0f;
+
+    public pk2(qk2 qk2Var) {
+        this.p = qk2Var;
+        this.b = new lm(qk2Var, 0L, 1200L, s33.g);
+        this.c = new ImageReceiver(qk2Var);
     }
 
-    public static int a(int i, CharSequence charSequence) {
-        char charAt;
-        int length = charSequence.length();
-        if (i < length) {
-            char charAt2 = charSequence.charAt(i);
-            if (charAt2 == 241) {
-                return 4;
-            }
-            if (charAt2 >= '0' && charAt2 <= '9') {
-                int i2 = i + 1;
-                return (i2 >= length || (charAt = charSequence.charAt(i2)) < '0' || charAt > '9') ? 2 : 3;
-            }
+    public final void a(f4b f4bVar) {
+        float f;
+        ok2 ok2Var = this.d;
+        if (ok2Var != null) {
+            ok2Var.pause();
+            this.d.release(null);
+            this.d = null;
         }
-        return 1;
-    }
-
-    public static boolean[] b(int i, ArrayList arrayList) {
-        int i2 = i % nm7.n1;
-        if (i2 < 0) {
-            u36.j("Unable to compute a valid input checksum");
-            return null;
+        TextureView textureView = this.e;
+        if (textureView != null) {
+            gl.B2(textureView);
+            this.e = null;
         }
-        int[][] iArr = k73.a;
-        arrayList.add(iArr[i2]);
-        arrayList.add(iArr[106]);
-        int size = arrayList.size();
-        int i3 = 0;
-        int i4 = 0;
-        while (i4 < size) {
-            Object obj = arrayList.get(i4);
-            i4++;
-            for (int i5 : (int[]) obj) {
-                i3 += i5;
-            }
-        }
-        boolean[] zArr = new boolean[i3];
-        int size2 = arrayList.size();
-        int i6 = 0;
-        int i7 = 0;
-        while (i7 < size2) {
-            Object obj2 = arrayList.get(i7);
-            i7++;
-            boolean z = true;
-            int i8 = 0;
-            int i9 = i6;
-            for (int i10 : (int[]) obj2) {
-                int i11 = 0;
-                while (i11 < i10) {
-                    zArr[i9] = z;
-                    i11++;
-                    i9++;
-                }
-                i8 += i10;
-                z = !z;
-            }
-            i6 += i8;
-        }
-        return zArr;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:198:0x0248, code lost:
-    
-        if (r6 > 244) goto L171;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:217:0x027a, code lost:
-    
-        if (a(r5 + 3, r28) == 3) goto L170;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:218:0x0298, code lost:
-    
-        r6 = 99;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:224:0x028a, code lost:
-    
-        if (r14 == r9) goto L171;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:228:0x0296, code lost:
-    
-        if (r6 == 3) goto L170;
-     */
-    @Override // w0d
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final qk0 r(String str, zf0 zf0Var, EnumMap enumMap) {
-        int i;
-        int i2;
-        boolean[] b;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int a;
-        int i7;
-        int i8;
-        boolean z;
-        Object obj = null;
-        if (str.isEmpty()) {
-            u36.j("Found empty contents");
-            return null;
-        }
-        Set singleton = Collections.singleton(zf0.b);
-        if (singleton != null && !singleton.contains(zf0Var)) {
-            a32.f("Can only encode ", singleton, ", but got ", zf0Var);
-            return null;
-        }
-        y34 y34Var = y34.c;
-        int parseInt = enumMap.containsKey(y34Var) ? Integer.parseInt(enumMap.get(y34Var).toString()) : 10;
-        y34 y34Var2 = y34.y;
-        int i9 = -1;
-        int i10 = 0;
-        int i11 = 2;
-        if (enumMap.containsKey(y34Var2)) {
-            String obj2 = enumMap.get(y34Var2).toString();
-            obj2.getClass();
-            switch (obj2.hashCode()) {
-                case 65:
-                    if (obj2.equals("A")) {
-                        z = false;
-                        break;
-                    }
-                    z = -1;
-                    break;
-                case nm7.C0 /* 66 */:
-                    if (obj2.equals("B")) {
-                        z = true;
-                        break;
-                    }
-                    z = -1;
-                    break;
-                case nm7.D0 /* 67 */:
-                    if (obj2.equals("C")) {
-                        z = 2;
-                        break;
-                    }
-                    z = -1;
-                    break;
-                default:
-                    z = -1;
-                    break;
-            }
-            switch (z) {
-                case false:
-                    i = 101;
-                    break;
-                case true:
-                    i = 100;
-                    break;
-                case true:
-                    i = 99;
-                    break;
-                default:
-                    u36.j("Unsupported code set hint: ".concat(obj2));
-                    return null;
-            }
-        } else {
-            i = -1;
-        }
-        int length = str.length();
-        for (int i12 = 0; i12 < length; i12++) {
-            char charAt = str.charAt(i12);
-            switch (charAt) {
-                case nm7.P3 /* 241 */:
-                case nm7.Q3 /* 242 */:
-                case nm7.R3 /* 243 */:
-                case nm7.S3 /* 244 */:
-                    break;
-                default:
-                    if (charAt > 127) {
-                        u36.j(hg9.j(charAt, "Bad character in input: ASCII value="));
-                        return null;
-                    }
-                    break;
-            }
-            switch (i) {
-                case nm7.j1 /* 99 */:
-                    if (charAt < '0' || ((charAt > '9' && charAt <= 127) || charAt == 242 || charAt == 243 || charAt == 244)) {
-                        u36.j(hg9.j(charAt, "Bad character in input for forced code set C: ASCII value="));
-                        return null;
-                    }
-                    break;
-                    break;
-                case nm7.k1 /* 100 */:
-                    if (charAt < ' ') {
-                        u36.j(hg9.j(charAt, "Bad character in input for forced code set B: ASCII value="));
-                        return null;
-                    }
-                    break;
-                case 101:
-                    if (charAt > '_' && charAt <= 127) {
-                        u36.j(hg9.j(charAt, "Bad character in input for forced code set A: ASCII value="));
-                        return null;
-                    }
-                    break;
-            }
-        }
-        y34 y34Var3 = y34.E;
-        char c = 241;
-        char c2 = ' ';
-        if (enumMap.containsKey(y34Var3) && Boolean.parseBoolean(enumMap.get(y34Var3).toString())) {
-            hi2 hi2Var = new hi2((byte) 16, false);
-            int[] iArr = {4, str.length()};
-            Class cls = Integer.TYPE;
-            hi2Var.b = (int[][]) Array.newInstance((Class<?>) cls, iArr);
-            hi2Var.c = (int[][]) Array.newInstance((Class<?>) cls, 4, str.length());
-            hi2Var.m(4, 0, str);
-            ArrayList arrayList = new ArrayList();
-            int[] iArr2 = {0};
-            int[] iArr3 = {1};
-            int length2 = str.length();
-            i2 = 0;
-            int i13 = 4;
-            while (i10 < length2) {
-                int i14 = ((int[][]) hi2Var.c)[wi8.F(i13)][i10];
-                int F = wi8.F(i14);
-                if (F == 0) {
-                    hi2.b(arrayList, i10 == 0 ? 103 : 101, iArr2, iArr3, i10);
-                    i7 = 1;
-                } else if (F == 1) {
-                    hi2.b(arrayList, i10 == 0 ? 104 : 100, iArr2, iArr3, i10);
-                    i7 = 2;
-                } else if (F != 2) {
-                    if (F == 3) {
-                        hi2.b(arrayList, 98, iArr2, iArr3, i10);
-                    }
-                    i7 = i13;
+        byte b = 0;
+        this.f = false;
+        this.n = f4bVar;
+        StringBuilder sb = new StringBuilder();
+        Point point = gl.q;
+        sb.append((int) Math.ceil(point.x / gl.p));
+        sb.append("_");
+        sb.append((int) Math.ceil(point.y / gl.p));
+        String j = b00.j(sb, (f4bVar == null || !f4bVar.K) ? "" : "_g", "_exif");
+        f4b f4bVar2 = this.n;
+        qk2 qk2Var = this.p;
+        ImageReceiver imageReceiver = this.c;
+        if (f4bVar2 == null) {
+            imageReceiver.f();
+        } else if (f4bVar2.K) {
+            Bitmap bitmap = f4bVar2.M0;
+            if (bitmap != null) {
+                imageReceiver.f0(bitmap);
+            } else {
+                Bitmap bitmap2 = f4bVar2.b1;
+                if (bitmap2 != null) {
+                    imageReceiver.f0(bitmap2);
                 } else {
-                    hi2.b(arrayList, i10 == 0 ? 105 : 99, iArr2, iArr3, i10);
-                    i7 = 3;
-                }
-                if (i7 != 3) {
-                    switch (str.charAt(i10)) {
-                        case nm7.P3 /* 241 */:
-                            i8 = 102;
-                            break;
-                        case nm7.Q3 /* 242 */:
-                            i8 = 97;
-                            break;
-                        case nm7.R3 /* 243 */:
-                            i8 = 96;
-                            break;
-                        case nm7.S3 /* 244 */:
-                            if ((i7 != 1 || i14 == 4) && (i7 != 2 || i14 != 4)) {
-                                i8 = 100;
-                                break;
-                            } else {
-                                i8 = 101;
-                                break;
-                            }
-                        default:
-                            i8 = str.charAt(i10) - ' ';
-                            break;
-                    }
-                    if (((i7 == 1 && i14 != 4) || (i7 == 2 && i14 == 4)) && i8 < 0) {
-                        i8 += 96;
-                    }
-                    hi2.b(arrayList, i8, iArr2, iArr3, i10);
-                } else if (str.charAt(i10) == 241) {
-                    hi2.b(arrayList, nm7.m1, iArr2, iArr3, i10);
-                } else {
-                    hi2.b(arrayList, Integer.parseInt(str.substring(i10, i10 + 2)), iArr2, iArr3, i10);
-                    int i15 = i10 + 1;
-                    if (i15 < length2) {
-                        i10 = i15;
-                    }
-                }
-                i10++;
-                i13 = i7;
-                obj = null;
-            }
-            hi2Var.b = obj;
-            hi2Var.c = obj;
-            b = b(iArr2[0], arrayList);
-        } else {
-            i2 = 0;
-            int length3 = str.length();
-            ArrayList arrayList2 = new ArrayList();
-            int i16 = 1;
-            int i17 = 0;
-            int i18 = 0;
-            int i19 = 0;
-            while (i17 < length3) {
-                if (i == i9) {
-                    int a2 = a(i17, str);
-                    if (a2 == i11) {
-                        i4 = i19 == 101 ? 101 : 100;
-                        i3 = 96;
-                    } else if (a2 == 1) {
-                        if (i17 < str.length()) {
-                            char charAt2 = str.charAt(i17);
-                            if (charAt2 < c2) {
-                                i3 = 96;
-                            } else if (i19 == 101) {
-                                i3 = 96;
-                                if (charAt2 >= '`') {
-                                    if (charAt2 >= c) {
-                                    }
-                                    i4 = 100;
-                                }
-                            }
-                            i4 = 101;
-                        }
-                        i3 = 96;
-                        i4 = 100;
+                    String str = f4bVar2.N;
+                    if (str != null) {
+                        imageReceiver.e0(str, j, null, null, 0L);
                     } else {
-                        i3 = 96;
-                        if (i19 != 101 || a2 != 4) {
-                            if (i19 == 99) {
-                                i4 = 99;
-                            } else if (i19 == 100) {
-                                if (a2 != 4 && (a = a(i17 + 2, str)) != 1 && a != i11) {
-                                    if (a != 4) {
-                                        int i20 = 3;
-                                        int i21 = i17 + 4;
-                                        while (true) {
-                                            int a3 = a(i21, str);
-                                            if (a3 == i20) {
-                                                i21 += 2;
-                                                i20 = 3;
-                                            }
-                                        }
-                                    }
-                                }
-                                i4 = 100;
-                            } else if (a2 == 4) {
-                                a2 = a(i17 + 1, str);
-                            }
-                        }
-                        i4 = 101;
+                        imageReceiver.f();
                     }
-                } else {
-                    i3 = 96;
-                    i4 = i;
                 }
-                if (i4 == i19) {
-                    switch (str.charAt(i17)) {
-                        case nm7.P3 /* 241 */:
-                            c2 = ' ';
-                            i6 = nm7.m1;
-                            break;
-                        case nm7.Q3 /* 242 */:
-                            c2 = ' ';
-                            i6 = 97;
-                            break;
-                        case nm7.R3 /* 243 */:
-                            c2 = ' ';
-                            i6 = i3;
-                            break;
-                        case nm7.S3 /* 244 */:
-                            c2 = ' ';
-                            if (i19 == 101) {
-                                i6 = 101;
-                                break;
-                            } else {
-                                i6 = 100;
-                                break;
-                            }
-                        default:
-                            if (i19 != 100) {
-                                if (i19 != 101) {
-                                    int i22 = i17 + 1;
-                                    if (i22 == length3) {
-                                        u36.j("Bad number of characters for digit only encoding.");
-                                        return null;
-                                    }
-                                    i6 = Integer.parseInt(str.substring(i17, i17 + 2));
-                                    i17 = i22;
-                                } else {
-                                    char charAt3 = str.charAt(i17);
-                                    int i23 = charAt3 - ' ';
-                                    i6 = i23 < 0 ? charAt3 + '@' : i23;
-                                }
-                                c2 = ' ';
-                                break;
-                            } else {
-                                c2 = ' ';
-                                i6 = str.charAt(i17) - ' ';
-                                break;
-                            }
+            }
+            TextureView textureView2 = new TextureView(qk2Var.getContext());
+            this.e = textureView2;
+            qk2Var.addView(textureView2);
+            ok2 ok2Var2 = new ok2(this, b);
+            this.d = ok2Var2;
+            ok2Var2.allowMultipleInstances(true);
+            this.d.with(this.e);
+            this.d.preparePlayer(Uri.fromFile(this.n.L), false, 1.0f);
+            ok2 ok2Var3 = this.d;
+            if (!qk2Var.w0) {
+                f4b f4bVar3 = this.n;
+                if (!f4bVar3.Y && qk2Var.o0) {
+                    f = f4bVar3.P;
+                    ok2Var3.setVolume(f);
+                    if (qk2Var.o0 || qk2Var.r0) {
+                        this.d.play();
+                    } else {
+                        this.d.pause();
                     }
-                    i17++;
-                    i5 = i19;
-                } else {
-                    c2 = ' ';
-                    i5 = i4;
-                    i6 = i19 == 0 ? i4 != 100 ? i4 != 101 ? 105 : 103 : 104 : i4;
                 }
-                int i24 = i11;
-                arrayList2.add(k73.a[i6]);
-                i18 += i6 * i16;
-                if (i17 != 0) {
-                    i16++;
-                }
-                i19 = i5;
-                i9 = -1;
-                c = 241;
-                i11 = i24;
             }
-            b = b(i18, arrayList2);
-        }
-        int length4 = b.length;
-        int i25 = parseInt + length4;
-        int i26 = i2;
-        int max = Math.max(i26, i25);
-        int i27 = max / i25;
-        int i28 = (max - (length4 * i27)) / 2;
-        qk0 qk0Var = new qk0(max, 1);
-        int i29 = i26;
-        while (i29 < length4) {
-            if (b[i29]) {
-                qk0Var.d(i28, i26, i27, 1);
+            f = 0.0f;
+            ok2Var3.setVolume(f);
+            if (qk2Var.o0) {
             }
-            i29++;
-            i28 += i27;
+            this.d.play();
+        } else {
+            imageReceiver.e0(f4bVar2.L.getAbsolutePath(), j, null, null, 0L);
         }
-        return qk0Var;
+        qk2Var.invalidate();
+    }
+
+    public final void b(ek2 ek2Var, boolean z) {
+        ek2 ek2Var2 = this.h;
+        if (ek2Var != null) {
+            this.h = ek2Var;
+        }
+        ValueAnimator valueAnimator = this.o;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.o = null;
+        }
+        RectF rectF = this.k;
+        qk2 qk2Var = this.p;
+        if (z) {
+            boolean z2 = this.i;
+            RectF rectF2 = this.j;
+            if (z2) {
+                gl.X1(rectF2, rectF, this.l, rectF2);
+            } else {
+                qk2Var.k(rectF2, ek2Var);
+            }
+            if (ek2Var == null) {
+                qk2Var.k(rectF, ek2Var2);
+            } else {
+                qk2Var.j(rectF, ek2Var);
+            }
+            this.l = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.o = ofFloat;
+            ofFloat.addUpdateListener(new ae0(this, (byte) 3));
+            this.o.addListener(new bb1((Object) this, (byte) 29));
+            this.o.setInterpolator(s33.h);
+            this.o.setDuration(360L);
+            this.o.start();
+        } else {
+            qk2Var.j(rectF, ek2Var);
+            this.l = 1.0f;
+        }
+        qk2Var.invalidate();
+        this.i = true;
     }
 }

@@ -13,9 +13,9 @@ import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class SignInHubActivity extends gp4 {
+public class SignInHubActivity extends en4 {
     public static boolean U = false;
     public boolean P = false;
     public SignInConfiguration Q;
@@ -28,7 +28,7 @@ public class SignInHubActivity extends gp4 {
         return true;
     }
 
-    @Override // gp4, hr2, android.app.Activity
+    @Override // en4, wp2, android.app.Activity
     public final void onActivityResult(int i, int i2, Intent intent) {
         GoogleSignInAccount googleSignInAccount;
         if (this.P) {
@@ -41,10 +41,10 @@ public class SignInHubActivity extends gp4 {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                k6d r1 = k6d.r1(this);
+                i4d N2 = i4d.N2(this);
                 GoogleSignInOptions googleSignInOptions = this.Q.b;
-                synchronized (r1) {
-                    ((f3b) r1.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (N2) {
+                    ((d1b) N2.a).c(googleSignInAccount, googleSignInOptions);
                 }
                 intent.removeExtra("signInAccount");
                 intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -66,7 +66,7 @@ public class SignInHubActivity extends gp4 {
         x(8);
     }
 
-    @Override // gp4, hr2, gr2, android.app.Activity
+    @Override // en4, wp2, vp2, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = getIntent();
@@ -142,13 +142,13 @@ public class SignInHubActivity extends gp4 {
         }
     }
 
-    @Override // gp4, android.app.Activity
+    @Override // en4, android.app.Activity
     public final void onDestroy() {
         super.onDestroy();
         U = false;
     }
 
-    @Override // hr2, gr2, android.app.Activity
+    @Override // wp2, vp2, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         bundle.putBoolean("signingInGoogleApiClients", this.R);
@@ -159,54 +159,54 @@ public class SignInHubActivity extends gp4 {
     }
 
     public final void w() {
-        oa6 oa6Var = (oa6) new et8(f(), oa6.d).l(oa6.class);
-        oo8 oo8Var = new oo8(this, (byte) 27);
-        boolean z = oa6Var.c;
-        rma rmaVar = oa6Var.b;
+        p86 p86Var = (p86) new g29(f(), p86.d).k(p86.class);
+        v39 v39Var = new v39(this, (byte) 24);
+        boolean z = p86Var.c;
+        qka qkaVar = p86Var.b;
         if (z) {
-            dq9.m("Called while creating a loader");
+            sc8.j("Called while creating a loader");
             return;
         }
         if (Looper.getMainLooper() != Looper.myLooper()) {
-            dq9.m("initLoader must be called on the main thread");
+            sc8.j("initLoader must be called on the main thread");
             return;
         }
-        rmaVar.getClass();
-        na6 na6Var = (na6) bfd.a(rmaVar, 0);
-        if (na6Var == null) {
+        qkaVar.getClass();
+        o86 o86Var = (o86) zcd.a(qkaVar, 0);
+        if (o86Var == null) {
             try {
-                oa6Var.c = true;
-                Set set = h05.a;
+                p86Var.c = true;
+                Set set = gy4.a;
                 synchronized (set) {
                 }
-                x5d x5dVar = new x5d(this, set);
-                if (x5d.class.isMemberClass() && !Modifier.isStatic(x5d.class.getModifiers())) {
-                    throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + x5dVar);
+                v3d v3dVar = new v3d(this, set);
+                if (v3d.class.isMemberClass() && !Modifier.isStatic(v3d.class.getModifiers())) {
+                    throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + v3dVar);
                 }
-                na6 na6Var2 = new na6(x5dVar);
-                rmaVar.c(0, na6Var2);
-                oa6Var.c = false;
-                m41 m41Var = new m41(na6Var2.l, oo8Var);
-                na6Var2.d(this, m41Var);
-                m41 m41Var2 = na6Var2.n;
-                if (m41Var2 != null) {
-                    na6Var2.h(m41Var2);
+                o86 o86Var2 = new o86(v3dVar);
+                qkaVar.c(0, o86Var2);
+                p86Var.c = false;
+                e31 e31Var = new e31(o86Var2.l, v39Var);
+                o86Var2.d(this, e31Var);
+                e31 e31Var2 = o86Var2.n;
+                if (e31Var2 != null) {
+                    o86Var2.h(e31Var2);
                 }
-                na6Var2.m = this;
-                na6Var2.n = m41Var;
+                o86Var2.m = this;
+                o86Var2.n = e31Var;
             } catch (Throwable th) {
-                oa6Var.c = false;
+                p86Var.c = false;
                 throw th;
             }
         } else {
-            m41 m41Var3 = new m41(na6Var.l, oo8Var);
-            na6Var.d(this, m41Var3);
-            m41 m41Var4 = na6Var.n;
-            if (m41Var4 != null) {
-                na6Var.h(m41Var4);
+            e31 e31Var3 = new e31(o86Var.l, v39Var);
+            o86Var.d(this, e31Var3);
+            e31 e31Var4 = o86Var.n;
+            if (e31Var4 != null) {
+                o86Var.h(e31Var4);
             }
-            na6Var.m = this;
-            na6Var.n = m41Var3;
+            o86Var.m = this;
+            o86Var.n = e31Var3;
         }
         U = false;
     }

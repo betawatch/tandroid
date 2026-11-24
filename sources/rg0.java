@@ -1,17 +1,36 @@
 // default package
 
-import java.nio.ByteBuffer;
+import android.os.Message;
+import android.util.Log;
+import android.util.Pair;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class rg0 {
-    public int a;
-    public int b;
-    public int c;
-
-    public final int a() {
-        return this.b + 1 + this.c;
+public final class rg0 extends o59 {
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        int i = message.what;
+        if (i != 1) {
+            if (i == 2) {
+                ((BasePendingResult) message.obj).e(Status.n);
+                return;
+            }
+            StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 34);
+            sb.append("Don't know how to handle message: ");
+            sb.append(i);
+            Log.wtf("BasePendingResult", sb.toString(), new Exception());
+            return;
+        }
+        Pair pair = (Pair) message.obj;
+        k5f k5fVar = (k5f) pair.first;
+        ua9 ua9Var = (ua9) pair.second;
+        try {
+            k5fVar.a(ua9Var);
+        } catch (RuntimeException e) {
+            BasePendingResult.m(ua9Var);
+            throw e;
+        }
     }
-
-    public abstract void b(ByteBuffer byteBuffer);
 }

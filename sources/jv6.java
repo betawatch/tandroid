@@ -1,71 +1,47 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ImageButton;
-import androidx.mediarouter.app.MediaRouteVolumeSlider;
-import java.util.HashMap;
-import org.telegram.messenger.beta.R;
+import android.media.session.MediaSession;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class jv6 extends u69 {
-    public ew6 v;
-    public final ImageButton w;
-    public final MediaRouteVolumeSlider x;
-    public final /* synthetic */ rv6 y;
+public final class jv6 implements Parcelable {
+    public static final Parcelable.Creator<jv6> CREATOR = new hv6((byte) 0);
+    public final kq6 a;
+    public final long b;
+    public MediaSession.QueueItem c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jv6(rv6 rv6Var, View view, ImageButton imageButton, MediaRouteVolumeSlider mediaRouteVolumeSlider) {
-        super(view);
-        int color;
-        int color2;
-        this.y = rv6Var;
-        this.w = imageButton;
-        this.x = mediaRouteVolumeSlider;
-        Context context = rv6Var.E;
-        Drawable a = kod.a(context, R.drawable.mr_cast_mute_button);
-        if (yqe.h(context)) {
-            a.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
+    public jv6(kq6 kq6Var, long j) {
+        if (j == -1) {
+            w26.j("Id cannot be QueueItem.UNKNOWN_ID");
+            throw null;
         }
-        imageButton.setImageDrawable(a);
-        if (yqe.h(context)) {
-            color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_light);
-            color2 = context.getColor(R.color.mr_cast_progressbar_background_light);
-        } else {
-            color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_dark);
-            color2 = context.getColor(R.color.mr_cast_progressbar_background_dark);
-        }
-        mediaRouteVolumeSlider.a(color, color2);
+        this.a = kq6Var;
+        this.b = j;
+        this.c = null;
     }
 
-    public final void t(ew6 ew6Var) {
-        this.v = ew6Var;
-        int i = ew6Var.p;
-        boolean z = i == 0;
-        ImageButton imageButton = this.w;
-        imageButton.setActivated(z);
-        imageButton.setOnClickListener(new g6(this, (byte) 10));
-        ew6 ew6Var2 = this.v;
-        MediaRouteVolumeSlider mediaRouteVolumeSlider = this.x;
-        mediaRouteVolumeSlider.setTag(ew6Var2);
-        mediaRouteVolumeSlider.setMax(ew6Var.q);
-        mediaRouteVolumeSlider.setProgress(i);
-        mediaRouteVolumeSlider.setOnSeekBarChangeListener(this.y.L);
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public final void u(boolean z) {
-        ImageButton imageButton = this.w;
-        if (imageButton.isActivated() == z) {
-            return;
-        }
-        imageButton.setActivated(z);
-        HashMap hashMap = this.y.O;
-        if (z) {
-            hashMap.put(this.v.c, Integer.valueOf(this.x.getProgress()));
-        } else {
-            hashMap.remove(this.v.c);
-        }
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("MediaSession.QueueItem { Description=");
+        sb.append(this.a);
+        sb.append(", Id=");
+        return ls6.p(sb, this.b, " }");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        this.a.writeToParcel(parcel, i);
+        parcel.writeLong(this.b);
+    }
+
+    public jv6(Parcel parcel) {
+        this.a = kq6.CREATOR.createFromParcel(parcel);
+        this.b = parcel.readLong();
     }
 }

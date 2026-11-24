@@ -1,312 +1,126 @@
 // default package
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class as1 extends e69 {
-    public final /* synthetic */ byte a;
+public final class as1 extends be0 {
+    public final /* synthetic */ byte H = 0;
+    public Object I;
+    public Object J;
+    public Object K;
 
-    public /* synthetic */ as1(byte b) {
-        this.a = b;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public as1(pc2 pc2Var, Context context, qla qlaVar) {
+        super(context);
+        this.K = pc2Var;
+        this.J = qlaVar;
+        this.I = new Path();
     }
 
-    @Override // e69
-    public final void d(Rect rect, View view, RecyclerView recyclerView, r69 r69Var) {
-        rc2 rc2Var;
-        f47 currentMessagesGroup;
-        rc2 rc2Var2;
-        f47 currentMessagesGroup2;
-        rc2 rc2Var3;
-        f47 currentMessagesGroup3;
-        rc2 rc2Var4;
-        f47 currentMessagesGroup4;
-        switch (this.a) {
-            case 0:
-                rect.bottom = 0;
-                if ((view instanceof rc2) && (currentMessagesGroup = (rc2Var = (rc2) view).getCurrentMessagesGroup()) != null) {
-                    ArrayList arrayList = currentMessagesGroup.e;
-                    c47 currentPosition = rc2Var.getCurrentPosition();
-                    if (currentPosition != null && currentPosition.m != null) {
-                        Point point = gm.q;
-                        float max = Math.max(point.x, point.y) * 0.5f;
-                        int extraInsetHeight = rc2Var.getExtraInsetHeight();
-                        int i = 0;
-                        while (true) {
-                            if (i >= currentPosition.m.length) {
-                                int round = (Math.round(gm.p * 7.0f) * (currentPosition.d - currentPosition.c)) + extraInsetHeight;
-                                int size = arrayList.size();
-                                while (true) {
-                                    if (r8 < size) {
-                                        c47 c47Var = (c47) arrayList.get(r8);
-                                        byte b = c47Var.c;
-                                        byte b2 = currentPosition.c;
-                                        if (b != b2 || ((c47Var.a == currentPosition.a && c47Var.b == currentPosition.b && b == b2 && c47Var.d == currentPosition.d) || b != b2)) {
-                                            r8++;
-                                        } else {
-                                            round = hg9.f(4.0f, (int) Math.ceil(max * c47Var.f), round);
-                                        }
-                                    }
-                                }
-                                rect.bottom = -round;
-                                break;
-                            } else {
-                                extraInsetHeight += (int) Math.ceil(r1[i] * max);
-                                i++;
-                            }
-                        }
-                    }
-                }
-                break;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.H) {
             case 1:
-                int S = RecyclerView.S(view);
-                rect.setEmpty();
-                if (S != 1) {
-                    if (S == 2) {
-                        rect.left = gm.L(31.0f) + (-gm.L(85.0f));
-                        break;
-                    }
-                } else {
-                    rect.left = gm.L(31.0f) + (-gm.L(85.0f));
-                    break;
-                }
-                break;
-            case 2:
-                rect.right = gm.L(2.0f);
-                break;
-            case 3:
-                rect.right = gm.L(2.0f);
-                break;
-            case 4:
-                super.d(rect, view, recyclerView, r69Var);
-                int R = RecyclerView.R(view);
-                rect.left = gm.L(8.0f);
-                if (R == r69Var.b() - 1) {
-                    rect.right = gm.L(10.0f);
-                }
-                if (R == 0) {
-                    rect.left = gm.L(10.0f);
-                    break;
-                }
-                break;
-            case 5:
-                int L = gm.L(4.0f);
-                rect.top = 0;
-                rect.bottom = L;
-                rect.right = L;
-                rect.left = L;
-                if (RecyclerView.R(view) % 3 != 2) {
-                    rect.right = 0;
-                    break;
-                }
-                break;
-            case 6:
-                int L2 = gm.L(5.0f);
-                rect.right = L2;
-                rect.bottom = L2;
-                break;
-            case 7:
-                rect.top = gm.L(6.0f);
-                break;
-            case 8:
-                rect.bottom = 0;
-                if ((view instanceof rc2) && (currentMessagesGroup2 = (rc2Var2 = (rc2) view).getCurrentMessagesGroup()) != null) {
-                    ArrayList arrayList2 = currentMessagesGroup2.e;
-                    c47 currentPosition2 = rc2Var2.getCurrentPosition();
-                    if (currentPosition2 != null && currentPosition2.m != null) {
-                        Point point2 = gm.q;
-                        float max2 = Math.max(point2.x, point2.y) * 0.5f;
-                        int extraInsetHeight2 = rc2Var2.getExtraInsetHeight();
-                        int i2 = 0;
-                        while (true) {
-                            if (i2 >= currentPosition2.m.length) {
-                                int round2 = (Math.round(gm.p * 7.0f) * (currentPosition2.d - currentPosition2.c)) + extraInsetHeight2;
-                                int size2 = arrayList2.size();
-                                while (true) {
-                                    if (r8 < size2) {
-                                        c47 c47Var2 = (c47) arrayList2.get(r8);
-                                        byte b3 = c47Var2.c;
-                                        byte b4 = currentPosition2.c;
-                                        if (b3 != b4 || ((c47Var2.a == currentPosition2.a && c47Var2.b == currentPosition2.b && b3 == b4 && c47Var2.d == currentPosition2.d) || b3 != b4)) {
-                                            r8++;
-                                        } else {
-                                            round2 = hg9.f(4.0f, (int) Math.ceil(max2 * c47Var2.f), round2);
-                                        }
-                                    }
-                                }
-                                rect.bottom = -round2;
-                                break;
-                            } else {
-                                extraInsetHeight2 += (int) Math.ceil(r1[i2] * max2);
-                                i2++;
-                            }
-                        }
-                    }
-                }
-                break;
-            case 9:
-                rect.bottom = 0;
-                if ((view instanceof rc2) && (currentMessagesGroup3 = (rc2Var3 = (rc2) view).getCurrentMessagesGroup()) != null) {
-                    ArrayList arrayList3 = currentMessagesGroup3.e;
-                    c47 currentPosition3 = rc2Var3.getCurrentPosition();
-                    if (currentPosition3 != null && currentPosition3.m != null) {
-                        Point point3 = gm.q;
-                        float max3 = Math.max(point3.x, point3.y) * 0.5f;
-                        int extraInsetHeight3 = rc2Var3.getExtraInsetHeight();
-                        int i3 = 0;
-                        while (true) {
-                            if (i3 >= currentPosition3.m.length) {
-                                int round3 = (Math.round(gm.p * 7.0f) * (currentPosition3.d - currentPosition3.c)) + extraInsetHeight3;
-                                int size3 = arrayList3.size();
-                                while (true) {
-                                    if (r8 < size3) {
-                                        c47 c47Var3 = (c47) arrayList3.get(r8);
-                                        byte b5 = c47Var3.c;
-                                        byte b6 = currentPosition3.c;
-                                        if (b5 != b6 || ((c47Var3.a == currentPosition3.a && c47Var3.b == currentPosition3.b && b5 == b6 && c47Var3.d == currentPosition3.d) || b5 != b6)) {
-                                            r8++;
-                                        } else {
-                                            round3 = hg9.f(4.0f, (int) Math.ceil(max3 * c47Var3.f), round3);
-                                        }
-                                    }
-                                }
-                                rect.bottom = -round3;
-                                break;
-                            } else {
-                                extraInsetHeight3 += (int) Math.ceil(r1[i3] * max3);
-                                i3++;
-                            }
-                        }
-                    }
-                }
-                break;
-            case 10:
-                rect.bottom = 0;
-                if ((view instanceof rc2) && (currentMessagesGroup4 = (rc2Var4 = (rc2) view).getCurrentMessagesGroup()) != null) {
-                    ArrayList arrayList4 = currentMessagesGroup4.e;
-                    c47 currentPosition4 = rc2Var4.getCurrentPosition();
-                    if (currentPosition4 != null && currentPosition4.m != null) {
-                        Point point4 = gm.q;
-                        float max4 = Math.max(point4.x, point4.y) * 0.5f;
-                        int extraInsetHeight4 = rc2Var4.getExtraInsetHeight();
-                        int i4 = 0;
-                        while (true) {
-                            if (i4 >= currentPosition4.m.length) {
-                                int round4 = (Math.round(gm.p * 7.0f) * (currentPosition4.d - currentPosition4.c)) + extraInsetHeight4;
-                                int size4 = arrayList4.size();
-                                while (true) {
-                                    if (r8 < size4) {
-                                        c47 c47Var4 = (c47) arrayList4.get(r8);
-                                        byte b7 = c47Var4.c;
-                                        byte b8 = currentPosition4.c;
-                                        if (b7 != b8 || ((c47Var4.a == currentPosition4.a && c47Var4.b == currentPosition4.b && b7 == b8 && c47Var4.d == currentPosition4.d) || b7 != b8)) {
-                                            r8++;
-                                        } else {
-                                            round4 = hg9.f(4.0f, (int) Math.ceil(max4 * c47Var4.f), round4);
-                                        }
-                                    }
-                                }
-                                rect.bottom = -round4;
-                                break;
-                            } else {
-                                extraInsetHeight4 += (int) Math.ceil(r1[i4] * max4);
-                                i4++;
-                            }
-                        }
-                    }
-                }
-                break;
-            case 11:
-                b59 b59Var = (b59) recyclerView.T(view);
-                if (b59Var == null) {
-                    rect.left = gm.L(4.0f);
-                    rect.right = gm.L(4.0f);
-                    break;
-                } else {
-                    int b9 = b59Var.b() % 4;
-                    rect.left = b9 == 0 ? 0 : gm.L(4.0f);
-                    rect.right = b9 != 3 ? gm.L(4.0f) : 0;
-                    break;
-                }
-            case 12:
-                b59 b59Var2 = (b59) recyclerView.T(view);
-                if (b59Var2 == null) {
-                    rect.left = gm.L(4.0f);
-                    rect.right = gm.L(4.0f);
-                    break;
-                } else {
-                    int b10 = b59Var2.b() % 4;
-                    rect.left = b10 == 0 ? 0 : gm.L(4.0f);
-                    rect.right = b10 != 3 ? gm.L(4.0f) : 0;
-                    break;
-                }
-            case 13:
-                b59 b59Var3 = (b59) recyclerView.T(view);
-                if (b59Var3 == null) {
-                    rect.left = gm.L(4.0f);
-                    rect.right = gm.L(4.0f);
-                    break;
-                } else if (b59Var3.f == 5) {
-                    int b11 = b59Var3.b() % 4;
-                    rect.left = b11 == 0 ? 0 : gm.L(4.0f);
-                    rect.right = b11 != 3 ? gm.L(4.0f) : 0;
-                    break;
-                } else {
-                    rect.right = 0;
-                    rect.left = 0;
-                    break;
-                }
-            case 14:
-                rect.left = 0;
-                rect.right = 0;
-                rect.bottom = 0;
-                rect.top = 0;
-                break;
-            case 15:
-                int R2 = RecyclerView.R(view);
-                rect.left = gm.L(12.0f);
-                rect.top = 0;
-                rect.bottom = 0;
-                if (R2 == r69Var.b() - 1) {
-                    rect.right = gm.L(12.0f);
+                qla qlaVar = (qla) this.J;
+                Path path = (Path) this.I;
+                super.draw(canvas);
+                if (((pc2) this.K).h) {
+                    path.rewind();
+                    RectF rectF = gl.P;
+                    ImageReceiver imageReceiver = this.a;
+                    rectF.set(imageReceiver.L0, imageReceiver.M0, imageReceiver.w(), this.a.x());
+                    path.addRoundRect(rectF, gl.L(2.0f), gl.L(2.0f), Path.Direction.CW);
+                    canvas.save();
+                    canvas.clipPath(path);
+                    qlaVar.h(bm2.o(-1, 82));
+                    ImageReceiver imageReceiver2 = this.a;
+                    qlaVar.setBounds((int) imageReceiver2.L0, (int) imageReceiver2.M0, (int) imageReceiver2.w(), (int) this.a.x());
+                    qlaVar.draw(canvas);
+                    invalidate();
+                    canvas.restore();
                     break;
                 }
                 break;
             default:
-                super.d(rect, view, recyclerView, r69Var);
-                rect.top = 1;
+                super.draw(canvas);
                 break;
         }
     }
 
-    @Override // e69
-    public final void e(Canvas canvas, RecyclerView recyclerView) {
-        Canvas canvas2;
-        switch (this.a) {
-            case 16:
-                int width = recyclerView.getWidth();
-                int childCount = recyclerView.getChildCount();
-                int i = childCount - 1;
-                int i2 = 0;
-                while (i2 < i) {
-                    View childAt = recyclerView.getChildAt(i2);
-                    View childAt2 = i2 < childCount + (-2) ? recyclerView.getChildAt(i2 + 1) : null;
-                    if (RecyclerView.R(childAt) < 0 || (childAt instanceof l55) || (childAt2 instanceof l55)) {
-                        canvas2 = canvas;
-                    } else {
-                        float bottom = childAt.getBottom();
-                        canvas2 = canvas;
-                        canvas2.drawLine(jb6.a0 ? 0.0f : gm.L(72.0f), bottom, width - (jb6.a0 ? gm.L(72.0f) : 0), bottom, cmb.j0);
-                    }
-                    i2++;
-                    canvas = canvas2;
+    @Override // be0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.H) {
+            case 0:
+                float[] fArr = (float[]) this.K;
+                qla qlaVar = (qla) this.J;
+                Path path = (Path) this.I;
+                super.onDraw(canvas);
+                if (this.r) {
+                    canvas.save();
+                    RectF rectF = gl.P;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    int[] iArr = this.a.X0;
+                    float f = iArr[0];
+                    fArr[1] = f;
+                    fArr[0] = f;
+                    float f2 = iArr[1];
+                    fArr[3] = f2;
+                    fArr[2] = f2;
+                    float f3 = iArr[2];
+                    fArr[5] = f3;
+                    fArr[4] = f3;
+                    float f4 = iArr[3];
+                    fArr[7] = f4;
+                    fArr[6] = f4;
+                    path.rewind();
+                    path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                    canvas.clipPath(path);
+                    qlaVar.h(bm2.o(-1, 82));
+                    qlaVar.setBounds(0, 0, getWidth(), getHeight());
+                    qlaVar.draw(canvas);
+                    canvas.restore();
+                    invalidate();
+                    break;
+                }
+                break;
+            case 1:
+            default:
+                super.onDraw(canvas);
+                break;
+            case 2:
+                wd1 wd1Var = (wd1) this.J;
+                super.onDraw(canvas);
+                if (((q) this.K).o0) {
+                    float min = Math.min(getWidth(), getHeight()) * 0.5f;
+                    RectF rectF2 = gl.P;
+                    rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                    canvas.drawRoundRect(rectF2, min, min, (Paint) this.I);
+                    rectF2.inset(gl.L(1.0f), gl.L(1.0f));
+                    wd1Var.f = getWidth();
+                    wd1Var.a(min, canvas, rectF2, null);
+                    invalidate();
+                    break;
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ as1(Context context) {
+        super(context);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public as1(q qVar, Context context, Paint paint) {
+        super(context);
+        this.K = qVar;
+        this.I = paint;
+        this.J = new wd1();
     }
 }

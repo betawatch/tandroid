@@ -1,23 +1,43 @@
 // default package
 
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
+import android.view.View;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class qfc {
-    public final nf5 a = new nf5(27);
-    public final LinkedHashMap b = new LinkedHashMap();
-    public final LinkedHashSet c = new LinkedHashSet();
-    public volatile boolean d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class qfc implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hgc b;
+    public final /* synthetic */ VoIPService c;
 
-    public static void a(AutoCloseable autoCloseable) {
-        if (autoCloseable != null) {
-            try {
-                mlb.x(autoCloseable);
-            } catch (Exception e) {
-                rjb.m(e);
-            }
+    public /* synthetic */ qfc(hgc hgcVar, VoIPService voIPService, byte b) {
+        this.a = b;
+        this.b = hgcVar;
+        this.c = voIPService;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        VoIPService voIPService = this.c;
+        hgc hgcVar = this.b;
+        switch (b) {
+            case 0:
+                gl.c3(new sfc(hgcVar, (byte) 8));
+                int i = hgcVar.M;
+                if (i > 0) {
+                    voIPService.sendCallRating(i);
+                    break;
+                }
+                break;
+            default:
+                gl.c3(new sfc(hgcVar, (byte) 10));
+                int i2 = hgcVar.M;
+                if (i2 > 0) {
+                    voIPService.sendCallRating(i2);
+                    break;
+                }
+                break;
         }
     }
 }

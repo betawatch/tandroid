@@ -1,38 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class it1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ jt1 b;
+    public final /* synthetic */ wt1 b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ it1(jt1 jt1Var, byte b) {
+    public /* synthetic */ it1(wt1 wt1Var, TLRPC.Chat chat, byte b) {
         this.a = b;
-        this.b = jt1Var;
+        this.b = wt1Var;
+        this.c = chat;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        jt1 jt1Var = this.b;
+        TLRPC.Chat chat = this.c;
+        wt1 wt1Var = this.b;
         switch (b) {
             case 0:
-                ms1 ms1Var = jt1Var.I.a0;
-                if (ms1Var != null) {
-                    ms1Var.j1();
-                    break;
-                }
+                wt1Var.j(chat);
+                break;
+            case 1:
+                wt1Var.a(chat);
+                break;
+            case 2:
+                wt1Var.a.qa(chat);
                 break;
             default:
-                ms1 ms1Var2 = jt1Var.I.a0;
-                if (ms1Var2 != null) {
-                    ms1Var2.U0 = false;
-                    jz1 jz1Var = ms1Var2.V0;
-                    if (jz1Var != null) {
-                        jz1Var.s(false);
-                        break;
-                    }
-                }
+                u21.b0(wt1Var.a).Q(R.raw.contact_check, 36, k96.a0(null, null, 2131742573, chat.title)).k(true);
                 break;
         }
     }

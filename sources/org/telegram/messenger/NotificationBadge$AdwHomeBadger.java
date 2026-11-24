@@ -4,21 +4,21 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class NotificationBadge$AdwHomeBadger implements bm7 {
-    @Override // bm7
+public class NotificationBadge$AdwHomeBadger implements yj7 {
+    @Override // yj7
     public final void a(int i) {
         Intent intent = new Intent("org.adw.launcher.counter.SEND");
-        intent.putExtra("PNAME", dm7.d.getPackageName());
-        intent.putExtra("CNAME", dm7.d.getClassName());
+        intent.putExtra("PNAME", ak7.d.getPackageName());
+        intent.putExtra("CNAME", ak7.d.getClassName());
         intent.putExtra("COUNT", i);
-        if (dm7.a(intent)) {
-            gm.c3(new hl(intent, (byte) 1));
+        if (ak7.a(intent)) {
+            gl.c3(new hk(intent, (byte) 1));
         }
     }
 
-    @Override // bm7
+    @Override // yj7
     public final List b() {
         return Arrays.asList("org.adw.launcher", "org.adwfreak.launcher");
     }

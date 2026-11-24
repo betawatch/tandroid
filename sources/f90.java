@@ -1,35 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class f90 extends tz2 {
-    public final String a;
-    public final String b;
+public final class f90 {
+    public h90 a;
+    public String b;
+    public String c;
+    public long d;
+    public byte e;
 
-    public f90(String str, String str2) {
-        this.a = str;
-        this.b = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final g90 a() {
+        h90 h90Var;
+        String str;
+        String str2;
+        if (this.e == 1 && (h90Var = this.a) != null && (str = this.b) != null && (str2 = this.c) != null) {
+            return new g90(h90Var, str, str2, this.d);
         }
-        if (!(obj instanceof tz2)) {
-            return false;
+        StringBuilder sb = new StringBuilder();
+        if (this.a == null) {
+            sb.append(" rolloutVariant");
         }
-        f90 f90Var = (f90) ((tz2) obj);
-        return this.a.equals(f90Var.a) && this.b.equals(f90Var.b);
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("CustomAttribute{key=");
-        sb.append(this.a);
-        sb.append(", value=");
-        return b10.j(sb, this.b, "}");
+        if (this.b == null) {
+            sb.append(" parameterKey");
+        }
+        if (this.c == null) {
+            sb.append(" parameterValue");
+        }
+        if ((this.e & 1) == 0) {
+            sb.append(" templateVersion");
+        }
+        sc8.j(ir2.o("Missing required properties:", sb));
+        return null;
     }
 }

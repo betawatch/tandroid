@@ -1,29 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ea0 extends k03 {
-    public final String a;
+public final class ea0 {
+    public final long a;
+    public final ra0 b;
+    public final p90 c;
 
-    public ea0(String str) {
-        this.a = str;
+    public ea0(long j, ra0 ra0Var, p90 p90Var) {
+        this.a = j;
+        this.b = ra0Var;
+        this.c = p90Var;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof k03)) {
+        if (!(obj instanceof ea0)) {
             return false;
         }
-        return this.a.equals(((ea0) ((k03) obj)).a);
+        ea0 ea0Var = (ea0) obj;
+        return this.a == ea0Var.a && this.b.equals(ea0Var.b) && this.c.equals(ea0Var.c);
     }
 
     public final int hashCode() {
-        return 1000003 ^ this.a.hashCode();
+        long j = this.a;
+        return ((((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode();
     }
 
     public final String toString() {
-        return b10.j(new StringBuilder("Log{content="), this.a, "}");
+        return "PersistedEvent{id=" + this.a + ", transportContext=" + this.b + ", event=" + this.c + "}";
     }
 }

@@ -1,71 +1,29 @@
 // default package
 
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.net.Socket;
-import java.util.ArrayDeque;
-import java.util.TimerTask;
+import android.view.View;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class lx3 extends TimerTask {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class lx3 extends g4c {
+    public final /* synthetic */ mx3 e;
 
-    public /* synthetic */ lx3(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lx3(mx3 mx3Var, String str) {
+        super(str, (vib) null);
+        this.e = mx3Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        BasePendingResult basePendingResult;
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                gm.c3(new bi3(this, (byte) 28));
-                break;
-            case 1:
-                if (((pf6) obj).O != null) {
-                    gm.c3(new kg5(this, (byte) 29));
-                    break;
-                }
-                break;
-            case 2:
-                gm.c3(new kl7(this, (byte) 16));
-                break;
-            case 3:
-                try {
-                    Socket socket = ((q39) obj).a.a.g;
-                    if (socket != null) {
-                        socket.close();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
-            default:
-                xt6 xt6Var = (xt6) obj;
-                ArrayDeque arrayDeque = xt6Var.h;
-                if (!arrayDeque.isEmpty() && xt6Var.k == null && xt6Var.b != 0) {
-                    k89 k89Var = xt6Var.c;
-                    int[] e = qe1.e(arrayDeque);
-                    k89Var.getClass();
-                    ite.e("Must be called from the main thread.");
-                    if (k89Var.w()) {
-                        qbd qbdVar = new qbd(k89Var, e);
-                        k89.x(qbdVar);
-                        basePendingResult = qbdVar;
-                    } else {
-                        basePendingResult = k89.t();
-                    }
-                    xt6Var.k = basePendingResult;
-                    basePendingResult.i(new m7f(xt6Var, (byte) 1));
-                    arrayDeque.clear();
-                    break;
-                }
-                break;
-        }
+    @Override // g4c, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        mx3 mx3Var = this.e;
+        qx3 qx3Var = mx3Var.y;
+        Pattern pattern = qx3.P1;
+        na7 q1 = na7.q1(qx3Var.a);
+        String url = getURL();
+        qx3 qx3Var2 = mx3Var.y;
+        q1.A3(url, qx3Var2.m1, 1, null);
+        qx3Var2.G0();
+        qx3Var2.dismiss();
     }
 }

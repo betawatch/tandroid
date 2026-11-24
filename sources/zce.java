@@ -1,19 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class zce implements cq7 {
-    public static final zce a = new zce();
+public abstract class zce {
+    public static final byte[] a;
 
     static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+        Charset.forName("US-ASCII");
+        Charset.forName("UTF-8");
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        a = bArr;
+        ByteBuffer.wrap(bArr);
     }
 }

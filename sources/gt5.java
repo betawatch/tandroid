@@ -1,32 +1,24 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class gt5 extends na1 {
+    public final pt5 r;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class gt5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ht5 b;
-
-    public /* synthetic */ gt5(ht5 ht5Var, byte b) {
-        this.a = b;
-        this.b = ht5Var;
+    public gt5(fw2 fw2Var, pt5 pt5Var) {
+        super(1, fw2Var);
+        this.r = pt5Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        ht5 ht5Var = this.b;
-        switch (b) {
-            case 0:
-                ht5Var.e.X1 = null;
-                ht5Var.requestLayout();
-                break;
-            default:
-                ht5Var.e.X1 = null;
-                ht5Var.a = false;
-                break;
-        }
+    @Override // na1
+    public final Throwable p(pt5 pt5Var) {
+        Throwable c;
+        Object v = this.r.v();
+        return (!(v instanceof it5) || (c = ((it5) v).c()) == null) ? v instanceof fp2 ? ((fp2) v).a : pt5Var.getCancellationException() : c;
+    }
+
+    @Override // na1
+    public final String y() {
+        return "AwaitContinuation";
     }
 }

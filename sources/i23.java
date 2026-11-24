@@ -1,35 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Context;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i23 extends rs4 implements fs4 {
-    public final /* synthetic */ byte a;
+public final class i23 extends y13 {
+    public final Context e;
+    public o13 f;
+    public Executor g;
+    public CancellationSignal h;
+    public final x03 i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i23(int i, Object obj, Class cls, String str, String str2, int i2, byte b) {
-        super(i, obj, cls, str, str2, i2);
-        this.a = b;
-    }
-
-    @Override // fs4
-    public final Object invoke(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ((e33) this.receiver).getClass();
-                break;
-            case 1:
-                ((e33) this.receiver).getClass();
-                break;
-            case 2:
-                ((e33) this.receiver).getClass();
-                break;
-            case 3:
-                ((e33) this.receiver).getClass();
-                break;
-            default:
-                ((e33) this.receiver).getClass();
-                break;
-        }
-        return e33.b((String) obj, (String) obj2);
+    public i23(Context context) {
+        context.getClass();
+        this.e = context;
+        this.i = new x03(this, new Handler(Looper.getMainLooper()), (byte) 3);
     }
 }

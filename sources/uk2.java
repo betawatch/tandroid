@@ -1,187 +1,109 @@
 // default package
 
 import android.content.Context;
-import android.content.Intent;
-import android.text.Spannable;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import org.json.JSONObject;
-import org.telegram.messenger.voip.VoIPPreNotificationService;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.c;
-import org.telegram.utils.twidget.z;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.TextView;
+import j$.util.Objects;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uk2 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final class uk2 extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ uk2(dl2 dl2Var, long j, al2 al2Var, int i, boolean z, wm4 wm4Var) {
-        this.e = dl2Var;
-        this.c = j;
-        this.f = al2Var;
-        this.b = i;
-        this.d = z;
-        this.h = wm4Var;
+    static {
+        b4c.h(new uk2());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:84:0x018a A[Catch: all -> 0x01aa, TryCatch #0 {, blocks: (B:62:0x0133, B:64:0x013d, B:66:0x0149, B:68:0x0151, B:71:0x0158, B:73:0x015e, B:75:0x0168, B:81:0x0172, B:82:0x0179, B:84:0x018a, B:86:0x0193, B:88:0x0199, B:89:0x01a4, B:93:0x01a6), top: B:61:0x0133 }] */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0199 A[Catch: all -> 0x01aa, TryCatch #0 {, blocks: (B:62:0x0133, B:64:0x013d, B:66:0x0149, B:68:0x0151, B:71:0x0158, B:73:0x015e, B:75:0x0168, B:81:0x0172, B:82:0x0179, B:84:0x018a, B:86:0x0193, B:88:0x0199, B:89:0x01a4, B:93:0x01a6), top: B:61:0x0133 }] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z;
-        cyc cycVar;
-        TLRPC.User user;
-        switch (this.a) {
-            case 0:
-                dl2 dl2Var = (dl2) this.e;
-                long j = this.c;
-                al2 al2Var = (al2) this.f;
-                int i = this.b;
-                boolean z2 = this.d;
-                wm4 wm4Var = (wm4) this.h;
-                synchronized (el2.d) {
-                    Spannable spannable = (Spannable) dl2Var.a.get();
-                    if (spannable == null || dl2Var.b.get(Long.valueOf(j)) != al2Var) {
-                        return;
-                    }
-                    String str = al2Var.a;
-                    if (i <= spannable.length() && i == str.length()) {
-                        for (int i2 = 0; i2 < str.length(); i2++) {
-                            if (spannable.charAt(i2) == str.charAt(i2)) {
-                            }
-                        }
-                        z = true;
-                        if (z && !z2) {
-                            el2.a(spannable, i, (f26) wm4Var.b);
-                        }
-                        dl2Var.b.remove(Long.valueOf(j));
-                        if (dl2Var.b.isEmpty()) {
-                            el2.e.remove(dl2Var);
-                            if (spannable instanceof yk2) {
-                                ((yk2) spannable).a = true;
-                            }
-                        }
-                        if (z) {
-                            nm7.e().k(nm7.m4, new Object[0]);
-                        }
-                        return;
-                    }
-                    z = false;
-                    if (z) {
-                        el2.a(spannable, i, (f26) wm4Var.b);
-                    }
-                    dl2Var.b.remove(Long.valueOf(j));
-                    if (dl2Var.b.isEmpty()) {
-                    }
-                    if (z) {
-                    }
-                    return;
-                }
-            case 1:
-                VoIPPreNotificationService.lambda$show$1((Intent) this.e, (TL_phone.PhoneCall) this.f, (Context) this.h, this.b, this.c, this.d);
-                return;
-            default:
-                z zVar = (z) this.e;
-                int i3 = this.b;
-                long j2 = this.c;
-                JSONObject jSONObject = (JSONObject) this.f;
-                String str2 = (String) this.h;
-                boolean z3 = this.d;
-                if (zVar.A || (cycVar = zVar.R) == null) {
-                    return;
-                }
-                if (i3 != 19) {
-                    f8e f8eVar = cycVar.d;
-                    if (f8eVar == null) {
-                        cycVar.b(3, null, j2);
-                        return;
-                    }
-                    f8eVar.getClass();
-                    txc g = wxc.g(cycVar);
-                    if (g == null || !g.i || (z3 && !wxc.G(g))) {
-                        cycVar.b(3, null, j2);
-                        return;
-                    }
-                    TLRPC.TL_widgetQueryTypeData tL_widgetQueryTypeData = new TLRPC.TL_widgetQueryTypeData();
-                    tL_widgetQueryTypeData.with_wallet = z3;
-                    wxc.x(g, cycVar, j2, tL_widgetQueryTypeData, str2.getBytes(StandardCharsets.UTF_8));
-                    return;
-                }
-                if (cycVar.d == null) {
-                    cycVar.b(3, null, j2);
-                    return;
-                }
-                txc g2 = wxc.g(cycVar);
-                if (g2 != null) {
-                    long j3 = g2.n;
-                    if (j3 != 0) {
-                        user = oc7.r1(g2.b).W1(Long.valueOf(j3));
-                        d S = LaunchActivity.S();
-                        if (g2 != null || !wxc.G(g2) || user == null || !user.bot) {
-                            cycVar.b(5, null, j2);
-                            return;
-                        }
-                        if (S == null || S.getContext() == null) {
-                            cycVar.b(3, null, j2);
-                            return;
-                        }
-                        byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
-                        Context context = S.getContext();
-                        int i4 = g2.b;
-                        ylb resourceProvider = S.getResourceProvider();
-                        sxc sxcVar = new sxc(g2, cycVar, j2, bytes);
-                        ArrayList arrayList = k55.a;
-                        h55 h55Var = new h55(new boolean[]{false}, sxcVar);
-                        c C = c.C(i4);
-                        boolean[] zArr = {false};
-                        qu quVar = new qu((Object) zArr, (Object) context, i4, (Object) user, (Object) jSONObject, (Object) resourceProvider, (Object) h55Var, (byte) 7);
-                        if (C.M()) {
-                            quVar.run();
-                            return;
-                        }
-                        k55.a.add(quVar);
-                        C.x0(quVar);
-                        gm.d3(new if4((Object) quVar, (Object) zArr, (Object) h55Var, (byte) 17), 10000L);
-                        return;
-                    }
-                }
-                user = null;
-                d S2 = LaunchActivity.S();
-                if (g2 != null) {
-                }
-                cycVar.b(5, null, j2);
-                return;
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        vk2 vk2Var = (vk2) view;
+        boolean z2 = false;
+        vk2Var.setGrid(c4cVar.v == 1);
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) c4cVar.H;
+        TextView textView = vk2Var.d;
+        TextView textView2 = vk2Var.c;
+        be0 be0Var = vk2Var.b;
+        gl5 gl5Var = null;
+        if (TextUtils.isEmpty(nftitem.name)) {
+            textView2.setText(k96.M0(2131742933, null));
+        } else {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(nftitem.name);
+            int indexOf = nftitem.name.indexOf(35);
+            if (indexOf >= 0) {
+                spannableStringBuilder.setSpan(new tk2(), indexOf, spannableStringBuilder.length(), 33);
+            }
+            textView2.setText(spannableStringBuilder);
         }
+        String b2 = vk2.b(nftitem, "Model");
+        String b3 = vk2.b(nftitem, "Backdrop");
+        if (TextUtils.isEmpty(b2) || TextUtils.isEmpty(b3)) {
+            textView.setText(nftitem.description);
+        } else {
+            textView.setText(k96.V(null, null, 2131742931, b2, b3));
+        }
+        gl5 c = vk2.c(nftitem, !vk2Var.f);
+        int v0 = bkb.v0(bkb.x6, vk2Var.a);
+        Drawable mutate = vk2Var.getContext().getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.SRC_IN));
+        ShapeDrawable b0 = bkb.b0(gl.L(vk2Var.f ? 11.0f : 8.0f), bkb.p1(0.1f, v0));
+        fm2 fm2Var = new fm2(b0, mutate);
+        vk2Var.h = mutate;
+        vk2Var.n = b0;
+        vk2Var.r = v0;
+        if (c == null) {
+            be0Var.setImageDrawable(fm2Var);
+        } else if (vk2Var.f) {
+            if (nftitem.image_small != null && nftitem.image != null) {
+                gl5Var = vk2.c(nftitem, true);
+            }
+            be0Var.a.Z(c, "160_160", gl5Var, "100_100", fm2Var, 0L, null, nftitem, 0);
+            be0Var.e();
+        } else {
+            be0Var.m(c, "46_46", fm2Var, nftitem);
+        }
+        if (z && !vk2Var.f) {
+            z2 = true;
+        }
+        vk2Var.e = z2;
+        vk2Var.updateColors();
+        vk2Var.invalidate();
     }
 
-    public /* synthetic */ uk2(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i, long j, boolean z) {
-        this.e = intent;
-        this.f = phoneCall;
-        this.h = context;
-        this.b = i;
-        this.c = j;
-        this.d = z;
+    @Override // b4c
+    public final boolean c(c4c c4cVar, c4c c4cVar2) {
+        if (!e(c4cVar, c4cVar2)) {
+            return false;
+        }
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) c4cVar.H;
+        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) c4cVar2.H;
+        if (nftitem != nftitem2) {
+            return nftitem != null && nftitem2 != null && Objects.equals(nftitem.name, nftitem2.name) && Objects.equals(nftitem.image, nftitem2.image) && Objects.equals(nftitem.image_small, nftitem2.image_small) && Objects.equals(nftitem.description, nftitem2.description) && Objects.equals(nftitem.attributes, nftitem2.attributes) && Objects.equals(nftitem.extra, nftitem2.extra);
+        }
+        return true;
     }
 
-    public /* synthetic */ uk2(z zVar, int i, long j, JSONObject jSONObject, String str, boolean z) {
-        this.e = zVar;
-        this.b = i;
-        this.c = j;
-        this.f = jSONObject;
-        this.h = str;
-        this.d = z;
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new vk2(context, wjbVar);
+    }
+
+    @Override // b4c
+    public final boolean e(c4c c4cVar, c4c c4cVar2) {
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) c4cVar.H;
+        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) c4cVar2.H;
+        return (nftitem == null || nftitem2 == null) ? nftitem == nftitem2 : TextUtils.equals(nftitem.address, nftitem2.address);
+    }
+
+    @Override // b4c
+    public final boolean f() {
+        return true;
     }
 }

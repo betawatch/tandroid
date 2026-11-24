@@ -1,31 +1,34 @@
 // default package
 
-import android.widget.FrameLayout;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface fd1 {
-    kd1 A();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class fd1 implements b38 {
+    public final /* synthetic */ byte a;
 
-    long E();
+    public /* synthetic */ fd1(byte b) {
+        this.a = b;
+    }
 
-    FrameLayout G();
-
-    long K();
-
-    long N();
-
-    void P(kd1 kd1Var);
-
-    void R(long j);
-
-    void S(w44 w44Var);
-
-    void o(boolean z);
-
-    FrameLayout q();
-
-    ylb t();
-
-    kd1 u();
+    @Override // b38
+    public final void a(Status status) {
+        switch (this.a) {
+            case 0:
+                fo.b.decrementAndGet();
+                break;
+            case 1:
+                fo.b.decrementAndGet();
+                break;
+            case 2:
+                fo.b.decrementAndGet();
+                break;
+            case 3:
+                fo.b.decrementAndGet();
+                break;
+            default:
+                fo.b.decrementAndGet();
+                break;
+        }
+    }
 }

@@ -1,29 +1,30 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ke0 implements Parcelable {
-    public static final Parcelable.Creator<ke0> CREATOR = new f41((byte) 5);
-    public final ArrayList a;
-    public final ArrayList b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ke0 extends k26 {
+    public final wjb q;
+    public final Paint r;
+    public int s;
 
-    public ke0(Parcel parcel) {
-        this.a = parcel.createStringArrayList();
-        this.b = parcel.createTypedArrayList(je0.CREATOR);
+    public ke0(ek1 ek1Var, wjb wjbVar) {
+        super(ek1Var, false, null);
+        Paint paint = new Paint();
+        this.r = paint;
+        this.s = 0;
+        this.q = wjbVar;
+        Paint paint2 = this.c;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint.setStyle(style);
+        this.c.setAntiAlias(false);
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeStringList(this.a);
-        parcel.writeTypedList(this.b);
+    @Override // k26
+    public final void a() {
+        super.a();
+        this.s = bm2.f(0.3f, bkb.v0(bkb.c6, this.q), this.m);
     }
 }

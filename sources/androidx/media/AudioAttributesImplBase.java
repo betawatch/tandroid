@@ -2,7 +2,7 @@ package androidx.media;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -70,7 +70,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
             } else if (i == 7) {
                 i3 |= 1;
             }
-            if (i2 == (i3 & nm7.v4) && this.a == audioAttributesImplBase.a && this.d == i4) {
+            if (i2 == (i3 & kk7.v4) && this.a == audioAttributesImplBase.a && this.d == i4) {
                 return true;
             }
         }
@@ -140,7 +140,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = hg9.j(i, "unknown usage ");
+                str = de9.k(i, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";

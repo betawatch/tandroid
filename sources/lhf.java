@@ -1,51 +1,88 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.RemoteException;
+import com.google.android.gms.cast.CastDevice;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class lhf extends h9f {
-    public static final lhf r = new lhf(0, new Object[0]);
-    public final transient Object[] h;
-    public final transient int n;
+public final class lhf extends xx4 {
+    public static final dc6 I = new dc6("CastClientImplCxless", null);
+    public final CastDevice F;
+    public final Bundle G;
+    public final String H;
 
-    public lhf(int i, Object[] objArr) {
-        super((byte) 2);
-        this.h = objArr;
-        this.n = i;
+    public lhf(Context context, Looper looper, ntb ntbVar, CastDevice castDevice, Bundle bundle, String str, ey4 ey4Var, fy4 fy4Var) {
+        super(10, ey4Var, fy4Var, ntbVar, context, looper);
+        this.F = castDevice;
+        this.G = bundle;
+        this.H = str;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        s3f.a(i, this.n);
-        Object obj = this.h[i];
-        obj.getClass();
-        return obj;
+    @Override // gg0
+    public final /* synthetic */ IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.internal.ICastDeviceController");
+        return queryLocalInterface instanceof x6d ? (x6d) queryLocalInterface : new x6d(iBinder);
     }
 
-    @Override // h9f, zad
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.h;
-        int i = this.n;
-        System.arraycopy(objArr2, 0, objArr, 0, i);
-        return i;
+    @Override // gg0
+    public final void c() {
+        try {
+            try {
+                ((x6d) k()).Z();
+            } finally {
+                super.c();
+            }
+        } catch (RemoteException | IllegalStateException e) {
+            I.a(e, "Error while disconnecting the controller interface", new Object[0]);
+        }
     }
 
-    @Override // zad
+    @Override // gg0
+    public final f84[] f() {
+        return ied.e;
+    }
+
+    @Override // gg0
+    public final Bundle h() {
+        Bundle bundle = new Bundle();
+        I.b("getRemoteService()", new Object[0]);
+        CastDevice castDevice = this.F;
+        castDevice.getClass();
+        bundle.putParcelable("com.google.android.gms.cast.EXTRA_CAST_DEVICE", castDevice);
+        bundle.putLong("com.google.android.gms.cast.EXTRA_CAST_FLAGS", 0L);
+        bundle.putString("connectionless_client_record_id", this.H);
+        Bundle bundle2 = this.G;
+        if (bundle2 != null) {
+            bundle.putAll(bundle2);
+        }
+        return bundle;
+    }
+
+    @Override // gg0
     public final int i() {
-        return this.n;
+        return 19390000;
     }
 
-    @Override // zad
-    public final int j() {
-        return 0;
+    @Override // gg0
+    public final String l() {
+        return "com.google.android.gms.cast.internal.ICastDeviceController";
     }
 
-    @Override // zad
-    public final Object[] k() {
-        return this.h;
+    @Override // gg0
+    public final String n() {
+        return "com.google.android.gms.cast.service.BIND_CAST_DEVICE_CONTROLLER_SERVICE";
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.n;
+    @Override // gg0
+    public final boolean x() {
+        return true;
     }
 }

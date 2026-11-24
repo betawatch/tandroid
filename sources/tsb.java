@@ -1,25 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum tsb extends rub {
-    public tsb() {
-        super("ScriptDataEscapedEndTagOpen", 25);
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class tsb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ usb b;
+
+    public /* synthetic */ tsb(usb usbVar, byte b) {
+        this.a = b;
+        this.b = usbVar;
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        if (!hl1Var.o()) {
-            bsbVar.h("</");
-            bsbVar.c = rub.L;
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        usb usbVar = this.b;
+        switch (b) {
+            case 0:
+                usbVar.b.s.setVisibility(8);
+                break;
+            default:
+                usbVar.b.a.setVisibility(8);
+                break;
         }
-        bsbVar.d(false);
-        wrb wrbVar = bsbVar.i;
-        char i = hl1Var.i();
-        wrbVar.getClass();
-        wrbVar.y(String.valueOf(i));
-        bsbVar.h.append(hl1Var.i());
-        bsbVar.a(rub.Q);
     }
 }

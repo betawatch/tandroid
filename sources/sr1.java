@@ -1,82 +1,67 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class sr1 implements id2 {
-    public final /* synthetic */ yv1 a;
+public final class sr1 extends t09 {
+    public final int[] n1;
+    public ValueAnimator o1;
+    public boolean p1;
+    public final /* synthetic */ mu1 q1;
 
-    public sr1(yv1 yv1Var) {
-        this.a = yv1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sr1(mu1 mu1Var, mu1 mu1Var2, Activity activity, int i, wjb wjbVar) {
+        super(3, i, wjbVar, activity, mu1Var2);
+        this.q1 = mu1Var;
+        this.n1 = new int[2];
+        this.p1 = true;
     }
 
-    @Override // id2
-    public final void dismiss() {
-        this.a.j0.U(null, null);
-    }
-
-    @Override // id2
-    public final void p() {
-        yv1 yv1Var = this.a;
-        yv1Var.Hc(true);
-        c41.A(yv1Var, yv1Var.getMessagesController().o2(yv1Var.l6, yv1Var.d(), null), yv1Var.Ba).j();
-    }
-
-    @Override // id2
-    public final void r() {
-        yv1 yv1Var = this.a;
-        if (yv1Var.l6 == 0 || yv1Var.g4 == 3) {
-            return;
-        }
-        if (yv1Var.f != null) {
-            yv1Var.getMessagesController().c4(yv1Var.f, true, false);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("dialog_id", yv1Var.l6);
-        if (yv1Var.d() != 0) {
-            bundle.putLong("topic_id", yv1Var.d());
-        }
-        yv1Var.presentFragment(new st8(bundle, yv1Var.Ba));
-    }
-
-    @Override // id2
-    public final void s() {
-        int i;
-        yv1 yv1Var = this.a;
-        i = ((d) yv1Var).currentAccount;
-        SharedPreferences sharedPreferences = oc7.r1(i).W3;
-        boolean z = sharedPreferences.getBoolean("sound_enabled_" + lo7.p(yv1Var.l6, yv1Var.d(), false), true);
-        boolean z2 = !z;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + lo7.p(yv1Var.l6, yv1Var.d(), false), z2).apply();
-        if (c41.a(yv1Var)) {
-            c41.S(z ? 1 : 0, yv1Var.getResourceProvider(), yv1Var).j();
-        }
-        yv1Var.yd(false);
-    }
-
-    @Override // id2
-    public final void t(int i) {
-        yv1 yv1Var = this.a;
-        if (i != 0) {
-            yv1Var.getNotificationsController().H(yv1Var.l6, i, yv1Var.d());
-            if (c41.a(yv1Var)) {
-                c41.z(yv1Var, 5, i, yv1Var.getResourceProvider()).j();
-                return;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        a aVar;
+        super.onLayout(z, i, i2, i3, i4);
+        aVar = ((d) this.q1).actionBar;
+        r7 j = aVar.q(null).j(28);
+        if (j != null) {
+            int[] iArr = this.n1;
+            getLocationInWindow(iArr);
+            float x = getX();
+            float width = getWidth() + x;
+            j.getLocationInWindow(iArr);
+            float width2 = (j.getWidth() / 2.0f) + iArr[0];
+            int L = gl.L(20.0f);
+            boolean z2 = k96.a0;
+            float f = width2 + (L * (z2 ? -1 : 1));
+            boolean z3 = this.p1;
+            if (z2) {
+                q(!z3, f - x);
+            } else {
+                q(!z3, f - width);
             }
-            return;
-        }
-        if (yv1Var.getMessagesController().o2(yv1Var.l6, yv1Var.d(), null)) {
-            yv1Var.Hc(true);
-        }
-        if (c41.a(yv1Var)) {
-            c41.z(yv1Var, 4, i, yv1Var.getResourceProvider()).j();
+            this.p1 = false;
         }
     }
 
-    @Override // id2
-    public final void h() {
+    public final void q(boolean z, float f) {
+        ValueAnimator valueAnimator = this.o1;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.o1 = null;
+        }
+        if (!z) {
+            setBubbleOffset(f);
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.V0, f);
+        this.o1 = ofFloat;
+        ofFloat.addUpdateListener(new f0(this, (byte) 28));
+        this.o1.setInterpolator(s33.h);
+        this.o1.setDuration(420L);
+        this.o1.start();
     }
 }

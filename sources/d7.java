@@ -2,21 +2,21 @@
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class d7 extends kk2 {
+public final class d7 extends wi2 {
     public final /* synthetic */ byte h;
     public final /* synthetic */ Object i;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(s24 s24Var) {
+    public d7(h14 h14Var) {
         super(1.25f);
         this.h = (byte) 2;
-        this.i = s24Var;
-        this.f = gm.L(7.0f);
+        this.i = h14Var;
+        this.f = gl.L(7.0f);
     }
 
-    @Override // kk2
+    @Override // wi2
     public final int a() {
         byte b = this.h;
         Object obj = this.i;
@@ -24,13 +24,13 @@ public final class d7 extends kk2 {
             case 0:
                 return ((r7) obj).c.b.s0;
             case 1:
-                return cmb.v0(cmb.Af, (ylb) obj);
+                return bkb.v0(bkb.Af, (wjb) obj);
             case 2:
-                return cmb.v0(cmb.Af, ((s24) obj).H.a2);
+                return bkb.v0(bkb.Af, ((h14) obj).H.a2);
             case 3:
-                return cmb.v0(cmb.P5, ((lu9) obj).e);
+                return bkb.v0(bkb.P5, ((js9) obj).e);
             default:
-                return cmb.v0(cmb.Af, ((ny9) obj).G.a1);
+                return bkb.v0(bkb.Af, ((lw9) obj).G.a1);
         }
     }
 
@@ -40,18 +40,18 @@ public final class d7 extends kk2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(ylb ylbVar) {
+    public d7(wjb wjbVar) {
         super(1.25f);
         this.h = (byte) 1;
-        this.i = ylbVar;
-        this.f = gm.L(7.0f);
+        this.i = wjbVar;
+        this.f = gl.L(7.0f);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(ny9 ny9Var) {
+    public d7(lw9 lw9Var) {
         super(1.25f);
         this.h = (byte) 4;
-        this.i = ny9Var;
-        this.f = gm.L(7.0f);
+        this.i = lw9Var;
+        this.f = gl.L(7.0f);
     }
 }

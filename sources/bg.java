@@ -1,49 +1,64 @@
 // default package
 
-import android.view.View;
-import android.widget.LinearLayout;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bg implements View.OnClickListener {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int[] c;
+public final /* synthetic */ class bg implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ bg(LinearLayout linearLayout, int[] iArr) {
-        this.b = linearLayout;
+    public /* synthetic */ bg(int i, int[] iArr, hb5 hb5Var) {
+        this.a = (byte) 1;
+        this.b = i;
         this.c = iArr;
+        this.d = hb5Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         byte b = this.a;
-        int[] iArr = this.c;
-        LinearLayout linearLayout = this.b;
+        Object obj = this.d;
+        int i = this.b;
+        Object obj2 = this.c;
         switch (b) {
             case 0:
-                iArr[0] = ((Integer) view.getTag()).intValue();
-                int childCount = linearLayout.getChildCount();
-                for (int i = 0; i < childCount; i++) {
-                    View childAt = linearLayout.getChildAt(i);
-                    if (childAt instanceof x09) {
-                        ((x09) childAt).c.a(childAt == view, true);
+                vm1 vm1Var = (vm1) obj;
+                for (int i2 : (int[]) obj2) {
+                    if (i2 != 0) {
+                        ConnectionsManager.getInstance(i).cancelRequest(i2, true);
                     }
+                }
+                if (vm1Var != null) {
+                    vm1Var.run();
+                    break;
+                }
+                break;
+            case 1:
+                hb5 hb5Var = (hb5) obj;
+                String str = LaunchActivity.C1;
+                ConnectionsManager.getInstance(i).cancelRequest(((int[]) obj2)[0], true);
+                if (hb5Var != null) {
+                    hb5Var.run();
+                    break;
                 }
                 break;
             default:
-                int childCount2 = linearLayout.getChildCount();
-                for (int i2 = 0; i2 < childCount2; i2++) {
-                    x09 x09Var = (x09) linearLayout.getChildAt(i2);
-                    x09Var.c.a(x09Var == view, true);
-                }
-                iArr[0] = djb.f[((Integer) view.getTag()).intValue()];
+                ((na7) obj2).getConnectionsManager().cancelRequest(i, true);
+                ((d) obj).setVisibleDialog(null);
                 break;
         }
     }
 
-    public /* synthetic */ bg(int[] iArr, LinearLayout linearLayout) {
-        this.c = iArr;
-        this.b = linearLayout;
+    public /* synthetic */ bg(Object obj, int i, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
     }
 }

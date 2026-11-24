@@ -1,31 +1,30 @@
 // default package
 
-import android.os.Build;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yz9 implements py4, oy4 {
-    public final /* synthetic */ zz9 a;
+public final class yz9 {
+    public final byte a;
+    public final TL_stories.StoryView b;
+    public final TL_stories.StoryReaction c;
 
-    public /* synthetic */ yz9(zz9 zz9Var) {
-        this.a = zz9Var;
+    public yz9(TL_stories.StoryView storyView) {
+        this.a = (byte) 1;
+        this.b = storyView;
+        this.c = null;
     }
 
-    @Override // py4
-    public final int i() {
-        return cmb.v0(cmb.c6, this.a.J0);
+    /* JADX WARN: Multi-variable type inference failed */
+    public yz9(int i) {
+        this.a = i;
+        this.b = null;
+        this.c = null;
     }
 
-    @Override // oy4
-    public final void s(int i) {
-        zz9 zz9Var = this.a;
-        mr3 mr3Var = zz9Var.g2;
-        if (Build.VERSION.SDK_INT < 31 || mr3Var == null) {
-            return;
-        }
-        if (iqd.a(i, 4)) {
-            mr3Var.h(zz9Var.X0.e());
-        }
-        mr3Var.e(zz9Var.i2, zz9Var.b.getWidth(), zz9Var.b.getHeight());
+    public yz9(TL_stories.StoryReaction storyReaction) {
+        this.a = (byte) 1;
+        this.b = null;
+        this.c = storyReaction;
     }
 }

@@ -1,342 +1,236 @@
 // default package
 
-import android.content.Context;
-import android.media.AudioManager;
-import android.os.Handler;
-import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stories;
-import org.webrtc.MediaStreamTrack;
-import org.webrtc.VideoSink;
-import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class oo9 extends s96 implements AudioManager.OnAudioFocusChangeListener {
-    public boolean O;
-    public NativeInstance P;
-    public final lo9 Q;
-    public boolean R;
-    public long S;
-    public boolean T;
-    public final HashSet U;
-    public bq9 V;
-    public cq9 W;
-    public boolean X;
-    public f11 Y;
-    public volatile boolean Z;
-    public String a0;
-    public VideoSink b0;
+public final class oo9 extends gw2 implements ik4 {
+    public final ik4 a;
+    public final sw2 b;
+    public final int c;
+    public sw2 d;
+    public fw2 e;
 
-    public oo9(Context context, int i, TL_stories.StoryItem storyItem, long j, int i2, boolean z, TLRPC.InputGroupCall inputGroupCall, boolean z2, boolean z3) {
-        super(context, i, storyItem, j, i2, z, inputGroupCall, z2);
-        this.O = false;
-        this.U = new HashSet();
-        this.R = z3;
-        lo9 lo9Var = new lo9(this);
-        this.Q = lo9Var;
-        if (z2) {
-            this.S = NativeInstance.createVideoCapturer(lo9Var, z3 ? 1 : 0);
-        }
-        I();
+    public oo9(ik4 ik4Var, sw2 sw2Var) {
+        super(ep2.c, z14.a);
+        this.a = ik4Var;
+        this.b = sw2Var;
+        this.c = ((Number) sw2Var.fold(0, new dm2((byte) 5))).intValue();
     }
 
-    public static NativeInstance.SsrcGroup[] J(TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo) {
-        if (tL_groupCallParticipantVideo.source_groups.isEmpty()) {
-            return null;
+    @Override // ik4
+    public final Object c(Object obj, fw2 fw2Var) {
+        try {
+            Object d = d(fw2Var, obj);
+            return d == bx2.a ? d : g5c.a;
+        } catch (Throwable th) {
+            this.d = new dq3(fw2Var.getContext(), th);
+            throw th;
         }
-        int size = tL_groupCallParticipantVideo.source_groups.size();
-        NativeInstance.SsrcGroup[] ssrcGroupArr = new NativeInstance.SsrcGroup[size];
-        for (int i = 0; i < size; i++) {
-            ssrcGroupArr[i] = new NativeInstance.SsrcGroup();
-            TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = tL_groupCallParticipantVideo.source_groups.get(i);
-            NativeInstance.SsrcGroup ssrcGroup = ssrcGroupArr[i];
-            ssrcGroup.semantics = tL_groupCallParticipantVideoSourceGroup.semantics;
-            ssrcGroup.ssrcs = new int[tL_groupCallParticipantVideoSourceGroup.sources.size()];
-            int i2 = 0;
-            while (true) {
-                int[] iArr = ssrcGroupArr[i].ssrcs;
-                if (i2 < iArr.length) {
-                    iArr[i2] = tL_groupCallParticipantVideoSourceGroup.sources.get(i2).intValue();
-                    i2++;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0193 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object d(fw2 fw2Var, Object obj) {
+        List list;
+        Comparable comparable;
+        String str;
+        sw2 context = fw2Var.getContext();
+        nle.a(context);
+        sw2 sw2Var = this.d;
+        if (sw2Var != context) {
+            int i = 0;
+            if (sw2Var instanceof dq3) {
+                String str2 = "\n            Flow exception transparency is violated:\n                Previous 'emit' call has thrown exception " + ((dq3) sw2Var).b + ", but then emission attempt of value '" + obj + "' has been detected.\n                Emissions from 'catch' blocks are prohibited in order to avoid unspecified behaviour, 'Flow.catch' operator can be used instead.\n                For a more detailed explanation, please refer to Flow documentation.\n            ";
+                x26 x26Var = new x26(str2);
+                if (x26Var.hasNext()) {
+                    Object next = x26Var.next();
+                    if (x26Var.hasNext()) {
+                        ArrayList arrayList = new ArrayList();
+                        arrayList.add(next);
+                        while (x26Var.hasNext()) {
+                            arrayList.add(x26Var.next());
+                        }
+                        list = arrayList;
+                    } else {
+                        list = zk2.a(next);
+                    }
+                } else {
+                    list = c24.a;
                 }
-            }
-        }
-        return ssrcGroupArr;
-    }
-
-    @Override // s96
-    public final void D(boolean z) {
-        if (!this.n || this.O == z) {
-            return;
-        }
-        this.O = z;
-        NativeInstance nativeInstance = this.P;
-        if (nativeInstance != null) {
-            nativeInstance.setMuteMicrophone(z);
-        }
-    }
-
-    @Override // s96
-    public final void H() {
-        if (this.n) {
-            long j = this.S;
-            boolean z = !this.R;
-            this.R = z;
-            NativeInstance.switchCameraCapturer(j, z);
-        }
-    }
-
-    public final void I() {
-        WebRtcAudioTrack.setAudioTrackUsageAttribute(1);
-        WebRtcAudioTrack.setAudioStreamType(TLObject.FLAG_31);
-        AudioManager audioManager = (AudioManager) this.d.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (this.h) {
-            audioManager.setMode(0);
-            audioManager.setBluetoothScoOn(false);
-        } else if (this.n) {
-            audioManager.setMode(3);
-            this.T = audioManager.requestAudioFocus(this, 0, 2) == 1;
-            VoipAudioManager voipAudioManager = VoipAudioManager.get();
-            audioManager.setBluetoothScoOn(false);
-            voipAudioManager.setSpeakerphoneOn(true);
-        }
-    }
-
-    public final void K(NativeInstance.SsrcGroup[] ssrcGroupArr) {
-        int i = 0;
-        while (true) {
-            if (i >= (ssrcGroupArr == null ? 0 : ssrcGroupArr.length)) {
-                break;
-            }
-            int i2 = 0;
-            while (true) {
-                int[] iArr = ssrcGroupArr[i].ssrcs;
-                if (i2 < iArr.length) {
-                    this.U.add(Integer.valueOf(iArr[i2]));
-                    i2++;
+                List list2 = list;
+                ArrayList arrayList2 = new ArrayList();
+                for (Object obj2 : list2) {
+                    if (!f9b.h((String) obj2)) {
+                        arrayList2.add(obj2);
+                    }
                 }
+                ArrayList arrayList3 = new ArrayList(al2.c(arrayList2, 10));
+                int size = arrayList2.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj3 = arrayList2.get(i2);
+                    i2++;
+                    String str3 = (String) obj3;
+                    int length = str3.length();
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= length) {
+                            i3 = -1;
+                            break;
+                        }
+                        char charAt = str3.charAt(i3);
+                        if (!Character.isWhitespace(charAt) && !Character.isSpaceChar(charAt)) {
+                            break;
+                        }
+                        i3++;
+                    }
+                    if (i3 == -1) {
+                        i3 = str3.length();
+                    }
+                    arrayList3.add(Integer.valueOf(i3));
+                }
+                Iterator it = arrayList3.iterator();
+                if (it.hasNext()) {
+                    comparable = (Comparable) it.next();
+                    while (it.hasNext()) {
+                        Comparable comparable2 = (Comparable) it.next();
+                        if (comparable.compareTo(comparable2) > 0) {
+                            comparable = comparable2;
+                        }
+                    }
+                } else {
+                    comparable = null;
+                }
+                Integer num = (Integer) comparable;
+                int intValue = num != null ? num.intValue() : 0;
+                int length2 = str2.length();
+                list.size();
+                int size2 = list.size() - 1;
+                ArrayList arrayList4 = new ArrayList();
+                for (Object obj4 : list2) {
+                    int i4 = i + 1;
+                    if (i < 0) {
+                        throw new ArithmeticException("Index overflow has happened.");
+                    }
+                    String str4 = (String) obj4;
+                    if ((i != 0 && i != size2) || !f9b.h(str4)) {
+                        str4.getClass();
+                        if (intValue >= 0) {
+                            int length3 = str4.length();
+                            if (intValue <= length3) {
+                                length3 = intValue;
+                            }
+                            str = str4.substring(length3);
+                            if (str == null) {
+                                arrayList4.add(str);
+                            }
+                            i = i4;
+                        } else {
+                            v0b.a(tb4.n(intValue, "Requested character count ", " is less than zero."));
+                        }
+                    }
+                    str = null;
+                    if (str == null) {
+                    }
+                    i = i4;
+                }
+                StringBuilder sb = new StringBuilder(length2);
+                yk2.e(arrayList4, sb, "\n", "", "", "...", null);
+                throw new IllegalStateException(sb.toString().toString());
             }
-            i++;
-        }
-        if (this.w) {
-            return;
-        }
-        a();
-    }
-
-    public final void L(VideoSink videoSink) {
-        if (this.b0 == videoSink) {
-            return;
-        }
-        this.b0 = videoSink;
-        this.Q.setTarget(videoSink);
-    }
-
-    public final void M() {
-        f11 f11Var = this.Y;
-        if (f11Var != null) {
-            f11Var.k();
-            this.Y = null;
-        }
-        this.Z = false;
-        if (this.P != null) {
-            mp3 mp3Var = Utilities.e;
-            NativeInstance nativeInstance = this.P;
-            Objects.requireNonNull(nativeInstance);
-            mp3Var.c(new ko9(nativeInstance, (byte) 0));
-            this.U.clear();
-            this.P = null;
-        }
-        bq9 bq9Var = this.V;
-        if (bq9Var != null) {
-            cq9 cq9Var = this.W;
-            f8c f8cVar = cq9Var != null ? new f8c(cq9Var, (byte) 21) : null;
-            if (!bq9Var.b.post(new up9(bq9Var, f8cVar, (byte) 1)) && f8cVar != null) {
-                f8cVar.run();
+            if (((Number) context.fold(0, new eq4() { // from class: ro9
+                /* JADX WARN: Code restructure failed: missing block: B:26:0x002e, code lost:
+                
+                    if (r4 != null) goto L15;
+                 */
+                @Override // eq4
+                /*
+                    Code decompiled incorrectly, please refer to instructions dump.
+                */
+                public final Object invoke(Object obj5, Object obj6) {
+                    int intValue2 = ((Integer) obj5).intValue();
+                    qw2 qw2Var = (qw2) obj6;
+                    rw2 key = qw2Var.getKey();
+                    qw2 qw2Var2 = oo9.this.b.get(key);
+                    if (key != pd5.c) {
+                        if (qw2Var != qw2Var2) {
+                            intValue2 = TLObject.FLAG_31;
+                        }
+                        intValue2++;
+                    } else {
+                        bt5 bt5Var = (bt5) qw2Var2;
+                        bt5 bt5Var2 = (bt5) qw2Var;
+                        while (true) {
+                            if (bt5Var2 != null) {
+                                if (bt5Var2 == bt5Var || !(bt5Var2 instanceof rq9)) {
+                                    break;
+                                }
+                                fg2 fg2Var = (fg2) ex.a.getObjectVolatile((rq9) bt5Var2, pt5.a);
+                                bt5Var2 = fg2Var != null ? fg2Var.getParent() : null;
+                            } else {
+                                bt5Var2 = null;
+                                break;
+                            }
+                        }
+                        if (bt5Var2 != bt5Var) {
+                            throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + bt5Var2 + ", expected child of " + bt5Var + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
+                        }
+                    }
+                    return Integer.valueOf(intValue2);
+                }
+            })).intValue() != this.c) {
+                throw new IllegalStateException(("Flow invariant is violated:\n\t\tFlow was collected in " + this.b + ",\n\t\tbut emission happened in " + context + ".\n\t\tPlease refer to 'flow' documentation or use 'flowOn' instead").toString());
             }
-            this.V = null;
-            this.W = null;
+            this.d = context;
         }
-        this.X = false;
+        this.e = fw2Var;
+        gq4 gq4Var = qo9.a;
+        ik4 ik4Var = this.a;
+        ik4Var.getClass();
+        Object a = gq4Var.a(ik4Var, obj, this);
+        if (!rp5.a(a, bx2.a)) {
+            this.e = null;
+        }
+        return a;
     }
 
-    public final void N() {
-        if (this.Y == null) {
-            return;
+    @Override // of0, cx2
+    public final cx2 getCallerFrame() {
+        fw2 fw2Var = this.e;
+        if (fw2Var instanceof cx2) {
+            return (cx2) fw2Var;
         }
-        ArrayList arrayList = new ArrayList();
-        String str = this.a0;
-        if (str != null) {
-            arrayList.add(new t01(str, 2));
-        }
-        f11 f11Var = this.Y;
-        f11Var.getClass();
-        f11Var.b.post(new x30(f11Var, new ArrayList(arrayList), (byte) 26));
+        return null;
     }
 
-    @Override // s96
-    public final void a() {
-        bq9 bq9Var = this.V;
-        if (bq9Var != null) {
-            bq9Var.b.post(new ku(bq9Var, this.H, (byte) 5));
-        }
-        if (this.P != null) {
-            Iterator it = this.U.iterator();
-            while (it.hasNext()) {
-                this.P.setVolume(((Integer) it.next()).intValue(), this.H);
-            }
-        }
+    @Override // gw2, fw2
+    public final sw2 getContext() {
+        sw2 sw2Var = this.d;
+        return sw2Var == null ? z14.a : sw2Var;
     }
 
-    @Override // s96
-    public final boolean b() {
-        TLRPC.GroupCall groupCall;
-        return (this.w || this.n || !this.r || s96.N != null || (groupCall = this.s) == null || groupCall.rtmp_stream || !groupCall.creator) ? false : true;
+    @Override // of0
+    public final StackTraceElement getStackTraceElement() {
+        return null;
     }
 
-    @Override // s96
-    public final boolean c() {
-        return this.P != null;
-    }
-
-    @Override // s96
-    public final void d() {
-        L(null);
-    }
-
-    @Override // s96
-    public final void f() {
-        if (this.n) {
-            return;
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        Throwable a = ta9.a(obj);
+        if (a != null) {
+            this.d = new dq3(getContext(), a);
         }
-        String[] strArr = {"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
-        use.b(strArr, strArr, new eg9(this, (byte) 1));
-    }
-
-    @Override // s96
-    public final void n() {
-        if (this.w) {
-            return;
+        fw2 fw2Var = this.e;
+        if (fw2Var != null) {
+            fw2Var.resumeWith(obj);
         }
-        NativeInstance makeGroup = NativeInstance.makeGroup(sic.d("live_" + this.f.id), 0L, false, gda.E0, new io9(this), new i98((byte) 28), new io9(this), false);
-        this.P = makeGroup;
-        makeGroup.setBroadcastStateCallback(new jo9(this, makeGroup));
-        this.P.setOnStateUpdatedListener(new mo9(this));
-        this.P.resetGroupInstance(false, false);
-    }
-
-    @Override // s96
-    public final boolean r() {
-        return this.n && this.O;
-    }
-
-    @Override // s96
-    public final void t() {
-        if (this.n) {
-            this.Q.setTarget(null);
-            NativeInstance.destroyVideoCapturer(this.S);
-        }
-        M();
-        if (this.T) {
-            ((AudioManager) this.d.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND)).abandonAudioFocus(this);
-            this.T = false;
-        }
-        if (this.n) {
-            VoipAudioManager.get().setSpeakerphoneOn(false);
-        }
-    }
-
-    @Override // s96
-    public final void u() {
-        if (this.Z) {
-            this.Z = false;
-            f11 f11Var = this.Y;
-            if (f11Var != null) {
-                Handler handler = f11Var.b;
-                w01 w01Var = f11Var.d;
-                Objects.requireNonNull(w01Var);
-                handler.post(new f01(w01Var, (byte) 7));
-            }
-        }
-    }
-
-    @Override // s96
-    public final void x() {
-        M();
-        n();
-    }
-
-    @Override // s96
-    public final void y(TLRPC.TL_dataJSON tL_dataJSON, boolean z) {
-        if (tL_dataJSON == null || tL_dataJSON.data.startsWith("{\"stream\":true")) {
-            NativeInstance nativeInstance = this.P;
-            if (nativeInstance != null) {
-                nativeInstance.prepareForStream(z);
-            }
-        } else {
-            NativeInstance nativeInstance2 = this.P;
-            if (nativeInstance2 != null) {
-                nativeInstance2.setJoinResponsePayload(tL_dataJSON.data);
-            }
-        }
-        if (this.n) {
-            this.P.setMuteMicrophone(this.O);
-            this.P.activateVideoCapturer(this.S);
-            this.P.setupOutgoingVideoCreated(this.S);
-            return;
-        }
-        if (z) {
-            gm.c3(new ho9(this, (byte) 2));
-            return;
-        }
-        if (this.Z) {
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = this.y;
-        byte b = 0;
-        if (groupCallParticipant == null) {
-            TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
-            getgroupcall.call = this.f;
-            getgroupcall.limit = 10;
-            ConnectionsManager.getInstance(this.e).sendRequest(getgroupcall, new go9(this, b));
-            return;
-        }
-        TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = groupCallParticipant.video;
-        if (tL_groupCallParticipantVideo == null) {
-            gm.c3(new ho9(this, b));
-            return;
-        }
-        NativeInstance nativeInstance3 = this.P;
-        String str = tL_groupCallParticipantVideo.endpoint;
-        NativeInstance.SsrcGroup[] J = J(tL_groupCallParticipantVideo);
-        K(J);
-        nativeInstance3.addIncomingVideoOutput(2, str, J, this.Q, pg3.n(this.y.peer));
-        gm.c3(new il9(this, this.y.video.endpoint, (byte) 7));
-    }
-
-    @Override // s96
-    public final void z(boolean z) {
-        bq9 bq9Var = this.V;
-        if (bq9Var != null) {
-            bq9Var.k(z);
-        }
-        f11 f11Var = this.Y;
-        if (f11Var != null) {
-            f11Var.b.post(new y8c((byte) 6, f11Var, z));
-        }
-    }
-
-    @Override // android.media.AudioManager.OnAudioFocusChangeListener
-    public final void onAudioFocusChange(int i) {
+        return bx2.a;
     }
 }

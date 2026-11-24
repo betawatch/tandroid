@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class YuvHelper {
     public static void ABGRToI420(ByteBuffer byteBuffer, int i, ByteBuffer byteBuffer2, int i2, ByteBuffer byteBuffer3, int i3, ByteBuffer byteBuffer4, int i4, int i5, int i6) {
@@ -17,7 +17,7 @@ public class YuvHelper {
         int i14 = (i8 * i9) + i12;
         int i15 = ((i10 - 1) * i8) + i14 + ((i4 + 1) / 2);
         if (byteBuffer4.capacity() < i15) {
-            gxc.c(byteBuffer4.capacity(), hg9.l(i15, "Expected destination buffer capacity to be at least ", " was "));
+            fvc.e(byteBuffer4.capacity(), de9.m(i15, "Expected destination buffer capacity to be at least ", " was "));
             return;
         }
         byteBuffer4.limit(i11);
@@ -36,7 +36,7 @@ public class YuvHelper {
         checkNotNull(byteBuffer2, "srcU");
         checkNotNull(byteBuffer3, "srcV");
         checkNotNull(byteBuffer4, "dst");
-        int i7 = i6 % nm7.J2;
+        int i7 = i6 % kk7.J2;
         int i8 = i7 == 0 ? i4 : i5;
         int i9 = i7 == 0 ? i5 : i4;
         int i10 = (i9 + 1) / 2;
@@ -45,7 +45,7 @@ public class YuvHelper {
         int i13 = i10 * i11;
         int i14 = (i13 << 1) + i12;
         if (byteBuffer4.capacity() < i14) {
-            gxc.c(byteBuffer4.capacity(), hg9.l(i14, "Expected destination buffer capacity to be at least ", " was "));
+            fvc.e(byteBuffer4.capacity(), de9.m(i14, "Expected destination buffer capacity to be at least ", " was "));
             return;
         }
         byteBuffer4.position(0);
@@ -62,7 +62,7 @@ public class YuvHelper {
         int i10 = i6 * i7;
         int i11 = ((((i5 + 1) / 2) * i8) << 1) + i10;
         if (byteBuffer4.capacity() < i11) {
-            gxc.c(byteBuffer4.capacity(), hg9.l(i11, "Expected destination buffer capacity to be at least ", " was "));
+            fvc.e(byteBuffer4.capacity(), de9.m(i11, "Expected destination buffer capacity to be at least ", " was "));
             return;
         }
         byteBuffer4.limit(i9);
@@ -77,7 +77,7 @@ public class YuvHelper {
         if (t != null) {
             return t;
         }
-        gxc.d(td4.p(str, " should not be null"));
+        fvc.f(tb4.o(str, " should not be null"));
         return null;
     }
 
@@ -113,7 +113,7 @@ public class YuvHelper {
         if (i7 > 0 && i8 > 0) {
             nativeI420Copy(byteBuffer, i, byteBuffer2, i2, byteBuffer3, i3, byteBuffer4, i4, byteBuffer5, i5, byteBuffer6, i6, i7, i8);
         } else {
-            u36.j("I420Copy: width and height should not be negative");
+            w26.j("I420Copy: width and height should not be negative");
         }
     }
 
@@ -130,7 +130,7 @@ public class YuvHelper {
         if (i6 > 0 && i7 > 0) {
             nativeI420ToNV12(byteBuffer, i, byteBuffer2, i2, byteBuffer3, i3, byteBuffer4, i4, byteBuffer5, i5, i6, i7);
         } else {
-            u36.j("I420ToNV12: width and height should not be negative");
+            w26.j("I420ToNV12: width and height should not be negative");
         }
     }
 

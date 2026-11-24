@@ -1,108 +1,29 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class lxa extends ogc {
-    public final Context a;
-    public final int b;
-    public final boolean c;
-    public final int d;
-    public final ylb e;
-    public final long f;
-    public v59 g;
-    public sy4 h;
-    public final ArrayList i = new ArrayList();
+public final class lxa extends zc2 {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ uxa e1;
+    public final /* synthetic */ nxa f1;
 
-    public lxa(Context context, int i, boolean z, long j, int i2, ylb ylbVar) {
-        this.a = context;
-        this.b = i;
-        this.c = z;
-        this.d = i2;
-        this.e = ylbVar;
-        this.f = j;
-        i();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lxa(nxa nxaVar, long j, long j2, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z, boolean[] zArr, uxa uxaVar) {
+        super(j, j2, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z, null);
+        this.f1 = nxaVar;
+        this.d1 = zArr;
+        this.e1 = uxaVar;
     }
 
-    @Override // ogc
-    public final void b(View view, int i, int i2) {
-        v59 v59Var = this.g;
-        if (v59Var != null) {
-            v59Var.L(view);
-        }
-    }
-
-    @Override // ogc
-    public final View d(int i) {
-        kxa kxaVar = new kxa(this.a, this.c, this.f, i, this.b, this.d, this.e);
-        if (this.g != null) {
-            kxaVar.setClipChildren(false);
-            kxaVar.setClipToPadding(false);
-            q7c q7cVar = kxaVar.a;
-            q7cVar.setClipToPadding(false);
-            q7cVar.s1(gm.L(12.0f), gm.L(16.0f), false);
-            q7cVar.g3.r = false;
-            q7cVar.setCaptureSectionsDecoratorAllowed(true);
-            q7cVar.setOverScrollMode(0);
-            sy4 sy4Var = this.h;
-            if (sy4Var != null) {
-                sy4Var.b(q7cVar);
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
+        if (!z && z2 && this.d1[0]) {
+            uxa uxaVar = this.e1;
+            if (u21.a(uxaVar)) {
+                u21.C(this.f1.a.first_name, uxaVar).j();
             }
         }
-        return kxaVar;
-    }
-
-    @Override // ogc
-    public final int e() {
-        return this.i.size();
-    }
-
-    @Override // ogc
-    public final CharSequence g(int i) {
-        int h = h(i);
-        return h != 0 ? h != 1 ? h != 2 ? "" : jb6.M0(2131744607, null) : jb6.M0(2131744608, null) : jb6.M0(2131744609, null);
-    }
-
-    @Override // ogc
-    public final int h(int i) {
-        if (i < 0) {
-            return 0;
-        }
-        ArrayList arrayList = this.i;
-        if (i < arrayList.size()) {
-            return ((c6c) arrayList.get(i)).A;
-        }
-        return 0;
-    }
-
-    public final void i() {
-        ArrayList arrayList = this.i;
-        arrayList.clear();
-        long j = this.f;
-        int i = this.b;
-        if (j == 0) {
-            jva v = jva.v(i, this.c);
-            arrayList.add(c6c.D(0));
-            if (v.K(1)) {
-                arrayList.add(c6c.D(1));
-            }
-            if (v.K(2)) {
-                arrayList.add(c6c.D(2));
-                return;
-            }
-            return;
-        }
-        ku0 g = ku0.g(i);
-        arrayList.add(c6c.D(0));
-        if (!g.k(j).a[1].isEmpty()) {
-            arrayList.add(c6c.D(1));
-        }
-        if (g.k(j).a[2].isEmpty()) {
-            return;
-        }
-        arrayList.add(c6c.D(2));
     }
 }

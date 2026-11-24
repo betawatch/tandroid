@@ -1,109 +1,180 @@
 // default package
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class io0 implements Comparator {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Collator b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class io0 extends FrameLayout {
+    public final /* synthetic */ lo0 a;
 
-    public /* synthetic */ io0(Collator collator, byte b) {
-        this.a = b;
-        this.b = collator;
-    }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public io0(lo0 lo0Var, Activity activity) {
+        super(activity);
+        this.a = lo0Var;
+        final byte b = 0;
+        setWillNotDraw(false);
+        jo0 jo0Var = new jo0(lo0Var, getContext());
+        jo0 jo0Var2 = new jo0(lo0Var, getContext());
+        jo0 jo0Var3 = new jo0(lo0Var, getContext());
+        jo0Var.c(R.drawable.filled_boost_plus, k96.M0(2131753661, null));
+        jo0Var2.c(R.drawable.filled_gift_premium, k96.M0(2131749378, null));
+        jo0Var3.c(R.drawable.filled_info, k96.M0(2131750818, null));
+        jo0Var.setOnClickListener(new View.OnClickListener(this) { // from class: ho0
+            public final /* synthetic */ io0 b;
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        String str;
-        byte b = this.a;
-        Collator collator = this.b;
-        switch (b) {
-            case 0:
-                return collator.compare((String) obj, (String) obj2);
-            case 1:
-                String str2 = (String) obj;
-                String str3 = (String) obj2;
-                char charAt = str2.charAt(0);
-                char charAt2 = str3.charAt(0);
-                if (charAt == '#') {
-                    return 1;
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                wjb wjbVar;
+                byte b2 = b;
+                io0 io0Var = this.b;
+                switch (b2) {
+                    case 0:
+                        lo0 lo0Var2 = io0Var.a;
+                        long j = lo0Var2.S;
+                        ng1 ng1Var = lo0Var2.V;
+                        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = lo0Var2.U;
+                        int i = h26.R2;
+                        if (ng1Var != null && tL_premium_boostsStatus != null && lo0Var2.getParentActivity() != null) {
+                            h26 h26Var = new h26(19, lo0Var2.getCurrentAccount(), lo0Var2.getResourceProvider(), lo0Var2.getParentActivity(), lo0Var2);
+                            h26Var.r1(ng1Var);
+                            h26Var.q1(tL_premium_boostsStatus, true);
+                            h26Var.s1(j);
+                            h26Var.b2 = null;
+                            lo0Var2.showDialog(h26Var);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        lo0 lo0Var3 = io0Var.a;
+                        lo0Var3.x0(true);
+                        long j2 = lo0Var3.S;
+                        wjbVar = ((d) lo0Var3).resourceProvider;
+                        dn0.D0(lo0Var3, wjbVar, j2, null);
+                        dn0.o1.I0 = new n1(io0Var, (byte) 5);
+                        break;
+                    default:
+                        lo0 lo0Var4 = io0Var.a;
+                        h26 h26Var2 = new h26(31, lo0Var4.T, lo0Var4.getResourceProvider(), io0Var.getContext(), lo0Var4);
+                        h26Var2.q1(lo0Var4.U, true);
+                        h26Var2.s1(lo0Var4.S);
+                        lo0Var4.showDialog(h26Var2);
+                        break;
                 }
-                if (charAt2 != '#') {
-                    return collator.compare(str2, str3);
+            }
+        });
+        final byte b2 = 1;
+        jo0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: ho0
+            public final /* synthetic */ io0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                wjb wjbVar;
+                byte b22 = b2;
+                io0 io0Var = this.b;
+                switch (b22) {
+                    case 0:
+                        lo0 lo0Var2 = io0Var.a;
+                        long j = lo0Var2.S;
+                        ng1 ng1Var = lo0Var2.V;
+                        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = lo0Var2.U;
+                        int i = h26.R2;
+                        if (ng1Var != null && tL_premium_boostsStatus != null && lo0Var2.getParentActivity() != null) {
+                            h26 h26Var = new h26(19, lo0Var2.getCurrentAccount(), lo0Var2.getResourceProvider(), lo0Var2.getParentActivity(), lo0Var2);
+                            h26Var.r1(ng1Var);
+                            h26Var.q1(tL_premium_boostsStatus, true);
+                            h26Var.s1(j);
+                            h26Var.b2 = null;
+                            lo0Var2.showDialog(h26Var);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        lo0 lo0Var3 = io0Var.a;
+                        lo0Var3.x0(true);
+                        long j2 = lo0Var3.S;
+                        wjbVar = ((d) lo0Var3).resourceProvider;
+                        dn0.D0(lo0Var3, wjbVar, j2, null);
+                        dn0.o1.I0 = new n1(io0Var, (byte) 5);
+                        break;
+                    default:
+                        lo0 lo0Var4 = io0Var.a;
+                        h26 h26Var2 = new h26(31, lo0Var4.T, lo0Var4.getResourceProvider(), io0Var.getContext(), lo0Var4);
+                        h26Var2.q1(lo0Var4.U, true);
+                        h26Var2.s1(lo0Var4.S);
+                        lo0Var4.showDialog(h26Var2);
+                        break;
                 }
-                return -1;
-            case 2:
-                yv2 yv2Var = (yv2) obj;
-                yv2 yv2Var2 = (yv2) obj2;
-                String str4 = yv2Var.i;
-                if (str4.length() == 0) {
-                    str4 = yv2Var.j;
+            }
+        });
+        final byte b3 = 2;
+        jo0Var3.setOnClickListener(new View.OnClickListener(this) { // from class: ho0
+            public final /* synthetic */ io0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                wjb wjbVar;
+                byte b22 = b3;
+                io0 io0Var = this.b;
+                switch (b22) {
+                    case 0:
+                        lo0 lo0Var2 = io0Var.a;
+                        long j = lo0Var2.S;
+                        ng1 ng1Var = lo0Var2.V;
+                        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = lo0Var2.U;
+                        int i = h26.R2;
+                        if (ng1Var != null && tL_premium_boostsStatus != null && lo0Var2.getParentActivity() != null) {
+                            h26 h26Var = new h26(19, lo0Var2.getCurrentAccount(), lo0Var2.getResourceProvider(), lo0Var2.getParentActivity(), lo0Var2);
+                            h26Var.r1(ng1Var);
+                            h26Var.q1(tL_premium_boostsStatus, true);
+                            h26Var.s1(j);
+                            h26Var.b2 = null;
+                            lo0Var2.showDialog(h26Var);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        lo0 lo0Var3 = io0Var.a;
+                        lo0Var3.x0(true);
+                        long j2 = lo0Var3.S;
+                        wjbVar = ((d) lo0Var3).resourceProvider;
+                        dn0.D0(lo0Var3, wjbVar, j2, null);
+                        dn0.o1.I0 = new n1(io0Var, (byte) 5);
+                        break;
+                    default:
+                        lo0 lo0Var4 = io0Var.a;
+                        h26 h26Var2 = new h26(31, lo0Var4.T, lo0Var4.getResourceProvider(), io0Var.getContext(), lo0Var4);
+                        h26Var2.q1(lo0Var4.U, true);
+                        h26Var2.s1(lo0Var4.S);
+                        lo0Var4.showDialog(h26Var2);
+                        break;
                 }
-                String str5 = yv2Var2.i;
-                if (str5.length() == 0) {
-                    str5 = yv2Var2.j;
-                }
-                return collator.compare(str4, str5);
-            case 3:
-                String str6 = "";
-                if (obj instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) obj;
-                    str = bw2.m(0, user.first_name, user.last_name);
-                } else if (obj instanceof yv2) {
-                    yv2 yv2Var3 = (yv2) obj;
-                    TLRPC.User user2 = yv2Var3.m;
-                    str = user2 != null ? bw2.m(0, user2.first_name, user2.last_name) : bw2.m(0, yv2Var3.i, yv2Var3.j);
-                } else {
-                    str = "";
-                }
-                if (obj2 instanceof TLRPC.User) {
-                    TLRPC.User user3 = (TLRPC.User) obj2;
-                    str6 = bw2.m(0, user3.first_name, user3.last_name);
-                } else if (obj2 instanceof yv2) {
-                    yv2 yv2Var4 = (yv2) obj2;
-                    TLRPC.User user4 = yv2Var4.m;
-                    str6 = user4 != null ? bw2.m(0, user4.first_name, user4.last_name) : bw2.m(0, yv2Var4.i, yv2Var4.j);
-                }
-                return collator.compare(str, str6);
-            case 4:
-                String str7 = (String) obj;
-                String str8 = (String) obj2;
-                char charAt3 = str7.charAt(0);
-                char charAt4 = str8.charAt(0);
-                if (charAt3 == '#') {
-                    return 1;
-                }
-                if (charAt4 != '#') {
-                    return collator.compare(str7, str8);
-                }
-                return -1;
-            case 5:
-                String str9 = (String) obj;
-                String str10 = (String) obj2;
-                char charAt5 = str9.charAt(0);
-                char charAt6 = str10.charAt(0);
-                if (charAt5 == '#') {
-                    return 1;
-                }
-                if (charAt6 != '#') {
-                    return collator.compare(str9, str10);
-                }
-                return -1;
-            default:
-                String str11 = (String) obj;
-                String str12 = (String) obj2;
-                char charAt7 = str11.charAt(0);
-                char charAt8 = str12.charAt(0);
-                if (charAt7 == '#') {
-                    return 1;
-                }
-                if (charAt8 != '#') {
-                    return collator.compare(str11, str12);
-                }
-                return -1;
+            }
+        });
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(0);
+        linearLayout.addView(jo0Var, nme.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        if (na7.q1(lo0Var.T).k4.O1.f && hc2.N(lo0Var.j0)) {
+            linearLayout.addView(jo0Var2, nme.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
+        linearLayout.addView(jo0Var3, nme.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        addView(linearLayout, nme.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

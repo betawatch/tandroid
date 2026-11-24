@@ -1,71 +1,26 @@
 // default package
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class mi2 {
-    public final ArrayList a;
+    public static final /* synthetic */ int e = 0;
+    public final vnb a;
+    public final List b;
+    public final vx4 c;
+    public final String d;
 
-    public mi2(byte b) {
-        switch (b) {
-            case 2:
-                this.a = new ArrayList();
-                break;
-            default:
-                this.a = new ArrayList();
-                break;
-        }
+    static {
+        DesugarCollections.unmodifiableList(new ArrayList());
     }
 
-    public final void a(StringBuilder sb) {
-        sb.append(((Boolean) td4.m(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
-    }
-
-    public final void b(StringBuilder sb) {
-        while (!this.a.isEmpty()) {
-            a(sb);
-        }
-    }
-
-    public final li2 c(int i) {
-        return (li2) this.a.get(i);
-    }
-
-    public final ArrayList d(int i, int i2, int i3, boolean z) {
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = this.a;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        int size = arrayList3.size();
-        int i4 = 0;
-        while (i4 < size) {
-            Object obj = arrayList3.get(i4);
-            i4++;
-            int[] iArr = (int[]) obj;
-            if (!z || iArr[2] != 0) {
-                if (i3 != 0) {
-                    if (iArr[2] <= i3) {
-                        arrayList.add(iArr);
-                        arrayList2.remove(iArr);
-                    }
-                } else if (iArr[0] == i) {
-                    if (i2 != 0 && iArr[1] != i2) {
-                    }
-                    arrayList.add(iArr);
-                    arrayList2.remove(iArr);
-                }
-            }
-        }
-        return arrayList;
-    }
-
-    public mi2(li2 li2Var) {
-        ArrayList arrayList = new ArrayList(1);
-        this.a = arrayList;
-        arrayList.add(li2Var);
-    }
-
-    public mi2(ArrayList arrayList) {
-        this.a = arrayList;
+    public mi2(vnb vnbVar, List list, vx4 vx4Var, String str) {
+        this.a = vnbVar;
+        this.b = list;
+        this.c = vx4Var;
+        this.d = str;
     }
 }

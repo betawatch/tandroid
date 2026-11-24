@@ -1,44 +1,61 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.hardware.display.DisplayManager;
+import android.os.Handler;
+import android.view.Choreographer;
+import android.view.Choreographer$VsyncCallback;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class yac extends b4 {
-    public static final Parcelable.Creator<yac> CREATOR = new lbd((byte) 23);
-    public final int a;
-    public final short b;
-    public final short c;
+public final class yac extends wac implements Choreographer$VsyncCallback {
+    public final Handler e;
 
-    public yac(int i, short s, short s2) {
-        this.a = i;
-        this.b = s;
-        this.c = s2;
+    public yac(Choreographer choreographer, DisplayManager displayManager) {
+        super(choreographer, displayManager);
+        this.e = g8c.q(null);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof yac)) {
-            return false;
+    @Override // wac
+    public final void a() {
+        this.b.registerDisplayListener(this, g8c.q(null));
+        Choreographer choreographer = this.a;
+        choreographer.removeVsyncCallback(this);
+        choreographer.postVsyncCallback(this);
+    }
+
+    @Override // wac
+    public final void b() {
+        this.b.unregisterDisplayListener(this);
+        this.e.removeCallbacksAndMessages(null);
+        this.a.removeVsyncCallback(this);
+        this.c = -9223372036854775807L;
+        this.d = -9223372036854775807L;
+    }
+
+    public final /* synthetic */ void c() {
+        this.a.postVsyncCallback(this);
+    }
+
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayChanged(int i) {
+        if (i == 0) {
+            this.e.removeCallbacksAndMessages(null);
+            Choreographer choreographer = this.a;
+            choreographer.removeVsyncCallback(this);
+            choreographer.postVsyncCallback(this);
         }
-        yac yacVar = (yac) obj;
-        return this.a == yacVar.a && this.b == yacVar.b && this.c == yacVar.c;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Short.valueOf(this.b), Short.valueOf(this.c)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        mve.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        mve.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        mve.s(parcel, r);
+    public final void onVsync(Choreographer.FrameData frameData) {
+        this.c = frameData.getFrameTimeNanos();
+        Choreographer.FrameTimeline[] frameTimelines = frameData.getFrameTimelines();
+        if (frameTimelines.length >= 2) {
+            long expectedPresentationTimeNanos = frameTimelines[1].getExpectedPresentationTimeNanos() - frameTimelines[0].getExpectedPresentationTimeNanos();
+            this.d = expectedPresentationTimeNanos != 0 ? expectedPresentationTimeNanos : -9223372036854775807L;
+        } else {
+            this.d = -9223372036854775807L;
+        }
+        this.e.removeCallbacksAndMessages(null);
+        this.e.postDelayed(new cib(this, (byte) 27), 500L);
     }
 }

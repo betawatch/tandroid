@@ -1,56 +1,141 @@
 // default package
 
-import android.view.Surface;
-import java.util.List;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface iec {
-    boolean a();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class iec extends wec {
+    public boolean W;
+    public final Path a0;
+    public final /* synthetic */ jec b0;
 
-    Surface b();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iec(jec jecVar, Context context) {
+        super(context, null);
+        this.b0 = jecVar;
+        this.a0 = new Path();
+    }
 
-    void c(Surface surface, yka ykaVar);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.W) {
+            Path path = this.a0;
+            path.rewind();
+            float N = gl.N(24.0f);
+            RectF rectF = gl.P;
+            rectF.set(0.0f, gl.m, getWidth(), getHeight());
+            path.addRoundRect(rectF, N, N, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
+        }
+        super.dispatchDraw(canvas);
+        if (this.W) {
+            canvas.restore();
+        }
+    }
 
-    void d(float f);
+    @Override // wec
+    public float getAvailableTranslationX() {
+        return getMeasuredWidth();
+    }
 
-    void e();
+    @Override // wec
+    public long getManualScrollDuration() {
+        return 320L;
+    }
 
-    void f();
+    @Override // wec
+    public final boolean h(MotionEvent motionEvent) {
+        Object b0 = ((ah6) this.b0).b0();
+        if (b0 instanceof zg6) {
+            return ((zg6) b0).W(motionEvent, false);
+        }
+        return false;
+    }
 
-    void g(go4 go4Var, long j, int i, List list);
+    @Override // wec
+    public final boolean i(MotionEvent motionEvent) {
+        Object b0 = ((ah6) this.b0).b0();
+        if (b0 instanceof zg6) {
+            return ((zg6) b0).W(motionEvent, true);
+        }
+        return false;
+    }
 
-    void h(long j);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+    }
 
-    void i(k44 k44Var);
+    @Override // wec
+    public final void s(View view, View view2, int i, int i2) {
+        this.b0.Y();
+    }
 
-    void j();
+    @Override // android.view.View
+    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        super.setLayoutParams(layoutParams);
+    }
 
-    void k(int i);
+    public void setTabletLayout(boolean z) {
+        if (this.W == z) {
+            return;
+        }
+        this.W = z;
+        invalidate();
+    }
 
-    void l();
+    @Override // wec
+    public final void u() {
+        cj3 cj3Var;
+        jec jecVar = this.b0;
+        ah6 ah6Var = (ah6) jecVar;
+        if (ah6Var.G != null) {
+            ah6Var.r0(ah6Var.c.getCurrentPosition(), true);
+            ah6Var.s0(false, 0.0f);
+        }
+        ah6Var.c0();
+        iec iecVar = ah6Var.c;
+        if (iecVar != null) {
+            int currentPosition = iecVar.getCurrentPosition();
+            if (currentPosition != 2 && ah6Var.y) {
+                ah6Var.a0(2);
+                ah6Var.y = false;
+            }
+            if (currentPosition != 3) {
+                ah6Var.a0(3);
+            }
+            Integer num = ah6Var.J;
+            if (num != null && currentPosition == 0 && (cj3Var = ah6Var.K) != null) {
+                cj3Var.M4(num.intValue());
+                ah6Var.J = null;
+            }
+        }
+        jecVar.Y();
+    }
 
-    boolean m(long j, vm6 vm6Var);
-
-    boolean n(go4 go4Var);
-
-    void o(boolean z);
-
-    void p(List list);
-
-    void q(long j, long j2);
-
-    void r(boolean z);
-
-    void release();
-
-    boolean s(boolean z);
-
-    void t(vcc vccVar);
-
-    void u();
-
-    boolean v();
-
-    void w();
+    @Override // wec
+    public final void w(boolean z) {
+        jec jecVar = this.b0;
+        ah6 ah6Var = (ah6) jecVar;
+        boolean z2 = !z;
+        if (ah6Var.G != null) {
+            float positionAnimated = ah6Var.c.getPositionAnimated();
+            ah6Var.s0(z2, positionAnimated);
+            if (!z) {
+                ah6Var.r0(Math.round(positionAnimated), true);
+            }
+        }
+        ah6Var.h0();
+        ah6Var.c0();
+        ah6Var.b.invalidate();
+        jecVar.Y();
+        jecVar.checkSystemBarColors();
+    }
 }

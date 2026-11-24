@@ -1,85 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.widget.TextView;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yp1 implements Runnable {
+public final /* synthetic */ class yp1 implements uc7 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ jm7 e;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ yp1(yv1 yv1Var, long j, boolean z, boolean z2) {
-        this.a = (byte) 0;
-        this.e = yv1Var;
-        this.d = j;
+    public /* synthetic */ yp1(byte b, Object obj, boolean z) {
+        this.a = b;
+        this.c = obj;
         this.b = z;
-        this.c = z2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // uc7
+    public final void a(int i) {
         byte b = this.a;
-        int i = 2131751851;
-        long j = this.d;
-        boolean z = this.c;
-        boolean z2 = this.b;
-        jm7 jm7Var = this.e;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                ((yv1) jm7Var).c9(j, z2, z);
-                break;
-            case 1:
-                po2 po2Var = (po2) jm7Var;
-                String M0 = jb6.M0(2131751852, null);
-                if (z2) {
-                    i = 2131751854;
-                } else if (z) {
-                    i = 2131751853;
-                }
-                ik.s0(po2Var, M0, jb6.M0(i, null), jb6.M0(2131746054, null), true, new jo2(po2Var, j, (byte) 0));
-                break;
-            case 2:
-                pp2 pp2Var = (pp2) jm7Var;
-                Context context = pp2Var.getContext();
-                ylb ylbVar = pp2Var.J0;
-                String M02 = jb6.M0(2131751852, null);
-                if (z2) {
-                    i = 2131751854;
-                } else if (z) {
-                    i = 2131751853;
-                }
-                he M = ik.M(context, ylbVar, M02, jb6.M0(i, null), jb6.M0(2131746054, null), new fu((Object) pp2Var, j, (byte) 10));
-                M.show();
-                TextView textView = (TextView) M.c(-1);
-                if (textView != null) {
-                    anb.X(textView, cmb.p7, null);
+                mu1 mu1Var = ((aq1) obj).b;
+                if (i > 0 && mu1Var.getParentActivity() != null) {
+                    u21.b0(mu1Var).m(this.b ? t21.H : t21.J, i, 0, 0, mu1Var.Ba).j();
                     break;
                 }
                 break;
             default:
-                oc7 oc7Var = (oc7) jm7Var;
-                ArrayList arrayList = z2 ? oc7Var.m0 : oc7Var.l0;
-                if (!z) {
-                    arrayList.remove(Long.valueOf(j));
+                zp1 zp1Var = (zp1) obj;
+                mu1 mu1Var2 = zp1Var.b.b;
+                if (i < 50) {
+                    mu1Var2.xa(mu1Var2.s4, true);
                     break;
-                } else if (!arrayList.contains(Long.valueOf(j))) {
-                    arrayList.add(Long.valueOf(j));
+                } else {
+                    TLRPC.Chat chat = mu1Var2.e;
+                    TLRPC.User user = mu1Var2.f;
+                    boolean z = this.b;
+                    ij.r(mu1Var2, true, chat, user, false, false, false, z, new rh1(zp1Var, z));
                     break;
                 }
-                break;
         }
-    }
-
-    public /* synthetic */ yp1(jm7 jm7Var, boolean z, boolean z2, long j, byte b) {
-        this.a = b;
-        this.e = jm7Var;
-        this.b = z;
-        this.c = z2;
-        this.d = j;
     }
 }

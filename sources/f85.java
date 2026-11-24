@@ -3,29 +3,49 @@
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class f85 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ g95 b;
+    public final /* synthetic */ h85 b;
 
-    public /* synthetic */ f85(g95 g95Var, byte b) {
+    public /* synthetic */ f85(h85 h85Var, byte b) {
         this.a = b;
-        this.b = g95Var;
+        this.b = h85Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        g95 g95Var = this.b;
+        h85 h85Var = this.b;
         switch (b) {
             case 0:
-                g95Var.O1.setVisibility(4);
-                g95Var.P1.setVisibility(4);
-                g95Var.N1.setVisibility(4);
+                h85Var.F = false;
+                h85Var.invalidate();
+                break;
+            case 1:
+                g85 g85Var = h85Var.b0;
+                float f = h85Var.W ? 0.0f : 1.0f;
+                h85Var.a0 = f;
+                g85Var.setAlpha(f);
+                g85Var.setVisibility(h85Var.W ? 8 : 0);
+                h85Var.a.invalidate();
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                h85Var.H0 = null;
+                d85 d85Var = h85Var.a;
+                d85Var.setRotationY(0.0f);
+                if (!h85Var.I0) {
+                    d85Var.d.clearImage();
+                    break;
+                }
+                break;
+            case 3:
+                h85Var.F = false;
                 break;
             default:
-                g95Var.a2 = null;
+                h85Var.F = false;
                 break;
         }
     }

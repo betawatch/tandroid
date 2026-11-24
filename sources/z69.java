@@ -1,46 +1,45 @@
 // default package
 
-import android.view.View;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.TLObject;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class z69 extends FrameLayout {
-    public View a;
+public final /* synthetic */ class z69 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a79 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        View view = this.a;
-        if (view == null) {
-            ViewParent parent = getParent();
-            while (true) {
-                if (!(parent instanceof View)) {
-                    view = null;
-                    break;
-                } else {
-                    if (parent instanceof RecyclerView) {
-                        view = (RecyclerView) parent;
-                        break;
-                    }
-                    parent = parent.getParent();
-                }
-            }
-        }
-        int max = view != null ? Math.max(0, (view.getMeasuredHeight() - view.getPaddingTop()) - view.getPaddingBottom()) : 0;
-        if (max > 0) {
-            i2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    public /* synthetic */ z69(a79 a79Var, byte b) {
+        this.a = b;
+        this.b = a79Var;
     }
 
-    public void setViewportView(View view) {
-        if (this.a == view) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        a79 a79Var = this.b;
+        switch (b) {
+            case 0:
+                bg7 bg7Var = a79Var.x;
+                z69 z69Var = a79Var.s;
+                if (z69Var != null) {
+                    a79Var.cancelRunnable(z69Var);
+                    a79Var.s = null;
+                }
+                a79Var.cancelRunnable(bg7Var);
+                a79Var.postRunnable(bg7Var);
+                break;
+            case 1:
+                a79Var.s = null;
+                a79Var.x.run();
+                break;
+            default:
+                a79Var.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
         }
-        this.a = view;
-        requestLayout();
     }
 }

@@ -8,18 +8,18 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class WearAuthListenerService extends Service implements nh1 {
+public class WearAuthListenerService extends Service implements fg1 {
     public static final /* synthetic */ int r = 0;
     public ComponentName a;
-    public w4f b;
-    public g7d c;
+    public u2f b;
+    public e5d c;
     public Intent d;
     public Looper e;
     public boolean h;
     public final Object f = new Object();
-    public final bed n = new bed(new tad());
+    public final zbd n = new zbd(new r8d());
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0048, code lost:
@@ -95,11 +95,11 @@ public class WearAuthListenerService extends Service implements nh1 {
             looper = handlerThread.getLooper();
             this.e = looper;
         }
-        this.b = new w4f(this, looper);
+        this.b = new u2f(this, looper);
         Intent intent = new Intent("com.google.android.gms.wearable.BIND_LISTENER");
         this.d = intent;
         intent.setComponent(this.a);
-        this.c = new g7d(this);
+        this.c = new e5d(this);
     }
 
     @Override // android.app.Service
@@ -109,29 +109,29 @@ public class WearAuthListenerService extends Service implements nh1 {
         }
         synchronized (this.f) {
             this.h = true;
-            w4f w4fVar = this.b;
-            if (w4fVar == null) {
+            u2f u2fVar = this.b;
+            if (u2fVar == null) {
                 throw new IllegalStateException("onDestroy: mServiceHandler not set, did you override onCreate() but forget to call super.onCreate()? component=".concat(String.valueOf(this.a)));
             }
-            w4fVar.getLooper().quit();
-            w4fVar.a("quit");
+            u2fVar.getLooper().quit();
+            u2fVar.a("quit");
         }
         super.onDestroy();
     }
 
-    @Override // nh1
-    public final void a(pgd pgdVar) {
+    @Override // fg1
+    public final void a(oed oedVar) {
     }
 
-    @Override // nh1
-    public final void b(pgd pgdVar) {
+    @Override // fg1
+    public final void b(oed oedVar) {
     }
 
-    @Override // nh1
-    public final void c(pgd pgdVar) {
+    @Override // fg1
+    public final void c(oed oedVar) {
     }
 
-    @Override // nh1
-    public final void d(pgd pgdVar) {
+    @Override // fg1
+    public final void d(oed oedVar) {
     }
 }

@@ -1,67 +1,66 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class cr1 extends k11 {
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ rc2 f;
-    public final /* synthetic */ yv1 g;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public /* synthetic */ cr1(yv1 yv1Var, int i, rc2 rc2Var, byte b) {
-        this.d = b;
-        this.g = yv1Var;
-        this.e = i;
-        this.f = rc2Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class cr1 extends xu1 {
+    public ff0 e;
+    public int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ mu1 n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cr1(mu1 mu1Var, Context context, boolean z) {
+        super(context);
+        this.n = mu1Var;
+        this.h = z;
     }
 
-    @Override // k11
-    public final void c(boolean z) {
-        switch (this.d) {
-            case 0:
-                if (!z) {
-                    gm.d3(new eh((Object) this, this.e, (byte) 16), 240L);
-                    break;
+    @Override // xu1
+    public final void d() {
+        try {
+            int themedColor = this.n.getThemedColor(bkb.mf);
+            if (this.e != null) {
+                Drawable background = getBackground();
+                Drawable drawable = this.e;
+                if (background == drawable) {
+                    if (themedColor != this.f) {
+                        bkb.F1(drawable, 436207615 & themedColor, true);
+                    }
+                    if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
+                        getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+                    }
+                    this.f = themedColor;
+                    if (getTextView() != null || getTextView().getCurrentTextColor() == themedColor) {
+                    }
+                    getTextView().setTextColor(themedColor);
+                    return;
                 }
-                break;
-            case 1:
-                if (!z) {
-                    gm.d3(new eh((Object) this, this.e, (byte) 18), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z) {
-                    gm.d3(new eh((Object) this, this.e, (byte) 19), 240L);
-                    break;
-                }
-                break;
+            }
+            ff0 W = bkb.W(gl.L(19.0f), themedColor & 436207615, this.h ? gl.L(4.0f) : 0, gl.L(3.0f), 0, gl.L(3.0f));
+            this.e = W;
+            setBackground(W);
+            if (getImageView() != null) {
+                getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+            }
+            this.f = themedColor;
+            if (getTextView() != null) {
+            }
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
-    @Override // k11
-    public final void d() {
-        byte b = this.d;
-        rc2 rc2Var = this.f;
-        int i = this.e;
-        yv1 yv1Var = this.g;
-        switch (b) {
-            case 0:
-                yv1Var.kc = i;
-                yv1Var.lc = 6;
-                rc2Var.invalidate();
-                break;
-            case 1:
-                yv1Var.kc = i;
-                yv1Var.lc = 5;
-                yv1Var.nc = null;
-                rc2Var.invalidate();
-                break;
-            default:
-                yv1Var.kc = i;
-                yv1Var.lc = 7;
-                rc2Var.invalidate();
-                break;
+    @Override // xu1
+    public final void setEditButton(boolean z) {
+        super.setEditButton(z);
+        if (this.h) {
+            getTextView().setMaxWidth(z ? gl.L(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
         }
     }
 }

@@ -1,36 +1,21 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class f66 {
-    public StringBuilder d;
-    public String e;
-    public String f;
-    public char g;
-    public StringBuilder h;
-    public int a = 1;
-    public final StringBuilder b = new StringBuilder();
-    public final ArrayList c = new ArrayList();
-    public boolean i = false;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class f66 extends mhb {
+    @Override // mhb, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+    }
 
-    public final void a() {
-        if (this.i) {
-            String a = j54.a(this.f);
-            StringBuilder sb = this.h;
-            String a2 = sb != null ? j54.a(sb.toString()) : null;
-            String str = this.e;
-            e66 e66Var = new e66();
-            e66Var.g = str;
-            e66Var.h = a;
-            e66Var.i = a2;
-            this.c.add(e66Var);
-            this.d = null;
-            this.i = false;
-            this.e = null;
-            this.f = null;
-            this.h = null;
-        }
+    @Override // android.view.View
+    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setContentDescription(getTextView().getText());
+        setContentDescription(getTextView().getText());
     }
 }

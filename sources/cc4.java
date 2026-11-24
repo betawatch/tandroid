@@ -1,102 +1,200 @@
 // default package
 
-import java.util.ArrayList;
+import android.R;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.RippleDrawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.tl.TL_chatlists;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class cc4 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class cc4 implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ u30 b;
+    public final /* synthetic */ kc4 b;
 
-    public /* synthetic */ cc4(u30 u30Var, byte b) {
+    public /* synthetic */ cc4(kc4 kc4Var, byte b) {
         this.a = b;
-        this.b = u30Var;
+        this.b = kc4Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0066, code lost:
-    
-        if (r6 < r8) goto L28;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0111 A[LOOP:1: B:81:0x0107->B:83:0x0111, LOOP_END] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        lb4 lb4Var;
-        int i;
-        int i2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        u30 u30Var = this.b;
+        byte b2 = 6;
+        kc4 kc4Var = this.b;
+        byte b3 = 0;
+        byte b4 = 1;
         switch (b) {
             case 0:
-                u30Var.b(false);
+                String str = kc4Var.s;
+                if (str != null) {
+                    gl.g(str);
+                    u21.b0(kc4Var.r).i(k96.M0(2131748729, null)).j();
+                    break;
+                }
                 break;
-            default:
-                boolean z = u30Var.a;
-                int i3 = u30Var.b;
-                int f = (z ? oc7.r1(i3).l4.f3 : oc7.r1(i3).l4.g3).f();
-                ((ArrayList) u30Var.e).clear();
-                if (u30Var.a && !((ArrayList) u30Var.d).isEmpty()) {
-                    lb4Var = (lb4) ((ArrayList) u30Var.d).get(0);
-                    if (lb4Var.j && lb4Var.W0 >= 1048576 && !lb4Var.a && lb4Var.Y != 3) {
-                        if (lb4Var.k) {
-                            long j = lb4Var.a0;
-                            int i4 = lb4Var.J;
-                            if (i4 <= 0) {
-                                i4 = 1048576;
-                            }
-                            break;
+            case 1:
+                kc4 kc4Var2 = this.b;
+                FrameLayout frameLayout = kc4Var2.a;
+                if (frameLayout.getBackground() instanceof RippleDrawable) {
+                    frameLayout.getBackground().setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+                    kc4Var2.postDelayed(new s54(kc4Var2, (byte) 9), 180L);
+                }
+                float[] fArr = kc4Var2.E;
+                if (kc4Var2.y == null && kc4Var2.s != null) {
+                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(kc4Var2.getContext(), null);
+                    a8 a8Var = new a8(kc4Var2.getContext(), true, false);
+                    a8Var.j(k96.M0(2131751252, null), org.telegram.messenger.beta.R.drawable.msg_edit, null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(a8Var, nme.o(-1, 48));
+                    a8Var.setOnClickListener(new cc4(kc4Var2, (byte) 4));
+                    a8 a8Var2 = new a8(kc4Var2.getContext(), false, false);
+                    a8Var2.j(k96.M0(2131750456, null), org.telegram.messenger.beta.R.drawable.msg_qrcode, null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(a8Var2, nme.o(-1, 48));
+                    a8Var2.setOnClickListener(new cc4(kc4Var2, (byte) 5));
+                    a8 a8Var3 = new a8(kc4Var2.getContext(), false, true);
+                    a8Var3.j(k96.M0(2131751522, null), org.telegram.messenger.beta.R.drawable.msg_delete, null);
+                    int i = bkb.o7;
+                    a8Var3.c(i, i);
+                    a8Var3.h(0.12f, i);
+                    a8Var3.setOnClickListener(new cc4(kc4Var2, b2));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(a8Var3, nme.o(-1, 48));
+                    FrameLayout overlayContainerView = kc4Var2.r.getParentLayout().getOverlayContainerView();
+                    if (overlayContainerView != null) {
+                        fc4.a(frameLayout, overlayContainerView, fArr);
+                        float f = fArr[1];
+                        s71 s71Var = new s71(kc4Var2, kc4Var2.getContext(), overlayContainerView, (byte) 7);
+                        fb fbVar = new fb(s71Var, (byte) 3);
+                        overlayContainerView.getViewTreeObserver().addOnPreDrawListener(fbVar);
+                        overlayContainerView.addView(s71Var, nme.c(-1.0f, -1));
+                        float f2 = 0.0f;
+                        s71Var.setAlpha(0.0f);
+                        s71Var.animate().alpha(1.0f).setDuration(150L);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
+                        m8 m8Var = new m8(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+                        kc4Var2.y = m8Var;
+                        m8Var.setOnDismissListener(new dc4(kc4Var2, s71Var, overlayContainerView, fbVar, (byte) 0));
+                        kc4Var2.y.setOutsideTouchable(true);
+                        kc4Var2.y.setFocusable(true);
+                        kc4Var2.y.setBackgroundDrawable(new ColorDrawable(0));
+                        kc4Var2.y.setAnimationStyle(org.telegram.messenger.beta.R.style.PopupContextAnimation);
+                        kc4Var2.y.setInputMethodMode(2);
+                        kc4Var2.y.setSoftInputMode(0);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new kx3(kc4Var2, (byte) 16));
+                        if (gl.O1()) {
+                            f += overlayContainerView.getPaddingTop();
+                            f2 = 0.0f - overlayContainerView.getPaddingLeft();
                         }
-                        ((mp3) u30Var.f).a((cc4) u30Var.g);
-                        ((mp3) u30Var.f).d((cc4) u30Var.g, 250L);
-                        i = 0;
-                        boolean z2 = false;
-                        int i5 = 0;
-                        while (i < ((ArrayList) u30Var.d).size()) {
-                            lb4 lb4Var2 = i > 0 ? (lb4) ((ArrayList) u30Var.d).get(i - 1) : null;
-                            lb4 lb4Var3 = (lb4) ((ArrayList) u30Var.d).get(i);
-                            if (lb4Var == null || lb4Var3 == lb4Var || (lb4Var3.p0 == lb4Var.p0 && ir3.d())) {
-                                if (i > 0 && !z2) {
-                                    if (u30Var.a && lb4Var2 != null && lb4Var2.j && lb4Var2.W0 >= 1048576 && lb4Var3.W0 <= 0) {
-                                        z2 = true;
-                                    }
-                                    if (i5 > 0 && lb4Var3.W0 == 0) {
-                                        z2 = true;
-                                    }
-                                }
-                                if (lb4Var3.a) {
-                                    f++;
-                                } else {
-                                    if (!z2 && i < f) {
-                                        ((ArrayList) u30Var.e).add(lb4Var3);
-                                    } else if (lb4Var3.S && !lb4Var3.Z) {
-                                        lb4Var3.j();
-                                    }
-                                    i5 = lb4Var3.W0;
-                                }
-                            } else if (lb4Var3.S && !lb4Var3.Z) {
-                                lb4Var3.j();
-                            }
-                            i++;
-                        }
-                        for (i2 = 0; i2 < ((ArrayList) u30Var.e).size(); i2++) {
-                            ((lb4) ((ArrayList) u30Var.e).get(i2)).p();
-                        }
-                        u30Var.c = false;
+                        kc4Var2.y.showAtLocation(overlayContainerView, 0, (int) (overlayContainerView.getX() + ((overlayContainerView.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) - gl.L(16.0f)) + f2), (int) (overlayContainerView.getY() + f + frameLayout.getMeasuredHeight()));
                         break;
                     }
                 }
-                lb4Var = null;
-                i = 0;
-                boolean z22 = false;
-                int i52 = 0;
-                while (i < ((ArrayList) u30Var.d).size()) {
+                break;
+            case 2:
+                String str2 = kc4Var.s;
+                if (str2 != null) {
+                    gl.g(str2);
+                    u21.b0(kc4Var.r).i(k96.M0(2131748729, null)).j();
+                    break;
                 }
-                while (i2 < ((ArrayList) u30Var.e).size()) {
+                break;
+            case 3:
+                if (kc4Var.s != null) {
+                    try {
+                        Intent intent = new Intent("android.intent.action.SEND");
+                        intent.setType("text/plain");
+                        intent.putExtra("android.intent.extra.TEXT", kc4Var.s);
+                        kc4Var.r.startActivityForResult(Intent.createChooser(intent, k96.M0(2131748918, null)), 500);
+                        break;
+                    } catch (Exception e) {
+                        fa4.g(e, true);
+                        return;
+                    }
                 }
-                u30Var.c = false;
+                break;
+            case 4:
+                kc4 kc4Var3 = this.b;
+                m8 m8Var2 = kc4Var3.y;
+                if (m8Var2 != null) {
+                    m8Var2.d(true);
+                }
+                mc4 mc4Var = kc4Var3.F.c;
+                TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = mc4Var.d;
+                if (tL_exportedChatlistInvite != null && tL_exportedChatlistInvite.url != null) {
+                    EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(kc4Var3.getContext());
+                    editTextBoldCursor.setBackgroundDrawable(bkb.T(kc4Var3.getContext()));
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kc4Var3.getContext());
+                    int i2 = bkb.G5;
+                    hd hdVar = alertDialog$Builder.a;
+                    hdVar.J = i2;
+                    hdVar.S = k96.M0(2131750752, null);
+                    alertDialog$Builder.g(k96.M0(2131752577, null), new kt3(editTextBoldCursor, b4));
+                    LinearLayout linearLayout = new LinearLayout(kc4Var3.getContext());
+                    linearLayout.setOrientation(1);
+                    alertDialog$Builder.n(linearLayout);
+                    editTextBoldCursor.setTextSize(1, 16.0f);
+                    int i3 = bkb.i5;
+                    zkb.X(editTextBoldCursor, i3, null);
+                    editTextBoldCursor.setMaxLines(1);
+                    editTextBoldCursor.setLines(1);
+                    editTextBoldCursor.setInputType(16385);
+                    editTextBoldCursor.setGravity(51);
+                    editTextBoldCursor.setSingleLine(true);
+                    editTextBoldCursor.setImeOptions(6);
+                    editTextBoldCursor.setHint(mc4Var.c.b);
+                    zkb.D(editTextBoldCursor, bkb.s5, null);
+                    zkb.l(editTextBoldCursor, 30, i3, null);
+                    editTextBoldCursor.setCursorSize(gl.L(20.0f));
+                    editTextBoldCursor.setCursorWidth(1.5f);
+                    editTextBoldCursor.setPadding(0, gl.L(4.0f), 0, 0);
+                    linearLayout.addView(editTextBoldCursor, nme.t(-1, 36, 51, 24, 6, 24, 0));
+                    editTextBoldCursor.setOnEditorActionListener(new gc4(alertDialog$Builder, b3));
+                    editTextBoldCursor.addTextChangedListener(new jc4(editTextBoldCursor, b3));
+                    if (!TextUtils.isEmpty(tL_exportedChatlistInvite.title)) {
+                        editTextBoldCursor.setText(tL_exportedChatlistInvite.title);
+                        editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    }
+                    alertDialog$Builder.j(k96.M0(2131745754, null), new lt2(kc4Var3, editTextBoldCursor, alertDialog$Builder, false, (byte) 11));
+                    hdVar.setOnShowListener(new hc4(editTextBoldCursor, b3));
+                    hdVar.setOnDismissListener(new ic4(editTextBoldCursor, b3));
+                    hdVar.show();
+                    hdVar.o(bkb.w0(null, i3, false));
+                    editTextBoldCursor.requestFocus();
+                    break;
+                }
+                break;
+            case 5:
+                m8 m8Var3 = kc4Var.y;
+                if (m8Var3 != null) {
+                    m8Var3.d(true);
+                }
+                if (kc4Var.s != null) {
+                    zu8 zu8Var = new zu8(kc4Var.getContext(), k96.M0(2131748978, null), kc4Var.s, k96.M0(2131746313, null), false);
+                    zu8Var.D0();
+                    zu8Var.show();
+                    break;
+                }
+                break;
+            default:
+                m8 m8Var4 = kc4Var.y;
+                if (m8Var4 != null) {
+                    m8Var4.d(true);
+                }
+                TL_chatlists.TL_chatlists_deleteExportedInvite tL_chatlists_deleteExportedInvite = new TL_chatlists.TL_chatlists_deleteExportedInvite();
+                TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
+                tL_chatlists_deleteExportedInvite.chatlist = tL_inputChatlistDialogFilter;
+                mc4 mc4Var2 = kc4Var.F.c;
+                tL_inputChatlistDialogFilter.filter_id = mc4Var2.c.a;
+                tL_chatlists_deleteExportedInvite.slug = mc4Var2.d0();
+                hd hdVar2 = new hd(3, null, kc4Var.getContext());
+                hdVar2.q(180L);
+                mc4Var2.getConnectionsManager().sendRequest(tL_chatlists_deleteExportedInvite, new rv3(kc4Var, hdVar2, b4));
                 break;
         }
     }

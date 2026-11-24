@@ -1,18 +1,265 @@
 // default package
 
-import android.view.View;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class en0 implements g94, pi0 {
-    public final /* synthetic */ View a;
+public final /* synthetic */ class en0 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    @Override // g94
-    public final void D(int i, float f, float f2, h94 h94Var) {
-        this.a.invalidate();
+    public /* synthetic */ en0(na7 na7Var, au0 au0Var, vm0 vm0Var) {
+        this.a = (byte) 1;
+        this.b = na7Var;
+        this.c = au0Var;
+        this.d = vm0Var;
     }
 
-    @Override // g94
-    public final void V(float f, int i) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        byte b2 = 14;
+        final byte b3 = 1;
+        final byte b4 = 0;
+        Object obj = this.b;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        switch (b) {
+            case 0:
+                gl.c3(new b87(tL_error, (p8c) obj3, tLObject, (na7) obj, (p8c) obj2, (byte) 3));
+                break;
+            case 1:
+                gl.c3(new b87(tLObject, (na7) obj, (au0) obj3, (vm0) obj2, tL_error));
+                break;
+            case 2:
+                tn0 tn0Var = (tn0) obj3;
+                na7 na7Var = (na7) obj;
+                wn0 wn0Var = (wn0) obj2;
+                if (tL_error == null) {
+                    if (tLObject != null) {
+                        na7Var.R3((TLRPC.Updates) tLObject, false);
+                        gl.c3(new oz(wn0Var, b2));
+                        break;
+                    }
+                } else {
+                    gl.c3(new z20(tn0Var, tL_error, (byte) 9));
+                    break;
+                }
+                break;
+            case 3:
+                gl.c3(new b87(tL_error, (p8c) obj3, tLObject, (na7) obj, (p8c) obj2, (byte) 2));
+                break;
+            case 4:
+                gl.c3(new s67((lo0) obj3, (CountDownLatch) obj2, tLObject, (bo0) obj, (byte) 11));
+                break;
+            case 5:
+                gl.c3(new s67((lo0) obj3, (CountDownLatch) obj2, tLObject, (bo0) obj, (byte) 10));
+                break;
+            case 6:
+                gl.c3(new s67((u41) obj3, tLObject, (fx0) obj2, (it0) obj, (byte) 14));
+                break;
+            case 7:
+                gl.c3(new b87(obj3, tL_error, obj2, obj, (Object) tLObject, (byte) 5));
+                break;
+            case 8:
+                gl.c3(new b87((hv0) obj3, tLObject, (String[]) obj2, tL_error, (hd) obj));
+                break;
+            case 9:
+                gl.c3(new s67((j41) obj3, tLObject, (TL_account.TL_businessChatLink) obj2, (av1) obj, (byte) 16));
+                break;
+            case 10:
+                final me1 me1Var = (me1) obj3;
+                final hd hdVar = (hd) obj2;
+                TL_account.updateUsername updateusername = (TL_account.updateUsername) obj;
+                me1Var.getClass();
+                if (tL_error != null) {
+                    if (!"USERNAME_NOT_MODIFIED".equals(tL_error.text)) {
+                        if (!"USERNAME_PURCHASE_AVAILABLE".equals(tL_error.text) && !"USERNAME_INVALID".equals(tL_error.text)) {
+                            gl.c3(new s67(me1Var, hdVar, tL_error, updateusername, (byte) 22));
+                            break;
+                        } else {
+                            gl.c3(new Runnable() { // from class: ae1
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    byte b5 = b3;
+                                    hd hdVar2 = hdVar;
+                                    me1 me1Var2 = me1Var;
+                                    me1Var2.getClass();
+                                    switch (b5) {
+                                        case 0:
+                                            try {
+                                                hdVar2.dismiss();
+                                            } catch (Exception e) {
+                                                fa4.g(e, true);
+                                            }
+                                            me1Var2.finishFragment();
+                                            break;
+                                        default:
+                                            try {
+                                                hdVar2.dismiss();
+                                            } catch (Exception e2) {
+                                                fa4.g(e2, true);
+                                            }
+                                            me1Var2.l0();
+                                            break;
+                                    }
+                                }
+                            });
+                            break;
+                        }
+                    } else {
+                        gl.c3(new Runnable() { // from class: ae1
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                byte b5 = b4;
+                                hd hdVar2 = hdVar;
+                                me1 me1Var2 = me1Var;
+                                me1Var2.getClass();
+                                switch (b5) {
+                                    case 0:
+                                        try {
+                                            hdVar2.dismiss();
+                                        } catch (Exception e) {
+                                            fa4.g(e, true);
+                                        }
+                                        me1Var2.finishFragment();
+                                        break;
+                                    default:
+                                        try {
+                                            hdVar2.dismiss();
+                                        } catch (Exception e2) {
+                                            fa4.g(e2, true);
+                                        }
+                                        me1Var2.l0();
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    }
+                } else {
+                    gl.c3(new fv0(me1Var, hdVar, (TLRPC.User) tLObject, b2));
+                    break;
+                }
+            case 11:
+                gl.c3(new b87((d) obj3, (String) obj2, tL_error, tLObject, (TLObject) obj, (byte) 13));
+                break;
+            case 12:
+                gl.c3(new s67((kg1) obj3, (CountDownLatch) obj2, tLObject, (hg1) obj, (byte) 26));
+                break;
+            case 13:
+                gl.c3(new s67((kg1) obj3, (CountDownLatch) obj2, tLObject, (hg1) obj, (byte) 25));
+                break;
+            case 14:
+                gl.c3(new b87((d) obj3, (String) obj2, tL_error, tLObject, (TLObject) obj, (byte) 16));
+                break;
+            case 15:
+                gl.c3(new s67((mu1) obj3, (op1) obj2, tLObject, (yt0) obj, (byte) 28));
+                break;
+            case 16:
+                mu1 mu1Var = (mu1) obj3;
+                long[] jArr = (long[]) obj;
+                gl.r((s67) obj2);
+                mu1Var.v5.k.voiceTranscriptionRated = true;
+                ad7 messagesStorage = mu1Var.getMessagesStorage();
+                messagesStorage.a.c(new o57(messagesStorage, mu1Var.v5.e1(), k27.B0(mu1Var.v5.k), (TLObject) mu1Var.v5.k, (byte) 11));
+                gl.d3(new vm1(mu1Var, (byte) 22), jArr[0] > 0 ? Math.max(0L, 300 - (SystemClock.elapsedRealtime() - jArr[0])) : 0L);
+                break;
+            case 17:
+                mu1 mu1Var2 = (mu1) obj3;
+                TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
+                gl.c3(new wh0((hd[]) obj2, (byte) 3));
+                if (tL_error != null) {
+                    gl.c3(new jn1(mu1Var2, tL_error, tL_messages_editMessage, (byte) 2));
+                    break;
+                } else {
+                    mu1Var2.getMessagesController().R3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+            case 18:
+                gl.c3(new b87((d) obj3, (String) obj2, tL_error, tLObject, (TLObject) obj, (byte) 21));
+                break;
+            case 19:
+                gl.c3(new jn1((mf2) obj3, (TL_account.TL_connectedBot) obj2, (TL_account.TL_businessBotRecipients) obj, (byte) 20));
+                break;
+            case 20:
+                gl.c3(new b87(obj3, tL_error, (Object) tLObject, obj2, obj, (byte) 25));
+                break;
+            case 21:
+                cj3 cj3Var = (cj3) obj3;
+                cj3Var.getClass();
+                gl.c3(new b87((Object) cj3Var, (Object) tLObject, obj2, obj, (Object) tL_error, (byte) 26));
+                break;
+            case 22:
+                gl.c3(new og3((cj3) obj3, (TLRPC.TL_attachMenuBot) obj2, (LaunchActivity) obj, b4));
+                break;
+            case 23:
+                gl.c3(new hn1((q04) obj3, (hd[]) obj2, tLObject, (i4d) obj, (byte) 15));
+                break;
+            case 24:
+                gl.c3(new hn1((n14) obj3, (TLRPC.TL_messages_getStickers) obj2, tLObject, (Runnable) obj, (byte) 16));
+                break;
+            case 25:
+                gl.c3(new jf4((kf4) obj3, (hd) obj2, (t97) obj, b4));
+                break;
+            case 26:
+                gl.c3(new jf4((ll4) obj3, (d) obj2, (ArrayList) obj, b3));
+                break;
+            case 27:
+                gl.c3(new b87(obj3, (Object) tLObject, obj2, obj, (Object) tL_error, (byte) 29));
+                break;
+            case 28:
+                h75 h75Var = (h75) obj3;
+                TLRPC.Chat chat = (TLRPC.Chat) obj2;
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
+                if (tLObject == null) {
+                    gl.c3(new vc4(h75Var, tL_error, (byte) 24));
+                    break;
+                } else {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    int i = 0;
+                    while (true) {
+                        if (i < updates.updates.size()) {
+                            TLRPC.Update update = updates.updates.get(i);
+                            if (update instanceof TL_update.TL_updateGroupCall) {
+                                gl.c3(new e45(h75Var, chat, inputPeer, (TL_update.TL_updateGroupCall) update, (byte) 0));
+                            } else {
+                                i++;
+                            }
+                        }
+                    }
+                    na7.q1(h75Var.n1.a).R3(updates, false);
+                    break;
+                }
+            default:
+                gl.c3(new vz4((h75) obj3, (hd) obj2, tLObject, (TL_phone.exportGroupCallInvite) obj, tL_error));
+                break;
+        }
+    }
+
+    public /* synthetic */ en0(p8c p8cVar, na7 na7Var, p8c p8cVar2, byte b) {
+        this.a = b;
+        this.c = p8cVar;
+        this.b = na7Var;
+        this.d = p8cVar2;
+    }
+
+    public /* synthetic */ en0(Object obj, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = obj3;
     }
 }

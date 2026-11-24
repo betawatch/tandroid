@@ -1,255 +1,392 @@
 // default package
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.RectF;
+import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.a;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.SaveToGallerySettingsActivity;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wg implements ee, xe7, ce3, um3, ac7, j3c {
+public final /* synthetic */ class wg implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ wg(a3b a3bVar, jac jacVar, Context context, boolean z) {
-        this.a = (byte) 8;
-        this.d = a3bVar;
-        this.e = jacVar;
-        this.c = context;
-        this.b = z;
+    public /* synthetic */ wg(int i, View view, AtomicReference atomicReference) {
+        this.a = (byte) 23;
+        this.b = i;
+        this.c = view;
+        this.d = atomicReference;
     }
 
-    @Override // ac7
-    public final boolean b(TLRPC.TL_error tL_error) {
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
-        boolean[] zArr = (boolean[]) this.d;
-        d dVar = (d) this.e;
-        RectF rectF = ProfileActivity.e7;
-        return profileActivity.G2(zArr, this.b, dVar, tL_error);
-    }
-
-    @Override // um3
-    public final void c(TLRPC.TL_error tL_error, String str) {
-        un3 un3Var = (un3) this.c;
-        vm3 vm3Var = (vm3) this.d;
-        vm3 vm3Var2 = (vm3) this.e;
-        if (un3Var.r != 4) {
-            return;
-        }
-        if (str != null) {
-            gm.d3(new pz2(un3Var, str, vm3Var2, (byte) 10), Math.max(0L, (un3Var.V + 1200) - SystemClock.uptimeMillis()));
-            return;
-        }
-        un3Var.r = (byte) 3;
-        un3Var.K = vm3Var;
-        un3Var.F.f(false);
-        un3Var.j(0L, 240L);
-        if (!this.b) {
-            un3Var.J = null;
-        }
-        un3Var.w.d(vm3Var.a(), false);
-        un3Var.w.setRevert(un3Var.J != null);
-        un3Var.D(false);
-        un3.G(tL_error);
-    }
-
-    @Override // j3c
-    public final void d(Exception exc) {
-        ha9 ha9Var = (ha9) this.c;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.d;
-        b90 b90Var = (b90) this.e;
-        if (exc != null) {
-            taskCompletionSource.trySetException(exc);
-            return;
-        }
-        if (this.b) {
-            boolean z = true;
-            CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new ey8(ha9Var, countDownLatch, (byte) 17)).start();
-            ExecutorService executorService = vac.a;
-            boolean z2 = false;
-            try {
-                long j = 2000000000;
-                long nanoTime = System.nanoTime() + 2000000000;
-                while (true) {
-                    try {
-                        try {
-                            countDownLatch.await(j, TimeUnit.NANOSECONDS);
-                            break;
-                        } catch (InterruptedException unused) {
-                            j = nanoTime - System.nanoTime();
-                            z2 = true;
-                        }
-                    } catch (Throwable th) {
-                        th = th;
-                        if (z) {
-                            Thread.currentThread().interrupt();
-                        }
-                        throw th;
-                    }
-                }
-                if (z2) {
-                    Thread.currentThread().interrupt();
-                }
-            } catch (Throwable th2) {
-                th = th2;
-                z = z2;
-            }
-        }
-        taskCompletionSource.trySetResult(b90Var);
-    }
-
-    @Override // ce3
-    public final y79 n(int i, uzb uzbVar, int[] iArr) {
-        fe3 fe3Var = (fe3) this.c;
-        ae3 ae3Var = (ae3) this.d;
-        int[] iArr2 = (int[]) this.e;
-        fe3Var.getClass();
-        vd3 vd3Var = new vd3(fe3Var, ae3Var);
-        int i2 = iArr2[i];
-        jo5 p = mo5.p();
-        for (int i3 = 0; i3 < uzbVar.a; i3++) {
-            p.c(new wd3(i, uzbVar, i3, ae3Var, iArr[i3], this.b, vd3Var, i2));
-        }
-        return p.f();
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
-        switch (this.a) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        fl flVar;
+        int i;
+        int i2;
+        Integer num;
+        View view2;
+        int R;
+        byte b = this.a;
+        byte b2 = 15;
+        byte b3 = 5;
+        byte b4 = 2;
+        boolean z = false;
+        byte b5 = 1;
+        int i3 = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        switch (b) {
             case 0:
-                boolean z = this.b;
-                Context context = (Context) this.c;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.d;
-                gu2 gu2Var = (gu2) this.e;
-                if (!z) {
-                    atomicBoolean.set(true);
-                    gu2Var.accept(Boolean.TRUE);
-                    break;
-                } else {
-                    try {
-                        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                        intent.setData(Uri.parse("package:" + a.b.getPackageName()));
-                        context.startActivity(intent);
-                        break;
-                    } catch (Exception e) {
-                        fc4.g(e, true);
-                        return;
-                    }
-                }
-            case 1:
-                yv1 yv1Var = (yv1) this.c;
-                oc7 oc7Var = (oc7) this.d;
-                CharSequence charSequence = (CharSequence) this.e;
-                boolean z2 = this.b;
-                yv1Var.getClass();
-                oc7Var.z2 = 1;
-                oc7.d1().edit().putInt("secretWebpage2", yv1Var.getMessagesController().z2).commit();
-                yv1Var.Z5 = null;
-                yv1Var.tb(charSequence, z2);
+                ((hn7) obj2).setValue(i3);
+                ((ug) obj).run();
                 break;
-            case 7:
-                boolean z3 = this.b;
-                eb7 eb7Var = (eb7) this.c;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                zg9 zg9Var = (zg9) this.e;
-                int i2 = zg9Var.b;
-                if (!z3) {
-                    eb7Var.run();
-                    break;
-                } else {
-                    String trim = editTextBoldCursor.getText().toString().trim();
-                    if (!TextUtils.isEmpty(trim)) {
-                        TL_iv.pageBlockButtonRow d = zg9Var.d();
-                        TL_keyboard.PageButton pageButton = (d == null || i2 < 0 || i2 >= d.buttons.size()) ? null : d.buttons.get(i2);
-                        TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
-                        if ((inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType).user_id : 0L) > 0) {
-                            TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
-                            TL_iv.pageBlockButtonRow d2 = zg9Var.d();
-                            TL_keyboard.PageButton pageButton2 = (d2 == null || i2 < 0 || i2 >= d2.buttons.size()) ? null : d2.buttons.get(i2);
-                            TL_keyboard.InlineButtonType inlineButtonType2 = pageButton2 != null ? pageButton2.type : null;
-                            tL_inlineButtonTypeUserProfile.user_id = inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType2).user_id : 0L;
-                            zg9Var.a(trim, tL_inlineButtonTypeUserProfile);
+            case 1:
+                zi1 zi1Var = (zi1) obj2;
+                uxa uxaVar = (uxa) obj;
+                oi1 oi1Var = zi1Var.G0;
+                if (view.isEnabled() && !oi1Var.R && !zi1Var.A0.R) {
+                    int currentTime = ConnectionsManager.getInstance(i3).getCurrentTime();
+                    if (zi1Var.B0 <= currentTime) {
+                        if (zi1Var.N0 >= na7.q1(i3).k4.q2.f()) {
+                            TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                            gi1 gi1Var = new gi1(zi1Var, twoStepVerificationActivity, b4);
+                            twoStepVerificationActivity.a0 = (byte) 1;
+                            twoStepVerificationActivity.c0 = gi1Var;
+                            oi1Var.setLoading(true);
+                            twoStepVerificationActivity.w0(new hi1(zi1Var, uxaVar, twoStepVerificationActivity, b4));
+                            break;
+                        } else {
+                            u21.b0(uxaVar).M(zi1Var.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), gl.N2(k96.G((int) na7.q1(i3).k4.q2.f(), "BotStarsWithdrawMinLimit", new Object[0]), -1, 0, new fi1(zi1Var, i3, b5), null)).j();
                             break;
                         }
+                    } else {
+                        zi1Var.P0 = u21.b0(uxaVar).Q(R.raw.timer_3, 36, gl.S2(k96.a0(null, null, 2131752940, ss0.w0(zi1Var.B0 - currentTime)))).j();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                mu1 mu1Var = (mu1) obj2;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj;
+                if (mu1Var.m1 != null && mu1Var.getParentActivity() != null) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(i3);
+                    break;
+                }
+                break;
+            case 3:
+                mu1 mu1Var2 = (mu1) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                if (mu1Var2.v5 != null && i3 < arrayList.size()) {
+                    mu1Var2.Ja(((Integer) arrayList.get(i3)).intValue());
+                    break;
+                }
+                break;
+            case 4:
+                ((vt4) obj2).c(new eg(obj, i3, (byte) 23));
+                break;
+            case 5:
+                r32 r32Var = (r32) obj2;
+                wjb wjbVar = (wjb) obj;
+                cs5 G = cs5.G(r32Var, wjbVar, r32Var.y);
+                G.T = true;
+                G.b(R.drawable.msg_addbot, k96.M0(2131742894, null), new va7(r32Var, i3, wjbVar, b2), false);
+                G.b(R.drawable.menu_comments, k96.M0(2131742962, null), new j32(r32Var, r7), false);
+                G.s = (short) 0;
+                G.b0(0.0f, -gl.L(48.0f));
+                G.a0();
+                break;
+            case 6:
+                sd3 sd3Var = (sd3) obj2;
+                l5c l5cVar = (l5c) obj;
+                if (!sd3Var.Y0()) {
+                    r7 = i3 <= 0 ? (byte) 1 : (byte) 0;
+                    TLRPC.TL_chatBannedRights tL_chatBannedRights = sd3Var.r2;
+                    boolean z2 = r7 ^ 1;
+                    tL_chatBannedRights.send_media = z2;
+                    tL_chatBannedRights.send_photos = z2;
+                    tL_chatBannedRights.send_videos = z2;
+                    tL_chatBannedRights.send_stickers = z2;
+                    tL_chatBannedRights.send_gifs = z2;
+                    tL_chatBannedRights.send_inline = z2;
+                    tL_chatBannedRights.send_games = z2;
+                    tL_chatBannedRights.send_audios = z2;
+                    tL_chatBannedRights.send_docs = z2;
+                    tL_chatBannedRights.send_voices = z2;
+                    tL_chatBannedRights.send_roundvideos = z2;
+                    tL_chatBannedRights.embed_links = z2;
+                    tL_chatBannedRights.send_polls = z2;
+                    tL_chatBannedRights.send_reactions = z2;
+                    sd3Var.c1();
+                    l5cVar.O(true);
+                    break;
+                } else {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(sd3Var.getContext());
+                    String M0 = k96.M0(2131743480, null);
+                    hd hdVar = alertDialog$Builder.a;
+                    hdVar.S = M0;
+                    hdVar.U = k96.M0(2131743479, null);
+                    alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                    hdVar.show();
+                    break;
+                }
+            case 7:
+                ((cj3) obj2).S3(i3, (cs5) obj);
+                break;
+            case 8:
+                xf5 xf5Var = (xf5) obj2;
+                xf5Var.n = i3;
+                xf5Var.b.e(false, view.getLeft());
+                xf5Var.c.e(false, view.getRight());
+                ((uc7) obj).a(i3);
+                xf5Var.invalidate();
+                break;
+            case 9:
+                ((ah6) obj2).k0(i3, (cs5) obj);
+                break;
+            case 10:
+                boolean[] zArr = (boolean[]) obj2;
+                wy8[] wy8VarArr = (wy8[]) obj;
+                zArr[0] = i3 == 1;
+                int i4 = 0;
+                while (i4 < 2) {
+                    wy8VarArr[i4].c.a(zArr[0] == (i4 == 1), true);
+                    i4++;
+                }
+                break;
+            case 11:
+                ks7 ks7Var = (ks7) obj2;
+                ks7Var.a(i3);
+                ks7Var.b.w().i(i3 - 1, true);
+                ks7Var.b.s((m01) obj);
+                break;
+            case 12:
+                b48 b48Var = (b48) obj2;
+                ViewGroup viewGroup = (ViewGroup) obj;
+                ArrayList arrayList2 = b48Var.G1;
+                d dVar = b48Var.s1;
+                int i5 = b48Var.z1;
+                if (i3 < i5 || i3 >= b48Var.A1) {
+                    int i6 = b48Var.B1;
+                    flVar = (i3 < i6 || i3 >= b48Var.C1) ? null : (fl) b48Var.F1.get(i3 - i6);
+                } else {
+                    flVar = (fl) arrayList2.get(i3 - i5);
+                }
+                if (flVar != null) {
+                    if (!b48Var.D1) {
+                        flVar.d = !flVar.d;
+                        if (i3 >= b48Var.z1 && i3 < b48Var.A1) {
+                            int i7 = 0;
+                            while (true) {
+                                if (i7 < arrayList2.size()) {
+                                    if (((fl) arrayList2.get(i7)).d) {
+                                        z = true;
+                                    } else {
+                                        i7++;
+                                    }
+                                }
+                            }
+                            b48Var.r1.setEnabled(z);
+                            b48Var.D0();
+                        }
+                        ((z38) viewGroup).setChecked(flVar.d);
+                        break;
+                    } else {
+                        int i8 = flVar.c;
+                        if (i8 != 0) {
+                            if (i8 != 1) {
+                                if (i8 != 3) {
+                                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(dVar.getParentActivity());
+                                    alertDialog$Builder2.e(new CharSequence[]{k96.M0(2131751755, null)}, new fe((Object) b48Var, (Object) flVar, (byte) 8));
+                                    alertDialog$Builder2.o();
+                                    break;
+                                } else {
+                                    String c = flVar.c(false);
+                                    if (!c.startsWith("http")) {
+                                        c = "http://".concat(c);
+                                    }
+                                    d01.t(dVar.getParentActivity(), c);
+                                    break;
+                                }
+                            } else {
+                                d01.t(dVar.getParentActivity(), "mailto:" + flVar.c(false));
+                                break;
+                            }
+                        } else {
+                            try {
+                                Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:" + flVar.c(false)));
+                                intent.addFlags(TLObject.FLAG_28);
+                                dVar.getParentActivity().startActivityForResult(intent, 500);
+                                break;
+                            } catch (Exception e) {
+                                fa4.g(e, true);
+                                return;
+                            }
+                        }
+                    }
+                }
+                break;
+            case 13:
+                lca lcaVar = (lca) obj2;
+                d dVar2 = (d) obj;
+                wf2 wf2Var = lcaVar.G;
+                wf2Var.a(!wf2Var.a.q, true);
+                boolean z3 = wf2Var.a.q;
+                u21 b0 = u21.b0(dVar2);
+                if (z3) {
+                    i = R.raw.silent_unmute;
+                    i2 = 2131750240;
+                } else {
+                    i = R.raw.silent_mute;
+                    i2 = 2131750239;
+                }
+                b0.P(i, k96.M0(i2, null)).j();
+                lcaVar.d.h = Boolean.valueOf(z3);
+                if (lcaVar.I >= 0) {
+                    ConnectionsManager.getInstance(i3).cancelRequest(lcaVar.I, true);
+                    lcaVar.I = -1;
+                }
+                TL_stars.toggleChatStarGiftNotifications togglechatstargiftnotifications = new TL_stars.toggleChatStarGiftNotifications();
+                togglechatstargiftnotifications.peer = na7.q1(i3).h1(lcaVar.c);
+                togglechatstargiftnotifications.enabled = z3;
+                ConnectionsManager.getInstance(i3).sendRequest(togglechatstargiftnotifications, new hj7(lcaVar, dVar2, b2));
+                break;
+            case 14:
+                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj2;
+                ((m8) obj).d(true);
+                Bundle bundle = new Bundle();
+                bundle.putLong("dialog_id", ((op9) saveToGallerySettingsActivity.s.get(i3)).c.d);
+                bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+                saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
+                break;
+            case 15:
+                h04 h04Var = (h04) obj;
+                tx9 tx9Var = ((tw9) obj2).c;
+                if (!h04Var.e && !y6c.h(tx9Var.W).p()) {
+                    d Q = LaunchActivity.Q();
+                    if (Q != null) {
+                        Q.showDialog(new jh8(tx9Var.d1, tx9Var.getContext(), tx9Var.W, 11, false));
+                        break;
+                    }
+                } else {
+                    int i9 = 0;
+                    while (true) {
+                        rw9 rw9Var = tx9Var.i0;
+                        if (i9 >= rw9Var.getChildCount()) {
+                            num = null;
+                            view2 = null;
+                        } else if ((rw9Var.getChildAt(i9) instanceof yw9) && (R = RecyclerView.R((view2 = rw9Var.getChildAt(i9)))) >= 0 && tx9Var.z0.get(R) == i3) {
+                            num = Integer.valueOf(R);
+                        } else {
+                            i9++;
+                        }
+                    }
+                    if (num != null) {
+                        tx9Var.h(num.intValue(), view2);
+                    }
+                    qx3.E0(null, h04Var.b, false, null, null);
+                    tx9Var.C0.add(Long.valueOf(h04Var.b.id));
+                    tx9Var.B(true, true, true);
+                    break;
+                }
+                break;
+            case 16:
+                zda zdaVar = (zda) obj2;
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                nfa nfaVar = zdaVar.f;
+                d dVar3 = nfaVar.y1;
+                dVar3.finishPreviewFragment();
+                chat.left = false;
+                zdaVar.E(false);
+                zdaVar.r(i3);
+                if (zdaVar.d.isEmpty()) {
+                    nfaVar.N1(true);
+                    nfaVar.y();
+                }
+                dVar3.getNotificationCenter().k(203, Long.valueOf(-nfaVar.m1));
+                dVar3.getMessagesController().k(chat.id, dVar3.getUserConfig().f(), null, dVar3, new t7a(zdaVar, chat, b3));
+                break;
+            case 17:
+                d01.t((Context) obj2, "https://" + na7.q1(i3).N2 + "/nft/" + ((TL_stars.TL_starGiftUnique) obj).slug);
+                break;
+            case 18:
+                ((r15) obj2).run();
+                ((ActionBarPopupWindow$ActionBarPopupWindowLayout) obj).getSwipeBack().e(i3);
+                break;
+            case 19:
+                x4c x4cVar = (x4c) obj2;
+                x4cVar.e.a(true, true);
+                na7.q1(i3).P1().f(false, (ArrayList) obj, new jq0(x4cVar, i3, (byte) 5));
+                break;
+            case 20:
+                ((ae9) obj).a(Integer.valueOf(i3));
+                ((cmc) obj2).setSelected(i3);
+                break;
+            case 21:
+                ((qqc) obj2).a(i3, ((pqc) obj).h);
+                break;
+            case 22:
+                u41 u41Var = (u41) obj2;
+                fx0 fx0Var = (fx0) obj;
+                if (!u41Var.R) {
+                    gl2 gl2Var = xrc.d;
+                    if (gl2Var != null && ((byte[]) gl2Var.f) != null) {
+                        u41Var.setLoading(true);
+                        TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
+                        tL_messages_requestUrlAuth.flags |= 4;
+                        tL_messages_requestUrlAuth.url = "https://web.telegram.org/";
+                        int i10 = this.b;
+                        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_requestUrlAuth, new hc(r7), new u15(u41Var, fx0Var, i10, view, gl2Var));
+                        break;
+                    } else {
+                        fa4.b("wear-auth: login pressed with no session/key");
+                        break;
                     }
                 }
                 break;
             default:
-                a3b a3bVar = (a3b) this.d;
-                jac jacVar = (jac) this.e;
-                Context context2 = (Context) this.c;
-                boolean z4 = this.b;
-                String trim2 = a3bVar.getText().toString().trim();
-                if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(gm.I3(trim2.toString()))) {
-                    gm.t1(a3bVar);
-                    he heVar2 = new he(3, z4 ? null : new r63(), context2);
-                    heVar2.q(250L);
-                    jacVar.a(trim2, new i48((Object) heVar2, (Object) heVar, (Object) a3bVar, (byte) 10));
-                    break;
-                } else {
-                    a3bVar.setErrorText(".");
-                    gm.A3(-6.0f, a3bVar, null);
-                    xx0.E.a();
-                    gm.E3(a3bVar);
-                    break;
-                }
+                gba.m0 = i3;
+                SharedPreferences.Editor edit = na7.c1().edit();
+                edit.putInt("searchEngineType", gba.m0);
+                edit.apply();
+                ((wgb) ((View) obj2)).w(is9.a().a, true);
+                ((Dialog) ((AtomicReference) obj).get()).dismiss();
                 break;
         }
     }
 
-    @Override // xe7
-    public final void run(long j) {
-        io2 io2Var = (io2) this.c;
-        he heVar = (he) this.d;
-        String str = (String) this.e;
-        heVar.dismiss();
-        if (j == 0) {
-            return;
-        }
-        io2Var.b = -j;
-        io2Var.c = io2Var.getMessagesController().L0(Long.valueOf(j));
-        io2Var.Z(str, this.b);
+    public /* synthetic */ wg(Object obj, int i, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
     }
 
-    public /* synthetic */ wg(Object obj, Object obj2, boolean z, Object obj3, byte b) {
+    public /* synthetic */ wg(Object obj, Object obj2, int i, byte b) {
         this.a = b;
         this.c = obj;
         this.d = obj2;
-        this.b = z;
-        this.e = obj3;
-    }
-
-    public /* synthetic */ wg(d dVar, jm7 jm7Var, CharSequence charSequence, boolean z, byte b) {
-        this.a = b;
-        this.c = dVar;
-        this.d = jm7Var;
-        this.e = charSequence;
-        this.b = z;
-    }
-
-    public /* synthetic */ wg(boolean z, Object obj, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.b = z;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
+        this.b = i;
     }
 }

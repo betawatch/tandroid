@@ -1,8 +1,10 @@
 // default package
 
+import android.util.SparseArray;
+
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class ev8 {
     public static final ev8 a;
@@ -11,7 +13,19 @@ public final class ev8 {
     static {
         ev8 ev8Var = new ev8("DEFAULT", 0);
         a = ev8Var;
-        b = new ev8[]{ev8Var, new ev8("SIGNED", 1), new ev8("FIXED", 2)};
+        ev8 ev8Var2 = new ev8("UNMETERED_ONLY", 1);
+        ev8 ev8Var3 = new ev8("UNMETERED_OR_DAILY", 2);
+        ev8 ev8Var4 = new ev8("FAST_IF_RADIO_AWAKE", 3);
+        ev8 ev8Var5 = new ev8("NEVER", 4);
+        ev8 ev8Var6 = new ev8("UNRECOGNIZED", 5);
+        b = new ev8[]{ev8Var, ev8Var2, ev8Var3, ev8Var4, ev8Var5, ev8Var6};
+        SparseArray sparseArray = new SparseArray();
+        sparseArray.put(0, ev8Var);
+        sparseArray.put(1, ev8Var2);
+        sparseArray.put(2, ev8Var3);
+        sparseArray.put(3, ev8Var4);
+        sparseArray.put(4, ev8Var5);
+        sparseArray.put(-1, ev8Var6);
     }
 
     public static ev8 valueOf(String str) {

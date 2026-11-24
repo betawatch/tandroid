@@ -1,80 +1,35 @@
 // default package
 
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.CancellationSignal;
-import android.util.Log;
-import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import java.util.concurrent.Executor;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class rue {
-    public static void a(int i, int i2, Intent intent, Executor executor, a33 a33Var, CancellationSignal cancellationSignal) {
-        yu4 yu4Var;
-        String string;
-        Bundle bundle;
-        boolean z = j33.c;
-        if (i != z) {
-            Log.w("GetCredentialController", "Returned request code " + (z ? 1 : 0) + " which  does not match what was given " + i);
-            return;
-        }
-        e33 e33Var = j33.a;
-        if (i2 != -1) {
-            vu4 uu4Var = new uu4(mce.a(i2), (byte) 2);
-            if (i2 == 0) {
-                uu4Var = new su4("activity is cancelled by the user.");
-            }
-            CredentialProviderPlayServicesImpl.Companion.getClass();
-            if (w33.a(cancellationSignal)) {
-                return;
-            }
-            executor.execute(new s33(a33Var, uu4Var, (byte) 2));
-            return;
-        }
-        if (intent == null) {
-            CredentialProviderPlayServicesImpl.Companion.getClass();
-            if (w33.a(cancellationSignal)) {
-                return;
-            }
-            executor.execute(new d23(a33Var, (byte) 10));
-            return;
-        }
-        int i3 = Build.VERSION.SDK_INT;
-        vu4 vu4Var = null;
-        if (i3 >= 34) {
-            yu4Var = t4.d(intent);
-        } else {
-            Bundle bundleExtra = intent.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
-            yu4Var = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new yu4(gce.a(string, bundle));
-        }
-        if (yu4Var != null) {
-            CredentialProviderPlayServicesImpl.Companion.getClass();
-            if (w33.a(cancellationSignal)) {
-                return;
-            }
-            executor.execute(new ey8(a33Var, yu4Var, (byte) 19));
-            return;
-        }
-        if (i3 >= 34) {
-            vu4Var = t4.c(intent);
-        } else {
-            int i4 = vu4.a;
-            Bundle bundleExtra2 = intent.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_EXCEPTION");
-            if (bundleExtra2 != null) {
-                String string2 = bundleExtra2.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_TYPE");
-                if (string2 == null) {
-                    u36.j("Bundle was missing exception type.");
-                    return;
-                }
-                vu4Var = gwd.b(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
+    public static HashMap a(rc1 rc1Var) {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap2.put("number", sue.e((String) rc1Var.a));
+        hashMap2.put("cvc", sue.e((String) rc1Var.b));
+        hashMap2.put("exp_month", (Integer) rc1Var.m);
+        hashMap2.put("exp_year", (Integer) rc1Var.n);
+        hashMap2.put("name", sue.e((String) rc1Var.c));
+        hashMap2.put("currency", sue.e((String) rc1Var.l));
+        hashMap2.put("address_line1", sue.e((String) rc1Var.d));
+        hashMap2.put("address_line2", sue.e((String) rc1Var.e));
+        hashMap2.put("address_city", sue.e((String) rc1Var.f));
+        hashMap2.put("address_zip", sue.e((String) rc1Var.h));
+        hashMap2.put("address_state", sue.e((String) rc1Var.g));
+        hashMap2.put("address_country", sue.e((String) rc1Var.i));
+        Iterator it = new HashSet(hashMap2.keySet()).iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (hashMap2.get(str) == null) {
+                hashMap2.remove(str);
             }
         }
-        CredentialProviderPlayServicesImpl.Companion.getClass();
-        if (w33.a(cancellationSignal)) {
-            return;
-        }
-        executor.execute(new s33(a33Var, vu4Var, (byte) 1));
+        hashMap.put("card", hashMap2);
+        return hashMap;
     }
 }

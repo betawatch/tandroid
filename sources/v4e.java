@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class v4e implements cq7 {
-    public static final v4e a = new v4e();
+public final class v4e extends v5c {
+    public boolean b;
+    public final /* synthetic */ Object c;
 
-    static {
-        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
+    public v4e(Object obj) {
+        super((byte) 12);
+        this.c = obj;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return !this.b;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.b) {
+            w26.g();
+            return null;
         }
-        throw null;
+        this.b = true;
+        return this.c;
     }
 }

@@ -1,742 +1,501 @@
 // default package
 
-import android.graphics.Point;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class f47 {
-    public long a;
-    public boolean b;
-    public boolean c;
-    public k47 h;
-    public boolean i;
-    public boolean j;
-    public final e47 m;
-    public boolean n;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public final HashMap f = new HashMap();
-    public final vh6 g = new vh6();
-    public int k = -1;
-    public int l = 800;
+public final class f47 extends o39 {
+    public final ArrayList f3;
+    public final lm g3;
+    public final lm h3;
+    public final xl3 i3;
+    public final /* synthetic */ j47 j3;
 
-    public f47() {
-        e47 e47Var = new e47();
-        e47Var.n = 1.0f;
-        this.m = e47Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f47(j47 j47Var, Context context, wjb wjbVar) {
+        super(context, wjbVar);
+        this.j3 = j47Var;
+        this.f3 = new ArrayList(10);
+        s33 s33Var = s33.h;
+        this.g3 = new lm(this, 0L, 360L, s33Var);
+        this.h3 = new lm(this, 0L, 360L, s33Var);
+        this.i3 = new xl3((byte) 7);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x07b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x038a, code lost:
     
-        if (r15 > r13[2]) goto L237;
+        if (r2.d.size() != 1) goto L157;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:387:0x07bf, code lost:
-    
-        if (r13[2] > r13[3]) goto L237;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x009f, code lost:
-    
-        if ((k47.n1(r13.k) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L39;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x07d0  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0186  */
+    /* JADX WARN: Type inference failed for: r9v10, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r9v25 */
+    /* JADX WARN: Type inference failed for: r9v31 */
+    @Override // o39, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a() {
+    public final void dispatchDraw(Canvas canvas) {
+        ArrayList arrayList;
         int i;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        f27 currentMessagesGroup;
         int i2;
-        int i3;
-        int i4;
         float f;
-        float f2;
-        float f3;
+        ArrayList arrayList4;
+        f27 f27Var;
+        f47 f47Var;
+        f47 f47Var2;
+        ArrayList arrayList5;
+        j47 j47Var;
+        int i3;
+        f27 currentMessagesGroup2;
+        int x;
+        int x2;
+        int y;
+        int y2;
+        int i4;
         int i5;
-        byte b;
-        boolean z;
-        k47 k47Var;
-        TLRPC.Message message;
-        float f4;
-        float f5;
-        this.e.clear();
-        this.f.clear();
-        this.g.b();
-        this.h = null;
-        this.l = 800;
-        int size = this.d.size();
-        boolean z2 = 0;
-        boolean z3 = true;
-        if (size == 1) {
-            this.h = (k47) this.d.get(0);
-            return;
+        int i6;
+        int i7;
+        f27 currentMessagesGroup3;
+        j47 j47Var2 = this.j3;
+        e47 e47Var = j47Var2.G;
+        int measuredHeight = e47Var.getMeasuredHeight();
+        f47 f47Var3 = j47Var2.K;
+        int childCount = f47Var3.getChildCount();
+        boolean z = false;
+        for (int i8 = 0; i8 < childCount; i8++) {
+            View childAt = f47Var3.getChildAt(i8);
+            if (childAt instanceof gb2) {
+                gb2 gb2Var = (gb2) childAt;
+                RectF rectF = zec.h;
+                zec.c(gb2Var, e47Var, rectF);
+                float f2 = rectF.top;
+                int i9 = (int) f2;
+                childAt.getMeasuredHeight();
+                int i10 = i9 >= 0 ? 0 : -i9;
+                int measuredHeight2 = childAt.getMeasuredHeight();
+                if (measuredHeight2 > measuredHeight) {
+                    measuredHeight2 = i10 + measuredHeight;
+                }
+                gb2Var.D3(i10, measuredHeight2 - i10, measuredHeight, f2, f2, e47Var.getMeasuredWidth(), e47Var.getMeasuredHeight(), 0, 0, 0);
+            }
         }
-        if (size >= 1) {
-            StringBuilder sb = new StringBuilder();
-            this.b = false;
-            this.c = false;
-            this.j = false;
-            int i6 = this.n ? size - 1 : 0;
-            boolean z4 = false;
-            boolean z5 = false;
-            boolean z6 = false;
-            boolean z7 = true;
-            float f6 = 1.0f;
-            while (true) {
-                if (this.n) {
-                    if (i6 < 0) {
-                        break;
+        boolean z2 = true;
+        canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getHeight() + getScrollY()) - 1, kk7.d4, 31);
+        Canvas canvas2 = canvas;
+        canvas2.save();
+        int childCount2 = getChildCount();
+        f27 f27Var2 = null;
+        for (int i11 = 0; i11 < childCount2; i11++) {
+            View childAt2 = getChildAt(i11);
+            if ((childAt2 instanceof gb2) && ((currentMessagesGroup3 = ((gb2) childAt2).getCurrentMessagesGroup()) == null || currentMessagesGroup3 != f27Var2)) {
+                f27Var2 = currentMessagesGroup3;
+            }
+        }
+        int i12 = 0;
+        while (true) {
+            arrayList = this.f3;
+            int i13 = 2;
+            i = 3;
+            if (i12 >= 3) {
+                break;
+            }
+            arrayList.clear();
+            if (i12 != 2 || f47Var3.W1) {
+                int i14 = z ? 1 : 0;
+                ?? r9 = z;
+                while (i14 < childCount2) {
+                    View childAt3 = f47Var3.getChildAt(i14);
+                    if (childAt3 instanceof gb2) {
+                        gb2 gb2Var2 = (gb2) childAt3;
+                        if (childAt3.getY() <= f47Var3.getHeight() && childAt3.getY() + childAt3.getHeight() >= 0.0f && (currentMessagesGroup2 = gb2Var2.getCurrentMessagesGroup()) != null) {
+                            e27 e27Var = currentMessagesGroup2.m;
+                            if ((i12 != 0 || currentMessagesGroup2.d.size() != z2) && ((i12 != z2 || e27Var.i) && ((i12 != 0 || !gb2Var2.getMessageObject().Z) && (i12 != z2 || gb2Var2.getMessageObject().Z)))) {
+                                boolean z3 = gb2Var2.La;
+                                if (i12 == i13) {
+                                    if (!z3) {
+                                    }
+                                    if (!arrayList.contains(currentMessagesGroup2)) {
+                                        e27Var.a = r9;
+                                        e27Var.b = r9;
+                                        e27Var.c = r9;
+                                        e27Var.d = r9;
+                                        e27Var.l = r9;
+                                        e27Var.k = r9;
+                                        e27Var.m = gb2Var2;
+                                        arrayList.add(currentMessagesGroup2);
+                                    }
+                                    e27Var.k = gb2Var2.L2();
+                                    e27Var.l = gb2Var2.K2();
+                                    x = (int) (gb2Var2.getX() + gb2Var2.getBackgroundDrawableLeft());
+                                    x2 = (int) (gb2Var2.getX() + gb2Var2.getBackgroundDrawableRight());
+                                    y = (int) (gb2Var2.getY() + gb2Var2.getPaddingTop() + gb2Var2.getBackgroundDrawableTop());
+                                    y2 = (int) (gb2Var2.getY() + gb2Var2.getPaddingTop() + gb2Var2.getBackgroundDrawableBottom());
+                                    if ((gb2Var2.getCurrentPosition().l & 4) == 0) {
+                                        y -= gl.L(10.0f);
+                                    }
+                                    if ((gb2Var2.getCurrentPosition().l & 8) == 0) {
+                                        y2 += gl.L(10.0f);
+                                    }
+                                    if (gb2Var2.La) {
+                                        e27Var.m = gb2Var2;
+                                    }
+                                    i4 = e27Var.b;
+                                    if (i4 != 0 || y < i4) {
+                                        e27Var.b = y;
+                                    }
+                                    i5 = e27Var.d;
+                                    if (i5 != 0 || y2 > i5) {
+                                        e27Var.d = y2;
+                                    }
+                                    i6 = e27Var.a;
+                                    if (i6 != 0 || x < i6) {
+                                        e27Var.a = x;
+                                    }
+                                    i7 = e27Var.c;
+                                    if (i7 != 0 || x2 > i7) {
+                                        e27Var.c = x2;
+                                    }
+                                } else {
+                                    if (z3) {
+                                    }
+                                    if (!arrayList.contains(currentMessagesGroup2)) {
+                                    }
+                                    e27Var.k = gb2Var2.L2();
+                                    e27Var.l = gb2Var2.K2();
+                                    x = (int) (gb2Var2.getX() + gb2Var2.getBackgroundDrawableLeft());
+                                    x2 = (int) (gb2Var2.getX() + gb2Var2.getBackgroundDrawableRight());
+                                    y = (int) (gb2Var2.getY() + gb2Var2.getPaddingTop() + gb2Var2.getBackgroundDrawableTop());
+                                    y2 = (int) (gb2Var2.getY() + gb2Var2.getPaddingTop() + gb2Var2.getBackgroundDrawableBottom());
+                                    if ((gb2Var2.getCurrentPosition().l & 4) == 0) {
+                                    }
+                                    if ((gb2Var2.getCurrentPosition().l & 8) == 0) {
+                                    }
+                                    if (gb2Var2.La) {
+                                    }
+                                    i4 = e27Var.b;
+                                    if (i4 != 0) {
+                                    }
+                                    e27Var.b = y;
+                                    i5 = e27Var.d;
+                                    if (i5 != 0) {
+                                    }
+                                    e27Var.d = y2;
+                                    i6 = e27Var.a;
+                                    if (i6 != 0) {
+                                    }
+                                    e27Var.a = x;
+                                    i7 = e27Var.c;
+                                    if (i7 != 0) {
+                                    }
+                                    e27Var.c = x2;
+                                }
+                            }
+                        }
                     }
-                    k47Var = (k47) this.d.get(i6);
-                    if (i6 == (!this.n ? size - 1 : z2)) {
-                        k47Var.W2 = null;
-                        z6 = k47Var.O3();
-                        if (!z6) {
-                            TLRPC.Message message2 = k47Var.k;
-                            TLRPC.MessageFwdHeader messageFwdHeader = message2.fwd_from;
-                            if (messageFwdHeader == null || messageFwdHeader.saved_from_peer == null) {
-                                if (message2.from_id instanceof TLRPC.TL_peerUser) {
-                                    TLRPC.Peer peer = message2.peer_id;
-                                    if (peer.channel_id == 0) {
-                                        if (peer.chat_id == 0) {
-                                            if (!(k47.n1(message2) instanceof TLRPC.TL_messageMediaGame)) {
-                                            }
-                                        }
+                    i14++;
+                    i13 = 2;
+                    r9 = 0;
+                }
+                int i15 = 0;
+                ArrayList arrayList6 = arrayList;
+                while (i15 < arrayList6.size()) {
+                    f27 f27Var3 = (f27) arrayList6.get(i15);
+                    if (f27Var3 == null) {
+                        arrayList5 = arrayList6;
+                        f47Var2 = f47Var3;
+                        j47Var = j47Var2;
+                        i3 = i15;
+                    } else {
+                        e27 e27Var2 = f27Var3.m;
+                        float U1 = e27Var2.m.U1(z2);
+                        float f3 = e27Var2.a + U1 + e27Var2.e;
+                        float f4 = e27Var2.b + e27Var2.f;
+                        float f5 = e27Var2.g + e27Var2.c + U1;
+                        float f6 = e27Var2.d + e27Var2.h;
+                        if (f4 < (-gl.L(20.0f))) {
+                            f4 = -gl.L(20.0f);
+                        }
+                        if (f6 > gl.L(20.0f) + f47Var3.getMeasuredHeight()) {
+                            f6 = gl.L(20.0f) + f47Var3.getMeasuredHeight();
+                        }
+                        boolean z4 = (e27Var2.m.getScaleX() == 1.0f && e27Var2.m.getScaleY() == 1.0f) ? false : z2;
+                        if (z4) {
+                            canvas2.save();
+                            arrayList4 = arrayList6;
+                            f27Var = f27Var3;
+                            f47Var = f47Var3;
+                            canvas2.scale(e27Var2.m.getScaleX(), e27Var2.m.getScaleY(), oo1.z(f5, f3, 2.0f, f3), oo1.z(f6, f4, 2.0f, f4));
+                        } else {
+                            arrayList4 = arrayList6;
+                            f27Var = f27Var3;
+                            f47Var = f47Var3;
+                        }
+                        float f7 = f4;
+                        float f8 = f6;
+                        f47Var2 = f47Var;
+                        arrayList5 = arrayList4;
+                        j47Var = j47Var2;
+                        f27 f27Var4 = f27Var;
+                        i3 = i15;
+                        e27Var2.m.K0(canvas, (int) f3, (int) f4, (int) f5, (int) f6, e27Var2.k, e27Var2.l, false, 0);
+                        e27Var2.m = null;
+                        e27Var2.o = f27Var4.c;
+                        if (z4) {
+                            canvas.restore();
+                            for (int i16 = 0; i16 < childCount2; i16++) {
+                                View childAt4 = f47Var2.getChildAt(i16);
+                                if (childAt4 instanceof gb2) {
+                                    gb2 gb2Var3 = (gb2) childAt4;
+                                    if (gb2Var3.getCurrentMessagesGroup() == f27Var4) {
+                                        int left = gb2Var3.getLeft();
+                                        int top = gb2Var3.getTop();
+                                        childAt4.setPivotX(((f5 - f3) / 2.0f) + (f3 - left));
+                                        childAt4.setPivotY(((f8 - f7) / 2.0f) + (f7 - top));
                                     }
                                 }
                             }
-                            z4 = z3;
-                            if (!k47Var.I3() || k47Var.U2()) {
-                                this.i = z3;
-                            }
                         }
-                        z4 = z2;
-                        if (!k47Var.I3()) {
-                        }
-                        this.i = z3;
                     }
-                    message = k47Var.k;
-                    if (message != null && message.invert_media) {
-                        this.j = z3;
-                    }
-                    TLRPC.PhotoSize w = bc4.w(k47Var.p0, gm.Y0(z2), z2, null, z2);
-                    c47 c47Var = new c47();
-                    c47Var.h = (this.n ? i6 != size + (-1) : i6 != 0) ? z2 : z3;
-                    f4 = w != null ? 1.0f : w.w / w.h;
-                    c47Var.g = f4;
-                    if (f4 <= 1.2f) {
-                        sb.append("w");
-                    } else if (f4 < 0.8f) {
-                        sb.append("n");
-                    } else {
-                        sb.append("q");
-                    }
-                    f5 = c47Var.g;
-                    f6 += f5;
-                    if (f5 > 2.0f) {
-                        z5 = z3;
-                    }
-                    this.f.put(k47Var, c47Var);
-                    this.g.k(c47Var, k47Var.e1());
-                    this.e.add(c47Var);
-                    if (k47Var.z != null) {
-                        if (z7 && this.h == null) {
-                            this.h = k47Var;
-                            z7 = false;
-                        } else if (!this.i) {
-                            this.h = null;
-                        }
-                        this.c = true;
-                    }
-                    i6 = !this.n ? i6 - 1 : i6 + 1;
-                    z2 = 0;
-                    z3 = true;
-                } else {
-                    if (i6 >= size) {
-                        break;
-                    }
-                    k47Var = (k47) this.d.get(i6);
-                    if (i6 == (!this.n ? size - 1 : z2)) {
-                    }
-                    message = k47Var.k;
-                    if (message != null) {
-                        this.j = z3;
-                    }
-                    TLRPC.PhotoSize w2 = bc4.w(k47Var.p0, gm.Y0(z2), z2, null, z2);
-                    c47 c47Var2 = new c47();
-                    c47Var2.h = (this.n ? i6 != size + (-1) : i6 != 0) ? z2 : z3;
-                    if (w2 != null) {
-                    }
-                    c47Var2.g = f4;
-                    if (f4 <= 1.2f) {
-                    }
-                    f5 = c47Var2.g;
-                    f6 += f5;
-                    if (f5 > 2.0f) {
-                    }
-                    this.f.put(k47Var, c47Var2);
-                    this.g.k(c47Var2, k47Var.e1());
-                    this.e.add(c47Var2);
-                    if (k47Var.z != null) {
-                    }
-                    if (!this.n) {
-                    }
-                    z2 = 0;
-                    z3 = true;
+                    i15 = i3 + 1;
+                    canvas2 = canvas;
+                    f47Var3 = f47Var2;
+                    j47Var2 = j47Var;
+                    arrayList6 = arrayList5;
+                    z2 = true;
                 }
             }
-            if (this.i) {
-                for (int i7 = 0; i7 < size; i7++) {
-                    c47 c47Var3 = (c47) this.e.get(i7);
-                    c47Var3.l = 3;
-                    if (i7 == 0) {
-                        c47Var3.l = 7;
-                        b = 0;
-                        c47Var3.h = false;
-                        z = true;
-                    } else {
-                        b = 0;
-                        if (i7 == size - 1) {
-                            c47Var3.l = 11;
-                            z = true;
-                            c47Var3.h = true;
-                        } else {
-                            z = true;
-                            c47Var3.h = false;
-                        }
-                    }
-                    c47Var3.k = z;
-                    c47Var3.g = 1.0f;
-                    c47Var3.a = b;
-                    c47Var3.b = b;
-                    byte b2 = (byte) i7;
-                    c47Var3.c = b2;
-                    c47Var3.d = b2;
-                    c47Var3.i = 1000;
-                    c47Var3.e = this.l;
-                    c47Var3.f = 100.0f;
-                }
-                return;
-            }
-            if (z4) {
-                this.l -= 50;
-                i = nm7.Y3;
-            } else {
-                i = nm7.d3;
-            }
-            int L = gm.L(120.0f);
-            float L2 = gm.L(120.0f);
-            Point point = gm.q;
-            int min = (int) (L2 / (Math.min(point.x, point.y) / this.l));
-            float L3 = gm.L(40.0f);
-            float min2 = Math.min(point.x, point.y);
-            float f7 = this.l;
-            int i8 = (int) (L3 / (min2 / f7));
-            float f8 = f7 / 814.0f;
-            float f9 = f6 / size;
-            float L4 = gm.L(100.0f) / 814.0f;
-            if (size == 1) {
-                c47 c47Var4 = (c47) this.e.get(0);
-                float f10 = this.l / c47Var4.g;
-                c47Var4.a(Math.round(Math.min(f10, Math.min(f10, 407.0f))) / 814.0f, 0, 0, 0, 0, this.l, 15);
-                i2 = i;
-                i3 = 0;
-            } else {
-                int i9 = 4;
-                if (z5 || !(size == 2 || size == 3 || size == 4)) {
-                    int i10 = 2;
-                    int size2 = this.e.size();
-                    float[] fArr = new float[size2];
-                    for (int i11 = 0; i11 < size; i11++) {
-                        ArrayList arrayList = this.e;
-                        if (f9 > 1.1f) {
-                            fArr[i11] = Math.max(1.0f, ((c47) arrayList.get(i11)).g);
-                        } else {
-                            fArr[i11] = Math.min(1.0f, ((c47) arrayList.get(i11)).g);
-                        }
-                        fArr[i11] = Math.max(0.66667f, Math.min(1.7f, fArr[i11]));
-                    }
-                    ArrayList arrayList2 = new ArrayList();
-                    int i12 = 1;
-                    while (i12 < size2) {
-                        int i13 = size2 - i12;
-                        if (i12 <= 3 && i13 <= 3) {
-                            float e = e(0, i12, fArr);
-                            float e2 = e(i12, size2, fArr);
-                            d47 d47Var = new d47();
-                            d47Var.a = new int[]{i12, i13};
-                            float[] fArr2 = new float[i10];
-                            fArr2[0] = e;
-                            fArr2[1] = e2;
-                            d47Var.b = fArr2;
-                            arrayList2.add(d47Var);
-                        }
-                        i12++;
-                        i10 = 2;
-                    }
-                    int i14 = 1;
-                    while (i14 < size2 - 1) {
-                        int i15 = 1;
-                        while (true) {
-                            int i16 = size2 - i14;
-                            if (i15 < i16) {
-                                int i17 = i16 - i15;
-                                if (i14 <= 3) {
-                                    if (i15 <= (f9 < 0.85f ? i9 : 3) && i17 <= 3) {
-                                        float e3 = e(0, i14, fArr);
-                                        int i18 = i14 + i15;
-                                        float e4 = e(i14, i18, fArr);
-                                        float e5 = e(i18, size2, fArr);
-                                        d47 d47Var2 = new d47();
-                                        d47Var2.a = new int[]{i14, i15, i17};
-                                        d47Var2.b = new float[]{e3, e4, e5};
-                                        arrayList2.add(d47Var2);
-                                    }
-                                }
-                                i15++;
-                                i9 = 4;
-                            }
-                        }
-                        i14++;
-                        i9 = 4;
-                    }
-                    for (int i19 = 1; i19 < size2 - 2; i19++) {
-                        int i20 = 1;
-                        while (true) {
-                            int i21 = size2 - i19;
-                            if (i20 < i21) {
-                                int i22 = 1;
-                                while (true) {
-                                    int i23 = i21 - i20;
-                                    if (i22 < i23) {
-                                        int i24 = i23 - i22;
-                                        if (i19 > 3 || i20 > 3 || i22 > 3 || i24 > 3) {
-                                            i5 = i;
-                                        } else {
-                                            float e6 = e(0, i19, fArr);
-                                            int i25 = i19 + i20;
-                                            float e7 = e(i19, i25, fArr);
-                                            i5 = i;
-                                            int i26 = i25 + i22;
-                                            float e8 = e(i25, i26, fArr);
-                                            float e9 = e(i26, size2, fArr);
-                                            d47 d47Var3 = new d47();
-                                            d47Var3.a = new int[]{i19, i20, i22, i24};
-                                            d47Var3.b = new float[]{e6, e7, e8, e9};
-                                            arrayList2.add(d47Var3);
-                                        }
-                                        i22++;
-                                        i = i5;
-                                    }
-                                }
-                                i20++;
-                            }
-                        }
-                    }
+            i12++;
+            canvas2 = canvas;
+            f47Var3 = f47Var3;
+            j47Var2 = j47Var2;
+            z = false;
+            z2 = true;
+        }
+        ArrayList arrayList7 = arrayList;
+        f47 f47Var4 = f47Var3;
+        j47 j47Var3 = j47Var2;
+        float f9 = 0.0f;
+        super.dispatchDraw(canvas);
+        int childCount3 = getChildCount();
+        f27 f27Var5 = null;
+        int i17 = 0;
+        while (i17 < childCount3) {
+            View childAt5 = getChildAt(i17);
+            if (childAt5 instanceof gb2) {
+                gb2 gb2Var4 = (gb2) childAt5;
+                f27 currentMessagesGroup4 = gb2Var4.getCurrentMessagesGroup();
+                if (currentMessagesGroup4 == null) {
                     i2 = i;
-                    float f11 = (this.l / 3) << 2;
-                    int i27 = 0;
-                    d47 d47Var4 = null;
-                    float f12 = 0.0f;
-                    while (i27 < arrayList2.size()) {
-                        d47 d47Var5 = (d47) arrayList2.get(i27);
-                        float f13 = Float.MAX_VALUE;
-                        int i28 = 0;
-                        float f14 = 0.0f;
-                        while (true) {
-                            float[] fArr3 = d47Var5.b;
-                            f = f11;
-                            if (i28 >= fArr3.length) {
-                                break;
-                            }
-                            float f15 = fArr3[i28];
-                            f14 += f15;
-                            if (f15 < f13) {
-                                f13 = f15;
-                            }
-                            i28++;
-                            f11 = f;
-                        }
-                        float abs = Math.abs(f14 - f);
-                        int[] iArr = d47Var5.a;
-                        if (iArr.length > 1) {
-                            int i29 = iArr[0];
-                            int i30 = iArr[1];
-                            if (i29 <= i30) {
-                                f2 = abs;
-                                if (iArr.length > 2) {
-                                }
-                                if (iArr.length > 3) {
-                                }
-                            } else {
-                                f2 = abs;
-                            }
-                            f3 = f2 * 1.2f;
-                            if (f13 < min) {
-                                f3 *= 1.5f;
-                            }
-                            if (d47Var4 != null || f3 < f12) {
-                                f12 = f3;
-                                d47Var4 = d47Var5;
-                            }
-                            i27++;
-                            f11 = f;
-                        } else {
-                            f2 = abs;
-                        }
-                        f3 = f2;
-                        if (f13 < min) {
-                        }
-                        if (d47Var4 != null) {
-                        }
-                        f12 = f3;
-                        d47Var4 = d47Var5;
-                        i27++;
-                        f11 = f;
-                    }
-                    if (d47Var4 == null) {
-                        return;
-                    }
-                    int i31 = 0;
-                    int i32 = 0;
-                    int i33 = 0;
-                    while (true) {
-                        int[] iArr2 = d47Var4.a;
-                        if (i32 >= iArr2.length) {
-                            break;
-                        }
-                        int i34 = iArr2[i32];
-                        float f16 = d47Var4.b[i32];
-                        int i35 = this.l;
-                        int i36 = i34 - 1;
-                        int max = Math.max(i31, i36);
-                        int i37 = 0;
-                        c47 c47Var5 = null;
-                        while (i37 < i34) {
-                            int i38 = (int) (fArr[i33] * f16);
-                            i35 -= i38;
-                            int i39 = max;
-                            c47 c47Var6 = (c47) this.e.get(i33);
-                            int i40 = i32 == 0 ? 4 : 0;
-                            int i41 = i32 == d47Var4.a.length + (-1) ? i40 | 8 : i40;
-                            if (i37 == 0) {
-                                i41 |= 1;
-                                if (z6) {
-                                    c47Var5 = c47Var6;
+                    f = f9;
+                    j47Var3.h(gb2Var4.getBoundsLeft(), gb2Var4.getY(), gb2Var4.getBoundsRight(), gb2Var4.getY() + gb2Var4.getHeight(), canvas);
+                } else if (currentMessagesGroup4 != f27Var5) {
+                    i2 = i;
+                    f = f9;
+                }
+                f27Var5 = currentMessagesGroup4;
+                i17++;
+                i = i2;
+                f9 = f;
+            }
+            i2 = i;
+            f = f9;
+            i17++;
+            i = i2;
+            f9 = f;
+        }
+        int i18 = i;
+        float f10 = f9;
+        int i19 = 0;
+        while (i19 < i18) {
+            arrayList7.clear();
+            if (i19 != 2 || f47Var4.W1) {
+                int i20 = 0;
+                while (i20 < childCount3) {
+                    View childAt6 = f47Var4.getChildAt(i20);
+                    if (childAt6 instanceof gb2) {
+                        gb2 gb2Var5 = (gb2) childAt6;
+                        if (childAt6.getY() <= f47Var4.getHeight() && childAt6.getY() + childAt6.getHeight() >= f10 && (currentMessagesGroup = gb2Var5.getCurrentMessagesGroup()) != null) {
+                            e27 e27Var3 = currentMessagesGroup.m;
+                            int i21 = i19 == 0 ? 1 : 1;
+                            if ((i19 != i21 || e27Var3.i) && ((i19 != 0 || !gb2Var5.getMessageObject().Z) && (i19 != 1 || gb2Var5.getMessageObject().Z))) {
+                                boolean z5 = gb2Var5.La;
+                                if (i19 != 2 ? !z5 : z5) {
+                                    arrayList3 = arrayList7;
+                                    if (!arrayList3.contains(currentMessagesGroup)) {
+                                        e27Var3.a = 0;
+                                        e27Var3.b = 0;
+                                        e27Var3.c = 0;
+                                        e27Var3.d = 0;
+                                        e27Var3.l = false;
+                                        e27Var3.k = false;
+                                        e27Var3.m = gb2Var5;
+                                        arrayList3.add(currentMessagesGroup);
+                                    }
+                                    e27Var3.k = gb2Var5.L2();
+                                    e27Var3.l = gb2Var5.K2();
+                                    int x3 = (int) (gb2Var5.getX() + gb2Var5.getBackgroundDrawableLeft());
+                                    int x4 = (int) (gb2Var5.getX() + gb2Var5.getBackgroundDrawableRight());
+                                    int y3 = (int) (gb2Var5.getY() + gb2Var5.getPaddingTop() + gb2Var5.getBackgroundDrawableTop());
+                                    int y4 = (int) (gb2Var5.getY() + gb2Var5.getPaddingTop() + gb2Var5.getBackgroundDrawableBottom());
+                                    if ((gb2Var5.getCurrentPosition().l & 4) == 0) {
+                                        y3 -= gl.L(10.0f);
+                                    }
+                                    if ((gb2Var5.getCurrentPosition().l & 8) == 0) {
+                                        y4 += gl.L(10.0f);
+                                    }
+                                    if (gb2Var5.La) {
+                                        e27Var3.m = gb2Var5;
+                                    }
+                                    int i22 = e27Var3.b;
+                                    if (i22 == 0 || y3 < i22) {
+                                        e27Var3.b = y3;
+                                    }
+                                    int i23 = e27Var3.d;
+                                    if (i23 == 0 || y4 > i23) {
+                                        e27Var3.d = y4;
+                                    }
+                                    int i24 = e27Var3.a;
+                                    if (i24 == 0 || x3 < i24) {
+                                        e27Var3.a = x3;
+                                    }
+                                    int i25 = e27Var3.c;
+                                    if (i25 == 0 || x4 > i25) {
+                                        e27Var3.c = x4;
+                                    }
+                                    i20++;
+                                    arrayList7 = arrayList3;
                                 }
                             }
-                            if (i37 == i36) {
-                                i41 |= 2;
-                                if (!z6) {
-                                    i4 = i41;
-                                    c47Var5 = c47Var6;
-                                    int i42 = i37;
-                                    c47Var6.a(Math.max(L4, f16 / 814.0f), i42, i37, i32, i32, i38, i4);
-                                    i33++;
-                                    i37 = i42 + 1;
-                                    max = i39;
-                                }
-                            }
-                            i4 = i41;
-                            int i422 = i37;
-                            c47Var6.a(Math.max(L4, f16 / 814.0f), i422, i37, i32, i32, i38, i4);
-                            i33++;
-                            i37 = i422 + 1;
-                            max = i39;
-                        }
-                        c47Var5.e += i35;
-                        c47Var5.i += i35;
-                        i32++;
-                        i31 = max;
-                    }
-                    i3 = i31;
-                } else {
-                    ArrayList arrayList3 = this.e;
-                    if (size == 2) {
-                        c47 c47Var7 = (c47) arrayList3.get(0);
-                        c47 c47Var8 = (c47) this.e.get(1);
-                        String sb2 = sb.toString();
-                        if (sb2.equals("ww") && f9 > f8 * 1.4d) {
-                            float f17 = c47Var7.g;
-                            float f18 = c47Var8.g;
-                            if (f17 - f18 < 0.2d) {
-                                float f19 = this.l;
-                                float round = Math.round(Math.min(f19 / f17, Math.min(f19 / f18, 407.0f))) / 814.0f;
-                                c47Var7.a(round, 0, 0, 0, 0, this.l, 7);
-                                c47Var8.a(round, 0, 0, 1, 1, this.l, 11);
-                                i3 = 0;
-                                i2 = i;
-                            }
-                        }
-                        if (sb2.equals("ww") || sb2.equals("qq")) {
-                            int i43 = this.l / 2;
-                            float f20 = i43;
-                            float round2 = Math.round(Math.min(f20 / c47Var7.g, Math.min(f20 / c47Var8.g, 814.0f))) / 814.0f;
-                            c47Var7.a(round2, 0, 0, 0, 0, i43, 13);
-                            c47Var8.a(round2, 1, 1, 0, 0, i43, 14);
-                        } else {
-                            float f21 = this.l;
-                            float f22 = c47Var7.g;
-                            int max2 = (int) Math.max(f21 * 0.4f, Math.round((f21 / f22) / ((1.0f / c47Var8.g) + (1.0f / f22))));
-                            int i44 = this.l - max2;
-                            if (i44 < min) {
-                                max2 -= min - i44;
-                            } else {
-                                min = i44;
-                            }
-                            float min3 = Math.min(814.0f, Math.round(Math.min(min / c47Var7.g, max2 / c47Var8.g))) / 814.0f;
-                            c47Var7.a(min3, 0, 0, 0, 0, min, 13);
-                            c47Var8.a(min3, 1, 1, 0, 0, max2, 14);
-                        }
-                        i3 = 1;
-                        i2 = i;
-                    } else if (size == 3) {
-                        c47 c47Var9 = (c47) arrayList3.get(0);
-                        c47 c47Var10 = (c47) this.e.get(1);
-                        c47 c47Var11 = (c47) this.e.get(2);
-                        if (sb.charAt(0) == 'n') {
-                            float f23 = c47Var10.g;
-                            float min4 = Math.min(407.0f, Math.round((this.l * f23) / (c47Var11.g + f23)));
-                            int max3 = (int) Math.max(min, Math.min(this.l * 0.5f, Math.round(Math.min(c47Var11.g * min4, c47Var10.g * r14))));
-                            int round3 = Math.round(Math.min((c47Var9.g * 814.0f) + i8, this.l - max3));
-                            c47Var9.a(1.0f, 0, 0, 0, 1, round3, 13);
-                            float f24 = (814.0f - min4) / 814.0f;
-                            c47Var10.a(f24, 1, 1, 0, 0, max3, 6);
-                            float f25 = min4 / 814.0f;
-                            c47Var11.a(f25, 0, 1, 1, 1, max3, 10);
-                            int i45 = this.l;
-                            c47Var11.i = i45;
-                            c47Var9.m = new float[]{f25, f24};
-                            if (z6) {
-                                c47Var9.i = i45 - max3;
-                            } else {
-                                c47Var10.i = i45 - round3;
-                                c47Var11.j = round3;
-                            }
-                            this.b = true;
-                        } else {
-                            float round4 = Math.round(Math.min(this.l / c47Var9.g, 537.24005f)) / 814.0f;
-                            c47Var9.a(round4, 0, 1, 0, 0, this.l, 7);
-                            int i46 = this.l / 2;
-                            float f26 = i46;
-                            float min5 = Math.min(814.0f - round4, Math.round(Math.min(f26 / c47Var10.g, f26 / c47Var11.g))) / 814.0f;
-                            float f27 = min5 < L4 ? L4 : min5;
-                            c47Var10.a(f27, 0, 0, 1, 1, i46, 9);
-                            c47Var11.a(f27, 1, 1, 1, 1, i46, 10);
-                        }
-                        i2 = i;
-                        i3 = 1;
-                    } else {
-                        c47 c47Var12 = (c47) arrayList3.get(0);
-                        c47 c47Var13 = (c47) this.e.get(1);
-                        c47 c47Var14 = (c47) this.e.get(2);
-                        c47 c47Var15 = (c47) this.e.get(3);
-                        if (sb.charAt(0) == 'w') {
-                            float round5 = Math.round(Math.min(this.l / c47Var12.g, 537.24005f)) / 814.0f;
-                            c47Var12.a(round5, 0, 2, 0, 0, this.l, 7);
-                            float round6 = Math.round(this.l / ((c47Var13.g + c47Var14.g) + c47Var15.g));
-                            float f28 = min;
-                            int max4 = (int) Math.max(f28, Math.min(this.l * 0.4f, c47Var13.g * round6));
-                            int max5 = (int) Math.max(Math.max(f28, this.l * 0.33f), c47Var15.g * round6);
-                            int i47 = (this.l - max4) - max5;
-                            if (i47 < gm.L(58.0f)) {
-                                int L5 = gm.L(58.0f) - i47;
-                                i47 = gm.L(58.0f);
-                                int i48 = L5 / 2;
-                                max4 -= i48;
-                                max5 -= L5 - i48;
-                            }
-                            int i49 = max4;
-                            float min6 = Math.min(814.0f - round5, round6) / 814.0f;
-                            float f29 = min6 < L4 ? L4 : min6;
-                            c47Var13.a(f29, 0, 0, 1, 1, i49, 9);
-                            c47Var14.a(f29, 1, 1, 1, 1, i47, 8);
-                            c47Var15.a(f29, 2, 2, 1, 1, max5, 10);
-                            i3 = 2;
-                            i2 = i;
-                        } else {
-                            int max6 = Math.max(min, Math.round(814.0f / ((1.0f / c47Var15.g) + ((1.0f / c47Var14.g) + (1.0f / c47Var13.g)))));
-                            float f30 = L;
-                            float f31 = max6;
-                            float min7 = Math.min(0.33f, Math.max(f30, f31 / c47Var13.g) / 814.0f);
-                            float min8 = Math.min(0.33f, Math.max(f30, f31 / c47Var14.g) / 814.0f);
-                            float f32 = (1.0f - min7) - min8;
-                            int round7 = Math.round(Math.min((814.0f * c47Var12.g) + i8, this.l - max6));
-                            c47Var12.a(min7 + min8 + f32, 0, 0, 0, 2, round7, 13);
-                            c47Var13.a(min7, 1, 1, 0, 0, max6, 6);
-                            c47Var14.a(min8, 0, 1, 1, 1, max6, 2);
-                            c47Var14.i = this.l;
-                            c47Var15.a(f32, 0, 1, 2, 2, max6, 10);
-                            int i50 = this.l;
-                            c47Var15.i = i50;
-                            if (z6) {
-                                c47Var12.i = i50 - max6;
-                            } else {
-                                c47Var13.i = i50 - round7;
-                                c47Var14.j = round7;
-                                c47Var15.j = round7;
-                            }
-                            c47Var12.m = new float[]{min7, min8, f32};
-                            this.b = true;
-                            i3 = 1;
-                            i2 = i;
                         }
                     }
+                    arrayList3 = arrayList7;
+                    i20++;
+                    arrayList7 = arrayList3;
                 }
-            }
-            boolean z8 = (z6 || this.d.isEmpty() || !((k47) this.d.get(0)).P2()) ? false : true;
-            for (int i51 = 0; i51 < size; i51++) {
-                c47 c47Var16 = (c47) this.e.get(i51);
-                if (z6) {
-                    if (c47Var16.a == 0) {
-                        c47Var16.i += i2;
+                arrayList2 = arrayList7;
+                for (int i26 = 0; i26 < arrayList2.size(); i26++) {
+                    e27 e27Var4 = ((f27) arrayList2.get(i26)).m;
+                    float U12 = e27Var4.m.U1(true);
+                    float f11 = e27Var4.a + U12 + e27Var4.e;
+                    float f12 = e27Var4.b + e27Var4.f;
+                    float f13 = e27Var4.c + U12 + e27Var4.g;
+                    float f14 = e27Var4.d + e27Var4.h;
+                    if (f12 < (-gl.L(20.0f))) {
+                        f12 = -gl.L(20.0f);
                     }
-                    if ((c47Var16.l & 2) != 0) {
-                        c47Var16.k = true;
+                    if (f14 > gl.L(20.0f) + f47Var4.getMeasuredHeight()) {
+                        f14 = gl.L(20.0f) + f47Var4.getMeasuredHeight();
                     }
-                } else {
-                    if (c47Var16.b == i3 || (c47Var16.l & 2) != 0) {
-                        c47Var16.i += i2;
-                    }
-                    if ((c47Var16.l & 1) != 0) {
-                        c47Var16.k = true;
-                    }
+                    float f15 = f14;
+                    j47 j47Var4 = j47Var3;
+                    j47Var4.h(f11, f12, f13, f15, canvas);
+                    j47Var3 = j47Var4;
+                    e27Var4.m = null;
                 }
-                k47 k47Var2 = (k47) this.d.get(i51);
-                if (!z6 && !z8 && k47Var2.k5()) {
-                    if (c47Var16.k) {
-                        int i52 = c47Var16.i;
-                        if (i52 != 1000) {
-                            c47Var16.i = i52 + nm7.s1;
-                        }
-                        c47Var16.e += nm7.s1;
-                    } else if ((c47Var16.l & 2) != 0) {
-                        int i53 = c47Var16.i;
-                        if (i53 != 1000) {
-                            c47Var16.i = i53 - 108;
-                        } else {
-                            int i54 = c47Var16.j;
-                            if (i54 != 0) {
-                                c47Var16.j = i54 + nm7.s1;
-                            }
-                        }
-                    }
-                }
+            } else {
+                arrayList2 = arrayList7;
             }
-            if (!z8 || this.b) {
-                return;
-            }
-            int i55 = gm.q.x;
-            if (!gm.E && gm.O1() && (!gm.N1() || a.b.getResources().getConfiguration().orientation == 2)) {
-                i55 -= gm.k1(i55, 0, 0);
-            }
-            float L6 = gm.L(16.0f);
-            float L7 = gm.L(3.0f);
-            float f33 = i55;
-            int i56 = 0;
-            float L8 = (f33 - (L6 * 2.0f)) - (((k47) this.d.get(0)).U2 ? gm.L(71.0f) : 0);
-            int i57 = 0;
-            while (i57 < size) {
-                c47 c47Var17 = (c47) this.e.get(i57);
-                if ((c47Var17.l & 1) != 0) {
-                    int i58 = i56;
-                    int i59 = i58;
-                    while (i58 < size) {
-                        c47 c47Var18 = (c47) this.e.get(i58);
-                        if (c47Var18.c == c47Var17.c) {
-                            i59 += c47Var18.e;
-                        }
-                        i58++;
-                    }
-                    if (i59 > 0) {
-                        float f34 = L8 / i59;
-                        ArrayList arrayList4 = new ArrayList();
-                        for (int i60 = i56; i60 < size; i60++) {
-                            c47 c47Var19 = (c47) this.e.get(i60);
-                            if (c47Var19.c == c47Var17.c) {
-                                arrayList4.add(c47Var19);
-                            }
-                        }
-                        Collections.sort(arrayList4, new tk6((byte) 12));
-                        int i61 = i56;
-                        int i62 = i61;
-                        int i63 = i62;
-                        while (i61 < arrayList4.size()) {
-                            c47 c47Var20 = (c47) arrayList4.get(i61);
-                            int i64 = i61 == arrayList4.size() + (-1) ? 1 : i56;
-                            c47Var20.s = f34;
-                            c47Var20.p = (i62 * f34) + L6;
-                            int i65 = c47Var20.e;
-                            i62 += i65;
-                            c47Var20.q = (i65 * f34) - (i64 != 0 ? 0.0f : L7);
-                            int round8 = i64 != 0 ? 1000 : Math.round(((((i62 * f34) + L6) - (L7 / 2.0f)) * 1000.0f) / f33);
-                            c47Var20.i = round8 - i63;
-                            c47Var20.r = (i63 * i55) / 1000.0f;
-                            i61++;
-                            i63 = round8;
-                            i56 = 0;
-                        }
-                    }
-                }
-                i57++;
-                i56 = 0;
-            }
+            i19++;
+            arrayList7 = arrayList2;
         }
+        canvas.save();
+        float d = this.g3.d(canScrollVertically(-1));
+        float d2 = this.h3.d(canScrollVertically(1));
+        RectF rectF2 = gl.P;
+        rectF2.set(f10, getScrollY(), getWidth(), gl.L(14.0f) + getScrollY());
+        xl3 xl3Var = this.i3;
+        xl3Var.s(canvas, rectF2, 1, d);
+        rectF2.set(f10, (getHeight() + getScrollY()) - gl.L(14.0f), getWidth(), getHeight() + getScrollY());
+        xl3Var.s(canvas, rectF2, i18, d2);
+        canvas.restore();
+        canvas.restore();
+        canvas.restore();
     }
 
-    public final k47 b(int i) {
-        ArrayList arrayList = this.d;
-        boolean isEmpty = arrayList.isEmpty();
-        HashMap hashMap = this.f;
-        if (!isEmpty && hashMap.isEmpty()) {
-            a();
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        gb2 gb2Var;
+        j47 j47Var = this.j3;
+        if (j47Var.w && ((view == (gb2Var = j47Var.Q) && gb2Var != null && gb2Var.getCurrentPosition() == null) || view == j47Var.X)) {
+            return false;
         }
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            k47 k47Var = (k47) arrayList.get(i2);
-            c47 c47Var = (c47) hashMap.get(k47Var);
-            if (c47Var != null && (c47Var.l & i) == i) {
-                return k47Var;
+        if (!(view instanceof gb2)) {
+            return true;
+        }
+        gb2 gb2Var2 = (gb2) view;
+        gb2Var2.setInvalidatesParent(true);
+        gb2Var2.S0(canvas);
+        canvas.save();
+        canvas.translate(gb2Var2.getX(), gb2Var2.getY());
+        canvas.scale(gb2Var2.getScaleX(), gb2Var2.getScaleY(), gb2Var2.getPivotX(), gb2Var2.getPivotY());
+        if (gb2Var2.L0() && gb2Var2.getCurrentPosition() == null) {
+            canvas.save();
+            canvas.translate(0.0f, gb2Var2.getPaddingTop());
+            gb2Var2.M0(canvas, true, false);
+            canvas.restore();
+        }
+        canvas.restore();
+        boolean drawChild = super.drawChild(canvas, view, j);
+        canvas.save();
+        canvas.translate(gb2Var2.getX(), gb2Var2.getY() + gb2Var2.getPaddingTop());
+        canvas.scale(gb2Var2.getScaleX(), gb2Var2.getScaleY(), gb2Var2.getPivotX(), gb2Var2.getPivotY());
+        if (gb2Var2.getCurrentPosition() != null && (((gb2Var2.getCurrentPosition().l & gb2Var2.H()) != 0 && (gb2Var2.getCurrentPosition().l & 1) != 0) || (gb2Var2.getCurrentMessagesGroup() != null && gb2Var2.getCurrentMessagesGroup().i))) {
+            gb2Var2.Q0(gb2Var2.getAlpha(), canvas, false);
+        }
+        if (gb2Var2.getCurrentPosition() != null && (((gb2Var2.getCurrentPosition().l & 8) != 0 && (gb2Var2.getCurrentPosition().l & 1) != 0) || (gb2Var2.getCurrentMessagesGroup() != null && gb2Var2.getCurrentMessagesGroup().i))) {
+            gb2Var2.q1(canvas, gb2Var2.getAlpha(), null);
+            gb2Var2.V0(canvas, gb2Var2.getAlpha());
+        }
+        if (gb2Var2.getCurrentPosition() != null) {
+            gb2Var2.h1(canvas, gb2Var2.getAlpha());
+        }
+        if (gb2Var2.getCurrentPosition() == null || gb2Var2.getCurrentPosition().h) {
+            gb2Var2.A1(gb2Var2.getAlpha(), canvas, true);
+        }
+        gb2Var2.i1(canvas);
+        gb2Var2.getTransitionParams().d();
+        canvas.restore();
+        gb2Var2.setInvalidatesParent(false);
+        return drawChild;
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        for (int i5 = 0; i5 < getChildCount(); i5++) {
+            View childAt = getChildAt(i5);
+            if (childAt.getTop() != 0 && (childAt instanceof i47)) {
+                i47 i47Var = (i47) childAt;
+                i47Var.Ld = childAt.getTop();
+                i47Var.Md = childAt.getBottom();
+                i47Var.Nd = i47Var.getMessageObject().e1();
             }
         }
-        return null;
+        super.onLayout(z, i, i2, i3, i4);
     }
 
-    public final k47 c() {
-        return b(this.n ? 10 : 5);
-    }
-
-    public final c47 d(k47 k47Var) {
-        if (k47Var == null) {
-            return null;
-        }
-        c47 c47Var = (c47) this.f.get(k47Var);
-        if (c47Var != null) {
-            return c47Var;
-        }
-        return (c47) this.g.f(k47Var.e1());
-    }
-
-    public final float e(int i, int i2, float[] fArr) {
-        float f = 0.0f;
-        while (i < i2) {
-            f += fArr[i];
-            i++;
-        }
-        return this.l / f;
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        j47 j47Var = this.j3;
+        int L = gl.L(j47Var.N.isEmpty() ? -6.0f : 48.0f);
+        ViewGroup viewGroup = j47Var.Z;
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(0, ((gl.q.y - (L + (viewGroup == null ? 0 : viewGroup.getMeasuredHeight()))) - gl.L(8.0f)) - j47Var.d.b), TLObject.FLAG_31));
+        int max = Math.max(gl.L(12.0f) + (j47Var.p0 ? j47Var.Y : j47Var.W.l()), -((gl.L(7.0f) + j47Var.r0[0]) - getMeasuredWidth()));
+        float max2 = Math.max(1, getMeasuredWidth() - max) / Math.max(1, ((getMeasuredWidth() - max) - gl.L(8.0f)) + Math.max(0, j47Var.O - ((getMeasuredWidth() - max) - gl.L((j47Var.P.i() ? 0 : 40) + 8))));
+        setPivotX(getMeasuredWidth());
+        setPivotY(getMeasuredHeight());
+        setScaleX(max2);
+        setScaleY(max2);
     }
 }

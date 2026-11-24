@@ -1,13 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class jdb {
-    public final uib a;
-    public final uib b;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-    public jdb(uib uibVar, uib uibVar2) {
-        this.a = uibVar;
-        this.b = uibVar2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class jdb {
+    public static TL_keyboard.ButtonTypeProto a(TL_keyboard.KeyboardButtonProto keyboardButtonProto, Class cls) {
+        if (keyboardButtonProto == null) {
+            return null;
+        }
+        TL_keyboard.ButtonTypeProto type = keyboardButtonProto.getType();
+        if (cls.isInstance(type)) {
+            return (TL_keyboard.ButtonTypeProto) cls.cast(type);
+        }
+        return null;
+    }
+
+    public static boolean b(TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+        return c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeWebView.class) || c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
+    }
+
+    public static boolean c(TL_keyboard.KeyboardButtonProto keyboardButtonProto, Class cls) {
+        return a(keyboardButtonProto, cls) != null;
     }
 }

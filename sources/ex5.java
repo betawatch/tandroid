@@ -1,20 +1,32 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ex5 {
-    public static final /* synthetic */ ex5[] a = {new ex5("PUBLIC", 0), new ex5("PROTECTED", 1), new ex5("INTERNAL", 2), new ex5("PRIVATE", 3)};
+import org.telegram.ui.LanguageSelectActivity;
 
-    /* JADX INFO: Fake field, exist only in values array */
-    ex5 EF5;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ex5 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ LanguageSelectActivity b;
 
-    public static ex5 valueOf(String str) {
-        return (ex5) Enum.valueOf(ex5.class, str);
+    public /* synthetic */ ex5(LanguageSelectActivity languageSelectActivity, byte b) {
+        this.a = b;
+        this.b = languageSelectActivity;
     }
 
-    public static ex5[] values() {
-        return (ex5[]) a.clone();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        LanguageSelectActivity languageSelectActivity = this.b;
+        switch (b) {
+            case 0:
+                languageSelectActivity.k0();
+                break;
+            case 1:
+                languageSelectActivity.g0();
+                break;
+            default:
+                languageSelectActivity.a.f();
+                break;
+        }
     }
 }

@@ -1,63 +1,32 @@
 // default package
 
-import java.util.Iterator;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class cpd extends okd {
-    public final transient Object s;
+public final class cpd {
+    public final yse a;
+    public final Boolean b;
+    public final kxe c;
 
-    public cpd(Object obj) {
-        super((byte) 4);
-        this.s = obj;
+    public /* synthetic */ cpd(rod rodVar) {
+        this.a = (yse) rodVar.b;
+        this.b = (Boolean) rodVar.c;
+        this.c = (kxe) rodVar.d;
     }
 
-    @Override // okd
-    public final yjd A() {
-        Object[] objArr = {this.s};
-        for (int i = 0; i < 1; i++) {
-            eid eidVar = yjd.n;
-            if (objArr[i] == null) {
-                gxc.d(hg9.j(i, "at index "));
-                return null;
-            }
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return yjd.A(1, objArr);
+        if (!(obj instanceof cpd)) {
+            return false;
+        }
+        cpd cpdVar = (cpd) obj;
+        return cqe.a(this.a, cpdVar.a) && cqe.a(this.b, cpdVar.b) && cqe.a(null, null) && cqe.a(this.c, cpdVar.c);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.s.equals(obj);
-    }
-
-    @Override // okd, java.util.Collection, java.util.Set
     public final int hashCode() {
-        return this.s.hashCode();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new imd(this.s);
-    }
-
-    @Override // l1d
-    public final int p(Object[] objArr) {
-        objArr[0] = this.s;
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection
-    public final String toString() {
-        return kt6.o("[", this.s.toString(), "]");
-    }
-
-    @Override // l1d
-    public final v7c u() {
-        return new imd(this.s);
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
     }
 }

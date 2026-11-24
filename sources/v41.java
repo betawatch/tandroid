@@ -1,39 +1,42 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import java.io.Serializable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class v41 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ w41 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class v41 extends yq7 implements Serializable {
+    public final aq4 a;
+    public final yq7 b;
 
-    public /* synthetic */ v41(w41 w41Var, byte b) {
-        this.a = b;
-        this.b = w41Var;
+    public v41(aq4 aq4Var, yq7 yq7Var) {
+        this.a = aq4Var;
+        this.b = yq7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        w41 w41Var = this.b;
-        switch (b) {
-            case 0:
-                w41Var.a();
-                break;
-            case 1:
-                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
-                int i = w41Var.a;
-                disablepeerconnectedbot.peer = oc7.r1(i).i1(w41Var.s);
-                ConnectionsManager.getInstance(i).sendRequest(disablepeerconnectedbot, null);
-                oc7.r1(i).W3.edit().remove("dialog_botid" + w41Var.s).remove("dialog_boturl" + w41Var.s).remove("dialog_botflags" + w41Var.s).apply();
-                nm7.f(i).k(80, Long.valueOf(w41Var.s));
-                x41.a(i).f = false;
-                break;
-            default:
-                l11.u(w41Var.getContext(), w41Var.y);
-                break;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        aq4 aq4Var = this.a;
+        return this.b.compare(aq4Var.apply(obj), aq4Var.apply(obj2));
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof v41)) {
+            return false;
+        }
+        v41 v41Var = (v41) obj;
+        return this.a.equals(v41Var.a) && this.b.equals(v41Var.b);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
+    }
+
+    public final String toString() {
+        return this.b + ".onResultOf(" + this.a + ")";
     }
 }

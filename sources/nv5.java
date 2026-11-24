@@ -1,25 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class nv5 extends rs4 implements hs4 {
-    public static final nv5 a = new nv5(3, ov5.class, "registerSelectForOnJoin", "registerSelectForOnJoin(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V", 0);
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class nv5 {
+    public static final nv5 a;
+    public static final nv5 b;
+    public static final nv5 c;
+    public static final nv5 d;
+    public static final /* synthetic */ nv5[] e;
 
-    @Override // hs4
-    public final Object a(Object obj, Object obj2, Object obj3) {
-        Object v;
-        ov5 ov5Var = (ov5) obj;
-        if (obj2 != null) {
-            throw new ClassCastException();
-        }
-        int i = ov5.c;
-        do {
-            v = ov5Var.v();
-            if (!(v instanceof ep5)) {
-                throw null;
-            }
-        } while (ov5Var.K(v) < 0);
-        pne.c(ov5Var, true, new jv5());
-        throw null;
+    static {
+        nv5 nv5Var = new nv5("STATE_FULLY_HIDDEN", 0);
+        a = nv5Var;
+        nv5 nv5Var2 = new nv5("STATE_ANIMATING_TO_FULLY_HIDDEN", 1);
+        b = nv5Var2;
+        nv5 nv5Var3 = new nv5("STATE_ANIMATING_TO_FULLY_VISIBLE", 2);
+        c = nv5Var3;
+        nv5 nv5Var4 = new nv5("STATE_FULLY_VISIBLE", 3);
+        d = nv5Var4;
+        e = new nv5[]{nv5Var, nv5Var2, nv5Var3, nv5Var4};
+    }
+
+    public static nv5 valueOf(String str) {
+        return (nv5) Enum.valueOf(nv5.class, str);
+    }
+
+    public static nv5[] values() {
+        return (nv5[]) e.clone();
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Queue;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzmj extends zzmn implements Serializable {
     final int zza;
@@ -13,7 +13,7 @@ public final class zzmj extends zzmn implements Serializable {
 
     private zzmj(int i) {
         if (i < 0) {
-            u36.j(zzmg.zza("maxSize (%s) must >= 0", Integer.valueOf(i)));
+            w26.j(zzmg.zza("maxSize (%s) must >= 0", Integer.valueOf(i)));
             throw null;
         }
         this.zzb = new ArrayDeque(i);

@@ -1,27 +1,6 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class s6f implements z5f {
-    public final e26 a;
-    public final i5f b;
-
-    public s6f(Context context, i5f i5fVar) {
-        this.b = i5fVar;
-        p61 p61Var = p61.e;
-        i3c.b(context);
-        g3c c = i3c.a().c(p61Var);
-        if (p61.d.contains(new d44("json"))) {
-            new e26(new l0f(c, (byte) 4));
-        }
-        this.a = new e26(new l0f(c, (byte) 5));
-    }
-
-    @Override // z5f
-    public final void a(ry ryVar) {
-        this.b.getClass();
-        ((h3c) this.a.get()).a(ryVar.b ? na0.a(ryVar.i()) : new na0(null, ryVar.i(), fl8.b, null), new rjb((byte) 9));
-    }
+public abstract class s6f {
 }

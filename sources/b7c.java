@@ -1,38 +1,44 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
+import android.content.Context;
+import android.text.Editable;
+import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class b7c {
-    public a7c a;
-    public final HashMap b = new HashMap();
-    public final ArrayList c = new ArrayList();
+public final class b7c extends it3 {
+    public final /* synthetic */ byte F;
+    public final /* synthetic */ UserInfoActivity G;
 
-    public final boolean a() {
-        return !this.c.isEmpty();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b7c(UserInfoActivity userInfoActivity, Context context, String str, int i, wjb wjbVar) {
+        super(context, str, true, false, i, wjbVar);
+        this.F = (byte) 2;
+        this.G = userInfoActivity;
     }
 
-    public final void b(UUID uuid, Runnable runnable) {
-        this.b.put(uuid, runnable);
-        this.c.add(uuid);
-        gm.c3(new zcb(this, (byte) 28));
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.c;
-        if (arrayList.size() == 0) {
-            return;
+    @Override // it3
+    public final void b(Editable editable) {
+        byte b = this.F;
+        UserInfoActivity userInfoActivity = this.G;
+        switch (b) {
+            case 0:
+                userInfoActivity.e0(true);
+                break;
+            case 1:
+                userInfoActivity.e0(true);
+                break;
+            default:
+                userInfoActivity.e0(true);
+                userInfoActivity.i0();
+                break;
         }
-        int size = arrayList.size() - 1;
-        UUID uuid = (UUID) arrayList.get(size);
-        HashMap hashMap = this.b;
-        Runnable runnable = (Runnable) hashMap.get(uuid);
-        hashMap.remove(uuid);
-        arrayList.remove(size);
-        runnable.run();
-        gm.c3(new zcb(this, (byte) 28));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b7c(UserInfoActivity userInfoActivity, Context context, String str, wjb wjbVar, byte b) {
+        super(context, str, false, false, -1, wjbVar);
+        this.F = b;
+        this.G = userInfoActivity;
     }
 }

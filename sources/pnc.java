@@ -1,18 +1,35 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class pnc {
-    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
-    public final /* synthetic */ TL_wallet.nftItem b;
-    public final /* synthetic */ goc c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class pnc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ i8c c;
 
-    public pnc(goc gocVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, TL_wallet.nftItem nftitem) {
-        this.c = gocVar;
-        this.a = tL_starGiftUnique;
-        this.b = nftitem;
+    public /* synthetic */ pnc(WalletEngine2 walletEngine2, i8c i8cVar, byte b) {
+        this.a = b;
+        this.b = walletEngine2;
+        this.c = i8cVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        i8c i8cVar = this.c;
+        WalletEngine2 walletEngine2 = this.b;
+        switch (b) {
+            case 0:
+                walletEngine2.lambda$emulateRotateKey$33(i8cVar);
+                break;
+            case 1:
+                walletEngine2.lambda$prepareSendNFT$27(i8cVar);
+                break;
+            default:
+                walletEngine2.lambda$balance$17(i8cVar);
+                break;
+        }
     }
 }

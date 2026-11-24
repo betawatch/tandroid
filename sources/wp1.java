@@ -1,44 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class wp1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ yv1 c;
-    public final /* synthetic */ boolean d;
+import org.telegram.ui.ActionBar.d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ wp1(int i, yv1 yv1Var, boolean z) {
-        this.b = i;
-        this.c = yv1Var;
-        this.d = z;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class wp1 extends bl0 {
+    public final /* synthetic */ byte s;
+    public final /* synthetic */ mu1 w;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ wp1(mu1 mu1Var, wjb wjbVar, int i, byte b) {
+        super(i, wjbVar);
+        this.s = b;
+        this.w = mu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.d;
-        yv1 yv1Var = this.c;
-        byte b2 = this.b;
+    @Override // bl0, al0
+    public final int t1() {
+        int i;
+        int i2;
+        byte b = this.s;
+        mu1 mu1Var = this.w;
         switch (b) {
             case 0:
-                yv1Var.gd(b2, z);
-                break;
-            default:
-                if (b2 != 2) {
-                    yv1Var.ja();
-                    yv1Var.Dc();
+                i = ((d) mu1Var).currentAccount;
+                if (!nod.d(i, mu1Var.Ba)) {
+                    return bm2.o(mu1Var.getThemedColor(bkb.Ie), kk7.d4);
                 }
-                yp2.f(c41.b0(yv1Var), b2, z);
-                break;
+                ku1 ku1Var = mu1Var.Ba;
+                if (ku1Var == null || ku1Var.a()) {
+                    a();
+                    return this.d;
+                }
+                a();
+                return bm2.o(this.d, kk7.s3);
+            case 1:
+                return mu1Var.x.t1();
+            default:
+                i2 = ((d) mu1Var).currentAccount;
+                if (!nod.d(i2, mu1Var.Ba)) {
+                    return bm2.o(mu1Var.getThemedColor(bkb.c6), kk7.d4);
+                }
+                ku1 ku1Var2 = mu1Var.Ba;
+                if (ku1Var2 == null || ku1Var2.a()) {
+                    a();
+                    return this.d;
+                }
+                a();
+                return bm2.o(this.d, kk7.s3);
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ wp1(yv1 yv1Var, boolean z, int i) {
-        this.c = yv1Var;
-        this.d = z;
-        this.b = i;
     }
 }

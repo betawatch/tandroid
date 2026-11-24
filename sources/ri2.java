@@ -1,80 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.io.IOException;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ri2 implements jr9 {
-    public final si2 a;
-    public final hr9 b;
-    public final int c;
-    public boolean d;
-    public final /* synthetic */ si2 e;
-
-    public ri2(si2 si2Var, si2 si2Var2, hr9 hr9Var, int i) {
-        this.e = si2Var;
-        this.a = si2Var2;
-        this.b = hr9Var;
-        this.c = i;
+public final class ri2 extends IOException {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ri2(long j, int i, long j2) {
+        super("Illegal clipping: ".concat(r4));
+        String str;
+        if (i != 0) {
+            if (i == 1) {
+                str = "not seekable to start";
+            } else if (i != 2) {
+                str = "unknown";
+            } else {
+                gre.p((j == -9223372036854775807L || j2 == -9223372036854775807L) ? false : true);
+                str = "start exceeds end. Start time: " + j + ", End time: " + j2;
+            }
+        } else {
+            str = "invalid period count";
+        }
     }
 
-    @Override // jr9
-    public final int a() {
-        return 0;
-    }
-
-    public final void b() {
-        if (this.d) {
-            return;
-        }
-        si2 si2Var = this.e;
-        kq kqVar = si2Var.h;
-        int[] iArr = si2Var.b;
-        int i = this.c;
-        kqVar.i(iArr[i], si2Var.c[i], 0, null, si2Var.K);
-        this.d = true;
-    }
-
-    @Override // jr9
-    public final boolean i() {
-        si2 si2Var = this.e;
-        return !si2Var.y() && this.b.A(si2Var.S);
-    }
-
-    @Override // jr9
-    public final int m(long j) {
-        si2 si2Var = this.e;
-        if (si2Var.y()) {
-            return 0;
-        }
-        boolean z = si2Var.S;
-        hr9 hr9Var = this.b;
-        int x = hr9Var.x(j, z);
-        ph0 ph0Var = si2Var.M;
-        if (ph0Var != null) {
-            x = Math.min(x, ph0Var.d(this.c + 1) - hr9Var.v());
-        }
-        hr9Var.L(x);
-        if (x > 0) {
-            b();
-        }
-        return x;
-    }
-
-    @Override // jr9
-    public final int p(mj4 mj4Var, la3 la3Var, int i) {
-        si2 si2Var = this.e;
-        if (si2Var.y()) {
-            return -3;
-        }
-        ph0 ph0Var = si2Var.M;
-        hr9 hr9Var = this.b;
-        if (ph0Var != null && ph0Var.d(this.c + 1) <= hr9Var.v()) {
-            return -3;
-        }
-        b();
-        return hr9Var.F(mj4Var, la3Var, i, si2Var.S);
-    }
-
-    @Override // jr9
-    public final void d() {
+    public ri2(int i) {
+        this(-9223372036854775807L, i, -9223372036854775807L);
     }
 }

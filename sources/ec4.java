@@ -1,6 +1,64 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ec4 extends Exception {
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ec4 extends FrameLayout implements tjb {
+    public Paint a;
+    public float[] b;
+    public Path c;
+    public float d;
+
+    public final void a(float f, float f2) {
+        float[] fArr = this.b;
+        fArr[7] = f;
+        fArr[6] = f;
+        fArr[1] = f;
+        fArr[0] = f;
+        fArr[5] = f2;
+        fArr[4] = f2;
+        fArr[3] = f2;
+        fArr[2] = f2;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        Path path = this.c;
+        path.rewind();
+        RectF rectF = gl.P;
+        rectF.set(0.0f, 0.0f, measuredWidth - gl.U1(this.d, 0, gl.L(4.0f)), getMeasuredHeight());
+        a(gl.L(8.0f), gl.U1(this.d, 0, gl.L(8.0f)));
+        float[] fArr = this.b;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, fArr, direction);
+        Paint paint = this.a;
+        canvas.drawPath(path, paint);
+        path.rewind();
+        rectF.set(measuredWidth + gl.U1(this.d, 0, gl.L(4.0f)), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        a(gl.U1(this.d, 0, gl.L(8.0f)), gl.L(8.0f));
+        path.addRoundRect(rectF, fArr, direction);
+        canvas.drawPath(path, paint);
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        try {
+            this.a.setColor(bkb.w0(null, bkb.Ei, false));
+            invalidate();
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+    }
 }

@@ -6,11 +6,11 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class GeoGebraLogoBox extends Box {
-    private static final Color gray = new Color(nm7.m1, nm7.m1, nm7.m1);
-    private static final Color blue = new Color(nm7.i2, nm7.i2, nm7.d4);
+    private static final Color gray = new Color(kk7.m1, kk7.m1, kk7.m1);
+    private static final Color blue = new Color(kk7.i2, kk7.i2, kk7.d4);
     private static final BasicStroke st = new BasicStroke(3.8f, 0, 0, 4.0f);
 
     public GeoGebraLogoBox(float f, float f2) {
@@ -35,7 +35,7 @@ public class GeoGebraLogoBox extends Box {
         Color color = graphics2D.getColor();
         Stroke stroke = graphics2D.getStroke();
         float f3 = this.height;
-        graphics2D.translate(kt6.d(f3, 0.25f, 2.15f, f), f2 - (f3 * 0.81395346f));
+        graphics2D.translate(ls6.d(f3, 0.25f, 2.15f, f), f2 - (f3 * 0.81395346f));
         graphics2D.setColor(gray);
         graphics2D.setStroke(st);
         float f4 = this.height;

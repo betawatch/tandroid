@@ -1,32 +1,15 @@
 // default package
 
-import android.view.ViewGroup;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public interface wq3 {
+    void I(int i, rx6 rx6Var);
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class wq3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ xq3 b;
+    void N(int i, rx6 rx6Var, vi2 vi2Var);
 
-    public /* synthetic */ wq3(xq3 xq3Var, byte b) {
-        this.a = b;
-        this.b = xq3Var;
-    }
+    void i(int i, rx6 rx6Var, Exception exc);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        xq3 xq3Var = this.b;
-        switch (b) {
-            case 0:
-                if (xq3Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) xq3Var.getParent()).removeView(xq3Var);
-                    break;
-                }
-                break;
-            default:
-                xq3Var.a();
-                break;
-        }
-    }
+    void n(int i, rx6 rx6Var, int i2);
+
+    void y(int i, rx6 rx6Var);
 }

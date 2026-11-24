@@ -1,0 +1,32 @@
+// default package
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class e06 implements mt8 {
+    public static final Object c = new Object();
+    public volatile Object a = c;
+    public volatile mt8 b;
+
+    public e06(mt8 mt8Var) {
+        this.b = mt8Var;
+    }
+
+    @Override // mt8
+    public final Object get() {
+        Object obj;
+        Object obj2 = this.a;
+        Object obj3 = c;
+        if (obj2 != obj3) {
+            return obj2;
+        }
+        synchronized (this) {
+            obj = this.a;
+            if (obj == obj3) {
+                obj = this.b.get();
+                this.a = obj;
+                this.b = null;
+            }
+        }
+        return obj;
+    }
+}

@@ -1,27 +1,65 @@
 // default package
 
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.os.Parcelable;
+import java.util.AbstractList;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ztd extends b4 {
-    public static final Parcelable.Creator<ztd> CREATOR = new urd((byte) 8);
-    public final int a;
-    public final ParcelFileDescriptor b;
+public final class ztd extends dad {
+    public static final ztd c;
+    public final ArrayList b;
 
-    public ztd(int i, ParcelFileDescriptor parcelFileDescriptor) {
-        this.a = i;
-        this.b = parcelFileDescriptor;
+    static {
+        ztd ztdVar = new ztd(new ArrayList(10));
+        c = ztdVar;
+        ztdVar.a = false;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        mve.k(parcel, 3, this.b, i);
-        mve.s(parcel, r);
+    public ztd(ArrayList arrayList) {
+        this.b = arrayList;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final void add(int i, Object obj) {
+        h();
+        this.b.add(i, obj);
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // mkd
+    public final mkd f(int i) {
+        ArrayList arrayList = this.b;
+        if (i < arrayList.size()) {
+            sc8.e();
+            return null;
+        }
+        ArrayList arrayList2 = new ArrayList(i);
+        arrayList2.addAll(arrayList);
+        return new ztd(arrayList2);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i) {
+        return this.b.get(i);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object remove(int i) {
+        h();
+        Object remove = this.b.remove(i);
+        ((AbstractList) this).modCount++;
+        return remove;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object set(int i, Object obj) {
+        h();
+        Object obj2 = this.b.set(i, obj);
+        ((AbstractList) this).modCount++;
+        return obj2;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.b.size();
     }
 }

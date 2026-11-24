@@ -1,20 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class dv6 {
-    public final Object a;
-    public final byte b;
+import android.media.session.MediaSessionManager;
+import android.text.TextUtils;
 
-    public dv6(Object obj) {
-        this.a = obj;
-        if (obj instanceof String) {
-            this.b = (byte) 1;
-        } else if (obj instanceof ew6) {
-            this.b = (byte) 2;
-        } else {
-            i98.g();
-            throw null;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public class dv6 extends zu6 {
+    @Override // zu6
+    public final nw6 c() {
+        MediaSessionManager.RemoteUserInfo currentControllerInfo = this.a.getCurrentControllerInfo();
+        nw6 nw6Var = new nw6();
+        String packageName = currentControllerInfo.getPackageName();
+        if (packageName == null) {
+            fvc.f("package shouldn't be null");
+            return null;
         }
+        if (TextUtils.isEmpty(packageName)) {
+            w26.j("packageName should be nonempty");
+            return null;
+        }
+        nw6Var.a = new qw6(currentControllerInfo.getPackageName(), currentControllerInfo.getPid(), currentControllerInfo.getUid());
+        return nw6Var;
+    }
+
+    @Override // zu6
+    public final void e(nw6 nw6Var) {
     }
 }

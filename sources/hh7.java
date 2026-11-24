@@ -1,54 +1,147 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Looper;
+import java.util.Map;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class hh7 implements lf7 {
-    public final long a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final long e;
+public class hh7 {
+    public static final Object k = new Object();
+    public final Object a = new Object();
+    public final wo9 b = new wo9();
+    public int c = 0;
+    public boolean d;
+    public volatile Object e;
+    public volatile Object f;
+    public int g;
+    public boolean h;
+    public boolean i;
+    public final ez3 j;
 
-    public hh7(long j, long j2, long j3, long j4, long j5) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
-        this.d = j4;
-        this.e = j5;
+    public hh7() {
+        Object obj = k;
+        this.f = obj;
+        this.j = new ez3(this, (byte) 21);
+        this.e = obj;
+        this.g = -1;
     }
 
-    @Override // lf7
-    public final go4 a() {
-        return null;
-    }
-
-    @Override // lf7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static void a(String str) {
+        xr.a().getClass();
+        if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
+            return;
         }
-        if (obj != null && hh7.class == obj.getClass()) {
-            hh7 hh7Var = (hh7) obj;
-            if (this.a == hh7Var.a && this.b == hh7Var.b && this.c == hh7Var.c && this.d == hh7Var.d && this.e == hh7Var.e) {
-                return true;
+        sc8.j(tb4.y("Cannot invoke ", str, " on a background thread"));
+    }
+
+    public final void b(n76 n76Var) {
+        if (n76Var.b) {
+            if (!n76Var.e()) {
+                n76Var.a(false);
+                return;
+            }
+            int i = n76Var.c;
+            int i2 = this.g;
+            if (i >= i2) {
+                return;
+            }
+            n76Var.c = i2;
+            n76Var.a.D2(this.e);
+        }
+    }
+
+    public final void c(n76 n76Var) {
+        if (this.h) {
+            this.i = true;
+            return;
+        }
+        this.h = true;
+        do {
+            this.i = false;
+            if (n76Var != null) {
+                b(n76Var);
+                n76Var = null;
+            } else {
+                wo9 wo9Var = this.b;
+                uo9 uo9Var = new uo9(wo9Var);
+                wo9Var.c.put(uo9Var, Boolean.FALSE);
+                while (uo9Var.hasNext()) {
+                    b((n76) ((Map.Entry) uo9Var.next()).getValue());
+                    if (this.i) {
+                        break;
+                    }
+                }
+            }
+        } while (this.i);
+        this.h = false;
+    }
+
+    public final void d(e16 e16Var, co7 co7Var) {
+        Object obj;
+        a("observe");
+        if (e16Var.m().b != v06.a) {
+            m76 m76Var = new m76(this, e16Var, co7Var);
+            wo9 wo9Var = this.b;
+            to9 h = wo9Var.h(co7Var);
+            if (h != null) {
+                obj = h.b;
+            } else {
+                to9 to9Var = new to9(co7Var, m76Var);
+                wo9Var.d++;
+                to9 to9Var2 = wo9Var.b;
+                if (to9Var2 == null) {
+                    wo9Var.a = to9Var;
+                    wo9Var.b = to9Var;
+                } else {
+                    to9Var2.c = to9Var;
+                    to9Var.d = to9Var2;
+                    wo9Var.b = to9Var;
+                }
+                obj = null;
+            }
+            n76 n76Var = (n76) obj;
+            if (n76Var == null) {
+                e16Var.m().a(m76Var);
+            } else {
+                if (n76Var.d(e16Var)) {
+                    return;
+                }
+                w26.j("Cannot add the same observer with different lifecycles");
             }
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return cqe.b(this.e) + ((cqe.b(this.d) + ((cqe.b(this.c) + ((cqe.b(this.b) + ((cqe.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+    public final void g(Object obj) {
+        boolean z;
+        synchronized (this.a) {
+            z = this.f == k;
+            this.f = obj;
+        }
+        if (z) {
+            xr.a().b(this.j);
+        }
     }
 
-    public final String toString() {
-        return "Motion photo metadata: photoStartPosition=" + this.a + ", photoSize=" + this.b + ", photoPresentationTimestampUs=" + this.c + ", videoStartPosition=" + this.d + ", videoSize=" + this.e;
+    public void h(co7 co7Var) {
+        a("removeObserver");
+        n76 n76Var = (n76) this.b.i(co7Var);
+        if (n76Var == null) {
+            return;
+        }
+        n76Var.c();
+        n76Var.a(false);
     }
 
-    @Override // lf7
-    public final void b(ht6 ht6Var) {
+    public final void i(Object obj) {
+        a("setValue");
+        this.g++;
+        this.e = obj;
+        c(null);
+    }
+
+    public void e() {
+    }
+
+    public void f() {
     }
 }

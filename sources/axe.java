@@ -1,88 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.app.AppOpsManager;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.util.Log;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class axe implements zye {
-    public final rfe a;
-    public final o1f b;
-    public final yme c;
-
-    public axe(o1f o1fVar, yme ymeVar, rfe rfeVar) {
-        this.b = o1fVar;
-        ymeVar.getClass();
-        this.c = ymeVar;
-        this.a = rfeVar;
-    }
-
-    @Override // zye
-    public final boolean a(Object obj) {
-        this.c.getClass();
-        ts2.t(obj);
-        throw null;
-    }
-
-    @Override // zye
-    public final void b(Object obj) {
-        this.b.getClass();
-        ((qpe) obj).zzb.e = false;
-        this.c.getClass();
-        ts2.t(obj);
-        throw null;
-    }
-
-    @Override // zye
-    public final void c(Object obj, byte[] bArr, int i, int i2, ucd ucdVar) {
-        qpe qpeVar = (qpe) obj;
-        if (qpeVar.zzb == s1f.f) {
-            qpeVar.zzb = s1f.b();
+public abstract class axe {
+    public static boolean a(Context context, int i) {
+        if (b(i, context, "com.google.android.gms")) {
+            try {
+                PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.google.android.gms", 64);
+                cz4 a = cz4.a(context);
+                if (packageInfo != null) {
+                    if (!cz4.b(packageInfo, false)) {
+                        if (cz4.b(packageInfo, true)) {
+                            if (!yy4.b(a.a)) {
+                                Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+            } catch (PackageManager.NameNotFoundException unused) {
+                if (Log.isLoggable("UidVerifier", 3)) {
+                    Log.d("UidVerifier", "Package manager can't find google play services package, defaulting to false");
+                }
+            }
         }
-        obj.getClass();
-        throw new ClassCastException();
+        return false;
     }
 
-    @Override // zye
-    public final void d(Object obj, eod eodVar) {
-        this.c.getClass();
-        ts2.t(obj);
-        throw null;
-    }
-
-    @Override // zye
-    public final void e(qpe qpeVar, qpe qpeVar2) {
-        hze.h(this.b, qpeVar, qpeVar2);
-    }
-
-    @Override // zye
-    public final boolean f(qpe qpeVar, qpe qpeVar2) {
-        this.b.getClass();
-        return qpeVar.zzb.equals(qpeVar2.zzb);
-    }
-
-    @Override // zye
-    public final int g(qpe qpeVar) {
-        this.b.getClass();
-        return qpeVar.zzb.hashCode();
-    }
-
-    @Override // zye
-    public final Object zza() {
-        return ((mpe) ((qpe) this.a).d(5)).e();
-    }
-
-    @Override // zye
-    public final int zzb(Object obj) {
-        this.b.getClass();
-        s1f s1fVar = ((qpe) obj).zzb;
-        int i = s1fVar.d;
-        if (i != -1) {
-            return i;
+    public static boolean b(int i, Context context, String str) {
+        try {
+            AppOpsManager appOpsManager = (AppOpsManager) ryc.a(context).a.getSystemService("appops");
+            if (appOpsManager == null) {
+                throw new NullPointerException("context.getSystemService(Context.APP_OPS_SERVICE) is null");
+            }
+            appOpsManager.checkPackage(i, str);
+            return true;
+        } catch (SecurityException unused) {
+            return false;
         }
-        int i2 = 0;
-        for (int i3 = 0; i3 < s1fVar.a; i3++) {
-            int i4 = s1fVar.b[i3] >>> 3;
-            i2 += nle.i(3, (tke) s1fVar.c[i3]) + nle.s(2, i4) + (nle.t(8) << 1);
-        }
-        s1fVar.d = i2;
-        return i2;
     }
 }

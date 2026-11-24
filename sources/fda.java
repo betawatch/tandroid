@@ -1,59 +1,37 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.SerializedData;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class fda {
-    public bw8 a;
-    public long b;
-    public boolean c;
-    public boolean d;
-    public long e;
+public final class fda extends eba {
+    public final /* synthetic */ nfa m0;
 
-    public fda(bw8 bw8Var) {
-        this.a = bw8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fda(nfa nfaVar, Context context) {
+        super(context);
+        this.m0 = nfaVar;
     }
 
-    public static fda a(int i, SerializedData serializedData) {
-        long j;
-        long j2;
-        i66 a = bw8.a();
-        String readString = serializedData.readString(false);
-        if (readString == null) {
-            readString = "";
+    @Override // eba
+    public final boolean d(k27 k27Var) {
+        long playlistTopicId;
+        nfa nfaVar = this.m0;
+        cfa[] cfaVarArr = nfaVar.w1;
+        if (k27.Q4(k27Var.k) || k27Var.g4()) {
+            boolean R = MediaController.w().R(k27Var);
+            MediaController.w().q0(R ? cfaVarArr[4].a : null, false);
+            return R;
         }
-        a.c = readString;
-        a.b = serializedData.readInt32(false);
-        String readString2 = serializedData.readString(false);
-        if (readString2 == null) {
-            readString2 = "";
+        if (!k27Var.I3()) {
+            return false;
         }
-        a.d = readString2;
-        String readString3 = serializedData.readString(false);
-        if (readString3 == null) {
-            readString3 = "";
-        }
-        a.e = readString3;
-        String readString4 = serializedData.readString(false);
-        a.f = readString4 != null ? readString4 : "";
-        if (i >= 2) {
-            j = serializedData.readInt64(false);
-            j2 = serializedData.readInt64(false);
-        } else {
-            j = 0;
-            j2 = 0;
-        }
-        if (i >= 3) {
-            a.o(bw8.f(serializedData.readInt32(false)));
-        } else {
-            a.o(TextUtils.isEmpty(readString4) ? 1 : 2);
-        }
-        fda fdaVar = new fda(a.c());
-        fdaVar.e = j2;
-        fdaVar.b = j;
-        fdaVar.d = j > 0;
-        return fdaVar;
+        MediaController w = MediaController.w();
+        ArrayList arrayList = cfaVarArr[4].a;
+        long j = nfaVar.f1;
+        playlistTopicId = nfaVar.getPlaylistTopicId();
+        return w.n0(arrayList, k27Var, j, true, null, playlistTopicId);
     }
 }

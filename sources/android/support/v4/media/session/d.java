@@ -10,49 +10,49 @@ import android.support.v4.media.MediaMetadataCompat;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class d extends Binder implements lk5 {
+public final class d extends Binder implements mi5 {
     public static final /* synthetic */ int b = 0;
     public final AtomicReference a;
 
-    public d(zw6 zw6Var) {
+    public d(zu6 zu6Var) {
         attachInterface(this, "android.support.v4.media.session.IMediaSession");
-        this.a = new AtomicReference(zw6Var);
+        this.a = new AtomicReference(zu6Var);
     }
 
-    @Override // lk5
-    public final void C(hk5 hk5Var) {
-        zw6 zw6Var = (zw6) this.a.get();
-        if (zw6Var == null) {
+    @Override // mi5
+    public final void C(ii5 ii5Var) {
+        zu6 zu6Var = (zu6) this.a.get();
+        if (zu6Var == null) {
             return;
         }
-        zw6Var.e.unregister(hk5Var);
+        zu6Var.e.unregister(ii5Var);
         Binder.getCallingPid();
         Binder.getCallingUid();
-        synchronized (zw6Var.d) {
+        synchronized (zu6Var.d) {
         }
     }
 
-    @Override // lk5
-    public final void F(hk5 hk5Var) {
-        zw6 zw6Var = (zw6) this.a.get();
-        if (zw6Var == null) {
+    @Override // mi5
+    public final void F(ii5 ii5Var) {
+        zu6 zu6Var = (zu6) this.a.get();
+        if (zu6Var == null) {
             return;
         }
-        zw6Var.e.register(hk5Var, new ny6("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
-        synchronized (zw6Var.d) {
+        zu6Var.e.register(ii5Var, new nw6("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
+        synchronized (zu6Var.d) {
         }
     }
 
-    @Override // lk5
+    @Override // mi5
     public final PlaybackStateCompat h() {
-        zw6 zw6Var = (zw6) this.a.get();
-        if (zw6Var == null) {
+        zu6 zu6Var = (zu6) this.a.get();
+        if (zu6Var == null) {
             return null;
         }
-        PlaybackStateCompat playbackStateCompat = zw6Var.f;
-        MediaMetadataCompat mediaMetadataCompat = zw6Var.h;
+        PlaybackStateCompat playbackStateCompat = zu6Var.f;
+        MediaMetadataCompat mediaMetadataCompat = zu6Var.h;
         if (playbackStateCompat != null) {
             float f = playbackStateCompat.d;
             long j = playbackStateCompat.n;
@@ -94,126 +94,126 @@ public final class d extends Binder implements lk5 {
             parcel2.writeString("android.support.v4.media.session.IMediaSession");
             return true;
         }
-        hk5 hk5Var = null;
-        hk5 hk5Var2 = null;
+        ii5 ii5Var = null;
+        ii5 ii5Var2 = null;
         AtomicReference atomicReference = this.a;
         switch (i) {
             case 1:
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 2:
-                zo4.f();
+                wn4.f();
                 return false;
             case 3:
                 IBinder readStrongBinder = parcel.readStrongBinder();
                 if (readStrongBinder != null) {
                     IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
-                    if (queryLocalInterface == null || !(queryLocalInterface instanceof hk5)) {
-                        fk5 fk5Var = new fk5();
-                        fk5Var.a = readStrongBinder;
-                        hk5Var = fk5Var;
+                    if (queryLocalInterface == null || !(queryLocalInterface instanceof ii5)) {
+                        gi5 gi5Var = new gi5();
+                        gi5Var.a = readStrongBinder;
+                        ii5Var = gi5Var;
                     } else {
-                        hk5Var = (hk5) queryLocalInterface;
+                        ii5Var = (ii5) queryLocalInterface;
                     }
                 }
-                F(hk5Var);
+                F(ii5Var);
                 parcel2.writeNoException();
                 return true;
             case 4:
                 IBinder readStrongBinder2 = parcel.readStrongBinder();
                 if (readStrongBinder2 != null) {
                     IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
-                    if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof hk5)) {
-                        fk5 fk5Var2 = new fk5();
-                        fk5Var2.a = readStrongBinder2;
-                        hk5Var2 = fk5Var2;
+                    if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof ii5)) {
+                        gi5 gi5Var2 = new gi5();
+                        gi5Var2.a = readStrongBinder2;
+                        ii5Var2 = gi5Var2;
                     } else {
-                        hk5Var2 = (hk5) queryLocalInterface2;
+                        ii5Var2 = (ii5) queryLocalInterface2;
                     }
                 }
-                C(hk5Var2);
+                C(ii5Var2);
                 parcel2.writeNoException();
                 return true;
             case 5:
-                zo4.f();
+                wn4.f();
                 return false;
             case 6:
-                zo4.f();
+                wn4.f();
                 return false;
             case 7:
-                zo4.f();
+                wn4.f();
                 return false;
             case 8:
-                zo4.f();
+                wn4.f();
                 return false;
             case 9:
-                zo4.f();
+                wn4.f();
                 return false;
             case 10:
-                zo4.f();
+                wn4.f();
                 return false;
             case 11:
                 parcel.readInt();
                 parcel.readInt();
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 12:
                 parcel.readInt();
                 parcel.readInt();
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 13:
-                zo4.f();
+                wn4.f();
                 return false;
             case 14:
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 15:
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 16:
-                zo4.f();
+                wn4.f();
                 return false;
             case 17:
                 parcel.readLong();
-                zo4.f();
+                wn4.f();
                 return false;
             case 18:
-                zo4.f();
+                wn4.f();
                 return false;
             case 19:
-                zo4.f();
+                wn4.f();
                 return false;
             case 20:
-                zo4.f();
+                wn4.f();
                 return false;
             case 21:
-                zo4.f();
+                wn4.f();
                 return false;
             case 22:
-                zo4.f();
+                wn4.f();
                 return false;
             case 23:
-                zo4.f();
+                wn4.f();
                 return false;
             case 24:
                 parcel.readLong();
-                zo4.f();
+                wn4.f();
                 return false;
             case 25:
-                zo4.f();
+                wn4.f();
                 return false;
             case 26:
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 27:
-                zo4.f();
+                wn4.f();
                 return false;
             case 28:
                 PlaybackStateCompat h = h();
@@ -229,33 +229,33 @@ public final class d extends Binder implements lk5 {
                 parcel2.writeNoException();
                 parcel2.writeInt(-1);
                 return true;
-            case nm7.S /* 30 */:
-                zo4.f();
+            case kk7.S /* 30 */:
+                wn4.f();
                 return false;
             case 31:
-                zo4.f();
+                wn4.f();
                 return false;
             case 32:
                 parcel2.writeNoException();
                 parcel2.writeInt(0);
                 return true;
             case 33:
-                zo4.f();
+                wn4.f();
                 return false;
             case 34:
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 35:
                 parcel.readString();
-                zo4.f();
+                wn4.f();
                 return false;
             case 36:
-                zo4.f();
+                wn4.f();
                 return false;
             case 37:
-                zw6 zw6Var = (zw6) atomicReference.get();
-                i3 = zw6Var != null ? zw6Var.i : -1;
+                zu6 zu6Var = (zu6) atomicReference.get();
+                i3 = zu6Var != null ? zu6Var.i : -1;
                 parcel2.writeNoException();
                 parcel2.writeInt(i3);
                 return true;
@@ -265,25 +265,25 @@ public final class d extends Binder implements lk5 {
                 return true;
             case 39:
                 parcel.readInt();
-                zo4.f();
+                wn4.f();
                 return false;
             case 40:
                 parcel.readInt();
                 parcel2.writeNoException();
                 return true;
             case 41:
-                zo4.f();
+                wn4.f();
                 return false;
             case 42:
                 parcel.readInt();
-                zo4.f();
+                wn4.f();
                 return false;
             case 43:
-                zo4.f();
+                wn4.f();
                 return false;
             case 44:
                 parcel.readInt();
-                zo4.f();
+                wn4.f();
                 return false;
             case 45:
                 parcel2.writeNoException();
@@ -291,29 +291,29 @@ public final class d extends Binder implements lk5 {
                 return true;
             case 46:
                 parcel.readInt();
-                zo4.f();
+                wn4.f();
                 return false;
             case 47:
-                zw6 zw6Var2 = (zw6) atomicReference.get();
-                i3 = zw6Var2 != null ? zw6Var2.j : -1;
+                zu6 zu6Var2 = (zu6) atomicReference.get();
+                i3 = zu6Var2 != null ? zu6Var2.j : -1;
                 parcel2.writeNoException();
                 parcel2.writeInt(i3);
                 return true;
             case 48:
                 parcel.readInt();
-                zo4.f();
+                wn4.f();
                 return false;
             case 49:
                 parcel.readFloat();
-                zo4.f();
+                wn4.f();
                 return false;
             case 50:
-                ((zw6) atomicReference.get()).getClass();
+                ((zu6) atomicReference.get()).getClass();
                 parcel2.writeNoException();
                 parcel2.writeInt(0);
                 return true;
-            case nm7.n0 /* 51 */:
-                zo4.f();
+            case kk7.n0 /* 51 */:
+                wn4.f();
                 return false;
             default:
                 return super.onTransact(i, parcel, parcel2, i2);

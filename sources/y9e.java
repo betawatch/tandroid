@@ -1,19 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class y9e implements cq7 {
-    public static final y9e a = new y9e();
-
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class y9e {
+    public static h7e a(int i) {
+        if (i == 0) {
+            return h7e.b;
         }
-        throw null;
+        if (i == 1) {
+            return h7e.c;
+        }
+        if (i == 2) {
+            return h7e.d;
+        }
+        if (i == 3) {
+            return h7e.e;
+        }
+        if (i != 4) {
+            return null;
+        }
+        return h7e.f;
     }
 }

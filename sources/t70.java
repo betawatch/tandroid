@@ -1,13 +1,27 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class t70 implements zn7 {
+    public static final t70 a = new t70();
+    public static final w84 b = w84.c("sessionId");
+    public static final w84 c = w84.c("firstSessionId");
+    public static final w84 d = w84.c("sessionIndex");
+    public static final w84 e = w84.c("eventTimestampUs");
+    public static final w84 f = w84.c("dataCollectionStatus");
+    public static final w84 g = w84.c("firebaseInstallationId");
+    public static final w84 h = w84.c("firebaseAuthenticationToken");
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class t70 implements RequestDelegate {
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        i6a i6aVar = (i6a) obj;
+        ao7 ao7Var = (ao7) obj2;
+        ao7Var.a(b, i6aVar.a);
+        ao7Var.a(c, i6aVar.b);
+        ao7Var.e(d, i6aVar.c);
+        ao7Var.g(e, i6aVar.d);
+        ao7Var.a(f, i6aVar.e);
+        ao7Var.a(g, i6aVar.f);
+        ao7Var.a(h, i6aVar.g);
     }
 }

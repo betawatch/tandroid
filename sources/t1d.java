@@ -1,11 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class t1d {
-    public static final /* synthetic */ int a = 0;
+public final class t1d implements nd0 {
+    public final /* synthetic */ hy4 a;
 
-    static {
-        t1d.class.getClassLoader();
+    public t1d(hy4 hy4Var) {
+        this.a = hy4Var;
+    }
+
+    @Override // nd0
+    public final void a(boolean z) {
+        Boolean valueOf = Boolean.valueOf(z);
+        o59 o59Var = this.a.y;
+        o59Var.sendMessage(o59Var.obtainMessage(1, valueOf));
     }
 }

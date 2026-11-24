@@ -1,38 +1,80 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class dh2 implements ip9 {
+    public final eh2 a;
+    public final gp9 b;
+    public final int c;
+    public boolean d;
+    public final /* synthetic */ eh2 e;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class dh2 implements ee, oac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hh2 b;
-
-    public /* synthetic */ dh2(hh2 hh2Var, byte b) {
-        this.a = b;
-        this.b = hh2Var;
+    public dh2(eh2 eh2Var, eh2 eh2Var2, gp9 gp9Var, int i) {
+        this.e = eh2Var;
+        this.a = eh2Var2;
+        this.b = gp9Var;
+        this.c = i;
     }
 
-    @Override // oac
-    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.b.e0((c6c) obj, (View) obj2);
+    @Override // ip9
+    public final int a() {
+        return 0;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        byte b = this.a;
-        hh2 hh2Var = this.b;
-        switch (b) {
-            case 0:
-                hh2Var.f0();
-                break;
-            case 1:
-                hh2Var.finishFragment();
-                break;
-            default:
-                hh2Var.f0();
-                break;
+    public final void c() {
+        if (this.d) {
+            return;
         }
+        eh2 eh2Var = this.e;
+        kp kpVar = eh2Var.h;
+        int[] iArr = eh2Var.b;
+        int i = this.c;
+        kpVar.i(iArr[i], eh2Var.c[i], 0, null, eh2Var.K);
+        this.d = true;
+    }
+
+    @Override // ip9
+    public final int h(sk4 sk4Var, z83 z83Var, int i) {
+        eh2 eh2Var = this.e;
+        if (eh2Var.y()) {
+            return -3;
+        }
+        og0 og0Var = eh2Var.M;
+        gp9 gp9Var = this.b;
+        if (og0Var != null && og0Var.e(this.c + 1) <= gp9Var.v()) {
+            return -3;
+        }
+        c();
+        return gp9Var.F(sk4Var, z83Var, i, eh2Var.S);
+    }
+
+    @Override // ip9
+    public final boolean j() {
+        eh2 eh2Var = this.e;
+        return !eh2Var.y() && this.b.A(eh2Var.S);
+    }
+
+    @Override // ip9
+    public final int n(long j) {
+        eh2 eh2Var = this.e;
+        if (eh2Var.y()) {
+            return 0;
+        }
+        boolean z = eh2Var.S;
+        gp9 gp9Var = this.b;
+        int x = gp9Var.x(j, z);
+        og0 og0Var = eh2Var.M;
+        if (og0Var != null) {
+            x = Math.min(x, og0Var.e(this.c + 1) - gp9Var.v());
+        }
+        gp9Var.L(x);
+        if (x > 0) {
+            c();
+        }
+        return x;
+    }
+
+    @Override // ip9
+    public final void b() {
     }
 }

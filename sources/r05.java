@@ -1,60 +1,14 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.RemoteException;
-import com.google.android.gms.maps.model.LatLng;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
 public final class r05 {
-    public final bl6 a;
-
-    public r05(bl6 bl6Var) {
-        this.a = bl6Var;
-    }
-
-    public final xj5 a() {
-        bl6 bl6Var = this.a;
-        bl6Var.getClass();
-        try {
-            sjf sjfVar = (sjf) bl6Var.a;
-            Parcel Q = sjfVar.Q(sjfVar.R(), 4);
-            Parcelable.Creator<LatLng> creator = LatLng.CREATOR;
-            int i = tid.a;
-            LatLng createFromParcel = Q.readInt() == 0 ? null : creator.createFromParcel(Q);
-            Q.recycle();
-            return new xj5(createFromParcel.a, createFromParcel.b);
-        } catch (RemoteException e) {
-            i2d.h(e);
-            return null;
-        }
-    }
-
-    public final void b(xj5 xj5Var) {
-        LatLng latLng = new LatLng(xj5Var.a, xj5Var.b);
-        bl6 bl6Var = this.a;
-        bl6Var.getClass();
-        try {
-            sjf sjfVar = (sjf) bl6Var.a;
-            Parcel R = sjfVar.R();
-            tid.b(R, latLng);
-            sjfVar.V(R, 3);
-        } catch (RemoteException e) {
-            i2d.h(e);
-        }
-    }
-
-    public final void c(float f) {
-        bl6 bl6Var = this.a;
-        bl6Var.getClass();
-        try {
-            sjf sjfVar = (sjf) bl6Var.a;
-            Parcel R = sjfVar.R();
-            R.writeFloat(f);
-            sjfVar.V(R, 22);
-        } catch (RemoteException e) {
-            i2d.h(e);
-        }
-    }
+    public String a;
+    public long b;
+    public byte[] c;
+    public int d;
+    public boolean e;
+    public ArrayList f;
 }

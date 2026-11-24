@@ -1,9 +1,25 @@
 // default package
 
-import java.util.List;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface lr5 extends List, RandomAccess {
+public final class lr5 extends ft5 {
+    public static final /* synthetic */ long f = ex.a.objectFieldOffset(lr5.class.getDeclaredField("_invoked$volatile"));
+    private volatile /* synthetic */ int _invoked$volatile = 0;
+    public final qp4 e;
+
+    public lr5(qp4 qp4Var) {
+        this.e = qp4Var;
+    }
+
+    @Override // ft5
+    public final boolean k() {
+        return true;
+    }
+
+    @Override // ft5
+    public final void l(Throwable th) {
+        if (ex.a.compareAndSwapInt(this, f, 0, 1)) {
+            this.e.invoke(th);
+        }
+    }
 }

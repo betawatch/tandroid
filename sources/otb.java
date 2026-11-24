@@ -1,39 +1,123 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum otb extends rub {
-    public otb() {
-        super("CommentStart", 44);
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class otb extends LinearLayout implements tjb {
+    public final wjb a;
+    public final be0 b;
+    public final l46 c;
+    public final l46 d;
+    public int e;
+    public int f;
+
+    public otb(Context context, wjb wjbVar) {
+        super(context);
+        this.e = 90;
+        this.a = wjbVar;
+        setOrientation(1);
+        be0 be0Var = new be0(context);
+        this.b = be0Var;
+        be0Var.getImageReceiver().N(1);
+        be0Var.getImageReceiver().M(1);
+        be0Var.setOnClickListener(new bna(this, (byte) 22));
+        addView(be0Var, nme.t(90, 90, 17, 0, 9, 0, 9));
+        l46 l46Var = new l46(context, null);
+        this.c = l46Var;
+        l46Var.setTextSize(1, 20.0f);
+        l46Var.setGravity(17);
+        l46Var.setTypeface(gl.o());
+        l46Var.setTextAlignment(4);
+        addView(l46Var, nme.t(-1, -2, 17, 48, 0, 48, 10));
+        l46 l46Var2 = new l46(context, null);
+        this.d = l46Var2;
+        l46Var2.setTextSize(1, 14.0f);
+        l46Var2.setGravity(17);
+        l46Var2.setTextAlignment(4);
+        addView(l46Var2, nme.t(-1, -2, 17, 48, 0, 48, 17));
+        updateColors();
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        rrb rrbVar = bsbVar.n;
-        char d = hl1Var.d();
-        qtb qtbVar = rub.k0;
-        if (d == 0) {
-            bsbVar.m(this);
-            rrbVar.e.append((char) 65533);
-            bsbVar.c = qtbVar;
-            return;
+    public final void a(CharSequence charSequence, CharSequence charSequence2) {
+        l46 l46Var = this.c;
+        l46Var.setText(charSequence);
+        l46Var.setVisibility(0);
+        l46 l46Var2 = this.d;
+        l46Var2.setText(charSequence2);
+        l46Var2.setMaxWidth(je5.a(charSequence2, l46Var2.getPaint()));
+        l46Var2.requestLayout();
+        updateColors();
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(bkb.F6));
+        hashSet.add(Integer.valueOf(bkb.Wc));
+        hashSet.add(Integer.valueOf(bkb.A6));
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    }
+
+    public void setEmoji(int i) {
+        if (this.f != i) {
+            this.f = i;
+            oy8 oy8Var = new oy8(i, gl.L(90.0f), gl.L(90.0f));
+            be0 be0Var = this.b;
+            be0Var.setImageDrawable(oy8Var);
+            be0Var.getImageReceiver().M(2);
         }
-        if (d == '-') {
-            bsbVar.c = rub.j0;
-            return;
+    }
+
+    public void setEmojiSize(int i) {
+        if (this.e != i) {
+            this.e = i;
+            updateColors();
         }
-        msb msbVar = rub.a;
-        if (d == '>') {
-            bsbVar.m(this);
-            bsbVar.i();
-            bsbVar.c = msbVar;
-        } else if (d != 65535) {
-            rrbVar.e.append(d);
-            bsbVar.c = qtbVar;
-        } else {
-            bsbVar.l(this);
-            bsbVar.i();
-            bsbVar.c = msbVar;
+    }
+
+    public void setEmojiStatic(int i) {
+        if (this.f != i) {
+            be0 be0Var = this.b;
+            be0Var.b();
+            this.f = i;
+            be0Var.setImageResource(i);
         }
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.c.setVisibility(8);
+        l46 l46Var = this.d;
+        l46Var.setText(charSequence);
+        l46Var.setMaxWidth(je5.a(charSequence, l46Var.getPaint()));
+        l46Var.requestLayout();
+        updateColors();
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        int i = bkb.F6;
+        wjb wjbVar = this.a;
+        int v0 = bkb.v0(i, wjbVar);
+        l46 l46Var = this.c;
+        l46Var.setTextColor(v0);
+        int i2 = bkb.Wc;
+        l46Var.setLinkTextColor(bkb.v0(i2, wjbVar));
+        if (l46Var.getVisibility() != 0) {
+            i = bkb.A6;
+        }
+        int v02 = bkb.v0(i, wjbVar);
+        l46 l46Var2 = this.d;
+        l46Var2.setTextColor(v02);
+        l46Var2.setLinkTextColor(bkb.v0(i2, wjbVar));
+        int i3 = this.e;
+        this.b.setLayoutParams(nme.t(i3, i3, 17, 0, l46Var.getVisibility() == 0 ? 0 : 9, 0, 9));
     }
 }

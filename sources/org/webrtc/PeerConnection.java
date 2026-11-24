@@ -12,7 +12,7 @@ import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpTransceiver;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class PeerConnection {
     private final List<MediaStream> localStreams;
@@ -21,7 +21,7 @@ public class PeerConnection {
     private List<RtpSender> senders;
     private List<RtpTransceiver> transceivers;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum AdapterType {
         UNKNOWN(0),
         ETHERNET(1),
@@ -53,26 +53,26 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum BundlePolicy {
         BALANCED,
         MAXBUNDLE,
         MAXCOMPAT
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum CandidateNetworkPolicy {
         ALL,
         LOW_COST
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum ContinualGatheringPolicy {
         GATHER_ONCE,
         GATHER_CONTINUALLY
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum IceConnectionState {
         NEW,
         CHECKING,
@@ -87,7 +87,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum IceGatheringState {
         NEW,
         GATHERING,
@@ -98,7 +98,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum IceTransportsType {
         NONE,
         RELAY,
@@ -106,13 +106,13 @@ public class PeerConnection {
         ALL
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum KeyType {
         RSA,
         ECDSA
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface Observer {
         void onAddStream(MediaStream mediaStream);
 
@@ -149,7 +149,7 @@ public class PeerConnection {
         void onTrack(RtpTransceiver rtpTransceiver);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum PeerConnectionState {
         NEW,
         CONNECTING,
@@ -163,14 +163,14 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum PortPrunePolicy {
         NO_PRUNE,
         PRUNE_BASED_ON_PRIORITY,
         KEEP_FIRST_READY
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class RTCConfiguration {
         public RtcCertificatePem certificate;
         public List<IceServer> iceServers;
@@ -375,19 +375,19 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum RtcpMuxPolicy {
         NEGOTIATE,
         REQUIRE
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum SdpSemantics {
         PLAN_B,
         UNIFIED_PLAN
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum SignalingState {
         STABLE,
         HAVE_LOCAL_OFFER,
@@ -401,13 +401,13 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum TcpCandidatePolicy {
         ENABLED,
         DISABLED
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum TlsCertPolicy {
         TLS_CERT_POLICY_SECURE,
         TLS_CERT_POLICY_INSECURE_NO_CHECK
@@ -521,7 +521,7 @@ public class PeerConnection {
 
     public RtpSender addTrack(MediaStreamTrack mediaStreamTrack, List<String> list) {
         if (mediaStreamTrack == null || list == null) {
-            gxc.d("No MediaStreamTrack specified in addTrack.");
+            fvc.f("No MediaStreamTrack specified in addTrack.");
             return null;
         }
         RtpSender nativeAddTrack = nativeAddTrack(mediaStreamTrack.getNativeMediaStreamTrack(), list);
@@ -529,13 +529,13 @@ public class PeerConnection {
             this.senders.add(nativeAddTrack);
             return nativeAddTrack;
         }
-        dq9.m("C++ addTrack failed.");
+        sc8.j("C++ addTrack failed.");
         return null;
     }
 
     public RtpTransceiver addTransceiver(MediaStreamTrack mediaStreamTrack, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit) {
         if (mediaStreamTrack == null) {
-            gxc.d("No MediaStreamTrack specified for addTransceiver.");
+            fvc.f("No MediaStreamTrack specified for addTransceiver.");
             return null;
         }
         if (rtpTransceiverInit == null) {
@@ -546,7 +546,7 @@ public class PeerConnection {
             this.transceivers.add(nativeAddTransceiverWithTrack);
             return nativeAddTransceiverWithTrack;
         }
-        dq9.m("C++ addTransceiver failed.");
+        sc8.j("C++ addTransceiver failed.");
         return null;
     }
 
@@ -679,7 +679,7 @@ public class PeerConnection {
         if (rtpSender != null) {
             return nativeRemoveTrack(rtpSender.getNativeRtpSender());
         }
-        gxc.d("No RtpSender specified for removeTrack.");
+        fvc.f("No RtpSender specified for removeTrack.");
         return false;
     }
 
@@ -727,7 +727,7 @@ public class PeerConnection {
         nativeSetLocalDescription(sdpObserver, sessionDescription);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class IceServer {
         public final String hostname;
         public final String password;
@@ -740,7 +740,7 @@ public class PeerConnection {
         public final List<String> urls;
         public final String username;
 
-        /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+        /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
         public static class Builder {
             private String hostname;
             private String password;
@@ -756,7 +756,7 @@ public class PeerConnection {
                 this.tlsCertPolicy = TlsCertPolicy.TLS_CERT_POLICY_SECURE;
                 this.hostname = "";
                 if (list == null || list.isEmpty()) {
-                    u36.i(list, "urls == null || urls.isEmpty(): ");
+                    w26.i(list, "urls == null || urls.isEmpty(): ");
                     throw null;
                 }
                 this.urls = list;
@@ -799,26 +799,26 @@ public class PeerConnection {
 
         private IceServer(String str, List<String> list, String str2, String str3, TlsCertPolicy tlsCertPolicy, String str4, List<String> list2, List<String> list3) {
             if (str == null || list == null || list.isEmpty()) {
-                u36.j("uri == null || urls == null || urls.isEmpty()");
+                w26.j("uri == null || urls == null || urls.isEmpty()");
                 throw null;
             }
             Iterator<String> it = list.iterator();
             while (it.hasNext()) {
                 if (it.next() == null) {
-                    u36.i(list, "urls element is null: ");
+                    w26.i(list, "urls element is null: ");
                     throw null;
                 }
             }
             if (str2 == null) {
-                u36.j("username == null");
+                w26.j("username == null");
                 throw null;
             }
             if (str3 == null) {
-                u36.j("password == null");
+                w26.j("password == null");
                 throw null;
             }
             if (str4 == null) {
-                u36.j("hostname == null");
+                w26.j("hostname == null");
                 throw null;
             }
             this.uri = str;
@@ -952,10 +952,10 @@ public class PeerConnection {
                 this.transceivers.add(nativeAddTransceiverOfType);
                 return nativeAddTransceiverOfType;
             }
-            dq9.m("C++ addTransceiver failed.");
+            sc8.j("C++ addTransceiver failed.");
             return null;
         }
-        gxc.d("No MediaType specified for addTransceiver.");
+        fvc.f("No MediaType specified for addTransceiver.");
         return null;
     }
 }

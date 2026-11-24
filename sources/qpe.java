@@ -1,133 +1,41 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Map;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class qpe extends rfe {
-    private static Map<Object, qpe> zzd = new ConcurrentHashMap();
-    protected s1f zzb;
-    private int zzc;
-
-    public qpe() {
-        this.zza = 0;
-        this.zzb = s1f.f;
-        this.zzc = -1;
-    }
-
-    public static Object e(Method method, qpe qpeVar, Object... objArr) {
-        try {
-            return method.invoke(qpeVar, objArr);
-        } catch (IllegalAccessException e) {
-            rjb.k("Couldn't use Java reflection to implement protocol message reflection.", e);
-            return null;
-        } catch (InvocationTargetException e2) {
-            Throwable cause = e2.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            if (cause instanceof Error) {
-                throw ((Error) cause);
-            }
-            rjb.k("Unexpected exception thrown by generated accessor method.", cause);
+public abstract class qpe {
+    public static Intent a(Context context, ComponentName componentName) {
+        String b = b(context, componentName);
+        if (b == null) {
             return null;
         }
+        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), b);
+        return b(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
     }
 
-    public static qpe f(Class cls) {
-        qpe qpeVar = zzd.get(cls);
-        if (qpeVar == null) {
-            try {
-                Class.forName(cls.getName(), true, cls.getClassLoader());
-                qpeVar = zzd.get(cls);
-            } catch (ClassNotFoundException e) {
-                wa3.h("Class initialization cannot fail.", e);
-                return null;
-            }
+    public static String b(Context context, ComponentName componentName) {
+        String string;
+        PackageManager packageManager = context.getPackageManager();
+        int i = Build.VERSION.SDK_INT;
+        ActivityInfo activityInfo = packageManager.getActivityInfo(componentName, i >= 29 ? 269222528 : i >= 24 ? 787072 : 640);
+        String str = activityInfo.parentActivityName;
+        if (str != null) {
+            return str;
         }
-        if (qpeVar != null) {
-            return qpeVar;
-        }
-        try {
-            qpe qpeVar2 = (qpe) ((qpe) k2f.a.allocateInstance(cls)).d(6);
-            if (qpeVar2 != null) {
-                zzd.put(cls, qpeVar2);
-                return qpeVar2;
-            }
-            rjb.h();
-            return null;
-        } catch (InstantiationException e2) {
-            dq9.o(e2);
+        Bundle bundle = activityInfo.metaData;
+        if (bundle == null || (string = bundle.getString("android.support.PARENT_ACTIVITY")) == null) {
             return null;
         }
-    }
-
-    public static void g(Class cls, qpe qpeVar) {
-        zzd.put(cls, qpeVar);
-    }
-
-    /* JADX WARN: Type inference failed for: r0v0, types: [cre, zpe] */
-    public static cre i() {
-        return zpe.d;
-    }
-
-    @Override // rfe
-    public final void b(int i) {
-        this.zzc = i;
-    }
-
-    @Override // rfe
-    public final int c() {
-        return this.zzc;
-    }
-
-    public abstract Object d(int i);
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (string.charAt(0) != '.') {
+            return string;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        hye hyeVar = hye.c;
-        hyeVar.getClass();
-        return hyeVar.a(getClass()).f(this, (qpe) obj);
-    }
-
-    public final int h() {
-        int i = this.zzc;
-        if (i != -1) {
-            return i;
-        }
-        hye hyeVar = hye.c;
-        hyeVar.getClass();
-        int zzb = hyeVar.a(getClass()).zzb(this);
-        this.zzc = zzb;
-        return zzb;
-    }
-
-    public final int hashCode() {
-        int i = this.zza;
-        if (i != 0) {
-            return i;
-        }
-        hye hyeVar = hye.c;
-        hyeVar.getClass();
-        int g = hyeVar.a(getClass()).g(this);
-        this.zza = g;
-        return g;
-    }
-
-    public final String toString() {
-        String obj = super.toString();
-        StringBuilder sb = new StringBuilder();
-        sb.append("# ");
-        sb.append(obj);
-        hmd.c(this, sb, 0);
-        return sb.toString();
+        return context.getPackageName() + string;
     }
 }

@@ -1,14 +1,19 @@
 // default package
 
-import android.os.IInterface;
-import android.support.v4.media.session.PlaybackStateCompat;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface hk5 extends IInterface {
-    void N(PlaybackStateCompat playbackStateCompat);
+public final class hk5 extends fe7 implements gk5 {
+    public final f84 f;
 
-    void g(int i);
+    public hk5(mg6 mg6Var, Executor executor, f84 f84Var) {
+        super(mg6Var, executor);
+        this.f = f84Var;
+    }
 
-    void i(int i);
+    @Override // tq7
+    public final f84[] a() {
+        return new f84[]{this.f};
+    }
 }

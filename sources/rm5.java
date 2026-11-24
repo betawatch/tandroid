@@ -1,27 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class rm5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sm5 b;
+import j$.util.Objects;
+import java.util.Map;
 
-    public /* synthetic */ rm5(sm5 sm5Var, byte b) {
-        this.a = b;
-        this.b = sm5Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class rm5 extends v5c {
+    public final v5c b;
+    public Object c;
+    public v5c d;
+
+    public rm5(nm5 nm5Var) {
+        super((byte) 0);
+        b69 b69Var = nm5Var.e;
+        ym5 ym5Var = b69Var.a;
+        if (ym5Var == null) {
+            ym5Var = b69Var.c();
+            b69Var.a = ym5Var;
+        }
+        this.b = ym5Var.iterator();
+        this.c = null;
+        this.d = ls5.e;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        sm5 sm5Var = this.b;
-        switch (b) {
-            case 0:
-                sm5Var.e.P(true);
-                break;
-            default:
-                sm5Var.e.P(true);
-                break;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.d.hasNext() || this.b.hasNext();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!this.d.hasNext()) {
+            Map.Entry entry = (Map.Entry) this.b.next();
+            this.c = entry.getKey();
+            this.d = ((gm5) entry.getValue()).iterator();
         }
+        Object obj = this.c;
+        Objects.requireNonNull(obj);
+        return new hm5(obj, this.d.next());
     }
 }

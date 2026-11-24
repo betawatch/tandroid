@@ -1,131 +1,54 @@
 // default package
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Arrays;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class hg8 implements bg8 {
+    public static final dg8 a;
+    public static final /* synthetic */ hg8[] b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class hg8 extends ng8 {
-    public final /* synthetic */ ig8 G;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hg8(ig8 ig8Var, Context context, int i, m67 m67Var) {
-        super(context, i, m67Var, null);
-        this.G = ig8Var;
-    }
-
-    @Override // ng8
-    public final boolean f() {
-        kg8 kg8Var = this.G.d;
-        smb smbVar = kg8Var.c;
-        View F = smbVar.F(this);
-        u69 T = F == null ? null : smbVar.T(F);
-        if (T != null) {
-            int b = T.b();
-            int i = kg8Var.E;
-            if (i == kg8Var.n && b == (kg8Var.o0 + i) - 1) {
+    static {
+        dg8 dg8Var = new dg8();
+        a = dg8Var;
+        b = new hg8[]{dg8Var, new hg8() { // from class: eg8
+            @Override // bg8
+            public final boolean apply(Object obj) {
                 return false;
             }
-        }
-        return true;
-    }
 
-    @Override // ng8
-    public final boolean g(ng8 ng8Var) {
-        int b;
-        kg8 kg8Var = this.G.d;
-        smb smbVar = kg8Var.c;
-        View F = smbVar.F(ng8Var);
-        u69 T = F == null ? null : smbVar.T(F);
-        if (T == null || (b = T.b()) == -1) {
-            return false;
-        }
-        return kg8Var.x[b - kg8Var.o0];
-    }
-
-    @Override // ng8
-    public final void h(pz pzVar, ActionMode actionMode) {
-        if (pzVar.isFocused() && pzVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) != null) {
-                yv1.E6(menu, this.G.d.f.h, false, true, true, true);
+            @Override // java.lang.Enum
+            public final String toString() {
+                return "Predicates.alwaysFalse()";
             }
-        }
-    }
-
-    @Override // ng8
-    public final void i(ng8 ng8Var, boolean z) {
-        int b;
-        kg8 kg8Var = this.G.d;
-        kg8Var.c.getChildCount();
-        if (z && kg8Var.M) {
-            Arrays.fill(kg8Var.x, false);
-            for (int i = kg8Var.o0; i < kg8Var.o0 + kg8Var.E; i++) {
-                u69 K = kg8Var.c.K(i);
-                if (K != null) {
-                    View view = K.a;
-                    if (view instanceof ng8) {
-                        ((ng8) view).r.a(false, true);
-                    }
-                }
+        }, new hg8() { // from class: fg8
+            @Override // bg8
+            public final boolean apply(Object obj) {
+                return obj == null;
             }
-        }
-        super.i(ng8Var, z);
-        smb smbVar = kg8Var.c;
-        View F = smbVar.F(ng8Var);
-        u69 T = F == null ? null : smbVar.T(F);
-        if (T != null && (b = T.b()) != -1) {
-            kg8Var.x[b - kg8Var.o0] = z;
-        }
-        kg8Var.k0();
-    }
 
-    @Override // ng8
-    public final void j(boolean z) {
-        this.G.d.o0(this, z);
-    }
-
-    @Override // ng8
-    public final void k(ng8 ng8Var) {
-        this.G.d.p0(ng8Var);
-    }
-
-    @Override // ng8
-    public final boolean m(ArrayList arrayList) {
-        kg8 kg8Var = this.G.d;
-        if (!arrayList.isEmpty()) {
-            kg8Var.c.getClass();
-            int R = RecyclerView.R(this) - kg8Var.o0;
-            if (R >= 0) {
-                pz pzVar = this.d;
-                pzVar.getText().replace(pzVar.getSelectionStart(), pzVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-                int i = R + 1;
-                while (!arrayList.isEmpty() && i < kg8Var.n) {
-                    for (int length = kg8Var.w.length - 1; length > i; length--) {
-                        CharSequence[] charSequenceArr = kg8Var.w;
-                        charSequenceArr[length] = charSequenceArr[length - 1];
-                    }
-                    kg8Var.w[i] = (CharSequence) arrayList.remove(0);
-                    kg8Var.E++;
-                    i++;
-                }
-                kg8Var.v0();
-                kg8Var.h0 = (kg8Var.o0 + i) - 1;
-                kg8Var.b.f();
-                return true;
+            @Override // java.lang.Enum
+            public final String toString() {
+                return "Predicates.isNull()";
             }
-        }
-        return false;
+        }, new hg8() { // from class: gg8
+            @Override // bg8
+            public final boolean apply(Object obj) {
+                return obj != null;
+            }
+
+            @Override // java.lang.Enum
+            public final String toString() {
+                return "Predicates.notNull()";
+            }
+        }};
     }
 
-    @Override // ng8
-    public final boolean p() {
-        return this.G.d.M;
+    public static hg8 valueOf(String str) {
+        return (hg8) Enum.valueOf(hg8.class, str);
+    }
+
+    public static hg8[] values() {
+        return (hg8[]) b.clone();
     }
 }

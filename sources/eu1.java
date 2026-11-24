@@ -1,22 +1,48 @@
 // default package
 
-import android.content.Context;
+import android.util.SparseIntArray;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class eu1 extends op0 {
-    public final /* synthetic */ hu1 f;
+public final /* synthetic */ class eu1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ku1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eu1(hu1 hu1Var, Context context, int i, ylb ylbVar) {
-        super(i, ylbVar, context);
-        this.f = hu1Var;
+    public /* synthetic */ eu1(ku1 ku1Var, byte b) {
+        this.a = b;
+        this.b = ku1Var;
     }
 
-    @Override // op0
-    public final int getSideMenuWidth() {
-        yv1 yv1Var = this.f.R;
-        int i = yv1.xd;
-        return yv1Var.o7();
+    @Override // java.lang.Runnable
+    public final void run() {
+        ui5 ui5Var;
+        ui5 ui5Var2;
+        byte b = this.a;
+        ku1 ku1Var = this.b;
+        switch (b) {
+            case 0:
+                ku1Var.e = new SparseIntArray();
+                mu1 mu1Var = ku1Var.G;
+                m17 m17Var = (m17) mu1Var.getThemedDrawable("drawableMsgOut");
+                ku1Var.t = m17Var;
+                ui5Var = ((d) mu1Var).parentLayout;
+                m17Var.J = ui5Var.getMessageDrawableOutStart();
+                m17 m17Var2 = (m17) mu1Var.getThemedDrawable("drawableMsgOutMedia");
+                ku1Var.u = m17Var2;
+                ui5Var2 = ((d) mu1Var).parentLayout;
+                m17Var2.J = ui5Var2.getMessageDrawableOutMediaStart();
+                ku1Var.t.K = 0.0f;
+                ku1Var.u.K = 0.0f;
+                mu1Var.Qc();
+                ku1Var.t(0.0f);
+                break;
+            default:
+                ku1Var.t.J = null;
+                ku1Var.u.J = null;
+                ku1Var.e = null;
+                ku1Var.t(1.0f);
+                break;
+        }
     }
 }

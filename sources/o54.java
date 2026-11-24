@@ -1,44 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class o54 extends fy2 {
-    public static final /* synthetic */ int f = 0;
-    public long c;
-    public boolean d;
-    public lt e;
+public final /* synthetic */ class o54 implements x56 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ y54 b;
 
-    public final void f(boolean z) {
-        long j = this.c - (z ? 4294967296L : 1L);
-        this.c = j;
-        if (j > 0 || !this.d) {
-            return;
-        }
-        shutdown();
+    public /* synthetic */ o54(y54 y54Var, byte b) {
+        this.a = b;
+        this.b = y54Var;
     }
 
-    public final void g(boolean z) {
-        this.c = (z ? 4294967296L : 1L) + this.c;
-        if (z) {
-            return;
+    @Override // x56
+    public final void invoke(Object obj) {
+        byte b = this.a;
+        y54 y54Var = this.b;
+        mc8 mc8Var = (mc8) obj;
+        switch (b) {
+            case 2:
+                mc8Var.K(y54Var.P);
+                break;
+            default:
+                mc8Var.C(y54Var.R);
+                break;
         }
-        this.d = true;
     }
-
-    public abstract long h();
-
-    public final boolean i() {
-        lt ltVar = this.e;
-        if (ltVar == null) {
-            return false;
-        }
-        tp3 tp3Var = (tp3) (ltVar.isEmpty() ? null : ltVar.removeFirst());
-        if (tp3Var == null) {
-            return false;
-        }
-        tp3Var.run();
-        return true;
-    }
-
-    public abstract void shutdown();
 }

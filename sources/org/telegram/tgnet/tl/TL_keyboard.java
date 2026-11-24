@@ -9,11 +9,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public class TL_keyboard {
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class ButtonType extends ButtonTypeProto {
         public static ButtonType TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (ButtonType) TLObject.TLdeserialize(ButtonType.class, fromConstructor(i), inputSerializedData, i, z);
@@ -41,11 +41,11 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class ButtonTypeProto extends TLObject {
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class InlineButtonType extends ButtonTypeProto {
         public static InlineButtonType TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (InlineButtonType) TLObject.TLdeserialize(InlineButtonType.class, fromConstructor(i), inputSerializedData, i, z);
@@ -83,7 +83,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class KeyboardButton extends TLObject implements KeyboardButtonProto {
         protected int flags;
         public KeyboardButtonStyle style;
@@ -143,16 +143,16 @@ public class TL_keyboard {
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ byte[] getData() {
-            return hg9.a(this);
+            return de9.a(this);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ String getUrl() {
-            return hg9.b(this);
+            return de9.b(this);
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface KeyboardButtonProto {
         @Deprecated
         byte[] getData();
@@ -165,7 +165,7 @@ public class TL_keyboard {
         String getUrl();
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class KeyboardButtonRow extends TLObject {
         public static final int constructor = 2002815875;
         public ArrayList<KeyboardButton> buttons = new ArrayList<>();
@@ -176,7 +176,7 @@ public class TL_keyboard {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.buttons = Vector.deserialize(inputSerializedData, new sfb((byte) 2), z);
+            this.buttons = Vector.deserialize(inputSerializedData, new qdb((byte) 26), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -186,7 +186,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class KeyboardButtonStyle extends TLObject {
         public static final int constructor = 1339896880;
         public boolean bg_danger;
@@ -227,7 +227,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class KeyboardInlineButton extends TLObject implements KeyboardButtonProto {
         public int flags;
         public KeyboardButtonStyle style;
@@ -309,16 +309,16 @@ public class TL_keyboard {
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ byte[] getData() {
-            return hg9.a(this);
+            return de9.a(this);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ String getUrl() {
-            return hg9.b(this);
+            return de9.b(this);
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class KeyboardInlineButtonRow extends TLObject {
         public ArrayList<KeyboardInlineButton> buttons = new ArrayList<>();
 
@@ -337,7 +337,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class RichButtonStyle extends TLObject {
         public static final int constructor = 63312061;
         public boolean bg_danger;
@@ -375,7 +375,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_buttonTypeRequestPeer extends ButtonType {
         public static final int constructor = 1331208759;
         public int button_id;
@@ -401,7 +401,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_buttonTypeRequestPoll extends ButtonType {
         public static final int constructor = -1429209212;
         public int flags;
@@ -426,7 +426,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_buttonTypeSimpleWebView extends ButtonType {
         public static final int constructor = -1072014982;
         public String url;
@@ -443,7 +443,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeCallback extends InlineButtonType {
         public static final int constructor = 693484600;
         public byte[] data;
@@ -468,7 +468,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeCopy extends InlineButtonType {
         public static final int constructor = -1273154958;
         public String copy_text;
@@ -485,7 +485,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeSwitchInline extends InlineButtonType {
         public static final int constructor = -1820901387;
         public int flags;
@@ -500,7 +500,7 @@ public class TL_keyboard {
             this.same_peer = TLObject.hasFlag(readInt32, 1);
             this.query = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.peer_types = Vector.deserialize(inputSerializedData, new ofb((byte) 27), z);
+                this.peer_types = Vector.deserialize(inputSerializedData, new ndb((byte) 26), z);
             }
         }
 
@@ -519,7 +519,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeUrl extends InlineButtonType {
         public static final int constructor = -324732716;
         public String url;
@@ -536,7 +536,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeUrlAuth extends InlineButtonType {
         public static final int constructor = -1076875870;
         public int button_id;
@@ -569,7 +569,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeUserProfile extends InlineButtonType {
         public static final int constructor = 1067663311;
         public long user_id;
@@ -586,7 +586,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeWebView extends InlineButtonType {
         public static final int constructor = 1003140532;
         public String url;
@@ -603,7 +603,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputButtonTypeRequestPeer extends ButtonType {
         public static final int constructor = 1071802622;
         public int button_id;
@@ -645,7 +645,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputInlineButtonTypeUrlAuth extends InlineButtonType {
         public static final int constructor = -1721647948;
         public TLRPC.InputUser bot;
@@ -691,7 +691,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputInlineButtonTypeUserProfile extends InlineButtonType {
         public static final int constructor = 1408487002;
         public TLRPC.InputUser user_id;
@@ -711,7 +711,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputKeyboardButtonRequestPeer_layer221 extends TL_inputKeyboardButtonRequestPeer_layer228 {
         public static final int constructor = -916050683;
 
@@ -754,7 +754,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputKeyboardButtonRequestPeer_layer228 extends TL_keyboardButton {
         public static final int constructor = 45580630;
         public final TL_inputButtonTypeRequestPeer mType;
@@ -809,7 +809,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputKeyboardButtonUrlAuth_layer223 extends TL_inputKeyboardButtonUrlAuth_layer228 {
         public static final int constructor = -802258988;
 
@@ -851,7 +851,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputKeyboardButtonUrlAuth_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = 1744911986;
         public final TL_inputInlineButtonTypeUrlAuth mType;
@@ -905,7 +905,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputKeyboardButtonUserProfile_layer223 extends TL_inputKeyboardButtonUserProfile_layer228 {
         public static final int constructor = -376962181;
 
@@ -926,7 +926,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_inputKeyboardButtonUserProfile_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = 2103314375;
         public final TL_inputInlineButtonTypeUserProfile mType;
@@ -962,7 +962,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_keyboardButton extends KeyboardButton {
         public static final int constructor = 795322159;
 
@@ -1001,7 +1001,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonBuy_layer223 extends TL_keyboardButtonBuy_layer228 {
         public static final int constructor = -1344716869;
 
@@ -1022,7 +1022,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonBuy_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = 1067792645;
 
@@ -1053,7 +1053,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonCallback_layer117 extends TL_keyboardButtonCallback_layer228 {
         public static final int constructor = 1748655686;
 
@@ -1074,7 +1074,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonCallback_layer223 extends TL_keyboardButtonCallback_layer228 {
         public static final int constructor = 901503851;
 
@@ -1103,7 +1103,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonCallback_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -433338016;
         public final TL_inlineButtonTypeCallback mType;
@@ -1144,7 +1144,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonCopy_layer223 extends TL_keyboardButtonCopy_layer228 {
         public static final int constructor = 1976723854;
 
@@ -1165,7 +1165,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonCopy_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1127960816;
         public final TL_inlineButtonTypeCopy mType;
@@ -1201,7 +1201,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonGame_layer223 extends TL_keyboardButtonGame_layer228 {
         public static final int constructor = 1358175439;
 
@@ -1222,7 +1222,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonGame_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1983540999;
 
@@ -1253,7 +1253,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestGeoLocation_layer223 extends TL_keyboardButtonRequestGeoLocation_layer228 {
         public static final int constructor = -59151553;
 
@@ -1274,7 +1274,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestGeoLocation_layer228 extends TL_keyboardButton {
         public static final int constructor = -1438582451;
 
@@ -1305,7 +1305,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPeer_layer168 extends TL_keyboardButtonRequestPeer_layer228 {
         public static final int constructor = 218842764;
 
@@ -1328,7 +1328,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPeer_layer223 extends TL_keyboardButtonRequestPeer_layer228 {
         public static final int constructor = 1406648280;
 
@@ -1353,7 +1353,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPeer_layer228 extends TL_keyboardButton {
         public static final int constructor = 1527715317;
         public final TL_buttonTypeRequestPeer mType;
@@ -1393,7 +1393,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPhone_layer223 extends TL_keyboardButtonRequestPhone_layer228 {
         public static final int constructor = -1318425559;
 
@@ -1414,7 +1414,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPhone_layer228 extends TL_keyboardButton {
         public static final int constructor = 1098841487;
 
@@ -1445,7 +1445,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPoll_layer223 extends TL_keyboardButtonRequestPoll_layer228 {
         public static final int constructor = -1144565411;
 
@@ -1474,7 +1474,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonRequestPoll_layer228 extends TL_keyboardButton {
         public static final int constructor = 2047989634;
         public final TL_buttonTypeRequestPoll mType;
@@ -1517,7 +1517,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonSimpleWebView_layer223 extends TL_keyboardButtonSimpleWebView_layer228 {
         public static final int constructor = -1598009252;
 
@@ -1538,7 +1538,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonSimpleWebView_layer228 extends TL_keyboardButton {
         public static final int constructor = -514047120;
         public final TL_buttonTypeSimpleWebView mType;
@@ -1574,7 +1574,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonSwitchInline_layer157 extends TL_keyboardButtonSwitchInline_layer228 {
         public static final int constructor = 90744648;
 
@@ -1603,7 +1603,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonSwitchInline_layer223 extends TL_keyboardButtonSwitchInline_layer228 {
         public static final int constructor = -1816527947;
 
@@ -1618,7 +1618,7 @@ public class TL_keyboard {
             this.text = inputSerializedData.readString(z);
             this.mType.query = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.mType.peer_types = Vector.deserialize(inputSerializedData, new ofb((byte) 27), z);
+                this.mType.peer_types = Vector.deserialize(inputSerializedData, new ndb((byte) 26), z);
             }
             TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = this.mType;
             tL_inlineButtonTypeSwitchInline.flags = TLObject.setFlag(tL_inlineButtonTypeSwitchInline.flags, 1, tL_inlineButtonTypeSwitchInline.same_peer);
@@ -1641,7 +1641,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonSwitchInline_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1726768644;
         public final TL_inlineButtonTypeSwitchInline mType;
@@ -1663,7 +1663,7 @@ public class TL_keyboard {
             this.text = inputSerializedData.readString(z);
             this.mType.query = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.mType.peer_types = Vector.deserialize(inputSerializedData, new ofb((byte) 27), z);
+                this.mType.peer_types = Vector.deserialize(inputSerializedData, new ndb((byte) 26), z);
             }
             TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = this.mType;
             tL_inlineButtonTypeSwitchInline.flags = TLObject.setFlag(tL_inlineButtonTypeSwitchInline.flags, 1, tL_inlineButtonTypeSwitchInline.same_peer);
@@ -1691,7 +1691,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonUrlAuth_layer223 extends TL_keyboardButtonUrlAuth_layer228 {
         public static final int constructor = 280464681;
 
@@ -1723,7 +1723,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonUrlAuth_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -183499015;
         public final TL_inlineButtonTypeUrlAuth mType;
@@ -1770,7 +1770,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonUrl_layer223 extends TL_keyboardButtonUrl_layer228 {
         public static final int constructor = 629866245;
 
@@ -1791,7 +1791,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonUrl_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -670292500;
         public final TL_inlineButtonTypeUrl mType;
@@ -1827,7 +1827,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonUserProfile_layer223 extends TL_keyboardButtonUserProfile_layer228 {
         public static final int constructor = 814112961;
 
@@ -1848,7 +1848,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonUserProfile_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1057137399;
         public final TL_inlineButtonTypeUserProfile mType;
@@ -1884,7 +1884,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonWebView_layer223 extends TL_keyboardButtonWebView_layer228 {
         public static final int constructor = 326529584;
 
@@ -1905,7 +1905,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButtonWebView_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -398020192;
         public final TL_inlineButtonTypeWebView mType;
@@ -1941,7 +1941,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButton_layer223 extends TL_keyboardButton {
         public static final int constructor = -1560655744;
 
@@ -1961,7 +1961,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TL_keyboardButton_layer228 extends TL_keyboardButton {
         public static final int constructor = 2098662655;
 
@@ -1992,7 +1992,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_keyboardInlineButton extends KeyboardInlineButton {
         public static final int constructor = 297902882;
 
@@ -2031,13 +2031,13 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_keyboardInlineButtonRow extends KeyboardInlineButtonRow {
         public static final int constructor = 423758582;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.buttons = Vector.deserialize(inputSerializedData, new sfb((byte) 3), z);
+            this.buttons = Vector.deserialize(inputSerializedData, new qdb((byte) 27), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2048,7 +2048,7 @@ public class TL_keyboard {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class TL_keyboardInlineButtonRow_layer228 extends TL_keyboardInlineButtonRow {
         public static final int constructor = 2002815875;
 
@@ -2078,7 +2078,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_keyboardInlineButton_legacy extends TL_keyboardInlineButton {
         public static final int constructor = -1675883435;
 
@@ -2130,7 +2130,7 @@ public class TL_keyboard {
         return TLdeserializeLegacy(inputSerializedData, i, z);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class PageButton extends TLObject implements KeyboardButtonProto {
         public static final int constructor = 1764381832;
         public int flags;
@@ -2144,7 +2144,7 @@ public class TL_keyboard {
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ byte[] getData() {
-            return hg9.a(this);
+            return de9.a(this);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
@@ -2158,7 +2158,7 @@ public class TL_keyboard {
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ String getUrl() {
-            return hg9.b(this);
+            return de9.b(this);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2190,7 +2190,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_buttonTypeDefault extends ButtonType {
         public static final int constructor = -908226327;
 
@@ -2204,7 +2204,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_buttonTypeRequestGeoLocation extends ButtonType {
         public static final int constructor = -1678843584;
 
@@ -2218,7 +2218,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_buttonTypeRequestPhone extends ButtonType {
         public static final int constructor = -549636359;
 
@@ -2232,7 +2232,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeBuy extends InlineButtonType {
         public static final int constructor = 1220204453;
 
@@ -2246,7 +2246,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeDisabled extends InlineButtonType {
         public static final int constructor = -1539808867;
 
@@ -2260,7 +2260,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_inlineButtonTypeGame extends InlineButtonType {
         public static final int constructor = 1557360797;
 

@@ -1,26 +1,35 @@
 // default package
 
-import java.util.Map;
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Build;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class fqe {
-    public static int a(int i) {
-        if (i >= 3) {
-            return i < 1073741824 ? (int) Math.ceil(i / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        ntd.b(i, "expectedSize");
-        return i + 1;
-    }
+    public static Boolean a;
+    public static int b;
 
-    public static boolean b(Map map, Object obj) {
-        if (map == obj) {
-            return true;
+    public static boolean a() {
+        Boolean bool;
+        int intValue;
+        Boolean bool2 = a;
+        if (bool2 != null) {
+            return bool2.booleanValue();
         }
-        if (obj instanceof Map) {
-            return map.entrySet().equals(((Map) obj).entrySet());
+        try {
+            Field declaredField = Build.VERSION.class.getDeclaredField("SEM_PLATFORM_INT");
+            declaredField.setAccessible(true);
+            intValue = ((Integer) declaredField.get(null)).intValue();
+        } catch (Exception unused) {
+            bool = Boolean.FALSE;
+            a = bool;
         }
-        return false;
+        if (intValue < 100000) {
+            return false;
+        }
+        b = intValue - 90000;
+        bool = Boolean.TRUE;
+        a = bool;
+        return bool.booleanValue();
     }
 }

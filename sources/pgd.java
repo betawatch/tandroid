@@ -3,58 +3,19 @@
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class pgd extends b4 implements Parcelable {
-    public static final Parcelable.Creator<pgd> CREATOR = new lbd(25);
-    public final String a;
-    public final String b;
-    public final String c;
+public abstract class pgd {
+    public static final /* synthetic */ int a = 0;
 
-    public pgd(String str, String str2, String str3) {
-        ite.h(str);
-        this.a = str;
-        ite.h(str2);
-        this.b = str2;
-        ite.h(str3);
-        this.c = str3;
+    static {
+        pgd.class.getClassLoader();
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
         }
-        if (!(obj instanceof pgd)) {
-            return false;
-        }
-        pgd pgdVar = (pgd) obj;
-        return this.a.equals(pgdVar.a) && fse.a(pgdVar.b, this.b) && fse.a(pgdVar.c, this.c);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        String str = this.a;
-        int i = 0;
-        for (char c : str.toCharArray()) {
-            i += c;
-        }
-        String trim = str.trim();
-        int length = trim.length();
-        if (length > 25) {
-            trim = trim.substring(0, 10) + "..." + trim.substring(length - 10, length) + "::" + i;
-        }
-        return b10.j(mlb.m("Channel{token=", trim, ", nodeId=", this.b, ", path="), this.c, "}");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.a);
-        mve.l(parcel, 3, this.b);
-        mve.l(parcel, 4, this.c);
-        mve.s(parcel, r);
+        return (Parcelable) creator.createFromParcel(parcel);
     }
 }

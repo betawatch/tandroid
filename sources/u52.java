@@ -1,75 +1,36 @@
 // default package
 
-import android.os.Build;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class u52 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+public final class u52 extends i98 {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ k62 c;
 
-    public /* synthetic */ u52(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, byte b) {
-        this.a = b;
-        this.b = chatAttachAlertPhotoLayout;
+    public u52(k62 k62Var, int i) {
+        this.c = k62Var;
+        this.b = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        switch (b) {
-            case 0:
-                boolean z = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.b.c.removeView(chatAttachAlertPhotoLayout.Q);
-                chatAttachAlertPhotoLayout.Q = null;
-                break;
-            case 1:
-                boolean z2 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.w0(false);
-                chatAttachAlertPhotoLayout.o0 = null;
-                break;
-            case 2:
-                boolean z3 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.w0(false);
-                chatAttachAlertPhotoLayout.o0 = null;
-                break;
-            case 3:
-                boolean z4 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.x.setVisibility(8);
-                break;
-            case 4:
-                boolean z5 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.H.f();
-                break;
-            case 5:
-                boolean z6 = ChatAttachAlertPhotoLayout.r1;
-                i22 i22Var = chatAttachAlertPhotoLayout.b;
-                if (rs.b(i22Var.Z1.getParentActivity(), "android.permission.CAMERA") == 0) {
-                    chatAttachAlertPhotoLayout.l0();
-                    break;
-                } else {
-                    try {
-                        i22Var.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-            default:
-                boolean z7 = ChatAttachAlertPhotoLayout.r1;
-                try {
-                    int i = Build.VERSION.SDK_INT;
-                    i22 i22Var2 = chatAttachAlertPhotoLayout.b;
-                    if (i >= 33) {
-                        i22Var2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES"}, 4);
-                    } else {
-                        i22Var2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                    }
-                    break;
-                } catch (Exception unused2) {
-                    return;
-                }
+    @Override // i98, o98
+    public final void C() {
+        if (this.a) {
+            this.c.d0(this.b);
         }
+    }
+
+    @Override // i98, o98
+    public final void I() {
+        this.c.h0(this.b, null);
+    }
+
+    @Override // i98, o98
+    public final void W() {
+        this.a = true;
+    }
+
+    @Override // i98, o98
+    public final boolean y() {
+        return false;
     }
 }

@@ -1,18 +1,19 @@
 // default package
 
-import android.media.MediaRouter2;
-import android.media.MediaRouter2$ControllerCallback;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class bu6 extends MediaRouter2$ControllerCallback {
-    public final /* synthetic */ gu6 a;
+public final /* synthetic */ class bu6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cu6 b;
 
-    public bu6(gu6 gu6Var) {
-        this.a = gu6Var;
+    public /* synthetic */ bu6(cu6 cu6Var, byte b) {
+        this.a = b;
+        this.b = cu6Var;
     }
 
-    public final void onControllerUpdated(MediaRouter2.RoutingController routingController) {
-        this.a.r(routingController);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        this.b.i();
     }
 }

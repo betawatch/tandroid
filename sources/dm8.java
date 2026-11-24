@@ -1,42 +1,79 @@
 // default package
 
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.PrivacySettingsActivity;
+import android.graphics.RectF;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class dm8 implements Runnable {
+public final /* synthetic */ class dm8 implements p8c {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ PrivacySettingsActivity b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ dm8(PrivacySettingsActivity privacySettingsActivity, byte b) {
+    public /* synthetic */ dm8(ProfileActivity profileActivity, byte b) {
         this.a = b;
-        this.b = privacySettingsActivity;
+        this.b = profileActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // p8c
+    public final void a(Object obj) {
         byte b = this.a;
-        PrivacySettingsActivity privacySettingsActivity = this.b;
+        ProfileActivity profileActivity = this.b;
         switch (b) {
             case 0:
-                privacySettingsActivity.a.f();
-                privacySettingsActivity.S = true;
+                View view = (View) obj;
+                RectF rectF = ProfileActivity.Z6;
+                if (view instanceof ghb) {
+                    ghb ghbVar = (ghb) view;
+                    ghbVar.a.setLoading(profileActivity.o5);
+                    ghbVar.b.setLoading(profileActivity.o5);
+                    break;
+                }
                 break;
             case 1:
-                privacySettingsActivity.c.dismiss();
+                RectF rectF2 = ProfileActivity.Z6;
+                profileActivity.v2((Boolean) obj);
+                break;
+            case 2:
+                RectF rectF3 = ProfileActivity.Z6;
+                profileActivity.getClass();
+                ArrayList arrayList = new ArrayList(1);
+                arrayList.add((TLRPC.InputStickerSet) obj);
+                profileActivity.showDialog(new qx3(profileActivity, profileActivity.getParentActivity(), profileActivity.A0, arrayList));
                 break;
             default:
-                privacySettingsActivity.getClass();
-                b31 b31Var = new b31(privacySettingsActivity.getParentActivity(), null);
-                b31Var.d(R.raw.email_check_inbox, new String[0]);
-                b31Var.b.setText(jb6.M0(2131742474, null));
-                u31.g(privacySettingsActivity, b31Var, 1500).j();
-                try {
-                    privacySettingsActivity.fragmentView.performHapticFeedback(3, 2);
-                } catch (Exception unused) {
+                View view2 = (View) obj;
+                RectF rectF4 = ProfileActivity.Z6;
+                if (view2 instanceof ld5) {
+                    ((ld5) view2).setTextColor(bkb.v0(bkb.K6, profileActivity.A0));
+                } else if (view2 instanceof ghb) {
+                    ((ghb) view2).updateColors();
+                } else if (view2 instanceof wgb) {
+                    ((wgb) view2).updateColors();
+                } else if (view2 instanceof s1) {
+                    ((s1) view2).updateColors();
+                } else if (view2 instanceof vl7) {
+                    ((vl7) view2).getCheckBox().invalidate();
+                } else if (view2 instanceof br8) {
+                    br8 br8Var = (br8) view2;
+                    ii2 ii2Var = br8Var.r;
+                    int L = gl.L(8.0f);
+                    int i = bkb.n6;
+                    wjb wjbVar = br8Var.a;
+                    int p1 = bkb.p1(0.1f, bkb.v0(i, wjbVar));
+                    int p12 = bkb.p1(0.22f, bkb.v0(i, wjbVar));
+                    ii2Var.setBackground(bkb.i0(L, L, L, L, p1, p12, p12));
+                    ii2Var.setTextColor(bkb.v0(i, wjbVar));
+                } else if (view2 instanceof ip8) {
+                    ((ip8) view2).updateColors();
                 }
-                privacySettingsActivity.E0();
+                ko8 ko8Var = profileActivity.d;
+                profileActivity.a.getClass();
+                ko8Var.d(RecyclerView.R(view2));
+                profileActivity.d.getClass();
                 break;
         }
     }

@@ -1,38 +1,56 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class c2a extends View {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ e2a b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class c2a implements Runnable {
+    public final /* synthetic */ u47 E;
+    public final /* synthetic */ we8 F;
+    public final /* synthetic */ ArrayList G;
+    public final /* synthetic */ ArrayList H;
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ j5 c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ k27 f;
+    public final /* synthetic */ k27 h;
+    public final /* synthetic */ bu1 n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ j1a w;
+    public final /* synthetic */ long x;
+    public final /* synthetic */ long y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c2a(e2a e2aVar, Context context, byte b) {
-        super(context);
-        this.a = b;
-        this.b = e2aVar;
+    public /* synthetic */ c2a(ArrayList arrayList, ArrayList arrayList2, j5 j5Var, ArrayList arrayList3, long j, k27 k27Var, k27 k27Var2, bu1 bu1Var, boolean z, int i, j1a j1aVar, long j2, long j3, u47 u47Var, we8 we8Var, ArrayList arrayList4, ArrayList arrayList5) {
+        this.a = arrayList;
+        this.b = arrayList2;
+        this.c = j5Var;
+        this.d = arrayList3;
+        this.e = j;
+        this.f = k27Var;
+        this.h = k27Var2;
+        this.n = bu1Var;
+        this.r = z;
+        this.s = i;
+        this.w = j1aVar;
+        this.x = j2;
+        this.y = j3;
+        this.E = u47Var;
+        this.F = we8Var;
+        this.G = arrayList4;
+        this.H = arrayList5;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        byte b = this.a;
-        e2a e2aVar = this.b;
-        switch (b) {
-            case 0:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(e2aVar.d.e), TLObject.FLAG_30));
-                break;
-            default:
-                i2a i2aVar = e2aVar.d;
-                int i3 = i2aVar.y.J;
-                if (i3 >= i2aVar.r.getPaddingTop() && !i2aVar.S) {
-                    i3 = 0;
-                }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30));
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        ArrayList arrayList = this.a;
+        boolean isEmpty = arrayList.isEmpty();
+        ArrayList arrayList2 = this.b;
+        if (isEmpty && arrayList2.isEmpty()) {
+            return;
         }
+        z3a.U(this.s, this.e, 0L, this.x, this.y, this.c, this.n, null, this.f, this.h, null, this.E, this.F, this.w, null, null, arrayList, this.d, arrayList2, null, this.G, this.H, null, this.r, false);
     }
 }

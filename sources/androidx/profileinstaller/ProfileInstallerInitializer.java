@@ -5,20 +5,20 @@ import android.os.Build;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class ProfileInstallerInitializer implements pp5 {
-    @Override // pp5
+public class ProfileInstallerInitializer implements pn5 {
+    @Override // pn5
     public final List a() {
         return Collections.EMPTY_LIST;
     }
 
-    @Override // pp5
+    @Override // pn5
     public final Object b(Context context) {
         if (Build.VERSION.SDK_INT < 24) {
-            return new nf5((byte) 24);
+            return new pd5((byte) 24);
         }
-        gt8.a(new dh1(this, context.getApplicationContext()));
-        return new nf5((byte) 24);
+        dr8.a(new vf1(this, context.getApplicationContext()));
+        return new pd5((byte) 24);
     }
 }

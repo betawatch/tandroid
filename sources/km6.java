@@ -1,28 +1,23 @@
 // default package
 
-import android.media.MediaCodec;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class km6 extends ja3 {
-    public final int a;
+public final class km6 {
+    public final String a;
+    public final rf4 b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public int f;
+    public boolean g;
+    public int h;
+    public boolean i;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public km6(IllegalStateException illegalStateException, lm6 lm6Var) {
-        super(r0.toString(), illegalStateException);
-        int i;
-        StringBuilder sb = new StringBuilder("Decoder failed: ");
-        sb.append(lm6Var == null ? null : lm6Var.a);
-        if (illegalStateException instanceof MediaCodec.CodecException) {
-            MediaCodec.CodecException codecException = (MediaCodec.CodecException) illegalStateException;
-            codecException.getDiagnosticInfo();
-            i = codecException.getErrorCode();
-        } else {
-            i = 0;
-        }
-        this.a = i;
+    public km6(String str, long j, long j2, long j3, rf4 rf4Var) {
+        this.b = rf4Var;
+        this.a = str;
+        this.c = j;
+        this.d = j2;
+        this.e = j3;
     }
 }

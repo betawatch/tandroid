@@ -1,233 +1,146 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Outline;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class gd9 extends mz0 {
-    public final int S1;
-    public final qac T1;
-    public l7c U1;
-    public final FrameLayout V1;
-    public final FrameLayout W1;
-    public final mi9 X1;
-    public final FrameLayout Y1;
-    public final su3 Z1;
-    public final b61 a2;
-    public boolean b2;
-    public int c2;
-    public TL_iv.RichMessage d2;
+public final class gd9 extends Drawable implements Drawable.Callback {
+    public final Drawable a;
+    public final Paint b;
+    public final Path c;
+    public final RectF d;
+    public final Outline e;
+    public boolean f;
+    public final boolean h;
+    public boolean n;
 
-    public gd9(int i, ylb ylbVar, qac qacVar, Context context) {
-        super(context, null, true, false, ylbVar);
-        this.S1 = i;
-        this.T1 = qacVar;
-        int i2 = cmb.Z6;
-        t0(i2);
-        L(i2);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.V1 = frameLayout;
-        TextView textView = new TextView(context);
-        textView.setText(jb6.M0(2131754025, null));
-        final byte b = 1;
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(gm.o());
-        int i3 = cmb.F6;
-        anb.X(textView, i3, ylbVar);
-        textView.setGravity(19);
-        frameLayout.addView(textView, qoe.d(-1, 56.0f, 51, 22.0f, 6.0f, 56.0f, 0.0f));
-        this.C1 = gm.L(-8.0f);
-        ImageView k = td4.k(context, R.drawable.ic_close_white);
-        k.setScaleType(ImageView.ScaleType.CENTER);
-        anb.s(k, i3, ylbVar, PorterDuff.Mode.SRC_IN);
-        rve.a(k);
-        final byte b2 = 0;
-        k.setOnClickListener(new View.OnClickListener(this) { // from class: ed9
-            public final /* synthetic */ gd9 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b3 = b2;
-                gd9 gd9Var = this.b;
-                switch (b3) {
-                    case 0:
-                        gd9Var.dismiss();
-                        break;
-                    default:
-                        su3 su3Var = gd9Var.Z1;
-                        if (!gd9Var.b2) {
-                            TL_iv.RichMessage richMessage = gd9Var.d2;
-                            if (richMessage == null) {
-                                String trim = su3Var.d.getText().toString().trim();
-                                if (!TextUtils.isEmpty(trim)) {
-                                    gd9Var.b2 = true;
-                                    gd9Var.a2.setLoading(true);
-                                    TLRPC.TL_messages_composeRichMessageWithAI tL_messages_composeRichMessageWithAI = new TLRPC.TL_messages_composeRichMessageWithAI();
-                                    TL_aicompose.inputAiComposeToneSingleUse inputaicomposetonesingleuse = new TL_aicompose.inputAiComposeToneSingleUse();
-                                    inputaicomposetonesingleuse.custom_prompt = trim;
-                                    tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
-                                    gd9Var.c2 = ConnectionsManager.getInstance(gd9Var.S1).sendRequest(tL_messages_composeRichMessageWithAI, new r15(gd9Var, (byte) 26));
-                                    gm.t1(su3Var.d);
-                                    break;
-                                }
-                            } else {
-                                qac qacVar2 = gd9Var.T1;
-                                if (qacVar2 != null) {
-                                    qacVar2.a(richMessage);
-                                }
-                                gd9Var.dismiss();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        frameLayout.addView(k, qoe.d(48, 48.0f, 53, 0.0f, 10.0f, 12.0f, 0.0f));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.W1 = frameLayout2;
-        mi9 mi9Var = new mi9(i, ylbVar, context);
-        this.X1 = mi9Var;
-        mi9Var.setPadding(gm.L(14.0f), gm.L(12.0f), gm.L(14.0f), gm.L(12.0f));
-        int L = gm.L(12.0f);
-        int i4 = cmb.c6;
-        ShapeDrawable b0 = cmb.b0(L, cmb.v0(i4, ylbVar));
-        wmb M = anb.M(i4);
-        mi9Var.setBackground(b0);
-        anb.j(mi9Var, b0, M, null, ylbVar);
-        frameLayout2.addView(mi9Var, qoe.c(-2.0f, -1));
-        frameLayout2.setPadding(gm.L(12.0f), gm.L(12.0f), gm.L(12.0f), 0);
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.Y1 = frameLayout3;
-        su3 su3Var = new su3(context, jb6.M0(2131754023, null), true, false, oc7.r1(i).l4.V.f(), ylbVar);
-        this.Z1 = su3Var;
-        ru3 ru3Var = su3Var.d;
-        ru3Var.setImeOptions(6);
-        ru3Var.setMaxLines(5);
-        ShapeDrawable b02 = cmb.b0(gm.L(20.0f), cmb.v0(i4, ylbVar));
-        wmb M2 = anb.M(i4);
-        su3Var.setBackground(b02);
-        anb.j(su3Var, b02, M2, null, ylbVar);
-        ru3Var.addTextChangedListener(new fd9(this));
-        frameLayout3.addView(su3Var, qoe.c(-2.0f, -1));
-        frameLayout3.setPadding(gm.L(12.0f), 0, gm.L(12.0f), 0);
-        b61 i5 = mlb.i(24, ylbVar, context, true);
-        this.a2 = i5;
-        i5.i(jb6.M0(2131754024, null), false, true);
-        i5.setOnClickListener(new View.OnClickListener(this) { // from class: ed9
-            public final /* synthetic */ gd9 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b3 = b;
-                gd9 gd9Var = this.b;
-                switch (b3) {
-                    case 0:
-                        gd9Var.dismiss();
-                        break;
-                    default:
-                        su3 su3Var2 = gd9Var.Z1;
-                        if (!gd9Var.b2) {
-                            TL_iv.RichMessage richMessage = gd9Var.d2;
-                            if (richMessage == null) {
-                                String trim = su3Var2.d.getText().toString().trim();
-                                if (!TextUtils.isEmpty(trim)) {
-                                    gd9Var.b2 = true;
-                                    gd9Var.a2.setLoading(true);
-                                    TLRPC.TL_messages_composeRichMessageWithAI tL_messages_composeRichMessageWithAI = new TLRPC.TL_messages_composeRichMessageWithAI();
-                                    TL_aicompose.inputAiComposeToneSingleUse inputaicomposetonesingleuse = new TL_aicompose.inputAiComposeToneSingleUse();
-                                    inputaicomposetonesingleuse.custom_prompt = trim;
-                                    tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
-                                    gd9Var.c2 = ConnectionsManager.getInstance(gd9Var.S1).sendRequest(tL_messages_composeRichMessageWithAI, new r15(gd9Var, (byte) 26));
-                                    gm.t1(su3Var2.d);
-                                    break;
-                                }
-                            } else {
-                                qac qacVar2 = gd9Var.T1;
-                                if (qacVar2 != null) {
-                                    qacVar2.a(richMessage);
-                                }
-                                gd9Var.dismiss();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        this.b.addView(i5, qoe.d(-1, 48.0f, 87, 12.0f, 12.0f, 12.0f, 12.0f));
-        ((ViewGroup.MarginLayoutParams) i5.getLayoutParams()).leftMargin += this.u0;
-        ((ViewGroup.MarginLayoutParams) i5.getLayoutParams()).rightMargin += this.u0;
-        sc3 sc3Var = new sc3();
-        sc3Var.m = false;
-        sc3Var.C = false;
-        sc3Var.o(d53.h);
-        sc3Var.n(350L);
-        this.n1.setItemAnimator(sc3Var);
-        r59 r59Var = this.n1;
-        int i6 = this.u0;
-        r59Var.setPadding(i6, 0, i6, gm.L(72.0f));
-        this.n1.setClipToPadding(false);
-        this.U1.O(false);
-        Y0();
+    public gd9(Drawable drawable) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new Path();
+        this.d = new RectF();
+        this.e = new Outline();
+        this.f = true;
+        this.a = drawable;
+        drawable.setCallback(this);
+        paint.setColor(0);
+        this.h = true;
+        a(bkb.I.o());
     }
 
-    @Override // mz0
-    public final q59 G0(r59 r59Var) {
-        l7c l7cVar = new l7c(r59Var, getContext(), this.S1, 0, true, new vh8(this, (byte) 11), this.J0);
-        this.U1 = l7cVar;
-        return l7cVar;
+    public final void a(boolean z) {
+        this.n = z;
+        this.b.setShadowLayer(gl.L(12.0f), 0.0f, gl.L(4.0f), bkb.p1(z ? 0.3f : 0.1f, -16777216));
     }
 
-    @Override // mz0
-    public final CharSequence J0() {
-        return jb6.M0(2131754025, null);
-    }
-
-    public final void Y0() {
-        TL_iv.RichMessage richMessage = this.d2;
-        b61 b61Var = this.a2;
-        if (richMessage != null) {
-            b61Var.setEnabled(true);
-        } else {
-            b61Var.setEnabled(!TextUtils.isEmpty(this.Z1.d.getText().toString().trim()));
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float radius;
+        if (this.h && this.n != bkb.I.o()) {
+            a(!this.n);
         }
-    }
-
-    @Override // my0, android.app.Dialog, android.content.DialogInterface, ah0
-    public final void dismiss() {
-        if (this.c2 != 0) {
-            ConnectionsManager.getInstance(this.S1).cancelRequest(this.c2, true);
-            this.c2 = 0;
+        boolean z = this.f;
+        Drawable drawable = this.a;
+        Path path = this.c;
+        if (z) {
+            Outline outline = this.e;
+            path.reset();
+            Rect bounds = getBounds();
+            RectF rectF = this.d;
+            rectF.set(bounds);
+            if (Build.VERSION.SDK_INT >= 24) {
+                try {
+                    drawable.getOutline(outline);
+                    radius = outline.getRadius();
+                } catch (Throwable unused) {
+                }
+                if (radius <= 0.0f) {
+                    path.addRoundRect(rectF, radius, radius, Path.Direction.CW);
+                } else {
+                    path.addRect(rectF, Path.Direction.CW);
+                }
+                this.f = false;
+            }
+            radius = -1.0f;
+            if (radius <= 0.0f) {
+            }
+            this.f = false;
         }
-        gm.t1(this.Z1.d);
-        super.dismiss();
+        canvas.drawPath(path, this.b);
+        drawable.draw(canvas);
     }
 
-    @Override // my0, android.app.Dialog
-    public final void show() {
-        super.show();
-        gm.d3(new pp8(this, (byte) 26), 200L);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final boolean isStateful() {
+        return this.a.isStateful();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void jumpToCurrentState() {
+        this.a.jumpToCurrentState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.f = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final boolean onStateChange(int[] iArr) {
+        return this.a.setState(iArr);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+        scheduleSelf(runnable, j);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.a.setAlpha(i);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setHotspot(float f, float f2) {
+        this.a.setHotspot(f, f2);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setHotspotBounds(int i, int i2, int i3, int i4) {
+        this.a.setHotspotBounds(i, i2, i3, i4);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
     }
 }

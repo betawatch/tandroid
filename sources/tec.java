@@ -1,491 +1,275 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.media.MediaMetadataRetriever;
-import android.os.AsyncTask;
-import android.view.MotionEvent;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class tec extends View {
-    public static final Object U = new Object();
-    public int E;
-    public int F;
-    public int G;
-    public float H;
-    public float I;
-    public boolean J;
-    public Rect K;
-    public Rect L;
-    public int M;
-    public Bitmap N;
-    public final ArrayList O;
-    public boolean P;
-    public rec Q;
-    public Path R;
-    public final Paint S;
-    public boolean T;
-    public long a;
-    public float b;
-    public float c;
-    public final Paint d;
-    public final Paint e;
+    public sec a;
+    public int b;
+    public final RectF c;
+    public CharSequence d;
+    public tgb e;
     public boolean f;
-    public boolean h;
-    public float n;
-    public MediaMetadataRetriever r;
-    public sec s;
-    public final ArrayList w;
-    public qec x;
-    public long y;
+    public c9a h;
+    public final lm n;
+    public final /* synthetic */ vec r;
 
-    public tec(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tec(vec vecVar, Context context) {
         super(context);
-        this.c = 1.0f;
-        Paint paint = new Paint();
-        this.d = paint;
-        Paint paint2 = new Paint();
-        this.e = paint2;
-        this.w = new ArrayList();
-        this.H = 1.0f;
-        this.I = 0.0f;
-        this.O = new ArrayList();
-        Paint paint3 = new Paint(1);
-        this.S = paint3;
-        paint.setColor(2130706432);
-        paint3.setColor(-1);
-        paint3.setStrokeWidth(gm.N(2.0f));
-        paint3.setStyle(Paint.Style.STROKE);
-        paint3.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setColor(cmb.w0(null, cmb.Z6, false));
-        this.M = 0;
-        rec recVar = this.Q;
-        if (recVar != null) {
-            recVar.b();
-        }
-    }
-
-    public final void a(boolean z) {
-        synchronized (U) {
-            try {
-                MediaMetadataRetriever mediaMetadataRetriever = this.r;
-                if (mediaMetadataRetriever != null) {
-                    mediaMetadataRetriever.release();
-                    this.r = null;
-                }
-            } catch (Exception e) {
-                fc4.g(e, true);
-            }
-        }
-        if (z) {
-            int i = 0;
-            if (this.O.isEmpty()) {
-                while (i < this.w.size()) {
-                    Bitmap bitmap = (Bitmap) this.w.get(i);
-                    if (bitmap != null) {
-                        bitmap.recycle();
-                    }
-                    i++;
-                }
-            } else {
-                while (i < this.O.size()) {
-                    Bitmap bitmap2 = (Bitmap) this.O.get(i);
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
-                    }
-                    i++;
-                }
-            }
-        }
-        this.O.clear();
-        this.w.clear();
-        qec qecVar = this.x;
-        if (qecVar != null) {
-            qecVar.cancel(true);
-            this.x = null;
-        }
-    }
-
-    public final void b(int i) {
-        if (this.r != null) {
-            if (i == 0) {
-                if (this.J) {
-                    int L = gm.L(56.0f);
-                    this.E = L;
-                    this.F = L;
-                    this.G = Math.max(1, (int) Math.ceil((getMeasuredWidth() - gm.L(16.0f)) / (this.F / 2.0f)));
-                } else {
-                    this.F = gm.L(40.0f);
-                    this.G = Math.max(1, (getMeasuredWidth() - gm.L(16.0f)) / this.F);
-                    this.E = (int) Math.ceil((getMeasuredWidth() - gm.L(16.0f)) / this.G);
-                }
-                this.y = this.a / this.G;
-                ArrayList arrayList = this.O;
-                if (!arrayList.isEmpty()) {
-                    float size = arrayList.size() / this.G;
-                    float f = 0.0f;
-                    for (int i2 = 0; i2 < this.G; i2++) {
-                        this.w.add((Bitmap) arrayList.get((int) f));
-                        f += size;
-                    }
-                    return;
-                }
-            }
-            this.P = false;
-            qec qecVar = new qec(this);
-            this.x = qecVar;
-            qecVar.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, Integer.valueOf(i), null, null);
-        }
-    }
-
-    public float getLeftProgress() {
-        return this.b;
-    }
-
-    public float getRightProgress() {
-        return this.c;
+        this.r = vecVar;
+        this.c = new RectF();
+        this.n = new lm(360L, this, s33.h);
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.T) {
-            canvas.save();
-            Path path = this.R;
-            if (path != null) {
-                canvas.clipPath(path);
-            }
-        }
-        float measuredWidth = getMeasuredWidth() - gm.L(24.0f);
-        int L = gm.L(12.0f) + ((int) (this.b * measuredWidth));
-        int L2 = gm.L(12.0f) + ((int) (measuredWidth * this.c));
-        float f = 32.0f;
-        int measuredHeight = (getMeasuredHeight() - gm.L(32.0f)) >> 1;
-        ArrayList arrayList = this.w;
-        if (arrayList.isEmpty() && this.x == null) {
-            b(0);
-        }
-        if (arrayList.isEmpty()) {
-            if (this.T) {
-                canvas.restore();
-                return;
-            }
-            return;
-        }
-        if (!this.P) {
-            canvas.drawRect(0.0f, measuredHeight, getMeasuredWidth(), getMeasuredHeight() - measuredHeight, this.e);
-        }
-        int i = 0;
-        int i2 = 0;
-        while (i < arrayList.size()) {
-            Bitmap bitmap = (Bitmap) arrayList.get(i);
-            if (bitmap != null && !bitmap.isRecycled()) {
-                boolean z = this.J;
-                int i3 = this.E;
-                if (z) {
-                    i3 /= 2;
-                }
-                int i4 = i3 * i2;
-                if (z) {
-                    this.L.set(i4, measuredHeight, gm.L(28.0f) + i4, gm.L(f) + measuredHeight);
-                    canvas.drawBitmap(bitmap, this.K, this.L, (Paint) null);
-                } else {
-                    canvas.drawBitmap(bitmap, i4, measuredHeight, (Paint) null);
-                }
-            }
-            i2++;
-            i++;
-            f = 32.0f;
-        }
-        float f2 = measuredHeight;
-        float measuredHeight2 = getMeasuredHeight() - measuredHeight;
-        Paint paint = this.d;
-        canvas.drawRect(0.0f, f2, L, measuredHeight2, paint);
-        canvas.drawRect(L2, f2, getMeasuredWidth(), getMeasuredHeight() - measuredHeight, paint);
-        float L3 = L - gm.L(4.0f);
-        float L4 = gm.L(10.0f) + measuredHeight;
-        float L5 = L - gm.L(4.0f);
-        float y = kt6.y(10.0f, getMeasuredHeight(), measuredHeight);
-        Paint paint2 = this.S;
-        canvas.drawLine(L3, L4, L5, y, paint2);
-        canvas.drawLine(gm.L(4.0f) + L2, gm.L(10.0f) + measuredHeight, gm.L(4.0f) + L2, kt6.y(10.0f, getMeasuredHeight(), measuredHeight), paint2);
-        if (this.T) {
-            canvas.restore();
-            return;
-        }
-        int measuredHeight3 = getMeasuredHeight() - (measuredHeight << 1);
-        int measuredWidth2 = getMeasuredWidth();
-        if (gm.L(6.0f) != this.M) {
-            this.M = gm.L(6.0f);
-            this.N = Bitmap.createBitmap(gm.L(6.0f), gm.L(6.0f), Bitmap.Config.ARGB_8888);
-            Canvas canvas2 = new Canvas(this.N);
-            Paint paint3 = new Paint(1);
-            paint3.setColor(0);
-            paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-            canvas2.drawColor(cmb.w0(null, cmb.Ie, false));
-            float f3 = this.M;
-            canvas2.drawCircle(f3, f3, f3, paint3);
-        }
-        int i5 = this.M >> 1;
-        canvas.save();
-        canvas.drawBitmap(this.N, 0.0f, f2, (Paint) null);
-        float f4 = (measuredHeight3 + measuredHeight) - i5;
-        canvas.rotate(-90.0f, i5, f4);
-        canvas.drawBitmap(this.N, 0.0f, r2 - this.M, (Paint) null);
-        canvas.restore();
-        canvas.save();
-        float f5 = measuredWidth2 - i5;
-        canvas.rotate(180.0f, f5, f4);
-        Bitmap bitmap2 = this.N;
-        int i6 = this.M;
-        canvas.drawBitmap(bitmap2, measuredWidth2 - i6, r2 - i6, (Paint) null);
-        canvas.restore();
-        canvas.save();
-        canvas.rotate(90.0f, f5, measuredHeight + i5);
-        canvas.drawBitmap(this.N, measuredWidth2 - this.M, f2, (Paint) null);
-        canvas.restore();
+    public int getId() {
+        return this.a.a;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        if (this.T) {
-            Path path = this.R;
-            if (path == null) {
-                path = new Path();
-                this.R = path;
-            }
-            path.rewind();
-            int measuredHeight = (getMeasuredHeight() - gm.L(32.0f)) >> 1;
-            RectF rectF = gm.P;
-            rectF.set(0.0f, measuredHeight, getMeasuredWidth(), getMeasuredHeight() - measuredHeight);
-            this.R.addRoundRect(rectF, gm.L(7.0f), gm.L(7.0f), Path.Direction.CCW);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:53:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x014e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0286  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00f3  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        sec secVar;
-        if (motionEvent != null) {
-            float x = motionEvent.getX();
-            float y = motionEvent.getY();
-            int measuredWidth = getMeasuredWidth() - gm.L(24.0f);
-            float f = measuredWidth;
-            int L = gm.L(12.0f) + ((int) (this.b * f));
-            int L2 = gm.L(12.0f) + ((int) (this.c * f));
-            float f2 = 0.0f;
-            if (motionEvent.getAction() == 0) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-                if (this.r != null) {
-                    int L3 = gm.L(24.0f);
-                    if (L - L3 <= x && x <= L + L3 && y >= 0.0f && y <= getMeasuredHeight()) {
-                        sec secVar2 = this.s;
-                        if (secVar2 != null) {
-                            ((fy1) secVar2).a.P3.y(0.0f, 1);
-                        }
-                        this.f = true;
-                        this.n = (int) (x - L);
-                        this.Q.setTime((int) ((this.a / 1000.0f) * this.b));
-                        this.Q.setCx(gm.L(4.0f) + getLeft() + L);
-                        this.Q.a(true);
-                        invalidate();
-                        return true;
-                    }
-                    if (L2 - L3 > x || x > L3 + L2 || y < 0.0f || y > getMeasuredHeight()) {
-                        this.Q.a(false);
-                        return false;
-                    }
-                    sec secVar3 = this.s;
-                    if (secVar3 != null) {
-                        ((fy1) secVar3).a.P3.y(0.0f, 1);
-                    }
-                    this.h = true;
-                    this.n = (int) (x - L2);
-                    this.Q.setTime((int) ((this.a / 1000.0f) * this.c));
-                    this.Q.setCx((getLeft() + L2) - gm.L(4.0f));
-                    this.Q.a(true);
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.f) {
-                    sec secVar4 = this.s;
-                    if (secVar4 != null) {
-                        ((fy1) secVar4).a.P3.y(0.0f, 0);
-                    }
-                    this.f = false;
-                    invalidate();
-                    this.Q.a(false);
-                    return true;
-                }
-                if (this.h) {
-                    sec secVar5 = this.s;
-                    if (secVar5 != null) {
-                        ((fy1) secVar5).a.P3.y(0.0f, 0);
-                    }
-                    this.h = false;
-                    invalidate();
-                    this.Q.a(false);
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 2) {
-                if (this.f) {
-                    int i = (int) (x - this.n);
-                    if (i < gm.L(16.0f)) {
-                        L2 = gm.L(16.0f);
-                    } else if (i <= L2) {
-                        L2 = i;
-                    }
-                    float L4 = (L2 - gm.L(16.0f)) / f;
-                    this.b = L4;
-                    float f3 = this.c;
-                    float f4 = f3 - L4;
-                    float f5 = this.H;
-                    if (f4 > f5) {
-                        this.c = f5 + L4;
-                    } else {
-                        float f6 = this.I;
-                        if (f6 != 0.0f && f4 < f6) {
-                            float f7 = f3 - f6;
-                            this.b = f7;
-                            if (f7 < 0.0f) {
-                                this.b = 0.0f;
-                            } else {
-                                f2 = f7;
-                            }
-                            this.Q.setCx(((gm.N(12.0f) + (f * f2)) + getLeft()) - gm.L(4.0f));
-                            this.Q.setTime((int) ((this.a / 1000.0f) * this.b));
-                            this.Q.a(true);
-                            secVar = this.s;
-                            if (secVar != null) {
-                                float f8 = this.b;
-                                ChatActivityEnterView chatActivityEnterView = ((fy1) secVar).a;
-                                rcc rccVar = chatActivityEnterView.U3;
-                                if (rccVar != null) {
-                                    rccVar.a = (long) (rccVar.r * f8);
-                                    chatActivityEnterView.P3.y(f8, 2);
-                                }
-                            }
-                            invalidate();
-                            return true;
-                        }
-                    }
-                    f2 = L4;
-                    this.Q.setCx(((gm.N(12.0f) + (f * f2)) + getLeft()) - gm.L(4.0f));
-                    this.Q.setTime((int) ((this.a / 1000.0f) * this.b));
-                    this.Q.a(true);
-                    secVar = this.s;
-                    if (secVar != null) {
-                    }
-                    invalidate();
-                    return true;
-                }
-                if (this.h) {
-                    int i2 = (int) (x - this.n);
-                    if (i2 >= L) {
-                        L = i2 > gm.L(16.0f) + measuredWidth ? gm.L(16.0f) + measuredWidth : i2;
-                    }
-                    float L5 = (L - gm.L(16.0f)) / f;
-                    this.c = L5;
-                    float f9 = this.b;
-                    float f10 = L5 - f9;
-                    float f11 = this.H;
-                    if (f10 > f11) {
-                        this.b = L5 - f11;
-                    } else {
-                        float f12 = this.I;
-                        if (f12 != 0.0f && f10 < f12) {
-                            L5 = f9 + f12;
-                            this.c = L5;
-                            if (L5 > 1.0f) {
-                                this.c = 1.0f;
-                                L5 = 1.0f;
-                            }
-                        }
-                    }
-                    this.Q.setCx(gm.N(12.0f) + (f * L5) + getLeft() + gm.L(4.0f));
-                    this.Q.a(true);
-                    this.Q.setTime((int) ((this.a / 1000.0f) * this.c));
-                    sec secVar6 = this.s;
-                    if (secVar6 != null) {
-                        float f13 = this.c;
-                        ChatActivityEnterView chatActivityEnterView2 = ((fy1) secVar6).a;
-                        rcc rccVar2 = chatActivityEnterView2.U3;
-                        if (rccVar2 != null) {
-                            rccVar2.b = (long) (rccVar2.r * f13);
-                            chatActivityEnterView2.P3.y(f13, 2);
-                        }
-                    }
-                    invalidate();
-                    return true;
-                }
+    public final void onDraw(Canvas canvas) {
+        int i;
+        float f;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        CharSequence charSequence;
+        int i9;
+        tgb tgbVar;
+        TextPaint textPaint;
+        int i10;
+        int i11;
+        int i12;
+        Canvas canvas2;
+        int i13;
+        vec vecVar = this.r;
+        TextPaint textPaint2 = vecVar.d;
+        TextPaint textPaint3 = vecVar.e;
+        Paint paint = vecVar.f;
+        wjb wjbVar = vecVar.k0;
+        TextPaint textPaint4 = vecVar.c;
+        canvas.save();
+        float d = this.n.d(this.f);
+        if (d > 0.0f) {
+            if (this.h == null) {
+                this.h = new c9a(this);
             }
+            canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
+            this.h.a(canvas, d);
+            canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
         }
-        return false;
-    }
-
-    public void setDelegate(sec secVar) {
-        this.s = secVar;
-    }
-
-    public void setKeyframes(ArrayList<Bitmap> arrayList) {
-        ArrayList arrayList2 = this.O;
-        arrayList2.clear();
-        arrayList2.addAll(arrayList);
-    }
-
-    public void setMaxProgressDiff(float f) {
-        this.H = f;
-        float f2 = this.c;
-        float f3 = this.b;
-        if (f2 - f3 > f) {
-            this.c = f3 + f;
-            invalidate();
+        int i14 = this.a.a;
+        if (i14 != Integer.MAX_VALUE) {
+            int i15 = vec.t0;
         }
-    }
-
-    public void setMinProgressDiff(float f) {
-        this.I = f;
-    }
-
-    public void setRoundFrames(boolean z) {
-        this.J = z;
-        if (z) {
-            this.K = new Rect(gm.L(14.0f), gm.L(14.0f), gm.L(42.0f), gm.L(42.0f));
-            this.L = new Rect();
+        int i16 = vecVar.N;
+        int i17 = vecVar.H;
+        if (i16 != -1) {
+            i = i16;
+        } else {
+            i = i17;
+            i17 = vecVar.i0;
         }
-    }
-
-    public void setTimeHintView(rec recVar) {
-        this.Q = recVar;
-    }
-
-    public void setVideoPath(String str) {
-        a(false);
-        MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
-        this.r = mediaMetadataRetriever;
-        this.b = 0.0f;
-        this.c = 1.0f;
-        try {
-            mediaMetadataRetriever.setDataSource(str);
-            this.a = Long.parseLong(this.r.extractMetadata(9));
-        } catch (Exception e) {
-            fc4.g(e, true);
+        if (i14 == i) {
+            int i18 = vecVar.R;
+            f = 0.0f;
+            i3 = vecVar.S;
+            i4 = bkb.S9;
+            i5 = bkb.T9;
+            i6 = i18;
+            i2 = i3;
+        } else {
+            f = 0.0f;
+            i2 = vecVar.S;
+            i3 = vecVar.R;
+            i4 = bkb.T9;
+            i5 = bkb.S9;
+            i6 = i2;
         }
+        int i19 = i5;
+        int i20 = i4;
+        if (vecVar.F == 9) {
+            textPaint4.setColor(bkb.v0(i2, wjbVar));
+        } else if ((vecVar.K || i16 != -1) && (i14 == i || i14 == i17)) {
+            textPaint4.setColor(bm2.f(vecVar.L, bkb.v0(i3, wjbVar), bkb.v0(i6, wjbVar)));
+        } else {
+            textPaint4.setColor(bkb.v0(i6, wjbVar));
+        }
+        this.a.getClass();
+        if (this.a.a != Integer.MAX_VALUE) {
+            if (vecVar.n) {
+                float L = gl.L(20.0f);
+                int i21 = vec.t0;
+                i7 = (int) ((L * f) + f);
+                int i22 = this.a.c;
+                if (i7 == 0) {
+                    int i23 = vec.t0;
+                    i8 = gl.L(f) + i7;
+                } else {
+                    i8 = 0;
+                }
+                this.b = i22 + i8;
+                int measuredWidth = (getMeasuredWidth() - this.b) / 2;
+                charSequence = this.a.b;
+                if ((charSequence == null || this.d == null) && TextUtils.equals(charSequence, this.d)) {
+                    i9 = 2;
+                } else {
+                    sec secVar = this.a;
+                    i9 = 2;
+                    CharSequence m = vu3.m(secVar.b, textPaint4.getFontMetricsInt(), false, null, 0);
+                    secVar.b = m;
+                    this.d = m;
+                    tgb tgbVar2 = this.e;
+                    if (tgbVar2 != null) {
+                        gm.release(tgbVar2.j, tgbVar2.k);
+                    }
+                    tgb tgbVar3 = new tgb(this.d, textPaint4.getTextSize() / gl.p, textPaint4.getTypeface());
+                    tgbVar3.q(this);
+                    this.e = tgbVar3;
+                }
+                tgbVar = this.e;
+                if (tgbVar == null) {
+                    tgbVar.p = gl.L(400.0f);
+                    float measuredHeight = getMeasuredHeight() / 2;
+                    int i24 = i17;
+                    int color = textPaint4.getColor();
+                    i11 = measuredWidth;
+                    int i25 = i9;
+                    textPaint = textPaint4;
+                    i10 = i25;
+                    i12 = i24;
+                    tgbVar.c(measuredWidth, measuredHeight, 1.0f, color, canvas);
+                    canvas2 = canvas;
+                } else {
+                    int i26 = i9;
+                    textPaint = textPaint4;
+                    i10 = i26;
+                    i11 = measuredWidth;
+                    i12 = i17;
+                    canvas2 = canvas;
+                }
+                if (this.a.a != Integer.MAX_VALUE) {
+                    if (vecVar.n) {
+                        textPaint2.setColor(bkb.v0(vecVar.U, wjbVar));
+                        if (bkb.d1(i20) && bkb.d1(i19)) {
+                            int v0 = bkb.v0(i20, wjbVar);
+                            if ((vecVar.K || vecVar.M != -1) && ((i13 = this.a.a) == i || i13 == i12)) {
+                                paint.setColor(bm2.f(vecVar.L, bkb.v0(i19, wjbVar), v0));
+                            } else {
+                                paint.setColor(v0);
+                            }
+                        } else {
+                            paint.setColor(textPaint.getColor());
+                        }
+                        int L2 = gl.L(6.0f) + i11 + this.a.c;
+                        int D = ug8.D(20.0f, getMeasuredHeight(), i10);
+                        if (this.a.a != Integer.MAX_VALUE) {
+                            if (vecVar.n) {
+                                int i27 = vec.t0;
+                                paint.setAlpha(0);
+                                float L3 = gl.L(20.0f) + D;
+                                RectF rectF = this.c;
+                                rectF.set(L2, D, L2 + i7, L3);
+                                float f2 = gl.p * 11.5f;
+                                canvas2.drawRoundRect(rectF, f2, f2, paint);
+                                if (this.a.a != Integer.MAX_VALUE) {
+                                    if (vecVar.n) {
+                                        textPaint3.setColor(textPaint2.getColor());
+                                        int i28 = vec.t0;
+                                        textPaint3.setAlpha(0);
+                                        float L4 = gl.L(3.0f);
+                                        canvas2.drawLine(rectF.centerX() - L4, rectF.centerY() - L4, rectF.centerX() + L4, rectF.centerY() + L4, textPaint3);
+                                        canvas.drawLine(rectF.centerX() - L4, rectF.centerY() + L4, rectF.centerX() + L4, rectF.centerY() - L4, textPaint3);
+                                    } else {
+                                        int i29 = vec.t0;
+                                    }
+                                }
+                            } else {
+                                int i30 = vec.t0;
+                            }
+                        }
+                        paint.setAlpha(kk7.d4);
+                        float L32 = gl.L(20.0f) + D;
+                        RectF rectF2 = this.c;
+                        rectF2.set(L2, D, L2 + i7, L32);
+                        float f22 = gl.p * 11.5f;
+                        canvas2.drawRoundRect(rectF2, f22, f22, paint);
+                        if (this.a.a != Integer.MAX_VALUE) {
+                        }
+                    } else {
+                        int i31 = vec.t0;
+                    }
+                }
+                if (this.a.a != Integer.MAX_VALUE) {
+                    int i32 = vec.t0;
+                }
+                canvas.restore();
+            }
+            int i33 = vec.t0;
+        }
+        i7 = 0;
+        int i222 = this.a.c;
+        if (i7 == 0) {
+        }
+        this.b = i222 + i8;
+        int measuredWidth2 = (getMeasuredWidth() - this.b) / 2;
+        charSequence = this.a.b;
+        if (charSequence == null) {
+        }
+        i9 = 2;
+        tgbVar = this.e;
+        if (tgbVar == null) {
+        }
+        if (this.a.a != Integer.MAX_VALUE) {
+        }
+        if (this.a.a != Integer.MAX_VALUE) {
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        int i;
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        sec secVar = this.a;
+        accessibilityNodeInfo.setSelected((secVar == null || (i = this.r.H) == -1 || secVar.a != i) ? false : true);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        sec secVar = this.a;
+        vec vecVar = this.r;
+        setMeasuredDimension(gl.L(vecVar.r << 1) + secVar.a(vecVar.c) + vecVar.J, View.MeasureSpec.getSize(i2));
+    }
+
+    public void setReordering(boolean z) {
+        if (this.f == z) {
+            return;
+        }
+        this.f = z;
         invalidate();
     }
 }

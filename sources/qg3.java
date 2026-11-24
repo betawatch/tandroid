@@ -1,43 +1,31 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qg3 implements hk3, cv2 {
-    public final /* synthetic */ ug3 a;
+public final /* synthetic */ class qg3 implements uc7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cj3 b;
 
-    public /* synthetic */ qg3(ug3 ug3Var) {
-        this.a = ug3Var;
+    public /* synthetic */ qg3(cj3 cj3Var, byte b) {
+        this.a = b;
+        this.b = cj3Var;
     }
 
-    @Override // hk3
-    public final boolean E() {
-        return false;
-    }
-
-    @Override // cv2
-    public final void b(TLRPC.User user) {
-        this.a.q0(user);
-    }
-
-    @Override // hk3
-    public final boolean q(nk3 nk3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, sxb sxbVar) {
-        if (arrayList.isEmpty()) {
-            return true;
+    @Override // uc7
+    public final void a(int i) {
+        byte b = this.a;
+        cj3 cj3Var = this.b;
+        switch (b) {
+            case 0:
+                cj3Var.W1 = i != 0;
+                na7.d1().edit().putBoolean("askAboutContacts", cj3Var.W1).commit();
+                cj3Var.A2(false);
+                break;
+            default:
+                cj3Var.W1 = i != 0;
+                na7.d1().edit().putBoolean("askAboutContacts", cj3Var.W1).apply();
+                cj3Var.A2(false);
+                break;
         }
-        long j = ((bf7) arrayList.get(0)).a;
-        if (!pg3.D(j)) {
-            return true;
-        }
-        ug3 ug3Var = this.a;
-        ug3Var.q0(ug3Var.getMessagesController().W1(Long.valueOf(j)));
-        return true;
-    }
-
-    @Override // hk3
-    public final boolean s(nk3 nk3Var) {
-        return false;
     }
 }

@@ -1,23 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface m8a {
-    void B(f7a f7aVar, boolean z);
+import android.content.Context;
+import android.view.View;
 
-    void C(f7a f7aVar, int i);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class m8a extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    void L(f7a f7aVar, int i);
+    static {
+        b4c.h(new m8a());
+    }
 
-    void P(f7a f7aVar, String str);
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        Object obj = c4cVar.H;
+        if (obj instanceof so8) {
+            so8 so8Var = (so8) obj;
+            ((o8a) view).b(c4cVar.m, so8Var.d, so8Var.e, z);
+        } else if (obj instanceof aa7) {
+            ((o8a) view).a(c4cVar.m, ((aa7) obj).b, true, z);
+        }
+    }
 
-    void R(f7a f7aVar, String str);
-
-    void l(f7a f7aVar, int i);
-
-    void o(f7a f7aVar);
-
-    void q(f7a f7aVar, int i);
-
-    void z(f7a f7aVar);
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new o8a(context);
+    }
 }

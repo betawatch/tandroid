@@ -1,61 +1,170 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class u26 {
-    private static final /* synthetic */ u26[] $VALUES;
-    public static final s26 Companion;
-    public static final u26 ON_ANY;
-    public static final u26 ON_CREATE;
-    public static final u26 ON_DESTROY;
-    public static final u26 ON_PAUSE;
-    public static final u26 ON_RESUME;
-    public static final u26 ON_START;
-    public static final u26 ON_STOP;
+import android.content.Context;
+import android.graphics.PointF;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public class u26 extends o49 {
+    public static final boolean q;
+    public PointF k;
+    public final DisplayMetrics l;
+    public float n;
+    public final LinearInterpolator i = new LinearInterpolator();
+    public final DecelerateInterpolator j = new DecelerateInterpolator();
+    public boolean m = false;
+    public int o = 0;
+    public int p = 0;
 
     static {
-        u26 u26Var = new u26("ON_CREATE", 0);
-        ON_CREATE = u26Var;
-        u26 u26Var2 = new u26("ON_START", 1);
-        ON_START = u26Var2;
-        u26 u26Var3 = new u26("ON_RESUME", 2);
-        ON_RESUME = u26Var3;
-        u26 u26Var4 = new u26("ON_PAUSE", 3);
-        ON_PAUSE = u26Var4;
-        u26 u26Var5 = new u26("ON_STOP", 4);
-        ON_STOP = u26Var5;
-        u26 u26Var6 = new u26("ON_DESTROY", 5);
-        ON_DESTROY = u26Var6;
-        u26 u26Var7 = new u26("ON_ANY", 6);
-        ON_ANY = u26Var7;
-        $VALUES = new u26[]{u26Var, u26Var2, u26Var3, u26Var4, u26Var5, u26Var6, u26Var7};
-        Companion = new s26();
+        boolean z = w01.a;
+        q = true;
     }
 
-    public static u26 valueOf(String str) {
-        return (u26) Enum.valueOf(u26.class, str);
+    public u26(Context context) {
+        this.l = context.getResources().getDisplayMetrics();
     }
 
-    public static u26[] values() {
-        return (u26[]) $VALUES.clone();
-    }
-
-    public final v26 a() {
-        switch (t26.a[ordinal()]) {
-            case 1:
-            case 2:
-                return v26.c;
-            case 3:
-            case 4:
-                return v26.d;
-            case 5:
-                return v26.e;
-            case 6:
-                return v26.a;
-            default:
-                throw new IllegalArgumentException(this + " has no target state");
+    @Override // o49
+    public final void d(int i, int i2, n49 n49Var) {
+        PointF pointF;
+        if (this.b.y.r() == 0) {
+            h();
+            return;
         }
+        if (q && (pointF = this.k) != null && (pointF.x * i < 0.0f || pointF.y * i2 < 0.0f)) {
+            sc8.j("Scroll happened in the opposite direction of the target. Some calculations are wrong");
+            return;
+        }
+        int i3 = this.o;
+        int i4 = i3 - i;
+        if (i3 * i4 <= 0) {
+            i4 = 0;
+        }
+        this.o = i4;
+        int i5 = this.p;
+        int i6 = i5 - i2;
+        int i7 = i5 * i6 > 0 ? i6 : 0;
+        this.p = i7;
+        if (i4 == 0 && i7 == 0) {
+            q(n49Var);
+        }
+    }
+
+    @Override // o49
+    public final void f() {
+        this.p = 0;
+        this.o = 0;
+        this.k = null;
+    }
+
+    @Override // o49
+    public void g(View view, n49 n49Var) {
+        int j = j(o(), view);
+        int k = k(p(), view);
+        int m = m((int) Math.sqrt((k * k) + (j * j)));
+        if (m > 0) {
+            n49Var.b(-j, -k, m, this.j);
+        }
+    }
+
+    public int i(int i, int i2, int i3, int i4, int i5) {
+        if (i5 == -1) {
+            return i3 - i;
+        }
+        if (i5 != 0) {
+            if (i5 == 1) {
+                return i4 - i2;
+            }
+            w26.j("snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_");
+            return 0;
+        }
+        int i6 = i3 - i;
+        if (i6 > 0) {
+            return i6;
+        }
+        int i7 = i4 - i2;
+        if (i7 < 0) {
+            return i7;
+        }
+        return 0;
+    }
+
+    public final int j(int i, View view) {
+        d49 d49Var = this.c;
+        if (d49Var == null || !d49Var.d()) {
+            return 0;
+        }
+        e49 e49Var = (e49) view.getLayoutParams();
+        return i(d49.w(view) - ((ViewGroup.MarginLayoutParams) e49Var).leftMargin, d49.x(view) + ((ViewGroup.MarginLayoutParams) e49Var).rightMargin, d49Var.C(), d49Var.m - d49Var.D(), i);
+    }
+
+    public int k(int i, View view) {
+        d49 d49Var = this.c;
+        if (d49Var == null || !d49Var.e()) {
+            return 0;
+        }
+        e49 e49Var = (e49) view.getLayoutParams();
+        return i(d49.y(view) - ((ViewGroup.MarginLayoutParams) e49Var).topMargin, d49.v(view) + ((ViewGroup.MarginLayoutParams) e49Var).bottomMargin, d49Var.E(), d49Var.n - d49Var.B(), i);
+    }
+
+    public float l(DisplayMetrics displayMetrics) {
+        return 25.0f / displayMetrics.densityDpi;
+    }
+
+    public int m(int i) {
+        return (int) Math.ceil(n(i) / 0.3356d);
+    }
+
+    public int n(int i) {
+        float abs = Math.abs(i);
+        if (!this.m) {
+            this.n = l(this.l);
+            this.m = true;
+        }
+        return (int) Math.ceil(abs * this.n);
+    }
+
+    public final int o() {
+        PointF pointF = this.k;
+        if (pointF == null) {
+            return 0;
+        }
+        float f = pointF.x;
+        if (f != 0.0f) {
+            return f > 0.0f ? 1 : -1;
+        }
+        return 0;
+    }
+
+    public int p() {
+        PointF pointF = this.k;
+        if (pointF == null) {
+            return 0;
+        }
+        float f = pointF.y;
+        if (f != 0.0f) {
+            return f > 0.0f ? 1 : -1;
+        }
+        return 0;
+    }
+
+    public void q(n49 n49Var) {
+        PointF a = a(this.a);
+        if (a == null || (a.x == 0.0f && a.y == 0.0f)) {
+            n49Var.d = this.a;
+            h();
+            return;
+        }
+        o49.b(a);
+        this.k = a;
+        this.o = (int) (a.x * 10000.0f);
+        this.p = (int) (a.y * 10000.0f);
+        n49Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.i);
     }
 }

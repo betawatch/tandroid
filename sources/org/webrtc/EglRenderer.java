@@ -20,7 +20,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.GlUtil;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class EglRenderer implements VideoSink {
     private static final long LOG_INTERVAL_SEC = 4;
@@ -55,7 +55,7 @@ public class EglRenderer implements VideoSink {
     private int rotation;
     private boolean usePresentationTimeStamp;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private class EglSurfaceCreation implements Runnable {
         private final boolean background;
         private Object surface;
@@ -115,17 +115,17 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface ErrorCallback {
         void onGlOutOfMemory();
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface FrameListener {
         void onFrame(Bitmap bitmap);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class FrameListenerAndParams {
         public final boolean applyFpsReduction;
         public final RendererCommon.GlDrawer drawer;
@@ -140,7 +140,7 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class HandlerWithExceptionCallback extends Handler {
         private final Runnable exceptionCallback;
 
@@ -209,7 +209,7 @@ public class EglRenderer implements VideoSink {
             if (handler != null) {
                 handler.post(this.eglSurfaceBackgroundCreationRunnable);
             } else {
-                fc4.b("can't create background surface. render thread is null");
+                fa4.b("can't create background surface. render thread is null");
             }
         }
     }
@@ -452,7 +452,7 @@ public class EglRenderer implements VideoSink {
     }
 
     public void addFrameListener(final FrameListener frameListener, final float f, final RendererCommon.GlDrawer glDrawer, final boolean z) {
-        postToRenderThread(new Runnable() { // from class: nv3
+        postToRenderThread(new Runnable() { // from class: cu3
             @Override // java.lang.Runnable
             public final void run() {
                 EglRenderer.this.lambda$addFrameListener$3(glDrawer, frameListener, f, z);
@@ -466,7 +466,7 @@ public class EglRenderer implements VideoSink {
             if (handler == null) {
                 return;
             }
-            handler.postAtFrontOfQueue(new Runnable() { // from class: ov3
+            handler.postAtFrontOfQueue(new Runnable() { // from class: du3
                 @Override // java.lang.Runnable
                 public final void run() {
                     EglRenderer.this.lambda$clearImage$6(f, f2, f3, f4);
@@ -492,10 +492,10 @@ public class EglRenderer implements VideoSink {
             try {
                 Handler handler = this.renderThreadHandler;
                 if (handler != null) {
-                    handler.post(new rd3(this, textureCallback, (byte) 29));
+                    handler.post(new wc3(this, textureCallback, (byte) 28));
                 }
             } catch (Exception e) {
-                fc4.g(e, true);
+                fa4.g(e, true);
             }
         }
     }
@@ -520,7 +520,7 @@ public class EglRenderer implements VideoSink {
                 }
             });
             this.renderThreadHandler = handlerWithExceptionCallback;
-            handlerWithExceptionCallback.post(new pz2(this, context, iArr, (byte) 15));
+            handlerWithExceptionCallback.post(new mg3(this, context, iArr, (byte) 13));
             this.renderThreadHandler.post(this.eglSurfaceCreationRunnable);
         }
     }
@@ -540,7 +540,7 @@ public class EglRenderer implements VideoSink {
                     }
                     this.pendingFrame = videoFrame;
                     videoFrame.retain();
-                    this.renderThreadHandler.post(new bi3(this, (byte) 20));
+                    this.renderThreadHandler.post(new li3(this, (byte) 15));
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -570,7 +570,6 @@ public class EglRenderer implements VideoSink {
 
     public void release() {
         logD("Releasing.");
-        byte b = 1;
         CountDownLatch countDownLatch = new CountDownLatch(1);
         synchronized (this.handlerLock) {
             Handler handler = this.renderThreadHandler;
@@ -578,8 +577,8 @@ public class EglRenderer implements VideoSink {
                 logD("Already released");
                 return;
             }
-            handler.postAtFrontOfQueue(new pv3(this, countDownLatch, (byte) 0));
-            this.renderThreadHandler.post(new pv3(this, this.renderThreadHandler.getLooper(), b));
+            handler.postAtFrontOfQueue(new wc3(this, countDownLatch, (byte) 29));
+            this.renderThreadHandler.post(new eu3(this, this.renderThreadHandler.getLooper(), (byte) 0));
             this.renderThreadHandler = null;
             ThreadUtils.awaitUninterruptibly(countDownLatch);
             synchronized (this.frameLock) {
@@ -599,7 +598,7 @@ public class EglRenderer implements VideoSink {
             Handler handler = this.renderThreadHandler;
             if (handler != null) {
                 handler.removeCallbacks(this.eglSurfaceCreationRunnable);
-                this.renderThreadHandler.postAtFrontOfQueue(new np6((Object) this, z, (Object) runnable, (byte) 19));
+                this.renderThreadHandler.postAtFrontOfQueue(new mn6((Object) this, z, (Object) runnable, (byte) 19));
             } else if (runnable != null) {
                 runnable.run();
             }
@@ -615,7 +614,7 @@ public class EglRenderer implements VideoSink {
             if (Thread.currentThread() == this.renderThreadHandler.getLooper().getThread()) {
                 throw new RuntimeException("removeFrameListener must not be called on the render thread.");
             }
-            postToRenderThread(new pz2(this, countDownLatch, frameListener, (byte) 16));
+            postToRenderThread(new mg3(this, countDownLatch, frameListener, (byte) 14));
             ThreadUtils.awaitUninterruptibly(countDownLatch);
         }
     }

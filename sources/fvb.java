@@ -1,21 +1,35 @@
 // default package
 
-import android.view.ViewGroup;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class fvb extends ViewGroup.MarginLayoutParams {
-    public int a;
-    public byte b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class fvb extends i49 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qvb b;
 
-    public fvb(fvb fvbVar) {
-        super((ViewGroup.MarginLayoutParams) fvbVar);
-        this.a = 0;
-        this.a = fvbVar.a;
+    public /* synthetic */ fvb(qvb qvbVar, byte b) {
+        this.a = b;
+        this.b = qvbVar;
     }
 
-    public fvb(ViewGroup.LayoutParams layoutParams) {
-        super(layoutParams);
-        this.a = 0;
+    @Override // i49
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        cq3 cq3Var;
+        byte b = this.a;
+        qvb qvbVar = this.b;
+        switch (b) {
+            case 0:
+                qvbVar.y0();
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (cq3Var = qvbVar.i1) != null) {
+                    cq3Var.f(i, i2);
+                    qvbVar.x0();
+                    break;
+                }
+                break;
+        }
     }
 }

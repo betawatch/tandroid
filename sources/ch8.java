@@ -1,61 +1,31 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.SystemClock;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ch8 extends r59 {
-    public final i15 f3;
-    public long g3;
-    public final /* synthetic */ ih8 h3;
+public final class ch8 extends i49 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jh8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ch8(ih8 ih8Var, Context context) {
-        super(context, null);
-        this.h3 = ih8Var;
-        this.f3 = new i15(8);
+    public /* synthetic */ ch8(jh8 jh8Var, byte b) {
+        this.a = b;
+        this.b = jh8Var;
     }
 
-    @Override // r59
-    public final boolean F0(float f) {
-        return f >= ((float) (this.h3.y1 + gm.m));
-    }
-
-    @Override // r59, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f;
-        ih8 ih8Var = this.h3;
-        if (ih8Var.F1) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long abs = Math.abs(this.g3 - elapsedRealtime);
-            if (abs > 17) {
-                abs = 16;
-            }
-            this.g3 = elapsedRealtime;
-            ih8Var.D1 += (abs * ih8Var.E1) / 1800.0f;
-            while (true) {
-                f = ih8Var.D1;
-                float f2 = ih8Var.E1 * 2.0f;
-                if (f < f2) {
-                    break;
-                } else {
-                    ih8Var.D1 = f - f2;
-                }
-            }
-            ih8Var.C1.setTranslate(f, 0.0f);
-            ih8Var.B1.setLocalMatrix(ih8Var.C1);
-            h1();
-            invalidate();
+    @Override // i49
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        byte b = this.a;
+        jh8 jh8Var = this.b;
+        switch (b) {
+            case 0:
+                jh8Var.b.invalidate();
+                jh8Var.D0();
+                break;
+            default:
+                jh8Var.b.invalidate();
+                jh8Var.D0();
+                break;
         }
-        super.dispatchDraw(canvas);
-        int measuredHeight = getMeasuredHeight() - gm.n;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight2 = getMeasuredHeight();
-        i15 i15Var = this.f3;
-        i15Var.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
-        i15Var.b(cmb.v0(cmb.h5, this.o2));
-        i15Var.draw(canvas);
     }
 }

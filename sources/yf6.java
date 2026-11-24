@@ -1,28 +1,61 @@
 // default package
 
-import android.view.View;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class yf6 extends sm4 {
+    public final /* synthetic */ byte f;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class yf6 implements View.OnAttachStateChangeListener {
-    public boolean b;
-    public final /* synthetic */ zf6 d;
-    public long a = System.currentTimeMillis();
-    public final xf6 c = new xf6(this, (byte) 0);
-
-    public yf6(zf6 zf6Var) {
-        this.d = zf6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ yf6(aob aobVar, byte b) {
+        super(aobVar);
+        this.f = b;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.b = true;
-        view.post(this.c);
+    @Override // sm4, aob
+    public final int e(int i, int i2, boolean z) {
+        switch (this.f) {
+            case 0:
+                aob aobVar = this.e;
+                int e = aobVar.e(i, i2, z);
+                return e == -1 ? aobVar.a(z) : e;
+            default:
+                return super.e(i, i2, z);
+        }
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.b = false;
-        view.removeCallbacks(this.c);
+    @Override // sm4, aob
+    public final xnb f(int i, xnb xnbVar, boolean z) {
+        switch (this.f) {
+            case 1:
+                super.f(i, xnbVar, z);
+                xnbVar.f = true;
+                return xnbVar;
+            default:
+                return super.f(i, xnbVar, z);
+        }
+    }
+
+    @Override // sm4, aob
+    public final int k(int i, int i2, boolean z) {
+        switch (this.f) {
+            case 0:
+                aob aobVar = this.e;
+                int k = aobVar.k(i, i2, z);
+                return k == -1 ? aobVar.c(z) : k;
+            default:
+                return super.k(i, i2, z);
+        }
+    }
+
+    @Override // sm4, aob
+    public final znb m(int i, znb znbVar, long j) {
+        switch (this.f) {
+            case 1:
+                super.m(i, znbVar, j);
+                znbVar.j = true;
+                return znbVar;
+            default:
+                return super.m(i, znbVar, j);
+        }
     }
 }

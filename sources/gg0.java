@@ -1,198 +1,483 @@
 // default package
 
+import android.accounts.Account;
+import android.content.AttributionSource;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.DeadObjectException;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.RemoteException;
+import android.util.Log;
+import com.google.android.gms.common.api.Scope;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public abstract class gg0 extends FrameLayout {
-    public final ylb a;
-    public final pc0 b;
-    public final bf0 c;
-    public final dg0 d;
-    public final lka e;
-    public final RadioButton f;
-    public final Paint h;
-    public boolean n;
-    public final View r;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class gg0 {
+    public static final f84[] D = new f84[0];
+    public boolean A;
+    public volatile xme B;
+    public final AtomicInteger C;
+    public int a;
+    public long b;
+    public long c;
+    public int d;
+    public long e;
+    public volatile String f;
+    public qx g;
+    public final Context h;
+    public final Looper i;
+    public final j9f j;
+    public final pbd k;
+    public final Object l;
+    public final Object m;
+    public f5d n;
+    public eg0 o;
+    public IInterface p;
+    public final ArrayList q;
+    public ntd r;
+    public byte s;
+    public final ln8 t;
+    public final v39 u;
+    public final short v;
+    public final String w;
+    public volatile String x;
+    public volatile gy y;
+    public ds2 z;
 
-    public gg0(Context context, ylb ylbVar) {
-        super(context);
-        pc0 pc0Var = new pc0((ylb) null);
-        this.b = pc0Var;
-        this.h = new Paint(1);
-        this.a = ylbVar;
-        View view = new View(context);
-        this.r = view;
-        addView(view, qoe.o(-1, -1));
-        anb.h(cmb.g5, ylbVar, view);
-        pc0Var.r = gm.L(40.0f);
-        bf0 bf0Var = new bf0(context);
-        this.c = bf0Var;
-        bf0Var.setRoundRadius(gm.L(20.0f));
-        addView(bf0Var);
-        dg0 dg0Var = new dg0(context, (byte) 0);
-        this.d = dg0Var;
-        nm7.i(dg0Var);
-        nm7.i(bf0Var);
-        dg0Var.setTextSize(16);
-        int i = cmb.i5;
-        anb.W(dg0Var, i, ylbVar);
-        dg0Var.setGravity(jb6.a0 ? 5 : 3);
-        addView(dg0Var);
-        lka lkaVar = new lka(context);
-        this.e = lkaVar;
-        lkaVar.setTextSize(14);
-        anb.W(lkaVar, i, ylbVar);
-        lkaVar.setGravity(jb6.a0 ? 5 : 3);
-        addView(lkaVar);
-        RadioButton radioButton = new RadioButton(context);
-        this.f = radioButton;
-        radioButton.setSize(gm.L(20.0f));
-        anb.O(radioButton, cmb.i7, cmb.D5, ylbVar);
-        addView(radioButton);
-        d();
-        if (b()) {
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    public gg0(Context context, Looper looper, j9f j9fVar, int i, ln8 ln8Var, v39 v39Var, String str) {
+        Object obj = cy4.d;
+        this.f = null;
+        this.l = new Object();
+        this.m = new Object();
+        this.q = new ArrayList();
+        this.s = (byte) 1;
+        this.z = null;
+        this.A = false;
+        this.B = null;
+        this.C = new AtomicInteger(0);
+        fre.i(context, "Context must not be null");
+        this.h = context;
+        fre.i(looper, "Looper must not be null");
+        this.i = looper;
+        fre.i(j9fVar, "Supervisor must not be null");
+        this.j = j9fVar;
+        this.k = new pbd(this, looper);
+        this.v = i;
+        this.t = ln8Var;
+        this.u = v39Var;
+        this.w = str;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void A(int i, IInterface iInterface) {
+        qx qxVar;
+        fre.b((i == 4) == (iInterface != null));
+        synchronized (this.l) {
+            this.s = i;
+            this.p = iInterface;
+            Bundle bundle = null;
+            if (i == 1) {
+                ntd ntdVar = this.r;
+                if (ntdVar != null) {
+                    j9f j9fVar = this.j;
+                    String str = (String) this.g.c;
+                    fre.h(str);
+                    String str2 = (String) this.g.d;
+                    if (this.w == null) {
+                        this.h.getClass();
+                    }
+                    j9fVar.c(str, str2, ntdVar, this.g.b);
+                    this.r = null;
+                }
+            } else if (i == 2 || i == 3) {
+                ntd ntdVar2 = this.r;
+                if (ntdVar2 != null && (qxVar = this.g) != null) {
+                    String str3 = (String) qxVar.c;
+                    String str4 = (String) qxVar.d;
+                    StringBuilder sb = new StringBuilder(String.valueOf(str3).length() + 70 + String.valueOf(str4).length());
+                    sb.append("Calling connect() while still connected, missing disconnect() for ");
+                    sb.append(str3);
+                    sb.append(" on ");
+                    sb.append(str4);
+                    Log.e("GmsClient", sb.toString());
+                    j9f j9fVar2 = this.j;
+                    String str5 = (String) this.g.c;
+                    fre.h(str5);
+                    String str6 = (String) this.g.d;
+                    if (this.w == null) {
+                        this.h.getClass();
+                    }
+                    j9fVar2.c(str5, str6, ntdVar2, this.g.b);
+                    this.C.incrementAndGet();
+                }
+                ntd ntdVar3 = new ntd(this, this.C.get());
+                this.r = ntdVar3;
+                String o = o();
+                String n = n();
+                boolean p = p();
+                this.g = new qx(o, n, p);
+                if (p && i() < 17895000) {
+                    throw new IllegalStateException("Internal Error, the minimum apk version of this BaseGmsClient is too low to support dynamic lookup. Start service action: ".concat(String.valueOf((String) this.g.c)));
+                }
+                j9f j9fVar3 = this.j;
+                String str7 = (String) this.g.c;
+                fre.h(str7);
+                String str8 = (String) this.g.d;
+                String str9 = this.w;
+                if (str9 == null) {
+                    str9 = this.h.getClass().getName();
+                }
+                ds2 b = j9fVar3.b(new x2f(str7, str8, this.g.b), ntdVar3, str9);
+                if (!b.c()) {
+                    qx qxVar2 = this.g;
+                    String str10 = (String) qxVar2.c;
+                    String str11 = (String) qxVar2.d;
+                    StringBuilder sb2 = new StringBuilder(String.valueOf(str10).length() + 34 + String.valueOf(str11).length());
+                    sb2.append("unable to connect to service: ");
+                    sb2.append(str10);
+                    sb2.append(" on ");
+                    sb2.append(str11);
+                    Log.w("GmsClient", sb2.toString());
+                    int i2 = b.b;
+                    if (i2 == -1) {
+                        i2 = 16;
+                    }
+                    if (b.c != null) {
+                        bundle = new Bundle();
+                        bundle.putParcelable("pendingIntent", b.c);
+                    }
+                    int i3 = this.C.get();
+                    f6e f6eVar = new f6e(this, i2, bundle);
+                    pbd pbdVar = this.k;
+                    pbdVar.sendMessage(pbdVar.obtainMessage(7, i3, -1, f6eVar));
+                }
+            } else if (i == 4) {
+                fre.h(iInterface);
+                IInterface iInterface2 = iInterface;
+                this.c = System.currentTimeMillis();
+            }
         }
-        radioButton.setVisibility(8);
     }
 
-    public int a() {
-        return 0;
+    public void a(eg0 eg0Var) {
+        fre.i(eg0Var, "Connection progress callbacks cannot be null.");
+        this.o = eg0Var;
+        A(2, null);
     }
 
-    public boolean b() {
+    public IInterface b(IBinder iBinder) {
+        iBinder.getClass();
+        int i = jh5.b;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.identitycredentials.internal.IIdentityCredentialService");
+        return queryLocalInterface instanceof kh5 ? (kh5) queryLocalInterface : new ih5(iBinder);
+    }
+
+    public void c() {
+        this.C.incrementAndGet();
+        ArrayList arrayList = this.q;
+        synchronized (arrayList) {
+            int size = arrayList.size();
+            for (int i = 0; i < size; i++) {
+                ((n4d) arrayList.get(i)).d();
+            }
+            arrayList.clear();
+        }
+        synchronized (this.m) {
+            this.n = null;
+        }
+        A(1, null);
+    }
+
+    public final void d(String str) {
+        this.f = str;
+        c();
+    }
+
+    public void e(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        byte b;
+        IInterface iInterface;
+        f5d f5dVar;
+        long j;
+        synchronized (this.l) {
+            b = this.s;
+            iInterface = this.p;
+        }
+        synchronized (this.m) {
+            f5dVar = this.n;
+        }
+        printWriter.append((CharSequence) str).append("mConnectState=");
+        if (b == 1) {
+            printWriter.print("DISCONNECTED");
+        } else if (b == 2) {
+            printWriter.print("REMOTE_CONNECTING");
+        } else if (b == 3) {
+            printWriter.print("LOCAL_CONNECTING");
+        } else if (b == 4) {
+            printWriter.print("CONNECTED");
+        } else if (b != 5) {
+            printWriter.print("UNKNOWN");
+        } else {
+            printWriter.print("DISCONNECTING");
+        }
+        printWriter.append(" mService=");
+        if (iInterface == null) {
+            printWriter.append("null");
+        } else {
+            printWriter.append((CharSequence) l()).append("@").append((CharSequence) Integer.toHexString(System.identityHashCode(iInterface.asBinder())));
+        }
+        printWriter.append(" mServiceBroker=");
+        if (f5dVar == null) {
+            printWriter.println("null");
+        } else {
+            printWriter.append("IGmsServiceBroker@").println(Integer.toHexString(System.identityHashCode(f5dVar.a)));
+        }
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US);
+        if (this.c > 0) {
+            PrintWriter append = printWriter.append((CharSequence) str).append("lastConnectedTime=");
+            long j2 = this.c;
+            String format = simpleDateFormat.format(new Date(j2));
+            j = 0;
+            StringBuilder sb = new StringBuilder(String.valueOf(j2).length() + 1 + String.valueOf(format).length());
+            sb.append(j2);
+            sb.append(" ");
+            sb.append(format);
+            append.println(sb.toString());
+        } else {
+            j = 0;
+        }
+        if (this.b > j) {
+            printWriter.append((CharSequence) str).append("lastSuspendedCause=");
+            int i = this.a;
+            if (i == 1) {
+                printWriter.append("CAUSE_SERVICE_DISCONNECTED");
+            } else if (i == 2) {
+                printWriter.append("CAUSE_NETWORK_LOST");
+            } else if (i != 3) {
+                printWriter.append((CharSequence) String.valueOf(i));
+            } else {
+                printWriter.append("CAUSE_DEAD_OBJECT_EXCEPTION");
+            }
+            PrintWriter append2 = printWriter.append(" lastSuspendedTime=");
+            long j3 = this.b;
+            String format2 = simpleDateFormat.format(new Date(j3));
+            StringBuilder sb2 = new StringBuilder(String.valueOf(j3).length() + 1 + String.valueOf(format2).length());
+            sb2.append(j3);
+            sb2.append(" ");
+            sb2.append(format2);
+            append2.println(sb2.toString());
+        }
+        if (this.e > j) {
+            printWriter.append((CharSequence) str).append("lastFailedStatus=").append((CharSequence) asd.a(this.d));
+            PrintWriter append3 = printWriter.append(" lastFailedTime=");
+            long j4 = this.e;
+            String format3 = simpleDateFormat.format(new Date(j4));
+            StringBuilder sb3 = new StringBuilder(String.valueOf(j4).length() + 1 + String.valueOf(format3).length());
+            sb3.append(j4);
+            sb3.append(" ");
+            sb3.append(format3);
+            append3.println(sb3.toString());
+        }
+    }
+
+    public f84[] f() {
+        return D;
+    }
+
+    public Bundle g() {
+        return null;
+    }
+
+    public Bundle h() {
+        return new Bundle();
+    }
+
+    public int i() {
+        return 17895000;
+    }
+
+    public void j(ug5 ug5Var, Set set) {
+        String attributionTag;
+        Bundle h = h();
+        if (Build.VERSION.SDK_INT < 31) {
+            attributionTag = this.x;
+        } else if (this.y == null) {
+            attributionTag = this.x;
+        } else {
+            AttributionSource attributionSource = this.y.a;
+            attributionTag = attributionSource == null ? this.x : attributionSource.getAttributionTag() == null ? this.x : attributionSource.getAttributionTag();
+        }
+        String str = attributionTag;
+        short s = this.v;
+        int i = dy4.a;
+        Scope[] scopeArr = ct4.F;
+        Bundle bundle = new Bundle();
+        f84[] f84VarArr = ct4.G;
+        ct4 ct4Var = new ct4(6, s, i, null, null, scopeArr, bundle, null, f84VarArr, f84VarArr, true, 0, false, str);
+        ct4Var.d = this.h.getPackageName();
+        ct4Var.h = h;
+        if (set != null) {
+            ct4Var.f = (Scope[]) set.toArray(new Scope[0]);
+        }
+        if (w()) {
+            ct4Var.n = new Account("<<default account>>", "com.google");
+            if (ug5Var != null) {
+                ct4Var.e = ug5Var.asBinder();
+            }
+        } else if (this instanceof u5d) {
+            ct4Var.n = null;
+        }
+        ct4Var.r = D;
+        ct4Var.s = f();
+        if (x()) {
+            ct4Var.y = true;
+        }
+        try {
+            synchronized (this.m) {
+                f5d f5dVar = this.n;
+                if (f5dVar != null) {
+                    f5dVar.a(new nnd(this, this.C.get()), ct4Var);
+                } else {
+                    Log.w("GmsClient", "mServiceBroker is null, client disconnected");
+                }
+            }
+        } catch (DeadObjectException e) {
+            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
+            int i2 = this.C.get();
+            pbd pbdVar = this.k;
+            pbdVar.sendMessage(pbdVar.obtainMessage(6, i2, 3));
+        } catch (RemoteException e2) {
+            e = e2;
+            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
+            u(8, null, null, this.C.get());
+        } catch (SecurityException e3) {
+            throw e3;
+        } catch (RuntimeException e4) {
+            e = e4;
+            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
+            u(8, null, null, this.C.get());
+        }
+    }
+
+    public final IInterface k() {
+        IInterface iInterface;
+        synchronized (this.l) {
+            if (this.s == 5) {
+                throw new DeadObjectException();
+            }
+            if (!q()) {
+                throw new IllegalStateException("Not connected. Call connect() and wait for onConnected() to be called.");
+            }
+            IInterface iInterface2 = this.p;
+            fre.i(iInterface2, "Client is connected but service is null");
+            iInterface = iInterface2;
+        }
+        return iInterface;
+    }
+
+    public String l() {
+        return "com.google.android.gms.identitycredentials.internal.IIdentityCredentialService";
+    }
+
+    public Intent m() {
+        throw new UnsupportedOperationException("Not a sign in API");
+    }
+
+    public String n() {
+        return "com.google.android.gms.identitycredentials.service.START";
+    }
+
+    public String o() {
+        return "com.google.android.gms";
+    }
+
+    public boolean p() {
+        return i() >= 211700000;
+    }
+
+    public final boolean q() {
+        boolean z;
+        synchronized (this.l) {
+            z = this.s == 4;
+        }
+        return z;
+    }
+
+    public final boolean r() {
+        boolean z;
+        synchronized (this.l) {
+            byte b = this.s;
+            z = true;
+            if (b != 2 && b != 3) {
+                z = false;
+            }
+        }
+        return z;
+    }
+
+    public void s(ds2 ds2Var) {
+        this.d = ds2Var.b;
+        this.e = System.currentTimeMillis();
+    }
+
+    public void t(int i) {
+        this.a = i;
+        this.b = System.currentTimeMillis();
+    }
+
+    public void u(int i, IBinder iBinder, Bundle bundle, int i2) {
+        uyd uydVar = new uyd(this, i, iBinder, bundle);
+        pbd pbdVar = this.k;
+        pbdVar.sendMessage(pbdVar.obtainMessage(1, i2, -1, uydVar));
+    }
+
+    public boolean v() {
+        return true;
+    }
+
+    public boolean w() {
         return false;
     }
 
-    public void c(boolean z, boolean z2) {
-        RadioButton radioButton = this.f;
-        if (radioButton.getVisibility() == 0) {
-            radioButton.a(z, true);
-        }
+    public boolean x() {
+        return this instanceof na9;
     }
 
-    public void d() {
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        this.c.setLayoutParams(qoe.d(40, 40.0f, (jb6.a0 ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
-        boolean z = jb6.a0;
-        int i = (z ? 5 : 3) | 16;
-        if (z) {
-            f = 20.0f;
-        } else {
-            f = b() ? 105 : 70;
-        }
-        if (jb6.a0) {
-            f2 = b() ? 105 : 70;
-        } else {
-            f2 = 20.0f;
-        }
-        this.d.setLayoutParams(qoe.d(-1, -2.0f, i, f, 0.0f, f2, 0.0f));
-        boolean z2 = jb6.a0;
-        int i2 = (z2 ? 5 : 3) | 16;
-        if (z2) {
-            f3 = 20.0f;
-        } else {
-            f3 = b() ? 105 : 70;
-        }
-        if (jb6.a0) {
-            f4 = b() ? 105 : 70;
-        } else {
-            f4 = 20.0f;
-        }
-        this.e.setLayoutParams(qoe.d(-1, -2.0f, i2, f3, 0.0f, f4, 0.0f));
-        boolean z3 = jb6.a0;
-        this.f.setLayoutParams(qoe.d(22, 22.0f, (z3 ? 5 : 3) | 16, z3 ? 15.0f : 20.0f, 0.0f, z3 ? 20.0f : 15.0f, 0.0f));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.n) {
-            int v0 = cmb.v0(cmb.c7, this.a);
-            Paint paint = this.h;
-            paint.setColor(v0);
-            int i = b() ? nm7.p1 : 70;
-            if (this.c.getVisibility() == 8) {
-                i -= 40;
+    public final /* synthetic */ boolean y(int i, int i2, IInterface iInterface) {
+        synchronized (this.l) {
+            if (this.s != i) {
+                return false;
             }
-            int a = a() + i;
-            if (jb6.a0) {
-                canvas.drawRect(0.0f, getHeight() - 1, getWidth() - gm.L(a), getHeight(), paint);
-            } else {
-                canvas.drawRect(gm.L(a), getHeight() - 1, getWidth(), getHeight(), paint);
-            }
+            A(i2, iInterface);
+            return true;
         }
     }
 
-    public final SpannableStringBuilder e(CharSequence charSequence) {
-        SpannableString spannableString = new SpannableString(">");
-        Drawable drawable = getContext().getResources().getDrawable(R.drawable.attach_arrow_right);
-        pn2 pn2Var = new pn2(2, drawable);
-        drawable.setBounds(0, gm.L(1.0f), gm.L(11.0f), gm.L(12.0f));
-        spannableString.setSpan(pn2Var, 0, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append(charSequence).append((CharSequence) " ").append((CharSequence) spannableString);
-        return spannableStringBuilder;
-    }
-
-    public int getFullHeight() {
-        return 56;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(getFullHeight()), TLObject.FLAG_30));
-    }
-
-    public void setCellBackgroundVisible(boolean z) {
-        this.r.setVisibility(z ? 0 : 8);
-    }
-
-    public void setDivider(boolean z) {
-        this.n = z;
-        invalidate();
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        lka lkaVar = this.e;
-        dg0 dg0Var = this.d;
-        if (isEmpty) {
-            dg0Var.setTranslationY(0.0f);
-            lkaVar.setVisibility(8);
+    public final /* synthetic */ void z() {
+        byte b;
+        int i;
+        synchronized (this.l) {
+            b = this.s;
+        }
+        if (b == 3) {
+            this.A = true;
+            i = 5;
         } else {
-            dg0Var.setTranslationY(gm.L(-9.0f));
-            lkaVar.setTranslationY(gm.L(12.0f));
-            lkaVar.l(charSequence, false);
-            lkaVar.setVisibility(0);
+            i = 4;
         }
-        if (this.c.getVisibility() == 8) {
-            if (jb6.a0) {
-                dg0Var.setTranslationX(gm.L(40.0f));
-                lkaVar.setTranslationX(gm.L(40.0f));
-            } else {
-                dg0Var.setTranslationX(gm.L(-40.0f));
-                lkaVar.setTranslationX(gm.L(-40.0f));
-            }
-        }
-    }
-
-    public void setSubtitleColorKey(int i) {
-        anb.W(this.e, i, this.a);
+        pbd pbdVar = this.k;
+        pbdVar.sendMessage(pbdVar.obtainMessage(i, this.C.get(), 16));
     }
 }

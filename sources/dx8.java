@@ -1,104 +1,82 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.net.Uri;
-import android.os.Handler;
-import java.util.Collections;
-import java.util.Map;
-import java.util.TreeMap;
+import android.util.Log;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class dx8 {
-    public boolean a;
-    public final Object b;
-    public Object c;
-    public final Object d;
-    public Object e;
-    public Object f;
-    public Object g;
-    public Object h;
-    public Object i;
-    public Object j;
+public final class dx8 implements ga4 {
+    public static final Charset c = Charset.forName("UTF-8");
+    public final File a;
+    public cx8 b;
 
-    public dx8(yl2 yl2Var) {
-        Paint paint = new Paint(1);
-        this.i = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-8697);
-        paint.setStrokeWidth(gm.L(6.0f));
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setShadowLayer(1.0804527E9f, 0.0f, gm.L(3.0f), gm.L(6.0f));
-        this.j = new Path();
-        this.b = yl2Var;
-        d53 d53Var = d53.g;
-        this.d = new ln(0.0f, yl2Var, 0L, 320L, d53Var);
-        this.e = new ln(0.0f, yl2Var, 0L, 160L, d53Var);
-        this.f = new ln(0.0f, yl2Var, 0L, 160L, d53Var);
-        this.g = new ln[]{new ln(0.0f, yl2Var, 0L, 160L, d53Var), new ln(0.0f, yl2Var, 0L, 160L, d53Var), new ln(0.0f, yl2Var, 0L, 160L, d53Var), new ln(0.0f, yl2Var, 0L, 160L, d53Var)};
-        this.h = new ln[]{new ln(0.0f, yl2Var, 0L, 160L, d53Var), new ln(0.0f, yl2Var, 0L, 160L, d53Var), new ln(0.0f, yl2Var, 0L, 160L, d53Var), new ln(0.0f, yl2Var, 0L, 160L, d53Var)};
+    public dx8(File file) {
+        this.a = file;
     }
 
-    public static ea6 a(dx7 dx7Var, long j, long j2) {
-        da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
-        c0b c0bVar = dx7Var.d;
-        da6Var.d = c0bVar.c;
-        da6Var.e = c0bVar.d;
-        da6Var.f = j2;
-        da6Var.g = c0bVar.b;
-        return new ea6(da6Var);
+    @Override // ga4
+    public final void a() {
+        pm2.b(this.b, "There was a problem closing the Crashlytics log file.");
+        this.b = null;
     }
 
-    public final void b() {
-        jte.p(this.a);
-        Uri uri = (Uri) this.e;
-        uri.getClass();
-        Uri.Builder buildUpon = uri.buildUpon();
-        k44 k44Var = (k44) this.f;
-        k44Var.getClass();
-        rg5 rg5Var = (rg5) k44Var.b;
-        jte.p(rg5Var.k);
-        String str = rg5Var.l;
-        String valueOf = String.valueOf(rg5Var.c.b());
-        ntd.a("_HLS_pathway", str);
-        ntd.a("_HLS_throughput", valueOf);
-        for (Map.Entry entry : new TreeMap(d89.g(2, new Object[]{"_HLS_pathway", str, "_HLS_throughput", valueOf}, null)).entrySet()) {
-            buildUpon.appendQueryParameter((String) entry.getKey(), (String) entry.getValue());
-        }
-        Map map = Collections.EMPTY_MAP;
-        Uri build = buildUpon.build();
-        build.getClass();
-        dx7 dx7Var = new dx7(((wx4) this.b).createDataSource(), new g83(build, 1, null, map, 0L, -1L, null, 0), 8, new k4f((byte) 26));
-        mx6 mx6Var = (mx6) this.j;
-        mx6Var.getClass();
-        mx6Var.v0(dx7Var, (oo8) this.c, 0);
-    }
-
-    public final void c(cx8 cx8Var) {
-        if (cx8Var != null) {
-            this.c = cx8Var;
-            float f = cx8Var.d;
-            float f2 = cx8Var.c;
-            PointF[] pointFArr = cx8Var.b;
-            if (!this.a) {
-                ((ln) this.e).e(true, f2);
-                ((ln) this.f).e(true, f);
-                for (int i = 0; i < Math.min(4, pointFArr.length); i++) {
-                    ((ln[]) this.g)[i].e(true, pointFArr[i].x - f2);
-                    ((ln[]) this.h)[i].e(true, pointFArr[i].y - f);
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0085 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0072  */
+    @Override // ga4
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String b() {
+        bf0 bf0Var;
+        byte[] bArr;
+        File file = this.a;
+        if (file.exists()) {
+            if (this.b == null) {
+                try {
+                    this.b = new cx8(file);
+                } catch (IOException e) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e);
                 }
             }
+            cx8 cx8Var = this.b;
+            if (cx8Var != null) {
+                int[] iArr = {0};
+                int i = 16;
+                if (cx8Var.c != 0) {
+                    zw8 zw8Var = cx8Var.e;
+                    int i2 = zw8Var.b;
+                    int i3 = cx8Var.d.b;
+                    int i4 = zw8Var.c;
+                    i = i2 >= i3 ? 16 + (i2 - i3) + 4 + i4 : (((i2 + 4) + i4) + cx8Var.b) - i3;
+                }
+                byte[] bArr2 = new byte[i];
+                try {
+                    cx8Var.a(new sk4(bArr2, iArr, (byte) 18));
+                } catch (IOException e2) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e2);
+                }
+                bf0Var = new bf0(iArr[0], bArr2);
+                if (bf0Var != null) {
+                    bArr = null;
+                } else {
+                    int i5 = bf0Var.b;
+                    bArr = new byte[i5];
+                    System.arraycopy(bf0Var.a, 0, bArr, 0, i5);
+                }
+                if (bArr == null) {
+                    return new String(bArr, c);
+                }
+                return null;
+            }
         }
-        this.a = cx8Var != null;
-        ((yl2) this.b).run();
-    }
-
-    public dx8(wx4 wx4Var) {
-        this.b = wx4Var;
-        this.c = new oo8(this, (byte) 16);
-        this.d = new dfb(new Handler(hac.z(), null));
+        bf0Var = null;
+        if (bf0Var != null) {
+        }
+        if (bArr == null) {
+        }
     }
 }

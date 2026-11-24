@@ -1,38 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.graphics.Canvas;
+import android.view.View;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n8b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ v9b b;
-    public final /* synthetic */ boolean c;
+public abstract class n8b {
+    public abstract void a(Canvas canvas, float f);
 
-    public /* synthetic */ n8b(v9b v9bVar, boolean z, byte b) {
-        this.a = b;
-        this.b = v9bVar;
-        this.c = z;
-    }
+    public abstract void b(boolean z);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.c;
-        v9b v9bVar = this.b;
-        switch (b) {
-            case 0:
-                v9bVar.c(z);
-                break;
-            case 1:
-                if (!z) {
-                    v9bVar.K0.b(false, false);
-                    break;
-                }
-                break;
-            default:
-                v9bVar.S = null;
-                v9bVar.e = false;
-                v9bVar.o(z);
-                break;
-        }
-    }
+    public abstract void c(View view);
 }

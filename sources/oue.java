@@ -1,18 +1,12 @@
 // default package
 
-import java.lang.ref.Reference;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class oue {
-    public static void a(ArrayList arrayList, Object obj) {
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            Object obj2 = ((Reference) arrayList.get(size)).get();
-            if (obj2 == null || obj2 == obj) {
-                arrayList.remove(size);
-                return;
-            }
+    public static String a(String str) {
+        if ("null".equals(str) || "".equals(str)) {
+            return null;
         }
+        return str;
     }
 }

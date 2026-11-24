@@ -1,21 +1,15 @@
 // default package
 
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class ap4 {
-    public final /* synthetic */ dp4 a;
+    public final long a;
+    public final boolean b;
+    public final int c;
 
-    public ap4(dp4 dp4Var) {
-        this.a = dp4Var;
-    }
-
-    public final void a() {
-        dp4 dp4Var = this.a;
-        dp4Var.h0.e();
-        oed.b(dp4Var);
-        Bundle bundle = dp4Var.b;
-        dp4Var.h0.f(bundle != null ? bundle.getBundle("registryState") : null);
+    public ap4(int i, long j, boolean z) {
+        this.a = j;
+        this.b = z;
+        this.c = i;
     }
 }

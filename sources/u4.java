@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class u4 {
     public static int c;
@@ -148,7 +148,7 @@ public final class u4 {
         ArrayList arrayList = new ArrayList();
         int size = actionList.size();
         for (int i = 0; i < size; i++) {
-            arrayList.add(new r4(actionList.get(i), 0, null, null, null));
+            arrayList.add(new r4(actionList.get(i), 0, null, null));
         }
         return arrayList;
     }
@@ -299,7 +299,7 @@ public final class u4 {
         sb.append("; maxTextLength: ");
         sb.append(accessibilityNodeInfo.getMaxTextLength());
         sb.append("; stateDescription: ");
-        sb.append(i >= 30 ? via.l(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY"));
+        sb.append(i >= 30 ? tga.l(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY"));
         sb.append("; contentDescription: ");
         sb.append(accessibilityNodeInfo.getContentDescription());
         sb.append("; tooltipText: ");
@@ -347,11 +347,11 @@ public final class u4 {
         ArrayList d = d();
         for (int i2 = 0; i2 < d.size(); i2++) {
             r4 r4Var = (r4) d.get(i2);
-            int a = r4Var.a();
             Object obj = r4Var.a;
-            String e = e(a);
-            if (e.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel() != null) {
-                e = ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel().toString();
+            Object obj2 = r4Var.a;
+            String e = e(((AccessibilityNodeInfo.AccessibilityAction) obj).getId());
+            if (e.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel() != null) {
+                e = ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel().toString();
             }
             sb.append(e);
             if (i2 != d.size() - 1) {

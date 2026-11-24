@@ -1,29 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ta0 extends r84 {
-    public final sa0 a;
-
-    public ta0(sa0 sa0Var) {
-        this.a = sa0Var;
-    }
-
+public final class ta0 {
     public final boolean equals(Object obj) {
-        if (obj == this) {
+        if (this == obj) {
             return true;
         }
-        if (!(obj instanceof r84)) {
+        if (obj == null || ta0.class != obj.getClass()) {
             return false;
         }
-        return this.a.equals(((ta0) ((r84) obj)).a);
+        return true;
     }
 
     public final int hashCode() {
-        return 1000003 ^ this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "ExternalPrivacyContext{prequest=" + this.a + "}";
+        return 16337;
     }
 }

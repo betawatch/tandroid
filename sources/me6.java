@@ -1,48 +1,28 @@
 // default package
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class me6 implements Runnable {
+public final /* synthetic */ class me6 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ zf6 b;
+    public final /* synthetic */ qe6 b;
 
-    public /* synthetic */ me6(zf6 zf6Var, byte b) {
+    public /* synthetic */ me6(qe6 qe6Var, byte b) {
         this.a = b;
-        this.b = zf6Var;
+        this.b = qe6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         byte b = this.a;
-        zf6 zf6Var = this.b;
+        qe6 qe6Var = this.b;
         switch (b) {
             case 0:
-                zf6Var.N.m();
-                break;
-            case 1:
-                zf6Var.O = null;
-                zf6Var.P = null;
-                zf6Var.o(true);
-                zf6Var.e.m(null, null, zf6Var.f, null);
-                cj1 cj1Var = zf6Var.n;
-                p09 p09Var = zf6Var.K;
-                cj1Var.setAnimation(p09Var);
-                p09Var.H(0);
-                zf6Var.M = true;
-                break;
-            case 2:
-                zf6Var.M = true;
+                qe6Var.v0.finishFragment();
                 break;
             default:
-                EditTextBoldCursor editTextBoldCursor = zf6Var.c;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                    gm.E3(editTextBoldCursor);
-                    break;
-                }
+                qe6Var.v0.finishFragment();
                 break;
         }
     }

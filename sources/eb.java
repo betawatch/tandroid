@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class eb extends FrameLayout {
     public final cb E;
@@ -35,99 +35,99 @@ public final class eb extends FrameLayout {
     public int J;
     public float K;
     public boolean L;
-    public iu M;
-    public xt N;
-    public xt O;
+    public ht M;
+    public ws N;
+    public ws O;
     public AsyncTask P;
-    public final rk5 a;
+    public final si5 a;
     public boolean b;
-    public final fg0 c;
+    public final ff0 c;
     public final FrameLayout d;
     public final FrameLayout e;
     public final ImageView f;
-    public final fg0 h;
+    public final ff0 h;
     public final ImageView n;
     public final TextView r;
     public final TextView s;
-    public final o72 w;
+    public final d62 w;
     public final va x;
     public final ArrayList y;
 
     public eb(Activity activity) {
         super(activity);
-        int i = z8c.t0;
+        int i = y6c.t0;
         this.y = new ArrayList();
         this.K = 0.0f;
         setWillNotDraw(false);
-        int i2 = z8c.t0;
+        int i2 = y6c.t0;
         f fVar = new f(this, (byte) 5);
         ta taVar = new ta(this);
-        rk5 rk5Var = new rk5((ylb) null);
-        this.a = rk5Var;
-        va vaVar = new va(this, activity, i2, fVar, taVar, rk5Var);
+        si5 si5Var = new si5((wjb) null);
+        this.a = si5Var;
+        va vaVar = new va(this, activity, i2, fVar, taVar, si5Var);
         this.x = vaVar;
         vaVar.g3.r = false;
         vaVar.setOverScrollMode(2);
         vaVar.setPadding(0, 0, 0, 0);
-        addView(vaVar, qoe.e(-1, -1, nm7.D1));
+        addView(vaVar, nme.e(-1, -1, kk7.D1));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
         this.e = frameLayout2;
-        fg0 Z = cmb.Z(this.H, this.J, 15, 15);
+        ff0 Z = bkb.Z(this.H, this.J, 15, 15);
         this.c = Z;
         frameLayout2.setBackground(Z);
-        rve.b(frameLayout2, 0.04f, 1.25f);
-        frameLayout.addView(frameLayout2, qoe.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
+        ote.b(frameLayout2, 0.04f, 1.25f);
+        frameLayout.addView(frameLayout2, nme.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
         ImageView imageView = new ImageView(activity);
         this.f = imageView;
-        frameLayout2.addView(imageView, qoe.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
+        frameLayout2.addView(imageView, nme.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
         ImageView imageView2 = new ImageView(activity);
         this.n = imageView2;
-        rve.a(imageView2);
+        ote.a(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
-        fg0 Z2 = cmb.Z(0, 0, 6, 6);
+        ff0 Z2 = bkb.Z(0, 0, 6, 6);
         this.h = Z2;
         imageView2.setBackground(Z2);
-        frameLayout2.addView(imageView2, qoe.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
+        frameLayout2.addView(imageView2, nme.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        frameLayout2.addView(linearLayout, qoe.d(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
+        frameLayout2.addView(linearLayout, nme.d(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
         TextView textView = new TextView(activity);
         this.r = textView;
         textView.setTextSize(1, 16.0f);
-        textView.setTypeface(gm.o());
+        textView.setTypeface(gl.o());
         textView.setMaxLines(4);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView, qoe.t(-1, -2, 55, 0, 0, 0, 2));
+        linearLayout.addView(textView, nme.t(-1, -2, 55, 0, 0, 0, 2));
         TextView textView2 = new TextView(activity);
         this.s = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        linearLayout.addView(textView2, qoe.t(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(textView2, nme.t(-1, -2, 55, 0, 0, 0, 0));
         this.E = new cb(null, i, new b1(this, (byte) 6));
-        this.w = new o72(activity, (byte) 1);
-        int i3 = cmb.Fl;
-        c(cmb.w0(null, i3, false), gm.B(cmb.w0(null, i3, false)) >= 0.721f ? -16777216 : -1);
+        this.w = new d62(activity, (byte) 1);
+        int i3 = bkb.Fl;
+        c(bkb.w0(null, i3, false), gl.B(bkb.w0(null, i3, false)) >= 0.721f ? -16777216 : -1);
         setOpenProgress(0.0f);
         setImportantForAccessibility(4);
     }
 
-    public static String a(k47 k47Var) {
-        TLRPC.Message message = k47Var.k;
+    public static String a(k27 k27Var) {
+        TLRPC.Message message = k27Var.k;
         if (message != null) {
             TLRPC.MessageMedia messageMedia = message.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 return messageMedia.webpage.url;
             }
         }
-        CharSequence charSequence = k47Var.v;
+        CharSequence charSequence = k27Var.v;
         if (charSequence == null || charSequence.length() <= 0) {
             return null;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k47Var.v);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k27Var.v);
         for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
             String url = uRLSpan.getURL();
             if (url != null && !url.startsWith("@") && !url.startsWith("#") && !url.startsWith("$")) {
@@ -168,7 +168,7 @@ public final class eb extends FrameLayout {
                         sharedPreferences2 = sharedPreferences;
                     } catch (Exception e) {
                         e = e;
-                        fc4.g(e, true);
+                        fa4.g(e, true);
                         i = 0;
                         while (true) {
                             try {
@@ -176,7 +176,7 @@ public final class eb extends FrameLayout {
                                 }
                                 i++;
                             } catch (Exception e2) {
-                                fc4.g(e2, true);
+                                fa4.g(e2, true);
                                 return;
                             }
                         }
@@ -237,34 +237,34 @@ public final class eb extends FrameLayout {
             invalidate();
         }
         this.I = i2;
-        float f = gm.B(i) >= 0.721f ? 0.0f : 1.0f;
-        this.H = on2.f(gm.R1(0.05f, 0.12f, f), i, i2);
+        float f = gl.B(i) >= 0.721f ? 0.0f : 1.0f;
+        this.H = bm2.f(gl.R1(0.05f, 0.12f, f), i, i2);
         this.G = i;
-        this.J = on2.f(gm.R1(0.12f, 0.22f, f), i, i2);
+        this.J = bm2.f(gl.R1(0.12f, 0.22f, f), i, i2);
         int i3 = this.H;
-        fg0 fg0Var = this.c;
-        cmb.F1(fg0Var, i3, false);
-        cmb.F1(fg0Var, this.J, true);
+        ff0 ff0Var = this.c;
+        bkb.F1(ff0Var, i3, false);
+        bkb.F1(ff0Var, this.J, true);
         this.e.invalidate();
         this.r.setTextColor(i2);
-        this.s.setTextColor(cmb.p1(0.6f, i2));
+        this.s.setTextColor(bkb.p1(0.6f, i2));
         ImageView imageView = this.f;
         if (imageView.getColorFilter() != null) {
             imageView.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.SRC_IN));
         }
         this.n.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.SRC_IN));
-        cmb.F1(this.h, cmb.p1(1.5f, this.J), true);
-        int v = cmb.v(i, cmb.p1(0.05f, i2));
-        int v2 = cmb.v(i, cmb.p1(0.55f, i2));
-        rk5 rk5Var = this.a;
-        SparseIntArray sparseIntArray = (SparseIntArray) rk5Var.b;
-        SparseIntArray sparseIntArray2 = (SparseIntArray) rk5Var.b;
-        sparseIntArray.put(cmb.c6, this.G);
-        sparseIntArray2.put(cmb.F6, i2);
-        sparseIntArray2.put(cmb.d7, v);
-        sparseIntArray2.put(cmb.e7, v2);
-        sparseIntArray2.put(cmb.F8, cmb.p1(0.2f, i2));
-        sparseIntArray2.put(cmb.h6, cmb.p1(gm.R1(0.05f, 0.12f, f), i2));
+        bkb.F1(this.h, bkb.p1(1.5f, this.J), true);
+        int v = bkb.v(i, bkb.p1(0.05f, i2));
+        int v2 = bkb.v(i, bkb.p1(0.55f, i2));
+        si5 si5Var = this.a;
+        SparseIntArray sparseIntArray = (SparseIntArray) si5Var.b;
+        SparseIntArray sparseIntArray2 = (SparseIntArray) si5Var.b;
+        sparseIntArray.put(bkb.c6, this.G);
+        sparseIntArray2.put(bkb.F6, i2);
+        sparseIntArray2.put(bkb.d7, v);
+        sparseIntArray2.put(bkb.e7, v2);
+        sparseIntArray2.put(bkb.F8, bkb.p1(0.2f, i2));
+        sparseIntArray2.put(bkb.h6, bkb.p1(gl.R1(0.05f, 0.12f, f), i2));
         this.x.h1();
     }
 
@@ -324,12 +324,12 @@ public final class eb extends FrameLayout {
             }
             return;
         }
-        li5 li5Var = new li5(new ra(b, this, z));
-        String str3 = ku9.a().c;
+        mg5 mg5Var = new mg5(new ra(b, this, z));
+        String str3 = is9.a().c;
         if (str3 != null) {
             str2 = str3 + URLEncoder.encode(str);
         }
-        this.P = li5Var.execute(str2);
+        this.P = mg5Var.execute(str2);
     }
 
     public void setOpenProgress(float f) {

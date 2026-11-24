@@ -1,139 +1,132 @@
 // default package
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class qk8 extends View {
-    public final /* synthetic */ rk8 a;
+public final class qk8 extends TextView {
+    public final /* synthetic */ byte a = 0;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ FrameLayout d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk8(rk8 rk8Var, Context context) {
+    public qk8(bgc bgcVar, Context context) {
         super(context);
-        this.a = rk8Var;
+        this.d = bgcVar;
+        Paint paint = new Paint();
+        this.b = paint;
+        this.c = new Paint[bgcVar.e.length];
+        ye7 ye7Var = bgcVar.S;
+        ye7Var.setBounds(0, 0, 80, 80);
+        ye7 ye7Var2 = bgcVar.T;
+        ye7Var2.setBounds(0, 0, 80, 80);
+        ep epVar = bgcVar.Q;
+        epVar.i(0.0f, 0.0f, 80.0f, 80.0f);
+        ep epVar2 = bgcVar.R;
+        epVar2.i(0.0f, 0.0f, 80.0f, 80.0f);
+        ye7Var.setAlpha(kk7.d4);
+        ye7Var2.setAlpha(kk7.d4);
+        Canvas canvas = (Canvas) epVar.b;
+        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
+        canvas.drawColor(0, mode);
+        ((Canvas) epVar2.b).drawColor(0, mode);
+        ye7Var.draw((Canvas) epVar.b);
+        ye7Var2.draw((Canvas) epVar2.b);
+        paint.setColor(-1);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0148  */
-    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00f8  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0051  */
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i;
+        byte b = this.a;
+        Object obj = this.c;
+        FrameLayout frameLayout = this.d;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                Paint paint = (Paint) obj2;
+                bgc bgcVar = (bgc) frameLayout;
+                qk8 qk8Var = bgcVar.c;
+                bgcVar.Q.i(-getX(), -getY(), bgcVar.getWidth() - getX(), bgcVar.getHeight() - getY());
+                bgcVar.R.i(-getX(), -getY(), bgcVar.getWidth() - getX(), bgcVar.getHeight() - getY());
+                RectF rectF = gl.P;
+                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                Paint[] paintArr = (Paint[]) obj;
+                paintArr[bgcVar.w].setAlpha(kk7.d4);
+                float L = gl.L(8.0f) + ((int) ((1.0f - bgcVar.E) * (gl.L(26.0f) - gl.L(8.0f))));
+                canvas.drawRoundRect(rectF, L, L, paintArr[bgcVar.w]);
+                float f = bgcVar.s;
+                if (f > 0.0f && (i = bgcVar.w + 1) < paintArr.length) {
+                    paintArr[i].setAlpha((int) (f * 255.0f));
+                    canvas.drawRoundRect(rectF, L, L, paintArr[bgcVar.w + 1]);
+                }
+                float f2 = bgcVar.E;
+                if (f2 < 1.0f) {
+                    paint.setAlpha((int) ((1.0f - f2) * 255.0f));
+                    canvas.drawRoundRect(rectF, L, L, paint);
+                }
+                super.onDraw(canvas);
+                if (bgcVar.P) {
+                    canvas.drawText(k96.M0(2131742998, null), getWidth() / 2, (int) ((getHeight() / 2) - ((qk8Var.getPaint().ascent() + qk8Var.getPaint().descent()) / 2.0f)), qk8Var.getPaint());
+                    break;
+                }
+                break;
+            default:
+                RectF rectF2 = (RectF) obj2;
+                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                xhc xhcVar = (xhc) frameLayout;
+                lfc lfcVar = (lfc) obj;
+                lfcVar.d(((View) xhcVar.getParent()).getX() + xhcVar.getX() + ((View) getParent()).getX() + getX(), ((View) xhcVar.getParent()).getY() + xhcVar.getY() + ((View) getParent()).getY() + getY());
+                canvas.drawRoundRect(rectF2, gl.L(16.0f), gl.L(16.0f), lfcVar.b());
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        ImageReceiver imageReceiver;
-        boolean z;
-        boolean z2;
-        super.draw(canvas);
-        rk8 rk8Var = this.a;
-        fj8 fj8Var = rk8Var.w;
-        ImageReceiver imageReceiver2 = rk8Var.c;
-        ImageReceiver imageReceiver3 = rk8Var.d;
-        if (rk8Var.s) {
-            imageReceiver2.d0(gn5.b(rk8Var.r), null, eq3.f(rk8Var.r, cmb.Z6, 0.5f, null), "webp", null, 1);
-            if (k47.W3(rk8Var.r)) {
-                imageReceiver = imageReceiver3;
-                imageReceiver.b0(gn5.d(k47.F1(rk8Var.r), rk8Var.r), "140_140", null, null, "tgs", null, 1);
-                if (!rk8Var.e) {
-                    if (rk8Var.h == 0.0f) {
-                        rk8Var.h = 1.0f;
-                        if (imageReceiver.y() != null) {
-                            imageReceiver.y().I(0, false, false);
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 0:
+                bgc bgcVar = (bgc) this.d;
+                ep epVar = bgcVar.Q;
+                super.onSizeChanged(i, i2, i3, i4);
+                int i5 = 0;
+                while (true) {
+                    Paint[] paintArr = (Paint[]) this.c;
+                    if (i5 >= paintArr.length) {
+                        break;
+                    } else {
+                        if (i5 == 0) {
+                            paintArr[i5] = (Paint) epVar.a;
+                        } else if (i5 == 1) {
+                            paintArr[i5] = (Paint) bgcVar.R.a;
+                        } else {
+                            paintArr[i5] = (Paint) epVar.a;
                         }
+                        i5++;
                     }
-                    if (imageReceiver.y() != null) {
-                        imageReceiver.y().start();
-                    }
-                    if (imageReceiver.y() != null && imageReceiver.y().v() && fj8Var.v3) {
-                        gm.r(fj8Var.m3);
-                        gm.d3(fj8Var.m3, 0L);
-                    }
-                } else if (imageReceiver.y() != null) {
-                    imageReceiver.y().stop();
                 }
-                if (rk8Var.f) {
-                    if (imageReceiver2.y() != null) {
-                        imageReceiver2.y().stop();
-                    }
-                } else if (imageReceiver2.y() != null) {
-                    imageReceiver2.y().start();
-                }
-                z = rk8Var.f;
-                float f = rk8Var.n;
-                if (z) {
-                    if (f != 0.0f) {
-                        rk8Var.n = f - 0.10666667f;
-                        invalidate();
-                    }
-                } else if (f != 1.0f) {
-                    rk8Var.n = f + 0.10666667f;
-                    invalidate();
-                }
-                rk8Var.n = Utilities.i(rk8Var.n, 1.0f, 0.0f);
-                z2 = rk8Var.e;
-                float f2 = rk8Var.h;
-                if (z2) {
-                    if (f2 != 0.0f) {
-                        rk8Var.h = f2 - 0.10666667f;
-                        invalidate();
-                    }
-                } else if (f2 != 1.0f) {
-                    rk8Var.h = f2 + 0.10666667f;
-                    invalidate();
-                }
-                rk8Var.h = Utilities.i(rk8Var.h, 1.0f, 0.0f);
-                float f3 = fj8Var.s3 * 0.45f;
-                float f4 = 1.499267f * f3;
-                float measuredWidth = getMeasuredWidth() - f4;
-                float measuredHeight = (getMeasuredHeight() - f4) / 2.0f;
-                float f5 = f4 - f3;
-                imageReceiver2.i0((f5 - (0.02f * f4)) + measuredWidth, (f5 / 2.0f) + measuredHeight, f3, f3);
-                imageReceiver2.setAlpha((rk8Var.n * 0.7f) + 0.3f);
-                imageReceiver2.h(canvas, null);
-                if (rk8Var.h == 0.0f) {
-                    imageReceiver.i0(measuredWidth, measuredHeight, f4, f4);
-                    imageReceiver.setAlpha(rk8Var.h);
-                    imageReceiver.h(canvas, null);
-                    return;
-                }
-                return;
-            }
+            default:
+                super.onSizeChanged(i, i2, i3, i4);
+                break;
         }
-        imageReceiver = imageReceiver3;
-        if (!rk8Var.e) {
-        }
-        if (rk8Var.f) {
-        }
-        z = rk8Var.f;
-        float f6 = rk8Var.n;
-        if (z) {
-        }
-        rk8Var.n = Utilities.i(rk8Var.n, 1.0f, 0.0f);
-        z2 = rk8Var.e;
-        float f22 = rk8Var.h;
-        if (z2) {
-        }
-        rk8Var.h = Utilities.i(rk8Var.h, 1.0f, 0.0f);
-        float f32 = fj8Var.s3 * 0.45f;
-        float f42 = 1.499267f * f32;
-        float measuredWidth2 = getMeasuredWidth() - f42;
-        float measuredHeight2 = (getMeasuredHeight() - f42) / 2.0f;
-        float f52 = f42 - f32;
-        imageReceiver2.i0((f52 - (0.02f * f42)) + measuredWidth2, (f52 / 2.0f) + measuredHeight2, f32, f32);
-        imageReceiver2.setAlpha((rk8Var.n * 0.7f) + 0.3f);
-        imageReceiver2.h(canvas, null);
-        if (rk8Var.h == 0.0f) {
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qk8(xhc xhcVar, Activity activity, lfc lfcVar) {
+        super(activity);
+        this.d = xhcVar;
+        this.c = lfcVar;
+        this.b = new RectF();
+        lfcVar.a(this);
     }
 }

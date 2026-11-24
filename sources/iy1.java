@@ -1,21 +1,46 @@
 // default package
 
-import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.l;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class iy1 implements ViewTreeObserver.OnDrawListener {
-    public final /* synthetic */ dka a;
-    public final /* synthetic */ k6a b;
+public final /* synthetic */ class iy1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ l b;
+    public final /* synthetic */ je5 c;
 
-    public iy1(dka dkaVar, k6a k6aVar) {
-        this.a = dkaVar;
-        this.b = k6aVar;
+    public /* synthetic */ iy1(l lVar, je5 je5Var, byte b) {
+        this.a = b;
+        this.b = lVar;
+        this.c = je5Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnDrawListener
-    public final void onDraw() {
-        dka dkaVar = this.a;
-        dkaVar.post(new co1(this, dkaVar, this.b, (byte) 10));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        je5 je5Var = this.c;
+        l lVar = this.b;
+        switch (b) {
+            case 0:
+                lVar.removeView(je5Var);
+                if (lVar.b == je5Var) {
+                    lVar.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                lVar.removeView(je5Var);
+                break;
+            case 2:
+                lVar.removeView(je5Var);
+                break;
+            default:
+                lVar.removeView(je5Var);
+                if (lVar.a == je5Var) {
+                    lVar.a = null;
+                    break;
+                }
+                break;
+        }
     }
 }

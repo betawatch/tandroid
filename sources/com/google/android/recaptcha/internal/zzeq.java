@@ -6,29 +6,29 @@ import com.google.android.recaptcha.RecaptchaClient;
 import com.google.android.recaptcha.RecaptchaTasksClient;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
-    private static final j79 zza = new j79("^[a-zA-Z0-9/_]{1,100}$");
+    private static final h59 zza = new h59("^[a-zA-Z0-9/_]{1,100}$");
     private final zzdw zzb;
     private final String zzc;
     private final zzhh zzd;
-    private final d26 zze;
+    private final d06 zze;
 
     public zzeq(zzdw zzdwVar, String str, zzhh zzhhVar) {
         this.zzb = zzdwVar;
         this.zzc = str;
         this.zzd = zzhhVar;
         int i = zzby.zza;
-        this.zze = fpe.b(zzep.zza);
+        this.zze = cne.b(zzep.zza);
     }
 
     public static final void zzd(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction) {
-        j79 j79Var = zza;
+        h59 h59Var = zza;
         String action = recaptchaAction.getAction();
-        j79Var.getClass();
+        h59Var.getClass();
         action.getClass();
-        zzcg zzcgVar = !j79Var.a.matcher(action).matches() ? new zzcg(zzce.zzg, zzcd.zzh, null, null, 12, null) : null;
+        zzcg zzcgVar = !h59Var.a.matcher(action).matches() ? new zzcg(zzce.zzg, zzcd.zzh, null, null, 12, null) : null;
         if (j < 5000) {
             zzcgVar = new zzcg(zzce.zzb, zzcd.zzI, null, null, 12, null);
         }
@@ -43,42 +43,42 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zze(RecaptchaAction recaptchaAction, long j, px2 px2Var) {
+    public final Object zze(RecaptchaAction recaptchaAction, long j, fw2 fw2Var) {
         zzek zzekVar;
         int i;
-        if (px2Var instanceof zzek) {
-            zzekVar = (zzek) px2Var;
+        if (fw2Var instanceof zzek) {
+            zzekVar = (zzek) fw2Var;
             int i2 = zzekVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzekVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzekVar.zza;
                 i = zzekVar.zzc;
                 if (i != 0) {
-                    tue.b(obj);
+                    qse.b(obj);
                     zzhh zzhhVar = this.zzd;
                     zzem zzemVar = new zzem(this, j, recaptchaAction, null);
                     zzekVar.zzc = 1;
                     obj = zzemVar.invoke(zzhhVar, zzekVar);
-                    ly2 ly2Var = ly2.a;
-                    if (obj == ly2Var) {
-                        return ly2Var;
+                    bx2 bx2Var = bx2.a;
+                    if (obj == bx2Var) {
+                        return bx2Var;
                     }
                 } else {
                     if (i != 1) {
-                        dq9.m("call to 'resume' before 'invoke' with coroutine");
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
                         return null;
                     }
-                    tue.b(obj);
+                    qse.b(obj);
                 }
-                return ((tc9) obj).a;
+                return ((ta9) obj).a;
             }
         }
-        zzekVar = new zzek(this, px2Var);
+        zzekVar = new zzek(this, fw2Var);
         Object obj2 = zzekVar.zza;
         i = zzekVar.zzc;
         if (i != 0) {
         }
-        return ((tc9) obj2).a;
+        return ((ta9) obj2).a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0030  */
@@ -87,11 +87,11 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j, px2 px2Var) {
+    public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j, fw2 fw2Var) {
         zzei zzeiVar;
         int i;
-        if (px2Var instanceof zzei) {
-            zzeiVar = (zzei) px2Var;
+        if (fw2Var instanceof zzei) {
+            zzeiVar = (zzei) fw2Var;
             int i2 = zzeiVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzeiVar.zzc = i2 - TLObject.FLAG_31;
@@ -99,20 +99,20 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                 i = zzeiVar.zzc;
                 if (i == 0) {
                     if (i == 1) {
-                        tue.b(obj);
-                        return ((tc9) obj).a;
+                        qse.b(obj);
+                        return ((ta9) obj).a;
                     }
-                    dq9.m("call to 'resume' before 'invoke' with coroutine");
+                    sc8.j("call to 'resume' before 'invoke' with coroutine");
                     return null;
                 }
-                tue.b(obj);
+                qse.b(obj);
                 zzeiVar.zzc = 1;
                 Object zze = zze(recaptchaAction, j, zzeiVar);
-                Object obj2 = ly2.a;
+                Object obj2 = bx2.a;
                 return zze == obj2 ? obj2 : zze;
             }
         }
-        zzeiVar = new zzei(this, px2Var);
+        zzeiVar = new zzei(this, fw2Var);
         Object obj3 = zzeiVar.zza;
         i = zzeiVar.zzc;
         if (i == 0) {
@@ -125,11 +125,11 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, px2 px2Var) {
+    public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, fw2 fw2Var) {
         zzej zzejVar;
         int i;
-        if (px2Var instanceof zzej) {
-            zzejVar = (zzej) px2Var;
+        if (fw2Var instanceof zzej) {
+            zzejVar = (zzej) fw2Var;
             int i2 = zzejVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzejVar.zzc = i2 - TLObject.FLAG_31;
@@ -137,20 +137,20 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                 i = zzejVar.zzc;
                 if (i == 0) {
                     if (i == 1) {
-                        tue.b(obj);
-                        return ((tc9) obj).a;
+                        qse.b(obj);
+                        return ((ta9) obj).a;
                     }
-                    dq9.m("call to 'resume' before 'invoke' with coroutine");
+                    sc8.j("call to 'resume' before 'invoke' with coroutine");
                     return null;
                 }
-                tue.b(obj);
+                qse.b(obj);
                 zzejVar.zzc = 1;
                 Object obj2 = execute-0E7RQCE(recaptchaAction, 10000L, zzejVar);
-                Object obj3 = ly2.a;
+                Object obj3 = bx2.a;
                 return obj2 == obj3 ? obj3 : obj2;
             }
         }
-        zzejVar = new zzej(this, px2Var);
+        zzejVar = new zzej(this, fw2Var);
         Object obj4 = zzejVar.zza;
         i = zzejVar.zzc;
         if (i == 0) {
@@ -159,7 +159,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
 
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
     public final Task<String> executeTask(RecaptchaAction recaptchaAction) {
-        return zzbv.zza(srd.a(((zzcr) this.zze.getValue()).zzb(), new zzen(this, recaptchaAction, 10000L, null)));
+        return zzbv.zza(ppd.a(((zzcr) this.zze.getValue()).zzb(), new zzen(this, recaptchaAction, 10000L, null)));
     }
 
     public final String zzc() {
@@ -168,6 +168,6 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
 
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
     public final Task<String> executeTask(RecaptchaAction recaptchaAction, long j) {
-        return zzbv.zza(srd.a(((zzcr) this.zze.getValue()).zzb(), new zzen(this, recaptchaAction, j, null)));
+        return zzbv.zza(ppd.a(((zzcr) this.zze.getValue()).zzb(), new zzen(this, recaptchaAction, j, null)));
     }
 }

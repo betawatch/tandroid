@@ -1,6 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class f4c {
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class f4c extends MetricAffectingSpan {
+    public final CharSequence a;
+    public final int b;
+    public final int c;
+    public final byte d;
+    public final vib e;
+
+    public f4c(CharSequence charSequence, int i, int i2, byte b, vib vibVar) {
+        this.a = charSequence;
+        this.b = i;
+        this.c = i2;
+        this.d = b;
+        this.e = vibVar;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setTextSize(gl.L(gba.S0 - 1));
+        byte b = this.d;
+        if (b == 2) {
+            textPaint.setColor(-1);
+        } else if (b == 1) {
+            textPaint.setColor(bkb.w0(null, bkb.Vc, false));
+        } else {
+            textPaint.setColor(bkb.w0(null, bkb.Uc, false));
+        }
+        vib vibVar = this.e;
+        if (vibVar != null) {
+            vibVar.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+            textPaint.setUnderlineText(false);
+        }
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.setTextSize(gl.L(gba.S0 - 1));
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        vib vibVar = this.e;
+        if (vibVar != null) {
+            vibVar.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+        }
+    }
 }

@@ -1,174 +1,242 @@
 // default package
 
-import java.lang.reflect.Array;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class si5 extends mx6 {
-    public qk0 F;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public class si5 implements wjb {
+    public final /* synthetic */ byte a;
+    public Object b;
+    public Object c;
 
-    @Override // mx6
-    public final qk0 J() {
-        byte[] bArr;
-        qk0 qk0Var = this.F;
-        if (qk0Var != null) {
-            return qk0Var;
+    public si5(wjb wjbVar) {
+        this.a = (byte) 2;
+        this.b = new SparseIntArray();
+        this.c = wjbVar;
+        k();
+    }
+
+    @Override // wjb
+    public final boolean a() {
+        switch (this.a) {
+            case 0:
+            default:
+                return bkb.I.o();
+            case 1:
+                return true;
         }
-        gi6 gi6Var = (gi6) this.b;
-        int i = gi6Var.a;
-        int i2 = gi6Var.b;
-        if (i < 40 || i2 < 40) {
-            qk0 J = super.J();
-            this.F = J;
-            return J;
-        }
-        byte[] a = gi6Var.a();
-        int i3 = i >> 3;
-        if ((i & 7) != 0) {
-            i3++;
-        }
-        int i4 = i2 >> 3;
-        if ((i2 & 7) != 0) {
-            i4++;
-        }
-        int i5 = i2 - 8;
-        int i6 = i - 8;
-        boolean z = true;
-        int i7 = 0;
-        int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, i4, i3);
-        int i8 = 0;
-        while (true) {
-            int i9 = 8;
-            if (i8 >= i4) {
+    }
+
+    @Override // wjb
+    public final void b(float f, float f2, int i, int i2) {
+        switch (this.a) {
+            case 0:
+            case 1:
+                bkb.q(f, f2, i, i2);
                 break;
-            }
-            int i10 = i8 << 3;
-            if (i10 > i5) {
-                i10 = i5;
-            }
-            boolean z2 = z;
-            int i11 = i7;
-            while (i11 < i3) {
-                int i12 = i11 << 3;
-                if (i12 > i6) {
-                    i12 = i6;
+            default:
+                wjb wjbVar = (wjb) this.c;
+                if (wjbVar != null) {
+                    wjbVar.b(f, f2, i, i2);
+                    break;
+                } else {
+                    bkb.q(f, f2, i, i2);
+                    break;
                 }
-                int i13 = (i10 * i) + i12;
-                int i14 = nm7.d4;
-                int i15 = 0;
-                int i16 = 0;
-                int i17 = 0;
-                while (true) {
-                    bArr = a;
-                    if (i15 >= i9) {
-                        break;
-                    }
-                    int i18 = i17;
-                    int i19 = 0;
-                    while (i19 < i9) {
-                        int i20 = i19;
-                        int i21 = bArr[i13 + i19] & 255;
-                        i16 += i21;
-                        if (i21 < i14) {
-                            i14 = i21;
-                        }
-                        if (i21 > i18) {
-                            i18 = i21;
-                        }
-                        i19 = i20 + 1;
-                        i9 = 8;
-                    }
-                    if (i18 - i14 > 24) {
-                        while (true) {
-                            i15++;
-                            i13 += i;
-                            if (i15 < 8) {
-                                int i22 = 0;
-                                for (int i23 = 8; i22 < i23; i23 = 8) {
-                                    i16 += bArr[i13 + i22] & 255;
-                                    i22++;
-                                    i14 = i14;
-                                }
-                            }
-                        }
-                    }
-                    i15++;
-                    i13 += i;
-                    i14 = i14;
-                    a = bArr;
-                    i9 = 8;
-                    i17 = i18;
-                }
-                int i24 = i16 >> 6;
-                if (i17 - i14 <= 24) {
-                    i24 = i14 / 2;
-                    if (i8 > 0 && i11 > 0) {
-                        int[] iArr2 = iArr[i8 - 1];
-                        int i25 = i11 - 1;
-                        int i26 = ((iArr2[i11] + (iArr[i8][i25] << 1)) + iArr2[i25]) / 4;
-                        if (i14 < i26) {
-                            i24 = i26;
-                        }
-                    }
-                }
-                iArr[i8][i11] = i24;
-                i11++;
-                a = bArr;
-                i9 = 8;
-            }
-            i8++;
-            z = z2;
-            i7 = 0;
         }
-        byte[] bArr2 = a;
-        qk0 qk0Var2 = new qk0(i, i2);
-        int i27 = 0;
-        while (i27 < i4) {
-            int i28 = i27 << 3;
-            if (i28 > i5) {
-                i28 = i5;
-            }
-            int min = i27 < 2 ? 2 : Math.min(i27, i4 - 3);
-            int i29 = 0;
-            while (i29 < i3) {
-                int i30 = i29 << 3;
-                if (i30 > i6) {
-                    i30 = i6;
+    }
+
+    @Override // wjb
+    public final ColorFilter c() {
+        switch (this.a) {
+            case 0:
+                return bkb.u3;
+            case 1:
+                PorterDuffColorFilter porterDuffColorFilter = (PorterDuffColorFilter) this.b;
+                if (porterDuffColorFilter != null) {
+                    return porterDuffColorFilter;
                 }
-                int min2 = i29 < 2 ? 2 : Math.min(i29, i3 - 3);
-                int i31 = -2;
-                int i32 = 0;
-                for (int i33 = 2; i31 <= i33; i33 = 2) {
-                    int[] iArr3 = iArr[min + i31];
-                    i32 = iArr3[min2 - 2] + iArr3[min2 - 1] + iArr3[min2] + iArr3[min2 + 1] + iArr3[min2 + 2] + i32;
-                    i31++;
+                PorterDuffColorFilter porterDuffColorFilter2 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+                this.b = porterDuffColorFilter2;
+                return porterDuffColorFilter2;
+            default:
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.u3 : wjbVar.c();
+        }
+    }
+
+    @Override // wjb
+    public final Paint d(String str) {
+        switch (this.a) {
+            case 0:
+                return bkb.T0(str);
+            case 1:
+                return ((f53) this.c).d(str);
+            default:
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.T0(str) : wjbVar.d(str);
+        }
+    }
+
+    @Override // wjb
+    public final boolean e() {
+        byte b = this.a;
+        return gba.D0;
+    }
+
+    @Override // wjb
+    public final int f(int i) {
+        switch (this.a) {
+            case 0:
+            case 1:
+                return h(i);
+            default:
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.w0(null, i, false) : wjbVar.f(i);
+        }
+    }
+
+    @Override // wjb
+    public final boolean g() {
+        switch (this.a) {
+            case 0:
+            case 1:
+                return false;
+            default:
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.b1() : wjbVar.g();
+        }
+    }
+
+    @Override // wjb
+    public final Drawable getDrawable(String str) {
+        switch (this.a) {
+            case 0:
+            case 1:
+                return null;
+            default:
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.P0(str) : wjbVar.getDrawable(str);
+        }
+    }
+
+    @Override // wjb
+    public final int h(int i) {
+        switch (this.a) {
+            case 0:
+                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+                int indexOfKey = sparseIntArray.indexOfKey(i);
+                return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : bkb.u0(i);
+            case 1:
+                if (i == bkb.F8) {
+                    return -14145495;
                 }
-                int i34 = i32 / 25;
-                int i35 = (i28 * i) + i30;
-                int i36 = i;
-                int i37 = 0;
-                while (true) {
-                    if (i37 < 8) {
-                        int i38 = i27;
-                        int i39 = 0;
-                        for (int i40 = 8; i39 < i40; i40 = 8) {
-                            int i41 = i39;
-                            if ((bArr2[i35 + i39] & 255) <= i34) {
-                                qk0Var2.c(i30 + i41, i28 + i37);
-                            }
-                            i39 = i41 + 1;
+                if (i != bkb.D8) {
+                    if (i == bkb.g5) {
+                        return -14737633;
+                    }
+                    if (i == bkb.i5) {
+                        return -592138;
+                    }
+                    if (i == bkb.q5) {
+                        return -8553091;
+                    }
+                    if (i == bkb.yf) {
+                        return -16777216;
+                    }
+                    if (i == bkb.Bf) {
+                        return -1610612736;
+                    }
+                    if (i == bkb.Ef || i == bkb.If || i == bkb.Df) {
+                        return -9539985;
+                    }
+                    if (i != bkb.F6) {
+                        int i2 = bkb.Ci;
+                        if (i == i2) {
+                            return -11754001;
                         }
-                        i37++;
-                        i35 += i36;
-                        i27 = i38;
+                        if (i == bkb.h6) {
+                            return 536870911;
+                        }
+                        if (i != bkb.vi && i != bkb.ui && i != bkb.wi) {
+                            if (i == bkb.xi) {
+                                return 352321535;
+                            }
+                            if (i == bkb.Af || i == i2) {
+                                return -7895161;
+                            }
+                            if (i == bkb.zf) {
+                                return 780633991;
+                            }
+                            if (i == bkb.Z6) {
+                                return -15921907;
+                            }
+                            f53 f53Var = (f53) this.c;
+                            return f53Var != null ? f53Var.h(i) : bkb.w0(null, i, false);
+                        }
                     }
                 }
-                i29++;
-                i = i36;
-            }
-            i27++;
+                return -1;
+            default:
+                SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
+                int indexOfKey2 = sparseIntArray2.indexOfKey(i);
+                if (indexOfKey2 >= 0) {
+                    return sparseIntArray2.valueAt(indexOfKey2);
+                }
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.w0(null, i, false) : wjbVar.h(i);
         }
-        this.F = qk0Var2;
-        return qk0Var2;
+    }
+
+    @Override // wjb
+    public final void i(int i, int i2) {
+        switch (this.a) {
+            case 0:
+            case 1:
+                break;
+            default:
+                wjb wjbVar = (wjb) this.c;
+                if (wjbVar != null) {
+                    wjbVar.i(i, i2);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // wjb
+    public final int j(int i) {
+        switch (this.a) {
+            case 0:
+                return ((SparseIntArray) this.b).get(i);
+            case 1:
+                return h(i);
+            default:
+                wjb wjbVar = (wjb) this.c;
+                return wjbVar == null ? bkb.w0(null, i, false) : wjbVar.j(i);
+        }
+    }
+
+    public /* synthetic */ si5() {
+        this.a = (byte) 0;
+    }
+
+    public si5(f53 f53Var) {
+        this.a = (byte) 1;
+        this.c = f53Var;
+    }
+
+    public void k() {
+    }
+
+    private final void l(int i, int i2) {
+    }
+
+    private final void m(int i, int i2) {
     }
 }

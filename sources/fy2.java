@@ -1,64 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.util.Log;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class fy2 extends c2 implements ay2 {
-    public static final ey2 b = new ey2(jk2.b, new dy2((byte) 0));
+public final class fy2 {
+    public static final c6e c = new c6e();
+    public final vq7 a;
+    public final AtomicReference b = new AtomicReference(null);
 
-    public fy2() {
-        super(jk2.b);
+    public fy2(vq7 vq7Var) {
+        this.a = vq7Var;
+        vq7Var.a(new vu2(this, (byte) 1));
     }
 
-    public void c(cy2 cy2Var, Runnable runnable) {
-        jc3.d.c(cy2Var, runnable);
+    public final c6e a() {
+        fy2 fy2Var = (fy2) this.b.get();
+        return fy2Var == null ? c : fy2Var.a();
     }
 
-    public boolean d(cy2 cy2Var) {
-        return !(this instanceof q6c);
+    public final boolean b() {
+        fy2 fy2Var = (fy2) this.b.get();
+        return fy2Var != null && fy2Var.b();
     }
 
-    public fy2 e(int i) {
-        upe.a(i);
-        return new j46(this, i);
+    public final boolean c() {
+        fy2 fy2Var = (fy2) this.b.get();
+        return fy2Var != null && fy2Var.c();
     }
 
-    @Override // c2, cy2
-    public final ay2 get(by2 by2Var) {
-        ay2 ay2Var;
-        by2Var.getClass();
-        if (!(by2Var instanceof ey2)) {
-            if (jk2.b == by2Var) {
-                return this;
-            }
-            return null;
+    public final void d(String str, long j, ma0 ma0Var) {
+        String h = b00.h("Deferring native open session: ", str);
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", h, null);
         }
-        ey2 ey2Var = (ey2) by2Var;
-        by2 by2Var2 = this.a;
-        if ((by2Var2 == ey2Var || ey2Var.b == by2Var2) && (ay2Var = (ay2) ey2Var.a.invoke(this)) != null) {
-            return ay2Var;
-        }
-        return null;
-    }
-
-    @Override // c2, cy2
-    public final cy2 minusKey(by2 by2Var) {
-        by2Var.getClass();
-        if (by2Var instanceof ey2) {
-            ey2 ey2Var = (ey2) by2Var;
-            by2 by2Var2 = this.a;
-            if (by2Var2 != ey2Var && ey2Var.b != by2Var2) {
-                return this;
-            }
-            if (((ay2) ey2Var.a.invoke(this)) == null) {
-                return this;
-            }
-        } else if (jk2.b != by2Var) {
-            return this;
-        }
-        return k34.a;
-    }
-
-    public String toString() {
-        return getClass().getSimpleName() + '@' + ea3.a(this);
+        this.a.a(new hs0((Object) str, j, (Object) ma0Var, (byte) 1));
     }
 }

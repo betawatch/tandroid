@@ -1,141 +1,61 @@
 // default package
 
-import android.text.TextUtils;
-import android.util.Log;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class d7d {
-    public static final ce6 a = new ce6("MetadataUtils", null);
-    public static final String[] b;
-    public static final String c;
+public final class d7d extends b4 {
+    public static final Parcelable.Creator<d7d> CREATOR = new t4d((byte) 19);
+    public final qae a;
+    public final qae b;
+    public final qae c;
+    public final int d;
 
-    static {
-        String[] strArr = {"Z", "+hh", "+hhmm", "+hh:mm"};
-        b = strArr;
-        c = "yyyyMMdd'T'HHmmss".concat(String.valueOf(strArr[0]));
+    public d7d(qae qaeVar, qae qaeVar2, qae qaeVar3, int i) {
+        this.a = qaeVar;
+        this.b = qaeVar2;
+        this.c = qaeVar3;
+        this.d = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00f3  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static Calendar a(String str) {
-        String substring;
-        String substring2;
-        String str2;
-        boolean isEmpty = TextUtils.isEmpty(str);
-        ce6 ce6Var = a;
-        if (isEmpty) {
-            ce6Var.b("Input string is empty or null", new Object[0]);
-            return null;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof d7d)) {
+            return false;
         }
-        if (TextUtils.isEmpty(str)) {
-            ce6Var.b("Input string is empty or null", new Object[0]);
-        } else {
-            try {
-                substring = str.substring(0, 8);
-            } catch (IndexOutOfBoundsException e) {
-                Log.e(ce6Var.a, ce6Var.d("Error extracting the date", new Object[0]), e);
-            }
-            if (!TextUtils.isEmpty(substring)) {
-                ce6Var.b("Invalid date format", new Object[0]);
-                return null;
-            }
-            try {
-                if (TextUtils.isEmpty(str)) {
-                    ce6Var.b("string is empty or null", new Object[0]);
-                } else {
-                    int indexOf = str.indexOf(84);
-                    int i = indexOf + 1;
-                    if (indexOf == 8) {
-                        try {
-                            substring2 = str.substring(i);
-                            if (substring2.length() != 6) {
-                                char charAt = substring2.charAt(6);
-                                String[] strArr = b;
-                                if (charAt == '+' || charAt == '-') {
-                                    int length = substring2.length();
-                                    if (length == strArr[1].length() + 6 || length == strArr[2].length() + 6 || length == strArr[3].length() + 6) {
-                                        substring2 = substring2.replaceAll("([\\+\\-]\\d\\d):(\\d\\d)", "$1$2");
-                                    }
-                                } else if (charAt == 'Z' && substring2.length() == strArr[0].length() + 6) {
-                                    substring2 = substring2.substring(0, substring2.length() - 1).concat("+0000");
-                                }
-                            }
-                        } catch (IndexOutOfBoundsException e2) {
-                            Log.e(ce6Var.a, ce6Var.d("Error extracting the time substring: %s", new Object[0]), e2);
-                        }
-                        if (TextUtils.isEmpty(substring2)) {
-                            substring = td4.q(substring, "T", substring2);
-                            str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
-                        } else {
-                            str2 = "yyyyMMdd";
-                        }
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.setTime(new SimpleDateFormat(str2).parse(substring));
-                        return calendar;
-                    }
-                    ce6Var.b("T delimeter is not found", new Object[0]);
-                }
-                calendar.setTime(new SimpleDateFormat(str2).parse(substring));
-                return calendar;
-            } catch (ParseException e3) {
-                Log.e(ce6Var.a, ce6Var.d("Error parsing string", new Object[0]), e3);
-                return null;
-            }
-            substring2 = null;
-            if (TextUtils.isEmpty(substring2)) {
-            }
-            Calendar calendar2 = Calendar.getInstance();
-        }
-        substring = null;
-        if (!TextUtils.isEmpty(substring)) {
-        }
+        d7d d7dVar = (d7d) obj;
+        return cqe.a(this.a, d7dVar.a) && cqe.a(this.b, d7dVar.b) && cqe.a(this.c, d7dVar.c) && this.d == d7dVar.d;
     }
 
-    public static JSONArray b(ArrayList arrayList) {
-        arrayList.getClass();
-        JSONArray jSONArray = new JSONArray();
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            wuc wucVar = (wuc) obj;
-            wucVar.getClass();
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("url", wucVar.b.toString());
-                jSONObject.put("width", wucVar.c);
-                jSONObject.put("height", wucVar.d);
-            } catch (JSONException unused) {
-            }
-            jSONArray.put(jSONObject);
-        }
-        return jSONArray;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, Integer.valueOf(this.d)});
     }
 
-    public static void c(ArrayList arrayList, JSONArray jSONArray) {
-        try {
-            arrayList.clear();
-            for (int i = 0; i < jSONArray.length(); i++) {
-                try {
-                    arrayList.add(new wuc(jSONArray.getJSONObject(i)));
-                } catch (IllegalArgumentException unused) {
-                }
-            }
-        } catch (JSONException unused2) {
-        }
+    public final String toString() {
+        qae qaeVar = this.a;
+        String b = und.b(qaeVar == null ? null : qaeVar.p());
+        qae qaeVar2 = this.b;
+        String b2 = und.b(qaeVar2 == null ? null : qaeVar2.p());
+        qae qaeVar3 = this.c;
+        String b3 = und.b(qaeVar3 != null ? qaeVar3.p() : null);
+        StringBuilder l = yjb.l("HmacSecretExtension{coseKeyAgreement=", b, ", saltEnc=", b2, ", saltAuth=");
+        l.append(b3);
+        l.append(", getPinUvAuthProtocol=");
+        return de9.l(l, this.d, "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        qae qaeVar = this.a;
+        jte.c(parcel, 1, qaeVar == null ? null : qaeVar.p());
+        qae qaeVar2 = this.b;
+        jte.c(parcel, 2, qaeVar2 == null ? null : qaeVar2.p());
+        qae qaeVar3 = this.c;
+        jte.c(parcel, 3, qaeVar3 != null ? qaeVar3.p() : null);
+        jte.q(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        jte.s(parcel, r);
     }
 }

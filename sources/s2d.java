@@ -1,48 +1,138 @@
 // default package
 
-import android.os.Process;
+import android.os.DeadObjectException;
 import android.os.RemoteException;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.IllegalFormatException;
-import java.util.Locale;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class s2d {
-    public final String a;
+public final class s2d extends c2d {
+    public final TaskCompletionSource b;
+    public final /* synthetic */ byte c;
+    public final Object d;
 
-    public s2d(String str) {
-        this.a = ("UID: [" + Process.myUid() + "]  PID: [" + Process.myPid() + "] ").concat(str);
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public s2d(u56 u56Var, TaskCompletionSource taskCompletionSource) {
+        this(4, taskCompletionSource);
+        this.c = (byte) 1;
+        this.d = u56Var;
     }
 
-    public static String d(String str, String str2, Object... objArr) {
-        if (objArr.length > 0) {
-            try {
-                str2 = String.format(Locale.US, str2, objArr);
-            } catch (IllegalFormatException e) {
-                Log.e("PlayCore", "Unable to format ".concat(str2), e);
-                str2 = td4.r(str2, " [", TextUtils.join(", ", objArr), "]");
-            }
-        }
-        return kt6.o(str, " : ", str2);
+    @Override // x2d
+    public final void a(Status status) {
+        this.b.trySetException(new zn(status));
     }
 
-    public final void a(RemoteException remoteException, String str, Object... objArr) {
-        if (Log.isLoggable("PlayCore", 6)) {
-            Log.e("PlayCore", d(this.a, str, objArr), remoteException);
+    @Override // x2d
+    public final void b(RuntimeException runtimeException) {
+        this.b.trySetException(runtimeException);
+    }
+
+    @Override // x2d
+    public final /* bridge */ /* synthetic */ void c(aec aecVar, boolean z) {
+        byte b = this.c;
+    }
+
+    @Override // x2d
+    public final void d(u1d u1dVar) {
+        try {
+            k(u1dVar);
+        } catch (DeadObjectException e) {
+            a(x2d.e(e));
+            throw e;
+        } catch (RemoteException e2) {
+            a(x2d.e(e2));
+        } catch (RuntimeException e3) {
+            this.b.trySetException(e3);
         }
     }
 
-    public final void b(String str, Object... objArr) {
-        if (Log.isLoggable("PlayCore", 4)) {
-            Log.i("PlayCore", d(this.a, str, objArr));
+    @Override // c2d
+    public final f84[] f(u1d u1dVar) {
+        byte b = this.c;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                return ((g2d) obj).a.b;
+            default:
+                g2d g2dVar = (g2d) u1dVar.f.get((u56) obj);
+                if (g2dVar == null) {
+                    return null;
+                }
+                return g2dVar.a.b;
         }
     }
 
-    public final void c(String str, Object... objArr) {
-        if (Log.isLoggable("PlayCore", 5)) {
-            Log.w("PlayCore", d(this.a, str, objArr));
+    @Override // c2d
+    public final boolean g(u1d u1dVar) {
+        byte b = this.c;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                return ((g2d) obj).a.c;
+            default:
+                g2d g2dVar = (g2d) u1dVar.f.get((u56) obj);
+                return g2dVar != null && g2dVar.a.c;
         }
+    }
+
+    @Override // c2d
+    public final int h(u1d u1dVar) {
+        byte b = this.c;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                return ((g2d) obj).a.d;
+            default:
+                g2d g2dVar = (g2d) u1dVar.f.get((u56) obj);
+                if (g2dVar != null) {
+                    return g2dVar.a.d;
+                }
+                return -1;
+        }
+    }
+
+    public final void k(u1d u1dVar) {
+        switch (this.c) {
+            case 0:
+                g2d g2dVar = (g2d) this.d;
+                h2d h2dVar = g2dVar.a;
+                h2dVar.e.a.accept(u1dVar.b, this.b);
+                u56 u56Var = h2dVar.a.b;
+                if (u56Var != null) {
+                    u1dVar.f.put(u56Var, g2dVar);
+                    break;
+                }
+                break;
+            default:
+                g2d g2dVar2 = (g2d) u1dVar.f.remove((u56) this.d);
+                if (g2dVar2 == null) {
+                    this.b.trySetResult(Boolean.FALSE);
+                    break;
+                } else {
+                    ((t59) g2dVar2.b.c).b.accept(u1dVar.b, this.b);
+                    g2dVar2.a.a.b = null;
+                    break;
+                }
+        }
+    }
+
+    public s2d(int i, TaskCompletionSource taskCompletionSource) {
+        super(i);
+        this.b = taskCompletionSource;
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public s2d(g2d g2dVar, TaskCompletionSource taskCompletionSource) {
+        this(3, taskCompletionSource);
+        this.c = (byte) 0;
+        this.d = g2dVar;
+    }
+
+    private final /* bridge */ /* synthetic */ void i(aec aecVar, boolean z) {
+    }
+
+    private final /* bridge */ /* synthetic */ void j(aec aecVar, boolean z) {
     }
 }

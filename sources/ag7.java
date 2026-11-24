@@ -1,54 +1,46 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.SecureRandom;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class ag7 {
-    public static final SecureRandom a = new SecureRandom();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ag7 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gg7 b;
 
-    public static byte[] a(String str) {
-        if (str == null) {
-            return null;
-        }
-        try {
-            return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException unused) {
-            return null;
-        }
+    public /* synthetic */ ag7(gg7 gg7Var, byte b) {
+        this.a = b;
+        this.b = gg7Var;
     }
 
-    public static String b(InputStream inputStream) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        while (true) {
-            int read = inputStream.read();
-            if (read == -1) {
-                if (byteArrayOutputStream.size() == 0) {
-                    return null;
-                }
-            } else {
-                if (read == 10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        gg7 gg7Var = this.b;
+        switch (b) {
+            case 0:
+                fg7 fg7Var = gg7Var.l2;
+                HashSet hashSet = gg7Var.Y1;
+                if (hashSet.size() != 0 && fg7Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : gg7Var.d2.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    fg7Var.a(arrayList);
+                    gg7Var.dismiss();
                     break;
                 }
-                if (read != 13) {
-                    byteArrayOutputStream.write(read);
-                } else {
-                    int read2 = inputStream.read();
-                    if (read2 == -1) {
-                        byteArrayOutputStream.write(read);
-                        break;
-                    }
-                    if (read2 == 10) {
-                        break;
-                    }
-                    byteArrayOutputStream.write(read);
-                    byteArrayOutputStream.write(read2);
-                }
-            }
+                break;
+            default:
+                gg7Var.Y1.clear();
+                gg7Var.T1.d.b(true);
+                gg7Var.b1(true, false);
+                break;
         }
-        return byteArrayOutputStream.toString("UTF-8");
     }
 }

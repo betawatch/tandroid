@@ -18,20 +18,20 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class FirebaseMessagingService extends Service {
     public static final ArrayDeque h = new ArrayDeque(10);
     public final ExecutorService a;
-    public n0d b;
+    public myc b;
     public final Object c;
     public int d;
     public int e;
-    public fo9 f;
+    public fm9 f;
 
     public FirebaseMessagingService() {
-        op7 op7Var = new op7("Firebase-Messaging-Intent-Handle");
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), op7Var);
+        kn7 kn7Var = new kn7("Firebase-Messaging-Intent-Handle");
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), kn7Var);
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         this.a = Executors.unconfigurableExecutorService(threadPoolExecutor);
         this.c = new Object();
@@ -40,7 +40,7 @@ public class FirebaseMessagingService extends Service {
 
     public final void a(Intent intent) {
         if (intent != null) {
-            mfd.b(intent);
+            kdd.b(intent);
         }
         synchronized (this.c) {
             int i = this.e - 1;
@@ -59,7 +59,7 @@ public class FirebaseMessagingService extends Service {
     */
     public final void b(Intent intent) {
         String stringExtra;
-        fo9 fo9Var;
+        fm9 fm9Var;
         int i;
         String action = intent.getAction();
         if (!"com.google.android.c2dm.intent.RECEIVE".equals(action) && !"com.google.firebase.messaging.RECEIVE_DIRECT_BOOT".equals(action)) {
@@ -86,12 +86,12 @@ public class FirebaseMessagingService extends Service {
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Received duplicate message: " + stringExtra2);
                 }
-                fo9Var = this.f;
-                if (fo9Var == null) {
-                    fo9Var = new fo9(getApplicationContext());
-                    this.f = fo9Var;
+                fm9Var = this.f;
+                if (fm9Var == null) {
+                    fm9Var = new fm9(getApplicationContext());
+                    this.f = fm9Var;
                 }
-                if (fo9Var.c.b() >= 233700000) {
+                if (fm9Var.c.b() >= 233700000) {
                     Tasks.forException(new IOException("SERVICE_NOT_AVAILABLE"));
                     return;
                 }
@@ -105,12 +105,12 @@ public class FirebaseMessagingService extends Service {
                 if (valueOf != null) {
                     bundle.putInt("google.product_id", valueOf.intValue());
                 }
-                jif t = jif.t(fo9Var.b);
+                igf t = igf.t(fm9Var.b);
                 synchronized (t) {
                     i = t.a;
                     t.a = i + 1;
                 }
-                t.u(new fdf(i, 3, bundle, (byte) 0));
+                t.u(new ebf(i, 3, bundle, (byte) 0));
                 return;
             }
             if (arrayDeque.size() >= 10) {
@@ -126,33 +126,33 @@ public class FirebaseMessagingService extends Service {
             case "deleted_messages":
                 break;
             case "gcm":
-                are.b(intent);
+                xoe.b(intent);
                 Bundle extras = intent.getExtras();
                 if (extras == null) {
                     extras = new Bundle();
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (ai4.G(extras)) {
-                    ai4 ai4Var = new ai4(extras);
-                    ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new op7("Firebase-Messaging-Network-Io"));
+                if (z24.U(extras)) {
+                    z24 z24Var = new z24(extras);
+                    ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new kn7("Firebase-Messaging-Network-Io"));
                     try {
-                        if (!new in3(this, ai4Var, newSingleThreadExecutor).y()) {
-                            if (are.d(intent)) {
-                                are.c("_nf", intent.getExtras());
+                        if (!new xl3(this, z24Var, newSingleThreadExecutor).z()) {
+                            if (xoe.d(intent)) {
+                                xoe.c("_nf", intent.getExtras());
                             }
                         }
                     } finally {
                         newSingleThreadExecutor.shutdown();
                     }
                 }
-                c(new l89(extras));
+                c(new j69(extras));
                 break;
             case "send_error":
                 if (intent.getStringExtra("google.message_id") == null) {
                     intent.getStringExtra("message_id");
                 }
                 String stringExtra4 = intent.getStringExtra("error");
-                new v40(stringExtra4);
+                new v30(stringExtra4);
                 if (stringExtra4 != null) {
                     stringExtra4.toLowerCase(Locale.US).getClass();
                     break;
@@ -165,25 +165,25 @@ public class FirebaseMessagingService extends Service {
                 Log.w("FirebaseMessaging", "Received message with unknown type: ".concat(stringExtra));
                 break;
         }
-        fo9Var = this.f;
-        if (fo9Var == null) {
+        fm9Var = this.f;
+        if (fm9Var == null) {
         }
-        if (fo9Var.c.b() >= 233700000) {
+        if (fm9Var.c.b() >= 233700000) {
         }
     }
 
     @Override // android.app.Service
     public final synchronized IBinder onBind(Intent intent) {
-        n0d n0dVar;
+        myc mycVar;
         if (Log.isLoggable("EnhancedIntentService", 3)) {
             Log.d("EnhancedIntentService", "Service received bind request");
         }
-        n0dVar = this.b;
-        if (n0dVar == null) {
-            n0dVar = new n0d(new k44(this, (byte) 0));
-            this.b = n0dVar;
+        mycVar = this.b;
+        if (mycVar == null) {
+            mycVar = new myc(new z24(this, (byte) 0));
+            this.b = mycVar;
         }
-        return n0dVar;
+        return mycVar;
     }
 
     @Override // android.app.Service
@@ -198,23 +198,23 @@ public class FirebaseMessagingService extends Service {
             this.d = i2;
             this.e++;
         }
-        Intent intent2 = (Intent) ((ArrayDeque) e7a.v().d).poll();
+        Intent intent2 = (Intent) ((ArrayDeque) c5a.t().e).poll();
         if (intent2 == null) {
             a(intent);
             return 2;
         }
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.execute(new pz2(this, intent2, taskCompletionSource, (byte) 20));
+        this.a.execute(new mg3(this, intent2, taskCompletionSource, (byte) 18));
         Task task = taskCompletionSource.getTask();
         if (task.isComplete()) {
             a(intent);
             return 2;
         }
-        task.addOnCompleteListener(new kc((byte) 1), new x92((Object) this, (Object) intent, (byte) 27));
+        task.addOnCompleteListener(new hc((byte) 1), new v82((Object) this, (Object) intent, (byte) 26));
         return 3;
     }
 
-    public void c(l89 l89Var) {
+    public void c(j69 j69Var) {
     }
 
     public void d(String str) {

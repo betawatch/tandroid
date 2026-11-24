@@ -1,9 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface udc {
-    void f(float f);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class udc {
+    public final rj4 a;
 
-    void h(float f);
+    public udc(rj4 rj4Var) {
+        this.a = rj4Var;
+    }
 }

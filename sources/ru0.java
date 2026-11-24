@@ -1,43 +1,76 @@
 // default package
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.PasscodeActivity;
+import android.webkit.PermissionRequest;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ru0 implements View.OnFocusChangeListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ru0 implements vs2 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ zu0 b;
+    public final /* synthetic */ PermissionRequest c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ ru0(Object obj, EditTextBoldCursor editTextBoldCursor, byte b) {
+    public /* synthetic */ ru0(zu0 zu0Var, PermissionRequest permissionRequest, String str, byte b) {
         this.a = b;
-        this.b = obj;
-        this.c = editTextBoldCursor;
+        this.b = zu0Var;
+        this.c = permissionRequest;
+        this.d = str;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z) {
+    @Override // vs2
+    public final void accept(Object obj) {
         byte b = this.a;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        Object obj = this.b;
+        String str = this.d;
+        PermissionRequest permissionRequest = this.c;
+        zu0 zu0Var = this.b;
+        Boolean bool = (Boolean) obj;
         switch (b) {
             case 0:
-                ((gt7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                if (zu0Var.a != null) {
+                    zu0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        permissionRequest.deny();
+                        break;
+                    } else {
+                        ru0 ru0Var = new ru0(zu0Var, permissionRequest, str, (byte) 2);
+                        boolean z = hv0.R0;
+                        zu0Var.e.R.R(new String[]{"android.permission.RECORD_AUDIO"}, ru0Var);
+                        break;
+                    }
+                }
                 break;
             case 1:
-                ((gt7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                if (zu0Var.a != null) {
+                    zu0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        permissionRequest.deny();
+                        break;
+                    } else {
+                        ru0 ru0Var2 = new ru0(zu0Var, permissionRequest, str, (byte) 3);
+                        boolean z2 = hv0.R0;
+                        zu0Var.e.R.R(new String[]{"android.permission.CAMERA"}, ru0Var2);
+                        break;
+                    }
+                }
                 break;
             case 2:
-                ((gt7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
+                if (!bool.booleanValue()) {
+                    permissionRequest.deny();
+                    break;
+                } else {
+                    permissionRequest.grant(new String[]{str});
+                    zu0Var.e.R.U = true;
+                    break;
+                }
             default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                passcodeActivity.w.setEditText((gl2) editTextBoldCursor);
-                passcodeActivity.w.setDispatchBackWhenEmpty(true);
-                break;
+                if (!bool.booleanValue()) {
+                    permissionRequest.deny();
+                    break;
+                } else {
+                    permissionRequest.grant(new String[]{str});
+                    zu0Var.e.R.U = true;
+                    break;
+                }
         }
     }
 }

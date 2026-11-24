@@ -1,59 +1,95 @@
 // default package
 
-import java.util.Map;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class a89 extends yo5 {
-    public final transient qo5 d;
-    public final transient Object[] e;
-    public final transient boolean f;
-    public final transient int h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class a89 extends FrameLayout implements tjb {
+    public int a;
+    public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
+    public TLRPC.TL_reportResultChooseOption c;
+    public TLRPC.TL_reportResultAddComment d;
+    public final FrameLayout e;
+    public final q5c f;
+    public final jo0 h;
+    public z79 n;
+    public FrameLayout r;
+    public u41 s;
+    public final /* synthetic */ b89 w;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public a89(qo5 qo5Var, Object[] objArr, int i, int i2) {
-        this.d = qo5Var;
-        this.e = objArr;
-        this.f = i;
-        this.h = i2;
-    }
-
-    @Override // go5, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.d.get(key))) {
-                return true;
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a89(b89 b89Var, Context context) {
+        super(context);
+        this.w = b89Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.e = frameLayout;
+        frameLayout.setPadding(0, gl.m, 0, 0);
+        frameLayout.setClipToPadding(true);
+        addView(frameLayout, nme.e(-1, -1, kk7.D1));
+        int i = b89.v1;
+        jo0 jo0Var = new jo0(context, b89Var.J0);
+        TextView textView = (TextView) jo0Var.b;
+        this.h = jo0Var;
+        jo0Var.e = new y79(this, (byte) 0);
+        if (b89Var.o1) {
+            textView.setText(k96.M0(2131746041, null));
+        } else if (b89Var.p1) {
+            textView.setText(k96.M0(2131746002, null));
+        } else {
+            textView.setText(k96.M0(2131746050, null));
         }
-        return false;
+        ((ed0) jo0Var.d).a(bkb.v0(bkb.F6, b89Var.J0));
+        zkb.h(bkb.g5, b89Var.J0, jo0Var);
+        addView(jo0Var, nme.e(-1, -2, 55));
+        q5c q5cVar = new q5c(context, b89Var.a, 0, true, new tf8(this, (byte) 7), new k88(this, (byte) 22), null, b89Var.J0);
+        this.f = q5cVar;
+        q5cVar.setClipToPadding(false);
+        q5cVar.f3.j1(true);
+        q5cVar.setOnScrollListener(new n58(this, (byte) 10));
+        frameLayout.addView(q5cVar, nme.c(-1.0f, -1));
     }
 
-    @Override // go5
-    public final int i(int i, Object[] objArr) {
-        return h().i(i, objArr);
+    public final void a(int i) {
+        this.a = i;
+        this.h.b(i != 0);
+        q5c q5cVar = this.f;
+        if (q5cVar != null) {
+            q5cVar.g3.O(true);
+        }
     }
 
-    @Override // go5
-    public final boolean m() {
-        return true;
+    public final void b(TLRPC.TL_reportResultAddComment tL_reportResultAddComment) {
+        this.b = null;
+        this.c = null;
+        this.d = tL_reportResultAddComment;
+        this.f.g3.O(false);
+        if (this.n != null) {
+            gl.d3(new y79(this, (byte) 1), 120L);
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    /* renamed from: n */
-    public final v7c iterator() {
-        return h().listIterator(0);
+    @Override // tjb
+    public final void updateColors() {
+        ed0 ed0Var;
+        try {
+            jo0 jo0Var = this.h;
+            if (jo0Var == null || (ed0Var = (ed0) jo0Var.d) == null) {
+                return;
+            }
+            int i = bkb.F6;
+            b89 b89Var = this.w;
+            int i2 = b89.v1;
+            ed0Var.a(bkb.v0(i, b89Var.J0));
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
     }
 
-    @Override // yo5
-    public final mo5 r() {
-        return new z79(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.h;
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

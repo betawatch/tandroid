@@ -1,34 +1,46 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class y1c extends xna {
-    public final in3 V;
-    public final /* synthetic */ b2c W;
+public final class y1c implements s0b {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ d2c b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y1c(b2c b2cVar, Context context) {
-        super(context);
-        this.W = b2cVar;
-        this.V = new in3((byte) 7);
+    public y1c(d2c d2cVar, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = d2cVar;
+        this.a = inputStickerSet;
     }
 
-    @Override // xna, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int L = gm.L(8.0f) + this.W.d.getWidth();
-        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - L, getHeight(), nm7.d4, 31);
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        boa.a(canvas, getLayout());
-        canvas.restore();
-        RectF rectF = gm.P;
-        rectF.set((getWidth() - L) - gm.L(24.0f), 0.0f, getWidth() - L, getHeight());
-        this.V.r(canvas, rectF, 2, 1.0f);
-        canvas.restore();
+    @Override // s0b
+    public final void a() {
+        d2c d2cVar = this.b;
+        w39 adapter = d2cVar.n.getAdapter();
+        c2c c2cVar = d2cVar.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i = 0;
+        if (adapter == c2cVar) {
+            while (i < c2cVar.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) c2cVar.e.get(i);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    c2cVar.F(stickerSetCovered, null);
+                    return;
+                }
+                i++;
+            }
+            return;
+        }
+        c1b c1bVar = d2cVar.w;
+        ArrayList arrayList = c1bVar.F;
+        while (i < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                c1bVar.F(stickerSetCovered2, null);
+                return;
+            }
+            i++;
+        }
     }
 }

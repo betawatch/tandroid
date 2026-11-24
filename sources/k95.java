@@ -1,69 +1,49 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.LinearGradient;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Shader;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class k95 implements ValueAnimator.AnimatorUpdateListener {
+public final class k95 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ View f;
+    public final /* synthetic */ l95 b;
 
-    public /* synthetic */ k95(View view, int i, int i2, int i3, int i4, byte b) {
+    public /* synthetic */ k95(l95 l95Var, byte b) {
         this.a = b;
-        this.f = view;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
+        this.b = l95Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        int i = this.e;
-        int i2 = this.d;
-        int i3 = this.c;
-        int i4 = this.b;
-        View view = this.f;
+        l95 l95Var = this.b;
         switch (b) {
             case 0:
-                l95 l95Var = (l95) view;
-                l95Var.M = on2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i4, i3);
-                l95Var.N = on2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i);
-                l95Var.G.setColorFilter(new PorterDuffColorFilter(l95Var.M, PorterDuff.Mode.MULTIPLY));
-                l95Var.F.setColor(l95Var.M);
-                l95Var.r.setColor(l95Var.N);
-                l95Var.K.d(on2.p(l95Var.N, 38));
-                l95Var.invalidate();
-                break;
-            case 1:
-                ha5 ha5Var = (ha5) view;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ha5Var.B0 = on2.f(floatValue, i4, i3);
-                int f = on2.f(floatValue, i2, i);
-                ha5Var.D0 = f;
-                ha5Var.T.setColor(f);
-                if (ha5Var.S > 0.0f) {
-                    ha5Var.invalidate();
+                l95Var.O0 = null;
+                l95Var.E.F = false;
+                h85 h85Var = l95Var.F;
+                if (h85Var != null) {
+                    if (h85Var.getParent() != null) {
+                        l95Var.removeView(l95Var.F);
+                        l95Var.F.e();
+                    }
+                    l95Var.F = null;
                     break;
                 }
                 break;
+            case 1:
+                super.onAnimationEnd(animator);
+                l95Var.K0 = null;
+                l95Var.J0 = 0.0f;
+                l95Var.invalidate();
+                break;
             default:
-                bya byaVar = (bya) view;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                byaVar.r = on2.f(floatValue2, i4, i3);
-                byaVar.s = on2.f(floatValue2, i2, i);
-                byaVar.E = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{byaVar.r, byaVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                byaVar.invalidate();
+                l95Var.C0 = null;
+                l95Var.z0 = 1.0f;
+                l95Var.s0 = 0.0f;
+                l95Var.t0 = 0.0f;
+                l95Var.invalidate();
                 break;
         }
     }

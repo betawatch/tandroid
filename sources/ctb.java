@@ -1,58 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.view.View;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum ctb extends rub {
-    public ctb() {
-        super("BeforeAttributeName", 33);
+public abstract class ctb {
+    public static OnBackInvokedDispatcher a(View view) {
+        return view.findOnBackInvokedDispatcher();
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        char d = hl1Var.d();
-        dtb dtbVar = rub.Y;
-        if (d == 0) {
-            bsbVar.m(this);
-            bsbVar.i.A();
-            hl1Var.q();
-            bsbVar.c = dtbVar;
-            return;
-        }
-        if (d != ' ') {
-            if (d != '\"' && d != '\'') {
-                if (d == '/') {
-                    bsbVar.c = rub.f0;
-                    return;
-                }
-                msb msbVar = rub.a;
-                if (d == 65535) {
-                    bsbVar.l(this);
-                    bsbVar.c = msbVar;
-                    return;
-                }
-                if (d == '\t' || d == '\n' || d == '\f' || d == '\r') {
-                    return;
-                }
-                switch (d) {
-                    case nm7.w0 /* 60 */:
-                    case nm7.x0 /* 61 */:
-                        break;
-                    case nm7.y0 /* 62 */:
-                        bsbVar.k();
-                        bsbVar.c = msbVar;
-                        break;
-                    default:
-                        bsbVar.i.A();
-                        hl1Var.q();
-                        bsbVar.c = dtbVar;
-                        break;
-                }
-                return;
-            }
-            bsbVar.m(this);
-            bsbVar.i.A();
-            bsbVar.i.u(d);
-            bsbVar.c = dtbVar;
-        }
+    public static OnBackInvokedCallback b(Runnable runnable) {
+        Objects.requireNonNull(runnable);
+        return new uo(runnable, (byte) 5);
+    }
+
+    public static void c(Object obj, Object obj2) {
+        ((OnBackInvokedDispatcher) obj).registerOnBackInvokedCallback(1000000, (OnBackInvokedCallback) obj2);
+    }
+
+    public static void d(Object obj, Object obj2) {
+        ((OnBackInvokedDispatcher) obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
     }
 }

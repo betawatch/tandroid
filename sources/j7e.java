@@ -1,9 +1,19 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface j7e extends List {
-    Object zza();
+public final class j7e implements zn7 {
+    public static final j7e a = new j7e();
+
+    static {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

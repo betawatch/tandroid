@@ -2,9 +2,9 @@ package androidx.car.app.model;
 
 import androidx.car.app.model.SearchCallbackDelegateImpl;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements s89 {
+public final /* synthetic */ class f implements q69 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ SearchCallbackDelegateImpl.SearchCallbackStub b;
     public final /* synthetic */ String c;
@@ -15,7 +15,7 @@ public final /* synthetic */ class f implements s89 {
         this.c = str;
     }
 
-    @Override // s89
+    @Override // q69
     public final Object a() {
         Object lambda$onSearchSubmitted$1;
         Object lambda$onSearchTextChanged$0;

@@ -1,174 +1,76 @@
 // default package
 
-import android.R;
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class qna {
-    public static HashMap n;
-    public final double a;
-    public final double b;
-    public final boolean c;
-    public final ct8 d;
-    public final rq5 e;
-    public pna f;
-    public final int g;
-    public final int h;
-    public boolean i;
-    public final ArrayList j = new ArrayList();
-    public final HashMap k = new HashMap();
-    public int l = 0;
-    public final ona m = new ona(this, 0);
+public final /* synthetic */ class qna implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vqa b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public qna(int i, ct8 ct8Var, int i2, int i3) {
-        double d = 1.0d / ((int) gm.r);
-        this.a = d;
-        this.b = d * 4.0d;
-        this.c = i;
-        this.g = i2;
-        this.h = i3;
-        this.d = ct8Var;
-        rq5 rq5Var = new rq5((byte) 2, ct8Var.getContext(), this);
-        this.e = rq5Var;
-        rq5Var.setSurfaceTextureListener(new tr5(this, (byte) 3));
-        rq5Var.setOpaque(false);
-        ct8Var.addView(rq5Var);
+    public /* synthetic */ qna(vqa vqaVar, byte b) {
+        this.a = b;
+        this.b = vqaVar;
     }
 
-    public static qna d(int i, View view, ViewGroup viewGroup) {
-        int min;
-        if (view == null) {
-            return null;
-        }
-        HashMap hashMap = n;
-        if (hashMap == null) {
-            hashMap = new HashMap();
-            n = hashMap;
-        }
-        qna qnaVar = (qna) hashMap.get(Integer.valueOf(i));
-        if (qnaVar == null) {
-            int o = gda.o();
-            if (o == 1) {
-                Point point = gm.q;
-                min = Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));
-            } else if (o != 2) {
-                Point point2 = gm.q;
-                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
-            } else {
-                Point point3 = gm.q;
-                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
-            }
-            if (viewGroup == null) {
-                return null;
-            }
-            HashMap hashMap2 = n;
-            Integer valueOf = Integer.valueOf(i);
-            ct8 ct8Var = new ct8(viewGroup.getContext(), (byte) 9);
-            viewGroup.addView(ct8Var);
-            qna qnaVar2 = new qna(i, ct8Var, min, min);
-            hashMap2.put(valueOf, qnaVar2);
-            qnaVar = qnaVar2;
-        }
-        qnaVar.a(view);
-        return qnaVar;
-    }
-
-    public static qna e(View view) {
-        Activity W = gm.W(view.getContext());
-        ViewGroup viewGroup = null;
-        if (W != null) {
-            View rootView = W.findViewById(R.id.content).getRootView();
-            if (rootView instanceof ViewGroup) {
-                viewGroup = (ViewGroup) rootView;
-            }
-        }
-        return d(0, view, viewGroup);
-    }
-
-    public static void f(boolean z) {
-        pna pnaVar;
-        HashMap hashMap = n;
-        if (hashMap != null) {
-            for (qna qnaVar : hashMap.values()) {
-                if (!qnaVar.c && (pnaVar = qnaVar.f) != null) {
-                    pnaVar.b = z;
+    @Override // p8c
+    public final void a(Object obj) {
+        TLRPC.Message message;
+        byte b = this.a;
+        vqa vqaVar = this.b;
+        switch (b) {
+            case 0:
+                ((Boolean) obj).booleanValue();
+                vqaVar.dismiss();
+                break;
+            case 1:
+                if (((Boolean) obj).booleanValue()) {
+                    vqaVar.O0 = true;
                 }
-            }
+                vqaVar.dismiss();
+                break;
+            case 2:
+                TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
+                if (stargiftupgradepreview != null) {
+                    vqaVar.m3 = stargiftupgradepreview.sample_attributes;
+                    vqaVar.n3 = stargiftupgradepreview.prices;
+                    vqaVar.o3 = stargiftupgradepreview.next_prices;
+                    vqaVar.e2();
+                    break;
+                } else {
+                    vqaVar.getClass();
+                    break;
+                }
+            default:
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+                vqaVar.I2 = false;
+                vqaVar.J2 = true;
+                if (savedStarGift != null) {
+                    vqaVar.k3 = Boolean.valueOf(savedStarGift.unsaved);
+                    k27 k27Var = vqaVar.C2;
+                    if (k27Var != null && (message = k27Var.k) != null) {
+                        TLRPC.MessageAction messageAction = message.action;
+                        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
+                            TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+                            boolean z = tL_messageActionStarGiftUnique.saved;
+                            boolean z2 = !savedStarGift.unsaved;
+                            if (z != z2) {
+                                tL_messageActionStarGiftUnique.saved = z2;
+                            }
+                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+                            TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
+                            boolean z3 = tL_messageActionStarGift.saved;
+                            boolean z4 = !savedStarGift.unsaved;
+                            if (z3 != z4) {
+                                tL_messageActionStarGift.saved = z4;
+                            }
+                        }
+                        vqaVar.l2(k27Var, null);
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    public final void a(View view) {
-        if (this.i) {
-            return;
-        }
-        ArrayList arrayList = this.j;
-        if (arrayList.contains(view)) {
-            return;
-        }
-        arrayList.add(view);
-        int i = this.l;
-        this.l = i + 1;
-        this.k.put(view, Integer.valueOf(i));
-    }
-
-    public final void b(View view) {
-        this.j.remove(view);
-        this.k.remove(view);
-        if (this.i) {
-            return;
-        }
-        ona onaVar = this.m;
-        gm.r(onaVar);
-        gm.d3(onaVar, 30L);
-    }
-
-    public final void c(Canvas canvas, View view, int i, int i2, float f, boolean z) {
-        if (canvas == null || view == null) {
-            return;
-        }
-        canvas.save();
-        Integer num = (Integer) this.k.get(view);
-        if (num == null) {
-            num = 0;
-        }
-        int i3 = this.g;
-        int i4 = this.h;
-        if (i > i3 || i2 > i4) {
-            float max = Math.max(i / i3, i2 / i4);
-            canvas.scale(max, max);
-        }
-        if (num.intValue() % 4 == 1) {
-            canvas.rotate(180.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        if (num.intValue() % 4 == 2) {
-            canvas.scale(-1.0f, 1.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        if (num.intValue() % 4 == 3) {
-            canvas.scale(1.0f, -1.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        rq5 rq5Var = this.e;
-        if (z) {
-            Bitmap bitmap = rq5Var.getBitmap();
-            if (bitmap != null) {
-                Paint paint = new Paint(7);
-                paint.setColor(-1);
-                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
-                bitmap.recycle();
-            }
-        } else {
-            rq5Var.setAlpha(f);
-            rq5Var.draw(canvas);
-        }
-        canvas.restore();
     }
 }

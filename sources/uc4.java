@@ -1,34 +1,31 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_ephemeral;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class uc4 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class uc4 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ad4 b;
-    public final /* synthetic */ TL_ephemeral.TL_sendMessage c;
-    public final /* synthetic */ Object[] d;
+    public final /* synthetic */ pd4 b;
 
-    public /* synthetic */ uc4(ad4 ad4Var, TL_ephemeral.TL_sendMessage tL_sendMessage, Object[] objArr, byte b) {
+    public /* synthetic */ uc4(pd4 pd4Var, byte b) {
         this.a = b;
-        this.b = ad4Var;
-        this.c = tL_sendMessage;
-        this.d = objArr;
+        this.b = pd4Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        Object[] objArr = this.d;
-        ad4 ad4Var = this.b;
+        pd4 pd4Var = this.b;
         switch (b) {
             case 0:
-                ad4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (m5a) objArr[4], ((Boolean) objArr[5]).booleanValue());
+                gl.c3(new vc4(pd4Var, tLObject, (byte) 1));
                 break;
             default:
-                ad4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (m5a) objArr[4], ((Boolean) objArr[5]).booleanValue());
+                pd4Var.getClass();
+                gl.c3(new mg3(pd4Var, tL_error, tLObject, (byte) 26));
                 break;
         }
     }

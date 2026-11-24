@@ -1,16 +1,20 @@
 // default package
 
-import java.util.Random;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class k94 extends r3 {
-    public final j94 b = new j94((byte) 0);
-
-    @Override // r3
-    public final Random a() {
-        Object obj = this.b.get();
-        obj.getClass();
-        return (Random) obj;
-    }
+public final class k94 {
+    public int a;
+    public long b;
+    public int c;
+    public int d;
+    public long e;
+    public TLRPC.TL_upload_file f;
+    public TLRPC.TL_upload_webFile g;
+    public TLRPC.TL_upload_cdnFile h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public Runnable l;
 }

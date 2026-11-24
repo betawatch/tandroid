@@ -1,17 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class l2f {
-    public final boolean equals(Object obj) {
-        return obj == this || (obj instanceof l2f);
+public abstract class l2f {
+    public static void a(int i, int i2) {
+        String a;
+        if (i < 0 || i >= i2) {
+            if (i < 0) {
+                a = p2f.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
+            } else {
+                if (i2 < 0) {
+                    w26.j(de9.k(i2, "negative size: "));
+                    return;
+                }
+                a = p2f.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+            }
+            throw new IndexOutOfBoundsException(a);
+        }
     }
 
-    public final int hashCode() {
-        return 1269983555;
+    public static void b(int i, int i2, int i3) {
+        if (i < 0 || i2 < i || i2 > i3) {
+            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? c(i, i3, "start index") : (i2 < 0 || i2 > i3) ? c(i2, i3, "end index") : p2f.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+        }
     }
 
-    public final String toString() {
-        return "MLKitLoggingOptions{libraryName=vision-common, enableFirelog=true, firelogEventType=1}";
+    public static String c(int i, int i2, String str) {
+        if (i < 0) {
+            return p2f.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+        }
+        if (i2 >= 0) {
+            return p2f.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
+        }
+        w26.j(de9.k(i2, "negative size: "));
+        return null;
     }
 }

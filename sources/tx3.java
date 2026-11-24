@@ -1,7 +1,96 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.media.VolumeProvider;
+import android.os.Build;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class tx3 {
-    public abstract void a();
+public final class tx3 {
+    public byte a;
+    public int b;
+    public int c;
+    public final Object d;
+    public Object e;
+    public Object f;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public tx3(xl3 xl3Var, int i, int i2, int i3, String str) {
+        this.f = xl3Var;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = str;
+    }
+
+    public final int a(int i) {
+        rd7 rd7Var = (rd7) ((rd7) this.e).a.get(i);
+        int i2 = 1;
+        int i3 = 2;
+        if (this.a == 2) {
+            if (rd7Var != null) {
+                this.e = rd7Var;
+                this.c++;
+            } else if (i == 65038) {
+                c();
+            } else if (i != 65039) {
+                rd7 rd7Var2 = (rd7) this.e;
+                if (rd7Var2.b != null) {
+                    i3 = 3;
+                    if (this.c != 1) {
+                        this.f = rd7Var2;
+                        c();
+                    } else if (d()) {
+                        this.f = (rd7) this.e;
+                        c();
+                    } else {
+                        c();
+                    }
+                } else {
+                    c();
+                }
+            }
+            i2 = i3;
+        } else if (rd7Var == null) {
+            c();
+        } else {
+            this.a = (byte) 2;
+            this.e = rd7Var;
+            this.c = 1;
+            i2 = i3;
+        }
+        this.b = i;
+        return i2;
+    }
+
+    public final VolumeProvider b() {
+        tx3 tx3Var;
+        if (((VolumeProvider) this.e) != null) {
+            tx3Var = this;
+        } else if (Build.VERSION.SDK_INT >= 30) {
+            tx3Var = this;
+            tx3Var.e = new tjc(tx3Var, this.a, this.b, this.c, (String) this.d);
+        } else {
+            tx3Var = this;
+            tx3Var.e = new ujc(tx3Var, tx3Var.a, tx3Var.b, tx3Var.c);
+        }
+        return (VolumeProvider) tx3Var.e;
+    }
+
+    public final void c() {
+        this.a = (byte) 1;
+        this.e = (rd7) this.d;
+        this.c = 0;
+    }
+
+    public final boolean d() {
+        od7 b = ((rd7) this.e).b.b();
+        int a = b.a(6);
+        return !(a == 0 || b.b.get(a + b.a) == 0) || this.b == 65039;
+    }
+
+    public tx3(rd7 rd7Var) {
+        this.a = (byte) 1;
+        this.d = rd7Var;
+        this.e = rd7Var;
+    }
 }

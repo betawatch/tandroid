@@ -1,36 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class om0 implements mm0 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ylb b;
+import java.util.Calendar;
 
-    public /* synthetic */ om0(ylb ylbVar, byte b) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class om0 implements dn7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Calendar c;
+    public final /* synthetic */ int d;
+
+    public /* synthetic */ om0(long j, Calendar calendar, int i, byte b) {
         this.a = b;
-        this.b = ylbVar;
+        this.b = j;
+        this.c = calendar;
+        this.d = i;
     }
 
-    @Override // mm0
-    public final int o(ylb ylbVar, boolean z) {
+    @Override // dn7
+    public final String c(int i) {
         byte b = this.a;
-        ylb ylbVar2 = this.b;
+        int i2 = this.d;
+        Calendar calendar = this.c;
+        long j = this.b;
         switch (b) {
             case 0:
-                if (qqd.d(z8c.t0, ylbVar2)) {
-                    return cmb.p1(e86.e(262144) ? 0.85f : 0.76f, cmb.v0(cmb.Ie, ylbVar));
+                if (i == 0) {
+                    return k96.M0(2131748339, "MessageScheduleToday");
                 }
-                return on2.p(cmb.v0(cmb.Ie, ylbVar), nm7.d4);
-            case 1:
-                if (qqd.d(z8c.t0, ylbVar2)) {
-                    return cmb.p1(e86.e(262144) ? 0.85f : 0.76f, cmb.v0(cmb.Se, ylbVar));
-                }
-                return on2.p(cmb.v0(z ? cmb.r8 : cmb.Se, ylbVar), nm7.d4);
+                long j2 = (i * 86400000) + j;
+                calendar.setTimeInMillis(j2);
+                return calendar.get(1) == i2 ? k96.D0().v0().format(j2) : k96.D0().x0().format(j2);
             default:
-                if (qqd.d(z8c.t0, ylbVar2)) {
-                    return cmb.p1(e86.e(262144) ? 0.85f : 0.76f, cmb.v0(cmb.Se, ylbVar));
+                if (i == 0) {
+                    return k96.M0(2131748339, null);
                 }
-                return on2.p(cmb.v0(z ? cmb.r8 : cmb.Se, ylbVar), nm7.d4);
+                long j3 = (i * 86400000) + j;
+                calendar.setTimeInMillis(j3);
+                if (calendar.get(1) != i2) {
+                    return k96.D0().x0().format(j3);
+                }
+                return k96.D0().z0().format(j3) + " " + k96.D0().v0().format(j3);
         }
     }
 }

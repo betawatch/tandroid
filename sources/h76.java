@@ -1,77 +1,70 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class h76 extends BaseAdapter {
-    public int a = -1;
-    public final /* synthetic */ i76 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class h76 extends FrameLayout {
+    public final e76 a;
+    public final be0 b;
+    public final pb0 c;
+    public final ImageView d;
+    public final f76 e;
+    public j76 f;
 
-    public h76(i76 i76Var) {
-        this.b = i76Var;
-        a();
+    public h76(Context context) {
+        super(context);
+        ote.a(this);
+        e76 e76Var = new e76(this, context);
+        this.a = e76Var;
+        e76Var.setOrientation(0);
+        addView(e76Var, nme.d(-2, -2.0f, kk7.D1, 0.0f, 0.0f, 6.0f, 0.0f));
+        this.c = new pb0((wjb) null);
+        be0 be0Var = new be0(context);
+        this.b = be0Var;
+        be0Var.setRoundRadius(gl.L(11.0f));
+        e76Var.addView(be0Var, nme.q(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setVisibility(8);
+        e76Var.addView(imageView, nme.t(18, 18, 19, 0, 0, 3, 0));
+        f76 f76Var = new f76(context);
+        this.e = f76Var;
+        f76Var.setLines(1);
+        f76Var.setSingleLine();
+        f76Var.setTextColor(-1);
+        f76Var.setTextSize(1, 14.0f);
+        f76Var.setTypeface(gl.o());
+        e76Var.addView(f76Var, nme.t(-2, -2, 16, 0, 0, 7, 0));
     }
 
-    public final void a() {
-        y17 y17Var = this.b.c;
-        c27 c27Var = y17Var.v;
-        if (c27Var != null) {
-            y17Var.i();
-            ArrayList arrayList = y17Var.j;
-            int size = arrayList.size();
-            for (int i = 0; i < size; i++) {
-                if (((c27) arrayList.get(i)) == c27Var) {
-                    this.a = i;
-                    return;
-                }
-            }
+    public void set(j76 j76Var) {
+        this.f = j76Var;
+        long j = j76Var.b;
+        int i = y6c.t0;
+        be0 be0Var = this.b;
+        pb0 pb0Var = this.c;
+        if (j >= 0) {
+            TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(j76Var.b));
+            pb0Var.q(V1);
+            be0Var.f(V1, pb0Var);
+        } else {
+            TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-j76Var.b));
+            pb0Var.p(K0);
+            be0Var.f(K0, pb0Var);
         }
-        this.a = -1;
-    }
-
-    @Override // android.widget.Adapter
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final c27 getItem(int i) {
-        y17 y17Var = this.b.c;
-        y17Var.i();
-        ArrayList arrayList = y17Var.j;
-        int i2 = this.a;
-        if (i2 >= 0 && i >= i2) {
-            i++;
+        int i2 = j76Var.e;
+        ImageView imageView = this.d;
+        if (i2 > 0) {
+            imageView.setImageDrawable(new vd1(getContext(), j76Var.e));
+            imageView.setVisibility(0);
+        } else {
+            imageView.setVisibility(8);
         }
-        return (c27) arrayList.get(i);
-    }
-
-    @Override // android.widget.Adapter
-    public final int getCount() {
-        y17 y17Var = this.b.c;
-        y17Var.i();
-        int size = y17Var.j.size();
-        return this.a < 0 ? size : size - 1;
-    }
-
-    @Override // android.widget.Adapter
-    public final long getItemId(int i) {
-        return i;
-    }
-
-    @Override // android.widget.Adapter
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        if (view == null) {
-            view = this.b.b.inflate(R.layout.abc_list_menu_item_layout, viewGroup, false);
-        }
-        ((u27) view).a(getItem(i));
-        return view;
-    }
-
-    @Override // android.widget.BaseAdapter
-    public final void notifyDataSetChanged() {
-        a();
-        super.notifyDataSetChanged();
+        this.e.setText(cf3.k(y6c.t0, j76Var.b));
+        this.a.invalidate();
     }
 }

@@ -1,6 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class pd8 {
+import org.telegram.messenger.ImageReceiver;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class pd8 extends ld8 {
+    public final jm6 b;
+    public final y3a c;
+
+    public pd8(y3a y3aVar) {
+        gl5 gl5Var;
+        this.c = y3aVar;
+        jm6 jm6Var = y3aVar.y;
+        this.b = jm6Var;
+        this.a.q0(gl.L(7.0f));
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.o0(0, 0, true);
+        String str = jm6Var.g;
+        int i = jm6Var.C;
+        String str2 = jm6Var.I;
+        if (str != null) {
+            gl5Var = gl5.g(str);
+        } else {
+            String str3 = jm6Var.c;
+            if (str3 != null) {
+                gl5Var = gl5.g(str3);
+            } else if (str2 == null) {
+                imageReceiver.f();
+                gl5Var = null;
+            } else if (!jm6Var.b || jm6Var.d()) {
+                gl5Var = gl5.g("thumb://" + i + ":" + str2);
+                imageReceiver.o0(jm6Var.J, jm6Var.K, true);
+            } else {
+                gl5Var = gl5.g("vthumb://" + i + ":" + str2);
+            }
+        }
+        gl5 gl5Var2 = gl5Var;
+        if (gl5Var2 != null) {
+            imageReceiver.d0(gl5Var2, null, null, null, null, 0);
+        } else {
+            imageReceiver.f();
+        }
+    }
 }

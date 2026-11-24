@@ -1,22 +1,33 @@
 // default package
 
-import android.app.Activity;
-import android.widget.LinearLayout;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class oj2 extends LinearLayout {
-    public final /* synthetic */ rj2 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class oj2 extends MetricAffectingSpan {
+    public static final Typeface[] c;
+    public final int a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oj2(rj2 rj2Var, Activity activity) {
-        super(activity);
-        this.a = rj2Var;
+    static {
+        Typeface typeface = Typeface.MONOSPACE;
+        c = new Typeface[]{typeface, Typeface.create(typeface, 1), Typeface.create(typeface, 2), Typeface.create(typeface, 3)};
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.a.D0();
+    public oj2(int i) {
+        this.b = i;
+        this.a = ((i & 256) != 0 ? 1 : 0) | ((i & 512) != 0 ? 2 : 0);
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        updateMeasureState(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.setTypeface(c[this.a]);
     }
 }

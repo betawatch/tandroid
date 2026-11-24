@@ -1,40 +1,26 @@
 // default package
 
-import android.app.Activity;
-import android.content.SharedPreferences;
+import android.util.SparseArray;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class xl6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cm6 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class xl6 {
+    public final int a;
+    public boolean b;
+    public final String c;
+    public final jm6 d;
+    public final ArrayList e = new ArrayList();
+    public final SparseArray f = new SparseArray();
 
-    public /* synthetic */ xl6(cm6 cm6Var, byte b) {
-        this.a = b;
-        this.b = cm6Var;
+    public xl6(int i, String str, jm6 jm6Var) {
+        this.a = i;
+        this.c = str;
+        this.d = jm6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        cm6 cm6Var = this.b;
-        switch (b) {
-            case 0:
-                cm6Var.b0();
-                break;
-            default:
-                Activity parentActivity = cm6Var.getParentActivity();
-                Activity parentActivity2 = cm6Var.getParentActivity();
-                np3 np3Var = hba.m;
-                boolean z = parentActivity2.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false);
-                SharedPreferences.Editor edit = parentActivity.getSharedPreferences("shapedetector_conf", 0).edit();
-                if (z) {
-                    edit.clear();
-                } else {
-                    edit.putBoolean("learning", true);
-                }
-                edit.apply();
-                break;
-        }
+    public final void a(jm6 jm6Var) {
+        this.e.add(jm6Var);
+        this.f.put(jm6Var.C, jm6Var);
     }
 }

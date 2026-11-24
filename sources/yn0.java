@@ -2,377 +2,410 @@
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-import java.util.Date;
-import org.telegram.messenger.beta.R;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.json.JSONObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class yn0 {
-    public static void a(he heVar, boolean z) {
-        xna xnaVar = heVar.f;
-        if (xnaVar != null) {
-            xnaVar.setTextSize(1, 20.0f);
-        }
-        mv3 mv3Var = heVar.n;
-        if (mv3Var != null) {
-            mv3Var.setTextSize(1, 14.0f);
-        }
-        mv3 mv3Var2 = heVar.n;
-        if (mv3Var2 != null) {
-            mv3Var2.setLineSpacing(gm.L(2.5f), 1.0f);
-        }
-        if (z) {
-            return;
-        }
-        ((ViewGroup.MarginLayoutParams) heVar.u0.getLayoutParams()).topMargin = gm.L(-14.0f);
+public final /* synthetic */ class yn0 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ yn0(ao0 ao0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j, d dVar) {
+        this.a = (byte) 0;
+        this.c = ao0Var;
+        this.d = prepaidGiveaway;
+        this.b = j;
+        this.e = dVar;
     }
 
-    public static String b(k47 k47Var) {
-        if (k47Var == null) {
-            return "";
-        }
-        String Y0 = k47Var.Y0();
-        if (Y0 != null) {
-            return Y0;
-        }
-        TLRPC.Chat L0 = oc7.r1(z8c.t0).L0(Long.valueOf(-k47.B1(k47Var.k.peer_id)));
-        return L0 != null ? L0.title : "";
-    }
-
-    public static void c(TLRPC.TL_error tL_error, FrameLayout frameLayout, ylb ylbVar, Runnable runnable) {
-        String str;
-        if (tL_error == null || (str = tL_error.text) == null) {
-            return;
-        }
-        if (!str.contains("PREMIUM_SUB_ACTIVE_UNTIL_")) {
-            j(frameLayout.getContext(), tL_error);
-            return;
-        }
-        String format = jb6.D0().n0().format(new Date(Long.parseLong(tL_error.text.replace("PREMIUM_SUB_ACTIVE_UNTIL_", "")) * 1000));
-        SpannableStringBuilder N2 = gm.N2(jb6.M0(2131749454, "GiftPremiumActivateErrorText"), cmb.wj, 0, runnable, null);
-        new c41(frameLayout, ylbVar).I(R.raw.chats_infotip, jb6.M0(2131749453, null), gm.G2(N2, gm.S2("**" + format + "**"), "%1$s")).j();
-        try {
-            frameLayout.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-    }
-
-    public static void d(boolean z, String str, TLRPC.TL_payments_giveawayInfo tL_payments_giveawayInfo, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, Activity activity, ylb ylbVar) {
-        int i;
-        String str2;
-        int i2 = tL_messageMediaGiveaway.quantity;
-        String G = jb6.G(tL_messageMediaGiveaway.months, "BoldMonths", new Object[0]);
-        String format = jb6.D0().s0().format(new Date(tL_messageMediaGiveaway.until_date * 1000));
-        String format2 = jb6.D0().o0().format(new Date(tL_payments_giveawayInfo.start_date * 1000));
-        String format3 = jb6.D0().t0().format(new Date(tL_payments_giveawayInfo.start_date * 1000));
-        boolean z2 = tL_messageMediaGiveaway.channels.size() > 1;
-        boolean z3 = (tL_messageMediaGiveaway.flags & 32) != 0;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ylbVar, activity);
-        String M0 = jb6.M0(2131753459, "BoostingGiveAwayAbout");
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M0;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (z3) {
-            str2 = format;
-            i = 0;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.K(z ? "BoostingStarsGiveawayHowItWorksText" : "BoostingStarsGiveawayHowItWorksTextGroup", (int) tL_messageMediaGiveaway.stars, ',', str)));
-        } else {
-            i = 0;
-            str2 = format;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i2, z ? "BoostingGiveawayHowItWorksText" : "BoostingGiveawayHowItWorksTextGroup", str, Integer.valueOf(i2), G)));
-        }
-        spannableStringBuilder.append((CharSequence) "\n\n");
-        String str3 = tL_messageMediaGiveaway.prize_description;
-        if (str3 != null && !str3.isEmpty()) {
-            String str4 = tL_messageMediaGiveaway.prize_description;
-            Object[] objArr = new Object[2];
-            objArr[i] = str;
-            objArr[1] = str4;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i2, "BoostingGiveawayHowItWorksIncludeText", objArr)));
-            spannableStringBuilder.append((CharSequence) "\n\n");
-        }
-        if (tL_messageMediaGiveaway.only_new_subscribers) {
-            if (z2) {
-                int size = tL_messageMediaGiveaway.channels.size() - 1;
-                Object[] objArr2 = new Object[2];
-                objArr2[i] = format2;
-                objArr2[1] = format3;
-                String G2 = jb6.G(size, "BoostingGiveawayHowItWorksSubTextDateSeveral2", objArr2);
-                Integer valueOf = Integer.valueOf(i2);
-                Object[] objArr3 = new Object[4];
-                objArr3[i] = str2;
-                objArr3[1] = valueOf;
-                objArr3[2] = str;
-                objArr3[3] = G2;
-                spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i2, "BoostingGiveawayHowItWorksSubTextDateSeveral1", objArr3)));
-            } else {
-                Integer valueOf2 = Integer.valueOf(i2);
-                Object[] objArr4 = new Object[5];
-                objArr4[i] = str2;
-                objArr4[1] = valueOf2;
-                objArr4[2] = str;
-                objArr4[3] = format2;
-                objArr4[4] = format3;
-                spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i2, "BoostingGiveawayHowItWorksSubTextDate", objArr4)));
-            }
-        } else if (z2) {
-            int i3 = i;
-            String G3 = jb6.G(tL_messageMediaGiveaway.channels.size() - 1, "BoostingGiveawayHowItWorksSubTextSeveral2", new Object[i3]);
-            Integer valueOf3 = Integer.valueOf(i2);
-            Object[] objArr5 = new Object[4];
-            objArr5[i3] = str2;
-            objArr5[1] = valueOf3;
-            objArr5[2] = str;
-            objArr5[3] = G3;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i2, "BoostingGiveawayHowItWorksSubTextSeveral1", objArr5)));
-        } else {
-            Integer valueOf4 = Integer.valueOf(i2);
-            Object[] objArr6 = new Object[3];
-            objArr6[i] = str2;
-            objArr6[1] = valueOf4;
-            objArr6[2] = str;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i2, "BoostingGiveawayHowItWorksSubText", objArr6)));
-        }
-        spannableStringBuilder.append((CharSequence) "\n\n");
-        if (!tL_payments_giveawayInfo.participating) {
-            String str5 = tL_payments_giveawayInfo.disallowed_country;
-            if (str5 != null && !str5.isEmpty()) {
-                spannableStringBuilder.append((CharSequence) gm.S2(jb6.M0(2131753367, "BoostingGiveawayNotEligibleCountry")));
-            } else if (tL_payments_giveawayInfo.admin_disallowed_chat_id != 0) {
-                TLRPC.Chat L0 = oc7.r1(z8c.t0).L0(Long.valueOf(tL_payments_giveawayInfo.admin_disallowed_chat_id));
-                kt6.t(null, null, z ? 2131753369 : 2131753368, new Object[]{L0 != null ? L0.title : ""}, spannableStringBuilder);
-            } else if (tL_payments_giveawayInfo.joined_too_early_date != 0) {
-                kt6.t("BoostingGiveawayNotEligible", null, 2131753370, new Object[]{jb6.D0().t0().format(new Date(tL_payments_giveawayInfo.joined_too_early_date * 1000))}, spannableStringBuilder);
-            } else if (z2) {
-                spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(tL_messageMediaGiveaway.channels.size() - 1, "BoostingGiveawayTakePartMultiPlural", str, str2)));
-            } else {
-                kt6.t("BoostingGiveawayTakePart", null, 2131753331, new Object[]{str, str2}, spannableStringBuilder);
-            }
-        } else if (z2) {
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(tL_messageMediaGiveaway.channels.size() - 1, "BoostingGiveawayParticipantMultiPlural", str)));
-        } else {
-            kt6.t("BoostingGiveawayParticipant", null, 2131753366, new Object[]{str}, spannableStringBuilder);
-        }
-        heVar.U = spannableStringBuilder;
-        alertDialog$Builder.j(jb6.M0(2131747564, "OK"), new dq9((byte) 14));
-        a(alertDialog$Builder.o(), false);
-    }
-
-    public static void e(boolean z, String str, TLRPC.TL_payments_giveawayInfoResults tL_payments_giveawayInfoResults, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, Activity activity, ylb ylbVar) {
-        String str2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         int i;
         int i2;
-        String M0;
-        if (tL_messageMediaGiveaway.until_date == 0) {
-            tL_messageMediaGiveaway.until_date = tL_payments_giveawayInfoResults.finish_date;
-        }
-        int i3 = tL_messageMediaGiveaway.quantity;
-        String G = jb6.G(tL_messageMediaGiveaway.months, "BoldMonths", new Object[0]);
-        String format = jb6.D0().s0().format(new Date(tL_messageMediaGiveaway.until_date * 1000));
-        String format2 = jb6.D0().o0().format(new Date(tL_payments_giveawayInfoResults.start_date * 1000));
-        String format3 = jb6.D0().t0().format(new Date(tL_payments_giveawayInfoResults.start_date * 1000));
-        boolean z2 = tL_messageMediaGiveaway.channels.size() > 1;
-        boolean z3 = (tL_messageMediaGiveaway.flags & 32) != 0;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ylbVar, activity);
-        String M02 = jb6.M0(2131753443, "BoostingGiveawayEnd");
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M02;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (z3) {
-            str2 = format;
-            i2 = 2;
-            i = 1;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.K(z ? "BoostingStarsGiveawayHowItWorksTextEnd" : "BoostingStarsGiveawayHowItWorksTextEndGroup", (int) tL_messageMediaGiveaway.stars, ',', str)));
-        } else {
-            str2 = format;
-            i = 1;
-            i2 = 2;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i3, z ? "BoostingGiveawayHowItWorksTextEnd" : "BoostingGiveawayHowItWorksTextEndGroup", str, Integer.valueOf(i3), G)));
-        }
-        spannableStringBuilder.append((CharSequence) "\n\n");
-        String str3 = tL_messageMediaGiveaway.prize_description;
-        if (str3 != null && !str3.isEmpty()) {
-            String str4 = tL_messageMediaGiveaway.prize_description;
-            Object[] objArr = new Object[i2];
-            objArr[0] = str;
-            objArr[i] = str4;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i3, "BoostingGiveawayHowItWorksIncludeText", objArr)));
-            spannableStringBuilder.append((CharSequence) "\n\n");
-        }
-        if (tL_messageMediaGiveaway.only_new_subscribers) {
-            if (z2) {
-                int size = tL_messageMediaGiveaway.channels.size() - 1;
-                Object[] objArr2 = new Object[2];
-                objArr2[0] = format2;
-                objArr2[i] = format3;
-                String G2 = jb6.G(size, "BoostingGiveawayHowItWorksSubTextDateSeveral2", objArr2);
-                Integer valueOf = Integer.valueOf(i3);
-                Object[] objArr3 = new Object[4];
-                objArr3[0] = str2;
-                objArr3[i] = valueOf;
-                objArr3[2] = str;
-                objArr3[3] = G2;
-                spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i3, "BoostingGiveawayHowItWorksSubTextDateSeveralEnd1", objArr3)));
-            } else {
-                Integer valueOf2 = Integer.valueOf(i3);
-                Object[] objArr4 = new Object[5];
-                objArr4[0] = str2;
-                objArr4[i] = valueOf2;
-                objArr4[2] = str;
-                objArr4[3] = format2;
-                objArr4[4] = format3;
-                spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i3, "BoostingGiveawayHowItWorksSubTextDateEnd", objArr4)));
-            }
-        } else if (z2) {
-            String G3 = jb6.G(tL_messageMediaGiveaway.channels.size() - 1, "BoostingGiveawayHowItWorksSubTextSeveral2", new Object[0]);
-            Integer valueOf3 = Integer.valueOf(i3);
-            Object[] objArr5 = new Object[4];
-            objArr5[0] = str2;
-            objArr5[i] = valueOf3;
-            objArr5[2] = str;
-            objArr5[3] = G3;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i3, "BoostingGiveawayHowItWorksSubTextSeveralEnd1", objArr5)));
-        } else {
-            Integer valueOf4 = Integer.valueOf(i3);
-            Object[] objArr6 = new Object[3];
-            objArr6[0] = str2;
-            objArr6[i] = valueOf4;
-            objArr6[2] = str;
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i3, "BoostingGiveawayHowItWorksSubTextEnd", objArr6)));
-        }
-        spannableStringBuilder.append((CharSequence) " ");
-        int i4 = tL_payments_giveawayInfoResults.activated_count;
-        if (i4 > 0) {
-            spannableStringBuilder.append((CharSequence) gm.S2(jb6.G(i4, "BoostingGiveawayUsedLinksPlural", new Object[0])));
-        }
-        if (tL_payments_giveawayInfoResults.refunded) {
-            String M03 = jb6.M0(2131753448, "BoostingGiveawayCanceledByPayment");
-            TextView textView = new TextView(activity);
-            textView.setTextSize(i, 14.0f);
-            textView.setTypeface(gm.o());
-            textView.setGravity(17);
-            textView.setText(M03);
-            int i5 = cmb.o7;
-            anb.X(textView, i5, ylbVar);
-            ShapeDrawable c0 = cmb.c0(gm.L(10.0f), gm.L(10.0f), cmb.p1(0.1f, cmb.v0(i5, ylbVar)));
-            wmb K = anb.K(0.1f, i5);
-            textView.setBackground(c0);
-            anb.j(textView, c0, K, null, ylbVar);
-            textView.setPadding(gm.L(12.0f), gm.L(12.0f), gm.L(12.0f), gm.L(12.0f));
-            heVar.c = textView;
-            heVar.U = spannableStringBuilder;
-            alertDialog$Builder.j(jb6.M0(2131751978, "Close"), new dq9((byte) 14));
-            a(alertDialog$Builder.o(), true);
-            return;
-        }
-        heVar.U = spannableStringBuilder;
-        if (tL_payments_giveawayInfoResults.winner) {
-            M0 = jb6.M0(2131753322, null);
-            if ((tL_payments_giveawayInfoResults.flags & 16) == 0) {
-                alertDialog$Builder.j(jb6.M0(2131753324, "BoostingGiveawayViewPrize"), new xg0(tL_payments_giveawayInfoResults, (byte) 6));
-            }
-            alertDialog$Builder.g(jb6.M0(2131751978, "Close"), new dq9((byte) 14));
-        } else {
-            M0 = jb6.M0(2131753323, "BoostingGiveawayYouNotWon");
-            alertDialog$Builder.j(jb6.M0(2131751978, "Close"), new dq9((byte) 14));
-        }
-        mv3 mv3Var = new mv3(activity);
-        nm7.i(mv3Var);
-        anb.X(mv3Var, cmb.i5, ylbVar);
-        mv3Var.setTextSize(1, 14.0f);
-        mv3Var.setGravity(17);
-        mv3Var.setText(M0);
-        int L = gm.L(8.0f);
-        int L2 = gm.L(8.0f);
-        int i6 = cmb.oi;
-        ShapeDrawable c02 = cmb.c0(L, L2, cmb.v0(i6, ylbVar));
-        wmb M = anb.M(i6);
-        mv3Var.setBackground(c02);
-        anb.j(mv3Var, c02, M, null, ylbVar);
-        mv3Var.setPadding(gm.L(8.0f), gm.L(8.0f), gm.L(8.0f), gm.L(9.0f));
-        heVar.d = mv3Var;
-        a(alertDialog$Builder.o(), false);
-    }
-
-    public static void f(d dVar, TLRPC.Chat chat, boolean z) {
-        if (dVar == null) {
-            return;
-        }
-        gm.d3(new rh(c41.b0(dVar), z, chat, dVar.getResourceProvider()), 300L);
-    }
-
-    public static void g(int i) {
         String str;
-        d Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
+        byte b = this.a;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        switch (b) {
+            case 0:
+                ao0 ao0Var = (ao0) obj3;
+                TL_stories.PrepaidGiveaway prepaidGiveaway = (TL_stories.PrepaidGiveaway) obj2;
+                d dVar = (d) obj;
+                ArrayList arrayList = ao0Var.Z1;
+                ArrayList arrayList2 = ao0Var.X1;
+                TLRPC.Chat chat = ao0Var.W1;
+                ArrayList arrayList3 = ao0Var.Y1;
+                ArrayList arrayList4 = ao0Var.a2;
+                n8 n8Var = ao0Var.l2;
+                if (!n8Var.a.R) {
+                    if (ao0Var.d1()) {
+                        TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway ? (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway : null;
+                        dt4 dt4Var = new dt4((Object) ao0Var, (TLObject) prepaidGiveaway, (TLObject) tL_prepaidStarsGiveaway, this.b, tL_prepaidStarsGiveaway != null ? tL_prepaidStarsGiveaway.stars : 0L, (byte) 2);
+                        d Q = LaunchActivity.Q();
+                        if (Q != null) {
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getResourceProvider(), Q.getContext());
+                            String M0 = k96.M0(2131753188, null);
+                            hd hdVar = alertDialog$Builder.a;
+                            hdVar.S = M0;
+                            hdVar.U = gl.S2(k96.M0(2131753189, null));
+                            alertDialog$Builder.j(k96.M0(2131744678, null), new sg0(dt4Var, (byte) 5));
+                            alertDialog$Builder.g(k96.M0(2131752577, null), new qm0((byte) 0));
+                            alertDialog$Builder.o();
+                            break;
+                        }
+                    } else {
+                        int i3 = ao0Var.c2;
+                        int i4 = pn0.w;
+                        byte b2 = 2;
+                        byte b3 = 4;
+                        if (i3 != 3) {
+                            byte b4 = 2;
+                            if (ao0Var.d2 == 1) {
+                                ArrayList c = on0.c(arrayList3.size(), arrayList4);
+                                for (int i5 = 0; i5 < c.size(); i5++) {
+                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) c.get(i5);
+                                    if (tL_premiumGiftCodeOption.months == ao0Var.g2 && arrayList3.size() > 0) {
+                                        if (on0.j()) {
+                                            Context context = ao0Var.getContext();
+                                            wjb wjbVar = ao0Var.J0;
+                                            if (tL_premiumGiftCodeOption.store_product == null) {
+                                                ArrayList arrayList5 = new ArrayList();
+                                                int size = arrayList4.size();
+                                                int i6 = 0;
+                                                while (i6 < size) {
+                                                    Object obj4 = arrayList4.get(i6);
+                                                    i6++;
+                                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) obj4;
+                                                    if (tL_premiumGiftCodeOption2.months == tL_premiumGiftCodeOption.months && tL_premiumGiftCodeOption2.store_product != null) {
+                                                        arrayList5.add(Integer.valueOf(tL_premiumGiftCodeOption2.users));
+                                                    }
+                                                }
+                                                String join = TextUtils.join(", ", arrayList5);
+                                                int i7 = tL_premiumGiftCodeOption.users;
+                                                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, wjbVar, context);
+                                                String M02 = k96.M0(2131753299, "BoostingReduceQuantity");
+                                                hd hdVar2 = alertDialog$Builder2.a;
+                                                hdVar2.S = M02;
+                                                hdVar2.U = gl.S2(k96.G(i7, "BoostingReduceUsersTextPlural", join));
+                                                alertDialog$Builder2.j(k96.M0(2131747638, "OK"), new ho9((byte) 13));
+                                                alertDialog$Builder2.o();
+                                                break;
+                                            }
+                                        }
+                                        n8Var.b(true);
+                                        on0.m(arrayList3, tL_premiumGiftCodeOption, ao0Var.W1, null, dVar, new tn0(ao0Var, (byte) 0), new tn0(ao0Var, (byte) 1));
+                                        break;
+                                    }
+                                }
+                                break;
+                            } else {
+                                ArrayList c2 = on0.c(ao0Var.Z0(), arrayList4);
+                                int i8 = 0;
+                                while (i8 < c2.size()) {
+                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption3 = (TLRPC.TL_premiumGiftCodeOption) c2.get(i8);
+                                    if (tL_premiumGiftCodeOption3.months == ao0Var.g2) {
+                                        if (on0.j()) {
+                                            List list = ao0Var.T1;
+                                            Context context2 = ao0Var.getContext();
+                                            wjb wjbVar2 = ao0Var.J0;
+                                            tn0 tn0Var = new tn0(ao0Var, b4);
+                                            if (tL_premiumGiftCodeOption3.store_product == null) {
+                                                ArrayList arrayList6 = new ArrayList();
+                                                int size2 = arrayList4.size();
+                                                int i9 = 0;
+                                                while (i9 < size2) {
+                                                    Object obj5 = arrayList4.get(i9);
+                                                    i9++;
+                                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption4 = (TLRPC.TL_premiumGiftCodeOption) obj5;
+                                                    if (tL_premiumGiftCodeOption4.months == tL_premiumGiftCodeOption3.months && tL_premiumGiftCodeOption4.store_product != null && list.contains(Integer.valueOf(tL_premiumGiftCodeOption4.users))) {
+                                                        arrayList6.add(tL_premiumGiftCodeOption4);
+                                                    }
+                                                }
+                                                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption5 = (TLRPC.TL_premiumGiftCodeOption) arrayList6.get(0);
+                                                int size3 = arrayList6.size();
+                                                int i10 = 0;
+                                                while (i10 < size3) {
+                                                    Object obj6 = arrayList6.get(i10);
+                                                    i10++;
+                                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption6 = (TLRPC.TL_premiumGiftCodeOption) obj6;
+                                                    int i11 = tL_premiumGiftCodeOption3.users;
+                                                    int i12 = tL_premiumGiftCodeOption6.users;
+                                                    if (i11 > i12 && i12 > tL_premiumGiftCodeOption5.users) {
+                                                        tL_premiumGiftCodeOption5 = tL_premiumGiftCodeOption6;
+                                                    }
+                                                }
+                                                String G = k96.G(tL_premiumGiftCodeOption5.months, "GiftMonths", new Object[0]);
+                                                int i13 = tL_premiumGiftCodeOption3.users;
+                                                int i14 = tL_premiumGiftCodeOption5.users;
+                                                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, wjbVar2, context2);
+                                                String M03 = k96.M0(2131753299, "BoostingReduceQuantity");
+                                                hd hdVar3 = alertDialog$Builder3.a;
+                                                hdVar3.S = M03;
+                                                hdVar3.U = gl.S2(k96.G(i13, "BoostingReduceQuantityTextPlural", G, Integer.valueOf(i14)));
+                                                alertDialog$Builder3.j(k96.M0(2131746148, "Reduce"), new o(tn0Var, tL_premiumGiftCodeOption5, (byte) 20));
+                                                alertDialog$Builder3.g(k96.M0(2131752577, "Cancel"), new ho9((byte) 13));
+                                                alertDialog$Builder3.o();
+                                                break;
+                                            }
+                                        }
+                                        int i15 = ao0Var.e2;
+                                        int i16 = dv7.w;
+                                        boolean z = i15 == 1;
+                                        int n = on0.n(ao0Var.h2);
+                                        n8Var.b(true);
+                                        boolean z2 = ao0Var.s2;
+                                        boolean z3 = ao0Var.r2;
+                                        String str2 = ao0Var.q2;
+                                        tn0 tn0Var2 = new tn0(ao0Var, (byte) 3);
+                                        tn0 tn0Var3 = new tn0(ao0Var, b3);
+                                        boolean j = on0.j();
+                                        int i17 = y6c.t0;
+                                        if (j) {
+                                            na7 q1 = na7.q1(i17);
+                                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(y6c.t0);
+                                            TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = new TLRPC.TL_inputStorePaymentPremiumGiveaway();
+                                            tL_inputStorePaymentPremiumGiveaway.only_new_subscribers = z;
+                                            tL_inputStorePaymentPremiumGiveaway.winners_are_visible = z2;
+                                            tL_inputStorePaymentPremiumGiveaway.prize_description = str2;
+                                            tL_inputStorePaymentPremiumGiveaway.until_date = n;
+                                            int i18 = tL_inputStorePaymentPremiumGiveaway.flags;
+                                            tL_inputStorePaymentPremiumGiveaway.flags = i18 | 6;
+                                            if (z3) {
+                                                tL_inputStorePaymentPremiumGiveaway.flags = i18 | 22;
+                                            }
+                                            tL_inputStorePaymentPremiumGiveaway.random_id = System.currentTimeMillis();
+                                            tL_inputStorePaymentPremiumGiveaway.additional_peers = new ArrayList<>();
+                                            int size4 = arrayList2.size();
+                                            int i19 = 0;
+                                            while (i19 < size4) {
+                                                Object obj7 = arrayList2.get(i19);
+                                                int i20 = i19 + 1;
+                                                TLObject tLObject = (TLObject) obj7;
+                                                if (tLObject instanceof TLRPC.Chat) {
+                                                    i = i20;
+                                                    tL_inputStorePaymentPremiumGiveaway.additional_peers.add(q1.h1(-((TLRPC.Chat) tLObject).id));
+                                                } else {
+                                                    i = i20;
+                                                }
+                                                i19 = i;
+                                            }
+                                            tL_inputStorePaymentPremiumGiveaway.boost_peer = q1.h1(-chat.id);
+                                            int size5 = arrayList.size();
+                                            int i21 = 0;
+                                            while (i21 < size5) {
+                                                Object obj8 = arrayList.get(i21);
+                                                i21++;
+                                                tL_inputStorePaymentPremiumGiveaway.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) obj8)).iso2);
+                                            }
+                                            i5 i5Var = new i5();
+                                            i5Var.b = "inapp";
+                                            i5Var.a = tL_premiumGiftCodeOption3.store_product;
+                                            ci0.h().o(Arrays.asList(i5Var.a()), new zd((Object) tL_inputStorePaymentPremiumGiveaway, (Object) tL_premiumGiftCodeOption3, (Object) connectionsManager, (Object) tn0Var3, (Object) tn0Var2, (Object) dVar, (byte) 3));
+                                            break;
+                                        } else {
+                                            na7 q12 = na7.q1(i17);
+                                            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(y6c.t0);
+                                            TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
+                                            TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = new TLRPC.TL_inputInvoicePremiumGiftCode();
+                                            TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway2 = new TLRPC.TL_inputStorePaymentPremiumGiveaway();
+                                            tL_inputStorePaymentPremiumGiveaway2.only_new_subscribers = z;
+                                            tL_inputStorePaymentPremiumGiveaway2.winners_are_visible = z2;
+                                            tL_inputStorePaymentPremiumGiveaway2.prize_description = str2;
+                                            tL_inputStorePaymentPremiumGiveaway2.until_date = n;
+                                            int i22 = tL_inputStorePaymentPremiumGiveaway2.flags;
+                                            tL_inputStorePaymentPremiumGiveaway2.flags = i22 | 6;
+                                            if (z3) {
+                                                tL_inputStorePaymentPremiumGiveaway2.flags = i22 | 22;
+                                            }
+                                            tL_inputStorePaymentPremiumGiveaway2.random_id = System.currentTimeMillis();
+                                            tL_inputStorePaymentPremiumGiveaway2.additional_peers = new ArrayList<>();
+                                            int size6 = arrayList2.size();
+                                            int i23 = 0;
+                                            while (i23 < size6) {
+                                                Object obj9 = arrayList2.get(i23);
+                                                int i24 = i23 + 1;
+                                                TLObject tLObject2 = (TLObject) obj9;
+                                                if (tLObject2 instanceof TLRPC.Chat) {
+                                                    i2 = i24;
+                                                    tL_inputStorePaymentPremiumGiveaway2.additional_peers.add(q12.h1(-((TLRPC.Chat) tLObject2).id));
+                                                } else {
+                                                    i2 = i24;
+                                                }
+                                                i23 = i2;
+                                            }
+                                            tL_inputStorePaymentPremiumGiveaway2.boost_peer = q12.h1(-chat.id);
+                                            tL_inputStorePaymentPremiumGiveaway2.boost_peer = q12.h1(-chat.id);
+                                            tL_inputStorePaymentPremiumGiveaway2.currency = tL_premiumGiftCodeOption3.currency;
+                                            tL_inputStorePaymentPremiumGiveaway2.amount = tL_premiumGiftCodeOption3.amount;
+                                            int size7 = arrayList.size();
+                                            int i25 = 0;
+                                            while (i25 < size7) {
+                                                Object obj10 = arrayList.get(i25);
+                                                i25++;
+                                                tL_inputStorePaymentPremiumGiveaway2.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) obj10)).iso2);
+                                            }
+                                            tL_inputInvoicePremiumGiftCode.purpose = tL_inputStorePaymentPremiumGiveaway2;
+                                            tL_inputInvoicePremiumGiftCode.option = tL_premiumGiftCodeOption3;
+                                            JSONObject u = ow0.u(dVar.getResourceProvider(), false);
+                                            if (u != null) {
+                                                TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+                                                tL_payments_getPaymentForm.theme_params = tL_dataJSON;
+                                                tL_dataJSON.data = u.toString();
+                                                tL_payments_getPaymentForm.flags |= 1;
+                                            }
+                                            tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
+                                            connectionsManager2.sendRequest(tL_payments_getPaymentForm, new fn0((Object) tn0Var3, (Object) q12, (Object) tL_inputInvoicePremiumGiftCode, (Object) dVar, (Object) tn0Var2, (byte) 0));
+                                            break;
+                                        }
+                                    } else {
+                                        i8++;
+                                        b4 = b4;
+                                    }
+                                }
+                                break;
+                            }
+                        } else {
+                            Activity W = gl.W(ao0Var.getContext());
+                            if (W == null) {
+                                W = LaunchActivity.H1;
+                            }
+                            if (W != null && !W.isFinishing()) {
+                                TL_stars.TL_starsGiveawayOption b1 = ao0Var.b1(ao0Var.k2);
+                                int Z0 = ao0Var.Z0();
+                                if (b1 != null) {
+                                    n8Var.a.setLoading(true);
+                                    int i26 = ao0Var.e2;
+                                    int i27 = dv7.w;
+                                    boolean z4 = i26 == 1;
+                                    gta v = gta.v(ao0Var.a, false);
+                                    int n2 = on0.n(ao0Var.h2);
+                                    boolean z5 = ao0Var.s2;
+                                    boolean z6 = ao0Var.r2;
+                                    String str3 = ao0Var.q2;
+                                    ae2 ae2Var = new ae2(ao0Var, b1, b2);
+                                    int i28 = v.a;
+                                    if (na7.q1(i28).a5()) {
+                                        TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway = new TLRPC.TL_inputStorePaymentStarsGiveaway();
+                                        tL_inputStorePaymentStarsGiveaway.only_new_subscribers = z4;
+                                        tL_inputStorePaymentStarsGiveaway.winners_are_visible = z5;
+                                        tL_inputStorePaymentStarsGiveaway.stars = b1.stars;
+                                        na7.q1(i28);
+                                        tL_inputStorePaymentStarsGiveaway.boost_peer = na7.j1(chat);
+                                        if (arrayList2 != null && !arrayList2.isEmpty()) {
+                                            tL_inputStorePaymentStarsGiveaway.flags |= 2;
+                                            int size8 = arrayList2.size();
+                                            int i29 = 0;
+                                            while (i29 < size8) {
+                                                Object obj11 = arrayList2.get(i29);
+                                                i29++;
+                                                Activity activity = W;
+                                                ArrayList<TLRPC.InputPeer> arrayList7 = tL_inputStorePaymentStarsGiveaway.additional_peers;
+                                                na7.q1(i28);
+                                                arrayList7.add(na7.i1((TLObject) obj11));
+                                                W = activity;
+                                            }
+                                        }
+                                        Activity activity2 = W;
+                                        int size9 = arrayList.size();
+                                        int i30 = 0;
+                                        while (i30 < size9) {
+                                            Object obj12 = arrayList.get(i30);
+                                            i30++;
+                                            tL_inputStorePaymentStarsGiveaway.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) obj12)).iso2);
+                                        }
+                                        if (!tL_inputStorePaymentStarsGiveaway.countries_iso2.isEmpty()) {
+                                            tL_inputStorePaymentStarsGiveaway.flags |= 4;
+                                        }
+                                        if (z6) {
+                                            tL_inputStorePaymentStarsGiveaway.flags |= 16;
+                                            tL_inputStorePaymentStarsGiveaway.prize_description = str3;
+                                        }
+                                        z3a.B(i28);
+                                        tL_inputStorePaymentStarsGiveaway.random_id = z3a.D();
+                                        tL_inputStorePaymentStarsGiveaway.until_date = n2;
+                                        tL_inputStorePaymentStarsGiveaway.currency = b1.currency;
+                                        tL_inputStorePaymentStarsGiveaway.amount = b1.amount;
+                                        tL_inputStorePaymentStarsGiveaway.users = Z0;
+                                        if (!w01.b() && ci0.h().j() && (str = b1.store_product) != null) {
+                                            i5 i5Var2 = new i5();
+                                            i5Var2.b = "inapp";
+                                            i5Var2.a = str;
+                                            ci0.h().o(Arrays.asList(i5Var2.a()), new lt((Object) v, (Object) ae2Var, (Object) tL_inputStorePaymentStarsGiveaway, (Object) activity2, (byte) 23));
+                                            break;
+                                        } else {
+                                            TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
+                                            tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsGiveaway;
+                                            TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm2 = new TLRPC.TL_payments_getPaymentForm();
+                                            JSONObject u2 = ow0.u(gta.F(), false);
+                                            if (u2 != null) {
+                                                TLRPC.TL_dataJSON tL_dataJSON2 = new TLRPC.TL_dataJSON();
+                                                tL_payments_getPaymentForm2.theme_params = tL_dataJSON2;
+                                                tL_dataJSON2.data = u2.toString();
+                                                tL_payments_getPaymentForm2.flags |= 1;
+                                            }
+                                            tL_payments_getPaymentForm2.invoice = tL_inputInvoiceStars;
+                                            ConnectionsManager.getInstance(i28).sendRequest(tL_payments_getPaymentForm2, new ck8((Object) v, (Object) ae2Var, (Object) tL_inputInvoiceStars, (byte) 18));
+                                            break;
+                                        }
+                                    } else {
+                                        d Q2 = LaunchActivity.Q();
+                                        if (Q2 != null && Q2.getContext() != null) {
+                                            gta.c0(Q2.getContext(), Q2.getResourceProvider());
+                                            break;
+                                        } else {
+                                            gta.c0(W, null);
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            case 1:
+                f13 f13Var = (f13) obj3;
+                u41 u41Var = (u41) obj;
+                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, f13Var.J0, (Context) obj2);
+                String M04 = k96.M0(2131748606, null);
+                hd hdVar4 = alertDialog$Builder4.a;
+                hdVar4.S = M04;
+                hdVar4.U = k96.M0(2131748607, null);
+                alertDialog$Builder4.j(k96.M0(2131745831, null), new hs0((Object) f13Var, (Object) u41Var, this.b, (byte) 2));
+                alertDialog$Builder4.g(k96.M0(2131752577, null), null);
+                alertDialog$Builder4.c(-1);
+                alertDialog$Builder4.o();
+                break;
+            default:
+                cj3 cj3Var = (cj3) obj3;
+                cj3Var.finishPreviewFragment();
+                gl.d3(new m77((Object) cj3Var, obj2, obj, this.b, (byte) 7), 100L);
+                break;
         }
-        if (i < 60) {
-            str = jb6.G(i, "Seconds", new Object[0]);
-        } else if (i < 3600) {
-            str = jb6.G(i / 60, "Minutes", new Object[0]);
-        } else {
-            int i2 = (i / 60) / 60;
-            if (i2 > 2) {
-                str = jb6.G(i2, "Hours", new Object[0]);
-            } else {
-                str = jb6.G(i2, "Hours", new Object[0]) + " " + jb6.G(i % 60, "Minutes", new Object[0]);
-            }
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getResourceProvider(), Q.getContext());
-        String M0 = jb6.M0(2131752518, null);
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M0;
-        heVar.U = gm.S2(jb6.a0("CantBoostTooOftenDescription", null, 2131752517, str));
-        alertDialog$Builder.j(jb6.M0(2131747564, null), new qn0((byte) 1));
-        alertDialog$Builder.o();
     }
 
-    public static void h(long j) {
-        SpannableStringBuilder S2;
-        byte b = 0;
-        if (j == z8c.h(z8c.t0).n) {
-            S2 = gm.S2(jb6.M0(2131753463, null));
-        } else {
-            boolean y = pg3.y(j);
-            int i = z8c.t0;
-            S2 = y ? gm.S2(jb6.a0("BoostingGiftLinkForwardedTo", null, 2131753464, oc7.r1(i).L0(Long.valueOf(-j)).title)) : gm.S2(jb6.a0("BoostingGiftLinkForwardedTo", null, 2131753464, m9c.k(oc7.r1(i).W1(Long.valueOf(j)), true)));
-        }
-        gm.d3(new rn0(S2, b), 450L);
-    }
-
-    public static void i(long j, my0 my0Var) {
-        TLRPC.Chat L0 = oc7.r1(z8c.t0).L0(Long.valueOf(-j));
-        d Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getResourceProvider(), Q.getContext());
-        String M0 = jb6.M0(2131753303, null);
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M0;
-        heVar.U = gm.S2(jb6.G(oo0.b(), "BoostingGetMoreBoostByGiftingCount", L0.title));
-        alertDialog$Builder.g(jb6.M0(2131749457, "GiftPremium"), new nn0(my0Var));
-        alertDialog$Builder.j(jb6.M0(2131751978, "Close"), new dq9((byte) 14));
-        alertDialog$Builder.o();
-    }
-
-    public static void j(Context context, TLRPC.TL_error tL_error) {
-        String str;
-        if (tL_error == null || (str = tL_error.text) == null || TextUtils.isEmpty(str)) {
-            return;
-        }
-        Toast.makeText(context, tL_error.text, 1).show();
+    public /* synthetic */ yn0(Object obj, Object obj2, Object obj3, long j, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j;
     }
 }

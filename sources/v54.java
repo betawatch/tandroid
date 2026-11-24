@@ -1,39 +1,25 @@
 // default package
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class v54 {
-    public final String a;
-    public final long b;
-    public final Map c;
+public final class v54 implements wx6 {
+    public final Object a;
+    public final hj6 b;
+    public aob c;
 
-    public v54(String str, long j, Map map) {
-        map.getClass();
-        this.a = str;
-        this.b = j;
-        this.c = map;
+    public v54(Object obj, hj6 hj6Var) {
+        this.a = obj;
+        this.b = hj6Var;
+        this.c = hj6Var.o;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v54)) {
-            return false;
-        }
-        v54 v54Var = (v54) obj;
-        return this.a.equals(v54Var.a) && this.b == v54Var.b && rr5.a(this.c, v54Var.c);
+    @Override // wx6
+    public final Object a() {
+        return this.a;
     }
 
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        long j = this.b;
-        return this.c.hashCode() + ((hashCode + ((int) (j ^ (j >>> 32)))) * 31);
-    }
-
-    public final String toString() {
-        return "EventMetadata(sessionId=" + this.a + ", timestamp=" + this.b + ", additionalCustomKeys=" + this.c + ')';
+    @Override // wx6
+    public final aob b() {
+        return this.c;
     }
 }

@@ -1,52 +1,24 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class g17 implements Runnable {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ vh6 e;
-    public final /* synthetic */ oc7 f;
-    public final /* synthetic */ k17 h;
+public final class g17 extends gm {
+    public final /* synthetic */ j17 a;
 
-    public g17(k17 k17Var, TLRPC.Chat chat, String str, long j, ArrayList arrayList, vh6 vh6Var, oc7 oc7Var) {
-        this.h = k17Var;
-        this.a = chat;
-        this.b = str;
-        this.c = j;
-        this.d = arrayList;
-        this.e = vh6Var;
-        this.f = oc7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g17(j17 j17Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = j17Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        k17 k17Var = this.h;
-        if (k17Var.F != this) {
-            return;
-        }
-        TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = oc7.h1(this.a);
-        tL_channels_getParticipants.limit = 20;
-        tL_channels_getParticipants.offset = 0;
-        TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
-        int i = tL_channelParticipantsMentions.flags;
-        tL_channelParticipantsMentions.flags = i | 1;
-        tL_channelParticipantsMentions.q = this.b;
-        long j = this.c;
-        if (j != 0) {
-            tL_channelParticipantsMentions.flags = i | 3;
-            tL_channelParticipantsMentions.top_msg_id = (int) j;
-        }
-        tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
-        int i2 = k17Var.j0 + 1;
-        k17Var.j0 = i2;
-        k17Var.k0 = ConnectionsManager.getInstance(k17Var.f).sendRequest(tL_channels_getParticipants, new ev0((Object) this, i2, (Object) this.d, (Object) this.e, (Object) this.f, (byte) 8));
+    @Override // gm, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        int i6 = i5 + i3;
+        int i7 = this.measuredSize;
+        this.a.c.set((int) f, (i6 - i7) / 2, (int) (f + i7), (i6 + i7) / 2);
     }
 }

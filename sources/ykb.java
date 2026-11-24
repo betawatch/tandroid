@@ -1,216 +1,145 @@
 // default package
 
-import android.graphics.Color;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ykb extends b4 {
-    public static final Parcelable.Creator<ykb> CREATOR = new urd((byte) 6);
-    public float a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public String r;
-    public int s;
-    public int w;
-    public String x;
-    public JSONObject y;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ykb implements vs2 {
+    public final IdentityHashMap a = new IdentityHashMap();
+    public boolean b;
+    public boolean c;
+    public HashSet d;
+    public boolean e;
 
-    public ykb(float f, int i, int i2, int i3, int i4, int i5, int i6, int i7, String str, int i8, int i9, String str2) {
-        this.a = f;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-        this.f = i5;
-        this.h = i6;
-        this.n = i7;
-        this.r = str;
-        this.s = i8;
-        this.w = i9;
-        this.x = str2;
-        if (str2 == null) {
-            this.y = null;
+    public final void a() {
+        this.a.clear();
+        this.d = null;
+        this.e = false;
+    }
+
+    @Override // vs2
+    public final void accept(Object obj) {
+        b((View) obj);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b(View view) {
+        k49 recycledViewPool;
+        if (view == 0 || this.a.put(view, Boolean.TRUE) != null) {
             return;
         }
-        try {
-            this.y = new JSONObject(this.x);
-        } catch (JSONException unused) {
-            this.y = null;
-            this.x = null;
-        }
-    }
-
-    public static final int c(String str) {
-        if (str != null && str.length() == 9 && str.charAt(0) == '#') {
+        int i = 0;
+        if (this.c) {
+            HashSet hashSet = this.d;
+            if (view instanceof tjb) {
+                ((tjb) view).addColorKeys(hashSet);
+            }
+            ukb o = zkb.o(view, false);
+            if (o != null) {
+                for (int i2 = 0; i2 < 6; i2++) {
+                    tkb tkbVar = o.a[i2];
+                    if (tkbVar != null) {
+                        zkb.f(tkbVar, hashSet);
+                    }
+                }
+                if (o.b != null) {
+                    for (int i3 = 0; i3 < o.b.size(); i3++) {
+                        zkb.f((tkb) o.b.get(i3), hashSet);
+                    }
+                }
+                if (o.c != null) {
+                    for (int i4 = 0; i4 < o.c.size(); i4++) {
+                        zkb.f((tkb) o.c.get(i4), hashSet);
+                    }
+                }
+                tkb tkbVar2 = o.e;
+                if (tkbVar2 != null) {
+                    zkb.f(tkbVar2, hashSet);
+                }
+                tkb tkbVar3 = o.f;
+                if (tkbVar3 != null) {
+                    zkb.f(tkbVar3, hashSet);
+                }
+            }
+        } else {
+            if (view instanceof tjb) {
+                try {
+                    ((tjb) view).updateColors();
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                }
+            }
             try {
-                return Color.argb(Integer.parseInt(str.substring(7, 9), 16), Integer.parseInt(str.substring(1, 3), 16), Integer.parseInt(str.substring(3, 5), 16), Integer.parseInt(str.substring(5, 7), 16));
-            } catch (NumberFormatException unused) {
+                zkb.a0(view);
+            } catch (Exception e2) {
+                fa4.g(e2, true);
+            }
+            Drawable background = view.getBackground();
+            if (background instanceof tjb) {
+                try {
+                    ((tjb) background).updateColors();
+                } catch (Exception e3) {
+                    fa4.g(e3, true);
+                }
+                background.invalidateSelf();
+            }
+            Drawable foreground = view.getForeground();
+            if (foreground instanceof tjb) {
+                try {
+                    ((tjb) foreground).updateColors();
+                } catch (Exception e4) {
+                    fa4.g(e4, true);
+                }
+                foreground.invalidateSelf();
+            }
+            view.invalidate();
+        }
+        if (!(view instanceof RecyclerView)) {
+            if (view instanceof ViewGroup) {
+                ViewGroup viewGroup = (ViewGroup) view;
+                while (i < viewGroup.getChildCount()) {
+                    b(viewGroup.getChildAt(i));
+                    i++;
+                }
+                return;
+            }
+            return;
+        }
+        RecyclerView recyclerView = (RecyclerView) view;
+        boolean z = this.b;
+        for (int i5 = 0; i5 < recyclerView.getChildCount(); i5++) {
+            b(recyclerView.getChildAt(i5));
+        }
+        for (int i6 = 0; i6 < recyclerView.getHiddenChildCount(); i6++) {
+            b(recyclerView.W(i6));
+        }
+        for (int i7 = 0; i7 < recyclerView.getAttachedScrapChildCount(); i7++) {
+            b(recyclerView.O(i7));
+        }
+        for (int i8 = 0; i8 < recyclerView.getCachedChildCount(); i8++) {
+            b(recyclerView.P(i8));
+        }
+        if (!z || (recycledViewPool = recyclerView.getRecycledViewPool()) == null) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        SparseArray sparseArray = recycledViewPool.a;
+        for (int i9 = 0; i9 < sparseArray.size(); i9++) {
+            ArrayList arrayList2 = ((j49) sparseArray.valueAt(i9)).a;
+            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                arrayList.add(((s49) arrayList2.get(i10)).a);
             }
         }
-        return 0;
-    }
-
-    public static final String d(int i) {
-        return String.format("#%02X%02X%02X%02X", Integer.valueOf(Color.red(i)), Integer.valueOf(Color.green(i)), Integer.valueOf(Color.blue(i)), Integer.valueOf(Color.alpha(i)));
-    }
-
-    public final JSONObject b() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("fontScale", this.a);
-            int i = this.b;
-            if (i != 0) {
-                jSONObject.put("foregroundColor", d(i));
-            }
-            int i2 = this.c;
-            if (i2 != 0) {
-                jSONObject.put("backgroundColor", d(i2));
-            }
-            int i3 = this.d;
-            if (i3 == 0) {
-                jSONObject.put("edgeType", "NONE");
-            } else if (i3 == 1) {
-                jSONObject.put("edgeType", "OUTLINE");
-            } else if (i3 == 2) {
-                jSONObject.put("edgeType", "DROP_SHADOW");
-            } else if (i3 == 3) {
-                jSONObject.put("edgeType", "RAISED");
-            } else if (i3 == 4) {
-                jSONObject.put("edgeType", "DEPRESSED");
-            }
-            int i4 = this.e;
-            if (i4 != 0) {
-                jSONObject.put("edgeColor", d(i4));
-            }
-            int i5 = this.f;
-            if (i5 == 0) {
-                jSONObject.put("windowType", "NONE");
-            } else if (i5 == 1) {
-                jSONObject.put("windowType", "NORMAL");
-            } else if (i5 == 2) {
-                jSONObject.put("windowType", "ROUNDED_CORNERS");
-            }
-            int i6 = this.h;
-            if (i6 != 0) {
-                jSONObject.put("windowColor", d(i6));
-            }
-            if (this.f == 2) {
-                jSONObject.put("windowRoundedCornerRadius", this.n);
-            }
-            String str = this.r;
-            if (str != null) {
-                jSONObject.put("fontFamily", str);
-            }
-            switch (this.s) {
-                case 0:
-                    jSONObject.put("fontGenericFamily", "SANS_SERIF");
-                    break;
-                case 1:
-                    jSONObject.put("fontGenericFamily", "MONOSPACED_SANS_SERIF");
-                    break;
-                case 2:
-                    jSONObject.put("fontGenericFamily", "SERIF");
-                    break;
-                case 3:
-                    jSONObject.put("fontGenericFamily", "MONOSPACED_SERIF");
-                    break;
-                case 4:
-                    jSONObject.put("fontGenericFamily", "CASUAL");
-                    break;
-                case 5:
-                    jSONObject.put("fontGenericFamily", "CURSIVE");
-                    break;
-                case 6:
-                    jSONObject.put("fontGenericFamily", "SMALL_CAPITALS");
-                    break;
-            }
-            int i7 = this.w;
-            if (i7 == 0) {
-                jSONObject.put("fontStyle", "NORMAL");
-            } else if (i7 == 1) {
-                jSONObject.put("fontStyle", "BOLD");
-            } else if (i7 == 2) {
-                jSONObject.put("fontStyle", "ITALIC");
-            } else if (i7 == 3) {
-                jSONObject.put("fontStyle", "BOLD_ITALIC");
-            }
-            JSONObject jSONObject2 = this.y;
-            if (jSONObject2 != null) {
-                jSONObject.put("customData", jSONObject2);
-            }
-        } catch (JSONException unused) {
+        while (i < arrayList.size()) {
+            b((View) arrayList.get(i));
+            i++;
         }
-        return jSONObject;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof ykb)) {
-            return false;
-        }
-        ykb ykbVar = (ykb) obj;
-        JSONObject jSONObject = this.y;
-        boolean z = jSONObject == null;
-        JSONObject jSONObject2 = ykbVar.y;
-        if (z != (jSONObject2 == null)) {
-            return false;
-        }
-        return (jSONObject == null || jSONObject2 == null || vw5.a(jSONObject, jSONObject2)) && this.a == ykbVar.a && this.b == ykbVar.b && this.c == ykbVar.c && this.d == ykbVar.d && this.e == ykbVar.e && this.f == ykbVar.f && this.h == ykbVar.h && this.n == ykbVar.n && qe1.d(this.r, ykbVar.r) && this.s == ykbVar.s && this.w == ykbVar.w;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Float.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f), Integer.valueOf(this.h), Integer.valueOf(this.n), this.r, Integer.valueOf(this.s), Integer.valueOf(this.w), String.valueOf(this.y)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        JSONObject jSONObject = this.y;
-        this.x = jSONObject == null ? null : jSONObject.toString();
-        int r = mve.r(parcel, 20293);
-        float f = this.a;
-        mve.q(parcel, 2, 4);
-        parcel.writeFloat(f);
-        int i2 = this.b;
-        mve.q(parcel, 3, 4);
-        parcel.writeInt(i2);
-        int i3 = this.c;
-        mve.q(parcel, 4, 4);
-        parcel.writeInt(i3);
-        int i4 = this.d;
-        mve.q(parcel, 5, 4);
-        parcel.writeInt(i4);
-        int i5 = this.e;
-        mve.q(parcel, 6, 4);
-        parcel.writeInt(i5);
-        int i6 = this.f;
-        mve.q(parcel, 7, 4);
-        parcel.writeInt(i6);
-        int i7 = this.h;
-        mve.q(parcel, 8, 4);
-        parcel.writeInt(i7);
-        int i8 = this.n;
-        mve.q(parcel, 9, 4);
-        parcel.writeInt(i8);
-        mve.l(parcel, 10, this.r);
-        int i9 = this.s;
-        mve.q(parcel, 11, 4);
-        parcel.writeInt(i9);
-        int i10 = this.w;
-        mve.q(parcel, 12, 4);
-        parcel.writeInt(i10);
-        mve.l(parcel, 13, this.x);
-        mve.s(parcel, r);
     }
 }

@@ -1,167 +1,432 @@
 // default package
 
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.view.View;
+import android.net.TrafficStats;
+import android.net.Uri;
+import android.os.Build;
+import android.text.TextUtils;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.util.Set;
-import org.scilab.forge.jlatexmath.XMLResourceParseException;
-import org.telegram.tgnet.InputSerializedData;
+import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.NoRouteToHostException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.zip.GZIPInputStream;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wa3 implements x76, lr2, ee, xmb, ymb, hs3, os4, ku4, Vector.TLDeserializer, z0c {
-    public final /* synthetic */ byte a;
+public final class wa3 extends qf0 {
+    public final boolean a;
+    public final int b;
+    public final int c;
+    public final String d;
+    public final wk4 e;
+    public final wk4 f;
+    public u63 h;
+    public HttpURLConnection n;
+    public InputStream r;
+    public boolean s;
+    public int w;
+    public long x;
+    public long y;
 
-    public /* synthetic */ wa3(m54 m54Var) {
-        this.a = (byte) 29;
+    public wa3(String str, int i, int i2, boolean z, wk4 wk4Var) {
+        super(true);
+        this.d = str;
+        this.b = i;
+        this.c = i2;
+        this.a = z;
+        this.e = wk4Var;
+        this.f = new wk4();
     }
 
-    public static /* synthetic */ void c(Object obj, String str) {
-        throw new RuntimeException(str + obj);
-    }
-
-    public static /* synthetic */ void d(String str) {
-        throw new IOException(str);
-    }
-
-    public static /* synthetic */ void f(String str, String str2, String str3, String str4) {
-        throw new XMLResourceParseException(str, str2, str3, str4);
-    }
-
-    public static /* synthetic */ void h(String str, Throwable th) {
-        throw new IllegalStateException(str, th);
-    }
-
-    public static /* synthetic */ void i(String str) {
-        throw new IndexOutOfBoundsException(str);
-    }
-
-    @Override // lr2
-    public final Object X(sm2 sm2Var) {
-        Set N = sm2Var.N(ya0.class);
-        sz4 sz4Var = sz4.b;
-        if (sz4Var == null) {
-            synchronized (sz4.class) {
-                sz4Var = sz4.b;
-                if (sz4Var == null) {
-                    sz4Var = new sz4((byte) 0);
-                    sz4.b = sz4Var;
-                }
+    public final void a() {
+        HttpURLConnection httpURLConnection = this.n;
+        if (httpURLConnection != null) {
+            try {
+                httpURLConnection.disconnect();
+            } catch (Exception e) {
+                lad.d("DefaultHttpDataSource", "Unexpected error while disconnecting", e);
             }
         }
-        return new ge3(N, sz4Var);
     }
 
-    @Override // os4
-    public final u31 a(c41 c41Var) {
-        return c41Var.k(false);
-    }
-
-    @Override // z0c
-    public final Object apply(Object obj) {
-        e8a e8aVar = (e8a) obj;
-        String s = f8a.b.s(e8aVar);
-        s.getClass();
-        e8aVar.getClass();
-        Log.d("FirebaseSessions", "Session Event Type: SESSION_START");
-        byte[] bytes = s.getBytes(jl1.a);
-        bytes.getClass();
-        return bytes;
-    }
-
-    public final Constructor b() {
-        switch (this.a) {
-            case 5:
-                if (Boolean.TRUE.equals(Class.forName("androidx.media3.decoder.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
-                    return Class.forName("androidx.media3.decoder.flac.FlacExtractor").asSubclass(s84.class).getConstructor(Integer.TYPE);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // o63
+    public final void close() {
+        try {
+            InputStream inputStream = this.r;
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    String str = g8c.a;
+                    throw new jg5(e, 2000, 3);
                 }
+            }
+        } finally {
+            this.r = null;
+            a();
+            if (this.s) {
+                this.s = false;
+                transferEnded();
+            }
+            this.n = null;
+            this.h = null;
+            TrafficStats.clearThreadStatsTag();
+        }
+    }
+
+    public final URL e(URL url, String str) {
+        if (str == null) {
+            throw new jg5("Null location redirect", 2001);
+        }
+        try {
+            URL url2 = new URL(url, str);
+            String protocol = url2.getProtocol();
+            if (!"https".equals(protocol) && !"http".equals(protocol)) {
+                throw new jg5(b00.h("Unsupported protocol redirect: ", protocol), 2001);
+            }
+            if (this.a || protocol.equals(url.getProtocol())) {
+                return url2;
+            }
+            throw new jg5("Disallowed cross-protocol redirect (" + url.getProtocol() + " to " + protocol + ")", 2001);
+        } catch (MalformedURLException e) {
+            throw new jg5(e, 2001, 1);
+        }
+    }
+
+    @Override // qf0, o63
+    public final Map getResponseHeaders() {
+        HttpURLConnection httpURLConnection = this.n;
+        return httpURLConnection == null ? b69.h : new va3(httpURLConnection.getHeaderFields());
+    }
+
+    @Override // o63
+    public final Uri getUri() {
+        HttpURLConnection httpURLConnection = this.n;
+        if (httpURLConnection != null) {
+            return Uri.parse(httpURLConnection.getURL().toString());
+        }
+        u63 u63Var = this.h;
+        if (u63Var != null) {
+            return u63Var.a;
+        }
+        return null;
+    }
+
+    public final HttpURLConnection i(u63 u63Var) {
+        HttpURLConnection j;
+        URL url = new URL(u63Var.a.toString());
+        byte b = u63Var.b;
+        byte[] bArr = u63Var.c;
+        long j2 = u63Var.e;
+        long j3 = u63Var.f;
+        byte b2 = 1;
+        int i = 0;
+        boolean z = (u63Var.h & 1) == 1;
+        if (!this.a) {
+            return j(url, b, bArr, j2, j3, z, true, u63Var.d);
+        }
+        while (true) {
+            int i2 = i + 1;
+            if (i > 20) {
+                throw new jg5(new NoRouteToHostException(de9.k(i2, "Too many redirects: ")), 2001, 1);
+            }
+            j = j(url, b, bArr, j2, j3, z, false, u63Var.d);
+            int responseCode = j.getResponseCode();
+            String headerField = j.getHeaderField("Location");
+            if ((b == b2 || b == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
+                j.disconnect();
+                url = e(url, headerField);
+            } else {
+                if (b != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
+                    break;
+                }
+                j.disconnect();
+                url = e(url, headerField);
+                bArr = null;
+                b = 1;
+            }
+            i = i2;
+            b2 = 1;
+        }
+        return j;
+    }
+
+    public final HttpURLConnection j(URL url, int i, byte[] bArr, long j, long j2, boolean z, boolean z2, Map map) {
+        String sb;
+        String str;
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setConnectTimeout(this.b);
+        httpURLConnection.setReadTimeout(this.c);
+        HashMap hashMap = new HashMap();
+        hashMap.putAll(this.e.X());
+        hashMap.putAll(this.f.X());
+        hashMap.putAll(map);
+        for (Map.Entry entry : hashMap.entrySet()) {
+            httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
+        }
+        Pattern pattern = og5.a;
+        if (j == 0 && j2 == -1) {
+            sb = null;
+        } else {
+            StringBuilder o = ug8.o(j, "bytes=", "-");
+            if (j2 != -1) {
+                o.append((j + j2) - 1);
+            }
+            sb = o.toString();
+        }
+        if (sb != null) {
+            httpURLConnection.setRequestProperty("Range", sb);
+        }
+        String str2 = this.d;
+        if (str2 != null) {
+            httpURLConnection.setRequestProperty("User-Agent", str2);
+        }
+        httpURLConnection.setRequestProperty("Accept-Encoding", z ? "gzip" : "identity");
+        httpURLConnection.setInstanceFollowRedirects(z2);
+        httpURLConnection.setDoOutput(bArr != null);
+        int i2 = u63.i;
+        if (i == 1) {
+            str = "GET";
+        } else if (i == 2) {
+            str = "POST";
+        } else {
+            if (i != 3) {
+                sdb.a();
                 return null;
-            default:
-                return Class.forName("androidx.media3.decoder.midi.MidiExtractor").asSubclass(s84.class).getConstructor(null);
+            }
+            str = "HEAD";
         }
+        httpURLConnection.setRequestMethod(str);
+        if (bArr == null) {
+            httpURLConnection.connect();
+            return httpURLConnection;
+        }
+        httpURLConnection.setFixedLengthStreamingMode(bArr.length);
+        httpURLConnection.connect();
+        OutputStream outputStream = httpURLConnection.getOutputStream();
+        outputStream.write(bArr);
+        outputStream.close();
+        return httpURLConnection;
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i, z);
-    }
-
-    @Override // ymb
-    public final void e(int i, View view) {
-        Drawable background = view.getBackground();
-        if (background instanceof sn2) {
-            Drawable drawable = ((sn2) background).a;
-            if (drawable instanceof ColorDrawable) {
-                ((ColorDrawable) drawable).setColor(i);
-                view.invalidate();
+    public final void k(long j) {
+        if (j != 0) {
+            byte[] bArr = new byte[TLObject.FLAG_12];
+            while (j > 0) {
+                int min = (int) Math.min(j, 4096L);
+                InputStream inputStream = this.r;
+                String str = g8c.a;
+                int read = inputStream.read(bArr, 0, min);
+                if (Thread.currentThread().isInterrupted()) {
+                    throw new jg5(new InterruptedIOException(), 2000, 1);
+                }
+                if (read == -1) {
+                    throw new jg5();
+                }
+                j -= read;
+                bytesTransferred(read);
             }
         }
     }
 
-    @Override // xmb
-    public final int g(View view) {
-        Drawable background = view.getBackground();
-        if (!(background instanceof sn2)) {
+    /* JADX WARN: Removed duplicated region for block: B:24:0x012e A[Catch: IOException -> 0x0155, TRY_LEAVE, TryCatch #0 {IOException -> 0x0155, blocks: (B:22:0x0126, B:24:0x012e), top: B:21:0x0126 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x011c  */
+    @Override // o63
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final long open(u63 u63Var) {
+        boolean z;
+        long j;
+        HttpURLConnection httpURLConnection;
+        long j2;
+        this.h = u63Var;
+        this.y = 0L;
+        this.x = 0L;
+        transferInitializing(u63Var);
+        try {
+            Thread currentThread = Thread.currentThread();
+            TrafficStats.setThreadStatsTag((int) (Build.VERSION.SDK_INT < 36 ? currentThread.getId() : currentThread.threadId()));
+            HttpURLConnection i = i(u63Var);
+            long j3 = u63Var.f;
+            long j4 = u63Var.e;
+            this.n = i;
+            this.w = i.getResponseCode();
+            i.getResponseMessage();
+            int i2 = this.w;
+            long j5 = -1;
+            if (i2 < 200 || i2 > 299) {
+                Map<String, List<String>> headerFields = i.getHeaderFields();
+                if (this.w == 416) {
+                    String headerField = i.getHeaderField("Content-Range");
+                    Pattern pattern = og5.a;
+                    if (TextUtils.isEmpty(headerField)) {
+                        j = -1;
+                        z = true;
+                    } else {
+                        Matcher matcher = og5.b.matcher(headerField);
+                        z = true;
+                        if (matcher.matches()) {
+                            String group = matcher.group(1);
+                            group.getClass();
+                            j = Long.parseLong(group);
+                        } else {
+                            j = -1;
+                        }
+                    }
+                    if (j4 == j) {
+                        this.s = z;
+                        transferStarted(u63Var);
+                        if (j3 != -1) {
+                            return j3;
+                        }
+                        return 0L;
+                    }
+                }
+                InputStream errorStream = i.getErrorStream();
+                try {
+                    if (errorStream != null) {
+                        b51.b(errorStream);
+                    } else {
+                        String str = g8c.a;
+                    }
+                } catch (IOException unused) {
+                    String str2 = g8c.a;
+                }
+                a();
+                throw new lg5(this.w, this.w == 416 ? new r63(2008) : null, headerFields);
+            }
+            i.getContentType();
+            if (this.w != 200 || j4 == 0) {
+                j4 = 0;
+            }
+            boolean equalsIgnoreCase = "gzip".equalsIgnoreCase(i.getHeaderField("Content-Encoding"));
+            if (equalsIgnoreCase) {
+                httpURLConnection = i;
+                this.x = j3;
+            } else if (j3 != -1) {
+                this.x = j3;
+                httpURLConnection = i;
+            } else {
+                String headerField2 = i.getHeaderField("Content-Length");
+                String headerField3 = i.getHeaderField("Content-Range");
+                Pattern pattern2 = og5.a;
+                if (!TextUtils.isEmpty(headerField2)) {
+                    try {
+                        j2 = -1;
+                        j5 = Long.parseLong(headerField2);
+                    } catch (NumberFormatException unused2) {
+                        lad.c("HttpUtil", "Unexpected Content-Length [" + headerField2 + "]");
+                    }
+                    if (!TextUtils.isEmpty(headerField3)) {
+                        Matcher matcher2 = og5.a.matcher(headerField3);
+                        if (matcher2.matches()) {
+                            try {
+                                String group2 = matcher2.group(2);
+                                group2.getClass();
+                                long parseLong = Long.parseLong(group2);
+                                String group3 = matcher2.group(1);
+                                group3.getClass();
+                                httpURLConnection = i;
+                                long parseLong2 = (parseLong - Long.parseLong(group3)) + 1;
+                                if (j5 < 0) {
+                                    j5 = parseLong2;
+                                } else if (j5 != parseLong2) {
+                                    try {
+                                        lad.f("HttpUtil", "Inconsistent headers [" + headerField2 + "] [" + headerField3 + "]");
+                                        j5 = Math.max(j5, parseLong2);
+                                    } catch (NumberFormatException unused3) {
+                                        lad.c("HttpUtil", "Unexpected Content-Range [" + headerField3 + "]");
+                                        this.x = j5 == j2 ? j5 - j4 : j2;
+                                        this.r = httpURLConnection.getInputStream();
+                                        if (equalsIgnoreCase) {
+                                        }
+                                        this.s = true;
+                                        transferStarted(u63Var);
+                                        k(j4);
+                                        return this.x;
+                                    }
+                                }
+                            } catch (NumberFormatException unused4) {
+                                httpURLConnection = i;
+                            }
+                            this.x = j5 == j2 ? j5 - j4 : j2;
+                        }
+                    }
+                    httpURLConnection = i;
+                    this.x = j5 == j2 ? j5 - j4 : j2;
+                }
+                j2 = -1;
+                if (!TextUtils.isEmpty(headerField3)) {
+                }
+                httpURLConnection = i;
+                this.x = j5 == j2 ? j5 - j4 : j2;
+            }
+            try {
+                this.r = httpURLConnection.getInputStream();
+                if (equalsIgnoreCase) {
+                    this.r = new GZIPInputStream(this.r);
+                }
+                this.s = true;
+                transferStarted(u63Var);
+                try {
+                    k(j4);
+                    return this.x;
+                } catch (IOException e) {
+                    a();
+                    if (e instanceof jg5) {
+                        throw ((jg5) e);
+                    }
+                    throw new jg5(e, 2000, 1);
+                }
+            } catch (IOException e2) {
+                a();
+                throw new jg5(e2, 2000, 1);
+            }
+        } catch (IOException e3) {
+            a();
+            throw jg5.a(e3, 1);
+        }
+    }
+
+    @Override // g63
+    public final int read(byte[] bArr, int i, int i2) {
+        if (i2 == 0) {
             return 0;
         }
-        Drawable drawable = ((sn2) background).a;
-        if (drawable instanceof ColorDrawable) {
-            return ((ColorDrawable) drawable).getColor();
+        try {
+            long j = this.x;
+            if (j != -1) {
+                long j2 = j - this.y;
+                if (j2 != 0) {
+                    i2 = (int) Math.min(i2, j2);
+                }
+                return -1;
+            }
+            InputStream inputStream = this.r;
+            String str = g8c.a;
+            int read = inputStream.read(bArr, i, i2);
+            if (read != -1) {
+                this.y += read;
+                bytesTransferred(read);
+                return read;
+            }
+            return -1;
+        } catch (IOException e) {
+            String str2 = g8c.a;
+            throw jg5.a(e, 2);
         }
-        return 0;
-    }
-
-    @Override // x76
-    public final void invoke(Object obj) {
-        uk ukVar = (uk) obj;
-        switch (this.a) {
-            case 0:
-                ukVar.getClass();
-                break;
-            case 1:
-                ukVar.getClass();
-                break;
-            case 2:
-                ukVar.getClass();
-                break;
-            case 3:
-                ukVar.getClass();
-                break;
-            default:
-                ukVar.getClass();
-                break;
-        }
-    }
-
-    @Override // ku4
-    public final Object l(Object obj) {
-        int i = e34.U2;
-        return 0;
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
-        switch (this.a) {
-            case 10:
-                oc7.e1().edit().putBoolean("askedAboutMiuiLockscreen", true).commit();
-                break;
-            default:
-                oc7.e1().edit().putBoolean("askedAboutFSILockscreen", true).commit();
-                break;
-        }
-    }
-
-    public /* synthetic */ wa3(byte b) {
-        this.a = b;
-    }
-
-    @Override // hs3
-    public final void release() {
     }
 }

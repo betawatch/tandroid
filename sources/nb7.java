@@ -1,64 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class nb7 implements jm7 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ dc7 e;
-    public final /* synthetic */ oc7 f;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public nb7(oc7 oc7Var, int i, int i2, int i3, long j, dc7 dc7Var) {
-        this.f = oc7Var;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = j;
-        this.e = dc7Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nb7 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ TLObject f;
+
+    public /* synthetic */ nb7(ad7 ad7Var, long j, boolean z, TLRPC.InputPeer inputPeer, long j2) {
+        this.e = ad7Var;
+        this.b = j;
+        this.d = z;
+        this.f = inputPeer;
+        this.c = j2;
     }
 
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        int i3 = nm7.H;
-        dc7 dc7Var = this.e;
-        int i4 = this.a;
-        oc7 oc7Var = this.f;
-        int i5 = nm7.G;
-        if (i != i5 || ((Integer) objArr[0]).intValue() != i4) {
-            if (i == i3 && ((Integer) objArr[0]).intValue() == i4) {
-                oc7Var.getNotificationCenter().n(this, i5);
-                oc7Var.getNotificationCenter().n(this, i3);
-                if (dc7Var != null) {
-                    dc7Var.a();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.PeerSettings peerSettings;
+        byte b = this.a;
+        TLObject tLObject = this.f;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                ((ad7) obj).getMessagesController().D3(this.b, this.d, (TLRPC.InputPeer) tLObject, this.c);
+                break;
+            default:
+                gta gtaVar = (gta) obj;
+                int i = gtaVar.a;
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    long j = this.b;
+                    long j2 = this.c;
+                    if (j == 0) {
+                        TLRPC.UserFull W1 = na7.q1(i).W1(j2);
+                        if (W1 != null && (peerSettings = W1.settings) != null) {
+                            peerSettings.flags &= -16385;
+                            peerSettings.charge_paid_message_stars = 0L;
+                        }
+                        na7.q1(i).W3.edit().putLong(ls6.n(j2, "dialog_bar_paying_"), 0L).apply();
+                        na7.q1(i).c3(na7.q1(i).V1(Long.valueOf(j2)), na7.q1(i).K0(Long.valueOf(-j2)), true);
+                        qu2.r(i).D(true);
+                        kk7.f(i).k(kk7.P3, Long.valueOf(j2));
+                        break;
+                    } else {
+                        gtaVar.Z(-j, j2, this.d);
+                        break;
+                    }
                 }
-                return;
-            }
-            return;
+                break;
         }
-        int intValue = ((Integer) objArr[1]).intValue();
-        boolean booleanValue = ((Boolean) objArr[2]).booleanValue();
-        boolean booleanValue2 = ((Boolean) objArr[3]).booleanValue();
-        int intValue2 = ((Integer) objArr[4]).intValue();
-        byte b = this.b;
-        if (intValue >= b / 2 || booleanValue2 || !booleanValue) {
-            oc7Var.getNotificationCenter().n(this, i5);
-            oc7Var.getNotificationCenter().n(this, i3);
-            if (dc7Var != null) {
-                dc7Var.l(booleanValue);
-                return;
-            }
-            return;
-        }
-        int i6 = this.c;
-        long j = this.d;
-        if (i6 != 0) {
-            oc7Var.d3(j, 0L, false, b, i6, 0, false, 0, this.a, 3, intValue2, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
-        } else {
-            oc7Var.d3(j, 0L, false, b, i6, 0, false, 0, this.a, 2, intValue2, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
-        }
+    }
+
+    public /* synthetic */ nb7(gta gtaVar, TLObject tLObject, long j, long j2, boolean z) {
+        this.e = gtaVar;
+        this.f = tLObject;
+        this.b = j;
+        this.c = j2;
+        this.d = z;
     }
 }

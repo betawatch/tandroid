@@ -1,72 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class nl2 {
-    public int a;
-    public ag0 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public interface nl2 {
+    void a(boolean z);
 
-    public abstract void a(int i);
+    void b();
 
-    public abstract int b();
+    void c(int i, int i2, boolean z);
 
-    public abstract boolean c();
-
-    public abstract void d(int i);
-
-    public abstract int e(int i);
-
-    public abstract boolean f();
-
-    public abstract m61 g();
-
-    public abstract double h();
-
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract long k();
-
-    public abstract float l();
-
-    public abstract int m();
-
-    public abstract long n();
-
-    public abstract int o();
-
-    public abstract long p();
-
-    public abstract int q();
-
-    public abstract long r();
-
-    public abstract String s();
-
-    public abstract String t();
-
-    public abstract int u();
-
-    public abstract int v();
-
-    public abstract long w();
-
-    public abstract boolean x(int i);
-
-    public final void y() {
-        int u;
-        do {
-            u = u();
-            if (u == 0) {
-                return;
-            }
-            int i = this.a;
-            if (i >= 100) {
-                throw new yr5("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
-            }
-            this.a = i + 1;
-            this.a--;
-        } while (x(u));
-    }
+    int d(int i);
 }

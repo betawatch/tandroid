@@ -1,32 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ga1 extends b6c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ga1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ CameraView.CameraGLThread b;
 
-    static {
-        b6c.h(new ga1());
+    public /* synthetic */ ga1(CameraView.CameraGLThread cameraGLThread, byte b) {
+        this.a = b;
+        this.b = cameraGLThread;
     }
 
-    @Override // b6c
-    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
-        ha1 ha1Var = (ha1) view;
-        TLRPC.Chat chat = (TLRPC.Chat) c6cVar.H;
-        View.OnClickListener onClickListener = c6cVar.E;
-        ha1Var.c = chat;
-        mu8 mu8Var = ha1Var.b;
-        mu8Var.setTag(Long.valueOf(chat.id));
-        ha1Var.a.x(chat, null, null, (!sd2.T(chat) || chat.megagroup) ? chat.has_geo ? jb6.M0(2131748399, null) : !sd2.t0(chat) ? jb6.M0(2131748398, null).toLowerCase() : jb6.M0(2131748395, null).toLowerCase() : !sd2.t0(chat) ? jb6.M0(2131752271, null).toLowerCase() : jb6.M0(2131752260, null).toLowerCase(), false, false);
-        mu8Var.setOnClickListener(onClickListener);
-    }
-
-    @Override // b6c
-    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
-        return new ha1(context);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        CameraView.CameraGLThread cameraGLThread = this.b;
+        switch (b) {
+            case 0:
+                cameraGLThread.lambda$onDraw$4();
+                break;
+            case 1:
+                cameraGLThread.lambda$onDraw$5();
+                break;
+            case 2:
+                cameraGLThread.lambda$new$0();
+                break;
+            case 3:
+                cameraGLThread.lambda$new$1();
+                break;
+            case 4:
+                cameraGLThread.lambda$new$2();
+                break;
+            default:
+                cameraGLThread.lambda$new$3();
+                break;
+        }
     }
 }

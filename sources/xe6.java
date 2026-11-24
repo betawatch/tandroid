@@ -1,44 +1,32 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.PasscodeActivity;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class xe6 extends tk2 {
-    public final /* synthetic */ byte h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class xe6 implements View.OnClickListener {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ af6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xe6(byte b, Context context, Object obj) {
-        super(context);
-        this.h = b;
-        this.n = obj;
+    public /* synthetic */ xe6(af6 af6Var) {
+        this.b = af6Var;
     }
 
-    @Override // tk2
-    public final void a() {
-        byte b = this.h;
-        Object obj = this.n;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        af6 af6Var = this.b;
         switch (b) {
             case 0:
-                ((ze6) obj).h(null);
+                af6Var.a();
                 break;
-            case 1:
-                ((sf6) obj).h(null);
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                if (!passcodeActivity.F) {
-                    postDelayed(new kl7(this, (byte) 11), 260L);
-                    break;
-                } else {
-                    passcodeActivity.u0();
-                    break;
-                }
             default:
-                ((p5c) obj).H0();
+                af6Var.a();
                 break;
         }
+    }
+
+    public /* synthetic */ xe6(af6 af6Var, pj4 pj4Var) {
+        this.b = af6Var;
     }
 }

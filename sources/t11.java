@@ -1,102 +1,84 @@
 // default package
 
-import java.util.Arrays;
-import java.util.List;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class t11 extends u11 {
-    public static final List c = Arrays.asList(new t11(2), new t11(3), new t11(4), new t11(1), new t11(0));
-    public final /* synthetic */ byte b;
+public class t11 extends h11 {
+    public final ry8 a;
+    public TextView b;
+    public int c;
 
-    public /* synthetic */ t11(byte b) {
-        this.b = b;
+    public t11(Context context, wjb wjbVar) {
+        super(context, wjbVar);
+        ry8 ry8Var = new ry8(context);
+        this.a = ry8Var;
+        ry8Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(ry8Var, nme.h(56.0f, 48.0f, 8388627));
+        s11 s11Var = new s11(context, null, (byte) 0);
+        s11Var.setDisablePaddingsOffset(true);
+        this.b = s11Var;
+        kk7.i(s11Var);
+        this.b.setSingleLine();
+        this.b.setTypeface(Typeface.SANS_SERIF);
+        this.b.setTextSize(1, 15.0f);
+        this.b.setEllipsize(TextUtils.TruncateAt.END);
+        this.b.setPadding(0, gl.L(8.0f), 0, gl.L(8.0f));
+        addView(this.b, nme.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        zkb.G(this.b, bkb.wj, wjbVar);
+        setTextColor(getThemedColor(bkb.xj));
+        setBackground(getThemedColor(bkb.vj));
     }
 
-    public static t11 o(int i) {
-        List list = c;
-        if (i >= 0 && i <= list.size()) {
-            return (t11) list.get(i);
-        }
-        zo4.m("Shape type must be in range from 0 to ", list.size() - 1, ", but got ", i);
-        return null;
-    }
-
-    @Override // u11
-    public final float a() {
-        return 1.0f;
-    }
-
-    @Override // u11
-    public final int d() {
-        switch (this.b) {
-            case 0:
-                return R.drawable.photo_arrowshape;
-            case 1:
-                return R.drawable.msg_msgbubble;
-            case 2:
-                return R.drawable.photo_circle;
-            case 3:
-                return R.drawable.photo_rectangle;
-            default:
-                return R.drawable.photo_star;
+    public final void c(int i, int i2, int i3, String... strArr) {
+        ry8 ry8Var = this.a;
+        ry8Var.f(i, i2, i3, null);
+        for (String str : strArr) {
+            ry8Var.h(this.c, str);
         }
     }
 
-    @Override // u11
-    public final String h(int i) {
-        if (i == 0 || i == 1) {
-            return "shape";
-        }
-        if (i != 2) {
-            return null;
-        }
-        return "brush";
+    public final void d(int i, String... strArr) {
+        c(i, 32, 32, strArr);
     }
 
-    public final int l() {
-        switch (this.b) {
-            case 0:
-                return R.drawable.photo_arrowshape;
-            case 1:
-                return R.drawable.msg_msgbubble2;
-            case 2:
-                return R.drawable.photo_circle_fill;
-            case 3:
-                return R.drawable.photo_rectangle_fill;
-            default:
-                return R.drawable.photo_star_fill;
+    public final void e(TLRPC.Document document, String... strArr) {
+        ry8 ry8Var = this.a;
+        ry8Var.setAutoRepeat(true);
+        ry8Var.g(36, 36, document);
+        for (String str : strArr) {
+            ry8Var.h(this.c, str);
         }
     }
 
-    public final String m() {
-        switch (this.b) {
-            case 0:
-                return jb6.M0(2131747409, null);
-            case 1:
-                return jb6.M0(2131747407, null);
-            case 2:
-                return jb6.M0(2131747406, null);
-            case 3:
-                return jb6.M0(2131747395, null);
-            default:
-                return jb6.M0(2131747394, null);
-        }
+    @Override // q11
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 
-    public final int n() {
-        switch (this.b) {
-            case 0:
-                return 4;
-            case 1:
-                return 3;
-            case 2:
-                return 0;
-            case 3:
-                return 1;
-            default:
-                return 2;
-        }
+    @Override // q11
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
+    }
+
+    public void setIconPaddingBottom(int i) {
+        this.a.setLayoutParams(nme.i(56.0f, 48 - i, 8388627, 0.0f, 0.0f, 0.0f, i));
+    }
+
+    public void setTextColor(int i) {
+        this.c = i;
+        this.b.setTextColor(i);
+    }
+
+    public t11(int i, int i2, wjb wjbVar, Context context) {
+        this(context, wjbVar);
+        setBackground(i);
+        setTextColor(i2);
     }
 }

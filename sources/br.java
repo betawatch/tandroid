@@ -1,58 +1,64 @@
 // default package
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class br implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class br implements View.OnClickListener {
+    public final View a;
+    public final String b;
+    public Method c;
+    public Context d;
 
-    public /* synthetic */ br(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = obj2;
+    public br(View view, String str) {
+        this.a = view;
+        this.b = str;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        View view;
-        byte b = this.a;
-        Object obj = this.b;
-        Object obj2 = this.c;
-        switch (b) {
-            case 0:
-                ViewTreeObserver viewTreeObserver = ((cr) obj2).X.getViewTreeObserver();
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.removeGlobalOnLayoutListener((uq) obj);
-                    break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        String str;
+        Method method;
+        Method method2 = this.c;
+        if (method2 == null) {
+            View view2 = this.a;
+            Context context = view2.getContext();
+            while (true) {
+                String str2 = this.b;
+                if (context == null) {
+                    int id = view2.getId();
+                    if (id == -1) {
+                        str = "";
+                    } else {
+                        str = " with id '" + view2.getContext().getResources().getResourceEntryName(id) + "'";
+                    }
+                    StringBuilder p = ug8.p("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
+                    p.append(view2.getClass());
+                    p.append(str);
+                    throw new IllegalStateException(p.toString());
                 }
-                break;
-            default:
-                bu5 bu5Var = (bu5) obj2;
-                bu5Var.m = null;
-                bu5Var.v((ViewGroup) obj);
-                View view2 = bu5Var.s0;
-                if (view2 != null) {
-                    view2.setPressed(false);
-                    bu5Var.s0 = null;
+                try {
+                    if (!context.isRestricted() && (method = context.getClass().getMethod(str2, View.class)) != null) {
+                        this.c = method;
+                        this.d = context;
+                        method2 = method;
+                        break;
+                    }
+                } catch (NoSuchMethodException unused) {
                 }
-                if (bu5Var.r0 != null && (view = bu5Var.f) != null) {
-                    view.setOnTouchListener(null);
-                }
-                bu5Var.r0 = null;
-                bu5Var.O();
-                Runnable runnable = bu5Var.p;
-                if (runnable != null) {
-                    runnable.run();
-                    bu5Var.p = null;
-                    break;
-                }
-                break;
+                context = context instanceof ContextWrapper ? ((ContextWrapper) context).getBaseContext() : null;
+            }
+        }
+        try {
+            method2.invoke(this.d, view);
+        } catch (IllegalAccessException e) {
+            k93.h("Could not execute non-public method for android:onClick", e);
+        } catch (InvocationTargetException e2) {
+            k93.h("Could not execute method for android:onClick", e2);
         }
     }
 }

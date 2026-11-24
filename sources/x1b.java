@@ -1,37 +1,24 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class x1b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ FrameLayout c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class x1b implements q8c {
+    public final /* synthetic */ y1b a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ List d;
 
-    public /* synthetic */ x1b(FrameLayout frameLayout, View view, byte b) {
-        this.a = b;
-        this.c = frameLayout;
-        this.b = view;
+    public /* synthetic */ x1b(y1b y1bVar, boolean z, int i, List list) {
+        this.a = y1bVar;
+        this.b = z;
+        this.c = i;
+        this.d = list;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        View view = this.b;
-        FrameLayout frameLayout = this.c;
-        switch (b) {
-            case 0:
-                y1b y1bVar = (y1b) frameLayout;
-                y1bVar.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y1bVar.invalidate();
-                ((gt9) view).invalidate();
-                break;
-            default:
-                ((wgc) frameLayout).F(view, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-        }
+    @Override // q8c
+    public final Object a(Object obj) {
+        return Boolean.valueOf(this.a.q(this.c, this.d, this.b));
     }
 }

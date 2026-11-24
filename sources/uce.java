@@ -1,19 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class uce implements cq7 {
-    public static final uce a = new uce();
+import java.util.Calendar;
+import java.util.Locale;
 
-    static {
-        mlb.z(mlb.r(mmd.class, new eld(1)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class uce {
+    public static int a(int i) {
+        if (i >= 100 || i < 0) {
+            return i;
         }
-        throw null;
+        if (ize.G == null) {
+            ize.G = new ize((byte) 15);
+        }
+        return Integer.parseInt(String.format(Locale.US, "%s%02d", ir2.n(2, 0, String.valueOf(Calendar.getInstance().get(1))), Integer.valueOf(i)));
     }
 }

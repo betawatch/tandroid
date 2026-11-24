@@ -1,13 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class z66 {
-    public final y66 a;
-    public final int b;
+import android.view.View;
 
-    public /* synthetic */ z66(y66 y66Var, int i) {
-        this.a = y66Var;
-        this.b = i;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class z66 extends gb3 {
+    @Override // gb3
+    public final float A(View view) {
+        return 0.5f;
     }
 }

@@ -1,28 +1,46 @@
 // default package
 
-import android.animation.TypeEvaluator;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class jt implements TypeEvaluator {
-    public static final jt a = new jt();
+public final /* synthetic */ class jt implements RequestDelegate {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ gk7 d;
 
-    @Override // android.animation.TypeEvaluator
-    public final Object evaluate(float f, Object obj, Object obj2) {
-        int intValue = ((Integer) obj).intValue();
-        float f2 = ((intValue >> 24) & nm7.d4) / 255.0f;
-        float f3 = ((intValue >> 16) & nm7.d4) / 255.0f;
-        float f4 = ((intValue >> 8) & nm7.d4) / 255.0f;
-        int intValue2 = ((Integer) obj2).intValue();
-        float f5 = ((intValue2 >> 24) & nm7.d4) / 255.0f;
-        float f6 = ((intValue2 >> 16) & nm7.d4) / 255.0f;
-        float f7 = ((intValue2 >> 8) & nm7.d4) / 255.0f;
-        float pow = (float) Math.pow(f3, 2.2d);
-        float pow2 = (float) Math.pow(f4, 2.2d);
-        float pow3 = (float) Math.pow((intValue & nm7.d4) / 255.0f, 2.2d);
-        float pow4 = (float) Math.pow(f6, 2.2d);
-        float pow5 = (float) Math.pow(f7, 2.2d);
-        float pow6 = (float) Math.pow((intValue2 & nm7.d4) / 255.0f, 2.2d);
-        return Integer.valueOf((Math.round(td4.A(f5, f2, f, f2) * 255.0f) << 24) | (Math.round(((float) Math.pow(td4.A(pow4, pow, f, pow), 0.45454545454545453d)) * 255.0f) << 16) | (Math.round(((float) Math.pow(td4.A(pow5, pow2, f, pow2), 0.45454545454545453d)) * 255.0f) << 8) | Math.round(((float) Math.pow(td4.A(pow6, pow3, f, pow3), 0.45454545454545453d)) * 255.0f));
+    public /* synthetic */ jt(na7 na7Var, long j, int i) {
+        this.d = na7Var;
+        this.b = j;
+        this.c = i;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        gk7 gk7Var = this.d;
+        switch (b) {
+            case 0:
+                gl.c3(new o57((o) gk7Var, tLObject, this.c, this.b, (byte) 2));
+                break;
+            default:
+                na7 na7Var = (na7) gk7Var;
+                na7Var.g5.remove(this.b + "_" + this.c);
+                if (tL_error == null && tLObject != null) {
+                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ jt(o oVar, int i, long j) {
+        this.d = oVar;
+        this.c = i;
+        this.b = j;
     }
 }

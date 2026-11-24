@@ -1,41 +1,80 @@
 // default package
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class iz implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tz b;
+public final class iz extends nv4 {
+    public final /* synthetic */ lz A0;
+    public final RectF x0;
+    public final RectF y0;
+    public final Path z0;
 
-    public /* synthetic */ iz(tz tzVar, byte b) {
-        this.a = b;
-        this.b = tzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iz(lz lzVar, Context context, int i, wjb wjbVar) {
+        super(i, wjbVar, context);
+        this.A0 = lzVar;
+        this.x0 = new RectF();
+        this.y0 = new RectF();
+        this.z0 = new Path();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        tz tzVar = this.b;
-        switch (b) {
-            case 0:
-                tzVar.dismiss();
-                break;
-            case 1:
-                int value = tzVar.X1.getValue();
-                int e = (int) tzVar.g2.e();
-                if (value >= e) {
-                    tzVar.b1(value);
-                    break;
-                } else {
-                    gm.z3(tzVar.V1);
-                    b10.u(jb6.G(e, "Gift2AuctionMinimumBidIncreased", new Object[0]), new c41(tzVar.c, tzVar.J0), R.raw.info, 36);
-                    break;
-                }
-            default:
-                tzVar.X1.setValueAnimated((int) tzVar.g2.e());
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        lz lzVar = this.A0;
+        gz gzVar = lzVar.V1;
+        boolean drawChild = super.drawChild(canvas, view, j);
+        FrameLayout frameLayout = this.d;
+        if (view == frameLayout) {
+            FrameLayout frameLayout2 = gzVar.b;
+            fz fzVar = lzVar.T1;
+            RectF rectF = this.x0;
+            if (!zec.c(frameLayout2, fzVar, rectF)) {
+                return true;
+            }
+            RectF rectF2 = this.y0;
+            if (!zec.c(frameLayout, this, rectF2)) {
+                return true;
+            }
+            float centerX = rectF2.centerX() - gl.L(40.0f);
+            float centerY = rectF2.centerY() - gl.L(40.0f);
+            if (!rectF.isEmpty()) {
+                canvas.save();
+                canvas.clipPath(this.z0);
+                canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
+                de9.n(gzVar.getHeight(), 2.0f, rectF2.centerY(), rectF2.centerX() - (gzVar.getWidth() / 2.0f), canvas);
+                gzVar.b(gzVar.getWidth() / 2.0f, gl.L(104.0f), gzVar.getWidth(), gzVar.getHeight(), canvas);
+                gzVar.c(gzVar.getWidth() / 2.0f, gl.L(104.0f), gzVar.getWidth(), gzVar.getHeight(), canvas);
+                canvas.restore();
+                canvas.save();
+                canvas.translate(centerX, centerY);
+                canvas.scale(gl.L(80.0f) / rectF.width(), gl.L(80.0f) / rectF.height());
+                gzVar.b.draw(canvas);
+                canvas.restore();
+            }
         }
+        return drawChild;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        Path path = this.z0;
+        path.rewind();
+        RectF rectF = this.x0;
+        rectF.set(0.0f, 0.0f, i, i2);
+        rectF.inset(gl.L(3.33f), gl.L(4.0f));
+        path.addRoundRect(rectF, gl.L(11.0f), gl.L(11.0f), Path.Direction.CW);
     }
 }

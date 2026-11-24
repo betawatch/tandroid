@@ -1,34 +1,30 @@
 // default package
 
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ru4 implements mya {
-    public final uac a;
-    public final TaskCompletionSource b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ru4 extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    public ru4(uac uacVar, TaskCompletionSource taskCompletionSource) {
-        this.a = uacVar;
-        this.b = taskCompletionSource;
+    static {
+        b4c.h(new ru4());
     }
 
-    @Override // mya
-    public final boolean a(Exception exc) {
-        this.b.trySetException(exc);
-        return true;
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        kz9 kz9Var = (kz9) view;
+        TLRPC.Chat chat = (TLRPC.Chat) c4cVar.H;
+        kz9Var.h(chat.participants_count, chat);
+        kz9Var.setDivider(z);
     }
 
-    @Override // mya
-    public final boolean b(gb0 gb0Var) {
-        if (gb0Var.b == 4 && !this.a.a(gb0Var)) {
-            String str = gb0Var.c;
-            if (str != null) {
-                this.b.setResult(new xa0(gb0Var.e, str, gb0Var.f));
-                return true;
-            }
-            gxc.d("Null token");
-        }
-        return false;
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        kz9 kz9Var = new kz9(context, false, false, wjbVar, false);
+        kz9Var.setCellBackgroundVisible(false);
+        return kz9Var;
     }
 }

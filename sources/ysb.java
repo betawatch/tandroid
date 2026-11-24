@@ -1,32 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum ysb extends rub {
-    public ysb() {
-        super("ScriptDataDoubleEscapedDash", 29);
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ysb extends n39 {
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public xsb e;
+    public int f;
+    public final /* synthetic */ zsb h;
+
+    public ysb(zsb zsbVar) {
+        this.h = zsbVar;
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        char d = hl1Var.d();
-        wsb wsbVar = rub.S;
-        if (d == 0) {
-            bsbVar.m(this);
-            bsbVar.f((char) 65533);
-            bsbVar.c = wsbVar;
-        } else if (d == '-') {
-            bsbVar.f(d);
-            bsbVar.c = rub.U;
-        } else if (d == '<') {
-            bsbVar.f(d);
-            bsbVar.c = rub.V;
-        } else if (d != 65535) {
-            bsbVar.f(d);
-            bsbVar.c = wsbVar;
-        } else {
-            bsbVar.l(this);
-            bsbVar.c = rub.a;
-        }
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return true;
+    }
+
+    @Override // w39
+    public final int b() {
+        return this.c.size();
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        ArrayList arrayList = this.c;
+        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i);
+        String str = (String) this.d.get(i);
+        za5 za5Var = (za5) s49Var.a;
+        za5Var.e(chat, chat.title, str, i != arrayList.size() - 1);
+        za5Var.c(this.h.x.contains(Long.valueOf(chat.id)), false);
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        return new y29(new za5(viewGroup.getContext(), 1, 0, false));
     }
 }

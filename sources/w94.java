@@ -1,94 +1,40 @@
 // default package
 
-import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class w94 extends ft4 {
-    public final /* synthetic */ byte j0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class w94 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ba4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w94(gk8 gk8Var, Context context, int i, int i2, Context context2) {
-        super(context, i, i2);
-        this.j0 = (byte) 4;
+    public /* synthetic */ w94(ba4 ba4Var, byte b) {
+        this.a = b;
+        this.b = ba4Var;
     }
 
-    @Override // ft4
-    public final void g() {
-        switch (this.j0) {
-            case 4:
-                boolean z = e21.a;
-                break;
-        }
-    }
-
-    @Override // ft4
-    public final void n() {
-        switch (this.j0) {
-            case 5:
-                break;
-            default:
-                super.n();
-                break;
-        }
-    }
-
-    @Override // ft4, android.view.TextureView, android.view.View
-    public final void onAttachedToWindow() {
-        switch (this.j0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ba4 ba4Var = this.b;
+        switch (b) {
             case 0:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                setPaused(false);
+                u20[] u20VarArr = ba4Var.c;
+                u20[] u20VarArr2 = ba4Var.b;
+                for (int i = 0; i < u20VarArr2.length; i++) {
+                    if (((ArrayList) u20VarArr2[i].d).size() > 0 || ((ArrayList) u20VarArr[i].d).size() > 0) {
+                        fa4.b("download queue: dc" + (i + 1) + " account=" + ba4Var.currentAccount + " small_operations=" + ((ArrayList) u20VarArr2[i].d).size() + " large_operations=" + ((ArrayList) u20VarArr[i].d).size());
+                    }
+                }
+                if (w01.a) {
+                    ba4.K.a(ba4Var.I);
+                    ba4.K.d(ba4Var.I, 10000L);
+                    break;
+                }
                 break;
             default:
-                super.onAttachedToWindow();
+                ba4Var.getNotificationCenter().k(kk7.d5, new Object[0]);
                 break;
         }
-    }
-
-    @Override // ft4, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.j0) {
-            case 0:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w94(Context context, int i, int i2, byte b) {
-        super(context, i, i2);
-        this.j0 = b;
-    }
-
-    private final void p() {
     }
 }

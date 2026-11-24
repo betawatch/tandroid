@@ -1,43 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class g3f {
-    public void a(a2f a2fVar, a2f a2fVar2) {
-        a2fVar.b = a2fVar2;
+public final class g3f {
+    public final boolean equals(Object obj) {
+        return obj == this || (obj instanceof g3f);
     }
 
-    public void b(a2f a2fVar, Thread thread) {
-        a2fVar.a = thread;
+    public final int hashCode() {
+        return -1705342425;
     }
 
-    public boolean c(a7f a7fVar, hee heeVar, hee heeVar2) {
-        synchronized (a7fVar) {
-            if (a7fVar.b != heeVar) {
-                return false;
-            }
-            a7fVar.b = heeVar2;
-            return true;
-        }
-    }
-
-    public boolean d(a7f a7fVar, Object obj, Object obj2) {
-        synchronized (a7fVar) {
-            if (a7fVar.a != obj) {
-                return false;
-            }
-            a7fVar.a = obj2;
-            return true;
-        }
-    }
-
-    public boolean e(a7f a7fVar, a2f a2fVar, a2f a2fVar2) {
-        synchronized (a7fVar) {
-            if (a7fVar.c != a2fVar) {
-                return false;
-            }
-            a7fVar.c = a2fVar2;
-            return true;
-        }
+    public final String toString() {
+        return "MLKitLoggingOptions{libraryName=play-services-mlkit-image-labeling, enableFirelog=true, firelogEventType=1}";
     }
 }

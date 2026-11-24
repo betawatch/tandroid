@@ -1,20 +1,19 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class p4e implements uc9 {
-    public final Status a;
-    public final int b;
+public final class p4e implements zn7 {
+    public static final p4e a = new p4e();
 
-    public p4e(Status status, int i) {
-        this.a = status;
-        this.b = i;
+    static {
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
     }
 
-    @Override // uc9
-    public final Status a() {
-        return this.a;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

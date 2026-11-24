@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class p6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -38,33 +38,33 @@ public final class p6 implements Runnable {
                 }
                 break;
             case 1:
-                wb2 wb2Var = (wb2) this.d;
+                la2 la2Var = (la2) this.d;
                 ArrayList arrayList = (ArrayList) this.c;
                 int size = arrayList.size();
                 while (i < size) {
                     Object obj = arrayList.get(i);
                     i++;
-                    rc3 rc3Var = (rc3) obj;
-                    wb2Var.S(rc3Var.a, rc3Var, this.b);
+                    fb3 fb3Var = (fb3) obj;
+                    la2Var.S(fb3Var.a, fb3Var, this.b);
                 }
                 arrayList.clear();
-                wb2Var.u.remove(arrayList);
+                la2Var.u.remove(arrayList);
                 break;
             default:
                 try {
-                    ((hk7) this.d).a.bind(new InetSocketAddress(61578));
+                    ((ei7) this.d).a.bind(new InetSocketAddress(61578));
                     this.b = true;
                     do {
                         try {
-                            Socket accept = ((hk7) this.d).a.accept();
+                            Socket accept = ((ei7) this.d).a.accept();
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
-                            hk7 hk7Var = (hk7) this.d;
-                            hk7Var.c.v(new ak7(hk7Var, inputStream, accept));
+                            ei7 ei7Var = (ei7) this.d;
+                            ei7Var.c.u(new xh7(ei7Var, inputStream, accept));
                         } catch (IOException e) {
-                            hk7.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
+                            ei7.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
                         }
-                    } while (!((hk7) this.d).a.isClosed());
+                    } while (!((ei7) this.d).a.isClosed());
                 } catch (IOException e2) {
                     this.c = e2;
                     return;
@@ -72,9 +72,9 @@ public final class p6 implements Runnable {
         }
     }
 
-    public p6(hk7 hk7Var) {
+    public p6(ei7 ei7Var) {
         this.a = (byte) 2;
-        this.d = hk7Var;
+        this.d = ei7Var;
         this.b = false;
     }
 }

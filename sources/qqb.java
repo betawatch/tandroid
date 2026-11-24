@@ -1,24 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class qqb {
-    public final String c;
-    public int d;
-    public final /* synthetic */ rqb e;
-    public long b = -1;
-    public final long a = System.currentTimeMillis();
-
-    public qqb(rqb rqbVar, String str) {
-        this.e = rqbVar;
-        this.c = str;
-        rqbVar.a++;
+public enum qqb extends qsb {
+    public qqb() {
+        super("ScriptDataEscapedDashDash", 23);
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder(this.c);
-        sb.append(": ");
-        sb.append(this.b < 0 ? "not done" : kt6.q(new StringBuilder(), this.b - this.a, "ms"));
-        return sb.toString();
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        if (zj1Var.j()) {
+            aqbVar.l(this);
+            aqbVar.c = qsb.a;
+            return;
+        }
+        char d = zj1Var.d();
+        oqb oqbVar = qsb.L;
+        if (d == 0) {
+            aqbVar.m(this);
+            aqbVar.f((char) 65533);
+            aqbVar.c = oqbVar;
+        } else {
+            if (d == '-') {
+                aqbVar.f(d);
+                return;
+            }
+            if (d == '<') {
+                aqbVar.c = qsb.O;
+            } else if (d != '>') {
+                aqbVar.f(d);
+                aqbVar.c = oqbVar;
+            } else {
+                aqbVar.f(d);
+                aqbVar.c = qsb.f;
+            }
+        }
     }
 }

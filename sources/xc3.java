@@ -1,201 +1,296 @@
 // default package
 
-import android.text.TextUtils;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.Iterator;
-import java.util.Map;
+import android.view.Surface;
+import java.util.ArrayDeque;
+import java.util.List;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class xc3 {
-    public static final y79 q;
-    public final aqb a;
-    public final ypb b;
-    public final ag0 c;
-    public final long d;
-    public final long e;
-    public final long f;
-    public final long g;
-    public final long h;
-    public final long i;
-    public final long j;
-    public final long k;
-    public final boolean l;
-    public final long m;
-    public final qo5 n;
-    public final ConcurrentHashMap o;
-    public long p;
+public final class xc3 implements hcc {
+    public final uac a;
+    public final vac b;
+    public final abc c;
+    public final ArrayDeque d;
+    public final vh4 e;
+    public Surface f;
+    public fm4 g;
+    public long h;
+    public fcc i;
+    public Executor j;
+    public sac k;
 
-    static {
-        ko5 ko5Var = mo5.b;
-        Object[] objArr = {"file", "content", "data", "android.resource", "rawresource", "asset"};
-        ase.a(6, objArr);
-        q = mo5.o(6, objArr);
+    public xc3(uac uacVar, vac vacVar, adb adbVar) {
+        this.a = uacVar;
+        this.b = vacVar;
+        uacVar.k = adbVar;
+        vh4 vh4Var = new vh4(new vu2(uacVar, (byte) 19));
+        this.e = vh4Var;
+        this.c = new abc(new lv6(this), uacVar, vacVar, vh4Var);
+        this.d = new ArrayDeque();
+        this.g = new fm4(new em4());
+        this.h = -9223372036854775807L;
+        this.i = fcc.C;
+        this.j = new hc((byte) 2);
+        this.k = new uc3();
     }
 
-    public xc3(ag0 ag0Var, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z, Map map) {
-        a(i5, 0, "bufferForPlaybackMs", "0");
-        a(i6, 0, "bufferForPlaybackForLocalPlaybackMs", "0");
-        a(i7, 0, "bufferForPlaybackAfterRebufferMs", "0");
-        a(i8, 0, "bufferForPlaybackAfterRebufferForLocalPlaybackMs", "0");
-        a(i, i5, "minBufferMs", "bufferForPlaybackMs");
-        a(i2, i6, "minBufferForLocalPlaybackMs", "bufferForPlaybackForLocalPlaybackMs");
-        a(i, i7, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
-        a(i2, i8, "minBufferForLocalPlaybackMs", "bufferForPlaybackAfterRebufferForLocalPlaybackMs");
-        a(i3, i, "maxBufferMs", "minBufferMs");
-        a(i4, i2, "maxBufferForLocalPlaybackMs", "minBufferForLocalPlaybackMs");
-        a(0, 0, "backBufferDurationMs", "0");
-        this.a = new aqb();
-        this.b = new ypb();
-        this.c = ag0Var;
-        this.d = hac.T(i);
-        this.e = hac.T(i2);
-        this.f = hac.T(i3);
-        this.g = hac.T(i4);
-        this.h = hac.T(i5);
-        this.i = hac.T(i6);
-        this.j = hac.T(i7);
-        this.k = hac.T(i8);
-        this.l = z;
-        this.m = hac.T(0L);
-        this.o = new ConcurrentHashMap();
-        this.n = qo5.b(map);
-        this.p = -1L;
+    @Override // hcc
+    public final boolean a() {
+        abc abcVar = this.c;
+        long j = abcVar.k;
+        return j != -9223372036854775807L && abcVar.j == j;
     }
 
-    public static void a(int i, int i2, String str, String str2) {
-        jte.i(i >= i2, "%s cannot be less than %s", str, str2);
+    @Override // hcc
+    public final Surface b() {
+        Surface surface = this.f;
+        surface.getClass();
+        return surface;
     }
 
-    public final int b(we8 we8Var) {
-        int i;
-        wc3 wc3Var = (wc3) this.o.get(we8Var);
-        wc3Var.getClass();
-        synchronized (wc3Var) {
-            i = wc3Var.d;
+    @Override // hcc
+    public final void c(float f) {
+        this.a.g(f);
+    }
+
+    @Override // hcc
+    public final void d(Surface surface, wia wiaVar) {
+        this.f = surface;
+        this.a.f(surface);
+    }
+
+    @Override // hcc
+    public final void e() {
+        this.b.b();
+        uac uacVar = this.a;
+        uacVar.d = false;
+        uacVar.h = -9223372036854775807L;
+        zac zacVar = uacVar.b;
+        zacVar.d = false;
+        wac wacVar = zacVar.c;
+        if (wacVar != null) {
+            wacVar.b();
         }
-        return i << 16;
+        zacVar.a();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00c7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0069  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c(aa6 aa6Var) {
-        boolean z;
-        long j;
-        long j2;
-        float f;
-        long max;
-        long j3;
-        boolean z2;
-        boolean z3;
-        int i;
-        we8 we8Var = aa6Var.a;
-        wc3 wc3Var = (wc3) this.o.get(we8Var);
-        wc3Var.getClass();
-        int b = b(we8Var);
-        wc3 wc3Var2 = (wc3) this.o.get(we8Var);
-        wc3Var2.getClass();
-        boolean z4 = b >= wc3Var2.c;
-        if (we8Var.equals(we8.c)) {
-            return !z4;
+    @Override // hcc
+    public final void f() {
+        this.b.b();
+        this.a.d();
+    }
+
+    @Override // hcc
+    public final void g(fm4 fm4Var, long j, int i, List list) {
+        gre.p(list.isEmpty());
+        int i2 = fm4Var.A;
+        int i3 = fm4Var.B;
+        fm4 fm4Var2 = this.g;
+        int i4 = fm4Var2.A;
+        abc abcVar = this.c;
+        if (i2 != i4 || i3 != fm4Var2.B) {
+            iq iqVar = abcVar.d;
+            long j2 = abcVar.i;
+            iqVar.a(new icc(i2, i3), j2 == -9223372036854775807L ? 0L : j2 + 1);
         }
-        bqb bqbVar = aa6Var.b;
-        xs6 xs6Var = bqbVar.m(bqbVar.g(aa6Var.c.a, this.b).c, this.a, 0L).b.b;
-        if (xs6Var != null) {
-            String scheme = xs6Var.a.getScheme();
-            if (TextUtils.isEmpty(scheme) || q.contains(scheme)) {
-                z = true;
-                if (z) {
-                    j = this.d;
-                    j2 = this.f;
-                } else {
-                    j = this.e;
-                    j2 = this.g;
-                }
-                f = aa6Var.e;
-                if (f > 1.0f) {
-                    j = Math.min(hac.D(j, f), j2);
-                }
-                max = Math.max(j, 500000L);
-                j3 = aa6Var.d;
-                if (j3 >= max) {
-                    boolean z5 = z ? this.l : false;
-                    Runtime runtime = Runtime.getRuntime();
-                    long maxMemory = runtime.maxMemory();
-                    if (runtime.totalMemory() >= maxMemory) {
-                        long freeMemory = runtime.freeMemory();
-                        ag0 ag0Var = this.c;
-                        synchronized (ag0Var) {
-                            i = ag0Var.c << 16;
-                        }
-                        if (freeMemory + i < maxMemory / 25) {
-                            z2 = false;
-                            z3 = (z5 && z2) || !z4;
-                            wc3Var.b = z3;
-                            if (!z3 && z5 && !z2) {
-                                ncd.e("DefaultLoadControl", "Stopped loading before minBufferUs reached due to memory pressure, despite prioritizeTimeOverSizeThresholds=true.");
-                            }
-                            if (!wc3Var.b && aa6Var.d < 500000) {
-                                ncd.f("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
-                            }
-                        }
-                    }
-                    z2 = true;
-                    if (z5) {
-                        wc3Var.b = z3;
-                        if (!z3) {
-                            ncd.e("DefaultLoadControl", "Stopped loading before minBufferUs reached due to memory pressure, despite prioritizeTimeOverSizeThresholds=true.");
-                        }
-                        if (!wc3Var.b) {
-                            ncd.f("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
-                        }
-                    }
-                    wc3Var.b = z3;
-                    if (!z3) {
-                    }
-                    if (!wc3Var.b) {
-                    }
-                } else if (j3 >= j2 || z4) {
-                    wc3Var.b = false;
-                }
-                return wc3Var.b;
+        float f = fm4Var.F;
+        if (f != this.g.F) {
+            vh4 vh4Var = this.e;
+            vh4Var.f = f;
+            vh4Var.a.c();
+            vh4Var.b.c();
+            vh4Var.c = false;
+            vh4Var.d = -9223372036854775807L;
+            vh4Var.e = 0;
+            vh4Var.c();
+        }
+        this.g = fm4Var;
+        if (j != this.h) {
+            if (abcVar.f.c == 0) {
+                abcVar.b.e(i);
+                abcVar.m = j;
+            } else {
+                iq iqVar2 = abcVar.e;
+                long j3 = abcVar.i;
+                iqVar2.a(Long.valueOf(j), j3 == -9223372036854775807L ? -4611686018427387904L : j3 + 1);
             }
+            this.h = j;
         }
-        z = false;
+    }
+
+    @Override // hcc
+    public final void h(long j) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // hcc
+    public final void i() {
+        abc abcVar = this.c;
+        long j = abcVar.i;
+        if (j == -9223372036854775807L) {
+            j = Long.MIN_VALUE;
+            abcVar.i = Long.MIN_VALUE;
+            abcVar.j = Long.MIN_VALUE;
+        }
+        abcVar.k = j;
+    }
+
+    @Override // hcc
+    public final void j(int i) {
+        zac zacVar = this.a.b;
+        if (zacVar.i == i) {
+            return;
+        }
+        zacVar.i = i;
+        zacVar.c(true);
+    }
+
+    @Override // hcc
+    public final void k() {
+        this.f = null;
+        this.a.f(null);
+    }
+
+    /* JADX WARN: Type inference failed for: r5v1, types: [java.io.Serializable, java.lang.Object, long[]] */
+    @Override // hcc
+    public final boolean l(long j, sk6 sk6Var) {
+        this.d.add(sk6Var);
+        abc abcVar = this.c;
+        rf6 rf6Var = abcVar.f;
+        int i = rf6Var.c;
+        long[] jArr = (long[]) rf6Var.e;
+        if (i == jArr.length) {
+            int length = jArr.length << 1;
+            if (length < 0) {
+                sdb.a();
+                return false;
+            }
+            ?? r5 = new long[length];
+            int length2 = jArr.length;
+            int i2 = rf6Var.a;
+            int i3 = length2 - i2;
+            System.arraycopy(jArr, i2, r5, 0, i3);
+            System.arraycopy((long[]) rf6Var.e, 0, r5, i3, i2);
+            rf6Var.a = 0;
+            int i4 = rf6Var.c;
+            rf6Var.b = i4 - 1;
+            rf6Var.e = r5;
+            rf6Var.d = length - 1;
+            i = i4;
+            jArr = r5;
+        }
+        int i5 = (rf6Var.b + 1) & rf6Var.d;
+        rf6Var.b = i5;
+        jArr[i5] = j;
+        rf6Var.c = i + 1;
+        abcVar.i = j;
+        abcVar.k = -9223372036854775807L;
+        this.j.execute(new mk2(this, (byte) 23));
+        return true;
+    }
+
+    @Override // hcc
+    public final boolean m(fm4 fm4Var) {
+        return true;
+    }
+
+    @Override // hcc
+    public final void n(boolean z) {
         if (z) {
+            uac uacVar = this.a;
+            uacVar.b.b();
+            uacVar.f = -9223372036854775807L;
+            uacVar.e = Math.min(uacVar.e, 1);
+            uacVar.h = -9223372036854775807L;
+            uacVar.m = false;
         }
-        f = aa6Var.e;
-        if (f > 1.0f) {
+        this.b.b();
+        abc abcVar = this.c;
+        iq iqVar = abcVar.d;
+        rf6 rf6Var = abcVar.f;
+        rf6Var.a = 0;
+        rf6Var.b = -1;
+        rf6Var.c = 0;
+        abcVar.i = -9223372036854775807L;
+        abcVar.j = -9223372036854775807L;
+        abcVar.k = -9223372036854775807L;
+        iq iqVar2 = abcVar.e;
+        if (iqVar2.p() > 0) {
+            gre.f(iqVar2.p() > 0);
+            while (iqVar2.p() > 1) {
+                iqVar2.i();
+            }
+            Object i = iqVar2.i();
+            i.getClass();
+            abcVar.m = ((Long) i).longValue();
         }
-        max = Math.max(j, 500000L);
-        j3 = aa6Var.d;
-        if (j3 >= max) {
+        if (iqVar.p() > 0) {
+            gre.f(iqVar.p() > 0);
+            while (iqVar.p() > 1) {
+                iqVar.i();
+            }
+            Object i2 = iqVar.i();
+            i2.getClass();
+            iqVar.a((icc) i2, 0L);
         }
-        return wc3Var.b;
+        this.d.clear();
     }
 
-    public final void d() {
-        boolean isEmpty = this.o.isEmpty();
-        ag0 ag0Var = this.c;
-        int i = 0;
-        if (isEmpty) {
-            synchronized (ag0Var) {
-                ag0Var.C(0);
-            }
-        } else {
-            Iterator it = this.o.values().iterator();
-            while (it.hasNext()) {
-                i += ((wc3) it.next()).c;
-            }
-            ag0Var.C(i);
+    @Override // hcc
+    public final void o(List list) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // hcc
+    public final void p(long j, long j2) {
+        try {
+            this.c.a(j, j2);
+        } catch (j54 e) {
+            throw new gcc(e, this.g);
         }
+    }
+
+    @Override // hcc
+    public final void q(boolean z) {
+        this.a.c(z);
+    }
+
+    @Override // hcc
+    public final boolean r(boolean z) {
+        return this.a.b(z);
+    }
+
+    @Override // hcc
+    public final void s(sac sacVar) {
+        this.k = sacVar;
+    }
+
+    @Override // hcc
+    public final void t() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // hcc
+    public final boolean u() {
+        return true;
+    }
+
+    @Override // hcc
+    public final void v() {
+        uac uacVar = this.a;
+        if (uacVar.e == 0) {
+            uacVar.e = 1;
+        }
+    }
+
+    @Override // hcc
+    public final void w(pj4 pj4Var) {
+        this.i = pj4Var;
+        this.j = vn3.a;
+    }
+
+    @Override // hcc
+    public final void release() {
     }
 }

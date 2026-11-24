@@ -1,13 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.d;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tp1 implements iac {
-    public /* synthetic */ tp1(yv1 yv1Var) {
+public final class tp1 extends qx3 {
+    public final /* synthetic */ mu1 Q1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tp1(mu1 mu1Var, d dVar, Activity activity, wjb wjbVar, ArrayList arrayList) {
+        super(dVar, activity, wjbVar, arrayList);
+        this.Q1 = mu1Var;
     }
 
-    @Override // iac
-    public final Object run() {
-        return Boolean.valueOf(jlb.c() && e86.e(65536));
+    @Override // qx3, fx0, android.app.Dialog, android.content.DialogInterface, zf0
+    public final void dismiss() {
+        super.dismiss();
+        mu1 mu1Var = this.Q1;
+        mu1Var.getClass();
+        mu1Var.r6(false, true, 0.0f);
     }
 }

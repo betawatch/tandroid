@@ -1,22 +1,31 @@
 // default package
 
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface pk5 {
-    void a(float f);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class pk5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fl5 b;
 
-    void b(ActionBarLayout actionBarLayout, boolean z);
+    public pk5(fl5 fl5Var, int i) {
+        this.b = fl5Var;
+        this.a = i;
+    }
 
-    void e(int[] iArr);
-
-    boolean h(d dVar, ActionBarLayout actionBarLayout);
-
-    boolean j();
-
-    boolean k(ActionBarLayout actionBarLayout);
-
-    boolean l(ActionBarLayout actionBarLayout, qk5 qk5Var);
+    public final void a(qb4 qb4Var, final String str, final long j, final long j2, final boolean z) {
+        this.b.u.put(str, new long[]{j, j2});
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = qb4Var.S;
+        if (j3 == 0 || j3 < elapsedRealtime - 100 || j == j2) {
+            qb4Var.S = elapsedRealtime;
+            final int i = this.a;
+            gl.c3(new Runnable() { // from class: nk5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    kk7.f(i).k(kk7.V1, str, Long.valueOf(j), Long.valueOf(j2), Boolean.valueOf(z));
+                }
+            });
+        }
+    }
 }

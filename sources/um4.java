@@ -1,110 +1,72 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.os.Build;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class um4 implements jm4 {
-    public final /* synthetic */ byte a = 0;
-    public final Object b;
-    public final Object c;
-    public final eeb d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class um4 extends u41 implements x74 {
+    public final fm0 m0;
+    public final wjb n0;
+    public boolean o0;
 
-    public um4(jm4 jm4Var, cy2 cy2Var) {
-        this.b = cy2Var;
-        this.c = gfd.b(cy2Var);
-        this.d = new hj1(jm4Var, null, (byte) 8);
+    public um4(Context context, wjb wjbVar) {
+        super(wjbVar, context, true);
+        this.m0 = new fm0(0, this, s33.h, 320L, true);
+        this.n0 = wjbVar;
+        f();
+        setOutlineProvider(zdc.b);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0076, code lost:
-    
-        if (r13 != r2) goto L29;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:29:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0056  */
-    @Override // jm4
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object c(Object obj, px2 px2Var) {
-        tm4 tm4Var;
-        Object obj2;
-        int i;
-        byte b = this.a;
-        g7c g7cVar = g7c.a;
-        ly2 ly2Var = ly2.a;
-        eeb eebVar = this.d;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
-        switch (b) {
-            case 0:
-                if (px2Var instanceof tm4) {
-                    tm4Var = (tm4) px2Var;
-                    int i2 = tm4Var.e;
-                    if ((i2 & TLObject.FLAG_31) != 0) {
-                        tm4Var.e = i2 - TLObject.FLAG_31;
-                        obj2 = tm4Var.c;
-                        i = tm4Var.e;
-                        if (i == 0) {
-                            if (i != 1) {
-                                if (i == 2) {
-                                    obj = tm4Var.b;
-                                    this = tm4Var.a;
-                                    tue.b(obj2);
-                                } else if (i != 3) {
-                                    dq9.m("call to 'resume' before 'invoke' with coroutine");
-                                    return null;
-                                }
-                            }
-                            tue.b(obj2);
-                            return g7cVar;
-                        }
-                        tue.b(obj2);
-                        if (!((b79) obj4).a) {
-                            tm4Var.a = this;
-                            tm4Var.b = obj;
-                            tm4Var.e = 2;
-                            obj2 = ((p83) eebVar).invoke(obj, tm4Var);
-                            break;
-                        } else {
-                            tm4Var.e = 1;
-                            if (((jm4) obj3).c(obj, tm4Var) != ly2Var) {
-                                return g7cVar;
-                            }
-                        }
-                        return ly2Var;
-                        if (!((Boolean) obj2).booleanValue()) {
-                            return g7cVar;
-                        }
-                        ((b79) this.b).a = true;
-                        jm4 jm4Var = (jm4) this.c;
-                        tm4Var.a = null;
-                        tm4Var.b = null;
-                        tm4Var.e = 3;
-                        if (jm4Var.c(obj, tm4Var) != ly2Var) {
-                            return g7cVar;
-                        }
-                        return ly2Var;
-                    }
-                }
-                tm4Var = new tm4(this, px2Var);
-                obj2 = tm4Var.c;
-                i = tm4Var.e;
-                if (i == 0) {
-                }
-                if (!((Boolean) obj2).booleanValue()) {
-                }
-            default:
-                Object a = wsd.a((cy2) obj4, obj, obj3, (hj1) eebVar, px2Var);
-                return a == ly2Var ? a : g7cVar;
+    public final int m(int i) {
+        wjb wjbVar = this.n0;
+        return wjbVar != null ? wjbVar.h(i) : bkb.w0(null, i, false);
+    }
+
+    @Override // x74
+    public final void p(int i, float f, float f2, y74 y74Var) {
+        this.o0 = true;
+        wjb wjbVar = this.n0;
+        boolean a = wjbVar != null ? wjbVar.a() : bkb.I.o();
+        float f3 = this.m0.e;
+        setElevation((1.0f - f3) * gl.L(1.0f));
+        setColor(bm2.f(f3, m(bkb.c6), m(bkb.Ei)));
+        setTextColor(bm2.f(f3, m(bkb.p7), m(bkb.Ii)));
+        if (Build.VERSION.SDK_INT >= 28) {
+            if (a) {
+                setOutlineAmbientShadowColor(553648127);
+                setOutlineSpotShadowColor(553648127);
+            } else {
+                setOutlineAmbientShadowColor(1610612736);
+                setOutlineSpotShadowColor(1610612736);
+            }
         }
     }
 
-    public um4(b79 b79Var, jm4 jm4Var, p83 p83Var) {
-        this.b = b79Var;
-        this.c = jm4Var;
-        this.d = p83Var;
+    @Override // u41, tjb
+    public final void updateColors() {
+        super.updateColors();
+        fm0 fm0Var = this.m0;
+        if (fm0Var == null || !this.o0) {
+            return;
+        }
+        try {
+            float f = fm0Var.e;
+            int f2 = bm2.f(f, m(bkb.c6), m(bkb.Ei));
+            Drawable background = getBackground();
+            if ((background instanceof ShapeDrawable) && ((ShapeDrawable) background).getPaint().getColor() != f2) {
+                ((ShapeDrawable) background).getPaint().setColor(f2);
+                background.invalidateSelf();
+            }
+            setTextColor(bm2.f(f, m(bkb.p7), m(bkb.Ii)));
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
+    }
+
+    @Override // x74
+    public final void F(float f, int i) {
     }
 }

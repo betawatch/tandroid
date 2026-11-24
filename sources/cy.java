@@ -1,63 +1,6 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextPaint;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.ui.o;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class cy extends FrameLayout {
-    public final dx9 a;
-    public final byte b;
-    public final byte c;
-    public int d;
-    public final TextPaint e;
-    public final /* synthetic */ o f;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cy(o oVar, Context context) {
-        super(context);
-        this.f = oVar;
-        this.b = (byte) 12;
-        this.c = (byte) 30;
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.e = textPaint;
-        textPaint.setTextSize(gm.L(16.0f));
-        dx9 dx9Var = new dx9(null, context, false);
-        this.a = dx9Var;
-        dx9Var.setReportChanges(true);
-        dx9Var.setSeparatorsCount(19);
-        dx9Var.setDelegate(new sz4(this));
-        addView(dx9Var, qoe.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w0 = cmb.w0(null, cmb.H6, false);
-        TextPaint textPaint = this.e;
-        textPaint.setColor(w0);
-        canvas.drawText(String.valueOf(gda.V0), getMeasuredWidth() - gm.L(39.0f), gm.L(28.0f), textPaint);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        int size = View.MeasureSpec.getSize(i);
-        if (this.d != size) {
-            int i3 = gda.V0;
-            byte b = this.b;
-            this.a.setProgress((i3 - b) / (this.c - b));
-            this.d = size;
-        }
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class cy extends Exception {
 }

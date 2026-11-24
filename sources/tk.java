@@ -1,46 +1,71 @@
 // default package
 
-import j$.util.Objects;
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class tk {
-    public final long a;
-    public final bqb b;
-    public final int c;
-    public final rz6 d;
-    public final long e;
-    public final bqb f;
-    public final int g;
-    public final rz6 h;
-    public final long i;
-    public final long j;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class tk extends ClickableSpan {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public tk(long j, bqb bqbVar, int i, rz6 rz6Var, long j2, bqb bqbVar2, int i2, rz6 rz6Var2, long j3, long j4) {
-        this.a = j;
-        this.b = bqbVar;
-        this.c = i;
-        this.d = rz6Var;
-        this.e = j2;
-        this.f = bqbVar2;
-        this.g = i2;
-        this.h = rz6Var2;
-        this.i = j3;
-        this.j = j4;
+    public tk(hd[] hdVarArr, Context context, String str) {
+        this.a = (byte) 2;
+        this.b = hdVarArr;
+        this.d = context;
+        this.c = str;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                wh0 wh0Var = (wh0) this.b;
+                if (wh0Var != null) {
+                    wh0Var.run();
+                }
+                d01.t(a.b, (String) this.c);
+                break;
+            case 1:
+                ((vg5) this.b).a((dx) this.c, (thb) this.d);
+                break;
+            default:
+                hd hdVar = ((hd[]) this.b)[0];
+                if (hdVar != null) {
+                    hdVar.dismiss();
+                }
+                d01.t((Context) this.d, "https://t.me/" + ((String) this.c));
+                break;
         }
-        if (obj == null || tk.class != obj.getClass()) {
-            return false;
-        }
-        tk tkVar = (tk) obj;
-        return this.a == tkVar.a && this.c == tkVar.c && this.e == tkVar.e && this.g == tkVar.g && this.i == tkVar.i && this.j == tkVar.j && this.b.equals(tkVar.b) && Objects.equals(this.d, tkVar.d) && Objects.equals(this.f, tkVar.f) && Objects.equals(this.h, tkVar.h);
     }
 
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j));
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setColor(bkb.v0(bkb.Wc, (wjb) this.d));
+                textPaint.setUnderlineText(false);
+                break;
+            case 1:
+            default:
+                super.updateDrawState(textPaint);
+                break;
+            case 2:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+        }
+    }
+
+    public /* synthetic */ tk(Object obj, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 }

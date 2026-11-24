@@ -1,24 +1,25 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ij2 {
+    public final String a;
+    public final String b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ij2 extends b4 {
-    public static final Parcelable.Creator<ij2> CREATOR = new f41((byte) 6);
-    public final boolean a;
-
-    public ij2(boolean z) {
-        this.a = z;
+    public ij2(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        mve.s(parcel, r);
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ij2)) {
+            return false;
+        }
+        ij2 ij2Var = (ij2) obj;
+        return this.a.equals(ij2Var.a) && this.b.equals(ij2Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

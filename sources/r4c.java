@@ -1,97 +1,138 @@
 // default package
 
-import android.text.Layout;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class r4c {
-    public String a;
-    public int b;
-    public boolean c;
-    public int d;
-    public boolean e;
-    public float k;
-    public String l;
-    public Layout.Alignment o;
-    public Layout.Alignment p;
-    public kjb r;
-    public String t;
-    public String u;
-    public String v;
-    public int f = -1;
-    public int g = -1;
-    public int h = -1;
-    public int i = -1;
-    public int j = -1;
-    public int m = -1;
-    public int n = -1;
-    public int q = -1;
-    public float s = Float.MAX_VALUE;
+public final /* synthetic */ class r4c implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v4c b;
 
-    public final void a(r4c r4cVar) {
-        int i;
-        Layout.Alignment alignment;
-        Layout.Alignment alignment2;
-        String str;
-        if (r4cVar != null) {
-            if (!this.c && r4cVar.c) {
-                this.b = r4cVar.b;
-                this.c = true;
-            }
-            if (this.h == -1) {
-                this.h = r4cVar.h;
-            }
-            if (this.i == -1) {
-                this.i = r4cVar.i;
-            }
-            if (this.a == null && (str = r4cVar.a) != null) {
-                this.a = str;
-            }
-            if (this.f == -1) {
-                this.f = r4cVar.f;
-            }
-            if (this.g == -1) {
-                this.g = r4cVar.g;
-            }
-            if (this.n == -1) {
-                this.n = r4cVar.n;
-            }
-            if (this.o == null && (alignment2 = r4cVar.o) != null) {
-                this.o = alignment2;
-            }
-            if (this.p == null && (alignment = r4cVar.p) != null) {
-                this.p = alignment;
-            }
-            if (this.q == -1) {
-                this.q = r4cVar.q;
-            }
-            if (this.j == -1) {
-                this.j = r4cVar.j;
-                this.k = r4cVar.k;
-            }
-            if (this.r == null) {
-                this.r = r4cVar.r;
-            }
-            if (this.s == Float.MAX_VALUE) {
-                this.s = r4cVar.s;
-            }
-            if (this.t == null) {
-                this.t = r4cVar.t;
-            }
-            if (this.u == null) {
-                this.u = r4cVar.u;
-            }
-            if (this.v == null) {
-                this.v = r4cVar.v;
-            }
-            if (!this.e && r4cVar.e) {
-                this.d = r4cVar.d;
-                this.e = true;
-            }
-            if (this.m != -1 || (i = r4cVar.m) == -1) {
+    public /* synthetic */ r4c(v4c v4cVar, byte b) {
+        this.a = b;
+        this.b = v4cVar;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x004e, code lost:
+    
+        if (r1 != null) goto L17;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x005b, code lost:
+    
+        gl.c3(new r4c(r3, 3));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0064, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0058, code lost:
+    
+        r1.dispose();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0056, code lost:
+    
+        if (r1 == null) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00de, code lost:
+    
+        if (r1 == null) goto L45;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        byte b = this.a;
+        SQLiteCursor sQLiteCursor = null;
+        r1 = null;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        sQLiteCursor = null;
+        v4c v4cVar = this.b;
+        int i = 0;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = v4cVar.b;
+                while (i < arrayList.size()) {
+                    if (((u4c) arrayList.get(i)).a() <= 0) {
+                        arrayList.remove(i);
+                        i--;
+                    }
+                    i++;
+                }
+                v4cVar.d();
                 return;
-            }
-            this.m = i;
+            case 1:
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                HashSet hashSet = new HashSet();
+                ArrayList arrayList4 = new ArrayList();
+                v4c v4cVar2 = this.b;
+                int i2 = v4cVar2.a;
+                SQLiteDatabase sQLiteDatabase = ad7.Y(i2).b;
+                try {
+                    try {
+                        Locale locale = Locale.US;
+                        sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM unconfirmed_auth", new Object[0]);
+                        while (sQLiteCursor.next()) {
+                            NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
+                            if (byteBufferValue != null) {
+                                try {
+                                    u4c u4cVar = new u4c(v4cVar2, byteBufferValue);
+                                    long j = u4cVar.c;
+                                    arrayList4.add(u4cVar);
+                                    hashSet.add(Long.valueOf(u4cVar.b));
+                                    if (u4cVar.a && !arrayList3.contains(Long.valueOf(j))) {
+                                        arrayList3.add(Long.valueOf(j));
+                                    }
+                                } catch (Exception e) {
+                                    fa4.g(e, true);
+                                }
+                            }
+                        }
+                        ad7.Y(i2).k0(arrayList3, arrayList2, false);
+                    } catch (Exception e2) {
+                        fa4.g(e2, true);
+                        break;
+                    }
+                    sQLiteCursor.dispose();
+                    gl.c3(new exa(v4cVar2, arrayList2, hashSet, arrayList4, (byte) 19));
+                    return;
+                } finally {
+                }
+            case 2:
+                SQLiteDatabase sQLiteDatabase2 = ad7.Y(v4cVar.a).b;
+                try {
+                    try {
+                        sQLiteDatabase2.executeFast("DELETE FROM unconfirmed_auth WHERE 1").stepThis().dispose();
+                        sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO unconfirmed_auth VALUES(?)");
+                        ArrayList arrayList5 = v4cVar.b;
+                        int size = arrayList5.size();
+                        while (i < size) {
+                            Object obj = arrayList5.get(i);
+                            i++;
+                            u4c u4cVar2 = (u4c) obj;
+                            sQLitePreparedStatement.requery();
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(u4cVar2.getObjectSize());
+                            u4cVar2.serializeToStream(nativeByteBuffer);
+                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
+                            sQLitePreparedStatement.step();
+                        }
+                        break;
+                    } finally {
+                    }
+                } catch (Exception e3) {
+                    fa4.g(e3, true);
+                    break;
+                }
+            default:
+                v4cVar.g = false;
+                return;
         }
     }
 }

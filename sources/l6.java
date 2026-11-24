@@ -4,7 +4,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.b;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class l6 implements Runnable {
     public final /* synthetic */ boolean a;
@@ -67,21 +67,21 @@ public final class l6 implements Runnable {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.I != null && valueOf != null && valueOf2 != null) {
-            int f2 = on2.f(pqe.a(actionBarLayout.L0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int f2 = bm2.f(moe.a(actionBarLayout.L0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             k6 k6Var = actionBarLayout.H;
             if (k6Var != null && k6Var.sheetsStack != null) {
                 for (int i = 0; i < actionBarLayout.H.sheetsStack.size(); i++) {
-                    ah0 ah0Var = actionBarLayout.H.sheetsStack.get(i);
-                    if (ah0Var.y()) {
-                        f2 = ah0Var.e(f2);
+                    zf0 zf0Var = actionBarLayout.H.sheetsStack.get(i);
+                    if (zf0Var.z()) {
+                        f2 = zf0Var.e(f2);
                     }
                 }
             }
             actionBarLayout.I.setNavigationBarColor(f2);
         }
-        float interpolation = z3 ? z2 ? actionBarLayout.N.getInterpolation(actionBarLayout.L0) : d53.h.getInterpolation(actionBarLayout.L0) : actionBarLayout.M.getInterpolation(actionBarLayout.L0);
+        float interpolation = z3 ? z2 ? actionBarLayout.N.getInterpolation(actionBarLayout.L0) : s33.h.getInterpolation(actionBarLayout.L0) : actionBarLayout.M.getInterpolation(actionBarLayout.L0);
         if (z2) {
-            float a = pqe.a(interpolation, 0.0f, 1.0f);
+            float a = moe.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a);
             b bVar = actionBarLayout.s;
             if (z3) {
@@ -90,22 +90,22 @@ public final class l6 implements Runnable {
                 actionBarLayout.s.setScaleY(f3);
                 if (actionBarLayout.K != null) {
                     float f4 = 1.0f - interpolation;
-                    actionBarLayout.s.setTranslationY(gm.L(40.0f) * f4);
-                    actionBarLayout.K.setTranslationY((-gm.L(70.0f)) * f4);
+                    actionBarLayout.s.setTranslationY(gl.L(40.0f) * f4);
+                    actionBarLayout.K.setTranslationY((-gl.L(70.0f)) * f4);
                     float f5 = (interpolation * 0.05f) + 0.95f;
                     actionBarLayout.K.setScaleX(f5);
                     actionBarLayout.K.setScaleY(f5);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a));
-                cmb.r0.setAlpha((int) (a * 255.0f));
+                bkb.r0.setAlpha((int) (a * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
-                bVar.setTranslationX((1.0f - interpolation) * gm.L(48.0f));
+                bVar.setTranslationX((1.0f - interpolation) * gl.L(48.0f));
             }
         } else {
             float f6 = 1.0f - interpolation;
-            float a2 = pqe.a(f6, 0.0f, 1.0f);
+            float a2 = moe.a(f6, 0.0f, 1.0f);
             actionBarLayout.w.setAlpha(a2);
             b bVar2 = actionBarLayout.w;
             if (z3) {
@@ -114,12 +114,12 @@ public final class l6 implements Runnable {
                 actionBarLayout.w.setScaleY(f7);
                 actionBarLayout.r.setAlpha((int) (46.0f * a2));
                 if (actionBarLayout.K == null) {
-                    cmb.r0.setAlpha((int) (a2 * 255.0f));
+                    bkb.r0.setAlpha((int) (a2 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
-                bVar2.setTranslationX(gm.L(48.0f) * interpolation);
+                bVar2.setTranslationX(gl.L(48.0f) * interpolation);
             }
         }
         if (actionBarLayout.L0 < 1.0f) {

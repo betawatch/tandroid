@@ -1,25 +1,89 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class axb extends it5 {
-    public final /* synthetic */ long u2;
-    public final /* synthetic */ cxb v2;
+public final class axb extends q5c {
+    public final xl3 n3;
+    public final lm o3;
+    public Drawable p3;
+    public int q3;
+    public final Paint r3;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public axb(cxb cxbVar, Context context, int i, vh6 vh6Var, long j, d dVar, long j2) {
-        super(context, i, vh6Var, j, dVar, null);
-        this.v2 = cxbVar;
-        this.u2 = j2;
+    public axb(Activity activity, int i, swb swbVar, twb twbVar, twb twbVar2, wjb wjbVar) {
+        super(activity, i, 0, false, swbVar, twbVar, twbVar2, wjbVar);
+        this.n3 = new xl3((byte) 7);
+        this.o3 = new lm(320L, this, s33.h);
+        this.r3 = new Paint(1);
     }
 
-    @Override // it5
-    public final boolean M0() {
-        TLRPC.Chat L0 = this.v2.b.getMessagesController().L0(Long.valueOf(this.u2));
-        return L0 != null && sd2.y(3, L0);
+    @Override // q5c, o39, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        float d = this.o3.d(canScrollVertically(-1));
+        if (d > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), kk7.d4, 31);
+        } else {
+            canvas2 = canvas;
+        }
+        float height = getHeight();
+        float f = 0.0f;
+        for (int i = 0; i < getChildCount(); i++) {
+            View childAt = getChildAt(i);
+            if (childAt instanceof jxb) {
+                jxb jxbVar = (jxb) childAt;
+                if (jxbVar.F) {
+                    if (height > jxbVar.getY()) {
+                        height = jxbVar.getY();
+                        RecyclerView.R(jxbVar);
+                    }
+                    if (f < jxbVar.getY() + jxbVar.getHeight()) {
+                        f = jxbVar.getY() + jxbVar.getHeight();
+                        RecyclerView.R(jxbVar);
+                    }
+                }
+            }
+        }
+        if (f > height) {
+            int i2 = bkb.r9;
+            wjb wjbVar = this.o2;
+            int v0 = bkb.v0(i2, wjbVar);
+            Paint paint = this.r3;
+            paint.setColor(v0);
+            RectF rectF = gl.P;
+            rectF.set((getWidth() - gl.L(56.0f)) / 2.0f, height, (gl.L(56.0f) + getWidth()) / 2.0f, f);
+            canvas2.drawRoundRect(rectF, gl.L(6.0f), gl.L(6.0f), paint);
+            if (this.p3 == null) {
+                this.p3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
+            }
+            int v02 = bkb.v0(bkb.a9, wjbVar);
+            if (this.q3 != v02) {
+                Drawable drawable = this.p3;
+                this.q3 = v02;
+                drawable.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
+            }
+            this.p3.setBounds((int) (rectF.left + gl.L(4.0f)), (int) (rectF.top + gl.L(2.66f)), (int) (rectF.left + gl.L(13.66f)), (int) (rectF.top + gl.L(12.32f)));
+            this.p3.draw(canvas2);
+        }
+        super.dispatchDraw(canvas2);
+        if (d > 0.0f) {
+            canvas2.save();
+            RectF rectF2 = gl.P;
+            rectF2.set(0.0f, 0.0f, getWidth(), gl.L(12.0f));
+            this.n3.s(canvas2, rectF2, 1, d);
+            canvas2.restore();
+            canvas2.restore();
+        }
     }
 }

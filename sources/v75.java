@@ -1,46 +1,39 @@
 // default package
 
-import android.widget.LinearLayout;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.voip.GroupCallMessagesController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class v75 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ lp7 b;
-    public final /* synthetic */ r75 c;
-    public final /* synthetic */ s75 d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v75 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ GroupCallMessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ GroupCallMessage d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v75(LaunchActivity launchActivity, lp7 lp7Var, r75 r75Var, s75 s75Var) {
-        super(launchActivity);
-        this.b = lp7Var;
-        this.c = r75Var;
-        this.d = s75Var;
-        this.a = false;
+    public /* synthetic */ v75(GroupCallMessagesController groupCallMessagesController, long j, GroupCallMessage groupCallMessage, byte b) {
+        this.a = b;
+        this.b = groupCallMessagesController;
+        this.c = j;
+        this.d = groupCallMessage;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        this.a = true;
-        lp7 lp7Var = this.b;
-        lp7Var.setItemCount(5);
-        r75 r75Var = this.c;
-        r75Var.setItemCount(5);
-        s75 s75Var = this.d;
-        s75Var.setItemCount(5);
-        lp7Var.getLayoutParams().height = gm.L(54.0f) * 5;
-        r75Var.getLayoutParams().height = gm.L(54.0f) * 5;
-        s75Var.getLayoutParams().height = gm.L(54.0f) * 5;
-        this.a = false;
-        super.onMeasure(i, i2);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        GroupCallMessage groupCallMessage = this.d;
+        long j = this.c;
+        GroupCallMessagesController groupCallMessagesController = this.b;
+        switch (b) {
+            case 0:
+                groupCallMessagesController.lambda$processUpdate$0(j, groupCallMessage);
+                break;
+            case 1:
+                groupCallMessagesController.lambda$processUpdate$1(j, groupCallMessage);
+                break;
+            default:
+                groupCallMessagesController.lambda$processUpdate$2(j, groupCallMessage);
+                break;
         }
-        super.requestLayout();
     }
 }

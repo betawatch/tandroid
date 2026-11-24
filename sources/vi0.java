@@ -1,9 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface vi0 {
-    void a(fj0 fj0Var);
+import android.content.Context;
+import android.content.DialogInterface;
+import android.hardware.biometrics.BiometricPrompt;
+import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+import android.os.CancellationSignal;
+import java.util.concurrent.Executor;
 
-    void b();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class vi0 {
+    public static void a(BiometricPrompt biometricPrompt, BiometricPrompt.CryptoObject cryptoObject, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt$AuthenticationCallback biometricPrompt$AuthenticationCallback) {
+        biometricPrompt.authenticate(cryptoObject, cancellationSignal, executor, biometricPrompt$AuthenticationCallback);
+    }
+
+    public static void b(BiometricPrompt biometricPrompt, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt$AuthenticationCallback biometricPrompt$AuthenticationCallback) {
+        biometricPrompt.authenticate(cancellationSignal, executor, biometricPrompt$AuthenticationCallback);
+    }
+
+    public static BiometricPrompt c(BiometricPrompt.Builder builder) {
+        return builder.build();
+    }
+
+    public static BiometricPrompt.Builder d(Context context) {
+        return new BiometricPrompt.Builder(context);
+    }
+
+    public static void e(BiometricPrompt.Builder builder, CharSequence charSequence) {
+        builder.setDescription(charSequence);
+    }
+
+    public static void f(BiometricPrompt.Builder builder, CharSequence charSequence, Executor executor, DialogInterface.OnClickListener onClickListener) {
+        builder.setNegativeButton(charSequence, executor, onClickListener);
+    }
+
+    public static void g(BiometricPrompt.Builder builder, CharSequence charSequence) {
+        builder.setTitle(charSequence);
+    }
 }

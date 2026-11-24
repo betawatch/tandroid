@@ -1,86 +1,118 @@
 // default package
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class en8 extends h34 {
-    final /* synthetic */ fn8 this$0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class en8 extends tx9 {
+    public final /* synthetic */ kx9[] f2;
+    public final /* synthetic */ ProfileActivity g2;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-    public static final class a extends h34 {
-        final /* synthetic */ fn8 this$0;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public en8(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i, wjb wjbVar, int i2, kx9[] kx9VarArr) {
+        super(profileActivity2, activity, true, num, i, true, wjbVar, i2);
+        this.g2 = profileActivity;
+        this.f2 = kx9VarArr;
+    }
 
-        public a(fn8 fn8Var) {
-            this.this$0 = fn8Var;
+    @Override // tx9
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        int i;
+        if (tL_starGiftUnique == null) {
+            return true;
         }
+        i = ((d) this.g2).currentAccount;
+        return gta.v(i, false).k(tL_starGiftUnique.id) == null || na7.c1().getInt("statusgiftpage", 0) >= 2;
+    }
 
-        @Override // android.app.Application.ActivityLifecycleCallbacks
-        public void onActivityPostResumed(Activity activity) {
-            activity.getClass();
-            this.this$0.a();
-        }
+    @Override // tx9
+    public final long getDialogId() {
+        return this.g2.a();
+    }
 
-        @Override // android.app.Application.ActivityLifecycleCallbacks
-        public void onActivityPostStarted(Activity activity) {
-            activity.getClass();
-            fn8 fn8Var = this.this$0;
-            int i = fn8Var.a + 1;
-            fn8Var.a = i;
-            if (i == 1 && fn8Var.d) {
-                fn8Var.f.e(u26.ON_START);
-                fn8Var.d = false;
+    @Override // tx9
+    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        TLRPC.EmojiStatus emojiStatus;
+        int i;
+        int i2;
+        int i3;
+        kx9[] kx9VarArr = this.f2;
+        ProfileActivity profileActivity = this.g2;
+        if (tL_starGiftUnique != null) {
+            i = ((d) profileActivity).currentAccount;
+            TL_stars.SavedStarGift k = gta.v(i, false).k(tL_starGiftUnique.id);
+            if (k != null && na7.c1().getInt("statusgiftpage", 0) < 2) {
+                na7.c1().edit().putInt("statusgiftpage", na7.c1().getInt("statusgiftpage", 0) + 1).apply();
+                Context context = getContext();
+                i2 = ((d) profileActivity).currentAccount;
+                i3 = ((d) profileActivity).currentAccount;
+                vqa vqaVar = new vqa(context, i2, y6c.h(i3).e(), profileActivity.A0, null);
+                vqaVar.n2(k, null);
+                vqaVar.s2();
+                vqaVar.show();
+                kx9 kx9Var = kx9VarArr[0];
+                if (kx9Var != null) {
+                    profileActivity.T5 = null;
+                    kx9Var.dismiss();
+                    return;
+                }
+                return;
+            }
+            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
+            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
+            emojiStatus = tL_inputEmojiStatusCollectible;
+            if (num != null) {
+                tL_inputEmojiStatusCollectible.flags |= 1;
+                tL_inputEmojiStatusCollectible.until = num.intValue();
+                emojiStatus = tL_inputEmojiStatusCollectible;
+            }
+        } else if (l == null) {
+            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
+        } else {
+            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+            tL_emojiStatus.document_id = l.longValue();
+            emojiStatus = tL_emojiStatus;
+            if (num != null) {
+                tL_emojiStatus.flags |= 1;
+                tL_emojiStatus.until = num.intValue();
+                emojiStatus = tL_emojiStatus;
             }
         }
-    }
-
-    public en8(fn8 fn8Var) {
-        this.this$0 = fn8Var;
-    }
-
-    @Override // h34, android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityCreated(Activity activity, Bundle bundle) {
-        activity.getClass();
-        if (Build.VERSION.SDK_INT < 29) {
-            int i = ga9.b;
-            Fragment findFragmentByTag = activity.getFragmentManager().findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag");
-            findFragmentByTag.getClass();
-            ((ga9) findFragmentByTag).a = this.this$0.n;
+        profileActivity.F = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
+        na7 messagesController = profileActivity.getMessagesController();
+        TLRPC.Chat chat = profileActivity.F2;
+        messagesController.m5(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
+        tl tlVar = profileActivity.G;
+        if (tlVar != null) {
+            if (l != null) {
+                tlVar.j(l.longValue(), true);
+            } else if (profileActivity.F2 == null) {
+                tlVar.g(profileActivity.h2(), true);
+            } else {
+                tlVar.g(null, true);
+            }
+            profileActivity.G.m(tL_starGiftUnique != null, true);
         }
-    }
-
-    @Override // h34, android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityPaused(Activity activity) {
-        activity.getClass();
-        fn8 fn8Var = this.this$0;
-        int i = fn8Var.b - 1;
-        fn8Var.b = i;
-        if (i == 0) {
-            Handler handler = fn8Var.e;
-            handler.getClass();
-            handler.postDelayed(fn8Var.h, 700L);
+        if (l != null) {
+            ym ymVar = profileActivity.e0;
+            h19 h19Var = new h19();
+            long longValue = l.longValue();
+            h19Var.g = longValue;
+            h19Var.h = longValue;
+            ymVar.a(h19Var);
         }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityPreCreated(Activity activity, Bundle bundle) {
-        activity.getClass();
-        dn8.a(activity, new a(this.this$0));
-    }
-
-    @Override // h34, android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStopped(Activity activity) {
-        activity.getClass();
-        fn8 fn8Var = this.this$0;
-        int i = fn8Var.a - 1;
-        fn8Var.a = i;
-        if (i == 0 && fn8Var.c) {
-            fn8Var.f.e(u26.ON_STOP);
-            fn8Var.d = true;
+        profileActivity.L3();
+        profileActivity.N3();
+        kx9 kx9Var2 = kx9VarArr[0];
+        if (kx9Var2 != null) {
+            profileActivity.T5 = null;
+            kx9Var2.dismiss();
         }
     }
 }

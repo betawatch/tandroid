@@ -1,291 +1,114 @@
 // default package
 
-import android.media.MediaCodec;
-import android.media.MediaCrypto;
-import android.media.MediaExtractor;
-import android.media.MediaFormat;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.view.Surface;
-import java.nio.ByteBuffer;
-import java.util.ArrayDeque;
-import java.util.Iterator;
-import java.util.TreeMap;
-import org.webrtc.SurfaceTextureHelper;
+import android.graphics.Rect;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class c11 {
-    public final String a;
-    public final HandlerThread b;
-    public final Handler c;
-    public SurfaceTextureHelper d;
-    public Surface e;
-    public MediaCodec g;
-    public String h;
-    public int i;
-    public int j;
-    public ByteBuffer k;
-    public ByteBuffer l;
-    public MediaExtractor n;
-    public boolean o;
-    public boolean q;
-    public boolean t;
-    public boolean u;
-    public final /* synthetic */ d11 v;
-    public final TreeMap f = new TreeMap();
-    public long m = -1;
-    public long p = -1;
-    public final ArrayDeque r = new ArrayDeque();
-    public final MediaCodec.BufferInfo s = new MediaCodec.BufferInfo();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class c11 extends FrameLayout {
+    public final /* synthetic */ m21 E;
+    public final q11 a;
+    public final Rect b;
+    public final GestureDetector c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public float h;
+    public float n;
+    public boolean r;
+    public boolean s;
+    public boolean w;
+    public boolean x;
+    public final /* synthetic */ FrameLayout y;
 
-    public c11(d11 d11Var, String str) {
-        this.v = d11Var;
-        this.a = str;
-        HandlerThread handlerThread = new HandlerThread("BroadcastTile");
-        this.b = handlerThread;
-        handlerThread.start();
-        Handler handler = new Handler(handlerThread.getLooper());
-        this.c = handler;
-        handler.post(new a11(this, (byte) 1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c11(m21 m21Var, q11 q11Var, FrameLayout frameLayout) {
+        super(q11Var.getContext());
+        this.E = m21Var;
+        this.y = frameLayout;
+        this.b = new Rect();
+        this.a = q11Var;
+        GestureDetector gestureDetector = new GestureDetector(q11Var.getContext(), new b21(this, q11Var));
+        this.c = gestureDetector;
+        gestureDetector.setIsLongpressEnabled(false);
+        addView(q11Var);
     }
 
-    public final void a() {
-        TreeMap treeMap;
-        long j;
-        long[] jArr;
-        boolean z;
-        String str;
-        String str2;
-        long[] jArr2;
-        String str3;
-        String str4;
-        char c;
-        int dequeueInputBuffer;
-        MediaFormat mediaFormat;
-        String str5;
-        long nanoTime = System.nanoTime() / 1000000;
-        Iterator it = this.v.e.iterator();
-        long[] jArr3 = null;
-        while (it.hasNext()) {
-            long[] jArr4 = (long[]) it.next();
-            if (jArr4[1] > nanoTime) {
-                break;
-            } else {
-                jArr3 = jArr4;
+    /* JADX WARN: Removed duplicated region for block: B:47:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0119  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        View.OnClickListener onClickListener;
+        boolean z = this.e;
+        q11 q11Var = this.a;
+        if (!z) {
+            float x = motionEvent.getX();
+            float y = motionEvent.getY();
+            Rect rect = this.b;
+            q11Var.getHitRect(rect);
+            if (!rect.contains((int) x, (int) y)) {
+                return false;
             }
         }
-        if (jArr3 != null) {
-            long j2 = jArr3[0];
-            while (true) {
-                treeMap = this.f;
-                if (treeMap.isEmpty() || ((Long) treeMap.firstKey()).longValue() >= j2) {
-                    break;
-                } else {
-                    treeMap.pollFirstEntry();
+        this.c.onTouchEvent(motionEvent);
+        int actionMasked = motionEvent.getActionMasked();
+        FrameLayout frameLayout = this.y;
+        m21 m21Var = this.E;
+        byte b = 1;
+        if (actionMasked == 0) {
+            if (!this.e && !this.s) {
+                q11Var.animate().cancel();
+                this.n = 0.0f;
+                this.h = 0.0f;
+                this.r = false;
+                this.f = q11Var.getTranslationX();
+                System.currentTimeMillis();
+                m21 m21Var2 = q11Var.bulletin;
+                this.d = m21Var2 == null || m21Var2.m;
+                this.e = true;
+                m21Var.i(false);
+                if (frameLayout.getParent() != null) {
+                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                if (q11Var.onClickListener != null) {
+                    q11Var.setPressed(true);
+                    return true;
                 }
             }
-            z01 z01Var = (z01) treeMap.get(Long.valueOf(j2));
-            if (z01Var != null) {
-                long j3 = this.m;
-                ArrayDeque arrayDeque = this.r;
-                if (j3 != j2) {
-                    MediaExtractor mediaExtractor = this.n;
-                    if (mediaExtractor != null) {
-                        mediaExtractor.release();
-                        this.n = null;
+        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
+            if (!this.s) {
+                if (Math.abs(this.f) > q11Var.getWidth() / 3.0f) {
+                    float signum = Math.signum(this.f) * q11Var.getWidth();
+                    float f = this.f;
+                    q11Var.animate().translationX(signum).alpha(((f > 0.0f ? 1 : (f == 0.0f ? 0 : -1)) < 0 && this.w) || ((f > 0.0f ? 1 : (f == 0.0f ? 0 : -1)) > 0 && this.x) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(gl.G).withEndAction(new kt(this, signum, b)).start();
+                    this.e = false;
+                    m21Var.i(true);
+                    if (frameLayout.getParent() != null) {
+                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
                     }
-                    this.m = -1L;
-                    MediaExtractor mediaExtractor2 = new MediaExtractor();
-                    this.n = mediaExtractor2;
-                    mediaExtractor2.setDataSource(new y01(z01Var.a));
-                    int i = 0;
-                    while (true) {
-                        if (i >= this.n.getTrackCount()) {
-                            i = -1;
-                            mediaFormat = null;
-                            break;
-                        }
-                        mediaFormat = this.n.getTrackFormat(i);
-                        String string = mediaFormat.getString("mime");
-                        if (string != null && string.startsWith("video/")) {
-                            break;
-                        } else {
-                            i++;
-                        }
-                    }
-                    if (i < 0) {
-                        this.m = j2;
-                        this.o = true;
-                        j = nanoTime;
-                        jArr = jArr3;
-                        z = true;
-                        str = "height";
-                        str2 = "width";
-                        jArr2 = null;
-                    } else {
-                        this.n.selectTrack(i);
-                        String string2 = mediaFormat.getString("mime");
-                        int integer = mediaFormat.getInteger("width");
-                        int integer2 = mediaFormat.getInteger("height");
-                        ByteBuffer byteBuffer = mediaFormat.containsKey("csd-0") ? mediaFormat.getByteBuffer("csd-0") : null;
-                        z = true;
-                        ByteBuffer byteBuffer2 = mediaFormat.containsKey("csd-1") ? mediaFormat.getByteBuffer("csd-1") : null;
-                        j = nanoTime;
-                        if (this.g != null && string2.equals(this.h) && integer == this.i && integer2 == this.j) {
-                            ByteBuffer byteBuffer3 = this.k;
-                            if ((byteBuffer == null || byteBuffer3 == null) ? byteBuffer == byteBuffer3 : byteBuffer.equals(byteBuffer3)) {
-                                ByteBuffer byteBuffer4 = this.l;
-                                if ((byteBuffer2 == null || byteBuffer4 == null) ? byteBuffer2 == byteBuffer4 : byteBuffer2.equals(byteBuffer4)) {
-                                    this.g.flush();
-                                    jArr = jArr3;
-                                    str = "height";
-                                    str2 = "width";
-                                    jArr2 = null;
-                                    this.d.setFrameRotation(z01Var.b);
-                                    arrayDeque.clear();
-                                    this.o = false;
-                                    this.q = false;
-                                    this.p = this.n.getSampleTime();
-                                    this.m = j2;
-                                }
-                            }
-                        }
-                        arrayDeque.clear();
-                        MediaCodec mediaCodec = this.g;
-                        if (mediaCodec != null) {
-                            try {
-                                mediaCodec.stop();
-                            } catch (Throwable unused) {
-                            }
-                            this.g.release();
-                            str5 = null;
-                            this.g = null;
-                        } else {
-                            str5 = null;
-                        }
-                        this.h = str5;
-                        String c2 = d11.c(string2);
-                        if (c2 == null) {
-                            dq9.m(b10.h("no hardware decoder for ", string2));
-                            return;
-                        }
-                        MediaCodec createByCodecName = MediaCodec.createByCodecName(c2);
-                        this.g = createByCodecName;
-                        jArr = jArr3;
-                        str = "height";
-                        str2 = "width";
-                        jArr2 = null;
-                        createByCodecName.configure(mediaFormat, this.e, (MediaCrypto) null, 0);
-                        this.g.start();
-                        this.h = string2;
-                        this.i = integer;
-                        this.j = integer2;
-                        this.k = byteBuffer;
-                        this.l = byteBuffer2;
-                        this.d.setTextureSize(integer, integer2);
-                        if (e21.a) {
-                            StringBuilder sb = new StringBuilder("[BroadcastHwVideo] ");
-                            kt6.v(sb, this.a, ": ", c2, " ");
-                            sb.append(integer);
-                            sb.append("x");
-                            sb.append(integer2);
-                            fc4.b(sb.toString());
-                        }
-                        this.d.setFrameRotation(z01Var.b);
-                        arrayDeque.clear();
-                        this.o = false;
-                        this.q = false;
-                        this.p = this.n.getSampleTime();
-                        this.m = j2;
+                    if (q11Var.onClickListener != null) {
+                        q11Var.setPressed(false);
                     }
                 } else {
-                    j = nanoTime;
-                    jArr = jArr3;
-                    z = true;
-                    str = "height";
-                    str2 = "width";
-                    jArr2 = null;
+                    q11Var.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
                 }
-                double d = (jArr[2] / 1000.0d) + ((j - jArr[z ? 1 : 0]) / 1000.0d);
-                if (this.g != null && this.n != null) {
-                    while (!this.o && (dequeueInputBuffer = this.g.dequeueInputBuffer(0L)) >= 0) {
-                        ByteBuffer inputBuffer = this.g.getInputBuffer(dequeueInputBuffer);
-                        int readSampleData = inputBuffer != null ? this.n.readSampleData(inputBuffer, 0) : -1;
-                        MediaCodec mediaCodec2 = this.g;
-                        if (readSampleData < 0) {
-                            mediaCodec2.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
-                            this.o = z;
-                        } else {
-                            mediaCodec2.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, this.n.getSampleTime(), 0);
-                            this.n.advance();
-                        }
-                        z = true;
-                    }
-                }
-                if (this.g != null) {
-                    while (true) {
-                        MediaCodec mediaCodec3 = this.g;
-                        MediaCodec.BufferInfo bufferInfo = this.s;
-                        int dequeueOutputBuffer = mediaCodec3.dequeueOutputBuffer(bufferInfo, 0L);
-                        if (dequeueOutputBuffer >= 0) {
-                            if ((bufferInfo.flags & 4) == 0 || bufferInfo.size != 0) {
-                                arrayDeque.addLast(new long[]{dequeueOutputBuffer, bufferInfo.presentationTimeUs});
-                            } else {
-                                this.g.releaseOutputBuffer(dequeueOutputBuffer, false);
-                            }
-                            str3 = str2;
-                            str4 = str;
-                        } else if (dequeueOutputBuffer == -2) {
-                            MediaFormat outputFormat = this.g.getOutputFormat();
-                            str3 = str2;
-                            int integer3 = outputFormat.getInteger(str3);
-                            str4 = str;
-                            int integer4 = outputFormat.getInteger(str4);
-                            if (outputFormat.containsKey("crop-right") && outputFormat.containsKey("crop-left")) {
-                                integer3 = (outputFormat.getInteger("crop-right") - outputFormat.getInteger("crop-left")) + 1;
-                            }
-                            if (outputFormat.containsKey("crop-bottom") && outputFormat.containsKey("crop-top")) {
-                                integer4 = (outputFormat.getInteger("crop-bottom") - outputFormat.getInteger("crop-top")) + 1;
-                            }
-                            this.d.setTextureSize(integer3, integer4);
-                        } else {
-                            str3 = str2;
-                            str4 = str;
-                            if (dequeueOutputBuffer == -1) {
-                                break;
-                            }
-                        }
-                        str2 = str3;
-                        str = str4;
-                    }
-                    if (arrayDeque.isEmpty()) {
-                        return;
-                    }
-                    long j4 = this.p;
-                    if (j4 >= 0) {
-                        c = 1;
-                    } else {
-                        c = 1;
-                        j4 = ((long[]) arrayDeque.peekFirst())[1];
-                    }
-                    long j5 = j4 + ((long) (d * 1000000.0d));
-                    while (!arrayDeque.isEmpty() && ((long[]) arrayDeque.peekFirst())[c] <= j5) {
-                        if (jArr2 != null) {
-                            this.g.releaseOutputBuffer((int) jArr2[0], false);
-                        }
-                        jArr2 = (long[]) arrayDeque.pollFirst();
-                        c = 1;
-                    }
-                    if (jArr2 == null && !this.q) {
-                        jArr2 = (long[]) arrayDeque.pollFirst();
-                    }
-                    if (jArr2 != null) {
-                        this.g.releaseOutputBuffer((int) jArr2[0], true);
-                        this.q = true;
-                    }
-                }
+            }
+            if (actionMasked == 1 && q11Var.isPressed() && (onClickListener = q11Var.onClickListener) != null && !this.r) {
+                onClickListener.onClick(q11Var);
+            }
+            this.e = false;
+            m21Var.i(true);
+            if (frameLayout.getParent() != null) {
+            }
+            if (q11Var.onClickListener != null) {
             }
         }
+        return true;
     }
 }

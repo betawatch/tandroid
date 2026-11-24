@@ -11,7 +11,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.Components.p;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class c7 extends ImageView {
     public final /* synthetic */ byte a;
@@ -42,9 +42,9 @@ public final class c7 extends ImageView {
         switch (this.a) {
             case 2:
                 super.invalidate();
-                c75 c75Var = (c75) this.b;
-                c75Var.g0.invalidate();
-                c75Var.invalidate();
+                e55 e55Var = (e55) this.b;
+                e55Var.g0.invalidate();
+                e55Var.invalidate();
                 break;
             default:
                 super.invalidate();
@@ -87,7 +87,7 @@ public final class c7 extends ImageView {
             case 4:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((p5c) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((p3c) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -133,16 +133,16 @@ public final class c7 extends ImageView {
                     while (i < size) {
                         Object obj = arrayList.get(i);
                         i++;
-                        ((hg5) obj).setTranslationY(f);
+                        ((je5) obj).setTranslationY(f);
                     }
                 }
-                y98 y98Var = photoViewer.h1;
-                if (y98Var != null) {
-                    y98Var.setTranslationY(f);
+                v78 v78Var = photoViewer.h1;
+                if (v78Var != null) {
+                    v78Var.setTranslationY(f);
                 }
-                o96 o96Var = photoViewer.g1;
-                if (o96Var != null) {
-                    o96Var.setTranslationY(f);
+                o76 o76Var = photoViewer.g1;
+                if (o76Var != null) {
+                    o76Var.setTranslationY(f);
                     break;
                 }
                 break;

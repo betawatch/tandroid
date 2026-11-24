@@ -1,101 +1,54 @@
 // default package
 
-import android.media.MediaExtractor;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.camera.Size;
-import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.PhotoViewer;
+import android.os.Bundle;
+import android.os.Looper;
+import j$.util.DesugarCollections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ab8 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ PhotoViewer d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ab8 {
+    public byte a;
+    public Object b;
+    public Object c;
 
-    public ab8(PhotoViewer photoViewer, String str, long j, int i) {
-        this.d = photoViewer;
-        this.a = str;
-        this.b = j;
-        this.c = i;
+    public ab8() {
+        this.b = DesugarCollections.synchronizedMap(new ps(0));
+        this.a = (byte) 0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.d.C8 == this) {
-            int z = MediaController.z(this.a);
-            int[] iArr = new int[11];
-            AnimatedFileNative.d(this.a, iArr, this.b);
-            boolean z2 = false;
-            this.d.p8 = (iArr[0] == 0 || ((iArr[10] != 0) && iArr[9] == 0)) ? false : true;
-            PhotoViewer photoViewer = this.d;
-            if (z == -1) {
-                z = iArr[3];
-            }
-            photoViewer.l8 = z;
-            photoViewer.m8 = z;
-            if (this.d.p8) {
-                PhotoViewer photoViewer2 = this.d;
-                int i = iArr[1];
-                photoViewer2.h8 = i;
-                photoViewer2.j8 = i;
-                PhotoViewer photoViewer3 = this.d;
-                int i2 = iArr[2];
-                photoViewer3.i8 = i2;
-                photoViewer3.k8 = i2;
-                PhotoViewer photoViewer4 = this.d;
-                int max = Math.max(photoViewer4.h8, this.d.i8);
-                if (max > 1280) {
-                    photoViewer4.e8 = 4;
-                } else if (max > 854) {
-                    photoViewer4.e8 = 3;
-                } else if (max > 640) {
-                    photoViewer4.e8 = 2;
-                } else {
-                    photoViewer4.e8 = 1;
-                }
-                PhotoViewer photoViewer5 = this.d;
-                int i3 = this.c;
-                if (i3 == -1) {
-                    i3 = photoViewer5.E1();
-                }
-                photoViewer5.d8 = i3;
-                PhotoViewer photoViewer6 = this.d;
-                if (photoViewer6.l8 != 0 && photoViewer6.d2 != 1) {
-                    Size h = photoViewer6.h();
-                    if (h.getWidth() == photoViewer6.h8 && h.getHeight() == photoViewer6.i8) {
-                        MediaController.q(h.getWidth(), h.getHeight(), photoViewer6.m8, false);
-                    } else {
-                        MediaController.q(h.getWidth(), h.getHeight(), MediaController.P(photoViewer6.i8, photoViewer6.h8, photoViewer6.m8, h.getHeight(), h.getWidth()), false);
-                    }
-                }
-                PhotoViewer photoViewer7 = this.d;
-                String str = this.a;
-                MediaExtractor mediaExtractor = new MediaExtractor();
-                try {
-                    try {
-                        mediaExtractor.setDataSource(str);
-                        int r = MediaController.r(mediaExtractor, false);
-                        if (r >= 0) {
-                            if (mediaExtractor.getTrackFormat(r).getString("mime").equals("video/avc")) {
-                                z2 = true;
-                            }
-                        }
-                    } catch (Exception e) {
-                        fc4.g(e, true);
-                    }
-                    mediaExtractor.release();
-                    photoViewer7.q8 = z2;
-                } catch (Throwable th) {
-                    mediaExtractor.release();
-                    throw th;
-                }
-            }
-            if (this.d.C8 != this) {
-                return;
-            }
-            gm.c3(new ud7(this, this, iArr, (byte) 26));
+    public final void a(String str, y06 y06Var) {
+        Map map = (Map) this.b;
+        if (map.containsKey(str)) {
+            w26.j(ls6.o("LifecycleCallback with tag ", str, " already added to this fragment.", new StringBuilder(str.length() + 59)));
+            return;
         }
+        map.put(str, y06Var);
+        if (this.a > 0) {
+            new o59(Looper.getMainLooper(), (byte) 4).post(new ey1((Object) this, (Object) y06Var, (Object) str, (byte) 5));
+        }
+    }
+
+    public final void b(Bundle bundle) {
+        this.a = (byte) 1;
+        this.c = bundle;
+        for (Map.Entry entry : ((Map) this.b).entrySet()) {
+            ((y06) entry.getValue()).onCreate(bundle != null ? bundle.getBundle((String) entry.getKey()) : null);
+        }
+    }
+
+    public final void c(Bundle bundle) {
+        if (bundle != null) {
+            for (Map.Entry entry : ((Map) this.b).entrySet()) {
+                Bundle bundle2 = new Bundle();
+                ((y06) entry.getValue()).onSaveInstanceState(bundle2);
+                bundle.putBundle((String) entry.getKey(), bundle2);
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public ab8(int i) {
+        this.a = i;
     }
 }

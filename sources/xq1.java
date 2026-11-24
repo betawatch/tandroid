@@ -1,46 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class xq1 implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ v29 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ k39 n;
-    public final /* synthetic */ k47 r;
-    public final /* synthetic */ yv1 s;
+import android.content.Context;
 
-    public xq1(yv1 yv1Var, boolean z, boolean z2, int i, boolean z3, v29 v29Var, float f, float f2, k39 k39Var, k47 k47Var) {
-        this.s = yv1Var;
-        this.a = z;
-        this.b = z2;
-        this.c = i;
-        this.d = z3;
-        this.e = v29Var;
-        this.f = f;
-        this.h = f2;
-        this.n = k39Var;
-        this.r = k47Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class xq1 extends cd2 {
+    public final /* synthetic */ mu1 f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xq1(mu1 mu1Var, Context context) {
+        super(context);
+        this.f = mu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.a) {
-            return;
+    @Override // cd2
+    public final void a(boolean z) {
+        mu1 mu1Var = this.f;
+        mu1Var.z5();
+        mu1Var.x5();
+        mu1Var.A5();
+        mu1Var.B5();
+        sr1 sr1Var = mu1Var.Bb;
+        if (sr1Var != null) {
+            sr1Var.setTranslationY(mu1Var.T9 + getCurrentHeight());
         }
-        yv1 yv1Var = this.s;
-        if (yv1Var.Uc != null) {
-            yv1Var.Uc = null;
-            if (this.b) {
-                yv1Var.z6(new wq1(this, this.c, this.d, this.e, this.f, this.h, this.n, (byte) 0));
-            } else {
-                yv1Var.z6(new uj1(this, this.r, (byte) 21));
-            }
-            yv1Var.N5(true);
+        if (!z) {
+            mu1Var.G7();
+        } else {
+            mu1Var.aa = true;
+            mu1Var.Fc();
         }
     }
 }

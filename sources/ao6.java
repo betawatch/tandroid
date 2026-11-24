@@ -1,148 +1,406 @@
 // default package
 
-import android.graphics.Matrix;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import android.util.SparseArray;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ao6 extends TLObject {
-    public Matrix B;
-    public boolean C;
-    public float a;
-    public float b;
-    public float d;
-    public int i;
-    public int j;
-    public int k;
-    public boolean l;
-    public float m;
-    public float o;
-    public Matrix r;
-    public int s;
-    public int t;
-    public boolean u;
-    public float v;
-    public int z;
-    public float c = 1.0f;
-    public float e = 1.0f;
-    public float f = 1.0f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ao6 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ pf0 h;
+    public final /* synthetic */ Object n;
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final ao6 clone() {
-        ao6 ao6Var = new ao6();
-        ao6Var.a = this.a;
-        ao6Var.b = this.b;
-        ao6Var.c = this.c;
-        ao6Var.d = this.d;
-        ao6Var.e = this.e;
-        ao6Var.f = this.f;
-        ao6Var.i = this.i;
-        ao6Var.j = this.j;
-        ao6Var.k = this.k;
-        ao6Var.l = this.l;
-        ao6Var.m = this.m;
-        ao6Var.o = this.o;
-        ao6Var.r = this.r;
-        ao6Var.s = this.s;
-        ao6Var.t = this.t;
-        ao6Var.u = this.u;
-        ao6Var.v = this.v;
-        ao6Var.z = this.z;
-        ao6Var.C = this.C;
-        ao6Var.B = this.B;
-        return ao6Var;
+    public /* synthetic */ ao6(hq6 hq6Var, boolean z, ArrayList arrayList, int i, long j, int i2, Runnable runnable) {
+        this.h = hq6Var;
+        this.f = z;
+        this.b = arrayList;
+        this.d = i;
+        this.c = j;
+        this.e = i2;
+        this.n = runnable;
     }
 
-    public final boolean b() {
-        Matrix matrix = this.r;
-        if (matrix != null && !matrix.isIdentity()) {
-            return false;
+    /* JADX WARN: Code restructure failed: missing block: B:191:0x018b, code lost:
+    
+        if (r5 == 0) goto L93;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x0184, code lost:
+    
+        if (java.lang.Math.abs((java.lang.System.currentTimeMillis() / 1000) - r4) < 3600) goto L101;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0116  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        hq6 hq6Var;
+        int i;
+        int i2;
+        vf6 vf6Var;
+        ArrayList arrayList;
+        hq6 hq6Var2;
+        vf6 vf6Var2;
+        String str;
+        int i3;
+        boolean z;
+        long j;
+        SparseArray sparseArray;
+        boolean z2;
+        LongSparseIntArray longSparseIntArray;
+        long j2;
+        byte b = this.a;
+        boolean z3 = this.f;
+        Object obj = this.n;
+        pf0 pf0Var = this.h;
+        switch (b) {
+            case 0:
+                hq6 hq6Var3 = (hq6) pf0Var;
+                final Runnable runnable = (Runnable) obj;
+                ArrayList arrayList2 = this.b;
+                int i4 = this.d;
+                final long j3 = this.c;
+                int i5 = this.e;
+                if (z3) {
+                    if (arrayList2 != null) {
+                        boolean z4 = w01.a;
+                        break;
+                    }
+                    gl.d3(new o57((Object) hq6Var3, (Object) arrayList2, j3, i5, (byte) 8), (arrayList2 != null || z3) ? 0L : 1000L);
+                    if (arrayList2 == null) {
+                        if (runnable != null) {
+                            runnable.run();
+                            break;
+                        }
+                    }
+                } else if (arrayList2 == null) {
+                    break;
+                }
+                if (arrayList2 != null) {
+                    try {
+                        final ArrayList arrayList3 = new ArrayList();
+                        vf6 vf6Var3 = new vf6();
+                        final HashMap hashMap = new HashMap();
+                        final vf6 vf6Var4 = new vf6();
+                        final vf6 vf6Var5 = new vf6();
+                        final HashMap hashMap2 = new HashMap();
+                        int i6 = 0;
+                        while (i6 < arrayList2.size()) {
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList2.get(i6);
+                            if (tL_messages_stickerSet != null) {
+                                arrayList = arrayList2;
+                                hq6Var2 = hq6Var3;
+                                if (hq6Var3.U.h(tL_messages_stickerSet.set.id) < 0) {
+                                    arrayList3.add(tL_messages_stickerSet);
+                                    vf6Var3.k(tL_messages_stickerSet, tL_messages_stickerSet.set.id);
+                                    hashMap.put(tL_messages_stickerSet.set.short_name, tL_messages_stickerSet);
+                                    for (int i7 = 0; i7 < tL_messages_stickerSet.documents.size(); i7++) {
+                                        TLRPC.Document document = tL_messages_stickerSet.documents.get(i7);
+                                        if (document != null && !(document instanceof TLRPC.TL_documentEmpty)) {
+                                            vf6Var5.k(document, document.id);
+                                        }
+                                    }
+                                    if (!tL_messages_stickerSet.set.archived) {
+                                        int i8 = 0;
+                                        while (i8 < tL_messages_stickerSet.packs.size()) {
+                                            TLRPC.TL_stickerPack tL_stickerPack = tL_messages_stickerSet.packs.get(i8);
+                                            if (tL_stickerPack == null || (str = tL_stickerPack.emoticon) == null) {
+                                                vf6Var2 = vf6Var3;
+                                            } else {
+                                                vf6Var2 = vf6Var3;
+                                                String replace = str.replace("️", "");
+                                                tL_stickerPack.emoticon = replace;
+                                                ArrayList arrayList4 = (ArrayList) hashMap2.get(replace);
+                                                if (arrayList4 == null) {
+                                                    arrayList4 = new ArrayList();
+                                                    hashMap2.put(tL_stickerPack.emoticon, arrayList4);
+                                                }
+                                                int i9 = 0;
+                                                while (i9 < tL_stickerPack.documents.size()) {
+                                                    Long l = tL_stickerPack.documents.get(i9);
+                                                    int i10 = i5;
+                                                    int i11 = i4;
+                                                    if (vf6Var4.h(l.longValue()) < 0) {
+                                                        i3 = i8;
+                                                        vf6Var4.k(tL_stickerPack.emoticon, l.longValue());
+                                                    } else {
+                                                        i3 = i8;
+                                                    }
+                                                    TLRPC.Document document2 = (TLRPC.Document) vf6Var5.f(l.longValue());
+                                                    if (document2 != null) {
+                                                        arrayList4.add(document2);
+                                                    }
+                                                    i9++;
+                                                    i8 = i3;
+                                                    i5 = i10;
+                                                    i4 = i11;
+                                                }
+                                            }
+                                            i8++;
+                                            vf6Var3 = vf6Var2;
+                                            i5 = i5;
+                                            i4 = i4;
+                                        }
+                                    }
+                                }
+                                vf6Var = vf6Var3;
+                            } else {
+                                vf6Var = vf6Var3;
+                                arrayList = arrayList2;
+                                hq6Var2 = hq6Var3;
+                            }
+                            i6++;
+                            vf6Var3 = vf6Var;
+                            hq6Var3 = hq6Var2;
+                            arrayList2 = arrayList;
+                            i5 = i5;
+                            i4 = i4;
+                        }
+                        final vf6 vf6Var6 = vf6Var3;
+                        hq6 hq6Var4 = hq6Var3;
+                        int i12 = i5;
+                        int i13 = i4;
+                        if (z3) {
+                            hq6Var = hq6Var4;
+                            i = i12;
+                            i2 = i13;
+                        } else {
+                            hq6Var = hq6Var4;
+                            i = i12;
+                            i2 = i13;
+                            hq6Var.M1(i, i2, j3, arrayList3);
+                        }
+                        final hq6 hq6Var5 = hq6Var;
+                        final int i14 = i;
+                        final int i15 = i2;
+                        gl.c3(new Runnable() { // from class: ro6
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                int i16;
+                                hq6 hq6Var6 = hq6.this;
+                                vf6 vf6Var7 = hq6Var6.K;
+                                ConcurrentHashMap concurrentHashMap = hq6Var6.O;
+                                vf6 vf6Var8 = hq6Var6.J;
+                                ArrayList[] arrayListArr = hq6Var6.H;
+                                int i17 = 0;
+                                while (true) {
+                                    i16 = i14;
+                                    if (i17 >= arrayListArr[i16].size()) {
+                                        break;
+                                    }
+                                    TLRPC.StickerSet stickerSet = ((TLRPC.TL_messages_stickerSet) arrayListArr[i16].get(i17)).set;
+                                    vf6Var8.l(stickerSet.id);
+                                    concurrentHashMap.remove(stickerSet.short_name);
+                                    if (i16 != 3 && i16 != 6 && i16 != 4) {
+                                        vf6Var7.l(stickerSet.id);
+                                    }
+                                    i17++;
+                                }
+                                int i18 = 0;
+                                while (true) {
+                                    vf6 vf6Var9 = vf6Var6;
+                                    if (i18 >= vf6Var9.m()) {
+                                        break;
+                                    }
+                                    vf6Var8.k((TLRPC.TL_messages_stickerSet) vf6Var9.n(i18), vf6Var9.j(i18));
+                                    if (i16 != 3 && i16 != 6 && i16 != 4) {
+                                        vf6Var7.k((TLRPC.TL_messages_stickerSet) vf6Var9.n(i18), vf6Var9.j(i18));
+                                    }
+                                    i18++;
+                                }
+                                concurrentHashMap.putAll(hashMap);
+                                arrayListArr[i16] = arrayList3;
+                                hq6Var6.Y[i16] = j3;
+                                hq6Var6.Z[i16] = i15;
+                                hq6Var6.I[i16] = vf6Var5;
+                                HashMap hashMap3 = hashMap2;
+                                if (i16 == 0) {
+                                    hq6Var6.e0 = hashMap3;
+                                    hq6Var6.d0 = vf6Var4;
+                                } else if (i16 == 3) {
+                                    hq6Var6.f0 = hashMap3;
+                                }
+                                hq6Var6.getNotificationCenter().k(kk7.w0, Integer.valueOf(i16), Boolean.TRUE);
+                                Runnable runnable2 = runnable;
+                                if (runnable2 != null) {
+                                    runnable2.run();
+                                }
+                            }
+                        });
+                        break;
+                    } catch (Throwable th) {
+                        fa4.g(th, true);
+                        if (runnable != null) {
+                            runnable.run();
+                            return;
+                        }
+                        return;
+                    }
+                } else if (z3) {
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                } else {
+                    gl.c3(new bt((Object) hq6Var3, i5, i4, (byte) 11));
+                    hq6Var3.M1(i5, i4, 0L, null);
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            default:
+                im7 im7Var = (im7) pf0Var;
+                LongSparseIntArray longSparseIntArray2 = (LongSparseIntArray) obj;
+                ArrayList arrayList5 = im7Var.b;
+                vf6 vf6Var7 = im7Var.c;
+                ArrayList arrayList6 = im7Var.a;
+                ArrayList arrayList7 = this.b;
+                if (longSparseIntArray2 != null) {
+                    for (int i16 = 0; i16 < longSparseIntArray2.size(); i16++) {
+                        long keyAt = longSparseIntArray2.keyAt(i16);
+                        int i17 = longSparseIntArray2.get(keyAt);
+                        int i18 = 0;
+                        while (i18 < arrayList6.size()) {
+                            k27 k27Var = (k27) arrayList6.get(i18);
+                            TLRPC.Message message = k27Var.k;
+                            if (message.from_scheduled || k27.B0(message) != keyAt || k27Var.e1() > i17 || k27Var.J) {
+                                z2 = z3;
+                                longSparseIntArray = longSparseIntArray2;
+                            } else {
+                                if (im7.y(k27Var)) {
+                                    im7Var.K--;
+                                }
+                                arrayList7.add(k27Var);
+                                boolean z5 = k27Var.J;
+                                TLRPC.Message message2 = k27Var.k;
+                                if (z5) {
+                                    z2 = z3;
+                                    j2 = k27.B0(message2);
+                                } else {
+                                    z2 = z3;
+                                    long j4 = message2.peer_id.channel_id;
+                                    j2 = j4 != 0 ? -j4 : 0L;
+                                }
+                                SparseArray sparseArray2 = (SparseArray) vf6Var7.f(j2);
+                                longSparseIntArray = longSparseIntArray2;
+                                if (sparseArray2 != null) {
+                                    sparseArray2.remove(k27Var.e1());
+                                    if (sparseArray2.size() == 0) {
+                                        vf6Var7.l(j2);
+                                    }
+                                }
+                                arrayList5.remove(k27Var);
+                                arrayList6.remove(i18);
+                                i18--;
+                            }
+                            i18++;
+                            z3 = z2;
+                            longSparseIntArray2 = longSparseIntArray;
+                        }
+                    }
+                }
+                boolean z6 = z3;
+                long j5 = this.c;
+                if (j5 != 0) {
+                    int i19 = this.d;
+                    int i20 = this.e;
+                    if (i19 != 0 || i20 != 0) {
+                        int i21 = 0;
+                        while (i21 < arrayList6.size()) {
+                            k27 k27Var2 = (k27) arrayList6.get(i21);
+                            if (k27.B0(k27Var2.k) == j5 && !k27Var2.J) {
+                                if (i20 != 0) {
+                                    if (k27Var2.k.date > i20) {
+                                    }
+                                    if (im7.y(k27Var2)) {
+                                        im7Var.K--;
+                                    }
+                                    z = k27Var2.J;
+                                    TLRPC.Message message3 = k27Var2.k;
+                                    if (z) {
+                                        j = k27.B0(message3);
+                                    } else {
+                                        long j6 = message3.peer_id.channel_id;
+                                        j = j6 != 0 ? -j6 : 0L;
+                                    }
+                                    sparseArray = (SparseArray) vf6Var7.f(j);
+                                    if (sparseArray != null) {
+                                        sparseArray.remove(k27Var2.e1());
+                                        if (sparseArray.size() == 0) {
+                                            vf6Var7.l(j);
+                                        }
+                                    }
+                                    arrayList6.remove(i21);
+                                    arrayList5.remove(k27Var2);
+                                    arrayList7.add(k27Var2);
+                                    i21--;
+                                } else if (z6) {
+                                    if (k27Var2.e1() != i19 && i19 >= 0) {
+                                    }
+                                    if (im7.y(k27Var2)) {
+                                    }
+                                    z = k27Var2.J;
+                                    TLRPC.Message message32 = k27Var2.k;
+                                    if (z) {
+                                    }
+                                    sparseArray = (SparseArray) vf6Var7.f(j);
+                                    if (sparseArray != null) {
+                                    }
+                                    arrayList6.remove(i21);
+                                    arrayList5.remove(k27Var2);
+                                    arrayList7.add(k27Var2);
+                                    i21--;
+                                } else {
+                                    if (k27Var2.e1() > i19 && i19 >= 0) {
+                                    }
+                                    if (im7.y(k27Var2)) {
+                                    }
+                                    z = k27Var2.J;
+                                    TLRPC.Message message322 = k27Var2.k;
+                                    if (z) {
+                                    }
+                                    sparseArray = (SparseArray) vf6Var7.f(j);
+                                    if (sparseArray != null) {
+                                    }
+                                    arrayList6.remove(i21);
+                                    arrayList5.remove(k27Var2);
+                                    arrayList7.add(k27Var2);
+                                    i21--;
+                                }
+                            }
+                            i21++;
+                        }
+                    }
+                }
+                if (!arrayList7.isEmpty()) {
+                    gl.c3(new yl7(im7Var, arrayList7, (byte) 2));
+                    break;
+                }
+                break;
         }
-        Matrix matrix2 = this.B;
-        return (matrix2 == null || matrix2.isIdentity()) && this.e == 1.0f && this.f == 1.0f && this.c == 1.0f && this.d == 0.0f && this.i == 0 && this.j == 0 && this.k == 0 && !this.l && this.m == 0.0f && this.o == 0.0f && this.s == 0 && this.t == 0 && !this.u && this.v == 0.0f;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
-        this.a = inputSerializedData.readFloat(z);
-        this.b = inputSerializedData.readFloat(z);
-        this.c = inputSerializedData.readFloat(z);
-        this.d = inputSerializedData.readFloat(z);
-        this.e = inputSerializedData.readFloat(z);
-        this.f = inputSerializedData.readFloat(z);
-        this.i = inputSerializedData.readInt32(z);
-        this.j = inputSerializedData.readInt32(z);
-        this.k = inputSerializedData.readInt32(z);
-        this.l = inputSerializedData.readBool(z);
-        this.m = inputSerializedData.readFloat(z);
-        this.o = inputSerializedData.readFloat(z);
-        float[] fArr = new float[9];
-        for (int i = 0; i < 9; i++) {
-            fArr[i] = inputSerializedData.readFloat(z);
-        }
-        Matrix matrix = new Matrix();
-        this.r = matrix;
-        matrix.setValues(fArr);
-        this.s = inputSerializedData.readInt32(z);
-        this.t = inputSerializedData.readInt32(z);
-        this.u = inputSerializedData.readBool(z);
-        this.v = inputSerializedData.readFloat(z);
-        if (inputSerializedData.readInt32(z) == 178403937) {
-            for (int i2 = 0; i2 < 9; i2++) {
-                fArr[i2] = inputSerializedData.readFloat(z);
-            }
-            Matrix matrix2 = new Matrix();
-            this.B = matrix2;
-            matrix2.setValues(fArr);
-        }
-        this.C = inputSerializedData.readBool(z);
-        this.z = inputSerializedData.readInt32(z);
-    }
-
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(1151577037);
-        outputSerializedData.writeFloat(this.a);
-        outputSerializedData.writeFloat(this.b);
-        outputSerializedData.writeFloat(this.c);
-        outputSerializedData.writeFloat(this.d);
-        outputSerializedData.writeFloat(this.e);
-        outputSerializedData.writeFloat(this.f);
-        outputSerializedData.writeInt32(this.i);
-        outputSerializedData.writeInt32(this.j);
-        outputSerializedData.writeInt32(this.k);
-        outputSerializedData.writeBool(this.l);
-        outputSerializedData.writeFloat(this.m);
-        outputSerializedData.writeFloat(this.o);
-        float[] fArr = new float[9];
-        Matrix matrix = this.r;
-        if (matrix != null) {
-            matrix.getValues(fArr);
-        } else {
-            for (int i = 0; i < 9; i++) {
-                fArr[i] = 0.0f;
-            }
-        }
-        for (int i2 = 0; i2 < 9; i2++) {
-            outputSerializedData.writeFloat(fArr[i2]);
-        }
-        outputSerializedData.writeInt32(this.s);
-        outputSerializedData.writeInt32(this.t);
-        outputSerializedData.writeBool(this.u);
-        outputSerializedData.writeFloat(this.v);
-        if (this.B == null) {
-            outputSerializedData.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            outputSerializedData.writeInt32(178403937);
-            this.B.getValues(fArr);
-            for (int i3 = 0; i3 < 9; i3++) {
-                outputSerializedData.writeFloat(fArr[i3]);
-            }
-        }
-        outputSerializedData.writeBool(this.C);
-        outputSerializedData.writeInt32(this.z);
+    public /* synthetic */ ao6(im7 im7Var, LongSparseIntArray longSparseIntArray, ArrayList arrayList, long j, int i, int i2, boolean z) {
+        this.h = im7Var;
+        this.n = longSparseIntArray;
+        this.b = arrayList;
+        this.c = j;
+        this.d = i;
+        this.e = i2;
+        this.f = z;
     }
 }

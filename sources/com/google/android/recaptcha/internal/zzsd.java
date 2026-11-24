@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -114,7 +114,7 @@ final class zzsd {
                 i = zzqv.zzB((longValue << 1) ^ (longValue >> 63));
                 return zzA2 + i;
             default:
-                zo4.k("There is no way to get here, but the compiler thinks otherwise.");
+                wn4.j("There is no way to get here, but the compiler thinks otherwise.");
                 return 0;
         }
     }
@@ -144,7 +144,7 @@ final class zzsd {
         zzscVar.zzg();
         if (zzscVar.zze() != zzvh.zzi) {
             if (z) {
-                dq9.m("Lazy fields must be message-valued");
+                sc8.j("Lazy fields must be message-valued");
                 return;
             } else {
                 this.zza.put(zzscVar, zzl(value));
@@ -178,7 +178,7 @@ final class zzsd {
         if (value instanceof zztc) {
             return true;
         }
-        u36.j("Wrong object type used with protocol message reflection.");
+        w26.j("Wrong object type used with protocol message reflection.");
         return false;
     }
 
@@ -199,7 +199,7 @@ final class zzsd {
             zzA2 = zzqv.zzA(zza) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzx = mle.f(zza2, zza2, zzA3);
+            zzx = mue.e(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
             zzA = zzqv.zzA(8) << 1;

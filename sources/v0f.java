@@ -1,27 +1,33 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class v0f implements qze {
-    public final e26 a;
-    public final jye b;
-
-    public v0f(Context context, jye jyeVar) {
-        this.b = jyeVar;
-        p61 p61Var = p61.e;
-        i3c.b(context);
-        g3c c = i3c.a().c(p61Var);
-        if (p61.d.contains(new d44("json"))) {
-            new e26(new l0f(c, (byte) 0));
-        }
-        this.a = new e26(new l0f(c, (byte) 1));
+public abstract class v0f {
+    public mjd a(tod todVar) {
+        return (mjd) rjd.d.getAndSet(todVar, mjd.d);
     }
 
-    @Override // qze
-    public final void a(ry ryVar) {
-        this.b.getClass();
-        ((h3c) this.a.get()).a(ryVar.b ? na0.a(ryVar.i()) : new na0(null, ryVar.i(), fl8.b, null), new rjb((byte) 9));
+    public ujd b(tod todVar) {
+        return (ujd) rjd.c.getAndSet(todVar, ujd.c);
+    }
+
+    public void c(ujd ujdVar, ujd ujdVar2) {
+        rjd.b.lazySet(ujdVar, ujdVar2);
+    }
+
+    public void d(ujd ujdVar, Thread thread) {
+        rjd.a.lazySet(ujdVar, thread);
+    }
+
+    public boolean e(tod todVar, mjd mjdVar, mjd mjdVar2) {
+        return x0f.a(rjd.d, todVar, mjdVar, mjdVar2);
+    }
+
+    public boolean f(akd akdVar, Object obj, Object obj2) {
+        return x0f.a(rjd.e, akdVar, obj, obj2);
+    }
+
+    public boolean g(akd akdVar, ujd ujdVar, ujd ujdVar2) {
+        return x0f.a(rjd.c, akdVar, ujdVar, ujdVar2);
     }
 }

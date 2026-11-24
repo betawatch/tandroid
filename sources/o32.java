@@ -1,29 +1,27 @@
 // default package
 
-import java.util.ArrayList;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o32 implements u32 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yv2 b;
+public final class o32 implements TextWatcher {
+    public final /* synthetic */ r32 a;
 
-    public /* synthetic */ o32(yv2 yv2Var, byte b) {
-        this.a = b;
-        this.b = yv2Var;
+    public o32(r32 r32Var) {
+        this.a = r32Var;
     }
 
-    @Override // u32
-    public final String run() {
-        byte b = this.a;
-        yv2 yv2Var = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = yv2Var.e;
-                return !arrayList.isEmpty() ? r58.f().e((String) arrayList.get(0)) : "";
-            default:
-                ArrayList arrayList2 = yv2Var.e;
-                return !arrayList2.isEmpty() ? r58.f().e((String) arrayList2.get(0)) : "";
-        }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.i0();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

@@ -1,34 +1,55 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class i38 implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class i38 implements p8c {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ a58 b;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ p8c d;
 
-    public /* synthetic */ i38(a58 a58Var, byte b) {
+    public /* synthetic */ i38(String[] strArr, Activity activity, p8c p8cVar, byte b) {
         this.a = b;
-        this.b = a58Var;
+        this.b = strArr;
+        this.c = activity;
+        this.d = p8cVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // p8c
+    public final void a(Object obj) {
         byte b = this.a;
-        a58 a58Var = this.b;
+        boolean z = false;
+        p8c p8cVar = this.d;
+        Activity activity = this.c;
+        String[] strArr = this.b;
         switch (b) {
             case 0:
-                a58Var.x2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a58Var.invalidate();
-                break;
-            case 1:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a58Var.j3 = floatValue;
-                a58Var.h3.setTransitionProgress(floatValue);
+                int length = strArr.length;
+                int i = 0;
+                while (true) {
+                    if (i < length) {
+                        if (activity.checkSelfPermission(strArr[i]) == 0) {
+                            z = true;
+                        } else {
+                            i++;
+                        }
+                    }
+                }
+                p8cVar.a(Boolean.valueOf(z));
                 break;
             default:
-                a58Var.D0(valueAnimator);
+                int length2 = strArr.length;
+                int i2 = 0;
+                while (true) {
+                    if (i2 >= length2) {
+                        z = true;
+                    } else if (activity.checkSelfPermission(strArr[i2]) == 0) {
+                        i2++;
+                    }
+                }
+                p8cVar.a(Boolean.valueOf(z));
                 break;
         }
     }

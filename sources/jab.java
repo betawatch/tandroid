@@ -1,10 +1,24 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.animation.ValueAnimator;
+import android.text.StaticLayout;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public interface jab {
-    void l(Canvas canvas, RectF rectF, float f);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class jab {
+    public final EditTextBoldCursor a;
+    public StaticLayout b;
+    public StaticLayout c;
+    public StaticLayout d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public float h;
+    public float i;
+    public ValueAnimator j;
+
+    public jab(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
+    }
 }

@@ -1,27 +1,86 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class z83 extends qx2 {
-    public h93 a;
-    public iya b;
-    public boolean c;
-    public /* synthetic */ Object d;
-    public final /* synthetic */ h93 e;
-    public int f;
+public class z83 extends n01 {
+    public fm4 a;
+    public final o33 b = new o33();
+    public ByteBuffer c;
+    public boolean d;
+    public long e;
+    public ByteBuffer f;
+    public final byte h;
+    public final int n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z83(h93 h93Var, px2 px2Var) {
-        super(px2Var);
-        this.e = h93Var;
+    static {
+        cr6.a("media3.decoder");
     }
 
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        this.d = obj;
-        this.f |= TLObject.FLAG_31;
-        return this.e.g(false, this);
+    /* JADX WARN: Multi-variable type inference failed */
+    public z83(int i, int i2) {
+        this.h = i;
+        this.n = i2;
+    }
+
+    public final ByteBuffer a(int i) {
+        byte b = this.h;
+        if (b == 1) {
+            return ByteBuffer.allocate(i);
+        }
+        if (b == 2) {
+            return ByteBuffer.allocateDirect(i);
+        }
+        ByteBuffer byteBuffer = this.c;
+        throw new y83("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i + ")");
+    }
+
+    public final void c(int i) {
+        int i2 = i + this.n;
+        ByteBuffer byteBuffer = this.c;
+        if (byteBuffer == null) {
+            this.c = a(i2);
+            return;
+        }
+        int capacity = byteBuffer.capacity();
+        int position = byteBuffer.position();
+        int i3 = i2 + position;
+        if (capacity >= i3) {
+            this.c = byteBuffer;
+            return;
+        }
+        ByteBuffer a = a(i3);
+        a.order(byteBuffer.order());
+        if (position > 0) {
+            byteBuffer.flip();
+            a.put(byteBuffer);
+        }
+        this.c = a;
+    }
+
+    @Override // n01
+    public void clear() {
+        super.clear();
+        ByteBuffer byteBuffer = this.c;
+        if (byteBuffer != null) {
+            byteBuffer.clear();
+        }
+        ByteBuffer byteBuffer2 = this.f;
+        if (byteBuffer2 != null) {
+            byteBuffer2.clear();
+        }
+        this.d = false;
+    }
+
+    public final void d() {
+        ByteBuffer byteBuffer = this.c;
+        if (byteBuffer != null) {
+            byteBuffer.flip();
+        }
+        ByteBuffer byteBuffer2 = this.f;
+        if (byteBuffer2 != null) {
+            byteBuffer2.flip();
+        }
     }
 }

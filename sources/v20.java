@@ -1,157 +1,75 @@
 // default package
 
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.PhotoViewer;
+import android.os.Handler;
+import java.io.File;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class v20 extends ro {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v20 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ h30 b;
+    public final /* synthetic */ f30 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v20(tsc tscVar) {
-        super("progress", (byte) 0);
-        this.b = (byte) 5;
-        this.c = tscVar;
+    public /* synthetic */ v20(h30 h30Var, f30 f30Var, int i) {
+        this.a = (byte) 4;
+        this.b = h30Var;
+        this.c = f30Var;
     }
 
-    @Override // ro
-    public final void c(Object obj, float f) {
-        byte b = this.b;
-        Object obj2 = this.c;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        File file;
+        switch (this.a) {
             case 0:
-                a aVar = (a) obj;
-                i30 i30Var = (i30) obj2;
-                i30Var.K2 = f;
-                lka titleTextView = aVar.getTitleTextView();
-                ImageView backButton = aVar.getBackButton();
-                float f2 = 1.0f - f;
-                titleTextView.setTranslationX(gm.L(-52.0f) * f2);
-                backButton.setTranslationX(gm.L(-52.0f) * f2);
-                r7 r7Var = i30Var.e2;
-                if (r7Var != null && r7Var.getSearchContainer() != null) {
-                    r7Var.getSearchContainer().setClipChildren(false);
-                    r7Var.getSearchContainer().setClipToPadding(false);
-                    r7Var.getSearchContainer().setPadding(0, 0, gm.L(gm.O1() ? 74.0f : 66.0f), 0);
-                    r7Var.getSearchContainer().setTranslationX((gm.L(-52.0f) * f2) + gm.L(gm.O1() ? 74.0f : 66.0f));
-                    if (r7Var.getSearchClearButton() != null) {
-                        r7Var.getSearchClearButton().setTranslationX(gm.L(52.0f) * f2);
-                    }
-                }
-                backButton.setScaleX(gm.R1(0.6f, 1.0f, f));
-                backButton.setScaleY(gm.R1(0.6f, 1.0f, f));
-                backButton.setAlpha(gm.R1(0.0f, 1.0f, f));
-                i30Var.b.invalidate();
-                break;
+                h30 h30Var = this.b;
+                f30 f30Var = this.c;
+                h30Var.g.U(f30Var.a, f30Var.b);
+                return;
             case 1:
-                yv1.yd = f;
-                yv1 yv1Var = (yv1) obj2;
-                ColorMatrix colorMatrix = yv1Var.j7;
-                colorMatrix.setSaturation(f);
-                yv1Var.i7.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                break;
+                h30 h30Var2 = this.b;
+                f30 f30Var2 = this.c;
+                tg2 tg2Var = h30Var2.g;
+                long j = f30Var2.a;
+                tg2Var.getClass();
+                return;
             case 2:
-                lx2 lx2Var = (lx2) obj2;
-                lx2Var.i0 = f;
-                lx2Var.invalidate();
-                break;
+                h30 h30Var3 = this.b;
+                f30 f30Var3 = this.c;
+                h30Var3.g.U(f30Var3.a, f30Var3.b);
+                return;
             case 3:
-                ig4 ig4Var = (ig4) obj2;
-                ig4Var.x0 = f;
-                int i = ig4Var.V;
-                ylb ylbVar = ig4Var.a;
-                ig4Var.U.setColor(on2.f(f, cmb.v0(i, ylbVar), cmb.v0(ig4Var.d0, ylbVar)));
-                fv fvVar = ig4Var.G;
-                fvVar.h1();
-                fvVar.invalidate();
-                ((ig4) obj).invalidate();
-                break;
-            case 4:
-                ((View) obj).setAlpha(f);
-                x68 x68Var = ((PhotoViewer) obj2).D1;
-                if (x68Var != null) {
-                    x68Var.setVideoThumbFlashAlpha(f);
-                    break;
-                }
-                break;
-            case 5:
-                tsc tscVar = (tsc) obj2;
-                tscVar.y = f;
-                tscVar.invalidate();
-                break;
+                h30 h30Var4 = this.b;
+                f30 f30Var4 = this.c;
+                tg2 tg2Var2 = h30Var4.g;
+                long j2 = f30Var4.a;
+                tg2Var2.getClass();
+                return;
             default:
-                b1d b1dVar = (b1d) obj2;
-                b1dVar.F = f;
-                a1d a1dVar = b1dVar.M;
-                if (a1dVar != null) {
-                    a1dVar.b(f);
+                h30 h30Var5 = this.b;
+                f30 f30Var5 = this.c;
+                tg2 tg2Var3 = h30Var5.g;
+                long j3 = f30Var5.a;
+                synchronized (((u20) tg2Var3.c).f) {
+                    file = (File) ((HashMap) ((u20) tg2Var3.c).g).remove(Long.valueOf(j3));
                 }
-                b1dVar.invalidate();
-                break;
+                if (file != null) {
+                    ((Handler) ((u20) tg2Var3.c).d).post(new t20(tg2Var3, j3, (ml6) tg2Var3.b, file, (byte) 0));
+                    return;
+                }
+                return;
         }
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        byte b = this.b;
-        Object obj2 = this.c;
-        switch (b) {
-            case 0:
-                return Float.valueOf(((i30) obj2).K2);
-            case 1:
-                return Float.valueOf(yv1.yd);
-            case 2:
-                return Float.valueOf(((lx2) obj2).i0);
-            case 3:
-                return Float.valueOf(((ig4) obj2).x0);
-            case 4:
-                return Float.valueOf(((View) obj).getAlpha());
-            case 5:
-                return Float.valueOf(((tsc) obj2).y);
-            default:
-                return Float.valueOf(((b1d) obj2).F);
-        }
+    public /* synthetic */ v20(h30 h30Var, f30 f30Var, long j, long j2, byte b) {
+        this.a = b;
+        this.b = h30Var;
+        this.c = f30Var;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v20(FrameLayout frameLayout, byte b) {
-        super("animationValue", (byte) 0);
-        this.b = b;
-        this.c = frameLayout;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v20(b1d b1dVar) {
-        super("clipProgress", (byte) 0);
-        this.b = (byte) 6;
-        this.c = b1dVar;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v20(PhotoViewer photoViewer) {
-        super("flashViewAlpha", (byte) 0);
-        this.b = (byte) 4;
-        this.c = photoViewer;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v20(yv1 yv1Var) {
-        super("", (byte) 0);
-        this.b = (byte) 1;
-        this.c = yv1Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v20(i30 i30Var) {
-        super("actionBarSlide", (byte) 0);
-        this.b = (byte) 0;
-        this.c = i30Var;
+    public /* synthetic */ v20(h30 h30Var, f30 f30Var, Exception exc) {
+        this.a = (byte) 3;
+        this.b = h30Var;
+        this.c = f30Var;
     }
 }

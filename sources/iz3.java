@@ -1,21 +1,63 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class iz3 extends pj8 {
-    @Override // android.view.View
-    public final void invalidate() {
-        if (oi5.b(this)) {
-            return;
-        }
-        super.invalidate();
+public final class iz3 extends gec {
+    public final /* synthetic */ t14 x0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iz3(t14 t14Var, Context context) {
+        super(context);
+        this.x0 = t14Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        if (oi5.b(this)) {
+    @Override // gec, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.x0.f) {
+            return false;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // gec
+    public final void x(int i, boolean z) {
+        t14 t14Var = this.x0;
+        yz3 yz3Var = t14Var.J;
+        t14Var.R(i == 1);
+        if (i != getCurrentItem()) {
+            super.x(i, z);
             return;
         }
-        super.invalidate(i, i2, i3, i4);
+        if (i != 0) {
+            if (i == 1) {
+                t14Var.i0.z0(0);
+                return;
+            } else {
+                t14Var.E0.z0(1);
+                return;
+            }
+        }
+        t14Var.R0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(yz3Var, (Property<yz3, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(s33.h);
+        ofFloat.start();
+        t14Var.E(1, 0);
+        if (yz3Var != null) {
+            yz3Var.j(0, true);
+        }
     }
 }

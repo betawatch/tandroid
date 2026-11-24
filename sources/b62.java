@@ -1,50 +1,43 @@
 // default package
 
-import java.io.File;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ShutterButton;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class b62 implements zia {
-    public File a;
-    public boolean b;
-    public final /* synthetic */ ylb c;
-    public final /* synthetic */ dy0 d;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout e;
+public final class b62 extends u26 {
+    public final /* synthetic */ z12 r;
 
-    public b62(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, ylb ylbVar, dy0 dy0Var) {
-        this.e = chatAttachAlertPhotoLayout;
-        this.c = ylbVar;
-        this.d = dy0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b62(z12 z12Var, Context context) {
+        super(context);
+        this.r = z12Var;
     }
 
-    public final void a() {
-        m62 m62Var;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e;
-        i22 i22Var = chatAttachAlertPhotoLayout.b;
-        ShutterButton shutterButton = chatAttachAlertPhotoLayout.l0;
-        if (chatAttachAlertPhotoLayout.t0 || (m62Var = chatAttachAlertPhotoLayout.Q) == null || m62Var.getCameraSession() == null) {
-            return;
+    @Override // u26
+    public final int k(int i, View view) {
+        int i2;
+        k62 k62Var = (k62) this.r.V;
+        if (k62Var.W0) {
+            i = -1;
         }
-        byte b = 0;
-        if (shutterButton.getState() == aja.b) {
-            chatAttachAlertPhotoLayout.o0();
-            CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.Q.getCameraSession(), false);
-            shutterButton.a(aja.a);
-        } else {
-            if (!chatAttachAlertPhotoLayout.y0) {
-                mlb.y(null, 2131749316, new c41(chatAttachAlertPhotoLayout.Q, this.c), null);
-                return;
-            }
-            d dVar = i22Var.Z1;
-            File q0 = gm.q0(null, (dVar instanceof yv1) && ((yv1) dVar).x());
-            boolean isSameTakePictureOrientation = chatAttachAlertPhotoLayout.Q.getCameraSession().isSameTakePictureOrientation();
-            chatAttachAlertPhotoLayout.Q.getCameraSession().setFlipFront((i22Var.Z1 instanceof yv1) || i22Var.N2 == 2);
-            chatAttachAlertPhotoLayout.t0 = CameraController.getInstance().takePicture(q0, false, chatAttachAlertPhotoLayout.Q.getCameraSessionObject(), new z52(this, q0, isSameTakePictureOrientation, b));
-            chatAttachAlertPhotoLayout.Q.startTakePictureAnimation(true);
+        int k = super.k(i, view);
+        if (k62Var.W0) {
+            k += gl.L(160.0f);
         }
+        if (!k62Var.W0) {
+            k = de9.f(7.0f, k62Var.S0 - gl.m, k);
+        }
+        if (k62Var.W0 && k == 0 && (i2 = k62Var.X0) >= 0) {
+            k62Var.k0(i2);
+            k62Var.X0 = -1;
+        }
+        k62Var.W0 = false;
+        return k;
+    }
+
+    @Override // u26
+    public final int m(int i) {
+        return super.m(i) << 1;
     }
 }

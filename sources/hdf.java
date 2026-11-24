@@ -1,13 +1,32 @@
 // default package
 
-import android.os.Build;
+import android.content.Context;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class hdf {
-    public static final int a;
+public final class hdf {
+    public static final v8d b = v8d.c(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
+    public final String a;
 
-    static {
-        a = Build.VERSION.SDK_INT >= 31 ? 33554432 : 0;
+    public hdf(Context context, sfa sfaVar) {
+        context.getPackageName();
+        om2.a(context);
+        synchronized (eef.class) {
+            byte b2 = 0;
+            if (eef.b == null) {
+                eef.b = new eef(b2);
+            }
+        }
+        this.a = "common";
+        l69.x();
+        l69.I(new ke7(this, (byte) 8));
+        l69.x();
+        Objects.requireNonNull(sfaVar);
+        l69.I(new ixe(sfaVar, (byte) 3));
+        v8d v8dVar = b;
+        if (v8dVar.containsKey("common")) {
+            ds3.d(context, (String) v8dVar.get("common"), false);
+        }
     }
 }

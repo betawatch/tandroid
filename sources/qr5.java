@@ -1,25 +1,23 @@
 // default package
 
-import java.util.concurrent.locks.AbstractOwnableSynchronizer;
+import androidx.car.app.model.CarText;
+import androidx.car.app.model.ItemList;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class qr5 extends AbstractOwnableSynchronizer implements Runnable {
-    public final h4c a;
+public final class qr5 {
+    public final ArrayList a;
+    public final int b;
+    public final hp7 c;
+    public final dp7 d;
+    public final CarText e;
 
-    public qr5(h4c h4cVar) {
-        this.a = h4cVar;
-    }
-
-    public final void a(Thread thread) {
-        setExclusiveOwnerThread(thread);
-    }
-
-    public final String toString() {
-        return this.a.toString();
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+    public qr5(ItemList itemList) {
+        this.b = itemList.getSelectedIndex();
+        this.c = itemList.getOnSelectedDelegate();
+        this.d = itemList.getOnItemVisibilityChangedDelegate();
+        this.e = itemList.getNoItemsMessage();
+        this.a = new ArrayList(itemList.getItems());
     }
 }

@@ -1,39 +1,48 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class b14 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ e34 c;
+public final class b14 {
+    public final ArrayList a = new ArrayList();
+    public final /* synthetic */ t14 b;
 
-    public /* synthetic */ b14(e34 e34Var, boolean z, byte b) {
-        this.a = b;
-        this.c = e34Var;
-        this.b = z;
+    public b14(t14 t14Var) {
+        this.b = t14Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        e34 e34Var = this.c;
-        boolean z = this.b;
-        switch (b) {
-            case 0:
-                if (!z) {
-                    e34Var.y.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!z) {
-                    e34Var.E.setVisibility(4);
-                    break;
-                }
-                break;
+    public final void a(String str, boolean z) {
+        t14 t14Var = this.b;
+        int i = t14Var.d1;
+        String y = tb4.y("gif_search_", str, "_");
+        if (z && t14Var.m0.containsKey(y)) {
+            return;
+        }
+        String str2 = str;
+        ji1 ji1Var = new ji1((Object) this, (Object) str2, z, (Object) y, (byte) 5);
+        ArrayList arrayList = this.a;
+        if (z) {
+            arrayList.add(y);
+            ad7.Y(i).L(y, ji1Var);
+            return;
+        }
+        na7 q1 = na7.q1(i);
+        TLObject a2 = q1.a2(q1.o3);
+        if (a2 instanceof TLRPC.User) {
+            arrayList.add(y);
+            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
+            if (str2 == null) {
+                str2 = "";
+            }
+            tL_messages_getInlineBotResults.query = str2;
+            tL_messages_getInlineBotResults.bot = q1.o1((TLRPC.User) a2);
+            tL_messages_getInlineBotResults.offset = "";
+            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
+            ConnectionsManager.getInstance(i).sendRequest(tL_messages_getInlineBotResults, ji1Var, 2);
         }
     }
 }

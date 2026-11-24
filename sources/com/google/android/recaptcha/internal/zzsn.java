@@ -11,7 +11,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -34,7 +34,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         try {
             return method.invoke(obj, objArr);
         } catch (IllegalAccessException e) {
-            rjb.k("Couldn't use Java reflection to implement protocol message reflection.", e);
+            fyb.j("Couldn't use Java reflection to implement protocol message reflection.", e);
             return null;
         } catch (InvocationTargetException e2) {
             Throwable cause = e2.getCause();
@@ -44,7 +44,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (cause instanceof Error) {
                 throw ((Error) cause);
             }
-            rjb.k("Unexpected exception thrown by generated accessor method.", cause);
+            fyb.j("Unexpected exception thrown by generated accessor method.", cause);
             return null;
         }
     }
@@ -93,7 +93,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             }
             throw new zzsx(e3);
         } catch (IndexOutOfBoundsException unused) {
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             return null;
         }
     }
@@ -126,7 +126,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 zzsnVar = (zzsn) map.get(cls);
             } catch (ClassNotFoundException e) {
-                wa3.h("Class initialization cannot fail.", e);
+                k93.h("Class initialization cannot fail.", e);
                 return null;
             }
         }
@@ -138,7 +138,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             map.put(cls, zzsnVar2);
             return zzsnVar2;
         }
-        rjb.h();
+        sdb.a();
         return null;
     }
 
@@ -253,7 +253,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zza >= 0) {
                 return zza;
             }
-            dq9.m(hg9.j(zza, "serialized size must be non-negative, was "));
+            sc8.j(de9.k(zza, "serialized size must be non-negative, was "));
             return 0;
         }
         int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -265,7 +265,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
             return zza2;
         }
-        dq9.m(hg9.j(zza2, "serialized size must be non-negative, was "));
+        sc8.j(de9.k(zza2, "serialized size must be non-negative, was "));
         return 0;
     }
 
@@ -304,7 +304,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zzf >= 0) {
                 return zzf;
             }
-            dq9.m(hg9.j(zzf, "serialized size must be non-negative, was "));
+            sc8.j(de9.k(zzf, "serialized size must be non-negative, was "));
             return 0;
         }
         int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -316,7 +316,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
             return zzf2;
         }
-        dq9.m(hg9.j(zzf2, "serialized size must be non-negative, was "));
+        sc8.j(de9.k(zzf2, "serialized size must be non-negative, was "));
         return 0;
     }
 

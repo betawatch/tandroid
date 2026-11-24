@@ -1,36 +1,48 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class oj1 {
+    public static final char[] a = new char[kk7.B1];
+    public static final byte[] b = new byte[kk7.J1];
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class oj1 implements c5c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ik1 b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
-
-    public /* synthetic */ oj1(ik1 ik1Var, TwoStepVerificationActivity twoStepVerificationActivity, byte b) {
-        this.a = b;
-        this.b = ik1Var;
-        this.c = twoStepVerificationActivity;
+    static {
+        int i = 0;
+        for (int i2 = 0; i2 < 32; i2++) {
+        }
+        a('b', 8);
+        a('t', 9);
+        a('n', 10);
+        a('f', 12);
+        a('r', 13);
+        a('/', 47);
+        a('\"', 34);
+        a('\\', 92);
+        while (true) {
+            byte[] bArr = b;
+            if (i >= 33) {
+                bArr[9] = 3;
+                bArr[10] = 3;
+                bArr[13] = 3;
+                bArr[32] = 3;
+                bArr[44] = 4;
+                bArr[58] = 5;
+                bArr[123] = 6;
+                bArr[125] = 7;
+                bArr[91] = 8;
+                bArr[93] = 9;
+                bArr[34] = 1;
+                bArr[92] = 2;
+                return;
+            }
+            bArr[i] = Byte.MAX_VALUE;
+            i++;
+        }
     }
 
-    @Override // c5c
-    public final void h(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        byte b = this.a;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.c;
-        ik1 ik1Var = this.b;
-        switch (b) {
-            case 0:
-                ik1Var.G(false, tL_inputCheckPasswordSRP, twoStepVerificationActivity);
-                break;
-            case 1:
-                ik1Var.G(true, tL_inputCheckPasswordSRP, twoStepVerificationActivity);
-                break;
-            default:
-                ik1Var.G(true, tL_inputCheckPasswordSRP, twoStepVerificationActivity);
-                break;
+    public static void a(char c, int i) {
+        if (c != 'u') {
+            a[c] = (char) i;
         }
     }
 }

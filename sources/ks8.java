@@ -1,53 +1,45 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ks8 implements qac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rs8 b;
-    public final /* synthetic */ TL_stars.SavedStarGift c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ks8 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
 
-    public /* synthetic */ ks8(rs8 rs8Var, TL_stars.SavedStarGift savedStarGift, byte b) {
-        this.a = b;
-        this.b = rs8Var;
-        this.c = savedStarGift;
+    public ks8(String str, String str2, String str3, String str4, String str5) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
+        this.e = str5;
     }
 
-    @Override // qac
-    public final void a(Object obj) {
-        byte b = this.a;
-        TL_stars.SavedStarGift savedStarGift = this.c;
-        rs8 rs8Var = this.b;
-        byte b2 = 1;
-        switch (b) {
-            case 0:
-                rs8Var.a.e.b(new ks8(rs8Var, savedStarGift, b2), (String) obj);
-                break;
-            default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                lea leaVar = rs8Var.a;
-                yua yuaVar = leaVar.e;
-                int i = tL_starGiftCollection.collection_id;
-                yuaVar.getClass();
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(savedStarGift);
-                yuaVar.a(i, arrayList);
-                leaVar.f(true);
-                vgc vgcVar = leaVar.n;
-                int i2 = tL_starGiftCollection.collection_id;
-                vgcVar.e(i2, leaVar.e.f(i2) + 1);
-                d dVar = leaVar.a;
-                if (dVar instanceof ProfileActivity) {
-                    ((ProfileActivity) dVar).n3(true);
-                }
-                leaVar.o();
-                c41.b0(dVar).R(savedStarGift.gift.getDocument(), gm.S2(jb6.a0(null, null, 2131750326, wsa.t1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof ks8)) {
+            return false;
+        }
+        ks8 ks8Var = (ks8) obj;
+        return Objects.equals(this.a, ks8Var.a) && Objects.equals(this.b, ks8Var.b) && Objects.equals(this.c, ks8Var.c) && Objects.equals(this.d, ks8Var.d) && Objects.equals(this.e, ks8Var.e);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.b;
+        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+        String str3 = this.c;
+        int hashCode3 = (hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31;
+        String str4 = this.d;
+        int hashCode4 = (hashCode3 + (str4 != null ? str4.hashCode() : 0)) * 31;
+        String str5 = this.e;
+        return hashCode4 + (str5 != null ? str5.hashCode() : 0);
     }
 }

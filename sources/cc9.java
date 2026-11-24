@@ -1,45 +1,46 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicReferenceArray;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class cc9 {
-    private volatile AtomicReferenceArray<Object> array;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class cc9 extends View implements tjb {
+    public final wjb a;
+    public final Paint b;
+    public lk0 c;
 
-    public cc9(int i) {
-        this.array = new AtomicReferenceArray<>(i);
+    public cc9(Context context, wjb wjbVar) {
+        super(context);
+        this.b = new Paint();
+        this.a = wjbVar;
+        updateColors();
     }
 
-    public final int a() {
-        return this.array.length();
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(bkb.vl));
     }
 
-    public final Object b(int i) {
-        AtomicReferenceArray<Object> atomicReferenceArray = this.array;
-        if (i < atomicReferenceArray.length()) {
-            return atomicReferenceArray.get(i);
-        }
-        return null;
+    public lk0 getRow() {
+        return this.c;
     }
 
-    public final void c(int i, hy2 hy2Var) {
-        AtomicReferenceArray<Object> atomicReferenceArray = this.array;
-        int length = atomicReferenceArray.length();
-        if (i < length) {
-            atomicReferenceArray.set(i, hy2Var);
-            return;
-        }
-        int i2 = i + 1;
-        int i3 = length << 1;
-        if (i2 < i3) {
-            i2 = i3;
-        }
-        AtomicReferenceArray<Object> atomicReferenceArray2 = new AtomicReferenceArray<>(i2);
-        for (int i4 = 0; i4 < length; i4++) {
-            atomicReferenceArray2.set(i4, atomicReferenceArray.get(i4));
-        }
-        atomicReferenceArray2.set(i, hy2Var);
-        this.array = atomicReferenceArray2;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, gl.L(6.0f), getMeasuredWidth(), gl.L(6.0f) + 1, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(6.0f) + 1);
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        this.b.setColor(bkb.v0(bkb.vl, this.a));
     }
 }

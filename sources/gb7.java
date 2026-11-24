@@ -1,41 +1,150 @@
 // default package
 
+import java.util.Locale;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gb7 implements qac {
+public final /* synthetic */ class gb7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ oc7 b;
+    public final /* synthetic */ ad7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ CountDownLatch e;
 
-    public /* synthetic */ gb7(oc7 oc7Var, byte b) {
+    public /* synthetic */ gb7(ad7 ad7Var, long j, boolean[] zArr, CountDownLatch countDownLatch, byte b) {
         this.a = b;
-        this.b = oc7Var;
+        this.b = ad7Var;
+        this.c = j;
+        this.d = zArr;
+        this.e = countDownLatch;
     }
 
-    @Override // qac
-    public final void a(Object obj) {
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0035, code lost:
+    
+        if (r1 == null) goto L13;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0110  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        Exception e;
+        SQLiteCursor sQLiteCursor;
+        TLRPC.ChatFull chatFull;
+        NativeByteBuffer byteBufferValue;
         byte b = this.a;
-        oc7 oc7Var = this.b;
+        SQLiteCursor sQLiteCursor2 = null;
+        CountDownLatch countDownLatch = this.e;
+        boolean[] zArr = this.d;
+        long j = this.c;
+        ad7 ad7Var = this.b;
         switch (b) {
             case 0:
-                TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) obj;
-                if (oc7Var.X4 != messages_availableeffects) {
-                    oc7Var.X4 = messages_availableeffects;
-                    if (messages_availableeffects != null) {
-                        vm.g(oc7Var.currentAccount).f(oc7Var.X4.documents);
+                try {
+                    sQLiteCursor = ad7Var.b.queryFinalized("SELECT info FROM chat_settings_v2 WHERE uid = " + j, new Object[0]);
+                    try {
+                        try {
+                            if (!sQLiteCursor.next() || (byteBufferValue = sQLiteCursor.byteBufferValue(0)) == null) {
+                                chatFull = null;
+                            } else {
+                                chatFull = TLRPC.ChatFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                byteBufferValue.reuse();
+                            }
+                            sQLiteCursor.dispose();
+                            zArr[0] = (chatFull instanceof TLRPC.TL_channelFull) && chatFull.migrated_from_chat_id != 0;
+                            countDownLatch.countDown();
+                        } catch (Exception e2) {
+                            e = e2;
+                            ad7Var.n(e, true);
+                            if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
+                            }
+                            countDownLatch.countDown();
+                            return;
+                        }
+                    } catch (Throwable th) {
+                        th = th;
+                        sQLiteCursor2 = sQLiteCursor;
+                        if (sQLiteCursor2 != null) {
+                            sQLiteCursor2.dispose();
+                        }
+                        countDownLatch.countDown();
+                        throw th;
                     }
-                    oc7Var.getNotificationCenter().k(nm7.w3, new Object[0]);
+                } catch (Exception e3) {
+                    e = e3;
+                    sQLiteCursor = null;
+                } catch (Throwable th2) {
+                    th = th2;
+                    if (sQLiteCursor2 != null) {
+                    }
+                    countDownLatch.countDown();
+                    throw th;
                 }
-                oc7Var.W4 = false;
-                break;
+                countDownLatch.countDown();
+                return;
             case 1:
-                gm.c3(new q87(oc7Var, (TLRPC.TL_help_appConfig) obj, (byte) 3));
-                break;
+                try {
+                    try {
+                        long e4 = ad7Var.getUserConfig().e();
+                        sQLiteCursor2 = ad7Var.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + (-j) + " AND out = 0 ORDER BY mid DESC LIMIT 100", new Object[0]);
+                        while (true) {
+                            if (sQLiteCursor2.next()) {
+                                NativeByteBuffer byteBufferValue2 = sQLiteCursor2.byteBufferValue(0);
+                                if (byteBufferValue2 != null) {
+                                    TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
+                                    byteBufferValue2.reuse();
+                                    TLRPC.MessageAction messageAction = TLdeserialize.action;
+                                    if ((messageAction instanceof TLRPC.TL_messageActionChatAddUser) && messageAction.users.contains(Long.valueOf(e4))) {
+                                        zArr[0] = true;
+                                    }
+                                }
+                            }
+                        }
+                        sQLiteCursor2.dispose();
+                    } catch (Throwable th3) {
+                        if (sQLiteCursor2 != null) {
+                            sQLiteCursor2.dispose();
+                        }
+                        countDownLatch.countDown();
+                        throw th3;
+                    }
+                } catch (Exception e5) {
+                    ad7Var.n(e5, true);
+                    if (sQLiteCursor2 != null) {
+                        sQLiteCursor2.dispose();
+                    }
+                }
+                countDownLatch.countDown();
+                return;
             default:
-                gm.c3(new r87(oc7Var, (TL_account.TL_webBrowserSettings) obj, (byte) 0));
-                break;
+                try {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = ad7Var.b;
+                        Locale locale = Locale.US;
+                        sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT random_id FROM randoms_v2 WHERE random_id = " + j, new Object[0]);
+                        if (sQLiteCursor2.next()) {
+                            zArr[0] = true;
+                        }
+                    } catch (Exception e6) {
+                        ad7Var.n(e6, true);
+                        break;
+                    }
+                    sQLiteCursor2.dispose();
+                    countDownLatch.countDown();
+                    return;
+                } catch (Throwable th4) {
+                    if (sQLiteCursor2 != null) {
+                        sQLiteCursor2.dispose();
+                    }
+                    throw th4;
+                }
         }
     }
 }

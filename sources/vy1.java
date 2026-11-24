@@ -1,212 +1,167 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.NumberTextView;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vy1 implements TextWatcher {
-    public boolean a;
-    public boolean b;
-    public String c;
-    public boolean d;
-    public boolean e;
-    public final /* synthetic */ ChatActivityEnterView f;
+public final class vy1 extends x7c {
+    public final int N1;
+    public final my6 O1;
+    public final pi4 P1;
+    public final zya Q1;
+    public final zya R1;
+    public float S1;
+    public boolean T1;
+    public int U1;
+    public final /* synthetic */ xy1 V1;
 
-    public vy1(ChatActivityEnterView chatActivityEnterView) {
-        this.f = chatActivityEnterView;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:42:0x010e  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x016b  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0180  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x019b  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        boolean z;
-        py1 py1Var;
-        by1 by1Var;
-        if (this.d) {
-            return;
-        }
-        if (this.c != null) {
-            this.d = true;
-            editable.replace(0, editable.length(), this.c);
-            this.c = null;
-            this.d = false;
-            return;
-        }
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        if (chatActivityEnterView.I3 == 0) {
-            if (this.b) {
-                chatActivityEnterView.w1();
-                this.b = false;
-            }
-            if (this.a) {
-                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                    editable.removeSpan(imageSpan);
-                }
-                gw3.m(editable, chatActivityEnterView.F0.getPaint().getFontMetricsInt(), false, null, 0);
-                this.a = false;
-            }
-        }
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        chatActivityEnterView.e0 = codePointCount;
-        int i = chatActivityEnterView.d0;
-        if (i > 0) {
-            int i2 = i - codePointCount;
-            if (i2 <= (chatActivityEnterView.w7 ? 5 : 100)) {
-                if (i2 < -9999) {
-                    i2 = -9999;
-                }
-                chatActivityEnterView.U();
-                NumberTextView numberTextView = chatActivityEnterView.c0;
-                numberTextView.a(i2, numberTextView.getVisibility() == 0);
-                if (chatActivityEnterView.c0.getVisibility() != 0) {
-                    chatActivityEnterView.c0.setVisibility(0);
-                    chatActivityEnterView.c0.setAlpha(0.0f);
-                    chatActivityEnterView.c0.setScaleX(0.5f);
-                    chatActivityEnterView.c0.setScaleY(0.5f);
-                }
-                chatActivityEnterView.c0.animate().setListener(null).cancel();
-                chatActivityEnterView.c0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-                NumberTextView numberTextView2 = chatActivityEnterView.c0;
-                if (i2 >= 0) {
-                    numberTextView2.setTextColor(chatActivityEnterView.F0(cmb.x6));
-                    z = true;
-                    if (chatActivityEnterView.g4 != z) {
-                        chatActivityEnterView.g4 = z;
-                        by1Var.invalidate();
-                    }
-                    py1Var = chatActivityEnterView.n0;
-                    if (py1Var != null) {
-                    }
-                    chatActivityEnterView.G();
-                    if (chatActivityEnterView.Q2) {
-                        chatActivityEnterView.p0 = true;
-                        if (this.e) {
-                        }
-                    }
-                    chatActivityEnterView.V1(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                    chatActivityEnterView.I(true);
-                    chatActivityEnterView.b2(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                }
-                numberTextView2.setTextColor(chatActivityEnterView.F0(cmb.o7));
-                z = false;
-                if (chatActivityEnterView.g4 != z && (by1Var = chatActivityEnterView.v2) != null) {
-                    chatActivityEnterView.g4 = z;
-                    by1Var.invalidate();
-                }
-                py1Var = chatActivityEnterView.n0;
-                if (py1Var != null) {
-                    py1Var.c();
-                }
-                chatActivityEnterView.G();
-                if (chatActivityEnterView.Q2 && !chatActivityEnterView.p0 && !oc7.r1(chatActivityEnterView.R).H3() && !z8c.h(chatActivityEnterView.R).p() && chatActivityEnterView.e0 > oc7.r1(chatActivityEnterView.R).l4.g1.f() && chatActivityEnterView.e0 < oc7.r1(chatActivityEnterView.R).l4.h1.f()) {
-                    chatActivityEnterView.p0 = true;
-                    if (this.e) {
-                        chatActivityEnterView.W1();
-                    } else {
-                        gm.d3(new fo1(this, (byte) 13), 300L);
-                    }
-                }
-                chatActivityEnterView.V1(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                chatActivityEnterView.I(true);
-                chatActivityEnterView.b2(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-            }
-        }
-        NumberTextView numberTextView3 = chatActivityEnterView.c0;
-        if (numberTextView3 != null) {
-            numberTextView3.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new b91(this, (byte) 11));
-        }
-        z = true;
-        if (chatActivityEnterView.g4 != z) {
-        }
-        py1Var = chatActivityEnterView.n0;
-        if (py1Var != null) {
-        }
-        chatActivityEnterView.G();
-        if (chatActivityEnterView.Q2) {
-        }
-        chatActivityEnterView.V1(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-        chatActivityEnterView.I(true);
-        chatActivityEnterView.b2(chatActivityEnterView.U <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.d) {
-            return;
-        }
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        if (!chatActivityEnterView.v3 || chatActivityEnterView.o0()) {
-            return;
-        }
-        this.c = charSequence.toString();
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.d) {
-            return;
-        }
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        jz1 jz1Var = chatActivityEnterView.V0;
-        boolean z = (jz1Var == null ? oc7.c1().getInt("selected_page", 0) : jz1Var.getCurrentPage()) != 0 && (chatActivityEnterView.z3 || chatActivityEnterView.A3);
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        if (i2 != 0 ? isEmpty : !isEmpty) {
-            if (z) {
-                chatActivityEnterView.H1(false, true);
-            }
-        }
-        if (chatActivityEnterView.U != chatActivityEnterView.F0.getLineCount()) {
-            this.e = (chatActivityEnterView.F0.getLineCount() >= 4) != (chatActivityEnterView.U >= 4);
-            if (!chatActivityEnterView.T && chatActivityEnterView.F0.getMeasuredWidth() > 0) {
-                chatActivityEnterView.e1(chatActivityEnterView.U, chatActivityEnterView.F0.getLineCount());
-            }
-            int lineCount = chatActivityEnterView.F0.getLineCount();
-            chatActivityEnterView.U = lineCount;
-            chatActivityEnterView.V1((lineCount <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
-            chatActivityEnterView.b2((chatActivityEnterView.U <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vy1(xy1 xy1Var, d dVar, long j) {
+        super(dVar.getCurrentAccount(), dVar.getResourceProvider(), dVar.getParentActivity());
+        this.V1 = xy1Var;
+        this.N1 = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        int i = bkb.Z6;
+        s0(bkb.v0(i, this.J0));
+        this.F1 = i;
+        this.E1 = i;
+        H0(0.0f);
+        M(i);
+        this.A1 = false;
+        this.B1 = false;
+        my6 my6Var = new my6(this, dVar, this.c, j);
+        this.O1 = my6Var;
+        my6Var.B = false;
+        this.q0 = (byte) 75;
+        this.v1.K.setHint(k96.M0(2131745566, null));
+        qy6 qy6Var = my6Var.f;
+        this.p1 = qy6Var;
+        this.o1 = qy6Var;
+        this.n1.setAdapter(qy6Var);
+        this.n1.r1();
+        ns9 ns9Var = this.n1;
+        my6Var.p = ns9Var;
+        ns9Var.setOnItemClickListener(new bf4(my6Var, (byte) 10));
+        i49 onScrollListener = ns9Var.getOnScrollListener();
+        if (onScrollListener == null) {
+            ns9Var.setOnScrollListener(my6Var.D);
         } else {
-            this.e = false;
+            ns9Var.setOnScrollListener(new si1(my6Var, onScrollListener, (byte) 5));
         }
-        if (chatActivityEnterView.I3 == 1) {
+        int indexOfChild = ((ViewGroup) this.n1.getParent()).indexOfChild(this.n1);
+        pi4 b = my6Var.b();
+        this.P1 = b;
+        this.b.addView(b, indexOfChild, nme.c(-1.0f, -1));
+        zya a = my6Var.a();
+        this.Q1 = a;
+        this.b.addView(a, indexOfChild, nme.c(-1.0f, -1));
+        zya c = my6Var.c();
+        this.R1 = c;
+        this.b.addView(c, indexOfChild, nme.c(-1.0f, -1));
+        my6Var.e();
+    }
+
+    @Override // x7c
+    public final void E0(MotionEvent motionEvent, l7 l7Var) {
+        d dVar;
+        int action = motionEvent.getAction();
+        my6 my6Var = this.O1;
+        if (action == 0) {
+            this.S1 = this.x1;
+            my6Var.i(false);
+        } else if (motionEvent.getAction() == 1 && Math.abs(this.x1 - this.S1) < this.N1 && !this.T1) {
+            Activity W = gl.W(getContext());
+            if (W instanceof LaunchActivity) {
+                LaunchActivity launchActivity = (LaunchActivity) W;
+                dVar = (d) launchActivity.N().getFragmentStack().get(launchActivity.N().getFragmentStack().size() - 1);
+            } else {
+                dVar = null;
+            }
+            if (dVar instanceof mu1) {
+                boolean U9 = ((mu1) dVar).U9();
+                this.T1 = true;
+                gl.d3(new oh6((Object) this, (Object) l7Var, (byte) 18), U9 ? 200L : 0L);
+            } else {
+                this.T1 = true;
+                v0(true);
+                l7Var.requestFocus();
+                gl.c3(new ar5(l7Var, (byte) 2));
+            }
+        }
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            my6Var.i(true);
+        }
+    }
+
+    @Override // x7c
+    public final void G0(String str) {
+        this.O1.j(str);
+    }
+
+    @Override // x7c
+    public final void I0(int i) {
+        super.I0(i);
+        this.P1.setTranslationY(this.m1.getMeasuredHeight() + i);
+        float f = i;
+        this.Q1.setTranslationY(f);
+        this.R1.setTranslationY(f);
+    }
+
+    @Override // x7c
+    public final void L0() {
+        ns9 ns9Var = this.n1;
+        if (ns9Var.getChildCount() > 0) {
+            super.L0();
             return;
         }
-        if (chatActivityEnterView.r3 && !chatActivityEnterView.D0 && !chatActivityEnterView.E0 && !chatActivityEnterView.H3 && !chatActivityEnterView.N2 && chatActivityEnterView.P2 == null && i3 > i2 && charSequence.length() > 0 && charSequence.length() == i + i3 && charSequence.charAt(charSequence.length() - 1) == '\n') {
-            this.b = true;
+        int paddingTop = ns9Var.getVisibility() == 0 ? ns9Var.getPaddingTop() - gl.L(8.0f) : 0;
+        if (this.x1 != paddingTop) {
+            this.x1 = paddingTop;
+            I0(paddingTop);
         }
-        chatActivityEnterView.N2 = false;
-        chatActivityEnterView.M(true);
-        CharSequence m1 = gm.m1(charSequence.toString());
-        if (chatActivityEnterView.P3 != null && !chatActivityEnterView.H3) {
-            int i4 = i3 + 1;
-            if (i2 > i4 || i3 - i2 > 2 || TextUtils.isEmpty(charSequence)) {
-                chatActivityEnterView.O3 = true;
-            }
-            chatActivityEnterView.P3.H0(charSequence, i2 > i4 || i3 - i2 > 2, false);
+    }
+
+    @Override // x7c, fx0, android.app.Dialog, android.content.DialogInterface, zf0
+    public final void dismiss() {
+        xy1 xy1Var = this.V1;
+        vy1 vy1Var = xy1Var.i;
+        if (vy1Var != null && !vy1Var.O1.b) {
+            xy1Var.i = null;
         }
-        if (chatActivityEnterView.I3 != 2 && i3 - i2 > 1) {
-            this.a = true;
+        super.dismiss();
+    }
+
+    @Override // fx0, android.app.Dialog
+    public final void onBackPressed() {
+        wy6 wy6Var = this.O1.s;
+        if (wy6Var != null) {
+            wy6Var.e(false);
+        } else {
+            super.onBackPressed();
         }
-        if (chatActivityEnterView.P2 == null && !chatActivityEnterView.X2 && m1.length() != 0 && chatActivityEnterView.s3 < System.currentTimeMillis() - 5000 && !chatActivityEnterView.H3) {
-            chatActivityEnterView.s3 = System.currentTimeMillis();
-            uz1 uz1Var = chatActivityEnterView.P3;
-            if (uz1Var != null) {
-                uz1Var.j1();
-            }
+    }
+
+    @Override // fx0
+    public final void p0() {
+        super.p0();
+        int v0 = bkb.v0(bkb.Z6, this.J0);
+        if (v0 != this.U1) {
+            this.U1 = v0;
+            s0(v0);
         }
-        chatActivityEnterView.C2();
+    }
+
+    @Override // fx0, android.app.Dialog
+    public final void show() {
+        my6 my6Var = this.O1;
+        if (my6Var.b && this.x1 == 0) {
+            this.x1 = gl.L(8.0f);
+        }
+        super.show();
+        my6Var.b = false;
     }
 }

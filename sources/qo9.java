@@ -1,36 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qo9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int[] b;
-    public final /* synthetic */ Runnable c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class qo9 {
+    public static final gq4 a;
 
-    public /* synthetic */ qo9(int[] iArr, Runnable runnable, byte b) {
-        this.a = b;
-        this.b = iArr;
-        this.c = runnable;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 1;
-        Runnable runnable = this.c;
-        int[] iArr = this.b;
-        switch (b) {
-            case 0:
-                gm.c3(new qo9(iArr, runnable, b2));
-                break;
-            default:
-                int i = iArr[0] - 1;
-                iArr[0] = i;
-                if (i == 0 && runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
+    static {
+        po9 po9Var = po9.a;
+        r3c.a(3, po9Var);
+        a = po9Var;
     }
 }

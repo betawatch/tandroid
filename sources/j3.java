@@ -4,15 +4,15 @@ import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class j3 extends e3 implements SortedSet {
-    public final /* synthetic */ zi7 d;
+    public final /* synthetic */ wg7 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j3(zi7 zi7Var, SortedMap sortedMap) {
-        super(zi7Var, sortedMap);
-        this.d = zi7Var;
+    public j3(wg7 wg7Var, SortedMap sortedMap) {
+        super(wg7Var, sortedMap);
+        this.d = wg7Var;
     }
 
     @Override // java.util.SortedSet

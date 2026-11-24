@@ -1,29 +1,56 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class os0 {
-    public final /* synthetic */ rs0 a;
+public final class os0 extends er7 {
+    public final /* synthetic */ byte M;
+    public final /* synthetic */ Object N;
 
-    public os0(rs0 rs0Var) {
-        this.a = rs0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ os0(byte b, Context context, Object obj) {
+        super(context, null);
+        this.M = b;
+        this.N = obj;
     }
 
-    public final void a() {
-        sy4 sy4Var;
-        rs0 rs0Var = this.a;
-        ls0 ls0Var = rs0Var.n;
-        sy4Var = ((d) rs0Var).glassEngine;
-        sy4Var.g();
-        su suVar = rs0Var.c;
-        if (suVar != null) {
-            suVar.invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        byte b = this.M;
+        Object obj = this.N;
+        switch (b) {
+            case 0:
+                ss0 ss0Var = (ss0) obj;
+                ps0 ps0Var = ss0Var.a0;
+                if (ps0Var != null && !ps0Var.isFocusable()) {
+                    ss0Var.a0.setFocusable(true);
+                    ss0Var.a0.setFocusableInTouchMode(true);
+                    int A1 = ss0Var.e.A1(1);
+                    if (A1 >= 0 && A1 < ss0Var.e.g3.E.size()) {
+                        ss0Var.e.D0();
+                        ss0Var.e.z0(A1);
+                    }
+                    ss0Var.a0.requestFocus();
+                }
+                break;
+            default:
+                zi1 zi1Var = (zi1) obj;
+                q5c q5cVar = zi1Var.X0;
+                ps0 ps0Var2 = zi1Var.O0;
+                if (ps0Var2 != null && !ps0Var2.isFocusable()) {
+                    ps0Var2.setFocusable(true);
+                    ps0Var2.setFocusableInTouchMode(true);
+                    int A12 = q5cVar.A1(3);
+                    if (A12 >= 0 && A12 < q5cVar.g3.E.size()) {
+                        q5cVar.D0();
+                        q5cVar.z0(A12);
+                    }
+                    ps0Var2.requestFocus();
+                }
+                break;
         }
-        if (rs0Var.s == null) {
-            gm.r(ls0Var);
-            gm.d3(ls0Var, 300L);
-        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

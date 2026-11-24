@@ -1,19 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class nje implements cq7 {
-    public static final nje a = new nje();
+public enum nje implements w6d {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    b(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF69(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF78(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF91(9);
 
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)));
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    nje(int i) {
+        this.a = i;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // w6d
+    public final int zza() {
+        return this.a;
     }
 }

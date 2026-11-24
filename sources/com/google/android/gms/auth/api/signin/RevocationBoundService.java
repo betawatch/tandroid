@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class RevocationBoundService extends Service {
     @Override // android.app.Service
@@ -17,6 +17,6 @@ public final class RevocationBoundService extends Service {
         if (Log.isLoggable("RevocationService", 2)) {
             Log.v("RevocationService", "RevocationBoundService handling ".concat(String.valueOf(intent.getAction())));
         }
-        return new q5d(this);
+        return new o3d(this);
     }
 }

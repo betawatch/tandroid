@@ -1,14 +1,173 @@
 // default package
 
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import java.math.RoundingMode;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class cvc extends TLRPC.Photo {
-    public dvc a;
-    public String b;
-    public final HashSet c = new HashSet();
-    public int d;
-    public int e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class cvc implements j74 {
+    public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
+    public static final Pattern j = Pattern.compile("MPEGTS:(-?\\d+)");
+    public final String a;
+    public final uob b;
+    public final eef d;
+    public final boolean e;
+    public l74 f;
+    public int h;
+    public final xu7 c = new xu7();
+    public byte[] g = new byte[1024];
+
+    public cvc(String str, uob uobVar, eef eefVar, boolean z) {
+        this.a = str;
+        this.b = uobVar;
+        this.d = eefVar;
+        this.e = z;
+    }
+
+    @Override // j74
+    public final int b(k74 k74Var, m11 m11Var) {
+        String n;
+        this.f.getClass();
+        int i2 = (int) ((ja3) k74Var).c;
+        int i3 = this.h;
+        byte[] bArr = this.g;
+        if (i3 == bArr.length) {
+            bArr = Arrays.copyOf(bArr, ((i2 != -1 ? i2 : bArr.length) * 3) / 2);
+            this.g = bArr;
+        }
+        int i4 = this.h;
+        int read = ((ja3) k74Var).read(bArr, i4, bArr.length - i4);
+        if (read != -1) {
+            int i5 = this.h + read;
+            this.h = i5;
+            if (i2 == -1 || i5 != i2) {
+                return 0;
+            }
+        }
+        xu7 xu7Var = new xu7(this.g);
+        dvc.d(xu7Var);
+        String n2 = xu7Var.n(StandardCharsets.UTF_8);
+        long j2 = 0;
+        long j3 = 0;
+        while (true) {
+            Matcher matcher = null;
+            if (TextUtils.isEmpty(n2)) {
+                while (true) {
+                    String n3 = xu7Var.n(StandardCharsets.UTF_8);
+                    if (n3 == null) {
+                        break;
+                    }
+                    if (dvc.a.matcher(n3).matches()) {
+                        do {
+                            n = xu7Var.n(StandardCharsets.UTF_8);
+                            if (n != null) {
+                            }
+                        } while (!n.isEmpty());
+                    } else {
+                        Matcher matcher2 = bvc.a.matcher(n3);
+                        if (matcher2.matches()) {
+                            matcher = matcher2;
+                            break;
+                        }
+                    }
+                }
+                if (matcher == null) {
+                    g(0L);
+                    return -1;
+                }
+                String group = matcher.group(1);
+                group.getClass();
+                long c = dvc.c(group);
+                String str = g8c.a;
+                long b = this.b.b(g8c.b0((j2 + c) - j3, 90000L, 1000000L, RoundingMode.DOWN) % 8589934592L);
+                wxb g = g(b - c);
+                byte[] bArr2 = this.g;
+                int i6 = this.h;
+                xu7 xu7Var2 = this.c;
+                xu7Var2.L(i6, bArr2);
+                g.e(this.h, xu7Var2);
+                g.a(b, 1, this.h, 0, null);
+                return -1;
+            }
+            if (n2.startsWith("X-TIMESTAMP-MAP")) {
+                Matcher matcher3 = i.matcher(n2);
+                if (!matcher3.find()) {
+                    throw av7.a("X-TIMESTAMP-MAP doesn't contain local timestamp: ".concat(n2), null);
+                }
+                Matcher matcher4 = j.matcher(n2);
+                if (!matcher4.find()) {
+                    throw av7.a("X-TIMESTAMP-MAP doesn't contain media timestamp: ".concat(n2), null);
+                }
+                String group2 = matcher3.group(1);
+                group2.getClass();
+                j3 = dvc.c(group2);
+                String group3 = matcher4.group(1);
+                group3.getClass();
+                long parseLong = Long.parseLong(group3);
+                String str2 = g8c.a;
+                j2 = g8c.b0(parseLong, 1000000L, 90000L, RoundingMode.DOWN);
+            }
+            n2 = xu7Var.n(StandardCharsets.UTF_8);
+        }
+    }
+
+    @Override // j74
+    public final boolean c(k74 k74Var) {
+        ja3 ja3Var = (ja3) k74Var;
+        ja3Var.d(this.g, 0, 6, false);
+        byte[] bArr = this.g;
+        xu7 xu7Var = this.c;
+        xu7Var.L(6, bArr);
+        if (dvc.a(xu7Var)) {
+            return true;
+        }
+        ja3Var.d(this.g, 6, 3, false);
+        xu7Var.L(9, this.g);
+        return dvc.a(xu7Var);
+    }
+
+    @Override // j74
+    public final void d(long j2, long j3) {
+        throw new IllegalStateException();
+    }
+
+    @Override // j74
+    public final List e() {
+        km5 km5Var = mm5.b;
+        return w59.e;
+    }
+
+    @Override // j74
+    public final void f(l74 l74Var) {
+        if (this.e) {
+            l74Var = new xf4(l74Var, this.d);
+        }
+        this.f = l74Var;
+        l74Var.g0(new oc0(-9223372036854775807L));
+    }
+
+    public final wxb g(long j2) {
+        wxb S = this.f.S(0, 3);
+        em4 em4Var = new em4();
+        em4Var.s = ud7.n("text/vtt");
+        em4Var.d = this.a;
+        em4Var.x = j2;
+        yjb.v(em4Var, S);
+        this.f.z();
+        return S;
+    }
+
+    @Override // j74
+    public final j74 a() {
+        return this;
+    }
+
+    @Override // j74
+    public final void release() {
+    }
 }

@@ -1,352 +1,264 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import android.graphics.Typeface;
+import java.util.Comparator;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class el6 implements qp5 {
-    public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
-    public static final Pattern k = Pattern.compile("^ *(?:\n *)?");
-    public static final Pattern l = Pattern.compile("^[\\p{Zs}\t\r\n\f]");
-    public static final Pattern m = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
-    public static final Pattern n = Pattern.compile("\\s+");
-    public final wm4 a;
-    public final BitSet b;
-    public final HashMap c;
-    public final HashMap d;
-    public ui6 e;
-    public String f;
-    public int g;
-    public gf3 h;
-    public zz0 i;
+public final /* synthetic */ class el6 implements Comparator {
+    public final /* synthetic */ byte a;
 
-    public el6(wm4 wm4Var, ArrayList arrayList, ArrayList arrayList2) {
-        soa soaVar;
-        this.a = wm4Var;
-        HashMap hashMap = new HashMap(arrayList.size());
-        int size = arrayList.size();
-        int i = 0;
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            tp5 tp5Var = (tp5) obj;
-            char c = tp5Var.c();
-            List list = (List) hashMap.get(Character.valueOf(c));
-            if (list == null) {
-                list = new ArrayList(1);
-                hashMap.put(Character.valueOf(c), list);
-            }
-            list.add(tp5Var);
-        }
-        this.c = hashMap;
-        HashMap hashMap2 = new HashMap();
-        int size2 = arrayList2.size();
-        while (i < size2) {
-            Object obj2 = arrayList2.get(i);
-            i++;
-            hf3 hf3Var = (hf3) obj2;
-            char e = hf3Var.e();
-            char b = hf3Var.b();
-            if (e == b) {
-                hf3 hf3Var2 = (hf3) hashMap2.get(Character.valueOf(e));
-                if (hf3Var2 == null || hf3Var2.e() != hf3Var2.b()) {
-                    b(e, hf3Var, hashMap2);
+    public /* synthetic */ el6(byte b) {
+        this.a = b;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int compare;
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        switch (this.a) {
+            case 0:
+                String[] strArr = MediaController.W1;
+                long j = ((jm6) obj).D;
+                long j2 = ((jm6) obj2).D;
+                if (j < j2) {
+                    return 1;
+                }
+                return j > j2 ? -1 : 0;
+            case 1:
+                k27 k27Var = (k27) obj;
+                k27 k27Var2 = (k27) obj2;
+                String[] strArr2 = MediaController.W1;
+                int e1 = k27Var.e1();
+                int e12 = k27Var2.e1();
+                long j3 = k27Var.k.grouped_id;
+                long j4 = k27Var2.k.grouped_id;
+                if (e1 >= 0 || e12 >= 0) {
+                    if (j3 == 0 || j3 != j4) {
+                        return Integer.compare(e1, e12);
+                    }
+                    compare = Integer.compare(e12, e1);
                 } else {
-                    if (hf3Var2 instanceof soa) {
-                        soaVar = (soa) hf3Var2;
-                    } else {
-                        soa soaVar2 = new soa(e);
-                        soaVar2.f(hf3Var2);
-                        soaVar = soaVar2;
+                    if (j3 == 0 || j3 != j4) {
+                        return Integer.compare(e12, e1);
                     }
-                    soaVar.f(hf3Var);
-                    hashMap2.put(Character.valueOf(e), soaVar);
+                    compare = Integer.compare(e1, e12);
                 }
-            } else {
-                b(e, hf3Var, hashMap2);
-                b(b, hf3Var, hashMap2);
-            }
-        }
-        this.d = hashMap2;
-        Set keySet = this.c.keySet();
-        Set keySet2 = hashMap2.keySet();
-        BitSet bitSet = new BitSet();
-        Iterator it = keySet.iterator();
-        while (it.hasNext()) {
-            bitSet.set(((Character) it.next()).charValue());
-        }
-        Iterator it2 = keySet2.iterator();
-        while (it2.hasNext()) {
-            bitSet.set(((Character) it2.next()).charValue());
-        }
-        this.b = bitSet;
-    }
-
-    public static void b(char c, hf3 hf3Var, HashMap hashMap) {
-        if (((hf3) hashMap.put(Character.valueOf(c), hf3Var)) == null) {
-            return;
-        }
-        throw new IllegalArgumentException("Delimiter processor conflict with delimiter char '" + c + "'");
-    }
-
-    @Override // qp5
-    public final void a(String str, ui6 ui6Var) {
-        ui6 vibVar;
-        boolean z;
-        boolean z2;
-        p02 p02Var;
-        this.f = str.trim();
-        this.g = 0;
-        this.h = null;
-        this.i = null;
-        this.e = ui6Var;
-        while (true) {
-            char d = d();
-            if (d == 0) {
-                vibVar = null;
-            } else {
-                List list = (List) this.c.get(Character.valueOf(d));
-                if (list != null) {
-                    int i = this.g;
-                    Iterator it = list.iterator();
-                    vibVar = null;
-                    while (true) {
-                        if (!it.hasNext()) {
-                            break;
-                        }
-                        tp5 tp5Var = (tp5) it.next();
-                        tp5Var.a = this;
-                        tp5Var.b = this.e;
-                        tp5Var.c = this.f;
-                        tp5Var.d = this.g;
-                        ui6 b = tp5Var.b();
-                        this.g = tp5Var.d;
-                        if (b != null) {
-                            vibVar = b;
-                            break;
-                        } else {
-                            this.g = i;
-                            vibVar = b;
-                        }
-                    }
+                return -compare;
+            case 2:
+                double d = ((TLRPC.TL_topPeer) obj).rating;
+                double d2 = ((TLRPC.TL_topPeer) obj2).rating;
+                if (d > d2) {
+                    return -1;
+                }
+                return d < d2 ? 1 : 0;
+            case 3:
+                int i7 = ((TLRPC.MessageEntity) obj).offset;
+                int i8 = ((TLRPC.MessageEntity) obj2).offset;
+                if (i7 > i8) {
+                    return 1;
+                }
+                return i7 < i8 ? -1 : 0;
+            case 4:
+                double d3 = ((TLRPC.TL_topPeer) obj).rating;
+                double d4 = ((TLRPC.TL_topPeer) obj2).rating;
+                if (d3 > d4) {
+                    return -1;
+                }
+                return d3 < d4 ? 1 : 0;
+            case 5:
+                double d5 = ((TLRPC.TL_topPeer) obj).rating;
+                double d6 = ((TLRPC.TL_topPeer) obj2).rating;
+                if (d5 > d6) {
+                    return -1;
+                }
+                return d5 < d6 ? 1 : 0;
+            case 6:
+                int i9 = ((TLRPC.MessageEntity) obj).offset;
+                int i10 = ((TLRPC.MessageEntity) obj2).offset;
+                if (i9 > i10) {
+                    return 1;
+                }
+                return i9 < i10 ? -1 : 0;
+            case 7:
+                return Integer.compare(((TLRPC.MessageEntity) obj).offset, ((TLRPC.MessageEntity) obj2).offset);
+            case 8:
+                return Double.compare(((TLRPC.TL_topPeer) obj2).rating, ((TLRPC.TL_topPeer) obj).rating);
+            case 9:
+                int i11 = ((TLRPC.MessageEntity) obj).offset;
+                int i12 = ((TLRPC.MessageEntity) obj2).offset;
+                if (i11 > i12) {
+                    return 1;
+                }
+                return i11 < i12 ? -1 : 0;
+            case 10:
+                return ((String) obj2).length() - ((String) obj).length();
+            case 11:
+                return ((c27) obj).a - ((c27) obj2).a;
+            case 12:
+                return gl.A(((TLRPC.Updates) obj).pts, ((TLRPC.Updates) obj2).pts);
+            case 13:
+                return ((k27) obj2).e1() - ((k27) obj).e1();
+            case 14:
+                k27 k27Var3 = (k27) obj;
+                k27 k27Var4 = (k27) obj2;
+                if (k27Var3.k.date != k27Var4.k.date || k27Var3.e1() < 0 || k27Var4.e1() < 0) {
+                    i = k27Var4.k.date;
+                    i2 = k27Var3.k.date;
                 } else {
-                    hf3 hf3Var = (hf3) this.d.get(Character.valueOf(d));
-                    int i2 = this.g;
-                    if (hf3Var != null) {
-                        int i3 = 0;
-                        while (d() == d) {
-                            i3++;
-                            this.g++;
-                        }
-                        if (i3 < hf3Var.c()) {
-                            this.g = i2;
-                            p02Var = null;
-                        } else {
-                            String substring = i2 == 0 ? "\n" : this.f.substring(i2 - 1, i2);
-                            char d2 = d();
-                            String valueOf = d2 != 0 ? String.valueOf(d2) : "\n";
-                            Pattern pattern = j;
-                            boolean matches = pattern.matcher(substring).matches();
-                            Pattern pattern2 = l;
-                            boolean matches2 = pattern2.matcher(substring).matches();
-                            boolean matches3 = pattern.matcher(valueOf).matches();
-                            boolean matches4 = pattern2.matcher(valueOf).matches();
-                            boolean z3 = !matches4 && (!matches3 || matches2 || matches);
-                            boolean z4 = !matches2 && (!matches || matches4 || matches3);
-                            if (d == '_') {
-                                z2 = z3 && (!z4 || matches);
-                                z = z4 && (!z3 || matches3);
-                            } else {
-                                boolean z5 = z3 && d == hf3Var.e();
-                                z = z4 && d == hf3Var.b();
-                                z2 = z5;
-                            }
-                            this.g = i2;
-                            p02Var = new p02(i3, z2, z);
-                        }
-                        if (p02Var != null) {
-                            int i4 = p02Var.a;
-                            int i5 = i2 + i4;
-                            this.g = i5;
-                            vib vibVar2 = new vib(this.f.substring(i2, i5));
-                            boolean z6 = p02Var.c;
-                            boolean z7 = p02Var.b;
-                            gf3 gf3Var = this.h;
-                            gf3 gf3Var2 = new gf3(vibVar2, d, z6, z7, gf3Var);
-                            this.h = gf3Var2;
-                            gf3Var2.g = i4;
-                            gf3Var2.h = i4;
-                            if (gf3Var != null) {
-                                gf3Var.f = gf3Var2;
-                            }
-                            vibVar = vibVar2;
-                        }
-                        vibVar = null;
-                    } else {
-                        int length = this.f.length();
-                        while (true) {
-                            int i6 = this.g;
-                            if (i6 == length) {
-                                break;
-                            }
-                            if (this.b.get(this.f.charAt(i6))) {
-                                break;
-                            } else {
-                                this.g++;
-                            }
-                        }
-                        int i7 = this.g;
-                        if (i2 != i7) {
-                            vibVar = new vib(this.f.substring(i2, i7));
-                        }
-                        vibVar = null;
-                    }
+                    i = k27Var4.e1();
+                    i2 = k27Var3.e1();
                 }
-                if (vibVar == null) {
-                    this.g++;
-                    vibVar = new vib(String.valueOf(d));
+                return i - i2;
+            case 15:
+                return ((k27) obj2).e1() - ((k27) obj).e1();
+            case 16:
+                TLRPC.Update update = (TLRPC.Update) obj;
+                TLRPC.Update update2 = (TLRPC.Update) obj2;
+                int T1 = na7.T1(update);
+                int T12 = na7.T1(update2);
+                if (T1 != T12) {
+                    return gl.A(T1, T12);
                 }
-            }
-            if (vibVar == null) {
-                break;
-            } else {
-                ui6Var.b(vibVar);
-            }
-        }
-        e(null);
-        ui6 ui6Var2 = (ui6) ui6Var.c;
-        ui6 ui6Var3 = (ui6) ui6Var.d;
-        if (ui6Var2 == ui6Var3) {
-            return;
-        }
-        ane.b(ui6Var2, ui6Var3);
-    }
-
-    public final String c(Pattern pattern) {
-        if (this.g >= this.f.length()) {
-            return null;
-        }
-        Matcher matcher = pattern.matcher(this.f);
-        matcher.region(this.g, this.f.length());
-        if (!matcher.find()) {
-            return null;
-        }
-        this.g = matcher.end();
-        return matcher.group();
-    }
-
-    public final char d() {
-        if (this.g < this.f.length()) {
-            return this.f.charAt(this.g);
-        }
-        return (char) 0;
-    }
-
-    public final void e(gf3 gf3Var) {
-        boolean z;
-        ui6 ui6Var;
-        HashMap hashMap = new HashMap();
-        gf3 gf3Var2 = this.h;
-        while (gf3Var2 != null) {
-            gf3 gf3Var3 = gf3Var2.e;
-            if (gf3Var3 == gf3Var) {
-                break;
-            } else {
-                gf3Var2 = gf3Var3;
-            }
-        }
-        while (gf3Var2 != null) {
-            vib vibVar = gf3Var2.a;
-            char c = gf3Var2.b;
-            hf3 hf3Var = (hf3) this.d.get(Character.valueOf(c));
-            if (!gf3Var2.d || hf3Var == null) {
-                gf3Var2 = gf3Var2.f;
-            } else {
-                char e = hf3Var.e();
-                gf3 gf3Var4 = gf3Var2;
-                int i = 0;
-                boolean z2 = false;
-                while (true) {
-                    gf3Var4 = gf3Var4.e;
-                    if (gf3Var4 == null || gf3Var4 == gf3Var || gf3Var4 == hashMap.get(Character.valueOf(c))) {
-                        break;
-                    }
-                    if (gf3Var4.c && gf3Var4.b == e) {
-                        i = hf3Var.d(gf3Var4, gf3Var2);
-                        z2 = true;
-                        if (i > 0) {
-                            z = true;
-                            break;
+                if (T1 == 0) {
+                    return gl.A(na7.R1(update), na7.R1(update2));
+                }
+                if (T1 == 1) {
+                    return gl.A(update instanceof TL_update.TL_updateNewEncryptedMessage ? ((TL_update.TL_updateNewEncryptedMessage) update).qts : 0, update2 instanceof TL_update.TL_updateNewEncryptedMessage ? ((TL_update.TL_updateNewEncryptedMessage) update2).qts : 0);
+                }
+                if (T1 != 2) {
+                    return 0;
+                }
+                long Q1 = na7.Q1(update);
+                long Q12 = na7.Q1(update2);
+                if (Q1 == Q12) {
+                    return gl.A(na7.R1(update), na7.R1(update2));
+                }
+                Typeface typeface = gl.a;
+                if (Q1 != Q12) {
+                    return Q1 > Q12 ? 1 : -1;
+                }
+                return 0;
+            case 17:
+                TLRPC.TL_savedReactionTag tL_savedReactionTag = (TLRPC.TL_savedReactionTag) obj;
+                TLRPC.TL_savedReactionTag tL_savedReactionTag2 = (TLRPC.TL_savedReactionTag) obj2;
+                int i13 = tL_savedReactionTag.count;
+                int i14 = tL_savedReactionTag2.count;
+                return i13 == i14 ? Long.compare(na7.N1(tL_savedReactionTag2.reaction) ^ Long.MIN_VALUE, na7.N1(tL_savedReactionTag.reaction) ^ Long.MIN_VALUE) : i14 - i13;
+            case 18:
+                TLRPC.TL_savedReactionTag tL_savedReactionTag3 = (TLRPC.TL_savedReactionTag) obj;
+                TLRPC.TL_savedReactionTag tL_savedReactionTag4 = (TLRPC.TL_savedReactionTag) obj2;
+                int i15 = tL_savedReactionTag3.count;
+                int i16 = tL_savedReactionTag4.count;
+                return i15 == i16 ? Long.compare(na7.N1(tL_savedReactionTag4.reaction) ^ Long.MIN_VALUE, na7.N1(tL_savedReactionTag3.reaction) ^ Long.MIN_VALUE) : i16 - i15;
+            case 19:
+                int i17 = ((t97) obj).f;
+                int i18 = ((t97) obj2).f;
+                if (i17 > i18) {
+                    return 1;
+                }
+                return i17 < i18 ? -1 : 0;
+            case 20:
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj2;
+                return gl.A(updates instanceof TLRPC.TL_updatesCombined ? updates.seq_start : updates.seq, updates2 instanceof TLRPC.TL_updatesCombined ? updates2.seq_start : updates2.seq);
+            case 21:
+                return gl.A(((TLRPC.Updates) obj).pts, ((TLRPC.Updates) obj2).pts);
+            case 22:
+                return gl.A(((TLRPC.Updates) obj).pts, ((TLRPC.Updates) obj2).pts);
+            case 23:
+                int i19 = ((t97) obj).f;
+                int i20 = ((t97) obj2).f;
+                if (i19 > i20) {
+                    return 1;
+                }
+                return i19 < i20 ? -1 : 0;
+            case 24:
+                TLRPC.Message message = (TLRPC.Message) obj;
+                TLRPC.Message message2 = (TLRPC.Message) obj2;
+                if (k27.f3(message.id) || k27.f3(message2.id)) {
+                    int i21 = message.date;
+                    int i22 = message2.date;
+                    if (i21 <= i22) {
+                        if (i21 >= i22) {
+                            if (!k27.f3(message.id) || k27.f3(message2.id)) {
+                                if ((k27.f3(message.id) || !k27.f3(message2.id)) && (i3 = message.id) <= (i4 = message2.id)) {
+                                    if (i3 >= i4) {
+                                        return 0;
+                                    }
+                                }
+                            }
                         }
+                        return 1;
                     }
+                    return -1;
                 }
-                z = z2;
-                z2 = false;
-                if (z2) {
-                    vib vibVar2 = gf3Var4.a;
-                    gf3Var4.g -= i;
-                    gf3Var2.g -= i;
-                    vibVar2.g = ts2.m(i, 0, vibVar2.g);
-                    vibVar.g = ts2.m(i, 0, vibVar.g);
-                    gf3 gf3Var5 = gf3Var2.e;
-                    while (gf3Var5 != null && gf3Var5 != gf3Var4) {
-                        gf3 gf3Var6 = gf3Var5.e;
-                        f(gf3Var5);
-                        gf3Var5 = gf3Var6;
-                    }
-                    if (vibVar2 != vibVar && (ui6Var = (ui6) vibVar2.f) != vibVar) {
-                        ane.b(ui6Var, (ui6) vibVar.e);
-                    }
-                    hf3Var.a(vibVar2, vibVar, i);
-                    if (gf3Var4.g == 0) {
-                        gf3Var4.a.g();
-                        f(gf3Var4);
-                    }
-                    if (gf3Var2.g == 0) {
-                        gf3 gf3Var7 = gf3Var2.f;
-                        vibVar.g();
-                        f(gf3Var2);
-                        gf3Var2 = gf3Var7;
-                    }
-                } else {
-                    if (!z) {
-                        hashMap.put(Character.valueOf(c), gf3Var2.e);
-                        if (!gf3Var2.c) {
-                            f(gf3Var2);
+                int i23 = message.id;
+                if (i23 > 0 && (i6 = message2.id) > 0) {
+                    if (i23 <= i6) {
+                        if (i23 >= i6) {
+                            return 0;
                         }
+                        return 1;
                     }
-                    gf3Var2 = gf3Var2.f;
+                    return -1;
                 }
-            }
-        }
-        while (true) {
-            gf3 gf3Var8 = this.h;
-            if (gf3Var8 == null || gf3Var8 == gf3Var) {
-                return;
-            } else {
-                f(gf3Var8);
-            }
+                if (i23 < 0 && (i5 = message2.id) < 0) {
+                    if (i23 >= i5) {
+                        if (i23 <= i5) {
+                            return 0;
+                        }
+                        return 1;
+                    }
+                    return -1;
+                }
+                int i24 = message.date;
+                int i25 = message2.date;
+                if (i24 <= i25) {
+                    if (i24 >= i25) {
+                        return 0;
+                    }
+                    return 1;
+                }
+                return -1;
+            case 25:
+                int i26 = ((t97) obj).f;
+                int i27 = ((t97) obj2).f;
+                if (i26 > i27) {
+                    return 1;
+                }
+                return i26 < i27 ? -1 : 0;
+            case 26:
+                int i28 = ((xk3) obj).b;
+                int i29 = ((xk3) obj2).b;
+                if (i28 < i29) {
+                    return 1;
+                }
+                return i28 > i29 ? -1 : 0;
+            case 27:
+                long j5 = y6c.h(((Integer) obj).intValue()).Z;
+                long j6 = y6c.h(((Integer) obj2).intValue()).Z;
+                if (j5 > j6) {
+                    return 1;
+                }
+                return j5 < j6 ? -1 : 0;
+            case 28:
+                return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
+            default:
+                return ((Integer) obj2).intValue() - ((Integer) obj).intValue();
         }
     }
 
-    public final void f(gf3 gf3Var) {
-        gf3 gf3Var2 = gf3Var.e;
-        if (gf3Var2 != null) {
-            gf3Var2.f = gf3Var.f;
-        }
-        gf3 gf3Var3 = gf3Var.f;
-        if (gf3Var3 == null) {
-            this.h = gf3Var2;
-        } else {
-            gf3Var3.e = gf3Var2;
-        }
+    public /* synthetic */ el6(na7 na7Var, byte b) {
+        this.a = b;
     }
 }

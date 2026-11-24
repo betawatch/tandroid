@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class s4 {
     public static Paint a(Bitmap bitmap) {
@@ -40,8 +40,8 @@ public abstract class s4 {
         return paint;
     }
 
-    public static void b(Canvas canvas, e0c e0cVar, int i, Paint paint) {
-        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i << 3, (float[]) e0cVar.c, 0, (float[]) e0cVar.d, 0, (int[]) e0cVar.f, 0, (short[]) e0cVar.e, 0, i * 6, paint);
+    public static void b(Canvas canvas, cyb cybVar, int i, Paint paint) {
+        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i << 3, (float[]) cybVar.c, 0, (float[]) cybVar.d, 0, (int[]) cybVar.f, 0, (short[]) cybVar.e, 0, i * 6, paint);
     }
 
     public static ArrayList c(Context context) {
@@ -52,7 +52,7 @@ public abstract class s4 {
         Object systemService = context.getSystemService("activity");
         ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
         if (activityManager == null || (list = activityManager.getRunningAppProcesses()) == null) {
-            list = n34.a;
+            list = c24.a;
         }
         ArrayList arrayList = new ArrayList();
         for (Object obj : list) {
@@ -71,7 +71,7 @@ public abstract class s4 {
                 arrayList2.add(obj2);
             }
         }
-        ArrayList arrayList3 = new ArrayList(mm2.c(arrayList2, 10));
+        ArrayList arrayList3 = new ArrayList(al2.c(arrayList2, 10));
         int size2 = arrayList2.size();
         while (i2 < size2) {
             Object obj3 = arrayList2.get(i2);
@@ -79,47 +79,47 @@ public abstract class s4 {
             ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj3;
             String str2 = runningAppProcessInfo.processName;
             str2.getClass();
-            arrayList3.add(new bn8(runningAppProcessInfo.pid, runningAppProcessInfo.importance, str2, rr5.a(runningAppProcessInfo.processName, str)));
+            arrayList3.add(new zk8(runningAppProcessInfo.pid, runningAppProcessInfo.importance, str2, rp5.a(runningAppProcessInfo.processName, str)));
         }
         return arrayList3;
     }
 
-    public static r00 d(AudioManager audioManager, o00 o00Var, mo5 mo5Var, List list) {
-        List<AudioProfile> directProfilesForAttributes = audioManager.getDirectProfilesForAttributes(o00Var.b());
+    public static rz d(AudioManager audioManager, nz nzVar, mm5 mm5Var, List list) {
+        List<AudioProfile> directProfilesForAttributes = audioManager.getDirectProfilesForAttributes(nzVar.b());
         HashMap hashMap = new HashMap();
-        hashMap.put(2, new HashSet(ine.a(12)));
+        hashMap.put(2, new HashSet(gle.a(12)));
         for (int i = 0; i < directProfilesForAttributes.size(); i++) {
             AudioProfile audioProfile = directProfilesForAttributes.get(i);
             if (audioProfile.getEncapsulationType() != 1) {
                 int format = audioProfile.getFormat();
-                if (hac.N(format) || r00.h.containsKey(Integer.valueOf(format))) {
+                if (g8c.N(format) || rz.h.containsKey(Integer.valueOf(format))) {
                     if (hashMap.containsKey(Integer.valueOf(format))) {
                         Set set = (Set) hashMap.get(Integer.valueOf(format));
                         set.getClass();
-                        set.addAll(ine.a(audioProfile.getChannelMasks()));
+                        set.addAll(gle.a(audioProfile.getChannelMasks()));
                     } else {
-                        hashMap.put(Integer.valueOf(format), new HashSet(ine.a(audioProfile.getChannelMasks())));
+                        hashMap.put(Integer.valueOf(format), new HashSet(gle.a(audioProfile.getChannelMasks())));
                     }
                 }
             }
         }
-        jo5 p = mo5.p();
+        jm5 p = mm5.p();
         for (Map.Entry entry : hashMap.entrySet()) {
-            p.c(new q00(((Integer) entry.getKey()).intValue(), (Set) entry.getValue()));
+            p.c(new qz(((Integer) entry.getKey()).intValue(), (Set) entry.getValue()));
         }
-        return new r00(p.f(), mo5Var, list);
+        return new rz(p.f(), mm5Var, list);
     }
 
-    public static AudioDeviceInfo e(AudioManager audioManager, o00 o00Var) {
+    public static AudioDeviceInfo e(AudioManager audioManager, nz nzVar) {
         audioManager.getClass();
-        List<AudioDeviceInfo> audioDevicesForAttributes = audioManager.getAudioDevicesForAttributes(o00Var.b());
+        List<AudioDeviceInfo> audioDevicesForAttributes = audioManager.getAudioDevicesForAttributes(nzVar.b());
         if (audioDevicesForAttributes.isEmpty()) {
             return null;
         }
         return audioDevicesForAttributes.get(0);
     }
 
-    public static bn8 f(Context context) {
+    public static zk8 f(Context context) {
         Object obj;
         String j;
         context.getClass();
@@ -134,22 +134,22 @@ public abstract class s4 {
             }
             obj = c.get(i);
             i++;
-            if (((bn8) obj).b == myPid) {
+            if (((zk8) obj).b == myPid) {
                 break;
             }
         }
-        bn8 bn8Var = (bn8) obj;
-        if (bn8Var != null) {
-            return bn8Var;
+        zk8 zk8Var = (zk8) obj;
+        if (zk8Var != null) {
+            return zk8Var;
         }
         int i2 = Build.VERSION.SDK_INT;
         if (i2 > 33) {
             j = Process.myProcessName();
             j.getClass();
-        } else if ((i2 < 28 || (j = Application.getProcessName()) == null) && (j = fp.j()) == null) {
+        } else if ((i2 < 28 || (j = Application.getProcessName()) == null) && (j = fo.j()) == null) {
             j = "";
         }
-        return new bn8(myPid, 0, j, false);
+        return new zk8(myPid, 0, j, false);
     }
 
     public static Object g(Bundle bundle) {
@@ -164,24 +164,24 @@ public abstract class s4 {
         return accessibilityNodeInfo.isTextSelectable();
     }
 
-    public static up j(bic bicVar, thc thcVar) {
-        OnBackInvokedDispatcher findOnBackInvokedDispatcher = bicVar.findOnBackInvokedDispatcher();
+    public static uo j(agc agcVar, sfc sfcVar) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher = agcVar.findOnBackInvokedDispatcher();
         if (findOnBackInvokedDispatcher == null) {
             return null;
         }
-        up upVar = new up(thcVar, (byte) 6);
-        findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, upVar);
-        return upVar;
+        uo uoVar = new uo(sfcVar, (byte) 6);
+        findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, uoVar);
+        return uoVar;
     }
 
     public static void k(ShortcutInfo.Builder builder) {
         builder.setExcludedFromSurfaces(0);
     }
 
-    public static void l(bic bicVar, up upVar) {
-        OnBackInvokedDispatcher findOnBackInvokedDispatcher = bicVar.findOnBackInvokedDispatcher();
+    public static void l(agc agcVar, uo uoVar) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher = agcVar.findOnBackInvokedDispatcher();
         if (findOnBackInvokedDispatcher != null) {
-            findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(upVar);
+            findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(uoVar);
         }
     }
 }

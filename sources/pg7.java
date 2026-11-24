@@ -1,23 +1,27 @@
 // default package
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class pg7 extends b4 {
-    public static final Parcelable.Creator<pg7> CREATOR = new d3d((byte) 1);
-    public final PendingIntent a;
+public final class pg7 extends gw2 {
+    public Object a;
+    public Object b;
+    public Object c;
+    public /* synthetic */ Object d;
+    public final /* synthetic */ rg7 e;
+    public int f;
 
-    public pg7(PendingIntent pendingIntent) {
-        this.a = pendingIntent;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pg7(rg7 rg7Var, fw2 fw2Var) {
+        super(fw2Var);
+        this.e = rg7Var;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.k(parcel, 1, this.a, i);
-        mve.s(parcel, r);
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        this.d = obj;
+        this.f |= TLObject.FLAG_31;
+        return this.e.c(null, this);
     }
 }

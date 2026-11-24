@@ -1,20 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum atb extends rub {
-    public atb() {
-        super("ScriptDataDoubleEscapedLessthanSign", 31);
-    }
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        if (!hl1Var.m('/')) {
-            bsbVar.c = rub.S;
-            return;
-        }
-        bsbVar.f('/');
-        bsbVar.e();
-        bsbVar.a(rub.W);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class atb extends FrameLayout {
+    public TextView a;
+
+    public void setMessageText(String str) {
+        this.a.setText(str);
     }
 }

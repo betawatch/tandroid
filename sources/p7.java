@@ -3,20 +3,20 @@
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class p7 {
     public final byte a;
     public byte b;
     public int c;
-    public p09 d;
+    public oy8 d;
     public CharSequence e;
     public boolean f;
     public View g;
-    public sp1 h;
+    public fo1 h;
     public byte i;
     public View j;
-    public qp1 k;
+    public do1 k;
     public byte l = 0;
     public byte m = 0;
     public Integer n;
@@ -49,11 +49,11 @@ public final class p7 {
         }
     }
 
-    public final void c(qp1 qp1Var) {
-        this.k = qp1Var;
+    public final void c(do1 do1Var) {
+        this.k = do1Var;
         View view = this.j;
         if (view != null) {
-            view.setOnClickListener(qp1Var);
+            view.setOnClickListener(do1Var);
         }
     }
 

@@ -1,41 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class jle implements cq7 {
-    public static final jle a = new jle();
-    public static final wa4 b = new wa4("appId", b10.m(mlb.r(mmd.class, new eld(1))));
-    public static final wa4 c = new wa4("appVersion", b10.m(mlb.r(mmd.class, new eld(2))));
-    public static final wa4 d = new wa4("firebaseProjectId", b10.m(mlb.r(mmd.class, new eld(3))));
-    public static final wa4 e = new wa4("mlSdkVersion", b10.m(mlb.r(mmd.class, new eld(4))));
-    public static final wa4 f = new wa4("tfliteSchemaVersion", b10.m(mlb.r(mmd.class, new eld(5))));
-    public static final wa4 g = new wa4("gcmSenderId", b10.m(mlb.r(mmd.class, new eld(6))));
-    public static final wa4 h = new wa4("apiKey", b10.m(mlb.r(mmd.class, new eld(7))));
-    public static final wa4 i = new wa4("languages", b10.m(mlb.r(mmd.class, new eld(8))));
-    public static final wa4 j = new wa4("mlSdkInstanceId", b10.m(mlb.r(mmd.class, new eld(9))));
-    public static final wa4 k = new wa4("isClearcutClient", b10.m(mlb.r(mmd.class, new eld(10))));
-    public static final wa4 l = new wa4("isStandaloneMlkit", b10.m(mlb.r(mmd.class, new eld(11))));
-    public static final wa4 m = new wa4("isJsonLogging", b10.m(mlb.r(mmd.class, new eld(12))));
-    public static final wa4 n = new wa4("buildLevel", b10.m(mlb.r(mmd.class, new eld(13))));
-    public static final wa4 o = new wa4("optionalModuleVersion", b10.m(mlb.r(mmd.class, new eld(14))));
+import java.util.AbstractCollection;
+import java.util.Iterator;
+import java.util.List;
 
-    @Override // b44
-    public final void a(Object obj, Object obj2) {
-        f3f f3fVar = (f3f) obj;
-        dq7 dq7Var = (dq7) obj2;
-        dq7Var.a(b, f3fVar.a);
-        dq7Var.a(c, f3fVar.b);
-        dq7Var.a(d, null);
-        dq7Var.a(e, f3fVar.c);
-        dq7Var.a(f, f3fVar.d);
-        dq7Var.a(g, null);
-        dq7Var.a(h, null);
-        dq7Var.a(i, f3fVar.e);
-        dq7Var.a(j, f3fVar.f);
-        dq7Var.a(k, f3fVar.g);
-        dq7Var.a(l, f3fVar.h);
-        dq7Var.a(m, f3fVar.i);
-        dq7Var.a(n, f3fVar.j);
-        dq7Var.a(o, f3fVar.k);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class jle {
+    public static Object a(AbstractCollection abstractCollection, String str) {
+        Iterator it = abstractCollection.iterator();
+        return it.hasNext() ? it.next() : str;
+    }
+
+    public static Object b(Iterable iterable) {
+        Object next;
+        if (!(iterable instanceof List)) {
+            Iterator it = iterable.iterator();
+            do {
+                next = it.next();
+            } while (it.hasNext());
+            return next;
+        }
+        List list = (List) iterable;
+        if (!list.isEmpty()) {
+            return oo1.m(1, list);
+        }
+        w26.g();
+        return null;
+    }
+
+    public static void c(List list, bg8 bg8Var, int i, int i2) {
+        for (int size = list.size() - 1; size > i2; size--) {
+            if (bg8Var.apply(list.get(size))) {
+                list.remove(size);
+            }
+        }
+        for (int i3 = i2 - 1; i3 >= i; i3--) {
+            list.remove(i3);
+        }
     }
 }

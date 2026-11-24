@@ -3,7 +3,7 @@
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class n6 implements Runnable {
     public final /* synthetic */ boolean a;
@@ -36,13 +36,13 @@ public final class n6 implements Runnable {
             }
             Runnable runnable = actionBarLayout.e;
             if (runnable != null) {
-                gm.r(runnable);
+                gl.r(runnable);
                 boolean z = actionBarLayout.Y0;
                 Runnable runnable2 = actionBarLayout.e;
                 if (z) {
                     runnable2.run();
                 } else {
-                    gm.d3(runnable2, 200L);
+                    gl.d3(runnable2, 200L);
                 }
             }
         }

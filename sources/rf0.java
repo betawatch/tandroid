@@ -1,24 +1,17 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class rf0 extends b4 {
-    public static final Parcelable.Creator<rf0> CREATOR = new sje((byte) 9);
-    public double a;
-    public double b;
+public abstract class rf0 {
+    public int a;
+    public int b;
+    public int c;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        double d = this.a;
-        mve.q(parcel, 2, 8);
-        parcel.writeDouble(d);
-        double d2 = this.b;
-        mve.q(parcel, 3, 8);
-        parcel.writeDouble(d2);
-        mve.s(parcel, r);
+    public final int a() {
+        return this.b + 1 + this.c;
     }
+
+    public abstract void b(ByteBuffer byteBuffer);
 }

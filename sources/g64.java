@@ -1,54 +1,28 @@
 // default package
 
-import android.os.Process;
-import android.util.Log;
-import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class g64 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class g64 {
+    public final rx6 a;
+    public final long b;
+    public final long c;
+    public final boolean d;
+    public final boolean e;
+    public final boolean f;
+    public final boolean g;
+    public final boolean h;
+    public final byte i;
 
-    public /* synthetic */ g64(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        Process.setThreadPriority(10);
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((Runnable) obj).run();
-                break;
-            default:
-                ExecutorService executorService = (ExecutorService) obj;
-                try {
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Executing shutdown hook for awaitEvenIfOnMainThread task continuation executor", null);
-                    }
-                    executorService.shutdown();
-                    if (!executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
-                        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                            Log.d("FirebaseCrashlytics", "awaitEvenIfOnMainThread task continuation executor did not shut down in the allocated time. Requesting immediate shutdown.", null);
-                        }
-                        executorService.shutdownNow();
-                        break;
-                    }
-                } catch (InterruptedException unused) {
-                    Locale locale = Locale.US;
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Interrupted while waiting for awaitEvenIfOnMainThread task continuation executor to shut down. Requesting immediate shutdown.", null);
-                    }
-                    executorService.shutdownNow();
-                    return;
-                }
-                break;
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    public g64(rx6 rx6Var, long j, long j2, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, int i) {
+        this.a = rx6Var;
+        this.b = j;
+        this.c = j2;
+        this.d = z;
+        this.e = z2;
+        this.f = z3;
+        this.g = z4;
+        this.h = z5;
+        this.i = i;
     }
 }

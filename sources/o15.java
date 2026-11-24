@@ -1,42 +1,44 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class o15 implements ee {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class o15 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ p15 c;
 
-    public /* synthetic */ o15(TwoStepVerificationActivity twoStepVerificationActivity, byte b) {
-        this.a = b;
-        this.b = twoStepVerificationActivity;
+    public o15(p15 p15Var, int i, long j) {
+        this.c = p15Var;
+        this.a = i;
+        this.b = j;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        byte b = this.a;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-        switch (b) {
-            case 0:
-                twoStepVerificationActivity.presentFragment(new p5c(6, null));
-                break;
-            case 1:
-                twoStepVerificationActivity.finishFragment();
-                break;
-            case 2:
-                twoStepVerificationActivity.getConnectionsManager().sendRequest(new TL_account.declinePasswordReset(), new t4c(twoStepVerificationActivity, (byte) 2));
-                break;
-            case 3:
-                twoStepVerificationActivity.d0();
-                break;
-            case 4:
-                twoStepVerificationActivity.z0();
-                break;
-            default:
-                twoStepVerificationActivity.z0();
-                break;
+    public final void a(buc bucVar, fuc fucVar, fuc fucVar2, boolean z) {
+        StringBuilder sb = new StringBuilder("websocket disconnected; closedByServer=");
+        sb.append(z);
+        sb.append(", serverCloseCode=");
+        sb.append(fucVar == null ? "none" : Integer.valueOf(fucVar.b()));
+        sb.append(", clientCloseCode=");
+        sb.append(fucVar2 != null ? Integer.valueOf(fucVar2.b()) : "none");
+        gl.c3(new tn6((Object) this.c, (Object) bucVar, this.a, (Object) sb.toString(), (byte) 24));
+    }
+
+    public final void b(buc bucVar, String str) {
+        StringBuilder sb = new StringBuilder("[gram-wallet-streaming] account=");
+        sb.append(this.c.a);
+        sb.append(" generation=");
+        int i = this.a;
+        sb.append(i);
+        sb.append(" receive <- ");
+        sb.append(str);
+        fa4.b(sb.toString());
+        try {
+            gl.c3(new tn6((Object) this, (Object) bucVar, i, (Object) new JSONObject(str), (byte) 25));
+        } catch (JSONException unused) {
+            gl.c3(new va7((Object) this, (Object) bucVar, i, (byte) 29));
         }
     }
 }

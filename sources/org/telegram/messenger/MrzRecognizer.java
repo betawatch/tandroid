@@ -13,7 +13,7 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
     public static String a(String str) {
@@ -324,30 +324,30 @@ public class MrzRecognizer {
         return c - '0';
     }
 
-    public static void f(String str, yh7 yh7Var) {
+    public static void f(String str, vf7 vf7Var) {
         try {
             int parseInt = Integer.parseInt(str.substring(0, 2));
-            yh7Var.i = parseInt;
+            vf7Var.i = parseInt;
             int i = (Calendar.getInstance().get(1) % 100) - 5;
-            int i2 = yh7Var.i;
-            yh7Var.i = parseInt < i ? i2 + 2000 : i2 + 1900;
-            yh7Var.j = Integer.parseInt(str.substring(2, 4));
-            yh7Var.k = Integer.parseInt(str.substring(4));
+            int i2 = vf7Var.i;
+            vf7Var.i = parseInt < i ? i2 + 2000 : i2 + 1900;
+            vf7Var.j = Integer.parseInt(str.substring(2, 4));
+            vf7Var.k = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
     private static native int[] findCornerPoints(Bitmap bitmap);
 
-    public static void g(String str, yh7 yh7Var) {
+    public static void g(String str, vf7 vf7Var) {
         try {
             if ("<<<<<<".equals(str)) {
-                yh7Var.o = true;
+                vf7Var.o = true;
                 return;
             }
-            yh7Var.f = Integer.parseInt(str.substring(0, 2)) + 2000;
-            yh7Var.g = Integer.parseInt(str.substring(2, 4));
-            yh7Var.h = Integer.parseInt(str.substring(4));
+            vf7Var.f = Integer.parseInt(str.substring(0, 2)) + 2000;
+            vf7Var.g = Integer.parseInt(str.substring(2, 4));
+            vf7Var.h = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
@@ -359,94 +359,94 @@ public class MrzRecognizer {
         return 2;
     }
 
-    public static yh7 i(Bitmap bitmap) {
-        pf0 pf0Var;
-        yf0 yf0Var = new yf0(new ldd(a.b, new cue()));
+    public static vf7 i(Bitmap bitmap) {
+        pe0 pe0Var;
+        ye0 ye0Var = new ye0(new jbd(a.b, new zre()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
         int i = 4;
-        in3 in3Var = new in3((byte) 4);
+        xl3 xl3Var = new xl3((byte) 4);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        in3Var.d = bitmap;
-        pd0 pd0Var = (pd0) in3Var.b;
-        pd0Var.a = width;
-        pd0Var.b = height;
-        SparseArray h = yf0Var.h(in3Var);
+        xl3Var.d = bitmap;
+        pc0 pc0Var = (pc0) xl3Var.b;
+        pc0Var.a = width;
+        pc0Var.b = height;
+        SparseArray h = ye0Var.h(xl3Var);
         int i2 = 0;
         for (int i3 = 0; i3 < h.size(); i3++) {
-            xf0 xf0Var = (xf0) h.valueAt(i3);
-            int i4 = xf0Var.d;
+            xe0 xe0Var = (xe0) h.valueAt(i3);
+            int i4 = xe0Var.d;
             int i5 = 6;
-            if (i4 == 12 && (pf0Var = xf0Var.E) != null) {
-                yh7 yh7Var = new yh7();
-                yh7Var.a = "ID".equals(pf0Var.a) ? (byte) 2 : (byte) 4;
-                String str = xf0Var.E.E;
+            if (i4 == 12 && (pe0Var = xe0Var.E) != null) {
+                vf7 vf7Var = new vf7();
+                vf7Var.a = "ID".equals(pe0Var.a) ? (byte) 2 : (byte) 4;
+                String str = xe0Var.E.E;
                 str.getClass();
                 if (str.equals("CAN")) {
-                    yh7Var.l = "CA";
-                    yh7Var.m = "CA";
+                    vf7Var.l = "CA";
+                    vf7Var.m = "CA";
                 } else if (str.equals("USA")) {
-                    yh7Var.l = "US";
-                    yh7Var.m = "US";
+                    vf7Var.l = "US";
+                    vf7Var.m = "US";
                 }
-                yh7Var.b = a(xf0Var.E.b);
-                yh7Var.c = a(xf0Var.E.d);
-                yh7Var.d = a(xf0Var.E.c);
-                pf0 pf0Var2 = xf0Var.E;
-                yh7Var.e = pf0Var2.s;
-                String str2 = pf0Var2.e;
+                vf7Var.b = a(xe0Var.E.b);
+                vf7Var.c = a(xe0Var.E.d);
+                vf7Var.d = a(xe0Var.E.c);
+                pe0 pe0Var2 = xe0Var.E;
+                vf7Var.e = pe0Var2.s;
+                String str2 = pe0Var2.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
-                        yh7Var.n = 1;
+                        vf7Var.n = 1;
                     } else if (str2.equals("2")) {
-                        yh7Var.n = 2;
+                        vf7Var.n = 2;
                     }
                 }
-                if ("USA".equals(yh7Var.l)) {
+                if ("USA".equals(vf7Var.l)) {
                     i5 = 2;
                 } else {
                     i = 0;
                     i2 = 4;
                 }
                 try {
-                    String str3 = xf0Var.E.y;
+                    String str3 = xe0Var.E.y;
                     if (str3 != null && str3.length() == 8) {
-                        yh7Var.i = Integer.parseInt(xf0Var.E.y.substring(i, i + 4));
-                        yh7Var.j = Integer.parseInt(xf0Var.E.y.substring(i2, i2 + 2));
-                        yh7Var.k = Integer.parseInt(xf0Var.E.y.substring(i5, i5 + 2));
+                        vf7Var.i = Integer.parseInt(xe0Var.E.y.substring(i, i + 4));
+                        vf7Var.j = Integer.parseInt(xe0Var.E.y.substring(i2, i2 + 2));
+                        vf7Var.k = Integer.parseInt(xe0Var.E.y.substring(i5, i5 + 2));
                     }
-                    String str4 = xf0Var.E.x;
+                    String str4 = xe0Var.E.x;
                     if (str4 != null && str4.length() == 8) {
-                        yh7Var.f = Integer.parseInt(xf0Var.E.x.substring(i, i + 4));
-                        yh7Var.g = Integer.parseInt(xf0Var.E.x.substring(i2, i2 + 2));
-                        yh7Var.h = Integer.parseInt(xf0Var.E.x.substring(i5, i5 + 2));
+                        vf7Var.f = Integer.parseInt(xe0Var.E.x.substring(i, i + 4));
+                        vf7Var.g = Integer.parseInt(xe0Var.E.x.substring(i2, i2 + 2));
+                        vf7Var.h = Integer.parseInt(xe0Var.E.x.substring(i5, i5 + 2));
                     }
                 } catch (NumberFormatException unused) {
                 }
-                return yh7Var;
+                return vf7Var;
             }
-            if (i4 == 7 && xf0Var.a == 2048 && xf0Var.b.matches("^[A-Za-z0-9=]+$")) {
+            if (i4 == 7 && xe0Var.a == 2048 && xe0Var.b.matches("^[A-Za-z0-9=]+$")) {
                 try {
-                    String[] split = new String(Base64.decode(xf0Var.b, 0), "windows-1251").split("\\|");
+                    String[] split = new String(Base64.decode(xe0Var.b, 0), "windows-1251").split("\\|");
                     if (split.length >= 10) {
-                        yh7 yh7Var2 = new yh7();
-                        yh7Var2.a = (byte) 4;
-                        yh7Var2.l = "RU";
-                        yh7Var2.m = "RU";
-                        yh7Var2.e = split[0];
-                        yh7Var2.f = Integer.parseInt(split[2].substring(0, 4));
-                        yh7Var2.g = Integer.parseInt(split[2].substring(4, 6));
-                        yh7Var2.h = Integer.parseInt(split[2].substring(6));
-                        yh7Var2.c = a(c(split[3]));
-                        yh7Var2.b = a(c(split[4]));
-                        yh7Var2.d = a(c(split[5]));
-                        yh7Var2.i = Integer.parseInt(split[6].substring(0, 4));
-                        yh7Var2.j = Integer.parseInt(split[6].substring(4, 6));
-                        yh7Var2.k = Integer.parseInt(split[6].substring(6));
-                        return yh7Var2;
+                        vf7 vf7Var2 = new vf7();
+                        vf7Var2.a = (byte) 4;
+                        vf7Var2.l = "RU";
+                        vf7Var2.m = "RU";
+                        vf7Var2.e = split[0];
+                        vf7Var2.f = Integer.parseInt(split[2].substring(0, 4));
+                        vf7Var2.g = Integer.parseInt(split[2].substring(4, 6));
+                        vf7Var2.h = Integer.parseInt(split[2].substring(6));
+                        vf7Var2.c = a(c(split[3]));
+                        vf7Var2.b = a(c(split[4]));
+                        vf7Var2.d = a(c(split[5]));
+                        vf7Var2.i = Integer.parseInt(split[6].substring(0, 4));
+                        vf7Var2.j = Integer.parseInt(split[6].substring(4, 6));
+                        vf7Var2.k = Integer.parseInt(split[6].substring(6));
+                        return vf7Var2;
                     }
                     continue;
                 } catch (Exception unused2) {
@@ -469,7 +469,7 @@ public class MrzRecognizer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static yh7 j(Bitmap bitmap) {
+    public static vf7 j(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
         int i;
@@ -616,27 +616,27 @@ public class MrzRecognizer {
                         return null;
                     }
                     String[] split = TextUtils.split(performRecognition, "\n");
-                    yh7 yh7Var = new yh7();
+                    vf7 vf7Var = new vf7();
                     if (split.length < 2 || split[0].length() < 30 || split[1].length() != split[0].length()) {
                         return null;
                     }
-                    yh7Var.p = TextUtils.join("\n", split);
+                    vf7Var.p = TextUtils.join("\n", split);
                     HashMap d5 = d();
                     char charAt = split[0].charAt(0);
                     if (charAt == 'P') {
-                        yh7Var.a = (byte) 1;
+                        vf7Var.a = (byte) 1;
                         if (split[0].length() == 44) {
                             int i20 = i4;
-                            yh7Var.l = split[0].substring(2, i20);
+                            vf7Var.l = split[0].substring(2, i20);
                             int indexOf = split[0].indexOf("<<", i2);
                             if (indexOf != -1) {
-                                yh7Var.c = split[0].substring(i20, indexOf).replace('<', ' ').replace('0', 'O').trim();
+                                vf7Var.c = split[0].substring(i20, indexOf).replace('<', ' ').replace('0', 'O').trim();
                                 String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
-                                yh7Var.b = trim;
+                                vf7Var.b = trim;
                                 if (trim.contains("   ")) {
-                                    String str = yh7Var.b;
+                                    String str = vf7Var.b;
                                     i11 = 0;
-                                    yh7Var.b = str.substring(0, str.indexOf("   "));
+                                    vf7Var.b = str.substring(0, str.indexOf("   "));
                                 } else {
                                     i11 = 0;
                                 }
@@ -645,112 +645,112 @@ public class MrzRecognizer {
                             }
                             String trim2 = split[1].substring(i11, 9).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim2) == e(split[1].charAt(9))) {
-                                yh7Var.e = trim2;
+                                vf7Var.e = trim2;
                             }
-                            yh7Var.m = split[1].substring(10, 13);
+                            vf7Var.m = split[1].substring(10, 13);
                             String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                             if (b(replace) == e(split[1].charAt(19))) {
-                                f(replace, yh7Var);
+                                f(replace, vf7Var);
                             }
-                            yh7Var.n = h(split[1].charAt(20));
+                            vf7Var.n = h(split[1].charAt(20));
                             String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                             if (b(replace2) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                g(replace2, yh7Var);
+                                g(replace2, vf7Var);
                             }
-                            if ("RUS".equals(yh7Var.l) && split[0].charAt(1) == 'N') {
-                                yh7Var.a = (byte) 3;
-                                String[] split2 = yh7Var.b.split(" ");
-                                yh7Var.b = c(k(split2[0]));
+                            if ("RUS".equals(vf7Var.l) && split[0].charAt(1) == 'N') {
+                                vf7Var.a = (byte) 3;
+                                String[] split2 = vf7Var.b.split(" ");
+                                vf7Var.b = c(k(split2[0]));
                                 if (split2.length > 1) {
-                                    yh7Var.d = c(k(split2[1]));
+                                    vf7Var.d = c(k(split2[1]));
                                 }
-                                yh7Var.c = c(k(yh7Var.c));
-                                String str2 = yh7Var.e;
+                                vf7Var.c = c(k(vf7Var.c));
+                                String str2 = vf7Var.e;
                                 if (str2 != null) {
-                                    yh7Var.e = str2.substring(0, 3) + split[1].charAt(28) + yh7Var.e.substring(3);
+                                    vf7Var.e = str2.substring(0, 3) + split[1].charAt(28) + vf7Var.e.substring(3);
                                 }
                             } else {
-                                yh7Var.b = yh7Var.b.replace('8', 'B');
-                                yh7Var.c = yh7Var.c.replace('8', 'B');
+                                vf7Var.b = vf7Var.b.replace('8', 'B');
+                                vf7Var.c = vf7Var.c.replace('8', 'B');
                             }
-                            yh7Var.c = a(yh7Var.c);
-                            yh7Var.b = a(yh7Var.b);
-                            yh7Var.d = a(yh7Var.d);
+                            vf7Var.c = a(vf7Var.c);
+                            vf7Var.b = a(vf7Var.b);
+                            vf7Var.d = a(vf7Var.d);
                         }
                     } else {
                         if (charAt != 'I' && charAt != 'A' && charAt != 'C') {
                             return null;
                         }
-                        yh7Var.a = (byte) 2;
+                        vf7Var.a = (byte) 2;
                         if (split.length == 3 && split[0].length() == 30 && split[2].length() == 30) {
-                            yh7Var.l = split[0].substring(2, 5);
+                            vf7Var.l = split[0].substring(2, 5);
                             String trim3 = split[0].substring(5, 14).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim3) == split[0].charAt(14) - '0') {
-                                yh7Var.e = trim3;
+                                vf7Var.e = trim3;
                             }
                             String replace3 = split[1].substring(0, 6).replace('O', '0').replace('I', '1');
                             if (b(replace3) == e(split[1].charAt(6))) {
-                                f(replace3, yh7Var);
+                                f(replace3, vf7Var);
                             }
-                            yh7Var.n = h(split[1].charAt(i6));
+                            vf7Var.n = h(split[1].charAt(i6));
                             String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
                             if (b(replace4) == e(split[1].charAt(14)) || split[1].charAt(14) == '<') {
-                                g(replace4, yh7Var);
+                                g(replace4, vf7Var);
                             }
-                            yh7Var.m = split[1].substring(15, 18);
+                            vf7Var.m = split[1].substring(15, 18);
                             int indexOf2 = split[2].indexOf("<<");
                             if (indexOf2 != -1) {
-                                yh7Var.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
-                                yh7Var.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
+                                vf7Var.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
+                                vf7Var.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
                             }
                         } else if (split.length == 2 && split[0].length() == 36) {
                             String substring = split[0].substring(2, 5);
-                            yh7Var.l = substring;
+                            vf7Var.l = substring;
                             if ("FRA".equals(substring) && charAt == 'I' && split[0].charAt(1) == 'D') {
-                                yh7Var.m = "FRA";
-                                yh7Var.c = split[0].substring(5, 30).replace('<', ' ').trim();
-                                yh7Var.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
+                                vf7Var.m = "FRA";
+                                vf7Var.c = split[0].substring(5, 30).replace('<', ' ').trim();
+                                vf7Var.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
                                 String replace5 = split[1].substring(0, 12).replace('O', '0');
                                 if (b(replace5) == e(split[1].charAt(12))) {
-                                    yh7Var.e = replace5;
+                                    vf7Var.e = replace5;
                                 }
                                 String replace6 = split[1].substring(27, 33).replace('O', '0').replace('I', '1');
                                 if (b(replace6) == e(split[1].charAt(33))) {
-                                    f(replace6, yh7Var);
+                                    f(replace6, vf7Var);
                                 }
-                                yh7Var.n = h(split[1].charAt(34));
-                                yh7Var.o = true;
+                                vf7Var.n = h(split[1].charAt(34));
+                                vf7Var.o = true;
                             } else {
                                 int indexOf3 = split[0].indexOf("<<");
                                 if (indexOf3 != -1) {
-                                    yh7Var.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
-                                    yh7Var.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
+                                    vf7Var.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
+                                    vf7Var.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
                                 }
                                 String trim4 = split[1].substring(0, 9).replace('<', ' ').replace('O', '0').trim();
                                 if (b(trim4) == e(split[1].charAt(9))) {
-                                    yh7Var.e = trim4;
+                                    vf7Var.e = trim4;
                                 }
-                                yh7Var.m = split[1].substring(10, 13);
+                                vf7Var.m = split[1].substring(10, 13);
                                 String replace7 = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                                 if (b(replace7) == e(split[1].charAt(19))) {
-                                    f(replace7, yh7Var);
+                                    f(replace7, vf7Var);
                                 }
-                                yh7Var.n = h(split[1].charAt(20));
+                                vf7Var.n = h(split[1].charAt(20));
                                 String replace8 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                                 if (b(replace8) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                    g(replace8, yh7Var);
+                                    g(replace8, vf7Var);
                                 }
                             }
                         }
-                        yh7Var.b = a(yh7Var.b.replace('0', 'O').replace('8', 'B'));
-                        yh7Var.c = a(yh7Var.c.replace('0', 'O').replace('8', 'B'));
+                        vf7Var.b = a(vf7Var.b.replace('0', 'O').replace('8', 'B'));
+                        vf7Var.c = a(vf7Var.c.replace('0', 'O').replace('8', 'B'));
                     }
-                    if (TextUtils.isEmpty(yh7Var.b) && TextUtils.isEmpty(yh7Var.c)) {
+                    if (TextUtils.isEmpty(vf7Var.b) && TextUtils.isEmpty(vf7Var.c)) {
                         return null;
                     }
-                    yh7Var.l = (String) d5.get(yh7Var.l);
-                    yh7Var.m = (String) d5.get(yh7Var.m);
-                    return yh7Var;
+                    vf7Var.l = (String) d5.get(vf7Var.l);
+                    vf7Var.m = (String) d5.get(vf7Var.m);
+                    return vf7Var;
                 }
                 return null;
             }

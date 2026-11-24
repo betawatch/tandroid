@@ -1,14 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum eub extends rub {
-    public eub() {
-        super("Rawtext", 4);
+public final /* synthetic */ class eub implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pub b;
+    public final /* synthetic */ long c;
+
+    public /* synthetic */ eub(pub pubVar, long j, byte b) {
+        this.a = b;
+        this.b = pubVar;
+        this.c = j;
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        rub.d(bsbVar, hl1Var, this, rub.y);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.c;
+        pub pubVar = this.b;
+        switch (b) {
+            case 0:
+                pubVar.c.put(j, 0);
+                pubVar.getNotificationCenter().k(kk7.s5, Long.valueOf(j), Boolean.FALSE);
+                break;
+            default:
+                pubVar.n(0, j, false);
+                break;
+        }
     }
 }

@@ -1,62 +1,51 @@
 // default package
 
-import android.graphics.Point;
-import android.os.SystemClock;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class c45 implements ViewTreeObserver.OnGlobalLayoutListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c45 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ c45(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public /* synthetic */ c45(k96 k96Var, boolean z, int i) {
+        this.a = (byte) 1;
+        this.d = k96Var;
+        this.b = z;
+        this.c = i;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        Object obj = this.b;
+        Object obj = this.d;
         switch (b) {
             case 0:
-                ((if4) obj).run();
+                gl.c3(new bs1(obj, (Object) tLObject, this.c, this.b, (byte) 4));
                 break;
             case 1:
-                ((mx5) obj).d();
-                break;
-            case 2:
-                String str = LaunchActivity.C1;
-                int measuredHeight = ((View) obj).getMeasuredHeight();
-                StringBuilder l = hg9.l(measuredHeight, "height = ", " displayHeight = ");
-                Point point = gm.q;
-                b10.p(point.y, l);
-                int i = (measuredHeight - gm.n) - gm.m;
-                if (i > gm.L(100.0f) && i < point.y && gm.L(100.0f) + i > point.y) {
-                    point.y = i;
-                    if (e21.a) {
-                        b10.p(point.y, new StringBuilder("fix display size y to "));
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                rob robVar = (rob) obj;
-                robVar.R = SystemClock.elapsedRealtime() + 1500;
-                robVar.m0.invalidate();
-                break;
-            default:
-                nsc nscVar = (nsc) obj;
-                PopupWindow popupWindow = nscVar.s;
-                if (popupWindow != null && popupWindow.isShowing()) {
-                    nscVar.c();
+                k96 k96Var = (k96) obj;
+                if (tLObject instanceof Vector) {
+                    gl.c3(new bs1((Object) k96Var, tLObject, this.b, this.c, (byte) 6));
                     break;
                 }
                 break;
+            default:
+                ((VoIPService) obj).lambda$startGroupCall$32(this.c, this.b, tLObject, tL_error);
+                break;
         }
+    }
+
+    public /* synthetic */ c45(gk7 gk7Var, int i, boolean z, byte b) {
+        this.a = b;
+        this.d = gk7Var;
+        this.c = i;
+        this.b = z;
     }
 }

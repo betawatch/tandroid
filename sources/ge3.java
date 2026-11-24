@@ -1,47 +1,22 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ge3 {
-    public final String a;
-    public final sz4 b;
+public final class ge3 extends RuntimeException {
+    public final transient sw2 a;
 
-    public ge3(Set set, sz4 sz4Var) {
-        this.a = b(set);
-        this.b = sz4Var;
+    public ge3(sw2 sw2Var) {
+        this.a = sw2Var;
     }
 
-    public static String b(Set set) {
-        StringBuilder sb = new StringBuilder();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            ya0 ya0Var = (ya0) it.next();
-            sb.append(ya0Var.a);
-            sb.append('/');
-            sb.append(ya0Var.b);
-            if (it.hasNext()) {
-                sb.append(' ');
-            }
-        }
-        return sb.toString();
+    @Override // java.lang.Throwable
+    public final Throwable fillInStackTrace() {
+        setStackTrace(new StackTraceElement[0]);
+        return this;
     }
 
-    public final String a() {
-        Set unmodifiableSet;
-        sz4 sz4Var = this.b;
-        synchronized (((HashSet) sz4Var.a)) {
-            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) sz4Var.a);
-        }
-        boolean isEmpty = unmodifiableSet.isEmpty();
-        String str = this.a;
-        if (isEmpty) {
-            return str;
-        }
-        return str + ' ' + b(sz4Var.G());
+    @Override // java.lang.Throwable
+    public final String getLocalizedMessage() {
+        return this.a.toString();
     }
 }

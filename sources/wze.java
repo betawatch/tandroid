@@ -1,40 +1,72 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public abstract class wze {
-    public static vfc a(View view, xfc xfcVar) {
-        vfc vfcVar = xfcVar.b;
-        if (vfcVar != null) {
-            return vfcVar;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class wze extends b4 {
+    public static final Parcelable.Creator<wze> CREATOR = new c0f((byte) 6);
+    public final int a;
+    public final Bundle b;
+
+    public wze(int i, Bundle bundle) {
+        this.a = i;
+        this.b = bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        View rootView = view.getRootView();
-        if (view == rootView) {
-            u36.j("Cannot add OnPostDrawListener to root view");
-            return null;
+        if (!(obj instanceof wze)) {
+            return false;
         }
-        if (!(rootView instanceof ViewGroup)) {
-            return null;
+        wze wzeVar = (wze) obj;
+        Bundle bundle = wzeVar.b;
+        if (this.a != wzeVar.a) {
+            return false;
         }
-        ViewGroup viewGroup = (ViewGroup) rootView;
-        vfc vfcVar2 = (vfc) viewGroup.getTag(R.id.tag_view_on_post_draw_root_state);
-        if (vfcVar2 == null) {
-            yc ycVar = new yc(viewGroup.getContext());
-            vfc vfcVar3 = new vfc(ycVar);
-            viewGroup.setTag(R.id.tag_view_on_post_draw_root_state, vfcVar3);
-            if (viewGroup instanceof FrameLayout) {
-                viewGroup.addView(ycVar, new FrameLayout.LayoutParams(1, 1, 17));
-            } else {
-                viewGroup.addView(ycVar, new ViewGroup.LayoutParams(1, 1));
+        Bundle bundle2 = this.b;
+        if (bundle2 == null) {
+            return bundle == null;
+        }
+        if (bundle == null || bundle2.size() != bundle.size()) {
+            return false;
+        }
+        for (String str : bundle2.keySet()) {
+            if (!bundle.containsKey(str) || !cqe.a(bundle2.getString(str), bundle.getString(str))) {
+                return false;
             }
-            vfcVar2 = vfcVar3;
         }
-        xfcVar.b = vfcVar2;
-        return vfcVar2;
+        return true;
+    }
+
+    public final int hashCode() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(Integer.valueOf(this.a));
+        Bundle bundle = this.b;
+        if (bundle != null) {
+            for (String str : bundle.keySet()) {
+                arrayList.add(str);
+                String string = bundle.getString(str);
+                if (string != null) {
+                    arrayList.add(string);
+                }
+            }
+        }
+        return Arrays.hashCode(arrayList.toArray(new Object[0]));
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        jte.b(parcel, 2, this.b);
+        jte.s(parcel, r);
     }
 }

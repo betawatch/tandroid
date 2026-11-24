@@ -1,35 +1,177 @@
 // default package
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.text.TextPaint;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
 import android.view.View;
-import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class cra extends TextView {
-    public final /* synthetic */ float a;
+public class cra extends View implements tjb {
+    public bra a;
+    public final xia b;
+    public int c;
+    public ae9 d;
+    public boolean e;
+    public Paint f;
+    public LinearGradient h;
+    public Matrix n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cra(Context context, float f) {
+    public cra(Context context) {
         super(context);
-        this.a = f;
+        int i = gba.o() == 2 ? kk7.d3 : gba.o() == 1 ? 100 : 50;
+        this.b = new xia((Object) this, (byte) 1);
+        this.e = true;
+        this.a = new bra(i);
+        a();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        if (View.MeasureSpec.getMode(i) != 0) {
-            int size = (View.MeasureSpec.getSize(i) - getPaddingLeft()) - getPaddingRight();
-            TextPaint textPaint = new TextPaint(getPaint());
-            float f = this.a;
-            textPaint.setTextSize(f);
-            if (textPaint.measureText("0000 0000 0000 0000") > size && size > 0) {
-                f = (float) Math.floor((f * r3) / r1);
-            }
-            if (getTextSize() != f) {
-                setTextSize(0, f);
-            }
+    public void a() {
+        bra braVar = this.a;
+        braVar.N = 100;
+        braVar.L = true;
+        braVar.G = true;
+        braVar.J = true;
+        braVar.H = true;
+        braVar.r = (byte) 4;
+        braVar.w = 0.98f;
+        braVar.v = 0.98f;
+        braVar.u = 0.98f;
+        braVar.c();
+    }
+
+    public final void b(float f) {
+        float f2 = f < 60.0f ? 5.0f : f < 180.0f ? 9.0f : 15.0f;
+        AnimatorSet animatorSet = new AnimatorSet();
+        gja gjaVar = new gja(this, (byte) 4);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, f2);
+        ofFloat.addUpdateListener(gjaVar);
+        ofFloat.setDuration(600L);
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f2, 1.0f);
+        ofFloat2.addUpdateListener(gjaVar);
+        ofFloat2.setDuration(2000L);
+        animatorSet.playTogether(ofFloat, ofFloat2);
+        animatorSet.start();
+    }
+
+    public final void c() {
+        Paint paint = new Paint(1);
+        this.f = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, gl.L(12.0f), new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.h = linearGradient;
+        this.f.setShader(linearGradient);
+        this.n = new Matrix();
+    }
+
+    public int getStarsRectWidth() {
+        return gl.L(140.0f);
+    }
+
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ae9 ae9Var = new ae9(this, (byte) 9);
+        this.d = ae9Var;
+        e66.a(ae9Var);
+        boolean e = e66.e(131072);
+        if (this.e != e) {
+            this.e = e;
+            invalidate();
         }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        HashSet hashSet;
+        super.onDetachedFromWindow();
+        ae9 ae9Var = this.d;
+        if (ae9Var == null || (hashSet = e66.n) == null) {
+            return;
+        }
+        hashSet.remove(ae9Var);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        super.onDraw(canvas);
+        if (this.e) {
+            if (this.f != null) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), kk7.d4, 31);
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+            }
+            this.a.d(canvas2);
+            if (this.f != null) {
+                canvas2.save();
+                this.n.reset();
+                this.n.postTranslate(0.0f, (getHeight() + 1) - gl.L(12.0f));
+                this.h.setLocalMatrix(this.n);
+                canvas2.drawRect(0.0f, getHeight() - gl.L(12.0f), getWidth(), getHeight(), this.f);
+                this.n.reset();
+                this.n.postRotate(180.0f);
+                this.n.postTranslate(0.0f, gl.L(12.0f));
+                this.h.setLocalMatrix(this.n);
+                canvas2.drawRect(0.0f, 0.0f, getWidth(), gl.L(12.0f), this.f);
+                canvas2.restore();
+                canvas2.restore();
+            }
+            if (this.a.g) {
+                return;
+            }
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
+        int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
+        this.a.a.set(0.0f, 0.0f, getStarsRectWidth(), gl.L(140.0f));
+        this.a.a.offset((getMeasuredWidth() - this.a.a.width()) / 2.0f, (getMeasuredHeight() - this.a.a.height()) / 2.0f);
+        this.a.b.set(-gl.L(15.0f), -gl.L(15.0f), gl.L(15.0f) + getMeasuredWidth(), gl.L(15.0f) + getMeasuredHeight());
+        if (this.c != measuredHeight) {
+            this.c = measuredHeight;
+            this.a.f();
+        }
+    }
+
+    public void setPaused(boolean z) {
+        bra braVar = this.a;
+        if (z == braVar.g) {
+            return;
+        }
+        braVar.g = z;
+        if (z) {
+            braVar.Q = System.currentTimeMillis();
+            return;
+        }
+        for (int i = 0; i < this.a.n.size(); i++) {
+            ara araVar = (ara) this.a.n.get(i);
+            araVar.a = (System.currentTimeMillis() - this.a.Q) + araVar.a;
+        }
+        invalidate();
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        xia xiaVar = this.b;
+        removeCallbacks(xiaVar);
+        postDelayed(xiaVar, 150L);
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

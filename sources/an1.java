@@ -1,56 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.text.style.CharacterStyle;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class an1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ byte c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class an1 implements uc7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ mu1 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ an1(yv1 yv1Var, int i, int i2, CharacterStyle characterStyle, rc2 rc2Var) {
-        this.d = yv1Var;
-        this.b = i;
-        this.c = i2;
-        this.e = characterStyle;
-        this.f = rc2Var;
+    public /* synthetic */ an1(mu1 mu1Var, byte b) {
+        this.a = b;
+        this.b = mu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // uc7
+    public final void a(int i) {
         byte b = this.a;
-        Object obj = this.f;
-        byte b2 = this.c;
-        int i = this.b;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
+        mu1 mu1Var = this.b;
         switch (b) {
             case 0:
-                yv1 yv1Var = (yv1) obj3;
-                yv1Var.kc = i;
-                yv1Var.lc = b2;
-                yv1Var.mc = (CharacterStyle) obj2;
-                ((rc2) obj).invalidate();
+                if (mu1Var.getParentActivity() != null && mu1Var.fragmentView != null && i > 0) {
+                    u21.b0(mu1Var).m(t21.r, i, 0, 0, mu1Var.Ba).j();
+                    break;
+                }
                 break;
+            case 1:
+                mu1 mu1Var2 = this.b;
+                if (i != 0) {
+                    mu1Var2.J(i, 0, 0, 0, false, true);
+                    break;
+                } else {
+                    mu1Var2.E6 = false;
+                    mu1Var2.M9();
+                    break;
+                }
             default:
-                joc jocVar = (joc) obj;
-                gm.c3(new gcc((moc) obj3, new ioc(((Context) obj2).getApplicationContext(), i, b2, jocVar), jocVar, (byte) 15));
-                break;
+                if (i != 0) {
+                    mu1Var.finishFragment();
+                    break;
+                } else {
+                    mu1Var.nd(true);
+                    break;
+                }
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ an1(moc mocVar, Context context, int i, int i2, joc jocVar) {
-        this.d = mocVar;
-        this.e = context;
-        this.b = i;
-        this.c = i2;
-        this.f = jocVar;
     }
 }

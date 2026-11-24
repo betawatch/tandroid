@@ -1,34 +1,71 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class aya extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ bya e;
+public final class aya {
+    public final tl a;
+    public fm2 b;
 
-    public aya(bya byaVar, int i, int i2, int i3, int i4) {
-        this.e = byaVar;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
+    public aya(int i, View view) {
+        this.a = new tl(gl.L(i), view);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f = on2.f(1.0f, this.a, this.b);
-        bya byaVar = this.e;
-        byaVar.r = f;
-        byaVar.s = on2.f(1.0f, this.c, this.d);
-        byaVar.E = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{byaVar.r, byaVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        byaVar.invalidate();
+    public final tl a(TLObject tLObject, int i, boolean z) {
+        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i, z) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i, z) : b(null, null, i, z);
+    }
+
+    public final tl b(TLRPC.User user, TLRPC.Chat chat, int i, boolean z) {
+        tl tlVar = this.a;
+        if (chat != null) {
+            if (chat.verified) {
+                fm2 fm2Var = this.b;
+                if (fm2Var == null) {
+                    fm2Var = new fm2(bkb.e1, bkb.h1);
+                }
+                this.b = fm2Var;
+                tlVar.g(fm2Var, z);
+                tlVar.k(null);
+                return tlVar;
+            }
+            if (cf3.f(chat.emoji_status) != 0) {
+                tlVar.j(cf3.f(chat.emoji_status), z);
+                tlVar.k(Integer.valueOf(i));
+                return tlVar;
+            }
+        }
+        if (user != null) {
+            if (user.verified) {
+                fm2 fm2Var2 = this.b;
+                if (fm2Var2 == null) {
+                    fm2Var2 = new fm2(bkb.e1, bkb.h1);
+                }
+                this.b = fm2Var2;
+                tlVar.g(fm2Var2, z);
+                tlVar.k(null);
+                return tlVar;
+            }
+            if (cf3.f(user.emoji_status) != 0) {
+                tlVar.j(cf3.f(user.emoji_status), z);
+                tlVar.k(Integer.valueOf(i));
+                return tlVar;
+            }
+            if (user.premium) {
+                tlVar.g(nh8.d().e, z);
+                tlVar.k(Integer.valueOf(i));
+                return tlVar;
+            }
+        }
+        tlVar.g(null, z);
+        tlVar.k(null);
+        return tlVar;
+    }
+
+    public aya(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 }

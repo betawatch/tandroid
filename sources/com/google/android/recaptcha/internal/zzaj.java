@@ -7,15 +7,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
     private zzqm zzb;
     private final Map zzc;
 
-    public /* synthetic */ zzaj(List list, int i, fb3 fb3Var) {
-        this.zza = lm2.b(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
+    public /* synthetic */ zzaj(List list, int i, t93 t93Var) {
+        this.zza = zk2.b(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
         this.zzc = new LinkedHashMap();
     }
 
@@ -25,7 +25,7 @@ public final class zzaj extends zzg {
         List list = (List) this.zzc.remove(str);
         if (list != null) {
             List<zzat> list2 = list;
-            int b = sk6.b(mm2.c(list2, 10));
+            int b = qi6.b(al2.c(list2, 10));
             if (b < 16) {
                 b = 16;
             }
@@ -34,7 +34,7 @@ public final class zzaj extends zzg {
                 map.put(Integer.valueOf(zzatVar.zzb()), zzatVar);
             }
         } else {
-            map = o34.a;
+            map = d24.a;
         }
         zzyo zzr = zzr(map, str);
         zzxw zzf = zzxx.zzf();
@@ -58,7 +58,7 @@ public final class zzaj extends zzg {
             zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
         } else {
             if (!(zzatVar instanceof zzak)) {
-                throw new rq2();
+                throw new gp2();
             }
             zzyt zza2 = ((zzak) zzatVar).zza();
             zzqm zzqmVar3 = this.zzb;
@@ -95,7 +95,7 @@ public final class zzaj extends zzg {
             }
         }
         Collection values = map.values();
-        ArrayList arrayList2 = new ArrayList(mm2.c(values, 10));
+        ArrayList arrayList2 = new ArrayList(al2.c(values, 10));
         Iterator it = values.iterator();
         while (it.hasNext()) {
             arrayList2.add(zzq((zzat) it.next()));
@@ -105,17 +105,17 @@ public final class zzaj extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, px2 px2Var) {
+    public final Object zza(String str, fw2 fw2Var) {
         return zzp(str);
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, px2 px2Var) {
+    public final Object zzb(String str, fw2 fw2Var) {
         return new zzhg(new zzag(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, px2 px2Var) {
+    public final Object zzd(zzxn zzxnVar, fw2 fw2Var) {
         return new zzhg(new zzai(zzxnVar, this, null));
     }
 

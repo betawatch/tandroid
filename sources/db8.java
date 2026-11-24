@@ -1,60 +1,11 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.ui.PhotoViewer;
+import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class db8 extends w0b {
-    public final Path t0;
-    public boolean u0;
-    public final ln v0;
-    public final /* synthetic */ PhotoViewer w0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db8(PhotoViewer photoViewer) {
-        super(photoViewer.o5, photoViewer.F, photoViewer.w2, photoViewer.c0);
-        this.w0 = photoViewer;
-        this.t0 = new Path();
-        this.v0 = new ln(this, 0L, 420L, d53.h);
-    }
-
-    public final void m(boolean z, boolean z2) {
-        this.u0 = z;
-        if (!z2) {
-            this.v0.f(z, true);
-        }
-        invalidate();
-    }
-
-    @Override // w0b, b61, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.t0;
-        path.rewind();
-        path.addRoundRect(this.n0, gm.L(this.r0), gm.L(this.r0), Path.Direction.CW);
-        canvas.clipPath(path);
-        canvas.translate(-getX(), -getY());
-        PhotoViewer photoViewer = this.w0;
-        if (this == photoViewer.u5 || this == photoViewer.v5) {
-            canvas.translate(-photoViewer.t5.getX(), -photoViewer.t5.getY());
-        }
-        photoViewer.P(canvas, this.m0, -13948117, 855638016, false, true, false);
-        float d = this.v0.d(this.u0);
-        if (d > 0.0f) {
-            canvas.drawColor(cmb.p1(d, -1));
-        }
-        setTextColor(on2.f(d, -1, -16777216));
-        canvas.restore();
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onDrawForeground(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.t0);
-        super.onDrawForeground(canvas);
-        canvas.restore();
-    }
+public final class db8 {
+    public StaticLayout a;
+    public float b;
+    public float c;
 }

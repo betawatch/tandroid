@@ -1,61 +1,72 @@
 // default package
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.io.Serializable;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ShapeDrawable;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nt0 implements g94, bja, dja, ee, oac {
-    public final /* synthetic */ au0 a;
-
-    public /* synthetic */ nt0(au0 au0Var) {
-        this.a = au0Var;
-    }
-
-    @Override // g94
-    public final void D(int i, float f, float f2, h94 h94Var) {
-        this.a.y0();
-    }
-
-    @Override // bja
-    public final int b() {
-        return this.a.n;
-    }
-
-    @Override // dja
-    public final float f(RecyclerView recyclerView) {
-        return fja.j(recyclerView);
-    }
-
-    @Override // dja
-    public final RecyclerView h(View view) {
-        au0 au0Var = this.a;
-        if (au0Var.a) {
-            return ((zt0) view).c;
+public abstract class nt0 {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void a(Activity activity, int i, long j, long j2, TL_bots.BotVerifierSettings botVerifierSettings, it0 it0Var) {
+        String str;
+        TLRPC.Chat chat;
+        if (j2 >= 0) {
+            TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(j2));
+            str = l7c.l(V1);
+            chat = V1;
+        } else {
+            TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-j2));
+            if (K0 == null) {
+                str = "";
+                chat = K0;
+            } else {
+                str = K0.title;
+                chat = K0;
+            }
         }
-        au0Var.L.getClass();
-        return ((kxa) view).a;
-    }
-
-    @Override // oac
-    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.v0((c6c) obj);
-    }
-
-    @Override // dja
-    public final /* synthetic */ void q(RecyclerView recyclerView) {
-        hg9.d(recyclerView);
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
-        au0 au0Var = this.a;
-        au0Var.getClass();
-        au0Var.presentFragment(new p5c(6, null));
-    }
-
-    @Override // g94
-    public final void V(float f, int i) {
+        FrameLayout frameLayout = new FrameLayout(activity);
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        int L = gl.L(28.0f);
+        int L2 = gl.L(28.0f);
+        int i2 = bkb.Si;
+        ShapeDrawable c0 = bkb.c0(L, L2, bkb.w0(null, i2, false));
+        vkb M = zkb.M(i2);
+        frameLayout2.setBackground(c0);
+        zkb.j(frameLayout2, c0, M, null, null);
+        be0 be0Var = new be0(activity);
+        be0Var.setRoundRadius(gl.L(28.0f));
+        pb0 pb0Var = new pb0((wjb) null);
+        pb0Var.k(chat);
+        be0Var.f(chat, pb0Var);
+        frameLayout2.addView(be0Var, nme.e(28, 28, 51));
+        be0 be0Var2 = new be0(activity);
+        be0Var2.setEmojiColorFilter(new PorterDuffColorFilter(bkb.w0(null, bkb.y9, false), PorterDuff.Mode.SRC_IN));
+        be0Var2.setAnimatedEmojiDrawable(vl.m(i, botVerifierSettings.icon, null, 3));
+        frameLayout2.addView(be0Var2, nme.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        jia jiaVar = new jia(activity);
+        zkb.W(jiaVar, bkb.i5, null);
+        jiaVar.setTextSize(13);
+        jiaVar.setEllipsizeByGradient(true);
+        jiaVar.l(str, false);
+        jiaVar.setWidthWrapContent(true);
+        frameLayout2.addView(jiaVar, nme.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        frameLayout.addView(frameLayout2, nme.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
+        boolean[] zArr = new boolean[1];
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
+        String M0 = k96.M0(2131752985, null);
+        hd hdVar = alertDialog$Builder.a;
+        hdVar.S = M0;
+        hdVar.U = k96.M0(j2 >= 0 ? 2131752986 : 2131752987, null);
+        alertDialog$Builder.n(frameLayout);
+        alertDialog$Builder.g(k96.M0(2131752577, null), null);
+        alertDialog$Builder.j(k96.M0(2131746128, null), new lt0(zArr, i, j, j2, it0Var));
+        alertDialog$Builder.c(-1);
+        alertDialog$Builder.o();
     }
 }

@@ -1,16 +1,42 @@
 // default package
 
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class z2d extends e1d {
-    public final /* synthetic */ TaskCompletionSource b;
+public final class z2d extends z0d {
+    public final /* synthetic */ byte c;
+    public final /* synthetic */ TaskCompletionSource d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z2d(TaskCompletionSource taskCompletionSource) {
-        super((byte) 0, false);
-        this.b = taskCompletionSource;
-        attachInterface(this, "com.google.firebase.pnv.internal.IFpnvCallbacks");
+    public /* synthetic */ z2d(u84 u84Var, TaskCompletionSource taskCompletionSource, byte b) {
+        super((byte) 0);
+        this.c = b;
+        this.d = taskCompletionSource;
+    }
+
+    @Override // z0d
+    public final void T(Status status, me7 me7Var) {
+        switch (this.c) {
+            case 0:
+                dve.b(status, me7Var, this.d);
+                break;
+            default:
+                super.T(status, me7Var);
+                break;
+        }
+    }
+
+    @Override // z0d
+    public final void V(Status status, oe7 oe7Var) {
+        switch (this.c) {
+            case 1:
+                dve.b(status, oe7Var, this.d);
+                break;
+            default:
+                super.V(status, oe7Var);
+                break;
+        }
     }
 }

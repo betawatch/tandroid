@@ -1,42 +1,41 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class q3d extends zz4 {
-    @Override // hh0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+public final class q3d extends by4 {
+    public static final yn m = new yn("Auth.Api.Identity.SignIn.API", new op5(8), new wn());
+    public final String l;
+
+    public q3d(Context context, k4d k4dVar) {
+        super(context, m, k4dVar, ay4.c);
+        this.l = s3d.a();
+    }
+
+    public static fha f(Intent intent) {
+        Status status = Status.h;
+        if (intent == null) {
+            throw new zn(status);
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.service.IClientNotificationTelemetryService");
-        return queryLocalInterface instanceof a5d ? (a5d) queryLocalInterface : new a5d(iBinder, "com.google.android.gms.common.internal.service.IClientNotificationTelemetryService", (byte) 1);
-    }
-
-    @Override // hh0
-    public final o94[] f() {
-        return wfd.c;
-    }
-
-    @Override // hh0
-    public final int i() {
-        return 253600000;
-    }
-
-    @Override // hh0
-    public final String l() {
-        return "com.google.android.gms.common.internal.service.IClientNotificationTelemetryService";
-    }
-
-    @Override // hh0
-    public final String n() {
-        return "com.google.android.gms.common.telemetry.notification.service.START";
-    }
-
-    @Override // hh0
-    public final boolean p() {
-        return true;
+        Parcelable.Creator<Status> creator = Status.CREATOR;
+        byte[] byteArrayExtra = intent.getByteArrayExtra("status");
+        Status status2 = (Status) (byteArrayExtra == null ? null : kte.a(byteArrayExtra, creator));
+        if (status2 == null) {
+            throw new zn(Status.r);
+        }
+        if (!status2.b()) {
+            throw new zn(status2);
+        }
+        Parcelable.Creator<fha> creator2 = fha.CREATOR;
+        byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
+        fha fhaVar = (fha) (byteArrayExtra2 != null ? kte.a(byteArrayExtra2, creator2) : null);
+        if (fhaVar != null) {
+            return fhaVar;
+        }
+        throw new zn(status);
     }
 }

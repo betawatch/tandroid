@@ -1,173 +1,154 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.Locale;
-import org.telegram.messenger.beta.R;
+import android.location.Location;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class r4d {
-    public static final cka a = new cka(0);
-    public static Locale b;
+public final class r4d extends dzc {
+    public final /* synthetic */ byte b = 3;
+    public final /* synthetic */ Object c;
 
-    public static String a(Context context, int i) {
-        Resources resources = context.getResources();
-        switch (i) {
-            case 1:
-                return resources.getString(R.string.common_google_play_services_install_title);
-            case 2:
-                return resources.getString(R.string.common_google_play_services_update_title);
-            case 3:
-                return resources.getString(R.string.common_google_play_services_enable_title);
-            case 4:
-            case 6:
-            case 18:
-                return null;
-            case 5:
-                Log.e("GoogleApiAvailability", "An invalid account was specified when connecting. Please provide a valid account.");
-                return f(context, "common_google_play_services_invalid_account_title");
-            case 7:
-                Log.e("GoogleApiAvailability", "Network error occurred. Please retry request later.");
-                return f(context, "common_google_play_services_network_error_title");
-            case 8:
-                Log.e("GoogleApiAvailability", "Internal error occurred. Please see logs for detailed information");
-                return null;
-            case 9:
-                Log.e("GoogleApiAvailability", "Google Play services is invalid. Cannot recover.");
-                return null;
-            case 10:
-                Log.e("GoogleApiAvailability", "Developer error occurred. Please see logs for detailed information");
-                return null;
-            case 11:
-                Log.e("GoogleApiAvailability", "The application is not licensed to the user.");
-                return null;
-            case 12:
-            case 13:
-            case 14:
-            case 15:
-            case 19:
-            default:
-                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 22);
-                sb.append("Unexpected error code ");
-                sb.append(i);
-                Log.e("GoogleApiAvailability", sb.toString());
-                return null;
-            case 16:
-                Log.e("GoogleApiAvailability", "One of the API components you attempted to connect to is not available.");
-                return null;
-            case 17:
-                Log.e("GoogleApiAvailability", "The specified account could not be signed in.");
-                return f(context, "common_google_play_services_sign_in_failed_title");
-            case 20:
-                Log.e("GoogleApiAvailability", "The current user profile is restricted and could not use authenticated features.");
-                return f(context, "common_google_play_services_restricted_profile_title");
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(kx3 kx3Var) {
+        super("com.google.android.gms.maps.internal.IOnMapLoadedCallback", (byte) 9);
+        this.c = kx3Var;
     }
 
-    public static String b(Context context, int i) {
-        Resources resources = context.getResources();
-        String d = d(context);
-        if (i == 1) {
-            return resources.getString(R.string.common_google_play_services_install_text, d);
-        }
-        if (i == 2) {
-            return nfe.a(context) ? resources.getString(R.string.common_google_play_services_wear_update_text) : resources.getString(R.string.common_google_play_services_update_text, d);
-        }
-        if (i == 3) {
-            return resources.getString(R.string.common_google_play_services_enable_text, d);
-        }
-        if (i == 5) {
-            return e(context, "common_google_play_services_invalid_account_text", d);
-        }
-        if (i == 7) {
-            return e(context, "common_google_play_services_network_error_text", d);
-        }
-        if (i == 9) {
-            return resources.getString(R.string.common_google_play_services_unsupported_text, d);
-        }
-        if (i == 20) {
-            return e(context, "common_google_play_services_restricted_profile_text", d);
-        }
-        switch (i) {
-            case 16:
-                return e(context, "common_google_play_services_api_unavailable_text", d);
-            case 17:
-                return e(context, "common_google_play_services_sign_in_failed_text", d);
-            case 18:
-                return resources.getString(R.string.common_google_play_services_updating_text, d);
-            default:
-                return resources.getString(R.string.common_google_play_services_unknown_issue, d);
-        }
-    }
-
-    public static String c(Context context, int i) {
-        Resources resources = context.getResources();
-        return i != 1 ? i != 2 ? i != 3 ? resources.getString(android.R.string.ok) : resources.getString(R.string.common_google_play_services_enable_button) : resources.getString(R.string.common_google_play_services_update_button) : resources.getString(R.string.common_google_play_services_install_button);
-    }
-
-    public static String d(Context context) {
-        String packageName = context.getPackageName();
-        try {
-            Context context2 = s0d.a(context).a;
-            return context2.getPackageManager().getApplicationLabel(context2.getPackageManager().getApplicationInfo(packageName, 0)).toString();
-        } catch (PackageManager.NameNotFoundException | NullPointerException unused) {
-            String str = context.getApplicationInfo().name;
-            return TextUtils.isEmpty(str) ? packageName : str;
-        }
-    }
-
-    public static String e(Context context, String str, String str2) {
-        Resources resources = context.getResources();
-        String f = f(context, str);
-        if (f == null) {
-            f = resources.getString(R.string.common_google_play_services_unknown_issue);
-        }
-        return String.format(resources.getConfiguration().locale, f, str2);
-    }
-
-    public static String f(Context context, String str) {
-        Resources resources;
-        cka ckaVar = a;
-        synchronized (ckaVar) {
-            Locale locale = uvd.a(context.getResources().getConfiguration()).a.get(0);
-            if (!locale.equals(b)) {
-                ckaVar.clear();
-                b = locale;
-            }
-            String str2 = (String) ckaVar.get(str);
-            if (str2 != null) {
-                return str2;
-            }
-            int i = x05.e;
-            try {
-                resources = context.getPackageManager().getResourcesForApplication("com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException unused) {
-                resources = null;
-            }
-            if (resources != null) {
-                int identifier = resources.getIdentifier(str, "string", "com.google.android.gms");
-                if (identifier == 0) {
-                    StringBuilder sb = new StringBuilder(str.length() + 18);
-                    sb.append("Missing resource: ");
-                    sb.append(str);
-                    Log.w("GoogleApiAvailability", sb.toString());
-                } else {
-                    String string = resources.getString(identifier);
-                    if (!TextUtils.isEmpty(string)) {
-                        ckaVar.put(str, string);
-                        return string;
+    @Override // dzc
+    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
+        byte b = this.b;
+        i5d i5dVar = null;
+        a6e a6eVar = null;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                if (i == 1) {
+                    IBinder readStrongBinder = parcel.readStrongBinder();
+                    if (readStrongBinder != null) {
+                        IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IMarkerDelegate");
+                        i5dVar = queryLocalInterface instanceof i5d ? (i5d) queryLocalInterface : new rhf(readStrongBinder, "com.google.android.gms.maps.model.internal.IMarkerDelegate", (byte) 6);
                     }
-                    StringBuilder sb2 = new StringBuilder(str.length() + 20);
-                    sb2.append("Got empty resource: ");
-                    sb2.append(str);
-                    Log.w("GoogleApiAvailability", sb2.toString());
+                    sgd.a(parcel);
+                    yi6 yi6Var = new yi6(i5dVar);
+                    HashMap hashMap = ((ty4) ((ry4) obj).b).b;
+                    if (((sy4) hashMap.get(yi6Var)) == null) {
+                        hashMap.put(yi6Var, new sy4(yi6Var));
+                    }
+                    parcel2.writeNoException();
+                    parcel2.writeInt(1);
+                    break;
                 }
-            }
-            return null;
+                break;
+            case 1:
+                if (i == 1) {
+                    IBinder readStrongBinder2 = parcel.readStrongBinder();
+                    if (readStrongBinder2 != null) {
+                        IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("com.google.android.gms.maps.internal.IGoogleMapDelegate");
+                        a6eVar = queryLocalInterface2 instanceof a6e ? (a6e) queryLocalInterface2 : new a6e(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", (byte) 6);
+                    }
+                    sgd.a(parcel);
+                    vy4 vy4Var = (vy4) obj;
+                    wk4 wk4Var = new wk4(a6eVar);
+                    gl2 gl2Var = vy4Var.a;
+                    vs2 vs2Var = vy4Var.b;
+                    ty4 ty4Var = new ty4();
+                    ty4Var.b = new HashMap();
+                    ty4Var.c = new HashMap();
+                    ty4Var.a = wk4Var;
+                    vs2Var.accept(ty4Var);
+                    gl2Var.n((st) gl2Var.b);
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 2:
+                if (i == 1) {
+                    yi5 T = bo7.T(parcel.readStrongBinder());
+                    sgd.a(parcel);
+                    ((x32) ((ry4) obj).b).accept((Location) bo7.U(T));
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 3:
+                if (i == 1) {
+                    ((s32) ((kx3) obj).b).run();
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 4:
+                if (i == 1) {
+                    int readInt = parcel.readInt();
+                    sgd.a(parcel);
+                    zh5 zh5Var = (zh5) ((ry4) obj).b;
+                    int i2 = 2;
+                    if (readInt != 2) {
+                        i2 = 3;
+                        if (readInt != 3) {
+                            i2 = 1;
+                        }
+                    }
+                    zh5Var.c(i2);
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            case 5:
+                if (i == 1) {
+                    ((t96) ((ry4) obj).b).run();
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
+            default:
+                if (i == 1) {
+                    ((s32) ((ry4) obj).b).run();
+                    parcel2.writeNoException();
+                    break;
+                }
+                break;
         }
+        return true;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(ry4 ry4Var) {
+        super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", (byte) 9);
+        this.c = ry4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(ry4 ry4Var, byte b) {
+        super("com.google.android.gms.maps.internal.IOnMarkerClickListener", (byte) 9);
+        this.c = ry4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(ry4 ry4Var, char c) {
+        super("com.google.android.gms.maps.internal.IOnCameraMoveStartedListener", (byte) 9);
+        this.c = ry4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(ry4 ry4Var, int i) {
+        super("com.google.android.gms.maps.internal.IOnCameraMoveListener", (byte) 9);
+        this.c = ry4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(ry4 ry4Var, short s) {
+        super("com.google.android.gms.maps.internal.IOnCameraIdleListener", (byte) 9);
+        this.c = ry4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r4d(vy4 vy4Var) {
+        super("com.google.android.gms.maps.internal.IOnMapReadyCallback", (byte) 9);
+        this.c = vy4Var;
     }
 }

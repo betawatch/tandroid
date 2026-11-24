@@ -1,45 +1,76 @@
 // default package
 
-import org.telegram.ui.Components.l;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class vz1 implements Runnable {
+public final class vz1 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ l b;
-    public final /* synthetic */ hg5 c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ c02 c;
 
-    public /* synthetic */ vz1(l lVar, hg5 hg5Var, byte b) {
+    public /* synthetic */ vz1(c02 c02Var, boolean z, byte b) {
         this.a = b;
-        this.b = lVar;
-        this.c = hg5Var;
+        this.c = c02Var;
+        this.b = z;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int L;
         byte b = this.a;
-        hg5 hg5Var = this.c;
-        l lVar = this.b;
+        boolean z = this.b;
+        c02 c02Var = this.c;
         switch (b) {
             case 0:
-                lVar.removeView(hg5Var);
-                if (lVar.b == hg5Var) {
-                    lVar.b = null;
+                x02 x02Var = c02Var.e;
+                if (z) {
+                    x02Var.u3.setVisibility(8);
+                    L = gl.L(36.0f);
+                } else {
+                    x02Var.B3.setVisibility(8);
+                    L = 0;
+                }
+                for (int i = 0; i < x02Var.u2.size(); i++) {
+                    ((s12) x02Var.u2.valueAt(i)).setMeasureOffsetY(L);
+                }
+                if (c02Var.a == animator) {
+                    c02Var.a = null;
                     break;
                 }
-                break;
-            case 1:
-                lVar.removeView(hg5Var);
-                break;
-            case 2:
-                lVar.removeView(hg5Var);
                 break;
             default:
-                lVar.removeView(hg5Var);
-                if (lVar.a == hg5Var) {
-                    lVar.a = null;
+                x02 x02Var2 = c02Var.e;
+                x02Var2.y3 = z;
+                if (!z) {
+                    x02Var2.z3.setVisibility(8);
                     break;
                 }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                x02 x02Var = this.c.e;
+                if (this.b) {
+                    x02Var.B3.setAlpha(0.0f);
+                    x02Var.B3.setVisibility(0);
+                    int L = gl.L(36.0f);
+                    for (int i = 0; i < x02Var.u2.size(); i++) {
+                        ((s12) x02Var.u2.valueAt(i)).setMeasureOffsetY(L);
+                    }
+                    break;
+                } else {
+                    x02Var.u3.setAlpha(0.0f);
+                    x02Var.u3.setVisibility(0);
+                    break;
+                }
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

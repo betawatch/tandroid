@@ -1,42 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import org.telegram.messenger.beta.R;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class s21 extends vk4 {
-    public final /* synthetic */ byte a;
+public enum s21 {
+    d(R.raw.ic_download, 2, "Box", "Arrow"),
+    e(R.raw.ic_save_to_gallery, 0, "Box", "Arrow", "Mask", "Arrow 2", "Splash"),
+    f(R.raw.ic_save_to_music, 2, "Box", "Arrow"),
+    h(R.raw.ic_save_to_gifs, 0, "gif");
 
-    public /* synthetic */ s21(byte b) {
-        this.a = b;
-    }
+    public final int a;
+    public final String[] b;
+    public final byte c;
 
-    @Override // vk4
-    public final float a(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((y21) obj).inOutOffset;
-            case 1:
-                return ((ej6) obj).O;
-            default:
-                return ((ej6) obj).N;
-        }
-    }
-
-    @Override // vk4
-    public final void b(Object obj, float f) {
-        switch (this.a) {
-            case 0:
-                ((y21) obj).setInOutOffset(f);
-                break;
-            case 1:
-                ej6 ej6Var = (ej6) obj;
-                ej6Var.O = f;
-                ej6Var.invalidate();
-                break;
-            default:
-                ej6 ej6Var2 = (ej6) obj;
-                ej6Var2.N = f;
-                ej6Var2.invalidate();
-                break;
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    s21(int i, int i2, String... strArr) {
+        this.a = i;
+        this.c = i2;
+        this.b = strArr;
     }
 }

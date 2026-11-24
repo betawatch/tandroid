@@ -1,85 +1,172 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class x47 implements View.OnClickListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x47 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ na7 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ x47(FrameLayout frameLayout, boolean z, Object obj, Object obj2, Object obj3, byte b) {
+    public /* synthetic */ x47(na7 na7Var, long j, byte b) {
         this.a = b;
-        this.c = frameLayout;
-        this.b = z;
-        this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
+        this.b = na7Var;
+        this.c = j;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        boolean z = this.b;
-        FrameLayout frameLayout = this.c;
-        byte b2 = 0;
+        long j = this.c;
+        na7 na7Var = this.b;
         switch (b) {
             case 0:
-                f57 f57Var = (f57) frameLayout;
-                Context context = (Context) obj3;
-                k57 k57Var = (k57) obj2;
-                k57 k57Var2 = (k57) obj;
-                l57 l57Var = f57Var.d0;
-                o47 o47Var = l57Var.d;
-                if (!z) {
-                    new c41(l57Var, l57Var.G).Q(R.raw.star_premium_2, 36, gm.N2(jb6.M0(2131750515, null), -1, 0, new v47(f57Var, context, b2), null)).j();
+                if (j == 0) {
+                    na7Var.getClass();
                     break;
                 } else {
-                    boolean z2 = o47Var.k;
-                    o47Var.k = !z2;
-                    l57Var.y = false;
-                    if (z2) {
-                        o47Var.l = false;
-                        if (k57Var != null) {
-                            k57Var.a(false, true);
-                        }
-                    }
-                    k57Var2.a(o47Var.k, true);
-                    f57Var.i();
-                    f57Var.l(true);
+                    na7Var.getMessagesStorage().n1(j);
                     break;
                 }
+            case 1:
+                gl.c3(new w67(na7Var, j, tLObject));
+                break;
+            case 2:
+                if (tLObject instanceof TLRPC.TL_channels_channelParticipants) {
+                    na7Var.L3(j, (TLRPC.TL_channels_channelParticipants) tLObject);
+                    break;
+                }
+                break;
+            case 3:
+                if (tL_error == null) {
+                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                }
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 4:
+                if (tL_error == null) {
+                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                }
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 5:
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    na7Var.P3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
+                }
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 6:
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 7:
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages2 = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    na7Var.P3(tL_messages_affectedMessages2.pts, -1, tL_messages_affectedMessages2.pts_count);
+                }
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 8:
+                na7Var.getMessagesStorage().n1(j);
+                break;
+            case 9:
+                if (tL_error == null) {
+                    gl.c3(new w67(na7Var, tLObject, j));
+                    break;
+                }
+                break;
+            case 10:
+                if (j == 0) {
+                    na7Var.getClass();
+                    break;
+                } else {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+            case 11:
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 12:
+                if (tL_error == null) {
+                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                }
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 13:
+                if (tLObject != null) {
+                    TLRPC.TL_chatOnlines tL_chatOnlines = (TLRPC.TL_chatOnlines) tLObject;
+                    na7 na7Var2 = this.b;
+                    ad7 messagesStorage = na7Var2.getMessagesStorage();
+                    int i = tL_chatOnlines.onlines;
+                    co3 co3Var = messagesStorage.a;
+                    long j2 = this.c;
+                    co3Var.c(new bb7(messagesStorage, i, j2, (byte) 7));
+                    gl.c3(new go6((Object) na7Var2, j2, (Object) tL_chatOnlines, (byte) 2));
+                    break;
+                }
+                break;
+            case 14:
+                if (tL_error == null) {
+                    na7Var.getMessagesController().R3((TLRPC.Updates) tLObject, false);
+                    gl.d3(new r57(na7Var, j, (byte) 20), 1000L);
+                    break;
+                }
+                break;
+            case 15:
+                if (tL_error != null) {
+                    na7Var.getClass();
+                    break;
+                } else {
+                    na7Var.getMessagesController().R3((TLRPC.Updates) tLObject, false);
+                    gl.d3(new r57(na7Var, j, (byte) 18), 1000L);
+                    break;
+                }
+            case 16:
+                if (j != 0) {
+                    na7Var.getMessagesStorage().n1(j);
+                }
+                if (tLObject != null) {
+                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
             default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                bu5 bu5Var = (bu5) obj;
-                lea leaVar = ((rs8) frameLayout).a;
-                if (z) {
-                    leaVar.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    c41.b0(leaVar.a).R(savedStarGift.gift.getDocument(), gm.S2(jb6.a0(null, null, 2131749970, wsa.t1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
+                    if (tL_error != null && tL_error.code == 400) {
+                        na7Var.Y2(0, -j, true);
+                        break;
+                    }
                 } else {
-                    yua yuaVar = leaVar.e;
-                    int i = tL_starGiftCollection.collection_id;
-                    yuaVar.getClass();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(savedStarGift);
-                    yuaVar.a(i, arrayList);
-                    c41.b0(leaVar.a).R(savedStarGift.gift.getDocument(), gm.S2(jb6.a0(null, null, 2131750326, wsa.t1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    long j3 = -j;
+                    if (na7Var.L0(j3) == null) {
+                        na7Var.Y2(0, j3, true);
+                        break;
+                    }
                 }
-                bu5Var.u();
-                leaVar.o();
                 break;
         }
     }

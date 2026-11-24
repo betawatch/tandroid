@@ -1,41 +1,49 @@
 // default package
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.Arrays;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class the implements Comparable {
-    public static int c(byte b) {
-        return (b >> 5) & 7;
+public final class the extends b4 {
+    public static final Parcelable.Creator<the> CREATOR = new rhe((byte) 11);
+    public final byte a;
+    public final byte b;
+    public final String c;
+
+    public the(byte b, byte b2, String str) {
+        this.a = b;
+        this.b = b2;
+        this.c = str;
     }
 
-    public static the d(byte... bArr) {
-        bArr.getClass();
-        iie iieVar = new iie(new ByteArrayInputStream(Arrays.copyOf(bArr, bArr.length)));
-        try {
-            return m4f.a(iieVar);
-        } finally {
-            try {
-                iieVar.close();
-            } catch (IOException unused) {
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    public int a() {
-        return 0;
-    }
-
-    public final the b(Class cls) {
-        if (cls.isInstance(this)) {
-            return (the) cls.cast(this);
+        if (obj == null || the.class != obj.getClass()) {
+            return false;
         }
-        throw new jhe(td4.r("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
+        the theVar = (the) obj;
+        return this.a == theVar.a && this.b == theVar.b && this.c.equals(theVar.c);
     }
 
-    public int zza() {
-        return c(Byte.MIN_VALUE);
+    public final int hashCode() {
+        return this.c.hashCode() + ((((this.a + 31) * 31) + this.b) * 31);
+    }
+
+    public final String toString() {
+        return b00.j(ir2.p("AmsEntityUpdateParcelable{, mEntityId=", this.a, ", mAttributeId=", this.b, ", mValue='"), this.c, "'}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        jte.q(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        jte.l(parcel, 4, this.c);
+        jte.s(parcel, r);
     }
 }

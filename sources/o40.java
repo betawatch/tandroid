@@ -1,6 +1,7 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface o40 {
+public abstract class o40 {
+    public static final yn a = new yn("Auth.GOOGLE_SIGN_IN_API", new op5((byte) 9), new wn());
 }

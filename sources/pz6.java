@@ -1,65 +1,46 @@
 // default package
 
-import android.os.Bundle;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.webrtc.JniCommon;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pz6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ long b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class pz6 {
+    public final /* synthetic */ d a;
+    public final /* synthetic */ uz6 b;
 
-    public /* synthetic */ pz6(byte b, long j) {
-        this.a = b;
-        this.b = j;
+    public pz6(uz6 uz6Var, d dVar) {
+        this.b = uz6Var;
+        this.a = dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.b;
-        switch (b) {
-            case 0:
-                JniCommon.nativeReleaseRef(j);
-                break;
-            case 1:
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    S.presentFragment(yv1.ga(j));
-                    break;
-                }
-                break;
-            case 2:
-                d S2 = LaunchActivity.S();
-                if (S2 != null) {
-                    S2.presentFragment(yv1.ga(j));
-                    break;
-                }
-                break;
-            case 3:
-                jd8.d.remove(Long.valueOf(j));
-                break;
-            case 4:
-                d S3 = LaunchActivity.S();
-                if (S3 != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", j);
-                    bundle.putBoolean("my_profile", true);
-                    bundle.putBoolean("open_gifts", true);
-                    S3.presentFragment(new ProfileActivity(bundle, null));
-                    break;
-                }
-                break;
-            default:
-                d S4 = LaunchActivity.S();
-                if (S4 != null) {
-                    S4.presentFragment(yv1.ga(j));
-                    break;
-                }
-                break;
+    public final void a(boolean z) {
+        uz6 uz6Var = this.b;
+        kz6 kz6Var = uz6Var.f;
+        if (uz6Var.getNeededLayoutManager() != uz6Var.getCurrentLayoutManager() && uz6Var.a()) {
+            if (kz6Var.N0 > 0) {
+                uz6Var.O = true;
+                uz6Var.o(false);
+                return;
+            }
+            uz6Var.b.setLayoutManager(uz6Var.getNeededLayoutManager());
         }
+        if (z && !uz6Var.a()) {
+            z = false;
+        }
+        uz6Var.o((!z || kz6Var.K() > 0) ? z : false);
+    }
+
+    public final void b(boolean z) {
+        this.b.l(z);
+    }
+
+    public final void c() {
+        uz6 uz6Var = this.b;
+        vl6 vl6Var = uz6Var.K;
+        if (uz6Var.b.getLayoutManager() == uz6Var.d || !uz6Var.J) {
+            return;
+        }
+        gl.r(vl6Var);
+        gl.d3(vl6Var, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

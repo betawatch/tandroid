@@ -4,13 +4,13 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class Lane {
     private final List<LaneDirection> mDirections;
 
     public Lane(List<LaneDirection> list) {
-        this.mDirections = ttd.a(list);
+        this.mDirections = qrd.a(list);
     }
 
     public boolean equals(Object obj) {
@@ -35,7 +35,7 @@ public final class Lane {
     public String toString() {
         StringBuilder sb = new StringBuilder("[direction count: ");
         List<LaneDirection> list = this.mDirections;
-        return hg9.k(sb, list != null ? list.size() : 0, "]");
+        return de9.l(sb, list != null ? list.size() : 0, "]");
     }
 
     private Lane() {

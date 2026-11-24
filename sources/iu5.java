@@ -1,92 +1,34 @@
 // default package
 
-import java.util.Iterator;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class iu5 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ju5 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class iu5 extends v7c {
-    public int b;
-    public Object c;
-    public final /* synthetic */ byte d;
-    public final Iterator e;
-    public final /* synthetic */ Object f;
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public iu5(m9a m9aVar) {
-        this();
-        this.d = (byte) 1;
-        this.f = m9aVar;
-        this.e = m9aVar.a.iterator();
+    public /* synthetic */ iu5(ju5 ju5Var, boolean z, boolean z2, byte b) {
+        this.a = b;
+        this.b = ju5Var;
+        this.c = z;
+        this.d = z2;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        Object next;
-        jte.p(this.b != 4);
-        int F = wi8.F(this.b);
-        if (F == 0) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.d;
+        boolean z2 = this.c;
+        ju5 ju5Var = this.b;
+        switch (b) {
+            case 0:
+                gl.c3(new iu5(ju5Var, z2, z, (byte) 1));
+                break;
+            default:
+                ju5Var.setJoinRequest(z2);
+                ju5Var.setJoinToSend(z);
+                break;
         }
-        if (F != 2) {
-            this.b = 4;
-            byte b = this.d;
-            Object obj = null;
-            Object obj2 = this.f;
-            Iterator it = this.e;
-            switch (b) {
-                case 0:
-                    while (it.hasNext()) {
-                        next = it.next();
-                        if (((di8) obj2).apply(next)) {
-                            obj = next;
-                            break;
-                        }
-                    }
-                    this.b = 3;
-                    break;
-                default:
-                    while (it.hasNext()) {
-                        next = it.next();
-                        if (((m9a) obj2).b.contains(next)) {
-                            obj = next;
-                            break;
-                        }
-                    }
-                    this.b = 3;
-                    break;
-            }
-            this.c = obj;
-            if (this.b != 3) {
-                this.b = 1;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!hasNext()) {
-            u36.g();
-            return null;
-        }
-        this.b = 2;
-        Object obj = this.c;
-        this.c = null;
-        return obj;
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public iu5(Iterator it, di8 di8Var) {
-        this();
-        this.d = (byte) 0;
-        this.e = it;
-        this.f = di8Var;
-    }
-
-    public iu5() {
-        super((byte) 0);
-        this.b = 2;
     }
 }

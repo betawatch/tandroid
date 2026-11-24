@@ -1,22 +1,31 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class k00 {
+    public static final k00 d = new j00().a();
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class k00 extends View {
-    public final /* synthetic */ float a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k00(Context context, float f) {
-        super(context);
-        this.a = f;
+    public k00(j00 j00Var) {
+        this.a = j00Var.a;
+        this.b = j00Var.b;
+        this.c = j00Var.c;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i) * this.a), TLObject.FLAG_30), i2);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || k00.class != obj.getClass()) {
+            return false;
+        }
+        k00 k00Var = (k00) obj;
+        return this.a == k00Var.a && this.b == k00Var.b && this.c == k00Var.c;
+    }
+
+    public final int hashCode() {
+        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
     }
 }

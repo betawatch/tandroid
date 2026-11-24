@@ -1,21 +1,62 @@
 // default package
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface r3d {
-    void A1(ot2 ot2Var, zo zoVar, boolean z);
+public final class r3d extends xx4 {
+    public final Bundle F;
 
-    void I0(int i);
+    public r3d(ey4 ey4Var, fy4 fy4Var, ntb ntbVar, Context context, Looper looper) {
+        super(kk7.o3, ey4Var, fy4Var, ntbVar, context, looper);
+        this.F = new Bundle();
+    }
 
-    void J(Bundle bundle);
+    @Override // gg0
+    public final IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.identity.internal.ISignInService");
+        return queryLocalInterface instanceof l4d ? (l4d) queryLocalInterface : new l4d(iBinder, "com.google.android.gms.auth.api.identity.internal.ISignInService", (byte) 2);
+    }
 
-    void K1();
+    @Override // gg0
+    public final f84[] f() {
+        return aed.b;
+    }
 
-    void a();
+    @Override // gg0
+    public final Bundle h() {
+        return this.F;
+    }
 
-    jh0 e(jh0 jh0Var);
+    @Override // gg0
+    public final int i() {
+        return 17895000;
+    }
 
-    boolean p1();
+    @Override // gg0
+    public final String l() {
+        return "com.google.android.gms.auth.api.identity.internal.ISignInService";
+    }
+
+    @Override // gg0
+    public final String n() {
+        return "com.google.android.gms.auth.api.identity.service.signin.START";
+    }
+
+    @Override // gg0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // gg0
+    public final boolean x() {
+        return true;
+    }
 }

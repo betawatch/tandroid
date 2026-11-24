@@ -7,7 +7,7 @@ import android.os.Handler;
 import java.lang.reflect.Method;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m9 implements Runnable {
     public final /* synthetic */ byte a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class m9 implements Runnable {
                                     Application application = activity.getApplication();
                                     o9 o9Var = new o9(activity);
                                     application.registerActivityLifecycleCallbacks(o9Var);
-                                    handler.post(new tnd(o9Var, obj2, (byte) 1));
+                                    handler.post(new rld(o9Var, obj2, (byte) 1));
                                     try {
                                         if (i == 26 || i == 27) {
                                             Boolean bool = Boolean.FALSE;
@@ -45,10 +45,10 @@ public final /* synthetic */ class m9 implements Runnable {
                                         } else {
                                             activity.recreate();
                                         }
-                                        handler.post(new us4(application, o9Var, (byte) 2));
+                                        handler.post(new tq4(application, o9Var, (byte) 2));
                                         break;
                                     } catch (Throwable th) {
-                                        handler.post(new us4(application, o9Var, (byte) 2));
+                                        handler.post(new tq4(application, o9Var, (byte) 2));
                                         throw th;
                                     }
                                 }
@@ -64,20 +64,20 @@ public final /* synthetic */ class m9 implements Runnable {
                 }
                 break;
             case 1:
-                int i2 = ChatActivityEnterView.z7;
-                gm.K3(activity);
+                int i2 = ChatActivityEnterView.r7;
+                gl.K3(activity);
                 break;
             case 2:
-                l11.u(activity, "https://promote.telegram.org/guidelines");
+                d01.t(activity, "https://promote.telegram.org/guidelines");
                 break;
             case 3:
-                l11.u(activity, "https://promote.telegram.org/guidelines");
+                d01.t(activity, "https://promote.telegram.org/guidelines");
                 break;
             case 4:
-                l11.u(activity, "https://promote.telegram.org/guidelines");
+                d01.t(activity, "https://promote.telegram.org/guidelines");
                 break;
             default:
-                l11.u(activity, jb6.M0(2131744655, null));
+                d01.t(activity, k96.M0(2131744729, null));
                 break;
         }
     }

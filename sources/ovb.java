@@ -1,102 +1,265 @@
 // default package
 
-import android.opengl.Matrix;
-import j$.util.DesugarCollections;
-import java.util.Collections;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ovb implements lv8 {
-    public Object a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e;
-    public Object f;
-    public Object h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class ovb extends rl0 {
+    public static final /* synthetic */ int o3 = 0;
+    public boolean k3;
+    public boolean l3;
+    public float m3;
+    public final /* synthetic */ qvb n3;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v3, types: [java.util.Map] */
-    public ovb(Set set, qt qtVar, String str, String str2, ija ijaVar) {
-        Set unmodifiableSet = set == null ? Collections.EMPTY_SET : DesugarCollections.unmodifiableSet(set);
-        this.a = unmodifiableSet;
-        qt qtVar2 = qtVar == null ? Collections.EMPTY_MAP : qtVar;
-        this.c = qtVar2;
-        this.d = str;
-        this.e = str2;
-        this.f = ijaVar == null ? ija.a : ijaVar;
-        HashSet hashSet = new HashSet(unmodifiableSet);
-        Iterator it = qtVar2.values().iterator();
-        if (it.hasNext()) {
-            throw kt6.l(it);
-        }
-        this.b = DesugarCollections.unmodifiableSet(hashSet);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ovb(qvb qvbVar, Context context) {
+        super(context, null);
+        this.n3 = qvbVar;
+        this.k3 = true;
+        this.g1 = true;
+        this.i3 = gl.L(200.0f);
     }
 
-    public final void a(int i, int i2, float f, float f2, boolean z, float[] fArr) {
-        float f3;
-        float f4;
-        float[] fArr2 = (float[]) this.d;
-        float[] fArr3 = (float[]) this.c;
-        float[] fArr4 = (float[]) this.b;
-        float[] fArr5 = (float[]) this.a;
-        float f5 = (i - i2) / 0.3902439f;
-        if (f5 <= 0.0f || f5 > i) {
-            f5 = i;
-        }
-        Matrix.perspectiveM(fArr5, 0, (float) Math.toDegrees(Math.atan(0.09100712590841677d * (i2 / Math.max(1.0f, f5 / 1.64f))) * 2.0d), i / Math.max(1, i2), 0.1f, 20.0f);
-        Matrix.setLookAtM(fArr4, 0, 0.0f, 0.0f, 6.7f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-        Matrix.setIdentityM(fArr3, 0);
-        Matrix.rotateM(fArr3, 0, -f, 1.0f, 0.0f, 0.0f);
-        Matrix.rotateM(fArr3, 0, -f2, 0.0f, 1.0f, 0.0f);
-        Matrix.rotateM(fArr3, 0, 90.0f, 0.0f, 1.0f, 0.0f);
-        Matrix.translateM(fArr3, 0, -0.02f, 0.0f, 0.0f);
-        Matrix.scaleM(fArr3, 0, 0.965f, 0.965f, 0.965f);
-        Matrix.multiplyMM(fArr2, 0, fArr4, 0, fArr3, 0);
-        Matrix.multiplyMM((float[]) this.e, 0, fArr5, 0, fArr2, 0);
+    public final void B1(boolean z, ue3 ue3Var) {
+        byte b;
+        qvb qvbVar = this.n3;
+        qvbVar.F = z;
         if (z) {
-            f3 = 0.0125f;
-            f4 = 1.0f;
-        } else {
-            f3 = -0.0125f;
-            f4 = -1.0f;
+            qvbVar.G.g1(0, 0);
+            b = qvbVar.F ? (byte) 0 : (byte) 2;
+            qvbVar.E = b;
+            dh3 dh3Var = qvbVar.x;
+            if (dh3Var != null) {
+                dh3Var.X = b != 0;
+            }
+            if (ue3Var != null) {
+                ue3Var.d0();
+                ue3Var.invalidate();
+            }
+        } else if (ue3Var != null) {
+            qvbVar.G.g1(1, 0);
+            b = qvbVar.F ? (byte) 0 : (byte) 2;
+            qvbVar.E = b;
+            dh3 dh3Var2 = qvbVar.x;
+            if (dh3Var2 != null) {
+                dh3Var2.X = b != 0;
+            }
         }
-        float f6 = -f4;
-        b(f3, 0.618561f, f4, i, i2, fArr, 0);
-        b(f3, 0.618561f, f6, i, i2, fArr, 2);
-        b(f3, -0.593561f, f6, i, i2, fArr, 4);
-        b(f3, -0.593561f, f4, i, i2, fArr, 6);
+        gvb gvbVar = qvbVar.F0;
+        if (gvbVar != null) {
+            gvbVar.forceLayout();
+        }
     }
 
-    public final float b(float f, float f2, float f3, int i, int i2, float[] fArr, int i3) {
-        float[] fArr2 = (float[]) this.f;
-        fArr2[0] = f;
-        fArr2[1] = f2;
-        fArr2[2] = f3;
-        fArr2[3] = 1.0f;
-        float[] fArr3 = (float[]) this.h;
-        Matrix.multiplyMV(fArr3, 0, (float[]) this.e, 0, fArr2, 0);
-        float f4 = 1.0f / fArr3[3];
-        fArr[i3] = b10.w(fArr3[0], f4, 0.5f, 0.5f) * i;
-        fArr[i3 + 1] = aq1.v(fArr3[1], f4, 0.5f, 0.5f) * i2;
-        return fArr3[2] * f4;
+    @Override // o39
+    public final boolean G0(View view) {
+        return !(view instanceof ld5) || view.isClickable();
     }
 
-    @Override // mv8
-    public final Object get() {
-        return new hia((l9a) ((lv8) this.a).get(), (j8a) ((lv8) this.b).get(), (i8a) ((lv8) this.c).get(), (tpb) ((lv8) this.d).get(), (h83) ((lv8) this.e).get(), (zm8) ((lv8) this.f).get(), (cy2) ((lq5) this.h).a);
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i, layoutParams);
+        view.setTranslationY(this.m3);
+        view.setTranslationX(0.0f);
+        view.setAlpha(1.0f);
     }
 
-    public ovb() {
-        this.a = new float[16];
-        this.b = new float[16];
-        this.c = new float[16];
-        this.d = new float[16];
-        this.e = new float[16];
-        this.f = new float[4];
-        this.h = new float[4];
+    @Override // rl0, o39, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        qvb qvbVar = this.n3;
+        if (qvbVar.d1 != null) {
+            canvas.save();
+            canvas.translate(qvbVar.d1.getLeft(), qvbVar.d1.getY());
+            qvbVar.d1.draw(canvas);
+            canvas.restore();
+        }
+        super.dispatchDraw(canvas);
+        if (getItemAnimator() != null) {
+            getItemAnimator().k();
+        }
+    }
+
+    @Override // rl0, o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        if (getItemAnimator() != null) {
+            getItemAnimator().k();
+        }
+        if (this.n3.d1 == view) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        qvb qvbVar = this.n3;
+        if (qvbVar.x != null && this.m3 != 0.0f) {
+            int paddingTop = getPaddingTop();
+            if (paddingTop != 0) {
+                canvas.save();
+                canvas.translate(0.0f, paddingTop);
+            }
+            qvbVar.x.c(canvas, true);
+            if (paddingTop != 0) {
+                canvas.restore();
+            }
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        a aVar;
+        if (!this.W1) {
+            HashSet hashSet = qvb.s1;
+            qvb qvbVar = this.n3;
+            if (qvbVar.getParentLayout() == null || !((ActionBarLayout) qvbVar.getParentLayout()).w()) {
+                if (motionEvent.getAction() == 0) {
+                    aVar = ((d) qvbVar).actionBar;
+                    aVar.getClass();
+                    w39 adapter = getAdapter();
+                    if (qvbVar.c != adapter.b()) {
+                        this.l3 = true;
+                        adapter.f();
+                        this.l3 = false;
+                    }
+                }
+                return super.onInterceptTouchEvent(motionEvent);
+            }
+        }
+        return false;
+    }
+
+    @Override // rl0, o39, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        a aVar;
+        if (this.k3) {
+            qvb qvbVar = this.n3;
+            if (qvbVar.getMessagesController().R1) {
+                if (qvbVar.y > 0) {
+                    this.l3 = true;
+                    t26 t26Var = (t26) getLayoutManager();
+                    aVar = ((d) qvbVar).actionBar;
+                    t26Var.g1(1, (int) aVar.getTranslationY());
+                    this.l3 = false;
+                }
+                this.k3 = false;
+            }
+        }
+        super.onMeasure(i, i2);
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        t26 t26Var;
+        int K0;
+        if (!this.W1) {
+            HashSet hashSet = qvb.s1;
+            qvb qvbVar = this.n3;
+            if (qvbVar.getParentLayout() == null || !((ActionBarLayout) qvbVar.getParentLayout()).w()) {
+                int action = motionEvent.getAction();
+                if (action == 0) {
+                    setOverScrollMode(0);
+                }
+                if (action == 1 || action == 3) {
+                    vub vubVar = qvbVar.P;
+                    if (vubVar.E != 0 && qvbVar.Q.e && vubVar.i(null, 4) != 0) {
+                        qvbVar.Q.getClass();
+                    }
+                }
+                boolean onTouchEvent = super.onTouchEvent(motionEvent);
+                if ((action == 1 || action == 3) && qvbVar.E == 2 && qvbVar.y > 0 && (K0 = (t26Var = (t26) getLayoutManager()).K0()) == 0) {
+                    int paddingTop = getPaddingTop();
+                    View m = t26Var.m(K0);
+                    int L = (int) (gl.L(gba.l1 ? 78.0f : 72.0f) * 0.85f);
+                    int measuredHeight = m.getMeasuredHeight() + (m.getTop() - paddingTop);
+                    long currentTimeMillis = System.currentTimeMillis() - qvbVar.Z;
+                    if (measuredHeight < L || currentTimeMillis < 200) {
+                        x0(0, measuredHeight, s33.h);
+                        qvbVar.E = (byte) 2;
+                    } else if (qvbVar.E != 1) {
+                        if (this.m3 == 0.0f) {
+                            x0(0, m.getTop() - paddingTop, s33.h);
+                        }
+                        if (!qvbVar.a0) {
+                            qvbVar.a0 = true;
+                            try {
+                                performHapticFeedback(3, 2);
+                            } catch (Exception unused) {
+                            }
+                            dh3 dh3Var = qvbVar.x;
+                            if (dh3Var != null) {
+                                dh3Var.a(true);
+                            }
+                        }
+                        ((ue3) m).j0();
+                        qvbVar.E = (byte) 1;
+                    }
+                    float f = this.m3;
+                    if (f != 0.0f) {
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(f, 0.0f);
+                        ofFloat.addUpdateListener(new gja(this, (byte) 29));
+                        ofFloat.setDuration(Math.max(100L, (long) de9.x(this.m3, gl.L(72.0f), 120.0f, 350.0f)));
+                        ofFloat.setInterpolator(s33.h);
+                        setScrollEnabled(false);
+                        ofFloat.addListener(new iab(this, (byte) 6));
+                        ofFloat.start();
+                    }
+                }
+                return onTouchEvent;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        super.removeView(view);
+        view.setTranslationY(0.0f);
+        view.setTranslationX(0.0f);
+        view.setAlpha(1.0f);
+    }
+
+    @Override // rl0, o39, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.l3) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView
+    public final void setAdapter(w39 w39Var) {
+        super.setAdapter(w39Var);
+        this.k3 = true;
+    }
+
+    public final void setViewsOffset(float f) {
+        View m;
+        this.m3 = f;
+        int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            getChildAt(i).setTranslationY(f);
+        }
+        if (this.D1 != -1 && (m = getLayoutManager().m(this.D1)) != null) {
+            int left = m.getLeft();
+            int top = (int) (m.getTop() + f);
+            int right = m.getRight();
+            int bottom = (int) (m.getBottom() + f);
+            Rect rect = this.F1;
+            rect.set(left, top, right, bottom);
+            this.C1.setBounds(rect);
+        }
+        invalidate();
     }
 }

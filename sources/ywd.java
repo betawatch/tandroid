@@ -1,18 +1,19 @@
 // default package
 
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface ywd {
-    Object a();
+public final class ywd implements zn7 {
+    public static final ywd a = new ywd();
 
-    void b(Object obj);
+    static {
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
+    }
 
-    void c(Object obj, byte[] bArr, int i, int i2, ucd ucdVar);
-
-    void d(xkd xkdVar, xkd xkdVar2);
-
-    int e(xkd xkdVar);
-
-    boolean f(xkd xkdVar, xkd xkdVar2);
-
-    boolean g(Object obj);
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

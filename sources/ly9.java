@@ -1,27 +1,87 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ly9 extends rz9 {
-    public final /* synthetic */ View R;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique S;
-    public final /* synthetic */ my9 T;
+public final /* synthetic */ class ly9 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ a8 b;
+    public final /* synthetic */ a8 c;
+    public final /* synthetic */ a8 d;
+    public final /* synthetic */ a8 e;
+    public final /* synthetic */ a8 f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ a8 n;
+    public final /* synthetic */ a8 r;
+    public final /* synthetic */ Object s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ly9(my9 my9Var, Context context, lz9 lz9Var, View view, fz9 fz9Var, ylb ylbVar, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(my9Var.e, context, lz9Var, view, fz9Var, ylbVar);
-        this.T = my9Var;
-        this.R = view2;
-        this.S = tL_starGiftUnique;
+    public /* synthetic */ ly9(a8 a8Var, xsa xsaVar, a8 a8Var2, a8 a8Var3, a8 a8Var4, a8 a8Var5, boolean z, a8 a8Var6, a8 a8Var7) {
+        this.b = a8Var;
+        this.s = xsaVar;
+        this.c = a8Var2;
+        this.d = a8Var3;
+        this.e = a8Var4;
+        this.f = a8Var5;
+        this.h = z;
+        this.n = a8Var6;
+        this.r = a8Var7;
     }
 
-    @Override // rz9, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.T.e.Y0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        a8 a8Var = this.r;
+        a8 a8Var2 = this.n;
+        boolean z = this.h;
+        a8 a8Var3 = this.f;
+        a8 a8Var4 = this.e;
+        a8 a8Var5 = this.d;
+        a8 a8Var6 = this.c;
+        Object obj = this.s;
+        a8 a8Var7 = this.b;
+        switch (b) {
+            case 0:
+                xsa xsaVar = ((my9) obj).c.T1;
+                a8Var7.j(k96.M0(xsaVar.e ? 2131750181 : 2131750182, null), xsaVar.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                a8Var6.setChecked(TLObject.hasFlag(xsaVar.g, 1));
+                a8Var5.setChecked(TLObject.hasFlag(xsaVar.g, 2));
+                a8Var4.setChecked(TLObject.hasFlag(xsaVar.g, 4));
+                a8Var3.setChecked(TLObject.hasFlag(xsaVar.g, 8));
+                if (z) {
+                    a8Var2.setChecked(TLObject.hasFlag(xsaVar.g, 256));
+                    a8Var.setChecked(TLObject.hasFlag(xsaVar.g, 512));
+                    break;
+                }
+                break;
+            default:
+                xsa xsaVar2 = (xsa) obj;
+                if (a8Var7 != null) {
+                    a8Var7.j(k96.M0(xsaVar2.e ? 2131750181 : 2131750182, null), xsaVar2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                }
+                a8Var6.setChecked(TLObject.hasFlag(xsaVar2.g, 1));
+                a8Var5.setChecked(TLObject.hasFlag(xsaVar2.g, 2));
+                a8Var4.setChecked(TLObject.hasFlag(xsaVar2.g, 4));
+                a8Var3.setChecked(TLObject.hasFlag(xsaVar2.g, 8));
+                if (z) {
+                    a8Var2.setChecked(TLObject.hasFlag(xsaVar2.g, 256));
+                    a8Var.setChecked(TLObject.hasFlag(xsaVar2.g, 512));
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ ly9(my9 my9Var, a8 a8Var, a8 a8Var2, a8 a8Var3, a8 a8Var4, a8 a8Var5, boolean z, a8 a8Var6, a8 a8Var7) {
+        this.s = my9Var;
+        this.b = a8Var;
+        this.c = a8Var2;
+        this.d = a8Var3;
+        this.e = a8Var4;
+        this.f = a8Var5;
+        this.h = z;
+        this.n = a8Var6;
+        this.r = a8Var7;
     }
 }

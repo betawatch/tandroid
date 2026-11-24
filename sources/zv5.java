@@ -1,36 +1,31 @@
 // default package
 
+import android.view.KeyEvent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class zv5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ew5 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+public final /* synthetic */ class zv5 implements k8, l8c {
+    public final /* synthetic */ rw5 a;
 
-    public /* synthetic */ zv5(ew5 ew5Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j, byte b) {
-        this.a = b;
-        this.b = ew5Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j;
+    public /* synthetic */ zv5(rw5 rw5Var) {
+        this.a = rw5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = this.c;
-        ew5 ew5Var = this.b;
-        switch (b) {
-            case 0:
-                oc7.r1(ew5Var.a).d4(tL_chatInviteJoinResultWebView.users, false);
-                br0.b(ew5Var.a).c(this.d, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
-                break;
-            default:
-                oc7.r1(ew5Var.a).d4(tL_chatInviteJoinResultWebView.users, false);
-                br0.b(ew5Var.a).c(this.d, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
-                break;
+    @Override // l8c
+    public final void h(Object obj, TLRPC.Document document, Boolean bool) {
+        iw5 e0 = this.a.e0(obj, document, true);
+        if (bool.booleanValue()) {
+            e0.setScale(1.5f);
+        }
+    }
+
+    @Override // k8
+    public final void r(KeyEvent keyEvent) {
+        rw5 rw5Var;
+        m8 m8Var;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m8Var = (rw5Var = this.a).H1) != null && m8Var.isShowing()) {
+            rw5Var.H1.d(true);
         }
     }
 }

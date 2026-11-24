@@ -1,40 +1,59 @@
 // default package
 
-import android.provider.Settings;
-import org.telegram.ui.LaunchActivity;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class u96 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ w96 b;
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ pa6 b;
+    public final /* synthetic */ qa6 c;
+    public final /* synthetic */ hd d;
 
-    public /* synthetic */ u96(w96 w96Var, byte b) {
-        this.a = b;
-        this.b = w96Var;
+    public /* synthetic */ u96(pa6 pa6Var, hd hdVar, qa6 qa6Var) {
+        this.b = pa6Var;
+        this.d = hdVar;
+        this.c = qa6Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ad8 ad8Var;
-        LaunchActivity launchActivity;
         byte b = this.a;
-        w96 w96Var = this.b;
+        hd hdVar = this.d;
+        qa6 qa6Var = this.c;
+        pa6 pa6Var = this.b;
         switch (b) {
             case 0:
-                ad8 ad8Var2 = w96Var.a;
-                if (ad8Var2 != null) {
-                    ad8Var2.d();
-                    break;
-                }
+                hdVar.dismiss();
+                pa6Var.presentFragment(qa6Var);
                 break;
             default:
-                oab oabVar = w96Var.c;
-                if (oabVar != null && w96Var.P() && (ad8Var = w96Var.a) != null && ad8Var.c == 0 && (launchActivity = LaunchActivity.H1) != null && Settings.canDrawOverlays(launchActivity)) {
-                    oabVar.S();
-                    break;
+                try {
+                    List<Address> fromLocationName = new Geocoder(pa6Var.getParentActivity(), k96.D0().y).getFromLocationName(pa6Var.y, 1);
+                    if (!fromLocationName.isEmpty()) {
+                        Address address = fromLocationName.get(0);
+                        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+                        tL_channelLocation.address = pa6Var.y;
+                        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+                        tL_channelLocation.geo_point = tL_geoPoint;
+                        tL_geoPoint.lat = address.getLatitude();
+                        tL_channelLocation.geo_point._long = address.getLongitude();
+                        qa6Var.I0 = tL_channelLocation;
+                    }
+                } catch (Exception e) {
+                    fa4.g(e, true);
                 }
+                gl.c3(new u96(pa6Var, hdVar, qa6Var));
                 break;
         }
+    }
+
+    public /* synthetic */ u96(pa6 pa6Var, qa6 qa6Var, hd hdVar) {
+        this.b = pa6Var;
+        this.c = qa6Var;
+        this.d = hdVar;
     }
 }

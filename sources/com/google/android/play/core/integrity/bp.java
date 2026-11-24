@@ -2,21 +2,21 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class bp implements s1d {
-    private final w1d a;
-    private final w1d b;
-    private final w1d c;
+public final class bp implements rzc {
+    private final vzc a;
+    private final vzc b;
+    private final vzc c;
 
-    public bp(w1d w1dVar, w1d w1dVar2, w1d w1dVar3, w1d w1dVar4) {
-        this.a = w1dVar;
-        this.b = w1dVar2;
-        this.c = w1dVar3;
+    public bp(vzc vzcVar, vzc vzcVar2, vzc vzcVar3, vzc vzcVar4) {
+        this.a = vzcVar;
+        this.b = vzcVar2;
+        this.c = vzcVar3;
     }
 
-    @Override // w1d
+    @Override // vzc
     public final /* bridge */ /* synthetic */ Object a() {
-        return new bn((Context) this.a.a(), (s2d) this.b.a(), ((au) this.c).a(), new j());
+        return new bn((Context) this.a.a(), (q0d) this.b.a(), ((au) this.c).a(), new j());
     }
 }

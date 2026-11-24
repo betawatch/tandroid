@@ -3,7 +3,7 @@
 import android.net.Uri;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class ba {
     public static final String h;
@@ -20,14 +20,14 @@ public final class ba {
     public static final String s;
     public final int a;
     public final Uri[] b;
-    public final bt6[] c;
+    public final br6[] c;
     public final int[] d;
     public final long[] e;
     public final String[] f;
     public final ca[] g;
 
     static {
-        String str = hac.a;
+        String str = g8c.a;
         h = "0";
         i = "1";
         j = "2";
@@ -42,16 +42,16 @@ public final class ba {
         s = "b";
     }
 
-    public ba(int i2, int[] iArr, bt6[] bt6VarArr, long[] jArr, String[] strArr, ca[] caVarArr) {
+    public ba(int i2, int[] iArr, br6[] br6VarArr, long[] jArr, String[] strArr, ca[] caVarArr) {
         Uri uri;
         int i3 = 0;
-        jte.f(iArr.length == bt6VarArr.length);
-        jte.f(iArr.length == caVarArr.length);
+        gre.f(iArr.length == br6VarArr.length);
+        gre.f(iArr.length == caVarArr.length);
         this.a = i2;
         this.d = iArr;
-        this.c = bt6VarArr;
+        this.c = br6VarArr;
         this.e = jArr;
-        this.b = new Uri[bt6VarArr.length];
+        this.b = new Uri[br6VarArr.length];
         while (true) {
             Uri[] uriArr = this.b;
             if (i3 >= uriArr.length) {
@@ -59,13 +59,13 @@ public final class ba {
                 this.g = caVarArr;
                 return;
             }
-            bt6 bt6Var = bt6VarArr[i3];
-            if (bt6Var == null) {
+            br6 br6Var = br6VarArr[i3];
+            if (br6Var == null) {
                 uri = null;
             } else {
-                xs6 xs6Var = bt6Var.b;
-                xs6Var.getClass();
-                uri = xs6Var.a;
+                xq6 xq6Var = br6Var.b;
+                xq6Var.getClass();
+                uri = xq6Var.a;
             }
             uriArr[i3] = uri;
             i3++;

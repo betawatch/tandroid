@@ -1,164 +1,26 @@
 // default package
 
-import android.graphics.BlendMode;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RecordingCanvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.RenderNode;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class wy4 extends yke {
-    public final RenderNode a = new RenderNode("glass-fade-content");
-    public final RenderNode b = new RenderNode("glass-fade-overlay");
-    public final Paint c;
-    public final Paint d;
-    public final Matrix e;
-    public LinearGradient f;
-    public int g;
-    public int h;
-    public int i;
-    public final /* synthetic */ yy4 j;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class wy4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ st b;
 
-    public wy4(yy4 yy4Var) {
-        BlendMode blendMode;
-        this.j = yy4Var;
-        Paint paint = new Paint();
-        this.c = paint;
-        this.d = new Paint(1);
-        this.e = new Matrix();
-        this.g = -1;
-        this.h = -1;
-        blendMode = BlendMode.DST_IN;
-        paint.setBlendMode(blendMode);
+    public /* synthetic */ wy4(st stVar, byte b) {
+        this.a = b;
+        this.b = stVar;
     }
 
-    @Override // yke
-    public final void a(Rect rect, RectF rectF) {
-        float f;
-        float f2;
-        int i;
-        int i2;
-        float f3;
-        int i3;
-        int i4;
-        float f4;
-        float f5;
-        yy4 yy4Var = this.j;
-        ty4 ty4Var = yy4Var.h;
-        int i5 = (ty4Var == null || !ty4Var.h() || ty4Var.f() <= 0) ? 0 : 1;
-        if (i5 != 0) {
-            int f6 = ty4Var.f();
-            float f7 = i5 * f6;
-            f = yy4.k(rectF.left, ty4Var.g(), f6) - f7;
-            f2 = yy4.k(rectF.top, ty4Var.a(), f6) - f7;
-            i = f6;
-        } else {
-            f = rectF.left;
-            f2 = rectF.top;
-            i = 1;
+    public final Boolean a(MotionEvent motionEvent) {
+        byte b = this.a;
+        st stVar = this.b;
+        switch (b) {
+            case 0:
+                return stVar.c(motionEvent);
+            default:
+                return stVar.d(motionEvent);
         }
-        float f8 = f - rectF.left;
-        float f9 = f2 - rectF.top;
-        float f10 = i;
-        int ceil = ((int) Math.ceil((rectF.right - f) / f10)) + i5;
-        int ceil2 = ((int) Math.ceil((rectF.bottom - f2) / f10)) + i5;
-        int ceil3 = (int) Math.ceil(rect.width() / f10);
-        int ceil4 = (int) Math.ceil(rect.height() / f10);
-        boolean z = yy4Var.w;
-        Paint paint = this.c;
-        if (!z && this.g == rect.width() && this.h == rect.height() && this.i == i) {
-            f3 = f2;
-            i2 = i5;
-            f4 = f;
-            i4 = ceil;
-            i3 = ceil2;
-            f5 = 0.0f;
-        } else {
-            int i6 = yy4Var.y;
-            float height = (i6 == 1 || i6 == 4) ? rect.height() : rect.width();
-            zy4 zy4Var = yy4Var.E;
-            zy4Var.getClass();
-            i2 = i5;
-            f3 = f2;
-            i3 = ceil2;
-            i4 = ceil;
-            f4 = f;
-            f5 = 0.0f;
-            LinearGradient l = yy4Var.l(zy4Var, height, 0.0f, -1, i);
-            this.f = l;
-            paint.setShader(l);
-            zy4 zy4Var2 = yy4Var.F;
-            zy4Var2.getClass();
-            LinearGradient l2 = yy4Var.l(zy4Var2, height, 0.0f, yy4Var.I, i);
-            this.b.setPosition(0, 0, ceil3, ceil4);
-            this.b.setPivotX(0.0f);
-            this.b.setPivotY(0.0f);
-            this.b.setScaleX(f10);
-            this.b.setScaleY(f10);
-            Paint paint2 = this.d;
-            paint2.setShader(l2);
-            this.b.beginRecording().drawRect(0.0f, 0.0f, ceil3, ceil4, paint2);
-            this.b.endRecording();
-            paint2.setShader(null);
-            this.g = rect.width();
-            this.h = rect.height();
-            this.i = i;
-        }
-        Matrix matrix = this.e;
-        matrix.setTranslate((-f8) / f10, (-f9) / f10);
-        this.f.setLocalMatrix(matrix);
-        this.a.setPosition(0, 0, i4, i3);
-        this.a.setPivotX(f5);
-        this.a.setPivotY(f5);
-        this.a.setScaleX(f10);
-        this.a.setScaleY(f10);
-        this.a.setTranslationX(f8);
-        this.a.setTranslationY(f9);
-        RecordingCanvas beginRecording = this.a.beginRecording();
-        float f11 = i4;
-        float f12 = i3;
-        beginRecording.saveLayer(0.0f, 0.0f, f11, f12, null);
-        beginRecording.drawColor((yy4Var.I & 16777215) | (-16777216));
-        if (i2 != 0) {
-            yy4Var.h.d(f4, f3, i, beginRecording, rectF);
-        } else {
-            beginRecording.save();
-            beginRecording.translate(-rectF.left, -rectF.top);
-            yy4Var.f.e(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
-            beginRecording.restore();
-        }
-        beginRecording.drawRect(0.0f, 0.0f, f11, f12, paint);
-        beginRecording.restore();
-        this.a.endRecording();
-        yy4Var.w = false;
-    }
-
-    @Override // yke
-    public final void b() {
-        this.a.discardDisplayList();
-        this.b.discardDisplayList();
-        this.g = -1;
-    }
-
-    @Override // yke
-    public final void c(Canvas canvas) {
-        canvas.drawRenderNode(this.a);
-        canvas.drawRenderNode(this.b);
-    }
-
-    @Override // yke
-    public final boolean d() {
-        return this.a.hasDisplayList() && this.b.hasDisplayList();
-    }
-
-    @Override // yke
-    public final void e(float f) {
-        this.a.setAlpha(f);
-        this.b.setAlpha(f);
     }
 }

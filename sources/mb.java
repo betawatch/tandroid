@@ -11,27 +11,27 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class mb implements a83 {
-    public final a83 a;
+public final class mb implements o63 {
+    public final o63 a;
     public final byte[] b;
     public final byte[] c;
     public CipherInputStream d;
 
-    public mb(a83 a83Var, byte[] bArr, byte[] bArr2) {
-        this.a = a83Var;
+    public mb(o63 o63Var, byte[] bArr, byte[] bArr2) {
+        this.a = o63Var;
         this.b = bArr;
         this.c = bArr2;
     }
 
-    @Override // a83
-    public final void addTransferListener(w0c w0cVar) {
-        w0cVar.getClass();
-        this.a.addTransferListener(w0cVar);
+    @Override // o63
+    public final void addTransferListener(vyb vybVar) {
+        vybVar.getClass();
+        this.a.addTransferListener(vybVar);
     }
 
-    @Override // a83
+    @Override // o63
     public final void close() {
         if (this.d != null) {
             this.d = null;
@@ -39,41 +39,41 @@ public final class mb implements a83 {
         }
     }
 
-    @Override // a83
+    @Override // o63
     public final Map getResponseHeaders() {
         return this.a.getResponseHeaders();
     }
 
-    @Override // a83
+    @Override // o63
     public final Uri getUri() {
         return this.a.getUri();
     }
 
-    @Override // a83
-    public final long open(g83 g83Var) {
+    @Override // o63
+    public final long open(u63 u63Var) {
         try {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
             try {
                 cipher.init(2, new SecretKeySpec(this.b, "AES"), new IvParameterSpec(this.c));
-                e83 e83Var = new e83(this.a, g83Var);
-                this.d = new CipherInputStream(e83Var, cipher);
-                if (e83Var.d) {
+                s63 s63Var = new s63(this.a, u63Var);
+                this.d = new CipherInputStream(s63Var, cipher);
+                if (s63Var.d) {
                     return -1L;
                 }
-                e83Var.a.open(e83Var.b);
-                e83Var.d = true;
+                s63Var.a.open(s63Var.b);
+                s63Var.d = true;
                 return -1L;
             } catch (InvalidAlgorithmParameterException | InvalidKeyException e) {
-                rjb.m(e);
+                sdb.b(e);
                 return 0L;
             }
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e2) {
-            rjb.m(e2);
+            sdb.b(e2);
             return 0L;
         }
     }
 
-    @Override // s73
+    @Override // g63
     public final int read(byte[] bArr, int i, int i2) {
         this.d.getClass();
         int read = this.d.read(bArr, i, i2);

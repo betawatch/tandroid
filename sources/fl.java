@@ -1,36 +1,131 @@
 // default package
 
-import android.app.Notification;
-import android.app.PictureInPictureParams;
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.FilesMigrationService;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Calendar;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract /* synthetic */ class fl {
-    public static /* synthetic */ Notification.Builder a(Context context, String str) {
-        return new Notification.Builder(context, str);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class fl {
+    public int c;
+    public final ArrayList a = new ArrayList();
+    public String b = "";
+    public boolean d = true;
+
+    public final String a(boolean z) {
+        int indexOf = this.b.indexOf(58);
+        if (indexOf < 0) {
+            return "";
+        }
+        String substring = this.b.substring(0, indexOf);
+        if (this.c == 20) {
+            String[] split = substring.substring(2).split(";");
+            return z ? split[0] : split.length > 1 ? split[split.length - 1] : "";
+        }
+        String[] split2 = substring.split(";");
+        for (int i = 0; i < split2.length; i++) {
+            if (split2[i].indexOf(61) < 0) {
+                substring = split2[i];
+            }
+        }
+        return substring;
     }
 
-    public static /* synthetic */ Notification.Builder b(FilesMigrationService filesMigrationService, String str) {
-        return new Notification.Builder(filesMigrationService, str);
+    public final String[] b() {
+        byte[] H;
+        int indexOf = this.b.indexOf(58);
+        if (indexOf < 0) {
+            return new String[0];
+        }
+        String substring = this.b.substring(0, indexOf);
+        String substring2 = this.b.substring(indexOf + 1);
+        String str = null;
+        String str2 = "UTF-8";
+        for (String str3 : substring.split(";")) {
+            String[] split = str3.split("=");
+            if (split.length == 2) {
+                if (split[0].equals("CHARSET")) {
+                    str2 = split[1];
+                } else if (split[0].equals("ENCODING")) {
+                    str = split[1];
+                }
+            }
+        }
+        String[] split2 = substring2.split(";");
+        for (int i = 0; i < split2.length; i++) {
+            if (!TextUtils.isEmpty(split2[i]) && str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = gl.H(gl.g1(split2[i]))) != null && H.length != 0) {
+                try {
+                    split2[i] = new String(H, str2);
+                } catch (Exception unused) {
+                }
+            }
+        }
+        return split2;
     }
 
-    public static /* synthetic */ PictureInPictureParams.Builder c() {
-        return new PictureInPictureParams.Builder();
-    }
-
-    public static /* synthetic */ SurfaceTexture d() {
-        return new SurfaceTexture(false);
-    }
-
-    public static /* synthetic */ void e() {
-    }
-
-    public static /* synthetic */ void f() {
-    }
-
-    public static /* synthetic */ void g() {
+    public final String c(boolean z) {
+        byte[] H;
+        StringBuilder sb = new StringBuilder();
+        int indexOf = this.b.indexOf(58);
+        if (indexOf < 0) {
+            return "";
+        }
+        if (sb.length() > 0) {
+            sb.append(", ");
+        }
+        String substring = this.b.substring(0, indexOf);
+        String substring2 = this.b.substring(indexOf + 1);
+        String str = null;
+        String str2 = "UTF-8";
+        for (String str3 : substring.split(";")) {
+            String[] split = str3.split("=");
+            if (split.length == 2) {
+                if (split[0].equals("CHARSET")) {
+                    str2 = split[1];
+                } else if (split[0].equals("ENCODING")) {
+                    str = split[1];
+                }
+            }
+        }
+        String[] split2 = substring2.split(";");
+        boolean z2 = false;
+        for (int i = 0; i < split2.length; i++) {
+            if (!TextUtils.isEmpty(split2[i])) {
+                if (str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = gl.H(gl.g1(split2[i]))) != null && H.length != 0) {
+                    try {
+                        split2[i] = new String(H, str2);
+                    } catch (Exception unused) {
+                    }
+                }
+                if (z2 && sb.length() > 0) {
+                    sb.append(" ");
+                }
+                sb.append(split2[i]);
+                if (!z2) {
+                    z2 = split2[i].length() > 0;
+                }
+            }
+        }
+        if (z) {
+            int i2 = this.c;
+            if (i2 == 0) {
+                return p38.f().e(sb.toString());
+            }
+            if (i2 == 5) {
+                String[] split3 = sb.toString().split("T");
+                if (split3.length > 0) {
+                    String[] split4 = split3[0].split("-");
+                    if (split4.length == 3) {
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.set(1, Utilities.z(split4[0]).intValue());
+                        calendar.set(2, Utilities.z(split4[1]).intValue() - 1);
+                        calendar.set(5, Utilities.z(split4[2]).intValue());
+                        return k96.D0().C0().format(calendar.getTime());
+                    }
+                }
+            }
+        }
+        return sb.toString();
     }
 }

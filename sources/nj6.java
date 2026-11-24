@@ -1,44 +1,37 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nj6 implements h59, ee {
-    public final /* synthetic */ ak6 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class nj6 implements Comparable {
+    public final long a;
+    public final long b;
+    public final long c;
 
-    public /* synthetic */ nj6(ak6 ak6Var) {
-        this.a = ak6Var;
+    public nj6(long j, long j2, long j3) {
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
     }
 
-    @Override // h59
-    public final boolean g(int i, View view) {
-        ak6 ak6Var = this.a;
-        if ((i < ak6Var.E || i >= ak6Var.F) && (i < ak6Var.I || i >= ak6Var.J)) {
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Long.compare(this.a, ((nj6) obj).a);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof nj6)) {
             return false;
         }
-        ((xj6) view).y.callOnClick();
-        try {
-            view.performHapticFeedback(0, 2);
-            return true;
-        } catch (Exception unused) {
-            return true;
-        }
+        nj6 nj6Var = (nj6) obj;
+        return this.a == nj6Var.a && this.b == nj6Var.b && this.c == nj6Var.c;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        TLRPC.TL_messages_deleteRevokedExportedChatInvites tL_messages_deleteRevokedExportedChatInvites = new TLRPC.TL_messages_deleteRevokedExportedChatInvites();
-        ak6 ak6Var = this.a;
-        tL_messages_deleteRevokedExportedChatInvites.peer = ak6Var.getMessagesController().i1(-ak6Var.n);
-        long j = ak6Var.f;
-        if (j == ak6Var.getUserConfig().e()) {
-            tL_messages_deleteRevokedExportedChatInvites.admin_id = ak6Var.getMessagesController().p1(ak6Var.getUserConfig().f());
-        } else {
-            tL_messages_deleteRevokedExportedChatInvites.admin_id = ak6Var.getMessagesController().n1(j);
-        }
-        ak6Var.d0 = true;
-        ak6Var.getConnectionsManager().sendRequest(tL_messages_deleteRevokedExportedChatInvites, new jj6(ak6Var, (byte) 1));
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c));
     }
 }

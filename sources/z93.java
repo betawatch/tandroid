@@ -1,19 +1,18 @@
 // default package
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-@Retention(RetentionPolicy.RUNTIME)
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public @interface z93 {
-    String c() default "";
+public final class z93 {
+    public final long a;
+    public final boolean b;
+    public final long c;
+    public final Object d;
+    public int e;
 
-    String f() default "";
-
-    int[] l() default {};
-
-    String m() default "";
-
-    int v() default 1;
+    public z93(long j, boolean z, long j2, Object obj) {
+        this.a = j;
+        this.b = z;
+        this.c = j2;
+        this.d = obj;
+    }
 }

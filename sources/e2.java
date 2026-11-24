@@ -5,20 +5,20 @@ import java.nio.ByteBuffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class e2 extends g2 {
     public static final Logger f;
-    public static final /* synthetic */ ai4 h;
+    public static final /* synthetic */ z24 h;
     public ByteBuffer e;
 
     static {
-        i94 i94Var = new i94(e2.class, "AbstractDescriptorBox.java");
-        i94Var.e(i94Var.d("getData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.nio.ByteBuffer"));
-        i94Var.e(i94Var.d("getDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor"));
-        i94Var.e(i94Var.d("getDescriptorAsString", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.lang.String"));
-        i94Var.e(i94Var.d("setDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor", "descriptor", "void"));
-        h = i94Var.e(i94Var.d("setData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "java.nio.ByteBuffer", "data", "void"));
+        z74 z74Var = new z74(e2.class, "AbstractDescriptorBox.java");
+        z74Var.e(z74Var.d("getData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.nio.ByteBuffer"));
+        z74Var.e(z74Var.d("getDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor"));
+        z74Var.e(z74Var.d("getDescriptorAsString", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.lang.String"));
+        z74Var.e(z74Var.d("setDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor", "descriptor", "void"));
+        h = z74Var.e(z74Var.d("setData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "java.nio.ByteBuffer", "data", "void"));
         f = Logger.getLogger(e2.class.getName());
     }
 
@@ -30,7 +30,7 @@ public abstract class e2 extends g2 {
         byteBuffer.position(byteBuffer.remaining() + byteBuffer.position());
         try {
             this.e.rewind();
-            bq7.a(-1, this.e);
+            yn7.a(-1, this.e);
         } catch (IOException e) {
             logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e);
         } catch (IndexOutOfBoundsException e2) {

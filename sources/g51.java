@@ -1,41 +1,25 @@
 // default package
 
-import android.content.DialogInterface;
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.Build;
+import android.os.IBinder;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class g51 implements DialogInterface.OnShowListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ KeyEvent.Callback b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class g51 {
+    public static final int a;
+    public static final UUID b;
+    public static final UUID c;
+    public static final UUID d;
+    public static final UUID e;
+    public static final UUID f;
 
-    public /* synthetic */ g51(KeyEvent.Callback callback, Object obj, byte b) {
-        this.a = b;
-        this.b = callback;
-        this.c = obj;
-    }
-
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        byte b = this.a;
-        Object obj = this.c;
-        KeyEvent.Callback callback = this.b;
-        switch (b) {
-            case 0:
-                View view = (View) callback;
-                j51 j51Var = (j51) obj;
-                if (view != null) {
-                    view.clearFocus();
-                }
-                j51Var.requestFocus();
-                gm.E3(j51Var);
-                break;
-            default:
-                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$90((my0) callback, (Integer) obj, dialogInterface);
-                break;
-        }
+    static {
+        a = Build.VERSION.SDK_INT >= 30 ? IBinder.getSuggestedMaxIpcSizeBytes() : 65536;
+        b = new UUID(0L, 0L);
+        c = new UUID(1186680826959645954L, -5988876978535335093L);
+        d = new UUID(-2129748144642739255L, 8654423357094679310L);
+        e = new UUID(-1301668207276963122L, -6645017420763422227L);
+        f = new UUID(-7348484286925749626L, -6083546864340672619L);
     }
 }

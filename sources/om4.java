@@ -1,26 +1,46 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewParent;
 
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class om4 extends qx2 {
-    public /* synthetic */ Object a;
-    public int b;
-    public final /* synthetic */ mj4 c;
-    public mj4 d;
-    public jm4 e;
-    public pq9 f;
+public final class om4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pm4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public om4(mj4 mj4Var, px2 px2Var) {
-        super(px2Var);
-        this.c = mj4Var;
+    public /* synthetic */ om4(pm4 pm4Var, byte b) {
+        this.a = b;
+        this.b = pm4Var;
     }
 
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.b |= TLObject.FLAG_31;
-        return this.c.g(null, this);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        pm4 pm4Var = this.b;
+        switch (b) {
+            case 0:
+                ViewParent parent = pm4Var.d.getParent();
+                if (parent != null) {
+                    parent.requestDisallowInterceptTouchEvent(true);
+                    break;
+                }
+                break;
+            default:
+                pm4Var.a();
+                View view = pm4Var.d;
+                if (view.isEnabled() && !view.isLongClickable() && pm4Var.c()) {
+                    view.getParent().requestDisallowInterceptTouchEvent(true);
+                    long uptimeMillis = SystemClock.uptimeMillis();
+                    MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+                    view.onTouchEvent(obtain);
+                    obtain.recycle();
+                    pm4Var.h = true;
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,66 +1,49 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.JsPromptResult;
-import android.widget.TextView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class hw0 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class hw0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ jw0 b;
 
-    public /* synthetic */ hw0(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
+    public /* synthetic */ hw0(jw0 jw0Var, byte b) {
         this.a = b;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = jw0Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        Object obj = this.e;
-        Object obj2 = this.d;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
+        jw0 jw0Var = this.b;
         switch (b) {
             case 0:
-                if (i != 6) {
-                    return false;
-                }
-                boolean[] zArr = (boolean[]) obj4;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    ((JsPromptResult) obj3).confirm(((qu3) obj2).getText().toString());
-                    ((he) obj).dismiss();
-                }
-                return true;
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                ow0 ow0Var = jw0Var.d;
+                toggleuseremojistatuspermission.bot = na7.q1(ow0Var.I).m1(ow0Var.J);
+                toggleuseremojistatuspermission.enabled = false;
+                ConnectionsManager.getInstance(ow0Var.I).sendRequest(toggleuseremojistatuspermission, new iw0(jw0Var, (byte) 1));
+                break;
+            case 1:
+                ow0 ow0Var2 = jw0Var.d;
+                tq0.d(ow0Var2.getContext(), ow0Var2.I, ow0Var2.J).k(false, null);
+                break;
             default:
-                fs8 fs8Var = (fs8) obj4;
-                if (i != 6) {
-                    return false;
+                ow0 ow0Var3 = jw0Var.d;
+                d S = LaunchActivity.S();
+                if (S != null && S.getParentLayout() != null) {
+                    ui5 parentLayout = S.getParentLayout();
+                    S.presentFragment(ProfileActivity.P2(ow0Var3.J));
+                    gl.f3(parentLayout, "botPermissionLocation");
+                    ow0Var3.m(true);
+                    break;
                 }
-                String obj5 = fs8Var.getText().toString();
-                if (obj5.length() <= 0 || obj5.length() > 12) {
-                    gm.z3(fs8Var);
-                } else {
-                    ((qac) obj3).a(obj5);
-                    he heVar = ((he[]) obj2)[0];
-                    if (heVar != null) {
-                        heVar.dismiss();
-                    }
-                    View view = (View) obj;
-                    if (view != null) {
-                        view.requestFocus();
-                    }
-                }
-                return true;
+                break;
         }
     }
 }

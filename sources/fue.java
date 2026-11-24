@@ -1,35 +1,16 @@
 // default package
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class fue extends n8d {
-    public final /* synthetic */ byte c;
-    public final /* synthetic */ TaskCompletionSource d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fue(TaskCompletionSource taskCompletionSource, byte b) {
-        super((byte) 0);
-        this.c = b;
-        this.d = taskCompletionSource;
+public abstract class fue {
+    public final ld7 a(nd7 nd7Var) {
+        ByteBuffer byteBuffer = nd7Var.c;
+        byteBuffer.getClass();
+        gre.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
+        return b(nd7Var, byteBuffer);
     }
 
-    @Override // n8d
-    public final void U(Bundle bundle) {
-        byte b = this.c;
-        TaskCompletionSource taskCompletionSource = this.d;
-        switch (b) {
-            case 0:
-                taskCompletionSource.setResult(bundle);
-                break;
-            case 1:
-                taskCompletionSource.setResult(bundle);
-                break;
-            default:
-                taskCompletionSource.setResult(bundle);
-                break;
-        }
-    }
+    public abstract ld7 b(nd7 nd7Var, ByteBuffer byteBuffer);
 }

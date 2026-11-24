@@ -1,33 +1,19 @@
 // default package
 
-import java.util.AbstractMap;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class yfd extends ccd {
-    public final /* synthetic */ dgd h;
+public final class yfd implements zn7 {
+    public static final yfd a = new yfd();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yfd(dgd dgdVar) {
-        super((byte) 0);
-        this.h = dgdVar;
+    static {
+        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)));
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i) {
-        dgd dgdVar = this.h;
-        n4f.a(i, dgdVar.r ? 1 : 0);
-        Object[] objArr = dgdVar.n;
-        int i2 = i << 1;
-        Object obj = objArr[i2];
-        obj.getClass();
-        Object obj2 = objArr[i2 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.h.r ? 1 : 0;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

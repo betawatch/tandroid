@@ -1,128 +1,90 @@
 // default package
 
-import android.graphics.RenderEffect;
-import android.graphics.RuntimeShader;
-import android.view.RoundedCorner;
-import android.view.View;
-import android.view.WindowInsets;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_chatlists;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class qdb extends x23 {
-    public final ArrayList b;
-    public final RuntimeShader c;
-    public RenderEffect d;
-    public int e;
-    public int f;
-    public int g;
-    public float h;
-    public final float[] i;
-    public final float[] j;
-    public final float[] k;
-    public final float[] l;
+public final /* synthetic */ class qdb implements Vector.TLDeserializer {
+    public final /* synthetic */ byte a;
 
-    public qdb(View view) {
-        super(view);
-        this.b = new ArrayList();
-        this.i = new float[7];
-        this.j = new float[7];
-        this.k = new float[7];
-        this.l = new float[7];
-        RuntimeShader b = yn3.b(gm.v2(null, R.raw.superripple_effect));
-        this.c = b;
-        h(true);
-        this.d = RenderEffect.createRuntimeShaderEffect(b, "img");
+    public /* synthetic */ qdb(byte b) {
+        this.a = b;
     }
 
-    public final void h(boolean z) {
-        RoundedCorner roundedCorner;
-        RoundedCorner roundedCorner2;
-        RoundedCorner roundedCorner3;
-        RoundedCorner roundedCorner4;
-        View view = (View) this.a;
-        if (z || this.f != view.getWidth() || this.g != view.getHeight() || Math.abs(this.h - gm.p) > 0.01f) {
-            RuntimeShader runtimeShader = this.c;
-            int width = view.getWidth();
-            this.f = width;
-            int height = view.getHeight();
-            this.g = height;
-            runtimeShader.setFloatUniform("size", width, height);
-            RuntimeShader runtimeShader2 = this.c;
-            float f = gm.p;
-            this.h = f;
-            runtimeShader2.setFloatUniform("density", f);
-            WindowInsets rootWindowInsets = view.getRootWindowInsets();
-            if (rootWindowInsets == null) {
-                roundedCorner4 = null;
-                roundedCorner = null;
-                roundedCorner2 = null;
-                roundedCorner3 = null;
-            } else {
-                roundedCorner = rootWindowInsets.getRoundedCorner(0);
-                roundedCorner2 = rootWindowInsets.getRoundedCorner(1);
-                roundedCorner3 = rootWindowInsets.getRoundedCorner(3);
-                roundedCorner4 = rootWindowInsets.getRoundedCorner(2);
-            }
-            this.c.setFloatUniform("radius", (roundedCorner4 == null || (view != view.getRootView() && gm.n > 0)) ? 0.0f : roundedCorner4.getRadius(), roundedCorner2 == null ? 0.0f : roundedCorner2.getRadius(), (roundedCorner3 == null || (view != view.getRootView() && gm.n > 0)) ? 0.0f : roundedCorner3.getRadius(), roundedCorner != null ? roundedCorner.getRadius() : 0.0f);
-        }
-    }
-
-    public final void i() {
-        float[] fArr;
-        float[] fArr2;
-        float[] fArr3;
-        float[] fArr4;
-        View view = (View) this.a;
-        ArrayList arrayList = this.b;
-        boolean z = false;
-        if (!arrayList.isEmpty()) {
-            boolean z2 = true;
-            boolean z3 = this.e != Math.min(7, arrayList.size());
-            this.e = Math.min(7, arrayList.size());
-            int i = 0;
-            while (true) {
-                int i2 = this.e;
-                fArr = this.l;
-                fArr2 = this.k;
-                fArr3 = this.j;
-                fArr4 = this.i;
-                if (i >= i2) {
-                    break;
-                }
-                pdb pdbVar = (pdb) arrayList.get(i);
-                boolean z4 = z3 || Math.abs(fArr4[i] - pdbVar.d) > 0.001f;
-                float f = pdbVar.d;
-                float f2 = pdbVar.c;
-                float f3 = pdbVar.b;
-                float f4 = pdbVar.a;
-                fArr4[i] = f;
-                boolean z5 = z4 || Math.abs(fArr3[i] - f4) > 0.001f;
-                fArr3[i] = f4;
-                boolean z6 = z5 || Math.abs(fArr2[i] - f3) > 0.001f;
-                fArr2[i] = f3;
-                z3 = z6 || Math.abs(fArr[i] - f2) > 0.001f;
-                fArr[i] = f2;
-                i++;
-            }
-            if (!z3 && this.f == view.getWidth() && this.g == view.getHeight() && Math.abs(this.h - gm.p) <= 0.01f) {
-                z2 = false;
-            }
-            if (z2) {
-                this.c.setIntUniform("count", this.e);
-                this.c.setFloatUniform("t", fArr4);
-                this.c.setFloatUniform("centerX", fArr3);
-                this.c.setFloatUniform("centerY", fArr2);
-                this.c.setFloatUniform("intensity", fArr);
-                h(false);
-                this.d = RenderEffect.createRuntimeShaderEffect(this.c, "img");
-            }
-            z = z2;
-        }
-        view.setRenderEffect(arrayList.isEmpty() ? null : this.d);
-        if (z) {
-            view.invalidate();
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+        switch (this.a) {
+            case 0:
+                return TLRPC.Theme.TLdeserialize(inputSerializedData, i, z);
+            case 1:
+                return TLRPC.WallPaper.TLdeserialize(inputSerializedData, i, z);
+            case 2:
+                return TL_account.WebDomainException.TLdeserialize(inputSerializedData, i, z);
+            case 3:
+                return TLRPC.ChatTheme.TLdeserialize(inputSerializedData, i, z);
+            case 4:
+                return TLRPC.TL_secureValue.TLdeserialize(inputSerializedData, i, z);
+            case 5:
+                return TLRPC.SecureValueError.TLdeserialize(inputSerializedData, i, z);
+            case 6:
+                return TLRPC.TL_authorization.TLdeserialize(inputSerializedData, i, z);
+            case 7:
+                return TL_account.TL_businessChatLink.TLdeserialize(inputSerializedData, i, z);
+            case 8:
+                return TL_account.TL_connectedBot.TLdeserialize(inputSerializedData, i, z);
+            case 9:
+                return TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, i, z);
+            case 10:
+                return TL_account.RequirementToContact.TLdeserialize(inputSerializedData, i, z);
+            case 11:
+                return TLRPC.PrivacyRule.TLdeserialize(inputSerializedData, i, z);
+            case 12:
+                return TLRPC.TL_webAuthorization.TLdeserialize(inputSerializedData, i, z);
+            case 13:
+                return TL_aicompose.AiComposeTone.TLdeserialize(inputSerializedData, i, z);
+            case 14:
+                return TLRPC.BotCommand.TLdeserialize(inputSerializedData, i, z);
+            case 15:
+                return TL_bots.botPreviewMedia.TLdeserialize(inputSerializedData, i, z);
+            case 16:
+                return TL_chatlists.TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i, z);
+            case 17:
+                return TL_communities.CommunityPeerRequest.TLdeserialize(inputSerializedData, i, z);
+            case 18:
+                return TL_iv.PageBlock.TLdeserialize(inputSerializedData, i, z);
+            case 19:
+                return TLRPC.InputPhoto.TLdeserialize(inputSerializedData, i, z);
+            case 20:
+                return TL_keyboard.PageButton.TLdeserialize(inputSerializedData, i, z);
+            case 21:
+                return TL_iv.PageListItem.TLdeserialize(inputSerializedData, i, z);
+            case 22:
+                return TL_iv.PageListOrderedItem.TLdeserialize(inputSerializedData, i, z);
+            case 23:
+                return TL_iv.pageRelatedArticle.TLdeserialize(inputSerializedData, i, z);
+            case 24:
+                return TL_iv.pageTableRow.TLdeserialize(inputSerializedData, i, z);
+            case 25:
+                return TL_iv.pageTableCell.TLdeserialize(inputSerializedData, i, z);
+            case 26:
+                return TL_keyboard.KeyboardButton.TLdeserialize(inputSerializedData, i, z);
+            case 27:
+                return TL_keyboard.KeyboardInlineButton.TLdeserialize(inputSerializedData, i, z);
+            case 28:
+                return TL_stars.TL_StarGiftAuctionAcquiredGift.TLdeserialize(inputSerializedData, i, z);
+            default:
+                return TL_stars.TL_StarGiftActiveAuctionState.TLdeserialize(inputSerializedData, i, z);
         }
     }
 }

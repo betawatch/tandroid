@@ -1,19 +1,219 @@
 // default package
 
-import java.util.Set;
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface ir2 {
-    Object a(Class cls);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract /* synthetic */ class ir2 {
+    public static void A(SQLiteDatabase sQLiteDatabase, String str, String str2, String str3) {
+        sQLiteDatabase.executeFast(str).stepThis().dispose();
+        sQLiteDatabase.executeFast(str2).stepThis().dispose();
+        sQLiteDatabase.executeFast(str3).stepThis().dispose();
+    }
 
-    Set c(yy8 yy8Var);
+    public static void B(SQLiteDatabase sQLiteDatabase, String str, String str2, String str3, String str4) {
+        sQLiteDatabase.executeFast(str).stepThis().dispose();
+        sQLiteDatabase.executeFast(str2).stepThis().dispose();
+        sQLiteDatabase.executeFast(str3).stepThis().dispose();
+        sQLiteDatabase.executeFast(str4).stepThis().dispose();
+    }
 
-    nv8 d(Class cls);
+    public static void C(sq3 sq3Var, sq3 sq3Var2) {
+        if (sq3Var != sq3Var2) {
+            if (sq3Var2 != null) {
+                sq3Var2.d(null);
+            }
+            if (sq3Var != null) {
+                sq3Var.c(null);
+            }
+        }
+    }
 
-    xs7 e(yy8 yy8Var);
+    public static boolean a(int i, int i2, int i3) {
+        switch (i) {
+            case 1:
+                if (((i2 + i3) & 1) != 0) {
+                }
+                break;
+            case 2:
+                if ((i2 & 1) != 0) {
+                }
+                break;
+            case 3:
+                if (i3 % 3 == 0) {
+                }
+                break;
+            case 4:
+                if ((i2 + i3) % 3 == 0) {
+                }
+                break;
+            case 5:
+                if ((((i3 / 3) + (i2 / 2)) & 1) != 0) {
+                }
+                break;
+            case 6:
+                if ((i2 * i3) % 6 == 0) {
+                }
+                break;
+            case 7:
+                if ((i2 * i3) % 6 < 3) {
+                }
+                break;
+            default:
+                if (((((i2 * i3) % 3) + i2 + i3) & 1) != 0) {
+                }
+                break;
+        }
+        return true;
+    }
 
-    nv8 f(yy8 yy8Var);
+    public static jr2 b() {
+        jr2 jr2Var = new jr2();
+        jr2Var.f = TLObject.FLAG_31;
+        jr2Var.g = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        return jr2Var;
+    }
 
-    Object i(yy8 yy8Var);
+    public static mr2 c() {
+        mr2 mr2Var = new mr2();
+        mr2Var.e = Long.MIN_VALUE;
+        mr2Var.f = Long.MAX_VALUE;
+        return mr2Var;
+    }
+
+    public static or2 d() {
+        or2 or2Var = new or2();
+        or2Var.d = Collections.EMPTY_SET;
+        return or2Var;
+    }
+
+    public static ur2 e() {
+        return new ur2();
+    }
+
+    public static or2 f() {
+        return new or2();
+    }
+
+    public static or2 g() {
+        or2 or2Var = new or2();
+        or2Var.d = Collections.EMPTY_SET;
+        return or2Var;
+    }
+
+    public static /* synthetic */ byte h(int i) {
+        byte b = 1;
+        if (i != 1) {
+            b = 2;
+            if (i != 2) {
+                b = 3;
+                if (i != 3) {
+                    if (i == 4) {
+                        return (byte) 4;
+                    }
+                    throw null;
+                }
+            }
+        }
+        return b;
+    }
+
+    public static float i(float f, float f2, float f3, float f4) {
+        return (f * f2) + f3 + f4;
+    }
+
+    public static int j(int i, int i2, String str) {
+        return (str.hashCode() + i) * i2;
+    }
+
+    public static int k(int i, int i2, ArrayList arrayList) {
+        return i2 - (arrayList.size() + i);
+    }
+
+    public static Bundle l(String str, boolean z) {
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(str, z);
+        return bundle;
+    }
+
+    public static LinearLayout m(Activity activity, int i) {
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(i);
+        return linearLayout;
+    }
+
+    public static String n(int i, int i2, String str) {
+        return str.substring(i2, str.length() - i);
+    }
+
+    public static String o(String str, StringBuilder sb) {
+        return str + ((Object) sb);
+    }
+
+    public static StringBuilder p(String str, int i, String str2, int i2, String str3) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.append(i);
+        sb.append(str2);
+        sb.append(i2);
+        sb.append(str3);
+        return sb;
+    }
+
+    public static /* synthetic */ void q() {
+    }
+
+    public static void r(float f, int i, int i2, TextView textView, String str) {
+        textView.setTextSize(i, f);
+        textView.setText(k96.M0(i2, str));
+    }
+
+    public static void s(oj3 oj3Var, int i, ArrayList arrayList) {
+        arrayList.add(new mj3(oj3Var, i));
+    }
+
+    public static void t(TextView textView, int i, float f) {
+        textView.setTextSize(i, f);
+        textView.setTypeface(gl.o());
+    }
+
+    public static /* synthetic */ void u(Object obj) {
+        if (obj == null) {
+            return;
+        }
+        fyb.g();
+    }
+
+    public static void v(String str, int i, u21 u21Var, int i2, int i3) {
+        u21Var.Q(i2, i3, k96.M0(i, str)).j();
+    }
+
+    public static void w(StringBuilder sb, int i, String str, int i2, String str2) {
+        sb.append(i);
+        sb.append(str);
+        sb.append(i2);
+        sb.append(str2);
+    }
+
+    public static void x(StringBuilder sb, String str, String str2) {
+        sb.append(str);
+        Log.d(str2, sb.toString());
+    }
+
+    public static void y(SQLiteDatabase sQLiteDatabase, String str) {
+        sQLiteDatabase.executeFast(str).stepThis().dispose();
+    }
+
+    public static void z(SQLiteDatabase sQLiteDatabase, String str, String str2) {
+        sQLiteDatabase.executeFast(str).stepThis().dispose();
+        sQLiteDatabase.executeFast(str2).stepThis().dispose();
+    }
 }

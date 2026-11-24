@@ -1,19 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class aa6 {
-    public final we8 a;
-    public final bqb b;
-    public final rz6 c;
-    public final long d;
-    public final float e;
+import org.telegram.messenger.a;
 
-    public aa6(we8 we8Var, bqb bqbVar, rz6 rz6Var, long j, float f, boolean z, long j2) {
-        this.a = we8Var;
-        this.b = bqbVar;
-        this.c = rz6Var;
-        this.d = j;
-        this.e = f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class aa6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qa6 b;
+    public final /* synthetic */ vh5 c;
+
+    public /* synthetic */ aa6(qa6 qa6Var, vh5 vh5Var, byte b) {
+        this.a = b;
+        this.b = qa6Var;
+        this.c = vh5Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                qa6 qa6Var = this.b;
+                vh5 vh5Var = this.c;
+                if (qa6Var.H != null && qa6Var.getParentActivity() != null) {
+                    try {
+                        ((gl2) vh5Var).G();
+                        ((ize) a.j()).initializeMaps(a.b);
+                        ((gl2) qa6Var.H).s(new gw(qa6Var, (byte) 9));
+                        qa6Var.x0 = true;
+                        if (qa6Var.y0) {
+                            ((gl2) qa6Var.H).J();
+                            break;
+                        }
+                    } catch (Exception e) {
+                        fa4.g(e, true);
+                        return;
+                    }
+                }
+                break;
+            default:
+                qa6 qa6Var2 = this.b;
+                vh5 vh5Var2 = this.c;
+                try {
+                    ((gl2) vh5Var2).G();
+                } catch (Exception unused) {
+                }
+                gl.c3(new aa6(qa6Var2, vh5Var2, (byte) 0));
+                break;
+        }
     }
 }

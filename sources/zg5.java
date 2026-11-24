@@ -1,22 +1,8 @@
 // default package
 
-import java.util.List;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class zg5 extends ah5 {
-    public final String x;
-    public final mo5 y;
-
-    public zg5(String str, zg5 zg5Var, String str2, long j, int i, long j2, as3 as3Var, String str3, String str4, long j3, long j4, boolean z, List list) {
-        super(str, zg5Var, j, i, j2, as3Var, str3, str4, j3, j4, z);
-        this.x = str2;
-        this.y = mo5.q(list);
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public zg5(String str, long j, long j2, String str2, String str3) {
-        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j, j2, false, y79.e);
-        ko5 ko5Var = mo5.b;
-    }
+public interface zg5 extends IInterface {
 }

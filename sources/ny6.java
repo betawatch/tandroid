@@ -1,42 +1,49 @@
 // default package
 
-import android.os.Build;
-import android.text.TextUtils;
+import android.util.LongSparseArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ny6 {
-    public ry6 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ny6 extends pf0 {
+    public static final ny6[] b = new ny6[4];
+    public final LongSparseArray a;
 
-    public ny6(String str, int i, int i2) {
-        if (str == null) {
-            gxc.d("package shouldn't be null");
-            throw null;
-        }
-        if (TextUtils.isEmpty(str)) {
-            u36.j("packageName should be nonempty");
-            throw null;
-        }
-        if (Build.VERSION.SDK_INT < 28) {
-            this.a = new ry6(str, i, i2);
-            return;
-        }
-        qy6 qy6Var = new qy6(str, i, i2);
-        h35.b(i, i2, str);
-        this.a = qy6Var;
+    public ny6(int i) {
+        super(i);
+        this.a = new LongSparseArray();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static ny6 a(int i) {
+        ny6 ny6Var;
+        ny6[] ny6VarArr = b;
+        ny6 ny6Var2 = ny6VarArr[i];
+        if (ny6Var2 != null) {
+            return ny6Var2;
         }
-        if (obj instanceof ny6) {
-            return this.a.equals(((ny6) obj).a);
+        synchronized (ny6.class) {
+            ny6Var = ny6VarArr[i];
+            if (ny6Var == null) {
+                ny6Var = new ny6(i);
+                ny6VarArr[i] = ny6Var;
+            }
         }
-        return false;
+        return ny6Var;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public final void b(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {
+        long j = -k27.B1(tL_updatePendingJoinRequests.peer);
+        this.a.put(j, null);
+        TLRPC.ChatFull L0 = getMessagesController().L0(j);
+        if (L0 != null) {
+            L0.requests_pending = tL_updatePendingJoinRequests.requests_pending;
+            L0.recent_requesters = tL_updatePendingJoinRequests.recent_requesters;
+            L0.flags |= 131072;
+            getMessagesStorage().K1(L0, false);
+            kk7 notificationCenter = getNotificationCenter();
+            Boolean bool = Boolean.FALSE;
+            notificationCenter.k(kk7.S, L0, 0, bool, bool);
+        }
     }
 }

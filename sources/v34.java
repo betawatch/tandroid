@@ -1,27 +1,50 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class v34 extends b6c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public enum v34 implements Parcelable {
+    b(9),
+    c(11),
+    d(18),
+    e(19),
+    f(20),
+    h(23),
+    n(27),
+    r(28),
+    s(29),
+    w(30),
+    x(35),
+    y(36);
 
-    static {
-        b6c.h(new v34());
+    public static final Parcelable.Creator<v34> CREATOR = new xff(7);
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    v34(int i) {
+        this.a = i;
     }
 
-    @Override // b6c
-    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
-        w34 w34Var = (w34) view;
-        w34Var.n = (qac) c6cVar.H;
-        w34Var.r = c6cVar;
-        w34Var.b(c6cVar.A, false);
+    public static v34 a(int i) {
+        for (v34 v34Var : values()) {
+            if (i == v34Var.a) {
+                return v34Var;
+            }
+        }
+        Locale locale = Locale.US;
+        throw new u34(tb4.n(i, "Error code ", " is not supported"));
     }
 
-    @Override // b6c
-    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
-        return new w34(context, ylbVar);
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a);
     }
 }

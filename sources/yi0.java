@@ -1,26 +1,56 @@
 // default package
 
-import java.util.List;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yi0 implements bj0, xw8 {
+public final class yi0 implements Executor {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ cj0 b;
+    public final Handler b;
 
-    public /* synthetic */ yi0(cj0 cj0Var, byte b) {
+    public yi0(byte b) {
         this.a = b;
-        this.b = cj0Var;
+        switch (b) {
+            case 1:
+                this.b = new Handler(Looper.getMainLooper());
+                break;
+            default:
+                this.b = new Handler(Looper.getMainLooper());
+                break;
+        }
     }
 
-    @Override // xw8
-    public final void a(fj0 fj0Var, List list) {
-        this.b.m(fj0Var, list, null);
-    }
-
-    @Override // bj0
-    public final void b(fj0 fj0Var, List list) {
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
         byte b = this.a;
-        this.b.n(fj0Var, list);
+        Handler handler = this.b;
+        switch (b) {
+            case 0:
+                handler.post(runnable);
+                return;
+            case 1:
+                handler.post(runnable);
+                return;
+            case 2:
+                runnable.getClass();
+                if (handler.post(runnable)) {
+                    return;
+                }
+                throw new RejectedExecutionException(handler + " is shutting down");
+            default:
+                runnable.getClass();
+                if (handler.post(runnable)) {
+                    return;
+                }
+                throw new RejectedExecutionException(handler + " is shutting down");
+        }
+    }
+
+    public /* synthetic */ yi0(Handler handler, byte b) {
+        this.a = b;
+        this.b = handler;
     }
 }

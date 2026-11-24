@@ -1,24 +1,36 @@
 // default package
 
-import android.os.Handler;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ob3 implements hs3 {
-    public final fs3 a;
-    public cs3 b;
-    public boolean c;
-    public final /* synthetic */ pb3 d;
+public final /* synthetic */ class ob3 implements qbb {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public ob3(pb3 pb3Var, fs3 fs3Var) {
-        this.d = pb3Var;
-        this.a = fs3Var;
+    public /* synthetic */ ob3(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // hs3
-    public final void release() {
-        Handler handler = this.d.K;
-        handler.getClass();
-        hac.X(handler, new xf2(this, (byte) 25));
+    @Override // qbb
+    public final Object get() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                try {
+                    return (qx6) ((Class) obj).getConstructor(null).newInstance(null);
+                } catch (Exception e) {
+                    ho9.n(e);
+                    return null;
+                }
+            case 1:
+                return (lb3) obj;
+            case 2:
+                return (sc3) obj;
+            case 3:
+                return (vb3) obj;
+            default:
+                return (xn9) obj;
+        }
     }
 }

@@ -1,44 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class m6f {
-    public static void a(int i, int i2) {
-        String a;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                a = q6f.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
-            } else {
-                if (i2 < 0) {
-                    u36.j(hg9.j(i2, "negative size: "));
-                    return;
-                }
-                a = q6f.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
-            }
-            throw new IndexOutOfBoundsException(a);
-        }
+public final class m6f extends vef {
+    private static final m6f zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private int zzg;
+    private int zzh;
+
+    static {
+        m6f m6fVar = new m6f();
+        zzb = m6fVar;
+        vef.e(m6f.class, m6fVar);
     }
 
-    public static void b(int i, int i2) {
-        if (i < 0 || i > i2) {
-            wa3.i(d(i, i2, "index"));
+    @Override // vef
+    public final Object h(int i, vef vefVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-    }
-
-    public static void c(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? d(i, i3, "start index") : (i2 < 0 || i2 > i3) ? d(i2, i3, "end index") : q6f.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+        if (i2 == 2) {
+            return new sgf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003င\u0002\u0004င\u0003", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh"});
         }
-    }
-
-    public static String d(int i, int i2, String str) {
-        if (i < 0) {
-            return q6f.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+        if (i2 == 3) {
+            return new m6f();
         }
-        if (i2 >= 0) {
-            return q6f.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
+        if (i2 == 4) {
+            return new v8e(zzb);
         }
-        u36.j(hg9.j(i2, "negative size: "));
-        return null;
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

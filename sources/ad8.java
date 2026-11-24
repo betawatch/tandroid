@@ -1,484 +1,702 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
-import android.util.Property;
-import android.view.ScaleGestureDetector;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.widget.ImageView;
-import j$.util.Objects;
-import java.util.ArrayList;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
+import android.os.Looper;
+import android.os.SystemClock;
+import android.view.SurfaceHolder;
+import java.util.IdentityHashMap;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class ad8 {
-    public final vc8 a;
-    public final yc3 b;
-    public byte c = 0;
-    public byte d = 0;
-    public tl4 e;
-    public boolean f;
-    public boolean g;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ad8 implements oc8 {
+    public final oc8 a;
+    public final IdentityHashMap b = new IdentityHashMap();
 
-    public ad8(yc3 yc3Var, vc8 vc8Var) {
-        this.b = yc3Var;
-        this.a = vc8Var;
+    public ad8(oc8 oc8Var) {
+        this.a = oc8Var;
     }
 
-    public final void a(qac qacVar) {
-        tl4 tl4Var;
-        if (this.c != 1 || (tl4Var = this.e) == null) {
-            return;
-        }
-        this.e = null;
-        this.c = (byte) 0;
-        tl4Var.K = true;
-        tl4Var.d();
-        gm.d3(new ve4(tl4Var, qacVar, (byte) 12), 100L);
-        this.b.d();
+    @Override // oc8
+    public final int A() {
+        V0();
+        return this.a.A();
     }
 
-    public final void b() {
-        byte b = this.c;
-        if (b == 3) {
-            return;
-        }
-        this.c = (byte) 3;
-        tl4 tl4Var = this.e;
-        yc3 yc3Var = this.b;
-        vc8 vc8Var = this.a;
-        if (tl4Var == null) {
-            vc8Var.e0();
-            yc3Var.j(this, b);
-            return;
-        }
-        this.e = null;
-        boolean z = b == 1;
-        Objects.requireNonNull(vc8Var);
-        q78 q78Var = new q78(vc8Var, (byte) 16);
-        if (!tl4Var.K) {
-            tl4Var.K = true;
-            tl4Var.d();
-            zna znaVar = tl4Var.D;
-            if (znaVar != null) {
-                znaVar.d();
-                tl4Var.E.d();
+    @Override // oc8
+    public final void A0(int i, br6 br6Var) {
+        V0();
+        this.a.A0(i, br6Var);
+    }
+
+    @Override // oc8
+    public final icc B() {
+        V0();
+        return this.a.B();
+    }
+
+    @Override // oc8
+    public final Looper B0() {
+        return this.a.B0();
+    }
+
+    @Override // oc8
+    public final void C() {
+        V0();
+        this.a.C();
+    }
+
+    @Override // oc8
+    public final void C0() {
+        V0();
+        this.a.C0();
+    }
+
+    @Override // oc8
+    public final float D() {
+        V0();
+        return this.a.D();
+    }
+
+    @Override // oc8
+    public final void D0(br6 br6Var) {
+        V0();
+        this.a.D0(br6Var);
+    }
+
+    @Override // oc8
+    public final void E() {
+        V0();
+        this.a.E();
+    }
+
+    @Override // oc8
+    public final void E0() {
+        V0();
+        this.a.E0();
+    }
+
+    @Override // oc8
+    public final nz F() {
+        V0();
+        return this.a.F();
+    }
+
+    @Override // oc8
+    public final boolean F0() {
+        V0();
+        return this.a.F0();
+    }
+
+    @Override // oc8
+    public final void G(int i, boolean z) {
+        V0();
+        this.a.G(i, z);
+    }
+
+    @Override // oc8
+    public final byb G0() {
+        V0();
+        return this.a.G0();
+    }
+
+    @Override // oc8
+    public final de3 H() {
+        V0();
+        return this.a.H();
+    }
+
+    @Override // oc8
+    public final long H0() {
+        V0();
+        return this.a.H0();
+    }
+
+    @Override // oc8
+    public final void I() {
+        V0();
+        this.a.I();
+    }
+
+    @Override // oc8
+    public final void I0(int i) {
+        V0();
+        this.a.I0(i);
+    }
+
+    @Override // oc8
+    public final void J(int i, int i2) {
+        V0();
+        this.a.J(i, i2);
+    }
+
+    @Override // oc8
+    public final void J0() {
+        V0();
+        this.a.J0();
+    }
+
+    @Override // oc8
+    public final void K(int i) {
+        V0();
+        this.a.K(i);
+    }
+
+    @Override // oc8
+    public final void K0() {
+        V0();
+        this.a.K0();
+    }
+
+    @Override // oc8
+    public final int L() {
+        V0();
+        return this.a.L();
+    }
+
+    @Override // oc8
+    public final void L0() {
+        V0();
+        this.a.L0();
+    }
+
+    @Override // oc8
+    public final void M(byb bybVar) {
+        V0();
+        this.a.M(bybVar);
+    }
+
+    @Override // oc8
+    public final jr6 M0() {
+        V0();
+        return this.a.M0();
+    }
+
+    @Override // oc8
+    public final boolean N() {
+        return this.a.N();
+    }
+
+    @Override // oc8
+    public final void N0(List list) {
+        V0();
+        this.a.N0(list);
+    }
+
+    @Override // oc8
+    public final void O(int i) {
+        V0();
+        this.a.O(i);
+    }
+
+    @Override // oc8
+    public final long O0() {
+        V0();
+        return this.a.O0();
+    }
+
+    @Override // oc8
+    public final void P(int i, int i2) {
+        V0();
+        this.a.P(i, i2);
+    }
+
+    @Override // oc8
+    public final boolean P0() {
+        V0();
+        return this.a.P0();
+    }
+
+    @Override // oc8
+    public final void Q(SurfaceHolder surfaceHolder) {
+        V0();
+        this.a.Q(surfaceHolder);
+    }
+
+    public final nc8 Q0() {
+        long j;
+        long j2;
+        int i;
+        int i2;
+        boolean m0 = m0(16);
+        boolean m02 = m0(17);
+        int l0 = m02 ? l0() : 0;
+        gre.p(l0 >= 0);
+        int A = m02 ? A() : 0;
+        gre.p(A >= 0);
+        if (m02) {
+            aob y0 = y0();
+            if (!y0.p()) {
+                gre.p(l0 < y0.o());
+                znb m = y0.m(l0, new znb(), 0L);
+                gre.p(A == g8c.i(A, m.m, m.n));
             }
-            if (z && tl4Var.g) {
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.setDuration(250L);
-                animatorSet.setInterpolator(d53.f);
-                animatorSet.playTogether(ObjectAnimator.ofFloat(tl4Var.h, (Property<s8, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(tl4Var.h, (Property<s8, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(tl4Var.h, (Property<s8, Float>) View.SCALE_Y, 0.1f));
-                animatorSet.addListener(new u5(tl4Var, q78Var, (byte) 21));
-                animatorSet.start();
-            } else {
-                tl4Var.f(q78Var);
-            }
         }
-        yc3Var.j(this, b);
-    }
-
-    public final Bitmap c() {
-        Bitmap bitmap;
-        tl4 tl4Var = this.e;
-        if (tl4Var == null) {
-            return null;
-        }
-        try {
-            ImageView imageView = tl4Var.l;
-            if (imageView != null && imageView.getVisibility() == 0 && (tl4Var.l.getDrawable() instanceof BitmapDrawable) && (bitmap = ((BitmapDrawable) tl4Var.l.getDrawable()).getBitmap()) != null && !bitmap.isRecycled()) {
-                return bitmap.copy(bitmap.getConfig() != null ? bitmap.getConfig() : Bitmap.Config.ARGB_8888, false);
-            }
-            bd8 bd8Var = tl4Var.j;
-            if (bd8Var == null || !bd8Var.isAvailable()) {
-                return null;
-            }
-            return tl4Var.j.getBitmap();
-        } catch (Throwable th) {
-            fc4.g(th, true);
-            return null;
-        }
-    }
-
-    public final void d() {
-        tl4 tl4Var = this.e;
-        if (tl4Var != null) {
-            tl4Var.k();
-        }
-        this.b.d();
-    }
-
-    public final boolean e() {
-        return this.c != 3;
-    }
-
-    public final boolean f() {
-        if (this.e == null) {
-            return false;
-        }
-        byte b = this.c;
-        return b == 1 || (b == 2 && this.d == 1);
-    }
-
-    public final void g() {
-        byte b = this.c;
-        if (b == 3) {
-            return;
-        }
-        if (b != 0) {
-            b();
+        br6 u = m0 ? u() : null;
+        if (m0) {
+            long m2 = m();
+            long Y = Y();
+            int k0 = k0();
+            i2 = L();
+            j = m2;
+            j2 = Y;
+            i = k0;
         } else {
-            this.c = (byte) 3;
-            this.b.j(this, 0);
+            j = 0;
+            j2 = 0;
+            i = -1;
+            i2 = -1;
+        }
+        return new nc8(null, l0, u, null, A, j, j2, i, i2);
+    }
+
+    @Override // oc8
+    public final void R(float f) {
+        V0();
+        this.a.R(f);
+    }
+
+    public final l6a R0() {
+        long j;
+        long j2;
+        long j3;
+        long j4;
+        int i;
+        boolean z;
+        long j5;
+        long j6;
+        long j7;
+        boolean m0 = m0(16);
+        nc8 Q0 = Q0();
+        boolean z2 = m0 && l();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (m0) {
+            long duration = getDuration();
+            long b0 = b0();
+            int w = w();
+            j3 = o();
+            j = n();
+            j2 = z();
+            j4 = H0();
+            i = w;
+            z = z2;
+            j5 = elapsedRealtime;
+            j6 = duration;
+            j7 = b0;
+        } else {
+            j = -9223372036854775807L;
+            j2 = -9223372036854775807L;
+            j3 = 0;
+            j4 = 0;
+            i = 0;
+            z = z2;
+            j5 = elapsedRealtime;
+            j6 = -9223372036854775807L;
+            j7 = 0;
+        }
+        return new l6a(Q0, z, j5, j6, j7, i, j3, j, j2, j4);
+    }
+
+    @Override // oc8
+    public final void S() {
+        V0();
+        this.a.S();
+    }
+
+    public final br6 S0() {
+        if (m0(16)) {
+            return u();
+        }
+        return null;
+    }
+
+    @Override // oc8
+    public final void T(List list, int i, long j) {
+        V0();
+        this.a.T(list, i, j);
+    }
+
+    public final aob T0() {
+        return m0(17) ? y0() : S0() != null ? new zc8(this) : aob.a;
+    }
+
+    @Override // oc8
+    public final j54 U() {
+        V0();
+        return this.a.U();
+    }
+
+    public final jr6 U0() {
+        return m0(18) ? M0() : jr6.M;
+    }
+
+    @Override // oc8
+    public final void V(boolean z) {
+        V0();
+        this.a.V(z);
+    }
+
+    public final void V0() {
+        gre.p(Looper.myLooper() == this.a.B0());
+    }
+
+    @Override // oc8
+    public final void W(int i) {
+        V0();
+        this.a.W(i);
+    }
+
+    @Override // oc8
+    public final long X() {
+        V0();
+        return this.a.X();
+    }
+
+    @Override // oc8
+    public final long Y() {
+        V0();
+        return this.a.Y();
+    }
+
+    @Override // oc8
+    public final void Z(int i, List list) {
+        V0();
+        this.a.Z(i, list);
+    }
+
+    @Override // oc8
+    public final void a() {
+        V0();
+        this.a.a();
+    }
+
+    @Override // oc8
+    public final void a0() {
+        V0();
+        this.a.a0();
+    }
+
+    @Override // oc8
+    public final void b(zb8 zb8Var) {
+        V0();
+        this.a.b(zb8Var);
+    }
+
+    @Override // oc8
+    public final long b0() {
+        V0();
+        return this.a.b0();
+    }
+
+    @Override // oc8
+    public final void c(float f) {
+        V0();
+        this.a.c(f);
+    }
+
+    @Override // oc8
+    public final boolean c0() {
+        V0();
+        return this.a.c0();
+    }
+
+    @Override // oc8
+    public final boolean d() {
+        V0();
+        return this.a.d();
+    }
+
+    @Override // oc8
+    public final void d0() {
+        V0();
+        this.a.d0();
+    }
+
+    @Override // oc8
+    public final void e() {
+        V0();
+        this.a.e();
+    }
+
+    @Override // oc8
+    public final void e0(int i) {
+        V0();
+        this.a.e0(i);
+    }
+
+    @Override // oc8
+    public final void f(long j) {
+        V0();
+        this.a.f(j);
+    }
+
+    @Override // oc8
+    public final eyb f0() {
+        V0();
+        return this.a.f0();
+    }
+
+    @Override // oc8
+    public final zb8 g() {
+        V0();
+        return this.a.g();
+    }
+
+    @Override // oc8
+    public final jr6 g0() {
+        V0();
+        return this.a.g0();
+    }
+
+    @Override // oc8
+    public final long getDuration() {
+        V0();
+        return this.a.getDuration();
+    }
+
+    @Override // oc8
+    public final int h() {
+        V0();
+        return this.a.h();
+    }
+
+    @Override // oc8
+    public final v33 h0() {
+        V0();
+        return this.a.h0();
+    }
+
+    @Override // oc8
+    public final int i() {
+        V0();
+        return this.a.i();
+    }
+
+    @Override // oc8
+    public final void i0(nz nzVar, boolean z) {
+        this.a.i0(nzVar, z);
+    }
+
+    @Override // oc8
+    public final boolean j() {
+        V0();
+        return this.a.j();
+    }
+
+    @Override // oc8
+    public final void j0(jr6 jr6Var) {
+        V0();
+        this.a.j0(jr6Var);
+    }
+
+    @Override // oc8
+    public final void k() {
+        V0();
+        this.a.k();
+    }
+
+    @Override // oc8
+    public final int k0() {
+        V0();
+        return this.a.k0();
+    }
+
+    @Override // oc8
+    public final boolean l() {
+        V0();
+        return this.a.l();
+    }
+
+    @Override // oc8
+    public final int l0() {
+        V0();
+        return this.a.l0();
+    }
+
+    @Override // oc8
+    public final long m() {
+        V0();
+        return this.a.m();
+    }
+
+    @Override // oc8
+    public final boolean m0(int i) {
+        V0();
+        return this.a.m0(i);
+    }
+
+    @Override // oc8
+    public final long n() {
+        V0();
+        return this.a.n();
+    }
+
+    @Override // oc8
+    public final void n0(int i) {
+        V0();
+        this.a.n0(i);
+    }
+
+    @Override // oc8
+    public final long o() {
+        V0();
+        return this.a.o();
+    }
+
+    @Override // oc8
+    public final void o0(boolean z) {
+        V0();
+        this.a.o0(z);
+    }
+
+    @Override // oc8
+    public final void p(int i, long j) {
+        V0();
+        this.a.p(i, j);
+    }
+
+    @Override // oc8
+    public final void p0(mc8 mc8Var) {
+        V0();
+        synchronized (this.b) {
+            mc8 mc8Var2 = (mc8) this.b.remove(mc8Var);
+            oc8 oc8Var = this.a;
+            if (mc8Var2 != null) {
+                mc8Var = mc8Var2;
+            }
+            oc8Var.p0(mc8Var);
         }
     }
 
-    public final bd8 h(Activity activity, Bitmap bitmap, boolean z) {
-        byte b;
-        if (this.c != 0) {
-            i2d.e(this.c, "startFloating in state ");
-            return null;
+    @Override // oc8
+    public final kc8 q() {
+        V0();
+        return this.a.q();
+    }
+
+    @Override // oc8
+    public final void q0(br6 br6Var) {
+        V0();
+        this.a.q0(br6Var);
+    }
+
+    @Override // oc8
+    public final void r(br6 br6Var, long j) {
+        V0();
+        this.a.r(br6Var, j);
+    }
+
+    @Override // oc8
+    public final void r0(List list, int i, int i2) {
+        V0();
+        this.a.r0(list, i, i2);
+    }
+
+    @Override // oc8
+    public final boolean s() {
+        V0();
+        return this.a.s();
+    }
+
+    @Override // oc8
+    public final void s0(int i, int i2) {
+        V0();
+        this.a.s0(i, i2);
+    }
+
+    @Override // oc8
+    public final void stop() {
+        V0();
+        this.a.stop();
+    }
+
+    @Override // oc8
+    public final void t() {
+        V0();
+        this.a.t();
+    }
+
+    @Override // oc8
+    public final void t0(int i, int i2, int i3) {
+        V0();
+        this.a.t0(i, i2, i3);
+    }
+
+    @Override // oc8
+    public final br6 u() {
+        V0();
+        return this.a.u();
+    }
+
+    @Override // oc8
+    public final boolean u0() {
+        V0();
+        return this.a.u0();
+    }
+
+    @Override // oc8
+    public final void v(boolean z) {
+        V0();
+        this.a.v(z);
+    }
+
+    @Override // oc8
+    public final int v0() {
+        V0();
+        return this.a.v0();
+    }
+
+    @Override // oc8
+    public final int w() {
+        V0();
+        return this.a.w();
+    }
+
+    @Override // oc8
+    public final void w0(List list) {
+        V0();
+        this.a.w0(list);
+    }
+
+    @Override // oc8
+    public final long x() {
+        V0();
+        return this.a.x();
+    }
+
+    @Override // oc8
+    public final int x0() {
+        V0();
+        return this.a.x0();
+    }
+
+    @Override // oc8
+    public final void y(mc8 mc8Var) {
+        V0();
+        synchronized (this.b) {
+            qm4 qm4Var = (qm4) this.b.get(mc8Var);
+            if (qm4Var == null) {
+                qm4Var = new qm4(this, mc8Var);
+            }
+            this.a.y(qm4Var);
+            this.b.put(mc8Var, qm4Var);
         }
-        yc3 yc3Var = this.b;
-        ArrayList arrayList = (ArrayList) yc3Var.c;
-        final byte b2 = 1;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            ad8 ad8Var = (ad8) arrayList.get(size);
-            if (ad8Var != this && ad8Var.f()) {
-                ad8Var.b();
-            }
-        }
-        final tl4 tl4Var = new tl4(this, activity);
-        this.e = tl4Var;
-        RectF rectF = new RectF();
-        vc8 vc8Var = tl4Var.b;
-        tl4.j(rectF, vc8Var.S(), vc8Var.o0());
-        tl4Var.z = ((SharedPreferences) lj4.t().a).getFloat("scale_factor", 1.0f);
-        Point point = gm.q;
-        tl4Var.A = (Math.min(point.x, point.y) - (tl4.m() * 2.0f)) / tl4Var.h();
-        tl4Var.x = (int) rectF.width();
-        tl4Var.y = (int) rectF.height();
-        tl4Var.B = rectF.left;
-        tl4Var.C = rectF.top - gm.m;
-        int S = vc8Var.S();
-        int o0 = vc8Var.o0();
-        float f = ((S <= 0 || o0 <= 0) ? 0.5625f : ((float) o0) / ((float) S)) < 1.0f ? 0.6f : 0.45f;
-        ucc uccVar = tl4Var.F;
-        uccVar.q = f;
-        uccVar.a();
-        zna znaVar = new zna(tl4Var, tl4.Q);
-        aoa aoaVar = new aoa();
-        aoaVar.a(0.75f);
-        aoaVar.b(650.0f);
-        znaVar.m = aoaVar;
-        final byte b3 = 0;
-        znaVar.a(new ht3() { // from class: ol4
-            @Override // ht3
-            public final void a(zna znaVar2, boolean z2, float f2, float f3) {
-                byte b4 = b3;
-                tl4 tl4Var2 = tl4Var;
-                switch (b4) {
-                    case 0:
-                        ((SharedPreferences) lj4.t().a).edit().putFloat("x", f2).apply();
-                        tl4Var2.a.b.d();
-                        break;
-                    default:
-                        ((SharedPreferences) lj4.t().a).edit().putFloat("y", f2).apply();
-                        tl4Var2.a.b.d();
-                        break;
-                }
-            }
-        });
-        tl4Var.D = znaVar;
-        zna znaVar2 = new zna(tl4Var, tl4.R);
-        aoa aoaVar2 = new aoa();
-        aoaVar2.a(0.75f);
-        aoaVar2.b(650.0f);
-        znaVar2.m = aoaVar2;
-        znaVar2.a(new ht3() { // from class: ol4
-            @Override // ht3
-            public final void a(zna znaVar22, boolean z2, float f2, float f3) {
-                byte b4 = b2;
-                tl4 tl4Var2 = tl4Var;
-                switch (b4) {
-                    case 0:
-                        ((SharedPreferences) lj4.t().a).edit().putFloat("x", f2).apply();
-                        tl4Var2.a.b.d();
-                        break;
-                    default:
-                        ((SharedPreferences) lj4.t().a).edit().putFloat("y", f2).apply();
-                        tl4Var2.a.b.d();
-                        break;
-                }
-            }
-        });
-        tl4Var.E = znaVar2;
-        Activity activity2 = tl4Var.c;
-        int scaledTouchSlop = ViewConfiguration.get(activity2).getScaledTouchSlop();
-        ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(activity2, new f43(tl4Var, b2));
-        tl4Var.p = scaleGestureDetector;
-        scaleGestureDetector.setQuickScaleEnabled(false);
-        tl4Var.p.setStylusScaleEnabled(false);
-        tl4Var.q = new ai4(activity2, new sl4(tl4Var, scaledTouchSlop));
-        tl4Var.i = new pl4(tl4Var, activity2, b2);
-        s8 s8Var = new s8(b2, activity2, tl4Var);
-        tl4Var.h = s8Var;
-        s8Var.addView(tl4Var.i, qoe.c(-1.0f, -1));
-        pl4 pl4Var = tl4Var.i;
-        float L = gm.L(10.0f);
-        xj xjVar = agc.a;
-        pl4Var.setOutlineProvider(new yfc(0, L));
-        tl4Var.i.setClipToOutline(true);
-        anb.h(cmb.Wg, null, tl4Var.i);
-        ImageView imageView = new ImageView(activity2);
-        tl4Var.l = imageView;
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        tl4Var.l.setVisibility(8);
-        tl4Var.i.addView(tl4Var.l, qoe.c(-1.0f, -1));
-        uccVar.n = new k44(tl4Var, (byte) 3);
-        tl4Var.m = new pl4(tl4Var, activity2, b3);
-        pl4 pl4Var2 = tl4Var.m;
-        Objects.requireNonNull(pl4Var2);
-        tl4Var.G = new lx9(new a14((Object) pl4Var2, (byte) 25), true);
-        tl4Var.m.setWillNotDraw(false);
-        tl4Var.m.setAlpha(0.0f);
-        View view = new View(activity2);
-        view.setBackgroundColor(1275068416);
-        tl4Var.m.addView(view, qoe.c(-1.0f, -1));
-        int L2 = gm.L(8.0f);
-        ImageView imageView2 = new ImageView(activity2);
-        imageView2.setImageResource(R.drawable.pip_video_close);
-        int i = cmb.Xg;
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        anb.s(imageView2, i, null, mode);
-        int i2 = cmb.h6;
-        fg0 f0 = cmb.f0(cmb.w0(null, i2, false), 1, -1);
-        wmb M = anb.M(i2);
-        imageView2.setBackground(f0);
-        anb.j(imageView2, f0, null, M, null);
-        imageView2.setPadding(L2, L2, L2, L2);
-        imageView2.setOnClickListener(new View.OnClickListener() { // from class: ml4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LaunchActivity launchActivity;
-                byte b4 = b3;
-                tl4 tl4Var2 = tl4Var;
-                switch (b4) {
-                    case 0:
-                        tl4Var2.a.b();
-                        break;
-                    case 1:
-                        ad8 ad8Var2 = tl4Var2.a;
-                        if (ad8Var2.c == 1) {
-                            yc3 yc3Var2 = ad8Var2.b;
-                            q78 q78Var = new q78(ad8Var2, (byte) 17);
-                            if (yc3Var2.b && (launchActivity = (LaunchActivity) yc3Var2.f) != null && !gm.F1(launchActivity)) {
-                                q78Var.run();
-                                break;
-                            } else {
-                                ((ArrayList) yc3Var2.d).add(q78Var);
-                                if (((LaunchActivity) yc3Var2.f) != null && !yc3Var2.a) {
-                                    try {
-                                        Intent intent = new Intent(a.b, ((LaunchActivity) yc3Var2.f).getClass());
-                                        intent.addFlags(TLObject.FLAG_28);
-                                        a.b.startActivity(intent);
-                                        break;
-                                    } catch (Exception e) {
-                                        fc4.g(e, true);
-                                        return;
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                    default:
-                        vc8 vc8Var2 = tl4Var2.b;
-                        if (vc8Var2.i()) {
-                            vc8Var2.c();
-                        } else {
-                            if (tl4Var2.H) {
-                                vc8Var2.e(0L);
-                                tl4Var2.H = false;
-                            }
-                            vc8Var2.j();
-                        }
-                        tl4Var2.k();
-                        tl4Var2.a.b.d();
-                        break;
-                }
-            }
-        });
-        tl4Var.m.addView(imageView2, qoe.d(38, 38.0f, 5, 0.0f, 4.0f, 4.0f, 0.0f));
-        ImageView imageView3 = new ImageView(activity2);
-        imageView3.setImageResource(R.drawable.pip_video_expand);
-        anb.s(imageView3, i, null, mode);
-        final byte b4 = 1;
-        fg0 f02 = cmb.f0(cmb.w0(null, i2, false), 1, -1);
-        wmb M2 = anb.M(i2);
-        imageView3.setBackground(f02);
-        anb.j(imageView3, f02, null, M2, null);
-        imageView3.setPadding(L2, L2, L2, L2);
-        imageView3.setOnClickListener(new View.OnClickListener() { // from class: ml4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LaunchActivity launchActivity;
-                byte b42 = b4;
-                tl4 tl4Var2 = tl4Var;
-                switch (b42) {
-                    case 0:
-                        tl4Var2.a.b();
-                        break;
-                    case 1:
-                        ad8 ad8Var2 = tl4Var2.a;
-                        if (ad8Var2.c == 1) {
-                            yc3 yc3Var2 = ad8Var2.b;
-                            q78 q78Var = new q78(ad8Var2, (byte) 17);
-                            if (yc3Var2.b && (launchActivity = (LaunchActivity) yc3Var2.f) != null && !gm.F1(launchActivity)) {
-                                q78Var.run();
-                                break;
-                            } else {
-                                ((ArrayList) yc3Var2.d).add(q78Var);
-                                if (((LaunchActivity) yc3Var2.f) != null && !yc3Var2.a) {
-                                    try {
-                                        Intent intent = new Intent(a.b, ((LaunchActivity) yc3Var2.f).getClass());
-                                        intent.addFlags(TLObject.FLAG_28);
-                                        a.b.startActivity(intent);
-                                        break;
-                                    } catch (Exception e) {
-                                        fc4.g(e, true);
-                                        return;
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                    default:
-                        vc8 vc8Var2 = tl4Var2.b;
-                        if (vc8Var2.i()) {
-                            vc8Var2.c();
-                        } else {
-                            if (tl4Var2.H) {
-                                vc8Var2.e(0L);
-                                tl4Var2.H = false;
-                            }
-                            vc8Var2.j();
-                        }
-                        tl4Var2.k();
-                        tl4Var2.a.b.d();
-                        break;
-                }
-            }
-        });
-        tl4Var.m.addView(imageView3, qoe.d(38, 38.0f, 5, 0.0f, 4.0f, 48.0f, 0.0f));
-        ImageView imageView4 = new ImageView(activity2);
-        tl4Var.n = imageView4;
-        anb.s(imageView4, i, null, mode);
-        anb.R(tl4Var.n, cmb.f0(cmb.w0(null, i2, false), 1, -1), null, anb.M(i2), null);
-        final byte b5 = 2;
-        tl4Var.n.setOnClickListener(new View.OnClickListener() { // from class: ml4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LaunchActivity launchActivity;
-                byte b42 = b5;
-                tl4 tl4Var2 = tl4Var;
-                switch (b42) {
-                    case 0:
-                        tl4Var2.a.b();
-                        break;
-                    case 1:
-                        ad8 ad8Var2 = tl4Var2.a;
-                        if (ad8Var2.c == 1) {
-                            yc3 yc3Var2 = ad8Var2.b;
-                            q78 q78Var = new q78(ad8Var2, (byte) 17);
-                            if (yc3Var2.b && (launchActivity = (LaunchActivity) yc3Var2.f) != null && !gm.F1(launchActivity)) {
-                                q78Var.run();
-                                break;
-                            } else {
-                                ((ArrayList) yc3Var2.d).add(q78Var);
-                                if (((LaunchActivity) yc3Var2.f) != null && !yc3Var2.a) {
-                                    try {
-                                        Intent intent = new Intent(a.b, ((LaunchActivity) yc3Var2.f).getClass());
-                                        intent.addFlags(TLObject.FLAG_28);
-                                        a.b.startActivity(intent);
-                                        break;
-                                    } catch (Exception e) {
-                                        fc4.g(e, true);
-                                        return;
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                    default:
-                        vc8 vc8Var2 = tl4Var2.b;
-                        if (vc8Var2.i()) {
-                            vc8Var2.c();
-                        } else {
-                            if (tl4Var2.H) {
-                                vc8Var2.e(0L);
-                                tl4Var2.H = false;
-                            }
-                            vc8Var2.j();
-                        }
-                        tl4Var2.k();
-                        tl4Var2.a.b.d();
-                        break;
-                }
-            }
-        });
-        tl4Var.n.setVisibility(vc8Var.A0() ? 0 : 8);
-        tl4Var.m.addView(tl4Var.n, qoe.e(38, 38, 17));
-        yc ycVar = new yc(tl4Var, activity2);
-        tl4Var.o = ycVar;
-        ycVar.setVisibility(vc8Var.A0() ? 0 : 8);
-        tl4Var.m.addView(tl4Var.o, qoe.c(-1.0f, -1));
-        tl4Var.i.addView(tl4Var.m, qoe.c(-1.0f, -1));
-        View O = vc8Var.O();
-        tl4Var.k = O;
-        if (O != null) {
-            gm.B2(O);
-            tl4Var.i.addView(tl4Var.k, 0, qoe.c(-1.0f, -1));
-        } else {
-            bd8 bd8Var = new bd8(activity2);
-            tl4Var.j = bd8Var;
-            tl4Var.i.addView(bd8Var, 0, qoe.c(-1.0f, -1));
-        }
-        if (bitmap != null && tl4Var.j != null) {
-            tl4Var.l.setImageBitmap(bitmap);
-            tl4Var.l.setVisibility(0);
-            tl4Var.j.setFirstFrameCallback(new nl4(tl4Var, (byte) 3));
-        }
-        tl4Var.a();
-        if (z) {
-            tl4Var.h.setAlpha(0.0f);
-            tl4Var.h.setScaleX(0.1f);
-            tl4Var.h.setScaleY(0.1f);
-            AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.setDuration(250L);
-            animatorSet.setInterpolator(d53.f);
-            b = 1;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(tl4Var.h, (Property<s8, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(tl4Var.h, (Property<s8, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(tl4Var.h, (Property<s8, Float>) View.SCALE_Y, 1.0f));
-            animatorSet.start();
-        } else {
-            b = 1;
-        }
-        tl4Var.k();
-        bd8 bd8Var2 = tl4Var.j;
-        this.c = b;
-        yc3Var.d();
-        return bd8Var2;
+    }
+
+    @Override // oc8
+    public final aob y0() {
+        V0();
+        return this.a.y0();
+    }
+
+    @Override // oc8
+    public final long z() {
+        V0();
+        return this.a.z();
+    }
+
+    @Override // oc8
+    public final boolean z0() {
+        V0();
+        return this.a.z0();
     }
 }

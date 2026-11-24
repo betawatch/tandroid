@@ -1,27 +1,35 @@
 // default package
 
-import android.os.Build;
+import android.content.Context;
+import android.text.TextPaint;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class cpa implements oy4, py4 {
-    public final /* synthetic */ kpa a;
+public final class cpa extends TextView {
+    public final /* synthetic */ float a;
 
-    @Override // py4
-    public final int i() {
-        return this.a.Y0();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cpa(Context context, float f) {
+        super(context);
+        this.a = f;
     }
 
-    @Override // oy4
-    public final void s(int i) {
-        kpa kpaVar = this.a;
-        mr3 mr3Var = kpaVar.m2;
-        if (Build.VERSION.SDK_INT < 31 || mr3Var == null) {
-            return;
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (View.MeasureSpec.getMode(i) != 0) {
+            int size = (View.MeasureSpec.getSize(i) - getPaddingLeft()) - getPaddingRight();
+            TextPaint textPaint = new TextPaint(getPaint());
+            float f = this.a;
+            textPaint.setTextSize(f);
+            if (textPaint.measureText("0000 0000 0000 0000") > size && size > 0) {
+                f = (float) Math.floor((f * r3) / r1);
+            }
+            if (getTextSize() != f) {
+                setTextSize(0, f);
+            }
         }
-        if (iqd.a(i, 4)) {
-            mr3Var.h(kpaVar.X0.e());
-        }
-        mr3Var.e(kpaVar.r2, kpaVar.b.getWidth(), kpaVar.b.getHeight());
+        super.onMeasure(i, i2);
     }
 }

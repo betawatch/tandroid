@@ -1,31 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hl8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ml8 b;
+import org.json.JSONObject;
 
-    public /* synthetic */ hl8(ml8 ml8Var, byte b) {
-        this.a = b;
-        this.b = ml8Var;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class hl8 {
+    public final String a;
+    public final long b;
+    public final String c;
+    public final String d;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ml8 ml8Var = this.b;
-        switch (b) {
-            case 0:
-                vk2 vk2Var = ml8Var.h;
-                if (vk2Var != null) {
-                    vk2Var.close();
-                    break;
-                }
-                break;
-            default:
-                ml8Var.a();
-                break;
-        }
+    public hl8(JSONObject jSONObject) {
+        this.d = jSONObject.optString("billingPeriod");
+        this.c = jSONObject.optString("priceCurrencyCode");
+        this.a = jSONObject.optString("formattedPrice");
+        this.b = jSONObject.optLong("priceAmountMicros");
+        jSONObject.optInt("recurrenceMode");
+        jSONObject.optInt("billingCycleCount");
     }
 }

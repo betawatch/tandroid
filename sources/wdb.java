@@ -1,40 +1,63 @@
 // default package
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public class wdb extends mg3 {
-    public AlertDialog B0;
-    public DialogInterface.OnCancelListener C0;
-    public AlertDialog D0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class wdb extends cra {
+    public Paint[] r;
+    public final /* synthetic */ byte s;
+    public final /* synthetic */ boolean w;
 
-    @Override // mg3
-    public final Dialog P() {
-        AlertDialog alertDialog = this.B0;
-        if (alertDialog != null) {
-            return alertDialog;
-        }
-        this.s0 = false;
-        AlertDialog alertDialog2 = this.D0;
-        if (alertDialog2 != null) {
-            return alertDialog2;
-        }
-        Context n = n();
-        ite.h(n);
-        AlertDialog create = new AlertDialog.Builder(n).create();
-        this.D0 = create;
-        return create;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public wdb(Context context, int i, int i2) {
+        super(context);
+        this.s = i;
+        this.w = i2;
+        c();
     }
 
-    @Override // mg3, android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        DialogInterface.OnCancelListener onCancelListener = this.C0;
-        if (onCancelListener != null) {
-            onCancelListener.onCancel(dialogInterface);
+    @Override // cra
+    public final void a() {
+        bra braVar = new bra(this.s);
+        this.a = braVar;
+        braVar.N = kk7.q1;
+        int i = 0;
+        braVar.L = false;
+        braVar.G = false;
+        braVar.J = true;
+        braVar.H = true;
+        braVar.I = false;
+        braVar.m = true;
+        braVar.h = true;
+        if (this.w) {
+            braVar.k = gl.L(24.0f);
         }
+        this.r = new Paint[20];
+        while (true) {
+            Paint[] paintArr = this.r;
+            if (i >= paintArr.length) {
+                bra braVar2 = this.a;
+                braVar2.l = new z02(this, (byte) 10);
+                braVar2.r = (byte) 17;
+                braVar2.s = (byte) 18;
+                braVar2.t = (byte) 19;
+                braVar2.P = bkb.F6;
+                braVar2.c();
+                return;
+            }
+            paintArr[i] = new Paint(1);
+            this.r[i].setColorFilter(new PorterDuffColorFilter(bm2.f(i / (this.r.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
+            i++;
+        }
+    }
+
+    @Override // cra
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

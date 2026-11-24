@@ -1,182 +1,41 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class kl9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ g29 b;
+    public final /* synthetic */ Exception c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class kl9 {
-    public static volatile long g;
-    public static volatile long h;
-    public static final HashSet i = new HashSet(Arrays.asList("audio/mpeg3", "audio/mpeg", "audio/ogg", "audio/m4a"));
-    public final long a;
-    public final int c;
-    public int d;
-    public boolean f;
-    public String b = null;
-    public final ArrayList e = new ArrayList();
-
-    public kl9(int i2) {
-        this.c = i2;
-        this.a = z8c.h(i2).n;
-        SharedPreferences d = d();
-        try {
-            g = d.getLong("hash", 0L);
-            h = d.getLong("lastReload", 0L);
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
-        gm.c3(new hl9(this, (byte) 0));
+    public /* synthetic */ kl9(g29 g29Var, Exception exc, byte b) {
+        this.a = b;
+        this.b = g29Var;
+        this.c = exc;
     }
 
-    public final void a(TLRPC.Document document) {
-        if (document == null || c(document.id) != null) {
-            return;
-        }
-        jl9 jl9Var = new jl9();
-        jl9Var.a = document;
-        int i2 = this.d;
-        this.d = i2 + 1;
-        jl9Var.c = i2;
-        jl9Var.d = false;
-        this.e.add(jl9Var);
-        h();
-    }
-
-    public final void b() {
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        Utilities.e.c(new ey8(this, new ArrayList(this.e), (byte) 29));
-    }
-
-    public final TLRPC.Document c(long j) {
-        ArrayList arrayList = this.e;
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            try {
-                if (arrayList.get(i2) != null && ((jl9) arrayList.get(i2)).a != null && ((jl9) arrayList.get(i2)).a.id == j) {
-                    return ((jl9) arrayList.get(i2)).a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Exception exc = this.c;
+        g29 g29Var = this.b;
+        switch (b) {
+            case 0:
+                ul9 ul9Var = (ul9) g29Var.b;
+                ul9Var.m.a("recording segment interrupted in state=".concat(de9.A(ul9Var.a0)), exc);
+                int i = ul9Var.a0;
+                if (i != 3) {
+                    if (i == 2) {
+                        ul9Var.D = true;
+                        break;
+                    }
+                } else {
+                    ul9Var.q();
+                    break;
                 }
-            } catch (Exception e) {
-                fc4.g(e, true);
-                return null;
-            }
-        }
-        return null;
-    }
-
-    public final SharedPreferences d() {
-        if (this.b == null) {
-            this.b = "ringtones_pref_" + this.a;
-        }
-        return a.b.getSharedPreferences(this.b, 0);
-    }
-
-    public final String e(long j) {
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i2 >= arrayList.size()) {
-                return "NoSound";
-            }
-            if (((jl9) arrayList.get(i2)).a != null && ((jl9) arrayList.get(i2)).a.id == j) {
-                if (!TextUtils.isEmpty(((jl9) arrayList.get(i2)).b)) {
-                    return ((jl9) arrayList.get(i2)).b;
-                }
-                bc4.G(this.c);
-                return bc4.I(((jl9) arrayList.get(i2)).a).toString();
-            }
-            i2++;
-        }
-    }
-
-    public final void f(boolean z) {
-        SharedPreferences d = d();
-        int i2 = d.getInt("count", 0);
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        for (int i3 = 0; i3 < i2; i3++) {
-            String string = d.getString("tone_document" + i3, "");
-            String string2 = d.getString("tone_local_path" + i3, "");
-            SerializedData serializedData = new SerializedData(Utilities.v(string));
-            try {
-                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-                jl9 jl9Var = new jl9();
-                jl9Var.a = TLdeserialize;
-                jl9Var.b = string2;
-                int i4 = this.d;
-                this.d = i4 + 1;
-                jl9Var.c = i4;
-                arrayList.add(jl9Var);
-            } catch (Throwable th) {
-                boolean z2 = e21.a;
-                fc4.g(th, true);
-            }
-        }
-        if (z) {
-            gm.c3(new hl9(this, (byte) 1));
-        }
-    }
-
-    public final void g(boolean z) {
-        boolean z2 = z || System.currentTimeMillis() - h > 86400000;
-        TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
-        getsavedringtones.hash = g;
-        if (z2) {
-            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new r15(this, (byte) 28));
-            return;
-        }
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        b();
-    }
-
-    public final void h() {
-        SharedPreferences d = d();
-        d.edit().clear().apply();
-        SharedPreferences.Editor edit = d.edit();
-        int i2 = 0;
-        int i3 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i2 >= arrayList.size()) {
-                edit.putInt("count", i3);
-                edit.apply();
-                nm7.f(this.c).k(nm7.i5, new Object[0]);
-                return;
-            }
-            if (!((jl9) arrayList.get(i2)).d) {
-                i3++;
-                TLRPC.Document document = ((jl9) arrayList.get(i2)).a;
-                String str = ((jl9) arrayList.get(i2)).b;
-                SerializedData serializedData = new SerializedData(document.getObjectSize());
-                document.serializeToStream(serializedData);
-                edit.putString("tone_document" + i2, Utilities.f(serializedData.toByteArray()));
-                if (str != null) {
-                    edit.putString("tone_local_path" + i2, str);
-                }
-            }
-            i2++;
+                break;
+            default:
+                ((ul9) g29Var.b).h(exc);
+                break;
         }
     }
 }

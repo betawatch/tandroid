@@ -1,149 +1,318 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class xjc extends FrameLayout {
-    public TextView[] a;
-    public TextView b;
-    public FrameLayout c;
-    public bkc d;
-    public CharSequence e;
-    public boolean f;
-    public ValueAnimator h;
-    public boolean n;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class xjc extends w8b {
+    public wtc n;
+    public int o;
+    public boolean p;
+    public yjc q;
+    public ln8 r;
 
-    public final void a(View view, View view2, Runnable runnable) {
-        view.setVisibility(0);
-        view2.setVisibility(0);
-        view2.setTranslationY(gm.L(15.0f));
-        view2.setAlpha(0.0f);
-        this.f = true;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new vjc(view2, view, (byte) 0));
-        this.h.addListener(new rb2((Object) this, (Object) view, (Object) view2, (Object) runnable, (byte) 5));
-        this.h.setDuration(250L).setInterpolator(d53.f);
-        this.h.start();
+    @Override // w8b
+    public final void a(long j) {
+        this.g = j;
+        this.p = j != 0;
+        yjc yjcVar = this.q;
+        this.o = yjcVar != null ? yjcVar.e : 0;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(String str, boolean z, boolean z2) {
-        View view = this.d;
-        TextView[] textViewArr = this.a;
-        if (z) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-            SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new s0(textViewArr), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) spannableString);
-            str = spannableStringBuilder;
+    @Override // w8b
+    public final long b(xu7 xu7Var) {
+        if ((xu7Var.a[0] & 1) == 1) {
+            return -1L;
         }
-        if (TextUtils.isEmpty(textViewArr[0].getText())) {
-            z2 = false;
-        }
-        if (!z2) {
-            ValueAnimator valueAnimator = this.h;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.f = false;
-            textViewArr[0].setText(str);
-            textViewArr[0].setVisibility(0);
-            textViewArr[1].setVisibility(8);
-            view.setVisibility(8);
-            return;
-        }
-        if (this.f) {
-            this.e = str;
-            return;
-        }
-        if (this.n) {
-            textViewArr[0].setText(str);
-            a(view, textViewArr[0], null);
+        wtc wtcVar = this.n;
+        wtcVar.getClass();
+        byte b = xu7Var.a[0];
+        yjc yjcVar = (yjc) wtcVar.a;
+        gn5[] gn5VarArr = (gn5[]) wtcVar.d;
+        int i = gn5VarArr[(b >> 1) & (kk7.d4 >>> (8 - aye.a(gn5VarArr.length - 1)))].b ? yjcVar.f : yjcVar.e;
+        long j = this.p ? (this.o + i) / 4 : 0;
+        byte[] bArr = xu7Var.a;
+        int length = bArr.length;
+        int i2 = xu7Var.c + 4;
+        if (length < i2) {
+            byte[] copyOf = Arrays.copyOf(bArr, i2);
+            xu7Var.L(copyOf.length, copyOf);
         } else {
-            if (textViewArr[0].getText().equals(str)) {
-                return;
-            }
-            textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new f8c(this, (byte) 23));
+            xu7Var.M(i2);
         }
+        byte[] bArr2 = xu7Var.a;
+        int i3 = xu7Var.c;
+        bArr2[i3 - 4] = (byte) (j & 255);
+        bArr2[i3 - 3] = (byte) ((j >>> 8) & 255);
+        bArr2[i3 - 2] = (byte) ((j >>> 16) & 255);
+        bArr2[i3 - 1] = (byte) ((j >>> 24) & 255);
+        this.p = true;
+        this.o = i;
+        return j;
     }
 
-    public final void c(boolean z) {
-        FrameLayout frameLayout = this.c;
-        if (!z) {
-            if (frameLayout.getVisibility() == 8) {
-                return;
-            }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(d53.f).setListener(new wjc(this, (byte) 1)).setDuration(300L).start();
-        } else if (frameLayout.getVisibility() != 0) {
-            frameLayout.setVisibility(0);
-            frameLayout.setAlpha(0.0f);
-            frameLayout.setScaleY(0.6f);
-            frameLayout.setScaleX(0.6f);
-            frameLayout.animate().setListener(null).cancel();
-            wi8.t(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), d53.k, 300L);
+    @Override // w8b
+    public final boolean c(xu7 xu7Var, long j, v8b v8bVar) {
+        wtc wtcVar;
+        if (this.n != null) {
+            ((fm4) v8bVar.b).getClass();
+            return false;
         }
-    }
-
-    public final void d(boolean z, boolean z2) {
-        TextView textView = this.b;
-        if (!z2) {
-            textView.animate().setListener(null).cancel();
-            textView.setVisibility(z ? 0 : 8);
+        yjc yjcVar = this.q;
+        int i = 4;
+        if (yjcVar == null) {
+            aye.c(1, xu7Var, false);
+            xu7Var.s();
+            int A = xu7Var.A();
+            int s = xu7Var.s();
+            int o = xu7Var.o();
+            int i2 = o <= 0 ? -1 : o;
+            int o2 = xu7Var.o();
+            int i3 = o2 <= 0 ? -1 : o2;
+            xu7Var.o();
+            int A2 = xu7Var.A();
+            int pow = (int) Math.pow(2.0d, A2 & 15);
+            int pow2 = (int) Math.pow(2.0d, (A2 & kk7.O3) >> 4);
+            xu7Var.A();
+            this.q = new yjc(A, s, i2, i3, pow, pow2, Arrays.copyOf(xu7Var.a, xu7Var.c));
         } else {
-            if (!z) {
-                textView.animate().alpha(0.0f).setListener(new wjc(this, (byte) 0)).setDuration(150L).start();
-                return;
-            }
-            if (textView.getVisibility() != 0) {
-                textView.setVisibility(0);
-                textView.setAlpha(0.0f);
-            }
-            textView.animate().setListener(null).cancel();
-            textView.animate().alpha(1.0f).setDuration(150L).start();
-        }
-    }
-
-    public final void e(boolean z) {
-        bkc bkcVar = this.d;
-        TextView[] textViewArr = this.a;
-        if (TextUtils.isEmpty(textViewArr[0].getText())) {
-            z = false;
-        }
-        if (this.n) {
-            return;
-        }
-        bkcVar.a();
-        if (z) {
-            if (this.f) {
-                this.e = "timer";
-                return;
+            ln8 ln8Var = this.r;
+            if (ln8Var == null) {
+                this.r = aye.b(xu7Var, true, true);
             } else {
-                this.n = true;
-                a(textViewArr[0], bkcVar, null);
-                return;
+                int i4 = xu7Var.c;
+                byte[] bArr = new byte[i4];
+                System.arraycopy(xu7Var.a, 0, bArr, 0, i4);
+                short s2 = yjcVar.a;
+                int i5 = 5;
+                aye.c(5, xu7Var, false);
+                int A3 = xu7Var.A() + 1;
+                qd1 qd1Var = new qd1(xu7Var.a);
+                int i6 = 3;
+                qd1Var.n(xu7Var.b << 3);
+                int i7 = 0;
+                while (true) {
+                    int i8 = 2;
+                    int i9 = 16;
+                    int i10 = i6;
+                    if (i7 >= A3) {
+                        int i11 = 6;
+                        int f = qd1Var.f(6) + 1;
+                        for (int i12 = 0; i12 < f; i12++) {
+                            if (qd1Var.f(16) != 0) {
+                                throw av7.a("placeholder of time domain transforms not zeroed out", null);
+                            }
+                        }
+                        int i13 = 1;
+                        int f2 = qd1Var.f(6) + 1;
+                        int i14 = 0;
+                        while (i14 < f2) {
+                            int f3 = qd1Var.f(i9);
+                            if (f3 == 0) {
+                                int i15 = 8;
+                                qd1Var.n(8);
+                                qd1Var.n(16);
+                                qd1Var.n(16);
+                                qd1Var.n(6);
+                                qd1Var.n(8);
+                                int f4 = qd1Var.f(4) + 1;
+                                int i16 = 0;
+                                while (i16 < f4) {
+                                    qd1Var.n(i15);
+                                    i16++;
+                                    i15 = 8;
+                                }
+                            } else {
+                                if (f3 != i13) {
+                                    throw av7.a("floor type greater than 1 not decodable: " + f3, null);
+                                }
+                                int f5 = qd1Var.f(i5);
+                                int[] iArr = new int[f5];
+                                int i17 = -1;
+                                for (int i18 = 0; i18 < f5; i18++) {
+                                    int f6 = qd1Var.f(i);
+                                    iArr[i18] = f6;
+                                    if (f6 > i17) {
+                                        i17 = f6;
+                                    }
+                                }
+                                int i19 = i17 + 1;
+                                int[] iArr2 = new int[i19];
+                                int i20 = 0;
+                                while (i20 < i19) {
+                                    iArr2[i20] = qd1Var.f(i10) + 1;
+                                    int f7 = qd1Var.f(i8);
+                                    if (f7 > 0) {
+                                        qd1Var.n(8);
+                                    }
+                                    int i21 = 0;
+                                    for (int i22 = 1; i21 < (i22 << f7); i22 = 1) {
+                                        qd1Var.n(8);
+                                        i21++;
+                                    }
+                                    i20++;
+                                    i10 = 3;
+                                    i8 = 2;
+                                }
+                                qd1Var.n(i8);
+                                int f8 = qd1Var.f(4);
+                                int i23 = 0;
+                                int i24 = 0;
+                                for (int i25 = 0; i25 < f5; i25++) {
+                                    i23 += iArr2[iArr[i25]];
+                                    while (i24 < i23) {
+                                        qd1Var.n(f8);
+                                        i24++;
+                                    }
+                                }
+                            }
+                            i14++;
+                            i10 = 3;
+                            i11 = 6;
+                            i8 = 2;
+                            i = 4;
+                            i9 = 16;
+                            i5 = 5;
+                            i13 = 1;
+                        }
+                        int f9 = qd1Var.f(i11) + 1;
+                        int i26 = 0;
+                        while (i26 < f9) {
+                            if (qd1Var.f(16) > 2) {
+                                throw av7.a("residueType greater than 2 is not decodable", null);
+                            }
+                            qd1Var.n(24);
+                            qd1Var.n(24);
+                            qd1Var.n(24);
+                            int f10 = qd1Var.f(i11) + 1;
+                            qd1Var.n(8);
+                            int[] iArr3 = new int[f10];
+                            for (int i27 = 0; i27 < f10; i27++) {
+                                iArr3[i27] = ((qd1Var.e() ? qd1Var.f(5) : 0) << 3) + qd1Var.f(3);
+                            }
+                            for (int i28 = 0; i28 < f10; i28++) {
+                                for (int i29 = 0; i29 < 8; i29++) {
+                                    if ((iArr3[i28] & (1 << i29)) != 0) {
+                                        qd1Var.n(8);
+                                    }
+                                }
+                            }
+                            i26++;
+                            i11 = 6;
+                        }
+                        int f11 = qd1Var.f(i11) + 1;
+                        for (int i30 = 0; i30 < f11; i30++) {
+                            int f12 = qd1Var.f(16);
+                            if (f12 != 0) {
+                                lad.c("VorbisUtil", "mapping type other than 0 not supported: " + f12);
+                            } else {
+                                int f13 = qd1Var.e() ? qd1Var.f(4) + 1 : 1;
+                                if (qd1Var.e()) {
+                                    int f14 = qd1Var.f(8) + 1;
+                                    for (int i31 = 0; i31 < f14; i31++) {
+                                        int i32 = s2 - 1;
+                                        qd1Var.n(aye.a(i32));
+                                        qd1Var.n(aye.a(i32));
+                                    }
+                                }
+                                if (qd1Var.f(2) != 0) {
+                                    throw av7.a("to reserved bits must be zero after mapping coupling steps", null);
+                                }
+                                if (f13 > 1) {
+                                    for (int i33 = 0; i33 < s2; i33++) {
+                                        qd1Var.n(4);
+                                    }
+                                }
+                                for (int i34 = 0; i34 < f13; i34++) {
+                                    qd1Var.n(8);
+                                    qd1Var.n(8);
+                                    qd1Var.n(8);
+                                }
+                            }
+                        }
+                        int f15 = qd1Var.f(6) + 1;
+                        gn5[] gn5VarArr = new gn5[f15];
+                        for (int i35 = 0; i35 < f15; i35++) {
+                            boolean e = qd1Var.e();
+                            qd1Var.f(16);
+                            qd1Var.f(16);
+                            qd1Var.f(8);
+                            gn5VarArr[i35] = new gn5((byte) 4, e);
+                        }
+                        if (!qd1Var.e()) {
+                            throw av7.a("framing bit after modes not set as expected", null);
+                        }
+                        wtcVar = new wtc(yjcVar, ln8Var, bArr, gn5VarArr);
+                    } else {
+                        if (qd1Var.f(24) != 5653314) {
+                            throw av7.a("expected code book to start with [0x56, 0x43, 0x42] at " + ((qd1Var.d << 3) + qd1Var.e), null);
+                        }
+                        int f16 = qd1Var.f(16);
+                        int f17 = qd1Var.f(24);
+                        if (qd1Var.e()) {
+                            qd1Var.n(5);
+                            for (int i36 = 0; i36 < f17; i36 += qd1Var.f(aye.a(f17 - i36))) {
+                            }
+                        } else {
+                            boolean e2 = qd1Var.e();
+                            for (int i37 = 0; i37 < f17; i37++) {
+                                if (!e2) {
+                                    qd1Var.n(5);
+                                } else if (qd1Var.e()) {
+                                    qd1Var.n(5);
+                                }
+                            }
+                        }
+                        int f18 = qd1Var.f(4);
+                        if (f18 > 2) {
+                            throw av7.a("lookup type greater than 2 not decodable: " + f18, null);
+                        }
+                        if (f18 == 1 || f18 == 2) {
+                            qd1Var.n(32);
+                            qd1Var.n(32);
+                            int f19 = qd1Var.f(4) + 1;
+                            qd1Var.n(1);
+                            qd1Var.n((int) ((f18 == 1 ? f16 != 0 ? (long) Math.floor(Math.pow(f17, 1.0d / f16)) : 0L : f16 * f17) * f19));
+                        }
+                        i7++;
+                        i6 = i10;
+                    }
+                }
             }
         }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        wtcVar = null;
+        this.n = wtcVar;
+        if (wtcVar == null) {
+            return true;
         }
-        this.n = true;
-        this.f = false;
-        textViewArr[0].setVisibility(8);
-        textViewArr[1].setVisibility(8);
-        bkcVar.setVisibility(0);
+        yjc yjcVar2 = (yjc) wtcVar.a;
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(yjcVar2.g);
+        arrayList.add((byte[]) wtcVar.c);
+        ld7 a = zjc.a(mm5.r((String[]) ((ln8) wtcVar.b).b));
+        em4 em4Var = new em4();
+        em4Var.r = ud7.n("audio/ogg");
+        em4Var.s = ud7.n("audio/vorbis");
+        em4Var.i = yjcVar2.d;
+        em4Var.j = yjcVar2.c;
+        em4Var.M = yjcVar2.a;
+        em4Var.O = yjcVar2.b;
+        em4Var.v = arrayList;
+        em4Var.l = a;
+        v8bVar.b = new fm4(em4Var);
+        return true;
     }
 
-    public void setSignalBarCount(int i) {
-        this.d.setSignalBarCount(i);
+    @Override // w8b
+    public final void d(boolean z) {
+        super.d(z);
+        if (z) {
+            this.n = null;
+            this.q = null;
+            this.r = null;
+        }
+        this.o = 0;
+        this.p = false;
     }
 }

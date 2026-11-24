@@ -1,19 +1,31 @@
 // default package
 
-import java.util.concurrent.Executor;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class hm5 extends hg7 implements gm5 {
-    public final o94 f;
+public final class hm5 extends m3 implements Serializable {
+    public final Object b;
+    public final Object c;
 
-    public hm5(mi6 mi6Var, Executor executor, o94 o94Var) {
-        super(mi6Var, executor);
-        this.f = o94Var;
+    public hm5(Object obj, Object obj2) {
+        super((byte) 0, false);
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // vs7
-    public final o94[] a() {
-        return new o94[]{this.f};
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.c;
+    }
+
+    @Override // m3, java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

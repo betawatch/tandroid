@@ -1,27 +1,46 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
+import j$.util.Objects;
+import java.util.Locale;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final class sja {
-    public static final sja a;
-    public static final sja b;
-    public static final /* synthetic */ sja[] c;
+    public final long a;
+    public final long b;
+    public final int c;
 
-    static {
-        sja sjaVar = new sja("ICON", 0);
-        a = sjaVar;
-        sja sjaVar2 = new sja("TEXT", 1);
-        b = sjaVar2;
-        c = new sja[]{sjaVar, sjaVar2};
+    public sja(long j, int i, long j2) {
+        gre.f(j < j2);
+        this.a = j;
+        this.b = j2;
+        this.c = i;
     }
 
-    public static sja valueOf(String str) {
-        return (sja) Enum.valueOf(sja.class, str);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && sja.class == obj.getClass()) {
+            sja sjaVar = (sja) obj;
+            if (this.a == sjaVar.a && this.b == sjaVar.b && this.c == sjaVar.c) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static sja[] values() {
-        return (sja[]) c.clone();
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Integer.valueOf(this.c));
+    }
+
+    public final String toString() {
+        String str = g8c.a;
+        Locale locale = Locale.US;
+        StringBuilder o = ug8.o(this.a, "Segment: startTimeMs=", ", endTimeMs=");
+        o.append(this.b);
+        o.append(", speedDivisor=");
+        o.append(this.c);
+        return o.toString();
     }
 }

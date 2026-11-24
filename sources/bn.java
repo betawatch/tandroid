@@ -1,40 +1,75 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class bn implements dn {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public gn d;
-    public Rect e;
-    public vm f;
-    public cw3 h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w;
+public final /* synthetic */ class bn implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public bn(View view, boolean z) {
-        this.a = new WeakReference(view);
-        this.b = z;
+    public /* synthetic */ bn(Object obj, int i, int i2, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.b = i;
+        this.c = i2;
     }
 
-    @Override // dn
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
-            return;
-        }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        int i = this.c;
+        int i2 = this.b;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                gn gnVar = (gn) obj;
+                gnVar.getClass();
+                gnVar.u(bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i));
+                gnVar.invalidateSelf();
+                break;
+            case 1:
+                int R0 = gl.R0(valueAnimator.getAnimatedFraction(), 1.0f, i2, i);
+                ry8 ry8Var = ((y95) obj).f;
+                ry8Var.setColorFilter(new PorterDuffColorFilter(R0, PorterDuff.Mode.SRC_IN));
+                bkb.F1(ry8Var.getDrawable(), R0 & 620756991, true);
+                break;
+            case 2:
+                rw5 rw5Var = (rw5) obj;
+                rw5Var.A1.a = bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i);
+                rw5Var.S0.invalidate();
+                break;
+            case 3:
+                wt7 wt7Var = (wt7) obj;
+                wt7Var.q1.a = bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i);
+                wt7Var.J0.invalidate();
+                break;
+            case 4:
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
+                int i3 = ScrollSlidingTextTabStrip.p0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                scrollSlidingTextTabStrip.a0 = i2 * floatValue;
+                scrollSlidingTextTabStrip.b0 = i * floatValue;
+                scrollSlidingTextTabStrip.a.invalidate();
+                scrollSlidingTextTabStrip.invalidate();
+                break;
+            default:
+                float animatedFraction = valueAnimator.getAnimatedFraction();
+                u0b u0bVar = (u0b) ((u88) obj).b;
+                u0bVar.m1.setAlpha(animatedFraction);
+                u0bVar.q1.setAlpha(animatedFraction);
+                if (i2 != 0) {
+                    int i4 = (int) ((1.0f - animatedFraction) * i2);
+                    u0bVar.Q0(i + i4);
+                    u0bVar.m1.setTranslationY(i4);
+                    break;
+                }
+                break;
         }
     }
 }

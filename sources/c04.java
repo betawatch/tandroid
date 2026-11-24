@@ -1,50 +1,48 @@
 // default package
 
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoipAudioManager;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class c04 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ c04(Object obj, boolean z, boolean z2, byte b) {
+    public /* synthetic */ c04(Object obj, float f, int i, byte b) {
         this.a = b;
         this.d = obj;
-        this.b = z;
-        this.c = z2;
+        this.b = f;
+        this.c = i;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        boolean z = this.c;
-        boolean z2 = this.b;
+        int i = this.c;
+        float f = this.b;
         Object obj = this.d;
         switch (b) {
             case 0:
-                ((e34) obj).O(false, z2, z);
-                break;
-            case 1:
-                ((NativeInstance) obj).lambda$onNetworkStateUpdated$0(z2, z);
-                break;
-            case 2:
-                ((VideoPlayerHolderBase) obj).lambda$setAudioEnabled$8(z2, z);
-                break;
-            case 3:
-                ((VoIPService) obj).lambda$createGroupInstance$75(z2, z);
-                break;
-            case 4:
-                VoipAudioManager.lambda$isBluetoothAndSpeakerOnAsync$3((jac) obj, z2, z);
-                break;
+                t14 t14Var = ((d04) obj).G;
+                try {
+                    v26 v26Var = new v26(t14Var.Q.getContext(), 0, f);
+                    v26Var.a = i;
+                    t14Var.R.v0(v26Var);
+                    break;
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                    return;
+                }
             default:
-                ((rhb) ((dmc) obj).c).l(z2, z);
-                break;
+                tx9 tx9Var = (tx9) obj;
+                try {
+                    v26 v26Var2 = new v26(tx9Var.i0.getContext(), 0, f);
+                    v26Var2.a = i;
+                    tx9Var.s0.v0(v26Var2);
+                    break;
+                } catch (Exception e2) {
+                    fa4.g(e2, true);
+                }
         }
     }
 }

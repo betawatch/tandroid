@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -17,19 +17,19 @@ public final class zziq {
         List list;
         str.getClass();
         String valueOf = String.valueOf(new char[]{'.'}[0]);
-        int e = hbb.e(0, str, valueOf, false);
+        int e = f9b.e(0, str, valueOf, false);
         if (e != -1) {
             ArrayList arrayList = new ArrayList(10);
             int i = 0;
             do {
                 arrayList.add(str.subSequence(i, e).toString());
                 i = valueOf.length() + e;
-                e = hbb.e(i, str, valueOf, false);
+                e = f9b.e(i, str, valueOf, false);
             } while (e != -1);
             arrayList.add(str.subSequence(i, str.length()).toString());
             list = arrayList;
         } else {
-            list = lm2.a(str.toString());
+            list = zk2.a(str.toString());
         }
         Iterator it = list.iterator();
         String str2 = "";
@@ -44,8 +44,8 @@ public final class zziq {
     }
 
     public final void zza(zzxg zzxgVar) {
-        this.zza = km2.m(zzxgVar.zzf().zzi());
-        this.zzb = km2.m(zzxgVar.zzg().zzi());
+        this.zza = yk2.m(zzxgVar.zzf().zzi());
+        this.zzb = yk2.m(zzxgVar.zzg().zzi());
     }
 
     public final boolean zzb(String str) {

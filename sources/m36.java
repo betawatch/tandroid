@@ -1,35 +1,31 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class m36 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ n36 b;
-    public final /* synthetic */ o36 c;
+public final class m36 extends t1 {
+    public final /* synthetic */ byte b = 1;
 
-    public /* synthetic */ m36(o36 o36Var, n36 n36Var, byte b) {
-        this.a = b;
-        this.c = o36Var;
-        this.b = n36Var;
+    public /* synthetic */ m36(Context context) {
+        super(context, (byte) 9);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        o36 o36Var = this.c;
-        n36 n36Var = this.b;
-        switch (b) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.b) {
             case 0:
-                n36Var.f = null;
-                o36Var.a();
+                super.dispatchDraw(canvas);
                 break;
             default:
-                n36Var.f = null;
-                o36Var.a();
+                super.dispatchDraw(canvas);
+                invalidate();
                 break;
         }
+    }
+
+    public m36(s36 s36Var, Context context) {
+        super(context, (byte) 9);
     }
 }

@@ -1,13 +1,101 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class tld extends x2f {
-    public static final AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(wld.class, Thread.class, "a");
-    public static final AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(wld.class, wld.class, "b");
-    public static final AtomicReferenceFieldUpdater c = AtomicReferenceFieldUpdater.newUpdater(cmd.class, wld.class, "c");
-    public static final AtomicReferenceFieldUpdater d = AtomicReferenceFieldUpdater.newUpdater(cmd.class, old.class, "b");
-    public static final AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(cmd.class, Object.class, "a");
+public final class tld extends mid {
+    public static final Object[] F;
+    public static final tld G;
+    public final transient int E;
+    public final transient Object[] s;
+    public final transient int w;
+    public final transient Object[] x;
+    public final transient int y;
+
+    static {
+        Object[] objArr = new Object[0];
+        F = objArr;
+        G = new tld(0, 0, 0, objArr, objArr);
+    }
+
+    public tld(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {
+        super((byte) 4);
+        this.s = objArr;
+        this.w = i;
+        this.x = objArr2;
+        this.y = i2;
+        this.E = i3;
+    }
+
+    @Override // mid
+    public final xhd B() {
+        return xhd.A(this.E, this.s);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        Object[] objArr = this.x;
+        if (objArr.length == 0) {
+            return false;
+        }
+        int rotateLeft = (int) (Integer.rotateLeft((int) (obj.hashCode() * (-862048943)), 15) * 461845907);
+        while (true) {
+            int i = rotateLeft & this.y;
+            Object obj2 = objArr[i];
+            if (obj2 == null) {
+                return false;
+            }
+            if (obj2.equals(obj)) {
+                return true;
+            }
+            rotateLeft = i + 1;
+        }
+    }
+
+    @Override // mid, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.w;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return A().listIterator(0);
+    }
+
+    @Override // kzc
+    public final int p(Object[] objArr) {
+        Object[] objArr2 = this.s;
+        int i = this.E;
+        System.arraycopy(objArr2, 0, objArr, 0, i);
+        return i;
+    }
+
+    @Override // kzc
+    public final int q() {
+        return this.E;
+    }
+
+    @Override // kzc
+    public final int s() {
+        return 0;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.E;
+    }
+
+    @Override // kzc
+    public final v5c u() {
+        return A().listIterator(0);
+    }
+
+    @Override // kzc
+    public final Object[] v() {
+        return this.s;
+    }
 }

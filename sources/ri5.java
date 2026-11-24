@@ -1,25 +1,20 @@
 // default package
 
-import android.view.TextureView;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public abstract class ri5 extends TextureView {
-    @Override // android.view.View
-    public void invalidate() {
-        if (pi5.c) {
-            pi5.b.add(this);
-        } else {
-            super.invalidate();
-        }
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ri5 {
+    public final d a;
+    public boolean b;
+    public boolean c;
+    public boolean d = true;
+    public boolean e;
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public boolean g;
 
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        if (pi5.c) {
-            pi5.b.add(this);
-        } else {
-            super.invalidate(i, i2, i3, i4);
-        }
+    public ri5(d dVar) {
+        this.a = dVar;
     }
 }

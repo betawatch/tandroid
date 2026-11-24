@@ -3,9 +3,9 @@ package androidx.car.app.model.signin;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class PinSignInMethod implements kja {
+public final class PinSignInMethod implements iha {
     private static final int MAX_PIN_LENGTH = 12;
     private final CarText mPinCode;
 
@@ -13,13 +13,13 @@ public final class PinSignInMethod implements kja {
         Objects.requireNonNull(charSequence);
         int length = charSequence.length();
         if (length == 0) {
-            u36.j("PIN must not be empty");
+            w26.j("PIN must not be empty");
             throw null;
         }
         if (length <= 12) {
             this.mPinCode = CarText.create(charSequence);
         } else {
-            u36.j("PIN must not be longer than 12 characters");
+            w26.j("PIN must not be longer than 12 characters");
             throw null;
         }
     }

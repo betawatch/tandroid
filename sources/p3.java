@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class p3 extends AbstractCollection {
     public final /* synthetic */ byte a;
@@ -27,19 +27,19 @@ public final class p3 extends AbstractCollection {
                 ((q3) obj).b();
                 break;
             case 1:
-                ((zi7) obj).b();
+                ((wg7) obj).b();
                 break;
             case 2:
-                ((dq2) obj).clear();
+                ((so2) obj).clear();
                 break;
             case 3:
                 ((AbstractMap) obj).clear();
                 break;
             case 4:
-                ((dq2) obj).clear();
+                ((so2) obj).clear();
                 break;
             case 5:
-                ((dq2) obj).clear();
+                ((so2) obj).clear();
                 break;
             case 6:
                 ((d3) obj).clear();
@@ -65,7 +65,7 @@ public final class p3 extends AbstractCollection {
                 Collection collection = (Collection) ((q3) obj2).a().get(key);
                 return collection != null && collection.contains(value);
             case 1:
-                return ((zi7) obj2).c(obj);
+                return ((wg7) obj2).c(obj);
             case 2:
             case 4:
             case 5:
@@ -105,25 +105,25 @@ public final class p3 extends AbstractCollection {
             case 0:
                 return ((q3) obj).h();
             case 1:
-                return new a3((zi7) obj, (byte) 0);
+                return new a3((wg7) obj, (byte) 0);
             case 2:
-                dq2 dq2Var = (dq2) obj;
-                Map d = dq2Var.d();
-                return d != null ? d.values().iterator() : new zp2(dq2Var, b2);
+                so2 so2Var = (so2) obj;
+                Map d = so2Var.d();
+                return d != null ? d.values().iterator() : new oo2(so2Var, b2);
             case 3:
-                return new ok6(((AbstractMap) obj).entrySet().iterator());
+                return new mi6(((AbstractMap) obj).entrySet().iterator());
             case 4:
-                dq2 dq2Var2 = (dq2) obj;
-                Map m = dq2Var2.m();
-                return m != null ? m.values().iterator() : new v7d(dq2Var2, b2);
+                so2 so2Var2 = (so2) obj;
+                Map m = so2Var2.m();
+                return m != null ? m.values().iterator() : new t5d(so2Var2, b2);
             case 5:
-                dq2 dq2Var3 = (dq2) obj;
-                Map n = dq2Var3.n();
-                return n != null ? n.values().iterator() : new lad(dq2Var3, b2);
+                so2 so2Var3 = (so2) obj;
+                Map n = so2Var3.n();
+                return n != null ? n.values().iterator() : new j8d(so2Var3, b2);
             case 6:
-                return new fed(((d3) obj).entrySet().iterator(), (byte) 0);
+                return new dcd(((d3) obj).entrySet().iterator(), (byte) 0);
             default:
-                return new fed(((d3) obj).entrySet().iterator(), (byte) 1);
+                return new dcd(((d3) obj).entrySet().iterator(), (byte) 1);
         }
     }
 
@@ -144,7 +144,7 @@ public final class p3 extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused) {
                     for (Map.Entry entry2 : abstractMap.entrySet()) {
-                        if (ese.a(obj, entry2.getValue())) {
+                        if (bqe.a(obj, entry2.getValue())) {
                             abstractMap.remove(entry2.getKey());
                             return true;
                         }
@@ -157,7 +157,7 @@ public final class p3 extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry3 : d3Var.entrySet()) {
-                        if (o3f.a(obj, entry3.getValue())) {
+                        if (m1f.a(obj, entry3.getValue())) {
                             d3Var.remove(entry3.getKey());
                             return true;
                         }
@@ -170,7 +170,7 @@ public final class p3 extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry4 : d3Var2.entrySet()) {
-                        if (u5f.a(obj, entry4.getValue())) {
+                        if (s3f.a(obj, entry4.getValue())) {
                             d3Var2.remove(entry4.getKey());
                             return true;
                         }
@@ -219,7 +219,7 @@ public final class p3 extends AbstractCollection {
                             hashSet2.add(entry2.getKey());
                         }
                     }
-                    return ((wjf) d3Var.e).b().removeAll(hashSet2);
+                    return ((vhf) d3Var.e).b().removeAll(hashSet2);
                 }
             case 7:
                 d3 d3Var2 = (d3) obj;
@@ -235,7 +235,7 @@ public final class p3 extends AbstractCollection {
                             hashSet3.add(entry3.getKey());
                         }
                     }
-                    return ((l9d) d3Var2.e).b().removeAll(hashSet3);
+                    return ((j7d) d3Var2.e).b().removeAll(hashSet3);
                 }
         }
     }
@@ -277,7 +277,7 @@ public final class p3 extends AbstractCollection {
                             hashSet2.add(entry2.getKey());
                         }
                     }
-                    return ((wjf) d3Var.e).b().retainAll(hashSet2);
+                    return ((vhf) d3Var.e).b().retainAll(hashSet2);
                 }
             case 7:
                 d3 d3Var2 = (d3) obj;
@@ -293,7 +293,7 @@ public final class p3 extends AbstractCollection {
                             hashSet3.add(entry3.getKey());
                         }
                     }
-                    return ((l9d) d3Var2.e).b().retainAll(hashSet3);
+                    return ((j7d) d3Var2.e).b().retainAll(hashSet3);
                 }
         }
     }

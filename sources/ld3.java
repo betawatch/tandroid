@@ -1,156 +1,70 @@
 // default package
 
-import android.content.ContentResolver;
-import android.net.Uri;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.HashMap;
-import org.json.JSONObject;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ld3 implements qt3, iad {
-    public final /* synthetic */ byte a;
-    public String b;
+public final class ld3 extends dia implements lab {
+    public final String r;
+    public final uab s;
 
-    public ld3(String str) {
-        this.a = (byte) 3;
-        this.b = str;
+    public ld3(String str, uab uabVar) {
+        super(new qab[2], new rab[2]);
+        this.r = str;
+        q(1024);
+        this.s = uabVar;
     }
 
-    public static void c(in3 in3Var, laa laaVar) {
-        String str = laaVar.a;
-        if (str != null) {
-            in3Var.A("X-CRASHLYTICS-GOOGLE-APP-ID", str);
-        }
-        in3Var.A("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
-        in3Var.A("X-CRASHLYTICS-API-CLIENT-VERSION", "20.1.1");
-        in3Var.A("Accept", "application/json");
-        in3Var.A("X-CRASHLYTICS-DEVICE-MODEL", laaVar.b);
-        String str2 = laaVar.c;
-        if (str2 != null) {
-            in3Var.A("X-CRASHLYTICS-OS-BUILD-VERSION", str2);
-        }
-        String str3 = laaVar.d;
-        if (str3 != null) {
-            in3Var.A("X-CRASHLYTICS-OS-DISPLAY-VERSION", str3);
-        }
-        String str4 = laaVar.e.c().a;
-        if (str4 != null) {
-            in3Var.A("X-CRASHLYTICS-INSTALLATION-ID", str4);
-        }
+    @Override // dia
+    public final z83 f() {
+        return new qab();
     }
 
-    public static HashMap d(laa laaVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put("build_version", laaVar.h);
-        hashMap.put("display_version", laaVar.g);
-        hashMap.put("source", Integer.toString(laaVar.i));
-        String str = laaVar.f;
-        if (!TextUtils.isEmpty(str)) {
-            hashMap.put("instance", str);
-        }
-        return hashMap;
+    @Override // dia
+    public final b93 g() {
+        return new iia(this);
     }
 
-    @Override // qt3
-    public final int a(int i) {
-        return -1;
+    @Override // u83
+    public final String getName() {
+        return this.r;
     }
 
-    @Override // qt3
-    public final boolean b(int i) {
-        return false;
+    @Override // dia
+    public final x83 h(Throwable th) {
+        return new mab("Unexpected decode error", th);
     }
 
-    @Override // qt3
-    public final char charAt(int i) {
-        return this.b.charAt(i);
-    }
-
-    public final JSONObject e(mi5 mi5Var) {
-        String str = this.b;
-        int i = mi5Var.b;
-        f8e f8eVar = f8e.b;
-        f8eVar.k("Settings response code was: " + i);
-        if (i != 200 && i != 201 && i != 202 && i != 203) {
-            String d = mle.d("Settings request failed; (status: ", i, ") from ", str);
-            if (f8eVar.e(6)) {
-                Log.e("FirebaseCrashlytics", d, null);
-            }
-            return null;
-        }
-        String str2 = mi5Var.c;
+    @Override // dia
+    public final x83 i(z83 z83Var, b93 b93Var, boolean z) {
+        qab qabVar = (qab) z83Var;
+        rab rabVar = (rab) b93Var;
         try {
-            return new JSONObject(str2);
-        } catch (Exception e) {
-            f8eVar.l("Failed to parse settings JSON from ".concat(str), e);
-            f8eVar.l("Settings response " + str2, null);
-            return null;
-        }
-    }
-
-    @Override // qt3
-    public final int length() {
-        return this.b.length();
-    }
-
-    @Override // qt3
-    public final CharSequence subSequence(int i, int i2) {
-        return this.b.subSequence(i, i2);
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 2:
-                return this.b;
-            default:
-                return super.toString();
-        }
-    }
-
-    @Override // iad
-    public final Object zzp() {
-        Object obj;
-        boolean z;
-        String str = this.b;
-        ContentResolver contentResolver = i8d.g.getContentResolver();
-        Uri uri = rjf.a;
-        synchronized (rjf.class) {
-            rjf.c(contentResolver);
-            obj = rjf.k;
-        }
-        HashMap hashMap = rjf.g;
-        Boolean bool = Boolean.FALSE;
-        Boolean bool2 = (Boolean) rjf.a(hashMap, str, bool);
-        if (bool2 != null) {
-            z = bool2.booleanValue();
-        } else {
-            String b = rjf.b(contentResolver, str);
-            boolean z2 = false;
-            if (b != null && !b.equals("")) {
-                if (rjf.c.matcher(b).matches()) {
-                    bool = Boolean.TRUE;
-                    z2 = true;
-                } else if (!rjf.d.matcher(b).matches()) {
-                    Log.w("Gservices", b10.i("attempt to read gservices key ", str, " (value \"", b, "\") as boolean"));
-                }
-                rjf.e(obj, hashMap, str, bool);
-                z = z2;
+            ByteBuffer byteBuffer = qabVar.c;
+            byteBuffer.getClass();
+            byte[] array = byteBuffer.array();
+            int limit = byteBuffer.limit();
+            uab uabVar = this.s;
+            if (z) {
+                uabVar.reset();
             }
-            bool = bool2;
-            rjf.e(obj, hashMap, str, bool);
-            z = z2;
+            kab f = uabVar.f(0, limit, array);
+            long j = qabVar.e;
+            long j2 = qabVar.r;
+            rabVar.timeUs = j;
+            rabVar.a = f;
+            if (j2 != Long.MAX_VALUE) {
+                j = j2;
+            }
+            rabVar.b = j;
+            rabVar.shouldBeSkipped = false;
+            return null;
+        } catch (mab e) {
+            return e;
         }
-        return Boolean.valueOf(z);
     }
 
-    public /* synthetic */ ld3(byte b) {
-        this.a = b;
-    }
-
-    public ld3(String str, fgf fgfVar) {
-        this.a = (byte) 0;
-        this.b = str;
+    @Override // lab
+    public final void b(long j) {
     }
 }

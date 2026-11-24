@@ -1,28 +1,19 @@
 // default package
 
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class h8e extends p6d {
-    public final /* synthetic */ hh0 g;
+public final class h8e implements zn7 {
+    public static final h8e a = new h8e();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h8e(hh0 hh0Var, int i, Bundle bundle) {
-        super(hh0Var, i, bundle);
-        this.g = hh0Var;
+    static {
+        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)));
     }
 
-    @Override // p6d
-    public final boolean a() {
-        this.g.o.a(ot2.f);
-        return true;
-    }
-
-    @Override // p6d
-    public final void b(ot2 ot2Var) {
-        hh0 hh0Var = this.g;
-        hh0Var.o.a(ot2Var);
-        hh0Var.s(ot2Var);
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

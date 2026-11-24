@@ -1,13 +1,56 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import org.telegram.messenger.WearAuthListenerService;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class u2f {
-    public static void a(int i, Object[] objArr) {
-        for (int i2 = 0; i2 < i; i2++) {
-            if (objArr[i2] == null) {
-                gxc.d(hg9.j(i2, "at index "));
-                return;
+public final class u2f extends Handler {
+    public boolean a;
+    public final b0f b;
+    public final /* synthetic */ WearAuthListenerService c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u2f(WearAuthListenerService wearAuthListenerService, Looper looper) {
+        super(looper);
+        this.c = wearAuthListenerService;
+        this.b = new b0f();
+    }
+
+    public final synchronized void a(String str) {
+        if (this.a) {
+            if (Log.isLoggable("WearableLS", 2)) {
+                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(this.c.a));
+            }
+            try {
+                this.c.unbindService(this.b);
+            } catch (RuntimeException e) {
+                Log.e("WearableLS", "Exception when unbinding from local service", e);
+            }
+            this.a = false;
+        }
+    }
+
+    @Override // android.os.Handler
+    public final void dispatchMessage(Message message) {
+        synchronized (this) {
+            if (!this.a) {
+                if (Log.isLoggable("WearableLS", 2)) {
+                    Log.v("WearableLS", "bindService: ".concat(String.valueOf(this.c.a)));
+                }
+                WearAuthListenerService wearAuthListenerService = this.c;
+                wearAuthListenerService.bindService(wearAuthListenerService.d, this.b, 1);
+                this.a = true;
+            }
+        }
+        try {
+            super.dispatchMessage(message);
+        } finally {
+            if (!hasMessages(0)) {
+                a("dispatch");
             }
         }
     }

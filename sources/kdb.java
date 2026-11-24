@@ -1,314 +1,82 @@
 // default package
 
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import java.util.ArrayList;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class kdb {
-    public final ylb a;
-    public StaticLayout b;
-    public final ArrayList c = new ArrayList(2);
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class kdb implements Vector.TLDeserializer {
+    public final /* synthetic */ byte a;
 
-    public kdb(ylb ylbVar) {
-        this.a = ylbVar;
+    public /* synthetic */ kdb(byte b) {
+        this.a = b;
     }
 
-    public static void b(StringBuilder sb, int i, boolean z) {
-        if (sb.length() > 0) {
-            if (z) {
-                sb.append(' ');
-                sb.append(jb6.M0(2131744030, null));
-                sb.append(' ');
-            } else {
-                sb.append(", ");
-            }
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+        switch (this.a) {
+            case 0:
+                return TLRPC.TL_popularContact.TLdeserialize(inputSerializedData, i, z);
+            case 1:
+                return TLRPC.TL_sponsoredPeer.TLdeserialize(inputSerializedData, i, z);
+            case 2:
+                return TLRPC.TL_topPeerCategoryPeers.TLdeserialize(inputSerializedData, i, z);
+            case 3:
+                return TLRPC.DocumentAttribute.TLdeserialize(inputSerializedData, i, z);
+            case 4:
+                return TLRPC.InputPeer.TLdeserialize(inputSerializedData, i, z);
+            case 5:
+                return TLRPC.PhotoSize.TLdeserialize(inputSerializedData, i, z);
+            case 6:
+                return TLRPC.EmojiKeyword.TLdeserialize(inputSerializedData, i, z);
+            case 7:
+                return TLRPC.TL_factCheck.TLdeserialize(inputSerializedData, i, z);
+            case 8:
+                return TLRPC.TL_groupCallParticipantVideoSourceGroup.TLdeserialize(inputSerializedData, i, z);
+            case 9:
+                return TLRPC.TL_help_country.TLdeserialize(inputSerializedData, i, z);
+            case 10:
+                return TLRPC.TL_help_countryCode.TLdeserialize(inputSerializedData, i, z);
+            case 11:
+                return TLRPC.TL_help_peerColorOption.TLdeserialize(inputSerializedData, i, z);
+            case 12:
+                return TLRPC.Document.TLdeserialize(inputSerializedData, i, z);
+            case 13:
+                return TLRPC.TL_premiumSubscriptionOption.TLdeserialize(inputSerializedData, i, z);
+            case 14:
+                return TLRPC.RecentMeUrl.TLdeserialize(inputSerializedData, i, z);
+            case 15:
+                return TLRPC.TL_timezone.TLdeserialize(inputSerializedData, i, z);
+            case 16:
+                return TLRPC.InputMedia.TLdeserialize(inputSerializedData, i, z);
+            case 17:
+                return TLRPC.InputDocument.TLdeserialize(inputSerializedData, i, z);
+            case 18:
+                return TLRPC.InputUser.TLdeserialize(inputSerializedData, i, z);
+            case 19:
+                return TLRPC.InputSecureFile.TLdeserialize(inputSerializedData, i, z);
+            case 20:
+                return TLRPC.TL_labeledPrice.TLdeserialize(inputSerializedData, i, z);
+            case 21:
+                return TLRPC.JSONValue.TLdeserialize(inputSerializedData, i, z);
+            case 22:
+                return TLRPC.TL_jsonObjectValue.TLdeserialize(inputSerializedData, i, z);
+            case 23:
+                return TLRPC.LangPackString.TLdeserialize(inputSerializedData, i, z);
+            case 24:
+                return TLRPC.TL_langPackLanguage.TLdeserialize(inputSerializedData, i, z);
+            case 25:
+                return TLRPC.SecureValueType.TLdeserialize(inputSerializedData, i, z);
+            case 26:
+                return TLRPC.TodoItem.TLdeserialize(inputSerializedData, i, z);
+            case 27:
+                return TLRPC.MessageExtendedMedia.TLdeserialize(inputSerializedData, i, z);
+            case 28:
+                return TLRPC.TodoCompletion.TLdeserialize(inputSerializedData, i, z);
+            default:
+                return TLRPC.ReactionCount.TLdeserialize(inputSerializedData, i, z);
         }
-        sb.append(jb6.M0(i, null));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x01a6, code lost:
-    
-        r3 = r17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x01ad, code lost:
-    
-        if (r8.document != null) goto L96;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x01af, code lost:
-    
-        r8 = r18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x01b4, code lost:
-    
-        if (r3 == r8) goto L107;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x01b2, code lost:
-    
-        r8 = r17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x01a9, code lost:
-    
-        r3 = r18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0193, code lost:
-    
-        r2 = r2 | 8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x0191, code lost:
-    
-        if (r11 != (r8.photo == null ? r18 : r17)) goto L83;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x01c3, code lost:
-    
-        if (r3 == (r8 != null ? r18 : r17)) goto L107;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x0125, code lost:
-    
-        if (r14.b == r3.b) goto L47;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x0180, code lost:
-    
-        if (r11.id != r12.id) goto L83;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0195, code lost:
-    
-        r3 = r3.document;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0197, code lost:
-    
-        if (r3 == null) goto L92;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0199, code lost:
-    
-        r11 = r8.document;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x019b, code lost:
-    
-        if (r11 == null) goto L91;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x01a3, code lost:
-    
-        if (r3.id == r11.id) goto L107;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x01c1  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x01ba  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0146  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0166  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(k47 k47Var) {
-        float f;
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        TLRPC.SuggestedPost suggestedPost;
-        TLRPC.SuggestedPost suggestedPost2;
-        int i5;
-        TLRPC.MessageMedia messageMedia;
-        TLRPC.MessageMedia messageMedia2;
-        int i6;
-        int i7;
-        TLRPC.Message message;
-        TLRPC.SuggestedPost suggestedPost3 = (k47Var == null || (message = k47Var.k) == null) ? null : message.suggested_post;
-        if (suggestedPost3 == null) {
-            return;
-        }
-        nk nkVar = v67.b(suggestedPost3).a;
-        ylb ylbVar = this.a;
-        Paint d = ylbVar != null ? ylbVar.d("paintChatActionText3") : null;
-        if (d == null) {
-            d = cmb.T0("paintChatActionText3");
-        }
-        TextPaint textPaint = (TextPaint) d;
-        this.g = gm.L(14.0f) << 1;
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        if (nkVar != null && !nkVar.l()) {
-            arrayList.add(new jdb(new uib(jb6.M0(2131744033, null), textPaint), new uib(jb6.g(nkVar.g()), textPaint)));
-        }
-        if (suggestedPost3.schedule_date > 0) {
-            arrayList.add(new jdb(new uib(jb6.M0(2131744032, null), textPaint), new uib(jb6.g(jb6.x(suggestedPost3.schedule_date, true)), textPaint)));
-        }
-        int size = arrayList.size();
-        float f2 = 0.0f;
-        float f3 = 0.0f;
-        int i8 = 0;
-        while (i8 < size) {
-            Object obj = arrayList.get(i8);
-            i8++;
-            jdb jdbVar = (jdb) obj;
-            f2 = Math.max(f2, jdbVar.a.j());
-            f3 = Math.max(f3, jdbVar.b.j());
-            int h = ((int) jdbVar.a.h()) + this.g;
-            this.g = h;
-            this.g = gm.L(7.0f) + h;
-        }
-        int L = (int) (f3 + f2 + gm.L(11.0f));
-        int max = Math.max(L, gm.L(160.0f));
-        String k = pg3.k(z8c.t0, k47Var.Z0());
-        k47 k47Var2 = k47Var.C;
-        TLRPC.Message message2 = k47Var2 != null ? k47Var2.k : null;
-        TLRPC.Message message3 = k47Var.k;
-        if (message2 == null || (suggestedPost = message2.suggested_post) == null || message3 == null || (suggestedPost2 = message3.suggested_post) == null) {
-            f = 11.0f;
-            i = 1;
-            i2 = 0;
-            i3 = 0;
-        } else {
-            TL_stars.StarsAmount starsAmount = suggestedPost.price;
-            f = 11.0f;
-            TL_stars.StarsAmount starsAmount2 = suggestedPost2.price;
-            nk m = nk.m(starsAmount);
-            nk m2 = nk.m(starsAmount2);
-            if (m == m2) {
-                i = 1;
-                i2 = 0;
-            } else {
-                if (m == null || m2 == null) {
-                    i = 1;
-                    i2 = 0;
-                } else {
-                    i2 = 0;
-                    i = 1;
-                    if (m.a == m2.a) {
-                    }
-                }
-                i5 = i2;
-                i3 = i5 ^ 1;
-                if (suggestedPost.schedule_date != suggestedPost2.schedule_date) {
-                    i3 |= 2;
-                }
-                if (!TextUtils.equals(k47Var.v, k47Var.C.v)) {
-                    i3 |= 4;
-                }
-                if (!TextUtils.equals(k47Var.z, k47Var.C.z)) {
-                    i3 |= 4;
-                }
-                messageMedia = message2.media;
-                messageMedia2 = message3.media;
-                if (messageMedia instanceof TLRPC.TL_messageMediaEmpty) {
-                    messageMedia = null;
-                }
-                if (messageMedia2 instanceof TLRPC.TL_messageMediaEmpty) {
-                    messageMedia2 = null;
-                }
-                if (messageMedia != null) {
-                    i6 = i;
-                } else if (messageMedia2 != null) {
-                    if (messageMedia.getClass() == messageMedia2.getClass()) {
-                        TLRPC.Photo photo = messageMedia.photo;
-                        if (photo != null) {
-                            TLRPC.Photo photo2 = messageMedia2.photo;
-                            if (photo2 == null) {
-                                i7 = i2;
-                            }
-                        } else {
-                            i7 = i;
-                        }
-                    }
-                    i3 |= 8;
-                } else {
-                    i6 = i2;
-                }
-            }
-            i5 = i;
-            i3 = i5 ^ 1;
-            if (suggestedPost.schedule_date != suggestedPost2.schedule_date) {
-            }
-            if (!TextUtils.equals(k47Var.v, k47Var.C.v)) {
-            }
-            if (!TextUtils.equals(k47Var.z, k47Var.C.z)) {
-            }
-            messageMedia = message2.media;
-            messageMedia2 = message3.media;
-            if (messageMedia instanceof TLRPC.TL_messageMediaEmpty) {
-            }
-            if (messageMedia2 instanceof TLRPC.TL_messageMediaEmpty) {
-            }
-            if (messageMedia != null) {
-            }
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (i3 != 0) {
-            k47 k47Var3 = k47Var.C;
-            if (k47Var3 != null) {
-                pg3.k(z8c.t0, k47Var3.Z0());
-            }
-            StringBuilder sb = new StringBuilder();
-            int i9 = i3 & 4;
-            int i10 = i3 & 2;
-            int i11 = i3 & 8;
-            int i12 = i3 & 1;
-            int i13 = (i9 != 0 ? 1 : i2) + (i10 != 0 ? 1 : i2) + (i11 != 0 ? 1 : i2) + (i12 != 0 ? 1 : i2);
-            if (i12 != 0) {
-                b(sb, 2131744026, i13 == 1 ? 1 : i2);
-                i4 = 1;
-            } else {
-                i4 = i2;
-            }
-            if (i10 != 0) {
-                i4++;
-                b(sb, 2131744024, i13 == i4 ? 1 : i2);
-            }
-            if (i9 != 0) {
-                i4++;
-                b(sb, 2131744025, i13 == i4 ? 1 : i2);
-            }
-            if (i11 != 0) {
-                b(sb, 2131744027, i13 == i4 + 1 ? 1 : i2);
-            }
-            if (k47Var.O3()) {
-                Object[] objArr = new Object[1];
-                objArr[i2] = sb;
-                spannableStringBuilder.append((CharSequence) jb6.a0(null, null, 2131744028, objArr));
-            } else {
-                Object[] objArr2 = new Object[2];
-                objArr2[i2] = k;
-                objArr2[1] = sb;
-                spannableStringBuilder.append((CharSequence) jb6.a0(null, null, 2131744029, objArr2));
-            }
-        } else if (k47Var.O3()) {
-            spannableStringBuilder.append((CharSequence) jb6.M0(2131744023, null));
-        } else {
-            Object[] objArr3 = new Object[i];
-            objArr3[i2] = k;
-            spannableStringBuilder.append((CharSequence) jb6.a0(null, null, 2131744031, objArr3));
-        }
-        this.b = new StaticLayout(gm.Q2(spannableStringBuilder), textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        int i14 = i2;
-        int i15 = i14;
-        while (i14 < this.b.getLineCount()) {
-            i15 = (int) Math.max(i15, this.b.getLineWidth(i14));
-            i14++;
-        }
-        int height = this.b.getHeight() + this.g;
-        this.g = height;
-        this.g = gm.L(5.0f) + height;
-        int max2 = Math.max(L, i15) + (gm.L(24.0f) << 1);
-        this.h = max2;
-        this.d = (max2 - max) / 2;
-        this.e = (max2 - L) / 2;
-        this.f = (int) (gm.L(f) + r1 + f2);
     }
 }

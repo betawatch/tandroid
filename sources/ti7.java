@@ -1,30 +1,9 @@
 // default package
 
-import java.io.FileInputStream;
-import java.nio.channels.FileLock;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ti7 extends qx2 {
-    public qj7 a;
-    public FileInputStream b;
-    public FileLock c;
-    public boolean d;
-    public /* synthetic */ Object e;
-    public final /* synthetic */ ui7 f;
-    public int h;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ti7(ui7 ui7Var, px2 px2Var) {
-        super(px2Var);
-        this.f = ui7Var;
-    }
-
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        this.e = obj;
-        this.h |= TLObject.FLAG_31;
-        return this.f.e(null, this);
-    }
+public interface ti7 extends si7 {
+    void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr);
 }

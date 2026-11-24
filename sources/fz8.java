@@ -1,32 +1,48 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class fz8 implements oac, pac {
-    public final /* synthetic */ lz8 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class fz8 {
+    public static final String a;
 
-    public /* synthetic */ fz8(lz8 lz8Var) {
-        this.a = lz8Var;
+    static {
+        String str = g8c.a;
+        a = "0";
     }
 
-    @Override // pac
-    public final Object b(c6c c6cVar, View view, Integer num, Float f, Float f2) {
-        boolean z = false;
-        if (c6cVar.a == 16) {
-            Object obj = c6cVar.H;
-            if (!(obj instanceof oz8) || !((oz8) obj).g) {
-                this.a.i0(c6cVar, view);
-                z = true;
-            }
+    public static fz8 a(Bundle bundle) {
+        String str = a;
+        int i = bundle.getInt(str, -1);
+        if (i == 0) {
+            String str2 = ud5.d;
+            gre.f(bundle.getInt(str, -1) == 0);
+            return bundle.getBoolean(ud5.d, false) ? new ud5(bundle.getBoolean(ud5.e, false)) : new ud5();
         }
-        return Boolean.valueOf(z);
+        if (i == 1) {
+            String str3 = e38.c;
+            gre.f(bundle.getInt(str, -1) == 1);
+            float f = bundle.getFloat(e38.c, -1.0f);
+            return f == -1.0f ? new e38() : new e38(f);
+        }
+        if (i == 2) {
+            String str4 = dra.d;
+            gre.f(bundle.getInt(str, -1) == 2);
+            int i2 = bundle.getInt(dra.d, 5);
+            float f2 = bundle.getFloat(dra.e, -1.0f);
+            return f2 == -1.0f ? new dra(i2) : new dra(i2, f2);
+        }
+        if (i != 3) {
+            w26.j(de9.k(i, "Unknown RatingType: "));
+            return null;
+        }
+        String str5 = knb.d;
+        gre.f(bundle.getInt(str, -1) == 3);
+        return bundle.getBoolean(knb.d, false) ? new knb(bundle.getBoolean(knb.e, false)) : new knb();
     }
 
-    @Override // oac
-    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.g0((c6c) obj, (View) obj2);
-    }
+    public abstract boolean b();
+
+    public abstract Bundle c();
 }

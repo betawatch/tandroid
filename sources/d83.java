@@ -1,28 +1,11 @@
 // default package
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public class d83 extends IOException {
-    public final int a;
-
-    public d83(int i) {
-        this.a = i;
-    }
-
-    public d83(Exception exc, int i) {
-        super(exc);
-        this.a = i;
-    }
-
-    public d83(String str, int i) {
-        super(str);
-        this.a = i;
-    }
-
-    public d83(String str, Exception exc, int i) {
-        super(str, exc);
-        this.a = i;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class d83 extends q51 {
+    public int d;
+    public long e;
+    public long f;
+    public int g;
+    public int h;
 }

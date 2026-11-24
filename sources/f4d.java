@@ -1,75 +1,56 @@
 // default package
 
-import android.os.Bundle;
 import android.os.Parcel;
-import android.os.RemoteException;
-import android.view.View;
-import j$.util.Objects;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class f4d {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pr2 b;
+public final class f4d extends ig0 {
+    public final /* synthetic */ byte q;
 
-    public f4d(pr2 pr2Var, byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                Objects.requireNonNull(pr2Var);
-                this.b = pr2Var;
-                break;
-            default:
-                Objects.requireNonNull(pr2Var);
-                this.b = pr2Var;
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f4d(x1d x1dVar, byte b) {
+        super(o40.a, x1dVar);
+        this.q = b;
     }
 
-    public final int a() {
-        switch (this.a) {
-            case 0:
-                return 1;
-            default:
-                return 5;
-        }
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult, jg0
+    public final /* bridge */ /* synthetic */ void a(ua9 ua9Var) {
+        a(ua9Var);
     }
 
-    public final void b() {
-        byte b = this.a;
-        pr2 pr2Var = this.b;
-        switch (b) {
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult
+    public final /* bridge */ /* synthetic */ ua9 d(Status status) {
+        byte b = this.q;
+        return status;
+    }
+
+    @Override // ig0
+    public final void n(xx4 xx4Var) {
+        switch (this.q) {
             case 0:
-                wm9 wm9Var = (wm9) pr2Var.a;
-                su suVar = (su) wm9Var.b;
-                mye myeVar = (mye) wm9Var.c;
-                try {
-                    Bundle bundle = new Bundle();
-                    Parcel R = myeVar.R();
-                    tid.b(R, bundle);
-                    myeVar.V(R, 2);
-                    pjd.b(bundle, null);
-                    Parcel Q = myeVar.Q(myeVar.R(), 8);
-                    xk5 T = eq7.T(Q.readStrongBinder());
-                    Q.recycle();
-                    wm9Var.d = (View) eq7.U(T);
-                    suVar.removeAllViews();
-                    suVar.addView((View) wm9Var.d);
-                    break;
-                } catch (RemoteException e) {
-                    i2d.h(e);
-                    return;
-                }
+                z3d z3dVar = (z3d) xx4Var;
+                j4d j4dVar = (j4d) z3dVar.k();
+                c4d c4dVar = new c4d(this, (byte) 0);
+                GoogleSignInOptions googleSignInOptions = z3dVar.F;
+                Parcel e = j4dVar.e();
+                int i = w3d.a;
+                e.writeStrongBinder(c4dVar);
+                w3d.c(e, googleSignInOptions);
+                j4dVar.f(e, kk7.m1);
+                break;
             default:
-                wm9 wm9Var2 = (wm9) pr2Var.a;
-                wm9Var2.getClass();
-                try {
-                    mye myeVar2 = (mye) wm9Var2.c;
-                    myeVar2.V(myeVar2.R(), 3);
-                    break;
-                } catch (RemoteException e2) {
-                    i2d.h(e2);
-                }
+                z3d z3dVar2 = (z3d) xx4Var;
+                j4d j4dVar2 = (j4d) z3dVar2.k();
+                c4d c4dVar2 = new c4d(this, (byte) 1);
+                GoogleSignInOptions googleSignInOptions2 = z3dVar2.F;
+                Parcel e2 = j4dVar2.e();
+                int i2 = w3d.a;
+                e2.writeStrongBinder(c4dVar2);
+                w3d.c(e2, googleSignInOptions2);
+                j4dVar2.f(e2, kk7.n1);
+                break;
         }
     }
 }

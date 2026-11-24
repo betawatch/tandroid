@@ -12,7 +12,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class s extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -26,14 +26,14 @@ public final class s extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        pb8 pb8Var;
+        o98 o98Var;
         PhotoViewer photoViewer = this.b;
         byte b = photoViewer.t4;
         if (b == 1) {
             photoViewer.D1.a();
-            u43 u43Var = photoViewer.D1.b;
-            u43Var.d = null;
-            u43Var.K = false;
+            j33 j33Var = photoViewer.D1.b;
+            j33Var.d = null;
+            j33Var.K = false;
             photoViewer.V0.setVisibility(8);
             photoViewer.D1.setVisibility(8);
             CropAreaView cropAreaView = photoViewer.D1.b.a;
@@ -46,7 +46,7 @@ public final class s extends AnimatorListenerAdapter {
             try {
                 photoViewer.f0.removeView(photoViewer.J1);
             } catch (Exception e) {
-                fc4.g(e, true);
+                fa4.g(e, true);
             }
             photoViewer.J1 = null;
         } else if (b == 3) {
@@ -54,29 +54,29 @@ public final class s extends AnimatorListenerAdapter {
             try {
                 photoViewer.f0.removeView(photoViewer.M1.getView());
             } catch (Exception e2) {
-                fc4.g(e2, true);
+                fa4.g(e2, true);
             }
             photoViewer.M1 = null;
         } else if (b == 4) {
             photoViewer.P1 = true;
             photoViewer.f0.invalidate();
-            photoViewer.f0.post(new a18(this, photoViewer.O1, (byte) 12));
+            photoViewer.f0.post(new h18(this, photoViewer.O1, (byte) 11));
             photoViewer.O1 = null;
             photoViewer.u5.m(false, true);
             photoViewer.v5.m(false, true);
         } else if (b == 5) {
             photoViewer.p5.setVisibility(8);
-            wb8 wb8Var = photoViewer.p5;
-            wb8Var.d = null;
-            wb8Var.a.o(false, null, 0L, 0.0f);
+            v98 v98Var = photoViewer.p5;
+            v98Var.d = null;
+            v98Var.a.o(false, null, 0L, 0.0f);
         }
         photoViewer.o6 = null;
         byte b2 = photoViewer.t4;
         photoViewer.t4 = this.a;
         photoViewer.d0().M.b(photoViewer.t4 != 0);
-        mx5 mx5Var = photoViewer.L1;
-        if (mx5Var != null) {
-            mx5Var.b(photoViewer.t4 != 3);
+        mv5 mv5Var = photoViewer.L1;
+        if (mv5Var != null) {
+            mv5Var.b(photoViewer.t4 != 3);
         }
         if (photoViewer.t4 != 3) {
             photoViewer.Y5 = 0.0f;
@@ -105,63 +105,63 @@ public final class s extends AnimatorListenerAdapter {
             photoViewer2.d = a0Var.c;
             WindowManager.LayoutParams layoutParams = photoViewer2.e0;
             layoutParams.flags = -2147286784;
-            layoutParams.softInputMode = nm7.u4;
+            layoutParams.softInputMode = kk7.u4;
             photoViewer2.h0.setFocusable(false);
             photoViewer2.f0.setFocusable(false);
-            photoViewer2.M0.setAlpha(nm7.d4);
+            photoViewer2.M0.setAlpha(kk7.d4);
             photoViewer2.f0.setAlpha(1.0f);
             PhotoViewer photoViewer3 = a0Var.d;
             ArrayList arrayList = a0Var.b;
             int i = a0Var.a;
-            photoViewer3.d1(null, null, null, null, arrayList, null, null, i, a0Var.c.N((k47) arrayList.get(i), null, a0Var.a, true, false));
+            photoViewer3.d1(null, null, null, null, arrayList, null, null, i, a0Var.c.M((k27) arrayList.get(i), null, a0Var.a, true, false));
             photoViewer.h7 = null;
-            cb8 cb8Var = new cb8();
-            cb8Var.c = false;
-            photoViewer.u2(false, false, cb8Var);
-            photoViewer.u2(true, true, cb8Var);
+            b98 b98Var = new b98();
+            b98Var.c = false;
+            photoViewer.u2(false, false, b98Var);
+            photoViewer.u2(true, true, b98Var);
             return;
         }
         AnimatorSet animatorSet = new AnimatorSet();
         ArrayList arrayList2 = new ArrayList();
-        jp0 jp0Var = photoViewer.Q0;
+        jo0 jo0Var = photoViewer.Q0;
         Property property = View.TRANSLATION_Y;
-        arrayList2.add(ObjectAnimator.ofFloat(jp0Var, (Property<jp0, Float>) property, 0.0f));
-        jp0 jp0Var2 = photoViewer.Q0;
+        arrayList2.add(ObjectAnimator.ofFloat(jo0Var, (Property<jo0, Float>) property, 0.0f));
+        jo0 jo0Var2 = photoViewer.Q0;
         Property property2 = View.ALPHA;
-        arrayList2.add(ObjectAnimator.ofFloat(jp0Var2, (Property<jp0, Float>) property2, 1.0f));
-        n1b n1bVar = photoViewer.o5;
-        if (n1bVar != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(n1bVar, (Property<n1b, Float>) property2, 1.0f));
+        arrayList2.add(ObjectAnimator.ofFloat(jo0Var2, (Property<jo0, Float>) property2, 1.0f));
+        mza mzaVar = photoViewer.o5;
+        if (mzaVar != null) {
+            arrayList2.add(ObjectAnimator.ofFloat(mzaVar, (Property<mza, Float>) property2, 1.0f));
         }
-        yc ycVar = photoViewer.r5;
-        if (ycVar != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(ycVar, (Property<yc, Float>) property2, 1.0f));
+        rj4 rj4Var = photoViewer.r5;
+        if (rj4Var != null) {
+            arrayList2.add(ObjectAnimator.ofFloat(rj4Var, (Property<rj4, Float>) property2, 1.0f));
         }
-        arrayList2.add(ObjectAnimator.ofFloat(photoViewer.T0, (Property<vi3, Float>) property, 0.0f));
+        arrayList2.add(ObjectAnimator.ofFloat(photoViewer.T0, (Property<jh3, Float>) property, 0.0f));
         if (photoViewer.d2 != 1) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.G, (Property<x20, Float>) property, 0.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.G, (Property<x10, Float>) property, 0.0f));
         }
         if (photoViewer.j2) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.R1, (Property<hb8, Float>) property, 0.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.R1, (Property<g98, Float>) property, 0.0f));
         }
         int i2 = photoViewer.d2;
         if (i2 == 0 || i2 == 4) {
             arrayList2.add(ObjectAnimator.ofFloat(photoViewer.O0, (Property<CheckBox, Float>) property2, 1.0f));
             arrayList2.add(ObjectAnimator.ofFloat(photoViewer.P0, (Property<PhotoViewer.CounterView, Float>) property2, 1.0f));
         } else if (i2 == 1) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.D1, (Property<x68, Float>) property2, 1.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.D1, (Property<v48, Float>) property2, 1.0f));
         }
         if (photoViewer.f1.getTag() != null) {
             photoViewer.f1.setVisibility(photoViewer.e2 ? 8 : 0);
             arrayList2.add(ObjectAnimator.ofFloat(photoViewer.f1, (Property<c7, Float>) property2, 1.0f));
         }
         if (photoViewer.g1.getTag() != null) {
-            photoViewer.g1.setVisibility((!photoViewer.e2 && photoViewer.I4 && ((pb8Var = photoViewer.d) == null || pb8Var.P())) ? 0 : 8);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.g1, (Property<o96, Float>) property2, 1.0f));
+            photoViewer.g1.setVisibility((!photoViewer.e2 && photoViewer.I4 && ((o98Var = photoViewer.d) == null || o98Var.O())) ? 0 : 8);
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.g1, (Property<o76, Float>) property2, 1.0f));
         }
         if (photoViewer.h1.getTag() != null) {
             photoViewer.h1.setVisibility(photoViewer.e2 ? 8 : 0);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.h1, (Property<y98, Float>) property2, 1.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.h1, (Property<v78, Float>) property2, 1.0f));
         }
         View view = photoViewer.k0;
         if (view != null) {

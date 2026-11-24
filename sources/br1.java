@@ -1,62 +1,55 @@
 // default package
 
-import android.text.style.CharacterStyle;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class br1 extends k11 {
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ rc2 f;
-    public final /* synthetic */ yv1 g;
-    public final /* synthetic */ Object h;
+public final class br1 extends yu1 {
+    public final /* synthetic */ mu1 d;
 
-    public /* synthetic */ br1(yv1 yv1Var, int i, Object obj, rc2 rc2Var, byte b) {
-        this.d = b;
-        this.g = yv1Var;
-        this.e = i;
-        this.h = obj;
-        this.f = rc2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public br1(mu1 mu1Var, Context context) {
+        super(context);
+        this.d = mu1Var;
     }
 
-    @Override // k11
-    public final void c(boolean z) {
-        switch (this.d) {
-            case 0:
-                if (!z) {
-                    gm.d3(new eh((Object) this, this.e, (byte) 14), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z) {
-                    gm.d3(new eh((Object) this, this.e, (byte) 17), 240L);
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        super.setTranslationY(f);
+        mu1 mu1Var = this.d;
+        ar1 ar1Var = mu1Var.a0;
+        if (ar1Var != null) {
+            ar1Var.invalidate();
+        }
+        if (getVisibility() != 8) {
+            mu1Var.z7(true);
+            FrameLayout frameLayout = mu1Var.R;
+            if (frameLayout != null) {
+                frameLayout.setTranslationY(f);
+            }
+            mu1Var.G7();
+            mu1Var.I7();
+            View view = mu1Var.fragmentView;
+            if (view != null) {
+                view.invalidate();
+            }
         }
     }
 
-    @Override // k11
-    public final void d() {
-        byte b = this.d;
-        rc2 rc2Var = this.f;
-        Object obj = this.h;
-        int i = this.e;
-        yv1 yv1Var = this.g;
-        switch (b) {
-            case 0:
-                yv1Var.kc = i;
-                yv1Var.lc = 1;
-                yv1Var.mc = (CharacterStyle) obj;
-                rc2Var.invalidate();
-                break;
-            default:
-                yv1Var.kc = i;
-                yv1Var.lc = 3;
-                yv1Var.nc = (String) obj;
-                rc2Var.invalidate();
-                break;
+    @Override // android.view.View
+    public final void setVisibility(int i) {
+        FrameLayout frameLayout;
+        super.setVisibility(i);
+        if (i != 8 || (frameLayout = this.d.R) == null) {
+            return;
         }
+        frameLayout.setTranslationY(0.0f);
     }
 }

@@ -1,160 +1,161 @@
 // default package
 
-import android.os.SystemClock;
-import android.view.MotionEvent;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Point;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class qo4 implements View.OnTouchListener, View.OnAttachStateChangeListener {
-    public final float a;
-    public final int b;
-    public final int c;
-    public final View d;
-    public po4 e;
-    public po4 f;
-    public boolean h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class qo4 extends ViewGroup {
+    public AnimatorSet a;
+    public boolean b;
+    public final ArrayList c;
+    public ya5 d;
+    public final ArrayList e;
+    public int f;
+    public int h;
     public int n;
-    public final int[] r = new int[2];
+    public final /* synthetic */ ro4 r;
 
-    public qo4(View view) {
-        this.d = view;
-        view.setLongClickable(true);
-        view.addOnAttachStateChangeListener(this);
-        this.a = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-        int tapTimeout = ViewConfiguration.getTapTimeout();
-        this.b = tapTimeout;
-        this.c = (ViewConfiguration.getLongPressTimeout() + tapTimeout) / 2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qo4(ro4 ro4Var, Context context) {
+        super(context);
+        this.r = ro4Var;
+        this.c = new ArrayList();
+        this.e = new ArrayList();
+        this.f = -1;
     }
 
-    public final void a() {
-        po4 po4Var = this.f;
-        View view = this.d;
-        if (po4Var != null) {
-            view.removeCallbacks(po4Var);
-        }
-        po4 po4Var2 = this.e;
-        if (po4Var2 != null) {
-            view.removeCallbacks(po4Var2);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int childCount = getChildCount();
+        for (int i5 = 0; i5 < childCount; i5++) {
+            View childAt = getChildAt(i5);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
         }
     }
 
-    public abstract xia b();
-
-    public abstract boolean c();
-
-    public boolean d() {
-        xia b = b();
-        if (b == null || !b.a()) {
-            return true;
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        ArrayList arrayList;
+        int D;
+        byte b;
+        byte b2;
+        int childCount = getChildCount();
+        int size = View.MeasureSpec.getSize(i);
+        int L = size - gl.L(26.0f);
+        int L2 = gl.L(10.0f);
+        int L3 = gl.L(10.0f);
+        byte b3 = 0;
+        if (!this.b) {
+            this.n = 0;
         }
-        b.dismiss();
-        return true;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0057, code lost:
-    
-        if (r14 != false) goto L21;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0076, code lost:
-    
-        if (r4 != 3) goto L53;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00f4  */
-    @Override // android.view.View.OnTouchListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean z;
-        os3 e;
-        boolean z2 = this.h;
-        View view2 = this.d;
-        if (z2) {
-            xia b = b();
-            if (b != null && b.a() && (e = b.e()) != null && e.isShown()) {
-                MotionEvent obtainNoHistory = MotionEvent.obtainNoHistory(motionEvent);
-                int[] iArr = this.r;
-                view2.getLocationOnScreen(iArr);
-                obtainNoHistory.offsetLocation(iArr[0], iArr[1]);
-                e.getLocationOnScreen(iArr);
-                obtainNoHistory.offsetLocation(-iArr[0], -iArr[1]);
-                boolean b2 = e.b(this.n, obtainNoHistory);
-                obtainNoHistory.recycle();
-                int actionMasked = motionEvent.getActionMasked();
-                boolean z3 = (actionMasked == 1 || actionMasked == 3) ? false : true;
-                if (b2) {
-                }
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i3 >= childCount) {
+                break;
             }
-            if (d()) {
-                z = false;
-            }
-            z = true;
-        } else {
-            if (view2.isEnabled()) {
-                int actionMasked2 = motionEvent.getActionMasked();
-                if (actionMasked2 != 0) {
-                    if (actionMasked2 != 1) {
-                        if (actionMasked2 == 2) {
-                            int findPointerIndex = motionEvent.findPointerIndex(this.n);
-                            if (findPointerIndex >= 0) {
-                                float x = motionEvent.getX(findPointerIndex);
-                                float y = motionEvent.getY(findPointerIndex);
-                                float f = this.a;
-                                float f2 = -f;
-                                if (x < f2 || y < f2 || x >= (view2.getRight() - view2.getLeft()) + f || y >= (view2.getBottom() - view2.getTop()) + f) {
-                                    a();
-                                    view2.getParent().requestDisallowInterceptTouchEvent(true);
-                                    if (c()) {
-                                        z = true;
-                                        if (z) {
-                                            long uptimeMillis = SystemClock.uptimeMillis();
-                                            MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
-                                            view2.onTouchEvent(obtain);
-                                            obtain.recycle();
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    a();
+            View childAt = getChildAt(i3);
+            if (childAt instanceof ya5) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gl.L(32.0f), TLObject.FLAG_30));
+                ArrayList arrayList2 = this.e;
+                boolean contains = arrayList2.contains(childAt);
+                if (contains) {
+                    b2 = b3;
                 } else {
-                    this.n = motionEvent.getPointerId(0);
-                    po4 po4Var = this.e;
-                    if (po4Var == null) {
-                        po4Var = new po4(this, (byte) 0);
-                        this.e = po4Var;
+                    b2 = b3;
+                    if (childAt.getMeasuredWidth() + i4 > L) {
+                        L2 = de9.w(8.0f, childAt.getMeasuredHeight(), L2);
+                        i4 = b2;
                     }
-                    view2.postDelayed(po4Var, this.b);
-                    po4 po4Var2 = this.f;
-                    if (po4Var2 == null) {
-                        po4Var2 = new po4(this, (byte) 1);
-                        this.f = po4Var2;
-                    }
-                    view2.postDelayed(po4Var2, this.c);
                 }
+                if (childAt.getMeasuredWidth() + i5 > L) {
+                    L3 = de9.w(8.0f, childAt.getMeasuredHeight(), L3);
+                    i5 = b2;
+                }
+                int L4 = gl.L(13.0f) + i4;
+                if (!this.b) {
+                    if (contains) {
+                        childAt.setTranslationX(gl.L(13.0f) + i5);
+                        childAt.setTranslationY(L3);
+                    } else if (arrayList2.isEmpty()) {
+                        childAt.setTranslationX(L4);
+                        childAt.setTranslationY(L2);
+                        this.n = Math.max(this.n, L2);
+                    } else {
+                        float f = L4;
+                        if (childAt.getTranslationX() != f) {
+                            float[] fArr = new float[1];
+                            fArr[b2] = f;
+                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, fArr));
+                        }
+                        float f2 = L2;
+                        if (childAt.getTranslationY() != f2) {
+                            float[] fArr2 = new float[1];
+                            fArr2[b2] = f2;
+                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr2));
+                        }
+                        this.n = Math.max(this.n, L2);
+                    }
+                }
+                if (!contains) {
+                    i4 = de9.w(9.0f, childAt.getMeasuredWidth(), i4);
+                }
+                i5 = de9.w(9.0f, childAt.getMeasuredWidth(), i5);
+            } else {
+                b2 = b3;
             }
-            z = false;
-            if (z) {
+            i3++;
+            b3 = b2;
+        }
+        byte b4 = b3;
+        if (gl.O1()) {
+            D = gl.L(372.0f) / 3;
+        } else {
+            Point point = gl.q;
+            D = ug8.D(158.0f, Math.min(point.x, point.y), 3);
+        }
+        if (L - i4 < D) {
+            L2 += gl.L(40.0f);
+        }
+        if (L - i5 < D) {
+            L3 += gl.L(40.0f);
+        }
+        boolean z = this.b;
+        ro4 ro4Var = this.r;
+        if (z) {
+            b = b4;
+        } else {
+            int L5 = gl.L(42.0f) + L3;
+            ro4Var.n = L2;
+            if (this.a != null) {
+                this.h = gl.L(42.0f) + L2;
+                this.a.playTogether(arrayList);
+                b = b4;
+                this.a.addListener(new po4(this, b));
+                this.f = kk7.f(ro4Var.a).q(null, this.f, true);
+                this.a.start();
+                this.b = true;
+            } else {
+                b = b4;
+                this.h = L5;
             }
         }
-        this.h = z;
-        return z || z2;
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.h = false;
-        this.n = -1;
-        po4 po4Var = this.e;
-        if (po4Var != null) {
-            this.d.removeCallbacks(po4Var);
+        int i6 = this.n;
+        ro4Var.e = i6 > 0 ? gl.L(40.0f) + i6 : b;
+        setMeasuredDimension(size, this.h);
+        oo4 oo4Var = ro4Var.f;
+        if (oo4Var != null) {
+            oo4Var.a(ro4Var.e);
         }
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
     }
 }

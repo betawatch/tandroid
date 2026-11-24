@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.security.PrivilegedExceptionAction;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class q2 implements PrivilegedExceptionAction {
     public final /* synthetic */ byte a;
@@ -40,7 +40,7 @@ public final class q2 implements PrivilegedExceptionAction {
                 }
                 return null;
             case 2:
-                Unsafe unsafe = vld.a;
+                Unsafe unsafe = tjd.a;
                 Field[] declaredFields3 = Unsafe.class.getDeclaredFields();
                 int length3 = declaredFields3.length;
                 while (i < length3) {

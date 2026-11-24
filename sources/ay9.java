@@ -1,37 +1,17 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ay9 implements ee, v49 {
-    public final /* synthetic */ vz9 a;
-
-    public /* synthetic */ ay9(vz9 vz9Var) {
-        this.a = vz9Var;
-    }
-
-    @Override // v49
-    public final void e() {
-        this.a.l();
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
-        vz9 vz9Var = this.a;
-        int i2 = vz9Var.W;
-        ConnectionsManager.getInstance(i2).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
-        hs6 d0 = hs6.d0(i2);
-        ArrayList[] arrayListArr = d0.F0;
-        ArrayList arrayList = arrayListArr[0];
-        if (arrayList != null) {
-            arrayList.clear();
+public final class ay9 extends EditTextBoldCursor {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && !gl.E3(this)) {
+            clearFocus();
+            requestFocus();
         }
-        d0.E0[0] = 0;
-        d0.getMessagesStorage().a.c(new vp6(d0, (byte) 9));
-        ArrayList arrayList2 = arrayListArr[0];
-        vz9Var.B(false, true, true);
+        return super.onTouchEvent(motionEvent);
     }
 }

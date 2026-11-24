@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o8 implements ee {
+public final /* synthetic */ class o8 implements ed {
     public final /* synthetic */ byte a;
     public final /* synthetic */ u8 b;
 
@@ -15,8 +15,8 @@ public final /* synthetic */ class o8 implements ee {
         this.b = u8Var;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
+    @Override // ed
+    public final void u(hd hdVar, int i) {
         byte b = this.a;
         u8 u8Var = this.b;
         switch (b) {
@@ -27,13 +27,13 @@ public final /* synthetic */ class o8 implements ee {
                     u8Var.getParentActivity().startActivity(intent);
                     break;
                 } catch (Exception e) {
-                    fc4.g(e, true);
+                    fa4.g(e, true);
                     return;
                 }
             default:
-                mh6 mh6Var = new mh6();
-                mh6Var.G = (byte) 2;
-                u8Var.presentFragment(mh6Var, true);
+                mf6 mf6Var = new mf6();
+                mf6Var.G = (byte) 2;
+                u8Var.presentFragment(mf6Var, true);
                 break;
         }
     }

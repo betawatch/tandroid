@@ -1,19 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class m2e implements cq7 {
-    public static final m2e a = new m2e();
+import com.google.android.gms.common.api.Status;
 
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class m2e implements ua9 {
+    public final Status a;
+    public final int b;
+
+    public m2e(Status status, int i) {
+        this.a = status;
+        this.b = i;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // ua9
+    public final Status a() {
+        return this.a;
     }
 }

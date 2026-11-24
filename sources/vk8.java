@@ -1,38 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class vk8 {
+    public static final uk8 Companion = new uk8();
+    public final int a;
+    public final String b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class vk8 extends ImageView {
-    public final byte a;
-    public final /* synthetic */ yk8 b;
+    public /* synthetic */ vk8(int i, int i2, String str) {
+        if (3 != (i & 3)) {
+            are.a(i, 3, tk8.a.d());
+            throw null;
+        }
+        this.a = i2;
+        this.b = str;
+    }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public vk8(yk8 yk8Var, Context context, int i, int i2) {
-        super(context);
-        this.b = yk8Var;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof vk8)) {
+            return false;
+        }
+        vk8 vk8Var = (vk8) obj;
+        return this.a == vk8Var.a && rp5.a(this.b, vk8Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a * 31);
+    }
+
+    public final String toString() {
+        return "ProcessData(pid=" + this.a + ", uuid=" + this.b + ')';
+    }
+
+    public vk8(int i, String str) {
+        str.getClass();
         this.a = i;
-        setBackground(cmb.f0(1090519039, 1, -1));
-        setScaleType(ImageView.ScaleType.CENTER);
-        setImageResource(i2);
-        setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        setOnClickListener(new hb(this, i, (byte) 5));
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(gm.L(40.0f), gm.L(40.0f));
+        this.b = str;
     }
 }

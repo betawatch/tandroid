@@ -1,95 +1,40 @@
 // default package
 
-import java.util.Iterator;
+import android.net.Uri;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class nt implements Iterator {
-    public int a;
-    public int b;
-    public boolean c;
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ Object e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class nt implements h8c {
+    public final /* synthetic */ o a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ vt d;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public nt(qt qtVar, byte b) {
-        this(qtVar.c);
-        this.d = b;
-        switch (b) {
-            case 1:
-                this.e = qtVar;
-                this(qtVar.c);
-                break;
-            default:
-                this.e = qtVar;
-                break;
-        }
+    public /* synthetic */ nt(o oVar, String str, boolean[] zArr, vt vtVar) {
+        this.a = oVar;
+        this.b = str;
+        this.c = zArr;
+        this.d = vtVar;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b < this.a;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        Object f;
-        if (!hasNext()) {
-            u36.g();
-            return null;
+    @Override // h8c
+    public final Object run() {
+        String str = this.b;
+        if (!d01.g(Uri.parse(str), false, this.c)) {
+            return Boolean.FALSE;
         }
-        int i = this.b;
-        byte b = this.d;
-        Object obj = this.e;
-        switch (b) {
-            case 0:
-                f = ((qt) obj).f(i);
-                break;
-            case 1:
-                f = ((qt) obj).i(i);
-                break;
-            default:
-                f = ((st) obj).b[i];
-                break;
+        o oVar = this.a;
+        vt vtVar = this.d;
+        if (vtVar != null) {
+            vtVar.c = new ee2(oVar, vtVar, (byte) 25);
+        } else {
+            sw swVar = oVar.L;
+            if (swVar != null) {
+                swVar.a(true);
+            }
         }
-        this.b++;
-        this.c = true;
-        return f;
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        if (!this.c) {
-            dq9.m("Call next() before removing an element.");
-            return;
-        }
-        int i = this.b - 1;
-        this.b = i;
-        byte b = this.d;
-        Object obj = this.e;
-        switch (b) {
-            case 0:
-                ((qt) obj).g(i);
-                break;
-            case 1:
-                ((qt) obj).g(i);
-                break;
-            default:
-                ((st) obj).h(i);
-                break;
-        }
-        this.a--;
-        this.c = false;
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public nt(st stVar) {
-        this(stVar.c);
-        this.d = (byte) 2;
-        this.e = stVar;
-    }
-
-    public nt(int i) {
-        this.a = i;
+        d01.s(oVar.M, Uri.parse(str), true, true, false, vtVar, null, true, true, false, false);
+        return Boolean.TRUE;
     }
 }

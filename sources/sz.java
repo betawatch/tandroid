@@ -1,17 +1,28 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.media.AudioDeviceCallback;
+import android.media.AudioDeviceInfo;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class sz {
-    public final long a;
-    public final boolean b;
-    public final TLRPC.TL_textWithEntities c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class sz extends AudioDeviceCallback {
+    public final /* synthetic */ uz a;
 
-    public sz(long j, boolean z, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.a = j;
-        this.b = z;
-        this.c = tL_textWithEntities;
+    public sz(uz uzVar) {
+        this.a = uzVar;
+    }
+
+    @Override // android.media.AudioDeviceCallback
+    public final void onAudioDevicesAdded(AudioDeviceInfo[] audioDeviceInfoArr) {
+        this.a.c();
+    }
+
+    @Override // android.media.AudioDeviceCallback
+    public final void onAudioDevicesRemoved(AudioDeviceInfo[] audioDeviceInfoArr) {
+        uz uzVar = this.a;
+        if (g8c.l(audioDeviceInfoArr, uzVar.i)) {
+            uzVar.i = null;
+        }
+        uzVar.c();
     }
 }

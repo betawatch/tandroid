@@ -1,77 +1,59 @@
 // default package
 
-import android.app.Activity;
-import java.lang.ref.WeakReference;
-import org.json.JSONObject;
+import org.telegram.ui.PasscodeActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ov0 implements jm7, km7 {
+public final /* synthetic */ class ov0 implements bja {
     public final /* synthetic */ byte a;
-    public final Object b;
-    public final Object c;
+    public final /* synthetic */ Object b;
 
-    public ov0(nm7 nm7Var, jm7 jm7Var) {
-        this.a = (byte) 2;
-        this.b = new e7a(nm7Var, this);
-        this.c = new WeakReference(jm7Var);
+    public /* synthetic */ ov0(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // km7
-    public final void a() {
-        ((e7a) this.b).a();
-    }
-
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+    @Override // bja
+    public final void L(int i, boolean z) {
+        bf6 bf6Var;
+        fv7 fv7Var;
         byte b = this.a;
         Object obj = this.b;
-        Object obj2 = this.c;
         switch (b) {
             case 0:
-                if (i == 311) {
-                    int intValue = ((Integer) objArr[0]).intValue();
-                    int[] iArr = (int[]) objArr[2];
-                    if (intValue == 5000) {
-                        nm7.e().n(this, nm7.h5);
-                        qw0 qw0Var = (qw0) obj2;
-                        if (iArr[0] != 0) {
-                            qw0Var.u((ow0) obj, "scan_qr_popup_closed", new JSONObject());
-                            break;
-                        } else {
-                            Activity activity = qw0Var.a0;
-                            if (activity != null) {
-                                qw0Var.h0 = lb1.j0(activity, 3, new ni6(qw0Var, (byte) 11));
-                                break;
-                            }
-                        }
-                    }
+                fw0 fw0Var = ((ow0) obj).x;
+                if (i > gl.L(20.0f)) {
+                    fw0Var.d(fw0Var.getTopActionBarOffsetY() + (-fw0Var.getOffsetY()));
+                    break;
                 }
                 break;
             case 1:
-                if (i == 279) {
-                    ((he) obj).dismiss();
-                    nm7.e().n(this, i);
-                    gm.d3(new kg5(this, (byte) 8), 100L);
+                mf6 mf6Var = (mf6) obj;
+                if (i > gl.L(20.0f) && mf6Var.r1()) {
+                    gl.t1(mf6Var.fragmentView);
+                }
+                if (i <= gl.L(20.0f) && (bf6Var = mf6Var.U) != null) {
+                    bf6Var.run();
+                    mf6Var.U = null;
+                    break;
+                }
+                break;
+            case 2:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
+                if (i >= gl.L(20.0f) && (fv7Var = passcodeActivity.U) != null) {
+                    fv7Var.run();
+                    passcodeActivity.U = null;
                     break;
                 }
                 break;
             default:
-                jm7 jm7Var = (jm7) ((WeakReference) obj2).get();
-                if (jm7Var == null) {
-                    fc4.d("MEMORY_LEAK observer " + i + " with destroyed WeakReference");
-                    a();
-                    break;
-                } else {
-                    jm7Var.didReceivedNotification(i, i2, objArr);
-                    break;
+                fqc fqcVar = (fqc) obj;
+                if (i <= gl.L(20.0f)) {
+                    i = 0;
                 }
+                fqcVar.n = i;
+                fqcVar.onInsets(fqcVar.r, fqcVar.s, fqcVar.w, fqcVar.x);
+                break;
         }
-    }
-
-    public /* synthetic */ ov0(jm7 jm7Var, Object obj, byte b) {
-        this.a = b;
-        this.c = jm7Var;
-        this.b = obj;
     }
 }

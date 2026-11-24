@@ -1,63 +1,42 @@
 // default package
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.p;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class m18 implements v18 {
-    public final /* synthetic */ Runnable a;
-    public final /* synthetic */ p b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class m18 extends fm2 {
+    public final /* synthetic */ byte E;
 
-    public m18(p pVar, Runnable runnable) {
-        this.b = pVar;
-        this.a = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ m18(Drawable drawable, Drawable drawable2, int i, int i2) {
+        super(drawable, drawable2, i, i2);
+        this.E = (byte) 3;
     }
 
-    @Override // v18
-    public final boolean c(String str, String str2, boolean z, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        String str3;
-        p pVar = this.b;
-        pVar.z0 = tL_paymentSavedCredentialsCard;
-        pVar.x0 = str;
-        pVar.V0 = z;
-        pVar.y0 = str2;
-        pVar.K0 = tL_inputPaymentCredentialsGooglePay;
-        ijb[] ijbVarArr = pVar.Z;
-        ijb ijbVar = ijbVarArr[0];
-        if (ijbVar != null) {
-            ijbVar.setVisibility(0);
-            ijb ijbVar2 = ijbVarArr[0];
-            String str4 = pVar.y0;
-            if (str4 == null || str4.length() <= 1) {
-                str3 = pVar.y0;
-            } else {
-                str3 = pVar.y0.substring(0, 1).toUpperCase() + pVar.y0.substring(1);
-            }
-            ijbVar2.b(R.drawable.msg_payment_card, str3, jb6.M0(2131747147, null), true);
-            ijb ijbVar3 = ijbVarArr[1];
-            if (ijbVar3 != null) {
-                ijbVar3.setVisibility(0);
-            }
-        }
-        Runnable runnable = this.a;
-        if (runnable != null) {
-            runnable.run();
-        }
-        return false;
+    @Override // fm2, android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        byte b = this.E;
     }
 
-    @Override // v18
-    public final void a(TL_account.Password password) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ m18(Drawable drawable, Drawable drawable2, byte b) {
+        super(drawable, drawable2);
+        this.E = b;
     }
 
-    @Override // v18
-    public final void b() {
+    private final void a(ColorFilter colorFilter) {
     }
 
-    @Override // v18
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
+    private final void b(ColorFilter colorFilter) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
+    }
+
+    private final void d(ColorFilter colorFilter) {
+    }
+
+    private final void e(ColorFilter colorFilter) {
     }
 }

@@ -1,93 +1,37 @@
 // default package
 
-import android.view.View;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class uhc implements View.OnClickListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class uhc implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ iic b;
+    public final /* synthetic */ VoIPService b;
 
-    public /* synthetic */ uhc(iic iicVar, byte b) {
+    public /* synthetic */ uhc(VoIPService voIPService, byte b) {
         this.a = b;
-        this.b = iicVar;
+        this.b = voIPService;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        VoIPService sharedInstance;
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        int i = 1;
-        iic iicVar = this.b;
+        VoIPService voIPService = this.b;
         switch (b) {
             case 0:
-                if (VoIPService.getSharedInstance() != null) {
-                    gm.r(iicVar.S0);
-                    iicVar.R0 = false;
-                    VoIPService.getSharedInstance().hangUp();
-                    break;
-                }
+                voIPService.lambda$updateConnectionState$78();
                 break;
             case 1:
-                if (iicVar.n0 && iicVar.m0 && System.currentTimeMillis() - iicVar.K0 > 500) {
-                    gm.r(iicVar.S0);
-                    iicVar.R0 = false;
-                    iicVar.K0 = System.currentTimeMillis();
-                    iicVar.a0.setRelativePosition(iicVar.Z);
-                    iicVar.b0 = true;
-                    iicVar.H0 = true;
-                    iicVar.q0 = iicVar.p0;
-                    iicVar.y();
-                    break;
-                }
+                voIPService.lambda$updateConnectionState$79();
                 break;
             case 2:
-                if (iicVar.H0 && System.currentTimeMillis() - iicVar.K0 > 500) {
-                    gm.r(iicVar.S0);
-                    iicVar.R0 = false;
-                    iicVar.K0 = System.currentTimeMillis();
-                    iicVar.Z.setRelativePosition(iicVar.a0);
-                    iicVar.b0 = false;
-                    iicVar.H0 = false;
-                    iicVar.q0 = iicVar.p0;
-                    iicVar.y();
-                    break;
-                }
+                voIPService.lambda$onConnectionStateChanged$113();
                 break;
             case 3:
-                if (System.currentTimeMillis() - iicVar.K0 >= 500) {
-                    iicVar.K0 = System.currentTimeMillis();
-                    boolean z = iicVar.C0;
-                    if (!z && iicVar.B0) {
-                        iicVar.c(!z);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                if (System.currentTimeMillis() - iicVar.K0 >= 500) {
-                    iicVar.K0 = System.currentTimeMillis();
-                    if (iicVar.B0) {
-                        iicVar.c(!iicVar.C0);
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                if (iicVar.L.getTag() != null && (sharedInstance = VoIPService.getSharedInstance()) != null) {
-                    iicVar.s();
-                    if (sharedInstance.isBluetoothOn()) {
-                        i = 2;
-                    } else if (sharedInstance.isSpeakerphoneOn()) {
-                        i = 0;
-                    }
-                    sharedInstance.toggleSpeakerphoneOrShowRouteSheet(iicVar.b, false, Integer.valueOf(i));
-                    break;
-                }
+                voIPService.lambda$onConnectionStateChanged$114();
                 break;
             default:
-                iicVar.g();
+                voIPService.lambda$playConnectedSound$84();
                 break;
         }
     }

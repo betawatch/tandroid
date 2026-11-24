@@ -3,22 +3,22 @@ package com.google.android.recaptcha.internal;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzdf {
-    public static final le3 zza(Task task) {
-        final nq2 a = kud.a();
+    public static final zc3 zza(Task task) {
+        final cp2 a = hsd.a();
         task.addOnCompleteListener(zzdd.zza, new OnCompleteListener() { // from class: com.google.android.recaptcha.internal.zzdc
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
-                av5 av5Var = mq2.this;
+                bt5 bt5Var = bp2.this;
                 Exception exception = task2.getException();
                 if (exception != null) {
-                    ((nq2) av5Var).P(exception);
+                    ((cp2) bt5Var).P(exception);
                 } else if (task2.isCanceled()) {
-                    ((ov5) av5Var).cancel(null);
+                    ((pt5) bt5Var).cancel(null);
                 } else {
-                    ((nq2) av5Var).B(task2.getResult());
+                    ((cp2) bt5Var).B(task2.getResult());
                 }
             }
         });

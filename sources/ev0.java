@@ -1,153 +1,16 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.KeyEvent;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ev0 {
+    public long a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ev0 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-
-    public /* synthetic */ ev0(b61 b61Var, my0[] my0VarArr, int i, TLObject tLObject, String str) {
-        this.a = (byte) 12;
-        this.c = b61Var;
-        this.e = my0VarArr;
-        this.b = i;
-        this.f = tLObject;
-        this.d = str;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.d;
-        Object obj2 = this.e;
-        Object obj3 = this.f;
-        Object obj4 = this.c;
-        switch (b) {
-            case 0:
-                gm.c3(new qu((qw0) obj4, (String) obj, tLObject, tL_error, this.b, (mw0) obj2, (ow0) obj3));
-                break;
-            case 1:
-                gm.c3(new jg(tLObject, this.b, (he) obj4, (Context) obj, (ylb) obj2, (dc5) obj3));
-                break;
-            case 2:
-                gm.c3(new jg(obj4, this.b, tLObject, obj, obj2, obj3, (byte) 5));
-                break;
-            case 3:
-                gm.c3(new qu(tL_error, tLObject, (ArrayList) obj4, this.b, (AtomicInteger) obj, (ArrayList) obj2, (co1) obj3));
-                break;
-            case 4:
-                gm.c3(new qu((he) obj4, (k11) obj, tLObject, this.b, (Activity) obj2, (TLRPC.TL_inputGroupCallSlug) obj3, tL_error));
-                break;
-            case 5:
-                String str = LaunchActivity.C1;
-                gm.c3(new qu((jm7) obj4, tLObject, obj2, (TLObject) tL_error, obj3, this.b, (String) obj, (byte) 10));
-                break;
-            case 6:
-                String str2 = LaunchActivity.C1;
-                gm.c3(new qu((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (k16) obj3, this.b, (String) obj));
-                break;
-            case 7:
-                String str3 = LaunchActivity.C1;
-                gm.c3(new qu((LaunchActivity) obj4, tL_error, tLObject, this.b, (he) obj2, (k16) obj3, (String) obj));
-                break;
-            case 8:
-                gm.c3(new qu((g17) obj4, this.b, (ArrayList) obj, (vh6) obj2, tL_error, tLObject, (oc7) obj3));
-                break;
-            case 9:
-                gm.c3(new jg((Object) tLObject, this.b, (TLObject) obj4, obj, obj2, obj3, (byte) 8));
-                break;
-            case 10:
-                gm.c3(new jg((KeyEvent.Callback) obj4, obj, this.b, (Object) tLObject, obj2, (TLObject) obj3, (byte) 9));
-                break;
-            case 11:
-                gm.c3(new jg((b61) obj4, tLObject, (my0[]) obj, (ylb) obj2, this.b, (TLRPC.TL_messages_checkChatInvite) obj3));
-                break;
-            case 12:
-                gm.c3(new i77(obj4, obj2, this.b, obj3, obj, (byte) 26));
-                break;
-            case 13:
-                gm.c3(new qu((he) obj4, tLObject, this.b, (TLRPC.Document) obj, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));
-                break;
-            default:
-                gm.c3(new jg((y5b) obj4, tLObject, this.d, (ArrayList) obj2, (boolean[]) obj3, this.b));
-                break;
-        }
-    }
-
-    public /* synthetic */ ev0(int i, Object obj, Object obj2, Object obj3, Object obj4, byte b) {
-        this.a = b;
-        this.b = i;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
-    }
-
-    public /* synthetic */ ev0(b61 b61Var, my0[] my0VarArr, ylb ylbVar, int i, TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite) {
-        this.a = (byte) 11;
-        this.c = b61Var;
-        this.d = my0VarArr;
-        this.e = ylbVar;
-        this.b = i;
-        this.f = tL_messages_checkChatInvite;
-    }
-
-    public /* synthetic */ ev0(y5b y5bVar, Object obj, ArrayList arrayList, boolean[] zArr, int i) {
-        this.a = (byte) 14;
-        this.c = y5bVar;
-        this.d = obj;
-        this.e = arrayList;
-        this.f = zArr;
-        this.b = i;
-    }
-
-    public /* synthetic */ ev0(KeyEvent.Callback callback, Object obj, int i, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.c = callback;
-        this.d = obj;
-        this.b = i;
-        this.e = obj2;
-        this.f = obj3;
-    }
-
-    public /* synthetic */ ev0(Object obj, int i, Object obj2, Object obj3, Object obj4, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
-    }
-
-    public /* synthetic */ ev0(LaunchActivity launchActivity, int i, he heVar, k16 k16Var, String str) {
-        this.a = (byte) 7;
-        this.c = launchActivity;
-        this.b = i;
-        this.e = heVar;
-        this.f = k16Var;
-        this.d = str;
-    }
-
-    public /* synthetic */ ev0(LaunchActivity launchActivity, Object obj, Object obj2, int i, String str, byte b) {
-        this.a = b;
-        this.c = launchActivity;
-        this.e = obj;
-        this.f = obj2;
-        this.b = i;
-        this.d = str;
+    public final void a() {
+        this.b = true;
+        ((g2b) this.c).g0(this.a, false);
     }
 }

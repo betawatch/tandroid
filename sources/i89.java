@@ -1,44 +1,38 @@
 // default package
 
-import android.app.RemoteInput;
-import android.os.Build;
-import android.os.Bundle;
-import java.util.HashSet;
-import java.util.Iterator;
+import j$.util.DesugarCollections;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class i89 {
-    public final String a;
-    public final Bundle b;
-    public final HashSet c;
+public abstract class i89 {
+    public final fm4 a;
+    public final mm5 b;
+    public final long c;
+    public final List d;
+    public final az8 e;
 
-    public i89(String str, Bundle bundle, HashSet hashSet) {
-        this.a = str;
-        this.b = bundle;
-        this.c = hashSet;
+    public i89(fm4 fm4Var, mm5 mm5Var, tv9 tv9Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
+        gre.f(!mm5Var.isEmpty());
+        this.a = fm4Var;
+        this.b = mm5.q(mm5Var);
+        this.d = DesugarCollections.unmodifiableList(arrayList);
+        this.e = tv9Var.b(this);
+        long j = tv9Var.c;
+        long j2 = tv9Var.b;
+        String str = g8c.a;
+        this.c = g8c.b0(j, 1000000L, j2, RoundingMode.DOWN);
     }
 
-    public static RemoteInput[] a(i89[] i89VarArr) {
-        if (i89VarArr == null) {
-            return null;
-        }
-        RemoteInput[] remoteInputArr = new RemoteInput[i89VarArr.length];
-        for (int i = 0; i < i89VarArr.length; i++) {
-            i89 i89Var = i89VarArr[i];
-            i89Var.getClass();
-            RemoteInput.Builder addExtras = new RemoteInput.Builder("extra_voice_reply").setLabel(i89Var.a).setChoices(null).setAllowFreeFormInput(true).addExtras(i89Var.b);
-            if (Build.VERSION.SDK_INT >= 26) {
-                Iterator it = i89Var.c.iterator();
-                while (it.hasNext()) {
-                    i10.j(addExtras, (String) it.next());
-                }
-            }
-            if (Build.VERSION.SDK_INT >= 29) {
-                rs.s(addExtras);
-            }
-            remoteInputArr[i] = addExtras.build();
-        }
-        return remoteInputArr;
+    public String a() {
+        return null;
+    }
+
+    public abstract r53 b();
+
+    public az8 c() {
+        return null;
     }
 }

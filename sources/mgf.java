@@ -1,51 +1,72 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class mgf extends khf {
-    public final transient int h;
-    public final transient int n;
-    public final /* synthetic */ khf r;
+public final class mgf implements tgf {
+    public final jdf a;
+    public final dhf b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mgf(khf khfVar, int i, int i2) {
-        super((byte) 3);
-        this.r = khfVar;
-        this.h = i;
-        this.n = i2;
+    public mgf(dhf dhfVar, oef oefVar, jdf jdfVar) {
+        this.b = dhfVar;
+        this.a = jdfVar;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        t4f.a(i, this.n);
-        return this.r.get(i + this.h);
+    @Override // tgf
+    public final void a(Object obj) {
+        this.b.getClass();
+        chf chfVar = ((vef) obj).zzc;
+        if (chfVar.d) {
+            chfVar.d = false;
+        }
+        obj.getClass();
+        throw new ClassCastException();
     }
 
-    @Override // zad
-    public final int i() {
-        return this.r.j() + this.h + this.n;
+    @Override // tgf
+    public final boolean b(vef vefVar, vef vefVar2) {
+        this.b.getClass();
+        return vefVar.zzc.equals(vefVar2.zzc);
     }
 
-    @Override // zad
-    public final int j() {
-        return this.r.j() + this.h;
+    @Override // tgf
+    public final void c(Object obj, xdd xddVar) {
+        ir2.u(obj);
+        throw null;
     }
 
-    @Override // zad
-    public final Object[] k() {
-        return this.r.k();
+    @Override // tgf
+    public final void d(Object obj, Object obj2) {
+        ugf.o(this.b, obj, obj2);
     }
 
-    @Override // khf, java.util.List
-    /* renamed from: l */
-    public final khf subList(int i, int i2) {
-        t4f.b(i, i2, this.n);
-        int i3 = this.h;
-        return this.r.subList(i + i3, i2 + i3);
+    @Override // tgf
+    public final int e(vef vefVar) {
+        this.b.getClass();
+        chf chfVar = vefVar.zzc;
+        int i = chfVar.c;
+        if (i != -1) {
+            return i;
+        }
+        chfVar.c = 0;
+        return 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.n;
+    @Override // tgf
+    public final int f(vef vefVar) {
+        this.b.getClass();
+        vefVar.zzc.getClass();
+        return 506991;
+    }
+
+    @Override // tgf
+    public final boolean g(Object obj) {
+        ir2.u(obj);
+        throw null;
+    }
+
+    @Override // tgf
+    public final vef zzc() {
+        jdf jdfVar = this.a;
+        return jdfVar instanceof vef ? (vef) ((vef) jdfVar).h(4, null) : ((uef) ((vef) jdfVar).h(5, null)).b();
     }
 }

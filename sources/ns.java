@@ -1,78 +1,142 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
+import java.lang.reflect.Array;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ns extends LinearLayout implements vlb {
-    public static final /* synthetic */ int h = 0;
-    public Paint a;
-    public Paint b;
-    public ms c;
-    public TextView d;
-    public float e;
-    public boolean f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ns implements Set {
+    public final /* synthetic */ ps a;
 
-    public final void a(float f) {
-        this.e = f;
-        this.f = true;
-        TextView textView = this.d;
-        int w0 = cmb.w0(null, cmb.F6, false);
-        int i = cmb.H6;
-        textView.setTextColor(on2.f(f, w0, cmb.w0(null, i, false)));
-        Paint paint = this.a;
-        paint.setColor(on2.f(f, on2.p(cmb.w0(null, cmb.L6, false), 63), cmb.w0(null, i, false)));
-        paint.setStrokeWidth(Math.max(2, gm.L(gm.R1(0.5f, 2.0f, f))));
-        invalidate();
+    public ns(ps psVar) {
+        this.a = psVar;
     }
 
-    public final void b(boolean z, boolean z2) {
-        float f = z ? 1.0f : 0.0f;
-        float f2 = this.e;
-        if (f == f2 && z2) {
-            return;
+    @Override // java.util.Set, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.a.containsKey(obj);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        return this.a.j(collection);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean equals(Object obj) {
+        ps psVar = this.a;
+        if (this == obj) {
+            return true;
         }
-        if (!z2) {
-            a(f);
-            return;
+        if (!(obj instanceof Set)) {
+            return false;
         }
-        ValueAnimator duration = ValueAnimator.ofFloat(f2, f).setDuration(250L);
-        duration.setInterpolator(vt3.e);
-        duration.addUpdateListener(new f0(this, (byte) 7));
-        duration.start();
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        Paint paint = this.a;
-        float strokeWidth = paint.getStrokeWidth();
-        RectF rectF = gm.P;
-        ms msVar = this.c;
-        rectF.set(msVar.getLeft() + strokeWidth, msVar.getTop() + strokeWidth, msVar.getRight() - strokeWidth, msVar.getBottom() - strokeWidth);
-        canvas.drawRoundRect(rectF, gm.L(18.0f), gm.L(18.0f), this.b);
-        super.draw(canvas);
-        canvas.drawRoundRect(rectF, gm.L(18.0f), gm.L(18.0f), paint);
-    }
-
-    @Override // vlb
-    public final void updateColors() {
+        Set set = (Set) obj;
         try {
-            if (!this.f || this.d == null) {
-                return;
+            if (psVar.c == set.size()) {
+                return psVar.j(set);
             }
-            a(this.e);
-        } catch (Exception e) {
-            fc4.g(e, true);
+            return false;
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
         }
     }
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // java.util.Set, java.util.Collection
+    public final int hashCode() {
+        ps psVar = this.a;
+        int i = 0;
+        for (int i2 = psVar.c - 1; i2 >= 0; i2--) {
+            Object f = psVar.f(i2);
+            i += f == null ? 0 : f.hashCode();
+        }
+        return i;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean isEmpty() {
+        return this.a.isEmpty();
+    }
+
+    @Override // java.util.Set, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return new ms(this.a, (byte) 0);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean remove(Object obj) {
+        ps psVar = this.a;
+        int d = psVar.d(obj);
+        if (d < 0) {
+            return false;
+        }
+        psVar.g(d);
+        return true;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        return this.a.k(collection);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        ps psVar = this.a;
+        int i = psVar.c;
+        for (int i2 = i - 1; i2 >= 0; i2--) {
+            if (!collection.contains(psVar.f(i2))) {
+                psVar.g(i2);
+            }
+        }
+        return i != psVar.c;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final int size() {
+        return this.a.c;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        ps psVar = this.a;
+        int i = psVar.c;
+        if (objArr.length < i) {
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i);
+        }
+        for (int i2 = 0; i2 < i; i2++) {
+            objArr[i2] = psVar.f(i2);
+        }
+        if (objArr.length > i) {
+            objArr[i] = null;
+        }
+        return objArr;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final Object[] toArray() {
+        ps psVar = this.a;
+        int i = psVar.c;
+        Object[] objArr = new Object[i];
+        for (int i2 = 0; i2 < i; i2++) {
+            objArr[i2] = psVar.f(i2);
+        }
+        return objArr;
     }
 }

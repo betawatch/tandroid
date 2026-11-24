@@ -1,32 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum ot3 implements jk {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(-260),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF17(-261),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF26(-8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF35(-7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF45(-25),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF55(-35),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF65(-36);
+import android.app.Dialog;
+import android.content.Context;
 
-    public final short a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ot3 extends Dialog {
+    public final /* synthetic */ hu0 a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    ot3(int i) {
-        this.a = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ot3(hu0 hu0Var, Context context) {
+        super(context);
+        this.a = hu0Var;
     }
 
-    @Override // jk
-    public final int a() {
-        return this.a;
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        pt3 pt3Var = (pt3) this.a.b;
+        pt3Var.a.k(false);
+        pt3Var.a.e();
     }
 }

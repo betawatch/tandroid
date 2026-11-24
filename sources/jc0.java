@@ -1,125 +1,202 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class jc0 extends View {
-    public hc0 a;
-    public final ln b;
-    public boolean c;
+public final class jc0 extends Drawable {
+    public final View a;
+    public final int b;
     public boolean d;
-    public final j15 e;
-    public Drawable f;
-    public Drawable h;
-    public boolean n;
-    public Paint r;
-    public Paint s;
-    public boolean w;
-    public final /* synthetic */ mc0 x;
+    public final int e;
+    public final int f;
+    public final float g;
+    public final x46 c = new x46(new qx4(this), s33.h, 380);
+    public final ArrayList h = new ArrayList();
+    public int i = kk7.d4;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jc0(mc0 mc0Var, Context context) {
-        super(context);
-        this.x = mc0Var;
-        ln lnVar = new ln(400L, gm.H);
-        this.b = lnVar;
-        this.e = new j15();
-        lnVar.a = this;
+    public jc0(int i, View view, int i2, int i3, float f) {
+        this.b = i;
+        this.a = view;
+        this.e = i2;
+        this.f = i3;
+        this.g = f;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00b3, code lost:
-    
-        if (r14.n != (r14.d && r14.a == null)) goto L28;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        Paint paint;
-        super.onDraw(canvas);
-        float f = this.c ? 1.0f : 0.0f;
-        ln lnVar = this.b;
-        lnVar.e(false, f);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        hc0 hc0Var = this.a;
-        if (hc0Var != null) {
-            int i = hc0Var.c;
-            int i2 = hc0Var.d;
-            int i3 = hc0Var.e;
-            int i4 = hc0Var.f;
-            j15 j15Var = this.e;
-            j15Var.d(i, i2, i3, i4);
-            j15Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            paint = j15Var.c;
-        } else {
-            if (this.s == null) {
-                Paint paint2 = new Paint(1);
-                this.s = paint2;
-                paint2.setColor(cmb.w0(null, cmb.yf, false));
-            }
-            paint = this.s;
-        }
-        if (lnVar.c == 0.0f) {
-            canvas.drawCircle(measuredWidth, measuredHeight, gm.L(15.0f), paint);
-        } else {
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(gm.L(2.0f));
-            canvas.drawCircle(measuredWidth, measuredHeight, gm.N(13.5f), paint);
-            paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(measuredWidth, measuredHeight, td4.A(1.0f, lnVar.c, gm.L(5.0f), gm.L(10.0f)), paint);
-        }
-        if (this.w) {
-            if (this.h != null) {
-            }
-            this.h = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
-            boolean z = this.d && this.a == null;
-            this.n = z;
-            this.h.setColorFilter(new PorterDuffColorFilter(z ? cmb.w0(null, cmb.Af, false) : -1, PorterDuff.Mode.SRC_IN));
-            this.h.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.h.getIntrinsicHeight() / 2.0f)), (int) ((this.h.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.h.getIntrinsicHeight() / 2.0f) + measuredHeight));
-            float R1 = gm.R1(1.05f, 0.92f, lnVar.c);
-            canvas.save();
-            canvas.scale(R1, R1, measuredWidth, measuredHeight);
-            this.h.draw(canvas);
-            canvas.restore();
+    public final void a() {
+        if (this.d) {
             return;
         }
-        if (this.d) {
-            if (this.a == null) {
-                if (this.f == null) {
-                    Drawable drawable = getContext().getDrawable(R.drawable.msg_filled_plus);
-                    this.f = drawable;
-                    drawable.setColorFilter(new PorterDuffColorFilter(cmb.w0(null, cmb.Af, false), PorterDuff.Mode.MULTIPLY));
-                }
-                this.f.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.f.getIntrinsicHeight() / 2.0f)), (int) ((this.f.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.f.getIntrinsicHeight() / 2.0f) + measuredHeight));
-                this.f.draw(canvas);
-                return;
+        this.d = true;
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ic0 ic0Var = (ic0) obj;
+            if (ic0Var.c != 0 && !ic0Var.d) {
+                ic0Var.d = true;
+                ic0Var.a.I();
             }
-            if (this.r == null) {
-                Paint paint3 = new Paint(1);
-                this.r = paint3;
-                paint3.setColor(-1);
-            }
-            this.r.setAlpha(Math.round(Utilities.i(lnVar.c, 1.0f, 0.0f) * 255.0f));
-            canvas.drawCircle(measuredWidth, measuredHeight, gm.L(1.5f), this.r);
-            canvas.drawCircle(measuredWidth - (gm.L(5.0f) * lnVar.c), measuredHeight, gm.L(1.5f), this.r);
-            canvas.drawCircle((gm.L(5.0f) * lnVar.c) + measuredWidth, measuredHeight, gm.L(1.5f), this.r);
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.x.Q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(48.0f), TLObject.FLAG_30));
+    public final void b() {
+        if (this.d) {
+            this.d = false;
+            ArrayList arrayList = this.h;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ic0 ic0Var = (ic0) obj;
+                if (ic0Var.d) {
+                    ic0Var.d = false;
+                    ic0Var.a.K();
+                }
+            }
+        }
+    }
+
+    public final void c(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.i == 0) {
+            return;
+        }
+        float f = bounds.left;
+        float f2 = bounds.top;
+        x46 x46Var = this.c;
+        canvas.saveLayer(f, f2, f + x46Var.d.f.a, f2 + this.e, null);
+        for (int size = x46Var.b.size() - 1; size >= 0; size--) {
+            u46 i = x46Var.i(size);
+            RectF b = i.b();
+            Object obj = i.a;
+            float f3 = i.f.a;
+            float c = i.c();
+            float f4 = b.left + f3;
+            float width = b.width() - f3;
+            float f5 = f + f4;
+            float f6 = width / 2.0f;
+            float f7 = f5 + f6;
+            float f8 = f2 + f6;
+            canvas.save();
+            canvas.scale(c, c, f7, f8);
+            canvas.drawCircle(f7, f8, f6 + this.g, bkb.Fm);
+            ic0 ic0Var = (ic0) obj;
+            ic0Var.a.i0(f5, f2, width, width);
+            ic0Var.a.setAlpha((this.i / 255.0f) * i.c());
+            ic0Var.a.h(canvas, null);
+            canvas.restore();
+        }
+        canvas.restore();
+    }
+
+    public final void d(List list, boolean z) {
+        ic0 ic0Var;
+        x46 x46Var = this.c;
+        if (list == null || list.isEmpty()) {
+            x46Var.m(null, z);
+            return;
+        }
+        if (!z) {
+            x46Var.m(null, false);
+        }
+        ArrayList arrayList = new ArrayList(list.size());
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            long n = cf3.n((TLRPC.Peer) it.next());
+            ArrayList arrayList2 = this.h;
+            int size = arrayList2.size();
+            int i = 0;
+            while (true) {
+                if (i >= size) {
+                    ic0Var = null;
+                    break;
+                }
+                Object obj = arrayList2.get(i);
+                i++;
+                ic0Var = (ic0) obj;
+                if (ic0Var.c == n) {
+                    break;
+                }
+            }
+            if (ic0Var == null) {
+                int size2 = arrayList2.size();
+                int i2 = 0;
+                while (true) {
+                    if (i2 >= size2) {
+                        ic0Var = null;
+                        break;
+                    }
+                    Object obj2 = arrayList2.get(i2);
+                    i2++;
+                    ic0Var = (ic0) obj2;
+                    if (ic0Var.c == 0) {
+                        break;
+                    }
+                }
+            }
+            if (ic0Var == null) {
+                ic0Var = new ic0(this, this.a);
+                arrayList2.add(ic0Var);
+            }
+            ic0 ic0Var2 = ic0Var;
+            ImageReceiver imageReceiver = ic0Var2.a;
+            pb0 pb0Var = ic0Var2.b;
+            if (ic0Var2.c != n) {
+                ic0Var2.c = n;
+                TLObject Z1 = na7.q1(this.b).Z1(n);
+                if (Z1 != null) {
+                    pb0Var.o(Z1);
+                    imageReceiver.U(Z1, pb0Var, null);
+                } else {
+                    pb0Var.j(n, "", "", null);
+                    imageReceiver.f();
+                }
+            }
+            arrayList.add(ic0Var2);
+            if (this.d && !ic0Var2.d) {
+                ic0Var2.d = true;
+                imageReceiver.I();
+            }
+        }
+        x46Var.m(arrayList, z);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.i = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

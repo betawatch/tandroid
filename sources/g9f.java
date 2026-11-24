@@ -1,38 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class g9f extends wgf {
-    private static final g9f zzb;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private int zzg;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
 
-    static {
-        g9f g9fVar = new g9f();
-        zzb = g9fVar;
-        wgf.e(g9f.class, g9fVar);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class g9f extends b4 {
+    public static final Parcelable.Creator<g9f> CREATOR = new c0f((byte) 18);
+    public final int a;
+    public final ArrayList b;
+    public final zle c;
+
+    public g9f(int i, ArrayList arrayList, zle zleVar) {
+        this.a = i;
+        this.b = arrayList;
+        this.c = zleVar;
     }
 
-    @Override // wgf
-    public final Object h(int i, wgf wgfVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new tif(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002", new Object[]{"zzd", "zze", k4f.s, "zzf", "zzg"});
-        }
-        if (i2 == 3) {
-            return new g9f();
-        }
-        if (i2 == 4) {
-            return new wae(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        jte.p(parcel, 2, this.b);
+        jte.k(parcel, 3, this.c, i);
+        jte.s(parcel, r);
     }
 }

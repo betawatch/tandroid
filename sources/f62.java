@@ -1,59 +1,72 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class f62 implements CameraView.CameraViewDelegate {
-    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
+public final class f62 extends le8 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ s20 H;
 
-    public f62(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
-        this.a = chatAttachAlertPhotoLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f62(s20 s20Var, Context context, int i, wjb wjbVar, int i2) {
+        super(context, i, null, wjbVar);
+        this.H = s20Var;
+        this.G = i2;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public final void onCameraInit() {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
-        ImageView imageView = chatAttachAlertPhotoLayout.s0;
-        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.T;
-        String currentFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode();
-        String nextFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getNextFlashMode();
-        if (currentFlashMode == null || nextFlashMode == null) {
-            return;
-        }
-        if (currentFlashMode.equals(nextFlashMode)) {
-            for (int i = 0; i < 2; i++) {
-                imageViewArr[i].setVisibility(4);
-                imageViewArr[i].setAlpha(0.0f);
-                imageViewArr[i].setTranslationY(0.0f);
-            }
-        } else {
-            ChatAttachAlertPhotoLayout.r0(imageViewArr[0], chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode());
-            int i2 = 0;
-            while (i2 < 2) {
-                imageViewArr[i2].setVisibility(i2 == 0 ? 0 : 4);
-                imageViewArr[i2].setAlpha((i2 == 0 && chatAttachAlertPhotoLayout.c0) ? 1.0f : 0.0f);
-                imageViewArr[i2].setTranslationY(0.0f);
-                i2++;
+    @Override // le8
+    public final void h(py pyVar, ActionMode actionMode) {
+        k62 k62Var = (k62) this.H.e;
+        if (!k62Var.n && this.G == 11 && pyVar.isFocused() && pyVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) != null) {
+                mu1.x6(menu, ((mu1) k62Var.b.Z1).h, false, true, true, true);
             }
         }
-        imageView.setImageResource(chatAttachAlertPhotoLayout.Q.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
-        imageView.setVisibility(chatAttachAlertPhotoLayout.Q.hasFrontFaceCamera() ? 0 : 4);
-        if (chatAttachAlertPhotoLayout.c0) {
-            return;
+    }
+
+    @Override // le8
+    public final void j(boolean z) {
+        ((k62) this.H.e).b0(this, z);
+    }
+
+    @Override // le8
+    public final void k(le8 le8Var) {
+        ((k62) this.H.e).c0(le8Var);
+    }
+
+    @Override // le8
+    public final void l(py pyVar) {
+        ((k62) this.H.e).b.c1(pyVar, true);
+    }
+
+    @Override // le8
+    public final boolean m(ArrayList arrayList) {
+        k62 k62Var = (k62) this.H.e;
+        if (arrayList.isEmpty()) {
+            return false;
         }
-        AnimatorSet animatorSet = new AnimatorSet();
-        chatAttachAlertPhotoLayout.P = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.Q, (Property<m62, Float>) View.ALPHA, 0.0f, 1.0f));
-        chatAttachAlertPhotoLayout.P.setDuration(180L);
-        chatAttachAlertPhotoLayout.P.addListener(new b91((Object) this, (byte) 19));
-        chatAttachAlertPhotoLayout.P.start();
+        py pyVar = this.d;
+        pyVar.getText().replace(pyVar.getSelectionStart(), pyVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        int i = 0;
+        while (!arrayList.isEmpty() && i < k62Var.K) {
+            for (int length = k62Var.L.length - 1; length > i; length--) {
+                CharSequence[] charSequenceArr = k62Var.L;
+                charSequenceArr[length] = charSequenceArr[length - 1];
+            }
+            k62Var.L[i] = (CharSequence) arrayList.remove(0);
+            k62Var.N++;
+            i++;
+        }
+        k62Var.n0();
+        k62Var.l0 = (k62Var.u0 + i) - 1;
+        k62Var.s.setItemAnimator(k62Var.w);
+        k62Var.r.f();
+        return true;
     }
 }

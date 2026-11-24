@@ -1,88 +1,141 @@
 // default package
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import j$.util.DesugarCollections;
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class cmd implements bpd {
-    public static final Object d = new Object();
-    public static final f26 e = new f26(wqd.class, (byte) 3);
-    public static final boolean f;
-    public static final x2f h;
-    public volatile Object a;
-    public volatile old b;
-    public volatile wld c;
+public final class cmd extends dad implements omd, RandomAccess {
+    public final ArrayList b;
 
     static {
-        boolean z;
-        x2f uldVar;
-        Throwable th;
-        Throwable th2;
-        try {
-            z = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
-        } catch (SecurityException unused) {
-            z = false;
+        new cmd(10).a = false;
+    }
+
+    public cmd(int i) {
+        this(new ArrayList(i));
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final /* synthetic */ void add(int i, Object obj) {
+        h();
+        this.b.add(i, (String) obj);
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // dad, java.util.AbstractList, java.util.List
+    public final boolean addAll(int i, Collection collection) {
+        h();
+        if (collection instanceof omd) {
+            collection = ((omd) collection).c();
         }
-        f = z;
-        String property = System.getProperty("java.runtime.name", "");
-        Throwable th3 = null;
-        if (property == null || property.contains("Android")) {
-            try {
-                uldVar = new vld();
-            } catch (Error | Exception e2) {
-                try {
-                    uldVar = new tld();
-                } catch (Error | Exception e3) {
-                    th3 = e3;
-                    uldVar = new uld();
-                }
-                th = th3;
-                th2 = e2;
+        boolean addAll = this.b.addAll(i, collection);
+        ((AbstractList) this).modCount++;
+        return addAll;
+    }
+
+    @Override // omd
+    public final List c() {
+        return DesugarCollections.unmodifiableList(this.b);
+    }
+
+    @Override // dad, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final void clear() {
+        h();
+        this.b.clear();
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // mkd
+    public final mkd f(int i) {
+        ArrayList arrayList = this.b;
+        if (i < arrayList.size()) {
+            sc8.e();
+            return null;
+        }
+        ArrayList arrayList2 = new ArrayList(i);
+        arrayList2.addAll(arrayList);
+        return new cmd(arrayList2);
+    }
+
+    @Override // omd
+    public final omd g() {
+        return this.a ? new ezd(this) : this;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0053, code lost:
+    
+        if (l0e.a.b(r0, 0, r0.length) != false) goto L17;
+     */
+    @Override // java.util.AbstractList, java.util.List
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object get(int i) {
+        String str;
+        ArrayList arrayList = this.b;
+        Object obj = arrayList.get(i);
+        if (obj instanceof String) {
+            return (String) obj;
+        }
+        if (obj instanceof cdd) {
+            cdd cddVar = (cdd) obj;
+            str = cddVar.size() == 0 ? "" : new String(cddVar.b, cddVar.h(), cddVar.size(), ejd.a);
+            int h = cddVar.h();
+            if (!l0e.a.b(cddVar.b, h, cddVar.size() + h)) {
+                return str;
             }
         } else {
-            try {
-                uldVar = new tld();
-            } catch (NoClassDefFoundError unused2) {
-                uldVar = new uld();
-            }
+            byte[] bArr = (byte[]) obj;
+            str = new String(bArr, ejd.a);
         }
-        th = null;
-        th2 = null;
-        h = uldVar;
-        if (th != null) {
-            f26 f26Var = e;
-            Logger c = f26Var.c();
-            Level level = Level.SEVERE;
-            c.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th2);
-            f26Var.c().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th);
-        }
+        arrayList.set(i, str);
+        return str;
     }
 
-    public final void a(wld wldVar) {
-        wldVar.a = null;
-        while (true) {
-            wld wldVar2 = this.c;
-            if (wldVar2 != wld.c) {
-                wld wldVar3 = null;
-                while (wldVar2 != null) {
-                    wld wldVar4 = wldVar2.b;
-                    if (wldVar2.a != null) {
-                        wldVar3 = wldVar2;
-                    } else if (wldVar3 != null) {
-                        wldVar3.b = wldVar4;
-                        if (wldVar3.a == null) {
-                            break;
-                        }
-                    } else if (h.g(this, wldVar2, wldVar4)) {
-                    }
-                    wldVar2 = wldVar4;
-                }
-                return;
-            }
-            return;
+    @Override // java.util.AbstractList, java.util.List
+    public final Object remove(int i) {
+        h();
+        Object remove = this.b.remove(i);
+        ((AbstractList) this).modCount++;
+        if (remove instanceof String) {
+            return (String) remove;
         }
+        if (!(remove instanceof cdd)) {
+            return new String((byte[]) remove, ejd.a);
+        }
+        cdd cddVar = (cdd) remove;
+        return cddVar.size() == 0 ? "" : new String(cddVar.b, cddVar.h(), cddVar.size(), ejd.a);
     }
 
-    public abstract Throwable d();
+    @Override // java.util.AbstractList, java.util.List
+    public final Object set(int i, Object obj) {
+        h();
+        Object obj2 = this.b.set(i, (String) obj);
+        if (obj2 instanceof String) {
+            return (String) obj2;
+        }
+        if (!(obj2 instanceof cdd)) {
+            return new String((byte[]) obj2, ejd.a);
+        }
+        cdd cddVar = (cdd) obj2;
+        return cddVar.size() == 0 ? "" : new String(cddVar.b, cddVar.h(), cddVar.size(), ejd.a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.b.size();
+    }
+
+    public cmd(ArrayList arrayList) {
+        this.b = arrayList;
+    }
+
+    @Override // dad, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean addAll(Collection collection) {
+        return addAll(this.b.size(), collection);
+    }
 }

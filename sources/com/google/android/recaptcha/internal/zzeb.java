@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzeb extends eeb implements fs4 {
+final class zzeb extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ String zzc;
@@ -13,8 +13,8 @@ final class zzeb extends eeb implements fs4 {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzeb(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, zzhh zzhhVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzeb(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, zzhh zzhhVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
@@ -23,16 +23,16 @@ final class zzeb extends eeb implements fs4 {
         this.zzg = zzhhVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, fw2Var);
         zzebVar.zzh = obj;
         return zzebVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzeb) create((zzgr) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzeb) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00ae, code lost:
@@ -51,7 +51,7 @@ final class zzeb extends eeb implements fs4 {
     
         if (r15 != r5) goto L28;
      */
-    @Override // og0
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -59,9 +59,9 @@ final class zzeb extends eeb implements fs4 {
         zzgr zzgrVar;
         zzeq zzeqVar;
         int i = this.zza;
-        ly2 ly2Var = ly2.a;
+        bx2 bx2Var = bx2.a;
         if (i == 0) {
-            tue.b(obj);
+            qse.b(obj);
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
@@ -76,7 +76,7 @@ final class zzeb extends eeb implements fs4 {
                     String str2 = this.zzc;
                     zzdq zzdqVar = this.zze;
                     zzfp zzfpVar = new zzfp(str2);
-                    zzdwVar = rr5.a(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
+                    zzdwVar = rp5.a(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
                 }
                 zzdw zzdwVar2 = zzdwVar;
                 String str3 = this.zzc;
@@ -86,25 +86,25 @@ final class zzeb extends eeb implements fs4 {
                 this.zza = 3;
                 obj = new zzhg(new zzee(zzehVar, j, zzdwVar2, str3, zzhhVar, null));
             }
-            return ly2Var;
+            return bx2Var;
         }
         if (i == 1) {
             zzgrVar = (zzgr) this.zzh;
-            tue.b(obj);
+            qse.b(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } else {
             if (i == 2) {
-                tue.b(obj);
+                qse.b(obj);
                 return (zzeq) obj;
             }
             if (i != 3) {
-                tue.b(obj);
+                qse.b(obj);
                 return (zzeq) obj;
             }
             zzgrVar = (zzgr) this.zzh;
-            tue.b(obj);
+            qse.b(obj);
             this.zzh = null;
             this.zza = 4;
             obj = ((zzhg) obj).zza(zzgrVar.zza(), this);

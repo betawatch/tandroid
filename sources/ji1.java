@@ -1,145 +1,84 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.view.KeyEvent;
 import java.util.HashSet;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ji1 extends FrameLayout implements vlb {
-    public lka a;
-    public uib b;
-    public tm c;
-    public ylb d;
-    public boolean e;
-    public int f;
+public final /* synthetic */ class ji1 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public final void a(int i, int i2, boolean z) {
-        if (i2 < 0) {
-            b(null);
-        } else if (i2 < 7) {
-            this.f = cmb.v0(cmb.q8[i2], this.d);
-        } else {
-            oc7 r1 = oc7.r1(i);
-            fc7 fc7Var = z ? r1.E3 : r1.F3;
-            b(fc7Var != null ? fc7Var.d(i2) : null);
-        }
-        invalidate();
+    public /* synthetic */ ji1(lv3 lv3Var, boolean z, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
+        this.a = (byte) 4;
+        this.c = lv3Var;
+        this.b = z;
+        this.d = tL_messages_getInlineBotResults;
+        this.e = str;
     }
 
-    public final void b(ec7 ec7Var) {
-        ylb ylbVar = this.d;
-        if (ec7Var != null) {
-            this.f = ec7Var.e(0, ylbVar);
-            return;
-        }
-        int i = cmb.r8;
-        if (gm.B(cmb.v0(i, ylbVar)) > 0.8f) {
-            this.f = cmb.v0(cmb.m6, ylbVar);
-        } else if (gm.B(cmb.v0(i, ylbVar)) < 0.2f) {
-            this.f = cmb.p1(0.5f, cmb.v0(cmb.z8, ylbVar));
-        } else {
-            this.f = cmb.v(cmb.v0(cmb.c6, ylbVar), cmb.p1(0.7f, d38.z0(cmb.v0(i, ylbVar))));
-        }
-    }
-
-    public final void c(long j, boolean z, boolean z2) {
-        tm tmVar = this.c;
-        if (j == 0) {
-            tmVar.g(null, z2);
-            if (this.b == null) {
-                this.b = new uib(jb6.M0(2131752249, null), 16.0f, null);
-            }
-        } else {
-            tmVar.j(j, z2);
-            this.b = null;
-        }
-        tmVar.m(z, z2);
-    }
-
-    public final void d(TLRPC.Document document) {
-        tm tmVar = this.c;
-        if (document == null) {
-            tmVar.g(null, false);
-            if (this.b == null) {
-                this.b = new uib(jb6.M0(2131752249, null), 16.0f, null);
-            }
-        } else {
-            tmVar.i(document, false);
-            this.b = null;
-        }
-        tmVar.m(false, false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        ylb ylbVar = this.d;
-        super.dispatchDraw(canvas);
-        f();
-        tm tmVar = this.c;
-        tmVar.k(Integer.valueOf(this.f));
-        uib uibVar = this.b;
-        if (uibVar != null) {
-            canvas2 = canvas;
-            uibVar.c((getMeasuredWidth() - this.b.j()) - gm.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, cmb.v0(cmb.p6, ylbVar), canvas2);
-        } else {
-            canvas2 = canvas;
-            tmVar.draw(canvas2);
-        }
-        if (this.e) {
-            Paint d = ylbVar != null ? ylbVar.d("paintDivider") : cmb.j0;
-            if (d != null) {
-                canvas2.drawLine(jb6.a0 ? 0.0f : gm.L(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (jb6.a0 ? gm.L(23.0f) : 0), getMeasuredHeight() - 1, d);
-            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        Object obj = this.d;
+        Object obj2 = this.e;
+        Object obj3 = this.c;
+        switch (b) {
+            case 0:
+                gl.c3(new z2a((KeyEvent.Callback) obj3, tL_error, obj, obj2, this.b, tLObject, (byte) 2));
+                break;
+            case 1:
+                gl.c3(new z77(obj3, obj, (Object) tLObject, obj2, this.b, (byte) 7));
+                break;
+            case 2:
+                gl.c3(new z2a((c92) obj3, (TLRPC.TL_channels_toggleUsername) obj, tLObject, (TLRPC.TL_username) obj2, this.b, tL_error));
+                break;
+            case 3:
+                gl.c3(new z2a((q03) obj3, tLObject, (u41) obj, this.b, (HashSet) obj2, tL_error));
+                break;
+            case 4:
+                gl.c3(new z77(obj3, (Object) tLObject, this.b, obj, obj2, (byte) 11));
+                break;
+            case 5:
+                gl.c3(new z77(obj3, obj, this.b, obj2, (Object) tLObject, (byte) 12));
+                break;
+            case 6:
+                gl.c3(new z77(obj3, (Object) tLObject, obj, this.b, obj2, (byte) 13));
+                break;
+            default:
+                gl.c3(new z2a((KeyEvent.Callback) obj3, tL_error, obj2, obj, this.b, tLObject, (byte) 12));
+                break;
         }
     }
 
-    public final void e(int i) {
-        lka lkaVar = this.a;
-        if (i <= 0) {
-            lkaVar.i(null);
-            return;
-        }
-        lkaVar.i(new hd(i, this.d, getContext(), false));
-        lkaVar.setDrawablePadding(gm.L(6.0f));
+    public /* synthetic */ ji1(vqa vqaVar, m25 m25Var, TwoStepVerificationActivity twoStepVerificationActivity, boolean z) {
+        this.a = (byte) 7;
+        this.c = vqaVar;
+        this.e = m25Var;
+        this.d = twoStepVerificationActivity;
+        this.b = z;
     }
 
-    public final void f() {
-        tm tmVar = this.c;
-        tmVar.setBounds((getWidth() - tmVar.s) - gm.L(21.0f), (getHeight() - tmVar.s) / 2, getWidth() - gm.L(21.0f), (getHeight() + tmVar.s) / 2);
+    public /* synthetic */ ji1(Object obj, Object obj2, Object obj3, boolean z, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(50.0f), TLObject.FLAG_30));
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        lka lkaVar = this.a;
-        if (lkaVar != null) {
-            lkaVar.setTextColor(cmb.v0(cmb.F6, this.d));
-        }
-    }
-
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+    public /* synthetic */ ji1(Object obj, Object obj2, boolean z, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z;
+        this.e = obj3;
     }
 }

@@ -1,28 +1,27 @@
 // default package
 
-import android.security.keystore.KeyGenParameterSpec;
-import javax.crypto.KeyGenerator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class a53 {
-    public static KeyGenParameterSpec a(KeyGenParameterSpec.Builder builder) {
-        return builder.build();
+public final class a53 {
+    public final xw8 a;
+    public final boolean b;
+
+    public a53(xw8 xw8Var, boolean z) {
+        this.a = xw8Var;
+        this.b = z;
     }
 
-    public static KeyGenParameterSpec.Builder b(String str, int i) {
-        return new KeyGenParameterSpec.Builder(str, i);
+    public final boolean equals(Object obj) {
+        if (obj instanceof a53) {
+            a53 a53Var = (a53) obj;
+            if (a53Var.a.equals(this.a) && a53Var.b == this.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static void c(KeyGenerator keyGenerator, KeyGenParameterSpec keyGenParameterSpec) {
-        keyGenerator.init(keyGenParameterSpec);
-    }
-
-    public static void d(KeyGenParameterSpec.Builder builder) {
-        builder.setBlockModes("CBC");
-    }
-
-    public static void e(KeyGenParameterSpec.Builder builder) {
-        builder.setEncryptionPaddings("PKCS7Padding");
+    public final int hashCode() {
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.b).hashCode();
     }
 }

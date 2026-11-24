@@ -1,56 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class z22 implements ht3 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ z22(Object obj, float f, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class z22 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ a32 b;
+
+    public z22(a32 a32Var) {
+        this.b = a32Var;
     }
 
-    @Override // ht3
-    public final void a(zna znaVar, boolean z, float f, float f2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        float f3 = this.b;
-        Object obj = this.c;
+        a32 a32Var = this.b;
         switch (b) {
             case 0:
-                d32 d32Var = (d32) obj;
-                d32Var.w = null;
-                if (!z) {
-                    d32Var.f = f3;
-                    d32Var.c();
-                    break;
-                } else {
-                    d32Var.h = f3;
-                    break;
-                }
-            case 1:
-                op9 op9Var = (op9) obj;
-                pp9 pp9Var = op9Var.P;
-                if (pp9Var.l0 == znaVar) {
-                    pp9Var.l0 = null;
-                    if (!z) {
-                        op9Var.k(f3);
-                        break;
-                    }
-                }
+                ((c32) a32Var.d).V.e();
                 break;
             default:
-                v9b v9bVar = (v9b) obj;
-                if (!z) {
-                    v9bVar.N0.setTranslationY(f3);
-                    v9bVar.N0.L = false;
-                    v9bVar.p2 = null;
-                    v9bVar.q2 = null;
-                    break;
-                }
+                pi4 pi4Var = a32Var.b;
+                pi4Var.setAlpha(1.0f);
+                d49.w0(pi4Var);
+                ((c32) a32Var.d).Y.r.removeView(pi4Var);
                 break;
         }
+    }
+
+    public z22(a32 a32Var, d49 d49Var) {
+        this.b = a32Var;
     }
 }

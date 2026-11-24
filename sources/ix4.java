@@ -1,44 +1,23 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ix4 extends wsa {
-    public final /* synthetic */ byte y3 = 0;
-    public final /* synthetic */ mz0 z3;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ix4 implements gx4 {
+    public final Paint a = new Paint(1);
+    public int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ix4(ux4 ux4Var, Context context, int i, long j, ylb ylbVar) {
-        super(context, i, j, ylbVar, null);
-        this.z3 = ux4Var;
-    }
-
-    @Override // my0
-    public final int O() {
-        switch (this.y3) {
-            case 1:
-                return ((wsa) this.z3).O();
-            default:
-                return super.O();
+    public final void a(int i) {
+        if (this.b != i) {
+            this.b = i;
+            this.a.setColor(i);
         }
     }
 
-    @Override // wsa, my0, ah0
-    public final c41 j() {
-        switch (this.y3) {
-            case 0:
-                ux4 ux4Var = (ux4) this.z3;
-                return new c41(ux4Var.c, ux4Var.J0);
-            default:
-                return super.j();
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ix4(wsa wsaVar, Context context, int i, long j, ylb ylbVar, View view) {
-        super(context, i, j, ylbVar, view);
-        this.z3 = wsaVar;
+    @Override // gx4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+        canvas.drawRect(f, f2, f3, f4, this.a);
     }
 }

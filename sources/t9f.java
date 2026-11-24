@@ -1,6 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class t9f {
+public final class t9f extends vef {
+    private static final t9f zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+
+    static {
+        t9f t9fVar = new t9f();
+        zzb = t9fVar;
+        vef.e(t9f.class, t9fVar);
+    }
+
+    @Override // vef
+    public final Object h(int i, vef vefVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            pd5 pd5Var = pd5.w;
+            return new sgf(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001", new Object[]{"zzd", "zze", pd5Var, "zzf", pd5Var});
+        }
+        if (i2 == 3) {
+            return new t9f();
+        }
+        if (i2 == 4) {
+            return new v8f(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
+    }
 }

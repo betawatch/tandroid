@@ -1,103 +1,37 @@
 // default package
 
-import android.content.ContentValues;
-import android.net.Uri;
-import org.telegram.messenger.GcmPushListenerService;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.SmsReceiver;
-import org.telegram.messenger.a;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class iv2 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ String b;
+    public final /* synthetic */ xv2 b;
 
-    public /* synthetic */ iv2(fxc fxcVar, String str) {
-        this.a = (byte) 9;
-        this.b = str;
+    public /* synthetic */ iv2(xv2 xv2Var, byte b) {
+        this.a = b;
+        this.b = xv2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        byte b = this.a;
+        xv2 xv2Var = this.b;
+        switch (b) {
             case 0:
-                Uri parse = Uri.parse(this.b);
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("last_time_contacted", Long.valueOf(System.currentTimeMillis()));
-                a.b.getContentResolver().update(parse, contentValues, null, null);
-                return;
+                xv2Var.c0 = null;
+                break;
             case 1:
-                ia4.e(this.b).d(0L);
-                return;
-            case 2:
-                String str = this.b;
-                try {
-                    fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " W/tmessages: " + str + "\n");
-                    fc4.j().a.flush();
-                    return;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return;
+                xv2Var.A.g0(null);
+                ju7 ju7Var = xv2Var.C;
+                if (ju7Var != null) {
+                    ju7Var.a();
+                    xv2Var.z.removeView(xv2Var.C);
+                    xv2Var.C = null;
+                    break;
                 }
-            case 3:
-                String str2 = this.b;
-                try {
-                    fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + str2 + "\n");
-                    fc4.j().a.flush();
-                    return;
-                } catch (Exception e2) {
-                    e2.printStackTrace();
-                    return;
-                }
-            case 4:
-                String str3 = this.b;
-                try {
-                    fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " D/tmessages: " + str3 + "\n");
-                    fc4.j().a.flush();
-                    return;
-                } catch (Exception e3) {
-                    e3.printStackTrace();
-                    if (gm.D1(e3)) {
-                        LaunchActivity.F(1);
-                        return;
-                    }
-                    return;
-                }
-            case 5:
-                String str4 = this.b;
-                int i = GcmPushListenerService.n;
-                if (e21.a) {
-                    fc4.b("Refreshed FCM token: " + str4);
-                }
-                a.v();
-                PushListenerController.sendRegistrationToServer(2, str4);
-                return;
-            case 6:
-                String str5 = this.b;
-                l35 l35Var = cle.b;
-                if (l35Var == null || !str5.equals(l35Var.d)) {
-                    return;
-                }
-                cle.b.c("STORAGE_CANCELED");
-                cle.b.e();
-                return;
-            case 7:
-                String str6 = this.b;
-                int i2 = SmsReceiver.a;
-                nm7.e().k(nm7.k4, str6);
-                return;
-            case 8:
-                gm.g(this.b);
-                return;
+                break;
             default:
-                throw null;
+                xv2Var.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(s33.h).start();
+                break;
         }
-    }
-
-    public /* synthetic */ iv2(String str, byte b) {
-        this.a = b;
-        this.b = str;
     }
 }

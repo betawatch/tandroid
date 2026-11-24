@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzee extends eeb implements fs4 {
+final class zzee extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ long zzc;
@@ -12,8 +12,8 @@ final class zzee extends eeb implements fs4 {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzee(zzeh zzehVar, long j, zzdw zzdwVar, String str, zzhh zzhhVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzee(zzeh zzehVar, long j, zzdw zzdwVar, String str, zzhh zzhhVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzehVar;
         this.zzc = j;
         this.zzd = zzdwVar;
@@ -21,16 +21,16 @@ final class zzee extends eeb implements fs4 {
         this.zzf = zzhhVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
         zzeeVar.zzg = obj;
         return zzeeVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzee) create((zzhk) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzee) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
@@ -45,17 +45,17 @@ final class zzee extends eeb implements fs4 {
     
         if (r8 != r2) goto L13;
      */
-    @Override // og0
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         int i = this.zza;
-        ly2 ly2Var = ly2.a;
+        bx2 bx2Var = bx2.a;
         try {
             if (i == 0) {
-                tue.b(obj);
+                qse.b(obj);
                 zzhkVar = (zzhk) this.zzg;
                 zzeh zzehVar = this.zzb;
                 long j = this.zzc;
@@ -66,13 +66,13 @@ final class zzee extends eeb implements fs4 {
                 obj = zzdwVar.zzb(j, this);
             } else {
                 if (i != 1) {
-                    tue.b(obj);
+                    qse.b(obj);
                     zzeq zzeqVar = new zzeq(this.zzd, this.zze, this.zzf);
                     this.zzb.zzc = zzeqVar;
                     return zzeqVar;
                 }
                 zzhkVar = (zzhk) this.zzg;
-                tue.b(obj);
+                qse.b(obj);
             }
             this.zzg = null;
             this.zza = 2;

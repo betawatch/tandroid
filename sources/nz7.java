@@ -1,110 +1,75 @@
 // default package
 
-import android.os.SystemClock;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
+import android.app.Activity;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.webkit.WebView;
+import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class nz7 implements RequestDelegate {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ byte[] b;
-    public final /* synthetic */ TL_account.getPasswordSettings c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ xz7 e;
+public final class nz7 extends WebView {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ Object b;
 
-    public nz7(xz7 xz7Var, boolean z, byte[] bArr, TL_account.getPasswordSettings getpasswordsettings, String str) {
-        this.e = xz7Var;
-        this.a = z;
-        this.b = bArr;
-        this.c = getpasswordsettings;
-        this.d = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nz7(p pVar, Context context) {
+        super(context);
+        this.b = pVar;
     }
 
-    public final void a() {
-        int i;
-        tk5 tk5Var;
-        tk5 tk5Var2;
-        int i2;
-        xz7 xz7Var = this.e;
-        if (xz7Var.Z == null) {
-            return;
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.a) {
+            case 1:
+                gl.u((Activity) this.b, true);
+                super.onAttachedToWindow();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
         }
-        if (!this.a) {
-            i2 = ((d) xz7Var).currentAccount;
-            z8c h = z8c.h(i2);
-            byte[] bArr = this.b;
-            byte[] bArr2 = this.e.f1;
-            h.m0 = SystemClock.elapsedRealtime();
-            h.k0 = bArr;
-            h.l0 = bArr2;
-        }
-        gm.t1(this.e.Z[0]);
-        xz7 xz7Var2 = this.e;
-        xz7Var2.g1 = true;
-        long j = xz7Var2.c;
-        xz7 xz7Var3 = new xz7(j == 0 ? 8 : 0, j, xz7Var2.h, xz7Var2.r, xz7Var2.d, xz7Var2.e, xz7Var2.n, xz7Var2.E, xz7Var2.K);
-        xz7 xz7Var4 = this.e;
-        xz7Var3.e1 = xz7Var4.e1;
-        i = ((d) xz7Var4).currentAccount;
-        ((d) xz7Var3).currentAccount = i;
-        xz7 xz7Var5 = this.e;
-        xz7Var3.f1 = xz7Var5.f1;
-        xz7Var3.d1 = xz7Var5.d1;
-        xz7Var3.c1 = xz7Var5.c1;
-        xz7Var3.D1 = xz7Var5.D1;
-        tk5Var = ((d) xz7Var5).parentLayout;
-        if (tk5Var != null) {
-            tk5Var2 = ((d) this.e).parentLayout;
-            if (((ActionBarLayout) tk5Var2).h()) {
-                this.e.i1 = xz7Var3;
-                return;
-            }
-        }
-        this.e.presentFragment(xz7Var3, true);
     }
 
-    public final void b() {
-        int i;
-        TL_account.updatePasswordSettings updatepasswordsettings = new TL_account.updatePasswordSettings();
-        xz7 xz7Var = this.e;
-        TL_account.Password password = xz7Var.K;
-        TLRPC.PasswordKdfAlgo passwordKdfAlgo = password.current_algo;
-        if (passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
-            updatepasswordsettings.password = nq9.d(this.b, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.a) {
+            case 1:
+                gl.u((Activity) this.b, false);
+                super.onDetachedFromWindow();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
-        TL_account.passwordInputSettings passwordinputsettings = new TL_account.passwordInputSettings();
-        updatepasswordsettings.new_settings = passwordinputsettings;
-        passwordinputsettings.new_secure_settings = new TLRPC.TL_secureSecretSettings();
-        TLRPC.TL_secureSecretSettings tL_secureSecretSettings = updatepasswordsettings.new_settings.new_secure_settings;
-        tL_secureSecretSettings.secure_secret = new byte[0];
-        tL_secureSecretSettings.secure_algo = new TLRPC.TL_securePasswordKdfAlgoUnknown();
-        TL_account.passwordInputSettings passwordinputsettings2 = updatepasswordsettings.new_settings;
-        passwordinputsettings2.new_secure_settings.secure_secret_id = 0L;
-        passwordinputsettings2.flags |= 4;
-        i = ((d) xz7Var).currentAccount;
-        ConnectionsManager.getInstance(i).sendRequest(this.c, new lz7(this, (byte) 1));
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i;
-        if (tL_error == null) {
-            Utilities.e.c(new eb7((Object) this, (Object) tLObject, (Object) this.d, this.a, (byte) 6));
-            return;
+    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i, i2);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
         }
-        if (!"SRP_ID_INVALID".equals(tL_error.text)) {
-            gm.c3(new yl6((Object) this, this.a, (Object) tL_error, (byte) 10));
-            return;
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                ((ViewGroup) ((p) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
+                break;
         }
-        TL_account.getPassword getpassword = new TL_account.getPassword();
-        i = ((d) this.e).currentAccount;
-        ConnectionsManager.getInstance(i).sendRequest(getpassword, new r91((byte) 7, this, this.a), 8);
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nz7(Activity activity, Activity activity2) {
+        super(activity);
+        this.b = activity2;
     }
 }

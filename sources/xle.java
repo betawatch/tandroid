@@ -1,34 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class xle extends f4e {
+public final class xle extends c2e {
     private static final xle zzb;
+    private int zzd;
+    private boolean zze;
+    private boolean zzf;
 
     static {
         xle xleVar = new xle();
         zzb = xleVar;
-        f4e.k(xle.class, xleVar);
+        c2e.k(xle.class, xleVar);
     }
 
-    public static xle n() {
-        return zzb;
-    }
-
-    @Override // f4e
+    @Override // c2e
     public final Object d(int i) {
         int i2 = i - 1;
         if (i2 == 0) {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new wce(zzb, "\u0004\u0000", null);
+            return new vae(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဇ\u0000\u0002ဇ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
         if (i2 == 3) {
             return new xle();
         }
         if (i2 == 4) {
-            return new hrd(zzb);
+            return new epd(zzb);
         }
         if (i2 == 5) {
             return zzb;

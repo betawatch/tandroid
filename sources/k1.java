@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class k1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a = 1;
@@ -40,12 +40,12 @@ public final /* synthetic */ class k1 implements ValueAnimator.AnimatorUpdateLis
                 Float f3 = (Float) valueAnimator.getAnimatedValue();
                 float floatValue = (f3.floatValue() - ((Float) ((AtomicReference) obj2).getAndSet(f3)).floatValue()) * 1000.0f * 8.0f;
                 ((Float) valueAnimator.getAnimatedValue()).getClass();
-                Typeface typeface = gm.a;
+                Typeface typeface = gl.a;
                 float min = Math.min(floatValue, 250.0f);
                 while (true) {
                     float f4 = r1Var.a;
                     if (min <= 0.0f) {
-                        float R1 = gm.R1(f2, f, f4);
+                        float R1 = gl.R1(f2, f, f4);
                         s1Var.W = R1;
                         if (R1 > 0.8f && frameLayout2.getBackground() == null) {
                             frameLayout2.setBackground(s1Var.L);
@@ -67,18 +67,18 @@ public final /* synthetic */ class k1 implements ValueAnimator.AnimatorUpdateLis
                 break;
             default:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ((HorizontalScrollView) frameLayout).setScrollX((int) td4.A(f, f2, floatValue2, f2));
-                ((e29) obj2).setOutlineProgress(1.0f - floatValue2);
-                ((e29) obj).setOutlineProgress(floatValue2);
+                ((HorizontalScrollView) frameLayout).setScrollX((int) tb4.A(f, f2, floatValue2, f2));
+                ((c09) obj2).setOutlineProgress(1.0f - floatValue2);
+                ((c09) obj).setOutlineProgress(floatValue2);
                 break;
         }
     }
 
-    public /* synthetic */ k1(HorizontalScrollView horizontalScrollView, float f, float f2, e29 e29Var, e29 e29Var2) {
+    public /* synthetic */ k1(HorizontalScrollView horizontalScrollView, float f, float f2, c09 c09Var, c09 c09Var2) {
         this.d = horizontalScrollView;
         this.b = f;
         this.c = f2;
-        this.e = e29Var;
-        this.f = e29Var2;
+        this.e = c09Var;
+        this.f = c09Var2;
     }
 }

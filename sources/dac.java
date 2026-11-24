@@ -1,214 +1,29 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Point;
-import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.UsersSelectActivity;
+import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class dac extends ViewGroup {
-    public AnimatorSet a;
-    public boolean b;
-    public final ArrayList c;
-    public wc5 d;
-    public wc5 e;
-    public final /* synthetic */ UsersSelectActivity f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class dac implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VideoAds b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dac(UsersSelectActivity usersSelectActivity, Context context) {
-        super(context);
-        this.f = usersSelectActivity;
-        this.c = new ArrayList();
+    public /* synthetic */ dac(VideoAds videoAds, byte b) {
+        this.a = b;
+        this.b = videoAds;
     }
 
-    public final void a(wc5 wc5Var, boolean z) {
-        UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.Q.add(wc5Var);
-        long uid = wc5Var.getUid();
-        if (uid > -9223372036854775801L) {
-            usersSelectActivity.x++;
-        }
-        usersSelectActivity.P.k(wc5Var, uid);
-        l7 l7Var = usersSelectActivity.c;
-        l7Var.t(false, TextUtils.isEmpty(l7Var.getText()));
-        AnimatorSet animatorSet = this.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            this.a.setupEndValues();
-            this.a.cancel();
-        }
-        this.b = false;
-        if (z) {
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            this.a = animatorSet2;
-            animatorSet2.addListener(new q7b(this, (byte) 17));
-            this.a.setDuration(150L);
-            this.d = wc5Var;
-            ArrayList arrayList = this.c;
-            arrayList.clear();
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<wc5, Float>) View.SCALE_X, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<wc5, Float>) View.SCALE_Y, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<wc5, Float>) View.ALPHA, 0.0f, 1.0f));
-        }
-        addView(wc5Var);
-    }
-
-    public final void b(wc5 wc5Var) {
-        UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.w = true;
-        long uid = wc5Var.getUid();
-        if (uid > -9223372036854775801L) {
-            usersSelectActivity.x--;
-        }
-        usersSelectActivity.P.l(uid);
-        usersSelectActivity.Q.remove(wc5Var);
-        wc5Var.setOnClickListener(null);
-        AnimatorSet animatorSet = this.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            this.a.cancel();
-        }
-        this.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.a = animatorSet2;
-        animatorSet2.addListener(new ic8((Object) this, (Object) wc5Var, (byte) 20));
-        this.a.setDuration(150L);
-        this.e = wc5Var;
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<wc5, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<wc5, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<wc5, Float>) View.ALPHA, 1.0f, 0.0f));
-        requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int childCount = getChildCount();
-        for (int i5 = 0; i5 < childCount; i5++) {
-            View childAt = getChildAt(i5);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        Property property;
-        Property property2;
-        ArrayList arrayList;
-        int D;
-        int i3;
-        int childCount = getChildCount();
-        int size = View.MeasureSpec.getSize(i);
-        int L = size - gm.L(26.0f);
-        int L2 = gm.L(10.0f);
-        int L3 = gm.L(10.0f);
-        int i4 = 0;
-        int i5 = 0;
-        int i6 = 0;
-        while (true) {
-            property = View.TRANSLATION_Y;
-            property2 = View.TRANSLATION_X;
-            arrayList = this.c;
-            if (i4 >= childCount) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        VideoAds videoAds = this.b;
+        switch (b) {
+            case 0:
+                videoAds.showPremium();
                 break;
-            }
-            View childAt = getChildAt(i4);
-            if (childAt instanceof wc5) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gm.L(32.0f), TLObject.FLAG_30));
-                if (childAt != this.e && childAt.getMeasuredWidth() + i5 > L) {
-                    L2 = hg9.v(8.0f, childAt.getMeasuredHeight(), L2);
-                    i5 = 0;
-                }
-                if (childAt.getMeasuredWidth() + i6 > L) {
-                    L3 = hg9.v(8.0f, childAt.getMeasuredHeight(), L3);
-                    i6 = 0;
-                }
-                int L4 = gm.L(13.0f) + i5;
-                if (!this.b) {
-                    wc5 wc5Var = this.e;
-                    if (childAt == wc5Var) {
-                        childAt.setTranslationX(gm.L(13.0f) + i6);
-                        childAt.setTranslationY(L3);
-                    } else if (wc5Var != null) {
-                        float f = L4;
-                        if (childAt.getTranslationX() != f) {
-                            i3 = 1;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property2, f));
-                        } else {
-                            i3 = 1;
-                        }
-                        float f2 = L2;
-                        if (childAt.getTranslationY() != f2) {
-                            float[] fArr = new float[i3];
-                            fArr[0] = f2;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, fArr));
-                        }
-                    } else {
-                        childAt.setTranslationX(L4);
-                        childAt.setTranslationY(L2);
-                    }
-                }
-                if (childAt != this.e) {
-                    i5 = hg9.v(9.0f, childAt.getMeasuredWidth(), i5);
-                }
-                i6 = hg9.v(9.0f, childAt.getMeasuredWidth(), i6);
-            }
-            i4++;
+            default:
+                videoAds.show();
+                break;
         }
-        if (gm.O1()) {
-            D = gm.L(372.0f) / 3;
-        } else {
-            Point point = gm.q;
-            D = wi8.D(158.0f, Math.min(point.x, point.y), 3);
-        }
-        if (L - i5 < D) {
-            L2 += gm.L(40.0f);
-            i5 = 0;
-        }
-        if (L - i6 < D) {
-            L3 += gm.L(40.0f);
-        }
-        UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.c.measure(View.MeasureSpec.makeMeasureSpec(L - i5, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(32.0f), TLObject.FLAG_30));
-        if (!this.b) {
-            int L5 = gm.L(42.0f) + L3;
-            int L6 = gm.L(16.0f) + i5;
-            usersSelectActivity.S = L2;
-            if (this.a != null) {
-                int L7 = gm.L(42.0f) + L2;
-                if (usersSelectActivity.E != L7) {
-                    arrayList.add(ObjectAnimator.ofInt(usersSelectActivity, "containerHeight", L7));
-                }
-                float f3 = L6;
-                if (usersSelectActivity.c.getTranslationX() != f3) {
-                    arrayList.add(ObjectAnimator.ofFloat(usersSelectActivity.c, (Property<l7, Float>) property2, f3));
-                }
-                float translationY = usersSelectActivity.c.getTranslationY();
-                float f4 = usersSelectActivity.S;
-                if (translationY != f4) {
-                    arrayList.add(ObjectAnimator.ofFloat(usersSelectActivity.c, (Property<l7, Float>) property, f4));
-                }
-                usersSelectActivity.c.setAllowDrawCursor(false);
-                this.a.playTogether(arrayList);
-                this.a.start();
-                this.b = true;
-            } else {
-                usersSelectActivity.E = L5;
-                usersSelectActivity.c.setTranslationX(L6);
-                usersSelectActivity.c.setTranslationY(usersSelectActivity.S);
-            }
-        } else if (this.a != null && !usersSelectActivity.w && this.e == null) {
-            l7 l7Var = usersSelectActivity.c;
-            l7Var.bringPointIntoView(l7Var.getSelectionStart());
-        }
-        setMeasuredDimension(size, usersSelectActivity.E);
     }
 }

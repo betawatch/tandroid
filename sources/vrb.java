@@ -1,28 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class vrb extends wrb {
-    @Override // wrb
-    /* renamed from: B */
-    public final wrb s() {
-        super.s();
-        this.m = new fz();
-        return this;
+public enum vrb extends qsb {
+    public vrb() {
+        super("BeforeDoctypeName", 51);
     }
 
-    @Override // wrb, eu5
-    public final /* bridge */ /* synthetic */ eu5 s() {
-        s();
-        return this;
-    }
-
-    @Override // eu5
-    public final String toString() {
-        fz fzVar = this.m;
-        if (fzVar == null || fzVar.a <= 0) {
-            return "<" + z() + ">";
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        rpb rpbVar = aqbVar.m;
+        boolean o = zj1Var.o();
+        wrb wrbVar = qsb.q0;
+        if (o) {
+            rpbVar.s();
+            aqbVar.c = wrbVar;
+            return;
         }
-        return "<" + z() + " " + this.m.toString() + ">";
+        char d = zj1Var.d();
+        if (d == 0) {
+            aqbVar.m(this);
+            rpbVar.s();
+            rpbVar.e.append((char) 65533);
+            aqbVar.c = wrbVar;
+            return;
+        }
+        if (d != ' ') {
+            if (d == 65535) {
+                aqbVar.l(this);
+                rpbVar.s();
+                aqbVar.j();
+                aqbVar.c = qsb.a;
+                return;
+            }
+            if (d == '\t' || d == '\n' || d == '\f' || d == '\r') {
+                return;
+            }
+            rpbVar.s();
+            rpbVar.e.append(d);
+            aqbVar.c = wrbVar;
+        }
     }
 }

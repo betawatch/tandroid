@@ -1,13 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class rq9 {
-    public static final hs4 a;
+public class rq9 extends b2 implements cx2 {
+    public final fw2 e;
 
-    static {
-        qq9 qq9Var = qq9.a;
-        r5c.a(3, qq9Var);
-        a = qq9Var;
+    public rq9(fw2 fw2Var, sw2 sw2Var) {
+        super(sw2Var, true);
+        this.e = fw2Var;
+    }
+
+    @Override // pt5
+    public final boolean A() {
+        return true;
+    }
+
+    @Override // pt5
+    public void f(Object obj) {
+        r3c.c(dle.a(this.e), zsd.a(obj));
+    }
+
+    @Override // pt5
+    public void g(Object obj) {
+        this.e.resumeWith(zsd.a(obj));
+    }
+
+    @Override // cx2
+    public final cx2 getCallerFrame() {
+        fw2 fw2Var = this.e;
+        if (fw2Var instanceof cx2) {
+            return (cx2) fw2Var;
+        }
+        return null;
     }
 }

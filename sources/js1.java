@@ -1,34 +1,35 @@
 // default package
 
-import android.content.Context;
+import android.app.Activity;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class js1 extends ne2 {
-    public final /* synthetic */ yv1 f;
+public final class js1 extends wv4 {
+    public final /* synthetic */ mu1 m1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public js1(yv1 yv1Var, Context context) {
-        super(context);
-        this.f = yv1Var;
+    public js1(mu1 mu1Var, Activity activity, d dVar) {
+        super(activity, dVar);
+        this.m1 = mu1Var;
     }
 
-    @Override // ne2
-    public final void a(boolean z) {
-        yv1 yv1Var = this.f;
-        yv1Var.G5();
-        yv1Var.E5();
-        yv1Var.H5();
-        yv1Var.I5();
-        ft1 ft1Var = yv1Var.Jb;
-        if (ft1Var != null) {
-            ft1Var.setTranslationY(yv1Var.T9 + getCurrentHeight());
+    @Override // wv4
+    public final void D0() {
+        mu1 mu1Var = this.m1;
+        mu1Var.b6();
+        UndoView undoView = mu1Var.N3;
+        if (undoView == null) {
+            return;
         }
-        if (!z) {
-            yv1Var.O7();
-        } else {
-            yv1Var.aa = true;
-            yv1Var.Rc();
-        }
+        undoView.j(75, 0L, null);
+        mu1Var.getMessagesController().n4(mu1Var.l6, "CONVERT_GIGAGROUP");
+    }
+
+    @Override // wv4
+    public final void E0() {
+        mu1 mu1Var = this.m1;
+        mu1Var.getMessagesController().O(mu1Var.getParentActivity(), mu1Var.e, mu1Var, new rh1(this, (byte) 8));
     }
 }

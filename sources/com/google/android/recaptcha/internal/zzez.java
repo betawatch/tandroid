@@ -1,44 +1,44 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzez extends eeb implements fs4 {
+final class zzez extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     private /* synthetic */ Object zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzez(zzfp zzfpVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzez(zzfp zzfpVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzfpVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzez zzezVar = new zzez(this.zzb, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzez zzezVar = new zzez(this.zzb, fw2Var);
         zzezVar.zzc = obj;
         return zzezVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzez) create((zzhk) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzez) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        tue.b(obj);
+        qse.b(obj);
         if (i != 0) {
             return obj;
         }
         zzhk zzhkVar = (zzhk) this.zzc;
         zzfp zzfpVar = this.zzb;
-        cy2 c = zzfp.zzf(zzfpVar).zza().c();
+        sw2 c = zzfp.zzf(zzfpVar).zza().c();
         zzey zzeyVar = new zzey(zzfpVar, zzhkVar, null);
         this.zza = 1;
-        Object c2 = srd.c(c, zzeyVar, this);
-        ly2 ly2Var = ly2.a;
-        return c2 == ly2Var ? ly2Var : c2;
+        Object c2 = ppd.c(c, zzeyVar, this);
+        bx2 bx2Var = bx2.a;
+        return c2 == bx2Var ? bx2Var : c2;
     }
 }

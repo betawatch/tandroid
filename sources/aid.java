@@ -1,19 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class aid implements cq7 {
-    public static final aid a = new aid();
+public final class aid {
+    public static final aid a;
+    public static final /* synthetic */ aid[] b;
 
     static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)));
+        aid aidVar = new aid("DEFAULT", 0);
+        a = aidVar;
+        b = new aid[]{aidVar, new aid("SIGNED", 1), new aid("FIXED", 2)};
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public static aid[] values() {
+        return (aid[]) b.clone();
     }
 }

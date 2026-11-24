@@ -1,36 +1,45 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import android.os.Bundle;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.play.core.integrity.IntegrityTokenResponse;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ic6 extends nha {
-    public final /* synthetic */ pc6 x2;
+public final /* synthetic */ class ic6 implements OnSuccessListener {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ mf6 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLRPC.auth_SentCode d;
+    public final /* synthetic */ Bundle e;
+    public final /* synthetic */ boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ic6(pc6 pc6Var, Context context, fha fhaVar, pc6 pc6Var2, hc6 hc6Var, ylb ylbVar) {
-        super(context, 0L, fhaVar, 0, null, null, null, 8, 0, pc6Var2, hc6Var, 0, ylbVar, null);
-        this.x2 = pc6Var;
+    public /* synthetic */ ic6(mf6 mf6Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z) {
+        this.b = mf6Var;
+        this.e = bundle;
+        this.d = auth_sentcode;
+        this.c = str;
+        this.f = z;
     }
 
-    @Override // nha
-    public final boolean H() {
-        return true;
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.s1(this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                break;
+            default:
+                this.b.t1(this.c, this.d, this.e, this.f, (bp9) obj);
+                break;
+        }
     }
 
-    @Override // nha
-    public final int I0() {
-        return 32;
-    }
-
-    @Override // nha
-    public final int Z0() {
-        return 3;
-    }
-
-    @Override // nha
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.x2.T0;
+    public /* synthetic */ ic6(mf6 mf6Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z) {
+        this.b = mf6Var;
+        this.c = str;
+        this.d = auth_sentcode;
+        this.e = bundle;
+        this.f = z;
     }
 }

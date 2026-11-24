@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public class r6 extends LinearLayout {
     public boolean a;
@@ -29,29 +29,29 @@ public class r6 extends LinearLayout {
     public final r7 a(int i, int i2) {
         boolean z = this.c;
         a aVar = this.b;
-        return c(i, i2, null, z ? aVar.r0 : aVar.q0, null, gm.L(48.0f), null, null);
+        return c(i, i2, null, z ? aVar.r0 : aVar.q0, null, gl.L(48.0f), null, null);
     }
 
-    public final r7 b(int i, int i2, ylb ylbVar) {
+    public final r7 b(int i, int i2, wjb wjbVar) {
         boolean z = this.c;
         a aVar = this.b;
-        return c(i, i2, null, z ? aVar.r0 : aVar.q0, null, gm.L(48.0f), null, ylbVar);
+        return c(i, i2, null, z ? aVar.r0 : aVar.q0, null, gl.L(48.0f), null, wjbVar);
     }
 
-    public final r7 c(int i, int i2, String str, int i3, Drawable drawable, int i4, String str2, ylb ylbVar) {
+    public final r7 c(int i, int i2, String str, int i3, Drawable drawable, int i4, String str2, wjb wjbVar) {
         ArrayList arrayList = this.e;
         if (arrayList == null) {
             arrayList = new ArrayList();
             this.e = arrayList;
         }
         arrayList.add(Integer.valueOf(i));
-        return f(-1, i, i2, str, i3, drawable, i4, str2, ylbVar);
+        return f(-1, i, i2, str, i3, drawable, i4, str2, wjbVar);
     }
 
     public final r7 d(int i, Drawable drawable) {
         boolean z = this.c;
         a aVar = this.b;
-        return c(i, 0, null, z ? aVar.r0 : aVar.q0, drawable, gm.L(48.0f), null, null);
+        return c(i, 0, null, z ? aVar.r0 : aVar.q0, drawable, gl.L(48.0f), null, null);
     }
 
     public final r7 e(int i, String str) {
@@ -60,29 +60,29 @@ public class r6 extends LinearLayout {
         return c(i, 0, str, z ? aVar.r0 : aVar.q0, null, 0, str, null);
     }
 
-    public final r7 f(int i, int i2, int i3, String str, int i4, Drawable drawable, int i5, String str2, ylb ylbVar) {
+    public final r7 f(int i, int i2, int i3, String str, int i4, Drawable drawable, int i5, String str2, wjb wjbVar) {
         Context context = getContext();
         boolean z = this.c;
         a aVar = this.b;
-        r7 r7Var = new r7(context, this, i4, z ? aVar.t0 : aVar.s0, str != null, ylbVar);
+        r7 r7Var = new r7(context, this, i4, z ? aVar.t0 : aVar.s0, str != null, wjbVar);
         r7Var.setTag(Integer.valueOf(i2));
         if (str != null) {
             r7Var.F.setText(str);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(i5 != 0 ? i5 : -2, -1);
-            int L = gm.L(14.0f);
+            int L = gl.L(14.0f);
             layoutParams.rightMargin = L;
             layoutParams.leftMargin = L;
             addView(r7Var, i, layoutParams);
         } else {
-            s09 s09Var = r7Var.y;
+            ry8 ry8Var = r7Var.y;
             if (drawable != null) {
-                if (drawable instanceof p09) {
-                    s09Var.setAnimation((p09) drawable);
+                if (drawable instanceof oy8) {
+                    ry8Var.setAnimation((oy8) drawable);
                 } else {
-                    s09Var.setImageDrawable(drawable);
+                    ry8Var.setImageDrawable(drawable);
                 }
             } else if (i3 != 0) {
-                s09Var.setImageResource(i3);
+                ry8Var.setImageResource(i3);
             }
             addView(r7Var, i, new LinearLayout.LayoutParams(i5, -1));
         }
@@ -220,7 +220,7 @@ public class r6 extends LinearLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final q6 l(int i, int i2, int i3, Drawable drawable, int i4, ylb ylbVar) {
+    public final q6 l(int i, int i2, int i3, Drawable drawable, int i4, wjb wjbVar) {
         ArrayList arrayList = this.e;
         if (arrayList == null) {
             arrayList = new ArrayList();
@@ -236,20 +236,20 @@ public class r6 extends LinearLayout {
         q6Var.e = i3;
         q6Var.f = drawable;
         q6Var.g = i4;
-        q6Var.h = ylbVar;
+        q6Var.h = wjbVar;
         return q6Var;
     }
 
-    public final q6 m(ylb ylbVar) {
+    public final q6 m(wjb wjbVar) {
         boolean z = this.c;
         a aVar = this.b;
-        return l(32, R.drawable.call, z ? aVar.r0 : aVar.q0, null, gm.L(48.0f), ylbVar);
+        return l(32, R.drawable.call, z ? aVar.r0 : aVar.q0, null, gl.L(48.0f), wjbVar);
     }
 
-    public final q6 n(Drawable drawable, ylb ylbVar) {
+    public final q6 n(Drawable drawable, wjb wjbVar) {
         boolean z = this.c;
         a aVar = this.b;
-        return l(14, 0, z ? aVar.r0 : aVar.q0, drawable, gm.L(48.0f), ylbVar);
+        return l(14, 0, z ? aVar.r0 : aVar.q0, drawable, gl.L(48.0f), wjbVar);
     }
 
     public final void o(int i) {
@@ -268,7 +268,7 @@ public class r6 extends LinearLayout {
         }
         a aVar = this.b;
         if (aVar != null) {
-            aVar.n();
+            aVar.m();
         }
     }
 
@@ -282,8 +282,8 @@ public class r6 extends LinearLayout {
                     ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
                     if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
                         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-                        marginLayoutParams.leftMargin = -gm.L(5.0f);
-                        marginLayoutParams.rightMargin = -gm.L(5.0f);
+                        marginLayoutParams.leftMargin = -gl.L(5.0f);
+                        marginLayoutParams.rightMargin = -gl.L(5.0f);
                     }
                 }
             }
@@ -329,7 +329,7 @@ public class r6 extends LinearLayout {
             if (childAt instanceof r7) {
                 boolean z = this.c;
                 a aVar = this.b;
-                childAt.setBackgroundDrawable(cmb.f0(z ? aVar.r0 : aVar.q0, 1, -1));
+                childAt.setBackgroundDrawable(bkb.f0(z ? aVar.r0 : aVar.q0, 1, -1));
             }
         }
     }
@@ -343,14 +343,14 @@ public class r6 extends LinearLayout {
         }
     }
 
-    public void setFilter(sh4 sh4Var) {
+    public void setFilter(rf4 rf4Var) {
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View childAt = getChildAt(i);
             if (childAt instanceof r7) {
                 r7 r7Var = (r7) childAt;
                 if (r7Var.v()) {
-                    r7Var.h0.add(sh4Var);
+                    r7Var.h0.add(rf4Var);
                     if (r7Var.G.getTag() != null) {
                         r7Var.i0 = r4.size() - 1;
                     }

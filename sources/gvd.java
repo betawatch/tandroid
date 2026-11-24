@@ -1,7 +1,62 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Arrays;
+
 /* loaded from: classes.dex */
 public abstract class gvd {
-    public static final zo a = new zo("AppDataSearch.LIGHTWEIGHT_API", new or5((byte) 15), new xo());
+    public static final Class a;
+    public static final jyd b;
+    public static final jyd c;
+    public static final jyd d;
+
+    static {
+        Class<?> cls;
+        try {
+            cls = Class.forName("com.google.protobuf.GeneratedMessage");
+        } catch (Throwable unused) {
+            cls = null;
+        }
+        a = cls;
+        b = b(false);
+        c = b(true);
+        d = new jyd();
+    }
+
+    public static void a(jyd jydVar, vid vidVar, vid vidVar2) {
+        jydVar.getClass();
+        dyd dydVar = vidVar.zzjp;
+        dyd dydVar2 = vidVar2.zzjp;
+        if (!dydVar2.equals(dyd.e)) {
+            int i = dydVar.a + dydVar2.a;
+            int[] copyOf = Arrays.copyOf(dydVar.b, i);
+            System.arraycopy(dydVar2.b, 0, copyOf, dydVar.a, dydVar2.a);
+            Object[] copyOf2 = Arrays.copyOf(dydVar.c, i);
+            System.arraycopy(dydVar2.c, 0, copyOf2, dydVar.a, dydVar2.a);
+            dydVar = new dyd(i, copyOf, copyOf2, true);
+        }
+        vidVar.zzjp = dydVar;
+    }
+
+    public static jyd b(boolean z) {
+        Class<?> cls;
+        try {
+            cls = Class.forName("com.google.protobuf.UnknownFieldSetSchema");
+        } catch (Throwable unused) {
+            cls = null;
+        }
+        if (cls != null) {
+            try {
+                return (jyd) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z));
+            } catch (Throwable unused2) {
+            }
+        }
+        return null;
+    }
+
+    public static boolean c(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
+        }
+        return true;
+    }
 }

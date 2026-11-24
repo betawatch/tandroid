@@ -1,49 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class eld implements mmd {
-    public final byte a;
+public final class eld implements zn7 {
+    public static final eld a = new eld();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public eld(int i) {
-        this.a = i;
+    static {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return mmd.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (!(obj instanceof mmd)) {
-            return false;
-        }
-        mmd mmdVar = (mmd) obj;
-        return this.a == mmdVar.zza() && gmd.a.equals(mmdVar.zzb());
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (gmd.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + gmd.a + ')';
-    }
-
-    @Override // mmd
-    public final int zza() {
-        return this.a;
-    }
-
-    @Override // mmd
-    public final gmd zzb() {
-        return gmd.a;
+        throw null;
     }
 }

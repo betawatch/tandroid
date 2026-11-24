@@ -1,107 +1,39 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class orb extends View implements qk4 {
-    public final Drawable a;
-    public final int b;
-    public Bitmap c;
-    public final Paint d;
-    public final Paint e;
-    public float f;
-    public final ln h;
-    public final Path n;
-
-    public orb(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.d = paint;
-        Paint paint2 = new Paint(3);
-        this.e = paint2;
-        this.h = new ln(this, 0L, 350L, d53.h);
-        this.n = new Path();
-        this.a = activity.getResources().getDrawable(R.drawable.media_dual_camera2_shadow).mutate();
-        this.b = R.drawable.media_dual_camera2;
-        paint.setColor(-1);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public enum orb extends qsb {
+    public orb() {
+        super("CommentStartDash", 45);
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.c == null) {
-            this.c = BitmapFactory.decodeResource(getResources(), this.b);
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        qpb qpbVar = aqbVar.n;
+        char d = zj1Var.d();
+        prb prbVar = qsb.k0;
+        if (d == 0) {
+            aqbVar.m(this);
+            qpbVar.e.append((char) 65533);
+            aqbVar.c = prbVar;
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        Bitmap bitmap = this.c;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.c = null;
+        if (d == '-') {
+            aqbVar.c = qsb.j0;
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float e = this.h.e(false, this.f);
-        Drawable drawable = this.a;
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
-        Rect rect = gm.Q;
-        rect.set((getWidth() - intrinsicWidth) / 2, (getHeight() - intrinsicHeight) / 2, (getWidth() + intrinsicWidth) / 2, (getHeight() + intrinsicHeight) / 2);
-        if (e <= 0.0f) {
-            drawable.setBounds(rect);
-            drawable.draw(canvas);
-        } else if (e < 1.0f) {
-            canvas.save();
-            Path path = this.n;
-            path.rewind();
-            path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, gm.L(16.0f) * e, Path.Direction.CW);
-            canvas.clipPath(path, Region.Op.DIFFERENCE);
-            drawable.setBounds(rect);
-            drawable.draw(canvas);
-            canvas.restore();
+        lqb lqbVar = qsb.a;
+        if (d == '>') {
+            aqbVar.m(this);
+            aqbVar.i();
+            aqbVar.c = lqbVar;
+        } else if (d != 65535) {
+            qpbVar.e.append(d);
+            aqbVar.c = prbVar;
+        } else {
+            aqbVar.l(this);
+            aqbVar.i();
+            aqbVar.c = lqbVar;
         }
-        if (e > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), nm7.d4, 31);
-            canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, gm.L(16.0f) * e, this.d);
-            canvas.save();
-            Bitmap bitmap = this.c;
-            if (bitmap != null) {
-                canvas.drawBitmap(bitmap, (Rect) null, rect, this.e);
-            }
-            canvas.restore();
-            canvas.restore();
-        }
-    }
-
-    @Override // qk4
-    public void setInvert(float f) {
-        this.a.setColorFilter(new PorterDuffColorFilter(on2.f(f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
-        this.d.setColor(on2.f(f, -1, -16777216));
-    }
-
-    public void setValue(boolean z) {
-        this.f = z ? 1.0f : 0.0f;
-        invalidate();
     }
 }

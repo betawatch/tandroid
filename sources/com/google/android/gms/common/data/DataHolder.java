@@ -7,10 +7,10 @@ import android.os.Parcelable;
 import android.util.Log;
 import java.io.Closeable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class DataHolder extends b4 implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new d3d((byte) 7);
+    public static final Parcelable.Creator<DataHolder> CREATOR = new b1d((byte) 7);
     public final int a;
     public final String[] b;
     public Bundle c;
@@ -57,7 +57,7 @@ public final class DataHolder extends b4 implements Closeable {
                 if (!z) {
                     close();
                     String obj = toString();
-                    StringBuilder sb = new StringBuilder(String.valueOf(obj).length() + nm7.H2);
+                    StringBuilder sb = new StringBuilder(String.valueOf(obj).length() + kk7.H2);
                     sb.append("Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: ");
                     sb.append(obj);
                     sb.append(")");
@@ -71,15 +71,15 @@ public final class DataHolder extends b4 implements Closeable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.m(parcel, 1, this.b);
-        mve.o(parcel, 2, this.d, i);
-        mve.q(parcel, 3, 4);
+        int r = jte.r(parcel, 20293);
+        jte.m(parcel, 1, this.b);
+        jte.o(parcel, 2, this.d, i);
+        jte.q(parcel, 3, 4);
         parcel.writeInt(this.e);
-        mve.b(parcel, 4, this.f);
-        mve.q(parcel, 1000, 4);
+        jte.b(parcel, 4, this.f);
+        jte.q(parcel, 1000, 4);
         parcel.writeInt(this.a);
-        mve.s(parcel, r);
+        jte.s(parcel, r);
         if ((i & 1) != 0) {
             close();
         }

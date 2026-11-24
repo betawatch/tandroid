@@ -1,101 +1,161 @@
 // default package
 
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.SecretMediaViewer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b77 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ oc7 b;
-    public final /* synthetic */ vh6 c;
-    public final /* synthetic */ vh6 d;
+    public final /* synthetic */ na7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ArrayList f;
 
-    public /* synthetic */ b77(oc7 oc7Var, vh6 vh6Var, vh6 vh6Var2, byte b) {
+    public /* synthetic */ b77(na7 na7Var, long j, int i, long j2, ArrayList arrayList, byte b) {
         this.a = b;
-        this.b = oc7Var;
-        this.c = vh6Var;
-        this.d = vh6Var2;
+        this.b = na7Var;
+        this.c = j;
+        this.e = i;
+        this.d = j2;
+        this.f = arrayList;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z;
-        ArrayList arrayList;
-        boolean z2 = false;
-        switch (this.a) {
+        byte b = this.a;
+        ArrayList arrayList = this.f;
+        na7 na7Var = this.b;
+        switch (b) {
             case 0:
-                oc7 oc7Var = this.b;
-                vh6 vh6Var = this.c;
-                vh6 vh6Var2 = this.d;
-                if (vh6Var != null) {
-                    int i = 0;
-                    for (int m = vh6Var.m(); i < m; m = m) {
-                        ArrayList arrayList2 = (ArrayList) vh6Var.n(i);
-                        oc7Var.W(arrayList2, null, null, vh6Var.j(i), true, 0, !arrayList2.isEmpty() && ((Integer) arrayList2.get(0)).intValue() > 0, 0L, null, 0);
-                        i++;
+                long j = this.c;
+                long j2 = this.d;
+                int i = this.e;
+                if (j != 0) {
+                    int B = na7Var.getMessagesController().g4.B(i, j2, j, true);
+                    if (B >= 0) {
+                        na7Var.getMessagesStorage().e2(B, j2, j, true);
+                        na7Var.getNotificationCenter().k(kk7.b5, Long.valueOf(j2), Long.valueOf(j), Integer.valueOf(B), arrayList);
+                        break;
+                    }
+                } else {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) na7Var.R.f(j2);
+                    if (dialog != null) {
+                        int i2 = dialog.unread_poll_votes_count + i;
+                        dialog.unread_poll_votes_count = i2;
+                        if (i2 < 0) {
+                            dialog.unread_poll_votes_count = 0;
+                        }
+                        na7Var.getMessagesStorage().e2(dialog.unread_poll_votes_count, j2, 0L, false);
+                        na7Var.getNotificationCenter().k(kk7.b5, Long.valueOf(j2), Long.valueOf(j), Integer.valueOf(dialog.unread_poll_votes_count), arrayList);
+                        break;
+                    } else {
+                        na7Var.getMessagesStorage().N1(j2, i, true, false);
+                        break;
                     }
                 }
-                if (vh6Var2 != null) {
-                    Object[] objArr = SecretMediaViewer.e() && SecretMediaViewer.d().s;
-                    k47 k47Var = objArr == true ? SecretMediaViewer.d().g0 : null;
-                    int m2 = vh6Var2.m();
-                    int i2 = 0;
-                    while (i2 < m2) {
-                        long j = vh6Var2.j(i2);
-                        ArrayList arrayList3 = (ArrayList) vh6Var2.n(i2);
-                        if (objArr == true && k47Var != null && k47Var.K1 == oc7Var.currentAccount && k47.B0(k47Var.k) == j && arrayList3.contains(Integer.valueOf(k47Var.e1()))) {
-                            int e1 = k47Var.e1();
-                            arrayList3.remove(Integer.valueOf(e1));
-                            k47Var.I0 = true;
-                            long R = oc7Var.R(e1, j);
-                            arrayList = arrayList3;
-                            oc7 oc7Var2 = oc7Var;
-                            z = z2;
-                            oc7Var = oc7Var2;
-                            SecretMediaViewer.d().o1 = new l40((pg0) oc7Var2, R, j, e1, (byte) 4);
-                            nm7 notificationCenter = oc7Var.getNotificationCenter();
-                            Object[] objArr2 = new Object[1];
-                            objArr2[z ? 1 : 0] = k47Var.k;
-                            notificationCenter.k(49, objArr2);
-                        } else {
-                            z = z2;
-                            arrayList = arrayList3;
-                        }
-                        if (!arrayList.isEmpty()) {
-                            cf7 messagesStorage = oc7Var.getMessagesStorage();
-                            messagesStorage.a.c(new me7(messagesStorage, arrayList, j, (byte) 2));
-                        }
-                        i2++;
-                        z2 = z;
-                    }
-                }
-                Utilities.d.c(new b77(oc7Var, vh6Var, vh6Var2, (byte) 3));
                 break;
             case 1:
-                oc7 oc7Var3 = this.b;
-                vh6 vh6Var3 = this.c;
-                vh6 vh6Var4 = this.d;
-                oc7Var3.X = vh6Var3;
-                oc7Var3.Y = vh6Var4;
+                long j3 = this.c;
+                long j4 = this.d;
+                int i3 = this.e;
+                if (j3 != 0) {
+                    int C = na7Var.getMessagesController().g4.C(i3, j4, j3, true);
+                    if (C >= 0) {
+                        na7Var.getMessagesStorage().f2(C, j4, j3, true);
+                        if (na7Var.r2(j4) || na7Var.x2(j4) || j4 > 0) {
+                            na7Var.getNotificationCenter().k(kk7.a5, Long.valueOf(j4), Long.valueOf(j3), Integer.valueOf(C), arrayList);
+                            break;
+                        }
+                    }
+                } else {
+                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) na7Var.R.f(j4);
+                    if (dialog2 != null) {
+                        int i4 = dialog2.unread_reactions_count + i3;
+                        dialog2.unread_reactions_count = i4;
+                        if (i4 < 0) {
+                            dialog2.unread_reactions_count = 0;
+                        }
+                        na7Var.getMessagesStorage().f2(dialog2.unread_reactions_count, j4, 0L, false);
+                        if (na7Var.r2(j4) || na7Var.x2(j4) || j4 > 0) {
+                            na7Var.getNotificationCenter().k(kk7.a5, Long.valueOf(j4), Long.valueOf(j3), Integer.valueOf(dialog2.unread_reactions_count), arrayList);
+                            break;
+                        }
+                    } else {
+                        na7Var.getMessagesStorage().N1(j4, i3, true, true);
+                        break;
+                    }
+                }
                 break;
             case 2:
-                oc7 oc7Var4 = this.b;
-                vh6 vh6Var5 = this.c;
-                vh6 vh6Var6 = this.d;
-                oc7Var4.M1 = true;
-                cf7 messagesStorage2 = oc7Var4.getMessagesStorage();
-                messagesStorage2.a.c(new fp6(messagesStorage2, vh6Var5, vh6Var6, (byte) 28));
+                vf6 vf6Var = na7Var.R;
+                long j5 = this.c;
+                TLRPC.Dialog dialog3 = (TLRPC.Dialog) vf6Var.f(j5);
+                int i5 = this.e;
+                if (dialog3 != null) {
+                    dialog3.unread_reactions_count = i5;
+                    ad7 messagesStorage = na7Var.getMessagesStorage();
+                    long j6 = this.d;
+                    messagesStorage.f2(i5, j5, j6, false);
+                    na7Var.getNotificationCenter().k(kk7.a5, Long.valueOf(j5), Long.valueOf(j6), Integer.valueOf(i5), arrayList);
+                    break;
+                } else {
+                    na7Var.getMessagesStorage().N1(j5, i5, false, true);
+                    break;
+                }
+            case 3:
+                pub pubVar = na7Var.getMessagesController().g4;
+                int i6 = this.e;
+                long j7 = this.c;
+                long j8 = this.d;
+                pubVar.C(i6, j7, j8, false);
+                na7Var.getMessagesStorage().f2(i6, j7, j8, false);
+                na7Var.getNotificationCenter().k(kk7.a5, Long.valueOf(j7), Long.valueOf(j8), Integer.valueOf(i6), arrayList);
+                break;
+            case 4:
+                vf6 vf6Var2 = na7Var.R;
+                long j9 = this.c;
+                TLRPC.Dialog dialog4 = (TLRPC.Dialog) vf6Var2.f(j9);
+                int i7 = this.e;
+                if (dialog4 != null) {
+                    dialog4.unread_poll_votes_count = i7;
+                    ad7 messagesStorage2 = na7Var.getMessagesStorage();
+                    long j10 = this.d;
+                    messagesStorage2.e2(i7, j9, j10, false);
+                    na7Var.getNotificationCenter().k(kk7.b5, Long.valueOf(j9), Long.valueOf(j10), Integer.valueOf(i7), arrayList);
+                    break;
+                } else {
+                    na7Var.getMessagesStorage().N1(j9, i7, false, false);
+                    break;
+                }
+            case 5:
+                pub pubVar2 = na7Var.getMessagesController().g4;
+                int i8 = this.e;
+                long j11 = this.c;
+                long j12 = this.d;
+                pubVar2.C(i8, j11, j12, false);
+                na7Var.getMessagesStorage().f2(i8, j11, j12, false);
+                na7Var.getNotificationCenter().k(kk7.a5, Long.valueOf(j11), Long.valueOf(j12), Integer.valueOf(i8), arrayList);
                 break;
             default:
-                oc7 oc7Var5 = this.b;
-                Utilities.d.c(new b77(oc7Var5, this.c, this.d, (byte) 2));
-                oc7Var5.N1 = 0;
-                oc7Var5.O1 = null;
-                oc7Var5.P1 = null;
+                pub pubVar3 = na7Var.getMessagesController().g4;
+                int i9 = this.e;
+                long j13 = this.c;
+                long j14 = this.d;
+                pubVar3.B(i9, j13, j14, false);
+                na7Var.getMessagesStorage().e2(i9, j13, j14, false);
+                na7Var.getNotificationCenter().k(kk7.b5, Long.valueOf(j13), Long.valueOf(j14), Integer.valueOf(i9), arrayList);
                 break;
         }
+    }
+
+    public /* synthetic */ b77(na7 na7Var, long j, long j2, int i, ArrayList arrayList, byte b) {
+        this.a = b;
+        this.b = na7Var;
+        this.c = j;
+        this.d = j2;
+        this.e = i;
+        this.f = arrayList;
     }
 }

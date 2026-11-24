@@ -1,26 +1,21 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class wqc extends b4 {
-    public static final Parcelable.Creator<wqc> CREATOR = new e2f((byte) 9);
-    public String a;
-    public String b;
-    public qpb c;
-    public s8c d;
-    public s8c e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class wqc {
+    public final ng5 a;
+    public final String b;
+    public String c;
+    public final ArrayList d = new ArrayList();
+    public TLRPC.Document e;
+    public Object f;
+    public boolean g;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.a);
-        mve.l(parcel, 3, this.b);
-        mve.k(parcel, 4, this.c, i);
-        mve.k(parcel, 5, this.d, i);
-        mve.k(parcel, 6, this.e, i);
-        mve.s(parcel, r);
+    public wqc(ng5 ng5Var, String str) {
+        this.a = ng5Var;
+        this.b = str;
     }
 }

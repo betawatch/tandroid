@@ -1,136 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.PowerManager;
-import android.util.Log;
-import java.io.IOException;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class tyb implements Runnable {
-    public static final Object f = new Object();
-    public static Boolean h;
-    public static Boolean n;
-    public final Context a;
-    public final mf7 b;
-    public final PowerManager.WakeLock c;
-    public final ryb d;
-    public final long e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class tyb extends Drawable {
+    public final oy8 a;
+    public int b;
+    public final TextPaint c;
 
-    public tyb(ryb rybVar, Context context, mf7 mf7Var, long j) {
-        this.d = rybVar;
-        this.a = context;
-        this.e = j;
-        this.b = mf7Var;
-        this.c = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "wake:com.google.firebase.messaging");
+    public tyb(TextPaint textPaint) {
+        in inVar = new in(this, (byte) 12);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        oy8 oy8Var = new oy8(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = oy8Var;
+        oy8Var.setCallback(inVar);
+        oy8Var.F(1);
+        oy8Var.H((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        oy8Var.E(true);
+        oy8Var.start();
     }
 
-    public static boolean a(Context context) {
-        boolean booleanValue;
-        synchronized (f) {
-            Boolean bool = n;
-            Boolean valueOf = Boolean.valueOf(bool == null ? b(context, "android.permission.ACCESS_NETWORK_STATE", bool) : bool.booleanValue());
-            n = valueOf;
-            booleanValue = valueOf.booleanValue();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i = this.b;
+        oy8 oy8Var = this.a;
+        if (color != i) {
+            oy8Var.a0 = true;
+            oy8Var.L(color, "Comp 1");
+            oy8Var.j();
+            oy8Var.E(true);
+            oy8Var.Q(0L);
+            this.b = color;
         }
-        return booleanValue;
+        oy8Var.draw(canvas);
     }
 
-    public static boolean b(Context context, String str, Boolean bool) {
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        boolean z = context.checkCallingOrSelfPermission(str) == 0;
-        if (!z && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return z;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public static boolean c(Context context) {
-        boolean booleanValue;
-        synchronized (f) {
-            Boolean bool = h;
-            Boolean valueOf = Boolean.valueOf(bool == null ? b(context, "android.permission.WAKE_LOCK", bool) : bool.booleanValue());
-            h = valueOf;
-            booleanValue = valueOf.booleanValue();
-        }
-        return booleanValue;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
     }
 
-    public final synchronized boolean d() {
-        boolean z;
-        ConnectivityManager connectivityManager = (ConnectivityManager) this.a.getSystemService("connectivity");
-        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
-        if (activeNetworkInfo != null) {
-            z = activeNetworkInfo.isConnected();
-        }
-        return z;
-    }
-
-    /* JADX WARN: Finally extract failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        ryb rybVar = this.d;
-        Context context = this.a;
-        boolean c = c(context);
-        PowerManager.WakeLock wakeLock = this.c;
-        if (c) {
-            wakeLock.acquire(180000L);
-        }
-        try {
-            try {
-                try {
-                    rybVar.c(true);
-                    if (!this.b.e()) {
-                        rybVar.c(false);
-                        if (!c(context)) {
-                            return;
-                        }
-                    } else {
-                        if (!a(context) || d()) {
-                            if (rybVar.d()) {
-                                rybVar.c(false);
-                            } else {
-                                rybVar.e(this.e);
-                            }
-                            if (c(context)) {
-                                wakeLock.release();
-                                return;
-                            }
-                            return;
-                        }
-                        new syb(this, this).a();
-                        if (!c(context)) {
-                            return;
-                        }
-                    }
-                    try {
-                        wakeLock.release();
-                    } catch (RuntimeException unused) {
-                        Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                    }
-                } catch (IOException e) {
-                    Log.e("FirebaseMessaging", "Failed to sync topics. Won't retry sync. " + e.getMessage());
-                    rybVar.c(false);
-                    if (c(context)) {
-                        wakeLock.release();
-                    }
-                }
-            } catch (Throwable th) {
-                if (c(context)) {
-                    try {
-                        wakeLock.release();
-                    } catch (RuntimeException unused2) {
-                        Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                    }
-                }
-                throw th;
-            }
-        } catch (RuntimeException unused3) {
-            Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

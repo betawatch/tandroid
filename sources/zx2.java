@@ -1,178 +1,51 @@
 // default package
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import java.util.ArrayList;
+import android.util.Log;
+import j$.util.Objects;
+import java.io.File;
+import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public class zx2 extends Path {
-    public static ArrayList g;
-    public int e;
-    public int f;
-    public boolean b = false;
-    public boolean c = true;
-    public float d = 0.0f;
-    public final ArrayList a = new ArrayList(1);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class zx2 {
+    public final w53 a;
+    public final mv6 b;
 
-    public zx2(int i) {
+    public zx2(w53 w53Var, jb4 jb4Var) {
+        this.a = w53Var;
+        this.b = new mv6(jb4Var);
     }
 
-    public final void a() {
-        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
-            return;
-        }
-        b(this.a);
-        this.b = true;
-    }
-
-    @Override // android.graphics.Path
-    public final void addRect(RectF rectF, Path.Direction direction) {
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            float f = rectF.left;
-            int i = this.e;
-            float f2 = f - i;
-            float f3 = rectF.top;
-            int i2 = this.f;
-            super.addRect(f2, f3 - i2, rectF.right + i, rectF.bottom + i2, direction);
-            return;
-        }
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 0 || !((RectF) b10.f(1, arrayList)).contains(rectF)) {
-            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) b10.f(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) b10.f(1, arrayList)).bottom) > this.d) {
-                ArrayList arrayList2 = g;
-                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
-                rectF2.set(rectF);
-                arrayList.add(rectF2);
+    public final String a(String str) {
+        String substring;
+        mv6 mv6Var = this.b;
+        synchronized (mv6Var) {
+            if (Objects.equals((String) mv6Var.c, str)) {
+                return (String) mv6Var.d;
+            }
+            jb4 jb4Var = (jb4) mv6Var.b;
+            yx2 yx2Var = mv6.n;
+            File file = new File((File) jb4Var.d, str);
+            file.mkdirs();
+            List e = jb4.e(file.listFiles(yx2Var));
+            if (e.isEmpty()) {
+                substring = null;
+                Log.w("FirebaseCrashlytics", "Unable to read App Quality Sessions session id.", null);
             } else {
-                ((RectF) b10.f(1, arrayList)).union(rectF);
+                substring = ((File) Collections.min(e, mv6.r)).getName().substring(4);
             }
-            this.b = false;
+            return substring;
         }
     }
 
-    public final void b(List list) {
-        if (list.isEmpty()) {
-            return;
-        }
-        boolean z = false;
-        if (list.size() == 1) {
-            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
-            return;
-        }
-        RectF rectF = (RectF) list.get(0);
-        int size = list.size() - 1;
-        super.moveTo(rectF.left - this.e, rectF.top - this.f);
-        for (int i = 1; i < list.size(); i++) {
-            RectF rectF2 = (RectF) list.get(i);
-            if (rectF2.width() != 0.0f) {
-                float f = rectF.bottom;
-                int i2 = this.f;
-                float f2 = f + i2;
-                float f3 = rectF2.top;
-                if (f2 >= f3 - i2) {
-                    float f4 = rectF.left;
-                    if (f4 <= rectF2.right) {
-                        float f5 = rectF.right;
-                        float f6 = rectF2.left;
-                        if (f5 >= f6) {
-                            if (f4 != f6) {
-                                super.lineTo(f4 - this.e, f3);
-                                super.lineTo(rectF2.left - this.e, rectF2.top);
-                            }
-                            rectF = rectF2;
-                        }
-                    }
-                }
-                z = true;
-                size = i;
-                break;
+    public final void b(String str) {
+        mv6 mv6Var = this.b;
+        synchronized (mv6Var) {
+            if (!Objects.equals((String) mv6Var.c, str)) {
+                mv6.a0((jb4) mv6Var.b, str, (String) mv6Var.d);
+                mv6Var.c = str;
             }
         }
-        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
-        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
-        for (int i3 = size - 1; i3 >= 0; i3--) {
-            RectF rectF3 = (RectF) list.get(i3);
-            if (rectF3.width() != 0.0f) {
-                float f7 = rectF.right;
-                if (f7 != rectF3.right) {
-                    super.lineTo(f7 + this.e, rectF.top);
-                    super.lineTo(rectF3.right + this.e, rectF.top);
-                }
-                rectF = rectF3;
-            }
-        }
-        super.lineTo(rectF.right + this.e, rectF.top - this.f);
-        super.close();
-        if (z) {
-            b(list.subList(size, list.size()));
-        }
-    }
-
-    @Override // android.graphics.Path
-    public void reset() {
-        super.reset();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            arrayList = new ArrayList(arrayList2.size());
-            g = arrayList;
-        }
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    @Override // android.graphics.Path
-    public final void rewind() {
-        super.rewind();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            arrayList = new ArrayList(arrayList2.size());
-            g = arrayList;
-        }
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    public zx2() {
-    }
-
-    @Override // android.graphics.Path
-    public void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
-        RectF rectF;
-        if (Build.VERSION.SDK_INT >= 34 && this.c) {
-            ArrayList arrayList = this.a;
-            if (arrayList.size() <= 0 || !((RectF) b10.f(1, arrayList)).contains(f, f2, f3, f4)) {
-                if (arrayList.size() > 0 && Math.abs(f2 - ((RectF) b10.f(1, arrayList)).top) <= this.d && Math.abs(f4 - ((RectF) b10.f(1, arrayList)).bottom) <= this.d) {
-                    ((RectF) b10.f(1, arrayList)).union(f, f2, f3, f4);
-                } else {
-                    ArrayList arrayList2 = g;
-                    if (arrayList2 != null && arrayList2.size() > 0) {
-                        rectF = (RectF) g.remove(0);
-                    } else {
-                        rectF = new RectF();
-                    }
-                    rectF.set(f, f2, f3, f4);
-                    arrayList.add(rectF);
-                }
-                this.b = false;
-                return;
-            }
-            return;
-        }
-        int i = this.e;
-        int i2 = this.f;
-        super.addRect(f - i, f2 - i2, f3 + i, f4 + i2, direction);
     }
 }

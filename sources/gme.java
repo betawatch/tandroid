@@ -1,15 +1,26 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class gme {
-    public static Object a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() != 0) {
-            return creator.createFromParcel(parcel);
-        }
-        return null;
+    public static dx5 a() {
+        cx5 cx5Var = (cx5) ae7.c().a(cx5.class);
+        d6e d6eVar = cx5Var.b;
+        d6eVar.getClass();
+        sxe sxeVar = cx5Var.a;
+        dx5 dx5Var = new dx5(d6eVar, sxeVar, (Executor) cx5Var.c.a.get());
+        wtc wtcVar = new wtc();
+        wtcVar.c = dx5Var.f;
+        rod rodVar = new rod((byte) 6);
+        rodVar.c = dx5.e();
+        wtcVar.d = new goe(rodVar);
+        qx qxVar = new qx(wtcVar, 1);
+        Task task = sxeVar.e;
+        yjb.c(1, new vc1(sxeVar, qxVar, jhe.c, task.isSuccessful() ? (String) task.getResult() : r06.c.a(sxeVar.g), (byte) 2));
+        ((d6e) dx5Var.d.get()).b.incrementAndGet();
+        return dx5Var;
     }
 }

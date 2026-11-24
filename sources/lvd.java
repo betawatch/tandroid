@@ -1,55 +1,27 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class lvd extends f1d {
-    public final jdd Z() {
-        jdd jddVar;
-        Parcel Q = Q(R(), 4);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        if (readStrongBinder == null) {
-            jddVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
-            jddVar = queryLocalInterface instanceof jdd ? (jdd) queryLocalInterface : new jdd(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return jddVar;
-    }
+public final class lvd implements zn7 {
+    public static final lvd a = new lvd();
+    public static final w84 b = new w84("durationMs", b00.m(yjb.n(g7d.class, new d6d(1))));
+    public static final w84 c = new w84("imageSource", b00.m(yjb.n(g7d.class, new d6d(2))));
+    public static final w84 d = new w84("imageFormat", b00.m(yjb.n(g7d.class, new d6d(3))));
+    public static final w84 e = new w84("imageByteSize", b00.m(yjb.n(g7d.class, new d6d(4))));
+    public static final w84 f = new w84("imageWidth", b00.m(yjb.n(g7d.class, new d6d(5))));
+    public static final w84 g = new w84("imageHeight", b00.m(yjb.n(g7d.class, new d6d(6))));
+    public static final w84 h = new w84("rotationDegrees", b00.m(yjb.n(g7d.class, new d6d(7))));
 
-    public final mye a0(eq7 eq7Var) {
-        mye myeVar;
-        Parcel R = R();
-        tid.c(R, eq7Var);
-        R.writeInt(0);
-        Parcel Q = Q(R, 3);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        if (readStrongBinder == null) {
-            myeVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
-            myeVar = queryLocalInterface instanceof mye ? (mye) queryLocalInterface : new mye(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return myeVar;
-    }
-
-    public final qje b0() {
-        qje a8eVar;
-        Parcel Q = Q(R(), 5);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        int i = dee.b;
-        if (readStrongBinder == null) {
-            a8eVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
-            a8eVar = queryLocalInterface instanceof qje ? (qje) queryLocalInterface : new a8e(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return a8eVar;
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        xke xkeVar = (xke) obj;
+        ao7 ao7Var = (ao7) obj2;
+        ao7Var.a(b, xkeVar.a);
+        ao7Var.a(c, xkeVar.b);
+        ao7Var.a(d, xkeVar.c);
+        ao7Var.a(e, xkeVar.d);
+        ao7Var.a(f, xkeVar.e);
+        ao7Var.a(g, xkeVar.f);
+        ao7Var.a(h, xkeVar.g);
     }
 }

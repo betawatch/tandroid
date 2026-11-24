@@ -1,80 +1,49 @@
 // default package
 
-import java.util.ListIterator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class d6d extends v7c implements ListIterator {
-    public final int b;
-    public int c;
-    public final g6d d;
+public final class d6d implements g7d {
+    public final byte a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6d(g6d g6dVar, int i) {
-        super((byte) 2);
-        int size = g6dVar.size();
-        if (i < 0 || i > size) {
-            wa3.i(a1f.c(i, size, "index"));
-            throw null;
+    /* JADX WARN: Multi-variable type inference failed */
+    public d6d(int i) {
+        this.a = i;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return g7d.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.b = size;
-        this.c = i;
-        this.d = g6dVar;
-    }
-
-    public final Object a(int i) {
-        return this.d.get(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            u36.g();
-            return null;
+        if (!(obj instanceof g7d)) {
+            return false;
         }
-        int i = this.c;
-        this.c = i + 1;
-        return a(i);
+        g7d g7dVar = (g7d) obj;
+        return this.a == g7dVar.zza() && y6d.a.equals(g7dVar.zzb());
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (y6d.a.hashCode() ^ 2041407134);
     }
 
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            u36.g();
-            return null;
-        }
-        int i = this.c - 1;
-        this.c = i;
-        return a(i);
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + y6d.a + ')';
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
+    @Override // g7d
+    public final int zza() {
+        return this.a;
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // g7d
+    public final y6d zzb() {
+        return y6d.a;
     }
 }

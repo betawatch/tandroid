@@ -1,53 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class qa0 {
-    public static final qa0 f = new qa0(10485760, nm7.d3, 10000, 81920, 604800000);
-    public final long a;
-    public final int b;
+    public final String a;
+    public final long b;
     public final int c;
-    public final long d;
-    public final int e;
 
-    public qa0(long j, int i, int i2, int i3, long j2) {
-        this.a = j;
-        this.b = i;
-        this.c = i2;
-        this.d = j2;
-        this.e = i3;
+    public qa0(String str, long j, int i) {
+        this.a = str;
+        this.b = j;
+        this.c = i;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof qa0) {
-            qa0 qa0Var = (qa0) obj;
-            if (this.a == qa0Var.a && this.b == qa0Var.b && this.c == qa0Var.c && this.d == qa0Var.d && this.e == qa0Var.e) {
-                return true;
-            }
+        if (!(obj instanceof qa0)) {
+            return false;
         }
-        return false;
+        qa0 qa0Var = (qa0) obj;
+        String str = qa0Var.a;
+        String str2 = this.a;
+        if (str2 == null) {
+            if (str != null) {
+                return false;
+            }
+        } else if (!str2.equals(str)) {
+            return false;
+        }
+        if (this.b != qa0Var.b) {
+            return false;
+        }
+        int i = qa0Var.c;
+        int i2 = this.c;
+        return i2 == 0 ? i == 0 : ug8.c(i2, i);
     }
 
     public final int hashCode() {
-        long j = this.a;
-        int i = (((((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003;
-        long j2 = this.d;
-        return ((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.e;
+        String str = this.a;
+        int hashCode = str == null ? 0 : str.hashCode();
+        long j = this.b;
+        int i = (((hashCode ^ 1000003) * 1000003) ^ ((int) ((j >>> 32) ^ j))) * 1000003;
+        int i2 = this.c;
+        return i ^ (i2 != 0 ? ug8.F(i2) : 0);
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("EventStoreConfig{maxStorageSizeInBytes=");
+        StringBuilder sb = new StringBuilder("TokenResult{token=");
         sb.append(this.a);
-        sb.append(", loadBatchSize=");
+        sb.append(", tokenExpirationTimestamp=");
         sb.append(this.b);
-        sb.append(", criticalSectionEnterTimeoutMs=");
-        sb.append(this.c);
-        sb.append(", eventCleanUpAge=");
-        sb.append(this.d);
-        sb.append(", maxBlobByteSizePerRow=");
-        return hg9.k(sb, this.e, "}");
+        sb.append(", responseCode=");
+        int i = this.c;
+        sb.append(i != 1 ? i != 2 ? i != 3 ? "null" : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
+        sb.append("}");
+        return sb.toString();
     }
 }

@@ -1,31 +1,126 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.os.Build;
+import android.os.Looper;
+import android.util.Log;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class y74 extends b6c {
-    static {
-        b6c.h(new y74());
+public final class y74 {
+    public final byte a;
+    public final x74 b;
+    public Interpolator c;
+    public long d;
+    public byte e;
+    public float f;
+    public float g;
+    public boolean h;
+    public ValueAnimator i;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public y74(int i, x74 x74Var, Interpolator interpolator, long j, float f) {
+        this.a = i;
+        this.b = x74Var;
+        this.c = interpolator;
+        this.d = j;
+        this.f = f;
     }
 
-    public static c6c i(String str, CharSequence charSequence, int i) {
-        c6c K = c6c.K(y74.class);
-        K.b = false;
-        K.A = i;
-        K.m = str;
-        K.n = charSequence;
-        return K;
+    public final void a(float f) {
+        if (Looper.myLooper() != Looper.getMainLooper()) {
+            wn4.f();
+            return;
+        }
+        if (this.h) {
+            b();
+        }
+        float f2 = this.f;
+        byte b = this.a;
+        x74 x74Var = this.b;
+        if (f2 == f) {
+            x74Var.F(f2, b);
+            return;
+        }
+        if (!this.h) {
+            this.h = true;
+        }
+        float f3 = f - f2;
+        long j = this.d;
+        if (Build.VERSION.SDK_INT >= 26 && !ValueAnimator.areAnimatorsEnabled()) {
+            j = 0;
+        }
+        byte b2 = 0;
+        if (j <= 0) {
+            d(f, 1.0f);
+            if (this.h) {
+                this.h = false;
+            }
+            x74Var.F(f, b);
+            return;
+        }
+        this.g = f;
+        DecelerateInterpolator decelerateInterpolator = tn.a;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.i = ofFloat;
+        ofFloat.setDuration(j);
+        this.i.setInterpolator(this.c);
+        this.i.addUpdateListener(new qx1(this, f2, f3, (byte) 3));
+        this.i.addListener(new w74(this, f2, f3, b2));
+        long j2 = this.e;
+        if (j2 != 0) {
+            this.i.setStartDelay(j2);
+        }
+        try {
+            this.i.start();
+        } catch (Throwable th) {
+            Log.e("tgx", "Cannot start animation", th);
+            c(f);
+        }
     }
 
-    @Override // b6c
-    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
-        ((z74) view).a(c6cVar.A, c6cVar.m, c6cVar.n);
+    public final boolean b() {
+        if (this.h) {
+            if (Looper.myLooper() == Looper.getMainLooper()) {
+                if (this.h) {
+                    this.h = false;
+                }
+                ValueAnimator valueAnimator = this.i;
+                if (valueAnimator == null) {
+                    return true;
+                }
+                valueAnimator.cancel();
+                this.i = null;
+                return true;
+            }
+            wn4.f();
+        }
+        return false;
     }
 
-    @Override // b6c
-    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
-        return new z74(0, ylbVar, context);
+    public final void c(float f) {
+        boolean b = b();
+        if (d(f, 1.0f) || b) {
+            this.b.F(f, this.a);
+        }
+    }
+
+    public final boolean d(float f, float f2) {
+        if (this.f == f) {
+            return false;
+        }
+        this.f = f;
+        this.b.p(this.a, f, f2, this);
+        return true;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public y74(int i, x74 x74Var, Interpolator interpolator, long j) {
+        this.a = i;
+        this.b = x74Var;
+        this.c = interpolator;
+        this.d = j;
     }
 }

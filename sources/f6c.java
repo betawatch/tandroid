@@ -1,55 +1,164 @@
 // default package
 
-import android.graphics.Typeface;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class f6c extends MetricAffectingSpan {
-    public final CharSequence a;
-    public final int b;
-    public final int c;
-    public final byte d;
-    public final wkb e;
+public final class f6c extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public final TextPaint c;
+    public final TextPaint d;
+    public final TextPaint e;
+    public final Paint f;
+    public final RectF g;
+    public final n41 h;
+    public final hi2 i;
+    public Runnable j;
+    public StaticLayout k;
+    public StaticLayout l;
+    public StaticLayout m;
+    public String n;
+    public String o;
+    public String p;
+    public int q;
+    public int r;
+    public final int s;
+    public final int t;
+    public final int u;
+    public final int v;
+    public final int w;
+    public final int x;
+    public final int y;
 
-    public f6c(CharSequence charSequence, int i, int i2, byte b, wkb wkbVar) {
-        this.a = charSequence;
-        this.b = i;
-        this.c = i2;
-        this.d = b;
-        this.e = wkbVar;
+    public f6c() {
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.d = textPaint2;
+        TextPaint textPaint3 = new TextPaint(1);
+        this.e = textPaint3;
+        this.f = new Paint(1);
+        this.g = new RectF();
+        n41 n41Var = new n41((View) null);
+        this.h = n41Var;
+        this.i = new hi2(new v39(this, (byte) 18));
+        this.s = gl.L(62.33f);
+        this.t = gl.L(12.0f);
+        this.u = gl.L(30.0f);
+        this.v = gl.L(15.0f);
+        this.w = gl.L(7.0f);
+        this.x = gl.L(12.0f);
+        this.y = gl.L(2.0f);
+        this.a = a.b.getDrawable(R.drawable.send_plane_26).mutate();
+        this.b = a.b.getDrawable(R.drawable.large_unsupported).mutate();
+        n41Var.f = new cib(this, (byte) 22);
+        textPaint.setTypeface(gl.o());
+        textPaint.setTextSize(gl.L(14.0f));
+        textPaint2.setTextSize(gl.L(12.0f));
+        textPaint3.setTypeface(gl.o());
+        textPaint3.setTextSize(gl.L(14.0f));
+        b();
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(gm.L(gda.S0 - 1));
-        byte b = this.d;
-        if (b == 2) {
-            textPaint.setColor(-1);
-        } else if (b == 1) {
-            textPaint.setColor(cmb.w0(null, cmb.Vc, false));
-        } else {
-            textPaint.setColor(cmb.w0(null, cmb.Uc, false));
-        }
-        wkb wkbVar = this.e;
-        if (wkbVar != null) {
-            wkbVar.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-            textPaint.setUnderlineText(false);
-        }
+    public final int a(int i) {
+        this.q = i;
+        String str = this.p;
+        int length = str.length();
+        TextPaint textPaint = this.e;
+        float measureText = textPaint.measureText((CharSequence) str, 0, length);
+        String str2 = this.p;
+        int ceil = (int) Math.ceil(measureText);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+        this.m = new StaticLayout(str2, textPaint, ceil, alignment, 1.0f, 0.0f, false);
+        int L = (((i - this.s) - ((int) ((this.t << 1) + measureText))) - this.x) - gl.L(11.0f);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        TextPaint textPaint2 = this.c;
+        this.k = new StaticLayout(TextUtils.ellipsize(this.n, textPaint2, L, truncateAt), textPaint2, L, alignment, 1.0f, 0.0f, false);
+        this.l = new StaticLayout(this.o, this.d, L, alignment, 1.0f, 0.0f, false);
+        int max = Math.max(this.l.getHeight() + this.k.getHeight() + this.y, this.u) + (this.w << 1);
+        this.r = max;
+        setBounds(0, 0, this.q, max);
+        return this.r;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(gm.L(gda.S0 - 1));
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        wkb wkbVar = this.e;
-        if (wkbVar != null) {
-            wkbVar.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
+    public final void b() {
+        int w0 = bkb.w0(null, bkb.Yc, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        this.a.setColorFilter(new PorterDuffColorFilter(w0, mode));
+        this.b.setColorFilter(new PorterDuffColorFilter(bkb.p1(0.11f, -16777216), mode));
+        this.c.setColor(w0);
+        this.d.setColor(bm2.o(w0, kk7.I2));
+        this.e.setColor(w0);
+        this.f.setColor(bkb.p1(0.11f, -16777216));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.k == null || this.l == null || this.m == null) {
+            return;
         }
+        int i = getBounds().left;
+        int i2 = getBounds().right;
+        int centerY = getBounds().centerY();
+        int height = centerY - ((this.l.getHeight() + (this.k.getHeight() + this.y)) / 2);
+        canvas.save();
+        canvas.translate(this.s + i, height);
+        this.k.draw(canvas);
+        canvas.translate(0.0f, this.k.getHeight() + r4);
+        this.l.draw(canvas);
+        canvas.restore();
+        float width = this.m.getWidth();
+        int i3 = this.t;
+        int L = i2 - gl.L(11.0f);
+        float f = centerY - (this.u / 2);
+        RectF rectF = this.g;
+        rectF.set(L - ((int) (width + (i3 << 1))), f, L, r6 + r5);
+        float a = this.h.a(0.05f);
+        canvas.save();
+        canvas.scale(a, a, rectF.centerX(), rectF.centerY());
+        bkb.p1(0.18f, -1);
+        int i4 = this.v;
+        canvas.drawRoundRect(rectF, i4, i4, this.f);
+        canvas.save();
+        canvas.translate(r3 + i3, ((r5 - this.m.getHeight()) / 2.0f) + f);
+        this.m.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+        float L2 = gl.L(29.66f) + i;
+        float f2 = centerY + 1;
+        Drawable drawable = this.b;
+        kq3.d(drawable, L2, f2, 17);
+        drawable.draw(canvas);
+        float L3 = gl.L(29.66f) + i;
+        Drawable drawable2 = this.a;
+        kq3.d(drawable2, L3, f2, 17);
+        drawable2.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

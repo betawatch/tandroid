@@ -1,19 +1,19 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class gue extends zoe {
-    public final byte[] c;
+public final class gue implements zn7 {
+    public static final gue a = new gue();
 
-    public gue(byte[] bArr) {
-        super(Arrays.copyOfRange(bArr, 0, 25));
-        this.c = bArr;
+    static {
+        yjb.y(yjb.p(gid.class, new bgd(1)));
     }
 
-    @Override // zoe
-    public final byte[] T() {
-        return this.c;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

@@ -1,111 +1,50 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.ActionBar.d;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class c71 extends d {
-    public a71 a;
-    public r59 b;
-    public final ArrayList c;
-    public ArrayList d;
-    public int e;
+public final class c71 extends i98 {
+    public o39 a;
+    public final /* synthetic */ o71 b;
 
-    public c71(Bundle bundle) {
-        super(bundle);
-        this.c = new ArrayList();
-        this.d = new ArrayList();
+    public c71(o71 o71Var) {
+        this.b = o71Var;
     }
 
-    public final void Z() {
-        ArrayList arrayList;
-        boolean z = this.isPaused;
-        ArrayList arrayList2 = this.c;
-        if (z || this.a == null) {
-            arrayList = null;
-        } else {
-            arrayList = new ArrayList();
-            arrayList.addAll(arrayList2);
-        }
-        arrayList2.clear();
-        arrayList2.add(new b71(1, null));
-        ArrayList arrayList3 = this.d;
-        int size = arrayList3.size();
-        boolean z2 = false;
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList3.get(i);
-            i++;
-            arrayList2.add(new b71(2, (t61) obj));
-            z2 = true;
-        }
-        if (z2) {
-            arrayList2.add(new b71(3, null));
-            arrayList2.add(new b71(4, null));
-        }
-        arrayList2.add(new b71(3, null));
-        a71 a71Var = this.a;
-        if (a71Var != null) {
-            if (arrayList != null) {
-                a71Var.E(arrayList, arrayList2);
-            } else {
-                a71Var.f();
+    @Override // i98, o98
+    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
+        qfa qfaVar;
+        o39 listView = this.b.getListView();
+        int i2 = 0;
+        while (true) {
+            if (i2 >= listView.getChildCount()) {
+                qfaVar = null;
+                break;
             }
+            View childAt = listView.getChildAt(i2);
+            if (RecyclerView.R(childAt) == i && (childAt instanceof qfa)) {
+                qfaVar = (qfa) childAt;
+                break;
+            }
+            i2++;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        this.simpleActionBar.setBackButtonDrawable(new ee0(false));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new r8(this, (byte) 13));
-        this.simpleActionBar.setTitle(jb6.M0(2131747645, null));
-        r59 r59Var = new r59(context, null);
-        this.b = r59Var;
-        r59Var.r1();
-        this.b.setSectionsDrawBackground(true);
-        sc3 sc3Var = new sc3();
-        sc3Var.C = false;
-        sc3Var.m = false;
-        this.b.setItemAnimator(sc3Var);
-        this.b.setLayoutManager(new u46());
-        r59 r59Var2 = this.b;
-        a71 a71Var = new a71(this);
-        this.a = a71Var;
-        r59Var2.setAdapter(a71Var);
-        this.b.setOnItemClickListener(new xg0(this, (byte) 21));
-        frameLayout.addView(this.b);
-        Z();
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final r59 getListViewForSimpleGlass() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        this.e = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
-        Z();
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        return true;
+        if (qfaVar == null) {
+            return null;
+        }
+        int[] iArr = new int[2];
+        qfaVar.getLocationInWindow(iArr);
+        p98 p98Var = new p98();
+        p98Var.b = iArr[0];
+        p98Var.c = iArr[1];
+        p98Var.d = this.a;
+        ImageReceiver imageReceiver = qfaVar.c;
+        p98Var.a = imageReceiver;
+        p98Var.e = imageReceiver.p();
+        p98Var.k = qfaVar.getScaleX();
+        return p98Var;
     }
 }

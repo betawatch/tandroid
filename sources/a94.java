@@ -1,75 +1,111 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.ActionMode;
-import android.view.Menu;
-import org.telegram.messenger.beta.R;
+import android.net.Uri;
+import android.system.ErrnoException;
+import android.system.OsConstants;
+import android.text.TextUtils;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class a94 extends qu3 {
-    public final km e2;
-    public int f2;
-    public final ho g2;
-    public final /* synthetic */ int h2;
-    public final /* synthetic */ ylb i2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class a94 extends qf0 {
+    public RandomAccessFile a;
+    public Uri b;
+    public long c;
+    public boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a94(Activity activity, ylb ylbVar, int i, ylb ylbVar2) {
-        super(activity, ylbVar);
-        this.h2 = i;
-        this.i2 = ylbVar2;
-        this.e2 = new km(this);
-        ho hoVar = new ho(false, true, true);
-        this.g2 = hoVar;
-        hoVar.n(0.2f, 160L, d53.h);
-        hoVar.w(gm.L(15.33f));
-        hoVar.setCallback(this);
-        hoVar.b = 5;
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a = this.e2.a(cmb.v0(this.f2 < 0 ? cmb.o7 : cmb.O5, this.i2), false);
-        ho hoVar = this.g2;
-        hoVar.u(a);
-        hoVar.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        hoVar.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void o(ActionMode actionMode, Menu menu) {
-        if (menu.findItem(R.id.menu_bold) != null) {
-            return;
-        }
-        menu.removeItem(android.R.id.shareText);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jb6.M0(2131753636, null));
-        spannableStringBuilder.setSpan(new z5c(gm.o()), 0, spannableStringBuilder.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(jb6.M0(2131748844, null));
-        spannableStringBuilder2.setSpan(new z5c(gm.n1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, jb6.M0(2131751681, null));
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, jb6.M0(2131746070, null));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, vu3, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        super.onTextChanged(charSequence, i, i2, i3);
-        ho hoVar = this.g2;
-        if (hoVar != null) {
-            this.f2 = this.h2 - charSequence.length();
-            hoVar.a();
-            hoVar.t(this.f2 > 4 ? "" : String.valueOf(this.f2), true, true);
+    @Override // o63
+    public final void close() {
+        this.b = null;
+        try {
+            try {
+                RandomAccessFile randomAccessFile = this.a;
+                if (randomAccessFile != null) {
+                    randomAccessFile.close();
+                }
+            } catch (IOException e) {
+                throw new z84(e, 2000);
+            }
+        } finally {
+            this.a = null;
+            if (this.d) {
+                this.d = false;
+                transferEnded();
+            }
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.g2 || super.verifyDrawable(drawable);
+    @Override // o63
+    public final Uri getUri() {
+        return this.b;
+    }
+
+    @Override // o63
+    public final long open(u63 u63Var) {
+        Uri uri = u63Var.a;
+        long j = u63Var.e;
+        this.b = uri;
+        transferInitializing(u63Var);
+        try {
+            String path = uri.getPath();
+            path.getClass();
+            RandomAccessFile randomAccessFile = new RandomAccessFile(path, "r");
+            this.a = randomAccessFile;
+            try {
+                randomAccessFile.seek(j);
+                long j2 = u63Var.f;
+                if (j2 == -1) {
+                    j2 = this.a.length() - j;
+                }
+                this.c = j2;
+                if (j2 < 0) {
+                    throw new z84(null, null, 2008);
+                }
+                this.d = true;
+                transferStarted(u63Var);
+                return this.c;
+            } catch (IOException e) {
+                throw new z84(e, 2000);
+            }
+        } catch (FileNotFoundException e2) {
+            if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
+                throw new z84(e2, ((e2.getCause() instanceof ErrnoException) && ((ErrnoException) e2.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
+            }
+            String path2 = uri.getPath();
+            String query = uri.getQuery();
+            String fragment = uri.getFragment();
+            StringBuilder l = yjb.l("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
+            l.append(fragment);
+            throw new z84(l.toString(), e2, 1004);
+        } catch (SecurityException e3) {
+            throw new z84(e3, 2006);
+        } catch (RuntimeException e4) {
+            throw new z84(e4, 2000);
+        }
+    }
+
+    @Override // g63
+    public final int read(byte[] bArr, int i, int i2) {
+        if (i2 == 0) {
+            return 0;
+        }
+        long j = this.c;
+        if (j == 0) {
+            return -1;
+        }
+        try {
+            RandomAccessFile randomAccessFile = this.a;
+            String str = g8c.a;
+            int read = randomAccessFile.read(bArr, i, (int) Math.min(j, i2));
+            if (read > 0) {
+                this.c -= read;
+                bytesTransferred(read);
+            }
+            return read;
+        } catch (IOException e) {
+            throw new z84(e, 2000);
+        }
     }
 }

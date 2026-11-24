@@ -1,28 +1,26 @@
 // default package
 
-import android.graphics.Paint;
-import android.text.style.LineHeightSpan;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class bb8 implements LineHeightSpan {
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ bb8(byte b) {
-        this.a = b;
-    }
-
-    @Override // android.text.style.LineHeightSpan
-    public final void chooseHeight(CharSequence charSequence, int i, int i2, int i3, int i4, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                fontMetricsInt.descent = gm.L(4.0f) + fontMetricsInt.descent;
-                fontMetricsInt.ascent = fontMetricsInt.ascent;
-                break;
-            default:
-                fontMetricsInt.ascent -= gm.L(2.0f);
-                fontMetricsInt.top -= gm.L(2.0f);
-                break;
-        }
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class bb8 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public String e;
+    public ab8[] f;
+    public ab8[] g;
+    public ab8[] h;
+    public ab8[] i;
+    public Bitmap j;
+    public Bitmap k;
+    public Bitmap l;
+    public Bitmap m;
+    public Bitmap n;
+    public Bitmap o;
+    public int p;
+    public Bitmap q;
+    public String r;
 }

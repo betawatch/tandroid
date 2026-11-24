@@ -1,92 +1,33 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class je6 implements RequestDelegate {
+public final /* synthetic */ class je6 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mh6 b;
-    public final /* synthetic */ TLRPC.auth_SentCode c;
-    public final /* synthetic */ Bundle d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ qe6 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ je6(byte b, mh6 mh6Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, boolean z) {
+    public /* synthetic */ je6(qe6 qe6Var, int i, byte b) {
         this.a = b;
-        this.b = mh6Var;
-        this.c = auth_sentcode;
-        this.d = bundle;
-        this.e = z;
+        this.b = qe6Var;
+        this.c = i;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        qe6 qe6Var = this.b;
+        switch (b) {
             case 0:
-                boolean z = tLObject instanceof TLRPC.TL_boolTrue;
-                final mh6 mh6Var = this.b;
-                final TLRPC.auth_SentCode auth_sentcode = this.c;
-                final Bundle bundle = this.d;
-                if (!z) {
-                    mh6Var.getClass();
-                    fc4.b("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
-                    mh6Var.H1(bundle, auth_sentcode, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
-                    break;
-                } else {
-                    mh6Var.y1(false, true);
-                    mh6Var.r0 = false;
-                    auth_sentcode.type.verifiedFirebase = true;
-                    final byte b = 0;
-                    final boolean z2 = this.e;
-                    gm.c3(new Runnable() { // from class: ke6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (b) {
-                                case 0:
-                                    mh6Var.q1(bundle, auth_sentcode, z2);
-                                    break;
-                                default:
-                                    mh6Var.q1(bundle, auth_sentcode, z2);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
+                gl.c3(new je6(qe6Var, i, (byte) 1));
+                break;
+            case 1:
+                qe6Var.z(i);
+                break;
             default:
-                boolean z3 = tLObject instanceof TLRPC.TL_boolTrue;
-                final mh6 mh6Var2 = this.b;
-                final TLRPC.auth_SentCode auth_sentcode2 = this.c;
-                final Bundle bundle2 = this.d;
-                if (!z3) {
-                    mh6Var2.getClass();
-                    fc4.b("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
-                    mh6Var2.H1(bundle2, auth_sentcode2, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
-                    break;
-                } else {
-                    mh6Var2.y1(false, true);
-                    mh6Var2.r0 = false;
-                    auth_sentcode2.type.verifiedFirebase = true;
-                    final byte b2 = 1;
-                    final boolean z4 = this.e;
-                    gm.c3(new Runnable() { // from class: ke6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (b2) {
-                                case 0:
-                                    mh6Var2.q1(bundle2, auth_sentcode2, z4);
-                                    break;
-                                default:
-                                    mh6Var2.q1(bundle2, auth_sentcode2, z4);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
+                qe6Var.f.f[i].D(1.0f);
+                break;
         }
     }
 }

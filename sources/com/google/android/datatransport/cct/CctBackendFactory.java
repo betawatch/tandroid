@@ -2,12 +2,12 @@ package com.google.android.datatransport.cct;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class CctBackendFactory {
-    public e3c create(t23 t23Var) {
-        Context context = ((ma0) t23Var).a;
-        ma0 ma0Var = (ma0) t23Var;
-        return new se1(context, ma0Var.b, ma0Var.c);
+    public e1c create(h13 h13Var) {
+        Context context = ((m90) h13Var).a;
+        m90 m90Var = (m90) h13Var;
+        return new kd1(context, m90Var.b, m90Var.c);
     }
 }

@@ -1,20 +1,83 @@
 // default package
 
-import android.graphics.RectF;
+import android.text.Editable;
+import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class m02 {
-    public long c;
-    public long d;
-    public int e;
-    public float[] i;
-    public final RectF a = new RectF();
-    public final RectF b = new RectF();
-    public int f = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int g = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int h = -1;
-    public final HashMap j = new HashMap();
+public final class m02 implements s58 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ x02 d;
+
+    public m02(x02 x02Var, HashMap hashMap, ArrayList arrayList) {
+        this.d = x02Var;
+        this.b = hashMap;
+        this.c = arrayList;
+    }
+
+    @Override // s58
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // s58
+    public final void l(int i, boolean z, boolean z2) {
+        if (z) {
+            return;
+        }
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty() || this.a) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i2 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i2 >= arrayList2.size()) {
+                ((mu1) this.d.Z1).o6(i, arrayList, z2);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i2));
+            y3a y3aVar = new y3a();
+            arrayList.add(y3aVar);
+            nm6 nm6Var = (nm6) obj;
+            String str = nm6Var.h;
+            if (str != null) {
+                y3aVar.c = str;
+            } else {
+                y3aVar.l = nm6Var;
+            }
+            y3aVar.e = nm6Var.c;
+            y3aVar.k = nm6Var.s;
+            CharSequence charSequence = nm6Var.I;
+            y3aVar.d = charSequence != null ? charSequence.toString() : null;
+            y3aVar.i = nm6Var.n;
+            y3aVar.j = nm6Var.r;
+            y3aVar.h = nm6Var.x;
+            TLRPC.BotInlineResult botInlineResult = nm6Var.N;
+            if (botInlineResult != null && nm6Var.H) {
+                y3aVar.m = botInlineResult;
+                y3aVar.n = nm6Var.O;
+            }
+            System.currentTimeMillis();
+            i2++;
+        }
+    }
+
+    @Override // s58
+    public final void e() {
+    }
+
+    @Override // s58
+    public final void k() {
+    }
+
+    @Override // s58
+    public final void j(Editable editable) {
+    }
 }

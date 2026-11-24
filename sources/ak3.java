@@ -1,23 +1,42 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ak3 extends ig4 {
-    public final /* synthetic */ nk3 H0;
+public final /* synthetic */ class ak3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ck3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ak3(nk3 nk3Var, Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.H0 = nk3Var;
+    public /* synthetic */ ak3(ck3 ck3Var, byte b) {
+        this.a = b;
+        this.b = ck3Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        getParent().requestDisallowInterceptTouchEvent(true);
-        this.H0.p3 = false;
-        return super.onInterceptTouchEvent(motionEvent);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        ck3 ck3Var = this.b;
+        switch (b) {
+            case 0:
+                ck3Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ck3Var.requestLayout();
+                vs2 vs2Var = ck3Var.c;
+                if (vs2Var != null) {
+                    vs2Var.accept(Float.valueOf(ck3Var.a));
+                    break;
+                }
+                break;
+            default:
+                ck3Var.getClass();
+                ck3Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ck3Var.requestLayout();
+                vs2 vs2Var2 = ck3Var.c;
+                if (vs2Var2 != null) {
+                    vs2Var2.accept(Float.valueOf(ck3Var.a));
+                    break;
+                }
+                break;
+        }
     }
 }

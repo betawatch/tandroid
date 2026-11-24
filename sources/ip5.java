@@ -1,78 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ip5 implements ix9 {
-    public final de a;
-    public final de b;
-    public long c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ip5 {
+    public final int a;
+    public final int b;
 
-    public ip5(long j, long[] jArr, long[] jArr2) {
-        de deVar;
-        de deVar2;
-        jte.f(jArr.length == jArr2.length);
-        int length = jArr2.length;
-        if (length <= 0 || jArr2[0] <= 0) {
-            deVar = new de(length, (byte) 9);
-            this.a = deVar;
-            deVar2 = new de(length, (byte) 9);
-            this.b = deVar2;
-        } else {
-            int i = length + 1;
-            deVar = new de(i, (byte) 9);
-            this.a = deVar;
-            deVar2 = new de(i, (byte) 9);
-            this.b = deVar2;
-            deVar.W(0L);
-            deVar2.W(0L);
+    public ip5(int i, int i2) {
+        this.a = i;
+        this.b = i2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        deVar.Y(jArr);
-        deVar2.Y(jArr2);
-        this.c = j;
-    }
-
-    @Override // ix9
-    public final boolean c() {
-        return this.b.b > 0;
-    }
-
-    @Override // ix9
-    public final boolean d() {
+        if (obj != null && ip5.class == obj.getClass()) {
+            ip5 ip5Var = (ip5) obj;
+            if (this.a == ip5Var.a && this.b == ip5Var.b) {
+                return true;
+            }
+        }
         return false;
     }
 
-    @Override // ix9
-    public final hx9 f(long j) {
-        de deVar = this.b;
-        if (deVar.b == 0) {
-            kx9 kx9Var = kx9.c;
-            return new hx9(kx9Var, kx9Var);
-        }
-        int c = hac.c(deVar, j);
-        long g0 = deVar.g0(c);
-        de deVar2 = this.a;
-        kx9 kx9Var2 = new kx9(g0, deVar2.g0(c));
-        if (g0 == j || c == deVar.b - 1) {
-            return new hx9(kx9Var2, kx9Var2);
-        }
-        int i = c + 1;
-        return new hx9(kx9Var2, new kx9(deVar.g0(i), deVar2.g0(i)));
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
     }
 
-    @Override // ix9
-    public final long h() {
-        return this.c;
-    }
-
-    public final void i(long j, long j2) {
-        de deVar = this.b;
-        int i = deVar.b;
-        de deVar2 = this.a;
-        if (i == 0 && j > 0) {
-            deVar2.W(0L);
-            deVar.W(0L);
-        }
-        deVar2.W(j2);
-        deVar.W(j);
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("IntSize(");
+        sb.append(this.a);
+        sb.append(", ");
+        return de9.l(sb, this.b, ")");
     }
 }

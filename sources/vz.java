@@ -1,32 +1,62 @@
 // default package
 
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.ui.ProfileActivity;
+import android.media.AudioRecord;
+import android.os.SystemClock;
+import org.telegram.utils.recorder.audio.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vz implements View.OnClickListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class vz implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ zx0 b;
+    public final /* synthetic */ d b;
 
-    public /* synthetic */ vz(zx0 zx0Var, byte b) {
+    public /* synthetic */ vz(d dVar, byte b) {
         this.a = b;
-        this.b = zx0Var;
+        this.b = dVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        zx0 zx0Var = this.b;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                zx0Var.run();
-                break;
+                d dVar = this.b;
+                try {
+                    if (dVar.n) {
+                        dVar.f(null);
+                        return;
+                    }
+                    byte b = 2;
+                    int minBufferSize = AudioRecord.getMinBufferSize(48000, 16, 2);
+                    if (minBufferSize <= 0) {
+                        minBufferSize = 7680;
+                    }
+                    int max = Math.max(minBufferSize << 1, 7680);
+                    AudioRecord audioRecord = new AudioRecord(0, 48000, 16, 2, max);
+                    dVar.p = audioRecord;
+                    if (audioRecord.getState() != 1) {
+                        throw new IllegalStateException("Unable to initialize AudioRecord");
+                    }
+                    dVar.p.startRecording();
+                    if (dVar.p.getRecordingState() != 3) {
+                        throw new IllegalStateException("Unable to start AudioRecord");
+                    }
+                    dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
+                    dVar.r = SystemClock.elapsedRealtime();
+                    m20 m20Var = dVar.g;
+                    ((h30) m20Var.c).i.post(new et(m20Var, m20Var.a, (byte) 1));
+                    dVar.i.post(new vz(dVar, b));
+                    return;
+                } catch (Throwable th) {
+                    dVar.f(d.a(th));
+                    return;
+                }
+            case 1:
+                this.b.f(null);
+                return;
+            case 2:
             default:
-                RectF rectF = ProfileActivity.e7;
-                zx0Var.run();
-                break;
+                this.b.c();
+                return;
         }
     }
 }

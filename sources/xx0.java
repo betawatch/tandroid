@@ -1,63 +1,72 @@
 // default package
 
-import android.os.Build;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import org.telegram.messenger.a;
+import android.animation.ValueAnimator;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum xx0 {
-    e(new long[]{7}, new int[]{65}, new long[]{60}),
-    f(new long[]{7}, new int[]{nm7.a2}, new long[]{70}),
-    h(new long[]{7}, new int[]{nm7.d4}, new long[]{80}),
-    n(new long[]{3}, new int[]{nm7.B3}, new long[]{50}),
-    r(new long[]{10}, new int[]{nm7.E2}, new long[]{55}),
-    s(new long[]{14, 48, 14, 48, 14, 48, 20}, new int[]{nm7.d3, 0, nm7.d3, 0, nm7.d4, 0, nm7.a2}, new long[]{40, 60, 40, 60, 65, 60, 40}),
-    w(new long[]{14, 65, 14}, new int[]{nm7.E2, 0, nm7.d4}, new long[]{50, 60, 65}),
-    x(new long[]{14, 64, 14}, new int[]{nm7.B3, 0, nm7.E2}, new long[]{65, 60, 40}),
-    y(new long[]{1}, new int[]{65}, new long[]{30}),
-    E(new long[]{30, 10, 150, 10}, new int[]{0, 100, 0, 100}, new long[]{40, 60, 40, 60, 65, 60, 40});
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class xx0 {
+    public final RectF a = new RectF();
+    public final yx0 b;
+    public final px0 c;
+    public final nx0 d;
+    public final Paint e;
+    public final Matrix f;
+    public final float[] g;
+    public final float[] h;
+    public float i;
+    public ValueAnimator j;
+    public final n41 k;
+    public final Paint l;
+    public final RectF m;
+    public final Path n;
+    public final Paint o;
+    public final RadialGradient p;
+    public final Matrix q;
+    public final Paint r;
 
-    public final long[] a;
-    public final int[] b;
-    public final long[] c;
-    public Object d;
-
-    xx0(long[] jArr, int[] iArr, long[] jArr2) {
-        this.a = jArr;
-        this.b = iArr;
-        this.c = jArr2;
+    public xx0(yx0 yx0Var, px0 px0Var, nx0 nx0Var) {
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new Matrix();
+        this.g = new float[8];
+        this.h = new float[8];
+        this.i = 0.0f;
+        this.l = new Paint(1);
+        this.m = new RectF();
+        this.n = new Path();
+        this.o = new Paint(3);
+        this.p = new RadialGradient(0.0f, 0.0f, 255.0f, new int[]{0, 805306368}, new float[]{0.5f, 1.0f}, Shader.TileMode.CLAMP);
+        this.q = new Matrix();
+        this.r = new Paint(1);
+        this.b = yx0Var;
+        this.c = px0Var;
+        this.d = nx0Var;
+        this.k = new n41(yx0Var);
+        paint.setColor(px0Var.r);
     }
 
-    public final void a() {
-        long[] jArr = this.c;
-        if (Build.VERSION.SDK_INT < 26) {
-            Vibrator vibrator = gm.J;
-            if (vibrator == null) {
-                vibrator = (Vibrator) a.b.getSystemService("vibrator");
-                gm.J = vibrator;
-            }
-            vibrator.vibrate(jArr, -1);
-            return;
+    public final void a(float f) {
+        ValueAnimator valueAnimator = this.j;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        Vibrator vibrator2 = gm.J;
-        if (vibrator2 == null) {
-            vibrator2 = (Vibrator) a.b.getSystemService("vibrator");
-            gm.J = vibrator2;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, f);
+        this.j = ofFloat;
+        ofFloat.addUpdateListener(new f0(this, (byte) 20));
+        this.j.addListener(new t7(this, f, (byte) 2));
+        float abs = Math.abs(f);
+        ValueAnimator valueAnimator2 = this.j;
+        if (abs < 0.1f) {
+            gl.n(valueAnimator2, 285.0d, 20.0d);
+        } else {
+            valueAnimator2.setInterpolator(s33.h);
         }
-        Vibrator vibrator3 = vibrator2;
-        if (this.d == null) {
-            if (vibrator3 == null) {
-                vibrator3 = (Vibrator) a.b.getSystemService("vibrator");
-                gm.J = vibrator3;
-            }
-            if (vibrator3.hasAmplitudeControl()) {
-                this.d = VibrationEffect.createWaveform(this.a, this.b, -1);
-            } else {
-                this.d = VibrationEffect.createWaveform(jArr, -1);
-            }
-        }
-        vibrator2.vibrate((VibrationEffect) this.d);
+        this.j.start();
     }
 }

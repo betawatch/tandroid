@@ -1,11 +1,19 @@
 // default package
 
-import android.content.DialogInterface;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public abstract class h5d extends y26 implements DialogInterface.OnCancelListener {
-    public abstract void a(ot2 ot2Var, int i);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class h5d implements IInterface {
+    public final IBinder a;
 
-    public abstract void b();
+    public h5d(IBinder iBinder) {
+        this.a = iBinder;
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
 }

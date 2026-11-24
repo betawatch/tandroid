@@ -1,169 +1,481 @@
 // default package
 
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.logging.Logger;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.text.Editable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class st3 extends rg0 {
-    public static final Logger p = Logger.getLogger(st3.class.getName());
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public String j;
-    public int k;
-    public int l;
-    public ha3 m;
-    public hq9 n;
-    public ArrayList o;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public class st3 extends EditTextBoldCursor {
+    public final Canvas M1;
+    public final TextPaint N1;
+    public final Paint O1;
+    public Bitmap P1;
+    public boolean Q1;
+    public int R1;
+    public float S1;
+    public int T1;
+    public final pw2 U1;
+    public RectF[] V1;
+    public RectF W1;
+    public boolean X1;
+    public float Y1;
+    public boolean Z1;
+    public int[] a2;
+    public long b2;
+    public int c2;
+    public Paint d2;
+    public final Path e2;
+    public final RectF f2;
+    public final RectF g2;
 
-    @Override // rg0
-    public final void b(ByteBuffer byteBuffer) {
-        this.d = jne.f(byteBuffer);
-        int a = jne.a(byteBuffer.get());
-        int i = a >>> 7;
-        this.e = i;
-        this.f = (a >>> 6) & 1;
-        this.g = (a >>> 5) & 1;
-        this.h = a & 31;
-        if (i == 1) {
-            this.k = jne.f(byteBuffer);
-        }
-        if (this.f == 1) {
-            int a2 = jne.a(byteBuffer.get());
-            this.i = a2;
-            byte[] bArr = new byte[a2];
-            byteBuffer.get(bArr);
-            try {
-                this.j = new String(bArr, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                throw new Error(e);
-            }
-        }
-        if (this.g == 1) {
-            this.l = jne.f(byteBuffer);
-        }
-        int i2 = this.c + 4 + (this.e == 1 ? 2 : 0) + (this.f == 1 ? this.i + 1 : 0) + (this.g == 1 ? 2 : 0);
-        int position = byteBuffer.position();
-        int a3 = a();
-        int i3 = i2 + 2;
-        Logger logger = p;
-        if (a3 > i3) {
-            rg0 a4 = bq7.a(-1, byteBuffer);
-            logger.finer(a4 + " - ESDescriptor1 read: " + (byteBuffer.position() - position) + ", size: " + Integer.valueOf(a4.a()));
-            int a5 = a4.a();
-            byteBuffer.position(position + a5);
-            i2 += a5;
-            if (a4 instanceof ha3) {
-                this.m = (ha3) a4;
-            }
-        }
-        int position2 = byteBuffer.position();
-        if (a() > i2 + 2) {
-            rg0 a6 = bq7.a(-1, byteBuffer);
-            logger.finer(a6 + " - ESDescriptor2 read: " + (byteBuffer.position() - position2) + ", size: " + Integer.valueOf(a6.a()));
-            int a7 = a6.a();
-            byteBuffer.position(position2 + a7);
-            i2 += a7;
-            if (a6 instanceof hq9) {
-                this.n = (hq9) a6;
-            }
-        } else {
-            logger.warning("SLConfigDescriptor is missing!");
-        }
-        while (a() - i2 > 2) {
-            int position3 = byteBuffer.position();
-            rg0 a8 = bq7.a(-1, byteBuffer);
-            logger.finer(a8 + " - ESDescriptor3 read: " + (byteBuffer.position() - position3) + ", size: " + Integer.valueOf(a8.a()));
-            int a9 = a8.a();
-            byteBuffer.position(position3 + a9);
-            i2 += a9;
-            this.o.add(a8);
+    public st3(Context context) {
+        super(context);
+        this.M1 = new Canvas();
+        TextPaint textPaint = new TextPaint(1);
+        this.N1 = textPaint;
+        this.O1 = new Paint(1);
+        this.U1 = new pw2();
+        this.c2 = TLObject.FLAG_31;
+        this.e2 = new Path();
+        this.f2 = new RectF();
+        this.g2 = new RectF();
+        this.R1 = 0;
+        setInputType(getInputType() | 655360);
+        this.Q1 = true;
+        this.X1 = true;
+        setFrameRoundRadius(gl.L(16.0f));
+        textPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+    }
+
+    private void setFrameRoundRadius(float f) {
+        if (Math.abs(this.Y1 - f) > 0.1f) {
+            this.Y1 = f;
+            this.O1.setPathEffect(new CornerPathEffect(f));
         }
     }
 
-    public final int c() {
-        int i = this.e > 0 ? 7 : 5;
-        if (this.f > 0) {
-            i += this.i + 1;
+    public final boolean A(long j) {
+        this.b2 = j;
+        if (this.a2 == null) {
+            return false;
         }
-        if (this.g > 0) {
-            i += 2;
+        int B = B(j);
+        if (B < 0) {
+            B = -1;
+        } else if (j - this.a2[(B << 2) + 2] < 240) {
+            B = -2;
         }
-        y40 y40Var = this.m.j;
-        int i2 = 0;
-        if (y40Var != null) {
-            if (y40Var.e != 2) {
-                rjb.j("can't serialize that yet");
-                return 0;
-            }
-            i2 = 4;
+        if (B == this.c2 && B != -2) {
+            return false;
         }
-        this.n.getClass();
-        return i2 + 15 + i + 3;
+        this.c2 = B;
+        invalidate();
+        return true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x0057, code lost:
-    
-        if (r2 == null) goto L34;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final int B(long j) {
+        int i;
+        int i2 = -1;
+        int i3 = 0;
+        while (true) {
+            int i4 = i3;
+            i = i2;
+            i2 = i4;
+            if ((i2 << 2) + 3 >= this.a2.length || r4[r2 + 2] > j) {
+                break;
+            }
+            i3 = i2 + 1;
         }
-        if (obj != null && st3.class == obj.getClass()) {
-            st3 st3Var = (st3) obj;
-            if (this.f == st3Var.f && this.i == st3Var.i && this.k == st3Var.k && this.d == st3Var.d && this.l == st3Var.l && this.g == st3Var.g && this.e == st3Var.e && this.h == st3Var.h) {
-                String str = this.j;
-                String str2 = st3Var.j;
-                if (str == null ? str2 == null : str.equals(str2)) {
-                    ha3 ha3Var = this.m;
-                    ha3 ha3Var2 = st3Var.m;
-                    if (ha3Var != null) {
-                        if (ha3Var != ha3Var2) {
-                            return false;
-                        }
-                    }
-                    ArrayList arrayList = this.o;
-                    ArrayList arrayList2 = st3Var.o;
-                    if (arrayList == null ? arrayList2 == null : arrayList.equals(arrayList2)) {
-                        hq9 hq9Var = this.n;
-                        hq9 hq9Var2 = st3Var.n;
-                        if (hq9Var != null) {
-                            if (hq9Var.equals(hq9Var2)) {
-                                return true;
-                            }
-                        } else if (hq9Var2 == null) {
-                            return true;
-                        }
-                    }
-                }
+        return i;
+    }
+
+    public final boolean C(Layout layout, int i, RectF rectF) {
+        int[] iArr = this.a2;
+        int i2 = i << 2;
+        int i3 = iArr[i2];
+        int i4 = iArr[i2 + 1];
+        if (i3 >= 0 && i3 < i4 && i4 <= layout.getText().length()) {
+            Path path = this.e2;
+            path.rewind();
+            layout.getSelectionPath(i3, i4, path);
+            path.computeBounds(rectF, false);
+            if (!rectF.isEmpty()) {
+                Paint.FontMetrics fontMetrics = getPaint().getFontMetrics();
+                float lineBaseline = layout.getLineBaseline(layout.getLineForOffset(i3));
+                float textSize = getTextSize() * 0.14f;
+                rectF.set(rectF.left - textSize, ((fontMetrics.ascent * 0.86f) + lineBaseline) - textSize, rectF.right + textSize, ir2.i(fontMetrics.descent, 0.9f, lineBaseline, textSize));
+                return true;
             }
         }
         return false;
     }
 
-    public final int hashCode() {
-        int i = ((((((((((this.d * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31) + this.h) * 31) + this.i) * 31;
-        String str = this.j;
-        int hashCode = (((((i + (str != null ? str.hashCode() : 0)) * 961) + this.k) * 31) + this.l) * 31;
-        ha3 ha3Var = this.m;
-        int hashCode2 = (hashCode + (ha3Var != null ? ha3Var.hashCode() : 0)) * 31;
-        hq9 hq9Var = this.n;
-        int i2 = (hashCode2 + (hq9Var != null ? hq9Var.d : 0)) * 31;
-        ArrayList arrayList = this.o;
-        return i2 + (arrayList != null ? arrayList.hashCode() : 0);
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0457  */
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        int B;
+        float f;
+        float f2;
+        Paint paint;
+        boolean z;
+        RectF rectF;
+        int i = 0;
+        if (this.P1 != null && this.R1 != 0) {
+            boolean z2 = this.Q1;
+            TextPaint textPaint = this.N1;
+            if (z2) {
+                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
+                int measuredHeight = getMeasuredHeight();
+                Editable text = getText();
+                Bitmap bitmap = this.P1;
+                Canvas canvas2 = this.M1;
+                canvas2.setBitmap(bitmap);
+                canvas2.drawColor(0, PorterDuff.Mode.CLEAR);
+                float f3 = this.S1;
+                if (f3 <= 0.0f) {
+                    f3 = (float) Math.ceil(getTextSize() / 11.5f);
+                }
+                textPaint.setStrokeWidth(f3);
+                textPaint.setColor(this.R1);
+                textPaint.setTextSize(getTextSize());
+                textPaint.setTypeface(getTypeface());
+                textPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+                Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+                if (getLayout() != null) {
+                    alignment = getLayout().getAlignment();
+                }
+                StaticLayout staticLayout = new StaticLayout(text, textPaint, measuredWidth, alignment, 1.0f, 0.0f, true);
+                canvas2.save();
+                canvas2.translate(getPaddingLeft(), ((((measuredHeight - getPaddingTop()) - getPaddingBottom()) - staticLayout.getHeight()) / 2.0f) + getPaddingTop());
+                staticLayout.draw(canvas2);
+                canvas2.restore();
+                this.Q1 = false;
+            }
+            canvas.drawBitmap(this.P1, 0.0f, 0.0f, textPaint);
+        }
+        float f4 = 1.0f;
+        if (this.T1 != 0) {
+            canvas.save();
+            canvas.translate(getPaddingLeft(), getPaddingTop());
+            int i2 = this.T1;
+            Paint paint2 = this.O1;
+            paint2.setColor(i2);
+            Layout layout = getLayout();
+            if (layout == null) {
+                super.onDraw(canvas);
+                return;
+            }
+            RectF[] rectFArr = this.V1;
+            if (rectFArr == null || rectFArr.length != layout.getLineCount()) {
+                this.V1 = new RectF[layout.getLineCount()];
+                this.X1 = true;
+            }
+            if (this.X1) {
+                this.X1 = false;
+                for (int i3 = 0; i3 < layout.getLineCount(); i3++) {
+                    RectF[] rectFArr2 = this.V1;
+                    if (rectFArr2[i3] == null) {
+                        rectFArr2[i3] = new RectF();
+                    }
+                    this.V1[i3].set(layout.getLineLeft(i3), layout.getLineTop(i3), layout.getLineRight(i3), layout.getLineBottom(i3));
+                    float width = this.V1[i3].width();
+                    float L = gl.L(1.0f);
+                    RectF[] rectFArr3 = this.V1;
+                    if (width > L) {
+                        rectFArr3[i3].inset(this.Z1 ? (-getTextSize()) * 0.26f : (-getTextSize()) / 3.0f, 0.0f);
+                        RectF rectF2 = this.V1[i3];
+                        rectF2.top = gl.N(1.2f) + rectF2.top;
+                        RectF rectF3 = this.V1[i3];
+                        rectF3.bottom = gl.N(1.0f) + rectF3.bottom;
+                        this.V1[i3].left = Math.max(getScrollX() - getPaddingLeft(), this.V1[i3].left);
+                        this.V1[i3].right = Math.min((getWidth() + getScrollX()) - getPaddingLeft(), this.V1[i3].right);
+                    } else {
+                        RectF rectF4 = rectFArr3[i3];
+                        rectF4.left = rectF4.right;
+                    }
+                    if (this.Z1 && this.V1[i3].width() > 0.0f) {
+                        Paint.FontMetrics fontMetrics = getPaint().getFontMetrics();
+                        float lineBaseline = layout.getLineBaseline(i3);
+                        float textSize = getTextSize() * 0.26f;
+                        this.V1[i3].top = Math.max(-getPaddingTop(), ((fontMetrics.ascent * 0.86f) + lineBaseline) - textSize);
+                        this.V1[i3].bottom = Math.min(getHeight() - getPaddingTop(), (fontMetrics.descent * 0.9f) + lineBaseline + textSize);
+                    }
+                    if (i3 > 0) {
+                        int i4 = i3 - 1;
+                        if (this.V1[i4].width() > 0.0f) {
+                            RectF[] rectFArr4 = this.V1;
+                            rectFArr4[i4].bottom = rectFArr4[i3].top;
+                        }
+                    }
+                }
+                RectF rectF5 = this.W1;
+                if (rectF5 == null) {
+                    rectF5 = new RectF();
+                    this.W1 = rectF5;
+                }
+                rectF5.left = getMeasuredWidth();
+                this.W1.top = getMeasuredHeight();
+                RectF rectF6 = this.W1;
+                rectF6.bottom = 0.0f;
+                rectF6.right = 0.0f;
+                int i5 = 0;
+                while (true) {
+                    int length = this.V1.length;
+                    rectF = this.W1;
+                    if (i5 >= length) {
+                        break;
+                    }
+                    rectF.left = Math.min(rectF.left, getPaddingLeft() + this.V1[i5].left);
+                    RectF rectF7 = this.W1;
+                    rectF7.top = Math.min(rectF7.top, getPaddingTop() + this.V1[i5].top);
+                    RectF rectF8 = this.W1;
+                    rectF8.right = Math.max(rectF8.right, getPaddingLeft() + this.V1[i5].right);
+                    RectF rectF9 = this.W1;
+                    rectF9.bottom = Math.max(rectF9.bottom, getPaddingTop() + this.V1[i5].bottom);
+                    i5++;
+                }
+                float measuredWidth2 = getMeasuredWidth();
+                RectF rectF10 = this.W1;
+                rectF.right = measuredWidth2 - rectF10.right;
+                rectF10.bottom = getMeasuredHeight() - this.W1.bottom;
+            }
+            pw2 pw2Var = this.U1;
+            pw2Var.rewind();
+            float textSize2 = getTextSize() / 3.0f;
+            float f5 = 1.5f * textSize2;
+            int i6 = 1;
+            while (true) {
+                RectF[] rectFArr5 = this.V1;
+                if (i6 >= rectFArr5.length) {
+                    break;
+                }
+                RectF rectF11 = rectFArr5[i6 - 1];
+                RectF rectF12 = rectFArr5[i6];
+                if (rectF11.width() >= gl.L(1.0f) && rectF12.width() >= gl.L(1.0f)) {
+                    if (Math.abs(rectF11.left - rectF12.left) < f5) {
+                        float min = Math.min(rectF12.left, rectF11.left);
+                        rectF11.left = min;
+                        rectF12.left = min;
+                        z = true;
+                    } else {
+                        z = false;
+                    }
+                    if (Math.abs(rectF11.right - rectF12.right) < f5) {
+                        float max = Math.max(rectF12.right, rectF11.right);
+                        rectF11.right = max;
+                        rectF12.right = max;
+                        z = true;
+                    }
+                    if (z) {
+                        for (int i7 = i6; i7 >= 1; i7--) {
+                            RectF[] rectFArr6 = this.V1;
+                            RectF rectF13 = rectFArr6[i7 - 1];
+                            RectF rectF14 = rectFArr6[i7];
+                            if (rectF13.width() >= gl.L(1.0f) && rectF14.width() >= gl.L(1.0f)) {
+                                if (Math.abs(rectF13.left - rectF14.left) < f5) {
+                                    float min2 = Math.min(rectF14.left, rectF13.left);
+                                    rectF13.left = min2;
+                                    rectF14.left = min2;
+                                }
+                                if (Math.abs(rectF13.right - rectF14.right) < f5) {
+                                    float max2 = Math.max(rectF14.right, rectF13.right);
+                                    rectF13.right = max2;
+                                    rectF14.right = max2;
+                                }
+                            }
+                        }
+                    }
+                }
+                i6++;
+            }
+            while (true) {
+                RectF[] rectFArr7 = this.V1;
+                if (i >= rectFArr7.length) {
+                    break;
+                }
+                if (rectFArr7[i].width() != 0.0f) {
+                    pw2Var.addRect(this.V1[i], Path.Direction.CW);
+                }
+                i++;
+            }
+            pw2Var.a();
+            setFrameRoundRadius(textSize2);
+            canvas.drawPath(pw2Var, paint2);
+            canvas.restore();
+        } else {
+            this.W1 = null;
+        }
+        Layout layout2 = getLayout();
+        if (this.a2 != null && layout2 != null && (B = B(this.b2)) >= 0) {
+            RectF rectF15 = this.f2;
+            if (C(layout2, B, rectF15)) {
+                long j = this.b2 - this.a2[(B << 2) + 2];
+                if (B > 0) {
+                    RectF rectF16 = this.g2;
+                    if (C(layout2, B - 1, rectF16) && Math.abs(rectF16.centerY() - rectF15.centerY()) < 1.0f) {
+                        if (j < 240) {
+                            float interpolation = s33.h.getInterpolation(j / 240.0f);
+                            rectF15.set(gl.R1(rectF16.left, rectF15.left, interpolation), gl.R1(rectF16.top, rectF15.top, interpolation), gl.R1(rectF16.right, rectF15.right, interpolation), gl.R1(rectF16.bottom, rectF15.bottom, interpolation));
+                            f = 1.0f - (((float) Math.sin(interpolation * 3.141592653589793d)) * 0.2f);
+                            float f6 = f4;
+                            f4 = f;
+                            f2 = f6;
+                            paint = this.d2;
+                            if (paint == null) {
+                                paint = new Paint(1);
+                                this.d2 = paint;
+                            }
+                            paint.setColor(bkb.p1(f2 * 0.3f, getCurrentTextColor()));
+                            float textSize3 = getTextSize() * 0.25f;
+                            canvas.save();
+                            canvas.translate(getPaddingLeft(), getPaddingTop());
+                            canvas.scale(f4, f4, rectF15.centerX(), rectF15.centerY());
+                            canvas.drawRoundRect(rectF15, textSize3, textSize3, this.d2);
+                            canvas.restore();
+                        } else {
+                            f2 = 1.0f;
+                            paint = this.d2;
+                            if (paint == null) {
+                            }
+                            paint.setColor(bkb.p1(f2 * 0.3f, getCurrentTextColor()));
+                            float textSize32 = getTextSize() * 0.25f;
+                            canvas.save();
+                            canvas.translate(getPaddingLeft(), getPaddingTop());
+                            canvas.scale(f4, f4, rectF15.centerX(), rectF15.centerY());
+                            canvas.drawRoundRect(rectF15, textSize32, textSize32, this.d2);
+                            canvas.restore();
+                        }
+                    }
+                }
+                f4 = s33.h.getInterpolation(Math.min(1.0f, j / 220.0f));
+                f = 0.75f + (f4 * 0.25f);
+                float f62 = f4;
+                f4 = f;
+                f2 = f62;
+                paint = this.d2;
+                if (paint == null) {
+                }
+                paint.setColor(bkb.p1(f2 * 0.3f, getCurrentTextColor()));
+                float textSize322 = getTextSize() * 0.25f;
+                canvas.save();
+                canvas.translate(getPaddingLeft(), getPaddingTop());
+                canvas.scale(f4, f4, rectF15.centerX(), rectF15.centerY());
+                canvas.drawRoundRect(rectF15, textSize322, textSize322, this.d2);
+                canvas.restore();
+            }
+        }
+        super.onDraw(canvas);
     }
 
-    public final String toString() {
-        return "ESDescriptor{esId=" + this.d + ", streamDependenceFlag=" + this.e + ", URLFlag=" + this.f + ", oCRstreamFlag=" + this.g + ", streamPriority=" + this.h + ", URLLength=" + this.i + ", URLString='" + this.j + "', remoteODFlag=0, dependsOnEsId=" + this.k + ", oCREsId=" + this.l + ", decoderConfigDescriptor=" + this.m + ", slConfigDescriptor=" + this.n + '}';
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onScrollChanged(int i, int i2, int i3, int i4) {
+        super.onScrollChanged(i, i2, i3, i4);
+        if (i != i3) {
+            this.X1 = true;
+            invalidate();
+        }
+    }
+
+    @Override // lt3, android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        if (i <= 0 || i2 <= 0) {
+            this.P1 = null;
+            return;
+        }
+        this.Q1 = true;
+        this.X1 = true;
+        Bitmap bitmap = this.P1;
+        if (bitmap != null) {
+            bitmap.recycle();
+        }
+        this.P1 = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        super.onTextChanged(charSequence, i, i2, i3);
+        this.Q1 = true;
+        this.X1 = true;
+    }
+
+    public void setFrameColor(int i) {
+        int i2 = this.T1;
+        if (i2 == 0 && i != 0) {
+            setPadding(gl.L(19.0f), gl.L(7.0f), gl.L(19.0f), gl.L(7.0f));
+            setCursorColor(-1);
+        } else if (i2 != 0 && i == 0) {
+            setPadding(gl.L(7.0f), gl.L(7.0f), gl.L(7.0f), gl.L(7.0f));
+            setCursorColor(-1);
+        }
+        this.T1 = i;
+        if (i != 0) {
+            float B = gl.B(i);
+            if (B == 0.0f) {
+                B = Color.red(this.T1) / 255.0f;
+            }
+            if (B > 0.87d) {
+                setTextColor(-16777216);
+            } else {
+                setTextColor(-1);
+            }
+            this.X1 = true;
+        }
+        this.Q1 = true;
+        invalidate();
+    }
+
+    @Override // android.widget.TextView
+    public void setGravity(int i) {
+        super.setGravity(i);
+        this.Q1 = true;
+        this.X1 = true;
+        invalidate();
+    }
+
+    public void setSpokenWords(int[] iArr) {
+        if (this.a2 == iArr) {
+            return;
+        }
+        this.a2 = iArr;
+        this.c2 = TLObject.FLAG_31;
+        invalidate();
+    }
+
+    public void setStrokeColor(int i) {
+        this.R1 = i;
+        this.Q1 = true;
+        invalidate();
+    }
+
+    public void setStrokeWidth(float f) {
+        this.S1 = f;
+        this.Q1 = true;
+        invalidate();
+    }
+
+    public void setTallFrame(boolean z) {
+        if (this.Z1 == z) {
+            return;
+        }
+        this.Z1 = z;
+        this.X1 = true;
+        invalidate();
     }
 }

@@ -1,14 +1,8 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class bje {
-    public static final mq5 a;
-
-    static {
-        int i = okd.r;
-        Object[] objArr = vnd.F;
-        new cpd("FIDO");
-        a = new mq5(Boolean.FALSE);
-    }
+public abstract class bje {
+    public static int a = 22336;
+    public static l15 b;
 }

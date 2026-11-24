@@ -1,47 +1,75 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
+import android.hardware.biometrics.BiometricPrompt;
+import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+import android.os.Build;
+import android.security.identity.IdentityCredential;
+import java.lang.ref.WeakReference;
+import java.security.Signature;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class q40 extends c4 {
-    public int f;
-    public byte h;
-    public long n;
+public final class q40 extends BiometricPrompt$AuthenticationCallback {
+    public final /* synthetic */ t40 a;
 
-    @Override // a2, pz0
-    public final void getBox(WritableByteChannel writableByteChannel) {
-        writableByteChannel.write(d());
-        ByteBuffer allocate = ByteBuffer.allocate(28);
-        allocate.position(6);
-        kne.d(1, allocate);
-        kne.d(0, allocate);
-        kne.d(0, allocate);
-        allocate.putInt(0);
-        kne.d(this.f, allocate);
-        kne.d(this.h, allocate);
-        kne.d(0, allocate);
-        kne.d(0, allocate);
-        boolean equals = this.e.equals("mlpa");
-        long j = this.n;
-        if (equals) {
-            allocate.putInt((int) j);
-        } else {
-            allocate.putInt((int) (j << 16));
+    public q40(t40 t40Var) {
+        this.a = t40Var;
+    }
+
+    public void onAuthenticationError(int i, CharSequence charSequence) {
+        this.a.a(i, charSequence);
+    }
+
+    public void onAuthenticationFailed() {
+        WeakReference weakReference = ((jj0) this.a).a;
+        if (weakReference.get() == null || !((lj0) weakReference.get()).l) {
+            return;
         }
-        writableByteChannel.write((ByteBuffer) allocate.rewind());
-        c(writableByteChannel);
+        lj0 lj0Var = (lj0) weakReference.get();
+        hh7 hh7Var = lj0Var.s;
+        if (hh7Var == null) {
+            hh7Var = new hh7();
+            lj0Var.s = hh7Var;
+        }
+        lj0.f(hh7Var, Boolean.TRUE);
     }
 
-    @Override // a2, pz0
-    public final long getSize() {
-        long b = b();
-        return 28 + b + (b + 36 >= 4294967296L ? 16 : 8);
+    public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
+        BiometricPrompt.CryptoObject cryptoObject;
+        IdentityCredential b;
+        gj0 gj0Var = null;
+        if (authenticationResult != null && (cryptoObject = authenticationResult.getCryptoObject()) != null) {
+            Cipher d = q33.d(cryptoObject);
+            if (d != null) {
+                gj0Var = new gj0(d);
+            } else {
+                Signature f = q33.f(cryptoObject);
+                if (f != null) {
+                    gj0Var = new gj0(f);
+                } else {
+                    Mac e = q33.e(cryptoObject);
+                    if (e != null) {
+                        gj0Var = new gj0(e);
+                    } else if (Build.VERSION.SDK_INT >= 30 && (b = r33.b(cryptoObject)) != null) {
+                        gj0Var = new gj0(b);
+                    }
+                }
+            }
+        }
+        int i = Build.VERSION.SDK_INT;
+        int i2 = -1;
+        if (i >= 30) {
+            if (authenticationResult != null) {
+                i2 = s40.a(authenticationResult);
+            }
+        } else if (i != 29) {
+            i2 = 2;
+        }
+        this.a.b(new fj0(gj0Var, i2));
     }
 
-    @Override // yh0
-    public final String toString() {
-        return "AudioSampleEntry{bytesPerSample=0, bytesPerFrame=0, bytesPerPacket=0, samplesPerPacket=0, packetSize=0, compressionId=0, soundVersion=0, sampleRate=" + this.n + ", sampleSize=" + ((int) this.h) + ", channelCount=" + this.f + ", boxes=" + this.b + '}';
+    public void onAuthenticationHelp(int i, CharSequence charSequence) {
     }
 }

@@ -1,60 +1,66 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.os.SystemClock;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mjb extends njb {
-    public Drawable E;
-    public int F;
-    public boolean G;
-    public final ylb x;
-    public ColorDrawable y;
-
-    public mjb(Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.x = ylbVar;
-    }
-
-    public void setBackground(boolean z) {
-        Context context = getContext();
-        int i = z ? R.drawable.greydivider_bottom : R.drawable.greydivider;
-        int i2 = cmb.a7;
-        ylb ylbVar = this.x;
-        Drawable V0 = cmb.V0(context, i, cmb.v0(i2, ylbVar));
-        ColorDrawable colorDrawable = new ColorDrawable(cmb.v0(cmb.Z6, ylbVar));
-        this.y = colorDrawable;
-        this.E = V0;
-        sn2 sn2Var = new sn2(colorDrawable, V0, 0, 0);
-        sn2Var.x = true;
-        setBackground(sn2Var);
-    }
-
-    @Override // njb, vlb
-    public final void updateColors() {
-        super.updateColors();
-        try {
-            ColorDrawable colorDrawable = this.y;
-            ylb ylbVar = this.x;
-            if (colorDrawable != null) {
-                colorDrawable.setColor(cmb.v0(cmb.Z6, ylbVar));
-            }
-            if (this.E != null) {
-                int v0 = cmb.v0(cmb.a7, ylbVar);
-                if (v0 == this.F && this.G) {
-                    return;
-                }
-                this.F = v0;
-                this.G = true;
-                this.E.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.MULTIPLY));
-            }
-        } catch (Exception e) {
-            fc4.g(e, true);
+public final class mjb implements SensorEventListener {
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        float ceil;
+        float f = sensorEvent.values[0];
+        if (f <= 0.0f) {
+            f = 0.1f;
         }
+        if (a.x || !a.w) {
+            return;
+        }
+        if (f > 500.0f) {
+            ceil = 1.0f;
+            bkb.h = 1.0f;
+        } else {
+            ceil = ((float) Math.ceil((Math.log(f) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
+            bkb.h = ceil;
+        }
+        if (ceil > bkb.q) {
+            if (bkb.k) {
+                bkb.k = false;
+                gl.r(bkb.m);
+            }
+            if (bkb.j) {
+                return;
+            }
+            bkb.j = true;
+            gl.d3(bkb.l, Math.abs(bkb.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+            return;
+        }
+        MediaController w = MediaController.w();
+        if (w.J) {
+            if (w.E()) {
+                return;
+            }
+            k27 k27Var = w.v0;
+            if (k27Var != null && (k27.Q4(k27Var.k) || w.v0.g4())) {
+                return;
+            }
+        }
+        if (bkb.j) {
+            bkb.j = false;
+            gl.r(bkb.l);
+        }
+        if (bkb.k) {
+            return;
+        }
+        bkb.k = true;
+        gl.d3(bkb.m, Math.abs(bkb.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

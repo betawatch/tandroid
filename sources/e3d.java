@@ -1,34 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.app.AlertDialog;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class e3d extends s3d {
-    public final /* synthetic */ byte b = 0;
-    public final /* synthetic */ Object c;
+public final class e3d extends wye {
+    public final /* synthetic */ AlertDialog a;
+    public final /* synthetic */ xia b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e3d(f3d f3dVar, f3d f3dVar2) {
-        super(f3dVar2);
-        this.c = f3dVar;
-    }
-
-    @Override // s3d
-    public final void a() {
-        byte b = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                ((f3d) obj).I0(1);
-                break;
-            default:
-                ((fh0) obj).a(new ot2(16, null, null));
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e3d(i3d i3dVar, r3d r3dVar, fh0 fh0Var) {
-        super(r3dVar);
-        this.c = fh0Var;
+    public e3d(xia xiaVar, AlertDialog alertDialog) {
+        this.a = alertDialog;
+        this.b = xiaVar;
     }
 }

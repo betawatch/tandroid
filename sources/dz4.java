@@ -1,50 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class dz4 {
-    public final float a;
-    public final int b;
-    public final float c;
-    public final int d;
-    public final float e;
-    public final int f;
-    public final float g;
-    public final float h;
-    public final float i;
-    public final float j;
-    public final float k;
-    public final int l;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-    public dz4(float f, int i, float f2, int i2, float f3, int i3, float f4, float f5, float f6, float f7, float f8, int i4) {
-        this.a = f;
-        this.b = i;
-        this.c = f2;
-        this.d = i2;
-        this.e = f3;
-        this.f = i3;
-        this.g = f4;
-        this.h = f5;
-        this.i = f6;
-        this.j = f7;
-        this.k = f8;
-        this.l = i4;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class dz4 extends b4 {
+    public static final Parcelable.Creator<dz4> CREATOR = new t4d((byte) 16);
+    public final boolean a;
+
+    public dz4(boolean z) {
+        this.a = z;
     }
 
-    public final boolean a() {
-        if (this.e <= 0.05f || (this.f >>> 24) == 0) {
-            return false;
-        }
-        return this.g > 0.0f || this.h > 0.0f || this.i > 0.0f;
+    public final boolean equals(Object obj) {
+        return (obj instanceof dz4) && this.a == ((dz4) obj).a;
     }
 
-    public final boolean b() {
-        float f = this.g;
-        float f2 = this.i;
-        return f == f2 && this.h == f2;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
     }
 
-    public dz4(float f, int i, float f2, int i2, float f3, int i3, float f4, float f5, float f6, float f7) {
-        this(f, i, f2, i2, f3, i3, f4, f5, f6, f7, 0.0f, 0);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        jte.s(parcel, r);
     }
 }

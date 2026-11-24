@@ -1,35 +1,30 @@
 // default package
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class gxb extends k69 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sxb b;
+public final class gxb {
+    public static final gxb a;
+    public static final gxb b;
+    public static final gxb c;
+    public static final /* synthetic */ gxb[] d;
 
-    public /* synthetic */ gxb(sxb sxbVar, byte b) {
-        this.a = b;
-        this.b = sxbVar;
+    static {
+        gxb gxbVar = new gxb("TOP", 0);
+        a = gxbVar;
+        gxb gxbVar2 = new gxb("LEFT", 1);
+        b = gxbVar2;
+        gxb gxbVar3 = new gxb("BOTTOM", 2);
+        c = gxbVar3;
+        d = new gxb[]{gxbVar, gxbVar2, gxbVar3};
     }
 
-    @Override // k69
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        mr3 mr3Var;
-        byte b = this.a;
-        sxb sxbVar = this.b;
-        switch (b) {
-            case 0:
-                sxbVar.z0();
-                break;
-            default:
-                if (Build.VERSION.SDK_INT >= 31 && (mr3Var = sxbVar.i1) != null) {
-                    mr3Var.f(i, i2);
-                    sxbVar.y0();
-                    break;
-                }
-                break;
-        }
+    public static gxb valueOf(String str) {
+        return (gxb) Enum.valueOf(gxb.class, str);
+    }
+
+    public static gxb[] values() {
+        return (gxb[]) d.clone();
     }
 }

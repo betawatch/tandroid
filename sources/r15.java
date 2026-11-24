@@ -1,270 +1,306 @@
 // default package
 
+import android.content.Context;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.Arrays;
+import org.json.JSONArray;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.o;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.NotificationsCustomSettingsActivity;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class r15 implements RequestDelegate {
+public final /* synthetic */ class r15 implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Serializable c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ r15(Object obj, byte b) {
+    public /* synthetic */ r15(mr1 mr1Var, boolean[] zArr, String str, LinearLayout linearLayout, ArrayList arrayList, String str2, b1c b1cVar, m8 m8Var, ArrayList arrayList2) {
+        this.a = (byte) 4;
+        this.b = mr1Var;
+        this.h = zArr;
+        this.c = str;
+        this.e = linearLayout;
+        this.d = arrayList;
+        this.n = str2;
+        this.r = b1cVar;
+        this.s = m8Var;
+        this.f = arrayList2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        String E0;
+        byte b = this.a;
+        Object obj = this.f;
+        Object obj2 = this.s;
+        Object obj3 = this.r;
+        Object obj4 = this.n;
+        Object obj5 = this.d;
+        Object obj6 = this.e;
+        Object obj7 = this.c;
+        Object obj8 = this.h;
+        Object obj9 = this.b;
+        switch (b) {
+            case 0:
+                w25 w25Var = (w25) obj9;
+                y05 y05Var = (y05) obj8;
+                TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj6;
+                String str2 = (String) obj7;
+                byte[] bArr = (byte[]) obj5;
+                JSONArray jSONArray = (JSONArray) obj4;
+                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) obj3;
+                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj2;
+                ae2 ae2Var = (ae2) obj;
+                w25Var.getClass();
+                try {
+                    gl.c3(new e57((Object) w25Var, str2, (Object) bArr, (Object) w25.s(y05Var, tonconnectsession, str2, bArr, jSONArray, tL_urlAuthResultRequest.domain, null, tonconnectchallenge, w25Var.f.getCurrentTime()), (Object) ae2Var, (Object) tonconnectsession, (byte) 11));
+                    break;
+                } catch (Exception e) {
+                    ae2Var.a(null, w25.h("prepare OAuth connect", e));
+                    return;
+                }
+            case 1:
+                final w25 w25Var2 = (w25) obj9;
+                final String str3 = (String) obj7;
+                final byte[] bArr2 = (byte[]) obj5;
+                final TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj6;
+                String str4 = ((t25) obj2).a;
+                final ae2 ae2Var2 = (ae2) obj;
+                final y05 y05Var2 = (y05) obj8;
+                final JSONArray jSONArray2 = (JSONArray) obj4;
+                final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest2 = (TLRPC.TL_urlAuthResultRequest) obj3;
+                c cVar = w25Var2.b;
+                if (!TextUtils.equals(str3, cVar.x()) || !Arrays.equals(bArr2, cVar.D()) || ((str = tonconnectsession2.client_id) != null && !str4.equalsIgnoreCase(str))) {
+                    ae2Var2.a(null, "Wallet or TON Connect session changed. Open the request again.");
+                    break;
+                } else {
+                    TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();
+                    tonconnectregisterkey.session_id = tonconnectsession2.id;
+                    tonconnectregisterkey.client_id = str4;
+                    w25Var2.f.sendRequestTyped(tonconnectregisterkey, new hc((byte) 0), new i8c() { // from class: q15
+                        @Override // i8c
+                        public final void a(Object obj10, Object obj11) {
+                            w25 w25Var3 = w25.this;
+                            ae2 ae2Var3 = ae2Var2;
+                            y05 y05Var3 = y05Var2;
+                            TL_wallet.tonConnectSession tonconnectsession3 = tonconnectsession2;
+                            String str5 = str3;
+                            byte[] bArr3 = bArr2;
+                            JSONArray jSONArray3 = jSONArray2;
+                            TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest3 = tL_urlAuthResultRequest2;
+                            TL_wallet.tonConnectChallenge tonconnectchallenge2 = (TL_wallet.tonConnectChallenge) obj10;
+                            TLRPC.TL_error tL_error = (TLRPC.TL_error) obj11;
+                            w25Var3.getClass();
+                            if (tL_error != null || tonconnectchallenge2 == null) {
+                                ae2Var3.a(null, w25.z(tL_error, "registerKey"));
+                            } else {
+                                Utilities.e.c(new r15(w25Var3, y05Var3, tonconnectsession3, str5, bArr3, jSONArray3, tL_urlAuthResultRequest3, tonconnectchallenge2, ae2Var3, (byte) 0));
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
+            case 2:
+                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj9;
+                ArrayList arrayList = (ArrayList) obj5;
+                ArrayList arrayList2 = (ArrayList) obj4;
+                ArrayList arrayList3 = (ArrayList) obj3;
+                ArrayList arrayList4 = (ArrayList) obj2;
+                ArrayList arrayList5 = (ArrayList) obj;
+                notificationsCustomSettingsActivity.getMessagesController().b4((ArrayList) obj8, true);
+                notificationsCustomSettingsActivity.getMessagesController().V3((ArrayList) obj6, true);
+                notificationsCustomSettingsActivity.getMessagesController().Y3((ArrayList) obj7);
+                int i = notificationsCustomSettingsActivity.s;
+                if (i == 1) {
+                    notificationsCustomSettingsActivity.x = arrayList;
+                } else if (i == 0) {
+                    notificationsCustomSettingsActivity.x = arrayList2;
+                } else if (i == 3) {
+                    notificationsCustomSettingsActivity.x = arrayList3;
+                    notificationsCustomSettingsActivity.w = arrayList4;
+                } else {
+                    notificationsCustomSettingsActivity.x = arrayList5;
+                }
+                notificationsCustomSettingsActivity.p0(true);
+                break;
+            case 3:
+                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest3 = (TLRPC.TL_urlAuthResultRequest) obj3;
+                fx0 fx0Var = (fx0) obj9;
+                fx0[] fx0VarArr = (fx0[]) obj8;
+                Context context = (Context) obj6;
+                int[] iArr = (int[]) obj7;
+                wjb wjbVar = (wjb) obj5;
+                boolean[] zArr = (boolean[]) obj4;
+                TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj2;
+                jf jfVar = (jf) obj;
+                if (!tL_urlAuthResultRequest3.request_wallet) {
+                    un7.a = fx0Var;
+                    fx0Var.show();
+                    break;
+                } else {
+                    cj7 D = w25.D(context, iArr[0], null, tL_urlAuthResultRequest3, wjbVar, new f25(fx0VarArr, zArr, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest3, fx0Var, jfVar, (byte) 4), new bj7(fx0VarArr, zArr, (byte) 11));
+                    fx0VarArr[0] = D;
+                    un7.a = D;
+                    break;
+                }
+            default:
+                final mr1 mr1Var = (mr1) obj9;
+                boolean[] zArr2 = (boolean[]) obj8;
+                String str5 = (String) obj7;
+                LinearLayout linearLayout = (LinearLayout) obj6;
+                ArrayList arrayList6 = (ArrayList) obj5;
+                String str6 = (String) obj4;
+                final b1c b1cVar = (b1c) obj3;
+                final m8 m8Var = (m8) obj2;
+                ArrayList arrayList7 = (ArrayList) obj;
+                if (!zArr2[0]) {
+                    if (str5 != null && (E0 = rzb.E0(rzb.J0(str5, null, null))) != null) {
+                        a8 a8Var = new a8(2, mr1Var.d, mr1Var.getContext(), false, false);
+                        a8Var.setChecked(true);
+                        a8Var.setText(E0);
+                        linearLayout.addView(a8Var);
+                    }
+                    int size = arrayList6.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        Object obj10 = arrayList6.get(i2);
+                        i2++;
+                        u0c u0cVar = (u0c) obj10;
+                        final String str7 = u0cVar.a;
+                        if (!TextUtils.equals(str7, str6)) {
+                            a8 a8Var2 = new a8(2, mr1Var.d, mr1Var.getContext(), false, false);
+                            boolean z = str5 != null && str5.equals(str7);
+                            a8Var2.setChecked(z);
+                            a8Var2.setText(u0cVar.b);
+                            if (!z) {
+                                final byte b2 = 0;
+                                a8Var2.setOnClickListener(new View.OnClickListener() { // from class: d0c
+                                    @Override // android.view.View.OnClickListener
+                                    public final void onClick(View view) {
+                                        byte b3 = b2;
+                                        m8 m8Var2 = m8Var;
+                                        String str8 = str7;
+                                        b1c b1cVar2 = b1cVar;
+                                        mr1 mr1Var2 = mr1Var;
+                                        switch (b3) {
+                                            case 0:
+                                                b1cVar2.I(mr1Var2.b, str8);
+                                                m8Var2.d(true);
+                                                mr1Var2.b();
+                                                break;
+                                            default:
+                                                b1cVar2.I(mr1Var2.b, str8);
+                                                m8Var2.d(true);
+                                                mr1Var2.b();
+                                                break;
+                                        }
+                                    }
+                                });
+                            }
+                            linearLayout.addView(a8Var2);
+                        }
+                    }
+                    linearLayout.addView(new j8(mr1Var.getContext(), mr1Var.d), nme.o(-1, 8));
+                    int size2 = arrayList7.size();
+                    int i3 = 0;
+                    while (i3 < size2) {
+                        Object obj11 = arrayList7.get(i3);
+                        i3++;
+                        u0c u0cVar2 = (u0c) obj11;
+                        final String str8 = u0cVar2.a;
+                        if (!TextUtils.equals(str8, str6)) {
+                            boolean z2 = str5 != null && str5.equals(str8);
+                            a8 a8Var3 = new a8(2, mr1Var.d, mr1Var.getContext(), false, false);
+                            a8Var3.setChecked(z2);
+                            a8Var3.setText(u0cVar2.b);
+                            if (!z2) {
+                                final byte b3 = 1;
+                                a8Var3.setOnClickListener(new View.OnClickListener() { // from class: d0c
+                                    @Override // android.view.View.OnClickListener
+                                    public final void onClick(View view) {
+                                        byte b32 = b3;
+                                        m8 m8Var2 = m8Var;
+                                        String str82 = str8;
+                                        b1c b1cVar2 = b1cVar;
+                                        mr1 mr1Var2 = mr1Var;
+                                        switch (b32) {
+                                            case 0:
+                                                b1cVar2.I(mr1Var2.b, str82);
+                                                m8Var2.d(true);
+                                                mr1Var2.b();
+                                                break;
+                                            default:
+                                                b1cVar2.I(mr1Var2.b, str82);
+                                                m8Var2.d(true);
+                                                mr1Var2.b();
+                                                break;
+                                        }
+                                    }
+                                });
+                            }
+                            linearLayout.addView(a8Var3);
+                        }
+                    }
+                    zArr2[0] = true;
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ r15(w25 w25Var, String str, byte[] bArr, TL_wallet.tonConnectSession tonconnectsession, t25 t25Var, ae2 ae2Var, y05 y05Var, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
+        this.a = (byte) 1;
+        this.b = w25Var;
+        this.c = str;
+        this.d = bArr;
+        this.e = tonconnectsession;
+        this.s = t25Var;
+        this.f = ae2Var;
+        this.h = y05Var;
+        this.n = jSONArray;
+        this.r = tL_urlAuthResultRequest;
+    }
+
+    public /* synthetic */ r15(Object obj, Object obj2, Object obj3, Serializable serializable, Object obj4, Object obj5, Object obj6, Object obj7, Object obj8, byte b) {
         this.a = b;
         this.b = obj;
+        this.h = obj2;
+        this.e = obj3;
+        this.c = serializable;
+        this.d = obj4;
+        this.n = obj5;
+        this.r = obj6;
+        this.s = obj7;
+        this.f = obj8;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e9  */
-    @Override // org.telegram.tgnet.RequestDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        boolean z;
-        byte b;
-        String str;
-        int size;
-        int i;
-        byte b2;
-        String[] strArr;
-        TLObject tLObject2 = tLObject;
-        byte b3 = this.a;
-        byte b4 = 14;
-        byte b5 = 26;
-        byte b6 = 2;
-        String str2 = null;
-        byte b7 = 20;
-        byte b8 = 29;
-        byte b9 = 25;
-        byte b10 = 0;
-        Object obj = this.b;
-        switch (b3) {
-            case 0:
-                gm.c3(new ve4((t15) obj, tLObject2, (byte) 17));
-                break;
-            case 1:
-                gm.c3(new if4(obj, (Object) tL_error, (Object) tLObject2, (byte) 19));
-                break;
-            case 2:
-                i85 i85Var = (i85) obj;
-                if (tLObject2 instanceof TLRPC.TL_updates) {
-                    oc7.r1(i85Var.b.n1.a).T3((TLRPC.TL_updates) tLObject2, false);
-                    break;
-                }
-                break;
-            case 3:
-                gm.c3(new ve4((kd5) obj, tL_error, b8));
-                break;
-            case 4:
-                gm.c3(new fd5((xs5) obj, tLObject2, b4));
-                break;
-            case 5:
-                gm.c3(new if4((it5) obj, tL_error, tLObject2, b8));
-                break;
-            case 6:
-                gm.c3(new k16((a66) obj, tLObject2, (byte) 4));
-                break;
-            case 7:
-                gm.c3(new k16((ag6) obj, tL_error, (byte) 21));
-                break;
-            case 8:
-                gm.c3(new dt5((rg6) obj, tL_error, tLObject2, (byte) 24));
-                break;
-            case 9:
-                gm.c3(new dt5((wg6) obj, tLObject2, tL_error, b5));
-                break;
-            case 10:
-                gm.c3(new fp6((n57) obj, tL_error, tLObject2, b4));
-                break;
-            case 11:
-                gm.c3(new vt2((Runnable) obj, (byte) 3));
-                break;
-            case 12:
-                cc7 cc7Var = (cc7) obj;
-                TLRPC.ChannelParticipant channelParticipant = tLObject2 instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject2).participant : null;
-                boolean z2 = (tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true;
-                if (channelParticipant != null) {
-                    TLRPC.TL_chatAdminRights tL_chatAdminRights2 = channelParticipant.admin_rights;
-                    str2 = channelParticipant.rank;
-                    tL_chatAdminRights = tL_chatAdminRights2;
-                } else {
-                    tL_chatAdminRights = null;
-                }
-                cc7Var.a(z2, tL_chatAdminRights, str2);
-                break;
-            case 13:
-                gm.c3(new q87((ic7) obj, tLObject2, (byte) 16));
-                break;
-            case 14:
-                jc7 jc7Var = (jc7) obj;
-                ArrayList arrayList = new ArrayList();
-                if (tLObject2 instanceof TLRPC.TL_savedMusic) {
-                    ArrayList<TLRPC.Document> arrayList2 = ((TLRPC.TL_savedMusic) tLObject2).documents;
-                    int size2 = arrayList2.size();
-                    int i2 = 0;
-                    while (i2 < size2) {
-                        TLRPC.Document document = arrayList2.get(i2);
-                        i2++;
-                        arrayList.add(jc7Var.d(document));
-                    }
-                }
-                gm.c3(new fp6((Object) jc7Var, tLObject2, arrayList, b5));
-                break;
-            case 15:
-                gm.c3(new kl7((NotificationsSettingsActivity) obj, b6));
-                break;
-            case 16:
-                gm.c3(new ud7(obj, (Object) tL_error, (Object) tLObject2, (byte) 11));
-                break;
-            case 17:
-                sz7 sz7Var = (sz7) obj;
-                if (tL_error != null && tL_error.text != null) {
-                    gm.c3(new bl7(sz7Var, tL_error, b9));
-                    break;
-                }
-                break;
-            case 18:
-                gm.c3(new a18((ai8) obj, tLObject2, b7));
-                break;
-            case 19:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
-                premiumPreviewFragment.getClass();
-                gm.c3(new ak8((Object) premiumPreviewFragment, (Object) tL_error, (Object) tLObject2, (byte) 0));
-                break;
-            case 20:
-                gm.c3(new a18((PrivacyControlActivity) obj, tLObject2, b9));
-                break;
-            case 21:
-                PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) obj;
-                if (tLObject2 != null) {
-                    gm.c3(new a18(privacySettingsActivity, (TL_account.Password) tLObject2, (byte) 27));
-                    break;
-                }
-                break;
-            case 22:
-                uq8 uq8Var = (uq8) obj;
-                int i3 = uq8Var.f;
-                if (tLObject2 instanceof TLRPC.TL_messages_webPage) {
-                    TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject2;
-                    oc7.r1(i3).d4(tL_messages_webPage.users, false);
-                    oc7.r1(i3).X3(tL_messages_webPage.chats, false);
-                    tLObject2 = tL_messages_webPage.webpage;
-                }
-                if (tLObject2 instanceof TLRPC.WebPage) {
-                    ArrayList arrayList3 = new ArrayList();
-                    TLRPC.WebPage webPage = (TLRPC.WebPage) tLObject2;
-                    TL_iv.Page page = webPage.cached_page;
-                    if (page != null) {
-                        int size3 = page.blocks.size();
-                        int i4 = 0;
-                        while (true) {
-                            if (i4 < size3) {
-                                TL_iv.PageBlock pageBlock = webPage.cached_page.blocks.get(i4);
-                                if (pageBlock instanceof TL_iv.pageBlockList) {
-                                    if (i4 != 0) {
-                                        TL_iv.PageBlock pageBlock2 = webPage.cached_page.blocks.get(i4 - 1);
-                                        if (pageBlock2 instanceof TL_iv.pageBlockParagraph) {
-                                            str = o.y(((TL_iv.pageBlockParagraph) pageBlock2).text).toString();
-                                            TL_iv.pageBlockList pageblocklist = (TL_iv.pageBlockList) pageBlock;
-                                            size = pageblocklist.items.size();
-                                            i = b10;
-                                            while (i < size) {
-                                                TL_iv.PageListItem pageListItem = pageblocklist.items.get(i);
-                                                if (pageListItem instanceof TL_iv.TL_pageListItemText) {
-                                                    TL_iv.TL_pageListItemText tL_pageListItemText = (TL_iv.TL_pageListItemText) pageListItem;
-                                                    String C = o.C(tL_pageListItemText.text);
-                                                    String charSequence = o.y(tL_pageListItemText.text).toString();
-                                                    if (!TextUtils.isEmpty(C) && !TextUtils.isEmpty(charSequence)) {
-                                                        b2 = b10;
-                                                        if (str != null) {
-                                                            strArr = new String[2];
-                                                            strArr[b2] = jb6.M0(2131745202, null);
-                                                            strArr[1] = str;
-                                                        } else {
-                                                            strArr = new String[1];
-                                                            strArr[b2] = jb6.M0(2131745202, null);
-                                                        }
-                                                        arrayList3.add(new bc7(charSequence, strArr, C));
-                                                        i++;
-                                                        b10 = b2;
-                                                    }
-                                                }
-                                                b2 = b10;
-                                                i++;
-                                                b10 = b2;
-                                            }
-                                            b = b10;
-                                        }
-                                    }
-                                    str = null;
-                                    TL_iv.pageBlockList pageblocklist2 = (TL_iv.pageBlockList) pageBlock;
-                                    size = pageblocklist2.items.size();
-                                    i = b10;
-                                    while (i < size) {
-                                    }
-                                    b = b10;
-                                } else {
-                                    b = b10;
-                                    if (!(pageBlock instanceof TL_iv.pageBlockAnchor)) {
-                                    }
-                                }
-                                i4++;
-                                b10 = b;
-                            } else {
-                                b = b10;
-                            }
-                        }
-                        uq8Var.F = webPage;
-                    } else {
-                        b = 0;
-                    }
-                    gm.c3(new mn8(uq8Var, arrayList3, (byte) 17));
-                    z = b;
-                } else {
-                    z = 0;
-                }
-                uq8Var.G = z;
-                break;
-            case 23:
-                gm.c3(new ey8((pz8) obj, tLObject2, (byte) 5));
-                break;
-            case 24:
-                p19 p19Var = (p19) obj;
-                if (tLObject2 instanceof TLRPC.TL_messages_messageReactionsList) {
-                    TLRPC.TL_messages_messageReactionsList tL_messages_messageReactionsList = (TLRPC.TL_messages_messageReactionsList) tLObject2;
-                    int i5 = tL_messages_messageReactionsList.count;
-                    tL_messages_messageReactionsList.users.size();
-                    p19Var.post(new h65(p19Var, i5, tL_messages_messageReactionsList, b8));
-                    break;
-                }
-                break;
-            case 25:
-                gm.c3(new t19((c29) obj, tLObject2, b10));
-                break;
-            case 26:
-                gm.c3(new ey8((gd9) obj, tLObject2, b7));
-                break;
-            case 27:
-                gm.c3(new ey8((fi9) obj, tLObject2, b9));
-                break;
-            case 28:
-                gm.c3(new ey8((kl9) obj, tLObject2, (byte) 28));
-                break;
-            default:
-                gm.c3(new ak8(obj, tLObject2, (Object) tL_error, (byte) 18));
-                break;
-        }
+    public /* synthetic */ r15(TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, fx0 fx0Var, fx0[] fx0VarArr, Context context, int[] iArr, wjb wjbVar, boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, jf jfVar) {
+        this.a = (byte) 3;
+        this.r = tL_urlAuthResultRequest;
+        this.b = fx0Var;
+        this.h = fx0VarArr;
+        this.e = context;
+        this.c = iArr;
+        this.d = wjbVar;
+        this.n = zArr;
+        this.s = inputtonconnectoauthsessionArr;
+        this.f = jfVar;
     }
 }

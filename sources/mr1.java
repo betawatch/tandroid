@@ -1,30 +1,15 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mr1 implements ue7 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ nr1 b;
+public final class mr1 extends g0c {
+    public final /* synthetic */ mu1 E;
 
-    public mr1(nr1 nr1Var, boolean z) {
-        this.b = nr1Var;
-        this.a = z;
-    }
-
-    @Override // ue7
-    public final void z(boolean z) {
-        yv1 yv1Var = this.b.b;
-        if (z) {
-            TLRPC.User user = yv1Var.f;
-            boolean z2 = this.a;
-            if (user != null || z2) {
-                cf7 messagesStorage = yv1Var.getMessagesStorage();
-                messagesStorage.a.c(new fe7(messagesStorage, yv1Var.l6, new lr1((byte) 1, this, z2), (byte) 0));
-                return;
-            }
-        }
-        yv1Var.Ha(yv1Var.s4, z);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mr1(mu1 mu1Var, Activity activity, mu1 mu1Var2, wjb wjbVar) {
+        super(mu1Var2, wjbVar, activity);
+        this.E = mu1Var;
     }
 }

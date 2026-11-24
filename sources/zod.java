@@ -1,36 +1,62 @@
 // default package
 
-import android.os.Build;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public abstract class zod {
-    public static int a(hk0 hk0Var, gk0 gk0Var) {
-        byte b = hk0Var.d;
-        if (b != 0) {
-            return b;
+    public static boolean a;
+    public static boolean b;
+    public static ArrayList c;
+    public static LongSparseArray d;
+    public static ArrayList e;
+
+    public static ArrayList a(p8c p8cVar) {
+        boolean z;
+        if (p8cVar == null || b) {
+            z = false;
+        } else {
+            ArrayList arrayList = e;
+            if (arrayList == null) {
+                arrayList = new ArrayList();
+                e = arrayList;
+            }
+            arrayList.add(p8cVar);
+            z = true;
         }
-        if (gk0Var != null) {
-            return 15;
+        b();
+        if (z) {
+            return null;
         }
-        return nm7.d4;
+        return c;
     }
 
-    public static boolean b(int i) {
-        return (i & 32768) != 0;
+    public static void b() {
+        if (a || b) {
+            return;
+        }
+        a = true;
+        c = new ArrayList();
+        d = new LongSparseArray();
+        Utilities.e.c(new jc((byte) 12));
     }
 
-    public static boolean c(int i) {
-        if (i == 15 || i == 255) {
-            return true;
+    public static void c(e01 e01Var) {
+        if (e01Var == null || e01Var.d == null) {
+            return;
         }
-        if (i == 32768) {
-            return Build.VERSION.SDK_INT >= 30;
+        b();
+        e01 e01Var2 = (e01) d.get(e01Var.a);
+        if (e01Var2 != null) {
+            e01Var2.d = e01Var.d;
+        } else {
+            c.add(e01Var);
+            d.put(e01Var.a, e01Var);
         }
-        if (i != 32783) {
-            return i == 33023 || i == 0;
-        }
-        int i2 = Build.VERSION.SDK_INT;
-        return i2 < 28 || i2 > 29;
+        byte b2 = 11;
+        gl.r(new jc(b2));
+        gl.d3(new jc(b2), 1000L);
     }
 }

@@ -1,47 +1,76 @@
 // default package
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.NavigableMap;
+import java.util.RandomAccess;
+import java.util.Set;
+import java.util.SortedMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class wg7 extends tg7 implements ScheduledExecutorService {
-    public final ScheduledExecutorService b;
+public final class wg7 extends q3 implements Serializable {
+    public final transient Map e;
+    public transient int f;
+    public transient vg7 h;
 
-    public wg7(ScheduledExecutorService scheduledExecutorService) {
-        super(scheduledExecutorService);
-        this.b = scheduledExecutorService;
+    public wg7(Map map) {
+        gre.f(map.isEmpty());
+        this.e = map;
     }
 
-    @Override // tg7, java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        z2.g(this);
+    @Override // q3
+    public final void b() {
+        Map map = this.e;
+        Iterator it = map.values().iterator();
+        while (it.hasNext()) {
+            ((Collection) it.next()).clear();
+        }
+        map.clear();
+        this.f = 0;
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture schedule(Runnable runnable, long j, TimeUnit timeUnit) {
-        i4c i4cVar = new i4c(Executors.callable(runnable, null));
-        return new ug7(i4cVar, this.b.schedule(i4cVar, j, timeUnit));
+    @Override // q3
+    public final Map d() {
+        Map map = this.e;
+        return map instanceof NavigableMap ? new f3(this, (NavigableMap) map) : map instanceof SortedMap ? new i3(this, (SortedMap) map) : new d3(this, map, (byte) 0);
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
-        vg7 vg7Var = new vg7(runnable);
-        return new ug7(vg7Var, this.b.scheduleAtFixedRate(vg7Var, j, j2, timeUnit));
+    @Override // q3
+    public final Set f() {
+        Map map = this.e;
+        return map instanceof NavigableMap ? new g3(this, (NavigableMap) map) : map instanceof SortedMap ? new j3(this, (SortedMap) map) : new e3(this, map);
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
-        vg7 vg7Var = new vg7(runnable);
-        return new ug7(vg7Var, this.b.scheduleWithFixedDelay(vg7Var, j, j2, timeUnit));
+    @Override // q3
+    public final Collection g() {
+        return super.g();
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture schedule(Callable callable, long j, TimeUnit timeUnit) {
-        i4c i4cVar = new i4c(callable);
-        return new ug7(i4cVar, this.b.schedule(i4cVar, j, timeUnit));
+    @Override // q3
+    public final Iterator h() {
+        return new a3(this, (byte) 1);
+    }
+
+    @Override // q3
+    public final Collection i(Object obj) {
+        Collection collection = (Collection) this.e.get(obj);
+        if (collection == null) {
+            collection = m();
+        }
+        List list = (List) collection;
+        return list instanceof RandomAccess ? new h3(this, obj, list, null) : new l3(this, obj, list, (l3) null);
+    }
+
+    @Override // q3
+    public final int l() {
+        return this.f;
+    }
+
+    public final Collection m() {
+        return (List) this.h.get();
     }
 }

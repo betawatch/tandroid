@@ -1,67 +1,32 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class xy implements bma {
-    public final /* synthetic */ byte a = 2;
-    public final long b;
-    public final int c;
-    public final byte d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class xy implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ wjb c;
+    public final /* synthetic */ TL_stars.StarGift d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public xy(int i, long j, int i2) {
-        this.c = i;
-        this.b = j;
-        this.d = i2;
+    public /* synthetic */ xy(Context context, wjb wjbVar, TL_stars.StarGift starGift, byte b) {
+        this.a = b;
+        this.b = context;
+        this.c = wjbVar;
+        this.d = starGift;
     }
 
-    public final boolean a(int i, int i2) {
-        byte b = this.d;
-        if (b != 1) {
-            if ((b == 2 || b == 3) && ConnectionsManager.getInstance(i).getCurrentTime() >= this.b) {
-                return false;
-            }
-        } else if (this.c >= i2) {
-            return false;
-        }
-        return true;
-    }
-
-    public final int b() {
-        byte b = this.d;
-        if (b != 2) {
-            return b != 3 ? 14 : 16;
-        }
-        return 15;
-    }
-
-    public final String toString() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                StringBuilder sb = new StringBuilder("AtomSizeTooSmall{type=");
-                sb.append(hac.f0(this.c));
-                sb.append(", size=");
-                sb.append(this.b);
-                sb.append(", minHeaderSize=");
-                return hg9.k(sb, this.d, "}");
+                ez.b1(this.c, this.b, this.d);
+                break;
             default:
-                return super.toString();
+                ez.b1(this.c, this.b, this.d);
+                break;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public xy(long j, int i, int i2) {
-        this.b = j;
-        this.c = i;
-        this.d = i2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public xy(int i, int i2, long j) {
-        this.d = i;
-        this.b = j;
-        this.c = i2;
     }
 }

@@ -1,438 +1,174 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RecordingCanvas;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.os.Build;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.hardware.GeomagneticField;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.location.Location;
+import android.os.SystemClock;
+import android.view.WindowManager;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class xo2 extends FrameLayout implements vlb {
-    public static final /* synthetic */ int I = 0;
-    public int E;
-    public uo2 F;
-    public long G;
-    public long H;
-    public final ylb a;
-    public final int b;
-    public final bf0 c;
-    public final TextView d;
-    public final bf0 e;
-    public final TextView f;
-    public final TextView h;
-    public final TextView n;
-    public final b61 r;
-    public final pn2 s;
-    public final nz4 w;
-    public final im0 x;
-    public boolean y;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class xo2 implements SensorEventListener {
+    public float E;
+    public boolean F;
+    public float G;
+    public boolean H;
+    public long I;
+    public final z96 a;
+    public SensorManager b;
+    public Sensor c;
+    public Sensor d;
+    public Sensor e;
+    public boolean f;
+    public final float[] h = new float[9];
+    public final float[] n = new float[9];
+    public final float[] r = new float[4];
+    public final float[] s = new float[3];
+    public final float[] w = new float[3];
+    public boolean x;
+    public float y;
 
-    public xo2(int i, ylb ylbVar, Context context) {
-        super(context);
-        km0 km0Var;
-        this.E = anb.b;
-        this.a = ylbVar;
-        this.b = i;
-        final byte b = 1;
-        if (Build.VERSION.SDK_INT >= 31) {
-            nz4 nz4Var = new nz4(null);
-            this.w = nz4Var;
-            nz4Var.m(gm.L(7.0f), y00.e());
-            nz4Var.n = true;
-            km0Var = new km0(nz4Var, nz4Var, nz4Var);
-        } else {
-            this.w = null;
-            kz4 kz4Var = new kz4();
-            kz4Var.a(-16777216);
-            km0Var = new km0(kz4Var, kz4Var, kz4Var);
-        }
-        FrameLayout frameLayout = new FrameLayout(context);
-        bf0 bf0Var = new bf0(context);
-        this.c = bf0Var;
-        final byte b2 = 2;
-        bf0Var.setRoundRadius(gm.L(52.0f) / 2);
-        addView(bf0Var, qoe.d(52, 52.0f, 51, 11.0f, 9.0f, 0.0f, 0.0f));
-        final byte b3 = 0;
-        pn2 pn2Var = new pn2(R.drawable.mini_user_channels_10, 0);
-        this.s = pn2Var;
-        pn2Var.r = gm.L(2.0f);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTypeface(gm.o());
-        textView.setVisibility(8);
-        textView.setTextSize(1, 9.33f);
-        textView.setTextColor(-1);
-        textView.setGravity(17);
-        textView.setPadding(gm.L(1.0f), 0, gm.L(5.0f), 0);
-        frameLayout.addView(textView, qoe.e(-2, -1, 81));
-        addView(frameLayout, qoe.n(14.33f, 52, 48, 11, 48, 0, 0));
-        im0 c = km0Var.c(textView, null, false);
-        nm0 nm0Var = new nm0(ylbVar);
-        nm0Var.e = new w00((byte) 19);
-        nm0Var.f(1627389951, 1358954495);
-        nm0Var.e(603979776, 603979776);
-        nm0Var.d(0, 0);
-        nm0Var.n = 0.0f;
-        nm0Var.r = 0.0f;
-        float N = gm.N(0.43f);
-        float N2 = gm.N(0.43f);
-        nm0Var.f = N;
-        nm0Var.h = N2;
-        c.p(nm0Var);
-        c.r(gm.L(7.0f));
-        this.x = c;
-        textView.setBackground(c);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setClipChildren(false);
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        textView2.setTypeface(gm.o());
-        textView2.setTextSize(1, 16.0f);
-        textView2.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, qoe.k(0.0f, 10.0f, 0.0f, 1.33f, -1, -2));
-        bf0 bf0Var2 = new bf0(context);
-        this.e = bf0Var2;
-        bf0Var2.setRoundRadius(gm.L(8.0f));
-        bf0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: to2
-            public final /* synthetic */ xo2 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b4 = b3;
-                xo2 xo2Var = this.b;
-                switch (b4) {
-                    case 0:
-                        uo2 uo2Var = xo2Var.F;
-                        if (uo2Var != null) {
-                            long j = xo2Var.H;
-                            wp2 wp2Var = ((xp2) uo2Var).h;
-                            if (wp2Var != null) {
-                                wp2Var.H(j);
-                                break;
-                            }
-                        }
-                        break;
-                    case 1:
-                        uo2 uo2Var2 = xo2Var.F;
-                        if (uo2Var2 != null) {
-                            long j2 = xo2Var.H;
-                            wp2 wp2Var2 = ((xp2) uo2Var2).h;
-                            if (wp2Var2 != null) {
-                                wp2Var2.H(j2);
-                                break;
-                            }
-                        }
-                        break;
-                    case 2:
-                        uo2 uo2Var3 = xo2Var.F;
-                        if (uo2Var3 != null) {
-                            ((xp2) uo2Var3).g(xo2Var.G, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        uo2 uo2Var4 = xo2Var.F;
-                        if (uo2Var4 != null) {
-                            ((xp2) uo2Var4).g(xo2Var.G, true);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        addView(bf0Var2, qoe.d(16, 16.0f, 51, 75.0f, 35.0f, 0.0f, 0.0f));
-        TextView textView3 = new TextView(context);
-        this.h = textView3;
-        textView3.setTextSize(1, 13.0f);
-        textView3.setSingleLine(true);
-        textView3.setEllipsize(truncateAt);
-        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: to2
-            public final /* synthetic */ xo2 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b4 = b;
-                xo2 xo2Var = this.b;
-                switch (b4) {
-                    case 0:
-                        uo2 uo2Var = xo2Var.F;
-                        if (uo2Var != null) {
-                            long j = xo2Var.H;
-                            wp2 wp2Var = ((xp2) uo2Var).h;
-                            if (wp2Var != null) {
-                                wp2Var.H(j);
-                                break;
-                            }
-                        }
-                        break;
-                    case 1:
-                        uo2 uo2Var2 = xo2Var.F;
-                        if (uo2Var2 != null) {
-                            long j2 = xo2Var.H;
-                            wp2 wp2Var2 = ((xp2) uo2Var2).h;
-                            if (wp2Var2 != null) {
-                                wp2Var2.H(j2);
-                                break;
-                            }
-                        }
-                        break;
-                    case 2:
-                        uo2 uo2Var3 = xo2Var.F;
-                        if (uo2Var3 != null) {
-                            ((xp2) uo2Var3).g(xo2Var.G, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        uo2 uo2Var4 = xo2Var.F;
-                        if (uo2Var4 != null) {
-                            ((xp2) uo2Var4).g(xo2Var.G, true);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        TextView m = wi8.m(linearLayout, textView3, qoe.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
-        this.n = m;
-        m.setTextSize(1, 13.0f);
-        int L = gm.L(12.0f);
-        int i2 = cmb.C6;
-        ShapeDrawable b0 = cmb.b0(L, cmb.p1(0.14f, cmb.v0(i2, ylbVar)));
-        wmb K = anb.K(0.14f, i2);
-        m.setBackground(b0);
-        anb.j(m, b0, K, null, ylbVar);
-        m.setPadding(gm.L(4.0f), gm.L(1.0f), gm.L(8.0f), gm.L(1.66f));
-        m.setSingleLine(true);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "* ");
-        spannableStringBuilder.setSpan(new pn2(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) jb6.M0(2131751836, null));
-        m.setText(spannableStringBuilder);
-        m.setVisibility(8);
-        linearLayout.addView(m, qoe.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setOrientation(0);
-        linearLayout2.setClipChildren(false);
-        b61 b61Var = new b61(ylbVar, context, true);
-        this.r = b61Var;
-        b61Var.setUseWrapContent(true);
-        b61Var.setPadding(gm.L(15.0f), 0, gm.L(15.0f), 0);
-        b61Var.f();
-        b61Var.e();
-        int i3 = cmb.y6;
-        b61Var.setColor(cmb.p1(0.14f, cmb.v0(i3, ylbVar)));
-        b61Var.setTextColor(cmb.w0(null, cmb.F6, false));
-        if (b61Var.getBackground() != null) {
-            Drawable background = b61Var.getBackground();
-            wmb K2 = anb.K(0.14f, i3);
-            b61Var.setBackground(background);
-            anb.j(b61Var, background, K2, null, ylbVar);
-        }
-        b61Var.i(jb6.M0(2131751541, null), false, true);
-        b61Var.setOnClickListener(new View.OnClickListener(this) { // from class: to2
-            public final /* synthetic */ xo2 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b4 = b2;
-                xo2 xo2Var = this.b;
-                switch (b4) {
-                    case 0:
-                        uo2 uo2Var = xo2Var.F;
-                        if (uo2Var != null) {
-                            long j = xo2Var.H;
-                            wp2 wp2Var = ((xp2) uo2Var).h;
-                            if (wp2Var != null) {
-                                wp2Var.H(j);
-                                break;
-                            }
-                        }
-                        break;
-                    case 1:
-                        uo2 uo2Var2 = xo2Var.F;
-                        if (uo2Var2 != null) {
-                            long j2 = xo2Var.H;
-                            wp2 wp2Var2 = ((xp2) uo2Var2).h;
-                            if (wp2Var2 != null) {
-                                wp2Var2.H(j2);
-                                break;
-                            }
-                        }
-                        break;
-                    case 2:
-                        uo2 uo2Var3 = xo2Var.F;
-                        if (uo2Var3 != null) {
-                            ((xp2) uo2Var3).g(xo2Var.G, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        uo2 uo2Var4 = xo2Var.F;
-                        if (uo2Var4 != null) {
-                            ((xp2) uo2Var4).g(xo2Var.G, true);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        linearLayout2.addView(b61Var, qoe.q(-2, 30, 0.0f, 16, 0, 0, 4, 0));
-        b61 b61Var2 = new b61(ylbVar, context, true);
-        b61Var2.setUseWrapContent(true);
-        b61Var2.setPadding(gm.L(15.0f), 0, gm.L(15.0f), 0);
-        b61Var2.f();
-        b61Var2.i(jb6.M0(2131754483, null), false, true);
-        final byte b4 = 3;
-        b61Var2.setOnClickListener(new View.OnClickListener(this) { // from class: to2
-            public final /* synthetic */ xo2 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b42 = b4;
-                xo2 xo2Var = this.b;
-                switch (b42) {
-                    case 0:
-                        uo2 uo2Var = xo2Var.F;
-                        if (uo2Var != null) {
-                            long j = xo2Var.H;
-                            wp2 wp2Var = ((xp2) uo2Var).h;
-                            if (wp2Var != null) {
-                                wp2Var.H(j);
-                                break;
-                            }
-                        }
-                        break;
-                    case 1:
-                        uo2 uo2Var2 = xo2Var.F;
-                        if (uo2Var2 != null) {
-                            long j2 = xo2Var.H;
-                            wp2 wp2Var2 = ((xp2) uo2Var2).h;
-                            if (wp2Var2 != null) {
-                                wp2Var2.H(j2);
-                                break;
-                            }
-                        }
-                        break;
-                    case 2:
-                        uo2 uo2Var3 = xo2Var.F;
-                        if (uo2Var3 != null) {
-                            ((xp2) uo2Var3).g(xo2Var.G, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        uo2 uo2Var4 = xo2Var.F;
-                        if (uo2Var4 != null) {
-                            ((xp2) uo2Var4).g(xo2Var.G, true);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        linearLayout2.addView(b61Var2, qoe.q(-2, 30, 0.0f, 16, 4, 0, 0, 0));
-        linearLayout.addView(linearLayout2, qoe.t(-1, -2, 0, 0, 10, 0, 0));
-        addView(linearLayout, qoe.d(-1, -2.0f, 48, 75.0f, 0.0f, 0.0f, 13.0f));
-        updateColors();
+    public xo2(z96 z96Var) {
+        this.a = z96Var;
     }
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(cmb.F6));
+    public final void a(Location location) {
+        if (location == null) {
+            return;
+        }
+        try {
+            this.y = new GeomagneticField((float) location.getLatitude(), (float) location.getLongitude(), (float) location.getAltitude(), System.currentTimeMillis()).getDeclination();
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int i = this.E;
-        int i2 = anb.b;
-        if (i != i2) {
-            this.E = i2;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x008d  */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        int i;
+        int i2;
+        int i3;
+        WindowManager windowManager;
+        if (!this.f) {
+            return;
+        }
+        if (sensorEvent.sensor.getType() == 11) {
             try {
-                b61 b61Var = this.r;
-                if (b61Var != null) {
-                    b61Var.setTextColor(cmb.w0(null, cmb.F6, false));
+                float[] fArr = sensorEvent.values;
+                if (fArr.length > 4) {
+                    System.arraycopy(fArr, 0, this.r, 0, 4);
+                    SensorManager.getRotationMatrixFromVector(this.h, this.r);
+                } else {
+                    SensorManager.getRotationMatrixFromVector(this.h, fArr);
                 }
-            } catch (Exception e) {
-                fc4.g(e, true);
+            } catch (Exception unused) {
+                return;
+            }
+        } else if (sensorEvent.sensor.getType() == 1) {
+            System.arraycopy(sensorEvent.values, 0, this.s, 0, 3);
+            this.x = true;
+            return;
+        } else {
+            if (sensorEvent.sensor.getType() != 2) {
+                return;
+            }
+            System.arraycopy(sensorEvent.values, 0, this.w, 0, 3);
+            if (!this.x || !SensorManager.getRotationMatrix(this.h, null, this.s, this.w)) {
+                return;
             }
         }
-        if (this.y) {
-            canvas2 = canvas;
-            canvas2.drawLine(gm.L(76.0f), getHeight() - 1, getMeasuredWidth(), getHeight() - 1, cmb.j0);
-        } else {
-            canvas2 = canvas;
+        try {
+            windowManager = (WindowManager) a.b.getSystemService("window");
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
-        super.dispatchDraw(canvas2);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        nz4 nz4Var;
-        bf0 bf0Var;
-        if (Build.VERSION.SDK_INT >= 31 && (nz4Var = this.w) != null && view == (bf0Var = this.c)) {
-            int L = gm.L(9.0f);
-            int left = bf0Var.getLeft() - L;
-            int top = bf0Var.getTop() - L;
-            int L2 = gm.L(52.0f) + (L << 1);
-            RecordingCanvas i = nz4Var.i(L2, L2);
-            i.translate(-left, -top);
-            i.drawColor(cmb.v0(cmb.c6, this.a));
-            i.save();
-            float f = L2 / 2.0f;
-            i.scale(1.125f, 1.125f, f, f);
-            super.drawChild(i, view, j);
-            i.restore();
-            i.drawColor(TLObject.FLAG_29);
-            nz4Var.j();
+        if (windowManager != null && windowManager.getDefaultDisplay() != null) {
+            i = windowManager.getDefaultDisplay().getRotation();
+            i2 = kk7.M1;
+            if (i == 1) {
+                i3 = kk7.N1;
+                if (i != 2) {
+                    if (i != 3) {
+                        i3 = 2;
+                        i2 = 1;
+                    } else {
+                        i2 = 130;
+                        i3 = 1;
+                    }
+                }
+            } else {
+                i3 = 129;
+                i2 = 2;
+            }
+            if (SensorManager.remapCoordinateSystem(this.h, i2, i3, this.n)) {
+                return;
+            }
+            float[] fArr2 = this.n;
+            float f = fArr2[1] - fArr2[2];
+            float f2 = fArr2[4] - fArr2[5];
+            if (f == 0.0f && f2 == 0.0f) {
+                return;
+            }
+            float degrees = (((float) Math.toDegrees(Math.atan2(f, f2))) + this.y) % 360.0f;
+            if (degrees < 0.0f) {
+                degrees += 360.0f;
+            }
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            if (this.F) {
+                float exp = 1.0f - ((float) Math.exp((-(this.I == 0 ? 0.02f : Math.min(0.25f, (elapsedRealtime - r9) / 1000.0f))) / 0.12f));
+                float f3 = this.E;
+                float f4 = (degrees - f3) % 360.0f;
+                if (f4 > 180.0f) {
+                    f4 -= 360.0f;
+                } else if (f4 <= -180.0f) {
+                    f4 += 360.0f;
+                }
+                degrees = ((f4 * exp) + f3) % 360.0f;
+                if (degrees < 0.0f) {
+                    degrees += 360.0f;
+                }
+                this.E = degrees;
+            } else {
+                this.E = degrees;
+                this.F = true;
+            }
+            this.I = elapsedRealtime;
+            if (this.H) {
+                float f5 = (degrees - this.G) % 360.0f;
+                if (f5 > 180.0f) {
+                    f5 -= 360.0f;
+                } else if (f5 <= -180.0f) {
+                    f5 += 360.0f;
+                }
+                if (Math.abs(f5) < 0.3f) {
+                    return;
+                }
+            }
+            this.G = this.E;
+            this.H = true;
+            this.a.b.P0(false);
+            return;
         }
-        return super.drawChild(canvas, view, j);
+        i = 0;
+        i2 = kk7.M1;
+        if (i == 1) {
+        }
+        if (SensorManager.remapCoordinateSystem(this.h, i2, i3, this.n)) {
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.x.i(gm.L(9.0f) + this.d.getLeft(), gm.L(48.0f));
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        int i = cmb.F6;
-        ylb ylbVar = this.a;
-        this.f.setTextColor(cmb.v0(i, ylbVar));
-        int i2 = cmb.y6;
-        this.h.setTextColor(cmb.v0(i2, ylbVar));
-        this.n.setTextColor(cmb.v0(i2, ylbVar));
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

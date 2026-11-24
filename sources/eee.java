@@ -1,33 +1,33 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class eee extends b4 {
-    public static final Parcelable.Creator<eee> CREATOR = new t0e((byte) 29);
-    public final String a;
-    public final String b;
-    public final float c;
-    public final int d;
-
-    public eee(float f, int i, String str, String str2) {
-        this.b = str2;
-        this.c = f;
-        this.a = str;
-        this.d = i;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.b);
-        mve.q(parcel, 3, 4);
-        parcel.writeFloat(this.c);
-        mve.l(parcel, 4, this.a);
-        mve.q(parcel, 5, 4);
-        parcel.writeInt(this.d);
-        mve.s(parcel, r);
+public abstract class eee {
+    public static final void a(na1 na1Var, fw2 fw2Var, boolean z) {
+        Object r = na1Var.r();
+        Throwable f = na1Var.f(r);
+        Object sa9Var = f != null ? new sa9(f) : na1Var.g(r);
+        if (!z) {
+            fw2Var.resumeWith(sa9Var);
+            return;
+        }
+        fw2Var.getClass();
+        ho3 ho3Var = (ho3) fw2Var;
+        gw2 gw2Var = ho3Var.e;
+        Object obj = ho3Var.h;
+        sw2 context = gw2Var.getContext();
+        Object c = edd.c(context, obj);
+        y4c c2 = c != edd.a ? qzd.c(gw2Var, context, c) : null;
+        try {
+            gw2Var.resumeWith(sa9Var);
+            if (c2 == null || c2.S()) {
+                edd.a(context, c);
+            }
+        } catch (Throwable th) {
+            if (c2 == null || c2.S()) {
+                edd.a(context, c);
+            }
+            throw th;
+        }
     }
 }

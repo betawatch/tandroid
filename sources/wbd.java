@@ -1,117 +1,15 @@
 // default package
 
-import android.os.Looper;
-import java.util.Locale;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class wbd {
-    public static final Object i = new Object();
-    public final ce6 a;
-    public final int b;
-    public final String c;
-    public hbd g;
-    public zka h;
-    public long e = -1;
-    public long f = 0;
-    public final q79 d = new q79(Looper.getMainLooper(), (byte) 3);
-
-    public wbd(long j, String str) {
-        this.b = (int) j;
-        this.c = str;
-        this.a = new ce6("RequestTracker", str);
-    }
-
-    public final void a(long j, hbd hbdVar) {
-        hbd hbdVar2;
-        long j2;
-        long j3;
-        long currentTimeMillis = System.currentTimeMillis();
-        Object obj = i;
-        synchronized (obj) {
-            hbdVar2 = this.g;
-            j2 = this.e;
-            j3 = this.f;
-            this.e = j;
-            this.g = hbdVar;
-            this.f = currentTimeMillis;
-        }
-        if (hbdVar2 != null) {
-            hbdVar2.u0(this.c, j2, j3, currentTimeMillis);
-        }
-        synchronized (obj) {
-            zka zkaVar = this.h;
-            if (zkaVar != null) {
-                this.d.removeCallbacks(zkaVar);
-            }
-            zka zkaVar2 = new zka((Object) this, (byte) 27);
-            this.h = zkaVar2;
-            this.d.postDelayed(zkaVar2, this.b);
-        }
-    }
-
-    public final void b(long j, int i2, tad tadVar) {
-        synchronized (i) {
-            if (c(j)) {
-                Locale locale = Locale.ROOT;
-                e(i2, tadVar, "request " + j + " completed");
-            }
-        }
-    }
-
-    public final boolean c(long j) {
-        boolean z;
-        synchronized (i) {
-            long j2 = this.e;
-            z = false;
-            if (j2 != -1 && j2 == j) {
-                z = true;
-            }
-        }
-        return z;
-    }
-
-    public final boolean d() {
-        boolean z;
-        synchronized (i) {
-            z = this.e != -1;
-        }
-        return z;
-    }
-
-    public final void e(int i2, tad tadVar, String str) {
-        this.a.b(str, new Object[0]);
-        Object obj = i;
-        synchronized (obj) {
-            if (this.g != null) {
-                long currentTimeMillis = System.currentTimeMillis();
-                hbd hbdVar = this.g;
-                ite.h(hbdVar);
-                hbdVar.c0(this.c, this.e, i2, tadVar, this.f, currentTimeMillis);
-            }
-            this.e = -1L;
-            this.g = null;
-            synchronized (obj) {
-                try {
-                    zka zkaVar = this.h;
-                    if (zkaVar != null) {
-                        this.d.removeCallbacks(zkaVar);
-                        this.h = null;
-                    }
-                } finally {
-                }
-            }
-        }
-    }
-
-    public final boolean f(int i2) {
-        synchronized (i) {
-            if (!d()) {
-                return false;
-            }
-            Locale locale = Locale.ROOT;
-            e(i2, null, "clearing request " + this.e);
-            return true;
-        }
+public abstract class wbd {
+    public static Task a(BasePendingResult basePendingResult, c38 c38Var) {
+        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        basePendingResult.b(new g3d(basePendingResult, taskCompletionSource, c38Var));
+        return taskCompletionSource.getTask();
     }
 }

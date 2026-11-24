@@ -1,32 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class m60 implements cq7 {
+public final class m60 implements zn7 {
     public static final m60 a = new m60();
-    public static final wa4 b = wa4.c("eventTimeMs");
-    public static final wa4 c = wa4.c("eventCode");
-    public static final wa4 d = wa4.c("complianceData");
-    public static final wa4 e = wa4.c("eventUptimeMs");
-    public static final wa4 f = wa4.c("sourceExtension");
-    public static final wa4 g = wa4.c("sourceExtensionJsonProto3");
-    public static final wa4 h = wa4.c("timezoneOffsetSeconds");
-    public static final wa4 i = wa4.c("networkConnectionInfo");
-    public static final wa4 j = wa4.c("experimentIds");
+    public static final w84 b = w84.c("rolloutVariant");
+    public static final w84 c = w84.c("parameterKey");
+    public static final w84 d = w84.c("parameterValue");
+    public static final w84 e = w84.c("templateVersion");
 
-    @Override // b44
+    @Override // q24
     public final void a(Object obj, Object obj2) {
-        vd6 vd6Var = (vd6) obj;
-        dq7 dq7Var = (dq7) obj2;
-        dq7Var.g(b, ((ab0) vd6Var).a);
-        ab0 ab0Var = (ab0) vd6Var;
-        dq7Var.a(c, ab0Var.b);
-        dq7Var.a(d, ab0Var.c);
-        dq7Var.g(e, ab0Var.d);
-        dq7Var.a(f, ab0Var.e);
-        dq7Var.a(g, ab0Var.f);
-        dq7Var.g(h, ab0Var.g);
-        dq7Var.a(i, ab0Var.h);
-        dq7Var.a(j, ab0Var.i);
+        bz2 bz2Var = (bz2) obj;
+        ao7 ao7Var = (ao7) obj2;
+        ao7Var.a(b, ((g90) bz2Var).a);
+        g90 g90Var = (g90) bz2Var;
+        ao7Var.a(c, g90Var.b);
+        ao7Var.a(d, g90Var.c);
+        ao7Var.g(e, g90Var.d);
     }
 }

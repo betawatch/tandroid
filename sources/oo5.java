@@ -1,65 +1,38 @@
 // default package
 
-import java.io.Serializable;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class oo5 implements Serializable {
-    public static final oo5 c = new oo5(0, new long[0]);
-    public final long[] a;
-    public final int b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class oo5 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ q b;
 
-    public oo5(int i, long[] jArr) {
-        this.a = jArr;
-        this.b = i;
+    public /* synthetic */ oo5(q qVar, byte b) {
+        this.a = b;
+        this.b = qVar;
     }
 
-    public final long a(int i) {
-        jte.j(i, this.b);
-        return this.a[i];
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof oo5) {
-            oo5 oo5Var = (oo5) obj;
-            int i = oo5Var.b;
-            int i2 = this.b;
-            if (i2 == i) {
-                for (int i3 = 0; i3 < i2; i3++) {
-                    if (a(i3) == oo5Var.a(i3)) {
-                    }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        q qVar = this.b;
+        switch (b) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * qVar.getMeasuredHeight() * 0.5f;
+                qVar.z0 = floatValue;
+                qVar.w.setTranslationY(floatValue + qVar.y0);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qVar.B0 = floatValue2;
+                ul9 ul9Var = qVar.Q;
+                if (ul9Var != null) {
+                    ul9Var.y(floatValue2);
+                    break;
                 }
-                return true;
-            }
+                break;
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        int i = 1;
-        for (int i2 = 0; i2 < this.b; i2++) {
-            i = (i * 31) + cqe.b(this.a[i2]);
-        }
-        return i;
-    }
-
-    public final String toString() {
-        int i = this.b;
-        if (i == 0) {
-            return "[]";
-        }
-        StringBuilder sb = new StringBuilder(i * 5);
-        sb.append('[');
-        long[] jArr = this.a;
-        sb.append(jArr[0]);
-        for (int i2 = 1; i2 < i; i2++) {
-            sb.append(", ");
-            sb.append(jArr[i2]);
-        }
-        sb.append(']');
-        return sb.toString();
     }
 }

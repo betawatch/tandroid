@@ -1,47 +1,39 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class wj1 implements TextWatcher {
-    public final /* synthetic */ ik1 a;
-
-    public wj1(ik1 ik1Var) {
-        this.a = ik1Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        ik1 ik1Var = this.a;
-        nj1 nj1Var = ik1Var.f1;
-        vc vcVar = ik1Var.O0;
-        if (ik1Var.L0) {
-            return;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class wj1 implements bg8 {
+    public static wj1 a(String str) {
+        int length = str.length();
+        if (length != 0) {
+            return length != 1 ? length != 2 ? new rj1(str) : new uj1(str.charAt(0), str.charAt(1)) : new tj1(str.charAt(0), (byte) 0);
         }
-        long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        ik1Var.N0 = parseLong;
-        long j = ik1Var.D0.amount;
-        if (parseLong > j) {
-            ik1Var.N0 = j;
-            ik1Var.L0 = true;
-            vcVar.setText(Long.toString(j));
-            vcVar.setSelection(vcVar.getText().length());
-            ik1Var.L0 = false;
+        return qj1.f;
+    }
+
+    public static String d(char c) {
+        char[] cArr = new char[6];
+        cArr[0] = '\\';
+        cArr[1] = 'u';
+        cArr[2] = 0;
+        cArr[3] = 0;
+        cArr[4] = 0;
+        cArr[5] = 0;
+        for (int i = 0; i < 4; i++) {
+            cArr[5 - i] = "0123456789ABCDEF".charAt(c & 15);
+            c = (char) (c >> 4);
         }
-        ik1Var.M0 = ik1Var.N0 == ik1Var.D0.amount;
-        gm.r(nj1Var);
-        nj1Var.run();
-        ik1Var.M0 = false;
+        return String.copyValueOf(cArr);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    @Override // bg8
+    public final boolean apply(Object obj) {
+        return b(((Character) obj).charValue());
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    public abstract boolean b(char c);
+
+    public wj1 c() {
+        return new rj1(this);
     }
 }

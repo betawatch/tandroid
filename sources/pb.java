@@ -8,24 +8,24 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class pb implements rac {
+public final /* synthetic */ class pb implements q8c {
     public final /* synthetic */ byte a;
 
     public /* synthetic */ pb(byte b) {
         this.a = b;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0089, code lost:
     
-        if (l11.h(r4) != false) goto L46;
+        if (d01.g(android.net.Uri.parse(r5), false, null) != false) goto L46;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0099, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00a2, code lost:
     
-        if (l11.h(r4) != false) goto L46;
+        if (d01.g(android.net.Uri.parse(r5), false, null) != false) goto L46;
      */
-    @Override // rac
+    @Override // q8c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -34,15 +34,15 @@ public final /* synthetic */ class pb implements rac {
             case 0:
                 return String.format(Locale.US, "%.1f%%", Float.valueOf(((Integer) obj).intValue() / 10.0f));
             case 1:
-                return jb6.G(((Integer) obj).intValue(), "Hours", new Object[0]);
+                return k96.G(((Integer) obj).intValue(), "Hours", new Object[0]);
             case 2:
-                return jb6.G(((Integer) obj).intValue(), "Minutes", new Object[0]);
+                return k96.G(((Integer) obj).intValue(), "Minutes", new Object[0]);
             case 3:
-                k47 k47Var = (k47) obj;
-                return Boolean.valueOf((k47Var == null || k47Var.R0() == null) ? false : true);
+                k27 k27Var = (k27) obj;
+                return Boolean.valueOf((k27Var == null || k27Var.R0() == null) ? false : true);
             case 4:
-                k47 k47Var2 = (k47) obj;
-                return Boolean.valueOf((k47Var2 == null || k47Var2.M0() == null) ? false : true);
+                k27 k27Var2 = (k27) obj;
+                return Boolean.valueOf((k27Var2 == null || k27Var2.M0() == null) ? false : true);
             case 5:
                 TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
                 exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;
@@ -62,34 +62,34 @@ public final /* synthetic */ class pb implements rac {
                     if (!str.startsWith("tg:")) {
                         break;
                     }
-                    return Boolean.valueOf(r1);
+                    return Boolean.valueOf(r2);
                 }
-                r1 = false;
-                return Boolean.valueOf(r1);
+                r2 = false;
+                return Boolean.valueOf(r2);
             case 9:
                 String str2 = (String) obj;
-                d53 d53Var = zx8.A0;
+                s33 s33Var = yv8.A0;
                 if (!TextUtils.isEmpty(str2)) {
                     if (!str2.startsWith("tg:")) {
                         break;
                     }
-                    return Boolean.valueOf(r1);
+                    return Boolean.valueOf(r2);
                 }
-                r1 = false;
-                return Boolean.valueOf(r1);
+                r2 = false;
+                return Boolean.valueOf(r2);
             case 10:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof njb) || (view instanceof bba) || (view instanceof ih4) || (view instanceof l55) || (view instanceof dm2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof mhb) || (view instanceof b9a) || (view instanceof gf4) || (view instanceof l35) || (view instanceof rk2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 11:
                 return TLRPC.TL_textWithEntities.TLJsonDeserialize((TLJsonParser) obj);
             case 12:
                 return TLRPC.MessageEntity.TLJsonDeserialize((TLJsonParser) obj);
             case 13:
-                return Boolean.valueOf(l7c.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(l5c.K(((Integer) obj).intValue()));
             case 14:
-                return Boolean.valueOf(goc.x0(goc.i1((String) obj)));
+                return Boolean.valueOf(hmc.w0(hmc.h1((String) obj)));
             default:
-                return Boolean.valueOf(asc.l0((String) obj) != null);
+                return Boolean.valueOf(ypc.k0((String) obj) != null);
         }
     }
 }

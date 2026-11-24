@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ListView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class AlertController$RecycleListView extends ListView {
     public final int a;
@@ -13,7 +13,7 @@ public class AlertController$RecycleListView extends ListView {
 
     public AlertController$RecycleListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, k09.t);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, jy8.t);
         this.b = obtainStyledAttributes.getDimensionPixelOffset(0, -1);
         this.a = obtainStyledAttributes.getDimensionPixelOffset(1, -1);
     }

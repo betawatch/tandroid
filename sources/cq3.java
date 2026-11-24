@@ -1,70 +1,270 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class cq3 extends x1 {
-    public final /* synthetic */ byte a;
-    public final gl0 b;
+import android.graphics.Canvas;
+import android.graphics.RecordingCanvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
+import java.util.ArrayList;
 
-    public cq3(byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.b = new klb();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class cq3 {
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+    public final byte d;
+    public boolean e;
+    public final RenderNode[] f;
+    public long g;
+    public final RectF h = new RectF();
+    public final tab i = new tab();
+    public final ArrayList j = new ArrayList();
+    public int k;
+    public int l;
+    public Rect m;
+
+    public cq3(boolean z) {
+        boolean e = e66.e(262144);
+        this.a = e;
+        this.c = true;
+        this.d = (e || z) ? (byte) 1 : (byte) 8;
+        this.b = z;
+        this.f = new RenderNode[e ? 2 : 1];
+        int i = 0;
+        while (true) {
+            RenderNode[] renderNodeArr = this.f;
+            if (i >= renderNodeArr.length) {
+                return;
+            }
+            renderNodeArr[i] = mk1.k();
+            i++;
+        }
+    }
+
+    public static float a(float f, float f2) {
+        float f3 = (f > 0.0f ? (f * 0.57735f) + 0.5f : 0.0f) / f2;
+        return Math.max(1.0f, f3 > 0.5f ? (f3 - 0.5f) / 0.57735f : 0.0f);
+    }
+
+    public final void b(Canvas canvas, int i) {
+        if (!canvas.isHardwareAccelerated()) {
+            sdb.a();
+            return;
+        }
+        boolean z = this.a;
+        if (!z && this.c) {
+            canvas.drawRenderNode(this.f[0]);
+            return;
+        }
+        if (i == -2) {
+            canvas.drawRenderNode(this.f[!z ? 1 : 0]);
+        } else if (i == -4) {
+            canvas.drawRenderNode(this.f[0]);
+        } else if (i == -3) {
+            canvas.drawRenderNode(this.f[1]);
+        }
+    }
+
+    public final void c(Canvas canvas, int i) {
+        int i2;
+        boolean z = this.a;
+        if (!z && this.c) {
+            i2 = 0;
+        } else if (i == -2) {
+            i2 = !z ? 1 : 0;
+        } else if (i == -4) {
+            i2 = 3;
+        } else if (i != -3) {
+            return;
+        } else {
+            i2 = 1;
+        }
+        for (int i3 = 0; i3 < this.k; i3++) {
+            bq3 bq3Var = (bq3) this.j.get(i3);
+            Rect rect = bq3Var.d;
+            if (!canvas.quickReject(rect.left, rect.top, rect.right, rect.bottom)) {
+                canvas.save();
+                Rect rect2 = bq3Var.d;
+                canvas.translate(rect2.left, rect2.top);
+                RenderNode d = d(i2, i3);
+                if (!d.hasDisplayList()) {
+                    this.e = true;
+                }
+                canvas.drawRenderNode(d);
+                canvas.restore();
+            }
+        }
+    }
+
+    public final RenderNode d(int i, int i2) {
+        aq3 aq3Var;
+        bq3 bq3Var = (bq3) this.j.get(i2);
+        if (!this.a || (aq3Var = bq3Var.c) == null) {
+            return bq3Var.b.c[Math.min(i, r2.length - 1)];
+        }
+        if (i == 3) {
+            return aq3Var.c[0];
+        }
+        if (i != 0) {
+            return bq3Var.b.c[0];
+        }
+        return aq3Var.c[r2.length - 1];
+    }
+
+    public final void e(wg5 wg5Var, int i, int i2) {
+        int i3 = 0;
+        int i4 = 0;
+        while (true) {
+            int i5 = this.k;
+            ArrayList arrayList = this.j;
+            if (i3 < i5) {
+                bq3 bq3Var = (bq3) arrayList.get(i3);
+                Rect rect = bq3Var.d;
+                RectF rectF = this.h;
+                rectF.set(rect);
+                tab tabVar = this.i;
+                tabVar.a = 0L;
+                tabVar.b = false;
+                wg5Var.a(tabVar, rectF);
+                boolean z = tabVar.b;
+                long j = z ? -1L : tabVar.a;
+                if (z || bq3Var.e != j || !bq3Var.a.hasDisplayList()) {
+                    bq3Var.e = j;
+                    if (this.m != null) {
+                        sdb.a();
+                        return;
+                    }
+                    bq3 bq3Var2 = (bq3) arrayList.get(i3);
+                    Rect rect2 = bq3Var2.d;
+                    this.m = rect2;
+                    this.l = i3;
+                    int width = rect2.width();
+                    byte b = this.d;
+                    int i6 = width / b;
+                    int height = rect2.height() / b;
+                    bq3Var2.a.setPosition(0, 0, i6, height);
+                    RecordingCanvas beginRecording = bq3Var2.a.beginRecording(i6, height);
+                    float f = 1.0f / b;
+                    beginRecording.scale(f, f);
+                    beginRecording.save();
+                    beginRecording.translate(-rect.left, -rect.top);
+                    wg5Var.d(beginRecording, rectF);
+                    beginRecording.restore();
+                    if (this.m == null) {
+                        sdb.a();
+                        return;
+                    }
+                    bq3 bq3Var3 = (bq3) arrayList.get(this.l);
+                    bq3Var3.a.endRecording();
+                    aq3 aq3Var = bq3Var3.b;
+                    aq3 aq3Var2 = bq3Var3.c;
+                    RenderNode renderNode = bq3Var3.a;
+                    if (aq3Var2 != null) {
+                        aq3Var2.a(renderNode);
+                        aq3Var.a(aq3Var2.c[0]);
+                    } else {
+                        aq3Var.a(renderNode);
+                    }
+                    this.m = null;
+                    i4++;
+                }
+                i3++;
+            } else {
+                if (i4 <= 0) {
+                    return;
+                }
+                long r = hq6.r(hq6.r(0L, i), i2);
+                int i7 = 0;
+                boolean z2 = false;
+                while (true) {
+                    RenderNode[] renderNodeArr = this.f;
+                    if (i7 >= renderNodeArr.length) {
+                        break;
+                    }
+                    RenderNode renderNode2 = renderNodeArr[i7];
+                    r = hq6.r(r, renderNode2.getUniqueId());
+                    for (int i8 = 0; i8 < this.k; i8++) {
+                        bq3 bq3Var4 = (bq3) arrayList.get(i8);
+                        RenderNode d = d(i7, i8);
+                        Rect rect3 = bq3Var4.d;
+                        r = hq6.r(hq6.r(hq6.r(hq6.r(hq6.r(r, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
+                    }
+                    if (!renderNode2.hasDisplayList()) {
+                        z2 = true;
+                    }
+                    i7++;
+                }
+                if (r == this.g && !z2) {
+                    return;
+                }
+                this.g = r;
+                int i9 = 0;
+                while (true) {
+                    RenderNode[] renderNodeArr2 = this.f;
+                    if (i9 >= renderNodeArr2.length) {
+                        return;
+                    }
+                    RenderNode renderNode3 = renderNodeArr2[i9];
+                    renderNode3.setPosition(0, 0, i, i2);
+                    RecordingCanvas beginRecording2 = renderNode3.beginRecording(i, i2);
+                    for (int i10 = 0; i10 < this.k; i10++) {
+                        bq3 bq3Var5 = (bq3) arrayList.get(i10);
+                        beginRecording2.save();
+                        Rect rect4 = bq3Var5.d;
+                        beginRecording2.translate(rect4.left, rect4.top);
+                        beginRecording2.drawRenderNode(d(i9, i10));
+                        beginRecording2.restore();
+                    }
+                    renderNode3.endRecording();
+                    i9++;
+                }
+            }
+        }
+    }
+
+    public final void f(float f, float f2) {
+        for (int i = 0; i < this.k; i++) {
+            bq3 bq3Var = (bq3) this.j.get(i);
+            bq3Var.b.b(f, f2);
+            aq3 aq3Var = bq3Var.c;
+            if (aq3Var != null) {
+                aq3Var.b(f, f2);
+            }
+        }
+    }
+
+    public final void g(int i, ArrayList arrayList) {
+        ArrayList arrayList2;
+        this.k = i;
+        while (true) {
+            int i2 = this.k;
+            arrayList2 = this.j;
+            if (i2 <= arrayList2.size()) {
                 break;
-            default:
-                this.b = new bq3();
+            } else {
+                arrayList2.add(new bq3(this));
+            }
+        }
+        for (int i3 = 0; i3 < this.k; i3++) {
+            ((bq3) arrayList2.get(i3)).a((RectF) arrayList.get(i3));
+        }
+    }
+
+    public final void h(zw4 zw4Var) {
+        ArrayList arrayList;
+        this.k = zw4Var.b;
+        while (true) {
+            int i = this.k;
+            arrayList = this.j;
+            if (i <= arrayList.size()) {
                 break;
+            } else {
+                arrayList.add(new bq3(this));
+            }
         }
-    }
-
-    @Override // x1
-    public final void a(CharSequence charSequence) {
-        byte b = this.a;
-    }
-
-    @Override // x1
-    public final boolean b(gl0 gl0Var) {
-        switch (this.a) {
-            case 0:
-                return true;
-            default:
-                return super.b(gl0Var);
+        for (int i2 = 0; i2 < this.k; i2++) {
+            ((bq3) arrayList.get(i2)).a(zw4Var.c(i2));
         }
-    }
-
-    @Override // x1
-    public final gl0 e() {
-        byte b = this.a;
-        gl0 gl0Var = this.b;
-        switch (b) {
-            case 0:
-                return (bq3) gl0Var;
-            default:
-                return (klb) gl0Var;
-        }
-    }
-
-    @Override // x1
-    public final boolean f() {
-        switch (this.a) {
-            case 0:
-                return true;
-            default:
-                return super.f();
-        }
-    }
-
-    @Override // x1
-    public final il2 h(fq3 fq3Var) {
-        switch (this.a) {
-            case 0:
-                return il2.a(fq3Var.b);
-            default:
-                return null;
-        }
-    }
-
-    private final void i(CharSequence charSequence) {
     }
 }

@@ -4,10 +4,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class MacroInfo {
-    public static HashMap<String, MacroInfo> Commands = new HashMap<>(nm7.W4);
+    public static HashMap<String, MacroInfo> Commands = new HashMap<>(kk7.W4);
     public static HashMap<String, Object> Packages = new HashMap<>();
     public boolean hasOptions;
     public Method macro;

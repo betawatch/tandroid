@@ -1,348 +1,134 @@
 // default package
 
-import android.net.Uri;
-import android.os.Handler;
-import android.os.SystemClock;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class fc3 implements ga6 {
-    public static final wa3 N = new wa3((byte) 7);
-    public mo5 E;
-    public mo5 F;
-    public mo5 G;
-    public mo5 H;
-    public Uri I;
-    public ch5 J;
-    public Uri K;
-    public boolean L;
-    public final k6d a;
-    public final kh5 b;
-    public final k4f c;
-    public kq f;
-    public mx6 h;
-    public Handler n;
-    public dh5 r;
-    public eb3 s;
-    public gh5 w;
-    public bx7 x;
-    public rg5 y;
-    public final CopyOnWriteArrayList e = new CopyOnWriteArrayList();
-    public final HashMap d = new HashMap();
-    public long M = -9223372036854775807L;
+public final class fc3 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final Object b;
+    public final /* synthetic */ Object c;
 
-    public fc3(k6d k6dVar, k4f k4fVar, kh5 kh5Var) {
-        this.a = k6dVar;
-        this.b = kh5Var;
-        this.c = k4fVar;
+    public fc3(itb itbVar) {
+        this.a = (byte) 2;
+        this.c = itbVar;
+        Context context = itbVar.a.getContext();
+        CharSequence charSequence = itbVar.h;
+        v8 v8Var = new v8();
+        v8Var.e = TLObject.FLAG_12;
+        v8Var.g = TLObject.FLAG_12;
+        v8Var.l = null;
+        v8Var.m = null;
+        v8Var.n = false;
+        v8Var.o = false;
+        v8Var.p = 16;
+        v8Var.i = context;
+        v8Var.a = charSequence;
+        this.b = v8Var;
     }
 
-    @Override // ga6
-    public final void W0(ja6 ja6Var, long j, long j2, int i) {
-        dx7 dx7Var = (dx7) ja6Var;
-        da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
-        if (i != 0) {
-            c0b c0bVar = dx7Var.d;
-            da6Var.d = c0bVar.c;
-            da6Var.e = c0bVar.d;
-            da6Var.f = j2;
-            da6Var.g = c0bVar.b;
-        }
-        this.f.u(new ea6(da6Var), dx7Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i);
-    }
-
-    public final void a(List list, boolean z) {
-        for (int i = 0; i < list.size(); i++) {
-            nh5 nh5Var = (nh5) list.get(i);
-            ec3 ec3Var = new ec3(this, nh5Var, z);
-            v7c it = yo5.q(nh5Var.b.values()).iterator();
-            while (it.hasNext()) {
-                this.d.put((Uri) it.next(), ec3Var);
-            }
-        }
-    }
-
-    public final ch5 b(Uri uri, boolean z) {
-        HashMap hashMap = this.d;
-        ec3 ec3Var = (ec3) hashMap.get(uri);
-        if (ec3Var == null) {
-            return null;
-        }
-        ch5 b = ec3Var.b(uri);
-        if (b != null && z) {
-            h(uri, false);
-            ec3 ec3Var2 = (ec3) hashMap.get(uri);
-            ec3Var2.getClass();
-            HashMap hashMap2 = ec3Var2.b;
-            jte.p(hashMap2.containsKey(uri));
-            dc3 dc3Var = (dc3) hashMap2.get(uri);
-            dc3Var.getClass();
-            if (!dc3Var.x) {
-                jte.p(hashMap2.containsKey(uri));
-                dc3 dc3Var2 = (dc3) hashMap2.get(uri);
-                dc3Var2.getClass();
-                dc3Var2.x = true;
-                ch5 b2 = ec3Var2.b(uri);
-                if (b2 != null && !b2.o) {
-                    ec3Var2.e(uri, true);
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00be  */
+    @Override // android.view.View.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                if (!cj3.C4) {
+                    cj3.C4 = true;
+                    SharedPreferences sharedPreferences = a.b.getSharedPreferences("themeconfig", 0);
+                    String str = "Blue";
+                    String string = sharedPreferences.getString("lastDayTheme", "Blue");
+                    if (bkb.O0(string) == null || bkb.O0(string).o()) {
+                        string = "Blue";
+                    }
+                    String str2 = "Dark Blue";
+                    String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+                    if (bkb.O0(string2) == null || !bkb.O0(string2).o()) {
+                        string2 = "Dark Blue";
+                    }
+                    akb akbVar = bkb.I;
+                    if (!string.equals(string2)) {
+                        str2 = string2;
+                    } else if (akbVar.o() || string.equals("Dark Blue") || string.equals("Night")) {
+                        str2 = string2;
+                        boolean o = bkb.I.o();
+                        boolean z = !o;
+                        akb O0 = o ? bkb.O0(str2) : bkb.O0(str);
+                        oy8 oy8Var = ((hc3) this.c).d;
+                        oy8Var.K(o ? oy8Var.e[0] - 1 : 0);
+                        ((hc3) this.c).e.getImageView().d();
+                        int[] iArr = {(((hc3) this.c).e.getImageView().getMeasuredWidth() / 2) + r6, de9.w(3.0f, ((hc3) this.c).e.getImageView().getMeasuredHeight() / 2, r6)};
+                        ((hc3) this.c).e.getImageView().getLocationInWindow(iArr);
+                        int i = iArr[0];
+                        int i2 = iArr[1];
+                        kk7.e().k(kk7.v4, O0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), ((hc3) this.c).e.getImageView(), ((hc3) this.c).e, new gu2((Object) this, this.b, (byte) 29));
+                        break;
+                    }
+                    str = string;
+                    boolean o2 = bkb.I.o();
+                    boolean z2 = !o2;
+                    if (o2) {
+                    }
+                    oy8 oy8Var2 = ((hc3) this.c).d;
+                    oy8Var2.K(o2 ? oy8Var2.e[0] - 1 : 0);
+                    ((hc3) this.c).e.getImageView().d();
+                    int[] iArr2 = {(((hc3) this.c).e.getImageView().getMeasuredWidth() / 2) + i, de9.w(3.0f, ((hc3) this.c).e.getImageView().getMeasuredHeight() / 2, i2)};
+                    ((hc3) this.c).e.getImageView().getLocationInWindow(iArr2);
+                    int i3 = iArr2[0];
+                    int i22 = iArr2[1];
+                    kk7.e().k(kk7.v4, O0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z2), ((hc3) this.c).e.getImageView(), ((hc3) this.c).e, new gu2((Object) this, this.b, (byte) 29));
                 }
-            }
-        }
-        return b;
-    }
-
-    public final mo5 c(int i) {
-        if (i == 0) {
-            return this.E;
-        }
-        if (i == 1) {
-            return this.F;
-        }
-        if (i == 2) {
-            return this.G;
-        }
-        if (i != 3) {
-            return null;
-        }
-        return this.H;
-    }
-
-    public final Uri d(Uri uri) {
-        yg5 yg5Var;
-        ch5 ch5Var = this.J;
-        if (ch5Var == null || !ch5Var.v.e || (yg5Var = (yg5) ch5Var.t.get(uri)) == null) {
-            return uri;
-        }
-        Uri.Builder buildUpon = uri.buildUpon();
-        buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(yg5Var.b));
-        int i = yg5Var.c;
-        if (i != -1) {
-            buildUpon.appendQueryParameter("_HLS_part", String.valueOf(i));
-        }
-        return buildUpon.build();
-    }
-
-    public final boolean e(long j, Uri uri) {
-        ec3 ec3Var = (ec3) this.d.get(uri);
-        if (ec3Var != null) {
-            return ec3Var.c(j, uri);
-        }
-        return false;
-    }
-
-    public final boolean f(nh5 nh5Var, long j) {
-        ec3 ec3Var = (ec3) this.d.get(nh5Var.b());
-        if (ec3Var == null) {
-            return false;
-        }
-        Iterator it = ec3Var.b.values().iterator();
-        boolean z = true;
-        while (it.hasNext()) {
-            z &= j <= ((dc3) it.next()).r;
-        }
-        return z;
-    }
-
-    @Override // ga6
-    public final ha6 f2(ja6 ja6Var, long j, long j2, IOException iOException, int i) {
-        long min;
-        dx7 dx7Var = (dx7) ja6Var;
-        da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
-        c0b c0bVar = dx7Var.d;
-        da6Var.d = c0bVar.c;
-        da6Var.e = c0bVar.d;
-        da6Var.f = j2;
-        da6Var.g = c0bVar.b;
-        ea6 ea6Var = new ea6(da6Var);
-        byte b = dx7Var.c;
-        this.c.getClass();
-        Throwable th = iOException;
-        while (true) {
-            if (th == null) {
-                min = Math.min((i - 1) * 1000, 5000);
                 break;
-            }
-            if ((th instanceof bx7) || (th instanceof FileNotFoundException) || (th instanceof hi5) || (th instanceof la6) || ((th instanceof d83) && ((d83) th).a == 2008)) {
+            case 1:
+                et6 et6Var = (et6) this.c;
+                gt6 gt6Var = et6Var.z.r;
+                eu6 eu6Var = (eu6) this.b;
+                gt6Var.E = eu6Var;
+                eu6Var.l();
+                et6Var.w.setVisibility(4);
+                et6Var.x.setVisibility(0);
                 break;
-            }
-            th = th.getCause();
-        }
-        min = -9223372036854775807L;
-        boolean z = min == -9223372036854775807L;
-        this.f.s(ea6Var, b, iOException, z);
-        return z ? mx6.E : new ha6(0, min);
-    }
-
-    public final boolean g(Uri uri) {
-        byte b;
-        ec3 ec3Var = (ec3) this.d.get(uri);
-        if (ec3Var == null) {
-            return false;
-        }
-        HashMap hashMap = ec3Var.b;
-        jte.p(hashMap.containsKey(uri));
-        dc3 dc3Var = (dc3) hashMap.get(uri);
-        dc3Var.getClass();
-        if (dc3Var.e == null) {
-            return false;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long max = Math.max(30000L, hac.i0(dc3Var.e.u));
-        ch5 ch5Var = dc3Var.e;
-        return ch5Var.o || (b = ch5Var.d) == 2 || b == 1 || dc3Var.f + max > elapsedRealtime;
-    }
-
-    @Override // ga6
-    public final void g0(ja6 ja6Var, long j, long j2) {
-        gh5 gh5Var;
-        dx7 dx7Var = (dx7) ja6Var;
-        hh5 hh5Var = (hh5) dx7Var.f;
-        boolean z = hh5Var instanceof ch5;
-        if (z) {
-            String str = hh5Var.a;
-            gh5 gh5Var2 = gh5.o;
-            Uri parse = Uri.parse(str);
-            fo4 fo4Var = new fo4();
-            fo4Var.a = "0";
-            fo4Var.r = wf7.n("application/x-mpegURL");
-            List singletonList = Collections.singletonList(new fh5(parse, new go4(fo4Var), null, null, null, null, null, null));
-            List list = Collections.EMPTY_LIST;
-            gh5Var = new gh5("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list, null);
-        } else {
-            gh5Var = (gh5) hh5Var;
-        }
-        this.w = gh5Var;
-        r58 r58Var = new r58(gh5Var);
-        try {
-            r58Var.d();
-            this.E = (mo5) r58Var.f;
-            this.F = r58Var.c(1);
-            this.G = r58Var.c(2);
-            this.H = r58Var.c(3);
-            mj4 mj4Var = this.w.n;
-            if (mj4Var != null) {
-                k6d k6dVar = this.a;
-                nl9 nl9Var = new nl9((Object) this, (byte) 26);
-                eb3 eb3Var = this.s;
-                eb3Var.getClass();
-                rg5 rg5Var = new rg5(k6dVar, this, nl9Var, eb3Var);
-                this.y = rg5Var;
-                Uri uri = (Uri) mj4Var.b;
-                String str2 = (String) mj4Var.c;
-                kq kqVar = this.f;
-                if (str2 != null) {
-                    jte.p(rg5Var.h.contains(str2));
-                    rg5Var.l = str2;
+            case 2:
+                itb itbVar = (itb) this.c;
+                Window.Callback callback = itbVar.k;
+                if (callback != null && itbVar.l) {
+                    callback.onMenuItemSelected(0, (v8) this.b);
+                    break;
                 }
-                rg5Var.k = true;
-                rg5Var.c(-9223372036854775807L);
-                dx8 dx8Var = rg5Var.a;
-                k44 k44Var = new k44(rg5Var, (byte) 9);
-                dx8Var.e = uri;
-                dx8Var.f = k44Var;
-                dx8Var.g = kqVar;
-                dx8Var.i = new dfb(new Handler(hac.z(), null));
-                dx8Var.j = new mx6("SteeringManifestTracker");
-                dx8Var.a = true;
-                dx8Var.b();
-            }
-            this.I = ((nh5) this.E.get(0)).b();
-            this.e.add(new cc3(this));
-            a(this.E, true);
-            a(this.F, false);
-            a(this.G, false);
-            a(this.H, false);
-            da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
-            c0b c0bVar = dx7Var.d;
-            da6Var.d = c0bVar.c;
-            da6Var.e = c0bVar.d;
-            da6Var.f = j2;
-            da6Var.g = c0bVar.b;
-            ea6 ea6Var = new ea6(da6Var);
-            ec3 ec3Var = (ec3) this.d.get(this.I);
-            ec3Var.getClass();
-            if (z) {
-                Uri uri2 = dx7Var.d.c;
-                HashMap hashMap = ec3Var.b;
-                jte.p(hashMap.containsKey(uri2));
-                dc3 dc3Var = (dc3) hashMap.get(uri2);
-                dc3Var.getClass();
-                dc3Var.d((ch5) hh5Var, ea6Var);
-            } else {
-                ec3Var.e(this.I, false);
-            }
-            this.c.getClass();
-            this.f.p(ea6Var, 4);
-        } catch (bx7 e) {
-            this.x = e;
-        }
-    }
-
-    public final void h(Uri uri, boolean z) {
-        if (uri.equals(this.I)) {
-            return;
-        }
-        HashMap hashMap = this.d;
-        ec3 ec3Var = (ec3) hashMap.get(uri);
-        boolean z2 = false;
-        if (ec3Var != null ? ec3Var.c : false) {
-            ch5 ch5Var = this.J;
-            if (ch5Var == null || !ch5Var.o) {
-                ec3 ec3Var2 = (ec3) hashMap.get(uri);
-                ec3Var2.getClass();
-                ch5 b = ec3Var2.b(uri);
-                if (b != null && b.o) {
-                    z2 = true;
-                }
-                if (!z2 && z) {
-                    ec3Var2.d(uri, d(uri));
-                    this.K = uri;
+                break;
+            default:
+                try {
+                    ((Context) this.b).startActivity((Intent) this.c);
+                    break;
+                } catch (ActivityNotFoundException e) {
+                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e);
                     return;
                 }
-                this.I = uri;
-                if (!z2) {
-                    ec3Var2.d(uri, d(uri));
-                } else {
-                    this.J = b;
-                    this.r.v(b);
-                }
-            }
         }
     }
 
-    public final void i(Uri uri) {
-        ec3 ec3Var = (ec3) this.d.get(uri);
-        if (ec3Var != null) {
-            HashMap hashMap = ec3Var.b;
-            jte.p(hashMap.containsKey(uri));
-            dc3 dc3Var = (dc3) hashMap.get(uri);
-            dc3Var.getClass();
-            dc3Var.c.d();
-            IOException iOException = dc3Var.w;
-            if (iOException != null) {
-                throw iOException;
-            }
-        }
+    public /* synthetic */ fc3(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // ga6
-    public final void w(ja6 ja6Var, long j, long j2, boolean z) {
-        dx7 dx7Var = (dx7) ja6Var;
-        da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
-        c0b c0bVar = dx7Var.d;
-        da6Var.d = c0bVar.c;
-        da6Var.e = c0bVar.d;
-        da6Var.f = j2;
-        da6Var.g = c0bVar.b;
-        ea6 ea6Var = new ea6(da6Var);
-        this.c.getClass();
-        this.f.o(ea6Var, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    public fc3(Context context, Intent intent) {
+        this.a = (byte) 3;
+        this.b = context;
+        this.c = intent;
     }
 }

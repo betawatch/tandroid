@@ -4,9 +4,9 @@ import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class r2 extends smd {
+public final class r2 extends qkd {
     public static final Unsafe a;
     public static final long b;
     public static final long c;
@@ -30,14 +30,14 @@ public final class r2 extends smd {
                 f = unsafe.objectFieldOffset(s2.class.getDeclaredField("b"));
                 a = unsafe;
             } catch (NoSuchFieldException e2) {
-                rjb.m(e2);
+                sdb.b(e2);
             }
         } catch (PrivilegedActionException e3) {
-            rjb.k("Could not initialize intrinsics", e3.getCause());
+            fyb.j("Could not initialize intrinsics", e3.getCause());
         }
     }
 
-    @Override // smd
+    @Override // qkd
     public final boolean a(t2 t2Var, k2 k2Var, k2 k2Var2) {
         while (true) {
             Unsafe unsafe = a;
@@ -57,7 +57,7 @@ public final class r2 extends smd {
         }
     }
 
-    @Override // smd
+    @Override // qkd
     public final boolean b(t2 t2Var, Object obj, Object obj2) {
         while (true) {
             Unsafe unsafe = a;
@@ -77,7 +77,7 @@ public final class r2 extends smd {
         }
     }
 
-    @Override // smd
+    @Override // qkd
     public final boolean c(t2 t2Var, s2 s2Var, s2 s2Var2) {
         while (true) {
             Unsafe unsafe = a;
@@ -97,7 +97,7 @@ public final class r2 extends smd {
         }
     }
 
-    @Override // smd
+    @Override // qkd
     public final k2 d(t2 t2Var) {
         k2 k2Var;
         k2 k2Var2 = k2.d;
@@ -110,7 +110,7 @@ public final class r2 extends smd {
         return k2Var;
     }
 
-    @Override // smd
+    @Override // qkd
     public final s2 e(t2 t2Var) {
         s2 s2Var;
         s2 s2Var2 = s2.c;
@@ -123,12 +123,12 @@ public final class r2 extends smd {
         return s2Var;
     }
 
-    @Override // smd
+    @Override // qkd
     public final void f(s2 s2Var, s2 s2Var2) {
         a.putObject(s2Var, f, s2Var2);
     }
 
-    @Override // smd
+    @Override // qkd
     public final void g(s2 s2Var, Thread thread) {
         a.putObject(s2Var, e, thread);
     }

@@ -1,26 +1,63 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
+import androidx.car.app.g;
+import androidx.car.app.media.OpenMicrophoneResponse;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class gc1 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public boolean d;
+public abstract class gc1 {
+    public static final int AUDIO_CONTENT_BUFFER_SIZE = 512;
+    public static final String AUDIO_CONTENT_MIME = "audio/l16";
+    public static final int AUDIO_CONTENT_SAMPLING_RATE = 16000;
+    private static final int RECORDSTATE_RECORDING = 1;
+    private static final int RECORDSTATE_REMOTE_CLOSED = 2;
+    private static final int RECORDSTATE_STOPPED = 0;
+    private final g mCarContext;
+    private OpenMicrophoneResponse mOpenMicrophoneResponse;
+    private int mRecordingState = 0;
+    private final Object mRecordingStateLock = new Object();
 
-    public gc1(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
+    public static gc1 create(g gVar) {
+        throw null;
     }
 
-    public final void a(String str) {
-        if (this.d) {
-            return;
+    public int read(byte[] bArr, int i, int i2) {
+        synchronized (this.mRecordingStateLock) {
+            int i3 = this.mRecordingState;
+            if (i3 == 0) {
+                throw new IllegalStateException("Called read before calling startRecording or after calling stopRecording");
+            }
+            if (i3 != 2) {
+                return readInternal(bArr, i, i2);
+            }
+            return -1;
         }
-        this.d = true;
-        ConnectionsManager.native_receivedCaptchaResult(this.a, this.b, this.c, str);
     }
+
+    public abstract int readInternal(byte[] bArr, int i, int i2);
+
+    public void startRecording() {
+        synchronized (this.mRecordingStateLock) {
+            if (this.mRecordingState == 0) {
+                throw null;
+            }
+            throw new IllegalStateException("Cannot start recording if it has started and not been stopped");
+        }
+    }
+
+    public void stopRecording() {
+        synchronized (this.mRecordingStateLock) {
+            OpenMicrophoneResponse openMicrophoneResponse = this.mOpenMicrophoneResponse;
+            if (openMicrophoneResponse != null) {
+                if (this.mRecordingState != 2) {
+                    openMicrophoneResponse.getCarAudioCallback().onStopRecording();
+                }
+                this.mOpenMicrophoneResponse = null;
+            }
+            stopRecordingInternal();
+            this.mRecordingState = 0;
+        }
+    }
+
+    public abstract void stopRecordingInternal();
 }

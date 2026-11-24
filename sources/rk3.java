@@ -1,29 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class rk3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zk3 b;
+import android.view.View;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ rk3(zk3 zk3Var, byte b) {
-        this.a = b;
-        this.b = zk3Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rk3 implements zk3, e39 {
+    public final /* synthetic */ bl3 a;
+
+    public /* synthetic */ rk3(bl3 bl3Var) {
+        this.a = bl3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        zk3 zk3Var = this.b;
-        switch (b) {
-            case 0:
-                for (mk3 mk3Var : zk3Var.S.f0) {
-                    ((u46) mk3Var.a.getLayoutManager()).u = false;
-                }
-                break;
-            default:
-                zk3Var.K();
-                break;
+    @Override // zk3
+    public final void a(vf6 vf6Var, ArrayList arrayList) {
+        bl3 bl3Var = this.a;
+        int i = bl3Var.t0;
+        bl3Var.u0 = arrayList;
+        bl3Var.y0 = vf6Var;
+        for (int i2 = 0; i2 < bl3Var.u0.size(); i2++) {
+            al3 al3Var = (al3) bl3Var.u0.get(i2);
+            TLObject tLObject = al3Var.a;
+            if (tLObject instanceof TLRPC.User) {
+                na7.q1(i).a4((TLRPC.User) al3Var.a, true, false);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                na7.q1(i).T3((TLRPC.Chat) al3Var.a, true);
+            } else if (tLObject instanceof TLRPC.EncryptedChat) {
+                na7.q1(i).X3((TLRPC.EncryptedChat) al3Var.a, true);
+            }
         }
+        bl3Var.G(null);
+        bl3Var.f();
+    }
+
+    @Override // e39
+    public final boolean d(int i, View view) {
+        TLRPC.User V1;
+        ji3 ji3Var = this.a.V;
+        if (ji3Var != null) {
+            Long l = (Long) view.getTag();
+            long longValue = l.longValue();
+            cj3 cj3Var = ji3Var.a;
+            if (cj3Var.getParentActivity() != null && (V1 = cj3Var.getMessagesController().V1(l)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cj3Var.getParentActivity());
+                String M0 = k96.M0(2131752222, null);
+                hd hdVar = alertDialog$Builder.a;
+                hdVar.S = M0;
+                hdVar.U = gl.S2(k96.a0("ChatHintsDeleteAlert", null, 2131752223, qu2.m(0, V1.first_name, V1.last_name)));
+                alertDialog$Builder.j(k96.M0(2131744618, null), new rz1((Object) ji3Var, longValue, (byte) 2));
+                alertDialog$Builder.g(k96.M0(2131752577, null), null);
+                cj3Var.showDialog(hdVar);
+                TextView textView = (TextView) hdVar.c(-1);
+                if (textView != null) {
+                    zkb.X(textView, bkb.p7, cj3Var.getResourceProvider());
+                }
+            }
+        }
+        return true;
     }
 }

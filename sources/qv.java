@@ -1,107 +1,155 @@
 // default package
 
-import android.view.TextureView;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.HashMap;
-import org.telegram.messenger.a;
-import org.telegram.ui.j;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class qv implements qvc {
-    public final /* synthetic */ j a;
+public final class qv extends View implements eib, dw {
+    public final vg5 a;
+    public final dx b;
+    public bw c;
+    public int d;
+    public int e;
+    public TL_iv.pageBlockSubheader f;
 
-    public qv(j jVar) {
-        this.a = jVar;
+    public qv(Activity activity, vg5 vg5Var, dx dxVar) {
+        super(activity);
+        this.a = vg5Var;
+        this.b = dxVar;
     }
 
-    @Override // qvc
-    public final TextureView b(View view, boolean z, float f, int i, boolean z2) {
-        j jVar = this.a;
-        o oVar = jVar.y;
-        if (z) {
-            oVar.S.addView(oVar.R, qoe.c(-1.0f, -1));
-            oVar.S.setVisibility(0);
-            oVar.S.a(f, i);
-            oVar.G0 = jVar.b;
-            oVar.Q.addView(view, qoe.c(-1.0f, -1));
-            oVar.Q.setVisibility(0);
+    @Override // dw
+    public int getBoundLeft() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.h(this.a, 18.0f, bwVar.k() + bwVar.s);
+    }
+
+    @Override // dw
+    public int getBoundRight() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.C(this.a, 18.0f, bwVar.l() + bwVar.s);
+    }
+
+    @Override // dw
+    public int getLastLineBoundRight() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.C(this.a, 18.0f, bwVar.m() + bwVar.s);
+    }
+
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return ug8.a(this);
+    }
+
+    @Override // eib
+    public final void k(ArrayList arrayList) {
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            arrayList.add(bwVar);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.i(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.f(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.f == null || this.c == null) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(this.d, this.e);
+        o.s(this.a, canvas, this, 0);
+        this.c.d(canvas, this);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(o.f(2131754862, o.g(this.a, this.b, bwVar)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        qv qvVar;
+        int i3;
+        int size = View.MeasureSpec.getSize(i);
+        vg5 vg5Var = this.a;
+        vg5Var.getClass();
+        this.d = gl.L(18.0f);
+        vg5Var.getClass();
+        this.e = gl.L(8.0f);
+        TL_iv.pageBlockSubheader pageblocksubheader = this.f;
+        if (pageblocksubheader != null) {
+            TL_iv.RichText richText = pageblocksubheader.text;
+            vg5 vg5Var2 = this.a;
+            int h = ug8.h(vg5Var2, 36.0f, size);
+            TL_iv.pageBlockSubheader pageblocksubheader2 = this.f;
+            dx dxVar = this.b;
+            qvVar = this;
+            bw n = o.n(vg5Var2, qvVar, null, richText, h, 0, pageblocksubheader2, (dxVar == null || !dxVar.H) ? Layout.Alignment.ALIGN_NORMAL : lwa.a(), 0, this.b);
+            qvVar.c = n;
+            if (n != null) {
+                int height = n.d.getHeight() + qvVar.e;
+                int i4 = qvVar.e;
+                i3 = height + i4;
+                bw bwVar = qvVar.c;
+                bwVar.s = qvVar.d;
+                bwVar.w = i4;
+            } else {
+                i3 = 0;
+            }
         } else {
-            oVar.S.removeView(oVar.R);
-            oVar.G0 = null;
-            oVar.S.setVisibility(8);
-            oVar.Q.setVisibility(4);
+            qvVar = this;
+            i3 = 1;
         }
-        return oVar.R;
+        qvVar.setMeasuredDimension(size, i3);
     }
 
-    @Override // qvc
-    public final void d(float f) {
-        this.a.y.S.a(f, 0);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
     }
 
-    @Override // qvc
-    public final void e() {
-        this.a.a.setVisibility(0);
-        this.a.b.setVisibility(4);
-        this.a.b.g(null, null, null, null, false);
-        HashMap hashMap = new HashMap();
-        hashMap.put("Referer", a.b.getPackageName());
-        j jVar = this.a;
-        jVar.a.loadUrl(jVar.w.url, hashMap);
-    }
-
-    @Override // qvc
-    public final TextureView f(View view, boolean z, int i, int i2, boolean z2) {
-        return null;
-    }
-
-    @Override // qvc
-    public final void g(tvc tvcVar, boolean z) {
-        o oVar = this.a.y;
-        if (!z) {
-            if (oVar.F0 == tvcVar) {
-                oVar.F0 = null;
-            }
-            try {
-                oVar.M.getWindow().clearFlags(128);
-                return;
-            } catch (Exception e) {
-                fc4.g(e, true);
-                return;
-            }
-        }
-        tvc tvcVar2 = oVar.F0;
-        if (tvcVar2 != null && tvcVar2 != tvcVar) {
-            tvcVar2.a.f0();
-            tvcVar2.n();
-            tvcVar2.g0.d(true, true);
-        }
-        oVar.F0 = tvcVar;
-        try {
-            oVar.M.getWindow().addFlags(128);
-        } catch (Exception e2) {
-            fc4.g(e2, true);
-        }
-    }
-
-    @Override // qvc
-    public final ViewGroup h() {
-        return null;
-    }
-
-    @Override // qvc
-    public final boolean i() {
-        return false;
-    }
-
-    @Override // qvc
-    public final void c() {
-    }
-
-    @Override // qvc
-    public final void a(boolean z, mvc mvcVar, float f, boolean z2) {
+    public void setBlock(TL_iv.pageBlockSubheader pageblocksubheader) {
+        this.f = pageblocksubheader;
+        requestLayout();
     }
 }

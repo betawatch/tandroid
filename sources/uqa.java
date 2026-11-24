@@ -1,38 +1,103 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class uqa implements ee {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wsa b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+public final class uqa extends View implements tjb {
+    public final ImageReceiver a;
+    public final ImageReceiver b;
+    public final Path c;
+    public final Paint d;
 
-    public /* synthetic */ uqa(wsa wsaVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, byte b) {
-        this.a = b;
-        this.b = wsaVar;
-        this.c = tL_starGiftUnique;
+    public uqa(Context context, TLObject tLObject, TLObject tLObject2) {
+        super(context);
+        Path path = new Path();
+        this.c = path;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        ykb ykbVar = zkb.a;
+        pb0 pb0Var = new pb0((wjb) null);
+        pb0Var.k(tLObject);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.a = imageReceiver;
+        imageReceiver.q0(gl.L(30.0f));
+        imageReceiver.U(tLObject, pb0Var, null);
+        pb0 pb0Var2 = new pb0((wjb) null);
+        pb0Var2.k(tLObject2);
+        ImageReceiver imageReceiver2 = new ImageReceiver(this);
+        this.b = imageReceiver2;
+        imageReceiver2.q0(gl.L(30.0f));
+        imageReceiver2.U(tLObject2, pb0Var2, null);
+        paint.setColor(bkb.w0(null, bkb.D6, false));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(gl.L(2.0f));
+        path.rewind();
+        path.moveTo(0.0f, -gl.L(8.0f));
+        path.lineTo(gl.L(6.166f), 0.0f);
+        path.lineTo(0.0f, gl.L(8.0f));
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        byte b = this.a;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
-        wsa wsaVar = this.b;
-        switch (b) {
-            case 0:
-                k11 g = heVar.g(-1, true, true);
-                g.d();
-                TL_stars.updateStarGiftPrice updatestargiftprice = new TL_stars.updateStarGiftPrice();
-                updatestargiftprice.stargift = wsaVar.u1();
-                updatestargiftprice.resell_amount = TL_stars.StarsAmount.ofStars(0L);
-                ConnectionsManager.getInstance(wsaVar.a).sendRequest(updatestargiftprice, new fm8((Object) wsaVar, (Object) g, (Object) tL_starGiftUnique, (byte) 15));
-                break;
-            default:
-                l11.w(wsaVar.getContext(), "https://fragment.com/gift/" + tL_starGiftUnique.slug, false);
-                break;
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.I();
+        this.b.I();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.K();
+        this.b.K();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int width = (getWidth() / 2) - (gl.L(156.0f) / 2);
+        float height = (getHeight() / 2) - gl.L(30.0f);
+        float L = gl.L(60.0f);
+        float L2 = gl.L(60.0f);
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.i0(width, height, L, L2);
+        imageReceiver.h(canvas, null);
+        canvas.save();
+        canvas.translate((getWidth() / 2.0f) - (gl.L(6.166f) / 2.0f), getHeight() / 2.0f);
+        canvas.drawPath(this.c, this.d);
+        canvas.restore();
+        float L3 = gl.L(96.0f) + width;
+        float L4 = gl.L(60.0f);
+        float L5 = gl.L(60.0f);
+        ImageReceiver imageReceiver2 = this.b;
+        imageReceiver2.i0(L3, height, L4, L5);
+        imageReceiver2.h(canvas, null);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_30));
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        try {
+            this.d.setColor(bkb.w0(null, bkb.D6, false));
+            invalidate();
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

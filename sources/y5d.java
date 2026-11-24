@@ -1,38 +1,26 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Intent;
+import android.os.Bundle;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class y5d {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class y5d implements Continuation, yyb, zef {
+    public static final /* synthetic */ y5d a = new y5d();
 
-    static {
-        y5d.class.getClassLoader();
+    @Override // yyb
+    public final Object apply(Object obj) {
+        return ((toe) obj).a();
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
+    @Override // com.google.android.gms.tasks.Continuation
+    public final /* synthetic */ Object then(Task task) {
+        Intent intent = (Intent) ((Bundle) task.getResult()).getParcelable("notification_data");
+        if (intent != null) {
+            return new aj2(intent);
         }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(hg9.j(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
-    }
-
-    public static void c(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
+        return null;
     }
 }

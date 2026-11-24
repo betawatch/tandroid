@@ -1,56 +1,80 @@
 // default package
 
-import android.os.Parcel;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class h6d extends jh0 {
-    public final /* synthetic */ byte q;
+public final class h6d extends v5c implements ListIterator {
+    public final int b;
+    public int c;
+    public final a7d d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h6d(z3d z3dVar, byte b) {
-        super(o50.a, z3dVar);
-        this.q = b;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult, kh0
-    public final /* bridge */ /* synthetic */ void a(uc9 uc9Var) {
-        a(uc9Var);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* bridge */ /* synthetic */ uc9 d(Status status) {
-        byte b = this.q;
-        return status;
-    }
-
-    @Override // jh0
-    public final void n(zz4 zz4Var) {
-        switch (this.q) {
-            case 0:
-                b6d b6dVar = (b6d) zz4Var;
-                l6d l6dVar = (l6d) b6dVar.k();
-                e6d e6dVar = new e6d(this, (byte) 0);
-                GoogleSignInOptions googleSignInOptions = b6dVar.F;
-                Parcel e = l6dVar.e();
-                int i = y5d.a;
-                e.writeStrongBinder(e6dVar);
-                y5d.c(e, googleSignInOptions);
-                l6dVar.f(e, nm7.m1);
-                break;
-            default:
-                b6d b6dVar2 = (b6d) zz4Var;
-                l6d l6dVar2 = (l6d) b6dVar2.k();
-                e6d e6dVar2 = new e6d(this, (byte) 1);
-                GoogleSignInOptions googleSignInOptions2 = b6dVar2.F;
-                Parcel e2 = l6dVar2.e();
-                int i2 = y5d.a;
-                e2.writeStrongBinder(e6dVar2);
-                y5d.c(e2, googleSignInOptions2);
-                l6dVar2.f(e2, nm7.n1);
-                break;
+    public h6d(a7d a7dVar, int i) {
+        super((byte) 5);
+        int size = a7dVar.size();
+        if (i < 0 || i > size) {
+            k93.i(u3f.c(i, size, "index"));
+            throw null;
         }
+        this.b = size;
+        this.c = i;
+        this.d = a7dVar;
+    }
+
+    public final Object a(int i) {
+        return this.d.get(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            w26.g();
+            return null;
+        }
+        int i = this.c;
+        this.c = i + 1;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            w26.g();
+            return null;
+        }
+        int i = this.c - 1;
+        this.c = i;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

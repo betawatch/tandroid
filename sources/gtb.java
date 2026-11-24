@@ -1,48 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum gtb extends rub {
-    public gtb() {
-        super("AttributeValue_doubleQuoted", 37);
+public final class gtb extends w1 {
+    public static final Parcelable.Creator<gtb> CREATOR = new v1((byte) 3);
+    public int c;
+    public boolean d;
+
+    public gtb(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = parcel.readInt();
+        this.d = parcel.readInt() != 0;
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        String g = hl1Var.g(rub.G0);
-        int length = g.length();
-        wrb wrbVar = bsbVar.i;
-        if (length > 0) {
-            wrbVar.w(g);
-        } else {
-            wrbVar.j = true;
-        }
-        char d = hl1Var.d();
-        if (d == 0) {
-            bsbVar.m(this);
-            bsbVar.i.v((char) 65533);
-            return;
-        }
-        if (d == '\"') {
-            bsbVar.c = rub.e0;
-            return;
-        }
-        if (d != '&') {
-            if (d != 65535) {
-                bsbVar.i.v(d);
-                return;
-            } else {
-                bsbVar.l(this);
-                bsbVar.c = rub.a;
-                return;
-            }
-        }
-        int[] c = bsbVar.c('\"', true);
-        wrb wrbVar2 = bsbVar.i;
-        if (c != null) {
-            wrbVar2.x(c);
-        } else {
-            wrbVar2.v('&');
-        }
+    @Override // w1, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeInt(this.c);
+        parcel.writeInt(this.d ? 1 : 0);
     }
 }

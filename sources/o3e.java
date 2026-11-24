@@ -1,58 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class o3e extends qpe {
-    private static final o3e zzj;
-    private static volatile fye zzk;
-    private int zzc;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private boolean zzg;
-    private boolean zzh;
-    private float zzi;
+public final class o3e extends u3e {
+    public final transient int r;
+    public final transient int s;
+    public final /* synthetic */ u3e w;
 
-    static {
-        o3e o3eVar = new o3e();
-        zzj = o3eVar;
-        qpe.g(o3e.class, o3eVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o3e(u3e u3eVar, int i, int i2) {
+        super((byte) 5);
+        this.w = u3eVar;
+        this.r = i;
+        this.s = i2;
     }
 
-    /* JADX WARN: Type inference failed for: r2v12, types: [fye, java.lang.Object] */
-    @Override // qpe
-    public final Object d(int i) {
-        fye fyeVar;
-        switch (o4e.a[i - 1]) {
-            case 1:
-                return new o3e();
-            case 2:
-                return new c3e(zzj);
-            case 3:
-                return new uye(zzj, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဌ\u0001\u0003ဌ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ခ\u0005", new Object[]{"zzc", "zzd", e5e.f, "zze", e5e.e, "zzf", e5e.d, "zzg", "zzh", "zzi"});
-            case 4:
-                return zzj;
-            case 5:
-                fye fyeVar2 = zzk;
-                if (fyeVar2 != null) {
-                    return fyeVar2;
-                }
-                synchronized (o3e.class) {
-                    fye fyeVar3 = zzk;
-                    fyeVar = fyeVar3;
-                    if (fyeVar3 == null) {
-                        ?? lpeVar = new lpe();
-                        zzk = lpeVar;
-                        fyeVar = lpeVar;
-                    }
-                }
-                return fyeVar;
-            case 6:
-                return (byte) 1;
-            default:
-                gxc.b();
-            case 7:
-                return null;
-        }
+    @Override // java.util.List
+    public final Object get(int i) {
+        p1f.a(i, this.s);
+        return this.w.get(i + this.r);
+    }
+
+    @Override // kzc
+    public final int q() {
+        return this.w.s() + this.r + this.s;
+    }
+
+    @Override // kzc
+    public final int s() {
+        return this.w.s() + this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s;
+    }
+
+    @Override // kzc
+    public final Object[] x() {
+        return this.w.x();
+    }
+
+    @Override // u3e, java.util.List
+    /* renamed from: y, reason: merged with bridge method [inline-methods] */
+    public final u3e subList(int i, int i2) {
+        p1f.c(i, i2, this.s);
+        int i3 = this.r;
+        return this.w.subList(i + i3, i2 + i3);
     }
 }

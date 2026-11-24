@@ -1,13 +1,13 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
     private long nativeTrack;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
@@ -24,7 +24,7 @@ public class MediaStreamTrack {
                     return mediaType;
                 }
             }
-            u36.j(hg9.j(i, "Unknown native media type: "));
+            w26.j(de9.k(i, "Unknown native media type: "));
             return null;
         }
 
@@ -33,7 +33,7 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public enum State {
         LIVE,
         ENDED;
@@ -47,7 +47,7 @@ public class MediaStreamTrack {
         if (j != 0) {
             this.nativeTrack = j;
         } else {
-            u36.j("nativeTrack may not be null");
+            w26.j("nativeTrack may not be null");
             throw null;
         }
     }
@@ -56,7 +56,7 @@ public class MediaStreamTrack {
         if (this.nativeTrack != 0) {
             return;
         }
-        dq9.m("MediaStreamTrack has been disposed.");
+        sc8.j("MediaStreamTrack has been disposed.");
     }
 
     public static MediaStreamTrack createMediaStreamTrack(long j) {

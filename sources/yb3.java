@@ -1,32 +1,23 @@
 // default package
 
-import android.content.Context;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.FirebaseMessagingRegistrar;
 import java.util.concurrent.Executor;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yb3 implements lr2 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yy8 b;
+public final class yb3 {
+    public static final Logger f = Logger.getLogger(i1c.class.getName());
+    public final xl3 a;
+    public final Executor b;
+    public final md7 c;
+    public final lo9 d;
+    public final lo9 e;
 
-    public /* synthetic */ yb3(yy8 yy8Var, byte b) {
-        this.a = b;
-        this.b = yy8Var;
-    }
-
-    @Override // lr2
-    public final Object X(sm2 sm2Var) {
-        FirebaseMessaging lambda$getComponents$0;
-        byte b = this.a;
-        yy8 yy8Var = this.b;
-        switch (b) {
-            case 0:
-                return new ac3((Context) sm2Var.a(Context.class), ((li4) sm2Var.a(li4.class)).d(), sm2Var.N(nf5.class), sm2Var.d(ge3.class), (Executor) sm2Var.i(yy8Var));
-            default:
-                lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(yy8Var, sm2Var);
-                return lambda$getComponents$0;
-        }
+    public yb3(Executor executor, md7 md7Var, xl3 xl3Var, lo9 lo9Var, lo9 lo9Var2) {
+        this.b = executor;
+        this.c = md7Var;
+        this.a = xl3Var;
+        this.d = lo9Var;
+        this.e = lo9Var2;
     }
 }

@@ -3,9 +3,9 @@
 import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class fa implements ps4, Serializable {
+public final class fa implements oq4, Serializable {
     public final AtomicReference a;
     public final boolean b = false;
     public final int c = 2;
@@ -22,10 +22,10 @@ public final class fa implements ps4, Serializable {
             return false;
         }
         fa faVar = (fa) obj;
-        return this.b == faVar.b && this.c == faVar.c && rr5.a(this.a, faVar.a) && AtomicReference.class.equals(AtomicReference.class);
+        return this.b == faVar.b && this.c == faVar.c && rp5.a(this.a, faVar.a) && AtomicReference.class.equals(AtomicReference.class);
     }
 
-    @Override // ps4
+    @Override // oq4
     public final int getArity() {
         return 2;
     }
@@ -35,7 +35,7 @@ public final class fa implements ps4, Serializable {
     }
 
     public final String toString() {
-        h79.a.getClass();
-        return i79.a(this);
+        f59.a.getClass();
+        return g59.a(this);
     }
 }

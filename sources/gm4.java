@@ -1,11 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public interface gm4 {
-    void a(int i, int i2, int i3);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class gm4 extends m19 {
+    public static final gm4 c;
 
-    void b(int i, int i2, int i3);
+    static {
+        gm4 gm4Var = new gm4();
+        c = gm4Var;
+        gm4Var.setStackTrace(m19.b);
+    }
 
-    int c(int i, int i2);
+    public static gm4 a() {
+        return m19.a ? new gm4() : c;
+    }
 }

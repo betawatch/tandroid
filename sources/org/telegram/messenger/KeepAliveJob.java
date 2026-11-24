@@ -4,25 +4,25 @@ import android.content.Intent;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.support.JobIntentService;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public class KeepAliveJob extends JobIntentService {
     public static volatile CountDownLatch a;
     public static volatile boolean b;
     public static final Object c = new Object();
-    public static final bn3 d = new bn3((byte) 16);
+    public static final ql3 d = new ql3((byte) 16);
 
     public static void a() {
         synchronized (c) {
             if (a != null) {
-                if (e21.a) {
-                    fc4.b("finish keep-alive job");
+                if (w01.a) {
+                    fa4.b("finish keep-alive job");
                 }
                 a.countDown();
             }
             if (b) {
-                if (e21.a) {
-                    fc4.b("finish queued keep-alive job");
+                if (w01.a) {
+                    fa4.b("finish queued keep-alive job");
                 }
                 b = false;
             }
@@ -34,8 +34,8 @@ public class KeepAliveJob extends JobIntentService {
         synchronized (c) {
             if (b) {
                 a = new CountDownLatch(1);
-                if (e21.a) {
-                    fc4.b("started keep-alive job");
+                if (w01.a) {
+                    fa4.b("started keep-alive job");
                 }
                 Utilities.e.d(d, 60000L);
                 try {
@@ -46,8 +46,8 @@ public class KeepAliveJob extends JobIntentService {
                 synchronized (c) {
                     a = null;
                 }
-                if (e21.a) {
-                    fc4.b("ended keep-alive job");
+                if (w01.a) {
+                    fa4.b("ended keep-alive job");
                 }
             }
         }

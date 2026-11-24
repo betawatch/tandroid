@@ -5,61 +5,61 @@ import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class RemoteActionCompatParcelizer {
-    public static RemoteActionCompat read(zbc zbcVar) {
+    public static RemoteActionCompat read(y9c y9cVar) {
         RemoteActionCompat remoteActionCompat = new RemoteActionCompat();
-        bcc bccVar = remoteActionCompat.a;
+        aac aacVar = remoteActionCompat.a;
         boolean z = true;
-        if (zbcVar.e(1)) {
-            bccVar = zbcVar.h();
+        if (y9cVar.e(1)) {
+            aacVar = y9cVar.h();
         }
-        remoteActionCompat.a = (IconCompat) bccVar;
+        remoteActionCompat.a = (IconCompat) aacVar;
         CharSequence charSequence = remoteActionCompat.b;
-        if (zbcVar.e(2)) {
-            charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((acc) zbcVar).e);
+        if (y9cVar.e(2)) {
+            charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((z9c) y9cVar).e);
         }
         remoteActionCompat.b = charSequence;
         CharSequence charSequence2 = remoteActionCompat.c;
-        if (zbcVar.e(3)) {
-            charSequence2 = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((acc) zbcVar).e);
+        if (y9cVar.e(3)) {
+            charSequence2 = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((z9c) y9cVar).e);
         }
         remoteActionCompat.c = charSequence2;
-        remoteActionCompat.d = (PendingIntent) zbcVar.g(remoteActionCompat.d, 4);
+        remoteActionCompat.d = (PendingIntent) y9cVar.g(remoteActionCompat.d, 4);
         boolean z2 = remoteActionCompat.e;
-        if (zbcVar.e(5)) {
-            z2 = ((acc) zbcVar).e.readInt() != 0;
+        if (y9cVar.e(5)) {
+            z2 = ((z9c) y9cVar).e.readInt() != 0;
         }
         remoteActionCompat.e = z2;
         boolean z3 = remoteActionCompat.f;
-        if (!zbcVar.e(6)) {
+        if (!y9cVar.e(6)) {
             z = z3;
-        } else if (((acc) zbcVar).e.readInt() == 0) {
+        } else if (((z9c) y9cVar).e.readInt() == 0) {
             z = false;
         }
         remoteActionCompat.f = z;
         return remoteActionCompat;
     }
 
-    public static void write(RemoteActionCompat remoteActionCompat, zbc zbcVar) {
-        zbcVar.getClass();
+    public static void write(RemoteActionCompat remoteActionCompat, y9c y9cVar) {
+        y9cVar.getClass();
         IconCompat iconCompat = remoteActionCompat.a;
-        zbcVar.i(1);
-        zbcVar.l(iconCompat);
+        y9cVar.i(1);
+        y9cVar.l(iconCompat);
         CharSequence charSequence = remoteActionCompat.b;
-        zbcVar.i(2);
-        Parcel parcel = ((acc) zbcVar).e;
+        y9cVar.i(2);
+        Parcel parcel = ((z9c) y9cVar).e;
         TextUtils.writeToParcel(charSequence, parcel, 0);
         CharSequence charSequence2 = remoteActionCompat.c;
-        zbcVar.i(3);
+        y9cVar.i(3);
         TextUtils.writeToParcel(charSequence2, parcel, 0);
-        zbcVar.k(remoteActionCompat.d, 4);
+        y9cVar.k(remoteActionCompat.d, 4);
         boolean z = remoteActionCompat.e;
-        zbcVar.i(5);
+        y9cVar.i(5);
         parcel.writeInt(z ? 1 : 0);
         boolean z2 = remoteActionCompat.f;
-        zbcVar.i(6);
+        y9cVar.i(6);
         parcel.writeInt(z2 ? 1 : 0);
     }
 }

@@ -12,7 +12,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import android.widget.Button;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public abstract class l4 extends AccessibilityNodeProvider {
     public final n4 a;
@@ -113,11 +113,11 @@ public abstract class l4 extends AccessibilityNodeProvider {
         m4 m4Var = ((k4) this).g.R;
         if (m4Var != null) {
             if (i == 0) {
-                ((gic) m4Var).a();
+                ((fgc) m4Var).a();
                 return true;
             }
             if (i == 1) {
-                ((gic) m4Var).b();
+                ((fgc) m4Var).b();
             }
         }
         return true;

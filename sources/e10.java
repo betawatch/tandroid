@@ -1,24 +1,450 @@
 // default package
 
-import android.media.AudioManager;
-import android.os.Handler;
-import android.os.Looper;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class e10 implements AudioManager.OnAudioFocusChangeListener {
-    public final Handler a;
-    public final AudioManager.OnAudioFocusChangeListener b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class e10 implements RequestDelegate {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ KeyEvent.Callback e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-    public e10(AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler) {
-        this.b = onAudioFocusChangeListener;
-        Looper looper = handler.getLooper();
-        String str = hac.a;
-        this.a = new Handler(looper, null);
+    public /* synthetic */ e10(i20 i20Var, boolean z, k27 k27Var, boolean z2, Runnable runnable, long j, TLRPC.Document document) {
+        this.e = i20Var;
+        this.b = z;
+        this.f = k27Var;
+        this.c = z2;
+        this.g = runnable;
+        this.d = j;
+        this.h = document;
     }
 
-    @Override // android.media.AudioManager.OnAudioFocusChangeListener
-    public final void onAudioFocusChange(int i) {
-        hac.X(this.a, new eh((Object) this, i, (byte) 3));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        Object obj = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        KeyEvent.Callback callback = this.e;
+        switch (b) {
+            case 0:
+                final i20 i20Var = (i20) callback;
+                k27 k27Var = (k27) obj3;
+                final Runnable runnable = (Runnable) obj2;
+                TLRPC.Document document = (TLRPC.Document) obj;
+                final boolean z = this.c;
+                if (tL_error != null) {
+                    if (!ab4.r(tL_error.text)) {
+                        gl.c3(new f10(i20Var, tL_error, (byte) 1));
+                    } else if (!this.b && k27Var.e1() >= 0) {
+                        if (k27.B0(k27Var.k) < 0) {
+                            final int e1 = k27Var.e1();
+                            TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
+                            tL_channels_getMessages.channel = na7.q1(i20Var.a).f1(-k27.B0(k27Var.k));
+                            tL_channels_getMessages.id.add(Integer.valueOf(e1));
+                            final byte b2 = 1;
+                            ConnectionsManager.getInstance(i20Var.a).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: g10
+                                @Override // org.telegram.tgnet.RequestDelegate
+                                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
+                                    byte b3 = b2;
+                                    TLRPC.Message message = null;
+                                    Runnable runnable2 = runnable;
+                                    boolean z2 = z;
+                                    int i = e1;
+                                    final i20 i20Var2 = i20Var;
+                                    final byte b4 = 1;
+                                    final byte b5 = 0;
+                                    switch (b3) {
+                                        case 0:
+                                            if (!(tLObject2 instanceof TLRPC.messages_Messages)) {
+                                                if (tL_error2 != null) {
+                                                    gl.c3(new f10(i20Var2, tL_error2, (byte) 3));
+                                                    break;
+                                                }
+                                            } else {
+                                                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
+                                                int i2 = 0;
+                                                while (true) {
+                                                    if (i2 < messages_messages.messages.size()) {
+                                                        if (messages_messages.messages.get(i2).id == i) {
+                                                            message = messages_messages.messages.get(i2);
+                                                        } else {
+                                                            i2++;
+                                                        }
+                                                    }
+                                                }
+                                                if (message == null) {
+                                                    gl.c3(new Runnable() { // from class: i10
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            byte b6 = b4;
+                                                            i20 i20Var3 = i20Var2;
+                                                            switch (b6) {
+                                                                case 0:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                                default:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                            }
+                                                        }
+                                                    });
+                                                    break;
+                                                } else {
+                                                    i20Var2.L0(new k27(i20Var2.a, message, false, true), z2, runnable2, true);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            if (!(tLObject2 instanceof TLRPC.messages_Messages)) {
+                                                if (tL_error2 != null) {
+                                                    gl.c3(new f10(i20Var2, tL_error2, (byte) 2));
+                                                    break;
+                                                }
+                                            } else {
+                                                TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
+                                                int i3 = 0;
+                                                while (true) {
+                                                    if (i3 < messages_messages2.messages.size()) {
+                                                        if (messages_messages2.messages.get(i3).id == i) {
+                                                            message = messages_messages2.messages.get(i3);
+                                                        } else {
+                                                            i3++;
+                                                        }
+                                                    }
+                                                }
+                                                if (message == null) {
+                                                    gl.c3(new Runnable() { // from class: i10
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            byte b6 = b5;
+                                                            i20 i20Var3 = i20Var2;
+                                                            switch (b6) {
+                                                                case 0:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                                default:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                            }
+                                                        }
+                                                    });
+                                                    break;
+                                                } else {
+                                                    i20Var2.L0(new k27(i20Var2.a, message, false, true), z2, runnable2, true);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                    }
+                                }
+                            });
+                            break;
+                        } else {
+                            final int e12 = k27Var.e1();
+                            TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
+                            tL_messages_getMessages.id.add(Integer.valueOf(e12));
+                            final byte b3 = 0;
+                            ConnectionsManager.getInstance(i20Var.a).sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: g10
+                                @Override // org.telegram.tgnet.RequestDelegate
+                                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
+                                    byte b32 = b3;
+                                    TLRPC.Message message = null;
+                                    Runnable runnable2 = runnable;
+                                    boolean z2 = z;
+                                    int i = e12;
+                                    final i20 i20Var2 = i20Var;
+                                    final byte b4 = 1;
+                                    final byte b5 = 0;
+                                    switch (b32) {
+                                        case 0:
+                                            if (!(tLObject2 instanceof TLRPC.messages_Messages)) {
+                                                if (tL_error2 != null) {
+                                                    gl.c3(new f10(i20Var2, tL_error2, (byte) 3));
+                                                    break;
+                                                }
+                                            } else {
+                                                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
+                                                int i2 = 0;
+                                                while (true) {
+                                                    if (i2 < messages_messages.messages.size()) {
+                                                        if (messages_messages.messages.get(i2).id == i) {
+                                                            message = messages_messages.messages.get(i2);
+                                                        } else {
+                                                            i2++;
+                                                        }
+                                                    }
+                                                }
+                                                if (message == null) {
+                                                    gl.c3(new Runnable() { // from class: i10
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            byte b6 = b4;
+                                                            i20 i20Var3 = i20Var2;
+                                                            switch (b6) {
+                                                                case 0:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                                default:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                            }
+                                                        }
+                                                    });
+                                                    break;
+                                                } else {
+                                                    i20Var2.L0(new k27(i20Var2.a, message, false, true), z2, runnable2, true);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            if (!(tLObject2 instanceof TLRPC.messages_Messages)) {
+                                                if (tL_error2 != null) {
+                                                    gl.c3(new f10(i20Var2, tL_error2, (byte) 2));
+                                                    break;
+                                                }
+                                            } else {
+                                                TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
+                                                int i3 = 0;
+                                                while (true) {
+                                                    if (i3 < messages_messages2.messages.size()) {
+                                                        if (messages_messages2.messages.get(i3).id == i) {
+                                                            message = messages_messages2.messages.get(i3);
+                                                        } else {
+                                                            i3++;
+                                                        }
+                                                    }
+                                                }
+                                                if (message == null) {
+                                                    gl.c3(new Runnable() { // from class: i10
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            byte b6 = b5;
+                                                            i20 i20Var3 = i20Var2;
+                                                            switch (b6) {
+                                                                case 0:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                                default:
+                                                                    new u21((FrameLayout) i20Var3.b, i20Var3.J0).t(k96.a0(null, null, 2131743639, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+                                                                    break;
+                                                            }
+                                                        }
+                                                    });
+                                                    break;
+                                                } else {
+                                                    i20Var2.L0(new k27(i20Var2.a, message, false, true), z2, runnable2, true);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                    }
+                                }
+                            });
+                            break;
+                        }
+                    } else {
+                        gl.c3(new f10(i20Var, tL_error, (byte) 0));
+                        break;
+                    }
+                }
+                gl.c3(new fe2(i20Var, this.d, z, document, runnable));
+                break;
+            default:
+                final yf8 yf8Var = (yf8) callback;
+                final na7 na7Var = (na7) obj3;
+                final TLRPC.TL_channels_searchPosts tL_channels_searchPosts = (TLRPC.TL_channels_searchPosts) obj2;
+                final ConnectionsManager connectionsManager = (ConnectionsManager) obj;
+                final boolean z2 = this.b;
+                final boolean z3 = this.c;
+                final long j = this.d;
+                gl.c3(new Runnable() { // from class: xf8
+                    /* JADX WARN: Removed duplicated region for block: B:29:0x00b7  */
+                    /* JADX WARN: Removed duplicated region for block: B:32:0x00c5 A[ADDED_TO_REGION] */
+                    /* JADX WARN: Removed duplicated region for block: B:40:0x00de  */
+                    /* JADX WARN: Removed duplicated region for block: B:48:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+                    @Override // java.lang.Runnable
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                    */
+                    public final void run() {
+                        int i;
+                        yf8 yf8Var2 = yf8.this;
+                        int i2 = yf8Var2.b;
+                        q5c q5cVar = yf8Var2.c;
+                        yf8Var2.L = -1;
+                        boolean z4 = false;
+                        yf8Var2.w = false;
+                        yf8Var2.I.setLoading(false);
+                        TLObject tLObject2 = tLObject;
+                        boolean z5 = tLObject2 instanceof TLRPC.messages_Messages;
+                        long j2 = j;
+                        if (!z5) {
+                            TLRPC.TL_error tL_error2 = tL_error;
+                            if (tL_error2 == null || !tL_error2.text.startsWith("FLOOD_WAIT_") || !tL_error2.text.contains("_OR_STARS_")) {
+                                if (tL_error2 != null) {
+                                    if ("PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error2.text)) {
+                                        yf8Var2.d();
+                                        q5cVar.g3.O(true);
+                                        return;
+                                    } else {
+                                        if ("BALANCE_TOO_LOW".equalsIgnoreCase(tL_error2.text)) {
+                                            yf8Var2.d();
+                                            q5cVar.g3.O(true);
+                                            gta.v(i2, false).n(new et(yf8Var2, j2, (byte) 27), true, true);
+                                            return;
+                                        }
+                                        return;
+                                    }
+                                }
+                                return;
+                            }
+                            Matcher matcher = Pattern.compile("FLOOD_WAIT_(\\d+)_OR_STARS_(\\d+)").matcher(tL_error2.text);
+                            if (matcher == null || !matcher.matches()) {
+                                return;
+                            }
+                            int parseInt = Integer.parseInt(matcher.group(1));
+                            int parseInt2 = Integer.parseInt(matcher.group(2));
+                            TLRPC.SearchPostsFlood searchPostsFlood = yf8Var2.d;
+                            if (searchPostsFlood != null) {
+                                searchPostsFlood.flags |= 2;
+                                searchPostsFlood.wait_till = connectionsManager.getCurrentTime() + parseInt;
+                                yf8Var2.d.stars_amount = parseInt2;
+                            }
+                            yf8Var2.d();
+                            q5cVar.g3.O(true);
+                            return;
+                        }
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
+                        ArrayList<TLRPC.User> arrayList = messages_messages.users;
+                        na7 na7Var2 = na7Var;
+                        na7Var2.b4(arrayList, false);
+                        na7Var2.V3(messages_messages.chats, false);
+                        TLRPC.SearchPostsFlood searchPostsFlood2 = messages_messages.search_flood;
+                        if (searchPostsFlood2 != null) {
+                            yf8Var2.d = searchPostsFlood2;
+                        }
+                        boolean z6 = z2;
+                        ArrayList arrayList2 = z6 ? yf8Var2.e : yf8Var2.n;
+                        boolean isEmpty = arrayList2.isEmpty();
+                        ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
+                        int size = arrayList3.size();
+                        int i3 = 0;
+                        while (i3 < size) {
+                            TLRPC.Message message = arrayList3.get(i3);
+                            i3++;
+                            k27 k27Var2 = new k27(i2, message, z4, z4);
+                            if (!z6) {
+                                k27Var2.J5(tL_channels_searchPosts.query, true);
+                            }
+                            arrayList2.add(k27Var2);
+                            z4 = false;
+                        }
+                        if (!z6) {
+                            if (!(messages_messages instanceof TLRPC.TL_messages_messagesSlice)) {
+                                if (messages_messages instanceof TLRPC.TL_messages_messages) {
+                                    i = 0;
+                                    yf8Var2.r = 0;
+                                    yf8Var2.s = true;
+                                } else {
+                                    i = 0;
+                                    if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
+                                        yf8Var2.r = 0;
+                                        yf8Var2.s = true;
+                                    }
+                                }
+                                yf8Var2.d();
+                                if (isEmpty) {
+                                    q5cVar.w0(i);
+                                }
+                                q5cVar.g3.O(true);
+                                if (!arrayList2.isEmpty() && (!z6 ? !yf8Var2.s : !yf8Var2.h)) {
+                                    gl.c3(new vj6(yf8Var2, z6, arrayList2, (byte) 15));
+                                }
+                                if (z3 || j2 <= 0 || z6) {
+                                    return;
+                                }
+                                b00.u(k96.H(',', "SearchPaidStars", (int) j2), u21.b0(yf8Var2.a), R.raw.stars_topup, 36);
+                                return;
+                            }
+                            yf8Var2.r = messages_messages.next_rate;
+                            yf8Var2.s = (messages_messages.flags & 1) == 0;
+                            i = 0;
+                            yf8Var2.d();
+                            if (isEmpty) {
+                            }
+                            q5cVar.g3.O(true);
+                            if (!arrayList2.isEmpty()) {
+                                gl.c3(new vj6(yf8Var2, z6, arrayList2, (byte) 15));
+                            }
+                            if (z3) {
+                                return;
+                            } else {
+                                return;
+                            }
+                        }
+                        if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
+                            yf8Var2.f = messages_messages.next_rate;
+                            yf8Var2.h = (messages_messages.flags & 1) == 0;
+                            i = 0;
+                            yf8Var2.d();
+                            if (isEmpty) {
+                            }
+                            q5cVar.g3.O(true);
+                            if (!arrayList2.isEmpty()) {
+                            }
+                            if (z3) {
+                            }
+                        } else {
+                            if (messages_messages instanceof TLRPC.TL_messages_messages) {
+                                i = 0;
+                                yf8Var2.f = 0;
+                                yf8Var2.h = true;
+                            } else {
+                                i = 0;
+                                if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
+                                    yf8Var2.f = 0;
+                                    yf8Var2.h = true;
+                                }
+                            }
+                            yf8Var2.d();
+                            if (isEmpty) {
+                            }
+                            q5cVar.g3.O(true);
+                            if (!arrayList2.isEmpty()) {
+                            }
+                            if (z3) {
+                            }
+                        }
+                    }
+                });
+                break;
+        }
+    }
+
+    public /* synthetic */ e10(yf8 yf8Var, na7 na7Var, boolean z, TLRPC.TL_channels_searchPosts tL_channels_searchPosts, boolean z2, long j, ConnectionsManager connectionsManager) {
+        this.e = yf8Var;
+        this.f = na7Var;
+        this.b = z;
+        this.g = tL_channels_searchPosts;
+        this.c = z2;
+        this.d = j;
+        this.h = connectionsManager;
     }
 }

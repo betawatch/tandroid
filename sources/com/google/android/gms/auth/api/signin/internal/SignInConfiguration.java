@@ -5,15 +5,15 @@ import android.os.Parcelable;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class SignInConfiguration extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<SignInConfiguration> CREATOR = new d3d((byte) 23);
+    public static final Parcelable.Creator<SignInConfiguration> CREATOR = new b1d((byte) 23);
     public final String a;
     public final GoogleSignInOptions b;
 
     public SignInConfiguration(String str, GoogleSignInOptions googleSignInOptions) {
-        ite.f(str);
+        fre.f(str);
         this.a = str;
         this.b = googleSignInOptions;
     }
@@ -47,9 +47,9 @@ public final class SignInConfiguration extends b4 implements ReflectedParcelable
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.a);
-        mve.k(parcel, 5, this.b, i);
-        mve.s(parcel, r);
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.k(parcel, 5, this.b, i);
+        jte.s(parcel, r);
     }
 }

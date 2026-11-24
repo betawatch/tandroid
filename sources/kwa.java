@@ -1,33 +1,41 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import androidx.recyclerview.widget.RecyclerView;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class kwa implements eja {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ g15 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class kwa extends bh2 {
+    public static final /* synthetic */ z24 h;
+    public static final /* synthetic */ z24 n;
+    public long[] f;
 
-    public /* synthetic */ kwa(g15 g15Var, byte b) {
-        this.a = b;
-        this.b = g15Var;
+    static {
+        z74 z74Var = new z74(kwa.class, "StaticChunkOffsetBox.java");
+        h = z74Var.e(z74Var.d("getChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "", "", "[J"));
+        n = z74Var.e(z74Var.d("setChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "[J", "chunkOffsets", "void"));
     }
 
-    @Override // eja
-    public final void c(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
-        byte b = this.a;
-        g15 g15Var = this.b;
-        switch (b) {
-            case 0:
-                r59 r59Var = (r59) recyclerView;
-                tl0.a(r59Var, canvas, rectF, r59Var, g15Var);
-                break;
-            default:
-                r59 r59Var2 = (r59) recyclerView;
-                tl0.a(r59Var2, canvas, rectF, r59Var2, g15Var);
-                break;
+    @Override // g2, y1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a = mqd.a(hle.g(byteBuffer));
+        this.f = new long[a];
+        for (int i = 0; i < a; i++) {
+            this.f[i] = hle.g(byteBuffer);
         }
+    }
+
+    @Override // g2, y1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.f.length);
+        for (long j : this.f) {
+            byteBuffer.putInt((int) j);
+        }
+    }
+
+    @Override // y1
+    public final long getContentSize() {
+        return (this.f.length << 2) + 8;
     }
 }

@@ -1,41 +1,50 @@
 // default package
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.text.style.CharacterStyle;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class d7c extends LinkMovementMethod {
-    public final /* synthetic */ UndoView a;
+public final class d7c extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    public d7c(UndoView undoView) {
-        this.a = undoView;
+    static {
+        b4c.h(new d7c());
     }
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        CharacterStyle[] characterStyleArr;
-        try {
-            if (motionEvent.getAction() == 0 && ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) == null || characterStyleArr.length == 0)) {
-                return false;
-            }
-            if (motionEvent.getAction() != 1) {
-                return super.onTouchEvent(textView, spannable, motionEvent);
-            }
-            CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
-            if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
-                this.a.b(characterStyleArr2[0]);
-            }
-            Selection.removeSelection(spannable);
-            return true;
-        } catch (Exception e) {
-            fc4.g(e, true);
-            return false;
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        e7c e7cVar = (e7c) view;
+        int i = c4cVar.k;
+        CharSequence charSequence = c4cVar.m;
+        CharSequence charSequence2 = c4cVar.n;
+        boolean z2 = c4cVar.r;
+        boolean z3 = c4cVar.s;
+        int i2 = c4cVar.A;
+        TextView textView = e7cVar.e;
+        e7cVar.h = z2;
+        e7cVar.n = z3;
+        e7cVar.b.setImageResource(i);
+        ImageView imageView = e7cVar.f;
+        if (i2 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i2);
+        } else {
+            imageView.setVisibility(8);
         }
+        e7cVar.d.setText(charSequence);
+        textView.setText(charSequence2);
+        textView.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int L = gl.L(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        e7cVar.c.setPadding(0, L, 0, L);
+        e7cVar.updateColors();
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new e7c(context, wjbVar);
     }
 }

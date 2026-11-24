@@ -1,52 +1,50 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class sna implements Runnable {
+public final /* synthetic */ class sna implements k8c {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ tna b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ vqa b;
 
-    public /* synthetic */ sna(tna tnaVar, int i, byte b) {
+    public /* synthetic */ sna(vqa vqaVar, byte b) {
         this.a = b;
-        this.b = tnaVar;
-        this.c = i;
+        this.b = vqaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 1;
-        int i = this.c;
-        tna tnaVar = this.b;
-        switch (b) {
+    @Override // k8c
+    public final void a(Object obj, Object obj2, Object obj3) {
+        switch (this.a) {
             case 0:
-                int i2 = tnaVar.k;
-                mj4[] mj4VarArr = tnaVar.c;
-                if (mj4VarArr[i] == null) {
-                    mj4VarArr[i] = new mj4(i2);
-                }
-                Bitmap bitmap = tnaVar.e;
-                if (bitmap == null) {
-                    tnaVar.e = Bitmap.createBitmap(i2, i2, Bitmap.Config.ALPHA_8);
-                    tnaVar.f = new Canvas(tnaVar.e);
-                } else {
-                    bitmap.eraseColor(0);
-                }
-                tnaVar.a(tnaVar.f, tnaVar.o);
-                Utilities.copyBitmaps(tnaVar.e, (Bitmap) mj4VarArr[i].b);
-                gm.c3(new sna(tnaVar, i, b2));
+                boolean booleanValue = ((Boolean) obj3).booleanValue();
+                this.b.u2((View) obj2, (CharSequence) obj, booleanValue);
                 break;
             default:
-                tnaVar.d = i;
-                tnaVar.g.setShader((BitmapShader) tnaVar.c[i].c);
-                tnaVar.j = false;
-                tnaVar.p = true;
+                ArrayList arrayList = (ArrayList) obj;
+                i8c i8cVar = (i8c) obj2;
+                Runnable runnable = (Runnable) obj3;
+                vqa vqaVar = this.b;
+                x99 x99Var = vqaVar.R2;
+                if (x99Var != null) {
+                    x99Var.b();
+                    vqaVar.R2 = null;
+                }
+                TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();
+                int size = arrayList.size();
+                byte b = 0;
+                int i = 0;
+                while (i < size) {
+                    Object obj4 = arrayList.get(i);
+                    i++;
+                    TL_stars.TL_inputSavedStarGiftSlug tL_inputSavedStarGiftSlug = new TL_stars.TL_inputSavedStarGiftSlug();
+                    tL_inputSavedStarGiftSlug.slug = ((TL_stars.StarGift) obj4).slug;
+                    craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
+                }
+                ConnectionsManager.getInstance(vqaVar.a).sendRequestTyped(craftstargift, new hc(b), new eu0((Object) vqaVar, (Object) i8cVar, (Object) arrayList, (Object) runnable, (byte) 14));
                 break;
         }
     }

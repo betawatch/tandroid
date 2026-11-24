@@ -1,19 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.StrictMode;
+import java.util.concurrent.Callable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class c1f implements cq7 {
-    public static final c1f a = new c1f();
-
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class c1f {
+    public static Object a(Callable callable) {
+        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
+        try {
+            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
+            return callable.call();
+        } finally {
+            StrictMode.setThreadPolicy(threadPolicy);
         }
-        throw null;
     }
 }

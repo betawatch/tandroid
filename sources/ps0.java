@@ -1,146 +1,94 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.PowerManager;
-import android.util.Log;
-import com.google.firebase.messaging.FirebaseMessaging;
-import java.io.IOException;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import org.telegram.utils.twidget.z;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ps0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final long b;
-    public final Object c;
-    public final Object d;
-    public final Object e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ps0 extends EditTextBoldCursor {
+    public final /* synthetic */ byte M1;
 
-    public ps0(FirebaseMessaging firebaseMessaging, long j) {
-        this.a = (byte) 1;
-        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new op7("firebase-iid-executor"));
-        this.d = firebaseMessaging;
-        this.b = j;
-        PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
-        this.c = newWakeLock;
-        newWakeLock.setReferenceCounted(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ps0(js9 js9Var, Context context) {
+        super(context);
+        this.M1 = (byte) 5;
     }
 
-    public final boolean a() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) ((FirebaseMessaging) this.d).b.getSystemService("connectivity");
-        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-    }
-
-    public final boolean b() {
-        try {
-            if (((FirebaseMessaging) this.d).a() == null) {
-                Log.e("FirebaseMessaging", "Token retrieval failed: null");
+    @Override // lt3, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.M1) {
+            case 4:
                 return false;
-            }
-            if (!Log.isLoggable("FirebaseMessaging", 3)) {
-                return true;
-            }
-            Log.d("FirebaseMessaging", "Token successfully retrieved");
-            return true;
-        } catch (IOException e) {
-            String message = e.getMessage();
-            if (!"SERVICE_NOT_AVAILABLE".equals(message) && !"INTERNAL_SERVER_ERROR".equals(message) && !"InternalServerError".equals(message)) {
-                if (e.getMessage() != null) {
-                    throw e;
-                }
-                Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
-                return false;
-            }
-            Log.w("FirebaseMessaging", "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval");
-            return false;
-        } catch (SecurityException unused) {
-            Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
-            return false;
-        }
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                rs0 rs0Var = (rs0) this.e;
-                if (rs0Var.y == ((AnimatorSet) this.c)) {
-                    ss0 ss0Var = rs0Var.d;
-                    cyc cycVar = ss0Var.w;
-                    if (cycVar != null && !cycVar.e()) {
-                        z zVar = ss0Var.w.e;
-                        if ((zVar == null ? null : zVar.U) == null && System.currentTimeMillis() - this.b < 250) {
-                            gm.d3(this, 16L);
-                            return;
-                        }
-                    }
-                    ((op6) this.d).run();
-                    return;
-                }
-                return;
             default:
-                PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) this.c;
-                e7a v = e7a.v();
-                FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.d;
-                if (v.x(firebaseMessaging.b)) {
-                    wakeLock.acquire();
-                }
-                try {
-                    try {
-                        synchronized (firebaseMessaging) {
-                            firebaseMessaging.k = true;
-                        }
-                        if (!firebaseMessaging.i.e()) {
-                            firebaseMessaging.f(false);
-                            if (!e7a.v().x(firebaseMessaging.b)) {
-                                return;
-                            }
-                        } else if (!e7a.v().w(firebaseMessaging.b) || a()) {
-                            if (b()) {
-                                firebaseMessaging.f(false);
-                            } else {
-                                firebaseMessaging.i(this.b);
-                            }
-                            if (!e7a.v().x(firebaseMessaging.b)) {
-                                return;
-                            }
-                        } else {
-                            web webVar = new web();
-                            webVar.c = this;
-                            webVar.a();
-                            if (!e7a.v().x(firebaseMessaging.b)) {
-                                return;
-                            }
-                        }
-                    } catch (IOException e) {
-                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e.getMessage() + ". Won't retry the operation.");
-                        firebaseMessaging.f(false);
-                        if (!e7a.v().x(firebaseMessaging.b)) {
-                            return;
-                        }
-                    }
-                    wakeLock.release();
-                    return;
-                } catch (Throwable th) {
-                    if (e7a.v().x(firebaseMessaging.b)) {
-                        wakeLock.release();
-                    }
-                    throw th;
-                }
+                return super.dispatchTouchEvent(motionEvent);
         }
     }
 
-    public ps0(rs0 rs0Var, AnimatorSet animatorSet, long j, op6 op6Var) {
-        this.a = (byte) 0;
-        this.e = rs0Var;
-        this.c = animatorSet;
-        this.b = j;
-        this.d = op6Var;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.M1) {
+            case 0:
+                super.onDetachedFromWindow();
+                gl.t1(this);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                gl.t1(this);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.M1) {
+            case 3:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(64.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.M1) {
+            case 2:
+                if (isEnabled()) {
+                    break;
+                }
+                break;
+            case 5:
+                if (isEnabled()) {
+                    motionEvent.getAction();
+                    break;
+                }
+                break;
+            case 6:
+                if (motionEvent.getAction() == 0 && !gl.E3(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 7:
+                if (motionEvent.getAction() == 0 && !gl.E3(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ps0(Context context, byte b) {
+        super(context);
+        this.M1 = b;
     }
 }

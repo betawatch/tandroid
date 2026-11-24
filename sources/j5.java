@@ -2,7 +2,7 @@
 
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class j5 {
     public static volatile j5[] b = new j5[4];
@@ -27,19 +27,19 @@ public final class j5 {
         return j5Var;
     }
 
-    public final oc7 b() {
-        return oc7.r1(this.a);
+    public final na7 b() {
+        return na7.q1(this.a);
     }
 
-    public final nm7 c() {
-        return nm7.f(this.a);
+    public final kk7 c() {
+        return kk7.f(this.a);
     }
 
     public final SharedPreferences d() {
-        return oc7.r1(this.a).W3;
+        return na7.q1(this.a).W3;
     }
 
-    public final z8c e() {
-        return z8c.h(this.a);
+    public final y6c e() {
+        return y6c.h(this.a);
     }
 }

@@ -1,45 +1,77 @@
 // default package
 
 import android.animation.ValueAnimator;
-import android.graphics.Paint;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class tw0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ wx0 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ tw0(wx0 wx0Var, int i, int i2, byte b) {
+    public /* synthetic */ tw0(Object obj, int i, byte b) {
         this.a = b;
-        this.b = wx0Var;
-        this.c = i;
-        this.d = i2;
+        this.c = obj;
+        this.b = i;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i;
         byte b = this.a;
-        int i = this.d;
-        int i2 = this.c;
-        wx0 wx0Var = this.b;
+        int i2 = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                Paint paint = wx0Var.R;
-                paint.setColor(on2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i));
-                wx0Var.F();
-                wx0Var.f.invalidate();
-                cx cxVar = wx0Var.Z0;
-                if (cxVar != null) {
-                    cxVar.b(gm.B(paint.getColor()) <= 0.721f, false);
-                    wx0Var.Z0.setBackgroundColor(paint.getColor());
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                ((fx0) obj).w0(i2, intValue, intValue);
+                break;
+            case 1:
+                rt3 rt3Var = (rt3) obj;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rt3Var.d.setTranslationY(floatValue);
+                float f = i2;
+                float f2 = 1.0f - (floatValue / f);
+                rt3Var.S = f2;
+                if (i2 > 0 && ((i = rt3Var.M) == 2 || i == 3)) {
+                    rt3Var.d.setAlpha(f2);
                 }
-                wx0Var.K();
+                rt3Var.c(floatValue - f);
+                break;
+            case 2:
+                q qVar = (q) obj;
+                if (i2 == qVar.v0) {
+                    float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    if (floatValue2 >= 0.5f) {
+                        floatValue2 -= 1.0f;
+                    }
+                    qVar.y.setRotationY(floatValue2 * 180.0f);
+                    break;
+                }
+                break;
+            case 3:
+                Float f3 = (Float) valueAnimator.getAnimatedValue();
+                t29 t29Var = (t29) ((a32) obj).d;
+                t29Var.b.put(i2, f3);
+                t29Var.d = true;
+                t29Var.a.invalidate();
+                break;
+            case 4:
+                qla qlaVar = (qla) obj;
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qlaVar.n = floatValue3;
+                qlaVar.setAlpha((int) ((1.0f - floatValue3) * i2));
+                qlaVar.p = true;
+                qlaVar.invalidateSelf();
                 break;
             default:
-                wx0Var.T = on2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i);
-                wx0Var.h();
+                gb2 gb2Var = (gb2) obj;
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (gb2Var.getMessageObject() != null && gb2Var.getMessageObject().e1() == i2) {
+                    gb2Var.setSelectedBackgroundProgress(floatValue4);
+                    break;
+                }
                 break;
         }
     }

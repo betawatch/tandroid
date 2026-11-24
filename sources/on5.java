@@ -1,90 +1,50 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class on5 extends zg2 {
+    public final f31 s;
+    public tg2 w;
+    public long x;
+    public volatile boolean y;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class on5 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final float c;
-    public float d;
-    public final View e;
-    public boolean f;
-    public float h;
-    public int n;
+    public on5(o63 o63Var, u63 u63Var, fm4 fm4Var, int i, Object obj, f31 f31Var) {
+        super(o63Var, u63Var, 2, fm4Var, i, obj, -9223372036854775807L, -9223372036854775807L, null);
+        this.s = f31Var;
+    }
 
-    public on5(float f, int i, View view) {
-        wd wdVar = new wd(this, (byte) 10);
-        this.f = true;
-        this.n = nm7.d4;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.d = i;
-        this.c = f;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(gm.L(1.0f), 0.0f, gm.L(0.66f), 855638016);
-        View view2 = this.e;
-        if (view2 != view) {
-            if (view2 != null) {
-                view2.removeOnAttachStateChangeListener(wdVar);
-                if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                    imageReceiver.K();
+    @Override // k86
+    public final void a() {
+        if (this.x == 0) {
+            this.s.b(this.w, -9223372036854775807L, -9223372036854775807L);
+        }
+        try {
+            u63 b = this.b.b(this.x);
+            zxa zxaVar = this.r;
+            ja3 ja3Var = new ja3(zxaVar, b.e, zxaVar.open(b));
+            while (!this.y) {
+                try {
+                    int b2 = this.s.a.b(ja3Var, f31.s);
+                    boolean z = false;
+                    gre.p(b2 != 1);
+                    if (b2 == 0) {
+                        z = true;
+                    }
+                    if (!z) {
+                        break;
+                    }
+                } finally {
+                    this.x = ja3Var.d - this.b.e;
+                    this.s.a();
                 }
             }
-            View view3 = this.e;
-            if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-                imageReceiver.I();
-            }
-            this.e = view;
-            imageReceiver.p0(view);
-            if (view != null) {
-                view.addOnAttachStateChangeListener(wdVar);
-            }
+        } finally {
+            vbe.a(this.r);
         }
     }
 
-    public final void a(float f) {
-        float L = gm.L(f);
-        this.d = L;
-        this.b.q0((int) L);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        boolean z = this.f;
-        Paint paint2 = this.a;
-        if (z && this.n != paint.getAlpha()) {
-            int alpha = paint.getAlpha();
-            this.n = alpha;
-            paint2.setAlpha(alpha);
-            paint2.setShadowLayer(gm.L(1.0f), 0.0f, gm.L(0.66f), cmb.p1(this.n / 255.0f, 855638016));
-        }
-        float f2 = this.h + f;
-        float f3 = this.c;
-        float L = (((i3 + i5) / 2.0f) + 0.0f) - (gm.L(f3) / 2.0f);
-        if (this.f) {
-            RectF rectF = gm.P;
-            rectF.set(f2, L, gm.L(f3) + f2, gm.L(f3) + L);
-            float f4 = this.d;
-            canvas.drawRoundRect(rectF, f4, f4, paint2);
-        }
-        float L2 = gm.L(f3);
-        float L3 = gm.L(f3);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.i0(f2, L, L2, L3);
-        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
-        imageReceiver.h(canvas, null);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return gm.L(this.c);
+    @Override // k86
+    public final void d() {
+        this.y = true;
     }
 }

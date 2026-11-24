@@ -1,24 +1,7 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ml0 {
-    public boolean a;
-    public int b;
-    public int c;
-    public final Object d;
-
-    public ml0(View view, ArrayList arrayList, vna vnaVar) {
-        this.d = new lj4(view.getContext(), new una(this, view, arrayList, vnaVar));
-    }
-
-    public ml0(x1... x1VarArr) {
-        this.b = -1;
-        this.c = -1;
-        this.a = false;
-        this.d = x1VarArr;
-    }
+public interface ml0 {
+    int k(wjb wjbVar, boolean z);
 }

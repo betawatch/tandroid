@@ -1,102 +1,100 @@
 // default package
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class oj9 extends qi9 implements Drawable.Callback {
-    public final g8c X;
-    public final int Y;
-    public final int Z;
-    public final int a0;
-    public final int b0;
-    public dhf c0;
-    public Bitmap d0;
+public final class oj9 extends bya {
+    public float d;
+    public final Paint f;
+    public boolean a = false;
+    public long b = 0;
+    public boolean c = false;
+    public int e = 1;
 
-    public oj9(uj9 uj9Var, Rect rect, int i, int i2, int i3) {
-        super(uj9Var, rect, i);
-        this.a0 = i2;
-        this.b0 = i3;
-        g8c g8cVar = new g8c();
-        this.X = g8cVar;
-        g8cVar.setCallback(this);
-        g8cVar.n = jb6.M0(2131743518, null);
-        g8cVar.o = jb6.M0(2131743519, null);
-        g8cVar.p = jb6.M0(2131743513, null);
-        g8cVar.j = new kf9(uj9Var, (byte) 4);
-        int i4 = this.c;
-        this.Y = i4;
-        this.Z = g8cVar.a(i4);
-    }
-
-    @Override // qi9
-    public final int H() {
-        Rect rect = this.b;
-        return rect.top + this.Z + rect.bottom;
-    }
-
-    @Override // qi9
-    public final boolean X(MotionEvent motionEvent) {
-        View view = this.W;
-        if (view != null) {
-            return this.X.i.a(view, motionEvent);
+    public oj9(boolean z) {
+        if (z) {
+            this.f = new Paint(1);
         }
-        return false;
     }
 
-    public final float h0(yc2 yc2Var) {
-        int i;
-        if (yc2Var != null) {
-            uj9 uj9Var = this.a;
-            if (uj9Var.s || uj9Var.u) {
-                i = gm.U1(Math.max(0.0f, Math.min(1.0f, yc2Var.L1)), this.Q, this.O);
-                return i;
+    @Override // bya
+    public final void b(int i) {
+        Paint paint = this.f;
+        if (paint != null) {
+            paint.setColor(i);
+        }
+    }
+
+    @Override // bya
+    public final void c(boolean z) {
+        this.a = z;
+    }
+
+    @Override // bya
+    public final void d() {
+        this.b = System.currentTimeMillis();
+        this.c = true;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.f;
+        if (paint == null) {
+            paint = bkb.b2;
+        }
+        paint.setAlpha(((int) (this.d * 200.0f)) + 55);
+        canvas.drawCircle(gl.L(6.0f), gl.L(this.a ? 8.0f : 9.0f), gl.L(4.0f), paint);
+        if (this.c) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j = currentTimeMillis - this.b;
+            this.b = currentTimeMillis;
+            if (j > 50) {
+                j = 50;
             }
-        }
-        i = this.O;
-        return i;
-    }
-
-    public final float i0(yc2 yc2Var) {
-        if (yc2Var != null) {
-            uj9 uj9Var = this.a;
-            if (uj9Var.s || uj9Var.u) {
-                return gm.R1(this.P, this.N, Math.max(0.0f, Math.min(1.0f, yc2Var.L1)));
+            float f = this.d;
+            int i = this.e;
+            float f2 = ((i * j) / 400.0f) + f;
+            this.d = f2;
+            if (i > 0 && f2 >= 1.0f) {
+                this.e = -1;
+                this.d = 1.0f;
+            } else if (i < 0 && f2 <= 0.0f) {
+                this.e = 1;
+                this.d = 0.0f;
             }
-        }
-        return this.N;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        View view = this.W;
-        if (view != null) {
-            view.invalidate();
+            a();
         }
     }
 
-    @Override // qi9
-    public final void p(Canvas canvas) {
-        Rect rect = this.b;
-        int i = rect.left;
-        int i2 = rect.top;
-        int i3 = this.Y + i;
-        int i4 = this.Z + i2;
-        g8c g8cVar = this.X;
-        g8cVar.setBounds(i, i2, i3, i4);
-        g8cVar.draw(canvas);
+    @Override // bya
+    public final void e() {
+        this.c = false;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return gl.L(10.0f);
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return gl.L(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -4,10 +4,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class a2 extends yh0 implements pz0 {
-    public yh0 d;
+public abstract class a2 extends yg0 implements iy0 {
+    public yg0 d;
     public final String e;
 
     public a2(String str) {
@@ -38,30 +38,30 @@ public abstract class a2 extends yh0 implements pz0 {
         return wrap;
     }
 
-    @Override // pz0
+    @Override // iy0
     public void getBox(WritableByteChannel writableByteChannel) {
         writableByteChannel.write(d());
         c(writableByteChannel);
     }
 
-    @Override // pz0
-    public final gw2 getParent() {
+    @Override // iy0
+    public final wu2 getParent() {
         return this.d;
     }
 
-    @Override // pz0
+    @Override // iy0
     public long getSize() {
         long b = b();
         return b + (8 + b >= 4294967296L ? 16 : 8);
     }
 
-    @Override // pz0
+    @Override // iy0
     public final String getType() {
         return this.e;
     }
 
-    @Override // pz0
-    public final void setParent(gw2 gw2Var) {
-        this.d = (yh0) gw2Var;
+    @Override // iy0
+    public final void setParent(wu2 wu2Var) {
+        this.d = (yg0) wu2Var;
     }
 }

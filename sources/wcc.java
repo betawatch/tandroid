@@ -1,7 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface wcc {
-    public static final y79 a = mo5.u(new fgf(28));
+public final /* synthetic */ class wcc implements fp7 {
+    @Override // fp7
+    public final hv2 a(hv2 hv2Var) {
+        return hv2Var;
+    }
 }

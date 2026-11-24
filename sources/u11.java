@@ -1,64 +1,84 @@
 // default package
 
-import java.util.Arrays;
-import java.util.List;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.WindowManager;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class u11 {
-    public static final List a = Arrays.asList(new s11(), new n11(), new p11(), new r11(), new o11(), new q11());
+public final class u11 extends t09 {
+    public final /* synthetic */ byte n1 = 0;
+    public final /* synthetic */ Object o1;
 
-    public float a() {
-        return 0.85f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u11(xv2 xv2Var, Context context, int i, wjb wjbVar) {
+        super(4, i, wjbVar, context, null);
+        this.o1 = xv2Var;
     }
 
-    public int b() {
-        return -16777216;
-    }
-
-    public float c() {
-        return 0.25f;
-    }
-
-    public int d() {
-        return R.raw.photo_arrow;
-    }
-
-    public float e() {
-        return 1.0f;
-    }
-
-    public float f() {
-        return 0.4f;
-    }
-
-    public float g() {
-        return 1.0f;
-    }
-
-    public String h(int i) {
-        if (i == 0) {
-            return "blitWithMask";
+    @Override // t09, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        m21 m21Var;
+        switch (this.n1) {
+            case 0:
+                x11 x11Var = (x11) this.o1;
+                if (motionEvent.getAction() == 0) {
+                    m21 m21Var2 = x11Var.n;
+                    if (m21Var2 != null) {
+                        m21Var2.i(false);
+                    }
+                } else if (motionEvent.getAction() == 1 && (m21Var = x11Var.n) != null) {
+                    m21Var.i(true);
+                }
+                break;
         }
-        if (i == 1) {
-            return "compositeWithMask";
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // t09
+    public final void g() {
+        switch (this.n1) {
+            case 1:
+                super.g();
+                xv2 xv2Var = (xv2) this.o1;
+                boolean z = getReactionsWindow() != null;
+                WindowManager.LayoutParams layoutParams = xv2Var.x;
+                if (z) {
+                    layoutParams.flags &= -131073;
+                    layoutParams.softInputMode = 16;
+                } else {
+                    layoutParams.flags |= 131072;
+                }
+                try {
+                    ((WindowManager) xv2Var.w.getSystemService("window")).updateViewLayout(xv2Var.y, xv2Var.x);
+                    break;
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                    return;
+                }
+            default:
+                super.g();
+                break;
         }
-        if (i != 2) {
-            return null;
+    }
+
+    @Override // t09
+    public final void j() {
+        switch (this.n1) {
+            case 0:
+                m21 m21Var = m21.w;
+                if (m21Var != null) {
+                    m21Var.i(false);
+                }
+                ((x11) this.o1).d.getReactionsWindow().c.setOnClickListener(new j1(this, (byte) 21));
+                break;
         }
-        return "brush";
     }
 
-    public float i() {
-        return 1.0f;
-    }
-
-    public float j() {
-        return 0.15f;
-    }
-
-    public int k() {
-        return R.drawable.paint_radial_brush;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u11(x11 x11Var, d dVar, Context context, int i, wjb wjbVar) {
+        super(3, i, wjbVar, context, dVar);
+        this.o1 = x11Var;
     }
 }

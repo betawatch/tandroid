@@ -1,77 +1,81 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class b19 {
-    public final long a;
-    public final long b;
-    public final String c;
-    public int d;
+import android.content.Context;
+import android.graphics.Canvas;
 
-    public b19(long j, String str, long j2) {
-        this.c = str == null ? "" : str;
-        this.a = j;
-        this.b = j2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class b19 extends be0 {
+    public boolean H;
+    public vl I;
+    public xl J;
+    public boolean K;
+    public final /* synthetic */ d19 L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b19(d19 d19Var, Context context) {
+        super(context);
+        this.L = d19Var;
+        getImageReceiver().T(3);
     }
 
-    public final b19 a(b19 b19Var, String str) {
-        b19 b19Var2;
-        String c = lze.c(str, this.c);
-        if (b19Var == null) {
-            return null;
+    @Override // be0, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.K = true;
+        vl vlVar = this.I;
+        if (vlVar != null) {
+            vlVar.b(this);
         }
-        long j = b19Var.b;
-        if (!c.equals(lze.c(str, b19Var.c))) {
-            return null;
+        xl xlVar = this.J;
+        if (xlVar != null) {
+            xlVar.f(this);
         }
-        long j2 = this.b;
-        if (j2 != -1) {
-            long j3 = this.a;
-            b19Var2 = null;
-            if (j3 + j2 == b19Var.a) {
-                return new b19(j3, c, j != -1 ? j2 + j : -1L);
+    }
+
+    @Override // be0, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.K = false;
+        vl vlVar = this.I;
+        if (vlVar != null) {
+            vlVar.o(this);
+        }
+        xl xlVar = this.J;
+        if (xlVar != null) {
+            xlVar.d(this);
+        }
+    }
+
+    @Override // be0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        vl vlVar = this.I;
+        if (vlVar != null) {
+            vlVar.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            this.I.setAlpha(kk7.d4);
+            this.I.draw(canvas);
+            this.H = true;
+            return;
+        }
+        xl xlVar = this.J;
+        if (xlVar != null) {
+            xlVar.e(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            this.J.b(canvas);
+            this.H = true;
+            return;
+        }
+        if (getImageReceiver().y() != null && getImageReceiver().y().l0) {
+            this.H = true;
+        }
+        if (!this.H && getImageReceiver().y() != null && !getImageReceiver().y().l0) {
+            d19 d19Var = this.L;
+            if (d19Var.a != 2 || d19Var.z) {
+                getImageReceiver().y().I(0, false, false);
+                getImageReceiver().y().start();
+            } else {
+                getImageReceiver().y().I(getImageReceiver().y().e[0] - 1, false, false);
             }
-        } else {
-            b19Var2 = null;
         }
-        if (j != -1) {
-            long j4 = b19Var.a;
-            if (j4 + j == this.a) {
-                return new b19(j4, c, j2 != -1 ? j + j2 : -1L);
-            }
-        }
-        return b19Var2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && b19.class == obj.getClass()) {
-            b19 b19Var = (b19) obj;
-            if (this.a == b19Var.a && this.b == b19Var.b && this.c.equals(b19Var.c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int i = this.d;
-        if (i != 0) {
-            return i;
-        }
-        int hashCode = this.c.hashCode() + ((((527 + ((int) this.a)) * 31) + ((int) this.b)) * 31);
-        this.d = hashCode;
-        return hashCode;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("RangedUri(referenceUri=");
-        sb.append(this.c);
-        sb.append(", start=");
-        sb.append(this.a);
-        sb.append(", length=");
-        return kt6.q(sb, this.b, ")");
+        super.onDraw(canvas);
     }
 }

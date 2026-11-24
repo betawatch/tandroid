@@ -1,23 +1,16 @@
 // default package
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.RandomAccess;
+import java.io.DataInputStream;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
 public abstract class wpe {
-    public static ArrayList a(Object... objArr) {
-        int length = objArr.length;
-        ntd.b(length, "arraySize");
-        ArrayList arrayList = new ArrayList(ine.d(length + 5 + (length / 10)));
-        Collections.addAll(arrayList, objArr);
-        return arrayList;
-    }
-
-    public static AbstractList b(List list, bs4 bs4Var) {
-        return list instanceof RandomAccess ? new c86(list, bs4Var) : new d86(list, bs4Var);
+    public static float[] a(DataInputStream dataInputStream) {
+        int readInt = dataInputStream.readInt();
+        float[] fArr = new float[readInt];
+        for (int i = 0; i < readInt; i++) {
+            fArr[i] = dataInputStream.readFloat();
+        }
+        return fArr;
     }
 }

@@ -1,30 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum qtb extends rub {
-    public qtb() {
-        super("Comment", 46);
+import org.telegram.ui.ActionBar.d;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class qtb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vtb b;
+
+    public /* synthetic */ qtb(vtb vtbVar, byte b) {
+        this.a = b;
+        this.b = vtbVar;
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        rrb rrbVar = bsbVar.n;
-        char i = hl1Var.i();
-        if (i == 0) {
-            bsbVar.m(this);
-            hl1Var.a();
-            rrbVar.e.append((char) 65533);
-        } else if (i == '-') {
-            bsbVar.a(rub.l0);
-        } else {
-            if (i != 65535) {
-                rrbVar.e.append(hl1Var.g('-', 0));
-                return;
-            }
-            bsbVar.l(this);
-            bsbVar.i();
-            bsbVar.c = rub.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        vtb vtbVar = this.b;
+        switch (b) {
+            case 0:
+                new jh8((d) vtbVar, 11, false).show();
+                break;
+            default:
+                vtbVar.e.requestFocus();
+                gl.E3(vtbVar.e);
+                break;
         }
     }
 }

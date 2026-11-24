@@ -1,72 +1,35 @@
 // default package
 
-import org.telegram.messenger.MediaController;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gn6 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ he c;
+    public final /* synthetic */ hq6 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ gn6(he heVar, boolean[] zArr, byte b) {
+    public /* synthetic */ gn6(hq6 hq6Var, boolean z, int i, byte b) {
         this.a = b;
-        this.c = heVar;
-        this.b = zArr;
+        this.b = hq6Var;
+        this.c = z;
+        this.d = i;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        boolean[] zArr = this.b;
-        he heVar = this.c;
+        int i = this.d;
+        boolean z = this.c;
+        hq6 hq6Var = this.b;
         switch (b) {
             case 0:
-                String[] strArr = MediaController.W1;
-                if (!zArr[0]) {
-                    heVar.show();
-                    break;
-                }
+                hq6Var.x0[z ? 1 : 0] = false;
+                hq6Var.y0[z ? 1 : 0] = true;
+                hq6Var.r0[z ? 1 : 0] = i;
                 break;
-            case 1:
-                String[] strArr2 = MediaController.W1;
-                if (!zArr[0]) {
-                    heVar.show();
-                    break;
-                }
-                break;
-            case 2:
-                String[] strArr3 = MediaController.W1;
-                try {
-                    if (heVar.isShowing()) {
-                        heVar.dismiss();
-                    } else {
-                        zArr[0] = true;
-                    }
-                    break;
-                } catch (Exception e) {
-                    fc4.g(e, true);
-                    return;
-                }
             default:
-                String[] strArr4 = MediaController.W1;
-                try {
-                    if (heVar.isShowing()) {
-                        heVar.dismiss();
-                    } else {
-                        zArr[0] = true;
-                    }
-                    break;
-                } catch (Exception e2) {
-                    fc4.g(e2, true);
-                    return;
-                }
+                hq6Var.r0[z ? 1 : 0] = i;
+                break;
         }
-    }
-
-    public /* synthetic */ gn6(boolean[] zArr, he heVar, byte b) {
-        this.a = b;
-        this.b = zArr;
-        this.c = heVar;
     }
 }

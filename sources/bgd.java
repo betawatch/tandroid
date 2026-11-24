@@ -1,15 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class bgd {
-    public static final o94 a;
-    public static final o94[] b;
+public final class bgd implements gid {
+    public final short a;
 
-    static {
-        o94 o94Var = new o94("auth_api_credentials_begin_sign_in", 9L);
-        o94 o94Var2 = new o94("auth_api_credentials_sign_out", 2L);
-        a = o94Var2;
-        b = new o94[]{o94Var, o94Var2, new o94("auth_api_credentials_authorize", 1L), new o94("auth_api_credentials_revoke_access", 1L), new o94("auth_api_credentials_save_password", 4L), new o94("auth_api_credentials_get_sign_in_intent", 6L), new o94("auth_api_credentials_save_account_linking_token", 3L), new o94("auth_api_credentials_get_phone_number_hint_intent", 3L)};
+    /* JADX WARN: Multi-variable type inference failed */
+    public bgd(int i) {
+        this.a = i;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return gid.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof gid)) {
+            return false;
+        }
+        gid gidVar = (gid) obj;
+        return this.a == gidVar.zza() && aid.a.equals(gidVar.zzb());
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (aid.a.hashCode() ^ 2041407134);
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + aid.a + ')';
+    }
+
+    @Override // gid
+    public final int zza() {
+        return this.a;
+    }
+
+    @Override // gid
+    public final aid zzb() {
+        return aid.a;
     }
 }

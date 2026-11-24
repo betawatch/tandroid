@@ -1,60 +1,96 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class b94 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ a94 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ k47 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ he[] e;
-    public final /* synthetic */ View f;
-    public final /* synthetic */ e94 g;
+public final /* synthetic */ class b94 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ l94 b;
 
-    public b94(e94 e94Var, a94 a94Var, int i, k47 k47Var, boolean z, he[] heVarArr, View view) {
-        this.g = e94Var;
-        this.a = a94Var;
-        this.b = i;
-        this.c = k47Var;
-        this.d = z;
-        this.e = heVarArr;
-        this.f = view;
+    public /* synthetic */ b94(l94 l94Var, byte b) {
+        this.a = b;
+        this.b = l94Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-        if (i != 6) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = 0;
+        byte b2 = 1;
+        l94 l94Var = this.b;
+        switch (b) {
+            case 0:
+                if (l94Var.Y == 1 && !l94Var.Z) {
+                    l94Var.q(-1);
+                    break;
+                }
+                break;
+            case 1:
+                if (l94Var.Y == 5) {
+                    l94Var.h(1, false);
+                    break;
+                }
+                break;
+            case 2:
+                l94Var.F0.clear();
+                break;
+            case 3:
+                l94Var.q(-1);
+                break;
+            case 4:
+                if (l94Var.j) {
+                    if (w01.a) {
+                        fa4.b("debug_loading: " + l94Var.L0.getName() + " pause operation, clear requests");
+                    }
+                    l94Var.c(null, false, true);
+                    break;
+                } else {
+                    while (i < l94Var.G0.size()) {
+                        ConnectionsManager.getInstance(l94Var.R).failNotRunningRequest(((k94) l94Var.G0.get(i)).a);
+                        i++;
+                    }
+                    break;
+                }
+            case 5:
+                l94Var.j();
+                ba4.G(l94Var.R).e(null, null, null, null, null, l94Var.r);
+                break;
+            case 6:
+                l94Var.h(0, false);
+                break;
+            default:
+                if (l94Var.Y != 3 && l94Var.Y != 2) {
+                    l94Var.Y = (byte) 5;
+                    b94 b94Var = new b94(l94Var, b2);
+                    fa4.b("cancelRequests with callback");
+                    if (l94Var.G0 != null) {
+                        int[] iArr = new int[1];
+                        int[] iArr2 = new int[8];
+                        for (int i2 = 0; i2 < l94Var.G0.size(); i2++) {
+                            k94 k94Var = (k94) l94Var.G0.get(i2);
+                            if (k94Var.a != 0) {
+                                k94Var.j = true;
+                                k94Var.l = new mg3(k94Var, iArr, b94Var, (byte) 21);
+                                iArr[0] = iArr[0] + 1;
+                                fa4.b("cancelRequests cancel " + k94Var.a + " with callback");
+                                ConnectionsManager.getInstance(l94Var.R).cancelRequest(k94Var.a, true, new e94(k94Var, (byte) 1));
+                                int i3 = k94Var.d >>> 16;
+                                iArr2[i3] = iArr2[i3] + k94Var.c;
+                            }
+                        }
+                        while (i < 8) {
+                            int i4 = (i << 16) | 2;
+                            if (iArr2[i] > ((!l94Var.j || yp3.d()) ? TLObject.FLAG_20 : 262144)) {
+                                ConnectionsManager.getInstance(l94Var.R).discardConnection(l94Var.u0 ? l94Var.y0 : l94Var.T, i4);
+                            }
+                            i++;
+                        }
+                        break;
+                    }
+                }
+                break;
         }
-        a94 a94Var = this.a;
-        if (a94Var.getText().toString().length() > this.b) {
-            gm.z3(a94Var);
-            return true;
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        CharSequence[] charSequenceArr = {a94Var.getText()};
-        e94 e94Var = this.g;
-        tL_textWithEntities.entities = hs6.d0(e94Var.a).Y(charSequenceArr, true, true);
-        CharSequence charSequence = charSequenceArr[0];
-        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
-        e94Var.a(this.c, tL_textWithEntities, this.d);
-        he[] heVarArr = this.e;
-        he heVar = heVarArr[0];
-        if (heVar != null) {
-            heVar.dismiss();
-        }
-        if (heVarArr[0] == e94.i) {
-            e94.i = null;
-        }
-        View view = this.f;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
     }
 }

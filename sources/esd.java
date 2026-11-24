@@ -1,27 +1,7 @@
 // default package
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class esd {
-    public static byte[] a(ArrayDeque arrayDeque, int i) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
-        }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i) {
-            return bArr;
-        }
-        int length = i - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i - length, min);
-            length -= min;
-        }
-        return copyOf;
-    }
+    public static final /* synthetic */ int a = 0;
 }

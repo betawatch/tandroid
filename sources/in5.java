@@ -1,70 +1,78 @@
 // default package
 
-import android.graphics.BitmapShader;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class in5 {
-    public Paint A;
-    public Path B;
-    public boolean a;
-    public float b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class in5 implements fv9 {
+    public final dd a;
+    public final dd b;
     public long c;
-    public int d;
-    public BitmapShader e;
-    public kn f;
-    public p09 g;
-    public int[] h;
-    public BitmapShader i;
-    public Drawable j;
-    public BitmapShader k;
-    public Drawable l;
-    public Drawable m;
-    public BitmapShader n;
-    public Drawable o;
-    public float p;
-    public float q;
-    public BitmapShader r;
-    public float s;
-    public float t;
-    public float u;
-    public float v;
-    public boolean w;
-    public Drawable x;
-    public RectF y;
-    public ColorFilter z;
 
-    public final void a() {
-        this.f = null;
-        this.g = null;
-        for (int i = 0; i < 4; i++) {
-            int[] iArr = this.h;
-            iArr[i] = iArr[i];
+    public in5(long j, long[] jArr, long[] jArr2) {
+        dd ddVar;
+        dd ddVar2;
+        gre.f(jArr.length == jArr2.length);
+        int length = jArr2.length;
+        if (length <= 0 || jArr2[0] <= 0) {
+            ddVar = new dd(length, (byte) 9);
+            this.a = ddVar;
+            ddVar2 = new dd(length, (byte) 9);
+            this.b = ddVar2;
+        } else {
+            int i = length + 1;
+            ddVar = new dd(i, (byte) 9);
+            this.a = ddVar;
+            ddVar2 = new dd(i, (byte) 9);
+            this.b = ddVar2;
+            ddVar.W(0L);
+            ddVar2.W(0L);
         }
-        this.j = null;
-        this.i = null;
-        this.l = null;
-        this.k = null;
-        this.m = null;
-        this.n = null;
-        this.e = null;
-        this.o = null;
-        this.x = null;
-        this.z = null;
+        ddVar.X(jArr);
+        ddVar2.X(jArr2);
+        this.c = j;
     }
 
-    public final void b(Rect rect) {
-        if (rect != null) {
-            this.u = rect.left;
-            this.v = rect.top;
-            this.t = rect.width();
-            this.s = rect.height();
+    @Override // fv9
+    public final boolean c() {
+        return this.b.b > 0;
+    }
+
+    @Override // fv9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // fv9
+    public final ev9 f(long j) {
+        dd ddVar = this.b;
+        if (ddVar.b == 0) {
+            hv9 hv9Var = hv9.c;
+            return new ev9(hv9Var, hv9Var);
         }
+        int c = g8c.c(ddVar, j);
+        long f0 = ddVar.f0(c);
+        dd ddVar2 = this.a;
+        hv9 hv9Var2 = new hv9(f0, ddVar2.f0(c));
+        if (f0 == j || c == ddVar.b - 1) {
+            return new ev9(hv9Var2, hv9Var2);
+        }
+        int i = c + 1;
+        return new ev9(hv9Var2, new hv9(ddVar.f0(i), ddVar2.f0(i)));
+    }
+
+    @Override // fv9
+    public final long h() {
+        return this.c;
+    }
+
+    public final void i(long j, long j2) {
+        dd ddVar = this.b;
+        int i = ddVar.b;
+        dd ddVar2 = this.a;
+        if (i == 0 && j > 0) {
+            ddVar2.W(0L);
+            ddVar.W(0L);
+        }
+        ddVar2.W(j2);
+        ddVar.W(j);
     }
 }

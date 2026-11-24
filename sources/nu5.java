@@ -1,29 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class nu5 {
-    public static final Integer a;
+import java.util.Map;
 
-    static {
-        Integer num;
-        Object obj;
-        Integer num2 = null;
-        try {
-            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Throwable unused) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nu5 implements zn7 {
+    public final /* synthetic */ byte a;
+
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                throw new t24("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
+            case 1:
+                Map.Entry entry = (Map.Entry) obj;
+                ao7 ao7Var = (ao7) obj2;
+                ao7Var.a(ht8.f, entry.getKey());
+                ao7Var.a(ht8.g, entry.getValue());
+                return;
+            default:
+                throw new t24("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
         }
-        if (obj instanceof Integer) {
-            num = (Integer) obj;
-            if (num != null && num.intValue() > 0) {
-                num2 = num;
-            }
-            a = num2;
-        }
-        num = null;
-        if (num != null) {
-            num2 = num;
-        }
-        a = num2;
     }
 }

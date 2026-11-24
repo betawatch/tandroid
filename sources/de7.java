@@ -1,62 +1,37 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class de7 implements Runnable {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ boolean F;
-    public final /* synthetic */ int G;
-    public final /* synthetic */ long H;
-    public final /* synthetic */ int I;
-    public final /* synthetic */ boolean J;
-    public final /* synthetic */ int K;
-    public final /* synthetic */ boolean L;
-    public final /* synthetic */ boolean M;
-    public final /* synthetic */ rqb N;
-    public final /* synthetic */ cf7 a;
-    public final /* synthetic */ TLRPC.TL_messages_messages b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ int w;
-    public final /* synthetic */ int x;
-    public final /* synthetic */ int y;
+public final class de7 extends uj5 {
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int[] e;
+    public final int[] f;
 
-    public /* synthetic */ de7(cf7 cf7Var, TLRPC.TL_messages_messages tL_messages_messages, int i, long j, long j2, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, boolean z, int i11, long j3, int i12, boolean z2, int i13, boolean z3, boolean z4, rqb rqbVar) {
-        this.a = cf7Var;
-        this.b = tL_messages_messages;
-        this.c = i;
-        this.d = j;
-        this.e = j2;
-        this.f = i2;
-        this.h = i3;
-        this.n = i4;
-        this.r = i5;
-        this.s = i6;
-        this.w = i7;
-        this.x = i8;
-        this.y = i9;
-        this.E = i10;
-        this.F = z;
-        this.G = i11;
-        this.H = j3;
-        this.I = i12;
-        this.J = z2;
-        this.K = i13;
-        this.L = z3;
-        this.M = z4;
-        this.N = rqbVar;
+    public de7(int i, int i2, int i3, int[] iArr, int[] iArr2) {
+        super("MLLT");
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
+        this.e = iArr;
+        this.f = iArr2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        this.a.getMessagesController().P3(this.b, this.c, this.d, this.e, this.f, this.h, this.n, true, this.r, this.s, this.w, this.x, this.y, this.E, this.F, this.G, this.H, this.I, this.J, this.K, this.L, this.M, this.N);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || de7.class != obj.getClass()) {
+            return false;
+        }
+        de7 de7Var = (de7) obj;
+        return this.b == de7Var.b && this.c == de7Var.c && this.d == de7Var.d && Arrays.equals(this.e, de7Var.e) && Arrays.equals(this.f, de7Var.f);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((((527 + this.b) * 31) + this.c) * 31) + this.d) * 31)) * 31);
     }
 }

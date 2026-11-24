@@ -1,29 +1,110 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class gq3 extends ReplacementSpan {
-    public int b;
-    public final Paint a = new Paint(1);
-    public float c = 3.0f;
-    public float d = 3.0f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gq3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ad7 b;
+    public final /* synthetic */ iq3 c;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        if (color != 0) {
-            paint2.setColor(paint.getColor());
-        }
-        canvas.drawCircle(f + (gm.N(this.c) / 2.0f), ((i5 - i3) / 2) + this.b, gm.N(this.d) / 2.0f, paint2);
+    public /* synthetic */ gq3(ad7 ad7Var, iq3 iq3Var, byte b) {
+        this.a = b;
+        this.b = ad7Var;
+        this.c = iq3Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return gm.L(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        SQLiteDatabase sQLiteDatabase;
+        SQLiteDatabase sQLiteDatabase2;
+        byte b = this.a;
+        int i = 0;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        iq3 iq3Var = this.c;
+        ad7 ad7Var = this.b;
+        switch (b) {
+            case 0:
+                try {
+                    try {
+                        sQLiteDatabase2 = ad7Var.b;
+                    } catch (Exception e) {
+                        fa4.g(e, true);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    }
+                    if (sQLiteDatabase2 != null) {
+                        sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO story_drafts VALUES (?, ?, ?, ?)");
+                        sQLitePreparedStatement.requery();
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(true);
+                        iq3Var.b(nativeByteBuffer);
+                        NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(nativeByteBuffer.length());
+                        iq3Var.b(nativeByteBuffer2);
+                        sQLitePreparedStatement.bindLong(1, iq3Var.a);
+                        sQLitePreparedStatement.bindLong(2, iq3Var.b);
+                        sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer2);
+                        if (iq3Var.G) {
+                            i = 1;
+                        } else if (iq3Var.M) {
+                            i = 2;
+                        }
+                        sQLitePreparedStatement.bindInteger(4, i);
+                        sQLitePreparedStatement.step();
+                        nativeByteBuffer2.reuse();
+                        sQLitePreparedStatement.dispose();
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    }
+                    return;
+                } catch (Throwable th) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th;
+                }
+            default:
+                try {
+                    try {
+                        sQLiteDatabase = ad7Var.b;
+                    } catch (Exception e2) {
+                        fa4.g(e2, true);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    }
+                    if (sQLiteDatabase != null) {
+                        sQLitePreparedStatement = sQLiteDatabase.executeFast("INSERT INTO story_drafts VALUES (?, ?, ?, ?)");
+                        sQLitePreparedStatement.requery();
+                        NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(true);
+                        iq3Var.b(nativeByteBuffer3);
+                        NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(nativeByteBuffer3.length());
+                        iq3Var.b(nativeByteBuffer4);
+                        sQLitePreparedStatement.bindLong(1, iq3Var.a);
+                        sQLitePreparedStatement.bindLong(2, iq3Var.b);
+                        sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer4);
+                        if (iq3Var.G) {
+                            i = 1;
+                        } else if (iq3Var.M) {
+                            i = 2;
+                        }
+                        sQLitePreparedStatement.bindInteger(4, i);
+                        sQLitePreparedStatement.step();
+                        nativeByteBuffer4.reuse();
+                        sQLitePreparedStatement.dispose();
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    }
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th2;
+                }
+        }
     }
 }

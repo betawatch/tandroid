@@ -1,45 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class pq2 implements px2 {
-    public static final pq2 b = new pq2(0);
-    public static final pq2 c = new pq2(1);
-    public final /* synthetic */ byte a;
+import android.util.SparseArray;
+import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ pq2(byte b2) {
-        this.a = b2;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class pq2 {
+    public static final SparseArray e = new SparseArray();
+    public static final ArrayList f = new ArrayList();
+    public final int a;
+    public final boolean b;
+    public final int c;
+    public final boolean d;
 
-    @Override // px2
-    public final cy2 getContext() {
-        switch (this.a) {
-            case 0:
-                throw new IllegalStateException("This continuation is already complete");
-            default:
-                return k34.a;
+    /* JADX WARN: Multi-variable type inference failed */
+    public pq2(int i, int i2) {
+        if (i == -2) {
+            this.d = true;
+            i = -1;
         }
+        this.a = i;
+        Integer valueOf = Integer.valueOf(i);
+        this.b = i2;
+        this.c = Objects.hash(0, valueOf, Integer.valueOf(i2));
     }
 
-    @Override // px2
-    public final void resumeWith(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new IllegalStateException("This continuation is already complete");
-            default:
-                return;
+    public final void a() {
+        if (e.indexOfKey(this.c) >= 0) {
+            return;
         }
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 0:
-                return "This continuation is already complete";
-            default:
-                return super.toString();
+        ArrayList arrayList = f;
+        if (arrayList.contains(Integer.valueOf(this.c))) {
+            return;
         }
+        arrayList.add(Integer.valueOf(this.c));
+        Utilities.e.c(new mk2(this, (byte) 8));
     }
 
-    private final void a(Object obj) {
+    public final int hashCode() {
+        return this.c;
     }
 }

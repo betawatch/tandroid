@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzaf extends eeb implements fs4 {
+final class zzaf extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzaj zzb;
     final /* synthetic */ String zzc;
@@ -14,33 +14,33 @@ final class zzaf extends eeb implements fs4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzaf(zzaj zzajVar, String str, zzhk zzhkVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzaf(zzaj zzajVar, String str, zzhk zzhkVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzajVar;
         this.zzc = str;
         this.zzd = zzhkVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, fw2Var);
         zzafVar.zze = obj;
         return zzafVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaf) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzaf) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzxx zzp;
         List list;
         int i = this.zza;
-        tue.b(obj);
+        qse.b(obj);
         if (i == 0) {
-            ky2 ky2Var = (ky2) this.zze;
+            ax2 ax2Var = (ax2) this.zze;
             ArrayList arrayList = new ArrayList();
             zzaj zzajVar = this.zzb;
             String str = this.zzc;
@@ -55,18 +55,18 @@ final class zzaf extends eeb implements fs4 {
             }
             int size = arrayList3.size();
             for (int i2 = 0; i2 < size; i2++) {
-                arrayList2.add(srd.b(ky2Var, new zzae(this.zzd, (zzar) arrayList3.get(i2), str, arrayList, null)));
+                arrayList2.add(ppd.b(ax2Var, new zzae(this.zzd, (zzar) arrayList3.get(i2), str, arrayList, null)));
             }
-            av5[] av5VarArr = (av5[]) arrayList2.toArray(new av5[0]);
-            av5[] av5VarArr2 = (av5[]) Arrays.copyOf(av5VarArr, av5VarArr.length);
+            bt5[] bt5VarArr = (bt5[]) arrayList2.toArray(new bt5[0]);
+            bt5[] bt5VarArr2 = (bt5[]) Arrays.copyOf(bt5VarArr, bt5VarArr.length);
             this.zza = 1;
-            Object c = apd.c(av5VarArr2, this);
-            ly2 ly2Var = ly2.a;
-            if (c == ly2Var) {
-                return ly2Var;
+            Object c = xmd.c(bt5VarArr2, this);
+            bx2 bx2Var = bx2.a;
+            if (c == bx2Var) {
+                return bx2Var;
             }
         }
         zzp = this.zzb.zzp(this.zzc);
-        return new tc9(zzp);
+        return new ta9(zzp);
     }
 }

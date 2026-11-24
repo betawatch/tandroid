@@ -1,110 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class i17 extends LinearLayout implements vlb {
-    public ShapeDrawable a;
-    public final ylb b;
-    public final bf0 c;
-    public final pc0 d;
-    public final TextView e;
-    public final TextView f;
+public final class i17 extends CharacterStyle {
+    public final /* synthetic */ byte a;
 
-    public i17(ylb ylbVar, Context context, boolean z) {
-        super(context);
-        this.d = new pc0((ylb) null);
-        this.b = ylbVar;
-        setOrientation(0);
-        bf0 bf0Var = new bf0(context);
-        this.c = bf0Var;
-        bf0Var.setRoundRadius(gm.L(28.0f));
-        addView(bf0Var, qoe.t(28, 28, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, qoe.t(-1, -2, 55, 0, 4, 12, 4));
-        TextView textView = new TextView(context);
-        this.e = textView;
-        textView.setTextSize(1, 15.0f);
-        int i = cmb.F6;
-        anb.X(textView, i, ylbVar);
-        linearLayout.addView(textView, qoe.o(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        textView2.setTextSize(1, 13.0f);
-        anb.Y(textView2, z ? anb.K(0.5f, i) : anb.M(cmb.y6), ylbVar);
-        linearLayout.addView(textView2, qoe.o(-1, -2));
+    public i17(j17 j17Var) {
+        this.a = (byte) 0;
     }
 
-    public final void a(int i, String str, TLRPC.Chat chat) {
-        if (str == null) {
-            return;
-        }
-        TextView textView = this.f;
-        TextView textView2 = this.e;
-        bf0 bf0Var = this.c;
-        if (i == 0) {
-            ShapeDrawable b0 = cmb.b0(gm.L(28.0f), cmb.v0(cmb.Ei, this.b));
-            this.a = b0;
-            sn2 sn2Var = new sn2(b0, getContext().getResources().getDrawable(R.drawable.menu_hashtag).mutate());
-            sn2Var.s = gm.L(-0.66f);
-            sn2Var.w = 0;
-            int L = gm.L(20.0f);
-            int L2 = gm.L(20.0f);
-            sn2Var.e = L;
-            sn2Var.f = L2;
-            bf0Var.setImageDrawable(sn2Var);
-            textView2.setText(jb6.a0(null, null, 2131749101, str));
-            textView.setText(jb6.M0(2131749102, null));
-            return;
-        }
-        pc0 pc0Var = this.d;
-        pc0Var.p(chat);
-        bf0Var.f(chat, pc0Var);
-        StringBuilder k = b10.k(str, "@");
-        k.append(sd2.K(chat, false));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jb6.a0(null, null, 2131749099, k.toString()));
-        spannableStringBuilder.append((CharSequence) "  d");
-        of4 of4Var = new of4(8);
-        of4Var.f = cmb.w0(null, cmb.Bk, false);
-        of4Var.n = false;
-        spannableStringBuilder.setSpan(of4Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-        textView2.setText(spannableStringBuilder);
-        textView.setText(jb6.M0(2131749100, null));
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        try {
-            ShapeDrawable shapeDrawable = this.a;
-            if (shapeDrawable != null) {
-                cmb.A1(cmb.v0(cmb.Ei, this.b), shapeDrawable);
-                bf0 bf0Var = this.c;
-                if (bf0Var != null) {
-                    bf0Var.invalidate();
-                }
-            }
-        } catch (Exception e) {
-            fc4.g(e, true);
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setTypeface(gl.o());
+                int alpha = textPaint.getAlpha();
+                textPaint.setColor(bkb.w0(null, bkb.m6, false));
+                textPaint.setAlpha(alpha);
+                break;
+            case 1:
+                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
+                textPaint.setColor(bkb.S2.getColor());
+                break;
+            case 2:
+                textPaint.setColor(bkb.n2.linkColor);
+                break;
+            case 3:
+                break;
+            default:
+                textPaint.setAlpha(128);
+                break;
         }
     }
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+    public /* synthetic */ i17(byte b) {
+        this.a = b;
+    }
+
+    private final void a(TextPaint textPaint) {
     }
 }

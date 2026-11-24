@@ -1,65 +1,49 @@
 // default package
 
-import android.widget.FrameLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ay5 implements ht3 {
+public final /* synthetic */ class ay5 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ kz5 b;
 
-    public /* synthetic */ ay5(FrameLayout frameLayout, boolean z, byte b) {
+    public /* synthetic */ ay5(kz5 kz5Var, byte b) {
         this.a = b;
-        this.b = frameLayout;
-        this.c = z;
+        this.b = kz5Var;
     }
 
-    @Override // ht3
-    public final void a(zna znaVar, boolean z, float f, float f2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        boolean z2 = this.c;
-        FrameLayout frameLayout = this.b;
+        kz5 kz5Var = this.b;
         switch (b) {
             case 0:
-                ry5 ry5Var = (ry5) frameLayout;
-                tu7 tu7Var = ry5Var.l1;
-                if (znaVar == ry5Var.v1) {
-                    ry5Var.v1 = null;
-                    if (!z2) {
-                        tu7Var.setVisibility(8);
-                    }
-                    tu7Var.setMaskProvider(null);
+                String str = LaunchActivity.C1;
+                try {
+                    kz5Var.run();
                     break;
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                    return;
                 }
-                break;
             case 1:
-                ry5 ry5Var2 = (ry5) frameLayout;
-                ny5 ny5Var = ry5Var2.w1;
-                if (znaVar == ry5Var2.C1) {
-                    ry5Var2.C1 = null;
-                    if (!z2) {
-                        ny5Var.setVisibility(8);
-                        m58.e(ry5Var2.F1).g();
-                        ny5Var.getAdapter().f();
-                        break;
-                    }
+                String str2 = LaunchActivity.C1;
+                try {
+                    kz5Var.run();
+                    break;
+                } catch (Exception e2) {
+                    fa4.g(e2, true);
+                    return;
                 }
-                break;
             default:
-                u17 u17Var = (u17) frameLayout;
-                if (!z) {
-                    u17Var.L = null;
-                    u17Var.setVisibility(z2 ? 8 : 0);
-                    if (u17Var.O && z2) {
-                        u17Var.O = false;
-                        u17Var.b.setLayoutManager(u17Var.getNeededLayoutManager());
-                        u17Var.J = true;
-                        u17Var.o(true);
-                        break;
-                    }
+                String str3 = LaunchActivity.C1;
+                try {
+                    kz5Var.run();
+                    break;
+                } catch (Exception e3) {
+                    fa4.g(e3, true);
                 }
-                break;
         }
     }
 }

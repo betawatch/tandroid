@@ -1,173 +1,90 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.content.DialogInterface;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+import com.google.android.gms.tasks.CancellationTokenSource;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ur0 extends wgc {
-    public final /* synthetic */ byte W;
-    public Object a0;
-    public final /* synthetic */ FrameLayout b0;
+public final /* synthetic */ class ur0 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ur0(FrameLayout frameLayout, Context context, Object obj, byte b) {
-        super(context, null);
-        this.W = b;
-        this.b0 = frameLayout;
-        this.a0 = obj;
+    public /* synthetic */ ur0(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // wgc
-    public final void A(int i) {
-        byte b = this.W;
-        FrameLayout frameLayout = this.b0;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        byte b = this.a;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                kea keaVar = (kea) frameLayout;
-                String currentLang = keaVar.getCurrentLang();
-                if (!TextUtils.equals((String) this.a0, currentLang)) {
-                    this.a0 = currentLang;
-                    keaVar.H.S0();
-                    break;
-                }
+                ((va7) obj).run();
                 break;
             case 1:
-                ((lea) frameLayout).l();
-                d dVar = (d) this.a0;
-                if (dVar instanceof ProfileActivity) {
-                    ((ProfileActivity) dVar).W();
-                    break;
-                }
+                ((HttpGetFileTask) obj).cancel(true);
                 break;
-            default:
-                nea neaVar = (nea) this.a0;
-                ((oea) frameLayout).b.c0.get(i, -1);
-                neaVar.d.P0(1.0f);
-                break;
-        }
-    }
-
-    @Override // wgc
-    public final void b() {
-        switch (this.W) {
-            case 1:
-                lea leaVar = (lea) this.b0;
-                vgc vgcVar = leaVar.n;
-                if (leaVar.b() && vgcVar != null) {
-                    SpannableStringBuilder spannableStringBuilder = leaVar.K;
-                    if (spannableStringBuilder == null) {
-                        spannableStringBuilder = new SpannableStringBuilder("+ ".concat(jb6.M0(2131750031, null)));
-                        pn2 pn2Var = new pn2(R.drawable.poll_add_plus, 0);
-                        pn2Var.H = 0.8f;
-                        spannableStringBuilder.setSpan(pn2Var, 0, 1, 33);
-                        leaVar.K = spannableStringBuilder;
-                    }
-                    vgcVar.a(-1, spannableStringBuilder);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // wgc
-    public final boolean c(MotionEvent motionEvent) {
-        boolean z;
-        byte b = this.W;
-        FrameLayout frameLayout = this.b0;
-        switch (b) {
-            case 0:
-                z = ((kea) frameLayout).H.F1;
-                break;
-            case 1:
-                z = ((lea) frameLayout).g();
-                break;
-            default:
-                return super.c(motionEvent);
-        }
-        return !z;
-    }
-
-    @Override // wgc
-    public final void w(boolean z) {
-        byte b = this.W;
-        FrameLayout frameLayout = this.b0;
-        switch (b) {
-            case 0:
-                kea keaVar = (kea) frameLayout;
-                String currentLang = keaVar.getCurrentLang();
-                if (!TextUtils.equals((String) this.a0, currentLang)) {
-                    this.a0 = currentLang;
-                    keaVar.H.S0();
-                    break;
-                }
-                break;
-            case 1:
-                lea leaVar = (lea) frameLayout;
-                leaVar.l();
-                d dVar = (d) this.a0;
-                if (dVar instanceof ProfileActivity) {
-                    ((ProfileActivity) dVar).W();
-                    View fragmentView = dVar.getFragmentView();
-                    if (fragmentView != null) {
-                        fragmentView.invalidate();
-                    }
-                }
-                leaVar.p();
-                break;
-            default:
-                nea neaVar = (nea) this.a0;
-                neaVar.d.P0(((oea) frameLayout).b.getAnimatingIndicatorProgress());
-                break;
-        }
-    }
-
-    @Override // wgc
-    public final void y(int i) {
-        switch (this.W) {
-            case 0:
-                kea keaVar = (kea) this.b0;
-                String currentLang = keaVar.getCurrentLang();
-                if (!TextUtils.equals((String) this.a0, currentLang)) {
-                    this.a0 = currentLang;
-                    keaVar.H.S0();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // wgc
-    public final void z(int i, boolean z) {
-        switch (this.W) {
             case 2:
-                nea neaVar = (nea) this.a0;
-                int i2 = ((oea) this.b0).b.c0.get(i, -1);
-                nha nhaVar = neaVar.d;
-                if (i2 > 0) {
-                    nhaVar.X0(nhaVar.t1(i2).a, z);
-                    break;
-                } else {
-                    nhaVar.X0(8, z);
-                    break;
+                mu1 mu1Var = (mu1) obj;
+                mu1Var.t9 = true;
+                mu1Var.r9 = 0;
+                mu1Var.Ub = 0;
+                mu1Var.b5 = 0;
+                mu1Var.I7();
+                mu1Var.dc(false);
+                break;
+            case 3:
+                x02 x02Var = (x02) obj;
+                yla ylaVar = x02Var.m4;
+                if (ylaVar != null) {
+                    ylaVar.d();
                 }
+                yla ylaVar2 = new yla((Object) x02Var.b, (ri4) yla.p, 0.0f);
+                x02Var.m4 = ylaVar2;
+                ylaVar2.m.a(1.5f);
+                x02Var.m4.m.b(1500.0f);
+                x02Var.m4.h();
+                break;
+            case 4:
+                ((View) obj).setTag(null);
+                break;
+            case 5:
+                p82 p82Var = (p82) obj;
+                p82Var.N0 = false;
+                p82Var.b = null;
+                p82Var.O0 = false;
+                break;
+            case 6:
+                ((x92) obj).n = null;
+                break;
+            case 7:
+                mo2 mo2Var = (mo2) obj;
+                ConnectionsManager.getInstance(mo2Var.d).cancelRequest(mo2Var.r, true);
+                mo2Var.q = null;
+                mo2Var.r = 0;
+                break;
+            case 8:
+                ((j33) obj).J = false;
+                break;
+            case 9:
+                ((l15) obj).c("AUTH_CANCELED");
+                break;
+            case 10:
+                ((a46) obj).b();
+                break;
+            case 11:
+                ((CancellationTokenSource) obj).cancel();
+                break;
+            case 12:
+                ((em6) obj).f = true;
+                break;
             default:
-                super.z(i, z);
+                ((mhc) obj).run();
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ur0(kea keaVar, Context context) {
-        super(context, null);
-        this.W = (byte) 0;
-        this.b0 = keaVar;
     }
 }

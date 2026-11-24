@@ -1,95 +1,78 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class k67 implements os9 {
-    public final gu4 a;
-    public final t7c b;
-    public final l84 c;
+public final /* synthetic */ class k67 implements i8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ na7 b;
 
-    public k67(t7c t7cVar, l84 l84Var, gu4 gu4Var) {
-        this.b = t7cVar;
-        l84Var.getClass();
-        this.c = l84Var;
-        this.a = gu4Var;
+    public /* synthetic */ k67(na7 na7Var, byte b) {
+        this.a = b;
+        this.b = na7Var;
     }
 
-    @Override // os9
-    public final gu4 a() {
-        gu4 gu4Var = this.a;
-        return wi8.A(gu4Var) ? gu4Var.i() : ((eu4) gu4Var.c(5)).b();
-    }
-
-    @Override // os9
-    public final void b(Object obj, Object obj2) {
-        rs9.k(this.b, obj, obj2);
-    }
-
-    @Override // os9
-    public final void c(Object obj) {
-        this.b.getClass();
-        s7c s7cVar = ((gu4) obj).unknownFields;
-        if (s7cVar.e) {
-            s7cVar.e = false;
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        int i = 0;
+        na7 na7Var = this.b;
+        switch (b) {
+            case 0:
+                gl.c3(new p67(na7Var, (TL_account.TL_webBrowserSettings) obj2, (byte) 1));
+                break;
+            case 1:
+                TL_account.WebBrowserSettings webBrowserSettings = (TL_account.WebBrowserSettings) obj;
+                if (webBrowserSettings instanceof TL_account.TL_webBrowserSettings) {
+                    na7Var.W4((TL_account.TL_webBrowserSettings) webBrowserSettings);
+                    break;
+                }
+                break;
+            case 2:
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                if (updates != null) {
+                    na7Var.R3(updates, false);
+                    break;
+                }
+                break;
+            case 3:
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
+                if (updates2 != null) {
+                    na7Var.R3(updates2, false);
+                }
+                gl.c3(new f67(na7Var, (byte) 29));
+                break;
+            case 4:
+                TLRPC.Updates updates3 = (TLRPC.Updates) obj;
+                if (updates3 != null) {
+                    na7Var.R3(updates3, false);
+                }
+                gl.c3(new c87(na7Var, (byte) 2));
+                break;
+            case 5:
+                TLRPC.EmojiGameInfo emojiGameInfo = (TLRPC.EmojiGameInfo) obj;
+                if (emojiGameInfo != null) {
+                    na7Var.k5 = emojiGameInfo;
+                }
+                ArrayList arrayList = na7Var.j5;
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj3 = arrayList.get(i);
+                    i++;
+                    ((p8c) obj3).a(Boolean.valueOf(na7Var.k5 instanceof TLRPC.TL_emojiGameDiceInfo));
+                }
+                na7Var.j5 = null;
+                break;
+            default:
+                TL_account.WebBrowserSettings webBrowserSettings2 = (TL_account.WebBrowserSettings) obj;
+                if (webBrowserSettings2 instanceof TL_account.TL_webBrowserSettings) {
+                    na7Var.W4((TL_account.TL_webBrowserSettings) webBrowserSettings2);
+                    break;
+                }
+                break;
         }
-        this.c.getClass();
-        ts2.t(obj);
-        throw null;
-    }
-
-    @Override // os9
-    public final boolean d(Object obj) {
-        this.c.getClass();
-        ts2.t(obj);
-        throw null;
-    }
-
-    @Override // os9
-    public final boolean e(gu4 gu4Var, gu4 gu4Var2) {
-        this.b.getClass();
-        return gu4Var.unknownFields.equals(gu4Var2.unknownFields);
-    }
-
-    @Override // os9
-    public final int f(gu4 gu4Var) {
-        this.b.getClass();
-        return gu4Var.unknownFields.hashCode();
-    }
-
-    @Override // os9
-    public final void g(Object obj, k6d k6dVar) {
-        this.c.getClass();
-        ts2.t(obj);
-        throw null;
-    }
-
-    @Override // os9
-    public final int h(gu4 gu4Var) {
-        this.b.getClass();
-        s7c s7cVar = gu4Var.unknownFields;
-        int i = s7cVar.d;
-        if (i != -1) {
-            return i;
-        }
-        int i2 = 0;
-        for (int i3 = 0; i3 < s7cVar.a; i3++) {
-            int i4 = s7cVar.b[i3] >>> 3;
-            m61 m61Var = (m61) s7cVar.c[i3];
-            int h = pl2.h(i4) + pl2.g(2) + (pl2.g(1) << 1);
-            int g = pl2.g(3);
-            int size = m61Var.size();
-            i2 += pl2.h(size) + size + g + h;
-        }
-        s7cVar.d = i2;
-        return i2;
-    }
-
-    @Override // os9
-    public final void i(Object obj, ag0 ag0Var, k84 k84Var) {
-        this.b.getClass();
-        t7c.a(obj);
-        this.c.getClass();
-        obj.getClass();
-        throw new ClassCastException();
     }
 }

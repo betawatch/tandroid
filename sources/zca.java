@@ -1,15 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class zca {
-    public final yca[] a;
-    public final String b;
-    public final String[] c;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public zca(yca[] ycaVarArr, String str, String[] strArr) {
-        this.a = ycaVarArr;
-        this.b = str;
-        this.c = strArr;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class zca extends i49 {
+    public final /* synthetic */ pca a;
+    public final /* synthetic */ qca b;
+    public final /* synthetic */ nfa c;
+
+    public zca(nfa nfaVar, pca pcaVar, qca qcaVar) {
+        this.c = nfaVar;
+        this.a = pcaVar;
+        this.b = qcaVar;
+    }
+
+    @Override // i49
+    public final void a(RecyclerView recyclerView, int i) {
+        this.c.e1 = i != 0;
+    }
+
+    @Override // i49
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        int i3;
+        int i4;
+        nfa nfaVar = this.c;
+        cfa[] cfaVarArr = nfaVar.w1;
+        qca qcaVar = this.b;
+        pca pcaVar = this.a;
+        nfaVar.z(pcaVar, (o39) recyclerView, qcaVar);
+        if (i2 != 0 && ((i4 = nfaVar.n0[0].F) == 0 || i4 == 5)) {
+            cfaVarArr[0].a.isEmpty();
+        }
+        if (i2 != 0 && ((i3 = pcaVar.F) == 0 || nfa.j0(i3))) {
+            nfa.m1(pcaVar, cfaVarArr, true);
+        }
+        pcaVar.h.M0(true);
+        if (pcaVar.G != null) {
+            pcaVar.invalidate();
+        }
     }
 }

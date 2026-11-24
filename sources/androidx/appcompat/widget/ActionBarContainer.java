@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class ActionBarContainer extends FrameLayout {
     public boolean a;
@@ -28,9 +28,9 @@ public class ActionBarContainer extends FrameLayout {
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         f6 f6Var = new f6(this);
-        WeakHashMap weakHashMap = kfc.a;
+        WeakHashMap weakHashMap = jdc.a;
         setBackground(f6Var);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, k09.a);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, jy8.a);
         boolean z = false;
         this.d = obtainStyledAttributes.getDrawable(0);
         this.e = obtainStyledAttributes.getDrawable(2);
@@ -271,7 +271,7 @@ public class ActionBarContainer extends FrameLayout {
         return null;
     }
 
-    public void setTabContainer(nt9 nt9Var) {
+    public void setTabContainer(lr9 lr9Var) {
     }
 
     public ActionBarContainer(Context context) {

@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class k7 extends FrameLayout {
     public final /* synthetic */ byte a;
@@ -40,21 +40,21 @@ public final class k7 extends FrameLayout {
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
             linearLayout.setGravity(16);
-            linearLayout.addView(textView, qoe.o(-2, -2));
+            linearLayout.addView(textView, nme.o(-2, -2));
             TextView textView2 = new TextView(context);
             SpannableStringBuilder append = new SpannableStringBuilder(str).append((CharSequence) " >");
-            append.setSpan(new sn3(), append.length() - 1, append.length(), 33);
+            append.setSpan(new hm3(), append.length() - 1, append.length(), 33);
             textView2.setText(append);
             textView2.setTextSize(1, 13.0f);
-            textView2.setTextColor(cmb.p1(0.55f, i));
+            textView2.setTextColor(bkb.p1(0.55f, i));
             textView2.setSingleLine(true);
-            linearLayout.addView(textView2, qoe.k(0.0f, 1.0f, 0.0f, 0.0f, -2, -2));
-            addView(linearLayout, qoe.d(-2, -1.0f, 3, 18.0f, 0.0f, 44.0f, 0.0f));
+            linearLayout.addView(textView2, nme.k(0.0f, 1.0f, 0.0f, 0.0f, -2, -2));
+            addView(linearLayout, nme.d(-2, -1.0f, 3, 18.0f, 0.0f, 44.0f, 0.0f));
         } else {
-            addView(textView, qoe.d(-2, -1.0f, 3, 18.0f, 0.0f, 44.0f, 0.0f));
+            addView(textView, nme.d(-2, -1.0f, 3, 18.0f, 0.0f, 44.0f, 0.0f));
         }
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gm.N(1.75f));
+        paint.setStrokeWidth(gl.N(1.75f));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setColor(i);
@@ -68,9 +68,9 @@ public final class k7 extends FrameLayout {
                 super.dispatchDraw(canvas);
                 float height = getHeight() / 2.0f;
                 if (this.b) {
-                    float width = getWidth() - gm.L(26.0f);
-                    canvas.drawLine(width - gm.L(5.0f), height, width - gm.L(1.5f), height + gm.L(3.5f), paint);
-                    canvas.drawLine(width - gm.L(1.5f), gm.L(3.5f) + height, width + gm.L(5.5f), height - gm.L(4.0f), paint);
+                    float width = getWidth() - gl.L(26.0f);
+                    canvas.drawLine(width - gl.L(5.0f), height, width - gl.L(1.5f), height + gl.L(3.5f), paint);
+                    canvas.drawLine(width - gl.L(1.5f), gl.L(3.5f) + height, width + gl.L(5.5f), height - gl.L(4.0f), paint);
                     break;
                 }
                 break;
@@ -82,23 +82,23 @@ public final class k7 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j) {
-        tk5 tk5Var;
-        tk5 tk5Var2;
+        ui5 ui5Var;
+        ui5 ui5Var2;
         int i;
         switch (this.a) {
             case 3:
                 boolean drawChild = super.drawChild(canvas, view, j);
-                rob robVar = (rob) this.c;
-                if (view == robVar.u0) {
-                    tk5Var = ((d) robVar).parentLayout;
-                    if (tk5Var != null) {
-                        tk5Var2 = ((d) robVar).parentLayout;
-                        if (robVar.u0.getVisibility() == 0) {
-                            i = (int) (robVar.u0.getTranslationY() + robVar.u0.getMeasuredHeight());
+                qmb qmbVar = (qmb) this.c;
+                if (view == qmbVar.u0) {
+                    ui5Var = ((d) qmbVar).parentLayout;
+                    if (ui5Var != null) {
+                        ui5Var2 = ((d) qmbVar).parentLayout;
+                        if (qmbVar.u0.getVisibility() == 0) {
+                            i = (int) (qmbVar.u0.getTranslationY() + qmbVar.u0.getMeasuredHeight());
                         } else {
                             i = 0;
                         }
-                        ((ActionBarLayout) tk5Var2).o(canvas, i);
+                        ((ActionBarLayout) ui5Var2).o(canvas, i);
                     }
                 }
                 return drawChild;
@@ -128,8 +128,8 @@ public final class k7 extends FrameLayout {
                 r7 r7Var = (r7) this.c;
                 super.onLayout(z, i, i2, i3, i4);
                 int i5 = 0;
-                if (!jb6.a0 && r7Var.h.getVisibility() == 0) {
-                    i5 = gm.L(4.0f) + r7Var.h.getMeasuredWidth();
+                if (!k96.a0 && r7Var.h.getVisibility() == 0) {
+                    i5 = gl.L(4.0f) + r7Var.h.getMeasuredWidth();
                 }
                 if (r7Var.f.getVisibility() == 0) {
                     i5 += r7Var.f.getMeasuredWidth();
@@ -166,13 +166,13 @@ public final class k7 extends FrameLayout {
                 if (view != null) {
                     measureChildWithMargins(view, i, 0, i2, 0);
                 }
-                boolean z = jb6.a0;
+                boolean z = k96.a0;
                 TextView textView2 = r7Var.h;
                 if (!z) {
                     if (textView2.getVisibility() == 0) {
                         k7Var = this;
                         k7Var.measureChildWithMargins(r7Var.h, i, View.MeasureSpec.getSize(i) / 2, i2, 0);
-                        i4 = gm.L(4.0f) + r7Var.h.getMeasuredWidth();
+                        i4 = gl.L(4.0f) + r7Var.h.getMeasuredWidth();
                     } else {
                         k7Var = this;
                         i4 = 0;
@@ -191,7 +191,7 @@ public final class k7 extends FrameLayout {
                 } else {
                     if (textView2.getVisibility() == 0) {
                         measureChildWithMargins(r7Var.h, i, View.MeasureSpec.getSize(i) / 2, i2, 0);
-                        i3 = gm.L(4.0f) + r7Var.h.getMeasuredWidth();
+                        i3 = gl.L(4.0f) + r7Var.h.getMeasuredWidth();
                     } else {
                         i3 = 0;
                     }
@@ -199,48 +199,48 @@ public final class k7 extends FrameLayout {
                     this.b = true;
                     measureChildWithMargins(r7Var.f, i, i3, i2, 0);
                     int measuredWidth2 = r7Var.f.getVisibility() == 0 ? r7Var.f.getMeasuredWidth() : 0;
-                    measureChildWithMargins(r7Var.e, wi8.f(12.0f, size2, 0), i3 + measuredWidth2, i2, 0);
+                    measureChildWithMargins(r7Var.e, ug8.f(12.0f, size2, 0), i3 + measuredWidth2, i2, 0);
                     this.b = false;
                     setMeasuredDimension(Math.max(r7Var.e.getMeasuredWidth() + measuredWidth2, size2), View.MeasureSpec.getSize(i2));
                     break;
                 }
             case 1:
                 int size3 = View.MeasureSpec.getSize(i);
-                yv1 yv1Var = (yv1) this.c;
-                if (yv1Var.f8()) {
-                    size3 -= gm.L(71.0f);
-                    i5 = gm.L(32.0f);
+                mu1 mu1Var = (mu1) this.c;
+                if (mu1Var.W7()) {
+                    size3 -= gl.L(71.0f);
+                    i5 = gl.L(32.0f);
                 } else {
                     i5 = 0;
                 }
-                TextView textView3 = yv1Var.a2;
-                if (textView3 != null && textView3.getVisibility() == 0 && (textView = yv1Var.c2) != null && textView.getVisibility() == 0) {
-                    size3 = wi8.D(31.0f, size3, 2);
+                TextView textView3 = mu1Var.a2;
+                if (textView3 != null && textView3.getVisibility() == 0 && (textView = mu1Var.c2) != null && textView.getVisibility() == 0) {
+                    size3 = ug8.D(31.0f, size3, 2);
                 }
                 this.b = true;
-                TextView textView4 = yv1Var.c2;
+                TextView textView4 = mu1Var.c2;
                 if (textView4 != null && textView4.getVisibility() == 0) {
-                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) yv1Var.c2.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) mu1Var.c2.getLayoutParams();
                     layoutParams.width = size3;
-                    TextView textView5 = yv1Var.a2;
+                    TextView textView5 = mu1Var.a2;
                     if (textView5 == null || textView5.getVisibility() != 0) {
-                        yv1Var.c2.setPadding(gm.L(48.0f), 0, gm.L(48.0f), 0);
+                        mu1Var.c2.setPadding(gl.L(48.0f), 0, gl.L(48.0f), 0);
                         layoutParams.leftMargin = i5;
                     } else {
-                        yv1Var.c2.setPadding(gm.L(4.0f), 0, gm.L(4.0f), 0);
+                        mu1Var.c2.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
                         layoutParams.leftMargin = i5 + size3;
-                        layoutParams.width -= gm.L(15.0f);
+                        layoutParams.width -= gl.L(15.0f);
                     }
                 }
-                TextView textView6 = yv1Var.a2;
+                TextView textView6 = mu1Var.a2;
                 if (textView6 != null && textView6.getVisibility() == 0) {
-                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) yv1Var.a2.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) mu1Var.a2.getLayoutParams();
                     layoutParams2.width = size3;
-                    TextView textView7 = yv1Var.c2;
+                    TextView textView7 = mu1Var.c2;
                     if (textView7 == null || textView7.getVisibility() != 0) {
-                        yv1Var.a2.setPadding(gm.L(48.0f), 0, gm.L(48.0f), 0);
+                        mu1Var.a2.setPadding(gl.L(48.0f), 0, gl.L(48.0f), 0);
                     } else {
-                        yv1Var.a2.setPadding(gm.L(11.0f), 0, gm.L(4.0f), 0);
+                        mu1Var.a2.setPadding(gl.L(11.0f), 0, gl.L(4.0f), 0);
                     }
                     layoutParams2.leftMargin = i5;
                 }
@@ -255,69 +255,69 @@ public final class k7 extends FrameLayout {
                 int size4 = View.MeasureSpec.getSize(i);
                 int size5 = View.MeasureSpec.getSize(i2);
                 setMeasuredDimension(size4, size5);
-                if (((rob) this.c).e != null) {
+                if (((qmb) this.c).e != null) {
                     this.b = true;
-                    if (!gm.O1()) {
-                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((rob) this.c).e.getLayoutParams();
-                        layoutParams3.topMargin = gm.m;
-                        ((rob) this.c).e.setLayoutParams(layoutParams3);
+                    if (!gl.O1()) {
+                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((qmb) this.c).e.getLayoutParams();
+                        layoutParams3.topMargin = gl.m;
+                        ((qmb) this.c).e.setLayoutParams(layoutParams3);
                     }
-                    if (gm.O1() || a.b.getResources().getConfiguration().orientation != 2) {
-                        ((rob) this.c).h.setTextSize(1, 20.0f);
+                    if (gl.O1() || a.b.getResources().getConfiguration().orientation != 2) {
+                        ((qmb) this.c).h.setTextSize(1, 20.0f);
                     } else {
-                        ((rob) this.c).h.setTextSize(1, 18.0f);
+                        ((qmb) this.c).h.setTextSize(1, 18.0f);
                     }
                     this.b = false;
                 }
-                measureChildWithMargins(((rob) this.c).u0, i, 0, i2, 0);
-                int measuredHeight = ((rob) this.c).u0.getMeasuredHeight();
-                if (((rob) this.c).u0.getVisibility() == 0) {
+                measureChildWithMargins(((qmb) this.c).u0, i, 0, i2, 0);
+                int measuredHeight = ((qmb) this.c).u0.getMeasuredHeight();
+                if (((qmb) this.c).u0.getVisibility() == 0) {
                     size5 -= measuredHeight;
                 }
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((rob) this.c).w0.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((qmb) this.c).w0.getLayoutParams();
                 layoutParams4.topMargin = measuredHeight;
-                rob robVar = (rob) this.c;
-                if (robVar.b == 2) {
-                    onb onbVar = robVar.w0;
-                    int L = gm.L(4.0f);
-                    rob robVar2 = (rob) this.c;
-                    if (robVar2.M1) {
+                qmb qmbVar = (qmb) this.c;
+                if (qmbVar.b == 2) {
+                    nlb nlbVar = qmbVar.w0;
+                    int L = gl.L(4.0f);
+                    qmb qmbVar2 = (qmb) this.c;
+                    if (qmbVar2.M1) {
                         j = 0;
                     } else {
                         j = 0;
-                        if (robVar2.L1 > 0) {
+                        if (qmbVar2.L1 > 0) {
                             i6 = 58;
-                            onbVar.setPadding(0, L, 0, (gm.L(i6 + 72) - 12) + (!((rob) this.c).W0() ? gm.n : 0));
+                            nlbVar.setPadding(0, L, 0, (gl.L(i6 + 72) - 12) + (!((qmb) this.c).V0() ? gl.n : 0));
                         }
                     }
                     i6 = 0;
-                    onbVar.setPadding(0, L, 0, (gm.L(i6 + 72) - 12) + (!((rob) this.c).W0() ? gm.n : 0));
+                    nlbVar.setPadding(0, L, 0, (gl.L(i6 + 72) - 12) + (!((qmb) this.c).V0() ? gl.n : 0));
                 } else {
                     j = 0;
                 }
-                ((rob) this.c).w0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5 - layoutParams4.bottomMargin, TLObject.FLAG_30));
-                ((FrameLayout.LayoutParams) ((rob) this.c).z0.getLayoutParams()).topMargin = measuredHeight;
-                ((rob) this.c).z0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5, TLObject.FLAG_30));
-                jp0 jp0Var = ((rob) this.c).S1;
-                if (jp0Var != null) {
-                    ((FrameLayout.LayoutParams) jp0Var.getLayoutParams()).topMargin = measuredHeight;
-                    ((rob) this.c).S1.measure(View.MeasureSpec.makeMeasureSpec(gm.L(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(76.0f), TLObject.FLAG_30));
+                ((qmb) this.c).w0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5 - layoutParams4.bottomMargin, TLObject.FLAG_30));
+                ((FrameLayout.LayoutParams) ((qmb) this.c).z0.getLayoutParams()).topMargin = measuredHeight;
+                ((qmb) this.c).z0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5, TLObject.FLAG_30));
+                jo0 jo0Var = ((qmb) this.c).S1;
+                if (jo0Var != null) {
+                    ((FrameLayout.LayoutParams) jo0Var.getLayoutParams()).topMargin = measuredHeight;
+                    ((qmb) this.c).S1.measure(View.MeasureSpec.makeMeasureSpec(gl.L(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(76.0f), TLObject.FLAG_30));
                 }
-                tc0 tc0Var = ((rob) this.c).E0;
-                if (tc0Var != null) {
-                    tc0Var.setPadding(gm.L(12.0f), gm.L(12.0f), gm.L(12.0f), gm.L(12.0f) + (((rob) this.c).W0() ? gm.n : 0));
-                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((rob) this.c).E0.getLayoutParams();
-                    rob robVar3 = (rob) this.c;
-                    layoutParams5.height = gm.L(72 + ((robVar3.M1 || robVar3.L1 <= j) ? 0 : 58)) + (((rob) this.c).W0() ? gm.n : 0);
-                    measureChildWithMargins(((rob) this.c).E0, i, 0, i2, 0);
+                tb0 tb0Var = ((qmb) this.c).E0;
+                if (tb0Var != null) {
+                    tb0Var.setPadding(gl.L(12.0f), gl.L(12.0f), gl.L(12.0f), gl.L(12.0f) + (((qmb) this.c).V0() ? gl.n : 0));
+                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((qmb) this.c).E0.getLayoutParams();
+                    qmb qmbVar3 = (qmb) this.c;
+                    layoutParams5.height = gl.L(72 + ((qmbVar3.M1 || qmbVar3.L1 <= j) ? 0 : 58)) + (((qmb) this.c).V0() ? gl.n : 0);
+                    measureChildWithMargins(((qmb) this.c).E0, i, 0, i2, 0);
                 }
-                Drawable drawable = ((rob) this.c).r;
+                Drawable drawable = ((qmb) this.c).r;
                 if (drawable != null) {
-                    drawable.getPadding(gm.Q);
+                    drawable.getPadding(gl.Q);
                 }
                 int i8 = 0;
                 while (true) {
-                    FrameLayout[] frameLayoutArr = ((rob) this.c).N0;
+                    FrameLayout[] frameLayoutArr = ((qmb) this.c).N0;
                     if (i8 >= frameLayoutArr.length) {
                         break;
                     } else {
@@ -325,19 +325,19 @@ public final class k7 extends FrameLayout {
                         if (frameLayout != null) {
                             FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
                             if (i8 == 0) {
-                                f = ((rob) this.c).b == 2 ? nm7.r5 : nm7.v4;
+                                f = ((qmb) this.c).b == 2 ? kk7.r5 : kk7.v4;
                             } else {
                                 f = 316.0f;
                             }
-                            layoutParams6.height = gm.L(f);
-                            if (((rob) this.c).W0()) {
-                                layoutParams6.height += gm.n;
+                            layoutParams6.height = gl.L(f);
+                            if (((qmb) this.c).V0()) {
+                                layoutParams6.height += gl.n;
                             }
                             if (i8 == 0) {
-                                layoutParams6.height = gm.L(12.0f) + gm.Q.top + layoutParams6.height;
+                                layoutParams6.height = gl.L(12.0f) + gl.Q.top + layoutParams6.height;
                             }
-                            ((rob) this.c).N0[i8].setPadding(0, i8 == 0 ? gm.L(12.0f) + gm.Q.top : 0, 0, ((rob) this.c).W0() ? gm.n : 0);
-                            measureChildWithMargins(((rob) this.c).N0[i8], i, 0, i2, 0);
+                            ((qmb) this.c).N0[i8].setPadding(0, i8 == 0 ? gl.L(12.0f) + gl.Q.top : 0, 0, ((qmb) this.c).V0() ? gl.n : 0);
+                            measureChildWithMargins(((qmb) this.c).N0[i8], i, 0, i2, 0);
                         }
                         i8++;
                     }

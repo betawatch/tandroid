@@ -1,44 +1,57 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class w59 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ RecyclerView b;
+public final class w59 extends mm5 {
+    public static final w59 e = new w59(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public /* synthetic */ w59(RecyclerView recyclerView, byte b) {
-        this.a = b;
-        this.b = recyclerView;
+    public w59(int i, Object[] objArr) {
+        this.c = objArr;
+        this.d = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        RecyclerView recyclerView = this.b;
-        switch (b) {
-            case 0:
-                if (recyclerView.J && !recyclerView.isLayoutRequested()) {
-                    if (!recyclerView.H) {
-                        recyclerView.requestLayout();
-                        break;
-                    } else if (!recyclerView.M) {
-                        recyclerView.p();
-                        break;
-                    } else {
-                        recyclerView.L = true;
-                        break;
-                    }
-                }
-                break;
-            default:
-                d69 d69Var = recyclerView.d0;
-                if (d69Var != null) {
-                    d69Var.m();
-                }
-                recyclerView.B0 = false;
-                break;
-        }
+    @Override // java.util.List
+    public final Object get(int i) {
+        gre.j(i, this.d);
+        Object obj = this.c[i];
+        Objects.requireNonNull(obj);
+        return obj;
+    }
+
+    @Override // mm5, gm5
+    public final int i(int i, Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i2 = this.d;
+        System.arraycopy(objArr2, 0, objArr, i, i2);
+        return i + i2;
+    }
+
+    @Override // gm5
+    public final Object[] j() {
+        return this.c;
+    }
+
+    @Override // gm5
+    public final int k() {
+        return this.d;
+    }
+
+    @Override // gm5
+    public final int l() {
+        return 0;
+    }
+
+    @Override // gm5
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

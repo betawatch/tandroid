@@ -1,14 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import androidx.appcompat.widget.Toolbar;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum btb extends rub {
-    public btb() {
-        super("ScriptDataDoubleEscapeEnd", 32);
+public final /* synthetic */ class btb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Toolbar b;
+
+    public /* synthetic */ btb(Toolbar toolbar, byte b) {
+        this.a = b;
+        this.b = toolbar;
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        rub.a(bsbVar, hl1Var, rub.L, rub.S);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Toolbar toolbar = this.b;
+        switch (b) {
+            case 0:
+                dtb dtbVar = toolbar.f0;
+                c07 c07Var = dtbVar == null ? null : dtbVar.b;
+                if (c07Var != null) {
+                    c07Var.collapseActionView();
+                    break;
+                }
+                break;
+            default:
+                toolbar.m();
+                break;
+        }
     }
 }

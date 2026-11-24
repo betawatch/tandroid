@@ -8,7 +8,7 @@ import android.media.projection.MediaProjectionManager;
 import android.os.Build;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
@@ -32,7 +32,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
 
     private void checkNotDisposed() {
         if (this.isDisposed) {
-            zo4.k("capturer is disposed.");
+            wn4.j("capturer is disposed.");
         }
     }
 
@@ -41,7 +41,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         try {
             this.virtualDisplay = this.mediaProjection.createVirtualDisplay("WebRTC_ScreenCapture", this.width, this.height, VIRTUAL_DISPLAY_DPI, 3, new Surface(this.surfaceTextureHelper.getSurfaceTexture()), null, null);
         } catch (Throwable th) {
-            fc4.g(th, true);
+            fa4.g(th, true);
         }
     }
 
@@ -86,7 +86,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         if (this.virtualDisplay == null) {
             return;
         }
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new cu((Object) this, i, i2, (byte) 14));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new bt((Object) this, i, i2, (byte) 14));
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -144,14 +144,14 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
             this.surfaceTextureHelper.startListening(this);
         } catch (Throwable th) {
             this.mediaProjectionCallback.onStop();
-            fc4.g(th, true);
+            fa4.g(th, true);
         }
     }
 
     @Override // org.webrtc.VideoCapturer
     public synchronized void stopCapture() {
         checkNotDisposed();
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new kf9(this, (byte) 16));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new zk9(this, (byte) 8));
     }
 
     @Override // org.webrtc.VideoSink

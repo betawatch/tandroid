@@ -1,40 +1,49 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mf1 extends qf1 {
-    public final /* synthetic */ byte K = 0;
-    public final /* synthetic */ q59 L;
+public final class mf1 extends kse {
+    public k27 a;
+    public int b = 0;
+    public boolean c = true;
+    public int d = 0;
+    public int e;
+    public final /* synthetic */ nf1 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mf1(nf1 nf1Var, Activity activity, ylb ylbVar) {
-        super(activity, ylbVar);
-        this.L = nf1Var;
-        this.a = true;
+    public mf1(nf1 nf1Var) {
+        this.f = nf1Var;
     }
 
-    @Override // qf1
-    public final String getUsernameEditable() {
-        byte b = this.K;
-        q59 q59Var = this.L;
-        switch (b) {
-            case 0:
-                return ((nf1) q59Var).c.r;
-            default:
-                l7 l7Var = ((oa2) q59Var).c.i3.b;
-                if (l7Var == null) {
-                    return null;
-                }
-                return l7Var.getText().toString();
+    @Override // kse
+    public final void a() {
+        k27 k27Var = this.a;
+        nf1 nf1Var = this.f;
+        if (k27Var != null) {
+            int indexOf = nf1Var.p0.indexOf(k27Var) + nf1Var.F.f;
+            if (indexOf >= 0) {
+                nf1Var.y.h1(indexOf, this.e, false);
+            }
+        } else {
+            nf1Var.y.h1(this.b, this.d, this.c);
         }
+        this.a = null;
+        nf1Var.W = true;
+        nf1Var.h1();
+        gl.c3(new nv0(this, (byte) 22));
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mf1(oa2 oa2Var, Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.L = oa2Var;
+    @Override // kse
+    public final void c() {
+        nf1 nf1Var = this.f;
+        nf1Var.K0 = nf1Var.getNotificationCenter().q(nf1.R0, nf1Var.K0, true);
+    }
+
+    @Override // kse
+    public final void d(View view) {
+        if (view instanceof gb2) {
+            this.f.h.add((gb2) view);
+        }
     }
 }

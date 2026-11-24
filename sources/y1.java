@@ -4,16 +4,16 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class y1 implements pz0 {
+public abstract class y1 implements iy0 {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static be6 LOG = be6.a(y1.class);
+    private static cc6 LOG = cc6.a(y1.class);
     private ByteBuffer content;
     long contentStartPosition;
-    z73 dataSource;
+    n63 dataSource;
     long offset;
-    private gw2 parent;
+    private wu2 parent;
     protected String type;
     private byte[] userType;
     long memMapSize = -1;
@@ -28,10 +28,10 @@ public abstract class y1 implements pz0 {
     public final void a(ByteBuffer byteBuffer) {
         if (b()) {
             byteBuffer.putInt((int) getSize());
-            byteBuffer.put(nt5.d(getType()));
+            byteBuffer.put(or5.d(getType()));
         } else {
             byteBuffer.putInt(1);
-            byteBuffer.put(nt5.d(getType()));
+            byteBuffer.put(or5.d(getType()));
             byteBuffer.putLong(getSize());
         }
         if ("uuid".equals(getType())) {
@@ -63,7 +63,7 @@ public abstract class y1 implements pz0 {
         }
     }
 
-    @Override // pz0
+    @Override // iy0
     public void getBox(WritableByteChannel writableByteChannel) {
         if (!this.isRead) {
             ByteBuffer allocate = ByteBuffer.allocate((b() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
@@ -78,7 +78,7 @@ public abstract class y1 implements pz0 {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(psd.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(mqd.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -99,16 +99,16 @@ public abstract class y1 implements pz0 {
         return this.offset;
     }
 
-    @Override // pz0
-    public gw2 getParent() {
+    @Override // iy0
+    public wu2 getParent() {
         return this.parent;
     }
 
     public String getPath() {
-        return g08.a(this, "");
+        return ey7.a(this, "");
     }
 
-    @Override // pz0
+    @Override // iy0
     public long getSize() {
         long j;
         if (!this.isRead) {
@@ -122,7 +122,7 @@ public abstract class y1 implements pz0 {
         return j + (j >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r6.limit() : 0);
     }
 
-    @Override // pz0
+    @Override // iy0
     public String getType() {
         return this.type;
     }
@@ -135,13 +135,13 @@ public abstract class y1 implements pz0 {
         return this.isParsed;
     }
 
-    public void parse(z73 z73Var, ByteBuffer byteBuffer, long j, xz0 xz0Var) {
-        long position = z73Var.position();
+    public void parse(n63 n63Var, ByteBuffer byteBuffer, long j, qy0 qy0Var) {
+        long position = n63Var.position();
         this.contentStartPosition = position;
         this.offset = position - byteBuffer.remaining();
         this.memMapSize = j;
-        z73Var.position();
-        z73Var.position();
+        n63Var.position();
+        n63Var.position();
         this.isRead = false;
         this.isParsed = false;
     }
@@ -165,9 +165,9 @@ public abstract class y1 implements pz0 {
         this.deadBytes = byteBuffer;
     }
 
-    @Override // pz0
-    public void setParent(gw2 gw2Var) {
-        this.parent = gw2Var;
+    @Override // iy0
+    public void setParent(wu2 wu2Var) {
+        this.parent = wu2Var;
     }
 
     public void _parseDetails(ByteBuffer byteBuffer) {

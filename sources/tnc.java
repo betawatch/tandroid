@@ -1,14 +1,40 @@
 // default package
 
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final class tnc extends ShapeDrawable.ShaderFactory {
-    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
-    public final Shader resize(int i, int i2) {
-        return new LinearGradient(0.0f, 0.0f, 0.0f, i2, -765355, -2148011, Shader.TileMode.CLAMP);
+public final /* synthetic */ class tnc implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ p8c c;
+    public final /* synthetic */ String d;
+
+    public /* synthetic */ tnc(WalletEngine2 walletEngine2, p8c p8cVar, String str) {
+        this.b = walletEngine2;
+        this.c = p8cVar;
+        this.d = str;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.d;
+        p8c p8cVar = this.c;
+        WalletEngine2 walletEngine2 = this.b;
+        switch (b) {
+            case 0:
+                walletEngine2.lambda$getTransactionByHash$42(str, p8cVar);
+                break;
+            default:
+                walletEngine2.lambda$previewSignMessage$10(p8cVar, str);
+                break;
+        }
+    }
+
+    public /* synthetic */ tnc(WalletEngine2 walletEngine2, String str, p8c p8cVar) {
+        this.b = walletEngine2;
+        this.d = str;
+        this.c = p8cVar;
     }
 }

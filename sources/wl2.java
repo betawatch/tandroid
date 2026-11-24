@@ -1,64 +1,94 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class wl2 extends FrameLayout {
-    public final hx a;
-    public sl2 b;
-    public qac c;
-    public float d;
+    public final TextView a;
+    public final tl2 b;
+    public final EditTextBoldCursor c;
+    public byte d;
     public boolean e;
-    public ValueAnimator f;
+    public final /* synthetic */ yl2 f;
 
-    public wl2(Activity activity, rk4 rk4Var) {
-        super(activity);
-        hx hxVar = new hx(this, activity);
-        this.a = hxVar;
-        hxVar.setAdapter(new ul2(this, activity, rk4Var, (byte) 0));
-        hxVar.setLayoutManager(new u46(0, false));
-        hxVar.setClipToPadding(false);
-        hxVar.setVisibility(8);
-        hxVar.setWillNotDraw(false);
-        hxVar.setOnItemClickListener(new u(this, (byte) 15));
-        addView(hxVar, qoe.c(56.0f, -1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wl2(yl2 yl2Var, Context context) {
+        super(context);
+        this.f = yl2Var;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(-1711276033);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(gl.o());
+        addView(textView, nme.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
+        tl2 tl2Var = new tl2(yl2Var, context);
+        this.b = tl2Var;
+        addView(tl2Var, nme.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.c = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setBackground(bkb.b0(gl.L(10.0f), 436207615));
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setTextColor(-1);
+        editTextBoldCursor.setGravity(17);
+        editTextBoldCursor.setSingleLine();
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setImeActionLabel(k96.M0(2131751342, null), 6);
+        byte b = 2;
+        editTextBoldCursor.setInputType(2);
+        editTextBoldCursor.setTypeface(gl.o());
+        editTextBoldCursor.addTextChangedListener(new qy(this));
+        editTextBoldCursor.setOnFocusChangeListener(new ls0(this, b));
+        editTextBoldCursor.setOnEditorActionListener(new ng(b));
+        addView(editTextBoldCursor, nme.e(72, 36, 85));
     }
 
-    public final void a(boolean z, boolean z2) {
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void a(int i) {
+        this.d = i;
+        this.b.c = i;
+        TextView textView = this.a;
+        if (i == 0) {
+            textView.setText(k96.M0(2131747471, null).toUpperCase());
+        } else if (i == 1) {
+            textView.setText(k96.M0(2131747473, null).toUpperCase());
+        } else if (i == 2) {
+            textView.setText(k96.M0(2131747474, null).toUpperCase());
         }
-        if (this.e == z) {
-            return;
-        }
-        this.e = z;
-        hx hxVar = this.a;
-        if (!z2) {
-            this.d = z ? 1.0f : 0.0f;
-            hxVar.invalidate();
-            hxVar.setVisibility(z ? 0 : 8);
-            return;
-        }
-        hxVar.setVisibility(0);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z ? 1.0f : 0.0f);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new et1(this, (byte) 14));
-        this.f.addListener(new y7((byte) 21, (Object) this, z));
-        this.f.setInterpolator(d53.h);
-        this.f.setDuration(340L);
-        this.f.start();
+        b();
     }
 
-    public void setOnLayoutClick(qac qacVar) {
-        this.c = qacVar;
+    public final void b() {
+        this.e = true;
+        tl2 tl2Var = this.b;
+        tl2Var.d = bm2.o(tl2Var.e.p1, kk7.d4);
+        tl2Var.a();
+        tl2Var.invalidate();
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        int selectionEnd = editTextBoldCursor.getSelectionEnd();
+        byte b = this.d;
+        yl2 yl2Var = this.f;
+        if (b == 0) {
+            editTextBoldCursor.setText(String.valueOf(Color.red(yl2Var.p1)));
+        } else if (b == 1) {
+            editTextBoldCursor.setText(String.valueOf(Color.green(yl2Var.p1)));
+        } else if (b == 2) {
+            editTextBoldCursor.setText(String.valueOf(Color.blue(yl2Var.p1)));
+        }
+        editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        this.e = false;
     }
 
-    public void setSelected(sl2 sl2Var) {
-        this.b = sl2Var;
-        gm.V3(this.a);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(52.0f), TLObject.FLAG_30));
     }
 }

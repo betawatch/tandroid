@@ -1,90 +1,45 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.widget.ImageView;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class c95 extends Drawable {
-    public final Paint a;
-    public final Paint b;
-    public long c;
-    public float d;
-    public boolean e;
-    public boolean f;
-    public ImageView g;
+public final class c95 extends FrameLayout {
+    public final /* synthetic */ f65 a;
 
-    public c95() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.d = 1.0f;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gm.L(1.5f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c95(f65 f65Var, Context context) {
+        super(context);
+        this.a = f65Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        canvas.drawCircle(centerX, centerY, gm.L(10.0f), this.a);
-        int i = this.f ? -1147527 : -1;
-        Paint paint = this.b;
-        paint.setColor(i);
-        paint.setAlpha((int) (this.d * 255.0f));
-        canvas.drawCircle(centerX, centerY, gm.L(5.0f), paint);
-        if (this.f) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j = elapsedRealtime - this.c;
-            if (j > 17) {
-                j = 17;
-            }
-            this.c = elapsedRealtime;
-            boolean z = this.e;
-            if (!z) {
-                float f = (j / 2000.0f) + this.d;
-                this.d = f;
-                if (f >= 1.0f) {
-                    this.d = 1.0f;
-                    this.e = true;
-                }
-            } else if (z) {
-                float f2 = this.d - (j / 2000.0f);
-                this.d = f2;
-                if (f2 < 0.5f) {
-                    this.d = 0.5f;
-                    this.e = false;
-                }
-            }
-            this.g.invalidate();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.a.D0();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        boolean z = View.MeasureSpec.getSize(i) > View.MeasureSpec.getSize(i2);
+        f65 f65Var = this.a;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) f65Var.m1.getLayoutParams();
+        if (z) {
+            int L = gl.L(80.0f);
+            marginLayoutParams.leftMargin = L;
+            marginLayoutParams.rightMargin = L;
+        } else {
+            int L2 = gl.L(16.0f);
+            marginLayoutParams.leftMargin = L2;
+            marginLayoutParams.rightMargin = L2;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gm.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gm.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        int D = ug8.D(200.0f, View.MeasureSpec.getSize(i), 2);
+        f65Var.l1.setPadding(D, 0, D, 0);
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(370.0f), TLObject.FLAG_30));
+        measureChildWithMargins(f65Var.n1, 0, 0, View.MeasureSpec.makeMeasureSpec(gl.L(64.0f), TLObject.FLAG_30), 0);
     }
 }

@@ -1,59 +1,34 @@
 // default package
 
 import android.content.Context;
-import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
-import java.util.ArrayList;
-import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class cg7 {
-    public static final Object b = new Object();
-    public static cg7 c;
-    public pr2 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class cg7 extends cz9 {
+    public final /* synthetic */ byte n;
 
-    public static cg7 c() {
-        cg7 cg7Var;
-        synchronized (b) {
-            ite.j("MlKitContext has not been initialized", c != null);
-            cg7Var = c;
-            ite.h(cg7Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ cg7(Context context, wjb wjbVar, byte b) {
+        super(context, wjbVar);
+        this.n = b;
+    }
+
+    @Override // cz9
+    public final int getHeaderHeight() {
+        switch (this.n) {
+            case 0:
+                if (getResources().getConfiguration().orientation != 2) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (getResources().getConfiguration().orientation != 2) {
+                    break;
+                } else {
+                    break;
+                }
         }
-        return cg7Var;
-    }
-
-    public static cg7 d(Context context, Executor executor) {
-        cg7 cg7Var;
-        synchronized (b) {
-            ite.j("MlKitContext is already initialized", c == null);
-            cg7 cg7Var2 = new cg7();
-            c = cg7Var2;
-            Context applicationContext = context.getApplicationContext();
-            if (applicationContext != null) {
-                context = applicationContext;
-            }
-            ArrayList p = new lx6(context, new ni6(MlKitComponentDiscoveryService.class, (byte) 20), (byte) 16).p();
-            ArrayList arrayList = new ArrayList();
-            ArrayList arrayList2 = new ArrayList();
-            a32 a32Var = mr2.q;
-            arrayList.addAll(p);
-            arrayList2.add(xq2.c(context, Context.class, new Class[0]));
-            arrayList2.add(xq2.c(cg7Var2, cg7.class, new Class[0]));
-            pr2 pr2Var = new pr2(executor, arrayList, arrayList2, a32Var);
-            cg7Var2.a = pr2Var;
-            pr2Var.n(true);
-            cg7Var = c;
-        }
-        return cg7Var;
-    }
-
-    public final Object a(Class cls) {
-        ite.j("MlKitContext has been deleted", c == this);
-        ite.h(this.a);
-        return this.a.a(cls);
-    }
-
-    public final Context b() {
-        return (Context) a(Context.class);
+        return gl.L(54.0f);
     }
 }

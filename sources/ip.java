@@ -1,49 +1,39 @@
 // default package
 
-import j$.util.Objects;
-import java.util.Arrays;
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ip extends tl5 {
-    public final String b;
-    public final String c;
-    public final short d;
-    public final byte[] e;
+public final class ip {
+    public final TextView a;
+    public final gi3 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ip(int i, String str, String str2, byte[] bArr) {
-        super("APIC");
-        this.b = str;
-        this.c = str2;
-        this.d = i;
-        this.e = bArr;
+    public ip(TextView textView) {
+        this.a = textView;
+        gi3 gi3Var = new gi3();
+        gi3Var.a = new ey3(textView);
+        this.b = gi3Var;
     }
 
-    @Override // tl5, lf7
-    public final void b(ht6 ht6Var) {
-        ht6Var.a(this.d, this.e);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a(AttributeSet attributeSet, int i) {
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, jy8.i, i, 0);
+        try {
+            boolean z = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+            obtainStyledAttributes.recycle();
+            c(z);
+        } catch (Throwable th) {
+            obtainStyledAttributes.recycle();
+            throw th;
         }
-        if (obj == null || ip.class != obj.getClass()) {
-            return false;
-        }
-        ip ipVar = (ip) obj;
-        return this.d == ipVar.d && this.b.equals(ipVar.b) && Objects.equals(this.c, ipVar.c) && Arrays.equals(this.e, ipVar.e);
     }
 
-    public final int hashCode() {
-        int j = ts2.j((527 + this.d) * 31, 31, this.b);
-        String str = this.c;
-        return Arrays.hashCode(this.e) + ((j + (str != null ? str.hashCode() : 0)) * 31);
+    public final void b(boolean z) {
+        ((efe) this.b.a).b(z);
     }
 
-    @Override // tl5
-    public final String toString() {
-        return this.a + ": mimeType=" + this.b + ", description=" + this.c;
+    public final void c(boolean z) {
+        ((efe) this.b.a).c(z);
     }
 }

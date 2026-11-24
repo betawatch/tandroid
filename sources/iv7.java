@@ -1,90 +1,106 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.content.Intent;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.PasscodeActivity;
+import org.telegram.ui.ProxyListActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class iv7 extends FrameLayout {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class iv7 extends c6 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ z8b b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ d c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv7(z8b z8bVar, Context context, byte b) {
-        super(context);
+    public /* synthetic */ iv7(d dVar, Object obj, byte b) {
         this.a = b;
+        this.c = dVar;
+        this.b = obj;
+    }
+
+    @Override // c6
+    public final void b(int i) {
+        byte b = this.a;
+        Object obj = this.b;
+        int i2 = 0;
+        d dVar = this.c;
         switch (b) {
-            case 1:
-                this.b = z8bVar;
-                super(context);
-                break;
-            default:
-                this.b = z8bVar;
-                setWillNotDraw(false);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                if (this.b.g2) {
-                    return false;
+            case 0:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) dVar;
+                if (i != -1) {
+                    if (i == 1) {
+                        passcodeActivity.E = !passcodeActivity.E;
+                        gl.d3(new bj7(this, (a8) obj, (byte) 18), 150L);
+                        passcodeActivity.h.setText("");
+                        sj2[] sj2VarArr = passcodeActivity.n.f;
+                        int length = sj2VarArr.length;
+                        while (i2 < length) {
+                            sj2VarArr[i2].setText("");
+                            i2++;
+                        }
+                        passcodeActivity.x0();
+                        break;
+                    }
+                } else {
+                    passcodeActivity.finishFragment();
+                    break;
                 }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                super.onDraw(canvas);
-                z8b z8bVar = this.b;
-                Paint paint = z8bVar.h1;
-                iu7 iu7Var = z8bVar.b1;
-                paint.setAlpha((int) ((1.0f - z8bVar.j1) * iu7Var.getAlpha() * 20.0f));
-                RectF rectF = gm.P;
-                iu7Var.b(rectF);
-                float translationY = iu7Var.getTranslationY() + z8bVar.J0.getTranslationY() + iu7Var.getTop() + r3.getTop();
-                float f = rectF.left;
-                tu7 tu7Var = z8bVar.c1;
-                rectF.set(gm.R1(f, tu7Var.getLeft(), z8bVar.j1), gm.R1(rectF.top + translationY, tu7Var.getTop() - tu7Var.getTranslationY(), z8bVar.j1), gm.R1(rectF.right, tu7Var.getRight(), z8bVar.j1), gm.R1(translationY + rectF.bottom, tu7Var.getBottom() - tu7Var.getTranslationY(), z8bVar.j1));
-                float L = gm.L(gm.U1(z8bVar.j1, 32, 16));
-                Paint paint2 = z8bVar.i1;
-                int alpha = paint2.getAlpha();
-                paint2.setAlpha((int) (alpha * z8bVar.j1));
-                canvas.drawRoundRect(rectF, L, L, paint2);
-                paint2.setAlpha(alpha);
-                canvas.drawRoundRect(rectF, L, L, paint);
                 break;
             default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getActionMasked() == 0) {
-                    z8b z8bVar = this.b;
-                    if (z8bVar.k1) {
-                        z8bVar.P0(false);
-                        return true;
+                ProxyListActivity proxyListActivity = (ProxyListActivity) dVar;
+                ArrayList arrayList = proxyListActivity.F;
+                if (i == -1) {
+                    if (!arrayList.isEmpty()) {
+                        proxyListActivity.a.F();
+                        break;
+                    } else {
+                        proxyListActivity.finishFragment();
+                        break;
+                    }
+                } else if (i == 0) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
+                    String M0 = k96.M0(arrayList.size() > 1 ? 2131751498 : 2131751499, null);
+                    hd hdVar = alertDialog$Builder.a;
+                    hdVar.U = M0;
+                    alertDialog$Builder.g(k96.M0(2131752577, null), null);
+                    hdVar.S = k96.M0(2131751497, null);
+                    alertDialog$Builder.j(k96.M0(2131751586, null), new k88(this, (byte) 15));
+                    proxyListActivity.showDialog(hdVar);
+                    TextView textView = (TextView) hdVar.c(-1);
+                    if (textView != null) {
+                        zkb.X(textView, bkb.p7, null);
+                        break;
+                    }
+                } else if (i == 1) {
+                    StringBuilder sb = new StringBuilder();
+                    int size = arrayList.size();
+                    while (i2 < size) {
+                        Object obj2 = arrayList.get(i2);
+                        i2++;
+                        fba fbaVar = (fba) obj2;
+                        if (sb.length() > 0) {
+                            sb.append("\n\n");
+                        }
+                        sb.append(fbaVar.a.e());
+                    }
+                    Intent intent = new Intent("android.intent.action.SEND");
+                    intent.setType("text/plain");
+                    intent.putExtra("android.intent.extra.TEXT", sb.toString());
+                    Intent createChooser = Intent.createChooser(intent, k96.M0(arrayList.size() > 1 ? 2131745265 : 2131745266, null));
+                    createChooser.setFlags(TLObject.FLAG_28);
+                    ((Context) obj).startActivity(createChooser);
+                    s20 s20Var = proxyListActivity.a;
+                    if (s20Var != null) {
+                        s20Var.F();
+                        break;
                     }
                 }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return false;
+                break;
         }
     }
 }

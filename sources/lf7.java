@@ -1,11 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface lf7 {
-    go4 a();
+public final class lf7 extends fs5 {
+    public final long e;
+    public final ArrayList f;
+    public final ArrayList g;
 
-    void b(ht6 ht6Var);
+    public lf7(int i, long j) {
+        super(i, (byte) 1);
+        this.e = j;
+        this.f = new ArrayList();
+        this.g = new ArrayList();
+    }
 
-    byte[] c();
+    @Override // fs5
+    public final String toString() {
+        return fs5.e(this.b) + " leaves: " + Arrays.toString(this.f.toArray()) + " containers: " + Arrays.toString(this.g.toArray());
+    }
+
+    public final lf7 u(int i) {
+        ArrayList arrayList = this.g;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            lf7 lf7Var = (lf7) arrayList.get(i2);
+            if (lf7Var.b == i) {
+                return lf7Var;
+            }
+        }
+        return null;
+    }
+
+    public final mf7 v(int i) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            mf7 mf7Var = (mf7) arrayList.get(i2);
+            if (mf7Var.b == i) {
+                return mf7Var;
+            }
+        }
+        return null;
+    }
 }

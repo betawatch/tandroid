@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Proxy;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzjp implements zzjt {
     public static final zzjp zza = new zzjp();
@@ -14,7 +14,7 @@ public final class zzjp implements zzjt {
     public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length != 4 && length != 5) {
-            i2d.d(4, 3, null);
+            fvc.c(4, 3, null);
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
@@ -23,7 +23,7 @@ public final class zzjp implements zzjt {
         }
         Integer num = (Integer) zza2;
         if (num == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         int intValue = num.intValue();
@@ -33,7 +33,7 @@ public final class zzjp implements zzjt {
         }
         Integer num2 = (Integer) zza3;
         if (num2 == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         int intValue2 = num2.intValue();
@@ -43,7 +43,7 @@ public final class zzjp implements zzjt {
         }
         String str = (String) zza4;
         if (str == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         String zza5 = zzizVar.zzh().zza(str);
@@ -53,7 +53,7 @@ public final class zzjp implements zzjt {
         }
         String str2 = (String) zza6;
         if (str2 == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         String zza7 = zzizVar.zzh().zza(str2);
@@ -64,7 +64,7 @@ public final class zzjp implements zzjt {
             zzizVar.zzc().zze(intValue, Proxy.newProxyInstance(zza9.getClassLoader(), new Class[]{zza9}, new zziw(zzivVar, zza7, zza8)));
             zzizVar.zzc().zze(i, zzivVar);
         } catch (Exception e) {
-            i2d.d(6, 20, e);
+            fvc.c(6, 20, e);
         }
     }
 }

@@ -1,39 +1,21 @@
 // default package
 
-import j$.util.Objects;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class p1d extends o1d {
-    public static final p1d s = new p1d(new Object[0]);
-    public final transient Object[] r;
+public interface p1d {
+    boolean S0();
 
-    public p1d(Object[] objArr) {
-        super((byte) 0);
-        this.r = objArr;
-    }
+    void a();
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        s0f.a(i, 0);
-        Object obj = this.r[i];
-        Objects.requireNonNull(obj);
-        return obj;
-    }
+    void a1(ds2 ds2Var, yn ynVar, boolean z);
 
-    @Override // o1d, l1d
-    public final int h(Object[] objArr) {
-        System.arraycopy(this.r, 0, objArr, 0, 0);
-        return 0;
-    }
+    ig0 e(ig0 ig0Var);
 
-    @Override // l1d
-    public final Object[] k() {
-        return this.r;
-    }
+    void g1();
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return 0;
-    }
+    void i(Bundle bundle);
+
+    void t0(int i);
 }

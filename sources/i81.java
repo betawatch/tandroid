@@ -1,45 +1,120 @@
 // default package
 
-import java.util.ArrayList;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class i81 extends h81 {
-    public final ArrayList f;
-    public final /* synthetic */ w81 h;
+public final /* synthetic */ class i81 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i81(w81 w81Var, int i) {
-        super(i);
-        this.h = w81Var;
-        this.f = new ArrayList();
+    public /* synthetic */ i81(byte b, Object obj, boolean z) {
+        this.a = b;
+        this.c = obj;
+        this.b = z;
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        return !(this instanceof r81);
-    }
-
-    @Override // h81
-    public void F() {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        ArrayList arrayList2 = this.e;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        c81 c81Var = this.h.h;
-        if (c81Var != null) {
-            byte b = this.d;
-            ArrayList arrayList3 = b == 1 ? c81Var.d : b == 2 ? c81Var.e : b == 3 ? c81Var.f : b == 5 ? c81Var.g : b == 4 ? c81Var.h : null;
-            if (arrayList3 != null) {
-                for (int i = 0; i < arrayList3.size(); i++) {
-                    b81 b81Var = (b81) arrayList3.get(i);
-                    p81 p81Var = new p81(2, true);
-                    p81Var.d = b81Var;
-                    arrayList2.add(p81Var);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        TLRPC.Poll poll;
+        byte b = this.a;
+        byte b2 = 11;
+        byte b3 = 0;
+        boolean z = this.b;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                z81 z81Var = (z81) obj;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_affectedFoundMessages tL_messages_affectedFoundMessages = (TLRPC.TL_messages_affectedFoundMessages) tLObject;
+                    TL_update.TL_updateDeleteMessages tL_updateDeleteMessages = new TL_update.TL_updateDeleteMessages();
+                    tL_updateDeleteMessages.messages = tL_messages_affectedFoundMessages.messages;
+                    tL_updateDeleteMessages.pts = tL_messages_affectedFoundMessages.pts;
+                    tL_updateDeleteMessages.pts_count = tL_messages_affectedFoundMessages.pts_count;
+                    TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
+                    tL_updates.updates.add(tL_updateDeleteMessages);
+                    z81Var.getMessagesController().R3(tL_updates, false);
+                    if (tL_messages_affectedFoundMessages.offset != 0) {
+                        TLRPC.TL_messages_deletePhoneCallHistory tL_messages_deletePhoneCallHistory = new TLRPC.TL_messages_deletePhoneCallHistory();
+                        tL_messages_deletePhoneCallHistory.revoke = z;
+                        z81Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new i81(b3, z81Var, z));
+                        break;
+                    }
                 }
-            }
+                break;
+            case 1:
+                gl.c3(new mn6((wt1) obj, tLObject, z, b2));
+                break;
+            case 2:
+                p82 p82Var = (p82) obj;
+                if (tLObject instanceof TLRPC.Updates) {
+                    p82Var.getMessagesController().R3((TLRPC.Updates) tLObject, false);
+                    gl.c3(new x6c(b2, p82Var, z));
+                    break;
+                } else {
+                    gl.c3(new k82(p82Var, (byte) 3));
+                    break;
+                }
+            case 3:
+                gl.c3(new rg(obj, (Object) tL_error, (Object) tLObject, this.b, (byte) 9));
+                break;
+            case 4:
+                gl.c3(new mn6(obj, (Object) tLObject, z, (byte) 23));
+                break;
+            case 5:
+                gl.c3(new rg(obj, (Object) tL_error, (Object) tLObject, this.b, (byte) 21));
+                break;
+            case 6:
+                na7 na7Var = (na7) obj;
+                if (tL_error == null) {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    if (z) {
+                        for (int i = 0; i < updates.updates.size(); i++) {
+                            TLRPC.Update update = updates.updates.get(i);
+                            if ((update instanceof TL_update.TL_updateMessagePoll) && (poll = ((TL_update.TL_updateMessagePoll) update).poll) != null && !poll.closed) {
+                                na7Var.D0 = System.currentTimeMillis() - 4000;
+                            }
+                        }
+                    }
+                    na7Var.R3(updates, false);
+                    break;
+                }
+                break;
+            case 7:
+                gl.c3(new d97(obj, (Object) tL_error, (Object) tLObject, this.b, (byte) 5));
+                break;
+            case 8:
+                p pVar = (p) obj;
+                pVar.getClass();
+                gl.c3(new d97((Object) pVar, (Object) tL_error, (Object) tLObject, this.b, (byte) 8));
+                break;
+            case 9:
+                gl.c3(new pc7((g38) obj, tL_error, tLObject, z));
+                break;
+            case 10:
+                u58 u58Var = (u58) obj;
+                if (tLObject != null) {
+                    gl.c3(new vj6((Object) u58Var, (Object) tLObject, z, (byte) 12));
+                    break;
+                }
+                break;
+            case 11:
+                p3c p3cVar = (p3c) obj;
+                p3cVar.getClass();
+                gl.c3(new d97((Object) p3cVar, (Object) tL_error, (Object) tLObject, this.b, (byte) 18));
+                break;
+            case 12:
+                ((VoIPService) obj).lambda$acknowledgeCall$13(z, tLObject, tL_error);
+                break;
+            default:
+                gl.c3(new vj6(obj, (Object) tLObject, z, (byte) 29));
+                break;
         }
-        E(arrayList, arrayList2);
     }
 }

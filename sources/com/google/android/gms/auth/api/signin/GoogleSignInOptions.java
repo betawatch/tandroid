@@ -14,14 +14,14 @@ import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 @Deprecated
 /* loaded from: classes.dex */
-public class GoogleSignInOptions extends b4 implements wo, ReflectedParcelable {
+public class GoogleSignInOptions extends b4 implements vn, ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
     public static final Scope E;
     public static final Scope F;
-    public static final ju6 G;
+    public static final is6 G;
     public static final GoogleSignInOptions w;
     public static final Scope x;
     public static final Scope y;
@@ -66,8 +66,8 @@ public class GoogleSignInOptions extends b4 implements wo, ReflectedParcelable {
             }
         }
         new GoogleSignInOptions(3, new ArrayList(hashSet2), null, false, false, false, null, null, hashMap2, null);
-        CREATOR = new d3d((byte) 8);
-        G = new ju6((byte) 14);
+        CREATOR = new b1d((byte) 8);
+        G = new is6((byte) 14);
     }
 
     public GoogleSignInOptions(int i, ArrayList arrayList, Account account, boolean z, boolean z2, boolean z3, String str, String str2, HashMap hashMap, String str3) {
@@ -106,8 +106,8 @@ public class GoogleSignInOptions extends b4 implements wo, ReflectedParcelable {
             while (i < size) {
                 Object obj = arrayList.get(i);
                 i++;
-                z05 z05Var = (z05) obj;
-                hashMap.put(Integer.valueOf(z05Var.b), z05Var);
+                az4 az4Var = (az4) obj;
+                hashMap.put(Integer.valueOf(az4Var.b), az4Var);
             }
         }
         return hashMap;
@@ -173,21 +173,21 @@ public class GoogleSignInOptions extends b4 implements wo, ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 1, 4);
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        mve.p(parcel, 2, new ArrayList(this.b));
-        mve.k(parcel, 3, this.c, i);
-        mve.q(parcel, 4, 4);
+        jte.p(parcel, 2, new ArrayList(this.b));
+        jte.k(parcel, 3, this.c, i);
+        jte.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        mve.q(parcel, 5, 4);
+        jte.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        mve.q(parcel, 6, 4);
+        jte.q(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        mve.l(parcel, 7, this.h);
-        mve.l(parcel, 8, this.n);
-        mve.p(parcel, 9, this.r);
-        mve.l(parcel, 10, this.s);
-        mve.s(parcel, r);
+        jte.l(parcel, 7, this.h);
+        jte.l(parcel, 8, this.n);
+        jte.p(parcel, 9, this.r);
+        jte.l(parcel, 10, this.s);
+        jte.s(parcel, r);
     }
 }

@@ -1,42 +1,19 @@
 // default package
 
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class dfd {
-    public static final /* synthetic */ int[] a;
+public final class dfd implements zn7 {
+    public static final dfd a = new dfd();
 
     static {
-        int[] iArr = new int[TimeUnit.values().length];
-        a = iArr;
-        try {
-            iArr[TimeUnit.NANOSECONDS.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        try {
-            a[TimeUnit.MICROSECONDS.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[TimeUnit.MILLISECONDS.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[TimeUnit.SECONDS.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[TimeUnit.MINUTES.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[TimeUnit.HOURS.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[TimeUnit.DAYS.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        throw null;
     }
 }

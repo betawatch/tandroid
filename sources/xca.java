@@ -1,201 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.os.Bundle;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class xca extends Drawable {
-    public long a = 0;
-    public final float[] b = {0.0f, -0.5f};
-    public final Drawable c;
-    public final Drawable d;
-    public final Drawable e;
-    public final byte f;
+public final class xca implements va5 {
+    public final /* synthetic */ nfa a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public xca(Context context, int i) {
-        this.f = i;
-        if (i == 4) {
-            this.c = b10.d(context, R.drawable.filled_extend_location);
-            this.d = b10.d(context, R.drawable.smallanimationpinleft);
-            this.e = b10.d(context, R.drawable.smallanimationpinright);
-        } else if (i == 5) {
-            this.c = b10.d(context, R.drawable.filled_stop_location);
-            this.d = b10.d(context, R.drawable.smallanimationpinleft);
-            this.e = b10.d(context, R.drawable.smallanimationpinright);
-        } else if (i == 1) {
-            this.c = b10.d(context, R.drawable.smallanimationpin);
-            this.d = b10.d(context, R.drawable.smallanimationpinleft);
-            this.e = b10.d(context, R.drawable.smallanimationpinright);
-        } else {
-            this.c = b10.d(context, R.drawable.animationpin);
-            this.d = b10.d(context, R.drawable.animationpinleft);
-            this.e = b10.d(context, R.drawable.animationpinright);
+    public xca(nfa nfaVar) {
+        this.a = nfaVar;
+    }
+
+    @Override // va5
+    public final void a(wa5 wa5Var, long j) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", j);
+        bundle.putBoolean("just_created_chat", true);
+        wa5Var.presentFragment(new mu1(bundle), true);
+        bea beaVar = this.a.S;
+        d dVar = beaVar.r.y1;
+        if (beaVar.n != 0) {
+            dVar.getConnectionsManager().cancelRequest(beaVar.n, true);
+            beaVar.n = 0;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:20:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x016f  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float[] fArr;
-        int L;
-        int L2;
-        int L3;
-        int L4;
-        int z;
-        int i;
-        int i2;
-        int L5;
-        Drawable drawable = this.c;
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
-        byte b = 3;
-        byte b2 = 5;
-        byte b3 = 1;
-        byte b4 = 2;
-        byte b5 = this.f;
-        byte b6 = 4;
-        int L6 = (b5 == 4 || b5 == 5) ? gm.L(24.0f) : b5 == 3 ? gm.L(44.0f) : b5 == 2 ? gm.L(32.0f) : b5 == 1 ? gm.L(30.0f) : gm.L(120.0f);
-        int intrinsicHeight2 = ((getIntrinsicHeight() - L6) / 2) + getBounds().top;
-        int intrinsicWidth2 = ((getIntrinsicWidth() - L6) / 2) + getBounds().left;
-        int i3 = intrinsicWidth + intrinsicWidth2;
-        drawable.setBounds(intrinsicWidth2, intrinsicHeight2, i3, intrinsicHeight2 + intrinsicHeight);
-        drawable.draw(canvas);
-        int i4 = 0;
-        while (true) {
-            fArr = this.b;
-            if (i4 >= b4) {
-                break;
-            }
-            float f = fArr[i4];
-            if (f >= 0.0f) {
-                float f2 = (f * 0.5f) + 0.5f;
-                if (b5 == b6 || b5 == b2) {
-                    L = gm.L(2.5f * f2);
-                    L2 = gm.L(f2 * 6.5f);
-                    int L7 = gm.L(fArr[i4] * 6.0f);
-                    L3 = (gm.L(3.0f) + intrinsicWidth2) - L7;
-                    L4 = ((intrinsicHeight / 2) + intrinsicHeight2) - gm.L(2.0f);
-                    z = b10.z(3.0f, i3, L7);
-                } else {
-                    if (b5 == b) {
-                        L5 = gm.L(5.0f * f2);
-                        L2 = gm.L(f2 * 18.0f);
-                        int L8 = gm.L(fArr[i4] * 15.0f);
-                        L3 = (gm.L(2.0f) + intrinsicWidth2) - L8;
-                        L4 = ((intrinsicHeight / 2) + intrinsicHeight2) - gm.L(7.0f);
-                        i2 = b10.z(2.0f, i3, L8);
-                    } else if (b5 == b4) {
-                        L5 = gm.L(5.0f * f2);
-                        L2 = gm.L(f2 * 18.0f);
-                        int L9 = gm.L(fArr[i4] * 15.0f);
-                        L3 = (gm.L(2.0f) + intrinsicWidth2) - L9;
-                        L4 = (intrinsicHeight / 2) + intrinsicHeight2;
-                        i2 = b10.z(2.0f, i3, L9);
-                    } else if (b5 == b3) {
-                        L = gm.L(2.5f * f2);
-                        L2 = gm.L(f2 * 6.5f);
-                        int L10 = gm.L(fArr[i4] * 6.0f);
-                        L3 = (gm.L(7.0f) + intrinsicWidth2) - L10;
-                        L4 = (intrinsicHeight / 2) + intrinsicHeight2;
-                        z = b10.z(7.0f, i3, L10);
-                    } else {
-                        L5 = gm.L(5.0f * f2);
-                        L2 = gm.L(f2 * 18.0f);
-                        int L11 = gm.L(fArr[i4] * 15.0f);
-                        L3 = (gm.L(42.0f) + intrinsicWidth2) - L11;
-                        L4 = ((intrinsicHeight / 2) + intrinsicHeight2) - gm.L(7.0f);
-                        i2 = b10.z(42.0f, i3, L11);
-                    }
-                    i = L5;
-                    float f3 = fArr[i4];
-                    int y = (int) ((f3 >= 0.5f ? f3 / 0.5f : td4.y(f3, 0.5f, 0.5f, 1.0f)) * 255.0f);
-                    Drawable drawable2 = this.d;
-                    drawable2.setAlpha(y);
-                    int i5 = L4 - L2;
-                    int i6 = L4 + L2;
-                    drawable2.setBounds(L3 - i, i5, L3 + i, i6);
-                    drawable2.draw(canvas);
-                    Drawable drawable3 = this.e;
-                    drawable3.setAlpha(y);
-                    drawable3.setBounds(i2 - i, i5, i2 + i, i6);
-                    drawable3.draw(canvas);
-                }
-                int i7 = z;
-                i = L;
-                i2 = i7;
-                float f32 = fArr[i4];
-                int y2 = (int) ((f32 >= 0.5f ? f32 / 0.5f : td4.y(f32, 0.5f, 0.5f, 1.0f)) * 255.0f);
-                Drawable drawable22 = this.d;
-                drawable22.setAlpha(y2);
-                int i52 = L4 - L2;
-                int i62 = L4 + L2;
-                drawable22.setBounds(L3 - i, i52, L3 + i, i62);
-                drawable22.draw(canvas);
-                Drawable drawable32 = this.e;
-                drawable32.setAlpha(y2);
-                drawable32.setBounds(i2 - i, i52, i2 + i, i62);
-                drawable32.draw(canvas);
-            }
-            i4++;
-            b = 3;
-            b2 = 5;
-            b3 = 1;
-            b4 = 2;
-            b6 = 4;
+        beaVar.d.clear();
+        beaVar.e = false;
+        beaVar.h = false;
+        beaVar.E(0L);
+        TLRPC.User V1 = dVar.getMessagesController().V1(Long.valueOf(beaVar.F()));
+        if (V1 != null) {
+            dVar.getMessagesController().Z2(V1, dVar.getClassGuid(), true, null);
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        if (j > 16) {
-            j = 16;
-        }
-        for (int i8 = 0; i8 < 2; i8++) {
-            if (fArr[i8] >= 1.0f) {
-                fArr[i8] = 0.0f;
-            }
-            float f4 = (j / 1300.0f) + fArr[i8];
-            fArr[i8] = f4;
-            if (f4 > 1.0f) {
-                fArr[i8] = 1.0f;
-            }
-        }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        byte b = this.f;
-        return (b == 4 || b == 5) ? gm.L(42.0f) : b == 3 ? gm.L(100.0f) : b == 2 ? gm.L(74.0f) : b == 1 ? gm.L(40.0f) : gm.L(180.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        byte b = this.f;
-        return (b == 4 || b == 5) ? gm.L(42.0f) : b == 3 ? gm.L(100.0f) : b == 2 ? gm.L(74.0f) : b == 1 ? gm.L(40.0f) : gm.L(120.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
-        this.e.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
     }
 }

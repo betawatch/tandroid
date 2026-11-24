@@ -1,31 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class jda implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lda b;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ jda(lda ldaVar, byte b) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class jda implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ iea b;
+    public final /* synthetic */ nfa c;
+
+    public /* synthetic */ jda(nfa nfaVar, iea ieaVar, byte b) {
         this.a = b;
-        this.b = ldaVar;
+        this.c = nfaVar;
+        this.b = ieaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        byte b2 = 1;
-        lda ldaVar = this.b;
+        iea ieaVar = this.b;
+        nfa nfaVar = this.c;
         switch (b) {
             case 0:
-                ldaVar.post(new jda(ldaVar, b2));
+                nfaVar.q1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ieaVar.h.invalidate();
                 break;
             default:
-                ldaVar.c0.N0 = true;
-                ldaVar.I.clear();
-                ldaVar.J.clear();
-                ldaVar.K.clear();
-                ldaVar.invalidate();
+                nfaVar.q1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ieaVar.h.invalidate();
                 break;
         }
     }

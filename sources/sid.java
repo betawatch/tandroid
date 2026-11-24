@@ -1,34 +1,40 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class sid {
-    public static final /* synthetic */ int a = 0;
+public final class sid implements pqd {
+    public static final sid b = new sid(0);
+    public final /* synthetic */ byte a;
 
-    static {
-        sid.class.getClassLoader();
+    public /* synthetic */ sid(byte b2) {
+        this.a = b2;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(hg9.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+    @Override // pqd
+    public final boolean zza(Class cls) {
+        switch (this.a) {
+            case 0:
+                return vid.class.isAssignableFrom(cls);
+            default:
+                return false;
         }
     }
 
-    public static void c(Parcel parcel, IInterface iInterface) {
-        parcel.writeStrongBinder(iInterface.asBinder());
+    @Override // pqd
+    public final fud zzb(Class cls) {
+        switch (this.a) {
+            case 0:
+                if (!vid.class.isAssignableFrom(cls)) {
+                    String name = cls.getName();
+                    throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
+                }
+                try {
+                    return (fud) vid.d(cls.asSubclass(vid.class)).a(3);
+                } catch (Exception e) {
+                    String name2 = cls.getName();
+                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
+                }
+            default:
+                throw new IllegalStateException("This should never be called.");
+        }
     }
 }

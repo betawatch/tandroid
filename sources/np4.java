@@ -1,39 +1,54 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.FragmentContextView;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class np4 implements Runnable {
-    public final /* synthetic */ FragmentContextView a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class np4 extends LinkedHashMap {
+    public static final /* synthetic */ int b = 0;
+    public final /* synthetic */ byte a;
 
-    public np4(FragmentContextView fragmentContextView) {
-        this.a = fragmentContextView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ np4(int i, float f, boolean z, byte b2) {
+        super(i, f, z);
+        this.a = b2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        FragmentContextView fragmentContextView = this.a;
-        d dVar = fragmentContextView.h;
-        if (fragmentContextView.g0 == null || !(dVar instanceof yv1)) {
-            fragmentContextView.l0 = false;
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final Matcher b(Pattern pattern, String str) {
+        Matcher matcher = (Matcher) get(pattern);
+        if (matcher != null) {
+            matcher.reset(str);
+            return matcher;
         }
-        qd2 groupCall = fragmentContextView.n.getGroupCall();
-        if (groupCall == null || !groupCall.k()) {
-            fragmentContextView.h0 = false;
-            fragmentContextView.l0 = false;
-            return;
+        Matcher matcher2 = pattern.matcher(str);
+        put(pattern, matcher2);
+        return matcher2;
+    }
+
+    @Override // java.util.LinkedHashMap
+    public final boolean removeEldestEntry(Map.Entry entry) {
+        switch (this.a) {
+            case 0:
+                if (size() > 4) {
+                }
+                break;
+            case 1:
+                if (size() > 32) {
+                }
+                break;
+            case 2:
+                if (size() > 512) {
+                }
+                break;
+            default:
+                if (size() > 8192) {
+                }
+                break;
         }
-        int currentTime = groupCall.b.schedule_date - dVar.getConnectionsManager().getCurrentTime();
-        String G = currentTime >= 86400 ? jb6.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : gm.j0(currentTime);
-        ho hoVar = fragmentContextView.j0;
-        if (!fragmentContextView.i0) {
-            G = jb6.M0(2131743124, null);
-        }
-        hoVar.t(G, true, true);
-        gm.d3(fragmentContextView.m0, 1000L);
-        fragmentContextView.r.invalidate();
+        return false;
     }
 }

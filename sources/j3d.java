@@ -1,25 +1,35 @@
 // default package
 
-import java.lang.ref.WeakReference;
+import android.accounts.Account;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class j3d extends b3d {
-    public final WeakReference c;
+public final class j3d extends b4 {
+    public static final Parcelable.Creator<j3d> CREATOR = new b1d((byte) 14);
+    public final int a;
+    public final Account b;
+    public final int c;
+    public final GoogleSignInAccount d;
 
-    public j3d(l3d l3dVar) {
-        super((byte) 1);
-        this.c = new WeakReference(l3dVar);
+    public j3d(int i, Account account, int i2, GoogleSignInAccount googleSignInAccount) {
+        this.a = i;
+        this.b = account;
+        this.c = i2;
+        this.d = googleSignInAccount;
     }
 
-    @Override // b3d
-    public final void U(e5d e5dVar) {
-        l3d l3dVar = (l3d) this.c.get();
-        if (l3dVar == null) {
-            return;
-        }
-        h3d h3dVar = new h3d(this, l3dVar, l3dVar, e5dVar);
-        m3d m3dVar = l3dVar.a.e;
-        m3dVar.sendMessage(m3dVar.obtainMessage(1, h3dVar));
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        jte.k(parcel, 2, this.b, i);
+        jte.q(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        jte.k(parcel, 4, this.d, i);
+        jte.s(parcel, r);
     }
 }

@@ -1,54 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.graphics.RectF;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mm8 implements egc {
-    public int a = 0;
-    public byte b;
-    public final /* synthetic */ om8 c;
+public final /* synthetic */ class mm8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ TLRPC.User b;
 
-    public mm8(om8 om8Var) {
-        this.c = om8Var;
+    public /* synthetic */ mm8(TLRPC.User user, byte b) {
+        this.a = b;
+        this.b = user;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
-    @Override // egc
-    public final void a(int i) {
-        int i2 = this.a;
-        om8 om8Var = this.c;
-        ?? r2 = om8Var.E;
-        if (i2 == 0) {
-            if (i <= r2) {
-                om8Var.n = (byte) 1;
-            } else {
-                om8Var.n = (byte) 2;
-            }
-            om8Var.b();
-            return;
-        }
-        if (i <= r2) {
-            this.b = (byte) 1;
-        } else {
-            this.b = (byte) 2;
-        }
-    }
-
-    @Override // egc
-    public final void b(float f, int i, int i2) {
-        om8 om8Var = this.c;
-        om8Var.y = i;
-        om8Var.x = f;
-        om8Var.d();
-    }
-
-    @Override // egc
-    public final void c(int i) {
-        this.a = i;
-        if (i == 0) {
-            byte b = this.b;
-            om8 om8Var = this.c;
-            om8Var.n = b;
-            om8Var.b();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLRPC.User user = this.b;
+        switch (b) {
+            case 0:
+                RectF rectF = ProfileActivity.Z6;
+                gl.g("@" + l7c.p(user));
+                break;
+            case 1:
+                mi8.g1(new ArrayList(Arrays.asList(user)));
+                break;
+            case 2:
+                mi8.g1(new ArrayList(Arrays.asList(user)));
+                break;
+            default:
+                mi8.g1(new ArrayList(Arrays.asList(user)));
+                break;
         }
     }
 }

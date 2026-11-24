@@ -1,76 +1,102 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
+import android.app.Notification;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.hardware.display.DisplayManager;
+import android.view.Display;
+import android.view.ViewConfiguration;
+import android.webkit.WebView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class no5 extends ih0 implements Serializable {
-    public final transient d89 e;
-    public final transient int f;
+public abstract class no5 {
+    public static Context a;
+    public static Boolean b;
 
-    public no5(d89 d89Var, int i) {
-        this.e = d89Var;
-        this.f = i;
+    public static Notification.Builder a(Context context, String str) {
+        return new Notification.Builder(context, str);
     }
 
-    @Override // q3
-    public final boolean c(Object obj) {
-        return obj != null && super.c(obj);
-    }
-
-    @Override // q3
-    public final Collection e() {
-        return new so5(this);
-    }
-
-    @Override // q3
-    public final Collection g() {
-        return (go5) super.g();
-    }
-
-    @Override // q3
-    public final Iterator h() {
-        return new ro5(this);
-    }
-
-    @Override // q3
-    public final Collection i(Object obj) {
-        mo5 mo5Var = (mo5) this.e.get(obj);
-        if (mo5Var != null) {
-            return mo5Var;
+    public static boolean b(Context context) {
+        Display.HdrCapabilities hdrCapabilities;
+        DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+        Display display = displayManager != null ? displayManager.getDisplay(0) : null;
+        if (display == null || !display.isHdr() || (hdrCapabilities = display.getHdrCapabilities()) == null) {
+            return false;
         }
-        ko5 ko5Var = mo5.b;
-        return y79.e;
-    }
-
-    @Override // q3
-    public final Set j() {
-        d89 d89Var = this.e;
-        yo5 yo5Var = d89Var.b;
-        if (yo5Var != null) {
-            return yo5Var;
+        for (int i : hdrCapabilities.getSupportedHdrTypes()) {
+            if (i == 1) {
+                return true;
+            }
         }
-        b89 d = d89Var.d();
-        d89Var.b = d;
-        return d;
+        return false;
     }
 
-    @Override // q3
-    public final boolean k(Object obj, Object obj2) {
-        throw new UnsupportedOperationException();
+    public static PackageInfo c() {
+        return WebView.getCurrentWebViewPackage();
     }
 
-    @Override // q3
-    public final int l() {
-        return this.f;
+    public static float d(ViewConfiguration viewConfiguration) {
+        return viewConfiguration.getScaledHorizontalScrollFactor();
     }
 
-    @Override // q3
-    /* renamed from: m, reason: merged with bridge method [inline-methods] */
-    public qo5 a() {
-        return this.e;
+    public static float e(ViewConfiguration viewConfiguration) {
+        return viewConfiguration.getScaledVerticalScrollFactor();
+    }
+
+    public static synchronized boolean f(Context context) {
+        Boolean bool;
+        Boolean bool2;
+        synchronized (no5.class) {
+            Context applicationContext = context.getApplicationContext();
+            Context context2 = a;
+            if (context2 != null && (bool2 = b) != null && context2 == applicationContext) {
+                return bool2.booleanValue();
+            }
+            b = null;
+            if (xqe.a()) {
+                bool = Boolean.valueOf(applicationContext.getPackageManager().isInstantApp());
+                b = bool;
+            } else {
+                try {
+                    context.getClassLoader().loadClass("com.google.android.instantapps.supervisor.InstantAppsRuntime");
+                    bool = Boolean.TRUE;
+                    b = bool;
+                } catch (ClassNotFoundException unused) {
+                    bool = Boolean.FALSE;
+                    b = bool;
+                }
+            }
+            a = applicationContext;
+            return bool.booleanValue();
+        }
+    }
+
+    public static Intent g(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, int i) {
+        return context.registerReceiver(broadcastReceiver, intentFilter, null, null, i);
+    }
+
+    public static void h(Notification.Builder builder) {
+        builder.setBadgeIconType(0);
+    }
+
+    public static void i(Notification.Builder builder, int i) {
+        builder.setGroupAlertBehavior(i);
+    }
+
+    public static void j(Notification.Builder builder) {
+        builder.setSettingsText(null);
+    }
+
+    public static void k(Notification.Builder builder, String str) {
+        builder.setShortcutId(str);
+    }
+
+    public static void l(Notification.Builder builder, long j) {
+        builder.setTimeoutAfter(j);
     }
 }

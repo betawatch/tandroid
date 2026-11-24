@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Proxy;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzjo implements zzjt {
     public static final zzjo zza = new zzjo();
@@ -15,7 +15,7 @@ public final class zzjo implements zzjt {
         final int i2;
         int length = zzztVarArr.length;
         if (length != 4 && length != 5) {
-            i2d.d(4, 3, null);
+            fvc.c(4, 3, null);
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
@@ -24,7 +24,7 @@ public final class zzjo implements zzjt {
         }
         final String str = (String) zza2;
         if (str == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -32,7 +32,7 @@ public final class zzjo implements zzjt {
             zza3 = null;
         }
         if (zza3 == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         Object zza4 = zzizVar.zzc().zza(zzztVarArr[2]);
@@ -41,7 +41,7 @@ public final class zzjo implements zzjt {
         }
         String str2 = (String) zza4;
         if (str2 == null) {
-            i2d.d(4, 5, null);
+            fvc.c(4, 5, null);
             return;
         }
         String zza5 = zzizVar.zzh().zza(str2);
@@ -53,7 +53,7 @@ public final class zzjo implements zzjt {
             }
             Integer num = (Integer) zza7;
             if (num == null) {
-                i2d.d(4, 5, null);
+                fvc.c(4, 5, null);
                 return;
             }
             i2 = num.intValue();
@@ -65,8 +65,8 @@ public final class zzjo implements zzjt {
                 zza3 = zzizVar.zzh().zza((String) zza3);
             }
             Class zza8 = zziy.zza(zza3);
-            zzizVar.zzc().zze(i, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new fs4() { // from class: com.google.android.recaptcha.internal.zzjn
-                @Override // fs4
+            zzizVar.zzc().zze(i, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new eq4() { // from class: com.google.android.recaptcha.internal.zzjn
+                @Override // eq4
                 public final Object invoke(Object obj, Object obj2) {
                     zziz zzizVar2 = zziz.this;
                     Object[] objArr = (Object[]) obj;
@@ -75,11 +75,11 @@ public final class zzjo implements zzjt {
                     if (i3 != -1) {
                         zzizVar2.zzc().zze(i3, objArr);
                     }
-                    return g7c.a;
+                    return g5c.a;
                 }
             }, zza5, zza6)));
         } catch (Exception e) {
-            i2d.d(6, 20, e);
+            fvc.c(6, 20, e);
         }
     }
 }

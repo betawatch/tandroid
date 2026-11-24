@@ -1,17 +1,28 @@
 // default package
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class b0a extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && !gm.E3(this)) {
-            clearFocus();
-            requestFocus();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class b0a extends qz8 {
+    public final /* synthetic */ c0a M;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b0a(int i, f53 f53Var, c0a c0aVar, Context context) {
+        super(1, i, f53Var, context, false, true);
+        this.M = c0aVar;
+    }
+
+    @Override // qz8
+    public final void b(long j) {
+        d Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
         }
-        return super.onTouchEvent(motionEvent);
+        m8b createOverlayStoryViewer = Q.createOverlayStoryViewer();
+        createOverlayStoryViewer.getClass();
+        createOverlayStoryViewer.H(getContext(), j, p2b.a(this.M.d.r));
     }
 }

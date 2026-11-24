@@ -1,19 +1,88 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class akd implements cq7 {
-    public static final akd a = new akd();
+public abstract class akd implements ymd {
+    public static final Object d = new Object();
+    public static final f06 e = new f06(tod.class, (byte) 3);
+    public static final boolean f;
+    public static final v0f h;
+    public volatile Object a;
+    public volatile mjd b;
+    public volatile ujd c;
 
     static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)));
+        boolean z;
+        v0f sjdVar;
+        Throwable th;
+        Throwable th2;
+        try {
+            z = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+        } catch (SecurityException unused) {
+            z = false;
+        }
+        f = z;
+        String property = System.getProperty("java.runtime.name", "");
+        Throwable th3 = null;
+        if (property == null || property.contains("Android")) {
+            try {
+                sjdVar = new tjd();
+            } catch (Error | Exception e2) {
+                try {
+                    sjdVar = new rjd();
+                } catch (Error | Exception e3) {
+                    th3 = e3;
+                    sjdVar = new sjd();
+                }
+                th = th3;
+                th2 = e2;
+            }
+        } else {
+            try {
+                sjdVar = new rjd();
+            } catch (NoClassDefFoundError unused2) {
+                sjdVar = new sjd();
+            }
+        }
+        th = null;
+        th2 = null;
+        h = sjdVar;
+        if (th != null) {
+            f06 f06Var = e;
+            Logger c = f06Var.c();
+            Level level = Level.SEVERE;
+            c.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th2);
+            f06Var.c().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th);
+        }
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public final void a(ujd ujdVar) {
+        ujdVar.a = null;
+        while (true) {
+            ujd ujdVar2 = this.c;
+            if (ujdVar2 != ujd.c) {
+                ujd ujdVar3 = null;
+                while (ujdVar2 != null) {
+                    ujd ujdVar4 = ujdVar2.b;
+                    if (ujdVar2.a != null) {
+                        ujdVar3 = ujdVar2;
+                    } else if (ujdVar3 != null) {
+                        ujdVar3.b = ujdVar4;
+                        if (ujdVar3.a == null) {
+                            break;
+                        }
+                    } else if (h.g(this, ujdVar2, ujdVar4)) {
+                    }
+                    ujdVar2 = ujdVar4;
+                }
+                return;
+            }
+            return;
         }
-        throw null;
     }
+
+    public abstract Throwable d();
 }

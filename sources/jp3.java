@@ -1,64 +1,44 @@
 // default package
 
-import android.os.Handler;
-import android.os.Message;
-import java.util.Iterator;
+import java.io.File;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class jp3 implements Handler.Callback {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class jp3 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ op3 b;
+    public final /* synthetic */ File c;
 
-    public /* synthetic */ jp3(Object obj, byte b) {
+    public /* synthetic */ jp3(op3 op3Var, File file, byte b) {
         this.a = b;
-        this.b = obj;
+        this.b = op3Var;
+        this.c = file;
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        Object obj = this.b;
+        byte b2 = 2;
+        File file = this.c;
+        op3 op3Var = this.b;
         switch (b) {
             case 0:
-                ((np3) obj).handleMessage(message);
-                return true;
+                if (op3Var.c && op3Var.r != null) {
+                    MediaController.d0(file.getAbsolutePath(), op3Var.getContext(), 1, null, null, new kp3(op3Var, (byte) 1));
+                    break;
+                }
+                break;
             case 1:
-                a86 a86Var = (a86) obj;
-                y76 y76Var = a86Var.c;
-                y76Var.getClass();
-                Iterator it = a86Var.d.iterator();
-                while (it.hasNext()) {
-                    z76 z76Var = (z76) it.next();
-                    if (!z76Var.d && z76Var.c) {
-                        lk4 f = z76Var.b.f();
-                        z76Var.b = new m41();
-                        z76Var.c = false;
-                        y76Var.c(z76Var.a, f);
-                    }
-                    dfb dfbVar = a86Var.b;
-                    dfbVar.getClass();
-                    if (dfbVar.a.hasMessages(1)) {
-                        return true;
-                    }
+                op3Var.r.c(file);
+                if (op3Var.c && op3Var.r != null) {
+                    gl.c3(new jp3(op3Var, file, b2));
+                    break;
                 }
-                return true;
+                break;
             default:
-                oa0 oa0Var = (oa0) obj;
-                int i = message.what;
-                if (i == 1) {
-                    ((ybb) oa0Var.g).a();
-                } else if (i == 2) {
-                    ((zbb) oa0Var.h).a();
-                } else if (i == 3) {
-                    ((acb) oa0Var.i).a();
-                } else {
-                    if (i != 4) {
-                        return false;
-                    }
-                    ((bcb) oa0Var.j).a();
-                }
-                return true;
+                MediaController.d0(file.getAbsolutePath(), op3Var.getContext(), 0, null, null, new kp3(op3Var, (byte) 2));
+                break;
         }
     }
 }

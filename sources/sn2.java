@@ -1,169 +1,177 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public class sn2 extends Drawable implements Drawable.Callback {
-    public Drawable a;
-    public final Drawable b;
-    public final int c;
-    public final int d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public boolean r;
-    public int s;
-    public int w;
-    public boolean x;
-    public float y;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class sn2 implements i8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ eo2 b;
 
-    public sn2(Drawable drawable, Drawable drawable2, int i, int i2) {
-        this.a = drawable;
-        this.b = drawable2;
-        this.c = i;
-        this.d = i2;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
-        }
+    public /* synthetic */ sn2(eo2 eo2Var, byte b) {
+        this.a = b;
+        this.b = eo2Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(this.y, 0.0f);
-        if (this.r) {
-            Rect bounds = getBounds();
-            setBounds(bounds.centerX() - (getIntrinsicWidth() / 2), bounds.centerY() - (getIntrinsicHeight() / 2), (getIntrinsicWidth() / 2) + bounds.centerX(), (getIntrinsicHeight() / 2) + bounds.centerY());
-        }
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            this.a.draw(canvas);
-        }
-        Drawable drawable2 = this.b;
-        if (drawable2 != null) {
-            boolean z = this.x;
-            int i = this.d;
-            int i2 = this.c;
-            if (z) {
-                Rect bounds2 = getBounds();
-                if (i2 != 0) {
-                    drawable2.setBounds(bounds2.left + i2, bounds2.top + i, bounds2.right - i2, bounds2.bottom - i);
-                } else {
-                    drawable2.setBounds(bounds2);
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
+        boolean z;
+        byte b = this.a;
+        boolean z2 = true;
+        byte b2 = 2;
+        int i = 0;
+        eo2 eo2Var = this.b;
+        switch (b) {
+            case 0:
+                eo2Var.E0((ArrayList) obj, true);
+                break;
+            case 1:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_error != null) {
+                    ug8.u((FrameLayout) eo2Var.b, eo2Var.J0, tL_error, false);
+                    break;
                 }
-            } else if (this.e != 0) {
-                int centerX = (getBounds().centerX() - (this.e / 2)) + i2 + this.s;
-                int centerY = getBounds().centerY();
-                int i3 = this.f;
-                int i4 = (centerY - (i3 / 2)) + i + this.w;
-                drawable2.setBounds(centerX, i4, this.e + centerX, i3 + i4);
-            } else {
-                int centerX2 = (getBounds().centerX() - (drawable2.getIntrinsicWidth() / 2)) + i2;
-                int centerY2 = (getBounds().centerY() - (drawable2.getIntrinsicHeight() / 2)) + i;
-                drawable2.setBounds(centerX2, centerY2, drawable2.getIntrinsicWidth() + centerX2, drawable2.getIntrinsicHeight() + centerY2);
-            }
-            drawable2.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Drawable.ConstantState getConstantState() {
-        return this.b.getConstantState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        int i = this.n;
-        return i != 0 ? i : this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        int i = this.h;
-        return i != 0 ? i : this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        int i = this.n;
-        return i != 0 ? i : this.a.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        int i = this.h;
-        return i != 0 ? i : this.a.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.b.getOpacity();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int[] getState() {
-        return this.b.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.b.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.b.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean onStateChange(int[] iArr) {
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        scheduleSelf(runnable, j);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.b.setAlpha(i);
-        this.a.setAlpha(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean setState(int[] iArr) {
-        this.b.setState(iArr);
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
-    }
-
-    public sn2(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
+                break;
+            case 2:
+                ArrayList arrayList = (ArrayList) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                eo2Var.r1.setLoading(false);
+                if (tL_error2 == null) {
+                    if (arrayList != null) {
+                        eo2Var.K1 = arrayList;
+                        if (!arrayList.isEmpty()) {
+                            eo2Var.w1.d.g3.O(false);
+                            eo2Var.n1.E(2);
+                            break;
+                        } else {
+                            ir2.v(null, 2131751893, new u21((FrameLayout) eo2Var.b, eo2Var.J0), R.raw.info, 36);
+                            break;
+                        }
+                    }
+                } else {
+                    ug8.u((FrameLayout) eo2Var.b, eo2Var.J0, tL_error2, false);
+                    break;
+                }
+                break;
+            case 3:
+                int i2 = eo2.P1;
+                eo2Var.E0((ArrayList) obj, false);
+                break;
+            case 4:
+                ArrayList arrayList2 = (ArrayList) obj;
+                int i3 = eo2.P1;
+                arrayList2.add(c4c.E(99, Math.min(gl.L(176.0f) + gl.m, (int) (gl.q.y * 0.25f))));
+                arrayList2.add(c4c.E(0, gl.L(56.0f)));
+                String M0 = k96.M0(2131751837, null);
+                c4c c4cVar = new c4c(39);
+                c4cVar.d = 101;
+                c4cVar.m = M0;
+                c4cVar.A = 0;
+                c4cVar.L(eo2Var.q1);
+                arrayList2.add(c4cVar);
+                arrayList2.add(c4c.B(2, k96.M0(2131751836, null)));
+                mo2 mo2Var = eo2Var.G1;
+                if (mo2Var.n && mo2Var.l == 1 && mo2Var.j.size() == 1) {
+                    arrayList2.add(c4c.t(3, k96.M0(2131751892, null)));
+                    mo2Var.c(arrayList2);
+                    arrayList2.add(c4c.E(5, gl.L(14.33f)));
+                } else {
+                    int i4 = mo2Var.l;
+                    if (i4 > 0) {
+                        int i5 = mo2Var.p;
+                        String M02 = i4 == i5 ? k96.M0(2131751883, null) : k96.G(i4, "CommunityPendingRequestsRow", new Object[0]);
+                        String num = i5 > 0 ? Integer.toString(i5) : null;
+                        int i6 = qn2.b;
+                        c4c K = c4c.K(qn2.class);
+                        K.d = 100;
+                        K.k = R.drawable.filled_requests_24;
+                        K.m = M02;
+                        K.o = num;
+                        K.C = -66560164762966547L;
+                        K.r = true;
+                        arrayList2.add(K);
+                        arrayList2.add(c4c.E(5, gl.L(14.33f)));
+                    }
+                }
+                c5a u = na7.q1(eo2Var.a).u(eo2Var.o1);
+                ArrayList arrayList3 = (ArrayList) u.e;
+                ArrayList arrayList4 = (ArrayList) u.d;
+                ArrayList arrayList5 = (ArrayList) u.c;
+                ArrayList arrayList6 = (ArrayList) u.b;
+                if (arrayList6.isEmpty()) {
+                    z = false;
+                } else {
+                    arrayList2.add(c4c.t(21, k96.M0(2131751866, null)));
+                    int size = arrayList6.size();
+                    int i7 = 0;
+                    while (i7 < size) {
+                        Object obj3 = arrayList6.get(i7);
+                        i7++;
+                        arrayList2.add(io2.i((s97) obj3, eo2Var));
+                    }
+                    z = true;
+                }
+                if (!arrayList5.isEmpty()) {
+                    if (z) {
+                        arrayList2.add(c4c.E(22, gl.L(12.0f)));
+                    }
+                    arrayList2.add(c4c.t(23, k96.M0(2131751863, null)));
+                    int size2 = arrayList5.size();
+                    int i8 = 0;
+                    while (i8 < size2) {
+                        Object obj4 = arrayList5.get(i8);
+                        i8++;
+                        arrayList2.add(io2.i((s97) obj4, eo2Var));
+                    }
+                    z = true;
+                }
+                if (arrayList4.isEmpty()) {
+                    z2 = z;
+                } else {
+                    if (z) {
+                        arrayList2.add(c4c.E(24, gl.L(12.0f)));
+                    }
+                    arrayList2.add(c4c.t(25, k96.M0(2131751864, null)));
+                    int size3 = arrayList4.size();
+                    int i9 = 0;
+                    while (i9 < size3) {
+                        Object obj5 = arrayList4.get(i9);
+                        i9++;
+                        arrayList2.add(io2.i((s97) obj5, eo2Var));
+                    }
+                }
+                if (!arrayList3.isEmpty()) {
+                    if (z2) {
+                        arrayList2.add(c4c.E(26, gl.L(12.0f)));
+                    }
+                    arrayList2.add(c4c.t(27, k96.M0(2131751861, null)));
+                    int size4 = arrayList3.size();
+                    while (i < size4) {
+                        Object obj6 = arrayList3.get(i);
+                        i++;
+                        arrayList2.add(io2.i((s97) obj6, eo2Var));
+                    }
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList7 = (ArrayList) obj;
+                int i10 = eo2.P1;
+                mo2 mo2Var2 = eo2Var.G1;
+                arrayList7.add(c4c.E(99, (int) (gl.q.y * 0.35f)));
+                arrayList7.add(c4c.E(0, gl.L(48.0f)));
+                if (hc2.w(2, eo2Var.p1)) {
+                    arrayList7.add(c4c.B(1, gl.D2(gl.N2(k96.M0(2131751882, null), -1, 0, new un2(eo2Var, b2), null), true)));
+                } else {
+                    arrayList7.add(c4c.B(1, k96.M0(2131751881, null)));
+                }
+                arrayList7.add(c4c.j(2, eo2Var.F1));
+                arrayList7.add(c4c.t(3, k96.G(mo2Var2.l, "CommunityPendingRequestsSuggestedHeader", new Object[0])));
+                mo2Var2.c(arrayList7);
+                break;
         }
     }
 }

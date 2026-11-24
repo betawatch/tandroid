@@ -1,146 +1,122 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.view.TextureView;
-import android.view.View;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class jy extends FrameLayout {
-    public final iy a;
-    public float b;
-    public int c;
-    public boolean d;
-    public int e;
-    public final Matrix f;
+public final /* synthetic */ class jy implements i8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
 
-    public jy(Context context) {
-        super(context);
-        this.f = new Matrix();
-        this.c = 0;
-        this.a = new iy(this, (byte) 0);
+    public /* synthetic */ jy(na7 na7Var, long j, np0 np0Var) {
+        this.a = (byte) 4;
+        this.c = na7Var;
+        this.b = j;
     }
 
-    public final void a(float f, int i) {
-        if (this.b != f) {
-            this.b = f;
-            this.e = i;
-            requestLayout();
-        }
-    }
-
-    public float getAspectRatio() {
-        return this.b;
-    }
-
-    public int getResizeMode() {
-        return this.c;
-    }
-
-    public int getVideoRotation() {
-        return this.e;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x004b, code lost:
-    
-        if (r4 > 0.0f) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0065, code lost:
-    
-        r1 = r1 / r4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0067, code lost:
-    
-        r2 = r2 * r4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0052, code lost:
-    
-        if (r4 <= 0.0f) goto L30;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0063, code lost:
-    
-        if (r4 > 0.0f) goto L30;
-     */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onMeasure(int i, int i2) {
-        float f;
-        super.onMeasure(i, i2);
-        if (this.b > 0.0f) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            float f2 = measuredWidth;
-            float f3 = measuredHeight;
-            float f4 = (this.b / (f2 / f3)) - 1.0f;
-            float abs = Math.abs(f4);
-            iy iyVar = this.a;
-            if (abs <= 0.01f) {
-                if (iyVar.b) {
-                    return;
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        long j = this.b;
+        Object obj3 = this.c;
+        switch (b) {
+            case 0:
+                ty tyVar = (ty) obj3;
+                Boolean bool = (Boolean) obj;
+                String str = (String) obj2;
+                FrameLayout frameLayout = tyVar.f2;
+                tyVar.V1.setLoading(false);
+                tyVar.u2 = false;
+                if (bool != null) {
+                    boolean z = j > 0;
+                    i21 i21Var = new i21(tyVar.getContext(), tyVar.J0);
+                    i21Var.a.setImageResource(R.drawable.filled_gift_sell_24);
+                    String M0 = k96.M0(z ? 2131750291 : 2131750290, null);
+                    TextView textView = i21Var.b;
+                    textView.setText(M0);
+                    textView.setSingleLine(true);
+                    textView.setTextSize(1, 15.0f);
+                    textView.setMaxLines(1);
+                    textView.setTypeface(gl.o());
+                    String a0 = k96.a0(null, null, 2131750326, Integer.valueOf(tyVar.g2.d.gifts_per_round));
+                    TextView textView2 = i21Var.c;
+                    textView2.setText(a0);
+                    textView2.setSingleLine(false);
+                    textView2.setMaxLines(5);
+                    tyVar.c1();
+                    m21.f(frameLayout, i21Var, 2750).j();
+                    gta.v(tyVar.a, false).n(null, false, true);
                 }
-                iyVar.b = true;
-                ((jy) iyVar.c).post(iyVar);
-                return;
-            }
-            int i3 = this.c;
-            if (i3 == 0) {
-                f = this.b;
-            } else if (i3 == 1) {
-                float f5 = f2 / this.b;
-                measuredHeight = (int) f5;
-            } else if (i3 == 2) {
-                float f6 = f3 * this.b;
-                measuredWidth = (int) f6;
-            } else if (i3 == 3) {
-                f = this.b;
-            } else if (i3 == 4) {
-                f = this.b;
-            }
-            if (!iyVar.b) {
-                iyVar.b = true;
-                ((jy) iyVar.c).post(iyVar);
-            }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_30));
-            int childCount = getChildCount();
-            for (int i4 = 0; i4 < childCount; i4++) {
-                View childAt = getChildAt(i4);
-                if (childAt instanceof TextureView) {
-                    Matrix matrix = this.f;
-                    matrix.reset();
-                    float width = getWidth() / 2;
-                    float height = getHeight() / 2;
-                    matrix.postRotate(this.e, width, height);
-                    int i5 = this.e;
-                    if (i5 == 90 || i5 == 270) {
-                        float height2 = getHeight() / getWidth();
-                        matrix.postScale(1.0f / height2, height2, width, height);
+                if (str != null) {
+                    tyVar.c1();
+                    new u21(frameLayout, tyVar.J0).Q(R.raw.error, 36, k96.a0(null, null, 2131743639, str)).j();
+                    break;
+                }
+                break;
+            case 1:
+                d dVar = (d) obj3;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_error == null) {
+                    no2.d(1, -j, dVar);
+                    break;
+                } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
+                    u21.b0(dVar).g0(tL_error, false);
+                    break;
+                } else {
+                    no2.d(2, -j, dVar);
+                    break;
+                }
+            case 2:
+                kt4 kt4Var = (kt4) obj3;
+                TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState = (TL_payments.TL_StarGiftAuctionState) obj;
+                LongSparseArray longSparseArray = kt4Var.e;
+                if (tL_StarGiftAuctionState != null) {
+                    kt4Var.getMessagesController().b4(tL_StarGiftAuctionState.users, false);
+                    kt4Var.getMessagesController().V3(tL_StarGiftAuctionState.chats, false);
+                    Boolean bool2 = Boolean.FALSE;
+                    long j2 = this.b;
+                    if (!((Boolean) longSparseArray.get(j2, bool2)).booleanValue()) {
+                        longSparseArray.put(j2, Boolean.TRUE);
+                        kt4Var.j(j2, new p0c((Object) kt4Var, j2, (TLObject) tL_StarGiftAuctionState, (byte) 3));
+                        break;
+                    } else {
+                        kt4Var.f(j2, tL_StarGiftAuctionState);
+                        break;
                     }
-                    ((TextureView) childAt).setTransform(matrix);
-                    return;
                 }
-            }
+                break;
+            case 3:
+                LaunchActivity launchActivity = (LaunchActivity) obj3;
+                Long l = (Long) obj2;
+                String str2 = LaunchActivity.C1;
+                if ("paid".equals((String) obj) && l.longValue() != 0) {
+                    gl.c3(new de2((Object) launchActivity, (Object) l, this.b, (byte) 26));
+                    break;
+                }
+                break;
+            default:
+                na7 na7Var = (na7) obj3;
+                if (((TLRPC.Bool) obj) != null) {
+                    na7Var.Y2(0, j, true);
+                    break;
+                }
+                break;
         }
     }
 
-    public void setDrawingReady(boolean z) {
-        if (this.d == z) {
-            return;
-        }
-        this.d = z;
-    }
-
-    public void setResizeMode(int i) {
-        if (this.c != i) {
-            this.c = i;
-            requestLayout();
-        }
-    }
-
-    public void setAspectRatioListener(hy hyVar) {
+    public /* synthetic */ jy(Object obj, long j, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = j;
     }
 }

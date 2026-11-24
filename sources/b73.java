@@ -1,43 +1,84 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextUtils;
-import j$.util.DesugarTimeZone;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class b73 implements cx7 {
-    public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
+public final class b73 extends ccb implements eq4 {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ Object c;
 
-    @Override // cx7
-    public final Object y(Uri uri, e83 e83Var) {
-        String readLine = new BufferedReader(new InputStreamReader(e83Var, StandardCharsets.UTF_8)).readLine();
-        try {
-            Matcher matcher = a.matcher(readLine);
-            if (!matcher.matches()) {
-                throw bx7.b("Couldn't parse timestamp: " + readLine, null);
-            }
-            String group = matcher.group(1);
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
-            simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
-            long time = simpleDateFormat.parse(group).getTime();
-            if (!"Z".equals(matcher.group(2))) {
-                long j = "+".equals(matcher.group(4)) ? 1L : -1L;
-                long parseLong = Long.parseLong(matcher.group(5));
-                String group2 = matcher.group(7);
-                time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j;
-            }
-            return Long.valueOf(time);
-        } catch (ParseException e) {
-            throw bx7.b(null, e);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b73(Object obj, fw2 fw2Var, byte b) {
+        super(2, fw2Var);
+        this.a = b;
+        this.c = obj;
+    }
+
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        byte b = this.a;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                return new b73((v73) obj2, fw2Var, (byte) 0);
+            default:
+                return new b73((xs5) obj2, fw2Var, (byte) 1);
+        }
+    }
+
+    @Override // eq4
+    public final Object invoke(Object obj, Object obj2) {
+        byte b = this.a;
+        g5c g5cVar = g5c.a;
+        switch (b) {
+            case 0:
+                return ((b73) create((ik4) obj, (fw2) obj2)).invokeSuspend(g5cVar);
+            default:
+                return ((b73) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5cVar);
+        }
+    }
+
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        byte b = this.a;
+        Object obj2 = this.c;
+        bx2 bx2Var = bx2.a;
+        switch (b) {
+            case 0:
+                boolean z = this.b;
+                if (!z) {
+                    qse.b(obj);
+                    this.b = true;
+                    if (((v73) obj2).e(this) == bx2Var) {
+                        return bx2Var;
+                    }
+                } else {
+                    if (!z) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    qse.b(obj);
+                }
+                return g5c.a;
+            default:
+                boolean z2 = this.b;
+                if (!z2) {
+                    qse.b(obj);
+                    hk4 data = ((xs5) obj2).c.a.getData();
+                    this.b = true;
+                    obj = khe.b(data, this);
+                    if (obj == bx2Var) {
+                        return bx2Var;
+                    }
+                } else {
+                    if (!z2) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    qse.b(obj);
+                }
+                ih7 ih7Var = (ih7) obj;
+                return ih7Var != null ? ih7Var.a() : d24.a;
         }
     }
 }

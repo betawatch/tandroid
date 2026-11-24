@@ -1,26 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class jye {
-    public final String a;
+public final /* synthetic */ class jye implements mt8 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ g1c b;
 
-    public jye(String str) {
-        this.a = str;
+    public /* synthetic */ jye(g1c g1cVar, byte b) {
+        this.a = b;
+        this.b = g1cVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // mt8
+    public final Object get() {
+        byte b = this.a;
+        g1c g1cVar = this.b;
+        switch (b) {
+            case 0:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("json"), ize.y);
+            case 1:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("proto"), ie7.x);
+            case 2:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("json"), eef.y);
+            case 3:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("proto"), i2f.E);
+            case 4:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("json"), pd5.E);
+            case 5:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("proto"), vi2.E);
+            case 6:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("json"), c6e.y);
+            default:
+                return g1cVar.a("FIREBASE_ML_SDK", new s24("proto"), ie7.E);
         }
-        return (obj instanceof jye) && this.a.equals(((jye) obj).a);
-    }
-
-    public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ 1231) * 1000003) ^ 1;
-    }
-
-    public final String toString() {
-        return kt6.o("MLKitLoggingOptions{libraryName=", this.a, ", enableFirelog=true, firelogEventType=1}");
     }
 }

@@ -1,11 +1,19 @@
 // default package
 
-import java.io.Closeable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class d64 extends fy2 implements Closeable, AutoCloseable {
-    static {
-        fy2.b.getClass();
+public final class d64 {
+    public final ArrayList a;
+    public final wga b;
+    public final int c;
+    public final long d;
+
+    public d64(ArrayList arrayList, wga wgaVar, int i, long j) {
+        this.a = arrayList;
+        this.b = wgaVar;
+        this.c = i;
+        this.d = j;
     }
 }

@@ -1,25 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.opengl.EGL14;
+import android.opengl.EGLDisplay;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum wie implements z9d {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    b(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3);
-
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    wie(int i) {
-        this.a = i;
+public abstract class wie {
+    public static void a(String str, boolean z) {
+        if (z) {
+            return;
+        }
+        km5 km5Var = mm5.b;
+        throw new bw4(str, w59.e);
     }
 
-    @Override // z9d
-    public final int zza() {
-        return this.a;
+    public static boolean b(String str) {
+        EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
+        a("No EGL display.", !eglGetDisplay.equals(EGL14.EGL_NO_DISPLAY));
+        a("Error in eglInitialize.", EGL14.eglInitialize(eglGetDisplay, new int[1], 0, new int[1], 0));
+        int eglGetError = EGL14.eglGetError();
+        if (eglGetError == 12288) {
+            String eglQueryString = EGL14.eglQueryString(eglGetDisplay, 12373);
+            return eglQueryString != null && eglQueryString.contains(str);
+        }
+        throw new bw4("Error in getDefaultEglDisplay, error code: 0x" + Integer.toHexString(eglGetError), mm5.u(Integer.valueOf(eglGetError)));
     }
 }

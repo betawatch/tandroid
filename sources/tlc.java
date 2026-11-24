@@ -1,27 +1,36 @@
 // default package
 
-import android.media.VolumeProvider;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class tlc extends VolumeProvider {
-    public final /* synthetic */ dz3 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class tlc extends View {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hmc b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tlc(dz3 dz3Var, int i, int i2, int i3, String str) {
-        super(i, i2, i3, str);
-        this.a = dz3Var;
+    public /* synthetic */ tlc(hmc hmcVar, Context context, byte b) {
+        super(context);
+        this.a = b;
+        this.b = hmcVar;
     }
 
-    @Override // android.media.VolumeProvider
-    public final void onAdjustVolume(int i) {
-        dz3 dz3Var = this.a;
-        ((wz4) ((in3) dz3Var.f).d).a.post(new uz4(dz3Var, i, (byte) 1));
-    }
-
-    @Override // android.media.VolumeProvider
-    public final void onSetVolumeTo(int i) {
-        dz3 dz3Var = this.a;
-        ((wz4) ((in3) dz3Var.f).d).a.post(new uz4(dz3Var, i, (byte) 0));
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        byte b = this.a;
+        hmc hmcVar = this.b;
+        switch (b) {
+            case 0:
+                int size = View.MeasureSpec.getSize(i);
+                hmcVar.a0.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - gl.L(24.0f)), TLObject.FLAG_30), 0);
+                setMeasuredDimension(size, gl.L(36.0f) + hmcVar.a0.getMeasuredHeight());
+                break;
+            default:
+                hmcVar.e.measure(i, 0);
+                setMeasuredDimension(View.MeasureSpec.getSize(i), hmcVar.e.getMeasuredHeight());
+                break;
+        }
     }
 }

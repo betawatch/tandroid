@@ -1,115 +1,119 @@
 // default package
 
-import java.io.Serializable;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class rn2 implements cy2, Serializable {
-    public final cy2 a;
-    public final ay2 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class rn2 extends LinearLayout implements tjb {
+    public final wjb a;
+    public final g37 b;
+    public final FrameLayout c;
+    public final ImageView d;
+    public final TextView e;
+    public final TextView f;
+    public final boolean h;
+    public boolean n;
 
-    public rn2(ay2 ay2Var, cy2 cy2Var) {
-        cy2Var.getClass();
-        this.a = cy2Var;
-        this.b = ay2Var;
-    }
-
-    public final boolean equals(Object obj) {
-        boolean z;
-        if (this == obj) {
-            return true;
+    public rn2(wjb wjbVar, Context context, boolean z) {
+        super(context);
+        this.a = wjbVar;
+        this.h = z;
+        setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        g37 g37Var = new g37((byte) 1);
+        this.b = g37Var;
+        frameLayout.setBackground(g37Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, nme.e(24, 24, 17));
+        LinearLayout j = de9.j(context, 1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView m = ug8.m(j, textView, nme.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = m;
+        m.setGravity(17);
+        m.setMinWidth(gl.L(20.66f));
+        m.setPadding(gl.L(6.33f), 0, gl.L(6.33f), 0);
+        m.setTextSize(1, 16.0f);
+        if (k96.a0) {
+            addView(m, nme.j(13.33f, 0.0f));
+            addView(j, nme.q(0, -2, 1.0f, 23, 20, 0, z ? 12 : 16, 0));
+            addView(frameLayout, nme.t(28, 28, 21, 0, 0, z ? 9 : 14, 0));
+        } else {
+            addView(frameLayout, nme.t(28, 28, 19, z ? 9 : 14, 0, 0, 0));
+            addView(j, nme.q(0, -2, 1.0f, 23, z ? 12 : 16, 0, 20, 0));
+            addView(m, nme.j(0.0f, 13.33f));
         }
-        if (obj instanceof rn2) {
-            rn2 rn2Var = (rn2) obj;
-            int i = 2;
-            rn2 rn2Var2 = rn2Var;
-            int i2 = 2;
-            while (true) {
-                cy2 cy2Var = rn2Var2.a;
-                rn2Var2 = cy2Var instanceof rn2 ? (rn2) cy2Var : null;
-                if (rn2Var2 == null) {
-                    break;
-                }
-                i2++;
-            }
-            rn2 rn2Var3 = this;
-            while (true) {
-                cy2 cy2Var2 = rn2Var3.a;
-                rn2Var3 = cy2Var2 instanceof rn2 ? (rn2) cy2Var2 : null;
-                if (rn2Var3 == null) {
-                    break;
-                }
-                i++;
-            }
-            if (i2 == i) {
-                while (true) {
-                    ay2 ay2Var = this.b;
-                    if (!rr5.a(rn2Var.get(ay2Var.getKey()), ay2Var)) {
-                        z = false;
-                        break;
-                    }
-                    cy2 cy2Var3 = this.a;
-                    if (!(cy2Var3 instanceof rn2)) {
-                        cy2Var3.getClass();
-                        ay2 ay2Var2 = (ay2) cy2Var3;
-                        z = rr5.a(rn2Var.get(ay2Var2.getKey()), ay2Var2);
-                        break;
-                    }
-                    this = (rn2) cy2Var3;
-                }
-                if (z) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        updateColors();
+        setUnreadMode(true);
     }
 
-    @Override // cy2
-    public final Object fold(Object obj, fs4 fs4Var) {
-        return fs4Var.invoke(this.a.fold(obj, fs4Var), this.b);
+    public final void a(int i, int i2, int i3, CharSequence charSequence, CharSequence charSequence2, boolean z) {
+        this.c.setVisibility(i3 != 0 ? 0 : 8);
+        this.e.setTranslationX(i3 == 0 ? gl.L(2.0f) : 0.0f);
+        this.b.b(i, i2);
+        this.d.setImageResource(i3);
+        setTitle(charSequence);
+        setValue(charSequence2);
+        setUnreadMode(z);
     }
 
-    @Override // cy2
-    public final ay2 get(by2 by2Var) {
-        by2Var.getClass();
-        while (true) {
-            ay2 ay2Var = this.b.get(by2Var);
-            if (ay2Var != null) {
-                return ay2Var;
-            }
-            cy2 cy2Var = this.a;
-            if (!(cy2Var instanceof rn2)) {
-                return cy2Var.get(by2Var);
-            }
-            this = (rn2) cy2Var;
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(bkb.F6));
+        hashSet.add(Integer.valueOf(bkb.T8));
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(this.h ? 44.0f : 50.0f), TLObject.FLAG_30));
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.e.setText(charSequence);
+    }
+
+    public void setUnreadMode(boolean z) {
+        if (this.n != z) {
+            this.n = z;
+            float f = z ? 13.0f : 16.0f;
+            TextView textView = this.f;
+            textView.setTextSize(1, f);
+            textView.setTypeface(z ? gl.o() : null);
+            int i = z ? bkb.V8 : bkb.m6;
+            wjb wjbVar = this.a;
+            zkb.X(textView, i, wjbVar);
+            textView.setBackground(z ? bkb.b0(gl.L(10.33f), bkb.v0(bkb.T8, wjbVar)) : null);
         }
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + this.a.hashCode();
+    public void setValue(CharSequence charSequence) {
+        int i = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.f;
+        textView.setVisibility(i);
+        textView.setText(charSequence);
     }
 
-    @Override // cy2
-    public final cy2 minusKey(by2 by2Var) {
-        by2Var.getClass();
-        ay2 ay2Var = this.b;
-        ay2 ay2Var2 = ay2Var.get(by2Var);
-        cy2 cy2Var = this.a;
-        if (ay2Var2 != null) {
-            return cy2Var;
-        }
-        cy2 minusKey = cy2Var.minusKey(by2Var);
-        return minusKey == cy2Var ? this : minusKey == k34.a ? ay2Var : new rn2(ay2Var, minusKey);
-    }
-
-    @Override // cy2
-    public final cy2 plus(cy2 cy2Var) {
-        cy2Var.getClass();
-        return cy2Var == k34.a ? this : (cy2) cy2Var.fold(this, new qn2((byte) 1));
-    }
-
-    public final String toString() {
-        return "[" + ((String) fold("", new qn2((byte) 0))) + ']';
+    @Override // tjb
+    public final void updateColors() {
+        int i = bkb.F6;
+        wjb wjbVar = this.a;
+        this.e.setTextColor(bkb.v0(i, wjbVar));
+        int v0 = bkb.v0(this.n ? bkb.V8 : bkb.m6, wjbVar);
+        TextView textView = this.f;
+        textView.setTextColor(v0);
+        textView.setBackground(this.n ? bkb.b0(gl.L(10.33f), bkb.v0(bkb.T8, wjbVar)) : null);
+        this.b.b = wjbVar != null ? wjbVar.a() : bkb.I.o();
     }
 }

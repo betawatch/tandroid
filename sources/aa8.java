@@ -1,195 +1,236 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.ViewPropertyAnimator;
+import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.z;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class aa8 extends tc1 {
-    public final Path t1;
-    public final /* synthetic */ PhotoViewer u1;
+public abstract class aa8 extends FrameLayout {
+    public TLRPC.WebPage E;
+    public float F;
+    public boolean G;
+    public boolean H;
+    public int I;
+    public int J;
+    public float K;
+    public boolean L;
+    public w88 M;
+    public int a;
+    public PhotoViewer b;
+    public LinearLayout c;
+    public TextView d;
+    public TextView e;
+    public ku3 f;
+    public sb h;
+    public RadialProgressView n;
+    public a8 r;
+    public String s;
+    public ArrayList w;
+    public String x;
+    public boolean y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aa8(PhotoViewer photoViewer, Context context, z zVar, ela elaVar, FrameLayout frameLayout, ylb ylbVar, sm0 sm0Var, n88 n88Var) {
-        super(context, zVar, elaVar, frameLayout, ylbVar, sm0Var, n88Var);
-        this.u1 = photoViewer;
-        this.t1 = new Path();
-    }
-
-    @Override // tc1
-    public final void A() {
-        Drawable[] drawableArr = PhotoViewer.d9;
-        this.u1.v2();
-    }
-
-    @Override // tc1
-    public final void B() {
-        z();
-        ba8 ba8Var = this.u1.W1;
-        if (ba8Var != null) {
-            ba8Var.z();
+    public final void a(boolean z) {
+        w88 w88Var = this.M;
+        boolean z2 = this.H;
+        if (z) {
+            if (z2) {
+                return;
+            }
+            gl.r(w88Var);
+        } else if (z2) {
+            gl.d3(w88Var, 500L);
         }
     }
 
-    @Override // tc1
-    public final boolean G() {
-        pb8 pb8Var = this.u1.d;
-        return pb8Var != null && pb8Var.l();
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String b(int i) {
+        float f;
+        int i2;
+        ArrayList arrayList = this.w;
+        int videoDuration = getVideoDuration() / 1000;
+        if (videoDuration > 100) {
+            if (videoDuration <= 250) {
+                i2 = ((int) (i / 2.0f)) / 25;
+            } else if (videoDuration <= 500) {
+                i2 = ((int) (i / 4.0f)) / 25;
+            } else if (videoDuration <= 1000) {
+                i2 = ((int) (i / 5.0f)) / 25;
+            } else {
+                f = i / 10.0f;
+            }
+            if (i2 >= arrayList.size()) {
+                return (String) arrayList.get(i2);
+            }
+            return null;
+        }
+        f = i;
+        i2 = (int) (f / 25.0f);
+        if (i2 >= arrayList.size()) {
+        }
     }
 
-    public final void I() {
-        PhotoViewer photoViewer = this.u1;
-        pb8 pb8Var = photoViewer.d;
-        D(pb8Var != null && pb8Var.l() && (photoViewer.V1.M.c() || !(photoViewer.s1 || TextUtils.isEmpty(photoViewer.d0().getText()))), true);
+    public final boolean c() {
+        return this.y && "inapp".equals(na7.q1(this.a).k4.I0.f);
     }
 
-    @Override // pc1
-    public final boolean e() {
-        PhotoViewer photoViewer = this.u1;
-        u31 u31Var = photoViewer.s7;
-        if (u31Var == null || u31.x != u31Var) {
-            return photoViewer.c2(photoViewer.f0);
+    public final boolean d() {
+        if (this.n.getVisibility() != 0) {
+            xa8 a = mb3.c().a();
+            if (a != null) {
+                a.b();
+                gl.d3(new w98(this, (byte) 0), 300L);
+                return true;
+            }
+            this.h.setVisibility(0);
+            PhotoViewer photoViewer = this.b;
+            if (photoViewer.E != null && photoViewer.g0 != null) {
+                photoViewer.W();
+                photoViewer.U8.h(photoViewer.E, null, true);
+                return true;
+            }
         }
         return false;
     }
 
-    @Override // pc1
-    public final void h(wm0 wm0Var, Canvas canvas, RectF rectF, float f, boolean z, float f2, float f3, boolean z2) {
-        canvas.save();
-        Path path = this.t1;
-        path.rewind();
-        path.addRoundRect(rectF, f, f, Path.Direction.CW);
-        canvas.clipPath(path);
-        PhotoViewer photoViewer = this.u1;
-        if (z2) {
-            canvas.translate(((-getX()) - photoViewer.Y1.getX()) + f2, ((-getY()) - photoViewer.Y1.getY()) + f3);
-        } else {
-            canvas.translate(f2, f3);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.L) {
+            return false;
         }
-        int p1 = cmb.p1(1.0f, z ? -8882056 : -14277082);
-        int p12 = cmb.p1(1.0f, z2 ? z ? 0 : 855638016 : 1140850688);
-        boolean z3 = false;
-        boolean z4 = !z;
-        if (!z && z2) {
-            z3 = true;
-        }
-        photoViewer.P(canvas, wm0Var, p1, p12, false, z4, z3);
-        canvas.restore();
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        byte b;
-        if (gda.Z && ((b = this.u1.m4) == 1 || b == 2 || b == 3)) {
+    public final void e() {
+        if (this.H && this.y) {
+            h("pauseVideo();");
+            this.H = false;
+            a(true);
+        }
+    }
+
+    public final void f() {
+        if (this.H || !this.y) {
             return;
         }
-        super.invalidate();
+        h("playVideo();");
+        this.H = true;
+        a(false);
     }
 
-    @Override // pc1
-    public final boolean l(float f, float f2) {
-        return (this.p0 || this.u1.t4 == 0) ? false : true;
-    }
-
-    @Override // tc1, pc1
-    public final void setText(CharSequence charSequence) {
-        super.setText(charSequence);
-        I();
-    }
-
-    @Override // tc1, pc1
-    public final void u(float f) {
-        super.u(f);
-        PhotoViewer photoViewer = this.u1;
-        c7 c7Var = photoViewer.f1;
-        float f2 = 1.0f - f;
-        c7Var.setAlpha((c7Var.getTag() != null ? 1 : 0) * f2);
-        o96 o96Var = photoViewer.g1;
-        o96Var.setAlpha((o96Var.getTag() != null ? 1 : 0) * f2);
-        FrameLayout frameLayout = photoViewer.W7;
-        frameLayout.setAlpha(f2 * (frameLayout.getTag() != null ? 1 : 0));
-    }
-
-    @Override // pc1
-    public final void w() {
-        this.N.getAdapter().c = false;
-        this.N.getAdapter().d = false;
-        this.N.getAdapter().e = false;
-        PhotoViewer photoViewer = this.u1;
-        yv1 yv1Var = photoViewer.k4;
-        lc1 lc1Var = this.N;
-        if (yv1Var != null) {
-            lc1Var.getAdapter().n0 = false;
-            this.N.getAdapter().V(photoViewer.k4.r8);
-            this.N.getAdapter().f0 = photoViewer.k4.e != null;
-        } else {
-            lc1Var.getAdapter().n0 = true;
-            this.N.getAdapter().V(null);
-            this.N.getAdapter().f0 = false;
-        }
-        this.N.getAdapter().g0 = false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
-    @Override // tc1, pc1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void x(int i) {
-        float f;
-        PhotoViewer photoViewer = this.u1;
-        super.x(i - photoViewer.t2.bottom);
-        u31 u31Var = u31.x;
-        if (u31Var != null) {
-            u31Var.l();
-        }
-        I();
-        FrameLayout frameLayout = photoViewer.S0;
-        boolean z = false;
-        if (frameLayout != null) {
-            frameLayout.animate().translationY(-Math.max(0, (i - r1.bottom) - photoViewer.Q0.getHeight())).setDuration(250L).setInterpolator(gb.w).start();
-        }
-        ViewPropertyAnimator animate = photoViewer.G.animate();
-        if (photoViewer.K) {
-            tc1 d0 = photoViewer.d0();
-            ba8 ba8Var = photoViewer.W1;
-            if (d0 != ba8Var || !ba8Var.M.c()) {
-                f = 1.0f;
-                animate.alpha(f).start();
-                if (photoViewer.Q0.getVisibility() != 0) {
-                    if (photoViewer.K) {
-                        tc1 d02 = photoViewer.d0();
-                        ba8 ba8Var2 = photoViewer.W1;
-                        if (d02 != ba8Var2 || !ba8Var2.M.c()) {
-                            z = true;
-                        }
-                    }
-                    photoViewer.z2(z);
-                    return;
-                }
-                return;
+    public final void g(String str) {
+        int videoDuration = getVideoDuration() / 1000;
+        ArrayList arrayList = this.w;
+        arrayList.clear();
+        if (videoDuration > 15) {
+            String[] split = str.split("\\|");
+            String j = b00.j(new StringBuilder(), split[0].split("\\$")[0], "2/");
+            String str2 = split[0].split("\\$N")[1];
+            String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
+            int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
+            for (int i = 0; i < ceil; i++) {
+                Locale locale = Locale.ROOT;
+                arrayList.add(j + "M" + i + str2 + "&sigh=" + str3);
             }
         }
-        f = 0.0f;
-        animate.alpha(f).start();
-        if (photoViewer.Q0.getVisibility() != 0) {
+    }
+
+    public float getBufferedPosition() {
+        return this.K;
+    }
+
+    public int getCurrentPosition() {
+        return this.J;
+    }
+
+    public int getEmbedHeight() {
+        TLRPC.WebPage webPage = this.E;
+        if (webPage != null) {
+            return webPage.embed_height;
+        }
+        return 0;
+    }
+
+    public int getEmbedWidth() {
+        TLRPC.WebPage webPage = this.E;
+        if (webPage != null) {
+            return webPage.embed_width;
+        }
+        return 0;
+    }
+
+    public int getVideoDuration() {
+        return this.I;
+    }
+
+    public WebView getWebView() {
+        return this.f;
+    }
+
+    public final void h(String str) {
+        this.f.evaluateJavascript(str, null);
+    }
+
+    public final void i(long j) {
+        boolean z = this.H;
+        this.J = (int) j;
+        if (z) {
+            e();
+            gl.d3(new et((Object) this, j, (byte) 25), 100L);
+        } else {
+            h("seekTo(" + Math.round(j / 1000.0f) + ", true);");
         }
     }
 
-    @Override // pc1
-    public final void y() {
-        lc1 lc1Var = this.N;
-        if (lc1Var != null) {
-            lc1Var.setTranslationY(((-getEditTextHeight()) - gm.L(14.0f)) - this.M.l);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        ku3 ku3Var = this.f;
+        if (ku3Var.getParent() == this) {
+            TLRPC.WebPage webPage = this.E;
+            int i3 = webPage.embed_width;
+            if (i3 == 0) {
+                i3 = 100;
+            }
+            int i4 = webPage.embed_height;
+            int i5 = i4 != 0 ? i4 : 100;
+            int size = View.MeasureSpec.getSize(i);
+            int size2 = View.MeasureSpec.getSize(i2);
+            float f = i3;
+            float f2 = i5;
+            float min = Math.min(size / f, size2 / f2);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ku3Var.getLayoutParams();
+            int i6 = (int) (f * min);
+            layoutParams.width = i6;
+            int i7 = (int) (f2 * min);
+            layoutParams.height = i7;
+            layoutParams.topMargin = (size2 - i7) / 2;
+            layoutParams.leftMargin = (size - i6) / 2;
         }
+        super.onMeasure(i, i2);
+    }
+
+    public void setPlaybackSpeed(float f) {
+        this.F = f;
+        if (this.n.getVisibility() == 0) {
+            this.G = true;
+        } else if (this.y) {
+            h("setPlaybackSpeed(" + f + ");");
+        }
+    }
+
+    public void setTouchDisabled(boolean z) {
+        this.L = z;
     }
 }

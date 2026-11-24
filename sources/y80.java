@@ -1,34 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class y80 extends tq2 {
-    public final ta0 a;
+import java.util.List;
 
-    public y80(ta0 ta0Var) {
-        sq2 sq2Var = sq2.a;
-        this.a = ta0Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class y80 extends uy2 {
+    public final String a;
+    public final int b;
+    public final List c;
+
+    public y80(String str, int i, List list) {
+        this.a = str;
+        this.b = i;
+        this.c = list;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof tq2)) {
-            return false;
+        if (obj instanceof uy2) {
+            y80 y80Var = (y80) ((uy2) obj);
+            if (this.a.equals(y80Var.a) && this.b == y80Var.b && this.c.equals(y80Var.c)) {
+                return true;
+            }
         }
-        if (!this.a.equals(((y80) ((tq2) obj)).a)) {
-            return false;
-        }
-        Object obj2 = sq2.a;
-        return obj2.equals(obj2);
+        return false;
     }
 
     public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ sq2.a.hashCode();
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c.hashCode();
     }
 
     public final String toString() {
-        return "ComplianceData{privacyContext=" + this.a + ", productIdOrigin=" + sq2.a + "}";
+        return "Thread{name=" + this.a + ", importance=" + this.b + ", frames=" + this.c + "}";
     }
 }

@@ -1,21 +1,42 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Path;
+import android.graphics.RectF;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class lib {
-    public final long a;
-    public final TLRPC.InputFile b;
-    public final TLRPC.InputEncryptedFile c;
-    public final byte[] d;
-    public final byte[] e;
+public final class lib extends Path {
+    public static ArrayList d;
+    public float a;
+    public ArrayList b;
+    public int c;
 
-    public lib(long j, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
-        this.a = j;
-        this.b = inputFile;
-        this.c = inputEncryptedFile;
-        this.d = bArr;
-        this.e = bArr2;
+    @Override // android.graphics.Path
+    public final void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
+        ArrayList arrayList = d;
+        RectF rectF = (arrayList == null || arrayList.size() <= 0) ? new RectF() : (RectF) d.remove(0);
+        rectF.set(f, f2, f3, f4);
+        this.b.add(rectF);
+        this.c++;
+        super.addRect(f, f2, f3, f4, direction);
+        if (f4 > this.a) {
+            this.a = f4;
+        }
+    }
+
+    @Override // android.graphics.Path
+    public final void reset() {
+        ArrayList arrayList = this.b;
+        super.reset();
+        ArrayList arrayList2 = d;
+        if (arrayList2 == null) {
+            arrayList2 = new ArrayList(arrayList.size());
+            d = arrayList2;
+        }
+        arrayList2.addAll(arrayList);
+        arrayList.clear();
+        this.c = 0;
+        this.a = 0.0f;
     }
 }

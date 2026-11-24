@@ -1,33 +1,48 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z9b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cab b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class z9b {
+    public final int a;
+    public int b;
+    public boolean c;
+    public long d;
+    public final /* synthetic */ o90 e;
 
-    public /* synthetic */ z9b(cab cabVar, byte b) {
-        this.a = b;
-        this.b = cabVar;
+    public z9b(o90 o90Var, int i) {
+        this.e = o90Var;
+        this.a = i;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        cab cabVar = this.b;
-        switch (b) {
-            case 0:
-                oab oabVar = cabVar.y0;
-                oabVar.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                oabVar.V();
-                break;
-            default:
-                oab oabVar2 = cabVar.y0;
-                oabVar2.X = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                oabVar2.V();
-                break;
+    public final void a() {
+        o90 o90Var = this.e;
+        cdb cdbVar = (cdb) o90Var.f;
+        y54 y54Var = (y54) o90Var.a;
+        int v0 = y54Var.v0();
+        if (!y54Var.s() || y54Var.h() == 1 || y54Var.h() == 4 || v0 == 0 || v0 == 1) {
+            if (this.c) {
+                cdbVar.g(4);
+            }
+            this.c = false;
+            return;
         }
+        ((adb) o90Var.d).getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        boolean z = this.c;
+        int i = this.a;
+        if (z && this.b == v0) {
+            if (elapsedRealtime - this.d >= i) {
+                ((t54) o90Var.c).a.t1(new j54(2, new aab(4, i), 1003));
+                return;
+            }
+            return;
+        }
+        this.c = true;
+        this.d = elapsedRealtime;
+        this.b = v0;
+        cdbVar.g(4);
+        cdbVar.a.sendEmptyMessageDelayed(4, i);
     }
 }

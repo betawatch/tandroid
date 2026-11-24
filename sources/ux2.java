@@ -1,58 +1,53 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
+import android.content.Context;
+import android.view.View;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ux2 implements Iterable {
-    public final Object a = new Object();
-    public final HashMap b = new HashMap();
-    public Set c = Collections.EMPTY_SET;
-    public List d = Collections.EMPTY_LIST;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ux2 implements c39 {
+    public final /* synthetic */ wjb a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ xx2 c;
 
-    public final int h(fs3 fs3Var) {
-        int intValue;
-        synchronized (this.a) {
-            intValue = this.b.containsKey(fs3Var) ? ((Integer) this.b.get(fs3Var)).intValue() : 0;
-        }
-        return intValue;
+    public ux2(xx2 xx2Var, wjb wjbVar, Context context) {
+        this.c = xx2Var;
+        this.a = wjbVar;
+        this.b = context;
     }
 
-    public final void i(fs3 fs3Var) {
-        synchronized (this.a) {
-            Integer num = (Integer) this.b.get(fs3Var);
-            if (num == null) {
+    @Override // c39
+    public final void d(int i, View view) {
+        TLRPC.TL_help_country tL_help_country;
+        xx2 xx2Var = this.c;
+        ro4 ro4Var = xx2Var.c2;
+        HashMap hashMap = xx2Var.e2;
+        if (i == 0 || (tL_help_country = (TLRPC.TL_help_country) xx2Var.Y1.G(i - 1).H) == null) {
+            return;
+        }
+        boolean z = false;
+        if (hashMap.containsKey(tL_help_country.iso2)) {
+            ro4Var.c((ya5) hashMap.remove(tL_help_country.iso2));
+        } else {
+            int size = hashMap.size();
+            int i2 = xx2Var.h2;
+            if (size >= i2) {
+                b00.u(k96.a0(null, null, 2131746919, Integer.valueOf(i2)), new u21(xx2Var.i2, this.a), R.raw.info, 36);
                 return;
             }
-            ArrayList arrayList = new ArrayList(this.d);
-            arrayList.remove(fs3Var);
-            this.d = DesugarCollections.unmodifiableList(arrayList);
-            int intValue = num.intValue();
-            HashMap hashMap = this.b;
-            if (intValue == 1) {
-                hashMap.remove(fs3Var);
-                HashSet hashSet = new HashSet(this.c);
-                hashSet.remove(fs3Var);
-                this.c = DesugarCollections.unmodifiableSet(hashSet);
-            } else {
-                hashMap.put(fs3Var, Integer.valueOf(num.intValue() - 1));
-            }
+            ya5 ya5Var = new ya5(this.b, tL_help_country);
+            ya5Var.setOnClickListener(new rx2(xx2Var, (byte) 4));
+            ro4Var.a(ya5Var);
+            hashMap.put(tL_help_country.iso2, ya5Var);
+            z = true;
         }
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        Iterator it;
-        synchronized (this.a) {
-            it = this.d.iterator();
+        if (view instanceof bz9) {
+            ((bz9) view).c(z, true);
         }
-        return it;
+        xx2Var.Y1.O(true);
+        xx2Var.Z1.c(hashMap.size(), true);
     }
 }

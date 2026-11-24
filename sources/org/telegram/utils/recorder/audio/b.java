@@ -3,7 +3,7 @@ package org.telegram.utils.recorder.audio;
 import java.io.File;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -11,9 +11,9 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(h40 h40Var, f40 f40Var, long j) {
-        this.c = h40Var;
-        this.d = f40Var;
+    public /* synthetic */ b(h30 h30Var, f30 f30Var, long j) {
+        this.c = h30Var;
+        this.d = f30Var;
         this.b = j;
     }
 
@@ -31,7 +31,7 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 d dVar = (d) obj2;
                 Exception exc = (Exception) obj;
-                q30 q30Var = dVar.f;
+                q20 q20Var = dVar.f;
                 File file = dVar.a;
                 ByteBuffer byteBuffer = dVar.s;
                 if (dVar.w) {
@@ -90,36 +90,36 @@ public final /* synthetic */ class b implements Runnable {
                 Exception exc3 = exc;
                 long length = file.isFile() ? file.length() : 0L;
                 if (dVar.z > 0) {
-                    q30Var.b("RNNoise summary: frames=" + dVar.z + ", averageMs=" + ((dVar.A / dVar.z) / 1000000.0d) + ", maxMs=" + (dVar.B / 1000000.0d));
+                    q20Var.b("RNNoise summary: frames=" + dVar.z + ", averageMs=" + ((dVar.A / dVar.z) / 1000000.0d) + ", maxMs=" + (dVar.B / 1000000.0d));
                 }
                 long j = this.b;
-                StringBuilder o = wi8.o(j, "capture stopped: samples=", ", durationMs=");
+                StringBuilder o = ug8.o(j, "capture stopped: samples=", ", durationMs=");
                 o.append((1000 * j) / 48000);
                 o.append(", bytes=");
                 o.append(length);
                 o.append(", maxQueuedChunks=");
                 o.append(dVar.y);
-                q30Var.b(o.toString());
-                m30 m30Var = dVar.g;
-                h40 h40Var = (h40) m30Var.c;
+                q20Var.b(o.toString());
+                m20 m20Var = dVar.g;
+                h30 h30Var = (h30) m20Var.c;
                 if (exc3 == null) {
-                    h40Var.a((f40) m30Var.b, length);
-                    h40Var.i.post(new w30(m30Var, m30Var.a, j, (byte) 1));
+                    h30Var.a((f30) m20Var.b, length);
+                    h30Var.i.post(new w20(m20Var, m20Var.a, j, (byte) 1));
                 } else {
-                    h40Var.i.post(new of2(m30Var, m30Var.a, exc3, (byte) 11));
+                    h30Var.i.post(new de2(m20Var, m20Var.a, exc3, (byte) 11));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
                 return;
             default:
-                h40 h40Var2 = (h40) obj2;
-                f40 f40Var = (f40) obj;
+                h30 h30Var2 = (h30) obj2;
+                f30 f30Var = (f30) obj;
                 try {
-                    bArr = AudioRecorderNative.e(f40Var.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(f30Var.b.getAbsolutePath());
                 } catch (Throwable th3) {
-                    h40Var2.h.a("final waveform extraction failed", th3);
+                    h30Var2.h.a("final waveform extraction failed", th3);
                 }
-                h40Var2.i.post(new p97((Object) h40Var2, (Object) f40Var, this.b, (Object) bArr, (byte) 2));
+                h30Var2.i.post(new m77((Object) h30Var2, (Object) f30Var, this.b, (Object) bArr, (byte) 2));
                 return;
         }
     }

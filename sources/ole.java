@@ -1,15 +1,19 @@
 // default package
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ole extends IOException {
-    public ole(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
-        super(str.length() != 0 ? "CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str) : new String("CodedOutputStream was writing to a flat byte array and ran out of space.: "), indexOutOfBoundsException);
+public final class ole implements zn7 {
+    public static final ole a = new ole();
+
+    static {
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
     }
 
-    public ole(IndexOutOfBoundsException indexOutOfBoundsException) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

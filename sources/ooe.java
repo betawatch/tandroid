@@ -1,36 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ooe extends f4e {
-    private static final ooe zzb;
-    private int zzd;
-    private int zze;
-
-    static {
-        ooe ooeVar = new ooe();
-        zzb = ooeVar;
-        f4e.k(ooe.class, ooeVar);
+public abstract class ooe {
+    public static Integer a(String str) {
+        if (str == null) {
+            return null;
+        }
+        switch (str.hashCode()) {
+            case -1118317585:
+                return str.equals("REPEAT_ALL_AND_SHUFFLE") ? 3 : null;
+            case -962896020:
+                return str.equals("REPEAT_SINGLE") ? 2 : null;
+            case 1645938909:
+                return str.equals("REPEAT_ALL") ? 1 : null;
+            case 1645952171:
+                return str.equals("REPEAT_OFF") ? 0 : null;
+            default:
+                return null;
+        }
     }
 
-    @Override // f4e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public static String b(Integer num) {
+        if (num == null) {
+            return null;
         }
-        if (i2 == 2) {
-            return new wce(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", btd.g});
+        int intValue = num.intValue();
+        if (intValue == 0) {
+            return "REPEAT_OFF";
         }
-        if (i2 == 3) {
-            return new ooe();
+        if (intValue == 1) {
+            return "REPEAT_ALL";
         }
-        if (i2 == 4) {
-            return new hrd(zzb);
+        if (intValue == 2) {
+            return "REPEAT_SINGLE";
         }
-        if (i2 == 5) {
-            return zzb;
+        if (intValue != 3) {
+            return null;
         }
-        throw null;
+        return "REPEAT_ALL_AND_SHUFFLE";
     }
 }

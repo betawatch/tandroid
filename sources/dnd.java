@@ -1,10 +1,23 @@
 // default package
 
-import java.util.Collection;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface dnd extends Collection {
-    Set zza();
+public abstract class dnd {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        dnd.class.getClassLoader();
+    }
+
+    public static void a(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
+    }
 }

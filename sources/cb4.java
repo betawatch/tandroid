@@ -1,40 +1,96 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class cb4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lb4 b;
-    public final /* synthetic */ int c;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Map;
 
-    public /* synthetic */ cb4(lb4 lb4Var, int i, byte b) {
-        this.a = b;
-        this.b = lb4Var;
-        this.c = i;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class cb4 extends vw5 implements qp4 {
+    public static final cb4 c;
+    public static final cb4 d;
+    public static final cb4 e;
+    public final /* synthetic */ byte b;
+
+    static {
+        int i = 1;
+        c = new cb4(i, (byte) 0);
+        d = new cb4(i, (byte) 1);
+        e = new cb4(i, (byte) 2);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        lb4 lb4Var = this.b;
-        switch (b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ cb4(int i, byte b) {
+        super(i);
+        this.b = b;
+    }
+
+    @Override // qp4
+    public final Object invoke(Object obj) {
+        String valueOf;
+        int i;
+        switch (this.b) {
             case 0:
-                lb4Var.F0.add(Integer.valueOf(i));
-                break;
+                File file = (File) obj;
+                file.getClass();
+                String absolutePath = file.getCanonicalFile().getAbsolutePath();
+                absolutePath.getClass();
+                return new pia(absolutePath);
             case 1:
-                lb4Var.F0.remove(Integer.valueOf(i));
-                break;
-            case 2:
-                lb4Var.F0.remove(Integer.valueOf(i));
-                break;
-            default:
-                zb4 zb4Var = lb4Var.g0;
-                if (zb4Var != null) {
-                    zb4Var.b(lb4Var, i);
+                Map.Entry entry = (Map.Entry) obj;
+                entry.getClass();
+                Object value = entry.getValue();
+                if (value instanceof byte[]) {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append((CharSequence) "[");
+                    int i2 = 0;
+                    for (byte b : (byte[]) value) {
+                        i2++;
+                        if (i2 > 1) {
+                            sb.append((CharSequence) ", ");
+                        }
+                        sb.append((CharSequence) String.valueOf((int) b));
+                    }
+                    sb.append((CharSequence) "]");
+                    valueOf = sb.toString();
+                } else {
+                    valueOf = String.valueOf(entry.getValue());
                 }
-                lb4Var.g();
-                break;
+                return ls6.o(((lg8) entry.getKey()).a, " = ", valueOf, new StringBuilder("  "));
+            default:
+                ArrayList arrayList = ((f0d) obj).a;
+                ArrayList arrayList2 = new ArrayList(al2.c(arrayList, 10));
+                int size = arrayList.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj2 = arrayList.get(i3);
+                    i3++;
+                    b0d b0dVar = (b0d) obj2;
+                    int i4 = b0dVar.c;
+                    if (i4 == 0) {
+                        i = 0;
+                    } else if (i4 != 1) {
+                        i = 2;
+                        if (i4 != 2) {
+                            i = 3;
+                            if (i4 != 3) {
+                                i = 4;
+                                if (i4 != 4) {
+                                    fvc.d(b0dVar.c, "Unknown capability status: ");
+                                    return null;
+                                }
+                            } else {
+                                continue;
+                            }
+                        } else {
+                            continue;
+                        }
+                    } else {
+                        i = 1;
+                    }
+                    arrayList2.add(new v9c(b0dVar.a, i, b0dVar.b));
+                }
+                return arrayList2;
         }
     }
 }

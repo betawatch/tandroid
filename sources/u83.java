@@ -1,26 +1,19 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class u83 extends qx2 {
-    public h93 a;
-    public qj7 b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ h93 d;
-    public int e;
+public interface u83 {
+    void a(long j);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u83(h93 h93Var, qx2 qx2Var) {
-        super(qx2Var);
-        this.d = h93Var;
-    }
+    Object c();
 
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.b(this);
-    }
+    Object d();
+
+    void e(Object obj);
+
+    void flush();
+
+    String getName();
+
+    void release();
 }

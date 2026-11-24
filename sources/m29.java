@@ -1,0 +1,71 @@
+// default package
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.ui.Components.CheckBoxSquare;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class m29 extends FrameLayout {
+    public final i46 a;
+    public final l46 b;
+    public final CheckBoxSquare c;
+
+    public m29(Context context, wjb wjbVar) {
+        super(context);
+        CheckBoxSquare checkBoxSquare = new CheckBoxSquare(null, context, false);
+        this.c = checkBoxSquare;
+        checkBoxSquare.setDuplicateParentStateEnabled(false);
+        checkBoxSquare.setFocusable(false);
+        checkBoxSquare.setFocusableInTouchMode(false);
+        checkBoxSquare.setClickable(false);
+        addView(checkBoxSquare, nme.d(18, 18.0f, (k96.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
+        i46 i46Var = new i46(this);
+        this.a = i46Var;
+        l46 l46Var = new l46(context, i46Var, wjbVar);
+        this.b = l46Var;
+        zkb.X(l46Var, bkb.F6, wjbVar);
+        zkb.G(l46Var, bkb.I6, wjbVar);
+        l46Var.setTextSize(1, 15.0f);
+        l46Var.setMaxLines(2);
+        l46Var.setGravity((k96.a0 ? 5 : 3) | 16);
+        l46Var.setEllipsize(TextUtils.TruncateAt.END);
+        boolean z = k96.a0;
+        addView(l46Var, nme.d(-1, -1.0f, (z ? 5 : 3) | 48, z ? 16.0f : 58.0f, 21.0f, z ? 58.0f : 16.0f, 21.0f));
+        setWillNotDraw(false);
+    }
+
+    public CheckBoxSquare getCheckBox() {
+        return this.c;
+    }
+
+    public TextView getTextView() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        i46 i46Var = this.a;
+        if (i46Var != null) {
+            canvas.save();
+            l46 l46Var = this.b;
+            canvas.translate(l46Var.getLeft(), l46Var.getTop());
+            if (i46Var.g(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
+        }
+    }
+
+    public void setChecked(boolean z) {
+        this.c.a(z, true);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
+}

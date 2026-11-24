@@ -1,93 +1,47 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class q34 implements Set, Serializable {
-    public static final q34 a = new q34();
-
-    @Override // java.util.Set, java.util.Collection
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final /* bridge */ boolean contains(Object obj) {
-        return false;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean containsAll(Collection collection) {
-        collection.getClass();
-        return collection.isEmpty();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean equals(Object obj) {
-        return (obj instanceof Set) && ((Set) obj).isEmpty();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean isEmpty() {
-        return true;
-    }
-
-    @Override // java.util.Set, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return m34.a;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final int size() {
-        return 0;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        return ea3.c(this, objArr);
-    }
-
-    public final String toString() {
-        return "[]";
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final Object[] toArray() {
-        return ea3.b(this);
+public final class q34 extends p34 {
+    public final void b(int i, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i2) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            TLRPC.TL_message b = t34.b((TL_ephemeral.EphemeralMessage) obj);
+            int i4 = i;
+            ConcurrentHashMap concurrentHashMap3 = concurrentHashMap;
+            ConcurrentHashMap concurrentHashMap4 = concurrentHashMap2;
+            k27 k27Var = new k27(i4, (TLRPC.Message) b, (AbstractMap) concurrentHashMap3, (AbstractMap) concurrentHashMap4, true, true);
+            long B0 = k27.B0(b);
+            if (i2 != 0) {
+                b.edit_date = i2;
+                b.flags |= 32768;
+            }
+            vf6 vf6Var = this.b;
+            TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) vf6Var.f(B0);
+            if (tL_messages_messages == null) {
+                tL_messages_messages = new TLRPC.TL_messages_messages();
+                vf6Var.k(tL_messages_messages, B0);
+            }
+            tL_messages_messages.messages.add(b);
+            vf6 vf6Var2 = this.c;
+            ArrayList arrayList2 = (ArrayList) vf6Var2.f(B0);
+            if (arrayList2 == null) {
+                arrayList2 = tb4.s(vf6Var2, B0);
+            }
+            arrayList2.add(k27Var);
+            i = i4;
+            concurrentHashMap = concurrentHashMap3;
+            concurrentHashMap2 = concurrentHashMap4;
+        }
     }
 }

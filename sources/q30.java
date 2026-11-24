@@ -1,25 +1,47 @@
 // default package
 
-import android.os.SystemClock;
-import java.util.concurrent.atomic.AtomicLong;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class q30 {
-    public static final AtomicLong d = new AtomicLong(1);
-    public final long a = d.getAndIncrement();
-    public final long b = SystemClock.elapsedRealtime();
-    public final d40 c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class q30 extends c4 {
+    public int f;
+    public byte h;
+    public long n;
 
-    public q30(d40 d40Var) {
-        this.c = d40Var;
+    @Override // a2, iy0
+    public final void getBox(WritableByteChannel writableByteChannel) {
+        writableByteChannel.write(d());
+        ByteBuffer allocate = ByteBuffer.allocate(28);
+        allocate.position(6);
+        ile.d(1, allocate);
+        ile.d(0, allocate);
+        ile.d(0, allocate);
+        allocate.putInt(0);
+        ile.d(this.f, allocate);
+        ile.d(this.h, allocate);
+        ile.d(0, allocate);
+        ile.d(0, allocate);
+        boolean equals = this.e.equals("mlpa");
+        long j = this.n;
+        if (equals) {
+            allocate.putInt((int) j);
+        } else {
+            allocate.putInt((int) (j << 16));
+        }
+        writableByteChannel.write((ByteBuffer) allocate.rewind());
+        c(writableByteChannel);
     }
 
-    public final void a(String str, Throwable th) {
-        this.c.s("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str, th);
+    @Override // a2, iy0
+    public final long getSize() {
+        long b = b();
+        return 28 + b + (b + 36 >= 4294967296L ? 16 : 8);
     }
 
-    public final void b(String str) {
-        this.c.d("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str);
+    @Override // yg0
+    public final String toString() {
+        return "AudioSampleEntry{bytesPerSample=0, bytesPerFrame=0, bytesPerPacket=0, samplesPerPacket=0, packetSize=0, compressionId=0, soundVersion=0, sampleRate=" + this.n + ", sampleSize=" + ((int) this.h) + ", channelCount=" + this.f + ", boxes=" + this.b + '}';
     }
 }

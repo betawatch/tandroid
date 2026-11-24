@@ -1,38 +1,35 @@
 // default package
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.Components.q;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class oq5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ q b;
+public final class oq5 extends ClickableSpan {
+    public final /* synthetic */ fx0[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    public /* synthetic */ oq5(q qVar, byte b) {
-        this.a = b;
-        this.b = qVar;
+    public oq5(fx0[] fx0VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = fx0VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        q qVar = this.b;
-        switch (b) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * qVar.getMeasuredHeight() * 0.5f;
-                qVar.z0 = floatValue;
-                qVar.w.setTranslationY(floatValue + qVar.y0);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qVar.B0 = floatValue2;
-                un9 un9Var = qVar.Q;
-                if (un9Var != null) {
-                    un9Var.y(floatValue2);
-                    break;
-                }
-                break;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        d S = LaunchActivity.S();
+        if (S != null) {
+            S.presentFragment(ProfileActivity.P2(this.b.user_id));
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

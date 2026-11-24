@@ -1,66 +1,54 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class os1 extends jw1 {
-    public fg0 e;
-    public int f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ yv1 n;
+public final /* synthetic */ class os1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ k27 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public os1(yv1 yv1Var, Context context, boolean z) {
-        super(context);
-        this.n = yv1Var;
-        this.h = z;
+    public /* synthetic */ os1(z3a z3aVar, k27 k27Var) {
+        this.a = (byte) 2;
+        this.b = k27Var;
     }
 
-    @Override // jw1
-    public final void d() {
-        try {
-            int themedColor = this.n.getThemedColor(cmb.mf);
-            if (this.e != null) {
-                Drawable background = getBackground();
-                Drawable drawable = this.e;
-                if (background == drawable) {
-                    if (themedColor != this.f) {
-                        cmb.F1(drawable, 436207615 & themedColor, true);
-                    }
-                    if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
-                        getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-                    }
-                    this.f = themedColor;
-                    if (getTextView() != null || getTextView().getCurrentTextColor() == themedColor) {
-                    }
-                    getTextView().setTextColor(themedColor);
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.Message message;
+        byte b = this.a;
+        k27 k27Var = this.b;
+        switch (b) {
+            case 0:
+                k27Var.q = false;
+                break;
+            case 1:
+                if (uyb.k(k27Var)) {
+                    uyb.z(k27Var, false, null);
+                    break;
                 }
-            }
-            fg0 W = cmb.W(gm.L(19.0f), themedColor & 436207615, this.h ? gm.L(4.0f) : 0, gm.L(3.0f), 0, gm.L(3.0f));
-            this.e = W;
-            setBackground(W);
-            if (getImageView() != null) {
-                getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-            }
-            this.f = themedColor;
-            if (getTextView() != null) {
-            }
-        } catch (Exception e) {
-            fc4.g(e, true);
+                break;
+            case 2:
+                if (k27Var != null && (message = k27Var.k) != null) {
+                    message.reqId = 0;
+                    break;
+                }
+                break;
+            case 3:
+                n40 n40Var = (n40) bkb.d5.remove(k27Var);
+                if (n40Var != null) {
+                    n40Var.i = null;
+                    break;
+                }
+                break;
+            default:
+                kk7.f(k27Var.K1).k(kk7.z1, k27Var);
+                break;
         }
     }
 
-    @Override // jw1
-    public final void setEditButton(boolean z) {
-        super.setEditButton(z);
-        if (this.h) {
-            getTextView().setMaxWidth(z ? gm.L(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
-        }
+    public /* synthetic */ os1(k27 k27Var, byte b) {
+        this.a = b;
+        this.b = k27Var;
     }
 }

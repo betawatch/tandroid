@@ -1,559 +1,464 @@
 // default package
 
 import android.animation.ValueAnimator;
-import android.app.Dialog;
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.DialogInterface;
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.text.Layout;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.ForegroundColorSpan;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.WeakHashMap;
+import java.util.HashSet;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vs9 extends Dialog {
-    public static final /* synthetic */ int P = 0;
-    public ViewGroup E;
-    public Drawable F;
-    public im0 G;
-    public float H;
-    public float I;
-    public float J;
-    public float K;
-    public float L;
-    public boolean M;
-    public boolean N;
-    public ValueAnimator O;
-    public final Context a;
-    public final ylb b;
-    public Bitmap c;
-    public BitmapShader d;
-    public Paint e;
-    public Matrix f;
-    public final jz4 h;
-    public final km0 n;
-    public float r;
-    public final ne6 s;
-    public final ela w;
-    public bu5 x;
-    public FrameLayout y;
+public abstract class vs9 extends FrameLayout implements gk7 {
+    public static hd I;
+    public final long E;
+    public float F;
+    public float G;
+    public ValueAnimator H;
+    public final int a;
+    public final d b;
+    public final wjb c;
+    public final ns9 d;
+    public final gx0 e;
+    public LinearLayout f;
+    public long h;
+    public final ArrayList n;
+    public final ArrayList r;
+    public boolean s;
+    public kl0 w;
+    public nl0 x;
+    public final Paint y;
 
-    public vs9(Context context, ylb ylbVar) {
-        super(context, R.style.TransparentDialog);
-        this.K = 1.0f;
-        this.L = 1.0f;
-        this.N = false;
-        this.a = context;
-        this.b = ylbVar;
-        ne6 ne6Var = new ne6((byte) 16, context, this);
-        this.s = ne6Var;
-        ne6Var.setOnClickListener(new wk8(this, (byte) 15));
-        ela elaVar = new ela(context, null);
-        this.w = elaVar;
-        elaVar.setClipToPadding(false);
-        ne6Var.addView(elaVar, qoe.e(-1, -1, nm7.D1));
-        jz4 jz4Var = new jz4();
-        this.h = jz4Var;
-        km0 km0Var = new km0(jz4Var, jz4Var, jz4Var);
-        this.n = km0Var;
-        km0Var.h = new zgc(ne6Var);
-        km0Var.i = ne6Var;
-        x59 x59Var = new x59(this, (byte) 8);
-        WeakHashMap weakHashMap = kfc.a;
-        cfc.i(ne6Var, x59Var);
-    }
-
-    public static void d(jac jacVar) {
-        gm.j2(new eg9(jacVar, (byte) 2), 15.0f);
-    }
-
-    public final void a(Runnable runnable, boolean z) {
-        ValueAnimator valueAnimator = this.O;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, z ? 1.0f : 0.0f);
-        this.O = ofFloat;
-        ofFloat.addUpdateListener(new p29(this, (byte) 9));
-        this.O.addListener(new qx((Object) this, z, (Object) runnable, (byte) 11));
-        this.O.setInterpolator(d53.h);
-        this.O.setDuration(350L);
-        this.O.start();
-    }
-
-    public final /* synthetic */ void b() {
-        super.dismiss();
-    }
-
-    public final /* synthetic */ void c() {
-        super.dismiss();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.N) {
-            return;
-        }
-        this.N = true;
-        a(new hm1(this, (byte) 3), false);
-        this.s.invalidate();
-    }
-
-    public final void e(bu5 bu5Var) {
-        int i = cmb.D8;
-        ylb ylbVar = this.b;
-        bu5Var.U(cmb.p1(0.06f, cmb.v0(i, ylbVar)));
-        bu5Var.R(this.n, qqd.k(ylbVar), false);
-        this.x = bu5Var;
-        this.E = bu5Var.A;
-        FrameLayout frameLayout = new FrameLayout(this.a);
-        this.y = frameLayout;
-        frameLayout.addView(this.E, qoe.c(-2.0f, -2));
-        this.w.addView(this.y, qoe.c(-2.0f, -2));
+    public vs9(Context context, d dVar, int i, long j, wjb wjbVar) {
+        super(context);
+        this.n = new ArrayList();
+        this.r = new ArrayList();
+        this.y = new Paint(1);
+        this.a = i;
+        this.b = dVar;
+        this.c = wjbVar;
+        this.E = j;
+        i19.n(wjbVar);
+        ns9 ns9Var = new ns9(this, context, wjbVar, (byte) 0);
+        this.d = ns9Var;
+        ns9Var.setPadding(gl.L(5.66f), 0, gl.L(5.66f), 0);
+        ns9Var.setClipToPadding(false);
+        t26 t26Var = new t26();
+        t26Var.i1(0);
+        ns9Var.setLayoutManager(t26Var);
+        gx0 gx0Var = new gx0(this, (byte) 9);
+        this.e = gx0Var;
+        ns9Var.setAdapter(gx0Var);
+        ns9Var.setOverScrollMode(2);
+        addView(ns9Var, nme.c(-1.0f, -1));
+        ns9Var.setOnItemClickListener(new sh8(this, i, dVar, (byte) 1));
+        ns9Var.setOnItemLongClickListener(new zm((Object) this, i, (Object) dVar, (Object) wjbVar, (byte) 9));
+        os9 os9Var = new os9();
+        os9Var.o(s33.h);
+        os9Var.n(320L);
+        ns9Var.setItemAnimator(os9Var);
+        hq6.d0(i).a1(false);
+        h(false);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0202  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x03b3  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x03c4  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x03d5  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:151:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x03bd  */
-    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0145 A[EDGE_INSN: B:52:0x0145->B:53:0x0145 BREAK  A[LOOP:2: B:45:0x0119->B:49:0x0142], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01d7  */
-    /* JADX WARN: Type inference failed for: r13v8, types: [android.graphics.Canvas] */
-    /* JADX WARN: Type inference failed for: r15v0 */
-    /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v11 */
-    /* JADX WARN: Type inference failed for: r15v12 */
-    /* JADX WARN: Type inference failed for: r15v13 */
-    /* JADX WARN: Type inference failed for: r15v15 */
-    /* JADX WARN: Type inference failed for: r15v16 */
-    /* JADX WARN: Type inference failed for: r15v17 */
-    /* JADX WARN: Type inference failed for: r15v2 */
-    /* JADX WARN: Type inference failed for: r15v3 */
-    /* JADX WARN: Type inference failed for: r15v4, types: [android.text.Layout, android.text.StaticLayout] */
-    /* JADX WARN: Type inference failed for: r15v8, types: [android.text.StaticLayout] */
-    /* JADX WARN: Type inference failed for: r15v9 */
-    /* JADX WARN: Type inference failed for: r5v10 */
-    /* JADX WARN: Type inference failed for: r5v11, types: [android.text.Layout] */
-    /* JADX WARN: Type inference failed for: r5v51 */
-    /* JADX WARN: Type inference failed for: r6v37, types: [android.graphics.Path, b66] */
-    /* JADX WARN: Type inference failed for: r7v16, types: [android.graphics.Path, b66, zx2] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void f(rc2 rc2Var, CharacterStyle characterStyle, SpannableString spannableString, boolean z) {
-        float f;
-        float f2;
-        ArrayList arrayList;
-        float f3;
-        boolean z2;
-        int i;
-        int i2;
-        int i3;
-        ?? r15;
-        float f4;
-        int i4;
-        float f5;
-        ?? r5;
-        RectF rectF;
-        Layout layout;
-        Paint paint;
-        float f6;
-        Bitmap bitmap;
-        SpannableStringBuilder spannableStringBuilder;
-        int i5;
-        uj9 uj9Var;
-        ii9 ii9Var;
-        ArrayList<qc2> pollButtons;
-        int i6;
-        float f7;
-        float f8;
-        StaticLayout descriptionlayout;
-        CharacterStyle[] characterStyleArr;
-        int i7;
-        if (rc2Var == null) {
-            return;
-        }
-        rc2Var.getCurrentMessagesGroup();
-        k47 messageObject = rc2Var.getMessageObject();
-        int i8 = 0;
-        boolean z3 = rc2Var.getExplanationLayout() != null && messageObject.L0;
-        if (z3 && z) {
-            f = rc2Var.getExplanationX();
-            f2 = rc2Var.getExplanationY();
-            arrayList = rc2Var.getExplanationLayout().e;
-            f3 = rc2Var.getExplanationLayout().d;
-        } else if (rc2Var.getCaptionLayout() != null) {
-            f = rc2Var.getCaptionX();
-            f2 = rc2Var.getCaptionY();
-            arrayList = rc2Var.getCaptionLayout().e;
-            f3 = rc2Var.getCaptionLayout().d;
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
+    /* JADX WARN: Type inference failed for: r2v16, types: [java.lang.CharSequence] */
+    public static void c(Context context, int i, TLRPC.Reaction reaction, wjb wjbVar) {
+        SpannableString spannableString;
+        d Q = LaunchActivity.Q();
+        Activity W = gl.W(context);
+        View currentFocus = W != null ? W.getCurrentFocus() : null;
+        final byte b = 0;
+        boolean z = Q != null && (Q.getFragmentView() instanceof cja) && ((cja) Q.getFragmentView()).Q() > gl.L(20.0f);
+        hd[] hdVarArr = new hd[1];
+        ?? mdVar = z ? new md(0, wjbVar, context) : new AlertDialog$Builder(0, wjbVar, context);
+        String H1 = na7.q1(i).H1(reaction);
+        h19 d = h19.d(reaction);
+        TextPaint textPaint = new TextPaint();
+        textPaint.setTextSize(gl.L(20.0f));
+        if (TextUtils.isEmpty(d.f)) {
+            SpannableString spannableString2 = new SpannableString("😀");
+            spannableString2.setSpan(new gm(d.g, textPaint.getFontMetricsInt()), 0, spannableString2.length(), 17);
+            spannableString = spannableString2;
         } else {
-            f = 0.0f;
-            f2 = 0.0f;
-            arrayList = null;
-            f3 = 0.0f;
+            spannableString = vu3.m(d.f, textPaint.getFontMetricsInt(), false, null, 0);
         }
-        if (arrayList == null) {
-            f = rc2Var.getTextX();
-            f2 = rc2Var.getTextY() + rc2Var.Uc;
-            arrayList = messageObject.B2;
-            f3 = messageObject.x2;
+        SpannableStringBuilder append = new SpannableStringBuilder(spannableString).append((CharSequence) "  ").append((CharSequence) k96.M0(TextUtils.isEmpty(H1) ? 2131745689 : 2131745677, null));
+        hd hdVar = mdVar.a;
+        hdVar.S = append;
+        final ps9 ps9Var = new ps9(context, wjbVar);
+        ps9Var.setOnEditorActionListener(new qs9(ps9Var, i, reaction, hdVarArr, currentFocus));
+        hq6.d0(i).O(gl.F0(), true);
+        ps9Var.setTextSize(1, 18.0f);
+        if (H1 == null) {
+            H1 = "";
         }
-        if (arrayList != null) {
-            int i9 = 0;
-            while (i9 < arrayList.size()) {
-                h47 h47Var = (h47) arrayList.get(i9);
-                StaticLayout staticLayout = h47Var.e;
-                if (staticLayout == null || !(staticLayout.getText() instanceof Spanned)) {
-                    z2 = z3;
-                } else {
-                    z2 = z3;
-                    CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) ((Spanned) staticLayout.getText()).getSpans(i8, staticLayout.getText().length(), CharacterStyle.class);
-                    if (characterStyleArr2 != null) {
-                        for (int i10 = i8; i10 < characterStyleArr2.length; i10++) {
-                            if (characterStyleArr2[i10] == characterStyle) {
-                                i = ((Spanned) staticLayout.getText()).getSpanStart(characterStyle);
-                                i3 = ((Spanned) staticLayout.getText()).getSpanEnd(characterStyle);
-                                f += h47Var.l() ? (int) Math.ceil(f3) : 0;
-                                f2 += h47Var.p(arrayList, rc2Var.ub) + h47Var.f;
-                                i2 = h47Var.s;
-                                r15 = staticLayout;
-                                if (r15 == 0 && rc2Var.getDescriptionlayout() != null && (descriptionlayout = rc2Var.getDescriptionlayout()) != null && (descriptionlayout.getText() instanceof Spanned) && (characterStyleArr = (CharacterStyle[]) ((Spanned) descriptionlayout.getText()).getSpans(0, descriptionlayout.getText().length(), CharacterStyle.class)) != null) {
-                                    i7 = 0;
-                                    while (true) {
-                                        if (i7 >= characterStyleArr.length) {
-                                            break;
-                                        }
-                                        if (characterStyleArr[i7] == characterStyle) {
-                                            i = ((Spanned) descriptionlayout.getText()).getSpanStart(characterStyle);
-                                            i3 = ((Spanned) descriptionlayout.getText()).getSpanEnd(characterStyle);
-                                            f = rc2Var.getDescriptionLayoutX();
-                                            f2 = rc2Var.getDescriptionLayoutY();
-                                            i2 = descriptionlayout.getWidth();
-                                            r15 = descriptionlayout;
-                                            break;
-                                        }
-                                        i7++;
-                                    }
-                                }
-                                if (r15 == 0 && ((messageObject.C4() || messageObject.S3()) && (pollButtons = rc2Var.getPollButtons()) != null)) {
-                                    i6 = 0;
-                                    r15 = r15;
-                                    while (i6 < pollButtons.size()) {
-                                        qc2 qc2Var = pollButtons.get(i6);
-                                        StaticLayout staticLayout2 = qc2Var.p;
-                                        int i11 = i;
-                                        if (staticLayout2 != null && (staticLayout2.getText() instanceof Spanned)) {
-                                            f7 = f;
-                                            f8 = f2;
-                                            CharacterStyle[] characterStyleArr3 = (CharacterStyle[]) ((Spanned) staticLayout2.getText()).getSpans(0, staticLayout2.getText().length(), CharacterStyle.class);
-                                            if (characterStyleArr3 != null) {
-                                                for (CharacterStyle characterStyle2 : characterStyleArr3) {
-                                                    if (characterStyle2 == characterStyle) {
-                                                        i = ((Spanned) staticLayout2.getText()).getSpanStart(characterStyle);
-                                                        i3 = ((Spanned) staticLayout2.getText()).getSpanEnd(characterStyle);
-                                                        f = qc2Var.m;
-                                                        f2 = qc2Var.n;
-                                                        i2 = staticLayout2.getWidth();
-                                                        r15 = staticLayout2;
-                                                        break;
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            f7 = f;
-                                            f8 = f2;
-                                        }
-                                        i = i11;
-                                        f2 = f8;
-                                        f = f7;
-                                        i6++;
-                                        r15 = r15;
-                                    }
-                                }
-                                if (r15 == 0 && messageObject != null && (uj9Var = messageObject.y2) != null) {
-                                    ArrayList arrayList2 = uj9Var.g;
-                                    if (characterStyle != null) {
-                                        ii9Var = new ii9();
-                                        int i12 = 0;
-                                        for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                                            qi9 qi9Var = (qi9) arrayList2.get(i13);
-                                            if (qi9Var.R()) {
-                                                if (qi9Var.t(characterStyle, i12, ii9Var)) {
-                                                    break;
-                                                } else {
-                                                    i12 = qi9Var.H() + i12;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    ii9Var = null;
-                                    if (ii9Var != null) {
-                                        r15 = ii9Var.a;
-                                        i = ii9Var.b;
-                                        i3 = ii9Var.c;
-                                        i2 = ii9Var.d;
-                                        f = rc2Var.getTextX() + ii9Var.e;
-                                        f2 = rc2Var.getTextY() + ii9Var.f;
-                                    }
-                                }
-                                float f9 = f;
-                                int i14 = i;
-                                int i15 = i2;
-                                if (r15 != 0 && z2 && !z) {
-                                    f(rc2Var, characterStyle, spannableString, true);
-                                    return;
-                                }
-                                if (r15 != 0) {
-                                    return;
-                                }
-                                if (spannableString != null) {
-                                    int lineForOffset = r15.getLineForOffset(i14);
-                                    float lineTop = f2 + r15.getLineTop(lineForOffset);
-                                    float primaryHorizontal = r15.getPrimaryHorizontal(i14);
-                                    float lineWidth = r15.getLineWidth(lineForOffset);
-                                    ?? b66Var = new b66(0);
-                                    b66Var.d(r15, i14, 0.0f);
-                                    r15.getSelectionPath(i14, i3, b66Var);
-                                    RectF rectF2 = new RectF();
-                                    b66Var.computeBounds(rectF2, true);
-                                    TextPaint paint2 = r15.getPaint();
-                                    rectF = rectF2;
-                                    StaticLayout f52 = k47.f5(1.0f, 0.0f, r15.getWidth(), Layout.Alignment.ALIGN_NORMAL, paint2, spannableString, false);
-                                    i3 = spannableString.length();
-                                    float width = f52.getWidth();
-                                    float f10 = 0.0f;
-                                    for (int i16 = 0; i16 < f52.getLineCount(); i16++) {
-                                        width = Math.min(width, f52.getLineLeft(i16));
-                                        f10 = Math.max(f10, f52.getLineRight(i16));
-                                    }
-                                    f4 = f9 + Math.max(0.0f, Math.min(primaryHorizontal, lineWidth - Math.max(0.0f, f10 - width)));
-                                    f5 = lineTop;
-                                    i4 = 0;
-                                    r5 = f52;
-                                } else {
-                                    f4 = f9;
-                                    i4 = i14;
-                                    f5 = f2;
-                                    r5 = r15;
-                                    rectF = null;
-                                }
-                                Paint paint3 = new Paint(1);
-                                paint3.setColor(cmb.v0(messageObject.O3() ? cmb.qb : cmb.qa, this.b));
-                                paint3.setPathEffect(new CornerPathEffect(gm.L(5.0f)));
-                                ?? b66Var2 = new b66(0);
-                                b66Var2.c = true;
-                                b66Var2.d(r5, i4, 0.0f);
-                                r5.getSelectionPath(i4, i3, b66Var2);
-                                b66Var2.a();
-                                RectF rectF3 = new RectF();
-                                b66Var2.computeBounds(rectF3, true);
-                                int width2 = (int) (rectF3.width() + gm.L(5.0f));
-                                if (!rc2Var.L0() || width2 <= 0) {
-                                    layout = r5;
-                                    paint = paint3;
-                                    f6 = 0.0f;
-                                } else {
-                                    f6 = 0.0f;
-                                    if (rectF3.height() > 0.0f) {
-                                        Bitmap createBitmap = Bitmap.createBitmap(width2, (int) rectF3.height(), Bitmap.Config.ALPHA_8);
-                                        ?? canvas = new Canvas(createBitmap);
-                                        layout = r5;
-                                        paint = paint3;
-                                        Paint paint4 = new Paint(1);
-                                        paint4.setColor(-1);
-                                        canvas.drawRect(0.0f, 0.0f, width2, rectF3.height(), paint4);
-                                        Paint paint5 = new Paint(1);
-                                        paint5.setColor(-1);
-                                        paint5.setPathEffect(new CornerPathEffect(gm.L(5.0f)));
-                                        paint5.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                                        canvas.translate(-rectF3.left, -rectF3.top);
-                                        canvas.drawPath(b66Var2, paint5);
-                                        bitmap = createBitmap;
-                                        Paint paint6 = new Paint(3);
-                                        paint6.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                        rc2Var.F3();
-                                        TextPaint textPaint = new TextPaint(layout.getPaint());
-                                        textPaint.set(layout.getPaint());
-                                        Bitmap bitmap2 = bitmap;
-                                        spannableStringBuilder = new SpannableStringBuilder(gn.cloneSpans(layout.getText(), -1, textPaint.getFontMetricsInt()));
-                                        if (i4 <= 0) {
-                                            i5 = 0;
-                                            spannableStringBuilder.setSpan(new ForegroundColorSpan(0), 0, i4, 33);
-                                        } else {
-                                            i5 = 0;
-                                        }
-                                        if (i3 < spannableStringBuilder.length()) {
-                                            spannableStringBuilder.setSpan(new ForegroundColorSpan(i5), i3, spannableStringBuilder.length(), 33);
-                                        }
-                                        if (messageObject.R1 >= 4) {
-                                            f6 = -1.0f;
-                                        }
-                                        StaticLayout f53 = k47.f5(1.0f, f6, i15, Layout.Alignment.ALIGN_NORMAL, textPaint, spannableStringBuilder, false);
-                                        int[] iArr = new int[2];
-                                        rc2Var.getLocationOnScreen(iArr);
-                                        float f11 = f5;
-                                        this.F = new us9(b66Var2, new int[]{iArr[0] + ((int) f4), iArr[1] + ((int) f5)}, rc2Var, iArr, bitmap2, rectF3, paint6, paint, f53);
-                                        int L = (int) ((gm.L(5.0f) / 2.0f) + iArr[0] + f4 + rectF3.left);
-                                        int i17 = (int) (iArr[1] + f11 + rectF3.top);
-                                        this.F.setBounds(L, i17, ((int) rectF3.width()) + L, ((int) rectF3.height()) + i17);
-                                        if (spannableString == null) {
-                                            float f12 = L;
-                                            float width3 = rectF3.width() + f12;
-                                            Point point = gm.q;
-                                            if (width3 > point.x - gm.L(8.0f)) {
-                                                this.I -= (rectF3.width() + f12) - (point.x - gm.L(8.0f));
-                                            }
-                                            float f13 = i17;
-                                            if (rectF3.height() + f13 > ((point.y - gm.m) - gm.n) - gm.L(8.0f)) {
-                                                this.J -= (rectF3.height() + f13) - (((point.y - gm.m) - gm.n) - gm.L(8.0f));
-                                            }
-                                            if (rectF != null) {
-                                                this.K = rectF.width() / rectF3.width();
-                                                this.L = rectF.height() / rectF3.height();
-                                                return;
-                                            }
-                                            return;
-                                        }
-                                        return;
-                                    }
-                                    layout = r5;
-                                    paint = paint3;
-                                }
-                                bitmap = null;
-                                Paint paint62 = new Paint(3);
-                                paint62.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                rc2Var.F3();
-                                TextPaint textPaint2 = new TextPaint(layout.getPaint());
-                                textPaint2.set(layout.getPaint());
-                                Bitmap bitmap22 = bitmap;
-                                spannableStringBuilder = new SpannableStringBuilder(gn.cloneSpans(layout.getText(), -1, textPaint2.getFontMetricsInt()));
-                                if (i4 <= 0) {
-                                }
-                                if (i3 < spannableStringBuilder.length()) {
-                                }
-                                if (messageObject.R1 >= 4) {
-                                }
-                                StaticLayout f532 = k47.f5(1.0f, f6, i15, Layout.Alignment.ALIGN_NORMAL, textPaint2, spannableStringBuilder, false);
-                                int[] iArr2 = new int[2];
-                                rc2Var.getLocationOnScreen(iArr2);
-                                float f112 = f5;
-                                this.F = new us9(b66Var2, new int[]{iArr2[0] + ((int) f4), iArr2[1] + ((int) f5)}, rc2Var, iArr2, bitmap22, rectF3, paint62, paint, f532);
-                                int L2 = (int) ((gm.L(5.0f) / 2.0f) + iArr2[0] + f4 + rectF3.left);
-                                int i172 = (int) (iArr2[1] + f112 + rectF3.top);
-                                this.F.setBounds(L2, i172, ((int) rectF3.width()) + L2, ((int) rectF3.height()) + i172);
-                                if (spannableString == null) {
-                                }
-                            }
-                        }
-                    } else {
-                        continue;
+        ps9Var.setText(H1);
+        int i2 = bkb.i5;
+        zkb.X(ps9Var, i2, wjbVar);
+        zkb.l(ps9Var, 34, bkb.Ni, wjbVar);
+        ps9Var.setHintText(k96.M0(2131745690, null));
+        ps9Var.setSingleLine(true);
+        ps9Var.setFocusable(true);
+        ps9Var.setInputType(TLObject.FLAG_14);
+        zkb.F(ps9Var, bkb.j6, bkb.k6, bkb.o7, wjbVar);
+        ps9Var.setImeOptions(6);
+        ps9Var.setBackgroundDrawable(null);
+        ps9Var.setPadding(0, 0, gl.L(42.0f), 0);
+        LinearLayout j = de9.j(context, 1);
+        TextView textView = new TextView(context);
+        zkb.X(textView, i2, wjbVar);
+        textView.setTextSize(1, 16.0f);
+        textView.setText(k96.M0(2131745688, null));
+        j.addView(textView, nme.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
+        j.addView(ps9Var, nme.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        mdVar.n(j);
+        hdVar.a = gl.L(292.0f);
+        mdVar.j(k96.M0(2131745754, null), new yf((Object) ps9Var, i, (Object) reaction, (byte) 13));
+        byte b2 = 3;
+        mdVar.g(k96.M0(2131752577, null), new ho9(b2));
+        if (z) {
+            I = hdVar;
+            hdVarArr[0] = hdVar;
+            hdVar.setOnDismissListener(new b41(currentFocus, b2));
+            I.setOnShowListener(new DialogInterface.OnShowListener() { // from class: ms9
+                @Override // android.content.DialogInterface.OnShowListener
+                public final void onShow(DialogInterface dialogInterface) {
+                    byte b3 = b;
+                    ps9 ps9Var2 = ps9Var;
+                    switch (b3) {
+                        case 0:
+                            ps9Var2.requestFocus();
+                            gl.E3(ps9Var2);
+                            break;
+                        default:
+                            ps9Var2.requestFocus();
+                            gl.E3(ps9Var2);
+                            break;
                     }
                 }
-                i9++;
-                z3 = z2;
-                i8 = 0;
-            }
-        }
-        z2 = z3;
-        i = 0;
-        i2 = 0;
-        i3 = 0;
-        r15 = 0;
-        if (r15 == 0) {
-            i7 = 0;
-            while (true) {
-                if (i7 >= characterStyleArr.length) {
+            });
+            I.q(250L);
+        } else {
+            hdVarArr[0] = hdVar;
+            hdVar.setOnDismissListener(new ph8(ps9Var, (byte) 5));
+            final byte b3 = 1;
+            hdVarArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: ms9
+                @Override // android.content.DialogInterface.OnShowListener
+                public final void onShow(DialogInterface dialogInterface) {
+                    byte b32 = b3;
+                    ps9 ps9Var2 = ps9Var;
+                    switch (b32) {
+                        case 0:
+                            ps9Var2.requestFocus();
+                            gl.E3(ps9Var2);
+                            break;
+                        default:
+                            ps9Var2.requestFocus();
+                            gl.E3(ps9Var2);
+                            break;
+                    }
                 }
-                i7++;
-            }
+            });
+            hdVarArr[0].show();
         }
-        if (r15 == 0) {
-            i6 = 0;
-            r15 = r15;
-            while (i6 < pollButtons.size()) {
-            }
-        }
-        if (r15 == 0) {
-            ArrayList arrayList22 = uj9Var.g;
-            if (characterStyle != null) {
-            }
-            ii9Var = null;
-            if (ii9Var != null) {
-            }
-        }
-        float f92 = f;
-        int i142 = i;
-        int i152 = i2;
-        if (r15 != 0) {
-        }
-        if (r15 != 0) {
+        hdVarArr[0].k0 = false;
+        ps9Var.setSelection(ps9Var.getText().length());
+    }
+
+    public final boolean a() {
+        return !this.r.isEmpty() || this.s;
+    }
+
+    public abstract void b(boolean z);
+
+    public final void d(kl0 kl0Var, nl0 nl0Var) {
+        this.w = kl0Var;
+        this.x = nl0Var;
+        float N = gl.N(1.0f);
+        Paint paint = this.y;
+        paint.setStrokeWidth(N);
+        paint.setStyle(Paint.Style.STROKE);
+        LinearLayout linearLayout = this.f;
+        if (linearLayout != null) {
+            il0 c = kl0Var.c(linearLayout, null, false);
+            c.p(nod.o(this.c));
+            c.s(gl.L(9.0f), gl.L(15.0f), gl.L(15.0f), gl.L(9.0f));
+            c.u(gl.L(5.0f));
+            c.q(gl.L(4.0f));
+            linearLayout.setBackground(c);
         }
     }
 
-    @Override // android.app.Dialog
-    public final boolean isShowing() {
-        return !this.N;
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        ne6 ne6Var = this.s;
-        setContentView(ne6Var, layoutParams);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = nm7.D1;
-        attributes.dimAmount = 0.0f;
-        int i = attributes.flags & (-3);
-        attributes.softInputMode = 16;
-        attributes.flags = i | (-1945959040);
-        gm.m(attributes);
-        window.setAttributes(attributes);
-        ne6Var.setSystemUiVisibility(256);
-        gm.j3(ne6Var, !cmb.I.o());
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        if (gm.K1(getContext())) {
-            super.show();
-            d(new vh8(this, (byte) 14));
-            a(null, true);
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == kk7.i3) {
+            long longValue = ((Long) objArr[0]).longValue();
+            if (longValue == 0 || longValue == this.E) {
+                h(true);
+                return;
+            }
+            return;
         }
+        if (i == kk7.k4) {
+            invalidate();
+            gl.d0(this.d, new bm0((byte) 12));
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.F < 0.5f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        LinearLayout linearLayout;
+        if (view != this.d || (linearLayout = this.f) == null) {
+            return super.drawChild(canvas, view, j);
+        }
+        if (linearLayout.getAlpha() >= 1.0f) {
+            return false;
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.f.getAlpha()) * 255.0f), 31);
+        boolean drawChild = super.drawChild(canvas, view, j);
+        canvas.restore();
+        return drawChild;
+    }
+
+    public final void e(h19 h19Var, boolean z) {
+        gx0 gx0Var = this.e;
+        if (h19Var == null) {
+            this.h = 0L;
+            if (z) {
+                f(null);
+            }
+            gx0Var.f();
+            return;
+        }
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.r;
+            if (i >= arrayList.size()) {
+                return;
+            }
+            ss9 ss9Var = (ss9) arrayList.get(i);
+            long j = h19Var.h;
+            h19 h19Var2 = ss9Var.a;
+            long j2 = h19Var2.h;
+            if (j == j2) {
+                this.h = j2;
+                if (z) {
+                    f(h19Var2);
+                }
+                gx0Var.f();
+                this.d.w0(i);
+                return;
+            }
+            i++;
+        }
+    }
+
+    public abstract boolean f(h19 h19Var);
+
+    public final void g(boolean z) {
+        ValueAnimator valueAnimator = this.H;
+        if (valueAnimator != null) {
+            this.H = null;
+            valueAnimator.cancel();
+        }
+        if (z) {
+            setVisibility(0);
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z ? 1.0f : 0.0f);
+        this.H = ofFloat;
+        ofFloat.addUpdateListener(new x89(this, (byte) 11));
+        this.H.setInterpolator(s33.h);
+        this.H.setDuration(320L);
+        this.H.addListener(new id4((byte) 29, this, z));
+        this.H.start();
+    }
+
+    public int getCurrentHeight() {
+        return (int) (getMeasuredHeight() * this.F);
+    }
+
+    public void h(boolean z) {
+        boolean z2;
+        int i;
+        HashSet hashSet = new HashSet();
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        ArrayList arrayList2 = this.r;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        int i2 = this.a;
+        na7 q1 = na7.q1(i2);
+        long j = this.E;
+        TLRPC.TL_messages_savedReactionsTags F1 = q1.F1(j, false);
+        if (F1 != null) {
+            int i3 = 0;
+            z2 = false;
+            while (i3 < F1.tags.size()) {
+                TLRPC.TL_savedReactionTag tL_savedReactionTag = F1.tags.get(i3);
+                h19 d = h19.d(tL_savedReactionTag.reaction);
+                TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags = F1;
+                if (hashSet.contains(Long.valueOf(d.h)) || (j != 0 && tL_savedReactionTag.count <= 0)) {
+                    i = i3;
+                } else {
+                    int i4 = tL_savedReactionTag.count;
+                    String H1 = j != 0 ? q1.H1(tL_savedReactionTag.reaction) : tL_savedReactionTag.title;
+                    ss9 ss9Var = new ss9();
+                    ss9Var.a = d;
+                    ss9Var.b = i4;
+                    ss9Var.c = H1;
+                    ss9Var.d = H1 == null ? -233 : H1.hashCode();
+                    i = i3;
+                    if (ss9Var.a.h == this.h) {
+                        z2 = true;
+                    }
+                    arrayList2.add(ss9Var);
+                    hashSet.add(Long.valueOf(d.h));
+                }
+                i3 = i + 1;
+                F1 = tL_messages_savedReactionsTags;
+            }
+        } else {
+            z2 = false;
+        }
+        if (!z2 && this.h != 0) {
+            this.h = 0L;
+            f(null);
+        }
+        gx0 gx0Var = this.e;
+        if (z) {
+            vu7.a(new rs9(this), true).c(gx0Var);
+        } else {
+            gx0Var.f();
+        }
+        boolean p = y6c.h(i2).p();
+        this.s = !p;
+        if (p) {
+            LinearLayout linearLayout = this.f;
+            if (linearLayout != null) {
+                if (z) {
+                    linearLayout.animate().alpha(0.0f).withEndAction(new zk9(this, (byte) 12)).start();
+                    return;
+                } else {
+                    linearLayout.setAlpha(1.0f);
+                    this.f.setVisibility(0);
+                    return;
+                }
+            }
+            return;
+        }
+        if (this.f == null) {
+            LinearLayout linearLayout2 = new LinearLayout(getContext());
+            this.f = linearLayout2;
+            linearLayout2.setOnClickListener(new ik8(this, (byte) 17));
+            this.f.setOrientation(0);
+            ote.b(this.f, 0.03f, 1.25f);
+            ba1 ba1Var = new ba1(this, getContext());
+            int i5 = bkb.n6;
+            wjb wjbVar = this.c;
+            zkb.X(ba1Var, i5, wjbVar);
+            ba1Var.setTextSize(1, 12.0f);
+            ba1Var.setTypeface(gl.o());
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
+            int i6 = bkb.Wc;
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            mutate.setColorFilter(new PorterDuffColorFilter(i6, mode));
+            cm2 cm2Var = new cm2(0, mutate);
+            cm2Var.s = 0.0f;
+            cm2Var.r = 0.0f;
+            cm2Var.I = 0.94f;
+            cm2Var.J = 0.94f;
+            SpannableString spannableString = new SpannableString("l");
+            spannableString.setSpan(cm2Var, 0, spannableString.length(), 17);
+            spannableStringBuilder.append((CharSequence) spannableString);
+            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) k96.M0(2131754378, null));
+            ba1Var.setText(spannableStringBuilder);
+            ba1Var.setPadding(gl.L(4.0f), gl.L(4.0f), gl.L(9.0f), gl.L(4.0f));
+            TextView textView = new TextView(getContext());
+            zkb.X(textView, i5, wjbVar);
+            textView.setTextSize(1, 12.0f);
+            textView.setTypeface(gl.o());
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(k96.M0(2131754377, null));
+            SpannableString spannableString2 = new SpannableString(">");
+            Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
+            mutate2.setColorFilter(new PorterDuffColorFilter(i6, mode));
+            cm2 cm2Var2 = new cm2(0, mutate2);
+            cm2Var2.I = 0.76f;
+            cm2Var2.J = 0.76f;
+            cm2Var2.r = -gl.L(1.0f);
+            cm2Var2.s = gl.L(1.0f);
+            spannableString2.setSpan(cm2Var2, 0, spannableString2.length(), 17);
+            spannableStringBuilder2.append((CharSequence) spannableString2);
+            textView.setText(spannableStringBuilder2);
+            textView.setPadding(gl.L(5.66f), gl.L(4.0f), gl.L(9.0f), gl.L(4.0f));
+            this.f.addView(ba1Var, nme.r(-2, -2, 16));
+            this.f.addView(textView, nme.r(-2, -2, 16));
+            this.f.setPadding(gl.L(7.0f), 0, 0, 0);
+            this.f.setClipToPadding(false);
+            addView(this.f, nme.d(-2, -1.0f, 19, 5.0f, 0.0f, 5.0f, 0.0f));
+        }
+        if (z) {
+            return;
+        }
+        this.f.setVisibility(0);
+        this.f.setAlpha(0.0f);
+        this.f.animate().alpha(1.0f).start();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        int i = this.a;
+        kk7.f(i).b(this, kk7.i3);
+        kk7.f(i).b(this, kk7.k4);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i = this.a;
+        kk7.f(i).n(this, kk7.i3);
+        kk7.f(i).n(this, kk7.k4);
+    }
+
+    public void setShown(float f) {
+        this.F = f;
+        ns9 ns9Var = this.d;
+        ns9Var.setPivotX(ns9Var.getWidth() / 2.0f);
+        ns9Var.setPivotY(0.0f);
+        ns9Var.setScaleX(gl.R1(0.8f, 1.0f, f));
+        ns9Var.setScaleY(gl.R1(0.8f, 1.0f, f));
+        setAlpha(f);
+        invalidate();
     }
 }

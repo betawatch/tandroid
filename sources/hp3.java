@@ -1,36 +1,41 @@
 // default package
 
-import java.util.concurrent.Executor;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class hp3 implements Executor {
-    public static final hp3 a;
-    public static final /* synthetic */ hp3[] b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class hp3 extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public final LimitPreviewView c;
 
-    static {
-        hp3 hp3Var = new hp3("INSTANCE", 0);
-        a = hp3Var;
-        b = new hp3[]{hp3Var};
+    public hp3(Context context, wjb wjbVar) {
+        super(context);
+        setOrientation(1);
+        setPadding(gl.L(6.0f), 0, gl.L(6.0f), 0);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ir2.t(textView, 1, 15.0f);
+        zkb.X(textView, bkb.F6, wjbVar);
+        addView(textView, nme.q(-1, -2, 0.0f, 0, 16, 0, 16, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        zkb.X(textView2, bkb.x6, wjbVar);
+        textView2.setTextSize(1, 14.0f);
+        addView(textView2, nme.q(-1, -2, 0.0f, 0, 16, 1, 16, 0));
+        LimitPreviewView limitPreviewView = new LimitPreviewView(context, 0, 10, 20, wjbVar);
+        this.c = limitPreviewView;
+        addView(limitPreviewView, nme.q(-1, -2, 0.0f, 0, 0, 8, 0, 21));
     }
 
-    public static hp3 valueOf(String str) {
-        return (hp3) Enum.valueOf(hp3.class, str);
-    }
-
-    public static hp3[] values() {
-        return (hp3[]) b.clone();
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        runnable.run();
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return "DirectExecutor";
+    public final void a(gp3 gp3Var) {
+        this.a.setText(gp3Var.a);
+        this.b.setText(gp3Var.b);
+        LimitPreviewView limitPreviewView = this.c;
+        limitPreviewView.w.setText(String.format("%d", Integer.valueOf(gp3Var.d)));
+        limitPreviewView.x.setText(String.format("%d", Integer.valueOf(gp3Var.c)));
     }
 }

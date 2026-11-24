@@ -1,53 +1,80 @@
 // default package
 
-import java.util.Map;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class uq9 implements Map.Entry {
-    public final Object a;
-    public final Object b;
-    public uq9 c;
-    public uq9 d;
+public final class uq9 extends l13 {
+    public long b;
+    public long[] c;
+    public long[] d;
 
-    public uq9(Object obj, Object obj2) {
-        this.a = obj;
-        this.b = obj2;
-    }
-
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public static Serializable h(int i, xu7 xu7Var) {
+        if (i == 0) {
+            return Double.valueOf(Double.longBitsToDouble(xu7Var.u()));
         }
-        if (!(obj instanceof uq9)) {
-            return false;
+        if (i == 1) {
+            return Boolean.valueOf(xu7Var.A() == 1);
         }
-        uq9 uq9Var = (uq9) obj;
-        return this.a.equals(uq9Var.a) && this.b.equals(uq9Var.b);
+        if (i == 2) {
+            return j(xu7Var);
+        }
+        if (i != 3) {
+            if (i == 8) {
+                return i(xu7Var);
+            }
+            if (i != 10) {
+                if (i != 11) {
+                    return null;
+                }
+                Date date = new Date((long) Double.longBitsToDouble(xu7Var.u()));
+                xu7Var.O(2);
+                return date;
+            }
+            int E = xu7Var.E();
+            ArrayList arrayList = new ArrayList(E);
+            for (int i2 = 0; i2 < E; i2++) {
+                Serializable h = h(xu7Var.A(), xu7Var);
+                if (h != null) {
+                    arrayList.add(h);
+                }
+            }
+            return arrayList;
+        }
+        HashMap hashMap = new HashMap();
+        while (true) {
+            String j = j(xu7Var);
+            int A = xu7Var.A();
+            if (A == 9) {
+                return hashMap;
+            }
+            Serializable h2 = h(A, xu7Var);
+            if (h2 != null) {
+                hashMap.put(j, h2);
+            }
+        }
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.a;
+    public static HashMap i(xu7 xu7Var) {
+        int E = xu7Var.E();
+        HashMap hashMap = new HashMap(E);
+        for (int i = 0; i < E; i++) {
+            String j = j(xu7Var);
+            Serializable h = h(xu7Var.A(), xu7Var);
+            if (h != null) {
+                hashMap.put(j, h);
+            }
+        }
+        return hashMap;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        return this.a.hashCode() ^ this.b.hashCode();
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException("An entry modification is not supported");
-    }
-
-    public final String toString() {
-        return this.a + "=" + this.b;
+    public static String j(xu7 xu7Var) {
+        int H = xu7Var.H();
+        int i = xu7Var.b;
+        xu7Var.O(H);
+        return new String(xu7Var.a, i, H);
     }
 }

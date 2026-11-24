@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public interface EglBase {
     public static final int[] CONFIG_PIXEL_BUFFER;
@@ -17,7 +17,7 @@ public interface EglBase {
     public static final int EGL_RECORDABLE_ANDROID = 12610;
     public static final Object lock = new Object();
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class ConfigBuilder {
         private boolean hasAlphaChannel;
         private boolean isRecordable;
@@ -69,7 +69,7 @@ public interface EglBase {
 
         public ConfigBuilder setOpenGlesVersion(int i) {
             if (i < 1 || i > 3) {
-                u36.j(td4.o(i, "OpenGL ES version ", " not supported"));
+                w26.j(tb4.n(i, "OpenGL ES version ", " not supported"));
                 return null;
             }
             this.openGlesVersion = i;
@@ -82,7 +82,7 @@ public interface EglBase {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface Context {
         public static final long NO_CONTEXT = 0;
 

@@ -7,7 +7,7 @@ import java.util.List;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class Camera1Enumerator implements CameraEnumerator {
     private static final String TAG = "Camera1Enumerator";
@@ -63,10 +63,10 @@ public class Camera1Enumerator implements CameraEnumerator {
                     Logging.e(TAG, "getSupportedFormats() failed on camera index " + i, e);
                 }
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
-                StringBuilder l = hg9.l(i, "Get supported formats for camera index ", " done. Time spent: ");
-                l.append(elapsedRealtime2 - elapsedRealtime);
-                l.append(" ms.");
-                Logging.d(TAG, l.toString());
+                StringBuilder m = de9.m(i, "Get supported formats for camera index ", " done. Time spent: ");
+                m.append(elapsedRealtime2 - elapsedRealtime);
+                m.append(" ms.");
+                Logging.d(TAG, m.toString());
                 return arrayList;
             } catch (RuntimeException e2) {
                 Logging.e(TAG, "Open camera failed on camera index " + i, e2);
@@ -91,7 +91,7 @@ public class Camera1Enumerator implements CameraEnumerator {
                 return i;
             }
         }
-        u36.j(b10.h("No such camera: ", str));
+        w26.j(b00.h("No such camera: ", str));
         return 0;
     }
 

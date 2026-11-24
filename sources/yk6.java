@@ -1,25 +1,54 @@
 // default package
 
-import java.util.regex.Pattern;
+import android.media.AudioRecord;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class yk6 extends tp5 {
-    public static final Pattern e = Pattern.compile("\\$([^\\s\\$][^\\$]*?)(?<!\\s)\\$(?![0-9])");
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class yk6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ boolean c;
 
-    @Override // tp5
-    public final ui6 b() {
-        String a = a(e);
-        if (a == null) {
-            return null;
-        }
-        su5 su5Var = new su5();
-        su5Var.g = ts2.m(1, 1, a);
-        return su5Var;
+    public /* synthetic */ yk6(MediaController mediaController, boolean z, byte b) {
+        this.a = b;
+        this.b = mediaController;
+        this.c = z;
     }
 
-    @Override // tp5
-    public final char c() {
-        return '$';
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.c;
+        MediaController mediaController = this.b;
+        switch (b) {
+            case 0:
+                String[] strArr = MediaController.W1;
+                co3 co3Var = mediaController.N1;
+                if (mediaController.g1 != null && mediaController.k1 != null) {
+                    boolean z2 = mediaController.e1;
+                    mediaController.e1 = !z2;
+                    if (!z2) {
+                        AudioRecord audioRecord = mediaController.f1;
+                        if (audioRecord != null) {
+                            mediaController.C1 = (byte) 4;
+                            audioRecord.stop();
+                            mediaController.f1.release();
+                            mediaController.f1 = null;
+                            co3Var.c(new yk6(mediaController, z, (byte) 1));
+                            break;
+                        }
+                    } else {
+                        co3Var.a(mediaController.P1);
+                        co3Var.c(new wk6(mediaController, (byte) 6));
+                        break;
+                    }
+                }
+                break;
+            default:
+                String[] strArr2 = MediaController.W1;
+                mediaController.L(z);
+                break;
+        }
     }
 }

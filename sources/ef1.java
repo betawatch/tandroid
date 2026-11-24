@@ -1,119 +1,43 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.view.View;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ef1 {
-    public final Paint a;
-    public LinearGradient b;
-    public final Paint c;
-    public LinearGradient d;
-    public final int e;
-    public int f;
-    public float g;
-    public long h;
-    public final Matrix i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public float m;
-    public float n;
-    public bec o;
-    public q78 p;
+public final class ef1 extends la2 {
+    public int W;
+    public nv0 X;
+    public final /* synthetic */ nf1 Y;
 
-    public ef1(int i, int i2, int i3) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        this.i = new Matrix();
-        this.j = true;
-        this.k = true;
-        this.l = false;
-        this.m = 1.2f;
-        this.n = 1.0f;
-        int L = gm.L(i3);
-        this.e = L;
-        float f = L;
-        int[] iArr = {0, on2.p(-1, i), 0};
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new LinearGradient(0.0f, 0.0f, f, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f, 0.0f, new int[]{0, on2.p(-1, i2), 0}, (float[]) null, tileMode);
-        paint.setShader(this.b);
-        paint2.setShader(this.d);
-        paint2.setStyle(Paint.Style.STROKE);
-        paint2.setStrokeWidth(gm.L(2.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ef1(nf1 nf1Var, o39 o39Var, wjb wjbVar) {
+        super(null, o39Var, wjbVar);
+        this.Y = nf1Var;
+        this.W = -1;
     }
 
-    public final void a(float f, Canvas canvas, RectF rectF, View view) {
-        c(view);
-        canvas.drawRoundRect(rectF, f, f, this.a);
-        if (this.k) {
-            boolean z = this.l;
-            Paint paint = this.c;
-            if (z) {
-                rectF.inset(paint.getStrokeWidth() / 2.0f, paint.getStrokeWidth() / 2.0f);
-            }
-            canvas.drawRoundRect(rectF, f, f, paint);
+    @Override // la2, gb3
+    public final void N() {
+        super.N();
+        nv0 nv0Var = this.X;
+        if (nv0Var != null) {
+            gl.r(nv0Var);
         }
+        nv0 nv0Var2 = new nv0(this, (byte) 21);
+        this.X = nv0Var2;
+        gl.c3(nv0Var2);
     }
 
-    public final void b(int i, int i2) {
-        float f = this.e;
-        int[] iArr = {0, on2.p(i, i2), 0};
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new LinearGradient(0.0f, 0.0f, f, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f, 0.0f, new int[]{0, on2.p(i, nm7.h3), 0}, (float[]) null, tileMode);
-        this.a.setShader(this.b);
-        this.c.setShader(this.d);
-    }
-
-    public final void c(View view) {
-        if (this.j || this.g < 1.0f) {
-            if (view != null) {
-                view.invalidate();
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j = this.h;
-            if (j != 0) {
-                long j2 = currentTimeMillis - j;
-                if (j2 > 10) {
-                    float f = ((j2 / 1200.0f) * this.n) + this.g;
-                    this.g = f;
-                    if (f > this.m) {
-                        this.g = 0.0f;
-                        q78 q78Var = this.p;
-                        if (q78Var != null) {
-                            q78Var.run();
-                        }
-                    }
-                    this.h = currentTimeMillis;
-                }
-            } else {
-                this.h = currentTimeMillis;
-            }
+    @Override // la2
+    public final void V() {
+        if (this.W == -1) {
+            this.W = this.Y.getNotificationCenter().q(nf1.R0, this.W, false);
         }
-        int i = this.f;
-        float f2 = ((i + (r0 << 1)) * this.g) - this.e;
-        Matrix matrix = this.i;
-        matrix.reset();
-        matrix.setTranslate(f2, 0.0f);
-        this.b.setLocalMatrix(matrix);
-        this.d.setLocalMatrix(matrix);
-    }
-
-    public ef1(int i, int i2) {
-        this(i, i2, nm7.p2);
-    }
-
-    public ef1() {
-        this(64, nm7.h3, nm7.p2);
+        nv0 nv0Var = this.X;
+        if (nv0Var != null) {
+            gl.r(nv0Var);
+            this.X = null;
+        }
+        if (w01.a) {
+            fa4.b("admin logs chatItemAnimator disable notifications");
+        }
     }
 }

@@ -1,34 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class jaf extends wgf {
+public final class jaf extends vef {
     private static final jaf zzb;
     private int zzd;
-    private int zze;
-    private long zzf;
-    private int zzg;
+    private long zze;
+    private boolean zzf;
+    private long zzg;
+    private boolean zzh;
 
     static {
         jaf jafVar = new jaf();
         zzb = jafVar;
-        wgf.e(jaf.class, jafVar);
+        vef.e(jaf.class, jafVar);
     }
 
-    @Override // wgf
-    public final Object h(int i, wgf wgfVar) {
+    @Override // vef
+    public final Object h(int i, vef vefVar) {
         int i2 = i - 1;
         if (i2 == 0) {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new tif(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002ဂ\u0001\u0003᠌\u0002", new Object[]{"zzd", "zze", kg7.s, "zzf", "zzg", fgf.h});
+            return new sgf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001ဂ\u0000\u0002ဇ\u0001\u0003ဂ\u0002\u0004ဇ\u0003", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh"});
         }
         if (i2 == 3) {
             return new jaf();
         }
         if (i2 == 4) {
-            return new wae(zzb);
+            return new v8f(zzb);
         }
         if (i2 != 5) {
             return null;

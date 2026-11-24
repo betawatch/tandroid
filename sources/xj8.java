@@ -1,78 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.ImageView;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.b0;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class xj8 extends lj8 {
-    public final /* synthetic */ byte r = 0;
-    public final /* synthetic */ q59 s;
+public final /* synthetic */ class xj8 implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yj8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xj8(b0 b0Var, Context context) {
-        super(context, null);
-        this.s = b0Var;
+    public /* synthetic */ xj8(yj8 yj8Var, byte b) {
+        this.a = b;
+        this.b = yj8Var;
     }
 
-    @Override // lj8, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ylb ylbVar;
-        boolean o;
-        ylb ylbVar2;
-        byte b = this.r;
-        q59 q59Var = this.s;
-        ImageView imageView = this.c;
+    @Override // p8c
+    public final void a(Object obj) {
+        TL_account.TL_birthday tL_birthday;
+        int i;
+        int i2;
+        byte b = this.a;
+        yj8 yj8Var = this.b;
         switch (b) {
             case 0:
-                RectF rectF = gm.P;
-                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
-                yj8 yj8Var = (yj8) ((ny0) q59Var).d;
-                yj8Var.k2.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, yj8Var.Z1);
-                canvas.drawRoundRect(rectF, gm.L(8.0f), gm.L(8.0f), yj8Var.k2.f);
-                super.dispatchDraw(canvas);
+                PrivacyControlActivity privacyControlActivity = yj8Var.d;
+                privacyControlActivity.N = ((Integer) obj).intValue();
+                gl.U3(privacyControlActivity.l0, privacyControlActivity.c);
+                privacyControlActivity.N0();
                 break;
             default:
-                float L = gm.L(10.0f);
-                RectF rectF2 = gm.P;
-                rectF2.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
-                PremiumPreviewFragment premiumPreviewFragment = ((b0) q59Var).c;
-                premiumPreviewFragment.T.reset();
-                premiumPreviewFragment.T.postScale(1.0f, premiumPreviewFragment.O / 100.0f, 0.0f, 0.0f);
-                premiumPreviewFragment.T.postTranslate(0.0f, -this.f.e);
-                premiumPreviewFragment.S.setLocalMatrix(premiumPreviewFragment.T);
-                canvas.drawRoundRect(rectF2, L, L, premiumPreviewFragment.U);
-                ylbVar = ((d) premiumPreviewFragment).resourceProvider;
-                if (ylbVar != null) {
-                    ylbVar2 = ((d) premiumPreviewFragment).resourceProvider;
-                    o = ylbVar2.a();
+                TL_account.TL_birthday tL_birthday2 = (TL_account.TL_birthday) obj;
+                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
+                updatebirthday.flags |= 1;
+                updatebirthday.birthday = tL_birthday2;
+                PrivacyControlActivity privacyControlActivity2 = yj8Var.d;
+                TLRPC.UserFull W1 = privacyControlActivity2.getMessagesController().W1(privacyControlActivity2.getUserConfig().e());
+                if (W1 != null) {
+                    tL_birthday = W1.birthday;
+                    W1.flags2 |= 32;
+                    W1.birthday = tL_birthday2;
+                    privacyControlActivity2.getMessagesStorage().g2(W1, false);
                 } else {
-                    o = cmb.I.o();
+                    tL_birthday = null;
                 }
-                if (o) {
-                    float L2 = gm.L(1.0f);
-                    premiumPreviewFragment.R.setStrokeWidth(L2);
-                    canvas.save();
-                    canvas.translate(rectF2.left, rectF2.top);
-                    rectF2.offset(-rectF2.left, -rectF2.top);
-                    float f = L2 / 2.0f;
-                    rectF2.inset(f, f);
-                    canvas.drawRoundRect(rectF2, L, L, premiumPreviewFragment.R);
-                    canvas.restore();
-                }
-                super.dispatchDraw(canvas);
+                privacyControlActivity2.getMessagesController().h2();
+                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new k45(yj8Var, W1, tL_birthday, (byte) 29), 1024);
+                i = ((d) privacyControlActivity2).currentAccount;
+                na7.q1(i).n4(0L, "BIRTHDAY_SETUP");
+                i2 = ((d) privacyControlActivity2).currentAccount;
+                kk7.f(i2).k(kk7.i5, new Object[0]);
+                privacyControlActivity2.P0(true);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xj8(ny0 ny0Var, Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.s = ny0Var;
     }
 }

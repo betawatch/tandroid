@@ -4,23 +4,23 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class NotificationBadge$NewHtcHomeBadger implements bm7 {
-    @Override // bm7
+public class NotificationBadge$NewHtcHomeBadger implements yj7 {
+    @Override // yj7
     public final void a(int i) {
         Intent intent = new Intent("com.htc.launcher.action.SET_NOTIFICATION");
-        intent.putExtra("com.htc.launcher.extra.COMPONENT", dm7.d.flattenToShortString());
+        intent.putExtra("com.htc.launcher.extra.COMPONENT", ak7.d.flattenToShortString());
         intent.putExtra("com.htc.launcher.extra.COUNT", i);
         Intent intent2 = new Intent("com.htc.launcher.action.UPDATE_SHORTCUT");
-        intent2.putExtra("packagename", dm7.d.getPackageName());
+        intent2.putExtra("packagename", ak7.d.getPackageName());
         intent2.putExtra("count", i);
-        if (dm7.a(intent) || dm7.a(intent2)) {
-            gm.c3(new bl7(intent, intent2, (byte) 5));
+        if (ak7.a(intent) || ak7.a(intent2)) {
+            gl.c3(new bj7(intent, intent2, (byte) 4));
         }
     }
 
-    @Override // bm7
+    @Override // yj7
     public final List b() {
         return Arrays.asList("com.htc.launcher");
     }

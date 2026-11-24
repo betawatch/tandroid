@@ -1,40 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class d5f extends wgf {
-    private static final d5f zzb;
-    private int zzd;
-    private int zze;
-    private double zzf;
-    private double zzg;
-    private double zzh;
-    private double zzi;
+public final /* synthetic */ class d5f implements tq7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ f84[] b;
 
-    static {
-        d5f d5fVar = new d5f();
-        zzb = d5fVar;
-        wgf.e(d5f.class, d5fVar);
+    public /* synthetic */ d5f(f84[] f84VarArr, byte b) {
+        this.a = b;
+        this.b = f84VarArr;
     }
 
-    @Override // wgf
-    public final Object h(int i, wgf wgfVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    @Override // tq7
+    public final f84[] a() {
+        byte b = this.a;
+        f84[] f84VarArr = this.b;
+        switch (b) {
+            case 0:
+                f84[] f84VarArr2 = uq7.a;
+                break;
+            default:
+                f84[] f84VarArr3 = uq7.a;
+                break;
         }
-        if (i2 == 2) {
-            return new tif(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001ဋ\u0000\u0002က\u0001\u0003က\u0002\u0004က\u0003\u0005က\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
-        }
-        if (i2 == 3) {
-            return new d5f();
-        }
-        if (i2 == 4) {
-            return new wae(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        return f84VarArr;
     }
 }

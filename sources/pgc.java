@@ -1,46 +1,39 @@
 // default package
 
-import android.view.View;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class pgc implements g59, h59 {
-    public final /* synthetic */ vgc a;
+public final class pgc extends zt5 {
+    public final /* synthetic */ TLRPC.User m1;
+    public final /* synthetic */ TLRPC.Chat n1;
+    public final /* synthetic */ String o1;
+    public final /* synthetic */ TLRPC.InputPeer p1;
+    public final /* synthetic */ boolean q1;
+    public final /* synthetic */ boolean r1;
+    public final /* synthetic */ Activity s1;
+    public final /* synthetic */ d t1;
+    public final /* synthetic */ j5 u1;
 
-    public /* synthetic */ pgc(vgc vgcVar) {
-        this.a = vgcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pgc(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z, boolean z2, Activity activity, d dVar, j5 j5Var) {
+        super(context, chat);
+        this.m1 = user;
+        this.n1 = chat2;
+        this.o1 = str;
+        this.p1 = inputPeer;
+        this.q1 = z;
+        this.r1 = z2;
+        this.s1 = activity;
+        this.t1 = dVar;
+        this.u1 = j5Var;
     }
 
-    @Override // g59
-    public final void d(float f, float f2, int i, View view) {
-        vgc vgcVar = this.a;
-        ugc ugcVar = vgcVar.E;
-        if (ugcVar == null || ugcVar.b()) {
-            tgc tgcVar = (tgc) view;
-            if (i != vgcVar.G || vgcVar.E == null) {
-                kac kacVar = vgcVar.m0;
-                if (kacVar == null || !((Boolean) kacVar.j(Integer.valueOf(tgcVar.a.a), Integer.valueOf(i))).booleanValue()) {
-                    vgcVar.e(tgcVar.a.a, i);
-                }
-            }
-        }
-    }
-
-    @Override // h59
-    public final boolean g(int i, View view) {
-        kac kacVar = this.a.b;
-        if (kacVar == null) {
-            return false;
-        }
-        return ((Boolean) kacVar.j(Integer.valueOf(((tgc) view).a.a), view)).booleanValue();
-    }
-
-    @Override // g59
-    public final boolean u(View view) {
-        return false;
-    }
-
-    @Override // g59
-    public final void p(View view, float f, float f2) {
+    @Override // zt5
+    public final void D0() {
+        rgc.b(this.m1, this.n1, this.o1, this.p1, true, this.q1, this.r1, false, this.s1, this.t1, this.u1, false, false, false);
     }
 }

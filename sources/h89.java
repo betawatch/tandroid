@@ -1,7 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.net.Uri;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface h89 {
-    void accept(Object obj, Object obj2);
+public final class h89 extends i89 {
+    public final az8 f;
+    public final u39 h;
+
+    public h89(fm4 fm4Var, mm5 mm5Var, sv9 sv9Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
+        super(fm4Var, mm5Var, sv9Var, arrayList, arrayList2, arrayList3);
+        Uri.parse(((wg0) mm5Var.get(0)).a);
+        long j = sv9Var.e;
+        az8 az8Var = j <= 0 ? null : new az8(sv9Var.d, null, j);
+        this.f = az8Var;
+        this.h = az8Var == null ? new u39(new az8(0L, null, -1L), (byte) 13) : null;
+    }
+
+    @Override // i89
+    public final String a() {
+        return null;
+    }
+
+    @Override // i89
+    public final r53 b() {
+        return this.h;
+    }
+
+    @Override // i89
+    public final az8 c() {
+        return this.f;
+    }
 }

@@ -1,68 +1,108 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.tgnet.TLObject;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class os extends r59 implements jm7 {
-    public ArrayList f3;
-    public u46 g3;
-    public int h3;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class os implements Iterator, Map.Entry {
+    public int a;
+    public int b = -1;
+    public boolean c;
+    public final /* synthetic */ ps d;
 
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == nm7.l5) {
-            z1();
+    public os(ps psVar) {
+        this.d = psVar;
+        this.a = psVar.c - 1;
+    }
+
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (!this.c) {
+            sc8.j("This container does not support retaining Map.Entry objects");
+            return false;
         }
-    }
-
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        nm7.e().b(this, nm7.l5);
-    }
-
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        nm7.e().n(this, nm7.l5);
-    }
-
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        b0();
-    }
-
-    public final void z1() {
-        ArrayList arrayList = this.f3;
-        arrayList.clear();
-        arrayList.addAll(Arrays.asList(c26.values()));
-        if (oc7.r1(this.h3).H3()) {
-            int i = 0;
-            while (i < arrayList.size()) {
-                if (((c26) arrayList.get(i)).e) {
-                    arrayList.remove(i);
-                    i--;
-                }
-                i++;
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            int i = this.b;
+            ps psVar = this.d;
+            if (rp5.a(key, psVar.f(i)) && rp5.a(entry.getValue(), psVar.i(this.b))) {
+                return true;
             }
         }
-        getAdapter().f();
-        b0();
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            if (moe.a((c26) arrayList.get(i2))) {
-                this.g3.g1(i2, gm.L(16.0f));
-                return;
-            }
+        return false;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        if (this.c) {
+            return this.d.f(this.b);
         }
+        sc8.j("This container does not support retaining Map.Entry objects");
+        return null;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        if (this.c) {
+            return this.d.i(this.b);
+        }
+        sc8.j("This container does not support retaining Map.Entry objects");
+        return null;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.b < this.a;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        if (!this.c) {
+            sc8.j("This container does not support retaining Map.Entry objects");
+            return 0;
+        }
+        int i = this.b;
+        ps psVar = this.d;
+        Object f = psVar.f(i);
+        Object i2 = psVar.i(this.b);
+        return (f == null ? 0 : f.hashCode()) ^ (i2 != null ? i2.hashCode() : 0);
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!hasNext()) {
+            w26.g();
+            return null;
+        }
+        this.b++;
+        this.c = true;
+        return this;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        if (!this.c) {
+            sdb.a();
+            return;
+        }
+        this.d.g(this.b);
+        this.b--;
+        this.a--;
+        this.c = false;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        if (this.c) {
+            return this.d.h(this.b, obj);
+        }
+        sc8.j("This container does not support retaining Map.Entry objects");
+        return null;
+    }
+
+    public final String toString() {
+        return getKey() + "=" + getValue();
     }
 }

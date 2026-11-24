@@ -1,22 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class rf3 extends RuntimeException {
-    public final transient cy2 a;
+import android.view.ViewGroup;
 
-    public rf3(cy2 cy2Var) {
-        this.a = cy2Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class rf3 extends ka {
+    public final boolean d;
+    public final /* synthetic */ oh3 e;
+
+    public rf3(oh3 oh3Var, boolean z) {
+        this.e = oh3Var;
+        this.d = z;
     }
 
-    @Override // java.lang.Throwable
-    public final Throwable fillInStackTrace() {
-        setStackTrace(new StackTraceElement[0]);
-        return this;
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return false;
     }
 
-    @Override // java.lang.Throwable
-    public final String getLocalizedMessage() {
-        return this.a.toString();
+    @Override // w39
+    public final int b() {
+        boolean z = this.d;
+        oh3 oh3Var = this.e;
+        return (z ? oh3Var.E : oh3Var.y).size();
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        uf3 uf3Var = (uf3) s49Var.a;
+        uf3Var.b = i;
+        boolean z = this.d;
+        oh3 oh3Var = this.e;
+        if (z) {
+            uf3Var.setDialogId(((sf3) oh3Var.E.get(i)).c);
+        } else {
+            uf3Var.setDialogId(((sf3) oh3Var.y.get(i)).c);
+        }
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        uf3 uf3Var = new uf3(this.e, viewGroup.getContext());
+        boolean z = this.d;
+        uf3Var.O = z;
+        if (z) {
+            uf3Var.d(1.0f, 1.0f, 0.0f, false);
+        }
+        return new y29(uf3Var);
     }
 }

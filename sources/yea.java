@@ -1,62 +1,178 @@
 // default package
 
-import android.os.Bundle;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class yea extends yv1 {
-    public boolean Gd;
-    public final /* synthetic */ int Hd;
-    public final /* synthetic */ nha Id;
+public final class yea extends n39 {
+    public final Context c;
+    public final vp9 d;
+    public boolean h;
+    public sca s;
+    public final /* synthetic */ nfa y;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final z6a n = new z6a(this, 8);
+    public final k49 r = new k49();
+    public final is5 w = new is5(new r10(this, 7));
+    public final HashSet x = new HashSet();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yea(nha nhaVar, Bundle bundle, int i) {
-        super(bundle);
-        this.Id = nhaVar;
-        this.Hd = i;
-        this.Gd = true;
+    public yea(nfa nfaVar, Context context) {
+        this.y = nfaVar;
+        this.c = context;
+        vp9 D1 = nfaVar.y1.getMessagesController().D1();
+        this.d = D1;
+        if (nfaVar.h0()) {
+            D1.g(false);
+        }
+        C(true);
+        F(false);
     }
 
-    @Override // yv1, org.telegram.ui.ActionBar.d
-    public final void onTransitionAnimationStart(boolean z, boolean z2) {
-        nha nhaVar = this.Id;
-        zga zgaVar = nhaVar.V;
-        if (this.Gd) {
-            if (this.k0 != null) {
-                Ba("");
-                this.k0.P(zgaVar.x, false);
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return true;
+    }
+
+    public final void E(View view) {
+        ArrayList arrayList;
+        up9 up9Var;
+        if (view instanceof ue3) {
+            ue3 ue3Var = (ue3) view;
+            long dialogId = ue3Var.getDialogId();
+            int i = 0;
+            while (true) {
+                arrayList = this.f;
+                if (i >= arrayList.size()) {
+                    up9Var = null;
+                    break;
+                } else {
+                    if (((up9) arrayList.get(i)).a == dialogId) {
+                        up9Var = (up9) arrayList.get(i);
+                        break;
+                    }
+                    i++;
+                }
             }
-            ys1 ys1Var = this.D1;
-            if (ys1Var != null) {
-                ys1Var.e(zgaVar.y, false);
+            if (up9Var == null) {
+                return;
             }
-            hs6 mediaDataController = nhaVar.y1.getMediaDataController();
-            int classGuid = getClassGuid();
-            k39 k39Var = zgaVar.y;
-            String str = zgaVar.x;
-            ArrayList arrayList = zgaVar.n;
-            ArrayList arrayList2 = zgaVar.h;
-            int i = zgaVar.w;
-            boolean z3 = zgaVar.s;
-            mediaDataController.R0 = k39Var;
-            mediaDataController.e1 = str;
-            boolean[] zArr = mediaDataController.Y0;
-            zArr[0] = z3;
-            zArr[1] = true;
-            ArrayList arrayList3 = mediaDataController.a1;
-            arrayList3.clear();
-            arrayList3.addAll(arrayList2);
-            mediaDataController.b1.clear();
-            mediaDataController.b1.addAll(arrayList);
-            mediaDataController.m2();
-            int[] iArr = mediaDataController.X0;
-            iArr[0] = i;
-            iArr[1] = 0;
-            mediaDataController.f1 = this.Hd;
-            mediaDataController.getNotificationCenter().k(nm7.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.e0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.f1), Integer.valueOf(mediaDataController.k0()), Boolean.TRUE);
-            this.Gd = false;
+            Long valueOf = Long.valueOf(up9Var.a);
+            HashSet hashSet = this.x;
+            boolean contains = hashSet.contains(valueOf);
+            long j = up9Var.a;
+            nfa nfaVar = this.y;
+            if (contains) {
+                hashSet.remove(Long.valueOf(j));
+                if (hashSet.size() <= 0 && nfaVar.F1) {
+                    nfaVar.l1(false);
+                }
+            } else {
+                hashSet.add(Long.valueOf(j));
+                if (hashSet.size() > 0 && !nfaVar.F1) {
+                    nfaVar.l1(true);
+                    r7 r7Var = nfaVar.x0;
+                    if (r7Var != null) {
+                        r7Var.setVisibility(8);
+                    }
+                    r7 r7Var2 = nfaVar.w0;
+                    if (r7Var2 != null) {
+                        r7Var2.setVisibility(8);
+                    }
+                }
+            }
+            nfaVar.j1(hashSet.size(), true);
+            boolean z = hashSet.size() > 0;
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                long longValue = ((Long) it.next()).longValue();
+                int i2 = 0;
+                while (true) {
+                    if (i2 >= arrayList.size()) {
+                        break;
+                    }
+                    up9 up9Var2 = (up9) arrayList.get(i2);
+                    if (up9Var2.a != longValue) {
+                        i2++;
+                    } else if (!up9Var2.b) {
+                        z = false;
+                    }
+                }
+                if (!z) {
+                    break;
+                }
+            }
+            r7 r7Var3 = nfaVar.y0;
+            if (r7Var3 != null) {
+                r7Var3.setVisibility(z ? 8 : 0);
+            }
+            r7 r7Var4 = nfaVar.z0;
+            if (r7Var4 != null) {
+                r7Var4.setVisibility(z ? 0 : 8);
+            }
+            ue3Var.e0(hashSet.contains(Long.valueOf(up9Var.a)), true);
         }
-        super.onTransitionAnimationStart(z, z2);
+    }
+
+    public final void F(boolean z) {
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        ArrayList arrayList2 = this.f;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        arrayList2.addAll(this.d.j);
+        if (z) {
+            f();
+        }
+    }
+
+    @Override // w39
+    public final int b() {
+        return this.f.size();
+    }
+
+    @Override // w39
+    public final long c(int i) {
+        if (i >= 0) {
+            ArrayList arrayList = this.f;
+            if (i < arrayList.size()) {
+                return ((up9) arrayList.get(i)).a;
+            }
+        }
+        return i;
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        return 13;
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        View view = s49Var.a;
+        if (view instanceof ue3) {
+            ue3 ue3Var = (ue3) view;
+            ArrayList arrayList = this.f;
+            up9 up9Var = (up9) arrayList.get(i);
+            ue3Var.f0(up9Var.a, up9Var.d, up9Var.c(), false, false);
+            ue3Var.t0 = true;
+            ue3Var.e0(this.x.contains(Long.valueOf(up9Var.a)), false);
+            ue3Var.t2 = i + 1 < arrayList.size();
+        }
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        xea xeaVar = new xea(this, this.c);
+        nfa nfaVar = this.y;
+        xeaVar.setDialogCellDelegate(nfaVar);
+        xeaVar.s0 = true;
+        zkb.h(bkb.c6, nfaVar.I1, xeaVar);
+        return new y29(xeaVar);
     }
 }

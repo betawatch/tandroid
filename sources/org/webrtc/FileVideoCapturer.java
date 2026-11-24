@@ -11,7 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
@@ -25,14 +25,14 @@ public class FileVideoCapturer implements VideoCapturer {
         }
     };
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private interface VideoReader {
         void close();
 
         VideoFrame getNextFrame();
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";
@@ -51,7 +51,7 @@ public class FileVideoCapturer implements VideoCapturer {
             while (true) {
                 int read = this.mediaFile.read();
                 if (read == -1) {
-                    zo4.k(b10.h("Found end of file before end of header for file: ", str));
+                    wn4.j(b00.h("Found end of file before end of header for file: ", str));
                     throw null;
                 }
                 if (read == 10) {
@@ -71,11 +71,11 @@ public class FileVideoCapturer implements VideoCapturer {
                     }
                     Logging.d(TAG, "Color space: " + str2);
                     if (!str2.equals("420") && !str2.equals("420mpeg2")) {
-                        u36.j("Does not support any other color space than I420 or I420mpeg2");
+                        w26.j("Does not support any other color space than I420 or I420mpeg2");
                         throw null;
                     }
                     if (i % 2 == 1 || i2 % 2 == 1) {
-                        u36.j("Does not support odd width or height");
+                        w26.j("Does not support odd width or height");
                         throw null;
                     }
                     this.frameWidth = i;
@@ -124,7 +124,7 @@ public class FileVideoCapturer implements VideoCapturer {
                 }
                 throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
             } catch (IOException e) {
-                rjb.m(e);
+                sdb.b(e);
                 return null;
             }
         }

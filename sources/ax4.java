@@ -1,44 +1,16 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ax4 {
+    public static final ax4 b = new ax4(Float.POSITIVE_INFINITY);
+    public final float a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ax4 implements qac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ux4 b;
-
-    public /* synthetic */ ax4(ux4 ux4Var, byte b) {
-        this.a = b;
-        this.b = ux4Var;
-    }
-
-    @Override // qac
-    public final void a(Object obj) {
-        byte b = this.a;
-        ux4 ux4Var = this.b;
-        switch (b) {
-            case 0:
-                ux4Var.u2.setTitleMinSideInset(gm.L(6.0f) + ((Integer) obj).intValue());
-                break;
-            default:
-                List list = (List) obj;
-                if (ux4Var.getContext() != null && !ux4Var.J) {
-                    ArrayList c = oo0.c(1, list);
-                    ux4Var.U1 = c;
-                    List d = oo0.d(c);
-                    ux4Var.U1 = d;
-                    if (!((ArrayList) d).isEmpty()) {
-                        ux4Var.b1();
-                        l7c l7cVar = ux4Var.T1;
-                        if (l7cVar != null) {
-                            l7cVar.O(true);
-                            break;
-                        }
-                    }
-                }
-                break;
+    public ax4(float f) {
+        if (Float.isNaN(f) || f < 0.0f) {
+            w26.j("epsY must be >= 0");
+            throw null;
         }
+        this.a = f;
     }
 }

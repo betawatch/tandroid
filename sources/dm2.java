@@ -1,62 +1,67 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class dm2 implements eq4 {
+    public final /* synthetic */ byte a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class dm2 extends FrameLayout {
-    public final io a;
-    public final View b;
-    public final ylb c;
-
-    public dm2(Context context, ylb ylbVar) {
-        super(context);
-        this.c = ylbVar;
-        io ioVar = new io(context, false, false, false);
-        this.a = ioVar;
-        int i = cmb.F6;
-        anb.U(ioVar, i, ylbVar);
-        ioVar.setTextSize(gm.L(14.0f));
-        ioVar.setGravity(jb6.a0 ? 5 : 3);
-        ioVar.setImportantForAccessibility(2);
-        ioVar.setOnWidthUpdatedListener(new xf2(this, (byte) 6));
-        addView(ioVar, qoe.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
-        View view = new View(context);
-        this.b = view;
-        Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
-        anb.x(this, mutate, i, ylbVar, PorterDuff.Mode.MULTIPLY);
-        view.setBackground(mutate);
-        addView(view, qoe.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
+    public /* synthetic */ dm2(byte b) {
+        this.a = b;
     }
 
-    public final void a() {
-        float c = this.a.getDrawable().c() + gm.L(1.0f);
-        boolean z = jb6.a0;
-        View view = this.b;
-        if (z) {
-            view.setTranslationX(-c);
-        } else {
-            view.setTranslationX(c);
+    @Override // eq4
+    public final Object invoke(Object obj, Object obj2) {
+        em2 em2Var;
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                qw2 qw2Var = (qw2) obj2;
+                str.getClass();
+                qw2Var.getClass();
+                if (str.length() == 0) {
+                    return qw2Var.toString();
+                }
+                return str + ", " + qw2Var;
+            case 1:
+                sw2 sw2Var = (sw2) obj;
+                qw2 qw2Var2 = (qw2) obj2;
+                sw2Var.getClass();
+                qw2Var2.getClass();
+                sw2 minusKey = sw2Var.minusKey(qw2Var2.getKey());
+                z14 z14Var = z14.a;
+                if (minusKey == z14Var) {
+                    return qw2Var2;
+                }
+                vi2 vi2Var = vi2.b;
+                vw2 vw2Var = (vw2) minusKey.get(vi2Var);
+                if (vw2Var == null) {
+                    em2Var = new em2(qw2Var2, minusKey);
+                } else {
+                    sw2 minusKey2 = minusKey.minusKey(vi2Var);
+                    if (minusKey2 == z14Var) {
+                        return new em2(vw2Var, qw2Var2);
+                    }
+                    em2Var = new em2(vw2Var, new em2(qw2Var2, minusKey2));
+                }
+                return em2Var;
+            case 2:
+                return Boolean.valueOf(((Boolean) obj).booleanValue());
+            case 3:
+                return ((sw2) obj).plus((qw2) obj2);
+            case 4:
+                return ((sw2) obj).plus((qw2) obj2);
+            case 5:
+                return Integer.valueOf(((Integer) obj).intValue() + 1);
+            case 6:
+                return obj;
+            case 7:
+                if (obj == null) {
+                    return null;
+                }
+                fyb.g();
+                return null;
+            default:
+                return (fnb) obj;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(46.0f), TLObject.FLAG_30));
-        a();
-    }
-
-    public void setColor(int i) {
-        ylb ylbVar = this.c;
-        int v0 = cmb.v0(i, ylbVar);
-        anb.U(this.a, i, ylbVar);
-        this.b.getBackground().setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.MULTIPLY));
     }
 }

@@ -1,39 +1,25 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class f1a extends FrameLayout {
-    public final ylb a;
-    public final TextView b;
+    public final /* synthetic */ float a;
 
-    public f1a(Context context, ylb ylbVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f1a(Context context, float f) {
         super(context);
-        this.a = ylbVar;
-        anb.h(cmb.d7, ylbVar, this);
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        ts2.s(textView, 1, 14.0f);
-        anb.X(textView, cmb.e7, ylbVar);
-        textView.setGravity((jb6.a0 ? 5 : 3) | 16);
-        addView(textView, qoe.d(-1, -1.0f, (jb6.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+        this.a = f;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(32.0f), TLObject.FLAG_30));
-    }
-
-    public void setLetter(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i) {
-        anb.X(this.b, i, this.a);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

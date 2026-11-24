@@ -3,14 +3,14 @@ package com.google.android.recaptcha.internal;
 import android.content.ContentResolver;
 import android.os.Build;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzx implements zzar {
-    private final d26 zza;
+    private final d06 zza;
 
     public zzx() {
         int i = zzby.zza;
-        this.zza = fpe.b(zzw.zza);
+        this.zza = cne.b(zzw.zza);
     }
 
     public static final /* synthetic */ ContentResolver zzb(zzx zzxVar) {
@@ -23,29 +23,29 @@ public final class zzx implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, px2 px2Var) {
-        return zzam.zza(this, str, px2Var);
+    public final /* synthetic */ Object zzc(String str, fw2 fw2Var) {
+        return zzam.zza(this, str, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, px2 px2Var) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, fw2 fw2Var) {
         Object zzd;
-        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), px2Var);
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), fw2Var);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, px2 px2Var) {
+    public final Object zze(String str, fw2 fw2Var) {
         return new zzhg(new zzv(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzf(zzxp zzxpVar, px2 px2Var) {
-        return zzam.zzc(this, zzxpVar, px2Var);
+    public final /* synthetic */ Object zzf(zzxp zzxpVar, fw2 fw2Var) {
+        return zzam.zzc(this, zzxpVar, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, px2 px2Var) {
+    public final Object zzg(Exception exc, fw2 fw2Var) {
         int i = Build.VERSION.SDK_INT;
         zzys zzf = zzyt.zzf();
         zzf.zzr(16);

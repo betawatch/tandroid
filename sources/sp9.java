@@ -1,63 +1,59 @@
 // default package
 
-import android.os.SystemClock;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.LaunchActivity;
-import org.webrtc.RendererCommon;
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class sp9 extends FrameLayout {
-    public final akc a;
-    public boolean b;
-    public boolean c;
-    public final long d;
-    public final ei7 e;
-    public final /* synthetic */ tp9 f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class sp9 extends rp9 {
+    public byte d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sp9(tp9 tp9Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.f = tp9Var;
-        this.c = true;
-        this.d = SystemClock.elapsedRealtime();
-        this.e = new ei7(this, (byte) 23);
-        setBackgroundColor(-16777216);
-        la1 la1Var = new la1(launchActivity);
-        addView(la1Var, qoe.c(-1.0f, -1));
-        akc akcVar = new akc(launchActivity, false, false, false, false);
-        this.a = akcVar;
-        RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
-        zjc zjcVar = akcVar.d;
-        zjcVar.setScalingType(scalingType);
-        akcVar.b0 = (byte) 0;
-        zjcVar.setRotateTextureWithScreen(true);
-        zjcVar.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
-        View view = akcVar.h;
-        if (view != null) {
-            view.setVisibility(8);
-        }
-        addView(akcVar, qoe.c(-1.0f, -1));
-        qd2 b = tp9.b();
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (b == null || sharedInstance == null || sharedInstance.getChat() == null) {
-            return;
-        }
-        sharedInstance.getAccount();
-        la1Var.a(sharedInstance.getChat());
+    public static sp9 d(String str, SharedPreferences sharedPreferences) {
+        sp9 sp9Var = new sp9();
+        sp9Var.a = sharedPreferences.getBoolean(str.concat("_save_gallery_photo"), false);
+        sp9Var.b = sharedPreferences.getBoolean(str.concat("_save_gallery_video"), false);
+        sp9Var.c = sharedPreferences.getLong(str.concat("_save_gallery_limitVideo"), 104857600L);
+        return sp9Var;
     }
 
-    public final void a() {
-        boolean a = this.f.b.a(this.d);
-        if (this.c == a) {
-            return;
+    @Override // rp9
+    public final void b() {
+        super.b();
+        mte.f(this.d);
+    }
+
+    public final CharSequence c(int i) {
+        StringBuilder sb = new StringBuilder();
+        if (a()) {
+            if (this.a) {
+                sb.append(k96.M0(2131745728, null));
+            }
+            if (this.b) {
+                if (sb.length() != 0) {
+                    sb.append(", ");
+                }
+                sb.append(k96.M0(2131745721, null));
+                long j = this.c;
+                if (j > 0 && j < 4194304000L) {
+                    sb.append(" (");
+                    sb.append(gl.i0(this.c, true, false));
+                    sb.append(")");
+                }
+            }
+        } else {
+            sb.append(k96.M0(2131745729, null));
         }
-        this.c = a;
-        akc akcVar = this.a;
-        akcVar.animate().cancel();
-        wi8.s(akcVar.animate(), a ? 1.0f : 0.0f, 200L);
+        LongSparseArray l = y6c.h(i).l(this.d);
+        if (l.size() != 0) {
+            if (sb.length() != 0) {
+                sb.append(", ");
+            }
+            sb.append(k96.G(l.size(), "Exception", Integer.valueOf(l.size())));
+        }
+        return sb;
+    }
+
+    public final void e(String str, SharedPreferences sharedPreferences) {
+        sharedPreferences.edit().putBoolean(str.concat("_save_gallery_photo"), this.a).putBoolean(str.concat("_save_gallery_video"), this.b).putLong(str.concat("_save_gallery_limitVideo"), this.c).apply();
     }
 }

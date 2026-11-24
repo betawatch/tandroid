@@ -1,99 +1,67 @@
 // default package
 
-import android.content.Intent;
-import android.os.Bundle;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.WeakHashMap;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ppd extends dp4 implements c36 {
-    public static final WeakHashMap m0 = new WeakHashMap();
-    public final dd8 l0 = new dd8();
+public abstract class ppd {
+    public static ad3 a(ax2 ax2Var, eq4 eq4Var) {
+        ad3 ad3Var = new ad3(qzd.b(ax2Var, z14.a), true);
+        ad3Var.R(dx2.a, ad3Var, eq4Var);
+        return ad3Var;
+    }
 
-    @Override // dp4
-    public final void A() {
-        this.V = true;
-        dd8 dd8Var = this.l0;
-        dd8Var.a = (byte) 5;
-        Iterator it = ((Map) dd8Var.b).values().iterator();
-        while (it.hasNext()) {
-            ((y26) it.next()).onDestroy();
+    public static xma b(ax2 ax2Var, eq4 eq4Var) {
+        xma xmaVar = new xma(qzd.b(ax2Var, z14.a), true);
+        xmaVar.R(dx2.a, xmaVar, eq4Var);
+        return xmaVar;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final Object c(sw2 sw2Var, eq4 eq4Var, fw2 fw2Var) {
+        Unsafe unsafe;
+        long j;
+        sw2 context = fw2Var.getContext();
+        sw2 plus = !((Boolean) sw2Var.fold(Boolean.FALSE, new dm2((byte) 2))).booleanValue() ? context.plus(sw2Var) : qzd.a(context, sw2Var, false);
+        nle.a(plus);
+        if (plus == context) {
+            rq9 rq9Var = new rq9(fw2Var, plus);
+            return dxe.a(rq9Var, rq9Var, eq4Var);
         }
-    }
-
-    @Override // dp4
-    public final void F() {
-        this.V = true;
-        dd8 dd8Var = this.l0;
-        dd8Var.a = (byte) 3;
-        Iterator it = ((Map) dd8Var.b).values().iterator();
-        while (it.hasNext()) {
-            ((y26) it.next()).onResume();
+        vi2 vi2Var = vi2.b;
+        if (rp5.a(plus.get(vi2Var), context.get(vi2Var))) {
+            y4c y4cVar = new y4c(fw2Var, plus);
+            sw2 sw2Var2 = y4cVar.d;
+            Object c = edd.c(sw2Var2, null);
+            try {
+                return dxe.a(y4cVar, y4cVar, eq4Var);
+            } finally {
+                edd.a(sw2Var2, c);
+            }
         }
-    }
-
-    @Override // dp4
-    public final void G(Bundle bundle) {
-        this.l0.c(bundle);
-    }
-
-    @Override // dp4
-    public final void H() {
-        this.V = true;
-        dd8 dd8Var = this.l0;
-        dd8Var.a = (byte) 2;
-        Iterator it = ((Map) dd8Var.b).values().iterator();
-        while (it.hasNext()) {
-            ((y26) it.next()).onStart();
+        io3 io3Var = new io3(fw2Var, plus);
+        try {
+            r3c.c(dle.a(((of0) eq4Var).create(io3Var, io3Var)), g5c.a);
+            do {
+                unsafe = ex.a;
+                j = io3.f;
+                int intVolatile = unsafe.getIntVolatile(io3Var, j);
+                if (intVolatile != 0) {
+                    if (intVolatile != 2) {
+                        sc8.j("Already suspended");
+                        return null;
+                    }
+                    Object a = fad.a(io3Var.v());
+                    if (a instanceof fp2) {
+                        throw ((fp2) a).a;
+                    }
+                    return a;
+                }
+            } while (!unsafe.compareAndSwapInt(io3Var, j, 0, 1));
+            return bx2.a;
+        } catch (Throwable th) {
+            io3Var.resumeWith(new sa9(th));
+            throw th;
         }
-    }
-
-    @Override // dp4
-    public final void I() {
-        this.V = true;
-        dd8 dd8Var = this.l0;
-        dd8Var.a = (byte) 4;
-        Iterator it = ((Map) dd8Var.b).values().iterator();
-        while (it.hasNext()) {
-            ((y26) it.next()).onStop();
-        }
-    }
-
-    @Override // c36
-    public final void a(String str, y26 y26Var) {
-        this.l0.a(str, y26Var);
-    }
-
-    @Override // c36
-    public final y26 b(Class cls, String str) {
-        return (y26) cls.cast(((Map) this.l0.b).get(str));
-    }
-
-    @Override // dp4
-    public final void i(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        super.i(str, fileDescriptor, printWriter, strArr);
-        Iterator it = ((Map) this.l0.b).values().iterator();
-        while (it.hasNext()) {
-            ((y26) it.next()).dump(str, fileDescriptor, printWriter, strArr);
-        }
-    }
-
-    @Override // dp4
-    public final void x(int i, int i2, Intent intent) {
-        super.x(i, i2, intent);
-        Iterator it = ((Map) this.l0.b).values().iterator();
-        while (it.hasNext()) {
-            ((y26) it.next()).onActivityResult(i, i2, intent);
-        }
-    }
-
-    @Override // dp4
-    public final void z(Bundle bundle) {
-        super.z(bundle);
-        this.l0.b(bundle);
     }
 }

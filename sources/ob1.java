@@ -1,40 +1,36 @@
 // default package
 
-import org.telegram.messenger.camera.CameraView;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ob1 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ob1 implements p8c {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ CameraView.CameraGLThread b;
+    public final /* synthetic */ j7b b;
 
-    public /* synthetic */ ob1(CameraView.CameraGLThread cameraGLThread, byte b) {
+    public /* synthetic */ ob1(j7b j7bVar, byte b) {
         this.a = b;
-        this.b = cameraGLThread;
+        this.b = j7bVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // p8c
+    public final void a(Object obj) {
         byte b = this.a;
-        CameraView.CameraGLThread cameraGLThread = this.b;
+        j7b j7bVar = this.b;
+        Integer num = (Integer) obj;
         switch (b) {
             case 0:
-                cameraGLThread.lambda$onDraw$4();
-                break;
-            case 1:
-                cameraGLThread.lambda$onDraw$5();
-                break;
-            case 2:
-                cameraGLThread.lambda$new$0();
-                break;
-            case 3:
-                cameraGLThread.lambda$new$1();
-                break;
-            case 4:
-                cameraGLThread.lambda$new$2();
+                j7bVar.setPeriod(num.intValue());
+                p8c p8cVar = j7bVar.B1;
+                if (p8cVar != null) {
+                    p8cVar.a(num);
+                    break;
+                }
                 break;
             default:
-                cameraGLThread.lambda$new$3();
+                p8c p8cVar2 = j7bVar.C1;
+                if (p8cVar2 != null) {
+                    p8cVar2.a(num);
+                    break;
+                }
                 break;
         }
     }

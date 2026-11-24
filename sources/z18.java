@@ -1,23 +1,60 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class z18 extends b4 {
-    public static final Parcelable.Creator<z18> CREATOR = new v6d((byte) 15);
-    public int a;
-    public Bundle b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class z18 implements vo5 {
+    public final /* synthetic */ y28 a;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        int i2 = this.a;
-        mve.q(parcel, 2, 4);
-        parcel.writeInt(i2);
-        mve.b(parcel, 3, this.b);
-        mve.s(parcel, r);
+    public z18(y28 y28Var) {
+        this.a = y28Var;
+    }
+
+    @Override // vo5
+    public final void E(jm6 jm6Var, oac oacVar, boolean z, int i, boolean z2, long j) {
+        j5 accountInstance;
+        j5 accountInstance2;
+        j5 accountInstance3;
+        y28 y28Var = this.a;
+        TL_stories.StoryItem storyItem = y28Var.E1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
+        }
+        storyItem.dialogId = y28Var.r1;
+        if (jm6Var.b) {
+            accountInstance3 = y28Var.getAccountInstance();
+            String str = jm6Var.I;
+            z3a.a0(jm6Var.x, i, y28Var.r1, 0L, j, 0L, accountInstance3, null, null, null, null, null, null, oacVar, jm6Var.a, str, null, jm6Var.n, null, storyItem, z, false, jm6Var.M);
+        } else if (jm6Var.h != null) {
+            accountInstance2 = y28Var.getAccountInstance();
+            z3a.Y(accountInstance2, jm6Var.h, jm6Var.c, null, y28Var.r1, null, null, null, jm6Var.n, jm6Var.r, null, jm6Var.x, null, oacVar, z, i, false, jm6Var.a, null, 0L, j, 0L, null);
+        } else if (jm6Var.I != null) {
+            accountInstance = y28Var.getAccountInstance();
+            z3a.Y(accountInstance, jm6Var.I, jm6Var.c, null, y28Var.r1, null, null, null, jm6Var.n, jm6Var.r, null, jm6Var.x, null, oacVar, z, i, false, jm6Var.a, null, 0L, j, 0L, null);
+        }
+        y28Var.a0(j <= 0);
+    }
+
+    @Override // vo5
+    public final int getClassGuid() {
+        return this.a.p2;
+    }
+
+    @Override // vo5
+    public final View getFragmentView() {
+        return this.a;
+    }
+
+    @Override // vo5
+    public final Activity getParentActivity() {
+        return gl.W(this.a.getContext());
+    }
+
+    @Override // vo5
+    public final boolean y() {
+        return false;
     }
 }

@@ -1,65 +1,54 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.SortedSet;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.util.TypedValue;
+import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class bwe {
-    public static boolean a(Set set, Object obj) {
-        if (set == obj) {
-            return true;
-        }
-        if (!(obj instanceof Set)) {
-            return false;
-        }
-        Set set2 = (Set) obj;
-        try {
-            if (set.size() == set2.size()) {
-                return set.containsAll(set2);
+    public static kp a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i) {
+        kp kpVar;
+        String attributeValue = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str);
+        byte b = 3;
+        Object obj = null;
+        int i2 = 0;
+        if (attributeValue != null) {
+            TypedValue typedValue = new TypedValue();
+            typedArray.getValue(i, typedValue);
+            int i3 = typedValue.type;
+            if (i3 >= 28 && i3 <= 31) {
+                return new kp(obj, obj, typedValue.data, b);
             }
-            return false;
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
-        }
-    }
-
-    public static n9a b(Set set, di8 di8Var) {
-        if (set instanceof SortedSet) {
-            Set set2 = (SortedSet) set;
-            if (!(set2 instanceof n9a)) {
-                return new o9a(set2, di8Var);
+            try {
+                kpVar = kp.g(typedArray.getResources(), typedArray.getResourceId(i, 0), theme);
+            } catch (Exception e) {
+                Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e);
+                kpVar = null;
             }
-            n9a n9aVar = (n9a) set2;
-            di8 di8Var2 = n9aVar.b;
-            di8Var2.getClass();
-            return new o9a((SortedSet) n9aVar.a, new ei8(Arrays.asList(di8Var2, di8Var)));
+            if (kpVar != null) {
+                return kpVar;
+            }
         }
-        if (!(set instanceof n9a)) {
-            set.getClass();
-            return new n9a(set, di8Var);
-        }
-        n9a n9aVar2 = (n9a) set;
-        di8 di8Var3 = n9aVar2.b;
-        di8Var3.getClass();
-        return new n9a(n9aVar2.a, new ei8(Arrays.asList(di8Var3, di8Var)));
+        return new kp(obj, obj, i2, b);
     }
 
-    public static int c(Set set) {
-        Iterator it = set.iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i = ~(~(i + (next != null ? next.hashCode() : 0)));
+    public static String b(TypedArray typedArray, XmlResourceParser xmlResourceParser, String str, int i) {
+        if (xmlResourceParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null) {
+            return typedArray.getString(i);
         }
-        return i;
+        return null;
     }
 
-    public static m9a d(yo5 yo5Var, yo5 yo5Var2) {
-        jte.l(yo5Var, "set1");
-        jte.l(yo5Var2, "set2");
-        return new m9a(yo5Var, yo5Var2);
+    public static boolean c(XmlPullParser xmlPullParser, String str) {
+        return xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null;
+    }
+
+    public static TypedArray d(Resources resources, Resources.Theme theme, AttributeSet attributeSet, int[] iArr) {
+        return theme == null ? resources.obtainAttributes(attributeSet, iArr) : theme.obtainStyledAttributes(attributeSet, iArr, 0, 0);
     }
 }

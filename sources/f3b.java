@@ -1,172 +1,152 @@
 // default package
 
-import android.accounts.Account;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.text.TextUtils;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Scope;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.concurrent.locks.ReentrantLock;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
 public final class f3b {
-    public static final ReentrantLock c = new ReentrantLock();
-    public static f3b d;
-    public final ReentrantLock a = new ReentrantLock();
-    public final SharedPreferences b;
+    public static CharSequence[] y;
+    public int a;
+    public Long b;
+    public Integer c;
+    public Integer d;
+    public boolean e;
+    public TLRPC.Document g;
+    public SpannableStringBuilder k;
+    public String l;
+    public boolean m;
+    public tgb n;
+    public tgb o;
+    public boolean p;
+    public boolean q;
+    public View r;
+    public Runnable s;
+    public int x;
+    public boolean f = true;
+    public final lm h = new lm(0, 350, s33.h);
+    public final n41 i = new n41((View) null);
+    public final ff0 j = bkb.Y(553648127, 0, 0);
+    public final Paint t = new Paint(1);
+    public final Paint u = new Paint(1);
+    public final Path v = new Path();
+    public final RectF w = new RectF();
 
-    public f3b(Context context) {
-        this.b = context.getSharedPreferences("com.google.android.gms.signin", 0);
-    }
-
-    public static f3b a(Context context) {
-        ite.h(context);
-        ReentrantLock reentrantLock = c;
-        reentrantLock.lock();
-        try {
-            f3b f3bVar = d;
-            if (f3bVar == null) {
-                f3bVar = new f3b(context.getApplicationContext());
-                d = f3bVar;
-            }
-            return f3bVar;
-        } finally {
-            reentrantLock.unlock();
+    public static CharSequence d() {
+        CharSequence[] charSequenceArr = y;
+        if (charSequenceArr == null) {
+            charSequenceArr = new CharSequence[2];
+            y = charSequenceArr;
         }
-    }
-
-    public static final String f(String str, String str2) {
-        return kt6.p(str, ":", str2, new StringBuilder(str.length() + 1 + String.valueOf(str2).length()));
-    }
-
-    public final GoogleSignInAccount b() {
-        String e;
-        String e2 = e("defaultGoogleSignInAccount");
-        if (!TextUtils.isEmpty(e2) && (e = e(f("googleSignInAccount", e2))) != null) {
-            try {
-                return GoogleSignInAccount.b(e);
-            } catch (JSONException unused) {
-            }
+        if (charSequenceArr[0] == null) {
+            charSequenceArr[0] = new SpannableStringBuilder("u");
+            cm2 cm2Var = new cm2(R.drawable.filled_widget_music, 0);
+            cm2Var.c(gl.L(16.0f));
+            cm2Var.H = 1.0f;
+            float f = -gl.L(1.0f);
+            float L = gl.L(1.0f);
+            cm2Var.r = f;
+            cm2Var.s = L;
+            ((SpannableStringBuilder) y[0]).setSpan(cm2Var, 0, 1, 33);
         }
-        return null;
+        return y[0];
     }
 
-    public final void c(GoogleSignInAccount googleSignInAccount, GoogleSignInOptions googleSignInOptions) {
-        ite.h(googleSignInAccount);
-        ite.h(googleSignInOptions);
-        String str = googleSignInAccount.n;
-        d("defaultGoogleSignInAccount", str);
-        String f = f("googleSignInAccount", str);
-        JSONObject jSONObject = new JSONObject();
-        try {
-            String str2 = googleSignInAccount.a;
-            if (str2 != null) {
-                jSONObject.put("id", str2);
+    public final void a(Canvas canvas, float f) {
+        Typeface o;
+        float f2;
+        if (this.n == null) {
+            CharSequence charSequence = this.k;
+            if (charSequence == null) {
+                charSequence = "";
             }
-            String str3 = googleSignInAccount.b;
-            if (str3 != null) {
-                jSONObject.put("tokenId", str3);
+            if (this.g != null) {
+                o = null;
+                f2 = 12.0f;
+            } else {
+                o = gl.o();
+                f2 = 14.0f;
             }
-            String str4 = googleSignInAccount.c;
-            if (str4 != null) {
-                jSONObject.put("email", str4);
-            }
-            String str5 = googleSignInAccount.d;
-            if (str5 != null) {
-                jSONObject.put("displayName", str5);
-            }
-            String str6 = googleSignInAccount.s;
-            if (str6 != null) {
-                jSONObject.put("givenName", str6);
-            }
-            String str7 = googleSignInAccount.w;
-            if (str7 != null) {
-                jSONObject.put("familyName", str7);
-            }
-            Uri uri = googleSignInAccount.e;
-            if (uri != null) {
-                jSONObject.put("photoUrl", uri.toString());
-            }
-            String str8 = googleSignInAccount.f;
-            if (str8 != null) {
-                jSONObject.put("serverAuthCode", str8);
-            }
-            jSONObject.put("expirationTime", googleSignInAccount.h);
-            jSONObject.put("obfuscatedIdentifier", str);
-            JSONArray jSONArray = new JSONArray();
-            ArrayList arrayList = googleSignInAccount.r;
-            Scope[] scopeArr = (Scope[]) arrayList.toArray(new Scope[arrayList.size()]);
-            Arrays.sort(scopeArr, ju6.f);
-            int i = 0;
-            for (Scope scope : scopeArr) {
-                jSONArray.put(scope.b);
-            }
-            jSONObject.put("grantedScopes", jSONArray);
-            jSONObject.remove("serverAuthCode");
-            d(f, jSONObject.toString());
-            String f2 = f("googleSignInOptions", str);
-            String str9 = googleSignInOptions.n;
-            String str10 = googleSignInOptions.h;
-            JSONObject jSONObject2 = new JSONObject();
-            try {
-                JSONArray jSONArray2 = new JSONArray();
-                ArrayList arrayList2 = googleSignInOptions.b;
-                Collections.sort(arrayList2, GoogleSignInOptions.G);
-                int size = arrayList2.size();
-                while (i < size) {
-                    Object obj = arrayList2.get(i);
-                    i++;
-                    jSONArray2.put(((Scope) obj).b);
-                }
-                jSONObject2.put("scopes", jSONArray2);
-                Account account = googleSignInOptions.c;
-                if (account != null) {
-                    jSONObject2.put("accountName", account.name);
-                }
-                jSONObject2.put("idTokenRequested", googleSignInOptions.d);
-                jSONObject2.put("forceCodeForRefreshToken", googleSignInOptions.f);
-                jSONObject2.put("serverAuthRequested", googleSignInOptions.e);
-                if (!TextUtils.isEmpty(str10)) {
-                    jSONObject2.put("serverClientId", str10);
-                }
-                if (!TextUtils.isEmpty(str9)) {
-                    jSONObject2.put("hostedDomain", str9);
-                }
-                d(f2, jSONObject2.toString());
-            } catch (JSONException e) {
-                rjb.m(e);
-            }
-        } catch (JSONException e2) {
-            rjb.m(e2);
+            this.n = new tgb(charSequence, f2, o);
         }
-    }
-
-    public final void d(String str, String str2) {
-        ReentrantLock reentrantLock = this.a;
-        reentrantLock.lock();
-        try {
-            this.b.edit().putString(str, str2).apply();
-        } finally {
-            reentrantLock.unlock();
+        if (this.o == null || this.m) {
+            String str = this.l;
+            this.o = new tgb(str != null ? str : "", 14.0f, null);
         }
+        float d = this.h.d(this.f);
+        Paint paint = this.t;
+        paint.setColor(TLObject.FLAG_30);
+        int min = (int) Math.min(f, Math.max(this.n.c, this.o.c) + gl.U1(d, gl.L(20.0f), gl.L(18.0f)));
+        this.x = min;
+        int U1 = gl.U1(d, gl.L(42.0f), gl.L(22.0f));
+        float f3 = min;
+        RectF rectF = this.w;
+        rectF.set(0.0f, 0.0f, f3, U1);
+        canvas.save();
+        float a = this.i.a(0.02f);
+        canvas.scale(a, a, rectF.centerX(), rectF.centerY());
+        float U12 = gl.U1(d, gl.L(5.0f), gl.L(11.0f));
+        canvas.drawRoundRect(rectF, U12, U12, paint);
+        canvas.save();
+        Path path = this.v;
+        path.rewind();
+        path.addRoundRect(rectF, U12, U12, Path.Direction.CW);
+        canvas.clipPath(path);
+        ff0 ff0Var = this.j;
+        ff0Var.setBounds(0, 0, min, U1);
+        ff0Var.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.clipRect(0, 0, gl.L(3.0f), gl.L(42.0f));
+        RectF rectF2 = gl.P;
+        rectF2.set(0.0f, 0.0f, gl.L(10.0f), gl.L(42.0f));
+        Paint paint2 = this.u;
+        paint2.setColor(-1);
+        float f4 = 1.0f - d;
+        paint2.setAlpha((int) (255.0f * f4));
+        canvas.drawRoundRect(rectF2, gl.L(5.0f), gl.L(5.0f), paint2);
+        canvas.restore();
+        int L = min - gl.L(20.0f);
+        if (f3 < f) {
+            L = (int) Math.min(gl.L(12.0f) + L, f - gl.L(20.0f));
+        }
+        tgb tgbVar = this.n;
+        float f5 = L;
+        tgbVar.p = f5;
+        tgbVar.c(gl.U1(d, gl.L(10.0f), gl.L(7.0f)), gl.U1(d, gl.L(12.0f), gl.L(11.0f)), 1.0f, -1, canvas);
+        tgb tgbVar2 = this.o;
+        tgbVar2.p = f5;
+        tgbVar2.c(gl.L(10.0f), gl.L(30.0f), f4, -1, canvas);
+        canvas.restore();
     }
 
-    public final String e(String str) {
-        ReentrantLock reentrantLock = this.a;
-        reentrantLock.lock();
-        try {
-            return this.b.getString(str, null);
-        } finally {
-            reentrantLock.unlock();
+    public final int b() {
+        return gl.L(this.f ? 22.0f : 42.0f);
+    }
+
+    public final void c() {
+        if (this.p || this.q || this.b == null || this.c == null || this.r == null) {
+            return;
+        }
+        this.q = true;
+        na7.q1(this.a).M1().f0(this.c.intValue(), this.b.longValue(), new ae9(this, (byte) 14));
+    }
+
+    public final void e(float f, float f2, boolean z) {
+        this.i.c(z);
+        int[] iArr = z ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0];
+        ff0 ff0Var = this.j;
+        ff0Var.setState(iArr);
+        if (z) {
+            ff0Var.setHotspot(f, f2);
         }
     }
 }

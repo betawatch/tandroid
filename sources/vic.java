@@ -1,35 +1,27 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.WindowManager;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class vic implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class vic extends CharacterStyle implements UpdateAppearance {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ yic b;
 
-    public /* synthetic */ vic(yic yicVar, byte b) {
-        this.a = b;
-        this.b = yicVar;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        yic yicVar = this.b;
-        switch (b) {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                WindowManager.LayoutParams layoutParams = yicVar.d;
-                layoutParams.x = (int) floatValue;
-                gm.N3(yicVar.c, yicVar.a, layoutParams);
+                int alpha = textPaint.getAlpha();
+                textPaint.setColor(yic.u3);
+                textPaint.setAlpha((int) (alpha * 1.0f));
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                WindowManager.LayoutParams layoutParams2 = yicVar.d;
-                layoutParams2.y = (int) floatValue2;
-                gm.N3(yicVar.c, yicVar.a, layoutParams2);
+                int alpha2 = textPaint.getAlpha();
+                textPaint.setColor(jjc.Y1);
+                textPaint.setAlpha(alpha2 / 2);
+                textPaint.clearShadowLayer();
                 break;
         }
     }

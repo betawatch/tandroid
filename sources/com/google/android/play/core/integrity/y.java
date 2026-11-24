@@ -6,13 +6,13 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 abstract class y {
     private final String b;
     private final long c;
     private boolean e;
-    private final s2d a = new s2d("IntegrityDialogWrapper");
+    private final q0d a = new q0d("IntegrityDialogWrapper");
     private final Object d = new Object();
 
     public y(String str, long j) {
@@ -26,13 +26,13 @@ abstract class y {
                 return Tasks.forResult(0);
             }
             this.e = true;
-            s2d s2dVar = this.a;
+            q0d q0dVar = this.a;
             Object[] objArr = {Integer.valueOf(i)};
-            s2dVar.getClass();
+            q0dVar.getClass();
             if (Log.isLoggable("PlayCore", 3)) {
-                Log.d("PlayCore", s2d.d(s2dVar.a, "checkAndShowDialog(%s)", objArr));
+                Log.d("PlayCore", q0d.d(q0dVar.a, "checkAndShowDialog(%s)", objArr));
             }
-            Bundle j = kt6.j(i, "dialog.intent.type");
+            Bundle j = ls6.j(i, "dialog.intent.type");
             j.putString("package.name", this.b);
             j.putInt("playcore.integrity.version.major", 1);
             j.putInt("playcore.integrity.version.minor", 4);

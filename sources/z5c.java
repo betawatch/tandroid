@@ -1,56 +1,22 @@
 // default package
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class z5c extends av7 {
+    public final mm5 c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class z5c extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
-
-    public z5c() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
+    public z5c(String str, w59 w59Var) {
+        super(str, null, false, 1);
+        this.c = mm5.q(w59Var);
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i = this.c;
-        if (i >= 0) {
-            this.b = cmb.w0(null, i, false);
+    @Override // av7, java.lang.Throwable
+    public final String getMessage() {
+        String message = super.getMessage();
+        mm5 mm5Var = this.c;
+        if (mm5Var.isEmpty()) {
+            return message;
         }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        int i2 = this.b;
-        if (i2 != 0) {
-            textPaint.setColor(i2);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    public z5c(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
-    }
-
-    public z5c(Typeface typeface, int i) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i;
+        return message + "\nsniff failures: " + mm5Var;
     }
 }

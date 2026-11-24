@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Collections;
+import java.util.Map;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class rke implements cq7 {
-    public static final rke a = new rke();
+public final class rke {
+    public static volatile rke a;
+    public static volatile rke b;
+    public static final rke c;
 
     static {
-        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)));
+        rke rkeVar = new rke();
+        Map map = Collections.EMPTY_MAP;
+        c = rkeVar;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static void a() {
+        if (a == null) {
+            synchronized (rke.class) {
+                if (a == null) {
+                    a = c;
+                }
+            }
         }
-        throw null;
     }
 }

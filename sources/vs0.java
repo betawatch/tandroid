@@ -1,86 +1,99 @@
 // default package
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import org.json.JSONObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vs0 implements SensorEventListener {
-    public long a;
-    public float[] b;
-    public float[] c;
-    public float[] d;
-    public final /* synthetic */ ws0 e;
+public final /* synthetic */ class vs0 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ct0 b;
 
-    public vs0(ws0 ws0Var) {
-        this.e = ws0Var;
+    public /* synthetic */ vs0(ct0 ct0Var, byte b) {
+        this.a = b;
+        this.b = ct0Var;
     }
 
-    public final void a() {
-        if (this.b != null) {
-            ws0 ws0Var = this.e;
-            if (ws0Var.k != null) {
-                this.a = System.currentTimeMillis();
-                float[] fArr = this.c;
-                if (fArr == null) {
-                    fArr = new float[9];
-                    this.c = fArr;
-                }
-                float[] fArr2 = this.d;
-                if (fArr2 == null) {
-                    fArr2 = new float[4];
-                    this.d = fArr2;
-                }
-                float[] fArr3 = this.b;
-                if (fArr3.length > 4) {
-                    System.arraycopy(fArr3, 0, fArr2, 0, 4);
-                    SensorManager.getRotationMatrixFromVector(this.c, this.d);
-                } else {
-                    SensorManager.getRotationMatrixFromVector(fArr, fArr3);
-                }
-                SensorManager.getOrientation(this.c, new float[3]);
-                try {
-                    JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("absolute", false);
-                    jSONObject.put("alpha", -r2[0]);
-                    jSONObject.put("beta", -r2[1]);
-                    jSONObject.put("gamma", r2[2]);
-                    ws0Var.k.c("window.Telegram.WebView.receiveEvent('device_orientation_changed', " + jSONObject + ");");
-                } catch (Exception unused) {
-                }
-            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final ct0 ct0Var = this.b;
+        switch (b) {
+            case 0:
+                final byte b2 = 1;
+                gl.c3(new Runnable() { // from class: us0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        TLObject tLObject2 = tLObject;
+                        ct0 ct0Var2 = ct0Var;
+                        switch (b3) {
+                            case 0:
+                                ct0Var2.j = new ArrayList();
+                                ct0Var2.i = false;
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    for (int i = 0; i < vector.objects.size(); i++) {
+                                        ct0Var2.j.add((TLRPC.User) vector.objects.get(i));
+                                    }
+                                    na7.q1(ct0Var2.a).b4(ct0Var2.j, false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                int i2 = ct0Var2.a;
+                                ct0Var2.l = new ArrayList();
+                                ct0Var2.k = false;
+                                if (tLObject2 instanceof TLRPC.messages_Chats) {
+                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject2;
+                                    na7.q1(i2).V3(messages_chats.chats, false);
+                                    ct0Var2.l.addAll(messages_chats.chats);
+                                }
+                                kk7.f(i2).k(kk7.O3, new Object[0]);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b3 = 0;
+                gl.c3(new Runnable() { // from class: us0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        TLObject tLObject2 = tLObject;
+                        ct0 ct0Var2 = ct0Var;
+                        switch (b32) {
+                            case 0:
+                                ct0Var2.j = new ArrayList();
+                                ct0Var2.i = false;
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    for (int i = 0; i < vector.objects.size(); i++) {
+                                        ct0Var2.j.add((TLRPC.User) vector.objects.get(i));
+                                    }
+                                    na7.q1(ct0Var2.a).b4(ct0Var2.j, false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                int i2 = ct0Var2.a;
+                                ct0Var2.l = new ArrayList();
+                                ct0Var2.k = false;
+                                if (tLObject2 instanceof TLRPC.messages_Chats) {
+                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject2;
+                                    na7.q1(i2).V3(messages_chats.chats, false);
+                                    ct0Var2.l.addAll(messages_chats.chats);
+                                }
+                                kk7.f(i2).k(kk7.O3, new Object[0]);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        ws0 ws0Var = this.e;
-        f00 f00Var = ws0Var.s;
-        if (f00Var != null) {
-            gm.r(f00Var);
-            ws0Var.s = null;
-        }
-        if (ws0Var.l || ws0Var.k == null) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis() - this.a;
-        long j = ws0Var.j;
-        if (currentTimeMillis < j) {
-            f00 f00Var2 = new f00(this, (byte) 29);
-            ws0Var.s = f00Var2;
-            gm.d3(f00Var2, j - currentTimeMillis);
-        } else {
-            if (sensorEvent.sensor.getType() == 15) {
-                this.b = sensorEvent.values;
-            }
-            a();
-        }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

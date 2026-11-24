@@ -1,19 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class hod implements cq7 {
-    public static final hod a = new hod();
+import android.net.ConnectivityManager;
+import android.net.LinkProperties;
+import android.net.Network;
 
-    static {
-        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class hod extends ConnectivityManager.NetworkCallback {
+    public final /* synthetic */ ood a;
+
+    public hod(ood oodVar) {
+        this.a = oodVar;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
+        this.a.a(network, linkProperties);
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLost(Network network) {
+        ood oodVar = this.a;
+        synchronized (oodVar.h) {
+            if (oodVar.d == null || oodVar.e == null) {
+                return;
+            }
+            ood.j.b("the network is lost", new Object[0]);
+            if (oodVar.e.remove(network)) {
+                oodVar.d.remove(network);
+            }
+            oodVar.b();
         }
-        throw null;
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onUnavailable() {
+        ood oodVar = this.a;
+        synchronized (oodVar.h) {
+            if (oodVar.d == null || oodVar.e == null) {
+                return;
+            }
+            ood.j.b("all networks are unavailable.", new Object[0]);
+            oodVar.d.clear();
+            oodVar.e.clear();
+            oodVar.b();
+        }
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onAvailable(Network network) {
     }
 }

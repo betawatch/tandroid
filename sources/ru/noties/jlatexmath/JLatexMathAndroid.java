@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class JLatexMathAndroid {
     private static final String BASE = "org/scilab/forge/jlatexmath/";
@@ -19,7 +19,7 @@ public abstract class JLatexMathAndroid {
         if (context != null) {
             return context;
         }
-        gxc.d("Please call `#init(Context)` method to initialize jLatexMath");
+        fvc.f("Please call `#init(Context)` method to initialize jLatexMath");
         return null;
     }
 
@@ -27,7 +27,7 @@ public abstract class JLatexMathAndroid {
         try {
             return context().getAssets().open(BASE + str);
         } catch (IOException e) {
-            rjb.m(e);
+            sdb.b(e);
             return null;
         }
     }

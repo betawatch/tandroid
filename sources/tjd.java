@@ -1,19 +1,90 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.security.AccessController;
+import java.security.PrivilegedActionException;
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class tjd implements cq7 {
-    public static final tjd a = new tjd();
+public final class tjd extends v0f {
+    public static final Unsafe a;
+    public static final long b;
+    public static final long c;
+    public static final long d;
+    public static final long e;
+    public static final long f;
 
     static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)));
+        Unsafe unsafe;
+        try {
+            try {
+                unsafe = Unsafe.getUnsafe();
+            } catch (SecurityException unused) {
+                unsafe = (Unsafe) AccessController.doPrivileged(new q2((byte) 2));
+            }
+            try {
+                c = unsafe.objectFieldOffset(akd.class.getDeclaredField("c"));
+                b = unsafe.objectFieldOffset(akd.class.getDeclaredField("b"));
+                d = unsafe.objectFieldOffset(akd.class.getDeclaredField("a"));
+                e = unsafe.objectFieldOffset(ujd.class.getDeclaredField("a"));
+                f = unsafe.objectFieldOffset(ujd.class.getDeclaredField("b"));
+                a = unsafe;
+            } catch (NoSuchFieldException e2) {
+                sdb.b(e2);
+            }
+        } catch (PrivilegedActionException e3) {
+            fyb.j("Could not initialize intrinsics", e3.getCause());
+        }
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // v0f
+    public final mjd a(tod todVar) {
+        mjd mjdVar;
+        mjd mjdVar2 = mjd.d;
+        do {
+            mjdVar = todVar.b;
+            if (mjdVar2 == mjdVar) {
+                break;
+            }
+        } while (!e(todVar, mjdVar, mjdVar2));
+        return mjdVar;
+    }
+
+    @Override // v0f
+    public final ujd b(tod todVar) {
+        ujd ujdVar;
+        ujd ujdVar2 = ujd.c;
+        do {
+            ujdVar = todVar.c;
+            if (ujdVar2 == ujdVar) {
+                break;
+            }
+        } while (!g(todVar, ujdVar, ujdVar2));
+        return ujdVar;
+    }
+
+    @Override // v0f
+    public final void c(ujd ujdVar, ujd ujdVar2) {
+        a.putObject(ujdVar, f, ujdVar2);
+    }
+
+    @Override // v0f
+    public final void d(ujd ujdVar, Thread thread) {
+        a.putObject(ujdVar, e, thread);
+    }
+
+    @Override // v0f
+    public final boolean e(tod todVar, mjd mjdVar, mjd mjdVar2) {
+        return y0f.a(a, todVar, b, mjdVar, mjdVar2);
+    }
+
+    @Override // v0f
+    public final boolean f(akd akdVar, Object obj, Object obj2) {
+        return y0f.a(a, akdVar, d, obj, obj2);
+    }
+
+    @Override // v0f
+    public final boolean g(akd akdVar, ujd ujdVar, ujd ujdVar2) {
+        return y0f.a(a, akdVar, c, ujdVar, ujdVar2);
     }
 }

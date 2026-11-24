@@ -1,142 +1,98 @@
 // default package
 
-import android.view.View;
-import android.view.animation.Interpolator;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class d69 {
-    public et8 a;
-    public ArrayList b;
-    public short c;
-    public short d;
-    public short e;
-    public short f;
-    public short g;
-    public Interpolator h;
-    public Interpolator i;
-    public Interpolator j;
-    public Interpolator k;
-    public short l;
+public final class d69 extends ym5 {
+    public static final Object[] r;
+    public static final d69 s;
+    public final transient Object[] d;
+    public final transient int e;
+    public final transient Object[] f;
+    public final transient int h;
+    public final transient int n;
 
-    public static int b(u69 u69Var) {
-        int i = u69Var.l;
-        int i2 = i & 14;
-        if (u69Var.h()) {
-            return 4;
-        }
-        if ((i & 4) != 0) {
-            return i2;
-        }
-        int i3 = u69Var.d;
-        int b = u69Var.b();
-        return (i3 == -1 || b == -1 || i3 == b) ? i2 : i2 | 2048;
+    static {
+        Object[] objArr = new Object[0];
+        r = objArr;
+        s = new d69(0, 0, 0, objArr, objArr);
     }
 
-    public abstract boolean a(u69 u69Var, az8 az8Var, az8 az8Var2);
-
-    public boolean c(u69 u69Var, List list) {
-        return u69Var.a instanceof ml3;
+    public d69(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {
+        this.d = objArr;
+        this.e = i;
+        this.f = objArr2;
+        this.h = i2;
+        this.n = i3;
     }
 
-    public final void d(u69 u69Var) {
-        et8 et8Var = this.a;
-        if (et8Var != null) {
-            RecyclerView recyclerView = (RecyclerView) et8Var.b;
-            boolean z = true;
-            u69Var.q(true);
-            View view = u69Var.a;
-            if (u69Var.j != null && u69Var.k == null) {
-                u69Var.j = null;
-            }
-            u69Var.k = null;
-            if ((u69Var.l & 16) == 0) {
-                ki2 ki2Var = recyclerView.b;
-                recyclerView.A0();
-                mx6 mx6Var = recyclerView.e;
-                vh2 vh2Var = (vh2) mx6Var.c;
-                ai4 ai4Var = (ai4) mx6Var.b;
-                int indexOfChild = ((RecyclerView) ai4Var.b).indexOfChild(view);
-                if (indexOfChild == -1) {
-                    mx6Var.y0(view);
-                } else if (vh2Var.x(indexOfChild)) {
-                    vh2Var.z(indexOfChild);
-                    mx6Var.y0(view);
-                    ai4Var.S(indexOfChild);
-                } else {
-                    z = false;
+    @Override // gm5, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj != null) {
+            Object[] objArr = this.f;
+            if (objArr.length != 0) {
+                int b = cje.b(obj);
+                while (true) {
+                    int i = b & this.h;
+                    Object obj2 = objArr[i];
+                    if (obj2 == null) {
+                        return false;
+                    }
+                    if (obj2.equals(obj)) {
+                        return true;
+                    }
+                    b = i + 1;
                 }
-                if (z) {
-                    u69 U = RecyclerView.U(view);
-                    ki2Var.l(U);
-                    ki2Var.i(U);
-                }
-                recyclerView.B0(!z);
-                if (z || !u69Var.l()) {
-                    return;
-                }
-                recyclerView.removeDetachedView(view, false);
             }
         }
+        return false;
     }
 
-    public final void e() {
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            r49 r49Var = (r49) arrayList.get(i);
-            r49Var.a.l(r49Var.b, r49Var.c, r49Var.d, false);
-        }
-        arrayList.clear();
-    }
-
-    public abstract void f(u69 u69Var);
-
-    public abstract void g();
-
-    public long h() {
-        return this.c;
-    }
-
-    public long i() {
-        return Math.max(this.f, this.g);
-    }
-
-    public long j() {
+    @Override // ym5, java.util.Collection, java.util.Set
+    public final int hashCode() {
         return this.e;
     }
 
-    public abstract boolean k();
-
-    public az8 l(r69 r69Var, u69 u69Var, int i, List list) {
-        az8 az8Var = new az8((byte) 4);
-        View view = u69Var.a;
-        az8Var.b = view.getLeft();
-        az8Var.c = view.getTop();
-        view.getRight();
-        view.getBottom();
-        return az8Var;
+    @Override // gm5
+    public final int i(int i, Object[] objArr) {
+        Object[] objArr2 = this.d;
+        int i2 = this.n;
+        System.arraycopy(objArr2, 0, objArr, i, i2);
+        return i + i2;
     }
 
-    public abstract void m();
-
-    /* JADX WARN: Type inference failed for: r1v1, types: [int, short] */
-    public final void n(long j) {
-        ?? r1 = (int) j;
-        this.c = r1;
-        this.e = r1;
-        this.d = r1;
-        this.f = r1;
-        this.g = r1;
+    @Override // gm5
+    public final Object[] j() {
+        return this.d;
     }
 
-    public final void o(Interpolator interpolator) {
-        this.h = interpolator;
-        this.i = interpolator;
-        this.j = interpolator;
-        this.k = interpolator;
+    @Override // gm5
+    public final int k() {
+        return this.n;
+    }
+
+    @Override // gm5
+    public final int l() {
+        return 0;
+    }
+
+    @Override // gm5
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    /* renamed from: n */
+    public final v5c iterator() {
+        return h().listIterator(0);
+    }
+
+    @Override // ym5
+    public final mm5 r() {
+        return mm5.o(this.n, this.d);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.n;
     }
 }

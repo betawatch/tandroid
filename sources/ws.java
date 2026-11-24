@@ -1,79 +1,81 @@
 // default package
 
 import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.text.TextUtils;
+import org.telegram.ui.m;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ws extends b4 {
-    public static final Parcelable.Creator<ws> CREATOR = new jid(27);
-    public final String a;
-    public final String b;
-    public final ArrayList c;
-    public final String d;
-    public final Uri e;
-    public final String f;
-    public final String h;
-    public final Boolean n;
-    public final Boolean r;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ws implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ o b;
 
-    public ws(String str, String str2, ArrayList arrayList, String str3, Uri uri, String str4, String str5, Boolean bool, Boolean bool2) {
-        this.a = str;
-        this.b = str2;
-        this.c = arrayList;
-        this.d = str3;
-        this.e = uri;
-        this.f = str4;
-        this.h = str5;
-        this.n = bool;
-        this.r = bool2;
+    public /* synthetic */ ws(o oVar, byte b) {
+        this.a = b;
+        this.b = oVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // p8c
+    public final void a(Object obj) {
+        byte b = this.a;
+        o oVar = this.b;
+        switch (b) {
+            case 0:
+                a6 a6Var = oVar.r0;
+                float f = -((Integer) obj).intValue();
+                oVar.q0 = f;
+                a6Var.setTranslationY(((1.0f - oVar.a1) * gl.L(51.0f)) + f);
+                break;
+            case 1:
+                String str = (String) obj;
+                if (!TextUtils.isEmpty(str)) {
+                    oVar.i0.c0.setText(str);
+                    ps0 ps0Var = oVar.i0.c0;
+                    ps0Var.setSelection(ps0Var.getText().length());
+                    gl.E3(oVar.i0.c0);
+                    break;
+                }
+                break;
+            case 2:
+                String str2 = (String) obj;
+                if (oVar.M != null && str2 != null) {
+                    oVar.i0.k(false);
+                    if (!d01.g(Uri.parse(str2), false, null)) {
+                        if (!d01.m(oVar.M, str2, false)) {
+                            m mVar = oVar.v0[0];
+                            if (mVar != null && mVar.getWebView() != null) {
+                                oVar.v0[0].getWebView().loadUrl(str2);
+                                break;
+                            } else {
+                                d01.o(str2);
+                                break;
+                            }
+                        }
+                    } else {
+                        sw swVar = oVar.L;
+                        if (swVar != null) {
+                            swVar.a(true);
+                        }
+                        d01.l(oVar.M, str2, false, false, null);
+                        break;
+                    }
+                }
+                break;
+            default:
+                e01 e01Var = (e01) obj;
+                if (oVar.M != null && e01Var != null) {
+                    oVar.i0.k(false);
+                    m mVar2 = oVar.v0[0];
+                    if (mVar2 != null && mVar2.getWebView() != null) {
+                        oVar.v0[0].getWebView().d(e01Var.c, e01Var.d);
+                        break;
+                    } else {
+                        d01.o(e01Var.c);
+                        break;
+                    }
+                }
+                break;
         }
-        if (!(obj instanceof ws)) {
-            return false;
-        }
-        ws wsVar = (ws) obj;
-        return qe1.d(this.a, wsVar.a) && qe1.d(this.b, wsVar.b) && qe1.d(this.c, wsVar.c) && qe1.d(this.d, wsVar.d) && qe1.d(this.e, wsVar.e) && qe1.d(this.f, wsVar.f) && qe1.d(this.h, wsVar.h);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e, this.f});
-    }
-
-    public final String toString() {
-        ArrayList arrayList = this.c;
-        int size = arrayList == null ? 0 : arrayList.size();
-        String valueOf = String.valueOf(this.e);
-        StringBuilder m = mlb.m("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
-        m.append(size);
-        m.append(", senderAppIdentifier: ");
-        m.append(this.d);
-        m.append(", senderAppLaunchUrl: ");
-        kt6.v(m, valueOf, ", iconUrl: ", this.f, ", type: ");
-        m.append(this.h);
-        return m.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.a);
-        mve.l(parcel, 3, this.b);
-        mve.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
-        mve.l(parcel, 6, this.d);
-        mve.k(parcel, 7, this.e, i);
-        mve.l(parcel, 8, this.f);
-        mve.l(parcel, 9, this.h);
-        mve.a(parcel, 10, this.n);
-        mve.a(parcel, 11, this.r);
-        mve.s(parcel, r);
     }
 }

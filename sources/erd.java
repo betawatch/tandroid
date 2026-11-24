@@ -1,19 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.io.Closeable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class erd implements cq7 {
-    public static final erd a = new erd();
-
-    static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)));
-    }
-
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class erd {
+    public static final void a(Closeable closeable, Throwable th) {
+        if (closeable != null) {
+            if (th == null) {
+                closeable.close();
+                return;
+            }
+            try {
+                closeable.close();
+            } catch (Throwable th2) {
+                tfe.a(th, th2);
+            }
         }
-        throw null;
     }
 }

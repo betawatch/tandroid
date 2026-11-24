@@ -1,41 +1,37 @@
 // default package
 
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class hjc implements RequestDelegate {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class hjc extends View {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ HashSet d;
-    public final /* synthetic */ AtomicInteger e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ String g;
+    public final /* synthetic */ jjc b;
 
-    public /* synthetic */ hjc(VoIPService voIPService, long j, HashSet hashSet, AtomicInteger atomicInteger, int i, String str, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hjc(jjc jjcVar, Context context, byte b) {
+        super(context);
         this.a = b;
-        this.b = voIPService;
-        this.c = j;
-        this.d = hashSet;
-        this.e = atomicInteger;
-        this.f = i;
-        this.g = str;
+        this.b = jjcVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        byte b = this.a;
+        jjc jjcVar = this.b;
+        switch (b) {
             case 0:
-                this.b.lambda$startConferenceGroupCall$54(this.c, this.d, this.e, this.f, this.g, tLObject, tL_error);
+                RectF rectF = gl.P;
+                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                jjcVar.j(canvas, rectF, jjcVar.g0 ? -1 : jjcVar.h0, 1.0f);
                 break;
             default:
-                this.b.lambda$startConferenceGroupCall$46(this.c, this.d, this.e, this.f, this.g, tLObject, tL_error);
+                RectF rectF2 = gl.P;
+                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                jjcVar.e(canvas, rectF2, jjcVar.g0 ? -1 : jjcVar.h0, 1.0f);
                 break;
         }
     }

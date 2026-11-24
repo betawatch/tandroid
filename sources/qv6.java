@@ -1,39 +1,17 @@
 // default package
 
-import android.widget.SeekBar;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class qv6 implements SeekBar.OnSeekBarChangeListener {
-    public final /* synthetic */ rv6 a;
+public final class qv6 extends Handler {
+    public lo6 a;
+    public final /* synthetic */ tv6 b;
 
-    public qv6(rv6 rv6Var) {
-        this.a = rv6Var;
-    }
-
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onProgressChanged(SeekBar seekBar, int i, boolean z) {
-        if (z) {
-            ew6 ew6Var = (ew6) seekBar.getTag();
-            jv6 jv6Var = (jv6) this.a.M.get(ew6Var.c);
-            if (jv6Var != null) {
-                jv6Var.u(i == 0);
-            }
-            ew6Var.j(i);
-        }
-    }
-
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onStartTrackingTouch(SeekBar seekBar) {
-        rv6 rv6Var = this.a;
-        if (rv6Var.N != null) {
-            rv6Var.I.removeMessages(2);
-        }
-        rv6Var.N = (ew6) seekBar.getTag();
-    }
-
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onStopTrackingTouch(SeekBar seekBar) {
-        this.a.I.sendEmptyMessageDelayed(2, 500L);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qv6(tv6 tv6Var, Looper looper) {
+        super(looper);
+        this.b = tv6Var;
     }
 }

@@ -1,46 +1,53 @@
 // default package
 
-import android.content.DialogInterface;
-import android.view.View;
+import j$.util.DesugarCollections;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class i51 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class i51 {
+    public static final String c;
+    public static final Set d;
+    public static final i51 e;
+    public static final i51 f;
+    public final String a;
+    public final String b;
 
-    public /* synthetic */ i51(View view, byte b) {
-        this.a = b;
-        this.b = view;
+    static {
+        String a = lue.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
+        c = a;
+        String a2 = lue.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
+        String a3 = lue.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
+        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new s24("proto"), new s24("json"))));
+        e = new i51(a, null);
+        f = new i51(a2, a3);
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        View view = this.b;
-        switch (b) {
-            case 0:
-                m51.e = null;
-                if (view != null) {
-                    view.requestFocus();
-                    break;
-                }
-                break;
-            case 1:
-                e94.i = null;
-                view.requestFocus();
-                break;
-            case 2:
-                lz8.f = null;
-                if (view != null) {
-                    view.requestFocus();
-                    break;
-                }
-                break;
-            default:
-                xu9.I = null;
-                view.requestFocus();
-                break;
+    public i51(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+    }
+
+    public static i51 a(byte[] bArr) {
+        String str = new String(bArr, Charset.forName("UTF-8"));
+        if (!str.startsWith("1$")) {
+            w26.j("Version marker missing from extras");
+            return null;
         }
+        String[] split = str.substring(2).split("\\Q\\\\E", 2);
+        if (split.length != 2) {
+            w26.j("Extra is not a valid encoded LegacyFlgDestination");
+            return null;
+        }
+        String str2 = split[0];
+        if (str2.isEmpty()) {
+            w26.j("Missing endpoint in CCTDestination extras");
+            return null;
+        }
+        String str3 = split[1];
+        return new i51(str2, str3.isEmpty() ? null : str3);
     }
 }

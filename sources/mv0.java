@@ -1,44 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qw0 b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class mv0 implements q12, js4, ed {
+    public final /* synthetic */ ow0 a;
 
-    public /* synthetic */ mv0(qw0 qw0Var, String str, byte b) {
-        this.a = b;
-        this.b = qw0Var;
-        this.c = str;
+    public /* synthetic */ mv0(ow0 ow0Var) {
+        this.a = ow0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        String str = this.c;
-        qw0 qw0Var = this.b;
-        switch (b) {
-            case 0:
-                mw0 mw0Var = qw0Var.a;
-                if (mw0Var != null) {
-                    mw0Var.c(str);
-                    break;
-                }
-                break;
-            default:
-                qw0Var.O = false;
-                qw0Var.Q = 0L;
-                qw0Var.U = false;
-                qw0Var.b = str;
-                qw0Var.a();
-                mw0 mw0Var2 = qw0Var.a;
-                if (mw0Var2 != null) {
-                    mw0Var2.onResume();
-                    qw0Var.a.loadUrl(str);
-                    break;
-                }
-                break;
+    @Override // q12
+    public final void d(boolean z) {
+        ow0 ow0Var = this.a;
+        if (ow0Var.f0 && z) {
+            return;
         }
+        ow0Var.m(true);
+    }
+
+    @Override // js4
+    public final Object m(Object obj) {
+        return Boolean.valueOf(this.a.f.getKeyboardHeight() >= gl.L(20.0f));
+    }
+
+    @Override // ed
+    public final void u(hd hdVar, int i) {
+        this.a.m(false);
     }
 }

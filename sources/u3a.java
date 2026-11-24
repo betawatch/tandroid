@@ -1,40 +1,88 @@
 // default package
 
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u3a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ a6a b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ boolean d;
+public final class u3a {
+    public String e;
+    public String f;
+    public String g;
+    public long h;
+    public long i;
+    public int j;
+    public double k;
+    public long l;
+    public long m;
+    public final /* synthetic */ z3a o;
+    public final HashMap a = new HashMap();
+    public final HashMap b = new HashMap();
+    public final HashMap c = new HashMap();
+    public final ArrayList d = new ArrayList();
+    public int n = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-    public /* synthetic */ u3a(a6a a6aVar, TLRPC.Message message, boolean z, byte b) {
-        this.a = b;
-        this.b = a6aVar;
-        this.c = message;
-        this.d = z;
+    public u3a(z3a z3aVar) {
+        this.o = z3aVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.d;
-        TLRPC.Message message = this.c;
-        a6a a6aVar = this.b;
-        switch (b) {
-            case 0:
-                a6aVar.c0(message.id);
-                a6aVar.h0(message.id, z);
-                break;
-            case 1:
-                a6aVar.c0(message.id);
-                a6aVar.h0(message.id, z);
-                break;
-            default:
-                a6aVar.f0(message, z);
-                break;
+    public final void a(String str, long j, float f) {
+        this.b.put(str, Float.valueOf(f));
+        Long valueOf = Long.valueOf(j);
+        HashMap hashMap = this.c;
+        hashMap.put(str, valueOf);
+        this.i = 0L;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            this.i = ((Long) ((Map.Entry) it.next()).getValue()).longValue() + this.i;
         }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j2 = this.i;
+        if (j2 != this.m) {
+            if (elapsedRealtime != this.l) {
+                double d = (j2 - r0) / ((elapsedRealtime - r2) / 1000.0d);
+                double d2 = this.k;
+                if (d2 == 0.0d) {
+                    this.k = d;
+                } else {
+                    d = (d * 0.01d) + (0.99d * d2);
+                    this.k = d;
+                }
+                this.n = (int) (((this.h - j2) * 1000) / d);
+                this.m = j2;
+                this.l = elapsedRealtime;
+            }
+        }
+        int i = (int) ((j2 / this.h) * 100.0f);
+        if (this.j != i) {
+            this.j = i;
+            this.o.getNotificationCenter().k(kk7.v1, this.e);
+        }
+    }
+
+    public final void b() {
+        TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet = new TLRPC.TL_stickers_createStickerSet();
+        tL_stickers_createStickerSet.user_id = new TLRPC.TL_inputUserSelf();
+        tL_stickers_createStickerSet.title = this.f;
+        tL_stickers_createStickerSet.short_name = this.e;
+        String str = this.g;
+        if (str != null) {
+            tL_stickers_createStickerSet.software = str;
+            tL_stickers_createStickerSet.flags |= 8;
+        }
+        ArrayList arrayList = this.d;
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            TLRPC.TL_inputStickerSetItem tL_inputStickerSetItem = ((s3a) arrayList.get(i)).f;
+            if (tL_inputStickerSetItem != null) {
+                tL_stickers_createStickerSet.stickers.add(tL_inputStickerSetItem);
+            }
+        }
+        this.o.getConnectionsManager().sendRequest(tL_stickers_createStickerSet, new t3a(this, tL_stickers_createStickerSet));
     }
 }

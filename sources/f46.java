@@ -1,24 +1,36 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class f46 extends LimitPreviewView {
-    public final /* synthetic */ g46 q0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class f46 {
+    public StringBuilder d;
+    public String e;
+    public String f;
+    public char g;
+    public StringBuilder h;
+    public int a = 1;
+    public final StringBuilder b = new StringBuilder();
+    public final ArrayList c = new ArrayList();
+    public boolean i = false;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f46(g46 g46Var, Context context, int i, int i2, int i3, float f, ylb ylbVar) {
-        super(context, i, i2, i3, f, ylbVar);
-        this.q0 = g46Var;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.q0.e.a2) {
-            return;
+    public final void a() {
+        if (this.i) {
+            String a = z34.a(this.f);
+            StringBuilder sb = this.h;
+            String a2 = sb != null ? z34.a(sb.toString()) : null;
+            String str = this.e;
+            e46 e46Var = new e46();
+            e46Var.g = str;
+            e46Var.h = a;
+            e46Var.i = a2;
+            this.c.add(e46Var);
+            this.d = null;
+            this.i = false;
+            this.e = null;
+            this.f = null;
+            this.h = null;
         }
-        super.invalidate();
     }
 }

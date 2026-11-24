@@ -1,40 +1,23 @@
 // default package
 
-import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.function.LongSupplier;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class vr2 implements s6a {
-    public final s6a a;
-    public final mo5 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class vr2 extends wf6 {
+    public final TimeUnit j;
 
-    public vr2(s6a s6aVar, List list) {
-        this.a = s6aVar;
-        this.b = mo5.q(list);
+    public vr2(String str, LongSupplier longSupplier, TimeUnit timeUnit, int i) {
+        super(str, longSupplier, 0L, Long.MAX_VALUE, i);
+        this.j = timeUnit;
     }
 
-    @Override // s6a
-    public final boolean f() {
-        return this.a.f();
+    public final long g(TimeUnit timeUnit) {
+        return timeUnit.convert(f(), this.j);
     }
 
-    @Override // s6a
-    public final long g() {
-        return this.a.g();
-    }
-
-    @Override // s6a
-    public final boolean r(sa6 sa6Var) {
-        return this.a.r(sa6Var);
-    }
-
-    @Override // s6a
-    public final long s() {
-        return this.a.s();
-    }
-
-    @Override // s6a
-    public final void t(long j) {
-        this.a.t(j);
+    public final String toString() {
+        return this.a + "=" + f() + " " + this.j;
     }
 }

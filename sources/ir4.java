@@ -1,45 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum ir4 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(0, "unknown delay"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF17(1, "input"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF27(2, "animation"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF37(3, "layout"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF47(4, "draw"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF57(5, "sync"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF67(6, "cmd issue"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF81(7, "swap buffers"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF96(31, "GPU_DURATION", "gpu"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF115(8, "total");
+import android.animation.ValueAnimator;
 
-    public final byte a;
-    public final String b;
-    public final byte c;
-    public long d;
-    public double e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ir4 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cm0 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    ir4(int i, String str, String str2) {
-        this.d = Long.MIN_VALUE;
-        this.e = 0.0d;
-        this.a = r4;
-        this.b = str2;
-        this.c = i;
+    public /* synthetic */ ir4(cm0 cm0Var, byte b) {
+        this.a = b;
+        this.b = cm0Var;
     }
 
-    ir4(int i, String str) {
-        this(24, r7, str);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        cm0 cm0Var = this.b;
+        switch (b) {
+            case 0:
+                ((sr4) cm0Var.c).invalidate();
+                break;
+            default:
+                ((sr4) cm0Var.c).invalidate();
+                break;
+        }
     }
 }

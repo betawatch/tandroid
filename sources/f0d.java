@@ -1,42 +1,25 @@
 // default package
 
-import android.graphics.RectF;
-import android.view.View;
-import java.util.WeakHashMap;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class f0d implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ g0d b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class f0d extends b4 {
+    public static final Parcelable.Creator<f0d> CREATOR = new hv6((byte) 24);
+    public final ArrayList a;
 
-    public /* synthetic */ f0d(g0d g0dVar, byte b) {
-        this.a = b;
-        this.b = g0dVar;
+    public f0d(ArrayList arrayList) {
+        arrayList.getClass();
+        this.a = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        g0d g0dVar = this.b;
-        switch (b) {
-            case 0:
-                if (g0dVar.w != 0) {
-                    g0dVar.i(false);
-                    break;
-                }
-                break;
-            default:
-                int i = g0dVar.H - 1;
-                g0dVar.H = i;
-                if (i == 0) {
-                    View view = g0dVar.F;
-                    RectF rectF = uyc.e;
-                    WeakHashMap weakHashMap = kfc.a;
-                    g0dVar.k(uyc.a(dfc.a(view), view, view.getRootView()), false);
-                    break;
-                }
-                break;
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.getClass();
+        int r = jte.r(parcel, 20293);
+        jte.p(parcel, 1, this.a);
+        jte.s(parcel, r);
     }
 }

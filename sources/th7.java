@@ -1,49 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class th7 implements lf7 {
-    public final float a;
-    public final float b;
+public final class th7 {
+    public final int a;
+    public final qh7 b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final float i;
+    public final int j;
+    public final int k;
+    public final int l;
+    public final int m;
 
-    public th7(float f, float f2) {
-        jte.e("Invalid latitude or longitude", f >= -90.0f && f <= 90.0f && f2 >= -180.0f && f2 <= 180.0f);
-        this.a = f;
-        this.b = f2;
-    }
-
-    @Override // lf7
-    public final go4 a() {
-        return null;
-    }
-
-    @Override // lf7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && th7.class == obj.getClass()) {
-            th7 th7Var = (th7) obj;
-            if (this.a == th7Var.a && this.b == th7Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Float.valueOf(this.b).hashCode() + ((Float.valueOf(this.a).hashCode() + 527) * 31);
-    }
-
-    public final String toString() {
-        return "xyz: latitude=" + this.a + ", longitude=" + this.b;
-    }
-
-    @Override // lf7
-    public final void b(ht6 ht6Var) {
+    public th7(int i, qh7 qh7Var, int i2, int i3, int i4, int i5, int i6, int i7, float f, int i8, int i9, int i10, int i11) {
+        this.a = i;
+        this.b = qh7Var;
+        this.c = i2;
+        this.d = i3;
+        this.e = i4;
+        this.f = i5;
+        this.i = f;
+        this.j = i8;
+        this.k = i9;
+        this.l = i10;
+        this.m = i11;
+        this.g = i6;
+        this.h = i7;
     }
 }

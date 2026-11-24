@@ -1,66 +1,71 @@
 // default package
 
-import java.util.AbstractSet;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class p9a extends AbstractSet {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class p9a implements mw4, no7, k8, nw4 {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ taa b;
 
-    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public boolean removeAll(Collection collection) {
-        switch (this.a) {
-            case 0:
-                collection.getClass();
-                byte b = 1;
-                if (collection instanceof wo5) {
-                    e89 e89Var = (e89) ((wo5) collection);
-                    vo5 vo5Var = e89Var.h;
-                    if (vo5Var == null) {
-                        vo5Var = new vo5(e89Var, b);
-                        e89Var.h = vo5Var;
-                    }
-                    collection = vo5Var;
-                }
-                boolean z = false;
-                if (!(collection instanceof Set) || collection.size() <= size()) {
-                    Iterator it = collection.iterator();
-                    while (it.hasNext()) {
-                        z |= remove(it.next());
-                    }
-                } else {
-                    Iterator<E> it2 = iterator();
-                    while (it2.hasNext()) {
-                        if (collection.contains(it2.next())) {
-                            it2.remove();
-                            z = true;
-                        }
-                    }
-                }
-                return z;
-            case 1:
-                return p2f.a(this, collection);
-            default:
-                return v2f.a(this, collection);
-        }
+    public /* synthetic */ p9a(taa taaVar, byte b) {
+        this.a = b;
+        this.b = taaVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public boolean retainAll(Collection collection) {
-        switch (this.a) {
-            case 0:
-                collection.getClass();
-                break;
-            case 1:
-                collection.getClass();
+    @Override // no7
+    public final vxc W(View view, vxc vxcVar) {
+        WindowInsets g = vxcVar.g();
+        taa taaVar = this.b;
+        taaVar.q0(g);
+        io5 f = vxcVar.a.f(519);
+        if (!taaVar.B2.equals(f)) {
+            taaVar.B2 = f;
+            taaVar.c.requestLayout();
+        }
+        return vxc.b;
+    }
+
+    @Override // nw4
+    public final int i() {
+        return bkb.v0(bkb.c6, this.b.J0);
+    }
+
+    @Override // mw4
+    public final void j(int i) {
+        taa taaVar = this.b;
+        cq3 cq3Var = taaVar.J2;
+        if (Build.VERSION.SDK_INT < 31 || cq3Var == null) {
+            return;
+        }
+        if (fod.a(i, 4)) {
+            cq3Var.h(taaVar.X0.e());
+        }
+        cq3Var.e(taaVar.O2, taaVar.b.getWidth(), taaVar.b.getHeight());
+    }
+
+    @Override // k8
+    public final void r(KeyEvent keyEvent) {
+        m8 m8Var;
+        m8 m8Var2;
+        byte b = this.a;
+        taa taaVar = this.b;
+        switch (b) {
+            case 2:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m8Var = taaVar.E2) != null && m8Var.isShowing()) {
+                    taaVar.E2.d(true);
+                    break;
+                }
                 break;
             default:
-                collection.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m8Var2 = taaVar.E2) != null && m8Var2.isShowing()) {
+                    taaVar.E2.d(true);
+                    break;
+                }
                 break;
         }
-        return super.retainAll(collection);
     }
 }

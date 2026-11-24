@@ -1,26 +1,25 @@
 // default package
 
-import android.content.Context;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ufa extends hha {
-    public final /* synthetic */ nha h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ufa extends gw2 {
+    public vfa a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ vfa c;
+    public int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ufa(nha nhaVar, Context context) {
-        super(nhaVar, context);
-        this.h = nhaVar;
+    public ufa(vfa vfaVar, gw2 gw2Var) {
+        super(gw2Var);
+        this.c = vfaVar;
     }
 
-    @Override // y59
-    public final void f() {
-        super.f();
-        nha nhaVar = this.h;
-        iga P = nhaVar.P(0);
-        if (P == null || P.n.getVisibility() != 0) {
-            return;
-        }
-        nhaVar.L.f();
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.d |= TLObject.FLAG_31;
+        return this.c.a(null, this);
     }
 }

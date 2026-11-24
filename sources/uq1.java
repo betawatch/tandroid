@@ -1,26 +1,40 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class uq1 extends ua2 {
-    public final /* synthetic */ yv1 N;
+public final class uq1 extends FragmentContextView {
+    public final /* synthetic */ byte X0;
+    public final /* synthetic */ mu1 Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uq1(yv1 yv1Var, Activity activity, int i, TLRPC.Document document, ylb ylbVar) {
-        super(activity, i, document, ylbVar);
-        this.N = yv1Var;
+    public uq1(mu1 mu1Var, Context context, mu1 mu1Var2, wjb wjbVar, byte b) {
+        super(context, mu1Var2, null, true, wjbVar);
+        this.X0 = b;
+        switch (b) {
+            case 1:
+                this.Y0 = mu1Var;
+                super(context, mu1Var2, null, false, wjbVar);
+                break;
+            default:
+                this.Y0 = mu1Var;
+                break;
+        }
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        float y = getY();
-        yv1 yv1Var = this.N;
-        float y2 = yv1Var.g1.getY() + y;
-        this.K = yv1Var.m1.getBackgroundSizeY();
-        this.J = y2;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i) {
+        byte b = this.X0;
+        mu1 mu1Var = this.Y0;
+        switch (b) {
+            case 0:
+                mu1Var.b1.j(mu1Var.p2, i == 0, true);
+                break;
+            default:
+                mu1Var.b1.j(mu1Var.n2, i == 0, true);
+                break;
+        }
     }
 }

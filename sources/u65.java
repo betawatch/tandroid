@@ -1,39 +1,38 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class u65 implements Runnable {
-    public final /* synthetic */ g95 a;
+public final /* synthetic */ class u65 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v65 b;
 
-    public u65(g95 g95Var) {
-        this.a = g95Var;
+    public /* synthetic */ u65(v65 v65Var, byte b) {
+        this.a = b;
+        this.b = v65Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        g95 g95Var = this.a;
-        lka lkaVar = g95Var.N1;
-        o85 o85Var = g95Var.O1;
-        if (o85Var == null || g95Var.J) {
-            return;
-        }
-        qd2 qd2Var = g95Var.T2;
-        int i = qd2Var != null ? qd2Var.b.schedule_date : g95Var.c4;
-        if (i != 0) {
-            int currentTime = i - ConnectionsManager.getInstance(g95Var.n1.a).getCurrentTime();
-            if (currentTime >= 86400) {
-                o85Var.l(jb6.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]), false);
-            } else {
-                o85Var.l(gm.j0(Math.abs(currentTime)), false);
-                if (currentTime < 0 && lkaVar.getTag() == null) {
-                    lkaVar.setTag(1);
-                    lkaVar.l(jb6.M0(2131743125, null), false);
+        byte b = this.a;
+        v65 v65Var = this.b;
+        switch (b) {
+            case 0:
+                sb sbVar = v65Var.b;
+                if (sbVar != null) {
+                    sbVar.setVisibility(0);
                 }
-            }
-            g95Var.P1.l(jb6.W(3, i, true), false);
-            gm.d3(g95Var.o4, 1000L);
+                gl.d3(new u65(v65Var, (byte) 2), 16L);
+                break;
+            case 1:
+                sb sbVar2 = v65Var.b;
+                if (sbVar2 != null) {
+                    sbVar2.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                v65Var.b();
+                break;
         }
     }
 }

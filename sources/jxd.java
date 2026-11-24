@@ -1,62 +1,19 @@
 // default package
 
-import java.util.Arrays;
-
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class jxd {
-    public static final Class a;
-    public static final m0e b;
-    public static final m0e c;
-    public static final m0e d;
+public final class jxd implements zn7 {
+    public static final jxd a = new jxd();
 
     static {
-        Class<?> cls;
-        try {
-            cls = Class.forName("com.google.protobuf.GeneratedMessage");
-        } catch (Throwable unused) {
-            cls = null;
-        }
-        a = cls;
-        b = b(false);
-        c = b(true);
-        d = new m0e();
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
     }
 
-    public static void a(m0e m0eVar, xkd xkdVar, xkd xkdVar2) {
-        m0eVar.getClass();
-        g0e g0eVar = xkdVar.zzjp;
-        g0e g0eVar2 = xkdVar2.zzjp;
-        if (!g0eVar2.equals(g0e.e)) {
-            int i = g0eVar.a + g0eVar2.a;
-            int[] copyOf = Arrays.copyOf(g0eVar.b, i);
-            System.arraycopy(g0eVar2.b, 0, copyOf, g0eVar.a, g0eVar2.a);
-            Object[] copyOf2 = Arrays.copyOf(g0eVar.c, i);
-            System.arraycopy(g0eVar2.c, 0, copyOf2, g0eVar.a, g0eVar2.a);
-            g0eVar = new g0e(i, copyOf, copyOf2, true);
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        xkdVar.zzjp = g0eVar;
-    }
-
-    public static m0e b(boolean z) {
-        Class<?> cls;
-        try {
-            cls = Class.forName("com.google.protobuf.UnknownFieldSetSchema");
-        } catch (Throwable unused) {
-            cls = null;
-        }
-        if (cls != null) {
-            try {
-                return (m0e) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z));
-            } catch (Throwable unused2) {
-            }
-        }
-        return null;
-    }
-
-    public static boolean c(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
-        }
-        return true;
+        throw null;
     }
 }

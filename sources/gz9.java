@@ -1,389 +1,511 @@
 // default package
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
+import android.content.Context;
+import android.graphics.Point;
+import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
-import j$.util.Objects;
+import android.view.animation.LinearInterpolator;
+import android.widget.ScrollView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class gz9 extends q59 {
-    public int c;
-    public int d;
-    public int h;
-    public final /* synthetic */ vz9 s;
-    public int e = -1;
-    public int f = -1;
-    public int n = 1;
-    public final ArrayList r = new ArrayList();
+public final class gz9 extends ViewGroup {
+    public final /* synthetic */ byte a = 0;
+    public AnimatorSet b;
+    public boolean c;
+    public final ArrayList d;
+    public final ArrayList e;
+    public final ArrayList f;
+    public final ArrayList h;
+    public final /* synthetic */ ScrollView n;
 
-    public gz9(vz9 vz9Var) {
-        this.s = vz9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gz9(hz9 hz9Var, Context context) {
+        super(context);
+        this.n = hz9Var;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        this.h = new ArrayList();
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        int i = u69Var.f;
-        return i == 3 || i == 4;
-    }
-
-    public final void E(boolean z) {
-        vz9 vz9Var = this.s;
-        int i = vz9Var.a0;
-        ArrayList arrayList = this.r;
-        new ArrayList(arrayList);
-        this.h = -1;
-        this.c = -1;
-        boolean z2 = false;
-        this.n = 0;
-        arrayList.clear();
-        ArrayList arrayList2 = vz9Var.C1;
+    public final void a() {
+        v5b v5bVar = (v5b) this.n;
         byte b = 1;
-        if (arrayList2 != null) {
-            if (i == 4 && !arrayList2.isEmpty()) {
-                int i2 = this.n;
-                this.n = i2 + 1;
-                this.e = i2;
-                arrayList.add(1);
-            }
-            this.d = this.n;
-            for (int i3 = 0; i3 < vz9Var.C1.size(); i3++) {
-                this.n++;
-                arrayList.add(Integer.valueOf(Objects.hash(-4342, vz9Var.C1.get(i3))));
-            }
+        v5bVar.I = true;
+        ArrayList arrayList = v5bVar.e;
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        ArrayList arrayList3 = this.h;
+        arrayList3.clear();
+        arrayList3.addAll(arrayList);
+        arrayList.clear();
+        for (int i = 0; i < arrayList2.size(); i++) {
+            ((ya5) arrayList2.get(i)).setOnClickListener(null);
         }
-        if (i == 14) {
-            ArrayList arrayList3 = vz9Var.D1;
-            if (arrayList3 != null && !arrayList3.isEmpty()) {
-                int i4 = this.n;
-                this.n = i4 + 1;
-                this.f = i4;
-                arrayList.add(2);
-                this.c = this.n;
-                for (int i5 = 0; i5 < vz9Var.D1.size(); i5++) {
-                    this.n++;
-                    arrayList.add(Integer.valueOf(Objects.hash(-7453, vz9Var.D1.get(i5))));
-                }
+        c();
+        this.c = false;
+        AnimatorSet animatorSet = new AnimatorSet();
+        this.b = animatorSet;
+        animatorSet.addListener(new u5b(this, arrayList2, b));
+        ArrayList arrayList4 = this.f;
+        arrayList4.clear();
+        ArrayList arrayList5 = this.d;
+        arrayList5.clear();
+        this.e.clear();
+        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+            ya5 ya5Var = (ya5) arrayList2.get(i2);
+            arrayList5.add(ya5Var);
+            arrayList4.add(ObjectAnimator.ofFloat(ya5Var, (Property<ya5, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(ya5Var, (Property<ya5, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(ya5Var, (Property<ya5, Float>) View.ALPHA, 1.0f, 0.0f));
+        }
+        requestLayout();
+    }
+
+    public final void b(boolean z) {
+        hz9 hz9Var = (hz9) this.n;
+        byte b = 1;
+        hz9Var.I = true;
+        ArrayList arrayList = hz9Var.e;
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        ArrayList arrayList3 = this.h;
+        arrayList3.clear();
+        arrayList3.addAll(arrayList);
+        arrayList.clear();
+        for (int i = 0; i < arrayList2.size(); i++) {
+            ((ya5) arrayList2.get(i)).setOnClickListener(null);
+        }
+        c();
+        if (z) {
+            this.c = false;
+            AnimatorSet animatorSet = new AnimatorSet();
+            this.b = animatorSet;
+            animatorSet.addListener(new fz9(this, arrayList2, b));
+            ArrayList arrayList4 = this.f;
+            arrayList4.clear();
+            ArrayList arrayList5 = this.d;
+            arrayList5.clear();
+            this.e.clear();
+            for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+                ya5 ya5Var = (ya5) arrayList2.get(i2);
+                arrayList5.add(ya5Var);
+                arrayList4.add(ObjectAnimator.ofFloat(ya5Var, (Property<ya5, Float>) View.SCALE_X, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(ya5Var, (Property<ya5, Float>) View.SCALE_Y, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(ya5Var, (Property<ya5, Float>) View.ALPHA, 1.0f, 0.0f));
             }
         } else {
-            ArrayList arrayList4 = vz9Var.E1;
-            if (arrayList4 != null) {
-                if (i == 4 && !arrayList4.isEmpty()) {
-                    int i6 = this.n;
-                    this.n = i6 + 1;
-                    this.f = i6;
-                    arrayList.add(2);
+            for (int i3 = 0; i3 < arrayList2.size(); i3++) {
+                removeView((View) arrayList2.get(i3));
+            }
+            arrayList3.clear();
+            this.b = null;
+            this.c = false;
+            hz9Var.b.setAllowDrawCursor(true);
+        }
+        requestLayout();
+    }
+
+    public final void c() {
+        byte b = this.a;
+        ArrayList arrayList = this.d;
+        ArrayList arrayList2 = this.e;
+        int i = 0;
+        switch (b) {
+            case 0:
+                AnimatorSet animatorSet = this.b;
+                if (animatorSet != null) {
+                    animatorSet.cancel();
                 }
-                this.c = this.n;
-                for (int i7 = 0; i7 < vz9Var.E1.size(); i7++) {
-                    this.n++;
-                    arrayList.add(Integer.valueOf(Objects.hash(-7453, vz9Var.E1.get(i7))));
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    ((View) arrayList.get(i2)).setScaleX(1.0f);
+                    ((View) arrayList.get(i2)).setScaleY(1.0f);
+                    ((View) arrayList.get(i2)).setAlpha(1.0f);
                 }
-            }
-        }
-        ArrayList arrayList5 = vz9Var.F1;
-        if (arrayList5 != null) {
-            int i8 = this.n;
-            this.h = i8;
-            this.n = arrayList5.size() + i8;
-        }
-        f();
-        if (vz9Var.A1 && this.n == 0) {
-            z2 = true;
-        }
-        if (vz9Var.I1 != z2) {
-            vz9Var.I1 = z2;
-            ValueAnimator valueAnimator = vz9Var.J1;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            vz9Var.J1 = ofFloat;
-            ofFloat.addUpdateListener(new cy9(vz9Var, z2, b));
-            vz9Var.J1.addListener(new py9(vz9Var, z2, b));
-            vz9Var.J1.setInterpolator(d53.h);
-            vz9Var.J1.setDuration(100L);
-            vz9Var.J1.start();
-            if (z2) {
-                vz9.D(vz9Var.W, vz9Var.m0);
-            }
+                while (i < arrayList2.size()) {
+                    ((View) arrayList2.get(i)).setScaleX(0.0f);
+                    ((View) arrayList2.get(i)).setScaleY(0.0f);
+                    ((View) arrayList2.get(i)).setAlpha(0.0f);
+                    i++;
+                }
+                arrayList.clear();
+                arrayList2.clear();
+                break;
+            default:
+                AnimatorSet animatorSet2 = this.b;
+                if (animatorSet2 != null) {
+                    animatorSet2.cancel();
+                }
+                for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                    ((View) arrayList.get(i3)).setScaleX(1.0f);
+                    ((View) arrayList.get(i3)).setScaleY(1.0f);
+                    ((View) arrayList.get(i3)).setAlpha(1.0f);
+                }
+                while (i < arrayList2.size()) {
+                    ((View) arrayList2.get(i)).setScaleX(0.0f);
+                    ((View) arrayList2.get(i)).setScaleY(0.0f);
+                    ((View) arrayList2.get(i)).setAlpha(0.0f);
+                    i++;
+                }
+                arrayList.clear();
+                arrayList2.clear();
+                break;
         }
     }
 
-    @Override // y59
-    public final int b() {
-        return this.n;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 0:
+                int childCount = getChildCount();
+                for (int i5 = 0; i5 < childCount; i5++) {
+                    View childAt = getChildAt(i5);
+                    childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+                }
+                break;
+            default:
+                int childCount2 = getChildCount();
+                for (int i6 = 0; i6 < childCount2; i6++) {
+                    View childAt2 = getChildAt(i6);
+                    childAt2.layout(0, 0, childAt2.getMeasuredWidth(), childAt2.getMeasuredHeight());
+                }
+                break;
+        }
     }
 
-    @Override // y59
-    public final int d(int i) {
-        int i2;
-        vz9 vz9Var = this.s;
-        int i3 = vz9Var.a0;
-        if (i == this.e || i == this.f) {
-            return 6;
-        }
-        if (i3 == 14) {
-            ArrayList arrayList = vz9Var.D1;
-            if (arrayList != null && i >= (i2 = this.c) && i - i2 < arrayList.size()) {
-                return 4;
-            }
-        } else {
-            if (i > this.c && (i - r2) - 1 < vz9Var.E1.size()) {
-                return 5;
-            }
-        }
-        ArrayList arrayList2 = vz9Var.C1;
-        if (arrayList2 == null) {
-            return 3;
-        }
-        if (i > this.d && (i - r3) - 1 < arrayList2.size() && (i3 == 13 || ((k39) vz9Var.C1.get((i - this.d) - 1)).g != 0)) {
-            return 3;
-        }
-        int i4 = i - this.h;
-        if (i4 < 0 || i4 >= vz9Var.F1.size()) {
-            return 4;
-        }
-        return !(vz9Var.F1.get(i - this.h) instanceof sz9) ? 3 : 6;
-    }
-
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        TLRPC.Document document;
-        Long l;
-        int i2;
-        boolean contains;
-        int cacheType;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x033c  */
+    /* JADX WARN: Type inference failed for: r7v5 */
+    /* JADX WARN: Type inference failed for: r7v6, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r7v7 */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i, int i2) {
+        int D;
         int i3;
-        k39 k39Var;
-        int cacheType2;
         int i4;
-        int indexOf;
-        vz9 vz9Var = this.s;
-        HashSet hashSet = vz9Var.L;
-        int i5 = vz9Var.a0;
-        int i6 = vz9Var.W;
-        jy9 jy9Var = vz9Var.j0;
-        int i7 = u69Var.f;
-        View view = u69Var.a;
-        if (i7 == 6) {
-            bz9 bz9Var = (bz9) view;
-            ArrayList arrayList = vz9Var.F1;
-            if (arrayList != null && (i4 = i - this.h) >= 0 && i4 < arrayList.size()) {
-                TLRPC.Document document2 = (TLRPC.Document) vz9Var.F1.get(i - this.h);
-                if (document2 instanceof sz9) {
-                    CharSequence charSequence = ((sz9) document2).a;
-                    String str = vz9Var.B1;
-                    bz9Var.getClass();
-                    if (charSequence != null && str != null && (indexOf = charSequence.toString().toLowerCase().indexOf(str.toLowerCase())) >= 0) {
-                        SpannableString spannableString = new SpannableString(charSequence);
-                        spannableString.setSpan(new ForegroundColorSpan(cmb.v0(cmb.Lf, bz9Var.f.a1)), indexOf, str.length() + indexOf, 33);
-                        charSequence = spannableString;
+        ?? r7;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        char c;
+        int D2;
+        int i9;
+        int i10;
+        boolean z;
+        int i11;
+        int i12;
+        float f;
+        byte b = this.a;
+        ScrollView scrollView = this.n;
+        ArrayList arrayList = this.f;
+        ArrayList arrayList2 = this.h;
+        Property property = View.TRANSLATION_X;
+        Property property2 = View.TRANSLATION_Y;
+        switch (b) {
+            case 0:
+                hz9 hz9Var = (hz9) scrollView;
+                l7 l7Var = hz9Var.b;
+                int childCount = getChildCount();
+                int size = View.MeasureSpec.getSize(i);
+                int L = size - gl.L(28.0f);
+                int L2 = gl.L(10.0f);
+                int L3 = gl.L(10.0f);
+                int i13 = 0;
+                int i14 = 0;
+                int i15 = 0;
+                while (i13 < childCount) {
+                    View childAt = getChildAt(i13);
+                    int i16 = childCount;
+                    if (childAt instanceof ya5) {
+                        i5 = i13;
+                        int i17 = i14;
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
+                        boolean contains = arrayList2.contains(childAt);
+                        if (contains || childAt.getMeasuredWidth() + i17 <= L) {
+                            i6 = i17;
+                        } else {
+                            L2 = de9.w(4.0f, childAt.getMeasuredHeight(), L2);
+                            i6 = 0;
+                        }
+                        if (childAt.getMeasuredWidth() + i15 > L) {
+                            L3 = de9.w(4.0f, childAt.getMeasuredHeight(), L3);
+                            i15 = 0;
+                        }
+                        int L4 = gl.L(14.0f) + i6;
+                        if (!this.c) {
+                            if (contains) {
+                                childAt.setTranslationX(gl.L(14.0f) + i15);
+                                childAt.setTranslationY(L3);
+                            } else {
+                                if (arrayList2.isEmpty()) {
+                                    i7 = L;
+                                    childAt.setTranslationX(L4);
+                                    childAt.setTranslationY(L2);
+                                } else {
+                                    float f2 = L4;
+                                    i7 = L;
+                                    if (childAt.getTranslationX() != f2) {
+                                        i8 = 1;
+                                        c = 0;
+                                        arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, f2));
+                                    } else {
+                                        i8 = 1;
+                                        c = 0;
+                                    }
+                                    float f3 = L2;
+                                    if (childAt.getTranslationY() != f3) {
+                                        float[] fArr = new float[i8];
+                                        fArr[c] = f3;
+                                        arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property2, fArr));
+                                    }
+                                }
+                                if (!contains) {
+                                    i6 = de9.w(6.0f, childAt.getMeasuredWidth(), i6);
+                                }
+                                i15 = de9.w(6.0f, childAt.getMeasuredWidth(), i15);
+                                i14 = i6;
+                            }
+                        }
+                        i7 = L;
+                        if (!contains) {
+                        }
+                        i15 = de9.w(6.0f, childAt.getMeasuredWidth(), i15);
+                        i14 = i6;
+                    } else {
+                        i7 = L;
+                        i5 = i13;
                     }
-                    bz9Var.a.setText(charSequence);
-                    bz9Var.b(false);
+                    i13 = i5 + 1;
+                    childCount = i16;
+                    L = i7;
                 }
-            } else if (i == this.e) {
-                bz9Var.a(jb6.M0(2131751133, null), false);
-            } else if (i5 == 14) {
-                bz9Var.a(jb6.M0(2131744565, null), false);
-            } else {
-                bz9Var.a(jb6.M0(2131754755, null), false);
-            }
-            bz9Var.c.setVisibility(8);
-            return;
-        }
-        if (i7 == 5) {
-            TLRPC.Document document3 = (TLRPC.Document) vz9Var.E1.get((i - this.c) - 1);
-            fz9 fz9Var = (fz9) view;
-            fz9Var.a(jy9Var);
-            fz9Var.h.Z(gn5.b(document3), "100_100_firstframe", null, null, eq3.f(document3, cmb.l6, 0.2f, null), 0L, "tgs", document3, 0);
-            fz9Var.R = true;
-            fz9Var.d = document3;
-            fz9Var.e = null;
-            return;
-        }
-        if (i7 != 4) {
-            if (i7 == 3) {
-                fz9 fz9Var2 = (fz9) view;
-                fz9Var2.a = false;
-                fz9Var2.c = i;
-                fz9Var2.setPadding(gm.L(1.0f), gm.L(1.0f), gm.L(1.0f), gm.L(1.0f));
-                fz9Var2.setDrawable(null);
-                ArrayList arrayList2 = vz9Var.C1;
-                if (arrayList2 == null || i < 0 || i >= arrayList2.size()) {
-                    ArrayList arrayList3 = vz9Var.F1;
-                    if (arrayList3 != null && (i2 = i - this.h) >= 0 && i2 < arrayList3.size()) {
-                        document = (TLRPC.Document) vz9Var.F1.get(i - this.h);
-                        if (!(document instanceof sz9)) {
-                            l = null;
+                int i18 = L;
+                int i19 = i14;
+                if (gl.O1()) {
+                    D = gl.L(376.0f) / 3;
+                } else {
+                    Point point = gl.q;
+                    D = ug8.D(154.0f, Math.min(point.x, point.y), 3);
+                }
+                if (i18 - i19 < D) {
+                    L2 += gl.L(36.0f);
+                    i3 = 0;
+                } else {
+                    i3 = i19;
+                }
+                if (i18 - i15 < D) {
+                    L3 += gl.L(36.0f);
+                }
+                l7Var.measure(View.MeasureSpec.makeMeasureSpec(i18 - i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
+                l7Var.t(l7Var.getMeasuredWidth() > hz9Var.c, true);
+                if (!this.c) {
+                    int L5 = gl.L(38.0f) + L3;
+                    int L6 = gl.L(16.0f) + i3;
+                    hz9Var.J = L2;
+                    if (this.b != null) {
+                        int L7 = gl.L(38.0f) + L2;
+                        float f4 = hz9Var.K;
+                        float f5 = L7;
+                        if (f4 != f5) {
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(f4, f5);
+                            ofFloat.addUpdateListener(new x89(hz9Var, (byte) 19));
+                            arrayList.add(ofFloat);
+                        }
+                        float f6 = L6;
+                        if (l7Var.getTranslationX() != f6) {
+                            i4 = 1;
+                            r7 = 0;
+                            arrayList.add(ObjectAnimator.ofFloat(l7Var, (Property<l7, Float>) property, f6));
+                        } else {
+                            i4 = 1;
+                            r7 = 0;
+                        }
+                        float translationY = l7Var.getTranslationY();
+                        float f7 = hz9Var.J;
+                        if (translationY != f7) {
+                            float[] fArr2 = new float[i4];
+                            fArr2[r7] = f7;
+                            arrayList.add(ObjectAnimator.ofFloat(l7Var, (Property<l7, Float>) property2, fArr2));
+                        }
+                        l7Var.setAllowDrawCursor(r7);
+                        this.b.playTogether(arrayList);
+                        this.b.setDuration(180L);
+                        this.b.setInterpolator(new LinearInterpolator());
+                        this.b.start();
+                        this.c = true;
+                    } else {
+                        hz9Var.K = L5;
+                        l7Var.setTranslationX(L6);
+                        l7Var.setTranslationY(hz9Var.J);
+                    }
+                } else if (this.b != null && !hz9Var.I && arrayList2.isEmpty()) {
+                    l7Var.bringPointIntoView(l7Var.getSelectionStart());
+                }
+                setMeasuredDimension(size, (int) hz9Var.K);
+                break;
+            default:
+                v5b v5bVar = (v5b) scrollView;
+                l5b l5bVar = v5bVar.h;
+                l7 l7Var2 = v5bVar.b;
+                int childCount2 = getChildCount();
+                int size2 = View.MeasureSpec.getSize(i);
+                int L8 = size2 - gl.L(14.0f);
+                int L9 = gl.L(10.0f);
+                int L10 = gl.L(10.0f);
+                int i20 = L9;
+                int i21 = 0;
+                int i22 = 0;
+                int i23 = 0;
+                while (i21 < childCount2) {
+                    View childAt2 = getChildAt(i21);
+                    l5b l5bVar2 = l5bVar;
+                    if (childAt2 instanceof ya5) {
+                        i9 = childCount2;
+                        childAt2.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
+                        boolean contains2 = arrayList2.contains(childAt2);
+                        if (contains2 || childAt2.getMeasuredWidth() + i22 <= L8) {
+                            i10 = i22;
+                        } else {
+                            i20 = de9.w(4.0f, childAt2.getMeasuredHeight(), i20);
+                            i10 = 0;
+                        }
+                        if (childAt2.getMeasuredWidth() + i23 > L8) {
+                            z = contains2;
+                            L10 = de9.w(4.0f, childAt2.getMeasuredHeight(), L10);
+                            i11 = 0;
+                        } else {
+                            z = contains2;
+                            i11 = i23;
+                        }
+                        int L11 = gl.L(7.0f) + i10;
+                        i12 = L8;
+                        if (!this.c) {
+                            if (z) {
+                                childAt2.setTranslationX(gl.L(7.0f) + i11);
+                                childAt2.setTranslationY(L10);
+                            } else if (arrayList2.isEmpty()) {
+                                childAt2.setTranslationX(L11);
+                                childAt2.setTranslationY(i20);
+                            } else {
+                                float f8 = L11;
+                                if (childAt2.getTranslationX() != f8) {
+                                    arrayList.add(ObjectAnimator.ofFloat(childAt2, (Property<View, Float>) property, f8));
+                                }
+                                float f9 = i20;
+                                if (childAt2.getTranslationY() != f9) {
+                                    arrayList.add(ObjectAnimator.ofFloat(childAt2, (Property<View, Float>) property2, f9));
+                                }
+                            }
+                        }
+                        if (z) {
+                            f = 4.0f;
+                        } else {
+                            f = 4.0f;
+                            i10 = de9.w(4.0f, childAt2.getMeasuredWidth(), i10);
+                        }
+                        i23 = de9.w(f, childAt2.getMeasuredWidth(), i11);
+                        i22 = i10;
+                    } else {
+                        i9 = childCount2;
+                        i12 = L8;
+                    }
+                    i21++;
+                    l5bVar = l5bVar2;
+                    childCount2 = i9;
+                    L8 = i12;
+                }
+                l5b l5bVar3 = l5bVar;
+                int i24 = L8;
+                if (gl.O1()) {
+                    D2 = gl.L(394.0f) / 3;
+                } else {
+                    Point point2 = gl.q;
+                    D2 = ug8.D(136.0f, Math.min(point2.x, point2.y), 3);
+                }
+                if (i24 - i22 < D2) {
+                    i20 += gl.L(36.0f);
+                    i22 = 0;
+                }
+                if (i24 - i23 < D2) {
+                    L10 += gl.L(36.0f);
+                }
+                l7Var2.measure(View.MeasureSpec.makeMeasureSpec(i24 - i22, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
+                l7Var2.t(l7Var2.getMeasuredWidth() > v5bVar.c, true);
+                if (!this.c) {
+                    int L12 = gl.L(38.0f) + L10;
+                    int L13 = gl.L(16.0f) + i22;
+                    v5bVar.J = i20;
+                    if (this.b != null) {
+                        int L14 = gl.L(38.0f) + i20;
+                        v5bVar.L = L14;
+                        float f10 = v5bVar.K;
+                        float f11 = L14;
+                        if (f10 != f11) {
+                            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, f11);
+                            ofFloat2.addUpdateListener(new gja(v5bVar, (byte) 18));
+                            arrayList.add(ofFloat2);
+                        }
+                        float f12 = L13;
+                        if (l7Var2.getTranslationX() != f12) {
+                            arrayList.add(ObjectAnimator.ofFloat(l7Var2, (Property<l7, Float>) property, f12));
+                        }
+                        float translationY2 = l7Var2.getTranslationY();
+                        float f13 = v5bVar.J;
+                        if (translationY2 != f13) {
+                            arrayList.add(ObjectAnimator.ofFloat(l7Var2, (Property<l7, Float>) property2, f13));
+                        }
+                        l7Var2.setAllowDrawCursor(false);
+                        this.b.playTogether(arrayList);
+                        this.b.setDuration(180L);
+                        this.b.setInterpolator(new LinearInterpolator());
+                        this.b.start();
+                        this.c = true;
+                        if (l5bVar3 != null) {
+                            l5bVar3.run();
+                        }
+                    } else {
+                        v5bVar.L = L12;
+                        v5bVar.K = L12;
+                        l7Var2.setTranslationX(L13);
+                        l7Var2.setTranslationY(v5bVar.J);
+                        if (l5bVar3 != null) {
+                            l5bVar3.run();
+                        }
+                        if (v5bVar.M) {
+                            post(new kya((Object) this, (byte) 15));
+                            v5bVar.M = false;
                         }
                     }
-                    document = null;
-                    l = null;
-                } else {
-                    k39 k39Var2 = (k39) vz9Var.C1.get(i);
-                    fz9Var2.y = k39Var2;
-                    long j = k39Var2.g;
-                    if (j == 0) {
-                        boolean contains2 = vz9Var.K.contains(k39Var2);
-                        fz9Var2.E = true;
-                        fz9Var2.setDrawable(gw3.g(k39Var2.f));
-                        fz9Var2.d(contains2, false);
-                        return;
+                } else if (this.b != null) {
+                    if (!v5bVar.I && arrayList2.isEmpty()) {
+                        l7Var2.bringPointIntoView(l7Var2.getSelectionStart());
                     }
-                    l = Long.valueOf(j);
-                    if (i5 == 14 && !z8c.h(i6).p() && k39Var2.b && k39Var2.d) {
-                        fz9Var2.b();
-                        fz9Var2.K.setVisibility(0);
-                    } else {
-                        ez9 ez9Var = fz9Var2.K;
-                        if (ez9Var != null) {
-                            ez9Var.setVisibility(4);
-                        }
+                    if (v5bVar.M) {
+                        v5bVar.fullScroll(kk7.N1);
+                        v5bVar.M = false;
                     }
-                    document = null;
                 }
-                if (l == null && document == null) {
-                    contains = false;
-                } else {
-                    if (document != null) {
-                        fz9Var2.e = new gn(document, (Paint.FontMetricsInt) null);
-                        fz9Var2.d = document;
-                        contains = hashSet.contains(Long.valueOf(document.id));
-                    } else {
-                        gn gnVar = new gn(l.longValue(), (Paint.FontMetricsInt) null);
-                        fz9Var2.e = gnVar;
-                        fz9Var2.d = gnVar.document;
-                        contains = hashSet.contains(l);
-                    }
-                    vm vmVar = (vm) jy9Var.l3.get(fz9Var2.e.getDocumentId());
-                    if (vmVar == null) {
-                        cacheType = vz9Var.getCacheType();
-                        vmVar = vm.m(i6, fz9Var2.e.getDocumentId(), null, cacheType);
-                        jy9Var.l3.put(fz9Var2.e.getDocumentId(), vmVar);
-                    }
-                    fz9Var2.setDrawable(vmVar);
-                }
-                fz9Var2.d(contains, false);
-                return;
-            }
-            return;
-        }
-        fz9 fz9Var3 = (fz9) view;
-        fz9Var3.c = i;
-        ImageReceiver imageReceiver = fz9Var3.n;
-        ArrayList arrayList4 = vz9Var.C1;
-        if (arrayList4 == null || i < 0 || i >= arrayList4.size()) {
-            ArrayList arrayList5 = vz9Var.D1;
-            if (arrayList5 == null || i < (i3 = this.c) || i - i3 >= arrayList5.size()) {
-                return;
-            } else {
-                k39Var = (k39) vz9Var.D1.get(i - this.c);
-            }
-        } else {
-            k39Var = (k39) vz9Var.C1.get(i);
-        }
-        if (fz9Var3.h == null) {
-            ImageReceiver imageReceiver2 = new ImageReceiver(fz9Var3);
-            fz9Var3.h = imageReceiver2;
-            imageReceiver2.m0(7);
-            fz9Var3.h.I();
-        }
-        fz9Var3.h.p0(jy9Var);
-        fz9Var3.y = k39Var;
-        fz9Var3.E = false;
-        fz9Var3.d(vz9Var.K.contains(k39Var), false);
-        fz9Var3.b = false;
-        fz9Var3.invalidate();
-        if (i5 == 13) {
-            fz9Var3.setDrawable(gw3.g(k39Var.f));
-        } else if (k39Var.b || k39Var.f == null) {
-            fz9Var3.s = false;
-            fz9Var3.e = new gn(k39Var.g, (Paint.FontMetricsInt) null);
-            fz9Var3.d = null;
-            fz9Var3.h.f();
-            imageReceiver.f();
-            vm vmVar2 = (vm) jy9Var.l3.get(fz9Var3.e.getDocumentId());
-            if (vmVar2 == null) {
-                cacheType2 = vz9Var.getCacheType();
-                vmVar2 = vm.m(i6, fz9Var3.e.getDocumentId(), null, cacheType2);
-                jy9Var.l3.put(fz9Var3.e.getDocumentId(), vmVar2);
-            }
-            fz9Var3.setDrawable(vmVar2);
-        } else {
-            fz9Var3.s = true;
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hs6.d0(i6).r.get(k39Var.f);
-            if (tL_availableReaction != null) {
-                meb f = eq3.f(tL_availableReaction.activate_animation, cmb.l6, 0.2f, null);
-                boolean e = e86.e(8200);
-                ImageReceiver imageReceiver3 = fz9Var3.h;
-                TLRPC.Document document4 = tL_availableReaction.select_animation;
-                if (e) {
-                    k39 k39Var3 = k39Var;
-                    imageReceiver3.Y(gn5.b(document4), "60_60_pcache", gn5.b(tL_availableReaction.select_animation), "30_30_firstframe", null, null, f, 0L, "tgs", k39Var3, 0);
-                    k39Var = k39Var3;
-                } else {
-                    imageReceiver3.Z(gn5.b(document4), "60_60_firstframe", null, null, f, 0L, "tgs", k39Var, 0);
-                }
-                hs6.d0(i6);
-                hs6.n1(imageReceiver, gn5.b(tL_availableReaction.around_animation), g39.a());
-            } else {
-                fz9Var3.h.f();
-                imageReceiver.f();
-            }
-            fz9Var3.e = null;
-            fz9Var3.d = null;
-            fz9Var3.setDrawable(null);
-            ez9 ez9Var2 = fz9Var3.K;
-            if (ez9Var2 != null) {
-                ez9Var2.setVisibility(8);
-                fz9Var3.K.setImageReceiver(null);
-            }
-            if (tL_availableReaction == null && k39Var.b) {
-                fz9Var3.setDrawable(gw3.g(k39Var.f));
-            }
-        }
-        if (!z8c.h(i6).p() && i5 == 14 && k39Var.b && k39Var.d) {
-            fz9Var3.b();
-            fz9Var3.K.setVisibility(0);
-            fz9Var3.setEmojicon(null);
-            return;
-        }
-        if (k39Var.e) {
-            fz9Var3.setEmojicon(k39Var.f);
-        } else {
-            fz9Var3.setEmojicon(null);
-        }
-        ez9 ez9Var3 = fz9Var3.K;
-        if (ez9Var3 != null) {
-            ez9Var3.setVisibility(4);
+                setMeasuredDimension(size2, (int) v5bVar.K);
+                break;
         }
     }
 
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        View fz9Var;
-        vz9 vz9Var = this.s;
-        if (i == 6) {
-            fz9Var = new bz9(vz9Var, vz9Var.getContext(), vz9Var.a0 == 6);
-        } else if (i == 7) {
-            fz9Var = new o72(vz9Var.getContext(), (byte) 25);
-            fz9Var.setTag("searchbox");
-        } else {
-            fz9Var = new fz9(vz9Var, vz9Var.getContext());
-        }
-        if (vz9Var.g()) {
-            fz9Var.setScaleX(0.0f);
-            fz9Var.setScaleY(0.0f);
-        }
-        return new b59(fz9Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gz9(v5b v5bVar, Context context) {
+        super(context);
+        this.n = v5bVar;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        this.h = new ArrayList();
     }
 }

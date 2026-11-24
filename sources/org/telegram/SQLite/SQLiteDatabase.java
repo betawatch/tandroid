@@ -2,7 +2,7 @@ package org.telegram.SQLite;
 
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class SQLiteDatabase {
     private boolean inTransaction;
@@ -15,7 +15,7 @@ public class SQLiteDatabase {
 
     public void beginTransaction() {
         if (this.inTransaction) {
-            boolean z = e21.a;
+            boolean z = w01.a;
             commitTransaction();
         }
         this.inTransaction = true;
@@ -36,8 +36,8 @@ public class SQLiteDatabase {
                 commitTransaction();
                 closedb(this.sqliteHandle);
             } catch (SQLiteException e) {
-                if (e21.a) {
-                    fc4.e(e.getMessage(), e);
+                if (w01.a) {
+                    fa4.e(e.getMessage(), e);
                 }
             }
             this.isOpen = false;
@@ -75,7 +75,7 @@ public class SQLiteDatabase {
 
     public void explainQuery(String str, Object... objArr) {
         checkOpened();
-        SQLiteCursor query = new SQLitePreparedStatement(this, b10.h("EXPLAIN QUERY PLAN ", str)).query(objArr);
+        SQLiteCursor query = new SQLitePreparedStatement(this, b00.h("EXPLAIN QUERY PLAN ", str)).query(objArr);
         while (query.next()) {
             int columnCount = query.getColumnCount();
             StringBuilder sb = new StringBuilder();
@@ -83,7 +83,7 @@ public class SQLiteDatabase {
                 sb.append(query.stringValue(i));
                 sb.append(", ");
             }
-            fc4.b("EXPLAIN QUERY PLAN ".concat(sb.toString()));
+            fa4.b("EXPLAIN QUERY PLAN ".concat(sb.toString()));
         }
         query.dispose();
     }

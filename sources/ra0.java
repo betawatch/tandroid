@@ -1,39 +1,64 @@
 // default package
 
+import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ra0 extends u74 {
-    public final byte[] a;
+public final class ra0 {
+    public final String a;
     public final byte[] b;
+    public final cj8 c;
 
-    public ra0(byte[] bArr, byte[] bArr2) {
-        this.a = bArr;
-        this.b = bArr2;
+    public ra0(String str, byte[] bArr, cj8 cj8Var) {
+        this.a = str;
+        this.b = bArr;
+        this.c = cj8Var;
+    }
+
+    public static mv6 a() {
+        mv6 mv6Var = new mv6((byte) 8);
+        mv6Var.d = cj8.a;
+        return mv6Var;
+    }
+
+    public final ra0 b(cj8 cj8Var) {
+        mv6 a = a();
+        a.j0(this.a);
+        if (cj8Var == null) {
+            fvc.f("Null priority");
+            return null;
+        }
+        a.d = cj8Var;
+        a.c = this.b;
+        return a.o();
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof u74) {
-            u74 u74Var = (u74) obj;
-            boolean z = u74Var instanceof ra0;
-            if (Arrays.equals(this.a, ((ra0) u74Var).a)) {
-                if (Arrays.equals(this.b, ((ra0) u74Var).b)) {
-                    return true;
-                }
+        if (obj instanceof ra0) {
+            ra0 ra0Var = (ra0) obj;
+            if (this.a.equals(ra0Var.a) && Arrays.equals(this.b, ra0Var.b) && this.c.equals(ra0Var.c)) {
+                return true;
             }
         }
         return false;
     }
 
     public final int hashCode() {
-        return ((Arrays.hashCode(this.a) ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b)) * 1000003) ^ this.c.hashCode();
     }
 
     public final String toString() {
-        return "ExperimentIds{clearBlob=" + Arrays.toString(this.a) + ", encryptedBlob=" + Arrays.toString(this.b) + "}";
+        byte[] bArr = this.b;
+        String encodeToString = bArr == null ? "" : Base64.encodeToString(bArr, 2);
+        StringBuilder sb = new StringBuilder("TransportContext(");
+        sb.append(this.a);
+        sb.append(", ");
+        sb.append(this.c);
+        sb.append(", ");
+        return b00.j(sb, encodeToString, ")");
     }
 }

@@ -1,42 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class hx9 {
-    public final kx9 a;
-    public final kx9 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class hx9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ py b;
 
-    public hx9(kx9 kx9Var, kx9 kx9Var2) {
-        this.a = kx9Var;
-        this.b = kx9Var2;
+    public /* synthetic */ hx9(py pyVar, byte b) {
+        this.a = b;
+        this.b = pyVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        py pyVar = this.b;
+        switch (b) {
+            case 0:
+                gl.E3(((lw9) pyVar.f2).h);
+                break;
+            default:
+                pyVar.requestFocus();
+                break;
         }
-        if (obj == null || hx9.class != obj.getClass()) {
-            return false;
-        }
-        hx9 hx9Var = (hx9) obj;
-        return this.a.equals(hx9Var.a) && this.b.equals(hx9Var.b);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder sb = new StringBuilder("[");
-        kx9 kx9Var = this.a;
-        sb.append(kx9Var);
-        kx9 kx9Var2 = this.b;
-        if (kx9Var.equals(kx9Var2)) {
-            str = "";
-        } else {
-            str = ", " + kx9Var2;
-        }
-        return b10.j(sb, str, "]");
     }
 }

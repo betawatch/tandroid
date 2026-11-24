@@ -1,58 +1,38 @@
 // default package
 
-import java.io.Serializable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.messenger.PushListenerController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class op7 implements ThreadFactory {
-    public final /* synthetic */ byte a;
-    public final ThreadFactory b;
-    public final Serializable c;
+public final /* synthetic */ class op7 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ int c;
 
-    public op7(ui0 ui0Var) {
-        this.a = (byte) 1;
-        this.b = Executors.defaultThreadFactory();
-        this.c = new AtomicInteger(1);
+    public /* synthetic */ op7(int i, String str) {
+        this.c = i;
+        this.b = str;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        Serializable serializable = this.c;
-        ThreadFactory threadFactory = this.b;
+        int i = this.c;
+        String str = this.b;
         switch (b) {
             case 0:
-                Thread newThread = threadFactory.newThread(new yq9(runnable, (byte) 2));
-                int andIncrement = ((AtomicInteger) serializable).getAndIncrement();
-                StringBuilder sb = new StringBuilder(String.valueOf(andIncrement).length() + 14);
-                sb.append("GAC_Executor[");
-                sb.append(andIncrement);
-                sb.append("]");
-                newThread.setName(sb.toString());
-                return newThread;
-            case 1:
-                Thread newThread2 = threadFactory.newThread(runnable);
-                newThread2.setName("PlayBillingLibrary-" + ((AtomicInteger) serializable).getAndIncrement());
-                return newThread2;
+                m21 t = vp7.h().t(k96.a0(null, null, i, str), null);
+                t.t = true;
+                t.j();
+                break;
             default:
-                Thread newThread3 = threadFactory.newThread(new yq9(runnable, (byte) 2));
-                newThread3.setName((String) serializable);
-                return newThread3;
+                PushListenerController.lambda$sendRegistrationToServer$1(str, i);
+                break;
         }
     }
 
-    public op7() {
-        this.a = (byte) 0;
-        this.c = new AtomicInteger();
-        this.b = Executors.defaultThreadFactory();
-    }
-
-    public op7(String str) {
-        this.a = (byte) 2;
-        this.b = Executors.defaultThreadFactory();
-        this.c = str;
+    public /* synthetic */ op7(String str, int i) {
+        this.b = str;
+        this.c = i;
     }
 }

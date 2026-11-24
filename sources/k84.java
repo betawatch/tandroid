@@ -1,42 +1,24 @@
 // default package
 
-import java.util.Collections;
-import java.util.Map;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class k84 {
-    public static volatile k84 a;
-    public static final k84 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class k84 extends AnimatorListenerAdapter {
+    public final /* synthetic */ m84 a;
 
-    static {
-        k84 k84Var = new k84();
-        Map map = Collections.EMPTY_MAP;
-        b = k84Var;
+    public k84(m84 m84Var) {
+        this.a = m84Var;
     }
 
-    public static k84 a() {
-        k84 k84Var;
-        gv8 gv8Var = gv8.c;
-        k84 k84Var2 = a;
-        if (k84Var2 != null) {
-            return k84Var2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        m84 m84Var = this.a;
+        if (m84Var.r) {
+            m84Var.d.setVisibility(4);
+        } else {
+            m84Var.e.setVisibility(4);
         }
-        synchronized (k84.class) {
-            k84Var = a;
-            if (k84Var == null) {
-                Class cls = j84.a;
-                k84 k84Var3 = null;
-                if (cls != null) {
-                    try {
-                        k84Var3 = (k84) cls.getDeclaredMethod("getEmptyRegistry", null).invoke(null, null);
-                    } catch (Exception unused) {
-                    }
-                }
-                k84Var = k84Var3 != null ? k84Var3 : b;
-                a = k84Var;
-            }
-        }
-        return k84Var;
     }
 }

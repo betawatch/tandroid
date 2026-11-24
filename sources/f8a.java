@@ -1,48 +1,101 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.os.Build;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class f8a {
-    public static final f8a a = new f8a();
-    public static final lj4 b;
+public final class f8a extends ccb implements eq4 {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ h8a c;
 
-    static {
-        qw5 qw5Var = new qw5();
-        qw5Var.a(e8a.class, s80.a);
-        qw5Var.a(k8a.class, t80.a);
-        qw5Var.a(m73.class, q80.a);
-        qw5Var.a(ss.class, p80.a);
-        qw5Var.a(xk.class, o80.a);
-        qw5Var.a(bn8.class, r80.a);
-        qw5Var.d = true;
-        b = new lj4(qw5Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f8a(h8a h8aVar, fw2 fw2Var, byte b) {
+        super(2, fw2Var);
+        this.a = b;
+        this.c = h8aVar;
     }
 
-    public static ss a(li4 li4Var) {
-        li4Var.a();
-        Context context = li4Var.a;
-        context.getClass();
-        String packageName = context.getPackageName();
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
-        String valueOf = Build.VERSION.SDK_INT >= 28 ? String.valueOf(packageInfo.getLongVersionCode()) : String.valueOf(packageInfo.versionCode);
-        li4Var.a();
-        String str = li4Var.c.b;
-        str.getClass();
-        Build.MODEL.getClass();
-        Build.VERSION.RELEASE.getClass();
-        packageName.getClass();
-        String str2 = packageInfo.versionName;
-        if (str2 == null) {
-            str2 = valueOf;
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        byte b = this.a;
+        h8a h8aVar = this.c;
+        switch (b) {
+            case 0:
+                return new f8a(h8aVar, fw2Var, (byte) 0);
+            default:
+                return new f8a(h8aVar, fw2Var, (byte) 1);
         }
-        Build.MANUFACTURER.getClass();
-        li4Var.a();
-        bn8 f = s4.f(context);
-        li4Var.a();
-        return new ss(str, new xk(packageName, str2, valueOf, f, s4.c(context)));
+    }
+
+    @Override // eq4
+    public final Object invoke(Object obj, Object obj2) {
+        byte b = this.a;
+        g5c g5cVar = g5c.a;
+        ax2 ax2Var = (ax2) obj;
+        fw2 fw2Var = (fw2) obj2;
+        switch (b) {
+        }
+        return ((f8a) create(ax2Var, fw2Var)).invokeSuspend(g5cVar);
+    }
+
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        byte b = this.a;
+        h8a h8aVar = this.c;
+        bx2 bx2Var = bx2.a;
+        switch (b) {
+            case 0:
+                boolean z = this.b;
+                if (!z) {
+                    qse.b(obj);
+                    hk4 data = h8aVar.b.getData();
+                    final AtomicReference atomicReference = h8aVar.c;
+                    ik4 ik4Var = new ik4() { // from class: e8a
+                        @Override // ik4
+                        public final Object c(Object obj2, fw2 fw2Var) {
+                            atomicReference.set((t5a) obj2);
+                            return g5c.a;
+                        }
+
+                        public final boolean equals(Object obj2) {
+                            if ((obj2 instanceof ik4) && (obj2 instanceof e8a)) {
+                                return new fa(atomicReference).equals(new fa(atomicReference));
+                            }
+                            return false;
+                        }
+
+                        public final int hashCode() {
+                            return ((((((((((AtomicReference.class.hashCode() + ((atomicReference != null ? r1.hashCode() : 0) * 31)) * 31) + 113762) * 31) - 869290769) * 31) + 1237) * 31) + 2) * 31) + 2;
+                        }
+                    };
+                    this.b = true;
+                    if (data.h(ik4Var, this) == bx2Var) {
+                        return bx2Var;
+                    }
+                } else {
+                    if (!z) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    qse.b(obj);
+                }
+                return g5c.a;
+            default:
+                boolean z2 = this.b;
+                if (z2) {
+                    if (z2) {
+                        qse.b(obj);
+                        return obj;
+                    }
+                    sc8.j("call to 'resume' before 'invoke' with coroutine");
+                    return null;
+                }
+                qse.b(obj);
+                hk4 data2 = h8aVar.b.getData();
+                this.b = true;
+                Object a = khe.a(data2, this);
+                return a == bx2Var ? bx2Var : a;
+        }
     }
 }

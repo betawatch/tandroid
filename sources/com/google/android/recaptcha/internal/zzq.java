@@ -3,14 +3,14 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class zzq {
-    private final d26 zza;
+    private final d06 zza;
 
     public zzq() {
         int i = zzby.zza;
-        this.zza = fpe.b(zzp.zza);
+        this.zza = cne.b(zzp.zza);
     }
 
     private final zzi zzf() {
@@ -25,11 +25,11 @@ public final class zzq {
         return (zzzd) zzf.zzk();
     }
 
-    public final Object zzb(String str, long j, px2 px2Var) {
+    public final Object zzb(String str, long j, fw2 fw2Var) {
         return new zzhf(31, new zzl(this, str, j, null), null);
     }
 
-    public final Object zzc(long j, zzxn zzxnVar, px2 px2Var) {
+    public final Object zzc(long j, zzxn zzxnVar, fw2 fw2Var) {
         return new zzhf(30, new zzo(this, j, zzxnVar, null), null);
     }
 

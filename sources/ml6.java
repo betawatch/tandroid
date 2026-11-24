@@ -1,99 +1,13 @@
 // default package
 
-import java.nio.ByteBuffer;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class ml6 {
-    public static final ml6 j = new ml6(1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public static final ml6 k = new ml6(0.0d, 1.0d, -1.0d, 0.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public static final ml6 l = new ml6(-1.0d, 0.0d, 0.0d, -1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public static final ml6 m = new ml6(0.0d, -1.0d, 1.0d, 0.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public final double a;
-    public final double b;
-    public final double c;
-    public final double d;
-    public final double e;
-    public final double f;
-    public final double g;
-    public final double h;
-    public final double i;
+    public final /* synthetic */ MediaController a;
 
-    public ml6(double d, double d2, double d3, double d4, double d5, double d6, double d7, double d8, double d9) {
-        this.a = d5;
-        this.b = d6;
-        this.c = d7;
-        this.d = d;
-        this.e = d2;
-        this.f = d3;
-        this.g = d4;
-        this.h = d8;
-        this.i = d9;
-    }
-
-    public static ml6 a(ByteBuffer byteBuffer) {
-        double d = jne.d(byteBuffer);
-        double d2 = jne.d(byteBuffer);
-        double c = jne.c(byteBuffer);
-        return new ml6(d, d2, jne.d(byteBuffer), jne.d(byteBuffer), c, jne.c(byteBuffer), jne.c(byteBuffer), jne.d(byteBuffer), jne.d(byteBuffer));
-    }
-
-    public final void b(ByteBuffer byteBuffer) {
-        kne.b(byteBuffer, this.d);
-        kne.b(byteBuffer, this.e);
-        kne.a(byteBuffer, this.a);
-        kne.b(byteBuffer, this.f);
-        kne.b(byteBuffer, this.g);
-        kne.a(byteBuffer, this.b);
-        kne.b(byteBuffer, this.h);
-        kne.b(byteBuffer, this.i);
-        kne.a(byteBuffer, this.c);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || ml6.class != obj.getClass()) {
-            return false;
-        }
-        ml6 ml6Var = (ml6) obj;
-        return Double.compare(ml6Var.d, this.d) == 0 && Double.compare(ml6Var.e, this.e) == 0 && Double.compare(ml6Var.f, this.f) == 0 && Double.compare(ml6Var.g, this.g) == 0 && Double.compare(ml6Var.h, this.h) == 0 && Double.compare(ml6Var.i, this.i) == 0 && Double.compare(ml6Var.a, this.a) == 0 && Double.compare(ml6Var.b, this.b) == 0 && Double.compare(ml6Var.c, this.c) == 0;
-    }
-
-    public final int hashCode() {
-        long doubleToLongBits = Double.doubleToLongBits(this.a);
-        long doubleToLongBits2 = Double.doubleToLongBits(this.b);
-        int i = (((int) (doubleToLongBits ^ (doubleToLongBits >>> 32))) * 31) + ((int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32)));
-        long doubleToLongBits3 = Double.doubleToLongBits(this.c);
-        int i2 = (i * 31) + ((int) (doubleToLongBits3 ^ (doubleToLongBits3 >>> 32)));
-        long doubleToLongBits4 = Double.doubleToLongBits(this.d);
-        int i3 = (i2 * 31) + ((int) (doubleToLongBits4 ^ (doubleToLongBits4 >>> 32)));
-        long doubleToLongBits5 = Double.doubleToLongBits(this.e);
-        int i4 = (i3 * 31) + ((int) (doubleToLongBits5 ^ (doubleToLongBits5 >>> 32)));
-        long doubleToLongBits6 = Double.doubleToLongBits(this.f);
-        int i5 = (i4 * 31) + ((int) (doubleToLongBits6 ^ (doubleToLongBits6 >>> 32)));
-        long doubleToLongBits7 = Double.doubleToLongBits(this.g);
-        int i6 = (i5 * 31) + ((int) (doubleToLongBits7 ^ (doubleToLongBits7 >>> 32)));
-        long doubleToLongBits8 = Double.doubleToLongBits(this.h);
-        int i7 = (i6 * 31) + ((int) (doubleToLongBits8 ^ (doubleToLongBits8 >>> 32)));
-        long doubleToLongBits9 = Double.doubleToLongBits(this.i);
-        return (i7 * 31) + ((int) (doubleToLongBits9 ^ (doubleToLongBits9 >>> 32)));
-    }
-
-    public final String toString() {
-        if (equals(j)) {
-            return "Rotate 0°";
-        }
-        if (equals(k)) {
-            return "Rotate 90°";
-        }
-        if (equals(l)) {
-            return "Rotate 180°";
-        }
-        if (equals(m)) {
-            return "Rotate 270°";
-        }
-        return "Matrix{u=" + this.a + ", v=" + this.b + ", w=" + this.c + ", a=" + this.d + ", b=" + this.e + ", c=" + this.f + ", d=" + this.g + ", tx=" + this.h + ", ty=" + this.i + '}';
+    public ml6(MediaController mediaController) {
+        this.a = mediaController;
     }
 }

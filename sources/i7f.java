@@ -1,33 +1,20 @@
 // default package
 
-import android.content.Context;
-import android.util.Log;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class i7f {
-    public static final opd a;
-    public static final opd b;
-    public static Context c;
+public final class i7f implements ua9 {
+    public final Status a;
+    public final s4d b;
 
-    static {
-        new opd(zoe.U("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u007f¢fú§p\u0085xb±"), (byte) 0);
-        new opd(zoe.U("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014QÕÛ\u0004÷XçB\u0086<"), (byte) 1);
-        new opd(zoe.U("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u0010\u008ae\bsù/\u008eQí"), (byte) 2);
-        new opd(zoe.U("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014\u0003£²\u00ad×árÊkì"), (byte) 3);
-        a = new opd(zoe.U("0\u0082\u0004C0\u0082\u0003+ \u0003\u0002\u0001\u0002\u0002\t\u0000Âà\u0087FdJ0\u008d0"), (byte) 4);
-        b = new opd(zoe.U("0\u0082\u0004¨0\u0082\u0003\u0090 \u0003\u0002\u0001\u0002\u0002\t\u0000Õ\u0085¸l}ÓNõ0"), (byte) 5);
+    public i7f(Status status, s4d s4dVar) {
+        this.a = status;
+        this.b = s4dVar;
     }
 
-    public static synchronized void a(Context context) {
-        synchronized (i7f.class) {
-            if (c != null) {
-                Log.w("GoogleCertificates", "GoogleCertificates has been initialized already");
-            } else {
-                if (context != null) {
-                    c = context.getApplicationContext();
-                }
-            }
-        }
+    @Override // ua9
+    public final Status a() {
+        return this.a;
     }
 }

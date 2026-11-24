@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class mue implements cq7 {
-    public static final mue a = new mue();
+import com.google.android.recaptcha.internal.zzqv;
+import java.util.ArrayList;
 
-    static {
-        mlb.z(mlb.q(ikd.class, new cid(1)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract /* synthetic */ class mue {
+    public static int a(int i, int i2, int i3) {
+        return (lje.m(i) * i2) + i3;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public static int b(int i, int i2, int i3, int i4) {
+        return lje.t(i) + i2 + i3 + i4;
+    }
+
+    public static int c(int i, int i2, long j, ArrayList arrayList) {
+        arrayList.add(Long.valueOf(j));
+        return i + i2;
+    }
+
+    public static String d(String str, int i, String str2, String str3) {
+        return str + i + str2 + str3;
+    }
+
+    public static int e(int i, int i2, int i3) {
+        return zzqv.zzA(i) + i2 + i3;
+    }
+
+    public static int f(int i, int i2, int i3) {
+        return hef.o(i) + i2 + i3;
     }
 }

@@ -1,112 +1,149 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import android.widget.ToggleButton;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class c51 extends ImageView {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class c51 implements Iterator {
+    public final /* synthetic */ byte a = 1;
+    public int b = 0;
+    public final int c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c51(cv3 cv3Var, Context context) {
-        super(context);
-        this.a = (byte) 1;
+    public c51(cdd cddVar) {
+        this.d = cddVar;
+        this.c = cddVar.size();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 3:
-                super.onDraw(canvas);
-                invalidate();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 5:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
-                accessibilityNodeInfo.setCheckable(true);
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    accessibilityNodeInfo.setChecked(sharedInstance.isSpeakerphoneOn());
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        float f;
-        float f2;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
         switch (this.a) {
             case 0:
-                super.onMeasure(i, i2);
-                Matrix imageMatrix = getImageMatrix();
-                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
-                int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
-                int intrinsicWidth = getDrawable().getIntrinsicWidth();
-                int intrinsicHeight = getDrawable().getIntrinsicHeight();
-                if (intrinsicWidth * measuredHeight > intrinsicHeight * measuredWidth) {
-                    f = measuredHeight;
-                    f2 = intrinsicHeight;
-                } else {
-                    f = measuredWidth;
-                    f2 = intrinsicWidth;
+                if (this.b < this.c) {
                 }
-                float f3 = f / f2;
-                imageMatrix.setScale(f3, f3);
-                setImageMatrix(imageMatrix);
                 break;
             case 1:
-            case 3:
-            default:
-                super.onMeasure(i, i2);
+                if (this.b < this.c) {
+                }
                 break;
             case 2:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(a.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                if (this.b < this.c) {
+                }
+                break;
+            case 3:
+                if (this.b < this.c) {
+                }
                 break;
             case 4:
-                int size = View.MeasureSpec.getSize(i);
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+                if (this.b < this.c) {
+                }
                 break;
+            default:
+                if (this.b < this.c) {
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        byte b = this.a;
+        int i = this.c;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                int i2 = this.b;
+                if (i2 < i) {
+                    this.b = i2 + 1;
+                    return Byte.valueOf(((f51) obj).m(i2));
+                }
+                w26.g();
+                return null;
+            case 1:
+                try {
+                    int i3 = this.b;
+                    this.b = i3 + 1;
+                    return Byte.valueOf(((cdd) obj).j(i3));
+                } catch (IndexOutOfBoundsException e) {
+                    throw new NoSuchElementException(e.getMessage());
+                }
+            case 2:
+                int i4 = this.b;
+                if (i4 < i) {
+                    this.b = i4 + 1;
+                    return Byte.valueOf(((zud) obj).i(i4));
+                }
+                w26.g();
+                return null;
+            case 3:
+                int i5 = this.b;
+                if (i5 < i) {
+                    this.b = i5 + 1;
+                    return Byte.valueOf(((qae) obj).i(i5));
+                }
+                w26.g();
+                return null;
+            case 4:
+                int i6 = this.b;
+                if (i6 < i) {
+                    this.b = i6 + 1;
+                    return Byte.valueOf(((sie) obj).k(i6));
+                }
+                w26.g();
+                return null;
+            default:
+                int i7 = this.b;
+                if (i7 < i) {
+                    this.b = i7 + 1;
+                    return Byte.valueOf(((xdf) obj).i(i7));
+                }
+                w26.g();
+                return null;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c51(Context context, byte b) {
-        super(context);
-        this.a = b;
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            case 1:
+                throw new UnsupportedOperationException();
+            case 2:
+                throw new UnsupportedOperationException();
+            case 3:
+                throw new UnsupportedOperationException();
+            case 4:
+                throw new UnsupportedOperationException();
+            default:
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    public c51(zud zudVar) {
+        this.d = zudVar;
+        this.c = zudVar.j();
+    }
+
+    public c51(qae qaeVar) {
+        this.d = qaeVar;
+        this.c = qaeVar.k();
+    }
+
+    public c51(xdf xdfVar) {
+        this.d = xdfVar;
+        this.c = xdfVar.j();
+    }
+
+    public c51(sie sieVar) {
+        this.d = sieVar;
+        this.c = sieVar.i();
+    }
+
+    public c51(f51 f51Var) {
+        this.d = f51Var;
+        this.c = f51Var.size();
     }
 }

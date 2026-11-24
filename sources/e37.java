@@ -1,69 +1,479 @@
 // default package
 
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import android.graphics.RectF;
+import android.text.style.CharacterStyle;
+import android.text.style.URLSpan;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class e37 extends FrameLayout implements vlb {
-    public TLRPC.User a;
-    public l66 b;
-    public tk4 c;
-    public boolean d;
-    public int e;
+public final class e37 implements bb2 {
+    public final /* synthetic */ jr a;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        l66 l66Var = this.b;
-        tk4 tk4Var = this.c;
-        View view = (View) getParent();
-        if (view != null && view.getWidth() > 0) {
-            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
-        }
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(gm.L(36.0f), TLObject.FLAG_30);
-        this.d = true;
-        boolean z = tk4Var.getVisibility() == 0;
-        l66Var.setVisibility(8);
-        if (z) {
-            tk4Var.setVisibility(8);
-        }
-        super.onMeasure(i, makeMeasureSpec);
-        if (z) {
-            tk4Var.getLayoutParams().width = getMeasuredWidth();
-            tk4Var.setVisibility(0);
-        }
-        l66Var.setVisibility(0);
-        l66Var.getLayoutParams().width = getMeasuredWidth() - gm.L(24.0f);
-        this.d = false;
-        super.onMeasure(i, makeMeasureSpec);
+    public e37(jr jrVar) {
+        this.a = jrVar;
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.d) {
+    @Override // bb2
+    public final boolean A1(gb2 gb2Var, int i) {
+        f37 f37Var = (f37) this.a.d;
+        if (f37Var.a != 2 || i != 1) {
+            return false;
+        }
+        o27 o27Var = f37Var.d0.d;
+        if (o27Var.n) {
+            return false;
+        }
+        TLRPC.WebPage webPage = o27Var.v;
+        return webPage == null || (webPage instanceof TLRPC.TL_webPagePending);
+    }
+
+    @Override // bb2
+    public final boolean B2(gb2 gb2Var, k27 k27Var) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean D0(gb2 gb2Var, TLRPC.PollAnswer pollAnswer) {
+        return false;
+    }
+
+    @Override // bb2
+    public final gib E2() {
+        return ((f37) this.a.d).e;
+    }
+
+    @Override // bb2
+    public final boolean F0(gb2 gb2Var) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean G(gb2 gb2Var, TLRPC.TodoItem todoItem) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean J0(long j) {
+        return false;
+    }
+
+    @Override // bb2
+    public final void K1(gb2 gb2Var, TLRPC.WebPage webPage, String str, boolean z) {
+        d01.t(gb2Var.getContext(), str);
+    }
+
+    @Override // bb2
+    public final boolean N1() {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean O() {
+        return true;
+    }
+
+    @Override // bb2
+    public final void P(gb2 gb2Var, CharacterStyle characterStyle, boolean z) {
+        f37 f37Var = (f37) this.a.d;
+        if (f37Var.a != 2 || f37Var.d0.d.w == characterStyle || gb2Var.getMessageObject() == null || !(characterStyle instanceof URLSpan)) {
             return;
         }
-        super.requestLayout();
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        try {
-            int w0 = cmb.w0(null, cmb.H5, false);
-            if (w0 != this.e) {
-                this.e = w0;
-                cmb.F1(getBackground(), w0, true);
-            }
-            invalidate();
-        } catch (Exception e) {
-            fc4.g(e, true);
+        URLSpan uRLSpan = (URLSpan) characterStyle;
+        String url = uRLSpan.getURL();
+        l37 l37Var = f37Var.d0;
+        o27 o27Var = l37Var.d;
+        o27Var.w = uRLSpan;
+        o27Var.v = null;
+        mu1 mu1Var = l37Var.c;
+        if (mu1Var != null && url != null) {
+            mu1Var.jb(url, true);
         }
+        f37Var.h(gb2Var);
     }
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // bb2
+    public final boolean Q() {
+        return false;
+    }
+
+    @Override // bb2
+    public final int R() {
+        return 0;
+    }
+
+    @Override // bb2
+    public final boolean T0(gb2 gb2Var, TLRPC.TodoItem todoItem, boolean z) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean T1(gm gmVar) {
+        return false;
+    }
+
+    @Override // bb2
+    public final int V(gb2 gb2Var) {
+        return 0;
+    }
+
+    @Override // bb2
+    public final vu1 X() {
+        return null;
+    }
+
+    @Override // bb2
+    public final ma8 Z1() {
+        return null;
+    }
+
+    @Override // bb2
+    public final boolean b() {
+        f37 f37Var = (f37) this.a.d;
+        if (f37Var.a != 2) {
+            return false;
+        }
+        o27 o27Var = f37Var.d0.d;
+        return (o27Var.n || o27Var.i) ? false : true;
+    }
+
+    @Override // bb2
+    public final String b1(gb2 gb2Var) {
+        return null;
+    }
+
+    @Override // bb2
+    public final boolean c2(long j) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean e0() {
+        return false;
+    }
+
+    @Override // bb2
+    public final CharacterStyle f0(gb2 gb2Var) {
+        f37 f37Var = (f37) this.a.d;
+        if (f37Var.a != 2) {
+            return null;
+        }
+        o27 o27Var = f37Var.d0.d;
+        if (o27Var.n) {
+            return null;
+        }
+        return o27Var.w;
+    }
+
+    @Override // bb2
+    public final boolean g2(k27 k27Var) {
+        return true;
+    }
+
+    @Override // bb2
+    public final boolean h1(gb2 gb2Var, TL_iv.PageBlock pageBlock) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean i0() {
+        return b();
+    }
+
+    @Override // bb2
+    public final boolean k2(gb2 gb2Var, TLRPC.User user) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean l() {
+        return true;
+    }
+
+    @Override // bb2
+    public final boolean l2(gb2 gb2Var) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean s0(gb2 gb2Var, boolean z) {
+        return false;
+    }
+
+    @Override // bb2
+    public final String x(long j) {
+        return null;
+    }
+
+    @Override // bb2
+    public final boolean x0(gb2 gb2Var, TLRPC.Chat chat) {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean y1() {
+        return false;
+    }
+
+    @Override // bb2
+    public final boolean y2(int i) {
+        return false;
+    }
+
+    @Override // bb2
+    public final /* synthetic */ boolean z1(k27 k27Var) {
+        return oo1.a(k27Var);
+    }
+
+    @Override // bb2
+    public final void B0() {
+    }
+
+    @Override // bb2
+    public final void C2() {
+    }
+
+    @Override // bb2
+    public final void R1() {
+    }
+
+    @Override // bb2
+    public final void c() {
+    }
+
+    @Override // bb2
+    public final void i1() {
+    }
+
+    @Override // bb2
+    public final void p() {
+    }
+
+    @Override // bb2
+    public final void t() {
+    }
+
+    @Override // bb2
+    public final void u2() {
+    }
+
+    @Override // bb2
+    public final void D1(h27 h27Var) {
+    }
+
+    @Override // bb2
+    public final void F(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void H2(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void J(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void M1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void N0(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void T(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void W(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void X0(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void X1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void Y(k27 k27Var) {
+    }
+
+    @Override // bb2
+    public final void Y1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void c1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void d0(int i) {
+    }
+
+    @Override // bb2
+    public final void e2(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void j0(k27 k27Var) {
+    }
+
+    @Override // bb2
+    public final void l0(String str) {
+    }
+
+    @Override // bb2
+    public final void l1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void n1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void q(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void q1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void r0(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void v2(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void x1(gb2 gb2Var) {
+    }
+
+    @Override // bb2
+    public final void C1(gb2 gb2Var, boolean z) {
+    }
+
+    @Override // bb2
+    public final void E0(gb2 gb2Var, long j) {
+    }
+
+    @Override // bb2
+    public final void F1(gb2 gb2Var, int i) {
+    }
+
+    @Override // bb2
+    public final void M0(gb2 gb2Var, boolean z) {
+    }
+
+    @Override // bb2
+    public final void O1(gb2 gb2Var, iq0 iq0Var) {
+    }
+
+    @Override // bb2
+    public final void V0(gb2 gb2Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    @Override // bb2
+    public final void Z(gb2 gb2Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    }
+
+    @Override // bb2
+    public final void b2(String str, String str2) {
+    }
+
+    @Override // bb2
+    public final void d2(gb2 gb2Var, k08 k08Var) {
+    }
+
+    @Override // bb2
+    public final void j2(gb2 gb2Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    }
+
+    @Override // bb2
+    public final void m0(gb2 gb2Var, int i) {
+    }
+
+    @Override // bb2
+    public final void v0(gb2 gb2Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    @Override // bb2
+    public final void A(gb2 gb2Var, float f, float f2) {
+    }
+
+    @Override // bb2
+    public final void G1(gb2 gb2Var, boolean z, boolean z2) {
+    }
+
+    @Override // bb2
+    public final void I(gb2 gb2Var, TLRPC.Document document, RectF rectF) {
+    }
+
+    @Override // bb2
+    public final void W1(gb2 gb2Var, TLObject tLObject, boolean z) {
+    }
+
+    @Override // bb2
+    public final void Y0(gb2 gb2Var, float f, float f2) {
+    }
+
+    @Override // bb2
+    public final void s2(gb2 gb2Var, float f, float f2) {
+    }
+
+    @Override // bb2
+    public final void v1(gb2 gb2Var, float f, float f2) {
+    }
+
+    @Override // bb2
+    public final void w0(gb2 gb2Var, int i, int i2) {
+    }
+
+    @Override // bb2
+    public final void x2(gb2 gb2Var, boolean z, boolean z2) {
+    }
+
+    @Override // bb2
+    public final void A0(gb2 gb2Var, float f, float f2, boolean z) {
+    }
+
+    @Override // bb2
+    public final void E(gb2 gb2Var, TLRPC.User user, TLRPC.Document document, String str) {
+    }
+
+    @Override // bb2
+    public final void c0(gb2 gb2Var, TLRPC.User user, float f, float f2) {
+    }
+
+    @Override // bb2
+    public final void s(gb2 gb2Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i) {
+    }
+
+    @Override // bb2
+    public final void N(gb2 gb2Var, int i, float f, float f2, boolean z) {
+    }
+
+    @Override // bb2
+    public final void m1(gb2 gb2Var, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2) {
+    }
+
+    @Override // bb2
+    public final void r1(gb2 gb2Var, ArrayList arrayList, int i, int i2, int i3) {
+    }
+
+    @Override // bb2
+    public final void i2(gb2 gb2Var, TLRPC.Chat chat, int i, float f, float f2, boolean z) {
+    }
+
+    @Override // bb2
+    public final void I1(k27 k27Var, String str, String str2, String str3, String str4, int i, int i2) {
     }
 }

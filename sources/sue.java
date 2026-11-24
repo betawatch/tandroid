@@ -1,19 +1,41 @@
 // default package
 
-import java.util.AbstractCollection;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class sue {
+    public static String a(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
+    }
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class sue {
-    public String a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public Boolean f;
-    public Boolean g;
-    public Boolean h;
-    public Integer i;
-    public Integer j;
-    public AbstractCollection k;
+    public static String b(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
+    }
+
+    public static boolean c(String str, String... strArr) {
+        if (str != null) {
+            for (String str2 : strArr) {
+                if (str.startsWith(str2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean d(String str) {
+        return str == null || str.trim().length() == 0;
+    }
+
+    public static String e(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return str;
+    }
 }

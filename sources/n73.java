@@ -1,22 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n73 extends g2 {
-    public static final /* synthetic */ ai4 e;
+public final class n73 extends gw2 {
+    public v73 a;
+    public fwa b;
+    public boolean c;
+    public /* synthetic */ Object d;
+    public final /* synthetic */ v73 e;
+    public int f;
 
-    static {
-        i94 i94Var = new i94(n73.class, "DataEntryUrlBox.java");
-        e = i94Var.e(i94Var.d("toString", "com.coremedia.iso.boxes.DataEntryUrlBox", "", "", "java.lang.String"));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n73(v73 v73Var, fw2 fw2Var) {
+        super(fw2Var);
+        this.e = v73Var;
     }
 
-    @Override // y1
-    public final long getContentSize() {
-        return 4L;
-    }
-
-    public final String toString() {
-        aq1.r(i94.b(e, this, this));
-        return "DataEntryUrlBox[]";
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        this.d = obj;
+        this.f |= TLObject.FLAG_31;
+        return this.e.g(false, this);
     }
 }

@@ -1,42 +1,31 @@
 // default package
 
-import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hs2 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ConferenceCall b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ TLRPC.TL_error e;
+    public final /* synthetic */ ConnectionsManager b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ hs2(ConferenceCall conferenceCall, long j, TLObject tLObject, TLRPC.TL_error tL_error, byte b) {
+    public /* synthetic */ hs2(ConnectionsManager connectionsManager, int i, byte b) {
         this.a = b;
-        this.b = conferenceCall;
-        this.c = j;
-        this.d = tLObject;
-        this.e = tL_error;
+        this.b = connectionsManager;
+        this.c = i;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        TLRPC.TL_error tL_error = this.e;
-        TLObject tLObject = this.d;
-        long j = this.c;
-        ConferenceCall conferenceCall = this.b;
+        int i = this.c;
+        ConnectionsManager connectionsManager = this.b;
         switch (b) {
             case 0:
-                conferenceCall.lambda$pull_outbound$5(j, tLObject, tL_error);
-                break;
-            case 1:
-                conferenceCall.lambda$kick$12(j, tLObject, tL_error);
+                connectionsManager.lambda$failNotRunningRequest$1(i);
                 break;
             default:
-                conferenceCall.lambda$updateParticipants$10(j, tLObject, tL_error);
+                connectionsManager.lambda$cancelRequestsForGuid$11(i);
                 break;
         }
     }

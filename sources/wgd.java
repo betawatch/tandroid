@@ -1,29 +1,11 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class wgd implements Serializable {
-    public final Object a;
+public abstract class wgd {
+    public static final /* synthetic */ int a = 0;
 
-    public wgd(Object obj) {
-        this.a = obj;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof wgd) {
-            return x1f.a(this.a, ((wgd) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
-    }
-
-    public final String toString() {
-        return kt6.o("Suppliers.ofInstance(", this.a.toString(), ")");
+    static {
+        wgd.class.getClassLoader();
     }
 }

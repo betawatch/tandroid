@@ -1,87 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class vo5 extends yo5 {
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ wo5 e;
+import android.app.Activity;
+import android.view.View;
 
-    public /* synthetic */ vo5(wo5 wo5Var, byte b) {
-        this.d = b;
-        this.e = wo5Var;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public interface vo5 {
+    void E(jm6 jm6Var, oac oacVar, boolean z, int i, boolean z2, long j);
 
-    @Override // go5, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        byte b = this.d;
-        wo5 wo5Var = this.e;
-        switch (b) {
-            case 0:
-                if (obj instanceof yp7) {
-                    yp7 yp7Var = (yp7) obj;
-                    if (yp7Var.a() > 0) {
-                        if (((e89) wo5Var).e.b(yp7Var.a) == yp7Var.a()) {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            default:
-                return ((e89) wo5Var).contains(obj);
-        }
-    }
+    int getClassGuid();
 
-    @Override // yo5, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        switch (this.d) {
-            case 0:
-                return this.e.hashCode();
-            default:
-                return super.hashCode();
-        }
-    }
+    View getFragmentView();
 
-    @Override // go5
-    public final int i(int i, Object[] objArr) {
-        return h().i(i, objArr);
-    }
+    Activity getParentActivity();
 
-    @Override // go5
-    public final boolean m() {
-        switch (this.d) {
-            case 0:
-                return false;
-            default:
-                return true;
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    /* renamed from: n, reason: merged with bridge method [inline-methods] */
-    public final v7c iterator() {
-        return h().listIterator(0);
-    }
-
-    @Override // yo5
-    public final mo5 r() {
-        return new kp5(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        byte b = this.d;
-        wo5 wo5Var = this.e;
-        switch (b) {
-            case 0:
-                e89 e89Var = (e89) wo5Var;
-                vo5 vo5Var = e89Var.h;
-                if (vo5Var == null) {
-                    vo5Var = new vo5(e89Var, (byte) 1);
-                    e89Var.h = vo5Var;
-                }
-                return vo5Var.size();
-            default:
-                return ((e89) wo5Var).e.c;
-        }
-    }
+    boolean y();
 }

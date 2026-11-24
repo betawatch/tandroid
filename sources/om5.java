@@ -1,55 +1,65 @@
 // default package
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class om5 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class om5 implements Serializable {
+    public static final om5 c = new om5(0, new long[0]);
+    public final long[] a;
+    public final int b;
 
-    public /* synthetic */ om5(int i, String str, boolean z) {
-        this.c = i;
-        this.b = str;
-        this.d = z;
+    public om5(int i, long[] jArr) {
+        this.a = jArr;
+        this.b = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.d;
-        int i = this.c;
-        String str = this.b;
-        switch (b) {
-            case 0:
-                nm7.f(i).k(nm7.V1, str, Boolean.valueOf(z));
-                break;
-            default:
-                txc txcVar = (txc) wxc.a.get(str);
-                if (txcVar != null && txcVar.v != null) {
-                    if (!wxc.g.contains(txcVar)) {
-                        txcVar.M = i;
-                        txcVar.N = z;
-                        ArrayList arrayList = wxc.f;
-                        arrayList.remove(txcVar);
-                        arrayList.add(txcVar);
-                        wxc.o();
-                        break;
-                    } else {
-                        txcVar.M = i;
-                        txcVar.v.m(i);
-                        break;
+    public final long a(int i) {
+        gre.j(i, this.b);
+        return this.a[i];
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof om5) {
+            om5 om5Var = (om5) obj;
+            int i = om5Var.b;
+            int i2 = this.b;
+            if (i2 == i) {
+                for (int i3 = 0; i3 < i2; i3++) {
+                    if (a(i3) == om5Var.a(i3)) {
                     }
                 }
-                break;
+                return true;
+            }
         }
+        return false;
     }
 
-    public /* synthetic */ om5(String str, int i, boolean z) {
-        this.b = str;
-        this.c = i;
-        this.d = z;
+    public final int hashCode() {
+        int i = 1;
+        for (int i2 = 0; i2 < this.b; i2++) {
+            i = (i * 31) + zne.b(this.a[i2]);
+        }
+        return i;
+    }
+
+    public final String toString() {
+        int i = this.b;
+        if (i == 0) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder(i * 5);
+        sb.append('[');
+        long[] jArr = this.a;
+        sb.append(jArr[0]);
+        for (int i2 = 1; i2 < i; i2++) {
+            sb.append(", ");
+            sb.append(jArr[i2]);
+        }
+        sb.append(']');
+        return sb.toString();
     }
 }

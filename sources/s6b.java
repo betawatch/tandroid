@@ -1,49 +1,47 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final class s6b extends b6c {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class s6b implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ t6b b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ boolean d;
 
-    static {
-        b6c.h(new s6b());
+    public /* synthetic */ s6b(t6b t6bVar, Runnable runnable, boolean z) {
+        this.b = t6bVar;
+        this.c = runnable;
+        this.d = z;
     }
 
-    @Override // b6c
-    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
-        t6b t6bVar = (t6b) view;
-        Object obj = c6cVar.H;
-        TLRPC.WebPage webPage = obj instanceof TLRPC.WebPage ? (TLRPC.WebPage) obj : null;
-        View.OnClickListener onClickListener = c6cVar.E;
-        io ioVar = t6bVar.e;
-        ImageView imageView = t6bVar.b;
-        ImageView imageView2 = t6bVar.c;
-        boolean z2 = (webPage == null || (webPage instanceof TLRPC.TL_webPagePending)) ? false : true;
-        imageView.setAlpha(z2 ? 1.0f : 0.0f);
-        imageView.setScaleX(z2 ? 1.0f : 0.4f);
-        imageView.setScaleY(z2 ? 1.0f : 0.4f);
-        imageView2.setAlpha(z2 ? 0.0f : 1.0f);
-        imageView2.setScaleX(z2 ? 0.4f : 1.0f);
-        imageView2.setScaleY(z2 ? 0.4f : 1.0f);
-        io ioVar2 = t6bVar.d;
-        if (z2) {
-            ioVar2.c(TextUtils.isEmpty(webPage.site_name) ? webPage.title : webPage.site_name, false, true);
-            ioVar.c(webPage.description, false, true);
-        } else {
-            ioVar2.c(t6bVar.h, false, true);
-            ioVar.c(t6bVar.n, false, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.d;
+        Runnable runnable = this.c;
+        t6b t6bVar = this.b;
+        switch (b) {
+            case 0:
+                t6bVar.g(runnable, z);
+                break;
+            default:
+                runnable.run();
+                t7b t7bVar = t6bVar.a;
+                ge5 ge5Var = t7bVar.U0;
+                ge5Var.a.t(k96.M0(z ? 2131744420 : 2131744421, null), false, true);
+                ge5Var.invalidate();
+                t7bVar.e(true, true);
+                t7bVar.c0(true);
+                t7bVar.J0.a(false, true);
+                t7bVar.K0.b(true, true);
+                t7bVar.h0(true, true);
+                break;
         }
-        t6bVar.f.setOnClickListener(onClickListener);
     }
 
-    @Override // b6c
-    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
-        return new t6b(context);
+    public /* synthetic */ s6b(t6b t6bVar, boolean z, Runnable runnable) {
+        this.b = t6bVar;
+        this.d = z;
+        this.c = runnable;
     }
 }

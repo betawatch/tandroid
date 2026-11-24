@@ -1,17 +1,77 @@
 // default package
 
-import java.io.IOException;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class gy3 {
-    public static final hy3 a;
+public final class gy3 implements TextWatcher {
+    public final EditText a;
+    public fy3 b;
+    public boolean c = true;
 
-    static {
-        try {
-            a = new hy3();
-        } catch (IOException e) {
-            wa3.h("Unable to open emoji.pack", e);
+    public gy3(EditText editText) {
+        this.a = editText;
+    }
+
+    public static void a(EditText editText, int i) {
+        int length;
+        if (i == 1 && editText != null && editText.isAttachedToWindow()) {
+            Editable editableText = editText.getEditableText();
+            int selectionStart = Selection.getSelectionStart(editableText);
+            int selectionEnd = Selection.getSelectionEnd(editableText);
+            lw3 a = lw3.a();
+            if (editableText == null) {
+                length = 0;
+            } else {
+                a.getClass();
+                length = editableText.length();
+            }
+            a.e(0, length, editableText);
+            if (selectionStart < 0) {
+                if (selectionEnd >= 0) {
+                    Selection.setSelection(editableText, selectionEnd);
+                }
+            } else if (selectionEnd >= 0) {
+                Selection.setSelection(editableText, selectionStart, selectionEnd);
+            } else {
+                Selection.setSelection(editableText, selectionStart);
+            }
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        EditText editText = this.a;
+        if (editText.isInEditMode() || !this.c || lw3.j == null || i2 > i3 || !(charSequence instanceof Spannable)) {
+            return;
+        }
+        int b = lw3.a().b();
+        if (b != 0) {
+            if (b == 1) {
+                lw3.a().e(i, i3 + i, (Spannable) charSequence);
+                return;
+            } else if (b != 3) {
+                return;
+            }
+        }
+        lw3 a = lw3.a();
+        fy3 fy3Var = this.b;
+        if (fy3Var == null) {
+            fy3Var = new fy3(editText);
+            this.b = fy3Var;
+        }
+        a.f(fy3Var);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

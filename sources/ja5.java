@@ -1,32 +1,22 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.Comparator;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ja5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ oa5 b;
-
-    public /* synthetic */ ja5(oa5 oa5Var, byte b) {
-        this.a = b;
-        this.b = oa5Var;
+public final class ja5 implements Comparator {
+    public static String a(TLObject tLObject) {
+        if (!(tLObject instanceof TLRPC.User)) {
+            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        }
+        TLRPC.User user = (TLRPC.User) tLObject;
+        return qu2.m(0, user.first_name, user.last_name);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        oa5 oa5Var = this.b;
-        switch (b) {
-            case 0:
-                oa5Var.b.setVisibility(8);
-                oa5Var.F = false;
-                oa5Var.G = 0.0f;
-                break;
-            default:
-                oa5Var.e.setVisibility(8);
-                break;
-        }
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return a((TLObject) obj).compareTo(a((TLObject) obj2));
     }
 }

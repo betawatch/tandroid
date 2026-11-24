@@ -1,15 +1,34 @@
 // default package
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class n36 {
-    public boolean a;
-    public final ArrayList b = new ArrayList();
-    public float c;
-    public boolean d;
-    public float e;
-    public ValueAnimator f;
+public final class n36 extends EditText {
+    public final /* synthetic */ byte a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n36(Context context, byte b) {
+        super(context);
+        this.a = b;
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
+                break;
+            default:
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
 }

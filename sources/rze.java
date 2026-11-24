@@ -1,29 +1,24 @@
 // default package
 
-import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class rze {
-    public static byte[] a(String str) {
-        if (str == null) {
-            return null;
-        }
-        try {
-            return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new Error(e);
-        }
-    }
-
-    public static int b(String str) {
-        if (str == null) {
-            return 0;
-        }
-        try {
-            return str.getBytes("UTF-8").length;
-        } catch (UnsupportedEncodingException unused) {
-            throw new RuntimeException();
+    public static final void a(StringBuilder sb, Iterator it, hcd hcdVar) {
+        if (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            sb.append(hcd.a(entry.getKey()));
+            sb.append(" : ");
+            sb.append(hcd.a(entry.getValue()));
+            while (it.hasNext()) {
+                sb.append(",\n  ");
+                Map.Entry entry2 = (Map.Entry) it.next();
+                sb.append(hcd.a(entry2.getKey()));
+                sb.append(" : ");
+                sb.append(hcd.a(entry2.getValue()));
+            }
         }
     }
 }

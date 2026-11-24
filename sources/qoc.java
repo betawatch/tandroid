@@ -1,62 +1,82 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class qoc extends pn2 {
-    public final /* synthetic */ soc M;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class qoc implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ toc b;
+    public final /* synthetic */ c01 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qoc(soc socVar) {
-        super(R.drawable.wallet_gram_large, 0);
-        this.M = socVar;
+    public /* synthetic */ qoc(toc tocVar, c01 c01Var, byte b) {
+        this.a = b;
+        this.b = tocVar;
+        this.c = c01Var;
     }
 
-    @Override // pn2, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        soc socVar = this.M;
-        FrameLayout.LayoutParams layoutParams = socVar.Q;
-        if (socVar.j0) {
-            return;
-        }
-        this.x = 1.0f;
-        if (socVar.a) {
-            float max = Math.max(0.0f, Math.min(1.0f, socVar.U));
-            if (max == 0.0f) {
-                float intrinsicWidth = this.c.getIntrinsicWidth() * socVar.b;
-                float intrinsicHeight = this.c.getIntrinsicHeight();
-                float f2 = socVar.b;
-                float f3 = intrinsicHeight * f2;
-                float f4 = (f2 * f) + layoutParams.leftMargin;
-                float height = ((socVar.O.getHeight() / 2.0f) - (f3 / 2.0f)) + layoutParams.topMargin;
-                socVar.f.set(f4, height, intrinsicWidth + f4, f3 + height);
-            }
-            if (max < 1.0f) {
-                if (socVar.i0 == null) {
-                    socVar.i0 = new bpc(this.c.getIntrinsicWidth(), this.c.getIntrinsicHeight());
-                    socVar.m();
+    @Override // p8c
+    public final void a(Object obj) {
+        byte b = this.a;
+        c01 c01Var = this.c;
+        toc tocVar = this.b;
+        String str = (String) obj;
+        switch (b) {
+            case 0:
+                c01Var.c(false);
+                if (str == null) {
+                    ui5 parentLayout = tocVar.getParentLayout();
+                    if (parentLayout != null) {
+                        ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
+                        int size = arrayList.size();
+                        int i = 0;
+                        while (i < size) {
+                            Object obj2 = arrayList.get(i);
+                            i++;
+                            d dVar = (d) obj2;
+                            if ((dVar instanceof ypc) || (dVar instanceof bpc) || (dVar instanceof fqc) || (dVar instanceof toc)) {
+                                ((ActionBarLayout) parentLayout).c0(dVar, false);
+                            }
+                        }
+                        tocVar.finishFragment();
+                        break;
+                    } else {
+                        tocVar.finishFragment();
+                        break;
+                    }
+                } else {
+                    u21.b0(tocVar).f0(str, false);
+                    break;
                 }
-                Drawable drawable = this.c;
-                socVar.i0.setBounds(drawable.getBounds());
-                bpc bpcVar = socVar.i0;
-                bpcVar.i = socVar.g0.c;
-                this.c = bpcVar;
-                this.d = false;
-                this.x = 1.0f - max;
-                super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-                this.c = drawable;
-                this.d = true;
-            }
-            this.x = max;
-            if (max == 0.0f) {
-                return;
-            }
+                break;
+            default:
+                c01Var.c(false);
+                ui5 parentLayout2 = tocVar.getParentLayout();
+                if (parentLayout2 != null) {
+                    ArrayList arrayList2 = new ArrayList(parentLayout2.getFragmentStack());
+                    int size2 = arrayList2.size();
+                    int i2 = 0;
+                    while (i2 < size2) {
+                        Object obj3 = arrayList2.get(i2);
+                        i2++;
+                        d dVar2 = (d) obj3;
+                        if ((dVar2 instanceof ypc) || (dVar2 instanceof bpc) || (dVar2 instanceof fqc)) {
+                            ((ActionBarLayout) parentLayout2).c0(dVar2, false);
+                        }
+                    }
+                }
+                if (str == null) {
+                    m21 I = u21.b0(tocVar).I(R.raw.contact_check, k96.M0(2131742948, null), k96.M0(2131742946, null));
+                    I.j = 5000;
+                    I.j();
+                    break;
+                } else {
+                    u21.b0(tocVar).f0(str, false);
+                    break;
+                }
         }
-        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
     }
 }

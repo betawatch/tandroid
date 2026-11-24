@@ -1,30 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class imd extends v7c {
-    public static final Object c = new Object();
-    public Object b;
+public final class imd extends kld implements Serializable {
+    public final kld a;
 
-    public imd(Object obj) {
-        super((byte) 10);
-        this.b = obj;
+    public imd(kld kldVar) {
+        this.a = kldVar;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b != c;
+    @Override // kld
+    public final kld a() {
+        return this.a;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        Object obj = this.b;
-        Object obj2 = c;
-        if (obj != obj2) {
-            this.b = obj2;
-            return obj;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return this.a.compare(obj2, obj);
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        u36.g();
-        return null;
+        if (obj instanceof imd) {
+            return this.a.equals(((imd) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return -this.a.hashCode();
+    }
+
+    public final String toString() {
+        return this.a.toString().concat(".reverse()");
     }
 }

@@ -1,49 +1,66 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.Utilities;
+import android.graphics.RectF;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class fob extends jb8 {
-    public final /* synthetic */ jo6 a;
-    public final /* synthetic */ gob b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class fob {
+    public int a;
+    public boolean b;
+    public iob c;
+    public String d;
+    public long e;
+    public long f;
+    public float g;
+    public float h;
+    public float i;
+    public final RectF j = new RectF();
+    public final lm k;
+    public final /* synthetic */ kob l;
 
-    public fob(gob gobVar, jo6 jo6Var) {
-        this.b = gobVar;
-        this.a = jo6Var;
+    public fob(kob kobVar) {
+        this.l = kobVar;
+        this.k = new lm(360L, kobVar, s33.h);
     }
 
-    @Override // jb8, pb8
-    public final void M(int i, rcc rccVar, boolean z, int i2, int i3, boolean z2) {
-        rob robVar = this.b.a;
-        jo6 jo6Var = this.a;
-        if (jo6Var.h != null) {
-            File file = new File(bc4.z(4), Utilities.b.nextInt() + ".jpg");
-            Point b1 = gm.b1();
-            Bitmap G = fn5.G(jo6Var.h, null, (float) b1.x, (float) b1.y, true);
-            try {
-                G.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+    public final void a(boolean z) {
+        kob kobVar = this.l;
+        if (kobVar.getMeasuredWidth() > 0) {
+            iob iobVar = this.c;
+            if (iobVar != null) {
+                if (!z) {
+                    return;
+                }
+                iobVar.a();
+                this.c = null;
             }
-            File file2 = new File(jo6Var.h);
-            robVar.D1 = new ntc(file2, file2, "");
-            robVar.E1 = G;
-            robVar.d2 = 0;
-            robVar.z0.requestLayout();
-            robVar.g1(false);
-            robVar.y1 = null;
-            robVar.n1();
+            Long l = null;
+            boolean z2 = this.b;
+            String str = this.d;
+            int i = kobVar.w1;
+            int i2 = kobVar.z1;
+            int i3 = (i - i2) - i2;
+            int L = gl.L(38.0f);
+            long j = this.e;
+            if (j > 2) {
+                l = Long.valueOf(j);
+            }
+            this.c = new iob(kobVar, z2, str, i3, L, l, kobVar.getMaxScrollDuration(), kobVar.a1, kobVar.b1, new cib(this, (byte) 8));
         }
     }
 
-    @Override // jb8, pb8
-    public final boolean y() {
-        return false;
+    public final void b() {
+        kob kobVar = this.l;
+        ArrayList arrayList = kobVar.r;
+        int i = this.a;
+        if (i < 0 || i >= arrayList.size()) {
+            return;
+        }
+        dob dobVar = (dob) arrayList.get(this.a);
+        if (kobVar.getMeasuredWidth() <= 0 || dobVar != null) {
+            return;
+        }
+        arrayList.set(this.a, new dob(kobVar, this.d, (kobVar.getMeasuredWidth() - kobVar.getPaddingLeft()) - kobVar.getPaddingRight()));
     }
 }

@@ -1,27 +1,20 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class fd4 extends qx2 {
-    public hd4 a;
-    public oc4 b;
-    public boolean c;
-    public /* synthetic */ Object d;
-    public final /* synthetic */ hd4 e;
-    public int f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class fd4 extends ld5 {
+    public final ri r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fd4(hd4 hd4Var, qx2 qx2Var) {
-        super(qx2Var);
-        this.e = hd4Var;
-    }
-
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        this.d = obj;
-        this.f |= TLObject.FLAG_31;
-        return this.e.a(null, this);
+    public fd4(Context context, wjb wjbVar) {
+        super(context);
+        ri riVar = new ri(context, true, true, true, (byte) 1);
+        this.r = riVar;
+        riVar.setGravity(k96.a0 ? 3 : 5);
+        zkb.U(riVar, bkb.K6, wjbVar);
+        riVar.setTextSize(gl.N(15.0f));
+        addView(riVar, nme.d(-1, 18.0f, (k96.a0 ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
+        ote.b(riVar, 0.04f, 1.2f);
     }
 }

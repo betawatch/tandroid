@@ -1,120 +1,70 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayDeque;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestTimeDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Wallet.WalletEngine2;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.text.TextUtils;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tpc implements Runnable {
+public final /* synthetic */ class tpc implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ ypc b;
 
-    public /* synthetic */ tpc(zsc zscVar, String str, mi5 mi5Var, ysc yscVar) {
-        this.a = (byte) 4;
-        this.b = zscVar;
-        this.c = str;
-        this.d = mi5Var;
-        this.e = yscVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        osc g;
-        Object putIfAbsent;
-        TLRPC.TL_wallPaper tL_wallPaper;
-        TLRPC.Document document;
-        switch (this.a) {
-            case 0:
-                ((WalletEngine2) this.b).lambda$signMessage$13((jac) this.d, (String) this.c, (String) this.e);
-                return;
-            case 1:
-                ((WalletEngine2) this.b).lambda$decryptTransactionComment$48((String) this.c, (byte[]) this.e, (jac) this.d);
-                return;
-            case 2:
-                ((WalletEngine2) this.b).lambda$prepareRotateKey$38((byte[]) this.d, (String) this.c, (nac) this.e);
-                return;
-            case 3:
-                WalletEngine2.lambda$emulateSend$18((AtomicBoolean) this.b, (jac) this.d, (TL_wallet.walletTransaction) this.e, (String) this.c);
-                return;
-            case 4:
-                zsc zscVar = (zsc) this.b;
-                String str = (String) this.c;
-                mi5 mi5Var = (mi5) this.d;
-                ysc yscVar = (ysc) this.e;
-                ConcurrentHashMap concurrentHashMap = btc.a;
-                if ("fqv01SQemVIBAAAApND8LDRUhRU".equals(str)) {
-                    g = btc.c();
-                } else {
-                    String a = mi5Var.a();
-                    ConcurrentHashMap concurrentHashMap2 = btc.a;
-                    Object obj = concurrentHashMap2.get(a);
-                    if (obj == null && (putIfAbsent = concurrentHashMap2.putIfAbsent(a, (obj = new Object()))) != null) {
-                        obj = putIfAbsent;
-                    }
-                    synchronized (obj) {
-                        g = btc.g(btc.b(mi5Var));
-                    }
-                }
-                gm.c3(new xsc(zscVar, g, yscVar));
-                return;
-            case 5:
-                zsc zscVar2 = (zsc) this.b;
-                TLObject tLObject = (TLObject) this.d;
-                ysc yscVar2 = (ysc) this.c;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
-                if ((tLObject instanceof TLRPC.TL_wallPaper) && (document = (tL_wallPaper = (TLRPC.TL_wallPaper) tLObject).document) != null) {
-                    yscVar2.e = document;
-                    yscVar2.f = tL_wallPaper;
-                    zscVar2.c(yscVar2);
-                    return;
-                } else {
-                    if (tL_error != null) {
-                        String str2 = yscVar2.b;
-                        a.b.getSharedPreferences(ConnectionsManager.getInstance(zscVar2.a).isTestBackend() ? "wallpaper_patterns_test" : "wallpaper_patterns", 0).edit().putLong(b10.h("rejected_", str2), System.currentTimeMillis()).apply();
-                    }
-                    zscVar2.a(yscVar2, null);
-                    return;
-                }
-            default:
-                xvc xvcVar = (xvc) this.b;
-                ((ArrayDeque) xvcVar.b).addLast(new wvc((wm2) this.d, (bw8) this.c, (RequestTimeDelegate) this.e));
-                xvcVar.I();
-                return;
-        }
-    }
-
-    public /* synthetic */ tpc(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
+    public /* synthetic */ tpc(ypc ypcVar, byte b) {
         this.a = b;
-        this.b = obj;
-        this.d = obj2;
-        this.c = obj3;
-        this.e = obj4;
+        this.b = ypcVar;
     }
 
-    public /* synthetic */ tpc(AtomicBoolean atomicBoolean, jac jacVar, TL_wallet.walletTransaction wallettransaction, String str) {
-        this.a = (byte) 3;
-        this.b = atomicBoolean;
-        this.d = jacVar;
-        this.e = wallettransaction;
-        this.c = str;
-    }
-
-    public /* synthetic */ tpc(WalletEngine2 walletEngine2, String str, byte[] bArr, jac jacVar) {
-        this.a = (byte) 1;
-        this.b = walletEngine2;
-        this.c = str;
-        this.e = bArr;
-        this.d = jacVar;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        ypc ypcVar = this.b;
+        switch (b) {
+            case 0:
+                if (ypcVar.y != null) {
+                    gl.t1(ypcVar.O);
+                    ypcVar.l0(ypcVar.y, null);
+                    break;
+                }
+                break;
+            case 1:
+                if (ypcVar.y != null) {
+                    gl.t1(ypcVar.O);
+                    ypcVar.l0(ypcVar.y, null);
+                    break;
+                }
+                break;
+            case 2:
+                ClipboardManager clipboardManager = (ClipboardManager) ypcVar.getParentActivity().getSystemService("clipboard");
+                if (clipboardManager != null && clipboardManager.hasPrimaryClip()) {
+                    ClipData primaryClip = clipboardManager.getPrimaryClip();
+                    if (primaryClip != null && primaryClip.getItemCount() != 0) {
+                        CharSequence coerceToText = primaryClip.getItemAt(0).coerceToText(ypcVar.getParentActivity());
+                        if (!TextUtils.isEmpty(coerceToText)) {
+                            ypcVar.O.setText(coerceToText.toString().trim());
+                            l7 l7Var = ypcVar.O;
+                            l7Var.setSelection(l7Var.length());
+                            break;
+                        } else {
+                            ypcVar.T = false;
+                            ypcVar.o0(true);
+                            break;
+                        }
+                    } else {
+                        ypcVar.T = false;
+                        ypcVar.o0(true);
+                        break;
+                    }
+                } else {
+                    ypcVar.T = false;
+                    ypcVar.o0(true);
+                    break;
+                }
+                break;
+            default:
+                ypcVar.h0();
+                break;
+        }
     }
 }

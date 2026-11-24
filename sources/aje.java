@@ -1,50 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Context;
+import android.content.Intent;
+import android.os.Looper;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class aje extends tke {
-    public final int e;
-    public final int f;
-
-    public aje(byte[] bArr, int i, int i2) {
-        super(bArr);
-        tke.l(i, i + i2, bArr.length);
-        this.e = i;
-        this.f = i2;
+public abstract class aje {
+    public static u84 a(Context context, GoogleSignInOptions googleSignInOptions) {
+        fre.h(googleSignInOptions);
+        return new u84(context, o40.a, googleSignInOptions, new ay4(new eef((byte) 13), Looper.getMainLooper()));
     }
 
-    @Override // tke
-    public final byte h(int i) {
-        int i2 = this.f;
-        if (((i2 - (i + 1)) | i) >= 0) {
-            return this.b[this.e + i];
+    public static Task b(Intent intent) {
+        bz4 bz4Var;
+        GoogleSignInAccount googleSignInAccount;
+        lh0 lh0Var = h4d.a;
+        Status status = Status.h;
+        if (intent == null) {
+            bz4Var = new bz4(null, status);
+        } else {
+            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
+            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
+            if (googleSignInAccount2 == null) {
+                if (status2 != null) {
+                    status = status2;
+                }
+                bz4Var = new bz4(null, status);
+            } else {
+                bz4Var = new bz4(googleSignInAccount2, Status.e);
+            }
         }
-        if (i < 0) {
-            StringBuilder sb = new StringBuilder(22);
-            sb.append("Index < 0: ");
-            sb.append(i);
-            throw new ArrayIndexOutOfBoundsException(sb.toString());
-        }
-        StringBuilder sb2 = new StringBuilder(40);
-        sb2.append("Index > length: ");
-        sb2.append(i);
-        sb2.append(", ");
-        sb2.append(i2);
-        throw new ArrayIndexOutOfBoundsException(sb2.toString());
-    }
-
-    @Override // tke
-    public final int i() {
-        return this.f;
-    }
-
-    @Override // tke
-    public final byte k(int i) {
-        return this.b[this.e + i];
-    }
-
-    @Override // tke
-    public final int m() {
-        return this.e;
+        Status status3 = bz4Var.a;
+        return (!status3.b() || (googleSignInAccount = bz4Var.b) == null) ? Tasks.forException(bmd.a(status3)) : Tasks.forResult(googleSignInAccount);
     }
 }

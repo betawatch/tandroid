@@ -1,45 +1,19 @@
 // default package
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class t9e extends t6e {
-    public final transient Object s;
+public final class t9e implements zn7 {
+    public static final t9e a = new t9e();
 
-    public t9e(Object obj) {
-        super((byte) 5);
-        this.s = obj;
+    static {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.s.equals(obj);
-    }
-
-    @Override // t6e, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.s.hashCode();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new y6e(this.s);
-    }
-
-    @Override // l1d
-    public final int p(Object[] objArr) {
-        objArr[0] = this.s;
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection
-    public final String toString() {
-        return kt6.o("[", this.s.toString(), "]");
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

@@ -1,20 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum hsb extends rub {
+public enum hsb extends qsb {
     public hsb() {
-        super("RawtextEndTagOpen", 14);
+        super("DoctypeSystemIdentifier_doubleQuoted", 62);
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        if (hl1Var.o()) {
-            bsbVar.d(false);
-            bsbVar.c = rub.F;
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        rpb rpbVar = aqbVar.m;
+        char d = zj1Var.d();
+        if (d == 0) {
+            aqbVar.m(this);
+            rpbVar.g.append((char) 65533);
+            return;
+        }
+        if (d == '\"') {
+            aqbVar.c = qsb.C0;
+            return;
+        }
+        lqb lqbVar = qsb.a;
+        if (d == '>') {
+            aqbVar.m(this);
+            aqbVar.j();
+            aqbVar.c = lqbVar;
         } else {
-            bsbVar.h("</");
-            bsbVar.c = rub.e;
+            if (d != 65535) {
+                rpbVar.g.append(d);
+                return;
+            }
+            aqbVar.l(this);
+            aqbVar.j();
+            aqbVar.c = lqbVar;
         }
     }
 }

@@ -1,93 +1,73 @@
 // default package
 
-import android.net.Uri;
-import android.os.Bundle;
-import android.text.TextUtils;
+import android.content.Context;
+import android.media.session.MediaSession;
+import android.os.Handler;
+import android.os.RemoteCallbackList;
+import android.support.v4.media.MediaMetadataCompat;
+import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.support.v4.media.session.PlaybackStateCompat;
+import android.support.v4.media.session.d;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class zu6 {
-    public final Bundle a;
+public class zu6 {
+    public final MediaSession a;
+    public final d b;
+    public final MediaSessionCompat$Token c;
+    public final Object d = new Object();
+    public final RemoteCallbackList e = new RemoteCallbackList();
+    public PlaybackStateCompat f;
+    public ArrayList g;
+    public MediaMetadataCompat h;
+    public byte i;
+    public int j;
+    public yu6 k;
+    public nw6 l;
 
-    public zu6(Bundle bundle) {
-        this.a = bundle;
+    public zu6(Context context, String str) {
+        MediaSession a = a(context, str);
+        this.a = a;
+        d dVar = new d(this);
+        this.b = dVar;
+        this.c = new MediaSessionCompat$Token(a.getSessionToken(), dVar);
+        a.setFlags(3);
     }
 
-    public final HashSet a() {
-        Bundle bundle = this.a;
-        return !bundle.containsKey("allowedPackages") ? new HashSet() : new HashSet(bundle.getStringArrayList("allowedPackages"));
+    public MediaSession a(Context context, String str) {
+        return new MediaSession(context, str);
     }
 
-    public final ArrayList b() {
-        Bundle bundle = this.a;
-        return !bundle.containsKey("controlFilters") ? new ArrayList() : new ArrayList(bundle.getParcelableArrayList("controlFilters"));
+    public final yu6 b() {
+        yu6 yu6Var;
+        synchronized (this.d) {
+            yu6Var = this.k;
+        }
+        return yu6Var;
     }
 
-    public final ArrayList c() {
-        Bundle bundle = this.a;
-        return !bundle.containsKey("groupMemberIds") ? new ArrayList() : new ArrayList(bundle.getStringArrayList("groupMemberIds"));
+    public nw6 c() {
+        nw6 nw6Var;
+        synchronized (this.d) {
+            nw6Var = this.l;
+        }
+        return nw6Var;
     }
 
-    public final String d() {
-        return this.a.getString("id");
+    public final void d(yu6 yu6Var, Handler handler) {
+        synchronized (this.d) {
+            this.k = yu6Var;
+            this.a.setCallback(yu6Var == null ? null : (xu6) yu6Var.e, handler);
+            if (yu6Var != null) {
+                yu6Var.c0(this, handler);
+            }
+        }
     }
 
-    public final boolean e() {
-        return (TextUtils.isEmpty(d()) || TextUtils.isEmpty(this.a.getString("name")) || b().contains(null)) ? false : true;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("MediaRouteDescriptor{ id=");
-        sb.append(d());
-        sb.append(", groupMemberIds=");
-        sb.append(c());
-        sb.append(", name=");
-        Bundle bundle = this.a;
-        sb.append(bundle.getString("name"));
-        sb.append(", description=");
-        sb.append(bundle.getString("status"));
-        sb.append(", iconUri=");
-        String string = bundle.getString("iconUri");
-        sb.append(string == null ? null : Uri.parse(string));
-        sb.append(", isEnabled=");
-        sb.append(bundle.getBoolean("enabled", true));
-        sb.append(", isSystemRoute=");
-        sb.append(bundle.getBoolean("isSystemRoute", false));
-        sb.append(", connectionState=");
-        sb.append(bundle.getInt("connectionState", 0));
-        sb.append(", controlFilters=");
-        sb.append(Arrays.toString(b().toArray()));
-        sb.append(", playbackType=");
-        sb.append(bundle.getInt("playbackType", 1));
-        sb.append(", playbackStream=");
-        sb.append(bundle.getInt("playbackStream", -1));
-        sb.append(", deviceType=");
-        sb.append(bundle.getInt("deviceType"));
-        sb.append(", volume=");
-        sb.append(bundle.getInt("volume"));
-        sb.append(", volumeMax=");
-        sb.append(bundle.getInt("volumeMax"));
-        sb.append(", volumeHandling=");
-        sb.append(bundle.getInt("volumeHandling", 0));
-        sb.append(", presentationDisplayId=");
-        sb.append(bundle.getInt("presentationDisplayId", -1));
-        sb.append(", extras=");
-        sb.append(bundle.getBundle("extras"));
-        sb.append(", isValid=");
-        sb.append(e());
-        sb.append(", minClientVersion=");
-        sb.append(bundle.getInt("minClientVersion", 1));
-        sb.append(", maxClientVersion=");
-        sb.append(bundle.getInt("maxClientVersion", ConnectionsManager.DEFAULT_DATACENTER_ID));
-        sb.append(", isVisibilityPublic=");
-        sb.append(bundle.getBoolean("isVisibilityPublic", true));
-        sb.append(", allowedPackages=");
-        sb.append(Arrays.toString(a().toArray()));
-        sb.append(" }");
-        return sb.toString();
+    public void e(nw6 nw6Var) {
+        synchronized (this.d) {
+            this.l = nw6Var;
+        }
     }
 }

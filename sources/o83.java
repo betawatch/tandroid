@@ -1,70 +1,35 @@
 // default package
 
-import android.util.Log;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class o83 extends eeb implements fs4 {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class o83 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public /* synthetic */ Object b;
+    public final /* synthetic */ r83 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o83(v7a v7aVar, px2 px2Var) {
-        super(2, px2Var);
-        this.a = (byte) 2;
-        this.b = v7aVar;
+    public /* synthetic */ o83(r83 r83Var, byte b) {
+        this.a = b;
+        this.b = r83Var;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        switch (this.a) {
-            case 0:
-                o83 o83Var = new o83(2, px2Var, (byte) 0);
-                o83Var.b = obj;
-                return o83Var;
-            case 1:
-                o83 o83Var2 = new o83(2, px2Var, (byte) 1);
-                o83Var2.b = obj;
-                return o83Var2;
-            default:
-                return new o83((v7a) this.b, px2Var);
-        }
-    }
-
-    @Override // fs4
-    public final Object invoke(Object obj, Object obj2) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        g7c g7cVar = g7c.a;
+        byte b2 = 1;
+        r83 r83Var = this.b;
         switch (b) {
             case 0:
-                return ((o83) create((iya) obj, (px2) obj2)).invokeSuspend(g7cVar);
-            case 1:
-                ((o83) create((String) obj, (px2) obj2)).invokeSuspend(g7cVar);
-                return g7cVar;
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                r83Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new o83(r83Var, b2));
+                break;
             default:
-                return ((o83) create((v7a) obj, (px2) obj2)).invokeSuspend(g7cVar);
+                r83Var.getMessagesController().U2(true);
+                break;
         }
-    }
-
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        switch (this.a) {
-            case 0:
-                tue.b(obj);
-                return Boolean.valueOf(!(((iya) this.b) instanceof vh4));
-            case 1:
-                tue.b(obj);
-                Log.e("FirebaseSessions", "Error failed to fetch the remote configs: " + ((String) this.b));
-                return g7c.a;
-            default:
-                tue.b(obj);
-                return (v7a) this.b;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o83(int i, px2 px2Var, byte b) {
-        super(i, px2Var);
-        this.a = b;
     }
 }

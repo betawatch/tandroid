@@ -1,31 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class yr8 implements g94, kac {
-    public final /* synthetic */ lea a;
+import android.graphics.RectF;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-    public /* synthetic */ yr8(lea leaVar) {
-        this.a = leaVar;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class yr8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ an8 b;
+
+    public /* synthetic */ yr8(an8 an8Var, byte b) {
+        this.a = b;
+        this.b = an8Var;
     }
 
-    @Override // g94
-    public final void D(int i, float f, float f2, h94 h94Var) {
-        this.a.l();
-    }
-
-    @Override // kac
-    public final Object j(Integer num, Object obj) {
-        lea leaVar = this.a;
-        leaVar.i();
-        if (num.intValue() != -1) {
-            return Boolean.FALSE;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        an8 an8Var = this.b;
+        switch (b) {
+            case 0:
+                int i = ProfileStoriesView.t0;
+                ProfileActivity profileActivity = an8Var.v0;
+                RectF rectF = ProfileActivity.Z6;
+                profileActivity.Z2(false);
+                break;
+            default:
+                an8Var.invalidate();
+                break;
         }
-        leaVar.h(new zr8(leaVar, (byte) 1), null);
-        return Boolean.TRUE;
-    }
-
-    @Override // g94
-    public final void V(float f, int i) {
     }
 }

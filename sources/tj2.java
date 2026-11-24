@@ -1,43 +1,38 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.util.Log;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
 public final class tj2 {
-    public static final zo j = new zo("ClearcutLogger.API", new or5(10), new xo());
-    public final Context a;
-    public final String b;
-    public final int c;
-    public final String d;
-    public final int e;
-    public final i9e f;
-    public final ua4 g;
-    public final f8e h;
-    public final q9f i;
+    public final HashMap a;
 
-    public tj2(Context context) {
-        ua4 ua4Var = new ua4(context, j, null, new fgf((byte) 13));
-        f8e f8eVar = f8e.a;
-        q9f q9fVar = new q9f(context);
-        this.e = -1;
-        i9e i9eVar = i9e.b;
-        this.f = i9eVar;
-        this.a = context;
-        this.b = context.getPackageName();
-        int i = 0;
-        try {
-            i = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.wtf("ClearcutLogger", "This can't happen.", e);
+    public tj2(byte b) {
+        switch (b) {
+            case 1:
+                this.a = new HashMap();
+                break;
+            default:
+                this.a = new HashMap();
+                break;
         }
-        this.c = i;
-        this.e = -1;
-        this.d = "VISION";
-        this.g = ua4Var;
-        this.h = f8eVar;
-        this.f = i9eVar;
-        this.i = q9fVar;
+    }
+
+    public final void a(Runnable runnable) {
+        Runnable runnable2 = (Runnable) this.a.remove(runnable);
+        if (runnable2 != null) {
+            gl.r(runnable2);
+        }
+    }
+
+    public final void b() {
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            gl.r((Runnable) ((Map.Entry) it.next()).getValue());
+        }
+        hashMap.clear();
     }
 }

@@ -1,72 +1,21 @@
 // default package
 
-import android.content.Context;
-import android.os.SystemClock;
-import com.google.android.gms.tasks.Task;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class tgf {
-    public static vfd k;
-    public static final ngd l;
-    public final String a;
-    public final String b;
-    public final ogf c;
-    public final uha d;
-    public final Task e;
-    public final Task f;
-    public final String g;
-    public final int h;
-    public final HashMap i = new HashMap();
-    public final HashMap j = new HashMap();
+public interface tgf {
+    void a(Object obj);
 
-    static {
-        Object[] objArr = {"optional-module-barcode", "com.google.android.gms.vision.barcode"};
-        objArr[0].getClass();
-        objArr[1].getClass();
-        l = new ngd(objArr);
-    }
+    boolean b(vef vefVar, vef vefVar2);
 
-    public tgf(Context context, uha uhaVar, ogf ogfVar) {
-        this.a = context.getPackageName();
-        this.b = ao2.a(context);
-        this.d = uhaVar;
-        this.c = ogfVar;
-        dhf.S();
-        this.g = "subject-segmentation";
-        ni6.q();
-        this.e = ni6.E(new mg7(this, (byte) 9));
-        ni6.q();
-        uhaVar.getClass();
-        this.f = ni6.E(new kze(uhaVar, (byte) 4));
-        ngd ngdVar = l;
-        this.h = ngdVar.containsKey("subject-segmentation") ? nt3.d(context, (String) ngdVar.get("subject-segmentation"), false) : -1;
-    }
+    void c(Object obj, xdd xddVar);
 
-    public static long a(ArrayList arrayList, double d) {
-        return ((Long) arrayList.get(Math.max(((int) Math.ceil((d / 100.0d) * arrayList.size())) - 1, 0))).longValue();
-    }
+    void d(Object obj, Object obj2);
 
-    public final void b(rgf rgfVar, r7f r7fVar) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (d(r7fVar, elapsedRealtime)) {
-            this.i.put(r7fVar, Long.valueOf(elapsedRealtime));
-            mlb.c(1, new de1(this, rgfVar.zza(), r7fVar, c(), (byte) 4));
-        }
-    }
+    int e(vef vefVar);
 
-    public final String c() {
-        Task task = this.e;
-        if (task.isSuccessful()) {
-            return (String) task.getResult();
-        }
-        return r26.c.a(this.g);
-    }
+    int f(vef vefVar);
 
-    public final boolean d(r7f r7fVar, long j) {
-        HashMap hashMap = this.i;
-        return hashMap.get(r7fVar) == null || j - ((Long) hashMap.get(r7fVar)).longValue() > 30000;
-    }
+    boolean g(Object obj);
+
+    vef zzc();
 }

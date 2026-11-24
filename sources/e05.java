@@ -1,77 +1,106 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.text.TextUtils;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public class e05 {
-    public static final int a;
-    public static final e05 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e05 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ c b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ i8c d;
+    public final /* synthetic */ v25 e;
 
-    static {
-        int i = x05.e;
-        a = 12451000;
-        b = new e05();
+    public /* synthetic */ e05(c cVar, boolean[] zArr, i8c i8cVar, v25 v25Var, byte b) {
+        this.a = b;
+        this.b = cVar;
+        this.c = zArr;
+        this.d = i8cVar;
+        this.e = v25Var;
     }
 
-    public Intent a(int i, Context context, String str) {
-        if (i != 1 && i != 2) {
-            if (i != 3) {
-                return null;
-            }
-            Uri fromParts = Uri.fromParts("package", "com.google.android.gms", null);
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(fromParts);
-            return intent;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        v25 v25Var = this.e;
+        final i8c i8cVar = this.d;
+        final boolean[] zArr = this.c;
+        c cVar = this.b;
+        final byte b2 = 0;
+        switch (b) {
+            case 0:
+                if (!zArr[0]) {
+                    WalletEngine2 walletEngine2 = cVar.b;
+                    if (walletEngine2 != null) {
+                        walletEngine2.previewTonConnect(v25Var, new i8c() { // from class: h05
+                            @Override // i8c
+                            public final void a(Object obj, Object obj2) {
+                                byte b3 = b2;
+                                i8c i8cVar2 = i8cVar;
+                                boolean[] zArr2 = zArr;
+                                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                                String str = (String) obj2;
+                                switch (b3) {
+                                    case 0:
+                                        if (!zArr2[0]) {
+                                            i8cVar2.a(wallettransaction, str);
+                                            break;
+                                        }
+                                        break;
+                                    default:
+                                        if (!zArr2[0]) {
+                                            i8cVar2.a(wallettransaction, str);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    } else {
+                        i8cVar.a(null, "NULL_ENGINE");
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (!zArr[0]) {
+                    WalletEngine2 walletEngine22 = cVar.b;
+                    if (walletEngine22 != null) {
+                        final byte b3 = 1;
+                        walletEngine22.previewTonConnect(v25Var, new i8c() { // from class: h05
+                            @Override // i8c
+                            public final void a(Object obj, Object obj2) {
+                                byte b32 = b3;
+                                i8c i8cVar2 = i8cVar;
+                                boolean[] zArr2 = zArr;
+                                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                                String str = (String) obj2;
+                                switch (b32) {
+                                    case 0:
+                                        if (!zArr2[0]) {
+                                            i8cVar2.a(wallettransaction, str);
+                                            break;
+                                        }
+                                        break;
+                                    default:
+                                        if (!zArr2[0]) {
+                                            i8cVar2.a(wallettransaction, str);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    } else {
+                        i8cVar.a(null, "NULL_ENGINE");
+                        break;
+                    }
+                }
+                break;
         }
-        if (context != null && nfe.a(context)) {
-            Intent intent2 = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
-            intent2.setPackage("com.google.android.wearable.app");
-            return intent2;
-        }
-        StringBuilder sb = new StringBuilder("gcore_");
-        sb.append(a);
-        sb.append("-");
-        if (!TextUtils.isEmpty(str)) {
-            sb.append(str);
-        }
-        sb.append("-");
-        if (context != null) {
-            sb.append(context.getPackageName());
-        }
-        sb.append("-");
-        if (context != null) {
-            try {
-                sb.append(s0d.a(context).b(0, context.getPackageName()).versionCode);
-            } catch (PackageManager.NameNotFoundException unused) {
-            }
-        }
-        String sb2 = sb.toString();
-        Intent intent3 = new Intent("android.intent.action.VIEW");
-        Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
-        if (!TextUtils.isEmpty(sb2)) {
-            appendQueryParameter.appendQueryParameter("pcampaignid", sb2);
-        }
-        intent3.setData(appendQueryParameter.build());
-        intent3.setPackage("com.android.vending");
-        intent3.addFlags(TLObject.FLAG_19);
-        return intent3;
-    }
-
-    public int b(Context context) {
-        return c(context, a);
-    }
-
-    public final int c(Context context, int i) {
-        int c = x05.c(context, i);
-        if (c != 18 ? c == 1 ? x05.d(context) : false : true) {
-            return 18;
-        }
-        return c;
     }
 }

@@ -1,57 +1,207 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ql0 implements View.OnClickListener {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ rl0 b;
+public final class ql0 extends Drawable implements tjb {
+    public final Paint E;
+    public int F;
+    public boolean G;
+    public int H;
+    public final Paint a;
+    public final il0 b;
+    public final Matrix c;
+    public LinearGradient d;
+    public final Matrix e;
+    public LinearGradient f;
+    public BitmapShader h;
+    public ComposeShader n;
+    public final Matrix r;
+    public final Paint s;
+    public Bitmap w;
+    public int x;
+    public boolean y;
 
-    public /* synthetic */ ql0(rl0 rl0Var) {
-        this.b = rl0Var;
+    public ql0(il0 il0Var) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = new Matrix();
+        this.e = new Matrix();
+        this.r = new Matrix();
+        Paint paint2 = new Paint(1);
+        this.s = paint2;
+        in inVar = new in(this, (byte) 1);
+        this.E = new Paint(1);
+        this.H = kk7.d4;
+        this.b = il0Var;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        paint2.setFilterBitmap(true);
+        b(gl.L(40.0f), false);
+        il0Var.setCallback(inVar);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        rl0 rl0Var = this.b;
-        switch (b) {
-            case 0:
-                int i = rl0Var.w + 1;
-                rl0Var.w = i;
-                if (i >= 10) {
-                    rl0Var.setVisibility(8);
-                    gda.f1 = null;
-                    gda.x();
-                    break;
+    public static LinearGradient a(int i, boolean z) {
+        int alpha = Color.alpha(i);
+        return z ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{bm2.o(i, 0), bm2.o(i, (alpha * 96) / kk7.H4), bm2.o(i, (alpha * kk7.F2) / kk7.H4), bm2.o(i, (alpha * kk7.H3) / kk7.H4)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{bm2.o(i, 0), bm2.o(i, (alpha * 96) / kk7.d4), bm2.o(i, (alpha * kk7.F2) / kk7.d4), bm2.o(i, (alpha * kk7.H3) / kk7.d4), bm2.o(i, (alpha * kk7.d4) / kk7.d4)}, (float[]) null, Shader.TileMode.CLAMP);
+    }
+
+    public final void b(int i, boolean z) {
+        if (this.x == i && this.y == z) {
+            return;
+        }
+        this.x = i;
+        this.y = z;
+        LinearGradient a = a(-16777216, z);
+        this.d = a;
+        this.a.setShader(a);
+        this.E.setShader(null);
+        Matrix matrix = this.c;
+        matrix.reset();
+        matrix.setScale(1.0f, i);
+        if (i < 0) {
+            matrix.postTranslate(0.0f, -i);
+        }
+        this.d.setLocalMatrix(matrix);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int height;
+        int i;
+        boolean z;
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.H == 0) {
+            return;
+        }
+        il0 il0Var = this.b;
+        gx4 v = il0.v(il0Var.r);
+        if (!this.G) {
+            boolean z2 = v instanceof ix4;
+            Matrix matrix = this.c;
+            Matrix matrix2 = this.e;
+            if (z2) {
+                int i2 = ((ix4) v).b;
+                int i3 = this.F;
+                Paint paint = this.E;
+                if (i3 != i2 || this.f == null) {
+                    LinearGradient a = a(i2, this.y);
+                    this.f = a;
+                    this.F = i2;
+                    paint.setShader(a);
                 }
-                break;
-            default:
-                a.t();
-                boolean z = e21.a;
-                if (a.a.b(rl0Var.getContext())) {
-                    TLRPC.TL_help_appUpdate tL_help_appUpdate = rl0Var.n;
-                    if (!(tL_help_appUpdate.document instanceof TLRPC.TL_document)) {
-                        if (tL_help_appUpdate.url != null) {
-                            l11.u(rl0Var.getContext(), rl0Var.n.url);
-                            break;
-                        }
-                    } else if (!a.a.u((Activity) rl0Var.getContext(), rl0Var.n.document)) {
-                        bc4.G(rl0Var.s).X(rl0Var.n.document, "update", 3, 1);
-                        rl0Var.a(true);
-                        break;
+                height = this.x < 0 ? bounds.height() + this.x : 0;
+                matrix2.set(matrix);
+                matrix2.postTranslate(bounds.left, bounds.top + height);
+                this.f.setLocalMatrix(matrix2);
+                paint.setAlpha(this.H);
+                canvas.drawRect(bounds, paint);
+                return;
+            }
+            if ((v instanceof hx4) && (i = Build.VERSION.SDK_INT) >= 28) {
+                hx4 hx4Var = (hx4) v;
+                Bitmap bitmap = hx4Var.d;
+                if (bitmap != null) {
+                    boolean z3 = true;
+                    if (this.F != -16777216 || this.f == null) {
+                        this.f = a(-16777216, this.y);
+                        this.F = -16777216;
+                        z = true;
+                    } else {
+                        z = false;
                     }
+                    if (this.h == null || this.w != bitmap) {
+                        this.w = bitmap;
+                        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                        this.h = bitmapShader;
+                        if (i >= 33) {
+                            bitmapShader.setFilterMode(2);
+                        }
+                    } else {
+                        z3 = z;
+                    }
+                    Paint paint2 = this.s;
+                    if (z3 || this.n == null) {
+                        ComposeShader composeShader = new ComposeShader(this.h, this.f, PorterDuff.Mode.DST_IN);
+                        this.n = composeShader;
+                        paint2.setShader(composeShader);
+                    }
+                    height = this.x < 0 ? bounds.height() + this.x : 0;
+                    matrix2.set(matrix);
+                    matrix2.postTranslate(bounds.left, bounds.top + height);
+                    this.f.setLocalMatrix(matrix2);
+                    Matrix matrix3 = hx4Var.b;
+                    Matrix matrix4 = this.r;
+                    matrix4.set(matrix3);
+                    matrix4.postTranslate(-il0Var.d, -il0Var.e);
+                    this.h.setLocalMatrix(matrix4);
+                    paint2.setAlpha(this.H);
+                    canvas.drawRect(bounds, paint2);
+                    return;
                 }
-                break;
+                return;
+            }
+        }
+        int saveLayerAlpha = canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, this.H);
+        height = this.x < 0 ? bounds.height() + this.x : 0;
+        il0Var.draw(canvas);
+        canvas.translate(bounds.left, bounds.top + height);
+        canvas.drawRect(0.0f, -height, bounds.width(), bounds.height() - height, this.a);
+        canvas.restoreToCount(saveLayerAlpha);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.H;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.H = i;
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        try {
+            this.b.updateColors();
+            invalidateSelf();
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
-    public /* synthetic */ ql0(rl0 rl0Var, LaunchActivity launchActivity) {
-        this.b = rl0Var;
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

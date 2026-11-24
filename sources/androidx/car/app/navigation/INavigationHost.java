@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public interface INavigationHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$navigation$INavigationHost".replace('$', '.');
@@ -14,9 +14,9 @@ public interface INavigationHost extends IInterface {
 
     void navigationStarted();
 
-    void updateTrip(g41 g41Var);
+    void updateTrip(y21 y21Var);
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class Default implements INavigationHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -32,17 +32,17 @@ public interface INavigationHost extends IInterface {
         }
 
         @Override // androidx.car.app.navigation.INavigationHost
-        public void updateTrip(g41 g41Var) {
+        public void updateTrip(y21 y21Var) {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class Stub extends Binder implements INavigationHost {
         static final int TRANSACTION_navigationEnded = 3;
         static final int TRANSACTION_navigationStarted = 2;
         static final int TRANSACTION_updateTrip = 4;
 
-        /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+        /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
         private static class Proxy implements INavigationHost {
             private IBinder mRemote;
 
@@ -88,14 +88,14 @@ public interface INavigationHost extends IInterface {
             }
 
             @Override // androidx.car.app.navigation.INavigationHost
-            public void updateTrip(g41 g41Var) {
+            public void updateTrip(y21 y21Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(INavigationHost.DESCRIPTOR);
-                    if (g41Var != null) {
+                    if (y21Var != null) {
                         obtain.writeInt(1);
-                        obtain.writeBundle(g41Var.a);
+                        obtain.writeBundle(y21Var.a);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -140,7 +140,7 @@ public interface INavigationHost extends IInterface {
                 if (i != 4) {
                     return super.onTransact(i, parcel, parcel2, i2);
                 }
-                updateTrip(parcel.readInt() != 0 ? g41.CREATOR.createFromParcel(parcel) : null);
+                updateTrip(parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null);
                 parcel2.writeNoException();
             }
             return true;

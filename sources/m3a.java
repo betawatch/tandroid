@@ -1,40 +1,22 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m3a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ a6a b;
-    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
-    public final /* synthetic */ long d;
+public final class m3a implements RequestDelegate {
+    public final /* synthetic */ TLRPC.TL_messages_initHistoryImport a;
+    public final /* synthetic */ p3a b;
 
-    public /* synthetic */ m3a(a6a a6aVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j, byte b) {
-        this.a = b;
-        this.b = a6aVar;
-        this.c = tL_updateNewChannelMessage;
-        this.d = j;
+    public m3a(p3a p3aVar, TLRPC.TL_messages_initHistoryImport tL_messages_initHistoryImport) {
+        this.b = p3aVar;
+        this.a = tL_messages_initHistoryImport;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage = this.c;
-        a6a a6aVar = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(Integer.valueOf(tL_updateNewChannelMessage.message.id));
-                a6aVar.getMessagesStorage().Z1(-j, arrayList, true, -1, 0, false, null);
-                break;
-            default:
-                ArrayList arrayList2 = new ArrayList();
-                arrayList2.add(Integer.valueOf(tL_updateNewChannelMessage.message.id));
-                a6aVar.getMessagesStorage().Z1(-j, arrayList2, true, -1, 0, false, null);
-                break;
-        }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        gl.c3(new bm8((Object) this, (Object) tLObject, (Object) this.a, (Object) tL_error, (byte) 16));
     }
 }

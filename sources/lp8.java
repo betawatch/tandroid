@@ -1,24 +1,84 @@
 // default package
 
-import android.content.Context;
-import android.graphics.RectF;
-import org.telegram.ui.ProfileActivity;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class lp8 extends rja {
-    public final /* synthetic */ ProfileActivity x0;
+public final class lp8 implements eec {
+    public final /* synthetic */ sp8 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lp8(ProfileActivity profileActivity, Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.x0 = profileActivity;
+    public lp8(sp8 sp8Var) {
+        this.a = sp8Var;
     }
 
-    @Override // rja, g94
-    public final void D(int i, float f, float f2, h94 h94Var) {
-        super.D(i, f, f2, h94Var);
-        RectF rectF = ProfileActivity.e7;
-        this.x0.V3();
+    @Override // eec
+    public final void a(int i) {
+        sp8 sp8Var = this.a;
+        int i2 = sp8Var.p1;
+        boolean z = i >= i2;
+        if (i != i2) {
+            sp8Var.p1 = i;
+        }
+        w97 w97Var = sp8Var.T0;
+        if (w97Var != null) {
+            rp8 rp8Var = sp8Var.E0;
+            w97Var.b(i - (rp8Var != null ? rp8Var.j() : 0), z);
+        }
+    }
+
+    @Override // eec
+    public final void b(float f, int i, int i2) {
+        gl5 gl5Var;
+        sp8 sp8Var = this.a;
+        sp8Var.B(f, i);
+        if (i2 == 0) {
+            int k = sp8Var.E0.k(i);
+            if (sp8Var.j1) {
+                k--;
+            }
+            sp8Var.getCurrentItemView();
+            int childCount = sp8Var.getChildCount();
+            for (int i3 = 0; i3 < childCount; i3++) {
+                View childAt = sp8Var.getChildAt(i3);
+                if (childAt instanceof be0) {
+                    rp8 rp8Var = sp8Var.E0;
+                    int k2 = rp8Var.k(rp8Var.d.indexOf(childAt));
+                    if (sp8Var.j1) {
+                        k2--;
+                    }
+                    ImageReceiver imageReceiver = ((be0) childAt).getImageReceiver();
+                    boolean z = imageReceiver.u0;
+                    if (k2 >= 0 && k2 < sp8Var.X0.size()) {
+                        if (k2 == k) {
+                            if (!z) {
+                                imageReceiver.u0 = true;
+                                imageReceiver.w0(false);
+                            }
+                            gl5 gl5Var2 = (gl5) sp8Var.X0.get(k2);
+                            if (gl5Var2 != null) {
+                                ba4 G = ba4.G(sp8Var.M0);
+                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = gl5Var2.f;
+                                if (tL_fileLocationToBeDeprecated != null) {
+                                    ba4.K.c(new eu3(G, tL_fileLocationToBeDeprecated, (byte) 22));
+                                }
+                            }
+                        } else if (z) {
+                            km m = imageReceiver.m();
+                            if (m != null && (gl5Var = (gl5) sp8Var.X0.get(k2)) != null) {
+                                m.y(gl5Var.j, false, true);
+                            }
+                            imageReceiver.u0 = false;
+                            imageReceiver.x0();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // eec
+    public final void c(int i) {
     }
 }

@@ -1,99 +1,126 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.d;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mk3 extends FrameLayout {
-    public static final /* synthetic */ int M = 0;
-    public w49 E;
-    public boolean F;
-    public bj3 G;
-    public zk3 H;
-    public boolean I;
-    public final li3 J;
-    public final li3 K;
-    public final /* synthetic */ nk3 L;
-    public jk3 a;
-    public kq b;
-    public mi3 c;
-    public qi3 d;
-    public hu5 e;
-    public lk3 f;
-    public int h;
-    public pi3 n;
-    public cw6 r;
-    public int s;
-    public byte w;
-    public tk4 x;
-    public ki3 y;
+public final /* synthetic */ class mk3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ mt9 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ String e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mk3(nk3 nk3Var, Context context) {
-        super(context);
-        this.L = nk3Var;
-        this.J = new li3(this, (byte) 1);
-        this.K = new li3(this, (byte) 2);
+    public /* synthetic */ mk3(mt9 mt9Var, int i, String str, String str2) {
+        this.a = (byte) 1;
+        this.b = mt9Var;
+        this.c = i;
+        this.d = str;
+        this.e = str2;
     }
 
-    public final boolean a() {
-        int i = this.s;
-        return i == 0 || i == 7 || i == 8;
-    }
-
-    public final void b(boolean z) {
-        boolean z2;
-        z2 = ((d) this.L).isPaused;
-        if (z2) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:55:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0155  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i;
+        String str;
+        int i2;
+        byte b = this.a;
+        String str2 = this.e;
+        switch (b) {
+            case 0:
+                mt9 mt9Var = this.b;
+                mt9Var.f = null;
+                byte b2 = mt9Var.W;
+                String str3 = this.d;
+                int i3 = this.c;
+                if (b2 != 2) {
+                    String lowerCase = str3.trim().toLowerCase();
+                    if (lowerCase.length() != 0) {
+                        i = i3;
+                        str = str3;
+                        ad7.Y(mt9Var.t0).a.c(new mk3(mt9Var, lowerCase, i, str, (byte) 2));
+                        if (mt9Var.i0 == 15) {
+                            mk3 mk3Var = new mk3(mt9Var, i, str, str2);
+                            mt9Var.h = mk3Var;
+                            gl.c3(mk3Var);
+                            break;
+                        } else {
+                            mt9Var.E0 -= 2;
+                            break;
+                        }
+                    } else {
+                        mt9Var.e0 = 0;
+                        gl.c3(new i57((Object) mt9Var, mt9Var.e0, (Object) new ArrayList(), (Object) new ArrayList(), (Object) new ArrayList(), (byte) 12));
+                    }
+                }
+                i = i3;
+                str = str3;
+                if (mt9Var.i0 == 15) {
+                }
+            case 1:
+                mt9 mt9Var2 = this.b;
+                byte b3 = mt9Var2.W;
+                int i4 = mt9Var2.i0;
+                mt9Var2.h = null;
+                int i5 = mt9Var2.e0;
+                int i6 = this.c;
+                if (i6 == i5) {
+                    if (b3 == 2 || i4 == 6 || i4 == 5 || mt9Var2.V.a() != 0) {
+                        i2 = i6;
+                        mt9Var2.E0 -= 2;
+                    } else {
+                        uk3 uk3Var = mt9Var2.k0;
+                        boolean z = i4 != 4;
+                        boolean z2 = (i4 == 4 || i4 == 11) ? false : true;
+                        boolean z3 = i4 == 2 || i4 == 1;
+                        boolean z4 = i4 == 0;
+                        ji3 ji3Var = mt9Var2.V;
+                        uk3Var.h(this.d, true, z, true, z2, z3, 0L, z4, 0, i6, ji3Var != null ? ji3Var.a() : 0L, null);
+                        i2 = i6;
+                    }
+                    if (b3 != 0 && i4 != 15) {
+                        mt9Var2.W(str2);
+                        mt9Var2.V(i2, str2);
+                        mt9Var2.U(i2, str2);
+                        break;
+                    } else {
+                        mt9Var2.E0--;
+                        break;
+                    }
+                }
+                break;
+            default:
+                mt9 mt9Var3 = this.b;
+                mt9Var3.getClass();
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ad7 Y = ad7.Y(mt9Var3.t0);
+                int i7 = mt9Var3.i0;
+                ArrayList arrayList4 = mt9Var3.r0;
+                String str4 = this.d;
+                Y.J0(i7, str4, arrayList, arrayList2, arrayList3, arrayList4, -1);
+                gl.c3(new i57((Object) mt9Var3, this.c, (Object) arrayList, (Object) arrayList2, (Object) arrayList3, (byte) 12));
+                tf4.B1(str4, mt9Var3.z0);
+                mt9Var3.A0 = false;
+                if (str4.length() >= 3 && (k96.M0(2131754147, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
+                    mt9Var3.A0 = true;
+                }
+                gl.c3(new li3(mt9Var3, (byte) 5));
+                break;
         }
-        li3 li3Var = this.K;
-        if (z) {
-            gm.r(li3Var);
-            this.a.setItemAnimator(this.y);
-            li3Var.run();
-        } else {
-            if (this.I) {
-                return;
-            }
-            this.I = true;
-            if (!this.y.k()) {
-                this.a.setItemAnimator(null);
-            }
-            gm.d3(li3Var, 36L);
-        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        ((FrameLayout.LayoutParams) this.a.getLayoutParams()).bottomMargin = 0;
-        super.onMeasure(i, i2);
-    }
-
-    @Override // android.view.View
-    public void setTranslationX(float f) {
-        sy4 sy4Var;
-        mk3 mk3Var;
-        if (getTranslationX() != f) {
-            super.setTranslationX(f);
-            nk3 nk3Var = this.L;
-            if (nk3Var.j3 && (mk3Var = nk3Var.f0[0]) == this) {
-                nk3Var.A0.h(Math.abs(mk3Var.getTranslationX()) / nk3Var.f0[0].getMeasuredWidth(), nk3Var.f0[1].h);
-            }
-            sy4Var = ((d) nk3Var).glassEngine;
-            sy4Var.g();
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f) {
-        sy4 sy4Var;
-        if (getTranslationY() != f) {
-            sy4Var = ((d) this.L).glassEngine;
-            sy4Var.g();
-        }
-        super.setTranslationY(f);
+    public /* synthetic */ mk3(mt9 mt9Var, String str, int i, String str2, byte b) {
+        this.a = b;
+        this.b = mt9Var;
+        this.d = str;
+        this.c = i;
+        this.e = str2;
     }
 }

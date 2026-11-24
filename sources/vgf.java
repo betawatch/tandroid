@@ -1,64 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class vgf implements Cloneable {
-    public final wgf a;
-    public wgf b;
+public final class vgf extends tcf {
+    public final transient f7d h;
+    public final transient Object[] n;
+    public final transient boolean r;
 
-    public vgf(wgf wgfVar) {
-        this.a = wgfVar;
-        if (wgfVar.g()) {
-            u36.j("Default instance must be immutable.");
-            throw null;
-        }
-        this.b = (wgf) wgfVar.h(4, null);
+    public vgf(f7d f7dVar, Object[] objArr) {
+        super((byte) 2);
+        this.h = f7dVar;
+        this.n = objArr;
+        this.r = true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0029, code lost:
-    
-        if (r2 != false) goto L10;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final wgf a() {
-        wgf b = b();
-        byte byteValue = ((Byte) b.h(1, null)).byteValue();
-        if (byteValue != 1) {
-            if (byteValue != 0) {
-                boolean g = rif.c.a(b.getClass()).g(b);
-                b.h(2, true == g ? b : null);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.h.get(key))) {
+                return true;
             }
-            throw new rq2("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
         }
-        return b;
+        return false;
     }
 
-    public final wgf b() {
-        boolean g = this.b.g();
-        wgf wgfVar = this.b;
-        if (!g) {
-            return wgfVar;
+    @Override // x8d
+    public final int h(Object[] objArr) {
+        f7f f7fVar = this.f;
+        if (f7fVar == null) {
+            f7fVar = new jgf(this);
+            this.f = f7fVar;
         }
-        wgfVar.getClass();
-        rif.c.a(wgfVar.getClass()).a(wgfVar);
-        wgfVar.d();
-        return this.b;
+        return f7fVar.h(objArr);
     }
 
-    public final void c() {
-        if (this.b.g()) {
-            return;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        f7f f7fVar = this.f;
+        if (f7fVar == null) {
+            f7fVar = new jgf(this);
+            this.f = f7fVar;
         }
-        wgf wgfVar = (wgf) this.a.h(4, null);
-        rif.c.a(wgfVar.getClass()).c(wgfVar, this.b);
-        this.b = wgfVar;
+        return f7fVar.listIterator(0);
     }
 
-    public final Object clone() {
-        vgf vgfVar = (vgf) this.a.h(5, null);
-        vgfVar.b = b();
-        return vgfVar;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.r ? 1 : 0;
     }
 }

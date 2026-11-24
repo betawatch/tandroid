@@ -1,72 +1,39 @@
 // default package
 
-import j$.util.Objects;
-import java.util.Map;
+import android.os.StrictMode;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import java.util.Collections;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class cq2 extends m3 {
-    public final Object b;
-    public int c;
-    public final /* synthetic */ dq2 d;
+public final /* synthetic */ class cq2 implements mt8 {
+    public final /* synthetic */ byte a;
 
-    public cq2(dq2 dq2Var, int i) {
-        super((byte) 0, false);
-        this.d = dq2Var;
-        Object obj = dq2.w;
-        this.b = dq2Var.g(i);
-        this.c = i;
+    public /* synthetic */ cq2(byte b) {
+        this.a = b;
     }
 
-    public final void a() {
-        int i = this.c;
-        Object obj = this.b;
-        dq2 dq2Var = this.d;
-        if (i == -1 || i >= dq2Var.size() || !ese.a(obj, dq2Var.g(this.c))) {
-            Object obj2 = dq2.w;
-            this.c = dq2Var.f(obj);
+    @Override // mt8
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return Collections.EMPTY_SET;
+            case 1:
+                return ExecutorsRegistrar.a();
+            case 2:
+                e06 e06Var = ExecutorsRegistrar.a;
+                return new id3(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new y43("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+            case 3:
+                e06 e06Var2 = ExecutorsRegistrar.a;
+                return new id3(Executors.newCachedThreadPool(new y43("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+            case 4:
+                e06 e06Var3 = ExecutorsRegistrar.a;
+                return Executors.newSingleThreadScheduledExecutor(new y43("Firebase Scheduler", 0, null));
+            case 5:
+            default:
+                return null;
         }
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        dq2 dq2Var = this.d;
-        Map d = dq2Var.d();
-        if (d != null) {
-            return d.get(this.b);
-        }
-        a();
-        int i = this.c;
-        if (i == -1) {
-            return null;
-        }
-        return dq2Var.l(i);
-    }
-
-    @Override // m3, java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        dq2 dq2Var = this.d;
-        Map d = dq2Var.d();
-        Object obj2 = this.b;
-        if (d != null) {
-            return d.put(obj2, obj);
-        }
-        a();
-        int i = this.c;
-        if (i == -1) {
-            dq2Var.put(obj2, obj);
-            return null;
-        }
-        Object l = dq2Var.l(i);
-        int i2 = this.c;
-        Object[] objArr = dq2Var.e;
-        Objects.requireNonNull(objArr);
-        objArr[i2] = obj;
-        return l;
     }
 }

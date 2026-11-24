@@ -1,48 +1,18 @@
 // default package
 
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qlc implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ slc b;
+public final class qlc {
+    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
+    public final /* synthetic */ TL_wallet.nftItem b;
+    public final /* synthetic */ hmc c;
 
-    public /* synthetic */ qlc(slc slcVar, byte b) {
-        this.a = b;
-        this.b = slcVar;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        byte b2 = 2;
-        slc slcVar = this.b;
-        switch (b) {
-            case 0:
-                slcVar.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                slcVar.k.invalidate();
-                if (slcVar.n > 1.0f && slcVar.r == null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(gm.L(12.0f), 0);
-                    slcVar.r = ofInt;
-                    ofInt.addUpdateListener(new qlc(slcVar, b2));
-                    slcVar.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
-                    slcVar.r.start();
-                    break;
-                }
-                break;
-            case 1:
-                slcVar.m = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                slcVar.k.invalidate();
-                break;
-            default:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                if (slcVar.i <= slcVar.o / 2) {
-                    intValue = -intValue;
-                }
-                slcVar.p = intValue;
-                slcVar.k.invalidate();
-                break;
-        }
+    public qlc(hmc hmcVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, TL_wallet.nftItem nftitem) {
+        this.c = hmcVar;
+        this.a = tL_starGiftUnique;
+        this.b = nftitem;
     }
 }

@@ -1,33 +1,31 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class z0b extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ a1b b;
+public final class z0b implements TextWatcher {
+    public final /* synthetic */ NumberTextView a;
+    public final /* synthetic */ y0b b;
 
-    public /* synthetic */ z0b(a1b a1bVar, byte b) {
-        this.a = b;
-        this.b = a1bVar;
+    public z0b(NumberTextView numberTextView, y0b y0bVar) {
+        this.a = numberTextView;
+        this.b = y0bVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        a1b a1bVar = this.b;
-        switch (b) {
-            case 0:
-                a1bVar.s.setVisibility(8);
-                break;
-            case 1:
-                a1bVar.s.setVisibility(8);
-                break;
-            default:
-                a1bVar.s.setVisibility(8);
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
+        this.b.setErrorText(null);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

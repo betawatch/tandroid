@@ -1,77 +1,72 @@
 // default package
 
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class lm7 extends ArrayList {
-    public HashSet a;
+public final /* synthetic */ class lm7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ NotificationsCustomSettingsActivity b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ int d;
 
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        if (this.a.add(obj)) {
-            return super.add(obj);
+    public /* synthetic */ lm7(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, View view, int i, byte b) {
+        this.a = b;
+        this.b = notificationsCustomSettingsActivity;
+        this.c = view;
+        this.d = i;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.d;
+        View view = this.c;
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = notificationsCustomSettingsActivity.J;
+                if (!(view instanceof chb)) {
+                    notificationsCustomSettingsActivity.p0(true);
+                    break;
+                } else {
+                    if (i >= 0 && i < arrayList.size()) {
+                        ((qm7) arrayList.get(i)).h = notificationsCustomSettingsActivity.f0();
+                    }
+                    ((chb) view).b(notificationsCustomSettingsActivity.f0(), k96.M0(2131748797, "LedColor"), true);
+                    break;
+                }
+                break;
+            case 1:
+                ArrayList arrayList2 = notificationsCustomSettingsActivity.J;
+                if (!(view instanceof uib)) {
+                    notificationsCustomSettingsActivity.p0(true);
+                    break;
+                } else {
+                    if (i >= 0 && i < arrayList2.size()) {
+                        ((qm7) arrayList2.get(i)).f = notificationsCustomSettingsActivity.g0();
+                    }
+                    uib uibVar = (uib) view;
+                    uibVar.c(k96.M0(2131746905, "PopupNotification"), notificationsCustomSettingsActivity.g0(), true, uibVar.h);
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList3 = notificationsCustomSettingsActivity.J;
+                if (!(view instanceof uib)) {
+                    notificationsCustomSettingsActivity.p0(true);
+                    break;
+                } else {
+                    if (i >= 0 && i < arrayList3.size()) {
+                        ((qm7) arrayList3.get(i)).f = notificationsCustomSettingsActivity.h0();
+                    }
+                    uib uibVar2 = (uib) view;
+                    uibVar2.c(k96.M0(2131747713, "NotificationsImportance"), notificationsCustomSettingsActivity.h0(), true, uibVar2.h);
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        Iterator it = collection.iterator();
-        boolean z = false;
-        while (it.hasNext()) {
-            if (add(it.next())) {
-                z = true;
-            }
-        }
-        return z;
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        this.a.clear();
-        super.clear();
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return this.a.contains(obj);
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        if (this.a.remove(obj)) {
-            return super.remove(obj);
-        }
-        return false;
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.List
-    public final void add(int i, Object obj) {
-        if (this.a.add(obj)) {
-            super.add(i, obj);
-        }
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.List
-    public final Object remove(int i) {
-        Object remove = super.remove(i);
-        if (remove != null) {
-            this.a.remove(remove);
-        }
-        return remove;
-    }
-
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        throw new UnsupportedOperationException();
     }
 }

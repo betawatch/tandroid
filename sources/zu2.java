@@ -1,111 +1,196 @@
 // default package
 
+import android.content.ContentResolver;
 import android.content.Context;
-import org.telegram.ui.ContactsActivity;
+import android.content.res.AssetFileDescriptor;
+import android.net.Uri;
+import android.os.Bundle;
+import j$.util.Objects;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class zu2 extends ev2 {
-    public final /* synthetic */ ContactsActivity P;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class zu2 extends qf0 {
+    public final ContentResolver a;
+    public Uri b;
+    public AssetFileDescriptor c;
+    public FileInputStream d;
+    public long e;
+    public boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zu2(ContactsActivity contactsActivity, Context context, int i, boolean z, vh6 vh6Var, int i2) {
-        super(context, i, z, vh6Var, i2);
-        this.P = contactsActivity;
+    public zu2(Context context) {
+        super(false);
+        this.a = context.getContentResolver();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // m59
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int R() {
-        int size;
-        boolean z;
-        boolean z2;
-        zja zjaVar;
-        boolean z3 = false;
-        this.J = false;
-        byte b = this.G;
-        int i = this.r;
-        int i2 = this.w;
-        int i3 = 2;
-        if (b != 2) {
-            size = (i2 == 2 ? bw2.r(i).k0 : bw2.r(i).i0).size();
-            if (size == 0) {
-                this.J = true;
-            }
-            if (i2 == 0) {
-                size++;
-            }
-            z = this.F;
-            if (z) {
-                size++;
-            }
-            boolean isEmpty = bw2.r(i).b0.isEmpty();
-            this.K = !isEmpty;
-            z2 = !this.J && this.x && !z && i2 == 0;
-            this.L = z2;
-            if (z2) {
-                i3 = size;
-            } else if (isEmpty) {
-                i3 = 1;
-            }
-            ContactsActivity contactsActivity = this.P;
-            contactsActivity.f0();
-            zjaVar = contactsActivity.n;
-            if (zjaVar != null) {
-                zu2 zu2Var = contactsActivity.b;
-                if (zu2Var != null && !zu2Var.J) {
-                    z3 = true;
+    @Override // o63
+    public final void close() {
+        this.b = null;
+        try {
+            try {
+                FileInputStream fileInputStream = this.d;
+                if (fileInputStream != null) {
+                    fileInputStream.close();
                 }
-                zjaVar.Y(z3, true);
+                this.d = null;
+                try {
+                    try {
+                        AssetFileDescriptor assetFileDescriptor = this.c;
+                        if (assetFileDescriptor != null) {
+                            assetFileDescriptor.close();
+                        }
+                    } catch (IOException e) {
+                        throw new yu2(e, 2000);
+                    }
+                } finally {
+                    this.c = null;
+                    if (this.f) {
+                        this.f = false;
+                        transferEnded();
+                    }
+                }
+            } catch (IOException e2) {
+                throw new yu2(e2, 2000);
             }
-            contactsActivity.g0();
-            return i3;
+        } catch (Throwable th) {
+            this.d = null;
+            try {
+                try {
+                    AssetFileDescriptor assetFileDescriptor2 = this.c;
+                    if (assetFileDescriptor2 != null) {
+                        assetFileDescriptor2.close();
+                    }
+                    this.c = null;
+                    if (this.f) {
+                        this.f = false;
+                        transferEnded();
+                    }
+                    throw th;
+                } catch (IOException e3) {
+                    throw new yu2(e3, 2000);
+                }
+            } finally {
+                this.c = null;
+                if (this.f) {
+                    this.f = false;
+                    transferEnded();
+                }
+            }
         }
-        this.J = this.E.isEmpty();
-        size = 1;
-        if (i2 == 0) {
-        }
-        z = this.F;
-        if (z) {
-        }
-        boolean isEmpty2 = bw2.r(i).b0.isEmpty();
-        this.K = !isEmpty2;
-        if (this.J) {
-        }
-        this.L = z2;
-        if (z2) {
-        }
-        ContactsActivity contactsActivity2 = this.P;
-        contactsActivity2.f0();
-        zjaVar = contactsActivity2.n;
-        if (zjaVar != null) {
-        }
-        contactsActivity2.g0();
-        return i3;
     }
 
-    @Override // m59, y59
-    public final void f() {
-        X(false);
-        ContactsActivity contactsActivity = this.P;
-        r59 r59Var = contactsActivity.d;
-        if (r59Var == null || r59Var.getAdapter() != this) {
-            return;
+    @Override // o63
+    public final Uri getUri() {
+        return this.b;
+    }
+
+    @Override // o63
+    public final long open(u63 u63Var) {
+        int i;
+        AssetFileDescriptor openAssetFileDescriptor;
+        long j;
+        try {
+            try {
+                Uri uri = u63Var.a;
+                long j2 = u63Var.f;
+                long j3 = u63Var.e;
+                Uri normalizeScheme = uri.normalizeScheme();
+                this.b = normalizeScheme;
+                transferInitializing(u63Var);
+                boolean equals = Objects.equals(normalizeScheme.getScheme(), "content");
+                ContentResolver contentResolver = this.a;
+                if (equals) {
+                    Bundle bundle = new Bundle();
+                    bundle.putBoolean("android.provider.extra.ACCEPT_ORIGINAL_MEDIA_FORMAT", true);
+                    openAssetFileDescriptor = contentResolver.openTypedAssetFileDescriptor(normalizeScheme, "*/*", bundle);
+                } else {
+                    openAssetFileDescriptor = contentResolver.openAssetFileDescriptor(normalizeScheme, "r");
+                }
+                this.c = openAssetFileDescriptor;
+                if (openAssetFileDescriptor == null) {
+                    i = 2000;
+                    try {
+                        throw new yu2(new IOException("Could not open file descriptor for: " + normalizeScheme), 2000);
+                    } catch (IOException e) {
+                        e = e;
+                        throw new yu2(e, e instanceof FileNotFoundException ? 2005 : i);
+                    }
+                }
+                long length = openAssetFileDescriptor.getLength();
+                FileInputStream fileInputStream = new FileInputStream(openAssetFileDescriptor.getFileDescriptor());
+                this.d = fileInputStream;
+                if (length != -1 && j3 > length) {
+                    throw new yu2(null, 2008);
+                }
+                long startOffset = openAssetFileDescriptor.getStartOffset();
+                long skip = fileInputStream.skip(startOffset + j3) - startOffset;
+                if (skip != j3) {
+                    throw new yu2(null, 2008);
+                }
+                if (length == -1) {
+                    FileChannel channel = fileInputStream.getChannel();
+                    long size = channel.size();
+                    if (size == 0) {
+                        this.e = -1L;
+                        j = -1;
+                    } else {
+                        j = size - channel.position();
+                        this.e = j;
+                        if (j < 0) {
+                            throw new yu2(null, 2008);
+                        }
+                    }
+                } else {
+                    j = length - skip;
+                    this.e = j;
+                    if (j < 0) {
+                        throw new yu2(null, 2008);
+                    }
+                }
+                if (j2 != -1) {
+                    this.e = j == -1 ? j2 : Math.min(j, j2);
+                }
+                this.f = true;
+                transferStarted(u63Var);
+                return j2 != -1 ? j2 : this.e;
+            } catch (IOException e2) {
+                e = e2;
+                i = 2000;
+            }
+        } catch (yu2 e3) {
+            throw e3;
         }
-        int b = b();
-        boolean z = contactsActivity.G;
-        r59 r59Var2 = contactsActivity.d;
-        if (z) {
-            r59Var2.setFastScrollVisible(b != 2);
-        } else {
-            r59Var2.setFastScrollVisible(b != 0);
+    }
+
+    @Override // g63
+    public final int read(byte[] bArr, int i, int i2) {
+        if (i2 == 0) {
+            return 0;
         }
+        long j = this.e;
+        if (j != 0) {
+            if (j != -1) {
+                try {
+                    i2 = (int) Math.min(j, i2);
+                } catch (IOException e) {
+                    throw new yu2(e, 2000);
+                }
+            }
+            FileInputStream fileInputStream = this.d;
+            String str = g8c.a;
+            int read = fileInputStream.read(bArr, i, i2);
+            if (read != -1) {
+                long j2 = this.e;
+                if (j2 != -1) {
+                    this.e = j2 - read;
+                }
+                bytesTransferred(read);
+                return read;
+            }
+        }
+        return -1;
     }
 }

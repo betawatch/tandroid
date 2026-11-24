@@ -1,18 +1,37 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class nve {
-    public static zq9 a(byte[] bArr, Parcelable.Creator creator) {
-        ite.h(creator);
-        Parcel obtain = Parcel.obtain();
-        obtain.unmarshall(bArr, 0, bArr.length);
-        obtain.setDataPosition(0);
-        zq9 zq9Var = (zq9) creator.createFromParcel(obtain);
-        obtain.recycle();
-        return zq9Var;
+    public static boolean a(String str) {
+        if (str == null || str.length() == 0) {
+            return false;
+        }
+        int length = str.length();
+        for (int i = 0; i < length; i++) {
+            char charAt = str.charAt(i);
+            if (charAt != '\t' && charAt != ' ' && charAt != '\"' && charAt != ',' && charAt != '/' && charAt != '{' && charAt != '}' && charAt != '(' && charAt != ')') {
+                switch (charAt) {
+                    case kk7.u0 /* 58 */:
+                    case kk7.v0 /* 59 */:
+                    case kk7.w0 /* 60 */:
+                    case kk7.x0 /* 61 */:
+                    case kk7.y0 /* 62 */:
+                    case kk7.z0 /* 63 */:
+                    case '@':
+                        break;
+                    default:
+                        switch (charAt) {
+                            case kk7.b1 /* 91 */:
+                            case kk7.c1 /* 92 */:
+                            case kk7.d1 /* 93 */:
+                                break;
+                            default:
+                        }
+                }
+            }
+            return false;
+        }
+        return true;
     }
 }

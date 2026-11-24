@@ -5,7 +5,7 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class Suggestion {
     private final PendingIntent mAction;
@@ -61,7 +61,7 @@ public final class Suggestion {
         return "[id: " + this.mIdentifier + ", title: " + CarText.toShortString(this.mTitle) + ", subtitle: " + CarText.toShortString(this.mSubtitle) + ", pendingIntent: " + this.mAction + ", icon: " + this.mIcon + "]";
     }
 
-    public Suggestion(idb idbVar) {
+    public Suggestion(gbb gbbVar) {
         throw null;
     }
 }

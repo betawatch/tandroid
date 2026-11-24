@@ -1,34 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.FiltersSetupActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class df4 extends io {
-    public final Paint s;
-    public final /* synthetic */ ef4 w;
+public final /* synthetic */ class df4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ FiltersSetupActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public df4(ef4 ef4Var, Context context) {
-        super(context, false, true, true);
-        this.w = ef4Var;
-        this.s = new Paint(1);
+    public /* synthetic */ df4(FiltersSetupActivity filtersSetupActivity, byte b) {
+        this.a = b;
+        this.b = filtersSetupActivity;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ef4 ef4Var = this.w;
-        int a = ef4Var.x.a(ef4Var.w, false);
-        setTextColor(a);
-        int p1 = cmb.p1(cmb.I.o() ? 0.2f : 0.1f, a);
-        Paint paint = this.s;
-        paint.setColor(p1);
-        RectF rectF = gm.P;
-        rectF.set((getWidth() - getDrawable().c()) - gm.N(9.32f), (getHeight() - gm.N(14.66f)) / 2.0f, getWidth(), (gm.N(14.66f) + getHeight()) / 2.0f);
-        canvas.drawRoundRect(rectF, gm.L(4.0f), gm.L(4.0f), paint);
-        super.dispatchDraw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        FiltersSetupActivity filtersSetupActivity = this.b;
+        switch (b) {
+            case 0:
+                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 1:
+                filtersSetupActivity.a.f1(new kx3(filtersSetupActivity, (byte) 17), 700, true);
+                break;
+            case 2:
+                filtersSetupActivity.showDialog(new jh8((d) filtersSetupActivity, 9, true));
+                break;
+            default:
+                filtersSetupActivity.getMessagesController().e3(true, null);
+                break;
+        }
     }
 }

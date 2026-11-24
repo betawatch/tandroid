@@ -1,67 +1,128 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class i56 implements gk, ee, gla {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ s56 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class i56 implements s07, AdapterView.OnItemClickListener {
+    public Context a;
+    public LayoutInflater b;
+    public yz6 c;
+    public ExpandedMenuView d;
+    public r07 e;
+    public h56 f;
 
-    public /* synthetic */ i56(s56 s56Var, byte b) {
-        this.a = b;
-        this.b = s56Var;
+    public i56(ContextWrapper contextWrapper) {
+        this.a = contextWrapper;
+        this.b = LayoutInflater.from(contextWrapper);
     }
 
-    @Override // gla
-    public final void i(int i) {
-        byte b = this.a;
-        s56 s56Var = this.b;
-        switch (b) {
-            case 2:
-                if (i >= s56Var.P.size()) {
-                    s56Var.x.setText("");
-                    break;
-                } else {
-                    s56Var.x.setText(jb6.s(s56Var.getConnectionsManager().getCurrentTime() + ((Integer) r0.get(i)).intValue(), false));
-                    break;
-                }
-            default:
-                s56Var.G.clearFocus();
-                s56Var.O = true;
-                ArrayList arrayList = s56Var.R;
-                int size = arrayList.size();
-                n56 n56Var = s56Var.G;
-                if (i < size) {
-                    n56Var.setText(((Integer) arrayList.get(i)).toString());
-                } else {
-                    n56Var.setText("");
-                }
-                s56Var.O = false;
-                break;
+    @Override // s07
+    public final boolean b(bab babVar) {
+        boolean hasVisibleItems = babVar.hasVisibleItems();
+        Context context = babVar.a;
+        if (!hasVisibleItems) {
+            return false;
+        }
+        zz6 zz6Var = new zz6();
+        zz6Var.a = babVar;
+        dd ddVar = new dd(context, (byte) 0);
+        pc pcVar = (pc) ddVar.c;
+        i56 i56Var = new i56((ContextThemeWrapper) pcVar.c);
+        zz6Var.c = i56Var;
+        i56Var.e = zz6Var;
+        babVar.b(i56Var, context);
+        i56 i56Var2 = zz6Var.c;
+        h56 h56Var = i56Var2.f;
+        if (h56Var == null) {
+            h56Var = new h56(i56Var2);
+            i56Var2.f = h56Var;
+        }
+        pcVar.l = h56Var;
+        pcVar.m = zz6Var;
+        View view = babVar.o;
+        if (view != null) {
+            pcVar.h = view;
+        } else {
+            pcVar.e = babVar.n;
+            pcVar.f = babVar.m;
+        }
+        pcVar.k = zz6Var;
+        id Z = ddVar.Z();
+        zz6Var.b = Z;
+        Z.setOnDismissListener(zz6Var);
+        WindowManager.LayoutParams attributes = zz6Var.b.getWindow().getAttributes();
+        attributes.type = 1003;
+        attributes.flags |= 131072;
+        zz6Var.b.show();
+        r07 r07Var = this.e;
+        if (r07Var == null) {
+            return true;
+        }
+        r07Var.D(babVar);
+        return true;
+    }
+
+    @Override // s07
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // s07
+    public final void d(yz6 yz6Var, boolean z) {
+        r07 r07Var = this.e;
+        if (r07Var != null) {
+            r07Var.d(yz6Var, z);
         }
     }
 
-    @Override // gla
-    public final void m() {
-        byte b = this.a;
+    @Override // s07
+    public final boolean g(c07 c07Var) {
+        return false;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
-        s56 s56Var = this.b;
-        s56Var.T.a(s56Var.e);
-        s56Var.finishFragment();
+    @Override // s07
+    public final void h(r07 r07Var) {
+        throw null;
     }
 
-    @Override // gk
-    public final void y(int i, int i2, boolean z) {
-        this.b.a0(i);
+    @Override // s07
+    public final boolean i(c07 c07Var) {
+        return false;
     }
 
-    private final void a() {
+    @Override // s07
+    public final void j() {
+        h56 h56Var = this.f;
+        if (h56Var != null) {
+            h56Var.notifyDataSetChanged();
+        }
     }
 
-    private final void b() {
+    @Override // s07
+    public final void k(Context context, yz6 yz6Var) {
+        if (this.a != null) {
+            this.a = context;
+            if (this.b == null) {
+                this.b = LayoutInflater.from(context);
+            }
+        }
+        this.c = yz6Var;
+        h56 h56Var = this.f;
+        if (h56Var != null) {
+            h56Var.notifyDataSetChanged();
+        }
+    }
+
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
+        this.c.q(this.f.getItem(i), this, 0);
     }
 }

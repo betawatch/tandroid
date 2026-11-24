@@ -16,14 +16,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class ShortcutInfoCompatSaverImpl extends sia {
+public class ShortcutInfoCompatSaverImpl extends qga {
     public static final Object h = new Object();
     public static volatile ShortcutInfoCompatSaverImpl i;
     public final Context a;
-    public final qt b = new qt(0);
-    public final qt c = new qt(0);
+    public final ps b = new ps(0);
+    public final ps c = new ps(0);
     public final ThreadPoolExecutor d;
     public final ThreadPoolExecutor e;
     public final File f;
@@ -36,7 +36,7 @@ public class ShortcutInfoCompatSaverImpl extends sia {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new tnd((Object) this, (Object) file, false, (byte) 10));
+        threadPoolExecutor.submit(new rld((Object) this, (Object) file, false, (byte) 10));
     }
 
     public static void f(File file) {
@@ -57,70 +57,70 @@ public class ShortcutInfoCompatSaverImpl extends sia {
         return i;
     }
 
-    @Override // sia
+    @Override // qga
     public final Object a(List list) {
         ArrayList arrayList = new ArrayList(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            qia qiaVar = (qia) it.next();
-            qia qiaVar2 = new qia();
-            qiaVar2.a = qiaVar.a;
-            qiaVar2.b = qiaVar.b;
-            Intent[] intentArr = qiaVar.c;
-            qiaVar2.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-            qiaVar2.d = qiaVar.d;
-            qiaVar2.e = qiaVar.e;
-            qiaVar2.f = qiaVar.f;
-            qiaVar2.g = qiaVar.g;
-            qiaVar2.h = qiaVar.h;
-            qiaVar2.k = qiaVar.k;
-            qiaVar2.l = qiaVar.l;
-            qiaVar2.m = qiaVar.m;
-            n58[] n58VarArr = qiaVar.i;
-            if (n58VarArr != null) {
-                qiaVar2.i = (n58[]) Arrays.copyOf(n58VarArr, n58VarArr.length);
+            oga ogaVar = (oga) it.next();
+            oga ogaVar2 = new oga();
+            ogaVar2.a = ogaVar.a;
+            ogaVar2.b = ogaVar.b;
+            Intent[] intentArr = ogaVar.c;
+            ogaVar2.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
+            ogaVar2.d = ogaVar.d;
+            ogaVar2.e = ogaVar.e;
+            ogaVar2.f = ogaVar.f;
+            ogaVar2.g = ogaVar.g;
+            ogaVar2.h = ogaVar.h;
+            ogaVar2.k = ogaVar.k;
+            ogaVar2.l = ogaVar.l;
+            ogaVar2.m = ogaVar.m;
+            l38[] l38VarArr = ogaVar.i;
+            if (l38VarArr != null) {
+                ogaVar2.i = (l38[]) Arrays.copyOf(l38VarArr, l38VarArr.length);
             }
-            if (qiaVar.j != null) {
-                qiaVar2.j = new HashSet(qiaVar.j);
+            if (ogaVar.j != null) {
+                ogaVar2.j = new HashSet(ogaVar.j);
             }
-            PersistableBundle persistableBundle = qiaVar.n;
+            PersistableBundle persistableBundle = ogaVar.n;
             if (persistableBundle != null) {
-                qiaVar2.n = persistableBundle;
+                ogaVar2.n = persistableBundle;
             }
-            if (TextUtils.isEmpty(qiaVar2.e)) {
-                u36.j("Shortcut must have a non-empty label");
+            if (TextUtils.isEmpty(ogaVar2.e)) {
+                w26.j("Shortcut must have a non-empty label");
                 return null;
             }
-            Intent[] intentArr2 = qiaVar2.c;
+            Intent[] intentArr2 = ogaVar2.c;
             if (intentArr2 == null || intentArr2.length == 0) {
-                u36.j("Shortcut must have an intent");
+                w26.j("Shortcut must have an intent");
                 return null;
             }
-            arrayList.add(qiaVar2);
+            arrayList.add(ogaVar2);
         }
-        ec9 ec9Var = new ec9();
-        this.d.submit(new tia(this, arrayList, ec9Var, (byte) 1));
-        return ec9Var;
+        ea9 ea9Var = new ea9();
+        this.d.submit(new rga(this, arrayList, ea9Var, (byte) 1));
+        return ea9Var;
     }
 
-    @Override // sia
+    @Override // qga
     public final List b() {
-        return (List) this.d.submit(new mg7(this, (byte) 1)).get();
+        return (List) this.d.submit(new ke7(this, (byte) 1)).get();
     }
 
-    @Override // sia
+    @Override // qga
     public final Object c() {
-        ec9 ec9Var = new ec9();
-        this.d.submit(new us4(this, ec9Var, false, (byte) 13));
-        return ec9Var;
+        ea9 ea9Var = new ea9();
+        this.d.submit(new tq4(this, ea9Var, false, (byte) 13));
+        return ea9Var;
     }
 
-    @Override // sia
+    @Override // qga
     public final Object d(List list) {
         ArrayList arrayList = new ArrayList(list);
-        ec9 ec9Var = new ec9();
-        this.d.submit(new tia(this, arrayList, ec9Var, (byte) 0));
-        return ec9Var;
+        ea9 ea9Var = new ea9();
+        this.d.submit(new rga(this, arrayList, ea9Var, (byte) 0));
+        return ea9Var;
     }
 
     public final void e(ArrayList arrayList) {
@@ -130,9 +130,9 @@ public class ShortcutInfoCompatSaverImpl extends sia {
         while (i2 < size) {
             Object obj = arrayList.get(i2);
             i2++;
-            wia wiaVar = (wia) obj;
-            if (!TextUtils.isEmpty(wiaVar.b)) {
-                arrayList2.add(wiaVar.b);
+            uga ugaVar = (uga) obj;
+            if (!TextUtils.isEmpty(ugaVar.b)) {
+                arrayList2.add(ugaVar.b);
             }
         }
         for (File file : this.g.listFiles()) {
@@ -145,11 +145,11 @@ public class ShortcutInfoCompatSaverImpl extends sia {
     public final IconCompat g(String str) {
         int i2;
         Context context = this.a;
-        wia wiaVar = (wia) this.d.submit(new uia(this, str)).get();
-        if (wiaVar == null) {
+        uga ugaVar = (uga) this.d.submit(new sga(this, str)).get();
+        if (ugaVar == null) {
             return null;
         }
-        String str2 = wiaVar.a;
+        String str2 = ugaVar.a;
         if (!TextUtils.isEmpty(str2)) {
             try {
                 i2 = context.getResources().getIdentifier(str2, null, null);
@@ -160,20 +160,20 @@ public class ShortcutInfoCompatSaverImpl extends sia {
                 return IconCompat.d(context, i2);
             }
         }
-        if (TextUtils.isEmpty(wiaVar.b)) {
+        if (TextUtils.isEmpty(ugaVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new mg7(wiaVar, (byte) 2)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new ke7(ugaVar, (byte) 2)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }
         return null;
     }
 
-    public final void h(ec9 ec9Var) {
-        tnd tndVar = new tnd((Object) this, (Object) new ArrayList(this.b.values()), false, (byte) 9);
-        ec9 ec9Var2 = new ec9();
-        this.e.submit(new us4((Object) ec9Var2, (Object) tndVar, (byte) 14));
-        ec9Var2.b(new us4((Object) ec9Var2, (Object) ec9Var, (byte) 12), this.d);
+    public final void h(ea9 ea9Var) {
+        rld rldVar = new rld((Object) this, (Object) new ArrayList(this.b.values()), false, (byte) 9);
+        ea9 ea9Var2 = new ea9();
+        this.e.submit(new tq4((Object) ea9Var2, (Object) rldVar, (byte) 14));
+        ea9Var2.b(new tq4((Object) ea9Var2, (Object) ea9Var, (byte) 12), this.d);
     }
 }

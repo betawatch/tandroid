@@ -1,24 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class hb3 extends qh0 {
-    public final gb3 d;
+public abstract /* synthetic */ class hb3 {
+    public static final /* synthetic */ int[] a;
 
-    public hb3(gb3 gb3Var, long j, long j2) {
-        super(j, j2);
-        this.d = gb3Var;
-    }
-
-    @Override // em6
-    public final long e() {
-        a();
-        return this.d.e(this.c);
-    }
-
-    @Override // em6
-    public final long g() {
-        a();
-        return this.d.d(this.c);
+    static {
+        int[] iArr = new int[u06.values().length];
+        try {
+            iArr[u06.ON_CREATE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            iArr[u06.ON_START.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            iArr[u06.ON_RESUME.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            iArr[u06.ON_PAUSE.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            iArr[u06.ON_STOP.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            iArr[u06.ON_DESTROY.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            iArr[u06.ON_ANY.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        a = iArr;
     }
 }

@@ -1,17 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class wfd {
-    public static final o94 a;
-    public static final o94 b;
-    public static final o94[] c;
+import java.util.Iterator;
 
-    static {
-        o94 o94Var = new o94("CLIENT_TELEMETRY", 1L);
-        a = o94Var;
-        o94 o94Var2 = new o94("CLIENT_NOTIFICATION_TELEMETRY", 1L);
-        b = o94Var2;
-        c = new o94[]{o94Var, o94Var2};
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class wfd extends add {
+    public final transient ggd h;
+    public final transient agd n;
+
+    public wfd(ggd ggdVar, agd agdVar) {
+        super((byte) 1);
+        this.h = ggdVar;
+        this.n = agdVar;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.h.get(obj) != null;
+    }
+
+    @Override // x8d
+    public final int h(Object[] objArr) {
+        return this.n.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.n.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        this.h.getClass();
+        return 1;
     }
 }

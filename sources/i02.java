@@ -1,167 +1,138 @@
 // default package
 
-import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class i02 extends y9c {
-    public final int N1;
-    public final m07 O1;
-    public final tk4 P1;
-    public final a1b Q1;
-    public final a1b R1;
-    public float S1;
-    public boolean T1;
-    public int U1;
-    public final /* synthetic */ k02 V1;
+public final class i02 extends qn {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ x02 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i02(k02 k02Var, d dVar, long j) {
-        super(dVar.getCurrentAccount(), dVar.getResourceProvider(), dVar.getParentActivity());
-        this.V1 = k02Var;
-        this.N1 = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        int i = cmb.Z6;
-        s0(cmb.v0(i, this.J0));
-        this.F1 = i;
-        this.E1 = i;
-        H0(0.0f);
-        L(i);
-        this.A1 = false;
-        this.B1 = false;
-        m07 m07Var = new m07(this, dVar, this.c, j);
-        this.O1 = m07Var;
-        m07Var.B = false;
-        this.q0 = (byte) 75;
-        this.v1.K.setHint(jb6.M0(2131745492, null));
-        q07 q07Var = m07Var.f;
-        this.p1 = q07Var;
-        this.o1 = q07Var;
-        this.n1.setAdapter(q07Var);
-        this.n1.r1();
-        pu9 pu9Var = this.n1;
-        m07Var.p = pu9Var;
-        pu9Var.setOnItemClickListener(new kg4(m07Var, (byte) 11));
-        k69 onScrollListener = pu9Var.getOnScrollListener();
-        if (onScrollListener == null) {
-            pu9Var.setOnScrollListener(m07Var.D);
-        } else {
-            pu9Var.setOnScrollListener(new bk1(m07Var, onScrollListener, (byte) 5));
-        }
-        int indexOfChild = ((ViewGroup) this.n1.getParent()).indexOfChild(this.n1);
-        tk4 b = m07Var.b();
-        this.P1 = b;
-        this.b.addView(b, indexOfChild, qoe.c(-1.0f, -1));
-        a1b a = m07Var.a();
-        this.Q1 = a;
-        this.b.addView(a, indexOfChild, qoe.c(-1.0f, -1));
-        a1b c = m07Var.c();
-        this.R1 = c;
-        this.b.addView(c, indexOfChild, qoe.c(-1.0f, -1));
-        m07Var.e();
-    }
-
-    @Override // y9c
-    public final void E0(MotionEvent motionEvent, l7 l7Var) {
-        d dVar;
-        int action = motionEvent.getAction();
-        m07 m07Var = this.O1;
-        if (action == 0) {
-            this.S1 = this.x1;
-            m07Var.i(false);
-        } else if (motionEvent.getAction() == 1 && Math.abs(this.x1 - this.S1) < this.N1 && !this.T1) {
-            Activity W = gm.W(getContext());
-            if (W instanceof LaunchActivity) {
-                LaunchActivity launchActivity = (LaunchActivity) W;
-                dVar = (d) launchActivity.N().getFragmentStack().get(launchActivity.N().getFragmentStack().size() - 1);
-            } else {
-                dVar = null;
-            }
-            if (dVar instanceof yv1) {
-                boolean ea = ((yv1) dVar).ea();
-                this.T1 = true;
-                gm.d3(new lj6((Object) this, (Object) l7Var, (byte) 19), ea ? 200L : 0L);
-            } else {
-                this.T1 = true;
-                v0(true);
-                l7Var.requestFocus();
-                gm.c3(new ys5(l7Var, (byte) 2));
-            }
-        }
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            m07Var.i(true);
+    public i02(x02 x02Var, byte b) {
+        super("translation", (byte) 0);
+        this.b = b;
+        switch (b) {
+            case 1:
+                this.c = x02Var;
+                super("openProgress", (byte) 0);
+                break;
+            default:
+                this.c = x02Var;
+                break;
         }
     }
 
-    @Override // y9c
-    public final void G0(String str) {
-        this.O1.j(str);
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x009c, code lost:
+    
+        if (r7.v2 == r0) goto L40;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x009f  */
+    @Override // qn
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(Object obj, float f) {
+        int i;
+        p02 p02Var;
+        k62 k62Var;
+        float f2;
+        byte b = this.b;
+        x02 x02Var = this.c;
+        int i2 = 0;
+        switch (b) {
+            case 0:
+                x02Var.X1 = f;
+                p02 p02Var2 = x02Var.w2;
+                if (p02Var2 != null) {
+                    if ((p02Var2 instanceof m52) || (x02Var.v2 instanceof m52)) {
+                        int max = Math.max(p02Var2.getWidth(), x02Var.v2.getWidth());
+                        boolean z = x02Var.w2 instanceof m52;
+                        p02 p02Var3 = x02Var.v2;
+                        if (z) {
+                            p02Var3.setTranslationX((-max) * f);
+                            x02Var.w2.setTranslationX((1.0f - f) * max);
+                        } else {
+                            p02Var3.setTranslationX(max * f);
+                            x02Var.w2.setTranslationX((1.0f - f) * (-max));
+                        }
+                    } else {
+                        p02Var2.setAlpha(f);
+                        x02Var.w2.w(f);
+                        p02 p02Var4 = x02Var.w2;
+                        k62 k62Var2 = x02Var.g2;
+                        if (p02Var4 != k62Var2) {
+                            if (x02Var.v2 == k62Var2) {
+                                i = 0;
+                            }
+                            p02Var = x02Var.w2;
+                            k62Var = x02Var.h2;
+                            if (p02Var == k62Var) {
+                                break;
+                            } else {
+                                i2 = 1;
+                            }
+                            x02Var.K1(i2);
+                            x02Var.w2.setTranslationY(gl.L(78.0f) * f);
+                            x02Var.v2.w(1.0f - Math.min(1.0f, f / 0.7f));
+                            x02Var.v2.m(x02Var.i4);
+                        } else {
+                            i = 1;
+                        }
+                        x02Var.K1(i);
+                        p02Var = x02Var.w2;
+                        k62Var = x02Var.h2;
+                        if (p02Var == k62Var) {
+                        }
+                        x02Var.K1(i2);
+                        x02Var.w2.setTranslationY(gl.L(78.0f) * f);
+                        x02Var.v2.w(1.0f - Math.min(1.0f, f / 0.7f));
+                        x02Var.v2.m(x02Var.i4);
+                    }
+                    if (x02Var.q3 != null) {
+                        x02Var.K1(1);
+                    }
+                    x02Var.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                xz1 xz1Var = x02Var.v3;
+                int childCount = xz1Var.getChildCount();
+                while (i2 < childCount) {
+                    float f3 = (3 - i2) * 32.0f;
+                    View childAt = xz1Var.getChildAt(i2);
+                    if (f > f3) {
+                        float f4 = f - f3;
+                        if (f4 <= 200.0f) {
+                            float f5 = f4 / 200.0f;
+                            f2 = s33.g.getInterpolation(f5) * 1.1f;
+                            childAt.setAlpha(s33.j.getInterpolation(f5));
+                        } else {
+                            childAt.setAlpha(1.0f);
+                            float f6 = f4 - 200.0f;
+                            f2 = f6 <= 100.0f ? 1.1f - (s33.i.getInterpolation(f6 / 100.0f) * 0.1f) : 1.0f;
+                        }
+                    } else {
+                        f2 = 0.0f;
+                    }
+                    if (childAt instanceof s02) {
+                        ((s02) childAt).a.setAttachScale(f2);
+                    }
+                    i2++;
+                }
+                break;
+        }
     }
 
-    @Override // y9c
-    public final void I0(int i) {
-        super.I0(i);
-        this.P1.setTranslationY(this.m1.getMeasuredHeight() + i);
-        float f = i;
-        this.Q1.setTranslationY(f);
-        this.R1.setTranslationY(f);
-    }
-
-    @Override // y9c
-    public final void L0() {
-        pu9 pu9Var = this.n1;
-        if (pu9Var.getChildCount() > 0) {
-            super.L0();
-            return;
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.X1);
+            default:
+                return Float.valueOf(0.0f);
         }
-        int paddingTop = pu9Var.getVisibility() == 0 ? pu9Var.getPaddingTop() - gm.L(8.0f) : 0;
-        if (this.x1 != paddingTop) {
-            this.x1 = paddingTop;
-            I0(paddingTop);
-        }
-    }
-
-    @Override // y9c, my0, android.app.Dialog, android.content.DialogInterface, ah0
-    public final void dismiss() {
-        k02 k02Var = this.V1;
-        i02 i02Var = k02Var.i;
-        if (i02Var != null && !i02Var.O1.b) {
-            k02Var.i = null;
-        }
-        super.dismiss();
-    }
-
-    @Override // my0, android.app.Dialog
-    public final void onBackPressed() {
-        w07 w07Var = this.O1.s;
-        if (w07Var != null) {
-            w07Var.e(false);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override // my0
-    public final void p0() {
-        super.p0();
-        int v0 = cmb.v0(cmb.Z6, this.J0);
-        if (v0 != this.U1) {
-            this.U1 = v0;
-            s0(v0);
-        }
-    }
-
-    @Override // my0, android.app.Dialog
-    public final void show() {
-        m07 m07Var = this.O1;
-        if (m07Var.b && this.x1 == 0) {
-            this.x1 = gm.L(8.0f);
-        }
-        super.show();
-        m07Var.b = false;
     }
 }

@@ -1,43 +1,51 @@
 // default package
 
-import android.os.Looper;
-import android.util.SparseArray;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class fjd implements OnCompleteListener, Runnable {
-    public static final q79 d = new q79(Looper.getMainLooper());
-    public static final SparseArray e = new SparseArray(2);
-    public static final AtomicInteger f = new AtomicInteger();
-    public int a;
-    public jpd b;
-    public Task c;
+public final class fjd extends mid {
+    public final /* synthetic */ njd s;
 
-    public final void a() {
-        if (this.c == null || this.b == null) {
-            return;
-        }
-        e.delete(this.a);
-        d.removeCallbacks(this);
-        jpd jpdVar = this.b;
-        if (jpdVar != null) {
-            Task task = this.c;
-            int i = jpd.d;
-            jpdVar.a(task);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fjd(njd njdVar) {
+        super((byte) 4);
+        this.s = njdVar;
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public final void onComplete(Task task) {
-        this.c = task;
-        a();
+    @Override // mid
+    public final xhd B() {
+        return new zid(this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        e.delete(this.a);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (!(obj instanceof Map.Entry)) {
+            return false;
+        }
+        Map.Entry entry = (Map.Entry) obj;
+        Object obj2 = this.s.get(entry.getKey());
+        return obj2 != null && obj2.equals(entry.getValue());
+    }
+
+    @Override // mid, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return a1f.a(this.s.entrySet());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return A().listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.s.d.size();
+    }
+
+    @Override // kzc
+    public final v5c u() {
+        return A().listIterator(0);
     }
 }

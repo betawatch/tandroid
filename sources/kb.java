@@ -3,28 +3,28 @@
 import java.io.EOFException;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class kb implements s84 {
+public final class kb implements j74 {
     public final int a;
-    public final yw7 d;
-    public final ye1 e;
-    public u84 f;
+    public final xu7 d;
+    public final qd1 e;
+    public l74 f;
     public long g;
     public boolean j;
     public boolean k;
     public boolean l;
     public final lb b = new lb(0, null, "audio/mp4a-latm", true);
-    public final yw7 c = new yw7(2048);
+    public final xu7 c = new xu7(2048);
     public int i = -1;
     public long h = -1;
 
     public kb(int i) {
         this.a = i;
-        yw7 yw7Var = new yw7(10);
-        this.d = yw7Var;
-        byte[] bArr = yw7Var.a;
-        this.e = new ye1(bArr.length, bArr);
+        xu7 xu7Var = new xu7(10);
+        this.d = xu7Var;
+        byte[] bArr = xu7Var.a;
+        this.e = new qd1(bArr.length, bArr);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x00c5  */
@@ -34,11 +34,11 @@ public final class kb implements s84 {
     /* JADX WARN: Removed duplicated region for block: B:44:0x00c7  */
     /* JADX WARN: Removed duplicated region for block: B:77:0x00a8  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x00af  */
-    @Override // s84
+    @Override // j74
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int b(t84 t84Var, u21 u21Var) {
+    public final int b(k74 k74Var, m11 m11Var) {
         long j;
         int i;
         int i2;
@@ -49,36 +49,36 @@ public final class kb implements s84 {
         lb lbVar;
         boolean z3;
         this.f.getClass();
-        long j4 = ((vb3) t84Var).c;
+        long j4 = ((ja3) k74Var).c;
         int i3 = this.a;
         int i4 = i3 & 2;
         int i5 = 0;
         if (i4 != 0 || ((i3 & 1) != 0 && j4 != -1)) {
-            ye1 ye1Var = this.e;
-            yw7 yw7Var = this.d;
+            qd1 qd1Var = this.e;
+            xu7 xu7Var = this.d;
             if (!this.j) {
                 this.i = -1;
-                vb3 vb3Var = (vb3) t84Var;
-                vb3Var.f = 0;
+                ja3 ja3Var = (ja3) k74Var;
+                ja3Var.f = 0;
                 j = 0;
-                if (vb3Var.d == 0) {
-                    g(vb3Var);
+                if (ja3Var.d == 0) {
+                    g(ja3Var);
                 }
                 i = 0;
                 while (true) {
                     try {
                         try {
-                            vb3 vb3Var2 = (vb3) t84Var;
-                            if (!vb3Var2.d(yw7Var.a, i5, 2, true)) {
+                            ja3 ja3Var2 = (ja3) k74Var;
+                            if (!ja3Var2.d(xu7Var.a, i5, 2, true)) {
                                 break;
                             }
-                            yw7Var.N(i5);
-                            if (((yw7Var.H() & 65526) == 65520 ? 1 : i5) != 0) {
-                                if (!vb3Var2.d(yw7Var.a, i5, 4, true)) {
+                            xu7Var.N(i5);
+                            if (((xu7Var.H() & 65526) == 65520 ? 1 : i5) != 0) {
+                                if (!ja3Var2.d(xu7Var.a, i5, 4, true)) {
                                     break;
                                 }
-                                ye1Var.l(14);
-                                int f = ye1Var.f(13);
+                                qd1Var.l(14);
+                                int f = qd1Var.f(13);
                                 if (f > 6) {
                                     j3 = j + f;
                                     i++;
@@ -86,7 +86,7 @@ public final class kb implements s84 {
                                         break;
                                     }
                                     try {
-                                        if (!vb3Var2.a(f - 6, true)) {
+                                        if (!ja3Var2.a(f - 6, true)) {
                                             break;
                                         }
                                         j = j3;
@@ -97,15 +97,15 @@ public final class kb implements s84 {
                                     j2 = j;
                                     try {
                                         this.j = true;
-                                        throw bx7.a("Malformed ADTS stream", null);
+                                        throw av7.a("Malformed ADTS stream", null);
                                     } catch (EOFException unused2) {
                                         j = j2;
-                                        vb3Var.f = 0;
+                                        ja3Var.f = 0;
                                         if (i <= 0) {
                                         }
                                         this.j = true;
-                                        yw7 yw7Var2 = this.c;
-                                        int read = ((vb3) t84Var).read(yw7Var2.a, 0, 2048);
+                                        xu7 xu7Var2 = this.c;
+                                        int read = ((ja3) k74Var).read(xu7Var2.a, 0, 2048);
                                         if (read == i2) {
                                         }
                                         z2 = this.l;
@@ -127,7 +127,7 @@ public final class kb implements s84 {
                     } catch (EOFException unused4) {
                     }
                 }
-                vb3Var.f = 0;
+                ja3Var.f = 0;
                 if (i <= 0) {
                     this.i = (int) (j / i);
                     i2 = -1;
@@ -136,8 +136,8 @@ public final class kb implements s84 {
                     this.i = -1;
                 }
                 this.j = true;
-                yw7 yw7Var22 = this.c;
-                int read2 = ((vb3) t84Var).read(yw7Var22.a, 0, 2048);
+                xu7 xu7Var22 = this.c;
+                int read2 = ((ja3) k74Var).read(xu7Var22.a, 0, 2048);
                 z = read2 == i2;
                 z2 = this.l;
                 lb lbVar22 = this.b;
@@ -147,28 +147,28 @@ public final class kb implements s84 {
                         if (z4) {
                             long j5 = lbVar22.s;
                             if (j5 != -9223372036854775807L) {
-                                u84 u84Var = this.f;
+                                l74 l74Var = this.f;
                                 boolean z5 = i4 != 0;
                                 int i6 = this.i;
                                 lbVar = lbVar22;
-                                u84Var.f0(new au2(j4, this.h, (int) (((i6 << 3) * 1000000) / j5), i6, z5, true));
+                                l74Var.g0(new ps2(j4, this.h, (int) (((i6 << 3) * 1000000) / j5), i6, z5, true));
                                 z3 = true;
                                 this.l = true;
                                 if (z) {
                                     return -1;
                                 }
-                                yw7Var22.N(0);
-                                yw7Var22.M(read2);
+                                xu7Var22.N(0);
+                                xu7Var22.M(read2);
                                 if (!this.k) {
                                     lbVar.u = this.g;
                                     this.k = z3;
                                 }
-                                lbVar.b(yw7Var22);
+                                lbVar.b(xu7Var22);
                                 return 0;
                             }
                         }
                         lbVar = lbVar22;
-                        this.f.f0(new od0(-9223372036854775807L));
+                        this.f.g0(new oc0(-9223372036854775807L));
                         z3 = true;
                         this.l = true;
                         if (z) {
@@ -182,8 +182,8 @@ public final class kb implements s84 {
             }
         }
         i2 = -1;
-        yw7 yw7Var222 = this.c;
-        int read22 = ((vb3) t84Var).read(yw7Var222.a, 0, 2048);
+        xu7 xu7Var222 = this.c;
+        int read22 = ((ja3) k74Var).read(xu7Var222.a, 0, 2048);
         if (read22 == i2) {
         }
         z2 = this.l;
@@ -195,12 +195,12 @@ public final class kb implements s84 {
         if (z) {
         }
         j = j3;
-        vb3Var.f = 0;
+        ja3Var.f = 0;
         if (i <= 0) {
         }
         this.j = true;
-        yw7 yw7Var2222 = this.c;
-        int read222 = ((vb3) t84Var).read(yw7Var2222.a, 0, 2048);
+        xu7 xu7Var2222 = this.c;
+        int read222 = ((ja3) k74Var).read(xu7Var2222.a, 0, 2048);
         if (read222 == i2) {
         }
         z2 = this.l;
@@ -213,12 +213,12 @@ public final class kb implements s84 {
         }
         j2 = j;
         j = j2;
-        vb3Var.f = 0;
+        ja3Var.f = 0;
         if (i <= 0) {
         }
         this.j = true;
-        yw7 yw7Var22222 = this.c;
-        int read2222 = ((vb3) t84Var).read(yw7Var22222.a, 0, 2048);
+        xu7 xu7Var22222 = this.c;
+        int read2222 = ((ja3) k74Var).read(xu7Var22222.a, 0, 2048);
         if (read2222 == i2) {
         }
         z2 = this.l;
@@ -231,38 +231,38 @@ public final class kb implements s84 {
         }
     }
 
-    @Override // s84
-    public final boolean c(t84 t84Var) {
-        vb3 vb3Var = (vb3) t84Var;
-        int g = g(vb3Var);
+    @Override // j74
+    public final boolean c(k74 k74Var) {
+        ja3 ja3Var = (ja3) k74Var;
+        int g = g(ja3Var);
         int i = g;
         int i2 = 0;
         int i3 = 0;
         do {
-            yw7 yw7Var = this.d;
-            vb3Var.d(yw7Var.a, 0, 2, false);
-            yw7Var.N(0);
-            if ((yw7Var.H() & 65526) == 65520) {
+            xu7 xu7Var = this.d;
+            ja3Var.d(xu7Var.a, 0, 2, false);
+            xu7Var.N(0);
+            if ((xu7Var.H() & 65526) == 65520) {
                 i2++;
                 if (i2 >= 4 && i3 > 188) {
                     return true;
                 }
-                vb3Var.d(yw7Var.a, 0, 4, false);
-                ye1 ye1Var = this.e;
-                ye1Var.l(14);
-                int f = ye1Var.f(13);
+                ja3Var.d(xu7Var.a, 0, 4, false);
+                qd1 qd1Var = this.e;
+                qd1Var.l(14);
+                int f = qd1Var.f(13);
                 if (f <= 6) {
                     i++;
-                    vb3Var.f = 0;
-                    vb3Var.a(i, false);
+                    ja3Var.f = 0;
+                    ja3Var.a(i, false);
                 } else {
-                    vb3Var.a(f - 6, false);
+                    ja3Var.a(f - 6, false);
                     i3 += f;
                 }
             } else {
                 i++;
-                vb3Var.f = 0;
-                vb3Var.a(i, false);
+                ja3Var.f = 0;
+                ja3Var.a(i, false);
             }
             i2 = 0;
             i3 = 0;
@@ -270,54 +270,54 @@ public final class kb implements s84 {
         return false;
     }
 
-    @Override // s84
+    @Override // j74
     public final void d(long j, long j2) {
         this.k = false;
         this.b.d();
         this.g = j2;
     }
 
-    @Override // s84
+    @Override // j74
     public final List e() {
-        ko5 ko5Var = mo5.b;
-        return y79.e;
+        km5 km5Var = mm5.b;
+        return w59.e;
     }
 
-    @Override // s84
-    public final void f(u84 u84Var) {
-        this.f = u84Var;
-        this.b.h(u84Var, new l4c(0, 1));
-        u84Var.B();
+    @Override // j74
+    public final void f(l74 l74Var) {
+        this.f = l74Var;
+        this.b.h(l74Var, new l2c(0, 1));
+        l74Var.z();
     }
 
-    public final int g(vb3 vb3Var) {
+    public final int g(ja3 ja3Var) {
         int i = 0;
         while (true) {
-            yw7 yw7Var = this.d;
-            vb3Var.d(yw7Var.a, 0, 10, false);
-            yw7Var.N(0);
-            if (yw7Var.D() != 4801587) {
+            xu7 xu7Var = this.d;
+            ja3Var.d(xu7Var.a, 0, 10, false);
+            xu7Var.N(0);
+            if (xu7Var.D() != 4801587) {
                 break;
             }
-            yw7Var.O(3);
-            int z = yw7Var.z();
+            xu7Var.O(3);
+            int z = xu7Var.z();
             i += z + 10;
-            vb3Var.a(z, false);
+            ja3Var.a(z, false);
         }
-        vb3Var.f = 0;
-        vb3Var.a(i, false);
+        ja3Var.f = 0;
+        ja3Var.a(i, false);
         if (this.h == -1) {
             this.h = i;
         }
         return i;
     }
 
-    @Override // s84
-    public final s84 a() {
+    @Override // j74
+    public final j74 a() {
         return this;
     }
 
-    @Override // s84
+    @Override // j74
     public final void release() {
     }
 }

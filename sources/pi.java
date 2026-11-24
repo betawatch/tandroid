@@ -1,25 +1,21 @@
 // default package
 
-import android.app.Activity;
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class pi extends FrameLayout {
-    public final /* synthetic */ oh2[] a;
+public final class pi extends hn7 {
+    public final /* synthetic */ int[] z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pi(Activity activity, oh2[] oh2VarArr) {
-        super(activity);
-        this.a = oh2VarArr;
+    public pi(Context context, wjb wjbVar, int[] iArr) {
+        super(context, wjbVar);
+        this.z0 = iArr;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        oh2[] oh2VarArr = this.a;
-        if (oh2VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), gm.L(7.0f) + oh2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-        }
+    @Override // hn7
+    public final CharSequence d(int i) {
+        int i2 = this.z0[i];
+        return i2 == 0 ? k96.M0(2131753846, null) : i2 < 10080 ? k96.G(i2 / 1440, "Days", new Object[0]) : i2 < 44640 ? k96.G(i2 / 1440, "Weeks", new Object[0]) : i2 < 525600 ? k96.G(i2 / 10080, "Months", new Object[0]) : k96.G(((i2 * 5) / 31) * 1440, "Years", new Object[0]);
     }
 }

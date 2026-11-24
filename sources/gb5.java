@@ -1,38 +1,17 @@
 // default package
 
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gb5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jb5 b;
+public final class gb5 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
+    public final /* synthetic */ mb5 c;
 
-    public /* synthetic */ gb5(jb5 jb5Var, byte b) {
-        this.a = b;
-        this.b = jb5Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        jb5 jb5Var = this.b;
-        switch (b) {
-            case 0:
-                jb5Var.J0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jb5Var.invalidate();
-                break;
-            default:
-                jb5Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jb5Var.c = floatValue;
-                g95 g95Var = jb5Var.k0;
-                g95Var.u3.setAlpha(1.0f - floatValue);
-                a85 a85Var = g95Var.H1;
-                a85Var.setAlpha((1.0f - g95Var.T3.c) * (a85Var.getTag() != null ? 1.0f : 0.0f));
-                g95Var.y1(g95Var.s2);
-                jb5Var.j();
-                break;
-        }
+    public gb5(mb5 mb5Var, boolean z, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.c = mb5Var;
+        this.a = z;
+        this.b = tL_messages_stickerSet;
     }
 }

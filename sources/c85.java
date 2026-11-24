@@ -1,35 +1,47 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c85 implements DialogInterface.OnShowListener {
+public final /* synthetic */ class c85 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ he b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ h85 b;
 
-    public /* synthetic */ c85(Object obj, he heVar, EditTextBoldCursor editTextBoldCursor, byte b) {
+    public /* synthetic */ c85(h85 h85Var, byte b) {
         this.a = b;
-        this.d = obj;
-        this.b = heVar;
-        this.c = editTextBoldCursor;
+        this.b = h85Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        boolean z;
         byte b = this.a;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        he heVar = this.b;
-        Object obj = this.d;
+        h85 h85Var = this.b;
         switch (b) {
             case 0:
-                ((i85) obj).b.k1(null, heVar, editTextBoldCursor, true);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h85Var.a0 = floatValue;
+                h85Var.b0.setAlpha(floatValue);
+                h85Var.a.invalidate();
                 break;
             default:
-                ((d85) obj).r1.b.k1(null, heVar, editTextBoldCursor, true);
+                d85 d85Var = h85Var.a;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (floatValue2 < 0.5f) {
+                    z = false;
+                } else {
+                    floatValue2 -= 1.0f;
+                    z = true;
+                }
+                if (z && !h85Var.I0) {
+                    h85Var.x0.setAlpha(1.0f);
+                    h85Var.I0 = true;
+                    d85Var.d.clearImage();
+                }
+                float f = floatValue2 * 180.0f;
+                h85Var.x0.setRotationY(f);
+                d85Var.d.setRotationY(f);
                 break;
         }
     }

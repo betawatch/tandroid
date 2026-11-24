@@ -3,14 +3,14 @@
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class tb extends b61 {
+public final class tb extends u41 {
     public final /* synthetic */ byte m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ tb(Context context, boolean z, ylb ylbVar, byte b) {
-        super(ylbVar, context, z);
+    public /* synthetic */ tb(Context context, boolean z, wjb wjbVar, byte b) {
+        super(wjbVar, context, z);
         this.m0 = b;
     }
 
@@ -27,7 +27,7 @@ public final class tb extends b61 {
         }
     }
 
-    @Override // b61
+    @Override // u41
     public final boolean j() {
         switch (this.m0) {
             case 0:

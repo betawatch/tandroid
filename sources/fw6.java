@@ -1,32 +1,31 @@
 // default package
 
-import android.media.MediaRoute2Info;
-import java.util.Set;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class fw6 {
-    public static void a(MediaRoute2Info.Builder builder, zu6 zu6Var) {
-        if (zu6Var.a.getBoolean("isVisibilityPublic", true)) {
-            builder.setVisibilityPublic();
-        } else {
-            builder.setVisibilityRestricted(zu6Var.a());
+public final /* synthetic */ class fw6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lw6 b;
+    public final /* synthetic */ ad8 c;
+
+    public /* synthetic */ fw6(lw6 lw6Var, ad8 ad8Var, byte b) {
+        this.a = b;
+        this.b = lw6Var;
+        this.c = ad8Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ad8 ad8Var = this.c;
+        lw6 lw6Var = this.b;
+        switch (b) {
+            case 0:
+                lw6Var.p.K(lw6Var.f0(ad8Var));
+                lw6Var.l.D(ad8Var.q().a(17) ? ad8Var.y0() : aob.a);
+                break;
+            default:
+                lw6Var.p.K(lw6Var.f0(ad8Var));
+                break;
         }
-    }
-
-    public static Set<String> b(MediaRoute2Info mediaRoute2Info) {
-        return mediaRoute2Info.getDeduplicationIds();
-    }
-
-    public static int c(MediaRoute2Info mediaRoute2Info) {
-        return mediaRoute2Info.getType();
-    }
-
-    public static void d(MediaRoute2Info.Builder builder, Set<String> set) {
-        builder.setDeduplicationIds(set);
-    }
-
-    public static void e(MediaRoute2Info.Builder builder, int i) {
-        builder.setType(i);
     }
 }

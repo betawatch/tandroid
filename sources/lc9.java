@@ -1,11 +1,29 @@
 // default package
 
-import android.util.LongSparseArray;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class lc9 {
-    public static void a(LongSparseArray longSparseArray) {
-        longSparseArray.clear();
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public interface lc9 {
+    boolean A(mc9 mc9Var);
+
+    boolean H(mc9 mc9Var);
+
+    void I();
+
+    void O(CharSequence charSequence);
+
+    void U(Editable editable);
+
+    void Y(mc9 mc9Var);
+
+    boolean c0(boolean z);
+
+    void d(mc9 mc9Var);
+
+    boolean i();
+
+    void l(int i, int i2);
+
+    void t(mc9 mc9Var, int i, int i2);
 }

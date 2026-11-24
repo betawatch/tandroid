@@ -1,205 +1,197 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.p;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class b18 implements TextWatcher {
-    public boolean a;
-    public String b;
-    public boolean c;
-    public int d;
-    public int e;
-    public boolean f;
-    public final char[] h = {',', '.', 1643, 12289, 11841, 65040, 65041, 65104, 65105, 65292, 65380, 699};
-    public final /* synthetic */ p n;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b18 implements ed, o41 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ y28 b;
 
-    public b18(p pVar) {
-        this.n = pVar;
+    public /* synthetic */ b18(y28 y28Var, byte b) {
+        this.a = b;
+        this.b = y28Var;
     }
 
-    public final int a(String str) {
-        int i = 0;
-        while (true) {
-            char[] cArr = this.h;
-            if (i >= cArr.length) {
-                return -1;
-            }
-            int indexOf = str.indexOf(cArr[i]);
-            if (indexOf >= 0) {
-                return indexOf;
-            }
-            i++;
+    @Override // o41
+    public final void g(int i) {
+        if (i == 0) {
+            this.b.J0();
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i;
-        String str;
-        String str2;
-        p pVar = this.n;
-        if (pVar.n0) {
-            return;
-        }
-        Long l = pVar.I0;
-        long longValue = l != null ? l.longValue() : 0L;
-        String str3 = this.b;
-        if (str3 == null) {
-            str3 = jb6.n(editable.toString());
-        }
-        int a = a(str3);
-        boolean z = a >= 0;
-        String str4 = pVar.D0.invoice.currency;
-        str4.getClass();
-        i = 10;
-        switch (str4) {
-            case "BHD":
-            case "IQD":
-            case "JOD":
-            case "KWD":
-            case "LYD":
-            case "OMR":
-            case "TND":
-                i = 1000;
-                break;
-            case "BIF":
-            case "BYR":
-            case "CLP":
-            case "CVE":
-            case "DJF":
-            case "GNF":
-            case "ISK":
-            case "JPY":
-            case "KMF":
-            case "KRW":
-            case "MGA":
-            case "PYG":
-            case "RWF":
-            case "UGX":
-            case "UYI":
-            case "VND":
-            case "VUV":
-            case "XAF":
-            case "XOF":
-            case "XPF":
-                i = 1;
-                break;
-            case "CLF":
-                i = 10000;
-                break;
-            case "MRO":
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r14v10 */
+    /* JADX WARN: Type inference failed for: r14v3 */
+    /* JADX WARN: Type inference failed for: r14v4 */
+    /* JADX WARN: Type inference failed for: r14v6 */
+    /* JADX WARN: Type inference failed for: r14v7, types: [org.telegram.tgnet.TLRPC$UserFull] */
+    /* JADX WARN: Type inference failed for: r14v9 */
+    /* JADX WARN: Type inference failed for: r5v20, types: [java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r5v21, types: [java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r5v8, types: [ad7] */
+    /* JADX WARN: Type inference failed for: r8v10 */
+    /* JADX WARN: Type inference failed for: r8v11 */
+    /* JADX WARN: Type inference failed for: r8v12, types: [java.lang.Object, org.telegram.tgnet.tl.TL_stories$PeerStories] */
+    /* JADX WARN: Type inference failed for: r8v17 */
+    /* JADX WARN: Type inference failed for: r8v6 */
+    /* JADX WARN: Type inference failed for: r8v7 */
+    @Override // ed
+    public final void u(hd hdVar, int i) {
+        TLRPC.ChatFull chatFull;
+        ?? r8;
+        ?? r14;
+        TL_stories.StoryItem storyItem;
+        byte b = this.a;
+        y28 y28Var = this.b;
+        switch (b) {
+            case 0:
+                q18 q18Var = y28Var.R1;
+                if (q18Var != null) {
+                    q18Var.E();
+                    break;
+                }
                 break;
             default:
-                i = 100;
+                x28 x28Var = y28Var.E1;
+                TLRPC.ChatFull chatFull2 = null;
+                if (x28Var.f && (storyItem = x28Var.a) != null) {
+                    TLRPC.MessageMedia messageMedia = storyItem.media;
+                    if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
+                        TLRPC.InputGroupCall inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
+                        t76 t76Var = t76.N;
+                        if (t76Var != null && t76Var.i(inputGroupCall)) {
+                            t76.N.h();
+                            if (t76.N != null) {
+                                t76.N = null;
+                                kk7.f(y28Var.s2).k(kk7.F2, Long.valueOf(t76.N.j()));
+                            }
+                        }
+                    }
+                }
+                TL_stories.StoryItem storyItem2 = x28Var.a;
+                if (storyItem2 instanceof q1b) {
+                    s1b s1bVar = ((q1b) storyItem2).a;
+                    TLRPC.MessageMedia messageMedia2 = storyItem2.media;
+                    s1bVar.getClass();
+                    s1bVar.F(new ArrayList(Arrays.asList(messageMedia2)));
+                } else if (storyItem2 != null) {
+                    y28 y28Var2 = x28Var.k;
+                    g2b g2bVar = y28Var2.I1;
+                    long j = y28Var2.r1;
+                    vf6 vf6Var = g2bVar.i;
+                    int i2 = g2bVar.a;
+                    if (!(storyItem2 instanceof TL_stories.TL_storyItemDeleted)) {
+                        int i3 = 0;
+                        while (i3 < 2) {
+                            if (i3 == 0) {
+                                TLRPC.ChatFull chatFull3 = chatFull2;
+                                chatFull = chatFull3;
+                                r8 = (TL_stories.PeerStories) vf6Var.f(j);
+                                r14 = chatFull3;
+                            } else if (j >= 0) {
+                                TLRPC.UserFull W1 = na7.q1(i2).W1(j);
+                                if (W1 != null) {
+                                    r14 = W1;
+                                    r8 = W1.stories;
+                                    chatFull = chatFull2;
+                                } else {
+                                    chatFull = chatFull2;
+                                    r14 = W1;
+                                    r8 = chatFull;
+                                }
+                            } else {
+                                TLRPC.ChatFull L0 = na7.q1(i2).L0(-j);
+                                if (L0 != null) {
+                                    chatFull = L0;
+                                    r8 = L0.stories;
+                                    r14 = chatFull2;
+                                } else {
+                                    TLRPC.ChatFull chatFull4 = chatFull2;
+                                    chatFull = L0;
+                                    r8 = chatFull4;
+                                    r14 = chatFull4;
+                                }
+                            }
+                            if (r8 != 0) {
+                                int i4 = 0;
+                                while (true) {
+                                    if (i4 < r8.stories.size()) {
+                                        if (r8.stories.get(i4).id == storyItem2.id) {
+                                            r8.stories.remove(i4);
+                                            if (r8.stories.size() == 0) {
+                                                if (!g2bVar.L(j)) {
+                                                    vf6Var.l(j);
+                                                    g2bVar.g.remove(r8);
+                                                    g2bVar.h.remove(r8);
+                                                }
+                                                if (j > 0) {
+                                                    TLRPC.User V1 = na7.q1(i2).V1(Long.valueOf(j));
+                                                    if (V1 != null) {
+                                                        V1.stories_unavailable = true;
+                                                    }
+                                                } else {
+                                                    TLRPC.Chat K0 = na7.q1(i2).K0(Long.valueOf(-j));
+                                                    if (K0 != null) {
+                                                        K0.stories_unavailable = true;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            i4++;
+                                        }
+                                    }
+                                }
+                            }
+                            if (chatFull != null) {
+                                ad7.Y(i2).K1(chatFull, false);
+                            }
+                            if (r14 != 0) {
+                                ad7.Y(i2).g2(r14, false);
+                            }
+                            i3++;
+                            chatFull2 = null;
+                        }
+                        TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
+                        tL_stories_deleteStories.peer = na7.q1(i2).h1(j);
+                        tL_stories_deleteStories.id.add(Integer.valueOf(storyItem2.id));
+                        ConnectionsManager.getInstance(i2).sendRequest(tL_stories_deleteStories, new i1b(g2bVar, (byte) 4));
+                        s2b s2bVar = g2bVar.k;
+                        s2bVar.b.a.c(new q2b(s2bVar, j, storyItem2.id, (byte) 1));
+                        kk7.f(i2).k(kk7.x5, new Object[0]);
+                        na7.q1(i2).z();
+                        g2bVar.n0(j, Arrays.asList(storyItem2));
+                    }
+                } else {
+                    f2b f2bVar = x28Var.b;
+                    if (f2bVar != null) {
+                        f2bVar.a();
+                    }
+                }
+                y28Var.h1();
+                if (!y28Var.A1 || y28Var.q1 != 0) {
+                    int i5 = y28Var.z1;
+                    int i6 = y28Var.q1;
+                    if (i5 >= i6) {
+                        y28Var.z1 = i6 - 1;
+                    } else if (i5 < 0) {
+                        y28Var.z1 = 0;
+                    }
+                    y28Var.c1(false);
+                    m8b m8bVar = y28Var.z0;
+                    if (m8bVar != null) {
+                        m8bVar.m();
+                        break;
+                    }
+                } else {
+                    ((d8b) y28Var.G1).j();
+                    break;
+                }
                 break;
         }
-        String str5 = "";
-        if (a >= 0) {
-            str = str3.substring(0, a);
-            str2 = str3.substring(a + 1);
-        } else {
-            str = str3;
-            str2 = "";
-        }
-        long longValue2 = Utilities.A(r58.h(str, false)).longValue() * i;
-        long longValue3 = Utilities.A(r58.h(str2, false)).longValue();
-        String valueOf = String.valueOf(longValue3);
-        String valueOf2 = String.valueOf(i - 1);
-        if (a > 0 && valueOf.length() > valueOf2.length()) {
-            longValue3 = Utilities.A(this.e - a < valueOf.length() ? valueOf.substring(0, valueOf2.length()) : valueOf.substring(valueOf.length() - valueOf2.length())).longValue();
-        }
-        Long valueOf3 = Long.valueOf(longValue2 + longValue3);
-        pVar.I0 = valueOf3;
-        if (pVar.D0.invoice.max_tip_amount != 0) {
-            long longValue4 = valueOf3.longValue();
-            long j = pVar.D0.invoice.max_tip_amount;
-            if (longValue4 > j) {
-                pVar.I0 = Long.valueOf(j);
-            }
-        }
-        int selectionStart = pVar.f[0].getSelectionStart();
-        pVar.n0 = true;
-        long longValue5 = pVar.I0.longValue();
-        EditTextBoldCursor[] editTextBoldCursorArr = pVar.f;
-        if (longValue5 == 0) {
-            editTextBoldCursorArr[0].setText("");
-        } else {
-            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[0];
-            str5 = jb6.D0().q(pVar.I0.longValue(), false, z, true, pVar.D0.invoice.currency);
-            editTextBoldCursor.setText(str5);
-        }
-        if (longValue < pVar.I0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
-            EditTextBoldCursor editTextBoldCursor2 = pVar.f[0];
-            editTextBoldCursor2.setSelection(Math.min(selectionStart, editTextBoldCursor2.length()));
-        } else if (this.c && this.d != pVar.f[0].length()) {
-            EditTextBoldCursor editTextBoldCursor3 = pVar.f[0];
-            editTextBoldCursor3.setSelection(Math.max(0, Math.min(selectionStart, editTextBoldCursor3.length())));
-        } else if (this.f || !z || a < 0) {
-            EditTextBoldCursor editTextBoldCursor4 = pVar.f[0];
-            editTextBoldCursor4.setSelection(editTextBoldCursor4.length());
-        } else {
-            int a2 = a(str5);
-            EditTextBoldCursor[] editTextBoldCursorArr2 = pVar.f;
-            if (a2 > 0) {
-                editTextBoldCursorArr2[0].setSelection(a2 + 1);
-            } else {
-                EditTextBoldCursor editTextBoldCursor5 = editTextBoldCursorArr2[0];
-                editTextBoldCursor5.setSelection(editTextBoldCursor5.length());
-            }
-        }
-        this.f = z;
-        pVar.R0();
-        this.b = null;
-        pVar.n0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.n.n0) {
-            return;
-        }
-        this.a = !TextUtils.isEmpty(charSequence);
-        this.b = null;
-        this.d = charSequence == null ? 0 : charSequence.length();
-        this.e = i;
-        boolean z = i2 == 1 && i3 == 0;
-        this.c = z;
-        if (!z) {
-            return;
-        }
-        String n = jb6.n(charSequence);
-        char charAt = n.charAt(i);
-        int a = a(n);
-        String substring = a >= 0 ? n.substring(a + 1) : "";
-        long longValue = Utilities.A(r58.h(substring, false)).longValue();
-        if ((charAt >= '0' && charAt <= '9') || (substring.length() != 0 && longValue == 0)) {
-            if (a <= 0 || i <= a || longValue != 0) {
-                return;
-            }
-            this.b = n.substring(0, a - 1);
-            return;
-        }
-        while (true) {
-            int i4 = i - 1;
-            if (i4 < 0) {
-                return;
-            }
-            char charAt2 = n.charAt(i4);
-            if (charAt2 >= '0' && charAt2 <= '9') {
-                this.b = n.substring(0, i4).concat(n.substring(i));
-                return;
-            }
-            i = i4;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

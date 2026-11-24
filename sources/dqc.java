@@ -1,29 +1,20 @@
 // default package
 
-import android.view.animation.OvershootInterpolator;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class dqc {
+    public static do3 a;
+    public static final int[] b = new int[kk7.M1];
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dqc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ aqc b;
-
-    public /* synthetic */ dqc(aqc aqcVar, byte b) {
-        this.a = b;
-        this.b = aqcVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        aqc aqcVar = this.b;
-        switch (b) {
-            case 0:
-                aqcVar.animate().rotation(0.0f).setDuration(120L).start();
-                break;
-            default:
-                aqcVar.animate().scaleX(1.0f).scaleY(1.0f).setDuration(260L).setInterpolator(new OvershootInterpolator(2.0f)).start();
-                break;
+    static {
+        int i = 0;
+        while (true) {
+            int[] iArr = b;
+            if (i >= 129) {
+                return;
+            }
+            iArr[i] = (int) (Math.max(0.0d, Math.min(1.0d, 7.5d - Math.sqrt(i))) * 255.0d);
+            i++;
         }
     }
 }

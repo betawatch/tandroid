@@ -1,208 +1,81 @@
 // default package
 
-import android.text.Editable;
-import android.text.Spannable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.CharacterStyle;
-import android.text.style.ParagraphStyle;
-import android.text.style.SuggestionSpan;
-import android.util.Pair;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class fj implements TextWatcher {
-    public final /* synthetic */ byte a = 2;
-    public int b;
-    public boolean c;
-    public Object d;
+public final class fj {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public fj(su3 su3Var, int i, boolean z) {
-        this.d = su3Var;
-        this.b = i;
-        this.c = z;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                hk hkVar = (hk) this.d;
-                if (!this.c) {
-                    int length = editable.length();
-                    int i = this.b;
-                    if (length > i) {
-                        this.c = true;
-                        editable.delete(i, editable.length());
-                        gm.z3(hkVar);
-                        try {
-                            hkVar.performHapticFeedback(3, 2);
-                        } catch (Exception unused) {
-                        }
-                        this.c = false;
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                int i2 = this.b;
-                su3 su3Var = (su3) this.d;
-                ru3 ru3Var = su3Var.d;
-                if (!su3Var.c) {
-                    if (i2 > 0 && editable != null && editable.length() > i2) {
-                        su3Var.c = true;
-                        ru3Var.setText(editable.subSequence(0, i2));
-                        ru3Var.setSelection(ru3Var.length());
-                        su3Var.c = false;
-                    }
-                    su3Var.b(editable);
-                }
-                if (!this.c) {
-                    while (true) {
-                        int indexOf = editable.toString().indexOf("\n");
-                        if (indexOf < 0) {
-                            break;
-                        } else {
-                            editable.delete(indexOf, indexOf + 1);
-                        }
-                    }
-                }
-                break;
-            case 2:
-                break;
-            default:
-                pf6 pf6Var = (pf6) this.d;
-                l7 l7Var = pf6Var.c;
-                if (!this.c) {
-                    pf6Var.p(true);
-                    gm.r(pf6Var.W);
-                    pf6Var.n(false);
-                    if (TextUtils.isEmpty(editable)) {
-                        pf6Var.E = false;
-                    }
-                    if (!pf6Var.o(editable.toString())) {
-                        pf6Var.r(true);
-                        this.c = true;
-                        boolean z = l7Var.getSelectionEnd() >= l7Var.getText().length();
-                        if (!pf6Var.E) {
-                            String str = pf6Var.L;
-                            l7Var.setText(str.substring(0, Utilities.j(this.b, str.length(), 0)));
-                            if (z) {
-                                l7Var.setSelection(l7Var.getText().length());
-                            }
-                        }
-                        this.c = false;
-                        break;
-                    }
-                }
-                break;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public fj(wjb wjbVar) {
+        this(r11, r12, r13, r14, r15, r16, r17, r18, r19);
+        int i;
+        int w0;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        if (wjbVar != null) {
+            int f = wjbVar.f(bkb.i5);
+            int f2 = wjbVar.f(bkb.g5);
+            wjbVar.f(bkb.zj);
+            int f3 = wjbVar.f(bkb.Dj);
+            int f4 = wjbVar.f(bkb.D8);
+            int f5 = wjbVar.f(bkb.F8);
+            int f6 = wjbVar.f(bkb.h6);
+            int f7 = wjbVar.f(bkb.Ii);
+            int f8 = wjbVar.f(bkb.Ei);
+            w0 = wjbVar.f(bkb.Gi);
+            i = f;
+            i2 = f2;
+            i3 = f3;
+            i4 = f4;
+            i5 = f5;
+            i6 = f6;
+            i7 = f7;
+            i8 = f8;
+        } else {
+            int w02 = bkb.w0(null, bkb.i5, false);
+            int w03 = bkb.w0(null, bkb.g5, false);
+            bkb.w0(null, bkb.zj, false);
+            int w04 = bkb.w0(null, bkb.Dj, false);
+            int w05 = bkb.w0(null, bkb.D8, false);
+            int w06 = bkb.w0(null, bkb.F8, false);
+            int w07 = bkb.w0(null, bkb.h6, false);
+            int w08 = bkb.w0(null, bkb.Ii, false);
+            int w09 = bkb.w0(null, bkb.Ei, false);
+            i = w02;
+            w0 = bkb.w0(null, bkb.Gi, false);
+            i2 = w03;
+            i3 = w04;
+            i4 = w05;
+            i5 = w06;
+            i6 = w07;
+            i7 = w08;
+            i8 = w09;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                su3 su3Var = (su3) this.d;
-                if (!su3Var.c) {
-                    su3Var.r = false;
-                    break;
-                }
-                break;
-            case 2:
-                if (!this.c) {
-                    HashMap hashMap = new HashMap();
-                    boolean z = charSequence instanceof Spannable;
-                    if (z) {
-                        Spannable spannable = (Spannable) charSequence;
-                        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spannable.getSpans(0, spannable.length(), CharacterStyle.class);
-                        ParagraphStyle[] paragraphStyleArr = (ParagraphStyle[]) spannable.getSpans(0, spannable.length(), ParagraphStyle.class);
-                        if (characterStyleArr != null && characterStyleArr.length > 0) {
-                            for (CharacterStyle characterStyle : characterStyleArr) {
-                                if (characterStyle != null && !(characterStyle instanceof SuggestionSpan)) {
-                                    hashMap.put(characterStyle, new Pair(Integer.valueOf(spannable.getSpanStart(characterStyle)), Integer.valueOf(spannable.getSpanEnd(characterStyle))));
-                                }
-                            }
-                        }
-                        if (paragraphStyleArr != null && paragraphStyleArr.length > 0) {
-                            for (ParagraphStyle paragraphStyle : paragraphStyleArr) {
-                                if (paragraphStyle != null && !(paragraphStyle instanceof SuggestionSpan)) {
-                                    hashMap.put(paragraphStyle, new Pair(Integer.valueOf(spannable.getSpanStart(paragraphStyle)), Integer.valueOf(spannable.getSpanEnd(paragraphStyle))));
-                                }
-                            }
-                        }
-                    }
-                    this.d = hashMap;
-                    this.b = z ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-                    break;
-                }
-                break;
-            default:
-                if (!this.c && charSequence != null && ((pf6) this.d).L != null) {
-                    this.b = pf6.s(charSequence.toString()).length();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        switch (this.a) {
-            case 2:
-                if (!this.c) {
-                    boolean z = charSequence instanceof Spannable;
-                    int length = z ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-                    HashMap hashMap = (HashMap) this.d;
-                    if (hashMap != null) {
-                        if ((length > 0 || this.b > 0) && i == 0 && i2 == i3) {
-                            this.c = true;
-                            if (z) {
-                                Spannable spannable = (Spannable) charSequence;
-                                for (Map.Entry entry : hashMap.entrySet()) {
-                                    if (spannable.getSpanStart(entry.getKey()) == -1) {
-                                        spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
-                                    }
-                                }
-                            }
-                            this.c = false;
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    public /* synthetic */ fj() {
-    }
-
-    public fj(int i, hk hkVar) {
-        this.b = i;
-        this.d = hkVar;
-    }
-
-    public fj(pf6 pf6Var) {
-        this.d = pf6Var;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void c(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void d(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void e(int i, int i2, int i3, CharSequence charSequence) {
+    public fj(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+        this.f = i6;
+        this.g = i7;
+        this.h = i8;
     }
 }

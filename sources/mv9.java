@@ -1,24 +1,13 @@
 // default package
 
-import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class mv9 extends bf5 {
-    public final /* synthetic */ sj3 f0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mv9(sj3 sj3Var, r59 r59Var, Activity activity, int i) {
-        super(r59Var, activity, i);
-        this.f0 = sj3Var;
-    }
-
-    @Override // l7c
-    public final void O(boolean z) {
-        super.O(z);
-        iv9 iv9Var = this.f0.v0;
-        iv9Var.e(false, z);
-        iv9Var.d.setText(jb6.M0(2131747901, null));
-        iv9Var.e.setVisibility(8);
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class mv9 {
+    public static final wk4 d = new wk4(new v39(new tj1(':', (byte) 0), (byte) 12));
+    public static final wk4 e = new wk4(new v39(new tj1('*', (byte) 0), (byte) 12));
+    public final ArrayList a = new ArrayList();
+    public byte b = 0;
+    public int c;
 }

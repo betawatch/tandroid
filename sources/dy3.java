@@ -1,50 +1,89 @@
 // default package
 
 import android.text.InputFilter;
-import android.text.Spanned;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
+import android.util.SparseArray;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class dy3 implements InputFilter {
+public final class dy3 extends efe {
     public final TextView a;
-    public cy3 b;
+    public final sw3 b;
+    public boolean c = true;
 
     public dy3(TextView textView) {
         this.a = textView;
+        this.b = new sw3(textView);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0016, code lost:
-    
-        if (r1 != 3) goto L24;
-     */
-    @Override // android.text.InputFilter
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        TextView textView = this.a;
-        if (!textView.isInEditMode()) {
-            int b = wx3.a().b();
-            if (b != 0) {
-                if (b == 1) {
-                    if ((i4 != 0 || i3 != 0 || spanned.length() != 0 || charSequence != textView.getText()) && charSequence != null) {
-                        if (i != 0 || i2 != charSequence.length()) {
-                            charSequence = charSequence.subSequence(i, i2);
-                        }
-                        return wx3.a().e(0, charSequence.length(), charSequence);
-                    }
+    @Override // efe
+    public final InputFilter[] a(InputFilter[] inputFilterArr) {
+        if (!this.c) {
+            SparseArray sparseArray = new SparseArray(1);
+            for (int i = 0; i < inputFilterArr.length; i++) {
+                InputFilter inputFilter = inputFilterArr[i];
+                if (inputFilter instanceof sw3) {
+                    sparseArray.put(i, inputFilter);
                 }
             }
-            wx3 a = wx3.a();
-            cy3 cy3Var = this.b;
-            if (cy3Var == null) {
-                cy3Var = new cy3(textView, this);
-                this.b = cy3Var;
+            if (sparseArray.size() == 0) {
+                return inputFilterArr;
             }
-            a.f(cy3Var);
-            return charSequence;
+            int length = inputFilterArr.length;
+            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - sparseArray.size()];
+            int i2 = 0;
+            for (int i3 = 0; i3 < length; i3++) {
+                if (sparseArray.indexOfKey(i3) < 0) {
+                    inputFilterArr2[i2] = inputFilterArr[i3];
+                    i2++;
+                }
+            }
+            return inputFilterArr2;
         }
-        return charSequence;
+        int length2 = inputFilterArr.length;
+        int i4 = 0;
+        while (true) {
+            sw3 sw3Var = this.b;
+            if (i4 >= length2) {
+                InputFilter[] inputFilterArr3 = new InputFilter[inputFilterArr.length + 1];
+                System.arraycopy(inputFilterArr, 0, inputFilterArr3, 0, length2);
+                inputFilterArr3[length2] = sw3Var;
+                return inputFilterArr3;
+            }
+            if (inputFilterArr[i4] == sw3Var) {
+                return inputFilterArr;
+            }
+            i4++;
+        }
+    }
+
+    @Override // efe
+    public final void b(boolean z) {
+        if (z) {
+            d();
+        }
+    }
+
+    @Override // efe
+    public final void c(boolean z) {
+        this.c = z;
+        d();
+        TextView textView = this.a;
+        textView.setFilters(a(textView.getFilters()));
+    }
+
+    public final void d() {
+        TextView textView = this.a;
+        TransformationMethod transformationMethod = textView.getTransformationMethod();
+        if (this.c) {
+            if (!(transformationMethod instanceof ky3) && !(transformationMethod instanceof PasswordTransformationMethod)) {
+                transformationMethod = new ky3(transformationMethod);
+            }
+        } else if (transformationMethod instanceof ky3) {
+            transformationMethod = ((ky3) transformationMethod).a;
+        }
+        textView.setTransformationMethod(transformationMethod);
     }
 }

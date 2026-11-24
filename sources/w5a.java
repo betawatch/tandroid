@@ -1,11 +1,76 @@
 // default package
 
-import android.location.Location;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface w5a {
-    void Q();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class w5a {
+    public static final v5a Companion = new v5a();
+    public static final d06[] d = {null, null, cne.a(new fd8())};
+    public final a6a a;
+    public final onb b;
+    public final Map c;
 
-    void U(Location location);
+    public /* synthetic */ w5a(int i, a6a a6aVar, onb onbVar, Map map) {
+        if (1 != (i & 1)) {
+            are.a(i, 1, u5a.a.d());
+            throw null;
+        }
+        this.a = a6aVar;
+        if ((i & 2) == 0) {
+            this.b = null;
+        } else {
+            this.b = onbVar;
+        }
+        if ((i & 4) == 0) {
+            this.c = null;
+        } else {
+            this.c = map;
+        }
+    }
+
+    public static w5a a(w5a w5aVar, a6a a6aVar, onb onbVar, Map map, int i) {
+        if ((i & 1) != 0) {
+            a6aVar = w5aVar.a;
+        }
+        if ((i & 2) != 0) {
+            onbVar = w5aVar.b;
+        }
+        if ((i & 4) != 0) {
+            map = w5aVar.c;
+        }
+        w5aVar.getClass();
+        a6aVar.getClass();
+        return new w5a(a6aVar, onbVar, map);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof w5a)) {
+            return false;
+        }
+        w5a w5aVar = (w5a) obj;
+        return rp5.a(this.a, w5aVar.a) && rp5.a(this.b, w5aVar.b) && rp5.a(this.c, w5aVar.c);
+    }
+
+    public final int hashCode() {
+        int hashCode = this.a.hashCode() * 31;
+        onb onbVar = this.b;
+        int hashCode2 = (hashCode + (onbVar == null ? 0 : onbVar.hashCode())) * 31;
+        Map map = this.c;
+        return hashCode2 + (map != null ? map.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "SessionData(sessionDetails=" + this.a + ", backgroundTime=" + this.b + ", processDataMap=" + this.c + ')';
+    }
+
+    public w5a(a6a a6aVar, onb onbVar, Map map) {
+        a6aVar.getClass();
+        this.a = a6aVar;
+        this.b = onbVar;
+        this.c = map;
+    }
 }

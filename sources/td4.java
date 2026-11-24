@@ -1,403 +1,408 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.SurfaceTexture;
+import android.opengl.GLES20;
+import android.opengl.Matrix;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+import java.util.Locale;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract /* synthetic */ class td4 {
-    public static float A(float f, float f2, float f3, float f4) {
-        return ((f - f2) * f3) + f4;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class td4 extends do3 {
+    public final float[] E;
+    public final int[] F;
+    public boolean G;
+    public boolean H;
+    public final sl0 I;
+    public xl0 J;
+    public final wd4 K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public int Q;
+    public int R;
+    public int S;
+    public int T;
+    public boolean U;
+    public int V;
+    public int W;
+    public int X;
+    public int Y;
+    public final FloatBuffer Z;
+    public final SurfaceTexture a;
+    public boolean a0;
+    public EGL10 b;
+    public long b0;
+    public EGLDisplay c;
+    public final hza c0;
+    public EGLContext d;
+    public boolean d0;
+    public EGLSurface e;
+    public final Runnable e0;
+    public boolean f;
+    public final boolean h;
+    public volatile int n;
+    public volatile int r;
+    public Bitmap s;
+    public final int w;
+    public SurfaceTexture x;
+    public boolean y;
 
-    public static /* synthetic */ String B(int i) {
-        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? "null" : "FROSTED_FILTERED" : "FROSTED_GLASS" : "GLASS" : "BLURRED";
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void a(au5 au5Var, boolean z) {
-        ((View) au5Var).setVisibility(z ? 4 : 0);
-    }
-
-    public static int b(int i) {
-        int[] G = wi8.G(nm7.J1);
-        if (i < 0 || i >= G.length) {
-            return 0;
+    public td4(SurfaceTexture surfaceTexture, Bitmap bitmap, int i, boolean z, boolean z2, sl0 sl0Var, int i2, int i3) {
+        super("PhotoFilterGLThread", false);
+        this.E = new float[16];
+        this.F = new int[1];
+        this.e0 = new rd4(this, (byte) 1);
+        this.a = surfaceTexture;
+        this.n = i2;
+        this.r = i3;
+        this.s = bitmap;
+        this.w = i;
+        this.I = sl0Var;
+        boolean z3 = sl0Var != null;
+        this.H = z3;
+        if (z3) {
+            xl0 xl0Var = new xl0();
+            this.J = xl0Var;
+            sl0 sl0Var2 = xl0Var.t;
+            if (sl0Var2 != null && sl0Var2.m != null) {
+                sl0Var2.m = null;
+            }
+            xl0Var.t = sl0Var;
+            if (sl0Var != null && sl0Var.m != xl0Var) {
+                sl0Var.m = xl0Var;
+                sl0Var.d();
+            }
         }
-        return G[i];
+        this.h = false;
+        wd4 wd4Var = new wd4(false, null);
+        this.K = wd4Var;
+        wd4Var.i1 = z2;
+        float[] fArr = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f};
+        if (z) {
+            fArr[2] = 0.0f;
+            fArr[0] = 1.0f;
+            fArr[6] = 0.0f;
+            fArr[4] = 1.0f;
+        }
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
+        allocateDirect.order(ByteOrder.nativeOrder());
+        FloatBuffer asFloatBuffer = allocateDirect.asFloatBuffer();
+        this.Z = asFloatBuffer;
+        asFloatBuffer.put(fArr);
+        asFloatBuffer.position(0);
+        start();
     }
 
-    public static final boolean c(int i) {
-        return i == 3 || i == 4;
+    public final void a() {
+        if (this.d.equals(this.b.eglGetCurrentContext()) && this.e.equals(this.b.eglGetCurrentSurface(12377))) {
+            return;
+        }
+        EGL10 egl10 = this.b;
+        EGLDisplay eGLDisplay = this.c;
+        EGLSurface eGLSurface = this.e;
+        if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.d) || !w01.a) {
+            return;
+        }
+        b00.v(this.b, new StringBuilder("eglMakeCurrent failed "));
     }
 
-    public static /* synthetic */ String d(int i) {
-        switch (i) {
-            case 1:
-                return "Blues";
-            case 2:
-                return "Classic Rock";
-            case 3:
-                return "Country";
-            case 4:
-                return "Dance";
-            case 5:
-                return "Disco";
-            case 6:
-                return "Funk";
-            case 7:
-                return "Grunge";
-            case 8:
-                return "Hip-Hop";
-            case 9:
-                return "Jazz";
-            case 10:
-                return "Metal";
-            case 11:
-                return "New Age";
-            case 12:
-                return "Oldies";
-            case 13:
-                return "Other";
-            case 14:
-                return "Pop";
-            case 15:
-                return "R&B";
-            case 16:
-                return "Rap";
-            case 17:
-                return "Reggae";
-            case 18:
-                return "Rock";
-            case 19:
-                return "Techno";
-            case 20:
-                return "Industrial";
-            case 21:
-                return "Alternative";
-            case 22:
-                return "Ska";
-            case 23:
-                return "Death Metal";
-            case 24:
-                return "Pranks";
-            case 25:
-                return "Soundtrack";
-            case 26:
-                return "Euro-Techno";
-            case 27:
-                return "Ambient";
-            case 28:
-                return "Trip-Hop";
-            case 29:
-                return "Vocal";
-            case nm7.S /* 30 */:
-                return "Jazz+Funk";
-            case 31:
-                return "Fusion";
-            case 32:
-                return "Trance";
-            case 33:
-                return "Classical";
-            case 34:
-                return "Instrumental";
-            case 35:
-                return "Acid";
-            case 36:
-                return "House";
-            case 37:
-                return "Game";
-            case 38:
-                return "Sound Clip";
-            case 39:
-                return "Gospel";
-            case 40:
-                return "Noise";
-            case 41:
-                return "AlternRock";
-            case 42:
-                return "Bass";
-            case 43:
-                return "Soul";
-            case 44:
-                return "Punk";
-            case 45:
-                return "Space";
-            case 46:
-                return "Meditative";
-            case 47:
-                return "Instrumental Pop";
-            case 48:
-                return "Instrumental Rock";
-            case 49:
-                return "Ethnic";
-            case 50:
-                return "Gothic";
-            case nm7.n0 /* 51 */:
-                return "Darkwave";
-            case nm7.o0 /* 52 */:
-                return "Techno-Industrial";
-            case nm7.p0 /* 53 */:
-                return "Electronic";
-            case nm7.q0 /* 54 */:
-                return "Pop-Folk";
-            case nm7.r0 /* 55 */:
-                return "Eurodance";
-            case 56:
-                return "Dream";
-            case nm7.t0 /* 57 */:
-                return "Southern Rock";
-            case nm7.u0 /* 58 */:
-                return "Comedy";
-            case nm7.v0 /* 59 */:
-                return "Cult";
-            case nm7.w0 /* 60 */:
-                return "Gangsta";
-            case nm7.x0 /* 61 */:
-                return "Top 40";
-            case nm7.y0 /* 62 */:
-                return "Christian Rap";
-            case nm7.z0 /* 63 */:
-                return "Pop/Funk";
-            case 64:
-                return "Jungle";
-            case 65:
-                return "Native American";
-            case nm7.C0 /* 66 */:
-                return "Cabaret";
-            case nm7.D0 /* 67 */:
-                return "New Wave";
-            case nm7.E0 /* 68 */:
-                return "Psychadelic";
-            case nm7.F0 /* 69 */:
-                return "Rave";
-            case nm7.G0 /* 70 */:
-                return "Showtunes";
-            case nm7.H0 /* 71 */:
-                return "Trailer";
-            case nm7.I0 /* 72 */:
-                return "Lo-Fi";
-            case nm7.J0 /* 73 */:
-                return "Tribal";
-            case nm7.K0 /* 74 */:
-                return "Acid Punk";
-            case nm7.L0 /* 75 */:
-                return "Acid Jazz";
-            case nm7.M0 /* 76 */:
-                return "Polka";
-            case nm7.N0 /* 77 */:
-                return "Retro";
-            case nm7.O0 /* 78 */:
-                return "Musical";
-            case nm7.P0 /* 79 */:
-                return "Rock & Roll";
-            case 80:
-                return "Hard Rock";
-            case nm7.R0 /* 81 */:
-                return "Folk";
-            case nm7.S0 /* 82 */:
-                return "Folk-Rock";
-            case nm7.T0 /* 83 */:
-                return "National Folk";
-            case nm7.U0 /* 84 */:
-                return "Swing";
-            case nm7.V0 /* 85 */:
-                return "Fast Fusion";
-            case nm7.W0 /* 86 */:
-                return "Bebop";
-            case nm7.X0 /* 87 */:
-                return "Latin";
-            case nm7.Y0 /* 88 */:
-                return "Revival";
-            case nm7.Z0 /* 89 */:
-                return "Celtic";
-            case nm7.a1 /* 90 */:
-                return "Bluegrass";
-            case nm7.b1 /* 91 */:
-                return "Avantgarde";
-            case nm7.c1 /* 92 */:
-                return "Gothic Rock";
-            case nm7.d1 /* 93 */:
-                return "Progressive Rock";
-            case nm7.e1 /* 94 */:
-                return "Psychedelic Rock";
-            case nm7.f1 /* 95 */:
-                return "Symphonic Rock";
-            case 96:
-                return "Slow Rock";
-            case nm7.h1 /* 97 */:
-                return "Big Band";
-            case nm7.i1 /* 98 */:
-                return "Chorus";
-            case nm7.j1 /* 99 */:
-                return "Easy Listening";
-            case nm7.k1 /* 100 */:
-                return "Acoustic";
-            case 101:
-                return "Humour";
-            case nm7.m1 /* 102 */:
-                return "Speech";
-            case nm7.n1 /* 103 */:
-                return "Chanson";
-            case nm7.o1 /* 104 */:
-                return "Opera";
-            case nm7.p1 /* 105 */:
-                return "Chamber Music";
-            case nm7.q1 /* 106 */:
-                return "Sonata";
-            case nm7.r1 /* 107 */:
-                return "Symphony";
-            case nm7.s1 /* 108 */:
-                return "Booty Bass";
-            case nm7.t1 /* 109 */:
-                return "Primus";
-            case nm7.u1 /* 110 */:
-                return "Porn Groove";
-            case nm7.v1 /* 111 */:
-                return "Satire";
-            case nm7.w1 /* 112 */:
-                return "Slow Jam";
-            case nm7.x1 /* 113 */:
-                return "Club";
-            case nm7.y1 /* 114 */:
-                return "Tango";
-            case nm7.z1 /* 115 */:
-                return "Samba";
-            case nm7.A1 /* 116 */:
-                return "Folklore";
-            case nm7.B1 /* 117 */:
-                return "Ballad";
-            case nm7.C1 /* 118 */:
-                return "Power Ballad";
-            case nm7.D1 /* 119 */:
-                return "Rhythmic Soul";
-            case nm7.E1 /* 120 */:
-                return "Freestyle";
-            case 121:
-                return "Duet";
-            case nm7.F1 /* 122 */:
-                return "Punk Rock";
-            case nm7.G1 /* 123 */:
-                return "Drum Solo";
-            case nm7.H1 /* 124 */:
-                return "A capella";
-            case nm7.I1 /* 125 */:
-                return "Euro-House";
-            case nm7.J1 /* 126 */:
-                return "Dance Hall";
-            default:
-                throw null;
+    public final void b(boolean z, boolean z2, boolean z3) {
+        postRunnable(new sd4(this, z, z3, z2, (byte) 0));
+    }
+
+    public final void c(vd4 vd4Var) {
+        postRunnable(new vc4(this, vd4Var, (byte) 5));
+    }
+
+    public final void d() {
+        int i;
+        int i2;
+        if (this.a0 || (i = this.X) <= 0 || (i2 = this.Y) <= 0) {
+            return;
+        }
+        this.K.i(this.s, this.w, this.F[0], i, i2);
+        this.a0 = true;
+        wd4 wd4Var = this.K;
+        this.V = wd4Var.X0;
+        this.W = wd4Var.Y0;
+    }
+
+    public final boolean e(e4b e4bVar) {
+        int h;
+        int h2;
+        int a = e4bVar != null ? e4bVar.a() : 0;
+        String v2 = a == 1 ? gl.v2(null, R.raw.hdr2sdr_hlg) : a == 2 ? gl.v2(null, R.raw.hdr2sdr_pq) : "";
+        if (a != 0) {
+            h = wd4.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
+            h2 = wd4.h(35632, String.format(Locale.US, "%1$s\nvarying highp vec2 vTextureCoord;void main() {gl_FragColor = TEX(vTextureCoord);}", v2));
+        } else {
+            h = wd4.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
+            h2 = wd4.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replace("sampler2D", "samplerExternalOES"));
+        }
+        if (h == 0 || h2 == 0) {
+            return false;
+        }
+        int i = this.P;
+        if (i != 0) {
+            GLES20.glDeleteProgram(i);
+        }
+        int glCreateProgram = GLES20.glCreateProgram();
+        this.P = glCreateProgram;
+        GLES20.glAttachShader(glCreateProgram, h);
+        GLES20.glAttachShader(this.P, h2);
+        GLES20.glBindAttribLocation(this.P, 0, "position");
+        GLES20.glBindAttribLocation(this.P, 1, "inputTexCoord");
+        GLES20.glLinkProgram(this.P);
+        int[] iArr = new int[1];
+        GLES20.glGetProgramiv(this.P, 35714, iArr, 0);
+        int i2 = iArr[0];
+        int i3 = this.P;
+        if (i2 == 0) {
+            GLES20.glDeleteProgram(i3);
+            this.P = 0;
+        } else {
+            this.Q = GLES20.glGetAttribLocation(i3, "position");
+            this.S = GLES20.glGetAttribLocation(this.P, "inputTexCoord");
+            this.T = GLES20.glGetUniformLocation(this.P, "sourceImage");
+            this.R = GLES20.glGetUniformLocation(this.P, "videoMatrix");
+        }
+        return true;
+    }
+
+    public final void f(int i, int i2) {
+        if (this.J == null) {
+            return;
+        }
+        postRunnable(new qd4(this, i, i2, (byte) 2));
+    }
+
+    public final void finish() {
+        this.s = null;
+        if (this.e != null) {
+            EGL10 egl10 = this.b;
+            EGLDisplay eGLDisplay = this.c;
+            EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+            egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT);
+            this.b.eglDestroySurface(this.c, this.e);
+            this.e = null;
+        }
+        EGLContext eGLContext = this.d;
+        if (eGLContext != null) {
+            sl0 sl0Var = this.I;
+            if (sl0Var != null) {
+                synchronized (sl0Var.f) {
+                    if (sl0Var.g == eGLContext) {
+                        sl0Var.g = null;
+                    }
+                }
+            }
+            this.b.eglDestroyContext(this.c, this.d);
+            this.d = null;
+        }
+        EGLDisplay eGLDisplay2 = this.c;
+        if (eGLDisplay2 != null) {
+            this.b.eglTerminate(eGLDisplay2);
+            this.c = null;
+        }
+        SurfaceTexture surfaceTexture = this.a;
+        if (surfaceTexture != null) {
+            surfaceTexture.release();
         }
     }
 
-    public static float e(float f, float f2, float f3, float f4) {
-        return ((f + f2) / f3) + f4;
+    @Override // do3, java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        EGLContext eGLContext;
+        int i;
+        int i2;
+        xl0 xl0Var;
+        EGL10 egl10 = (EGL10) EGLContext.getEGL();
+        this.b = egl10;
+        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+        this.c = eglGetDisplay;
+        boolean z = false;
+        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+            if (w01.a) {
+                b00.v(this.b, new StringBuilder("eglGetDisplay failed "));
+            }
+            finish();
+        } else {
+            byte b = 2;
+            if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
+                int[] iArr = new int[1];
+                EGLConfig[] eGLConfigArr = new EGLConfig[1];
+                if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
+                    if (w01.a) {
+                        b00.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                    }
+                    finish();
+                } else if (iArr[0] > 0) {
+                    EGLConfig eGLConfig = eGLConfigArr[0];
+                    int[] iArr2 = {12440, 2, 12344};
+                    sl0 sl0Var = this.I;
+                    if (sl0Var != null) {
+                        synchronized (sl0Var.f) {
+                            eGLContext = sl0Var.g;
+                            if (eGLContext == null) {
+                                eGLContext = EGL10.EGL_NO_CONTEXT;
+                            }
+                        }
+                    } else {
+                        eGLContext = EGL10.EGL_NO_CONTEXT;
+                    }
+                    EGLContext eglCreateContext = this.b.eglCreateContext(this.c, eGLConfig, eGLContext, iArr2);
+                    this.d = eglCreateContext;
+                    if (eglCreateContext == null) {
+                        if (w01.a) {
+                            b00.v(this.b, new StringBuilder("eglCreateContext failed "));
+                        }
+                        finish();
+                    } else {
+                        sl0 sl0Var2 = this.I;
+                        if (sl0Var2 != null) {
+                            sl0Var2.a(eglCreateContext);
+                        }
+                        SurfaceTexture surfaceTexture = this.a;
+                        if (surfaceTexture != null) {
+                            EGLSurface eglCreateWindowSurface = this.b.eglCreateWindowSurface(this.c, eGLConfig, surfaceTexture, null);
+                            this.e = eglCreateWindowSurface;
+                            if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
+                                if (w01.a) {
+                                    b00.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                }
+                                finish();
+                            } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
+                                int h = wd4.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+                                int h2 = wd4.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
+                                if (h != 0 && h2 != 0) {
+                                    int glCreateProgram = GLES20.glCreateProgram();
+                                    this.L = glCreateProgram;
+                                    GLES20.glAttachShader(glCreateProgram, h);
+                                    GLES20.glAttachShader(this.L, h2);
+                                    GLES20.glBindAttribLocation(this.L, 0, "position");
+                                    GLES20.glBindAttribLocation(this.L, 1, "inputTexCoord");
+                                    GLES20.glLinkProgram(this.L);
+                                    int[] iArr3 = new int[1];
+                                    GLES20.glGetProgramiv(this.L, 35714, iArr3, 0);
+                                    int i3 = iArr3[0];
+                                    int i4 = this.L;
+                                    if (i3 == 0) {
+                                        GLES20.glDeleteProgram(i4);
+                                        this.L = 0;
+                                    } else {
+                                        this.M = GLES20.glGetAttribLocation(i4, "position");
+                                        this.N = GLES20.glGetAttribLocation(this.L, "inputTexCoord");
+                                        this.O = GLES20.glGetUniformLocation(this.L, "sourceImage");
+                                    }
+                                    if (e(null)) {
+                                        Bitmap bitmap = this.s;
+                                        if (bitmap != null) {
+                                            i = bitmap.getWidth();
+                                            i2 = this.s.getHeight();
+                                        } else {
+                                            i = this.X;
+                                            i2 = this.Y;
+                                        }
+                                        int i5 = i;
+                                        int i6 = i2;
+                                        if (this.c0 != null) {
+                                            GLES20.glGenTextures(1, this.F, 0);
+                                            Matrix.setIdentityM(this.E, 0);
+                                            SurfaceTexture surfaceTexture2 = new SurfaceTexture(this.F[0]);
+                                            this.x = surfaceTexture2;
+                                            surfaceTexture2.setOnFrameAvailableListener(new ha1(this, (byte) 1));
+                                            GLES20.glBindTexture(36197, this.F[0]);
+                                            GLES20.glTexParameterf(36197, 10240, 9729.0f);
+                                            GLES20.glTexParameterf(36197, 10241, 9728.0f);
+                                            GLES20.glTexParameteri(36197, 10242, 33071);
+                                            GLES20.glTexParameteri(36197, 10243, 33071);
+                                            gl.c3(new rd4(this, b));
+                                        }
+                                        if (this.H && (xl0Var = this.J) != null && !xl0Var.b(this.n / this.r, this.I.a ? 1 : 0)) {
+                                            fa4.d("Failed to create uiBlurFramebuffer");
+                                            this.H = false;
+                                            this.J = null;
+                                        }
+                                        if (this.K.a()) {
+                                            if (i5 != 0 && i6 != 0) {
+                                                this.K.i(this.s, this.w, this.F[0], i5, i6);
+                                                this.a0 = true;
+                                                wd4 wd4Var = this.K;
+                                                this.V = wd4Var.X0;
+                                                this.W = wd4Var.Y0;
+                                            }
+                                            z = true;
+                                        } else {
+                                            finish();
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (w01.a) {
+                                    b00.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                }
+                                finish();
+                            }
+                        } else {
+                            finish();
+                        }
+                    }
+                } else {
+                    if (w01.a) {
+                        fa4.d("eglConfig not initialized");
+                    }
+                    finish();
+                }
+            } else {
+                if (w01.a) {
+                    b00.v(this.b, new StringBuilder("eglInitialize failed "));
+                }
+                finish();
+            }
+        }
+        this.f = z;
+        super.run();
     }
 
-    public static int f(int i, int i2, int i3, int i4) {
-        return ((i - i2) - i3) - i4;
-    }
-
-    public static int g(int i, int i2, int i3, ArrayList arrayList) {
-        arrayList.add(Integer.valueOf(i));
-        return i2 + i3;
-    }
-
-    public static int h(tk4 tk4Var, int i) {
-        return tk4Var.c(tk4Var.getMeasuredWidth()) + i;
-    }
-
-    public static int i(Float f, float f2) {
-        return gm.L(f.floatValue() * f2);
-    }
-
-    public static Bundle j(int i, String str, String str2, boolean z) {
-        Bundle bundle = new Bundle();
-        bundle.putBoolean(str, z);
-        bundle.putInt(str2, i);
-        return bundle;
-    }
-
-    public static ImageView k(Context context, int i) {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(i);
-        return imageView;
-    }
-
-    public static LinearLayout l(Activity activity, int i) {
-        LinearLayout linearLayout = new LinearLayout(activity);
-        linearLayout.setOrientation(i);
-        return linearLayout;
-    }
-
-    public static Object m(int i, ArrayList arrayList) {
-        return arrayList.remove(arrayList.size() - i);
-    }
-
-    public static String n(int i, int i2, String str) {
-        return i + str + i2;
-    }
-
-    public static String o(int i, String str, String str2) {
-        return str + i + str2;
-    }
-
-    public static String p(String str, String str2) {
-        return str + str2;
-    }
-
-    public static String q(String str, String str2, String str3) {
-        return str + str2 + str3;
-    }
-
-    public static String r(String str, String str2, String str3, String str4) {
-        return str + str2 + str3 + str4;
-    }
-
-    public static StringBuilder s(String str) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        return sb;
-    }
-
-    public static ArrayList t(vh6 vh6Var, long j) {
-        ArrayList arrayList = new ArrayList();
-        vh6Var.k(arrayList, j);
-        return arrayList;
-    }
-
-    public static ArrayList u(k47 k47Var) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(k47Var);
-        return arrayList;
-    }
-
-    public static void v(float f, int i, int i2, TextView textView, String str) {
-        textView.setText(jb6.M0(i, str));
-        textView.setTextSize(i2, f);
-    }
-
-    public static void w(int i, ArrayList arrayList) {
-        arrayList.remove(arrayList.size() - i);
-    }
-
-    public static void x(TextView textView, int i, ylb ylbVar, int i2, float f) {
-        anb.X(textView, i, ylbVar);
-        textView.setTextSize(i2, f);
-        textView.setTypeface(gm.o());
-    }
-
-    public static float y(float f, float f2, float f3, float f4) {
-        return f4 - ((f - f2) / f3);
-    }
-
-    public static float z(float f, float f2, float f3, float f4) {
-        return (f - f2) * f3 * f4;
+    public td4(SurfaceTexture surfaceTexture, hza hzaVar, e4b e4bVar, sl0 sl0Var, int i, int i2) {
+        super("VideoFilterGLThread", false);
+        this.E = new float[16];
+        this.F = new int[1];
+        this.e0 = new rd4(this, (byte) 1);
+        this.a = surfaceTexture;
+        this.n = i;
+        this.r = i2;
+        this.c0 = hzaVar;
+        this.I = sl0Var;
+        boolean z = sl0Var != null;
+        this.H = z;
+        if (z) {
+            xl0 xl0Var = new xl0();
+            this.J = xl0Var;
+            sl0 sl0Var2 = xl0Var.t;
+            if (sl0Var2 != null && sl0Var2.m != null) {
+                sl0Var2.m = null;
+            }
+            xl0Var.t = sl0Var;
+            if (sl0Var != null && sl0Var.m != xl0Var) {
+                sl0Var.m = xl0Var;
+                sl0Var.d();
+            }
+        }
+        this.h = true;
+        this.K = new wd4(true, e4bVar);
+        start();
     }
 }

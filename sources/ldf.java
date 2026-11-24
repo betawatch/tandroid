@@ -1,39 +1,107 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ldf extends wgf {
-    private static final ldf zzb;
-    private int zzd;
-    private String zze = "";
-    private long zzf;
-    private long zzg;
-    private mdf zzh;
+import java.util.AbstractList;
+import java.util.Collection;
+import java.util.List;
+import java.util.RandomAccess;
 
-    static {
-        ldf ldfVar = new ldf();
-        zzb = ldfVar;
-        wgf.e(ldf.class, ldfVar);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class ldf extends AbstractList implements dff {
+    public boolean a;
+
+    public ldf(boolean z) {
+        this.a = z;
     }
 
-    @Override // wgf
-    public final Object h(int i, wgf wgfVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        h();
+        return super.add(obj);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public boolean addAll(int i, Collection collection) {
+        h();
+        return super.addAll(i, collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        h();
+        super.clear();
+    }
+
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        if (i2 == 2) {
-            return new tif(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဂ\u0001\u0003ဂ\u0002\u0004ဉ\u0003", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh"});
+        if (!(obj instanceof List)) {
+            return false;
         }
-        if (i2 == 3) {
-            return new ldf();
+        if (!(obj instanceof RandomAccess)) {
+            return super.equals(obj);
         }
-        if (i2 == 4) {
-            return new xaf(zzb);
+        List list = (List) obj;
+        int size = size();
+        if (size != list.size()) {
+            return false;
         }
-        if (i2 != 5) {
-            return null;
+        for (int i = 0; i < size; i++) {
+            if (!get(i).equals(list.get(i))) {
+                return false;
+            }
         }
-        return zzb;
+        return true;
+    }
+
+    public final void h() {
+        if (this.a) {
+            return;
+        }
+        fvc.b();
+    }
+
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public int hashCode() {
+        int size = size();
+        int i = 1;
+        for (int i2 = 0; i2 < size; i2++) {
+            i = (i * 31) + get(i2).hashCode();
+        }
+        return i;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public abstract Object remove(int i);
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean remove(Object obj) {
+        h();
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
+            return false;
+        }
+        remove(indexOf);
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean removeAll(Collection collection) {
+        h();
+        return super.removeAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean retainAll(Collection collection) {
+        h();
+        return super.retainAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        h();
+        return super.addAll(collection);
     }
 }

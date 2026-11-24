@@ -16,7 +16,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class fb implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ byte a;
@@ -27,11 +27,11 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
         this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0429  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0441  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x04a5  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x04b2  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0456  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0427  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x043f  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x04b0  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0454  */
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -48,7 +48,7 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                 int i = height - gbVar.i();
                 int i2 = gbVar.i;
                 if (i != i2 - gbVar.k && height != i2 && gbVar.m == null) {
-                    if (gbVar.b() && Math.abs(gbVar.i - height) >= gm.L(20.0f)) {
+                    if (gbVar.b() && Math.abs(gbVar.i - height) >= gl.L(20.0f)) {
                         if (gbVar.i != -1 && gbVar.j == gbVar.c.getHeight()) {
                             boolean z2 = height < gbVar.c.getBottom();
                             gbVar.s = z2;
@@ -71,7 +71,7 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                                     } else {
                                         LaunchActivity launchActivity = LaunchActivity.H1;
                                         int expandedHeight = (launchActivity != null || launchActivity.O() == null) ? 0 : LaunchActivity.H1.O().getExpandedHeight();
-                                        z = gbVar instanceof j92;
+                                        z = gbVar instanceof y72;
                                         if (!z) {
                                             gbVar.h(Math.max(i3, height + expandedHeight));
                                         }
@@ -110,14 +110,14 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                                         } else {
                                             gbVar.g = false;
                                             SystemClock.elapsedRealtime();
-                                            gm.d3(gbVar.h, 100L);
+                                            gl.d3(gbVar.h, 100L);
                                         }
                                     }
                                 }
                                 LaunchActivity launchActivity2 = LaunchActivity.H1;
                                 if (launchActivity2 != null) {
                                 }
-                                z = gbVar instanceof j92;
+                                z = gbVar instanceof y72;
                                 if (!z) {
                                 }
                                 gbVar.d.requestLayout();
@@ -161,10 +161,10 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 1:
-                w81 w81Var = (w81) this.b;
-                FrameLayout frameLayout2 = w81Var.c;
-                if (!w81Var.E) {
-                    float max = Math.max(0.0f, w81Var.y - w81Var.getY());
+                o71 o71Var = (o71) this.b;
+                FrameLayout frameLayout2 = o71Var.c;
+                if (!o71Var.E) {
+                    float max = Math.max(0.0f, o71Var.y - o71Var.getY());
                     if (frameLayout2.getTranslationY() != max) {
                         frameLayout2.setTranslationY(max);
                         break;
@@ -172,83 +172,83 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 2:
-                ((uv3) this.b).a.m1.getViewTreeObserver().removeOnPreDrawListener(this);
+                ((ju3) this.b).a.m1.getViewTreeObserver().removeOnPreDrawListener(this);
                 break;
             case 3:
-                ((a91) this.b).invalidate();
+                ((s71) this.b).invalidate();
                 break;
             case 4:
-                oa5 oa5Var = (oa5) this.b;
-                ra5 ra5Var = oa5Var.f;
-                z81 z81Var = oa5Var.e;
-                z81Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                z81Var.getLocationOnScreen(oa5Var.I);
-                float f4 = oa5Var.s.x + oa5Var.S;
-                ta5 ta5Var = oa5Var.W;
-                float measuredWidth = ((ta5Var.getMeasuredWidth() / 2.0f) + f4) - r0[0];
-                float measuredWidth2 = ((ta5Var.getMeasuredWidth() / 2.0f) + (oa5Var.s.y + oa5Var.T)) - r0[1];
-                boolean z3 = measuredWidth2 - ((float) gm.L(61.0f)) > 0.0f && ((float) gm.L(61.0f)) + measuredWidth2 < ((float) z81Var.getMeasuredHeight());
-                if (gm.L(61.0f) + measuredWidth + ra5Var.getMeasuredWidth() < z81Var.getMeasuredWidth() - gm.L(16.0f) && z3) {
-                    ra5Var.setTranslationX(gm.L(61.0f) + measuredWidth);
-                    float measuredHeight = measuredWidth2 / z81Var.getMeasuredHeight();
-                    float L = gm.L(40.0f) / ra5Var.getMeasuredHeight();
-                    ra5Var.setTranslationY((int) (measuredWidth2 - (ra5Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
-                    ra5Var.a(measuredWidth, measuredWidth2, 0);
+                o85 o85Var = (o85) this.b;
+                r85 r85Var = o85Var.f;
+                r71 r71Var = o85Var.e;
+                r71Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                r71Var.getLocationOnScreen(o85Var.I);
+                float f4 = o85Var.s.x + o85Var.S;
+                t85 t85Var = o85Var.W;
+                float measuredWidth = ((t85Var.getMeasuredWidth() / 2.0f) + f4) - r0[0];
+                float measuredWidth2 = ((t85Var.getMeasuredWidth() / 2.0f) + (o85Var.s.y + o85Var.T)) - r0[1];
+                boolean z3 = measuredWidth2 - ((float) gl.L(61.0f)) > 0.0f && ((float) gl.L(61.0f)) + measuredWidth2 < ((float) r71Var.getMeasuredHeight());
+                if (gl.L(61.0f) + measuredWidth + r85Var.getMeasuredWidth() < r71Var.getMeasuredWidth() - gl.L(16.0f) && z3) {
+                    r85Var.setTranslationX(gl.L(61.0f) + measuredWidth);
+                    float measuredHeight = measuredWidth2 / r71Var.getMeasuredHeight();
+                    float L = gl.L(40.0f) / r85Var.getMeasuredHeight();
+                    r85Var.setTranslationY((int) (measuredWidth2 - (r85Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
+                    r85Var.a(measuredWidth, measuredWidth2, 0);
                     break;
-                } else if ((measuredWidth - gm.L(61.0f)) - ra5Var.getMeasuredWidth() > gm.L(16.0f) && z3) {
-                    float L2 = gm.L(40.0f) / ra5Var.getMeasuredHeight();
-                    float max2 = Math.max(L2, Math.min(measuredWidth2 / z81Var.getMeasuredHeight(), 1.0f - L2));
-                    ra5Var.setTranslationX((int) ((measuredWidth - gm.L(61.0f)) - ra5Var.getMeasuredWidth()));
-                    ra5Var.setTranslationY((int) (measuredWidth2 - (ra5Var.getMeasuredHeight() * max2)));
-                    ra5Var.a(measuredWidth, measuredWidth2, 1);
+                } else if ((measuredWidth - gl.L(61.0f)) - r85Var.getMeasuredWidth() > gl.L(16.0f) && z3) {
+                    float L2 = gl.L(40.0f) / r85Var.getMeasuredHeight();
+                    float max2 = Math.max(L2, Math.min(measuredWidth2 / r71Var.getMeasuredHeight(), 1.0f - L2));
+                    r85Var.setTranslationX((int) ((measuredWidth - gl.L(61.0f)) - r85Var.getMeasuredWidth()));
+                    r85Var.setTranslationY((int) (measuredWidth2 - (r85Var.getMeasuredHeight() * max2)));
+                    r85Var.a(measuredWidth, measuredWidth2, 1);
                     break;
-                } else if (measuredWidth2 <= z81Var.getMeasuredHeight() * 0.3f) {
-                    float measuredWidth3 = measuredWidth / z81Var.getMeasuredWidth();
-                    float L3 = gm.L(40.0f) / ra5Var.getMeasuredWidth();
-                    ra5Var.setTranslationX((int) (measuredWidth - (ra5Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
-                    ra5Var.setTranslationY((int) (gm.L(61.0f) + measuredWidth2));
-                    ra5Var.a(measuredWidth, measuredWidth2, 2);
+                } else if (measuredWidth2 <= r71Var.getMeasuredHeight() * 0.3f) {
+                    float measuredWidth3 = measuredWidth / r71Var.getMeasuredWidth();
+                    float L3 = gl.L(40.0f) / r85Var.getMeasuredWidth();
+                    r85Var.setTranslationX((int) (measuredWidth - (r85Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
+                    r85Var.setTranslationY((int) (gl.L(61.0f) + measuredWidth2));
+                    r85Var.a(measuredWidth, measuredWidth2, 2);
                     break;
                 } else {
-                    float measuredWidth4 = measuredWidth / z81Var.getMeasuredWidth();
-                    float L4 = gm.L(40.0f) / ra5Var.getMeasuredWidth();
-                    ra5Var.setTranslationX((int) (measuredWidth - (ra5Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
-                    ra5Var.setTranslationY((int) ((measuredWidth2 - ra5Var.getMeasuredHeight()) - gm.L(61.0f)));
-                    ra5Var.a(measuredWidth, measuredWidth2, 3);
+                    float measuredWidth4 = measuredWidth / r71Var.getMeasuredWidth();
+                    float L4 = gl.L(40.0f) / r85Var.getMeasuredWidth();
+                    r85Var.setTranslationX((int) (measuredWidth - (r85Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
+                    r85Var.setTranslationY((int) ((measuredWidth2 - r85Var.getMeasuredHeight()) - gl.L(61.0f)));
+                    r85Var.a(measuredWidth, measuredWidth2, 3);
                     break;
                 }
                 break;
             case 5:
-                View view2 = ((xl5) this.b).fragmentView;
+                View view2 = ((xj5) this.b).fragmentView;
                 if (view2 != null) {
                     view2.getViewTreeObserver().removeOnPreDrawListener(this);
                     int rotation = ((WindowManager) a.b.getSystemService("window")).getDefaultDisplay().getRotation();
                     if (rotation == 3 || rotation == 1) {
-                        ((xl5) this.b).f.setOrientation(0);
+                        ((xj5) this.b).f.setOrientation(0);
                     } else {
-                        ((xl5) this.b).f.setOrientation(1);
+                        ((xj5) this.b).f.setOrientation(1);
                     }
-                    View view3 = ((xl5) this.b).fragmentView;
-                    view3.setPadding(view3.getPaddingLeft(), 0, ((xl5) this.b).fragmentView.getPaddingRight(), ((xl5) this.b).fragmentView.getPaddingBottom());
+                    View view3 = ((xj5) this.b).fragmentView;
+                    view3.setPadding(view3.getPaddingLeft(), 0, ((xj5) this.b).fragmentView.getPaddingRight(), ((xj5) this.b).fragmentView.getPaddingBottom());
                     break;
                 }
                 break;
             case 6:
-                ((a91) this.b).invalidate();
+                ((s71) this.b).invalidate();
                 break;
             case 7:
-                j68 j68Var = (j68) this.b;
-                if (j68Var.getParentActivity() != null) {
+                g48 g48Var = (g48) this.b;
+                if (g48Var.getParentActivity() != null) {
                     int rotation2 = ((WindowManager) a.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                    j68Var.f = (byte) 2;
-                    if (!gm.O1() && (rotation2 == 3 || rotation2 == 1)) {
-                        j68Var.f = (byte) 4;
+                    g48Var.f = (byte) 2;
+                    if (!gl.O1() && (rotation2 == 3 || rotation2 == 1)) {
+                        g48Var.f = (byte) 4;
                     }
-                    j68Var.n.f();
+                    g48Var.n.f();
                 }
-                r59 r59Var = ((j68) this.b).h;
-                if (r59Var != null) {
-                    r59Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                o39 o39Var = ((g48) this.b).h;
+                if (o39Var != null) {
+                    o39Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
@@ -258,7 +258,7 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                 ImageView imageView = photoViewer.x3;
                 if (imageView != null) {
                     if (photoViewer.J3) {
-                        gm.d3(new Runnable(this) { // from class: za8
+                        gl.d3(new Runnable(this) { // from class: y88
                             public final /* synthetic */ fb b;
 
                             {
@@ -284,7 +284,7 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                                     default:
                                         PhotoViewer photoViewer3 = (PhotoViewer) fbVar.b;
                                         if (photoViewer3.J3) {
-                                            photoViewer3.O();
+                                            photoViewer3.P();
                                             break;
                                         }
                                         break;
@@ -301,7 +301,7 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                         }
                     }
                 }
-                gm.c3(new Runnable(this) { // from class: za8
+                gl.c3(new Runnable(this) { // from class: y88
                     public final /* synthetic */ fb b;
 
                     {
@@ -327,7 +327,7 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
                             default:
                                 PhotoViewer photoViewer3 = (PhotoViewer) fbVar.b;
                                 if (photoViewer3.J3) {
-                                    photoViewer3.O();
+                                    photoViewer3.P();
                                     break;
                                 }
                                 break;
@@ -339,59 +339,59 @@ public final class fb implements ViewTreeObserver.OnPreDrawListener {
             case 9:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
                 if (profileActivity.fragmentView != null) {
-                    RectF rectF = ProfileActivity.e7;
-                    profileActivity.H1();
-                    profileActivity.Q2(true);
+                    RectF rectF = ProfileActivity.Z6;
+                    profileActivity.F1();
+                    profileActivity.N2(true);
                     profileActivity.fragmentView.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
             case 10:
-                tob tobVar = (tob) ((rm3) this.b).b;
-                tobVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                tobVar.getTransitionParams().e();
-                tobVar.getTransitionParams().a();
-                tobVar.getTransitionParams().h = true;
-                tobVar.getTransitionParams().L1 = 0.0f;
+                smb smbVar = (smb) ((gl3) this.b).b;
+                smbVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                smbVar.getTransitionParams().e();
+                smbVar.getTransitionParams().a();
+                smbVar.getTransitionParams().h = true;
+                smbVar.getTransitionParams().L1 = 0.0f;
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat3.addUpdateListener(new rha(this, (byte) 25));
-                ofFloat3.addListener(new q7b(this, (byte) 5));
+                ofFloat3.addUpdateListener(new gja(this, (byte) 23));
+                ofFloat3.addListener(new iab(this, (byte) 3));
                 ofFloat3.start();
                 break;
             case 11:
                 WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
                 if (wallpapersListActivity.getParentActivity() != null) {
                     int rotation3 = ((WindowManager) a.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (gm.O1()) {
+                    if (gl.O1()) {
                         wallpapersListActivity.O = (byte) 3;
                     } else if (rotation3 == 3 || rotation3 == 1) {
                         wallpapersListActivity.O = (byte) 5;
                     } else {
                         wallpapersListActivity.O = (byte) 3;
                     }
-                    wallpapersListActivity.H0();
+                    wallpapersListActivity.G0();
                 }
-                r59 r59Var2 = ((WallpapersListActivity) this.b).G;
-                if (r59Var2 != null) {
-                    r59Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                o39 o39Var2 = ((WallpapersListActivity) this.b).G;
+                if (o39Var2 != null) {
+                    o39Var2.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
             default:
-                tvc tvcVar = (tvc) ((tr5) this.b).b;
-                tvcVar.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView2 = tvcVar.e;
+                stc stcVar = (stc) ((up5) this.b).b;
+                stcVar.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView2 = stcVar.e;
                 if (imageView2 != null) {
                     imageView2.setVisibility(4);
-                    tvcVar.e.setImageDrawable(null);
-                    Bitmap bitmap2 = tvcVar.h;
+                    stcVar.e.setImageDrawable(null);
+                    Bitmap bitmap2 = stcVar.h;
                     if (bitmap2 != null) {
                         bitmap2.recycle();
-                        tvcVar.h = null;
+                        stcVar.h = null;
                     }
                 }
-                gm.c3(new cpc(this, (byte) 11));
-                tvcVar.r = (byte) 0;
+                gl.c3(new frc(this, (byte) 3));
+                stcVar.r = (byte) 0;
                 break;
         }
         return true;

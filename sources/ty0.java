@@ -1,43 +1,55 @@
 // default package
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ty0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ qac b;
-    public final /* synthetic */ boolean[] c;
+public final class ty0 extends av9 {
+    public final /* synthetic */ byte n0;
 
-    public /* synthetic */ ty0(qac qacVar, boolean[] zArr) {
-        this.b = qacVar;
-        this.c = zArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ty0(Context context, slb slbVar) {
+        super(slbVar, context, false);
+        this.n0 = (byte) 3;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        boolean[] zArr = this.c;
-        qac qacVar = this.b;
-        switch (b) {
+    @Override // av9, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.n0) {
             case 0:
-                if (!zArr[0]) {
-                    qacVar.a(Boolean.FALSE);
-                    zArr[0] = true;
-                    break;
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            case 2:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
                 }
                 break;
             default:
-                if (!zArr[0]) {
-                    qacVar.a(Boolean.FALSE);
-                    break;
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
                 }
                 break;
         }
+        return d(motionEvent);
     }
 
-    public /* synthetic */ ty0(boolean[] zArr, qac qacVar) {
-        this.c = zArr;
-        this.b = qacVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ty0(Context context, boolean z, wjb wjbVar, byte b) {
+        super(wjbVar, context, z);
+        this.n0 = b;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ty0(Context context) {
+        super(context);
+        this.n0 = (byte) 1;
     }
 }

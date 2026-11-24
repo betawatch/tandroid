@@ -1,29 +1,60 @@
 // default package
 
-import android.widget.AbsListView;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n76 implements AbsListView.OnScrollListener {
-    public final /* synthetic */ o76 a;
+public abstract class n76 {
+    public final co7 a;
+    public boolean b;
+    public int c = -1;
+    public final /* synthetic */ hh7 d;
 
-    public n76(o76 o76Var) {
-        this.a = o76Var;
+    public n76(hh7 hh7Var, co7 co7Var) {
+        this.d = hh7Var;
+        this.a = co7Var;
     }
 
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScrollStateChanged(AbsListView absListView, int i) {
-        o76 o76Var = this.a;
-        m76 m76Var = o76Var.H;
-        nq nqVar = o76Var.P;
-        if (i != 1 || nqVar.getInputMethodMode() == 2 || nqVar.getContentView() == null) {
-            return;
+    public final void a(boolean z) {
+        if (z != this.b) {
+            this.b = z;
+            int i = z ? 1 : -1;
+            hh7 hh7Var = this.d;
+            int i2 = hh7Var.c;
+            hh7Var.c = i + i2;
+            if (!hh7Var.d) {
+                hh7Var.d = true;
+                while (true) {
+                    try {
+                        int i3 = hh7Var.c;
+                        if (i2 == i3) {
+                            break;
+                        }
+                        boolean z2 = i2 == 0 && i3 > 0;
+                        boolean z3 = i2 > 0 && i3 == 0;
+                        if (z2) {
+                            hh7Var.e();
+                        } else if (z3) {
+                            hh7Var.f();
+                        }
+                        i2 = i3;
+                    } finally {
+                        hh7Var.d = false;
+                    }
+                }
+            }
+            if (this.b) {
+                hh7Var.c(this);
+            }
         }
-        o76Var.L.removeCallbacks(m76Var);
-        m76Var.run();
     }
 
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScroll(AbsListView absListView, int i, int i2, int i3) {
+    public boolean d(e16 e16Var) {
+        return false;
+    }
+
+    public boolean e() {
+        return true;
+    }
+
+    public void c() {
     }
 }

@@ -3,7 +3,7 @@
 import android.animation.ValueAnimator;
 import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class q5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
@@ -21,43 +21,43 @@ public final /* synthetic */ class q5 implements ValueAnimator.AnimatorUpdateLis
         a aVar = this.b;
         switch (b) {
             case 0:
-                kf9 kf9Var = aVar.f1;
-                if (kf9Var != null) {
-                    kf9Var.run();
+                sr8 sr8Var = aVar.f1;
+                if (sr8Var != null) {
+                    sr8Var.run();
                     break;
                 }
                 break;
             case 1:
-                kf9 kf9Var2 = aVar.f1;
-                if (kf9Var2 != null) {
-                    kf9Var2.run();
+                sr8 sr8Var2 = aVar.f1;
+                if (sr8Var2 != null) {
+                    sr8Var2.run();
                     break;
                 }
                 break;
             case 2:
                 aVar.p0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (aVar.a != null && aVar.S0) {
-                    float L = gm.L(23.0f);
-                    float U1 = gm.U1(aVar.p0, gm.L(18.33f), gm.L(23.0f));
+                    float L = gl.L(23.0f);
+                    float U1 = gl.U1(aVar.p0, gl.L(18.33f), gl.L(23.0f));
                     aVar.a.s(U1, L, L, U1);
                     aVar.invalidate();
                 }
                 if (aVar.Q0 && (r6Var = aVar.F) != null) {
-                    r6Var.setTranslationX(-gm.R1(gm.L(10.0f), gm.L(5.0f), aVar.p0));
+                    r6Var.setTranslationX(-gl.R1(gl.L(10.0f), gl.L(5.0f), aVar.p0));
                 }
-                kf9 kf9Var3 = aVar.f1;
-                if (kf9Var3 != null) {
-                    kf9Var3.run();
+                sr8 sr8Var3 = aVar.f1;
+                if (sr8Var3 != null) {
+                    sr8Var3.run();
                     break;
                 }
                 break;
             case 3:
                 aVar.E1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aVar.j();
+                aVar.i();
                 break;
             default:
                 aVar.E1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aVar.j();
+                aVar.i();
                 break;
         }
     }

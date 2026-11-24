@@ -3,7 +3,7 @@ package androidx.car.app.hardware.info;
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class EnergyLevel {
     private final CarValue<Float> mBatteryPercent;
@@ -79,8 +79,8 @@ public final class EnergyLevel {
         return "[ battery percent: " + this.mBatteryPercent + ", fuel percent: " + this.mFuelPercent + ", energyIsLow: " + this.mEnergyIsLow + ", range remaining: " + getRangeRemainingMeters() + ", distance display unit: " + this.mDistanceDisplayUnit + ", fuel volume display unit: " + this.mFuelVolumeDisplayUnit + "]";
     }
 
-    public EnergyLevel(i44 i44Var) {
-        i44Var.getClass();
+    public EnergyLevel(x24 x24Var) {
+        x24Var.getClass();
         throw null;
     }
 }

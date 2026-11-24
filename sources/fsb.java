@@ -1,52 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum fsb extends rub {
+public enum fsb extends qsb {
     public fsb() {
-        super("RCDATAEndTagName", 12);
+        super("AfterDoctypeSystemKeyword", 60);
     }
 
-    public static void e(bsb bsbVar, hl1 hl1Var) {
-        bsbVar.h("</".concat(bsbVar.h.toString()));
-        hl1Var.q();
-        bsbVar.c = rub.c;
-    }
-
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        if (hl1Var.o()) {
-            String e = hl1Var.e();
-            bsbVar.i.y(e);
-            bsbVar.h.append(e);
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        char d = zj1Var.d();
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
+            aqbVar.c = qsb.z0;
             return;
         }
-        char d = hl1Var.d();
-        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            if (bsbVar.n()) {
-                bsbVar.c = rub.X;
-                return;
-            } else {
-                e(bsbVar, hl1Var);
-                return;
-            }
+        if (d == '\"') {
+            aqbVar.m(this);
+            aqbVar.c = qsb.A0;
+            return;
         }
-        if (d == '/') {
-            if (bsbVar.n()) {
-                bsbVar.c = rub.f0;
-                return;
-            } else {
-                e(bsbVar, hl1Var);
-                return;
-            }
+        if (d == '\'') {
+            aqbVar.m(this);
+            aqbVar.c = qsb.B0;
+            return;
         }
-        if (d != '>') {
-            e(bsbVar, hl1Var);
-        } else if (!bsbVar.n()) {
-            e(bsbVar, hl1Var);
+        lqb lqbVar = qsb.a;
+        if (d == '>') {
+            aqbVar.m(this);
+            aqbVar.j();
+            aqbVar.c = lqbVar;
+        } else if (d != 65535) {
+            aqbVar.m(this);
+            aqbVar.j();
         } else {
-            bsbVar.k();
-            bsbVar.c = rub.a;
+            aqbVar.l(this);
+            aqbVar.j();
+            aqbVar.c = lqbVar;
         }
     }
 }

@@ -1,35 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class wc9 {
-    public final float a;
-    public final float b;
+import android.text.Editable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-    public wc9(float f, float f2) {
-        this.a = f;
-        this.b = f2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class wc9 implements b42, e12 {
+    public final /* synthetic */ hd9 a;
+    public final /* synthetic */ x02 b;
+
+    public /* synthetic */ wc9(hd9 hd9Var, x02 x02Var) {
+        this.a = hd9Var;
+        this.b = x02Var;
     }
 
-    public static float a(wc9 wc9Var, wc9 wc9Var2) {
-        return oqe.a(wc9Var.a, wc9Var.b, wc9Var2.a, wc9Var2.b);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof wc9) {
-            wc9 wc9Var = (wc9) obj;
-            if (this.a == wc9Var.a && this.b == wc9Var.b) {
-                return true;
-            }
+    @Override // b42
+    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+        x02 x02Var = this.b;
+        if (messageMedia == null || messageMedia.geo == null) {
+            x02Var.a(true);
+            return;
         }
-        return false;
+        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
+        pageblockmap.geo = messageMedia.geo;
+        pageblockmap.zoom = 15;
+        pageblockmap.w = 600;
+        pageblockmap.h = 400;
+        this.a.Q.N1(pageblockmap);
+        x02Var.a(true);
     }
 
-    public final int hashCode() {
-        return Float.floatToIntBits(this.b) + (Float.floatToIntBits(this.a) * 31);
-    }
-
-    public final String toString() {
-        return "(" + this.a + ',' + this.b + ')';
+    @Override // e12
+    public final void g(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2) {
+        if (!arrayList.isEmpty()) {
+            this.a.Q.W1((k27) arrayList.get(0));
+        }
+        this.b.a(true);
     }
 }

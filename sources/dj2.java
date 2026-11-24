@@ -1,53 +1,90 @@
 // default package
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.content.Context;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class dj2 {
-    public final HashMap a = new HashMap();
-    public final HashMap b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class dj2 extends sj2 {
+    public final /* synthetic */ int h2;
+    public final /* synthetic */ int i2;
+    public final /* synthetic */ fj2 j2;
 
-    public dj2(HashMap hashMap) {
-        this.b = hashMap;
-        for (Map.Entry entry : hashMap.entrySet()) {
-            u26 u26Var = (u26) entry.getValue();
-            List list = (List) this.a.get(u26Var);
-            if (list == null) {
-                list = new ArrayList();
-                this.a.put(u26Var, list);
-            }
-            list.add((ej2) entry.getKey());
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dj2(fj2 fj2Var, Context context, int i, int i2) {
+        super(context);
+        this.j2 = fj2Var;
+        this.h2 = i;
+        this.i2 = i2;
+        this.P1 = 1.0f;
+        this.Q1 = new yla(this, sj2.d2);
+        this.R1 = new yla(this, sj2.e2);
+        this.S1 = new yla(this, sj2.f2);
+        this.T1 = new yla(this, sj2.g2);
+        this.U1 = true;
+        this.V1 = 1.0f;
+        this.W1 = 1.0f;
+        this.c2 = false;
+        setBackground(null);
+        zkb.X(this, bkb.F6, null);
+        setMovementMethod(null);
+        addTextChangedListener(new b7(this, (byte) 14));
     }
 
-    public static void a(List list, e36 e36Var, u26 u26Var, Object obj) {
-        if (list != null) {
-            for (int size = list.size() - 1; size >= 0; size--) {
-                ej2 ej2Var = (ej2) list.get(size);
-                Method method = ej2Var.b;
-                try {
-                    byte b = ej2Var.a;
-                    if (b == 0) {
-                        method.invoke(obj, null);
-                    } else if (b == 1) {
-                        method.invoke(obj, e36Var);
-                    } else if (b == 2) {
-                        method.invoke(obj, e36Var, u26Var);
-                    }
-                } catch (IllegalAccessException e) {
-                    rjb.m(e);
-                    return;
-                } catch (InvocationTargetException e2) {
-                    rjb.k("Failed to call observer method", e2.getCause());
-                    return;
+    @Override // android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() != 4) {
+            int keyCode = keyEvent.getKeyCode();
+            fj2 fj2Var = this.j2;
+            int length = fj2Var.f.length;
+            int i = this.h2;
+            if (i < length) {
+                if (keyEvent.getAction() != 1) {
+                    return isFocused();
                 }
+                if (keyCode == 67) {
+                    int length2 = fj2Var.f[i].length();
+                    sj2[] sj2VarArr = fj2Var.f;
+                    if (length2 == 1) {
+                        sj2VarArr[i].E();
+                        fj2Var.f[i].setText("");
+                        return true;
+                    }
+                    if (sj2VarArr[i].length() == 0 && i > 0) {
+                        int i2 = i - 1;
+                        sj2 sj2Var = fj2Var.f[i2];
+                        sj2Var.setSelection(sj2Var.length());
+                        for (int i3 = 0; i3 < i; i3++) {
+                            sj2[] sj2VarArr2 = fj2Var.f;
+                            if (i3 == i2) {
+                                sj2VarArr2[i2].requestFocus();
+                            } else {
+                                sj2VarArr2[i3].clearFocus();
+                            }
+                        }
+                        fj2Var.f[i2].E();
+                        fj2Var.f[i2].setText("");
+                        return true;
+                    }
+                }
+                if (keyCode >= 7 && keyCode <= 16) {
+                    String num = Integer.toString(keyCode - 7);
+                    if (fj2Var.f[i].getText() != null && num.equals(fj2Var.f[i].getText().toString())) {
+                        if (i >= this.i2 - 1) {
+                            fj2Var.a();
+                            return true;
+                        }
+                        fj2Var.f[i + 1].requestFocus();
+                        return true;
+                    }
+                    if (fj2Var.f[i].length() > 0) {
+                        fj2Var.f[i].E();
+                    }
+                    fj2Var.f[i].setText(num);
+                }
+                return true;
             }
         }
+        return false;
     }
 }

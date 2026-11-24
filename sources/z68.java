@@ -1,56 +1,63 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class z68 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public b78 c;
-    public AnimatorSet d;
-    public ei7 e;
+public final /* synthetic */ class z68 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ PhotoViewer b;
 
-    public final void a(String str, int i, float f) {
-        TextView textView = this.a;
-        TextView textView2 = this.b;
-        AnimatorSet animatorSet = this.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.d = null;
+    public /* synthetic */ z68(PhotoViewer photoViewer, byte b) {
+        this.a = b;
+        this.b = photoViewer;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (b) {
+            case 0:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                this.b.F1(false, 0, 0, true, false, false);
+                break;
+            case 1:
+                Drawable[] drawableArr2 = PhotoViewer.d9;
+                photoViewer.i2();
+                break;
+            case 2:
+                Drawable[] drawableArr3 = PhotoViewer.d9;
+                this.b.F1(false, 0, 0, false, false, false);
+                break;
+            case 3:
+                Drawable[] drawableArr4 = PhotoViewer.d9;
+                photoViewer.B(false, false);
+                x02 x02Var = photoViewer.b2;
+                if (x02Var != null) {
+                    x02Var.a(true);
+                }
+                d dVar = photoViewer.l4;
+                if (dVar != null) {
+                    dVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                    break;
+                }
+                break;
+            case 4:
+                Drawable[] drawableArr5 = PhotoViewer.d9;
+                photoViewer.s7 = null;
+                break;
+            case 5:
+                Drawable[] drawableArr6 = PhotoViewer.d9;
+                photoViewer.B(true, false);
+                break;
+            default:
+                Drawable[] drawableArr7 = PhotoViewer.d9;
+                photoViewer.F2();
+                break;
         }
-        gm.r(this.e);
-        textView2.setTag(null);
-        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
-        if (f > 0.0f) {
-            textView2.setText("+" + ((int) f));
-        } else {
-            textView2.setText(String.valueOf((int) f));
-        }
-        textView2.setAlpha(0.0f);
-        textView.setAlpha(1.0f);
-        b78 b78Var = this.c;
-        b78Var.h = i;
-        b78Var.n = (byte) 100;
-        b78Var.a((int) f, false);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(40.0f), TLObject.FLAG_30));
-    }
-
-    public void setSeekBarDelegate(a78 a78Var) {
-        this.c.setDelegate(new cz6((Object) this, (Object) a78Var, (byte) 16));
-    }
-
-    @Override // android.view.View
-    public void setTag(Object obj) {
-        super.setTag(obj);
-        this.c.setTag(obj);
     }
 }

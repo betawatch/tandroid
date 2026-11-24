@@ -1,27 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ni8 {
-    public final String a;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-    public ni8(String str) {
-        str.getClass();
-        this.a = str;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ni8 extends n39 {
+    public final /* synthetic */ dh8 c;
+
+    public ni8(dh8 dh8Var) {
+        this.c = dh8Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ni8)) {
-            return false;
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return false;
+    }
+
+    @Override // w39
+    public final int b() {
+        return ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        ArrayList arrayList = this.c.f3;
+        if (arrayList.isEmpty()) {
+            return;
         }
-        return rr5.a(this.a, ((ni8) obj).a);
+        pi8 pi8Var = (pi8) s49Var.a;
+        pi8Var.r = (TLRPC.Document) arrayList.get(i % arrayList.size());
+        pi8Var.s = true;
+        pi8Var.a(!r2.k3, false, false);
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a;
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        pi8 pi8Var = new pi8(this.c, viewGroup.getContext());
+        pi8Var.setLayoutParams(new e49(-1, -2));
+        return new y29(pi8Var);
     }
 }

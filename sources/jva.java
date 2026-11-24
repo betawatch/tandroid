@@ -2,2572 +2,3569 @@
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Path;
+import android.content.DialogInterface;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.RectF;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
-import android.util.LongSparseArray;
+import android.text.style.RelativeSizeSpan;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import j$.util.Comparator$-CC;
-import j$.util.Comparator$-EL;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.reflect.Array;
+import j$.util.Objects;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
+import java.util.Date;
+import java.util.Locale;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class jva {
-    public static volatile jva[][] S = (jva[][]) Array.newInstance((Class<?>) jva.class, 2, 4);
-    public static final Object[][] T = (Object[][]) Array.newInstance((Class<?>) Object.class, 2, 4);
-    public boolean A;
-    public hva B;
-    public boolean C;
-    public boolean D;
-    public boolean E;
-    public int F;
-    public long G;
-    public eva N;
-    public final int a;
-    public final boolean b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public long g;
-    public boolean h;
-    public boolean i;
-    public ArrayList j;
-    public boolean k;
-    public boolean l;
-    public ArrayList m;
-    public boolean n;
-    public boolean o;
-    public ArrayList p;
-    public String w;
-    public boolean x;
-    public boolean y;
-    public TL_stars.StarsAmount f = TL_stars.StarsAmount.ofStars(0);
-    public final ArrayList[] q = {new ArrayList(), new ArrayList(), new ArrayList()};
-    public final boolean[] r = new boolean[3];
-    public final String[] s = new String[3];
-    public final boolean[] t = new boolean[3];
-    public final boolean[] u = new boolean[3];
-    public final ArrayList v = new ArrayList();
-    public final ArrayList z = new ArrayList();
-    public final ArrayList H = new ArrayList();
-    public final ArrayList I = new ArrayList();
-    public final ArrayList J = new ArrayList();
-    public final LongSparseArray K = new LongSparseArray();
-    public final LongSparseArray L = new LongSparseArray();
-    public final ConcurrentHashMap M = new ConcurrentHashMap();
-    public final ConcurrentHashMap O = new ConcurrentHashMap();
-    public final ConcurrentHashMap P = new ConcurrentHashMap();
-    public final Set Q = Collections.newSetFromMap(new ConcurrentHashMap());
-    public final ConcurrentHashMap R = new ConcurrentHashMap();
+public final class jva extends iz4 implements gk7 {
+    public static DecimalFormat w0;
+    public static DecimalFormat x0;
+    public FrameLayout S;
+    public er4 T;
+    public iva U;
+    public dha V;
+    public si9 W;
+    public View X;
+    public fm0 Y;
+    public fm0 Z;
+    public fm0 a0;
+    public int c0;
+    public int d0;
+    public boolean e0;
+    public boolean f0;
+    public si9 h0;
+    public qh4 i0;
+    public LinearLayout j0;
+    public SpannableStringBuilder k0;
+    public hn l0;
+    public TextView m0;
+    public u41 n0;
+    public oc6 o0;
+    public u41 p0;
+    public pkb q0;
+    public u41 r0;
+    public u41 s0;
+    public boolean t0;
+    public boolean u0;
+    public vb v0;
+    public int b0 = -1;
+    public final z6a g0 = new z6a(this, 23);
 
-    static {
-        for (int i = 0; i < 2; i++) {
-            for (int i2 = 0; i2 < 4; i2++) {
-                T[i][i2] = new Object();
+    public jva() {
+        this.N = true;
+    }
+
+    public static void B0(mfb mfbVar, int i, TL_stars.StarGift starGift, wjb wjbVar) {
+        TextView textView = (TextView) ((jfb) mfbVar.f(k96.M0(2131750284, null), "", null, null).getChildAt(1)).getChildAt(0);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
+        u86 u86Var = new u86(textView, gl.L(90.0f), 0, wjbVar);
+        u86Var.a(bkb.p1(0.21f, textView.getPaint().getColor()), bkb.p1(0.08f, textView.getPaint().getColor()));
+        spannableStringBuilder.setSpan(u86Var, 0, 1, 33);
+        textView.setText(spannableStringBuilder, TextView.BufferType.SPANNABLE);
+        if (starGift.sold_out) {
+            boolean z = starGift instanceof TL_stars.TL_starGiftUnique;
+            int i2 = starGift.availability_remains;
+            if (z) {
+                textView.setText(i2 <= 0 ? k96.H(',', "Gift2QuantityIssuedNone", starGift.availability_total) : k96.H(',', "Gift2QuantityIssued1", starGift.availability_issued).concat(k96.H(',', "Gift2QuantityIssued2", starGift.availability_total)));
+                return;
+            } else {
+                int i3 = starGift.availability_total;
+                textView.setText(i2 <= 0 ? k96.H(',', "Gift2Availability2ValueNone", i3) : k96.K("Gift2Availability4Value", i2, ',', k96.E(i3, ',')));
+                return;
             }
         }
-    }
-
-    public jva(int i, boolean z) {
-        this.a = i;
-        this.b = z;
-    }
-
-    public static ylb F() {
-        d S2 = LaunchActivity.S();
-        if (S2 != null) {
-            return S2.getResourceProvider();
+        final gta v = gta.v(i, false);
+        final long j = starGift.id;
+        final ae9 ae9Var = new ae9(textView, (byte) 12);
+        final boolean[] zArr = {false};
+        final gk7[] gk7VarArr = new gk7[1];
+        gk7VarArr[0] = new gk7() { // from class: rsa
+            @Override // gk7
+            public final void didReceivedNotification(int i4, int i5, Object[] objArr) {
+                int i6;
+                gta gtaVar;
+                TL_stars.StarGift G;
+                boolean[] zArr2 = zArr;
+                if (zArr2[0] || i4 != (i6 = kk7.G3) || (G = (gtaVar = gta.this).G(j)) == null) {
+                    return;
+                }
+                zArr2[0] = true;
+                kk7.f(gtaVar.a).n(gk7VarArr[0], i6);
+                ae9Var.a(G);
+            }
+        };
+        int i4 = v.a;
+        kk7 f = kk7.f(i4);
+        gk7 gk7Var = gk7VarArr[0];
+        int i5 = kk7.G3;
+        f.a(gk7Var, i5);
+        TL_stars.StarGift G = v.G(j);
+        if (G != null) {
+            zArr[0] = true;
+            kk7.f(i4).n(gk7VarArr[0], i5);
+            ae9Var.a(G);
         }
-        return null;
     }
 
-    public static jva I(int i) {
-        return v(i, true);
+    public static void C0(SpannableStringBuilder spannableStringBuilder, TextView textView, String str) {
+        spannableStringBuilder.append(" ");
+        SpannableString spannableString = new SpannableString(str);
+        spannableString.setSpan(new oua(textView.getCurrentTextColor(), str), 0, spannableString.length(), 33);
+        spannableStringBuilder.append((CharSequence) spannableString);
     }
 
-    public static boolean Q(int i, nk nkVar) {
-        return nkVar == null || u(i, nkVar.a).p().b >= nkVar.b;
+    public static SpannableStringBuilder F0(TL_stars.StarsAmount starsAmount) {
+        return G0(starsAmount, 0.777f, ',');
     }
 
-    public static void c(String str) {
-        d Q = LaunchActivity.Q();
-        ((Q == null || Q.visibleDialog != null) ? c41.Y() : c41.b0(Q)).Q(R.raw.error, 36, c41.W(str)).j();
-    }
-
-    public static void c0(Context context, ylb ylbVar) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ylbVar, context);
-        String M0 = jb6.M0(2131744749, null);
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M0;
-        heVar.U = jb6.M0(2131744750, null);
-        b10.t(null, 2131747564, alertDialog$Builder, null);
-    }
-
-    public static boolean h(TL_stars.SavedStarGift savedStarGift, TL_stars.SavedStarGift savedStarGift2) {
-        int i = savedStarGift.flags;
-        if ((i & 2048) == 0 || (savedStarGift2.flags & 2048) == 0 || savedStarGift.saved_id != savedStarGift2.saved_id) {
-            return ((i & 8) == 0 || (savedStarGift2.flags & 8) == 0 || savedStarGift.msg_id != savedStarGift2.msg_id) ? false : true;
+    public static SpannableStringBuilder G0(TL_stars.StarsAmount starsAmount, float f, char c) {
+        double d;
+        int i;
+        if (x0 == null) {
+            x0 = new DecimalFormat("0.###", new DecimalFormatSymbols(Locale.US));
         }
-        return true;
-    }
-
-    public static TL_stars.StarGiftAttribute i(ArrayList arrayList, Class cls) {
-        if (arrayList == null) {
-            return null;
-        }
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            TL_stars.StarGiftAttribute starGiftAttribute = (TL_stars.StarGiftAttribute) obj;
-            if (cls.isInstance(starGiftAttribute)) {
-                return (TL_stars.StarGiftAttribute) cls.cast(starGiftAttribute);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (starsAmount instanceof TL_stars.TL_starsTonAmount) {
+            long j = starsAmount.amount;
+            if (j % 1000000000 == 0) {
+                spannableStringBuilder.append((CharSequence) (starsAmount.negative() ? "-" : "").concat(k96.E(Math.abs(starsAmount.amount / 1000000000), c)));
+                return spannableStringBuilder;
+            }
+            String format = x0.format(j / 1.0E9d);
+            spannableStringBuilder.append((CharSequence) format);
+            int indexOf = format.indexOf(".");
+            if (indexOf >= 0) {
+                spannableStringBuilder.setSpan(new RelativeSizeSpan(f), indexOf, spannableStringBuilder.length(), 33);
+                return spannableStringBuilder;
+            }
+        } else {
+            long j2 = starsAmount.amount;
+            int i2 = starsAmount.nanos;
+            boolean z = false;
+            if (i2 < 0 && j2 > 0) {
+                i = -1;
+                d = 1.0E9d;
+            } else if (i2 <= 0 || j2 >= 0) {
+                d = 1.0E9d;
+                i = 0;
+            } else {
+                d = 1.0E9d;
+                i = 1;
+            }
+            long j3 = i + j2;
+            if (j2 != 0 ? j2 < 0 : i2 < 0) {
+                z = true;
+            }
+            if (i2 == 0) {
+                spannableStringBuilder.append((CharSequence) (z ? "-" : "").concat(k96.E(Math.abs(j3), c)));
+                return spannableStringBuilder;
+            }
+            spannableStringBuilder.append((CharSequence) (z ? "-" : "").concat(k96.E(Math.abs(j3), c)));
+            DecimalFormat decimalFormat = x0;
+            int i3 = starsAmount.nanos;
+            double d2 = i3;
+            if (i3 < 0) {
+                d2 += d;
+            }
+            String format2 = decimalFormat.format(d2 / d);
+            int indexOf2 = format2.indexOf(".");
+            if (indexOf2 >= 0) {
+                int length = spannableStringBuilder.length();
+                spannableStringBuilder.append((CharSequence) format2.substring(indexOf2));
+                spannableStringBuilder.setSpan(new RelativeSizeSpan(f), length + 1, spannableStringBuilder.length(), 33);
             }
         }
-        return null;
+        return spannableStringBuilder;
     }
 
-    public static ArrayList j(ArrayList arrayList, Class cls) {
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            TL_stars.StarGiftAttribute starGiftAttribute = (TL_stars.StarGiftAttribute) obj;
-            if (cls.isInstance(starGiftAttribute)) {
-                arrayList2.add((TL_stars.StarGiftAttribute) cls.cast(starGiftAttribute));
+    public static SpannableStringBuilder H0(TL_stars.StarsAmount starsAmount, float f, char c) {
+        double d;
+        int i;
+        if (x0 == null) {
+            x0 = new DecimalFormat("0.################", new DecimalFormatSymbols(Locale.US));
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (starsAmount instanceof TL_stars.TL_starsTonAmount) {
+            String format = x0.format(starsAmount.amount / 1.0E9d);
+            spannableStringBuilder.append((CharSequence) format);
+            int indexOf = format.indexOf(".");
+            if (indexOf >= 0) {
+                spannableStringBuilder.setSpan(new RelativeSizeSpan(f), indexOf, spannableStringBuilder.length(), 33);
+                return spannableStringBuilder;
             }
-        }
-        return arrayList2;
-    }
-
-    public static long l(TLObject tLObject) {
-        if (tLObject instanceof TLRPC.TL_messages_sendMessage) {
-            return ((TLRPC.TL_messages_sendMessage) tLObject).allow_paid_stars;
-        }
-        if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
-            return ((TLRPC.TL_messages_sendMultiMedia) tLObject).allow_paid_stars;
-        }
-        if (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) {
-            return ((TLRPC.TL_messages_sendInlineBotResult) tLObject).allow_paid_stars;
-        }
-        if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
-            return ((TLRPC.TL_messages_forwardMessages) tLObject).allow_paid_stars / r4.id.size();
-        }
-        if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
-            return ((TLRPC.TL_messages_sendMedia) tLObject).allow_paid_stars;
-        }
-        return 0L;
-    }
-
-    public static Context q(d dVar) {
-        if (dVar != null && dVar.getContext() != null) {
-            return dVar.getContext();
-        }
-        LaunchActivity launchActivity = LaunchActivity.H1;
-        if (launchActivity != null && !launchActivity.isFinishing()) {
-            return LaunchActivity.H1;
-        }
-        if (a.b != null) {
-            return a.b;
-        }
-        return null;
-    }
-
-    public static jva t(int i) {
-        return v(i, false);
-    }
-
-    public static jva u(int i, ok okVar) {
-        return v(i, okVar == ok.b);
-    }
-
-    public static jva v(int i, boolean z) {
-        jva jvaVar;
-        jva jvaVar2 = S[z ? 1 : 0][i];
-        if (jvaVar2 != null) {
-            return jvaVar2;
-        }
-        synchronized (T[z ? 1 : 0][i]) {
-            jvaVar = S[z ? 1 : 0][i];
-            if (jvaVar == null) {
-                jva[] jvaVarArr = S[z ? 1 : 0];
-                jva jvaVar3 = new jva(i, z);
-                jvaVarArr[i] = jvaVar3;
-                jvaVar = jvaVar3;
+        } else {
+            long j = starsAmount.amount;
+            int i2 = starsAmount.nanos;
+            if (i2 < 0 && j > 0) {
+                i = -1;
+                d = 1.0E9d;
+            } else if (i2 <= 0 || j >= 0) {
+                d = 1.0E9d;
+                i = 0;
+            } else {
+                d = 1.0E9d;
+                i = 1;
             }
-        }
-        return jvaVar;
-    }
-
-    public final long A(int i, long j) {
-        hva hvaVar = this.B;
-        if (hvaVar == null) {
-            return 0L;
-        }
-        cva cvaVar = hvaVar.a;
-        if (cvaVar.a == j && cvaVar.b == i && hvaVar.l) {
-            return hvaVar.h;
-        }
-        return 0L;
-    }
-
-    public final long B(k47 k47Var) {
-        TLRPC.Message message;
-        if (k47Var == null || (message = k47Var.k) == null) {
-            return 0L;
-        }
-        return ((message.isThreadMessage || k47Var.k3()) && k47Var.k.fwd_from != null) ? A(k47Var.k.fwd_from.saved_from_msg_id, k47Var.Z0()) : A(k47Var.e1(), k47.B0(k47Var.k));
-    }
-
-    public final yua C(long j, boolean z) {
-        LongSparseArray longSparseArray = this.K;
-        yua yuaVar = (yua) longSparseArray.get(j);
-        if (yuaVar != null || !z) {
-            return yuaVar;
-        }
-        yua yuaVar2 = new yua(this.a, j);
-        longSparseArray.put(j, yuaVar2);
-        return yuaVar2;
-    }
-
-    public final ava D(long j, boolean z) {
-        LongSparseArray longSparseArray = this.L;
-        ava avaVar = (ava) longSparseArray.get(j);
-        if (avaVar != null || !z) {
-            return avaVar;
-        }
-        ava avaVar2 = new ava(this.a, j, true);
-        longSparseArray.put(j, avaVar2);
-        return avaVar2;
-    }
-
-    public final void E(TL_stars.StarGift starGift, long j, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z, qac qacVar) {
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        ylb F = F();
-        if (starGift == null || context == null) {
-            return;
-        }
-        if (!this.e) {
-            o(new ut0(this, qacVar, starGift, j, tL_textWithEntities, z, (byte) 7));
-            return;
-        }
-        TLRPC.TL_inputInvoiceStarGiftResale tL_inputInvoiceStarGiftResale = new TLRPC.TL_inputInvoiceStarGiftResale();
-        tL_inputInvoiceStarGiftResale.slug = starGift.slug;
-        tL_inputInvoiceStarGiftResale.to_id = oc7.r1(this.a).i1(j);
-        tL_inputInvoiceStarGiftResale.ton = this.b;
-        tL_inputInvoiceStarGiftResale.message = tL_textWithEntities;
-        byte b = 1;
-        tL_inputInvoiceStarGiftResale.show_name = !z;
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        JSONObject u = wx0.u(F, false);
-        if (u != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = u.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoiceStarGiftResale;
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getPaymentForm, new ara(this, qacVar, b));
-    }
-
-    public final TL_stars.StarGift G(long j) {
-        T();
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.H;
-            if (i >= arrayList.size()) {
-                return null;
+            long j2 = i + j;
+            boolean z = j != 0 ? j < 0 : i2 < 0;
+            if (Math.abs(j2) > 1000 || starsAmount.nanos == 0) {
+                if (starsAmount.amount <= 1000) {
+                    spannableStringBuilder.append((CharSequence) (z ? "-" : "").concat(k96.E(Math.abs(j2), c)));
+                    return spannableStringBuilder;
+                }
+                spannableStringBuilder.append((CharSequence) ((z ? "-" : "") + gl.o0((int) Math.abs(j2), 0)));
+                return spannableStringBuilder;
             }
-            TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i);
-            if (starGift.id == j) {
-                return starGift;
+            spannableStringBuilder.append((CharSequence) (z ? "-" : "").concat(k96.E(Math.abs(j2), c)));
+            DecimalFormat decimalFormat = x0;
+            int i3 = starsAmount.nanos;
+            double d2 = i3;
+            if (i3 < 0) {
+                d2 += d;
             }
-            i++;
-        }
-    }
-
-    public final void H(long j, qac qacVar) {
-        TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) this.M.get(Long.valueOf(j));
-        if (stargiftupgradepreview != null) {
-            qacVar.a(stargiftupgradepreview);
-            return;
-        }
-        TL_stars.getStarGiftUpgradePreview getstargiftupgradepreview = new TL_stars.getStarGiftUpgradePreview();
-        getstargiftupgradepreview.gift_id = j;
-        ConnectionsManager.getInstance(this.a).sendRequest(getstargiftupgradepreview, new jb7((Object) this, j, (Object) qacVar, (byte) 16));
-    }
-
-    public final void J(TL_stars.InputSavedStarGift inputSavedStarGift, qac qacVar) {
-        he heVar = new he(3, null, a.b);
-        heVar.q(200L);
-        TL_stars.getSavedStarGift getsavedstargift = new TL_stars.getSavedStarGift();
-        getsavedstargift.stargift.add(inputSavedStarGift);
-        ConnectionsManager.getInstance(this.a).sendRequest(getsavedstargift, new av0((Object) this, (Object) heVar, (Object) inputSavedStarGift, (Object) qacVar, (byte) 22));
-    }
-
-    public final boolean K(int i) {
-        return this.e && !this.q[i].isEmpty();
-    }
-
-    public final void L() {
-        this.e = false;
-        m();
-        this.e = true;
-    }
-
-    public final void M(long j) {
-        ava D = D(j, false);
-        if (D != null) {
-            D.k(false);
-        }
-        yua yuaVar = (yua) this.K.get(j);
-        if (yuaVar != null) {
-            yuaVar.g();
-        }
-    }
-
-    public final void N(TLRPC.UserFull userFull) {
-        if (userFull != null) {
-            long j = userFull.id;
-            ava D = D(j, false);
-            if (D != null && D.n != userFull.stargifts_count) {
-                D.k(false);
-            }
-            yua yuaVar = (yua) this.K.get(j);
-            if (yuaVar != null) {
-                yuaVar.g();
-            }
-        }
-    }
-
-    public final void O() {
-        if (this.x) {
-            return;
-        }
-        this.v.clear();
-        this.w = null;
-        this.x = false;
-        this.y = false;
-        U();
-    }
-
-    public final void P(boolean z) {
-        for (int i = 0; i < 3; i++) {
-            boolean[] zArr = this.t;
-            if (!zArr[i]) {
-                this.q[i].clear();
-                this.s[i] = null;
-                zArr[i] = false;
-                this.u[i] = false;
-                if (z) {
-                    V(i);
+            String format2 = decimalFormat.format(d2 / d);
+            int indexOf2 = format2.indexOf(".");
+            if (indexOf2 >= 0) {
+                int length = spannableStringBuilder.length();
+                String substring = format2.substring(indexOf2);
+                if (substring.length() > 1) {
+                    spannableStringBuilder.append((CharSequence) substring.substring(0, Math.min(substring.length(), 3)));
+                    spannableStringBuilder.setSpan(new RelativeSizeSpan(f), length + 1, spannableStringBuilder.length(), 33);
                 }
             }
         }
+        return spannableStringBuilder;
     }
 
-    public final /* synthetic */ void R(ArrayList arrayList, Integer num, Long l, ArrayList arrayList2, ArrayList arrayList3) {
-        int i = this.a;
-        oc7.r1(i).d4(arrayList2, true);
-        oc7.r1(i).X3(arrayList3, true);
-        this.E = true;
-        ArrayList arrayList4 = this.H;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList);
-        ArrayList arrayList5 = this.J;
-        arrayList5.clear();
-        arrayList5.addAll(arrayList4);
-        Collections.sort(arrayList5, Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new mn((byte) 14)), new mn((byte) 15)));
-        ArrayList arrayList6 = this.I;
-        arrayList6.clear();
-        arrayList6.addAll(arrayList4);
-        Collections.sort(arrayList6, Comparator$-CC.comparingInt(new mn((byte) 16)));
-        this.F = num.intValue();
-        this.G = l.longValue();
-        this.C = false;
-        nm7.f(i).k(nm7.H3, new Object[0]);
-        T();
+    public static SpannableStringBuilder I0(TL_stars.StarsAmount starsAmount) {
+        double d;
+        int i;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (starsAmount instanceof TL_stars.TL_starsTonAmount) {
+            DecimalFormat decimalFormat = x0;
+            if (decimalFormat == null) {
+                decimalFormat = new DecimalFormat("0.################", new DecimalFormatSymbols(Locale.US));
+                x0 = decimalFormat;
+            }
+            String format = decimalFormat.format(starsAmount.amount / 1.0E9d);
+            spannableStringBuilder.append((CharSequence) format);
+            int indexOf = format.indexOf(".");
+            if (indexOf >= 0) {
+                spannableStringBuilder.setSpan(new RelativeSizeSpan(0.777f), indexOf, spannableStringBuilder.length(), 33);
+            }
+            return spannableStringBuilder;
+        }
+        long j = starsAmount.amount;
+        int i2 = starsAmount.nanos;
+        boolean z = false;
+        if (i2 < 0 && j > 0) {
+            i = -1;
+            d = 1.0E9d;
+        } else if (i2 <= 0 || j >= 0) {
+            d = 1.0E9d;
+            i = 0;
+        } else {
+            d = 1.0E9d;
+            i = 1;
+        }
+        long j2 = i + j;
+        if (j != 0 ? j < 0 : i2 < 0) {
+            z = true;
+        }
+        if (i2 == 0) {
+            spannableStringBuilder.append((CharSequence) k96.H(',', "Stars", (int) j));
+            return spannableStringBuilder;
+        }
+        spannableStringBuilder.append((CharSequence) (z ? "-" : "").concat(k96.E(Math.abs(j2), ',')));
+        DecimalFormat decimalFormat2 = x0;
+        if (decimalFormat2 == null) {
+            decimalFormat2 = new DecimalFormat("0.################", new DecimalFormatSymbols(Locale.US));
+            x0 = decimalFormat2;
+        }
+        int i3 = starsAmount.nanos;
+        double d2 = i3;
+        if (i3 < 0) {
+            d2 += d;
+        }
+        String format2 = decimalFormat2.format(d2 / d);
+        int indexOf2 = format2.indexOf(".");
+        if (indexOf2 >= 0) {
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) format2.substring(indexOf2));
+            spannableStringBuilder.setSpan(new RelativeSizeSpan(0.777f), length + 1, spannableStringBuilder.length(), 33);
+        }
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) k96.M0(2131744847, null));
+        return spannableStringBuilder;
     }
 
-    public final void S(TL_stars.StarGifts starGifts) {
-        this.C = false;
-        this.D = true;
-        boolean z = starGifts instanceof TL_stars.TL_starGifts;
-        int i = this.a;
-        ArrayList arrayList = this.H;
+    public static String J0(long j) {
+        DecimalFormat decimalFormat = w0;
+        if (decimalFormat == null) {
+            decimalFormat = new DecimalFormat("0.####", new DecimalFormatSymbols(Locale.US));
+            w0 = decimalFormat;
+        }
+        if (j % 1000000000 != 0) {
+            return decimalFormat.format(j / 1.0E9d);
+        }
+        return (j < 0 ? "-" : "").concat(k96.E(Math.abs(j / 1000000000), ','));
+    }
+
+    public static String K0(int i, boolean z, TL_stars.StarsTransaction starsTransaction) {
+        int i2;
+        if (starsTransaction.stargift_drop_original_details) {
+            return k96.M0(2131744695, null);
+        }
+        if (starsTransaction.posts_search) {
+            return k96.M0(2131744699, null);
+        }
+        if (starsTransaction.premium_gift) {
+            return k96.M0(2131744698, null);
+        }
+        if (starsTransaction.phonegroup_message) {
+            return k96.M0(starsTransaction.reaction ? 2131744707 : 2131744708, null);
+        }
+        if (starsTransaction.paid_message) {
+            return k96.H(',', "StarsTransactionMessageFee", starsTransaction.paid_messages);
+        }
+        if (starsTransaction.floodskip) {
+            return k96.M0(2131744722, null);
+        }
+        if (!starsTransaction.extended_media.isEmpty()) {
+            return k96.M0(2131744967, null);
+        }
+        TL_stars.StarsAmount starsAmount = starsTransaction.amount;
+        int i3 = starsTransaction.flags;
+        if ((131072 & i3) == 0 && (65536 & i3) != 0) {
+            return k96.a0(null, null, 2131744924, bc.I0(starsTransaction.starref_commission_permille));
+        }
+        if (starsTransaction.stargift != null) {
+            if (starsTransaction.stargift_prepaid_upgrade) {
+                return k96.M0(2131749914, null);
+            }
+            boolean z2 = starsTransaction.refund;
+            boolean z3 = starsTransaction.stargift_auction_bid;
+            if (z2) {
+                return k96.M0(z3 ? 2131749913 : starsAmount.amount > 0 ? starsTransaction.stargift_upgrade ? 2131749910 : 2131749911 : 2131749912, null);
+            }
+            return k96.M0(z3 ? 2131749916 : starsAmount.amount > 0 ? 2131749915 : starsTransaction.stargift_upgrade ? 2131749907 : 2131749908, null);
+        }
+        if (starsTransaction.subscription) {
+            int i4 = starsTransaction.subscription_period;
+            if (i4 == 2592000) {
+                return k96.M0(2131744926, null);
+            }
+            if (i4 == 300) {
+                return "5-minute subscription fee";
+            }
+            if (i4 == 60) {
+                return "Minute subscription fee";
+            }
+        }
+        if ((i3 & TLObject.FLAG_13) != 0) {
+            return k96.M0(2131744856, null);
+        }
+        if (starsTransaction.gift) {
+            if (starsTransaction.sent_by != null) {
+                return k96.M0(l7c.D(na7.q1(i).V1(Long.valueOf(cf3.n(starsTransaction.sent_by)))) ? 2131744864 : 2131744865, null);
+            }
+            return k96.M0(2131744865, null);
+        }
+        String str = starsTransaction.title;
+        if (str != null) {
+            return str;
+        }
+        long n = cf3.n(starsTransaction.peer.peer);
+        if (n != 0) {
+            int i5 = y6c.t0;
+            if (n >= 0) {
+                return l7c.r(na7.q1(i5).V1(Long.valueOf(n)));
+            }
+            TLRPC.Chat K0 = na7.q1(i5).K0(Long.valueOf(-n));
+            return K0 == null ? "" : K0.title;
+        }
+        TL_stars.StarsTransactionPeer starsTransactionPeer = starsTransaction.peer;
+        if (!(starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerFragment)) {
+            return starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPremiumBot ? k96.M0(2131744724, null) : starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAds ? k96.M0(2131744725, null) : k96.M0(2131744686, null);
+        }
         if (!z) {
-            if (starGifts instanceof TL_stars.TL_starGiftsNotModified) {
-                int i2 = this.F;
-                long currentTimeMillis = System.currentTimeMillis();
-                this.G = currentTimeMillis;
-                cf7 Y = cf7.Y(i);
-                Y.a.c(new md7(Y, arrayList, i2, currentTimeMillis));
-                return;
+            boolean z4 = starsTransaction.refund;
+            TL_stars.StarsAmount starsAmount2 = starsTransaction.amount;
+            if (!z4 ? !starsAmount2.negative() : !starsAmount2.positive()) {
+                i2 = 2131744714;
+                return k96.M0(i2, null);
             }
-            return;
         }
-        TL_stars.TL_starGifts tL_starGifts = (TL_stars.TL_starGifts) starGifts;
-        oc7.r1(i).d4(tL_starGifts.users, false);
-        oc7.r1(i).X3(tL_starGifts.chats, false);
-        cf7.Y(i).j1(tL_starGifts.users, tL_starGifts.chats, true, true);
-        arrayList.clear();
-        arrayList.addAll(tL_starGifts.gifts);
-        ArrayList arrayList2 = this.J;
-        arrayList2.clear();
-        arrayList2.addAll(arrayList);
-        Collections.sort(arrayList2, Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new mn((byte) 17)), new mn((byte) 18)));
-        ArrayList arrayList3 = this.I;
-        arrayList3.clear();
-        arrayList3.addAll(arrayList);
-        Collections.sort(arrayList3, Comparator$-CC.comparingInt(new mn((byte) 19)));
-        this.F = tL_starGifts.hash;
-        this.G = System.currentTimeMillis();
-        nm7.f(i).k(nm7.H3, new Object[0]);
-        ArrayList<TL_stars.StarGift> arrayList4 = tL_starGifts.gifts;
-        int i3 = this.F;
-        long j = this.G;
-        cf7 Y2 = cf7.Y(i);
-        Y2.a.c(new md7(Y2, arrayList4, i3, j));
+        i2 = 2131744684;
+        return k96.M0(i2, null);
     }
 
-    public final void T() {
-        if (this.C) {
-            return;
+    public static SpannableStringBuilder Q0(CharSequence charSequence, float f) {
+        return R0(charSequence, f, 0.0f, 1.0f);
+    }
+
+    public static SpannableStringBuilder R0(CharSequence charSequence, float f, float f2, float f3) {
+        if (charSequence == null) {
+            return null;
         }
-        if (!this.D || System.currentTimeMillis() - this.G >= 60000) {
-            this.C = true;
-            boolean z = this.E;
-            int i = this.a;
+        SpannableStringBuilder spannableStringBuilder = !(charSequence instanceof SpannableStringBuilder) ? new SpannableStringBuilder(charSequence) : (SpannableStringBuilder) charSequence;
+        SpannableString spannableString = new SpannableString("💎 ");
+        cm2 cm2Var = new cm2(R.drawable.diamond, 0);
+        cm2Var.d = false;
+        cm2Var.r = 0.0f;
+        cm2Var.s = f2;
+        cm2Var.H = f3;
+        cm2Var.I = f;
+        cm2Var.J = f;
+        spannableString.setSpan(cm2Var, 0, spannableString.length() - 1, 33);
+        gl.I2(spannableStringBuilder, "💎", "💎️");
+        gl.I2(spannableStringBuilder, "💎", "💎 ");
+        gl.I2(spannableStringBuilder, spannableString, "💎");
+        gl.I2(spannableStringBuilder, "XTR", "XTR ");
+        gl.I2(spannableStringBuilder, spannableString, "XTR");
+        return spannableStringBuilder;
+    }
+
+    public static SpannableStringBuilder S0(CharSequence charSequence) {
+        return T0(charSequence, 1.13f, null);
+    }
+
+    public static SpannableStringBuilder T0(CharSequence charSequence, float f, cm2[] cm2VarArr) {
+        return X0(false, charSequence, f, cm2VarArr, 0.0f, 1.0f);
+    }
+
+    public static SpannableStringBuilder U0(CharSequence charSequence, boolean z) {
+        return W0(z, charSequence, 1.13f, null);
+    }
+
+    public static SpannableStringBuilder V0(TL_stars.StarsAmount starsAmount, CharSequence charSequence) {
+        return W0(starsAmount instanceof TL_stars.TL_starsTonAmount, charSequence, 1.25f, null);
+    }
+
+    public static SpannableStringBuilder W0(boolean z, CharSequence charSequence, float f, cm2[] cm2VarArr) {
+        return X0(z, charSequence, f, cm2VarArr, 0.0f, 1.0f);
+    }
+
+    public static SpannableStringBuilder X0(boolean z, CharSequence charSequence, float f, cm2[] cm2VarArr, float f2, float f3) {
+        cm2 cm2Var;
+        if (charSequence == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = !(charSequence instanceof SpannableStringBuilder) ? new SpannableStringBuilder(charSequence) : (SpannableStringBuilder) charSequence;
+        SpannableString spannableString = new SpannableString((z ? "TON" : "⭐").concat(" "));
+        if (cm2VarArr == null || (cm2Var = cm2VarArr[0]) == null) {
+            cm2Var = new cm2(z ? R.drawable.mini_gram_72 : R.drawable.msg_premium_liststar, 0);
+            if (cm2VarArr != null) {
+                cm2VarArr[0] = cm2Var;
+            }
+        }
+        cm2Var.r = 0.0f;
+        cm2Var.s = f2;
+        cm2Var.H = f3;
+        if (z) {
+            cm2Var.d = false;
+            float f4 = f * 0.2f;
+            cm2Var.I = f4;
+            cm2Var.J = f4;
+        } else {
+            cm2Var.I = f;
+            cm2Var.J = f;
+        }
+        spannableString.setSpan(cm2Var, 0, spannableString.length() - 1, 33);
+        gl.I2(spannableStringBuilder, "⭐", "⭐️");
+        gl.I2(spannableStringBuilder, "⭐", "⭐ ");
+        gl.I2(spannableStringBuilder, spannableString, "⭐");
+        gl.I2(spannableStringBuilder, "XTR", "XTR ");
+        gl.I2(spannableStringBuilder, spannableString, "XTR");
+        return spannableStringBuilder;
+    }
+
+    public static SpannableStringBuilder Y0(boolean z, String str, cm2[] cm2VarArr) {
+        cm2 cm2Var;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+        if (cm2VarArr == null || (cm2Var = cm2VarArr[0]) == null) {
+            cm2Var = new cm2(z ? R.drawable.mini_gram_72 : R.drawable.msg_premium_liststar, 0);
+            float f = z ? 0.222f : 1.13f;
+            cm2Var.I = f;
+            cm2Var.J = f;
+        }
+        if (z) {
+            cm2Var.d = false;
+        }
+        if (cm2VarArr != null) {
+            cm2VarArr[0] = cm2Var;
+        }
+        SpannableString spannableString = new SpannableString("⭐ ");
+        spannableString.setSpan(cm2Var, 0, spannableString.length() - 1, 33);
+        gl.I2(spannableStringBuilder, "⭐", "⭐️");
+        gl.I2(spannableStringBuilder, "⭐", "⭐ ");
+        gl.I2(spannableStringBuilder, spannableString, "⭐");
+        gl.I2(spannableStringBuilder, "XTR", "XTR ");
+        gl.I2(spannableStringBuilder, spannableString, "XTR");
+        return spannableStringBuilder;
+    }
+
+    public static SpannableStringBuilder Z0(TL_stars.StarsAmount starsAmount, String str, cm2[] cm2VarArr) {
+        return a1(starsAmount instanceof TL_stars.TL_starsTonAmount, str, 0.8f, cm2VarArr);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0045  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static SpannableStringBuilder a1(boolean z, CharSequence charSequence, float f, cm2[] cm2VarArr) {
+        int i;
+        String str;
+        cm2 cm2Var;
+        if (charSequence == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = !(charSequence instanceof SpannableStringBuilder) ? new SpannableStringBuilder(charSequence) : (SpannableStringBuilder) charSequence;
+        if (z) {
+            str = "TON";
+            i = R.drawable.mini_gram_72;
+        } else {
+            i = R.drawable.star_small_inner;
+            str = "⭐";
+        }
+        SpannableString spannableString = new SpannableString(str.concat(" "));
+        if (cm2VarArr != null) {
+            cm2Var = cm2VarArr[0];
+            if (cm2Var == null) {
+                if (cm2VarArr.length > 0) {
+                    cm2Var = new cm2(i, 0);
+                    cm2VarArr[0] = cm2Var;
+                }
+            }
+            cm2Var.d = false;
             if (z) {
-                int i2 = this.F;
-                eg9 eg9Var = new eg9(this, (byte) 10);
-                TL_stars.getStarGifts getstargifts = new TL_stars.getStarGifts();
-                getstargifts.hash = i2;
-                ConnectionsManager.getInstance(i).sendRequest(getstargifts, new go9(eg9Var, (byte) 3));
-                return;
+                f *= 0.33f;
             }
-            yf9 yf9Var = new yf9(this, (byte) 27);
-            ArrayList arrayList = new ArrayList();
-            ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = new ArrayList();
-            cf7 Y = cf7.Y(i);
-            Y.a.c(new hz7((Object) Y, (Object) arrayList3, (Object) arrayList2, (Object) arrayList, (Object) yf9Var, (byte) 26));
+            cm2Var.I = f;
+            cm2Var.J = f;
+            spannableString.setSpan(cm2Var, 0, spannableString.length() - 1, 33);
+            gl.I2(spannableStringBuilder, "⭐", "⭐️");
+            gl.I2(spannableStringBuilder, "⭐", "⭐ ");
+            gl.I2(spannableStringBuilder, spannableString, "⭐");
+            gl.I2(spannableStringBuilder, "XTR", "XTR ");
+            gl.I2(spannableStringBuilder, spannableString, "XTR");
+            return spannableStringBuilder;
         }
+        cm2Var = new cm2(i, 0);
+        cm2Var.d = false;
+        if (z) {
+        }
+        cm2Var.I = f;
+        cm2Var.J = f;
+        spannableString.setSpan(cm2Var, 0, spannableString.length() - 1, 33);
+        gl.I2(spannableStringBuilder, "⭐", "⭐️");
+        gl.I2(spannableStringBuilder, "⭐", "⭐ ");
+        gl.I2(spannableStringBuilder, spannableString, "⭐");
+        gl.I2(spannableStringBuilder, "XTR", "XTR ");
+        gl.I2(spannableStringBuilder, spannableString, "XTR");
+        return spannableStringBuilder;
     }
 
-    public final void U() {
-        if (this.b || this.x || this.y) {
-            return;
-        }
-        this.x = true;
-        TL_stars.TL_getStarsSubscriptions tL_getStarsSubscriptions = new TL_stars.TL_getStarsSubscriptions();
-        tL_getStarsSubscriptions.peer = new TLRPC.TL_inputPeerSelf();
-        String str = this.w;
-        tL_getStarsSubscriptions.offset = str;
-        if (str == null) {
-            tL_getStarsSubscriptions.offset = "";
-        }
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_getStarsSubscriptions, new jua(this, (byte) 1));
+    public static cua b1(be0 be0Var, ImageReceiver imageReceiver, String str, boolean z) {
+        final byte b = 1;
+        int i = imageReceiver.d;
+        final pj3 pj3Var = new pj3(z, i, str, imageReceiver, new boolean[1]);
+        pj3Var.run();
+        final byte b2 = 0;
+        return new cua(kk7.f(i).h(be0Var, z ? kk7.Y2 : kk7.X2, new p8c() { // from class: bua
+            @Override // p8c
+            public final void a(Object obj) {
+                byte b3 = b2;
+                pj3 pj3Var2 = pj3Var;
+                switch (b3) {
+                    case 0:
+                        pj3Var2.run();
+                        break;
+                    default:
+                        pj3Var2.run();
+                        break;
+                }
+            }
+        }), kk7.f(i).h(be0Var, kk7.x0, new p8c() { // from class: bua
+            @Override // p8c
+            public final void a(Object obj) {
+                byte b3 = b;
+                pj3 pj3Var2 = pj3Var;
+                switch (b3) {
+                    case 0:
+                        pj3Var2.run();
+                        break;
+                    default:
+                        pj3Var2.run();
+                        break;
+                }
+            }
+        }), b2);
     }
 
-    public final void V(int i) {
-        boolean[] zArr = this.t;
-        if (zArr[i] || this.u[i]) {
+    public static void c1(be0 be0Var, ImageReceiver imageReceiver, long j) {
+        b1(be0Var, imageReceiver, j <= 1000 ? "2⃣" : j < 2500 ? "3⃣" : "4⃣", false);
+    }
+
+    public static void d1(ImageReceiver imageReceiver, TLRPC.Document document, int i) {
+        if (document == null) {
+            imageReceiver.f();
             return;
         }
-        zArr[i] = true;
-        TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
-        tL_payments_getStarsTransactions.ton = this.b;
-        tL_payments_getStarsTransactions.peer = new TLRPC.TL_inputPeerSelf();
-        tL_payments_getStarsTransactions.inbound = i == 1;
-        tL_payments_getStarsTransactions.outbound = i == 2;
-        String str = this.s[i];
-        tL_payments_getStarsTransactions.offset = str;
-        if (str == null) {
-            tL_payments_getStarsTransactions.offset = "";
+        TLRPC.PhotoSize w = ba4.w(document.thumbs, i, false, null, false);
+        imageReceiver.Z(gl5.b(document), tb4.m(i, i, "_"), gl5.c(w, document), tb4.m(i, i, "_"), uo3.d(document.thumbs, bkb.Z6, 0.35f, false), 0L, null, null, 0);
+    }
+
+    public static void e1(ImageReceiver imageReceiver, TL_stars.StarGift starGift, int i) {
+        d1(imageReceiver, starGift == null ? null : starGift.getDocument(), i);
+    }
+
+    public static cua f1(be0 be0Var, ImageReceiver imageReceiver, int i) {
+        return b1(be0Var, imageReceiver, i != 3 ? i != 6 ? i != 12 ? i != 24 ? "1⃣" : "5⃣" : "4⃣" : "3⃣" : "2⃣", false);
+    }
+
+    public static void g1(be0 be0Var, ImageReceiver imageReceiver, long j) {
+        b1(be0Var, imageReceiver, j <= 10000000000L ? "2⃣" : j <= 50000000000L ? "1⃣" : "3⃣", true);
+    }
+
+    public static void h1(Context context, int i, long j, TL_stories.Boost boost, wjb wjbVar) {
+        int i2;
+        if (context == null) {
+            return;
         }
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getStarsTransactions, new w22(this, i, (byte) 6));
+        fx0 h = de9.h(1, wjbVar, context, false);
+        LinearLayout j2 = de9.j(context, 1);
+        j2.setPadding(0, gl.L(20.0f), 0, gl.L(4.0f));
+        j2.setClipChildren(false);
+        j2.setClipToPadding(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setClipChildren(false);
+        frameLayout.setClipToPadding(false);
+        j2.addView(frameLayout, nme.t(-1, kk7.f2, 7, 0, 0, 0, 10));
+        qua quaVar = new qua(context, 70, 0);
+        frameLayout.addView(quaVar, nme.c(-1.0f, -1));
+        er4 er4Var = new er4(context, 1, 2);
+        uq4 uq4Var = er4Var.b;
+        uq4Var.z = bkb.Vk;
+        uq4Var.A = bkb.Wk;
+        uq4Var.b();
+        er4Var.setStarParticlesView(quaVar);
+        frameLayout.addView(er4Var, nme.d(kk7.z2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        er4Var.setPaused(false);
+        TextView textView = new TextView(context);
+        tb4.w(textView, bkb.i5, wjbVar, 1, 20.0f);
+        byte b = 17;
+        textView.setGravity(17);
+        fx0[] fx0VarArr = new fx0[1];
+        textView.setText(k96.H(' ', "BoostStars", (int) boost.stars));
+        TextView m = ug8.m(j2, textView, nme.t(-1, -2, 17, 20, 0, 20, 4), context);
+        m.setBackground(bkb.b0(gl.L(20.0f), -6915073));
+        m.setTextColor(-1);
+        m.setTextSize(1, 11.33f);
+        m.setPadding(gl.L(4.0f), 0, gl.L(8.33f), 0);
+        m.setGravity(17);
+        m.setTypeface(gl.o());
+        int i3 = boost.multiplier;
+        if (i3 == 0) {
+            i3 = 1;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x".concat(k96.H(' ', "BoostingBoostsCount", i3)));
+        cm2 cm2Var = new cm2(R.drawable.mini_boost_badge, 2);
+        float L = gl.L(0.66f);
+        cm2Var.r = 0.0f;
+        cm2Var.s = L;
+        spannableStringBuilder.setSpan(cm2Var, 0, 1, 33);
+        m.setText(spannableStringBuilder);
+        j2.addView(m, nme.t(-2, 20, 17, 20, 4, 20, 4));
+        mfb mfbVar = new mfb(context, wjbVar);
+        mfbVar.n(k96.M0(2131753624, null), i, j, new ota(fx0VarArr, j, (byte) 6));
+        mfbVar.f(k96.M0(2131753623, null), k96.G((int) boost.stars, "BoostStars", new Object[0]), null, null);
+        if (boost.giveaway_msg_id != 0) {
+            String M0 = k96.M0(2131753612, null);
+            String M02 = k96.M0(2131753611, null);
+            i2 = 1;
+            go6 go6Var = new go6((Object) fx0VarArr, j, (Object) boost, (byte) 27);
+            fx0VarArr = fx0VarArr;
+            mfbVar.i(M0, M02, go6Var);
+        } else {
+            i2 = 1;
+        }
+        String M03 = k96.M0(2131753659, null);
+        String format = k96.D0().r0().format(new Date(boost.date * 1000));
+        String format2 = k96.D0().o0().format(new Date(boost.date * 1000));
+        Object[] objArr = new Object[2];
+        objArr[0] = format;
+        objArr[i2] = format2;
+        mfbVar.f(M03, k96.a0(null, null, 2131742520, objArr), null, null);
+        String M04 = k96.M0(2131753604, null);
+        String format3 = k96.D0().r0().format(new Date(boost.expires * 1000));
+        String format4 = k96.D0().o0().format(new Date(boost.expires * 1000));
+        Object[] objArr2 = new Object[2];
+        objArr2[0] = format3;
+        objArr2[i2] = format4;
+        mfbVar.f(M04, k96.a0(null, null, 2131742520, objArr2), null, null);
+        j2.addView(mfbVar, nme.k(16.0f, 17.0f, 16.0f, 0.0f, -1, -2));
+        l46 l46Var = new l46(context, wjbVar);
+        zkb.X(l46Var, bkb.y6, wjbVar);
+        zkb.G(l46Var, bkb.Wc, wjbVar);
+        l46Var.setTextSize(i2, 14.0f);
+        l46Var.setText(gl.N2(k96.M0(2131744689, null), -1, 0, new vf1(context, b), null));
+        l46Var.setGravity(17);
+        j2.addView(l46Var, nme.k(14.0f, 15.0f, 14.0f, 7.0f, -1, -2));
+        u41 u41Var = new u41(wjbVar, context, true);
+        u41Var.i(k96.M0(2131747638, null), false, true);
+        u41Var.setOnClickListener(new f5(fx0VarArr, (byte) 5));
+        j2.addView(u41Var, nme.k(16.0f, 8.0f, 16.0f, 0.0f, -1, 48));
+        h.O = j2;
+        fx0VarArr[0] = h;
+        h.T0 = false;
+        h.K();
+        d S = LaunchActivity.S();
+        if (!gl.O1() && !gl.s1(S)) {
+            fx0VarArr[0].X(S);
+        }
+        er4Var.setPaused(false);
+        fx0VarArr[0].show();
+        fx0VarArr[0].n(new z6a(er4Var, (byte) 24));
+    }
+
+    public static o0a i1(Context context, int i, TL_stars.TL_starGiftUnique tL_starGiftUnique, i8c i8cVar, wjb wjbVar) {
+        oj ojVar = oj.a;
+        o0a o0aVar = new o0a(context, wjbVar, i, tL_starGiftUnique == null ? nj.h(na7.q1(i).k4.o.f(), ojVar) : tL_starGiftUnique.resale_ton_only ? tL_starGiftUnique.getResellAmount(oj.b) : tL_starGiftUnique.getResellAmount(ojVar), new nu9(i8cVar, r8, (byte) 12));
+        o0a[] o0aVarArr = {o0aVar};
+        o0aVar.show();
+        return o0aVarArr[0];
+    }
+
+    public static void j1(Context context, long j, boolean z, final i8c i8cVar, wjb wjbVar) {
+        fx0[] fx0VarArr;
+        fx0 h = de9.h(1, wjbVar, context, false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setPadding(gl.L(16.0f), gl.L(16.0f), gl.L(16.0f), gl.L(8.0f));
+        TextView textView = new TextView(context);
+        textView.setTypeface(gl.o());
+        u41 u41Var = null;
+        textView.setText(k96.M0(2131747539, null));
+        textView.setTextSize(1, 20.0f);
+        int i = bkb.F6;
+        zkb.X(textView, i, wjbVar);
+        linearLayout.addView(textView, nme.k(4.0f, 0.0f, 4.0f, 18.0f, -1, -2));
+        final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        er7 er7Var = new er7(context, wjbVar);
+        er7Var.setForceForceUseCenter(true);
+        er7Var.setText(k96.M0(2131747540, null));
+        er7Var.setLeftPadding(gl.L(36.0f));
+        zkb.X(editTextBoldCursor, i, wjbVar);
+        editTextBoldCursor.setCursorSize(gl.L(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setBackground(null);
+        editTextBoldCursor.setTextSize(1, 18.0f);
+        editTextBoldCursor.setMaxLines(1);
+        int L = gl.L(16.0f);
+        editTextBoldCursor.setPadding(gl.L(6.0f), L, L, L);
+        byte b = 2;
+        editTextBoldCursor.setInputType(2);
+        editTextBoldCursor.setTypeface(Typeface.DEFAULT);
+        editTextBoldCursor.setSelectAllOnFocus(true);
+        zkb.C(editTextBoldCursor, bkb.kg, wjbVar);
+        zkb.l(editTextBoldCursor, 36, bkb.lg, wjbVar);
+        editTextBoldCursor.setGravity(k96.a0 ? 5 : 3);
+        editTextBoldCursor.setOnFocusChangeListener(new jt0(er7Var, editTextBoldCursor, b));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.star_small_inner);
+        linearLayout2.addView(imageView, nme.q(-2, -2, 0.0f, 19, 14, 0, 0, 0));
+        linearLayout2.addView(editTextBoldCursor, nme.p(-1, -2, 1.0f, kk7.D1));
+        er7Var.e(editTextBoldCursor);
+        er7Var.addView(linearLayout2, nme.e(-1, -2, 48));
+        linearLayout.addView(er7Var, nme.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        textView2.setTextSize(1, 16.0f);
+        zkb.X(textView2, bkb.z6, null);
+        er7Var.addView(textView2, nme.d(-2, -2.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
+        l46 l46Var = new l46(context, null);
+        l46Var.setText(gl.D2(gl.N2(k96.M0(2131747542, null), -1, 0, new vf1(context, (byte) 18), null), true));
+        l46Var.setTextSize(1, 12.0f);
+        zkb.X(l46Var, bkb.y6, wjbVar);
+        zkb.G(l46Var, bkb.Wc, wjbVar);
+        linearLayout.addView(l46Var, nme.k(14.0f, 3.0f, 14.0f, 24.0f, -1, -2));
+        final u41 i2 = yjb.i(24, wjbVar, context, true);
+        i2.i(k96.M0(j > 0 ? 2131747538 : 2131747544, null), false, true);
+        linearLayout.addView(i2, nme.o(-1, 48));
+        if (j > 0 && z) {
+            u41 i3 = yjb.i(24, wjbVar, context, false);
+            i3.i(k96.M0(2131747543, null), false, false);
+            linearLayout.addView(i3, nme.k(0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
+            u41Var = i3;
+        }
+        h.O = linearLayout;
+        final fx0[] fx0VarArr2 = {h};
+        editTextBoldCursor.setText(j <= 0 ? "" : Long.toString(j));
+        editTextBoldCursor.addTextChangedListener(new pua(editTextBoldCursor, er7Var, j, z, i2, textView2));
+        final boolean[] zArr = {false};
+        editTextBoldCursor.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: uta
+            @Override // android.widget.TextView.OnEditorActionListener
+            public final boolean onEditorAction(TextView textView3, int i4, KeyEvent keyEvent) {
+                if (i4 != 5) {
+                    return false;
+                }
+                boolean[] zArr2 = zArr;
+                if (zArr2[0]) {
+                    return true;
+                }
+                zArr2[0] = true;
+                i2.setLoading(true);
+                EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
+                i8cVar.a(Long.valueOf(Long.parseLong(editTextBoldCursor2.getText().toString())), new xta(editTextBoldCursor2, fx0VarArr2, (byte) 1));
+                return true;
+            }
+        });
+        vta vtaVar = new vta(zArr, i8cVar, editTextBoldCursor, i2, fx0VarArr2);
+        EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
+        i2.setOnClickListener(vtaVar);
+        if (u41Var != null) {
+            u41 u41Var2 = u41Var;
+            vta vtaVar2 = new vta(zArr, i8cVar, u41Var2, editTextBoldCursor2, fx0VarArr2);
+            editTextBoldCursor2 = editTextBoldCursor2;
+            fx0VarArr = fx0VarArr2;
+            u41Var2.setOnClickListener(vtaVar2);
+        } else {
+            fx0VarArr = fx0VarArr2;
+        }
+        fx0VarArr[0].K();
+        fx0VarArr[0].setOnDismissListener(new ic4(editTextBoldCursor2, (byte) 3));
+        fx0VarArr[0].show();
+        d Q = LaunchActivity.Q();
+        gl.d3(new xta(fx0VarArr, editTextBoldCursor2), Q instanceof mu1 ? ((mu1) Q).U9() : false ? 200L : 80L);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x04f8  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x05ee  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0639  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x063e  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0604  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0583  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x05a1  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0396  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x036b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x034c  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0392  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x03b0  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x04c1  */
-    /* JADX WARN: Type inference failed for: r2v15 */
-    /* JADX WARN: Type inference failed for: r2v16, types: [boolean, byte, int] */
-    /* JADX WARN: Type inference failed for: r2v26 */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0fc6  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x100b  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x1062  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x109a  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x10c0  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x10a7  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x106e  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x1050  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0e7a  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0aa2  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x04fd  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0509  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x053c  */
+    /* JADX WARN: Removed duplicated region for block: B:347:0x0544  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0500  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x03f4  */
+    /* JADX WARN: Removed duplicated region for block: B:390:0x0407  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0768  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0d8d  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0d9b  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0dac  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0e49  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0e7f A[LOOP:0: B:66:0x0df4->B:75:0x0e7f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0e8d A[EDGE_INSN: B:76:0x0e8d->B:77:0x0e8d BREAK  A[LOOP:0: B:66:0x0df4->B:75:0x0e7f], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0f08 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0f1b  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0f1e  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0f2e  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0f90  */
+    /* JADX WARN: Type inference failed for: r2v35 */
+    /* JADX WARN: Type inference failed for: r2v46 */
+    /* JADX WARN: Type inference failed for: r3v101 */
+    /* JADX WARN: Type inference failed for: r3v102, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r3v103 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void W(k47 k47Var, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, Runnable runnable, qac qacVar) {
-        long j;
-        boolean z;
-        long j2;
-        String str;
+    public static fx0 k1(final Context context, final boolean z, final long j, final int i, final TL_stars.StarsTransaction starsTransaction, final wjb wjbVar) {
+        fx0 fx0Var;
         boolean z2;
-        my0 my0Var;
-        s99 s99Var;
-        sua suaVar;
-        k47 k47Var2;
-        int i;
-        float f;
-        ?? r2;
-        ViewGroup viewGroup;
-        TLRPC.Message message;
-        String str2;
-        boolean z3;
-        TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia;
+        Context context2;
         int i2;
-        int i3;
-        int i4;
-        String G;
-        String G2;
-        String str3;
-        char c;
-        String G3;
-        char c2;
-        String G4;
-        boolean z4;
-        TLRPC.User W1;
-        TLRPC.MessageFwdHeader messageFwdHeader;
-        TLRPC.Peer peer;
-        int[] iArr;
-        String M0;
-        ViewGroup viewGroup2;
-        TLRPC.Message message2;
-        int i5;
-        int i6;
-        ViewGroup viewGroup3;
-        vwa vwaVar;
-        ViewGroup viewGroup4;
-        gn5 gn5Var;
-        TLRPC.Peer peer2;
-        if (tL_payments_paymentFormStars == null || tL_payments_paymentFormStars.invoice == null) {
-            return;
-        }
-        oc7.r1(this.a).d4(tL_payments_paymentFormStars.users, false);
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        Context context2 = context;
-        ylb F = F();
-        if (context2 != null) {
-            if (!this.e) {
-                o(new fqa(this, runnable, k47Var, inputInvoice, tL_payments_paymentFormStars, qacVar, (byte) 5));
-                return;
-            }
-            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStars.invoice.prices;
-            int size = arrayList.size();
-            int i7 = 0;
-            long j3 = 0;
-            while (i7 < size) {
-                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i7);
-                i7++;
-                j3 += tL_labeledPrice.amount;
-            }
-            if (k47Var == null || k47Var.D != 29) {
-                j = tL_payments_paymentFormStars.bot_id;
-            } else {
-                TLRPC.Message message3 = k47Var.k;
-                TLRPC.MessageFwdHeader messageFwdHeader2 = message3.fwd_from;
-                j = (messageFwdHeader2 == null || (peer2 = messageFwdHeader2.from_id) == null) ? k47.B0(message3) : pg3.n(peer2);
-            }
-            long j4 = j;
-            int i8 = this.a;
-            if (j4 >= 0) {
-                TLRPC.User W12 = oc7.r1(i8).W1(Long.valueOf(j4));
-                String r = m9c.r(W12);
-                z2 = !m9c.v(W12);
-                str = r;
-                z = false;
-                j2 = j3;
-            } else {
-                oc7 r1 = oc7.r1(i8);
-                z = false;
-                j2 = j3;
-                TLRPC.Chat L0 = r1.L0(Long.valueOf(-j4));
-                str = L0 == null ? "" : L0.title;
-                z2 = false;
-            }
-            String str4 = tL_payments_paymentFormStars.title;
-            runnable.run();
-            int i9 = tL_payments_paymentFormStars.invoice.subscription_period;
-            boolean[] zArr = new boolean[1];
-            zArr[z ? 1 : 0] = z;
-            int i10 = this.a;
-            TLRPC.WebDocument webDocument = tL_payments_paymentFormStars.photo;
-            long j5 = j2;
-            sua suaVar2 = new sua(this, j5, zArr, qacVar, context2, F, z2, str, k47Var, inputInvoice, tL_payments_paymentFormStars, i9, j4);
-            s99 s99Var2 = new s99(this, zArr, qacVar);
-            my0 h = hg9.h(1, F, context2, false);
-            TLRPC.User W13 = oc7.r1(i10).W1(Long.valueOf(j4));
-            LinearLayout i11 = hg9.i(context2, 1);
-            i11.setPadding(gm.L(16.0f), 0, gm.L(16.0f), gm.L(8.0f));
-            ViewGroup frameLayout = new FrameLayout(context2);
-            frameLayout.addView(new uwa(context2, 40, 0), qoe.c(-1.0f, -1));
-            if (k47Var == null || (message2 = k47Var.k) == null || !(message2.media instanceof TLRPC.TL_messageMediaPaidMedia)) {
-                my0Var = h;
-                s99Var = s99Var2;
-                suaVar = suaVar2;
-                k47Var2 = k47Var;
-                i = i9;
-                f = 20.0f;
-                ViewGroup viewGroup5 = frameLayout;
-                if (webDocument != null) {
-                    FrameLayout frameLayout2 = new FrameLayout(context2);
-                    bf0 bf0Var = new bf0(context2);
-                    bf0Var.setRoundRadius(gm.L(18.0f));
-                    bf0Var.p(gn5.p(vuc.c(webDocument)), "80_80", null, null);
-                    frameLayout2.addView(bf0Var, qoe.e(80, 80, 48));
-                    viewGroup5.addView(frameLayout2, qoe.e(80, 87, 17));
-                    TextView textView = new TextView(context2);
-                    textView.setTypeface(gm.n1("fonts/num.otf"));
-                    r2 = 1;
-                    textView.setTextSize(1, 13.0f);
-                    textView.setTextColor(-1);
-                    textView.setText(nxa.U0("XTR ".concat(jb6.E((int) j5, ',')), 0.85f, null));
-                    textView.setPadding(gm.L(5.33f), 0, gm.L(5.33f), 0);
-                    textView.setBackground(cmb.b0(gm.L(16.0f), -1133566));
-                    FrameLayout frameLayout3 = new FrameLayout(context2);
-                    int L = gm.L(20.0f);
-                    int i12 = cmb.g5;
-                    ShapeDrawable b0 = cmb.b0(L, cmb.v0(i12, F));
-                    wmb M = anb.M(i12);
-                    frameLayout3.setBackground(b0);
-                    anb.j(frameLayout3, b0, M, null, F);
-                    frameLayout3.setPadding(gm.L(1.33f), gm.L(1.33f), gm.L(1.33f), gm.L(1.33f));
-                    frameLayout3.addView(textView, qoe.r(-2, 16, nm7.D1));
-                    frameLayout2.addView(frameLayout3, qoe.a(-2.0f, 18.66f, 81));
-                    viewGroup = viewGroup5;
-                    cxa cxaVar = new cxa(i10, F, context2);
-                    rve.a(cxaVar);
-                    cxaVar.setOnClickListener(new jwa(cxaVar, r2));
-                    viewGroup.addView(cxaVar, qoe.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
-                    i11.addView(viewGroup, qoe.r(-1, nm7.B1, 7));
-                    TextView textView2 = new TextView(context2);
-                    textView2.setTextSize(r2, f);
-                    textView2.setTypeface(gm.o());
-                    int i13 = cmb.i5;
-                    anb.X(textView2, i13, F);
-                    if (i <= 0) {
-                        if (webDocument != null) {
-                            M0 = str4;
-                            iArr = null;
-                        } else {
-                            iArr = null;
-                            M0 = jb6.M0(2131744804, null);
-                        }
-                        textView2.setText(gw3.m(M0, textView2.getPaint().getFontMetricsInt(), false, iArr, 0));
-                    } else {
-                        textView2.setText(gw3.m(webDocument != null ? str4 : jb6.M0(2131744811, null), textView2.getPaint().getFontMetricsInt(), false, null, 0));
-                    }
-                    nm7.i(textView2);
-                    textView2.setGravity(17);
-                    i11.addView(textView2, qoe.t(-2, -2, 1, 0, webDocument == null ? -8 : 8, 0, 0));
-                    if (webDocument != null) {
-                        LinearLayout i14 = hg9.i(context2, 0);
-                        int L2 = gm.L(28.0f);
-                        int i15 = cmb.Z6;
-                        Drawable b02 = cmb.b0(L2, cmb.v0(i15, F));
-                        wmb M2 = anb.M(i15);
-                        i14.setBackground(b02);
-                        anb.j(i14, b02, M2, null, F);
-                        bf0 bf0Var2 = new bf0(context2);
-                        bf0Var2.setRoundRadius(gm.L(14.0f));
-                        pc0 pc0Var = new pc0((ylb) null);
-                        pc0Var.q(W13);
-                        bf0Var2.f(W13, pc0Var);
-                        i14.addView(bf0Var2, qoe.o(28, 28));
-                        TextView textView3 = new TextView(context2);
-                        textView3.setTextSize(r2, 13.0f);
-                        anb.X(textView3, cmb.F6, F);
-                        textView3.setText(m9c.r(W13));
-                        i14.addView(textView3, qoe.t(-2, -2, 16, 6, 0, 10, 0));
-                        i11.addView(i14, qoe.t(-2, 28, 1, 0, 8, 0, 2));
-                    }
-                    TextView textView4 = new TextView(context2);
-                    textView4.setTextSize(r2, 14.0f);
-                    anb.X(textView4, i13, F);
-                    if (k47Var2 == null && (message = k47Var2.k) != null && (message.media instanceof TLRPC.TL_messageMediaPaidMedia)) {
-                        long B0 = k47.B0(message);
-                        TLRPC.Message message4 = k47Var2.k;
-                        if (message4 != null && (messageFwdHeader = message4.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
-                            B0 = pg3.n(peer);
-                        }
-                        if (B0 < 0 && k47Var2.Z0() > 0 && (W1 = oc7.r1(i10).W1(Long.valueOf(k47Var2.Z0()))) != null && W1.bot) {
-                            B0 = W1.id;
-                        }
-                        if (B0 >= 0) {
-                            TLRPC.User W14 = oc7.r1(i10).W1(Long.valueOf(B0));
-                            str2 = m9c.r(W14);
-                            if (W14 != null && W14.bot) {
-                                z3 = r2;
-                                tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) k47Var2.k.media;
-                                i3 = 0;
-                                int i16 = 0;
-                                for (i2 = 0; i2 < tL_messageMediaPaidMedia.extended_media.size(); i2++) {
-                                    TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i2);
-                                    if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview) {
-                                        if ((((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).flags & 4) != 0) {
-                                            z4 = r2;
-                                        }
-                                        z4 = false;
-                                    } else {
-                                        if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
-                                            z4 = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media instanceof TLRPC.TL_messageMediaDocument;
-                                        }
-                                        z4 = false;
-                                    }
-                                    if (z4) {
-                                        i3++;
-                                    } else {
-                                        i16++;
-                                    }
-                                }
-                                if (i3 != 0) {
-                                    str3 = z3 ? "StarsConfirmPurchaseMediaBotOne2" : "StarsConfirmPurchaseMediaOne2";
-                                    int i17 = (int) j5;
-                                    if (i16 == r2) {
-                                        G4 = jb6.M0(2131744820, null);
-                                        c2 = 0;
-                                    } else {
-                                        c2 = 0;
-                                        G4 = jb6.G(i16, "StarsConfirmPurchaseMedia_Photos", new Object[0]);
-                                    }
-                                    Object[] objArr = new Object[2];
-                                    objArr[c2] = G4;
-                                    objArr[r2] = str2;
-                                    G2 = jb6.G(i17, str3, objArr);
-                                } else if (i16 == 0) {
-                                    str3 = z3 ? "StarsConfirmPurchaseMediaBotOne2" : "StarsConfirmPurchaseMediaOne2";
-                                    int i18 = (int) j5;
-                                    if (i3 == r2) {
-                                        G3 = jb6.M0(2131744819, null);
-                                        c = 0;
-                                    } else {
-                                        c = 0;
-                                        G3 = jb6.G(i3, "StarsConfirmPurchaseMedia_Videos", new Object[0]);
-                                    }
-                                    Object[] objArr2 = new Object[2];
-                                    objArr2[c] = G3;
-                                    objArr2[r2] = str2;
-                                    G2 = jb6.G(i18, str3, objArr2);
-                                } else {
-                                    String str5 = z3 ? "StarsConfirmPurchaseMediaBotTwo2" : "StarsConfirmPurchaseMediaTwo2";
-                                    int i19 = (int) j5;
-                                    if (i16 == r2) {
-                                        G = jb6.M0(2131744820, null);
-                                        i4 = 0;
-                                    } else {
-                                        i4 = 0;
-                                        G = jb6.G(i16, "StarsConfirmPurchaseMedia_Photos", new Object[0]);
-                                    }
-                                    String M02 = i3 == r2 ? jb6.M0(2131744819, null) : jb6.G(i3, "StarsConfirmPurchaseMedia_Videos", new Object[i4]);
-                                    Object[] objArr3 = new Object[3];
-                                    objArr3[i4] = G;
-                                    objArr3[r2] = M02;
-                                    objArr3[2] = str2;
-                                    G2 = jb6.G(i19, str5, objArr3);
-                                }
-                                textView4.setText(gm.S2(G2));
-                            }
-                        } else {
-                            TLRPC.Chat L02 = oc7.r1(i10).L0(Long.valueOf(-B0));
-                            str2 = L02 != null ? L02.title : "";
-                        }
-                        z3 = false;
-                        tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) k47Var2.k.media;
-                        i3 = 0;
-                        int i162 = 0;
-                        while (i2 < tL_messageMediaPaidMedia.extended_media.size()) {
-                        }
-                        if (i3 != 0) {
-                        }
-                        textView4.setText(gm.S2(G2));
-                    } else if (i <= 0) {
-                        String r3 = m9c.r(W13);
-                        Object[] objArr4 = new Object[2];
-                        objArr4[0] = str4;
-                        objArr4[r2] = r3;
-                        textView4.setText(gm.S2(jb6.K("StarsConfirmSubscriptionText2", (int) j5, ',', objArr4)));
-                    } else {
-                        String r4 = m9c.r(W13);
-                        Object[] objArr5 = new Object[2];
-                        objArr5[0] = str4;
-                        objArr5[r2] = r4;
-                        textView4.setText(gm.S2(jb6.K("StarsConfirmPurchaseText2", (int) j5, ',', objArr5)));
-                    }
-                    textView4.setMaxWidth(hg5.a(textView4.getText(), textView4.getPaint()));
-                    textView4.setGravity(17);
-                    i11.addView(textView4, qoe.t(-2, -2, 1, 0, 6, 0, 18));
-                    b61 b61Var = new b61(F, context2, r2);
-                    if (i <= 0) {
-                        b61Var.i(nxa.T0(gm.S2(jb6.H(',', "StarsConfirmSubscriptionButton", (int) j5))), false, r2);
-                    } else {
-                        b61Var.i(nxa.T0(gm.S2(jb6.H(',', "StarsConfirmPurchaseButton", (int) j5))), false, r2);
-                    }
-                    i11.addView(b61Var, qoe.c(48.0f, -1));
-                    l66 l66Var = new l66(context2, F);
-                    anb.X(l66Var, cmb.y6, F);
-                    anb.G(l66Var, cmb.Wc, F);
-                    l66Var.setTextSize(r2, 14.0f);
-                    l66Var.setText(gm.N2(jb6.M0(i <= 0 ? 2131744808 : 2131744815, null), -1, 0, new dh1(context2, (byte) 20), null));
-                    l66Var.setGravity(17);
-                    i11.addView(l66Var, qoe.k(0.0f, 12.0f, 0.0f, 2.0f, -1, -2));
-                    my0 my0Var2 = my0Var;
-                    my0Var2.O = i11;
-                    b61Var.setOnClickListener(new jw4(suaVar, my0Var2, b61Var, (byte) 22));
-                    my0Var2.setOnDismissListener(new qj8(s99Var, (byte) 9));
-                    my0Var2.J();
-                    my0Var2.show();
-                }
-                bf0 bf0Var3 = new bf0(context2);
-                bf0Var3.setRoundRadius(gm.L(80.0f));
-                pc0 pc0Var2 = new pc0((ylb) null);
-                pc0Var2.q(W13);
-                bf0Var3.f(W13, pc0Var2);
-                viewGroup5.addView(bf0Var3, qoe.e(80, 80, 17));
-                viewGroup2 = viewGroup5;
-            } else {
-                vwa vwaVar2 = new vwa(context2);
-                vwaVar2.I = new Path();
-                vwaVar2.J = new RectF();
-                vwaVar2.K = b10.d(context2, R.drawable.large_locked_post);
-                vwaVar2.setRoundRadius(gm.L(24.0f));
-                TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia2 = (TLRPC.TL_messageMediaPaidMedia) k47Var.k.media;
-                if (tL_messageMediaPaidMedia2.extended_media.isEmpty()) {
-                    my0Var = h;
-                    s99Var = s99Var2;
-                    suaVar = suaVar2;
-                    k47Var2 = k47Var;
-                    i = i9;
-                    i5 = 17;
-                    i6 = 80;
-                    f = 20.0f;
-                    viewGroup3 = frameLayout;
-                } else {
-                    TLRPC.MessageExtendedMedia messageExtendedMedia2 = tL_messageMediaPaidMedia2.extended_media.get(0);
-                    if (messageExtendedMedia2 instanceof TLRPC.TL_messageExtendedMediaPreview) {
-                        gn5Var = gn5.f(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia2).thumb, k47Var.k);
-                        vwaVar = vwaVar2;
-                        s99Var = s99Var2;
-                    } else {
-                        if (messageExtendedMedia2 instanceof TLRPC.TL_messageExtendedMedia) {
-                            TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia2).media;
-                            if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-                                vwaVar = vwaVar2;
-                                s99Var = s99Var2;
-                                gn5Var = gn5.i(bc4.w(messageMedia.photo.sizes, gm.L(80.0f), true, null, false), messageMedia.photo);
-                            } else {
-                                vwaVar = vwaVar2;
-                                s99Var = s99Var2;
-                                if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-                                    gn5Var = gn5.c(bc4.w(messageMedia.document.thumbs, gm.L(80.0f), true, null, false), messageMedia.document);
-                                }
-                            }
-                        } else {
-                            vwaVar = vwaVar2;
-                            s99Var = s99Var2;
-                        }
-                        viewGroup4 = frameLayout;
-                        gn5Var = null;
-                        my0Var = h;
-                        suaVar = suaVar2;
-                        i = i9;
-                        i5 = 17;
-                        i6 = 80;
-                        f = 20.0f;
-                        viewGroup3 = viewGroup4;
-                        vwaVar2 = vwaVar;
-                        vwaVar2.j(gn5Var, "80_80_b2", null, null, null, k47Var);
-                        k47Var2 = k47Var;
-                    }
-                    viewGroup4 = frameLayout;
-                    my0Var = h;
-                    suaVar = suaVar2;
-                    i = i9;
-                    i5 = 17;
-                    i6 = 80;
-                    f = 20.0f;
-                    viewGroup3 = viewGroup4;
-                    vwaVar2 = vwaVar;
-                    vwaVar2.j(gn5Var, "80_80_b2", null, null, null, k47Var);
-                    k47Var2 = k47Var;
-                }
-                viewGroup3.addView(vwaVar2, qoe.e(i6, i6, i5));
-                viewGroup2 = viewGroup3;
-            }
-            r2 = 1;
-            viewGroup = viewGroup2;
-            cxa cxaVar2 = new cxa(i10, F, context2);
-            rve.a(cxaVar2);
-            cxaVar2.setOnClickListener(new jwa(cxaVar2, r2));
-            viewGroup.addView(cxaVar2, qoe.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
-            i11.addView(viewGroup, qoe.r(-1, nm7.B1, 7));
-            TextView textView22 = new TextView(context2);
-            textView22.setTextSize(r2, f);
-            textView22.setTypeface(gm.o());
-            int i132 = cmb.i5;
-            anb.X(textView22, i132, F);
-            if (i <= 0) {
-            }
-            nm7.i(textView22);
-            textView22.setGravity(17);
-            i11.addView(textView22, qoe.t(-2, -2, 1, 0, webDocument == null ? -8 : 8, 0, 0));
-            if (webDocument != null) {
-            }
-            TextView textView42 = new TextView(context2);
-            textView42.setTextSize(r2, 14.0f);
-            anb.X(textView42, i132, F);
-            if (k47Var2 == null) {
-            }
-            if (i <= 0) {
-            }
-            textView42.setMaxWidth(hg5.a(textView42.getText(), textView42.getPaint()));
-            textView42.setGravity(17);
-            i11.addView(textView42, qoe.t(-2, -2, 1, 0, 6, 0, 18));
-            b61 b61Var2 = new b61(F, context2, r2);
-            if (i <= 0) {
-            }
-            i11.addView(b61Var2, qoe.c(48.0f, -1));
-            l66 l66Var2 = new l66(context2, F);
-            anb.X(l66Var2, cmb.y6, F);
-            anb.G(l66Var2, cmb.Wc, F);
-            l66Var2.setTextSize(r2, 14.0f);
-            l66Var2.setText(gm.N2(jb6.M0(i <= 0 ? 2131744808 : 2131744815, null), -1, 0, new dh1(context2, (byte) 20), null));
-            l66Var2.setGravity(17);
-            i11.addView(l66Var2, qoe.k(0.0f, 12.0f, 0.0f, 2.0f, -1, -2));
-            my0 my0Var22 = my0Var;
-            my0Var22.O = i11;
-            b61Var2.setOnClickListener(new jw4(suaVar, my0Var22, b61Var2, (byte) 22));
-            my0Var22.setOnDismissListener(new qj8(s99Var, (byte) 9));
-            my0Var22.J();
-            my0Var22.show();
-        }
-    }
-
-    public final void X(final k47 k47Var, final TLRPC.InputInvoice inputInvoice, final TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, final qac qacVar) {
-        long j;
-        String str;
-        TLRPC.User W1;
-        TLRPC.MessageFwdHeader messageFwdHeader;
-        TLRPC.Peer peer;
-        if (tL_payments_paymentFormStars != null) {
-            final Context context = a.b;
-            final ylb F = F();
-            if (context == null) {
-                return;
-            }
-            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStars.invoice.prices;
-            int size = arrayList.size();
-            final long j2 = 0;
-            int i = 0;
-            while (i < size) {
-                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i);
-                i++;
-                j2 += tL_labeledPrice.amount;
-            }
-            if (k47Var != null) {
-                TLRPC.Message message = k47Var.k;
-                j = (message == null || (messageFwdHeader = message.fwd_from) == null || (peer = messageFwdHeader.from_id) == null) ? k47.B0(message) : pg3.n(peer);
-                if (j < 0 && k47Var.Z0() > 0 && (W1 = oc7.r1(this.a).W1(Long.valueOf(k47Var.Z0()))) != null && W1.bot) {
-                    j = W1.id;
-                }
-            } else {
-                j = tL_payments_paymentFormStars.bot_id;
-            }
-            final long j3 = j;
-            int i2 = this.a;
-            if (j3 >= 0) {
-                str = m9c.r(oc7.r1(i2).W1(Long.valueOf(j3)));
-            } else {
-                TLRPC.Chat L0 = oc7.r1(i2).L0(Long.valueOf(-j3));
-                str = L0 == null ? "" : L0.title;
-            }
-            final String str2 = str;
-            final String str3 = tL_payments_paymentFormStars.title;
-            final int i3 = tL_payments_paymentFormStars.invoice.subscription_period;
-            TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-            tL_payments_sendStarsForm.form_id = tL_payments_paymentFormStars.form_id;
-            tL_payments_sendStarsForm.invoice = inputInvoice;
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_sendStarsForm, new RequestDelegate() { // from class: uta
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-                    final jva jvaVar = jva.this;
-                    final qac qacVar2 = qacVar;
-                    final k47 k47Var2 = k47Var;
-                    final Context context2 = context;
-                    final long j4 = j2;
-                    final String str4 = str2;
-                    final int i4 = i3;
-                    final String str5 = str3;
-                    final TLRPC.InputInvoice inputInvoice2 = inputInvoice;
-                    final long j5 = j3;
-                    final ylb ylbVar = F;
-                    final TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars2 = tL_payments_paymentFormStars;
-                    gm.c3(new Runnable() { // from class: yta
-                        /* JADX WARN: Removed duplicated region for block: B:27:0x0109  */
-                        /* JADX WARN: Removed duplicated region for block: B:30:? A[RETURN, SYNTHETIC] */
-                        @Override // java.lang.Runnable
-                        /*
-                            Code decompiled incorrectly, please refer to instructions dump.
-                        */
-                        public final void run() {
-                            k47 k47Var3;
-                            boolean z;
-                            LaunchActivity launchActivity;
-                            v16 v16Var;
-                            TLRPC.Message message2;
-                            jva jvaVar2 = jva.this;
-                            TLObject tLObject2 = tLObject;
-                            qac qacVar3 = qacVar2;
-                            k47 k47Var4 = k47Var2;
-                            Context context3 = context2;
-                            long j6 = j4;
-                            String str6 = str4;
-                            int i5 = i4;
-                            String str7 = str5;
-                            TLRPC.InputInvoice inputInvoice3 = inputInvoice2;
-                            long j7 = j5;
-                            TLRPC.TL_error tL_error2 = tL_error;
-                            ylb ylbVar2 = ylbVar;
-                            TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars3 = tL_payments_paymentFormStars2;
-                            d Q = LaunchActivity.Q();
-                            c41 Y = (Q == null || Q.visibleDialog != null) ? c41.Y() : c41.b0(Q);
-                            byte b = 0;
-                            if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
-                                if (tL_error2 == null) {
-                                    k47Var3 = k47Var4;
-                                } else {
-                                    if ("BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                                        if (!oc7.r1(jvaVar2.a).c5()) {
-                                            qacVar3.a(Boolean.FALSE);
-                                            jva.c0(context3, ylbVar2);
-                                            return;
-                                        } else {
-                                            boolean[] zArr = {false};
-                                            dxa dxaVar = new dxa(context3, ylbVar2, j6, 0, str6, new fqa(jvaVar2, zArr, k47Var4, inputInvoice3, tL_payments_paymentFormStars3, qacVar3, (byte) 3), j7);
-                                            dxaVar.setOnDismissListener(new ty0(qacVar3, zArr));
-                                            dxaVar.show();
-                                            return;
-                                        }
-                                    }
-                                    k47Var3 = k47Var4;
-                                    if ("FORM_EXPIRED".equals(tL_error2.text)) {
-                                        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-                                        JSONObject u = wx0.u(ylbVar2, false);
-                                        if (u != null) {
-                                            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-                                            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-                                            tL_dataJSON.data = u.toString();
-                                            tL_payments_getPaymentForm.flags |= 1;
-                                        }
-                                        tL_payments_getPaymentForm.invoice = inputInvoice3;
-                                        ConnectionsManager.getInstance(jvaVar2.a).sendRequest(tL_payments_getPaymentForm, new fo0((Object) jvaVar2, (Object) k47Var3, (Object) inputInvoice3, (Object) qacVar3, (Object) Y, (byte) 17));
-                                        return;
-                                    }
-                                }
-                                qacVar3.a(Boolean.FALSE);
-                                Y.Q(R.raw.error, 36, jb6.a0(null, null, 2131743565, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
-                                if (k47Var3 != null) {
-                                    TLRPC.TL_messages_getExtendedMedia tL_messages_getExtendedMedia = new TLRPC.TL_messages_getExtendedMedia();
-                                    tL_messages_getExtendedMedia.peer = oc7.r1(jvaVar2.a).i1(j7);
-                                    tL_messages_getExtendedMedia.id.add(Integer.valueOf(k47Var3.e1()));
-                                    ConnectionsManager.getInstance(jvaVar2.a).sendRequest(tL_messages_getExtendedMedia, null);
-                                    return;
-                                }
-                                return;
-                            }
-                            qacVar3.a(Boolean.TRUE);
-                            Utilities.d.c(new dua(jvaVar2, (TLRPC.TL_payments_paymentResult) tLObject2, b));
-                            if (k47Var4 != null && (message2 = k47Var4.k) != null && (message2.media instanceof TLRPC.TL_messageMediaPaidMedia)) {
-                                Drawable d = b10.d(context3, R.drawable.star_small_inner);
-                                String M0 = jb6.M0(2131744777, null);
-                                SpannableStringBuilder S2 = gm.S2(jb6.G((int) j6, "StarsMediaPurchaseCompletedInfo", str6));
-                                Y.getClass();
-                                r31 r31Var = new r31(Y.X(), Y.c);
-                                r31Var.a.setImageDrawable(d);
-                                r31Var.b.setText(M0);
-                                r31Var.c.setText(S2);
-                                Y.b(r31Var, 2750).j();
-                            } else {
-                                if (i5 <= 0) {
-                                    z = true;
-                                    Y.I(R.raw.stars_send, jb6.M0(2131744741, null), gm.S2(jb6.G((int) j6, "StarsPurchaseCompletedInfo", str7, str6))).j();
-                                    launchActivity = LaunchActivity.H1;
-                                    if (launchActivity != null && (v16Var = launchActivity.w0) != null) {
-                                        v16Var.c(z);
-                                    }
-                                    if ((inputInvoice3 instanceof TLRPC.TL_inputInvoiceStars) || !(((TLRPC.TL_inputInvoiceStars) inputInvoice3).purpose instanceof TLRPC.TL_inputStorePaymentStarsGift)) {
-                                        jvaVar2.P(true);
-                                    }
-                                    if (k47Var4 == null) {
-                                        TLRPC.TL_messages_getExtendedMedia tL_messages_getExtendedMedia2 = new TLRPC.TL_messages_getExtendedMedia();
-                                        tL_messages_getExtendedMedia2.peer = oc7.r1(jvaVar2.a).i1(j7);
-                                        tL_messages_getExtendedMedia2.id.add(Integer.valueOf(k47Var4.e1()));
-                                        ConnectionsManager.getInstance(jvaVar2.a).sendRequest(tL_messages_getExtendedMedia2, null);
-                                        return;
-                                    }
-                                    return;
-                                }
-                                Y.I(R.raw.stars_send, jb6.M0(2131744843, null), gm.S2(jb6.G((int) j6, "StarsBotSubscriptionCompletedInfo", str7, str6))).j();
-                            }
-                            z = true;
-                            launchActivity = LaunchActivity.H1;
-                            if (launchActivity != null) {
-                                v16Var.c(z);
-                            }
-                            if (inputInvoice3 instanceof TLRPC.TL_inputInvoiceStars) {
-                            }
-                            jvaVar2.P(true);
-                            if (k47Var4 == null) {
-                            }
-                        }
-                    });
-                }
-            });
-        }
-    }
-
-    public final void Y(String str, TLRPC.ChatInvite chatInvite, jac jacVar) {
-        if (chatInvite == null || chatInvite.subscription_pricing == null) {
-            return;
-        }
-        Context context = a.b;
-        ylb F = F();
-        if (context != null) {
-            long j = chatInvite.subscription_pricing.amount;
-            String str2 = chatInvite.title;
-            TLRPC.TL_inputInvoiceChatInviteSubscription tL_inputInvoiceChatInviteSubscription = new TLRPC.TL_inputInvoiceChatInviteSubscription();
-            tL_inputInvoiceChatInviteSubscription.hash = str;
-            TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-            tL_payments_sendStarsForm.form_id = chatInvite.subscription_form_id;
-            tL_payments_sendStarsForm.invoice = tL_inputInvoiceChatInviteSubscription;
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_sendStarsForm, new m97(this, jacVar, j, str2, context, F, chatInvite, str));
-        }
-    }
-
-    public final void Z(long j, long j2, boolean z) {
-        int i = this.a;
-        qwb qwbVar = oc7.r1(i).g4;
-        TLRPC.TL_forumTopic f = qwbVar.f(j, j2);
-        if (f != null) {
-            f.nopaid_messages_exception = z;
-            vh6 vh6Var = qwbVar.a;
-            if (((ArrayList) vh6Var.f(j)) != null) {
-                qwbVar.getMessagesStorage().z1(qwbVar.getConnectionsManager().getCurrentTime(), -j, (List) vh6Var.f(j), true);
-            }
-            nm7.f(i).k(nm7.Q3, Long.valueOf(j2));
-        }
-    }
-
-    public final boolean a(TLObject tLObject, ArrayList arrayList, Runnable runnable) {
-        if (arrayList == null || arrayList.isEmpty() || l(tLObject) <= 0) {
-            return true;
-        }
-        HashSet hashSet = new HashSet();
-        int size = arrayList.size();
-        boolean z = false;
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            int e1 = ((k47) obj).e1();
-            hashSet.add(Integer.valueOf(e1));
-            if (this.Q.remove(Integer.valueOf(e1))) {
-                this.R.put(Integer.valueOf(e1), new hw9((Object) this, (Object) hashSet, (Object) runnable, (byte) 24));
-                z = true;
-            }
-        }
-        return !z;
-    }
-
-    public final void a0(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        if (tL_starGiftUnique == null || TextUtils.isEmpty(tL_starGiftUnique.slug)) {
-            return;
-        }
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            LongSparseArray longSparseArray = this.L;
-            if (i2 >= longSparseArray.size()) {
-                break;
-            }
-            ((ava) longSparseArray.valueAt(i2)).o(tL_starGiftUnique);
-            i2++;
-        }
-        while (true) {
-            LongSparseArray longSparseArray2 = this.K;
-            if (i >= longSparseArray2.size()) {
-                return;
-            }
-            yua yuaVar = (yua) longSparseArray2.valueAt(i);
-            ava avaVar = yuaVar.g;
-            if (avaVar != null) {
-                avaVar.o(tL_starGiftUnique);
-            }
-            Iterator it = yuaVar.h.values().iterator();
-            while (it.hasNext()) {
-                ((ava) it.next()).o(tL_starGiftUnique);
-            }
-            i++;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00c6, code lost:
-    
-        if (r10.a == r5) goto L51;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x0072, code lost:
-    
-        if (r0.intValue() >= 3) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0078, code lost:
-    
-        if (r1 >= 100) goto L31;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00b4  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(k47 k47Var) {
-        boolean z;
-        i74 i74Var;
-        d S2;
-        eva evaVar;
-        TLRPC.Message message = k47Var.k;
-        if (message != null) {
-            long j = message.paid_message_stars;
-            if (j <= 0 || k47.c3(message)) {
-                return;
-            }
-            eva evaVar2 = this.N;
-            if (evaVar2 == null || evaVar2.g <= 0 || !evaVar2.m || evaVar2.n || evaVar2.o) {
-                if (!ik.a0(this.a, k47.B0(k47Var.k))) {
-                    Long l = (Long) this.O.get(Long.valueOf(k47.B0(k47Var.k)));
-                    if (l == null || System.currentTimeMillis() - l.longValue() <= 5000) {
-                        Integer num = (Integer) this.P.get(Long.valueOf(k47.B0(k47Var.k)));
-                        if (num != null) {
-                        }
-                    }
-                }
-                z = false;
-                int e1 = k47Var.e1();
-                if (z) {
-                    this.Q.add(Integer.valueOf(e1));
-                }
-                long B0 = k47.B0(k47Var.k);
-                ra raVar = new ra((byte) 7, this, z);
-                i74Var = new i74((Object) this, z, e1, (byte) 5);
-                S2 = LaunchActivity.S();
-                evaVar = this.N;
-                if (evaVar != null && (evaVar.o || evaVar.n)) {
-                    this.N = null;
-                    evaVar = null;
-                }
-                if (evaVar != null) {
-                    if (S2 != null && !S2.isRemovingFromStack()) {
-                        eva evaVar3 = this.N;
-                        if (evaVar3.b == B0) {
-                        }
-                    }
-                    this.N.a();
-                    this.N = null;
-                }
-                if (S2 != null || S2.isRemovingFromStack()) {
-                    i74Var.run();
-                }
-                eva evaVar4 = this.N;
-                if (evaVar4 == null) {
-                    evaVar4 = new eva(S2, B0);
-                    this.N = evaVar4;
-                }
-                s31 s31Var = evaVar4.e;
-                o31 o31Var = evaVar4.d;
-                dva dvaVar = evaVar4.p;
-                if (evaVar4.n || evaVar4.o) {
-                    i74Var.run();
-                    return;
-                }
-                evaVar4.g++;
-                evaVar4.k.add(k47Var);
-                evaVar4.h += j;
-                evaVar4.i = raVar;
-                evaVar4.j.add(i74Var);
-                if (evaVar4.m && !z) {
-                    evaVar4.m = false;
-                    gm.r(dvaVar);
-                    u31 u31Var = evaVar4.c;
-                    u31Var.j = 5000;
-                    u31Var.i(true);
-                    if (System.currentTimeMillis() - evaVar4.l > 500) {
-                        s31Var.animate().alpha(0.0f).scaleX(0.3f).scaleY(0.3f).start();
-                    } else {
-                        s31Var.setAlpha(0.0f);
-                        s31Var.setVisibility(8);
-                    }
-                }
-                iva ivaVar = evaVar4.f;
-                if (ivaVar != null && evaVar4.m) {
-                    ivaVar.b = 3000L;
-                    gm.r(dvaVar);
-                    gm.d3(dvaVar, 3000L);
-                }
-                io ioVar = o31Var.b;
-                int i = evaVar4.g;
-                ioVar.setText(i == 1 ? jb6.M0(2131747436, null) : jb6.G(i, "PaidMessageSentTitle", new Object[0]));
-                o31Var.c.setText(gm.S2(jb6.H(',', "PaidMessageSentSubtitle", Math.max(0, (int) evaVar4.h))));
-                o31Var.a.d();
-                return;
-            }
-            z = true;
-            int e12 = k47Var.e1();
-            if (z) {
-            }
-            long B02 = k47.B0(k47Var.k);
-            ra raVar2 = new ra((byte) 7, this, z);
-            i74Var = new i74((Object) this, z, e12, (byte) 5);
-            S2 = LaunchActivity.S();
-            evaVar = this.N;
-            if (evaVar != null) {
-                this.N = null;
-                evaVar = null;
-            }
-            if (evaVar != null) {
-            }
-            if (S2 != null) {
-            }
-            i74Var.run();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:67:0x01b5  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final hva b0(final k47 k47Var, final yv1 yv1Var, final long j, boolean z, boolean z2, final Long l) {
+        TL_stars.StarsTransaction starsTransaction2;
+        LinearLayout linearLayout;
         String str;
         boolean z3;
-        String str2;
-        cva b = cva.b(k47Var);
-        int i = this.a;
-        jva v = v(i, false);
-        Context q = q(yv1Var);
-        if (q == null) {
+        boolean z4;
+        long j2;
+        wjb wjbVar2;
+        boolean z5;
+        TLRPC.Peer peer;
+        long j3;
+        gl5 gl5Var;
+        gl5 c;
+        int i3;
+        final fx0[] fx0VarArr;
+        int i4;
+        String L0;
+        TL_stars.StarGift starGift;
+        wjb wjbVar3;
+        ViewGroup viewGroup;
+        int i5;
+        TL_stars.StarsTransaction starsTransaction3;
+        Context context3;
+        boolean z6;
+        mfb mfbVar;
+        mfb mfbVar2;
+        mfb mfbVar3;
+        mfb mfbVar4;
+        mfb mfbVar5;
+        TL_stars.StarsTransactionPeer starsTransactionPeer;
+        boolean z7;
+        ViewGroup viewGroup2;
+        TL_stars.StarGift starGift2;
+        Context context4;
+        ?? r3;
+        d S;
+        TLRPC.Chat K0;
+        gl5 gl5Var2;
+        gl5 c2;
+        int i6;
+        final fx0[] fx0VarArr2;
+        boolean z8;
+        mfb mfbVar6;
+        mfb mfbVar7;
+        fx0[] fx0VarArr3;
+        final int i7;
+        final fx0[] fx0VarArr4;
+        int i8;
+        long j4;
+        mfb mfbVar8;
+        int i9;
+        long j5;
+        TL_stars.StarsAmount starsAmount;
+        ViewGroup viewGroup3;
+        mfb mfbVar9;
+        if (starsTransaction == null || context == null) {
             return null;
         }
-        str = "";
-        if (z2 && v.e && v.n(null, false, false).amount <= 0) {
-            long a = yv1Var.a();
-            if (a >= 0) {
-                str = m9c.l(yv1Var.getMessagesController().W1(Long.valueOf(a)));
-            } else {
-                TLRPC.Chat L0 = yv1Var.getMessagesController().L0(Long.valueOf(-a));
-                if (L0 != null) {
-                    str = L0.title;
+        TL_stars.StarsAmount starsAmount2 = starsTransaction.amount;
+        boolean z9 = starsAmount2 instanceof TL_stars.TL_starsTonAmount;
+        int i10 = starsTransaction.flags;
+        boolean z10 = (i10 & TLObject.FLAG_13) != 0;
+        boolean z11 = ((131072 & i10) == 0 || starsTransaction.paid_message) ? false : true;
+        boolean z12 = (z11 || (i10 & 65536) == 0 || starsTransaction.paid_message) ? false : true;
+        boolean positive = starsAmount2.positive();
+        boolean negative = starsTransaction.amount.negative();
+        fx0 fx0Var2 = new fx0(wjbVar, context, false, false);
+        fx0Var2.K();
+        fx0[] fx0VarArr5 = new fx0[1];
+        final LinearLayout j6 = de9.j(context, 1);
+        j6.setPadding(0, gl.L((z10 || starsTransaction.gift || (starsTransaction.stargift_resale && (starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique))) ? 0.0f : 20.0f), 0, gl.L(8.0f));
+        j6.setClipChildren(false);
+        j6.setClipToPadding(false);
+        boolean z13 = z10;
+        if (starsTransaction.stargift_resale) {
+            TL_stars.StarGift starGift3 = starsTransaction.stargift;
+            if (starGift3 instanceof TL_stars.TL_starGiftUnique) {
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift3;
+                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) gta.i(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) gta.i(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                tl tlVar = new tl(gl.L(20.0f), null);
+                RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, gl.L(200.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                z2 = z11;
+                Paint paint = new Paint(1);
+                Matrix matrix = new Matrix();
+                paint.setShader(radialGradient);
+                fx0Var = fx0Var2;
+                hua huaVar = new hua(context, matrix, radialGradient, paint, tlVar);
+                tlVar.l(huaVar);
+                tlVar.i(stargiftattributepattern.document, false);
+                huaVar.setOrientation(1);
+                be0 be0Var = new be0(context);
+                e1(be0Var.getImageReceiver(), starsTransaction.stargift, kk7.p2);
+                huaVar.addView(be0Var, nme.t(kk7.p2, kk7.p2, 17, 0, 20, 0, 0));
+                if (!TextUtils.isEmpty(tL_starGiftUnique.slug)) {
+                    ote.a(be0Var);
+                    be0Var.setOnClickListener(new wg((Object) context, i, (Object) tL_starGiftUnique, (byte) 17));
                 }
-            }
-            final byte b2 = 0;
-            new dxa(q, yv1Var.getResourceProvider(), j, 5, str, new Runnable(this) { // from class: kua
-                public final /* synthetic */ jva b;
-
-                {
-                    this.b = this;
+                TextView b = hve.b(context, 20.0f, 0, true, null);
+                b.setTextColor(-1);
+                b.setText(tL_starGiftUnique.title);
+                huaVar.addView(b, nme.t(-2, -2, 17, 0, 1, 0, 0));
+                TextView b2 = hve.b(context, 13.0f, 0, false, null);
+                b2.setTextColor(stargiftattributebackdrop.text_color | (-16777216));
+                b2.setText(k96.I(tL_starGiftUnique.num, "Gift2CollectionNumber"));
+                huaVar.addView(b2, nme.t(-2, -2, 17, 0, 5, 0, 0));
+                TextView b3 = hve.b(context, 18.0f, 0, true, null);
+                b3.setTextColor(-1);
+                TL_stars.StarsAmount starsAmount3 = starsTransaction.amount;
+                b3.setText(V0(starsAmount3, TextUtils.concat(positive ? "+" : "", F0(starsAmount3), " ⭐️")));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(b3.getText());
+                if (starsTransaction.refund) {
+                    C0(spannableStringBuilder, b3, k96.L0(2131744793));
+                } else if (starsTransaction.failed) {
+                    C0(spannableStringBuilder, b3, k96.L0(2131744873));
+                } else if (starsTransaction.pending) {
+                    C0(spannableStringBuilder, b3, k96.L0(2131744816));
                 }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (b2) {
-                        case 0:
-                            this.b.b0(k47Var, yv1Var, j, true, true, l);
-                            break;
-                        default:
-                            this.b.b0(k47Var, yv1Var, j, true, true, l);
-                            break;
-                    }
-                }
-            }, 0L).show();
-            return null;
-        }
-        hva hvaVar = this.B;
-        if (hvaVar == null || !hvaVar.a.equals(b)) {
-            hva hvaVar2 = this.B;
-            if (hvaVar2 != null) {
-                hvaVar2.b();
-            }
-            ConnectionsManager.getInstance(i).getCurrentTime();
-            hva hvaVar3 = new hva(this, b, k47Var, yv1Var, z);
-            this.B = hvaVar3;
-            hvaVar3.n = l;
-        }
-        if (this.B.h + j > oc7.r1(i).l4.y2.f()) {
-            this.B.b();
-            ConnectionsManager.getInstance(i).getCurrentTime();
-            this.B = new hva(this, b, k47Var, yv1Var, z);
-        }
-        final long j2 = this.B.h + j;
-        if (z2 && v.e && v.n(null, false, false).amount < j2) {
-            this.B.a();
-            long a2 = yv1Var.a();
-            if (a2 >= 0) {
-                str2 = m9c.l(yv1Var.getMessagesController().W1(Long.valueOf(a2)));
-            } else {
-                TLRPC.Chat L02 = yv1Var.getMessagesController().L0(Long.valueOf(-a2));
-                str2 = L02 != null ? L02.title : "";
-            }
-            final byte b3 = 1;
-            new dxa(q, yv1Var.getResourceProvider(), j2, 5, str2, new Runnable(this) { // from class: kua
-                public final /* synthetic */ jva b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (b3) {
-                        case 0:
-                            this.b.b0(k47Var, yv1Var, j2, true, true, l);
-                            break;
-                        default:
-                            this.b.b0(k47Var, yv1Var, j2, true, true, l);
-                            break;
-                    }
-                }
-            }, 0L).show();
-            return null;
-        }
-        hva hvaVar4 = this.B;
-        if (k47Var != null) {
-            TLRPC.Message message = k47Var.k;
-            if (message.reactions == null) {
-                message.reactions = new TLRPC.TL_messageReactions();
-                TLRPC.Message message2 = k47Var.k;
-                message2.reactions.reactions_as_tags = k47.B0(message2) == z8c.h(k47Var.K1).e();
-                k47Var.k.reactions.can_see_list = k47Var.o3() || k47Var.p3();
-            }
-            for (int i2 = 0; i2 < k47Var.k.reactions.results.size(); i2++) {
-                if (!(k47Var.k.reactions.results.get(i2).reaction instanceof TLRPC.TL_reactionPaid)) {
-                }
-            }
-            z3 = true;
-            fva fvaVar = hvaVar4.p;
-            jva jvaVar = hvaVar4.q;
-            int i3 = jvaVar.a;
-            o31 o31Var = hvaVar4.e;
-            k47 k47Var2 = hvaVar4.b;
-            if (!hvaVar4.i || hvaVar4.j) {
-                boolean z4 = e21.a;
-            } else {
-                hvaVar4.h += j;
-                System.currentTimeMillis();
-                o31Var.c.a();
-                o31Var.c.c(gm.S2(jb6.G((int) hvaVar4.h, "StarsSentText", new Object[0])), true, true);
-                if (hvaVar4.m) {
-                    hvaVar4.f.b = 5000L;
-                    gm.r(fvaVar);
-                    gm.d3(fvaVar, 5000L);
-                }
-                int i4 = nm7.o1;
-                if (z3) {
-                    hvaVar4.l = true;
-                    k47Var2.f((int) j, hvaVar4.c(), true);
-                    jvaVar.g += j;
-                    nm7.f(i3).k(i4, Long.valueOf(k47.B0(k47Var2.k)), Integer.valueOf(k47Var2.e1()), k47Var2.k.reactions);
-                    nm7.f(i3).k(nm7.A3, new Object[0]);
-                } else {
-                    hvaVar4.l = false;
-                    TLRPC.Message message3 = k47Var2.k;
-                    if (message3.reactions == null) {
-                        message3.reactions = new TLRPC.TL_messageReactions();
-                        TLRPC.Message message4 = k47Var2.k;
-                        message4.reactions.reactions_as_tags = k47.B0(message4) == z8c.h(k47Var2.K1).e();
-                        k47Var2.k.reactions.can_see_list = k47Var2.o3() || k47Var2.p3();
-                    }
-                    TLRPC.ReactionCount reactionCount = null;
-                    for (int i5 = 0; i5 < k47Var2.k.reactions.results.size(); i5++) {
-                        if (k47Var2.k.reactions.results.get(i5).reaction instanceof TLRPC.TL_reactionPaid) {
-                            reactionCount = k47Var2.k.reactions.results.get(i5);
-                        }
-                    }
-                    if (reactionCount == null) {
-                        TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
-                        tL_reactionCount.reaction = new TLRPC.TL_reactionPaid();
-                        tL_reactionCount.count = 1;
-                        tL_reactionCount.chosen = true;
-                        k47Var2.k.reactions.results.add(0, tL_reactionCount);
-                        hvaVar4.k--;
-                    }
-                    nm7.f(i3).k(i4, Long.valueOf(k47.B0(k47Var2.k)), Integer.valueOf(k47Var2.e1()), k47Var2.k.reactions);
-                    hvaVar4.k += j;
-                }
-                o31Var.b.setText(hvaVar4.d());
-            }
-            hva hvaVar5 = this.B;
-            hvaVar5.n = l;
-            return hvaVar5;
-        }
-        if (!z) {
-            z3 = false;
-            fva fvaVar2 = hvaVar4.p;
-            jva jvaVar2 = hvaVar4.q;
-            int i32 = jvaVar2.a;
-            o31 o31Var2 = hvaVar4.e;
-            k47 k47Var22 = hvaVar4.b;
-            if (hvaVar4.i) {
-            }
-            boolean z42 = e21.a;
-            hva hvaVar52 = this.B;
-            hvaVar52.n = l;
-            return hvaVar52;
-        }
-        z3 = true;
-        fva fvaVar22 = hvaVar4.p;
-        jva jvaVar22 = hvaVar4.q;
-        int i322 = jvaVar22.a;
-        o31 o31Var22 = hvaVar4.e;
-        k47 k47Var222 = hvaVar4.b;
-        if (hvaVar4.i) {
-        }
-        boolean z422 = e21.a;
-        hva hvaVar522 = this.B;
-        hvaVar522.n = l;
-        return hvaVar522;
-    }
-
-    public final void d(Activity activity, TL_stars.TL_starsTopupOption tL_starsTopupOption, jac jacVar, TLRPC.InputPeer inputPeer) {
-        int i = this.a;
-        if (activity == null) {
-            return;
-        }
-        if (!oc7.r1(i).c5()) {
-            d Q = LaunchActivity.Q();
-            if (Q == null || Q.getContext() == null) {
-                c0(activity, null);
-                return;
-            } else {
-                c0(Q.getContext(), Q.getResourceProvider());
-                return;
-            }
-        }
-        boolean z = oc7.r1(this.a).l4.l0.f && inputPeer != null;
-        if ((!e21.b() && cj0.h().j()) || z) {
-            if (!cj0.h().j()) {
-                jacVar.a(Boolean.FALSE, "INVOICE DISABLED");
-                return;
-            }
-            TLRPC.TL_inputStorePaymentStarsTopup tL_inputStorePaymentStarsTopup = new TLRPC.TL_inputStorePaymentStarsTopup();
-            tL_inputStorePaymentStarsTopup.stars = tL_starsTopupOption.stars;
-            tL_inputStorePaymentStarsTopup.currency = tL_starsTopupOption.currency;
-            tL_inputStorePaymentStarsTopup.amount = tL_starsTopupOption.amount;
-            i5 i5Var = new i5();
-            i5Var.b = "inapp";
-            i5Var.a = tL_starsTopupOption.store_product;
-            zy8 a = i5Var.a();
-            fc4.b("StarsController.buy starts queryProductDetails");
-            cj0.h().o(Arrays.asList(a), new lu((Object) jacVar, (Object) tL_inputStorePaymentStarsTopup, (Object) tL_starsTopupOption, (Object) activity, (byte) 22));
-            return;
-        }
-        TLRPC.TL_inputStorePaymentStarsTopup tL_inputStorePaymentStarsTopup2 = new TLRPC.TL_inputStorePaymentStarsTopup();
-        tL_inputStorePaymentStarsTopup2.stars = tL_starsTopupOption.stars;
-        tL_inputStorePaymentStarsTopup2.amount = tL_starsTopupOption.amount;
-        tL_inputStorePaymentStarsTopup2.currency = tL_starsTopupOption.currency;
-        tL_inputStorePaymentStarsTopup2.spend_purpose_peer = inputPeer;
-        TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
-        tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsTopup2;
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        JSONObject u = wx0.u(F(), false);
-        if (u != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = u.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-        ConnectionsManager.getInstance(i).sendRequest(tL_payments_getPaymentForm, new fm8((Object) this, (Object) jacVar, (Object) tL_inputInvoiceStars, (byte) 17));
-    }
-
-    public final void d0(List list) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k47 k47Var = (k47) list.get(0);
-        long B0 = k47.B0(k47Var.k);
-        int i = this.a;
-        if (B0 >= 0) {
-            oc7.r1(i).b3(oc7.r1(i).W1(Long.valueOf(B0)), 0, true, null);
-        } else {
-            oc7.r1(i).a3(0, -B0, true);
-        }
-        c41.b0(LaunchActivity.S()).Q(R.raw.error, 36, nxa.T0(TextUtils.concat(jb6.G((int) k47Var.k.errorAllowedPriceStars, "PaidMessagesSendErrorToast1", new Object[0]), " ", jb6.G((int) k47Var.k.errorNewPriceStars, "PaidMessagesSendErrorToast2", new Object[0])))).j();
-    }
-
-    public final void e(final long j, final TLObject tLObject, final TLRPC.TL_textWithEntities tL_textWithEntities, final jac jacVar) {
-        int i;
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        final Context context2 = context;
-        final ylb F = F();
-        boolean z = tLObject instanceof TLRPC.TL_premiumGiftOption;
-        if ((z || (tLObject instanceof TLRPC.TL_premiumGiftCodeOption)) && context2 != null) {
-            if (!this.e) {
-                o(new r97((Object) this, (Object) jacVar, j, (Object) tLObject, (Object) tL_textWithEntities, (byte) 17));
-                return;
-            }
-            if (z) {
-                i = ((TLRPC.TL_premiumGiftOption) tLObject).months;
-            } else if (!(tLObject instanceof TLRPC.TL_premiumGiftCodeOption)) {
-                return;
-            } else {
-                i = ((TLRPC.TL_premiumGiftCodeOption) tLObject).months;
-            }
-            final String k = pg3.k(this.a, j);
-            final TLRPC.TL_inputInvoicePremiumGiftStars tL_inputInvoicePremiumGiftStars = new TLRPC.TL_inputInvoicePremiumGiftStars();
-            tL_inputInvoicePremiumGiftStars.user_id = oc7.r1(this.a).n1(j);
-            tL_inputInvoicePremiumGiftStars.months = i;
-            if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-                tL_inputInvoicePremiumGiftStars.flags |= 1;
-                tL_inputInvoicePremiumGiftStars.message = tL_textWithEntities;
-            }
-            TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-            JSONObject u = wx0.u(F, false);
-            if (u != null) {
-                TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-                tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-                tL_dataJSON.data = u.toString();
-                tL_payments_getPaymentForm.flags |= 1;
-            }
-            tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftStars;
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: vta
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(final TLObject tLObject2, final TLRPC.TL_error tL_error) {
-                    final jva jvaVar = jva.this;
-                    final jac jacVar2 = jacVar;
-                    final TLRPC.TL_inputInvoicePremiumGiftStars tL_inputInvoicePremiumGiftStars2 = tL_inputInvoicePremiumGiftStars;
-                    final Context context3 = context2;
-                    final ylb ylbVar = F;
-                    final String str = k;
-                    final long j2 = j;
-                    final TLObject tLObject3 = tLObject;
-                    final TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_textWithEntities;
-                    gm.c3(new Runnable() { // from class: aua
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            TLObject tLObject4 = tLObject2;
-                            boolean z2 = tLObject4 instanceof TLRPC.TL_payments_paymentFormStars;
-                            final jac jacVar3 = jacVar2;
-                            if (!z2) {
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                jva.c(tL_error2 == null ? "NO_PAYMENT_FORM" : tL_error2.text);
-                                jacVar3.a(Boolean.FALSE, null);
-                                return;
+                b3.setText(spannableStringBuilder);
+                huaVar.addView(b3, nme.t(-2, -2, 17, 0, 11, 0, 17));
+                j6.addView(huaVar, nme.o(-1, -2));
+                wjbVar2 = wjbVar;
+                context2 = context;
+                starsTransaction2 = starsTransaction;
+                linearLayout = j6;
+                str = "";
+                z3 = z12;
+                fx0VarArr = fx0VarArr5;
+                z5 = z9;
+                mfb mfbVar10 = new mfb(context2, wjbVar2);
+                starGift = starsTransaction2.stargift;
+                byte b4 = 5;
+                if (starGift == null) {
+                    TL_stars.StarsTransaction starsTransaction4 = starsTransaction2;
+                    wjbVar3 = wjbVar2;
+                    fx0[] fx0VarArr6 = fx0VarArr;
+                    boolean z14 = z5;
+                    viewGroup = linearLayout;
+                    TL_stars.StarsTransactionPeer starsTransactionPeer2 = starsTransaction4.peer;
+                    if (starsTransactionPeer2 instanceof TL_stars.TL_starsTransactionPeer) {
+                        final long n = cf3.n(starsTransactionPeer2.peer);
+                        if (starsTransaction4.paid_message) {
+                            mfbVar10.n(k96.L0(positive ? 2131750177 : 2131749920), i, n, new ota(fx0VarArr6, n, (byte) 0));
+                            if (starsTransaction4.starref_amount != null && starsTransaction4.starref_commission_permille > 0) {
+                                mfbVar10.d(a1(starsTransaction4.amount instanceof TL_stars.TL_starsTonAmount, "⭐️ ".concat(k96.E(Math.abs(Math.round(starsTransaction4.starref_amount.toDouble() + starsTransaction4.amount.toDouble())), ',')), 0.8f, null), k96.L0(2131744713));
                             }
-                            TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) tLObject4;
-                            TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-                            tL_payments_sendStarsForm.form_id = tL_payments_paymentFormStars.form_id;
-                            tL_payments_sendStarsForm.invoice = tL_inputInvoicePremiumGiftStars2;
-                            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStars.invoice.prices;
-                            int size = arrayList.size();
-                            int i2 = 0;
-                            final long j3 = 0;
-                            while (i2 < size) {
-                                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i2);
-                                i2++;
-                                j3 += tL_labeledPrice.amount;
-                            }
-                            final jva jvaVar2 = jva.this;
-                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(jvaVar2.a);
-                            final Context context4 = context3;
-                            final ylb ylbVar2 = ylbVar;
-                            final String str2 = str;
-                            final long j4 = j2;
-                            final TLObject tLObject5 = tLObject3;
-                            final TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_textWithEntities2;
-                            connectionsManager.sendRequest(tL_payments_sendStarsForm, new RequestDelegate() { // from class: fua
-                                @Override // org.telegram.tgnet.RequestDelegate
-                                public final void run(final TLObject tLObject6, final TLRPC.TL_error tL_error3) {
-                                    final jva jvaVar3 = jva.this;
-                                    final jac jacVar4 = jacVar3;
-                                    final Context context5 = context4;
-                                    final ylb ylbVar3 = ylbVar2;
-                                    final long j5 = j3;
-                                    final String str3 = str2;
-                                    final long j6 = j4;
-                                    final TLObject tLObject7 = tLObject5;
-                                    final TLRPC.TL_textWithEntities tL_textWithEntities4 = tL_textWithEntities3;
-                                    gm.c3(new Runnable() { // from class: lua
+                            mfbVar4 = mfbVar10;
+                            fx0VarArr = fx0VarArr6;
+                            i5 = i;
+                        } else if (z2) {
+                            long n2 = cf3.n(starsTransaction4.starref_peer);
+                            mfbVar10.i(k96.L0(2131744993), k96.L0(2131744992), new ota(fx0VarArr6, j, (byte) 1));
+                            mfbVar10.n(k96.L0(2131744996), i, n2, new ota(fx0VarArr6, n2, (byte) 2));
+                            mfbVar10.n(k96.L0(2131744991), i, n, new ota(fx0VarArr6, n, (byte) 3));
+                            mfbVar10.d(bc.I0(starsTransaction4.starref_commission_permille), k96.L0(2131744995));
+                            i5 = i;
+                            mfbVar4 = mfbVar10;
+                            fx0VarArr = fx0VarArr6;
+                        } else {
+                            if (z3) {
+                                fx0VarArr = fx0VarArr6;
+                                mfbVar10.i(k96.L0(2131744993), k96.L0(2131744992), new sb2(i, context, j, n, fx0VarArr, wjbVar3));
+                                mfbVar10.n(k96.L0(2131744994), i, n, new ota(fx0VarArr, n, (byte) 4));
+                                context3 = context;
+                                starsTransaction3 = starsTransaction;
+                                mfbVar2 = mfbVar10;
+                            } else {
+                                fx0VarArr = fx0VarArr6;
+                                if (z13) {
+                                    mfbVar10.n(k96.L0(2131744971), i, n, new nta(fx0VarArr, starsTransaction, n, (byte) 1));
+                                    final byte b5 = 2;
+                                    mfbVar10.n(k96.L0(2131744970), i, y6c.h(i).e(), new Runnable() { // from class: mta
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            v16 v16Var;
-                                            int i3;
-                                            jva jvaVar4 = jva.this;
-                                            TLObject tLObject8 = tLObject6;
-                                            TLRPC.TL_error tL_error4 = tL_error3;
-                                            jac jacVar5 = jacVar4;
-                                            Context context6 = context5;
-                                            ylb ylbVar4 = ylbVar3;
-                                            long j7 = j5;
-                                            String str4 = str3;
-                                            long j8 = j6;
-                                            TLObject tLObject9 = tLObject7;
-                                            TLRPC.TL_textWithEntities tL_textWithEntities5 = tL_textWithEntities4;
-                                            d Q = LaunchActivity.Q();
-                                            c41 Y = (Q == null || Q.visibleDialog != null) ? c41.Y() : c41.b0(Q);
-                                            if (!(tLObject8 instanceof TLRPC.TL_payments_paymentResult)) {
-                                                if (tL_error4 == null) {
-                                                    i3 = 1;
-                                                } else {
-                                                    if ("BALANCE_TOO_LOW".equals(tL_error4.text)) {
-                                                        if (!oc7.r1(jvaVar4.a).c5()) {
-                                                            jacVar5.a(Boolean.FALSE, null);
-                                                            jva.c0(context6, ylbVar4);
-                                                            return;
-                                                        } else {
-                                                            boolean[] zArr = {false};
-                                                            dxa dxaVar = new dxa(context6, ylbVar4, j7, 6, str4, new om1((Object) jvaVar4, (Object) zArr, j8, (Object) tLObject9, (Object) tL_textWithEntities5, (Object) jacVar5, (byte) 4), 0L);
-                                                            dxaVar.setOnDismissListener(new eua((byte) 1, jacVar5, zArr));
-                                                            dxaVar.show();
-                                                            return;
-                                                        }
+                                            byte b6 = b5;
+                                            int i11 = i;
+                                            fx0[] fx0VarArr7 = fx0VarArr;
+                                            switch (b6) {
+                                                case 0:
+                                                    fx0VarArr7[0].dismiss();
+                                                    d S2 = LaunchActivity.S();
+                                                    if (S2 != null) {
+                                                        Bundle bundle = new Bundle();
+                                                        bundle.putLong("user_id", y6c.h(i11).e());
+                                                        bundle.putBoolean("my_profile", true);
+                                                        bundle.putBoolean("open_gifts", true);
+                                                        S2.presentFragment(new ProfileActivity(bundle, null));
+                                                        break;
                                                     }
-                                                    i3 = 1;
-                                                    if ("STARGIFT_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                        jacVar5.a(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
-                                                        return;
+                                                    break;
+                                                case 1:
+                                                    fx0VarArr7[0].dismiss();
+                                                    d S3 = LaunchActivity.S();
+                                                    if (S3 != null) {
+                                                        Bundle bundle2 = new Bundle();
+                                                        bundle2.putLong("user_id", y6c.h(i11).e());
+                                                        bundle2.putBoolean("my_profile", true);
+                                                        bundle2.putBoolean("open_gifts", true);
+                                                        S3.presentFragment(new ProfileActivity(bundle2, null));
+                                                        break;
+                                                    }
+                                                    break;
+                                                default:
+                                                    fx0VarArr7[0].dismiss();
+                                                    d S4 = LaunchActivity.S();
+                                                    if (S4 != null) {
+                                                        Bundle bundle3 = new Bundle();
+                                                        bundle3.putLong("user_id", y6c.h(i11).e());
+                                                        bundle3.putBoolean("my_profile", true);
+                                                        S4.presentFragment(new ProfileActivity(bundle3, null));
+                                                        break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    });
+                                    starsTransaction3 = starsTransaction;
+                                    mfbVar10.i(k96.L0(2131744969), k96.L0(2131744968), new nta(fx0VarArr, starsTransaction, n, (byte) 2));
+                                    mfbVar10.d(I0(starsTransaction3.amount), k96.L0(2131744972));
+                                    i5 = i;
+                                    mfbVar3 = mfbVar10;
+                                    context3 = context;
+                                    mfbVar = mfbVar3;
+                                    z6 = z14;
+                                    mfbVar5 = mfbVar;
+                                } else {
+                                    starsTransaction3 = starsTransaction;
+                                    if (!starsTransaction3.subscription || z) {
+                                        if (starsTransaction3.premium_gift) {
+                                            final byte b6 = 1;
+                                            mfbVar10.n(k96.L0(2131749920), i, n, new Runnable() { // from class: qta
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    byte b7 = b6;
+                                                    Context context5 = context;
+                                                    long j7 = n;
+                                                    fx0[] fx0VarArr7 = fx0VarArr;
+                                                    switch (b7) {
+                                                        case 0:
+                                                            fx0VarArr7[0].dismiss();
+                                                            if (!l7c.C(j7)) {
+                                                                d S2 = LaunchActivity.S();
+                                                                if (S2 != null) {
+                                                                    S2.presentFragment(mu1.W9(j7));
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                d01.t(context5, k96.M0(2131744687, null));
+                                                                break;
+                                                            }
+                                                            break;
+                                                        case 1:
+                                                            fx0VarArr7[0].dismiss();
+                                                            if (!l7c.C(j7)) {
+                                                                d S3 = LaunchActivity.S();
+                                                                if (S3 != null) {
+                                                                    S3.presentFragment(mu1.W9(j7));
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                d01.t(context5, k96.M0(2131744687, null));
+                                                                break;
+                                                            }
+                                                            break;
+                                                        default:
+                                                            fx0VarArr7[0].dismiss();
+                                                            if (!l7c.C(j7)) {
+                                                                d S4 = LaunchActivity.S();
+                                                                if (S4 != null) {
+                                                                    S4.presentFragment(mu1.W9(j7));
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                d01.t(context5, k96.M0(2131744687, null));
+                                                                break;
+                                                            }
+                                                            break;
                                                     }
                                                 }
-                                                jacVar5.a(Boolean.FALSE, null);
-                                                Object[] objArr = new Object[i3];
-                                                objArr[0] = tL_error4 != null ? tL_error4.text : "FAILED_SEND_STARS";
-                                                Y.Q(R.raw.error, 36, jb6.a0(null, null, 2131743565, objArr)).j();
-                                                return;
+                                            });
+                                            mfbVar10.d(k96.I(starsTransaction3.premium_gift_months, "Months"), k96.L0(2131744697));
+                                        } else if (!starsTransaction3.posts_search) {
+                                            String L02 = k96.L0(2131744696);
+                                            final byte b7 = 2;
+                                            Runnable runnable = new Runnable() { // from class: qta
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    byte b72 = b7;
+                                                    Context context5 = context;
+                                                    long j7 = n;
+                                                    fx0[] fx0VarArr7 = fx0VarArr;
+                                                    switch (b72) {
+                                                        case 0:
+                                                            fx0VarArr7[0].dismiss();
+                                                            if (!l7c.C(j7)) {
+                                                                d S2 = LaunchActivity.S();
+                                                                if (S2 != null) {
+                                                                    S2.presentFragment(mu1.W9(j7));
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                d01.t(context5, k96.M0(2131744687, null));
+                                                                break;
+                                                            }
+                                                            break;
+                                                        case 1:
+                                                            fx0VarArr7[0].dismiss();
+                                                            if (!l7c.C(j7)) {
+                                                                d S3 = LaunchActivity.S();
+                                                                if (S3 != null) {
+                                                                    S3.presentFragment(mu1.W9(j7));
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                d01.t(context5, k96.M0(2131744687, null));
+                                                                break;
+                                                            }
+                                                            break;
+                                                        default:
+                                                            fx0VarArr7[0].dismiss();
+                                                            if (!l7c.C(j7)) {
+                                                                d S4 = LaunchActivity.S();
+                                                                if (S4 != null) {
+                                                                    S4.presentFragment(mu1.W9(j7));
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                d01.t(context5, k96.M0(2131744687, null));
+                                                                break;
+                                                            }
+                                                            break;
+                                                    }
+                                                }
+                                            };
+                                            fx0VarArr = fx0VarArr;
+                                            context3 = context;
+                                            mfbVar10.n(L02, i, n, runnable);
+                                            mfbVar = mfbVar10;
+                                            i5 = i;
+                                            z6 = z14;
+                                            mfbVar5 = mfbVar;
+                                        }
+                                        context3 = context;
+                                        i5 = i;
+                                        mfbVar = mfbVar10;
+                                        fx0VarArr = fx0VarArr;
+                                        z6 = z14;
+                                        mfbVar5 = mfbVar;
+                                    } else {
+                                        final byte b8 = 0;
+                                        mfbVar10.n(k96.L0(2131744925), i, n, new Runnable() { // from class: qta
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                byte b72 = b8;
+                                                Context context5 = context;
+                                                long j7 = n;
+                                                fx0[] fx0VarArr7 = fx0VarArr;
+                                                switch (b72) {
+                                                    case 0:
+                                                        fx0VarArr7[0].dismiss();
+                                                        if (!l7c.C(j7)) {
+                                                            d S2 = LaunchActivity.S();
+                                                            if (S2 != null) {
+                                                                S2.presentFragment(mu1.W9(j7));
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            d01.t(context5, k96.M0(2131744687, null));
+                                                            break;
+                                                        }
+                                                        break;
+                                                    case 1:
+                                                        fx0VarArr7[0].dismiss();
+                                                        if (!l7c.C(j7)) {
+                                                            d S3 = LaunchActivity.S();
+                                                            if (S3 != null) {
+                                                                S3.presentFragment(mu1.W9(j7));
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            d01.t(context5, k96.M0(2131744687, null));
+                                                            break;
+                                                        }
+                                                        break;
+                                                    default:
+                                                        fx0VarArr7[0].dismiss();
+                                                        if (!l7c.C(j7)) {
+                                                            d S4 = LaunchActivity.S();
+                                                            if (S4 != null) {
+                                                                S4.presentFragment(mu1.W9(j7));
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            d01.t(context5, k96.M0(2131744687, null));
+                                                            break;
+                                                        }
+                                                        break;
+                                                }
                                             }
-                                            Utilities.d.c(new dua(jvaVar4, (TLRPC.TL_payments_paymentResult) tLObject8, (byte) 3));
-                                            jvaVar4.P(true);
-                                            jacVar5.a(Boolean.TRUE, null);
-                                            mk0 b = ok0.a(jvaVar4.a).b();
-                                            if (b != null && b.a(j8)) {
-                                                oc7.r1(jvaVar4.a).X3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j8, false).apply();
+                                        });
+                                        context3 = context;
+                                        mfbVar2 = mfbVar10;
+                                        fx0VarArr = fx0VarArr;
+                                    }
+                                }
+                            }
+                            i5 = i;
+                            mfbVar = mfbVar2;
+                            z6 = z14;
+                            mfbVar5 = mfbVar;
+                        }
+                        starsTransaction3 = starsTransaction4;
+                        mfbVar3 = mfbVar4;
+                        context3 = context;
+                        mfbVar = mfbVar3;
+                        z6 = z14;
+                        mfbVar5 = mfbVar;
+                    } else {
+                        mfb mfbVar11 = mfbVar10;
+                        fx0VarArr = fx0VarArr6;
+                        i5 = i;
+                        starsTransaction3 = starsTransaction4;
+                        context3 = context;
+                        if (!(starsTransactionPeer2 instanceof TL_stars.TL_starsTransactionPeerFragment)) {
+                            z6 = z14;
+                            if (starsTransactionPeer2 instanceof TL_stars.TL_starsTransactionPeerAppStore) {
+                                mfbVar11.d(k96.L0(2131754228), k96.L0(2131744694));
+                                mfbVar5 = mfbVar11;
+                            } else if (starsTransactionPeer2 instanceof TL_stars.TL_starsTransactionPeerPlayMarket) {
+                                mfbVar11.d(k96.L0(2131747026), k96.L0(2131744694));
+                                mfbVar5 = mfbVar11;
+                            } else {
+                                mfbVar5 = mfbVar11;
+                                if (starsTransactionPeer2 instanceof TL_stars.TL_starsTransactionPeerPremiumBot) {
+                                    mfbVar11.d(k96.L0(2131744724), k96.L0(2131744694));
+                                    mfbVar5 = mfbVar11;
+                                }
+                            }
+                        } else if (starsTransaction3.gift) {
+                            l46 l46Var = new l46(context3, wjbVar3);
+                            l46Var.setPadding(gl.L(12.66f), gl.L(9.33f), gl.L(12.66f), gl.L(9.33f));
+                            l46Var.setEllipsize(TextUtils.TruncateAt.END);
+                            int i11 = bkb.Wc;
+                            zkb.X(l46Var, i11, wjbVar3);
+                            zkb.G(l46Var, i11, wjbVar3);
+                            l46Var.setTextSize(1, 14.0f);
+                            l46Var.setSingleLine(true);
+                            l46Var.setDisablePaddingsOffsetY(true);
+                            ec0 ec0Var = new ec0(24.0f, i5, l46Var);
+                            String L03 = k96.L0(z14 ? 2131744691 : 2131744688);
+                            fm2 a = eva.a(24, "fragment");
+                            int L = gl.L(16.0f);
+                            int L2 = gl.L(16.0f);
+                            a.e = L;
+                            a.f = L2;
+                            ec0Var.b.g0(a);
+                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x  " + ((Object) L03));
+                            spannableStringBuilder2.setSpan(ec0Var, 0, 1, 33);
+                            z6 = z14;
+                            spannableStringBuilder2.setSpan(new jua(fx0VarArr, context3, z6), 3, spannableStringBuilder2.length(), 33);
+                            l46Var.setText(spannableStringBuilder2);
+                            mfbVar11.l(l46Var, k96.L0(2131744696));
+                            mfbVar5 = mfbVar11;
+                        } else {
+                            z6 = z14;
+                            mfbVar11.d(k96.L0(2131750504), k96.L0(2131744694));
+                            mfbVar5 = mfbVar11;
+                        }
+                    }
+                } else if (starsTransaction2.stargift_upgrade) {
+                    if ((starsTransaction2.flags & 256) == 0 || starsTransaction2.msg_id <= 0) {
+                        starsTransaction3 = starsTransaction2;
+                        viewGroup3 = linearLayout;
+                    } else {
+                        q41 q41Var = (q41) ((jfb) mfbVar10.d(k96.L0(2131744983), k96.L0(2131744990)).getChildAt(1)).getChildAt(0);
+                        TL_stars.TL_inputSavedStarGiftUser tL_inputSavedStarGiftUser = new TL_stars.TL_inputSavedStarGiftUser();
+                        tL_inputSavedStarGiftUser.msg_id = starsTransaction2.msg_id;
+                        viewGroup3 = linearLayout;
+                        Context context5 = context2;
+                        starsTransaction3 = starsTransaction;
+                        gta.t(i).J(tL_inputSavedStarGiftUser, new go2((Object) q41Var, i, (Object) context5, (Object) wjbVar2, (byte) 6));
+                    }
+                    TL_stars.StarsTransactionPeer starsTransactionPeer3 = starsTransaction3.peer;
+                    if (starsTransactionPeer3 instanceof TL_stars.TL_starsTransactionPeer) {
+                        long n3 = cf3.n(((TL_stars.TL_starsTransactionPeer) starsTransactionPeer3).peer);
+                        mfbVar10.n(k96.L0(2131744973), i, n3, new ota(fx0VarArr, n3, b4));
+                        wjbVar3 = wjbVar;
+                        mfbVar9 = mfbVar10;
+                        i5 = i;
+                        context3 = context;
+                        z6 = z5;
+                    } else {
+                        i5 = i;
+                        wjbVar3 = wjbVar;
+                        mfbVar9 = mfbVar10;
+                        z6 = z5;
+                        context3 = context;
+                    }
+                    viewGroup = viewGroup3;
+                    mfbVar5 = mfbVar9;
+                } else {
+                    final Context context6 = context2;
+                    starsTransaction3 = starsTransaction2;
+                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                        String str2 = starGift.slug;
+                        if (TextUtils.isEmpty(str2)) {
+                            i8 = 2131750177;
+                        } else {
+                            String L04 = k96.L0(2131750176);
+                            StringBuilder sb = new StringBuilder();
+                            i8 = 2131750177;
+                            sb.append(starsTransaction3.stargift.title);
+                            sb.append(" #");
+                            sb.append(starsTransaction3.stargift.num);
+                            mfbVar10.i(L04, sb.toString(), new t79((Object) context6, i, (Object) str2, (byte) 14));
+                        }
+                        final long e = y6c.h(i).e();
+                        long n4 = cf3.n(((TL_stars.TL_starsTransactionPeer) starsTransaction3.peer).peer);
+                        if (!starsTransaction3.offer) {
+                            if (starsTransaction3.stargift_resale) {
+                                if (negative) {
+                                    mfbVar10.d(k96.L0(starsTransaction3.refund ? 2131744985 : 2131744987), k96.L0(2131744990));
+                                } else {
+                                    mfbVar10.d(k96.L0(starsTransaction3.refund ? 2131744987 : 2131744985), k96.L0(2131744990));
+                                    j4 = e;
+                                }
+                            } else if (starsTransaction3.stargift_drop_original_details) {
+                                mfbVar10.d(k96.L0(2131744986), k96.L0(2131744990));
+                                j4 = e;
+                                n4 = j4;
+                            } else {
+                                mfbVar10.d(k96.L0(2131744984), k96.L0(2131744990));
+                            }
+                            j4 = n4;
+                            n4 = e;
+                        } else if (negative) {
+                            mfbVar10.d(k96.L0(starsTransaction3.refund ? 2131744985 : 2131744989), k96.L0(2131744990));
+                            j4 = n4;
+                            n4 = e;
+                        } else {
+                            mfbVar10.d(k96.L0(starsTransaction3.refund ? 2131744988 : 2131744985), k96.L0(2131744990));
+                            j4 = e;
+                        }
+                        int i12 = (n4 > e ? 1 : (n4 == e ? 0 : -1));
+                        if (i12 != 0) {
+                            fx0VarArr2 = fx0VarArr;
+                            final byte b9 = 0;
+                            wjbVar3 = wjbVar;
+                            mfbVar8 = mfbVar10;
+                            i9 = i12;
+                            z8 = z5;
+                            viewGroup = linearLayout;
+                            final long j7 = n4;
+                            j5 = e;
+                            mfbVar8.n(k96.L0(i8), i, j7, new Runnable() { // from class: tta
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    byte b10 = b9;
+                                    long j8 = e;
+                                    long j9 = j7;
+                                    fx0[] fx0VarArr7 = fx0VarArr2;
+                                    switch (b10) {
+                                        case 0:
+                                            fx0VarArr7[0].dismiss();
+                                            d S2 = LaunchActivity.S();
+                                            if (S2 != null) {
+                                                Bundle k = ls6.k(j9, "user_id");
+                                                if (j9 == j8) {
+                                                    k.putBoolean("my_profile", true);
+                                                }
+                                                k.putBoolean("open_gifts", true);
+                                                S2.presentFragment(new ProfileActivity(k, null));
+                                                break;
                                             }
-                                            oc7.r1(jvaVar4.a).X3.edit().putBoolean("show_gift_for_" + j8, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j8, true).apply();
-                                            LaunchActivity launchActivity = LaunchActivity.H1;
-                                            if (launchActivity == null || (v16Var = launchActivity.w0) == null) {
-                                                return;
+                                            break;
+                                        default:
+                                            fx0VarArr7[0].dismiss();
+                                            d S3 = LaunchActivity.S();
+                                            if (S3 != null) {
+                                                Bundle k2 = ls6.k(j9, "user_id");
+                                                if (j9 == j8) {
+                                                    k2.putBoolean("my_profile", true);
+                                                }
+                                                k2.putBoolean("open_gifts", true);
+                                                S3.presentFragment(new ProfileActivity(k2, null));
+                                                break;
                                             }
-                                            v16Var.c(true);
+                                            break;
+                                    }
+                                }
+                            });
+                        } else {
+                            wjbVar3 = wjbVar;
+                            mfbVar8 = mfbVar10;
+                            fx0VarArr2 = fx0VarArr;
+                            i9 = i12;
+                            z8 = z5;
+                            j5 = e;
+                            viewGroup = linearLayout;
+                        }
+                        if (j4 != j5) {
+                            final long j8 = j5;
+                            final byte b10 = 1;
+                            final long j9 = j4;
+                            final fx0[] fx0VarArr7 = fx0VarArr2;
+                            mfbVar8.n(k96.L0(2131749920), i, j9, new Runnable() { // from class: tta
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    byte b102 = b10;
+                                    long j82 = j8;
+                                    long j92 = j9;
+                                    fx0[] fx0VarArr72 = fx0VarArr7;
+                                    switch (b102) {
+                                        case 0:
+                                            fx0VarArr72[0].dismiss();
+                                            d S2 = LaunchActivity.S();
+                                            if (S2 != null) {
+                                                Bundle k = ls6.k(j92, "user_id");
+                                                if (j92 == j82) {
+                                                    k.putBoolean("my_profile", true);
+                                                }
+                                                k.putBoolean("open_gifts", true);
+                                                S2.presentFragment(new ProfileActivity(k, null));
+                                                break;
+                                            }
+                                            break;
+                                        default:
+                                            fx0VarArr72[0].dismiss();
+                                            d S3 = LaunchActivity.S();
+                                            if (S3 != null) {
+                                                Bundle k2 = ls6.k(j92, "user_id");
+                                                if (j92 == j82) {
+                                                    k2.putBoolean("my_profile", true);
+                                                }
+                                                k2.putBoolean("open_gifts", true);
+                                                S3.presentFragment(new ProfileActivity(k2, null));
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            });
+                        }
+                        mfb mfbVar12 = mfbVar8;
+                        if ((i9 == 0 || starsTransaction3.stargift_resale) && (starsAmount = starsTransaction3.starref_amount) != null && starsTransaction3.starref_commission_permille > 0) {
+                            TL_stars.StarsAmount starsAmount4 = starsTransaction3.amount;
+                            if ((starsAmount4 instanceof TL_stars.TL_starsTonAmount) && (starsAmount instanceof TL_stars.TL_starsTonAmount)) {
+                                TL_stars.TL_starsTonAmount tL_starsTonAmount = new TL_stars.TL_starsTonAmount();
+                                tL_starsTonAmount.amount = starsTransaction3.amount.amount + starsTransaction3.starref_amount.amount;
+                                cm2[] cm2VarArr = new cm2[1];
+                                mfbVar12.d(Z0(starsTransaction3.amount, "⭐️ " + ((Object) F0(tL_starsTonAmount)), cm2VarArr), k96.L0(2131744713));
+                                cm2 cm2Var = cm2VarArr[0];
+                                if (cm2Var != null) {
+                                    cm2Var.y = bkb.v0(bkb.Ei, wjbVar3);
+                                }
+                            } else {
+                                mfbVar12.d(a1(starsTransaction3.amount instanceof TL_stars.TL_starsTonAmount, "⭐️ ".concat(k96.E(Math.abs(Math.round(starsTransaction3.starref_amount.toDouble() + starsAmount4.toDouble())), ',')), 0.8f, null), k96.L0(2131744713));
+                            }
+                        }
+                        i5 = i;
+                        mfbVar6 = mfbVar12;
+                        context3 = context6;
+                    } else {
+                        wjbVar3 = wjbVar;
+                        fx0VarArr2 = fx0VarArr;
+                        z8 = z5;
+                        viewGroup = linearLayout;
+                        if (starsTransaction3.refund) {
+                            context3 = context;
+                            i5 = i;
+                            starsTransaction3 = starsTransaction;
+                            mfbVar6 = mfbVar10;
+                        } else {
+                            long e2 = j == 0 ? y6c.h(i).e() : j;
+                            final long n5 = cf3.n(starsTransaction3.peer.peer);
+                            TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(n5));
+                            if (positive) {
+                                if (n5 != e2) {
+                                    String L05 = k96.L0(2131744971);
+                                    Runnable ntaVar = new nta(fx0VarArr2, starsTransaction3, n5, (byte) 4);
+                                    String L06 = (V1 == null || l7c.z(V1) || l7c.b(n5)) ? null : k96.L0(2131750268);
+                                    final byte b11 = 0;
+                                    i7 = i;
+                                    Runnable runnable2 = new Runnable() { // from class: lta
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            byte b12 = b11;
+                                            fx0[] fx0VarArr8 = fx0VarArr2;
+                                            switch (b12) {
+                                                case 0:
+                                                    fx0 fx0Var3 = fx0VarArr8[0];
+                                                    Objects.requireNonNull(fx0Var3);
+                                                    new tv4(context6, i7, n5, null, new ae9(fx0Var3, (byte) 11)).show();
+                                                    break;
+                                                default:
+                                                    fx0 fx0Var4 = fx0VarArr8[0];
+                                                    Objects.requireNonNull(fx0Var4);
+                                                    new tv4(context6, i7, n5, null, new ae9(fx0Var4, (byte) 11)).show();
+                                                    break;
+                                            }
+                                        }
+                                    };
+                                    mfbVar7 = mfbVar10;
+                                    fx0VarArr4 = fx0VarArr2;
+                                    mfbVar7.m(L05, i7, n5, ntaVar, L06, runnable2);
+                                } else {
+                                    i7 = i;
+                                    mfbVar7 = mfbVar10;
+                                    fx0VarArr4 = fx0VarArr2;
+                                }
+                                final byte b12 = 0;
+                                mfbVar7.n(k96.L0(2131744970), i7, e2, new Runnable() { // from class: mta
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        byte b62 = b12;
+                                        int i112 = i7;
+                                        fx0[] fx0VarArr72 = fx0VarArr4;
+                                        switch (b62) {
+                                            case 0:
+                                                fx0VarArr72[0].dismiss();
+                                                d S2 = LaunchActivity.S();
+                                                if (S2 != null) {
+                                                    Bundle bundle = new Bundle();
+                                                    bundle.putLong("user_id", y6c.h(i112).e());
+                                                    bundle.putBoolean("my_profile", true);
+                                                    bundle.putBoolean("open_gifts", true);
+                                                    S2.presentFragment(new ProfileActivity(bundle, null));
+                                                    break;
+                                                }
+                                                break;
+                                            case 1:
+                                                fx0VarArr72[0].dismiss();
+                                                d S3 = LaunchActivity.S();
+                                                if (S3 != null) {
+                                                    Bundle bundle2 = new Bundle();
+                                                    bundle2.putLong("user_id", y6c.h(i112).e());
+                                                    bundle2.putBoolean("my_profile", true);
+                                                    bundle2.putBoolean("open_gifts", true);
+                                                    S3.presentFragment(new ProfileActivity(bundle2, null));
+                                                    break;
+                                                }
+                                                break;
+                                            default:
+                                                fx0VarArr72[0].dismiss();
+                                                d S4 = LaunchActivity.S();
+                                                if (S4 != null) {
+                                                    Bundle bundle3 = new Bundle();
+                                                    bundle3.putLong("user_id", y6c.h(i112).e());
+                                                    bundle3.putBoolean("my_profile", true);
+                                                    S4.presentFragment(new ProfileActivity(bundle3, null));
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                });
+                                fx0VarArr3 = fx0VarArr4;
+                            } else {
+                                long j10 = e2;
+                                if (n5 != j10) {
+                                    final byte b13 = 1;
+                                    mfbVar10.n(k96.L0(2131744971), i, j10, new Runnable() { // from class: mta
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            byte b62 = b13;
+                                            int i112 = i;
+                                            fx0[] fx0VarArr72 = fx0VarArr2;
+                                            switch (b62) {
+                                                case 0:
+                                                    fx0VarArr72[0].dismiss();
+                                                    d S2 = LaunchActivity.S();
+                                                    if (S2 != null) {
+                                                        Bundle bundle = new Bundle();
+                                                        bundle.putLong("user_id", y6c.h(i112).e());
+                                                        bundle.putBoolean("my_profile", true);
+                                                        bundle.putBoolean("open_gifts", true);
+                                                        S2.presentFragment(new ProfileActivity(bundle, null));
+                                                        break;
+                                                    }
+                                                    break;
+                                                case 1:
+                                                    fx0VarArr72[0].dismiss();
+                                                    d S3 = LaunchActivity.S();
+                                                    if (S3 != null) {
+                                                        Bundle bundle2 = new Bundle();
+                                                        bundle2.putLong("user_id", y6c.h(i112).e());
+                                                        bundle2.putBoolean("my_profile", true);
+                                                        bundle2.putBoolean("open_gifts", true);
+                                                        S3.presentFragment(new ProfileActivity(bundle2, null));
+                                                        break;
+                                                    }
+                                                    break;
+                                                default:
+                                                    fx0VarArr72[0].dismiss();
+                                                    d S4 = LaunchActivity.S();
+                                                    if (S4 != null) {
+                                                        Bundle bundle3 = new Bundle();
+                                                        bundle3.putLong("user_id", y6c.h(i112).e());
+                                                        bundle3.putBoolean("my_profile", true);
+                                                        S4.presentFragment(new ProfileActivity(bundle3, null));
+                                                        break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    });
+                                }
+                                String L07 = k96.L0(2131744970);
+                                Runnable ntaVar2 = new nta(fx0VarArr2, starsTransaction, n5, (byte) 0);
+                                String L08 = (V1 == null || l7c.z(V1) || l7c.b(n5)) ? null : k96.L0(2131750268);
+                                final byte b14 = 1;
+                                Runnable runnable3 = new Runnable() { // from class: lta
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        byte b122 = b14;
+                                        fx0[] fx0VarArr8 = fx0VarArr2;
+                                        switch (b122) {
+                                            case 0:
+                                                fx0 fx0Var3 = fx0VarArr8[0];
+                                                Objects.requireNonNull(fx0Var3);
+                                                new tv4(context, i, n5, null, new ae9(fx0Var3, (byte) 11)).show();
+                                                break;
+                                            default:
+                                                fx0 fx0Var4 = fx0VarArr8[0];
+                                                Objects.requireNonNull(fx0Var4);
+                                                new tv4(context, i, n5, null, new ae9(fx0Var4, (byte) 11)).show();
+                                                break;
+                                        }
+                                    }
+                                };
+                                mfbVar7 = mfbVar10;
+                                fx0VarArr3 = fx0VarArr2;
+                                mfbVar7.m(L07, i, n5, ntaVar2, L08, runnable3);
+                            }
+                            context3 = context;
+                            mfbVar5 = mfbVar7;
+                            fx0VarArr = fx0VarArr3;
+                            z6 = z8;
+                            i5 = i;
+                            starsTransaction3 = starsTransaction;
+                        }
+                    }
+                    z6 = z8;
+                    fx0VarArr = fx0VarArr2;
+                    mfbVar5 = mfbVar6;
+                }
+                starsTransactionPeer = starsTransaction3.peer;
+                if ((starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeer) && (starsTransaction3.flags & 256) != 0) {
+                    long n6 = cf3.n(starsTransactionPeer.peer);
+                    if (z) {
+                        n6 = j;
+                    }
+                    K0 = na7.q1(i5).K0(Long.valueOf(-n6));
+                    if (K0 != null) {
+                        l46 l46Var2 = new l46(context3, wjbVar3);
+                        z7 = z6;
+                        l46Var2.setPadding(gl.L(12.66f), gl.L(9.33f), gl.L(12.66f), gl.L(9.33f));
+                        l46Var2.setEllipsize(TextUtils.TruncateAt.END);
+                        int i13 = bkb.Wc;
+                        zkb.X(l46Var2, i13, wjbVar3);
+                        zkb.G(l46Var2, i13, wjbVar3);
+                        l46Var2.setTextSize(1, 14.0f);
+                        l46Var2.setDisablePaddingsOffsetY(true);
+                        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(str);
+                        if (!starsTransaction3.extended_media.isEmpty()) {
+                            ArrayList<TLRPC.MessageMedia> arrayList = starsTransaction3.extended_media;
+                            int size = arrayList.size();
+                            int i14 = 0;
+                            int i15 = 0;
+                            while (i15 < size) {
+                                TLRPC.MessageMedia messageMedia = arrayList.get(i15);
+                                int i16 = i15 + 1;
+                                ArrayList<TLRPC.MessageMedia> arrayList2 = arrayList;
+                                TLRPC.MessageMedia messageMedia2 = messageMedia;
+                                int i17 = size;
+                                ol5 ol5Var = new ol5(24.0f, i5, l46Var2);
+                                if (!(messageMedia2 instanceof TLRPC.TL_messageMediaPhoto)) {
+                                    viewGroup2 = viewGroup;
+                                    if (!(messageMedia2 instanceof TLRPC.TL_messageMediaDocument)) {
+                                        gl5Var2 = null;
+                                        if (gl5Var2 == null) {
+                                            ol5Var.a(6.0f);
+                                            ol5Var.b.d0(gl5Var2, "24_24", null, null, null, 0);
+                                            SpannableString spannableString = new SpannableString("x");
+                                            spannableString.setSpan(ol5Var, 0, spannableString.length(), 33);
+                                            spannableStringBuilder3.append((CharSequence) spannableString);
+                                            spannableStringBuilder3.append((CharSequence) " ");
+                                            i6 = i14 + 1;
+                                        } else {
+                                            i6 = i14;
+                                        }
+                                        if (i6 < 3) {
+                                            break;
+                                        }
+                                        size = i17;
+                                        i15 = i16;
+                                        i14 = i6;
+                                        viewGroup = viewGroup2;
+                                        arrayList = arrayList2;
+                                    } else {
+                                        c2 = gl5.c(ba4.v(gl.L(24.0f), messageMedia2.document.thumbs, true), messageMedia2.document);
+                                    }
+                                } else {
+                                    viewGroup2 = viewGroup;
+                                    c2 = gl5.i(ba4.v(gl.L(24.0f), messageMedia2.photo.sizes, true), messageMedia2.photo);
+                                }
+                                gl5Var2 = c2;
+                                if (gl5Var2 == null) {
+                                }
+                                if (i6 < 3) {
+                                }
+                            }
+                        }
+                        viewGroup2 = viewGroup;
+                        spannableStringBuilder3.append((CharSequence) " ");
+                        int length = spannableStringBuilder3.length();
+                        String K = hc2.K(K0, false);
+                        if (TextUtils.isEmpty(K)) {
+                            spannableStringBuilder3.append((CharSequence) K0.title);
+                        } else {
+                            StringBuilder sb2 = new StringBuilder();
+                            ls6.u(sb2, na7.q1(i5).N2, "/", K, "/");
+                            sb2.append(starsTransaction3.msg_id);
+                            spannableStringBuilder3.append((CharSequence) sb2.toString());
+                        }
+                        nta ntaVar3 = new nta(fx0VarArr, n6, starsTransaction3);
+                        spannableStringBuilder3.setSpan(new kua(ntaVar3), length, spannableStringBuilder3.length(), 33);
+                        l46Var2.setSingleLine(true);
+                        l46Var2.setEllipsize(TextUtils.TruncateAt.END);
+                        l46Var2.setText(spannableStringBuilder3);
+                        l46Var2.setOnClickListener(new bna(ntaVar3, (byte) 5));
+                        mfbVar5.l(l46Var2, k96.L0(starsTransaction3.reaction ? 2131744705 : 2131744706));
+                        if (!TextUtils.isEmpty(starsTransaction3.id) && !z13) {
+                            String L09 = k96.L0(2131744711);
+                            String str3 = starsTransaction3.id;
+                            mfbVar5.k(L09, str3, str3.length() <= 25 ? 9 : 10, new t7a((Object) fx0VarArr, (Object) wjbVar3, (byte) 28));
+                        }
+                        if (starsTransaction3.floodskip && starsTransaction3.floodskip_number > 0) {
+                            mfbVar5.d(k96.I(starsTransaction3.floodskip_number, "StarsTransactionFloodskipNumber"), k96.L0(2131744717));
+                        }
+                        mfbVar5.d(k96.Z(2131742520, k96.D0().r0().format(new Date(starsTransaction3.date * 1000)), k96.D0().o0().format(new Date(starsTransaction3.date * 1000))), k96.L0(2131744723));
+                        starGift2 = starsTransaction3.stargift;
+                        if (starGift2 != null) {
+                            if (starGift2.limited) {
+                                B0(mfbVar5, i5, starGift2, wjbVar3);
+                            }
+                            if (!TextUtils.isEmpty(starsTransaction3.description)) {
+                                mfbVar5.a(new SpannableStringBuilder(starsTransaction3.description));
+                            }
+                        }
+                        ViewGroup viewGroup4 = viewGroup2;
+                        viewGroup4.addView(mfbVar5, nme.k(16.0f, 17.0f, 16.0f, 0.0f, -1, -2));
+                        if ((starsTransaction3.flags & 32) != 0) {
+                            mfbVar5.d(k96.Z(2131742520, k96.D0().r0().format(new Date(starsTransaction3.transaction_date * 1000)), k96.D0().o0().format(new Date(starsTransaction3.transaction_date * 1000))), k96.L0(2131744692));
+                        }
+                        if (z7) {
+                            context4 = context;
+                            l46 l46Var3 = new l46(context4, wjbVar3);
+                            zkb.X(l46Var3, bkb.y6, wjbVar3);
+                            zkb.G(l46Var3, bkb.Wc, wjbVar3);
+                            l46Var3.setTextSize(1, 14.0f);
+                            l46Var3.setText(gl.P2(k96.L0(2131744689), new vf1(context4, (byte) 16)));
+                            l46Var3.setGravity(17);
+                            viewGroup4.addView(l46Var3, nme.k(16.0f, 15.0f, 16.0f, 0.0f, -1, -2));
+                        } else {
+                            context4 = context;
+                        }
+                        u41 u41Var = new u41(context4, wjbVar3);
+                        u41Var.f();
+                        if ((starsTransaction3.flags & 32) == 0) {
+                            r3 = 0;
+                            u41Var.h(k96.L0(2131744685), false);
+                        } else {
+                            r3 = 0;
+                            u41Var.h(k96.L0(2131747638), false);
+                        }
+                        viewGroup4.addView(u41Var, nme.k(16.0f, 15.0f, 16.0f, 0.0f, -1, 48));
+                        fx0 fx0Var3 = fx0Var;
+                        fx0Var3.O = viewGroup4;
+                        fx0VarArr[r3] = fx0Var3;
+                        fx0Var3.T0 = r3;
+                        if ((starsTransaction3.flags & 32) == 0) {
+                            u41Var.setOnClickListener(new b99(context4, starsTransaction3, (byte) 17));
+                        } else {
+                            u41Var.setOnClickListener(new f5(fx0VarArr, (byte) 4));
+                        }
+                        fx0VarArr[0].K();
+                        S = LaunchActivity.S();
+                        if (!gl.O1() && !gl.s1(S)) {
+                            fx0VarArr[0].X(S);
+                        }
+                        fx0VarArr[0].show();
+                        return fx0VarArr[0];
+                    }
+                }
+                z7 = z6;
+                viewGroup2 = viewGroup;
+                if (!TextUtils.isEmpty(starsTransaction3.id)) {
+                    String L092 = k96.L0(2131744711);
+                    String str32 = starsTransaction3.id;
+                    mfbVar5.k(L092, str32, str32.length() <= 25 ? 9 : 10, new t7a((Object) fx0VarArr, (Object) wjbVar3, (byte) 28));
+                }
+                if (starsTransaction3.floodskip) {
+                    mfbVar5.d(k96.I(starsTransaction3.floodskip_number, "StarsTransactionFloodskipNumber"), k96.L0(2131744717));
+                }
+                mfbVar5.d(k96.Z(2131742520, k96.D0().r0().format(new Date(starsTransaction3.date * 1000)), k96.D0().o0().format(new Date(starsTransaction3.date * 1000))), k96.L0(2131744723));
+                starGift2 = starsTransaction3.stargift;
+                if (starGift2 != null) {
+                }
+                ViewGroup viewGroup42 = viewGroup2;
+                viewGroup42.addView(mfbVar5, nme.k(16.0f, 17.0f, 16.0f, 0.0f, -1, -2));
+                if ((starsTransaction3.flags & 32) != 0) {
+                }
+                if (z7) {
+                }
+                u41 u41Var2 = new u41(context4, wjbVar3);
+                u41Var2.f();
+                if ((starsTransaction3.flags & 32) == 0) {
+                }
+                viewGroup42.addView(u41Var2, nme.k(16.0f, 15.0f, 16.0f, 0.0f, -1, 48));
+                fx0 fx0Var32 = fx0Var;
+                fx0Var32.O = viewGroup42;
+                fx0VarArr[r3] = fx0Var32;
+                fx0Var32.T0 = r3;
+                if ((starsTransaction3.flags & 32) == 0) {
+                }
+                fx0VarArr[0].K();
+                S = LaunchActivity.S();
+                if (!gl.O1()) {
+                    fx0VarArr[0].X(S);
+                }
+                fx0VarArr[0].show();
+                return fx0VarArr[0];
+            }
+        }
+        fx0Var = fx0Var2;
+        z2 = z11;
+        final be0 be0Var2 = new be0(context);
+        if (starsTransaction.premium_gift) {
+            f1(be0Var2, be0Var2.getImageReceiver(), starsTransaction.premium_gift_months);
+            j6.addView(be0Var2, nme.t(kk7.p2, kk7.p2, 17, 0, -8, 0, 10));
+        } else if (starsTransaction.posts_search) {
+            fm2 a2 = o5a.a(100, "search");
+            int L3 = gl.L(40.0f);
+            int L4 = gl.L(40.0f);
+            a2.e = L3;
+            a2.f = L4;
+            be0Var2.setImageDrawable(a2);
+        } else {
+            TL_stars.StarGift starGift4 = starsTransaction.stargift;
+            if (starGift4 == null) {
+                if (z13 || starsTransaction.gift) {
+                    context2 = context;
+                    i2 = i;
+                    starsTransaction2 = starsTransaction;
+                    linearLayout = j6;
+                    str = "";
+                    z3 = z12;
+                    z4 = z;
+                    j2 = j;
+                    wjbVar2 = wjbVar;
+                    z5 = z9;
+                    if (starsTransaction2.amount instanceof TL_stars.TL_starsTonAmount) {
+                        g1(be0Var2, be0Var2.getImageReceiver(), starsTransaction2.amount.amount);
+                    } else {
+                        c1(be0Var2, be0Var2.getImageReceiver(), starsTransaction2.amount.amount);
+                    }
+                    linearLayout.addView(be0Var2, nme.t(kk7.p2, kk7.p2, 17, 0, -8, 0, 10));
+                } else if (starsTransaction.extended_media.isEmpty()) {
+                    context2 = context;
+                    i2 = i;
+                    starsTransaction2 = starsTransaction;
+                    linearLayout = j6;
+                    z4 = z;
+                    j2 = j;
+                    wjbVar2 = wjbVar;
+                    TL_stars.StarsTransactionPeer starsTransactionPeer4 = starsTransaction2.peer;
+                    if (starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeer) {
+                        if (starsTransaction2.photo != null) {
+                            be0Var2.setRoundRadius(gl.L(50.0f));
+                            z3 = z12;
+                            be0Var2.p(gl5.p(usc.c(starsTransaction2.photo)), "100_100", null, null);
+                            z5 = z9;
+                            str = "";
+                        } else {
+                            z3 = z12;
+                            be0Var2.setRoundRadius(gl.L(50.0f));
+                            if (z3) {
+                                peer = starsTransaction2.starref_peer;
+                            } else if (starsTransaction2.subscription && z4) {
+                                z5 = z9;
+                                str = "";
+                                j3 = j2;
+                                pb0 pb0Var = new pb0();
+                                if (j3 < 0) {
+                                    TLRPC.User V12 = na7.q1(i2).V1(Long.valueOf(j3));
+                                    pb0Var.n(V12);
+                                    be0Var2.f(V12, pb0Var);
+                                } else {
+                                    TLRPC.Chat K02 = na7.q1(i2).K0(Long.valueOf(-j3));
+                                    pb0Var.l(K02);
+                                    be0Var2.f(K02, pb0Var);
+                                }
+                            } else {
+                                peer = starsTransaction2.peer.peer;
+                            }
+                            z5 = z9;
+                            str = "";
+                            j3 = cf3.n(peer);
+                            pb0 pb0Var2 = new pb0();
+                            if (j3 < 0) {
+                            }
+                        }
+                        linearLayout.addView(be0Var2, nme.t(100, 100, 17, 0, 0, 0, 10));
+                    } else {
+                        str = "";
+                        z3 = z12;
+                        z5 = z9;
+                        fm2 a3 = o5a.a(100, starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAppStore ? "ios" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerPlayMarket ? "android" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerPremiumBot ? "premiumbot" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerFragment ? "fragment" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAds ? "ads" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAPI ? "api" : "?");
+                        int L5 = gl.L(40.0f);
+                        int L6 = gl.L(40.0f);
+                        a3.e = L5;
+                        a3.f = L6;
+                        be0Var2.setImageDrawable(a3);
+                    }
+                } else {
+                    be0Var2.setRoundRadius(gl.L(30.0f));
+                    TLRPC.MessageMedia messageMedia3 = starsTransaction.extended_media.get(0);
+                    if (messageMedia3 instanceof TLRPC.TL_messageMediaPhoto) {
+                        c = gl5.i(ba4.v(gl.L(100.0f), messageMedia3.photo.sizes, true), messageMedia3.photo);
+                    } else if (messageMedia3 instanceof TLRPC.TL_messageMediaDocument) {
+                        c = gl5.c(ba4.v(gl.L(100.0f), messageMedia3.document.thumbs, true), messageMedia3.document);
+                    } else {
+                        gl5Var = null;
+                        be0Var2.j(gl5Var, "100_100", null, null, null, 0);
+                        j6.addView(be0Var2, nme.t(100, 100, 17, 0, 0, 0, 10));
+                        context2 = context;
+                        View.OnClickListener onClickListener = new View.OnClickListener() { // from class: pta
+                            @Override // android.view.View.OnClickListener
+                            public final void onClick(View view) {
+                                boolean z15 = z;
+                                TL_stars.StarsTransaction starsTransaction5 = starsTransaction;
+                                long n7 = z15 ? j : cf3.n(starsTransaction5.peer.peer);
+                                ArrayList arrayList3 = new ArrayList();
+                                for (int i18 = 0; i18 < starsTransaction5.extended_media.size(); i18++) {
+                                    TLRPC.MessageMedia messageMedia4 = starsTransaction5.extended_media.get(i18);
+                                    TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                                    tL_message.id = starsTransaction5.msg_id;
+                                    tL_message.dialog_id = n7;
+                                    TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                                    tL_message.from_id = tL_peerChannel;
+                                    long j11 = -n7;
+                                    tL_peerChannel.channel_id = j11;
+                                    TLRPC.TL_peerChannel tL_peerChannel2 = new TLRPC.TL_peerChannel();
+                                    tL_message.peer_id = tL_peerChannel2;
+                                    tL_peerChannel2.channel_id = j11;
+                                    tL_message.date = starsTransaction5.date;
+                                    tL_message.flags |= 512;
+                                    tL_message.media = messageMedia4;
+                                    tL_message.noforwards = true;
+                                    arrayList3.add(new k27(i, tL_message, false, false));
+                                }
+                                if (arrayList3.isEmpty()) {
+                                    return;
+                                }
+                                PhotoViewer.r0().T1(null, LaunchActivity.Q(), wjbVar);
+                                PhotoViewer.r0().j1(arrayList3, 0, n7, 0L, 0L, new iua(be0Var2, j6, n7));
+                            }
+                        };
+                        starsTransaction2 = starsTransaction;
+                        z4 = z;
+                        wjbVar2 = wjbVar;
+                        i2 = i;
+                        linearLayout = j6;
+                        j2 = j;
+                        be0Var2.setOnClickListener(onClickListener);
+                        str = "";
+                        z3 = z12;
+                        z5 = z9;
+                    }
+                    gl5Var = c;
+                    be0Var2.j(gl5Var, "100_100", null, null, null, 0);
+                    j6.addView(be0Var2, nme.t(100, 100, 17, 0, 0, 0, 10));
+                    context2 = context;
+                    View.OnClickListener onClickListener2 = new View.OnClickListener() { // from class: pta
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            boolean z15 = z;
+                            TL_stars.StarsTransaction starsTransaction5 = starsTransaction;
+                            long n7 = z15 ? j : cf3.n(starsTransaction5.peer.peer);
+                            ArrayList arrayList3 = new ArrayList();
+                            for (int i18 = 0; i18 < starsTransaction5.extended_media.size(); i18++) {
+                                TLRPC.MessageMedia messageMedia4 = starsTransaction5.extended_media.get(i18);
+                                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                                tL_message.id = starsTransaction5.msg_id;
+                                tL_message.dialog_id = n7;
+                                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                                tL_message.from_id = tL_peerChannel;
+                                long j11 = -n7;
+                                tL_peerChannel.channel_id = j11;
+                                TLRPC.TL_peerChannel tL_peerChannel2 = new TLRPC.TL_peerChannel();
+                                tL_message.peer_id = tL_peerChannel2;
+                                tL_peerChannel2.channel_id = j11;
+                                tL_message.date = starsTransaction5.date;
+                                tL_message.flags |= 512;
+                                tL_message.media = messageMedia4;
+                                tL_message.noforwards = true;
+                                arrayList3.add(new k27(i, tL_message, false, false));
+                            }
+                            if (arrayList3.isEmpty()) {
+                                return;
+                            }
+                            PhotoViewer.r0().T1(null, LaunchActivity.Q(), wjbVar);
+                            PhotoViewer.r0().j1(arrayList3, 0, n7, 0L, 0L, new iua(be0Var2, j6, n7));
+                        }
+                    };
+                    starsTransaction2 = starsTransaction;
+                    z4 = z;
+                    wjbVar2 = wjbVar;
+                    i2 = i;
+                    linearLayout = j6;
+                    j2 = j;
+                    be0Var2.setOnClickListener(onClickListener2);
+                    str = "";
+                    z3 = z12;
+                    z5 = z9;
+                }
+                TextView textView = new TextView(context2);
+                i3 = bkb.i5;
+                tb4.w(textView, i3, wjbVar2, 1, 20.0f);
+                textView.setGravity(17);
+                textView.setText(K0(i2, z4, starsTransaction2));
+                TextView m = ug8.m(linearLayout, textView, nme.t(-1, -2, 17, 36, 0, 36, 4), context2);
+                m.setTextSize(1, 18.0f);
+                m.setTypeface(gl.o());
+                m.setGravity(17);
+                zkb.X(m, !positive ? bkb.kk : bkb.mk, wjbVar2);
+                TL_stars.StarsAmount starsAmount5 = starsTransaction2.amount;
+                m.setText(a1(starsAmount5 instanceof TL_stars.TL_starsTonAmount, TextUtils.concat(positive ? "+" : str, F0(starsAmount5), " ⭐️"), 0.8f, null));
+                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(m.getText());
+                if (!starsTransaction2.refund) {
+                    C0(spannableStringBuilder4, m, k96.L0(2131744793));
+                } else if (starsTransaction2.failed) {
+                    zkb.X(m, bkb.mk, wjbVar2);
+                    C0(spannableStringBuilder4, m, k96.L0(2131744873));
+                } else if (starsTransaction2.pending) {
+                    zkb.X(m, bkb.ok, wjbVar2);
+                    C0(spannableStringBuilder4, m, k96.L0(2131744816));
+                }
+                m.setText(spannableStringBuilder4);
+                linearLayout.addView(m, nme.t(-1, -2, 17, 36, 0, 36, 4));
+                if (!starsTransaction2.paid_message && starsTransaction2.starref_commission_permille > 0 && positive) {
+                    l46 l46Var4 = new l46(context2);
+                    zkb.X(l46Var4, i3, wjbVar2);
+                    l46Var4.setTextSize(1, 14.0f);
+                    l46Var4.setGravity(17);
+                    zkb.G(l46Var4, bkb.Wc, wjbVar2);
+                    l46Var4.setDisablePaddingsOffsetY(true);
+                    SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
+                    spannableStringBuilder5.append((CharSequence) gl.S2(k96.Z(2131744703, bc.I0(1000 - starsTransaction2.starref_commission_permille))));
+                    if (j2 == y6c.h(i2).e() || hc2.w(2, na7.q1(i2).K0(Long.valueOf(-j2)))) {
+                        spannableStringBuilder5.append((CharSequence) " ");
+                        spannableStringBuilder5.append((CharSequence) gl.D2(gl.P2(k96.L0(2131744702).replace(' ', (char) 160), new am0(j2, i2, (byte) 3)), true));
+                    }
+                    l46Var4.setText(spannableStringBuilder5);
+                    linearLayout.addView(l46Var4, nme.t(-1, -2, 17, 36, 0, 36, 4));
+                    fx0VarArr = fx0VarArr5;
+                } else if ((starsTransaction2.amount instanceof TL_stars.TL_starsTonAmount) && (z13 || starsTransaction2.gift)) {
+                    TLRPC.User V13 = starsTransaction2.sent_by == null ? null : na7.q1(i2).V1(Long.valueOf(cf3.n(starsTransaction2.sent_by)));
+                    TLRPC.User V14 = starsTransaction2.sent_by == null ? null : na7.q1(i2).V1(Long.valueOf(cf3.n(starsTransaction2.received_by)));
+                    boolean D = l7c.D(V13);
+                    if (D) {
+                        zkb.X(m, bkb.F6, wjbVar2);
+                        TL_stars.StarsAmount starsAmount6 = starsTransaction2.amount;
+                        i4 = 1;
+                        m.setText(a1(starsAmount6 instanceof TL_stars.TL_starsTonAmount, TextUtils.concat(F0(starsAmount6), " ⭐️"), 0.8f, null));
+                    } else {
+                        i4 = 1;
+                    }
+                    l46 l46Var5 = new l46(context2);
+                    zkb.X(l46Var5, i3, wjbVar2);
+                    l46Var5.setTextSize(i4, 16.0f);
+                    l46Var5.setGravity(17);
+                    zkb.G(l46Var5, bkb.Wc, wjbVar2);
+                    l46Var5.setDisablePaddingsOffsetY(i4);
+                    if (D) {
+                        Object[] objArr = new Object[i4];
+                        objArr[0] = l7c.l(V14);
+                        L0 = k96.Z(2131754628, objArr);
+                    } else {
+                        L0 = k96.L0(2131754627);
+                    }
+                    fx0VarArr = fx0VarArr5;
+                    l46Var5.setText(TextUtils.concat(gl.S2(L0), " ", gl.D2(gl.P2(k96.L0(2131749433).replace(' ', (char) 160), new sta(context2, fx0VarArr)), true)));
+                    linearLayout.addView(l46Var5, nme.t(-1, -2, 17, 36, 0, 36, 4));
+                } else {
+                    fx0VarArr = fx0VarArr5;
+                    if (starsTransaction2.description != null && starsTransaction2.extended_media.isEmpty()) {
+                        TextView textView2 = new TextView(context2);
+                        zkb.X(textView2, i3, wjbVar2);
+                        textView2.setTextSize(1, 16.0f);
+                        textView2.setGravity(17);
+                        textView2.setText(starsTransaction2.description);
+                        linearLayout.addView(textView2, nme.t(-1, -2, 17, 36, 0, 36, 4));
+                    }
+                }
+                mfb mfbVar102 = new mfb(context2, wjbVar2);
+                starGift = starsTransaction2.stargift;
+                byte b42 = 5;
+                if (starGift == null) {
+                }
+                starsTransactionPeer = starsTransaction3.peer;
+                if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeer) {
+                    long n62 = cf3.n(starsTransactionPeer.peer);
+                    if (z) {
+                    }
+                    K0 = na7.q1(i5).K0(Long.valueOf(-n62));
+                    if (K0 != null) {
+                    }
+                }
+                z7 = z6;
+                viewGroup2 = viewGroup;
+                if (!TextUtils.isEmpty(starsTransaction3.id)) {
+                }
+                if (starsTransaction3.floodskip) {
+                }
+                mfbVar5.d(k96.Z(2131742520, k96.D0().r0().format(new Date(starsTransaction3.date * 1000)), k96.D0().o0().format(new Date(starsTransaction3.date * 1000))), k96.L0(2131744723));
+                starGift2 = starsTransaction3.stargift;
+                if (starGift2 != null) {
+                }
+                ViewGroup viewGroup422 = viewGroup2;
+                viewGroup422.addView(mfbVar5, nme.k(16.0f, 17.0f, 16.0f, 0.0f, -1, -2));
+                if ((starsTransaction3.flags & 32) != 0) {
+                }
+                if (z7) {
+                }
+                u41 u41Var22 = new u41(context4, wjbVar3);
+                u41Var22.f();
+                if ((starsTransaction3.flags & 32) == 0) {
+                }
+                viewGroup422.addView(u41Var22, nme.k(16.0f, 15.0f, 16.0f, 0.0f, -1, 48));
+                fx0 fx0Var322 = fx0Var;
+                fx0Var322.O = viewGroup422;
+                fx0VarArr[r3] = fx0Var322;
+                fx0Var322.T0 = r3;
+                if ((starsTransaction3.flags & 32) == 0) {
+                }
+                fx0VarArr[0].K();
+                S = LaunchActivity.S();
+                if (!gl.O1()) {
+                }
+                fx0VarArr[0].show();
+                return fx0VarArr[0];
+            }
+            if (starGift4 instanceof TL_stars.TL_starGiftUnique) {
+                be0Var2.setImageDrawable(new jqa(be0Var2, starsTransaction.stargift, 94, 0.44f));
+                j6.addView(be0Var2, nme.t(94, 94, 17, 0, 2, 0, 10));
+            } else {
+                e1(be0Var2.getImageReceiver(), starsTransaction.stargift, kk7.p2);
+                j6.addView(be0Var2, nme.t(kk7.p2, kk7.p2, 17, 0, -8, 0, 10));
+            }
+        }
+        wjbVar2 = wjbVar;
+        context2 = context;
+        i2 = i;
+        starsTransaction2 = starsTransaction;
+        linearLayout = j6;
+        str = "";
+        z3 = z12;
+        z4 = z;
+        j2 = j;
+        z5 = z9;
+        TextView textView3 = new TextView(context2);
+        i3 = bkb.i5;
+        tb4.w(textView3, i3, wjbVar2, 1, 20.0f);
+        textView3.setGravity(17);
+        textView3.setText(K0(i2, z4, starsTransaction2));
+        TextView m2 = ug8.m(linearLayout, textView3, nme.t(-1, -2, 17, 36, 0, 36, 4), context2);
+        m2.setTextSize(1, 18.0f);
+        m2.setTypeface(gl.o());
+        m2.setGravity(17);
+        zkb.X(m2, !positive ? bkb.kk : bkb.mk, wjbVar2);
+        TL_stars.StarsAmount starsAmount52 = starsTransaction2.amount;
+        m2.setText(a1(starsAmount52 instanceof TL_stars.TL_starsTonAmount, TextUtils.concat(positive ? "+" : str, F0(starsAmount52), " ⭐️"), 0.8f, null));
+        SpannableStringBuilder spannableStringBuilder42 = new SpannableStringBuilder(m2.getText());
+        if (!starsTransaction2.refund) {
+        }
+        m2.setText(spannableStringBuilder42);
+        linearLayout.addView(m2, nme.t(-1, -2, 17, 36, 0, 36, 4));
+        if (!starsTransaction2.paid_message) {
+        }
+        if (starsTransaction2.amount instanceof TL_stars.TL_starsTonAmount) {
+        }
+        fx0VarArr = fx0VarArr5;
+        if (starsTransaction2.description != null) {
+            TextView textView22 = new TextView(context2);
+            zkb.X(textView22, i3, wjbVar2);
+            textView22.setTextSize(1, 16.0f);
+            textView22.setGravity(17);
+            textView22.setText(starsTransaction2.description);
+            linearLayout.addView(textView22, nme.t(-1, -2, 17, 36, 0, 36, 4));
+        }
+        mfb mfbVar1022 = new mfb(context2, wjbVar2);
+        starGift = starsTransaction2.stargift;
+        byte b422 = 5;
+        if (starGift == null) {
+        }
+        starsTransactionPeer = starsTransaction3.peer;
+        if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeer) {
+        }
+        z7 = z6;
+        viewGroup2 = viewGroup;
+        if (!TextUtils.isEmpty(starsTransaction3.id)) {
+        }
+        if (starsTransaction3.floodskip) {
+        }
+        mfbVar5.d(k96.Z(2131742520, k96.D0().r0().format(new Date(starsTransaction3.date * 1000)), k96.D0().o0().format(new Date(starsTransaction3.date * 1000))), k96.L0(2131744723));
+        starGift2 = starsTransaction3.stargift;
+        if (starGift2 != null) {
+        }
+        ViewGroup viewGroup4222 = viewGroup2;
+        viewGroup4222.addView(mfbVar5, nme.k(16.0f, 17.0f, 16.0f, 0.0f, -1, -2));
+        if ((starsTransaction3.flags & 32) != 0) {
+        }
+        if (z7) {
+        }
+        u41 u41Var222 = new u41(context4, wjbVar3);
+        u41Var222.f();
+        if ((starsTransaction3.flags & 32) == 0) {
+        }
+        viewGroup4222.addView(u41Var222, nme.k(16.0f, 15.0f, 16.0f, 0.0f, -1, 48));
+        fx0 fx0Var3222 = fx0Var;
+        fx0Var3222.O = viewGroup4222;
+        fx0VarArr[r3] = fx0Var3222;
+        fx0Var3222.T0 = r3;
+        if ((starsTransaction3.flags & 32) == 0) {
+        }
+        fx0VarArr[0].K();
+        S = LaunchActivity.S();
+        if (!gl.O1()) {
+        }
+        fx0VarArr[0].show();
+        return fx0VarArr[0];
+    }
+
+    public static void l1(Activity activity, int i, int i2, TLRPC.TL_messageActionPaymentRefunded tL_messageActionPaymentRefunded, wjb wjbVar) {
+        TL_stars.StarsTransaction starsTransaction = new TL_stars.StarsTransaction();
+        starsTransaction.title = null;
+        starsTransaction.description = null;
+        starsTransaction.photo = null;
+        TL_stars.TL_starsTransactionPeer tL_starsTransactionPeer = new TL_stars.TL_starsTransactionPeer();
+        starsTransaction.peer = tL_starsTransactionPeer;
+        tL_starsTransactionPeer.peer = tL_messageActionPaymentRefunded.peer;
+        starsTransaction.date = i2;
+        starsTransaction.amount = TL_stars.StarsAmount.ofStars(tL_messageActionPaymentRefunded.total_amount);
+        starsTransaction.id = tL_messageActionPaymentRefunded.charge.id;
+        starsTransaction.refund = true;
+        k1(activity, false, 0L, i, starsTransaction, wjbVar);
+    }
+
+    public static void m1(Context context, int i, TLRPC.TL_payments_paymentReceiptStars tL_payments_paymentReceiptStars, wjb wjbVar) {
+        TL_stars.StarsTransaction starsTransaction = new TL_stars.StarsTransaction();
+        starsTransaction.title = tL_payments_paymentReceiptStars.title;
+        starsTransaction.description = tL_payments_paymentReceiptStars.description;
+        starsTransaction.photo = tL_payments_paymentReceiptStars.photo;
+        TL_stars.TL_starsTransactionPeer tL_starsTransactionPeer = new TL_stars.TL_starsTransactionPeer();
+        starsTransaction.peer = tL_starsTransactionPeer;
+        tL_starsTransactionPeer.peer = na7.q1(i).w1(tL_payments_paymentReceiptStars.bot_id);
+        starsTransaction.date = tL_payments_paymentReceiptStars.date;
+        starsTransaction.amount = TL_stars.StarsAmount.ofStars(-tL_payments_paymentReceiptStars.total_amount);
+        starsTransaction.id = tL_payments_paymentReceiptStars.transaction_id;
+        k1(context, false, 0L, i, starsTransaction, wjbVar);
+    }
+
+    public static CharSequence s1(CharSequence charSequence, boolean z) {
+        r9c c;
+        if (z && (charSequence instanceof Spanned)) {
+            for (cm2 cm2Var : (cm2[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), cm2.class)) {
+                Drawable drawable = cm2Var.c;
+                if (drawable != null && !(drawable instanceof r9c) && (c = r9c.c(a.b.getResources(), R.drawable.mini_gram_72_white, null)) != null) {
+                    c.setBounds(cm2Var.c.getBounds());
+                    cm2Var.c = c;
+                    cm2Var.d = false;
+                }
+            }
+        }
+        return charSequence;
+    }
+
+    public final void D0() {
+        q1();
+        o39 o39Var = this.c;
+        if (o39Var == null || this.V == null || o39Var.getLayoutParams() == null) {
+            return;
+        }
+        int x = b00.x(48.0f, this.c0, -gl.L(8.0f));
+        int x2 = b00.x(48.0f, this.d0, -gl.L(8.0f));
+        gl.v3(this.c, 0, x, 0, x2);
+        o39 o39Var2 = this.c;
+        int i = -x;
+        o39Var2.setPadding(o39Var2.getPaddingLeft(), i, this.c.getPaddingRight(), this.d0 - x2);
+        this.V.A(i, -x2);
+    }
+
+    public final void E0(ArrayList arrayList, l5c l5cVar) {
+        o39 o39Var;
+        n1("FILL_BEFORE");
+        dha dhaVar = this.V;
+        boolean z = dhaVar != null && dhaVar.f0;
+        this.b0 = -1;
+        if (getParentActivity() == null) {
+            return;
+        }
+        gta v = gta.v(this.currentAccount, false);
+        sb sbVar = (sb) super.n0(getParentActivity());
+        c4c c4cVar = new c4c(-2);
+        c4cVar.c = sbVar;
+        arrayList.add(c4cVar);
+        arrayList.add(c4c.k(this.j0));
+        u41 u41Var = this.s0;
+        if (u41Var != null) {
+            u41Var.setVisibility(getMessagesController().k4.w2.f ? 0 : 8);
+        }
+        arrayList.add(c4c.C(null));
+        if (getMessagesController().k4.C2.f) {
+            arrayList.add(xb.i(-4, getThemedColor(bkb.kk), p82.a0(k96.M0(2131743527, null)), k96.M0(2131743528, null)));
+            arrayList.add(c4c.C(null));
+        }
+        if (v.e && !v.v.isEmpty()) {
+            oo1.o(2131744966, null, arrayList);
+            for (int i = 0; i < v.v.size(); i++) {
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) v.v.get(i);
+                int i2 = bva.b;
+                c4c K = c4c.K(bva.class);
+                K.H = starsSubscription;
+                arrayList.add(K);
+            }
+            if (v.x) {
+                arrayList.add(c4c.q(arrayList.size(), 33));
+            } else if (!v.y) {
+                c4c c = c4c.c(-3, R.drawable.arrow_more, k96.M0(2131744965, null));
+                c.r = true;
+                arrayList.add(c);
+            }
+            arrayList.add(c4c.C(null));
+        }
+        boolean K2 = v.K(0);
+        this.t0 = K2;
+        if (K2) {
+            this.b0 = arrayList.size();
+            arrayList.add(c4c.n(this.W, -2));
+            if (z && (o39Var = this.c) != null) {
+                o39Var.removeCallbacks(this.g0);
+                this.c.post(this.g0);
+            }
+        } else {
+            arrayList.add(c4c.m(this.h0));
+        }
+        n1("FILL_AFTER");
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0757  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x06bc  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0353  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x02ae  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x024c  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0294  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0330  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x039f  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x04f9  */
+    /* JADX WARN: Type inference failed for: r5v30 */
+    /* JADX WARN: Type inference failed for: r5v31, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r5v32 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void L0(int i) {
+        c4c G;
+        int i2;
+        boolean[] zArr;
+        String str;
+        final boolean z;
+        final boolean z2;
+        TLRPC.Chat chat;
+        boolean[] zArr2;
+        TLRPC.Chat chat2;
+        String str2;
+        int i3;
+        Activity activity;
+        boolean z3;
+        String str3;
+        long currentTime;
+        long j;
+        int i4;
+        final lua luaVar;
+        final fx0[] fx0VarArr;
+        final int i5;
+        ?? r5;
+        d S;
+        vb vbVar = this.v0;
+        if (vbVar == null || (G = vbVar.G(i)) == null) {
+            return;
+        }
+        int i6 = G.d;
+        if (i6 == -1) {
+            this.v0.O(true);
+            return;
+        }
+        if (i6 == -2) {
+            gta.v(this.currentAccount, false).r();
+            xu4.f1(true, oj0.a(this.currentAccount).b());
+            return;
+        }
+        if (i6 == -3) {
+            gta.v(this.currentAccount, false).U();
+            this.v0.O(true);
+            return;
+        }
+        if (i6 == -4) {
+            if (na7.q1(this.currentAccount).t2()) {
+                h5.b(this.currentAccount);
+                return;
+            } else {
+                presentFragment(new eg1(getUserConfig().e()));
+                return;
+            }
+        }
+        if (G.H(wua.class)) {
+            if (G.H instanceof TL_stars.TL_starsTopupOption) {
+                gta.v(this.currentAccount, false).d(getParentActivity(), (TL_stars.TL_starsTopupOption) G.H, new w77(this, G, (byte) 12), null);
+                return;
+            }
+            return;
+        }
+        if (G.H(bva.class) && (G.H instanceof TL_stars.StarsSubscription)) {
+            Activity parentActivity = getParentActivity();
+            int i7 = this.currentAccount;
+            final TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) G.H;
+            wjb resourceProvider = getResourceProvider();
+            if (starsSubscription == null || parentActivity == null) {
+                return;
+            }
+            fx0 i8 = ug8.i(parentActivity, false, 1, resourceProvider);
+            fx0[] fx0VarArr2 = new fx0[1];
+            LinearLayout m = ir2.m(parentActivity, 1);
+            m.setPadding(gl.L(16.0f), gl.L(20.0f), gl.L(16.0f), gl.L(4.0f));
+            m.setClipChildren(false);
+            m.setClipToPadding(false);
+            FrameLayout frameLayout = new FrameLayout(parentActivity);
+            m.addView(frameLayout, nme.t(-1, -2, 7, 0, 0, 0, 10));
+            boolean[] zArr3 = new boolean[1];
+            lua luaVar2 = new lua(zArr3, fx0VarArr2);
+            kk7.f(i7).a(luaVar2, kk7.B3);
+            long n = cf3.n(starsSubscription.peer);
+            be0 be0Var = new be0(parentActivity);
+            int i9 = (n > 0L ? 1 : (n == 0L ? 0 : -1));
+            String str4 = "";
+            if (i9 >= 0) {
+                TLRPC.User V1 = na7.q1(i7).V1(Long.valueOf(n));
+                String r = l7c.r(V1);
+                boolean v = l7c.v(V1);
+                z = !v;
+                str = r;
+                zArr = zArr3;
+                z2 = v;
+                i2 = i9;
+                chat = V1;
+            } else {
+                i2 = i9;
+                zArr = zArr3;
+                TLRPC.Chat K0 = na7.q1(i7).K0(Long.valueOf(-n));
+                str = K0 == null ? "" : K0.title;
+                z = false;
+                z2 = false;
+                chat = K0;
+            }
+            TLRPC.Chat chat3 = chat;
+            if (starsSubscription.photo != null) {
+                be0Var.setRoundRadius(gl.L(21.0f));
+                zArr2 = zArr;
+                be0Var.p(gl5.p(usc.c(starsSubscription.photo)), "100_100", null, null);
+            } else {
+                zArr2 = zArr;
+                be0Var.setRoundRadius(gl.L(50.0f));
+                pb0 pb0Var = new pb0((wjb) null);
+                if (i2 < 0) {
+                    chat2 = chat3;
+                    str2 = str;
+                    TLRPC.Chat K02 = na7.q1(i7).K0(Long.valueOf(-n));
+                    pb0Var.p(K02);
+                    be0Var.f(K02, pb0Var);
+                    frameLayout.addView(be0Var, nme.e(100, 100, 17));
+                    Drawable drawable = parentActivity.getResources().getDrawable(R.drawable.star_small_outline);
+                    zkb.x(frameLayout, drawable, bkb.g5, resourceProvider, PorterDuff.Mode.SRC_IN);
+                    Drawable drawable2 = parentActivity.getResources().getDrawable(R.drawable.star_small_inner);
+                    if (starsSubscription.photo == null) {
+                        ImageView imageView = new ImageView(parentActivity);
+                        imageView.setImageDrawable(drawable);
+                        frameLayout.addView(imageView, nme.e(28, 28, 17));
+                        imageView.setTranslationX(gl.L(34.0f));
+                        imageView.setTranslationY(gl.L(35.0f));
+                        imageView.setScaleX(1.1f);
+                        imageView.setScaleY(1.1f);
+                        ImageView imageView2 = new ImageView(parentActivity);
+                        imageView2.setImageDrawable(drawable2);
+                        frameLayout.addView(imageView2, nme.e(28, 28, 17));
+                        imageView2.setTranslationX(gl.L(34.0f));
+                        imageView2.setTranslationY(gl.L(35.0f));
+                    }
+                    TextView textView = new TextView(parentActivity);
+                    tb4.w(textView, bkb.i5, resourceProvider, 1, 20.0f);
+                    textView.setGravity(17);
+                    if (TextUtils.isEmpty(starsSubscription.title)) {
+                        textView.setText(starsSubscription.title);
+                    } else {
+                        textView.setText(k96.M0(2131744734, null));
+                    }
+                    m.addView(textView, nme.t(-1, -2, 17, 20, 0, 20, 4));
+                    TextView textView2 = new TextView(parentActivity);
+                    textView2.setTextSize(1, 14.0f);
+                    textView2.setGravity(17);
+                    zkb.X(textView2, bkb.A6, resourceProvider);
+                    TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = starsSubscription.pricing;
+                    i3 = tL_starsSubscriptionPricing.period;
+                    if (i3 != 2592000) {
+                        textView2.setText(a1(false, k96.a0(null, null, 2131744746, Long.valueOf(tL_starsSubscriptionPricing.amount)), 0.8f, null));
+                    } else {
+                        textView2.setText(a1(false, k96.a0(null, null, 2131744746, Long.valueOf(tL_starsSubscriptionPricing.amount), i3 == 300 ? "5min" : "min"), 0.8f, null));
+                    }
+                    m.addView(textView2, nme.t(-1, -2, 17, 20, 0, 20, 4));
+                    mfb mfbVar = new mfb(parentActivity, resourceProvider);
+                    l46 l46Var = new l46(parentActivity, resourceProvider);
+                    l46Var.setPadding(gl.L(12.66f), gl.L(9.33f), gl.L(12.66f), gl.L(9.33f));
+                    l46Var.setEllipsize(TextUtils.TruncateAt.END);
+                    int i10 = bkb.Wc;
+                    zkb.X(l46Var, i10, resourceProvider);
+                    zkb.G(l46Var, i10, resourceProvider);
+                    l46Var.setTextSize(1, 14.0f);
+                    l46Var.setSingleLine(true);
+                    l46Var.setDisablePaddingsOffsetY(true);
+                    ec0 ec0Var = new ec0(24.0f, i7, l46Var);
+                    if (i2 < 0) {
+                        TLRPC.User V12 = na7.q1(i7).V1(Long.valueOf(n));
+                        z3 = V12 == null || l7c.z(V12);
+                        str4 = l7c.r(V12);
+                        ec0Var.e(V12);
+                        activity = parentActivity;
+                    } else {
+                        activity = parentActivity;
+                        TLRPC.Chat K03 = na7.q1(i7).K0(Long.valueOf(-n));
+                        if (K03 == null) {
+                            z3 = true;
+                        } else {
+                            str4 = K03.title;
+                            z3 = false;
+                        }
+                        ec0Var.b(K03);
+                    }
+                    String str5 = str4;
+                    final TLRPC.Chat chat4 = chat2;
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x  " + ((Object) str5));
+                    spannableStringBuilder.setSpan(ec0Var, 0, 1, 33);
+                    spannableStringBuilder.setSpan(new mua(fx0VarArr2, n), 3, spannableStringBuilder.length(), 33);
+                    l46Var.setText(spannableStringBuilder);
+                    if (!z3) {
+                        mfbVar.l(l46Var, k96.M0(i2 < 0 ? 2131744758 : z ? 2131744768 : 2131744773, null));
+                    }
+                    if (i2 >= 0 || TextUtils.isEmpty(starsSubscription.title)) {
+                        str3 = null;
+                    } else {
+                        str3 = null;
+                        mfbVar.f(k96.M0(z ? 2131744766 : 2131744771, null), starsSubscription.title, null, null);
+                    }
+                    mfbVar.f(k96.M0(2131744739, str3), k96.a0(null, null, 2131742520, k96.D0().r0().format(new Date((starsSubscription.until_date - starsSubscription.pricing.period) * 1000)), k96.D0().o0().format(new Date((starsSubscription.until_date - starsSubscription.pricing.period) * 1000))), null, null);
+                    currentTime = ConnectionsManager.getInstance(i7).getCurrentTime();
+                    if (!starsSubscription.canceled || starsSubscription.bot_canceled) {
+                        j = n;
+                        i4 = 2131744732;
+                    } else {
+                        j = n;
+                        i4 = currentTime > ((long) starsSubscription.until_date) ? 2131744733 : 2131744731;
+                    }
+                    mfbVar.f(k96.M0(i4, null), k96.a0(null, null, 2131742520, k96.D0().r0().format(new Date(starsSubscription.until_date * 1000)), k96.D0().o0().format(new Date(starsSubscription.until_date * 1000))), null, null);
+                    m.addView(mfbVar, nme.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
+                    Activity activity2 = activity;
+                    l46 l46Var2 = new l46(activity2, resourceProvider);
+                    int i11 = bkb.y6;
+                    zkb.X(l46Var2, i11, resourceProvider);
+                    zkb.G(l46Var2, i10, resourceProvider);
+                    l46Var2.setTextSize(1, 14.0f);
+                    l46Var2.setText(gl.N2(k96.M0(2131744689, null), -1, 0, new m9(activity2, (byte) 5), null));
+                    l46Var2.setGravity(17);
+                    m.addView(l46Var2, nme.k(14.0f, 15.0f, 14.0f, 7.0f, -1, -2));
+                    if (currentTime < starsSubscription.until_date) {
+                        luaVar = luaVar2;
+                        fx0VarArr = fx0VarArr2;
+                        i5 = i7;
+                        l46 l46Var3 = new l46(activity2, resourceProvider);
+                        zkb.X(l46Var3, i11, resourceProvider);
+                        zkb.G(l46Var3, i10, resourceProvider);
+                        l46Var3.setTextSize(1, 14.0f);
+                        l46Var3.setText(k96.a0(null, null, 2131744748, k96.u(starsSubscription.until_date, false)));
+                        l46Var3.setSingleLine(false);
+                        l46Var3.setMaxLines(4);
+                        l46Var3.setGravity(17);
+                        m.addView(l46Var3, nme.k(26.0f, 7.0f, 26.0f, 15.0f, -1, -2));
+                        if (starsSubscription.chat_invite_hash != null || starsSubscription.invoice_slug != null) {
+                            u41 u41Var = new u41(resourceProvider, activity2, true);
+                            u41Var.setRoundRadius(24);
+                            r5 = 0;
+                            u41Var.i(k96.M0(2131744774, null), false, true);
+                            m.addView(u41Var, nme.o(-1, 48));
+                            u41Var.setOnClickListener(new t53(u41Var, starsSubscription, i5, fx0VarArr, resourceProvider, zArr2, activity2));
+                            i8.O = m;
+                            fx0VarArr[r5] = i8;
+                            i8.T0 = r5;
+                            i8.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: aua
+                                @Override // android.content.DialogInterface.OnDismissListener
+                                public final void onDismiss(DialogInterface dialogInterface) {
+                                    kk7.f(i5).n(luaVar, kk7.B3);
+                                }
+                            });
+                            fx0VarArr[r5].K();
+                            S = LaunchActivity.S();
+                            if (!gl.O1() && !gl.s1(S)) {
+                                fx0VarArr[r5].X(S);
+                            }
+                            fx0VarArr[r5].show();
+                        }
+                    } else if (starsSubscription.can_refulfill) {
+                        l46 l46Var4 = new l46(activity2, resourceProvider);
+                        zkb.X(l46Var4, i11, resourceProvider);
+                        zkb.G(l46Var4, i10, resourceProvider);
+                        l46Var4.setTextSize(1, 14.0f);
+                        l46Var4.setText(k96.a0(null, null, z2 ? 2131744769 : 2131744744, k96.u(starsSubscription.until_date, false)));
+                        l46Var4.setSingleLine(false);
+                        l46Var4.setMaxLines(4);
+                        l46Var4.setGravity(17);
+                        m.addView(l46Var4, nme.k(26.0f, 7.0f, 26.0f, 15.0f, -1, -2));
+                        u41 u41Var2 = new u41(resourceProvider, activity2, true);
+                        u41Var2.i(k96.M0(z2 ? 2131744770 : 2131744745, null), false, true);
+                        m.addView(u41Var2, nme.o(-1, 48));
+                        luaVar = luaVar2;
+                        fx0VarArr = fx0VarArr2;
+                        yta ytaVar = new yta(u41Var2, i7, starsSubscription, fx0VarArr, j, activity2, resourceProvider, z, str2);
+                        i5 = i7;
+                        u41Var2.setOnClickListener(ytaVar);
+                    } else {
+                        luaVar = luaVar2;
+                        fx0VarArr = fx0VarArr2;
+                        i5 = i7;
+                        if (starsSubscription.bot_canceled) {
+                            l46 l46Var5 = new l46(activity2, resourceProvider);
+                            zkb.X(l46Var5, bkb.mk, resourceProvider);
+                            zkb.G(l46Var5, i10, resourceProvider);
+                            l46Var5.setTextSize(1, 14.0f);
+                            l46Var5.setText(k96.M0(z ? 2131744767 : 2131744772, null));
+                            l46Var5.setSingleLine(false);
+                            l46Var5.setMaxLines(4);
+                            l46Var5.setGravity(17);
+                            m.addView(l46Var5, nme.k(26.0f, 7.0f, 26.0f, 15.0f, -1, -2));
+                        } else if (starsSubscription.canceled) {
+                            l46 l46Var6 = new l46(activity2, resourceProvider);
+                            zkb.X(l46Var6, bkb.mk, resourceProvider);
+                            zkb.G(l46Var6, i10, resourceProvider);
+                            l46Var6.setTextSize(1, 14.0f);
+                            l46Var6.setText(k96.M0(2131744761, null));
+                            l46Var6.setSingleLine(false);
+                            l46Var6.setMaxLines(4);
+                            l46Var6.setGravity(17);
+                            m.addView(l46Var6, nme.k(26.0f, 7.0f, 26.0f, 15.0f, -1, -2));
+                            if (starsSubscription.chat_invite_hash != null || starsSubscription.invoice_slug != null) {
+                                u41 u41Var3 = new u41(resourceProvider, activity2, true);
+                                u41Var3.i(k96.M0(2131744743, null), false, true);
+                                m.addView(u41Var3, nme.o(-1, 48));
+                                u41Var3.setOnClickListener(new xg(u41Var3, starsSubscription, i5, fx0VarArr, chat4, str2));
+                            }
+                        } else {
+                            l46 l46Var7 = new l46(activity2, resourceProvider);
+                            zkb.X(l46Var7, i11, resourceProvider);
+                            zkb.G(l46Var7, i10, resourceProvider);
+                            l46Var7.setTextSize(1, 14.0f);
+                            l46Var7.setText(k96.a0(null, null, 2131744764, k96.u(starsSubscription.until_date, false)));
+                            l46Var7.setSingleLine(false);
+                            l46Var7.setMaxLines(4);
+                            l46Var7.setGravity(17);
+                            m.addView(l46Var7, nme.k(26.0f, 7.0f, 26.0f, 15.0f, -1, -2));
+                            final u41 u41Var4 = new u41(resourceProvider, activity2, false);
+                            u41Var4.i(k96.M0(2131744765, null), false, true);
+                            u41Var4.setTextColorKey(bkb.mk);
+                            m.addView(u41Var4, nme.o(-1, 48));
+                            u41Var4.setOnClickListener(new View.OnClickListener() { // from class: zta
+                                @Override // android.view.View.OnClickListener
+                                public final void onClick(View view) {
+                                    final u41 u41Var5 = u41Var4;
+                                    if (u41Var5.R) {
+                                        return;
+                                    }
+                                    u41Var5.setLoading(true);
+                                    TL_stars.TL_changeStarsSubscription tL_changeStarsSubscription = new TL_stars.TL_changeStarsSubscription();
+                                    tL_changeStarsSubscription.canceled = Boolean.TRUE;
+                                    tL_changeStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
+                                    final TL_stars.StarsSubscription starsSubscription2 = starsSubscription;
+                                    tL_changeStarsSubscription.subscription_id = starsSubscription2.id;
+                                    final int i12 = i5;
+                                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
+                                    final TLObject tLObject = chat4;
+                                    final boolean z4 = z;
+                                    final boolean z5 = z2;
+                                    final fx0[] fx0VarArr3 = fx0VarArr;
+                                    connectionsManager.sendRequest(tL_changeStarsSubscription, new RequestDelegate() { // from class: eua
+                                        @Override // org.telegram.tgnet.RequestDelegate
+                                        public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                            gl.c3(new jl9(i12, u41Var5, tLObject, starsSubscription2, z4, z5, fx0VarArr3));
                                         }
                                     });
                                 }
                             });
                         }
+                    }
+                    r5 = 0;
+                    i8.O = m;
+                    fx0VarArr[r5] = i8;
+                    i8.T0 = r5;
+                    i8.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: aua
+                        @Override // android.content.DialogInterface.OnDismissListener
+                        public final void onDismiss(DialogInterface dialogInterface) {
+                            kk7.f(i5).n(luaVar, kk7.B3);
+                        }
                     });
+                    fx0VarArr[r5].K();
+                    S = LaunchActivity.S();
+                    if (!gl.O1()) {
+                        fx0VarArr[r5].X(S);
+                    }
+                    fx0VarArr[r5].show();
+                }
+                TLRPC.User V13 = na7.q1(i7).V1(Long.valueOf(n));
+                pb0Var.q(V13);
+                be0Var.f(V13, pb0Var);
+            }
+            chat2 = chat3;
+            str2 = str;
+            frameLayout.addView(be0Var, nme.e(100, 100, 17));
+            Drawable drawable3 = parentActivity.getResources().getDrawable(R.drawable.star_small_outline);
+            zkb.x(frameLayout, drawable3, bkb.g5, resourceProvider, PorterDuff.Mode.SRC_IN);
+            Drawable drawable22 = parentActivity.getResources().getDrawable(R.drawable.star_small_inner);
+            if (starsSubscription.photo == null) {
+            }
+            TextView textView3 = new TextView(parentActivity);
+            tb4.w(textView3, bkb.i5, resourceProvider, 1, 20.0f);
+            textView3.setGravity(17);
+            if (TextUtils.isEmpty(starsSubscription.title)) {
+            }
+            m.addView(textView3, nme.t(-1, -2, 17, 20, 0, 20, 4));
+            TextView textView22 = new TextView(parentActivity);
+            textView22.setTextSize(1, 14.0f);
+            textView22.setGravity(17);
+            zkb.X(textView22, bkb.A6, resourceProvider);
+            TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing2 = starsSubscription.pricing;
+            i3 = tL_starsSubscriptionPricing2.period;
+            if (i3 != 2592000) {
+            }
+            m.addView(textView22, nme.t(-1, -2, 17, 20, 0, 20, 4));
+            mfb mfbVar2 = new mfb(parentActivity, resourceProvider);
+            l46 l46Var8 = new l46(parentActivity, resourceProvider);
+            l46Var8.setPadding(gl.L(12.66f), gl.L(9.33f), gl.L(12.66f), gl.L(9.33f));
+            l46Var8.setEllipsize(TextUtils.TruncateAt.END);
+            int i102 = bkb.Wc;
+            zkb.X(l46Var8, i102, resourceProvider);
+            zkb.G(l46Var8, i102, resourceProvider);
+            l46Var8.setTextSize(1, 14.0f);
+            l46Var8.setSingleLine(true);
+            l46Var8.setDisablePaddingsOffsetY(true);
+            ec0 ec0Var2 = new ec0(24.0f, i7, l46Var8);
+            if (i2 < 0) {
+            }
+            String str52 = str4;
+            final TLObject chat42 = chat2;
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x  " + ((Object) str52));
+            spannableStringBuilder2.setSpan(ec0Var2, 0, 1, 33);
+            spannableStringBuilder2.setSpan(new mua(fx0VarArr2, n), 3, spannableStringBuilder2.length(), 33);
+            l46Var8.setText(spannableStringBuilder2);
+            if (!z3) {
+            }
+            if (i2 >= 0) {
+            }
+            str3 = null;
+            mfbVar2.f(k96.M0(2131744739, str3), k96.a0(null, null, 2131742520, k96.D0().r0().format(new Date((starsSubscription.until_date - starsSubscription.pricing.period) * 1000)), k96.D0().o0().format(new Date((starsSubscription.until_date - starsSubscription.pricing.period) * 1000))), null, null);
+            currentTime = ConnectionsManager.getInstance(i7).getCurrentTime();
+            if (starsSubscription.canceled) {
+            }
+            j = n;
+            i4 = 2131744732;
+            mfbVar2.f(k96.M0(i4, null), k96.a0(null, null, 2131742520, k96.D0().r0().format(new Date(starsSubscription.until_date * 1000)), k96.D0().o0().format(new Date(starsSubscription.until_date * 1000))), null, null);
+            m.addView(mfbVar2, nme.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
+            Activity activity22 = activity;
+            l46 l46Var22 = new l46(activity22, resourceProvider);
+            int i112 = bkb.y6;
+            zkb.X(l46Var22, i112, resourceProvider);
+            zkb.G(l46Var22, i102, resourceProvider);
+            l46Var22.setTextSize(1, 14.0f);
+            l46Var22.setText(gl.N2(k96.M0(2131744689, null), -1, 0, new m9(activity22, (byte) 5), null));
+            l46Var22.setGravity(17);
+            m.addView(l46Var22, nme.k(14.0f, 15.0f, 14.0f, 7.0f, -1, -2));
+            if (currentTime < starsSubscription.until_date) {
+            }
+            r5 = 0;
+            i8.O = m;
+            fx0VarArr[r5] = i8;
+            i8.T0 = r5;
+            i8.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: aua
+                @Override // android.content.DialogInterface.OnDismissListener
+                public final void onDismiss(DialogInterface dialogInterface) {
+                    kk7.f(i5).n(luaVar, kk7.B3);
                 }
             });
+            fx0VarArr[r5].K();
+            S = LaunchActivity.S();
+            if (!gl.O1()) {
+            }
+            fx0VarArr[r5].show();
         }
     }
 
-    public final void e0(LaunchActivity launchActivity, long j, String str) {
-        if (this.e) {
-            f0(launchActivity, j, str);
+    public final /* synthetic */ void M0(Context context) {
+        if (na7.q1(this.currentAccount).t2()) {
+            h5.b(this.currentAccount);
         } else {
-            o(new nz8((Object) this, (Object) launchActivity, j, (Object) str, (byte) 8));
+            new ava(context, this.resourceProvider).show();
         }
     }
 
-    public final void f(final TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, final TL_stars.StarGift starGift, final long j, final TLRPC.TL_textWithEntities tL_textWithEntities, final boolean z, final jac jacVar) {
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        final Context context2 = context;
-        final ylb F = F();
-        if (context2 == null) {
-            return;
-        }
-        if (!this.e) {
-            o(new st0(this, jacVar, tL_payments_paymentFormStarGift, starGift, j, tL_textWithEntities, z));
-            return;
-        }
-        final String k = pg3.k(this.a, j);
-        TLRPC.TL_inputInvoiceStarGiftResale tL_inputInvoiceStarGiftResale = new TLRPC.TL_inputInvoiceStarGiftResale();
-        tL_inputInvoiceStarGiftResale.slug = starGift.slug;
-        tL_inputInvoiceStarGiftResale.to_id = oc7.r1(this.a).i1(j);
-        tL_inputInvoiceStarGiftResale.ton = this.b;
-        tL_inputInvoiceStarGiftResale.message = tL_textWithEntities;
-        tL_inputInvoiceStarGiftResale.show_name = !z;
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        JSONObject u = wx0.u(F, false);
-        if (u != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = u.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoiceStarGiftResale;
-        TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-        tL_payments_sendStarsForm.form_id = tL_payments_paymentFormStarGift.form_id;
-        tL_payments_sendStarsForm.invoice = tL_inputInvoiceStarGiftResale;
-        ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
-        int size = arrayList.size();
-        long j2 = 0;
-        for (int i = 0; i < size; i++) {
-            j2 += arrayList.get(i).amount;
-            context2 = context2;
-        }
-        final long j3 = j2;
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_sendStarsForm, new RequestDelegate() { // from class: cua
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-                final jva jvaVar = jva.this;
-                final jac jacVar2 = jacVar;
-                final Context context3 = context2;
-                final ylb ylbVar = F;
-                final long j4 = j3;
-                final String str = k;
-                final TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift2 = tL_payments_paymentFormStarGift;
-                final TL_stars.StarGift starGift2 = starGift;
-                final long j5 = j;
-                final TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_textWithEntities;
-                final boolean z2 = z;
-                gm.c3(new Runnable() { // from class: hua
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        v16 v16Var;
-                        final jva jvaVar2 = jva.this;
-                        TLObject tLObject2 = tLObject;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        final jac jacVar3 = jacVar2;
-                        Context context4 = context3;
-                        ylb ylbVar2 = ylbVar;
-                        long j6 = j4;
-                        String str2 = str;
-                        final TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift3 = tL_payments_paymentFormStarGift2;
-                        final TL_stars.StarGift starGift3 = starGift2;
-                        final long j7 = j5;
-                        final TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_textWithEntities2;
-                        final boolean z3 = z2;
-                        d Q = LaunchActivity.Q();
-                        c41 Y = (Q == null || Q.visibleDialog != null) ? c41.Y() : c41.b0(Q);
-                        if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
-                            if (tL_error2 != null) {
-                                if ("BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                                    if (!oc7.r1(jvaVar2.a).c5()) {
-                                        jacVar3.a(Boolean.FALSE, null);
-                                        jva.c0(context4, ylbVar2);
-                                        return;
-                                    } else {
-                                        final boolean[] zArr = {false};
-                                        dxa dxaVar = new dxa(context4, ylbVar2, j6, 6, str2, new Runnable() { // from class: oua
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                zArr[0] = true;
-                                                jva.this.f(tL_payments_paymentFormStarGift3, starGift3, j7, tL_textWithEntities3, z3, jacVar3);
-                                            }
-                                        }, 0L);
-                                        dxaVar.setOnDismissListener(new eua((byte) 2, jacVar3, zArr));
-                                        dxaVar.show();
-                                        return;
-                                    }
-                                }
-                                if ("STARGIFT_USAGE_LIMITED".equals(tL_error2.text)) {
-                                    jacVar3.a(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
-                                    return;
-                                }
-                            }
-                            jacVar3.a(Boolean.FALSE, null);
-                            Y.Q(R.raw.error, 36, jb6.a0(null, null, 2131743565, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
-                            return;
-                        }
-                        Utilities.d.c(new dua(jvaVar2, (TLRPC.TL_payments_paymentResult) tLObject2, (byte) 4));
-                        jvaVar2.D = false;
-                        jvaVar2.E = true;
-                        jvaVar2.G = 0L;
-                        jvaVar2.T();
-                        jvaVar2.M(j7);
-                        jvaVar2.P(true);
-                        jacVar3.a(Boolean.TRUE, null);
-                        mk0 b = ok0.a(jvaVar2.a).b();
-                        if (b != null && b.a(j7)) {
-                            oc7.r1(jvaVar2.a).X3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j7, false).apply();
-                        }
-                        oc7.r1(jvaVar2.a).X3.edit().putBoolean("show_gift_for_" + j7, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j7, true).apply();
-                        LaunchActivity launchActivity = LaunchActivity.H1;
-                        if (launchActivity == null || (v16Var = launchActivity.w0) == null) {
-                            return;
-                        }
-                        v16Var.c(true);
-                    }
-                });
+    public final /* synthetic */ void N0(Context context) {
+        new ava(context, this.resourceProvider).show();
+    }
+
+    public final void O0() {
+        gta.v(this.currentAccount, false).r();
+        xu4.f1(true, oj0.a(this.currentAccount).b());
+    }
+
+    public final void P0(c4c c4cVar, Boolean bool, String str) {
+        if (getParentActivity() != null) {
+            if (bool.booleanValue()) {
+                u21.b0(this).I(R.raw.stars_topup, k96.M0(2131744922, null), gl.S2(k96.G((int) c4cVar.C, "StarsAcquiredInfo", new Object[0]))).j();
+                this.i0.c(true);
+                gta.v(this.currentAccount, false).P(true);
+            } else if (str != null) {
+                u21.b0(this).Q(R.raw.error, 36, k96.a0(null, null, 2131743639, str)).j();
             }
-        });
+        }
     }
 
-    public final void f0(LaunchActivity launchActivity, long j, String str) {
-        if (m().amount < j && j > 0) {
-            new dxa(launchActivity, null, j, 4, str, new jd((byte) 10), 0L).show();
-            return;
+    @Override // iz4, org.telegram.ui.ActionBar.d
+    public final View createView(final Context context) {
+        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
+        final byte b = 0;
+        this.H = false;
+        this.F = gl.L(238.0f);
+        dha dhaVar = new dha(context);
+        this.V = dhaVar;
+        char c = 1;
+        char c2 = 1;
+        char c3 = 1;
+        dhaVar.setDebugLoggingEnabled(true);
+        this.V.setCommonInsetsManagedExternally(true);
+        if (!this.e0) {
+            ui5 ui5Var = this.parentLayout;
+            this.c0 = (ui5Var == null || !((ActionBarLayout) ui5Var).T0) ? gl.m : 0;
+            this.d0 = gl.n;
         }
-        d S2 = LaunchActivity.S();
-        if (S2 == null) {
-            return;
+        byte b2 = 15;
+        this.V.setGeometry(new u39(this, b2));
+        this.V.A(-b00.x(48.0f, this.c0, -gl.L(8.0f)), -b00.x(48.0f, this.d0, -gl.L(8.0f)));
+        dha dhaVar2 = this.V;
+        dhaVar2.getClass();
+        this.W = new si9((byte) 6, context, dhaVar2);
+        this.U = new iva(context, this.currentAccount, false, 0L, getClassGuid(), getResourceProvider(), this.V);
+        byte b3 = 8;
+        this.h0 = new si9(b3, context, this);
+        super.createView(context);
+        hz4 hz4Var = this.s;
+        getBaseSimpleGlass().f(hz4Var, this.c, this.simpleActionBar, this.resourceProvider);
+        this.simpleActionBar.setBackground(null);
+        this.E.bringToFront();
+        this.simpleActionBar.bringToFront();
+        getBaseSimpleGlass().n = this.V;
+        this.c.setCaptureSectionsDecoratorAllowed(true);
+        this.U.setGlassEngine(this.glassEngine);
+        getBaseSimpleGlass().o = new cg0(this, new gua(hz4Var, b), b3);
+        View view = this.U.d;
+        View view2 = new View(getParentActivity());
+        this.X = view2;
+        view2.setAlpha(0.0f);
+        dha dhaVar3 = this.V;
+        dhaVar3.addView(this.X, dhaVar3.indexOfChild(view), nme.e(-1, 0, 48));
+        this.X.setBackground(getBaseSimpleGlass().a(this.X));
+        kta ktaVar = new kta(this, b);
+        s33 s33Var = s33.h;
+        fm0 fm0Var = new fm0(0, ktaVar, s33Var, 380L, false);
+        this.Y = fm0Var;
+        this.Z = new fm0(1, new kta(this, c3 == true ? 1 : 0), s33Var, 380L, false);
+        this.a0 = new fm0(2, new kta(this, (byte) 2), s33Var, 380L, false);
+        fm0Var.a(this.c.canScrollVertically(-1) || this.simpleActionBar.x(), false);
+        this.Z.a(this.V.f0, false);
+        this.c.j(new n58(this, (byte) 26));
+        q1();
+        il0 c4 = getBaseSimpleGlass().c.c(view, null, false);
+        c4.p(nod.l(this.resourceProvider));
+        c4.q(gl.L(9.66f));
+        c4.r(gl.L(18.0f));
+        view.setBackground(c4);
+        ui5 ui5Var2 = this.parentLayout;
+        if (ui5Var2 != null && ((ActionBarLayout) ui5Var2).U0) {
+            this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
-        u31 K = c41.b0(S2).K(R.raw.stars_topup, jb6.M0(2131744653, null), jb6.M0(2131744652, null), new bo6((byte) 29));
-        K.j = 5000;
-        K.k(true);
-    }
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.S = frameLayout;
+        frameLayout.setClickable(true);
+        er4 er4Var = new er4(context, 1, 2);
+        this.T = er4Var;
+        uq4 uq4Var = er4Var.b;
+        uq4Var.z = bkb.Vk;
+        uq4Var.A = bkb.Wk;
+        uq4Var.b();
+        this.T.setStarParticlesView(this.e);
+        this.S.addView(this.T, nme.d(kk7.T2, 190.0f, 17, 0.0f, 12.0f, 0.0f, 24.0f));
+        i0(k96.M0(2131743974, null), gl.D2(gl.N2(k96.M0(2131743971, null), -1, 0, new vf1(context, b2), null), true), this.S, null);
+        this.c.setOverScrollMode(2);
+        gb3 gb3Var = new gb3();
+        gb3Var.m = false;
+        gb3Var.C = false;
+        gb3Var.o(s33Var);
+        gb3Var.n(350L);
+        this.c.setItemAnimator(gb3Var);
+        this.c.setOnItemClickListener(new f09(this, (byte) 11));
+        qh4 qh4Var = new qh4(getParentActivity());
+        this.i0 = qh4Var;
+        this.s.addView(qh4Var, nme.c(-1.0f, -1));
+        gta v = gta.v(this.currentAccount, false);
+        LinearLayout linearLayout = new LinearLayout(getParentActivity());
+        this.j0 = linearLayout;
+        linearLayout.setOrientation(1);
+        this.j0.setPadding(0, gl.L(24.0f), 0, gl.L(10.0f));
+        hn hnVar = new hn(getParentActivity(), false, true, false);
+        this.l0 = hnVar;
+        hnVar.setTypeface(gl.o());
+        this.l0.setTextSize(gl.L(32.0f));
+        this.l0.setGravity(17);
+        zkb.U(this.l0, bkb.F6, this.resourceProvider);
+        this.k0 = new SpannableStringBuilder("S");
+        ol5 ol5Var = new ol5(42.0f, this.currentAccount, this.l0);
+        oy8 oy8Var = new oy8(R.raw.star_reaction, gl.L(42.0f), gl.L(42.0f));
+        ImageReceiver imageReceiver = ol5Var.b;
+        imageReceiver.g0(oy8Var);
+        imageReceiver.M(2);
+        ol5Var.f = false;
+        ol5Var.h = -gl.L(3.0f);
+        this.k0.setSpan(ol5Var, 0, 1, 33);
+        this.j0.addView(this.l0, nme.d(-1, 40.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
+        TextView textView = new TextView(getParentActivity());
+        this.m0 = textView;
+        textView.setTextSize(1, 14.0f);
+        this.m0.setGravity(17);
+        this.m0.setText(k96.M0(2131742527, null));
+        zkb.X(this.m0, bkb.y6, this.resourceProvider);
+        this.j0.addView(this.m0, nme.d(-1, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
+        FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
+        oc6 oc6Var = new oc6((byte) 25, getParentActivity(), this);
+        this.o0 = oc6Var;
+        frameLayout2.addView(oc6Var);
+        u41 u41Var = new u41(this.resourceProvider, getParentActivity(), true);
+        this.p0 = u41Var;
+        u41Var.f();
+        this.p0.i("", false, true);
+        this.p0.setOnClickListener(new View.OnClickListener(this) { // from class: rta
+            public final /* synthetic */ jva b;
 
-    public final void g(final TL_stars.StarGift starGift, final boolean z, final boolean z2, final long j, final TLRPC.TL_textWithEntities tL_textWithEntities, final y2a y2aVar) {
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        final Context context2 = context;
-        final ylb F = F();
-        if (starGift == null || context2 == null) {
-            return;
-        }
-        if (!this.e) {
-            o(new Runnable() { // from class: nta
-                @Override // java.lang.Runnable
-                public final void run() {
-                    jva jvaVar = jva.this;
-                    boolean z3 = jvaVar.e;
-                    y2a y2aVar2 = y2aVar;
-                    if (z3) {
-                        jvaVar.g(starGift, z, z2, j, tL_textWithEntities, y2aVar2);
-                    } else {
-                        jva.c("NO_BALANCE");
-                        y2aVar2.a(Boolean.FALSE, null);
-                    }
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                byte b4 = b;
+                Context context2 = context;
+                jva jvaVar = this.b;
+                switch (b4) {
+                    case 0:
+                        jvaVar.M0(context2);
+                        break;
+                    default:
+                        jvaVar.N0(context2);
+                        break;
                 }
-            });
-            return;
-        }
-        final String k = pg3.k(this.a, j);
-        final TLRPC.TL_inputInvoiceStarGift tL_inputInvoiceStarGift = new TLRPC.TL_inputInvoiceStarGift();
-        tL_inputInvoiceStarGift.hide_name = z;
-        tL_inputInvoiceStarGift.peer = oc7.r1(this.a).i1(j);
-        tL_inputInvoiceStarGift.gift_id = starGift.id;
-        tL_inputInvoiceStarGift.include_upgrade = z2;
-        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-            tL_inputInvoiceStarGift.flags |= 2;
-            tL_inputInvoiceStarGift.message = tL_textWithEntities;
-        }
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        JSONObject u = wx0.u(F, false);
-        if (u != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = u.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoiceStarGift;
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: ota
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-                final jva jvaVar = jva.this;
-                final y2a y2aVar2 = y2aVar;
-                final TLRPC.TL_inputInvoiceStarGift tL_inputInvoiceStarGift2 = tL_inputInvoiceStarGift;
-                final Context context3 = context2;
-                final ylb ylbVar = F;
-                final String str = k;
-                final TL_stars.StarGift starGift2 = starGift;
-                final boolean z3 = z;
-                final boolean z4 = z2;
-                final long j2 = j;
-                final TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_textWithEntities;
-                gm.c3(new Runnable() { // from class: bua
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        TLObject tLObject2 = tLObject;
-                        boolean z5 = tLObject2 instanceof TLRPC.TL_payments_paymentFormStarGift;
-                        final y2a y2aVar3 = y2aVar2;
-                        if (!z5) {
-                            TLRPC.TL_error tL_error2 = tL_error;
-                            jva.c(tL_error2 == null ? "NO_PAYMENT_FORM" : tL_error2.text);
-                            y2aVar3.a(Boolean.FALSE, null);
-                            return;
-                        }
-                        TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) tLObject2;
-                        TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-                        tL_payments_sendStarsForm.form_id = tL_payments_paymentFormStarGift.form_id;
-                        tL_payments_sendStarsForm.invoice = tL_inputInvoiceStarGift2;
-                        ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
-                        int size = arrayList.size();
-                        int i = 0;
-                        final long j3 = 0;
-                        while (i < size) {
-                            TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i);
-                            i++;
-                            j3 += tL_labeledPrice.amount;
-                        }
-                        final jva jvaVar2 = jva.this;
-                        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(jvaVar2.a);
-                        final Context context4 = context3;
-                        final ylb ylbVar2 = ylbVar;
-                        final String str2 = str;
-                        final TL_stars.StarGift starGift3 = starGift2;
-                        final boolean z6 = z3;
-                        final boolean z7 = z4;
-                        final long j4 = j2;
-                        final TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_textWithEntities2;
-                        connectionsManager.sendRequest(tL_payments_sendStarsForm, new RequestDelegate() { // from class: gua
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(final TLObject tLObject3, final TLRPC.TL_error tL_error3) {
-                                final jva jvaVar3 = jva.this;
-                                final y2a y2aVar4 = y2aVar3;
-                                final Context context5 = context4;
-                                final ylb ylbVar3 = ylbVar2;
-                                final long j5 = j3;
-                                final String str3 = str2;
-                                final TL_stars.StarGift starGift4 = starGift3;
-                                final boolean z8 = z6;
-                                final boolean z9 = z7;
-                                final long j6 = j4;
-                                final TLRPC.TL_textWithEntities tL_textWithEntities4 = tL_textWithEntities3;
-                                gm.c3(new Runnable() { // from class: sta
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    /* JADX WARN: Type inference failed for: r10v6 */
-                                    /* JADX WARN: Type inference failed for: r10v7, types: [boolean] */
-                                    /* JADX WARN: Type inference failed for: r10v8 */
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        String str4;
-                                        SpannableStringBuilder spannableStringBuilder;
-                                        v16 v16Var;
-                                        ?? r10;
-                                        jva jvaVar4 = jva.this;
-                                        TLObject tLObject4 = tLObject3;
-                                        TLRPC.TL_error tL_error4 = tL_error3;
-                                        y2a y2aVar5 = y2aVar4;
-                                        Context context6 = context5;
-                                        ylb ylbVar4 = ylbVar3;
-                                        long j7 = j5;
-                                        String str5 = str3;
-                                        TL_stars.StarGift starGift5 = starGift4;
-                                        boolean z10 = z8;
-                                        boolean z11 = z9;
-                                        long j8 = j6;
-                                        TLRPC.TL_textWithEntities tL_textWithEntities5 = tL_textWithEntities4;
-                                        d Q = LaunchActivity.Q();
-                                        c41 Y = (Q == null || Q.visibleDialog != null) ? c41.Y() : c41.b0(Q);
-                                        if (!(tLObject4 instanceof TLRPC.TL_payments_paymentResult)) {
-                                            if (tL_error4 != null) {
-                                                if ("BALANCE_TOO_LOW".equals(tL_error4.text)) {
-                                                    if (!oc7.r1(jvaVar4.a).c5()) {
-                                                        y2aVar5.a(Boolean.FALSE, null);
-                                                        jva.c0(context6, ylbVar4);
-                                                        return;
-                                                    } else {
-                                                        boolean[] zArr = {false};
-                                                        dxa dxaVar = new dxa(context6, ylbVar4, j7, 6, str5, new iua(jvaVar4, zArr, starGift5, z10, z11, j8, tL_textWithEntities5, y2aVar5), 0L);
-                                                        dxaVar.setOnDismissListener(new dg(y2aVar5, zArr, (byte) 16));
-                                                        dxaVar.show();
-                                                        return;
-                                                    }
-                                                }
-                                                if ("STARGIFT_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                    y2aVar5.a(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
-                                                    return;
-                                                } else if ("STARGIFT_USER_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                    y2aVar5.a(Boolean.FALSE, "STARGIFT_USER_USAGE_LIMITED");
-                                                    return;
-                                                }
-                                            }
-                                            y2aVar5.a(Boolean.FALSE, null);
-                                            Y.Q(R.raw.error, 36, jb6.a0(null, null, 2131743565, tL_error4 != null ? tL_error4.text : "FAILED_SEND_STARS")).j();
-                                            return;
-                                        }
-                                        Utilities.d.c(new dua(jvaVar4, (TLRPC.TL_payments_paymentResult) tLObject4, (byte) 2));
-                                        jvaVar4.D = false;
-                                        jvaVar4.E = true;
-                                        jvaVar4.G = 0L;
-                                        jvaVar4.T();
-                                        jvaVar4.M(j8);
-                                        jvaVar4.P(true);
-                                        y2aVar5.a(Boolean.TRUE, null);
-                                        mk0 b = ok0.a(jvaVar4.a).b();
-                                        if (b != null && b.a(j8)) {
-                                            oc7.r1(jvaVar4.a).X3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j8, false).apply();
-                                        }
-                                        if (starGift5 == null || !starGift5.limited_per_user) {
-                                            str4 = str5;
-                                            spannableStringBuilder = null;
-                                        } else {
-                                            int i2 = starGift5.per_user_remains - 1;
-                                            starGift5.per_user_remains = i2;
-                                            spannableStringBuilder = gm.S2(jb6.H(',', "Gift2SentRemainsLimit", Math.max(0, i2)));
-                                            str4 = str5;
-                                        }
-                                        if (j8 < 0) {
-                                            long j9 = -j8;
-                                            TLRPC.ChatFull M0 = oc7.r1(jvaVar4.a).M0(j9);
-                                            if (M0 != null) {
-                                                M0.stargifts_count++;
-                                                M0.flags2 |= 262144;
-                                                oc7.r1(jvaVar4.a).W3(M0);
-                                            }
-                                            if (Q instanceof ProfileActivity) {
-                                                ProfileActivity profileActivity = (ProfileActivity) Q;
-                                                if (profileActivity.a() == j8) {
-                                                    wp8 wp8Var = profileActivity.O;
-                                                    if (wp8Var != null) {
-                                                        wp8Var.N1(true);
-                                                        profileActivity.O.f1(14);
-                                                        r10 = 0;
-                                                        profileActivity.n3(false);
-                                                    } else {
-                                                        r10 = 0;
-                                                    }
-                                                    c41 b0 = c41.b0(Q);
-                                                    TLRPC.Document document = starGift5.sticker;
-                                                    String M02 = jb6.M0(2131744798, null);
-                                                    if (spannableStringBuilder == null) {
-                                                        Object[] objArr = new Object[1];
-                                                        objArr[r10] = str4;
-                                                        spannableStringBuilder = gm.S2(jb6.G((int) j7, "StarsGiftCompletedChannelText", objArr));
-                                                    }
-                                                    b0.s(document, M02, spannableStringBuilder).k(r10);
-                                                }
-                                            }
-                                            Bundle bundle = new Bundle();
-                                            bundle.putLong("chat_id", j9);
-                                            bundle.putBoolean("open_gifts", true);
-                                            ProfileActivity profileActivity2 = new ProfileActivity(bundle, null);
-                                            profileActivity2.whenFullyVisible(new r97((Object) profileActivity2, (Object) starGift5, (Object) spannableStringBuilder, j7, (Object) str4, (byte) 18));
-                                            Q.presentFragment(profileActivity2);
-                                        } else if ((Q instanceof yv1) && ((yv1) Q).a() == j8) {
-                                            c41 b02 = c41.b0(Q);
-                                            TLRPC.Document document2 = starGift5.sticker;
-                                            String M03 = jb6.M0(2131744798, null);
-                                            if (spannableStringBuilder == null) {
-                                                spannableStringBuilder = gm.S2(jb6.G((int) j7, "StarsGiftCompletedText", new Object[0]));
-                                            }
-                                            b02.s(document2, M03, spannableStringBuilder).k(true);
-                                        } else {
-                                            nm7 f = nm7.f(jvaVar4.a);
-                                            int i3 = nm7.u;
-                                            Long valueOf = Long.valueOf(j8);
-                                            Boolean bool = Boolean.FALSE;
-                                            f.k(i3, valueOf, bool);
-                                            nm7.f(jvaVar4.a).k(nm7.t, Long.valueOf(j8), bool);
-                                            yv1 ga = yv1.ga(j8);
-                                            ga.whenFullyVisible(new nz8((Object) ga, (Object) starGift5, (Object) spannableStringBuilder, j7, (byte) 7));
-                                            Q.presentFragment(ga);
-                                        }
-                                        oc7.r1(jvaVar4.a).X3.edit().putBoolean("show_gift_for_" + j8, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j8, true).apply();
-                                        LaunchActivity launchActivity = LaunchActivity.H1;
-                                        if (launchActivity == null || (v16Var = launchActivity.w0) == null) {
-                                            return;
-                                        }
-                                        v16Var.c(true);
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
             }
         });
-    }
+        this.o0.addView(this.p0, nme.e(-1, 48, kk7.D1));
+        pkb pkbVar = new pkb((byte) 19, getParentActivity(), this);
+        this.q0 = pkbVar;
+        frameLayout2.addView(pkbVar);
+        u41 u41Var2 = new u41(this.resourceProvider, getParentActivity(), true);
+        this.r0 = u41Var2;
+        u41Var2.f();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x  ");
+        spannableStringBuilder.setSpan(new cm2(R.drawable.mini_topup, 2), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) k96.M0(2131744728, null));
+        this.r0.i(spannableStringBuilder, false, true);
+        u41 u41Var3 = this.r0;
+        final char c5 = c2 == true ? 1 : 0;
+        u41Var3.setOnClickListener(new View.OnClickListener(this) { // from class: rta
+            public final /* synthetic */ jva b;
 
-    public final void g0(final long j, final long j2, boolean z, final boolean z2) {
-        TL_account.toggleNoPaidMessagesException togglenopaidmessagesexception = new TL_account.toggleNoPaidMessagesException();
-        int i = this.a;
-        togglenopaidmessagesexception.user_id = oc7.r1(i).n1(j);
-        if (j2 != 0) {
-            togglenopaidmessagesexception.parent_peer = oc7.r1(i).i1(j2);
-        }
-        togglenopaidmessagesexception.refund_charged = z;
-        togglenopaidmessagesexception.require_payment = !z2;
-        ConnectionsManager.getInstance(i).sendRequest(togglenopaidmessagesexception, new RequestDelegate() { // from class: mua
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                gm.c3(new od7(jva.this, tLObject, j2, j, z2));
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                byte b4 = c5;
+                Context context2 = context;
+                jva jvaVar = this.b;
+                switch (b4) {
+                    case 0:
+                        jvaVar.M0(context2);
+                        break;
+                    default:
+                        jvaVar.N0(context2);
+                        break;
+                }
             }
         });
+        this.q0.addView(this.r0, nme.q(-1, 48, 17.0f, 1, 0, 0, 8, 0));
+        u41 u41Var4 = new u41(this.resourceProvider, getParentActivity(), true);
+        this.n0 = u41Var4;
+        u41Var4.f();
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x  ");
+        spannableStringBuilder2.setSpan(new cm2(R.drawable.mini_stats, 2), 0, 1, 33);
+        spannableStringBuilder2.append((CharSequence) k96.M0(2131744785, null));
+        this.n0.i(spannableStringBuilder2, false, true);
+        this.n0.setOnClickListener(new View.OnClickListener(this) { // from class: wta
+            public final /* synthetic */ jva b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                byte b4 = b;
+                jva jvaVar = this.b;
+                switch (b4) {
+                    case 0:
+                        jvaVar.presentFragment(new ss0(0, jvaVar.getUserConfig().e()));
+                        break;
+                    default:
+                        jvaVar.O0();
+                        break;
+                }
+            }
+        });
+        this.q0.addView(this.n0, nme.q(-1, 48, 17.0f, 1, 0, 0, 0, 0));
+        this.j0.addView(frameLayout2, nme.d(-1, 48.0f, 17, 20.0f, 17.0f, 20.0f, 0.0f));
+        u41 u41Var5 = new u41(this.resourceProvider, getParentActivity(), false);
+        this.s0 = u41Var5;
+        u41Var5.f();
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
+        spannableStringBuilder3.append((CharSequence) "G  ");
+        spannableStringBuilder3.setSpan(new cm2(R.drawable.menu_stars_gift, 0), 0, 1, 33);
+        spannableStringBuilder3.append((CharSequence) k96.M0(2131743972, null));
+        this.s0.i(spannableStringBuilder3, false, true);
+        u41 u41Var6 = this.s0;
+        final char c6 = c == true ? 1 : 0;
+        u41Var6.setOnClickListener(new View.OnClickListener(this) { // from class: wta
+            public final /* synthetic */ jva b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                byte b4 = c6;
+                jva jvaVar = this.b;
+                switch (b4) {
+                    case 0:
+                        jvaVar.presentFragment(new ss0(0, jvaVar.getUserConfig().e()));
+                        break;
+                    default:
+                        jvaVar.O0();
+                        break;
+                }
+            }
+        });
+        this.j0.addView(this.s0, nme.d(-1, 48.0f, 17, 20.0f, 8.0f, 20.0f, 0.0f));
+        o1();
+        vb vbVar = this.v0;
+        if (vbVar != null) {
+            vbVar.O(false);
+        }
+        ct0.g(this.currentAccount).r(getUserConfig().e());
+        TLRPC.TL_payments_starsRevenueStats h = ct0.g(this.currentAccount).h(getUserConfig().e(), false);
+        p1(v.m().amount > 0 && h != null && (tL_starsRevenueStatus = h.status) != null && tL_starsRevenueStatus.overall_revenue.positive(), false);
+        return this.fragmentView;
     }
 
-    public final void h0(String str, TLRPC.ChatInvite chatInvite, jac jacVar) {
-        if (chatInvite == null || chatInvite.subscription_pricing == null) {
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        int i3 = kk7.w3;
+        int i4 = kk7.B3;
+        int i5 = kk7.A3;
+        if (i == i5 || i == i4 || i == i3) {
+            n1("NOTIFICATION_" + i);
+        }
+        if (i == i3) {
+            t0();
+            vb vbVar = this.v0;
+            if (vbVar != null) {
+                vbVar.O(true);
+            }
+            g0();
             return;
         }
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        Context context2 = context;
-        ylb F = F();
-        long j = chatInvite.subscription_pricing.amount;
-        if (context2 != null) {
-            int i = z8c.t0;
-            byte b = 0;
-            boolean[] zArr = {false};
-            uua uuaVar = new uua(this, j, i, zArr, jacVar, context2, F, chatInvite, str);
-            e6a e6aVar = new e6a(this, zArr, jacVar);
-            my0 h = hg9.h(1, F, context2, false);
-            LinearLayout i2 = hg9.i(context2, 1);
-            i2.setPadding(gm.L(16.0f), 0, gm.L(16.0f), gm.L(8.0f));
-            FrameLayout frameLayout = new FrameLayout(context2);
-            frameLayout.addView(new uwa(context2, 40, 0), qoe.c(-1.0f, -1));
-            bf0 bf0Var = new bf0(context2);
-            bf0Var.setRoundRadius(gm.L(80.0f));
-            pc0 pc0Var = new pc0((ylb) null);
-            pc0Var.r(chatInvite.color);
-            String str2 = chatInvite.title;
-            pc0Var.A = true;
-            pc0Var.n = (byte) 0;
-            pc0Var.m = false;
-            pc0.a(str2, null, null, pc0Var.q);
-            TLRPC.Photo photo = chatInvite.photo;
-            if (photo != null) {
-                bf0Var.m(gn5.i(bc4.w(photo.sizes, gm.L(80.0f), false, null, false), chatInvite.photo), "80_80", pc0Var, chatInvite);
-            } else {
-                bf0Var.setImageDrawable(pc0Var);
-            }
-            frameLayout.addView(bf0Var, qoe.e(80, 80, 17));
-            Drawable drawable = context2.getResources().getDrawable(R.drawable.star_small_outline);
-            int i3 = cmb.g5;
-            anb.x(frameLayout, drawable, i3, F, PorterDuff.Mode.SRC_IN);
-            Drawable drawable2 = context2.getResources().getDrawable(R.drawable.star_small_inner);
-            ImageView imageView = new ImageView(context2);
-            imageView.setImageDrawable(drawable);
-            frameLayout.addView(imageView, qoe.e(26, 26, 17));
-            imageView.setTranslationX(gm.L(26.0f));
-            imageView.setTranslationY(gm.L(26.0f));
-            imageView.setScaleX(1.2f);
-            imageView.setScaleY(1.2f);
-            ImageView imageView2 = new ImageView(context2);
-            imageView2.setImageDrawable(drawable2);
-            frameLayout.addView(imageView2, qoe.e(26, 26, 17));
-            imageView2.setTranslationX(gm.L(26.0f));
-            imageView2.setTranslationY(gm.L(26.0f));
-            cxa cxaVar = new cxa(i, F, context2);
-            rve.a(cxaVar);
-            cxaVar.setOnClickListener(new jwa(cxaVar, b));
-            frameLayout.addView(cxaVar, qoe.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
-            i2.addView(frameLayout, qoe.r(-1, nm7.B1, 7));
-            TextView textView = new TextView(context2);
-            textView.setTextSize(1, 20.0f);
-            textView.setTypeface(gm.o());
-            int i4 = cmb.i5;
-            wi8.x(textView, i4, F, null, 2131744701);
-            textView.setGravity(17);
-            TextView m = wi8.m(i2, textView, qoe.t(-2, -2, 1, 0, 8, 0, 0), context2);
-            m.setTextSize(1, 14.0f);
-            anb.X(m, i4, F);
-            TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
-            int i5 = tL_starsSubscriptionPricing.period;
-            if (i5 == 2592000) {
-                m.setText(gm.S2(jb6.G((int) tL_starsSubscriptionPricing.amount, "StarsSubscribeText", chatInvite.title)));
-            } else {
-                m.setText(gm.S2(jb6.G((int) tL_starsSubscriptionPricing.amount, "StarsSubscribeTextTest", chatInvite.title, i5 == 300 ? "5 minutes" : "a minute")));
-            }
-            m.setMaxWidth(hg5.a(m.getText(), m.getPaint()));
-            m.setGravity(17);
-            i2.addView(m, qoe.t(-2, -2, 1, 0, 6, 0, 22));
-            if (!TextUtils.isEmpty(chatInvite.about)) {
-                TextView textView2 = new TextView(context2);
-                textView2.setTextSize(1, 14.0f);
-                anb.X(textView2, i4, F);
-                textView2.setText(gw3.m(chatInvite.about, textView2.getPaint().getFontMetricsInt(), false, null, 0));
-                textView2.setGravity(17);
-                i2.addView(textView2, qoe.t(-2, -2, 1, 0, 6, 0, 22));
-            }
-            b61 b61Var = new b61(F, context2, true);
-            b61Var.i(jb6.M0(2131744710, null), false, true);
-            i2.addView(b61Var, qoe.o(-1, 48));
-            l66 l66Var = new l66(context2, F);
-            l66Var.setText(gm.N2(jb6.M0(2131744709, null), -1, 0, new dh1(context2, (byte) 19), null));
-            l66Var.setGravity(17);
-            l66Var.setTextSize(1, 13.0f);
-            anb.X(l66Var, cmb.A6, F);
-            anb.G(l66Var, cmb.Wc, F);
-            i2.addView(l66Var, qoe.t(-1, -2, 49, 14, 14, 14, 6));
-            h.O = i2;
-            b61Var.setOnClickListener(new jw4(uuaVar, h, b61Var, (byte) 21));
-            h.setOnDismissListener(new qj8(e6aVar, (byte) 8));
-            h.L(i3);
-            d S2 = LaunchActivity.S();
-            if (!gm.O1() && S2 != null && !gm.s1(S2)) {
-                h.X(S2);
-            }
-            h.show();
-        }
-    }
-
-    public final void i0(TL_stars.StarsAmount starsAmount) {
-        boolean equals = this.f.equals(starsAmount);
-        int i = nm7.A3;
-        int i2 = this.a;
-        if (!equals) {
-            this.f = starsAmount;
-            this.g = 0L;
-            nm7.f(i2).k(i, new Object[0]);
-        } else if (this.g != 0) {
-            this.g = 0L;
-            nm7.f(i2).k(i, new Object[0]);
-        }
-    }
-
-    public final void j0(final k47 k47Var, final long j, final Runnable runnable, final boolean z) {
-        TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia;
-        if (k47Var == null) {
-            runnable.run();
-            return;
-        }
-        final long B0 = k47.B0(k47Var.k);
-        final int e1 = k47Var.e1();
-        TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia2 = (TLRPC.TL_messageMediaPaidMedia) k47Var.k.media;
-        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-        int i = this.a;
-        tL_messages_editMessage.peer = oc7.r1(i).i1(B0);
-        int i2 = tL_messages_editMessage.flags;
-        tL_messages_editMessage.flags = 32768 | i2;
-        tL_messages_editMessage.schedule_date = k47Var.k.date;
-        tL_messages_editMessage.id = e1;
-        tL_messages_editMessage.flags = i2 | 49152;
-        TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = new TLRPC.TL_inputMediaPaidMedia();
-        tL_inputMediaPaidMedia.stars_amount = j;
-        int i3 = 0;
-        while (i3 < tL_messageMediaPaidMedia2.extended_media.size()) {
-            TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia2.extended_media.get(i3);
-            if (!(messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia)) {
-                runnable.run();
+        if (i == i5) {
+            gta v = gta.v(this.currentAccount, false);
+            if (this.t0 != v.K(0)) {
+                this.t0 = v.K(0);
+                t0();
+                vb vbVar2 = this.v0;
+                if (vbVar2 != null) {
+                    vbVar2.O(false);
+                }
+                g0();
                 return;
             }
-            TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
-            if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-                TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
-                TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) messageMedia).photo;
-                tL_messageMediaPaidMedia = tL_messageMediaPaidMedia2;
-                tL_inputPhoto.id = photo.id;
-                tL_inputPhoto.access_hash = photo.access_hash;
-                tL_inputPhoto.file_reference = photo.file_reference;
-                tL_inputMediaPhoto.id = tL_inputPhoto;
-                tL_inputMediaPaidMedia.extended_media.add(tL_inputMediaPhoto);
-            } else {
-                tL_messageMediaPaidMedia = tL_messageMediaPaidMedia2;
-                if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-                    TLRPC.TL_inputMediaDocument tL_inputMediaDocument = new TLRPC.TL_inputMediaDocument();
-                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                    TLRPC.Document document = ((TLRPC.TL_messageMediaDocument) messageMedia).document;
-                    tL_inputDocument.id = document.id;
-                    tL_inputDocument.access_hash = document.access_hash;
-                    tL_inputDocument.file_reference = document.file_reference;
-                    tL_inputMediaDocument.id = tL_inputDocument;
-                    tL_inputMediaPaidMedia.extended_media.add(tL_inputMediaDocument);
+            return;
+        }
+        if (i == i4) {
+            vb vbVar3 = this.v0;
+            if (vbVar3 != null) {
+                vbVar3.O(true);
+                return;
+            }
+            return;
+        }
+        if (i == kk7.z3) {
+            o1();
+        } else if (i == kk7.D3 && getUserConfig().e() == ((Long) objArr[0]).longValue()) {
+            o1();
+        }
+    }
+
+    @Override // iz4
+    public final void g0() {
+        dha dhaVar;
+        n1("RESTORE_BEFORE");
+        super.g0();
+        if (this.f0 && (dhaVar = this.V) != null && this.b0 != -1) {
+            dhaVar.a();
+        }
+        this.f0 = false;
+        n1("RESTORE_AFTER");
+    }
+
+    @Override // iz4
+    public final void h0() {
+        this.s.addView(this.V, nme.c(-1.0f, -1));
+        this.V.v(this.c, new kta(this, (byte) 3));
+        dha dhaVar = this.V;
+        iva ivaVar = this.U;
+        dhaVar.y(ivaVar, ivaVar.b, new ho9((byte) 28));
+        this.V.z(this.U.d);
+        this.U.d.setLayoutParams(nme.d(-1, -2.0f, 48, -4.0f, 0.0f, -4.0f, 0.0f));
+        D0();
+    }
+
+    @Override // iz4, org.telegram.ui.ActionBar.d
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        dha dhaVar = this.V;
+        return dhaVar == null || motionEvent == null || dhaVar.o(motionEvent.getX(), motionEvent.getY()) || !this.V.c() || this.U.b.b == 0;
+    }
+
+    @Override // iz4
+    public final w39 j0() {
+        vb vbVar = new vb(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new tf8(this, (byte) 24), getResourceProvider(), (byte) 4);
+        this.v0 = vbVar;
+        vbVar.r = false;
+        return vbVar;
+    }
+
+    @Override // iz4
+    public final t26 k0(Context context) {
+        dha dhaVar = this.V;
+        dhaVar.getClass();
+        return new xe2((Object) dhaVar, (byte) 5);
+    }
+
+    @Override // iz4
+    public final cra l0() {
+        return new qua(getParentActivity(), 75, 1);
+    }
+
+    @Override // iz4
+    public final View n0(Context context) {
+        throw null;
+    }
+
+    public final void n1(String str) {
+        if (this.V != null) {
+            StringBuilder p = ug8.p("Stars event=", str, " row=");
+            p.append(this.b0);
+            p.append(" hasTransactions=");
+            p.append(this.t0);
+            p.append(" savedPosition=");
+            p.append(this.Q);
+            p.append(" savedOffset=");
+            p.append(this.R);
+            p.append(" savedPinned=");
+            p.append(this.f0);
+            p.append(" boundaryAttached=");
+            si9 si9Var = this.W;
+            p.append((si9Var == null || si9Var.getParent() == null) ? false : true);
+            p.append(" boundaryTop=");
+            si9 si9Var2 = this.W;
+            p.append(si9Var2 == null ? 0 : si9Var2.getTop());
+            p.append(" boundaryHeight=");
+            si9 si9Var3 = this.W;
+            p.append(si9Var3 != null ? si9Var3.getHeight() : 0);
+            Log.d("SiblingScroll", p.toString());
+            dha dhaVar = this.V;
+            if (dhaVar.a) {
+                dhaVar.b = Math.max(dhaVar.b, 30);
+                dhaVar.f(str, null, 0, 0, true);
+            }
+        }
+    }
+
+    public final void o1() {
+        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
+        boolean z = false;
+        gta v = gta.v(this.currentAccount, false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) this.k0);
+        spannableStringBuilder.append((CharSequence) G0(v.m(), 0.66f, ' '));
+        this.l0.setText(spannableStringBuilder);
+        this.p0.i(k96.M0(v.m().amount > 0 ? 2131744913 : 2131744914, null), true, true);
+        TLRPC.TL_payments_starsRevenueStats h = ct0.g(this.currentAccount).h(getUserConfig().e(), false);
+        if (h != null && (tL_starsRevenueStatus = h.status) != null && tL_starsRevenueStatus.overall_revenue.positive()) {
+            z = true;
+        }
+        p1(z, true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onFragmentCreate() {
+        kk7.f(this.currentAccount).b(this, kk7.w3);
+        kk7.f(this.currentAccount).b(this, kk7.z3);
+        kk7.f(this.currentAccount).b(this, kk7.A3);
+        kk7.f(this.currentAccount).b(this, kk7.B3);
+        kk7.f(this.currentAccount).b(this, kk7.D3);
+        gta.v(this.currentAccount, false).P(true);
+        gta.v(this.currentAccount, false).O();
+        gta.v(this.currentAccount, false).w();
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        o39 o39Var = this.c;
+        if (o39Var != null) {
+            o39Var.removeCallbacks(this.g0);
+        }
+        super.onFragmentDestroy();
+        kk7.f(this.currentAccount).n(this, kk7.w3);
+        kk7.f(this.currentAccount).n(this, kk7.z3);
+        kk7.f(this.currentAccount).n(this, kk7.A3);
+        kk7.f(this.currentAccount).n(this, kk7.B3);
+        kk7.f(this.currentAccount).n(this, kk7.D3);
+    }
+
+    @Override // iz4, org.telegram.ui.ActionBar.d
+    public final void onInsets(int i, int i2, int i3, int i4) {
+        this.e0 = true;
+        this.c0 = i2;
+        this.d0 = i4;
+        D0();
+    }
+
+    @Override // iz4, org.telegram.ui.ActionBar.d
+    public final void onPause() {
+        super.onPause();
+        er4 er4Var = this.T;
+        if (er4Var != null) {
+            er4Var.setPaused(true);
+            this.T.setDialogVisible(true);
+        }
+    }
+
+    @Override // iz4, org.telegram.ui.ActionBar.d
+    public final void onResume() {
+        super.onResume();
+        er4 er4Var = this.T;
+        if (er4Var != null) {
+            er4Var.setPaused(false);
+            this.T.setDialogVisible(false);
+        }
+    }
+
+    @Override // iz4
+    public final float p0() {
+        o39 o39Var = this.c;
+        if (o39Var == null) {
+            return 0.0f;
+        }
+        return o39Var.getY();
+    }
+
+    public final void p1(final boolean z, boolean z2) {
+        this.u0 = z;
+        oc6 oc6Var = this.o0;
+        if (z2) {
+            oc6Var.setVisibility(0);
+            this.q0.setVisibility(0);
+            final byte b = 0;
+            this.o0.animate().alpha(z ? 0.0f : 1.0f).withEndAction(new Runnable(this) { // from class: dua
+                public final /* synthetic */ jva b;
+
+                {
+                    this.b = this;
                 }
-            }
-            i3++;
-            tL_messageMediaPaidMedia2 = tL_messageMediaPaidMedia;
-        }
-        tL_messages_editMessage.media = tL_inputMediaPaidMedia;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_editMessage, new RequestDelegate() { // from class: qua
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                gm.c3(new yc7(jva.this, tLObject, runnable, tL_error, z, B0, e1, k47Var, j));
-            }
-        });
-    }
 
-    public final TL_stars.SavedStarGift k(long j) {
-        TL_stars.StarGift starGift;
-        int i = 0;
-        while (true) {
-            LongSparseArray longSparseArray = this.L;
-            if (i >= longSparseArray.size()) {
-                return null;
-            }
-            ava avaVar = (ava) longSparseArray.valueAt(i);
-            for (int i2 = 0; i2 < avaVar.l.size(); i2++) {
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) avaVar.l.get(i2);
-                if (savedStarGift != null && (starGift = savedStarGift.gift) != null && starGift.id == j) {
-                    return savedStarGift;
-                }
-            }
-            i++;
-        }
-    }
-
-    public final TL_stars.StarsAmount m() {
-        return n(null, true, false);
-    }
-
-    public final TL_stars.StarsAmount n(Runnable runnable, boolean z, boolean z2) {
-        if (((!this.e || System.currentTimeMillis() - this.c > 60000) && !this.d) || z2) {
-            this.d = true;
-            TL_stars.TL_payments_getStarsStatus tL_payments_getStarsStatus = new TL_stars.TL_payments_getStarsStatus();
-            tL_payments_getStarsStatus.ton = this.b;
-            tL_payments_getStarsStatus.peer = new TLRPC.TL_inputPeerSelf();
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getStarsStatus, new ara(this, runnable, (byte) 2));
-        }
-        if (!z || this.g <= 0) {
-            return this.f;
-        }
-        nk n = nk.n(this.f);
-        return nk.h(Math.max(0L, n.a() - this.g), n.a).q();
-    }
-
-    public final void o(Runnable runnable) {
-        n(runnable, true, false);
-    }
-
-    public final nk p() {
-        nk m = nk.m(m());
-        if (m == null) {
-            return nk.j(0L, this.b ? ok.b : ok.a);
-        }
-        return m;
-    }
-
-    public final ArrayList r() {
-        if (this.k || this.l) {
-            return this.m;
-        }
-        this.k = true;
-        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stars.TL_payments_getStarsGiftOptions(), new jua(this, (byte) 3));
-        return this.m;
-    }
-
-    public final ArrayList s() {
-        if (this.n || this.o) {
-            return this.p;
-        }
-        this.n = true;
-        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stars.TL_payments_getStarsGiveawayOptions(), new jua(this, (byte) 4));
-        return this.p;
-    }
-
-    public final ArrayList w() {
-        if (this.h || this.i) {
-            return this.j;
-        }
-        this.h = true;
-        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stars.TL_payments_getStarsTopupOptions(), new jua(this, (byte) 2));
-        return this.j;
-    }
-
-    public final long x(k47 k47Var) {
-        Long l;
-        hva hvaVar = this.B;
-        if (hvaVar != null && hvaVar.a.equals(cva.b(k47Var)) && (l = this.B.n) != null) {
-            return l.longValue();
-        }
-        Long z1 = k47Var == null ? null : k47Var.z1();
-        if (z1 != null) {
-            return z1.longValue();
-        }
-        Long w1 = oc7.r1(this.a).w1();
-        if (w1 != null) {
-            return w1.longValue();
-        }
-        return 0L;
-    }
-
-    public final long y(cva cvaVar, TLRPC.TL_messageReactions tL_messageReactions) {
-        ArrayList<TLRPC.MessageReactor> arrayList;
-        Long l;
-        hva hvaVar = this.B;
-        if (hvaVar != null && hvaVar.a.equals(cvaVar) && (l = this.B.n) != null) {
-            return l.longValue();
-        }
-        Long l2 = null;
-        if (tL_messageReactions != null && (arrayList = tL_messageReactions.top_reactors) != null) {
-            int size = arrayList.size();
-            int i = 0;
-            while (true) {
-                if (i >= size) {
-                    break;
-                }
-                TLRPC.MessageReactor messageReactor = arrayList.get(i);
-                i++;
-                TLRPC.MessageReactor messageReactor2 = messageReactor;
-                if (messageReactor2 != null && messageReactor2.my) {
-                    if (messageReactor2.anonymous) {
-                        l2 = 2666000L;
-                        break;
+                @Override // java.lang.Runnable
+                public final void run() {
+                    byte b2 = b;
+                    boolean z3 = z;
+                    jva jvaVar = this.b;
+                    switch (b2) {
+                        case 0:
+                            if (z3) {
+                                jvaVar.o0.setVisibility(8);
+                                break;
+                            }
+                            break;
+                        default:
+                            if (!z3) {
+                                jvaVar.q0.setVisibility(8);
+                                break;
+                            }
+                            break;
                     }
-                    TLRPC.Peer peer = messageReactor2.peer_id;
-                    if (peer != null) {
-                        l2 = Long.valueOf(pg3.n(peer));
-                        break;
+                }
+            }).start();
+            final byte b2 = 1;
+            this.q0.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable(this) { // from class: dua
+                public final /* synthetic */ jva b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    byte b22 = b2;
+                    boolean z3 = z;
+                    jva jvaVar = this.b;
+                    switch (b22) {
+                        case 0:
+                            if (z3) {
+                                jvaVar.o0.setVisibility(8);
+                                break;
+                            }
+                            break;
+                        default:
+                            if (!z3) {
+                                jvaVar.q0.setVisibility(8);
+                                break;
+                            }
+                            break;
                     }
                 }
-            }
+            }).start();
+            return;
         }
-        if (l2 != null) {
-            return l2.longValue();
-        }
-        Long w1 = oc7.r1(this.a).w1();
-        if (w1 != null) {
-            return w1.longValue();
-        }
-        return 0L;
+        oc6Var.animate().cancel();
+        this.q0.animate().cancel();
+        this.q0.setAlpha(z ? 1.0f : 0.0f);
+        this.o0.setAlpha(z ? 0.0f : 1.0f);
+        this.q0.setVisibility(z ? 0 : 8);
+        this.o0.setVisibility(z ? 8 : 0);
     }
 
-    public final void z(long j, long j2, qac qacVar) {
-        TL_account.getPaidMessagesRevenue getpaidmessagesrevenue = new TL_account.getPaidMessagesRevenue();
-        int i = this.a;
-        getpaidmessagesrevenue.user_id = oc7.r1(i).n1(j);
-        if (j2 != 0) {
-            getpaidmessagesrevenue.parent_peer = oc7.r1(i).i1(j2);
+    @Override // iz4
+    public final View q0() {
+        return this.V;
+    }
+
+    public final void q1() {
+        if (this.X == null) {
+            return;
         }
-        ConnectionsManager.getInstance(i).sendRequest(getpaidmessagesrevenue, new th1(qacVar, (byte) 2));
+        int L = gl.L(44.0f) + org.telegram.ui.ActionBar.a.getCurrentActionBarHeight() + this.c0;
+        ViewGroup.LayoutParams layoutParams = this.X.getLayoutParams();
+        if (layoutParams.height != L) {
+            layoutParams.height = L;
+            this.X.setLayoutParams(layoutParams);
+        }
+        r1();
+    }
+
+    @Override // iz4
+    public final void r0(boolean z) {
+        fm0 fm0Var = this.a0;
+        if (fm0Var == null || fm0Var.f == z) {
+            return;
+        }
+        fm0Var.a(z, true);
+    }
+
+    public final void r1() {
+        View view = this.X;
+        if (view == null) {
+            return;
+        }
+        fm0 fm0Var = this.Y;
+        float f = fm0Var == null ? 0.0f : fm0Var.e;
+        fm0 fm0Var2 = this.Z;
+        view.setTranslationY(((-(1.0f - f)) * org.telegram.ui.ActionBar.a.getCurrentActionBarHeight()) - ((1.0f - (fm0Var2 != null ? fm0Var2.e : 0.0f)) * gl.L(44.0f)));
+    }
+
+    @Override // iz4
+    public final void t0() {
+        n1("SAVE_BEFORE");
+        super.t0();
+        dha dhaVar = this.V;
+        this.f0 = dhaVar != null && dhaVar.f0;
+        o39 o39Var = this.c;
+        if (o39Var != null && this.Q >= 0) {
+            this.R -= o39Var.getPaddingTop();
+        }
+        n1("SAVE_AFTER");
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

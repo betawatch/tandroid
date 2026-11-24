@@ -1,7 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface b44 {
-    void a(Object obj, Object obj2);
+public final class b44 implements hab, tu8 {
+    public final HashMap a = new HashMap();
+    public ArrayDeque b = new ArrayDeque();
+    public final Executor c;
+
+    public b44(Executor executor) {
+        this.c = executor;
+    }
+
+    public final void a(w44 w44Var) {
+        Executor executor = this.c;
+        synchronized (this) {
+            executor.getClass();
+            if (!this.a.containsKey(y53.class)) {
+                this.a.put(y53.class, new ConcurrentHashMap());
+            }
+            ((ConcurrentHashMap) this.a.get(y53.class)).put(w44Var, executor);
+        }
+    }
 }

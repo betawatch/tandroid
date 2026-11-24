@@ -2,17 +2,17 @@ package androidx.media3.decoder;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class SimpleDecoderOutputBuffer extends na3 {
-    public final yu3 a;
+public final class SimpleDecoderOutputBuffer extends b93 {
+    public final kx3 a;
     public ByteBuffer b;
 
-    public SimpleDecoderOutputBuffer(yu3 yu3Var) {
-        this.a = yu3Var;
+    public SimpleDecoderOutputBuffer(kx3 kx3Var) {
+        this.a = kx3Var;
     }
 
-    @Override // na3, v11
+    @Override // b93, n01
     public final void clear() {
         super.clear();
         ByteBuffer byteBuffer = this.b;
@@ -21,8 +21,8 @@ public final class SimpleDecoderOutputBuffer extends na3 {
         }
     }
 
-    @Override // na3
+    @Override // b93
     public final void release() {
-        this.a.b(this);
+        this.a.a(this);
     }
 }

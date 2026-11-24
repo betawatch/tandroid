@@ -1,39 +1,63 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class a28 implements qac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d38 b;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 
-    public /* synthetic */ a28(d38 d38Var, byte b) {
-        this.a = b;
-        this.b = d38Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class a28 implements s09 {
+    public final /* synthetic */ y28 a;
+
+    public a28(y28 y28Var) {
+        this.a = y28Var;
     }
 
-    @Override // qac
-    public final void a(Object obj) {
-        byte b = this.a;
-        d38 d38Var = this.b;
-        switch (b) {
-            case 0:
-                Integer num = (Integer) obj;
-                hs1 hs1Var = d38Var.J;
-                if (hs1Var != null) {
-                    hs1Var.E(num.intValue());
-                    break;
-                }
-                break;
-            default:
-                d38Var.r = false;
-                d38Var.R.setLoading(false);
-                if (((Boolean) obj).booleanValue()) {
-                    d38Var.A0();
-                    d38Var.finishFragment();
-                    d38Var.I0();
-                    break;
-                }
-                break;
+    @Override // s09
+    public final void A() {
+        ((d8b) this.a.G1).b(false);
+    }
+
+    @Override // s09
+    public final boolean C() {
+        return false;
+    }
+
+    @Override // s09
+    public final void q(View view, h19 h19Var, boolean z, boolean z2) {
+        y28 y28Var = this.a;
+        if (z) {
+            ij.X(y28Var.s2, y28Var.r1, 1, new gv1(this, z, h19Var, view));
+        } else {
+            y28Var.d0(new d97(this, view, h19Var, z, z2));
+        }
+    }
+
+    @Override // s09
+    public final boolean r() {
+        return true;
+    }
+
+    @Override // s09
+    public final boolean u() {
+        return this.a.G0();
+    }
+
+    @Override // s09
+    public final void x(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
+        y28 y28Var = this.a;
+        Paint paint = y28Var.d2;
+        ep epVar = y28Var.F1;
+        float f4 = -f2;
+        float f5 = -f3;
+        epVar.i(f4, f5, y28Var.getMeasuredWidth() + f4, y28Var.getMeasuredHeight() + f5);
+        if (f > 0.0f) {
+            canvas.drawRoundRect(rectF, f, f, (Paint) epVar.a);
+            canvas.drawRoundRect(rectF, f, f, paint);
+        } else {
+            canvas.drawRect(rectF, (Paint) epVar.a);
+            canvas.drawRect(rectF, paint);
         }
     }
 }

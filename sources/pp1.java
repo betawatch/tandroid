@@ -1,99 +1,66 @@
 // default package
 
-import android.os.SystemClock;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class pp1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yv1 b;
+public final class pp1 extends c01 {
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ gb2 f;
+    public final /* synthetic */ mu1 g;
 
-    public /* synthetic */ pp1(yv1 yv1Var, byte b) {
-        this.a = b;
-        this.b = yv1Var;
+    public /* synthetic */ pp1(mu1 mu1Var, int i, gb2 gb2Var, byte b) {
+        this.d = b;
+        this.g = mu1Var;
+        this.e = i;
+        this.f = gb2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        hg5 hg5Var;
-        byte b = this.a;
-        yv1 yv1Var = this.b;
-        switch (b) {
+    @Override // c01
+    public final void c(boolean z) {
+        switch (this.d) {
             case 0:
-                yv1Var.O7();
-                yv1Var.Q7();
-                yv1Var.E5();
-                yv1Var.G5();
+                if (!z) {
+                    gl.d3(new eg((Object) this, this.e, (byte) 15), 240L);
+                    break;
+                }
                 break;
             case 1:
-                ps1 ps1Var = yv1Var.g3;
-                if ((ps1Var == null || ps1Var.getVisibility() != 0) && (hg5Var = yv1Var.L1) != null) {
-                    hg5Var.v();
+                if (!z) {
+                    gl.d3(new eg((Object) this, this.e, (byte) 18), 240L);
                     break;
                 }
-                break;
-            case 2:
-                yv1Var.x5();
-                break;
-            case 3:
-                yv1Var.gd(0, yv1Var.h6 != 0 && SystemClock.elapsedRealtime() >= yv1Var.h6 + 150);
-                break;
-            case 4:
-                yv1Var.n5(false);
-                break;
-            case 5:
-                int i = yv1.xd;
-                yv1Var.m5();
-                break;
-            case 6:
-                int i2 = yv1.xd;
-                yv1Var.m5();
-                break;
-            case 7:
-                int i3 = yv1.xd;
-                yv1Var.U4();
-                break;
-            case 8:
-                int i4 = yv1.xd;
-                yv1Var.U4();
-                break;
-            case 9:
-                int i5 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 10:
-                int i6 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 11:
-                int i7 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 12:
-                int i8 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 13:
-                int i9 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 14:
-                int i10 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 15:
-                int i11 = yv1.xd;
-                yv1Var.gb();
-                break;
-            case 16:
-                int i12 = yv1.xd;
-                yv1Var.gb();
                 break;
             default:
-                if (yv1Var.getParentLayout() != null) {
-                    sxb.M0(yv1Var);
+                if (!z) {
+                    gl.d3(new eg((Object) this, this.e, (byte) 19), 240L);
                     break;
                 }
+                break;
+        }
+    }
+
+    @Override // c01
+    public final void d() {
+        byte b = this.d;
+        gb2 gb2Var = this.f;
+        int i = this.e;
+        mu1 mu1Var = this.g;
+        switch (b) {
+            case 0:
+                mu1Var.ac = i;
+                mu1Var.bc = 6;
+                gb2Var.invalidate();
+                break;
+            case 1:
+                mu1Var.ac = i;
+                mu1Var.bc = 5;
+                mu1Var.dc = null;
+                gb2Var.invalidate();
+                break;
+            default:
+                mu1Var.ac = i;
+                mu1Var.bc = 7;
+                gb2Var.invalidate();
                 break;
         }
     }

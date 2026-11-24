@@ -2,13 +2,13 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class w9 {
-    public final w26 a;
+    public final w06 a;
     public final ArrayList b = new ArrayList();
 
-    public w9(w26 w26Var) {
-        this.a = w26Var;
+    public w9(w06 w06Var) {
+        this.a = w06Var;
     }
 }

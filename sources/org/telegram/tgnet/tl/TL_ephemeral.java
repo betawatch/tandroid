@@ -9,11 +9,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public class TL_ephemeral {
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class EphemeralMessage extends TLObject {
         public int anchor_msg_id;
         public long chat_instance;
@@ -54,7 +54,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     /* loaded from: classes.dex */
     public static class TL_editMessage extends TLRPC.TL_messages_editMessage {
         public static final int constructor = -811830693;
@@ -106,7 +106,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_ephemeralMessage extends EphemeralMessage {
         public static final int constructor = -584597783;
 
@@ -130,7 +130,7 @@ public class TL_ephemeral {
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yy6((byte) 27), z);
+                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -211,7 +211,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_ephemeralMessage_layer228 extends TL_ephemeralMessage {
         public static final int constructor = -641278950;
 
@@ -230,7 +230,7 @@ public class TL_ephemeral {
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yy6((byte) 27), z);
+                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -281,7 +281,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_ephemeralMessage_layer229_old extends TL_ephemeralMessage {
         public static final int constructor = -1896618863;
 
@@ -302,7 +302,7 @@ public class TL_ephemeral {
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yy6((byte) 27), z);
+                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -365,14 +365,14 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_welcomeMessages extends WelcomeMessages {
         public static final int constructor = 273664114;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.hash = inputSerializedData.readInt64(z);
-            this.messages = Vector.deserialize(inputSerializedData, new yy6((byte) 28), z);
+            this.messages = Vector.deserialize(inputSerializedData, new yw6((byte) 26), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -383,7 +383,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static abstract class WelcomeMessages extends TLObject {
         public long hash;
         public ArrayList<EphemeralMessage> messages = new ArrayList<>();
@@ -403,7 +403,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_deleteAllWelcomeMessages extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1934595873;
         public TLRPC.InputPeer peer;
@@ -420,7 +420,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_deleteMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1829312617;
         public int flags;
@@ -447,7 +447,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_deleteWelcomeMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -394090015;
         public int id;
@@ -466,7 +466,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     /* loaded from: classes.dex */
     public static class TL_getCallbackAnswer extends TLMethod<TLRPC.TL_messages_botCallbackAnswer> {
         public static final int constructor = 1067738312;
@@ -494,7 +494,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     /* loaded from: classes.dex */
     public static class TL_getWelcomeMessages extends TLMethod<WelcomeMessages> {
         public static final int constructor = -610614899;
@@ -514,7 +514,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_reportMessage extends TLMethod<TLRPC.ReportResult> {
         public static final int constructor = -2029718849;
         public int id;
@@ -537,7 +537,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     /* loaded from: classes.dex */
     public static class TL_sendMessage extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1165140171;
@@ -610,7 +610,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TL_welcomeMessagesNotModified extends WelcomeMessages {
         public static final int constructor = 1509940017;
 

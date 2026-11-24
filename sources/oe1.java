@@ -1,18 +1,11 @@
 // default package
 
-import com.google.android.gms.cast.MediaError;
+import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class oe1 extends j89 {
-    @Override // j89
-    public final void b(MediaError mediaError) {
-        fc4.d("Chromecast Media Error: " + mediaError);
-    }
+public interface oe1 extends v0a {
+    public static final ne1 p = ne1.a;
 
-    @Override // j89
-    public final void g() {
-        fc4.b("onStatusUpdated");
-        fp.E();
-    }
+    void cancel(CancellationException cancellationException);
 }

@@ -1,33 +1,13 @@
 // default package
 
-import androidx.appcompat.widget.SearchView;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class bv9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ SearchView b;
-
-    public /* synthetic */ bv9(SearchView searchView, byte b) {
-        this.a = b;
-        this.b = searchView;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        SearchView searchView = this.b;
-        switch (b) {
-            case 0:
-                searchView.r();
-                break;
-            default:
-                o53 o53Var = searchView.i0;
-                if (o53Var instanceof mdb) {
-                    o53Var.b(null);
-                    break;
-                }
-                break;
-        }
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class bv9 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
 }

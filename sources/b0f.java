@@ -1,24 +1,17 @@
 // default package
 
-import android.content.Context;
-import java.util.concurrent.atomic.AtomicLong;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import android.os.IBinder;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class b0f {
-    public final ua4 a;
-    public final AtomicLong b;
+public final class b0f implements ServiceConnection {
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+    }
 
-    public b0f(Context context, byte b) {
-        switch (b) {
-            case 1:
-                this.b = new AtomicLong(-1L);
-                this.a = new ua4(context, ua4.o, new oib("mlkit:vision"), b05.c);
-                break;
-            default:
-                this.b = new AtomicLong(-1L);
-                this.a = new ua4(context, ua4.o, new oib("mlkit:natural_language"), b05.c);
-                break;
-        }
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
     }
 }

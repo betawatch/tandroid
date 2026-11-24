@@ -9,12 +9,12 @@ import android.net.Uri;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskExecutors;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class MlKitInitProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public final void attachInfo(Context context, ProviderInfo providerInfo) {
-        ite.j("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.", !providerInfo.authority.equals("com.google.mlkit.common.mlkitinitprovider"));
+        fre.j("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.", !providerInfo.authority.equals("com.google.mlkit.common.mlkitinitprovider"));
         super.attachInfo(context, providerInfo);
     }
 
@@ -40,8 +40,8 @@ public class MlKitInitProvider extends ContentProvider {
             Log.i("MlKitInitProvider", "No context available. Manually call MlKit.initialize(), otherwise ML Kit will not be functional.");
             return false;
         }
-        synchronized (cg7.b) {
-            cg7.d(context, TaskExecutors.MAIN_THREAD);
+        synchronized (ae7.b) {
+            ae7.d(context, TaskExecutors.MAIN_THREAD);
         }
         return false;
     }

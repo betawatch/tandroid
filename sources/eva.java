@@ -1,179 +1,132 @@
 // default package
 
 import android.content.Context;
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.text.style.ImageSpan;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class eva {
-    public final d a;
-    public final long b;
-    public final u31 c;
-    public final o31 d;
-    public final s31 e;
-    public final iva f;
-    public int g;
-    public long h;
-    public ra i;
-    public final ArrayList j = new ArrayList();
-    public final HashSet k = new HashSet();
-    public final long l = System.currentTimeMillis();
-    public boolean m = true;
-    public boolean n;
-    public boolean o;
-    public final dva p;
+public final class eva extends LinearLayout {
+    public static HashMap F;
+    public boolean E;
+    public final int a;
+    public final pb0 b;
+    public final be0 c;
+    public final be0 d;
+    public int e;
+    public final TextView f;
+    public final LinearLayout.LayoutParams h;
+    public final l46 n;
+    public final TextView r;
+    public final TextView s;
+    public final SpannableString w;
+    public final SpannableString x;
+    public boolean y;
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [dva, java.lang.Runnable] */
-    public eva(d dVar, long j) {
-        final byte b = 1;
-        final byte b2 = 0;
-        ?? r2 = new Runnable(this) { // from class: dva
-            public final /* synthetic */ eva b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b3 = b2;
-                eva evaVar = this.b;
-                switch (b3) {
-                    case 0:
-                        evaVar.a();
-                        break;
-                    default:
-                        if (!evaVar.n && !evaVar.o && evaVar.m) {
-                            evaVar.n = true;
-                            ra raVar = evaVar.i;
-                            if (raVar != null) {
-                                raVar.a(evaVar.k);
-                            }
-                            if (evaVar.e != null) {
-                                evaVar.c.b();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        this.p = r2;
-        this.a = dVar;
-        this.b = j;
-        Context q = jva.q(dVar);
-        o31 o31Var = new o31(q, dVar.getResourceProvider());
-        this.d = o31Var;
-        o31Var.a.f(R.raw.stars_topup, 32, 32, null);
-        iva ivaVar = new iva(q, dVar.getResourceProvider());
-        this.f = ivaVar;
-        ivaVar.b = 3000L;
-        int i = cmb.wj;
-        ylb resourceProvider = dVar.getResourceProvider();
-        dq9 dq9Var = new dq9((byte) 27);
-        dq9 dq9Var2 = new dq9((byte) 28);
-        int P = anb.P(i, -1, 0, 0.0f, resourceProvider);
-        dq9Var2.e(P, ivaVar);
-        umb w = anb.w(101, ivaVar);
-        w.c(i, -1, 0, 0.0f, resourceProvider);
-        w.n = dq9Var;
-        w.o = dq9Var2;
-        w.m = false;
-        w.g = P;
-        s31 s31Var = new s31(dVar.getResourceProvider(), q, true, false);
-        this.e = s31Var;
-        s31Var.e(jb6.M0(2131744712, null));
-        s31Var.b = new Runnable(this) { // from class: dva
-            public final /* synthetic */ eva b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b3 = b;
-                eva evaVar = this.b;
-                switch (b3) {
-                    case 0:
-                        evaVar.a();
-                        break;
-                    default:
-                        if (!evaVar.n && !evaVar.o && evaVar.m) {
-                            evaVar.n = true;
-                            ra raVar = evaVar.i;
-                            if (raVar != null) {
-                                raVar.a(evaVar.k);
-                            }
-                            if (evaVar.e != null) {
-                                evaVar.c.b();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        s31Var.addView(ivaVar, qoe.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        s31Var.e.setPadding(gm.L(12.0f), gm.L(8.0f), gm.L(30.0f), gm.L(8.0f));
-        o31Var.setButton(s31Var);
-        u31 b3 = c41.b0(dVar).b(o31Var, -1);
-        this.c = b3;
-        b3.s = false;
-        b3.k(true);
-        b3.w = new Runnable(this) { // from class: dva
-            public final /* synthetic */ eva b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b32 = b2;
-                eva evaVar = this.b;
-                switch (b32) {
-                    case 0:
-                        evaVar.a();
-                        break;
-                    default:
-                        if (!evaVar.n && !evaVar.o && evaVar.m) {
-                            evaVar.n = true;
-                            ra raVar = evaVar.i;
-                            if (raVar != null) {
-                                raVar.a(evaVar.k);
-                            }
-                            if (evaVar.e != null) {
-                                evaVar.c.b();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        gm.r(r2);
-        gm.d3(r2, 3000L);
+    public eva(int i, wjb wjbVar, Context context) {
+        super(context);
+        this.e = 1;
+        this.a = i;
+        setOrientation(0);
+        eb0 eb0Var = new eb0(this, context, wjbVar);
+        addView(eb0Var, nme.p(72, -1, 0.0f, kk7.z1));
+        be0 be0Var = new be0(context);
+        this.d = be0Var;
+        be0Var.setRoundRadius(gl.L(46.0f));
+        eb0Var.addView(be0Var, nme.d(46, 46.0f, 16, 13.0f, 0.0f, 13.0f, 0.0f));
+        this.b = new pb0((wjb) null);
+        be0 be0Var2 = new be0(context);
+        this.c = be0Var2;
+        be0Var2.setRoundRadius(gl.L(46.0f));
+        eb0Var.addView(be0Var2, nme.d(46, 46.0f, 16, 13.0f, 0.0f, 13.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(19);
+        addView(linearLayout, nme.p(-2, -1, 1.0f, kk7.D1));
+        TextView textView = new TextView(context);
+        this.f = textView;
+        textView.setTypeface(gl.o());
+        int i2 = bkb.F6;
+        zkb.X(textView, i2, wjbVar);
+        textView.setTextSize(1, 16.0f);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        textView.setSingleLine(true);
+        LinearLayout.LayoutParams k = nme.k(0.0f, 0.0f, 0.0f, 4.33f, -1, -2);
+        this.h = k;
+        linearLayout.addView(textView, k);
+        l46 l46Var = new l46(context, null);
+        this.n = l46Var;
+        zkb.X(l46Var, i2, wjbVar);
+        l46Var.setTextSize(1, 13.0f);
+        l46Var.setEllipsize(truncateAt);
+        l46Var.setSingleLine(true);
+        linearLayout.addView(l46Var, nme.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
+        TextView textView2 = new TextView(context);
+        this.r = textView2;
+        zkb.X(textView2, bkb.y6, wjbVar);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setEllipsize(truncateAt);
+        textView2.setSingleLine(true);
+        linearLayout.addView(textView2, nme.o(-1, -2));
+        TextView textView3 = new TextView(context);
+        this.s = textView3;
+        textView3.setTypeface(gl.o());
+        textView3.setTextSize(1, 15.3f);
+        textView3.setGravity(5);
+        addView(textView3, nme.q(-2, -2, 0.0f, 21, 8, 0, 20, 0));
+        SpannableString spannableString = new SpannableString("⭐️");
+        this.w = spannableString;
+        Drawable d = b00.d(context, R.drawable.star_small_inner);
+        d.setBounds(0, 0, gl.L(21.0f), gl.L(21.0f));
+        spannableString.setSpan(new ImageSpan(d), 0, spannableString.length(), 33);
+        SpannableString spannableString2 = new SpannableString("TON");
+        this.x = spannableString2;
+        cm2 cm2Var = new cm2(0, b00.d(context, R.drawable.mini_gram_72));
+        cm2Var.d = false;
+        cm2Var.c(gl.L(18.0f));
+        cm2Var.s = gl.L(0.5f);
+        spannableString2.setSpan(cm2Var, 0, spannableString2.length(), 33);
     }
 
-    public final void a() {
-        if (this.n || this.o) {
-            return;
+    public static fm2 a(int i, String str) {
+        if (i != 44) {
+            return o5a.a(i, str);
         }
-        this.o = true;
-        ArrayList arrayList = this.j;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            ((Runnable) obj).run();
+        HashMap hashMap = F;
+        if (hashMap == null) {
+            hashMap = new HashMap();
+            F = hashMap;
         }
-        if (this.e != null) {
-            this.c.b();
+        fm2 fm2Var = (fm2) hashMap.get(str);
+        if (fm2Var != null) {
+            return fm2Var;
         }
+        HashMap hashMap2 = F;
+        fm2 a = o5a.a(44, str);
+        hashMap2.put(str, a);
+        return a;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.E) {
+            canvas.drawRect(k96.a0 ? 0.0f : gl.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(72.0f) : 0), getMeasuredHeight(), bkb.j0);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(this.y ? 71.0f : 58.0f), TLObject.FLAG_30));
     }
 }

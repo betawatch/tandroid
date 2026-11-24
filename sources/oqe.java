@@ -1,17 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class oqe {
-    public static float a(float f, float f2, float f3, float f4) {
-        double d = f - f3;
-        double d2 = f2 - f4;
-        return (float) Math.sqrt((d2 * d2) + (d * d));
+public final class oqe extends c2e {
+    private static final oqe zzb;
+    private int zzd;
+    private int zze;
+
+    static {
+        oqe oqeVar = new oqe();
+        zzb = oqeVar;
+        c2e.k(oqe.class, oqeVar);
     }
 
-    public static float b(int i, int i2, int i3, int i4) {
-        double d = i - i3;
-        double d2 = i2 - i4;
-        return (float) Math.sqrt((d2 * d2) + (d * d));
+    public static oqe n() {
+        return zzb;
+    }
+
+    @Override // c2e
+    public final Object d(int i) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new vae(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", yqd.i});
+        }
+        if (i2 == 3) {
+            return new oqe();
+        }
+        if (i2 == 4) {
+            return new epd(zzb);
+        }
+        if (i2 == 5) {
+            return zzb;
+        }
+        throw null;
     }
 }

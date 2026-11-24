@@ -1,12 +1,40 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class sga extends k47 {
-    @Override // k47
-    public final boolean s(TLRPC.Chat chat, boolean z) {
-        return false;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class sga implements Callable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ sga(fe7 fe7Var, go5 go5Var) {
+        this.b = fe7Var;
+        this.c = go5Var;
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        byte b = this.a;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                return (uga) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
+            default:
+                int i = jze.a;
+                i2f.O3();
+                int i2 = e2f.a;
+                i2f.O3();
+                int i3 = jze.a;
+                return ((fe7) obj2).b.e((go5) obj);
+        }
+    }
+
+    public sga(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, String str) {
+        this.c = shortcutInfoCompatSaverImpl;
+        this.b = str;
     }
 }

@@ -1,25 +1,13 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class g2d extends b4 {
-    public static final Parcelable.Creator<g2d> CREATOR = new hx6((byte) 24);
-    public final ArrayList a;
+public final class g2d {
+    public final h2d a;
+    public final v8b b;
 
-    public g2d(ArrayList arrayList) {
-        arrayList.getClass();
-        this.a = arrayList;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = mve.r(parcel, 20293);
-        mve.p(parcel, 1, this.a);
-        mve.s(parcel, r);
+    public g2d(h2d h2dVar, v8b v8bVar) {
+        this.a = h2dVar;
+        this.b = v8bVar;
     }
 }

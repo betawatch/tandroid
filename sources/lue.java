@@ -1,13 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class lue {
-    public static fr5 a(int i, int i2) {
-        if (i2 > Integer.MIN_VALUE) {
-            return new fr5(i, i2 - 1, 1);
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            w26.j("Invalid input received");
+            return null;
         }
-        fr5 fr5Var = fr5.d;
-        return fr5.d;
+        StringBuilder sb = new StringBuilder(str2.length() + str.length());
+        for (int i = 0; i < str.length(); i++) {
+            sb.append(str.charAt(i));
+            if (str2.length() > i) {
+                sb.append(str2.charAt(i));
+            }
+        }
+        return sb.toString();
     }
 }

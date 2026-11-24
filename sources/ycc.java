@@ -1,51 +1,37 @@
 // default package
 
-import android.util.Range;
+import android.os.Build;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import java.util.Map;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ycc {
-    public long a;
-    public long b;
-    public double c;
-    public Range d;
+public final class ycc implements ViewTreeObserver.OnGlobalLayoutListener, View.OnAttachStateChangeListener {
+    public final WeakHashMap a = new WeakHashMap();
 
-    public ycc() {
-        Range range = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d));
-        this.d = range;
-        this.c = ((Double) range.getUpper()).doubleValue();
-        this.a = -9223372036854775807L;
-        this.b = -9223372036854775807L;
-    }
-
-    public final void a(long j, long j2) {
-        double doubleValue;
-        jte.f(j != -9223372036854775807L);
-        jte.f(j2 != -9223372036854775807L);
-        long j3 = this.a;
-        if (j3 != -9223372036854775807L) {
-            if (this.b != -9223372036854775807L && j != j3) {
-                doubleValue = (j2 - r4) / (j - j3);
-                this.c = (((Double) this.d.clamp(Double.valueOf(doubleValue))).doubleValue() * 0.20000000298023224d) + (this.c * 0.800000011920929d);
-                this.a = j;
-                this.b = j2;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        if (Build.VERSION.SDK_INT < 28) {
+            for (Map.Entry entry : this.a.entrySet()) {
+                View view = (View) entry.getKey();
+                boolean booleanValue = ((Boolean) entry.getValue()).booleanValue();
+                boolean z = view.isShown() && view.getWindowVisibility() == 0;
+                if (booleanValue != z) {
+                    jdc.g(z ? 16 : 32, view);
+                    entry.setValue(Boolean.valueOf(z));
+                }
             }
         }
-        doubleValue = ((Double) this.d.getUpper()).doubleValue();
-        this.c = (((Double) this.d.clamp(Double.valueOf(doubleValue))).doubleValue() * 0.20000000298023224d) + (this.c * 0.800000011920929d);
-        this.a = j;
-        this.b = j2;
     }
 
-    public final void b() {
-        this.c = ((Double) this.d.getUpper()).doubleValue();
-        this.a = -9223372036854775807L;
-        this.b = -9223372036854775807L;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        view.getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 
-    public final void c(float f) {
-        jte.f(f > 0.0f);
-        this.d = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d / f));
-        b();
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
     }
 }

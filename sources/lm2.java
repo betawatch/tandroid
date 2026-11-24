@@ -1,24 +1,25 @@
 // default package
 
-import java.util.Arrays;
+import java.lang.reflect.Field;
 import java.util.Collections;
-import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class lm2 {
-    public static List a(Object obj) {
-        List singletonList = Collections.singletonList(obj);
-        singletonList.getClass();
-        return singletonList;
-    }
+    public static final Map a;
 
-    public static List b(Object... objArr) {
-        if (objArr.length <= 0) {
-            return n34.a;
+    static {
+        Map map;
+        try {
+            Field declaredField = bg5.class.getDeclaredField("a");
+            declaredField.setAccessible(true);
+            map = (Map) declaredField.get(null);
+        } catch (Throwable th) {
+            Map map2 = Collections.EMPTY_MAP;
+            th.printStackTrace();
+            map = map2;
         }
-        List asList = Arrays.asList(objArr);
-        asList.getClass();
-        return asList;
+        a = map;
     }
 }

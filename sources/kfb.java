@@ -1,26 +1,81 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_keyboard;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class kfb {
-    public static TL_keyboard.ButtonTypeProto a(TL_keyboard.KeyboardButtonProto keyboardButtonProto, Class cls) {
-        if (keyboardButtonProto == null) {
-            return null;
+public final class kfb extends FrameLayout {
+    public final mfb a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+
+    public kfb(mfb mfbVar, View view, boolean z) {
+        super(mfbVar.getContext());
+        this.a = mfbVar;
+        setWillNotDraw(false);
+        if (!z) {
+            setPadding(gl.L(12.66f), gl.L(9.33f), gl.L(12.66f), gl.L(9.33f));
         }
-        TL_keyboard.ButtonTypeProto type = keyboardButtonProto.getType();
-        if (cls.isInstance(type)) {
-            return (TL_keyboard.ButtonTypeProto) cls.cast(type);
-        }
-        return null;
+        addView(view, nme.c(-1.0f, -1));
     }
 
-    public static boolean b(TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        return c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeWebView.class) || c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z = this.c;
+        mfb mfbVar = this.a;
+        if (z || this.d) {
+            canvas2 = canvas;
+            float L = gl.L(10.0f);
+            float[] fArr = mfbVar.c;
+            float f = mfbVar.h;
+            Path path = mfbVar.b;
+            boolean z2 = this.c;
+            float f2 = z2 ? L : 0.0f;
+            fArr[1] = f2;
+            fArr[0] = f2;
+            float f3 = z2 ? L : 0.0f;
+            fArr[3] = f3;
+            fArr[2] = f3;
+            boolean z3 = this.d;
+            float f4 = z3 ? L : 0.0f;
+            fArr[5] = f4;
+            fArr[4] = f4;
+            if (!z3) {
+                L = 0.0f;
+            }
+            fArr[7] = L;
+            fArr[6] = L;
+            path.rewind();
+            RectF rectF = gl.P;
+            rectF.set(f, f, getWidth() - f, ((this.d ? -1.0f : 1.0f) * f) + getHeight());
+            path.addRoundRect(rectF, mfbVar.c, Path.Direction.CW);
+            if (this.b) {
+                canvas2.drawPath(path, mfbVar.d);
+            }
+            canvas2.drawPath(path, mfbVar.e);
+        } else {
+            if (this.b) {
+                float f5 = mfbVar.h;
+                float f6 = mfbVar.h;
+                canvas2 = canvas;
+                canvas2.drawRect(f5, f5, getWidth() + f6, getHeight() + f6, mfbVar.d);
+            } else {
+                canvas2 = canvas;
+            }
+            float f7 = mfbVar.h;
+            float f8 = mfbVar.h;
+            canvas2.drawRect(f7, f7, getWidth() - f8, getHeight() + f8, mfbVar.e);
+        }
+        super.onDraw(canvas2);
     }
 
-    public static boolean c(TL_keyboard.KeyboardButtonProto keyboardButtonProto, Class cls) {
-        return a(keyboardButtonProto, cls) != null;
+    public void setFilled(boolean z) {
+        this.b = z;
     }
 }

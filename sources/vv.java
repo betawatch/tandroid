@@ -10,100 +10,103 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vv extends View implements fkb, dx {
-    public final ui5 a;
-    public final ey b;
-    public bx c;
+public final class vv extends View implements eib, dw {
+    public bw a;
+    public TL_iv.pageBlockTitle b;
+    public int c;
     public int d;
-    public int e;
-    public TL_iv.PageBlock f;
+    public final vg5 e;
+    public final dx f;
 
-    public vv(Activity activity, ui5 ui5Var, ey eyVar) {
+    public vv(Activity activity, vg5 vg5Var, dx dxVar) {
         super(activity);
-        this.a = ui5Var;
-        this.b = eyVar;
+        this.e = vg5Var;
+        this.f = dxVar;
     }
 
-    @Override // dx
+    @Override // dw
     public int getBoundLeft() {
-        bx bxVar = this.c;
-        if (bxVar == null) {
+        bw bwVar = this.a;
+        if (bwVar == null) {
             return -1;
         }
-        return wi8.h(this.a, 18.0f, bxVar.k() + this.d);
+        return ug8.h(this.e, 18.0f, bwVar.k() + bwVar.s);
     }
 
-    @Override // dx
+    @Override // dw
     public int getBoundRight() {
-        bx bxVar = this.c;
-        if (bxVar == null) {
+        bw bwVar = this.a;
+        if (bwVar == null) {
             return -1;
         }
-        return wi8.C(this.a, 18.0f, bxVar.l() + this.d);
+        return ug8.C(this.e, 18.0f, bwVar.l() + bwVar.s);
     }
 
-    @Override // dx
+    @Override // dw
     public int getLastLineBoundRight() {
-        bx bxVar = this.c;
-        if (bxVar == null) {
+        bw bwVar = this.a;
+        if (bwVar == null) {
             return -1;
         }
-        return wi8.C(this.a, 18.0f, bxVar.m() + this.d);
+        return ug8.C(this.e, 18.0f, bwVar.m() + bwVar.s);
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return wi8.a(this);
+        return ug8.a(this);
     }
 
-    @Override // fkb
+    @Override // eib
     public final void k(ArrayList arrayList) {
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            arrayList.add(bxVar);
+        bw bwVar = this.a;
+        if (bwVar != null) {
+            arrayList.add(bwVar);
         }
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.i(this);
+        bw bwVar = this.a;
+        if (bwVar != null) {
+            bwVar.i(this);
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.f(this);
+        bw bwVar = this.a;
+        if (bwVar != null) {
+            bwVar.f(this);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.f == null || this.c == null) {
+        if (this.b == null || this.a == null) {
             return;
         }
         canvas.save();
-        canvas.translate(this.d, this.e);
-        o.s(this.a, canvas, this, 0);
-        this.c.d(canvas, this);
+        canvas.translate(this.c, this.d);
+        o.s(this.e, canvas, this, 0);
+        this.a.d(canvas, this);
         canvas.restore();
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
         accessibilityNodeInfo.setEnabled(true);
-        bx bxVar = this.c;
-        if (bxVar == null) {
+        accessibilityNodeInfo.setClickable(false);
+        accessibilityNodeInfo.setLongClickable(false);
+        bw bwVar = this.a;
+        if (bwVar == null) {
             return;
         }
-        accessibilityNodeInfo.setText(o.f(2131754862, o.g(this.a, this.b, bxVar)));
+        accessibilityNodeInfo.setText(o.f(2131754852, o.g(this.e, this.f, bwVar)));
     }
 
     @Override // android.view.View
@@ -111,29 +114,35 @@ public final class vv extends View implements fkb, dx {
         vv vvVar;
         int i3;
         int size = View.MeasureSpec.getSize(i);
-        ui5 ui5Var = this.a;
-        ui5Var.getClass();
-        this.d = gm.L(18.0f);
-        ui5Var.getClass();
-        this.e = gm.L(8.0f);
-        TL_iv.PageBlock pageBlock = this.f;
-        if (pageBlock != null) {
-            TL_iv.RichText richText = pageBlock.text;
-            ui5 ui5Var2 = this.a;
-            int h = wi8.h(ui5Var2, 36.0f, size);
-            TL_iv.PageBlock pageBlock2 = this.f;
-            ey eyVar = this.b;
-            vvVar = this;
-            bx n = o.n(ui5Var2, vvVar, null, richText, h, 0, pageBlock2, (eyVar == null || !eyVar.H) ? Layout.Alignment.ALIGN_NORMAL : oya.a(), 0, this.b);
-            vvVar.c = n;
-            if (n != null) {
-                ui5Var.getClass();
-                i3 = vvVar.c.d.getHeight() + gm.L(16.0f);
-                bx bxVar = vvVar.c;
-                bxVar.s = vvVar.d;
-                bxVar.w = vvVar.e;
+        vg5 vg5Var = this.e;
+        vg5Var.getClass();
+        this.c = gl.L(18.0f);
+        TL_iv.pageBlockTitle pageblocktitle = this.b;
+        if (pageblocktitle != null) {
+            if (pageblocktitle.first) {
+                vg5Var.getClass();
+                i3 = gl.L(8.0f);
+                vg5Var.getClass();
+                this.d = gl.L(16.0f);
             } else {
+                vg5Var.getClass();
+                this.d = gl.L(8.0f);
                 i3 = 0;
+            }
+            TL_iv.RichText richText = this.b.text;
+            vg5 vg5Var2 = this.e;
+            int h = ug8.h(vg5Var2, 36.0f, size);
+            TL_iv.pageBlockTitle pageblocktitle2 = this.b;
+            dx dxVar = this.f;
+            vvVar = this;
+            bw n = o.n(vg5Var2, vvVar, null, richText, h, 0, pageblocktitle2, (dxVar == null || !dxVar.H) ? Layout.Alignment.ALIGN_NORMAL : lwa.a(), 0, this.f);
+            vvVar.a = n;
+            if (n != null) {
+                vg5Var.getClass();
+                i3 += vvVar.a.d.getHeight() + gl.L(16.0f);
+                bw bwVar = vvVar.a;
+                bwVar.s = vvVar.c;
+                bwVar.w = vvVar.d;
             }
         } else {
             vvVar = this;
@@ -144,11 +153,11 @@ public final class vv extends View implements fkb, dx {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
+        return o.i(this.e, this.f, motionEvent, this, this.a, this.c, this.d) || super.onTouchEvent(motionEvent);
     }
 
-    public void setBlock(TL_iv.PageBlock pageBlock) {
-        this.f = pageBlock;
+    public void setBlock(TL_iv.pageBlockTitle pageblocktitle) {
+        this.b = pageblocktitle;
         requestLayout();
     }
 }

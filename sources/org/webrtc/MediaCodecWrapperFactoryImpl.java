@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
     @Override // org.webrtc.MediaCodecWrapperFactory
@@ -16,7 +16,7 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         return new MediaCodecWrapperImpl(MediaCodec.createByCodecName(str));
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class MediaCodecWrapperImpl implements MediaCodecWrapper {
         private final MediaCodec mediaCodec;
 

@@ -1,14 +1,16 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ik3 extends TLRPC.Dialog {
-    public final byte a;
+public final class ik3 {
+    public s49 a;
+    public s49 b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ik3(int i) {
-        this.a = i;
+    public final String toString() {
+        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
     }
 }

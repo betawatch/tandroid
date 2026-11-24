@@ -1,25 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.Comparator;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class kld {
-    public static final kld c;
-    public static final kld d;
-    public final boolean a;
-    public final RuntimeException b;
-
-    static {
-        if (cmd.f) {
-            d = null;
-            c = null;
-        } else {
-            d = new kld(false, null);
-            c = new kld(true, null);
-        }
-    }
-
-    public kld(boolean z, RuntimeException runtimeException) {
-        this.a = z;
-        this.b = runtimeException;
+public abstract class kld implements Comparator {
+    public kld a() {
+        return new imd(this);
     }
 }

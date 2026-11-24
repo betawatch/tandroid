@@ -1,172 +1,113 @@
 // default package
 
 import java.util.ArrayList;
-import java.util.List;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class g25 implements nac {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g25 implements i8c {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ w25 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ g25(Object obj, Object obj2, byte b) {
+    public /* synthetic */ g25(w25 w25Var, Object obj, long j, int i, byte b) {
         this.a = b;
-        this.b = obj;
-        this.c = obj2;
+        this.b = w25Var;
+        this.e = obj;
+        this.c = j;
+        this.d = i;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00e2  */
-    @Override // nac
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        hh3 hh3Var;
-        aj3 aj3Var;
-        d dVar;
-        tk5 parentLayout;
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
+        final long j;
+        final int i;
+        final TL_wallet.tonConnectRequest tonconnectrequest;
+        TL_wallet.tonConnectSession tonconnectsession;
         byte b = this.a;
-        Object obj5 = this.c;
-        Object obj6 = this.b;
+        Object obj3 = this.e;
         switch (b) {
             case 0:
-                c cVar = (c) obj6;
-                rqc rqcVar = (rqc) obj5;
-                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
-                y25 y25Var = (y25) obj2;
-                byte[] bArr = (byte[]) obj3;
-                String str = (String) obj4;
-                if (sendtransfer != null && y25Var != null && bArr != null) {
-                    c.O("prepare disable backup: transfer ready, initing storage with new secret phrase!");
-                    v25 v25Var = new v25();
-                    v25Var.c = bArr;
-                    v25Var.b = y25Var.b();
-                    v25Var.a = sendtransfer;
-                    cVar.c.q(z8c.h(cVar.a).e(), bArr, y25Var, new qy1(cVar, v25Var, rqcVar));
-                    break;
-                } else {
-                    c.m("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
-                    if (str == null) {
-                        str = "NULL_ERROR";
+                final u15 u15Var = (u15) obj3;
+                final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                final w25 w25Var = this.b;
+                c cVar = w25Var.b;
+                if (tL_error == null && tonconnectpending != null) {
+                    ArrayList<TL_wallet.tonConnectRequest> arrayList = tonconnectpending.requests;
+                    int size = arrayList.size();
+                    int i2 = 0;
+                    while (true) {
+                        j = this.c;
+                        i = this.d;
+                        if (i2 < size) {
+                            TL_wallet.tonConnectRequest tonconnectrequest2 = arrayList.get(i2);
+                            i2++;
+                            TL_wallet.tonConnectRequest tonconnectrequest3 = tonconnectrequest2;
+                            if (tonconnectrequest3.session_id == j && tonconnectrequest3.msg_id == i) {
+                                tonconnectrequest = tonconnectrequest3;
+                            }
+                        } else {
+                            tonconnectrequest = null;
+                        }
                     }
-                    rqcVar.a(null, str);
-                    break;
-                }
-            case 1:
-                a58 a58Var = (a58) obj6;
-                v9b v9bVar = (v9b) obj5;
-                Long l = (Long) obj;
-                Runnable runnable = (Runnable) obj2;
-                Boolean bool = (Boolean) obj3;
-                Long l2 = (Long) obj4;
-                oab oabVar = a58Var.z0;
-                if (!bool.booleanValue()) {
-                    long currentTimeMillis = System.currentTimeMillis();
-                    c40 c40Var = a58Var.C2;
-                    if (c40Var == null || ((nab) c40Var.c) != null) {
-                        nab nabVar = (nab) c40Var.c;
-                        nabVar.firstFrameRendered = false;
-                        c40Var.a = false;
-                        nabVar.setOnReadyListener(new m38(runnable, currentTimeMillis, null == true ? 1 : 0));
-                        ((fab) a58Var.G1).g(false);
-                        s09 s09Var = a58Var.p0;
-                        if (s09Var != null) {
-                            s09Var.setAnimation(a58Var.n1.u);
-                        }
-                        if (a58Var.H2 > 0 && l.longValue() > a58Var.H2 - 1400) {
-                            l = 0L;
-                        }
-                        a58Var.O0(l.longValue(), true);
-                        a58Var.J3 = false;
-                        gm.d3(runnable, 400L);
-                        if (bool.booleanValue()) {
-                            a58Var.c1(false);
-                            break;
-                        }
+                    if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j && tonconnectrequest.expires > w25Var.f.getCurrentTime()) {
+                        final String x = cVar.x();
+                        final byte[] bArr = cVar.D() != null ? (byte[]) cVar.D().clone() : null;
+                        cVar.E(true, false, false, new i8c() { // from class: l25
+                            @Override // i8c
+                            public final void a(Object obj4, Object obj5) {
+                                w25 w25Var2 = w25.this;
+                                u15 u15Var2 = u15Var;
+                                TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
+                                TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
+                                String str = x;
+                                byte[] bArr2 = bArr;
+                                long j2 = j;
+                                int i3 = i;
+                                y05 y05Var = (y05) obj4;
+                                String str2 = (String) obj5;
+                                w25Var2.getClass();
+                                if (y05Var != null && str2 == null) {
+                                    y05 b2 = y05Var.b();
+                                    Utilities.e.c(new vr0(w25Var2, tonconnectpending2, tonconnectrequest4, b2, str, bArr2, new ae2(b2, u15Var2, (byte) 23), j2, i3));
+                                } else {
+                                    w25Var2.h = false;
+                                    if (str2 == null) {
+                                        str2 = "Recovery phrase is unavailable";
+                                    }
+                                    u15Var2.a(null, str2);
+                                }
+                            }
+                        });
+                        break;
                     } else {
-                        ((fab) a58Var.G1).g(false);
-                        a58Var.setActive(true);
-                        a58Var.J3 = false;
-                        a58Var.Y0 = new vt2(runnable, (byte) 4);
-                        if (bool.booleanValue()) {
-                            a58Var.c1(false);
-                        }
-                        gm.d3(runnable, 400L);
+                        w25Var.h = false;
+                        u15Var.a(null, "This request has expired or has already been answered");
                         break;
                     }
                 } else {
-                    d dVar2 = oabVar.f;
-                    if (dVar2 != null && (parentLayout = dVar2.getParentLayout()) != null) {
-                        List fragmentStack = parentLayout.getFragmentStack();
-                        ArrayList arrayList = new ArrayList();
-                        for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                            d dVar3 = (d) fragmentStack.get(size);
-                            if (dVar3 instanceof nk3) {
-                                nk3 nk3Var = (nk3) dVar3;
-                                nk3Var.g3();
-                                aj3 aj3Var2 = nk3Var.F0;
-                                hh3 e = aj3Var2 != null ? aj3Var2.e(l2.longValue()) : null;
-                                for (int i = 0; i < arrayList.size(); i++) {
-                                    ((ActionBarLayout) parentLayout).c0((d) arrayList.get(i), false);
-                                }
-                                hh3Var = e;
-                                aj3Var = aj3Var2;
-                                dVar = oabVar.f;
-                                if (dVar != null) {
-                                    dVar.clearSheets();
-                                }
-                                oabVar.z();
-                                a58Var.J3 = false;
-                                if (aj3Var != null || !aj3Var.k(l2.longValue())) {
-                                    v9bVar.X(q9b.c(hh3Var));
-                                    gm.d3(runnable, 400L);
-                                    break;
-                                } else {
-                                    aj3Var.c0.add(new hz7((Object) hh3Var, (Object) aj3Var, (Object) l2, (Object) v9bVar, (Object) runnable, (byte) 3));
-                                    break;
-                                }
-                            } else {
-                                arrayList.add(dVar3);
-                            }
-                        }
-                    }
-                    hh3Var = null;
-                    aj3Var = null;
-                    dVar = oabVar.f;
-                    if (dVar != null) {
-                    }
-                    oabVar.z();
-                    a58Var.J3 = false;
-                    if (aj3Var != null) {
-                    }
-                    v9bVar.X(q9b.c(hh3Var));
-                    gm.d3(runnable, 400L);
+                    w25Var.h = false;
+                    u15Var.a(null, w25.z(tL_error, "getPending"));
+                    break;
                 }
                 break;
             default:
-                zga zgaVar = (zga) obj6;
-                v99 v99Var = (v99) obj5;
-                ArrayList arrayList2 = (ArrayList) obj;
-                int i2 = zgaVar.d;
-                oc7.r1(i2).d4((ArrayList) obj2, true);
-                oc7.r1(i2).X3((ArrayList) obj3, true);
-                vm.g(i2).d((ArrayList) obj4);
-                for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                    k47 k47Var = (k47) arrayList2.get(i3);
-                    if (k47Var.z2() && k47Var.k.reactions != null) {
-                        k47Var.S2 = true;
-                    }
-                    k47Var.J5(zgaVar.x, true);
-                    zgaVar.n.add(k47Var);
+                p8c p8cVar = (p8c) obj3;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
+                    p8cVar.a(w25.z(tL_error2, "closeSession"));
+                    break;
+                } else {
+                    this.b.d(this.d, this.c, p8cVar);
+                    break;
                 }
-                zgaVar.G(true);
-                gm.d3(v99Var, 540L);
                 break;
         }
     }

@@ -1,46 +1,88 @@
 // default package
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class lf1 implements f59 {
-    public final /* synthetic */ uf1 a;
+public abstract class lf1 extends cja {
+    public final /* synthetic */ nf1 m0;
 
-    public lf1(uf1 uf1Var) {
-        this.a = uf1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lf1(nf1 nf1Var, Context context) {
+        super(context, null);
+        this.m0 = nf1Var;
     }
 
-    @Override // f59
-    public final void g(int i, View view) {
-        boolean z = view instanceof qf1;
-        uf1 uf1Var = this.a;
-        if (!z) {
-            if (view instanceof of1) {
-                uf1Var.d0(true);
+    public final void X(Canvas canvas, RectF rectF) {
+        boolean z;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        nf1 nf1Var = this.m0;
+        if (nf1Var.w.Z0()) {
+            canvas.save();
+            canvas.clipRect(rectF);
+            drawChild(canvas, nf1Var.w, uptimeMillis);
+            canvas.restore();
+            return;
+        }
+        canvas.save();
+        canvas.clipRect(rectF);
+        canvas.translate(0.0f, nf1Var.w.getY());
+        nf1Var.w.getClass();
+        int i = 0;
+        while (true) {
+            int childCount = nf1Var.w.getChildCount();
+            fu fuVar = nf1Var.w;
+            if (i >= childCount) {
+                fuVar.getClass();
+                canvas.restore();
                 return;
             }
-            return;
+            View childAt = fuVar.getChildAt(i);
+            RectF rectF2 = nf1Var.P0;
+            if (rectF == null || nf1Var.w == null || childAt == null) {
+                z = false;
+            } else {
+                rectF2.set(childAt.getX(), nf1Var.w.getY() + childAt.getY(), childAt.getX() + childAt.getWidth(), nf1Var.w.getY() + childAt.getY() + childAt.getHeight());
+                z = !rectF2.intersect(rectF);
+            }
+            if (!z) {
+                if (childAt instanceof gb2) {
+                    canvas.save();
+                    canvas.translate(childAt.getX(), childAt.getY());
+                    gb2 gb2Var = (gb2) childAt;
+                    if (gb2Var.L0()) {
+                        canvas.save();
+                        canvas.translate(0.0f, gb2Var.W);
+                        gb2Var.M0(canvas, true, false);
+                        canvas.restore();
+                    }
+                    canvas.restore();
+                    nf1Var.w.drawChild(canvas, childAt, uptimeMillis);
+                    if (gb2Var.l2()) {
+                        canvas.save();
+                        canvas.translate(gb2Var.getX(), gb2Var.getY());
+                        gb2Var.i1(canvas);
+                        canvas.restore();
+                    }
+                } else {
+                    boolean z2 = childAt instanceof uk1;
+                    fu fuVar2 = nf1Var.w;
+                    if (z2) {
+                        fuVar2.drawChild(canvas, childAt, uptimeMillis);
+                        canvas.save();
+                        canvas.translate(childAt.getX(), childAt.getY());
+                        ((uk1) childAt).L(canvas);
+                        canvas.restore();
+                    } else {
+                        fuVar2.drawChild(canvas, childAt, uptimeMillis);
+                    }
+                }
+            }
+            i++;
         }
-        qf1 qf1Var = (qf1) view;
-        TLRPC.TL_username tL_username = qf1Var.w;
-        if (tL_username == null || qf1Var.r) {
-            return;
-        }
-        if (tL_username.editable && uf1Var.y == 0) {
-            uf1Var.b.z0(0);
-            uf1Var.d0(true);
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, uf1Var.getResourceProvider(), uf1Var.getParentActivity());
-        String M0 = jb6.M0(tL_username.active ? 2131743351 : 2131743358, null);
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M0;
-        heVar.U = jb6.M0(tL_username.active ? 2131743349 : 2131743356, null);
-        alertDialog$Builder.j(jb6.M0(tL_username.active ? 2131749082 : 2131745087, null), new zn((Object) this, (Object) tL_username, i, (Object) view, (byte) 2));
-        alertDialog$Builder.g(jb6.M0(2131752542, null), new qn0((byte) 17));
-        alertDialog$Builder.o();
     }
 }

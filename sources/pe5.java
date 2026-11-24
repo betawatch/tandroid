@@ -1,43 +1,39 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.os.SystemClock;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class pe5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ re5 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class pe5 extends vg0 {
+    public int h;
 
-    public /* synthetic */ pe5(re5 re5Var, byte b) {
-        this.a = b;
-        this.b = re5Var;
+    @Override // k64
+    public final void b(long j, long j2, long j3, List list, bk6[] bk6VarArr) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (a(this.h, elapsedRealtime)) {
+            for (int i = this.b - 1; i >= 0; i--) {
+                if (!a(i, elapsedRealtime)) {
+                    this.h = i;
+                    return;
+                }
+            }
+            sdb.a();
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        fw1 fw1Var;
-        fv fvVar;
-        byte b = this.a;
-        re5 re5Var = this.b;
-        switch (b) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                re5Var.x = floatValue;
-                re5Var.e.setTranslationY(floatValue * gm.L(48.0f));
-                re5Var.e.setPadding(0, 0, 0, (int) (re5Var.x * gm.L(48.0f)));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                re5Var.F = floatValue2;
-                re5Var.n.setScaleX(gm.R1(0.95f, 1.0f, floatValue2));
-                re5Var.n.setScaleY(gm.R1(0.95f, 1.0f, re5Var.F));
-                is1 is1Var = re5Var.f;
-                if (is1Var != null && (fw1Var = is1Var.a) != null && (fvVar = fw1Var.a4) != null) {
-                    fvVar.setScaleX(gm.R1(1.0f, 0.95f, re5Var.F));
-                    re5Var.f.a.a4.setScaleY(gm.R1(1.0f, 0.95f, re5Var.F));
-                }
-                re5Var.h.setAlpha(re5Var.F);
-                break;
-        }
+    @Override // k64
+    public final int d() {
+        return this.h;
+    }
+
+    @Override // k64
+    public final int p() {
+        return 0;
+    }
+
+    @Override // k64
+    public final Object s() {
+        return null;
     }
 }

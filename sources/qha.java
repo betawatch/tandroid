@@ -1,6 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public interface qha {
+public final class qha {
+    public static final qha a;
+    public static final qha b;
+    public static final /* synthetic */ qha[] c;
+
+    static {
+        qha qhaVar = new qha("ICON", 0);
+        a = qhaVar;
+        qha qhaVar2 = new qha("TEXT", 1);
+        b = qhaVar2;
+        c = new qha[]{qhaVar, qhaVar2};
+    }
+
+    public static qha valueOf(String str) {
+        return (qha) Enum.valueOf(qha.class, str);
+    }
+
+    public static qha[] values() {
+        return (qha[]) c.clone();
+    }
 }

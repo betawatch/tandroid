@@ -1,17 +1,17 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class au implements s1d {
-    private final w1d a;
-    private final w1d b;
+public final class au implements rzc {
+    private final vzc a;
+    private final vzc b;
 
-    public au(w1d w1dVar, w1d w1dVar2) {
-        this.a = w1dVar;
-        this.b = w1dVar2;
+    public au(vzc vzcVar, vzc vzcVar2) {
+        this.a = vzcVar;
+        this.b = vzcVar2;
     }
 
-    @Override // w1d
+    @Override // vzc
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
     public final at a() {
         return new at(this.a, this.b);

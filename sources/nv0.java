@@ -1,816 +1,230 @@
 // default package
 
-import android.os.Bundle;
-import android.text.SpannableString;
+import android.content.DialogInterface;
+import android.os.StatFs;
 import android.text.TextUtils;
-import java.security.SecureRandom;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_toncenter;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.CameraView;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.Wallet.b;
-import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nv0 implements jac {
+public final /* synthetic */ class nv0 implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ nv0(asc ascVar, c cVar, TLRPC.User user, String str) {
-        this.a = (byte) 17;
-        this.b = ascVar;
-        this.c = cVar;
-        this.e = user;
-        this.d = str;
+    public /* synthetic */ nv0(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:278:0x065c  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x0671 A[Catch: Exception -> 0x0686, all -> 0x06f4, TRY_LEAVE, TryCatch #15 {all -> 0x06f4, blocks: (B:216:0x055a, B:219:0x055e, B:233:0x05a9, B:234:0x05ac, B:239:0x059e, B:242:0x05b6, B:260:0x060e, B:261:0x0611, B:263:0x0622, B:266:0x0626, B:279:0x065d, B:280:0x0660, B:282:0x0671, B:285:0x0675, B:292:0x067f), top: B:215:0x055a }] */
-    /* JADX WARN: Removed duplicated region for block: B:335:0x0721  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x072e  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x0733  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x0738  */
-    /* JADX WARN: Removed duplicated region for block: B:348:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0724 A[Catch: all -> 0x0746, TryCatch #5 {all -> 0x0746, blocks: (B:333:0x0716, B:336:0x0728, B:350:0x0724), top: B:332:0x0716 }] */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x074a  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x074f  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x0754  */
-    @Override // jac
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj, Object obj2) {
-        String str;
-        byte[] bArr;
-        String str2;
-        byte[] bArr2;
-        byte[][] bArr3;
-        byte[] c;
-        char c2;
-        char c3;
-        SerializedData serializedData;
-        byte[] bArr4;
-        Long l;
-        Long l2;
-        Long l3;
+    @Override // java.lang.Runnable
+    public final void run() {
         int i;
-        String str3;
-        String str4;
-        AlertDialog$Builder alertDialog$Builder;
-        k47 k47Var;
-        str = "NULL_ERROR";
-        int i2 = 0;
-        switch (this.a) {
+        int i2;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
             case 0:
-                qw0 qw0Var = (qw0) this.b;
-                ow0 ow0Var = (ow0) this.c;
-                String str5 = (String) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (updates == null) {
-                    ylb ylbVar = qw0Var.e;
-                    if (tL_error != null) {
-                        new c41(qw0Var, ylbVar).g0(tL_error, false);
-                        qw0Var.u(ow0Var, "requested_chat_failed", qw0.x(str5, "req_id"));
-                        return;
-                    } else {
-                        new c41(qw0Var, ylbVar).f0("UNKNOWN_BUTTON", false);
-                        qw0Var.u(ow0Var, "requested_chat_failed", qw0.x(str5, "req_id"));
-                        return;
-                    }
-                }
-                oc7.r1(qw0Var.N).T3(updates, false);
-                qw0Var.u(ow0Var, "requested_chat_sent", qw0.x(str5, "req_id"));
-                long j = qw0Var.V.id;
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", user.id);
-                rv0 rv0Var = new rv0(qw0Var, bundle, user, j);
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    S.presentFragment(rv0Var);
-                }
-                uv0 uv0Var = qw0Var.c;
-                if (uv0Var != null) {
-                    uv0Var.b();
-                    return;
-                }
-                return;
+                ((nw0) obj).invalidate();
+                break;
             case 1:
-                lv4 lv4Var = (lv4) this.b;
-                jz jzVar = (jz) this.c;
-                iv4 iv4Var = (iv4) this.d;
-                TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = (TLRPC.TL_payments_getPaymentForm) this.e;
-                TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (tL_error2 != null) {
-                    jzVar.a(Boolean.FALSE, tL_error2.text);
-                    iv4Var.f = false;
-                    return;
-                }
-                byte b = 0;
-                if (!(paymentForm instanceof TLRPC.TL_payments_paymentFormStarGift)) {
-                    jzVar.a(Boolean.FALSE, "NO_PAYMENT_FORM");
-                    iv4Var.f = false;
-                    return;
-                } else {
-                    TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-                    tL_payments_sendStarsForm.form_id = ((TLRPC.TL_payments_paymentFormStarGift) paymentForm).form_id;
-                    tL_payments_sendStarsForm.invoice = tL_payments_getPaymentForm.invoice;
-                    lv4Var.getConnectionsManager().sendRequestTyped(tL_payments_sendStarsForm, new kc(b), new p((Object) lv4Var, (Object) iv4Var, (Object) jzVar, (byte) 9));
-                    return;
-                }
+                ((on) obj).e();
+                break;
             case 2:
-                c cVar = (c) this.b;
-                r25 r25Var = (r25) this.c;
-                String str6 = (String) this.d;
-                Runnable runnable = (Runnable) this.e;
-                TL_toncenter.apiResponse apiresponse = (TL_toncenter.apiResponse) obj;
-                if (apiresponse != null) {
-                    try {
-                        r25Var.b = Long.parseLong(new JSONObject(apiresponse.response.data).getString("balance"));
-                        if (cVar.Q.get(str6) == r25Var) {
-                            cVar.v0(r25Var);
-                            cVar.S();
-                        }
-                    } catch (Exception e) {
-                        c.n("failed to get balance of " + str6, e);
-                    }
+                fx0 fx0Var = (fx0) ((cn) obj).c;
+                DialogInterface.OnDismissListener onDismissListener = fx0Var.I0;
+                if (onDismissListener != null) {
+                    onDismissListener.onDismiss(fx0Var);
                 }
-                runnable.run();
-                return;
+                try {
+                    fx0Var.I();
+                    break;
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                    return;
+                }
             case 3:
-                ((c) this.b).c0((y25) this.c, true, new nv0(this.d, obj2, this.e, obj, (byte) 5));
-                return;
+                try {
+                    ((yw0) obj).b.I();
+                    break;
+                } catch (Exception e2) {
+                    fa4.g(e2, true);
+                    return;
+                }
             case 4:
-                c cVar2 = (c) this.b;
-                qy1 qy1Var = (qy1) this.c;
-                y25 y25Var = (y25) this.d;
-                byte[] bArr5 = (byte[]) this.e;
-                Vector vector = (Vector) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                if (vector == null) {
-                    if (tL_error3 == null || (str3 = tL_error3.text) == null) {
-                        str3 = "NULL_ERROR";
-                    }
-                    c.m("enable backup: didnt get backup holders: ".concat(str3));
-                    if (tL_error3 != null && (str4 = tL_error3.text) != null) {
-                        str = str4;
-                    }
-                    qy1Var.a(str);
-                    return;
-                }
-                int size = vector.objects.size();
-                if (size != 3) {
-                    c.m("enable backup: expected three backup holders");
-                    qy1Var.a("INVALID_BACKUP_HOLDERS_COUNT");
-                    return;
-                }
-                byte[][] bArr6 = new byte[size][];
-                try {
-                    c = y25Var.c();
-                    try {
-                        bArr2 = c.a0(c);
-                    } catch (Exception e2) {
-                        e = e2;
-                        str2 = "NULL_ERROR";
-                        bArr = c;
-                        bArr2 = null;
-                        bArr3 = null;
-                        try {
-                            c.n("enable backup", e);
-                            qy1Var.a(e.getMessage() == null ? str2 : e.getMessage());
-                            byte b2 = 0;
-                            if (bArr != null) {
-                            }
-                            if (bArr2 != null) {
-                            }
-                            if (bArr3 != null) {
-                            }
-                        } catch (Throwable th) {
-                            th = th;
-                            byte b3 = 0;
-                            if (bArr != null) {
-                                Arrays.fill(bArr, (byte) 0);
-                            }
-                            if (bArr2 != null) {
-                                Arrays.fill(bArr2, (byte) 0);
-                            }
-                            if (bArr3 != null) {
-                                int length = bArr3.length;
-                                int i3 = 0;
-                                while (i3 < length) {
-                                    Arrays.fill(bArr3[i3], b3);
-                                    i3++;
-                                    b3 = 0;
-                                }
-                            }
-                            throw th;
-                        }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        bArr = c;
-                        bArr2 = null;
-                        bArr3 = null;
-                        byte b32 = 0;
-                        if (bArr != null) {
-                        }
-                        if (bArr2 != null) {
-                        }
-                        if (bArr3 != null) {
-                        }
-                        throw th;
-                    }
-                } catch (Exception e3) {
-                    e = e3;
-                    str2 = "NULL_ERROR";
-                    bArr = null;
-                } catch (Throwable th3) {
-                    th = th3;
-                    bArr = null;
-                }
-                try {
-                    bArr3 = c.o0(bArr2, new SecureRandom());
-                    try {
-                        try {
-                        } catch (Exception e4) {
-                            e = e4;
-                            str2 = "NULL_ERROR";
-                        }
-                        try {
-                            if (e21.a) {
-                                c2 = 2;
-                                byte[] bArr7 = new byte[nm7.r3];
-                                try {
-                                    int length2 = bArr3.length;
-                                    c3 = 1;
-                                    int i4 = 0;
-                                    while (i4 < length2) {
-                                        byte[] bArr8 = bArr3[i4];
-                                        String str7 = str;
-                                        while (i2 < bArr8.length) {
-                                            try {
-                                                bArr7[i2] = (byte) (bArr7[i2] ^ bArr8[i2]);
-                                                i2++;
-                                            } catch (Throwable th4) {
-                                                th = th4;
-                                                Arrays.fill(bArr7, (byte) 0);
-                                                throw th;
-                                            }
-                                        }
-                                        i4++;
-                                        str = str7;
-                                        i2 = 0;
-                                    }
-                                    c.O("enable backup: diagnostics sharesReconstructPaddedMnemonic=" + Arrays.equals(bArr2, bArr7));
-                                    Arrays.fill(bArr7, (byte) 0);
-                                } catch (Throwable th5) {
-                                    th = th5;
-                                }
-                            } else {
-                                c2 = 2;
-                                c3 = 1;
-                            }
-                            int i5 = 0;
-                            while (i5 < size) {
-                                TL_wallet.holderDc holderdc = (TL_wallet.holderDc) vector.objects.get(i5);
-                                SerializedData serializedData2 = new SerializedData();
-                                try {
-                                    TL_wallet.mnemonic_decryptedKeyPart mnemonic_decryptedkeypart = new TL_wallet.mnemonic_decryptedKeyPart();
-                                    mnemonic_decryptedkeypart.share = bArr3[i5];
-                                    mnemonic_decryptedkeypart.serializeToStream(serializedData2);
-                                    byte[] byteArray = serializedData2.toByteArray();
-                                    byte[][] bArr9 = bArr6;
-                                    try {
-                                        long key_generate_temporary_private_key = ConferenceCall.key_generate_temporary_private_key();
-                                        l2 = Long.valueOf(key_generate_temporary_private_key);
-                                        int i6 = i5;
-                                        try {
-                                            byte[] key_to_public_key = ConferenceCall.key_to_public_key(key_generate_temporary_private_key);
-                                            serializedData = serializedData2;
-                                            try {
-                                                long key_from_public_key = ConferenceCall.key_from_public_key(holderdc.public_key);
-                                                l3 = Long.valueOf(key_from_public_key);
-                                                try {
-                                                    long key_from_ecdh = ConferenceCall.key_from_ecdh(key_generate_temporary_private_key, key_from_public_key);
-                                                    Long valueOf = Long.valueOf(key_from_ecdh);
-                                                    try {
-                                                        byte[] encrypt_message_for_one = ConferenceCall.encrypt_message_for_one(key_from_ecdh, byteArray);
-                                                        byte[] bArr10 = new byte[encrypt_message_for_one.length + 32];
-                                                        System.arraycopy(key_to_public_key, 0, bArr10, 0, 32);
-                                                        System.arraycopy(encrypt_message_for_one, 0, bArr10, 32, encrypt_message_for_one.length);
-                                                        bArr9[i6] = bArr10;
-                                                        if (byteArray != null) {
-                                                            Arrays.fill(byteArray, (byte) 0);
-                                                        }
-                                                        serializedData.cleanup();
-                                                        Long[] lArr = new Long[3];
-                                                        lArr[0] = valueOf;
-                                                        lArr[c3] = l3;
-                                                        lArr[c2] = l2;
-                                                        int i7 = 0;
-                                                        for (int i8 = 3; i7 < i8; i8 = 3) {
-                                                            Long l4 = lArr[i7];
-                                                            if (l4 != null) {
-                                                                try {
-                                                                    ConferenceCall.key_destroy(l4.longValue());
-                                                                } catch (Exception unused) {
-                                                                }
-                                                            }
-                                                            i7++;
-                                                        }
-                                                        i5 = i6 + 1;
-                                                        bArr6 = bArr9;
-                                                    } catch (Throwable th6) {
-                                                        th = th6;
-                                                        bArr4 = byteArray;
-                                                        l = valueOf;
-                                                        if (bArr4 != null) {
-                                                        }
-                                                        serializedData.cleanup();
-                                                        Long[] lArr2 = new Long[3];
-                                                        lArr2[0] = l;
-                                                        lArr2[c3] = l3;
-                                                        lArr2[c2] = l2;
-                                                        while (i < 3) {
-                                                        }
-                                                        throw th;
-                                                    }
-                                                } catch (Throwable th7) {
-                                                    th = th7;
-                                                    bArr4 = byteArray;
-                                                    l = null;
-                                                }
-                                            } catch (Throwable th8) {
-                                                th = th8;
-                                                bArr4 = byteArray;
-                                                l = null;
-                                                l3 = null;
-                                                if (bArr4 != null) {
-                                                    Arrays.fill(bArr4, (byte) 0);
-                                                }
-                                                serializedData.cleanup();
-                                                Long[] lArr22 = new Long[3];
-                                                lArr22[0] = l;
-                                                lArr22[c3] = l3;
-                                                lArr22[c2] = l2;
-                                                for (i = 0; i < 3; i++) {
-                                                    Long l5 = lArr22[i];
-                                                    if (l5 != null) {
-                                                        try {
-                                                            ConferenceCall.key_destroy(l5.longValue());
-                                                        } catch (Exception unused2) {
-                                                        }
-                                                    }
-                                                }
-                                                throw th;
-                                            }
-                                        } catch (Throwable th9) {
-                                            th = th9;
-                                            serializedData = serializedData2;
-                                        }
-                                    } catch (Throwable th10) {
-                                        th = th10;
-                                        serializedData = serializedData2;
-                                        bArr4 = byteArray;
-                                        l = null;
-                                        l2 = null;
-                                        l3 = null;
-                                        if (bArr4 != null) {
-                                        }
-                                        serializedData.cleanup();
-                                        Long[] lArr222 = new Long[3];
-                                        lArr222[0] = l;
-                                        lArr222[c3] = l3;
-                                        lArr222[c2] = l2;
-                                        while (i < 3) {
-                                        }
-                                        throw th;
-                                    }
-                                } catch (Throwable th11) {
-                                    th = th11;
-                                    serializedData = serializedData2;
-                                    bArr4 = null;
-                                }
-                            }
-                            byte[][] bArr11 = bArr6;
-                            byte b4 = 0;
-                            Arrays.fill(c, (byte) 0);
-                            Arrays.fill(bArr2, (byte) 0);
-                            int length3 = bArr3.length;
-                            int i9 = 0;
-                            while (i9 < length3) {
-                                Arrays.fill(bArr3[i9], b4);
-                                i9++;
-                                b4 = 0;
-                            }
-                            for (int i10 = 0; i10 < size; i10++) {
-                                if (bArr11[i10] == null) {
-                                    c.m("part " + i10 + " is null");
-                                    qy1Var.a("PART_" + i10 + "_NULL");
-                                    return;
-                                }
-                            }
-                            TL_wallet.enableBackup enablebackup = new TL_wallet.enableBackup();
-                            enablebackup.parts = new ArrayList<>(Arrays.asList(bArr11));
-                            enablebackup.new_public_key = bArr5;
-                            cVar2.c0(y25Var, false, new p((Object) cVar2, (Object) qy1Var, (Object) enablebackup, (byte) 17));
-                            return;
-                        } catch (Exception e5) {
-                            e = e5;
-                            bArr = c;
-                            c.n("enable backup", e);
-                            qy1Var.a(e.getMessage() == null ? str2 : e.getMessage());
-                            byte b22 = 0;
-                            if (bArr != null) {
-                                Arrays.fill(bArr, (byte) 0);
-                            }
-                            if (bArr2 != null) {
-                                Arrays.fill(bArr2, (byte) 0);
-                            }
-                            if (bArr3 != null) {
-                                int length4 = bArr3.length;
-                                int i11 = 0;
-                                while (i11 < length4) {
-                                    Arrays.fill(bArr3[i11], b22);
-                                    i11++;
-                                    b22 = 0;
-                                }
-                                return;
-                            }
-                            return;
-                        }
-                    } catch (Throwable th12) {
-                        th = th12;
-                        bArr = c;
-                        byte b322 = 0;
-                        if (bArr != null) {
-                        }
-                        if (bArr2 != null) {
-                        }
-                        if (bArr3 != null) {
-                        }
-                        throw th;
-                    }
-                } catch (Exception e6) {
-                    e = e6;
-                    str2 = "NULL_ERROR";
-                    bArr = c;
-                    bArr3 = null;
-                    c.n("enable backup", e);
-                    qy1Var.a(e.getMessage() == null ? str2 : e.getMessage());
-                    byte b222 = 0;
-                    if (bArr != null) {
-                    }
-                    if (bArr2 != null) {
-                    }
-                    if (bArr3 != null) {
-                    }
-                } catch (Throwable th13) {
-                    th = th13;
-                    bArr = c;
-                    bArr3 = null;
-                    byte b3222 = 0;
-                    if (bArr != null) {
-                    }
-                    if (bArr2 != null) {
-                    }
-                    if (bArr3 != null) {
-                    }
-                    throw th;
+                vx0 vx0Var = (vx0) obj;
+                if (vx0Var.d() != null) {
+                    vx0Var.d().setDrawingFromOverlay(true);
+                    break;
                 }
                 break;
             case 5:
-                qac qacVar = (qac) this.b;
-                qac qacVar2 = (qac) this.c;
-                byte[] bArr12 = (byte[]) this.d;
-                TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.e;
-                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
-                String str8 = (String) obj2;
-                if (importedWalletProof == null) {
-                    qacVar.a(str8 != null ? str8 : "NULL_ERROR");
-                    qacVar2.a(null);
-                    return;
-                }
-                TL_wallet.replaceWallet replacewallet = new TL_wallet.replaceWallet();
-                TL_wallet.inputWalletImported inputwalletimported = new TL_wallet.inputWalletImported();
-                inputwalletimported.public_key = importedWalletProof.publicKey;
-                inputwalletimported.anchor_public_key = bArr12;
-                TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
-                inputwalletimported.proof = walletownershipproof;
-                walletownershipproof.signature = importedWalletProof.signature;
-                walletownershipproof.timestamp = importedWalletProof.timestamp;
-                replacewallet.wallet = inputwalletimported;
-                replacewallet.password = inputCheckPasswordSRP;
-                qacVar2.a(replacewallet);
-                return;
+                ((yx0) obj).f();
+                break;
             case 6:
-                q25 q25Var = (q25) this.b;
-                TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.c;
-                String str9 = (String) this.d;
-                jac jacVar = (jac) this.e;
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                String str10 = (String) obj2;
-                if (wallettransaction != null) {
-                    wallettransaction.nft = nftitem;
-                    wallettransaction.comment = str9;
-                    wallettransaction.date = ConnectionsManager.getInstance(q25Var.h.a).getCurrentTime();
-                }
-                if (q25Var.a) {
-                    return;
-                }
-                jacVar.a(wallettransaction, str10);
-                return;
+                yz0 yz0Var = (yz0) obj;
+                yz0Var.d.C();
+                yz0Var.a.quitSafely();
+                break;
             case 7:
-                b bVar = (b) this.b;
-                String str11 = (String) this.d;
-                String str12 = (String) this.c;
-                String str13 = (String) this.e;
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                bVar.getClass();
-                if (walletuseraddress == null || walletuseraddress.user_id == 0 || oc7.r1(bVar.m.a).W1(Long.valueOf(walletuseraddress.user_id)) == null) {
-                    return;
+                m21 m21Var = ((d11) obj).b;
+                q11 q11Var = m21Var.e;
+                q11Var.transitionRunningEnter = false;
+                q11Var.onEnterTransitionEnd();
+                if (m21Var.u) {
+                    m21Var.i(true);
+                    break;
                 }
-                ArrayList arrayList = bVar.b;
-                int size2 = arrayList.size();
-                int i12 = 0;
-                while (i12 < size2) {
-                    Object obj3 = arrayList.get(i12);
-                    i12++;
-                    TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj3;
-                    if (TextUtils.equals(wallettransaction2.id, str11) && (wallettransaction2.peer instanceof TL_wallet.walletTransactionPeerAddress)) {
-                        TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = new TL_wallet.walletTransactionPeerUser();
-                        wallettransactionpeeruser.user_id = walletuseraddress.user_id;
-                        wallettransactionpeeruser.address = str12;
-                        wallettransactionpeeruser.domain = str13;
-                        wallettransaction2.peer = wallettransactionpeeruser;
-                        i2 = 1;
-                    }
-                }
-                if (i2 != 0) {
-                    bVar.k();
-                    bVar.i();
-                    return;
-                }
-                return;
+                break;
             case 8:
-                u35 u35Var = (u35) this.b;
-                y25 y25Var2 = (y25) this.c;
-                s45 s45Var = (s45) this.d;
-                m45 m45Var = (m45) this.e;
-                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
-                if (tonconnectchallenge == null || tL_error4 != null) {
-                    u35Var.a(w45.z(tL_error4, "registerKey"));
-                    return;
-                } else {
-                    Utilities.e.c(new v15(y25Var2, s45Var, tonconnectchallenge, u35Var, m45Var));
-                    return;
-                }
+                gl.g(((TL_account.TL_businessChatLink) obj).link);
+                u21.b0(LaunchActivity.Q()).k(false).j();
+                break;
             case 9:
-                w45 w45Var = (w45) this.b;
-                s45 s45Var2 = (s45) this.c;
-                y25 y25Var3 = (y25) this.d;
-                qac qacVar3 = (qac) this.e;
-                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
-                String str14 = (String) obj2;
-                if (sendtransfer != null && str14 == null && w45Var.A(s45Var2) && !w45Var.i(s45Var2)) {
-                    Utilities.e.c(new v15(w45Var, sendtransfer, s45Var2, qacVar3, y25Var3));
-                    return;
-                }
-                if (str14 == null) {
-                    str14 = "Transfer unavailable or request expired";
-                }
-                w45Var.y(s45Var2, y25Var3, null, 0, str14, qacVar3);
-                return;
+                v51 v51Var = (v51) obj;
+                v51Var.d.clear();
+                v51Var.getMessagesController().h4.h(v51Var.e, v51Var.d);
+                v51Var.Y();
+                v51Var.finishFragment();
+                break;
             case 10:
-                w45 w45Var2 = (w45) this.b;
-                s45 s45Var3 = (s45) this.c;
-                y25 y25Var4 = (y25) this.d;
-                u35 u35Var2 = (u35) this.e;
-                String str15 = (String) obj;
-                String str16 = (String) obj2;
-                if (str15 != null) {
-                    try {
-                        if (w45Var2.A(s45Var3) && !w45Var2.i(s45Var3)) {
-                            w45Var2.y(s45Var3, y25Var4, new JSONObject().put("internalBoc", str15), -1, null, u35Var2);
-                            return;
+                w72 w72Var = (w72) obj;
+                ArrayList c1 = gl.c1();
+                File file = (File) c1.get(0);
+                file.getAbsolutePath();
+                if (!TextUtils.isEmpty(gba.e0)) {
+                    int size = c1.size();
+                    for (int i3 = 0; i3 < size; i3++) {
+                        File file2 = (File) c1.get(i3);
+                        if (file2.getAbsolutePath().startsWith(gba.e0) && file2.canWrite()) {
+                            file = file2;
                         }
-                    } catch (JSONException e7) {
-                        w45Var2.y(s45Var3, y25Var4, null, 0, w45.h("sign message response", e7), u35Var2);
-                        return;
                     }
                 }
-                if (str16 == null) {
-                    str16 = "Request expired or wallet changed";
+                try {
+                    StatFs statFs = new StatFs(file.getPath());
+                    gl.c3(new zp0(statFs.getBlockCountLong(), statFs.getBlockSizeLong(), statFs.getAvailableBlocksLong(), w72Var));
+                    break;
+                } catch (Exception e3) {
+                    fa4.g(e3, true);
+                    return;
                 }
-                w45Var2.y(s45Var3, y25Var4, null, 0, str16, u35Var2);
-                return;
+                break;
             case 11:
-                hs6 hs6Var = (hs6) this.b;
-                fs6 fs6Var = (fs6) this.c;
-                gs6 gs6Var = (gs6) this.d;
-                qac qacVar4 = (qac) this.e;
-                TLRPC.messages_FoundStickers messages_foundstickers = (TLRPC.messages_FoundStickers) obj;
-                hs6Var.S1.remove(fs6Var);
-                if (gs6Var == null) {
-                    gs6Var = new gs6();
-                }
-                ArrayList arrayList2 = gs6Var.a;
-                if (messages_foundstickers instanceof TLRPC.TL_messages_foundStickers) {
-                    TLRPC.TL_messages_foundStickers tL_messages_foundStickers = (TLRPC.TL_messages_foundStickers) messages_foundstickers;
-                    arrayList2.addAll(tL_messages_foundStickers.stickers);
-                    gs6Var.b = (tL_messages_foundStickers.flags & 1) != 0 ? Integer.valueOf(tL_messages_foundStickers.next_offset) : null;
-                }
-                hs6Var.T1.put(fs6Var, gs6Var);
-                qacVar4.a(arrayList2);
-                return;
+                ((i61) obj).dismiss();
+                break;
             case 12:
-                hs6 hs6Var2 = (hs6) this.b;
-                String str17 = (String) this.d;
-                qac qacVar5 = (qac) this.c;
-                TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.e;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
-                hs6Var2.J0.remove(str17);
-                if (qacVar5 != null) {
-                    qacVar5.a(tL_messages_stickerSet);
-                }
-                if (tL_messages_stickerSet != null) {
-                    TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-                    if (stickerSet != null) {
-                        hs6Var2.J.k(tL_messages_stickerSet, stickerSet.id);
-                        hs6Var2.O.put(tL_messages_stickerSet.set.short_name.toLowerCase(), tL_messages_stickerSet);
-                        if (inputStickerSet instanceof TLRPC.TL_inputStickerSetEmojiDefaultStatuses) {
-                            hs6Var2.P = tL_messages_stickerSet;
-                            hs6Var2.Q = tL_messages_stickerSet;
-                        }
-                    }
-                    hs6Var2.X1(tL_messages_stickerSet);
-                    hs6Var2.getNotificationCenter().k(65, Long.valueOf(tL_messages_stickerSet.set.id), tL_messages_stickerSet);
-                    return;
-                }
-                return;
+                ((CameraController) obj).lambda$initCamera$1();
+                break;
             case 13:
-                he heVar = (he) this.b;
-                r35 r35Var = (r35) this.c;
-                String str18 = (String) this.d;
-                ylb ylbVar2 = (ylb) this.e;
-                heVar.dismiss();
-                if (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue) {
-                    r35Var.run();
-                    return;
+                da1 da1Var = (da1) ((o1) obj).b;
+                try {
+                    CameraView cameraView = da1Var.d;
+                    cameraView.focusToPoint(cameraView.getWidth() / 2, da1Var.d.getHeight() / 2, false);
+                } catch (Exception unused) {
                 }
-                my0 my0Var = xp7.a;
-                if (my0Var != null) {
-                    my0Var.dismiss();
-                    xp7.a = null;
+                CameraView cameraView2 = da1Var.d;
+                if (cameraView2 != null) {
+                    da1Var.g0(cameraView2.getTextureView().getBitmap());
+                    break;
                 }
-                xp7.a().I(R.raw.error, jb6.M0(2131753093, null), TextUtils.isEmpty(str18) ? jb6.M0(2131753094, null) : gm.L2(cmb.v0(cmb.wj, ylbVar2), jb6.a0(null, null, 2131753095, str18))).j();
-                return;
+                break;
             case 14:
-                wsa wsaVar = (wsa) this.b;
-                jac jacVar2 = (jac) this.c;
-                ArrayList arrayList3 = (ArrayList) this.d;
-                Runnable runnable2 = (Runnable) this.e;
-                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj2;
-                if (updates2 == null) {
-                    if (tL_error5 != null) {
-                        if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error5.text)) {
-                            alertDialog$Builder = new AlertDialog$Builder(0, new r63(), wsaVar.getContext());
-                            alertDialog$Builder.a.S = jb6.M0(2131749688, null);
-                            alertDialog$Builder.a.U = gm.S2(jb6.M0(2131749690, null));
-                        } else {
-                            String str19 = tL_error5.text;
-                            if (str19 == null || !str19.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
-                                wsaVar.j().g0(tL_error5, false);
-                                runnable2.run();
-                                return;
-                            } else {
-                                long parseLong = Long.parseLong(tL_error5.text.substring(25)) + ConnectionsManager.getInstance(wsaVar.a).getCurrentTime();
-                                alertDialog$Builder = new AlertDialog$Builder(0, new r63(), wsaVar.getContext());
-                                alertDialog$Builder.a.S = jb6.M0(2131749688, null);
-                                alertDialog$Builder.a.U = gm.S2(jb6.a0(null, null, 2131749689, jb6.x(parseLong, true)));
-                            }
-                        }
-                        b10.t(null, 2131747564, alertDialog$Builder, null);
-                        runnable2.run();
-                        return;
-                    }
-                    return;
+                ua1 ua1Var = (ua1) obj;
+                if (e66.e(512)) {
+                    ua1Var.invalidateSelf();
+                    break;
                 }
-                ArrayList w0 = oc7.w0(updates2, TL_update.TL_updateNewMessage.class);
-                int size3 = w0.size();
-                int i13 = 0;
-                while (true) {
-                    if (i13 < size3) {
-                        Object obj4 = w0.get(i13);
-                        i13++;
-                        TLRPC.Message message = ((TL_update.TL_updateNewMessage) obj4).message;
-                        if (message != null && (message.action instanceof TLRPC.TL_messageActionStarGiftUnique)) {
-                            k47Var = new k47(wsaVar.a, message, false, false);
-                        }
-                    } else {
-                        k47Var = null;
-                    }
-                }
-                oc7.r1(wsaVar.a).T3(updates2, false);
-                if (k47Var != null) {
-                    TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) k47Var.k.action).gift;
-                    jacVar2.a(starGift, new no8((Object) wsaVar, (Object) k47Var, (Object) arrayList3, (Object) starGift, (byte) 27));
-                    return;
-                }
-                jacVar2.a(null, null);
-                jva.v(wsaVar.a, false).L();
-                ava D = jva.v(wsaVar.a, false).D(z8c.h(wsaVar.a).e(), false);
-                if (D != null) {
-                    D.l(arrayList3, null);
-                    return;
-                }
-                return;
+                break;
             case 15:
-                wsa wsaVar2 = (wsa) this.b;
-                k11 k11Var = (k11) this.c;
-                yw4 yw4Var = (yw4) this.d;
-                hqa hqaVar = (hqa) this.e;
-                TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
-                TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj2;
-                if (stargiftdepositpayload != null) {
-                    hqaVar.a(stargiftdepositpayload);
-                    return;
-                } else {
-                    k11Var.b();
-                    (yw4Var != null ? new c41(yw4Var.c, wsaVar2.J0) : wsaVar2.j()).g0(tL_error6, false);
-                    return;
-                }
+                ((db1) obj).c.a0 = false;
+                break;
             case 16:
-                boolean[] zArr = (boolean[]) this.b;
-                el7[] el7VarArr = (el7[]) this.c;
-                ylb ylbVar3 = (ylb) this.d;
-                xna xnaVar = (xna) this.e;
-                String str20 = (String) obj;
-                String str21 = (String) obj2;
-                zArr[0] = false;
-                if (str21 != null) {
-                    new c41(el7VarArr[0].F, ylbVar3).f0(str21, false);
-                    return;
+                ((hb1) obj).invalidateSelf();
+                break;
+            case 17:
+                Runnable runnable = ((yb1) obj).d;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-                xnaVar.setPadding(gm.L(19.0f), gm.L(9.0f), gm.L(15.0f), gm.L(8.0f));
-                SpannableString spannableString = new SpannableString(str20);
-                wkb wkbVar = new wkb();
-                wkbVar.a |= 256;
-                spannableString.setSpan(new xkb(wkbVar, 0), 0, spannableString.length(), 33);
-                xnaVar.setText(spannableString);
-                xnaVar.setTextIsSelectable(true);
-                xnaVar.setOnClickListener(null);
-                xnaVar.setStateListAnimator(null);
-                if (xnaVar.d || xnaVar.f) {
-                    return;
+                break;
+            case 18:
+                jb4 jb4Var = (jb4) obj;
+                jb4Var.g = null;
+                jb4Var.f = null;
+                ((Runnable) jb4Var.e).run();
+                break;
+            case 19:
+                zd1 zd1Var = (zd1) obj;
+                yd1 yd1Var = zd1Var.a;
+                if (yd1Var != null) {
+                    yd1Var.requestFocus();
+                    gl.E3(zd1Var.a);
+                    break;
                 }
-                xnaVar.e = true;
-                if (xnaVar.getLayout() == null || xnaVar.isLayoutRequested()) {
-                    return;
+                break;
+            case 20:
+                me1 me1Var = (me1) obj;
+                String str = me1Var.r;
+                if (str == null || str.length() > 0) {
+                    me1Var.n = true;
+                    me1Var.c0(me1Var.w.size() <= 0);
+                    me1Var.n = false;
+                    break;
                 }
-                xnaVar.c((xnaVar.getWidth() / 2.0f) - xnaVar.getPaddingLeft(), ((xnaVar.getHeight() / 2.0f) - xnaVar.getPaddingTop()) + xnaVar.getScrollY());
-                return;
+                break;
+            case 21:
+                ef1 ef1Var = (ef1) obj;
+                if (ef1Var.W != -1) {
+                    ef1Var.Y.getNotificationCenter().j(ef1Var.W);
+                    ef1Var.W = -1;
+                }
+                if (w01.a) {
+                    fa4.b("admin logs chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            case 22:
+                nf1 nf1Var = ((mf1) obj).f;
+                nf1Var.getNotificationCenter().j(nf1Var.K0);
+                break;
+            case 23:
+                AtomicReference atomicReference = (AtomicReference) obj;
+                if (atomicReference.get() != null) {
+                    ((Runnable) atomicReference.getAndSet(null)).run();
+                    break;
+                }
+                break;
+            case 24:
+                ((a) obj).invalidate();
+                break;
+            case 25:
+                ((a8) obj).performClick();
+                break;
+            case 26:
+                ((ht) obj).a(Boolean.FALSE);
+                break;
+            case 27:
+                ((p) obj).a(Boolean.FALSE, null);
+                break;
+            case 28:
+                qp1 qp1Var = (qp1) obj;
+                i = ((d) ((mu1) qp1Var.d)).currentAccount;
+                kk7.f(i).j(qp1Var.b);
+                break;
             default:
-                ((asc) this.b).h0((c) this.c, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
-                return;
+                rp1 rp1Var = (rp1) obj;
+                i2 = ((d) ((mu1) rp1Var.e)).currentAccount;
+                kk7.f(i2).j(rp1Var.c);
+                break;
         }
-    }
-
-    public /* synthetic */ nv0(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-    }
-
-    public /* synthetic */ nv0(Object obj, String str, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.d = str;
-        this.c = obj2;
-        this.e = obj3;
     }
 }

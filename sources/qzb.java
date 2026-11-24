@@ -1,58 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class qzb {
-    public final int a;
-    public final int b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final long f;
-    public final go4 g;
-    public final boolean h;
-    public final oo5 i;
-    public final oo5 j;
-    public final int k;
-    public final int l;
-    public final boolean m;
-    public final szb[] n;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-    public qzb(pzb pzbVar) {
-        this.a = pzbVar.a;
-        this.b = pzbVar.b;
-        this.c = pzbVar.c;
-        this.d = pzbVar.d;
-        this.e = pzbVar.e;
-        this.f = pzbVar.f;
-        go4 go4Var = pzbVar.g;
-        go4Var.getClass();
-        this.g = go4Var;
-        this.h = pzbVar.h;
-        this.n = pzbVar.i;
-        this.k = pzbVar.j;
-        this.i = pzbVar.k;
-        this.j = pzbVar.l;
-        this.m = pzbVar.m;
-        this.l = pzbVar.n;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class qzb extends w39 {
+    public Context c;
+    public View d;
+    public int e;
+
+    public final void D(View view) {
+        if (this.d == view) {
+            return;
+        }
+        this.e++;
+        this.d = view;
+        g(1);
     }
 
-    public final pzb a() {
-        pzb pzbVar = new pzb();
-        pzbVar.a = this.a;
-        pzbVar.b = this.b;
-        pzbVar.c = this.c;
-        pzbVar.d = this.d;
-        pzbVar.e = this.e;
-        pzbVar.f = this.f;
-        pzbVar.g = this.g;
-        pzbVar.h = this.h;
-        pzbVar.i = this.n;
-        pzbVar.j = this.k;
-        pzbVar.k = this.i;
-        pzbVar.l = this.j;
-        pzbVar.m = this.m;
-        pzbVar.n = this.l;
-        return pzbVar;
+    @Override // w39
+    public final int b() {
+        return 2;
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        if (i == 0) {
+            return 0;
+        }
+        return this.e;
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        return i == 0 ? new y29(new pzb(this.c, (byte) 0)) : new y29(this.d);
     }
 }

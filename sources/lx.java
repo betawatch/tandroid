@@ -1,195 +1,74 @@
 // default package
 
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import java.io.File;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.o;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class lx implements vd3 {
+    public final char a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class lx implements mb8 {
-    public final TLRPC.WebPage a;
-    public final List b;
-    public final /* synthetic */ o c;
-
-    public lx(o oVar, TLRPC.WebPage webPage, List list) {
-        this.c = oVar;
-        this.a = webPage;
-        this.b = list;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public lx(byte b) {
+        this('*');
+        switch (b) {
+            case 1:
+                this('_');
+                break;
+            default:
+                break;
+        }
     }
 
-    @Override // mb8
-    public final boolean a(int i) {
-        return i < this.b.size() && i >= 0 && dy.g(this.a, get(i));
+    @Override // vd3
+    public final void a(ugb ugbVar, ugb ugbVar2, int i) {
+        String.valueOf(this.a);
+        u14 u14Var = i == 1 ? new u14((byte) 0) : new u14((byte) 3);
+        tg6 tg6Var = (tg6) ugbVar.f;
+        while (tg6Var != null && tg6Var != ugbVar2) {
+            tg6 tg6Var2 = (tg6) tg6Var.f;
+            u14Var.b(tg6Var);
+            tg6Var = tg6Var2;
+        }
+        u14Var.g();
+        tg6 tg6Var3 = (tg6) ugbVar.f;
+        u14Var.f = tg6Var3;
+        if (tg6Var3 != null) {
+            tg6Var3.e = u14Var;
+        }
+        u14Var.e = ugbVar;
+        ugbVar.f = u14Var;
+        tg6 tg6Var4 = (tg6) ugbVar.b;
+        u14Var.b = tg6Var4;
+        if (((tg6) u14Var.f) == null) {
+            tg6Var4.d = u14Var;
+        }
     }
 
-    @Override // mb8
-    public final File b(int i) {
-        TLRPC.Document a;
-        TLRPC.PhotoSize w;
-        if (i < this.b.size() && i >= 0) {
-            TL_iv.PageBlock pageBlock = get(i);
-            boolean z = pageBlock instanceof TL_iv.pageBlockPhoto;
-            TLRPC.WebPage webPage = this.a;
-            if (z) {
-                TLRPC.Photo e = dy.e(webPage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-                if (e != null && (w = bc4.w(e.sizes, gm.Y0(false), false, null, false)) != null) {
-                    return dy.c(w);
-                }
-            } else if ((pageBlock instanceof TL_iv.pageBlockVideo) && (a = dy.a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) != null) {
-                return dy.c(a);
-            }
-        }
-        return null;
-    }
-
-    @Override // mb8
-    public final String c(int i) {
-        TLObject d = d(i);
-        if (d instanceof TLRPC.Photo) {
-            d = bc4.w(((TLRPC.Photo) d).sizes, gm.Y0(false), false, null, false);
-        }
-        return bc4.r(null, d);
-    }
-
-    @Override // mb8
-    public final TLObject d(int i) {
-        if (i < this.b.size() && i >= 0) {
-            TL_iv.PageBlock pageBlock = get(i);
-            boolean z = pageBlock instanceof TL_iv.pageBlockPhoto;
-            TLRPC.WebPage webPage = this.a;
-            if (z) {
-                return dy.e(webPage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-            }
-            if (pageBlock instanceof TL_iv.pageBlockVideo) {
-                return dy.a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-            }
-        }
-        return null;
-    }
-
-    @Override // mb8
-    public final boolean e(int i) {
-        if (i < this.b.size() && i >= 0 && !dy.g(this.a, get(i))) {
-            ey eyVar = this.c.v0[0].c;
-            TL_iv.PageBlock pageBlock = get(i);
-            eyVar.getClass();
-            if (ey.I(pageBlock) == 5) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // mb8
-    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
-        TLRPC.PhotoSize w;
-        if (!(tLObject instanceof TLRPC.Photo)) {
-            if (!(tLObject instanceof TLRPC.Document) || (w = bc4.w(((TLRPC.Document) tLObject).thumbs, 90, false, null, false)) == null) {
-                return null;
-            }
-            int i = w.size;
-            iArr[0] = i;
-            if (i == 0) {
-                iArr[0] = -1;
-            }
-            return w;
-        }
-        TLRPC.PhotoSize w2 = bc4.w(((TLRPC.Photo) tLObject).sizes, gm.Y0(false), false, null, false);
-        if (w2 == null) {
-            iArr[0] = -1;
-            return null;
-        }
-        int i2 = w2.size;
-        iArr[0] = i2;
-        if (i2 == 0) {
-            iArr[0] = -1;
-        }
-        return w2;
-    }
-
-    @Override // mb8
-    public final Object g() {
+    @Override // vd3
+    public final char b() {
         return this.a;
     }
 
-    @Override // mb8
-    public final TL_iv.PageBlock get(int i) {
-        return (TL_iv.PageBlock) this.b.get(i);
+    @Override // vd3
+    public final int c() {
+        return 1;
     }
 
-    @Override // mb8
-    public final List getAll() {
-        return this.b;
-    }
-
-    @Override // mb8
-    public final void h(TL_iv.PageBlock pageBlock) {
-        o oVar = this.c;
-        int childCount = oVar.v0[0].b.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childAt = oVar.v0[0].b.getChildAt(i);
-            if (childAt instanceof pw) {
-                pw pwVar = (pw) childAt;
-                int indexOf = pwVar.e.items.indexOf(pageBlock);
-                if (indexOf != -1) {
-                    pwVar.b.x(indexOf, false);
-                    return;
-                }
+    @Override // vd3
+    public final int d(ud3 ud3Var, ud3 ud3Var2) {
+        if (ud3Var.d || ud3Var2.c) {
+            int i = ud3Var2.h;
+            if (i % 3 != 0 && (ud3Var.h + i) % 3 == 0) {
+                return 0;
             }
         }
+        return (ud3Var.g < 2 || ud3Var2.g < 2) ? 1 : 2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0088 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x002b  */
-    @Override // mb8
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final CharSequence i(int i) {
-        SpannableStringBuilder spannableStringBuilder;
-        TL_iv.PageBlock pageBlock = get(i);
-        Object[] objArr = 0;
-        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
-            String str = ((TL_iv.pageBlockPhoto) pageBlock).url;
-            if (!TextUtils.isEmpty(str)) {
-                spannableStringBuilder = new SpannableStringBuilder(str);
-                spannableStringBuilder.setSpan(new kx(this, str, objArr == true ? 1 : 0), 0, str.length(), 34);
-                if (spannableStringBuilder == null) {
-                    return spannableStringBuilder;
-                }
-                o oVar = this.c;
-                oVar.getClass();
-                TL_iv.RichText t = o.t(2, pageBlock);
-                CharSequence z = o.z(oVar, this.a, null, t, t, pageBlock, -gm.L(100.0f));
-                if (!(z instanceof Spannable)) {
-                    return z;
-                }
-                Spannable spannable = (Spannable) z;
-                vjb[] vjbVarArr = (vjb[]) spannable.getSpans(0, z.length(), vjb.class);
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(z.toString());
-                if (vjbVarArr != null && vjbVarArr.length > 0) {
-                    for (int i2 = 0; i2 < vjbVarArr.length; i2++) {
-                        spannableStringBuilder2.setSpan(new kx(this, vjbVarArr[i2].b, (byte) 1), spannable.getSpanStart(vjbVarArr[i2]), spannable.getSpanEnd(vjbVarArr[i2]), 33);
-                    }
-                }
-                return spannableStringBuilder2;
-            }
-        }
-        spannableStringBuilder = null;
-        if (spannableStringBuilder == null) {
-        }
+    @Override // vd3
+    public final char e() {
+        return this.a;
     }
 
-    @Override // mb8
-    public final int j() {
-        return this.b.size();
+    public lx(char c) {
+        this.a = c;
     }
 }

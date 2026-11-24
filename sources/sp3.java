@@ -1,39 +1,15 @@
 // default package
 
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class sp3 extends ss9 {
-    public static final /* synthetic */ long f = fy.a.objectFieldOffset(sp3.class.getDeclaredField("_decision$volatile"));
-    private volatile /* synthetic */ int _decision$volatile;
+public interface sp3 {
+    void B(boolean z);
 
-    @Override // ss9, ov5
-    public final void f(Object obj) {
-        g(obj);
-    }
+    void N(String str);
 
-    @Override // ss9, ov5
-    public final void g(Object obj) {
-        while (true) {
-            Unsafe unsafe = fy.a;
-            long j = f;
-            int intVolatile = unsafe.getIntVolatile(this, j);
-            if (intVolatile != 0) {
-                if (intVolatile == 1) {
-                    r5c.c(fne.a(this.e), cvd.a(obj));
-                    return;
-                } else {
-                    dq9.m("Already resumed");
-                    return;
-                }
-            }
-            sp3 sp3Var = this;
-            if (unsafe.compareAndSwapInt(sp3Var, j, 0, 2)) {
-                return;
-            } else {
-                this = sp3Var;
-            }
-        }
-    }
+    int getObserverTag();
+
+    void i(long j, long j2);
+
+    void l(long j, long j2);
 }

@@ -1,29 +1,35 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class uw0 implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class uw0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ wx0 b;
+    public final /* synthetic */ zha b;
 
-    public /* synthetic */ uw0(wx0 wx0Var, byte b) {
+    public /* synthetic */ uw0(zha zhaVar, byte b) {
         this.a = b;
-        this.b = wx0Var;
+        this.b = zhaVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        wx0 wx0Var = this.b;
+        zha zhaVar = this.b;
         switch (b) {
             case 0:
-                wx0Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wx0Var.h();
+                zhaVar.a(true);
+                break;
+            case 1:
+                zhaVar.a(true);
+                break;
+            case 2:
+                if (!zhaVar.I && zhaVar.U) {
+                    zhaVar.c();
+                    break;
+                }
                 break;
             default:
-                wx0Var.F.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                zhaVar.a(true);
                 break;
         }
     }

@@ -1,32 +1,107 @@
 // default package
 
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class w4d extends b4 implements uc9 {
-    public static final Parcelable.Creator<w4d> CREATOR = new d3d((byte) 10);
-    public final ArrayList a;
-    public final String b;
-
-    public w4d(String str, ArrayList arrayList) {
-        this.a = arrayList;
-        this.b = str;
+public abstract class w4d extends dzc implements IInterface {
+    public w4d() {
+        super("com.google.android.gms.wearable.internal.IWearableCallbacks", (byte) 12);
     }
 
-    @Override // uc9
-    public final Status a() {
-        return this.b != null ? Status.e : Status.r;
+    public void T(ede edeVar) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.n(parcel, 1, this.a);
-        mve.l(parcel, 2, this.b);
-        mve.s(parcel, r);
+    public void U() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // dzc
+    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
+        switch (i) {
+            case 2:
+                throw yjb.m(parcel);
+            case 3:
+                throw yjb.m(parcel);
+            case 4:
+                throw yjb.m(parcel);
+            case 5:
+                throw yjb.m(parcel);
+            case 6:
+                throw yjb.m(parcel);
+            case 7:
+                ede edeVar = (ede) bhd.a(parcel, ede.CREATOR);
+                bhd.b(parcel);
+                T(edeVar);
+                break;
+            case 8:
+                throw yjb.m(parcel);
+            case 9:
+                throw yjb.m(parcel);
+            case 10:
+                throw yjb.m(parcel);
+            case 11:
+                bhd.b(parcel);
+                U();
+                break;
+            case 12:
+                throw yjb.m(parcel);
+            case 13:
+                throw yjb.m(parcel);
+            case 14:
+                throw yjb.m(parcel);
+            case 15:
+                throw yjb.m(parcel);
+            case 16:
+                throw yjb.m(parcel);
+            case 17:
+                throw yjb.m(parcel);
+            case 18:
+                throw yjb.m(parcel);
+            case 19:
+                throw yjb.m(parcel);
+            case 20:
+                throw yjb.m(parcel);
+            case 21:
+            case 24:
+            case 25:
+            case 31:
+            case 32:
+            case 33:
+            default:
+                return false;
+            case 22:
+                throw yjb.m(parcel);
+            case 23:
+                throw yjb.m(parcel);
+            case 26:
+                throw yjb.m(parcel);
+            case 27:
+                throw yjb.m(parcel);
+            case 28:
+                throw yjb.m(parcel);
+            case 29:
+                throw yjb.m(parcel);
+            case kk7.S /* 30 */:
+                throw yjb.m(parcel);
+            case 34:
+                throw yjb.m(parcel);
+            case 35:
+                throw yjb.m(parcel);
+            case 36:
+                throw yjb.m(parcel);
+            case 37:
+                throw yjb.m(parcel);
+            case 38:
+                throw yjb.m(parcel);
+            case 39:
+                throw yjb.m(parcel);
+            case 40:
+                throw yjb.m(parcel);
+        }
+        parcel2.writeNoException();
+        return true;
     }
 }

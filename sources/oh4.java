@@ -1,44 +1,26 @@
 // default package
 
-import android.view.View;
-import android.view.ViewPropertyAnimator;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class oh4 extends sc3 {
-    @Override // sc3
-    public final void D(u69 u69Var) {
-        View view = u69Var.a;
-        ViewPropertyAnimator animate = view.animate();
-        this.A.add(u69Var);
-        animate.setDuration(this.d).alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setListener(new rb2(this, u69Var, animate, view)).start();
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class oh4 {
+    public long a;
+    public Object b;
+    public Serializable c;
+    public Object d;
 
-    @Override // sc3
-    public final long K(long j, long j2, long j3) {
-        return 0L;
-    }
-
-    @Override // sc3
-    public final long L() {
-        return 0L;
-    }
-
-    @Override // d69
-    public final long h() {
-        return 220L;
-    }
-
-    @Override // d69
-    public final long j() {
-        return 220L;
-    }
-
-    @Override // sc3, jka
-    public final void p(u69 u69Var) {
-        super.p(u69Var);
-        View view = u69Var.a;
-        view.setScaleX(0.0f);
-        view.setScaleY(0.0f);
+    public final void a(nv5 nv5Var, boolean z) {
+        tp5 tp5Var = (tp5) this.d;
+        if (((nv5) this.c) != nv5Var) {
+            gl.r(tp5Var);
+            this.c = nv5Var;
+            if (z) {
+                ((dyc) this.b).a(nv5Var);
+            }
+            if (nv5Var == nv5.b || nv5Var == nv5.c) {
+                gl.d3(tp5Var, this.a);
+            }
+        }
     }
 }

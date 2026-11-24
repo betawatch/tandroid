@@ -1,26 +1,23 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class w16 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ LaunchActivity a;
+public final class w16 extends ah8 {
+    public final /* synthetic */ h26 S;
 
-    public w16(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w16(h26 h26Var, Context context, wjb wjbVar) {
+        super(wjbVar, context, true);
+        this.S = h26Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.d1);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.d1);
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.S.a2) {
+            return;
+        }
+        super.invalidate();
     }
 }

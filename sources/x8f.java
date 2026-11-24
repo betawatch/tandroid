@@ -1,44 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class x8f extends wgf {
-    private static final ahf zzb = new lfd();
-    private static final x8f zzd;
+public final class x8f extends vef {
+    private static final x8f zzb;
+    private int zzd;
     private int zze;
-    private boolean zzg;
-    private boolean zzh;
-    private jdf zzi;
-    private boolean zzj;
-    private long zzl;
-    private long zzm;
     private String zzf = "";
-    private zgf zzk = xgf.d;
 
     static {
         x8f x8fVar = new x8f();
-        zzd = x8fVar;
-        wgf.e(x8f.class, x8fVar);
+        zzb = x8fVar;
+        vef.e(x8f.class, x8fVar);
     }
 
-    @Override // wgf
-    public final Object h(int i, wgf wgfVar) {
+    @Override // vef
+    public final Object h(int i, vef vefVar) {
         int i2 = i - 1;
         if (i2 == 0) {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new tif(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဉ\u0003\u0004ဇ\u0004\u0005ࠬ\u0006ဇ\u0002\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zze", "zzf", "zzg", "zzi", "zzj", "zzk", kg7.y, "zzh", "zzl", "zzm"});
+            return new sgf(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
         if (i2 == 3) {
             return new x8f();
         }
         if (i2 == 4) {
-            return new wae(zzd);
+            return new v8f(zzb);
         }
         if (i2 != 5) {
             return null;
         }
-        return zzd;
+        return zzb;
     }
 }

@@ -1,21 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class uj7 {
-    public final mo5 a;
-    public final int[] b;
+public final class uj7 extends m19 {
+    public static final uj7 c;
 
-    public uj7(y79 y79Var, int[] iArr, byte b) {
-        switch (b) {
-            case 1:
-                this.a = mo5.q(y79Var);
-                this.b = iArr;
-                break;
-            default:
-                this.a = mo5.q(y79Var);
-                this.b = iArr;
-                break;
-        }
+    static {
+        uj7 uj7Var = new uj7();
+        c = uj7Var;
+        uj7Var.setStackTrace(m19.b);
+    }
+
+    public static uj7 a() {
+        return m19.a ? new uj7() : c;
     }
 }

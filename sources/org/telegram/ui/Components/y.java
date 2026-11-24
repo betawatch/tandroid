@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class y extends AnimatorListenerAdapter {
     public final /* synthetic */ ThemeEditorView.EditorAlert a;
@@ -19,7 +19,7 @@ public final class y extends AnimatorListenerAdapter {
         if (editorAlert.m1.getAdapter() == editorAlert.s1) {
             e0 e0Var = editorAlert.p1.b;
             e0Var.requestFocus();
-            gm.E3(e0Var);
+            gl.E3(e0Var);
         }
         editorAlert.l1.setVisibility(8);
         editorAlert.u1.setVisibility(8);

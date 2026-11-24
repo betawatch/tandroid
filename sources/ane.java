@@ -1,48 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ane {
-    public static void a(vib vibVar, vib vibVar2, int i) {
-        if (vibVar == null || vibVar2 == null || vibVar == vibVar2) {
-            return;
-        }
-        StringBuilder sb = new StringBuilder(i);
-        sb.append(vibVar.g);
-        ui6 ui6Var = (ui6) vibVar.f;
-        ui6 ui6Var2 = (ui6) vibVar2.f;
-        while (ui6Var != ui6Var2) {
-            sb.append(((vib) ui6Var).g);
-            ui6 ui6Var3 = (ui6) ui6Var.f;
-            ui6Var.g();
-            ui6Var = ui6Var3;
-        }
-        vibVar.g = sb.toString();
+public abstract class ane extends dzc implements gse {
+    public ane() {
+        super("com.google.android.gms.location.internal.IFusedLocationProviderCallback", (byte) 8);
     }
 
-    public static void b(ui6 ui6Var, ui6 ui6Var2) {
-        vib vibVar = null;
-        vib vibVar2 = null;
-        int i = 0;
-        while (ui6Var != null) {
-            if (ui6Var instanceof vib) {
-                vibVar2 = (vib) ui6Var;
-                if (vibVar == null) {
-                    vibVar = vibVar2;
-                }
-                i = vibVar2.g.length() + i;
-            } else {
-                a(vibVar, vibVar2, i);
-                vibVar = null;
-                vibVar2 = null;
-                i = 0;
+    @Override // dzc
+    public final boolean e(Parcel parcel, int i) {
+        if (i != 1) {
+            if (i != 2) {
+                return false;
             }
-            if (ui6Var == ui6Var2) {
-                break;
-            } else {
-                ui6Var = (ui6) ui6Var.f;
-            }
+            zze();
+            return true;
         }
-        a(vibVar, vibVar2, i);
+        w5e w5eVar = (w5e) rgd.a(parcel, w5e.CREATOR);
+        rgd.b(parcel);
+        t(w5eVar);
+        return true;
     }
 }

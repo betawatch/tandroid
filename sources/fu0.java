@@ -1,62 +1,77 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.app.Activity;
+import java.lang.ref.WeakReference;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fu0 implements DialogInterface.OnCancelListener {
+public final class fu0 implements gk7, hk7 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final Object b;
+    public final Object c;
 
-    public /* synthetic */ fu0(Object obj, int i, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
+    public fu0(kk7 kk7Var, gk7 gk7Var) {
+        this.a = (byte) 2;
+        this.b = new wtc(kk7Var, this);
+        this.c = new WeakReference(gk7Var);
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // hk7
+    public final void a() {
+        ((wtc) this.b).a();
+    }
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
         byte b = this.a;
-        int i = this.b;
-        Object obj = this.c;
+        Object obj = this.b;
+        Object obj2 = this.c;
         switch (b) {
             case 0:
-                ConnectionsManager.getInstance(((ku0) obj).a).cancelRequest(i, true);
+                if (i == 309) {
+                    int intValue = ((Integer) objArr[0]).intValue();
+                    int[] iArr = (int[]) objArr[2];
+                    if (intValue == 5000) {
+                        kk7.e().n(this, kk7.f5);
+                        hv0 hv0Var = (hv0) obj2;
+                        if (iArr[0] != 0) {
+                            hv0Var.u((ev0) obj, "scan_qr_popup_closed", new JSONObject());
+                            break;
+                        } else {
+                            Activity activity = hv0Var.a0;
+                            if (activity != null) {
+                                hv0Var.h0 = da1.i0(activity, 3, new l69(hv0Var, (byte) 12));
+                                break;
+                            }
+                        }
+                    }
+                }
                 break;
             case 1:
-                ((uf1) obj).h0(i);
-                break;
-            case 2:
-                ((iv1) obj).a.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 3:
-                int i2 = ChatActivityEnterView.z7;
-                ((ChatActivityEnterView) obj).F3.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 4:
-                ba2 ba2Var = (ba2) obj;
-                ba2Var.O0 = false;
-                ba2Var.b = null;
-                ba2Var.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 5:
-                ConnectionsManager.getInstance(((e24) ((b24) obj).c.b).G.d1).cancelRequest(i, true);
-                break;
-            case 6:
-                ConnectionsManager.getInstance(((g95) obj).n1.a).cancelRequest(i, true);
-                break;
-            case 7:
-                ((pc6) obj).getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 8:
-                ((dw9) obj).getConnectionsManager().cancelRequest(i, true);
+                if (i == 277) {
+                    ((hd) obj).dismiss();
+                    kk7.e().n(this, i);
+                    gl.d3(new tp5(this, (byte) 1), 100L);
+                    break;
+                }
                 break;
             default:
-                ((zob) obj).d0(i);
-                break;
+                gk7 gk7Var = (gk7) ((WeakReference) obj2).get();
+                if (gk7Var == null) {
+                    fa4.d("MEMORY_LEAK observer " + i + " with destroyed WeakReference");
+                    a();
+                    break;
+                } else {
+                    gk7Var.didReceivedNotification(i, i2, objArr);
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ fu0(gk7 gk7Var, Object obj, byte b) {
+        this.a = b;
+        this.c = gk7Var;
+        this.b = obj;
     }
 }

@@ -1,30 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class q8b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ v9b b;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.tl.TL_stories;
 
-    public /* synthetic */ q8b(v9b v9bVar, byte b) {
-        this.a = b;
-        this.b = v9bVar;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class q8b extends n8b {
+    public final p8b a;
+    public final TL_stories.TL_mediaAreaWeather b;
+    public View c;
+    public final /* synthetic */ r8b d;
+
+    public q8b(r8b r8bVar, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
+        this.d = r8bVar;
+        this.b = tL_mediaAreaWeather;
+        fsc fscVar = new fsc();
+        fscVar.c = tL_mediaAreaWeather.emoji;
+        fscVar.d = (float) tL_mediaAreaWeather.temperature_c;
+        p8b p8bVar = new p8b(this, a.b, gl.p);
+        this.a = p8bVar;
+        p8bVar.setMaxWidth(gl.q.x);
+        p8bVar.setIsVideo(false);
+        p8bVar.d(y6c.t0, fscVar.c);
+        p8bVar.setText(fscVar.a());
+        p8bVar.e(3, tL_mediaAreaWeather.color);
+        p8bVar.f();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        v9b v9bVar = this.b;
-        switch (b) {
-            case 0:
-                v9bVar.c(false);
-                v9bVar.n2 = null;
-                break;
-            default:
-                v9bVar.getClass();
-                v9bVar.d(1.0f, true, new f8b(v9bVar, (byte) 27));
-                v9bVar.c1.b(true, true);
-                break;
+    @Override // n8b
+    public final void a(Canvas canvas, float f) {
+        r8b r8bVar = this.d;
+        double d = r8bVar.b;
+        double d2 = r8bVar.d;
+        TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = this.b;
+        TL_stories.MediaAreaCoordinates mediaAreaCoordinates = tL_mediaAreaWeather.coordinates;
+        float f2 = (float) (((mediaAreaCoordinates.x * d2) / 100.0d) + d);
+        double d3 = r8bVar.c;
+        double d4 = r8bVar.e;
+        float f3 = (float) (((mediaAreaCoordinates.y * d4) / 100.0d) + d3);
+        float f4 = (float) ((d2 * mediaAreaCoordinates.w) / 100.0d);
+        float f5 = (float) ((d4 * mediaAreaCoordinates.h) / 100.0d);
+        canvas.save();
+        canvas.translate(f2, f3);
+        p8b p8bVar = this.a;
+        float min = Math.min(f4 / ((p8bVar.getWidthInternal() - p8bVar.getPaddingLeft()) - p8bVar.getPaddingRight()), f5 / ((p8bVar.getHeightInternal() - p8bVar.getPaddingTop()) - p8bVar.getPaddingBottom()));
+        canvas.scale(min, min);
+        double d5 = tL_mediaAreaWeather.coordinates.rotation;
+        if (d5 != 0.0d) {
+            canvas.rotate((float) d5);
         }
+        canvas.translate(((-r2) / 2.0f) - p8bVar.getPaddingLeft(), ((-r3) / 2.0f) - p8bVar.getPaddingTop());
+        p8bVar.a(canvas);
+        canvas.restore();
+    }
+
+    @Override // n8b
+    public final void b(boolean z) {
+        p8b p8bVar = this.a;
+        if (!z) {
+            p8bVar.L = false;
+            p8bVar.r.K();
+            p8bVar.s.K();
+        } else {
+            p8bVar.L = true;
+            if (p8bVar.M) {
+                p8bVar.s.I();
+            } else {
+                p8bVar.r.I();
+            }
+        }
+    }
+
+    @Override // n8b
+    public final void c(View view) {
+        this.c = view;
     }
 }

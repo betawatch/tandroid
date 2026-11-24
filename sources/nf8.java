@@ -1,27 +1,50 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class nf8 {
-    public final ImageReceiver a = new ImageReceiver(null);
+public final class nf8 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ PopupNotificationActivity b;
 
-    public void a(View view) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.p0(view);
-        imageReceiver.I();
+    public /* synthetic */ nf8(PopupNotificationActivity popupNotificationActivity, byte b) {
+        this.a = b;
+        this.b = popupNotificationActivity;
     }
 
-    public void b() {
-        this.a.K();
-    }
-
-    public void c(Canvas canvas, int i, int i2) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.i0(0.0f, 0.0f, i, i2);
-        imageReceiver.h(canvas, null);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        byte b = this.a;
+        PopupNotificationActivity popupNotificationActivity = this.b;
+        switch (b) {
+            case 0:
+                FrameLayout frameLayout = popupNotificationActivity.f;
+                if (frameLayout != null) {
+                    frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                int D = ug8.D(48.0f, a.getCurrentActionBarHeight(), 2);
+                FrameLayout frameLayout2 = popupNotificationActivity.f;
+                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), D, popupNotificationActivity.f.getPaddingRight(), D);
+                break;
+            default:
+                popupNotificationActivity.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                if (!popupNotificationActivity.c() && !popupNotificationActivity.Y) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity.n.getLayoutParams();
+                    marginLayoutParams.topMargin = a.getCurrentActionBarHeight();
+                    marginLayoutParams.bottomMargin = gl.L(48.0f);
+                    marginLayoutParams.width = -1;
+                    marginLayoutParams.height = -1;
+                    popupNotificationActivity.n.setLayoutParams(marginLayoutParams);
+                    popupNotificationActivity.a(0);
+                    break;
+                }
+                break;
+        }
+        return true;
     }
 }

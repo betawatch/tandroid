@@ -4,42 +4,115 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ab5 extends FrameLayout {
-    public final /* synthetic */ d85 a;
+public final class ab5 extends n39 {
+    public final Context c;
+    public final /* synthetic */ bb5 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ab5(d85 d85Var, Context context) {
-        super(context);
-        this.a = d85Var;
+    public ab5(bb5 bb5Var, Context context) {
+        this.d = bb5Var;
+        this.c = context;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.a.D0();
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        int b = s49Var.b();
+        bb5 bb5Var = this.d;
+        return b == bb5Var.r || b == bb5Var.n || b == bb5Var.s || b == 0;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        boolean z = View.MeasureSpec.getSize(i) > View.MeasureSpec.getSize(i2);
-        d85 d85Var = this.a;
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) d85Var.m1.getLayoutParams();
-        if (z) {
-            int L = gm.L(80.0f);
-            marginLayoutParams.leftMargin = L;
-            marginLayoutParams.rightMargin = L;
-        } else {
-            int L2 = gm.L(16.0f);
-            marginLayoutParams.leftMargin = L2;
-            marginLayoutParams.rightMargin = L2;
+    @Override // w39
+    public final int b() {
+        bb5 bb5Var = this.d;
+        if (bb5Var.e) {
+            return 0;
         }
-        int D = wi8.D(200.0f, View.MeasureSpec.getSize(i), 2);
-        d85Var.l1.setPadding(D, 0, D, 0);
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(370.0f), TLObject.FLAG_30));
-        measureChildWithMargins(d85Var.n1, 0, 0, View.MeasureSpec.makeMeasureSpec(gm.L(64.0f), TLObject.FLAG_30), 0);
+        return bb5Var.x;
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        bb5 bb5Var = this.d;
+        if (i == bb5Var.n || i == bb5Var.s || i == bb5Var.r) {
+            return 0;
+        }
+        if (i == bb5Var.w || i == bb5Var.h) {
+            return 1;
+        }
+        return i == 0 ? 2 : 0;
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        int i2 = s49Var.f;
+        View view = s49Var.a;
+        bb5 bb5Var = this.d;
+        if (i2 == 0) {
+            uib uibVar = (uib) view;
+            if (i == bb5Var.n) {
+                uibVar.b(k96.M0(2131751750, null), true);
+                return;
+            } else if (i == bb5Var.s) {
+                uibVar.b(k96.M0(2131745266, null), false);
+                return;
+            } else {
+                if (i == bb5Var.r) {
+                    uibVar.b(k96.M0(2131745830, null), true);
+                    return;
+                }
+                return;
+            }
+        }
+        if (i2 != 1) {
+            if (i2 == 2) {
+                vgb vgbVar = (vgb) view;
+                TLRPC.TL_chatInviteExported tL_chatInviteExported = bb5Var.f;
+                vgbVar.a.setText(tL_chatInviteExported != null ? tL_chatInviteExported.link : "error");
+                vgbVar.setWillNotDraw(true);
+                return;
+            }
+            return;
+        }
+        mhb mhbVar = (mhb) view;
+        if (i == bb5Var.w) {
+            mhbVar.setText("");
+            return;
+        }
+        if (i == bb5Var.h) {
+            TLRPC.Chat K0 = bb5Var.getMessagesController().K0(Long.valueOf(bb5Var.d));
+            if (!hc2.T(K0) || K0.megagroup) {
+                mhbVar.setText(k96.M0(2131748719, null));
+            } else {
+                mhbVar.setText(k96.M0(2131752374, null));
+            }
+        }
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i == 0) {
+            FrameLayout uibVar = new uib(context);
+            zkb.h(bkb.c6, null, uibVar);
+            frameLayout = uibVar;
+        } else if (i != 1) {
+            vgb vgbVar = new vgb(context);
+            TextView textView = new TextView(context);
+            vgbVar.a = textView;
+            zkb.X(textView, bkb.F6, null);
+            textView.setTextSize(1, 16.0f);
+            textView.setGravity((k96.a0 ? 5 : 3) | 16);
+            vgbVar.addView(textView, nme.d(-1, -2.0f, (k96.a0 ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
+            zkb.h(bkb.c6, null, vgbVar);
+            frameLayout = vgbVar;
+        } else {
+            frameLayout = new mhb(context);
+        }
+        return new y29(frameLayout);
     }
 }

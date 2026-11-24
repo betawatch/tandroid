@@ -1,21 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public abstract class qfd {
-    public static final Object a = new Object();
-    public static int b;
-    public static boolean c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class qfd implements zn7 {
+    public static final qfd a = new qfd();
 
-    public static void a() {
-        synchronized (a) {
-            if (c) {
-                return;
-            }
-            c = true;
-            Thread thread = new Thread(new e1b((byte) 18), "widget-engine-memory");
-            thread.setDaemon(true);
-            thread.start();
+    static {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

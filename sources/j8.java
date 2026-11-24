@@ -6,17 +6,17 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class j8 extends FrameLayout {
     public final Drawable a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j8(int i, ylb ylbVar, Context context) {
+    public j8(int i, wjb wjbVar, Context context) {
         super(context);
-        int v0 = cmb.v0(i, ylbVar);
-        int v02 = cmb.v0(cmb.a7, ylbVar);
-        this.a = cmb.V0(getContext(), R.drawable.greydivider, v02);
+        int v0 = bkb.v0(i, wjbVar);
+        int v02 = bkb.v0(bkb.a7, wjbVar);
+        this.a = bkb.V0(getContext(), R.drawable.greydivider, v02);
         setBackgroundColor(v0);
     }
 
@@ -34,7 +34,7 @@ public final class j8 extends FrameLayout {
         setBackgroundColor(i);
     }
 
-    public j8(Context context, ylb ylbVar) {
-        this(cmb.G8, ylbVar, context);
+    public j8(Context context, wjb wjbVar) {
+        this(bkb.G8, wjbVar, context);
     }
 }

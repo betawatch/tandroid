@@ -1,31 +1,41 @@
 // default package
 
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wr0 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gs0 b;
+public final class wr0 implements gk7 {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ gk7[] b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ tr0 d;
 
-    public /* synthetic */ wr0(gs0 gs0Var, byte b) {
-        this.a = b;
-        this.b = gs0Var;
+    public wr0(long j, gk7[] gk7VarArr, int i, tr0 tr0Var) {
+        this.a = j;
+        this.b = gk7VarArr;
+        this.c = i;
+        this.d = tr0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        gs0 gs0Var = this.b;
-        switch (b) {
-            case 0:
-                kea keaVar = gs0Var.a0;
-                t3b t3bVar = gs0Var.a;
-                keaVar.a(t3bVar == null ? "" : t3bVar.E);
-                break;
-            default:
-                gs0Var.a0.b(gs0Var.a.E);
-                break;
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        vf6 vf6Var;
+        int i3 = kk7.v0;
+        if (i != i3 || (vf6Var = (vf6) objArr[0]) == null) {
+            return;
+        }
+        long j = this.a;
+        if (vf6Var.d(j)) {
+            TLRPC.WebPage webPage = (TLRPC.WebPage) vf6Var.f(j);
+            gk7[] gk7VarArr = this.b;
+            if (gk7VarArr[0] != null) {
+                kk7.f(this.c).n(gk7VarArr[0], i3);
+                gk7VarArr[0] = null;
+            }
+            if (!(webPage instanceof TLRPC.TL_webPage)) {
+                webPage = null;
+            }
+            this.d.a(webPage);
         }
     }
 }

@@ -7,34 +7,34 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class ac extends FrameLayout {
     public final ImageView a;
     public final TextView b;
     public final TextView c;
 
-    public ac(ylb ylbVar, Context context, boolean z) {
+    public ac(wjb wjbVar, Context context, boolean z) {
         super(context);
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int i = cmb.F6;
-        anb.s(imageView, i, ylbVar, PorterDuff.Mode.SRC_IN);
-        addView(imageView, qoe.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
+        int i = bkb.F6;
+        zkb.s(imageView, i, wjbVar, PorterDuff.Mode.SRC_IN);
+        addView(imageView, nme.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, qoe.d(-1, -2.0f, 23, 64.0f, z ? 2.0f : 9.8f, 24.0f, z ? 4.0f : 9.8f));
+        addView(linearLayout, nme.d(-1, -2.0f, 23, 64.0f, z ? 2.0f : 9.8f, 24.0f, z ? 4.0f : 9.8f));
         TextView textView = new TextView(context);
         this.b = textView;
-        anb.X(textView, i, ylbVar);
-        textView.setTypeface(gm.o());
+        zkb.X(textView, i, wjbVar);
+        textView.setTypeface(gl.o());
         textView.setTextSize(1, 14.0f);
-        TextView m = wi8.m(linearLayout, textView, qoe.t(-1, -2, 55, 0, 0, 0, 1), context);
+        TextView m = ug8.m(linearLayout, textView, nme.t(-1, -2, 55, 0, 0, 0, 1), context);
         this.c = m;
-        anb.X(m, cmb.y6, ylbVar);
+        zkb.X(m, bkb.y6, wjbVar);
         m.setTextSize(1, 14.0f);
-        linearLayout.addView(m, qoe.t(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(m, nme.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     public final void a(int i, CharSequence charSequence, CharSequence charSequence2) {

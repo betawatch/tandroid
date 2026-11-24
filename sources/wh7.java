@@ -1,69 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class wh7 {
-    public int a;
-    public String b;
-    public int c;
-    public int d;
-    public byte e;
-    public int f;
-    public int g;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final float g;
+    public final int h;
+    public final int i;
+    public final boolean j;
+    public final boolean k;
+    public final int l;
+    public final int m;
+    public final int n;
+    public final boolean o;
+    public final int p;
+    public final int q;
+    public final int r;
+    public final int s;
 
-    public final boolean a(int i) {
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        if ((i & (-2097152)) != -2097152 || (i2 = (i >>> 19) & 3) == 1 || (i3 = (i >>> 17) & 3) == 0 || (i4 = (i >>> 12) & 15) == 0 || i4 == 15 || (i5 = (i >>> 10) & 3) == 3) {
-            return false;
-        }
-        this.a = i2;
-        this.b = wcd.a[3 - i3];
-        int i6 = wcd.b[i5];
-        this.d = i6;
-        if (i2 == 2) {
-            i6 /= 2;
-            this.d = i6;
-        } else if (i2 == 0) {
-            i6 /= 4;
-            this.d = i6;
-        }
-        int i7 = (i >>> 9) & 1;
-        int i8 = 1152;
-        if (i3 != 1) {
-            if (i3 != 2) {
-                if (i3 != 3) {
-                    i98.g();
-                    return false;
-                }
-                i8 = 384;
-            }
-        } else if (i2 != 3) {
-            i8 = 576;
-        }
-        this.g = i8;
-        if (i3 == 3) {
-            int i9 = i2 == 3 ? wcd.c[i4 - 1] : wcd.d[i4 - 1];
-            this.f = i9;
-            this.c = kt6.z(i9, 12, i6, i7) << 2;
-        } else {
-            int i10 = nm7.Z1;
-            if (i2 == 3) {
-                int i11 = i3 == 2 ? wcd.e[i4 - 1] : wcd.f[i4 - 1];
-                this.f = i11;
-                this.c = kt6.z(i11, nm7.Z1, i6, i7);
-            } else {
-                int i12 = wcd.g[i4 - 1];
-                this.f = i12;
-                if (i3 == 1) {
-                    i10 = 72;
-                }
-                this.c = kt6.z(i10, i12, i6, i7);
-            }
-        }
-        this.e = ((i >> 6) & 3) == 3 ? (byte) 1 : (byte) 2;
-        return true;
+    public wh7(int i, int i2, int i3, int i4, int i5, int i6, float f, int i7, int i8, boolean z, boolean z2, int i9, int i10, int i11, boolean z3, int i12, int i13, int i14, int i15) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+        this.f = i6;
+        this.g = f;
+        this.h = i7;
+        this.i = i8;
+        this.j = z;
+        this.k = z2;
+        this.l = i9;
+        this.m = i10;
+        this.n = i11;
+        this.o = z3;
+        this.p = i12;
+        this.q = i13;
+        this.r = i14;
+        this.s = i15;
     }
 }

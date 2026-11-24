@@ -2,30 +2,35 @@
 
 import android.os.IBinder;
 import android.os.IInterface;
-import android.os.Parcel;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class hj5 implements jj5, IInterface {
-    public final IBinder a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public interface hj5 extends IInterface {
+    void A(long j, boolean z);
 
-    public hj5(IBinder iBinder) {
-        this.a = iBinder;
-    }
+    void D(long j, float f);
 
-    public final void a(Parcel parcel, int i) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            this.a.transact(i, parcel, obtain, 0);
-            obtain.readException();
-        } finally {
-            parcel.recycle();
-            obtain.recycle();
-        }
-    }
+    long G(byte[] bArr, byte[] bArr2, float f, float f2, int i, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z, jj5 jj5Var);
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
+    void H(long j);
+
+    void K(long j, int i, float f, float f2, int i2);
+
+    void L();
+
+    void M(long j, byte[] bArr);
+
+    void k(long j, float f, boolean z, boolean z2, boolean z3);
+
+    void l(long j, long j2, int i, byte[] bArr);
+
+    void r(long j);
+
+    void s(long j, byte[] bArr);
+
+    void u(long j, byte[] bArr);
+
+    void v(IBinder iBinder);
+
+    void x(long j, int i, float f, float f2, int i2, boolean z, boolean z2, int i3, int i4);
 }

@@ -1,33 +1,21 @@
 // default package
 
 import android.content.Context;
-import android.os.Vibrator;
-import android.text.Spanned;
-import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vi extends ql2 {
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ NumberTextView c;
+public final class vi extends hn7 {
+    public final /* synthetic */ int[] z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vi(int i, Context context, NumberTextView numberTextView) {
-        super(i);
-        this.b = context;
-        this.c = numberTextView;
+    public vi(Context context, wjb wjbVar, int[] iArr) {
+        super(context, wjbVar);
+        this.z0 = iArr;
     }
 
-    @Override // ql2, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        CharSequence filter = super.filter(charSequence, i, i2, spanned, i3, i4);
-        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
-            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
-            if (vibrator != null) {
-                vibrator.vibrate(200L);
-            }
-            gm.z3(this.c);
-        }
-        return filter;
+    @Override // hn7
+    public final CharSequence d(int i) {
+        int i2 = this.z0[i];
+        return i2 == 0 ? k96.M0(2131748115, null) : i2 < 60 ? k96.G(i2, "Minutes", new Object[0]) : i2 < 1440 ? k96.G(i2 / 60, "Hours", new Object[0]) : i2 < 10080 ? k96.G(i2 / 1440, "Days", new Object[0]) : i2 < 44640 ? k96.G(i2 / 10080, "Weeks", new Object[0]) : i2 < 525600 ? k96.G(i2 / 44640, "Months", new Object[0]) : k96.G(i2 / 525600, "Years", new Object[0]);
     }
 }

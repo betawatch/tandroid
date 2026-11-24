@@ -1,101 +1,46 @@
 // default package
 
-import java.util.Iterator;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vnd extends okd {
-    public static final Object[] F;
-    public static final vnd G;
-    public final transient int E;
-    public final transient Object[] s;
-    public final transient int w;
-    public final transient Object[] x;
-    public final transient int y;
+public final class vnd extends tmd {
+    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
-    static {
-        Object[] objArr = new Object[0];
-        F = objArr;
-        G = new vnd(0, 0, 0, objArr, objArr);
-    }
-
-    public vnd(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {
-        super((byte) 4);
-        this.s = objArr;
-        this.w = i;
-        this.x = objArr2;
-        this.y = i2;
-        this.E = i3;
-    }
-
-    @Override // okd
-    public final yjd B() {
-        return yjd.A(this.E, this.s);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        Object[] objArr = this.x;
-        if (objArr.length == 0) {
-            return false;
-        }
-        int rotateLeft = (int) (Integer.rotateLeft((int) (obj.hashCode() * (-862048943)), 15) * 461845907);
-        while (true) {
-            int i = rotateLeft & this.y;
-            Object obj2 = objArr[i];
-            if (obj2 == null) {
-                return false;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // tmd
+    public final void b(vid vidVar, vid vidVar2, long j) {
+        ArrayList arrayList;
+        List list = (List) uzd.l(vidVar2, j);
+        int size = list.size();
+        List list2 = (List) uzd.l(vidVar, j);
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof omd ? new cmd(size) : new ArrayList(size);
+            uzd.d(vidVar, j, list2);
+        } else {
+            if (c.isAssignableFrom(list2.getClass())) {
+                ArrayList arrayList2 = new ArrayList(list2.size() + size);
+                arrayList2.addAll(list2);
+                arrayList = arrayList2;
+            } else if (list2 instanceof ezd) {
+                ezd ezdVar = (ezd) list2;
+                cmd cmdVar = new cmd(ezdVar.a.size() + size);
+                cmdVar.addAll(ezdVar);
+                arrayList = cmdVar;
             }
-            if (obj2.equals(obj)) {
-                return true;
-            }
-            rotateLeft = i + 1;
+            uzd.d(vidVar, j, arrayList);
+            list2 = arrayList;
         }
-    }
-
-    @Override // okd, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.w;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return A().listIterator(0);
-    }
-
-    @Override // l1d
-    public final int p(Object[] objArr) {
-        Object[] objArr2 = this.s;
-        int i = this.E;
-        System.arraycopy(objArr2, 0, objArr, 0, i);
-        return i;
-    }
-
-    @Override // l1d
-    public final int q() {
-        return this.E;
-    }
-
-    @Override // l1d
-    public final int s() {
-        return 0;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.E;
-    }
-
-    @Override // l1d
-    public final v7c u() {
-        return A().listIterator(0);
-    }
-
-    @Override // l1d
-    public final Object[] v() {
-        return this.s;
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
+        }
+        if (size2 > 0) {
+            list = list2;
+        }
+        uzd.d(vidVar, j, list);
     }
 }

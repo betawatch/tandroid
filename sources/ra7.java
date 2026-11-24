@@ -1,59 +1,173 @@
 // default package
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ra7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ oc7 b;
-    public final /* synthetic */ TLRPC.Dialog c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ra7 extends n39 implements gk7 {
+    public t1b E;
+    public final Context c;
+    public final mu1 f;
+    public int h;
+    public int n;
+    public final wjb s;
+    public final int w;
+    public final boolean x;
+    public String y;
+    public final HashSet d = new HashSet();
+    public final ArrayList e = new ArrayList();
+    public final int r = y6c.t0;
+    public final vl6 F = new vl6(this, 16);
 
-    public /* synthetic */ ra7(oc7 oc7Var, TLRPC.Dialog dialog, byte b) {
-        this.a = b;
-        this.b = oc7Var;
-        this.c = dialog;
+    public ra7(Context context, mu1 mu1Var, wjb wjbVar, int i, boolean z) {
+        this.s = wjbVar;
+        this.c = context;
+        this.f = mu1Var;
+        this.w = i;
+        this.x = z;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.Dialog dialog = this.c;
-        oc7 oc7Var = this.b;
-        switch (b) {
-            case 0:
-                if (e21.a) {
-                    fc4.b("checkLastDialogMessage for " + dialog.id + " has not message");
-                }
-                if (oc7Var.getMediaDataController().T(dialog.id, 0L) == null) {
-                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) oc7Var.R.f(dialog.id);
-                    if (dialog2 != null) {
-                        if (e21.a) {
-                            StringBuilder sb = new StringBuilder("checkLastDialogMessage for ");
-                            sb.append(dialog.id);
-                            sb.append(" current dialog top message ");
-                            b10.p(dialog2.top_message, sb);
-                        }
-                        if (dialog2.top_message == 0) {
-                            oc7Var.T(3, dialog.id, false);
-                            break;
-                        }
-                    } else {
-                        if (e21.a) {
-                            fc4.b("checkLastDialogMessage for " + dialog.id + " current dialog not found");
-                        }
-                        cf7 messagesStorage = oc7Var.getMessagesStorage();
-                        messagesStorage.a.c(new hq6((Object) messagesStorage, dialog.id, (Object) new ra7(oc7Var, dialog, (byte) 2), (byte) 18));
-                        break;
+    public final Object E(int i) {
+        if (i < 0) {
+            return null;
+        }
+        ArrayList arrayList = this.e;
+        if (i < arrayList.size()) {
+            return arrayList.get(i);
+        }
+        return null;
+    }
+
+    @Override // w39
+    public final int b() {
+        return this.e.size() + this.n;
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        return i < this.e.size() ? 0 : 1;
+    }
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == kk7.z5 && objArr[0] == this.E) {
+            f();
+        }
+    }
+
+    @Override // w39
+    public final void f() {
+        int b = b();
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        HashSet hashSet = this.d;
+        hashSet.clear();
+        int i = this.w;
+        int i2 = this.r;
+        ArrayList arrayList2 = i == 0 ? hq6.d0(i2).Z0 : cd5.a(i2).b(i).a;
+        int i3 = 0;
+        for (int i4 = 0; i4 < arrayList2.size(); i4++) {
+            k27 k27Var = (k27) arrayList2.get(i4);
+            if ((!k27Var.z2() || k27Var.S2) && !hashSet.contains(Integer.valueOf(k27Var.e1()))) {
+                arrayList.add(k27Var);
+                hashSet.add(Integer.valueOf(k27Var.e1()));
+            }
+        }
+        int i5 = this.n;
+        this.h = arrayList.size();
+        if (i != 0) {
+            if (!cd5.a(i2).b(i).n && this.h != 0) {
+                i3 = Utilities.j(cd5.a(i2).b(i).m - this.h, 3, 0);
+            }
+            this.n = i3;
+        } else {
+            if (!hq6.d0(i2).Y1() && this.h != 0) {
+                i3 = Utilities.j(hq6.d0(i2).k0() - this.h, 3, 0);
+            }
+            this.n = i3;
+        }
+        int b2 = b();
+        if (b >= b2) {
+            super.f();
+            return;
+        }
+        if (i5 > 0) {
+            l(b - i5, i5);
+        }
+        p(b, b2 - b);
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        boolean z;
+        int i2;
+        int i3 = s49Var.f;
+        View view = s49Var.a;
+        if (i3 != 0) {
+            if (i3 == 2) {
+                ((qa7) view).a(this.E);
+                return;
+            }
+            return;
+        }
+        ue3 ue3Var = (ue3) view;
+        ue3Var.t2 = true;
+        k27 k27Var = (k27) E(i);
+        long B0 = k27.B0(k27Var.k);
+        int i4 = k27Var.k.date;
+        if (this.x) {
+            ue3Var.s0 = true;
+            long P1 = k27Var.P1();
+            TLRPC.Message message = k27Var.k;
+            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+            if (messageFwdHeader != null) {
+                i2 = messageFwdHeader.date;
+                if (i2 == 0) {
+                    int i5 = messageFwdHeader.saved_date;
+                    if (i5 != 0) {
+                        i2 = i5;
                     }
                 }
-                break;
-            case 1:
-                oc7Var.U0.e(dialog.id);
-                break;
-            default:
-                oc7Var.T(3, dialog.id, false);
-                break;
+                z = false;
+                B0 = P1;
+            }
+            i2 = message.date;
+            z = false;
+            B0 = P1;
+        } else {
+            if (k27Var.O3() || hc2.o0(this.r, B0)) {
+                B0 = k27Var.Z0();
+            }
+            z = true;
+            i2 = i4;
         }
+        ue3Var.f0(B0, k27Var, i2, z, false);
+        ue3Var.setDialogCellDelegate(new oa7(this));
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        View ue3Var;
+        Context context = this.c;
+        if (i != 0) {
+            wjb wjbVar = this.s;
+            if (i != 1) {
+                ue3Var = i != 2 ? null : new qa7(context, wjbVar);
+            } else {
+                pi4 pi4Var = new pi4(context, wjbVar);
+                pi4Var.setIsSingleCell(true);
+                pi4Var.setViewType(7);
+                ue3Var = pi4Var;
+            }
+        } else {
+            ue3Var = new ue3(null, context, true, this.r, this.s);
+        }
+        return ls6.h(ue3Var, ue3Var, -1, -2);
     }
 }

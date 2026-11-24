@@ -1,160 +1,139 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
 import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
+import android.text.TextUtils;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class xqc extends FrameLayout {
-    public final ImageView a;
-    public final lmc b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public int h;
-    public float n;
-    public float r;
-    public boolean s;
-    public ValueAnimator w;
-    public zna x;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class xqc implements gk7 {
+    public static final do3 e = new do3("wallpaperMaskQueue", true);
+    public static final xqc[] f = new xqc[32];
+    public final int a;
+    public final HashMap b = new HashMap();
+    public final HashMap c = new HashMap();
+    public final HashMap d = new HashMap();
 
-    public xqc(Context context) {
-        super(context);
-        this.e = 1.0f;
-        this.h = -1;
-        setClipChildren(false);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setImageResource(R.drawable.mini_gram_72);
-        imageView.setScaleX(0.7407407f);
-        imageView.setScaleY(0.7407407f);
-        addView(imageView, qoe.c(-1.0f, -1));
-        lmc lmcVar = new lmc(this, context, new cpc(this, (byte) 3));
-        this.b = lmcVar;
-        addView(lmcVar, qoe.c(-1.0f, -1));
+    public xqc(int i) {
+        this.a = i;
     }
 
-    public final void a(float f) {
-        if (this.x == null) {
-            zna znaVar = new zna(new xk4(this.e));
-            this.x = znaVar;
-            aoa aoaVar = new aoa(f);
-            aoaVar.a(0.55f);
-            aoaVar.b(280.0f);
-            znaVar.m = aoaVar;
-            this.x.f(0.001f);
-            this.x.b(new h20(this, (byte) 19));
+    public static String b(TLRPC.WallPaper wallPaper) {
+        if (!TextUtils.isEmpty(wallPaper.slug)) {
+            return wallPaper.slug;
         }
-        this.x.c(f);
+        return "id" + wallPaper.id;
     }
 
-    public final void b() {
-        this.h = -1;
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(false);
+    public final void a(wqc wqcVar, mqc mqcVar) {
+        ng5 ng5Var = wqcVar.a;
+        ArrayList arrayList = wqcVar.d;
+        String a = ng5Var.a();
+        HashMap hashMap = this.d;
+        if (mqcVar == null) {
+            hashMap.put(a, Long.valueOf(SystemClock.elapsedRealtime()));
+        } else {
+            hashMap.remove(a);
         }
-        this.f = (float) Math.IEEEremainder((this.f + this.c) - c(), 6.283185307179586d);
-        float IEEEremainder = (float) Math.IEEEremainder(this.d, 6.283185307179586d);
-        this.s = true;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.w = ofFloat;
-        ofFloat.setDuration(350L);
-        this.w.setInterpolator(d53.h);
-        this.w.addUpdateListener(new go1(this, IEEEremainder, (byte) 8));
-        this.w.start();
-        a(1.0f);
-    }
-
-    public final float c() {
-        return ((float) (((SystemClock.uptimeMillis() / 1000.0d) * 0.5961171984672546d) % 6.283185307179586d)) + this.f;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.b.setPaused(false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        this.b.setPaused(true);
-        ValueAnimator valueAnimator = this.w;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        this.b.remove(a);
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            ((p8c) arrayList.get(i)).a(mqcVar);
         }
-        zna znaVar = this.x;
-        if (znaVar != null) {
-            znaVar.d();
-        }
-        super.onDetachedFromWindow();
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        lmc lmcVar = this.b;
-        if (lmcVar.n && lmcVar.getVisibility() == 0) {
-            int actionMasked = motionEvent.getActionMasked();
-            if (actionMasked == 0) {
-                if (!this.s && this.e <= 1.001f) {
-                    this.c = c();
-                    this.d = 0.0f;
-                }
-                ValueAnimator valueAnimator = this.w;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    this.w = null;
-                }
-                this.s = false;
-                this.h = motionEvent.getPointerId(0);
-                this.n = motionEvent.getX();
-                this.r = motionEvent.getY();
-                if (getParent() != null) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                a(3.0f);
-                return true;
+    public final void c(wqc wqcVar) {
+        int i = this.a;
+        ba4.G(i);
+        File J = ba4.J(wqcVar.e, null, true, true);
+        if (J.exists()) {
+            e.postRunnable(new wbc(this, wqcVar, J, (byte) 19));
+            return;
+        }
+        String r = ba4.r(null, wqcVar.e);
+        HashMap hashMap = this.c;
+        if (hashMap.isEmpty()) {
+            kk7.f(i).a(this, kk7.X1);
+            kk7.f(i).a(this, kk7.Y1);
+        }
+        hashMap.put(r, wqcVar);
+        ba4 G = ba4.G(i);
+        gl5 b = gl5.b(wqcVar.e);
+        Object obj = wqcVar.f;
+        if (obj == null) {
+            obj = "wallpaper";
+        }
+        G.V(b, obj, null, 1, 1);
+    }
+
+    public final void d(String str, boolean z, TLRPC.Document document, Object obj, p8c p8cVar) {
+        ng5 c = ng5.c(str);
+        String a = c.a();
+        Long l = (Long) this.d.get(a);
+        if (l != null && SystemClock.elapsedRealtime() - l.longValue() < 60000) {
+            p8cVar.a(null);
+            return;
+        }
+        HashMap hashMap = this.b;
+        wqc wqcVar = (wqc) hashMap.get(a);
+        if (wqcVar != null) {
+            wqcVar.d.add(p8cVar);
+            return;
+        }
+        wqc wqcVar2 = new wqc(c, str);
+        wqcVar2.c = z ? str : null;
+        wqcVar2.e = document;
+        wqcVar2.f = obj;
+        wqcVar2.d.add(p8cVar);
+        hashMap.put(a, wqcVar2);
+        e.postRunnable(new rnc(this, str, c, wqcVar2));
+    }
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        int i3 = kk7.Y1;
+        int i4 = kk7.X1;
+        if (i == i4 || i == i3) {
+            String str = (String) objArr[0];
+            HashMap hashMap = this.c;
+            wqc wqcVar = (wqc) hashMap.remove(str);
+            if (wqcVar == null) {
+                return;
             }
-            if (actionMasked != 1) {
-                if (actionMasked == 2) {
-                    int i = this.h;
-                    if (i != -1) {
-                        int findPointerIndex = motionEvent.findPointerIndex(i);
-                        if (findPointerIndex < 0) {
-                            b();
-                            return true;
-                        }
-                        float f = 0.013962634f / gm.p;
-                        this.c = td4.A(motionEvent.getX(findPointerIndex), this.n, f, this.c);
-                        this.d = td4.A(motionEvent.getY(findPointerIndex), this.r, f, this.d);
-                        this.n = motionEvent.getX(findPointerIndex);
-                        this.r = motionEvent.getY(findPointerIndex);
-                        return true;
-                    }
-                } else if (actionMasked != 3) {
-                    if (actionMasked != 6) {
-                        if (this.h != -1) {
-                        }
-                    } else if (motionEvent.getPointerId(motionEvent.getActionIndex()) == this.h) {
-                        int i2 = motionEvent.getActionIndex() == 0 ? 1 : 0;
-                        this.h = motionEvent.getPointerId(i2);
-                        this.n = motionEvent.getX(i2);
-                        this.r = motionEvent.getY(i2);
-                        return true;
-                    }
-                    return true;
-                }
+            if (hashMap.isEmpty()) {
+                kk7.f(i2).n(this, i4);
+                kk7.f(i2).n(this, i3);
             }
-            if (this.h != -1) {
-                b();
+            if (i != i4) {
+                e(wqcVar);
+                return;
             }
-            return true;
+            ba4.G(i2);
+            e.postRunnable(new wbc(this, wqcVar, ba4.J(wqcVar.e, null, true, true), (byte) 19));
         }
-        return false;
+    }
+
+    public final void e(wqc wqcVar) {
+        boolean z = wqcVar.g;
+        String str = wqcVar.b;
+        if (!z && str.equals(wqcVar.c)) {
+            long j = a.b.getSharedPreferences(ConnectionsManager.getInstance(this.a).isTestBackend() ? "wallpaper_patterns_test" : "wallpaper_patterns", 0).getLong("rejected_".concat(str), 0L);
+            if (j == 0 || Math.abs(System.currentTimeMillis() - j) >= 86400000) {
+                wqcVar.g = true;
+                TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
+                TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
+                tL_inputWallPaperSlug.slug = str;
+                getwallpaper.wallpaper = tL_inputWallPaperSlug;
+                ConnectionsManager.getInstance(this.a).sendRequest(getwallpaper, new apa(this, wqcVar, (byte) 26));
+                return;
+            }
+        }
+        a(wqcVar, null);
     }
 }

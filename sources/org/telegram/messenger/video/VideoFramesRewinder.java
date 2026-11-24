@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -35,10 +35,10 @@ public class VideoFramesRewinder {
     private AtomicBoolean stop = new AtomicBoolean(false);
     private AtomicLong until = new AtomicLong(0);
     private float lastSpeed = 1.0f;
-    private Runnable prepareRunnable = new f8c(this, 6);
+    private Runnable prepareRunnable = new cib(this, 28);
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     class Frame {
         Bitmap bitmap;
         long position;
@@ -48,9 +48,9 @@ public class VideoFramesRewinder {
     }
 
     public VideoFramesRewinder() {
-        int o = gda.o();
+        int o = gba.o();
         if (o == 1) {
-            this.maxFramesCount = nm7.d3;
+            this.maxFramesCount = kk7.d3;
             this.maxFrameSide = 580;
         } else if (o != 2) {
             this.maxFramesCount = 100;
@@ -75,9 +75,9 @@ public class VideoFramesRewinder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(ArrayList arrayList, long j) {
-        fc4.b("[VideoFramesRewinder] total prepare of " + arrayList.size() + " took " + (System.currentTimeMillis() - j) + "ms");
+        fa4.b("[VideoFramesRewinder] total prepare of " + arrayList.size() + " took " + (System.currentTimeMillis() - j) + "ms");
         if (!arrayList.isEmpty()) {
-            fc4.b("[VideoFramesRewinder] prepared from " + ((Frame) arrayList.get(0)).position + "ms to " + ((Frame) arrayList.get(arrayList.size() - 1)).position + "ms (requested up to " + this.prepareToMs + "ms)");
+            fa4.b("[VideoFramesRewinder] prepared from " + ((Frame) arrayList.get(0)).position + "ms to " + ((Frame) arrayList.get(arrayList.size() - 1)).position + "ms (requested up to " + this.prepareToMs + "ms)");
         }
         this.isPreparing = false;
         Iterator<Frame> it = this.frames.iterator();
@@ -85,7 +85,7 @@ public class VideoFramesRewinder {
             Frame next = it.next();
             if (this.currentFrame != next && next.position > this.lastSeek) {
                 if (this.freeFrames.size() > 20) {
-                    gm.w2(next.bitmap);
+                    gl.w2(next.bitmap);
                 } else {
                     this.freeFrames.add(next);
                 }
@@ -93,10 +93,10 @@ public class VideoFramesRewinder {
             }
         }
         while (!arrayList.isEmpty() && this.frames.size() < this.maxFramesCount) {
-            this.frames.add((Frame) td4.m(1, arrayList));
+            this.frames.add((Frame) tb4.l(1, arrayList));
         }
         if (arrayList.size() > 0) {
-            fc4.b("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");
+            fa4.b("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");
         }
         if (this.destroyAfterPrepare) {
             release();
@@ -141,11 +141,11 @@ public class VideoFramesRewinder {
             Frame remove = !this.freeFrames.isEmpty() ? this.freeFrames.remove(i4) : new Frame();
             Bitmap bitmap = remove.bitmap;
             if (bitmap == null || bitmap.getWidth() != min || remove.bitmap.getHeight() != min2) {
-                gm.w2(remove.bitmap);
+                gl.w2(remove.bitmap);
                 try {
                     remove.bitmap = Bitmap.createBitmap(min, min2, Bitmap.Config.ARGB_8888);
                 } catch (OutOfMemoryError unused) {
-                    fc4.b("[VideoFramesRewinder] failed to create bitmap: out of memory");
+                    fa4.b("[VideoFramesRewinder] failed to create bitmap: out of memory");
                 }
             }
             while (true) {
@@ -181,14 +181,14 @@ public class VideoFramesRewinder {
             c3 = c;
             i4 = 0;
         }
-        gm.c3(new e4b((Object) this, (Object) arrayList, currentTimeMillis, (byte) 12));
+        gl.c3(new d2b((Object) this, (Object) arrayList, currentTimeMillis, (byte) 12));
     }
 
     private void prepare(long j) {
         if (this.isPreparing) {
             return;
         }
-        fc4.b("[VideoFramesRewinder] starting preparing " + j + "ms");
+        fa4.b("[VideoFramesRewinder] starting preparing " + j + "ms");
         this.isPreparing = true;
         this.prepareToMs = j;
         this.prepareWithSpeed = this.lastSpeed;
@@ -235,7 +235,7 @@ public class VideoFramesRewinder {
         this.until.set(0L);
         Iterator<Frame> it = this.frames.iterator();
         while (it.hasNext()) {
-            gm.w2(it.next().bitmap);
+            gl.w2(it.next().bitmap);
         }
         this.frames.clear();
         ArrayList<Frame> arrayList = this.freeFrames;
@@ -243,7 +243,7 @@ public class VideoFramesRewinder {
         while (i < size) {
             Frame frame = arrayList.get(i);
             i++;
-            gm.w2(frame.bitmap);
+            gl.w2(frame.bitmap);
         }
         this.freeFrames.clear();
     }
@@ -263,7 +263,7 @@ public class VideoFramesRewinder {
             float f2 = 25.0f * f;
             if (Math.abs(next.position - j) < f2) {
                 if (this.currentFrame != next) {
-                    fc4.b("[VideoFramesRewinder] found a frame " + next.position + "ms to fit to " + j + "ms from " + this.frames.size() + " frames");
+                    fa4.b("[VideoFramesRewinder] found a frame " + next.position + "ms to fit to " + j + "ms from " + this.frames.size() + " frames");
                     this.currentFrame = next;
                     invalidate();
                     int i = 0;
@@ -273,7 +273,7 @@ public class VideoFramesRewinder {
                         i++;
                     }
                     if (i > 0) {
-                        fc4.b("[VideoFramesRewinder] also deleted " + i + " frames after this frame");
+                        fa4.b("[VideoFramesRewinder] also deleted " + i + " frames after this frame");
                     }
                 }
                 for (int size = arrayList.size() - 2; size >= 0; size--) {
@@ -288,7 +288,7 @@ public class VideoFramesRewinder {
                 return;
             }
         }
-        fc4.b("[VideoFramesRewinder] didn't find a frame, wanting to prepare " + j + "ms");
+        fa4.b("[VideoFramesRewinder] didn't find a frame, wanting to prepare " + j + "ms");
         prepare(Math.max(0L, j));
     }
 
@@ -301,7 +301,7 @@ public class VideoFramesRewinder {
             release();
         } else {
             this.stop.set(false);
-            this.mDecoder = AnimatedFileNative.a(file.getAbsolutePath(), this.meta, z8c.t0, 0L, null, true);
+            this.mDecoder = AnimatedFileNative.a(file.getAbsolutePath(), this.meta, y6c.t0, 0L, null, true);
         }
     }
 }

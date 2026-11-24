@@ -1,45 +1,45 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzer extends eeb implements fs4 {
+final class zzer extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ zzye zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzer(zzfp zzfpVar, zzye zzyeVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzer(zzfp zzfpVar, zzye zzyeVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzfpVar;
         this.zzc = zzyeVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        return new zzer(this.zzb, this.zzc, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzer(this.zzb, this.zzc, fw2Var);
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzer) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzer) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         try {
             if (this.zza != 0) {
-                tue.b(obj);
+                qse.b(obj);
             } else {
-                tue.b(obj);
+                qse.b(obj);
                 zzfp zzfpVar = this.zzb;
                 zzif zzj = zzfp.zzj(zzfpVar);
                 zzcy zzg = zzfp.zzg(zzfpVar);
                 zzye zzyeVar = this.zzc;
                 this.zza = 1;
                 obj = zzj.zzb(zzg, zzyeVar, this);
-                ly2 ly2Var = ly2.a;
-                if (obj == ly2Var) {
-                    return ly2Var;
+                bx2 bx2Var = bx2.a;
+                if (obj == bx2Var) {
+                    return bx2Var;
                 }
             }
             return (zzyg) obj;

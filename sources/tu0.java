@@ -1,91 +1,52 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.webkit.GeolocationPermissions;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class tu0 implements ee {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class tu0 implements vs2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zu0 b;
+    public final /* synthetic */ GeolocationPermissions.Callback c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ tu0(long j, ts9 ts9Var, int i, long j2, u06 u06Var) {
-        this.b = j;
-        this.e = ts9Var;
-        this.c = i;
-        this.d = j2;
-        this.f = u06Var;
+    public /* synthetic */ tu0(zu0 zu0Var, GeolocationPermissions.Callback callback, String str, byte b) {
+        this.a = b;
+        this.b = zu0Var;
+        this.c = callback;
+        this.d = str;
     }
 
-    @Override // ee
-    public final void r(he heVar, int i) {
+    @Override // vs2
+    public final void accept(Object obj) {
         byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
+        byte b2 = 1;
+        String str = this.d;
+        GeolocationPermissions.Callback callback = this.c;
+        zu0 zu0Var = this.b;
+        Boolean bool = (Boolean) obj;
         switch (b) {
             case 0:
-                boolean[] zArr = (boolean[]) obj2;
-                qu0 qu0Var = (qu0) obj;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    TL_bots.setCustomVerification setcustomverification = new TL_bots.setCustomVerification();
-                    setcustomverification.enabled = false;
-                    setcustomverification.flags |= 1;
-                    int i2 = this.c;
-                    setcustomverification.bot = oc7.r1(i2).n1(this.b);
-                    setcustomverification.peer = oc7.r1(i2).i1(this.d);
-                    ConnectionsManager.getInstance(i2).sendRequest(setcustomverification, new pm(zArr, qu0Var, (byte) 7));
-                    break;
+                if (zu0Var.a != null) {
+                    zu0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        callback.invoke(str, false, false);
+                        break;
+                    } else {
+                        tu0 tu0Var = new tu0(zu0Var, callback, str, b2);
+                        boolean z = hv0.R0;
+                        zu0Var.e.R.R(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, tu0Var);
+                        break;
+                    }
                 }
                 break;
             default:
-                final ts9 ts9Var = (ts9) obj2;
-                final u06 u06Var = (u06) obj;
-                final d S = LaunchActivity.S();
-                if (S != null) {
-                    final TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                    final long j = this.b;
-                    final int i3 = this.c;
-                    final long j2 = this.d;
-                    c5c c5cVar = new c5c() { // from class: q15
-                        @Override // c5c
-                        public final void h(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-                            ts9 ts9Var2 = ts9Var;
-                            int i4 = i3;
-                            long j3 = j2;
-                            d dVar = d.this;
-                            wz wzVar = new wz(ts9Var2, i4, j3, dVar, u06Var, (byte) 4);
-                            int currentAccount = dVar.getCurrentAccount();
-                            boolean[] zArr2 = u15.a;
-                            if (zArr2[currentAccount]) {
-                                return;
-                            }
-                            zArr2[currentAccount] = true;
-                            u15.b(dVar, j, tL_inputCheckPasswordSRP, twoStepVerificationActivity, null, wzVar);
-                        }
-                    };
-                    twoStepVerificationActivity.a0 = (byte) 1;
-                    twoStepVerificationActivity.c0 = c5cVar;
-                    twoStepVerificationActivity.x0(new k15(S, twoStepVerificationActivity, (byte) 1));
+                callback.invoke(str, bool.booleanValue(), false);
+                if (bool.booleanValue()) {
+                    zu0Var.e.R.U = true;
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ tu0(boolean[] zArr, int i, long j, long j2, qu0 qu0Var) {
-        this.e = zArr;
-        this.c = i;
-        this.b = j;
-        this.d = j2;
-        this.f = qu0Var;
     }
 }

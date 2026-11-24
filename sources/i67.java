@@ -1,49 +1,87 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class i67 extends rc2 {
-    public int Ld;
-    public int Md;
-    public int Nd;
-    public final /* synthetic */ j67 Od;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class i67 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ na7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i67(j67 j67Var, Context context, int i, ylb ylbVar) {
-        super(context, i, true, null, ylbVar);
-        this.Od = j67Var;
-        this.Ld = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.Md = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.Nd = -1;
+    public /* synthetic */ i67(na7 na7Var, long j, int i, int i2, boolean z, byte b) {
+        this.a = b;
+        this.b = na7Var;
+        this.c = j;
+        this.d = i;
+        this.e = i2;
+        this.f = z;
     }
 
-    @Override // rc2
-    public final qna Y2() {
-        return qna.d(1, this, this.Od.F);
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        return false;
-    }
-
-    @Override // rc2, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (!this.ub.x0 || i2 == 0 || this.Ld == Integer.MAX_VALUE || i4 == 0 || this.Md == Integer.MAX_VALUE) {
-            return;
-        }
-        if (this.Nd == (getMessageObject() == null ? 0 : getMessageObject().e1())) {
-            if (!this.Od.A0) {
-                setTranslationY(-(i2 - this.Ld));
-                animate().translationY(0.0f).setDuration(320L).setInterpolator(d53.h).start();
-            }
-            this.Ld = getTop();
-            this.Md = getBottom();
-            this.Nd = getMessageObject() != null ? getMessageObject().e1() : 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j;
+        int i;
+        switch (this.a) {
+            case 0:
+                na7 na7Var = this.b;
+                vf6 vf6Var = na7Var.R;
+                long j2 = this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) vf6Var.f(j2);
+                int i2 = this.e;
+                if (dialog != null) {
+                    int i3 = dialog.unread_count;
+                    int i4 = this.d;
+                    if (i4 == 0 || i2 >= dialog.top_message) {
+                        dialog.unread_count = 0;
+                    } else {
+                        int max = Math.max(i3 - i4, 0);
+                        dialog.unread_count = max;
+                        if (i2 != Integer.MIN_VALUE && max > (i = dialog.top_message - i2)) {
+                            dialog.unread_count = i;
+                        }
+                    }
+                    boolean z = dialog.unread_mark;
+                    if (z) {
+                        dialog.unread_mark = false;
+                        na7Var.getMessagesStorage().C1(dialog.id, false);
+                    }
+                    if ((i3 != 0 || z) && dialog.unread_count == 0) {
+                        j = j2;
+                        na7Var.n2(j, 0L, null);
+                        if (na7Var.j0()) {
+                            na7Var.Z4(null);
+                            na7Var.getNotificationCenter().k(3, new Object[0]);
+                        }
+                    } else {
+                        j = j2;
+                    }
+                    na7Var.getNotificationCenter().k(2, 256);
+                } else {
+                    j = j2;
+                }
+                long j3 = j;
+                if (!this.f) {
+                    na7Var.getNotificationsController().L(null, j3, 0, i2, false);
+                    LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                    longSparseIntArray.put(j3, 0);
+                    na7Var.getNotificationsController().J(longSparseIntArray);
+                    break;
+                } else {
+                    na7Var.getNotificationsController().L(null, j3, 0, i2, true);
+                    LongSparseIntArray longSparseIntArray2 = new LongSparseIntArray(1);
+                    longSparseIntArray2.put(j3, -1);
+                    na7Var.getNotificationsController().J(longSparseIntArray2);
+                    break;
+                }
+                break;
+            default:
+                gl.c3(new i67(this.b, this.c, this.d, this.e, this.f, (byte) 0));
+                break;
         }
     }
 }

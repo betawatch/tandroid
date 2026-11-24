@@ -1,79 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class w1c extends b6c {
-    static {
-        b6c.h(new w1c());
+public final class w1c extends i49 {
+    public final /* synthetic */ d2c a;
+
+    public w1c(d2c d2cVar) {
+        this.a = d2cVar;
     }
 
-    public static c6c i(int i, String str, String str2, String str3, u1c u1cVar) {
-        return j(i, str, str2, str3, u1cVar, false, null, null);
+    @Override // i49
+    public final void a(RecyclerView recyclerView, int i) {
+        i49 i49Var = this.a.E;
+        if (i49Var != null) {
+            i49Var.a(recyclerView, i);
+        }
     }
 
-    public static c6c j(int i, String str, String str2, String str3, View.OnClickListener onClickListener, boolean z, View.OnClickListener onClickListener2, a0 a0Var) {
-        c6c K = c6c.K(w1c.class);
-        K.d = i;
-        K.m = str;
-        K.n = str2;
-        K.o = str3;
-        K.E = onClickListener;
-        K.e = z;
-        K.F = onClickListener2;
-        K.H = a0Var;
-        return K;
-    }
-
-    @Override // b6c
-    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
-        x1c x1cVar = (x1c) view;
-        CharSequence charSequence = c6cVar.m;
-        CharSequence charSequence2 = c6cVar.n;
-        CharSequence charSequence3 = c6cVar.o;
-        View.OnClickListener onClickListener = c6cVar.E;
-        boolean z2 = c6cVar.e;
-        View.OnClickListener onClickListener2 = c6cVar.F;
-        Object obj = c6cVar.H;
-        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
-        LinearLayout linearLayout = x1cVar.r;
-        LinearLayout linearLayout2 = x1cVar.h;
-        LinearLayout linearLayout3 = x1cVar.b;
-        x1cVar.c.setText(charSequence);
-        x1cVar.d.setText(charSequence2);
-        x1cVar.e.setText(charSequence3);
-        x1cVar.f.setVisibility(onClickListener != null ? 0 : 8);
-        linearLayout3.setOnClickListener(onClickListener);
-        linearLayout3.setClickable(onClickListener != null);
-        x1cVar.n.a(z2, false);
-        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
-        linearLayout2.setOnClickListener(onClickListener2);
-        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
-        linearLayout.setOnClickListener(new fyb(x1cVar, onClickListener3, (byte) 2));
-        x1cVar.updateColors();
-    }
-
-    @Override // b6c
-    public final boolean c(c6c c6cVar, c6c c6cVar2) {
-        return TextUtils.equals(c6cVar.m, c6cVar2.m) && TextUtils.equals(c6cVar.n, c6cVar2.n) && TextUtils.equals(c6cVar.o, c6cVar2.o) && c6cVar.F == c6cVar2.F;
-    }
-
-    @Override // b6c
-    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
-        return new x1c(context, ylbVar);
-    }
-
-    @Override // b6c
-    public final boolean e(c6c c6cVar, c6c c6cVar2) {
-        return c6cVar.d == c6cVar2.d;
-    }
-
-    @Override // b6c
-    public final boolean f() {
-        return false;
+    @Override // i49
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        d2c d2cVar = this.a;
+        c2c c2cVar = d2cVar.s;
+        t1c t1cVar = d2cVar.n;
+        i49 i49Var = d2cVar.E;
+        if (i49Var != null) {
+            i49Var.b(t1cVar, i, i2);
+        }
+        if (i2 <= 0 || t1cVar.getAdapter() != c2cVar || !d2cVar.K || c2cVar.r || c2cVar.s) {
+            return;
+        }
+        if (d2cVar.r.M0() >= ((c2cVar.x + 1) - ((c2cVar.w + 1) * 10)) - 1) {
+            d2c d2cVar2 = c2cVar.y;
+            if (!d2cVar2.K || c2cVar.r || c2cVar.s) {
+                return;
+            }
+            c2cVar.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = c2cVar.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(d2cVar2.a).sendRequest(tL_messages_getOldFeaturedStickers, new wx9(c2cVar, (byte) 17));
+        }
     }
 }

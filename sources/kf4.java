@@ -2,242 +2,368 @@
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import java.util.HashSet;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_chatlists;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class kf4 extends FrameLayout implements vlb {
-    public TL_chatlists.TL_exportedChatlistInvite E;
-    public final d a;
-    public final int b;
-    public final int c;
-    public final Drawable d;
-    public final Drawable e;
-    public final io f;
-    public final io h;
-    public final Paint n;
-    public final Paint r;
-    public float s;
-    public boolean w;
-    public ValueAnimator x;
-    public String y;
+public final class kf4 extends ka {
+    public final Context d;
+    public final /* synthetic */ FiltersSetupActivity e;
 
-    public kf4(Context context, d dVar, int i, int i2) {
-        super(context);
-        this.a = dVar;
-        this.b = i;
-        this.c = i2;
-        setImportantForAccessibility(1);
-        io ioVar = new io(context, true, true, false);
-        this.f = ioVar;
-        ioVar.setTextSize(gm.L(15.66f));
-        anb.U(ioVar, cmb.F6, null);
-        ioVar.setGravity(jb6.a0 ? 5 : 3);
-        ioVar.setEllipsizeByGradient(true);
-        boolean z = jb6.a0;
-        addView(ioVar, qoe.d(-1, 20.0f, 55, z ? 56.0f : 64.0f, 10.33f, z ? 64.0f : 56.0f, 0.0f));
-        io ioVar2 = new io(context, false, false, false);
-        this.h = ioVar2;
-        ioVar2.setTextSize(gm.L(13.0f));
-        anb.U(ioVar2, cmb.y6, null);
-        ioVar2.setGravity(jb6.a0 ? 5 : 3);
-        boolean z2 = jb6.a0;
-        addView(ioVar2, qoe.d(-1, 16.0f, 55, z2 ? 56.0f : 64.0f, 33.33f, z2 ? 64.0f : 56.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int i3 = cmb.h6;
-        fg0 f0 = cmb.f0(cmb.w0(null, i3, false), 1, -1);
-        wmb M = anb.M(i3);
-        imageView.setBackground(f0);
-        anb.j(imageView, f0, null, M, null);
-        int i4 = cmb.Ki;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        anb.s(imageView, i4, null, mode);
-        imageView.setOnClickListener(new sf3(this, (byte) 15));
-        imageView.setContentDescription(jb6.M0(2131754838, null));
-        boolean z3 = jb6.a0;
-        addView(imageView, qoe.d(40, 40.0f, (z3 ? 3 : 5) | 16, z3 ? 8.0f : 4.0f, 4.0f, z3 ? 4.0f : 8.0f, 4.0f));
-        Paint paint = new Paint();
-        this.n = paint;
-        paint.setColor(cmb.w0(null, cmb.Ei, false));
-        Paint paint2 = new Paint();
-        this.r = paint2;
-        paint2.setColor(cmb.w0(null, cmb.mk, false));
-        Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_link_1).mutate();
-        this.d = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.msg_link_2).mutate();
-        this.e = mutate2;
-        mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        setWillNotDraw(false);
+    public kf4(FiltersSetupActivity filtersSetupActivity, Context context) {
+        this.e = filtersSetupActivity;
+        this.d = context;
     }
 
-    public final void a() {
-        String str = this.y;
-        String substring = str == null ? null : str.substring(str.lastIndexOf(47) + 1);
-        if (substring == null) {
-            return;
-        }
-        TL_chatlists.TL_chatlists_deleteExportedInvite tL_chatlists_deleteExportedInvite = new TL_chatlists.TL_chatlists_deleteExportedInvite();
-        TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
-        tL_chatlists_deleteExportedInvite.chatlist = tL_inputChatlistDialogFilter;
-        tL_inputChatlistDialogFilter.filter_id = this.c;
-        tL_chatlists_deleteExportedInvite.slug = substring;
-        hf4 hf4Var = new hf4(this, (byte) 2);
-        ConnectionsManager.getInstance(this.b).sendRequest(tL_chatlists_deleteExportedInvite, new cx3(this, hf4Var, (byte) 3));
-        gm.d3(hf4Var, 150L);
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        int i = s49Var.f;
+        return (i == 3 || i == 0 || i == 5 || i == 1) ? false : true;
     }
 
-    public abstract void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite);
-
-    public void c() {
-        d dVar = this.a;
-        if (dVar instanceof qf4) {
-            fv fvVar = ((qf4) dVar).a;
-            bu5 I = bu5.I(dVar, this);
-            I.X(fvVar.V0(this, false));
-            I.b(R.drawable.msg_qrcode, jb6.M0(2131750405, null), new hf4(this, (byte) 0), false);
-            I.b(R.drawable.msg_delete, jb6.M0(2131751471, null), new hf4(this, (byte) 1), true);
-            if (jb6.a0) {
-                I.i = (byte) 3;
-            }
-            I.a0();
-        }
+    @Override // w39
+    public final int b() {
+        return this.e.n.size();
     }
 
-    public final void d() {
-        if (this.y == null) {
-            return;
+    @Override // w39
+    public final int d(int i) {
+        hf4 hf4Var;
+        ArrayList arrayList = this.e.n;
+        if (i < 0 || i >= arrayList.size() || (hf4Var = (hf4) arrayList.get(i)) == null) {
+            return 3;
         }
-        ax8 ax8Var = new ax8(getContext(), jb6.M0(2131748927, null), this.y, jb6.M0(2131746239, null), false);
-        ax8Var.D0();
-        ax8Var.show();
+        return hf4Var.a;
     }
 
-    public final void e(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite, boolean z) {
-        byte b = 0;
-        boolean z2 = this.E == tL_exportedChatlistInvite;
-        this.E = tL_exportedChatlistInvite;
-        String str = tL_exportedChatlistInvite.url;
-        this.y = str;
-        if (str.startsWith("http://")) {
-            str = str.substring(7);
-        }
-        if (str.startsWith("https://")) {
-            str = str.substring(8);
-        }
-        boolean isEmpty = TextUtils.isEmpty(tL_exportedChatlistInvite.title);
-        io ioVar = this.f;
-        if (isEmpty) {
-            ioVar.c(str, z2, true);
-        } else {
-            ioVar.c(tL_exportedChatlistInvite.title, z2, true);
-        }
-        this.h.c(jb6.G(tL_exportedChatlistInvite.peers.size(), "FilterInviteChats", new Object[0]), z2, true);
-        if (this.w != z) {
-            this.w = z;
-            invalidate();
-        }
-        boolean z3 = tL_exportedChatlistInvite.revoked;
-        if ((z3 ? 1.0f : 0.0f) != this.s) {
-            ValueAnimator valueAnimator = this.x;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.x = null;
-            }
-            if (!z2) {
-                this.s = z3 ? 1.0f : 0.0f;
-                invalidate();
+    /* JADX WARN: Removed duplicated region for block: B:140:0x02e5  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x02fa  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0320  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0339  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x033d  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0323  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x02f1  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x02c4  */
+    @Override // w39
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(s49 s49Var, int i) {
+        char c;
+        boolean z;
+        String str;
+        boolean d;
+        FiltersSetupActivity filtersSetupActivity = this.e;
+        ArrayList arrayList = filtersSetupActivity.n;
+        hf4 hf4Var = (hf4) arrayList.get(i);
+        if (hf4Var != null) {
+            int i2 = i + 1;
+            boolean z2 = i2 < arrayList.size() && ((hf4) arrayList.get(i2)).a != 3;
+            boolean z3 = i2 >= arrayList.size();
+            int i3 = s49Var.f;
+            View view = s49Var.a;
+            if (i3 == 0) {
+                ((ld5) view).setText(hf4Var.c);
                 return;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, z3 ? 1.0f : 0.0f);
-            this.x = ofFloat;
-            ofFloat.addUpdateListener(new et1(this, (byte) 27));
-            this.x.addListener(new jf4(b, this, z3));
-            this.x.setInterpolator(d53.h);
-            this.x.setDuration(350L);
-            this.x.start();
+            if (i3 != 2) {
+                if (i3 == 3) {
+                    mhb mhbVar = (mhb) view;
+                    if (TextUtils.isEmpty(hf4Var.c)) {
+                        mhbVar.setText(null);
+                        mhbVar.setFixedSize(12);
+                    } else {
+                        mhbVar.setFixedSize(0);
+                        mhbVar.setText(hf4Var.c);
+                    }
+                    mhbVar.setBottomPadding(z3 ? 32 : 17);
+                    return;
+                }
+                if (i3 != 4) {
+                    if (i3 != 5) {
+                        if (i3 != 6) {
+                            return;
+                        }
+                        ahb ahbVar = (ahb) view;
+                        ahbVar.f(hf4Var.c, filtersSetupActivity.getMessagesController().l4, z2);
+                        ahbVar.setCheckBoxIcon(filtersSetupActivity.getUserConfig().p() ? 0 : R.drawable.permission_locked);
+                        return;
+                    }
+                    lf4 lf4Var = (lf4) view;
+                    TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = hf4Var.e;
+                    lf4Var.d = z2;
+                    lf4Var.e = tL_dialogFilterSuggested;
+                    lf4Var.setWillNotDraw(!z2);
+                    lf4Var.a.setText(tL_dialogFilterSuggested.filter.title.text);
+                    lf4Var.b.setText(tL_dialogFilterSuggested.description);
+                    return;
+                }
+                mf4 mf4Var = (mf4) view;
+                Context context = this.d;
+                Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
+                Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
+                int w0 = bkb.w0(null, bkb.M6, false);
+                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+                drawable.setColorFilter(new PorterDuffColorFilter(w0, mode));
+                drawable2.setColorFilter(new PorterDuffColorFilter(bkb.w0(null, bkb.j7, false), mode));
+                fm2 fm2Var = new fm2(drawable, drawable2);
+                mf4Var.a.l(((Object) hf4Var.c) + "", false);
+                mf4Var.b.setImageDrawable(fm2Var);
+                return;
+            }
+            ff4 ff4Var = (ff4) view;
+            t97 t97Var = hf4Var.d;
+            ImageView imageView = ff4Var.c;
+            jia jiaVar = ff4Var.a;
+            View view2 = ff4Var.f;
+            FiltersSetupActivity filtersSetupActivity2 = ff4Var.I;
+            t97 t97Var2 = ff4Var.y;
+            int i4 = t97Var2 == null ? -1 : t97Var2.a;
+            ff4Var.y = t97Var;
+            int i5 = t97Var == null ? -1 : t97Var.a;
+            if (i4 != i5) {
+                z = true;
+                c = 1;
+            } else {
+                c = 1;
+                z = false;
+            }
+            int i6 = filtersSetupActivity2.getMessagesController().l4 ? t97Var.m : -1;
+            if (i6 >= 0 && t97Var.m != ff4Var.e) {
+                int L = gl.L(22.0f);
+                int[] iArr = bkb.q8;
+                ff4Var.e = i6;
+                ShapeDrawable K = bkb.K(L, filtersSetupActivity2.getThemedColor(iArr[i6 % iArr.length]));
+                ff4Var.e = i6;
+                zkb.B(view2, K, zkb.M(iArr[i6 % iArr.length]), filtersSetupActivity2.getResourceProvider());
+            }
+            if (i6 != ff4Var.d) {
+                ValueAnimator valueAnimator = ff4Var.E;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                if (i4 == i5) {
+                    float alpha = imageView.getAlpha();
+                    float f = i6 >= 0 ? 0.0f : 1.0f;
+                    float[] fArr = new float[2];
+                    fArr[0] = alpha;
+                    fArr[c] = f;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
+                    ff4Var.E = ofFloat;
+                    ofFloat.addUpdateListener(new uz1(ff4Var, (byte) 28));
+                    ff4Var.E.setInterpolator(s33.h);
+                    ff4Var.E.setDuration(340L);
+                    ff4Var.E.setStartDelay((i6 >= 0 ? Math.max(0, filtersSetupActivity2.w - i) : Math.max(0, i - filtersSetupActivity2.s)) * 27);
+                    ff4Var.E.start();
+                } else {
+                    imageView.setScaleX(i6 >= 0 ? 0.5f : 1.0f);
+                    imageView.setScaleY(i6 >= 0 ? 0.5f : 1.0f);
+                    imageView.setAlpha(i6 >= 0 ? 0.0f : 1.0f);
+                    view2.setScaleX(i6 >= 0 ? 1.0f : 0.5f);
+                    view2.setScaleY(i6 >= 0 ? 1.0f : 0.5f);
+                    view2.setAlpha(i6 >= 0 ? 1.0f : 0.0f);
+                }
+                ff4Var.d = i6;
+            }
+            ff4Var.n.setVisibility(t97Var.c() ? 0 : 8);
+            StringBuilder sb = new StringBuilder();
+            if (!t97Var.d()) {
+                int i7 = t97Var.g;
+                int i8 = na7.r5;
+                if ((i7 & i8) != i8) {
+                    if ((i7 & 1) != 0) {
+                        if (sb.length() != 0) {
+                            sb.append(", ");
+                        }
+                        sb.append(k96.M0(2131750779, null));
+                    }
+                    if ((t97Var.g & 2) != 0) {
+                        if (sb.length() != 0) {
+                            sb.append(", ");
+                        }
+                        sb.append(k96.M0(2131750706, null));
+                    }
+                    if ((t97Var.g & 4) != 0) {
+                        if (sb.length() != 0) {
+                            sb.append(", ");
+                        }
+                        sb.append(k96.M0(2131750762, null));
+                    }
+                    if ((t97Var.g & 8) != 0) {
+                        if (sb.length() != 0) {
+                            sb.append(", ");
+                        }
+                        sb.append(k96.M0(2131750788, null));
+                    }
+                    if ((t97Var.g & 16) != 0) {
+                        if (sb.length() != 0) {
+                            sb.append(", ");
+                        }
+                        sb.append(k96.M0(2131750789, null));
+                    }
+                    if (t97Var.h.isEmpty() || !t97Var.i.isEmpty()) {
+                        if (sb.length() != 0) {
+                            sb.append(", ");
+                        }
+                        sb.append(k96.G(t97Var.i.size() + t97Var.h.size(), "Exception", new Object[0]));
+                    }
+                    if (sb.length() != 0) {
+                        str = null;
+                        sb.append(k96.M0(2131750714, null));
+                    } else {
+                        str = null;
+                    }
+                    String str2 = t97Var.b;
+                    if (t97Var.d()) {
+                        str2 = k96.M0(2131750795, str);
+                    }
+                    if (!z) {
+                        ff4Var.x = ff4Var.y.p ? 1.0f : 0.0f;
+                    }
+                    Spannable A5 = k27.A5(b00.e(jiaVar, str2, false, null, 0), t97Var.c, jiaVar.getPaint().getFontMetricsInt(), false);
+                    jiaVar.setEmojiCacheType(!t97Var.n ? 26 : 0);
+                    jiaVar.l(A5, false);
+                    ff4Var.b.setText(sb);
+                    ff4Var.w = z2;
+                    d = t97Var.d();
+                    ImageView imageView2 = ff4Var.h;
+                    if (d) {
+                        imageView2.setVisibility(0);
+                    } else {
+                        imageView2.setVisibility(8);
+                    }
+                    ff4Var.invalidate();
+                }
+            }
+            sb.append(k96.M0(2131750795, null));
+            if (t97Var.h.isEmpty()) {
+            }
+            if (sb.length() != 0) {
+            }
+            sb.append(k96.G(t97Var.i.size() + t97Var.h.size(), "Exception", new Object[0]));
+            if (sb.length() != 0) {
+            }
+            String str22 = t97Var.b;
+            if (t97Var.d()) {
+            }
+            if (!z) {
+            }
+            Spannable A52 = k27.A5(b00.e(jiaVar, str22, false, null, 0), t97Var.c, jiaVar.getPaint().getFontMetricsInt(), false);
+            jiaVar.setEmojiCacheType(!t97Var.n ? 26 : 0);
+            jiaVar.l(A52, false);
+            ff4Var.b.setText(sb);
+            ff4Var.w = z2;
+            d = t97Var.d();
+            ImageView imageView22 = ff4Var.h;
+            if (d) {
+            }
+            ff4Var.invalidate();
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int measuredWidth = jb6.a0 ? getMeasuredWidth() - gm.L(32.0f) : gm.L(32.0f);
-        float f = measuredWidth;
-        canvas.drawCircle(f, getMeasuredHeight() / 2.0f, gm.L(16.0f), this.n);
-        if (this.s > 0.0f) {
-            canvas.drawCircle(f, getMeasuredHeight() / 2.0f, gm.L(16.0f) * this.s, this.r);
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        FrameLayout frameLayout;
+        Context context = this.d;
+        if (i == 0) {
+            frameLayout = new ld5(context);
+        } else if (i != 1) {
+            byte b = 16;
+            if (i == 2) {
+                ff4 ff4Var = new ff4(this.e, context);
+                ff4Var.setOnReorderButtonTouchListener(new f8(this, ff4Var, r9));
+                ff4Var.setOnOptionsClick(new yj3(this, b));
+                frameLayout = ff4Var;
+            } else if (i == 3) {
+                frameLayout = new mhb(context);
+            } else if (i == 4) {
+                mf4 mf4Var = new mf4(context);
+                jia jiaVar = new jia(context);
+                mf4Var.a = jiaVar;
+                jiaVar.setTextSize(16);
+                jiaVar.setGravity(k96.a0 ? (byte) 5 : (byte) 3);
+                int i2 = bkb.n6;
+                zkb.W(jiaVar, i2, null);
+                jiaVar.setTag(Integer.valueOf(i2));
+                mf4Var.addView(jiaVar);
+                ImageView imageView = new ImageView(context);
+                mf4Var.b = imageView;
+                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                mf4Var.addView(imageView);
+                frameLayout = mf4Var;
+            } else if (i != 6) {
+                lf4 lf4Var = new lf4(context);
+                TextView textView = new TextView(context);
+                lf4Var.a = textView;
+                zkb.X(textView, bkb.F6, null);
+                ug8.w(textView, 1, 16.0f, 1, 1);
+                textView.setSingleLine(true);
+                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+                textView.setEllipsize(truncateAt);
+                textView.setGravity(k96.a0 ? 5 : 3);
+                lf4Var.addView(textView, nme.d(-2, -2.0f, k96.a0 ? 5 : 3, 22.0f, 10.0f, 22.0f, 0.0f));
+                TextView textView2 = new TextView(context);
+                lf4Var.b = textView2;
+                zkb.X(textView2, bkb.y6, null);
+                ug8.w(textView2, 1, 13.0f, 1, 1);
+                textView2.setSingleLine(true);
+                textView2.setEllipsize(truncateAt);
+                textView2.setGravity(k96.a0 ? 5 : 3);
+                lf4Var.addView(textView2, nme.d(-2, -2.0f, k96.a0 ? 5 : 3, 22.0f, 35.0f, 22.0f, 0.0f));
+                ls8 ls8Var = new ls8(context);
+                lf4Var.c = ls8Var;
+                ls8Var.setText(k96.M0(2131754483, null));
+                zkb.X(ls8Var, bkb.Ii, null);
+                ls8Var.setProgressColor(bkb.w0(null, bkb.Di, false));
+                int i3 = bkb.Ei;
+                int w0 = bkb.w0(null, i3, false);
+                bkb.w0(null, bkb.Gi, false);
+                ls8Var.setBackground(sjb.e(w0, 14.0f));
+                Drawable background = ls8Var.getBackground();
+                vkb M = zkb.M(i3);
+                ls8Var.setBackground(background);
+                zkb.j(ls8Var, background, M, null, null);
+                lf4Var.addView(ls8Var, nme.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+                lf4Var.setAddOnClickListener(new xf3((Object) this, (Object) lf4Var, (byte) 9));
+                frameLayout = lf4Var;
+            } else {
+                frameLayout = new ahb(context);
+            }
+        } else {
+            SpannableStringBuilder S2 = gl.S2(k96.a0(null, null, 2131751703, new Object[0]));
+            gf4 gf4Var = new gf4(context);
+            ry8 ry8Var = new ry8(context);
+            gf4Var.a = ry8Var;
+            ry8Var.f(R.raw.filters, 90, 90, null);
+            ry8Var.setScaleType(ImageView.ScaleType.CENTER);
+            ry8Var.d();
+            ry8Var.setImportantForAccessibility(2);
+            gf4Var.addView(ry8Var, nme.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
+            ry8Var.setOnClickListener(new yj3(gf4Var, (byte) 15));
+            TextView textView3 = new TextView(context);
+            zkb.X(textView3, bkb.A6, null);
+            textView3.setTextSize(1, 14.0f);
+            textView3.setGravity(17);
+            textView3.setText(S2);
+            gf4Var.addView(textView3, nme.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
+            frameLayout = gf4Var;
         }
-        float f2 = this.s;
-        if (f2 < 1.0f) {
-            Drawable drawable = this.d;
-            drawable.setAlpha((int) ((1.0f - f2) * 255.0f));
-            drawable.setBounds(measuredWidth - gm.L(14.0f), (getMeasuredHeight() / 2) - gm.L(14.0f), gm.L(14.0f) + measuredWidth, gm.L(14.0f) + (getMeasuredHeight() / 2));
-            drawable.draw(canvas);
-        }
-        float f3 = this.s;
-        if (f3 > 0.0f) {
-            Drawable drawable2 = this.e;
-            drawable2.setAlpha((int) (f3 * 255.0f));
-            drawable2.setBounds(measuredWidth - gm.L(14.0f), (getMeasuredHeight() / 2) - gm.L(14.0f), gm.L(14.0f) + measuredWidth, gm.L(14.0f) + (getMeasuredHeight() / 2));
-            drawable2.draw(canvas);
-        }
-        if (this.w) {
-            canvas.drawRect(jb6.a0 ? 0.0f : gm.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (jb6.a0 ? gm.L(64.0f) : 0), getMeasuredHeight(), cmb.j0);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.E;
-        String str = "";
-        StringBuilder sb = new StringBuilder((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : b10.j(new StringBuilder(), this.E.title, "\n "));
-        sb.append(jb6.M0(2131748906, null));
-        sb.append(", ");
-        sb.append((Object) this.h.getText());
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2 = this.E;
-        if (tL_exportedChatlistInvite2 != null && TextUtils.isEmpty(tL_exportedChatlistInvite2.title)) {
-            str = "\n\n" + this.E.url;
-        }
-        sb.append(str);
-        accessibilityNodeInfo.setContentDescription(sb.toString());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(60.0f), TLObject.FLAG_30));
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        try {
-            this.n.setColor(cmb.w0(null, cmb.Ei, false));
-            this.r.setColor(cmb.w0(null, cmb.mk, false));
-            invalidate();
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
-    }
-
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+        return new y29(frameLayout);
     }
 }

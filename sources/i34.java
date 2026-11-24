@@ -1,16 +1,56 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.d;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class i34 extends d {
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        ela elaVar = new ela(context, null);
-        this.fragmentView = elaVar;
-        return elaVar;
+public final class i34 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ l34 b;
+
+    public /* synthetic */ i34(l34 l34Var, byte b) {
+        this.a = b;
+        this.b = l34Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        l34 l34Var = this.b;
+        switch (b) {
+            case 0:
+                if (animator == l34Var.c0) {
+                    l34Var.c0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                if (animator == l34Var.d0) {
+                    l34Var.d0 = null;
+                    break;
+                }
+                break;
+            case 2:
+                if (animator == l34Var.R) {
+                    l34Var.R = null;
+                    l34Var.Q = 0.0f;
+                    break;
+                }
+                break;
+            case 3:
+                if (animator == l34Var.S) {
+                    l34Var.S = null;
+                    break;
+                }
+                break;
+            default:
+                if (!l34Var.n0) {
+                    gl.B2(l34Var.J);
+                    l34Var.J = null;
+                    break;
+                }
+                break;
+        }
     }
 }

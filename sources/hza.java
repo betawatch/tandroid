@@ -1,1081 +1,604 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.transition.TransitionManager;
-import android.util.Log;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Region;
+import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import java.io.BufferedWriter;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.video.VideoAds;
-import org.telegram.messenger.voip.VoIPPreNotificationService;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.NativeByteBuffer;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.Wallet.c;
+import org.telegram.ui.StickersActivity;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.d0;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hza implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hza implements OnSuccessListener, ll5, ed, g8b, ula, CameraController.VideoTakeCallback, no7, us2, n8c, Vector.TLDeserializer, bha, l8, e39, zw5, eja, xcb, g79, yr9, Continuation, q3b {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ hza(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
+    public /* synthetic */ hza(Object obj, byte b) {
         this.a = b;
-        this.d = obj;
-        this.b = obj2;
-        this.c = obj3;
-        this.e = obj4;
+        this.b = obj;
     }
 
-    private final void a() {
-        p5c p5cVar = (p5c) this.d;
-        TLObject tLObject = (TLObject) this.b;
-        String str = (String) this.c;
-        TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
-        if (tLObject instanceof TLRPC.TL_boolTrue) {
-            p5cVar.l0(new x4c(p5cVar, str, (byte) 2));
-            return;
-        }
-        if (tL_error == null || tL_error.text.startsWith("CODE_INVALID")) {
-            p5cVar.D0();
-        } else if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-            p5cVar.L0(jb6.M0(2131743618, null), tL_error.text);
-        } else {
-            int intValue = Utilities.z(tL_error.text).intValue();
-            p5cVar.L0(jb6.M0(2131743618, null), jb6.a0("FloodWaitTime", null, 2131750618, intValue < 60 ? jb6.G(intValue, "Seconds", new Object[0]) : jb6.G(intValue / 60, "Minutes", new Object[0])));
+    @Override // ll5
+    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        oy8 y;
+        boolean z4;
+        dcc dccVar;
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 1:
+                yza yzaVar = (yza) obj;
+                if (z && !z2 && (y = imageReceiver.y()) != null) {
+                    yzaVar.q(y);
+                    break;
+                }
+                break;
+            default:
+                ecc eccVar = (ecc) obj;
+                ImageReceiver imageReceiver2 = eccVar.R;
+                if (z) {
+                    if (eccVar.O != null || eccVar.e0 != null) {
+                        int L = gl.L(150.0f);
+                        x88 x88Var = eccVar.O;
+                        if (x88Var != null) {
+                            int i5 = (int) eccVar.P;
+                            ArrayList arrayList = x88Var.w;
+                            int indexOf = arrayList.indexOf(x88Var.b(i5));
+                            if (indexOf == -1) {
+                                z4 = true;
+                                i4 = 0;
+                            } else if (indexOf == arrayList.size() - 1) {
+                                int videoDuration = x88Var.getVideoDuration() / 1000;
+                                z4 = true;
+                                i4 = Math.min(25, (((int) (videoDuration <= 100 ? Math.ceil(videoDuration) : videoDuration <= 250 ? Math.ceil(videoDuration / 2.0f) : videoDuration <= 500 ? Math.ceil(videoDuration / 4.0f) : videoDuration <= 1000 ? Math.ceil(videoDuration / 5.0f) : Math.ceil(videoDuration / 10.0f))) - ((arrayList.size() - 1) * 25)) + 1);
+                            } else {
+                                z4 = true;
+                                i4 = 25;
+                            }
+                            float q = imageReceiver2.q() / Math.min(i4, 5);
+                            float o = imageReceiver2.o() / ((int) Math.ceil(i4 / 5.0f));
+                            x88 x88Var2 = eccVar.O;
+                            int i6 = (int) eccVar.P;
+                            int videoDuration2 = x88Var2.getVideoDuration() / 1000;
+                            int min = Math.min(videoDuration2 <= 100 ? ((int) Math.ceil(i6)) % 25 : videoDuration2 <= 250 ? ((int) Math.ceil(i6 / 2.0f)) % 25 : videoDuration2 <= 500 ? ((int) Math.ceil(i6 / 4.0f)) % 25 : videoDuration2 <= 1000 ? ((int) Math.ceil(i6 / 5.0f)) % 25 : ((int) Math.ceil(i6 / 10.0f)) % 25, i4 - 1);
+                            eccVar.S = (int) ((min % 5) * q);
+                            eccVar.T = (int) ((min / 5) * o);
+                            i = (int) q;
+                            eccVar.U = i;
+                            i2 = (int) o;
+                            eccVar.V = i2;
+                        } else {
+                            z4 = true;
+                            int i7 = 0;
+                            while (true) {
+                                if (i7 < eccVar.e0.size()) {
+                                    dccVar = (dcc) eccVar.e0.get(i7);
+                                    double d = i7 == 0 ? 0.0d : dccVar.a;
+                                    double d2 = i7 == eccVar.e0.size() + (-1) ? 9.9999999E7d : ((dcc) eccVar.e0.get(i7 + 1)).a;
+                                    double d3 = eccVar.P;
+                                    if (d3 < d || d3 > d2) {
+                                        i7++;
+                                    }
+                                } else {
+                                    dccVar = null;
+                                }
+                            }
+                            if (dccVar != null) {
+                                eccVar.S = dccVar.b;
+                                eccVar.T = dccVar.c;
+                                i = eccVar.c0;
+                                eccVar.U = i;
+                                i2 = eccVar.d0;
+                                eccVar.V = i2;
+                            }
+                        }
+                        eccVar.Q = z4;
+                        float f = i / i2;
+                        if (f > 1.0f) {
+                            i3 = (int) (L / f);
+                        } else {
+                            L = (int) (L * f);
+                            i3 = L;
+                        }
+                        ViewGroup.LayoutParams layoutParams = eccVar.getLayoutParams();
+                        if (eccVar.getVisibility() != 0 || layoutParams.width != L || layoutParams.height != i3) {
+                            layoutParams.width = L;
+                            layoutParams.height = i3;
+                            eccVar.setVisibility(0);
+                            eccVar.requestLayout();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
     }
 
-    private final void b() {
-        v6c v6cVar = (v6c) this.d;
-        ArrayList arrayList = (ArrayList) this.b;
-        HashSet hashSet = (HashSet) this.c;
-        ArrayList arrayList2 = (ArrayList) this.e;
-        int i = v6cVar.a;
-        oc7.r1(i).d4(arrayList, true);
-        ArrayList arrayList3 = v6cVar.b;
-        boolean isEmpty = arrayList3.isEmpty();
-        int i2 = 0;
-        while (i2 < arrayList3.size()) {
-            u6c u6cVar = (u6c) arrayList3.get(i2);
-            if (u6cVar == null || u6cVar.a() <= 0 || hashSet.contains(Long.valueOf(u6cVar.b))) {
-                arrayList3.remove(i2);
-                i2--;
-            }
-            i2++;
+    @Override // ll5
+    public final void E(int i, Drawable drawable) {
+        byte b = this.a;
+    }
+
+    @Override // yr9
+    public final vf6 O0() {
+        return null;
+    }
+
+    @Override // yr9
+    public final boolean U1(int i) {
+        return true;
+    }
+
+    @Override // no7
+    public final vxc W(View view, vxc vxcVar) {
+        View fragmentView;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 8:
+                m8b m8bVar = (m8b) obj;
+                io5 H0 = gl.H0(vxcVar, false);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) m8bVar.w.getLayoutParams();
+                marginLayoutParams.topMargin = m8bVar.c ? 0 : vxcVar.d();
+                marginLayoutParams.bottomMargin = m8bVar.c ? vxcVar.a.f(2).d : vxcVar.a();
+                marginLayoutParams.leftMargin = H0.a;
+                marginLayoutParams.rightMargin = H0.c;
+                a8b a8bVar = m8bVar.s;
+                if (a8bVar != null) {
+                    a8bVar.requestLayout();
+                }
+                b8b b8bVar = m8bVar.w;
+                if (b8bVar != null) {
+                    b8bVar.requestLayout();
+                }
+                break;
+            default:
+                ah6 ah6Var = (ah6) ((jec) obj);
+                io5 H02 = gl.H0(vxcVar, false);
+                int i = H02.a;
+                ah6Var.N = i;
+                int i2 = H02.c;
+                ah6Var.O = i2;
+                ah6Var.M = H02.d;
+                boolean a = ah6Var.E.a();
+                int L = a ? gl.L(44.0f) : 0;
+                ah6Var.E.setPadding(0, 0, 0, ah6Var.M);
+                int L2 = gl.L(72.0f) + ah6Var.M + L;
+                ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) ah6Var.I.getLayoutParams();
+                if (marginLayoutParams2.height != L2) {
+                    marginLayoutParams2.height = L2;
+                    ah6Var.I.setLayoutParams(marginLayoutParams2);
+                }
+                int i3 = a ? ah6Var.M + L : 0;
+                ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) ah6Var.c.getLayoutParams();
+                if (marginLayoutParams3.bottomMargin != i3 || marginLayoutParams3.leftMargin != i || marginLayoutParams3.rightMargin != i2) {
+                    marginLayoutParams3.leftMargin = i;
+                    marginLayoutParams3.rightMargin = i2;
+                    marginLayoutParams3.bottomMargin = i3;
+                    ah6Var.c.setLayoutParams(marginLayoutParams3);
+                }
+                ah6Var.F.setPadding(i, 0, i2, ah6Var.M);
+                if (a) {
+                    vxcVar = vxcVar.a.m(0, 0, 0, ah6Var.M);
+                }
+                ah6Var.i0();
+                ah6Var.h0();
+                SparseArray sparseArray = ah6Var.a;
+                int size = sparseArray.size();
+                while (r0 < size) {
+                    hec hecVar = (hec) sparseArray.valueAt(r0);
+                    if (hecVar != null && (fragmentView = hecVar.a.getFragmentView()) != null) {
+                        jdc.b(fragmentView, vxcVar);
+                    }
+                    r0++;
+                }
+                break;
         }
-        arrayList3.addAll(arrayList2);
-        boolean isEmpty2 = arrayList3.isEmpty();
-        v6cVar.c = true;
-        v6cVar.d = false;
-        if (isEmpty != isEmpty2) {
-            nm7.f(i).k(nm7.f3, new Object[0]);
-        }
-        v6cVar.e();
-        if (v6cVar.e) {
-            v6cVar.e = false;
-            v6cVar.d();
+        return vxc.b;
+    }
+
+    @Override // zw5
+    public final void a(String str) {
+        c0c c0cVar = (c0c) this.b;
+        c0cVar.Z1 = str;
+        c0cVar.e2.O(true);
+    }
+
+    @Override // us2
+    public final void accept(Object obj) {
+        ((jm5) this.b).c((x33) obj);
+    }
+
+    @Override // l8
+    public final void b() {
+        ((jpb) this.b).e();
+    }
+
+    @Override // bha
+    public final float c(RecyclerView recyclerView) {
+        return dha.j(recyclerView);
+    }
+
+    @Override // e39
+    public final boolean d(int i, View view) {
+        ((zsb) this.b).K.d(i, view);
+        return true;
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+        TLRPC.PhotoSize lambda$readParams$0;
+        TLRPC.PhotoSize lambda$readParams$02;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 11:
+                lambda$readParams$0 = ((TLRPC.TL_stickerSet) obj).lambda$readParams$0(inputSerializedData, i, z);
+                return lambda$readParams$0;
+            default:
+                lambda$readParams$02 = ((TLRPC.TL_stickerSet_layer143) obj).lambda$readParams$0(inputSerializedData, i, z);
+                return lambda$readParams$02;
         }
     }
 
-    private final void c() {
-        String e;
-        BufferedWriter bufferedWriter;
-        jd4 jd4Var = (jd4) this.d;
-        String str = (String) this.c;
-        Map map = (Map) this.b;
-        List list = (List) this.e;
-        jf7 jf7Var = (jf7) jd4Var.b;
-        AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) jd4Var.g;
-        if (((String) atomicMarkableReference.getReference()) != null) {
-            jf7Var.i(str, (String) atomicMarkableReference.getReference());
-        }
-        if (!map.isEmpty()) {
-            jf7Var.h(str, map, false);
-        }
-        if (list.isEmpty()) {
+    @Override // ula
+    public final void e(qla qlaVar, float f, float f2) {
+        i3b i3bVar = (i3b) this.b;
+        if (i3bVar.v.y) {
             return;
         }
-        File b = jf7Var.a.b(str, "rollouts-state");
-        if (list.isEmpty()) {
-            jf7.g(b, "Rollout state is empty for session: " + str);
+        qlaVar.q = new h3b(i3bVar, (byte) 2);
+        float sqrt = (float) Math.sqrt(Math.pow(r0.getHeight(), 2.0d) + Math.pow(r0.getWidth(), 2.0d));
+        ArrayList arrayList = i3bVar.i;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((qla) obj).j(f, f2, sqrt, false);
+        }
+    }
+
+    @Override // g8b
+    public final void g(float f, Canvas canvas, RectF rectF, boolean z) {
+        Path path = (Path) this.b;
+        if (z) {
             return;
         }
-        BufferedWriter bufferedWriter2 = null;
+        path.rewind();
+        float pow = (float) Math.pow(f, 2.0d);
+        path.addCircle((rectF.right + gl.L(7.0f)) - (gl.L(14.0f) * pow), (rectF.bottom + gl.L(7.0f)) - (gl.L(14.0f) * pow), gl.L(11.0f), Path.Direction.CW);
+        canvas.clipPath(path, Region.Op.DIFFERENCE);
+    }
+
+    @Override // q3b
+    public final long get() {
+        lbc lbcVar = ((c78) this.b).a.G2;
+        if (lbcVar != null) {
+            return lbcVar.S();
+        }
+        return 0L;
+    }
+
+    @Override // bha
+    public final RecyclerView h(View view) {
+        ((iva) this.b).getClass();
+        return ((gva) view).a;
+    }
+
+    @Override // n8c
+    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        byte b = this.a;
+        Object obj3 = this.b;
+        switch (b) {
+            case 10:
+                ((fbb) obj3).Z((c4c) obj);
+                break;
+            default:
+                ((vob) obj3).Z((c4c) obj, (View) obj2);
+                break;
+        }
+    }
+
+    @Override // eja
+    public final void k(int i) {
+        p8c p8cVar = ((c4c) this.b).D;
+        if (p8cVar != null) {
+            p8cVar.a(Integer.valueOf(i));
+        }
+    }
+
+    @Override // xcb
+    public final Object m() {
+        lo9 lo9Var = (lo9) ((z90) this.b).i;
+        SQLiteDatabase a = lo9Var.a();
+        a.beginTransaction();
         try {
-            try {
-                e = jf7.e(list);
-                bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b), jf7.b));
-            } catch (Throwable th) {
-                th = th;
-            }
-        } catch (Exception e2) {
-            e = e2;
-        }
-        try {
-            bufferedWriter.write(e);
-            bufferedWriter.flush();
-            bo2.b(bufferedWriter, "Failed to close rollouts state file.");
-        } catch (Exception e3) {
-            e = e3;
-            bufferedWriter2 = bufferedWriter;
-            Log.w("FirebaseCrashlytics", "Error serializing rollouts state.", e);
-            jf7.f(b);
-            bo2.b(bufferedWriter2, "Failed to close rollouts state file.");
-        } catch (Throwable th2) {
-            th = th2;
-            bufferedWriter2 = bufferedWriter;
-            bo2.b(bufferedWriter2, "Failed to close rollouts state file.");
+            a.compileStatement("DELETE FROM log_event_dropped").execute();
+            a.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + lo9Var.b.e()).execute();
+            a.setTransactionSuccessful();
+            a.endTransaction();
+            return null;
+        } catch (Throwable th) {
+            a.endTransaction();
             throw th;
         }
     }
 
-    private final void d() {
-        d Q;
-        l9c l9cVar = (l9c) this.d;
-        String str = (String) this.c;
-        TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
-        TLObject tLObject = (TLObject) this.e;
-        int i = l9cVar.a;
-        ArrayList arrayList = (ArrayList) l9cVar.c.remove(str);
-        if (arrayList != null) {
-            int i2 = 0;
-            if (tL_error == null) {
-                TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-                oc7.r1(i).d4(tL_contacts_resolvedPeer.users, false);
-                oc7.r1(i).X3(tL_contacts_resolvedPeer.chats, false);
-                cf7.Y(i).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
-                long B1 = k47.B1(tL_contacts_resolvedPeer.peer);
-                l9cVar.b.put(str, new k9c(B1));
-                while (i2 < arrayList.size()) {
-                    ((qac) arrayList.get(i2)).a(Long.valueOf(B1));
-                    i2++;
-                }
-                return;
-            }
-            String str2 = tL_error.text;
-            if (str2 != null && "STARREF_EXPIRED".equals(str2)) {
-                while (i2 < arrayList.size()) {
-                    ((qac) arrayList.get(i2)).a(Long.MAX_VALUE);
-                    i2++;
-                }
-                return;
-            }
-            while (i2 < arrayList.size()) {
-                ((qac) arrayList.get(i2)).a(null);
-                i2++;
-            }
-            String str3 = tL_error.text;
-            if (str3 == null || !str3.contains("FLOOD_WAIT") || (Q = LaunchActivity.Q()) == null) {
-                return;
-            }
-            mlb.y(null, 2131750619, c41.b0(Q), null);
+    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
+    public final void onFinishVideoRecording(String str, long j) {
+        t6b t6bVar = (t6b) this.b;
+        t7b t7bVar = t6bVar.a;
+        f29 f29Var = t7bVar.P0;
+        int i = t7bVar.c;
+        if (f29Var != null) {
+            f29Var.g(true);
         }
+        if (t7bVar.p0()) {
+            t7bVar.s.d();
+        }
+        if (t7bVar.H1 == null || t7bVar.C0 == null) {
+            return;
+        }
+        t7bVar.R1 = false;
+        t7bVar.S1 = false;
+        dv8 dv8Var = t7bVar.D0;
+        if (dv8Var != null) {
+            dv8Var.f(false);
+        }
+        if (j <= 800) {
+            t7bVar.e(false, true);
+            t7bVar.c0(false);
+            t7bVar.K0.b(false, true);
+            f29 f29Var2 = t7bVar.P0;
+            if (f29Var2 != null) {
+                f29Var2.g(true);
+            }
+            try {
+                t7bVar.H1.delete();
+                t7bVar.H1 = null;
+            } catch (Exception e) {
+                fa4.g(e, true);
+            }
+            if (str != null) {
+                try {
+                    new File(str).delete();
+                    return;
+                } catch (Exception e2) {
+                    fa4.g(e2, true);
+                    return;
+                }
+            }
+            return;
+        }
+        t7bVar.h0(false, true);
+        f4b o = f4b.o(t7bVar.H1, str, j);
+        o.J0 = t7bVar.w0;
+        o.K0 = t7bVar.x0;
+        o.A();
+        t7bVar.e(false, true);
+        t7bVar.c0(false);
+        t7bVar.K0.b(false, true);
+        f29 f29Var3 = t7bVar.P0;
+        if (f29Var3 != null) {
+            f29Var3.g(true);
+        }
+        if (!t7bVar.B0.i()) {
+            t7bVar.L1 = o;
+            a6b.a(i, o);
+            t7bVar.M1 = false;
+            int videoWidth = t7bVar.C0.getVideoWidth();
+            int videoHeight = t7bVar.C0.getVideoHeight();
+            if (videoWidth > 0 && videoHeight > 0) {
+                f4b f4bVar = t7bVar.L1;
+                f4bVar.k0 = videoWidth;
+                f4bVar.l0 = videoHeight;
+                f4bVar.z();
+            }
+            t7bVar.J(new r6b(t6bVar, (byte) 3), 0L);
+            return;
+        }
+        t7bVar.H1 = null;
+        o.P = 1.0f;
+        if (t7bVar.B0.l(o)) {
+            f4b a = f4b.a(t7bVar.B0.getLayout(), t7bVar.B0.getContent());
+            t7bVar.L1 = a;
+            a6b.a(i, a);
+            t7bVar.M1 = false;
+            int videoWidth2 = t7bVar.C0.getVideoWidth();
+            int videoHeight2 = t7bVar.C0.getVideoHeight();
+            if (videoWidth2 > 0 && videoHeight2 > 0) {
+                f4b f4bVar2 = t7bVar.L1;
+                f4bVar2.k0 = videoWidth2;
+                f4bVar2.l0 = videoHeight2;
+                f4bVar2.z();
+            }
+        }
+        t7bVar.l0(true);
     }
 
-    private final void e() {
-        ((VoIPService) this.d).lambda$startConferenceGroupCall$34((TLObject) this.b, (j5) this.c, (TLRPC.TL_error) this.e);
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        mza mzaVar = (mza) this.b;
+        List list = (List) obj;
+        if (list.size() <= 0) {
+            fa4.b("objimg: no objects");
+            return;
+        }
+        int i = ((fk5) list.get(0)).c;
+        String[] strArr = aqe.a;
+        String str = null;
+        if (strArr == null) {
+            strArr = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
+            aqe.a = strArr;
+        }
+        if (i >= 0 && i < strArr.length) {
+            str = strArr[i];
+        }
+        mzaVar.d0 = str;
+        StringBuilder sb = new StringBuilder("objimg: detected #");
+        sb.append(((fk5) list.get(0)).c);
+        sb.append(" ");
+        sb.append(mzaVar.d0);
+        sb.append(" ");
+        de9.s(((fk5) list.get(0)).a, sb);
+        vu3.g(mzaVar.d0);
     }
 
-    private final void f() {
-        ((VoIPService) this.d).lambda$startOutgoingCall$9((TLRPC.TL_error) this.b, (TLObject) this.c, (byte[]) this.e);
+    @Override // yr9
+    public final void r(int i) {
+        b8c b8cVar = (b8c) this.b;
+        if (b8cVar.h == null && !b8cVar.f.e()) {
+            b8cVar.w.f.e(false, true);
+        }
+        b8cVar.f();
     }
 
-    private final void g() {
-        ((VoIPService) this.d).lambda$startConferenceGroupCall$47((TLObject) this.b, (TL_phone.PhoneCall) this.c, (TL_phone.exportGroupCallInvite) this.e);
+    @Override // g79
+    public final void s(long j, xu7 xu7Var) {
+        sqd.b(j, xu7Var, ((uv9) this.b).c);
     }
 
-    private final void h() {
-        ((goc) this.d).E0((LinearLayout) this.b, (c) this.c, (bu5) this.e);
+    @Override // bha
+    public final /* synthetic */ void t(RecyclerView recyclerView) {
+        de9.d(recyclerView);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:313:0x092b, code lost:
-    
-        if (r5 != null) goto L281;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:314:0x0946, code lost:
-    
-        gm.c3(new w3b(r1, (byte) 2));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:315:0x094f, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0409  */
-    /* JADX WARN: Removed duplicated region for block: B:118:? A[RETURN, SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i;
-        TLRPC.StickerSet stickerSet;
-        char c;
-        d S;
-        SQLitePreparedStatement sQLitePreparedStatement;
-        SQLitePreparedStatement sQLitePreparedStatement2;
+    @Override // yr9
+    public final vf6 t1() {
+        return null;
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public final Object then(Task task) {
+        ((CountDownLatch) this.b).countDown();
+        return null;
+    }
+
+    @Override // ed
+    public final void u(hd hdVar, int i) {
         int i2;
         int i3;
-        float f;
-        long j;
-        char c2;
-        float f2;
-        ao6 ao6Var;
-        long j2;
-        long j3;
-        long j4;
-        long j5;
-        ArrayList arrayList;
-        boolean z;
-        TLRPC.WallPaperSettings wallPaperSettings;
-        char c3;
-        int i4;
-        char c4 = 4;
-        int i5 = 3;
-        char c5 = 2;
-        switch (this.a) {
-            case 0:
-                iza izaVar = (iza) this.d;
-                nl1 nl1Var = (nl1) this.b;
-                String str = (String) this.c;
-                wza wzaVar = (wza) this.e;
-                xza xzaVar = izaVar.x;
-                if (nl1Var != null) {
-                    xzaVar.V.l(str, nl1Var);
-                    if (!wzaVar.b && (i = wzaVar.a) >= 0) {
-                        View m = xzaVar.U.m(i);
-                        if (m instanceof iza) {
-                            izaVar.r.e = nl1Var;
-                            iza izaVar2 = (iza) m;
-                            izaVar2.b.u0.d(false, false);
-                            izaVar2.g(false);
-                        }
-                    }
-                }
-                xzaVar.c0();
-                return;
-            case 1:
-                jza jzaVar = (jza) this.d;
-                nl1 nl1Var2 = (nl1) this.b;
-                String str2 = (String) this.c;
-                iac iacVar = (iac) this.e;
-                jzaVar.k = false;
-                jzaVar.d = nl1Var2;
-                jzaVar.g = str2;
-                gza gzaVar = (gza) iacVar.run();
-                if (gzaVar != null) {
-                    gzaVar.e(jzaVar, true);
-                    return;
-                }
-                return;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
             case 2:
-                n1b n1bVar = (n1b) this.d;
-                ArrayList arrayList2 = (ArrayList) this.b;
-                t88 t88Var = (t88) this.c;
-                k1b k1bVar = (k1b) this.e;
-                n1bVar.H = true;
-                n1bVar.I = (k1b[]) arrayList2.toArray(new k1b[0]);
-                t88Var.a(k1bVar);
-                return;
+                x0b x0bVar = (x0b) obj;
+                x0bVar.e.presentFragment(new StickersActivity(x0bVar.d ? 1 : 0, null));
+                hdVar.dismiss();
+                break;
             case 3:
-                n1b n1bVar2 = (n1b) this.d;
-                TLObject tLObject = (TLObject) this.b;
-                l1b l1bVar = (l1b) this.c;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
-                if (!(tLObject instanceof TLRPC.TL_messageMediaDocument)) {
-                    n1bVar2.h();
-                    n1bVar2.m(tL_error);
-                    return;
-                } else {
-                    TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) tLObject;
-                    l1bVar.e = hs6.c0(tL_messageMediaDocument.document, l1bVar.c);
-                    l1bVar.f = tL_messageMediaDocument;
-                    n1bVar2.a();
-                    return;
+                gl.t1((y0b) obj);
+                hdVar.dismiss();
+                break;
+            case 14:
+                ThemeActivity themeActivity = ((lkb) obj).a;
+                boolean C0 = themeActivity.C0(gl.O1() ? 18 : 16);
+                if (themeActivity.B0(17, true)) {
+                    C0 = true;
                 }
-            case 4:
-                x2b x2bVar = (x2b) this.d;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                hs6 hs6Var = (hs6) this.e;
-                x2bVar.Z1 = 0;
-                if (tL_error2 != null) {
-                    x2bVar.dismiss();
-                    d dVar = x2bVar.F1;
-                    if (dVar != null) {
-                        mlb.y(null, 2131754382, c41.b0(dVar), null);
-                        return;
+                if (C0) {
+                    d0 d0Var = themeActivity.a;
+                    i2 = themeActivity.textSizeRow;
+                    d0Var.h(i2, new Object());
+                    d0 d0Var2 = themeActivity.a;
+                    i3 = themeActivity.bubbleRadiusRow;
+                    d0Var2.h(i3, new Object());
+                }
+                if (themeActivity.c != null) {
+                    akb O0 = bkb.O0("Blue");
+                    akb B0 = bkb.B0();
+                    SparseArray sparseArray = O0.b0;
+                    byte b2 = bkb.n;
+                    zjb zjbVar = (zjb) sparseArray.get(b2);
+                    if (zjbVar != null) {
+                        vjb vjbVar = new vjb();
+                        vjbVar.c = "d";
+                        vjbVar.a = "Blue_99_wp.jpg";
+                        vjbVar.b = "Blue_99_wp.jpg";
+                        zjbVar.y = vjbVar;
+                        O0.v(vjbVar);
                     }
-                    return;
-                }
-                wa8 wa8Var = new wa8(x2bVar, (byte) 3);
-                wa8Var.addTarget(x2bVar.b);
-                TransitionManager.beginDelayedTransition(x2bVar.c, wa8Var);
-                x2bVar.r1.setVisibility(0);
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
-                x2bVar.M1 = tL_messages_stickerSet;
-                hs6Var.L1(tL_messages_stickerSet, false);
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = x2bVar.M1;
-                if (tL_messages_stickerSet2 != null && tL_messages_stickerSet2.documents.isEmpty()) {
-                    x2bVar.dismiss();
-                    return;
-                }
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = x2bVar.M1;
-                x2bVar.b2 = (tL_messages_stickerSet3 == null || (stickerSet = tL_messages_stickerSet3.set) == null || stickerSet.masks) ? false : true;
-                x2bVar.D0();
-                hs6Var.r1(x2bVar.M1);
-                x2bVar.V0();
-                x2bVar.T0();
-                x2bVar.S0();
-                x2bVar.n1.f();
-                return;
-            case 5:
-                q98 q98Var = (q98) this.d;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.b;
-                TLObject tLObject3 = (TLObject) this.c;
-                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) this.e;
-                q98Var.Z1 = 0;
-                if (tL_error3 != null || !(tLObject3 instanceof Vector)) {
-                    ik.c0(q98Var.a, tL_error3, q98Var.F1, tL_messages_getAttachedStickers, new Object[0]);
-                    q98Var.dismiss();
-                    return;
-                }
-                Vector vector = (Vector) tLObject3;
-                if (vector.objects.isEmpty()) {
-                    q98Var.dismiss();
-                    return;
-                }
-                if (vector.objects.size() == 1) {
-                    TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) vector.objects.get(0);
-                    TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
-                    q98Var.P1 = tL_inputStickerSetID;
-                    TLRPC.StickerSet stickerSet2 = stickerSetCovered.set;
-                    tL_inputStickerSetID.id = stickerSet2.id;
-                    tL_inputStickerSetID.access_hash = stickerSet2.access_hash;
-                    q98Var.L0();
-                    return;
-                }
-                ArrayList arrayList3 = new ArrayList();
-                q98Var.Q1 = arrayList3;
-                arrayList3.addAll(vector.objects);
-                q98Var.m1.setLayoutParams(qoe.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
-                q98Var.q1.setVisibility(8);
-                q98Var.D1[0].setVisibility(8);
-                q98Var.n1.f();
-                return;
-            case 6:
-                v3b v3bVar = (v3b) this.d;
-                TLObject tLObject4 = (TLObject) this.b;
-                qac qacVar = (qac) this.c;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.e;
-                v3bVar.i = false;
-                if (tLObject4 instanceof TL_stories.TL_storyAlbum) {
-                    a4b a = a4b.a((TL_stories.TL_storyAlbum) tLObject4);
-                    v3bVar.h.add(a);
-                    v3bVar.f(true);
-                    qacVar.a(a);
-                    return;
-                }
-                if (tL_error4 == null || (S = LaunchActivity.S()) == null) {
-                    c = 0;
-                } else {
-                    c = 0;
-                    c41.b0(S).g0(tL_error4, false);
-                }
-                nm7 f3 = nm7.f(v3bVar.a);
-                Object[] objArr = new Object[2];
-                objArr[c] = Long.valueOf(v3bVar.b);
-                objArr[1] = v3bVar;
-                f3.k(nm7.l3, objArr);
-                return;
-            case 7:
-                int i6 = 4;
-                int i7 = 2;
-                int i8 = 5;
-                z3b z3bVar = (z3b) this.d;
-                ArrayList arrayList4 = (ArrayList) this.b;
-                cf7 cf7Var = (cf7) this.c;
-                ArrayList arrayList5 = (ArrayList) this.e;
-                int i9 = z3bVar.f;
-                StringBuilder sb = new StringBuilder("StoriesList ");
-                byte b = z3bVar.e;
-                sb.append((int) b);
-                sb.append("{");
-                long j6 = z3bVar.d;
-                sb.append(j6);
-                sb.append("} saveCache {");
-                sb.append(h4b.k0(arrayList4));
-                hg9.r("}", sb);
-                try {
-                    SQLiteDatabase sQLiteDatabase = cf7Var.b;
-                    sQLitePreparedStatement2 = sQLiteDatabase.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
-                    try {
-                        Locale locale = Locale.US;
-                        sQLiteDatabase.executeFast("DELETE FROM profile_stories_albums_links WHERE dialog_id = " + j6 + " AND album_id = " + i9).stepThis().dispose();
-                        sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO profile_stories_albums_links VALUES(?, ?, ?, ?)");
-                        int i10 = 0;
-                        while (i10 < arrayList4.size()) {
-                            try {
-                                TL_stories.StoryItem storyItem = ((k47) arrayList4.get(i10)).l;
-                                if (storyItem == null) {
-                                    i2 = i6;
-                                } else {
-                                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem.getObjectSize());
-                                    storyItem.serializeToStream(nativeByteBuffer);
-                                    sQLitePreparedStatement2.requery();
-                                    sQLitePreparedStatement2.bindLong(1, j6);
-                                    sQLitePreparedStatement2.bindInteger(i7, storyItem.id);
-                                    sQLitePreparedStatement2.bindByteBuffer(i5, nativeByteBuffer);
-                                    sQLitePreparedStatement2.bindInteger(i6, b);
-                                    sQLitePreparedStatement2.bindInteger(i8, z3bVar.m.contains(Integer.valueOf(storyItem.id)) ? 1 : 0);
-                                    sQLitePreparedStatement2.bindInteger(6, arrayList5.indexOf(Integer.valueOf(storyItem.id)) + 1);
-                                    sQLitePreparedStatement2.step();
-                                    nativeByteBuffer.reuse();
-                                    sQLitePreparedStatement.requery();
-                                    sQLitePreparedStatement.bindLong(1, j6);
-                                    i8 = 5;
-                                    sQLitePreparedStatement.bindInteger(2, i9);
-                                    sQLitePreparedStatement.bindInteger(3, storyItem.id);
-                                    i2 = 4;
-                                    sQLitePreparedStatement.bindInteger(4, i10);
-                                    sQLitePreparedStatement.step();
-                                }
-                                i10++;
-                                i6 = i2;
-                                i5 = 3;
-                                i7 = 2;
-                            } catch (Throwable th) {
-                                th = th;
-                                try {
-                                    cf7Var.n(th, true);
-                                    if (sQLitePreparedStatement2 != null) {
-                                        break;
-                                    }
-                                } finally {
-                                    if (sQLitePreparedStatement2 != null) {
-                                        sQLitePreparedStatement2.dispose();
-                                    }
-                                    if (sQLitePreparedStatement != null) {
-                                        sQLitePreparedStatement.dispose();
-                                    }
-                                }
-                            }
-                        }
-                        if (sQLitePreparedStatement2 != null) {
-                            sQLitePreparedStatement2.dispose();
+                    if (O0 == B0) {
+                        if (O0.Z == b2) {
+                            bkb.s1(true);
+                            break;
+                        } else {
+                            bkb.I1(B0, themeActivity.f == 1, b2, null);
+                            themeActivity.a.g(themeActivity.r0);
                             break;
                         }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        sQLitePreparedStatement = null;
+                    } else {
+                        O0.u(b2);
+                        bkb.x1(O0, true, false, true, false, false);
+                        themeActivity.c.B1(O0, null);
+                        themeActivity.c.z0(0);
+                        break;
                     }
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLitePreparedStatement = null;
-                    sQLitePreparedStatement2 = null;
                 }
                 break;
-            case 8:
-                g6b g6bVar = (g6b) this.d;
-                String str3 = (String) this.c;
-                int[][] iArr = (int[][]) this.b;
-                qac qacVar2 = (qac) this.e;
-                g6bVar.getClass();
-                rcc rccVar = new rcc();
-                rccVar.J = true;
-                rccVar.Z = g6bVar.c1;
-                rccVar.h = g6bVar.k0;
-                rccVar.i = g6bVar.l0;
-                rccVar.k = g6bVar.i0;
-                rccVar.l = g6bVar.j0;
-                File file = g6bVar.P0;
-                rccVar.B = file == null ? null : file.getPath();
-                File file2 = g6bVar.W0;
-                rccVar.D = file2 == null ? null : file2.getPath();
-                File file3 = g6bVar.X0;
-                rccVar.E = file3 == null ? null : file3.getPath();
-                File file4 = g6bVar.Y0;
-                rccVar.F = file4 == null ? null : file4.getPath();
-                int q = MediaController.q(rccVar.k, rccVar.l, rccVar.m, true);
-                float f4 = 8.0f;
-                if (!g6bVar.K || str3 == null || g6bVar.v()) {
-                    i3 = 0;
-                    File file5 = g6bVar.Z0;
-                    if (file5 != null) {
-                        rccVar.o = file5.getAbsolutePath();
-                    } else {
-                        rccVar.o = str3;
-                    }
-                    rccVar.I = true;
-                    rccVar.L = g6bVar.S;
-                    if (g6bVar.v()) {
-                        int i11 = 0;
-                        boolean z2 = false;
-                        while (i11 < g6bVar.T.size()) {
-                            g6b g6bVar2 = (g6b) g6bVar.T.get(i11);
-                            if (g6bVar2.K) {
-                                g6bVar2.k0 = Math.max(g6bVar2.k0, iArr[i11][1]);
-                                g6bVar2.l0 = Math.max(g6bVar2.l0, iArr[i11][2]);
-                                c2 = c4;
-                                f2 = f4;
-                                g6bVar2.h0 = Math.max(g6bVar2.h0, iArr[i11][c2]);
-                                z2 = true;
-                            } else {
-                                c2 = c4;
-                                f2 = f4;
-                            }
-                            i11++;
-                            f4 = f2;
-                            c4 = c2;
-                            z2 = z2;
-                        }
-                        f = f4;
-                        ArrayList a2 = qcc.a(g6bVar);
-                        rccVar.M = a2;
-                        if (z2) {
-                            int size = a2.size();
-                            qcc qccVar = null;
-                            int i12 = 0;
-                            long j7 = 0;
-                            while (i12 < size) {
-                                Object obj = a2.get(i12);
-                                i12++;
-                                qcc qccVar2 = (qcc) obj;
-                                if (qccVar2.b) {
-                                    long j8 = qccVar2.o;
-                                    if (j8 > j7) {
-                                        j7 = j8;
-                                        qccVar = qccVar2;
-                                    }
-                                }
-                            }
-                            if (qccVar != null) {
-                                float f5 = qccVar.o;
-                                float f6 = qccVar.k;
-                                float f7 = qccVar.j;
-                                long j9 = (long) ((f6 - f7) * f5);
-                                g6bVar.h0 = j9;
-                                rccVar.v = j9;
-                                rccVar.r = j9;
-                                j = -(qccVar.f + ((long) (f7 * f5)));
-                                qccVar.f = j;
-                                ArrayList arrayList6 = rccVar.M;
-                                int size2 = arrayList6.size();
-                                int i13 = 0;
-                                while (i13 < size2) {
-                                    Object obj2 = arrayList6.get(i13);
-                                    i13++;
-                                    qcc qccVar3 = (qcc) obj2;
-                                    if (qccVar3.b && qccVar3 != qccVar) {
-                                        qccVar3.f += j;
-                                    }
-                                }
-                                rccVar.a = -1L;
-                                rccVar.b = -1L;
-                                rccVar.t = true;
-                                rccVar.j = -1;
-                                rccVar.u = 1.0f;
-                                rccVar.m = -1;
-                                rccVar.n = 30;
-                                rccVar.q = (long) (((g6bVar.h0 / 1000.0f) * q) / f);
-                                rccVar.A = null;
-                            }
-                        } else {
-                            long j10 = g6bVar.S0;
-                            g6bVar.h0 = j10;
-                            rccVar.v = j10;
-                            rccVar.r = j10;
-                        }
-                    } else {
-                        f = 8.0f;
-                        if (g6bVar.o0 != null) {
-                            long j11 = (long) ((g6bVar.t0 - g6bVar.s0) * g6bVar.q0);
-                            g6bVar.h0 = j11;
-                            rccVar.v = j11;
-                            rccVar.r = j11;
-                        } else if (g6bVar.y != null) {
-                            long j12 = (long) ((g6bVar.F - g6bVar.E) * g6bVar.C);
-                            g6bVar.h0 = j12;
-                            rccVar.v = j12;
-                            rccVar.r = j12;
-                        } else {
-                            long j13 = g6bVar.S0;
-                            g6bVar.h0 = j13;
-                            rccVar.v = j13;
-                            rccVar.r = j13;
-                        }
-                    }
-                    j = 0;
-                    rccVar.a = -1L;
-                    rccVar.b = -1L;
-                    rccVar.t = true;
-                    rccVar.j = -1;
-                    rccVar.u = 1.0f;
-                    rccVar.m = -1;
-                    rccVar.n = 30;
-                    rccVar.q = (long) (((g6bVar.h0 / 1000.0f) * q) / f);
-                    rccVar.A = null;
-                } else {
-                    rccVar.o = str3;
-                    rccVar.I = false;
-                    i3 = 0;
-                    rccVar.n = Math.min(59, iArr[0][7]);
-                    int z3 = MediaController.z(str3);
-                    if (z3 == -1) {
-                        z3 = iArr[0][3];
-                    }
-                    rccVar.j = z3;
-                    if (z3 >= 1000000 || (arrayList = g6bVar.T0) == null || arrayList.isEmpty()) {
-                        int i14 = rccVar.j;
-                        if (i14 < 500000) {
-                            rccVar.m = 2500000;
-                            rccVar.j = -1;
-                        } else {
-                            rccVar.m = Utilities.j(i14, 3000000, 500000);
-                        }
-                    } else {
-                        rccVar.m = 2000000;
-                        rccVar.j = -1;
-                    }
-                    StringBuilder sb2 = new StringBuilder("story bitrate, original = ");
-                    sb2.append(rccVar.j);
-                    sb2.append(" => ");
-                    b10.p(rccVar.m, sb2);
-                    int i15 = iArr[0][4];
-                    long j14 = i15;
-                    g6bVar.h0 = j14;
-                    rccVar.v = j14 * 1000;
-                    float f8 = j14;
-                    long j15 = ((long) (g6bVar.Z * f8)) * 1000;
-                    rccVar.a = j15;
-                    long j16 = ((long) (g6bVar.a0 * f8)) * 1000;
-                    rccVar.b = j16;
-                    rccVar.r = j16 - j15;
-                    rccVar.u = g6bVar.P;
-                    rccVar.t = g6bVar.Y;
-                    rccVar.q = (long) kt6.d(i15 / 1000.0f, q, 8.0f, r4[5]);
-                    rccVar.q = Math.max(g6bVar.L.length(), rccVar.q);
-                    rccVar.A = g6bVar.a1;
-                    File file6 = g6bVar.Q0;
-                    rccVar.C = file6 != null ? file6.getPath() : null;
-                    j = 0;
-                }
-                rccVar.R = g6bVar.a;
-                rccVar.T = g6bVar.z0;
-                rccVar.S = g6bVar.y0;
-                rccVar.c = -1L;
-                ao6 ao6Var2 = g6bVar.m0;
-                if (ao6Var2 != null) {
-                    ao6Var = ao6Var2.clone();
-                    rccVar.H = ao6Var;
-                } else {
-                    ao6Var = new ao6();
-                    rccVar.H = ao6Var;
-                }
-                ao6Var.B = new Matrix();
-                rccVar.H.B.set(g6bVar.n0);
-                rccVar.G = g6bVar.T0;
-                rccVar.P = Integer.valueOf(g6bVar.A0);
-                rccVar.Q = Integer.valueOf(g6bVar.B0);
-                rccVar.U = true;
-                rccVar.K = g6bVar.d1;
-                rccVar.a0.clear();
-                if (g6bVar.v() && !g6bVar.Y) {
-                    ArrayList arrayList7 = rccVar.M;
-                    int size3 = arrayList7.size();
-                    int i16 = i3;
-                    while (i16 < size3) {
-                        Object obj3 = arrayList7.get(i16);
-                        i16++;
-                        qcc qccVar4 = (qcc) obj3;
-                        if (qccVar4.b && qccVar4.e > 0.0f && !qccVar4.c) {
-                            MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo = new MediaCodecVideoConvertor.MixedSoundInfo(qccVar4.d);
-                            mixedSoundInfo.volume = qccVar4.e;
-                            float f9 = qccVar4.j;
-                            float f10 = qccVar4.o;
-                            mixedSoundInfo.audioOffset = ((long) (f9 * f10)) * 1000;
-                            mixedSoundInfo.startTime = qccVar4.f * 1000;
-                            mixedSoundInfo.duration = ((long) ((qccVar4.k - f9) * f10)) * 1000;
-                            rccVar.a0.add(mixedSoundInfo);
-                        }
-                    }
-                }
-                File file7 = g6bVar.o0;
-                if (file7 != null) {
-                    MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo2 = new MediaCodecVideoConvertor.MixedSoundInfo(file7.getAbsolutePath());
-                    mixedSoundInfo2.volume = g6bVar.u0;
-                    float f11 = g6bVar.s0;
-                    float f12 = g6bVar.q0;
-                    long j17 = ((long) (f11 * f12)) * 1000;
-                    mixedSoundInfo2.audioOffset = j17;
-                    if (g6bVar.K) {
-                        long j18 = ((long) (g6bVar.r0 - (g6bVar.Z * g6bVar.h0))) * 1000;
-                        mixedSoundInfo2.startTime = j18;
-                        j5 = j18;
-                        j4 = 0;
-                    } else {
-                        j4 = 0;
-                        mixedSoundInfo2.startTime = 0L;
-                        j5 = 0;
-                    }
-                    long j19 = j5 + j;
-                    mixedSoundInfo2.startTime = j19;
-                    if (j19 < j4) {
-                        mixedSoundInfo2.audioOffset = j17 - j19;
-                        mixedSoundInfo2.startTime = j4;
-                    }
-                    mixedSoundInfo2.duration = ((long) ((g6bVar.t0 - f11) * f12)) * 1000;
-                    rccVar.a0.add(mixedSoundInfo2);
-                }
-                String str4 = g6bVar.y;
-                if (str4 != null) {
-                    MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo3 = new MediaCodecVideoConvertor.MixedSoundInfo(str4);
-                    mixedSoundInfo3.volume = g6bVar.G;
-                    float f13 = g6bVar.E;
-                    float f14 = g6bVar.C;
-                    long j20 = ((long) (f13 * f14)) * 1000;
-                    mixedSoundInfo3.audioOffset = j20;
-                    if (g6bVar.K) {
-                        long j21 = ((long) (g6bVar.D - (g6bVar.Z * g6bVar.h0))) * 1000;
-                        mixedSoundInfo3.startTime = j21;
-                        j3 = j21;
-                        j2 = 0;
-                    } else {
-                        j2 = 0;
-                        mixedSoundInfo3.startTime = 0L;
-                        j3 = 0;
-                    }
-                    long j22 = j3 + j;
-                    mixedSoundInfo3.startTime = j22;
-                    if (j22 < j2) {
-                        mixedSoundInfo3.audioOffset = j20 - j22;
-                        mixedSoundInfo3.startTime = j2;
-                    }
-                    mixedSoundInfo3.duration = ((long) ((g6bVar.F - f13) * f14)) * 1000;
-                    rccVar.a0.add(mixedSoundInfo3);
-                }
-                qacVar2.a(rccVar);
-                return;
-            case 9:
-                tib tibVar = (tib) this.d;
-                he heVar = (he) this.b;
-                TLObject tLObject5 = (TLObject) this.c;
-                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) this.e;
-                try {
-                    heVar.dismiss();
-                } catch (Exception e) {
-                    fc4.g(e, true);
-                }
-                if (tLObject5 instanceof TLRPC.TL_boolTrue) {
-                    oc7.r1(tibVar.d).E3(0);
-                    return;
-                }
-                if (tL_error5 == null || tL_error5.code != -1000) {
-                    String M0 = jb6.M0(2131751042, null);
-                    if (tL_error5 != null) {
-                        StringBuilder k = b10.k(M0, "\n");
-                        k.append(tL_error5.text);
-                        M0 = k.toString();
-                    }
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(tibVar.getContext());
-                    String M02 = jb6.M0(R.string.AppName, null);
-                    he heVar2 = alertDialog$Builder.a;
-                    heVar2.S = M02;
-                    heVar2.U = M0;
-                    b10.t(null, 2131747564, alertDialog$Builder, null);
-                    return;
-                }
-                return;
-            case 10:
-                TLObject tLObject6 = (TLObject) this.d;
-                amb ambVar = (amb) this.b;
-                bmb bmbVar = (bmb) this.c;
-                TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.e;
-                cmb.A--;
-                if (tLObject6 instanceof TLRPC.TL_theme) {
-                    TLRPC.TL_theme tL_theme2 = (TLRPC.TL_theme) tLObject6;
-                    TLRPC.ThemeSettings themeSettings = tL_theme2.settings.size() > 0 ? tL_theme2.settings.get(0) : null;
-                    if (ambVar == null || themeSettings == null) {
-                        TLRPC.Document document = tL_theme2.document;
-                        if (document != null && document.id != tL_theme.document.id) {
-                            if (ambVar != null) {
-                                ambVar.r = tL_theme2;
-                            } else {
-                                bmbVar.G = tL_theme2;
-                                bmbVar.H = false;
-                                bmbVar.h0 = null;
-                                bmbVar.i0 = null;
-                                nm7.f(bmbVar.F).a(bmbVar, nm7.Y1);
-                                nm7.f(bmbVar.F).a(bmbVar, nm7.Z1);
-                                bc4 G = bc4.G(bmbVar.F);
-                                TLRPC.TL_theme tL_theme3 = bmbVar.G;
-                                G.X(tL_theme3.document, tL_theme3, 1, 1);
-                            }
-                        }
-                    } else {
-                        if (bmb.a(ambVar, themeSettings)) {
-                            z = false;
-                        } else {
-                            bmb.g(ambVar, themeSettings);
-                            bmb bmbVar2 = cmb.I;
-                            if (bmbVar2 == bmbVar && bmbVar2.Z == ambVar.a) {
-                                cmb.r1(false, false);
-                                cmb.J(a.b, false);
-                                bmb bmbVar3 = cmb.I;
-                                cmb.I1(bmbVar3, cmb.J == bmbVar3, -1, null);
-                            }
-                            z = true;
-                        }
-                        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-                        ambVar.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
-                        r12 = z;
-                    }
-                    if (cmb.A != 0) {
-                        cmb.B = (int) (System.currentTimeMillis() / 1000);
-                        cmb.w1(r12, false);
-                        return;
-                    }
-                    return;
-                }
-                r12 = false;
-                if (cmb.A != 0) {
-                }
-                break;
-            case 11:
-                ((h71) this.d).a(cmb.R0((File) this.b, (String) this.c, (String[]) this.e));
-                return;
-            case 12:
-                svb svbVar = (svb) this.d;
-                TLObject tLObject7 = (TLObject) this.b;
-                String str5 = (String) this.c;
-                he heVar3 = (he) this.e;
-                wvb wvbVar = svbVar.a;
-                if (tLObject7 != null) {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject7;
-                    int i17 = 0;
-                    while (i17 < updates.updates.size()) {
-                        if (updates.updates.get(i17) instanceof TL_update.TL_updateMessageID) {
-                            TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) updates.updates.get(i17);
-                            TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = new TLRPC.TL_messageActionTopicCreate();
-                            tL_messageActionTopicCreate.title = str5;
-                            TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
-                            tL_messageService.action = tL_messageActionTopicCreate;
-                            tL_messageService.peer_id = wvbVar.getMessagesController().x1(wvbVar.a);
-                            tL_messageService.dialog_id = wvbVar.a;
-                            tL_messageService.id = tL_updateMessageID.id;
-                            tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
-                            ArrayList arrayList8 = new ArrayList();
-                            i4 = ((d) wvbVar).currentAccount;
-                            arrayList8.add(new k47(i4, tL_messageService, false, false));
-                            c3 = c5;
-                            TLRPC.Chat L0 = wvbVar.getMessagesController().L0(Long.valueOf(-wvbVar.a));
-                            TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
-                            tL_forumTopic.id = tL_updateMessageID.id;
-                            long j23 = wvbVar.b;
-                            if (j23 != 0) {
-                                tL_forumTopic.icon_emoji_id = j23;
-                                tL_forumTopic.flags |= 1;
-                            }
-                            tL_forumTopic.my = true;
-                            tL_forumTopic.flags |= 2;
-                            tL_forumTopic.topicStartMessage = tL_messageService;
-                            tL_forumTopic.title = str5;
-                            tL_forumTopic.top_message = tL_messageService.id;
-                            tL_forumTopic.topMessage = tL_messageService;
-                            tL_forumTopic.from_id = wvbVar.getMessagesController().x1(wvbVar.getUserConfig().n);
-                            tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
-                            tL_forumTopic.icon_color = wvbVar.F;
-                            yv1 yv1Var = wvbVar.E;
-                            if (yv1Var != null) {
-                                yv1Var.fb();
-                                yv1Var.jb();
-                                yv1Var.Nb(arrayList8, L0, tL_messageService.id, 1, 1, tL_forumTopic);
-                                yv1Var.c = true;
-                                yv1Var.N6();
-                                yv1Var.wd(true);
-                                yv1Var.p1.n(true);
-                                yv1Var.Cd();
-                                yv1Var.g2.setCurrentTopic(yv1Var.d());
-                                yv1Var.zd(true);
-                                yv1Var.Pc(true);
-                                yv1Var.E7(true);
-                                yv1Var.H4(true, true);
-                                yv1Var.Ya();
-                                wvbVar.getMessagesController().g4.q(wvbVar.a, tL_forumTopic, true);
-                                wvbVar.finishFragment();
-                            } else {
-                                Bundle bundle = new Bundle();
-                                bundle.putLong("chat_id", -wvbVar.a);
-                                bundle.putInt("message_id", 1);
-                                bundle.putInt("unread_count", 0);
-                                bundle.putBoolean("historyPreloaded", false);
-                                yv1 yv1Var2 = new yv1(bundle);
-                                yv1Var2.Nb(arrayList8, L0, tL_messageService.id, 1, 1, tL_forumTopic);
-                                yv1Var2.c = true;
-                                wvbVar.getMessagesController().g4.q(wvbVar.a, tL_forumTopic, true);
-                                wvbVar.presentFragment(yv1Var2);
-                            }
-                        } else {
-                            c3 = c5;
-                        }
-                        i17++;
-                        c5 = c3;
-                    }
-                }
-                heVar3.dismiss();
-                return;
-            case 13:
-                mzb mzbVar = (mzb) this.d;
-                bu5 bu5Var = (bu5) this.b;
-                oc7 oc7Var = (oc7) this.c;
-                TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) this.e;
-                bu5Var.u();
-                oc7Var.g4.t(-mzbVar.f, tL_forumTopic2.id, !tL_forumTopic2.pinned, mzbVar.s);
-                return;
-            case 14:
-                s1c s1cVar = (s1c) this.d;
-                TLRPC.TL_error tL_error6 = (TLRPC.TL_error) this.b;
-                TLObject tLObject8 = (TLObject) this.c;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.e;
-                c1c c1cVar = s1cVar.y1;
-                r1c r1cVar = s1cVar.H1;
-                s1cVar.l1 = null;
-                if (tL_error6 != null && "TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error6.text)) {
-                    s1cVar.T0();
-                    return;
-                }
-                if (tLObject8 instanceof TLRPC.TL_messages_translateResult) {
-                    TLRPC.TL_messages_translateResult tL_messages_translateResult = (TLRPC.TL_messages_translateResult) tLObject8;
-                    if (!tL_messages_translateResult.result.isEmpty() && tL_messages_translateResult.result.get(0) != null && tL_messages_translateResult.result.get(0).text != null) {
-                        s1cVar.O1 = false;
-                        TLRPC.TL_textWithEntities L02 = s1c.L0(tL_textWithEntities, tL_messages_translateResult.result.get(0));
-                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(L02.text);
-                        k47.b(valueOf, L02.entities, false, true, false, false, 0);
-                        s1cVar.z1.setText(s1cVar.M0(valueOf));
-                        r1cVar.D(c1cVar);
-                        return;
-                    }
-                }
-                if (s1cVar.O1) {
-                    s1cVar.dismiss();
-                    nm7.e().k(nm7.T4, 1, jb6.M0(2131743633, null));
-                    return;
-                }
-                mlb.y(null, 2131743633, new c41((FrameLayout) s1cVar.b, s1cVar.J0), null);
-                n1c n1cVar = s1cVar.w1.e;
-                String str6 = s1cVar.v1;
-                s1cVar.u1 = str6;
-                n1cVar.setText(s1c.J0(str6, null, null));
-                r1cVar.D(c1cVar);
-                return;
             case 15:
-                b3c b3cVar = (b3c) this.d;
-                k47 k47Var = (k47) this.b;
-                u21 u21Var = (u21) this.c;
-                rp2 rp2Var = (rp2) this.e;
-                k47Var.k.originalLanguage = "und";
-                b3cVar.getMessagesStorage().U1(u21Var.a, k47Var.k);
-                b3cVar.L.remove(u21Var);
-                rp2Var.a("und");
-                return;
-            case 16:
-                b3c b3cVar2 = (b3c) this.d;
-                TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) this.b;
-                String str7 = (String) this.c;
-                z2c z2cVar = (z2c) this.e;
-                storyItem2.detectedLng = str7;
-                b3cVar2.getMessagesController().N1().k.h(storyItem2.dialogId, storyItem2);
-                b3cVar2.J.remove(z2cVar);
-                return;
-            case 17:
-                ((TwoStepVerificationActivity) this.d).o0((byte[]) this.b, (TLObject) this.c, (byte[]) this.e);
-                return;
-            case 18:
-                a();
-                return;
-            case 19:
-                b();
-                return;
-            case 20:
-                c();
-                return;
-            case 21:
-                d();
-                return;
-            case 22:
-                ((VideoAds) this.d).lambda$show$14((Context) this.b, (TLRPC.TL_sponsoredMessage) this.c, (bu5) this.e);
-                return;
-            case 23:
-                VoIPPreNotificationService.lambda$acknowledge$2((TLObject) this.d, (TLRPC.TL_error) this.b, (Context) this.c, (Runnable) this.e);
-                return;
-            case 24:
-                ((VoIPService) this.d).lambda$startGroupCheckShortpoll$66((TLRPC.TL_error) this.b, (TLObject) this.c, (TL_phone.checkGroupCall) this.e);
-                return;
-            case 25:
-                e();
-                return;
-            case 26:
-                f();
-                return;
-            case 27:
-                g();
-                return;
-            case 28:
-                h();
-                return;
+                qmb qmbVar = ((ulb) obj).a;
+                akb akbVar = qmbVar.g0;
+                bkb.j0(akbVar, qmbVar.w, true);
+                bkb.o();
+                bkb.r1(false, false);
+                kk7.e().k(kk7.v4, akbVar, Boolean.valueOf(qmbVar.h0), null, -1);
+                qmbVar.finishFragment();
+                break;
             default:
-                c cVar = (c) this.d;
-                boolean[] zArr = (boolean[]) this.b;
-                a8 a8Var = (a8) this.c;
-                hza hzaVar = (hza) this.e;
-                l53 l53Var = cVar.h;
-                if (l53Var.f() == null || zArr[0]) {
-                    return;
-                }
-                a8Var.setSubtext(l53Var.i());
-                hzaVar.run();
-                zArr[0] = true;
-                return;
+                ((n3c) obj).a.I0(true);
+                break;
         }
     }
 
-    public /* synthetic */ hza(Object obj, String str, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.d = obj;
-        this.c = str;
-        this.b = obj2;
-        this.e = obj3;
+    @Override // ll5
+    public final void v(ImageReceiver imageReceiver) {
+        byte b = this.a;
+    }
+
+    @Override // eja
+    public final void n() {
+    }
+
+    private final void l(ImageReceiver imageReceiver) {
+    }
+
+    private final void o(ImageReceiver imageReceiver) {
+    }
+
+    @Override // yr9
+    public final void m2(ArrayList arrayList) {
+    }
+
+    private final void f(int i, Drawable drawable) {
+    }
+
+    private final void i(int i, Drawable drawable) {
     }
 }

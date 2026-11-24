@@ -1,28 +1,13 @@
 // default package
 
-import android.view.Surface;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ep9 {
+    public final fm4 a;
+    public final xq3 b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ep9 implements aq9 {
-    public final /* synthetic */ pp9 a;
-
-    public ep9(pp9 pp9Var) {
-        this.a = pp9Var;
-    }
-
-    @Override // aq9
-    public final void a(int i, int i2) {
-        gm.c3(new ku(this, i / i2, (byte) 4));
-    }
-
-    @Override // aq9
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // aq9
-    public final Surface getSurface() {
-        return this.a.r0;
+    public ep9(fm4 fm4Var, xq3 xq3Var) {
+        this.a = fm4Var;
+        this.b = xq3Var;
     }
 }

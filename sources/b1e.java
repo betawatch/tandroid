@@ -1,70 +1,55 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Parcel;
-import android.os.RemoteException;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class b1e extends AsyncTask {
-    public static final ce6 c = new ce6("FetchBitmapTask", null);
-    public final yje a;
-    public final sm2 b;
+public final class b1e extends nne {
+    private static final b1e zzg;
+    private static volatile dwe zzh;
+    private int zzc;
+    private int zzd;
+    private int zze;
+    private String zzf = "";
 
-    public b1e(Context context, int i, int i2, sm2 sm2Var) {
-        yje yjeVar;
-        this.b = sm2Var;
-        Context applicationContext = context.getApplicationContext();
-        t7d t7dVar = new t7d(this);
-        ce6 ce6Var = v8d.a;
-        try {
-            q9d b = v8d.b(applicationContext.getApplicationContext());
-            eq7 eq7Var = new eq7(applicationContext.getApplicationContext());
-            Parcel T = b.T(b.R(), 8);
-            int readInt = T.readInt();
-            T.recycle();
-            yjeVar = readInt >= 233700000 ? b.d0(eq7Var, new eq7(this), t7dVar, i, i2) : b.c0(new eq7(this), t7dVar, i, i2);
-        } catch (RemoteException | sg7 e) {
-            v8d.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", q9d.class.getSimpleName());
-            yjeVar = null;
-        }
-        this.a = yjeVar;
+    static {
+        b1e b1eVar = new b1e();
+        zzg = b1eVar;
+        nne.g(b1e.class, b1eVar);
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        Uri uri;
-        yje yjeVar;
-        Uri[] uriArr = (Uri[]) objArr;
-        if (uriArr.length == 1 && (uri = uriArr[0]) != null && (yjeVar = this.a) != null) {
-            try {
-                e8e e8eVar = (e8e) yjeVar;
-                Parcel R = e8eVar.R();
-                kid.c(R, uri);
-                Parcel T = e8eVar.T(R, 1);
-                Bitmap bitmap = (Bitmap) kid.a(T, Bitmap.CREATOR);
-                T.recycle();
-                return bitmap;
-            } catch (RemoteException e) {
-                c.a(e, "Unable to call %s on %s.", "doFetch", yje.class.getSimpleName());
-            }
-        }
-        return null;
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        sm2 sm2Var = this.b;
-        if (sm2Var != null) {
-            z6d z6dVar = (z6d) sm2Var.f;
-            if (z6dVar != null) {
-                z6dVar.d(bitmap);
-            }
-            sm2Var.e = null;
+    /* JADX WARN: Type inference failed for: r2v12, types: [dwe, java.lang.Object] */
+    @Override // nne
+    public final Object d(int i) {
+        dwe dweVar;
+        switch (l2e.a[i - 1]) {
+            case 1:
+                return new b1e();
+            case 2:
+                return new z0e(zzg);
+            case 3:
+                return new swe(zzg, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဌ\u0001\u0003ဈ\u0002", new Object[]{"zzc", "zzd", b3e.h, "zze", b3e.i, "zzf"});
+            case 4:
+                return zzg;
+            case 5:
+                dwe dweVar2 = zzh;
+                if (dweVar2 != null) {
+                    return dweVar2;
+                }
+                synchronized (b1e.class) {
+                    dwe dweVar3 = zzh;
+                    dweVar = dweVar3;
+                    if (dweVar3 == null) {
+                        ?? ineVar = new ine();
+                        zzh = ineVar;
+                        dweVar = ineVar;
+                    }
+                }
+                return dweVar;
+            case 6:
+                return (byte) 1;
+            default:
+                fvc.b();
+            case 7:
+                return null;
         }
     }
 }

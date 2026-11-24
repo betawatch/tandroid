@@ -3,7 +3,7 @@ package androidx.car.app.hardware.info;
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class Mileage {
     private final CarValue<Integer> mDistanceDisplayUnit;
@@ -45,8 +45,8 @@ public final class Mileage {
         return "[ odometer: " + getOdometerMeters() + ", distance display unit: " + this.mDistanceDisplayUnit + "]";
     }
 
-    public Mileage(vf7 vf7Var) {
-        vf7Var.getClass();
+    public Mileage(td7 td7Var) {
+        td7Var.getClass();
         throw null;
     }
 }

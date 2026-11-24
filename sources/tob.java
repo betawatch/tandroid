@@ -1,84 +1,130 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class tob extends rc2 {
-    public final GestureDetector Ld;
-    public final km Md;
-    public final km Nd;
-    public final /* synthetic */ int Od;
-    public final /* synthetic */ uob Pd;
+public final class tob {
+    public long a;
+    public boolean b;
+    public final ArrayList c;
+    public final ArrayList d;
+    public final byte e;
+    public boolean f;
+    public float g;
+    public float h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tob(uob uobVar, Context context, int i, ylb ylbVar, Context context2, int i2) {
-        super(context, i, false, null, ylbVar);
-        this.Pd = uobVar;
-        this.Od = i2;
-        this.Ld = new GestureDetector(context2, new rm3(this, (byte) 2));
-        d53 d53Var = d53.g;
-        this.Md = new km(this, 180L, d53Var, 0);
-        this.Nd = new km(this, 180L, d53Var, 0);
+    /* JADX WARN: Multi-variable type inference failed */
+    public tob(int i) {
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = i;
+        for (int i2 = 0; i2 < i; i2++) {
+            this.d.add(new sob());
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int v0;
-        int v02;
-        k47 messageObject = getMessageObject();
-        km kmVar = this.Nd;
-        km kmVar2 = this.Md;
-        pc0 pc0Var = this.B7;
-        if (messageObject == null || getMessageObject().e1 < 0) {
-            kmVar2.a(pc0Var.b(), false);
-            boolean z = pc0Var.g;
-            int i = pc0Var.e;
-            if (z) {
-                amb i2 = cmb.I.i(false);
-                i = cmb.B(cmb.I, i2 != null ? i2.c : 0, i);
-            }
-            kmVar.a(i, false);
-        } else {
-            int i3 = getMessageObject().e1;
-            if (i3 >= 14) {
-                fc7 fc7Var = oc7.r1(z8c.t0).E3;
-                ec7 d = fc7Var != null ? fc7Var.d(i3) : null;
-                if (d != null) {
-                    int f = d.f();
-                    v0 = cmb.v0(cmb.o8[pc0.e(f)], this.cc);
-                    v02 = cmb.v0(cmb.p8[pc0.e(f)], this.cc);
-                } else {
-                    long j = i3;
-                    v0 = cmb.v0(cmb.o8[pc0.d(j)], this.cc);
-                    v02 = cmb.v0(cmb.p8[pc0.d(j)], this.cc);
-                }
+    public final void a(float f, float f2, Canvas canvas, Paint paint, RectF rectF) {
+        sob sobVar;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i = 0;
+        for (int i2 = 0; i2 < size; i2++) {
+            sob sobVar2 = (sob) arrayList.get(i2);
+            paint.setAlpha((int) (sobVar2.f * 255.0f * f2));
+            canvas.drawPoint(sobVar2.a, sobVar2.b, paint);
+        }
+        double d = (f - 90.0f) * 0.017453292519943295d;
+        double sin = Math.sin(d);
+        double d2 = -Math.cos(d);
+        double width = rectF.width() / 2.0f;
+        float centerX = (float) (((-d2) * width) + rectF.centerX());
+        float centerY = (float) ((width * sin) + rectF.centerY());
+        ArrayList arrayList2 = this.d;
+        boolean z = true;
+        int j = Utilities.j(arrayList2.size() / 12, 3, 1);
+        int i3 = 0;
+        while (i3 < j) {
+            if (arrayList2.isEmpty()) {
+                sobVar = new sob();
             } else {
-                long j2 = i3;
-                v0 = cmb.v0(cmb.o8[pc0.d(j2)], this.cc);
-                v02 = cmb.v0(cmb.p8[pc0.d(j2)], this.cc);
+                sobVar = (sob) arrayList2.get(i);
+                arrayList2.remove(i);
             }
-            pc0Var.h(kmVar2.a(v0, false), kmVar.a(v02, false));
+            if (this.b && this.f) {
+                float f3 = (i3 + 1) / j;
+                sobVar.a = gl.R1(this.g, centerX, f3);
+                sobVar.b = gl.R1(this.h, centerY, f3);
+            } else {
+                sobVar.a = centerX;
+                sobVar.b = centerY;
+            }
+            SecureRandom secureRandom = Utilities.b;
+            double d3 = sin;
+            double nextInt = (secureRandom.nextInt(kk7.V1) - 70) * 0.017453292519943295d;
+            if (nextInt < 0.0d) {
+                nextInt += 6.283185307179586d;
+            }
+            sobVar.c = (float) ((Math.cos(nextInt) * d3) - (Math.sin(nextInt) * d2));
+            double sin2 = Math.sin(nextInt) * d3;
+            double d4 = nextInt;
+            sob sobVar3 = sobVar;
+            sobVar3.d = (float) ug8.d(d4, d2, sin2);
+            sobVar3.f = 1.0f;
+            sobVar3.h = 0.0f;
+            if (this.b) {
+                sobVar3.g = secureRandom.nextInt(kk7.d3) + 600;
+                sobVar3.e = (secureRandom.nextFloat() * 20.0f) + 30.0f;
+            } else {
+                sobVar3.g = secureRandom.nextInt(100) + 400;
+                sobVar3.e = (secureRandom.nextFloat() * 4.0f) + 20.0f;
+            }
+            arrayList.add(sobVar3);
+            i3++;
+            sin = d3;
+            i = 0;
+            z = true;
         }
-        if (getAvatarImage() != null && getAvatarImage().O0 != 0.0f) {
-            getAvatarImage().i0(getAvatarImage().L0, (getMeasuredHeight() - getAvatarImage().O0) - gm.L(4.0f), getAvatarImage().N0, getAvatarImage().O0);
-            getAvatarImage().q0((int) (getAvatarImage().O0 / 2.0f));
-            getAvatarImage().h(canvas, null);
-        } else if (this.Od == 2) {
-            invalidate();
+        this.f = z;
+        this.g = centerX;
+        this.h = centerY;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = Math.min(20L, elapsedRealtime - this.a);
+        int size2 = arrayList.size();
+        int i4 = 0;
+        while (i4 < size2) {
+            sob sobVar4 = (sob) arrayList.get(i4);
+            float f4 = sobVar4.h;
+            float f5 = sobVar4.g;
+            if (f4 >= f5) {
+                if (arrayList2.size() < this.e) {
+                    arrayList2.add(sobVar4);
+                }
+                arrayList.remove(i4);
+                i4--;
+                size2--;
+            } else {
+                sobVar4.f = 1.0f - gl.F.getInterpolation(f4 / f5);
+                float f6 = sobVar4.a;
+                float f7 = sobVar4.c;
+                float f8 = sobVar4.e;
+                float f9 = min;
+                sobVar4.a = ls6.d(f7 * f8, f9, 200.0f, f6);
+                sobVar4.b = (((sobVar4.d * f8) * f9) / 200.0f) + sobVar4.b;
+                sobVar4.h += f9;
+            }
+            i4++;
         }
-        super.dispatchDraw(canvas);
+        this.a = elapsedRealtime;
     }
 
-    @Override // rc2, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Pd.a()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        this.Ld.onTouchEvent(motionEvent);
-        return true;
+    public tob() {
+        this(40);
     }
 }

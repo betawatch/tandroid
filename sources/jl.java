@@ -1,32 +1,106 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Picture;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jl implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
+public abstract class jl extends g46 implements x74 {
+    public final y74 Q0;
+    public Picture R0;
+    public float S0;
+    public int T0;
+    public Paint U0;
 
-    public /* synthetic */ jl(View view, byte b) {
-        this.a = b;
-        this.b = view;
+    public jl(Context context) {
+        super(context);
+        this.Q0 = new y74(0, this, s33.h, 320L, 1.0f);
+        this.T0 = 0;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        View view = this.b;
-        switch (b) {
-            case 0:
-                view.setTranslationX((float) (Math.sin(((Float) valueAnimator.getAnimatedValue()).floatValue() * 3.141592653589793d * 4.0d) * (1.0f - r8) * r8 * 4.0f * gm.L(4.0f)));
-                break;
-            default:
-                float sin = (((float) Math.sin(((Float) valueAnimator.getAnimatedValue()).floatValue() * 3.141592653589793d)) * 0.03f) + 1.0f;
-                view.setScaleX(sin);
-                view.setScaleY(sin);
-                break;
+    @Override // x74
+    public final void F(float f, int i) {
+        if (f == 1.0f) {
+            if (this.R0 != null) {
+                this.R0 = null;
+                super.setLayerType(this.T0, this.U0);
+            }
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public int getLayerType() {
+        return this.T0;
+    }
+
+    public final void n(Canvas canvas, float f, float f2) {
+        if (f >= 1.0f && f2 == 0.0f) {
+            super.onDraw(canvas);
+            return;
+        }
+        canvas.save();
+        canvas.translate(0.0f, f2);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f * 255.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    public final boolean o(CharSequence charSequence, boolean z) {
+        CharSequence text = getText();
+        if (TextUtils.equals(text, charSequence)) {
+            return l(charSequence, false);
+        }
+        y74 y74Var = this.Q0;
+        if (!z || !isAttachedToWindow() || !isLaidOut() || getVisibility() != 0 || getAlpha() <= 0.0f || getWidth() <= 0 || getHeight() <= 0 || TextUtils.isEmpty(text)) {
+            y74Var.c(1.0f);
+            if (this.R0 != null) {
+                this.R0 = null;
+                super.setLayerType(this.T0, this.U0);
+            }
+            invalidate();
+        } else {
+            Picture picture = new Picture();
+            n(picture.beginRecording(getWidth(), getHeight()), 1.0f, 0.0f);
+            picture.endRecording();
+            y74Var.c(0.0f);
+            this.R0 = picture;
+            this.S0 = getTranslationX();
+            super.setLayerType(0, null);
+            y74Var.a(1.0f);
+        }
+        invalidate();
+        return l(charSequence, false);
+    }
+
+    @Override // g46, jia, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.R0 == null) {
+            super.onDraw(canvas);
+            return;
+        }
+        float f = this.Q0.f;
+        int L = gl.L(6.0f);
+        canvas.save();
+        canvas.translate(this.S0 - getTranslationX(), (-L) * f);
+        float f2 = 1.0f - f;
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.R0.getWidth(), this.R0.getHeight(), (int) (255.0f * f2));
+        canvas.drawPicture(this.R0);
+        canvas.restore();
+        canvas.restore();
+        n(canvas, f, L * f2);
+    }
+
+    @Override // android.view.View
+    public final void setLayerType(int i, Paint paint) {
+        this.T0 = i;
+        this.U0 = paint;
+        if (this.R0 == null) {
+            super.setLayerType(i, paint);
         }
     }
 }

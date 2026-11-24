@@ -1,353 +1,146 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.app.DownloadManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Environment;
+import android.text.TextUtils;
+import android.util.Pair;
+import java.io.File;
+import org.json.JSONObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class lp0 extends h15 implements jm7 {
-    public final long S;
-    public final int T;
-    public TL_stories.TL_premium_boostsStatus U;
-    public vh1 V;
-    public ScrollSlidingTextTabStrip W;
-    public final ArrayList X;
-    public final ArrayList Y;
-    public boolean Z;
-    public int a0;
-    public boolean b0;
-    public int c0;
-    public final ArrayList d0;
-    public int e0;
-    public LimitPreviewView f0;
-    public final ep0 g0;
-    public boolean h0;
-    public LinearLayout i0;
-    public final TLRPC.Chat j0;
-    public String k0;
-    public String l0;
-    public byte m0;
-    public byte n0;
-    public int o0;
-    public int p0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class lp0 {
+    public Long a;
+    public final String b;
+    public final String c;
+    public File d;
+    public final String e;
+    public long f;
+    public long g;
+    public boolean h;
+    public boolean i;
+    public long j;
+    public boolean k;
+    public boolean l;
+    public final Runnable m = new oz(this, 19);
+    public final /* synthetic */ mp0 n;
 
-    public lp0(long j) {
-        int i = z8c.t0;
-        this.T = i;
-        this.X = new ArrayList();
-        this.Y = new ArrayList();
-        this.d0 = new ArrayList();
-        this.e0 = 0;
-        this.g0 = new ep0(this);
-        this.k0 = "";
-        this.l0 = "";
-        this.m0 = (byte) 5;
-        this.n0 = (byte) 5;
-        this.S = j;
-        this.j0 = oc7.r1(i).L0(Long.valueOf(-j));
+    public lp0(mp0 mp0Var, String str, String str2) {
+        this.n = mp0Var;
+        this.b = str;
+        this.c = str2;
+        TLRPC.User V1 = na7.q1(mp0Var.b).V1(Long.valueOf(mp0Var.c));
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str));
+        request.setTitle(l7c.r(V1));
+        request.setDescription(TextUtils.isEmpty(str2) ? "Downloading file..." : tb4.y("Downloading ", str2, "..."));
+        request.setNotificationVisibility(0);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str2);
+        this.a = Long.valueOf(mp0Var.d.enqueue(request));
     }
 
-    public final void E0(Context context, View view, int i) {
-        if (view instanceof vx4) {
-            vx4 vx4Var = (vx4) view;
-            TL_stories.Boost boost = vx4Var.getBoost();
-            boolean z = boost.giveaway;
-            if (!z || boost.stars <= 0) {
-                boolean z2 = boost.gift;
-                if (((z2 || z) && boost.user_id >= 0) || boost.unclaimed) {
-                    TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
-                    tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
-                    tL_payments_checkedGiftCode.to_id = boost.user_id;
-                    tL_payments_checkedGiftCode.from_id = oc7.r1(z8c.t0).x1(-this.j0.id);
-                    int i2 = boost.date;
-                    tL_payments_checkedGiftCode.date = i2;
-                    tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
-                    int i3 = boost.expires - i2;
-                    tL_payments_checkedGiftCode.days = i3 / 86400;
-                    tL_payments_checkedGiftCode.months = (i3 / 30) / 86400;
-                    if (boost.unclaimed) {
-                        tL_payments_checkedGiftCode.to_id = -1L;
-                        tL_payments_checkedGiftCode.flags = -1;
+    public final void a() {
+        mp0 mp0Var = this.n;
+        mp0Var.getClass();
+        this.i = true;
+        Long l = this.a;
+        if (l != null) {
+            mp0Var.d.remove(l.longValue());
+            this.a = null;
+        }
+        mp0Var.e.remove(this);
+        mp0Var.e();
+    }
+
+    public final Pair b() {
+        if (this.h) {
+            return new Pair(Long.valueOf(this.g), Long.valueOf(this.g));
+        }
+        if (this.a == null || this.i) {
+            return new Pair(Long.valueOf(this.f), Long.valueOf(this.g));
+        }
+        if (System.currentTimeMillis() - this.j < 150) {
+            return new Pair(Long.valueOf(this.f), Long.valueOf(this.g));
+        }
+        d();
+        return new Pair(Long.valueOf(this.f), Long.valueOf(this.g));
+    }
+
+    public final boolean c() {
+        return (this.h || this.a == null) ? false : true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00a7, code lost:
+    
+        if (0 == 0) goto L29;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d() {
+        mp0 mp0Var = this.n;
+        if (this.h || this.i) {
+            return;
+        }
+        Runnable runnable = this.m;
+        gl.r(runnable);
+        this.j = System.currentTimeMillis();
+        DownloadManager.Query query = new DownloadManager.Query();
+        query.setFilterById(this.a.longValue());
+        Cursor cursor = null;
+        try {
+            try {
+                cursor = mp0Var.d.query(query);
+                if (cursor.moveToFirst()) {
+                    int i = cursor.getInt(cursor.getColumnIndex("status"));
+                    if (i == 8) {
+                        File file = new File(Uri.parse(cursor.getString(cursor.getColumnIndex("local_uri"))).getPath());
+                        this.d = file;
+                        this.h = true;
+                        long length = file.length();
+                        this.g = length;
+                        if (length <= 0) {
+                            a();
+                        }
+                        mp0Var.f();
+                    } else if (i == 16) {
+                        a();
+                        cursor.close();
+                        return;
                     } else {
-                        tL_payments_checkedGiftCode.boost = boost;
+                        this.f = cursor.getLong(cursor.getColumnIndex("bytes_so_far"));
+                        this.g = cursor.getLong(cursor.getColumnIndex("total_size"));
+                        gl.d3(runnable, 160L);
                     }
-                    new rv4(this, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
-                } else if (z && boost.user_id == -1) {
-                    b31 b31Var = new b31(getParentActivity(), getResourceProvider());
-                    b31Var.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                    b31Var.b.setText(jb6.M0(2131753268, null));
-                    b31Var.b.setSingleLine(false);
-                    b31Var.b.setMaxLines(2);
-                    u31.g(this, b31Var, 2750).j();
-                } else if (!z2 && !z) {
-                    presentFragment(ProfileActivity.S2(vx4Var.getDialogId()));
+                } else if (!this.h) {
+                    a();
                 }
-            } else {
-                nxa.i1(context, this.T, this.S, boost, getResourceProvider());
+            } catch (Exception e) {
+                fa4.g(e, true);
             }
-        }
-        boolean z3 = view instanceof xib;
-        long j = this.S;
-        if (z3) {
-            do0.D0(this, this.resourceProvider, j, null);
-        }
-        if (view instanceof zx4) {
-            do0.D0(this, this.resourceProvider, j, ((zx4) view).getPrepaidGiveaway());
-        }
-        if (((kp0) this.d0.get(i)).a == 9) {
-            H0(Boolean.valueOf(this.e0 == 1));
+            cursor.close();
+            mp0Var.e();
+        } catch (Throwable th) {
+            if (0 != 0) {
+                cursor.close();
+            }
+            throw th;
         }
     }
 
-    public final void F0(CountDownLatch countDownLatch, bp0 bp0Var) {
-        TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
-        tL_premium_getBoostsList.limit = this.n0;
-        tL_premium_getBoostsList.offset = this.k0;
-        int i = this.T;
-        tL_premium_getBoostsList.peer = oc7.r1(i).i1(this.S);
-        ConnectionsManager.getInstance(i).sendRequest(tL_premium_getBoostsList, new eo0((Object) this, (Object) countDownLatch, (Object) bp0Var, (byte) 4), 2);
-    }
-
-    public final void G0(CountDownLatch countDownLatch, bp0 bp0Var) {
-        TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
-        tL_premium_getBoostsList.limit = this.m0;
-        tL_premium_getBoostsList.gifts = true;
-        tL_premium_getBoostsList.offset = this.l0;
-        int i = this.T;
-        tL_premium_getBoostsList.peer = oc7.r1(i).i1(this.S);
-        ConnectionsManager.getInstance(i).sendRequest(tL_premium_getBoostsList, new eo0((Object) this, (Object) countDownLatch, (Object) bp0Var, (byte) 5), 2);
-    }
-
-    public final void H0(Boolean bool) {
-        if (this.h0) {
+    public lp0(mp0 mp0Var, JSONObject jSONObject) {
+        this.n = mp0Var;
+        this.b = jSONObject.optString("url");
+        this.c = jSONObject.optString("file_name");
+        this.g = jSONObject.optLong("size");
+        this.h = jSONObject.optBoolean("done");
+        this.e = jSONObject.optString("mime");
+        String optString = jSONObject.optString("path");
+        if (TextUtils.isEmpty(optString)) {
             return;
         }
-        byte b = 1;
-        this.h0 = true;
-        if (bool == null) {
-            Utilities.e.c(new bp0(this, b));
-        } else if (bool.booleanValue()) {
-            G0(null, new bp0(this, (byte) 2));
-        } else {
-            F0(null, new bp0(this, (byte) 3));
-        }
-    }
-
-    public final void I0(boolean z) {
-        if (getParentActivity() == null) {
-            return;
-        }
-        if (this.f0 == null) {
-            LimitPreviewView limitPreviewView = new LimitPreviewView(getParentActivity(), R.drawable.filled_limit_boost, 0, 0, this.resourceProvider);
-            this.f0 = limitPreviewView;
-            limitPreviewView.d0 = true;
-            limitPreviewView.setDarkGradientProvider(new xg0(this, (byte) 9));
-        }
-        if (this.f0.getParent() != null) {
-            ((ViewGroup) this.f0.getParent()).removeView(this.f0);
-        }
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.U;
-        if (tL_premium_boostsStatus != null) {
-            this.f0.h(tL_premium_boostsStatus, false);
-            if (z) {
-                this.f0.setAlpha(0.0f);
-                this.f0.animate().alpha(1.0f).start();
-            }
-        }
-        TLRPC.Chat chat = this.j0;
-        String M0 = jb6.M0(sd2.V(chat) ? 2131753554 : 2131753552, null);
-        SpannableStringBuilder S2 = gm.S2(jb6.M0(sd2.V(chat) ? 2131753553 : 2131753551, null));
-        gp0 gp0Var = new gp0(getParentActivity());
-        gp0Var.addView(this.U != null ? this.f0 : new View(gp0Var.getContext()), qoe.d(-1, this.U != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
-        j0(M0, S2, gp0Var, new ip0(this, getParentActivity()));
-    }
-
-    public final void J0(boolean z) {
-        ArrayList arrayList = new ArrayList(this.d0);
-        this.d0.clear();
-        this.d0.add(new kp0(14, false));
-        if (this.U != null) {
-            this.d0.add(new kp0(16, jb6.M0(2131744584, null)));
-            this.d0.add(new kp0(0, false));
-            this.d0.add(new kp0(2, false));
-            if (this.U.prepaid_giveaways.size() > 0) {
-                this.d0.add(new kp0(12, jb6.M0(2131753289, null)));
-                int i = 0;
-                while (i < this.U.prepaid_giveaways.size()) {
-                    TL_stories.PrepaidGiveaway prepaidGiveaway = this.U.prepaid_giveaways.get(i);
-                    ArrayList arrayList2 = this.d0;
-                    boolean z2 = i == this.U.prepaid_giveaways.size() - 1;
-                    kp0 kp0Var = new kp0(11, true);
-                    kp0Var.e = prepaidGiveaway;
-                    kp0Var.f = z2;
-                    arrayList2.add(kp0Var);
-                    i++;
-                }
-                this.d0.add(new kp0(6, jb6.M0(2131753251, null)));
-            }
-            this.d0.add(new kp0(13, jb6.M0(2131753571, null)));
-            if (this.e0 == 0) {
-                if (this.X.isEmpty()) {
-                    this.d0.add(new kp0(8, false));
-                    this.d0.add(new kp0(2, false));
-                } else {
-                    int i2 = 0;
-                    while (i2 < this.X.size()) {
-                        this.d0.add(new kp0((TL_stories.Boost) this.X.get(i2), i2 == this.X.size() - 1 && !this.Z, this.e0));
-                        i2++;
-                    }
-                    boolean z3 = this.Z;
-                    ArrayList arrayList3 = this.d0;
-                    if (z3) {
-                        arrayList3.add(new kp0(9, true));
-                    } else {
-                        arrayList3.add(new kp0(7, false));
-                    }
-                    this.d0.add(new kp0(6, jb6.M0(sd2.V(this.j0) ? 2131753570 : 2131753569, null)));
-                }
-            } else if (this.Y.isEmpty()) {
-                this.d0.add(new kp0(8, false));
-                this.d0.add(new kp0(2, false));
-            } else {
-                int i3 = 0;
-                while (i3 < this.Y.size()) {
-                    this.d0.add(new kp0((TL_stories.Boost) this.Y.get(i3), i3 == this.Y.size() - 1 && !this.b0, this.e0));
-                    i3++;
-                }
-                boolean z4 = this.b0;
-                ArrayList arrayList4 = this.d0;
-                if (z4) {
-                    arrayList4.add(new kp0(9, true));
-                } else {
-                    arrayList4.add(new kp0(7, false));
-                }
-                this.d0.add(new kp0(6, jb6.M0(sd2.V(this.j0) ? 2131753570 : 2131753569, null)));
-            }
-            this.d0.add(new kp0(1, jb6.M0(2131748671, null)));
-            this.d0.add(new kp0(3, this.U.boost_url));
-            if (oc7.r1(this.T).l4.O1.f && sd2.N(this.j0)) {
-                this.d0.add(new kp0(6, jb6.M0(sd2.V(this.j0) ? 2131753234 : 2131753233, null)));
-                this.d0.add(new kp0(10, true));
-                this.d0.add(new kp0(6, jb6.M0(sd2.V(this.j0) ? 2131753468 : 2131753467, null)));
-            } else {
-                this.d0.add(new kp0(6, ""));
-            }
-            this.d0.add(new kp0(15, false));
-        }
-        ep0 ep0Var = this.g0;
-        if (z) {
-            ep0Var.E(arrayList, this.d0);
-        } else {
-            ep0Var.f();
-        }
-    }
-
-    @Override // h15, org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        View createView = super.createView(context);
-        I0(false);
-        sc3 sc3Var = new sc3();
-        sc3Var.m = false;
-        sc3Var.C = false;
-        this.c.setItemAnimator(sc3Var);
-        this.c.setOnItemClickListener(new k0(this, context, (byte) 2));
-        Activity parentActivity = getParentActivity();
-        LinearLayout linearLayout = new LinearLayout(parentActivity);
-        this.i0 = linearLayout;
-        byte b = 1;
-        linearLayout.setOrientation(1);
-        this.i0.addView(new fp0(parentActivity), qoe.t(100, 100, 17, 0, nm7.E1, 0, 0));
-        ((ViewGroup) this.fragmentView).addView(this.i0, qoe.e(-1, -2, 17));
-        this.i0.setAlpha(0.0f);
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.U;
-        LinearLayout linearLayout2 = this.i0;
-        if (tL_premium_boostsStatus == null) {
-            linearLayout2.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
-            getMessagesController().F0().a(this.S, new cp0(this, b));
-        } else {
-            linearLayout2.setVisibility(8);
-            H0(null);
-        }
-        J0(false);
-        return createView;
-    }
-
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i != nm7.X2) {
-            if (i == nm7.r3) {
-                if (this.S == ((Long) objArr[2]).longValue()) {
-                    this.U = (TL_stories.TL_premium_boostsStatus) objArr[0];
-                    this.V = (vh1) objArr[1];
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
-        boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
-        List fragmentStack = getParentLayout().getFragmentStack();
-        d dVar = fragmentStack.size() >= 2 ? (d) aq1.m(2, fragmentStack) : null;
-        if (dVar instanceof ba2) {
-            ((ActionBarLayout) getParentLayout()).c0(dVar, false);
-        }
-        List fragmentStack2 = getParentLayout().getFragmentStack();
-        d dVar2 = fragmentStack2.size() >= 2 ? (d) aq1.m(2, fragmentStack2) : null;
-        if (!booleanValue) {
-            finishFragment();
-            if ((dVar2 instanceof ProfileActivity) || (dVar2 instanceof yv1)) {
-                yn0.f(dVar2, chat, false);
-                return;
-            }
-            return;
-        }
-        d dVar3 = fragmentStack2.size() >= 3 ? (d) aq1.m(3, fragmentStack2) : null;
-        if (dVar2 instanceof ProfileActivity) {
-            ((ActionBarLayout) getParentLayout()).c0(dVar2, false);
-        }
-        finishFragment();
-        if (dVar3 instanceof yv1) {
-            yn0.f(dVar3, chat, true);
-        }
-        if (dVar2 instanceof yv1) {
-            yn0.f(dVar2, chat, true);
-        }
-    }
-
-    @Override // h15
-    public final y59 k0() {
-        return this.g0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        getNotificationCenter().b(this, nm7.X2);
-        getNotificationCenter().b(this, nm7.r3);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, nm7.X2);
-        getNotificationCenter().n(this, nm7.r3);
-        super.onFragmentDestroy();
+        this.d = new File(optString);
     }
 }

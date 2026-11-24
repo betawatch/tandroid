@@ -1,32 +1,17 @@
 // default package
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Bitmap;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class p88 implements mcc {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lo6 b;
+public final class p88 extends dj6 {
+    public final /* synthetic */ PhotoViewer L;
 
-    public /* synthetic */ p88(lo6 lo6Var, byte b) {
-        this.a = b;
-        this.b = lo6Var;
-    }
-
-    @Override // mcc
-    public final void a(uf4 uf4Var) {
-        byte b = this.a;
-        lo6 lo6Var = this.b;
-        switch (b) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.d9;
-                uf4Var.c(new ni6(lo6Var, (byte) 29));
-                break;
-            default:
-                Drawable[] drawableArr2 = PhotoViewer.d9;
-                uf4Var.c(new ni6(lo6Var, (byte) 29));
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p88(PhotoViewer photoViewer, Context context, int i, Bitmap bitmap, Bitmap bitmap2, int i2, zl6 zl6Var) {
+        super(context, i, bitmap, bitmap2, i2, zl6Var);
+        this.L = photoViewer;
     }
 }

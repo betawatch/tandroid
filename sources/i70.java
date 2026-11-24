@@ -1,22 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class i70 implements cq7 {
+public final class i70 implements zn7 {
     public static final i70 a = new i70();
-    public static final wa4 b = wa4.c("processName");
-    public static final wa4 c = wa4.c("pid");
-    public static final wa4 d = wa4.c("importance");
-    public static final wa4 e = wa4.c("defaultProcess");
 
-    @Override // b44
+    static {
+        w84.c("clientMetrics");
+    }
+
+    @Override // q24
     public final void a(Object obj, Object obj2) {
-        h03 h03Var = (h03) obj;
-        dq7 dq7Var = (dq7) obj2;
-        dq7Var.a(b, ((ba0) h03Var).a);
-        ba0 ba0Var = (ba0) h03Var;
-        dq7Var.e(c, ba0Var.b);
-        dq7Var.e(d, ba0Var.c);
-        dq7Var.d(e, ba0Var.d);
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

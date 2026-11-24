@@ -1,167 +1,154 @@
 // default package
 
-import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.WindowInsets;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import org.telegram.messenger.voip.VoIPService;
-import org.webrtc.OrientationHelper;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.SystemClock;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public abstract class ekc extends FrameLayout {
-    public Activity a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ekc implements nbd {
+    public boolean a;
     public boolean b;
-    public po c;
-    public VelocityTracker d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public float n;
-    public boolean r;
+    public final Object c;
+    public final Object d;
+    public Object e;
 
-    public static WindowManager.LayoutParams a() {
-        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-        layoutParams.height = -1;
-        layoutParams.format = -2;
-        layoutParams.width = -1;
-        layoutParams.gravity = 51;
-        layoutParams.type = 99;
-        layoutParams.screenOrientation = 1;
-        gm.m(layoutParams);
-        layoutParams.flags = -2144665216;
-        return layoutParams;
+    public ekc(Context context, Looper looper, adb adbVar) {
+        this.c = new aec(context.getApplicationContext(), (byte) 1);
+        this.d = adbVar.a(looper, null);
+        this.e = adbVar.a(Looper.getMainLooper(), null);
     }
 
-    public final void b() {
-        c(330L);
-    }
-
-    public final void c(long j) {
-        if (this.f) {
+    public final void a(boolean z, boolean z2) {
+        cdb cdbVar = (cdb) this.d;
+        if (z && z2) {
+            cdbVar.e(new sy3(this, z, z2, (byte) 5));
             return;
         }
-        this.f = true;
-        if (iic.m1 != null) {
-            if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = iic.m1.u0.getMeasuredHeight();
-                if (iic.m1.D0 && !VoIPService.getSharedInstance().isConverting()) {
-                    iic iicVar = iic.m1;
-                    yic.f(iicVar.b, iicVar.a, iicVar.u0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = iic.m1.r0;
-                    if (windowInsets != null) {
-                        yic.W = windowInsets.getSystemWindowInsetTop();
-                        iic.m1.r0.getSystemWindowInsetBottom();
-                    }
-                }
+        AtomicBoolean atomicBoolean = new AtomicBoolean(true);
+        cdb cdbVar2 = (cdb) this.e;
+        cdbVar2.a.postDelayed(new mhc(this, atomicBoolean, (byte) 8), 1000L);
+        cdbVar.e(new s91((Object) this, (Object) atomicBoolean, z, z2, (byte) 5));
+    }
+
+    public final void b(boolean z) {
+        if (this.b != z) {
+            this.b = z;
+            if (this.a) {
+                a(true, z);
             }
-            iic.m1.d0.d.release();
-            iic.m1.e0.d.release();
-            iic.m1.c0.release();
-            iic.m1.b();
         }
-        iic.m1 = null;
-        zic.b();
-        if (this.b) {
+    }
+
+    @Override // nbd
+    public final ArrayList d(go5 go5Var) {
+        if (((t5f) this.e) == null) {
+            zzb();
+        }
+        t5f t5fVar = (t5f) this.e;
+        fre.h(t5fVar);
+        if (!this.a) {
             try {
-                ((WindowManager) this.a.getSystemService("window")).removeView(this);
-            } catch (Exception unused) {
+                t5fVar.V(t5fVar.R(), 1);
+                this.a = true;
+            } catch (RemoteException e) {
+                throw new be7("Failed to init thin image labeler.", e);
             }
-        } else {
-            this.c.d();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new q7b(this, (byte) 24)).setDuration(j).setInterpolator(d53.f).start();
+        }
+        int i = go5Var.b;
+        int i2 = go5Var.c;
+        int a = vrd.a(go5Var.d);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        Bitmap bitmap = go5Var.a;
+        fre.h(bitmap);
+        bo7 bo7Var = new bo7(bitmap);
+        try {
+            Parcel R = t5fVar.R();
+            int i3 = vgd.a;
+            R.writeStrongBinder(bo7Var);
+            R.writeInt(1);
+            int r = jte.r(R, 20293);
+            jte.q(R, 1, 4);
+            R.writeInt(-1);
+            jte.q(R, 2, 4);
+            R.writeInt(i);
+            jte.q(R, 3, 4);
+            R.writeInt(i2);
+            jte.q(R, 4, 4);
+            R.writeInt(a);
+            jte.q(R, 5, 8);
+            R.writeLong(elapsedRealtime);
+            jte.s(R, r);
+            Parcel T = t5fVar.T(R, 3);
+            ArrayList createTypedArrayList = T.createTypedArrayList(d6f.CREATOR);
+            T.recycle();
+            ArrayList arrayList = new ArrayList();
+            int size = createTypedArrayList.size();
+            int i4 = 0;
+            while (i4 < size) {
+                Object obj = createTypedArrayList.get(i4);
+                i4++;
+                d6f d6fVar = (d6f) obj;
+                arrayList.add(new fk5(d6fVar.b, d6fVar.d, d6fVar.a, d6fVar.c));
+            }
+            return arrayList;
+        } catch (RemoteException e2) {
+            throw new be7("Failed to run thin image labeler.", e2);
         }
     }
 
-    public final void d() {
-        if (getParent() != null) {
-            gm.K3(this.a);
-            WindowManager windowManager = (WindowManager) this.a.getSystemService("window");
-            setVisibility(8);
-            windowManager.removeView(this);
-            OrientationHelper.cameraRotationDisabled = false;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        if (this.e) {
+    @Override // nbd
+    public final void zzb() {
+        a6f v5fVar;
+        Context context = (Context) this.c;
+        if (((t5f) this.e) != null) {
             return;
         }
-        this.e = true;
-        if (this.b) {
-            return;
+        try {
+            IBinder b = ds3.c(context, ds3.b, "com.google.android.gms.vision.ica").b("com.google.android.gms.vision.label.mlkit.ImageLabelerCreator");
+            int i = y5f.b;
+            if (b == null) {
+                v5fVar = null;
+            } else {
+                IInterface queryLocalInterface = b.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabelerCreator");
+                v5fVar = queryLocalInterface instanceof a6f ? (a6f) queryLocalInterface : new v5f(b, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", (byte) 7);
+            }
+            this.e = ((v5f) v5fVar).Z(new bo7(context), new i6f(((ik5) this.d).a, -1));
+        } catch (RemoteException e) {
+            throw new be7("Failed to create thin image labeler.", e);
+        } catch (as3 unused) {
+            if (!this.b) {
+                uq7.a(context);
+                this.b = true;
+            }
+            throw new be7("Waiting for the label optional module to be downloaded. Please wait.", 14);
         }
-        setTranslationY(getMeasuredHeight());
-        setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(d53.f).start();
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!this.b) {
-            if (motionEvent.getAction() == 0) {
-                this.h = motionEvent.getX();
-                this.n = motionEvent.getY();
-                VelocityTracker velocityTracker = this.d;
-                if (velocityTracker == null) {
-                    velocityTracker = VelocityTracker.obtain();
-                    this.d = velocityTracker;
-                }
-                velocityTracker.clear();
-                return false;
+    @Override // nbd
+    public final void zzc() {
+        t5f t5fVar = (t5f) this.e;
+        if (t5fVar != null) {
+            try {
+                t5fVar.V(t5fVar.R(), 2);
+            } catch (RemoteException unused) {
+                Log.e("DecoupledImageLabeler", "Failed to release thin image labeler.");
             }
-            if (motionEvent.getAction() == 2) {
-                float x = motionEvent.getX() - this.h;
-                float y = motionEvent.getY() - this.n;
-                if (!this.r && Math.abs(y) > gm.Z0(true, 0.4f) && Math.abs(y) / 3.0f > x) {
-                    this.n = motionEvent.getY();
-                    this.r = true;
-                    y = 0.0f;
-                }
-                if (this.r) {
-                    float f = y >= 0.0f ? y : 0.0f;
-                    VelocityTracker velocityTracker2 = this.d;
-                    if (velocityTracker2 == null) {
-                        velocityTracker2 = VelocityTracker.obtain();
-                        this.d = velocityTracker2;
-                    }
-                    velocityTracker2.addMovement(motionEvent);
-                    setTranslationY(f);
-                }
-                return this.r;
-            }
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                float translationY = getTranslationY();
-                VelocityTracker velocityTracker3 = this.d;
-                if (velocityTracker3 == null) {
-                    velocityTracker3 = VelocityTracker.obtain();
-                    this.d = velocityTracker3;
-                }
-                velocityTracker3.computeCurrentVelocity(1000);
-                float xVelocity = this.d.getXVelocity();
-                float yVelocity = this.d.getYVelocity();
-                if (translationY >= getMeasuredHeight() / 3.0f || (xVelocity >= 3500.0f && xVelocity >= yVelocity)) {
-                    c(Math.max((int) ((200.0f / getMeasuredHeight()) * (getMeasuredHeight() - getTranslationY())), 50));
-                } else {
-                    animate().translationY(0.0f).start();
-                }
-                this.r = false;
-                return false;
-            }
+            this.e = null;
+            this.a = false;
         }
-        return false;
     }
 
-    public void setLockOnScreen(boolean z) {
-        this.b = z;
+    public ekc(Context context, ik5 ik5Var) {
+        this.c = context;
+        this.d = ik5Var;
     }
 }

@@ -1,26 +1,18 @@
 // default package
 
-import android.media.AudioTrack;
-import android.media.AudioTrack$StreamEventCallback;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class h50 extends AudioTrack$StreamEventCallback {
-    public final /* synthetic */ i50 a;
+public final class h50 implements zn7 {
+    public static final h50 a = new h50();
+    public static final w84 b = w84.c("clientType");
+    public static final w84 c = w84.c("androidClientInfo");
 
-    public h50(i50 i50Var) {
-        this.a = i50Var;
-    }
-
-    public final void onDataRequest(AudioTrack audioTrack, int i) {
-        this.a.c.i.e(-1, new w00((byte) 4));
-    }
-
-    public final void onPresentationEnded(AudioTrack audioTrack) {
-        this.a.c.i.e(-1, new w00((byte) 5));
-    }
-
-    public final void onTearDown(AudioTrack audioTrack) {
-        this.a.c.i.e(-1, new w00((byte) 4));
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        li2 li2Var = (li2) obj;
+        ao7 ao7Var = (ao7) obj2;
+        ((x70) li2Var).getClass();
+        ao7Var.a(b, ki2.a);
+        ao7Var.a(c, ((x70) li2Var).a);
     }
 }

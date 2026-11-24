@@ -1,33 +1,25 @@
 // default package
 
-import android.util.SparseArray;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class m69 {
-    public final SparseArray a = new SparseArray();
-    public int b = 0;
+public final class m69 extends gw2 {
+    public nh7 a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ n69 c;
+    public int d;
 
-    public final void a() {
-        int i = 0;
-        while (true) {
-            SparseArray sparseArray = this.a;
-            if (i >= sparseArray.size()) {
-                return;
-            }
-            ((l69) sparseArray.valueAt(i)).a.clear();
-            i++;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m69(n69 n69Var, gw2 gw2Var) {
+        super(gw2Var);
+        this.c = n69Var;
     }
 
-    public final l69 b(int i) {
-        SparseArray sparseArray = this.a;
-        l69 l69Var = (l69) sparseArray.get(i);
-        if (l69Var != null) {
-            return l69Var;
-        }
-        l69 l69Var2 = new l69();
-        sparseArray.put(i, l69Var2);
-        return l69Var2;
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.d |= TLObject.FLAG_31;
+        return this.c.a(this);
     }
 }

@@ -1,36 +1,44 @@
 // default package
 
-import android.R;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class pe0 {
-    public static ExecutorService a;
-    public static final int[] b = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
-    public static final int[] c = {R.attr.name, R.attr.pivotX, R.attr.pivotY, R.attr.scaleX, R.attr.scaleY, R.attr.rotation, R.attr.translateX, R.attr.translateY};
-    public static final int[] d = {R.attr.name, R.attr.fillColor, R.attr.pathData, R.attr.strokeColor, R.attr.strokeWidth, R.attr.trimPathStart, R.attr.trimPathEnd, R.attr.trimPathOffset, R.attr.strokeLineCap, R.attr.strokeLineJoin, R.attr.strokeMiterLimit, R.attr.strokeAlpha, R.attr.fillAlpha, R.attr.fillType};
-    public static final int[] e = {R.attr.name, R.attr.pathData, R.attr.fillType};
-    public static final int[] f = {R.attr.drawable};
-    public static final int[] g = {R.attr.name, R.attr.animation};
-    public static final int[] h = {R.attr.interpolator, R.attr.duration, R.attr.startOffset, R.attr.repeatCount, R.attr.repeatMode, R.attr.valueFrom, R.attr.valueTo, R.attr.valueType};
-    public static final int[] i = {R.attr.ordering};
-    public static final int[] j = {R.attr.valueFrom, R.attr.valueTo, R.attr.valueType, R.attr.propertyName};
-    public static final int[] k = {R.attr.value, R.attr.interpolator, R.attr.valueType, R.attr.fraction};
-    public static final int[] l = {R.attr.propertyName, R.attr.pathData, R.attr.propertyXName, R.attr.propertyYName};
+public final class pe0 extends b4 {
+    public static final Parcelable.Creator<pe0> CREATOR = new qyd((byte) 24);
+    public String E;
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public String h;
+    public String n;
+    public String r;
+    public String s;
+    public String w;
+    public String x;
+    public String y;
 
-    public static synchronized Executor a() {
-        ExecutorService executorService;
-        synchronized (pe0.class) {
-            executorService = a;
-            if (executorService == null) {
-                String str = hac.a;
-                executorService = Executors.newSingleThreadExecutor(new ds2("ExoPlayer:BackgroundExecutor", (byte) 1));
-                a = executorService;
-            }
-        }
-        return executorService;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.l(parcel, 3, this.b);
+        jte.l(parcel, 4, this.c);
+        jte.l(parcel, 5, this.d);
+        jte.l(parcel, 6, this.e);
+        jte.l(parcel, 7, this.f);
+        jte.l(parcel, 8, this.h);
+        jte.l(parcel, 9, this.n);
+        jte.l(parcel, 10, this.r);
+        jte.l(parcel, 11, this.s);
+        jte.l(parcel, 12, this.w);
+        jte.l(parcel, 13, this.x);
+        jte.l(parcel, 14, this.y);
+        jte.l(parcel, 15, this.E);
+        jte.s(parcel, r);
     }
 }

@@ -1,34 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hw5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ iw5 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ hw5(iw5 iw5Var, boolean z, boolean z2, byte b) {
-        this.a = b;
-        this.b = iw5Var;
-        this.c = z;
-        this.d = z2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class hw5 extends mu1 {
+    public final /* synthetic */ rw5 wd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw5(rw5 rw5Var) {
+        super(null);
+        this.wd = rw5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.d;
-        boolean z2 = this.c;
-        iw5 iw5Var = this.b;
-        switch (b) {
-            case 0:
-                gm.c3(new hw5(iw5Var, z2, z, (byte) 1));
-                break;
-            default:
-                iw5Var.setJoinRequest(z2);
-                iw5Var.setJoinToSend(z);
-                break;
-        }
+    @Override // mu1
+    public final boolean Q7() {
+        return false;
+    }
+
+    @Override // mu1, sy1
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final Activity getParentActivity() {
+        return gl.W(this.wd.getContext());
+    }
+
+    @Override // mu1, org.telegram.ui.ActionBar.d
+    public final wjb getResourceProvider() {
+        return this.wd.G1;
+    }
+
+    @Override // mu1, sy1
+    public final TLRPC.User h() {
+        return y6c.h(this.currentAccount).f();
+    }
+
+    @Override // mu1, org.telegram.ui.ActionBar.d
+    public final boolean isLightStatusBar() {
+        return false;
     }
 }

@@ -1,26 +1,51 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class gz1 extends or0 {
-    public final /* synthetic */ ChatActivityEnterView E;
+public final /* synthetic */ class gz1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ x02 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gz1(ChatActivityEnterView chatActivityEnterView, Context context, ylb ylbVar) {
-        super(context, ylbVar);
-        this.E = chatActivityEnterView;
+    public /* synthetic */ gz1(x02 x02Var, byte b) {
+        this.a = b;
+        this.b = x02Var;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        super.setTranslationY(f);
-        ChatActivityEnterView chatActivityEnterView = this.E;
-        if (chatActivityEnterView.W0 == null || chatActivityEnterView.e4 != 1) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        x02 x02Var = this.b;
+        switch (b) {
+            case 0:
+                x02Var.L1();
+                break;
+            case 1:
+                x02Var.A2.invalidate();
+                break;
+            case 2:
+                x02Var.D0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ww0 ww0Var = x02Var.c;
+                if (ww0Var != null) {
+                    ww0Var.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                x02Var.u1(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                p02 p02Var = x02Var.v2;
+                r32 r32Var = x02Var.q2;
+                if (p02Var == r32Var && r32Var != null) {
+                    r32Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                x02Var.L1();
+                break;
         }
-        chatActivityEnterView.P3.o(f);
     }
 }

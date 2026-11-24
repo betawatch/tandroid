@@ -1,27 +1,63 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.ParcelFileDescriptor;
+import androidx.datastore.core.NativeSharedCounter;
+import java.io.File;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class og7 extends b4 {
-    public static final Parcelable.Creator<og7> CREATOR = new hx6((byte) 29);
-    public final boolean a;
-    public final int b;
+public final class og7 extends vw5 implements op4 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ rg7 c;
 
-    public og7(int i, boolean z) {
-        this.a = z;
-        this.b = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ og7(rg7 rg7Var, byte b) {
+        super(0);
+        this.b = b;
+        this.c = rg7Var;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        mve.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        mve.s(parcel, r);
+    @Override // op4
+    public final Object invoke() {
+        ParcelFileDescriptor parcelFileDescriptor;
+        byte b = this.b;
+        rg7 rg7Var = this.c;
+        switch (b) {
+            case 0:
+                System.loadLibrary("datastore_shared_counter");
+                File file = new File(rg7Var.b.getAbsolutePath() + rg7Var.e);
+                rg7.f(file);
+                try {
+                    parcelFileDescriptor = ParcelFileDescriptor.open(file, 939524096);
+                    try {
+                        int fd = parcelFileDescriptor.getFd();
+                        NativeSharedCounter nativeSharedCounter = hba.b;
+                        if (nativeSharedCounter.nativeTruncateFile(fd) != 0) {
+                            throw new IOException("Failed to truncate counter file");
+                        }
+                        long nativeCreateSharedCounter = nativeSharedCounter.nativeCreateSharedCounter(fd);
+                        if (nativeCreateSharedCounter < 0) {
+                            throw new IOException("Failed to mmap counter file");
+                        }
+                        hba hbaVar = new hba(nativeCreateSharedCounter);
+                        parcelFileDescriptor.close();
+                        return hbaVar;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (parcelFileDescriptor != null) {
+                            parcelFileDescriptor.close();
+                        }
+                        throw th;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    parcelFileDescriptor = null;
+                }
+            default:
+                File file2 = new File(rg7Var.b.getAbsolutePath() + rg7Var.d);
+                rg7.f(file2);
+                return file2;
+        }
     }
 }

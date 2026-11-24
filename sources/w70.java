@@ -1,35 +1,31 @@
 // default package
 
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class w70 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ th8 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class w70 extends ah0 {
+    public final ArrayList a;
 
-    public /* synthetic */ w70(th8 th8Var, byte b) {
-        this.a = b;
-        this.b = th8Var;
+    public w70(ArrayList arrayList) {
+        this.a = arrayList;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        th8 th8Var = this.b;
-        switch (b) {
-            case 0:
-                th8Var.b(true);
-                break;
-            case 1:
-                th8Var.b(true);
-                break;
-            case 2:
-                th8Var.b(true);
-                break;
-            default:
-                th8Var.b(true);
-                break;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof ah0)) {
+            return false;
+        }
+        return this.a.equals(((w70) ((ah0) obj)).a);
+    }
+
+    public final int hashCode() {
+        return 1000003 ^ this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "BatchedLogRequest{logRequests=" + this.a + "}";
     }
 }

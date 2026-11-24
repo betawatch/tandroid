@@ -1,54 +1,74 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class j95 extends age {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ m95 c;
+public final class j95 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ h85 b;
+    public final /* synthetic */ l95 c;
 
-    public j95(m95 m95Var, ArrayList arrayList, ArrayList arrayList2) {
-        this.c = m95Var;
-        this.a = arrayList;
-        this.b = arrayList2;
+    public /* synthetic */ j95(l95 l95Var, h85 h85Var, byte b) {
+        this.a = b;
+        this.c = l95Var;
+        this.b = h85Var;
     }
 
-    @Override // age
-    public final boolean a(int i, int i2) {
-        return true;
-    }
-
-    @Override // age
-    public final boolean b(int i, int i2) {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        m95 m95Var = this.c;
-        if (i < size && i2 < m95Var.e.size()) {
-            return ((rd2) arrayList.get(i)).equals(m95Var.e.get(i2));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        l95 l95Var = this.c;
+        h85 h85Var = this.b;
+        switch (b) {
+            case 0:
+                l95Var.O0 = null;
+                h85Var.F = false;
+                h85 h85Var2 = l95Var.F;
+                if (h85Var2 != null) {
+                    if (h85Var2.getParent() != null) {
+                        l95Var.removeView(l95Var.F);
+                        l95Var.F.e();
+                    }
+                    l95Var.F = null;
+                    break;
+                }
+                break;
+            case 1:
+                l95Var.y.e();
+                l95Var.r = null;
+                h85Var.r = false;
+                if (!l95Var.b) {
+                    l95Var.d();
+                    l95Var.E = null;
+                    l95Var.d = 0L;
+                }
+                l95Var.c = l95Var.b ? 1.0f : 0.0f;
+                l95Var.j();
+                l95Var.g(false);
+                if (!l95Var.b) {
+                    l95Var.l0.setVisibility(8);
+                    l95Var.m0.setVisibility(8);
+                    l95Var.f0.setVisibility(8);
+                    l95Var.g0.setVisibility(8);
+                    break;
+                }
+                break;
+            case 2:
+                if (h85Var.getParent() != null) {
+                    l95Var.removeView(h85Var);
+                    h85Var.e();
+                    break;
+                }
+                break;
+            default:
+                if (h85Var.getParent() != null) {
+                    l95Var.removeView(h85Var);
+                    h85Var.e();
+                    break;
+                }
+                break;
         }
-        int size2 = i - arrayList.size();
-        ArrayList arrayList2 = m95Var.e;
-        ArrayList arrayList3 = m95Var.e;
-        ArrayList arrayList4 = m95Var.f;
-        int size3 = i2 - arrayList2.size();
-        ArrayList arrayList5 = this.b;
-        if (size3 < 0 || size3 >= arrayList4.size() || size2 < 0 || size2 >= arrayList5.size()) {
-            return k47.B1((i < arrayList.size() ? ((rd2) arrayList.get(i)).a : (TLRPC.GroupCallParticipant) arrayList5.get(size2)).peer) == k47.B1((i2 < arrayList3.size() ? ((rd2) arrayList3.get(i2)).a : (TLRPC.GroupCallParticipant) arrayList4.get(size3)).peer);
-        }
-        return k47.B1(((TLRPC.GroupCallParticipant) arrayList5.get(size2)).peer) == k47.B1(((TLRPC.GroupCallParticipant) arrayList4.get(size3)).peer);
-    }
-
-    @Override // age
-    public final int c() {
-        m95 m95Var = this.c;
-        return m95Var.f.size() + m95Var.e.size();
-    }
-
-    @Override // age
-    public final int d() {
-        return this.b.size() + this.a.size();
     }
 }

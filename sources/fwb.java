@@ -1,31 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class fwb implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qwb b;
-    public final /* synthetic */ long c;
+import android.widget.EditText;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ fwb(qwb qwbVar, long j, byte b) {
-        this.a = b;
-        this.b = qwbVar;
-        this.c = j;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class fwb extends i49 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ lwb c;
+
+    public fwb(lwb lwbVar, int i, long j) {
+        this.c = lwbVar;
+        this.a = i;
+        this.b = j;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.c;
-        qwb qwbVar = this.b;
-        switch (b) {
-            case 0:
-                qwbVar.c.put(j, 0);
-                qwbVar.getNotificationCenter().k(nm7.u5, Long.valueOf(j), Boolean.FALSE);
-                break;
-            default:
-                qwbVar.n(0, j, false);
-                break;
+    @Override // i49
+    public final void a(RecyclerView recyclerView, int i) {
+        EditText editText = this.c.w;
+        if (i == 1 && editText.hasFocus()) {
+            gl.t1(editText);
+            editText.clearFocus();
         }
+    }
+
+    @Override // i49
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        lwb lwbVar = this.c;
+        lwbVar.o();
+        t26 t26Var = (t26) recyclerView.getLayoutManager();
+        if (t26Var == null || t26Var.M0() < lwbVar.s.c.size() - 3) {
+            return;
+        }
+        if (lwbVar.i()) {
+            lwbVar.j();
+            return;
+        }
+        boolean z = lwbVar.d;
+        int i3 = this.a;
+        if (z) {
+            na7.q1(i3).D1().g(false);
+            return;
+        }
+        pub pubVar = na7.q1(i3).g4;
+        long j = -this.b;
+        if (pubVar.e(j)) {
+            return;
+        }
+        pubVar.o(j);
     }
 }

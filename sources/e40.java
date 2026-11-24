@@ -1,27 +1,55 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
+import android.media.AudioDeviceInfo;
+import android.media.AudioRouting;
+import android.media.AudioTrack;
+import android.os.Handler;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public final class e40 {
-    public static final e40 a;
-    public static final e40 b;
-    public static final /* synthetic */ e40[] c;
+    public final AudioTrack a;
+    public final l69 b;
+    public final Handler c;
+    public c40 d;
 
-    static {
-        e40 e40Var = new e40("DISABLED", 0);
-        a = e40Var;
-        e40 e40Var2 = new e40("RNNOISE", 1);
-        b = e40Var2;
-        c = new e40[]{e40Var, e40Var2};
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [android.media.AudioRouting$OnRoutingChangedListener, c40] */
+    public e40(AudioTrack audioTrack, l69 l69Var) {
+        this.a = audioTrack;
+        this.b = l69Var;
+        Handler q = g8c.q(null);
+        this.c = q;
+        ?? r0 = new AudioRouting.OnRoutingChangedListener() { // from class: c40
+            @Override // android.media.AudioRouting.OnRoutingChangedListener
+            public final void onRoutingChanged(final AudioRouting audioRouting) {
+                final e40 e40Var = e40.this;
+                if (e40Var.d == null) {
+                    return;
+                }
+                pd0.a().execute(new Runnable() { // from class: d40
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        e40.this.a(audioRouting);
+                    }
+                });
+            }
+        };
+        this.d = r0;
+        audioTrack.addOnRoutingChangedListener((AudioRouting.OnRoutingChangedListener) r0, q);
     }
 
-    public static e40 valueOf(String str) {
-        return (e40) Enum.valueOf(e40.class, str);
+    public final /* synthetic */ void a(AudioRouting audioRouting) {
+        AudioDeviceInfo routedDevice = audioRouting.getRoutedDevice();
+        if (routedDevice != null) {
+            this.c.post(new z20(this, routedDevice, (byte) 3));
+        }
     }
 
-    public static e40[] values() {
-        return (e40[]) c.clone();
+    public final void b() {
+        c40 c40Var = this.d;
+        c40Var.getClass();
+        this.a.removeOnRoutingChangedListener(c40Var);
+        this.d = null;
     }
 }

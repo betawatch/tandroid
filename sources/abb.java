@@ -1,49 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class abb implements hf3 {
-    @Override // hf3
-    public final void a(vib vibVar, vib vibVar2, int i) {
-        zab zabVar = new zab();
-        ui6 ui6Var = (ui6) vibVar.f;
-        while (ui6Var != null && ui6Var != vibVar2) {
-            ui6 ui6Var2 = (ui6) ui6Var.f;
-            zabVar.b(ui6Var);
-            ui6Var = ui6Var2;
+import android.content.Context;
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class abb extends o39 {
+    public boolean f3;
+    public boolean g3;
+    public final /* synthetic */ dbb h3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public abb(dbb dbbVar, Context context) {
+        super(context, null);
+        this.h3 = dbbVar;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void m0(int i) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.f3 == canScrollHorizontally && this.g3 == canScrollHorizontally2) {
+            return;
         }
-        zabVar.g();
-        ui6 ui6Var3 = (ui6) vibVar.f;
-        zabVar.f = ui6Var3;
-        if (ui6Var3 != null) {
-            ui6Var3.e = zabVar;
+        zab zabVar = this.h3.d;
+        if (zabVar != null) {
+            zabVar.invalidate();
         }
-        zabVar.e = vibVar;
-        vibVar.f = zabVar;
-        ui6 ui6Var4 = (ui6) vibVar.b;
-        zabVar.b = ui6Var4;
-        if (((ui6) zabVar.f) == null) {
-            ui6Var4.d = zabVar;
-        }
+        this.f3 = canScrollHorizontally;
+        this.g3 = canScrollHorizontally2;
     }
 
-    @Override // hf3
-    public final char b() {
-        return '~';
-    }
-
-    @Override // hf3
-    public final int c() {
-        return 2;
-    }
-
-    @Override // hf3
-    public final int d(gf3 gf3Var, gf3 gf3Var2) {
-        return (gf3Var.g < 2 || gf3Var2.g < 2) ? 0 : 2;
-    }
-
-    @Override // hf3
-    public final char e() {
-        return '~';
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        vv2 previewDelegate;
+        xv2 e = xv2.e();
+        dbb dbbVar = this.h3;
+        abb abbVar = dbbVar.e;
+        previewDelegate = dbbVar.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || e.g(motionEvent, abbVar, previewDelegate, this.o2);
     }
 }

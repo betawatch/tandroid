@@ -1,14 +1,17 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
-import android.window.OnBackInvokedCallback;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.AlphaAnimation;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.WeakHashMap;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ExternalActionActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class up implements OnBackInvokedCallback {
+public final class up implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -17,48 +20,116 @@ public final /* synthetic */ class up implements OnBackInvokedCallback {
         this.b = obj;
     }
 
-    public final void onBackInvoked() {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
         byte b = this.a;
+        byte b2 = 0;
+        int i = 0;
         Object obj = this.b;
         switch (b) {
             case 0:
-                ((bq) obj).r();
+                fq fqVar = (fq) obj;
+                if (!fqVar.getInternalPopup().a()) {
+                    fqVar.f.m(wp.b(fqVar), wp.a(fqVar));
+                }
+                ViewTreeObserver viewTreeObserver = fqVar.getViewTreeObserver();
+                if (viewTreeObserver != null) {
+                    vp.a(viewTreeObserver, this);
+                    break;
+                }
                 break;
             case 1:
-                ((pr4) obj).invoke();
+                cq cqVar = (cq) obj;
+                fq fqVar2 = cqVar.X;
+                WeakHashMap weakHashMap = jdc.a;
+                if (!fqVar2.isAttachedToWindow() || !fqVar2.getGlobalVisibleRect(cqVar.V)) {
+                    cqVar.dismiss();
+                    break;
+                } else {
+                    cqVar.s();
+                    cqVar.f();
+                    break;
+                }
                 break;
             case 2:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.d9;
-                Activity activity = photoViewer.E;
-                if (!(activity instanceof LaunchActivity)) {
-                    if (photoViewer.V0()) {
-                        photoViewer.A(true, false);
+                xc1 xc1Var = (xc1) obj;
+                ArrayList arrayList = xc1Var.n;
+                if (xc1Var.a() && arrayList.size() > 0 && !((wc1) arrayList.get(0)).a.O) {
+                    View view = xc1Var.F;
+                    if (view != null && view.isShown()) {
+                        int size = arrayList.size();
+                        while (b2 < size) {
+                            ((wc1) arrayList.get(b2)).a.f();
+                            b2++;
+                        }
+                        break;
+                    } else {
+                        xc1Var.dismiss();
                         break;
                     }
-                } else {
-                    ((LaunchActivity) activity).onBackPressed();
-                    break;
                 }
                 break;
             case 3:
-                ((v9b) obj).K();
+                ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj;
+                externalActionActivity.f();
+                ActionBarLayout actionBarLayout = externalActionActivity.c;
+                if (actionBarLayout != null) {
+                    actionBarLayout.getView().getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    break;
+                }
                 break;
             case 4:
-                oab oabVar = (oab) obj;
-                LaunchActivity launchActivity = LaunchActivity.H1;
-                if (launchActivity == null) {
-                    oabVar.p();
+                ws6 ws6Var = (ws6) obj;
+                ws6Var.V.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                HashSet hashSet = ws6Var.Y;
+                if (hashSet != null && hashSet.size() != 0) {
+                    ms6 ms6Var = new ms6(ws6Var, b2);
+                    int firstVisiblePosition = ws6Var.V.getFirstVisiblePosition();
+                    boolean z = false;
+                    while (i < ws6Var.V.getChildCount()) {
+                        View childAt = ws6Var.V.getChildAt(i);
+                        if (ws6Var.Y.contains((eu6) ws6Var.W.getItem(firstVisiblePosition + i))) {
+                            AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+                            alphaAnimation.setDuration(ws6Var.z0);
+                            alphaAnimation.setFillEnabled(true);
+                            alphaAnimation.setFillAfter(true);
+                            z = z;
+                            if (!z) {
+                                alphaAnimation.setAnimationListener(ms6Var);
+                                z = true;
+                            }
+                            childAt.clearAnimation();
+                            childAt.startAnimation(alphaAnimation);
+                        }
+                        i++;
+                        z = z;
+                    }
                     break;
                 } else {
-                    launchActivity.onBackPressed();
+                    ws6Var.j(true);
                     break;
                 }
             case 5:
-                ((Runnable) obj).run();
+                sr7 sr7Var = (sr7) obj;
+                sr7Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                int currentItem = sr7Var.e.getCurrentItem();
+                sr7Var.h = currentItem;
+                sr7Var.d(currentItem, 0);
                 break;
             default:
-                ((thc) obj).run();
+                yma ymaVar = (yma) obj;
+                q07 q07Var = ymaVar.n;
+                if (ymaVar.a() && !q07Var.O) {
+                    View view2 = ymaVar.y;
+                    if (view2 != null && view2.isShown()) {
+                        q07Var.f();
+                        break;
+                    } else {
+                        ymaVar.dismiss();
+                        break;
+                    }
+                }
                 break;
         }
     }

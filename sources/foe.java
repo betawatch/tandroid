@@ -1,19 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class foe implements cq7 {
-    public static final foe a = new foe();
+public abstract class foe {
+    public static final Charset a = Charset.forName("UTF-8");
+    public static final byte[] b;
 
     static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)));
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        b = bArr;
+        ByteBuffer.wrap(bArr);
+        int length = bArr.length;
+        try {
+            if (length < 0) {
+                throw fpe.b();
+            }
+            if (length > Integer.MAX_VALUE) {
+                throw fpe.a();
+            }
+        } catch (fpe e) {
+            throw new IllegalArgumentException(e);
+        }
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static int a(long j) {
+        return (int) (j ^ (j >>> 32));
+    }
+
+    public static nne b(Object obj, Object obj2) {
+        nne nneVar = (nne) ((qde) obj);
+        jne jneVar = (jne) nneVar.d(5);
+        jneVar.a(nneVar);
+        qde qdeVar = (qde) obj2;
+        if (jneVar.a.getClass().isInstance(qdeVar)) {
+            jneVar.a((nne) qdeVar);
+            return jneVar.e();
         }
-        throw null;
+        w26.j("mergeFrom(MessageLite) can only merge messages of the same type.");
+        return null;
     }
 }

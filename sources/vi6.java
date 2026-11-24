@@ -1,51 +1,25 @@
 // default package
 
-import android.os.Looper;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.ServiceConfigurationError;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class vi6 {
-    public static final ie5 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class vi6 extends tn5 {
+    public static final Pattern e = Pattern.compile("\\$([^\\s\\$][^\\$]*?)(?<!\\s)\\$(?![0-9])");
 
-    static {
-        Object obj;
-        int i = ifb.a;
-        try {
-            System.getProperty("kotlinx.coroutines.fast.service.loader");
-        } catch (SecurityException unused) {
+    @Override // tn5
+    public final tg6 b() {
+        String a = a(e);
+        if (a == null) {
+            return null;
         }
-        try {
-            byte b = 1;
-            Iterator it = Arrays.asList(new cl()).iterator();
-            it.getClass();
-            Iterator it2 = u6a.a(new cu2(new v6a(it, b))).iterator();
-            if (it2.hasNext()) {
-                Object next = it2.next();
-                if (it2.hasNext()) {
-                    ((cl) next).getClass();
-                    do {
-                        ((cl) it2.next()).getClass();
-                    } while (it2.hasNext());
-                }
-                obj = next;
-            } else {
-                obj = null;
-            }
-            if (((cl) obj) == null) {
-                dq9.m("Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. 'kotlinx-coroutines-android' and ensure it has the same version as 'kotlinx-coroutines-core'");
-                return;
-            }
-            Looper mainLooper = Looper.getMainLooper();
-            if (mainLooper != null) {
-                a = new ie5(je5.a(mainLooper), false);
-            } else {
-                dq9.m("The main looper is not available");
-            }
-        } catch (Throwable th) {
-            throw new ServiceConfigurationError(th.getMessage(), th);
-        }
+        ts5 ts5Var = new ts5();
+        ts5Var.g = ir2.n(1, 1, a);
+        return ts5Var;
+    }
+
+    @Override // tn5
+    public final char c() {
+        return '$';
     }
 }

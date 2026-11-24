@@ -1,23 +1,16 @@
 // default package
 
-import java.nio.charset.Charset;
+import java.util.List;
 
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class lqd {
-    public static final ukd b = new ukd((byte) 1);
-    public final ard a;
-
-    public lqd() {
-        ssd ssdVar;
-        try {
-            ssdVar = (ssd) Class.forName("com.google.protobuf.DescriptorMessageInfoFactory").getDeclaredMethod("getInstance", null).invoke(null, null);
-        } catch (Exception unused) {
-            ssdVar = b;
+public abstract class lqd {
+    public static String a(String str) {
+        List list = null;
+        if (str != null) {
+            return v8b.r(new v8b(str, list));
         }
-        ssd[] ssdVarArr = {ukd.b, ssdVar};
-        ard ardVar = new ard();
-        ardVar.a = ssdVarArr;
-        Charset charset = gld.a;
-        this.a = ardVar;
+        w26.j("applicationId cannot be null");
+        return null;
     }
 }

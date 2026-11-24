@@ -1,57 +1,34 @@
 // default package
 
-import java.util.Iterator;
-import org.webrtc.VideoFrame;
-import org.webrtc.VideoSink;
-import org.webrtc.VideoSource;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class b11 implements VideoSink {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class b11 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ q11 b;
 
-    public /* synthetic */ b11(Object obj, byte b) {
+    public /* synthetic */ b11(q11 q11Var, byte b) {
         this.a = b;
-        this.b = obj;
+        this.b = q11Var;
     }
 
-    @Override // org.webrtc.VideoSink
-    public final void onFrame(VideoFrame videoFrame) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        Object obj = this.b;
+        q11 q11Var = this.b;
         switch (b) {
             case 0:
-                c11 c11Var = (c11) obj;
-                VideoSink incomingVideoSink = c11Var.v.a.getIncomingVideoSink(c11Var.a);
-                if (incomingVideoSink != null) {
-                    incomingVideoSink.onFrame(videoFrame);
-                    break;
-                }
+                q11Var.onExitTransitionStart();
                 break;
             case 1:
-                Iterator it = ((cq9) obj).a.iterator();
-                while (it.hasNext()) {
-                    ((VideoSink) it.next()).onFrame(videoFrame);
-                }
+                q11Var.onEnterTransitionStart();
                 break;
             default:
-                ((VideoSource) obj).lambda$setVideoProcessor$1(videoFrame);
-                break;
+                try {
+                    q11Var.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
         }
-    }
-
-    @Override // org.webrtc.VideoSink
-    public final void setParentSink(VideoSink videoSink) {
-        byte b = this.a;
-    }
-
-    private final void a(VideoSink videoSink) {
-    }
-
-    private final void b(VideoSink videoSink) {
-    }
-
-    private final void c(VideoSink videoSink) {
     }
 }

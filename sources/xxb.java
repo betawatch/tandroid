@@ -1,109 +1,108 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class xxb extends ka {
-    public final /* synthetic */ zxb d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class xxb {
+    public final oxb a;
+    public final int b;
+    public final long[] c;
+    public final int[] d;
+    public final int e;
+    public final long[] f;
+    public final int[] g;
+    public final int[] h;
+    public final long i;
+    public final boolean j;
 
-    public xxb(zxb zxbVar) {
-        this.d = zxbVar;
+    public xxb(oxb oxbVar, long[] jArr, int[] iArr, int i, long[] jArr2, int[] iArr2, int[] iArr3, boolean z, long j, int i2) {
+        gre.f(iArr.length == jArr2.length);
+        gre.f(jArr.length == jArr2.length);
+        gre.f(iArr2.length == jArr2.length);
+        this.a = oxbVar;
+        this.c = jArr;
+        this.d = iArr;
+        this.e = i;
+        this.f = jArr2;
+        this.g = iArr2;
+        this.h = iArr3;
+        this.j = z;
+        this.i = j;
+        this.b = i2;
+        if (iArr2.length > 0) {
+            int length = iArr2.length - 1;
+            iArr2[length] = iArr2[length] | TLObject.FLAG_29;
+        }
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        int i = u69Var.f;
-        return i == 1 || i == 2 || i == 4;
-    }
-
-    @Override // y59
-    public final int b() {
-        return this.d.d.size();
-    }
-
-    @Override // y59
-    public final int d(int i) {
-        return ((yxb) this.d.d.get(i)).a;
-    }
-
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        String M0;
-        zxb zxbVar = this.d;
-        ArrayList arrayList = zxbVar.d;
-        if (((yxb) arrayList.get(i)).a == 2) {
-            xvb xvbVar = (xvb) u69Var.a;
-            long j = zxbVar.c;
-            TLRPC.TL_forumTopic tL_forumTopic = ((yxb) arrayList.get(i)).c;
-            bf0 bf0Var = xvbVar.b;
-            no4.q(bf0Var, tL_forumTopic, false, false, null);
-            if (bf0Var != null && bf0Var.getImageReceiver() != null && (bf0Var.getImageReceiver().t() instanceof mo4)) {
-                ((mo4) bf0Var.getImageReceiver().t()).a(cmb.w0(null, cmb.b9, false));
-            }
-            xvbVar.c.setText(tL_forumTopic.title);
-            TextView textView = xvbVar.d;
-            oc7 r1 = oc7.r1(z8c.t0);
-            long j2 = tL_forumTopic.id;
-            if (r1.getMessagesController().o2(j, j2, null)) {
-                int i2 = r1.W3.getInt("notifyuntil_" + lo7.p(j, j2, false), 0);
-                M0 = i2 >= r1.getConnectionsManager().getCurrentTime() ? jb6.a0("NotificationsMutedForHint", null, 2131747633, jb6.c0(i2)) : jb6.M0(2131747634, null);
+    public final int a(long j) {
+        long[] jArr = this.f;
+        if (jArr.length <= 0) {
+            return -1;
+        }
+        int i = 0;
+        if (this.j) {
+            return g8c.f(jArr, j, false);
+        }
+        int[] iArr = this.h;
+        int length = iArr.length - 1;
+        int i2 = -1;
+        while (i <= length) {
+            int g = ug8.g(length, i, 2, i);
+            if (jArr[iArr[g]] <= j) {
+                i = g + 1;
+                i2 = g;
             } else {
-                M0 = jb6.M0(2131747589, null);
+                length = g - 1;
             }
-            textView.setText(M0);
-            xvbVar.a = i == arrayList.size() - 1 || ((yxb) arrayList.get(i + 1)).a == 2;
         }
+        if (i2 == -1) {
+            return -1;
+        }
+        long j2 = jArr[iArr[i2]];
+        if (j2 == j) {
+            while (i2 > 0 && jArr[iArr[i2 - 1]] == j2) {
+                i2--;
+            }
+        }
+        return iArr[i2];
     }
 
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        View view;
-        View view2 = null;
-        if (i == 1) {
-            xib xibVar = new xib(viewGroup.getContext());
-            xibVar.o(R.drawable.msg_contact_add, jb6.M0(2131747656, null), true);
-            xibVar.g(cmb.u6, cmb.t6);
-            anb.h(cmb.c6, null, xibVar);
-            view = xibVar;
-        } else if (i == 2) {
-            Context context = viewGroup.getContext();
-            xvb xvbVar = new xvb(context);
-            bf0 bf0Var = new bf0(context);
-            xvbVar.b = bf0Var;
-            xvbVar.addView(bf0Var, qoe.d(30, 30.0f, 16, 20.0f, 0.0f, 0.0f, 0.0f));
-            TextView textView = new TextView(context);
-            xvbVar.c = textView;
-            td4.x(textView, cmb.F6, null, 1, 16.0f);
-            textView.setMaxLines(1);
-            xvbVar.addView(textView, qoe.d(-1, -2.0f, 0, 72.0f, 8.0f, 12.0f, 0.0f));
-            TextView textView2 = new TextView(context);
-            xvbVar.d = textView2;
-            anb.X(textView2, cmb.x6, null);
-            textView2.setTextSize(1, 14.0f);
-            xvbVar.addView(textView2, qoe.d(-1, -2.0f, 0, 72.0f, 32.0f, 12.0f, 0.0f));
-            anb.h(cmb.c6, null, xvbVar);
-            view = xvbVar;
-        } else {
-            if (i != 3) {
-                if (i == 4) {
-                    xib xibVar2 = new xib(viewGroup.getContext());
-                    xibVar2.k(jb6.M0(2131747648, null), false);
-                    xibVar2.g(-1, cmb.o7);
-                    anb.h(cmb.c6, null, xibVar2);
-                    view = xibVar2;
-                }
-                return kt6.h(view2, view2, -1, -2);
-            }
-            view = new bba(viewGroup.getContext(), (hg9) null);
+    public final int b(long j) {
+        long[] jArr = this.f;
+        if (jArr.length <= 0) {
+            return -1;
         }
-        view2 = view;
-        return kt6.h(view2, view2, -1, -2);
+        if (this.j) {
+            return g8c.b(jArr, j, true);
+        }
+        int[] iArr = this.h;
+        int length = iArr.length - 1;
+        int i = 0;
+        int i2 = -1;
+        while (i <= length) {
+            int g = ug8.g(length, i, 2, i);
+            if (jArr[iArr[g]] >= j) {
+                length = g - 1;
+                i2 = g;
+            } else {
+                i = g + 1;
+            }
+        }
+        if (i2 == -1) {
+            return -1;
+        }
+        long j2 = jArr[iArr[i2]];
+        if (j2 == j) {
+            while (i2 < iArr.length - 1) {
+                int i3 = i2 + 1;
+                if (jArr[iArr[i3]] != j2) {
+                    break;
+                }
+                i2 = i3;
+            }
+        }
+        return iArr[i2];
     }
 }

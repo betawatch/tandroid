@@ -2,14 +2,14 @@ package android.support.v4.media;
 
 import androidx.media.AudioAttributesCompat;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class AudioAttributesCompatParcelizer extends androidx.media.AudioAttributesCompatParcelizer {
-    public static AudioAttributesCompat read(zbc zbcVar) {
-        return androidx.media.AudioAttributesCompatParcelizer.read(zbcVar);
+    public static AudioAttributesCompat read(y9c y9cVar) {
+        return androidx.media.AudioAttributesCompatParcelizer.read(y9cVar);
     }
 
-    public static void write(AudioAttributesCompat audioAttributesCompat, zbc zbcVar) {
-        androidx.media.AudioAttributesCompatParcelizer.write(audioAttributesCompat, zbcVar);
+    public static void write(AudioAttributesCompat audioAttributesCompat, y9c y9cVar) {
+        androidx.media.AudioAttributesCompatParcelizer.write(audioAttributesCompat, y9cVar);
     }
 }

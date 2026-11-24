@@ -1,386 +1,301 @@
 // default package
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
+import android.graphics.drawable.TransitionDrawable;
+import android.os.SystemClock;
+import android.util.StateSet;
 import android.view.View;
+import android.view.ViewGroup;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.messenger.a;
+import org.telegram.messenger.b;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.RLottieNative;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class sr8 extends yi2 {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final Context e;
-    public final Paint f;
-    public bf0 g;
-    public final /* synthetic */ tr8 h;
+public final /* synthetic */ class sr8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public sr8(tr8 tr8Var, Context context, yo8 yo8Var) {
-        this.h = tr8Var;
-        this.e = context;
-        this.g = yo8Var;
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-16777216);
+    public /* synthetic */ sr8(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // qt7
-    public final void a(ggc ggcVar, Object obj) {
-        qr8 qr8Var = (qr8) obj;
-        View view = qr8Var.b;
-        if (view != null) {
-            ggcVar.removeView(view);
-        }
-        if (qr8Var.a) {
-            return;
-        }
-        or8 or8Var = qr8Var.c;
-        if (or8Var.getImageReceiver().n0 != null) {
-            Drawable t = or8Var.getImageReceiver().t();
-            if (t instanceof kn) {
-                ((kn) t).w(or8Var);
-            }
-        }
-        or8Var.setRoundRadius(0);
-        ggcVar.removeView(or8Var);
-        or8Var.getImageReceiver().c();
-    }
-
-    @Override // qt7
-    public final int b() {
-        return this.c.size();
-    }
-
-    @Override // qt7
-    public final int c(Object obj) {
-        int indexOf = this.c.indexOf((qr8) obj);
-        if (indexOf == -1) {
-            return -2;
-        }
-        return indexOf;
-    }
-
-    @Override // qt7
-    public final CharSequence d(int i) {
-        return (k(i) + 1) + "/" + this.h.getRealCount();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:39:0x028c  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x029b  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x01ac  */
-    @Override // qt7
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0155  */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object e(ggc ggcVar, int i) {
-        int i2;
-        SparseArray sparseArray;
-        boolean z;
-        boolean z2;
-        String str;
-        Bitmap n;
-        qr8 qr8Var = (qr8) this.c.get(i);
-        int k = k(i);
-        tr8 tr8Var = this.h;
-        boolean z3 = tr8Var.j1;
-        SparseArray sparseArray2 = tr8Var.e1;
-        ArrayList arrayList = tr8Var.c1;
-        ArrayList arrayList2 = tr8Var.b1;
-        ArrayList arrayList3 = tr8Var.Y0;
-        ArrayList arrayList4 = tr8Var.Z0;
-        ArrayList arrayList5 = tr8Var.a1;
-        ArrayList arrayList6 = tr8Var.X0;
-        Context context = this.e;
-        if (z3 && k == 0) {
-            qr8Var.a = true;
-            rr8 rr8Var = qr8Var.b;
-            if (rr8Var == null) {
-                rr8Var = new rr8(context);
-                qr8Var.b = rr8Var;
-            }
-            if (rr8Var.getParent() == null) {
-                ggcVar.addView(qr8Var.b);
-            }
-            return qr8Var;
-        }
-        qr8Var.a = false;
-        rr8 rr8Var2 = qr8Var.b;
-        if (rr8Var2 != null && rr8Var2.getParent() != null) {
-            ggcVar.removeView(qr8Var.b);
-        }
-        if (qr8Var.c == null) {
-            or8 or8Var = new or8(tr8Var, context, i, this.f);
-            qr8Var.c = or8Var;
-            this.d.set(i, or8Var);
-        }
-        if (qr8Var.c.getParent() == null) {
-            ggcVar.addView(qr8Var.c);
-        }
-        qr8Var.c.getImageReceiver().x0 = true;
-        int i3 = tr8Var.j1 ? k - 1 : k;
-        if (i3 != 0) {
-            i2 = k;
-            sparseArray = sparseArray2;
-            if (i3 >= 0 && i3 < arrayList6.size()) {
-                gn5 gn5Var = (gn5) arrayList6.get(i3);
-                qr8Var.c.M = gn5Var != null;
-                z = arrayList5.get(i3) == null;
-                gn5 gn5Var2 = (gn5) arrayList4.get(i3);
-                String str2 = (gn5Var2 == null || !(gn5Var2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
-                String str3 = "avatar_" + tr8Var.F0;
-                or8 or8Var2 = qr8Var.c;
-                jbc jbcVar = (jbc) arrayList5.get(i3);
-                gn5 gn5Var3 = (gn5) arrayList3.get(i3);
-                gn5 gn5Var4 = (gn5) arrayList4.get(i3);
-                int intValue = ((Integer) arrayList2.get(i3)).intValue();
-                ImageReceiver imageReceiver = or8Var2.a;
-                if (jbcVar != null) {
-                    imageReceiver.g0(jbcVar);
-                } else {
-                    imageReceiver.Y(gn5Var, null, gn5Var3, null, gn5Var4, str2, null, intValue, null, str3, 1);
-                }
-                or8Var2.e();
-                if (i3 >= 0) {
-                }
-                if (z) {
-                }
-                qr8Var.c.getImageReceiver().h1 = new oo8(this, (byte) 1);
-                qr8Var.c.getImageReceiver().l1 = (byte) 2;
-                or8 or8Var3 = qr8Var.c;
-                int i4 = tr8Var.n1;
-                int i5 = tr8Var.o1;
-                or8Var3.s(i4, i4, i5, i5);
-                qr8Var.c.setTag(Integer.valueOf(i2));
-                return qr8Var;
-            }
-            z = false;
-            if (i3 >= 0) {
-            }
-            if (z) {
-            }
-            qr8Var.c.getImageReceiver().h1 = new oo8(this, (byte) 1);
-            qr8Var.c.getImageReceiver().l1 = (byte) 2;
-            or8 or8Var32 = qr8Var.c;
-            int i42 = tr8Var.n1;
-            int i52 = tr8Var.o1;
-            or8Var32.s(i42, i42, i52, i52);
-            qr8Var.c.setTag(Integer.valueOf(i2));
-            return qr8Var;
-        }
-        bf0 bf0Var = this.g;
-        Drawable t = bf0Var == null ? null : bf0Var.getImageReceiver().t();
-        if (t instanceof kn) {
-            kn knVar = (kn) t;
-            if (knVar.s()) {
-                qr8Var.c.setImageDrawable(t);
-                knVar.f(qr8Var.c);
-                knVar.S = true;
-                i2 = k;
-                sparseArray = sparseArray2;
-                z = false;
-                if (i3 >= 0 && i3 < arrayList.size() && arrayList.get(i3) != null) {
-                    z = true;
-                }
-                if (z) {
-                    SparseArray sparseArray3 = sparseArray;
-                    qr8Var.c.I = (RadialProgress2) sparseArray3.get(i3);
-                    or8 or8Var4 = qr8Var.c;
-                    if (or8Var4.I == null) {
-                        or8Var4.I = new RadialProgress2(or8Var4, null);
-                        RadialProgress2 radialProgress2 = qr8Var.c.I;
-                        radialProgress2.E = 0.0f;
-                        radialProgress2.setIcon(10, false, false);
-                        qr8Var.c.I.setColors(1107296256, 1107296256, -1, -1);
-                        sparseArray3.append(i3, qr8Var.c.I);
+    public final void run() {
+        FirebaseMessaging firebaseMessaging;
+        Task task;
+        byte b = this.a;
+        boolean z = false;
+        byte b2 = 1;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                ((u1b) obj).e();
+                return;
+            case 1:
+                int i = ProfileStoriesView.t0;
+                gl.W3((ProfileStoriesView) obj);
+                return;
+            case 2:
+                try {
+                    st8 st8Var = ((rt8) obj).b;
+                    if (st8Var.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) st8Var.getParent()).removeView(st8Var);
                     }
-                    if (tr8Var.h1) {
-                        tr8Var.invalidate();
-                    } else {
-                        tr8Var.postInvalidateOnAnimation();
-                    }
+                    st8Var.R.run();
+                    return;
+                } catch (Exception e) {
+                    fa4.g(e, true);
+                    return;
                 }
-                qr8Var.c.getImageReceiver().h1 = new oo8(this, (byte) 1);
-                qr8Var.c.getImageReceiver().l1 = (byte) 2;
-                or8 or8Var322 = qr8Var.c;
-                int i422 = tr8Var.n1;
-                int i522 = tr8Var.o1;
-                or8Var322.s(i422, i422, i522, i522);
-                qr8Var.c.setTag(Integer.valueOf(i2));
-                return qr8Var;
-            }
-        }
-        if (i3 >= 0 && i3 < arrayList6.size()) {
-            gn5 gn5Var5 = (gn5) arrayList6.get(i3);
-            qr8Var.c.M = gn5Var5 != null;
-            boolean z4 = arrayList5.get(i3) == null;
-            if (!tr8Var.K0 || gn5Var5 == null) {
-                z2 = z4;
-            } else {
-                z2 = z4;
-                if (gn5Var5.p == 2) {
-                    str = "avatar";
-                    gn5 gn5Var6 = (gn5) arrayList4.get(i3);
-                    bf0 bf0Var2 = this.g;
-                    i2 = k;
-                    n = (bf0Var2 == null && tr8Var.f1) ? bf0Var2.getImageReceiver().n() : null;
-                    StringBuilder sb = new StringBuilder("avatar_");
-                    sparseArray = sparseArray2;
-                    sb.append(tr8Var.F0);
-                    String sb2 = sb.toString();
-                    if (n == null && arrayList5.get(i3) == null) {
-                        or8 or8Var5 = qr8Var.c;
-                        gn5 gn5Var7 = (gn5) arrayList6.get(i3);
-                        gn5 gn5Var8 = (gn5) arrayList3.get(i3);
-                        int intValue2 = ((Integer) arrayList2.get(i3)).intValue();
-                        or8Var5.getClass();
-                        or8Var5.a.Y(gn5Var7, str, gn5Var8, null, null, null, new BitmapDrawable((Resources) null, n), intValue2, null, sb2, 1);
-                        or8Var5.e();
-                    } else if (tr8Var.L0 == null) {
-                        or8 or8Var6 = qr8Var.c;
-                        jbc jbcVar2 = (jbc) arrayList5.get(i3);
-                        gn5 gn5Var9 = (gn5) arrayList6.get(i3);
-                        gn5 gn5Var10 = (gn5) arrayList3.get(i3);
-                        gn5 gn5Var11 = tr8Var.L0;
-                        int intValue3 = ((Integer) arrayList2.get(i3)).intValue();
-                        ImageReceiver imageReceiver2 = or8Var6.a;
-                        if (jbcVar2 != null) {
-                            imageReceiver2.g0(jbcVar2);
-                        } else {
-                            imageReceiver2.Y(gn5Var9, str, gn5Var10, null, gn5Var11, null, null, intValue3, null, sb2, 1);
+            case 3:
+                zt8 zt8Var = (zt8) obj;
+                zt8Var.a = true;
+                int i2 = y6c.t0;
+                int i3 = 0;
+                boolean z2 = false;
+                while (true) {
+                    ArrayList arrayList = gba.v1;
+                    if (i3 >= arrayList.size()) {
+                        if (z2) {
+                            return;
                         }
-                        or8Var6.e();
+                        zt8Var.a = false;
+                        zt8Var.a();
+                        return;
+                    }
+                    fba fbaVar = (fba) arrayList.get(i3);
+                    if (!fbaVar.c && SystemClock.elapsedRealtime() - fbaVar.e >= 120000) {
+                        fbaVar.c = true;
+                        ConnectionsManager.getInstance(i2).checkProxy(fbaVar.a, new wt8(fbaVar, b2));
+                        z2 = true;
+                    }
+                    i3++;
+                }
+                break;
+            case 4:
+                b bVar = (b) obj;
+                try {
+                    gba.h = SystemClock.elapsedRealtime();
+                    jg4.f(a.b);
+                    synchronized (FirebaseMessaging.class) {
+                        firebaseMessaging = FirebaseMessaging.getInstance(jg4.c());
+                    }
+                    byte b3 = 8;
+                    if (firebaseMessaging.d.w()) {
+                        task = Tasks.forException(new IllegalStateException("API disabled. Please use {@link #register()} instead or enable this API by removing {@code <meta-data android:name=\"firebase_messaging_installation_id_enabled\" android:value=\"true\" />} from your app's manifest."));
                     } else {
-                        String str4 = (gn5Var6 == null || !(gn5Var6.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
-                        or8 or8Var7 = qr8Var.c;
-                        jbc jbcVar3 = (jbc) arrayList5.get(i3);
-                        gn5 gn5Var12 = (gn5) arrayList3.get(i3);
-                        gn5 gn5Var13 = (gn5) arrayList4.get(i3);
-                        int intValue4 = ((Integer) arrayList2.get(i3)).intValue();
-                        ImageReceiver imageReceiver3 = or8Var7.a;
-                        if (jbcVar3 != null) {
-                            imageReceiver3.g0(jbcVar3);
-                        } else {
-                            imageReceiver3.Y(gn5Var5, null, gn5Var12, null, gn5Var13, str4, null, intValue4, null, sb2, 1);
+                        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+                        firebaseMessaging.g.execute(new vc4(firebaseMessaging, taskCompletionSource, b3));
+                        task = taskCompletionSource.getTask();
+                    }
+                    task.addOnCompleteListener(new sc8(bVar, b3));
+                    return;
+                } catch (Throwable th) {
+                    fa4.g(th, true);
+                    return;
+                }
+            case 5:
+                ((au0) obj).a(Boolean.FALSE);
+                return;
+            case 6:
+                kk7.f(((ox8) obj).a).k(kk7.E1, new Object[0]);
+                return;
+            case 7:
+                ((RLottieNative) obj).d();
+                return;
+            case 8:
+                t09 t09Var = (t09) obj;
+                t09Var.y0 = null;
+                t09Var.g();
+                s09 s09Var = t09Var.h0;
+                if (s09Var != null) {
+                    s09Var.A();
+                    return;
+                }
+                return;
+            case 9:
+                ((q09) obj).I.a.setVisibility(4);
+                return;
+            case 10:
+                ((c29) obj).c.g3.O(true);
+                return;
+            case 11:
+                ((b29) obj).a();
+                return;
+            case 12:
+                f29 f29Var = (f29) ((ux0) obj).q;
+                f29Var.R = System.currentTimeMillis();
+                f29Var.S = 0L;
+                f29Var.s0 = true;
+                ((t6b) f29Var.a).a.K0.a(0L, true);
+                f29Var.invalidate();
+                return;
+            case 13:
+                ((jw1) obj).a();
+                return;
+            case 14:
+                i29 i29Var = (i29) obj;
+                lbc lbcVar = i29Var.n;
+                if (lbcVar != null) {
+                    boolean c0 = lbcVar.c0();
+                    float S = i29Var.n.S() / i29Var.n.U();
+                    float f = i29Var.s;
+                    if (S < f) {
+                        i29Var.n.p0((long) (f * r1.U()), false);
+                    } else if (S > i29Var.w || (i29Var.d0 && !c0 && i29Var.x && i29Var.n.S() >= i29Var.n.U() - 50)) {
+                        i29Var.setPlaying(false);
+                        if (z) {
+                            gl.d3(i29Var.y, 16L);
                         }
-                        or8Var7.e();
+                        if (i29Var.d0) {
+                            i29Var.i(true);
+                        }
                     }
-                    z = z2;
-                    if (i3 >= 0) {
-                        z = true;
-                    }
+                    z = c0;
                     if (z) {
                     }
-                    qr8Var.c.getImageReceiver().h1 = new oo8(this, (byte) 1);
-                    qr8Var.c.getImageReceiver().l1 = (byte) 2;
-                    or8 or8Var3222 = qr8Var.c;
-                    int i4222 = tr8Var.n1;
-                    int i5222 = tr8Var.o1;
-                    or8Var3222.s(i4222, i4222, i5222, i5222);
-                    qr8Var.c.setTag(Integer.valueOf(i2));
-                    return qr8Var;
+                    if (i29Var.d0) {
+                    }
                 }
-            }
-            str = null;
-            gn5 gn5Var62 = (gn5) arrayList4.get(i3);
-            bf0 bf0Var22 = this.g;
-            i2 = k;
-            if (bf0Var22 == null) {
-            }
-            StringBuilder sb3 = new StringBuilder("avatar_");
-            sparseArray = sparseArray2;
-            sb3.append(tr8Var.F0);
-            String sb22 = sb3.toString();
-            if (n == null) {
-            }
-            if (tr8Var.L0 == null) {
-            }
-            z = z2;
-            if (i3 >= 0) {
-            }
-            if (z) {
-            }
-            qr8Var.c.getImageReceiver().h1 = new oo8(this, (byte) 1);
-            qr8Var.c.getImageReceiver().l1 = (byte) 2;
-            or8 or8Var32222 = qr8Var.c;
-            int i42222 = tr8Var.n1;
-            int i52222 = tr8Var.o1;
-            or8Var32222.s(i42222, i42222, i52222, i52222);
-            qr8Var.c.setTag(Integer.valueOf(i2));
-            return qr8Var;
+                i29Var.invalidate();
+                return;
+            case 15:
+                o39 o39Var = (o39) obj;
+                o39Var.U1 = null;
+                o39Var.T1 = null;
+                ff0 ff0Var = o39Var.C1;
+                if (ff0Var != null) {
+                    Drawable current = ff0Var.getCurrent();
+                    if (current instanceof TransitionDrawable) {
+                        ((TransitionDrawable) current).resetTransition();
+                    }
+                }
+                ff0 ff0Var2 = o39Var.C1;
+                if (ff0Var2 == null || !ff0Var2.isStateful()) {
+                    return;
+                }
+                o39Var.C1.setState(StateSet.NOTHING);
+                return;
+            case 16:
+                ((a79) ((bg7) obj).b).E.a.q();
+                return;
+            case 17:
+                ((q99) obj).c.a(Boolean.TRUE);
+                return;
+            case 18:
+                gl.E3(((gb9) obj).Z1.d);
+                return;
+            case 19:
+                ((mb9) obj).invalidate();
+                return;
+            case 20:
+                eq2 eq2Var = (eq2) obj;
+                eq2Var.c = null;
+                eq2Var.d = null;
+                eq2Var.e = null;
+                eq2Var.f = null;
+                eq2Var.x(null);
+                return;
+            case 21:
+                ((ed9) obj).invalidateSelf();
+                return;
+            case 22:
+                ((ld9) obj).c();
+                return;
+            case 23:
+                ig9 ig9Var = (ig9) obj;
+                rh9 rh9Var = ig9Var.e;
+                if (rh9Var == null || !rh9Var.G()) {
+                    ig9Var.w.k0();
+                    return;
+                }
+                return;
+            case 24:
+                View view = ((pg9) obj).W;
+                if (view != null) {
+                    view.invalidate();
+                    return;
+                }
+                return;
+            case 25:
+                View view2 = ((qg9) obj).h;
+                if (view2 != null) {
+                    view2.invalidate();
+                    return;
+                }
+                return;
+            case 26:
+                bb2 bb2Var = ((rh9) obj).F;
+                if (bb2Var != null) {
+                    bb2Var.p();
+                    return;
+                }
+                return;
+            case 27:
+                qh9 qh9Var = (qh9) obj;
+                qh9Var.K = null;
+                if (qh9Var.R == null) {
+                    if (qh9Var.N != null) {
+                        qh9Var.L = true;
+                        View view3 = qh9Var.T;
+                        if (view3 != null) {
+                            try {
+                                view3.performHapticFeedback(0);
+                            } catch (Exception unused) {
+                            }
+                        }
+                        qh9Var.l(qh9Var.N, true);
+                        i46 i46Var = qh9Var.J;
+                        if (i46Var != null) {
+                            i46Var.e(true);
+                            return;
+                        }
+                        return;
+                    }
+                    return;
+                }
+                qh9Var.L = true;
+                View view4 = qh9Var.T;
+                if (view4 != null) {
+                    try {
+                        view4.performHapticFeedback(0);
+                    } catch (Exception unused2) {
+                    }
+                }
+                qg9 qg9Var = qh9Var.R;
+                rh9 rh9Var2 = qh9Var.a;
+                gb2 gb2Var = rh9Var2.E;
+                bb2 bb2Var2 = rh9Var2.F;
+                qg9Var.getClass();
+                if (gb2Var == null || bb2Var2 == null) {
+                    return;
+                }
+                bb2Var2.v0(gb2Var, qg9Var.b);
+                return;
+            case 28:
+                zi9 zi9Var = (zi9) obj;
+                if (!zi9Var.f0 || zi9Var.k0() == zi9Var.j0) {
+                    return;
+                }
+                zi9Var.q0("on screen, settled after start", true);
+                return;
+            default:
+                ((rh3) obj).invalidate();
+                return;
         }
-        i2 = k;
-        sparseArray = sparseArray2;
-        z = false;
-        if (i3 >= 0) {
-        }
-        if (z) {
-        }
-        qr8Var.c.getImageReceiver().h1 = new oo8(this, (byte) 1);
-        qr8Var.c.getImageReceiver().l1 = (byte) 2;
-        or8 or8Var322222 = qr8Var.c;
-        int i422222 = tr8Var.n1;
-        int i522222 = tr8Var.o1;
-        or8Var322222.s(i422222, i422222, i522222, i522222);
-        qr8Var.c.setTag(Integer.valueOf(i2));
-        return qr8Var;
-    }
-
-    @Override // qt7
-    public final boolean f(View view, Object obj) {
-        qr8 qr8Var = (qr8) obj;
-        return qr8Var.a ? view == qr8Var.b : view == qr8Var.c;
-    }
-
-    @Override // qt7
-    public final void g() {
-        ArrayList arrayList;
-        int i = 0;
-        while (true) {
-            arrayList = this.d;
-            if (i >= arrayList.size()) {
-                break;
-            }
-            if (arrayList.get(i) != null) {
-                ((bf0) arrayList.get(i)).getImageReceiver().c();
-            }
-            i++;
-        }
-        ArrayList arrayList2 = this.c;
-        arrayList2.clear();
-        arrayList.clear();
-        tr8 tr8Var = this.h;
-        int size = tr8Var.Y0.size();
-        if (tr8Var.j1) {
-            size++;
-        }
-        xb7 xb7Var = tr8Var.T0;
-        int max = Math.max(xb7Var == null ? 0 : xb7Var.b.size(), size) + (j() << 1);
-        for (int i2 = 0; i2 < max; i2++) {
-            arrayList2.add(new qr8());
-            arrayList.add(null);
-        }
-        super.g();
-    }
-
-    @Override // yi2
-    public final int j() {
-        tr8 tr8Var = this.h;
-        int size = tr8Var.Y0.size();
-        if (tr8Var.j1) {
-            size++;
-        }
-        if (size >= 2) {
-            return tr8Var.getOffscreenPageLimit();
-        }
-        return 0;
     }
 }

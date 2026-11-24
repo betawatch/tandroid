@@ -1,30 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public abstract class uue {
-    public static void a(p99 p99Var, ylb ylbVar) {
-        p99Var.p(cmb.v0(cmb.Ei, ylbVar), ylbVar != null ? ylbVar.a() : cmb.I.o());
-    }
-
-    public static int b(ll0 ll0Var) {
-        if (ll0Var == null) {
-            return 0;
-        }
-        return c(ll0Var) + (Math.max(0, ll0Var.c) > 0 ? gm.L(aq1.h(r4, 1, 24, 28)) : 0);
-    }
-
-    public static int c(ll0 ll0Var) {
-        if ((ll0Var == null ? 0 : ll0Var.k.size()) <= 0) {
-            return 0;
-        }
-        return gm.L(((r1 - 1) << 4) + 12);
-    }
-
-    public static int d(ll0 ll0Var) {
-        if ((ll0Var == null ? 0 : ll0Var.k.size()) <= 0) {
-            return 0;
-        }
-        return gm.L(((r1 - 1) << 4) + 8);
+    public static knd a(fab fabVar) {
+        ghd ghdVar = (ghd) ae7.c().a(ghd.class);
+        vme vmeVar = (vme) ghdVar.a.c(fabVar);
+        Executor executor = (Executor) ghdVar.b.a.get();
+        sef b = aff.b();
+        knd kndVar = new knd(vmeVar, executor);
+        ntb ntbVar = new ntb();
+        ntbVar.c = v4f.b;
+        v8b v8bVar = new v8b((byte) 20, false);
+        v8bVar.c = fabVar.a();
+        v8bVar.b = m5f.b;
+        ntbVar.d = new yaf(v8bVar);
+        yjb.c(1, new vc1(b, new qx(ntbVar, 1), p5f.O4, b.c(), (byte) 4));
+        return kndVar;
     }
 }

@@ -1,21 +1,25 @@
 // default package
 
-import java.io.Closeable;
+import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class htd {
-    public static final void a(Closeable closeable, Throwable th) {
-        if (closeable != null) {
-            if (th == null) {
-                closeable.close();
-                return;
-            }
-            try {
-                closeable.close();
-            } catch (Throwable th2) {
-                uhe.a(th, th2);
-            }
+public final class htd {
+    public static final htd b;
+    public static final htd c;
+    public final CancellationException a;
+
+    static {
+        if (y4f.d) {
+            c = null;
+            b = null;
+        } else {
+            c = new htd(null);
+            b = new htd(null);
         }
+    }
+
+    public htd(CancellationException cancellationException) {
+        this.a = cancellationException;
     }
 }

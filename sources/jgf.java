@@ -1,58 +1,33 @@
 // default package
 
-import java.lang.ref.WeakReference;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class jgf implements bpd {
-    public final WeakReference a;
-    public final vef b = new vef(this);
+public final class jgf extends f7f {
+    public final /* synthetic */ vgf h;
 
-    public jgf(j9f j9fVar) {
-        this.a = new WeakReference(j9fVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jgf(vgf vgfVar) {
+        super((byte) 2);
+        this.h = vgfVar;
     }
 
-    @Override // bpd
-    public final void c(Runnable runnable, Executor executor) {
-        this.b.c(runnable, executor);
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i) {
+        vgf vgfVar = this.h;
+        q1f.a(i, vgfVar.r ? 1 : 0);
+        Object[] objArr = vgfVar.n;
+        int i2 = i << 1;
+        Object obj = objArr[i2];
+        obj.getClass();
+        Object obj2 = objArr[i2 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z) {
-        j9f j9fVar = (j9f) this.a.get();
-        boolean cancel = this.b.cancel(z);
-        if (!cancel || j9fVar == null) {
-            return cancel;
-        }
-        j9fVar.a = null;
-        j9fVar.b = null;
-        j9fVar.c.i(null);
-        return true;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof kvd;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    public final String toString() {
-        return this.b.toString();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        return this.b.get(j, timeUnit);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.h.r ? 1 : 0;
     }
 }

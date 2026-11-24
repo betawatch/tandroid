@@ -7,7 +7,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class ha {
     public static boolean i = true;
@@ -20,16 +20,16 @@ public final class ha {
     public Object g;
     public Object h;
 
-    public ha(oo8 oo8Var) {
+    public ha(v39 v39Var) {
         this.a = (byte) 0;
-        this.c = new de(30, (byte) 12);
+        this.c = new dd(30, (byte) 12);
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.b = 0;
-        boolean z = e21.a;
+        boolean z = w01.a;
         this.f = new ArrayList();
-        this.g = oo8Var;
-        this.h = new k44(this, (byte) 20);
+        this.g = v39Var;
+        this.h = new pj4((Object) this, (byte) 19);
     }
 
     public final boolean a(int i2) {
@@ -64,14 +64,14 @@ public final class ha {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i2 = 0; i2 < size; i2++) {
-            ((oo8) this.g).s2((ga) arrayList.get(i2));
+            ((v39) this.g).L1((ga) arrayList.get(i2));
         }
         l(arrayList);
         this.b = 0;
     }
 
     public final void c() {
-        oo8 oo8Var = (oo8) this.g;
+        v39 v39Var = (v39) this.g;
         b();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -79,22 +79,22 @@ public final class ha {
             ga gaVar = (ga) arrayList.get(i2);
             byte b = gaVar.a;
             if (b == 1) {
-                oo8Var.s2(gaVar);
-                oo8Var.u2(gaVar.b, gaVar.d);
+                v39Var.L1(gaVar);
+                v39Var.Q1(gaVar.b, gaVar.d);
             } else if (b == 2) {
-                oo8Var.s2(gaVar);
+                v39Var.L1(gaVar);
                 int i3 = gaVar.b;
                 int i4 = gaVar.d;
-                RecyclerView recyclerView = (RecyclerView) oo8Var.b;
+                RecyclerView recyclerView = (RecyclerView) v39Var.b;
                 recyclerView.g0(i3, i4, true);
                 recyclerView.y0 = true;
                 recyclerView.v0.c += i4;
             } else if (b == 4) {
-                oo8Var.s2(gaVar);
-                oo8Var.t2(gaVar.b, gaVar.d, gaVar.c);
+                v39Var.L1(gaVar);
+                v39Var.P1(gaVar.b, gaVar.d, gaVar.c);
             } else if (b == 8) {
-                oo8Var.s2(gaVar);
-                oo8Var.v2(gaVar.b, gaVar.d);
+                v39Var.L1(gaVar);
+                v39Var.S1(gaVar.b, gaVar.d);
             }
         }
         l(arrayList);
@@ -103,10 +103,10 @@ public final class ha {
 
     public final void d(ga gaVar) {
         int i2;
-        de deVar = (de) this.c;
+        dd ddVar = (dd) this.c;
         byte b = gaVar.a;
         if (b == 1 || b == 8) {
-            u36.j("should not dispatch add or move for pre layout");
+            w26.j("should not dispatch add or move for pre layout");
             return;
         }
         int n = n(gaVar.b, b);
@@ -116,7 +116,7 @@ public final class ha {
             i2 = 0;
         } else {
             if (b2 != 4) {
-                u36.i(gaVar, "op should be remove or update.");
+                w26.i(gaVar, "op should be remove or update.");
                 return;
             }
             i2 = 1;
@@ -129,7 +129,7 @@ public final class ha {
                 ga i6 = i(gaVar.c, b3, n, i4);
                 e(i6, i3);
                 i6.c = null;
-                deVar.p0(i6);
+                ddVar.o0(i6);
                 if (gaVar.a == 4) {
                     i3 += i4;
                 }
@@ -141,30 +141,30 @@ public final class ha {
         }
         Object obj = gaVar.c;
         gaVar.c = null;
-        deVar.p0(gaVar);
+        ddVar.o0(gaVar);
         if (i4 > 0) {
             ga i7 = i(obj, gaVar.a, n, i4);
             e(i7, i3);
             i7.c = null;
-            deVar.p0(i7);
+            ddVar.o0(i7);
         }
     }
 
     public final void e(ga gaVar, int i2) {
-        oo8 oo8Var = (oo8) this.g;
-        oo8Var.s2(gaVar);
+        v39 v39Var = (v39) this.g;
+        v39Var.L1(gaVar);
         byte b = gaVar.a;
         if (b != 2) {
             if (b == 4) {
-                oo8Var.t2(i2, gaVar.d, gaVar.c);
+                v39Var.P1(i2, gaVar.d, gaVar.c);
                 return;
             } else {
-                u36.j("only remove and update ops can be dispatched in first pass");
+                w26.j("only remove and update ops can be dispatched in first pass");
                 return;
             }
         }
         int i3 = gaVar.d;
-        RecyclerView recyclerView = (RecyclerView) oo8Var.b;
+        RecyclerView recyclerView = (RecyclerView) v39Var.b;
         recyclerView.g0(i2, i3, true);
         recyclerView.y0 = true;
         recyclerView.v0.c += i3;
@@ -239,7 +239,7 @@ public final class ha {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final ga i(Object obj, int i2, int i3, int i4) {
-        ga gaVar = (ga) ((de) this.c).U();
+        ga gaVar = (ga) ((dd) this.c).U();
         if (gaVar != null) {
             gaVar.a = i2;
             gaVar.b = i3;
@@ -256,27 +256,27 @@ public final class ha {
     }
 
     public final void j(ga gaVar) {
-        oo8 oo8Var = (oo8) this.g;
+        v39 v39Var = (v39) this.g;
         ((ArrayList) this.e).add(gaVar);
         byte b = gaVar.a;
         if (b == 1) {
-            oo8Var.u2(gaVar.b, gaVar.d);
+            v39Var.Q1(gaVar.b, gaVar.d);
             return;
         }
         if (b == 2) {
             int i2 = gaVar.b;
             int i3 = gaVar.d;
-            RecyclerView recyclerView = (RecyclerView) oo8Var.b;
+            RecyclerView recyclerView = (RecyclerView) v39Var.b;
             recyclerView.g0(i2, i3, false);
             recyclerView.y0 = true;
             return;
         }
         if (b == 4) {
-            oo8Var.t2(gaVar.b, gaVar.d, gaVar.c);
+            v39Var.P1(gaVar.b, gaVar.d, gaVar.c);
         } else if (b == 8) {
-            oo8Var.v2(gaVar.b, gaVar.d);
+            v39Var.S1(gaVar.b, gaVar.d);
         } else {
-            u36.i(gaVar, "Unknown update op type for ");
+            w26.i(gaVar, "Unknown update op type for ");
         }
     }
 
@@ -312,9 +312,9 @@ public final class ha {
         boolean z3;
         Object obj;
         ga gaVar;
-        de deVar = (de) this.c;
-        RecyclerView recyclerView = (RecyclerView) ((oo8) this.g).b;
-        k44 k44Var = (k44) this.h;
+        dd ddVar = (dd) this.c;
+        RecyclerView recyclerView = (RecyclerView) ((v39) this.g).b;
+        pj4 pj4Var = (pj4) this.h;
         ArrayList arrayList = (ArrayList) this.d;
         while (true) {
             int size = arrayList.size() - 1;
@@ -336,8 +336,8 @@ public final class ha {
                 break;
             }
             int i6 = size + 1;
-            ha haVar = (ha) k44Var.b;
-            de deVar2 = (de) haVar.c;
+            ha haVar = (ha) pj4Var.b;
+            dd ddVar2 = (dd) haVar.c;
             ga gaVar2 = (ga) arrayList.get(size);
             ga gaVar3 = (ga) arrayList.get(i6);
             byte b2 = gaVar3.a;
@@ -389,7 +389,7 @@ public final class ha {
                         if (gaVar3.d == 0) {
                             arrayList.remove(i6);
                             gaVar3.c = null;
-                            deVar2.p0(gaVar3);
+                            ddVar2.o0(gaVar3);
                         }
                     }
                 }
@@ -456,7 +456,7 @@ public final class ha {
                             arrayList.set(size, gaVar3);
                             arrayList.remove(i6);
                             gaVar2.c = obj;
-                            deVar2.p0(gaVar2);
+                            ddVar2.o0(gaVar2);
                         }
                     }
                 }
@@ -490,7 +490,7 @@ public final class ha {
                                 } else {
                                     arrayList.remove(size);
                                     gaVar3.c = null;
-                                    deVar2.p0(gaVar3);
+                                    ddVar2.o0(gaVar3);
                                 }
                                 if (i2 != null) {
                                     arrayList.add(size, i2);
@@ -539,7 +539,7 @@ public final class ha {
                 int i36 = 0;
                 char c2 = 65535;
                 while (i35 < i34) {
-                    u69 L = recyclerView.L(i35, true);
+                    s49 L = recyclerView.L(i35, true);
                     if (L != null) {
                     }
                     L = null;
@@ -572,7 +572,7 @@ public final class ha {
                 }
                 if (i36 != gaVar4.d) {
                     gaVar4.c = null;
-                    deVar.p0(gaVar4);
+                    ddVar.o0(gaVar4);
                     gaVar4 = i(null, 2, i33, i36);
                 }
                 if (c2 == 0) {
@@ -587,7 +587,7 @@ public final class ha {
                 int i40 = 0;
                 char c3 = 65535;
                 while (i37 < i38) {
-                    u69 L2 = recyclerView.L(i37, true);
+                    s49 L2 = recyclerView.L(i37, true);
                     if (L2 != null) {
                     }
                     L2 = null;
@@ -612,7 +612,7 @@ public final class ha {
                 if (i40 != gaVar4.d) {
                     Object obj2 = gaVar4.c;
                     gaVar4.c = null;
-                    deVar.p0(gaVar4);
+                    ddVar.o0(gaVar4);
                     gaVar4 = i(obj2, 4, i39, i40);
                 }
                 if (c3 == 0) {
@@ -634,7 +634,7 @@ public final class ha {
         for (int i2 = 0; i2 < size; i2++) {
             ga gaVar = (ga) arrayList.get(i2);
             gaVar.c = null;
-            ((de) this.c).p0(gaVar);
+            ((dd) this.c).o0(gaVar);
         }
         arrayList.clear();
     }
@@ -646,19 +646,19 @@ public final class ha {
     */
     public final String m() {
         String str;
-        cbb cbbVar = cbb.e;
+        a9b a9bVar = a9b.e;
         if (i) {
-            oo8 oo8Var = (oo8) this.f;
-            if (oo8Var == null) {
+            v39 v39Var = (v39) this.f;
+            if (v39Var == null) {
                 try {
-                    oo8 oo8Var2 = new oo8((byte) 13);
-                    oo8Var2.b = new SoftReference(new String[3]);
-                    this.f = oo8Var2;
+                    v39 v39Var2 = new v39((byte) 10);
+                    v39Var2.b = new SoftReference(new String[3]);
+                    this.f = v39Var2;
                 } catch (Throwable unused) {
                     i = false;
                 }
             } else {
-                String[] strArr = (String[]) ((SoftReference) oo8Var.b).get();
+                String[] strArr = (String[]) ((SoftReference) v39Var.b).get();
                 if (strArr != null) {
                     str = strArr[0];
                     if (str == null) {
@@ -668,19 +668,19 @@ public final class ha {
                             throw null;
                         }
                         String str2 = "";
-                        if (cbbVar.c) {
+                        if (a9bVar.c) {
                             String modifier = Modifier.toString(i2);
                             if (modifier.length() != 0) {
                                 str2 = modifier.concat(" ");
                             }
                         }
                         stringBuffer.append(str2);
-                        if (cbbVar.b) {
+                        if (a9bVar.b) {
                             ((Class) this.h).getClass();
                             Class cls = (Class) this.h;
-                            stringBuffer.append(cbb.a(cls.getName(), cls, cbbVar.a));
+                            stringBuffer.append(a9b.a(cls.getName(), cls, a9bVar.a));
                         }
-                        if (cbbVar.b) {
+                        if (a9bVar.b) {
                             stringBuffer.append(" ");
                         }
                         ((Class) this.e).getClass();
@@ -691,19 +691,19 @@ public final class ha {
                             str3 = ((Class) this.e).getName();
                             this.d = str3;
                         }
-                        stringBuffer.append(cbb.a(str3, cls2, cbbVar.d));
+                        stringBuffer.append(a9b.a(str3, cls2, a9bVar.d));
                         stringBuffer.append(".");
                         ((String) this.c).getClass();
                         stringBuffer.append((String) this.c);
                         Class[] clsArr = (Class[]) this.g;
-                        if (cbbVar.b) {
+                        if (a9bVar.b) {
                             stringBuffer.append("(");
                             for (int i3 = 0; i3 < clsArr.length; i3++) {
                                 if (i3 > 0) {
                                     stringBuffer.append(", ");
                                 }
                                 Class cls3 = clsArr[i3];
-                                stringBuffer.append(cbb.a(cls3.getName(), cls3, cbbVar.a));
+                                stringBuffer.append(a9b.a(cls3.getName(), cls3, a9bVar.a));
                             }
                             stringBuffer.append(")");
                         } else if (clsArr.length == 0) {
@@ -714,11 +714,11 @@ public final class ha {
                         str = stringBuffer.toString();
                     }
                     if (i) {
-                        oo8 oo8Var3 = (oo8) this.f;
-                        String[] strArr2 = (String[]) ((SoftReference) oo8Var3.b).get();
+                        v39 v39Var3 = (v39) this.f;
+                        String[] strArr2 = (String[]) ((SoftReference) v39Var3.b).get();
                         if (strArr2 == null) {
                             strArr2 = new String[3];
-                            oo8Var3.b = new SoftReference(strArr2);
+                            v39Var3.b = new SoftReference(strArr2);
                         }
                         strArr2[0] = str;
                     }
@@ -737,7 +737,7 @@ public final class ha {
     public final int n(int i2, int i3) {
         int i4;
         int i5;
-        de deVar = (de) this.c;
+        dd ddVar = (dd) this.c;
         ArrayList arrayList = (ArrayList) this.e;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             ga gaVar = (ga) arrayList.get(size);
@@ -797,12 +797,12 @@ public final class ha {
                 if (i8 == gaVar2.b || i8 < 0) {
                     arrayList.remove(size2);
                     gaVar2.c = null;
-                    deVar.p0(gaVar2);
+                    ddVar.o0(gaVar2);
                 }
             } else if (i8 <= 0) {
                 arrayList.remove(size2);
                 gaVar2.c = null;
-                deVar.p0(gaVar2);
+                ddVar.o0(gaVar2);
             }
         }
         return i2;
@@ -811,7 +811,7 @@ public final class ha {
     public final String toString() {
         switch (this.a) {
             case 2:
-                cbb cbbVar = cbb.e;
+                a9b a9bVar = a9b.e;
                 return m();
             default:
                 return super.toString();

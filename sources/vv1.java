@@ -1,20 +1,38 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vv1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ah7 a;
+public final /* synthetic */ class vv1 implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public vv1(ah7 ah7Var) {
-        this.a = ah7Var;
+    public /* synthetic */ vv1(ChatActivityEnterView chatActivityEnterView, byte b) {
+        this.a = b;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        this.a.q(1.0f);
+    @Override // p8c
+    public final void a(Object obj) {
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (b) {
+            case 0:
+                int i = ChatActivityEnterView.r7;
+                chatActivityEnterView.u0((Canvas) obj, false);
+                break;
+            case 1:
+                chatActivityEnterView.s1((TL_iv.RichMessage) obj);
+                break;
+            default:
+                CharSequence charSequence = (CharSequence) obj;
+                int i2 = ChatActivityEnterView.r7;
+                chatActivityEnterView.F0.setText(charSequence);
+                chatActivityEnterView.F0.setSelection(charSequence.length(), charSequence.length());
+                break;
+        }
     }
 }

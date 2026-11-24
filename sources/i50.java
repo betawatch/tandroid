@@ -1,25 +1,16 @@
 // default package
 
-import android.os.Handler;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class i50 {
-    public final Handler a;
-    public final h50 b;
-    public final /* synthetic */ j50 c;
+public final class i50 implements zn7 {
+    public static final i50 a = new i50();
+    public static final w84 b = w84.c("privacyContext");
+    public static final w84 c = w84.c("productIdOrigin");
 
-    public i50(j50 j50Var) {
-        this.c = j50Var;
-        Handler q = hac.q(null);
-        this.a = q;
-        h50 h50Var = new h50(this);
-        this.b = h50Var;
-        j50Var.a.registerStreamEventCallback(new g50(q, (byte) 0), h50Var);
-    }
-
-    public final void a() {
-        this.c.a.unregisterStreamEventCallback(this.b);
-        this.a.removeCallbacksAndMessages(null);
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        ao7 ao7Var = (ao7) obj2;
+        ao7Var.a(b, ((y70) ((ip2) obj)).a);
+        ao7Var.a(c, hp2.a);
     }
 }

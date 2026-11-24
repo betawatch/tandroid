@@ -1,33 +1,52 @@
 // default package
 
-import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class yk implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class yk extends CharacterStyle {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ al b;
+    public final Object b;
 
-    public /* synthetic */ yk(al alVar, byte b) {
-        this.a = b;
-        this.b = alVar;
+    public yk(ey8 ey8Var) {
+        this.a = (byte) 1;
+        this.b = ey8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
         byte b = this.a;
-        al alVar = this.b;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                alVar.a.unregisterReceiver(alVar.d);
+                textPaint.setTypeface(gl.o());
+                int alpha = textPaint.getAlpha();
+                textPaint.setColor(bkb.v0(bkb.m6, (wjb) obj));
+                textPaint.setAlpha(alpha);
                 break;
             case 1:
-                alVar.a();
+                textPaint.setColor(bkb.v(bkb.p1(0.55f, textPaint.getColor()), bkb.p1(0.4f, ((ey8) obj).J)));
+                break;
+            case 2:
+                textPaint.setColor(bkb.v(bkb.p1(0.55f, textPaint.getColor()), bkb.p1(0.4f, bkb.v0(bkb.Ei, ((wi9) obj).a))));
+                break;
+            case 3:
+                textPaint.setColor(((nkc) obj).t0);
                 break;
             default:
-                Uri uri = al.g;
-                alVar.b();
+                float[] fArr = ((smc) obj).b0;
+                int i = -9577217;
+                if (fArr != null) {
+                    i = bm2.f(fArr[8], znc.p(-9577217, 0, fArr), znc.p(-9577217, 3, fArr));
+                }
+                textPaint.setColor(i);
                 break;
         }
+    }
+
+    public /* synthetic */ yk(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class ContactsWidgetProvider extends AppWidgetProvider {
     public static void a(Context context, AppWidgetManager appWidgetManager, int i) {
@@ -35,12 +35,12 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
             int i5 = sharedPreferences.getInt("account" + i, -1);
             if (i5 == -1) {
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putInt(hg9.j(i, "account"), z8c.t0);
+                edit.putInt(de9.k(i, "account"), y6c.t0);
                 edit.putInt(TeXSymbolParser.TYPE_ATTR + i, 0).commit();
             }
             ArrayList arrayList = new ArrayList();
             if (i5 >= 0) {
-                cf7.Y(j5.a(i5).a).n0(i, 1, arrayList, null, null, false);
+                ad7.Y(j5.a(i5).a).n0(i, 1, arrayList, null, null, false);
             }
             int ceil = (int) Math.ceil(arrayList.size() / 2.0f);
             if (i3 != 1 && ceil > 1) {
@@ -74,8 +74,8 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
         for (int i = 0; i < iArr.length; i++) {
             int i2 = sharedPreferences.getInt("account" + iArr[i], -1);
             if (i2 >= 0) {
-                cf7 Y = cf7.Y(j5.a(i2).a);
-                Y.a.c(new xc7(Y, iArr[i], (byte) 1));
+                ad7 Y = ad7.Y(j5.a(i2).a);
+                Y.a.c(new wa7(Y, iArr[i], (byte) 1));
             }
             edit.remove("account" + iArr[i]);
             edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i]);

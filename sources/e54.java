@@ -1,6 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.system.Os;
+import java.io.FileDescriptor;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class e54 extends Exception {
+public abstract class e54 {
+    public static void a(FileDescriptor fileDescriptor) {
+        Os.close(fileDescriptor);
+    }
+
+    public static FileDescriptor b(FileDescriptor fileDescriptor) {
+        return Os.dup(fileDescriptor);
+    }
+
+    public static long c(FileDescriptor fileDescriptor, long j, int i) {
+        return Os.lseek(fileDescriptor, j, i);
+    }
 }

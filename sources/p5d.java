@@ -1,47 +1,62 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteException;
+import android.net.Uri;
+import android.util.Log;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class p5d extends zz4 {
-    @Override // hh0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
+public final class p5d {
+    public static final ConcurrentHashMap h = new ConcurrentHashMap();
+    public static final String[] i = {"key", "value"};
+    public final ContentResolver a;
+    public final Uri b;
+    public volatile HashMap e;
+    public final Object d = new Object();
+    public final Object f = new Object();
+    public final ArrayList g = new ArrayList();
+    public final b43 c = new b43(this);
+
+    public p5d(ContentResolver contentResolver, Uri uri) {
+        this.a = contentResolver;
+        this.b = uri;
+    }
+
+    public final HashMap a() {
+        try {
+            HashMap hashMap = new HashMap();
+            Cursor query = this.a.query(this.b, i, null, null, null);
+            if (query == null) {
+                return hashMap;
+            }
+            while (query.moveToNext()) {
+                try {
+                    hashMap.put(query.getString(0), query.getString(1));
+                } finally {
+                    query.close();
+                }
+            }
+            return hashMap;
+        } catch (SQLiteException | SecurityException unused) {
+            Log.e("ConfigurationContentLoader", "PhenotypeFlag unable to load ContentProvider, using default values");
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.moduleinstall.internal.IModuleInstallService");
-        return queryLocalInterface instanceof s4d ? (s4d) queryLocalInterface : new s4d(iBinder, "com.google.android.gms.common.moduleinstall.internal.IModuleInstallService", (byte) 1);
     }
 
-    @Override // hh0
-    public final o94[] f() {
-        return xfd.b;
-    }
-
-    @Override // hh0
-    public final int i() {
-        return 17895000;
-    }
-
-    @Override // hh0
-    public final String l() {
-        return "com.google.android.gms.common.moduleinstall.internal.IModuleInstallService";
-    }
-
-    @Override // hh0
-    public final String n() {
-        return "com.google.android.gms.chimera.container.moduleinstall.ModuleInstallService.START";
-    }
-
-    @Override // hh0
-    public final boolean p() {
-        return true;
-    }
-
-    @Override // hh0
-    public final boolean x() {
-        return true;
+    public final void b() {
+        synchronized (this.f) {
+            Iterator it = this.g.iterator();
+            if (it.hasNext()) {
+                if (it.next() != null) {
+                    throw new ClassCastException();
+                }
+                throw null;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -25,7 +25,7 @@ class EglBase10Impl implements EglBase10 {
     private EGLDisplay eglDisplay;
     private EGLSurface eglSurface;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -85,14 +85,14 @@ class EglBase10Impl implements EglBase10 {
 
     private void checkIsNotReleased() {
         if (this.eglDisplay == EGL10.EGL_NO_DISPLAY || this.eglContext == EGL10.EGL_NO_CONTEXT || this.eglConfig == null) {
-            zo4.k("This object has been released");
+            wn4.j("This object has been released");
         }
     }
 
     private EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i) {
         EGLContext eglCreateContext;
         if (eGLContext != null && eGLContext == EGL10.EGL_NO_CONTEXT) {
-            zo4.k("Invalid sharedContext");
+            wn4.j("Invalid sharedContext");
             return null;
         }
         int[] iArr = {EGL_CONTEXT_CLIENT_VERSION, i, 12344};
@@ -105,32 +105,32 @@ class EglBase10Impl implements EglBase10 {
         if (eglCreateContext != EGL10.EGL_NO_CONTEXT) {
             return eglCreateContext;
         }
-        wa3.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create EGL context: 0x");
+        k93.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create EGL context: 0x");
         return null;
     }
 
     private void createSurfaceInternal(Object obj, boolean z) {
         if (!(obj instanceof SurfaceHolder) && !(obj instanceof SurfaceTexture)) {
-            dq9.m("Input must be either a SurfaceHolder or SurfaceTexture");
+            sc8.j("Input must be either a SurfaceHolder or SurfaceTexture");
             return;
         }
         checkIsNotReleased();
         EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
         if (z) {
             if (this.eglBackgroundSurface != eGLSurface) {
-                zo4.k("Already has an EGLSurface");
+                wn4.j("Already has an EGLSurface");
                 return;
             }
             EGLSurface eglCreateWindowSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
             this.eglBackgroundSurface = eglCreateWindowSurface;
             if (eglCreateWindowSurface == eGLSurface) {
-                wa3.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create window surface: 0x");
+                k93.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create window surface: 0x");
                 return;
             }
             return;
         }
         if (this.eglSurface != eGLSurface) {
-            zo4.k("Already has an EGLSurface");
+            wn4.j("Already has an EGLSurface");
             return;
         }
         EGLSurface eglCreateWindowSurface2 = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
@@ -138,25 +138,25 @@ class EglBase10Impl implements EglBase10 {
         if (eglCreateWindowSurface2 != eGLSurface) {
             return;
         }
-        wa3.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create window surface: 0x");
+        k93.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create window surface: 0x");
     }
 
     private static EGLConfig getEglConfig(EGL10 egl10, EGLDisplay eGLDisplay, int[] iArr) {
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
         int[] iArr2 = new int[1];
         if (!egl10.eglChooseConfig(eGLDisplay, iArr, eGLConfigArr, 1, iArr2)) {
-            wa3.c(Integer.toHexString(egl10.eglGetError()), "eglChooseConfig failed: 0x");
+            k93.c(Integer.toHexString(egl10.eglGetError()), "eglChooseConfig failed: 0x");
             return null;
         }
         if (iArr2[0] <= 0) {
-            zo4.k("Unable to find any matching EGL config");
+            wn4.j("Unable to find any matching EGL config");
             return null;
         }
         EGLConfig eGLConfig = eGLConfigArr[0];
         if (eGLConfig != null) {
             return eGLConfig;
         }
-        zo4.k("eglChooseConfig returned null");
+        wn4.j("eglChooseConfig returned null");
         return null;
     }
 
@@ -164,13 +164,13 @@ class EglBase10Impl implements EglBase10 {
         EGLDisplay eglGetDisplay = this.egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
         EGL10 egl10 = this.egl;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
-            wa3.c(Integer.toHexString(egl10.eglGetError()), "Unable to get EGL10 display: 0x");
+            k93.c(Integer.toHexString(egl10.eglGetError()), "Unable to get EGL10 display: 0x");
             return null;
         }
         if (egl10.eglInitialize(eglGetDisplay, new int[2])) {
             return eglGetDisplay;
         }
-        wa3.c(Integer.toHexString(this.egl.eglGetError()), "Unable to initialize EGL10: 0x");
+        k93.c(Integer.toHexString(this.egl.eglGetError()), "Unable to initialize EGL10: 0x");
         return null;
     }
 
@@ -193,7 +193,7 @@ class EglBase10Impl implements EglBase10 {
         EGLSurface eGLSurface = this.eglSurface;
         EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
         if (eGLSurface != eGLSurface2) {
-            zo4.k("Already has an EGLSurface");
+            wn4.j("Already has an EGLSurface");
             return;
         }
         EGLSurface eglCreatePbufferSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i, 12374, i2, 12344});
@@ -201,9 +201,9 @@ class EglBase10Impl implements EglBase10 {
         if (eglCreatePbufferSurface != eGLSurface2) {
             return;
         }
-        StringBuilder o = ts2.o("Failed to create pixel buffer surface with size ", i, "x", i2, ": 0x");
-        o.append(Integer.toHexString(this.egl.eglGetError()));
-        throw new RuntimeException(o.toString());
+        StringBuilder p = ir2.p("Failed to create pixel buffer surface with size ", i, "x", i2, ": 0x");
+        p.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(p.toString());
     }
 
     @Override // org.webrtc.EglBase
@@ -242,7 +242,7 @@ class EglBase10Impl implements EglBase10 {
     public void makeBackgroundCurrent() {
         checkIsNotReleased();
         if (this.eglBackgroundSurface == EGL10.EGL_NO_SURFACE) {
-            zo4.k("No EGLSurface - can't make current");
+            wn4.j("No EGLSurface - can't make current");
             return;
         }
         synchronized (EglBase.lock) {
@@ -259,7 +259,7 @@ class EglBase10Impl implements EglBase10 {
     public void makeCurrent() {
         checkIsNotReleased();
         if (this.eglSurface == EGL10.EGL_NO_SURFACE) {
-            zo4.k("No EGLSurface - can't make current");
+            wn4.j("No EGLSurface - can't make current");
             return;
         }
         synchronized (EglBase.lock) {
@@ -323,7 +323,7 @@ class EglBase10Impl implements EglBase10 {
         EGLSurface eGLSurface = z ? this.eglBackgroundSurface : this.eglSurface;
         checkIsNotReleased();
         if (eGLSurface == EGL10.EGL_NO_SURFACE) {
-            zo4.k("No EGLSurface - can't swap buffers");
+            wn4.j("No EGLSurface - can't swap buffers");
         } else {
             synchronized (EglBase.lock) {
                 this.egl.eglSwapBuffers(this.eglDisplay, eGLSurface);
@@ -331,7 +331,7 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 

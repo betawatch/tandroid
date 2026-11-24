@@ -1,88 +1,64 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Intent;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xb0 implements ee, an2 {
+public final class xb0 implements gk7 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mc0 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ xb0(mc0 mc0Var, byte b) {
+    public /* synthetic */ xb0(Object obj, byte b) {
         this.a = b;
-        this.b = mc0Var;
+        this.b = obj;
     }
 
-    @Override // an2
-    public final void c(int i, int i2, boolean z) {
-        mc0 mc0Var = this.b;
-        if (i2 == 0) {
-            hc0 hc0Var = mc0Var.Z;
-            int i3 = hc0Var.c;
-            if (i3 != i && (i3 == 0 || i == 0)) {
-                hc0 a = hc0Var.a();
-                mc0Var.Z = a;
-                mc0Var.a.b(a, true);
-                mc0Var.s0();
-            }
-            mc0Var.Z.c = i;
-        } else if (i2 == 1) {
-            hc0 hc0Var2 = mc0Var.Z;
-            int i4 = hc0Var2.d;
-            if (i4 != i && (i4 == 0 || i == 0)) {
-                hc0 a2 = hc0Var2.a();
-                mc0Var.Z = a2;
-                mc0Var.a.b(a2, true);
-                mc0Var.s0();
-            }
-            mc0Var.Z.d = i;
-        } else if (i2 == 2) {
-            hc0 hc0Var3 = mc0Var.Z;
-            int i5 = hc0Var3.e;
-            if (i5 != i && (i5 == 0 || i == 0)) {
-                hc0 a3 = hc0Var3.a();
-                mc0Var.Z = a3;
-                mc0Var.a.b(a3, true);
-                mc0Var.s0();
-            }
-            mc0Var.Z.e = i;
-        } else if (i2 == 3) {
-            hc0 hc0Var4 = mc0Var.Z;
-            int i6 = hc0Var4.f;
-            if (i6 != i && (i6 == 0 || i == 0)) {
-                hc0 a4 = hc0Var4.a();
-                mc0Var.Z = a4;
-                mc0Var.a.b(a4, true);
-                mc0Var.s0();
-            }
-            mc0Var.Z.f = i;
-        }
-        nm7.e().k(nm7.v4, new Object[0]);
-        mc0Var.a.invalidate();
-    }
-
-    @Override // an2
-    public final int d(int i) {
-        return 0;
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
         byte b = this.a;
-        mc0 mc0Var = this.b;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                mc0Var.finishFragment();
+                yb0 yb0Var = (yb0) obj;
+                if (yb0Var.g && i == yb0Var.e) {
+                    yb0Var.b(objArr);
+                    break;
+                }
+                break;
+            case 1:
+                ad6 ad6Var = (ad6) obj;
+                int intValue = ((Integer) objArr[0]).intValue();
+                ((Integer) objArr[1]).getClass();
+                Intent intent = (Intent) objArr[2];
+                kk7.e().n(this, kk7.e5);
+                if (intValue == 200) {
+                    try {
+                        ad6Var.G = (GoogleSignInAccount) aje.b(intent).getResult(zn.class);
+                        ad6Var.h(null);
+                        break;
+                    } catch (zn e) {
+                        fa4.g(e, true);
+                        return;
+                    }
+                }
                 break;
             default:
-                mc0Var.finishFragment();
+                de6 de6Var = (de6) obj;
+                int intValue2 = ((Integer) objArr[0]).intValue();
+                ((Integer) objArr[1]).getClass();
+                Intent intent2 = (Intent) objArr[2];
+                kk7.e().n(this, kk7.e5);
+                if (intValue2 == 200) {
+                    try {
+                        de6Var.E = (GoogleSignInAccount) aje.b(intent2).getResult(zn.class);
+                        de6Var.h(null);
+                        break;
+                    } catch (zn e2) {
+                        fa4.g(e2, true);
+                    }
+                }
                 break;
         }
-    }
-
-    @Override // an2
-    public final void a(boolean z) {
-    }
-
-    @Override // an2
-    public final void b() {
     }
 }

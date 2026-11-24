@@ -1,30 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class lq3 extends nl1 {
-    public float[] l;
+import android.R;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 
-    @Override // nl1
-    public final void e() {
-        super.e();
-        int size = this.d.size();
-        long j = 0;
-        for (int i = 0; i < size; i++) {
-            long j2 = ((ml1) this.d.get(i)).e;
-            if (j2 > j) {
-                j = j2;
-            }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class lq3 {
+    public static final int[] a = {R.attr.state_checked};
+    public static final int[] b = new int[0];
+
+    public static void a(Drawable drawable) {
+        String name = drawable.getClass().getName();
+        int i = Build.VERSION.SDK_INT;
+        if (i < 29 || i >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+            return;
         }
-        this.l = new float[size];
-        for (int i2 = 0; i2 < size; i2++) {
-            long j3 = ((ml1) this.d.get(i2)).e;
-            float[] fArr = this.l;
-            if (j == j3) {
-                fArr[i2] = 1.0f;
-            } else {
-                fArr[i2] = j / j3;
-            }
+        int[] state = drawable.getState();
+        if (state == null || state.length == 0) {
+            drawable.setState(a);
+        } else {
+            drawable.setState(b);
+        }
+        drawable.setState(state);
+    }
+
+    public static PorterDuff.Mode b(int i, PorterDuff.Mode mode) {
+        if (i == 3) {
+            return PorterDuff.Mode.SRC_OVER;
+        }
+        if (i == 5) {
+            return PorterDuff.Mode.SRC_IN;
+        }
+        if (i == 9) {
+            return PorterDuff.Mode.SRC_ATOP;
+        }
+        switch (i) {
+            case 14:
+                return PorterDuff.Mode.MULTIPLY;
+            case 15:
+                return PorterDuff.Mode.SCREEN;
+            case 16:
+                return PorterDuff.Mode.ADD;
+            default:
+                return mode;
         }
     }
 }

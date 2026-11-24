@@ -1,7 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class x1d {
-    public static final zo a = new zo("Fpnv.API", new or5((byte) 1), new xo());
+public final class x1d extends gy4 {
+    public final by4 b;
+
+    public x1d(by4 by4Var) {
+        this.b = by4Var;
+    }
 }

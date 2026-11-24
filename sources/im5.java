@@ -1,21 +1,46 @@
 // default package
 
-import java.util.Arrays;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class im5 {
-    public static final im5 b;
-    public final float a;
+public final class im5 implements Serializable {
+    public static final im5 c = new im5(new int[0], 0);
+    public final int[] a;
+    public final int b;
 
-    static {
-        xk4 xk4Var = new xk4();
-        xk4Var.a = 0.5f;
-        b = new im5(xk4Var);
+    public im5(int[] iArr, int i) {
+        this.a = iArr;
+        this.b = i;
     }
 
-    public im5(xk4 xk4Var) {
-        this.a = xk4Var.a;
+    public static im5 c(int... iArr) {
+        gre.e("the total number of elements must fit in an int", iArr.length <= 2147483646);
+        int length = iArr.length + 1;
+        int[] iArr2 = new int[length];
+        iArr2[0] = 0;
+        System.arraycopy(iArr, 0, iArr2, 1, iArr.length);
+        return new im5(iArr2, length);
+    }
+
+    public final boolean a(int i) {
+        int i2 = 0;
+        while (true) {
+            if (i2 >= this.b) {
+                i2 = -1;
+                break;
+            }
+            if (this.a[i2] == i) {
+                break;
+            }
+            i2++;
+        }
+        return i2 >= 0;
+    }
+
+    public final int b(int i) {
+        gre.j(i, this.b);
+        return this.a[i];
     }
 
     public final boolean equals(Object obj) {
@@ -23,12 +48,42 @@ public final class im5 {
             return true;
         }
         if (obj instanceof im5) {
-            return im5.class.equals(im5.class) && Float.compare(this.a, ((im5) obj).a) == 0 && fse.a(null, null);
+            im5 im5Var = (im5) obj;
+            int i = im5Var.b;
+            int i2 = this.b;
+            if (i2 == i) {
+                for (int i3 = 0; i3 < i2; i3++) {
+                    if (b(i3) == im5Var.b(i3)) {
+                    }
+                }
+                return true;
+            }
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{im5.class, Float.valueOf(this.a), null});
+        int i = 1;
+        for (int i2 = 0; i2 < this.b; i2++) {
+            i = (i * 31) + this.a[i2];
+        }
+        return i;
+    }
+
+    public final String toString() {
+        int i = this.b;
+        if (i == 0) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder(i * 5);
+        sb.append('[');
+        int[] iArr = this.a;
+        sb.append(iArr[0]);
+        for (int i2 = 1; i2 < i; i2++) {
+            sb.append(", ");
+            sb.append(iArr[i2]);
+        }
+        sb.append(']');
+        return sb.toString();
     }
 }

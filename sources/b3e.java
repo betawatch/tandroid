@@ -1,69 +1,212 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class b3e extends qpe {
-    private static final b3e zzf;
-    private static volatile fye zzg;
-    private int zzc;
-    private String zzd = "";
-    private String zze = "";
+public final class b3e {
+    public static final b3e b = new b3e(0);
+    public static final b3e c = new b3e(1);
+    public static final b3e d = new b3e(2);
+    public static final b3e e = new b3e(3);
+    public static final b3e f = new b3e(4);
+    public static final b3e g = new b3e(5);
+    public static final b3e h = new b3e(6);
+    public static final b3e i = new b3e(7);
+    public final /* synthetic */ byte a;
 
-    static {
-        b3e b3eVar = new b3e();
-        zzf = b3eVar;
-        qpe.g(b3e.class, b3eVar);
+    public /* synthetic */ b3e(byte b2) {
+        this.a = b2;
     }
 
-    public static a3e k() {
-        return (a3e) ((mpe) zzf.d(5));
-    }
-
-    /* JADX WARN: Type inference failed for: r2v12, types: [fye, java.lang.Object] */
-    @Override // qpe
-    public final Object d(int i) {
-        fye fyeVar;
-        switch (o4e.a[i - 1]) {
+    public final boolean a(int i2) {
+        Enum r4 = null;
+        switch (this.a) {
+            case 0:
+                if (i2 == 0) {
+                    r4 = d1e.b;
+                } else if (i2 == 1) {
+                    r4 = d1e.c;
+                } else if (i2 == 2) {
+                    r4 = d1e.d;
+                } else if (i2 == 3) {
+                    r4 = d1e.e;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
             case 1:
-                return new b3e();
+                if (i2 == 0) {
+                    r4 = f1e.b;
+                } else if (i2 == 1) {
+                    r4 = f1e.c;
+                } else if (i2 == 2) {
+                    r4 = f1e.d;
+                } else if (i2 == 3) {
+                    r4 = f1e.e;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
             case 2:
-                return new a3e(zzf);
+                if (i2 == 0) {
+                    r4 = i1e.b;
+                } else if (i2 == 1) {
+                    r4 = i1e.c;
+                } else if (i2 == 2) {
+                    r4 = i1e.d;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
             case 3:
-                return new uye(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzc", "zzd", "zze"});
+                if (i2 == 0) {
+                    r4 = j1e.b;
+                } else if (i2 == 1) {
+                    r4 = j1e.c;
+                } else if (i2 == 2) {
+                    r4 = j1e.d;
+                } else if (i2 == 3) {
+                    r4 = j1e.e;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
             case 4:
-                return zzf;
+                if (i2 == 0) {
+                    r4 = k1e.b;
+                } else if (i2 == 1) {
+                    r4 = k1e.c;
+                } else if (i2 == 2) {
+                    r4 = k1e.d;
+                } else if (i2 == 3) {
+                    r4 = k1e.e;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
             case 5:
-                fye fyeVar2 = zzg;
-                if (fyeVar2 != null) {
-                    return fyeVar2;
+                if (i2 == 0) {
+                    r4 = p1e.b;
+                } else if (i2 == 1) {
+                    r4 = p1e.c;
+                } else if (i2 == 2) {
+                    r4 = p1e.d;
+                } else if (i2 == 3) {
+                    r4 = p1e.e;
                 }
-                synchronized (b3e.class) {
-                    fye fyeVar3 = zzg;
-                    fyeVar = fyeVar3;
-                    if (fyeVar3 == null) {
-                        ?? lpeVar = new lpe();
-                        zzg = lpeVar;
-                        fyeVar = lpeVar;
-                    }
+                if (r4 != null) {
+                    break;
                 }
-                return fyeVar;
+                break;
             case 6:
-                return (byte) 1;
+                switch (i2) {
+                    case 0:
+                        r4 = ace.b;
+                        break;
+                    case 1:
+                        r4 = ace.c;
+                        break;
+                    case 2:
+                        r4 = ace.d;
+                        break;
+                    case 3:
+                        r4 = ace.e;
+                        break;
+                    case 4:
+                        r4 = ace.f;
+                        break;
+                    case 5:
+                        r4 = ace.h;
+                        break;
+                    case 6:
+                        r4 = ace.n;
+                        break;
+                    case 7:
+                        r4 = ace.r;
+                        break;
+                    case 8:
+                        r4 = ace.s;
+                        break;
+                    case 9:
+                        r4 = ace.w;
+                        break;
+                    case 10:
+                        r4 = ace.x;
+                        break;
+                    case 11:
+                        r4 = ace.y;
+                        break;
+                    case 12:
+                        r4 = ace.E;
+                        break;
+                    case 13:
+                        r4 = ace.F;
+                        break;
+                    case 14:
+                        r4 = ace.G;
+                        break;
+                    case 16:
+                        r4 = ace.H;
+                        break;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
             default:
-                gxc.b();
-            case 7:
-                return null;
+                switch (i2) {
+                    case 0:
+                        r4 = rce.b;
+                        break;
+                    case 1:
+                        r4 = rce.c;
+                        break;
+                    case 2:
+                        r4 = rce.d;
+                        break;
+                    case 3:
+                        r4 = rce.e;
+                        break;
+                    case 4:
+                        r4 = rce.f;
+                        break;
+                    case 5:
+                        r4 = rce.h;
+                        break;
+                    case 6:
+                        r4 = rce.n;
+                        break;
+                    case 7:
+                        r4 = rce.r;
+                        break;
+                    case 8:
+                        r4 = rce.s;
+                        break;
+                    case 9:
+                        r4 = rce.w;
+                        break;
+                    case 10:
+                        r4 = rce.x;
+                        break;
+                    case 11:
+                        r4 = rce.y;
+                        break;
+                    case 12:
+                        r4 = rce.E;
+                        break;
+                    case 13:
+                        r4 = rce.F;
+                        break;
+                }
+                if (r4 != null) {
+                    break;
+                }
+                break;
         }
-    }
-
-    public final void j(String str) {
-        str.getClass();
-        this.zzc |= 1;
-        this.zzd = str;
-    }
-
-    public final void m(String str) {
-        this.zzc |= 2;
-        this.zze = str;
+        return true;
     }
 }

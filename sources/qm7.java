@@ -1,35 +1,72 @@
 // default package
 
-import android.app.Notification;
-import android.media.session.MediaSession;
-import android.support.v4.media.session.MediaSessionCompat$Token;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class qm7 {
-    public static Notification.MediaStyle a() {
-        return new Notification.MediaStyle();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class qm7 extends ja {
+    public int c;
+    public int d;
+    public String e;
+    public String f;
+    public vm7 g;
+    public int h;
+    public boolean i;
+
+    public static qm7 b(int i, String str, boolean z) {
+        qm7 qm7Var = new qm7(1, true);
+        qm7Var.c = i;
+        qm7Var.e = str;
+        qm7Var.i = z;
+        return qm7Var;
     }
 
-    public static Notification.MediaStyle b(Notification.MediaStyle mediaStyle, int[] iArr, MediaSessionCompat$Token mediaSessionCompat$Token) {
-        if (iArr != null) {
-            e(mediaStyle, iArr);
+    public static qm7 c(int i, String str, String str2) {
+        qm7 qm7Var = new qm7(5, true);
+        qm7Var.c = i;
+        qm7Var.e = str;
+        qm7Var.f = str2;
+        return qm7Var;
+    }
+
+    public static qm7 d(int i, String str) {
+        qm7 qm7Var = new qm7(4, true);
+        qm7Var.c = i;
+        qm7Var.e = str;
+        return qm7Var;
+    }
+
+    @Override // ja
+    public final boolean a(ja jaVar) {
+        if (this == jaVar) {
+            return true;
         }
-        if (mediaSessionCompat$Token != null) {
-            c(mediaStyle, (MediaSession.Token) mediaSessionCompat$Token.b);
+        if (qm7.class != jaVar.getClass()) {
+            return false;
         }
-        return mediaStyle;
+        qm7 qm7Var = (qm7) jaVar;
+        return this.c == qm7Var.c && this.d == qm7Var.d && this.h == qm7Var.h && this.i == qm7Var.i && Objects.equals(this.e, qm7Var.e) && Objects.equals(this.f, qm7Var.f) && this.g == qm7Var.g;
     }
 
-    public static void c(Notification.MediaStyle mediaStyle, MediaSession.Token token) {
-        mediaStyle.setMediaSession(token);
-    }
-
-    public static void d(Notification.Builder builder, Notification.MediaStyle mediaStyle) {
-        builder.setStyle(mediaStyle);
-    }
-
-    public static void e(Notification.MediaStyle mediaStyle, int... iArr) {
-        mediaStyle.setShowActionsInCompactView(iArr);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || qm7.class != obj.getClass()) {
+            return false;
+        }
+        qm7 qm7Var = (qm7) obj;
+        if (this.c != qm7Var.c || this.h != qm7Var.h) {
+            return false;
+        }
+        if (this.a != 8) {
+            if (this.d != qm7Var.d || !Objects.equals(this.e, qm7Var.e)) {
+                return false;
+            }
+            if (this.a != 6 && !Objects.equals(this.f, qm7Var.f)) {
+                return false;
+            }
+        }
+        return this.g == qm7Var.g;
     }
 }

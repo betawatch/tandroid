@@ -1,13 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.util.Base64;
+import java.security.SecureRandom;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class s3d {
-    public final r3d a;
+    public static final SecureRandom a = new SecureRandom();
 
-    public s3d(r3d r3dVar) {
-        this.a = r3dVar;
+    public static String a() {
+        byte[] bArr = new byte[16];
+        a.nextBytes(bArr);
+        return Base64.encodeToString(bArr, 11);
     }
-
-    public abstract void a();
 }

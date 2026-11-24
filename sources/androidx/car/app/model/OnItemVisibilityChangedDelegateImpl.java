@@ -6,17 +6,17 @@ import androidx.car.app.model.IOnItemVisibilityChangedListener;
 import androidx.car.app.model.OnItemVisibilityChangedDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class OnItemVisibilityChangedDelegateImpl implements gr7 {
+public class OnItemVisibilityChangedDelegateImpl implements dp7 {
     private final IOnItemVisibilityChangedListener mStub;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class OnItemVisibilityChangedListenerStub extends IOnItemVisibilityChangedListener.Stub {
-        private final qt5 mListener;
+        private final rr5 mListener;
 
-        public OnItemVisibilityChangedListenerStub(qt5 qt5Var) {
+        public OnItemVisibilityChangedListenerStub(rr5 rr5Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -26,8 +26,8 @@ public class OnItemVisibilityChangedDelegateImpl implements gr7 {
 
         @Override // androidx.car.app.model.IOnItemVisibilityChangedListener
         public void onItemVisibilityChanged(final int i, final int i2, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.e.c(iOnDoneCallback, "onItemVisibilityChanged", new s89() { // from class: androidx.car.app.model.e
-                @Override // s89
+            androidx.car.app.utils.e.c(iOnDoneCallback, "onItemVisibilityChanged", new q69() { // from class: androidx.car.app.model.e
+                @Override // q69
                 public final Object a() {
                     Object lambda$onItemVisibilityChanged$0;
                     lambda$onItemVisibilityChanged$0 = OnItemVisibilityChangedDelegateImpl.OnItemVisibilityChangedListenerStub.this.lambda$onItemVisibilityChanged$0(i, i2);
@@ -37,21 +37,21 @@ public class OnItemVisibilityChangedDelegateImpl implements gr7 {
         }
     }
 
-    private OnItemVisibilityChangedDelegateImpl(qt5 qt5Var) {
-        this.mStub = new OnItemVisibilityChangedListenerStub(qt5Var);
+    private OnItemVisibilityChangedDelegateImpl(rr5 rr5Var) {
+        this.mStub = new OnItemVisibilityChangedListenerStub(rr5Var);
     }
 
-    public static gr7 create(qt5 qt5Var) {
-        return new OnItemVisibilityChangedDelegateImpl(qt5Var);
+    public static dp7 create(rr5 rr5Var) {
+        return new OnItemVisibilityChangedDelegateImpl(rr5Var);
     }
 
-    public void sendItemVisibilityChanged(int i, int i2, fr7 fr7Var) {
+    public void sendItemVisibilityChanged(int i, int i2, cp7 cp7Var) {
         try {
             IOnItemVisibilityChangedListener iOnItemVisibilityChangedListener = this.mStub;
             Objects.requireNonNull(iOnItemVisibilityChangedListener);
             iOnItemVisibilityChangedListener.onItemVisibilityChanged(i, i2, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            rjb.m(e);
+            sdb.b(e);
         }
     }
 

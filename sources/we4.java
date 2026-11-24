@@ -1,32 +1,44 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.text.SpannableStringBuilder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class we4 extends FrameLayout {
-    public ImageView a;
-    public TextView b;
-    public int c;
-    public boolean d;
-    public Boolean e;
+public final class we4 implements kba {
+    public final /* synthetic */ xe4 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextView textView = this.b;
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), cmb.j0);
-        }
+    public we4(xe4 xe4Var) {
+        this.a = xe4Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(48.0f), TLObject.FLAG_30));
+    @Override // kba
+    public final void a(TLRPC.WebPage webPage, k27 k27Var) {
+        af4 af4Var = this.a.w;
+        SpannableStringBuilder[] spannableStringBuilderArr = af4.t0;
+        ou3.I0(af4Var.M, k27Var, af4Var.h0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // kba
+    public final boolean b() {
+        return !this.a.w.p0.t();
+    }
+
+    @Override // kba
+    public final void c(String str, boolean z) {
+        af4 af4Var = this.a.w;
+        if (!z) {
+            SpannableStringBuilder[] spannableStringBuilderArr = af4.t0;
+            af4Var.g(str);
+            return;
+        }
+        fx0 i = ug8.i(af4Var.L, false, 1, null);
+        i.P = str;
+        i.Q = false;
+        CharSequence[] charSequenceArr = {k96.M0(2131747624, null), k96.M0(2131751755, null)};
+        fe feVar = new fe((Object) this, (Object) str, (byte) 5);
+        i.M = charSequenceArr;
+        i.L = feVar;
+        af4Var.M.showDialog(i);
     }
 }

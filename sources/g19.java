@@ -1,48 +1,53 @@
 // default package
 
-import android.os.Bundle;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class g19 {
-    public static final String a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class g19 extends f19 {
+    public final /* synthetic */ i19 g0;
 
-    static {
-        String str = hac.a;
-        a = "0";
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g19(i19 i19Var, f19 f19Var, TLRPC.ReactionCount reactionCount, boolean z) {
+        super(f19Var, i19Var.l, i19Var.w, reactionCount, z, i19Var.y);
+        this.g0 = i19Var;
     }
 
-    public static g19 a(Bundle bundle) {
-        String str = a;
-        int i = bundle.getInt(str, -1);
-        if (i == 0) {
-            String str2 = sf5.d;
-            jte.f(bundle.getInt(str, -1) == 0);
-            return bundle.getBoolean(sf5.d, false) ? new sf5(bundle.getBoolean(sf5.e, false)) : new sf5();
-        }
-        if (i == 1) {
-            String str3 = g58.c;
-            jte.f(bundle.getInt(str, -1) == 1);
-            float f = bundle.getFloat(g58.c, -1.0f);
-            return f == -1.0f ? new g58() : new g58(f);
-        }
-        if (i == 2) {
-            String str4 = eta.d;
-            jte.f(bundle.getInt(str, -1) == 2);
-            int i2 = bundle.getInt(eta.d, 5);
-            float f2 = bundle.getFloat(eta.e, -1.0f);
-            return f2 == -1.0f ? new eta(i2) : new eta(i2, f2);
-        }
-        if (i != 3) {
-            u36.j(hg9.j(i, "Unknown RatingType: "));
-            return null;
-        }
-        String str5 = lpb.d;
-        jte.f(bundle.getInt(str, -1) == 3);
-        return bundle.getBoolean(lpb.d, false) ? new lpb(bundle.getBoolean(lpb.e, false)) : new lpb();
+    @Override // f19
+    public final float j() {
+        return this.g0.a;
     }
 
-    public abstract boolean b();
+    @Override // f19
+    public final ImageReceiver k() {
+        return (ImageReceiver) this.g0.E.get(this.r);
+    }
 
-    public abstract Bundle c();
+    @Override // f19
+    public final boolean l() {
+        return this.g0.x.O3();
+    }
+
+    @Override // f19
+    public final boolean m() {
+        i19 i19Var = this.g0;
+        int e1 = i19Var.x.e1();
+        long c1 = i19Var.x.c1();
+        d19 d19Var = d19.B;
+        if (d19Var == null) {
+            return false;
+        }
+        int i = d19Var.a;
+        if (i != 2 && i != 0) {
+            return false;
+        }
+        long j = d19Var.o;
+        return ((j != 0 && c1 == j) || e1 == d19Var.n) && d19Var.p.equals(this.r);
+    }
+
+    @Override // f19
+    public final void n() {
+        this.g0.E.remove(this.r);
+    }
 }

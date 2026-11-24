@@ -1,101 +1,23 @@
 // default package
 
-import android.util.SparseArray;
+import android.app.Notification;
+import android.os.Build;
+import android.support.v4.media.session.MediaSessionCompat$Token;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 yk7, still in use, count: 1, list:
-  (r0v0 yk7) from 0x0128: INVOKE (r2v11 android.util.SparseArray), (0 int), (r0v0 yk7) VIRTUAL call: android.util.SparseArray.put(int, java.lang.Object):void A[MD:(int, E):void (c)] (LINE:297)
-	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
-	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
-	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
-	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class yk7 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF15(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(10),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(11),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(12),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(13),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(14),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(15),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(16),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(17),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(18),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(19),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF236(100);
+public final class yk7 extends gl7 {
+    public int[] e;
+    public MediaSessionCompat$Token f;
 
-    public static final SparseArray a;
-
-    static {
-        SparseArray sparseArray = new SparseArray();
-        a = sparseArray;
-        sparseArray.put(0, r0);
-        sparseArray.put(1, r1);
-        sparseArray.put(2, r3);
-        sparseArray.put(3, r5);
-        sparseArray.put(4, r7);
-        sparseArray.put(5, r9);
-        sparseArray.put(6, r11);
-        sparseArray.put(7, r13);
-        sparseArray.put(8, r15);
-        sparseArray.put(9, r14);
-        sparseArray.put(10, r12);
-        sparseArray.put(11, r10);
-        sparseArray.put(12, r8);
-        sparseArray.put(13, r6);
-        sparseArray.put(14, r4);
-        sparseArray.put(15, r2);
-        sparseArray.put(16, r6);
-        sparseArray.put(17, r4);
-        sparseArray.put(18, r2);
-        sparseArray.put(19, r6);
-    }
-
-    public yk7(int i) {
-    }
-
-    public static yk7 valueOf(String str) {
-        return (yk7) Enum.valueOf(yk7.class, str);
-    }
-
-    public static yk7[] values() {
-        return (yk7[]) b.clone();
+    @Override // gl7
+    public final void b(h31 h31Var) {
+        int i = Build.VERSION.SDK_INT;
+        Notification.Builder builder = (Notification.Builder) h31Var.c;
+        if (i >= 34) {
+            nk7.d(builder, nk7.b(ok7.a(nk7.a(), null, 0, null, Boolean.FALSE), this.e, this.f));
+        } else {
+            nk7.d(builder, nk7.b(nk7.a(), this.e, this.f));
+        }
     }
 }

@@ -1,49 +1,37 @@
 // default package
 
-import java.util.Calendar;
-import java.util.Locale;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class rs7 {
-    public int a;
-    public int b;
-
-    public rs7(int i, int i2) {
-        this.a = i;
-        this.b = i2;
+public final class rs7 extends n39 {
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return true;
     }
 
-    public static String a(int i) {
-        int i2 = i % 60;
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(0, 0, 0, ((i - i2) / 60) % 24, i2);
-        jb6 D0 = jb6.D0();
-        if (D0.c == null) {
-            synchronized (D0) {
-                if (D0.c == null) {
-                    Locale locale = D0.y;
-                    if (locale == null) {
-                        locale = Locale.getDefault();
-                    }
-                    String language = locale.getLanguage();
-                    if (language == null) {
-                        language = "en";
-                    }
-                    String lowerCase = language.toLowerCase();
-                    if (!lowerCase.toLowerCase().equals("ar") && !lowerCase.toLowerCase().equals("ko")) {
-                        locale = Locale.US;
-                    }
-                    boolean z = jb6.c0;
-                    D0.c = jb6.k(locale, z ? "HH:mm" : "h:mm a", z ? "HH:mm" : "h:mm a");
-                }
-            }
+    @Override // w39
+    public final int b() {
+        return qs7.a().size();
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        gs7 gs7Var = (gs7) s49Var.a;
+        qs7 qs7Var = (qs7) qs7.a().get(i);
+        gs7Var.getClass();
+        gs7Var.setTypeface(qs7Var.b());
+        String str = qs7Var.c;
+        if (str == null) {
+            str = k96.N0(qs7Var.b);
         }
-        String format = D0.c.format(calendar.getTime());
-        return i > 1440 ? jb6.a0(null, null, 2131752701, format) : format;
+        gs7Var.setText(str);
     }
 
-    public final String toString() {
-        return a(this.a) + " - " + a(this.b);
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        gs7 gs7Var = new gs7(viewGroup.getContext());
+        gs7Var.setLayoutParams(new e49(-1, -2));
+        return new y29(gs7Var);
     }
 }

@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class Step {
     private final CarText mCue;
@@ -17,8 +17,8 @@ public final class Step {
 
     public Step(Maneuver maneuver, List<Lane> list, CarIcon carIcon, CarText carText, CarText carText2) {
         this.mManeuver = maneuver;
-        this.mLanes = ttd.a(list);
-        td1.c.d(carIcon);
+        this.mLanes = qrd.a(list);
+        lc1.b.b(carIcon);
         this.mLanesImage = carIcon;
         this.mCue = carText;
         this.mRoad = carText2;

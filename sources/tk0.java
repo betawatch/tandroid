@@ -1,25 +1,65 @@
 // default package
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class tk0 extends na3 {
-    public Bitmap a;
-    public final /* synthetic */ vk0 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class tk0 {
+    public static final Matrix a = new Matrix();
+    public static final RectF b = new RectF();
+    public static final RectF c = new RectF();
 
-    public tk0(vk0 vk0Var) {
-        this.b = vk0Var;
+    public static void a(wg5 wg5Var, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
+        b(wg5Var, canvas, rectF, view, viewGroup, kk7.d4);
     }
 
-    @Override // na3, v11
-    public final void clear() {
-        this.a = null;
-        super.clear();
+    public static void b(wg5 wg5Var, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i) {
+        if (i <= 0 || wg5Var == null) {
+            return;
+        }
+        RectF rectF2 = c;
+        if (zec.c(view, viewGroup, rectF2)) {
+            float f = rectF2.left;
+            float f2 = rectF2.top;
+            RectF rectF3 = b;
+            rectF3.set(rectF);
+            rectF3.offset(-f, -f2);
+            boolean z = (f == 0.0f && f2 == 0.0f) ? false : true;
+            boolean z2 = i != 255;
+            if (z) {
+                canvas.save();
+                canvas.translate(f, f2);
+            }
+            if (z2) {
+                canvas.saveLayerAlpha(rectF3, i);
+            }
+            wg5Var.d(canvas, rectF3);
+            if (z2) {
+                canvas.restore();
+            }
+            if (z) {
+                canvas.restore();
+            }
+        }
     }
 
-    @Override // na3
-    public final void release() {
-        this.b.o(this);
+    public static void c(hx4 hx4Var, View view) {
+        Bitmap bitmap;
+        if (hx4Var == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = hx4Var.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
+            return;
+        }
+        Matrix matrix = a;
+        matrix.reset();
+        matrix.setScale(view.getWidth() / bitmap.getWidth(), view.getHeight() / bitmap.getHeight());
+        hx4Var.b.set(matrix);
+    }
+
+    public static sk0 d(il0 il0Var, int i, int i2) {
+        return new sk0(i, i2, il0Var);
     }
 }

@@ -1,51 +1,79 @@
 // default package
 
-import android.text.TextUtils;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class e7c {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final int d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class e7c extends LinearLayout implements tjb {
+    public final wjb a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
+    public int r;
 
-    public e7c(String str) {
-        this.a = str;
-        JSONObject jSONObject = new JSONObject(str);
-        this.b = jSONObject.optString("productId");
-        String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-        this.c = optString;
-        this.d = jSONObject.has("statusCode") ? jSONObject.optInt("statusCode") : 0;
-        if (TextUtils.isEmpty(optString)) {
-            u36.j("Product type cannot be empty.");
-            throw null;
-        }
-        jSONObject.optString("serializedDocid");
+    public e7c(Context context, wjb wjbVar) {
+        super(context);
+        setOrientation(0);
+        this.a = wjbVar;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, nme.t(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, gl.L(10.0f), 0, gl.L(10.0f));
+        addView(linearLayout, nme.q(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView m = ug8.m(linearLayout, textView, nme.t(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = m;
+        m.setTextSize(1, 13.0f);
+        linearLayout.addView(m, nme.s(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, nme.t(40, 40, 21, 12, 0, 12, 0));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof e7c) {
-            return TextUtils.equals(this.a, ((e7c) obj).a);
-        }
-        return false;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // tjb
+    public final void updateColors() {
+        int i = this.n ? bkb.p7 : this.h ? bkb.m6 : bkb.F6;
+        wjb wjbVar = this.a;
+        int v0 = bkb.v0(i, wjbVar);
+        int i2 = this.r;
+        ImageView imageView = this.f;
+        ImageView imageView2 = this.b;
+        if (v0 != i2 || imageView2.getColorFilter() == null || imageView.getColorFilter() == null) {
+            this.r = v0;
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            imageView2.setColorFilter(new PorterDuffColorFilter(v0, mode));
+            imageView.setColorFilter(new PorterDuffColorFilter(v0, mode));
+        }
+        this.d.setTextColor(bkb.v0(this.n ? bkb.o7 : this.h ? bkb.m6 : bkb.F6, wjbVar));
+        this.e.setTextColor(bkb.v0(this.n ? bkb.o7 : this.h ? bkb.m6 : bkb.x6, wjbVar));
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("UnfetchedProduct{productId='");
-        sb.append(this.b);
-        sb.append("', productType='");
-        sb.append(this.c);
-        sb.append("', statusCode=");
-        return hg9.k(sb, this.d, "}");
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

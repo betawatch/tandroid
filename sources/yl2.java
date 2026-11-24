@@ -1,278 +1,163 @@
 // default package
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yl2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cm2 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class yl2 extends fx0 {
+    public static final /* synthetic */ int t1 = 0;
+    public final zf2 l1;
+    public final ImageView m1;
+    public final ql2 n1;
+    public final Path o1;
+    public int p1;
+    public vs2 q1;
+    public qx r1;
+    public boolean s1;
 
-    public /* synthetic */ yl2(cm2 cm2Var, byte b) {
-        this.a = b;
-        this.b = cm2Var;
+    public yl2(Context context, wjb wjbVar) {
+        super(1, wjbVar, context, true);
+        this.o1 = new Path();
+        L(-14342875);
+        Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
+        this.s0 = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-14342875, PorterDuff.Mode.MULTIPLY));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, gl.L(16.0f), 0, 0);
+        ImageView imageView = new ImageView(context);
+        this.m1 = imageView;
+        imageView.setImageResource(R.drawable.picker);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView.setBackground(bkb.f0(1090519039, 1, -1));
+        imageView.setOnClickListener(new kb1((Object) this, (Object) context, (byte) 20));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setImageResource(R.drawable.ic_ab_done);
+        imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView2.setBackground(bkb.f0(1090519039, 1, -1));
+        imageView2.setOnClickListener(new x91(this, (byte) 14));
+        ql2 ql2Var = new ql2(this, context);
+        this.n1 = ql2Var;
+        ql2Var.c = 1.0f;
+        ql2Var.a();
+        ql2Var.invalidate();
+        zf2 zf2Var = new zf2(context, (byte) 2);
+        zf2Var.setOrientation(1);
+        vl2 vl2Var = new vl2(this, context);
+        zf2Var.b = vl2Var;
+        vl2Var.a(this.p1);
+        zf2Var.c = new ul2(this, context);
+        zf2Var.d = new xl2(this, context);
+        rl2 rl2Var = new rl2(context, this.J0);
+        rl2Var.setAdapter(new sl2(zf2Var, (byte) 0));
+        zf2Var.addView(rl2Var, nme.l(1.0f, -1, 0));
+        zf2Var.addView(ql2Var, nme.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        linearLayout2.setGravity(16);
+        linearLayout2.addView(imageView, nme.o(28, 28));
+        linearLayout2.addView(rl2Var.l(8, false), nme.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, nme.o(28, 28));
+        zf2Var.addView(linearLayout2, nme.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        this.l1 = zf2Var;
+        linearLayout.addView(zf2Var, nme.o(-1, 0));
+        pl2 pl2Var = new pl2(this, context, linearLayout);
+        pl2Var.addView(linearLayout);
+        this.O = pl2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x01c5 A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01a0  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        am2 am2Var;
-        long j;
-        am2 am2Var2;
-        boolean z;
-        long k;
-        float f;
-        am2 am2Var3;
-        byte b = this.a;
-        byte b2 = 5;
-        byte b3 = 10;
-        sl2 sl2Var = null;
-        cm2 cm2Var = this.b;
-        switch (b) {
-            case 0:
-                if (!cm2Var.f0 && !cm2Var.o0) {
-                    bm2 bm2Var = cm2Var.k0;
-                    if (bm2Var != null && (am2Var = bm2Var.d) != null) {
-                        am2Var.setVolume(0.0f);
-                    }
-                    bm2 bm2Var2 = cm2Var.h0;
-                    cm2Var.k0 = bm2Var2;
-                    if (bm2Var2 != null && bm2Var2.n != null) {
-                        Runnable runnable = cm2Var.m0;
-                        if (runnable != null) {
-                            runnable.run();
-                        }
-                        bm2 bm2Var3 = cm2Var.k0;
-                        am2 am2Var4 = bm2Var3.d;
-                        if (am2Var4 != null) {
-                            am2Var4.setVolume(bm2Var3.n.P);
-                        }
-                        FrameLayout frameLayout = new FrameLayout(cm2Var.getContext());
-                        ImageView imageView = new ImageView(cm2Var.getContext());
-                        imageView.setImageResource(R.drawable.menu_lightbulb);
-                        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                        imageView.setScaleType(ImageView.ScaleType.CENTER);
-                        frameLayout.addView(imageView, qoe.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
-                        TextView textView = new TextView(cm2Var.getContext());
-                        td4.v(13.0f, 2131744391, 1, textView, null);
-                        textView.setTextColor(-1);
-                        frameLayout.addView(textView, qoe.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        bu5 G = bu5.G(cm2Var.a, cm2Var.b, cm2Var);
-                        if (cm2Var.k0.n.K) {
-                            mla mlaVar = new mla(cm2Var.getContext(), 0);
-                            mlaVar.b = 0.0f;
-                            mlaVar.c = 1.5f;
-                            mlaVar.c(cm2Var.k0.n.P);
-                            mlaVar.h = new mf2(cm2Var, (byte) 25);
-                            mlaVar.S = gm.L(220.0f);
-                            G.p(mlaVar);
-                            G.n(true);
-                        }
-                        G.W = (short) 220;
-                        G.b(R.drawable.menu_camera_retake, jb6.M0(2131744500, null), new yl2(cm2Var, (byte) 4), false);
-                        G.b(R.drawable.msg_delete, jb6.M0(2131751535, null), new yl2(cm2Var, b2), true);
-                        G.n(true);
-                        G.q(frameLayout, qoe.o(nm7.w3, -2));
-                        G.p = new jd(b3);
-                        G.i = (byte) 1;
-                        G.Y = true;
-                        G.u = true;
-                        G.v = false;
-                        int L = gm.L(12.0f);
-                        int L2 = gm.L(10.0f);
-                        G.l = L;
-                        G.k = L2;
-                        G.p = new yl2(cm2Var, (byte) 6);
-                        G.a0();
-                        try {
-                            cm2Var.performHapticFeedback(0, 1);
-                            break;
-                        } catch (Exception unused) {
-                            return;
-                        }
-                    }
-                }
-                break;
-            case 1:
-                cm2Var.invalidate();
-                break;
-            case 2:
-                if (cm2Var.g0) {
-                    cm2Var.g0 = false;
-                    cm2Var.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                long position = cm2Var.getPosition();
-                bm2 mainPart = cm2Var.getMainPart();
-                if (mainPart == null) {
-                    j = 0;
-                } else {
-                    g6b g6bVar = mainPart.n;
-                    j = g6bVar.X + ((long) (g6bVar.V * g6bVar.h0));
-                }
-                for (int i = 0; i < cm2Var.h.size(); i++) {
-                    bm2 bm2Var4 = (bm2) cm2Var.h.get(i);
-                    if (bm2Var4.n != null && (am2Var2 = bm2Var4.d) != null) {
-                        long duration = am2Var2.getDuration();
-                        long k2 = Utilities.k((position + j) - bm2Var4.n.X, duration, 0L);
-                        if (!cm2Var.o0 || cm2Var.r0) {
-                            float f2 = k2;
-                            g6b g6bVar2 = bm2Var4.n;
-                            float f3 = duration;
-                            if (f2 > g6bVar2.V * f3 && f2 < g6bVar2.W * f3) {
-                                z = true;
-                                g6b g6bVar3 = bm2Var4.n;
-                                float f4 = duration;
-                                k = Utilities.k(k2, (long) (g6bVar3.W * f4), (long) (g6bVar3.V * f4));
-                                if (bm2Var4.d.isPlaying() != z) {
-                                    am2 am2Var5 = bm2Var4.d;
-                                    if (z) {
-                                        am2Var5.play();
-                                    } else {
-                                        am2Var5.pause();
-                                    }
-                                }
-                                am2 am2Var6 = bm2Var4.d;
-                                if (!cm2Var.w0) {
-                                    g6b g6bVar4 = bm2Var4.n;
-                                    if (!g6bVar4.Y && cm2Var.o0) {
-                                        f = g6bVar4.P;
-                                        am2Var6.setVolume(f);
-                                        if (Math.abs((bm2Var4.g >= 0 ? bm2Var4.g : bm2Var4.d.getCurrentPosition()) - k) <= 450 && bm2Var4.g < 0) {
-                                            am2 am2Var7 = bm2Var4.d;
-                                            bm2Var4.g = k;
-                                            am2Var7.seekTo(k, cm2Var.q0, new xf2(bm2Var4, b2));
-                                        }
-                                    }
-                                }
-                                f = 0.0f;
-                                am2Var6.setVolume(f);
-                                if (Math.abs((bm2Var4.g >= 0 ? bm2Var4.g : bm2Var4.d.getCurrentPosition()) - k) <= 450) {
-                                    am2 am2Var72 = bm2Var4.d;
-                                    bm2Var4.g = k;
-                                    am2Var72.seekTo(k, cm2Var.q0, new xf2(bm2Var4, b2));
-                                }
-                            }
-                        }
-                        z = false;
-                        g6b g6bVar32 = bm2Var4.n;
-                        float f42 = duration;
-                        k = Utilities.k(k2, (long) (g6bVar32.W * f42), (long) (g6bVar32.V * f42));
-                        if (bm2Var4.d.isPlaying() != z) {
-                        }
-                        am2 am2Var62 = bm2Var4.d;
-                        if (!cm2Var.w0) {
-                        }
-                        f = 0.0f;
-                        am2Var62.setVolume(f);
-                        if (Math.abs((bm2Var4.g >= 0 ? bm2Var4.g : bm2Var4.d.getCurrentPosition()) - k) <= 450) {
-                        }
-                    }
-                }
-                lqb lqbVar = cm2Var.s0;
-                if (lqbVar != null) {
-                    lqbVar.setProgress(position);
-                }
-                cl8 cl8Var = cm2Var.t0;
-                if (cl8Var != null) {
-                    cl8Var.w(true);
-                    cm2Var.t0.y(true);
-                }
-                if (cm2Var.o0 && cm2Var.r0) {
-                    gm.d3(cm2Var.x0, (long) (1000.0f / gm.r));
-                    break;
-                }
-                break;
-            case 4:
-                bm2 bm2Var5 = cm2Var.k0;
-                if (bm2Var5 != null) {
-                    bm2Var5.a(null);
-                    cm2Var.q();
-                    cm2Var.invalidate();
-                    Runnable runnable2 = cm2Var.n0;
-                    if (runnable2 != null) {
-                        runnable2.run();
-                        break;
-                    }
-                }
-                break;
+    public final void D0(int i, int i2) {
+        View findFocus;
+        if (!this.s1) {
+            if (i2 != 2) {
+                return;
+            } else {
+                this.s1 = true;
+            }
+        }
+        zf2 zf2Var = this.l1;
+        if (i2 != 5 && (findFocus = zf2Var.findFocus()) != null) {
+            findFocus.clearFocus();
+            gl.t1(findFocus);
+        }
+        if (i2 != 3) {
+            ((vl2) zf2Var.b).a(i);
+        }
+        if (i2 != 0) {
+            ul2 ul2Var = (ul2) zf2Var.c;
+            boolean z = i2 != 1;
+            ul2Var.n.p1 = i;
+            float[] fArr = ul2Var.h;
+            Color.colorToHSV(i, fArr);
+            if (z) {
+                float f = (fArr[1] * 0.5f) + 1.0f;
+                float f2 = fArr[2];
+                ul2Var.d = f - (f2 <= 0.5f ? 1.0f - (((1.0f - f2) * 0.22000003f) + 0.78f) : ls6.B(1.0f, f2, 0.22f, 1.0f));
+                ul2Var.e = fArr[0] / 360.0f;
+            }
+            ul2Var.invalidate();
+        }
+        if (i2 != 1) {
+            ql2 ql2Var = this.n1;
+            ql2Var.c = Color.alpha(i) / 255.0f;
+            ql2Var.a();
+            ql2Var.invalidate();
+        }
+        xl2 xl2Var = (xl2) zf2Var.d;
+        xl2Var.e = true;
+        xl2Var.a.b();
+        xl2Var.b.b();
+        xl2Var.c.b();
+        EditTextBoldCursor editTextBoldCursor = xl2Var.d;
+        if (!editTextBoldCursor.isFocused()) {
+            int selectionStart = editTextBoldCursor.getSelectionStart();
+            int selectionEnd = editTextBoldCursor.getSelectionEnd();
+            StringBuilder sb = new StringBuilder(Integer.toHexString(xl2Var.f.p1));
+            while (sb.length() < 8) {
+                sb.insert(0, "0");
+            }
+            editTextBoldCursor.setText(sb.toString().toUpperCase().substring(2));
+            editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        }
+        xl2Var.e = false;
+    }
+
+    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
+    public final void dismiss() {
+        super.dismiss();
+        vs2 vs2Var = this.q1;
+        if (vs2Var != null) {
+            vs2Var.accept(Integer.valueOf(this.p1));
+        }
+    }
+
+    @Override // fx0, android.app.Dialog
+    public final void show() {
+        qx qxVar = this.r1;
+        boolean z = false;
+        switch (qxVar.a) {
             case 5:
-                bm2 bm2Var6 = cm2Var.k0;
-                if (bm2Var6 != null && cm2Var.h.indexOf(bm2Var6) >= 0) {
-                    sl2 sl2Var2 = cm2Var.f;
-                    int indexOf = sl2Var2.e.indexOf(bm2Var6.h);
-                    ArrayList arrayList = sl2Var2.e;
-                    if (indexOf >= 0 && indexOf < arrayList.size()) {
-                        ArrayList arrayList2 = new ArrayList(arrayList);
-                        arrayList2.remove(indexOf);
-                        StringBuilder sb = new StringBuilder();
-                        int i2 = 0;
-                        for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                            rl2 rl2Var = (rl2) arrayList2.get(i3);
-                            if (rl2Var.c != i2) {
-                                sb.append("/");
-                                i2 = rl2Var.c;
-                            }
-                            sb.append(".");
-                        }
-                        sl2Var = new sl2(sb.toString());
-                    }
-                    if (sl2Var.e.size() <= 1) {
-                        cm2Var.b();
-                        cm2Var.invalidate();
-                    }
-                    cm2Var.o(sl2Var);
-                    cm2Var.g0 = true;
-                    cm2Var.q();
-                    cm2Var.invalidate();
-                    Runnable runnable3 = cm2Var.n0;
-                    if (runnable3 != null) {
-                        runnable3.run();
-                    }
-                    v9b v9bVar = ((j9b) cm2Var).y0;
-                    v9bVar.J0.a(false, true);
-                    int size = sl2Var.e.size();
-                    xl2 xl2Var = v9bVar.H0;
-                    if (size > 1) {
-                        v9bVar.A0 = sl2Var;
-                        xl2Var.a(new tl2(sl2Var, false), true);
-                        v9bVar.H0.b(true, true);
-                    } else {
-                        xl2Var.b(false, true);
-                    }
-                    v9bVar.l0(true);
-                    wt4 wt4Var = v9bVar.N0;
-                    if (wt4Var != null) {
-                        wt4Var.setMultipleOnClick(v9bVar.B0.i());
-                        v9bVar.N0.setMaxCount(Math.min(10, sl2.b() - v9bVar.B0.getFilledCount()));
-                        break;
-                    }
-                }
-                break;
-            default:
-                bm2 bm2Var7 = cm2Var.k0;
-                if (bm2Var7 != null && (am2Var3 = bm2Var7.d) != null) {
-                    am2Var3.setVolume(0.0f);
+                if (((Bitmap) qxVar.c) != null) {
+                    z = true;
                     break;
                 }
                 break;
         }
+        if (!z) {
+            this.m1.setVisibility(8);
+        }
+        super.show();
     }
 }

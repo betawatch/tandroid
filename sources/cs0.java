@@ -1,39 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class cs0 extends tk4 {
-    public final Paint V;
-    public final /* synthetic */ gs0 W;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class cs0 extends k27 {
+    public TL_iv.RichMessage u3;
+    public final /* synthetic */ boolean v3;
+    public final /* synthetic */ TLRPC.BotInlineResult w3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cs0(gs0 gs0Var, Context context) {
-        super(context, null);
-        this.W = gs0Var;
-        this.V = new Paint();
+    public cs0(int i, TLRPC.TL_message tL_message, boolean z, TLRPC.BotInlineResult botInlineResult) {
+        super(i, tL_message, true, true);
+        this.v3 = z;
+        this.w3 = botInlineResult;
     }
 
-    @Override // tk4
-    public final int getColumnsCount() {
-        return this.W.d;
+    @Override // k27
+    public final TL_iv.RichMessage E0() {
+        if (!this.v3) {
+            return super.E0();
+        }
+        TL_iv.RichMessage richMessage = this.u3;
+        if (richMessage != null) {
+            return richMessage;
+        }
+        TL_iv.RichMessage n = vvc.n(vvc.v(this.K1, this.w3));
+        this.u3 = n;
+        return n;
     }
 
-    @Override // tk4
-    public final int getViewType() {
-        setIsSingleCell(false);
-        return 27;
+    @Override // k27
+    public final boolean N3() {
+        return false;
     }
 
-    @Override // tk4, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int v0 = cmb.v0(cmb.c6, this.W.a0.c);
-        Paint paint = this.V;
-        paint.setColor(v0);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.onDraw(canvas);
+    @Override // k27
+    public final boolean O3() {
+        return false;
     }
 }

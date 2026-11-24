@@ -1,286 +1,259 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.android.gms.tasks.Tasks;
-import java.io.File;
+import android.os.SystemClock;
+import android.util.Pair;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class rz1 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rz1 implements gj, ed, jl3, ll5, ma6, lx6, jo9, yc7, ka5, sc7, m63 {
     public final /* synthetic */ byte a;
-    public Object b;
-    public Object c;
-    public Object d;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ rz1(h3f h3fVar, rhb rhbVar, String str) {
+    public /* synthetic */ rz1(long j, ra0 ra0Var) {
         this.a = (byte) 10;
-        this.b = h3fVar;
-        this.c = rhbVar;
-        this.d = str;
+        this.b = j;
+        this.c = ra0Var;
     }
 
-    private final void a() {
-        k89 k89Var;
-        ugd ugdVar = (ugd) this.b;
-        HashMap hashMap = ugdVar.c.D;
-        String str = (String) this.c;
-        synchronized (hashMap) {
-            k89Var = (k89) ugdVar.c.D.get(str);
-        }
-        if (k89Var != null) {
-            k89Var.o((String) this.d);
-        } else {
-            bhd.H.b("Discarded message for unknown namespace '%s'", str);
-        }
-    }
-
-    private final void b() {
-        int i;
-        Task u;
-        ok2 ok2Var = (ok2) this.c;
-        Intent intent = ok2Var.a;
-        String stringExtra = intent.getStringExtra("google.message_id");
-        if (stringExtra == null) {
-            stringExtra = intent.getStringExtra("message_id");
-        }
-        boolean isEmpty = TextUtils.isEmpty(stringExtra);
-        byte b = 2;
-        if (isEmpty) {
-            u = Tasks.forResult(null);
-        } else {
-            Bundle bundle = new Bundle();
-            Intent intent2 = ok2Var.a;
-            String stringExtra2 = intent2.getStringExtra("google.message_id");
-            if (stringExtra2 == null) {
-                stringExtra2 = intent2.getStringExtra("message_id");
-            }
-            bundle.putString("google.message_id", stringExtra2);
-            Intent intent3 = ok2Var.a;
-            Integer valueOf = intent3.hasExtra("google.product_id") ? Integer.valueOf(intent3.getIntExtra("google.product_id", 0)) : null;
-            if (valueOf != null) {
-                bundle.putInt("google.product_id", valueOf.intValue());
-            }
-            Context context = (Context) this.b;
-            bundle.putBoolean("supports_message_handled", true);
-            jif t = jif.t(context);
-            synchronized (t) {
-                i = t.a;
-                t.a = i + 1;
-            }
-            u = t.u(new fdf(i, 2, bundle, (byte) 0));
-        }
-        u.addOnCompleteListener(gp3.e, new fkd((CountDownLatch) this.d, b));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0024, code lost:
-    
-        if (r2.isEmpty() == false) goto L9;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private final void c() {
-        String str;
-        lhf lhfVar;
-        h3f h3fVar = (h3f) this.b;
-        rhb rhbVar = (rhb) this.c;
-        wne wneVar = wne.b;
-        String str2 = (String) this.d;
-        uqd uqdVar = (uqd) rhbVar.b;
-        uqdVar.c = wneVar;
-        rye ryeVar = (rye) uqdVar.b;
-        if (ryeVar != null) {
-            str = ryeVar.d;
-            int i = ivd.a;
-            if (str != null) {
-            }
-        }
-        str = "NA";
-        sue sueVar = new sue();
-        sueVar.a = h3fVar.a;
-        sueVar.b = h3fVar.b;
-        synchronized (h3f.class) {
-            lhfVar = h3f.j;
-            if (lhfVar == null) {
-                lb6 a = uvd.a(Resources.getSystem().getConfiguration());
-                Object[] objArr = new Object[4];
-                int i2 = 0;
-                int i3 = 0;
-                while (i2 < a.a.size()) {
-                    Locale locale = a.a.get(i2);
-                    s13 s13Var = ao2.a;
-                    String languageTag = locale.toLanguageTag();
-                    languageTag.getClass();
-                    int i4 = i3 + 1;
-                    int length = objArr.length;
-                    if (length < i4) {
-                        int i5 = length + (length >> 1) + 1;
-                        if (i5 < i4) {
-                            i5 = Integer.highestOneBit(i3) << 1;
-                        }
-                        if (i5 < 0) {
-                            i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        }
-                        objArr = Arrays.copyOf(objArr, i5);
-                    }
-                    objArr[i3] = languageTag;
-                    i2++;
-                    i3 = i4;
-                }
-                v4f v4fVar = h9f.f;
-                lhfVar = i3 == 0 ? lhf.r : new lhf(i3, objArr);
-                h3f.j = lhfVar;
-            }
-        }
-        sueVar.k = lhfVar;
-        sueVar.g = Boolean.TRUE;
-        sueVar.d = str;
-        sueVar.c = str2;
-        sueVar.e = h3fVar.f.isSuccessful() ? (String) h3fVar.f.getResult() : h3fVar.d.a();
-        sueVar.i = 10;
-        sueVar.j = Integer.valueOf(h3fVar.h);
-        rhbVar.c = sueVar;
-        h3fVar.c.a(rhbVar);
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        k89 k89Var;
-        Object obj = null;
+    @Override // ll5
+    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
         switch (this.a) {
-            case 0:
-                ((tz1) this.d).K((File) this.c, (ArrayList) this.b);
-                return;
-            case 1:
-                ha9 ha9Var = (ha9) this.d;
-                b90 b90Var = (b90) this.b;
-                ha9Var.b(b90Var, (TaskCompletionSource) this.c);
-                ((AtomicInteger) ha9Var.i.c).set(0);
-                double min = Math.min(3600000.0d, Math.pow(ha9Var.b, ha9Var.a()) * (60000.0d / ha9Var.a));
-                String str = "Delay for: " + String.format(Locale.US, "%.2f", Double.valueOf(min / 1000.0d)) + " s for report: " + b90Var.b;
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", str, null);
-                }
-                try {
-                    Thread.sleep((long) min);
-                    return;
-                } catch (InterruptedException unused) {
-                    return;
-                }
-            case 2:
-                try {
-                    obj = ((tn4) this.b).call();
-                } catch (Exception unused2) {
-                }
-                ((Handler) this.d).post(new us4(this.c, obj, (byte) 10));
-                return;
-            case 3:
-                tia tiaVar = (tia) this.d;
-                tiaVar.d.c.remove((String) this.b);
-                ec9 ec9Var = (ec9) this.c;
-                if (ec9Var.a instanceof t3) {
-                    return;
-                }
-                try {
-                    ec9Var.get();
-                    return;
-                } catch (Exception e) {
-                    tiaVar.c.l(e);
-                    return;
-                }
             case 4:
-                dzc.h((View) this.b, (xab) this.c);
-                ((ValueAnimator) this.d).start();
-                return;
-            case 5:
-                y26 y26Var = (y26) this.b;
-                dd8 dd8Var = (dd8) this.d;
-                if (dd8Var.a > 0) {
-                    Bundle bundle = (Bundle) dd8Var.c;
-                    y26Var.onCreate(bundle != null ? bundle.getBundle((String) this.c) : null);
+                q31 q31Var = (q31) this.c;
+                long j = this.b;
+                jl5 p = imageReceiver.p();
+                if (z && p != null) {
+                    Bitmap bitmap = p.c;
+                    if (bitmap == null) {
+                        Drawable drawable = p.d;
+                        if (drawable instanceof BitmapDrawable) {
+                            bitmap = ((BitmapDrawable) drawable).getBitmap();
+                        }
+                    }
+                    q31Var.onComplete(new Pair(Long.valueOf(j), bitmap));
+                    break;
                 }
-                if (dd8Var.a >= 2) {
-                    y26Var.onStart();
-                }
-                if (dd8Var.a >= 3) {
-                    y26Var.onResume();
-                }
-                if (dd8Var.a >= 4) {
-                    y26Var.onStop();
-                }
-                if (dd8Var.a >= 5) {
-                    y26Var.onDestroy();
-                    return;
-                }
-                return;
-            case 6:
-                a();
-                return;
-            case 7:
-                super/*ui0*/.c((oo8) this.c, (xg0) this.d);
-                return;
-            case 8:
-                super/*ui0*/.a((du2) this.c, (eu2) this.d);
-                return;
-            case 9:
-                b();
-                return;
-            case 10:
-                c();
-                return;
+                break;
             default:
-                synchronized (((zif) this.b).I) {
-                    k89Var = (k89) ((zif) this.b).I.get((String) this.c);
+                ResultCallback resultCallback = (ResultCallback) this.c;
+                long j2 = this.b;
+                jl5 p2 = imageReceiver.p();
+                if (z && p2 != null && !p2.c.isRecycled()) {
+                    Bitmap bitmap2 = p2.c;
+                    if (bitmap2 == null) {
+                        Drawable drawable2 = p2.d;
+                        if (drawable2 instanceof BitmapDrawable) {
+                            bitmap2 = ((BitmapDrawable) drawable2).getBitmap();
+                        }
+                    }
+                    if (bitmap2 == null) {
+                        if (resultCallback != null) {
+                            resultCallback.onComplete(null);
+                            break;
+                        }
+                    } else {
+                        if (resultCallback != null) {
+                            resultCallback.onComplete(new Pair(Long.valueOf(j2), bitmap2));
+                        }
+                        Utilities.e.c(new zd2(j2, bitmap2, (byte) 1));
+                        break;
+                    }
                 }
-                if (k89Var != null) {
-                    k89Var.o((String) this.d);
-                    return;
-                } else {
-                    zif.X.b("Discarded message for unknown namespace '%s'", (String) this.c);
-                    return;
-                }
+                break;
         }
     }
 
-    public /* synthetic */ rz1(Object obj, Object obj2, Object obj3, byte b) {
+    @Override // ll5
+    public final void E(int i, Drawable drawable) {
+        byte b = this.a;
+    }
+
+    @Override // yc7
+    public final void a(String str) {
+        t5b t5bVar = (t5b) this.c;
+        na7.q1(t5bVar.a0.a).M1().q(this.b, str, new m5b(t5bVar, (byte) 2));
+    }
+
+    @Override // jo9
+    public final Object apply(Object obj) {
+        ra0 ra0Var = (ra0) this.c;
+        SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("next_request_ms", Long.valueOf(this.b));
+        String str = ra0Var.a;
+        cj8 cj8Var = ra0Var.c;
+        if (sQLiteDatabase.update("transport_contexts", contentValues, "backend_name = ? and priority = ?", new String[]{str, String.valueOf(dj8.a(cj8Var))}) < 1) {
+            contentValues.put("backend_name", str);
+            contentValues.put("priority", Integer.valueOf(dj8.a(cj8Var)));
+            sQLiteDatabase.insert("transport_contexts", null, contentValues);
+        }
+        return null;
+    }
+
+    @Override // ma6
+    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+        byte b = this.a;
+        Object obj = this.c;
+        switch (b) {
+            case 6:
+                float[] fArr = FragmentContextView.W0;
+                z3a.B(((db6) obj).h.K1).q0(x3a.d(messageMedia, this.b, null, null, null, null, true, 0));
+                break;
+            default:
+                String str = LaunchActivity.C1;
+                z3a.B(((int[]) obj)[0]).q0(x3a.d(messageMedia, this.b, null, null, null, null, true, 0));
+                break;
+        }
+    }
+
+    @Override // jl3
+    public final void c(TLRPC.TL_error tL_error, String str) {
+        p8c p8cVar = (p8c) this.c;
+        if (str == null) {
+            jm3.G(tL_error);
+        }
+        gl.d3(new gm3(p8cVar, str), Math.max(0L, (this.b + 1200) - SystemClock.uptimeMillis()));
+    }
+
+    @Override // m63
+    public final o63 createDataSource() {
+        return new gbc(((lbc) this.c).h.createDataSource(), this.b);
+    }
+
+    @Override // ka5
+    public final void f(int i, ArrayList arrayList) {
+        bvb bvbVar = (bvb) this.c;
+        d dVar = bvbVar.b;
+        int size = arrayList.size();
+        int[] iArr = new int[1];
+        TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
+        tL_messages_invitedUsers.updates = new TLRPC.TL_updates();
+        int i2 = 0;
+        while (i2 < size) {
+            TLRPC.User user = (TLRPC.User) arrayList.get(i2);
+            na7 messagesController = dVar.getMessagesController();
+            jc jcVar = new jc((byte) 10);
+            long j = this.b;
+            messagesController.j(j, user, i, null, dVar, false, jcVar, null, new sf1(bvbVar, tL_messages_invitedUsers, iArr, size, arrayList, j));
+            i2++;
+            size = size;
+            iArr = iArr;
+            tL_messages_invitedUsers = tL_messages_invitedUsers;
+        }
+    }
+
+    @Override // sc7
+    public final void k(boolean z) {
+        mu1 mu1Var = ((kxb) this.c).s;
+        if (ug8.A(mu1Var)) {
+            mu1Var.xa(this.b, false);
+        }
+    }
+
+    @Override // lx6
+    public final Object p(tv6 tv6Var, su6 su6Var, int i) {
+        try {
+            return tv6Var.o(su6Var, mm5.u(br6.a(su6Var.c, (Bundle) this.c)), 0, this.b);
+        } catch (RuntimeException e) {
+            lad.g("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e);
+            return jie.b(e);
+        }
+    }
+
+    @Override // gj
+    public final void s(int i, int i2, boolean z) {
+        boolean p1;
+        x02 x02Var = (x02) this.c;
+        p02 p02Var = x02Var.v2;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = x02Var.d2;
+        long j = this.b;
+        if (p02Var == chatAttachAlertPhotoLayout || p02Var == x02Var.k2) {
+            p1 = x02Var.p1(z, i, i2, j, x02Var.a1());
+        } else {
+            if (!p02Var.M(z, i, i2, j, x02Var.a1())) {
+                x02Var.A4 = true;
+                x02Var.dismiss();
+            }
+            p1 = false;
+        }
+        bx1 bx1Var = x02Var.b2;
+        if (bx1Var != null) {
+            bx1Var.f(!p1);
+            x02Var.b2 = null;
+        }
+    }
+
+    @Override // ed
+    public final void u(hd hdVar, int i) {
+        byte b = this.a;
+        long j = this.b;
+        Object obj = this.c;
+        switch (b) {
+            case 1:
+                mt9 mt9Var = ((cj3) obj).D0.e0;
+                al3 al3Var = (al3) mt9Var.y0.f(j);
+                if (al3Var != null) {
+                    mt9Var.y0.l(j);
+                    mt9Var.u0.remove(al3Var);
+                    mt9Var.w0.remove(al3Var);
+                    mt9Var.v0.remove(al3Var);
+                    mt9Var.f();
+                    ad7.Y(mt9Var.t0).a.c(new et((Object) mt9Var, j, (byte) 15));
+                    break;
+                }
+                break;
+            default:
+                ((ji3) obj).a.getMediaDataController().Q1(j);
+                break;
+        }
+    }
+
+    @Override // ll5
+    public final void v(ImageReceiver imageReceiver) {
+        byte b = this.a;
+    }
+
+    public /* synthetic */ rz1(jm3 jm3Var, long j, p8c p8cVar) {
+        this.a = (byte) 3;
+        this.b = j;
+        this.c = p8cVar;
+    }
+
+    public /* synthetic */ rz1(Object obj, long j, byte b) {
         this.a = b;
-        this.d = obj;
-        this.b = obj2;
-        this.c = obj3;
+        this.c = obj;
+        this.b = j;
     }
 
-    public /* synthetic */ rz1(Object obj, Object obj2, Object obj3, boolean z, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    private final void h(ImageReceiver imageReceiver) {
     }
 
-    public /* synthetic */ rz1() {
-        this.a = (byte) 2;
+    private final void i(ImageReceiver imageReceiver) {
     }
 
-    public rz1(View view, hzc hzcVar, xab xabVar, ValueAnimator valueAnimator) {
-        this.a = (byte) 4;
-        this.b = view;
-        this.c = xabVar;
-        this.d = valueAnimator;
+    @Override // ka5
+    public final void e(TLRPC.User user) {
+    }
+
+    private final void d(int i, Drawable drawable) {
+    }
+
+    private final void g(int i, Drawable drawable) {
     }
 }

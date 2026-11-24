@@ -1,101 +1,104 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Property;
 import android.view.View;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class o5c extends ScrollView {
-    public final int[] a;
-    public final Rect b;
-    public boolean c;
-    public final /* synthetic */ p5c d;
+public final class o5c extends w64 {
+    public final /* synthetic */ byte X;
+    public final Object Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5c(p5c p5cVar, Context context) {
-        super(context);
-        this.d = p5cVar;
-        this.a = new int[2];
-        this.b = new Rect();
-        this.c = true;
+    public o5c() {
+        super(100, false);
+        this.X = (byte) 2;
+        this.Y = new via();
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        this.c = false;
-        super.onLayout(z, i, i2, i3, i4);
+    @Override // w64
+    public final via B1(int i) {
+        switch (this.X) {
+            case 2:
+                via viaVar = (via) this.Y;
+                viaVar.b = 100.0f;
+                viaVar.a = 100.0f;
+                return viaVar;
+            default:
+                return super.B1(i);
+        }
     }
 
-    @Override // android.view.View
-    public final void onScrollChanged(int i, int i2, int i3, int i4) {
-        a aVar;
-        a aVar2;
-        super.onScrollChanged(i, i2, i3, i4);
-        p5c p5cVar = this.d;
-        TextView textView = p5cVar.c;
-        if (textView != null) {
-            int[] iArr = this.a;
-            textView.getLocationOnScreen(iArr);
-            int measuredHeight = p5cVar.c.getMeasuredHeight() + iArr[1];
-            aVar = ((d) p5cVar).actionBar;
-            boolean z = measuredHeight < aVar.getBottom();
-            if (z != (p5cVar.c.getTag() == null)) {
-                p5cVar.c.setTag(z ? null : 1);
-                AnimatorSet animatorSet = p5cVar.L;
-                if (animatorSet != null) {
-                    animatorSet.cancel();
-                    p5cVar.L = null;
+    @Override // r35, d49
+    public final void S(wg2 wg2Var, p49 p49Var, View view, u4 u4Var) {
+        switch (this.X) {
+            case 2:
+                super.S(wg2Var, p49Var, view, u4Var);
+                AccessibilityNodeInfo accessibilityNodeInfo = u4Var.a;
+                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+                qx4 qx4Var = collectionItemInfo != null ? new qx4(collectionItemInfo) : null;
+                if (qx4Var != null) {
+                    AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo2 = (AccessibilityNodeInfo.CollectionItemInfo) qx4Var.a;
+                    if (collectionItemInfo2.isHeading()) {
+                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo2.getRowIndex(), collectionItemInfo2.getRowSpan(), collectionItemInfo2.getColumnIndex(), collectionItemInfo2.getColumnSpan(), false));
+                        break;
+                    }
                 }
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                p5cVar.L = animatorSet2;
-                a91 a91Var = p5cVar.E;
-                float[] fArr = {z ? 1.0f : 0.0f};
-                Property property = View.ALPHA;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(a91Var, (Property<a91, Float>) property, fArr);
-                aVar2 = ((d) p5cVar).actionBar;
-                animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(aVar2.getTitleTextView(), (Property<lka, Float>) property, z ? 1.0f : 0.0f));
-                p5cVar.L.setDuration(150L);
-                p5cVar.L.addListener(new q7b(this, (byte) 13));
-                p5cVar.L.start();
-            }
+                break;
+            default:
+                super.S(wg2Var, p49Var, view, u4Var);
+                break;
         }
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
-        if (Build.VERSION.SDK_INT < 29 && view2 != null && !this.c) {
-            scrollToDescendant(view2);
+    @Override // t26
+    public final int V0(p49 p49Var) {
+        byte b = this.X;
+        Object obj = this.Y;
+        switch (b) {
+            case 0:
+                if (!((q5c) obj).i3) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!((q5c) obj).i3) {
+                    break;
+                } else {
+                    break;
+                }
         }
-        super.requestChildFocus(view, view2);
+        return super.V0(p49Var);
     }
 
-    @Override // android.widget.ScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        this.c = true;
-        super.requestLayout();
+    @Override // t26
+    public final void y0(p49 p49Var, int[] iArr) {
+        switch (this.X) {
+            case 2:
+                super.y0(p49Var, iArr);
+                iArr[1] = Math.max(iArr[1], rfa.a(1) << 1);
+                break;
+            default:
+                super.y0(p49Var, iArr);
+                break;
+        }
     }
 
-    @Override // android.widget.ScrollView
-    public final void scrollToDescendant(View view) {
-        Rect rect = this.b;
-        view.getDrawingRect(rect);
-        offsetDescendantRectToMyCoords(view, rect);
-        rect.bottom = gm.L(120.0f) + rect.bottom;
-        int computeScrollDeltaToGetChildRectOnScreen = computeScrollDeltaToGetChildRectOnScreen(rect);
-        if (computeScrollDeltaToGetChildRectOnScreen < 0) {
-            computeScrollDeltaToGetChildRectOnScreen -= (getMeasuredHeight() - view.getMeasuredHeight()) / 2;
+    @Override // d49
+    public final int z() {
+        switch (this.X) {
+            case 2:
+                return 0;
+            default:
+                return super.z();
         }
-        if (computeScrollDeltaToGetChildRectOnScreen != 0) {
-            smoothScrollBy(0, computeScrollDeltaToGetChildRectOnScreen);
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o5c(q5c q5cVar, int i, byte b) {
+        super(i, false);
+        this.X = b;
+        this.Y = q5cVar;
     }
 }

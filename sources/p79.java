@@ -1,11 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface p79 {
-    int a();
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    void b(o79 o79Var);
-
-    void c();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class p79 extends fx0 {
+    public o79 l1;
+    public EditTextBoldCursor m1;
 }

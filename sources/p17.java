@@ -1,46 +1,56 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class p17 {
-    public final /* synthetic */ d a;
-    public final /* synthetic */ u17 b;
+public final class p17 extends uk1 {
+    public final TextPaint A2;
+    public final /* synthetic */ r17 B2;
+    public final wl0 z2;
 
-    public p17(u17 u17Var, d dVar) {
-        this.b = u17Var;
-        this.a = dVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p17(r17 r17Var, Context context, t17 t17Var) {
+        super(t17Var, context, false);
+        this.B2 = r17Var;
+        this.z2 = new wl0(r17Var.d, this, 10, false);
+        TextPaint textPaint = new TextPaint(1);
+        this.A2 = textPaint;
+        textPaint.setTypeface(gl.o());
+        textPaint.setTextSize(gl.L(Math.max(16, gba.S0) - 2));
+        textPaint.setColor(-1);
     }
 
-    public final void a(boolean z) {
-        u17 u17Var = this.b;
-        k17 k17Var = u17Var.f;
-        if (u17Var.getNeededLayoutManager() != u17Var.getCurrentLayoutManager() && u17Var.a()) {
-            if (k17Var.N0 > 0) {
-                u17Var.O = true;
-                u17Var.o(false);
-                return;
+    @Override // uk1
+    public final Paint R(String str) {
+        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
+            return this.A2;
+        }
+        if ("paintChatActionBackground".equals(str)) {
+            ot7 ot7Var = this.B2.h;
+            ot7Var.x0 = true;
+            boolean z = ot7Var.D0;
+            wl0 wl0Var = this.z2;
+            if (wl0Var.r != z) {
+                wl0Var.r = z;
+                if (wl0Var.i == 10) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    colorMatrix.setSaturation(1.6f);
+                    gl.l2(colorMatrix, wl0Var.r ? 0.97f : 0.92f);
+                    gl.h(colorMatrix, wl0Var.r ? 0.12f : -0.06f);
+                    wl0Var.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    wl0Var.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                }
             }
-            u17Var.b.setLayoutManager(u17Var.getNeededLayoutManager());
+            Paint c = wl0Var.c(1.0f);
+            if (c != null) {
+                return c;
+            }
         }
-        if (z && !u17Var.a()) {
-            z = false;
-        }
-        u17Var.o((!z || k17Var.K() > 0) ? z : false);
-    }
-
-    public final void b(boolean z) {
-        this.b.l(z);
-    }
-
-    public final void c() {
-        u17 u17Var = this.b;
-        pg6 pg6Var = u17Var.K;
-        if (u17Var.b.getLayoutManager() == u17Var.d || !u17Var.J) {
-            return;
-        }
-        gm.r(pg6Var);
-        gm.d3(pg6Var, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        return super.R(str);
     }
 }

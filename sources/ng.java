@@ -1,36 +1,59 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ng implements jp7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lp7 b;
-    public final /* synthetic */ lp7 c;
-    public final /* synthetic */ lp7 d;
+import android.view.KeyEvent;
+import android.widget.TextView;
 
-    public /* synthetic */ ng(lp7 lp7Var, lp7 lp7Var2, lp7 lp7Var3, byte b) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ng implements TextView.OnEditorActionListener {
+    public final /* synthetic */ byte a;
+
+    public /* synthetic */ ng(byte b) {
         this.a = b;
-        this.b = lp7Var;
-        this.c = lp7Var2;
-        this.d = lp7Var3;
     }
 
-    @Override // jp7
-    public final void g(lp7 lp7Var, int i) {
-        byte b = this.a;
-        lp7 lp7Var2 = this.d;
-        lp7 lp7Var3 = this.c;
-        lp7 lp7Var4 = this.b;
-        switch (b) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        switch (this.a) {
             case 0:
-                ik.v0(lp7Var4, lp7Var3, lp7Var2);
+                gl.t1(textView);
                 break;
             case 1:
-                ik.v0(lp7Var4, lp7Var3, lp7Var2);
+                if (i != 6) {
+                    break;
+                } else {
+                    gl.t1(textView);
+                    break;
+                }
+            case 2:
+                if (i == 6) {
+                    textView.clearFocus();
+                    gl.t1(textView);
+                    break;
+                }
                 break;
+            case 3:
+                if (i == 6) {
+                    textView.clearFocus();
+                    gl.t1(textView);
+                    break;
+                }
+                break;
+            case 4:
+                if (i != 6) {
+                    break;
+                } else {
+                    gl.t1(textView);
+                    break;
+                }
             default:
-                ik.b(lp7Var4, lp7Var3, lp7Var2);
-                break;
+                if (i != 6) {
+                    break;
+                } else {
+                    gl.t1(textView);
+                    break;
+                }
         }
+        return false;
     }
 }

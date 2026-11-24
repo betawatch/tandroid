@@ -1,48 +1,23 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.widget.SeekBar;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class rq extends SeekBar {
-    public final sq a;
+public final class rq extends l69 {
+    public final /* synthetic */ sq f;
 
-    public rq(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.seekBarStyle);
-        dpb.a(getContext(), this);
-        sq sqVar = new sq(this);
-        this.a = sqVar;
-        sqVar.E(attributeSet, R.attr.seekBarStyle);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rq(sq sqVar) {
+        super(sqVar, (byte) 6);
+        this.f = sqVar;
     }
 
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public void drawableStateChanged() {
-        super.drawableStateChanged();
-        sq sqVar = this.a;
-        rq rqVar = sqVar.r;
-        Drawable drawable = sqVar.s;
-        if (drawable != null && drawable.isStateful() && drawable.setState(rqVar.getDrawableState())) {
-            rqVar.invalidateDrawable(drawable);
-        }
+    @Override // l69, qq
+    public final void f(int i) {
+        super/*android.widget.TextView*/.setLastBaselineToBottomHeight(i);
     }
 
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        Drawable drawable = this.a.s;
-        if (drawable != null) {
-            drawable.jumpToCurrentState();
-        }
-    }
-
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final synchronized void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.a0(canvas);
+    @Override // l69, qq
+    public final void i(int i) {
+        super/*android.widget.TextView*/.setFirstBaselineToTopHeight(i);
     }
 }

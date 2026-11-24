@@ -1,87 +1,58 @@
 // default package
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEncodingService;
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class vq3 implements jm7 {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class vq3 {
     public final int a;
-    public final File b;
-    public k47 c;
-    public final tq3 d;
-    public final uq3 e;
-    public final sq3 f;
+    public final rx6 b;
+    public final CopyOnWriteArrayList c;
 
-    public vq3(int i, g6b g6bVar, File file, tq3 tq3Var, uq3 uq3Var, sq3 sq3Var) {
+    public vq3(CopyOnWriteArrayList copyOnWriteArrayList, int i, rx6 rx6Var) {
+        this.c = copyOnWriteArrayList;
         this.a = i;
-        this.b = file;
-        this.d = tq3Var;
-        this.e = uq3Var;
-        this.f = sq3Var;
-        if (this.c != null) {
-            return;
-        }
-        nm7.f(i).a(this, nm7.a2);
-        nm7.f(i).a(this, nm7.b2);
-        nm7.f(i).a(this, nm7.c2);
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.id = 1;
-        tL_message.attachPath = file.getAbsolutePath();
-        this.c = new k47(i, tL_message, null, false, false);
-        g6bVar.s(new sk3(this, (byte) 4));
+        this.b = rx6Var;
     }
 
-    public final void a(boolean z) {
-        if (this.c == null) {
-            return;
+    public final void a(vi2 vi2Var) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            uq3 uq3Var = (uq3) it.next();
+            g8c.X(uq3Var.a, new mg3(this, uq3Var.b, vi2Var, (byte) 12));
         }
-        int i = this.a;
-        nm7.f(i).n(this, nm7.a2);
-        nm7.f(i).n(this, nm7.b2);
-        nm7.f(i).n(this, nm7.c2);
-        if (z) {
-            MediaController.w().d(this.c);
-        }
-        this.c = null;
     }
 
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == nm7.a2) {
-            return;
+    public final void b() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            uq3 uq3Var = (uq3) it.next();
+            g8c.X(uq3Var.a, new tq3(this, uq3Var.b, (byte) 1));
         }
-        if (i != nm7.b2) {
-            if (i == nm7.c2 && ((k47) objArr[0]) == this.c) {
-                a(false);
-                try {
-                    File file = this.b;
-                    if (file != null) {
-                        file.delete();
-                    }
-                } catch (Exception unused) {
-                }
-                this.f.run();
-                return;
-            }
-            return;
+    }
+
+    public final void c(int i) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            uq3 uq3Var = (uq3) it.next();
+            g8c.X(uq3Var.a, new o94((Object) this, (Object) uq3Var.b, i, (byte) 2));
         }
-        if (((k47) objArr[0]) == this.c) {
-            ((Long) objArr[2]).getClass();
-            long longValue = ((Long) objArr[3]).longValue();
-            Float f = (Float) objArr[4];
-            f.getClass();
-            this.e.a(f);
-            if (longValue > 0) {
-                this.d.run();
-                VideoEncodingService videoEncodingService = VideoEncodingService.e;
-                if (videoEncodingService != null) {
-                    videoEncodingService.stopSelf();
-                }
-                a(false);
-            }
+    }
+
+    public final void d(Exception exc) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            uq3 uq3Var = (uq3) it.next();
+            g8c.X(uq3Var.a, new mg3(this, uq3Var.b, exc, (byte) 11));
+        }
+    }
+
+    public final void e() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            uq3 uq3Var = (uq3) it.next();
+            g8c.X(uq3Var.a, new tq3(this, uq3Var.b, (byte) 0));
         }
     }
 }

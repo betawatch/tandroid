@@ -3,23 +3,23 @@ package com.google.mlkit.vision.segmentation.subject.internal;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class SubjectSegmentationRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        wq2 b = xq2.b(ovd.class);
-        b.a(if3.b(cg7.class));
-        b.f = q7f.e;
-        xq2 b2 = b.b();
-        wq2 b3 = xq2.b(hjd.class);
-        b3.a(if3.b(ovd.class));
-        b3.a(if3.b(f64.class));
-        b3.f = jk2.e;
-        xq2 b4 = b3.b();
-        mbd mbdVar = ccd.f;
+        lp2 b = mp2.b(ltd.class);
+        b.a(wd3.b(ae7.class));
+        b.f = o5f.e;
+        mp2 b2 = b.b();
+        lp2 b3 = mp2.b(ghd.class);
+        b3.a(wd3.b(ltd.class));
+        b3.a(wd3.b(u44.class));
+        b3.f = vi2.e;
+        mp2 b4 = b3.b();
+        k9d k9dVar = aad.f;
         Object[] objArr = {b2, b4};
-        j2f.a(2, objArr);
-        return ccd.m(2, objArr);
+        h0f.a(2, objArr);
+        return aad.m(2, objArr);
     }
 }

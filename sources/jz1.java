@@ -1,29 +1,50 @@
 // default package
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class jz1 extends e34 {
-    public final /* synthetic */ ChatActivityEnterView V2;
+public final /* synthetic */ class jz1 implements View.OnTouchListener {
+    public final /* synthetic */ byte a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jz1(ChatActivityEnterView chatActivityEnterView, d dVar, boolean z, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z2, ylb ylbVar, boolean z3, boolean z4) {
-        super(dVar, z, true, true, context, true, chatFull, viewGroup, z2, ylbVar, z3, z4);
-        this.V2 = chatActivityEnterView;
-    }
-
-    @Override // e34, android.view.View
-    public final void setTranslationY(float f) {
-        super.setTranslationY(f);
-        ChatActivityEnterView chatActivityEnterView = this.V2;
-        if (chatActivityEnterView.W0 == null || chatActivityEnterView.e4 != 0) {
-            return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 21:
+                int i = PopupNotificationActivity.c0;
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                return true;
+            case 22:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            default:
+                return true;
         }
-        chatActivityEnterView.P3.o(f);
     }
 }

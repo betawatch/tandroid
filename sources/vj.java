@@ -1,21 +1,18 @@
 // default package
 
-import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vj extends lp7 {
-    public final /* synthetic */ int[] z0;
+public final class vj extends MetricAffectingSpan {
+    public String a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vj(Context context, ylb ylbVar, int[] iArr) {
-        super(context, ylbVar);
-        this.z0 = iArr;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
     }
 
-    @Override // lp7
-    public final CharSequence d(int i) {
-        int i2 = this.z0[i];
-        return i2 == 0 ? jb6.M0(2131748064, null) : i2 < 60 ? jb6.G(i2, "Minutes", new Object[0]) : i2 < 1440 ? jb6.G(i2 / 60, "Hours", new Object[0]) : i2 < 10080 ? jb6.G(i2 / 1440, "Days", new Object[0]) : i2 < 44640 ? jb6.G(i2 / 10080, "Weeks", new Object[0]) : i2 < 525600 ? jb6.G(i2 / 44640, "Months", new Object[0]) : jb6.G(i2 / 525600, "Years", new Object[0]);
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
     }
 }

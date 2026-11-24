@@ -1,32 +1,48 @@
 // default package
 
-import org.telegram.ui.SessionsActivity;
+import android.graphics.Color;
+import android.opengl.GLES20;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class z8a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ SessionsActivity b;
-    public final /* synthetic */ boolean c;
+public final class z8a {
+    public int a;
+    public HashMap b;
 
-    public /* synthetic */ z8a(SessionsActivity sessionsActivity, boolean z, byte b) {
-        this.a = b;
-        this.b = sessionsActivity;
-        this.c = z;
+    public static void a(int i, int i2) {
+        GLES20.glUniform4f(i, Color.red(i2) / 255.0f, Color.green(i2) / 255.0f, Color.blue(i2) / 255.0f, Color.alpha(i2) / 255.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.c;
-        SessionsActivity sessionsActivity = this.b;
-        switch (b) {
-            case 0:
-                sessionsActivity.p0(z);
-                break;
-            default:
-                sessionsActivity.p0(z);
-                break;
+    public static zw8 b(int i, String str) {
+        int glCreateShader = GLES20.glCreateShader(i);
+        GLES20.glShaderSource(glCreateShader, str);
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] == 0 && w01.a) {
+            fa4.d(GLES20.glGetShaderInfoLog(glCreateShader));
         }
+        int i2 = iArr[0];
+        zw8 zw8Var = new zw8((byte) 5);
+        zw8Var.b = glCreateShader;
+        zw8Var.c = i2;
+        return zw8Var;
+    }
+
+    public static void c(int i, int i2, int i3) {
+        if (i != 0) {
+            GLES20.glDeleteShader(i);
+        }
+        if (i2 != 0) {
+            GLES20.glDeleteShader(i2);
+        }
+        if (i3 != 0) {
+            GLES20.glDeleteProgram(i);
+        }
+    }
+
+    public final int d(String str) {
+        return ((Integer) this.b.get(str)).intValue();
     }
 }

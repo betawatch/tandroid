@@ -1,39 +1,34 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.ProfileActivity;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class wg0 implements iac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class wg0 {
+    public final String a;
+    public final String b;
+    public final int c;
+    public final int d;
 
-    public /* synthetic */ wg0(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public wg0(int i, int i2, String str, String str2) {
+        this.a = str;
+        this.b = str2;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // iac
-    public final Object run() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((d) obj).getSimpleMenuOverlay();
-            case 1:
-                return Boolean.valueOf(((EditTextBoldCursor) obj).w());
-            case 2:
-                return ((vn5) obj).getCloseIntoObject();
-            case 3:
-                return Boolean.valueOf(((qu3) obj).w());
-            case 4:
-                return ((ProfileActivity) obj).getSimpleMenuOverlay();
-            case 5:
-                return ((pp9) obj).K;
-            default:
-                return ((wsa) obj).j();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof wg0)) {
+            return false;
+        }
+        wg0 wg0Var = (wg0) obj;
+        return this.c == wg0Var.c && this.d == wg0Var.d && Objects.equals(this.a, wg0Var.a) && Objects.equals(this.b, wg0Var.b);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, Integer.valueOf(this.c), Integer.valueOf(this.d));
     }
 }

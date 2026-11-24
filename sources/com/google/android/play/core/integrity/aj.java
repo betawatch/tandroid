@@ -14,57 +14,57 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class aj {
-    final i1d a;
-    private final s2d b;
+    final hzc a;
+    private final q0d b;
     private final String c;
     private final Context d;
     private final at e;
     private final k f;
 
-    public aj(Context context, s2d s2dVar, at atVar, k kVar) {
-        s2d s2dVar2;
+    public aj(Context context, q0d q0dVar, at atVar, k kVar) {
+        q0d q0dVar2;
         this.c = context.getPackageName();
-        this.b = s2dVar;
+        this.b = q0dVar;
         this.e = atVar;
         this.f = kVar;
         this.d = context;
-        s2d s2dVar3 = k1d.a;
+        q0d q0dVar3 = jzc.a;
         try {
             if (context.getPackageManager().getApplicationInfo("com.android.vending", 0).enabled) {
                 try {
-                    if (k1d.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
-                        this.a = new i1d(context, s2dVar, "IntegrityService", ak.a, new a3d() { // from class: com.google.android.play.core.integrity.ae
-                            @Override // a3d
+                    if (jzc.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
+                        this.a = new hzc(context, q0dVar, "IntegrityService", ak.a, new y0d() { // from class: com.google.android.play.core.integrity.ae
+                            @Override // y0d
                             public final Object a(IBinder iBinder) {
-                                int i = n2d.i;
+                                int i = l0d.i;
                                 if (iBinder == null) {
                                     return null;
                                 }
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IIntegrityService");
-                                return queryLocalInterface instanceof o2d ? (o2d) queryLocalInterface : new k2d(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", (byte) 0);
+                                return queryLocalInterface instanceof m0d ? (m0d) queryLocalInterface : new i0d(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", (byte) 0);
                             }
                         });
                         return;
                     }
                 } catch (PackageManager.NameNotFoundException unused) {
-                    s2dVar2 = s2dVar;
-                    s2dVar3.c("Play Store package is not found.", new Object[0]);
+                    q0dVar2 = q0dVar;
+                    q0dVar3.c("Play Store package is not found.", new Object[0]);
                 }
             } else {
-                s2dVar3.c("Play Store package is disabled.", new Object[0]);
+                q0dVar3.c("Play Store package is disabled.", new Object[0]);
             }
-            s2dVar2 = s2dVar;
+            q0dVar2 = q0dVar;
         } catch (PackageManager.NameNotFoundException unused2) {
-            s2dVar2 = s2dVar;
-            s2dVar3.c("Play Store package is not found.", new Object[0]);
+            q0dVar2 = q0dVar;
+            q0dVar3.c("Play Store package is not found.", new Object[0]);
         }
         Object[] objArr = new Object[0];
-        s2dVar2.getClass();
+        q0dVar2.getClass();
         if (Log.isLoggable("PlayCore", 6)) {
-            Log.e("PlayCore", s2d.d(s2dVar2.a, "Phonesky is not installed.", objArr));
+            Log.e("PlayCore", q0d.d(q0dVar2.a, "Phonesky is not installed.", objArr));
         }
         this.a = null;
     }
@@ -83,8 +83,8 @@ final class aj {
             bundle.putParcelable("network", parcelable);
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new a2d(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(w0f.a(arrayList)));
+        arrayList.add(new zzc(3, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(uye.a(arrayList)));
         return bundle;
     }
 
@@ -103,7 +103,7 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        if (k1d.a(this.d) < 82380000) {
+        if (jzc.a(this.d) < 82380000) {
             return Tasks.forException(new IntegrityServiceException(-14, null));
         }
         try {

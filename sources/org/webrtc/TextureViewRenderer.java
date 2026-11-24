@@ -14,7 +14,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -96,7 +96,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
             if (i4 == 1) {
                 i = z ? 90 : -90;
             } else if (i4 == 3) {
-                i = z ? nm7.s4 : -270;
+                i = z ? kk7.s4 : -270;
             }
             i3 += i;
         }
@@ -108,7 +108,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
             runnable.run();
         } else {
-            gm.c3(runnable);
+            gl.c3(runnable);
         }
     }
 
@@ -136,7 +136,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         sb.append(", frame size: ");
         sb.append(this.rotatedFrameWidth);
         sb.append("x");
-        ts2.v(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        ir2.w(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb.append(min2);
         sb.append(", old surface size: ");
         sb.append(this.surfaceWidth);
@@ -177,11 +177,11 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         synchronized (this.eglRenderer.layoutLock) {
             Runnable runnable = this.updateScreenRunnable;
             if (runnable != null) {
-                gm.r(runnable);
+                gl.r(runnable);
             }
-            cu cuVar = new cu((Object) this, i, i2, (byte) 17);
-            this.updateScreenRunnable = cuVar;
-            postOrRun(cuVar);
+            bt btVar = new bt((Object) this, i, i2, (byte) 17);
+            this.updateScreenRunnable = btVar;
+            postOrRun(btVar);
         }
     }
 
@@ -298,11 +298,11 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         synchronized (this.eglRenderer.layoutLock) {
             Runnable runnable = this.updateScreenRunnable;
             if (runnable != null) {
-                gm.r(runnable);
+                gl.r(runnable);
             }
-            je7 je7Var = new je7(this, i, i2, i9, i8, (byte) 1);
-            this.updateScreenRunnable = je7Var;
-            postOrRun(je7Var);
+            gc7 gc7Var = new gc7(this, i, i2, i9, i8, (byte) 1);
+            this.updateScreenRunnable = gc7Var;
+            postOrRun(gc7Var);
         }
     }
 
@@ -372,7 +372,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     }
 
     public void setBackgroundRenderer(TextureView textureView) {
-        if (e86.e(512)) {
+        if (e66.e(512)) {
             this.backgroundRenderer = textureView;
             if (textureView != null) {
                 textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() { // from class: org.webrtc.TextureViewRenderer.1
@@ -542,7 +542,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         init(context, rendererEvents, EglBase.CONFIG_PLAIN, new GlRectDrawer());
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;
@@ -608,7 +608,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
 
         @Override // org.webrtc.EglRenderer
         public void onFirstFrameRendered() {
-            gm.c3(new zcb(this, (byte) 10));
+            gl.c3(new cib(this, (byte) 2));
         }
 
         @Override // org.webrtc.EglRenderer, org.webrtc.VideoSink
@@ -627,7 +627,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
             ThreadUtils.checkIsOnMainThread();
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            releaseEglSurface(new go3(countDownLatch, (byte) 1), false);
+            releaseEglSurface(new wm3(countDownLatch, (byte) 1), false);
             ThreadUtils.awaitUninterruptibly(countDownLatch);
             return true;
         }

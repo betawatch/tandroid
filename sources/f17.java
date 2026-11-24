@@ -1,50 +1,163 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class f17 implements Comparator {
-    public final /* synthetic */ vh6 a;
-    public final /* synthetic */ ArrayList b;
+public final class f17 extends Drawable {
+    public Paint a;
+    public Paint b;
+    public long c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public long l;
+    public gb2 m;
 
-    public f17(vh6 vh6Var, ArrayList arrayList) {
-        this.a = vh6Var;
-        this.b = arrayList;
+    public final void a() {
+        Rect bounds = getBounds();
+        float centerX = bounds.centerX();
+        float centerY = bounds.centerY();
+        int i = bounds.left;
+        float f = (i - centerX) * (i - centerX);
+        int i2 = bounds.top;
+        this.g = (float) Math.ceil(Math.sqrt(tb4.A(i2, centerY, i2 - centerY, f)));
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        TLObject tLObject = (TLObject) obj;
-        TLObject tLObject2 = (TLObject) obj2;
-        long j = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : -((TLRPC.Chat) tLObject).id;
-        long j2 = tLObject2 instanceof TLRPC.User ? ((TLRPC.User) tLObject2).id : -((TLRPC.Chat) tLObject2).id;
-        vh6 vh6Var = this.a;
-        if (vh6Var.h(j) >= 0 && vh6Var.h(j2) >= 0) {
-            return 0;
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
+    
+        if (r7 < 0.0f) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0055, code lost:
+    
+        if (r7 < 0.0f) goto L22;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float f;
+        gb2 gb2Var;
+        Paint paint = this.a;
+        float f2 = this.d;
+        if (f2 == 1.0f) {
+            Rect bounds = getBounds();
+            Paint paint2 = this.b;
+            if (paint2 != null) {
+                paint = paint2;
+            }
+            canvas.drawRect(bounds, paint);
+        } else if (f2 != 0.0f) {
+            float interpolation = this.e ? s33.h.getInterpolation(f2) : 1.0f - s33.h.getInterpolation(1.0f - f2);
+            Rect bounds2 = getBounds();
+            float centerX = bounds2.centerX();
+            float centerY = bounds2.centerY();
+            float f3 = this.j;
+            if (f3 >= 0.0f) {
+                f = this.k;
+            }
+            f3 = this.h;
+            if (f3 >= 0.0f) {
+                f = this.i;
+            }
+            f = centerY;
+            f3 = centerX;
+            float f4 = 1.0f - interpolation;
+            float A = tb4.A(f3, centerX, f4, centerX);
+            float A2 = tb4.A(f, centerY, f4, centerY);
+            float f5 = this.g * interpolation;
+            Paint paint3 = this.b;
+            if (paint3 != null) {
+                paint = paint3;
+            }
+            canvas.drawCircle(A, A2, f5, paint);
         }
-        if (vh6Var.h(j) < 0) {
-            if (vh6Var.h(j2) >= 0) {
-                return 1;
+        if (!this.f) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j = elapsedRealtime - this.c;
+        if (j > 20) {
+            j = 17;
+        }
+        this.c = elapsedRealtime;
+        boolean z = this.e;
+        float f6 = this.d;
+        if (z) {
+            float f7 = (j / 240.0f) + f6;
+            this.d = f7;
+            if (f7 >= 1.0f) {
+                this.d = 1.0f;
+                this.h = -1.0f;
+                this.i = -1.0f;
+                this.j = -1.0f;
+                this.k = -1.0f;
+                this.f = false;
             }
-            Long valueOf = Long.valueOf(j);
-            ArrayList arrayList = this.b;
-            int indexOf = arrayList.indexOf(valueOf);
-            int indexOf2 = arrayList.indexOf(Long.valueOf(j2));
-            if (indexOf == -1) {
-                return indexOf2 != -1 ? 1 : 0;
-            }
-            if (indexOf2 != -1) {
-                if (indexOf >= indexOf2) {
-                    return indexOf == indexOf2 ? 0 : 1;
+            gb2Var = this.m;
+            if (gb2Var == null) {
+                gb2Var.invalidate();
+                if (gb2Var.getParent() != null) {
+                    ((ViewGroup) gb2Var.getParent()).invalidate();
+                    return;
                 }
-            } else if (indexOf2 != -1) {
-                return 0;
+                return;
             }
+            return;
         }
-        return -1;
+        float f8 = f6 - (j / 240.0f);
+        this.d = f8;
+        if (f8 <= 0.0f) {
+            this.d = 0.0f;
+            this.h = -1.0f;
+            this.i = -1.0f;
+            this.j = -1.0f;
+            this.k = -1.0f;
+            this.f = false;
+        }
+        gb2Var = this.m;
+        if (gb2Var == null) {
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.a.setAlpha(i);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i, int i2, int i3, int i4) {
+        super.setBounds(i, i2, i3, i4);
+        a();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        a();
     }
 }

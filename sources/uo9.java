@@ -1,35 +1,48 @@
 // default package
 
-import android.view.Surface;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class uo9 implements aq9 {
-    public final vo9 a;
-    public final aq9 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class uo9 extends vo9 implements Iterator {
+    public to9 a;
+    public boolean b = true;
+    public final /* synthetic */ wo9 c;
 
-    public uo9(vo9 vo9Var, aq9 aq9Var) {
-        this.a = vo9Var;
-        this.b = aq9Var;
+    public uo9(wo9 wo9Var) {
+        this.c = wo9Var;
     }
 
-    @Override // aq9
-    public final void a(int i, int i2) {
-        if (this.a.W != i || this.a.X != i2) {
-            this.a.W = i;
-            this.a.X = i2;
-            gm.c3(new kf9(this, (byte) 13));
+    @Override // vo9
+    public final void a(to9 to9Var) {
+        to9 to9Var2 = this.a;
+        if (to9Var == to9Var2) {
+            to9 to9Var3 = to9Var2.d;
+            this.a = to9Var3;
+            this.b = to9Var3 == null;
         }
-        this.b.a(i, i2);
     }
 
-    @Override // aq9
-    public final boolean b() {
-        return this.b.b();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        if (this.b) {
+            return this.c.a != null;
+        }
+        to9 to9Var = this.a;
+        return (to9Var == null || to9Var.c == null) ? false : true;
     }
 
-    @Override // aq9
-    public final Surface getSurface() {
-        return this.b.getSurface();
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.b) {
+            this.b = false;
+            to9 to9Var = this.c.a;
+            this.a = to9Var;
+            return to9Var;
+        }
+        to9 to9Var2 = this.a;
+        to9 to9Var3 = to9Var2 != null ? to9Var2.c : null;
+        this.a = to9Var3;
+        return to9Var3;
     }
 }

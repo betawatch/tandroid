@@ -1,34 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class x80 extends zj2 {
-    public final u80 a;
+public final class x80 extends sy2 {
+    public final String a;
+    public final String b;
+    public final long c;
 
-    public x80(u80 u80Var) {
-        this.a = u80Var;
+    public x80(long j, String str, String str2) {
+        this.a = str;
+        this.b = str2;
+        this.c = j;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof zj2)) {
-            return false;
-        }
-        zj2 zj2Var = (zj2) obj;
-        Object obj2 = yj2.a;
-        if (obj2.equals(obj2)) {
-            return this.a.equals(((x80) zj2Var).a);
+        if (obj instanceof sy2) {
+            x80 x80Var = (x80) ((sy2) obj);
+            if (this.a.equals(x80Var.a) && this.b.equals(x80Var.b) && this.c == x80Var.c) {
+                return true;
+            }
         }
         return false;
     }
 
     public final int hashCode() {
-        return ((yj2.a.hashCode() ^ 1000003) * 1000003) ^ this.a.hashCode();
+        int hashCode = (((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003;
+        long j = this.c;
+        return hashCode ^ ((int) ((j >>> 32) ^ j));
     }
 
     public final String toString() {
-        return "ClientInfo{clientType=" + yj2.a + ", androidClientInfo=" + this.a + "}";
+        StringBuilder sb = new StringBuilder("Signal{name=");
+        sb.append(this.a);
+        sb.append(", code=");
+        sb.append(this.b);
+        sb.append(", address=");
+        return ls6.p(sb, this.c, "}");
     }
 }

@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ListTemplate implements pib {
+public final class ListTemplate implements ogb {
     static final int MAX_ALLOWED_ITEMS = 100;
     static final int MAX_MESSAGES_PER_CONVERSATION = 10;
     private final ActionStrip mActionStrip;
@@ -19,64 +19,64 @@ public final class ListTemplate implements pib {
     private final ItemList mSingleList;
     private final CarText mTitle;
 
-    public ListTemplate(p76 p76Var) {
-        this.mIsLoading = p76Var.a;
-        this.mTitle = p76Var.d;
-        this.mHeaderAction = p76Var.e;
-        this.mSingleList = p76Var.b;
-        this.mSectionedLists = ttd.a(p76Var.c);
-        this.mActionStrip = p76Var.f;
-        this.mActions = ttd.a(p76Var.g);
+    public ListTemplate(p56 p56Var) {
+        this.mIsLoading = p56Var.a;
+        this.mTitle = p56Var.d;
+        this.mHeaderAction = p56Var.e;
+        this.mSingleList = p56Var.b;
+        this.mSectionedLists = qrd.a(p56Var.c);
+        this.mActionStrip = p56Var.f;
+        this.mActions = qrd.a(p56Var.g);
     }
 
     public static List<SectionedItemList> getTruncatedCopy(List<SectionedItemList> list) {
-        q76 q76Var = new q76();
-        q76Var.a = 100;
+        q56 q56Var = new q56();
+        q56Var.a = 100;
         ArrayList arrayList = new ArrayList();
         for (SectionedItemList sectionedItemList : list) {
-            arrayList.add(SectionedItemList.create(truncate(sectionedItemList.getItemList(), q76Var), sectionedItemList.getHeader().toCharSequence()));
-            if (q76Var.a <= 0) {
+            arrayList.add(SectionedItemList.create(truncate(sectionedItemList.getItemList(), q56Var), sectionedItemList.getHeader().toCharSequence()));
+            if (q56Var.a <= 0) {
                 break;
             }
         }
         return arrayList;
     }
 
-    public static ItemList truncate(ItemList itemList, q76 q76Var) {
-        pt5 pt5Var = new pt5(itemList);
-        ArrayList arrayList = pt5Var.a;
+    public static ItemList truncate(ItemList itemList, q56 q56Var) {
+        qr5 qr5Var = new qr5(itemList);
+        ArrayList arrayList = qr5Var.a;
         arrayList.clear();
-        for (ot5 ot5Var : itemList.getItems()) {
-            if (!(ot5Var instanceof ConversationItem)) {
-                if (q76Var.a < 1) {
+        for (pr5 pr5Var : itemList.getItems()) {
+            if (!(pr5Var instanceof ConversationItem)) {
+                if (q56Var.a < 1) {
                     break;
                 }
-                Objects.requireNonNull(ot5Var);
-                arrayList.add(ot5Var);
-                q76Var.a--;
+                Objects.requireNonNull(pr5Var);
+                arrayList.add(pr5Var);
+                q56Var.a--;
             } else {
-                ConversationItem conversationItem = (ConversationItem) ot5Var;
-                if (q76Var.a < 2) {
+                ConversationItem conversationItem = (ConversationItem) pr5Var;
+                if (q56Var.a < 2) {
                     break;
                 }
-                tx2 tx2Var = new tx2(conversationItem);
-                int i = q76Var.a - 1;
-                q76Var.a = i;
+                jw2 jw2Var = new jw2(conversationItem);
+                int i = q56Var.a - 1;
+                q56Var.a = i;
                 int min = Math.min(i, 10);
                 int size = conversationItem.getMessages().size();
                 int min2 = Math.min(size, min);
-                tx2Var.f = conversationItem.getMessages().subList(size - min2, size);
-                arrayList.add(new ConversationItem(tx2Var));
-                q76Var.a -= min2;
+                jw2Var.f = conversationItem.getMessages().subList(size - min2, size);
+                arrayList.add(new ConversationItem(jw2Var));
+                q56Var.a -= min2;
             }
         }
-        if (pt5Var.c != null) {
+        if (qr5Var.c != null) {
             int size2 = arrayList.size();
             if (size2 == 0) {
-                dq9.m("A selectable list cannot be empty");
+                sc8.j("A selectable list cannot be empty");
                 return null;
             }
-            int i2 = pt5Var.b;
+            int i2 = qr5Var.b;
             if (i2 >= size2) {
                 throw new IllegalStateException("The selected item index (" + i2 + ") is larger than the size of the list (" + size2 + ")");
             }
@@ -85,18 +85,18 @@ public final class ListTemplate implements pib {
             while (i3 < size3) {
                 Object obj = arrayList.get(i3);
                 i3++;
-                ot5 ot5Var2 = (ot5) obj;
-                if (ItemList.getOnClickDelegate(ot5Var2) != null) {
-                    dq9.m("Items that belong to selectable lists can't have an onClickListener. Use the OnSelectedListener of the list instead");
+                pr5 pr5Var2 = (pr5) obj;
+                if (ItemList.getOnClickDelegate(pr5Var2) != null) {
+                    sc8.j("Items that belong to selectable lists can't have an onClickListener. Use the OnSelectedListener of the list instead");
                     return null;
                 }
-                if (ItemList.getToggle(ot5Var2) != null) {
-                    dq9.m("Items that belong to selectable lists can't have a toggle");
+                if (ItemList.getToggle(pr5Var2) != null) {
+                    sc8.j("Items that belong to selectable lists can't have a toggle");
                     return null;
                 }
             }
         }
-        return new ItemList(pt5Var);
+        return new ItemList(qr5Var);
     }
 
     public boolean equals(Object obj) {
@@ -143,8 +143,8 @@ public final class ListTemplate implements pib {
         return this.mIsLoading;
     }
 
-    public p76 toBuilder() {
-        return new p76(this);
+    public p56 toBuilder() {
+        return new p56(this);
     }
 
     public String toString() {

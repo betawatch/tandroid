@@ -1,36 +1,21 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class mr5 {
-    public static final Charset a;
-    public static final byte[] b;
+public final class mr5 extends ft5 {
+    public final qp4 e;
 
-    static {
-        Charset.forName("US-ASCII");
-        a = Charset.forName("UTF-8");
-        Charset.forName("ISO-8859-1");
-        byte[] bArr = new byte[0];
-        b = bArr;
-        ByteBuffer.wrap(bArr);
-        try {
-            new ll2(bArr, 0, 0, false).e(0);
-        } catch (yr5 e) {
-            throw new IllegalArgumentException(e);
-        }
+    public mr5(qp4 qp4Var) {
+        this.e = qp4Var;
     }
 
-    public static void a(Object obj, String str) {
-        if (obj != null) {
-            return;
-        }
-        gxc.d(str);
+    @Override // ft5
+    public final boolean k() {
+        return false;
     }
 
-    public static int b(long j) {
-        return (int) (j ^ (j >>> 32));
+    @Override // ft5
+    public final void l(Throwable th) {
+        this.e.invoke(th);
     }
 }

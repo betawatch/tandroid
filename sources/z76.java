@@ -1,28 +1,77 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class z76 {
-    public final Object a;
-    public m41 b = new m41();
-    public boolean c;
-    public boolean d;
+import android.graphics.SurfaceTexture;
+import android.view.Surface;
+import android.view.TextureView;
 
-    public z76(Object obj) {
-        this.a = obj;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class z76 implements zn9, TextureView.SurfaceTextureListener {
+    public final ya8 a;
+    public volatile Surface b;
+    public boolean c;
+
+    public z76(ya8 ya8Var) {
+        this.a = ya8Var;
+        ya8Var.setSurfaceTextureListener(this);
+        SurfaceTexture surfaceTexture = ya8Var.getSurfaceTexture();
+        if (surfaceTexture != null) {
+            this.b = new Surface(surfaceTexture);
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // zn9
+    public final boolean b() {
+        return true;
+    }
+
+    public final void c(SurfaceTexture surfaceTexture) {
+        if (this.c) {
+            if (surfaceTexture != null) {
+                um9.I(this, new tp5(surfaceTexture, (byte) 16));
+            }
+        } else {
+            this.c = true;
+            Surface surface = this.b;
+            this.b = null;
+            um9.I(this, new y76(surface, surfaceTexture, (byte) 1));
         }
-        if (obj == null || z76.class != obj.getClass()) {
+    }
+
+    @Override // zn9
+    public final Surface getSurface() {
+        return this.b;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+        if (this.c) {
+            return;
+        }
+        this.b = new Surface(surfaceTexture);
+        um9.I(this, null);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        if (this.c) {
             return false;
         }
-        return this.a.equals(((z76) obj).a);
+        Surface surface = this.b;
+        this.b = null;
+        um9.I(this, new y76(surface, surfaceTexture, (byte) 0));
+        return false;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    @Override // zn9
+    public final void a(int i, int i2) {
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
     }
 }

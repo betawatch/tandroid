@@ -1,22 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class d9b implements qk4 {
-    public final /* synthetic */ v9b a;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 
-    public d9b(v9b v9bVar) {
-        this.a = v9bVar;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class d9b {
+    public static final Charset a = Charset.defaultCharset();
+    public static final Charset b;
+    public static final Charset c;
+    public static final boolean d;
 
-    @Override // qk4
-    public final void setInvert(float f) {
-        v9b v9bVar = this.a;
-        gm.j3(v9bVar.n, f > 0.5f);
-        gm.m3(v9bVar.n, f > 0.5f);
-    }
-
-    @Override // qk4
-    public final void invalidate() {
+    static {
+        Charset charset;
+        Charset charset2;
+        Charset charset3 = null;
+        try {
+            charset = Charset.forName("SJIS");
+        } catch (UnsupportedCharsetException unused) {
+            charset = null;
+        }
+        b = charset;
+        try {
+            charset2 = Charset.forName("GB2312");
+        } catch (UnsupportedCharsetException unused2) {
+            charset2 = null;
+        }
+        c = charset2;
+        try {
+            charset3 = Charset.forName("EUC_JP");
+        } catch (UnsupportedCharsetException unused3) {
+        }
+        Charset charset4 = b;
+        d = (charset4 != null && charset4.equals(a)) || (charset3 != null && charset3.equals(a));
     }
 }

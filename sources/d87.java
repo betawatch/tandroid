@@ -1,140 +1,97 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class d87 implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ oc7 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ int j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ int m;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ long o;
-    public final /* synthetic */ int p;
-    public final /* synthetic */ boolean q;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ boolean t;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class d87 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ d87(oc7 oc7Var, int i, int i2, long j, long j2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, long j3, int i11, boolean z, int i12, boolean z2, boolean z3) {
-        this.b = oc7Var;
-        this.c = i;
-        this.d = i2;
-        this.e = j;
-        this.f = j2;
-        this.g = i3;
-        this.h = i4;
-        this.i = i5;
-        this.j = i6;
-        this.k = i7;
-        this.l = i8;
-        this.m = i9;
-        this.n = i10;
-        this.o = j3;
-        this.p = i11;
-        this.q = z;
-        this.r = i12;
-        this.s = z2;
-        this.t = z3;
+    public /* synthetic */ d87(na7 na7Var, TLRPC.TL_error tL_error, d dVar, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z, boolean z2) {
+        this.a = (byte) 0;
+        this.e = na7Var;
+        this.f = tL_error;
+        this.d = dVar;
+        this.h = tL_channels_editAdmin;
+        this.b = z;
+        this.c = z2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.c;
+        boolean z2 = this.b;
+        Object obj = this.h;
+        Object obj2 = this.d;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        switch (b) {
             case 0:
-                oc7 oc7Var = this.b;
-                long j = this.e;
-                long j2 = this.f;
-                int i2 = this.c;
-                int i3 = this.d;
-                int i4 = this.g;
-                int i5 = this.h;
-                int i6 = this.i;
-                int i7 = this.j;
-                int i8 = this.k;
-                int i9 = this.l;
-                int i10 = this.m;
-                int i11 = this.n;
-                long j3 = this.o;
-                int i12 = this.p;
-                boolean z = this.q;
-                int i13 = this.r;
-                boolean z2 = this.s;
-                boolean z3 = this.t;
-                if (tLObject == null) {
-                    if (tL_error != null && "SHORTCUT_INVALID".equals(tL_error.text)) {
-                        oc7Var.P3(new TLRPC.TL_messages_messages(), 0, j, j2, i2, i3, i4, false, i5, i6, i7, i8, i9, i10, false, i11, j3, i12, z, i13, z2, z3, null);
-                        break;
-                    }
+                ij.c0(((na7) obj4).currentAccount, (TLRPC.TL_error) obj3, (d) obj2, (TLRPC.TL_channels_editAdmin) obj, Boolean.valueOf(z2), Boolean.valueOf(z));
+                break;
+            case 1:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) obj4;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj3;
+                d dVar = (d) obj2;
+                d dVar2 = (d) obj;
+                Drawable drawable = ActionBarLayout.w1;
+                if (z2) {
+                    actionBarLayout.h = true;
+                    actionBarLayout.K = actionBarPopupWindow$ActionBarPopupWindowLayout;
+                    actionBarLayout.b0 = false;
+                    actionBarLayout.s.setScaleX(1.0f);
+                    actionBarLayout.s.setScaleY(1.0f);
                 } else {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    if (!(messages_messages instanceof TLRPC.TL_messages_messagesNotModified)) {
-                        oc7Var.P3(messages_messages, messages_messages.messages.size(), j, j2, i2, i3, i4, false, i5, i6, i7, i8, i9, i10, false, i11, j3, i12, z, i13, z2, z3, null);
-                        break;
-                    }
+                    actionBarLayout.V(dVar, z);
+                    actionBarLayout.s.setTranslationX(0.0f);
                 }
+                if (dVar != null) {
+                    dVar.onTransitionAnimationEnd(false, false);
+                }
+                dVar2.onTransitionAnimationEnd(true, false);
+                dVar2.onBecomeFullyVisible();
+                break;
+            case 2:
+                ((im7) obj4).D((ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
                 break;
             default:
-                if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                    if (!(messages_messages2 instanceof TLRPC.TL_messages_messagesNotModified)) {
-                        int i14 = this.d;
-                        if (i14 == 0 || messages_messages2.messages.isEmpty()) {
-                            i = this.c;
-                        } else {
-                            i = ((TLRPC.Message) b10.f(1, messages_messages2.messages)).id;
-                            int size = messages_messages2.messages.size() - 1;
-                            while (true) {
-                                if (size >= 0) {
-                                    TLRPC.Message message = messages_messages2.messages.get(size);
-                                    if (message.date > i14) {
-                                        i = message.id;
-                                    } else {
-                                        size--;
-                                    }
-                                }
-                            }
-                        }
-                        this.b.P3(messages_messages2, messages_messages2.messages.size(), this.e, this.f, this.g, i, i14, false, this.h, this.i, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                        break;
-                    }
-                }
+                ((TwoStepVerificationActivity) obj4).k0((TLRPC.TL_error) obj3, (TLObject) obj2, this.b, this.c, (Runnable) obj);
                 break;
         }
     }
 
-    public /* synthetic */ d87(oc7 oc7Var, long j, long j2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, long j3, int i11, boolean z, int i12, boolean z2, boolean z3) {
-        this.b = oc7Var;
-        this.e = j;
-        this.f = j2;
-        this.c = i;
-        this.d = i2;
-        this.g = i3;
-        this.h = i4;
-        this.i = i5;
-        this.j = i6;
-        this.k = i7;
-        this.l = i8;
-        this.m = i9;
-        this.n = i10;
-        this.o = j3;
-        this.p = i11;
-        this.q = z;
-        this.r = i12;
-        this.s = z2;
-        this.t = z3;
+    public /* synthetic */ d87(gk7 gk7Var, Object obj, Object obj2, boolean z, boolean z2, Object obj3, byte b) {
+        this.a = b;
+        this.e = gk7Var;
+        this.f = obj;
+        this.d = obj2;
+        this.b = z;
+        this.c = z2;
+        this.h = obj3;
+    }
+
+    public /* synthetic */ d87(ActionBarLayout actionBarLayout, boolean z, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z2, d dVar, d dVar2) {
+        this.a = (byte) 1;
+        this.e = actionBarLayout;
+        this.b = z;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.c = z2;
+        this.d = dVar;
+        this.h = dVar2;
     }
 }

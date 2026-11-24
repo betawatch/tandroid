@@ -1,24 +1,41 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ProfileActivity;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class zo8 extends tr8 {
-    public final /* synthetic */ ProfileActivity t1;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class zo8 implements ll5 {
+    public final /* synthetic */ Runnable[] a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo8(ProfileActivity profileActivity, Context context, long j, a aVar, po8 po8Var, yo8 yo8Var, pr8 pr8Var, lr8 lr8Var) {
-        super(context, j, aVar, po8Var, yo8Var, pr8Var, lr8Var);
-        this.t1 = profileActivity;
+    public zo8(Runnable[] runnableArr) {
+        this.a = runnableArr;
     }
 
-    @Override // tr8
-    public final void setCustomAvatarProgress(float f) {
-        ProfileActivity profileActivity = this.t1;
-        profileActivity.y5 = f;
-        profileActivity.J1();
+    @Override // ll5
+    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        if (imageReceiver.B()) {
+            Runnable[] runnableArr = this.a;
+            if (runnableArr[0] != null) {
+                oy8 y = imageReceiver.y();
+                if (y == null) {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
+                } else if (y.t()) {
+                    y.B0 = new w88(runnableArr, (byte) 27);
+                } else {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
+                }
+            }
+        }
+    }
+
+    @Override // ll5
+    public final void v(ImageReceiver imageReceiver) {
+    }
+
+    @Override // ll5
+    public final void E(int i, Drawable drawable) {
     }
 }

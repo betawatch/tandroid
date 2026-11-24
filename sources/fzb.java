@@ -1,32 +1,35 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class fzb implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fzb implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hzb b;
+    public final /* synthetic */ i8c b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ fzb(hzb hzbVar, byte b) {
+    public /* synthetic */ fzb(i8c i8cVar, String str, byte b) {
         this.a = b;
-        this.b = hzbVar;
+        this.b = i8cVar;
+        this.c = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        hzb hzbVar = this.b;
+        String str = this.c;
+        i8c i8cVar = this.b;
         switch (b) {
             case 0:
-                yc ycVar = hzbVar.f;
-                ycVar.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                ycVar.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                ycVar.invalidate();
+                i8cVar.a(str, Boolean.FALSE);
+                break;
+            case 1:
+                i8cVar.a(null, str);
+                break;
+            case 2:
+                i8cVar.a(null, str);
                 break;
             default:
-                hzbVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hzbVar.h();
+                i8cVar.a(null, str);
                 break;
         }
     }

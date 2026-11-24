@@ -8,9 +8,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class MediaRouteExpandCollapseButton extends jq {
+public class MediaRouteExpandCollapseButton extends jp {
     public final AnimationDrawable d;
     public final AnimationDrawable e;
     public final String f;
@@ -24,7 +24,7 @@ public class MediaRouteExpandCollapseButton extends jq {
         this.d = animationDrawable;
         AnimationDrawable animationDrawable2 = (AnimationDrawable) context.getDrawable(R.drawable.mr_group_collapse);
         this.e = animationDrawable2;
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(yqe.b(context), PorterDuff.Mode.SRC_IN);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(voe.b(context), PorterDuff.Mode.SRC_IN);
         animationDrawable.setColorFilter(porterDuffColorFilter);
         animationDrawable2.setColorFilter(porterDuffColorFilter);
         String string = context.getString(R.string.mr_controller_expand_group);

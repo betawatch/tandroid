@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class zzvf {
     static {
@@ -27,7 +27,7 @@ final class zzvf {
             i3 = i6 << 8;
         } else {
             if (i4 != 2) {
-                zo4.f();
+                wn4.f();
                 return 0;
             }
             int i7 = bArr[i];
@@ -79,7 +79,7 @@ final class zzvf {
                         if (charAt2 >= 55296 && charAt2 <= 57343 && ((i4 = i6 + 1) == str.length() || !Character.isSurrogatePair(charAt2, str.charAt(i4)))) {
                             throw new zzve(i6, length);
                         }
-                        i2d.i(charAt2, i7);
+                        haf.e(charAt2, i7);
                         return 0;
                     }
                     int i8 = i6 + 1;
@@ -88,7 +88,7 @@ final class zzvf {
                         if (Character.isSurrogatePair(charAt2, charAt3)) {
                             int i9 = i7 + 3;
                             int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i7] = (byte) ((codePoint >>> 18) | nm7.O3);
+                            bArr[i7] = (byte) ((codePoint >>> 18) | kk7.O3);
                             bArr[i7 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                             bArr[i7 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
                             i7 += 4;
@@ -149,7 +149,7 @@ final class zzvf {
         if (i2 >= length) {
             return i2;
         }
-        i2d.f(i2 + 4294967296L);
+        haf.d(i2 + 4294967296L);
         return 0;
     }
 
@@ -190,7 +190,7 @@ final class zzvf {
             } else {
                 if (b2 < -32) {
                     if (i7 >= i4) {
-                        i2d.j("Protocol message had invalid UTF-8.");
+                        fvc.i("Protocol message had invalid UTF-8.");
                         return null;
                     }
                     i3 = i6 + 1;
@@ -198,7 +198,7 @@ final class zzvf {
                     zzvd.zzc(b2, bArr[i7], cArr, i6);
                 } else if (b2 < -16) {
                     if (i7 >= i4 - 1) {
-                        i2d.j("Protocol message had invalid UTF-8.");
+                        fvc.i("Protocol message had invalid UTF-8.");
                         return null;
                     }
                     i3 = i6 + 1;
@@ -207,7 +207,7 @@ final class zzvf {
                     zzvd.zzb(b2, bArr[i7], bArr[i8], cArr, i6);
                 } else {
                     if (i7 >= i4 - 2) {
-                        i2d.j("Protocol message had invalid UTF-8.");
+                        fvc.i("Protocol message had invalid UTF-8.");
                         return null;
                     }
                     byte b4 = bArr[i7];
@@ -279,7 +279,7 @@ final class zzvf {
                         if (i7 > -65) {
                             return false;
                         }
-                        if ((((i7 + nm7.w1) + (i4 << 28)) >> 30) != 0) {
+                        if ((((i7 + kk7.w1) + (i4 << 28)) >> 30) != 0) {
                             return false;
                         }
                         int i8 = i + 3;

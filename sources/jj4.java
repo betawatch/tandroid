@@ -1,48 +1,63 @@
 // default package
 
-import android.os.Build;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.attribute.FileAttribute;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class jj4 {
-    public static h93 a(c7a c7aVar, ai4 ai4Var, nx2 nx2Var, pr4 pr4Var) {
-        n34 n34Var = n34.a;
-        byte b = 3;
-        px2 px2Var = null;
-        try {
-            System.loadLibrary("datastore_shared_counter");
-            return new h93(new ed4(c7aVar, new e93(nx2Var, (byte) 1), pr4Var), lm2.a(new hj1(n34Var, px2Var, b)), ai4Var, nx2Var);
-        } catch (SecurityException | UnsatisfiedLinkError unused) {
-            return new h93(new ed4(c7aVar, cd4.c, pr4Var), lm2.a(new hj1(n34Var, px2Var, b)), ai4Var, nx2Var);
-        }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class jj4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sj4 b;
+
+    public /* synthetic */ jj4(sj4 sj4Var, byte b) {
+        this.a = b;
+        this.b = sj4Var;
     }
 
-    public static void b(File file) {
-        File parentFile = file.getParentFile();
-        if (parentFile != null) {
-            if (parentFile.exists() && !parentFile.isDirectory() && rr5.a(parentFile.getName(), "firebaseSessions") && !parentFile.delete()) {
-                zg.e(parentFile, "Failed to delete conflicting file: ");
-                return;
-            }
-            if (parentFile.isDirectory()) {
-                return;
-            }
-            if (Build.VERSION.SDK_INT < 26) {
-                if (parentFile.mkdirs() || parentFile.isDirectory()) {
-                    return;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Object[] objArr = 0;
+        byte b2 = 1;
+        sj4 sj4Var = this.b;
+        switch (b) {
+            case 0:
+                ImageView imageView = sj4Var.l;
+                if (imageView != null) {
+                    imageView.setVisibility(8);
+                    sj4Var.l.setImageDrawable(null);
+                    break;
                 }
-                zg.e(parentFile, "Failed to create directory: ");
-                return;
-            }
-            try {
-                Files.createDirectories(parentFile.toPath(), new FileAttribute[0]);
-            } catch (Exception e) {
-                throw new IOException("Failed to create directory: " + parentFile, e);
-            }
+                break;
+            case 1:
+                ImageView imageView2 = sj4Var.l;
+                if (imageView2 != null) {
+                    imageView2.setVisibility(8);
+                    sj4Var.l.setImageDrawable(null);
+                    break;
+                }
+                break;
+            case 2:
+                if (sj4Var.b() && sj4Var.c()) {
+                    float f = sj4Var.M[0];
+                    if (sj4Var.b.a0(f >= ((float) sj4Var.x) * 0.5f, f, sj4Var.G) && !sj4Var.u) {
+                        sj4Var.u = true;
+                        sj4Var.o(true);
+                        if (!sj4Var.w) {
+                            sj4Var.w = true;
+                            gl.d3(sj4Var.P, 1500L);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                gl.c3(new jj4(sj4Var, objArr == true ? 1 : 0));
+                break;
+            default:
+                sj4Var.getClass();
+                gl.c3(new jj4(sj4Var, b2));
+                break;
         }
     }
 }

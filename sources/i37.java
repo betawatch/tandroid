@@ -1,45 +1,18 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class i37 extends CharacterStyle {
-    public final /* synthetic */ byte a;
+public final class i37 {
+    public final byte a;
+    public final tgb b;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
 
-    public i37(j37 j37Var) {
-        this.a = (byte) 0;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setTypeface(gm.o());
-                int alpha = textPaint.getAlpha();
-                textPaint.setColor(cmb.w0(null, cmb.m6, false));
-                textPaint.setAlpha(alpha);
-                break;
-            case 1:
-                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
-                textPaint.setColor(cmb.S2.getColor());
-                break;
-            case 2:
-                textPaint.setColor(cmb.n2.linkColor);
-                break;
-            case 3:
-                break;
-            default:
-                textPaint.setAlpha(128);
-                break;
-        }
-    }
-
-    public /* synthetic */ i37(byte b) {
-        this.a = b;
-    }
-
-    private final void a(TextPaint textPaint) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public i37(int i, String str) {
+        this.a = i;
+        this.b = new tgb(str, 14.0f, gl.o());
     }
 }

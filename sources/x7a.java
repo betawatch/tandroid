@@ -1,9 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class x7a {
-    public final cx5 serializer() {
-        return w7a.a;
+import android.content.Context;
+import android.view.View;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class x7a extends b4c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        b4c.h(new x7a());
+    }
+
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        ((y7a) view).set(c4cVar.A);
+    }
+
+    @Override // b4c
+    public final boolean c(c4c c4cVar, c4c c4cVar2) {
+        return c4cVar.A == c4cVar2.A;
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new y7a(context, wjbVar);
+    }
+
+    @Override // b4c
+    public final boolean e(c4c c4cVar, c4c c4cVar2) {
+        return c4cVar.d == c4cVar2.d;
     }
 }

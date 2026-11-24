@@ -1,19 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class wve implements cq7 {
-    public static final wve a = new wve();
+import android.os.Build;
+import android.os.Trace;
+import android.util.Log;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-    static {
-        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class wve {
+    public static long a;
+    public static Method b;
+
+    public static void a(String str) {
+        if (str.length() > 127) {
+            str = str.substring(0, kk7.K1);
+        }
+        Trace.beginSection(str);
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static boolean b() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            return lxb.a();
         }
-        throw null;
+        try {
+            Method method = b;
+            if (method == null) {
+                a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
+                method = Trace.class.getMethod("isTagEnabled", Long.TYPE);
+                b = method;
+            }
+            return ((Boolean) method.invoke(null, Long.valueOf(a))).booleanValue();
+        } catch (Exception e) {
+            if (!(e instanceof InvocationTargetException)) {
+                Log.v("Trace", "Unable to call isTagEnabled via reflection", e);
+                return false;
+            }
+            Throwable cause = e.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
+            }
+            sdb.b(cause);
+            return false;
+        }
     }
 }

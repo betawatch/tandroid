@@ -1,146 +1,47 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Outline;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.text.TextUtils;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class if9 extends Drawable implements Drawable.Callback {
-    public final Drawable a;
-    public final Paint b;
-    public final Path c;
-    public final RectF d;
-    public final Outline e;
-    public boolean f;
-    public final boolean h;
-    public boolean n;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class if9 implements ft3, kf9 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xe9 b;
 
-    public if9(Drawable drawable) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new Path();
-        this.d = new RectF();
-        this.e = new Outline();
-        this.f = true;
-        this.a = drawable;
-        drawable.setCallback(this);
-        paint.setColor(0);
-        this.h = true;
-        a(cmb.I.o());
+    public /* synthetic */ if9(xe9 xe9Var, byte b) {
+        this.a = b;
+        this.b = xe9Var;
     }
 
-    public final void a(boolean z) {
-        this.n = z;
-        this.b.setShadowLayer(gm.L(12.0f), 0.0f, gm.L(4.0f), cmb.p1(z ? 0.3f : 0.1f, -16777216));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float radius;
-        if (this.h && this.n != cmb.I.o()) {
-            a(!this.n);
-        }
-        boolean z = this.f;
-        Drawable drawable = this.a;
-        Path path = this.c;
-        if (z) {
-            Outline outline = this.e;
-            path.reset();
-            Rect bounds = getBounds();
-            RectF rectF = this.d;
-            rectF.set(bounds);
-            if (Build.VERSION.SDK_INT >= 24) {
-                try {
-                    drawable.getOutline(outline);
-                    radius = outline.getRadius();
-                } catch (Throwable unused) {
+    @Override // ft3
+    public final void a(String str) {
+        byte b = this.a;
+        xe9 xe9Var = this.b;
+        switch (b) {
+            case 0:
+                if (!TextUtils.isEmpty(str)) {
+                    TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = new TL_keyboard.TL_inlineButtonTypeUrl();
+                    tL_inlineButtonTypeUrl.url = str;
+                    xe9Var.a(tL_inlineButtonTypeUrl);
+                    break;
                 }
-                if (radius <= 0.0f) {
-                    path.addRoundRect(rectF, radius, radius, Path.Direction.CW);
-                } else {
-                    path.addRect(rectF, Path.Direction.CW);
+                break;
+            default:
+                if (!TextUtils.isEmpty(str)) {
+                    TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy = new TL_keyboard.TL_inlineButtonTypeCopy();
+                    tL_inlineButtonTypeCopy.copy_text = str;
+                    xe9Var.a(tL_inlineButtonTypeCopy);
+                    break;
                 }
-                this.f = false;
-            }
-            radius = -1.0f;
-            if (radius <= 0.0f) {
-            }
-            this.f = false;
+                break;
         }
-        canvas.drawPath(path, this.b);
-        drawable.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.a.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.a.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.f = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean onStateChange(int[] iArr) {
-        return this.a.setState(iArr);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        scheduleSelf(runnable, j);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.a.setAlpha(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f, float f2) {
-        this.a.setHotspot(f, f2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i, int i2, int i3, int i4) {
-        this.a.setHotspotBounds(i, i2, i3, i4);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
+    @Override // kf9
+    public final void run(long j) {
+        TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
+        tL_inlineButtonTypeUserProfile.user_id = j;
+        this.b.a(tL_inlineButtonTypeUserProfile);
     }
 }

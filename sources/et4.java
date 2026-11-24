@@ -1,149 +1,97 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.opengl.GLUtils;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class et4 extends Thread {
-    public final SurfaceTexture a;
-    public volatile boolean b;
-    public boolean c;
-    public final /* synthetic */ ft4 d;
+public final /* synthetic */ class et4 implements i8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public et4(ft4 ft4Var, SurfaceTexture surfaceTexture) {
-        this.d = ft4Var;
-        this.a = surfaceTexture;
+    public /* synthetic */ et4(Object obj, long j, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = j;
+        this.d = obj2;
     }
 
-    public final void a() {
-        ft4 ft4Var;
-        vs4 vs4Var;
-        ft4 ft4Var2 = this.d;
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        ft4Var2.r = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        ft4Var2.f = eglGetDisplay;
-        EGLDisplay eGLDisplay = EGL10.EGL_NO_DISPLAY;
-        EGL10 egl102 = ft4Var2.r;
-        if (eglGetDisplay == eGLDisplay) {
-            wa3.c(GLUtils.getEGLErrorString(egl102.eglGetError()), "eglGetDisplay failed ");
-            return;
-        }
-        if (!egl102.eglInitialize(eglGetDisplay, new int[2])) {
-            wa3.c(GLUtils.getEGLErrorString(ft4Var2.r.eglGetError()), "eglInitialize failed ");
-            return;
-        }
-        byte b = 1;
-        int[] iArr = new int[1];
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = s34.m(ft4Var2.getContext()).h() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12337, ft4Var2.getMsaaSamples(), 12344};
-        ft4Var2.s = null;
-        if (!s34.m(ft4Var2.getContext()).h() && ft4Var2.r.eglChooseConfig(ft4Var2.f, iArr2, eGLConfigArr, 1, iArr) && iArr[0] != 0) {
-            ft4Var2.s = eGLConfigArr[0];
-        } else if (!ft4Var2.r.eglChooseConfig(ft4Var2.f, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
-            a32.e(GLUtils.getEGLErrorString(ft4Var2.r.eglGetError()), "eglChooseConfig failed ");
-            return;
-        } else if (iArr[0] > 0) {
-            ft4Var2.s = eGLConfigArr[0];
-        }
-        EGLConfig eGLConfig = ft4Var2.s;
-        if (eGLConfig == null) {
-            zo4.k("eglConfig not initialized");
-            return;
-        }
-        int i = ft4Var2.T == 4 ? 3 : 2;
-        EGL10 egl103 = ft4Var2.r;
-        EGLDisplay eGLDisplay2 = ft4Var2.f;
-        EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
-        EGLContext eglCreateContext = egl103.eglCreateContext(eGLDisplay2, eGLConfig, eGLContext, new int[]{12440, i, 12344});
-        ft4Var2.n = eglCreateContext;
-        if (eglCreateContext == null || eglCreateContext == eGLContext) {
-            i2d.e(ft4Var2.r.eglGetError(), "eglCreateContext failed: ");
-            return;
-        }
-        ft4Var2.c();
-        ft4Var2.h = ft4Var2.r.eglCreateWindowSurface(ft4Var2.f, ft4Var2.s, ft4Var2.c, null);
-        ft4Var2.c();
-        EGLSurface eGLSurface = ft4Var2.h;
-        if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
-            int eglGetError = ft4Var2.r.eglGetError();
-            if (eglGetError != 12299) {
-                wa3.c(GLUtils.getEGLErrorString(eglGetError), "eglCreateWindowSurface failed ");
-                return;
-            }
-            fc4.d("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
-        } else if (!ft4Var2.r.eglMakeCurrent(ft4Var2.f, eGLSurface, eGLSurface, ft4Var2.n)) {
-            wa3.c(GLUtils.getEGLErrorString(ft4Var2.r.eglGetError()), "eglMakeCurrent failed ");
-            return;
-        } else {
-            ft4Var2.c();
-            ft4Var2.w = (GL10) ft4Var2.n.getGL();
-            ft4Var2.c();
-        }
-        this.d.d();
-        long nanoTime = System.nanoTime();
-        while (!this.b) {
-            synchronized (this.d) {
-                if (this.d.I && (vs4Var = (ft4Var = this.d).b) != null) {
-                    ft4Var.f(vs4Var);
-                    this.d.I = false;
+    @Override // i8c
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        TLRPC.Updates updates = null;
+        long j = this.b;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (b) {
+            case 0:
+                ((yg) obj3).a(((kt4) obj4).b(j), (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                fu5 fu5Var = (fu5) obj4;
+                TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) obj3;
+                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
+                    updates = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
+                    na7.q1(fu5Var.a).R3(updates, false);
+                } else if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
+                    gl.c3(new au5(fu5Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, this.b, (byte) 1));
                 }
-            }
-            ft4 ft4Var3 = this.d;
-            if (ft4Var3.b != null && !ft4Var3.H) {
-                long nanoTime2 = System.nanoTime();
-                this.d.e((nanoTime2 - nanoTime) / 1.0E9f);
-                if (!this.c) {
-                    this.c = true;
-                    gm.c3(new dt4(this, b));
+                gl.c3(new e45(fu5Var, tL_error, updates, tL_messages_importChatInvite, (byte) 8));
+                break;
+            case 2:
+                na7 na7Var = (na7) obj4;
+                jo2 jo2Var = (jo2) obj3;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (bool != null) {
+                    na7Var.Y2(0, j, true);
                 }
-                nanoTime = nanoTime2;
-            }
-            try {
-                ft4 ft4Var4 = this.d;
-                if (ft4Var4.b == null || ft4Var4.H) {
-                    Thread.sleep(100L);
+                jo2Var.a(bool, tL_error2);
+                break;
+            case 3:
+                na7 na7Var2 = (na7) obj4;
+                jo2 jo2Var2 = (jo2) obj3;
+                TLRPC.Bool bool2 = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                if (bool2 != null) {
+                    na7Var2.Y2(0, j, true);
+                }
+                jo2Var2.a(bool2, tL_error3);
+                break;
+            case 4:
+                ef6 ef6Var = (ef6) obj3;
+                TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
+                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
+                ((hd) obj4).dismiss();
+                if (tL_error4 == null) {
+                    ef6Var.a(Long.valueOf(j), auth_authorization, null);
+                    break;
                 } else {
-                    long nanoTime3 = this.d.x - (System.nanoTime() - nanoTime);
-                    if (nanoTime3 > 0) {
-                        Thread.sleep(nanoTime3 / 1000000, (int) (nanoTime3 % 1000000));
-                    }
+                    ef6Var.a(Long.valueOf(j), null, tL_error4.text);
+                    break;
                 }
-            } catch (InterruptedException unused) {
-            }
+            case 5:
+                y99 y99Var = (y99) obj4;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
+                ypa ypaVar = (ypa) obj;
+                c01 c01Var = (c01) obj2;
+                c01Var.d();
+                gta.u(y99Var.a, ypaVar.a).f(ypaVar.b, tL_starGiftUnique, this.b, null, true, new p((Object) y99Var, (Object) c01Var, (Object) tL_starGiftUnique, (byte) 24));
+                break;
+            default:
+                ((vua) obj4).Y0((c4c) obj3, this.b, (Boolean) obj, (String) obj2);
+                break;
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v4, types: [ft4] */
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        synchronized (this.d.d) {
-            if (this.b) {
-                return;
-            }
-            ft4 ft4Var = this.d;
-            ft4Var.c = this.a;
-            ft4Var.I = true;
-            try {
-                try {
-                    a();
-                } catch (Exception e) {
-                    if (!this.b) {
-                        fc4.g(e, true);
-                        gm.c3(new dt4(this, (byte) 0));
-                    }
-                }
-            } finally {
-                this.d.i();
-            }
-        }
+    public /* synthetic */ et4(Object obj, Object obj2, long j, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j;
     }
 }

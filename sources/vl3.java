@@ -1,80 +1,68 @@
 // default package
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class vl3 extends LinearLayout implements jm7 {
-    public int a;
-    public bf0 b;
-    public TextView c;
-    public TextView d;
-    public TextView e;
+public final class vl3 {
+    public final String a;
+    public final String[] b;
+    public volatile String[] c;
+    public volatile String[] d;
+    public volatile long e;
+    public volatile long f;
+    public int g;
+    public boolean i;
+    public boolean j;
+    public volatile float k;
+    public final ArrayList h = new ArrayList();
+    public final ArrayList l = new ArrayList();
 
-    public final void a() {
-        bf0 bf0Var = this.b;
-        int i = this.a;
-        TLRPC.TL_messages_stickerSet q0 = hs6.d0(i).q0("tg_placeholders_android");
-        if (q0 == null) {
-            q0 = hs6.d0(i).o0("tg_placeholders_android");
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = q0;
-        TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
-        if (document == null) {
-            hs6.d0(i).d1("tg_placeholders_android", false, tL_messages_stickerSet == null);
-            bf0Var.getImageReceiver().f();
-            return;
-        }
-        meb d = eq3.d(document.thumbs, cmb.Z6, 0.2f, false);
-        if (d != null) {
-            d.e = 512;
-            d.f = 512;
-        }
-        this.b.n(gn5.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
-        bf0Var.getImageReceiver().M(2);
+    public vl3(String str, String[] strArr, String[] strArr2, long j) {
+        this.a = str;
+        this.b = strArr;
+        this.c = strArr2;
+        this.e = j;
     }
 
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == nm7.y0 && "tg_placeholders_android".equals((String) objArr[0]) && getVisibility() == 0) {
-            a();
+    public final String a(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (String str2 : str.split(",")) {
+            if (sb.length() > 0) {
+                sb.append(',');
+            }
+            sb.append(DictationAsr.g0(this, str2));
         }
+        return sb.toString();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        nm7.f(this.a).b(this, nm7.y0);
+    public final String b() {
+        return b00.j(new StringBuilder(), this.a, ".tzf");
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        nm7.f(this.a).n(this, nm7.y0);
+    public final boolean c(String str) {
+        for (String str2 : this.b) {
+            if (str2.equals(str)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void set(TLRPC.RequestPeerType requestPeerType) {
-        TextView textView = this.c;
-        TextView textView2 = this.d;
-        TextView textView3 = this.e;
-        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            textView.setText(jb6.M0(2131747878, null));
-            textView2.setText(jb6.M0(2131747877, null));
-            textView3.setVisibility(0);
-            textView3.setText(jb6.M0(2131751689, null));
-            return;
+    public final String[] d(String str) {
+        String[] strArr = this.d != null ? this.d : this.c;
+        ArrayList arrayList = new ArrayList();
+        for (String str2 : strArr) {
+            if (DictationAsr.m(str2).equals(str)) {
+                arrayList.add(str2);
+            }
         }
-        if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) {
-            textView.setText(jb6.M0(2131747874, null));
-            textView2.setText(jb6.M0(2131747873, null));
-            textView3.setVisibility(8);
-        } else {
-            textView.setText(jb6.M0(2131747876, null));
-            textView2.setText(jb6.M0(2131747875, null));
-            textView3.setVisibility(0);
-            textView3.setText(jb6.M0(2131751683, null));
+        String f0 = DictationAsr.f0(arrayList);
+        if (f0 != null) {
+            arrayList.remove(f0);
+            arrayList.add(0, f0);
         }
+        return (String[]) arrayList.toArray(new String[0]);
     }
 }

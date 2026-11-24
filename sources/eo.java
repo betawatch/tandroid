@@ -1,53 +1,60 @@
 // default package
 
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class eo {
-    public final cn a;
-    public final StaticLayout b;
-    public final float c;
-    public final int d;
-    public final float e;
-    public final float f;
-    public final float g;
-    public final float h;
-    public final /* synthetic */ ho i;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class eo extends b4 {
+    public static final Parcelable.Creator<eo> CREATOR = new b1d((byte) 6);
+    public final ArrayList a;
+    public final boolean b;
+    public final String c;
+    public final String d;
 
-    public eo(ho hoVar, StaticLayout staticLayout, float f, int i) {
-        this.i = hoVar;
-        this.b = staticLayout;
-        this.d = i;
-        this.c = f;
-        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
-        this.f = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineWidth(0);
-        this.g = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineBaseline(0);
-        this.h = staticLayout != null ? staticLayout.getHeight() - this.g : 0.0f;
-        if (hoVar.getCallback() instanceof View) {
-            this.a = gn.update(hoVar.p, (View) hoVar.getCallback(), this.a, staticLayout);
-        }
+    public eo(ArrayList arrayList, boolean z, String str, String str2) {
+        fre.h(arrayList);
+        this.a = arrayList;
+        this.b = z;
+        this.c = str;
+        this.d = str2;
     }
 
-    public final void a(Canvas canvas, float f) {
-        ho hoVar = this.i;
-        int i = hoVar.C;
-        TextPaint textPaint = hoVar.a;
-        int max = Math.max(0, Math.min(nm7.d4, (int) (i * f)));
-        if (max != 0) {
-            textPaint.setAlpha(nm7.d4);
-            if (hoVar.V) {
-                textPaint.setShadowLayer(hoVar.W, 0.0f, hoVar.X, hoVar.Y);
-            }
-            int saveLayerAlpha = max < 255 ? canvas.saveLayerAlpha(null, max, 31) : -1;
-            this.b.draw(canvas);
-            gn.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, hoVar.b0);
-            if (saveLayerAlpha != -1) {
-                canvas.restoreToCount(saveLayerAlpha);
-            }
+    public static eo b(List list, boolean z) {
+        TreeSet treeSet = new TreeSet(is6.h);
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            Collections.addAll(treeSet, ((tq7) it.next()).a());
         }
+        return new eo(new ArrayList(treeSet), z, null, null);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof eo)) {
+            return false;
+        }
+        eo eoVar = (eo) obj;
+        return this.b == eoVar.b && cqe.a(this.a, eoVar.a) && cqe.a(this.c, eoVar.c) && cqe.a(this.d, eoVar.d);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.b), this.a, this.c, this.d});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.p(parcel, 1, this.a);
+        jte.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        jte.l(parcel, 3, this.c);
+        jte.l(parcel, 4, this.d);
+        jte.s(parcel, r);
     }
 }

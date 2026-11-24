@@ -1,176 +1,65 @@
 // default package
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Typeface;
-import android.os.ParcelFileDescriptor;
-import android.system.ErrnoException;
-import android.system.Os;
-import android.system.OsConstants;
-import android.util.Log;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class t5c extends xye {
-    public static Class a = null;
-    public static Constructor b = null;
-    public static Method c = null;
-    public static Method d = null;
-    public static boolean e = false;
-
-    public static boolean f(Object obj, String str, int i, boolean z) {
-        g();
-        try {
-            return ((Boolean) c.invoke(obj, str, Integer.valueOf(i), Boolean.valueOf(z))).booleanValue();
-        } catch (IllegalAccessException | InvocationTargetException e2) {
-            rjb.m(e2);
-            return false;
+public final class t5c {
+    public static s5c a(Object obj) {
+        fs4 fs4Var = (fs4) obj;
+        s5c s5cVar = fs4Var.unknownFields;
+        if (s5cVar != s5c.f) {
+            return s5cVar;
         }
+        s5c s5cVar2 = new s5c(0, new int[8], new Object[8], true);
+        fs4Var.unknownFields = s5cVar2;
+        return s5cVar2;
     }
 
-    public static void g() {
-        Method method;
-        Class<?> cls;
-        Method method2;
-        if (e) {
-            return;
+    public static boolean b(int i, af0 af0Var, Object obj) {
+        ak2 ak2Var = (ak2) af0Var.d;
+        int i2 = af0Var.a;
+        int i3 = i2 >>> 3;
+        int i4 = i2 & 7;
+        if (i4 == 0) {
+            af0Var.B(0);
+            ((s5c) obj).c(i3 << 3, Long.valueOf(ak2Var.n()));
+            return true;
         }
-        e = true;
-        Constructor<?> constructor = null;
-        try {
-            cls = Class.forName("android.graphics.FontFamily");
-            Constructor<?> constructor2 = cls.getConstructor(null);
-            method2 = cls.getMethod("addFontWeightStyle", String.class, Integer.TYPE, Boolean.TYPE);
-            method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
-            constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e2) {
-            Log.e("TypefaceCompatApi21Impl", e2.getClass().getName(), e2);
-            method = null;
-            cls = null;
-            method2 = null;
+        if (i4 == 1) {
+            af0Var.B(1);
+            ((s5c) obj).c((i3 << 3) | 1, Long.valueOf(ak2Var.k()));
+            return true;
         }
-        b = constructor;
-        a = cls;
-        c = method2;
-        d = method;
-    }
-
-    @Override // xye
-    public Typeface a(Context context, yn4 yn4Var, Resources resources, int i) {
-        g();
-        try {
-            Object newInstance = b.newInstance(null);
-            for (zn4 zn4Var : yn4Var.a) {
-                File c2 = aze.c(context);
-                if (c2 == null) {
-                    return null;
-                }
-                try {
-                    if (aze.a(c2, resources, zn4Var.f) && f(newInstance, c2.getPath(), zn4Var.b, zn4Var.c)) {
-                        c2.delete();
-                    }
-                } catch (RuntimeException unused) {
-                } catch (Throwable th) {
-                    c2.delete();
-                    throw th;
-                }
-                c2.delete();
-                return null;
+        if (i4 == 2) {
+            ((s5c) obj).c((i3 << 3) | 2, af0Var.h());
+            return true;
+        }
+        if (i4 != 3) {
+            if (i4 == 4) {
+                return false;
             }
-            g();
-            try {
-                Object newInstance2 = Array.newInstance((Class<?>) a, 1);
-                Array.set(newInstance2, 0, newInstance);
-                return (Typeface) d.invoke(null, newInstance2);
-            } catch (IllegalAccessException | InvocationTargetException e2) {
-                rjb.m(e2);
-                return null;
+            if (i4 != 5) {
+                throw zp5.b();
             }
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e3) {
-            rjb.m(e3);
-            return null;
+            af0Var.B(5);
+            ((s5c) obj).c((i3 << 3) | 5, Integer.valueOf(ak2Var.j()));
+            return true;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0065 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // xye
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Typeface b(Context context, co4[] co4VarArr, int i) {
-        File file;
-        File c2;
-        Typeface createFromFile;
-        String readlink;
-        if (co4VarArr.length >= 1) {
-            try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(xye.e(co4VarArr, i).a, "r", null);
-                if (openFileDescriptor != null) {
-                    try {
-                        try {
-                            readlink = Os.readlink("/proc/self/fd/" + openFileDescriptor.getFd());
-                        } finally {
-                        }
-                    } catch (ErrnoException unused) {
-                    }
-                    try {
-                        if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
-                            file = new File(readlink);
-                            if (file == null && file.canRead()) {
-                                Typeface createFromFile2 = Typeface.createFromFile(file);
-                                openFileDescriptor.close();
-                                return createFromFile2;
-                            }
-                            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                            c2 = aze.c(context);
-                            if (c2 != null) {
-                                try {
-                                } catch (RuntimeException unused2) {
-                                } catch (Throwable th) {
-                                    c2.delete();
-                                    throw th;
-                                }
-                                if (aze.b(c2, fileInputStream)) {
-                                    createFromFile = Typeface.createFromFile(c2.getPath());
-                                    c2.delete();
-                                    fileInputStream.close();
-                                    openFileDescriptor.close();
-                                    return createFromFile;
-                                }
-                                c2.delete();
-                            }
-                            createFromFile = null;
-                            fileInputStream.close();
-                            openFileDescriptor.close();
-                            return createFromFile;
-                        }
-                        c2 = aze.c(context);
-                        if (c2 != null) {
-                        }
-                        createFromFile = null;
-                        fileInputStream.close();
-                        openFileDescriptor.close();
-                        return createFromFile;
-                    } finally {
-                    }
-                    file = null;
-                    if (file == null) {
-                    }
-                    FileInputStream fileInputStream2 = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                } else if (openFileDescriptor != null) {
-                    openFileDescriptor.close();
-                    return null;
-                }
-            } catch (IOException unused3) {
-            }
+        s5c s5cVar = new s5c(0, new int[8], new Object[8], true);
+        int i5 = i3 << 3;
+        int i6 = i5 | 4;
+        int i7 = i + 1;
+        if (i7 >= 100) {
+            throw new zp5("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
         }
-        return null;
+        while (af0Var.c() != Integer.MAX_VALUE && b(i7, af0Var, s5cVar)) {
+        }
+        if (i6 != af0Var.a) {
+            throw new zp5("Protocol message end-group tag did not match expected tag.");
+        }
+        if (s5cVar.e) {
+            s5cVar.e = false;
+        }
+        ((s5c) obj).c(i5 | 3, s5cVar);
+        return true;
     }
 }

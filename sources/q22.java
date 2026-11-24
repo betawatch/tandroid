@@ -1,38 +1,86 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class q22 extends b6c {
-    static {
-        b6c.h(new q22());
+public final class q22 extends zya {
+    public final /* synthetic */ byte L = 1;
+    public final /* synthetic */ Object M;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q22(qvb qvbVar, Context context, pi4 pi4Var) {
+        super(context, pi4Var, 0, null);
+        this.M = qvbVar;
     }
 
-    public static c6c i(CharSequence charSequence, String str) {
-        c6c K = c6c.K(q22.class);
-        K.m = str;
-        K.n = charSequence;
-        return K;
+    @Override // zya
+    public final void e(boolean z, boolean z2) {
+        switch (this.L) {
+            case 2:
+                super.e(z, z2);
+                qvb qvbVar = (qvb) this.M;
+                ttb ttbVar = qvbVar.n;
+                if (!z2) {
+                    ((TextView) ttbVar.d).animate().cancel();
+                    ((TextView) qvbVar.n.d).setAlpha(z ? 0.0f : 1.0f);
+                    break;
+                } else {
+                    ((TextView) ttbVar.d).animate().alpha(z ? 0.0f : 1.0f).start();
+                    break;
+                }
+            default:
+                super.e(z, z2);
+                break;
+        }
     }
 
-    @Override // b6c
-    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
-        r22 r22Var = (r22) view;
-        CharSequence charSequence = c6cVar.m;
-        CharSequence charSequence2 = c6cVar.n;
-        r22Var.b.setText(charSequence);
-        r22Var.c.setText(charSequence2);
+    @Override // android.view.View
+    public final float getTranslationY() {
+        switch (this.L) {
+            case 0:
+                return super.getTranslationY() - ((d32) this.M).N;
+            default:
+                return super.getTranslationY();
+        }
     }
 
-    @Override // b6c
-    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
-        return new r22(context, ylbVar);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.L) {
+            case 1:
+                g0a g0aVar = ((c0a) this.M).d;
+                super.onMeasure(i, ug8.f(g0aVar.e, g0aVar.n - g0aVar.r.getPaddingTop(), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
     }
 
-    @Override // b6c
-    public final boolean f() {
-        return false;
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        switch (this.L) {
+            case 0:
+                super.setTranslationY(f + ((d32) this.M).N);
+                break;
+            default:
+                super.setTranslationY(f);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q22(int i, f53 f53Var, c0a c0aVar, Context context) {
+        super(context, null, i, f53Var);
+        this.M = c0aVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q22(d32 d32Var, Context context, pi4 pi4Var, wjb wjbVar) {
+        super(context, pi4Var, 1, wjbVar);
+        this.M = d32Var;
     }
 }

@@ -1,45 +1,85 @@
 // default package
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class by5 implements DialogInterface.OnDismissListener {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class by5 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ fla c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ kz5 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public /* synthetic */ by5(fla flaVar, Object obj, int i, byte b) {
-        this.a = b;
-        this.c = flaVar;
-        this.d = obj;
-        this.b = i;
+    public /* synthetic */ by5(LaunchActivity launchActivity, kz5 kz5Var, int i, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
+        this.a = (byte) 0;
+        this.b = launchActivity;
+        this.d = kz5Var;
+        this.c = i;
+        this.i = authorizationform;
+        this.e = getauthorizationform;
+        this.f = str;
+        this.g = str2;
+        this.h = str3;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        int i = this.b;
-        Object obj = this.d;
-        fla flaVar = this.c;
+        Object obj = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.i;
         switch (b) {
             case 0:
-                ry5 ry5Var = (ry5) flaVar;
-                if (ry5Var.Q1 == ((gy5) obj)) {
-                    ry5Var.Q1 = null;
-                }
-                ry5Var.q0(false);
-                ry5Var.E0(i);
+                String str = LaunchActivity.C1;
+                gl.c3(new nx1(this.b, this.d, tLObject, this.c, (TL_account.authorizationForm) obj5, (TL_account.getAuthorizationForm) obj4, (String) obj3, (String) obj2, (String) obj, (byte) 2));
                 break;
-            default:
-                xv7 xv7Var = (xv7) flaVar;
-                xv7Var.e2 = null;
-                if (((boolean[]) obj)[0]) {
-                    xv7Var.y0(false);
+            case 1:
+                int[] iArr = (int[]) obj5;
+                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
+                String str2 = (String) obj3;
+                String str3 = (String) obj2;
+                String str4 = (String) obj;
+                String str5 = LaunchActivity.C1;
+                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
+                LaunchActivity launchActivity = this.b;
+                kz5 kz5Var = this.d;
+                if (authorizationform == null) {
+                    gl.c3(new sx5((Object) launchActivity, (Object) kz5Var, (Object) tL_error, (byte) 1));
+                    break;
+                } else {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    int i = this.c;
+                    iArr[0] = ConnectionsManager.getInstance(i).sendRequest(getpassword, new by5(launchActivity, kz5Var, i, authorizationform, getauthorizationform, str2, str3, str4));
+                    break;
                 }
-                xv7Var.R0(i);
+            default:
+                String str6 = LaunchActivity.C1;
+                gl.c3(new nx1(this.b, tLObject, (int[]) obj5, this.c, this.d, (Integer) obj4, (Integer) obj3, (Long) obj2, (Integer) obj, (byte) 1));
                 break;
         }
+    }
+
+    public /* synthetic */ by5(LaunchActivity launchActivity, int[] iArr, int i, kz5 kz5Var, Object obj, Object obj2, Object obj3, Object obj4, byte b) {
+        this.a = b;
+        this.b = launchActivity;
+        this.i = iArr;
+        this.c = i;
+        this.d = kz5Var;
+        this.e = obj;
+        this.f = obj2;
+        this.g = obj3;
+        this.h = obj4;
     }
 }

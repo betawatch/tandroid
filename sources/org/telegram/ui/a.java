@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class a extends FrameLayout {
     public final /* synthetic */ o a;
@@ -46,7 +46,7 @@ public final class a extends FrameLayout {
                 if (translationX != 0) {
                     m[] mVarArr2 = oVar.v0;
                     if (view == mVarArr2[0]) {
-                        float max = Math.max(0.0f, Math.min((measuredWidth - translationX) / gm.L(20.0f), 1.0f));
+                        float max = Math.max(0.0f, Math.min((measuredWidth - translationX) / gl.L(20.0f), 1.0f));
                         Drawable drawable = oVar.n0;
                         drawable.setBounds(translationX - drawable.getIntrinsicWidth(), view.getTop(), translationX, view.getBottom());
                         oVar.n0.setAlpha((int) (max * 255.0f));

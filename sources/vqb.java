@@ -1,107 +1,30 @@
 // default package
 
-import java.math.RoundingMode;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class vqb {
-    public long a;
-    public long b;
-    public long c;
-    public final ThreadLocal d = new ThreadLocal();
-
-    public vqb(long j) {
-        g(j);
+public enum vqb extends qsb {
+    public vqb() {
+        super("ScriptDataDoubleEscaped", 28);
     }
 
-    public final synchronized long a(long j) {
-        if (j == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        if (!f()) {
-            long j2 = this.a;
-            if (j2 == 9223372036854775806L) {
-                Long l = (Long) this.d.get();
-                l.getClass();
-                j2 = l.longValue();
-            }
-            this.b = j2 - j;
-            notifyAll();
-        }
-        this.c = j;
-        return j + this.b;
-    }
-
-    public final synchronized long b(long j) {
-        if (j == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        long j2 = this.c;
-        if (j2 != -9223372036854775807L) {
-            String str = hac.a;
-            long b0 = hac.b0(j2, 90000L, 1000000L, RoundingMode.DOWN);
-            long j3 = (4294967296L + b0) / 8589934592L;
-            long j4 = ((j3 - 1) * 8589934592L) + j;
-            long j5 = (j3 * 8589934592L) + j;
-            j = Math.abs(j4 - b0) < Math.abs(j5 - b0) ? j4 : j5;
-        }
-        long j6 = j;
-        String str2 = hac.a;
-        return a(hac.b0(j6, 1000000L, 90000L, RoundingMode.DOWN));
-    }
-
-    public final synchronized long c(long j) {
-        if (j == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        long j2 = this.c;
-        if (j2 != -9223372036854775807L) {
-            String str = hac.a;
-            long b0 = hac.b0(j2, 90000L, 1000000L, RoundingMode.DOWN);
-            long j3 = b0 / 8589934592L;
-            Long.signum(j3);
-            long j4 = (j3 * 8589934592L) + j;
-            j = j4 >= b0 ? j4 : ((j3 + 1) * 8589934592L) + j;
-        }
-        long j5 = j;
-        String str2 = hac.a;
-        return a(hac.b0(j5, 1000000L, 90000L, RoundingMode.DOWN));
-    }
-
-    public final synchronized long d() {
-        long j;
-        j = this.a;
-        if (j == Long.MAX_VALUE || j == 9223372036854775806L) {
-            j = -9223372036854775807L;
-        }
-        return j;
-    }
-
-    public final synchronized long e() {
-        return this.b;
-    }
-
-    public final synchronized boolean f() {
-        return this.b != -9223372036854775807L;
-    }
-
-    public final synchronized void g(long j) {
-        this.a = j;
-        this.b = j == Long.MAX_VALUE ? 0L : -9223372036854775807L;
-        this.c = -9223372036854775807L;
-    }
-
-    public final synchronized void h(long j, boolean z) {
-        jte.p(this.a == 9223372036854775806L);
-        if (f()) {
-            return;
-        }
-        if (z) {
-            this.d.set(Long.valueOf(j));
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        char i = zj1Var.i();
+        if (i == 0) {
+            aqbVar.m(this);
+            zj1Var.a();
+            aqbVar.f((char) 65533);
+        } else if (i == '-') {
+            aqbVar.f(i);
+            aqbVar.a(qsb.T);
+        } else if (i == '<') {
+            aqbVar.f(i);
+            aqbVar.a(qsb.V);
+        } else if (i != 65535) {
+            aqbVar.h(zj1Var.g('-', '<', 0));
         } else {
-            while (!f()) {
-                wait();
-            }
+            aqbVar.l(this);
+            aqbVar.c = qsb.a;
         }
     }
 }

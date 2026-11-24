@@ -1,89 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class fd3 {
-    public final String a;
-    public int b;
-    public long c;
-    public final rz6 d;
-    public boolean e;
-    public boolean f;
-    public final /* synthetic */ gd3 g;
+public final /* synthetic */ class fd3 implements jd3 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ id3 b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ TimeUnit f;
 
-    public fd3(gd3 gd3Var, String str, int i, rz6 rz6Var) {
-        this.g = gd3Var;
-        this.a = str;
-        this.b = i;
-        this.c = rz6Var == null ? -1L : rz6Var.d;
-        if (rz6Var == null || !rz6Var.c()) {
-            return;
-        }
-        this.d = rz6Var;
+    public /* synthetic */ fd3(id3 id3Var, Runnable runnable, long j, long j2, TimeUnit timeUnit, byte b) {
+        this.a = b;
+        this.b = id3Var;
+        this.c = runnable;
+        this.d = j;
+        this.e = j2;
+        this.f = timeUnit;
     }
 
-    public final boolean a(tk tkVar) {
-        rz6 rz6Var = tkVar.d;
-        bqb bqbVar = tkVar.b;
-        if (rz6Var == null) {
-            return this.b != tkVar.c;
+    @Override // jd3
+    public final ScheduledFuture a(l69 l69Var) {
+        byte b = this.a;
+        Runnable runnable = this.c;
+        id3 id3Var = this.b;
+        switch (b) {
+            case 0:
+                return id3Var.b.scheduleAtFixedRate(new gd3(id3Var, runnable, l69Var, (byte) 0), this.d, this.e, this.f);
+            default:
+                return id3Var.b.scheduleWithFixedDelay(new gd3(id3Var, runnable, l69Var, (byte) 2), this.d, this.e, this.f);
         }
-        long j = this.c;
-        if (j == -1) {
-            return false;
-        }
-        if (rz6Var.d > j) {
-            return true;
-        }
-        rz6 rz6Var2 = this.d;
-        if (rz6Var2 == null) {
-            return false;
-        }
-        int i = rz6Var2.b;
-        int b = bqbVar.b(rz6Var.a);
-        int b2 = bqbVar.b(rz6Var2.a);
-        if (rz6Var.d < rz6Var2.d || b < b2) {
-            return false;
-        }
-        if (b > b2) {
-            return true;
-        }
-        if (!rz6Var.c()) {
-            int i2 = rz6Var.e;
-            return i2 == -1 || i2 > i;
-        }
-        int i3 = rz6Var.b;
-        int i4 = rz6Var.c;
-        if (i3 <= i) {
-            return i3 == i && i4 > rz6Var2.c;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x000e, code lost:
-    
-        if (r0 < r8.o()) goto L15;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(bqb bqbVar, bqb bqbVar2) {
-        rz6 rz6Var;
-        int i = this.b;
-        if (i < bqbVar.o()) {
-            gd3 gd3Var = this.g;
-            aqb aqbVar = gd3Var.a;
-            bqbVar.n(i, aqbVar);
-            for (int i2 = aqbVar.m; i2 <= aqbVar.n; i2++) {
-                int b = bqbVar2.b(bqbVar.l(i2));
-                if (b != -1) {
-                    i = bqbVar2.f(b, gd3Var.b, false).c;
-                    break;
-                }
-            }
-            i = -1;
-        }
-        this.b = i;
-        return i != -1 && ((rz6Var = this.d) == null || bqbVar2.b(rz6Var.a) != -1);
     }
 }

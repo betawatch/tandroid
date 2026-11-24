@@ -1,31 +1,39 @@
 // default package
 
-import android.graphics.Paint;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class koa extends l46 {
-    public final Paint q;
-    public int r;
-    public final ylb s;
+public final /* synthetic */ class koa implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vqa b;
+    public final /* synthetic */ mu1 c;
+    public final /* synthetic */ long d;
 
-    public koa(ml1 ml1Var, ylb ylbVar) {
-        super(ml1Var, false, null);
-        Paint paint = new Paint();
-        this.q = paint;
-        this.r = 0;
-        this.s = ylbVar;
-        this.c.setStrokeWidth(gm.N(1.0f));
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
+    public /* synthetic */ koa(vqa vqaVar, mu1 mu1Var, long j, byte b) {
+        this.a = b;
+        this.b = vqaVar;
+        this.c = mu1Var;
+        this.d = j;
     }
 
-    @Override // l46
-    public final void a() {
-        super.a();
-        this.r = on2.f(0.3f, cmb.v0(cmb.c6, this.s), this.m);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.d;
+        mu1 mu1Var = this.c;
+        vqa vqaVar = this.b;
+        switch (b) {
+            case 0:
+                m21 I = u21.b0(mu1Var).I(R.raw.forward, k96.M0(2131749881, null), gl.S2(k96.a0(null, null, 2131749882, vqaVar.s1(), cf3.s(j))));
+                I.t = true;
+                I.j();
+                break;
+            default:
+                m21 I2 = u21.b0(mu1Var).I(R.raw.forward, k96.M0(2131749881, null), gl.S2(k96.a0(null, null, 2131749882, vqaVar.s1(), cf3.s(j))));
+                I2.t = true;
+                I2.j();
+                break;
+        }
     }
 }

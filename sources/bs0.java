@@ -1,29 +1,33 @@
 // default package
 
-import android.content.Context;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class bs0 extends fs0 {
-    public final /* synthetic */ gs0 w;
+public final class bs0 extends cj3 {
+    public final /* synthetic */ p G4;
+    public final /* synthetic */ ds0 H4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bs0(gs0 gs0Var, Context context) {
-        super(gs0Var, context);
-        this.w = gs0Var;
+    public bs0(ds0 ds0Var, Bundle bundle, p pVar) {
+        super(bundle);
+        this.H4 = ds0Var;
+        this.G4 = pVar;
     }
 
-    @Override // fs0, y59
-    public final void f() {
-        super.f();
-        gs0 gs0Var = this.w;
-        if (gs0Var.r.getVisibility() == 0) {
-            gs0Var.x.f();
+    @Override // cj3
+    public final boolean c3() {
+        return true;
+    }
+
+    @Override // cj3, org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        ds0 ds0Var = this.H4;
+        if (ds0Var.X1) {
+            return;
         }
-        a1b a1bVar = gs0Var.E;
-        if (a1bVar != null) {
-            t3b t3bVar = this.e;
-            a1bVar.e(t3bVar != null && t3bVar.C, true);
-        }
+        ds0Var.X1 = true;
+        this.G4.a("USER_DECLINED", null);
     }
 }

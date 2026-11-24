@@ -2,9 +2,9 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-abstract class bm extends u2d {
+abstract class bm extends s0d {
     final /* synthetic */ bn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,9 +13,9 @@ abstract class bm extends u2d {
         this.f = bnVar;
     }
 
-    @Override // u2d
+    @Override // s0d
     public final void a(Exception exc) {
-        if (!(exc instanceof j1d)) {
+        if (!(exc instanceof izc)) {
             super.a(exc);
         } else if (bn.l(this.f)) {
             super.a(new StandardIntegrityException(-2, exc));

@@ -1,78 +1,46 @@
 // default package
 
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.l;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ap1 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ yv1 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
+public final class ap1 extends e17 {
+    public final /* synthetic */ mu1 f;
 
-    public /* synthetic */ ap1(yv1 yv1Var, long j, boolean z) {
-        this.b = yv1Var;
-        this.d = j;
-        this.c = z;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        boolean z = this.c;
-        yv1 yv1Var = this.b;
-        switch (b) {
-            case 0:
-                yv1Var.p9(j, z);
-                break;
-            default:
-                ms1 ms1Var = yv1Var.a0;
-                if (ms1Var != null) {
-                    MediaController w = MediaController.w();
-                    if (!ms1Var.O2 && !ms1Var.v3 && w.E() && !w.F() && w.h1 == ms1Var.w3) {
-                        ms1Var.d1 = false;
-                        zx1 zx1Var = ms1Var.c1;
-                        if (zx1Var != null) {
-                            zx1Var.j(b02.a, false);
-                        }
-                        ms1Var.y4 = true;
-                        ms1Var.v3 = true;
-                        uz1 uz1Var = ms1Var.P3;
-                        if (uz1Var != null) {
-                            uz1Var.z0(1);
-                        }
-                        ms1Var.w2(0, true);
-                        if (z) {
-                            ms1Var.P = true;
-                            l lVar = ms1Var.E2;
-                            if (lVar != null) {
-                                lVar.E.d(1, true, false);
-                            }
-                            hs6 d0 = hs6.d0(ms1Var.R);
-                            long j2 = ms1Var.G3;
-                            yv1 yv1Var2 = ms1Var.F3;
-                            d0.g2(j2, (yv1Var2 == null || !yv1Var2.x4) ? 0L : yv1Var2.d(), true);
-                        }
-                        long currentTimeMillis = j > 0 ? System.currentTimeMillis() - j : w.l1;
-                        ms1Var.Y1 = currentTimeMillis;
-                        zz1 zz1Var = ms1Var.Z0;
-                        if (zz1Var != null) {
-                            zz1Var.a(currentTimeMillis);
-                        }
-                        ms1Var.h5 = true;
-                        ms1Var.f2();
-                        break;
-                    }
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ap1(mu1 mu1Var, Context context, int i, k27 k27Var) {
+        super(context);
+        this.f = mu1Var;
+        this.a = null;
+        if (!k27Var.g4()) {
+            k27Var.O4();
         }
-    }
-
-    public /* synthetic */ ap1(yv1 yv1Var, boolean z, long j) {
-        this.b = yv1Var;
-        this.c = z;
-        this.d = j;
+        pi4 pi4Var = new pi4(context, null);
+        this.c = pi4Var;
+        pi4Var.e(bkb.F8, bkb.h6, -1);
+        pi4Var.setViewType(13);
+        pi4Var.setIsSingleCell(false);
+        addView(pi4Var, nme.c(-1.0f, -2));
+        l46 l46Var = new l46(context, null);
+        this.b = l46Var;
+        l46Var.setTextSize(1, 14.0f);
+        l46Var.setGravity(19);
+        zkb.X(l46Var, bkb.D8, null);
+        zkb.G(l46Var, bkb.Wc, null);
+        l46Var.setEllipsize(TextUtils.TruncateAt.END);
+        l46Var.setSingleLine();
+        l46Var.setLines(1);
+        l46Var.setMaxLines(1);
+        addView(l46Var, nme.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
+        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
+        tL_channels_getMessageAuthor.channel = na7.q1(i).f1(-k27.B0(k27Var.k));
+        tL_channels_getMessageAuthor.id = k27Var.e1();
+        l46Var.setAlpha(0.0f);
+        ConnectionsManager.getInstance(i).sendRequest(tL_channels_getMessageAuthor, new l12(this, i, (byte) 3));
+        setBackground(bkb.Y(bkb.w0(null, bkb.H5, false), 6, 0));
+        setEnabled(false);
     }
 }

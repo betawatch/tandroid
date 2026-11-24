@@ -1,268 +1,325 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.Charset;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class qad implements dq7 {
-    public static final Charset e = Charset.forName("UTF-8");
-    public static final wa4 f = new wa4("key", b10.m(mlb.p(kad.class, new d9d(1))));
-    public static final wa4 g = new wa4("value", b10.m(mlb.p(kad.class, new d9d(2))));
-    public static final u9d h = u9d.d;
-    public OutputStream a;
-    public final HashMap b;
-    public final HashMap c;
-    public final kv8 d = new kv8(this, (byte) 2);
+public abstract class qad {
+    public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
+    public static final int[][] b = {new int[]{1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 0, 1, 0, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1}};
+    public static final int[][] c = {new int[]{-1, -1, -1, -1, -1, -1, -1}, new int[]{6, 18, -1, -1, -1, -1, -1}, new int[]{6, 22, -1, -1, -1, -1, -1}, new int[]{6, 26, -1, -1, -1, -1, -1}, new int[]{6, 30, -1, -1, -1, -1, -1}, new int[]{6, 34, -1, -1, -1, -1, -1}, new int[]{6, 22, 38, -1, -1, -1, -1}, new int[]{6, 24, 42, -1, -1, -1, -1}, new int[]{6, 26, 46, -1, -1, -1, -1}, new int[]{6, 28, 50, -1, -1, -1, -1}, new int[]{6, 30, 54, -1, -1, -1, -1}, new int[]{6, 32, 58, -1, -1, -1, -1}, new int[]{6, 34, 62, -1, -1, -1, -1}, new int[]{6, 26, 46, 66, -1, -1, -1}, new int[]{6, 26, 48, 70, -1, -1, -1}, new int[]{6, 26, 50, 74, -1, -1, -1}, new int[]{6, 30, 54, 78, -1, -1, -1}, new int[]{6, 30, 56, 82, -1, -1, -1}, new int[]{6, 30, 58, 86, -1, -1, -1}, new int[]{6, 34, 62, 90, -1, -1, -1}, new int[]{6, 28, 50, 72, 94, -1, -1}, new int[]{6, 26, 50, 74, 98, -1, -1}, new int[]{6, 30, 54, 78, kk7.m1, -1, -1}, new int[]{6, 28, 54, 80, kk7.q1, -1, -1}, new int[]{6, 32, 58, 84, kk7.u1, -1, -1}, new int[]{6, 30, 58, 86, kk7.y1, -1, -1}, new int[]{6, 34, 62, 90, kk7.C1, -1, -1}, new int[]{6, 26, 50, 74, 98, kk7.F1, -1}, new int[]{6, 30, 54, 78, kk7.m1, kk7.J1, -1}, new int[]{6, 26, 52, 78, kk7.o1, kk7.N1, -1}, new int[]{6, 30, 56, 82, kk7.s1, 134, -1}, new int[]{6, 34, 60, 86, kk7.w1, kk7.T1, -1}, new int[]{6, 30, 58, 86, kk7.y1, kk7.X1, -1}, new int[]{6, 34, 62, 90, kk7.C1, kk7.b2, -1}, new int[]{6, 30, 54, 78, kk7.m1, kk7.J1, kk7.f2}, new int[]{6, 24, 50, 76, kk7.m1, 128, kk7.j2}, new int[]{6, 28, 54, 80, kk7.q1, kk7.P1, kk7.n2}, new int[]{6, 32, 58, 84, kk7.u1, kk7.R1, kk7.r2}, new int[]{6, 26, 54, 82, kk7.u1, kk7.T1, kk7.v2}, new int[]{6, 30, 58, 86, kk7.y1, kk7.X1, kk7.z2}};
+    public static final int[][] d = {new int[]{8, 0}, new int[]{8, 1}, new int[]{8, 2}, new int[]{8, 3}, new int[]{8, 4}, new int[]{8, 5}, new int[]{8, 7}, new int[]{8, 8}, new int[]{7, 8}, new int[]{5, 8}, new int[]{4, 8}, new int[]{3, 8}, new int[]{2, 8}, new int[]{1, 8}, new int[]{0, 8}};
 
-    public qad(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2) {
-        this.a = byteArrayOutputStream;
-        this.b = hashMap;
-        this.c = hashMap2;
-    }
-
-    public static int j(wa4 wa4Var) {
-        kad kadVar = (kad) wa4Var.b(kad.class);
-        if (kadVar != null) {
-            return kadVar.zza();
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0222  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void a(pj0 pj0Var, w34 w34Var, x9c x9cVar, int i, rj0 rj0Var) {
+        int i2;
+        char c2;
+        byte[][] bArr;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        int i10;
+        byte[][] bArr2 = (byte[][]) rj0Var.d;
+        int i11 = rj0Var.b;
+        int i12 = rj0Var.c;
+        for (byte[] bArr3 : bArr2) {
+            Arrays.fill(bArr3, (byte) -1);
         }
-        throw new e44("Field has no @Protobuf config");
-    }
-
-    @Override // dq7
-    public final dq7 a(wa4 wa4Var, Object obj) {
-        c(wa4Var, obj, true);
-        return this;
-    }
-
-    public final void b(wa4 wa4Var, double d, boolean z) {
-        if (z && d == 0.0d) {
-            return;
+        int length = a[0].length;
+        d(0, 0, rj0Var);
+        int i13 = i11 - length;
+        d(i13, 0, rj0Var);
+        d(0, i13, rj0Var);
+        c(0, 7, rj0Var);
+        int i14 = i11 - 8;
+        c(i14, 7, rj0Var);
+        c(0, i14, rj0Var);
+        e(7, 0, rj0Var);
+        int i15 = i12 - 8;
+        e(i15, 0, rj0Var);
+        int i16 = i12 - 7;
+        e(7, i16, rj0Var);
+        if (rj0Var.e(8, i15) == 0) {
+            throw new v30();
         }
-        l((j(wa4Var) << 3) | 1);
-        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
-    }
-
-    public final void c(wa4 wa4Var, Object obj, boolean z) {
-        if (obj != null) {
-            if (obj instanceof CharSequence) {
-                CharSequence charSequence = (CharSequence) obj;
-                if (z && charSequence.length() == 0) {
-                    return;
-                }
-                l((j(wa4Var) << 3) | 2);
-                byte[] bytes = charSequence.toString().getBytes(e);
-                l(bytes.length);
-                this.a.write(bytes);
-                return;
-            }
-            if (obj instanceof Collection) {
-                Iterator it = ((Collection) obj).iterator();
-                while (it.hasNext()) {
-                    c(wa4Var, it.next(), false);
-                }
-                return;
-            }
-            if (obj instanceof Map) {
-                Iterator it2 = ((Map) obj).entrySet().iterator();
-                while (it2.hasNext()) {
-                    k(h, wa4Var, (Map.Entry) it2.next(), false);
-                }
-                return;
-            }
-            if (obj instanceof Double) {
-                b(wa4Var, ((Double) obj).doubleValue(), z);
-                return;
-            }
-            if (obj instanceof Float) {
-                float floatValue = ((Float) obj).floatValue();
-                if (z && floatValue == 0.0f) {
-                    return;
-                }
-                l((j(wa4Var) << 3) | 5);
-                this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
-                return;
-            }
-            if (obj instanceof Number) {
-                i(wa4Var, ((Number) obj).longValue(), z);
-                return;
-            }
-            if (obj instanceof Boolean) {
-                h(wa4Var, ((Boolean) obj).booleanValue() ? 1 : 0, z);
-                return;
-            }
-            if (obj instanceof byte[]) {
-                byte[] bArr = (byte[]) obj;
-                if (z && bArr.length == 0) {
-                    return;
-                }
-                l((j(wa4Var) << 3) | 2);
-                l(bArr.length);
-                this.a.write(bArr);
-                return;
-            }
-            cq7 cq7Var = (cq7) this.b.get(obj.getClass());
-            if (cq7Var != null) {
-                k(cq7Var, wa4Var, obj, z);
-                return;
-            }
-            zac zacVar = (zac) this.c.get(obj.getClass());
-            if (zacVar != null) {
-                kv8 kv8Var = this.d;
-                kv8Var.b = false;
-                kv8Var.d = wa4Var;
-                kv8Var.c = z;
-                zacVar.a(obj, kv8Var);
-                return;
-            }
-            if (obj instanceof z9d) {
-                h(wa4Var, ((z9d) obj).zza(), true);
-            } else if (obj instanceof Enum) {
-                h(wa4Var, ((Enum) obj).ordinal(), true);
-            } else {
-                k(u9d.e, wa4Var, obj, z);
-            }
-        }
-    }
-
-    @Override // dq7
-    public final /* synthetic */ dq7 d(wa4 wa4Var, boolean z) {
-        h(wa4Var, z ? 1 : 0, true);
-        return this;
-    }
-
-    @Override // dq7
-    public final /* synthetic */ dq7 e(wa4 wa4Var, int i) {
-        h(wa4Var, i, true);
-        return this;
-    }
-
-    @Override // dq7
-    public final dq7 f(wa4 wa4Var, double d) {
-        b(wa4Var, d, true);
-        return this;
-    }
-
-    @Override // dq7
-    public final /* synthetic */ dq7 g(wa4 wa4Var, long j) {
-        i(wa4Var, j, true);
-        return this;
-    }
-
-    public final void h(wa4 wa4Var, int i, boolean z) {
-        if (z && i == 0) {
-            return;
-        }
-        kad kadVar = (kad) wa4Var.b(kad.class);
-        if (kadVar == null) {
-            throw new e44("Field has no @Protobuf config");
-        }
-        int ordinal = kadVar.zzb().ordinal();
-        if (ordinal == 0) {
-            l(kadVar.zza() << 3);
-            l(i);
-        } else if (ordinal == 1) {
-            l(kadVar.zza() << 3);
-            l((i << 1) ^ (i >> 31));
+        rj0Var.g(8, i15, 1);
+        byte b2 = x9cVar.a;
+        if (b2 < 2) {
+            i2 = 0;
+            c2 = 1;
         } else {
-            if (ordinal != 2) {
-                return;
+            i2 = 0;
+            int[] iArr = c[b2 - 1];
+            c2 = 1;
+            int length2 = iArr.length;
+            int i17 = 0;
+            while (i17 < length2) {
+                int i18 = iArr[i17];
+                if (i18 >= 0) {
+                    int length3 = iArr.length;
+                    int i19 = 0;
+                    while (i19 < length3) {
+                        int i20 = iArr[i19];
+                        if (i20 >= 0 && f(rj0Var.e(i20, i18))) {
+                            int i21 = i20 - 2;
+                            int i22 = i18 - 2;
+                            bArr = bArr2;
+                            i3 = i11;
+                            int i23 = 0;
+                            while (true) {
+                                if (i23 >= 5) {
+                                    break;
+                                }
+                                int[] iArr2 = b[i23];
+                                int i24 = i23;
+                                int i25 = 0;
+                                for (int i26 = 5; i25 < i26; i26 = 5) {
+                                    int i27 = i25;
+                                    rj0Var.g(i21 + i25, i22 + i24, iArr2[i27]);
+                                    i25 = i27 + 1;
+                                    length3 = length3;
+                                }
+                                i23 = i24 + 1;
+                            }
+                        } else {
+                            bArr = bArr2;
+                            i3 = i11;
+                        }
+                        i19++;
+                        bArr2 = bArr;
+                        i11 = i3;
+                        length3 = length3;
+                    }
+                }
+                i17++;
+                bArr2 = bArr2;
+                i11 = i11;
             }
-            l((kadVar.zza() << 3) | 5);
-            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(i).array());
         }
-    }
-
-    public final void i(wa4 wa4Var, long j, boolean z) {
-        if (z && j == 0) {
+        byte[][] bArr4 = bArr2;
+        int i28 = i11;
+        int i29 = 8;
+        while (i29 < i14) {
+            int i30 = i29 + 1;
+            int i31 = i30 % 2;
+            if (f(rj0Var.e(i29, 6))) {
+                rj0Var.g(i29, 6, i31);
+            }
+            if (f(rj0Var.e(6, i29))) {
+                rj0Var.g(6, i29, i31);
+            }
+            i29 = i30;
+        }
+        pj0 pj0Var2 = new pj0();
+        if (i < 0 || i >= 8) {
+            throw new v30("Invalid mask pattern");
+        }
+        int i32 = (w34Var.a << 3) | i;
+        pj0Var2.b(i32, 5);
+        pj0Var2.b(b(i32, 1335), 10);
+        pj0 pj0Var3 = new pj0();
+        pj0Var3.b(21522, 15);
+        if (pj0Var2.b != pj0Var3.b) {
+            w26.j("Sizes don't match");
             return;
         }
-        kad kadVar = (kad) wa4Var.b(kad.class);
-        if (kadVar == null) {
-            throw new e44("Field has no @Protobuf config");
-        }
-        int ordinal = kadVar.zzb().ordinal();
-        if (ordinal == 0) {
-            l(kadVar.zza() << 3);
-            m(j);
-        } else if (ordinal == 1) {
-            l(kadVar.zza() << 3);
-            m((j << 1) ^ (j >> 63));
-        } else {
-            if (ordinal != 2) {
-                return;
-            }
-            l((kadVar.zza() << 3) | 1);
-            this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(j).array());
-        }
-    }
-
-    public final void k(cq7 cq7Var, wa4 wa4Var, Object obj, boolean z) {
-        n26 n26Var = new n26((byte) 2);
-        n26Var.b = 0L;
-        try {
-            OutputStream outputStream = this.a;
-            this.a = n26Var;
-            try {
-                cq7Var.a(obj, this);
-                this.a = outputStream;
-                long j = n26Var.b;
-                n26Var.close();
-                if (z && j == 0) {
-                    return;
-                }
-                l((j(wa4Var) << 3) | 2);
-                m(j);
-                cq7Var.a(obj, this);
-            } catch (Throwable th) {
-                this.a = outputStream;
-                throw th;
-            }
-        } catch (Throwable th2) {
-            try {
-                n26Var.close();
-            } catch (Throwable th3) {
-                try {
-                    Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th2, th3);
-                } catch (Exception unused) {
-                }
-            }
-            throw th2;
-        }
-    }
-
-    public final void l(int i) {
+        int i33 = i2;
         while (true) {
-            long j = i & (-128);
-            OutputStream outputStream = this.a;
-            if (j == 0) {
-                outputStream.write(i & nm7.K1);
-                return;
+            int[] iArr3 = pj0Var2.a;
+            if (i33 >= iArr3.length) {
+                break;
+            }
+            iArr3[i33] = iArr3[i33] ^ pj0Var3.a[i33];
+            i33++;
+        }
+        if (pj0Var2.b != 15) {
+            throw new v30("should not happen but we got: " + pj0Var2.b);
+        }
+        int i34 = i2;
+        while (true) {
+            int i35 = pj0Var2.b;
+            if (i34 >= i35) {
+                break;
+            }
+            boolean d2 = pj0Var2.d((i35 - 1) - i34);
+            int[] iArr4 = d[i34];
+            int i36 = iArr4[i2];
+            byte[] bArr5 = bArr4[iArr4[c2]];
+            byte b3 = d2 ? (byte) 1 : (byte) 0;
+            bArr5[i36] = b3;
+            if (i34 < 8) {
+                i10 = (i28 - i34) - 1;
+                i9 = 8;
             } else {
-                outputStream.write((i & nm7.K1) | 128);
-                i >>>= 7;
+                i9 = (i34 - 8) + i16;
+                i10 = 8;
+            }
+            bArr4[i9][i10] = b3;
+            i34++;
+        }
+        if (b2 >= 7) {
+            pj0 pj0Var4 = new pj0();
+            pj0Var4.b(b2, 6);
+            pj0Var4.b(b(b2, 7973), 12);
+            if (pj0Var4.b != 18) {
+                throw new v30("should not happen but we got: " + pj0Var4.b);
+            }
+            int i37 = 17;
+            for (int i38 = i2; i38 < 6; i38++) {
+                for (int i39 = i2; i39 < 3; i39++) {
+                    boolean d3 = pj0Var4.d(i37);
+                    i37--;
+                    int i40 = (i12 - 11) + i39;
+                    byte[] bArr6 = bArr4[i40];
+                    byte b4 = d3 ? (byte) 1 : (byte) 0;
+                    bArr6[i38] = b4;
+                    bArr4[i38][i40] = b4;
+                }
+            }
+        }
+        int i41 = i28 - 1;
+        int i42 = i12 - 1;
+        int i43 = i2;
+        int i44 = -1;
+        while (i41 > 0) {
+            if (i41 == 6) {
+                i41--;
+            }
+            while (i42 >= 0 && i42 < i12) {
+                for (int i45 = i2; i45 < 2; i45++) {
+                    int i46 = i41 - i45;
+                    if (f(rj0Var.e(i46, i42))) {
+                        if (i43 < pj0Var.b) {
+                            boolean d4 = pj0Var.d(i43);
+                            i43++;
+                            i4 = d4;
+                        } else {
+                            i4 = i2;
+                        }
+                        if (i != -1) {
+                            switch (i) {
+                                case 0:
+                                    i5 = i42 + i46;
+                                    i6 = i5 & 1;
+                                    if (i6 == 0) {
+                                        i4 = ~i4;
+                                        break;
+                                    }
+                                    break;
+                                case 1:
+                                    i6 = i42 & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 2:
+                                    i6 = i46 % 3;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 3:
+                                    i6 = (i42 + i46) % 3;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 4:
+                                    i6 = ((i46 / 3) + (i42 / 2)) & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 5:
+                                    int i47 = i42 * i46;
+                                    i6 = (i47 % 3) + (i47 & 1);
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 6:
+                                    int i48 = i42 * i46;
+                                    i7 = i48 & 1;
+                                    i8 = i48 % 3;
+                                    i5 = i8 + i7;
+                                    i6 = i5 & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 7:
+                                    i8 = (i42 * i46) % 3;
+                                    i7 = (i42 + i46) & 1;
+                                    i5 = i8 + i7;
+                                    i6 = i5 & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                default:
+                                    w26.j(de9.k(i, "Invalid mask pattern: "));
+                                    return;
+                            }
+                        }
+                        bArr4[i42][i46] = (byte) i4;
+                    }
+                }
+                i42 += i44;
+            }
+            i44 = -i44;
+            i42 += i44;
+            i41 -= 2;
+        }
+        if (i43 == pj0Var.b) {
+            return;
+        }
+        throw new v30("Not all bits consumed: " + i43 + '/' + pj0Var.b);
+    }
+
+    public static int b(int i, int i2) {
+        if (i2 == 0) {
+            w26.j("0 polynomial");
+            return 0;
+        }
+        int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i2);
+        int i3 = 32 - numberOfLeadingZeros;
+        int i4 = i << (31 - numberOfLeadingZeros);
+        while (32 - Integer.numberOfLeadingZeros(i4) >= i3) {
+            i4 ^= i2 << ((32 - Integer.numberOfLeadingZeros(i4)) - i3);
+        }
+        return i4;
+    }
+
+    public static void c(int i, int i2, rj0 rj0Var) {
+        for (int i3 = 0; i3 < 8; i3++) {
+            int i4 = i + i3;
+            if (!f(rj0Var.e(i4, i2))) {
+                throw new v30();
+            }
+            rj0Var.g(i4, i2, 0);
+        }
+    }
+
+    public static void d(int i, int i2, rj0 rj0Var) {
+        for (int i3 = 0; i3 < 7; i3++) {
+            int[] iArr = a[i3];
+            for (int i4 = 0; i4 < 7; i4++) {
+                rj0Var.g(i + i4, i2 + i3, iArr[i4]);
             }
         }
     }
 
-    public final void m(long j) {
-        while (true) {
-            long j2 = (-128) & j;
-            OutputStream outputStream = this.a;
-            if (j2 == 0) {
-                outputStream.write(((int) j) & nm7.K1);
-                return;
-            } else {
-                outputStream.write((((int) j) & nm7.K1) | 128);
-                j >>>= 7;
+    public static void e(int i, int i2, rj0 rj0Var) {
+        for (int i3 = 0; i3 < 7; i3++) {
+            int i4 = i2 + i3;
+            if (!f(rj0Var.e(i, i4))) {
+                throw new v30();
             }
+            rj0Var.g(i, i4, 0);
         }
+    }
+
+    public static boolean f(int i) {
+        return i == -1;
     }
 }

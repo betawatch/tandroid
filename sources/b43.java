@@ -1,50 +1,55 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.database.ContentObserver;
+import android.database.Cursor;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class b43 extends u43 {
-    public final /* synthetic */ byte Q;
-    public final /* synthetic */ FrameLayout R;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class b43 extends ContentObserver {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b43(FrameLayout frameLayout, Context context, byte b) {
-        super(context);
-        this.Q = b;
-        this.R = frameLayout;
+    public b43(kbb kbbVar) {
+        super(new Handler());
+        this.b = kbbVar;
     }
 
-    @Override // u43
-    public final int getCurrentHeight() {
-        int currentHeight;
-        int currentHeight2;
-        byte b = this.Q;
-        FrameLayout frameLayout = this.R;
-        switch (b) {
+    @Override // android.database.ContentObserver
+    public final boolean deliverSelfNotifications() {
+        switch (this.a) {
             case 0:
-                currentHeight = ((e43) frameLayout).getCurrentHeight();
-                return currentHeight;
+                return true;
             default:
-                currentHeight2 = ((j43) frameLayout).getCurrentHeight();
-                return currentHeight2;
+                return super.deliverSelfNotifications();
         }
     }
 
-    @Override // u43
-    public final int getCurrentWidth() {
-        int currentWidth;
-        int currentWidth2;
-        byte b = this.Q;
-        FrameLayout frameLayout = this.R;
-        switch (b) {
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z) {
+        Cursor cursor;
+        switch (this.a) {
             case 0:
-                currentWidth = ((e43) frameLayout).getCurrentWidth();
-                return currentWidth;
+                kbb kbbVar = (kbb) this.b;
+                if (!kbbVar.b || (cursor = kbbVar.c) == null || cursor.isClosed()) {
+                    return;
+                }
+                kbbVar.a = kbbVar.c.requery();
+                return;
             default:
-                currentWidth2 = ((j43) frameLayout).getCurrentWidth();
-                return currentWidth2;
+                p5d p5dVar = (p5d) this.b;
+                synchronized (p5dVar.d) {
+                    p5dVar.e = null;
+                }
+                ((p5d) this.b).b();
+                return;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b43(p5d p5dVar) {
+        super(null);
+        this.b = p5dVar;
     }
 }

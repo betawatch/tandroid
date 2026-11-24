@@ -5,17 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IAlertCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class AlertCallbackDelegateImpl implements nd {
+public class AlertCallbackDelegateImpl implements nc {
     private final IAlertCallback mCallback;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class AlertCallbackStub extends IAlertCallback.Stub {
-        private final md mCallback;
+        private final mc mCallback;
 
-        public AlertCallbackStub(md mdVar) {
+        public AlertCallbackStub(mc mcVar) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -39,31 +39,31 @@ public class AlertCallbackDelegateImpl implements nd {
         }
     }
 
-    private AlertCallbackDelegateImpl(md mdVar) {
-        this.mCallback = new AlertCallbackStub(mdVar);
+    private AlertCallbackDelegateImpl(mc mcVar) {
+        this.mCallback = new AlertCallbackStub(mcVar);
     }
 
-    public static nd create(md mdVar) {
-        return new AlertCallbackDelegateImpl(mdVar);
+    public static nc create(mc mcVar) {
+        return new AlertCallbackDelegateImpl(mcVar);
     }
 
-    public void sendCancel(int i, fr7 fr7Var) {
+    public void sendCancel(int i, cp7 cp7Var) {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
             iAlertCallback.onAlertCancelled(i, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            rjb.m(e);
+            sdb.b(e);
         }
     }
 
-    public void sendDismiss(fr7 fr7Var) {
+    public void sendDismiss(cp7 cp7Var) {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
             iAlertCallback.onAlertDismissed(androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            rjb.m(e);
+            sdb.b(e);
         }
     }
 

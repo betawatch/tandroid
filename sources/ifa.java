@@ -1,60 +1,75 @@
 // default package
 
-import android.view.ViewGroup;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ifa extends yp {
-    public final /* synthetic */ byte c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ ViewGroup e;
+public final class ifa extends ifc {
+    public final /* synthetic */ kfa h;
 
-    public /* synthetic */ ifa(ViewGroup viewGroup, Object obj, byte b) {
-        this.c = b;
-        this.e = viewGroup;
-        this.d = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ifa(kfa kfaVar, g2b g2bVar, long j, int i) {
+        super(i, j, g2bVar);
+        this.h = kfaVar;
     }
 
-    @Override // yp
-    public final int i(int i) {
-        int i2;
-        int i3;
-        byte b = this.c;
-        ViewGroup viewGroup = this.e;
-        Object obj = this.d;
-        switch (b) {
-            case 0:
-                iga igaVar = (iga) obj;
-                y59 adapter = igaVar.n.getAdapter();
-                nha nhaVar = (nha) viewGroup;
-                hha hhaVar = nhaVar.L;
-                if (adapter == hhaVar) {
-                    if (hhaVar.d(i) == 2) {
-                        return igaVar.r.J;
-                    }
-                    return 1;
-                }
-                if (nhaVar.y1(adapter) == -1) {
-                    return 1;
-                }
-                ((kha) adapter).getClass();
-                return 1;
-            case 1:
-                o7c o7cVar = (o7c) obj;
-                l7c l7cVar = ((q7c) viewGroup).g3;
-                if (l7cVar == null) {
-                    return o7cVar.J;
-                }
-                c6c G = l7cVar.G(i);
-                return (G == null || (i2 = G.v) == -1) ? o7cVar.J : i2;
-            default:
-                o7c o7cVar2 = (o7c) obj;
-                l7c l7cVar2 = ((q7c) viewGroup).g3;
-                if (l7cVar2 == null) {
-                    return o7cVar2.J;
-                }
-                c6c G2 = l7cVar2.G(i);
-                return (G2 == null || (i3 = G2.v) == -1) ? o7cVar2.J : i3;
+    @Override // ifc
+    public final void a(ArrayList arrayList) {
+        sca scaVar;
+        k27 messageObject;
+        kfa kfaVar = this.h;
+        nfa nfaVar = kfaVar.G;
+        int i = 0;
+        while (true) {
+            iea[] ieaVarArr = nfaVar.n0;
+            if (i >= ieaVarArr.length) {
+                scaVar = null;
+                break;
+            }
+            sca scaVar2 = ieaVarArr[i].h;
+            if (scaVar2 != null && scaVar2.getAdapter() == kfaVar) {
+                scaVar = nfaVar.n0[i].h;
+                break;
+            }
+            i++;
         }
+        if (scaVar != null) {
+            for (int i2 = 0; i2 < scaVar.getChildCount(); i2++) {
+                View childAt = scaVar.getChildAt(i2);
+                if ((childAt instanceof qfa) && (messageObject = ((qfa) childAt).getMessageObject()) != null && messageObject.w4()) {
+                    arrayList.add(Integer.valueOf(messageObject.l.id));
+                }
+            }
+        }
+    }
+
+    @Override // ifc
+    public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        TL_stories.StoryItem storyItem;
+        y1b y1bVar = this.h.s;
+        ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
+        y1bVar.getClass();
+        if (arrayList != null && arrayList2 != null) {
+            boolean z = false;
+            for (int i = 0; i < arrayList.size(); i++) {
+                Integer num = (Integer) arrayList.get(i);
+                num.getClass();
+                if (i >= arrayList2.size()) {
+                    break;
+                }
+                TL_stories.StoryViews storyViews = arrayList2.get(i);
+                k27 k27Var = (k27) y1bVar.j.get(num);
+                if (k27Var != null && (storyItem = k27Var.l) != null) {
+                    storyItem.views = storyViews;
+                    z = true;
+                }
+            }
+            if (z) {
+                y1bVar.x();
+            }
+        }
+        return true;
     }
 }

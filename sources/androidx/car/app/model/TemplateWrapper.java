@@ -6,13 +6,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class TemplateWrapper {
     private int mCurrentTaskStep;
     private String mId;
     private boolean mIsRefresh;
-    private pib mTemplate;
+    private ogb mTemplate;
     private List<TemplateInfo> mTemplateInfoForScreenStack;
 
     private TemplateWrapper() {
@@ -36,10 +36,10 @@ public final class TemplateWrapper {
         return UUID.randomUUID().toString();
     }
 
-    public static TemplateWrapper wrap(pib pibVar, String str) {
-        Objects.requireNonNull(pibVar);
+    public static TemplateWrapper wrap(ogb ogbVar, String str) {
+        Objects.requireNonNull(ogbVar);
         Objects.requireNonNull(str);
-        return new TemplateWrapper(pibVar, str);
+        return new TemplateWrapper(ogbVar, str);
     }
 
     public int getCurrentTaskStep() {
@@ -52,10 +52,10 @@ public final class TemplateWrapper {
         return str;
     }
 
-    public pib getTemplate() {
-        pib pibVar = this.mTemplate;
-        Objects.requireNonNull(pibVar);
-        return pibVar;
+    public ogb getTemplate() {
+        ogb ogbVar = this.mTemplate;
+        Objects.requireNonNull(ogbVar);
+        return ogbVar;
     }
 
     public List<TemplateInfo> getTemplateInfosForScreenStack() {
@@ -79,8 +79,8 @@ public final class TemplateWrapper {
         this.mIsRefresh = z;
     }
 
-    public void setTemplate(pib pibVar) {
-        this.mTemplate = pibVar;
+    public void setTemplate(ogb ogbVar) {
+        this.mTemplate = ogbVar;
     }
 
     public void setTemplateInfosForScreenStack(List<TemplateInfo> list) {
@@ -91,16 +91,16 @@ public final class TemplateWrapper {
         StringBuilder sb = new StringBuilder("[template: ");
         sb.append(this.mTemplate);
         sb.append(", ID: ");
-        return b10.j(sb, this.mId, "]");
+        return b00.j(sb, this.mId, "]");
     }
 
-    public static TemplateWrapper wrap(pib pibVar) {
-        return wrap(pibVar, createRandomId());
+    public static TemplateWrapper wrap(ogb ogbVar) {
+        return wrap(ogbVar, createRandomId());
     }
 
-    private TemplateWrapper(pib pibVar, String str) {
+    private TemplateWrapper(ogb ogbVar, String str) {
         this.mTemplateInfoForScreenStack = new ArrayList();
-        this.mTemplate = pibVar;
+        this.mTemplate = ogbVar;
         this.mId = str;
     }
 }

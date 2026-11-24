@@ -1,57 +1,34 @@
 // default package
 
-import j$.util.Objects;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class y79 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a89 b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class y79 extends mo5 {
-    public static final y79 e = new y79(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
-
-    public y79(int i, Object[] objArr) {
-        this.c = objArr;
-        this.d = i;
+    public /* synthetic */ y79(a89 a89Var, byte b) {
+        this.a = b;
+        this.b = a89Var;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        jte.j(i, this.d);
-        Object obj = this.c[i];
-        Objects.requireNonNull(obj);
-        return obj;
-    }
-
-    @Override // mo5, go5
-    public final int i(int i, Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i2 = this.d;
-        System.arraycopy(objArr2, 0, objArr, i, i2);
-        return i + i2;
-    }
-
-    @Override // go5
-    public final Object[] j() {
-        return this.c;
-    }
-
-    @Override // go5
-    public final int k() {
-        return this.d;
-    }
-
-    @Override // go5
-    public final int l() {
-        return 0;
-    }
-
-    @Override // go5
-    public final boolean m() {
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        a89 a89Var = this.b;
+        switch (b) {
+            case 0:
+                int i = a89Var.a;
+                b89 b89Var = a89Var.w;
+                if (i != 0) {
+                    b89Var.onBackPressed();
+                    break;
+                } else {
+                    b89Var.dismiss();
+                    break;
+                }
+            default:
+                gl.E3(a89Var.n.d);
+                break;
+        }
     }
 }

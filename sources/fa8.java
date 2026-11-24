@@ -1,36 +1,24 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.ui.PhotoViewer;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class fa8 extends ViewOutlineProvider {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+public final class fa8 extends m06 {
+    public TextView N;
+    public TextView O;
 
-    public /* synthetic */ fa8(Object obj, float f, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = f;
+    @Override // m06
+    public final void b() {
+        TextView textView = this.N;
+        if (textView == null) {
+            return;
+        }
+        super.b();
+        zkb.X(textView, bkb.i5, null);
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        byte b = this.a;
-        float f = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / f) * gm.L(10.0f) * ((Float) ((ValueAnimator) obj).getAnimatedValue()).floatValue());
-                break;
-            default:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / f) * gm.L(10.0f) * (1.0f - ((PhotoViewer) obj).X));
-                break;
-        }
+    @Override // m06
+    public void setSize(int i) {
     }
 }

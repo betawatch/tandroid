@@ -1,23 +1,32 @@
 // default package
 
-import java.util.concurrent.Executor;
-import java.util.logging.Logger;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class kd3 {
-    public static final Logger f = Logger.getLogger(i3c.class.getName());
-    public final in3 a;
-    public final Executor b;
-    public final of7 c;
-    public final mq9 d;
-    public final mq9 e;
+public final class kd3 extends a4 implements ScheduledFuture {
+    public final ScheduledFuture n;
 
-    public kd3(Executor executor, of7 of7Var, in3 in3Var, mq9 mq9Var, mq9 mq9Var2) {
-        this.b = executor;
-        this.c = of7Var;
-        this.a = in3Var;
-        this.d = mq9Var;
-        this.e = mq9Var2;
+    public kd3(jd3 jd3Var) {
+        this.n = jd3Var.a(new l69(this, (byte) 28));
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Delayed delayed) {
+        return this.n.compareTo(delayed);
+    }
+
+    @Override // a4
+    public final void d() {
+        ScheduledFuture scheduledFuture = this.n;
+        Object obj = this.a;
+        scheduledFuture.cancel((obj instanceof t3) && ((t3) obj).a);
+    }
+
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.n.getDelay(timeUnit);
     }
 }

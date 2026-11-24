@@ -1,47 +1,35 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class d90 extends sz2 {
-    public final int a;
-    public final String b;
-    public final int c;
+public final class d90 extends yy2 {
+    public final Double a;
+    public final int b;
+    public final boolean c;
     public final int d;
     public final long e;
     public final long f;
-    public final long g;
-    public final String h;
-    public final List i;
 
-    public d90(int i, String str, int i2, int i3, long j, long j2, long j3, String str2, List list) {
-        this.a = i;
-        this.b = str;
-        this.c = i2;
-        this.d = i3;
+    public d90(Double d, int i, boolean z, int i2, long j, long j2) {
+        this.a = d;
+        this.b = i;
+        this.c = z;
+        this.d = i2;
         this.e = j;
         this.f = j2;
-        this.g = j3;
-        this.h = str2;
-        this.i = list;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof sz2) {
-            d90 d90Var = (d90) ((sz2) obj);
-            if (this.a == d90Var.a && this.b.equals(d90Var.b) && this.c == d90Var.c && this.d == d90Var.d && this.e == d90Var.e && this.f == d90Var.f && this.g == d90Var.g) {
-                String str = d90Var.h;
-                String str2 = this.h;
-                if (str2 != null ? str2.equals(str) : str == null) {
-                    List list = d90Var.i;
-                    List list2 = this.i;
-                    if (list2 != null ? list2.equals(list) : list == null) {
-                        return true;
-                    }
+        if (obj instanceof yy2) {
+            yy2 yy2Var = (yy2) obj;
+            Double d = this.a;
+            if (d != null ? d.equals(((d90) yy2Var).a) : ((d90) yy2Var).a == null) {
+                d90 d90Var = (d90) yy2Var;
+                if (this.b == d90Var.b && this.c == d90Var.c && this.d == d90Var.d && this.e == d90Var.e && this.f == d90Var.f) {
+                    return true;
                 }
             }
         }
@@ -49,20 +37,25 @@ public final class d90 extends sz2 {
     }
 
     public final int hashCode() {
-        int hashCode = (((((((this.a ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c) * 1000003) ^ this.d) * 1000003;
+        Double d = this.a;
+        int hashCode = ((((((((d == null ? 0 : d.hashCode()) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ (this.c ? 1231 : 1237)) * 1000003) ^ this.d) * 1000003;
         long j = this.e;
-        int i = (hashCode ^ ((int) ((j >>> 32) ^ j))) * 1000003;
         long j2 = this.f;
-        int i2 = (i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003;
-        long j3 = this.g;
-        int i3 = (i2 ^ ((int) ((j3 >>> 32) ^ j3))) * 1000003;
-        String str = this.h;
-        int hashCode2 = (i3 ^ (str == null ? 0 : str.hashCode())) * 1000003;
-        List list = this.i;
-        return hashCode2 ^ (list != null ? list.hashCode() : 0);
+        return ((hashCode ^ ((int) ((j >>> 32) ^ j))) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2));
     }
 
     public final String toString() {
-        return "ApplicationExitInfo{pid=" + this.a + ", processName=" + this.b + ", reasonCode=" + this.c + ", importance=" + this.d + ", pss=" + this.e + ", rss=" + this.f + ", timestamp=" + this.g + ", traceFile=" + this.h + ", buildIdMappingForArch=" + this.i + "}";
+        StringBuilder sb = new StringBuilder("Device{batteryLevel=");
+        sb.append(this.a);
+        sb.append(", batteryVelocity=");
+        sb.append(this.b);
+        sb.append(", proximityOn=");
+        sb.append(this.c);
+        sb.append(", orientation=");
+        sb.append(this.d);
+        sb.append(", ramUsed=");
+        sb.append(this.e);
+        sb.append(", diskUsed=");
+        return ls6.p(sb, this.f, "}");
     }
 }

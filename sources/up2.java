@@ -1,64 +1,70 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import android.os.Looper;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class up2 implements jac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ xp2 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class up2 implements ViewTreeObserver.OnDrawListener, Runnable, Executor {
+    public Runnable b;
+    public final /* synthetic */ wp2 d;
+    public final long a = SystemClock.uptimeMillis() + 10000;
+    public boolean c = false;
 
-    public /* synthetic */ up2(xp2 xp2Var, byte b) {
-        this.a = b;
-        this.b = xp2Var;
+    public up2(wp2 wp2Var) {
+        this.d = wp2Var;
     }
 
-    @Override // jac
-    public final void a(Object obj, Object obj2) {
-        byte b = this.a;
-        xp2 xp2Var = this.b;
-        switch (b) {
-            case 0:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                xp2Var.q.dismiss();
-                xp2Var.q = null;
-                xp2Var.r = 0;
-                if (tL_error == null) {
-                    wp2 wp2Var = xp2Var.h;
-                    if (wp2Var != null) {
-                        wp2Var.close();
-                        break;
-                    }
-                } else {
-                    xp2Var.c.g0(tL_error, false);
-                    break;
-                }
-                break;
-            case 1:
-                TL_communities.PeerLinkRequests peerLinkRequests = (TL_communities.PeerLinkRequests) obj;
-                xp2Var.m = false;
-                if (peerLinkRequests != null) {
-                    xp2Var.j.addAll(peerLinkRequests.requests);
-                    String str = peerLinkRequests.next_offset;
-                    xp2Var.k = str;
-                    xp2Var.l = peerLinkRequests.total_count;
-                    xp2Var.n = str == null;
-                    xp2Var.a();
-                    wp2 wp2Var2 = xp2Var.h;
-                    if (wp2Var2 != null) {
-                        wp2Var2.U();
-                        break;
-                    }
-                }
-                break;
-            default:
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (tL_error2 != null) {
-                    xp2Var.c.g0(tL_error2, false);
-                    break;
-                }
-                break;
+    public final void a(View view) {
+        if (this.c) {
+            return;
         }
+        this.c = true;
+        view.getViewTreeObserver().addOnDrawListener(this);
+    }
+
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.b = runnable;
+        View decorView = this.d.getWindow().getDecorView();
+        if (!this.c) {
+            decorView.postOnAnimation(new mk2(this, (byte) 4));
+        } else if (Looper.myLooper() == Looper.getMainLooper()) {
+            decorView.invalidate();
+        } else {
+            decorView.postInvalidate();
+        }
+    }
+
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        boolean z;
+        Runnable runnable = this.b;
+        if (runnable == null) {
+            if (SystemClock.uptimeMillis() > this.a) {
+                this.c = false;
+                this.d.getWindow().getDecorView().post(this);
+                return;
+            }
+            return;
+        }
+        runnable.run();
+        this.b = null;
+        qx qxVar = this.d.s;
+        synchronized (qxVar.c) {
+            z = qxVar.b;
+        }
+        if (z) {
+            this.c = false;
+            this.d.getWindow().getDecorView().post(this);
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.d.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(this);
     }
 }

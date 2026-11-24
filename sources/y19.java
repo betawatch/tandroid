@@ -1,56 +1,39 @@
 // default package
 
+import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class y19 extends LinearLayout {
-    public boolean a;
+public final class y19 extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3;
-        u19 u19Var = null;
-        if (this.a) {
-            i3 = 0;
-        } else {
-            i3 = 0;
-            for (int i4 = 0; i4 < getChildCount(); i4++) {
-                if (getChildAt(i4) instanceof c29) {
-                    u19Var = ((c29) getChildAt(i4)).e;
-                    if (u19Var.getAdapter().b() == u19Var.getChildCount()) {
-                        int childCount = u19Var.getChildCount();
-                        for (int i5 = 0; i5 < childCount; i5++) {
-                            u19Var.getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(gm.L(1000.0f), 0), i2);
-                            if (u19Var.getChildAt(i5).getMeasuredWidth() > i3) {
-                                i3 = u19Var.getChildAt(i5).getMeasuredWidth();
-                            }
-                        }
-                        i3 += gm.L(16.0f);
-                    }
-                }
-            }
-        }
-        int size = View.MeasureSpec.getSize(i);
-        if (size < gm.L(240.0f)) {
-            size = gm.L(240.0f);
-        }
-        if (size > gm.L(280.0f)) {
-            size = gm.L(280.0f);
-        }
-        if (size < 0) {
-            size = 0;
-        }
-        if (i3 == 0 || i3 >= size) {
-            i3 = size;
-        }
-        if (u19Var != null) {
-            for (int i6 = 0; i6 < u19Var.getChildCount(); i6++) {
-                u19Var.getChildAt(i6).measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), i2);
-            }
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), i2);
+    static {
+        b4c.h(new y19());
+    }
+
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        s37 s37Var = (s37) view;
+        s37Var.a((TLObject) c4cVar.H, c4cVar.A, true);
+        s37Var.setOnClickListener(c4cVar.E);
+    }
+
+    @Override // b4c
+    public final boolean c(c4c c4cVar, c4c c4cVar2) {
+        return c4cVar.C == c4cVar2.C;
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        s37 s37Var = new s37(context);
+        s37Var.setBackground(bkb.L0(false));
+        return s37Var;
+    }
+
+    @Override // b4c
+    public final boolean e(c4c c4cVar, c4c c4cVar2) {
+        return c4cVar.C == c4cVar2.C;
     }
 }

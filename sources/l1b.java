@@ -1,68 +1,64 @@
 // default package
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class l1b {
-    public String a;
-    public String b;
-    public String c;
-    public CharSequence d;
-    public TLRPC.TL_inputStickerSetItem e;
-    public TLRPC.TL_messageMediaDocument f;
-    public TLRPC.InputFile g;
-    public boolean h;
-    public long i;
-    public TLRPC.StickerSet j;
-    public TLRPC.Document k;
-    public String l;
-    public f m;
-    public qy1 n;
-    public boolean o;
-    public ArrayList p;
-    public ArrayList q;
-    public k47 r;
-    public rcc s;
-    public float t;
-    public float u;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l1b implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ g2b b;
 
-    public final void a() {
-        ArrayList arrayList = this.q;
-        ArrayList arrayList2 = this.p;
-        int size = arrayList2.size();
-        int i = 0;
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList2.get(i2);
-            i2++;
-            try {
-                ((File) obj).delete();
-            } catch (Exception e) {
-                fc4.g(e, true);
-            }
-        }
-        arrayList2.clear();
-        int size2 = arrayList.size();
-        while (i < size2) {
-            Object obj2 = arrayList.get(i);
-            i++;
-            try {
-                ((File) obj2).delete();
-            } catch (Exception e2) {
-                fc4.g(e2, true);
-            }
-        }
-        arrayList.clear();
+    public /* synthetic */ l1b(g2b g2bVar, byte b) {
+        this.a = b;
+        this.b = g2bVar;
     }
 
-    public final float b() {
-        float f = this.m == null ? 0.9f : 1.0f;
-        if (this.s == null) {
-            return f * this.u;
+    @Override // p8c
+    public final void a(Object obj) {
+        byte b = this.a;
+        g2b g2bVar = this.b;
+        switch (b) {
+            case 0:
+                g2bVar.f = (LongSparseIntArray) obj;
+                break;
+            case 1:
+                TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) obj;
+                g2bVar.n = false;
+                if (tL_stories_allStories == null) {
+                    g2bVar.p();
+                    g2bVar.V();
+                    break;
+                } else {
+                    g2bVar.a0(tL_stories_allStories, false, true, false);
+                    g2bVar.S(false);
+                    g2bVar.S(true);
+                    break;
+                }
+            default:
+                y1b y1bVar = (y1b) obj;
+                HashMap hashMap = g2bVar.H;
+                byte b2 = y1bVar.e;
+                int i = y1bVar.f;
+                long j = y1bVar.d;
+                if (b2 == 0 && i > 0) {
+                    HashMap hashMap2 = (HashMap) hashMap.get(Long.valueOf(j));
+                    if (hashMap2 != null) {
+                        hashMap2.remove(Integer.valueOf(i));
+                        if (hashMap2.isEmpty()) {
+                            hashMap.remove(Long.valueOf(j));
+                            break;
+                        }
+                    }
+                } else {
+                    HashMap hashMap3 = g2bVar.G[b2];
+                    if (hashMap3 != null) {
+                        hashMap3.remove(Long.valueOf(j));
+                        break;
+                    }
+                }
+                break;
         }
-        return mlb.A(this.u, 0.5f, this.t * 0.5f, f);
     }
 }

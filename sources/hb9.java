@@ -2,40 +2,30 @@
 
 import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class hb9 extends LinearLayout {
-    public final TextView a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class hb9 extends b4c {
+    public static final /* synthetic */ int b = 0;
 
-    public hb9(Context context, ylb ylbVar) {
-        super(context);
-        setOrientation(1);
-        bf0 bf0Var = new bf0(context);
-        bf0Var.setImageDrawable(new p09(R.raw.utyan_empty, gm.L(130.0f), gm.L(130.0f)));
-        addView(bf0Var, qoe.t(64, 64, 17, 0, 32, 0, 0));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        anb.X(textView, cmb.z6, ylbVar);
-        textView.setTextSize(1, 14.0f);
-        textView.setGravity(17);
-        addView(textView, qoe.t(-1, -2, 7, 12, 12, 12, 24));
+    static {
+        b4c.h(new hb9());
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-            size = gm.L(250.0f);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        ((ib9) view).h((lk0) c4cVar.H, (se9) c4cVar.I);
     }
 
-    public void set(CharSequence charSequence) {
-        this.a.setText(charSequence);
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        ib9 ib9Var = new ib9(i, wjbVar, context);
+        ib9Var.setBackground(new ed9(bkb.v0(bkb.c6, wjbVar)));
+        return ib9Var;
+    }
+
+    @Override // b4c
+    public final boolean f() {
+        return false;
     }
 }

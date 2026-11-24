@@ -1,27 +1,33 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.a;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class uaa extends d {
-    @Override // org.telegram.ui.ActionBar.d
-    public final Context getContext() {
-        return gm.W(LaunchActivity.H1);
+public final class uaa extends pb0 {
+    public final /* synthetic */ byte M;
+    public final /* synthetic */ FrameLayout N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ uaa(FrameLayout frameLayout, wjb wjbVar, byte b) {
+        super(wjbVar);
+        this.M = b;
+        this.N = frameLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final int getCurrentAccount() {
-        return this.currentAccount;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final Activity getParentActivity() {
-        Activity W = gm.W(a.b);
-        return W == null ? LaunchActivity.H1 : W;
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        byte b = this.M;
+        FrameLayout frameLayout = this.N;
+        switch (b) {
+            case 0:
+                super.invalidateSelf();
+                ((waa) frameLayout).a.invalidate();
+                break;
+            default:
+                super.invalidateSelf();
+                ((cba) frameLayout).a.invalidate();
+                break;
+        }
     }
 }

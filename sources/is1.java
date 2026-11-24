@@ -1,37 +1,66 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class is1 extends gw1 {
-    public final /* synthetic */ byte f;
-    public boolean h;
+public final class is1 extends i98 {
+    public final /* synthetic */ k27 a;
+    public final /* synthetic */ jm6 b;
+    public final /* synthetic */ mu1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ is1(Context context, tk5 tk5Var, Bundle bundle, byte b) {
-        super(context, tk5Var, bundle);
-        this.f = b;
+    public is1(mu1 mu1Var, k27 k27Var, jm6 jm6Var) {
+        this.c = mu1Var;
+        this.a = k27Var;
+        this.b = jm6Var;
     }
 
-    @Override // gw1
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
-            default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
+    @Override // i98, o98
+    public final void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
+        mu1 mu1Var = this.c;
+        if (mu1Var.H5 != this.a) {
+            return;
         }
+        jm6 jm6Var = this.b;
+        if (jm6Var.w || jm6Var.v || jm6Var.u || oacVar != null) {
+            mu1Var.E(jm6Var, oacVar, z, i2, z2, 0L);
+        } else {
+            mu1Var.a0.t0();
+        }
+    }
+
+    @Override // i98, o98
+    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
+        return this.c.V6(this.a, null, i, z, true);
+    }
+
+    @Override // i98, o98
+    public final boolean P() {
+        mu1 mu1Var = this.c;
+        if (mu1Var.a0 == null || !mu1Var.Q7()) {
+            return false;
+        }
+        mu1Var.a0.S();
+        return true;
+    }
+
+    @Override // i98, o98
+    public final k27 V() {
+        k27 k27Var = this.c.H5;
+        k27 k27Var2 = this.a;
+        if (k27Var == k27Var2) {
+            return k27Var2;
+        }
+        return null;
+    }
+
+    @Override // i98, o98
+    public final void f(CharSequence charSequence) {
+        this.c.a0.G1(charSequence, false);
+    }
+
+    @Override // i98, o98
+    public final boolean h() {
+        return false;
     }
 }

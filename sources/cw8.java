@@ -1,29 +1,41 @@
 // default package
 
-import android.content.ClipboardManager;
-import org.telegram.ui.ActionBar.d;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class cw8 implements ClipboardManager.OnPrimaryClipChangedListener {
+public final /* synthetic */ class cw8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ d b;
+    public final /* synthetic */ gw8 b;
 
-    public /* synthetic */ cw8(d dVar, byte b) {
+    public /* synthetic */ cw8(gw8 gw8Var, byte b) {
         this.a = b;
-        this.b = dVar;
+        this.b = gw8Var;
     }
 
-    @Override // android.content.ClipboardManager.OnPrimaryClipChangedListener
-    public final void onPrimaryClipChanged() {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        d dVar = this.b;
+        gw8 gw8Var = this.b;
         switch (b) {
             case 0:
-                ((gw8) dVar).c0();
+                if (gw8Var.h == null && gw8Var.d != null && !gw8Var.isFinished && gw8Var.getParentActivity() != null) {
+                    gw8Var.f0(gw8Var.d.H0(), 0.0f, true);
+                    gw8Var.h.setVisibility(4);
+                    sx3 sx3Var = gw8Var.y;
+                    if (sx3Var != null) {
+                        sx3Var.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                sx3 sx3Var2 = gw8Var.y;
+                if (sx3Var2 != null) {
+                    sx3Var2.invalidate();
+                }
+                gw8Var.l0();
                 break;
             default:
-                ((asc) dVar).k0(true);
+                gw8Var.j0();
                 break;
         }
     }

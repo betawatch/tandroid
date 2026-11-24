@@ -3,7 +3,7 @@
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class z7 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -25,9 +25,9 @@ public final class z7 extends AnimatorListenerAdapter {
         float f = this.a ? 1.0f : 0.0f;
         int i = this.b;
         int i2 = this.c;
-        int f2 = on2.f(f, i, i2);
+        int f2 = bm2.f(f, i, i2);
         a8 a8Var = this.e;
         a8Var.setTextColor(f2);
-        a8Var.setIconColor(on2.f(f, this.d, i2));
+        a8Var.setIconColor(bm2.f(f, this.d, i2));
     }
 }

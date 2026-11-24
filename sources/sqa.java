@@ -1,76 +1,82 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class sqa implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ wsa b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ boolean f;
+public final class sqa extends yo2 {
+    public final u41 c;
+    public final Paint d;
+    public final Path e;
+    public final long f;
+    public float h;
 
-    public /* synthetic */ sqa(wsa wsaVar, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z, TLRPC.TL_error tL_error) {
-        this.b = wsaVar;
-        this.e = tLObject;
-        this.d = twoStepVerificationActivity;
-        this.f = z;
-        this.c = tL_error;
+    public sqa(u41 u41Var, int i) {
+        super(u41Var);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        Path path = new Path();
+        this.e = path;
+        this.f = System.currentTimeMillis();
+        this.h = 1.0f;
+        this.c = u41Var;
+        ((Paint) this.b).setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setColor(i);
+        path.rewind();
+        path.moveTo(-gl.N(2.91f), gl.N(1.08f));
+        path.lineTo(0.0f, -gl.N(1.08f));
+        path.lineTo(gl.N(2.91f), gl.N(1.08f));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 0;
-        boolean z = this.f;
-        TLObject tLObject = this.e;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        wsa wsaVar = this.b;
-        switch (b) {
-            case 0:
-                if (!(tLObject instanceof TL_account.tmpPassword)) {
-                    wsaVar.P1(tL_error, twoStepVerificationActivity, z);
-                    break;
-                } else {
-                    TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
-                    z8c.h(wsaVar.a).y = tmppassword;
-                    z8c.h(wsaVar.a).u(false);
-                    wsaVar.C1(tmppassword.tmp_password, twoStepVerificationActivity, z, null);
-                    break;
-                }
-            default:
-                if (tL_error == null && twoStepVerificationActivity != null) {
-                    TL_account.Password password = (TL_account.Password) tLObject;
-                    twoStepVerificationActivity.J = password;
-                    TwoStepVerificationActivity.f0(password);
-                    TLRPC.TL_inputCheckPasswordSRP e0 = twoStepVerificationActivity.e0();
-                    TL_account.getTmpPassword gettmppassword = new TL_account.getTmpPassword();
-                    gettmppassword.password = e0;
-                    gettmppassword.period = 600;
-                    ConnectionsManager.getInstance(wsaVar.a).sendRequest(gettmppassword, new pqa(wsaVar, twoStepVerificationActivity, z, b2));
-                    break;
-                } else {
-                    if (twoStepVerificationActivity != null) {
-                        twoStepVerificationActivity.t0();
-                    }
-                    c41.c0(tL_error != null ? tL_error.text : "NULL_ERROR");
-                    break;
-                }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = (Paint) this.b;
+        paint.setAlpha((int) (this.h * 255.0f));
+        canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
+        float currentTimeMillis = ((System.currentTimeMillis() - this.f) % 400) / 400.0f;
+        Paint paint2 = this.d;
+        int alpha = paint2.getAlpha();
+        paint2.setAlpha((int) (alpha * this.h));
+        paint2.setStrokeWidth(gl.N(1.33f));
+        canvas.save();
+        de9.n(oo1.e(1.166f, 2.0f, gl.N(2.16f) * 3.0f), 2.0f, getBounds().centerY(), getBounds().centerX(), canvas);
+        int i = 0;
+        while (i < 4) {
+            float f = i == 0 ? 1.0f - currentTimeMillis : i == 3 ? currentTimeMillis : 1.0f;
+            paint2.setAlpha((int) (f * 255.0f * this.h));
+            canvas.save();
+            float R1 = gl.R1(0.5f, 1.0f, f);
+            canvas.scale(R1, R1);
+            canvas.drawPath(this.e, paint2);
+            canvas.restore();
+            canvas.translate(0.0f, gl.N(3.3260002f) * f);
+            i++;
+        }
+        canvas.restore();
+        paint2.setAlpha(alpha);
+        u41 u41Var = this.c;
+        if (u41Var != null) {
+            u41Var.invalidate();
         }
     }
 
-    public /* synthetic */ sqa(wsa wsaVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject, boolean z) {
-        this.b = wsaVar;
-        this.c = tL_error;
-        this.d = twoStepVerificationActivity;
-        this.e = tLObject;
-        this.f = z;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return gl.L(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return gl.L(18.0f);
+    }
+
+    @Override // yo2, android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.h = i / 255.0f;
     }
 }

@@ -1,32 +1,32 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class s90 {
-    public u90 a;
-    public List b;
-    public List c;
-    public Boolean d;
-    public h03 e;
-    public List f;
-    public int g;
-    public byte h;
+public final class s90 extends h74 {
+    public final Integer a;
 
-    public final t90 a() {
-        u90 u90Var;
-        if (this.h == 1 && (u90Var = this.a) != null) {
-            return new t90(u90Var, this.b, this.c, this.d, this.e, this.f, this.g);
+    public s90(Integer num) {
+        this.a = num;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb = new StringBuilder();
-        if (this.a == null) {
-            sb.append(" execution");
+        if (!(obj instanceof h74)) {
+            return false;
         }
-        if ((this.h & 1) == 0) {
-            sb.append(" uiOrientation");
-        }
-        dq9.m(ts2.n("Missing required properties:", sb));
-        return null;
+        Integer num = this.a;
+        s90 s90Var = (s90) ((h74) obj);
+        return num == null ? s90Var.a == null : num.equals(s90Var.a);
+    }
+
+    public final int hashCode() {
+        Integer num = this.a;
+        return 1000003 ^ (num == null ? 0 : num.hashCode());
+    }
+
+    public final String toString() {
+        return "ExternalPRequestContext{originAssociatedProductId=" + this.a + "}";
     }
 }

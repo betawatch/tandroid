@@ -1,60 +1,101 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class b57 extends wb2 {
-    public int W;
-    public Runnable X;
-    public final /* synthetic */ f57 Y;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.SecretMediaViewer;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b57(f57 f57Var, fv fvVar, ylb ylbVar) {
-        super(null, fvVar, ylbVar);
-        this.Y = f57Var;
-        this.W = -1;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class b57 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ na7 b;
+    public final /* synthetic */ vf6 c;
+    public final /* synthetic */ vf6 d;
+
+    public /* synthetic */ b57(na7 na7Var, vf6 vf6Var, vf6 vf6Var2, byte b) {
+        this.a = b;
+        this.b = na7Var;
+        this.c = vf6Var;
+        this.d = vf6Var2;
     }
 
-    @Override // wb2, sc3
-    public final void N() {
-        super.N();
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            gm.r(runnable);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z;
+        ArrayList arrayList;
+        boolean z2 = false;
+        switch (this.a) {
+            case 0:
+                na7 na7Var = this.b;
+                vf6 vf6Var = this.c;
+                vf6 vf6Var2 = this.d;
+                if (vf6Var != null) {
+                    int i = 0;
+                    for (int m = vf6Var.m(); i < m; m = m) {
+                        ArrayList arrayList2 = (ArrayList) vf6Var.n(i);
+                        na7Var.W(arrayList2, null, null, vf6Var.j(i), true, 0, !arrayList2.isEmpty() && ((Integer) arrayList2.get(0)).intValue() > 0, 0L, null, 0);
+                        i++;
+                    }
+                }
+                if (vf6Var2 != null) {
+                    Object[] objArr = SecretMediaViewer.e() && SecretMediaViewer.d().s;
+                    k27 k27Var = objArr == true ? SecretMediaViewer.d().g0 : null;
+                    int m2 = vf6Var2.m();
+                    int i2 = 0;
+                    while (i2 < m2) {
+                        long j = vf6Var2.j(i2);
+                        ArrayList arrayList3 = (ArrayList) vf6Var2.n(i2);
+                        if (objArr == true && k27Var != null && k27Var.K1 == na7Var.currentAccount && k27.B0(k27Var.k) == j && arrayList3.contains(Integer.valueOf(k27Var.e1()))) {
+                            int e1 = k27Var.e1();
+                            arrayList3.remove(Integer.valueOf(e1));
+                            k27Var.I0 = true;
+                            long R = na7Var.R(e1, j);
+                            arrayList = arrayList3;
+                            na7 na7Var2 = na7Var;
+                            z = z2;
+                            na7Var = na7Var2;
+                            SecretMediaViewer.d().o1 = new l30((pf0) na7Var2, R, j, e1, (byte) 4);
+                            kk7 notificationCenter = na7Var.getNotificationCenter();
+                            Object[] objArr2 = new Object[1];
+                            objArr2[z ? 1 : 0] = k27Var.k;
+                            notificationCenter.k(48, objArr2);
+                        } else {
+                            z = z2;
+                            arrayList = arrayList3;
+                        }
+                        if (!arrayList.isEmpty()) {
+                            ad7 messagesStorage = na7Var.getMessagesStorage();
+                            messagesStorage.a.c(new jc7(messagesStorage, arrayList, j, (byte) 2));
+                        }
+                        i2++;
+                        z2 = z;
+                    }
+                }
+                Utilities.d.c(new b57(na7Var, vf6Var, vf6Var2, (byte) 3));
+                break;
+            case 1:
+                na7 na7Var3 = this.b;
+                vf6 vf6Var3 = this.c;
+                vf6 vf6Var4 = this.d;
+                na7Var3.X = vf6Var3;
+                na7Var3.Y = vf6Var4;
+                break;
+            case 2:
+                na7 na7Var4 = this.b;
+                vf6 vf6Var5 = this.c;
+                vf6 vf6Var6 = this.d;
+                na7Var4.M1 = true;
+                ad7 messagesStorage2 = na7Var4.getMessagesStorage();
+                messagesStorage2.a.c(new lo6(messagesStorage2, vf6Var5, vf6Var6, (byte) 25));
+                break;
+            default:
+                na7 na7Var5 = this.b;
+                Utilities.d.c(new b57(na7Var5, this.c, this.d, (byte) 2));
+                na7Var5.N1 = 0;
+                na7Var5.O1 = null;
+                na7Var5.P1 = null;
+                break;
         }
-        a57 a57Var = new a57(this, (byte) 0);
-        this.X = a57Var;
-        gm.c3(a57Var);
-        f57 f57Var = this.Y;
-        if (f57Var.W) {
-            f57Var.W = false;
-            gm.c3(new a57(this, (byte) 1));
-        }
-    }
-
-    @Override // wb2
-    public final void V() {
-        l57 l57Var = this.Y.d0;
-        gm.r(l57Var.E);
-        l57Var.E.run();
-        if (this.W == -1) {
-            this.W = nm7.f(l57Var.x).p(null, this.W, false);
-        }
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            gm.r(runnable);
-            this.X = null;
-        }
-    }
-
-    @Override // wb2, sc3, d69
-    public final void g() {
-        super.g();
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            gm.r(runnable);
-        }
-        a57 a57Var = new a57(this, (byte) 2);
-        this.X = a57Var;
-        gm.c3(a57Var);
     }
 }

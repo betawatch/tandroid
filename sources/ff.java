@@ -1,489 +1,192 @@
 // default package
 
-import android.app.Activity;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.os.Build;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import androidx.core.content.FileProvider;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.net.URLDecoder;
 import java.util.ArrayList;
-import org.telegram.messenger.a;
-import org.telegram.messenger.voip.VoIPService;
+import java.util.Calendar;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.d0;
-import org.telegram.ui.m;
-import org.telegram.ui.o;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ff implements DialogInterface.OnClickListener {
+public final /* synthetic */ class ff implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ KeyEvent.Callback b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ ff(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ ff(Calendar calendar, hn7 hn7Var, wm0 wm0Var, xm0 xm0Var, sn0 sn0Var, i4d i4dVar) {
+        this.a = (byte) 3;
+        this.c = calendar;
+        this.b = hn7Var;
+        this.e = wm0Var;
+        this.f = xm0Var;
+        this.h = sn0Var;
+        this.d = i4dVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0460  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0118 A[Catch: Exception -> 0x0172, TRY_LEAVE, TryCatch #12 {Exception -> 0x0172, blocks: (B:37:0x0112, B:39:0x0118, B:43:0x015e, B:42:0x0157, B:49:0x014f, B:47:0x012a), top: B:36:0x0112, inners: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:50:? A[RETURN, SYNTHETIC] */
-    @Override // android.content.DialogInterface.OnClickListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        String str;
-        TLRPC.TL_secureRequiredType tL_secureRequiredType;
-        TLRPC.TL_secureRequiredType tL_secureRequiredType2;
-        String sb;
-        tk5 tk5Var;
-        tk5 tk5Var2;
-        File p0;
-        String str2;
-        File file;
-        Throwable th;
-        FileOutputStream fileOutputStream;
-        int i2 = 0;
-        TLRPC.TL_secureRequiredType tL_secureRequiredType3 = null;
-        r10 = null;
-        FileOutputStream fileOutputStream2 = null;
-        int i3 = 1;
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        Object obj = this.d;
+        Object obj2 = this.h;
+        Object obj3 = this.c;
+        Object obj4 = this.f;
+        Object obj5 = this.e;
+        KeyEvent.Callback callback = this.b;
+        switch (b) {
             case 0:
-                ArrayList arrayList = (ArrayList) this.b;
-                nk3 nk3Var = (nk3) this.c;
-                int i4 = i == 0 ? 0 : i == 1 ? 1 : i == 2 ? 2 : 3;
-                for (int i5 = 0; i5 < arrayList.size(); i5++) {
-                    lo7.n(z8c.t0).T(((Long) arrayList.get(i5)).longValue(), i4, 0L);
+                hn7 hn7Var = (hn7) callback;
+                ni niVar = (ni) obj5;
+                oi oiVar = (oi) obj4;
+                Calendar calendar = (Calendar) obj3;
+                kq8 kq8Var = (kq8) obj2;
+                i4d i4dVar = (i4d) obj;
+                boolean g = ij.g(null, null, 0L, 0L, 0, hn7Var, niVar, oiVar);
+                calendar.setTimeInMillis(System.currentTimeMillis());
+                calendar.add(6, hn7Var.getValue());
+                calendar.set(11, niVar.getValue());
+                calendar.set(12, oiVar.getValue());
+                if (g) {
+                    calendar.set(13, 0);
+                    calendar.set(14, 0);
                 }
-                if (c41.a(nk3Var)) {
-                    c41.z(nk3Var, i4, 0, null).j();
-                    return;
-                }
-                return;
+                int timeInMillis = (int) (calendar.getTimeInMillis() / 1000);
+                jw9 jw9Var = (jw9) kq8Var.b;
+                ((boolean[]) kq8Var.c)[0] = true;
+                jw9Var.c(Integer.valueOf(timeInMillis));
+                ((fx0) i4dVar.a).y0.run();
+                break;
             case 1:
-                o oVar = (o) this.b;
-                String str3 = (String) this.c;
-                sx sxVar = oVar.L;
-                if (oVar.M == null || oVar.v0[0].c.F == null) {
-                    return;
+                hn7 hn7Var2 = (hn7) callback;
+                ei eiVar = (ei) obj5;
+                gi giVar = (gi) obj4;
+                Calendar calendar2 = (Calendar) obj3;
+                gj gjVar = (gj) obj2;
+                i4d i4dVar2 = (i4d) obj;
+                boolean g2 = ij.g(null, null, 0L, 0L, 0, hn7Var2, eiVar, giVar);
+                calendar2.setTimeInMillis(System.currentTimeMillis());
+                calendar2.add(6, hn7Var2.getValue());
+                calendar2.set(11, eiVar.getValue());
+                calendar2.set(12, giVar.getValue());
+                if (g2) {
+                    calendar2.set(13, 0);
+                    calendar2.set(14, 0);
                 }
-                if (i != 0) {
-                    if (i != 1 || str3 == null) {
-                        return;
-                    }
-                    if (str3.startsWith("mailto:")) {
-                        str3 = str3.substring(7);
-                    } else if (str3.startsWith("tel:")) {
-                        str3 = str3.substring(4);
-                    }
-                    gm.g(str3);
-                    return;
-                }
-                int lastIndexOf = str3.lastIndexOf(35);
-                if (lastIndexOf != -1) {
-                    boolean isEmpty = TextUtils.isEmpty(oVar.v0[0].c.F.cached_page.url);
-                    m[] mVarArr = oVar.v0;
-                    String lowerCase = !isEmpty ? mVarArr[0].c.F.cached_page.url.toLowerCase() : mVarArr[0].c.F.url.toLowerCase();
-                    try {
-                        str = URLDecoder.decode(str3.substring(lastIndexOf + 1), "UTF-8");
-                    } catch (Exception unused) {
-                        str = "";
-                    }
-                    if (str3.toLowerCase().contains(lowerCase)) {
-                        if (!TextUtils.isEmpty(str)) {
-                            oVar.T(str, true);
-                            return;
-                        }
-                        u46 u46Var = oVar.v0[0].d;
-                        if (sxVar != null) {
-                            i2 = gm.L(32.0f);
-                        } else {
-                            i3 = 0;
-                        }
-                        u46Var.g1(i3, i2);
-                        oVar.j(null);
-                        return;
-                    }
-                }
-                l11.u(oVar.M, str3);
-                return;
+                gjVar.s((int) (calendar2.getTimeInMillis() / 1000), 0, true);
+                ((fx0) i4dVar2.a).y0.run();
+                break;
             case 2:
-                ng1 ng1Var = (ng1) this.b;
-                String str4 = (String) this.c;
-                if (i == 0) {
-                    l11.q(ng1Var.a.n.getParentActivity(), str4, true);
-                    return;
-                }
-                if (i == 1) {
-                    if (str4.startsWith("mailto:")) {
-                        str4 = str4.substring(7);
-                    } else if (str4.startsWith("tel:")) {
-                        str4 = str4.substring(4);
-                    }
-                    gm.g(str4);
-                    return;
-                }
-                return;
+                hn7 hn7Var3 = (hn7) callback;
+                hn7 hn7Var4 = (hn7) obj5;
+                hn7 hn7Var5 = (hn7) obj4;
+                Calendar calendar3 = (Calendar) obj3;
+                ij.b(hn7Var3, hn7Var4, hn7Var5);
+                calendar3.set(1, hn7Var5.getValue());
+                calendar3.set(2, hn7Var4.getValue());
+                calendar3.set(5, hn7Var3.getValue());
+                calendar3.set(12, 0);
+                calendar3.set(11, 0);
+                calendar3.set(13, 0);
+                ((uc7) obj2).a((int) (calendar3.getTimeInMillis() / 1000));
+                ((fx0) ((i4d) obj).a).y0.run();
+                break;
             case 3:
-                yv1 yv1Var = (yv1) this.b;
-                String str5 = (String) this.c;
-                gm.g(str5);
-                c41.b0(yv1Var).i(jb6.a0(null, null, 2131750821, str5)).j();
-                return;
+                Calendar calendar4 = (Calendar) obj3;
+                calendar4.setTimeInMillis((((hn7) callback).getValue() * 86400000) + System.currentTimeMillis());
+                calendar4.set(11, ((wm0) obj5).getValue());
+                calendar4.set(12, ((xm0) obj4).getValue() * 5);
+                ((sn0) obj2).s((int) (calendar4.getTimeInMillis() / 1000), 0, true);
+                ((fx0) ((i4d) obj).a).y0.run();
+                break;
             case 4:
-                ((u43) this.b).h((Integer[][]) this.c, i);
-                return;
-            case 5:
-                yg4 yg4Var = (yg4) this.b;
-                String str6 = (String) this.c;
-                if (i == 0) {
-                    ch4 ch4Var = yg4Var.a.w;
-                    SpannableStringBuilder[] spannableStringBuilderArr = ch4.t0;
-                    ch4Var.g(str6);
-                    return;
-                } else {
-                    if (i == 1) {
-                        if (str6.startsWith("mailto:")) {
-                            str6 = str6.substring(7);
-                        } else if (str6.startsWith("tel:")) {
-                            str6 = str6.substring(4);
-                        }
-                        gm.g(str6);
-                        return;
-                    }
-                    return;
-                }
-            case 6:
-                i85 i85Var = (i85) this.c;
-                ArrayList arrayList2 = (ArrayList) this.b;
-                g95 g95Var = i85Var.b;
-                if (VoIPService.getSharedInstance() != null) {
-                    Integer num = (Integer) arrayList2.get(i);
-                    int intValue = num.intValue();
-                    g95Var.n5 = num;
-                    g95Var.L1(true, true);
-                    g95Var.n5 = null;
-                    gm.c3(new bm3((Object) i85Var, intValue, (byte) 14));
-                    return;
-                }
-                return;
-            case 7:
-                xz7 xz7Var = (xz7) this.c;
-                ArrayList arrayList3 = (ArrayList) this.b;
-                xz7Var.getClass();
-                try {
-                    tL_secureRequiredType = new TLRPC.TL_secureRequiredType();
-                    try {
-                        tL_secureRequiredType.type = (TLRPC.SecureValueType) ((Class) arrayList3.get(i)).newInstance();
-                    } catch (Exception unused2) {
-                    }
-                } catch (Exception unused3) {
-                    tL_secureRequiredType = null;
-                }
-                if (!xz7.o1(tL_secureRequiredType.type)) {
-                    if (xz7.n1(tL_secureRequiredType.type)) {
-                        tL_secureRequiredType2 = new TLRPC.TL_secureRequiredType();
-                        tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypeAddress();
-                    }
-                    xz7Var.H1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
-                    return;
-                }
-                tL_secureRequiredType.selfie_required = true;
-                tL_secureRequiredType.translation_required = true;
-                tL_secureRequiredType2 = new TLRPC.TL_secureRequiredType();
-                tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypePersonalDetails();
-                tL_secureRequiredType3 = tL_secureRequiredType;
-                tL_secureRequiredType = tL_secureRequiredType2;
-                xz7Var.H1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
-                return;
-            case 8:
-                d68 d68Var = (d68) this.b;
-                fm fmVar = (fm) this.c;
-                if (i == 0) {
-                    try {
-                        ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", fmVar.c(false)));
-                        if (gm.C3()) {
-                            Toast.makeText(d68Var.s1.getParentActivity(), jb6.M0(2131743879, null), 0).show();
-                            return;
-                        }
-                        return;
-                    } catch (Exception e) {
-                        fc4.g(e, true);
-                        return;
-                    }
-                }
-                return;
-            case 9:
-                ((uo8) this.b).a((Context) this.c, i);
-                return;
-            case 10:
-                vn9 vn9Var = (vn9) this.b;
-                switch (((i98) this.c).a) {
-                    case 24:
-                        yed.d.b(i == 0 ? sn9.b : sn9.c);
-                        break;
-                    case 25:
-                        yed.e.b(on9.values()[i]);
-                        break;
-                    case 26:
-                        yed.f.b(i == 0 ? pn9.b : pn9.c);
-                        break;
-                    default:
-                        hr5 hr5Var = yed.g;
-                        int i6 = vn9.d[i];
-                        synchronized (hr5Var) {
-                            hr5Var.b = i6;
-                            hr5Var.a = true;
-                            jaa.a.edit().putInt("round_video_video_bitrate", i6).apply();
+                u0b u0bVar = (u0b) callback;
+                int[] iArr = (int[]) obj5;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj4;
+                TextView textView = (TextView) obj3;
+                TextView textView2 = (TextView) obj2;
+                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) obj;
+                int i = iArr[0];
+                if (i != 1) {
+                    if (i != 0) {
+                        if (i == 2) {
+                            iArr[0] = 3;
+                            if (!u0bVar.k2) {
+                                gl.z3(editTextBoldCursor);
+                                try {
+                                    editTextBoldCursor.performHapticFeedback(3, 2);
+                                } catch (Exception unused) {
+                                }
+                            }
+                            gl.t1(editTextBoldCursor);
+                            z3a B = z3a.B(u0bVar.a);
+                            String str = u0bVar.l2;
+                            String str2 = u0bVar.i2;
+                            String str3 = u0bVar.U1;
+                            ArrayList arrayList = u0bVar.S1;
+                            g0b g0bVar = new g0b(u0bVar);
+                            if (B.G.get(str2) != null) {
+                                g0bVar.a(null);
+                            } else {
+                                new Thread(new e57((Object) B, str, (Object) str2, (Object) str3, (Object) arrayList, (Object) g0bVar, (byte) 27)).start();
+                            }
+                            alertDialog$Builder.a.M0.run();
+                            u0bVar.dismiss();
                             break;
                         }
-                }
-                ((ny0) vn9Var.c).f();
-                return;
-            case 11:
-                p7a p7aVar = (p7a) this.b;
-                ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                new c41(p7aVar.c, null).i(jb6.M0(2131743879, null)).j();
-                return;
-            case 12:
-                hba hbaVar = (hba) this.c;
-                ArrayList arrayList4 = (ArrayList) this.b;
-                SharedPreferences sharedPreferences = hbaVar.g;
-                ArrayList arrayList5 = hbaVar.c;
-                if (i != 0) {
-                    gba gbaVar = new gba();
-                    gbaVar.a = i - 1;
-                    gbaVar.b = arrayList4;
-                    arrayList5.add(gbaVar);
-                    String string = sharedPreferences.getString("moretemplates", null);
-                    if (string == null) {
-                        sb = String.valueOf(gbaVar.a);
                     } else {
-                        StringBuilder k = b10.k(string, "|");
-                        k.append(gbaVar.a);
-                        sb = k.toString();
+                        iArr[0] = 1;
+                        TLRPC.TL_stickers_suggestShortName tL_stickers_suggestShortName = new TLRPC.TL_stickers_suggestShortName();
+                        String obj6 = editTextBoldCursor.getText().toString();
+                        u0bVar.l2 = obj6;
+                        tL_stickers_suggestShortName.title = obj6;
+                        ConnectionsManager.getInstance(u0bVar.a).sendRequest(tL_stickers_suggestShortName, new fn0((Object) u0bVar, (Object) editTextBoldCursor, (Object) textView, (Object) textView2, (Object) iArr, (byte) 18));
+                        break;
                     }
-                    for (int i7 = 0; i7 < arrayList4.size(); i7++) {
-                        StringBuilder k2 = b10.k(sb, ",");
-                        k2.append(Math.round(((fba) arrayList4.get(i7)).a));
-                        k2.append(",");
-                        k2.append(Math.round(((fba) arrayList4.get(i7)).b));
-                        sb = k2.toString();
-                    }
-                    sharedPreferences.edit().putString("moretemplates", sb).apply();
-                    return;
                 }
-                StringBuilder sb2 = new StringBuilder("[");
-                for (int i8 = 0; i8 < arrayList5.size(); i8++) {
-                    gba gbaVar2 = (gba) arrayList5.get(i8);
-                    if (i8 > 0) {
-                        sb2.append(",\n");
-                    }
-                    sb2.append("\t{\n\t\t\"shape\": ");
-                    sb2.append(gbaVar2.a);
-                    sb2.append(",\n\t\t\"points\": [");
-                    for (int i9 = 0; i9 < gbaVar2.b.size(); i9++) {
-                        if (i9 > 0) {
-                            sb2.append(",");
-                        }
-                        fba fbaVar = (fba) gbaVar2.b.get(i9);
-                        sb2.append("[");
-                        sb2.append(Math.round(fbaVar.a));
-                        sb2.append(",");
-                        sb2.append(Math.round(fbaVar.b));
-                        sb2.append("]");
-                    }
-                    sb2.append("],\n\t\t\"freq\": ");
-                    sb2.append(Math.round(((gbaVar2.c / hbaVar.a) * 100.0f) * 100.0f) / 100.0f);
-                    sb2.append("\n\t}");
-                }
-                sb2.append("\n]");
-                Log.i("shapedetector", sb2.toString());
-                return;
-            case 13:
-                rfa rfaVar = (rfa) this.b;
-                String str7 = (String) this.c;
-                if (i == 0) {
-                    rfaVar.a.Y0(str7);
-                    return;
-                }
-                if (i == 1) {
-                    if (str7.startsWith("mailto:")) {
-                        str7 = str7.substring(7);
-                    } else if (str7.startsWith("tel:")) {
-                        str7 = str7.substring(4);
-                    }
-                    gm.g(str7);
-                    return;
-                }
-                return;
+                break;
             default:
-                d0 d0Var = (d0) this.b;
-                bmb bmbVar = (bmb) this.c;
-                ThemeActivity themeActivity = d0Var.e;
-                if (themeActivity.getParentActivity() != null) {
-                    if (i == 0) {
-                        if (bmbVar.G == null) {
-                            themeActivity.getMessagesController().D4(bmbVar, null);
-                            nm7.e().k(nm7.w4, bmbVar, null);
-                            return;
-                        }
-                        String str8 = "https://" + themeActivity.getMessagesController().N2 + "/addtheme/" + bmbVar.G.slug;
-                        themeActivity.showDialog(new tca(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
-                        return;
-                    }
-                    if (i != 1) {
-                        if (i == 2) {
-                            tk5Var = ((d) themeActivity).parentLayout;
-                            if (tk5Var != null) {
-                                cmb.t(bmbVar, true, false);
-                                tk5Var2 = ((d) themeActivity).parentLayout;
-                                ((ActionBarLayout) tk5Var2).W(true, true);
-                                new ThemeEditorView().d(themeActivity.getParentActivity(), bmbVar);
-                                return;
-                            }
-                            return;
-                        }
-                        if (i == 3) {
-                            themeActivity.presentFragment(new zob(bmbVar, null, false));
-                            return;
-                        }
-                        if (themeActivity.getParentActivity() != null) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                            alertDialog$Builder.a.S = jb6.M0(2131751421, "DeleteThemeTitle");
-                            alertDialog$Builder.a.U = jb6.M0(2131751422, "DeleteThemeAlert");
-                            alertDialog$Builder.j(jb6.M0(2131751535, "Delete"), new xr8(d0Var, bmbVar, (byte) 27));
-                            alertDialog$Builder.g(jb6.M0(2131752542, "Cancel"), null);
-                            he heVar = alertDialog$Builder.a;
-                            themeActivity.showDialog(heVar);
-                            TextView textView = (TextView) heVar.c(-1);
-                            if (textView != null) {
-                                anb.X(textView, cmb.p7, null);
-                                return;
-                            }
-                            return;
-                        }
-                        return;
-                    }
-                    if (bmbVar.b == null && bmbVar.d == null) {
-                        StringBuilder sb3 = new StringBuilder();
-                        int[] iArr = cmb.gm;
-                        for (int i10 = 0; i10 < iArr.length; i10++) {
-                            sb3.append(nxe.c(i10));
-                            sb3.append("=");
-                            sb3.append(iArr[i10]);
-                            sb3.append("\n");
-                        }
-                        p0 = new File(a.h(), "default_theme.attheme");
-                        try {
-                            try {
-                                try {
-                                    fileOutputStream = new FileOutputStream(p0);
-                                } catch (Exception e2) {
-                                    e = e2;
-                                }
-                            } catch (Throwable th2) {
-                                th = th2;
-                            }
-                        } catch (Exception e3) {
-                            fc4.g(e3, true);
-                        }
-                        try {
-                            fileOutputStream.write(gm.g1(sb3.toString()));
-                            fileOutputStream.close();
-                        } catch (Exception e4) {
-                            e = e4;
-                            fileOutputStream2 = fileOutputStream;
-                            fc4.g(e, true);
-                            if (fileOutputStream2 != null) {
-                                fileOutputStream2.close();
-                            }
-                            str2 = bmbVar.a;
-                            if (!str2.endsWith(".attheme")) {
-                            }
-                            file = new File(bc4.z(4), bc4.q(str2));
-                            if (gm.E(p0, file)) {
-                            }
-                        } catch (Throwable th3) {
-                            th = th3;
-                            fileOutputStream2 = fileOutputStream;
-                            if (fileOutputStream2 == null) {
-                                throw th;
-                            }
-                            try {
-                                fileOutputStream2.close();
-                                throw th;
-                            } catch (Exception e5) {
-                                fc4.g(e5, true);
-                                throw th;
-                            }
-                        }
-                    } else {
-                        String str9 = bmbVar.d;
-                        p0 = str9 != null ? cmb.p0(str9) : new File(bmbVar.b);
-                    }
-                    str2 = bmbVar.a;
-                    if (!str2.endsWith(".attheme")) {
-                        str2 = str2.concat(".attheme");
-                    }
-                    file = new File(bc4.z(4), bc4.q(str2));
-                    try {
-                        if (gm.E(p0, file)) {
-                            return;
-                        }
-                        Intent intent = new Intent("android.intent.action.SEND");
-                        intent.setType("text/xml");
-                        if (Build.VERSION.SDK_INT >= 24) {
-                            try {
-                                Activity parentActivity = themeActivity.getParentActivity();
-                                StringBuilder sb4 = new StringBuilder();
-                                a.d();
-                                sb4.append("org.telegram.messenger.beta");
-                                sb4.append(".provider");
-                                intent.putExtra("android.intent.extra.STREAM", FileProvider.c(parentActivity, sb4.toString(), file));
-                                intent.setFlags(1);
-                            } catch (Exception unused4) {
-                                intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
-                            }
-                        } else {
-                            intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
-                        }
-                        themeActivity.startActivityForResult(Intent.createChooser(intent, jb6.M0(2131745193, "ShareFile")), 500);
-                        return;
-                    } catch (Exception e6) {
-                        fc4.g(e6, true);
-                        return;
+                fx0 fx0Var = (fx0) callback;
+                ArrayList arrayList2 = (ArrayList) obj4;
+                int[] iArr2 = (int[]) obj3;
+                pb0 pb0Var = (pb0) obj2;
+                be0 be0Var = (be0) obj;
+                cs5 G = cs5.G(fx0Var.c, fx0Var.J0, (FrameLayout) obj5);
+                int size = arrayList2.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj7 = arrayList2.get(i2);
+                    i2++;
+                    int intValue = ((Integer) obj7).intValue();
+                    TLRPC.User f = y6c.h(intValue).f();
+                    if (f != null) {
+                        G.d(intValue, iArr2[0] == intValue, new i57((Object) iArr2, intValue, (Object) pb0Var, (Object) f, (Object) be0Var, (byte) 29));
                     }
                 }
-                return;
+                G.t = false;
+                G.b0 = true;
+                G.s = (short) 0;
+                G.i = (byte) 3;
+                G.b0(-gl.L(8.0f), -gl.L(8.0f));
+                G.a0();
+                break;
         }
     }
 
-    public /* synthetic */ ff(Object obj, ArrayList arrayList, byte b) {
+    public /* synthetic */ ff(KeyEvent.Callback callback, Object obj, Object obj2, Object obj3, Object obj4, Object obj5, byte b) {
         this.a = b;
-        this.c = obj;
-        this.b = arrayList;
+        this.b = callback;
+        this.e = obj;
+        this.f = obj2;
+        this.c = obj3;
+        this.h = obj4;
+        this.d = obj5;
     }
 }

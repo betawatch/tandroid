@@ -1,185 +1,215 @@
 // default package
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.ImageView;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class q0b extends s09 implements vlb {
-    public float E;
-    public float F;
-    public ValueAnimator G;
-    public ValueAnimator H;
-    public final /* synthetic */ u0b I;
-    public int r;
-    public float s;
-    public ValueAnimator w;
-    public boolean x;
-    public long y;
+public final class q0b extends n39 {
+    public final Context c;
+    public int d;
+    public final SparseArray e = new SparseArray();
+    public final SparseArray f = new SparseArray();
+    public int h;
+    public int n;
+    public final /* synthetic */ u0b r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public q0b(u0b u0bVar, Context context) {
-        super(context);
-        ylb ylbVar = u0bVar.o2;
-        this.I = u0bVar;
-        this.x = false;
-        this.E = 1.0f;
-        k(u0bVar.E3 ? on2.p(cmb.v0(cmb.Ml, ylbVar), nm7.m1) : cmb.v0(cmb.Df, ylbVar));
-        setScaleType(ImageView.ScaleType.CENTER);
-        setLayerNum(null);
+        this.r = u0bVar;
+        this.c = context;
     }
 
-    @Override // s09
-    public final void c() {
-        this.x = true;
-        if (this.E < 1.0f) {
-            ValueAnimator valueAnimator = this.H;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.H = null;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.E, 1.0f);
-            this.H = ofFloat;
-            ofFloat.addUpdateListener(new n0b(this, (byte) 2));
-            this.H.addListener(new p0b(this, (byte) 0));
-            this.H.setDuration(320L);
-            this.H.setInterpolator(d53.h);
-            this.H.start();
-        }
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        return false;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (isPressed()) {
-            float f = this.F;
-            if (f != 1.0f) {
-                this.F = Utilities.i(((1000.0f / gm.r) / 100.0f) + f, 1.0f, 0.0f);
-                invalidate();
-                this.I.invalidate();
-            }
-        }
-        float A = td4.A(1.0f, this.F, 0.15f, 0.85f) * this.E;
-        if (A != 1.0f) {
-            canvas.save();
-            canvas.scale(A, A, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        }
-        super.draw(canvas);
-        if (A != 1.0f) {
-            canvas.restore();
-        }
+    @Override // w39
+    public final int b() {
+        return this.h;
     }
 
-    public final void j() {
-        if (System.currentTimeMillis() - this.y > 250) {
-            this.y = System.currentTimeMillis();
-            p09 animatedDrawable = getAnimatedDrawable();
-            if (animatedDrawable == null && getImageReceiver() != null) {
-                animatedDrawable = getImageReceiver().y();
-            }
-            if (animatedDrawable != null) {
-                animatedDrawable.stop();
-                animatedDrawable.H(0);
-                animatedDrawable.C(true);
-            } else if (animatedDrawable == null) {
-                setProgress(0.0f);
-                d();
-            }
+    @Override // w39
+    public final int d(int i) {
+        u0b u0bVar = this.r;
+        if (u0bVar.Q1 == null) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
+            return (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() != i) ? 0 : 3;
         }
+        Object obj = this.e.get(i);
+        if (obj != null) {
+            return !(obj instanceof TLRPC.Document) ? 2 : 0;
+        }
+        return 1;
     }
 
-    public final void k(int i) {
-        if (this.r != i) {
-            this.r = i;
-            setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
-        }
-    }
-
-    public final void l(boolean z, boolean z2) {
-        if (Math.abs(this.s - (z ? 1.0f : 0.0f)) > 0.01f) {
-            ValueAnimator valueAnimator = this.w;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.w = null;
+    @Override // w39
+    public final void f() {
+        int i;
+        int i2;
+        int i3;
+        u0b u0bVar = this.r;
+        if (u0bVar.Q1 != null) {
+            int measuredWidth = u0bVar.m1.getMeasuredWidth();
+            if (measuredWidth == 0) {
+                measuredWidth = gl.q.x;
             }
-            if (!z2) {
-                m(z ? 1.0f : 0.0f);
-                return;
+            int L = measuredWidth / gl.L(72.0f);
+            this.d = L;
+            u0bVar.G1.x1(L);
+            SparseArray sparseArray = this.e;
+            sparseArray.clear();
+            SparseArray sparseArray2 = this.f;
+            sparseArray2.clear();
+            this.h = 0;
+            this.n = 0;
+            for (int i4 = 0; i4 < u0bVar.Q1.size(); i4++) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) u0bVar.Q1.get(i4);
+                List list = stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered ? ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents : stickerSetCovered.covers;
+                if (list != null) {
+                    list = list.subList(0, Math.min(list.size(), this.d));
+                }
+                if (list != null && (!list.isEmpty() || stickerSetCovered.cover != null)) {
+                    this.n++;
+                    sparseArray2.put(this.h, stickerSetCovered);
+                    int i5 = this.h;
+                    this.h = i5 + 1;
+                    sparseArray.put(i5, Integer.valueOf(i4));
+                    int i6 = this.h / this.d;
+                    if (list.isEmpty()) {
+                        sparseArray.put(this.h, stickerSetCovered.cover);
+                        i = 1;
+                    } else {
+                        i = (int) Math.ceil(list.size() / this.d);
+                        for (int i7 = 0; i7 < list.size(); i7++) {
+                            sparseArray.put(this.h + i7, list.get(i7));
+                        }
+                    }
+                    int i8 = 0;
+                    while (true) {
+                        i2 = this.d * i;
+                        i3 = this.h;
+                        if (i8 >= i2) {
+                            break;
+                        }
+                        sparseArray2.put(i3 + i8, stickerSetCovered);
+                        i8++;
+                    }
+                    this.h = i2 + i3;
+                }
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, z ? 1.0f : 0.0f);
-            this.w = ofFloat;
-            ofFloat.addUpdateListener(new n0b(this, (byte) 1));
-            this.w.addListener(new p0b(this, (byte) 1));
-            this.w.setDuration(350L);
-            this.w.setInterpolator(d53.h);
-            this.w.start();
-        }
-    }
-
-    public final void m(float f) {
-        this.s = f;
-        u0b u0bVar = this.I;
-        ylb ylbVar = u0bVar.o2;
-        if (u0bVar.E3) {
-            k(on2.p(cmb.v0(cmb.Ml, ylbVar), (int) (gm.R1(0.4f, 0.8f, f) * 255.0f)));
         } else {
-            k(on2.f(this.s, cmb.v0(cmb.Df, ylbVar), cmb.v0(cmb.Ff, ylbVar)));
-        }
-        invalidate();
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i2);
-        super.onMeasure(wi8.f(4.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final void setPressed(boolean z) {
-        ValueAnimator valueAnimator;
-        if (isPressed() != z) {
-            super.setPressed(z);
-            invalidate();
-            this.I.invalidate();
-            if (z && (valueAnimator = this.G) != null) {
-                valueAnimator.removeAllListeners();
-                this.G.cancel();
+            ArrayList arrayList = u0bVar.S1;
+            if (arrayList != null) {
+                this.h = arrayList.size();
+            } else {
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
+                this.h = tL_messages_stickerSet != null ? tL_messages_stickerSet.documents.size() : 0;
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = u0bVar.M1;
+                if (tL_messages_stickerSet2 != null && tL_messages_stickerSet2.set.creator && tL_messages_stickerSet2.documents.size() < 120) {
+                    TLRPC.StickerSet stickerSet = u0bVar.M1.set;
+                    if (!stickerSet.masks && !stickerSet.emojis) {
+                        this.h++;
+                    }
+                }
             }
-            if (z) {
+        }
+        super.f();
+    }
+
+    @Override // w39
+    public final void r(int i) {
+        ArrayList arrayList = this.r.S1;
+        if (arrayList != null) {
+            this.h = arrayList.size();
+        }
+        super.r(i);
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        View view = s49Var.a;
+        u0b u0bVar = this.r;
+        ArrayList arrayList = u0bVar.Q1;
+        if (arrayList == null) {
+            if (u0bVar.R1 != null) {
+                ((xya) view).setSticker((s3a) u0bVar.S1.get(i));
                 return;
             }
-            float f = this.F;
-            if (f != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f, 0.0f);
-                this.G = ofFloat;
-                ofFloat.addUpdateListener(new n0b(this, (byte) 0));
-                this.G.addListener(new p0b(this, (byte) 2));
-                b10.n(3.0f, this.G);
-                this.G.setDuration(350L);
-                this.G.start();
+            if (s49Var.f != 3) {
+                xya xyaVar = (xya) view;
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
+                if (tL_messages_stickerSet != null) {
+                    xyaVar.d(tL_messages_stickerSet.documents.get(i), null, u0bVar.M1, null, u0bVar.b2, u0bVar.L1);
+                    xyaVar.K.setOnClickListener(new b99(this, xyaVar, (byte) 21));
+                    return;
+                }
+                return;
             }
+            return;
+        }
+        int i2 = s49Var.f;
+        SparseArray sparseArray = this.e;
+        if (i2 == 0) {
+            ((xya) view).d((TLRPC.Document) sparseArray.get(i), null, this.f.get(i), null, false, false);
+        } else if (i2 == 1) {
+            ((y14) view).setHeight(gl.L(82.0f));
+        } else if (i2 == 2) {
+            ((m84) view).c((TLRPC.StickerSetCovered) arrayList.get(((Integer) sparseArray.get(i)).intValue()), false, false, 0, 0, false);
         }
     }
 
-    @Override // vlb
-    public final void updateColors() {
-        try {
-            if (this.w == null) {
-                m(this.s);
-            }
-        } catch (Exception e) {
-            fc4.g(e, true);
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        FrameLayout frameLayout;
+        u0b u0bVar = this.r;
+        Context context = this.c;
+        if (i == 0) {
+            p0b p0bVar = new p0b(this, context, u0bVar.J0);
+            p0bVar.getImageView().m0(7);
+            frameLayout = p0bVar;
+        } else if (i == 1) {
+            frameLayout = new y14(context);
+        } else if (i == 2) {
+            frameLayout = new m84(8, u0bVar.J0, this.c, true, false);
+        } else if (i != 3) {
+            frameLayout = null;
+        } else {
+            wjb wjbVar = u0bVar.J0;
+            o0b o0bVar = new o0b(context);
+            o0bVar.a = wjbVar;
+            View view = new View(context);
+            o0bVar.c = view;
+            int L = gl.L(28.0f);
+            int i2 = bkb.Df;
+            ShapeDrawable b0 = bkb.b0(L, bkb.p1(0.12f, bkb.v0(i2, wjbVar)));
+            o0bVar.b = b0;
+            Drawable d = b00.d(context, R.drawable.filled_add_sticker);
+            zkb.x(o0bVar, d, i2, wjbVar, PorterDuff.Mode.MULTIPLY);
+            fm2 fm2Var = new fm2(b0, d);
+            int L2 = gl.L(56.0f);
+            int L3 = gl.L(56.0f);
+            fm2Var.h = L2;
+            fm2Var.n = L3;
+            int L4 = gl.L(24.0f);
+            int L5 = gl.L(24.0f);
+            fm2Var.e = L4;
+            fm2Var.f = L5;
+            view.setBackground(fm2Var);
+            ote.a(view);
+            o0bVar.addView(view, nme.e(56, 56, 17));
+            frameLayout = o0bVar;
         }
-    }
-
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
+        return new y29(frameLayout);
     }
 }

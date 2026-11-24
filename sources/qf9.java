@@ -1,36 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qf9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ch9 b;
-    public final /* synthetic */ int c;
+import android.content.Context;
+import android.view.View;
 
-    public /* synthetic */ qf9(ch9 ch9Var, int i, byte b) {
-        this.a = b;
-        this.b = ch9Var;
-        this.c = i;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class qf9 extends b4c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        b4c.h(new qf9());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        ch9 ch9Var = this.b;
-        switch (b) {
-            case 0:
-                ch9Var.d4(i);
-                break;
-            case 1:
-                ch9Var.f4(i);
-                break;
-            case 2:
-                ch9Var.scrollBy(0, i);
-                break;
-            default:
-                ch9Var.e4(i);
-                break;
-        }
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        ((rf9) view).g((lk0) c4cVar.H, (ee9) c4cVar.I);
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new rf9(context, wjbVar);
+    }
+
+    @Override // b4c
+    public final boolean f() {
+        return false;
     }
 }

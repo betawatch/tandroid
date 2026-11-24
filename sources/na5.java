@@ -1,31 +1,49 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class na5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ma5 a;
-    public final /* synthetic */ yd b;
-    public final /* synthetic */ WindowManager c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ z81 e;
-    public final /* synthetic */ oa5 f;
+public final class na5 extends zya {
+    public final /* synthetic */ byte L;
 
-    public na5(oa5 oa5Var, ma5 ma5Var, yd ydVar, WindowManager windowManager, FrameLayout frameLayout, z81 z81Var) {
-        this.f = oa5Var;
-        this.a = ma5Var;
-        this.b = ydVar;
-        this.c = windowManager;
-        this.d = frameLayout;
-        this.e = z81Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ na5(Context context, View view, int i, wjb wjbVar, byte b) {
+        super(context, view, i, wjbVar);
+        this.L = b;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        nm7.f(this.f.h).d(new v15((Object) this.a, (Object) this.b, (Object) this.c, (Object) this.d, (Object) this.e, (byte) 6));
+    @Override // zya, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.L) {
+            case 0:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().w0(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().w0(false);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // zya, android.view.View
+    public final void setVisibility(int i) {
+        switch (this.L) {
+            case 2:
+                super.setVisibility(i);
+                if (i != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
     }
 }

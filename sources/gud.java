@@ -1,82 +1,177 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+
 /* loaded from: classes.dex */
-public abstract class gud {
-    public static Object a(int i) {
-        if (i >= 2 && i <= 1073741824 && Integer.highestOneBit(i) == i) {
-            return i <= 256 ? new byte[i] : i <= 65536 ? new short[i] : new int[i];
+public final class gud {
+    public Object A;
+    public final ng5 a;
+    public final Object[] b;
+    public final Class c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final int j;
+    public final int k;
+    public final int l;
+    public final int[] m;
+    public int n;
+    public int o;
+    public int p = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int q = TLObject.FLAG_31;
+    public int r = 0;
+    public int s;
+    public int t;
+    public int u;
+    public int v;
+    public int w;
+    public Field x;
+    public Object y;
+    public Object z;
+
+    public gud(Class cls, String str, Object[] objArr) {
+        this.c = cls;
+        ng5 ng5Var = new ng5(str, (byte) 4);
+        this.a = ng5Var;
+        this.b = objArr;
+        this.d = ng5Var.b();
+        int b = ng5Var.b();
+        this.e = b;
+        if (b == 0) {
+            this.f = 0;
+            this.g = 0;
+            this.h = 0;
+            this.i = 0;
+            this.k = 0;
+            this.j = 0;
+            this.l = 0;
+            this.m = null;
+            return;
         }
-        u36.j(hg9.j(i, "must be power of 2 between 2^1 and 2^30: "));
-        return null;
+        int b2 = ng5Var.b();
+        this.f = b2;
+        int b3 = ng5Var.b();
+        this.g = ng5Var.b();
+        this.h = ng5Var.b();
+        this.k = ng5Var.b();
+        this.j = ng5Var.b();
+        this.i = ng5Var.b();
+        this.l = ng5Var.b();
+        int b4 = ng5Var.b();
+        this.m = b4 != 0 ? new int[b4] : null;
+        this.n = (b2 << 1) + b3;
     }
 
-    public static int b(int i, int i2, int i3) {
-        return (i & (~i3)) | (i2 & i3);
+    public static Field b(Class cls, String str) {
+        try {
+            return cls.getDeclaredField(str);
+        } catch (NoSuchFieldException unused) {
+            Field[] declaredFields = cls.getDeclaredFields();
+            for (Field field : declaredFields) {
+                if (str.equals(field.getName())) {
+                    return field;
+                }
+            }
+            String name = cls.getName();
+            String arrays = Arrays.toString(declaredFields);
+            StringBuilder sb = new StringBuilder(String.valueOf(arrays).length() + name.length() + String.valueOf(str).length() + 40);
+            sb.append("Field ");
+            sb.append(str);
+            sb.append(" for ");
+            sb.append(name);
+            wn4.j(b00.j(sb, " not found. Known fields are ", arrays));
+            return null;
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00d9, code lost:
     
-        r6 = r6 & r11;
+        if ((r8.t & 2048) == 0) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x002b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00dd, code lost:
     
-        if (r5 != (-1)) goto L16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x002d, code lost:
-    
-        e(r1, r6, r12);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0030, code lost:
-    
-        return r2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0031, code lost:
-    
-        r13[r5] = b(r13[r5], r6, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0039, code lost:
-    
-        return r2;
+        if ((r1 & 1) == 1) goto L55;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int c(Object obj, Object obj2, int i, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
-        int b = dle.b(obj);
-        int i2 = b & i;
-        int d = d(i2, obj3);
-        if (d != 0) {
-            int i3 = ~i;
-            int i4 = b & i3;
-            int i5 = -1;
-            while (true) {
-                int i6 = d - 1;
-                int i7 = iArr[i6];
-                if ((i7 & i3) != i4 || !ese.a(obj, objArr[i6]) || (objArr2 != null && !ese.a(obj2, objArr2[i6]))) {
-                    int i8 = i7 & i;
-                    if (i8 == 0) {
-                        break;
-                    }
-                    i5 = i6;
-                    d = i8;
+    public final boolean a() {
+        ng5 ng5Var = this.a;
+        if (ng5Var.b >= ng5Var.c.length()) {
+            return false;
+        }
+        this.s = ng5Var.b();
+        int b = ng5Var.b();
+        this.t = b;
+        int i = b & kk7.d4;
+        this.u = i;
+        int i2 = this.s;
+        if (i2 < this.p) {
+            this.p = i2;
+        }
+        if (i2 > this.q) {
+            this.q = i2;
+        }
+        phd phdVar = phd.s;
+        byte b2 = phdVar.a;
+        if (i != b2 && i >= phd.e.a) {
+            byte b3 = phd.r.a;
+        }
+        this.r++;
+        Class cls = gvd.a;
+        if ((b & 1024) != 0) {
+            int i3 = this.o;
+            this.o = i3 + 1;
+            this.m[i3] = i2;
+        }
+        this.y = null;
+        this.z = null;
+        this.A = null;
+        int i4 = this.d;
+        if (i > b2) {
+            this.v = ng5Var.b();
+            int i5 = this.u;
+            if (i5 != phd.b.a + 51 && i5 != phd.d.a + 51) {
+                if (i5 != phd.c.a + 51 || (i4 & 1) != 1) {
+                    return true;
                 }
+                this.z = c();
             }
+            this.y = c();
+            return true;
         }
-        return -1;
+        this.x = b(this.c, (String) c());
+        if ((i4 & 1) == 1 && this.u <= phd.d.a) {
+            this.w = ng5Var.b();
+        }
+        int i6 = this.u;
+        if (i6 == phd.b.a || i6 == phd.d.a) {
+            this.y = this.x.getType();
+            return true;
+        }
+        if (i6 != phd.f.a && i6 != phd.r.a) {
+            if (i6 != phd.c.a && i6 != phd.h.a && i6 != phd.n.a) {
+                if (i6 == phdVar.a) {
+                    this.A = c();
+                }
+                return true;
+            }
+            this.z = c();
+        }
+        this.y = c();
+        return true;
+        return true;
     }
 
-    public static int d(int i, Object obj) {
-        return obj instanceof byte[] ? ((byte[]) obj)[i] & 255 : obj instanceof short[] ? ((short[]) obj)[i] & 65535 : ((int[]) obj)[i];
-    }
-
-    public static void e(int i, int i2, Object obj) {
-        if (obj instanceof byte[]) {
-            ((byte[]) obj)[i] = (byte) i2;
-        } else if (obj instanceof short[]) {
-            ((short[]) obj)[i] = (short) i2;
-        } else {
-            ((int[]) obj)[i] = i2;
-        }
+    public final Object c() {
+        int i = this.n;
+        this.n = i + 1;
+        return this.b[i];
     }
 }

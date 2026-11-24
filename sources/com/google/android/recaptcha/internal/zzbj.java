@@ -2,34 +2,34 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Timer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzbj extends eeb implements fs4 {
+final class zzbj extends ccb implements eq4 {
     final /* synthetic */ zzbo zza;
     private /* synthetic */ Object zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbj(zzbo zzboVar, px2 px2Var) {
-        super(2, px2Var);
+    public zzbj(zzbo zzboVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzboVar;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzbj zzbjVar = new zzbj(this.zza, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzbj zzbjVar = new zzbj(this.zza, fw2Var);
         zzbjVar.zzb = obj;
         return zzbjVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbj) create((zzhk) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzbj) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         boolean z;
-        tue.b(obj);
+        qse.b(obj);
         zzhk zzhkVar = (zzhk) this.zzb;
         zzbo zzboVar = this.zza;
         z = zzboVar.zzg;
@@ -37,6 +37,6 @@ final class zzbj extends eeb implements fs4 {
             new Timer().schedule(new zzbi(zzboVar, zzhkVar), 28800000L, 28800000L);
             zzboVar.zzg = true;
         }
-        return g7c.a;
+        return g5c.a;
     }
 }

@@ -1,70 +1,92 @@
 // default package
 
-import android.net.Uri;
-import org.telegram.tgnet.TLRPC;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class io7 {
-    public final int a;
-    public final long b;
-    public final boolean c;
-    public final String d;
-    public final TLRPC.User e;
-    public final TLRPC.Chat f;
-    public final an7 g;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ String i;
-    public final /* synthetic */ long[] j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ Uri l;
-    public final /* synthetic */ byte m;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ boolean o;
-    public final /* synthetic */ boolean p;
-    public final /* synthetic */ byte q;
-    public final /* synthetic */ lo7 r;
+    public static final byte[] d = {79, 103, 103, 83, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, -43, -59, -9, 1, 19, 79, 112, 117, 115, 72, 101, 97, 100, 1, 2, 56, 1, Byte.MIN_VALUE, -69, 0, 0, 0, 0, 0};
+    public static final byte[] e = {79, 103, 103, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 11, -103, 87, 83, 1, 16, 79, 112, 117, 115, 84, 97, 103, 115, 0, 0, 0, 0, 0, 0, 0, 0};
+    public ByteBuffer a;
+    public int b;
+    public int c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public io7(lo7 lo7Var, int i, long j, boolean z, String str, TLRPC.User user, TLRPC.Chat chat, an7 an7Var, long j2, String str2, long[] jArr, int i2, Uri uri, int i3, boolean z2, boolean z3, boolean z4, int i4) {
-        this.r = lo7Var;
-        this.h = j2;
-        this.i = str2;
-        this.j = jArr;
-        this.k = i2;
-        this.l = uri;
-        this.m = i3;
-        this.n = z2;
-        this.o = z3;
-        this.p = z4;
-        this.q = i4;
-        this.a = i;
-        this.d = str;
-        this.e = user;
-        this.f = chat;
-        this.g = an7Var;
-        this.b = j;
-        this.c = z;
+    public io7(ByteBuffer byteBuffer, byte b) {
+        switch (b) {
+            case 2:
+                this.c = 0;
+                this.a = byteBuffer;
+                this.b = byteBuffer.position();
+                break;
+            default:
+                this.a = byteBuffer;
+                this.b = byteBuffer.position();
+                break;
+        }
     }
 
-    public final void a() {
-        an7 an7Var = this.g;
-        boolean z = e21.a;
-        int i = this.a;
-        if (z) {
-            StringBuilder l = hg9.l(i, "show dialog notification with id ", " ");
-            l.append(this.b);
-            l.append(" user=");
-            l.append(this.e);
-            l.append(" chat=");
-            l.append(this.f);
-            fc4.l(l.toString());
+    public static void d(ByteBuffer byteBuffer, long j, int i, int i2, boolean z) {
+        byteBuffer.put((byte) 79);
+        byteBuffer.put((byte) 103);
+        byteBuffer.put((byte) 103);
+        byteBuffer.put((byte) 83);
+        byteBuffer.put((byte) 0);
+        byteBuffer.put(z ? (byte) 2 : (byte) 0);
+        byteBuffer.putLong(j);
+        byteBuffer.putInt(0);
+        byteBuffer.putInt(i);
+        byteBuffer.putInt(0);
+        byteBuffer.put(gxe.a(i2));
+    }
+
+    public final int a(int i) {
+        int a;
+        ByteBuffer byteBuffer = this.a;
+        int i2 = this.b;
+        int i3 = byteBuffer.get((this.c / 8) + i2);
+        if (i3 < 0) {
+            i3 += 256;
         }
-        try {
-            lo7.m0.e(null, i, an7Var.b());
-        } catch (SecurityException e) {
-            fc4.g(e, true);
-            this.r.P(an7Var, this.b, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q);
+        int i4 = this.c;
+        int i5 = 8 - (i4 % 8);
+        if (i <= i5) {
+            a = ((i3 << (i4 % 8)) & kk7.d4) >> ((i5 - i) + (i4 % 8));
+            this.c = i4 + i;
+        } else {
+            int i6 = i - i5;
+            a = (a(i5) << i6) + a(i6);
         }
+        byteBuffer.position(i2 + ((int) Math.ceil(this.c / 8.0d)));
+        return a;
+    }
+
+    public final boolean b() {
+        return a(1) == 1;
+    }
+
+    public final void c(int i, int i2) {
+        int i3 = this.b;
+        ByteBuffer byteBuffer = this.a;
+        int i4 = this.c;
+        int i5 = 8 - (i4 % 8);
+        if (i2 <= i5) {
+            int i6 = byteBuffer.get((i4 / 8) + i3);
+            if (i6 < 0) {
+                i6 += 256;
+            }
+            int i7 = i6 + (i << (i5 - i2));
+            int i8 = (this.c / 8) + i3;
+            if (i7 > 127) {
+                i7 -= 256;
+            }
+            byteBuffer.put(i8, (byte) i7);
+            this.c += i2;
+        } else {
+            int i9 = i2 - i5;
+            c(i >> i9, i5);
+            c(i & ((1 << i9) - 1), i9);
+        }
+        int i10 = this.c;
+        byteBuffer.position((i10 / 8) + i3 + (i10 % 8 <= 0 ? 0 : 1));
     }
 }

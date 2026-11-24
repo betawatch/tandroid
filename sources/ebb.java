@@ -1,25 +1,79 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ebb implements cx5 {
-    public static final ebb a = new ebb();
-    public static final el8 b = new el8("kotlin.String", dl8.f);
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.Crop.CropAreaView;
+import org.telegram.ui.PhotoViewer;
 
-    @Override // cx5
-    public final void b(c40 c40Var, Object obj) {
-        String str = (String) obj;
-        str.getClass();
-        c40Var.k(str);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ebb extends View {
+    public ImageReceiver a;
+    public ImageReceiver b;
+    public View c;
+    public v48 d;
+    public Path e;
+    public Drawable f;
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        int measuredWidth = getMeasuredWidth() >> 1;
+        int measuredHeight = getMeasuredHeight() - gl.L(30.0f);
+        int L = measuredWidth - gl.L(46.0f);
+        int L2 = gl.L(46.0f) + measuredWidth;
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.i0(L - gl.L(30.0f), measuredHeight - gl.L(30.0f), gl.L(60.0f), gl.L(60.0f));
+        this.b.i0(L2 - gl.L(30.0f), measuredHeight - gl.L(30.0f), gl.L(60.0f), gl.L(60.0f));
+        Drawable drawable = this.f;
+        drawable.setBounds(oo1.A(2, measuredWidth, drawable), oo1.y(2, measuredHeight, drawable), oo1.w(2, measuredWidth, drawable), oo1.i(2, measuredHeight, drawable));
+        drawable.draw(canvas);
+        Path path = this.e;
+        path.reset();
+        path.addCircle(L2, measuredHeight, gl.L(30.0f), Path.Direction.CW);
+        imageReceiver.h(canvas, null);
+        if (this.c != null) {
+            float L3 = gl.L(60.0f);
+            CropAreaView cropAreaView = this.d.b.a;
+            float f = L3 / cropAreaView.a;
+            float top = (0.0f - this.d.getTop()) - cropAreaView.c;
+            float left = (0.0f - this.d.getLeft()) - cropAreaView.b;
+            canvas.save();
+            canvas.clipPath(path);
+            canvas.scale(f, f, 0.0f, 0.0f);
+            canvas.translate(left, top);
+            canvas.translate((L2 - gl.L(30.0f)) / f, (measuredHeight - gl.L(30.0f)) / f);
+            PhotoViewer.r0().g4 = true;
+            this.c.draw(canvas);
+            PhotoViewer.r0().g4 = false;
+            canvas.restore();
+        }
+        super.draw(canvas);
+        this.c.invalidate();
+        invalidate();
     }
 
-    @Override // cx5
-    public final Object c(jif jifVar) {
-        return jifVar.m();
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.I();
+        this.b.I();
     }
 
-    @Override // cx5
-    public final y6a d() {
-        return b;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.K();
+        this.b.K();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        this.a.q0(gl.L(30.0f));
+        this.b.q0(gl.L(30.0f));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(86.0f), TLObject.FLAG_30));
     }
 }

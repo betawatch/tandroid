@@ -1,63 +1,93 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface f24 {
-    boolean A();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class f24 implements Set, Serializable {
+    public static final f24 a = new f24();
 
-    long a();
+    @Override // java.util.Set, java.util.Collection
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
-    boolean b();
+    @Override // java.util.Set, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
-    boolean c();
+    @Override // java.util.Set, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
-    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z);
+    @Override // java.util.Set, java.util.Collection
+    public final /* bridge */ boolean contains(Object obj) {
+        return false;
+    }
 
-    void e(Object obj, Object obj2);
+    @Override // java.util.Set, java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        collection.getClass();
+        return collection.isEmpty();
+    }
 
-    int f();
+    @Override // java.util.Set, java.util.Collection
+    public final boolean equals(Object obj) {
+        return (obj instanceof Set) && ((Set) obj).isEmpty();
+    }
 
-    void g(d4c d4cVar);
+    @Override // java.util.Set, java.util.Collection
+    public final int hashCode() {
+        return 0;
+    }
 
-    boolean h();
+    @Override // java.util.Set, java.util.Collection
+    public final boolean isEmpty() {
+        return true;
+    }
 
-    void i(TLRPC.StickerSetCovered stickerSetCovered);
+    @Override // java.util.Set, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return b24.a;
+    }
 
-    void j(int i);
+    @Override // java.util.Set, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
-    boolean k();
+    @Override // java.util.Set, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
-    boolean l();
+    @Override // java.util.Set, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
-    void m(String str);
+    @Override // java.util.Set, java.util.Collection
+    public final int size() {
+        return 0;
+    }
 
-    void n();
+    @Override // java.util.Set, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        return s83.c(this, objArr);
+    }
 
-    float o();
+    public final String toString() {
+        return "[]";
+    }
 
-    void p();
-
-    void q(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void r(int i);
-
-    void s(ArrayList arrayList);
-
-    void t();
-
-    void u(View view, Object obj, String str, Object obj2, boolean z, int i, int i2);
-
-    void v();
-
-    void w(long j, TLRPC.Document document, String str, boolean z);
-
-    void x(View view, TLRPC.Document document, String str, Object obj, g47 g47Var, boolean z, int i);
-
-    void y(long j);
-
-    boolean z();
+    @Override // java.util.Set, java.util.Collection
+    public final Object[] toArray() {
+        return s83.b(this);
+    }
 }

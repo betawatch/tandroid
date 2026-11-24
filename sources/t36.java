@@ -1,45 +1,59 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.PremiumPreviewFragment;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class t36 implements ee, h59 {
+public final /* synthetic */ class t36 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ i46 b;
+    public final /* synthetic */ a46 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ t36(i46 i46Var, byte b) {
+    public /* synthetic */ t36(a46 a46Var, String str, byte b) {
         this.a = b;
-        this.b = i46Var;
+        this.b = a46Var;
+        this.c = str;
     }
 
-    @Override // h59
-    public final boolean g(int i, View view) {
-        i46 i46Var = this.b;
-        i46Var.n1.getOnItemClickListener().g(i, view);
-        if (i46Var.c2 != 19) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        i46 i46Var = this.b;
+        String str = this.c;
+        a46 a46Var = this.b;
         switch (b) {
             case 0:
-                i46Var.F2.presentFragment(new PremiumPreviewFragment(0, null));
-                i46Var.dismiss();
-                heVar.dismiss();
+                if ("disable".equalsIgnoreCase(str)) {
+                    a46Var.x("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    a46Var.x("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str)) {
+                    a46Var.x("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str)) {
+                    a46Var.x("fingerprintRow");
+                    break;
+                }
+                break;
+            case 1:
+                a46Var.w(str);
+                break;
+            case 2:
+                if ("disable".equalsIgnoreCase(str)) {
+                    a46Var.x("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    a46Var.x("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    a46Var.x("emailRow");
+                    break;
+                }
                 break;
             default:
-                heVar.dismiss();
-                i46Var.Z0();
+                if (a46Var.a()) {
+                    a46Var.w(str);
+                    break;
+                }
                 break;
         }
     }

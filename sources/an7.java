@@ -1,489 +1,716 @@
 // default package
 
-import android.app.Notification;
-import android.app.PendingIntent;
-import android.app.RemoteInput;
+import android.content.ClipData;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import androidx.core.graphics.drawable.IconCompat;
+import android.util.SparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.HashMap;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class an7 {
-    public td6 A;
-    public long B;
-    public boolean C;
-    public final boolean D;
-    public ym7 E;
-    public final Notification F;
-    public final ArrayList G;
-    public final Context a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class an7 extends d implements t22, gk7 {
+    public int E;
+    public int F;
+    public int G;
+    public ym7 H;
+    public boolean I;
+    public final SparseArray J;
+    public o72 K;
+    public long L;
+    public int M;
+    public ym7 N;
+    public x02 O;
+    public Ringtone P;
+    public long Q;
+    public int R;
+    public int S;
+    public final ArrayList a;
     public final ArrayList b;
     public final ArrayList c;
-    public final ArrayList d;
-    public CharSequence e;
-    public CharSequence f;
-    public PendingIntent g;
-    public IconCompat h;
-    public int i;
-    public int j;
-    public boolean k;
-    public jn7 l;
-    public CharSequence m;
-    public byte n;
-    public int o;
-    public boolean p;
-    public String q;
-    public boolean r;
-    public String s;
-    public boolean t;
-    public String u;
-    public Bundle v;
+    public o39 d;
+    public gx0 e;
+    public final wjb f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
     public int w;
     public int x;
-    public String y;
-    public String z;
+    public int y;
 
-    public an7(Context context, String str) {
+    public an7(Bundle bundle, wjb wjbVar) {
+        super(bundle);
+        this.a = new ArrayList();
         this.b = new ArrayList();
         this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.k = true;
-        this.t = false;
-        this.w = 0;
-        this.x = 0;
-        this.C = false;
-        Notification notification = new Notification();
-        this.F = notification;
-        this.a = context;
-        this.y = str;
-        notification.when = System.currentTimeMillis();
-        notification.audioStreamType = -1;
-        this.j = 0;
-        this.G = new ArrayList();
-        this.D = true;
+        this.G = 100;
+        this.J = new SparseArray();
+        this.M = -1;
+        this.Q = 0L;
+        this.f = wjbVar;
     }
 
-    public static CharSequence c(CharSequence charSequence) {
-        return charSequence == null ? charSequence : charSequence.length() > 5120 ? charSequence.subSequence(0, 5120) : charSequence;
+    public static void e0(View view, int i, int i2) {
+        if (view instanceof m13) {
+            m13 m13Var = (m13) view;
+            for (int i3 = 0; i3 < m13Var.getChildCount(); i3++) {
+                View childAt = m13Var.getChildAt(i3);
+                if (childAt instanceof ImageView) {
+                    ImageView imageView = (ImageView) childAt;
+                    if (imageView.getDrawable() instanceof fm2) {
+                        fm2 fm2Var = (fm2) imageView.getDrawable();
+                        Drawable drawable = fm2Var.a;
+                        if (drawable != null) {
+                            drawable.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
+                        }
+                        Drawable drawable2 = fm2Var.b;
+                        if (drawable2 != null) {
+                            drawable2.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
+                        }
+                        childAt.invalidate();
+                    }
+                }
+            }
+        }
     }
 
-    public final void a(int i, PendingIntent pendingIntent, String str) {
-        this.b.add(new pm7(i != 0 ? IconCompat.e(null, "", i) : null, str, pendingIntent, new Bundle(), null, true, 0, true));
+    public static String f0(TLRPC.Document document, String str) {
+        int lastIndexOf;
+        if (str != null && (lastIndexOf = str.lastIndexOf(46)) != -1) {
+            str = str.substring(0, lastIndexOf);
+        }
+        return (!TextUtils.isEmpty(str) || document == null) ? str : k96.a0("SoundNameEmpty", null, 2131745086, k96.u(document.date, true));
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x03d6  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x03fa  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0425  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0436  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0445  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x04ac  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x044a  */
+    public final void b0(ym7 ym7Var) {
+        int i = ym7Var.c;
+        SparseArray sparseArray = this.J;
+        if (sparseArray.get(i) != null) {
+            sparseArray.remove(ym7Var.c);
+        } else if (!ym7Var.a) {
+            return;
+        } else {
+            sparseArray.put(ym7Var.c, ym7Var);
+        }
+        g0();
+        gx0 gx0Var = this.e;
+        gx0Var.l(0, ((an7) gx0Var.d).h);
+    }
+
+    public final void c0() {
+        this.J.clear();
+        gx0 gx0Var = this.e;
+        gx0Var.l(0, ((an7) gx0Var.d).h);
+        g0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        TLRPC.Document document;
+        TLRPC.Document document2;
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonDrawable(new ed0(false));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new xm7(this, context));
+        byte b = 5;
+        if (this.L == 0) {
+            int i = this.M;
+            if (i == 1) {
+                this.simpleActionBar.setTitle(k96.M0(2131747675, null));
+            } else if (i == 0) {
+                this.simpleActionBar.setTitle(k96.M0(2131747676, null));
+            } else if (i == 2) {
+                this.simpleActionBar.setTitle(k96.M0(2131747677, null));
+            } else if (i == 3) {
+                this.simpleActionBar.setTitle(k96.M0(2131747673, null));
+            } else if (i == 5 || i == 4) {
+                this.simpleActionBar.setTitle(k96.M0(2131747674, null));
+            }
+        } else {
+            this.K = new o72(context, null, false, this.f);
+            if (this.L >= 0) {
+                TLRPC.User V1 = getMessagesController().V1(Long.valueOf(this.L));
+                if (V1 != null) {
+                    this.K.setUserAvatar(V1);
+                    this.simpleActionBar.setTitle(qu2.m(0, V1.first_name, V1.last_name));
+                }
+            } else if (this.Q != 0) {
+                TLRPC.TL_forumTopic f = getMessagesController().g4.f(-this.L, this.Q);
+                mm4.q(this.K.getAvatarImageView(), f, false, true, this.f);
+                this.simpleActionBar.setTitle(f.title);
+            } else {
+                TLRPC.Chat K0 = getMessagesController().K0(Long.valueOf(-this.L));
+                this.K.setChatAvatar(K0);
+                this.simpleActionBar.setTitle(K0.title);
+            }
+            this.simpleActionBar.setSubtitle(k96.M0(2131747678, null));
+            gl.B2(this.K.e);
+            this.simpleActionBar.addView(this.K.e, nme.d(42, 42.0f, 5, 0.0f, 0.0f, 8.0f, 0.0f));
+        }
+        wha q = this.simpleActionBar.q();
+        q.c(2, R.drawable.msg_forward, gl.L(54.0f), k96.M0(2131745267, null));
+        q.c(1, R.drawable.msg_delete, gl.L(54.0f), k96.M0(2131751586, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        o39 o39Var = new o39(context, null);
+        this.d = o39Var;
+        o39Var.r1();
+        this.d.setSectionsDrawBackground(true);
+        frameLayout.addView(this.d, nme.c(-1.0f, -1));
+        gx0 gx0Var = new gx0(this, b);
+        this.e = gx0Var;
+        gx0Var.C(true);
+        this.d.setAdapter(this.e);
+        ((gb3) this.d.getItemAnimator()).m = false;
+        ((gb3) this.d.getItemAnimator()).C = false;
+        this.d.setLayoutManager(new t26());
+        this.d.setOnItemClickListener(new k0(this, context, (byte) 17));
+        this.d.setOnItemLongClickListener(new im6(this, (byte) 16));
+        getMediaDataController().A0.g(false);
+        this.a.clear();
+        this.b.clear();
+        for (int i2 = 0; i2 < getMediaDataController().A0.e.size(); i2++) {
+            hj9 hj9Var = (hj9) getMediaDataController().A0.e.get(i2);
+            ym7 ym7Var = new ym7();
+            int i3 = this.G;
+            this.G = i3 + 1;
+            ym7Var.c = i3;
+            ym7Var.a = true;
+            ym7Var.d = hj9Var.c;
+            TLRPC.Document document3 = hj9Var.a;
+            String str = document3.file_name_fixed;
+            ym7Var.f = str;
+            ym7Var.e = document3;
+            ym7Var.f = f0(document3, str);
+            ym7Var.g = hj9Var.b;
+            ym7 ym7Var2 = this.N;
+            if (ym7Var2 != null && (document = ym7Var2.e) != null && (document2 = hj9Var.a) != null && document.id == document2.id) {
+                this.N = null;
+                this.H = ym7Var;
+            }
+            this.a.add(ym7Var);
+        }
+        RingtoneManager ringtoneManager = new RingtoneManager(a.b);
+        ringtoneManager.setType(2);
+        Cursor cursor = ringtoneManager.getCursor();
+        ym7 ym7Var3 = new ym7();
+        int i4 = this.G;
+        this.G = i4 + 1;
+        ym7Var3.c = i4;
+        ym7Var3.f = k96.M0(2131747959, null);
+        this.b.add(ym7Var3);
+        ym7 ym7Var4 = new ym7();
+        int i5 = this.G;
+        this.G = i5 + 1;
+        ym7Var4.c = i5;
+        ym7Var4.f = k96.M0(2131751587, null);
+        ym7Var4.b = true;
+        this.b.add(ym7Var4);
+        ym7 ym7Var5 = this.N;
+        if (ym7Var5 != null && ym7Var5.e == null && ym7Var5.g.equals("NoSound")) {
+            this.N = null;
+            this.H = ym7Var3;
+        }
+        ym7 ym7Var6 = this.N;
+        if (ym7Var6 != null && ym7Var6.e == null && ym7Var6.g.equals("Default")) {
+            this.N = null;
+            this.H = ym7Var4;
+        }
+        while (cursor.moveToNext()) {
+            String string = cursor.getString(1);
+            String str2 = cursor.getString(2) + "/" + cursor.getString(0);
+            ym7 ym7Var7 = new ym7();
+            int i6 = this.G;
+            this.G = i6 + 1;
+            ym7Var7.c = i6;
+            ym7Var7.f = string;
+            ym7Var7.g = str2;
+            ym7 ym7Var8 = this.N;
+            if (ym7Var8 != null && ym7Var8.e == null && ym7Var8.g.equals(str2)) {
+                this.N = null;
+                this.H = ym7Var7;
+            }
+            this.b.add(ym7Var7);
+        }
+        if (getMediaDataController().A0.f && this.H == null) {
+            this.H = ym7Var4;
+            this.I = true;
+        }
+        h0();
+        h0();
+        return this.fragmentView;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a6, code lost:
+    
+        if (r11.exists() == false) goto L30;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Notification b() {
-        Notification.Builder builder;
-        String str;
-        int i;
-        Notification.BubbleMetadata bubbleMetadata;
-        int i2;
-        jn7 jn7Var;
-        int i3;
-        Notification build;
-        Notification.BubbleMetadata bubbleMetadata2;
-        td6 td6Var;
-        Bundle[] bundleArr;
+    public final void d0(Context context, View view, int i) {
+        an7 an7Var;
+        Context context2;
+        File file;
+        if (i == this.s) {
+            an7Var = this;
+            context2 = context;
+            x02 x02Var = new x02(context2, an7Var, false, false, true, this.f);
+            an7Var.O = x02Var;
+            x02Var.H1 = true;
+            x02Var.u3.setVisibility(8);
+            x02Var.g3.setText(k96.M0(2131752109, null));
+            an7Var.O.Z0();
+            an7Var.O.show();
+        } else {
+            an7Var = this;
+            context2 = context;
+        }
+        if (view instanceof zm7) {
+            zm7 zm7Var = (zm7) view;
+            if (an7Var.simpleActionBar.x() || zm7Var.e == null) {
+                an7Var.b0(zm7Var.e);
+                return;
+            }
+            Ringtone ringtone = an7Var.P;
+            if (ringtone != null) {
+                ringtone.stop();
+            }
+            try {
+                ym7 ym7Var = zm7Var.e;
+                if (ym7Var.b) {
+                    Ringtone ringtone2 = RingtoneManager.getRingtone(context2.getApplicationContext(), RingtoneManager.getDefaultUri(2));
+                    ringtone2.setStreamType(4);
+                    an7Var.P = ringtone2;
+                    ringtone2.play();
+                } else {
+                    String str = ym7Var.g;
+                    if (str != null && !ym7Var.a) {
+                        Ringtone ringtone3 = RingtoneManager.getRingtone(context2.getApplicationContext(), Uri.parse(zm7Var.e.g));
+                        ringtone3.setStreamType(4);
+                        an7Var.P = ringtone3;
+                        ringtone3.play();
+                    } else if (ym7Var.a) {
+                        if (!TextUtils.isEmpty(str)) {
+                            file = new File(zm7Var.e.g);
+                        }
+                        file = null;
+                        if (file == null) {
+                            ba4 fileLoader = an7Var.getFileLoader();
+                            TLRPC.Document document = zm7Var.e.e;
+                            fileLoader.getClass();
+                            file = ba4.I(document);
+                        }
+                        if (file == null || !file.exists()) {
+                            ba4 fileLoader2 = an7Var.getFileLoader();
+                            TLRPC.Document document2 = zm7Var.e.e;
+                            fileLoader2.X(document2, document2, 3, 0);
+                        } else {
+                            Ringtone ringtone4 = RingtoneManager.getRingtone(context2.getApplicationContext(), Uri.parse(file.toString()));
+                            ringtone4.setStreamType(4);
+                            an7Var.P = ringtone4;
+                            ringtone4.play();
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                fa4.g(e, true);
+            }
+            an7Var.N = null;
+            an7Var.H = zm7Var.e;
+            an7Var.I = true;
+            gx0 gx0Var = an7Var.e;
+            gx0Var.l(0, ((an7) gx0Var.d).h);
+        }
+    }
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
         ArrayList arrayList;
-        int i4;
-        ArrayList arrayList2;
-        p41 p41Var = new p41();
-        p41Var.e = new Bundle();
-        p41Var.d = this;
-        Context context = this.a;
-        p41Var.b = context;
-        if (Build.VERSION.SDK_INT >= 26) {
-            builder = nq5.a(context, this.y);
-            p41Var.c = builder;
-        } else {
-            builder = new Notification.Builder(context);
-            p41Var.c = builder;
-        }
-        Notification notification = this.F;
-        Context context2 = null;
-        builder.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, null).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(this.e).setContentText(this.f).setContentInfo(null).setContentIntent(this.g).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(null, (notification.flags & 128) != 0).setNumber(this.i).setProgress(this.n, this.o, this.p);
-        IconCompat iconCompat = this.h;
-        builder.setLargeIcon(iconCompat == null ? null : pme.a(iconCompat, context));
-        builder.setSubText(this.m).setUsesChronometer(false).setPriority(this.j);
-        ArrayList arrayList3 = this.b;
-        int size = arrayList3.size();
-        int i5 = 0;
-        while (true) {
-            str = "android.support.allowGeneratedReplies";
-            if (i5 >= size) {
-                break;
+        String name;
+        TLRPC.Document document;
+        TLRPC.Document document2;
+        if (i == kk7.g5) {
+            HashMap hashMap = new HashMap();
+            int i3 = 0;
+            while (true) {
+                arrayList = this.a;
+                if (i3 >= arrayList.size()) {
+                    break;
+                }
+                hashMap.put(Integer.valueOf(((ym7) arrayList.get(i3)).d), (ym7) arrayList.get(i3));
+                i3++;
             }
-            Object obj = arrayList3.get(i5);
-            i5++;
-            pm7 pm7Var = (pm7) obj;
-            IconCompat a = pm7Var.a();
-            byte b = pm7Var.f;
-            boolean z = pm7Var.d;
-            Bundle bundle = pm7Var.a;
-            Notification.Action.Builder builder2 = new Notification.Action.Builder(a != null ? pme.a(a, context2) : context2, pm7Var.h, pm7Var.i);
-            i89[] i89VarArr = pm7Var.c;
-            if (i89VarArr != null) {
-                for (RemoteInput remoteInput : i89.a(i89VarArr)) {
-                    builder2.addRemoteInput(remoteInput);
+            arrayList.clear();
+            for (int i4 = 0; i4 < getMediaDataController().A0.e.size(); i4++) {
+                hj9 hj9Var = (hj9) getMediaDataController().A0.e.get(i4);
+                ym7 ym7Var = new ym7();
+                ym7 ym7Var2 = (ym7) hashMap.get(Integer.valueOf(hj9Var.c));
+                if (ym7Var2 != null) {
+                    if (ym7Var2 == this.H) {
+                        this.H = ym7Var;
+                    }
+                    ym7Var.c = ym7Var2.c;
+                } else {
+                    int i5 = this.G;
+                    this.G = i5 + 1;
+                    ym7Var.c = i5;
+                }
+                ym7Var.a = true;
+                ym7Var.d = hj9Var.c;
+                TLRPC.Document document3 = hj9Var.a;
+                if (document3 != null) {
+                    name = document3.file_name_fixed;
+                    ym7Var.f = name;
+                } else {
+                    name = new File(hj9Var.b).getName();
+                    ym7Var.f = name;
+                }
+                TLRPC.Document document4 = hj9Var.a;
+                ym7Var.e = document4;
+                ym7Var.f = f0(document4, name);
+                ym7Var.g = hj9Var.b;
+                ym7 ym7Var3 = this.N;
+                if (ym7Var3 != null && (document = ym7Var3.e) != null && (document2 = hj9Var.a) != null && document.id == document2.id) {
+                    this.N = null;
+                    this.H = ym7Var;
+                }
+                arrayList.add(ym7Var);
+            }
+            h0();
+            this.e.f();
+            if (getMediaDataController().A0.f && this.H == null) {
+                ArrayList arrayList2 = this.b;
+                if (arrayList2.size() > 0) {
+                    this.N = null;
+                    this.H = (ym7) arrayList2.get(0);
                 }
             }
-            Bundle bundle2 = new Bundle(bundle);
-            bundle2.putBoolean("android.support.allowGeneratedReplies", z);
-            int i6 = Build.VERSION.SDK_INT;
-            if (i6 >= 24) {
-                ki0.l(builder2, z);
-            }
-            bundle2.putInt("android.support.action.semanticAction", b);
-            if (i6 >= 28) {
-                fp.A(builder2, b);
-            }
-            if (i6 >= 29) {
-                rs.r(builder2);
-            }
-            if (i6 >= 31) {
-                y00.t(builder2);
-            }
-            bundle2.putBoolean("android.support.action.showsUserInterface", pm7Var.e);
-            builder2.addExtras(bundle2);
-            ((Notification.Builder) p41Var.c).addAction(builder2.build());
-            context2 = null;
         }
-        Bundle bundle3 = this.v;
-        if (bundle3 != null) {
-            ((Bundle) p41Var.e).putAll(bundle3);
+    }
+
+    public final void g0() {
+        SparseArray sparseArray = this.J;
+        int size = sparseArray.size();
+        pha phaVar = this.simpleActionBar;
+        if (size <= 0) {
+            phaVar.w();
+        } else {
+            phaVar.E(sparseArray.size(), this.simpleActionBar.x());
+            this.simpleActionBar.J();
         }
-        ((Notification.Builder) p41Var.c).setShowWhen(this.k);
-        ((Notification.Builder) p41Var.c).setLocalOnly(this.t);
-        ((Notification.Builder) p41Var.c).setGroup(this.q);
-        ((Notification.Builder) p41Var.c).setSortKey(this.s);
-        ((Notification.Builder) p41Var.c).setGroupSummary(this.r);
-        p41Var.a = this.C;
-        ((Notification.Builder) p41Var.c).setCategory(this.u);
-        ((Notification.Builder) p41Var.c).setColor(this.w);
-        ((Notification.Builder) p41Var.c).setVisibility(this.x);
-        ((Notification.Builder) p41Var.c).setPublicVersion(null);
-        ((Notification.Builder) p41Var.c).setSound(notification.sound, notification.audioAttributes);
-        int i7 = Build.VERSION.SDK_INT;
-        ArrayList arrayList4 = this.G;
-        ArrayList arrayList5 = this.c;
-        if (i7 < 28) {
-            if (arrayList5 == null) {
-                arrayList2 = null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final o39 getListViewForSimpleGlass() {
+        return this.d;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final wjb getResourceProvider() {
+        return this.f;
+    }
+
+    public final void h0() {
+        this.n = -1;
+        this.r = -1;
+        this.s = -1;
+        this.w = -1;
+        this.y = -1;
+        this.E = -1;
+        this.F = -1;
+        this.h = 1;
+        ArrayList arrayList = this.a;
+        if (!arrayList.isEmpty()) {
+            int i = this.h;
+            this.n = i;
+            int size = arrayList.size() + i;
+            this.h = size;
+            this.r = size;
+        }
+        int i2 = this.h;
+        this.s = i2;
+        this.h = i2 + 2;
+        this.w = i2 + 1;
+        ArrayList arrayList2 = this.b;
+        if (!arrayList2.isEmpty()) {
+            int i3 = this.h;
+            int i4 = i3 + 1;
+            this.h = i4;
+            this.y = i3;
+            this.E = i4;
+            int size2 = arrayList2.size() + i4;
+            this.h = size2;
+            this.F = size2;
+        }
+        int i5 = this.h;
+        this.h = i5 + 1;
+        this.x = i5;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // t22
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2) {
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            getMediaDataController().n2((String) arrayList.get(i2));
+        }
+        getNotificationCenter().k(kk7.g5, new Object[0]);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onActivityResultFragment(int i, int i2, Intent intent) {
+        if (i != 21 || intent == null || this.O == null) {
+            return;
+        }
+        Uri data = intent.getData();
+        int i3 = kk7.g5;
+        boolean z = true;
+        boolean z2 = false;
+        if (data != null) {
+            String S0 = gl.S0(intent.getData());
+            if (S0 != null) {
+                if (S0.startsWith("content://")) {
+                    S0 = MediaController.o(-1L, intent.getData(), "mp3");
+                }
+                if (this.O.j2.Q(new File(S0))) {
+                    getMediaDataController().n2(S0);
+                    getNotificationCenter().k(i3, new Object[0]);
+                    z2 = z;
+                }
+            }
+            z = false;
+            z2 = z;
+        } else if (intent.getClipData() != null) {
+            ClipData clipData = intent.getClipData();
+            boolean z3 = false;
+            for (int i4 = 0; i4 < clipData.getItemCount(); i4++) {
+                Uri uri = clipData.getItemAt(i4).getUri();
+                String uri2 = uri.toString();
+                if (uri2.startsWith("content://")) {
+                    uri2 = MediaController.o(-1L, uri, "mp3");
+                }
+                if (this.O.j2.Q(new File(uri2))) {
+                    getMediaDataController().n2(uri2);
+                    getNotificationCenter().k(i3, new Object[0]);
+                    z3 = true;
+                }
+            }
+            z2 = z3;
+        }
+        if (z2) {
+            this.O.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onFragmentCreate() {
+        String str;
+        String str2;
+        if (getArguments() != null) {
+            this.L = getArguments().getLong("dialog_id", 0L);
+            this.Q = getArguments().getLong("topic_id", 0L);
+            this.M = getArguments().getInt(TeXSymbolParser.TYPE_ATTR, -1);
+        }
+        long j = this.L;
+        if (j != 0) {
+            String p = im7.p(j, this.Q, false);
+            str2 = b00.h("sound_document_id_", p);
+            str = b00.h("sound_path_", p);
+        } else {
+            int i = this.M;
+            if (i == 1) {
+                str = "GlobalSoundPath";
+                str2 = "GlobalSoundDocId";
+            } else if (i == 0) {
+                str = "GroupSoundPath";
+                str2 = "GroupSoundDocId";
+            } else if (i == 2) {
+                str = "ChannelSoundPath";
+                str2 = "ChannelSoundDocId";
+            } else if (i == 3) {
+                str = "StoriesSoundPath";
+                str2 = "StoriesSoundDocId";
             } else {
-                arrayList2 = new ArrayList(arrayList5.size());
-                int size2 = arrayList5.size();
-                int i8 = 0;
-                while (i8 < size2) {
-                    Object obj2 = arrayList5.get(i8);
-                    i8++;
-                    n58 n58Var = (n58) obj2;
-                    CharSequence charSequence = n58Var.a;
-                    String str2 = n58Var.c;
-                    if (str2 == null) {
-                        str2 = charSequence != null ? "name:" + ((Object) charSequence) : "";
-                    }
-                    arrayList2.add(str2);
+                if (i != 4 && i != 5) {
+                    wn4.j("Unsupported type");
+                    return false;
                 }
-            }
-            if (arrayList2 != null) {
-                if (arrayList4 == null) {
-                    arrayList4 = arrayList2;
-                } else {
-                    st stVar = new st(arrayList4.size() + arrayList2.size());
-                    stVar.addAll(arrayList2);
-                    stVar.addAll(arrayList4);
-                    arrayList4 = new ArrayList(stVar);
-                }
+                str = "ReactionSoundPath";
+                str2 = "ReactionSoundDocId";
             }
         }
-        if (arrayList4 != null && !arrayList4.isEmpty()) {
-            int size3 = arrayList4.size();
-            int i9 = 0;
-            while (i9 < size3) {
-                Object obj3 = arrayList4.get(i9);
-                i9++;
-                ((Notification.Builder) p41Var.c).addPerson((String) obj3);
-            }
-        }
-        ArrayList arrayList6 = this.d;
-        if (arrayList6.size() > 0) {
-            Bundle bundle4 = this.v;
-            if (bundle4 == null) {
-                bundle4 = new Bundle();
-                this.v = bundle4;
-            }
-            Bundle bundle5 = bundle4.getBundle("android.car.EXTENSIONS");
-            if (bundle5 == null) {
-                bundle5 = new Bundle();
-            }
-            Bundle bundle6 = new Bundle(bundle5);
-            Bundle bundle7 = new Bundle();
-            int i10 = 0;
-            while (i10 < arrayList6.size()) {
-                String num = Integer.toString(i10);
-                pm7 pm7Var2 = (pm7) arrayList6.get(i10);
-                Bundle bundle8 = new Bundle();
-                IconCompat a2 = pm7Var2.a();
-                Bundle bundle9 = pm7Var2.a;
-                bundle8.putInt("icon", a2 != null ? a2.g() : 0);
-                bundle8.putCharSequence("title", pm7Var2.h);
-                bundle8.putParcelable("actionIntent", pm7Var2.i);
-                Bundle bundle10 = new Bundle(bundle9);
-                bundle10.putBoolean(str, pm7Var2.d);
-                bundle8.putBundle("extras", bundle10);
-                i89[] i89VarArr2 = pm7Var2.c;
-                if (i89VarArr2 == null) {
-                    arrayList = arrayList6;
-                    i4 = i10;
-                    bundleArr = null;
-                } else {
-                    bundleArr = new Bundle[i89VarArr2.length];
-                    arrayList = arrayList6;
-                    i4 = i10;
-                    int i11 = 0;
-                    while (i11 < i89VarArr2.length) {
-                        i89 i89Var = i89VarArr2[i11];
-                        int i12 = i11;
-                        Bundle bundle11 = new Bundle();
-                        i89Var.getClass();
-                        String str3 = str;
-                        i89[] i89VarArr3 = i89VarArr2;
-                        bundle11.putString("resultKey", "extra_voice_reply");
-                        bundle11.putCharSequence("label", i89Var.a);
-                        bundle11.putCharSequenceArray("choices", null);
-                        bundle11.putBoolean("allowFreeFormInput", true);
-                        bundle11.putBundle("extras", i89Var.b);
-                        HashSet hashSet = i89Var.c;
-                        if (!hashSet.isEmpty()) {
-                            ArrayList<String> arrayList7 = new ArrayList<>(hashSet.size());
-                            Iterator it = hashSet.iterator();
-                            while (it.hasNext()) {
-                                arrayList7.add((String) it.next());
-                            }
-                            bundle11.putStringArrayList("allowedDataTypes", arrayList7);
-                        }
-                        bundleArr[i12] = bundle11;
-                        i11 = i12 + 1;
-                        str = str3;
-                        i89VarArr2 = i89VarArr3;
-                    }
-                }
-                String str4 = str;
-                bundle8.putParcelableArray("remoteInputs", bundleArr);
-                bundle8.putBoolean("showsUserInterface", pm7Var2.e);
-                bundle8.putInt("semanticAction", pm7Var2.f);
-                bundle7.putBundle(num, bundle8);
-                i10 = i4 + 1;
-                arrayList6 = arrayList;
-                str = str4;
-            }
-            bundle5.putBundle("invisible_actions", bundle7);
-            bundle6.putBundle("invisible_actions", bundle7);
-            Bundle bundle12 = this.v;
-            Bundle bundle13 = bundle12;
-            if (bundle12 == null) {
-                Bundle bundle14 = new Bundle();
-                this.v = bundle14;
-                bundle13 = bundle14;
-            }
-            bundle13.putBundle("android.car.EXTENSIONS", bundle5);
-            ((Bundle) p41Var.e).putBundle("android.car.EXTENSIONS", bundle6);
-        }
-        int i13 = Build.VERSION.SDK_INT;
-        if (i13 >= 24) {
-            ((Notification.Builder) p41Var.c).setExtras(this.v);
-            ki0.m((Notification.Builder) p41Var.c);
-        }
-        if (i13 >= 26) {
-            nq5.h((Notification.Builder) p41Var.c);
-            nq5.j((Notification.Builder) p41Var.c);
-            nq5.k((Notification.Builder) p41Var.c, this.z);
-            nq5.l((Notification.Builder) p41Var.c, this.B);
-            nq5.i((Notification.Builder) p41Var.c, this.C ? 1 : 0);
-            if (!TextUtils.isEmpty(this.y)) {
-                bubbleMetadata = null;
-                i = 0;
-                ((Notification.Builder) p41Var.c).setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);
-                if (i13 >= 28) {
-                    int size4 = arrayList5.size();
-                    int i14 = i;
-                    while (i14 < size4) {
-                        Object obj4 = arrayList5.get(i14);
-                        i14++;
-                        n58 n58Var2 = (n58) obj4;
-                        Notification.Builder builder3 = (Notification.Builder) p41Var.c;
-                        n58Var2.getClass();
-                        fp.a(builder3, fp.G(n58Var2));
-                    }
-                }
-                i2 = Build.VERSION.SDK_INT;
-                if (i2 >= 29) {
-                    rs.o((Notification.Builder) p41Var.c, this.D);
-                    Notification.Builder builder4 = (Notification.Builder) p41Var.c;
-                    ym7 ym7Var = this.E;
-                    if (ym7Var != null) {
-                        if (i2 >= 30) {
-                            bubbleMetadata2 = xm7.a(ym7Var);
-                        } else if (i2 == 29) {
-                            bubbleMetadata2 = wm7.a(ym7Var);
-                        }
-                        rs.q(builder4, bubbleMetadata2);
-                        td6Var = this.A;
-                        if (td6Var != null) {
-                            rs.u((Notification.Builder) p41Var.c, td6Var.b);
-                        }
-                    }
-                    bubbleMetadata2 = bubbleMetadata;
-                    rs.q(builder4, bubbleMetadata2);
-                    td6Var = this.A;
-                    if (td6Var != null) {
-                    }
-                }
-                an7 an7Var = (an7) p41Var.d;
-                jn7Var = an7Var.l;
-                if (jn7Var != null) {
-                    jn7Var.b(p41Var);
-                }
-                Notification.Builder builder5 = (Notification.Builder) p41Var.c;
-                boolean z2 = p41Var.a;
-                i3 = Build.VERSION.SDK_INT;
-                if (i3 < 26) {
-                    build = builder5.build();
-                } else if (i3 >= 24) {
-                    build = builder5.build();
-                    if (z2 != 0) {
-                        if (build.getGroup() != null && (build.flags & 512) != 0 && z2 == 2) {
-                            p41.j(build);
-                        }
-                        if (build.getGroup() != null && (build.flags & 512) == 0 && z2 == 1) {
-                            p41.j(build);
-                        }
-                    }
-                } else {
-                    builder5.setExtras((Bundle) p41Var.e);
-                    build = builder5.build();
-                    if (z2 != 0) {
-                        if (build.getGroup() != null && (build.flags & 512) != 0 && z2 == 2) {
-                            p41.j(build);
-                        }
-                        if (build.getGroup() != null && (build.flags & 512) == 0 && z2 == 1) {
-                            p41.j(build);
-                        }
-                    }
-                }
-                if (jn7Var != null) {
-                    an7Var.l.getClass();
-                    Bundle bundle15 = build.extras;
-                    if (bundle15 != null) {
-                        jn7Var.a(bundle15);
-                    }
-                }
-                return build;
-            }
-        }
-        i = 0;
-        bubbleMetadata = null;
-        if (i13 >= 28) {
-        }
-        i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 29) {
-        }
-        an7 an7Var2 = (an7) p41Var.d;
-        jn7Var = an7Var2.l;
-        if (jn7Var != null) {
-        }
-        Notification.Builder builder52 = (Notification.Builder) p41Var.c;
-        boolean z22 = p41Var.a;
-        i3 = Build.VERSION.SDK_INT;
-        if (i3 < 26) {
-        }
-        if (jn7Var != null) {
-        }
-        return build;
-    }
-
-    public final void d(String str) {
-        this.f = c(str);
-    }
-
-    public final void e(CharSequence charSequence) {
-        this.e = c(charSequence);
-    }
-
-    public final void f(int i, boolean z) {
-        Notification notification = this.F;
-        if (z) {
-            notification.flags |= i;
+        SharedPreferences notificationsSettings = getNotificationsSettings();
+        long j2 = notificationsSettings.getLong(str2, 0L);
+        String string = notificationsSettings.getString(str, "NoSound");
+        ym7 ym7Var = new ym7();
+        this.N = ym7Var;
+        if (j2 != 0) {
+            ym7Var.e = new TLRPC.TL_document();
+            this.N.e.id = j2;
         } else {
-            notification.flags &= ~i;
+            ym7Var.g = string;
+        }
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        String str;
+        String str2;
+        String str3;
+        TLRPC.Document document;
+        super.onFragmentDestroy();
+        if (this.H == null || !this.I) {
+            return;
+        }
+        SharedPreferences.Editor edit = getNotificationsSettings().edit();
+        if (this.L != 0) {
+            str = "sound_" + im7.p(this.L, this.Q, false);
+            str2 = "sound_path_" + im7.p(this.L, this.Q, false);
+            str3 = "sound_document_id_" + im7.p(this.L, this.Q, false);
+            edit.putBoolean("sound_enabled_" + im7.p(this.L, this.Q, false), true);
+        } else {
+            int i = this.M;
+            if (i == 1) {
+                str = "GlobalSound";
+                str2 = "GlobalSoundPath";
+                str3 = "GlobalSoundDocId";
+            } else if (i == 0) {
+                str = "GroupSound";
+                str2 = "GroupSoundPath";
+                str3 = "GroupSoundDocId";
+            } else if (i == 2) {
+                str = "ChannelSound";
+                str2 = "ChannelSoundPath";
+                str3 = "ChannelSoundDocId";
+            } else if (i == 3) {
+                str = "StoriesSound";
+                str2 = "StoriesSoundPath";
+                str3 = "StoriesSoundDocId";
+            } else if (i != 5 && i != 4) {
+                wn4.j("Unsupported type");
+                return;
+            } else {
+                str = "ReactionSound";
+                str2 = "ReactionSoundPath";
+                str3 = "ReactionSoundDocId";
+            }
+        }
+        ym7 ym7Var = this.H;
+        if (ym7Var.a && (document = ym7Var.e) != null) {
+            edit.putLong(str3, document.id);
+            edit.putString(str, this.H.f);
+            edit.putString(str2, "NoSound");
+        } else if (ym7Var.g != null) {
+            edit.putString(str, ym7Var.f);
+            edit.putString(str2, this.H.g);
+            edit.remove(str3);
+        } else if (ym7Var.b) {
+            edit.putString(str, "Default");
+            edit.putString(str2, "Default");
+            edit.remove(str3);
+        } else {
+            edit.putString(str, "NoSound");
+            edit.putString(str2, "NoSound");
+            edit.remove(str3);
+        }
+        edit.apply();
+        if (this.L != 0) {
+            getNotificationsController().c0(this.L, this.Q, true);
+        } else {
+            getNotificationsController().b0(this.M);
+            getNotificationCenter().k(kk7.e0, new Object[0]);
         }
     }
 
-    public final void g(Bitmap bitmap) {
-        IconCompat c;
-        if (bitmap == null) {
-            c = null;
-        } else {
-            if (Build.VERSION.SDK_INT < 27) {
-                Resources resources = this.a.getResources();
-                int dimensionPixelSize = resources.getDimensionPixelSize(R.dimen.compat_notification_large_icon_max_width);
-                int dimensionPixelSize2 = resources.getDimensionPixelSize(R.dimen.compat_notification_large_icon_max_height);
-                if (bitmap.getWidth() > dimensionPixelSize || bitmap.getHeight() > dimensionPixelSize2) {
-                    double min = Math.min(dimensionPixelSize / Math.max(1, bitmap.getWidth()), dimensionPixelSize2 / Math.max(1, bitmap.getHeight()));
-                    bitmap = Bitmap.createScaledBitmap(bitmap, (int) Math.ceil(bitmap.getWidth() * min), (int) Math.ceil(bitmap.getHeight() * min), true);
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onPause() {
+        super.onPause();
+        getNotificationCenter().n(this, kk7.g5);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onResume() {
+        super.onResume();
+        getNotificationCenter().b(this, kk7.g5);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onThemeColorsChanged() {
+        wjb wjbVar = this.f;
+        try {
+            int v0 = bkb.v0(bkb.M6, wjbVar);
+            int v02 = bkb.v0(bkb.j7, wjbVar);
+            if (this.d != null) {
+                if (v0 == this.R && v02 == this.S) {
+                    return;
+                }
+                this.R = v0;
+                this.S = v02;
+                for (int i = 0; i < this.d.getChildCount(); i++) {
+                    e0(this.d.getChildAt(i), v0, v02);
+                }
+                for (int i2 = 0; i2 < this.d.getCachedChildCount(); i2++) {
+                    e0(this.d.P(i2), v0, v02);
+                }
+                for (int i3 = 0; i3 < this.d.getHiddenChildCount(); i3++) {
+                    e0(this.d.W(i3), v0, v02);
+                }
+                for (int i4 = 0; i4 < this.d.getAttachedScrapChildCount(); i4++) {
+                    e0(this.d.O(i4), v0, v02);
                 }
             }
-            c = IconCompat.c(bitmap);
-        }
-        this.h = c;
-    }
-
-    public final void h(Uri uri) {
-        Notification notification = this.F;
-        notification.sound = uri;
-        notification.audioStreamType = 5;
-        notification.audioAttributes = zm7.a(zm7.d(zm7.c(zm7.b(), 4), 5));
-    }
-
-    public final void i(jn7 jn7Var) {
-        if (this.l != jn7Var) {
-            this.l = jn7Var;
-            if (jn7Var.a != this) {
-                jn7Var.a = this;
-                i(jn7Var);
-            }
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
-    public final void j(String str) {
-        this.m = c(str);
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 
-    public final void k(String str) {
-        this.F.tickerText = c(str);
+    @Override // t22
+    public final void z() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+            intent.setType("audio/mpeg");
+            startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
     }
 
-    public an7(Context context) {
-        this(context, null);
+    @Override // t22
+    public final void S() {
+    }
+
+    @Override // t22
+    public final void m(ArrayList arrayList, boolean z, int i, long j) {
     }
 }

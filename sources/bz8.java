@@ -1,69 +1,30 @@
 // default package
 
-import java.io.InputStream;
-import java.io.RandomAccessFile;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bz8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jo0 b;
+    public final /* synthetic */ ry8 c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class bz8 extends InputStream {
-    public int a;
-    public int b;
-    public final /* synthetic */ dz8 c;
-
-    public bz8(dz8 dz8Var, az8 az8Var) {
-        this.c = dz8Var;
-        this.a = dz8Var.d(az8Var.b + 4);
-        this.b = az8Var.c;
+    public /* synthetic */ bz8(jo0 jo0Var, ry8 ry8Var, byte b) {
+        this.a = b;
+        this.b = jo0Var;
+        this.c = ry8Var;
     }
 
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        if (bArr == null) {
-            gxc.d("buffer");
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ry8 ry8Var = this.c;
+        jo0 jo0Var = this.b;
+        switch (b) {
+            case 0:
+                gl.c3(new bz8(jo0Var, ry8Var, (byte) 1));
+                break;
+            default:
+                jo0Var.removeView(ry8Var);
+                break;
         }
-        if ((i | i2) < 0 || i2 > bArr.length - i) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        int i3 = this.b;
-        if (i3 <= 0) {
-            return -1;
-        }
-        if (i2 > i3) {
-            i2 = i3;
-        }
-        int i4 = this.a;
-        dz8 dz8Var = this.c;
-        int d = dz8Var.d(i4);
-        int i5 = d + i2;
-        int i6 = dz8Var.b;
-        RandomAccessFile randomAccessFile = dz8Var.a;
-        if (i5 <= i6) {
-            randomAccessFile.seek(d);
-            randomAccessFile.readFully(bArr, i, i2);
-        } else {
-            int i7 = i6 - d;
-            randomAccessFile.seek(d);
-            randomAccessFile.readFully(bArr, i, i7);
-            randomAccessFile.seek(16L);
-            randomAccessFile.readFully(bArr, i + i7, i2 - i7);
-        }
-        this.a = dz8Var.d(this.a + i2);
-        this.b -= i2;
-        return i2;
-    }
-
-    @Override // java.io.InputStream
-    public final int read() {
-        dz8 dz8Var = this.c;
-        RandomAccessFile randomAccessFile = dz8Var.a;
-        if (this.b == 0) {
-            return -1;
-        }
-        randomAccessFile.seek(this.a);
-        int read = randomAccessFile.read();
-        this.a = dz8Var.d(this.a + 1);
-        this.b--;
-        return read;
     }
 }

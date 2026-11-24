@@ -1,63 +1,90 @@
 // default package
 
-import android.os.Bundle;
-import com.google.android.gms.cast.CastDevice;
-import java.util.Arrays;
-import java.util.Set;
-import java.util.UUID;
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ge1 implements wo {
-    public final CastDevice a;
-    public final vjf b;
-    public final Bundle c;
-    public final String d = UUID.randomUUID().toString();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ge1 extends FrameLayout implements tjb {
+    public final EditTextBoldCursor a;
+    public final TextView b;
+    public final /* synthetic */ me1 c;
 
-    public /* synthetic */ ge1(mx6 mx6Var) {
-        this.a = (CastDevice) mx6Var.b;
-        this.b = (vjf) mx6Var.c;
-        this.c = (Bundle) mx6Var.d;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ge1(me1 me1Var, Activity activity) {
+        super(activity);
+        this.c = me1Var;
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(0);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
+        this.a = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        zkb.D(editTextBoldCursor, bkb.G6, null);
+        int i = bkb.F6;
+        zkb.X(editTextBoldCursor, i, null);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setSingleLine(true);
+        byte b = 5;
+        editTextBoldCursor.setGravity((k96.a0 ? 5 : 3) | 48);
+        editTextBoldCursor.setInputType(180224);
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setHint(k96.M0(2131743409, null));
+        zkb.l(editTextBoldCursor, 30, i, null);
+        editTextBoldCursor.setCursorSize(gl.L(19.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setOnEditorActionListener(new j(this, (byte) 4));
+        String str = me1Var.r;
+        long j = me1Var.y;
+        editTextBoldCursor.setText(str);
+        editTextBoldCursor.addTextChangedListener(new b7(this, b));
+        if (j != 0) {
+            editTextBoldCursor.setEnabled(false);
+        }
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setMaxLines(1);
+        textView.setLines(1);
+        textView.setPadding(0, 0, 0, 0);
+        textView.setSingleLine(true);
+        textView.setText(me1Var.getMessagesController().N2 + "/");
+        textView.setTextSize(1, 17.0f);
+        zkb.X(textView, i, null);
+        textView.setGravity((k96.a0 ? 5 : 3) | 48);
+        textView.setTranslationY(-gl.L(3.0f));
+        linearLayout.addView(textView, nme.q(-2, -2, 0.0f, 16, 21, 15, 0, 15));
+        linearLayout.addView(editTextBoldCursor, nme.q(-2, -2, 1.0f, 16, 0, 15, 21, 15));
+        addView(linearLayout, nme.e(-1, -1, 48));
+        if (j != 0) {
+            editTextBoldCursor.setAlpha(0.6f);
+            textView.setAlpha(0.6f);
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0055, code lost:
-    
-        if (r3 == r1) goto L24;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof ge1)) {
-            return false;
-        }
-        ge1 ge1Var = (ge1) obj;
-        if (fse.a(this.a, ge1Var.a)) {
-            Bundle bundle = ge1Var.c;
-            Bundle bundle2 = this.c;
-            if (bundle2 != null && bundle != null) {
-                if (bundle2.size() == bundle.size()) {
-                    Set<String> keySet = bundle2.keySet();
-                    if (keySet.containsAll(bundle.keySet())) {
-                        for (String str : keySet) {
-                            if (!fse.a(bundle2.get(str), bundle.get(str))) {
-                                break;
-                            }
-                        }
-                        if (fse.a(this.d, ge1Var.d)) {
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(50.0f), TLObject.FLAG_30));
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.c, 0, this.d});
+    @Override // tjb
+    public final void updateColors() {
+        try {
+            this.a.setCursorColor(bkb.w0(null, bkb.F6, false));
+            invalidate();
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

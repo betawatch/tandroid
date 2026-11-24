@@ -1,27 +1,40 @@
 // default package
 
-import android.os.RemoteException;
-import com.google.android.gms.common.api.Status;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class z4d {
-    public final byte a;
+public final /* synthetic */ class z4d implements aq2, OnSuccessListener, OnFailureListener {
+    public final /* synthetic */ byte a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public z4d(int i) {
-        this.a = i;
+    public /* synthetic */ z4d(ad1 ad1Var) {
+        this.a = (byte) 3;
     }
 
-    public static Status e(RemoteException remoteException) {
-        return new Status(19, remoteException.getClass().getSimpleName() + ": " + remoteException.getLocalizedMessage(), null, null);
+    @Override // aq2
+    public final Object L(gl2 gl2Var) {
+        switch (this.a) {
+            case 0:
+                return new ie7((byte) 0);
+            default:
+                return new l69(gl2Var.O(k69.class));
+        }
     }
 
-    public abstract void a(Status status);
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        Log.e("OptionalModuleUtils", "Failed to request modules install request", exc);
+    }
 
-    public abstract void b(RuntimeException runtimeException);
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        cze.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
+    }
 
-    public abstract void c(rhb rhbVar, boolean z);
-
-    public abstract void d(w3d w3dVar);
+    public /* synthetic */ z4d(byte b) {
+        this.a = b;
+    }
 }

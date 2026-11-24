@@ -1,14 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class xfd {
-    public static final o94 a;
-    public static final o94[] b;
+import java.util.Iterator;
+import java.util.Set;
 
-    static {
-        o94 o94Var = new o94("moduleinstall", 7L);
-        a = o94Var;
-        b = new o94[]{o94Var};
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class xfd extends ned implements Set, j$.util.Set {
+    public transient efd b;
+
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this || obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        Iterator it = iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i += next != null ? next.hashCode() : 0;
+        }
+        return i;
+    }
+
+    @Override // ned
+    public efd k() {
+        efd efdVar = this.b;
+        if (efdVar != null) {
+            return efdVar;
+        }
+        efd n = n();
+        this.b = n;
+        return n;
+    }
+
+    public efd n() {
+        Object[] array = toArray(ned.a);
+        sed sedVar = efd.b;
+        return efd.o(array.length, array);
     }
 }

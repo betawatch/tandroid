@@ -1,17 +1,19 @@
 // default package
 
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class yud {
-    public static final rud a;
-    public static final rud b;
+public final class yud implements zn7 {
+    public static final yud a = new yud();
 
     static {
-        rud rudVar = null;
-        try {
-            rudVar = (rud) Class.forName("com.google.protobuf.NewInstanceSchemaFull").getDeclaredConstructor(null).newInstance(null);
-        } catch (Exception unused) {
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        a = rudVar;
-        b = new rud();
+        throw null;
     }
 }

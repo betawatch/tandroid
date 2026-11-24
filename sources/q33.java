@@ -1,75 +1,34 @@
 // default package
 
-import android.credentials.CreateCredentialException;
-import android.credentials.CreateCredentialResponse;
-import android.credentials.Credential;
-import android.credentials.GetCredentialException;
-import android.credentials.GetCredentialResponse;
-import android.os.Bundle;
-import android.os.OutcomeReceiver;
-import android.util.Log;
+import android.hardware.biometrics.BiometricPrompt;
+import java.security.Signature;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class q33 implements OutcomeReceiver {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ a33 b;
-
-    public q33(a33 a33Var, r33 r33Var) {
-        this.b = a33Var;
+public abstract class q33 {
+    public static BiometricPrompt.CryptoObject a(Signature signature) {
+        return new BiometricPrompt.CryptoObject(signature);
     }
 
-    public final void onError(Throwable th) {
-        byte b = this.a;
-        a33 a33Var = this.b;
-        switch (b) {
-            case 0:
-                CreateCredentialException createCredentialException = (CreateCredentialException) th;
-                createCredentialException.getClass();
-                Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                String type = createCredentialException.getType();
-                type.getClass();
-                ((nl9) a33Var).A(gwd.a(createCredentialException.getMessage(), type));
-                break;
-            default:
-                GetCredentialException getCredentialException = (GetCredentialException) th;
-                getCredentialException.getClass();
-                Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
-                String type2 = getCredentialException.getType();
-                type2.getClass();
-                a33Var.A(gwd.b(getCredentialException.getMessage(), type2));
-                break;
-        }
+    public static BiometricPrompt.CryptoObject b(Cipher cipher) {
+        return new BiometricPrompt.CryptoObject(cipher);
     }
 
-    public final void onResult(Object obj) {
-        byte b = this.a;
-        a33 a33Var = this.b;
-        switch (b) {
-            case 0:
-                CreateCredentialResponse createCredentialResponse = (CreateCredentialResponse) obj;
-                createCredentialResponse.getClass();
-                Log.i("CredManProvService", "Create Result returned from framework: ");
-                Bundle data = createCredentialResponse.getData();
-                data.getClass();
-                ((nl9) a33Var).onResult(tbe.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
-                break;
-            default:
-                GetCredentialResponse getCredentialResponse = (GetCredentialResponse) obj;
-                getCredentialResponse.getClass();
-                Log.i("CredManProvService", "GetCredentialResponse returned from framework");
-                Credential credential = getCredentialResponse.getCredential();
-                credential.getClass();
-                String type = credential.getType();
-                type.getClass();
-                Bundle data2 = credential.getData();
-                data2.getClass();
-                a33Var.onResult(new yu4(gce.a(type, data2)));
-                break;
-        }
+    public static BiometricPrompt.CryptoObject c(Mac mac) {
+        return new BiometricPrompt.CryptoObject(mac);
     }
 
-    public q33(nl9 nl9Var, m23 m23Var, r33 r33Var) {
-        this.b = nl9Var;
+    public static Cipher d(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getCipher();
+    }
+
+    public static Mac e(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getMac();
+    }
+
+    public static Signature f(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getSignature();
     }
 }

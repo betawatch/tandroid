@@ -1,65 +1,56 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
+import java.util.AbstractList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class c66 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class c66 extends AbstractList implements RandomAccess, Serializable {
+    public final List a;
+    public final aq4 b;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
-        int readInt32 = inputSerializedData.readInt32(z);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z);
-        }
+    public c66(List list, aq4 aq4Var) {
+        list.getClass();
+        this.a = list;
+        this.b = aq4Var;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        TLRPC.WebPage webPage = this.d;
-        int i = this.a;
-        this.a = webPage != null ? i | 1 : i & (-2);
-        boolean isEmpty = TextUtils.isEmpty(this.b);
-        int i2 = this.a;
-        int i3 = !isEmpty ? i2 | 2 : i2 & (-3);
-        this.a = i3;
-        int i4 = this.e ? i3 | 8 : i3 & (-9);
-        this.a = i4;
-        int i5 = this.f ? i4 | 16 : i4 & (-17);
-        this.a = i5;
-        outputSerializedData.writeInt32(i5);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
-        }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
-        }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
-        }
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i) {
+        return this.b.apply(this.a.get(i));
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean isEmpty() {
+        return this.a.isEmpty();
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final Iterator iterator() {
+        return listIterator();
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final ListIterator listIterator(int i) {
+        return new b66(this, this.a.listIterator(i), (byte) 0);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object remove(int i) {
+        return this.b.apply(this.a.remove(i));
+    }
+
+    @Override // java.util.AbstractList
+    public final void removeRange(int i, int i2) {
+        this.a.subList(i, i2).clear();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.a.size();
     }
 }

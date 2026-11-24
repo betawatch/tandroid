@@ -1,79 +1,108 @@
 // default package
 
-import android.util.SparseArray;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k97 implements Runnable {
+public final /* synthetic */ class k97 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ oc7 b;
-    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ s61 b;
 
-    public /* synthetic */ k97(oc7 oc7Var, SparseArray sparseArray, byte b) {
+    public /* synthetic */ k97(s61 s61Var, byte b) {
         this.a = b;
-        this.b = oc7Var;
-        this.c = sparseArray;
+        this.b = s61Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i;
+        int i2;
         byte b = this.a;
-        SparseArray sparseArray = this.c;
-        oc7 oc7Var = this.b;
-        char c = 2;
+        boolean z = true;
+        String str = "";
+        s61 s61Var = this.b;
         switch (b) {
             case 0:
-                int i = 0;
-                while (i < sparseArray.size()) {
-                    int keyAt = sparseArray.keyAt(i);
-                    long[] jArr = (long[]) sparseArray.valueAt(i);
-                    oc7Var.getSendMessagesHelper().c0((int) jArr[1]);
-                    nm7 notificationCenter = oc7Var.getNotificationCenter();
-                    Integer valueOf = Integer.valueOf((int) jArr[1]);
-                    Integer valueOf2 = Integer.valueOf(keyAt);
-                    Long valueOf3 = Long.valueOf(jArr[0]);
-                    Boolean bool = Boolean.FALSE;
-                    char c2 = c;
-                    Object[] objArr = new Object[7];
-                    objArr[0] = valueOf;
-                    objArr[1] = valueOf2;
-                    objArr[c2] = null;
-                    objArr[3] = valueOf3;
-                    objArr[4] = 0L;
-                    objArr[5] = -1;
-                    objArr[6] = bool;
-                    notificationCenter.k(21, objArr);
-                    nm7 notificationCenter2 = oc7Var.getNotificationCenter();
-                    Integer valueOf4 = Integer.valueOf((int) jArr[1]);
-                    Integer valueOf5 = Integer.valueOf(keyAt);
-                    Long valueOf6 = Long.valueOf(jArr[0]);
-                    Object[] objArr2 = new Object[7];
-                    objArr2[0] = valueOf4;
-                    objArr2[1] = valueOf5;
-                    objArr2[c2] = null;
-                    objArr2[3] = valueOf6;
-                    objArr2[4] = 0L;
-                    objArr2[5] = -1;
-                    objArr2[6] = bool;
-                    notificationCenter2.k(22, objArr2);
-                    i++;
-                    c = c2;
+                if (!(tLObject instanceof TLRPC.TL_help_appConfigNotModified)) {
+                    if (!(tLObject instanceof TLRPC.TL_help_appConfig)) {
+                        if (tL_error != null) {
+                            str = tL_error.code + " " + tL_error.text;
+                        }
+                        fa4.d("getting appconfig error ".concat(str));
+                        Boolean bool = Boolean.FALSE;
+                        if (tL_error != null && ((i = tL_error.code) == -2000 || i == -2001)) {
+                            z = false;
+                        }
+                        s61Var.a(bool, null, 0L, Boolean.valueOf(z));
+                        break;
+                    } else {
+                        s61Var.a(Boolean.FALSE, (TLRPC.TL_help_appConfig) tLObject, Long.valueOf(r11.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool2 = Boolean.TRUE;
+                    s61Var.a(bool2, null, 0L, bool2);
+                    break;
                 }
                 break;
+            case 1:
+                if (!(tLObject instanceof TLRPC.TL_messages_availableEffectsNotModified)) {
+                    if (!(tLObject instanceof TLRPC.TL_messages_availableEffects)) {
+                        if (tL_error != null) {
+                            str = tL_error.code + " " + tL_error.text;
+                        }
+                        fa4.d("getting available effects error ".concat(str));
+                        Boolean bool3 = Boolean.FALSE;
+                        if (tL_error != null && ((i2 = tL_error.code) == -2000 || i2 == -2001)) {
+                            z = false;
+                        }
+                        s61Var.a(bool3, null, 0L, Boolean.valueOf(z));
+                        break;
+                    } else {
+                        s61Var.a(Boolean.FALSE, (TLRPC.TL_messages_availableEffects) tLObject, Long.valueOf(r11.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool4 = Boolean.TRUE;
+                    s61Var.a(bool4, null, 0L, bool4);
+                    break;
+                }
+                break;
+            case 2:
+                if (!(tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified)) {
+                    boolean z2 = tLObject instanceof TLRPC.TL_messages_emojiGroups;
+                    Boolean bool5 = Boolean.FALSE;
+                    if (!z2) {
+                        s61Var.a(bool5, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        s61Var.a(bool5, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r11.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool6 = Boolean.TRUE;
+                    s61Var.a(bool6, null, 0L, bool6);
+                    break;
+                }
             default:
-                for (int i2 = 0; i2 < sparseArray.size(); i2++) {
-                    int keyAt2 = sparseArray.keyAt(i2);
-                    long[] jArr2 = (long[]) sparseArray.valueAt(i2);
-                    oc7Var.getSendMessagesHelper().c0((int) jArr2[1]);
-                    nm7 notificationCenter3 = oc7Var.getNotificationCenter();
-                    Integer valueOf7 = Integer.valueOf((int) jArr2[1]);
-                    Integer valueOf8 = Integer.valueOf(keyAt2);
-                    Long valueOf9 = Long.valueOf(jArr2[0]);
-                    Boolean bool2 = Boolean.FALSE;
-                    notificationCenter3.k(21, valueOf7, valueOf8, null, valueOf9, 0L, -1, bool2);
-                    oc7Var.getNotificationCenter().k(22, Integer.valueOf((int) jArr2[1]), Integer.valueOf(keyAt2), null, Long.valueOf(jArr2[0]), 0L, -1, bool2);
+                if (!(tLObject instanceof TLRPC.TL_emojiListNotModified)) {
+                    boolean z3 = tLObject instanceof TLRPC.TL_emojiList;
+                    Boolean bool7 = Boolean.FALSE;
+                    if (!z3) {
+                        s61Var.a(bool7, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
+                        s61Var.a(bool7, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool8 = Boolean.TRUE;
+                    s61Var.a(bool8, null, 0L, bool8);
+                    break;
                 }
-                break;
         }
     }
 }

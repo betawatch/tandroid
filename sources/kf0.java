@@ -1,30 +1,39 @@
 // default package
 
-import android.graphics.Paint;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class kf0 extends l46 {
-    public final ylb q;
-    public final Paint r;
-    public int s;
+public final class kf0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nf0 b;
 
-    public kf0(ml1 ml1Var, ylb ylbVar) {
-        super(ml1Var, false, null);
-        Paint paint = new Paint();
-        this.r = paint;
-        this.s = 0;
-        this.q = ylbVar;
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
+    public /* synthetic */ kf0(nf0 nf0Var, byte b) {
+        this.a = b;
+        this.b = nf0Var;
     }
 
-    @Override // l46
-    public final void a() {
-        super.a();
-        this.s = on2.f(0.3f, cmb.v0(cmb.c6, this.q), this.m);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        nf0 nf0Var = this.b;
+        switch (b) {
+            case 0:
+                nf0Var.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nf0Var.I = true;
+                nf0Var.invalidate();
+                break;
+            case 1:
+                nf0Var.l0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nf0Var.I = true;
+                nf0Var.invalidate();
+                break;
+            default:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nf0Var.w0 = floatValue;
+                nf0Var.u0.setAlpha(floatValue);
+                nf0Var.invalidate();
+                break;
+        }
     }
 }

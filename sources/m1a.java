@@ -1,363 +1,167 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.ImageView;
-import java.util.Date;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class m1a extends gg0 implements vlb {
-    public final ImageView E;
-    public boolean F;
-    public final ImageView G;
-    public boolean H;
-    public TLRPC.User I;
-    public TLRPC.Chat J;
-    public TL_stories.TL_myBoost K;
-    public final d0b L;
-    public int M;
-    public final boolean[] s;
-    public final jh2 w;
-    public final ImageView x;
-    public boolean y;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class m1a implements Runnable {
+    public final /* synthetic */ byte a = 2;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Serializable h;
 
-    public m1a(Context context, boolean z, boolean z2, ylb ylbVar, boolean z3) {
-        super(context, ylbVar);
-        this.s = new boolean[1];
-        this.H = true;
-        this.L = new d0b(this);
-        this.d.setTypeface(gm.o());
-        this.f.setVisibility(8);
-        if (z2) {
-            jh2 jh2Var = new jh2(21, ylbVar, context);
-            this.w = jh2Var;
-            jh2Var.b(cmb.A5, cmb.g5, cmb.j7);
-            jh2Var.setDrawUnchecked(false);
-            jh2Var.setDrawBackgroundAsArc(3);
-            boolean z4 = jb6.a0;
-            addView(jh2Var, qoe.d(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 40.0f, 33.0f, z4 ? 39.0f : 0.0f, 0.0f));
-            d();
-        } else if (z) {
-            jh2 jh2Var2 = new jh2(21, ylbVar, context);
-            this.w = jh2Var2;
-            if (z3) {
-                jh2Var2.b(cmb.h7, cmb.i7, cmb.B5);
-            } else {
-                jh2Var2.b(cmb.A5, cmb.i7, cmb.B5);
-            }
-            jh2Var2.setDrawUnchecked(true);
-            jh2Var2.setDrawBackgroundAsArc(10);
-            addView(jh2Var2);
-            jh2Var2.a(false, false);
-            jh2Var2.setLayoutParams(qoe.d(24, 24.0f, (jb6.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
-            d();
-        } else {
-            this.w = null;
-        }
-        ImageView imageView = new ImageView(context);
-        this.x = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.ic_ab_other);
-        int i = cmb.qd;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        anb.s(imageView, i, ylbVar, mode);
-        addView(imageView, qoe.d(32, 32.0f, (jb6.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.E = imageView2;
-        imageView2.setScaleType(scaleType);
-        imageView2.setImageResource(R.drawable.menu_phone);
-        int i2 = cmb.Ei;
-        anb.s(imageView2, i2, ylbVar, mode);
-        boolean z5 = jb6.a0;
-        addView(imageView2, qoe.d(32, 32.0f, (z5 ? 3 : 5) | 16, z5 ? 52.0f : 12.0f, 0.0f, z5 ? 12.0f : 52.0f, 0.0f));
-        imageView2.setVisibility(8);
-        ImageView imageView3 = new ImageView(context);
-        this.G = imageView3;
-        imageView3.setScaleType(scaleType);
-        imageView3.setImageResource(R.drawable.menu_videocall);
-        anb.s(imageView3, i2, ylbVar, mode);
-        addView(imageView3, qoe.d(32, 32.0f, (jb6.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
-        imageView3.setVisibility(8);
+    public /* synthetic */ m1a(ei0 ei0Var, Bitmap bitmap, int i, int i2, String str, boolean z) {
+        this.e = ei0Var;
+        this.f = bitmap;
+        this.b = i;
+        this.c = i2;
+        this.h = str;
+        this.d = z;
     }
 
-    public static String f(long j) {
-        long j2 = j / 3600000;
-        long j3 = j % 3600000;
-        long j4 = j3 / 60000;
-        long j5 = (j3 % 60000) / 1000;
-        StringBuilder sb = new StringBuilder();
-        if (j2 > 0) {
-            sb.append(String.format("%02d", Long.valueOf(j2)));
-            sb.append(":");
-        }
-        sb.append(String.format("%02d", Long.valueOf(j4)));
-        sb.append(":");
-        sb.append(String.format("%02d", Long.valueOf(j5)));
-        return sb.toString();
-    }
-
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(cmb.y9));
-    }
-
-    @Override // gg0
-    public final boolean b() {
-        jh2 jh2Var = this.w;
-        return jh2Var != null && jh2Var.getDrawUnchecked();
-    }
-
-    @Override // gg0
-    public final void c(boolean z, boolean z2) {
-        jh2 jh2Var = this.w;
-        if (jh2Var == null || jh2Var.getVisibility() != 0) {
-            return;
-        }
-        jh2Var.a(z, z2);
-    }
-
-    public final void g(boolean z, boolean z2) {
-        if (this.H == z) {
-            return;
-        }
-        this.H = z;
-        float f = 0.0f;
-        ImageView imageView = this.E;
-        ImageView imageView2 = this.G;
-        if (!z2) {
-            imageView.animate().cancel();
-            imageView.setAlpha((z && this.y) ? 1.0f : 0.0f);
-            imageView.setVisibility((z && this.y) ? 0 : 8);
-            imageView2.animate().cancel();
-            if (z && this.F) {
-                f = 1.0f;
-            }
-            imageView2.setAlpha(f);
-            imageView2.setVisibility((z && this.F) ? (byte) 0 : (byte) 8);
-            return;
-        }
-        imageView.setVisibility(0);
-        ViewPropertyAnimator alpha = imageView.animate().alpha((z && this.y) ? 1.0f : 0.0f);
-        Runnable runnable = null;
-        alpha.withEndAction((z && this.y) ? null : new Runnable(this) { // from class: k1a
-            public final /* synthetic */ m1a b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b = r2;
-                m1a m1aVar = this.b;
-                switch (b) {
-                    case 0:
-                        m1aVar.E.setVisibility(8);
-                        break;
-                    default:
-                        m1aVar.G.setVisibility(8);
-                        break;
+    /* JADX WARN: Type inference failed for: r1v7, types: [boolean] */
+    @Override // java.lang.Runnable
+    public final void run() {
+        z3a z3aVar;
+        int i;
+        int i2;
+        int i3;
+        byte b = this.a;
+        int i4 = 5;
+        int i5 = this.c;
+        int i6 = this.b;
+        Object obj = this.f;
+        Serializable serializable = this.h;
+        Object obj2 = this.e;
+        switch (b) {
+            case 0:
+                z3a z3aVar2 = (z3a) obj2;
+                TLRPC.Message message = (TLRPC.Message) obj;
+                ArrayList arrayList = (ArrayList) serializable;
+                boolean c5 = k27.c5(message);
+                boolean z = this.d;
+                if (c5) {
+                    i4 = 9;
+                } else if (message.quick_reply_shortcut_id == 0 && message.quick_reply_shortcut == null) {
+                    i4 = z ? 1 : 0;
                 }
-            }
-        }).start();
-        imageView2.setVisibility(0);
-        ViewPropertyAnimator animate = imageView2.animate();
-        if (z && this.F) {
-            f = 1.0f;
-        }
-        ViewPropertyAnimator alpha2 = animate.alpha(f);
-        if (!z || !this.F) {
-            final byte b = 1;
-            runnable = new Runnable(this) { // from class: k1a
-                public final /* synthetic */ m1a b;
-
-                {
-                    this.b = this;
+                ad7 messagesStorage = z3aVar2.getMessagesStorage();
+                long j = message.random_id;
+                long B1 = k27.B1(message.peer_id);
+                int i7 = this.b;
+                messagesStorage.X1(j, B1, Integer.valueOf(i7), message.id, 0, z ? 1 : 0, message.quick_reply_shortcut_id);
+                int i8 = i4;
+                z3aVar2.getMessagesStorage().g1(arrayList, true, false, false, 0, false, i8, message.quick_reply_shortcut_id);
+                if (k27.e3(message)) {
+                    long B12 = k27.B1(message.peer_id);
+                    ArrayList arrayList2 = new ArrayList(1);
+                    arrayList2.add(Integer.valueOf(message.id));
+                    z3aVar2.getMessagesStorage().M0(B12, arrayList2, false, false, i8, (int) k27.Z1(z3aVar2.currentAccount, message, 0));
+                    z3aVar2.getMessagesStorage().O1(B12, -B12, arrayList2, null);
+                    z3aVar = z3aVar2;
+                    gl.c3(new q1a(z3aVar, B12, arrayList2, (byte) 0));
+                } else {
+                    z3aVar = z3aVar2;
                 }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    byte b2 = b;
-                    m1a m1aVar = this.b;
-                    switch (b2) {
-                        case 0:
-                            m1aVar.E.setVisibility(8);
-                            break;
-                        default:
-                            m1aVar.G.setVisibility(8);
-                            break;
+                gl.c3(new v11(z3aVar, message, i7, this.c, z));
+                break;
+            case 1:
+                ei0 ei0Var = (ei0) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                String str = (String) serializable;
+                Paint paint = (Paint) ei0Var.d;
+                ?? r1 = ei0Var.b;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    float width = bitmap.getWidth() / bitmap.getHeight();
+                    int round = (int) Math.round(Math.sqrt(width * 324.0f));
+                    int round2 = (int) Math.round(Math.sqrt(324.0f / width));
+                    if (i6 == 90 || i6 == 270) {
+                        i = round2;
+                        i2 = round;
+                    } else {
+                        i2 = round2;
+                        i = round;
                     }
+                    int i9 = (r1 == true ? 1 : 0) << 1;
+                    Bitmap createBitmap = Bitmap.createBitmap(i9 + i, i9 + i2, Bitmap.Config.ARGB_8888);
+                    Canvas canvas = new Canvas(createBitmap);
+                    Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+                    int i10 = (r1 == true ? 1 : 0) + round;
+                    int i11 = (r1 == true ? 1 : 0) + round2;
+                    Rect rect2 = new Rect(r1 == true ? 1 : 0, r1 == true ? 1 : 0, i10, i11);
+                    float f = r1 == true ? 1.0f : 0.0f;
+                    canvas.translate((i / 2.0f) + f, (i2 / 2.0f) + f);
+                    if (i5 == 1) {
+                        canvas.scale(-1.0f, 1.0f);
+                    } else if (i5 == 2) {
+                        canvas.scale(1.0f, -1.0f);
+                    }
+                    canvas.rotate(i6);
+                    float f2 = -(r1 == true ? 1 : 0);
+                    de9.n(round2, 2.0f, f2, f2 - (round / 2.0f), canvas);
+                    try {
+                        canvas.drawBitmap(bitmap, rect, rect2, (Paint) null);
+                    } catch (Exception unused) {
+                    }
+                    Utilities.stackBlurBitmap(createBitmap, 6);
+                    if (r1 > 0) {
+                        float f3 = i10;
+                        canvas.drawRect(0.0f, 0.0f, f3, f, paint);
+                        float f4 = i11;
+                        canvas.drawRect(0.0f, f, f, f4, paint);
+                        float f5 = i10 + (r1 == true ? 1 : 0);
+                        canvas.drawRect(f3, f, f5, f4, paint);
+                        canvas.drawRect(0.0f, f4, f5, i11 + (r1 == true ? 1 : 0), paint);
+                    }
+                    gl.c3(new z77((Object) ei0Var, (Object) str, (Object) createBitmap, this.d, (Object) bitmap, (byte) 2));
+                    break;
                 }
-            };
-        }
-        alpha2.withEndAction(runnable).start();
-    }
-
-    public TL_stories.TL_myBoost getBoost() {
-        return this.K;
-    }
-
-    public TLRPC.Chat getChat() {
-        return this.J;
-    }
-
-    public TLRPC.User getUser() {
-        return this.I;
-    }
-
-    public final void h(int i, TLRPC.Chat chat) {
-        String M0;
-        this.x.setVisibility(8);
-        this.J = chat;
-        this.I = null;
-        pc0 pc0Var = this.b;
-        pc0Var.p(chat);
-        int L = gm.L(sd2.c0(chat) ? 12.0f : 20.0f);
-        bf0 bf0Var = this.c;
-        bf0Var.setRoundRadius(L);
-        bf0Var.f(chat, pc0Var);
-        String str = chat.title;
-        dg0 dg0Var = this.d;
-        dg0Var.k(str);
-        dg0Var.i(null);
-        if (i <= 0) {
-            i = chat.participants_count;
-        }
-        boolean V = sd2.V(chat);
-        if (i >= 1) {
-            M0 = jb6.G(i, V ? "Subscribers" : "Members", new Object[0]);
-        } else {
-            M0 = jb6.M0(V ? 2131751327 : 2131754876, null);
-        }
-        setSubtitle(M0);
-        anb.W(this.e, cmb.q5, this.a);
-        i(false, i > 200 ? 0.3f : 1.0f);
-    }
-
-    public final void i(boolean z, float f) {
-        jh2 jh2Var = this.w;
-        if (jh2Var != null) {
-            if (!z) {
-                jh2Var.animate().cancel();
-                jh2Var.setAlpha(f);
-            } else if (Math.abs(jh2Var.getAlpha() - f) > 0.1d) {
-                jh2Var.animate().cancel();
-                jh2Var.animate().alpha(f).start();
-            }
+                break;
+            default:
+                ArrayList arrayList3 = (ArrayList) serializable;
+                ArrayList arrayList4 = (ArrayList) obj;
+                mu1 mu1Var = ((cs1) obj2).b;
+                if (this.d) {
+                    i3 = ((d) mu1Var).currentAccount;
+                    na7.q1(i3).W3.edit().remove("pin_" + mu1Var.l6).commit();
+                    mu1Var.Uc(0, true);
+                } else {
+                    mu1Var.getNotificationCenter().k(56, Long.valueOf(mu1Var.l6), arrayList3, Boolean.TRUE, arrayList4, null, 0, Integer.valueOf(i6), Boolean.valueOf(mu1Var.g5));
+                }
+                if (i5 == mu1Var.R3) {
+                    mu1Var.P3 = null;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.L.a.a();
+    public /* synthetic */ m1a(cs1 cs1Var, boolean z, ArrayList arrayList, ArrayList arrayList2, int i, int i2) {
+        this.e = cs1Var;
+        this.d = z;
+        this.h = arrayList;
+        this.f = arrayList2;
+        this.b = i;
+        this.c = i2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.L.a.b();
-    }
-
-    public void setBoost(TL_stories.TL_myBoost tL_myBoost) {
-        this.x.setVisibility(8);
-        this.K = tL_myBoost;
-        TLRPC.Chat L0 = oc7.r1(z8c.t0).L0(Long.valueOf(-pg3.n(tL_myBoost.peer)));
-        this.J = L0;
-        pc0 pc0Var = this.b;
-        pc0Var.p(L0);
-        int L = gm.L(20.0f);
-        bf0 bf0Var = this.c;
-        bf0Var.setRoundRadius(L);
-        bf0Var.f(this.J, pc0Var);
-        String str = this.J.title;
-        dg0 dg0Var = this.d;
-        dg0Var.k(str);
-        int i = cmb.q5;
-        ylb ylbVar = this.a;
-        lka lkaVar = this.e;
-        anb.W(lkaVar, i, ylbVar);
-        setSubtitle(jb6.a0(null, null, 2131753626, jb6.D0().n0().format(new Date(tL_myBoost.expires * 1000))));
-        int i2 = tL_myBoost.cooldown_until_date;
-        if (i2 <= 0) {
-            dg0Var.setAlpha(1.0f);
-            lkaVar.setAlpha(1.0f);
-            i(false, 1.0f);
-        } else {
-            setSubtitle(jb6.a0(null, null, 2131753559, f((i2 * 1000) - System.currentTimeMillis())));
-            dg0Var.setAlpha(0.65f);
-            lkaVar.setAlpha(0.65f);
-            i(false, 0.3f);
-        }
-    }
-
-    public void setOptions(View.OnClickListener onClickListener) {
-        ImageView imageView = this.x;
-        if (onClickListener == null) {
-            imageView.setVisibility(8);
-        } else {
-            imageView.setVisibility(0);
-            imageView.setOnClickListener(onClickListener);
-        }
-    }
-
-    public void setUser(TLRPC.User user) {
-        this.x.setVisibility(8);
-        this.I = user;
-        this.J = null;
-        pc0 pc0Var = this.b;
-        pc0Var.q(user);
-        int L = gm.L(20.0f);
-        bf0 bf0Var = this.c;
-        bf0Var.setRoundRadius(L);
-        bf0Var.f(user, pc0Var);
-        String r = m9c.r(user);
-        dg0 dg0Var = this.d;
-        dg0Var.k(r);
-        boolean[] zArr = this.s;
-        zArr[0] = false;
-        if (m9c.v(user)) {
-            int i = user.bot_active_users;
-            if (i > 0) {
-                setSubtitle(jb6.H(',', "BotUsers", i));
-            } else {
-                setSubtitle(jb6.M0(2131753121, null));
-            }
-        } else {
-            setSubtitle(jb6.d0(z8c.t0, user, zArr, null));
-        }
-        anb.W(this.e, zArr[0] ? cmb.m5 : cmb.q5, this.a);
-        jh2 jh2Var = this.w;
-        if (jh2Var != null) {
-            jh2Var.setAlpha(1.0f);
-        }
-        int w0 = cmb.w0(null, cmb.y9, false);
-        this.M = w0;
-        dg0Var.i(this.L.a(user, w0, false));
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        d0b d0bVar;
-        dg0 dg0Var;
-        int w0;
-        try {
-            if (this.I == null || (d0bVar = this.L) == null || (dg0Var = this.d) == null || (w0 = cmb.w0(null, cmb.y9, false)) == this.M) {
-                return;
-            }
-            this.M = w0;
-            d0bVar.a(this.I, w0, false);
-            dg0Var.invalidate();
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
+    public /* synthetic */ m1a(z3a z3aVar, boolean z, TLRPC.Message message, int i, ArrayList arrayList, int i2) {
+        this.e = z3aVar;
+        this.d = z;
+        this.f = message;
+        this.b = i;
+        this.h = arrayList;
+        this.c = i2;
     }
 }

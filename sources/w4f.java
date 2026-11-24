@@ -1,57 +1,29 @@
 // default package
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import org.telegram.messenger.WearAuthListenerService;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class w4f extends Handler {
-    public boolean a;
-    public final d2f b;
-    public final /* synthetic */ WearAuthListenerService c;
+public final class w4f extends b4 implements ua9 {
+    public static final Parcelable.Creator<w4f> CREATOR = new c0f(12);
+    public Status a;
+    public ArrayList b;
+    public String[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w4f(WearAuthListenerService wearAuthListenerService, Looper looper) {
-        super(looper);
-        this.c = wearAuthListenerService;
-        this.b = new d2f();
+    @Override // ua9
+    public final Status a() {
+        return this.a;
     }
 
-    public final synchronized void a(String str) {
-        if (this.a) {
-            if (Log.isLoggable("WearableLS", 2)) {
-                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(this.c.a));
-            }
-            try {
-                this.c.unbindService(this.b);
-            } catch (RuntimeException e) {
-                Log.e("WearableLS", "Exception when unbinding from local service", e);
-            }
-            this.a = false;
-        }
-    }
-
-    @Override // android.os.Handler
-    public final void dispatchMessage(Message message) {
-        synchronized (this) {
-            if (!this.a) {
-                if (Log.isLoggable("WearableLS", 2)) {
-                    Log.v("WearableLS", "bindService: ".concat(String.valueOf(this.c.a)));
-                }
-                WearAuthListenerService wearAuthListenerService = this.c;
-                wearAuthListenerService.bindService(wearAuthListenerService.d, this.b, 1);
-                this.a = true;
-            }
-        }
-        try {
-            super.dispatchMessage(message);
-        } finally {
-            if (!hasMessages(0)) {
-                a("dispatch");
-            }
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.k(parcel, 1, this.a, i);
+        jte.p(parcel, 2, this.b);
+        jte.m(parcel, 3, this.c);
+        jte.s(parcel, r);
     }
 }

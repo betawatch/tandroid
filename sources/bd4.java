@@ -1,42 +1,126 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class bd4 {
-    public final int a;
-    public final TLRPC.Document b;
-    public final String c;
-    public final k47 d;
-    public final String e;
-    public boolean f;
-    public boolean g;
+public final class bd4 extends ka {
+    public final /* synthetic */ cd4 d;
 
-    public bd4(int i, k47 k47Var, TLRPC.Document document, String str) {
-        this.a = i;
-        this.d = k47Var;
-        this.b = document;
-        this.c = str;
-        this.e = TextUtils.isEmpty(str) ? bc4.r(null, document) : str;
-        a();
+    public bd4(cd4 cd4Var) {
+        this.d = cd4Var;
     }
 
-    public final void a() {
-        boolean z = false;
-        String str = this.c;
-        boolean t = str != null ? aq1.t(str) : false;
-        int i = this.a;
-        if (!t) {
-            bc4.G(i);
-            t = bc4.I(this.b).exists();
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        int i = s49Var.f;
+        return i == 8 || i == 7;
+    }
+
+    public final w39 F() {
+        return this.d.n1.getAdapter();
+    }
+
+    @Override // w39
+    public final int b() {
+        return this.d.Z1.size();
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        return ((gd4) this.d.Z1.get(i)).a;
+    }
+
+    @Override // w39
+    public final void f() {
+        F().f();
+    }
+
+    @Override // w39
+    public final void g(int i) {
+        F().g(i + 1);
+    }
+
+    @Override // w39
+    public final void j(int i, int i2) {
+        F().j(i + 1, i2);
+    }
+
+    @Override // w39
+    public final void l(int i, int i2) {
+        F().l(i + 1, i2);
+    }
+
+    @Override // w39
+    public final void n(int i, int i2, Object obj) {
+        F().n(i + 1, i2, obj);
+    }
+
+    @Override // w39
+    public final void p(int i, int i2) {
+        F().p(i + 1, i2);
+    }
+
+    @Override // w39
+    public final void q(int i, int i2) {
+        F().q(i + 1, i2);
+    }
+
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        int i2;
+        int i3 = s49Var.f;
+        View view = s49Var.a;
+        ArrayList arrayList = this.d.Z1;
+        gd4 gd4Var = (gd4) arrayList.get(i);
+        int i4 = i + 1;
+        boolean z = (i4 >= arrayList.size() || (i2 = ((gd4) arrayList.get(i4)).a) == 3 || i2 == 6) ? false : true;
+        if (i3 == 7) {
+            ((jd4) view).e(gd4Var.m, z);
+            return;
         }
-        this.f = t;
-        String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && bc4.G(i).S(str2)) {
-            z = true;
+        if (i3 == 6 || i3 == 3) {
+            mhb mhbVar = (mhb) view;
+            if (i3 == 6) {
+                mhbVar.setFixedSize(0);
+                mhbVar.setText(gd4Var.d);
+                return;
+            } else {
+                mhbVar.setFixedSize(12);
+                mhbVar.setText("");
+                return;
+            }
         }
-        this.g = z;
+        if (i3 == 0 || i3 != 8) {
+            return;
+        }
+        yc4 yc4Var = (yc4) view;
+        yc4Var.a.setText(k96.M0(2131751702, null));
+        if (yc4Var.c != z) {
+            yc4Var.c = z;
+            yc4Var.setWillNotDraw(!z);
+        }
+    }
+
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        View mhbVar;
+        cd4 cd4Var = this.d;
+        if (i == 8) {
+            mhbVar = new yc4(cd4Var.getContext());
+            zkb.h(bkb.g5, null, mhbVar);
+        } else if (i == 7) {
+            ad4 ad4Var = new ad4(this, cd4Var.getContext(), cd4Var.a, cd4Var.T1.a);
+            zkb.h(bkb.g5, null, ad4Var);
+            mhbVar = ad4Var;
+        } else if (i == 6 || i == 3) {
+            mhbVar = new mhb(cd4Var.getContext());
+            zkb.h(bkb.Z6, null, mhbVar);
+        } else {
+            mhbVar = new yc(cd4Var, cd4Var.getContext());
+        }
+        return new y29(mhbVar);
     }
 }

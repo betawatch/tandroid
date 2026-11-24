@@ -1,31 +1,61 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ia0 extends n03 {
-    public final List a;
+public final class ia0 extends kj9 {
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final long f;
 
-    public ia0(List list) {
-        this.a = list;
+    public ia0(String str, String str2, String str3, String str4, long j) {
+        if (str == null) {
+            fvc.f("Null rolloutId");
+            throw null;
+        }
+        this.b = str;
+        if (str2 == null) {
+            fvc.f("Null parameterKey");
+            throw null;
+        }
+        this.c = str2;
+        this.d = str3;
+        if (str4 == null) {
+            fvc.f("Null variantId");
+            throw null;
+        }
+        this.e = str4;
+        this.f = j;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof n03)) {
+        if (!(obj instanceof kj9)) {
             return false;
         }
-        return this.a.equals(((ia0) ((n03) obj)).a);
+        ia0 ia0Var = (ia0) ((kj9) obj);
+        return this.b.equals(ia0Var.b) && this.c.equals(ia0Var.c) && this.d.equals(ia0Var.d) && this.e.equals(ia0Var.e) && this.f == ia0Var.f;
     }
 
     public final int hashCode() {
-        return 1000003 ^ this.a.hashCode();
+        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003;
+        long j = this.f;
+        return hashCode ^ ((int) ((j >>> 32) ^ j));
     }
 
     public final String toString() {
-        return "RolloutsState{rolloutAssignments=" + this.a + "}";
+        StringBuilder sb = new StringBuilder("RolloutAssignment{rolloutId=");
+        sb.append(this.b);
+        sb.append(", parameterKey=");
+        sb.append(this.c);
+        sb.append(", parameterValue=");
+        sb.append(this.d);
+        sb.append(", variantId=");
+        sb.append(this.e);
+        sb.append(", templateVersion=");
+        return ls6.p(sb, this.f, "}");
     }
 }

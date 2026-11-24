@@ -1,42 +1,35 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class rm8 extends GestureDetector.SimpleOnGestureListener {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ cic c;
+public final /* synthetic */ class rm8 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tm8 b;
 
-    public rm8(cic cicVar) {
-        this.c = cicVar;
+    public /* synthetic */ rm8(tm8 tm8Var, byte b) {
+        this.a = b;
+        this.b = tm8Var;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        this.a = true;
-        return super.onDown(motionEvent);
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        float x = motionEvent.getX() - motionEvent2.getX();
-        float y = motionEvent.getY() - motionEvent2.getY();
-        if (Math.abs(x) > gm.Z0(true, 0.4f) && Math.abs(x) / 3.0f > y && this.a && !this.b) {
-            this.a = false;
-            ku kuVar = new ku(this, x, (byte) 3);
-            cic cicVar = this.c;
-            ValueAnimator valueAnimator = cicVar.V;
-            if (valueAnimator != null) {
-                this.b = true;
-                gm.d3(kuVar, (valueAnimator.getDuration() - cicVar.V.getCurrentPlayTime()) + 50);
-            } else {
-                kuVar.run();
-            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        byte b2 = 1;
+        tm8 tm8Var = this.b;
+        switch (b) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                tm8Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new rm8(tm8Var, b2));
+                break;
+            default:
+                tm8Var.c.getMessagesController().U2(true);
+                break;
         }
-        return super.onScroll(motionEvent, motionEvent2, f, f2);
     }
 }

@@ -1,29 +1,51 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class y6f extends b4 implements uc9 {
-    public static final Parcelable.Creator<y6f> CREATOR = new e2f(12);
-    public Status a;
-    public ArrayList b;
-    public String[] c;
+public final class y6f extends vef {
+    private static final y6f zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private yef zzg;
+    private yef zzh;
+    private dff zzi;
+    private dff zzj;
+    private int zzk;
 
-    @Override // uc9
-    public final Status a() {
-        return this.a;
+    static {
+        y6f y6fVar = new y6f();
+        zzb = y6fVar;
+        vef.e(y6f.class, y6fVar);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.k(parcel, 1, this.a, i);
-        mve.p(parcel, 2, this.b);
-        mve.m(parcel, 3, this.c);
-        mve.s(parcel, r);
+    public y6f() {
+        wef wefVar = wef.d;
+        this.zzg = wefVar;
+        this.zzh = wefVar;
+        rgf rgfVar = rgf.d;
+        this.zzi = rgfVar;
+        this.zzj = rgfVar;
+    }
+
+    @Override // vef
+    public final Object h(int i, vef vefVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new sgf(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001င\u0000\u0002᠌\u0001\u0003\u0016\u0004\u0016\u0005\u001a\u0006\u001a\u0007᠌\u0002", new Object[]{"zzd", "zze", "zzf", i2f.s, "zzg", "zzh", "zzi", "zzj", "zzk", vi2.r});
+        }
+        if (i2 == 3) {
+            return new y6f();
+        }
+        if (i2 == 4) {
+            return new v8e(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

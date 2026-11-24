@@ -1,87 +1,38 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.util.Log;
-import java.io.File;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class m30 implements rgf {
-    public long a;
-    public Object b;
-    public Object c;
+public final /* synthetic */ class m30 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tg2 b;
+    public final /* synthetic */ pd5 c;
 
-    public m30(File file, long j, byte[] bArr) {
-        this.b = file;
-        this.a = j;
-        this.c = bArr == null ? null : (byte[]) bArr.clone();
+    public /* synthetic */ m30(tg2 tg2Var, pd5 pd5Var, byte b) {
+        this.a = b;
+        this.b = tg2Var;
+        this.c = pd5Var;
     }
 
-    public static String b(long j, String str, String str2) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("token", str);
-            jSONObject.put("appVersion", str2);
-            jSONObject.put("timestamp", j);
-            return jSONObject.toString();
-        } catch (JSONException e) {
-            Log.w("FirebaseMessaging", "Failed to encode token: " + e);
-            return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        pd5 pd5Var = this.c;
+        tg2 tg2Var = this.b;
+        switch (b) {
+            case 0:
+                o30 o30Var = (o30) tg2Var.c;
+                String str = g8c.a;
+                l93 l93Var = ((t54) o30Var).a.s;
+                tj U = l93Var.U();
+                l93Var.V(U, 1032, new i93(U, pd5Var, (byte) 29));
+                break;
+            default:
+                o30 o30Var2 = (o30) tg2Var.c;
+                String str2 = g8c.a;
+                l93 l93Var2 = ((t54) o30Var2).a.s;
+                tj U2 = l93Var2.U();
+                l93Var2.V(U2, 1031, new i93(U2, pd5Var, (byte) 12));
+                break;
         }
-    }
-
-    public static m30 c(String str) {
-        Object obj = null;
-        if (TextUtils.isEmpty(str)) {
-            return null;
-        }
-        if (!str.startsWith("{")) {
-            return new m30(str, 0L, obj);
-        }
-        try {
-            JSONObject jSONObject = new JSONObject(str);
-            return new m30(jSONObject.getString("token"), jSONObject.getLong("timestamp"), jSONObject.getString("appVersion"));
-        } catch (JSONException e) {
-            Log.w("FirebaseMessaging", "Failed to parse token: " + e);
-            return null;
-        }
-    }
-
-    public final n30 a() {
-        Object obj;
-        if (!((bqb) this.b).p() && (obj = this.c) != null) {
-            jte.f(((bqb) this.b).b(obj) != -1);
-        }
-        return new n30(this);
-    }
-
-    @Override // rgf
-    public final ry zza() {
-        yoe yoeVar = (yoe) this.b;
-        o7f o7fVar = (o7f) this.c;
-        long j = this.a;
-        ovb ovbVar = new ovb();
-        ovbVar.c = x6f.b;
-        uqd uqdVar = new uqd((byte) 10);
-        uqdVar.d = yoeVar.e.a();
-        uqdVar.b = o7fVar;
-        uqdVar.c = Long.valueOf((SystemClock.elapsedRealtime() - j) & Long.MAX_VALUE);
-        ovbVar.e = new ndf(uqdVar);
-        return new ry(ovbVar, 0);
-    }
-
-    public m30() {
-        this.a = 0L;
-        this.b = bqb.a;
-        this.c = null;
-    }
-
-    public /* synthetic */ m30(Object obj, long j, Object obj2) {
-        this.b = obj;
-        this.c = obj2;
-        this.a = j;
     }
 }

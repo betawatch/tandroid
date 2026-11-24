@@ -1,30 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
+import android.content.DialogInterface;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ly5 extends e99 {
-    public final /* synthetic */ Bitmap F;
-    public final /* synthetic */ sa8 G;
+public final /* synthetic */ class ly5 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ LaunchActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ly5(sa8 sa8Var, Context context, hw7 hw7Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, hw7Var, bitmap, null, null);
-        this.G = sa8Var;
-        this.F = bitmap2;
+    public /* synthetic */ ly5(LaunchActivity launchActivity, byte b) {
+        this.a = b;
+        this.b = launchActivity;
     }
 
-    @Override // e99
-    public final void g(u11 u11Var) {
-        int indexOf = u11.a.indexOf(u11Var);
-        int i = indexOf + 1;
-        if (i <= 1 || this.F != null) {
-            indexOf = i;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        byte b = this.a;
+        LaunchActivity launchActivity = this.b;
+        switch (b) {
+            case 0:
+                String str = LaunchActivity.C1;
+                launchActivity.w1 = false;
+                break;
+            case 1:
+                String str2 = LaunchActivity.C1;
+                gl.d3(new rx5(launchActivity, (byte) 7), 30000L);
+                break;
+            default:
+                String str3 = LaunchActivity.C1;
+                gl.d3(new rx5(launchActivity, (byte) 10), 30000L);
+                break;
         }
-        sa8 sa8Var = this.G;
-        sa8Var.j1.b(indexOf);
-        sa8Var.s(u11Var);
     }
 }

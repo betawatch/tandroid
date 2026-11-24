@@ -1,29 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class la0 extends q03 {
-    public final String a;
+public final class la0 {
+    public final long a;
+    public final long b;
+    public final long c;
 
-    public la0(String str) {
-        this.a = str;
+    public la0(long j, long j2, long j3) {
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof q03)) {
-            return false;
+        if (obj instanceof la0) {
+            la0 la0Var = (la0) obj;
+            if (this.a == la0Var.a && this.b == la0Var.b && this.c == la0Var.c) {
+                return true;
+            }
         }
-        return this.a.equals(((la0) ((q03) obj)).a);
+        return false;
     }
 
     public final int hashCode() {
-        return 1000003 ^ this.a.hashCode();
+        long j = this.a;
+        long j2 = this.b;
+        int i = (((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003;
+        long j3 = this.c;
+        return i ^ ((int) ((j3 >>> 32) ^ j3));
     }
 
     public final String toString() {
-        return b10.j(new StringBuilder("User{identifier="), this.a, "}");
+        StringBuilder sb = new StringBuilder("StartupTime{epochMillis=");
+        sb.append(this.a);
+        sb.append(", elapsedRealtime=");
+        sb.append(this.b);
+        sb.append(", uptimeMillis=");
+        return ls6.p(sb, this.c, "}");
     }
 }

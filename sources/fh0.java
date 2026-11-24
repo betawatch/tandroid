@@ -1,7 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+import android.os.Parcelable;
+import j$.util.Objects;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface fh0 {
-    void a(ot2 ot2Var);
+public final class fh0 extends b4 {
+    public static final Parcelable.Creator<fh0> CREATOR = new b1d((byte) 21);
+    public final boolean a;
+    public final byte[] b;
+    public final String c;
+
+    public fh0(boolean z, byte[] bArr, String str) {
+        if (z) {
+            fre.h(bArr);
+            fre.h(str);
+        }
+        this.a = z;
+        this.b = bArr;
+        this.c = str;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof fh0)) {
+            return false;
+        }
+        fh0 fh0Var = (fh0) obj;
+        return this.a == fh0Var.a && Arrays.equals(this.b, fh0Var.b) && Objects.equals(this.c, fh0Var.c);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.b) + (Objects.hash(Boolean.valueOf(this.a), this.c) * 31);
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        jte.c(parcel, 2, this.b);
+        jte.l(parcel, 3, this.c);
+        jte.s(parcel, r);
+    }
 }

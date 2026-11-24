@@ -3,10 +3,10 @@ package android.support.v4.media;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class RatingCompat implements Parcelable {
-    public static final Parcelable.Creator<RatingCompat> CREATOR = new hx6((byte) 13);
+    public static final Parcelable.Creator<RatingCompat> CREATOR = new hv6((byte) 13);
     public final int a;
     public final float b;
 

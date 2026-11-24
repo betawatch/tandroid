@@ -1,39 +1,35 @@
 // default package
 
-import java.lang.ref.WeakReference;
+import java.util.function.ToDoubleFunction;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class mm7 implements jm7 {
-    public final nm7 a;
-    public final WeakReference b;
-    public final int c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class mm7 implements ToDoubleFunction {
+    public final /* synthetic */ byte a;
 
-    public mm7(nm7 nm7Var, jm7 jm7Var) {
-        this.a = nm7Var;
-        this.b = new WeakReference(jm7Var);
-        this.c = System.identityHashCode(jm7Var);
+    public /* synthetic */ mm7(byte b) {
+        this.a = b;
     }
 
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        jm7 jm7Var = (jm7) this.b.get();
-        if (jm7Var != null) {
-            jm7Var.didReceivedNotification(i, i2, objArr);
-        } else {
-            this.a.n(this, i);
+    @Override // java.util.function.ToDoubleFunction
+    public final double applyAsDouble(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 1:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 2:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 3:
+                return kna.Z0((TL_stars.starGiftAttributeBackdrop) obj);
+            case 4:
+                return kna.Z0((TL_stars.starGiftAttributePattern) obj);
+            case 5:
+                return kna.Z0((TL_stars.starGiftAttributeModel) obj);
+            default:
+                return ((dcc) obj).a;
         }
-    }
-
-    public final boolean equals(Object obj) {
-        jm7 jm7Var;
-        if (this != obj) {
-            return (obj instanceof mm7) && (jm7Var = (jm7) this.b.get()) != null && jm7Var == ((mm7) obj).b.get();
-        }
-        return true;
-    }
-
-    public final int hashCode() {
-        return this.c;
     }
 }

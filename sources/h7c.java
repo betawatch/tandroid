@@ -1,48 +1,32 @@
 // default package
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class h7c extends FrameLayout {
-    public int a;
-    public boolean b;
+public final class h7c implements Runnable {
+    public final /* synthetic */ i7c a;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3 = this.a;
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (this.b && view != null) {
-            i3 = view.getPaddingBottom() + view.getPaddingTop() + i3;
-        }
-        if (view != null && view.getMeasuredHeight() > 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i3, TLObject.FLAG_30));
-            return;
-        }
-        if (View.MeasureSpec.getMode(i2) != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - i3, TLObject.FLAG_30));
-            return;
-        }
-        int size = View.MeasureSpec.getSize(i2);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
-        measureChildren(makeMeasureSpec, i2);
-        int i4 = 0;
-        for (int i5 = 0; i5 < getChildCount(); i5++) {
-            i4 = Math.max(i4, getChildAt(i5).getMeasuredHeight());
-        }
-        if (size > 0) {
-            i4 = Math.min(i4, size - i3);
-        }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30));
+    public h7c(i7c i7cVar) {
+        this.a = i7cVar;
     }
 
-    public void setMinusHeight(int i) {
-        this.a = i;
-    }
-
-    public void setMinusPadding(boolean z) {
-        this.b = z;
+    @Override // java.lang.Runnable
+    public final void run() {
+        i7c i7cVar = this.a;
+        int i = i7cVar.a;
+        ArrayList arrayList = i7cVar.d;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        arrayList.clear();
+        TL_stories.TL_stories_getPeerMaxIDs tL_stories_getPeerMaxIDs = new TL_stories.TL_stories_getPeerMaxIDs();
+        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+            tL_stories_getPeerMaxIDs.id.add(na7.q1(i).h1(((Long) arrayList2.get(i2)).longValue()));
+        }
+        ConnectionsManager.getInstance(i).sendRequestTyped(tL_stories_getPeerMaxIDs, new hc((byte) 0), new w77(this, arrayList2, (byte) 17));
     }
 }

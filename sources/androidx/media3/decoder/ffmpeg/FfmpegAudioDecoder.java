@@ -5,9 +5,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class FfmpegAudioDecoder extends fka {
+public final class FfmpegAudioDecoder extends dia {
     public static final byte[] z = {102, 76, 97, 67};
     public final String r;
     public final byte[] s;
@@ -27,18 +27,18 @@ public final class FfmpegAudioDecoder extends fka {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioDecoder(int i, go4 go4Var, boolean z2) {
-        super(new la3[16], new SimpleDecoderOutputBuffer[16]);
+    public FfmpegAudioDecoder(int i, fm4 fm4Var, boolean z2) {
+        super(new z83[16], new SimpleDecoderOutputBuffer[16]);
         byte[] bArr;
         int i2;
         byte[] bArr2;
         String str = FfmpegLibrary.a;
-        go4Var.t.getClass();
-        String str2 = go4Var.t;
+        fm4Var.t.getClass();
+        String str2 = fm4Var.t;
         String a = FfmpegLibrary.a(str2);
         a.getClass();
         this.r = a;
-        List list = go4Var.w;
+        List list = fm4Var.w;
         char c = 65535;
         switch (str2.hashCode()) {
             case -1003765268:
@@ -79,12 +79,12 @@ public final class FfmpegAudioDecoder extends fka {
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & nm7.d4);
+                bArr6[1] = (byte) (bArr4.length & kk7.d4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & nm7.d4);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & kk7.d4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;
@@ -148,7 +148,7 @@ public final class FfmpegAudioDecoder extends fka {
         this.s = bArr;
         this.t = z2 ? (byte) 4 : (byte) 2;
         this.u = z2 ? 131070 : 65535;
-        long ffmpegInitialize = ffmpegInitialize(this.r, bArr, z2, go4Var.P, go4Var.N);
+        long ffmpegInitialize = ffmpegInitialize(this.r, bArr, z2, fm4Var.P, fm4Var.N);
         this.v = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
@@ -172,7 +172,7 @@ public final class FfmpegAudioDecoder extends fka {
         this.u = i;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        jte.f(i >= byteBuffer.limit());
+        gre.f(i >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);
@@ -183,24 +183,24 @@ public final class FfmpegAudioDecoder extends fka {
         return order;
     }
 
-    @Override // fka
-    public final la3 f() {
-        return new la3(2, FfmpegLibrary.b());
+    @Override // dia
+    public final z83 f() {
+        return new z83(2, FfmpegLibrary.b());
     }
 
-    @Override // ga3
+    @Override // u83
     public final String getName() {
         return "ffmpeg" + FfmpegLibrary.c() + "-" + this.r;
     }
 
-    @Override // fka
-    public final ja3 h(Throwable th) {
+    @Override // dia
+    public final x83 h(Throwable th) {
         return new FfmpegDecoderException("Unexpected decode error", th);
     }
 
-    @Override // fka
-    public final ja3 i(la3 la3Var, na3 na3Var, boolean z2) {
-        SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = (SimpleDecoderOutputBuffer) na3Var;
+    @Override // dia
+    public final x83 i(z83 z83Var, b93 b93Var, boolean z2) {
+        SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = (SimpleDecoderOutputBuffer) b93Var;
         if (z2) {
             long ffmpegReset = ffmpegReset(this.v, this.s);
             this.v = ffmpegReset;
@@ -208,10 +208,10 @@ public final class FfmpegAudioDecoder extends fka {
                 return new FfmpegDecoderException("Error resetting (see logcat).");
             }
         }
-        ByteBuffer byteBuffer = la3Var.c;
-        String str = hac.a;
+        ByteBuffer byteBuffer = z83Var.c;
+        String str = g8c.a;
         int limit = byteBuffer.limit();
-        long j = la3Var.e;
+        long j = z83Var.e;
         int i = this.u;
         simpleDecoderOutputBuffer.timeUs = j;
         ByteBuffer byteBuffer2 = simpleDecoderOutputBuffer.b;
@@ -237,9 +237,9 @@ public final class FfmpegAudioDecoder extends fka {
             this.y = ffmpegGetSampleRate(this.v);
             if (this.y == 0 && "alac".equals(this.r)) {
                 this.s.getClass();
-                yw7 yw7Var = new yw7(this.s);
-                yw7Var.N(this.s.length - 4);
-                this.y = yw7Var.E();
+                xu7 xu7Var = new xu7(this.s);
+                xu7Var.N(this.s.length - 4);
+                this.y = xu7Var.E();
             }
             this.w = true;
         }
@@ -250,7 +250,7 @@ public final class FfmpegAudioDecoder extends fka {
         return null;
     }
 
-    @Override // fka, ga3
+    @Override // dia, u83
     public final void release() {
         super.release();
         ffmpegRelease(this.v);

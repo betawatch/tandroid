@@ -1,34 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class qeb extends lp7 {
-    public final /* synthetic */ reb z0;
+public final class qeb {
+    public final /* synthetic */ byte a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qeb(reb rebVar, Context context) {
-        super(13, null, context);
-        this.z0 = rebVar;
+    public /* synthetic */ qeb(byte b) {
+        this.a = b;
     }
 
-    @Override // lp7, android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w0 = cmb.w0(null, cmb.i5, false);
-        reb rebVar = this.z0;
-        Paint paint = rebVar.e;
-        if (w0 != rebVar.a) {
-            rebVar.a = w0;
-            setTextColor(w0);
+    public final int a(xeb xebVar, int i) {
+        switch (this.a) {
+            case 0:
+            case 3:
+            default:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i;
         }
-        super.onDraw(canvas);
-        float L = gm.L(31.0f);
-        paint.setColor(cmb.w0(null, cmb.g7, false));
-        canvas.drawLine(gm.L(2.0f), L, getMeasuredWidth() - gm.L(2.0f), L, paint);
-        float measuredHeight = getMeasuredHeight() - gm.L(31.0f);
-        canvas.drawLine(gm.L(2.0f), measuredHeight, getMeasuredWidth() - gm.L(2.0f), measuredHeight, paint);
+    }
+
+    public final int b(xeb xebVar, int i) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+            case 3:
+            default:
+                return 0;
+            case 2:
+                return i;
+        }
+    }
+
+    public final int c(int i, int i2) {
+        switch (this.a) {
+            case 4:
+                return i2;
+            default:
+                return i;
+        }
     }
 }

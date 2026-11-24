@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class v6 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class v6 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        j67 j67Var;
+        j47 j47Var;
         byte b = this.a;
         boolean z = this.b;
         Object obj = this.c;
@@ -50,118 +50,118 @@ public final /* synthetic */ class v6 implements View.OnClickListener {
                 break;
             case 1:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i = ChatActivityEnterView.z7;
-                mw1 mw1Var = chatActivityEnterView.e6;
+                int i = ChatActivityEnterView.r7;
+                uv1 uv1Var = chatActivityEnterView.e6;
                 chatActivityEnterView.N0 = System.currentTimeMillis();
-                boolean w1 = chatActivityEnterView.w1();
-                if (!z && (j67Var = chatActivityEnterView.M0) != null) {
-                    j67Var.f(!w1);
+                boolean u1 = chatActivityEnterView.u1();
+                if (!z && (j47Var = chatActivityEnterView.M0) != null) {
+                    j47Var.f(!u1);
                     chatActivityEnterView.M0 = null;
                     break;
                 } else {
-                    chatActivityEnterView.d6 = !w1;
-                    gm.r(mw1Var);
-                    gm.d3(mw1Var, 500L);
+                    chatActivityEnterView.d6 = !u1;
+                    gl.r(uv1Var);
+                    gl.d3(uv1Var, 500L);
                     break;
                 }
                 break;
             case 2:
-                i22 i22Var = (i22) obj;
-                d dVar = i22Var.Z1;
-                if (i22Var.N2 != 0) {
-                    i22Var.W3.I();
-                    i22Var.dismiss();
+                x02 x02Var = (x02) obj;
+                d dVar = x02Var.Z1;
+                if (x02Var.N2 != 0) {
+                    x02Var.W3.z0();
+                    x02Var.dismiss();
                     break;
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    d88 d88Var = new d88(hashMap, arrayList, 0, true, (yv1) dVar);
-                    x12 x12Var = new x12(i22Var, hashMap, arrayList);
-                    w78 w78Var = d88Var.a;
-                    w78Var.t0 = x12Var;
-                    w78 w78Var2 = d88Var.b;
-                    w78Var2.t0 = x12Var;
-                    w78Var.u0 = new fk3(d88Var);
-                    w78Var2.u0 = new k44(d88Var, (byte) 25);
-                    int i2 = i22Var.P3;
-                    boolean z2 = i22Var.Q3;
-                    w78Var.k0(i2, z2);
-                    w78Var2.k0(i2, z2);
+                    b68 b68Var = new b68(hashMap, arrayList, 0, true, (mu1) dVar);
+                    m02 m02Var = new m02(x02Var, hashMap, arrayList);
+                    u58 u58Var = b68Var.a;
+                    u58Var.t0 = m02Var;
+                    u58 u58Var2 = b68Var.b;
+                    u58Var2.t0 = m02Var;
+                    u58Var.u0 = new s34((Object) b68Var, (byte) 23);
+                    u58Var2.u0 = new pj4((Object) b68Var, (byte) 24);
+                    int i2 = x02Var.P3;
+                    boolean z2 = x02Var.Q3;
+                    u58Var.j0(i2, z2);
+                    u58Var2.j0(i2, z2);
                     if (z) {
-                        dVar.showAsSheet(d88Var);
+                        dVar.showAsSheet(b68Var);
                     } else {
-                        dVar.presentFragment(d88Var);
+                        dVar.presentFragment(b68Var);
                     }
-                    i22Var.dismiss();
+                    x02Var.dismiss();
                     break;
                 }
             case 3:
-                qmb qmbVar = (qmb) obj;
+                pkb pkbVar = (pkb) obj;
                 for (int i3 = 0; i3 < 2; i3++) {
-                    kb2 kb2Var = ((kb2[]) qmbVar.b)[i3];
-                    ((jb2) kb2Var.d).a(kb2Var == view, true);
+                    z92 z92Var = ((z92[]) pkbVar.b)[i3];
+                    ((y92) z92Var.d).a(z92Var == view, true);
                 }
-                gda.l1 = z;
-                SharedPreferences.Editor edit = oc7.d1().edit();
-                edit.putBoolean("useThreeLinesLayout", gda.l1);
+                gba.l1 = z;
+                SharedPreferences.Editor edit = na7.c1().edit();
+                edit.putBoolean("useThreeLinesLayout", gba.l1);
                 edit.apply();
-                nm7.e().k(3, Boolean.TRUE);
+                kk7.e().k(3, Boolean.TRUE);
                 break;
             case 4:
-                s56 s56Var = (s56) obj;
+                s36 s36Var = (s36) obj;
                 if (!z) {
-                    bjb bjbVar = s56Var.n;
-                    if (bjbVar == null || !bjbVar.e.h) {
-                        bjb bjbVar2 = (bjb) view;
-                        boolean z3 = bjbVar2.e.h;
-                        bjbVar2.setChecked(!z3);
-                        s56Var.e0(z3);
-                        bjb bjbVar3 = s56Var.n;
-                        if (bjbVar3 != null) {
-                            if (bjbVar2.e.h) {
-                                bjbVar3.setChecked(false);
-                                s56Var.n.setCheckBoxIcon(R.drawable.permission_locked);
-                                s56Var.r.setVisibility(8);
+                    ahb ahbVar = s36Var.n;
+                    if (ahbVar == null || !ahbVar.e.h) {
+                        ahb ahbVar2 = (ahb) view;
+                        boolean z3 = ahbVar2.e.h;
+                        ahbVar2.setChecked(!z3);
+                        s36Var.d0(z3);
+                        ahb ahbVar3 = s36Var.n;
+                        if (ahbVar3 != null) {
+                            if (ahbVar2.e.h) {
+                                ahbVar3.setChecked(false);
+                                s36Var.n.setCheckBoxIcon(R.drawable.permission_locked);
+                                s36Var.r.setVisibility(8);
                                 break;
-                            } else if (s56Var.e == null) {
-                                bjbVar3.setCheckBoxIcon(0);
+                            } else if (s36Var.e == null) {
+                                ahbVar3.setCheckBoxIcon(0);
                                 break;
                             }
                         }
                     } else {
-                        int i4 = -s56Var.N;
-                        s56Var.N = i4;
-                        gm.A3(i4, bjbVar, null);
+                        int i4 = -s36Var.N;
+                        s36Var.N = i4;
+                        gl.A3(i4, ahbVar, null);
                         break;
                     }
                 }
                 break;
             case 5:
-                a58 a58Var = (a58) obj;
+                y28 y28Var = (y28) obj;
                 boolean z4 = !z;
-                oc7 r1 = oc7.r1(a58Var.s2);
-                if (r1.Q3 != z4) {
-                    SharedPreferences.Editor edit2 = r1.X3.edit();
-                    r1.Q3 = z4;
+                na7 q1 = na7.q1(y28Var.s2);
+                if (q1.Q3 != z4) {
+                    SharedPreferences.Editor edit2 = q1.X3.edit();
+                    q1.Q3 = z4;
                     edit2.putBoolean("storyQualityFull", z4).apply();
-                    r1.getNotificationCenter().k(nm7.o3, new Object[0]);
+                    q1.getNotificationCenter().k(kk7.n3, new Object[0]);
                 }
-                new c41(a58Var.S0, a58Var.r0).I(R.raw.chats_infotip, jb6.M0(!z ? 2131744193 : 2131744196, null), jb6.M0(!z ? 2131744194 : 2131744197, null)).j();
-                v48 v48Var = a58Var.j1;
-                if (v48Var != null) {
-                    v48Var.a();
+                new u21(y28Var.S0, y28Var.r0).I(R.raw.chats_infotip, k96.M0(!z ? 2131744267 : 2131744270, null), k96.M0(!z ? 2131744268 : 2131744271, null)).j();
+                s28 s28Var = y28Var.j1;
+                if (s28Var != null) {
+                    s28Var.a();
                     break;
                 }
                 break;
             default:
-                v48 v48Var2 = (v48) obj;
-                s96 s96Var = s96.N;
-                if (s96Var != null) {
-                    s96Var.D(!z);
+                s28 s28Var2 = (s28) obj;
+                t76 t76Var = t76.N;
+                if (t76Var != null) {
+                    t76Var.D(!z);
                 }
-                v48 v48Var3 = v48Var2.x.j1;
-                if (v48Var3 != null) {
-                    v48Var3.a();
+                s28 s28Var3 = s28Var2.x.j1;
+                if (s28Var3 != null) {
+                    s28Var3.a();
                     break;
                 }
                 break;

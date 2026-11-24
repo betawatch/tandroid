@@ -1,71 +1,57 @@
 // default package
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.util.SparseArray;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class nx {
-    public TextPaint a;
-    public final SparseArray b = new SparseArray();
-    public final SparseArray c = new SparseArray();
-    public final SparseArray d = new SparseArray();
-    public final SparseArray e = new SparseArray();
-    public final SparseArray f = new SparseArray();
-    public final SparseArray g = new SparseArray();
-    public final SparseArray h = new SparseArray();
-    public final SparseArray i = new SparseArray();
-    public final SparseArray j = new SparseArray();
-    public final SparseArray k = new SparseArray();
-    public final SparseArray l = new SparseArray();
-    public final SparseArray m = new SparseArray();
-    public final SparseArray n = new SparseArray();
-    public final SparseArray o = new SparseArray();
-    public final SparseArray p = new SparseArray();
-    public final SparseArray q = new SparseArray();
-    public final SparseArray r = new SparseArray();
-    public final SparseArray s = new SparseArray();
-    public final SparseArray t = new SparseArray();
-    public final SparseArray u = new SparseArray();
-    public final SparseArray v = new SparseArray();
-    public final SparseArray w = new SparseArray();
-    public final SparseArray x = new SparseArray();
-    public final SparseArray y = new SparseArray();
-    public final SparseArray z = new SparseArray();
-    public final SparseArray A = new SparseArray();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class nx implements Runnable {
+    public static Handler f;
+    public final /* synthetic */ v3d e;
+    public volatile int b = 1;
+    public final AtomicBoolean c = new AtomicBoolean();
+    public final AtomicBoolean d = new AtomicBoolean();
+    public final le7 a = new le7(this, new ke7(this, 0));
 
-    public static void a(ui5 ui5Var, SparseArray sparseArray) {
-        for (int i = 0; i < sparseArray.size(); i++) {
-            int keyAt = sparseArray.keyAt(i);
-            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i);
-            if (textPaint != null) {
-                if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
-                    textPaint.setColor(cmb.w0(null, cmb.F6, false));
-                } else {
-                    textPaint.setColor(cmb.w0(null, cmb.I6, false));
-                }
+    public nx(v3d v3dVar) {
+        this.e = v3dVar;
+    }
+
+    public final void a() {
+        v3d v3dVar = this.e;
+        Iterator it = v3dVar.j.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            if (((gy4) it.next()).a(v3dVar)) {
+                i++;
             }
+        }
+        try {
+            v3dVar.i.tryAcquire(i, 5L, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
+            Thread.currentThread().interrupt();
         }
     }
 
-    public static void b(int i, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
-        if ((i & 1) != 0) {
-            if ((i & 2) != 0) {
-                textPaint.setTypeface(typeface2);
-                return;
-            } else {
-                textPaint.setTypeface(typeface3);
-                return;
+    public final void b(Object obj) {
+        Handler handler;
+        synchronized (nx.class) {
+            handler = f;
+            if (handler == null) {
+                handler = new Handler(Looper.getMainLooper());
+                f = handler;
             }
         }
-        if ((i & 2) != 0) {
-            textPaint.setTypeface(typeface4);
-        } else {
-            if ((i & 4) != 0) {
-                return;
-            }
-            textPaint.setTypeface(typeface);
-        }
+        handler.post(new rld((Object) this, obj, false, (byte) 7));
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.e.a();
     }
 }

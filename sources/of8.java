@@ -1,23 +1,32 @@
 // default package
 
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class of8 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ pf8 a;
+public final /* synthetic */ class of8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rf8 b;
 
-    public of8(pf8 pf8Var) {
-        this.a = pf8Var;
+    public /* synthetic */ of8(rf8 rf8Var, byte b) {
+        this.a = b;
+        this.b = rf8Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.c.e();
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.a.c.f();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        rf8 rf8Var = this.b;
+        switch (b) {
+            case 0:
+                rf8Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rf8Var.c(true);
+                break;
+            default:
+                rf8Var.getClass();
+                rf8Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rf8Var.c(true);
+                break;
+        }
     }
 }

@@ -1,80 +1,33 @@
 // default package
 
-import java.util.ListIterator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class j8d extends v7c implements ListIterator {
-    public final int b;
-    public int c;
-    public final c9d d;
+public final class j8d extends qo2 {
+    public final /* synthetic */ byte f;
+    public final /* synthetic */ so2 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j8d(c9d c9dVar, int i) {
-        super((byte) 5);
-        int size = c9dVar.size();
-        if (i < 0 || i > size) {
-            wa3.i(w5f.c(i, size, "index"));
-            throw null;
+    public /* synthetic */ j8d(so2 so2Var, byte b) {
+        super(so2Var, (char) 0);
+        this.f = b;
+        this.h = so2Var;
+    }
+
+    @Override // qo2
+    public final Object b(int i) {
+        byte b = this.f;
+        so2 so2Var = this.h;
+        switch (b) {
+            case 0:
+                Object[] objArr = so2Var.d;
+                objArr.getClass();
+                return objArr[i];
+            case 1:
+                return new i9d(so2Var, i);
+            default:
+                Object[] objArr2 = so2Var.e;
+                objArr2.getClass();
+                return objArr2[i];
         }
-        this.b = size;
-        this.c = i;
-        this.d = c9dVar;
-    }
-
-    public final Object a(int i) {
-        return this.d.get(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            u36.g();
-            return null;
-        }
-        int i = this.c;
-        this.c = i + 1;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            u36.g();
-            return null;
-        }
-        int i = this.c - 1;
-        this.c = i;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
     }
 }

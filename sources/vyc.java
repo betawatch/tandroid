@@ -1,17 +1,9 @@
 // default package
 
-import android.view.ActionMode;
-import android.view.SearchEvent;
-import android.view.Window;
+import java.util.EnumMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class vyc {
-    public static boolean a(Window.Callback callback, SearchEvent searchEvent) {
-        return callback.onSearchRequested(searchEvent);
-    }
-
-    public static ActionMode b(Window.Callback callback, ActionMode.Callback callback2, int i) {
-        return callback.onWindowStartingActionMode(callback2, i);
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public interface vyc {
+    qj0 n(String str, ze0 ze0Var, EnumMap enumMap);
 }

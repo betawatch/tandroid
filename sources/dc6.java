@@ -1,48 +1,53 @@
 // default package
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.tgnet.TLRPC;
+import android.os.Build;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class dc6 extends c6 {
-    public final /* synthetic */ pc6 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class dc6 {
+    public final String a;
+    public final boolean b;
+    public final String c;
 
-    public dc6(pc6 pc6Var) {
-        this.a = pc6Var;
+    public dc6(String str, String str2) {
+        fre.g(str, "The log tag cannot be null or empty.");
+        this.a = str;
+        this.b = str.length() <= 23;
+        this.c = TextUtils.isEmpty(str2) ? null : tb4.y("[", str2, "] ");
     }
 
-    @Override // c6
-    public final void b(int i) {
-        pc6 pc6Var = this.a;
-        if (i == -1) {
-            pc6Var.finishFragment();
+    public final void a(Exception exc, String str, Object... objArr) {
+        if (Build.TYPE.equals("user") || !this.b) {
             return;
         }
-        if (i != 1) {
-            if (i == 5) {
-                pc6Var.C0(false);
-                return;
-            }
-            if (i == 6) {
-                pc6Var.B0(null);
-                return;
-            }
-            if ((i == 2 || i == 3 || i == 4) && pc6Var.F != null) {
-                pc6Var.D0();
-                pc6Var.F.j(i != 3 ? i == 4 ? 2 : 0 : 1);
-                return;
-            }
+        String str2 = this.a;
+        if (Log.isLoggable(str2, 3)) {
+            Log.d(str2, d(str, objArr), exc);
+        }
+    }
+
+    public final void b(String str, Object... objArr) {
+        if (Build.TYPE.equals("user") || !this.b) {
             return;
         }
-        try {
-            TLRPC.GeoPoint geoPoint = pc6Var.J0.k.media.geo;
-            double d = geoPoint.lat;
-            double d2 = geoPoint._long;
-            pc6Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
-        } catch (Exception e) {
-            fc4.g(e, true);
+        String str2 = this.a;
+        if (Log.isLoggable(str2, 3)) {
+            Log.d(str2, d(str, objArr));
         }
+    }
+
+    public final void c(Object... objArr) {
+        Log.e(this.a, d("Bundle is null", objArr));
+    }
+
+    public final String d(String str, Object... objArr) {
+        if (objArr.length != 0) {
+            str = String.format(Locale.ROOT, str, objArr);
+        }
+        String str2 = this.c;
+        return !TextUtils.isEmpty(str2) ? String.valueOf(str2).concat(str) : str;
     }
 }

@@ -1,108 +1,46 @@
 // default package
 
-import java.nio.ByteBuffer;
-import sun.misc.Unsafe;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class ne3 {
-    public static final du2 a = new du2("CLOSED", (byte) 2);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ne3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ue3 b;
 
-    public static void a(de deVar, de deVar2) {
-        boolean h0;
-        int[] iArr = {0};
-        do {
-            h0 = deVar.h0(iArr[0]);
-            iArr[0] = iArr[0] + 1;
-            int n0 = deVar.n0(iArr, 2);
-            if (n0 == 0) {
-                int i = ((iArr[0] + 7) & (-8)) / 8;
-                int f0 = (deVar.f0(i) & 255) + ((deVar.f0(i + 1) & 255) << 8);
-                int i2 = i + 4;
-                deVar2.getClass();
-                byte[] array = ((ByteBuffer) deVar.c).array();
-                int capacity = ((ByteBuffer) deVar2.c).capacity();
-                int i3 = deVar2.b + f0;
-                if (capacity < i3) {
-                    deVar2.c0(i3 + 1024);
-                }
-                ((ByteBuffer) deVar2.c).put(array, i2, f0);
-                deVar2.b += f0;
-                iArr[0] = (i2 + f0) << 3;
-            } else if (n0 == 1) {
-                c(deVar, iArr, deVar2, bk4.e, wj4.e);
-            } else {
-                if (n0 != 2) {
-                    throw new v40(String.format("[%s] Bad compression type '11' at the bit index '%d'.", ne3.class.getSimpleName(), Integer.valueOf(iArr[0])));
-                }
-                ir[] irVarArr = new ir[2];
-                oe3.d(deVar, iArr, irVarArr);
-                c(deVar, iArr, deVar2, irVarArr[0], irVarArr[1]);
-            }
-            if (deVar.b <= iArr[0] / 8) {
-                h0 = true;
-            }
-        } while (!h0);
+    public /* synthetic */ ne3(ue3 ue3Var, byte b) {
+        this.a = b;
+        this.b = ue3Var;
     }
 
-    public static final Object b(qx9 qx9Var, long j, fs4 fs4Var) {
-        while (true) {
-            qx9 qx9Var2 = qx9Var;
-            while (true) {
-                if (qx9Var2.d >= j && !qx9Var2.d()) {
-                    return qx9Var2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        ue3 ue3Var = this.b;
+        switch (b) {
+            case 0:
+                ue3Var.W3 = 1.0f;
+                ue3Var.Z3 = null;
+                ue3Var.a4 = null;
+                ue3Var.b4 = null;
+                ue3Var.invalidate();
+                break;
+            case 1:
+                ue3Var.X3 = 1.0f;
+                ue3Var.invalidate();
+                break;
+            default:
+                int i = (ue3Var.T2 ? 1 : 0) + (ue3Var.R2 ? 2 : 0) + (ue3Var.S2 ? 4 : 0);
+                int i2 = ue3Var.w4;
+                if (i2 != i) {
+                    ue3Var.J(i2, i);
+                } else {
+                    ue3Var.A4 = false;
+                    ue3Var.y4 = i2;
                 }
-                Object objectVolatile = fy.a.getObjectVolatile(qx9Var2, fs2.a);
-                du2 du2Var = a;
-                if (objectVolatile == du2Var) {
-                    return du2Var;
-                }
-                qx9Var = (qx9) ((fs2) objectVolatile);
-                if (qx9Var == null) {
-                    qx9 qx9Var3 = (qx9) fs4Var.invoke(Long.valueOf(qx9Var2.d + 1), qx9Var2);
-                    while (true) {
-                        Unsafe unsafe = fy.a;
-                        long j2 = fs2.a;
-                        if (unsafe.compareAndSwapObject(qx9Var2, j2, (Object) null, qx9Var3)) {
-                            if (qx9Var2.d()) {
-                                qx9Var2.e();
-                            }
-                            qx9Var2 = qx9Var3;
-                        } else if (unsafe.getObjectVolatile(qx9Var2, j2) != null) {
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static void c(de deVar, int[] iArr, de deVar2, ir irVar, ir irVar2) {
-        while (true) {
-            int m = irVar.m(deVar, iArr);
-            if (m == 256) {
-                return;
-            }
-            if (m < 0 || m > 255) {
-                int e = oe3.e(deVar, iArr, m);
-                int c = oe3.c(deVar, iArr, irVar2);
-                int i = deVar2.b;
-                byte[] bArr = new byte[e];
-                int i2 = i - c;
-                int i3 = 0;
-                int i4 = i2;
-                while (i3 < e) {
-                    if (i <= i4) {
-                        i4 = i2;
-                    }
-                    bArr[i3] = deVar2.f0(i4);
-                    i3++;
-                    i4++;
-                }
-                deVar2.m0(bArr);
-            } else {
-                deVar2.l0(m);
-            }
+                ue3Var.invalidate();
+                break;
         }
     }
 }

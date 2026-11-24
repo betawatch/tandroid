@@ -2,33 +2,36 @@
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class x3d {
-    public final gp a;
-    public final o94 b;
+public final class x3d implements vn {
+    public static final x3d c;
+    public final boolean a;
+    public final String b;
 
-    public /* synthetic */ x3d(gp gpVar, o94 o94Var) {
-        this.a = gpVar;
-        this.b = o94Var;
+    static {
+        aec aecVar = new aec((byte) 7, false);
+        aecVar.b = Boolean.FALSE;
+        c = new x3d(aecVar);
+    }
+
+    public x3d(aec aecVar) {
+        this.a = ((Boolean) aecVar.b).booleanValue();
+        this.b = (String) aecVar.c;
     }
 
     public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
         if (!(obj instanceof x3d)) {
             return false;
         }
         x3d x3dVar = (x3d) obj;
-        return fse.a(this.a, x3dVar.a) && fse.a(this.b, x3dVar.b);
+        return cqe.a(null, null) && this.a == x3dVar.a && cqe.a(this.b, x3dVar.b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
-    }
-
-    public final String toString() {
-        wm4 wm4Var = new wm4(this);
-        wm4Var.a(this.a, "key");
-        wm4Var.a(this.b, "feature");
-        return wm4Var.toString();
+        return Arrays.hashCode(new Object[]{null, Boolean.valueOf(this.a), this.b});
     }
 }

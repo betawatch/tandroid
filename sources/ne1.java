@@ -1,34 +1,8 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ne1 implements d58 {
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ ne1(byte b) {
-        this.a = b;
-    }
-
-    @Override // d58
-    public final void a(Status status) {
-        switch (this.a) {
-            case 0:
-                fp.b.decrementAndGet();
-                break;
-            case 1:
-                fp.b.decrementAndGet();
-                break;
-            case 2:
-                fp.b.decrementAndGet();
-                break;
-            case 3:
-                fp.b.decrementAndGet();
-                break;
-            default:
-                fp.b.decrementAndGet();
-                break;
-        }
-    }
+public final class ne1 {
+    public static final /* synthetic */ ne1 a = new ne1();
+    public static final int b = (int) zue.a("kotlinx.coroutines.channels.defaultBuffer", 64, 1, 2147483646);
 }

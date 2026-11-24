@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class o6 implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -65,21 +65,21 @@ public final class o6 implements Runnable {
                     } else {
                         int i2 = 500;
                         if (intent.getExtras() != null) {
-                            ok2 ok2Var = new ok2(intent);
+                            aj2 aj2Var = new aj2(intent);
                             CountDownLatch countDownLatch = new CountDownLatch(1);
                             synchronized (FirebaseInstanceIdReceiver.class) {
                                 SoftReference softReference = FirebaseInstanceIdReceiver.b;
                                 executor = softReference != null ? (Executor) softReference.get() : null;
                                 if (executor == null) {
-                                    ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new op7("pscm-ack-executor"));
+                                    ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new kn7("pscm-ack-executor"));
                                     threadPoolExecutor.allowCoreThreadTimeOut(true);
                                     executor = Executors.unconfigurableExecutorService(threadPoolExecutor);
                                     FirebaseInstanceIdReceiver.b = new SoftReference(executor);
                                 }
                             }
-                            executor.execute(new rz1(context, ok2Var, countDownLatch, false, (byte) 9));
+                            executor.execute(new ey1(context, aj2Var, countDownLatch, false, (byte) 9));
                             try {
-                                i2 = ((Integer) Tasks.await(new lx6(context, (byte) 1).K(intent))).intValue();
+                                i2 = ((Integer) Tasks.await(new lv6(context).F(intent))).intValue();
                             } catch (InterruptedException | ExecutionException e) {
                                 Log.e("FirebaseMessaging", "Failed to send message to service.", e);
                             }

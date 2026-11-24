@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 final class zzqc {
     public static final /* synthetic */ int zza = 0;
@@ -10,11 +10,11 @@ final class zzqc {
         int zzi = zzi(bArr, i, zzqbVar);
         int i2 = zzqbVar.zza;
         if (i2 < 0) {
-            i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
             return 0;
         }
         if (i2 > bArr.length - zzi) {
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             return 0;
         }
         if (i2 == 0) {
@@ -70,7 +70,7 @@ final class zzqc {
         if (zzi == i2) {
             return zzi;
         }
-        i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         return 0;
     }
 
@@ -78,7 +78,7 @@ final class zzqc {
         int zzi = zzi(bArr, i, zzqbVar);
         int i2 = zzqbVar.zza;
         if (i2 < 0) {
-            i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
             return 0;
         }
         if (i2 == 0) {
@@ -91,7 +91,7 @@ final class zzqc {
 
     public static int zzh(int i, byte[] bArr, int i2, int i3, zzuw zzuwVar, zzqb zzqbVar) {
         if ((i >>> 3) == 0) {
-            i2d.j("Protocol message contained an invalid tag (zero).");
+            fvc.i("Protocol message contained an invalid tag (zero).");
             return 0;
         }
         int i4 = i & 7;
@@ -108,11 +108,11 @@ final class zzqc {
             int zzi = zzi(bArr, i2, zzqbVar);
             int i5 = zzqbVar.zza;
             if (i5 < 0) {
-                i2d.j("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+                fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
                 return 0;
             }
             if (i5 > bArr.length - zzi) {
-                i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+                fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
                 return 0;
             }
             if (i5 == 0) {
@@ -127,7 +127,7 @@ final class zzqc {
                 zzuwVar.zzj(i, Integer.valueOf(zzb(bArr, i2)));
                 return i2 + 4;
             }
-            i2d.j("Protocol message contained an invalid tag (zero).");
+            fvc.i("Protocol message contained an invalid tag (zero).");
             return 0;
         }
         int i6 = (i & (-8)) | 4;
@@ -152,7 +152,7 @@ final class zzqc {
         }
         zzqbVar.zze--;
         if (i2 > i3 || i8 != i6) {
-            i2d.j("Failed to parse the message.");
+            fvc.i("Failed to parse the message.");
             return 0;
         }
         zzuwVar.zzj(i, zzf);
@@ -172,7 +172,7 @@ final class zzqc {
     public static int zzj(int i, byte[] bArr, int i2, zzqb zzqbVar) {
         byte b = bArr[i2];
         int i3 = i2 + 1;
-        int i4 = i & nm7.K1;
+        int i4 = i & kk7.K1;
         if (b >= 0) {
             zzqbVar.zza = i4 | (b << 7);
             return i3;
@@ -265,7 +265,7 @@ final class zzqc {
         }
         int i5 = i3;
         if (i4 < 0 || i4 > i2 - i5) {
-            i2d.j("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             return 0;
         }
         int i6 = zzqbVar.zze + 1;
@@ -280,7 +280,7 @@ final class zzqc {
 
     public static int zzo(int i, byte[] bArr, int i2, int i3, zzqb zzqbVar) {
         if ((i >>> 3) == 0) {
-            i2d.j("Protocol message contained an invalid tag (zero).");
+            fvc.i("Protocol message contained an invalid tag (zero).");
             return 0;
         }
         int i4 = i & 7;
@@ -297,7 +297,7 @@ final class zzqc {
             if (i4 == 5) {
                 return i2 + 4;
             }
-            i2d.j("Protocol message contained an invalid tag (zero).");
+            fvc.i("Protocol message contained an invalid tag (zero).");
             return 0;
         }
         int i5 = (i & (-8)) | 4;
@@ -313,7 +313,7 @@ final class zzqc {
         if (i2 <= i3 && i6 == i5) {
             return i2;
         }
-        i2d.j("Failed to parse the message.");
+        fvc.i("Failed to parse the message.");
         return 0;
     }
 
@@ -325,6 +325,6 @@ final class zzqc {
         if (i < zzb) {
             return;
         }
-        i2d.j("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+        fvc.i("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
     }
 }

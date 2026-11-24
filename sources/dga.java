@@ -1,96 +1,127 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class dga extends q59 {
-    public final Context c;
-    public final /* synthetic */ nha d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class dga extends ccb implements eq4 {
+    public final /* synthetic */ byte a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ fga c;
 
-    public dga(nha nhaVar, Context context) {
-        this.d = nhaVar;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dga(fga fgaVar, fw2 fw2Var, byte b) {
+        super(2, fw2Var);
+        this.a = b;
+        this.c = fgaVar;
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        cha[] chaVarArr = this.d.w1;
-        return chaVarArr[5].a.size() != 0 || chaVarArr[5].g;
-    }
-
-    @Override // y59
-    public final int b() {
-        cha[] chaVarArr = this.d.w1;
-        if (chaVarArr[5].a.size() != 0 || chaVarArr[5].g) {
-            return chaVarArr[5].a.size();
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        byte b = this.a;
+        fga fgaVar = this.c;
+        switch (b) {
+            case 0:
+                dga dgaVar = new dga(fgaVar, fw2Var, (byte) 0);
+                dgaVar.b = obj;
+                return dgaVar;
+            default:
+                dga dgaVar2 = new dga(fgaVar, fw2Var, (byte) 1);
+                dgaVar2.b = obj;
+                return dgaVar2;
         }
-        return 1;
     }
 
-    @Override // y59
-    public final long c(int i) {
-        return i;
+    @Override // eq4
+    public final Object invoke(Object obj, Object obj2) {
+        byte b = this.a;
+        g5c g5cVar = g5c.a;
+        w5a w5aVar = (w5a) obj;
+        fw2 fw2Var = (fw2) obj2;
+        switch (b) {
+        }
+        return ((dga) create(w5aVar, fw2Var)).invokeSuspend(g5cVar);
     }
 
-    @Override // y59
-    public final int d(int i) {
-        cha[] chaVarArr = this.d.w1;
-        return (chaVarArr[5].a.size() != 0 || chaVarArr[5].g) ? 12 : 11;
-    }
-
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        if (u69Var.f == 12) {
-            nha nhaVar = this.d;
-            k47 k47Var = (k47) nhaVar.w1[5].a.get(i);
-            TLRPC.Document F0 = k47Var.F0();
-            if (F0 != null) {
-                View view = u69Var.a;
-                if (view instanceof lx2) {
-                    lx2 lx2Var = (lx2) view;
-                    lx2Var.d(k47Var.k.date, k47Var, F0);
-                    if (nhaVar.F1) {
-                        lx2Var.c(nhaVar.c1[(k47.B0(k47Var.k) > nhaVar.m1 ? 1 : (k47.B0(k47Var.k) == nhaVar.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(k47Var.e1()) >= 0, !nhaVar.e1);
-                    } else {
-                        lx2Var.c(false, !nhaVar.e1);
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        boolean z;
+        byte b = this.a;
+        fga fgaVar = this.c;
+        switch (b) {
+            case 0:
+                qse.b(obj);
+                w5a w5aVar = (w5a) this.b;
+                fgaVar.d.getClass();
+                return w5a.a(w5aVar, null, snb.a(), null, 5);
+            default:
+                qse.b(obj);
+                w5a w5aVar2 = (w5a) this.b;
+                xk8 xk8Var = fgaVar.f;
+                boolean d = fgaVar.d(w5aVar2);
+                Map map = w5aVar2.c;
+                if (map != null) {
+                    xk8Var.getClass();
+                    z = false;
+                    if (!xk8Var.f) {
+                        ArrayList c = s4.c(xk8Var.a);
+                        ArrayList arrayList = new ArrayList();
+                        int size = c.size();
+                        int i = 0;
+                        while (i < size) {
+                            Object obj2 = c.get(i);
+                            i++;
+                            zk8 zk8Var = (zk8) obj2;
+                            vk8 vk8Var = (vk8) map.get(zk8Var.a);
+                            ku7 ku7Var = vk8Var != null ? new ku7(zk8Var, vk8Var) : null;
+                            if (ku7Var != null) {
+                                arrayList.add(ku7Var);
+                            }
+                        }
+                        if (!arrayList.isEmpty()) {
+                            int size2 = arrayList.size();
+                            int i2 = 0;
+                            while (i2 < size2) {
+                                Object obj3 = arrayList.get(i2);
+                                i2++;
+                                ku7 ku7Var2 = (ku7) obj3;
+                                zk8 zk8Var2 = (zk8) ku7Var2.a;
+                                vk8 vk8Var2 = (vk8) ku7Var2.b;
+                                boolean a = rp5.a(xk8Var.a(), zk8Var2.a);
+                                int i3 = zk8Var2.b;
+                                if (a) {
+                                    if (i3 == vk8Var2.a && rp5.a((String) xk8Var.d.getValue(), vk8Var2.b)) {
+                                    }
+                                } else if (i3 != vk8Var2.a) {
+                                }
+                            }
+                        }
+                        z = true;
                     }
+                    if (z) {
+                        Log.d("FirebaseSessions", "Cold app start detected");
+                    }
+                } else {
+                    Log.d("FirebaseSessions", "No process data map");
+                    z = true;
                 }
-            }
-        }
-    }
-
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        nha nhaVar = this.d;
-        ylb ylbVar = nhaVar.I1;
-        Context context = this.c;
-        if (i == 11) {
-            bj G = nha.G(5, nhaVar.m1, ylbVar, context);
-            G.setLayoutParams(new g69(-1, -1));
-            return new b59(G);
-        }
-        lx2 lx2Var = new lx2(ylbVar, context, true);
-        lx2Var.setCanPreviewGif(true);
-        return new b59(lx2Var);
-    }
-
-    @Override // y59
-    public final void y(u69 u69Var) {
-        View view = u69Var.a;
-        if (view instanceof lx2) {
-            ImageReceiver photoImage = ((lx2) view).getPhotoImage();
-            if (this.d.n0[0].F == 5) {
-                photoImage.u0 = true;
-                photoImage.w0(false);
-            } else {
-                photoImage.u0 = false;
-                photoImage.x0();
-            }
+                boolean c2 = fgaVar.c(w5aVar2);
+                if (z) {
+                    map = xk8Var.b(d24.a);
+                } else if (c2) {
+                    map = xk8Var.b(map);
+                }
+                a6a a6aVar = z ? null : w5aVar2.a;
+                if (!d && !z) {
+                    return c2 ? w5a.a(w5aVar2, null, null, xk8Var.b(map), 3) : w5aVar2;
+                }
+                a6a a2 = fgaVar.b.a(a6aVar);
+                g6a g6aVar = fgaVar.c;
+                ppd.b(h9e.a(g6aVar.e), new e6a(g6aVar, a2, null));
+                xk8Var.f = true;
+                return new w5a(a2, null, map);
         }
     }
 }

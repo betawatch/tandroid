@@ -1,39 +1,14 @@
 // default package
 
-import java.util.Locale;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum dsb extends rub {
+public enum dsb extends qsb {
     public dsb() {
-        super("RcdataLessthanSign", 10);
+        super("Rawtext", 4);
     }
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        if (hl1Var.m('/')) {
-            bsbVar.e();
-            bsbVar.a(rub.w);
-            return;
-        }
-        if (hl1Var.o() && bsbVar.o != null) {
-            String str = "</" + bsbVar.o;
-            Locale locale = Locale.ENGLISH;
-            String lowerCase = str.toLowerCase(locale);
-            String upperCase = str.toUpperCase(locale);
-            if (hl1Var.p(lowerCase) <= -1 && hl1Var.p(upperCase) <= -1) {
-                wrb d = bsbVar.d(false);
-                String str2 = bsbVar.o;
-                d.e = str2;
-                d.f = str2 != null ? str2.toLowerCase(locale) : "";
-                bsbVar.i = d;
-                bsbVar.k();
-                hl1Var.q();
-                bsbVar.c = rub.a;
-                return;
-            }
-        }
-        bsbVar.h("<");
-        bsbVar.c = rub.c;
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        qsb.d(aqbVar, zj1Var, this, qsb.y);
     }
 }

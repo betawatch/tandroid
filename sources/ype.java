@@ -1,36 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ype extends f4e {
-    private static final ype zzb;
-    private int zzd;
-    private int zze;
-    private String zzf = "";
+public final class ype implements zn7 {
+    public static final ype a = new ype();
 
     static {
-        ype ypeVar = new ype();
-        zzb = ypeVar;
-        f4e.k(ype.class, ypeVar);
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
     }
 
-    @Override // f4e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new wce(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", btd.h, "zzf"});
-        }
-        if (i2 == 3) {
-            return new ype();
-        }
-        if (i2 == 4) {
-            return new hrd(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
         throw null;
     }

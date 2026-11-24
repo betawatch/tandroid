@@ -1,60 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class s8d extends c9d {
-    public final transient c9d r;
+public final class s8d extends r6d {
+    public final transient Object[] r;
+    public final transient boolean s;
+    public final transient int w;
 
-    public s8d(c9d c9dVar) {
-        super((byte) 3);
-        this.r = c9dVar;
-    }
-
-    @Override // c9d, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return this.r.contains(obj);
+    /* JADX WARN: Multi-variable type inference failed */
+    public s8d(int i, int i2, Object[] objArr) {
+        super((byte) 2);
+        this.r = objArr;
+        this.s = i;
+        this.w = i2;
     }
 
     @Override // java.util.List
     public final Object get(int i) {
-        c9d c9dVar = this.r;
-        w5f.a(i, c9dVar.size());
-        return c9dVar.get((c9dVar.size() - 1) - i);
-    }
-
-    @Override // c9d, java.util.List
-    public final int indexOf(Object obj) {
-        int lastIndexOf = this.r.lastIndexOf(obj);
-        if (lastIndexOf >= 0) {
-            return (r1.size() - 1) - lastIndexOf;
-        }
-        return -1;
-    }
-
-    @Override // c9d, java.util.List
-    public final int lastIndexOf(Object obj) {
-        int indexOf = this.r.indexOf(obj);
-        if (indexOf >= 0) {
-            return (r1.size() - 1) - indexOf;
-        }
-        return -1;
+        k4f.a(i, this.w);
+        Object obj = this.r[(i << 1) + (this.s ? 1 : 0)];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.r.size();
-    }
-
-    @Override // c9d
-    public final c9d y() {
-        return this.r;
-    }
-
-    @Override // c9d, java.util.List
-    /* renamed from: z, reason: merged with bridge method [inline-methods] */
-    public final c9d subList(int i, int i2) {
-        c9d c9dVar = this.r;
-        w5f.b(i, i2, c9dVar.size());
-        return c9dVar.subList(c9dVar.size() - i2, c9dVar.size() - i).y();
+        return this.w;
     }
 }

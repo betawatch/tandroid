@@ -1,38 +1,64 @@
 // default package
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class m01 {
-    public final long a;
-    public int b;
-    public k01 c;
-    public k01 d;
-    public int e;
-    public long f;
-    public boolean g;
-    public byte[] h;
-    public int i;
-    public int j;
-    public final LinkedHashMap k = new LinkedHashMap();
-    public long l;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class m01 {
+    public static final List a = Arrays.asList(new k01(), new f01(), new h01(), new j01(), new g01(), new i01());
 
-    public m01(long j) {
-        this.a = j;
+    public float a() {
+        return 0.85f;
     }
 
-    public final boolean a() {
-        if (this.h == null) {
-            return false;
+    public int b() {
+        return -16777216;
+    }
+
+    public float c() {
+        return 0.25f;
+    }
+
+    public int d() {
+        return R.raw.photo_arrow;
+    }
+
+    public float e() {
+        return 1.0f;
+    }
+
+    public float f() {
+        return 0.4f;
+    }
+
+    public float g() {
+        return 1.0f;
+    }
+
+    public String h(int i) {
+        if (i == 0) {
+            return "blitWithMask";
         }
-        Iterator it = this.k.values().iterator();
-        while (it.hasNext()) {
-            if (((u01) it.next()).i == null) {
-                return false;
-            }
+        if (i == 1) {
+            return "compositeWithMask";
         }
-        return true;
+        if (i != 2) {
+            return null;
+        }
+        return "brush";
+    }
+
+    public float i() {
+        return 1.0f;
+    }
+
+    public float j() {
+        return 0.15f;
+    }
+
+    public int k() {
+        return R.drawable.paint_radial_brush;
     }
 }

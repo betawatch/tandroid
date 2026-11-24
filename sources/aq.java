@@ -1,25 +1,37 @@
 // default package
 
-import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class aq {
-    public int a;
-    public int b;
-    public byte c;
-    public int d;
-    public zp e;
-    public View f;
-    public View g;
-    public y17 h;
-    public i76 i;
-    public ox2 j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public Bundle p;
+public final class aq implements AdapterView.OnItemClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ aq(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
+    }
+
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                cq cqVar = (cq) obj;
+                fq fqVar = cqVar.X;
+                fqVar.setSelection(i);
+                if (fqVar.getOnItemClickListener() != null) {
+                    fqVar.performItemClick(view, i, cqVar.U.getItemId(i));
+                }
+                cqVar.dismiss();
+                break;
+            default:
+                ((SearchView) obj).m(i);
+                break;
+        }
+    }
 }

@@ -1,40 +1,57 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.LeadingMarginSpan;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class g21 implements LeadingMarginSpan {
-    public final int a;
-    public final int b;
+public final class g21 extends h11 {
+    public final ry8 a;
+    public final hn b;
+    public final hn c;
 
-    public g21(int i, int i2) {
-        this.a = i;
-        this.b = i2;
+    public g21(Context context, wjb wjbVar) {
+        super(context, wjbVar);
+        int i = bkb.xj;
+        getThemedColor(i);
+        setBackground(getThemedColor(bkb.vj));
+        ry8 ry8Var = new ry8(context);
+        this.a = ry8Var;
+        ry8Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(ry8Var, nme.h(56.0f, 48.0f, 8388627));
+        getThemedColor(i);
+        getThemedColor(bkb.wj);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, nme.i(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        hn hnVar = new hn(context, true, true, true);
+        this.b = hnVar;
+        hnVar.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
+        zkb.U(hnVar, i, wjbVar);
+        hnVar.setTextSize(gl.L(14.0f));
+        hnVar.setTypeface(gl.o());
+        hnVar.setEllipsizeByGradient(true);
+        linearLayout.addView(hnVar, nme.o(-1, 20));
+        hn hnVar2 = new hn(context, true, true, true);
+        this.c = hnVar2;
+        hnVar2.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
+        zkb.U(hnVar2, i, wjbVar);
+        hnVar2.setTypeface(Typeface.SANS_SERIF);
+        hnVar2.setTextSize(gl.L(13.0f));
+        hnVar2.setEllipsizeByGradient(true);
+        linearLayout.addView(hnVar2, nme.o(-1, 18));
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i, int i2, int i3, int i4, int i5, CharSequence charSequence, int i6, int i7, boolean z, Layout layout) {
-        if (((Spanned) charSequence).getSpanStart(this) == i6) {
-            Paint.Style style = paint.getStyle();
-            int color = paint.getColor();
-            paint.setColor(-11491093);
-            paint.setStyle(Paint.Style.FILL);
-            if (layout != null) {
-                i5 -= layout.getLineForOffset(i6) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
-            }
-            canvas.drawCircle((i2 * r0) + i, (i3 + i5) / 2.0f, this.b, paint);
-            paint.setColor(color);
-            paint.setStyle(style);
-        }
+    @Override // q11
+    public CharSequence getAccessibilityText() {
+        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final int getLeadingMargin(boolean z) {
-        return (this.b << 1) + this.a;
+    @Override // q11
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
     }
 }

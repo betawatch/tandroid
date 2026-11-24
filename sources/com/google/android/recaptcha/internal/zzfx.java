@@ -1,33 +1,33 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzfx extends eeb implements fs4 {
+final class zzfx extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzgb zzc;
     final /* synthetic */ long zzd;
-    final /* synthetic */ mq2 zze;
+    final /* synthetic */ bp2 zze;
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfx(zzgb zzgbVar, long j, mq2 mq2Var, px2 px2Var) {
-        super(2, px2Var);
+    public zzfx(zzgb zzgbVar, long j, bp2 bp2Var, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzgbVar;
         this.zzd = j;
-        this.zze = mq2Var;
+        this.zze = bp2Var;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, fw2Var);
         zzfxVar.zzf = obj;
         return zzfxVar;
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfx) create((zzgr) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzfx) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0087, code lost:
@@ -38,7 +38,7 @@ final class zzfx extends eeb implements fs4 {
     
         if (r9 == r5) goto L32;
      */
-    @Override // og0
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -50,10 +50,10 @@ final class zzfx extends eeb implements fs4 {
         zzfp zzfpVar2;
         zzds zzdsVar;
         int i = this.zzb;
-        ly2 ly2Var = ly2.a;
+        bx2 bx2Var = bx2.a;
         try {
             if (i == 0) {
-                tue.b(obj);
+                qse.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
                 long j = this.zzd;
@@ -61,18 +61,18 @@ final class zzfx extends eeb implements fs4 {
                 this.zza = zzgrVar;
                 this.zzb = 1;
                 obj = zzfpVar.zzp(j, this);
-                if (obj != ly2Var) {
+                if (obj != bx2Var) {
                     zzgrVar2 = zzgrVar;
                 }
-                return ly2Var;
+                return bx2Var;
             }
             if (i == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                tue.b(obj);
+                qse.b(obj);
             } else if (i == 2) {
                 zzgrVar3 = (zzgr) this.zzf;
-                tue.b(obj);
+                qse.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzgb zzgbVar = this.zzc;
                 zzgbVar.zze = zzxnVar;
@@ -83,14 +83,14 @@ final class zzfx extends eeb implements fs4 {
                 obj = zzfpVar2.zzn(zzxnVar, j2, this);
             } else {
                 if (i != 3) {
-                    tue.b(obj);
+                    qse.b(obj);
                     zzgb zzgbVar2 = this.zzc;
                     zzdsVar = zzdv.zzb;
                     zzgbVar2.zzf = zzdsVar;
-                    return Boolean.valueOf(((nq2) this.zze).B(g7c.a));
+                    return Boolean.valueOf(((cp2) this.zze).B(g5c.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                tue.b(obj);
+                qse.b(obj);
                 this.zzf = null;
                 this.zzb = 4;
             }
@@ -98,7 +98,7 @@ final class zzfx extends eeb implements fs4 {
             this.zza = null;
             this.zzb = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
-            if (obj != ly2Var) {
+            if (obj != bx2Var) {
                 zzgrVar3 = zzgrVar2;
                 zzxn zzxnVar2 = (zzxn) obj;
                 zzgb zzgbVar3 = this.zzc;
@@ -109,7 +109,7 @@ final class zzfx extends eeb implements fs4 {
                 this.zzb = 3;
                 obj = zzfpVar2.zzn(zzxnVar2, j22, this);
             }
-            return ly2Var;
+            return bx2Var;
         } catch (zzcg e) {
             this.zzc.zzd = e;
             throw e;

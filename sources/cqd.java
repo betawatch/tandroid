@@ -1,23 +1,28 @@
 // default package
 
-import java.io.File;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class cqd {
-    public static boolean a(File file) {
-        if (!file.isDirectory()) {
-            file.delete();
-            return true;
+    public static void a(InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
+        inputStream.getClass();
+        byte[] bArr = new byte[TLObject.FLAG_13];
+        int read = inputStream.read(bArr);
+        while (read >= 0) {
+            byteArrayOutputStream.write(bArr, 0, read);
+            read = inputStream.read(bArr);
         }
-        File[] listFiles = file.listFiles();
-        if (listFiles == null) {
-            return false;
-        }
-        boolean z = true;
-        for (File file2 : listFiles) {
-            z = a(file2) && z;
-        }
-        return z;
+    }
+
+    public static final byte[] b(InputStream inputStream) {
+        inputStream.getClass();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(TLObject.FLAG_13, inputStream.available()));
+        a(inputStream, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        byteArray.getClass();
+        return byteArray;
     }
 }

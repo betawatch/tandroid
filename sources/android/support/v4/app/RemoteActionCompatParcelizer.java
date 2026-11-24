@@ -2,14 +2,14 @@ package android.support.v4.app;
 
 import androidx.core.app.RemoteActionCompat;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class RemoteActionCompatParcelizer extends androidx.core.app.RemoteActionCompatParcelizer {
-    public static RemoteActionCompat read(zbc zbcVar) {
-        return androidx.core.app.RemoteActionCompatParcelizer.read(zbcVar);
+    public static RemoteActionCompat read(y9c y9cVar) {
+        return androidx.core.app.RemoteActionCompatParcelizer.read(y9cVar);
     }
 
-    public static void write(RemoteActionCompat remoteActionCompat, zbc zbcVar) {
-        androidx.core.app.RemoteActionCompatParcelizer.write(remoteActionCompat, zbcVar);
+    public static void write(RemoteActionCompat remoteActionCompat, y9c y9cVar) {
+        androidx.core.app.RemoteActionCompatParcelizer.write(remoteActionCompat, y9cVar);
     }
 }

@@ -1,28 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ma1 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ma1 implements gq4 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ oa1 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ma1(oa1 oa1Var, byte b) {
-        this.a = b;
-        this.b = oa1Var;
+    public /* synthetic */ ma1(nh7 nh7Var, mh7 mh7Var) {
+        this.a = (byte) 1;
+        this.b = nh7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // gq4
+    public final Object a(Object obj, Object obj2, Object obj3) {
         byte b = this.a;
-        oa1 oa1Var = this.b;
+        g5c g5cVar = g5c.a;
+        Object obj4 = this.b;
         switch (b) {
             case 0:
-                oa1Var.x = false;
-                oa1Var.c();
+                ((z1) obj4).invoke((Throwable) obj);
+                break;
+            case 1:
+                nh7 nh7Var = (nh7) obj4;
+                nh7.h.set(nh7Var, null);
+                nh7Var.f(null);
                 break;
             default:
-                oa1Var.a.setVisibility(4);
+                ((r0a) obj4).b();
                 break;
         }
+        return g5cVar;
+    }
+
+    public /* synthetic */ ma1(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 }

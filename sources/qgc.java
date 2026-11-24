@@ -1,42 +1,43 @@
 // default package
 
+import android.app.Activity;
 import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class qgc extends v46 {
-    public final /* synthetic */ jg2 r;
+public final class qgc extends zt5 {
+    public final /* synthetic */ TLRPC.User m1;
+    public final /* synthetic */ TLRPC.Chat n1;
+    public final /* synthetic */ String o1;
+    public final /* synthetic */ TLRPC.InputPeer p1;
+    public final /* synthetic */ boolean q1;
+    public final /* synthetic */ boolean r1;
+    public final /* synthetic */ boolean s1;
+    public final /* synthetic */ Activity t1;
+    public final /* synthetic */ d u1;
+    public final /* synthetic */ j5 v1;
+    public final /* synthetic */ boolean w1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qgc(jg2 jg2Var, Context context) {
-        super(context);
-        this.r = jg2Var;
+    public qgc(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z, boolean z2, boolean z3, Activity activity, d dVar, j5 j5Var, boolean z4) {
+        super(context, chat);
+        this.m1 = user;
+        this.n1 = chat2;
+        this.o1 = str;
+        this.p1 = inputPeer;
+        this.q1 = z;
+        this.r1 = z2;
+        this.s1 = z3;
+        this.t1 = activity;
+        this.u1 = dVar;
+        this.v1 = j5Var;
+        this.w1 = z4;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0032, code lost:
-    
-        if ((gm.L(21.0f) + r6.getRight()) > ((vgc) r5.r.J).getMeasuredWidth()) goto L12;
-     */
-    @Override // v46, q69
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, p69 p69Var) {
-        int j = j(o(), view);
-        if (j > 0 || (j == 0 && view.getLeft() - gm.L(21.0f) < 0)) {
-            j += gm.L(60.0f);
-        } else {
-            if (j >= 0) {
-                if (j == 0) {
-                }
-            }
-            j -= gm.L(60.0f);
-        }
-        int k = k(p(), view);
-        int max = Math.max(nm7.J2, m((int) Math.sqrt((k * k) + (j * j))));
-        if (max > 0) {
-            p69Var.b(-j, -k, max, this.j);
-        }
+    @Override // zt5
+    public final void D0() {
+        rgc.b(this.m1, this.n1, this.o1, this.p1, false, this.q1, this.r1, this.s1, this.t1, this.u1, this.v1, false, true, this.w1);
     }
 }

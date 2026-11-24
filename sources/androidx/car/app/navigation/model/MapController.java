@@ -3,11 +3,11 @@ package androidx.car.app.navigation.model;
 import androidx.car.app.model.ActionStrip;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class MapController {
     private final ActionStrip mMapActionStrip;
-    private final qw7 mPanModeDelegate;
+    private final pu7 mPanModeDelegate;
 
     private MapController() {
         this.mPanModeDelegate = null;
@@ -29,7 +29,7 @@ public final class MapController {
         return this.mMapActionStrip;
     }
 
-    public qw7 getPanModeDelegate() {
+    public pu7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -37,7 +37,7 @@ public final class MapController {
         return Objects.hash(this.mPanModeDelegate, this.mMapActionStrip);
     }
 
-    public MapController(ck6 ck6Var) {
+    public MapController(ai6 ai6Var) {
         throw null;
     }
 }

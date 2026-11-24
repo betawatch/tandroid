@@ -1,6 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class a5d extends f1d {
+public final class a5d extends b4 {
+    public static final Parcelable.Creator<a5d> CREATOR = new j9d(16);
+    public final String a;
+
+    public a5d(String str) {
+        this.a = str;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof a5d) {
+            return id1.d(this.a, ((a5d) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.s(parcel, r);
+    }
 }

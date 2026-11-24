@@ -1,51 +1,47 @@
 // default package
 
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class xvb extends FrameLayout implements vlb {
-    public boolean a;
-    public bf0 b;
-    public TextView c;
-    public TextView d;
+public final /* synthetic */ class xvb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lwb b;
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(cmb.b9));
+    public /* synthetic */ xvb(lwb lwbVar, byte b) {
+        this.a = b;
+        this.b = lwbVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.a) {
-            canvas.drawLine(gm.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, cmb.j0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(56.0f), TLObject.FLAG_30));
-    }
-
-    @Override // vlb
-    public final void updateColors() {
-        bf0 bf0Var = this.b;
-        if (bf0Var != null) {
-            try {
-                if (bf0Var.getImageReceiver() == null || !(bf0Var.getImageReceiver().t() instanceof mo4)) {
-                    return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        lwb lwbVar = this.b;
+        switch (b) {
+            case 0:
+                lwbVar.b(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lwbVar.a0 = floatValue;
+                rkb rkbVar = lwbVar.S;
+                rkbVar.setVisibility(floatValue > 0.0f ? 0 : 8);
+                rkbVar.setAlpha(floatValue);
+                rkbVar.setTranslationY((1.0f - floatValue) * (-gl.L(8.0f)));
+                lwbVar.b(floatValue);
+                int L = gl.L(100.0f) + gl.m + ((int) (gl.L(36.0f) * floatValue));
+                ((FrameLayout.LayoutParams) lwbVar.r.getLayoutParams()).topMargin = L;
+                View view = lwbVar.F;
+                if (view != null) {
+                    ((FrameLayout.LayoutParams) view.getLayoutParams()).topMargin = L;
                 }
-                ((mo4) bf0Var.getImageReceiver().t()).a(cmb.w0(null, cmb.b9, false));
-                bf0Var.invalidate();
-            } catch (Exception e) {
-                fc4.g(e, true);
-            }
+                lwbVar.h.requestLayout();
+                break;
+            default:
+                lwbVar.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

@@ -1,15 +1,11 @@
 // default package
 
-import android.content.Context;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class eab extends qi5 {
-    public final /* synthetic */ oab S0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eab(oab oabVar, int i, Context context, oab oabVar2, r63 r63Var) {
-        super(i, context, oabVar2, r63Var);
-        this.S0 = oabVar;
-    }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public interface eab extends Closeable, d16, tq7 {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @ep7(u06.ON_DESTROY)
+    void close();
 }

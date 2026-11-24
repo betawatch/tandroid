@@ -1,22 +1,13 @@
 // default package
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g50 implements Executor {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Handler b;
+public final class g50 implements zn7 {
+    public static final g50 a = new g50();
+    public static final w84 b = w84.c("logRequest");
 
-    public /* synthetic */ g50(Handler handler, byte b) {
-        this.a = b;
-        this.b = handler;
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        byte b = this.a;
-        this.b.post(runnable);
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        ((ao7) obj2).a(b, ((w70) ((ah0) obj)).a);
     }
 }

@@ -1,9 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface o44 {
-    void d();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class o44 {
+    public final double a;
+    public double b;
+    public double c;
 
-    w44 i();
+    public o44(double d) {
+        this.a = d != 0.0d ? Math.exp((-0.6931471805599453d) / d) : 0.0d;
+    }
+
+    public final double a() {
+        double d = this.a;
+        if (d != 0.0d) {
+            double pow = 1.0d - Math.pow(d, this.c);
+            if (pow != 0.0d) {
+                return this.b / pow;
+            }
+        }
+        return this.b;
+    }
+
+    public final void b(double d, double d2) {
+        double pow = Math.pow(this.a, d);
+        this.b = (pow * this.b) + ((1.0d - pow) * d2);
+        this.c += d;
+    }
 }

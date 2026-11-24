@@ -1,35 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.util.LinkedHashSet;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class eb4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ kb4 b;
+public final class eb4 {
+    public static final LinkedHashSet d = new LinkedHashSet();
+    public static final Object e = new Object();
+    public final a5a a;
+    public final qp4 b;
+    public final op4 c;
 
-    public /* synthetic */ eb4(kb4 kb4Var, byte b) {
-        this.a = b;
-        this.b = kb4Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        kb4 kb4Var = this.b;
-        switch (b) {
-            case 0:
-                Runnable runnable = kb4Var.l;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                Runnable runnable2 = kb4Var.l;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-        }
+    public eb4(a5a a5aVar, qp4 qp4Var, op4 op4Var) {
+        this.a = a5aVar;
+        this.b = qp4Var;
+        this.c = op4Var;
     }
 }

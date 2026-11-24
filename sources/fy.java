@@ -1,59 +1,76 @@
 // default package
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import sun.misc.Unsafe;
+import java.util.Arrays;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class fy {
-    public static final /* synthetic */ Unsafe a;
+public final class fy implements Iterable, Cloneable {
+    public static final String[] d = new String[0];
+    public int a = 0;
+    public String[] b;
+    public String[] c;
 
-    static {
-        Field field;
+    public fy() {
+        String[] strArr = d;
+        this.b = strArr;
+        this.c = strArr;
+    }
+
+    public final Object clone() {
         try {
-            field = Unsafe.class.getDeclaredField("theUnsafe");
-        } catch (NoSuchFieldException e) {
-            Field[] declaredFields = Unsafe.class.getDeclaredFields();
-            int length = declaredFields.length;
-            int i = 0;
-            while (true) {
-                if (i >= length) {
-                    field = null;
-                    break;
-                }
-                Field field2 = declaredFields[i];
-                if (Modifier.isStatic(field2.getModifiers()) && Unsafe.class.isAssignableFrom(field2.getType())) {
-                    field = field2;
-                    break;
-                }
-                i++;
-            }
-            if (field != null) {
-                throw new UnsupportedOperationException("Couldn't find the Unsafe", e);
-            }
-        }
-        field.setAccessible(true);
-        try {
-            a = (Unsafe) field.get(null);
-        } catch (IllegalAccessException e2) {
-            rjb.m(e2);
+            fy fyVar = (fy) super.clone();
+            fyVar.a = this.a;
+            String[] strArr = this.b;
+            int i = this.a;
+            String[] strArr2 = new String[i];
+            System.arraycopy(strArr, 0, strArr2, 0, Math.min(strArr.length, i));
+            this.b = strArr2;
+            String[] strArr3 = this.c;
+            int i2 = this.a;
+            String[] strArr4 = new String[i2];
+            System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i2));
+            this.c = strArr4;
+            return fyVar;
+        } catch (CloneNotSupportedException e) {
+            sdb.b(e);
+            return null;
         }
     }
 
-    public static /* synthetic */ Object a(Object obj, long j, Object obj2) {
-        while (true) {
-            Unsafe unsafe = a;
-            Object objectVolatile = unsafe.getObjectVolatile(obj, j);
-            Object obj3 = obj;
-            long j2 = j;
-            Object obj4 = obj2;
-            if (unsafe.compareAndSwapObject(obj3, j2, objectVolatile, obj4)) {
-                return objectVolatile;
-            }
-            obj = obj3;
-            j = j2;
-            obj2 = obj4;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || fy.class != obj.getClass()) {
+            return false;
+        }
+        fy fyVar = (fy) obj;
+        if (this.a == fyVar.a && Arrays.equals(this.b, fyVar.b)) {
+            return Arrays.equals(this.c, fyVar.c);
+        }
+        return false;
+    }
+
+    public final int h(String str) {
+        if (str == null) {
+            w26.j("Object must not be null");
+            return 0;
+        }
+        for (int i = 0; i < this.a; i++) {
+            if (str.equals(this.b[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public final int hashCode() {
+        return (((this.a * 31) + Arrays.hashCode(this.b)) * 31) + Arrays.hashCode(this.c);
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return new v2(this);
     }
 }

@@ -1,42 +1,94 @@
 // default package
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.text.TextPaint;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class mkb extends Path {
-    public static ArrayList d;
-    public float a;
-    public ArrayList b;
-    public int c;
+public final class mkb extends FrameLayout implements tjb {
+    public final av9 a;
+    public final byte b;
+    public final TextPaint c;
+    public int d;
+    public final /* synthetic */ ThemeActivity e;
 
-    @Override // android.graphics.Path
-    public final void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
-        ArrayList arrayList = d;
-        RectF rectF = (arrayList == null || arrayList.size() <= 0) ? new RectF() : (RectF) d.remove(0);
-        rectF.set(f, f2, f3, f4);
-        this.b.add(rectF);
-        this.c++;
-        super.addRect(f, f2, f3, f4, direction);
-        if (f4 > this.a) {
-            this.a = f4;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mkb(ThemeActivity themeActivity, Context context) {
+        super(context);
+        this.e = themeActivity;
+        this.b = (byte) 17;
+        setWillNotDraw(false);
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        textPaint.setTextSize(gl.L(16.0f));
+        av9 av9Var = new av9(context);
+        this.a = av9Var;
+        av9Var.setReportChanges(true);
+        av9Var.setSeparatorsCount(18);
+        av9Var.setDelegate(new v39(this, (byte) 15));
+        av9Var.setImportantForAccessibility(2);
+        addView(av9Var, nme.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
-    @Override // android.graphics.Path
-    public final void reset() {
-        ArrayList arrayList = this.b;
-        super.reset();
-        ArrayList arrayList2 = d;
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList(arrayList.size());
-            d = arrayList2;
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(bkb.Lj));
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int w0 = bkb.w0(null, bkb.H6, false);
+        TextPaint textPaint = this.c;
+        textPaint.setColor(w0);
+        canvas.drawText(String.valueOf(gba.U0), getMeasuredWidth() - gl.L(39.0f), gl.L(28.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+        this.a.setProgress(gba.U0 / this.b);
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i, Bundle bundle) {
+        return super.performAccessibilityAction(i, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i, bundle);
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        av9 av9Var = this.a;
+        if (av9Var == null) {
+            return;
         }
-        arrayList2.addAll(arrayList);
-        arrayList.clear();
-        this.c = 0;
-        this.a = 0.0f;
+        try {
+            int w0 = bkb.w0(null, bkb.Lj, false);
+            if (w0 != this.d) {
+                this.d = w0;
+                av9Var.setOuterColor(w0);
+            }
+            invalidate();
+        } catch (Exception e) {
+            fa4.g(e, true);
+        }
     }
 }

@@ -1,27 +1,33 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ar5 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ l7 b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ar5 extends b4 {
-    public static final Parcelable.Creator<ar5> CREATOR = new e2f(8);
-    public String a;
-    public String b;
-    public int c;
+    public /* synthetic */ ar5(l7 l7Var, byte b) {
+        this.a = b;
+        this.b = l7Var;
+    }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.a);
-        mve.l(parcel, 3, this.b);
-        int i2 = this.c;
-        if (i2 != 1 && i2 != 2 && i2 != 3) {
-            i2 = 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        l7 l7Var = this.b;
+        switch (b) {
+            case 0:
+                gl.E3(l7Var);
+                break;
+            case 1:
+                gl.E3(l7Var);
+                break;
+            case 2:
+                gl.E3(l7Var);
+                break;
+            default:
+                gl.E3(l7Var);
+                break;
         }
-        mve.q(parcel, 4, 4);
-        parcel.writeInt(i2);
-        mve.s(parcel, r);
     }
 }

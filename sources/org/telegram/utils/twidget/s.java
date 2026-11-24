@@ -2,9 +2,9 @@ package org.telegram.utils.twidget;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements yxc {
+public final /* synthetic */ class s implements xvc {
     public final /* synthetic */ byte a;
     public final /* synthetic */ w b;
     public final /* synthetic */ byte[] c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class s implements yxc {
         this.d = i;
     }
 
-    @Override // yxc
+    @Override // xvc
     public final Object run() {
         switch (this.a) {
             case 0:
@@ -35,11 +35,11 @@ public final /* synthetic */ class s implements yxc {
                             wVar.f = min - 1.0d;
                             wVar.b.signal(i, b);
                         } else {
-                            dq9.m("Widget engine: too many signals");
+                            sc8.j("Widget engine: too many signals");
                         }
                     }
                 } else {
-                    u36.j("Signal too long");
+                    w26.j("Signal too long");
                 }
                 return null;
             default:
@@ -49,7 +49,7 @@ public final /* synthetic */ class s implements yxc {
                 if (bArr2 != null && bArr2.length <= 262144) {
                     return Float.valueOf(wVar2.b.textWidth(i2, bArr2));
                 }
-                u36.j("Text too long");
+                w26.j("Text too long");
                 return null;
         }
     }

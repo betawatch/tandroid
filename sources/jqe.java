@@ -1,15 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class jqe {
-    public final khe a;
-    public final nie b;
-    public final kpe c;
+public enum jqe implements yjd {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    b(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF69(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF78(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF91(9);
 
-    public /* synthetic */ jqe(uqd uqdVar) {
-        this.a = (khe) uqdVar.b;
-        this.b = (nie) uqdVar.c;
-        this.c = (kpe) uqdVar.d;
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    jqe(int i) {
+        this.a = i;
+    }
+
+    @Override // yjd
+    public final int zza() {
+        return this.a;
     }
 }

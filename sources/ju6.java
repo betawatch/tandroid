@@ -1,121 +1,151 @@
 // default package
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.common.api.Scope;
-import j$.util.Objects;
-import java.net.Inet6Address;
-import java.net.InetAddress;
-import java.util.Comparator;
-import java.util.Map;
+import android.media.MediaRouter;
+import android.os.Bundle;
+import android.view.Display;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ju6 implements Comparator {
-    public static final ju6 b = new ju6(0);
-    public static final ju6 c = new ju6(1);
-    public static final ju6 d = new ju6(2);
-    public static final /* synthetic */ ju6 e = new ju6(3);
-    public static final /* synthetic */ ju6 f = new ju6(12);
-    public static final /* synthetic */ ju6 h = new ju6(13);
-    public final /* synthetic */ byte a;
+public final class ju6 extends MediaRouter.Callback {
+    public final vb8 a;
 
-    public /* synthetic */ ju6(byte b2) {
-        this.a = b2;
+    public ju6(vb8 vb8Var) {
+        this.a = vb8Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00c6, code lost:
-    
-        if (r5 == null) goto L47;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:46:?, code lost:
-    
-        return -1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:48:?, code lost:
-    
-        return 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00cf, code lost:
-    
-        if (r5 != false) goto L46;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((ew6) obj).d.compareToIgnoreCase(((ew6) obj2).d);
-            case 1:
-                return ((ew6) obj).d.compareToIgnoreCase(((ew6) obj2).d);
-            case 2:
-                return ((ew6) obj).d.compareToIgnoreCase(((ew6) obj2).d);
-            case 3:
-                ((w5d) obj2).getClass();
-                ((w5d) obj).getClass();
-                return 0;
-            case 4:
-                return ((rm2) obj2).b() - ((rm2) obj).b();
-            case 5:
-                ep3 ep3Var = (ep3) obj;
-                ep3 ep3Var2 = (ep3) obj2;
-                int i = ep3Var.a - ep3Var2.a;
-                return i == 0 ? ep3Var.b - ep3Var2.b : i;
-            case 6:
-                Runnable runnable = (Runnable) obj;
-                Runnable runnable2 = (Runnable) obj2;
-                return (runnable2 instanceof qp3 ? ((qp3) runnable2).a : 1) - (runnable instanceof qp3 ? ((qp3) runnable).a : 1);
-            case 7:
-                yt4 yt4Var = (yt4) obj;
-                yt4 yt4Var2 = (yt4) obj2;
-                RecyclerView recyclerView = yt4Var.d;
-                if ((recyclerView == null) == (yt4Var2.d == null)) {
-                    boolean z = yt4Var.a;
-                    if (z == yt4Var2.a) {
-                        int i2 = yt4Var2.b - yt4Var.b;
-                        if (i2 == 0 && (i2 = yt4Var.c - yt4Var2.c) == 0) {
-                            return 0;
-                        }
-                        return i2;
-                    }
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteAdded(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+        vb8 vb8Var = this.a;
+        if (vb8Var.n(routeInfo)) {
+            vb8Var.y();
+        }
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+        int o;
+        vb8 vb8Var = this.a;
+        vb8Var.getClass();
+        if (vb8.s(routeInfo) != null || (o = vb8Var.o(routeInfo)) < 0) {
+            return;
+        }
+        tb8 tb8Var = (tb8) vb8Var.H.get(o);
+        String str = tb8Var.b;
+        CharSequence name = tb8Var.a.getName(vb8Var.a);
+        ys6 ys6Var = new ys6(str, name != null ? name.toString() : "");
+        vb8Var.u(tb8Var, ys6Var);
+        tb8Var.c = ys6Var.b();
+        vb8Var.y();
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteGrouped(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo, MediaRouter.RouteGroup routeGroup, int i) {
+        this.a.getClass();
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRoutePresentationDisplayChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+        vb8 vb8Var = this.a;
+        int o = vb8Var.o(routeInfo);
+        if (o >= 0) {
+            tb8 tb8Var = (tb8) vb8Var.H.get(o);
+            Display presentationDisplay = routeInfo.getPresentationDisplay();
+            int displayId = presentationDisplay != null ? presentationDisplay.getDisplayId() : -1;
+            if (displayId != tb8Var.c.a.getInt("presentationDisplayId", -1)) {
+                zs6 zs6Var = tb8Var.c;
+                if (zs6Var == null) {
+                    w26.j("descriptor must not be null");
+                    return;
                 }
-                break;
-            case 8:
-                return ((hya) obj).d - ((hya) obj2).d;
-            case 9:
-                InetAddress inetAddress = (InetAddress) obj;
-                if (inetAddress.getClass() != ((InetAddress) obj2).getClass()) {
-                    return inetAddress instanceof Inet6Address ? -1 : 1;
+                Bundle bundle = new Bundle(zs6Var.a);
+                ArrayList c = zs6Var.c();
+                ArrayList b = zs6Var.b();
+                HashSet a = zs6Var.a();
+                bundle.putInt("presentationDisplayId", displayId);
+                bundle.putParcelableArrayList("controlFilters", new ArrayList<>(b));
+                bundle.putStringArrayList("groupMemberIds", new ArrayList<>(c));
+                bundle.putStringArrayList("allowedPackages", new ArrayList<>(a));
+                tb8Var.c = new zs6(bundle);
+                vb8Var.y();
+            }
+        }
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteRemoved(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+        int o;
+        vb8 vb8Var = this.a;
+        vb8Var.getClass();
+        if (vb8.s(routeInfo) != null || (o = vb8Var.o(routeInfo)) < 0) {
+            return;
+        }
+        vb8Var.H.remove(o);
+        vb8Var.y();
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteSelected(MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
+        eu6 a;
+        vb8 vb8Var = this.a;
+        if (routeInfo == vb8Var.s.getSelectedRoute(8388611)) {
+            ub8 s = vb8.s(routeInfo);
+            if (s != null) {
+                s.a.l();
+                return;
+            }
+            int o = vb8Var.o(routeInfo);
+            if (o >= 0) {
+                tb8 tb8Var = (tb8) vb8Var.H.get(o);
+                ux4 ux4Var = vb8Var.r;
+                String str = tb8Var.b;
+                ux4Var.a.removeMessages(kk7.k4);
+                du6 d = ux4Var.d(ux4Var.s);
+                if (d == null || (a = d.a(str)) == null) {
+                    return;
                 }
-                return 0;
-            case 10:
-                return ((cgc) obj).b - ((cgc) obj2).b;
-            case 11:
-                dgc dgcVar = (dgc) ((View) obj).getLayoutParams();
-                dgc dgcVar2 = (dgc) ((View) obj2).getLayoutParams();
-                boolean z2 = dgcVar.a;
-                return z2 != dgcVar2.a ? z2 ? 1 : -1 : dgcVar.e - dgcVar2.e;
-            case 12:
-                return ((Scope) obj).b.compareTo(((Scope) obj2).b);
-            case 13:
-                o94 o94Var = (o94) obj2;
-                o94 o94Var2 = (o94) obj;
-                return !o94Var2.a.equals(o94Var.a) ? o94Var2.a.compareTo(o94Var.a) : Long.compare(o94Var2.b(), o94Var.b());
-            case 14:
-                return ((Scope) obj).b.compareTo(((Scope) obj2).b);
-            default:
-                Map.Entry entry = (Map.Entry) obj;
-                Map.Entry entry2 = (Map.Entry) obj2;
-                Objects.requireNonNull(entry);
-                Objects.requireNonNull(entry2);
-                Comparable comparable = (Comparable) entry.getKey();
-                Comparable comparable2 = (Comparable) entry2.getKey();
-                comparable.getClass();
-                comparable2.getClass();
-                return comparable.compareTo(comparable2);
+                a.l();
+            }
+        }
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteUngrouped(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo, MediaRouter.RouteGroup routeGroup) {
+        this.a.getClass();
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteUnselected(MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
+        this.a.getClass();
+    }
+
+    @Override // android.media.MediaRouter.Callback
+    public final void onRouteVolumeChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+        int o;
+        vb8 vb8Var = this.a;
+        vb8Var.getClass();
+        if (vb8.s(routeInfo) != null || (o = vb8Var.o(routeInfo)) < 0) {
+            return;
+        }
+        tb8 tb8Var = (tb8) vb8Var.H.get(o);
+        int volume = routeInfo.getVolume();
+        if (volume != tb8Var.c.a.getInt("volume")) {
+            zs6 zs6Var = tb8Var.c;
+            if (zs6Var == null) {
+                w26.j("descriptor must not be null");
+                return;
+            }
+            Bundle bundle = new Bundle(zs6Var.a);
+            ArrayList c = zs6Var.c();
+            ArrayList b = zs6Var.b();
+            HashSet a = zs6Var.a();
+            bundle.putInt("volume", volume);
+            bundle.putParcelableArrayList("controlFilters", new ArrayList<>(b));
+            bundle.putStringArrayList("groupMemberIds", new ArrayList<>(c));
+            bundle.putStringArrayList("allowedPackages", new ArrayList<>(a));
+            tb8Var.c = new zs6(bundle);
+            vb8Var.y();
         }
     }
 }

@@ -1,102 +1,119 @@
 // default package
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.util.Log;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class g6a extends q59 {
-    public final /* synthetic */ ylb c;
-    public final /* synthetic */ List d;
-    public final /* synthetic */ oc7 e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ TLRPC.Peer h;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class g6a {
+    public static final double f = Math.random();
+    public static final /* synthetic */ int g = 0;
+    public final jg4 a;
+    public final rg4 b;
+    public final k7a c;
+    public final c44 d;
+    public final sw2 e;
 
-    public g6a(ylb ylbVar, List list, oc7 oc7Var, int i, TLRPC.Peer peer) {
-        this.c = ylbVar;
-        this.d = list;
-        this.e = oc7Var;
-        this.f = i;
-        this.h = peer;
+    public g6a(jg4 jg4Var, rg4 rg4Var, k7a k7aVar, c44 c44Var, sw2 sw2Var) {
+        jg4Var.getClass();
+        rg4Var.getClass();
+        k7aVar.getClass();
+        c44Var.getClass();
+        sw2Var.getClass();
+        this.a = jg4Var;
+        this.b = rg4Var;
+        this.c = k7aVar;
+        this.d = c44Var;
+        this.e = sw2Var;
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        return true;
-    }
-
-    @Override // y59
-    public final int b() {
-        return this.d.size();
-    }
-
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        k6a k6aVar = (k6a) u69Var.a;
-        TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) this.d.get(i);
-        TLRPC.Peer peer = tL_sendAsPeer.peer;
-        long j = peer.channel_id;
-        long j2 = j != 0 ? -j : 0L;
-        if (j2 == 0) {
-            long j3 = peer.user_id;
-            if (j3 != 0) {
-                j2 = j3;
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0079, code lost:
+    
+        if (r6.b(r0) == r5) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x007b, code lost:
+    
+        return r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0044, code lost:
+    
+        if (r7 != r5) goto L18;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0026  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object a(gw2 gw2Var) {
+        f6a f6aVar;
+        int i;
+        Collection values;
+        Iterator it;
+        if (gw2Var instanceof f6a) {
+            f6aVar = (f6a) gw2Var;
+            int i2 = f6aVar.c;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                f6aVar.c = i2 - TLObject.FLAG_31;
+                Object obj = f6aVar.a;
+                i = f6aVar.c;
+                k7a k7aVar = this.c;
+                bx2 bx2Var = bx2.a;
+                if (i != 0) {
+                    qse.b(obj);
+                    lh4 lh4Var = lh4.a;
+                    f6aVar.c = 1;
+                    obj = lh4Var.b(f6aVar);
+                } else {
+                    if (i != 1) {
+                        if (i != 2) {
+                            sc8.j("call to 'resume' before 'invoke' with coroutine");
+                            return null;
+                        }
+                        qse.b(obj);
+                        Boolean b = k7aVar.a.b();
+                        if (!((b == null && (b = k7aVar.b.b()) == null) ? true : b.booleanValue())) {
+                            Log.d("FirebaseSessions", "Sessions SDK disabled through settings API. Events will not be sent.");
+                            return Boolean.FALSE;
+                        }
+                        if (f <= k7aVar.a()) {
+                            return Boolean.TRUE;
+                        }
+                        Log.d("FirebaseSessions", "Sessions SDK has dropped this session due to sampling.");
+                        return Boolean.FALSE;
+                    }
+                    qse.b(obj);
+                }
+                values = ((Map) obj).values();
+                if ((values instanceof Collection) || !values.isEmpty()) {
+                    it = values.iterator();
+                    while (it.hasNext()) {
+                        if (((zx2) it.next()).a.a()) {
+                            f6aVar.c = 2;
+                        }
+                    }
+                }
+                Log.d("FirebaseSessions", "Sessions SDK disabled through data collection. Events will not be sent.");
+                return Boolean.FALSE;
             }
         }
-        TLRPC.Peer peer2 = this.h;
-        boolean z = true;
-        oc7 oc7Var = this.e;
-        if (j2 >= 0) {
-            TLRPC.User W1 = oc7Var.W1(Long.valueOf(j2));
-            if (W1 != null) {
-                k6aVar.b.setText(m9c.r(W1));
-                k6aVar.c.setText(jb6.M0(2131743033, null));
-                k6aVar.a.setAvatar(W1);
-            }
-            dka dkaVar = k6aVar.a;
-            if (peer2 == null ? i != 0 : peer2.user_id != peer.user_id) {
-                z = false;
-            }
-            dkaVar.a(z, false);
-            return;
+        f6aVar = new f6a(this, gw2Var);
+        Object obj2 = f6aVar.a;
+        i = f6aVar.c;
+        k7a k7aVar2 = this.c;
+        bx2 bx2Var2 = bx2.a;
+        if (i != 0) {
         }
-        TLRPC.Chat L0 = oc7Var.L0(Long.valueOf(-j2));
-        if (L0 != null) {
-            if (tL_sendAsPeer.premium_required) {
-                StringBuilder sb = new StringBuilder();
-                String str = L0.title;
-                TextView textView = k6aVar.b;
-                sb.append((Object) TextUtils.ellipsize(str, textView.getPaint(), this.f - gm.L(100.0f), TextUtils.TruncateAt.END));
-                sb.append(" d");
-                SpannableString spannableString = new SpannableString(sb.toString());
-                pn2 pn2Var = new pn2(R.drawable.msg_mini_premiumlock, 0);
-                pn2Var.n = 1;
-                pn2Var.c(gm.L(14.0f));
-                pn2Var.a(cmb.B6);
-                spannableString.setSpan(pn2Var, spannableString.length() - 1, spannableString.length(), 33);
-                textView.setEllipsize(null);
-                textView.setText(spannableString);
-            } else {
-                k6aVar.b.setEllipsize(TextUtils.TruncateAt.END);
-                k6aVar.b.setText(L0.title);
-            }
-            k6aVar.c.setText(jb6.G(L0.participants_count, (!sd2.T(L0) || L0.megagroup) ? "Members" : "Subscribers", new Object[0]));
-            k6aVar.a.setAvatar(L0);
+        values = ((Map) obj2).values();
+        if (values instanceof Collection) {
         }
-        dka dkaVar2 = k6aVar.a;
-        if (peer2 == null ? i != 0 : peer2.channel_id != peer.channel_id) {
-            z = false;
+        it = values.iterator();
+        while (it.hasNext()) {
         }
-        dkaVar2.a(z, false);
-    }
-
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        return new b59(new k6a(viewGroup.getContext(), this.c));
+        Log.d("FirebaseSessions", "Sessions SDK disabled through data collection. Events will not be sent.");
+        return Boolean.FALSE;
     }
 }

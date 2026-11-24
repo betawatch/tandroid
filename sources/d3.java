@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.RandomAccess;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class d3 extends AbstractMap {
     public final /* synthetic */ byte a;
@@ -27,11 +27,11 @@ public class d3 extends AbstractMap {
         this.d = map;
     }
 
-    public final ho5 b(Map.Entry entry) {
+    public final hm5 b(Map.Entry entry) {
         Object key = entry.getKey();
-        zi7 zi7Var = (zi7) this.e;
+        wg7 wg7Var = (wg7) this.e;
         List list = (List) ((Collection) entry.getValue());
-        return new ho5(key, list instanceof RandomAccess ? new h3(zi7Var, key, list, null) : new l3(zi7Var, key, list, (l3) null));
+        return new hm5(key, list instanceof RandomAccess ? new h3(wg7Var, key, list, null) : new l3(wg7Var, key, list, (l3) null));
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -41,8 +41,8 @@ public class d3 extends AbstractMap {
         Map map = this.d;
         switch (b) {
             case 0:
-                zi7 zi7Var = (zi7) serializable;
-                if (map != zi7Var.e) {
+                wg7 wg7Var = (wg7) serializable;
+                if (map != wg7Var.e) {
                     c3 c3Var = new c3(this);
                     while (c3Var.hasNext()) {
                         c3Var.next();
@@ -50,13 +50,13 @@ public class d3 extends AbstractMap {
                     }
                     break;
                 } else {
-                    zi7Var.b();
+                    wg7Var.b();
                     break;
                 }
             case 1:
-                dq2 dq2Var = (dq2) map;
-                dq2 dq2Var2 = ((wjf) serializable).c;
-                if (dq2Var != dq2Var2) {
+                so2 so2Var = (so2) map;
+                so2 so2Var2 = ((vhf) serializable).c;
+                if (so2Var != so2Var2) {
                     c3 c3Var2 = new c3(this, (byte) 0);
                     while (c3Var2.hasNext()) {
                         c3Var2.next();
@@ -64,18 +64,18 @@ public class d3 extends AbstractMap {
                     }
                     break;
                 } else {
-                    Iterator it = dq2Var2.values().iterator();
+                    Iterator it = so2Var2.values().iterator();
                     while (it.hasNext()) {
                         ((Collection) it.next()).clear();
                     }
-                    dq2Var2.clear();
+                    so2Var2.clear();
                     break;
                 }
             default:
-                dq2 dq2Var3 = (dq2) map;
-                l9d l9dVar = (l9d) serializable;
-                dq2 dq2Var4 = l9dVar.c;
-                if (dq2Var3 != dq2Var4) {
+                so2 so2Var3 = (so2) map;
+                j7d j7dVar = (j7d) serializable;
+                so2 so2Var4 = j7dVar.c;
+                if (so2Var3 != so2Var4) {
                     c3 c3Var3 = new c3(this, (char) 0);
                     while (c3Var3.hasNext()) {
                         c3Var3.next();
@@ -83,12 +83,12 @@ public class d3 extends AbstractMap {
                     }
                     break;
                 } else {
-                    Iterator it2 = dq2Var4.values().iterator();
+                    Iterator it2 = so2Var4.values().iterator();
                     while (it2.hasNext()) {
                         ((Collection) it2.next()).clear();
                     }
-                    dq2Var4.clear();
-                    l9dVar.d = 0;
+                    so2Var4.clear();
+                    j7dVar.d = 0;
                     break;
                 }
         }
@@ -107,18 +107,18 @@ public class d3 extends AbstractMap {
                     return false;
                 }
             case 1:
-                dq2 dq2Var = (dq2) map;
-                dq2Var.getClass();
+                so2 so2Var = (so2) map;
+                so2Var.getClass();
                 try {
-                    return dq2Var.containsKey(obj);
+                    return so2Var.containsKey(obj);
                 } catch (ClassCastException | NullPointerException unused2) {
                     return false;
                 }
             default:
-                dq2 dq2Var2 = (dq2) map;
-                dq2Var2.getClass();
+                so2 so2Var2 = (so2) map;
+                so2Var2.getClass();
                 try {
-                    return dq2Var2.containsKey(obj);
+                    return so2Var2.containsKey(obj);
                 } catch (ClassCastException | NullPointerException unused3) {
                     return false;
                 }
@@ -137,21 +137,21 @@ public class d3 extends AbstractMap {
                 this.b = b3Var2;
                 return b3Var2;
             case 1:
-                z1f z1fVar = (z1f) this.b;
-                if (z1fVar != null) {
-                    return z1fVar;
+                xze xzeVar = (xze) this.b;
+                if (xzeVar != null) {
+                    return xzeVar;
                 }
-                z1f z1fVar2 = new z1f(this);
-                this.b = z1fVar2;
-                return z1fVar2;
+                xze xzeVar2 = new xze(this);
+                this.b = xzeVar2;
+                return xzeVar2;
             default:
-                xif xifVar = (xif) this.b;
-                if (xifVar != null) {
-                    return xifVar;
+                wgf wgfVar = (wgf) this.b;
+                if (wgfVar != null) {
+                    return wgfVar;
                 }
-                xif xifVar2 = new xif(this);
-                this.b = xifVar2;
-                return xifVar2;
+                wgf wgfVar2 = new wgf(this);
+                this.b = wgfVar2;
+                return wgfVar2;
         }
     }
 
@@ -163,11 +163,11 @@ public class d3 extends AbstractMap {
                 }
                 break;
             case 1:
-                if (this == obj || ((dq2) this.d).equals(obj)) {
+                if (this == obj || ((so2) this.d).equals(obj)) {
                 }
                 break;
             default:
-                if (this == obj || ((dq2) this.d).equals(obj)) {
+                if (this == obj || ((so2) this.d).equals(obj)) {
                 }
                 break;
         }
@@ -192,37 +192,37 @@ public class d3 extends AbstractMap {
                 }
                 Collection collection = (Collection) obj2;
                 if (collection != null) {
-                    zi7 zi7Var = (zi7) serializable;
+                    wg7 wg7Var = (wg7) serializable;
                     List list = (List) collection;
                     break;
                 }
                 break;
             case 1:
-                dq2 dq2Var = (dq2) map;
-                dq2Var.getClass();
+                so2 so2Var = (so2) map;
+                so2Var.getClass();
                 try {
-                    obj3 = dq2Var.get(obj);
+                    obj3 = so2Var.get(obj);
                 } catch (ClassCastException | NullPointerException unused2) {
                     obj3 = null;
                 }
                 Collection collection2 = (Collection) obj3;
                 if (collection2 != null) {
-                    wjf wjfVar = (wjf) serializable;
+                    vhf vhfVar = (vhf) serializable;
                     List list2 = (List) collection2;
                     break;
                 }
                 break;
             default:
-                dq2 dq2Var2 = (dq2) map;
-                dq2Var2.getClass();
+                so2 so2Var2 = (so2) map;
+                so2Var2.getClass();
                 try {
-                    obj4 = dq2Var2.get(obj);
+                    obj4 = so2Var2.get(obj);
                 } catch (ClassCastException | NullPointerException unused3) {
                     obj4 = null;
                 }
                 Collection collection3 = (Collection) obj4;
                 if (collection3 != null) {
-                    l9d l9dVar = (l9d) serializable;
+                    j7d j7dVar = (j7d) serializable;
                     List list3 = (List) collection3;
                     break;
                 }
@@ -235,7 +235,7 @@ public class d3 extends AbstractMap {
     public final int hashCode() {
         switch (this.a) {
         }
-        return ((dq2) this.d).hashCode();
+        return ((so2) this.d).hashCode();
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -244,25 +244,25 @@ public class d3 extends AbstractMap {
         Serializable serializable = this.e;
         switch (b) {
             case 0:
-                return ((zi7) serializable).j();
+                return ((wg7) serializable).j();
             case 1:
-                wjf wjfVar = (wjf) serializable;
-                z1f z1fVar = wjfVar.a;
-                if (z1fVar != null) {
-                    return z1fVar;
+                vhf vhfVar = (vhf) serializable;
+                xze xzeVar = vhfVar.a;
+                if (xzeVar != null) {
+                    return xzeVar;
                 }
-                z1f z1fVar2 = new z1f(wjfVar, wjfVar.c);
-                wjfVar.a = z1fVar2;
-                return z1fVar2;
+                xze xzeVar2 = new xze(vhfVar, vhfVar.c);
+                vhfVar.a = xzeVar2;
+                return xzeVar2;
             default:
-                l9d l9dVar = (l9d) serializable;
-                f7d f7dVar = l9dVar.a;
-                if (f7dVar != null) {
-                    return f7dVar;
+                j7d j7dVar = (j7d) serializable;
+                d5d d5dVar = j7dVar.a;
+                if (d5dVar != null) {
+                    return d5dVar;
                 }
-                f7d f7dVar2 = new f7d(l9dVar, l9dVar.c);
-                l9dVar.a = f7dVar2;
-                return f7dVar2;
+                d5d d5dVar2 = new d5d(j7dVar, j7dVar.c);
+                j7dVar.a = d5dVar2;
+                return d5dVar2;
         }
     }
 
@@ -273,18 +273,18 @@ public class d3 extends AbstractMap {
         Map map = this.d;
         switch (b) {
             case 0:
-                zi7 zi7Var = (zi7) serializable;
+                wg7 wg7Var = (wg7) serializable;
                 Collection collection = (Collection) map.remove(obj);
                 if (collection == null) {
                     return null;
                 }
-                Collection m = zi7Var.m();
+                Collection m = wg7Var.m();
                 m.addAll(collection);
-                zi7Var.f -= collection.size();
+                wg7Var.f -= collection.size();
                 collection.clear();
                 return m;
             case 1:
-                Collection collection2 = (Collection) ((dq2) map).remove(obj);
+                Collection collection2 = (Collection) ((so2) map).remove(obj);
                 if (collection2 == null) {
                     return null;
                 }
@@ -294,14 +294,14 @@ public class d3 extends AbstractMap {
                 collection2.clear();
                 return arrayList;
             default:
-                l9d l9dVar = (l9d) serializable;
-                Collection collection3 = (Collection) ((dq2) map).remove(obj);
+                j7d j7dVar = (j7d) serializable;
+                Collection collection3 = (Collection) ((so2) map).remove(obj);
                 if (collection3 == null) {
                     return null;
                 }
                 ArrayList arrayList2 = new ArrayList(3);
                 arrayList2.addAll(collection3);
-                l9dVar.d -= collection3.size();
+                j7dVar.d -= collection3.size();
                 collection3.clear();
                 return arrayList2;
         }
@@ -311,14 +311,14 @@ public class d3 extends AbstractMap {
     public final int size() {
         switch (this.a) {
         }
-        return ((dq2) this.d).size();
+        return ((so2) this.d).size();
     }
 
     @Override // java.util.AbstractMap
     public final String toString() {
         switch (this.a) {
         }
-        return ((dq2) this.d).toString();
+        return ((so2) this.d).toString();
     }
 
     @Override // java.util.AbstractMap, java.util.Map

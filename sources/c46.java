@@ -1,28 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.text.TextUtils;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class c46 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public boolean f;
+public final class c46 extends TLObject {
+    public static final /* synthetic */ int j = 0;
+    public int a;
+    public String b;
+    public String c;
+    public TLRPC.WebPage d;
+    public boolean e;
+    public boolean f = true;
+    public int i;
 
-    public c46(int i, int i2, int i3, String str, String str2) {
-        this.a = i;
-        this.b = i2;
-        this.c = str;
-        this.d = str2;
-        this.e = i3;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
+        int readInt32 = inputSerializedData.readInt32(z);
+        this.a = readInt32;
+        this.e = (readInt32 & 8) != 0;
+        this.f = (readInt32 & 16) != 0;
+        this.c = inputSerializedData.readString(z);
+        if ((this.a & 1) != 0) {
+            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+        if ((this.a & 2) != 0) {
+            this.b = inputSerializedData.readString(z);
+        }
+        if ((this.a & 4) != 0) {
+            this.i = inputSerializedData.readInt32(z);
+        }
     }
 
-    public static c46 a(int i, int i2) {
-        return new c46(i, i2, -1, null, null);
-    }
-
-    public static c46 b(int i, int i2, String str) {
-        return new c46(i, -1, i2, null, str);
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-625858389);
+        TLRPC.WebPage webPage = this.d;
+        int i = this.a;
+        this.a = webPage != null ? i | 1 : i & (-2);
+        boolean isEmpty = TextUtils.isEmpty(this.b);
+        int i2 = this.a;
+        int i3 = !isEmpty ? i2 | 2 : i2 & (-3);
+        this.a = i3;
+        int i4 = this.e ? i3 | 8 : i3 & (-9);
+        this.a = i4;
+        int i5 = this.f ? i4 | 16 : i4 & (-17);
+        this.a = i5;
+        outputSerializedData.writeInt32(i5);
+        outputSerializedData.writeString(this.c);
+        if ((this.a & 1) != 0) {
+            this.d.serializeToStream(outputSerializedData);
+        }
+        if ((this.a & 2) != 0) {
+            outputSerializedData.writeString(this.b);
+        }
+        if ((this.a & 4) != 0) {
+            outputSerializedData.writeInt32(this.i);
+        }
     }
 }

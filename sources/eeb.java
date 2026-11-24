@@ -1,26 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class eeb extends qx2 implements ps4 {
-    private final int arity;
+public abstract class eeb {
+    public int a;
+    public ByteBuffer b;
+    public int c;
+    public int d;
 
-    public eeb(int i, px2 px2Var) {
-        super(px2Var);
-        this.arity = i;
-    }
-
-    @Override // ps4
-    public int getArity() {
-        return this.arity;
-    }
-
-    @Override // og0
-    public String toString() {
-        if (getCompletion() != null) {
-            return super.toString();
+    public eeb() {
+        if (o5f.F == null) {
+            o5f.F = new o5f((byte) 28);
         }
-        h79.a.getClass();
-        return i79.a(this);
+    }
+
+    public final int a(int i) {
+        if (i < this.d) {
+            return this.b.getShort(this.c + i);
+        }
+        return 0;
     }
 }

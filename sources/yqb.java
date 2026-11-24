@@ -1,18 +1,38 @@
 // default package
 
-import android.content.Context;
-import android.content.ContextWrapper;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class yqb extends ContextWrapper {
-    public static final Object a = null;
+public enum yqb extends qsb {
+    public yqb() {
+        super("ScriptDataDoubleEscapedDashDash", 30);
+    }
 
-    public static void a(Context context) {
-        if (context.getResources() instanceof zqb) {
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        char d = zj1Var.d();
+        vqb vqbVar = qsb.S;
+        if (d == 0) {
+            aqbVar.m(this);
+            aqbVar.f((char) 65533);
+            aqbVar.c = vqbVar;
             return;
         }
-        context.getResources();
-        int i = tbc.a;
+        if (d == '-') {
+            aqbVar.f(d);
+            return;
+        }
+        if (d == '<') {
+            aqbVar.f(d);
+            aqbVar.c = qsb.V;
+        } else if (d == '>') {
+            aqbVar.f(d);
+            aqbVar.c = qsb.f;
+        } else if (d != 65535) {
+            aqbVar.f(d);
+            aqbVar.c = vqbVar;
+        } else {
+            aqbVar.l(this);
+            aqbVar.c = qsb.a;
+        }
     }
 }

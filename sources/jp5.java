@@ -1,62 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Intent;
+import android.content.IntentSender;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class jp5 implements nx9 {
-    public final long a;
-    public final long b;
+public final class jp5 implements Parcelable {
+    public static final Parcelable.Creator<jp5> CREATOR = new x21((byte) 23);
+    public final IntentSender a;
+    public final Intent b;
     public final int c;
-    public final ip5 d;
+    public final int d;
 
-    public jp5(long j, long j2, long j3) {
-        this.d = new ip5(j, new long[]{j2}, new long[]{0});
-        this.a = j2;
-        this.b = j3;
-        this.c = jre.a(j3 - j2, j);
+    public jp5(IntentSender intentSender, Intent intent, int i, int i2) {
+        this.a = intentSender;
+        this.b = intent;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // nx9
-    public final long a() {
-        return this.b;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    @Override // nx9
-    public final long b() {
-        return this.a;
-    }
-
-    @Override // ix9
-    public final boolean c() {
-        return this.d.c();
-    }
-
-    @Override // ix9
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // nx9
-    public final long e(long j) {
-        ip5 ip5Var = this.d;
-        de deVar = ip5Var.b;
-        if (deVar.b == 0) {
-            return -9223372036854775807L;
-        }
-        return deVar.g0(hac.c(ip5Var.a, j));
-    }
-
-    @Override // ix9
-    public final hx9 f(long j) {
-        return this.d.f(j);
-    }
-
-    @Override // nx9
-    public final int g() {
-        return this.c;
-    }
-
-    @Override // ix9
-    public final long h() {
-        return this.d.c;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.getClass();
+        parcel.writeParcelable(this.a, i);
+        parcel.writeParcelable(this.b, i);
+        parcel.writeInt(this.c);
+        parcel.writeInt(this.d);
     }
 }

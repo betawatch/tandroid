@@ -1,89 +1,26 @@
 // default package
 
-import android.view.View;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class dt9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gt9 b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class dt9 extends w1 {
+    public static final Parcelable.Creator<dt9> CREATOR = new v1((byte) 2);
+    public boolean c;
 
-    public /* synthetic */ dt9(gt9 gt9Var, byte b) {
-        this.a = b;
-        this.b = gt9Var;
+    public dt9(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = ((Boolean) parcel.readValue(null)).booleanValue();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0038, code lost:
-    
-        if (r8.r0 != false) goto L17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0047, code lost:
-    
-        if (r8.r0 == false) goto L16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0023, code lost:
-    
-        if (r8.r0 != false) goto L17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0049, code lost:
-    
-        r2 = -1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x004a, code lost:
-    
-        r8.scrollBy(r0 * r2, 0);
-        gm.c3(r8.t0);
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int tabSize;
-        int max;
-        byte b = this.a;
-        gt9 gt9Var = this.b;
-        int i = 1;
-        switch (b) {
-            case 0:
-                qmb qmbVar = gt9Var.e;
-                gt9Var.c0 = false;
-                gt9Var.W = gt9Var.getScrollX() + gt9Var.a0;
-                tabSize = gt9Var.getTabSize();
-                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
-                gt9Var.V = ceil;
-                gt9Var.U = ceil;
-                if (gt9Var.e(ceil) && ceil >= 0 && ceil < qmbVar.getChildCount()) {
-                    try {
-                        gt9Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                    gt9Var.e0 = 0.0f;
-                    gt9Var.w = 0.0f;
-                    View childAt = qmbVar.getChildAt(ceil);
-                    gt9Var.s = childAt;
-                    gt9Var.d0 = childAt.getX() - gt9Var.getScrollX();
-                    gt9Var.s.invalidate();
-                    qmbVar.invalidate();
-                    gt9Var.j();
-                    gt9Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis = System.currentTimeMillis() - gt9Var.s0;
-                if (currentTimeMillis >= 3000) {
-                    if (currentTimeMillis >= 5000) {
-                        max = Math.max(1, gm.L(4.0f));
-                        break;
-                    } else {
-                        max = Math.max(1, gm.L(2.0f));
-                        break;
-                    }
-                } else {
-                    max = Math.max(1, gm.L(1.0f));
-                    break;
-                }
-        }
+    public final String toString() {
+        return "SearchView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " isIconified=" + this.c + "}";
+    }
+
+    @Override // w1, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeValue(Boolean.valueOf(this.c));
     }
 }

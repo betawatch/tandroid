@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class cb implements jm7 {
+public final class cb implements gk7 {
     public final int b;
     public final Runnable c;
     public final String d;
@@ -28,8 +28,8 @@ public final class cb implements jm7 {
         }
         this.h = true;
         int i = this.b;
-        nm7.f(i).b(this, nm7.V);
-        nm7.f(i).b(this, nm7.H1);
+        kk7.f(i).b(this, kk7.U);
+        kk7.f(i).b(this, kk7.G1);
         if (TextUtils.isEmpty(this.d)) {
             d();
         }
@@ -42,7 +42,7 @@ public final class cb implements jm7 {
             if (i >= arrayList2.size()) {
                 return;
             }
-            if (arrayList.contains(Integer.valueOf(((k47) arrayList2.get(i)).e1()))) {
+            if (arrayList.contains(Integer.valueOf(((k27) arrayList2.get(i)).e1()))) {
                 arrayList2.remove(i);
                 i--;
             }
@@ -54,8 +54,8 @@ public final class cb implements jm7 {
         if (this.h) {
             this.h = false;
             int i = this.b;
-            nm7.f(i).n(this, nm7.V);
-            nm7.f(i).n(this, nm7.H1);
+            kk7.f(i).n(this, kk7.U);
+            kk7.f(i).n(this, kk7.G1);
             ConnectionsManager.getInstance(i).cancelRequestsForGuid(this.e);
             this.n = false;
         }
@@ -68,7 +68,7 @@ public final class cb implements jm7 {
         }
         this.n = true;
         int i = this.b;
-        long e = z8c.h(i).e();
+        long e = y6c.h(i).e();
         int i2 = 0;
         int i3 = Integer.MAX_VALUE;
         while (true) {
@@ -76,10 +76,10 @@ public final class cb implements jm7 {
             if (i2 >= arrayList.size()) {
                 break;
             }
-            i3 = Math.min(i3, ((k47) arrayList.get(i2)).e1());
+            i3 = Math.min(i3, ((k27) arrayList.get(i2)).e1());
             i2++;
         }
-        hs6 d0 = hs6.d0(i);
+        hq6 d0 = hq6.d0(i);
         int i4 = arrayList.isEmpty() ? 30 : 50;
         if (i3 == Integer.MAX_VALUE) {
             i3 = 0;
@@ -87,13 +87,13 @@ public final class cb implements jm7 {
         d0.P0(e, i4, i3, 0, 3, 0L, 1, this.e, 0, null, this.d);
     }
 
-    @Override // jm7
+    @Override // gk7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        int i3 = nm7.V;
+        int i3 = kk7.U;
         ArrayList arrayList = this.a;
         if (i != i3) {
-            if (i == nm7.H1) {
-                arrayList.add(0, (k47) objArr[0]);
+            if (i == kk7.G1) {
+                arrayList.add(0, (k27) objArr[0]);
             }
         } else if (((Integer) objArr[3]).intValue() == this.e) {
             this.n = false;

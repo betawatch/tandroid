@@ -1,25 +1,102 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface l01 {
-    void a(float f);
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.beta.R;
 
-    void b(s01 s01Var);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class l01 extends m01 {
+    public static final List c = Arrays.asList(new l01(2), new l01(3), new l01(4), new l01(1), new l01(0));
+    public final /* synthetic */ byte b;
 
-    void c(long j);
+    public /* synthetic */ l01(byte b) {
+        this.b = b;
+    }
 
-    void d(String str);
+    public static l01 o(int i) {
+        List list = c;
+        if (i >= 0 && i <= list.size()) {
+            return (l01) list.get(i);
+        }
+        wn4.k("Shape type must be in range from 0 to ", list.size() - 1, ", but got ", i);
+        return null;
+    }
 
-    void e(c01 c01Var);
+    @Override // m01
+    public final float a() {
+        return 1.0f;
+    }
 
-    void f();
+    @Override // m01
+    public final int d() {
+        switch (this.b) {
+            case 0:
+                return R.drawable.photo_arrowshape;
+            case 1:
+                return R.drawable.msg_msgbubble;
+            case 2:
+                return R.drawable.photo_circle;
+            case 3:
+                return R.drawable.photo_rectangle;
+            default:
+                return R.drawable.photo_star;
+        }
+    }
 
-    void g(long j, int i, long j2);
+    @Override // m01
+    public final String h(int i) {
+        if (i == 0 || i == 1) {
+            return "shape";
+        }
+        if (i != 2) {
+            return null;
+        }
+        return "brush";
+    }
 
-    long h();
+    public final int l() {
+        switch (this.b) {
+            case 0:
+                return R.drawable.photo_arrowshape;
+            case 1:
+                return R.drawable.msg_msgbubble2;
+            case 2:
+                return R.drawable.photo_circle_fill;
+            case 3:
+                return R.drawable.photo_rectangle_fill;
+            default:
+                return R.drawable.photo_star_fill;
+        }
+    }
 
-    ji i(p01 p01Var, o01 o01Var);
+    public final String m() {
+        switch (this.b) {
+            case 0:
+                return k96.M0(2131747483, null);
+            case 1:
+                return k96.M0(2131747481, null);
+            case 2:
+                return k96.M0(2131747480, null);
+            case 3:
+                return k96.M0(2131747469, null);
+            default:
+                return k96.M0(2131747468, null);
+        }
+    }
 
-    k01 j(Runnable runnable, long j);
+    public final int n() {
+        switch (this.b) {
+            case 0:
+                return 4;
+            case 1:
+                return 3;
+            case 2:
+                return 0;
+            case 3:
+                return 1;
+            default:
+                return 2;
+        }
+    }
 }

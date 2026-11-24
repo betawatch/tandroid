@@ -1,30 +1,19 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class tee extends b4 {
-    public static final Parcelable.Creator<tee> CREATOR = new t0e((byte) 26);
-    public final int a;
-    public final int b;
-    public final byte[] c;
+public final class tee implements zn7 {
+    public static final tee a = new tee();
 
-    public tee(int i, int i2, byte[] bArr) {
-        this.a = i;
-        this.b = i2;
-        this.c = bArr;
+    static {
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        mve.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        mve.c(parcel, 3, this.c);
-        mve.s(parcel, r);
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

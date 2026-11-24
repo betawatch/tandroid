@@ -1,200 +1,91 @@
 // default package
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class hbe {
-    public static final char[] a;
-
-    static {
-        char[] cArr = new char[80];
-        a = cArr;
-        Arrays.fill(cArr, ' ');
-    }
-
-    public static void a(StringBuilder sb, int i, String str, Object obj) {
-        if (obj instanceof List) {
-            Iterator it = ((List) obj).iterator();
-            while (it.hasNext()) {
-                a(sb, i, str, it.next());
-            }
-            return;
-        }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                a(sb, i, str, (Map.Entry) it2.next());
-            }
-            return;
-        }
-        sb.append('\n');
-        b(i, sb);
-        if (!str.isEmpty()) {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(Character.toLowerCase(str.charAt(0)));
-            for (int i2 = 1; i2 < str.length(); i2++) {
-                char charAt = str.charAt(i2);
-                if (Character.isUpperCase(charAt)) {
-                    sb2.append("_");
+    public static void a(ArrayList arrayList) {
+        HashMap hashMap = new HashMap(arrayList.size());
+        int size = arrayList.size();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            mp2 mp2Var = (mp2) obj;
+            z43 z43Var = new z43(mp2Var);
+            for (xw8 xw8Var : mp2Var.b) {
+                boolean z = mp2Var.e;
+                a53 a53Var = new a53(xw8Var, z);
+                if (!hashMap.containsKey(a53Var)) {
+                    hashMap.put(a53Var, new HashSet());
                 }
-                sb2.append(Character.toLowerCase(charAt));
+                Set set = (Set) hashMap.get(a53Var);
+                if (!set.isEmpty() && !z) {
+                    throw new IllegalArgumentException("Multiple components provide " + xw8Var + ".");
+                }
+                set.add(z43Var);
             }
-            str = sb2.toString();
         }
-        sb.append(str);
-        if (obj instanceof String) {
-            sb.append(": \"");
-            cxd cxdVar = cxd.c;
-            sb.append(h4f.a(new cxd(((String) obj).getBytes(k5e.a))));
-            sb.append('\"');
-            return;
-        }
-        if (obj instanceof cxd) {
-            sb.append(": \"");
-            sb.append(h4f.a((cxd) obj));
-            sb.append('\"');
-            return;
-        }
-        if (obj instanceof f4e) {
-            sb.append(" {");
-            c((f4e) obj, sb, i + 2);
-            sb.append("\n");
-            b(i, sb);
-            sb.append("}");
-            return;
-        }
-        if (!(obj instanceof Map.Entry)) {
-            sb.append(": ");
-            sb.append(obj);
-            return;
-        }
-        int i3 = i + 2;
-        sb.append(" {");
-        Map.Entry entry = (Map.Entry) obj;
-        a(sb, i3, "key", entry.getKey());
-        a(sb, i3, "value", entry.getValue());
-        sb.append("\n");
-        b(i, sb);
-        sb.append("}");
-    }
-
-    public static void b(int i, StringBuilder sb) {
-        while (i > 0) {
-            int i2 = 80;
-            if (i <= 80) {
-                i2 = i;
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            for (z43 z43Var2 : (Set) it.next()) {
+                for (wd3 wd3Var : z43Var2.a.c) {
+                    if (wd3Var.c == 0) {
+                        Set<z43> set2 = (Set) hashMap.get(new a53(wd3Var.a, wd3Var.b == 2));
+                        if (set2 != null) {
+                            for (z43 z43Var3 : set2) {
+                                z43Var2.b.add(z43Var3);
+                                z43Var3.c.add(z43Var2);
+                            }
+                        }
+                    }
+                }
             }
-            sb.append(a, 0, i2);
-            i -= i2;
         }
-    }
-
-    public static void c(f4e f4eVar, StringBuilder sb, int i) {
-        int i2;
-        int i3;
-        boolean equals;
-        Method method;
-        Method method2;
         HashSet hashSet = new HashSet();
-        HashMap hashMap = new HashMap();
-        TreeMap treeMap = new TreeMap();
-        Method[] declaredMethods = f4eVar.getClass().getDeclaredMethods();
-        int length = declaredMethods.length;
-        int i4 = 0;
-        while (true) {
-            i2 = 3;
-            if (i4 >= length) {
-                break;
-            }
-            Method method3 = declaredMethods[i4];
-            if (!Modifier.isStatic(method3.getModifiers()) && method3.getName().length() >= 3) {
-                if (method3.getName().startsWith("set")) {
-                    hashSet.add(method3.getName());
-                } else if (Modifier.isPublic(method3.getModifiers()) && method3.getParameterTypes().length == 0) {
-                    if (method3.getName().startsWith("has")) {
-                        hashMap.put(method3.getName(), method3);
-                    } else if (method3.getName().startsWith("get")) {
-                        treeMap.put(method3.getName(), method3);
-                    }
-                }
-            }
-            i4++;
+        Iterator it2 = hashMap.values().iterator();
+        while (it2.hasNext()) {
+            hashSet.addAll((Set) it2.next());
         }
-        for (Map.Entry entry : treeMap.entrySet()) {
-            String substring = ((String) entry.getKey()).substring(i2);
-            if (!substring.endsWith("List") || substring.endsWith("OrBuilderList") || substring.equals("List") || (method2 = (Method) entry.getValue()) == null) {
-                i3 = i2;
-            } else {
-                i3 = i2;
-                if (method2.getReturnType().equals(List.class)) {
-                    a(sb, i, substring.substring(0, substring.length() - 4), f4e.i(method2, f4eVar, new Object[0]));
-                    i2 = i3;
-                }
-            }
-            if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
-                a(sb, i, substring.substring(0, substring.length() - 3), f4e.i(method, f4eVar, new Object[0]));
-            } else if (hashSet.contains("set".concat(substring)) && (!substring.endsWith("Bytes") || !treeMap.containsKey("get".concat(substring.substring(0, substring.length() - 5))))) {
-                Method method4 = (Method) entry.getValue();
-                Method method5 = (Method) hashMap.get("has".concat(substring));
-                if (method4 != null) {
-                    Object i5 = f4e.i(method4, f4eVar, new Object[0]);
-                    if (method5 != null) {
-                        if (!((Boolean) f4e.i(method5, f4eVar, new Object[0])).booleanValue()) {
-                        }
-                        a(sb, i, substring, i5);
-                    } else if (i5 instanceof Boolean) {
-                        if (!((Boolean) i5).booleanValue()) {
-                        }
-                        a(sb, i, substring, i5);
-                    } else if (i5 instanceof Integer) {
-                        if (((Integer) i5).intValue() == 0) {
-                        }
-                        a(sb, i, substring, i5);
-                    } else if (i5 instanceof Float) {
-                        if (Float.floatToRawIntBits(((Float) i5).floatValue()) == 0) {
-                        }
-                        a(sb, i, substring, i5);
-                    } else if (i5 instanceof Double) {
-                        if (Double.doubleToRawLongBits(((Double) i5).doubleValue()) == 0) {
-                        }
-                        a(sb, i, substring, i5);
-                    } else {
-                        if (i5 instanceof String) {
-                            equals = i5.equals("");
-                        } else if (i5 instanceof cxd) {
-                            equals = i5.equals(cxd.c);
-                        } else if (i5 instanceof utd) {
-                            if (i5 == ((f4e) ((f4e) ((utd) i5)).d(6))) {
-                            }
-                            a(sb, i, substring, i5);
-                        } else {
-                            if ((i5 instanceof Enum) && ((Enum) i5).ordinal() == 0) {
-                            }
-                            a(sb, i, substring, i5);
-                        }
-                        if (equals) {
-                        }
-                        a(sb, i, substring, i5);
-                    }
-                }
-            }
-            i2 = i3;
-        }
-        jge jgeVar = f4eVar.zzc;
-        if (jgeVar != null) {
-            for (int i6 = 0; i6 < jgeVar.a; i6++) {
-                a(sb, i, String.valueOf(jgeVar.b[i6] >>> 3), jgeVar.c[i6]);
+        HashSet hashSet2 = new HashSet();
+        Iterator it3 = hashSet.iterator();
+        while (it3.hasNext()) {
+            z43 z43Var4 = (z43) it3.next();
+            if (z43Var4.c.isEmpty()) {
+                hashSet2.add(z43Var4);
             }
         }
+        while (!hashSet2.isEmpty()) {
+            z43 z43Var5 = (z43) hashSet2.iterator().next();
+            hashSet2.remove(z43Var5);
+            i++;
+            Iterator it4 = z43Var5.b.iterator();
+            while (it4.hasNext()) {
+                z43 z43Var6 = (z43) it4.next();
+                z43Var6.c.remove(z43Var5);
+                if (z43Var6.c.isEmpty()) {
+                    hashSet2.add(z43Var6);
+                }
+            }
+        }
+        if (i == arrayList.size()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it5 = hashSet.iterator();
+        while (it5.hasNext()) {
+            z43 z43Var7 = (z43) it5.next();
+            if (!z43Var7.c.isEmpty() && !z43Var7.b.isEmpty()) {
+                arrayList2.add(z43Var7.a);
+            }
+        }
+        throw new xd3("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
     }
 }

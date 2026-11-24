@@ -1,51 +1,19 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class hld extends okd {
-    public final /* synthetic */ pld s;
+public final class hld implements zn7 {
+    public static final hld a = new hld();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hld(pld pldVar) {
-        super((byte) 4);
-        this.s = pldVar;
+    static {
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)));
     }
 
-    @Override // okd
-    public final yjd B() {
-        return new bld(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Map.Entry)) {
-            return false;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        Map.Entry entry = (Map.Entry) obj;
-        Object obj2 = this.s.get(entry.getKey());
-        return obj2 != null && obj2.equals(entry.getValue());
-    }
-
-    @Override // okd, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return c3f.a(this.s.entrySet());
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return A().listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.s.d.size();
-    }
-
-    @Override // l1d
-    public final v7c u() {
-        return A().listIterator(0);
+        throw null;
     }
 }

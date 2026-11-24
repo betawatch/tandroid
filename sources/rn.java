@@ -1,19 +1,26 @@
 // default package
 
-import android.graphics.Paint;
-import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class rn extends Paint {
-    public final ylb a;
-    public final km b;
+public abstract class rn {
+    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
+    public static final pn b = new pn("alpha", (byte) 0);
+    public static final pm c;
+    public static final pn d;
+    public static final pn e;
+    public static final pm f;
+    public static final pm g;
+    public static final pm h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rn(View view, ylb ylbVar) {
-        super(3);
-        d53 d53Var = d53.h;
-        this.a = ylbVar;
-        this.b = new km(view, 320L, d53Var);
+    static {
+        new pn("color", (byte) 1);
+        c = new pm("currentAlpha", (byte) 1);
+        d = new pn("alpha", (byte) 2);
+        e = new pn("alpha", (byte) 3);
+        f = new pm("animationProgress", (byte) 2);
+        g = new pm("animationValue", (byte) 3);
+        h = new pm("clipProgress", (byte) 4);
     }
 }

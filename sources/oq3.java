@@ -1,44 +1,222 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class oq3 implements cx5 {
-    public static final oq3 a = new oq3();
-    public static final el8 b = new el8("kotlin.Double", dl8.c);
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import java.util.ArrayList;
 
-    @Override // cx5
-    public final void b(c40 c40Var, Object obj) {
-        double doubleValue = ((Number) obj).doubleValue();
-        vk1 vk1Var = (vk1) ((m41) c40Var.b).c;
-        if (c40Var.a) {
-            c40Var.k(String.valueOf(doubleValue));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class oq3 implements gk7 {
+    public static dd M;
+    public final do3 E;
+    public boolean F;
+    public final nq3 G;
+    public boolean H;
+    public boolean J;
+    public int K;
+    public final int L;
+    public boolean a;
+    public Bitmap b;
+    public Canvas c;
+    public Bitmap d;
+    public Canvas e;
+    public boolean f;
+    public int n;
+    public boolean r;
+    public int w;
+    public int x;
+    public int y;
+    public byte h = 1;
+    public final Paint s = new Paint(1);
+    public final nq3 I = new nq3(this, 1);
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public oq3() {
+        byte b = 0;
+        this.G = new nq3(this, b);
+        dd ddVar = M;
+        if (ddVar == null) {
+            ddVar = new dd((byte) 7);
+            M = ddVar;
+        }
+        int i = ddVar.b + 1;
+        ddVar.b = i;
+        if (i > 1) {
+            ddVar.b = 0;
         } else {
-            vk1Var.c(String.valueOf(doubleValue));
+            b = i;
         }
-        if (Double.isInfinite(doubleValue) || Double.isNaN(doubleValue)) {
-            throw new rw5("Unexpected special floating-point value " + Double.valueOf(doubleValue) + ". By default, non-finite floating point values are prohibited because they do not conform JSON specification. It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true'\nCurrent output: " + ((Object) rne.b(-1, vk1Var.toString())));
+        do3[] do3VarArr = (do3[]) ddVar.c;
+        do3 do3Var = do3VarArr[b];
+        if (do3Var == null) {
+            do3Var = new do3("draw_background_queue_" + ddVar.b, true);
+            do3VarArr[b] = do3Var;
         }
+        this.E = do3Var;
+        this.L = M.b;
     }
 
-    @Override // cx5
-    public final Object c(jif jifVar) {
-        e0c e0cVar = (e0c) jifVar.d;
-        String k = e0cVar.k();
-        try {
-            double parseDouble = Double.parseDouble(k);
-            if (!Double.isInfinite(parseDouble) && !Double.isNaN(parseDouble)) {
-                return Double.valueOf(parseDouble);
+    public void a(Canvas canvas, long j, int i, int i2, float f) {
+        if (this.F) {
+            boolean z = w01.a;
+            return;
+        }
+        this.x = i2;
+        this.y = i;
+        if (this.H) {
+            this.H = false;
+            Bitmap bitmap = this.d;
+            Canvas canvas2 = this.e;
+            this.d = this.b;
+            this.e = this.c;
+            this.b = bitmap;
+            this.c = canvas2;
+        }
+        Bitmap bitmap2 = this.d;
+        if (bitmap2 == null || this.J) {
+            this.J = false;
+            if (bitmap2 != null) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(this.d);
+                gl.x2(arrayList);
+                this.d = null;
             }
-            e0c.m(e0cVar, "Unexpected special floating-point value " + Double.valueOf(parseDouble) + ". By default, non-finite floating point values are prohibited because they do not conform JSON specification", 0, 2);
-            throw null;
-        } catch (IllegalArgumentException unused) {
-            e0c.m(e0cVar, "Failed to parse type 'double' for input '" + k + '\'', 0, 6);
-            throw null;
+            int i3 = this.x + 0;
+            Bitmap bitmap3 = this.d;
+            if (bitmap3 != null && bitmap3.getHeight() == i3 && this.d.getWidth() == this.y) {
+                this.d.eraseColor(0);
+            } else {
+                this.d = Bitmap.createBitmap(this.y, i3, Bitmap.Config.ARGB_8888);
+                this.e = new Canvas(this.d);
+            }
+            this.e.save();
+            this.e.translate(0.0f, 0);
+            d(this.e, f);
+            this.e.restore();
+        }
+        if (!this.f && !this.r) {
+            this.f = true;
+            i(j);
+            this.K = this.w;
+            this.E.postRunnable(this.G);
+        }
+        Bitmap bitmap4 = this.d;
+        if (bitmap4 != null) {
+            Paint paint = this.s;
+            paint.setAlpha((int) (f * 255.0f));
+            canvas.save();
+            canvas.translate(0.0f, -0);
+            b(canvas, bitmap4, paint);
+            canvas.restore();
         }
     }
 
-    @Override // cx5
-    public final y6a d() {
-        return b;
+    public void b(Canvas canvas, Bitmap bitmap, Paint paint) {
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+    }
+
+    public abstract void c(Canvas canvas);
+
+    public abstract void d(Canvas canvas, float f);
+
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        int i3;
+        if (i == kk7.i1) {
+            Integer num = (Integer) objArr[0];
+            if (this.h < num.intValue()) {
+                if (num.intValue() != 512 || gba.o() < 2) {
+                    int intValue = this.n | num.intValue();
+                    this.n = intValue;
+                    if (intValue == 0 || this.r) {
+                        return;
+                    }
+                    this.r = true;
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        if (i == kk7.j1) {
+            Integer num2 = (Integer) objArr[0];
+            if (this.h >= num2.intValue() || (i3 = this.n) == 0) {
+                return;
+            }
+            int i4 = i3 & (~num2.intValue());
+            this.n = i4;
+            if (i4 == 0 && this.r) {
+                this.r = false;
+            }
+        }
+    }
+
+    public final void e() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        this.F = false;
+        int i = kk7.e().p & (~this.h);
+        this.n = i;
+        if (i == 0 && this.r) {
+            this.r = false;
+        }
+        kk7.e().b(this, kk7.i1);
+        kk7.e().b(this, kk7.j1);
+    }
+
+    public final void f() {
+        if (this.a) {
+            if (!this.f) {
+                j();
+            }
+            this.a = false;
+            kk7.e().n(this, kk7.i1);
+            kk7.e().n(this, kk7.j1);
+        }
+    }
+
+    public abstract void g();
+
+    public abstract void i(long j);
+
+    public final void j() {
+        ArrayList arrayList = new ArrayList();
+        Bitmap bitmap = this.d;
+        if (bitmap != null) {
+            arrayList.add(bitmap);
+        }
+        Bitmap bitmap2 = this.b;
+        if (bitmap2 != null) {
+            arrayList.add(bitmap2);
+        }
+        this.d = null;
+        this.b = null;
+        this.c = null;
+        this.e = null;
+        gl.x2(arrayList);
+    }
+
+    public final void k() {
+        this.J = true;
+        this.w++;
+        if (this.d != null) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(this.d);
+            this.d = null;
+            gl.x2(arrayList);
+        }
+    }
+
+    public final void l(int i) {
+        this.h = (byte) 7;
+        if (this.a) {
+            this.n = kk7.e().p & (~this.h);
+        }
+    }
+
+    public final void h() {
     }
 }

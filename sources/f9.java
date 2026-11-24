@@ -5,18 +5,18 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
 public abstract class f9 {
     public boolean a;
     public Object b;
 
-    public f9(Context context, r63 r63Var, boolean z) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z ? 1 : 0, r63Var, context);
+    public f9(Context context, f53 f53Var, boolean z) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z ? 1 : 0, f53Var, context);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
         byte b = 4;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new a7(this, b));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new wm2(this, (byte) 13));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new vu2(this, (byte) 10));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
         j(actionBarPopupWindow$ActionBarPopupWindowLayout);
         m8 m8Var = new m8(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
@@ -28,7 +28,7 @@ public abstract class f9 {
         m8Var.setInputMethodMode(2);
         m8Var.setSoftInputMode(0);
         m8Var.getContentView().setFocusableInTouchMode(true);
-        if (gm.A1()) {
+        if (gl.A1()) {
             m8Var.setFocusable(true);
         }
         m8Var.setOnDismissListener(new x6(this, b));
@@ -45,9 +45,9 @@ public abstract class f9 {
 
     public abstract View c();
 
-    public abstract y17 d();
+    public abstract yz6 d();
 
-    public abstract zdb e();
+    public abstract xbb e();
 
     public abstract CharSequence f();
 

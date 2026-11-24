@@ -1,140 +1,53 @@
 // default package
 
-import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import android.media.MediaCodec;
+import android.media.MediaFormat;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Surface;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class ek6 extends LinkedHashMap {
-    public static final ek6 b;
-    public boolean a = true;
+public interface ek6 {
+    void a(int i, o33 o33Var, long j, int i2);
 
-    static {
-        ek6 ek6Var = new ek6();
-        b = ek6Var;
-        ek6Var.a = false;
-    }
+    void b(int i, int i2, int i3, long j);
 
-    public final void b() {
-        if (this.a) {
-            return;
-        }
-        gxc.b();
-    }
+    void c(int i);
 
-    public final ek6 c() {
-        if (isEmpty()) {
-            return new ek6();
-        }
-        ek6 ek6Var = new ek6(this);
-        ek6Var.a = true;
-        return ek6Var;
-    }
+    boolean d(s34 s34Var);
 
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        b();
-        super.clear();
-    }
+    void e();
 
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
-    }
+    void f(int i, long j);
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Map)) {
-            return false;
-        }
-        Map map = (Map) obj;
-        if (this == map) {
-            return true;
-        }
-        if (size() != map.size()) {
-            return false;
-        }
-        for (Map.Entry entry : entrySet()) {
-            if (!map.containsKey(entry.getKey())) {
-                return false;
-            }
-            Object value = entry.getValue();
-            Object obj2 = map.get(entry.getKey());
-            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
-                return false;
-            }
-        }
-        return true;
-    }
+    void flush();
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        int hashCode;
-        int i = 0;
-        for (Map.Entry entry : entrySet()) {
-            Object key = entry.getKey();
-            int i2 = 1;
-            if (key instanceof byte[]) {
-                byte[] bArr = (byte[]) key;
-                int length = bArr.length;
-                Charset charset = mr5.a;
-                hashCode = length;
-                for (byte b2 : bArr) {
-                    hashCode = (hashCode * 31) + b2;
-                }
-                if (hashCode == 0) {
-                    hashCode = 1;
-                }
-            } else {
-                hashCode = key.hashCode();
-            }
-            Object value = entry.getValue();
-            if (value instanceof byte[]) {
-                byte[] bArr2 = (byte[]) value;
-                int length2 = bArr2.length;
-                Charset charset2 = mr5.a;
-                int i3 = length2;
-                for (byte b3 : bArr2) {
-                    i3 = (i3 * 31) + b3;
-                }
-                if (i3 != 0) {
-                    i2 = i3;
-                }
-            } else {
-                i2 = value.hashCode();
-            }
-            i += hashCode ^ i2;
-        }
-        return i;
-    }
+    int g();
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        b();
-        Charset charset = mr5.a;
-        obj.getClass();
-        obj2.getClass();
-        return super.put(obj, obj2);
-    }
+    ByteBuffer getInputBuffer(int i);
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void putAll(Map map) {
-        b();
-        for (Object obj : map.keySet()) {
-            Charset charset = mr5.a;
-            obj.getClass();
-            map.get(obj).getClass();
-        }
-        super.putAll(map);
-    }
+    ByteBuffer getOutputBuffer(int i);
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        b();
-        return super.remove(obj);
-    }
+    MediaFormat getOutputFormat();
+
+    int h(MediaCodec.BufferInfo bufferInfo);
+
+    void i(jnb jnbVar);
+
+    void j(int i);
+
+    void k(Surface surface);
+
+    void l(ArrayList arrayList);
+
+    void m(uk6 uk6Var, Handler handler);
+
+    void n(ArrayList arrayList);
+
+    void release();
+
+    void setParameters(Bundle bundle);
 }

@@ -1,34 +1,31 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l36 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class l36 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ o36 b;
-    public final /* synthetic */ n36 c;
+    public final /* synthetic */ s36 b;
 
-    public /* synthetic */ l36(o36 o36Var, n36 n36Var, byte b) {
+    public /* synthetic */ l36(s36 s36Var, byte b) {
         this.a = b;
-        this.b = o36Var;
-        this.c = n36Var;
+        this.b = s36Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        n36 n36Var = this.c;
-        o36 o36Var = this.b;
+        s36 s36Var = this.b;
         switch (b) {
             case 0:
-                n36Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o36Var.invalidate();
+                d01.t(s36Var.getParentActivity(), k96.M0(2131745963, null));
+                break;
+            case 1:
+                s36Var.r.d.requestFocus();
+                gl.E3(s36Var.r.d);
                 break;
             default:
-                o36Var.getClass();
-                n36Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o36Var.invalidate();
+                s36Var.r.d.clearFocus();
+                gl.t1(s36Var.r.d);
                 break;
         }
     }

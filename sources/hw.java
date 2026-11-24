@@ -1,247 +1,255 @@
 // default package
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.text.SpannableStringBuilder;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.LongSparseArray;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class hw extends View implements fkb, dx {
-    public final ui5 a;
-    public final ey b;
-    public bx c;
-    public bx d;
-    public int e;
-    public int f;
-    public int h;
-    public TL_iv.pageBlockPullquote n;
+public final class hw extends o39 {
+    public final /* synthetic */ byte f3 = 1;
+    public final Object g3;
+    public final /* synthetic */ KeyEvent.Callback h3;
 
-    public hw(Activity activity, ui5 ui5Var, ey eyVar) {
-        super(activity);
-        this.a = ui5Var;
-        this.b = eyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw(jk2 jk2Var, Context context) {
+        super(context, null);
+        this.h3 = jk2Var;
+        this.g3 = new xl3((byte) 7);
     }
 
-    @Override // dx
-    public int getBoundLeft() {
-        int i;
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            i = Math.min(ConnectionsManager.DEFAULT_DATACENTER_ID, bxVar.k() + bxVar.s);
-        } else {
-            i = Integer.MAX_VALUE;
-        }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            i = Math.min(i, bxVar2.k() + bxVar2.s);
-        }
-        if (i == Integer.MAX_VALUE) {
-            return -1;
-        }
-        return wi8.h(this.a, 18.0f, i);
-    }
-
-    @Override // dx
-    public int getBoundRight() {
-        int i;
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            i = Math.max(TLObject.FLAG_31, bxVar.l() + bxVar.s);
-        } else {
-            i = Integer.MIN_VALUE;
-        }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            i = Math.max(i, bxVar2.l() + bxVar2.s);
-        }
-        if (i == Integer.MIN_VALUE) {
-            return -1;
-        }
-        return wi8.C(this.a, 18.0f, i);
-    }
-
-    @Override // dx
-    public int getLastLineBoundRight() {
-        bx bxVar = this.d;
-        ui5 ui5Var = this.a;
-        if (bxVar != null) {
-            int m = bxVar.m() + bxVar.s;
-            ui5Var.getClass();
-            return gm.L(18.0f) + m;
-        }
-        bx bxVar2 = this.c;
-        if (bxVar2 == null) {
-            return -1;
-        }
-        int m2 = bxVar2.m() + bxVar2.s;
-        ui5Var.getClass();
-        return gm.L(18.0f) + m2;
-    }
-
-    public /* bridge */ /* synthetic */ int getMinWidth() {
-        return wi8.a(this);
-    }
-
-    @Override // fkb
-    public final void k(ArrayList arrayList) {
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            arrayList.add(bxVar);
-        }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            arrayList.add(bxVar2);
+    @Override // o39, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        byte b = this.f3;
+        KeyEvent.Callback callback = this.h3;
+        Object obj = this.g3;
+        switch (b) {
+            case 0:
+                HashSet hashSet = o.d1;
+                ((o) obj).k();
+                super.dispatchDraw(canvas);
+                break;
+            case 1:
+                jk2 jk2Var = (jk2) callback;
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (jk2Var.d * 255.0f), 31);
+                canvas.save();
+                float paddingLeft = getPaddingLeft();
+                float width = getWidth() - getPaddingRight();
+                canvas.clipRect(paddingLeft, 0.0f, width, getHeight());
+                canvas.translate((1.0f - jk2Var.d) * width, 0.0f);
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                canvas.save();
+                RectF rectF = gl.P;
+                rectF.set(paddingLeft, 0.0f, gl.L(12.0f) + paddingLeft, getHeight());
+                xl3 xl3Var = (xl3) obj;
+                xl3Var.s(canvas, rectF, 0, jk2Var.d);
+                rectF.set(width - gl.L(12.0f), 0.0f, width, getHeight());
+                xl3Var.s(canvas, rectF, 2, jk2Var.d);
+                canvas.restore();
+                canvas.restore();
+                break;
+            default:
+                Paint paint = (Paint) obj;
+                qx3 qx3Var = (qx3) callback;
+                lm lmVar = qx3Var.G1;
+                if (lmVar != null && qx3Var.E1 >= 0 && qx3Var.F1 >= 0 && qx3Var.r1 != null && this.H) {
+                    float e = lmVar.e(false, 0.0f);
+                    if (e > 0.0f) {
+                        int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                        int i2 = TLObject.FLAG_31;
+                        for (int i3 = 0; i3 < getChildCount(); i3++) {
+                            View childAt = getChildAt(i3);
+                            int R = RecyclerView.R(childAt);
+                            if (R != -1 && R >= qx3Var.E1 && R <= qx3Var.F1) {
+                                i = Math.min(i, childAt.getTop() + ((int) childAt.getTranslationY()));
+                                i2 = Math.max(i2, childAt.getBottom() + ((int) childAt.getTranslationY()));
+                            }
+                        }
+                        if (i < i2) {
+                            paint.setColor(bkb.p1(e, bkb.v0(bkb.Be, this.o2)));
+                            canvas.drawRect(0.0f, i, getMeasuredWidth(), i2, paint);
+                        }
+                        invalidate();
+                    }
+                }
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.i(this);
+    @Override // o39, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 1:
+                if (motionEvent.getX() > getPaddingLeft() && motionEvent.getX() < getWidth() - getPaddingRight()) {
+                    break;
+                }
+                break;
         }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            bxVar2.i(this);
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.f3) {
+            case 2:
+                return false;
+            default:
+                return super.drawChild(canvas, view, j);
         }
     }
 
-    @Override // android.view.View
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void m0(int i) {
+        rw rwVar;
+        switch (this.f3) {
+            case 0:
+                sw swVar = ((o) this.g3).L;
+                if (swVar != null && (rwVar = swVar.c) != null) {
+                    rwVar.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                qx3 qx3Var = (qx3) this.h3;
+                qx3Var.p1.a();
+                qx3Var.b.invalidate();
+                break;
+        }
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        bx bxVar = this.c;
-        if (bxVar != null) {
-            bxVar.f(this);
-        }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null) {
-            bxVar2.f(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.n != null) {
-            bx bxVar = this.c;
-            ui5 ui5Var = this.a;
-            int i = 0;
-            if (bxVar != null) {
-                canvas.save();
-                canvas.translate(this.f, this.h);
-                o.s(ui5Var, canvas, this, 0);
-                this.c.d(canvas, this);
-                canvas.restore();
-                i = 1;
-            }
-            if (this.d != null) {
-                canvas.save();
-                canvas.translate(this.f, this.e);
-                o.s(ui5Var, canvas, this, i);
-                this.d.d(canvas, this);
-                canvas.restore();
-            }
+        switch (this.f3) {
+            case 2:
+                super.onDetachedFromWindow();
+                qx3 qx3Var = (qx3) this.h3;
+                gm.release(qx3Var.b, (LongSparseArray<vl>) qx3Var.l1);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        CharSequence g;
-        CharSequence g2;
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setEnabled(true);
-        accessibilityNodeInfo.setClickable(false);
-        accessibilityNodeInfo.setLongClickable(false);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        bx bxVar = this.c;
-        ey eyVar = this.b;
-        ui5 ui5Var = this.a;
-        if (bxVar != null && (g2 = o.g(ui5Var, eyVar, bxVar)) != null) {
-            spannableStringBuilder.append(g2);
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        MotionEvent motionEvent2;
+        m8 m8Var;
+        switch (this.f3) {
+            case 0:
+                o oVar = (o) this.g3;
+                if (oVar.d != null && oVar.b == null && (((m8Var = oVar.I) == null || !m8Var.isShowing()) && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3))) {
+                    oVar.b = null;
+                    oVar.d = null;
+                    oVar.f = null;
+                } else if (oVar.d != null && oVar.b != null && motionEvent.getAction() == 1 && (getAdapter() instanceof dx)) {
+                    motionEvent2 = motionEvent;
+                    o.i(oVar, (dx) getAdapter(), motionEvent2, oVar.f, oVar.d, 0, 0);
+                    return super.onInterceptTouchEvent(motionEvent2);
+                }
+                motionEvent2 = motionEvent;
+                return super.onInterceptTouchEvent(motionEvent2);
+            case 1:
+                if (motionEvent.getX() <= getPaddingLeft() || motionEvent.getX() >= getWidth() - getPaddingRight()) {
+                    return false;
+                }
+                getParent().requestDisallowInterceptTouchEvent(true);
+                return super.onInterceptTouchEvent(motionEvent);
+            default:
+                xv2 e = xv2.e();
+                qx3 qx3Var = (qx3) this.h3;
+                return super.onInterceptTouchEvent(motionEvent) || e.g(motionEvent, qx3Var.q1, qx3Var.H1, this.o2);
         }
-        bx bxVar2 = this.d;
-        if (bxVar2 != null && (g = o.g(ui5Var, eyVar, bxVar2)) != null) {
-            if (spannableStringBuilder.length() > 0) {
-                spannableStringBuilder.append((CharSequence) ", ");
-            }
-            spannableStringBuilder.append(g);
-        }
-        if (spannableStringBuilder.length() == 0) {
-            return;
-        }
-        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) jb6.M0(2131754858, null));
-        accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 
-    @Override // android.view.View
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        byte b = this.f3;
+        KeyEvent.Callback callback = this.h3;
+        switch (b) {
+            case 0:
+                z1(z, i, i2, i3, i4);
+                ((m) callback).K = -1.0f;
+                break;
+            case 1:
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+            case 2:
+                super.onLayout(z, i, i2, i3, i4);
+                ((qx3) callback).p1.a();
+                break;
+        }
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i, int i2) {
-        hw hwVar;
-        int i3;
-        int i4;
-        int size = View.MeasureSpec.getSize(i);
-        ui5 ui5Var = this.a;
-        ui5Var.getClass();
-        this.f = gm.L(18.0f);
-        ui5Var.getClass();
-        this.h = gm.L(8.0f);
-        TL_iv.pageBlockPullquote pageblockpullquote = this.n;
-        if (pageblockpullquote != null) {
-            TL_iv.RichText richText = pageblockpullquote.text;
-            ui5 ui5Var2 = this.a;
-            hwVar = this;
-            bx m = o.m(ui5Var2, hwVar, null, richText, wi8.h(ui5Var2, 36.0f, size), this.h, this.n, this.b);
-            hwVar.c = m;
-            if (m != null) {
-                ui5Var.getClass();
-                i4 = hwVar.c.d.getHeight() + gm.L(8.0f);
-                bx bxVar = hwVar.c;
-                bxVar.s = hwVar.f;
-                bxVar.w = hwVar.h;
-            } else {
-                i4 = 0;
-            }
-            i3 = i4;
-            hwVar.e = gm.L(2.0f) + i3;
-            TL_iv.RichText richText2 = hwVar.n.caption;
-            ui5 ui5Var3 = hwVar.a;
-            bx m2 = o.m(ui5Var3, hwVar, null, richText2, wi8.h(ui5Var3, 36.0f, size), hwVar.e, hwVar.n, hwVar.b);
-            hwVar.d = m2;
-            if (m2 != null) {
-                ui5Var.getClass();
-                i3 += hwVar.d.d.getHeight() + gm.L(8.0f);
-                bx bxVar2 = hwVar.d;
-                bxVar2.s = hwVar.f;
-                bxVar2.w = hwVar.e;
-            }
-            if (i3 != 0) {
-                i3 = wi8.C(ui5Var, 8.0f, i3);
-            }
-        } else {
-            hwVar = this;
-            i3 = 1;
+        switch (this.f3) {
+            case 2:
+                View.MeasureSpec.getSize(i);
+                ((qx3) this.h3).x1.x1(40);
+                super.onMeasure(i, i2);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
         }
-        hwVar.setMeasuredDimension(size, i3);
     }
 
-    @Override // android.view.View
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (o.i(this.a, this.b, motionEvent, this, this.c, this.f, this.h)) {
-            return true;
+        m8 m8Var;
+        switch (this.f3) {
+            case 0:
+                o oVar = (o) this.g3;
+                if (oVar.d != null && oVar.b == null && (((m8Var = oVar.I) == null || !m8Var.isShowing()) && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3))) {
+                    oVar.b = null;
+                    oVar.d = null;
+                    oVar.f = null;
+                }
+                break;
         }
-        return o.i(this.a, this.b, motionEvent, this, this.d, this.f, this.e) || super.onTouchEvent(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 
-    public void setBlock(TL_iv.pageBlockPullquote pageblockpullquote) {
-        this.n = pageblockpullquote;
-        requestLayout();
+    public final void z1(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        int childCount = getChildCount();
+        for (int i5 = 0; i5 < childCount; i5++) {
+            View childAt = getChildAt(i5);
+            if ((childAt.getTag() instanceof Integer) && ((Integer) childAt.getTag()).intValue() == 90 && childAt.getBottom() < getMeasuredHeight()) {
+                int measuredHeight = getMeasuredHeight();
+                childAt.layout(0, measuredHeight - childAt.getMeasuredHeight(), childAt.getMeasuredWidth(), measuredHeight);
+                return;
+            }
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw(qx3 qx3Var, Context context, wjb wjbVar) {
+        super(context, wjbVar);
+        this.h3 = qx3Var;
+        this.g3 = new Paint(1);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw(m mVar, Activity activity) {
+        super(activity, null);
+        this.h3 = mVar;
+        this.g3 = mVar.M;
     }
 }

@@ -1,25 +1,25 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class zzg {
     private boolean zza;
 
-    public abstract Object zza(String str, px2 px2Var);
+    public abstract Object zza(String str, fw2 fw2Var);
 
-    public abstract Object zzb(String str, px2 px2Var);
+    public abstract Object zzb(String str, fw2 fw2Var);
 
-    public Object zzc(zzcg zzcgVar, px2 px2Var) {
-        return g7c.a;
+    public Object zzc(zzcg zzcgVar, fw2 fw2Var) {
+        return g5c.a;
     }
 
-    public abstract Object zzd(zzxn zzxnVar, px2 px2Var);
+    public abstract Object zzd(zzxn zzxnVar, fw2 fw2Var);
 
-    public Object zze(String str, long j, Exception exc, px2 px2Var) {
-        return g7c.a;
+    public Object zze(String str, long j, Exception exc, fw2 fw2Var) {
+        return g5c.a;
     }
 
-    public Object zzf(Exception exc, px2 px2Var) {
+    public Object zzf(Exception exc, fw2 fw2Var) {
         return zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzap, exc.getMessage(), null, 8, null));
     }
 

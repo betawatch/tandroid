@@ -1,29 +1,32 @@
 // default package
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import java.util.regex.Pattern;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class vy3 extends g6c {
-    public final /* synthetic */ wy3 e;
+public final class vy3 extends FrameLayout {
+    public final /* synthetic */ t14 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vy3(wy3 wy3Var, String str) {
-        super(str, (wkb) null);
-        this.e = wy3Var;
+    public vy3(t14 t14Var, Context context) {
+        super(context);
+        this.a = t14Var;
     }
 
-    @Override // g6c, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        wy3 wy3Var = this.e;
-        az3 az3Var = wy3Var.y;
-        Pattern pattern = az3.P1;
-        oc7 r1 = oc7.r1(az3Var.a);
-        String url = getURL();
-        az3 az3Var2 = wy3Var.y;
-        r1.C3(url, az3Var2.m1, 1, null);
-        az3Var2.G0();
-        az3Var2.dismiss();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        t14 t14Var = this.a;
+        yy3 yy3Var = t14Var.p0;
+        if (view != t14Var.i0) {
+            return super.drawChild(canvas, view, j);
+        }
+        canvas.save();
+        canvas.clipRect(0.0f, yy3Var.getY() + yy3Var.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j);
+        canvas.restore();
+        return drawChild;
     }
 }

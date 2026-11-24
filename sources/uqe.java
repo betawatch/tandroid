@@ -1,29 +1,19 @@
 // default package
 
-import android.content.Context;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class uqe {
-    public static int a(Context context) {
-        float fraction;
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        boolean z = displayMetrics.widthPixels < displayMetrics.heightPixels;
-        TypedValue typedValue = new TypedValue();
-        context.getResources().getValue(z ? R.dimen.mr_dialog_fixed_width_minor : R.dimen.mr_dialog_fixed_width_major, typedValue, true);
-        int i = typedValue.type;
-        if (i == 5) {
-            fraction = typedValue.getDimension(displayMetrics);
-        } else {
-            if (i != 6) {
-                return -2;
-            }
-            int i2 = displayMetrics.widthPixels;
-            fraction = typedValue.getFraction(i2, i2);
+public final class uqe implements zn7 {
+    public static final uqe a = new uqe();
+
+    static {
+        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return (int) fraction;
+        throw null;
     }
 }

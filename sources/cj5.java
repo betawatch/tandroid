@@ -1,7 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Binder;
+import android.os.IInterface;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class cj5 {
-    public byte[] a;
+public abstract class cj5 extends Binder implements dj5, IInterface {
+    public static final /* synthetic */ int a = 0;
 }

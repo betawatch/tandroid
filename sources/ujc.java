@@ -1,38 +1,27 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
+import android.media.VolumeProvider;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ujc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
+public final class ujc extends VolumeProvider {
+    public final /* synthetic */ tx3 a;
 
-    public /* synthetic */ ujc(VoIPService voIPService, byte b) {
-        this.a = b;
-        this.b = voIPService;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ujc(tx3 tx3Var, int i, int i2, int i3) {
+        super(i, i2, i3);
+        this.a = tx3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        VoIPService voIPService = this.b;
-        switch (b) {
-            case 0:
-                voIPService.lambda$updateConnectionState$78();
-                break;
-            case 1:
-                voIPService.lambda$updateConnectionState$79();
-                break;
-            case 2:
-                voIPService.lambda$onConnectionStateChanged$113();
-                break;
-            case 3:
-                voIPService.lambda$onConnectionStateChanged$114();
-                break;
-            default:
-                voIPService.lambda$playConnectedSound$84();
-                break;
-        }
+    @Override // android.media.VolumeProvider
+    public final void onAdjustVolume(int i) {
+        tx3 tx3Var = this.a;
+        ((ux4) ((xl3) tx3Var.f).d).a.post(new sx4(tx3Var, i, (byte) 1));
+    }
+
+    @Override // android.media.VolumeProvider
+    public final void onSetVolumeTo(int i) {
+        tx3 tx3Var = this.a;
+        ((ux4) ((xl3) tx3Var.f).d).a.post(new sx4(tx3Var, i, (byte) 0));
     }
 }

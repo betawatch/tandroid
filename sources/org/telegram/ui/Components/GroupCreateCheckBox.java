@@ -5,9 +5,9 @@ import android.graphics.Typeface;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class GroupCreateCheckBox extends View implements vlb {
+public class GroupCreateCheckBox extends View implements tjb {
     public float a;
 
     public float getProgress() {
@@ -33,7 +33,7 @@ public class GroupCreateCheckBox extends View implements vlb {
         }
         getMeasuredWidth();
         getMeasuredHeight();
-        Typeface typeface = gm.a;
+        Typeface typeface = gl.a;
         throw null;
     }
 
@@ -45,13 +45,13 @@ public class GroupCreateCheckBox extends View implements vlb {
         invalidate();
     }
 
-    @Override // vlb
+    @Override // tjb
     public final void updateColors() {
-        cmb.u0(0);
+        bkb.u0(0);
         throw null;
     }
 
-    @Override // vlb
+    @Override // tjb
     public final void addColorKeys(HashSet hashSet) {
     }
 

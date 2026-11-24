@@ -1,125 +1,63 @@
 // default package
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class m4f {
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v0, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r6v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r6v6 */
-    public static final the a(iie iieVar) {
-        try {
-            xbc d = iieVar.d();
-            if (d == null) {
-                throw new qge("Parser being asked to parse an empty input stream");
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String sb;
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i2 >= length) {
+                break;
             }
-            try {
-                byte b = d.b;
-                byte b2 = d.a;
-                ?? r6 = 0;
-                if (b2 == Byte.MIN_VALUE) {
-                    long a = iieVar.a();
-                    if (a > 1000) {
-                        throw new qge("Parser being asked to read a large CBOR array");
-                    }
-                    b(b, a);
-                    the[] theVarArr = new the[(int) a];
-                    while (((long) r6) < a) {
-                        theVarArr[r6] = a(iieVar);
-                        r6++;
-                    }
-                    return new yfe(yjd.B(theVarArr));
+            Object obj = objArr[i2];
+            if (obj == null) {
+                sb = "null";
+            } else {
+                try {
+                    sb = obj.toString();
+                } catch (Exception e) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
+                    StringBuilder p = ug8.p("<", str2, " threw ");
+                    p.append(e.getClass().getName());
+                    p.append(">");
+                    sb = p.toString();
                 }
-                if (b2 != -96) {
-                    if (b2 == -64) {
-                        throw new qge("Tags are currently unsupported");
-                    }
-                    if (b2 == -32) {
-                        return new dge(iieVar.e());
-                    }
-                    if (b2 == 0 || b2 == 32) {
-                        long b3 = iieVar.b();
-                        b(b, b3 > 0 ? b3 : ~b3);
-                        return new vge(b3);
-                    }
-                    if (b2 == 64) {
-                        iieVar.h((byte) 64);
-                        byte[] j = iieVar.j();
-                        int length = j.length;
-                        b(b, length);
-                        return new ege(rce.o(length, j));
-                    }
-                    if (b2 != 96) {
-                        throw new qge("Unidentifiable major type: " + ((b2 >> 5) & 7));
-                    }
-                    iieVar.h((byte) 96);
-                    String str = new String(iieVar.j(), StandardCharsets.UTF_8);
-                    b(b, str.length());
-                    return new ihe(str);
-                }
-                long c = iieVar.c();
-                if (c > 1000) {
-                    throw new qge("Parser being asked to read a large CBOR map");
-                }
-                b(b, c);
-                int i = (int) c;
-                rhb[] rhbVarArr = new rhb[i];
-                the theVar = null;
-                int i2 = 0;
-                while (i2 < c) {
-                    the a2 = a(iieVar);
-                    if (theVar != null && a2.compareTo(theVar) <= 0) {
-                        throw new ol2("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + theVar.toString() + "\nCurrent key: " + a2.toString());
-                    }
-                    rhbVarArr[i2] = new rhb(a2, a(iieVar), r6, (byte) 17);
-                    i2++;
-                    theVar = a2;
-                }
-                TreeMap treeMap = new TreeMap();
-                for (int i3 = 0; i3 < i; i3++) {
-                    rhb rhbVar = rhbVarArr[i3];
-                    if (treeMap.containsKey((the) rhbVar.b)) {
-                        throw new ol2("Attempted to add duplicate key to canonical CBOR Map.");
-                    }
-                    treeMap.put((the) rhbVar.b, (the) rhbVar.c);
-                }
-                return new ehe(pld.c(treeMap));
-            } catch (IOException | RuntimeException e) {
-                throw new qge(e);
             }
-        } catch (IOException e2) {
-            throw new qge(e2);
+            objArr[i2] = sb;
+            i2++;
         }
-    }
-
-    public static final void b(byte b, long j) {
-        switch (b) {
-            case 24:
-                if (j < 24) {
-                    throw new ol2(wi8.n(j, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
-                }
-                return;
-            case 25:
-                if (j < 256) {
-                    throw new ol2(wi8.n(j, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
-                }
-                return;
-            case 26:
-                if (j < 65536) {
-                    throw new ol2(wi8.n(j, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
-                }
-                return;
-            case 27:
-                if (j < 4294967296L) {
-                    throw new ol2(wi8.n(j, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
-                }
-                return;
-            default:
-                return;
+        StringBuilder sb2 = new StringBuilder(str.length() + (length << 4));
+        int i3 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i >= length2 || (indexOf = str.indexOf("%s", i3)) == -1) {
+                break;
+            }
+            sb2.append((CharSequence) str, i3, indexOf);
+            sb2.append(objArr[i]);
+            i++;
+            i3 = indexOf + 2;
         }
+        sb2.append((CharSequence) str, i3, str.length());
+        if (i < length2) {
+            sb2.append(" [");
+            sb2.append(objArr[i]);
+            for (int i4 = i + 1; i4 < objArr.length; i4++) {
+                sb2.append(", ");
+                sb2.append(objArr[i4]);
+            }
+            sb2.append(']');
+        }
+        return sb2.toString();
     }
 }

@@ -1,18 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
+import android.graphics.Rect;
+import android.os.Build;
+import android.util.Log;
 import android.view.View;
+import java.lang.reflect.Method;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class gfc {
-    public static View.AccessibilityDelegate a(View view) {
-        return view.getAccessibilityDelegate();
+    public static final Method a;
+    public static final boolean b;
+
+    static {
+        b = Build.VERSION.SDK_INT >= 27;
+        try {
+            Method declaredMethod = View.class.getDeclaredMethod("computeFitSystemWindows", Rect.class, Rect.class);
+            a = declaredMethod;
+            if (declaredMethod.isAccessible()) {
+                return;
+            }
+            declaredMethod.setAccessible(true);
+        } catch (NoSuchMethodException unused) {
+            Log.d("ViewUtils", "Could not find method computeFitSystemWindows. Oh well.");
+        }
     }
 
-    public static void b(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i, int i2) {
-        view.saveAttributeDataForStyleable(context, iArr, attributeSet, typedArray, i, i2);
+    public static boolean a(View view) {
+        WeakHashMap weakHashMap = jdc.a;
+        return view.getLayoutDirection() == 1;
     }
 }

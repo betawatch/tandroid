@@ -5,9 +5,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class s3 extends AbstractList implements lr5 {
+public abstract class s3 extends AbstractList implements lp5 {
     public boolean a;
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -50,7 +50,7 @@ public abstract class s3 extends AbstractList implements lr5 {
         if (this.a) {
             return;
         }
-        gxc.b();
+        fvc.b();
     }
 
     @Override // java.util.AbstractList, java.util.Collection, java.util.List

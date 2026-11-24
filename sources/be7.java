@@ -1,36 +1,22 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class be7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cf7 b;
-    public final /* synthetic */ TLRPC.TL_chatFull c;
+public final class be7 extends Exception {
+    public final byte a;
 
-    public /* synthetic */ be7(cf7 cf7Var, TLRPC.TL_chatFull tL_chatFull, byte b) {
-        this.a = b;
-        this.b = cf7Var;
-        this.c = tL_chatFull;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public be7(String str, Throwable th) {
+        super(str, th);
+        fre.g(str, "Provided message must not be empty.");
+        this.a = (byte) 13;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.TL_chatFull tL_chatFull = this.c;
-        cf7 cf7Var = this.b;
-        switch (b) {
-            case 0:
-                nm7 notificationCenter = cf7Var.getNotificationCenter();
-                Boolean bool = Boolean.FALSE;
-                notificationCenter.k(31, tL_chatFull, 0, bool, bool);
-                break;
-            default:
-                nm7 notificationCenter2 = cf7Var.getNotificationCenter();
-                Boolean bool2 = Boolean.FALSE;
-                notificationCenter2.k(31, tL_chatFull, 0, bool2, bool2);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public be7(String str, int i) {
+        super(str);
+        fre.g(str, "Provided message must not be empty.");
+        this.a = i;
     }
 }

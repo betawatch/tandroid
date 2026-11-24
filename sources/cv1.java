@@ -1,76 +1,87 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class cv1 extends tca {
-    public final /* synthetic */ k47 U2;
-    public final /* synthetic */ iv1 V2;
+public final /* synthetic */ class cv1 implements fg7, wi3 {
+    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ k27 b;
+    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cv1(iv1 iv1Var, Activity activity, yv1 yv1Var, ArrayList arrayList, boolean z, boolean z2, ylb ylbVar, boolean z3, k47 k47Var) {
-        super(activity, yv1Var, arrayList, null, null, z, null, null, false, false, z2, null, ylbVar);
-        this.V2 = iv1Var;
-        this.U2 = k47Var;
-        this.V1 = z3;
+    public /* synthetic */ cv1(ChatActivityEnterView chatActivityEnterView, k27 k27Var, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer) {
+        this.a = chatActivityEnterView;
+        this.b = k27Var;
+        this.c = tL_buttonTypeRequestPeer;
     }
 
-    @Override // tca, my0
-    public final void H() {
-        int i;
-        yv1 yv1Var = this.V2.a;
-        Activity parentActivity = yv1Var.getParentActivity();
-        i = ((d) yv1Var).classGuid;
-        gm.V2(parentActivity, i);
-        super.H();
-        if (yv1Var.a0.getVisibility() == 0) {
-            yv1Var.fragmentView.requestLayout();
-        }
+    @Override // wi3
+    public final boolean G() {
+        return false;
     }
 
-    @Override // tca
-    public final void L0(vh6 vh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
-        int i2;
-        yv1 yv1Var = this.V2.a;
-        int i3 = yv1.xd;
-        yv1Var.i6();
-        if (yv1Var.N3 == null || !z) {
+    @Override // fg7
+    public final void a(ArrayList arrayList) {
+        int i = ChatActivityEnterView.r7;
+        if (arrayList.isEmpty()) {
             return;
         }
-        if (vh6Var.m() != 1) {
-            yv1Var.N3.k(0L, 53, Integer.valueOf(i), Integer.valueOf(vh6Var.m()), null, null);
-            return;
+        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        na7 q1 = na7.q1(chatActivityEnterView.R);
+        k27 k27Var = this.b;
+        tL_messages_sendBotRequestedPeer.peer = q1.k1(k27Var.k.peer_id);
+        tL_messages_sendBotRequestedPeer.flags |= 1;
+        tL_messages_sendBotRequestedPeer.msg_id = k27Var.e1();
+        tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            tL_messages_sendBotRequestedPeer.requested_peers.add(na7.q1(chatActivityEnterView.R).h1(((Long) obj).longValue()));
         }
-        if (((TLRPC.Dialog) vh6Var.n(0)).id == yv1Var.getUserConfig().e()) {
-            i2 = i;
-            if (c41.b0(yv1Var).h0(i2, ((TLRPC.Dialog) vh6Var.n(0)).id)) {
-                return;
+        ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer, null);
+    }
+
+    @Override // wi3
+    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
+        int i3 = ChatActivityEnterView.r7;
+        if (!arrayList.isEmpty()) {
+            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+            ChatActivityEnterView chatActivityEnterView = this.a;
+            na7 q1 = na7.q1(chatActivityEnterView.R);
+            k27 k27Var = this.b;
+            tL_messages_sendBotRequestedPeer.peer = q1.k1(k27Var.k.peer_id);
+            tL_messages_sendBotRequestedPeer.flags |= 1;
+            tL_messages_sendBotRequestedPeer.msg_id = k27Var.e1();
+            tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+            HashSet hashSet = new HashSet();
+            int size = arrayList.size();
+            int i4 = 0;
+            while (i4 < size) {
+                Object obj = arrayList.get(i4);
+                i4++;
+                hashSet.add(Long.valueOf(((zc7) obj).a));
             }
-        } else {
-            i2 = i;
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                tL_messages_sendBotRequestedPeer.requested_peers.add(na7.q1(chatActivityEnterView.R).h1(((Long) it.next()).longValue()));
+            }
+            ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-        yv1Var.N3.k(((TLRPC.Dialog) vh6Var.n(0)).id, 53, Integer.valueOf(i2), tL_forumTopic, null, null);
+        cj3Var.finishFragment();
+        return true;
     }
 
-    @Override // tca
-    public final void M0(View view) {
-        yv1 yv1Var = this.V2.a;
-        o9b b = view instanceof wca ? q9b.b((wca) view) : null;
-        ArrayList arrayList = new ArrayList();
-        k47 k47Var = this.U2;
-        f47 f47Var = k47Var.c1() != 0 ? (f47) yv1Var.P6.f(k47Var.c1()) : null;
-        if (f47Var != null) {
-            arrayList.addAll(f47Var.d);
-        } else {
-            arrayList.add(k47Var);
-        }
-        v9b C = v9b.C(yv1Var.getParentActivity(), this.a);
-        C.S = new xu1(this, C, view, (byte) 0);
-        C.T(b, g6b.x(arrayList));
+    @Override // wi3
+    public final boolean t(cj3 cj3Var) {
+        return false;
     }
 }

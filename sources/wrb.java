@@ -1,159 +1,41 @@
 // default package
 
-import java.util.Locale;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class wrb extends eu5 {
-    public String e;
-    public String f;
-    public String g;
-    public final StringBuilder h;
-    public String i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public fz m;
-
-    public wrb(int i) {
-        super(i, (byte) 2);
-        this.h = new StringBuilder();
-        this.j = false;
-        this.k = false;
-        this.l = false;
+public enum wrb extends qsb {
+    public wrb() {
+        super("DoctypeName", 52);
     }
 
-    public final void A() {
-        if (this.m == null) {
-            this.m = new fz();
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        rpb rpbVar = aqbVar.m;
+        if (zj1Var.o()) {
+            rpbVar.e.append(zj1Var.e());
+            return;
         }
-        String str = this.g;
-        StringBuilder sb = this.h;
-        if (str != null) {
-            String trim = str.trim();
-            this.g = trim;
-            if (trim.length() > 0) {
-                String sb2 = this.k ? sb.length() > 0 ? sb.toString() : this.i : this.j ? "" : null;
-                fz fzVar = this.m;
-                String str2 = this.g;
-                int h = fzVar.h(str2);
-                if (h != -1) {
-                    fzVar.c[h] = sb2;
-                } else {
-                    int i = fzVar.a;
-                    int i2 = i + 1;
-                    if (i2 < i) {
-                        u36.j("Must be true");
-                        return;
-                    }
-                    String[] strArr = fzVar.b;
-                    int length = strArr.length;
-                    if (length < i2) {
-                        int i3 = length >= 4 ? i << 1 : 4;
-                        if (i2 <= i3) {
-                            i2 = i3;
-                        }
-                        String[] strArr2 = new String[i2];
-                        System.arraycopy(strArr, 0, strArr2, 0, Math.min(strArr.length, i2));
-                        fzVar.b = strArr2;
-                        String[] strArr3 = fzVar.c;
-                        String[] strArr4 = new String[i2];
-                        System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i2));
-                        fzVar.c = strArr4;
-                    }
-                    String[] strArr5 = fzVar.b;
-                    int i4 = fzVar.a;
-                    strArr5[i4] = str2;
-                    fzVar.c[i4] = sb2;
-                    fzVar.a = i4 + 1;
-                }
+        char d = zj1Var.d();
+        if (d == 0) {
+            aqbVar.m(this);
+            rpbVar.e.append((char) 65533);
+            return;
+        }
+        if (d != ' ') {
+            lqb lqbVar = qsb.a;
+            if (d == '>') {
+                aqbVar.j();
+                aqbVar.c = lqbVar;
+                return;
+            } else if (d == 65535) {
+                aqbVar.l(this);
+                aqbVar.j();
+                aqbVar.c = lqbVar;
+                return;
+            } else if (d != '\t' && d != '\n' && d != '\f' && d != '\r') {
+                rpbVar.e.append(d);
+                return;
             }
         }
-        this.g = null;
-        this.j = false;
-        this.k = false;
-        eu5.t(sb);
-        this.i = null;
-    }
-
-    @Override // eu5
-    /* renamed from: B, reason: merged with bridge method [inline-methods] */
-    public wrb s() {
-        this.e = null;
-        this.f = null;
-        this.g = null;
-        eu5.t(this.h);
-        this.i = null;
-        this.j = false;
-        this.k = false;
-        this.l = false;
-        this.m = null;
-        return this;
-    }
-
-    public final void u(char c) {
-        String valueOf = String.valueOf(c);
-        String str = this.g;
-        if (str != null) {
-            valueOf = str.concat(valueOf);
-        }
-        this.g = valueOf;
-    }
-
-    public final void v(char c) {
-        this.k = true;
-        String str = this.i;
-        StringBuilder sb = this.h;
-        if (str != null) {
-            sb.append(str);
-            this.i = null;
-        }
-        sb.append(c);
-    }
-
-    public final void w(String str) {
-        this.k = true;
-        String str2 = this.i;
-        StringBuilder sb = this.h;
-        if (str2 != null) {
-            sb.append(str2);
-            this.i = null;
-        }
-        if (sb.length() == 0) {
-            this.i = str;
-        } else {
-            sb.append(str);
-        }
-    }
-
-    public final void x(int[] iArr) {
-        this.k = true;
-        String str = this.i;
-        StringBuilder sb = this.h;
-        if (str != null) {
-            sb.append(str);
-            this.i = null;
-        }
-        for (int i : iArr) {
-            sb.appendCodePoint(i);
-        }
-    }
-
-    public final void y(String str) {
-        String str2 = this.e;
-        if (str2 != null) {
-            str = str2.concat(str);
-        }
-        this.e = str;
-        this.f = str != null ? str.toLowerCase(Locale.ENGLISH) : "";
-    }
-
-    public final String z() {
-        String str = this.e;
-        if (str != null && str.length() != 0) {
-            return this.e;
-        }
-        u36.j("Must be false");
-        return null;
+        aqbVar.c = qsb.r0;
     }
 }

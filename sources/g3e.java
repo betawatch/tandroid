@@ -1,22 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum g3e implements eqe {
-    b(0),
-    c(1),
-    d(2),
-    e(3);
+public final class g3e implements zn7 {
+    public static final g3e a = new g3e();
+    public static final w84 b = new w84("errorCode", b00.m(yjb.p(gid.class, new bgd(1))));
+    public static final w84 c = new w84("isColdCall", b00.m(yjb.p(gid.class, new bgd(2))));
+    public static final w84 d = new w84("imageInfo", b00.m(yjb.p(gid.class, new bgd(3))));
+    public static final w84 e = new w84("subjectSegmenterOptions", b00.m(yjb.p(gid.class, new bgd(4))));
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    g3e(int i) {
-        this.a = i;
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return "<" + g3e.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + ((int) this.a) + " name=" + name() + '>';
+    @Override // q24
+    public final void a(Object obj, Object obj2) {
+        isd isdVar = (isd) obj;
+        ao7 ao7Var = (ao7) obj2;
+        ao7Var.a(b, isdVar.a);
+        ao7Var.a(c, isdVar.b);
+        ao7Var.a(d, null);
+        ao7Var.a(e, isdVar.c);
     }
 }

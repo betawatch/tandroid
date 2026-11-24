@@ -1,25 +1,13 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class kx4 extends tm {
-    public final /* synthetic */ lx4 N;
+public final class kx4 implements gx4 {
+    public static final kx4 a = new kx4();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kx4(lx4 lx4Var, ViewGroup viewGroup, int i) {
-        super(i, viewGroup);
-        this.N = lx4Var;
-    }
-
-    @Override // tm, dn
-    public final void invalidate() {
-        super.invalidate();
-        Drawable drawable = this.N;
-        if (drawable.getCallback() != null) {
-            drawable.getCallback().invalidateDrawable(drawable);
-        }
+    @Override // gx4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
     }
 }

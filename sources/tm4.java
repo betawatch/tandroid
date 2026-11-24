@@ -1,26 +1,46 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class tm4 extends qx2 {
-    public um4 a;
-    public Object b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ um4 d;
-    public int e;
+public abstract class tm4 implements wxb {
+    public final wxb a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tm4(um4 um4Var, px2 px2Var) {
-        super(px2Var);
-        this.d = um4Var;
+    public tm4(wxb wxbVar) {
+        this.a = wxbVar;
     }
 
-    @Override // og0
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.c(null, this);
+    @Override // wxb
+    public void a(long j, int i, int i2, int i3, vxb vxbVar) {
+        this.a.a(j, i, i2, i3, vxbVar);
+    }
+
+    @Override // wxb
+    public void b(xu7 xu7Var, int i, int i2) {
+        this.a.b(xu7Var, i, i2);
+    }
+
+    @Override // wxb
+    public int c(g63 g63Var, int i, boolean z) {
+        return this.a.c(g63Var, i, z);
+    }
+
+    @Override // wxb
+    public final void d(long j) {
+        this.a.d(j);
+    }
+
+    @Override // wxb
+    public void e(int i, xu7 xu7Var) {
+        this.a.e(i, xu7Var);
+    }
+
+    @Override // wxb
+    public int f(g63 g63Var, int i, boolean z) {
+        return this.a.f(g63Var, i, z);
+    }
+
+    @Override // wxb
+    public void g(fm4 fm4Var) {
+        this.a.g(fm4Var);
     }
 }

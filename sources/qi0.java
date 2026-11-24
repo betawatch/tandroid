@@ -1,65 +1,39 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class qi0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ CharSequence c;
+    public final /* synthetic */ aj0 d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class qi0 extends View {
-    public Bitmap a;
-    public Bitmap b;
-    public Paint c;
-    public byte d;
-    public int e;
-    public pi0 f;
-
-    public int getRating() {
-        return this.e;
+    public /* synthetic */ qi0(aj0 aj0Var, int i, CharSequence charSequence, byte b) {
+        this.a = b;
+        this.d = aj0Var;
+        this.b = i;
+        this.c = charSequence;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.c;
-        int i = 0;
-        while (i < this.d) {
-            paint.setColor(cmb.w0(null, i < this.e ? cmb.l5 : cmb.s5, false));
-            canvas.drawBitmap(i < this.e ? this.a : this.b, gm.L(48.0f) * i, 0.0f, paint);
-            i++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        byte b = this.d;
-        setMeasuredDimension(hg9.y(16.0f, b - 1, gm.L(32.0f) * b), gm.L(32.0f));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i;
-        float L = gm.L(-8.0f);
-        for (int i2 = 0; i2 < this.d; i2++) {
-            if (motionEvent.getX() > L && motionEvent.getX() < gm.L(48.0f) + L && this.e != (i = i2 + 1)) {
-                this.e = i;
-                pi0 pi0Var = this.f;
-                if (pi0Var != null) {
-                    View view = ((en0) pi0Var).a;
-                    view.setEnabled(i > 0);
-                    ((TextView) view).setText(jb6.M0(i < 4 ? 2131747984 : 2131745374, null).toUpperCase());
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        CharSequence charSequence = this.c;
+        int i = this.b;
+        aj0 aj0Var = this.d;
+        switch (b) {
+            case 0:
+                lj0 lj0Var = aj0Var.m0;
+                aod aodVar = lj0Var.c;
+                if (aodVar == null) {
+                    aodVar = new ij0();
+                    lj0Var.c = aodVar;
                 }
-                invalidate();
-                return true;
-            }
-            L += gm.L(48.0f);
+                aodVar.a(i, charSequence);
+                break;
+            default:
+                aj0Var.U(i, charSequence);
+                break;
         }
-        return true;
-    }
-
-    public void setOnRatingChangeListener(pi0 pi0Var) {
-        this.f = pi0Var;
     }
 }

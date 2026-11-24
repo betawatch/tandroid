@@ -1,32 +1,11 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class u9c extends b4 {
-    public static final Parcelable.Creator<u9c> CREATOR = new lbd((byte) 20);
-    public final boolean a;
-
-    public u9c(boolean z) {
-        this.a = z;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof u9c) && this.a == ((u9c) obj).a;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        mve.s(parcel, r);
-    }
+public final class u9c {
+    public final float[] a = new float[20];
+    public final long[] b = new long[20];
+    public float c = 0.0f;
+    public int d = 0;
+    public int e = 0;
 }

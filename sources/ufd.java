@@ -1,17 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ufd {
-    public static final o94 a;
-    public static final o94[] b;
+public final class ufd implements zn7 {
+    public static final ufd a = new ufd();
 
     static {
-        o94 o94Var = new o94("fpnv_exchange_credential_response_for_phone_number_api", -1, 1L, true);
-        o94 o94Var2 = new o94("fpnv_get_consent_screen_intent", -1, 1L, true);
-        o94 o94Var3 = new o94("fpnv_get_digital_credential_payload_api", -1, 1L, true);
-        o94 o94Var4 = new o94("fpnv_get_verification_support_info", -1, 1L, true);
-        a = o94Var4;
-        b = new o94[]{o94Var, o94Var2, o94Var3, o94Var4, new o94("fpnv_test_sessions", -1, 1L, true), new o94("fpnv_verify_phone_number", -1, 1L, true)};
+        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)), 4)), 5)));
+    }
+
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

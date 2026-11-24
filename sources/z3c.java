@@ -1,26 +1,56 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class z3c implements ValueAnimator.AnimatorUpdateListener {
-    public int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ d4c c;
+public final class z3c extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public z3c(d4c d4cVar, int i) {
-        this.c = d4cVar;
-        this.b = i;
+    public z3c() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
-        d4c d4cVar = this.c;
-        d4cVar.O = true;
-        d4cVar.n.scrollBy(0, floatValue - this.a);
-        d4cVar.O = false;
-        this.a = floatValue;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i = this.c;
+        if (i >= 0) {
+            this.b = bkb.w0(null, i, false);
+        }
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        int i2 = this.b;
+        if (i2 != 0) {
+            textPaint.setColor(i2);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    public z3c(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public z3c(Typeface typeface, int i) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i;
     }
 }

@@ -1,19 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class z9e implements cq7 {
-    public static final z9e a = new z9e();
+public final class z9e extends qae {
+    public final int d;
+    public final int e;
 
-    static {
-        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)));
+    public z9e(byte[] bArr, int i, int i2) {
+        super(bArr);
+        qae.n(i, i + i2, bArr.length);
+        this.d = i;
+        this.e = i2;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // qae
+    public final byte h(int i) {
+        int i2 = this.e;
+        if (((i2 - (i + 1)) | i) >= 0) {
+            return this.b[this.d + i];
         }
-        throw null;
+        if (i < 0) {
+            throw new ArrayIndexOutOfBoundsException(de9.k(i, "Index < 0: "));
+        }
+        throw new ArrayIndexOutOfBoundsException(b00.g(i, i2, "Index > length: ", ", "));
+    }
+
+    @Override // qae
+    public final byte i(int i) {
+        return this.b[this.d + i];
+    }
+
+    @Override // qae
+    public final int j() {
+        return this.d;
+    }
+
+    @Override // qae
+    public final int k() {
+        return this.e;
+    }
+
+    @Override // qae
+    public final void l(int i, byte[] bArr) {
+        System.arraycopy(this.b, this.d, bArr, 0, i);
     }
 }

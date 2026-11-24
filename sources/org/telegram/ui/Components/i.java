@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class i implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -39,7 +39,7 @@ public final class i implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:74:0x0138, code lost:
     
-        if (jo3.b() != false) goto L71;
+        if (zm3.b() != false) goto L71;
      */
     /* JADX WARN: Removed duplicated region for block: B:32:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0090  */
@@ -48,17 +48,17 @@ public final class i implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        k47 threadMessage;
-        in3 V;
+        k27 threadMessage;
+        xl3 V;
         int i;
         ChatActivityEnterView chatActivityEnterView = this.a;
         a aVar = chatActivityEnterView.a1;
         Activity activity = chatActivityEnterView.E3;
-        uz1 uz1Var = chatActivityEnterView.P3;
-        if (uz1Var == null || activity == null) {
+        hy1 hy1Var = chatActivityEnterView.P3;
+        if (hy1Var == null || activity == null) {
             return;
         }
-        uz1Var.r();
+        hy1Var.n();
         chatActivityEnterView.y4 = true;
         chatActivityEnterView.x4 = false;
         ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.a2;
@@ -73,25 +73,25 @@ public final class i implements Runnable {
             boolean z2 = activity.checkSelfPermission("android.permission.CAMERA") == 0;
             if (z) {
                 if (z2) {
-                    chatActivityEnterView.P3.F1(0, 0, 0, 0L, 0L, true);
+                    chatActivityEnterView.P3.k1(0, 0, 0, 0L, 0L, true);
                     if (chatActivityEnterView.v3) {
                         return;
                     }
                     chatActivityEnterView.v3 = true;
-                    chatActivityEnterView.w2(0, true);
+                    chatActivityEnterView.r2(0, true);
                     ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
                     if (recordCircle != null) {
                         recordCircle.I = 0.5f;
                         recordCircle.J = false;
                     }
-                    zz1 zz1Var = chatActivityEnterView.Z0;
-                    if (zz1Var != null) {
-                        zz1Var.a = false;
-                        zz1Var.d = 0L;
-                        zz1Var.e = 0L;
-                        zz1Var.h = 0L;
-                        zz1Var.n = 0L;
-                        zz1Var.b = false;
+                    my1 my1Var = chatActivityEnterView.Z0;
+                    if (my1Var != null) {
+                        my1Var.a = false;
+                        my1Var.d = 0L;
+                        my1Var.e = 0L;
+                        my1Var.h = 0L;
+                        my1Var.n = 0L;
+                        my1Var.b = false;
                         return;
                     }
                     return;
@@ -107,14 +107,14 @@ public final class i implements Runnable {
                     strArr[0] = "android.permission.RECORD_AUDIO";
                     strArr[1] = "android.permission.CAMERA";
                 }
-                activity.requestPermissions(strArr, nm7.f2);
+                activity.requestPermissions(strArr, kk7.f2);
                 return;
             }
             i = 1;
             String[] strArr2 = new String[i];
             if (!z) {
             }
-            activity.requestPermissions(strArr2, nm7.f2);
+            activity.requestPermissions(strArr2, kk7.f2);
             return;
         }
         if (activity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
@@ -125,55 +125,55 @@ public final class i implements Runnable {
             chatActivityEnterView.m0(false, false);
             chatActivityEnterView.t3 = -1.0f;
             chatActivityEnterView.v3 = true;
-            chatActivityEnterView.w2(0, true);
+            chatActivityEnterView.r2(0, true);
             chatActivityEnterView.i0();
             ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.D2;
             if (recordCircle2 != null) {
                 recordCircle2.J = true;
             }
-            wz1 wz1Var = chatActivityEnterView.b2;
-            if (wz1Var != null) {
-                wz1Var.e = false;
+            jy1 jy1Var = chatActivityEnterView.b2;
+            if (jy1Var != null) {
+                jy1Var.e = false;
             }
             aVar.getParent().requestDisallowInterceptTouchEvent(true);
             chatActivityEnterView.z0().I(true);
             return;
         }
-        chatActivityEnterView.P3.z0(1);
-        if (DictationAsr.E() && (V = DictationAsr.V(bo3.c(chatActivityEnterView.getContext(), chatActivityEnterView.G3))) != null) {
-            gn3 gn3Var = (gn3) V.b;
+        chatActivityEnterView.P3.n0(1);
+        if (DictationAsr.E() && (V = DictationAsr.V(qm3.c(chatActivityEnterView.getContext(), chatActivityEnterView.G3))) != null) {
+            vl3 vl3Var = (vl3) V.b;
             long currentTimeMillis = System.currentTimeMillis();
-            SharedPreferences d1 = oc7.d1();
+            SharedPreferences c1 = na7.c1();
             StringBuilder sb = new StringBuilder("tinyasr_checked_");
-            sb.append(gn3Var.a);
-            boolean z3 = currentTimeMillis - d1.getLong(sb.toString(), 0L) > 86400000;
-            if (DictationAsr.y(gn3Var)) {
-                if (!gn3Var.i) {
-                    gn3Var.i = true;
-                    DictationAsr.d.execute(new cn3(gn3Var, (byte) 0));
+            sb.append(vl3Var.a);
+            boolean z3 = currentTimeMillis - c1.getLong(sb.toString(), 0L) > 86400000;
+            if (DictationAsr.y(vl3Var)) {
+                if (!vl3Var.i) {
+                    vl3Var.i = true;
+                    DictationAsr.d.execute(new rl3(vl3Var, (byte) 0));
                 }
             }
         }
         chatActivityEnterView.t3 = -1.0f;
-        uz1 uz1Var2 = chatActivityEnterView.P3;
-        TL_stories.StoryItem C0 = uz1Var2 != null ? uz1Var2.C0() : null;
+        hy1 hy1Var2 = chatActivityEnterView.P3;
+        TL_stories.StoryItem t0 = hy1Var2 != null ? hy1Var2.t0() : null;
         MediaController w = MediaController.w();
         int i2 = chatActivityEnterView.R;
         long j = chatActivityEnterView.G3;
-        k47 k47Var = chatActivityEnterView.J3;
+        k27 k27Var = chatActivityEnterView.J3;
         threadMessage = chatActivityEnterView.getThreadMessage();
         int i3 = chatActivityEnterView.w3;
-        yv1 yv1Var = chatActivityEnterView.F3;
-        w.w0(i2, j, k47Var, threadMessage, C0, i3, true, yv1Var != null ? yv1Var.X6() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+        mu1 mu1Var = chatActivityEnterView.F3;
+        w.w0(i2, j, k27Var, threadMessage, t0, i3, true, mu1Var != null ? mu1Var.Q6() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
         chatActivityEnterView.v3 = true;
-        chatActivityEnterView.w2(0, true);
-        zz1 zz1Var2 = chatActivityEnterView.Z0;
-        if (zz1Var2 != null) {
-            zz1Var2.a(0L);
+        chatActivityEnterView.r2(0, true);
+        my1 my1Var2 = chatActivityEnterView.Z0;
+        if (my1Var2 != null) {
+            my1Var2.a(0L);
         }
-        wz1 wz1Var2 = chatActivityEnterView.b2;
-        if (wz1Var2 != null) {
-            wz1Var2.e = false;
+        jy1 jy1Var2 = chatActivityEnterView.b2;
+        if (jy1Var2 != null) {
+            jy1Var2.e = false;
         }
         aVar.getParent().requestDisallowInterceptTouchEvent(true);
         ChatActivityEnterView.RecordCircle recordCircle3 = chatActivityEnterView.D2;

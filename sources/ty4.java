@@ -1,18 +1,265 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.RemoteException;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public interface ty4 {
-    int a();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class ty4 {
+    public wk4 a;
+    public HashMap b;
+    public HashMap c;
 
-    void d(float f, float f2, int i, Canvas canvas, RectF rectF);
+    public final sy4 a(z24 z24Var) {
+        i5d rhfVar;
+        wk4 wk4Var = this.a;
+        zi6 zi6Var = (zi6) z24Var.b;
+        wk4Var.getClass();
+        try {
+            fre.i(zi6Var, "MarkerOptions must not be null.");
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel R = a6eVar.R();
+            sgd.b(R, zi6Var);
+            Parcel Q = a6eVar.Q(R, 11);
+            IBinder readStrongBinder = Q.readStrongBinder();
+            int i = yhf.b;
+            if (readStrongBinder == null) {
+                rhfVar = null;
+            } else {
+                IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IMarkerDelegate");
+                rhfVar = queryLocalInterface instanceof i5d ? (i5d) queryLocalInterface : new rhf(readStrongBinder, "com.google.android.gms.maps.model.internal.IMarkerDelegate", (byte) 6);
+            }
+            Q.recycle();
+            yi6 yi6Var = rhfVar != null ? new yi6(rhfVar) : null;
+            sy4 sy4Var = new sy4(yi6Var);
+            this.b.put(yi6Var, sy4Var);
+            return sy4Var;
+        } catch (RemoteException e) {
+            fvc.g(e);
+            return null;
+        }
+    }
 
-    int f();
+    public final void b(qh5 qh5Var) {
+        wk4 wk4Var = this.a;
+        qx4 qx4Var = ((py4) qh5Var).a;
+        wk4Var.getClass();
+        try {
+            fre.i(qx4Var, "CameraUpdate must not be null.");
+            a6e a6eVar = (a6e) wk4Var.b;
+            yi5 yi5Var = (yi5) qx4Var.a;
+            Parcel R = a6eVar.R();
+            sgd.c(R, yi5Var);
+            a6eVar.V(R, 5);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
 
-    int g();
+    public final void c(qh5 qh5Var) {
+        wk4 wk4Var = this.a;
+        qx4 qx4Var = ((py4) qh5Var).a;
+        wk4Var.getClass();
+        try {
+            fre.i(qx4Var, "CameraUpdate must not be null.");
+            a6e a6eVar = (a6e) wk4Var.b;
+            yi5 yi5Var = (yi5) qx4Var.a;
+            Parcel R = a6eVar.R();
+            sgd.c(R, yi5Var);
+            R.writeInt(500);
+            sgd.c(R, null);
+            a6eVar.V(R, 7);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
 
-    boolean h();
+    public final fw5 d() {
+        wk4 wk4Var = this.a;
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel Q = a6eVar.Q(a6eVar.R(), 1);
+            Parcelable.Creator<CameraPosition> creator = CameraPosition.CREATOR;
+            int i = sgd.a;
+            CameraPosition createFromParcel = Q.readInt() == 0 ? null : creator.createFromParcel(Q);
+            Q.recycle();
+            LatLng latLng = createFromParcel.a;
+            return new fw5(new yh5(latLng.a, latLng.b), createFromParcel.b, (byte) 2);
+        } catch (RemoteException e) {
+            fvc.g(e);
+            return null;
+        }
+    }
+
+    public final float e() {
+        wk4 wk4Var = this.a;
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel Q = a6eVar.Q(a6eVar.R(), 2);
+            float readFloat = Q.readFloat();
+            Q.recycle();
+            return readFloat;
+        } catch (RemoteException e) {
+            fvc.g(e);
+            return 0.0f;
+        }
+    }
+
+    public final float f() {
+        wk4 wk4Var = this.a;
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel Q = a6eVar.Q(a6eVar.R(), 3);
+            float readFloat = Q.readFloat();
+            Q.recycle();
+            return readFloat;
+        } catch (RemoteException e) {
+            fvc.g(e);
+            return 0.0f;
+        }
+    }
+
+    public final s34 g() {
+        hgd hgdVar;
+        wk4 wk4Var = this.a;
+        wk4Var.getClass();
+        try {
+            ln8 ln8Var = (ln8) wk4Var.c;
+            if (ln8Var == null) {
+                a6e a6eVar = (a6e) wk4Var.b;
+                Parcel Q = a6eVar.Q(a6eVar.R(), 25);
+                IBinder readStrongBinder = Q.readStrongBinder();
+                if (readStrongBinder == null) {
+                    hgdVar = null;
+                } else {
+                    IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+                    hgdVar = queryLocalInterface instanceof hgd ? (hgd) queryLocalInterface : new hgd(readStrongBinder, "com.google.android.gms.maps.internal.IUiSettingsDelegate", (byte) 6);
+                }
+                Q.recycle();
+                ln8Var = new ln8((Object) hgdVar, (byte) 22);
+                wk4Var.c = ln8Var;
+            }
+            s34 s34Var = new s34((byte) 6);
+            s34Var.b = ln8Var;
+            return s34Var;
+        } catch (RemoteException e) {
+            fvc.g(e);
+            return null;
+        }
+    }
+
+    public final void h(qh5 qh5Var) {
+        wk4 wk4Var = this.a;
+        qx4 qx4Var = ((py4) qh5Var).a;
+        wk4Var.getClass();
+        try {
+            fre.i(qx4Var, "CameraUpdate must not be null.");
+            a6e a6eVar = (a6e) wk4Var.b;
+            yi5 yi5Var = (yi5) qx4Var.a;
+            Parcel R = a6eVar.R();
+            sgd.c(R, yi5Var);
+            a6eVar.V(R, 4);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
+
+    public final void i(uh5 uh5Var) {
+        wk4 wk4Var = this.a;
+        gi6 gi6Var = uh5Var == null ? null : ((uy4) uh5Var).a;
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel R = a6eVar.R();
+            sgd.b(R, gi6Var);
+            Parcel Q = a6eVar.Q(R, 91);
+            Q.readInt();
+            Q.recycle();
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
+
+    public final void j(int i) {
+        wk4 wk4Var = this.a;
+        if (i == 0) {
+            wk4Var.f0(1);
+        } else if (i == 1) {
+            wk4Var.f0(2);
+        } else {
+            if (i != 2) {
+                return;
+            }
+            wk4Var.f0(4);
+        }
+    }
+
+    public final void k(boolean z) {
+        wk4 wk4Var = this.a;
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel R = a6eVar.R();
+            int i = sgd.a;
+            R.writeInt(z ? 1 : 0);
+            a6eVar.V(R, 22);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
+
+    public final void l(zh5 zh5Var) {
+        wk4 wk4Var = this.a;
+        ry4 ry4Var = new ry4((Object) zh5Var, (byte) 4);
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            r4d r4dVar = new r4d(ry4Var, (char) 0);
+            Parcel R = a6eVar.R();
+            sgd.c(R, r4dVar);
+            a6eVar.V(R, 96);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
+
+    public final void m(k32 k32Var) {
+        wk4 wk4Var = this.a;
+        ry4 ry4Var = new ry4(this, k32Var);
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            r4d r4dVar = new r4d(ry4Var, (byte) 0);
+            Parcel R = a6eVar.R();
+            sgd.c(R, r4dVar);
+            a6eVar.V(R, 30);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
+
+    public final void n(int i, int i2, int i3, int i4) {
+        wk4 wk4Var = this.a;
+        wk4Var.getClass();
+        try {
+            a6e a6eVar = (a6e) wk4Var.b;
+            Parcel R = a6eVar.R();
+            R.writeInt(i);
+            R.writeInt(i2);
+            R.writeInt(i3);
+            R.writeInt(i4);
+            a6eVar.V(R, 39);
+        } catch (RemoteException e) {
+            fvc.g(e);
+        }
+    }
 }

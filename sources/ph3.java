@@ -1,32 +1,32 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ph3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ nk3 b;
-
-    public /* synthetic */ ph3(nk3 nk3Var, byte b) {
-        this.a = b;
-        this.b = nk3Var;
+public final class ph3 extends rl0 {
+    @Override // o39, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        nk3 nk3Var = this.b;
-        switch (b) {
-            case 0:
-                nk3Var.X4(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                nk3Var.Z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                nk3Var.T4(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-        }
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // rl0
+    public final int z1() {
+        return gl.L(48.0f);
+    }
+
+    @Override // rl0, o39, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
     }
 }

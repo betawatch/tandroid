@@ -1,50 +1,33 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.PhotoViewer;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ga8 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ga8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ PhotoViewer c;
+    public final /* synthetic */ ja8 b;
 
-    public /* synthetic */ ga8(PhotoViewer photoViewer, View view, byte b) {
+    public /* synthetic */ ga8(ja8 ja8Var, byte b) {
         this.a = b;
-        this.c = photoViewer;
-        this.b = view;
+        this.b = ja8Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        View view = this.b;
-        PhotoViewer photoViewer = this.c;
+        ja8 ja8Var = this.b;
         switch (b) {
             case 0:
-                photoViewer.B3 = false;
-                photoViewer.i4.run();
-                gm.d3(new a18(this, view, (byte) 10), 100L);
+                ja8Var.d.a(false);
                 break;
             default:
-                photoViewer.B3 = false;
-                view.setOutlineProvider(null);
-                ImageView imageView = photoViewer.x3;
-                if (imageView != null) {
-                    imageView.setOutlineProvider(null);
+                Runnable runnable = ja8Var.I;
+                ja8Var.I = null;
+                if (runnable != null) {
+                    runnable.run();
                 }
-                kb8 kb8Var = photoViewer.F2;
-                if (kb8Var != null) {
-                    kb8Var.setOutlineProvider(null);
-                }
-                SurfaceView surfaceView = photoViewer.D2;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(0);
+                Runnable runnable2 = ja8Var.J;
+                if (runnable2 != null) {
+                    runnable2.run();
                     break;
                 }
                 break;

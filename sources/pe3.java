@@ -1,9 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface pe3 {
-    xp3 a(long j, oqb oqbVar, cy2 cy2Var);
-
-    void b(long j, vb1 vb1Var);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class pe3 {
+    public String a;
+    public String b;
+    public byte c;
+    public byte d;
+    public boolean e;
+    public boolean f;
+    public byte g;
+    public int h;
+    public boolean i;
+    public boolean j;
+    public int k = -1;
 }

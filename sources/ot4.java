@@ -1,46 +1,46 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.util.LruCache;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ot4 extends LruCache {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ot4 extends nt4 {
+    public final /* synthetic */ pt4 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ot4(int i, byte b) {
-        super(i);
-        this.a = b;
+    public ot4(pt4 pt4Var, wjb wjbVar) {
+        super(wjbVar);
+        this.r = pt4Var;
     }
 
-    @Override // android.util.LruCache
-    public final void entryRemoved(boolean z, Object obj, Object obj2, Object obj3) {
-        switch (this.a) {
-            case 0:
-                String str = (String) obj;
-                Bitmap bitmap = (Bitmap) obj2;
-                if (!bitmap.isRecycled() && !pt4.f0.containsKey(str)) {
-                    bitmap.recycle();
-                    break;
-                }
-                break;
-            default:
-                super.entryRemoved(z, obj, obj2, obj3);
-                break;
-        }
+    @Override // nt4
+    public final void E() {
+        pt4 pt4Var = this.r;
+        String str = pt4Var.V1;
+        new u21(pt4Var.c, pt4Var.J0).Q(R.raw.chats_infotip, 36, ((str == null || str.isEmpty()) && pt4Var.S1.to_id == -1) ? k96.M0(2131753331, null) : k96.M0(2131753330, null)).k(true);
     }
 
-    @Override // android.util.LruCache
-    public final int sizeOf(Object obj, Object obj2) {
-        switch (this.a) {
-            case 1:
-                return ((ez4) obj2).d;
-            case 2:
-                ed8 ed8Var = (ed8) obj2;
-                return Math.max(1, jd8.a(ed8Var.q) + jd8.a(ed8Var.o) + jd8.a(ed8Var.n) + jd8.a(ed8Var.m) + jd8.a(ed8Var.l) + jd8.a(ed8Var.k) + jd8.a(ed8Var.j));
-            default:
-                return super.sizeOf(obj, obj2);
+    @Override // nt4
+    public final void F(TLObject tLObject) {
+        pt4 pt4Var = this.r;
+        TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = pt4Var.S1;
+        d dVar = pt4Var.r1;
+        pt4Var.dismiss();
+        if (tLObject instanceof TLRPC.Chat) {
+            dVar.presentFragment(mu1.W9(-((TLRPC.Chat) tLObject).id));
+            return;
         }
+        if (tLObject instanceof TLRPC.User) {
+            dVar.presentFragment(mu1.W9(((TLRPC.User) tLObject).id));
+            return;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", -cf3.n(tL_payments_checkedGiftCode.from_id));
+        bundle.putInt("message_id", tL_payments_checkedGiftCode.giveaway_msg_id);
+        dVar.presentFragment(new mu1(bundle));
     }
 }

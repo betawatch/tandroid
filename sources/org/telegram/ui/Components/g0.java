@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class g0 extends FrameLayout {
     public final ImageView a;
@@ -21,25 +21,25 @@ public final class g0 extends FrameLayout {
         super(context);
         this.c = editorAlert;
         View view = new View(context);
-        view.setBackgroundDrawable(cmb.b0(gm.L(18.0f), -854795));
-        addView(view, qoe.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
+        view.setBackgroundDrawable(bkb.b0(gl.L(18.0f), -854795));
+        addView(view, nme.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.smiles_inputsearch);
         imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, qoe.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
+        addView(imageView, nme.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.a = imageView2;
         imageView2.setScaleType(scaleType);
         d0 d0Var = new d0();
         imageView2.setImageDrawable(d0Var);
-        d0Var.f = gm.L(7.0f);
+        d0Var.f = gl.L(7.0f);
         imageView2.setScaleX(0.1f);
         imageView2.setScaleY(0.1f);
         imageView2.setAlpha(0.0f);
-        addView(imageView2, qoe.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new oha(this, (byte) 21));
+        addView(imageView2, nme.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
+        imageView2.setOnClickListener(new bna(this, (byte) 18));
         e0 e0Var = new e0(this, context);
         this.b = e0Var;
         e0Var.setTextSize(1, 16.0f);
@@ -51,12 +51,12 @@ public final class g0 extends FrameLayout {
         e0Var.setLines(1);
         e0Var.setSingleLine(true);
         e0Var.setImeOptions(268435459);
-        e0Var.setHint(jb6.M0(2131745570, null));
+        e0Var.setHint(k96.M0(2131745644, null));
         e0Var.setCursorColor(-11491093);
-        e0Var.setCursorSize(gm.L(20.0f));
+        e0Var.setCursorSize(gl.L(20.0f));
         e0Var.setCursorWidth(1.5f);
-        addView(e0Var, qoe.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
+        addView(e0Var, nme.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
         e0Var.addTextChangedListener(new f0(this));
-        e0Var.setOnEditorActionListener(new j(this, (byte) 27));
+        e0Var.setOnEditorActionListener(new j(this, (byte) 26));
     }
 }

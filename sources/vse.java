@@ -1,28 +1,28 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class vse {
-    public static boolean a(n58 n58Var, n58 n58Var2) {
-        if (n58Var == null) {
-            if (n58Var2 == null) {
+public final class vse implements due {
+    public due[] a;
+
+    @Override // due
+    public final boolean zza(Class cls) {
+        for (due dueVar : this.a) {
+            if (dueVar.zza(cls)) {
                 return true;
             }
-        } else if (n58Var2 != null) {
-            String str = n58Var.d;
-            String str2 = n58Var2.d;
-            return (str == null && str2 == null) ? Objects.equals(Objects.toString(n58Var.a), Objects.toString(n58Var2.a)) && Objects.equals(n58Var.c, n58Var2.c) && Boolean.valueOf(n58Var.e).equals(Boolean.valueOf(n58Var2.e)) && Boolean.valueOf(n58Var.f).equals(Boolean.valueOf(n58Var2.f)) : Objects.equals(str, str2);
         }
         return false;
     }
 
-    public static int b(n58 n58Var) {
-        if (n58Var == null) {
-            return 0;
+    @Override // due
+    public final swe zzb(Class cls) {
+        for (due dueVar : this.a) {
+            if (dueVar.zza(cls)) {
+                return dueVar.zzb(cls);
+            }
         }
-        String str = n58Var.d;
-        return str != null ? str.hashCode() : Objects.hash(n58Var.a, n58Var.c, Boolean.valueOf(n58Var.e), Boolean.valueOf(n58Var.f));
+        String name = cls.getName();
+        throw new UnsupportedOperationException(name.length() != 0 ? "No factory is available for message type: ".concat(name) : new String("No factory is available for message type: "));
     }
 }

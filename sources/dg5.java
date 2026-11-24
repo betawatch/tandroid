@@ -1,82 +1,55 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.util.TypedValue;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public class dg5 extends EditTextBoldCursor {
-    public final TextPaint M1;
-    public String N1;
-    public final Rect O1;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class dg5 extends x1 {
+    public static final Pattern[][] e = {new Pattern[]{null, null}, new Pattern[]{Pattern.compile("^<(?:script|pre|style)(?:\\s|>|$)", 2), Pattern.compile("</(?:script|pre|style)>", 2)}, new Pattern[]{Pattern.compile("^<!--"), Pattern.compile("-->")}, new Pattern[]{Pattern.compile("^<[?]"), Pattern.compile("\\?>")}, new Pattern[]{Pattern.compile("^<![A-Z]"), Pattern.compile(">")}, new Pattern[]{Pattern.compile("^<!\\[CDATA\\["), Pattern.compile("\\]\\]>")}, new Pattern[]{Pattern.compile("^</?(?:address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h1|h2|h3|h4|h5|h6|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul)(?:\\s|[/]?[>]|$)", 2), null}, new Pattern[]{Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>])\\s*$", 2), null}};
+    public final Pattern b;
+    public final cg5 a = new cg5();
+    public boolean c = false;
+    public dd d = new dd((byte) 1);
 
-    public dg5(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.M1 = textPaint;
-        this.O1 = new Rect();
-        textPaint.setColor(cmb.w0(null, cmb.G6, false));
+    public dg5(Pattern pattern) {
+        this.b = pattern;
     }
 
-    public String getHintText() {
-        return this.N1;
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, vu3, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.N1 != null && length() < this.N1.length()) {
-            int i = 0;
-            float f = 0.0f;
-            while (i < this.N1.length()) {
-                int length = length();
-                TextPaint textPaint = this.M1;
-                float measureText = i < length ? getPaint().measureText(getText(), i, i + 1) : textPaint.measureText(this.N1, i, i + 1);
-                if (i < length()) {
-                    f += measureText;
-                    canvas2 = canvas;
-                } else {
-                    int color = textPaint.getColor();
-                    canvas.save();
-                    String str = this.N1;
-                    textPaint.getTextBounds(str, 0, str.length(), this.O1);
-                    A(i);
-                    canvas2 = canvas;
-                    canvas2.drawText(this.N1, i, i + 1, f, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
-                    f += measureText;
-                    canvas2.restore();
-                    textPaint.setColor(color);
-                }
-                i++;
-                canvas = canvas2;
-            }
+    @Override // x1
+    public final void a(CharSequence charSequence) {
+        dd ddVar = this.d;
+        StringBuilder sb = (StringBuilder) ddVar.c;
+        if (ddVar.b != 0) {
+            sb.append('\n');
         }
-        super.onDraw(canvas);
+        sb.append(charSequence);
+        ddVar.b++;
+        Pattern pattern = this.b;
+        if (pattern == null || !pattern.matcher(charSequence).find()) {
+            return;
+        }
+        this.c = true;
     }
 
-    @Override // vu3, android.widget.TextView, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        invalidate();
+    @Override // x1
+    public final void d() {
+        this.a.g = ((StringBuilder) this.d.c).toString();
+        this.d = null;
     }
 
-    public void setHintText(String str) {
-        this.N1 = str;
-        invalidate();
-        setText(getText());
+    @Override // x1
+    public final gk0 e() {
+        return this.a;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i, float f) {
-        super.setTextSize(i, f);
-        this.M1.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
-    }
-
-    public void A(int i) {
+    @Override // x1
+    public final vj2 h(vo3 vo3Var) {
+        if (this.c) {
+            return null;
+        }
+        if (vo3Var.h && this.b == null) {
+            return null;
+        }
+        return vj2.a(vo3Var.b);
     }
 }

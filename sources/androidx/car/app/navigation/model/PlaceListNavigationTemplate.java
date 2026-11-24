@@ -7,9 +7,9 @@ import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class PlaceListNavigationTemplate implements pib {
+public final class PlaceListNavigationTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
 
@@ -18,8 +18,8 @@ public final class PlaceListNavigationTemplate implements pib {
     private final boolean mIsLoading;
     private final ItemList mItemList;
     private final ActionStrip mMapActionStrip;
-    private final dr7 mOnContentRefreshDelegate;
-    private final qw7 mPanModeDelegate;
+    private final ap7 mOnContentRefreshDelegate;
+    private final pu7 mPanModeDelegate;
 
     @Deprecated
     private final CarText mTitle;
@@ -75,11 +75,11 @@ public final class PlaceListNavigationTemplate implements pib {
         return this.mMapActionStrip;
     }
 
-    public dr7 getOnContentRefreshDelegate() {
+    public ap7 getOnContentRefreshDelegate() {
         return this.mOnContentRefreshDelegate;
     }
 
-    public qw7 getPanModeDelegate() {
+    public pu7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -100,7 +100,7 @@ public final class PlaceListNavigationTemplate implements pib {
         return "PlaceListNavigationTemplate";
     }
 
-    public PlaceListNavigationTemplate(od8 od8Var) {
+    public PlaceListNavigationTemplate(lb8 lb8Var) {
         throw null;
     }
 }

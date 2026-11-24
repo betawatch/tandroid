@@ -1,7 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface r6a {
-    void b(s6a s6aVar);
+public final class r6a {
+    public final String a;
+
+    public r6a(String str) {
+        str.getClass();
+        this.a = str;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof r6a) && rp5.a(this.a, ((r6a) obj).a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "SessionDetails(sessionId=" + this.a + ')';
+    }
 }

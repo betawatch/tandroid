@@ -1,48 +1,57 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class m24 {
-    public final ArrayList a = new ArrayList();
-    public final /* synthetic */ e34 b;
+public final class m24 extends d {
+    public long a;
+    public TLRPC.Chat b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public i24 f;
+    public qo0 h;
 
-    public m24(e34 e34Var) {
-        this.b = e34Var;
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setActionBarMenuOnItemClick(new vm2(this, (byte) 14));
+        this.simpleActionBar.setTitle(k96.M0(2131743742, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        i24 i24Var = new i24(this, new w72(this, (byte) 27), new kx3(this, (byte) 4), null, (byte) 0);
+        this.f = i24Var;
+        i24Var.r1();
+        this.f.setSectionsDrawBackground(true);
+        frameLayout.addView(this.f, nme.e(-1, -1, kk7.D1));
+        this.fragmentView = frameLayout;
+        return frameLayout;
     }
 
-    public final void a(String str, boolean z) {
-        e34 e34Var = this.b;
-        int i = e34Var.d1;
-        String o = kt6.o("gif_search_", str, "_");
-        if (z && e34Var.m0.containsKey(o)) {
-            return;
-        }
-        String str2 = str;
-        rj1 rj1Var = new rj1((Object) this, (Object) str2, z, (Object) o, (byte) 5);
-        ArrayList arrayList = this.a;
-        if (z) {
-            arrayList.add(o);
-            cf7.Y(i).L(o, rj1Var);
-            return;
-        }
-        oc7 r1 = oc7.r1(i);
-        TLObject b2 = r1.b2(r1.o3);
-        if (b2 instanceof TLRPC.User) {
-            arrayList.add(o);
-            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            if (str2 == null) {
-                str2 = "";
-            }
-            tL_messages_getInlineBotResults.query = str2;
-            tL_messages_getInlineBotResults.bot = r1.p1((TLRPC.User) b2);
-            tL_messages_getInlineBotResults.offset = "";
-            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            ConnectionsManager.getInstance(i).sendRequest(tL_messages_getInlineBotResults, rj1Var, 2);
-        }
+    @Override // org.telegram.ui.ActionBar.d
+    public final o39 getListViewForSimpleGlass() {
+        return this.f;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onFragmentCreate() {
+        this.b = getMessagesController().K0(Long.valueOf(-this.a));
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

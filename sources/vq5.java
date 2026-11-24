@@ -1,18 +1,17 @@
 // default package
 
-import android.app.Activity;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public interface vq5 {
-    void G(jo6 jo6Var, rcc rccVar, boolean z, int i, boolean z2, long j);
+public final class vq5 extends FrameLayout {
+    public TextView a;
 
-    int getClassGuid();
-
-    View getFragmentView();
-
-    Activity getParentActivity();
-
-    boolean x();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(84.0f), TLObject.FLAG_30));
+    }
 }

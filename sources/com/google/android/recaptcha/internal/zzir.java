@@ -3,35 +3,35 @@ package com.google.android.recaptcha.internal;
 import android.webkit.WebView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzir extends eeb implements fs4 {
+final class zzir extends ccb implements eq4 {
     final /* synthetic */ String[] zza;
     final /* synthetic */ zzis zzb;
     final /* synthetic */ String zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzir(String[] strArr, zzis zzisVar, String str, px2 px2Var) {
-        super(2, px2Var);
+    public zzir(String[] strArr, zzis zzisVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = strArr;
         this.zzb = zzisVar;
         this.zzc = str;
     }
 
-    @Override // og0
-    public final px2 create(Object obj, px2 px2Var) {
-        return new zzir(this.zza, this.zzb, this.zzc, px2Var);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzir(this.zza, this.zzb, this.zzc, fw2Var);
     }
 
-    @Override // fs4
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzir) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
+        return ((zzir) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         WebView webView;
-        tue.b(obj);
+        qse.b(obj);
         String[] strArr = this.zza;
         ArrayList arrayList = new ArrayList(strArr.length);
         for (String str : strArr) {
@@ -40,7 +40,7 @@ final class zzir extends eeb implements fs4 {
         zzis zzisVar = this.zzb;
         String str2 = this.zzc;
         webView = zzisVar.zza;
-        webView.evaluateJavascript(str2 + "(" + km2.f(arrayList, ",", null, null, null, 62) + ")", null);
-        return g7c.a;
+        webView.evaluateJavascript(str2 + "(" + yk2.f(arrayList, ",", null, null, null, 62) + ")", null);
+        return g5c.a;
     }
 }

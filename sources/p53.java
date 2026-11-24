@@ -1,65 +1,43 @@
 // default package
 
-import android.database.Cursor;
-import android.util.Log;
-import android.widget.Filter;
-import androidx.appcompat.widget.SearchView;
+import android.net.Uri;
+import android.text.TextUtils;
+import j$.util.DesugarTimeZone;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class p53 extends Filter {
-    public o53 a;
+public final class p53 implements bv7 {
+    public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
 
-    @Override // android.widget.Filter
-    public final CharSequence convertResultToString(Object obj) {
-        return this.a.c((Cursor) obj);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0041  */
-    @Override // android.widget.Filter
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Filter.FilterResults performFiltering(CharSequence charSequence) {
-        Cursor cursor;
-        mdb mdbVar = (mdb) this.a;
-        SearchView searchView = mdbVar.w;
-        String charSequence2 = charSequence == null ? "" : charSequence.toString();
-        if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
-            try {
-                cursor = mdbVar.f(mdbVar.x, charSequence2);
-            } catch (RuntimeException e) {
-                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e);
+    @Override // bv7
+    public final Object v(Uri uri, s63 s63Var) {
+        String readLine = new BufferedReader(new InputStreamReader(s63Var, StandardCharsets.UTF_8)).readLine();
+        try {
+            Matcher matcher = a.matcher(readLine);
+            if (!matcher.matches()) {
+                throw av7.b("Couldn't parse timestamp: " + readLine, null);
             }
-            if (cursor != null) {
-                cursor.getCount();
-                Filter.FilterResults filterResults = new Filter.FilterResults();
-                if (cursor == null) {
-                    filterResults.count = cursor.getCount();
-                    filterResults.values = cursor;
-                } else {
-                    filterResults.count = 0;
-                    filterResults.values = null;
-                }
-                return filterResults;
+            String group = matcher.group(1);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
+            simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
+            long time = simpleDateFormat.parse(group).getTime();
+            if (!"Z".equals(matcher.group(2))) {
+                long j = "+".equals(matcher.group(4)) ? 1L : -1L;
+                long parseLong = Long.parseLong(matcher.group(5));
+                String group2 = matcher.group(7);
+                time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j;
             }
+            return Long.valueOf(time);
+        } catch (ParseException e) {
+            throw av7.b(null, e);
         }
-        cursor = null;
-        Filter.FilterResults filterResults2 = new Filter.FilterResults();
-        if (cursor == null) {
-        }
-        return filterResults2;
-    }
-
-    @Override // android.widget.Filter
-    public final void publishResults(CharSequence charSequence, Filter.FilterResults filterResults) {
-        o53 o53Var = this.a;
-        Cursor cursor = o53Var.c;
-        Object obj = filterResults.values;
-        if (obj == null || obj == cursor) {
-            return;
-        }
-        o53Var.b((Cursor) obj);
     }
 }

@@ -1,37 +1,37 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzfy extends eeb implements rr4 {
+final class zzfy extends ccb implements qp4 {
     int zza;
     final /* synthetic */ zzhk zzb;
     final /* synthetic */ zzgb zzc;
     final /* synthetic */ long zzd;
-    final /* synthetic */ mq2 zze;
+    final /* synthetic */ bp2 zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfy(zzhk zzhkVar, zzgb zzgbVar, long j, mq2 mq2Var, px2 px2Var) {
-        super(1, px2Var);
+    public zzfy(zzhk zzhkVar, zzgb zzgbVar, long j, bp2 bp2Var, fw2 fw2Var) {
+        super(1, fw2Var);
         this.zzb = zzhkVar;
         this.zzc = zzgbVar;
         this.zzd = j;
-        this.zze = mq2Var;
+        this.zze = bp2Var;
     }
 
-    @Override // og0
-    public final px2 create(px2 px2Var) {
-        return new zzfy(this.zzb, this.zzc, this.zzd, this.zze, px2Var);
+    @Override // of0
+    public final fw2 create(fw2 fw2Var) {
+        return new zzfy(this.zzb, this.zzc, this.zzd, this.zze, fw2Var);
     }
 
-    @Override // rr4
+    @Override // qp4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzfy) create((px2) obj)).invokeSuspend(g7c.a);
+        return ((zzfy) create((fw2) obj)).invokeSuspend(g5c.a);
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        tue.b(obj);
+        qse.b(obj);
         if (i != 0) {
             return obj;
         }
@@ -39,7 +39,7 @@ final class zzfy extends eeb implements rr4 {
         zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, null);
         this.zza = 1;
         Object zze = zzhj.zze(zzhkVar, 41, zzfxVar, this);
-        ly2 ly2Var = ly2.a;
-        return zze == ly2Var ? ly2Var : zze;
+        bx2 bx2Var = bx2.a;
+        return zze == bx2Var ? bx2Var : zze;
     }
 }

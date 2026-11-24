@@ -1,330 +1,695 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import android.app.KeyguardManager;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.UserNotAuthenticatedException;
+import android.system.Os;
+import android.system.OsConstants;
+import android.util.Base64;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
+import java.security.KeyStore;
+import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+import org.json.JSONObject;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class g15 extends xk7 {
-    public boolean s0;
-    public boolean t0;
-    public boolean u0;
-    public boolean v0;
-    public final Paint w0;
-    public Boolean x0;
-    public final /* synthetic */ h15 y0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class g15 {
+    public static final Object g = new Object();
+    public static final HashMap h = new HashMap();
+    public static final ExecutorService i = Executors.newSingleThreadExecutor(new x20((byte) 3));
+    public static final CopyOnWriteArrayList j = new CopyOnWriteArrayList();
+    public final Context a;
+    public final int b;
+    public final String c;
+    public final File d;
+    public final String e;
+    public volatile Exception f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g15(h15 h15Var, Activity activity) {
-        super(activity);
-        this.y0 = h15Var;
-        new Paint(1);
-        this.w0 = new Paint(1);
+    public g15(int i2, Context context, String str) {
+        if (context == null || str == null || str.isEmpty()) {
+            w26.j("context/address");
+            throw null;
+        }
+        Context applicationContext = context.getApplicationContext();
+        context = applicationContext != null ? applicationContext : context;
+        this.a = context;
+        this.b = i2;
+        this.c = str;
+        try {
+            String p = p(MessageDigest.getInstance("SHA-256").digest(str.getBytes(StandardCharsets.UTF_8)));
+            this.d = new File(new File(context.getNoBackupFilesDir(), "gramwallets"), p.concat(".json"));
+            this.e = tb4.y("gramwallet_v2_", p, "_");
+        } catch (Exception e) {
+            ho9.n(e);
+            throw null;
+        }
     }
 
-    private void setLightStatusBar(int i) {
-        boolean z = gm.B(i) >= 0.721f;
-        Boolean bool = this.x0;
-        if (bool == null || bool.booleanValue() != z) {
-            View view = this.y0.fragmentView;
-            this.x0 = Boolean.valueOf(z);
-            gm.m3(view, z);
+    public static synchronized void A(wz4 wz4Var) {
+        synchronized (g15.class) {
+            Iterator it = j.iterator();
+            while (it.hasNext()) {
+                WeakReference weakReference = (WeakReference) it.next();
+                Runnable runnable = (Runnable) weakReference.get();
+                if (runnable == null || runnable == wz4Var) {
+                    j.remove(weakReference);
+                }
+            }
         }
     }
 
-    @Override // ela, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a aVar;
-        ylb ylbVar;
-        tk5 tk5Var;
-        a aVar2;
-        h15 h15Var = this.y0;
-        Paint paint = h15Var.L;
-        ds0 ds0Var = h15Var.E;
-        if (!h15Var.f) {
-            boolean z = h15Var.h;
-            float f = h15Var.n;
-            if (z) {
-                float f2 = f + 0.016f;
-                h15Var.n = f2;
-                if (f2 > 3.0f) {
-                    h15Var.h = false;
-                }
-            } else {
-                float f3 = f - 0.016f;
-                h15Var.n = f3;
-                if (f3 < 1.0f) {
-                    h15Var.h = true;
-                }
+    public static byte[] B(String str) {
+        if (str == null || str.length() % 2 != 0) {
+            k93.f("hex length");
+            return null;
+        }
+        int length = str.length() / 2;
+        byte[] bArr = new byte[length];
+        for (int i2 = 0; i2 < length; i2++) {
+            int i3 = i2 << 1;
+            int digit = Character.digit(str.charAt(i3), 16);
+            int digit2 = Character.digit(str.charAt(i3 + 1), 16);
+            if (digit < 0 || digit2 < 0) {
+                k93.f("hex digit");
+                return null;
             }
+            bArr[i2] = (byte) ((digit << 4) | digit2);
         }
-        h15Var.r = (h15Var.c.getLayoutManager() != null ? h15Var.c.getLayoutManager().m(0) : null) == null ? 0 : Math.round(h15Var.q0() + r3.getBottom());
-        FrameLayout p0 = h15Var.p0();
-        int L = gm.L(16.0f) + p0.getBottom();
-        float f4 = 1.0f - ((h15Var.r - L) / (h15Var.K - L));
-        h15Var.w = f4;
-        h15Var.w = Utilities.i(f4, 1.0f, 0.0f);
-        int L2 = gm.L(16.0f) + p0.getBottom();
-        int i = h15Var.r;
-        if (i < L2) {
-            h15Var.r = L2;
-            i = L2;
-        }
-        float f5 = h15Var.y;
-        h15Var.y = 0.0f;
-        if (i < gm.L(30.0f) + L2) {
-            h15Var.y = ((gm.L(30.0f) + L2) - h15Var.r) / gm.L(30.0f);
-        }
-        if (h15Var.I) {
-            h15Var.y = 1.0f;
-            h15Var.w = 1.0f;
-        }
-        if (f5 != h15Var.y) {
-            h15Var.c.invalidate();
-        }
-        h15Var.t0(h15Var.w);
-        int measuredHeight = p0.getMeasuredHeight();
-        int i2 = h15Var.r;
-        int measuredHeight2 = ds0Var.getMeasuredHeight();
-        l66 l66Var = (l66) ds0Var.c;
-        FrameLayout frameLayout = (FrameLayout) ds0Var.e;
-        TextView textView = (TextView) ds0Var.b;
-        FrameLayout frameLayout2 = (FrameLayout) ds0Var.d;
-        float max = Math.max((((((measuredHeight - h15Var.J) - textView.getMeasuredHeight()) / 2.0f) + h15Var.J) - ds0Var.getTop()) - textView.getTop(), gm.L(16.0f) + (i2 - ((measuredHeight2 + measuredHeight) - h15Var.J)));
-        ds0Var.setTranslationY(max);
-        frameLayout2.setTranslationY(((-max) / 4.0f) + gm.L(16.0f) + gm.L(16.0f));
-        float f6 = h15Var.w;
-        float A = td4.A(1.0f, f6, 0.4f, 0.6f);
-        float f7 = 1.0f - (f6 > 0.5f ? (f6 - 0.5f) / 0.5f : 0.0f);
-        frameLayout2.setScaleX(A);
-        frameLayout2.setScaleY(A);
-        frameLayout2.setAlpha(f7);
-        frameLayout.setAlpha(f7);
-        l66Var.setAlpha(f7);
-        if (h15Var.z0()) {
-            int i3 = f7 > 0.0f ? 0 : 4;
-            frameLayout2.setVisibility(i3);
-            frameLayout.setVisibility(i3);
-            l66Var.setVisibility(i3);
-        }
-        h15Var.e.setAlpha(1.0f - h15Var.w);
-        h15Var.e.setTranslationY((frameLayout2.getY() + ds0Var.getY()) - gm.L(30.0f));
-        float L3 = gm.L(72.0f) - textView.getLeft();
-        float f8 = h15Var.w;
-        textView.setTranslationX(h15Var.z0() ? 0.0f : (1.0f - d53.h.getInterpolation(1.0f - (f8 > 0.3f ? (f8 - 0.3f) / 0.7f : 0.0f))) * L3);
-        if (!h15Var.f) {
-            invalidate();
-        }
-        h15Var.a.d(0, (-getMeasuredWidth()) * 0.1f * h15Var.n, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
-        if (h15Var.N) {
-            int themedColor = h15Var.getThemedColor(cmb.Z6);
-            Paint paint2 = this.w0;
-            paint2.setColor(themedColor);
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint2);
-        } else {
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), h15Var.a.f);
-        }
-        int f9 = on2.f(f7, h15Var.getThemedColor(cmb.i5), h15Var.getThemedColor(h15Var.N ? cmb.F6 : cmb.Jk));
-        aVar = ((d) h15Var).actionBar;
-        if (aVar != null) {
-            aVar2 = ((d) h15Var).actionBar;
-            aVar2.getBackButton().setColorFilter(f9);
-        }
-        textView.setTextColor(f9);
-        paint.setAlpha((int) ((1.0f - f7) * 255.0f));
-        h15Var.s0(paint.getAlpha() > 0);
-        int i4 = cmb.Ik;
-        ylbVar = ((d) h15Var).resourceProvider;
-        setLightStatusBar(cmb.v(cmb.v0(i4, ylbVar), paint.getColor()));
-        if (!h15Var.z0()) {
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), p0.getMeasuredHeight(), paint);
-        }
-        super.dispatchDraw(canvas);
-        if (f7 > 0.01f || !h15Var.n0()) {
-            return;
-        }
-        tk5Var = ((d) h15Var).parentLayout;
-        ((ActionBarLayout) tk5Var).n(canvas, nm7.d4, p0.getMeasuredHeight());
+        return bArr;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        a aVar;
-        Layout layout;
-        float f;
-        a aVar2;
-        h15 h15Var = this.y0;
-        if (h15Var.z0()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        aVar = ((d) h15Var).actionBar;
-        if (aVar != null) {
-            aVar2 = ((d) h15Var).actionBar;
-            ImageView backButton = aVar2.getBackButton();
-            if (backButton != null && backButton.getVisibility() == 0) {
-                if (motionEvent.getAction() == 0) {
-                    RectF rectF = gm.P;
-                    if (zgc.c(backButton, this, rectF) && rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        this.v0 = true;
+    public static boolean i(Context context) {
+        String str;
+        if (context != null && (str = gba.r) != null && str.length() != 0) {
+            try {
+                KeyguardManager keyguardManager = (KeyguardManager) context.getSystemService("keyguard");
+                if (keyguardManager != null) {
+                    if (keyguardManager.isDeviceSecure()) {
+                        return true;
                     }
                 }
-                if (this.v0) {
-                    boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
-                        return dispatchTouchEvent;
+            } catch (Exception e) {
+                fa4.g(e, true);
+            }
+        }
+        return false;
+    }
+
+    public static ArrayList o(Context context, long j2) {
+        ArrayList arrayList;
+        synchronized (g) {
+            arrayList = new ArrayList();
+            File[] listFiles = new File(context.getNoBackupFilesDir(), "gramwallets").listFiles();
+            if (listFiles != null) {
+                for (File file : listFiles) {
+                    if (file.getName().endsWith(".json")) {
+                        try {
+                            JSONObject jSONObject = new JSONObject(new String(x(file), StandardCharsets.UTF_8));
+                            String string = jSONObject.getString("address");
+                            g15 g15Var = new g15(0, context, string);
+                            if (g15Var.d.equals(file)) {
+                                f15 v = g15Var.v(jSONObject);
+                                if (v.d == j2 && !((LinkedHashMap) v.e).isEmpty()) {
+                                    arrayList.add(string);
+                                }
+                            }
+                        } catch (Exception e) {
+                            fa4.g(e, true);
+                        }
                     }
-                    this.v0 = false;
-                    return dispatchTouchEvent;
+                }
+            }
+            File[] listFiles2 = new File(context.getApplicationInfo().dataDir, "shared_prefs").listFiles();
+            if (listFiles2 != null) {
+                for (File file2 : listFiles2) {
+                    String name = file2.getName();
+                    int i2 = name.endsWith(".xml.bak") ? 8 : name.endsWith(".xml") ? 4 : 0;
+                    if (name.startsWith("gramwallet_") && i2 != 0) {
+                        String substring = name.substring(11, name.length() - i2);
+                        try {
+                            g15 g15Var2 = new g15(0, context, substring);
+                            if (!g15Var2.d.exists()) {
+                                f15 s = g15Var2.s();
+                                if (s.d == j2 && !((LinkedHashMap) s.e).isEmpty() && !arrayList.contains(substring)) {
+                                    arrayList.add(substring);
+                                }
+                            }
+                        } catch (Exception e2) {
+                            fa4.g(e2, true);
+                        }
+                    }
                 }
             }
         }
-        ds0 ds0Var = h15Var.E;
-        float x = ds0Var.getX();
-        FrameLayout frameLayout = (FrameLayout) ds0Var.e;
-        FrameLayout frameLayout2 = (FrameLayout) ds0Var.d;
-        l66 l66Var = (l66) ds0Var.c;
-        float x2 = l66Var.getX() + x;
-        float y = l66Var.getY() + ds0Var.getY();
-        RectF rectF2 = gm.P;
-        rectF2.set(x2, y, l66Var.getMeasuredWidth() + x2, l66Var.getMeasuredHeight() + y);
-        if ((!rectF2.contains(motionEvent.getX(), motionEvent.getY()) && !this.t0) || h15Var.c.J1 || (layout = l66Var.getLayout()) == null) {
-            f = 1.0f;
-        } else {
-            CharSequence text = layout.getText();
-            f = 1.0f;
-            if (text instanceof Spanned) {
-                Spanned spanned = (Spanned) text;
-                ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spanned.getSpans(0, spanned.length(), ClickableSpan.class);
-                if (clickableSpanArr != null && clickableSpanArr.length > 0 && h15Var.y < 1.0f) {
-                    motionEvent.offsetLocation(-x2, -y);
-                    if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-                        this.t0 = true;
-                    } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        this.t0 = false;
-                    }
-                    l66Var.dispatchTouchEvent(motionEvent);
-                    return true;
-                }
-            }
+        return arrayList;
+    }
+
+    public static String p(byte[] bArr) {
+        char[] cArr = new char[bArr.length << 1];
+        char[] cArr2 = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+        for (int i2 = 0; i2 < bArr.length; i2++) {
+            int i3 = i2 << 1;
+            byte b = bArr[i2];
+            cArr[i3] = cArr2[(b & 255) >>> 4];
+            cArr[i3 + 1] = cArr2[b & 15];
         }
-        float x3 = frameLayout2.getX() + ds0Var.getX();
-        float y2 = frameLayout2.getY() + ds0Var.getY();
-        boolean isClickable = frameLayout2.isClickable();
-        rectF2.set(x3, y2, frameLayout2.getMeasuredWidth() + x3, frameLayout2.getMeasuredHeight() + y2);
-        if ((rectF2.contains(motionEvent.getX(), motionEvent.getY()) || this.s0) && !h15Var.c.J1 && isClickable && h15Var.y < f) {
-            motionEvent.offsetLocation(-x3, -y2);
-            if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-                this.s0 = true;
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.s0 = false;
-            }
-            frameLayout2.dispatchTouchEvent(motionEvent);
-            return true;
-        }
-        float x4 = frameLayout.getX() + ds0Var.getX();
-        float y3 = frameLayout.getY() + ds0Var.getY();
-        rectF2.set(x4, y3, frameLayout.getMeasuredWidth() + x4, frameLayout.getMeasuredHeight() + y3);
-        if ((rectF2.contains(motionEvent.getX(), motionEvent.getY()) || this.u0) && !h15Var.c.J1 && h15Var.y < f) {
-            motionEvent.offsetLocation(-x4, -y3);
-            if (motionEvent.getAction() == 0) {
-                this.u0 = true;
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.u0 = false;
-            }
-            frameLayout.dispatchTouchEvent(motionEvent);
-            if (this.u0) {
+        return new String(cArr);
+    }
+
+    public static boolean u(Exception exc) {
+        for (Exception exc2 = exc; exc2 != null; exc2 = exc2.getCause()) {
+            if (exc2 instanceof UserNotAuthenticatedException) {
                 return true;
             }
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return false;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        h15 h15Var = this.y0;
-        if (view != h15Var.r0() || h15Var.z0()) {
-            return super.drawChild(canvas, view, j);
+    public static byte[] x(File file) {
+        FileInputStream fileInputStream = new FileInputStream(file);
+        try {
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            try {
+                byte[] bArr = new byte[TLObject.FLAG_12];
+                while (true) {
+                    int read = fileInputStream.read(bArr);
+                    if (read == -1) {
+                        byte[] byteArray = byteArrayOutputStream.toByteArray();
+                        byteArrayOutputStream.close();
+                        fileInputStream.close();
+                        return byteArray;
+                    }
+                    if (byteArrayOutputStream.size() + read > 4194304) {
+                        throw new IOException("wallet too large");
+                    }
+                    byteArrayOutputStream.write(bArr, 0, read);
+                }
+            } finally {
+            }
+        } catch (Throwable th) {
+            try {
+                fileInputStream.close();
+            } catch (Throwable th2) {
+                th.addSuppressed(th2);
+            }
+            throw th;
         }
-        canvas.save();
-        canvas.clipRect(0, h15Var.p0().getBottom(), getMeasuredWidth(), getMeasuredHeight());
-        super.drawChild(canvas, view, j);
-        canvas.restore();
-        return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    @Override // xk7, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i, int i2) {
-        tk5 tk5Var;
-        int i3;
-        int i4;
-        u46 u46Var;
-        tk5 tk5Var2;
-        h15 h15Var = this.y0;
-        ds0 ds0Var = h15Var.E;
-        h15Var.I = View.MeasureSpec.getSize(i) > View.MeasureSpec.getSize(i2);
-        tk5Var = ((d) h15Var).parentLayout;
-        if (tk5Var != null) {
-            tk5Var2 = ((d) h15Var).parentLayout;
-            if (((ActionBarLayout) tk5Var2).T0) {
-                i3 = 0;
-                h15Var.J = i3;
-                ds0Var.measure(i, 0);
-                ViewGroup.LayoutParams layoutParams = h15Var.e.getLayoutParams();
-                i4 = h15Var.F;
-                if (i4 <= 0) {
-                    i4 = ds0Var.getMeasuredHeight();
-                }
-                layoutParams.height = i4;
-                u46Var = h15Var.G;
-                if (u46Var instanceof wd4) {
-                    wd4 wd4Var = (wd4) u46Var;
-                    wd4Var.M = h15Var.p0().getMeasuredHeight();
-                    wd4Var.o1();
-                    ((wd4) h15Var.G).S = 0;
-                }
-                super.onMeasure(i, i2);
-                if (((getMeasuredWidth() + getMeasuredHeight()) << 16) == 0) {
-                    h15Var.w0();
-                    return;
-                }
-                return;
+    public static boolean z(f15 f15Var, String str) {
+        Iterator it = ((LinkedHashMap) f15Var.e).values().iterator();
+        while (it.hasNext()) {
+            if (str.equals(((JSONObject) it.next()).optString("alias"))) {
+                return true;
             }
         }
-        i3 = gm.m;
-        h15Var.J = i3;
-        ds0Var.measure(i, 0);
-        ViewGroup.LayoutParams layoutParams2 = h15Var.e.getLayoutParams();
-        i4 = h15Var.F;
-        if (i4 <= 0) {
+        return false;
+    }
+
+    public final void C() {
+        synchronized (g) {
+            HashMap hashMap = h;
+            File file = this.d;
+            hashMap.put(file.getAbsolutePath(), Long.valueOf(l() + 1));
+            gl.c3(new xt2(file.getAbsolutePath(), (byte) 5));
+            try {
+                this.f = null;
+                f15 f15Var = new f15();
+                f15Var.b = i(this.a);
+                w(f15Var, new LinkedHashMap());
+                d(f15Var);
+            } catch (Exception e) {
+                m(e);
+            }
         }
-        layoutParams2.height = i4;
-        u46Var = h15Var.G;
-        if (u46Var instanceof wd4) {
+    }
+
+    public final byte[] a(f15 f15Var, String str) {
+        return ("GramWallet:2\n" + this.c + "\n" + f15Var.d + "\n" + str + "\n" + f15Var.b).getBytes(StandardCharsets.UTF_8);
+    }
+
+    public final void b(long j2, boolean z) {
+        String str;
+        iu4 iu4Var;
+        Object obj = g;
+        synchronized (obj) {
+            c(j2);
         }
-        super.onMeasure(i, i2);
-        if (((getMeasuredWidth() + getMeasuredHeight()) << 16) == 0) {
+        String absolutePath = this.d.getAbsolutePath();
+        rz1 rz1Var = new rz1((Object) this, j2, (byte) 7);
+        l15 l15Var = new l15();
+        l15Var.d = absolutePath;
+        gl.c3(new mn6((Object) l15Var, (Object) rz1Var, z, (byte) 24));
+        byte b = 9;
+        try {
+            if (l15Var.a.await(90L, TimeUnit.SECONDS)) {
+                str = l15Var.c;
+                l15Var.b = true;
+                iu4Var = new iu4(l15Var, b);
+            } else {
+                str = "AUTH_TIMEOUT";
+                l15Var.b = true;
+                iu4Var = new iu4(l15Var, b);
+            }
+            gl.c3(iu4Var);
+            synchronized (obj) {
+                c(j2);
+            }
+            if (str != null) {
+                throw new e15(str);
+            }
+        } catch (Throwable th) {
+            l15Var.b = true;
+            gl.c3(new iu4(l15Var, b));
+            throw th;
+        }
+    }
+
+    public final void c(long j2) {
+        if (j2 != l()) {
+            throw new e15("STORAGE_CANCELED");
+        }
+    }
+
+    public final void d(f15 f15Var) {
+        String str = this.c;
+        try {
+            FileDescriptor open = Os.open(this.d.getParent(), OsConstants.O_RDONLY, 0);
+            try {
+                Os.fsync(open);
+                Os.close(open);
+                KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+                keyStore.load(null);
+                Enumeration<String> aliases = keyStore.aliases();
+                while (aliases.hasMoreElements()) {
+                    String nextElement = aliases.nextElement();
+                    if (nextElement.startsWith(this.e) && !z(f15Var, nextElement)) {
+                        keyStore.deleteEntry(nextElement);
+                    }
+                }
+                if (f15Var.c) {
+                    return;
+                }
+                if (!r().edit().clear().commit()) {
+                    throw new IOException("legacy cleanup");
+                }
+                keyStore.deleteEntry("gramwallet_free_" + str);
+                keyStore.deleteEntry("gramwallet_lock_" + str);
+            } catch (Throwable th) {
+                Os.close(open);
+                throw th;
+            }
+        } catch (Exception e) {
+            m(e);
+        }
+    }
+
+    public final void e(ArrayList arrayList) {
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        synchronized (g) {
+            try {
+                f15 s = s();
+                KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+                keyStore.load(null);
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    String str = (String) obj;
+                    if (!z(s, str)) {
+                        keyStore.deleteEntry(str);
+                    }
+                }
+            } catch (Exception e) {
+                m(e);
+            }
+        }
+    }
+
+    public final boolean f(byte[] bArr) {
+        boolean containsKey;
+        if (bArr == null || bArr.length == 0) {
+            return false;
+        }
+        synchronized (g) {
+            try {
+                containsKey = ((LinkedHashMap) s().e).containsKey(p(bArr));
+            } catch (Exception e) {
+                this.m(e);
+                return false;
+            }
+        }
+        return containsKey;
+    }
+
+    public final byte[] g(f15 f15Var, String str) {
+        Key key;
+        JSONObject jSONObject = (JSONObject) ((LinkedHashMap) f15Var.e).get(str);
+        if (jSONObject == null) {
+            k93.f("record missing");
+            return null;
+        }
+        if (!jSONObject.optBoolean("legacy", false)) {
+            Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+            cipher.init(2, y(jSONObject), new GCMParameterSpec(128, Base64.decode(jSONObject.getString("iv"), 2)));
+            cipher.updateAAD(a(f15Var, str));
+            return cipher.doFinal(Base64.decode(jSONObject.getString("ciphertext"), 2));
+        }
+        String string = r().getString("swkey", null);
+        if (string != null) {
+            key = new SecretKeySpec(Base64.decode(string, 2), "AES");
+        } else {
+            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyStore.load(null);
+            Key key2 = keyStore.getKey((f15Var.b ? "gramwallet_lock_" : "gramwallet_free_") + this.c, null);
+            if (!(key2 instanceof SecretKey)) {
+                k93.f("legacy key missing");
+                return null;
+            }
+            key = (SecretKey) key2;
+        }
+        Cipher cipher2 = Cipher.getInstance("AES/CBC/PKCS7Padding");
+        cipher2.init(2, key, new IvParameterSpec(B(jSONObject.getString("iv"))));
+        return cipher2.doFinal(B(jSONObject.getString("ciphertext")));
+    }
+
+    public final y05 h(f15 f15Var, String str, long j2) {
+        byte[] g2;
+        try {
+            g2 = g(f15Var, str);
+        } catch (Exception e) {
+            if (!f15Var.b || !u(e)) {
+                throw e;
+            }
+            this.b(j2, false);
+            try {
+                g2 = this.g(f15Var, str);
+            } catch (Exception e2) {
+                if (!u(e2)) {
+                    throw e2;
+                }
+                this.b(j2, true);
+                g2 = this.g(f15Var, str);
+            }
+        }
+        try {
+            return new y05(g2);
+        } finally {
+            Arrays.fill(g2, (byte) 0);
+        }
+    }
+
+    public final JSONObject j(f15 f15Var, String str, y05 y05Var, ArrayList arrayList, long j2) {
+        Cipher k;
+        String str2 = this.e + UUID.randomUUID();
+        arrayList.add(str2);
+        JSONObject put = new JSONObject().put("alias", str2);
+        KeyGenParameterSpec.Builder userAuthenticationRequired = new KeyGenParameterSpec.Builder(str2, 3).setKeySize(256).setBlockModes("GCM").setEncryptionPaddings("NoPadding").setUserAuthenticationRequired(f15Var.b);
+        if (f15Var.b) {
+            int i2 = Build.VERSION.SDK_INT;
+            if (i2 >= 30) {
+                userAuthenticationRequired.setUserAuthenticationParameters(30, 3);
+            } else {
+                userAuthenticationRequired.setUserAuthenticationValidityDurationSeconds(30);
+            }
+            if (i2 >= 24) {
+                userAuthenticationRequired.setInvalidatedByBiometricEnrollment(false);
+            }
+        }
+        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
+        keyGenerator.init(userAuthenticationRequired.build());
+        keyGenerator.generateKey();
+        try {
+            k = k(f15Var, str, put);
+        } catch (Exception e) {
+            if (!f15Var.b || !u(e)) {
+                throw e;
+            }
+            this.b(j2, false);
+            try {
+                k = this.k(f15Var, str, put);
+            } catch (Exception e2) {
+                if (!u(e2)) {
+                    throw e2;
+                }
+                this.b(j2, true);
+                k = this.k(f15Var, str, put);
+            }
+        }
+        byte[] c = y05Var.c();
+        try {
+            put.put("ciphertext", Base64.encodeToString(k.doFinal(c), 2));
+            put.put("iv", Base64.encodeToString(k.getIV(), 2));
+            return put;
+        } finally {
+            Arrays.fill(c, (byte) 0);
+        }
+    }
+
+    public final Cipher k(f15 f15Var, String str, JSONObject jSONObject) {
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(1, y(jSONObject));
+        cipher.updateAAD(a(f15Var, str));
+        return cipher;
+    }
+
+    public final long l() {
+        long longValue;
+        synchronized (g) {
+            Long l = (Long) h.get(this.d.getAbsolutePath());
+            longValue = l == null ? 0L : l.longValue();
+        }
+        return longValue;
+    }
+
+    public final void m(Exception exc) {
+        this.f = exc;
+        fa4.g(exc, true);
+    }
+
+    public final byte[][] n() {
+        byte[][] bArr;
+        synchronized (g) {
+            try {
+                ArrayList arrayList = new ArrayList();
+                Iterator it = ((LinkedHashMap) s().e).keySet().iterator();
+                while (it.hasNext()) {
+                    arrayList.add(B((String) it.next()));
+                }
+                bArr = (byte[][]) arrayList.toArray(new byte[0][]);
+            } catch (Exception e) {
+                m(e);
+                return new byte[0][];
+            }
+        }
+        return bArr;
+    }
+
+    public final void q(long j2, byte[] bArr, y05 y05Var, p8c p8cVar) {
+        i.execute(new d15(this, bArr == null ? "" : p(bArr), y05Var == null ? null : y05Var.b(), l(), j2, p8cVar));
+    }
+
+    public final SharedPreferences r() {
+        return this.a.getSharedPreferences("gramwallet_" + this.c, 0);
+    }
+
+    public final f15 s() {
+        File file = this.d;
+        if (file.exists()) {
+            return v(new JSONObject(new String(x(file), StandardCharsets.UTF_8)));
+        }
+        f15 f15Var = new f15();
+        SharedPreferences r = r();
+        f15Var.b = r.getBoolean("locked", i(this.a));
+        f15Var.d = r.getLong("userId", 0L);
+        f15Var.a = r.getInt("lastUsageDate", 0);
+        if (!r.contains("phrase")) {
+            return f15Var;
+        }
+        String p = p(B(r.getString("pubkey", "")));
+        if (p.isEmpty()) {
+            k93.f("legacy public key missing");
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        jSONObject.put("legacy", true);
+        jSONObject.put("ciphertext", r.getString("phrase", null));
+        jSONObject.put("iv", r.getString("iv", null));
+        ((LinkedHashMap) f15Var.e).put(p, jSONObject);
+        f15Var.c = true;
+        return f15Var;
+    }
+
+    public final void t(f15 f15Var, String str, LinkedHashMap linkedHashMap, ArrayList arrayList, long j2) {
+        LinkedHashMap linkedHashMap2 = (LinkedHashMap) f15Var.e;
+        ArrayList arrayList2 = new ArrayList(linkedHashMap2.keySet());
+        int size = arrayList2.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList2.get(i2);
+            i2++;
+            String str2 = (String) obj;
+            if (!str2.equals(str) && ((JSONObject) linkedHashMap2.get(str2)).optBoolean("legacy", false)) {
+                y05 h2 = h(f15Var, str2, j2);
+                linkedHashMap.put(str2, h2);
+                linkedHashMap2.put(str2, j(f15Var, str2, h2, arrayList, j2));
+            }
+        }
+        f15Var.c = false;
+    }
+
+    public final f15 v(JSONObject jSONObject) {
+        if (jSONObject.getInt("version") == 2) {
+            if (this.c.equals(jSONObject.getString("address"))) {
+                f15 f15Var = new f15();
+                f15Var.d = jSONObject.getLong("userId");
+                f15Var.a = jSONObject.getInt("lastUsage");
+                f15Var.b = jSONObject.getBoolean("locked");
+                JSONObject jSONObject2 = jSONObject.getJSONObject("records");
+                Iterator<String> keys = jSONObject2.keys();
+                while (keys.hasNext()) {
+                    String next = keys.next();
+                    if (next.isEmpty() || !next.equals(p(B(next)))) {
+                        k93.f("public key encoding");
+                        return null;
+                    }
+                    JSONObject jSONObject3 = jSONObject2.getJSONObject(next);
+                    ((LinkedHashMap) f15Var.e).put(next, jSONObject3);
+                    f15Var.c |= jSONObject3.optBoolean("legacy", false);
+                }
+                return f15Var;
+            }
+        }
+        k93.f("wallet format/address");
+        return null;
+    }
+
+    public final void w(f15 f15Var, LinkedHashMap linkedHashMap) {
+        File file = this.d;
+        File parentFile = file.getParentFile();
+        if (!parentFile.isDirectory() && !parentFile.mkdirs()) {
+            k93.f("wallet directory");
+            return;
+        }
+        JSONObject jSONObject = new JSONObject();
+        for (Map.Entry entry : ((LinkedHashMap) f15Var.e).entrySet()) {
+            jSONObject.put((String) entry.getKey(), entry.getValue());
+        }
+        String jSONObject2 = new JSONObject().put("version", 2).put("address", this.c).put("userId", f15Var.d).put("lastUsage", f15Var.a).put("locked", f15Var.b).put("records", jSONObject).toString();
+        Charset charset = StandardCharsets.UTF_8;
+        byte[] bytes = jSONObject2.getBytes(charset);
+        if (bytes.length > 4194304) {
+            k93.f("wallet too large");
+            return;
+        }
+        File file2 = new File(parentFile, file.getName() + ".pending");
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file2);
+            try {
+                fileOutputStream.write(bytes);
+                fileOutputStream.flush();
+                fileOutputStream.getFD().sync();
+                fileOutputStream.close();
+                byte[] x = x(file2);
+                if (!Arrays.equals(bytes, x)) {
+                    throw new IOException("wallet read-back mismatch");
+                }
+                f15 v = v(new JSONObject(new String(x, charset)));
+                for (Map.Entry entry2 : linkedHashMap.entrySet()) {
+                    byte[] c = ((y05) entry2.getValue()).c();
+                    byte[] bArr = null;
+                    try {
+                        bArr = g(v, (String) entry2.getKey());
+                        if (!MessageDigest.isEqual(c, bArr)) {
+                            throw new IOException("wallet decryption mismatch");
+                        }
+                        Arrays.fill(c, (byte) 0);
+                        if (bArr != null) {
+                            Arrays.fill(bArr, (byte) 0);
+                        }
+                    } catch (Throwable th) {
+                        Arrays.fill(c, (byte) 0);
+                        if (bArr != null) {
+                            Arrays.fill(bArr, (byte) 0);
+                        }
+                        throw th;
+                    }
+                }
+                Os.rename(file2.getAbsolutePath(), file.getAbsolutePath());
+                gl.c3(new ql3((byte) 9));
+            } finally {
+            }
+        } finally {
+            if (file2.exists() && !file2.delete()) {
+                fa4.g(new IOException("wallet staging cleanup"), true);
+            }
+        }
+    }
+
+    public final SecretKey y(JSONObject jSONObject) {
+        String string = jSONObject.getString("alias");
+        if (!string.startsWith(this.e)) {
+            k93.f("key alias outside wallet");
+            return null;
+        }
+        KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+        keyStore.load(null);
+        Key key = keyStore.getKey(string, null);
+        if (key == null) {
+            k93.f("keystore key missing");
+            return null;
+        }
+        if (!jSONObject.has("wrappedKey")) {
+            if (key instanceof SecretKey) {
+                return (SecretKey) key;
+            }
+            k93.f("keystore key type");
+            return null;
+        }
+        Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+        cipher.init(2, key);
+        byte[] doFinal = cipher.doFinal(Base64.decode(jSONObject.getString("wrappedKey"), 2));
+        try {
+            if (doFinal.length == 32) {
+                return new SecretKeySpec(doFinal, "AES");
+            }
+            throw new IOException("wrapped key length");
+        } finally {
+            Arrays.fill(doFinal, (byte) 0);
         }
     }
 }

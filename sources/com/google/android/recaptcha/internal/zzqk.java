@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 class zzqk extends zzqj {
     protected final byte[] zza;
@@ -35,11 +35,11 @@ class zzqk extends zzqj {
         }
         int zzd = zzd();
         if (zzd > zzqkVar.zzd()) {
-            i2d.b(zzd, zzd());
+            haf.b(zzd, zzd());
             return false;
         }
         if (zzd > zzqkVar.zzd()) {
-            u36.j(b10.g(zzd, zzqkVar.zzd(), "Ran off end of other: 0, ", ", "));
+            w26.j(b00.g(zzd, zzqkVar.zzd(), "Ran off end of other: 0, ", ", "));
             return false;
         }
         byte[] bArr = this.zza;

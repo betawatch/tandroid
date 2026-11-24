@@ -1,22 +1,22 @@
 // default package
 
-import java.util.HashMap;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class pbf {
-    public static final String[] a = {"text1", "text2", "icon", "intent_action", "intent_data", "intent_data_id", "intent_extra_data", "suggest_large_icon", "intent_activity", "thing_proto"};
-    public static final HashMap b = new HashMap(10);
+public final class pbf {
+    public static final pbf d = new pbf();
+    public final Runnable a;
+    public final Executor b;
+    public pbf c;
 
-    static {
-        int i = 0;
-        while (true) {
-            String[] strArr = a;
-            if (i >= 10) {
-                return;
-            }
-            b.put(strArr[i], Integer.valueOf(i));
-            i++;
-        }
+    public pbf() {
+        this.a = null;
+        this.b = null;
+    }
+
+    public pbf(Runnable runnable, Executor executor) {
+        this.a = runnable;
+        this.b = executor;
     }
 }

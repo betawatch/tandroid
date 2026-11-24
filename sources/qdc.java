@@ -1,35 +1,67 @@
 // default package
 
-import org.telegram.messenger.video.VideoPlayerHolderBase;
+import android.app.Application;
+import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qdc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VideoPlayerHolderBase b;
-    public final /* synthetic */ float c;
+public final class qdc extends pd5 {
+    public static qdc H;
+    public static final vi2 I = new vi2(29);
+    public final Application G;
 
-    public /* synthetic */ qdc(VideoPlayerHolderBase videoPlayerHolderBase, float f, byte b) {
-        this.a = b;
-        this.b = videoPlayerHolderBase;
-        this.c = f;
+    public qdc(Application application) {
+        super((byte) 29);
+        this.G = application;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        float f = this.c;
-        VideoPlayerHolderBase videoPlayerHolderBase = this.b;
-        switch (b) {
-            case 0:
-                videoPlayerHolderBase.lambda$setSpeed$5(f);
-                break;
-            case 1:
-                videoPlayerHolderBase.lambda$play$7(f);
-                break;
-            default:
-                videoPlayerHolderBase.lambda$setVolume$10(f);
-                break;
+    @Override // pd5, rdc
+    public final odc e(Class cls, l13 l13Var) {
+        l13Var.getClass();
+        if (this.G != null) {
+            return h(cls);
+        }
+        Application application = (Application) l13Var.b(I);
+        if (application != null) {
+            return j(cls, application);
+        }
+        if (!hl.class.isAssignableFrom(cls)) {
+            return rle.a(cls);
+        }
+        w26.j("CreationExtras must have an application by `APPLICATION_KEY`");
+        return null;
+    }
+
+    @Override // pd5
+    public final odc h(Class cls) {
+        Application application = this.G;
+        if (application != null) {
+            return j(cls, application);
+        }
+        fyb.i("AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).");
+        return null;
+    }
+
+    public final odc j(Class cls, Application application) {
+        if (!hl.class.isAssignableFrom(cls)) {
+            return rle.a(cls);
+        }
+        try {
+            odc odcVar = (odc) cls.getConstructor(Application.class).newInstance(application);
+            odcVar.getClass();
+            return odcVar;
+        } catch (IllegalAccessException e) {
+            ho9.l("Cannot create an instance of ", cls, e);
+            return null;
+        } catch (InstantiationException e2) {
+            ho9.l("Cannot create an instance of ", cls, e2);
+            return null;
+        } catch (NoSuchMethodException e3) {
+            ho9.l("Cannot create an instance of ", cls, e3);
+            return null;
+        } catch (InvocationTargetException e4) {
+            ho9.l("Cannot create an instance of ", cls, e4);
+            return null;
         }
     }
 }

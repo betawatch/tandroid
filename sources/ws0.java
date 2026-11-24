@@ -1,281 +1,114 @@
 // default package
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ws0 {
-    public final SensorManager a;
-    public Sensor b;
-    public long c;
-    public Sensor d;
-    public long e;
-    public Sensor f;
-    public Sensor g;
-    public long h;
-    public Sensor i;
-    public long j;
-    public mw0 k;
-    public boolean l;
-    public f00 m;
-    public f00 o;
-    public f00 q;
-    public f00 s;
-    public final ts0 n = new ts0(this, (byte) 0);
-    public final ts0 p = new ts0(this, (byte) 1);
-    public final us0 r = new us0(this);
-    public final vs0 t = new vs0(this);
+public final /* synthetic */ class ws0 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public ws0(Context context) {
-        this.a = (SensorManager) context.getSystemService("sensor");
+    public /* synthetic */ ws0(hd hdVar, long j, j5 j5Var, sc7 sc7Var) {
+        this.a = (byte) 2;
+        this.d = hdVar;
+        this.b = j;
+        this.c = j5Var;
+        this.e = sc7Var;
     }
 
-    public static int a(long j) {
-        if (j >= 160) {
-            return 3;
-        }
-        return j >= 60 ? 2 : 1;
-    }
-
-    public final void b() {
-        if (this.l) {
-            return;
-        }
-        this.l = true;
-        SensorManager sensorManager = this.a;
-        if (sensorManager != null) {
-            Sensor sensor = this.b;
-            if (sensor != null) {
-                sensorManager.unregisterListener(this.n, sensor);
-            }
-            f00 f00Var = this.m;
-            if (f00Var != null) {
-                gm.r(f00Var);
-                this.m = null;
-            }
-            Sensor sensor2 = this.d;
-            if (sensor2 != null) {
-                sensorManager.unregisterListener(this.p, sensor2);
-            }
-            f00 f00Var2 = this.o;
-            if (f00Var2 != null) {
-                gm.r(f00Var2);
-                this.o = null;
-            }
-            Sensor sensor3 = this.g;
-            us0 us0Var = this.r;
-            if (sensor3 != null) {
-                sensorManager.unregisterListener(us0Var, sensor3);
-            }
-            Sensor sensor4 = this.f;
-            if (sensor4 != null) {
-                sensorManager.unregisterListener(us0Var, sensor4);
-            }
-            f00 f00Var3 = this.q;
-            if (f00Var3 != null) {
-                gm.r(f00Var3);
-                this.q = null;
-            }
-            Sensor sensor5 = this.i;
-            if (sensor5 != null) {
-                sensorManager.unregisterListener(this.t, sensor5);
-            }
-            f00 f00Var4 = this.s;
-            if (f00Var4 != null) {
-                gm.r(f00Var4);
-                this.s = null;
-            }
-        }
-    }
-
-    public final boolean c(long j) {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        if (this.b == null) {
-            Sensor defaultSensor = sensorManager.getDefaultSensor(1);
-            this.b = defaultSensor;
-            if (defaultSensor == null) {
-                return false;
-            }
-            this.c = j;
-            if (!this.l) {
-                sensorManager.registerListener(this.n, defaultSensor, a(j));
-            }
-        }
-        return true;
-    }
-
-    public final boolean d(long j) {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        if (this.d == null) {
-            Sensor defaultSensor = sensorManager.getDefaultSensor(4);
-            this.d = defaultSensor;
-            if (defaultSensor == null) {
-                return false;
-            }
-            this.e = j;
-            if (!this.l) {
-                sensorManager.registerListener(this.p, defaultSensor, a(j));
-            }
-        }
-        return true;
-    }
-
-    public final boolean e(long j, boolean z) {
-        Sensor sensor;
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        vs0 vs0Var = this.t;
-        us0 us0Var = this.r;
-        if (z) {
-            if (this.i != null) {
-                f00 f00Var = this.s;
-                if (f00Var != null) {
-                    gm.r(f00Var);
-                    this.s = null;
-                }
-                if (!this.l && (sensor = this.i) != null) {
-                    sensorManager.unregisterListener(vs0Var, sensor);
-                }
-                this.i = null;
-            }
-            if (this.f == null || this.g == null) {
-                this.g = sensorManager.getDefaultSensor(1);
-                Sensor defaultSensor = sensorManager.getDefaultSensor(2);
-                this.f = defaultSensor;
-                Sensor sensor2 = this.g;
-                if (sensor2 == null || defaultSensor == null) {
-                    return false;
-                }
-                this.h = j;
-                if (!this.l) {
-                    sensorManager.registerListener(us0Var, sensor2, a(j));
-                    sensorManager.registerListener(us0Var, this.f, a(j));
-                    return true;
-                }
-            }
-        } else {
-            if (this.f != null || this.g != null) {
-                f00 f00Var2 = this.q;
-                if (f00Var2 != null) {
-                    gm.r(f00Var2);
-                    this.q = null;
-                }
-                if (!this.l) {
-                    Sensor sensor3 = this.g;
-                    if (sensor3 != null) {
-                        sensorManager.unregisterListener(us0Var, sensor3);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        switch (b) {
+            case 0:
+                gl.c3(new o77((ct0) obj3, (hd) obj2, tLObject, this.b, (p8c) obj));
+                break;
+            case 1:
+                gl.c3(new fl1(obj3, (Object) tLObject, obj2, (TLObject) tL_error, obj, this.b, (byte) 2));
+                break;
+            case 2:
+                gl.c3(new o77(obj2, (Object) tLObject, this.b, obj3, obj, (byte) 8));
+                break;
+            case 3:
+                gl.c3(new o77(obj3, (Object) tLObject, this.b, obj2, obj, (byte) 10));
+                break;
+            case 4:
+                na7 na7Var = (na7) obj3;
+                int[] iArr = (int[]) obj2;
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
+                    int i = tL_messages_affectedHistory.offset;
+                    long j = this.b;
+                    if (i > 0) {
+                        na7Var.e0(j, iArr[0], inputPeer);
                     }
-                    Sensor sensor4 = this.f;
-                    if (sensor4 != null) {
-                        sensorManager.unregisterListener(us0Var, sensor4);
+                    na7Var.P3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
+                    ad7 messagesStorage = na7Var.getMessagesStorage();
+                    messagesStorage.a.c(new ua7(messagesStorage, j, (byte) 5));
+                    break;
+                }
+                break;
+            case 5:
+                gl.c3(new fl1(obj3, (Object) tLObject, obj2, (TLObject) obj, (Object) tL_error, this.b, (byte) 3));
+                break;
+            case 6:
+                gl.c3(new o77(obj3, (Object) tLObject, obj2, this.b, obj, (byte) 16));
+                break;
+            default:
+                pub pubVar = (pub) obj3;
+                d dVar = (d) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                pubVar.getClass();
+                if (tL_error != null) {
+                    boolean equals = "PINNED_TOO_MUCH".equals(tL_error.text);
+                    long j2 = this.b;
+                    if (!equals) {
+                        if ("PINNED_TOPIC_NOT_MODIFIED".equals(tL_error.text)) {
+                            gl.c3(new ko2((Object) pubVar, j2, false, (byte) 4));
+                            break;
+                        }
+                    } else if (dVar != null) {
+                        pubVar.a(j2, arrayList, true);
+                        gl.c3(new ee2(pubVar, dVar, (byte) 14));
+                        break;
                     }
                 }
-                this.g = null;
-                this.f = null;
-            }
-            if (this.i == null) {
-                Sensor defaultSensor2 = sensorManager.getDefaultSensor(15);
-                this.i = defaultSensor2;
-                if (defaultSensor2 == null) {
-                    return false;
-                }
-                this.j = j;
-                if (!this.l) {
-                    sensorManager.registerListener(vs0Var, defaultSensor2, a(j));
-                }
-            }
+                break;
         }
-        return true;
     }
 
-    public final boolean f() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.b;
-        if (sensor == null) {
-            return true;
-        }
-        if (!this.l) {
-            sensorManager.unregisterListener(this.n, sensor);
-        }
-        f00 f00Var = this.m;
-        if (f00Var != null) {
-            gm.r(f00Var);
-            this.m = null;
-        }
-        this.b = null;
-        return true;
+    public /* synthetic */ ws0(na7 na7Var, long j, Object obj, TLObject tLObject, byte b) {
+        this.a = b;
+        this.c = na7Var;
+        this.b = j;
+        this.d = obj;
+        this.e = tLObject;
     }
 
-    public final boolean g() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.d;
-        if (sensor == null) {
-            return true;
-        }
-        if (!this.l) {
-            sensorManager.unregisterListener(this.p, sensor);
-        }
-        f00 f00Var = this.o;
-        if (f00Var != null) {
-            gm.r(f00Var);
-            this.o = null;
-        }
-        this.d = null;
-        return true;
+    public /* synthetic */ ws0(Object obj, Object obj2, long j, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j;
+        this.e = obj3;
     }
 
-    public final boolean h() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.g;
-        if (sensor == null && this.f == null && this.i == null) {
-            return true;
-        }
-        if (!this.l) {
-            us0 us0Var = this.r;
-            if (sensor != null) {
-                sensorManager.unregisterListener(us0Var, sensor);
-            }
-            Sensor sensor2 = this.f;
-            if (sensor2 != null) {
-                sensorManager.unregisterListener(us0Var, sensor2);
-            }
-            Sensor sensor3 = this.i;
-            if (sensor3 != null) {
-                sensorManager.unregisterListener(this.t, sensor3);
-            }
-        }
-        f00 f00Var = this.q;
-        if (f00Var != null) {
-            gm.r(f00Var);
-            this.q = null;
-        }
-        f00 f00Var2 = this.s;
-        if (f00Var2 != null) {
-            gm.r(f00Var2);
-            this.s = null;
-        }
-        this.g = null;
-        this.f = null;
-        this.i = null;
-        return true;
+    public /* synthetic */ ws0(Object obj, Object obj2, Object obj3, long j, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j;
     }
 }

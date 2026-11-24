@@ -25,7 +25,7 @@ import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -39,7 +39,7 @@ public class MediaRouteButton extends View {
     private final a mCallback;
     private boolean mCheatSheetEnabled;
     private int mConnectionState;
-    private av6 mDialogFactory;
+    private at6 mDialogFactory;
     boolean mIsFixedIcon;
     private int mLastConnectionState;
     private int mMinHeight;
@@ -47,8 +47,8 @@ public class MediaRouteButton extends View {
     private Drawable mRemoteIndicator;
     b mRemoteIndicatorLoader;
     private int mRemoteIndicatorResIdToLoad;
-    private final gw6 mRouter;
-    private yv6 mSelector;
+    private final gu6 mRouter;
+    private yt6 mSelector;
     static final SparseArray<Drawable.ConstantState> sRemoteIndicatorCache = new SparseArray<>(2);
     private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private static final int[] CHECKABLE_STATE_SET = {R.attr.state_checkable};
@@ -60,23 +60,23 @@ public class MediaRouteButton extends View {
     public MediaRouteButton(Context context, AttributeSet attributeSet, int i) {
         super(r7 != 0 ? new ContextThemeWrapper(r0, r7) : r0, attributeSet, i);
         Drawable.ConstantState constantState;
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, yqe.e(context));
-        int g = yqe.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
-        this.mSelector = yv6.c;
-        this.mDialogFactory = av6.a;
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, voe.e(context));
+        int g = voe.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
+        this.mSelector = yt6.c;
+        this.mDialogFactory = at6.a;
         Context context2 = getContext();
-        int[] iArr = j09.a;
+        int[] iArr = iy8.a;
         TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr, i, 0);
-        kfc.j(this, context2, iArr, attributeSet, obtainStyledAttributes, i);
+        jdc.j(this, context2, iArr, attributeSet, obtainStyledAttributes, i);
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = kod.a(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = hmd.a(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
-        this.mRouter = gw6.d(context2);
+        this.mRouter = gu6.d(context2);
         this.mCallback = new a(this);
-        ew6 f = gw6.f();
+        eu6 f = gu6.f();
         int i2 = !f.d() ? f.i : 0;
         this.mConnectionState = i2;
         this.mLastConnectionState = i2;
@@ -117,10 +117,10 @@ public class MediaRouteButton extends View {
         return null;
     }
 
-    private hq4 getFragmentManager() {
+    private go4 getFragmentManager() {
         Activity activity = getActivity();
-        if (activity instanceof gp4) {
-            return ((gp4) activity).u();
+        if (activity instanceof en4) {
+            return ((en4) activity).u();
         }
         return null;
     }
@@ -139,52 +139,52 @@ public class MediaRouteButton extends View {
     }
 
     private boolean showDialogForType(int i) {
-        hq4 fragmentManager = getFragmentManager();
+        go4 fragmentManager = getFragmentManager();
         if (fragmentManager == null) {
-            dq9.m("The activity must be a subclass of FragmentActivity");
+            sc8.j("The activity must be a subclass of FragmentActivity");
             return false;
         }
         this.mRouter.getClass();
-        if (gw6.f().d()) {
+        if (gu6.f().d()) {
             if (fragmentManager.D(CHOOSER_FRAGMENT_TAG) != null) {
                 Log.w(TAG, "showDialog(): Route chooser dialog already showing!");
                 return false;
             }
             this.mDialogFactory.getClass();
-            lu6 lu6Var = new lu6();
-            yv6 yv6Var = this.mSelector;
-            if (yv6Var == null) {
-                u36.j("selector must not be null");
+            ks6 ks6Var = new ks6();
+            yt6 yt6Var = this.mSelector;
+            if (yt6Var == null) {
+                w26.j("selector must not be null");
                 return false;
             }
-            lu6Var.Q();
-            if (!lu6Var.D0.equals(yv6Var)) {
-                lu6Var.D0 = yv6Var;
-                Bundle bundle = lu6Var.f;
+            ks6Var.Q();
+            if (!ks6Var.D0.equals(yt6Var)) {
+                ks6Var.D0 = yt6Var;
+                Bundle bundle = ks6Var.f;
                 if (bundle == null) {
                     bundle = new Bundle();
                 }
-                bundle.putBundle("selector", yv6Var.a);
-                lu6Var.N(bundle);
-                dq dqVar = lu6Var.C0;
-                if (dqVar != null) {
-                    if (lu6Var.B0) {
-                        ((gv6) dqVar).f(yv6Var);
+                bundle.putBundle("selector", yt6Var.a);
+                ks6Var.N(bundle);
+                dp dpVar = ks6Var.C0;
+                if (dpVar != null) {
+                    if (ks6Var.B0) {
+                        ((gt6) dpVar).f(yt6Var);
                     } else {
-                        ((ku6) dqVar).h(yv6Var);
+                        ((js6) dpVar).h(yt6Var);
                     }
                 }
             }
             if (i == 2) {
-                if (lu6Var.C0 != null) {
-                    dq9.m("This must be called before creating dialog");
+                if (ks6Var.C0 != null) {
+                    sc8.j("This must be called before creating dialog");
                     return false;
                 }
-                lu6Var.B0 = true;
+                ks6Var.B0 = true;
             }
-            ie0 ie0Var = new ie0(fragmentManager);
-            ie0Var.f(0, lu6Var, CHOOSER_FRAGMENT_TAG);
-            ie0Var.e(true, true);
+            id0 id0Var = new id0(fragmentManager);
+            id0Var.f(0, ks6Var, CHOOSER_FRAGMENT_TAG);
+            id0Var.e(true, true);
             return true;
         }
         if (fragmentManager.D(CONTROLLER_FRAGMENT_TAG) != null) {
@@ -192,50 +192,50 @@ public class MediaRouteButton extends View {
             return false;
         }
         this.mDialogFactory.getClass();
-        xu6 xu6Var = new xu6();
-        yv6 yv6Var2 = this.mSelector;
-        if (yv6Var2 == null) {
-            u36.j("selector must not be null");
+        xs6 xs6Var = new xs6();
+        yt6 yt6Var2 = this.mSelector;
+        if (yt6Var2 == null) {
+            w26.j("selector must not be null");
             return false;
         }
-        yv6 yv6Var3 = xu6Var.D0;
-        if (yv6Var3 == null) {
-            Bundle bundle2 = xu6Var.f;
+        yt6 yt6Var3 = xs6Var.D0;
+        if (yt6Var3 == null) {
+            Bundle bundle2 = xs6Var.f;
             if (bundle2 != null) {
-                yv6Var3 = yv6.b(bundle2.getBundle("selector"));
-                xu6Var.D0 = yv6Var3;
+                yt6Var3 = yt6.b(bundle2.getBundle("selector"));
+                xs6Var.D0 = yt6Var3;
             }
-            yv6 yv6Var4 = yv6Var3;
-            if (yv6Var3 == null) {
-                yv6Var3 = yv6.c;
-                xu6Var.D0 = yv6Var3;
+            yt6 yt6Var4 = yt6Var3;
+            if (yt6Var3 == null) {
+                yt6Var3 = yt6.c;
+                xs6Var.D0 = yt6Var3;
             } else {
-                yv6Var3 = yv6Var4;
+                yt6Var3 = yt6Var4;
             }
         }
-        if (!yv6Var3.equals(yv6Var2)) {
-            xu6Var.D0 = yv6Var2;
-            Bundle bundle3 = xu6Var.f;
+        if (!yt6Var3.equals(yt6Var2)) {
+            xs6Var.D0 = yt6Var2;
+            Bundle bundle3 = xs6Var.f;
             if (bundle3 == null) {
                 bundle3 = new Bundle();
             }
-            bundle3.putBundle("selector", yv6Var2.a);
-            xu6Var.N(bundle3);
-            dq dqVar2 = xu6Var.C0;
-            if (dqVar2 != null && xu6Var.B0) {
-                ((rv6) dqVar2).i(yv6Var2);
+            bundle3.putBundle("selector", yt6Var2.a);
+            xs6Var.N(bundle3);
+            dp dpVar2 = xs6Var.C0;
+            if (dpVar2 != null && xs6Var.B0) {
+                ((rt6) dpVar2).i(yt6Var2);
             }
         }
         if (i == 2) {
-            if (xu6Var.C0 != null) {
-                dq9.m("This must be called before creating dialog");
+            if (xs6Var.C0 != null) {
+                sc8.j("This must be called before creating dialog");
                 return false;
             }
-            xu6Var.B0 = true;
+            xs6Var.B0 = true;
         }
-        ie0 ie0Var2 = new ie0(fragmentManager);
-        ie0Var2.f(0, xu6Var, CONTROLLER_FRAGMENT_TAG);
-        ie0Var2.e(true, true);
+        id0 id0Var2 = new id0(fragmentManager);
+        id0Var2.f(0, xs6Var, CONTROLLER_FRAGMENT_TAG);
+        id0Var2.e(true, true);
         return true;
     }
 
@@ -246,7 +246,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        wxe.a(this, string);
+        uve.a(this, string);
     }
 
     @Override // android.view.View
@@ -272,34 +272,34 @@ public class MediaRouteButton extends View {
 
     @Deprecated
     public void enableDynamicGroup() {
-        hw6 hw6Var;
+        hu6 hu6Var;
         this.mRouter.getClass();
-        gw6.b();
-        iw6 iw6Var = gw6.c().u;
-        if (iw6Var == null) {
-            hw6Var = new hw6();
+        gu6.b();
+        iu6 iu6Var = gu6.c().u;
+        if (iu6Var == null) {
+            hu6Var = new hu6();
         } else {
-            hw6 hw6Var2 = new hw6();
-            Bundle bundle = iw6Var.e;
-            hw6Var2.a = iw6Var.a;
-            hw6Var2.c = iw6Var.c;
-            hw6Var2.d = iw6Var.d;
-            hw6Var2.b = iw6Var.b;
-            hw6Var2.e = bundle == null ? null : new Bundle(bundle);
-            hw6Var = hw6Var2;
+            hu6 hu6Var2 = new hu6();
+            Bundle bundle = iu6Var.e;
+            hu6Var2.a = iu6Var.a;
+            hu6Var2.c = iu6Var.c;
+            hu6Var2.d = iu6Var.d;
+            hu6Var2.b = iu6Var.b;
+            hu6Var2.e = bundle == null ? null : new Bundle(bundle);
+            hu6Var = hu6Var2;
         }
-        hw6Var.a = (byte) 2;
-        gw6 gw6Var = this.mRouter;
-        iw6 iw6Var2 = new iw6(hw6Var);
-        gw6Var.getClass();
-        gw6.i(iw6Var2);
+        hu6Var.a = (byte) 2;
+        gu6 gu6Var = this.mRouter;
+        iu6 iu6Var2 = new iu6(hu6Var);
+        gu6Var.getClass();
+        gu6.i(iu6Var2);
     }
 
-    public av6 getDialogFactory() {
+    public at6 getDialogFactory() {
         return this.mDialogFactory;
     }
 
-    public yv6 getRouteSelector() {
+    public yt6 getRouteSelector() {
         return this.mSelector;
     }
 
@@ -417,7 +417,7 @@ public class MediaRouteButton extends View {
 
     public void refreshRoute() {
         this.mRouter.getClass();
-        ew6 f = gw6.f();
+        eu6 f = gu6.f();
         int i = !f.d() ? f.i : 0;
         if (this.mConnectionState != i) {
             this.mConnectionState = i;
@@ -436,11 +436,11 @@ public class MediaRouteButton extends View {
         }
     }
 
-    public void setDialogFactory(av6 av6Var) {
-        if (av6Var != null) {
-            this.mDialogFactory = av6Var;
+    public void setDialogFactory(at6 at6Var) {
+        if (at6Var != null) {
+            this.mDialogFactory = at6Var;
         } else {
-            u36.j("factory must not be null");
+            w26.j("factory must not be null");
         }
     }
 
@@ -472,23 +472,23 @@ public class MediaRouteButton extends View {
         refreshDrawableState();
     }
 
-    public void setRouteSelector(yv6 yv6Var) {
-        if (yv6Var == null) {
-            u36.j("selector must not be null");
+    public void setRouteSelector(yt6 yt6Var) {
+        if (yt6Var == null) {
+            w26.j("selector must not be null");
             return;
         }
-        if (this.mSelector.equals(yv6Var)) {
+        if (this.mSelector.equals(yt6Var)) {
             return;
         }
         if (this.mAttachedToWindow) {
             if (!this.mSelector.d()) {
                 this.mRouter.h(this.mCallback);
             }
-            if (!yv6Var.d()) {
-                this.mRouter.a(yv6Var, this.mCallback, 0);
+            if (!yt6Var.d()) {
+                this.mRouter.a(yt6Var, this.mCallback, 0);
             }
         }
-        this.mSelector = yv6Var;
+        this.mSelector = yt6Var;
         refreshRoute();
     }
 
@@ -503,7 +503,7 @@ public class MediaRouteButton extends View {
 
     /* JADX WARN: Code restructure failed: missing block: B:65:0x0091, code lost:
     
-        if (ywe.a(r3) != false) goto L34;
+        if (wue.a(r3) != false) goto L34;
      */
     /* JADX WARN: Removed duplicated region for block: B:20:0x009f A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:21:0x00a0  */
@@ -518,20 +518,20 @@ public class MediaRouteButton extends View {
             return false;
         }
         this.mRouter.getClass();
-        gw6.b();
-        iw6 iw6Var = gw6.c().u;
-        if (iw6Var == null) {
+        gu6.b();
+        iu6 iu6Var = gu6.c().u;
+        if (iu6Var == null) {
             return showDialogForType(1);
         }
-        if (iw6Var.c) {
-            if (gw6.c == null ? false : gw6.c().f()) {
+        if (iu6Var.c) {
+            if (gu6.c == null ? false : gu6.c().f()) {
                 Context context = getContext();
                 int i = Build.VERSION.SDK_INT;
                 if (i >= 34) {
                     if (i >= 30) {
-                        MediaRouter2 a2 = ffb.a(context);
+                        MediaRouter2 a2 = edb.a(context);
                         if (i >= 34) {
-                            a = gfb.a(a2);
+                            a = fdb.a(a2);
                             if (a) {
                                 return true;
                             }
@@ -540,7 +540,7 @@ public class MediaRouteButton extends View {
                                 Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
                                 while (it.hasNext()) {
                                     ActivityInfo activityInfo = it.next().activityInfo;
-                                    if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & nm7.M1) != 0) {
+                                    if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & kk7.M1) != 0) {
                                         context.startActivity(putExtra);
                                         return true;
                                     }
@@ -557,7 +557,7 @@ public class MediaRouteButton extends View {
                     while (true) {
                         if (it2.hasNext()) {
                             ActivityInfo activityInfo2 = it2.next().activityInfo;
-                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & nm7.M1) != 0) {
+                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & kk7.M1) != 0) {
                                 context.sendBroadcast(putExtra2);
                                 break;
                             }
@@ -568,7 +568,7 @@ public class MediaRouteButton extends View {
                     }
                 } else {
                     if (i == 30) {
-                        a = ywe.a(context);
+                        a = wue.a(context);
                         if (a) {
                         }
                     }
@@ -578,7 +578,7 @@ public class MediaRouteButton extends View {
                 }
             }
         }
-        return showDialogForType(iw6Var.a);
+        return showDialogForType(iu6Var.a);
     }
 
     @Override // android.view.View

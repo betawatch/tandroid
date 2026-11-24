@@ -1,34 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class d44 {
-    public final String a;
+public abstract class d44 extends vw2 {
+    public static final /* synthetic */ int f = 0;
+    public long c;
+    public boolean d;
+    public ks e;
 
-    public d44(String str) {
-        if (str != null) {
-            this.a = str;
-        } else {
-            gxc.d("name is null");
-            throw null;
+    public final void f(boolean z) {
+        long j = this.c - (z ? 4294967296L : 1L);
+        this.c = j;
+        if (j > 0 || !this.d) {
+            return;
         }
+        shutdown();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void g(boolean z) {
+        this.c = (z ? 4294967296L : 1L) + this.c;
+        if (z) {
+            return;
         }
-        if (!(obj instanceof d44)) {
+        this.d = true;
+    }
+
+    public abstract long h();
+
+    public final boolean i() {
+        ks ksVar = this.e;
+        if (ksVar == null) {
             return false;
         }
-        return this.a.equals(((d44) obj).a);
+        jo3 jo3Var = (jo3) (ksVar.isEmpty() ? null : ksVar.removeFirst());
+        if (jo3Var == null) {
+            return false;
+        }
+        jo3Var.run();
+        return true;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode() ^ 1000003;
-    }
-
-    public final String toString() {
-        return b10.j(new StringBuilder("Encoding{name=\""), this.a, "\"}");
-    }
+    public abstract void shutdown();
 }

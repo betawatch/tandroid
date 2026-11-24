@@ -22,11 +22,11 @@ import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -34,14 +34,14 @@ public class WebmEncoder {
         private final Paint clearPaint;
         private final Path clipPath;
         private final int fps;
-        private final ArrayList<pcc> mediaEntities;
+        private final ArrayList<mac> mediaEntities;
         Path path;
         private final Bitmap photo;
         Paint textColorPaint;
         Paint xRefPaint;
 
         public FrameDrawer(MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams) {
-            ArrayList<pcc> arrayList = new ArrayList<>();
+            ArrayList<mac> arrayList = new ArrayList<>();
             this.mediaEntities = arrayList;
             this.clearPaint = new Paint(1);
             this.bitmapPaint = new Paint(5);
@@ -57,28 +57,28 @@ public class WebmEncoder {
             arrayList.addAll(convertVideoParams.mediaEntities);
             int size = arrayList.size();
             for (int i3 = 0; i3 < size; i3++) {
-                pcc pccVar = this.mediaEntities.get(i3);
-                byte b = pccVar.a;
+                mac macVar = this.mediaEntities.get(i3);
+                byte b = macVar.a;
                 if (b == 0 || b == 2 || b == 5) {
-                    initStickerEntity(pccVar);
+                    initStickerEntity(macVar);
                 } else if (b == 1) {
-                    initTextEntity(pccVar);
+                    initTextEntity(macVar);
                 }
             }
             this.clearPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         }
 
-        private void applyRoundRadius(pcc pccVar, Bitmap bitmap, int i) {
-            if (bitmap == null || pccVar == null) {
+        private void applyRoundRadius(mac macVar, Bitmap bitmap, int i) {
+            if (bitmap == null || macVar == null) {
                 return;
             }
-            if (pccVar.s == 0.0f && i == 0) {
+            if (macVar.s == 0.0f && i == 0) {
                 return;
             }
-            if (pccVar.M == null) {
-                pccVar.M = new Canvas(bitmap);
+            if (macVar.M == null) {
+                macVar.M = new Canvas(bitmap);
             }
-            if (pccVar.s != 0.0f) {
+            if (macVar.s != 0.0f) {
                 if (this.path == null) {
                     this.path = new Path();
                 }
@@ -88,11 +88,11 @@ public class WebmEncoder {
                     paint.setColor(-16777216);
                     this.xRefPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 }
-                float min = Math.min(bitmap.getWidth(), bitmap.getHeight()) * pccVar.s;
+                float min = Math.min(bitmap.getWidth(), bitmap.getHeight()) * macVar.s;
                 this.path.rewind();
                 this.path.addRoundRect(new RectF(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight()), min, min, Path.Direction.CCW);
                 this.path.toggleInverseFillType();
-                pccVar.M.drawPath(this.path, this.xRefPaint);
+                macVar.M.drawPath(this.path, this.xRefPaint);
             }
             if (i != 0) {
                 if (this.textColorPaint == null) {
@@ -101,68 +101,68 @@ public class WebmEncoder {
                     paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
                 }
                 this.textColorPaint.setColor(i);
-                pccVar.M.drawRect(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight(), this.textColorPaint);
+                macVar.M.drawRect(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight(), this.textColorPaint);
             }
         }
 
-        private void drawEntity(Canvas canvas, pcc pccVar, int i, long j) {
+        private void drawEntity(Canvas canvas, mac macVar, int i, long j) {
             FrameDrawer frameDrawer;
             Canvas canvas2;
             long j2;
-            pcc pccVar2;
-            kn knVar;
-            RLottieNative rLottieNative = pccVar.D;
+            mac macVar2;
+            km kmVar;
+            RLottieNative rLottieNative = macVar.D;
             int i2 = 0;
             if (rLottieNative != null) {
-                Bitmap bitmap = pccVar.G;
-                if (bitmap == null || pccVar.Y <= 0 || pccVar.Z <= 0) {
+                Bitmap bitmap = macVar.G;
+                if (bitmap == null || macVar.Y <= 0 || macVar.Z <= 0) {
                     return;
                 }
-                rLottieNative.c((int) pccVar.E, bitmap, true);
-                Bitmap bitmap2 = pccVar.G;
-                if ((pccVar.b & 8) == 0) {
+                rLottieNative.c((int) macVar.E, bitmap, true);
+                Bitmap bitmap2 = macVar.G;
+                if ((macVar.b & 8) == 0) {
                     i = 0;
                 }
-                applyRoundRadius(pccVar, bitmap2, i);
-                canvas.drawBitmap(pccVar.G, pccVar.H, this.bitmapPaint);
-                float f = pccVar.E + pccVar.F;
-                pccVar.E = f;
-                if (f >= pccVar.D.a[0]) {
-                    pccVar.E = 0.0f;
+                applyRoundRadius(macVar, bitmap2, i);
+                canvas.drawBitmap(macVar.G, macVar.H, this.bitmapPaint);
+                float f = macVar.E + macVar.F;
+                macVar.E = f;
+                if (f >= macVar.D.a[0]) {
+                    macVar.E = 0.0f;
                     return;
                 }
                 return;
             }
-            if (pccVar.K != null) {
-                float f2 = pccVar.E;
+            if (macVar.K != null) {
+                float f2 = macVar.E;
                 int i3 = (int) f2;
-                float f3 = f2 + pccVar.F;
-                pccVar.E = f3;
+                float f3 = f2 + macVar.F;
+                macVar.E = f3;
                 int i4 = (int) f3;
                 while (true) {
-                    knVar = pccVar.K;
+                    kmVar = macVar.K;
                     if (i3 == i4) {
                         break;
                     }
-                    knVar.r(true);
+                    kmVar.r(true);
                     i4--;
                 }
-                hn hnVar = knVar.w;
-                Bitmap bitmap3 = hnVar != null ? hnVar.b : null;
+                hm hmVar = kmVar.w;
+                Bitmap bitmap3 = hmVar != null ? hmVar.b : null;
                 if (bitmap3 != null) {
-                    canvas.drawBitmap(bitmap3, pccVar.H, this.bitmapPaint);
+                    canvas.drawBitmap(bitmap3, macVar.H, this.bitmapPaint);
                     return;
                 }
                 return;
             }
-            canvas.drawBitmap(pccVar.G, pccVar.H, this.bitmapPaint);
-            ArrayList arrayList = pccVar.k;
+            canvas.drawBitmap(macVar.G, macVar.H, this.bitmapPaint);
+            ArrayList arrayList = macVar.k;
             if (arrayList == null || arrayList.isEmpty()) {
                 return;
             }
-            while (i2 < pccVar.k.size()) {
-                occ occVar = (occ) pccVar.k.get(i2);
-                if (occVar == null || (pccVar2 = occVar.b) == null) {
+            while (i2 < macVar.k.size()) {
+                lac lacVar = (lac) macVar.k.get(i2);
+                if (lacVar == null || (macVar2 = lacVar.b) == null) {
                     frameDrawer = this;
                     canvas2 = canvas;
                     j2 = j;
@@ -170,7 +170,7 @@ public class WebmEncoder {
                     frameDrawer = this;
                     canvas2 = canvas;
                     j2 = j;
-                    frameDrawer.drawEntity(canvas2, pccVar2, pccVar.l, j2);
+                    frameDrawer.drawEntity(canvas2, macVar2, macVar.l, j2);
                 }
                 i2++;
                 this = frameDrawer;
@@ -180,219 +180,219 @@ public class WebmEncoder {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public void initStickerEntity(pcc pccVar) {
-            int i = (int) (pccVar.f * this.W);
-            pccVar.Y = i;
-            int i2 = (int) (pccVar.g * this.H);
-            pccVar.Z = i2;
+        public void initStickerEntity(mac macVar) {
+            int i = (int) (macVar.f * this.W);
+            macVar.Y = i;
+            int i2 = (int) (macVar.g * this.H);
+            macVar.Z = i2;
             int i3 = 512;
             if (i > 512) {
                 i2 = (int) ((i2 / i) * 512.0f);
-                pccVar.Z = i2;
-                pccVar.Y = 512;
+                macVar.Z = i2;
+                macVar.Y = 512;
                 i = 512;
             }
             if (i2 > 512) {
                 i = (int) ((i / i2) * 512.0f);
-                pccVar.Y = i;
-                pccVar.Z = 512;
+                macVar.Y = i;
+                macVar.Z = 512;
             } else {
                 i3 = i2;
             }
-            byte b = pccVar.b;
+            byte b = macVar.b;
             if ((b & 1) != 0) {
                 if (i <= 0 || i3 <= 0) {
                     return;
                 }
-                pccVar.G = Bitmap.createBitmap(i, i3, Bitmap.Config.ARGB_8888);
-                RLottieNative a = RLottieNative.a(pccVar.j, null, null, null, 0, null);
-                pccVar.D = a;
-                pccVar.F = a != null ? a.a[1] / this.fps : 0.0f;
+                macVar.G = Bitmap.createBitmap(i, i3, Bitmap.Config.ARGB_8888);
+                RLottieNative a = RLottieNative.a(macVar.j, null, null, null, 0, null);
+                macVar.D = a;
+                macVar.F = a != null ? a.a[1] / this.fps : 0.0f;
             } else if ((b & 4) != 0) {
-                pccVar.L = false;
-                kn knVar = new kn(new File(pccVar.j), true, 0L, 0, null, null, null, 0L, z8c.t0, true, 512, 512, null, 0, true);
-                pccVar.K = knVar;
-                pccVar.F = knVar.d[5] / this.fps;
-                pccVar.E = 1.0f;
-                knVar.r(true);
+                macVar.L = false;
+                km kmVar = new km(new File(macVar.j), true, 0L, 0, null, null, null, 0L, y6c.t0, true, 512, 512, null, 0, true);
+                macVar.K = kmVar;
+                macVar.F = kmVar.d[5] / this.fps;
+                macVar.E = 1.0f;
+                kmVar.r(true);
             } else {
-                String str = pccVar.j;
-                if (!TextUtils.isEmpty(pccVar.t) && (pccVar.b & 16) != 0) {
-                    str = pccVar.t;
+                String str = macVar.j;
+                if (!TextUtils.isEmpty(macVar.t) && (macVar.b & 16) != 0) {
+                    str = macVar.t;
                 }
                 BitmapFactory.Options options = new BitmapFactory.Options();
-                if (pccVar.a == 2) {
+                if (macVar.a == 2) {
                     options.inMutable = true;
                 }
                 Bitmap decodeFile = BitmapFactory.decodeFile(str, options);
-                pccVar.G = decodeFile;
-                if (pccVar.a == 2 && decodeFile != null) {
-                    pccVar.s = gm.L(12.0f) / Math.min(pccVar.q, pccVar.r);
-                    Pair N0 = gm.N0(pccVar.j);
-                    pccVar.e = (float) (pccVar.e - Math.toRadians(((Integer) N0.first).intValue()));
+                macVar.G = decodeFile;
+                if (macVar.a == 2 && decodeFile != null) {
+                    macVar.s = gl.L(12.0f) / Math.min(macVar.q, macVar.r);
+                    Pair N0 = gl.N0(macVar.j);
+                    macVar.e = (float) (macVar.e - Math.toRadians(((Integer) N0.first).intValue()));
                     if ((((Integer) N0.first).intValue() / 90) % 2 == 1) {
-                        float f = pccVar.c;
-                        float f2 = pccVar.f;
+                        float f = macVar.c;
+                        float f2 = macVar.f;
                         float f3 = (f2 / 2.0f) + f;
-                        float f4 = pccVar.d;
-                        float f5 = pccVar.g;
+                        float f4 = macVar.d;
+                        float f5 = macVar.g;
                         float f6 = (f5 / 2.0f) + f4;
                         float f7 = this.W;
                         float f8 = this.H;
                         float f9 = (f2 * f7) / f8;
                         float f10 = (f5 * f8) / f7;
-                        pccVar.f = f10;
-                        pccVar.g = f9;
-                        pccVar.c = f3 - (f10 / 2.0f);
-                        pccVar.d = f6 - (f9 / 2.0f);
+                        macVar.f = f10;
+                        macVar.g = f9;
+                        macVar.c = f3 - (f10 / 2.0f);
+                        macVar.d = f6 - (f9 / 2.0f);
                     }
-                    applyRoundRadius(pccVar, pccVar.G, 0);
+                    applyRoundRadius(macVar, macVar.G, 0);
                 } else if (decodeFile != null) {
-                    float width = decodeFile.getWidth() / pccVar.G.getHeight();
+                    float width = decodeFile.getWidth() / macVar.G.getHeight();
                     if (width > 1.0f) {
-                        float f11 = pccVar.g;
+                        float f11 = macVar.g;
                         float f12 = f11 / width;
-                        pccVar.d = aq1.z(f11, f12, 2.0f, pccVar.d);
-                        pccVar.g = f12;
+                        macVar.d = oo1.z(f11, f12, 2.0f, macVar.d);
+                        macVar.g = f12;
                     } else if (width < 1.0f) {
-                        float f13 = pccVar.f;
+                        float f13 = macVar.f;
                         float f14 = width * f13;
-                        pccVar.c = aq1.z(f13, f14, 2.0f, pccVar.c);
-                        pccVar.f = f14;
+                        macVar.c = oo1.z(f13, f14, 2.0f, macVar.c);
+                        macVar.f = f14;
                     }
                 }
             }
-            setupMatrix(pccVar);
+            setupMatrix(macVar);
         }
 
-        private void initTextEntity(final pcc pccVar) {
+        private void initTextEntity(final mac macVar) {
             int i;
-            dw3[] dw3VarArr;
+            su3[] su3VarArr;
             Typeface b;
-            final dv3 dv3Var = new dv3(org.telegram.messenger.a.b);
-            dv3Var.getPaint().setAntiAlias(true);
-            dv3Var.H = false;
-            dv3Var.setBackgroundColor(0);
-            dv3Var.setPadding(gm.L(7.0f), gm.L(7.0f), gm.L(7.0f), gm.L(7.0f));
-            ru7 ru7Var = pccVar.n;
-            if (ru7Var != null && (b = ru7Var.b()) != null) {
-                dv3Var.setTypeface(b);
+            final st3 st3Var = new st3(org.telegram.messenger.a.b);
+            st3Var.getPaint().setAntiAlias(true);
+            st3Var.H = false;
+            st3Var.setBackgroundColor(0);
+            st3Var.setPadding(gl.L(7.0f), gl.L(7.0f), gl.L(7.0f), gl.L(7.0f));
+            qs7 qs7Var = macVar.n;
+            if (qs7Var != null && (b = qs7Var.b()) != null) {
+                st3Var.setTypeface(b);
             }
-            dv3Var.setTextSize(0, pccVar.m);
-            SpannableString spannableString = new SpannableString(pccVar.j);
-            ArrayList arrayList = pccVar.k;
+            st3Var.setTextSize(0, macVar.m);
+            SpannableString spannableString = new SpannableString(macVar.j);
+            ArrayList arrayList = macVar.k;
             int size = arrayList.size();
             int i2 = 0;
             while (i2 < size) {
                 int i3 = i2 + 1;
-                final occ occVar = (occ) arrayList.get(i2);
-                if (occVar.a != null) {
-                    pcc pccVar2 = new pcc();
-                    occVar.b = pccVar2;
-                    pccVar2.j = occVar.a;
-                    pccVar2.b = occVar.c;
-                    gn gnVar = new gn(0L, 1.0f, dv3Var.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
-                        @Override // gn, android.text.style.ReplacementSpan
+                final lac lacVar = (lac) arrayList.get(i2);
+                if (lacVar.a != null) {
+                    mac macVar2 = new mac();
+                    lacVar.b = macVar2;
+                    macVar2.j = lacVar.a;
+                    macVar2.b = lacVar.c;
+                    gm gmVar = new gm(0L, 1.0f, st3Var.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
+                        @Override // gm, android.text.style.ReplacementSpan
                         public void draw(Canvas canvas, CharSequence charSequence, int i4, int i5, float f, int i6, int i7, int i8, Paint paint) {
                             super.draw(canvas, charSequence, i4, i5, f, i6, i7, i8, paint);
-                            pcc pccVar3 = pccVar;
-                            float paddingLeft = ((((this.measuredSize / 2.0f) + (dv3Var.getPaddingLeft() + f)) / pccVar3.q) * pccVar3.f) + pccVar.c;
-                            float f2 = pccVar3.d;
-                            pcc pccVar4 = pccVar;
-                            float paddingTop = (((i8 - i6) / 2.0f) + (dv3Var.getPaddingTop() + i6)) / pccVar4.r;
-                            float f3 = pccVar4.g;
+                            mac macVar3 = macVar;
+                            float paddingLeft = ((((this.measuredSize / 2.0f) + (st3Var.getPaddingLeft() + f)) / macVar3.q) * macVar3.f) + macVar.c;
+                            float f2 = macVar3.d;
+                            mac macVar4 = macVar;
+                            float paddingTop = (((i8 - i6) / 2.0f) + (st3Var.getPaddingTop() + i6)) / macVar4.r;
+                            float f3 = macVar4.g;
                             float f4 = (paddingTop * f3) + f2;
-                            if (pccVar4.e != 0.0f) {
-                                float f5 = (pccVar4.f / 2.0f) + pccVar4.c;
-                                float f6 = (f3 / 2.0f) + pccVar4.d;
+                            if (macVar4.e != 0.0f) {
+                                float f5 = (macVar4.f / 2.0f) + macVar4.c;
+                                float f6 = (f3 / 2.0f) + macVar4.d;
                                 float f7 = FrameDrawer.this.W / FrameDrawer.this.H;
                                 double d = paddingLeft - f5;
                                 double d2 = (f4 - f6) / f7;
-                                paddingLeft = ((float) ((Math.cos(-pccVar.e) * d) - (Math.sin(-pccVar.e) * d2))) + f5;
-                                f4 = (((float) wi8.d(-pccVar.e, d2, Math.sin(-pccVar.e) * d)) * f7) + f6;
+                                paddingLeft = ((float) ((Math.cos(-macVar.e) * d) - (Math.sin(-macVar.e) * d2))) + f5;
+                                f4 = (((float) ug8.d(-macVar.e, d2, Math.sin(-macVar.e) * d)) * f7) + f6;
                             }
-                            pcc pccVar5 = occVar.b;
+                            mac macVar5 = lacVar.b;
                             int i9 = this.measuredSize;
-                            pcc pccVar6 = pccVar;
-                            float f8 = (i9 / pccVar6.q) * pccVar6.f;
-                            pccVar5.f = f8;
-                            float f9 = (i9 / pccVar6.r) * pccVar6.g;
-                            pccVar5.g = f9;
-                            pccVar5.c = paddingLeft - (f8 / 2.0f);
-                            pccVar5.d = f4 - (f9 / 2.0f);
-                            pccVar5.e = pccVar6.e;
-                            if (pccVar5.G == null) {
-                                FrameDrawer.this.initStickerEntity(pccVar5);
+                            mac macVar6 = macVar;
+                            float f8 = (i9 / macVar6.q) * macVar6.f;
+                            macVar5.f = f8;
+                            float f9 = (i9 / macVar6.r) * macVar6.g;
+                            macVar5.g = f9;
+                            macVar5.c = paddingLeft - (f8 / 2.0f);
+                            macVar5.d = f4 - (f9 / 2.0f);
+                            macVar5.e = macVar6.e;
+                            if (macVar5.G == null) {
+                                FrameDrawer.this.initStickerEntity(macVar5);
                             }
                         }
                     };
-                    int i4 = occVar.offset;
-                    spannableString.setSpan(gnVar, i4, occVar.length + i4, 33);
+                    int i4 = lacVar.offset;
+                    spannableString.setSpan(gmVar, i4, lacVar.length + i4, 33);
                 }
                 i2 = i3;
             }
-            CharSequence m = gw3.m(spannableString, dv3Var.getPaint().getFontMetricsInt(), false, null, 0);
-            if ((m instanceof Spanned) && (dw3VarArr = (dw3[]) ((Spanned) m).getSpans(0, m.length(), dw3.class)) != null) {
-                for (dw3 dw3Var : dw3VarArr) {
-                    dw3Var.b = 0.85f;
+            CharSequence m = vu3.m(spannableString, st3Var.getPaint().getFontMetricsInt(), false, null, 0);
+            if ((m instanceof Spanned) && (su3VarArr = (su3[]) ((Spanned) m).getSpans(0, m.length(), su3.class)) != null) {
+                for (su3 su3Var : su3VarArr) {
+                    su3Var.b = 0.85f;
                 }
             }
-            dv3Var.setText(m);
-            dv3Var.setTextColor(pccVar.l);
-            int i5 = pccVar.p;
-            dv3Var.setGravity(i5 != 1 ? i5 != 2 ? 19 : 21 : 17);
-            int i6 = pccVar.p;
+            st3Var.setText(m);
+            st3Var.setTextColor(macVar.l);
+            int i5 = macVar.p;
+            st3Var.setGravity(i5 != 1 ? i5 != 2 ? 19 : 21 : 17);
+            int i6 = macVar.p;
             if (i6 != 1) {
-                boolean z = jb6.a0;
+                boolean z = k96.a0;
                 i = (i6 == 2 ? !z : z) ? 3 : 2;
             } else {
                 i = 4;
             }
-            dv3Var.setTextAlignment(i);
-            dv3Var.setHorizontallyScrolling(false);
-            dv3Var.setImeOptions(TLObject.FLAG_28);
-            dv3Var.setFocusableInTouchMode(true);
-            dv3Var.setInputType(dv3Var.getInputType() | TLObject.FLAG_14);
-            setBreakStrategy(dv3Var);
-            byte b2 = pccVar.b;
+            st3Var.setTextAlignment(i);
+            st3Var.setHorizontallyScrolling(false);
+            st3Var.setImeOptions(TLObject.FLAG_28);
+            st3Var.setFocusableInTouchMode(true);
+            st3Var.setInputType(st3Var.getInputType() | TLObject.FLAG_14);
+            setBreakStrategy(st3Var);
+            byte b2 = macVar.b;
             if (b2 == 0) {
-                dv3Var.setFrameColor(pccVar.l);
-                dv3Var.setTextColor(gm.B(pccVar.l) >= 0.721f ? -16777216 : -1);
+                st3Var.setFrameColor(macVar.l);
+                st3Var.setTextColor(gl.B(macVar.l) >= 0.721f ? -16777216 : -1);
             } else if (b2 == 1) {
-                dv3Var.setFrameColor(gm.B(pccVar.l) >= 0.25f ? -1728053248 : -1711276033);
-                dv3Var.setTextColor(pccVar.l);
+                st3Var.setFrameColor(gl.B(macVar.l) >= 0.25f ? -1728053248 : -1711276033);
+                st3Var.setTextColor(macVar.l);
             } else if (b2 == 2) {
-                dv3Var.setFrameColor(gm.B(pccVar.l) >= 0.25f ? -16777216 : -1);
-                dv3Var.setTextColor(pccVar.l);
+                st3Var.setFrameColor(gl.B(macVar.l) >= 0.25f ? -16777216 : -1);
+                st3Var.setTextColor(macVar.l);
             } else if (b2 == 3) {
-                dv3Var.setFrameColor(0);
-                dv3Var.setTextColor(pccVar.l);
+                st3Var.setFrameColor(0);
+                st3Var.setTextColor(macVar.l);
             }
-            dv3Var.measure(View.MeasureSpec.makeMeasureSpec(pccVar.q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(pccVar.r, TLObject.FLAG_30));
-            dv3Var.layout(0, 0, pccVar.q, pccVar.r);
-            pccVar.G = Bitmap.createBitmap(pccVar.q, pccVar.r, Bitmap.Config.ARGB_8888);
-            dv3Var.draw(new Canvas(pccVar.G));
-            setupMatrix(pccVar);
+            st3Var.measure(View.MeasureSpec.makeMeasureSpec(macVar.q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(macVar.r, TLObject.FLAG_30));
+            st3Var.layout(0, 0, macVar.q, macVar.r);
+            macVar.G = Bitmap.createBitmap(macVar.q, macVar.r, Bitmap.Config.ARGB_8888);
+            st3Var.draw(new Canvas(macVar.G));
+            setupMatrix(macVar);
         }
 
-        private void setupMatrix(pcc pccVar) {
-            kn knVar;
+        private void setupMatrix(mac macVar) {
+            km kmVar;
             Matrix matrix = new Matrix();
-            pccVar.H = matrix;
-            Bitmap bitmap = pccVar.G;
-            if (bitmap == null && (knVar = pccVar.K) != null) {
-                hn hnVar = knVar.w;
-                bitmap = hnVar != null ? hnVar.b : null;
+            macVar.H = matrix;
+            Bitmap bitmap = macVar.G;
+            if (bitmap == null && (kmVar = macVar.K) != null) {
+                hm hmVar = kmVar.w;
+                bitmap = hmVar != null ? hmVar.b : null;
             }
             if (bitmap != null) {
                 matrix.postScale(1.0f / bitmap.getWidth(), 1.0f / bitmap.getHeight());
             }
-            if (pccVar.a != 1 && (pccVar.b & 2) != 0) {
-                pccVar.H.postScale(-1.0f, 1.0f, 0.5f, 0.5f);
+            if (macVar.a != 1 && (macVar.b & 2) != 0) {
+                macVar.H.postScale(-1.0f, 1.0f, 0.5f, 0.5f);
             }
-            pccVar.H.postScale(pccVar.f * this.W, pccVar.g * this.H);
-            pccVar.H.postTranslate(pccVar.c * this.W, pccVar.d * this.H);
-            pccVar.H.postRotate((float) (((-pccVar.e) / 3.141592653589793d) * 180.0d), ((pccVar.f / 2.0f) + pccVar.c) * this.W, ((pccVar.g / 2.0f) + pccVar.d) * this.H);
+            macVar.H.postScale(macVar.f * this.W, macVar.g * this.H);
+            macVar.H.postTranslate(macVar.c * this.W, macVar.d * this.H);
+            macVar.H.postRotate((float) (((-macVar.e) / 3.141592653589793d) * 180.0d), ((macVar.f / 2.0f) + macVar.c) * this.W, ((macVar.g / 2.0f) + macVar.d) * this.H);
         }
 
         public void draw(Canvas canvas, int i) {
@@ -406,14 +406,14 @@ public class WebmEncoder {
             long j = (1000000000 / this.fps) * i;
             int size = this.mediaEntities.size();
             for (int i2 = 0; i2 < size; i2++) {
-                pcc pccVar = this.mediaEntities.get(i2);
-                drawEntity(canvas, pccVar, pccVar.l, j);
+                mac macVar = this.mediaEntities.get(i2);
+                drawEntity(canvas, macVar, macVar.l, j);
             }
             canvas.restore();
         }
 
-        public void setBreakStrategy(dv3 dv3Var) {
-            dv3Var.setBreakStrategy(0);
+        public void setBreakStrategy(st3 st3Var) {
+            st3Var.setBreakStrategy(0);
         }
     }
 
@@ -428,10 +428,10 @@ public class WebmEncoder {
         long j;
         boolean z;
         long length;
-        po6 po6Var;
+        pm6 pm6Var;
         int i2;
         int i3;
-        po6 po6Var2;
+        pm6 pm6Var2;
         int i4 = convertVideoParams.resultWidth;
         int i5 = convertVideoParams.resultHeight;
         long createEncoder = createEncoder(convertVideoParams.cacheFile.getAbsolutePath(), i4, i5, convertVideoParams.framerate, convertVideoParams.bitrate);
@@ -454,14 +454,14 @@ public class WebmEncoder {
                     allocateDirect.flip();
                     if (!writeFrame(createEncoder, allocateDirect, i4, i5)) {
                         try {
-                            fc4.b("webm writeFile error at " + i6 + "/" + ceil);
+                            fa4.b("webm writeFile error at " + i6 + "/" + ceil);
                             stop(createEncoder);
                             bitmap.recycle();
                             return z2;
                         } catch (Exception e) {
                             e = e;
                             j = createEncoder;
-                            fc4.g(e, z2);
+                            fa4.g(e, z2);
                             stop(j);
                             if (bitmap != null) {
                                 bitmap.recycle();
@@ -470,21 +470,21 @@ public class WebmEncoder {
                             length = convertVideoParams.cacheFile.length();
                             if (i > 0) {
                             }
-                            po6Var = convertVideoParams.callback;
-                            if (po6Var != null) {
+                            pm6Var = convertVideoParams.callback;
+                            if (pm6Var != null) {
                             }
-                            fc4.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i);
+                            fa4.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i);
                             return z;
                         }
                     }
-                    po6 po6Var3 = convertVideoParams.callback;
-                    if (po6Var3 != null) {
+                    pm6 pm6Var3 = convertVideoParams.callback;
+                    if (pm6Var3 != null) {
                         i2 = i4;
                         j = createEncoder;
                         i3 = i5;
                         try {
                             try {
-                                ((trc) po6Var3).n(Math.min(261120L, convertVideoParams.cacheFile.length()), i6 / ceil);
+                                ((spc) pm6Var3).n(Math.min(261120L, convertVideoParams.cacheFile.length()), i6 / ceil);
                             } catch (Throwable th) {
                                 th = th;
                                 stop(j);
@@ -495,7 +495,7 @@ public class WebmEncoder {
                         } catch (Exception e2) {
                             e = e2;
                             z2 = true;
-                            fc4.g(e, z2);
+                            fa4.g(e, z2);
                             stop(j);
                             if (bitmap != null) {
                             }
@@ -503,10 +503,10 @@ public class WebmEncoder {
                             length = convertVideoParams.cacheFile.length();
                             if (i > 0) {
                             }
-                            po6Var = convertVideoParams.callback;
-                            if (po6Var != null) {
+                            pm6Var = convertVideoParams.callback;
+                            if (pm6Var != null) {
                             }
-                            fc4.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i);
+                            fa4.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i);
                             return z;
                         }
                     } else {
@@ -514,8 +514,8 @@ public class WebmEncoder {
                         j = createEncoder;
                         i3 = i5;
                     }
-                    if (i6 % 3 == 0 && (po6Var2 = convertVideoParams.callback) != null) {
-                        boolean z3 = ((rcc) ((trc) po6Var2).b).V;
+                    if (i6 % 3 == 0 && (pm6Var2 = convertVideoParams.callback) != null) {
+                        boolean z3 = ((oac) ((spc) pm6Var2).b).V;
                     }
                     i6++;
                     i5 = i3;
@@ -541,17 +541,17 @@ public class WebmEncoder {
         }
         length = convertVideoParams.cacheFile.length();
         if (i > 0 || length <= 261120) {
-            po6Var = convertVideoParams.callback;
-            if (po6Var != null) {
-                ((trc) po6Var).n(length, 1.0f);
+            pm6Var = convertVideoParams.callback;
+            if (pm6Var != null) {
+                ((spc) pm6Var).n(length, 1.0f);
             }
-            fc4.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i);
+            fa4.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i);
             return z;
         }
         int i7 = convertVideoParams.bitrate;
         convertVideoParams.bitrate = (int) ((261120.0f / length) * 0.9f * i7);
         convertVideoParams.cacheFile.delete();
-        fc4.b("webm encoded too much, got " + length + ", old bitrate = " + i7 + " new bitrate = " + convertVideoParams.bitrate);
+        fa4.b("webm encoded too much, got " + length + ", old bitrate = " + i7 + " new bitrate = " + convertVideoParams.bitrate);
         return convert(convertVideoParams, i - 1);
     }
 

@@ -1,14 +1,19 @@
 // default package
 
-import java.util.concurrent.CancellationException;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class nqb extends CancellationException {
-    public final transient oqb a;
+public enum nqb extends qsb {
+    public nqb() {
+        super("ScriptDataEscapeStartDash", 20);
+    }
 
-    public nqb(String str, oqb oqbVar) {
-        super(str);
-        this.a = oqbVar;
+    @Override // qsb
+    public final void c(aqb aqbVar, zj1 zj1Var) {
+        if (!zj1Var.m('-')) {
+            aqbVar.c = qsb.f;
+        } else {
+            aqbVar.f('-');
+            aqbVar.a(qsb.N);
+        }
     }
 }

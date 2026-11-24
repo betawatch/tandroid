@@ -1,9 +1,64 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o86 implements hn3 {
-    @Override // hn3
-    public final void a(boolean z) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class o86 extends hh7 {
+    public final v3d l;
+    public e16 m;
+    public e31 n;
+
+    public o86(v3d v3dVar) {
+        this.l = v3dVar;
+        if (v3dVar.a == null) {
+            v3dVar.a = this;
+        } else {
+            sc8.j("There is already a listener registered");
+            throw null;
+        }
+    }
+
+    @Override // hh7
+    public final void e() {
+        v3d v3dVar = this.l;
+        v3dVar.b = true;
+        v3dVar.d = false;
+        v3dVar.c = false;
+        v3dVar.i.drainPermits();
+        v3dVar.c();
+    }
+
+    @Override // hh7
+    public final void f() {
+        this.l.b = false;
+    }
+
+    @Override // hh7
+    public final void h(co7 co7Var) {
+        super.h(co7Var);
+        this.m = null;
+        this.n = null;
+    }
+
+    public final void j() {
+        e16 e16Var = this.m;
+        e31 e31Var = this.n;
+        if (e16Var == null || e31Var == null) {
+            return;
+        }
+        super.h(e31Var);
+        d(e16Var, e31Var);
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder(64);
+        sb.append("LoaderInfo{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(" #0 : ");
+        Class<?> cls = this.l.getClass();
+        sb.append(cls.getSimpleName());
+        sb.append("{");
+        sb.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb.append("}}");
+        return sb.toString();
     }
 }

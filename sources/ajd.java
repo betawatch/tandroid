@@ -1,21 +1,19 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ajd {
-    public static final /* synthetic */ int a = 0;
+public final class ajd implements zn7 {
+    public static final ajd a = new ajd();
 
     static {
-        ajd.class.getClassLoader();
+        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)), 4)), 5)));
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return (Parcelable) creator.createFromParcel(parcel);
+        throw null;
     }
 }

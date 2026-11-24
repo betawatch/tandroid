@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class WebRtcAudioEffects {
     private static final UUID AOSP_ACOUSTIC_ECHO_CANCELER = UUID.fromString("bb392ec0-8d4d-11e0-a896-0002a5d5c51b");
@@ -29,7 +29,7 @@ public class WebRtcAudioEffects {
         if (z) {
             return;
         }
-        bh7.j("Expected condition to be true");
+        fi7.g("Expected condition to be true");
     }
 
     public static boolean canUseAcousticEchoCanceler() {
@@ -146,7 +146,7 @@ public class WebRtcAudioEffects {
             this.aec = create;
             if (create != null) {
                 boolean enabled = create.getEnabled();
-                boolean z2 = this.shouldEnableAec && canUseAcousticEchoCanceler() && !gda.U;
+                boolean z2 = this.shouldEnableAec && canUseAcousticEchoCanceler() && !gba.U;
                 if (this.aec.setEnabled(z2) != 0) {
                     Logging.e(TAG, "Failed to set the AcousticEchoCanceler state");
                 }
@@ -169,7 +169,7 @@ public class WebRtcAudioEffects {
                 return;
             }
             boolean enabled2 = create2.getEnabled();
-            if (this.shouldEnableNs && canUseNoiseSuppressor() && !gda.U) {
+            if (this.shouldEnableNs && canUseNoiseSuppressor() && !gba.U) {
                 z = true;
             }
             if (this.ns.setEnabled(z) != 0) {

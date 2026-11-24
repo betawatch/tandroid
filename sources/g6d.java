@@ -1,162 +1,139 @@
 // default package
 
-import j$.util.List;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-import java.util.function.UnaryOperator;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Binder;
+import android.os.Build;
+import android.os.Process;
+import android.util.Log;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class g6d extends l1d implements List, RandomAccess, j$.util.List {
-    public static final d6d n = new d6d(i6d.w, 0);
+public abstract class g6d {
+    public static final Object f = new Object();
+    public static Context g;
+    public static volatile Boolean h;
+    public final vk9 a;
+    public final String b;
+    public final String c;
+    public final Object d;
+    public volatile p5d e = null;
 
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        Object next;
-        Object next2;
-        int i;
-        if (obj == this) {
-            return true;
+    public g6d(vk9 vk9Var, String str, Object obj) {
+        if (((Uri) vk9Var.b) == null) {
+            w26.j("Must pass a valid SharedPreferences file name or ContentProvider URI");
+            throw null;
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (0; i < size; i + 1) {
-                        Object obj2 = get(i);
-                        Object obj3 = list.get(i);
-                        i = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i + 1 : 0;
-                    }
-                    return true;
+        this.a = vk9Var;
+        String valueOf = String.valueOf((String) vk9Var.c);
+        this.c = str.length() != 0 ? valueOf.concat(str) : new String(valueOf);
+        String valueOf2 = String.valueOf((String) vk9Var.d);
+        this.b = str.length() != 0 ? valueOf2.concat(str) : new String(valueOf2);
+        this.d = obj;
+    }
+
+    public static void b(Context context) {
+        Context applicationContext;
+        if (g == null) {
+            synchronized (f) {
+                if ((Build.VERSION.SDK_INT < 24 || !context.isDeviceProtectedStorage()) && (applicationContext = context.getApplicationContext()) != null) {
+                    context = applicationContext;
                 }
-                d6d listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || ((next = listIterator.next()) != (next2 = it.next()) && (next == null || !next.equals(next2)))) {
-                            break;
+                if (g != context) {
+                    h = null;
+                }
+                g = context;
+            }
+        }
+    }
+
+    public static Object c(g8d g8dVar) {
+        try {
+            return g8dVar.zzp();
+        } catch (SecurityException unused) {
+            long clearCallingIdentity = Binder.clearCallingIdentity();
+            try {
+                return g8dVar.zzp();
+            } finally {
+                Binder.restoreCallingIdentity(clearCallingIdentity);
+            }
+        }
+    }
+
+    public static boolean e() {
+        if (h == null) {
+            Context context = g;
+            if (context == null) {
+                return false;
+            }
+            h = Boolean.valueOf(qqe.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", Binder.getCallingPid(), Binder.getCallingUid(), Binder.getCallingPid() == Process.myPid() ? context.getPackageName() : null) == 0);
+        }
+        return h.booleanValue();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0091 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0092  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object a() {
+        Object obj;
+        String b;
+        Object obj2 = null;
+        if (g == null) {
+            sc8.j("Must call PhenotypeFlag.init() first");
+            return null;
+        }
+        if (e() ? ((Boolean) c(new ss2("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
+            String str = this.b;
+            Log.w("PhenotypeFlag", str.length() != 0 ? "Bypass reading Phenotype values for flag: ".concat(str) : new String("Bypass reading Phenotype values for flag: "));
+        } else if (((Uri) this.a.b) != null) {
+            if (this.e == null) {
+                ContentResolver contentResolver = g.getContentResolver();
+                Uri uri = (Uri) this.a.b;
+                ConcurrentHashMap concurrentHashMap = p5d.h;
+                p5d p5dVar = (p5d) concurrentHashMap.get(uri);
+                if (p5dVar == null) {
+                    p5dVar = new p5d(contentResolver, uri);
+                    p5d p5dVar2 = (p5d) concurrentHashMap.putIfAbsent(uri, p5dVar);
+                    if (p5dVar2 == null) {
+                        p5dVar.a.registerContentObserver(p5dVar.b, false, p5dVar.c);
+                    } else {
+                        p5dVar = p5dVar2;
+                    }
+                }
+                this.e = p5dVar;
+            }
+            String str2 = (String) c(new v8b(this, this.e, false, (byte) 12));
+            if (str2 != null) {
+                obj = d(str2);
+                if (obj == null) {
+                    return obj;
+                }
+                String str3 = this.c;
+                if (e()) {
+                    try {
+                        b = qhf.b(g.getContentResolver(), str3);
+                    } catch (SecurityException unused) {
+                        long clearCallingIdentity = Binder.clearCallingIdentity();
+                        try {
+                            b = qhf.b(g.getContentResolver(), str3);
+                        } finally {
+                            Binder.restoreCallingIdentity(clearCallingIdentity);
                         }
-                    } else if (!it.hasNext()) {
-                        return true;
+                    }
+                    if (b != null) {
+                        obj2 = d(b);
                     }
                 }
+                return obj2 != null ? obj2 : this.d;
             }
         }
-        return false;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
-        }
-        return i;
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
+        obj = null;
         if (obj == null) {
-            return -1;
         }
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            if (obj.equals(get(i))) {
-                return i;
-            }
-        }
-        return -1;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // l1d
-    public int l(Object[] objArr) {
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            objArr[i] = get(i);
-        }
-        return size;
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public final /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
-        List.-CC.$default$replaceAll(this, unaryOperator);
-    }
-
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public final /* synthetic */ void sort(Comparator comparator) {
-        List.-CC.$default$sort(this, comparator);
-    }
-
-    @Override // java.util.List
-    /* renamed from: y */
-    public g6d subList(int i, int i2) {
-        a1f.b(i, i2, size());
-        int i3 = i2 - i;
-        return i3 == size() ? this : i3 == 0 ? i6d.w : new f6d(this, i, i3);
-    }
-
-    @Override // java.util.List
-    /* renamed from: z, reason: merged with bridge method [inline-methods] */
-    public final d6d listIterator(int i) {
-        int size = size();
-        if (i >= 0 && i <= size) {
-            return isEmpty() ? n : new d6d(this, i);
-        }
-        wa3.i(a1f.c(i, size, "index"));
-        return null;
-    }
+    public abstract Object d(String str);
 }

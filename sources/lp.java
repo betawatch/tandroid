@@ -2,314 +2,205 @@
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.text.InputFilter;
+import android.graphics.drawable.RippleDrawable;
+import android.net.Uri;
 import android.util.AttributeSet;
-import android.view.ActionMode;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.beta.R;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class lp extends Button implements arb {
-    public final kp a;
-    public final pr b;
-    public iq c;
+public class lp extends ImageView {
+    public final ko a;
+    public final kp b;
+    public boolean c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lp(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.buttonStyle);
-        yqb.a(context);
-        dpb.a(getContext(), this);
+    public lp(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        xob.a(context);
+        this.c = false;
+        cnb.a(getContext(), this);
+        ko koVar = new ko(this);
+        this.a = koVar;
+        koVar.g(attributeSet, i);
         kp kpVar = new kp(this);
-        this.a = kpVar;
-        kpVar.g(attributeSet, R.attr.buttonStyle);
-        pr prVar = new pr(this);
-        this.b = prVar;
-        prVar.f(attributeSet, R.attr.buttonStyle);
-        prVar.b();
-        getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyle);
+        this.b = kpVar;
+        kpVar.t(attributeSet, i);
     }
 
-    private iq getEmojiTextViewHelper() {
-        iq iqVar = this.c;
-        if (iqVar != null) {
-            return iqVar;
-        }
-        iq iqVar2 = new iq(this);
-        this.c = iqVar2;
-        return iqVar2;
-    }
-
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.widget.ImageView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        kp kpVar = this.a;
+        ko koVar = this.a;
+        if (koVar != null) {
+            koVar.b();
+        }
+        kp kpVar = this.b;
         if (kpVar != null) {
             kpVar.b();
         }
-        pr prVar = this.b;
-        if (prVar != null) {
-            prVar.b();
-        }
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeMaxTextSize() {
-        if (ghc.b) {
-            return super.getAutoSizeMaxTextSize();
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            return Math.round(prVar.i.e);
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeMinTextSize() {
-        if (ghc.b) {
-            return super.getAutoSizeMinTextSize();
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            return Math.round(prVar.i.d);
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeStepGranularity() {
-        if (ghc.b) {
-            return super.getAutoSizeStepGranularity();
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            return Math.round(prVar.i.c);
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int[] getAutoSizeTextAvailableSizes() {
-        if (ghc.b) {
-            return super.getAutoSizeTextAvailableSizes();
-        }
-        pr prVar = this.b;
-        return prVar != null ? prVar.i.f : new int[0];
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeTextType() {
-        if (ghc.b) {
-            return super.getAutoSizeTextType() == 1 ? 1 : 0;
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            return prVar.i.a;
-        }
-        return 0;
-    }
-
-    @Override // android.widget.TextView
-    public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return mxe.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        kp kpVar = this.a;
-        if (kpVar != null) {
-            return kpVar.e();
+        ko koVar = this.a;
+        if (koVar != null) {
+            return koVar.e();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        kp kpVar = this.a;
-        if (kpVar != null) {
-            return kpVar.f();
+        ko koVar = this.a;
+        if (koVar != null) {
+            return koVar.f();
         }
         return null;
     }
 
-    public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.b.d();
-    }
-
-    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.b.e();
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        super.onInitializeAccessibilityEvent(accessibilityEvent);
-        accessibilityEvent.setClassName(Button.class.getName());
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        pr prVar = this.b;
-        if (prVar == null || ghc.b) {
-            return;
+    public ColorStateList getSupportImageTintList() {
+        h24 h24Var;
+        kp kpVar = this.b;
+        if (kpVar == null || (h24Var = (h24) kpVar.d) == null) {
+            return null;
         }
-        prVar.i.a();
+        return (ColorStateList) h24Var.c;
     }
 
-    @Override // android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        super.onTextChanged(charSequence, i, i2, i3);
-        pr prVar = this.b;
-        if (prVar != null) {
-            zr zrVar = prVar.i;
-            if (ghc.b || !zrVar.f()) {
-                return;
-            }
-            zrVar.a();
+    public PorterDuff.Mode getSupportImageTintMode() {
+        h24 h24Var;
+        kp kpVar = this.b;
+        if (kpVar == null || (h24Var = (h24) kpVar.d) == null) {
+            return null;
         }
+        return (PorterDuff.Mode) h24Var.d;
     }
 
-    @Override // android.widget.TextView
-    public void setAllCaps(boolean z) {
-        super.setAllCaps(z);
-        getEmojiTextViewHelper().b(z);
-    }
-
-    @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithConfiguration(int i, int i2, int i3, int i4) {
-        if (ghc.b) {
-            super.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
-            return;
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            prVar.i(i, i2, i3, i4);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i) {
-        if (ghc.b) {
-            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
-            return;
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            prVar.j(iArr, i);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public void setAutoSizeTextTypeWithDefaults(int i) {
-        if (ghc.b) {
-            super.setAutoSizeTextTypeWithDefaults(i);
-            return;
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            prVar.k(i);
-        }
+    @Override // android.widget.ImageView, android.view.View
+    public final boolean hasOverlappingRendering() {
+        return !(((ImageView) this.b.c).getBackground() instanceof RippleDrawable) && super.hasOverlappingRendering();
     }
 
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        kp kpVar = this.a;
-        if (kpVar != null) {
-            kpVar.h();
+        ko koVar = this.a;
+        if (koVar != null) {
+            koVar.h();
         }
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        kp kpVar = this.a;
-        if (kpVar != null) {
-            kpVar.i(i);
+        ko koVar = this.a;
+        if (koVar != null) {
+            koVar.i(i);
         }
     }
 
-    @Override // android.widget.TextView
-    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(mxe.e(callback, this));
+    @Override // android.widget.ImageView
+    public void setImageBitmap(Bitmap bitmap) {
+        super.setImageBitmap(bitmap);
+        kp kpVar = this.b;
+        if (kpVar != null) {
+            kpVar.b();
+        }
     }
 
-    public void setEmojiCompatEnabled(boolean z) {
-        getEmojiTextViewHelper().c(z);
+    @Override // android.widget.ImageView
+    public void setImageDrawable(Drawable drawable) {
+        kp kpVar = this.b;
+        if (kpVar != null && drawable != null && !this.c) {
+            kpVar.b = drawable.getLevel();
+        }
+        super.setImageDrawable(drawable);
+        if (kpVar != null) {
+            kpVar.b();
+            if (this.c) {
+                return;
+            }
+            ImageView imageView = (ImageView) kpVar.c;
+            if (imageView.getDrawable() != null) {
+                imageView.getDrawable().setLevel(kpVar.b);
+            }
+        }
     }
 
-    @Override // android.widget.TextView
-    public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((fhe) getEmojiTextViewHelper().b.a).a(inputFilterArr));
+    @Override // android.widget.ImageView
+    public void setImageLevel(int i) {
+        super.setImageLevel(i);
+        this.c = true;
     }
 
-    public void setSupportAllCaps(boolean z) {
-        pr prVar = this.b;
-        if (prVar != null) {
-            prVar.a.setAllCaps(z);
+    @Override // android.widget.ImageView
+    public void setImageResource(int i) {
+        kp kpVar = this.b;
+        if (kpVar != null) {
+            ImageView imageView = (ImageView) kpVar.c;
+            if (i != 0) {
+                Drawable a = hmd.a(imageView.getContext(), i);
+                if (a != null) {
+                    lq3.a(a);
+                }
+                imageView.setImageDrawable(a);
+            } else {
+                imageView.setImageDrawable(null);
+            }
+            kpVar.b();
+        }
+    }
+
+    @Override // android.widget.ImageView
+    public void setImageURI(Uri uri) {
+        super.setImageURI(uri);
+        kp kpVar = this.b;
+        if (kpVar != null) {
+            kpVar.b();
         }
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        kp kpVar = this.a;
-        if (kpVar != null) {
-            kpVar.m(colorStateList);
+        ko koVar = this.a;
+        if (koVar != null) {
+            koVar.m(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        kp kpVar = this.a;
+        ko koVar = this.a;
+        if (koVar != null) {
+            koVar.n(mode);
+        }
+    }
+
+    public void setSupportImageTintList(ColorStateList colorStateList) {
+        kp kpVar = this.b;
         if (kpVar != null) {
-            kpVar.n(mode);
-        }
-    }
-
-    @Override // arb
-    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        pr prVar = this.b;
-        prVar.l(colorStateList);
-        prVar.b();
-    }
-
-    @Override // arb
-    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        pr prVar = this.b;
-        prVar.m(mode);
-        prVar.b();
-    }
-
-    @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i) {
-        super.setTextAppearance(context, i);
-        pr prVar = this.b;
-        if (prVar != null) {
-            prVar.g(context, i);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setTextSize(int i, float f) {
-        boolean z = ghc.b;
-        if (z) {
-            super.setTextSize(i, f);
-            return;
-        }
-        pr prVar = this.b;
-        if (prVar != null) {
-            zr zrVar = prVar.i;
-            if (z || zrVar.f()) {
-                return;
+            h24 h24Var = (h24) kpVar.d;
+            if (h24Var == null) {
+                h24Var = new h24();
+                kpVar.d = h24Var;
             }
-            zrVar.g(f, i);
+            h24Var.c = colorStateList;
+            h24Var.b = true;
+            kpVar.b();
+        }
+    }
+
+    public void setSupportImageTintMode(PorterDuff.Mode mode) {
+        kp kpVar = this.b;
+        if (kpVar != null) {
+            h24 h24Var = (h24) kpVar.d;
+            if (h24Var == null) {
+                h24Var = new h24();
+                kpVar.d = h24Var;
+            }
+            h24Var.d = mode;
+            h24Var.a = true;
+            kpVar.b();
         }
     }
 }

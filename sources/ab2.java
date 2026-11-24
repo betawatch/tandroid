@@ -1,17 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class ab2 implements tc5 {
-    public final /* synthetic */ ib2 a;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public ab2(ib2 ib2Var) {
-        this.a = ib2Var;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ab2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gb2 b;
+
+    public /* synthetic */ ab2(gb2 gb2Var, byte b) {
+        this.a = b;
+        this.b = gb2Var;
     }
 
-    @Override // tc5
-    public final void a(uc5 uc5Var, long j) {
-        ib2 ib2Var = this.a;
-        ib2Var.d0(ib2Var.getMessagesController().L0(Long.valueOf(j)), uc5Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        gb2 gb2Var = this.b;
+        switch (b) {
+            case 0:
+                gb2Var.Q5.O0 = true;
+                gb2Var.invalidate();
+                break;
+            default:
+                gb2Var.setSelectedBackgroundProgress(0.0f);
+                break;
+        }
     }
 }

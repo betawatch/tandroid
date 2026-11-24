@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class wb extends TextView {
     public final /* synthetic */ byte a;
@@ -25,7 +25,7 @@ public final class wb extends TextView {
         switch (this.a) {
             case 0:
                 super.dispatchDraw(canvas);
-                canvas.drawCircle(gm.L(3.5f), gm.L(11.5f), gm.L(2.5f), getPaint());
+                canvas.drawCircle(gl.L(3.5f), gl.L(11.5f), gl.L(2.5f), getPaint());
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -81,7 +81,7 @@ public final class wb extends TextView {
         int i3 = 0;
         switch (this.a) {
             case 14:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), gm.L(220.0f)), View.MeasureSpec.getMode(i)), i2);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), gl.L(220.0f)), View.MeasureSpec.getMode(i)), i2);
                 break;
             case 15:
                 if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE && getLayout() != null) {
@@ -135,10 +135,10 @@ public final class wb extends TextView {
                 }
                 break;
             case 19:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i) - gm.L(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(42.0f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i) - gl.L(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(42.0f), TLObject.FLAG_30));
                 break;
             case 20:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i) - gm.L(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(42.0f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i) - gl.L(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(42.0f), TLObject.FLAG_30));
                 break;
             case 21:
             case 26:
@@ -150,21 +150,21 @@ public final class wb extends TextView {
                 break;
             case 23:
                 if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-                    i = wi8.f(52.0f, View.MeasureSpec.getSize(i), TLObject.FLAG_31);
+                    i = ug8.f(52.0f, View.MeasureSpec.getSize(i), TLObject.FLAG_31);
                 }
                 super.onMeasure(i, i2);
                 break;
             case 24:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(100.0f), TLObject.FLAG_31));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
                 break;
             case 25:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i2), gm.L(100.0f)), TLObject.FLAG_31));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i2), gl.L(100.0f)), TLObject.FLAG_31));
                 break;
             case 27:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(100.0f), TLObject.FLAG_31));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
                 break;
             case 28:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(100.0f), TLObject.FLAG_31));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
                 break;
         }
     }
@@ -173,16 +173,16 @@ public final class wb extends TextView {
     public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         switch (this.a) {
             case 10:
-                super.setText(gw3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                super.setText(vu3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
                 break;
             case 13:
-                super.setText(gw3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                super.setText(vu3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
                 break;
             case 21:
-                super.setText(gw3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                super.setText(vu3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
                 break;
             case 26:
-                super.setText(gw3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                super.setText(vu3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
                 break;
             default:
                 super.setText(charSequence, bufferType);

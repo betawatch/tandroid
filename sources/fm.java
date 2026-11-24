@@ -1,131 +1,76 @@
 // default package
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Calendar;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class fm {
-    public int c;
-    public final ArrayList a = new ArrayList();
-    public String b = "";
-    public boolean d = true;
+public class fm extends TextView {
+    public int a;
+    public PorterDuffColorFilter b;
+    public cm c;
 
-    public final String a(boolean z) {
-        int indexOf = this.b.indexOf(58);
-        if (indexOf < 0) {
-            return "";
-        }
-        String substring = this.b.substring(0, indexOf);
-        if (this.c == 20) {
-            String[] split = substring.substring(2).split(";");
-            return z ? split[0] : split.length > 1 ? split[split.length - 1] : "";
-        }
-        String[] split2 = substring.split(";");
-        for (int i = 0; i < split2.length; i++) {
-            if (split2[i].indexOf(61) < 0) {
-                substring = split2[i];
-            }
-        }
-        return substring;
+    public fm(Context context) {
+        super(context);
+        this.a = 0;
     }
 
-    public final String[] b() {
-        byte[] H;
-        int indexOf = this.b.indexOf(58);
-        if (indexOf < 0) {
-            return new String[0];
-        }
-        String substring = this.b.substring(0, indexOf);
-        String substring2 = this.b.substring(indexOf + 1);
-        String str = null;
-        String str2 = "UTF-8";
-        for (String str3 : substring.split(";")) {
-            String[] split = str3.split("=");
-            if (split.length == 2) {
-                if (split[0].equals("CHARSET")) {
-                    str2 = split[1];
-                } else if (split[0].equals("ENCODING")) {
-                    str = split[1];
-                }
-            }
-        }
-        String[] split2 = substring2.split(";");
-        for (int i = 0; i < split2.length; i++) {
-            if (!TextUtils.isEmpty(split2[i]) && str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = gm.H(gm.g1(split2[i]))) != null && H.length != 0) {
-                try {
-                    split2[i] = new String(H, str2);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        return split2;
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c = gm.update(this.a, this, this.c, getLayout());
     }
 
-    public final String c(boolean z) {
-        byte[] H;
-        StringBuilder sb = new StringBuilder();
-        int indexOf = this.b.indexOf(58);
-        if (indexOf < 0) {
-            return "";
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        gm.release(this, this.c);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        super.onDraw(canvas);
+        float height = ((getGravity() & 16) == 0 || getLayout() == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
+        float paddingRight = k96.a0 ? getPaddingRight() : getPaddingLeft();
+        if (height == 0.0f && paddingRight == 0.0f) {
+            canvas2 = canvas;
+        } else {
+            canvas.save();
+            canvas2 = canvas;
+            canvas2.translate(paddingRight, height);
         }
-        if (sb.length() > 0) {
-            sb.append(", ");
+        gm.drawAnimatedEmojis(canvas2, getLayout(), this.c, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.b);
+        if (height == 0.0f && paddingRight == 0.0f) {
+            return;
         }
-        String substring = this.b.substring(0, indexOf);
-        String substring2 = this.b.substring(indexOf + 1);
-        String str = null;
-        String str2 = "UTF-8";
-        for (String str3 : substring.split(";")) {
-            String[] split = str3.split("=");
-            if (split.length == 2) {
-                if (split[0].equals("CHARSET")) {
-                    str2 = split[1];
-                } else if (split[0].equals("ENCODING")) {
-                    str = split[1];
-                }
-            }
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        this.c = gm.update(this.a, this, this.c, getLayout());
+    }
+
+    public void setCacheType(int i) {
+        if (this.a == i) {
+            return;
         }
-        String[] split2 = substring2.split(";");
-        boolean z2 = false;
-        for (int i = 0; i < split2.length; i++) {
-            if (!TextUtils.isEmpty(split2[i])) {
-                if (str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = gm.H(gm.g1(split2[i]))) != null && H.length != 0) {
-                    try {
-                        split2[i] = new String(H, str2);
-                    } catch (Exception unused) {
-                    }
-                }
-                if (z2 && sb.length() > 0) {
-                    sb.append(" ");
-                }
-                sb.append(split2[i]);
-                if (!z2) {
-                    z2 = split2[i].length() > 0;
-                }
-            }
-        }
-        if (z) {
-            int i2 = this.c;
-            if (i2 == 0) {
-                return r58.f().e(sb.toString());
-            }
-            if (i2 == 5) {
-                String[] split3 = sb.toString().split("T");
-                if (split3.length > 0) {
-                    String[] split4 = split3[0].split("-");
-                    if (split4.length == 3) {
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.set(1, Utilities.z(split4[0]).intValue());
-                        calendar.set(2, Utilities.z(split4[1]).intValue() - 1);
-                        calendar.set(5, Utilities.z(split4[2]).intValue());
-                        return jb6.D0().C0().format(calendar.getTime());
-                    }
-                }
-            }
-        }
-        return sb.toString();
+        this.a = i;
+        this.c = gm.update(i, this, this.c, getLayout());
+    }
+
+    public void setEmojiColor(int i) {
+        this.b = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.c = gm.update(this.a, this, this.c, getLayout());
     }
 }

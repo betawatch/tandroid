@@ -1,35 +1,133 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rn0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ SpannableStringBuilder b;
+    public final /* synthetic */ ao0 b;
 
-    public /* synthetic */ rn0(SpannableStringBuilder spannableStringBuilder, byte b) {
+    public /* synthetic */ rn0(ao0 ao0Var, byte b) {
         this.a = b;
-        this.b = spannableStringBuilder;
+        this.b = ao0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        SpannableStringBuilder spannableStringBuilder = this.b;
+        final byte b2 = 1;
+        final byte b3 = 0;
+        final ao0 ao0Var = this.b;
         switch (b) {
             case 0:
-                c41 Y = c41.Y();
-                if (Y != null) {
-                    Y.Q(R.raw.forward, 30, spannableStringBuilder).j();
-                    break;
-                }
+                gl.t1(ao0Var.n1);
+                break;
+            case 1:
+                kk7.f(y6c.t0).k(kk7.W2, ao0Var.W1, Boolean.TRUE);
+                break;
+            case 2:
+                kk7.f(y6c.t0).k(kk7.W2, ao0Var.W1, Boolean.FALSE);
+                break;
+            case 3:
+                xh8 xh8Var = new xh8(ao0Var.r1, ao0Var.a, null, ao0Var.J0);
+                xh8Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: un0
+                    @Override // android.content.DialogInterface.OnDismissListener
+                    public final void onDismiss(DialogInterface dialogInterface) {
+                        byte b4 = b2;
+                        ao0 ao0Var2 = ao0Var;
+                        switch (b4) {
+                            case 0:
+                                kd5 kd5Var = ao0Var2.b2.r;
+                                if (kd5Var != null) {
+                                    kd5Var.setPaused(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                kd5 kd5Var2 = ao0Var2.b2.r;
+                                if (kd5Var2 != null) {
+                                    kd5Var2.setPaused(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                xh8Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: vn0
+                    @Override // android.content.DialogInterface.OnShowListener
+                    public final void onShow(DialogInterface dialogInterface) {
+                        byte b4 = b2;
+                        ao0 ao0Var2 = ao0Var;
+                        switch (b4) {
+                            case 0:
+                                kd5 kd5Var = ao0Var2.b2.r;
+                                if (kd5Var != null) {
+                                    kd5Var.setPaused(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                kd5 kd5Var2 = ao0Var2.b2.r;
+                                if (kd5Var2 != null) {
+                                    kd5Var2.setPaused(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                xh8Var.show();
                 break;
             default:
-                u31 I = yr7.h().I(R.raw.contact_check, jb6.M0(2131749515, null), spannableStringBuilder);
-                I.u = true;
-                I.j();
+                xh8 xh8Var2 = new xh8(ao0Var.r1, ao0Var.a, null, ao0Var.J0);
+                xh8Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: un0
+                    @Override // android.content.DialogInterface.OnDismissListener
+                    public final void onDismiss(DialogInterface dialogInterface) {
+                        byte b4 = b3;
+                        ao0 ao0Var2 = ao0Var;
+                        switch (b4) {
+                            case 0:
+                                kd5 kd5Var = ao0Var2.b2.r;
+                                if (kd5Var != null) {
+                                    kd5Var.setPaused(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                kd5 kd5Var2 = ao0Var2.b2.r;
+                                if (kd5Var2 != null) {
+                                    kd5Var2.setPaused(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                xh8Var2.setOnShowListener(new DialogInterface.OnShowListener() { // from class: vn0
+                    @Override // android.content.DialogInterface.OnShowListener
+                    public final void onShow(DialogInterface dialogInterface) {
+                        byte b4 = b3;
+                        ao0 ao0Var2 = ao0Var;
+                        switch (b4) {
+                            case 0:
+                                kd5 kd5Var = ao0Var2.b2.r;
+                                if (kd5Var != null) {
+                                    kd5Var.setPaused(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                kd5 kd5Var2 = ao0Var2.b2.r;
+                                if (kd5Var2 != null) {
+                                    kd5Var2.setPaused(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                xh8Var2.show();
                 break;
         }
     }

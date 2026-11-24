@@ -1,35 +1,105 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.DialogInterface;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.json.JSONObject;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ag implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ag implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ ag(int i, TLRPC.Updates updates, byte b) {
+    public /* synthetic */ ag(Object obj, Object obj2, Object obj3, byte b) {
         this.a = b;
-        this.b = i;
-        this.c = updates;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         byte b = this.a;
-        TLRPC.Updates updates = this.c;
-        int i = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.b;
         switch (b) {
             case 0:
-                oc7.r1(i).T3(updates, false);
+                d dVar = (d) obj2;
+                Activity activity = (Activity) obj;
+                gl.t1((hj) obj3);
+                if (dVar != null) {
+                    gl.V2(activity, dVar.getClassGuid());
+                    break;
+                }
                 break;
             case 1:
-                ConnectionsManager.lambda$onUnparsedMessageReceived$12(i, updates);
+                ((p8c) obj3).a(Integer.valueOf(((ai) obj).getValue() + (((yh) obj2).getValue() * 60)));
+                break;
+            case 2:
+                d dVar2 = (d) obj2;
+                Activity activity2 = (Activity) obj;
+                gl.t1((py) obj3);
+                if (dVar2 != null) {
+                    gl.V2(activity2, dVar2.getClassGuid());
+                    break;
+                }
+                break;
+            case 3:
+                tq0 tq0Var = (tq0) obj3;
+                boolean[] zArr = (boolean[]) obj2;
+                pt0 pt0Var = (pt0) obj;
+                tq0Var.getClass();
+                if (!zArr[0]) {
+                    tq0Var.d = true;
+                    tq0Var.e = false;
+                    tq0Var.j();
+                    Iterator it = tq0Var.f.iterator();
+                    while (it.hasNext()) {
+                        ((Runnable) it.next()).run();
+                    }
+                    zArr[0] = true;
+                    pt0Var.a(Boolean.TRUE, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 4:
+                hv0 hv0Var = (hv0) obj3;
+                ev0 ev0Var = (ev0) obj;
+                if (!((AtomicBoolean) obj2).get()) {
+                    hv0Var.u(ev0Var, "popup_closed", new JSONObject());
+                }
+                hv0Var.d0 = null;
+                hv0Var.f0 = System.currentTimeMillis();
+                break;
+            case 5:
+                lf6 lf6Var = (lf6) obj3;
+                boolean[] zArr2 = (boolean[]) obj;
+                if (lf6Var.d0 == ((hd) obj2)) {
+                    lf6Var.d0 = null;
+                }
+                if (!zArr2[0] && lf6Var.o()) {
+                    lf6Var.t(false);
+                    break;
+                }
+                break;
+            case 6:
+                gl.t1((dq8) obj2);
+                gl.V2((Activity) obj, ((tq8) obj3).a.getClassGuid());
                 break;
             default:
-                oc7.r1(i).T3(updates, false);
+                boolean[] zArr3 = (boolean[]) obj2;
+                p8c p8cVar = (p8c) obj;
+                if (!((boolean[]) obj3)[0] && !zArr3[0]) {
+                    zArr3[0] = true;
+                    p8cVar.a("USER_DECLINED");
+                    break;
+                }
                 break;
         }
     }

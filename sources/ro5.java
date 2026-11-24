@@ -1,42 +1,91 @@
 // default package
 
-import j$.util.Objects;
-import java.util.Map;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.os.SystemClock;
+import android.view.TextureView;
+import android.view.View;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ro5 extends v7c {
-    public final v7c b;
-    public Object c;
-    public v7c d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ro5 extends TextureView {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public ro5(no5 no5Var) {
-        super((byte) 0);
-        d89 d89Var = no5Var.e;
-        yo5 yo5Var = d89Var.a;
-        if (yo5Var == null) {
-            yo5Var = d89Var.c();
-            d89Var.a = yo5Var;
-        }
-        this.b = yo5Var.iterator();
-        this.c = null;
-        this.d = ku5.e;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ro5(byte b, Context context, Object obj) {
+        super(context);
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.d.hasNext() || this.b.hasNext();
+    @Override // android.view.View
+    public final void invalidate() {
+        tl9 tl9Var;
+        switch (this.a) {
+            case 0:
+                q qVar = (q) this.b;
+                if (!qVar.K0 && (tl9Var = qVar.S) != null && tl9Var.a == 3) {
+                    qVar.K0 = true;
+                    try {
+                        qVar.I0 = SystemClock.elapsedRealtimeNanos();
+                        qVar.B();
+                    } finally {
+                        qVar.K0 = false;
+                    }
+                }
+                super.invalidate();
+                return;
+            default:
+                super.invalidate();
+                return;
+        }
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.d.hasNext()) {
-            Map.Entry entry = (Map.Entry) this.b.next();
-            this.c = entry.getKey();
-            this.d = ((go5) entry.getValue()).iterator();
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 1:
+                View.MeasureSpec.getSize(i);
+                super.onMeasure(i, i2);
+                break;
+            case 2:
+                pla plaVar = (pla) this.b;
+                setMeasuredDimension(plaVar.g, plaVar.h);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
         }
-        Object obj = this.c;
-        Objects.requireNonNull(obj);
-        return new ho5(obj, this.d.next());
+    }
+
+    @Override // android.view.TextureView
+    public final void setTransform(Matrix matrix) {
+        switch (this.a) {
+            case 1:
+                super.setTransform(matrix);
+                td4 td4Var = ((l58) this.b).m0;
+                if (td4Var != null) {
+                    int width = getWidth();
+                    int height = getHeight();
+                    xl0 xl0Var = td4Var.J;
+                    if (xl0Var != null) {
+                        Matrix matrix2 = xl0Var.v;
+                        matrix.invert(matrix2);
+                        float f = width;
+                        float f2 = height;
+                        matrix2.preScale(f, f2);
+                        matrix2.postScale(1.0f / f, 1.0f / f2);
+                        xl0Var.c(matrix2);
+                        td4Var.b(false, false, false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.setTransform(matrix);
+                break;
+        }
     }
 }

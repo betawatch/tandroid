@@ -1,35 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class w3b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z3b b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ w3b(z3b z3bVar, byte b) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class w3b implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ x3b b;
+
+    public /* synthetic */ w3b(x3b x3bVar, byte b) {
         this.a = b;
-        this.b = z3bVar;
+        this.b = x3bVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // p8c
+    public final void a(Object obj) {
         byte b = this.a;
-        z3b z3bVar = this.b;
+        x3b x3bVar = this.b;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
         switch (b) {
             case 0:
-                nm7.f(z3bVar.c).k(nm7.B5, z3bVar);
-                break;
-            case 1:
-                z3bVar.u = false;
-                z3bVar.w = true;
-                nm7.f(z3bVar.c).k(nm7.B5, z3bVar, Boolean.FALSE);
-                break;
-            case 2:
-                z3bVar.z = false;
+                x3bVar.d(tL_messages_stickerSet);
                 break;
             default:
-                z3bVar.k.clear();
-                z3bVar.d(true);
+                x3bVar.b(tL_messages_stickerSet);
                 break;
         }
     }

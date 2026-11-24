@@ -1,11 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface cx5 {
-    void b(c40 c40Var, Object obj);
+public final class cx5 {
+    public final sxe a;
+    public final d6e b;
+    public final u44 c;
 
-    Object c(jif jifVar);
-
-    y6a d();
+    public cx5(d6e d6eVar, u44 u44Var) {
+        sxe a;
+        this.b = d6eVar;
+        this.c = u44Var;
+        d6eVar.getClass();
+        synchronized (eze.class) {
+            a = eze.a(new hwe("language-id"));
+        }
+        this.a = a;
+    }
 }

@@ -1,203 +1,257 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Point;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class m14 extends gt9 {
-    public float A0;
-    public boolean B0;
-    public boolean C0;
-    public VelocityTracker D0;
-    public final /* synthetic */ e34 E0;
-    public final int v0;
-    public boolean w0;
-    public float x0;
-    public boolean y0;
-    public float z0;
+public final /* synthetic */ class m14 implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ n14 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m14(e34 e34Var, Context context, ylb ylbVar) {
-        super(ylbVar, context, e34Var.j2);
-        this.E0 = e34Var;
-        this.y0 = true;
-        this.v0 = ViewConfiguration.get(context).getScaledTouchSlop();
+    public /* synthetic */ m14(n14 n14Var, byte b) {
+        this.a = b;
+        this.b = n14Var;
     }
 
-    @Override // gt9, android.widget.HorizontalScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.s != null) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-        }
-        if (motionEvent.getAction() == 0) {
-            this.C0 = false;
-            this.B0 = false;
-            this.z0 = motionEvent.getRawX();
-            this.A0 = motionEvent.getRawY();
-        } else if (!this.B0 && !this.C0) {
-            e34 e34Var = this.E0;
-            if (e34Var.P0 != null && Math.abs(motionEvent.getRawY() - this.A0) >= this.v0) {
-                this.B0 = true;
-                this.A0 = motionEvent.getRawY();
-                ((dbc) e34Var.P0).c();
-                if (this.w0) {
-                    e34Var.h.i();
-                    this.w0 = false;
-                }
-                return true;
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // gt9, android.widget.HorizontalScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        e34 e34Var = this.E0;
-        o04 o04Var = e34Var.g2;
-        s04 s04Var = e34Var.h;
-        if (this.s != null) {
-            return super.onTouchEvent(motionEvent);
-        }
-        if (this.y0) {
-            this.y0 = false;
-            this.x0 = motionEvent.getX();
-        }
-        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-            e34Var.X1 = motionEvent.getRawX();
-        }
-        if (motionEvent.getAction() == 0) {
-            this.C0 = false;
-            this.B0 = false;
-            this.z0 = motionEvent.getRawX();
-            this.A0 = motionEvent.getRawY();
-        } else if (!this.B0 && !this.C0 && e34Var.P0 != null) {
-            float abs = Math.abs(motionEvent.getRawX() - this.z0);
-            float f = this.v0;
-            if (abs >= f && canScrollHorizontally((int) (this.z0 - motionEvent.getRawX()))) {
-                this.C0 = true;
-                gm.r(o04Var);
-                e34Var.Y1 = true;
-                e34Var.Z();
-            } else if (Math.abs(motionEvent.getRawY() - this.A0) >= f) {
-                this.B0 = true;
-                this.A0 = motionEvent.getRawY();
-                ((dbc) e34Var.P0).c();
-                if (this.w0) {
-                    s04Var.i();
-                    this.w0 = false;
-                }
-            }
-        }
-        if (e34Var.Y1 && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3)) {
-            gm.d3(o04Var, 1500L);
-        }
-        if (!this.B0) {
-            float translationX = getTranslationX();
-            if (getScrollX() == 0 && translationX == 0.0f) {
-                if (this.w0 || this.x0 - motionEvent.getX() >= 0.0f) {
-                    if (this.w0 && this.x0 - motionEvent.getX() > 0.0f && s04Var.f0) {
-                        s04Var.i();
-                        this.w0 = false;
-                    }
-                } else if (!s04Var.N) {
-                    s04Var.f0 = true;
-                    s04Var.setScrollState(1);
-                    s04Var.S = 0.0f;
-                    s04Var.U = 0.0f;
-                    VelocityTracker velocityTracker = s04Var.a0;
-                    if (velocityTracker == null) {
-                        s04Var.a0 = VelocityTracker.obtain();
-                    } else {
-                        velocityTracker.clear();
-                    }
-                    long uptimeMillis = SystemClock.uptimeMillis();
-                    MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 0, 0.0f, 0.0f, 0);
-                    s04Var.a0.addMovement(obtain);
-                    obtain.recycle();
-                    this.w0 = true;
-                    getTranslationX();
-                }
-            }
-            if (this.w0) {
-                motionEvent.getX();
-            }
-            this.x0 = motionEvent.getX();
-            if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-                this.y0 = true;
-                this.C0 = false;
-                this.B0 = false;
-                if (this.w0) {
-                    s04Var.i();
-                    this.w0 = false;
-                }
-            }
-            return this.w0 || super.onTouchEvent(motionEvent);
-        }
-        VelocityTracker velocityTracker2 = this.D0;
-        if (velocityTracker2 == null) {
-            velocityTracker2 = VelocityTracker.obtain();
-            this.D0 = velocityTracker2;
-        }
-        velocityTracker2.addMovement(motionEvent);
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            this.D0.computeCurrentVelocity(1000);
-            float yVelocity = this.D0.getYVelocity();
-            this.D0.recycle();
-            this.D0 = null;
-            int action = motionEvent.getAction();
-            l14 l14Var = e34Var.P0;
-            if (action == 1) {
-                dbc dbcVar = (dbc) l14Var;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) dbcVar.c;
-                if (dbcVar.a()) {
-                    chatActivityEnterView.u4 = false;
-                    if ((!dbcVar.a || yVelocity < gm.L(200.0f)) && (dbcVar.a || yVelocity > gm.L(-200.0f))) {
-                        boolean z = dbcVar.a;
-                        float f2 = chatActivityEnterView.s4;
-                        if (!z ? f2 < 0.4f : f2 > 0.6f) {
-                            chatActivityEnterView.S1(z, true, true, true);
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x01bd, code lost:
+    
+        if (r7.charAt(r10) <= 57343) goto L76;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01d7, code lost:
+    
+        if (r7.charAt(r10) != 9794) goto L78;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v12, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r7v16, types: [java.lang.CharSequence] */
+    @Override // p8c
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Object obj) {
+        LongSparseArray longSparseArray;
+        int y1;
+        int y12;
+        byte b = this.a;
+        int i = 0;
+        n14 n14Var = this.b;
+        switch (b) {
+            case 0:
+                n14Var.a((Runnable) obj, true);
+                break;
+            case 1:
+                Runnable runnable = (Runnable) obj;
+                ArrayList arrayList = n14Var.s;
+                LongSparseArray longSparseArray2 = n14Var.w;
+                o14 o14Var = n14Var.x;
+                t14 t14Var = o14Var.R;
+                HashMap hashMap = hq6.d0(t14Var.d1).e0;
+                HashSet hashSet = new HashSet();
+                ArrayList arrayList2 = new ArrayList();
+                for (ArrayList arrayList3 : hashMap.values()) {
+                    int size = arrayList3.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        Object obj2 = arrayList3.get(i2);
+                        i2++;
+                        TLRPC.Document document = (TLRPC.Document) obj2;
+                        if (!hashSet.contains(Long.valueOf(document.id)) && k27.W3(document)) {
+                            hashSet.add(Long.valueOf(document.id));
+                            arrayList2.add(document);
+                            longSparseArray2.put(document.id, document);
                         }
                     }
-                    chatActivityEnterView.S1(!dbcVar.a, true, true, true);
                 }
-            } else {
-                dbc dbcVar2 = (dbc) l14Var;
-                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) dbcVar2.c;
-                if (chatActivityEnterView2.n4) {
-                    chatActivityEnterView2.u4 = false;
-                    chatActivityEnterView2.S1(dbcVar2.a, true, false, true);
+                ArrayList arrayList4 = hq6.d0(t14Var.d1).t0[0];
+                int size2 = arrayList4.size();
+                int i3 = 0;
+                while (i3 < size2) {
+                    Object obj3 = arrayList4.get(i3);
+                    i3++;
+                    TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) obj3;
+                    TLRPC.Document document2 = stickerSetCovered.cover;
+                    if (document2 != null && !hashSet.contains(Long.valueOf(document2.id)) && k27.W3(stickerSetCovered.cover)) {
+                        hashSet.add(Long.valueOf(stickerSetCovered.cover.id));
+                        arrayList2.add(stickerSetCovered.cover);
+                        TLRPC.Document document3 = stickerSetCovered.cover;
+                        longSparseArray2.put(document3.id, document3);
+                    }
+                    ArrayList<TLRPC.Document> arrayList5 = stickerSetCovered.covers;
+                    if (arrayList5 != null) {
+                        int size3 = arrayList5.size();
+                        int i4 = i;
+                        while (i4 < size3) {
+                            TLRPC.Document document4 = arrayList5.get(i4);
+                            i4++;
+                            TLRPC.Document document5 = document4;
+                            LongSparseArray longSparseArray3 = longSparseArray2;
+                            if (hashSet.contains(Long.valueOf(document5.id)) || !k27.W3(document5)) {
+                                longSparseArray = longSparseArray3;
+                            } else {
+                                hashSet.add(Long.valueOf(document5.id));
+                                arrayList2.add(document5);
+                                longSparseArray = longSparseArray3;
+                                longSparseArray.put(document5.id, document5);
+                            }
+                            longSparseArray2 = longSparseArray;
+                        }
+                    }
+                    longSparseArray2 = longSparseArray2;
+                    i = 0;
                 }
-            }
-            this.y0 = true;
-            this.C0 = false;
-            this.B0 = false;
-        } else {
-            l14 l14Var2 = e34Var.P0;
-            int round = Math.round(motionEvent.getRawY() - this.A0);
-            dbc dbcVar3 = (dbc) l14Var2;
-            ChatActivityEnterView chatActivityEnterView3 = (ChatActivityEnterView) dbcVar3.c;
-            if (dbcVar3.a()) {
-                Point point = gm.q;
-                int max = Math.max(Math.min(round + dbcVar3.b, 0), -(chatActivityEnterView3.t4 - (point.x > point.y ? chatActivityEnterView3.o3 : chatActivityEnterView3.n3)));
-                if (chatActivityEnterView3.l7 == null) {
-                    float f3 = max;
-                    chatActivityEnterView3.V0.setTranslationY(f3);
-                    chatActivityEnterView3.setTranslationY(f3);
+                if (!arrayList2.isEmpty()) {
+                    arrayList.addAll(arrayList2);
+                    n14Var.f.put(arrayList, o14Var.O);
+                    n14Var.h.add(arrayList);
                 }
-                chatActivityEnterView3.s4 = max / (-(chatActivityEnterView3.t4 - r4));
-                chatActivityEnterView3.c2.invalidate();
-            }
+                runnable.run();
+                break;
+            case 2:
+                n14Var.a((Runnable) obj, false);
+                break;
+            case 3:
+                hq6.d0(n14Var.x.R.d1).a2(false, n14Var.a, new pz1(n14Var, (Runnable) obj, (byte) 19));
+                break;
+            case 4:
+                Runnable runnable2 = (Runnable) obj;
+                o14 o14Var2 = n14Var.x;
+                ArrayList arrayList6 = n14Var.s;
+                if (n14Var.a.length() <= 14) {
+                    HashMap hashMap2 = hq6.d0(o14Var2.R.d1).e0;
+                    String str = n14Var.a;
+                    int length = str.length();
+                    int i5 = 0;
+                    String str2 = str;
+                    while (i5 < length) {
+                        if (i5 < length - 1) {
+                            if (str2.charAt(i5) == 55356) {
+                                int i6 = i5 + 1;
+                                if (str2.charAt(i6) >= 57339) {
+                                    break;
+                                }
+                            }
+                            if (str2.charAt(i5) == 8205) {
+                                int i7 = i5 + 1;
+                                if (str2.charAt(i7) != 9792) {
+                                    break;
+                                }
+                                length -= 2;
+                                str2 = TextUtils.concat(str2.subSequence(0, i5), str2.subSequence(i5 + 2, str2.length()));
+                                i5--;
+                                i5++;
+                                str2 = str2;
+                            }
+                        }
+                        if (str2.charAt(i5) == 65039) {
+                            length--;
+                            str2 = TextUtils.concat(str2.subSequence(0, i5), str2.subSequence(i5 + 1, str2.length()));
+                            i5--;
+                            i5++;
+                            str2 = str2;
+                        } else {
+                            i5++;
+                            str2 = str2;
+                        }
+                    }
+                    ArrayList arrayList7 = hashMap2 != null ? (ArrayList) hashMap2.get(str2.toString()) : null;
+                    if (arrayList7 != null && !arrayList7.isEmpty()) {
+                        arrayList6.addAll(arrayList7);
+                        int size4 = arrayList7.size();
+                        while (i < size4) {
+                            TLRPC.Document document6 = (TLRPC.Document) arrayList7.get(i);
+                            n14Var.w.put(document6.id, document6);
+                            i++;
+                        }
+                        n14Var.f.put(arrayList6, o14Var2.O);
+                        n14Var.h.add(arrayList6);
+                    }
+                }
+                runnable2.run();
+                break;
+            case 5:
+                Runnable runnable3 = (Runnable) obj;
+                o14 o14Var3 = n14Var.x;
+                t14 t14Var2 = o14Var3.R;
+                int i8 = t14Var2.d1;
+                HashMap hashMap3 = hq6.d0(t14Var2.d1).e0;
+                if (hashMap3 != null && !hashMap3.isEmpty() && n14Var.a.length() > 1) {
+                    String[] F0 = gl.F0();
+                    if (!Arrays.equals(t14Var2.X0, F0)) {
+                        hq6.d0(i8).O(F0, false);
+                    }
+                    t14Var2.X0 = F0;
+                    hq6.d0(i8).W(t14Var2.X0, o14Var3.O, true, new lt2((Object) n14Var, (Object) hashMap3, (Object) runnable3, (byte) 10), false);
+                    break;
+                } else {
+                    runnable3.run();
+                    break;
+                }
+                break;
+            case 6:
+                Runnable runnable4 = (Runnable) obj;
+                HashMap hashMap4 = n14Var.d;
+                HashMap hashMap5 = n14Var.e;
+                ArrayList arrayList8 = n14Var.c;
+                o14 o14Var4 = n14Var.x;
+                t14 t14Var3 = o14Var4.R;
+                ArrayList t0 = hq6.d0(t14Var3.d1).t0(0);
+                int i9 = t14Var3.d1;
+                na7.q1(i9).u0(t0);
+                int size5 = t0.size();
+                for (int i10 = 0; i10 < size5; i10++) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) t0.get(i10);
+                    int y13 = gl.y1(tL_messages_stickerSet.set.title, o14Var4.O);
+                    if (y13 < 0) {
+                        String str3 = tL_messages_stickerSet.set.short_name;
+                        if (str3 != null && (y12 = gl.y1(str3, o14Var4.O)) >= 0 && (y12 == 0 || tL_messages_stickerSet.set.short_name.charAt(y12 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet);
+                            hashMap4.put(tL_messages_stickerSet, Boolean.TRUE);
+                        }
+                    } else if (y13 == 0 || tL_messages_stickerSet.set.title.charAt(y13 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet);
+                        hashMap5.put(tL_messages_stickerSet, Integer.valueOf(y13));
+                    }
+                }
+                ArrayList t02 = hq6.d0(i9).t0(3);
+                na7.q1(i9).u0(t02);
+                int size6 = t02.size();
+                while (i < size6) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) t02.get(i);
+                    int y14 = gl.y1(tL_messages_stickerSet2.set.title, o14Var4.O);
+                    if (y14 < 0) {
+                        String str4 = tL_messages_stickerSet2.set.short_name;
+                        if (str4 != null && (y1 = gl.y1(str4, o14Var4.O)) >= 0 && (y1 == 0 || tL_messages_stickerSet2.set.short_name.charAt(y1 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet2);
+                            hashMap4.put(tL_messages_stickerSet2, Boolean.TRUE);
+                        }
+                    } else if (y14 == 0 || tL_messages_stickerSet2.set.title.charAt(y14 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet2);
+                        hashMap5.put(tL_messages_stickerSet2, Integer.valueOf(y14));
+                    }
+                    i++;
+                }
+                runnable4.run();
+                break;
+            default:
+                Runnable runnable5 = (Runnable) obj;
+                o14 o14Var5 = n14Var.x;
+                if (vu3.d(o14Var5.O)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = n14Var.a;
+                    tL_messages_getStickers.hash = 0L;
+                    o14Var5.M = ConnectionsManager.getInstance(o14Var5.R.d1).sendRequest(tL_messages_getStickers, new en0((Object) n14Var, (Object) tL_messages_getStickers, (Object) runnable5, (byte) 24));
+                    break;
+                } else {
+                    runnable5.run();
+                    break;
+                }
         }
-        cancelLongPress();
-        return true;
     }
 }

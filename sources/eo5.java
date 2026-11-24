@@ -1,52 +1,49 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
+import android.content.ClipDescription;
+import android.net.Uri;
+import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class eo5 extends fo5 {
-    public Object[] a;
-    public int b;
-    public boolean c;
+public final class eo5 implements fo5 {
+    public final InputContentInfo a;
 
-    public eo5(int i) {
-        ntd.b(i, "initialCapacity");
-        this.a = new Object[i];
-        this.b = 0;
+    public eo5(Uri uri, ClipDescription clipDescription, Uri uri2) {
+        this.a = new InputContentInfo(uri, clipDescription, uri2);
     }
 
-    public final void c(Object obj) {
-        obj.getClass();
-        e(1);
-        Object[] objArr = this.a;
-        int i = this.b;
-        this.b = i + 1;
-        objArr[i] = obj;
+    @Override // fo5
+    public final Uri f() {
+        return this.a.getContentUri();
     }
 
-    public final void d(Iterable iterable) {
-        if (iterable instanceof Collection) {
-            Collection collection = (Collection) iterable;
-            e(collection.size());
-            if (collection instanceof go5) {
-                this.b = ((go5) collection).i(this.b, this.a);
-                return;
-            }
-        }
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            a(it.next());
-        }
+    @Override // fo5
+    public final ClipDescription getDescription() {
+        return this.a.getDescription();
     }
 
-    public final void e(int i) {
-        Object[] objArr = this.a;
-        int b = fo5.b(objArr.length, this.b + i);
-        if (b > objArr.length || this.c) {
-            this.a = Arrays.copyOf(this.a, b);
-            this.c = false;
-        }
+    @Override // fo5
+    public final void h() {
+        this.a.requestPermission();
+    }
+
+    @Override // fo5
+    public final Uri i() {
+        return this.a.getLinkUri();
+    }
+
+    @Override // fo5
+    public final Object l() {
+        return this.a;
+    }
+
+    @Override // fo5
+    public final void n() {
+        this.a.releasePermission();
+    }
+
+    public eo5(Object obj) {
+        this.a = (InputContentInfo) obj;
     }
 }

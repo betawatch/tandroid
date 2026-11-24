@@ -1,44 +1,31 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class np1 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ yv1 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLRPC.TL_attachMenuBot d;
-    public final /* synthetic */ TLRPC.User e;
+public final class np1 implements gk7 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tn6 b;
+    public final /* synthetic */ mu1 c;
+    public final /* synthetic */ mu1 d;
 
-    public /* synthetic */ np1(yv1 yv1Var, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.TL_error tL_error, TLRPC.User user) {
-        this.b = yv1Var;
-        this.d = tL_attachMenuBot;
-        this.c = tL_error;
-        this.e = user;
+    public np1(mu1 mu1Var, int i, tn6 tn6Var, mu1 mu1Var2) {
+        this.d = mu1Var;
+        this.a = i;
+        this.b = tn6Var;
+        this.c = mu1Var2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.User user = this.e;
-        TLRPC.TL_attachMenuBot tL_attachMenuBot = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        yv1 yv1Var = this.b;
-        switch (b) {
-            case 0:
-                yv1Var.i9(tL_attachMenuBot, tL_error, user);
-                break;
-            default:
-                yv1Var.k9(tL_attachMenuBot, tL_error, user);
-                break;
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        int i3;
+        int i4 = kk7.C;
+        if (i == i4 && ((Integer) objArr[10]).intValue() == this.a) {
+            this.b.run();
+            gl.d3(new mp1(this.c, i, i2, objArr, (byte) 0), 50L);
+            i3 = ((d) this.d).currentAccount;
+            kk7.f(i3).n(this, i4);
         }
-    }
-
-    public /* synthetic */ np1(yv1 yv1Var, TLRPC.TL_error tL_error, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user) {
-        this.b = yv1Var;
-        this.c = tL_error;
-        this.d = tL_attachMenuBot;
-        this.e = user;
     }
 }

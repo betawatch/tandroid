@@ -1,61 +1,100 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ib0 extends ml9 {
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final long f;
+import android.app.Activity;
+import android.view.View;
+import java.util.ArrayList;
 
-    public ib0(String str, String str2, String str3, String str4, long j) {
-        if (str == null) {
-            gxc.d("Null rolloutId");
-            throw null;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class ib0 extends o39 {
+    public final ArrayList f3;
+    public final int g3;
+    public int h3;
+    public final jr i3;
+    public hb0 j3;
+    public final /* synthetic */ mb0 k3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ib0(mb0 mb0Var, Activity activity) {
+        super(activity, null);
+        byte b;
+        this.k3 = mb0Var;
+        this.f3 = new ArrayList();
+        this.g3 = kk7.d3;
+        this.h3 = -1;
+        t26 t26Var = new t26();
+        t26Var.i1(0);
+        setLayoutManager(t26Var);
+        int i = 0;
+        while (true) {
+            b = 1;
+            if (i >= 7) {
+                break;
+            }
+            hb0 hb0Var = new hb0();
+            int i2 = this.g3;
+            this.g3 = i2 + 1;
+            hb0Var.a = i2;
+            int[] iArr = mb0.d0[i];
+            hb0Var.c = iArr[0];
+            hb0Var.d = iArr[1];
+            hb0Var.e = iArr[2];
+            hb0Var.f = iArr[3];
+            this.f3.add(hb0Var);
+            i++;
         }
-        this.b = str;
-        if (str2 == null) {
-            gxc.d("Null parameterKey");
-            throw null;
+        for (int i3 = 0; i3 < 30; i3++) {
+            hb0 hb0Var2 = new hb0();
+            int i4 = this.g3;
+            this.g3 = i4 + 1;
+            hb0Var2.a = i4;
+            int[] iArr2 = mb0.e0[i3];
+            hb0Var2.c = iArr2[0];
+            hb0Var2.d = iArr2[1];
+            hb0Var2.e = 0;
+            hb0Var2.f = 0;
+            hb0Var2.b = true;
+            this.f3.add(hb0Var2);
         }
-        this.c = str2;
-        this.d = str3;
-        if (str4 == null) {
-            gxc.d("Null variantId");
-            throw null;
-        }
-        this.e = str4;
-        this.f = j;
+        setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
+        setClipToPadding(false);
+        this.g1 = true;
+        setOnItemClickListener(new u(this, (byte) 6));
+        jr jrVar = new jr(this, b);
+        this.i3 = jrVar;
+        setAdapter(jrVar);
+        setOverScrollMode(1);
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i) / this.i3.b();
+        mb0 mb0Var = this.k3;
+        mb0Var.Q = size;
+        if (size < gl.L(39.0f)) {
+            mb0Var.Q = gl.L(39.0f);
+        } else if (mb0Var.Q > gl.L(150.0f)) {
+            mb0Var.Q = gl.L(48.0f);
         }
-        if (!(obj instanceof ml9)) {
-            return false;
-        }
-        ib0 ib0Var = (ib0) ((ml9) obj);
-        return this.b.equals(ib0Var.b) && this.c.equals(ib0Var.c) && this.d.equals(ib0Var.d) && this.e.equals(ib0Var.e) && this.f == ib0Var.f;
+        super.onMeasure(i, i2);
     }
 
-    public final int hashCode() {
-        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003;
-        long j = this.f;
-        return hashCode ^ ((int) ((j >>> 32) ^ j));
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("RolloutAssignment{rolloutId=");
-        sb.append(this.b);
-        sb.append(", parameterKey=");
-        sb.append(this.c);
-        sb.append(", parameterValue=");
-        sb.append(this.d);
-        sb.append(", variantId=");
-        sb.append(this.e);
-        sb.append(", templateVersion=");
-        return kt6.q(sb, this.f, "}");
+    public final void z1(hb0 hb0Var) {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.f3;
+            if (i >= arrayList.size()) {
+                this.j3 = hb0Var;
+                this.h3 = 1;
+                break;
+            } else {
+                if (((hb0) arrayList.get(i)).equals(hb0Var)) {
+                    this.h3 = ((hb0) arrayList.get(i)).a;
+                    break;
+                }
+                i++;
+            }
+        }
+        this.i3.f();
     }
 }

@@ -1,15 +1,48 @@
 // default package
 
-import java.util.TimeZone;
+import android.content.pm.PackageInfo;
+import android.net.Uri;
+import android.webkit.WebView;
+import java.util.Set;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
 public abstract class juc {
-    public static String a;
-    public static iuc b;
+    public static final boolean a;
+    public static final WeakHashMap b;
 
-    public static boolean a() {
-        String id = TimeZone.getDefault().getID();
-        return (id.startsWith("US/") || "America/Nassau".equals(id) || "America/Belize".equals(id) || "America/Cayman".equals(id) || "Pacific/Palau".equals(id)) ? false : true;
+    static {
+        Uri.parse("*");
+        Uri.parse("");
+        a = true;
+        b = new WeakHashMap();
+    }
+
+    public static void a(WebView webView, String str, Set set, iuc iucVar) {
+        if (!muc.c.b()) {
+            fyb.i("This method is not supported by the current version of the framework and the current WebView APK");
+            return;
+        }
+        ouc c = c(webView);
+        c.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new gy0(new u39(iucVar, (byte) 23)));
+    }
+
+    public static PackageInfo b() {
+        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    }
+
+    public static ouc c(WebView webView) {
+        if (!muc.e.b() || !a) {
+            return new ouc(nuc.a.createWebView(webView));
+        }
+        WeakHashMap weakHashMap = b;
+        ouc oucVar = (ouc) weakHashMap.get(webView);
+        if (oucVar != null) {
+            return oucVar;
+        }
+        ouc oucVar2 = new ouc(nuc.a.createWebView(webView));
+        weakHashMap.put(webView, oucVar2);
+        return oucVar2;
     }
 }

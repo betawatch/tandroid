@@ -1,29 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface u40 {
-    void C();
+public final class u40 {
+    public BiometricPrompt$AuthenticationCallback a;
+    public i4d b;
+    public final jj0 c;
 
-    void L(nf5 nf5Var);
-
-    void X();
-
-    void b(int i);
-
-    void f(boolean z);
-
-    void f0(Exception exc);
-
-    void h(long j);
-
-    void i0();
-
-    void s0();
-
-    void u(nf5 nf5Var);
-
-    void v();
-
-    void x0(long j, int i, long j2);
+    public u40(jj0 jj0Var) {
+        this.c = jj0Var;
+    }
 }

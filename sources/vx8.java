@@ -1,328 +1,625 @@
 // default package
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.PointF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
-import android.graphics.SweepGradient;
-import android.os.Build;
-import java.util.HashMap;
+import android.graphics.drawable.Drawable;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class vx8 {
-    public static Bitmap a;
-    public static BitmapShader b;
-    public static final Paint c = new Paint(2);
-    public static final Paint d = new Paint(3);
-    public static final RectF e = new RectF();
-    public static final Matrix f = new Matrix();
-    public static final HashMap g = new HashMap();
-    public static final SweepGradient[] h = new SweepGradient[4];
-    public static int i = -1;
-    public static final Paint j = new Paint(2);
-    public static final Rect k = new Rect();
-    public static final RectF l = new RectF();
-    public static final int[] m = new int[4];
-    public static final int[] n = new int[4];
-    public static final float[] o = new float[4];
-    public static final float[] p = new float[4];
+public final class vx8 extends Drawable implements Animator.AnimatorListener {
+    public static final RectF c0 = new RectF();
+    public static final Rect d0 = new Rect();
+    public static final int[] e0 = new int[2];
+    public static final pm f0 = new pm("openFactor", (byte) 11);
+    public static final pm g0 = new pm("openFactor", (byte) 12);
+    public final gb2 E;
+    public final k27 F;
+    public float G;
+    public Bitmap J;
+    public BitmapShader K;
+    public Paint M;
+    public zk0 Q;
+    public boolean T;
+    public boolean U;
+    public int V;
+    public int W;
+    public t11 X;
+    public float Y;
+    public float Z;
+    public final wx8 a;
+    public final lw8 b;
+    public final LinearGradient f;
+    public final sx8[] x;
+    public final Drawable y;
+    public final Paint c = new Paint(1);
+    public final Matrix d = new Matrix();
+    public final Path e = new Path();
+    public final RectF h = new RectF();
+    public final RectF n = new RectF();
+    public final RectF r = new RectF();
+    public final RectF s = new RectF();
+    public final RectF w = new RectF();
+    public float H = 0.0f;
+    public float I = 0.0f;
+    public final Matrix L = new Matrix();
+    public boolean N = false;
+    public boolean O = false;
+    public boolean P = false;
+    public boolean R = true;
+    public int S = -1;
+    public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(560L);
+    public final ObjectAnimator b0 = ObjectAnimator.ofFloat(this, g0, 1.0f).setDuration(240L);
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v8 */
-    /* JADX WARN: Type inference failed for: r13v15 */
-    /* JADX WARN: Type inference failed for: r13v2 */
-    /* JADX WARN: Type inference failed for: r13v3 */
-    /* JADX WARN: Type inference failed for: r15v0 */
-    /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r21v7 */
-    /* JADX WARN: Type inference failed for: r21v8 */
-    /* JADX WARN: Type inference failed for: r22v1 */
-    /* JADX WARN: Type inference failed for: r22v2 */
-    /* JADX WARN: Type inference failed for: r22v3 */
-    /* JADX WARN: Type inference failed for: r33v2 */
-    /* JADX WARN: Type inference failed for: r33v3 */
-    /* JADX WARN: Type inference failed for: r33v4 */
-    public static boolean a(float f2, float f3, int i2, Canvas canvas, RectF rectF) {
+    public vx8(wx8 wx8Var, gb2 gb2Var, ArrayList arrayList, lw8 lw8Var) {
+        this.b = lw8Var;
+        this.a = wx8Var;
+        this.E = gb2Var;
+        this.F = gb2Var.getMessageObject();
+        this.x = new sx8[Math.min(5, arrayList.size())];
+        int i = 0;
+        while (true) {
+            sx8[] sx8VarArr = this.x;
+            if (i >= sx8VarArr.length) {
+                this.c.setStyle(Paint.Style.FILL);
+                Drawable mutate = wx8Var.getContext().getDrawable(R.drawable.reactions_bubble_shadow).mutate();
+                this.y = mutate;
+                gb2Var.setHideSideButtonByQuickShare(true);
+                wx8Var.performHapticFeedback(3, 1);
+                int v0 = bkb.v0(bkb.F8, this.E.getResourcesProvider());
+                mutate.setColorFilter(new PorterDuffColorFilter(bkb.w0(null, bkb.Je, false), PorterDuff.Mode.MULTIPLY));
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, gl.L(100.0f), new int[]{v0, 16777215 & v0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.f = linearGradient;
+                this.c.setShader(linearGradient);
+                ObjectAnimator objectAnimator = this.a0;
+                LinearInterpolator linearInterpolator = ux8.b;
+                objectAnimator.setInterpolator(linearInterpolator);
+                this.a0.addListener(this);
+                this.b0.setInterpolator(linearInterpolator);
+                this.b0.addListener(this);
+                gl.j2(new zf7(this, (byte) 26), 15.0f);
+                return;
+            }
+            sx8VarArr[i] = new sx8(this, ((Long) arrayList.get(i)).longValue());
+            i++;
+        }
+    }
+
+    public static float b(float f, float f2, float f3, float f4) {
+        return (float) Math.toDegrees((float) Math.atan2(f4 - f2, f3 - f));
+    }
+
+    public static PointF f(float f, float f2, float f3, float f4, float f5, float f6, boolean z) {
+        float f7 = f4 - f;
+        float f8 = f5 - f2;
+        float sqrt = (float) Math.sqrt(Math.pow(f8, 2.0d) + Math.pow(f7, 2.0d));
+        if (sqrt > f3 + f6 || sqrt < Math.abs(f3 - f6)) {
+            return null;
+        }
+        float f9 = ((sqrt * sqrt) + ((f3 * f3) - (f6 * f6))) / (2.0f * sqrt);
+        float sqrt2 = (float) Math.sqrt(r8 - (f9 * f9));
+        float d = ls6.d(f9, f7, sqrt, f);
+        float d2 = ls6.d(f9, f8, sqrt, f2);
+        float f10 = (f8 * sqrt2) / sqrt;
+        float f11 = d + f10;
+        float f12 = (sqrt2 * f7) / sqrt;
+        float f13 = d2 - f12;
+        float f14 = d - f10;
+        float f15 = d2 + f12;
+        return (f11 == f14 || f11 >= f14) ? f13 > f15 ? new PointF(f11, f13) : new PointF(f14, f15) : z ? new PointF(f11, f13) : new PointF(f14, f15);
+    }
+
+    public static float g(float f, float f2, float f3) {
+        return tb4.A(f2, f, f3, f);
+    }
+
+    public static tx8 i(Interpolator interpolator, int i, int i2, int i3, boolean z) {
+        float f = i3;
+        return new tx8(z, i / f, i2 / f, interpolator);
+    }
+
+    public static float j(float f) {
+        return f <= 0.0f ? f + 180.0f : f - 180.0f;
+    }
+
+    public final void a(Path path, RectF rectF, float f, float f2, boolean z, boolean z2) {
+        float f3 = f2 - f;
+        if (z) {
+            if (f3 > 0.0f) {
+                f3 -= 360.0f;
+            }
+        } else if (f3 < 0.0f) {
+            f3 += 360.0f;
+        }
+        if (Math.abs(f3) > 270.0f && z2) {
+            this.R = false;
+        }
+        path.arcTo(rectF, f, f3);
+    }
+
+    public final void c() {
+        this.b0.start();
+        this.P = true;
+        if (this.N && !this.U) {
+            zk0 zk0Var = new zk0(new k88((Object) this, (byte) 17));
+            this.Q = zk0Var;
+            RectF rectF = this.r;
+            zk0Var.a((int) rectF.width(), (int) (rectF.height() + gl.L(30.0f)), 4.0f, gl.L(10.0f));
+        }
+        invalidateSelf();
+    }
+
+    public final void d() {
+        Bitmap bitmap;
+        Bitmap bitmap2;
+        Bitmap bitmap3;
+        this.E.setHideSideButtonByQuickShare(false);
+        if (this.U) {
+            return;
+        }
+        this.U = true;
+        Bitmap bitmap4 = this.J;
+        if (bitmap4 != null) {
+            bitmap4.recycle();
+        }
+        zk0 zk0Var = this.Q;
+        if (zk0Var != null && (bitmap3 = zk0Var.c) != null) {
+            bitmap3.recycle();
+            zk0Var.c = null;
+        }
+        for (sx8 sx8Var : this.x) {
+            zk0 zk0Var2 = sx8Var.f;
+            if (zk0Var2 != null && (bitmap2 = zk0Var2.c) != null) {
+                bitmap2.recycle();
+                zk0Var2.c = null;
+            }
+            zk0 zk0Var3 = sx8Var.e;
+            if (zk0Var3 != null && (bitmap = zk0Var3.c) != null) {
+                bitmap.recycle();
+                zk0Var3.c = null;
+            }
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        e(canvas, false, kk7.d4);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0439  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(Canvas canvas, boolean z, int i) {
+        float f;
+        float f2;
+        wx8 wx8Var;
+        float f3;
         float f4;
+        int i2;
+        final sx8 sx8Var;
         float f5;
+        int i3;
+        RectF rectF;
         float f6;
-        ?? r33;
-        ?? r22;
-        float f7;
-        float f8;
-        long j2;
-        if (Build.VERSION.SDK_INT < 29) {
-            return false;
-        }
-        float f9 = 0.004f;
-        boolean z = true;
-        if (f3 <= 0.004f) {
-            return true;
-        }
-        int i3 = i;
-        SweepGradient[] sweepGradientArr = h;
-        float[][] fArr = ned.a;
-        int i4 = 4;
-        HashMap hashMap = g;
-        if (i3 != 1) {
-            i = 1;
-            hashMap.clear();
-            int i5 = 0;
-            while (i5 < i4) {
-                float[] fArr2 = fArr[i5];
-                float f10 = f9;
-                int[] iArr = new int[73];
-                float[] fArr3 = new float[73];
-                int i6 = 0;
-                for (int i7 = 73; i6 < i7; i7 = 73) {
-                    boolean z2 = z;
-                    SweepGradient[] sweepGradientArr2 = sweepGradientArr;
-                    double radians = Math.toRadians(i6 * 5);
-                    int i8 = i4;
-                    HashMap hashMap2 = hashMap;
-                    float pow = (float) Math.pow(Math.abs(Math.cos(radians)), fArr2[6]);
-                    float f11 = (((float) Math.sin(radians)) < 0.0f ? fArr2[11] : fArr2[12]) / 100.0f;
-                    iArr[i6] = ((int) ((Math.max(0.0f, Math.min(1.0f, (((fArr2[5] / 100.0f) - f11) * pow) + f11)) * 255.0f) + 0.5f)) << 24;
-                    fArr3[i6] = i6 / 72.0f;
-                    i6++;
-                    z = z2;
-                    sweepGradientArr = sweepGradientArr2;
-                    i4 = i8;
-                    hashMap = hashMap2;
-                }
-                sweepGradientArr[i5] = new SweepGradient(0.0f, 0.0f, iArr, fArr3);
-                i5++;
-                f9 = f10;
-                z = z;
-            }
-        }
-        float f12 = f9;
-        boolean z3 = z;
-        SweepGradient[] sweepGradientArr3 = sweepGradientArr;
-        int i9 = i4;
-        HashMap hashMap3 = hashMap;
-        float[] fArr4 = fArr[i2];
-        float N = gm.N(fArr4[8]);
-        float f13 = rectF.left + N;
-        float f14 = rectF.top + N;
-        float f15 = rectF.right - N;
-        float f16 = rectF.bottom - N;
-        float f17 = f15 - f13;
-        float f18 = f16 - f14;
-        if (f17 >= 1.0f) {
-            if (f18 < 1.0f) {
-                return z3;
-            }
-            float min = Math.min(Math.max(0.0f, f2 - N), Math.min(f17, f18) / 2.0f);
-            float N2 = gm.N(fArr4[i9]);
-            float max = Math.max(gm.N(fArr4[0]), gm.N(fArr4[2]));
-            int ceil = ((int) Math.ceil(N2)) + 2;
-            int ceil2 = ((int) Math.ceil(max + min)) + 1;
-            int round = Math.round(f17);
-            int round2 = Math.round(f18);
-            int i10 = (ceil2 << 1) + 2;
-            ?? r13 = round >= i10 ? z3 ? 1 : 0 : false;
-            ?? r15 = round2 >= i10 ? z3 ? 1 : 0 : false;
-            if (r13 != false) {
-                round = i10;
-            }
-            if (r15 != false) {
-                round2 = i10;
-            }
-            ?? r12 = r15;
-            long round3 = (((i2 << 56) ^ (Math.round(4.0f * min) << 32)) ^ (round << 16)) ^ round2;
-            Bitmap bitmap = (Bitmap) hashMap3.get(Long.valueOf(round3));
-            if (bitmap == null) {
-                float[] fArr5 = fArr[i2];
-                int i11 = ceil << 1;
-                f4 = f13;
-                bitmap = Bitmap.createBitmap(round + i11, i11 + round2, Bitmap.Config.ARGB_8888);
-                Canvas canvas2 = new Canvas(bitmap);
-                f5 = f14;
-                float f19 = ceil;
-                RectF rectF2 = new RectF(f19, f19, round + ceil, round2 + ceil);
-                float N3 = gm.N(fArr5[i9]);
-                if (N3 > 0.05f) {
-                    Matrix matrix = new Matrix();
-                    f6 = f15;
-                    matrix.setScale(rectF2.width() / Math.max(1.0f, rectF2.height()), 1.0f);
-                    matrix.postTranslate(rectF2.centerX(), rectF2.centerY());
-                    SweepGradient sweepGradient = sweepGradientArr3[i2];
-                    sweepGradient.setLocalMatrix(matrix);
-                    Paint paint = new Paint(z3 ? 1 : 0);
-                    paint.setStyle(Paint.Style.STROKE);
-                    paint.setStrokeWidth(N3);
-                    paint.setShader(sweepGradient);
-                    RectF rectF3 = new RectF(rectF2);
-                    float f20 = (-N3) / 2.0f;
-                    rectF3.inset(f20, f20);
-                    float f21 = (N3 / 2.0f) + min;
-                    canvas2.drawRoundRect(rectF3, f21, f21, paint);
-                } else {
-                    f6 = f15;
-                }
-                Paint paint2 = new Paint(1);
-                paint2.setColor(-1);
-                Path path = new Path();
-                Path path2 = new Path();
-                RectF rectF4 = new RectF();
-                r33 = r12;
-                r22 = r13;
-                int i12 = 0;
-                while (i12 < 2) {
-                    if (i12 == 0) {
-                        float N4 = gm.N(fArr5[0]);
-                        f8 = fArr5[1];
-                        f7 = N4;
-                    } else {
-                        f7 = -gm.N(fArr5[2]);
-                        f8 = fArr5[3];
-                    }
-                    int i13 = i12;
-                    float f22 = f8 / 100.0f;
-                    if (f22 <= f12 || Math.abs(f7) < 0.1f) {
-                        j2 = round3;
-                    } else {
-                        path.rewind();
-                        j2 = round3;
-                        Path.Direction direction = Path.Direction.CW;
-                        path.addRoundRect(rectF2, min, min, direction);
-                        rectF4.set(rectF2);
-                        rectF4.offset(0.0f, f7);
-                        path2.rewind();
-                        path2.addRoundRect(rectF4, min, min, direction);
-                        canvas2.save();
-                        y00.d(canvas2, path2);
-                        paint2.setAlpha(Math.round(Math.min(1.0f, f22) * 255.0f));
-                        canvas2.drawPath(path, paint2);
-                        canvas2.restore();
-                    }
-                    i12 = i13 + 1;
-                    round3 = j2;
-                }
-                bitmap.prepareToDraw();
-                hashMap3.put(Long.valueOf(round3), bitmap);
+        int i4;
+        final byte b;
+        zk0 zk0Var;
+        vx8 vx8Var = this;
+        boolean z2 = vx8Var.T;
+        wx8 wx8Var2 = vx8Var.a;
+        byte b2 = 0;
+        gb2 gb2Var = vx8Var.E;
+        if (!z2) {
+            int[] iArr = e0;
+            gb2Var.getLocationInWindow(iArr);
+            int i5 = iArr[0];
+            int i6 = iArr[1];
+            wx8Var2.getLocationInWindow(iArr);
+            int i7 = iArr[0];
+            int i8 = iArr[1];
+            vx8Var.V = i5 - i7;
+            vx8Var.W = i6 - i8;
+            float L = gl.L(16.0f);
+            float sideButtonStartX = gb2Var.getSideButtonStartX() + vx8Var.V + L;
+            float sideButtonStartY = gb2Var.getSideButtonStartY() + vx8Var.W + L;
+            float f7 = sideButtonStartX - L;
+            float f8 = sideButtonStartY - L;
+            float f9 = sideButtonStartX + L;
+            float f10 = sideButtonStartY + L;
+            RectF rectF2 = vx8Var.h;
+            rectF2.set(f7, f8, f9, f10);
+            float L2 = gl.L(16.0f);
+            if (rectF2.right + gl.L(48.0f) + L2 > wx8Var2.getMeasuredWidth()) {
+                vx8Var.G = Math.max(0.0f, (wx8Var2.getMeasuredWidth() - L2) - rectF2.right);
+            } else if (((rectF2.right + gl.L(48.0f)) - vx8Var.h()) - L2 < 0.0f) {
+                vx8Var.G = Math.max(0.0f, (L2 + vx8Var.h()) - rectF2.right);
             } else {
-                f4 = f13;
-                f5 = f14;
-                f6 = f15;
-                r33 = r12;
-                r22 = r13;
+                vx8Var.G = gl.L(48.0f);
             }
-            int width = bitmap.getWidth();
-            int height = bitmap.getHeight();
-            int i14 = r22 != false ? 3 : 1;
-            int i15 = r33 != false ? 3 : 1;
-            int[] iArr2 = m;
-            iArr2[0] = 0;
-            float f23 = ceil;
-            float[] fArr6 = o;
-            fArr6[0] = f4 - f23;
-            if (r22 != false) {
-                iArr2[1] = ceil + ceil2;
-                iArr2[2] = (width - ceil) - ceil2;
-                float f24 = ceil2;
-                fArr6[1] = f4 + f24;
-                fArr6[2] = f6 - f24;
-            }
-            iArr2[i14] = width;
-            fArr6[i14] = f6 + f23;
-            int[] iArr3 = n;
-            iArr3[0] = 0;
-            float[] fArr7 = p;
-            fArr7[0] = f5 - f23;
-            if (r33 != false) {
-                iArr3[1] = ceil + ceil2;
-                iArr3[2] = (height - ceil) - ceil2;
-                float f25 = ceil2;
-                fArr7[1] = f5 + f25;
-                fArr7[2] = f16 - f25;
-            }
-            iArr3[i15] = height;
-            fArr7[i15] = f16 + f23;
-            int min2 = (int) (Math.min(1.0f, f3) * 255.0f);
-            Paint paint3 = j;
-            paint3.setAlpha(min2);
-            int i16 = 0;
-            while (i16 < i15) {
-                int i17 = 0;
-                while (i17 < i14) {
-                    int i18 = iArr2[i17];
-                    int i19 = iArr3[i16];
-                    int i20 = i17 + 1;
-                    int i21 = iArr2[i20];
-                    int i22 = i16 + 1;
-                    int i23 = iArr3[i22];
-                    int i24 = i16;
-                    Rect rect = k;
-                    rect.set(i18, i19, i21, i23);
-                    float f26 = fArr6[i17];
-                    float f27 = fArr7[i24];
-                    float f28 = fArr6[i20];
-                    float f29 = fArr7[i22];
-                    RectF rectF5 = l;
-                    rectF5.set(f26, f27, f28, f29);
-                    canvas.drawBitmap(bitmap, rect, rectF5, paint3);
-                    i17 = i20;
-                    i16 = i24;
+            vx8Var.a0.start();
+            vx8Var.T = true;
+        }
+        zk0 zk0Var2 = vx8Var.Q;
+        float f11 = 53.0f;
+        sx8[] sx8VarArr = vx8Var.x;
+        int i9 = 2;
+        RectF rectF3 = vx8Var.r;
+        if (zk0Var2 != null && !z) {
+            zk0Var2.setBounds((int) rectF3.left, (int) (rectF3.top - gl.L(30.0f)), (int) rectF3.right, (int) rectF3.bottom);
+            vx8Var.Q.i = (int) ((1.0f - ux8.c.getInterpolation(vx8Var.I)) * 255.0f);
+            vx8Var.Q.draw(canvas);
+            if (vx8Var.S != -1) {
+                float interpolation = 1.0f - ux8.e.getInterpolation(vx8Var.I);
+                float interpolation2 = ux8.d.getInterpolation(vx8Var.I);
+                float centerX = rectF3.centerX() + (gl.L(53.0f) * (vx8Var.S - 2));
+                float centerY = rectF3.centerY();
+                float f12 = vx8Var.Y;
+                float f13 = vx8Var.Z;
+                float f14 = (centerX + f12) / 2.0f;
+                t11 t11Var = vx8Var.X;
+                float min = (t11Var == null || !t11Var.top) ? Math.min(centerY, f13) - gl.L(15.0f) : Math.max(centerY, f13) + gl.L(15.0f);
+                float g = g(centerX, f12, interpolation2);
+                double d = centerX;
+                double d2 = centerY;
+                double d3 = f12;
+                double d4 = f13;
+                double d5 = f14;
+                double d6 = d3 - d;
+                double d7 = ((d3 * d) + ((d5 * d5) - (d3 * d5))) - (d5 * d);
+                double d8 = d7 == 0.0d ? 0.0d : ((min - (((d4 - d2) * (d5 - d)) / d6)) - d2) / d7;
+                double d9 = d * d;
+                double d10 = d6 != 0.0d ? ((d4 - (((d3 * d3) - d9) * d8)) - d2) / d6 : 0.0d;
+                double g2 = g(centerX, f12, interpolation2);
+                float f15 = (float) ((d10 * g2) + (d8 * g2 * g2) + ((d2 - (d9 * d8)) - (d10 * d)));
+                float g3 = g((gl.L(42.0f) / 2.0f) + gl.L(2.0f), gl.L(12.0f), interpolation2);
+                final sx8 sx8Var2 = sx8VarArr[vx8Var.S];
+                if (sx8Var2.e == null) {
+                    final byte b3 = 1;
+                    zk0 zk0Var3 = new zk0(new yk0() { // from class: rx8
+                        @Override // yk0
+                        public final void s(Canvas canvas2, int i10) {
+                            switch (b3) {
+                                case 0:
+                                    sx8 sx8Var3 = sx8Var2;
+                                    sx8Var3.getClass();
+                                    canvas2.save();
+                                    canvas2.translate(-sx8Var3.i, -sx8Var3.j);
+                                    float f16 = sx8Var3.i;
+                                    float f17 = sx8Var3.j;
+                                    float f18 = i10 / 255.0f;
+                                    RectF rectF4 = gl.P;
+                                    float L3 = gl.L(21.0f) / 2.0f;
+                                    rectF4.set(f16, f17, sx8Var3.h.getWidth() + f16 + (gl.L(8.0f) << 1), gl.L(21.0f) + f17);
+                                    gb2 gb2Var2 = sx8Var3.b;
+                                    boolean i22 = gb2Var2.i2();
+                                    Paint paint = sx8Var3.g;
+                                    if (paint != null) {
+                                        int alpha = paint.getAlpha();
+                                        paint.setAlpha((int) (255.0f * f18));
+                                        canvas2.drawRoundRect(rectF4, L3, L3, paint);
+                                        paint.setAlpha(alpha);
+                                    } else {
+                                        Point point = gl.q;
+                                        gb2Var2.A(0.0f, 0.0f, point.x, point.y);
+                                        Paint c2 = gb2Var2.c2("paintChatActionBackground");
+                                        int alpha2 = c2.getAlpha();
+                                        c2.setAlpha((int) ((i22 ? alpha2 : 229.5f) * f18));
+                                        canvas2.drawRoundRect(rectF4, L3, L3, c2);
+                                        c2.setAlpha(alpha2);
+                                    }
+                                    if (i22 || paint != null) {
+                                        int alpha3 = bkb.g2.getAlpha();
+                                        bkb.g2.setAlpha((int) (alpha3 * f18));
+                                        canvas2.drawRoundRect(rectF4, L3, L3, bkb.g2);
+                                        bkb.g2.setAlpha(alpha3);
+                                    }
+                                    canvas2.save();
+                                    canvas2.translate(f16 + gl.L(8.0f), ((gl.L(21.0f) - sx8Var3.h.getHeight()) / 2.0f) + f17);
+                                    int alpha4 = sx8Var3.h.getPaint().getAlpha();
+                                    sx8Var3.h.getPaint().setAlpha((int) (alpha4 * f18));
+                                    sx8Var3.h.draw(canvas2);
+                                    sx8Var3.h.getPaint().setAlpha(alpha4);
+                                    canvas2.restore();
+                                    canvas2.restore();
+                                    break;
+                                default:
+                                    float L4 = gl.L(21.0f);
+                                    sx8Var2.a(L4, L4, L4, i10 / 255.0f, canvas2);
+                                    break;
+                            }
+                        }
+                    });
+                    sx8Var2.e = zk0Var3;
+                    zk0Var3.a(gl.L(42.0f), gl.L(42.0f), 4.0f, gl.L(10.0f));
                 }
-                i16++;
+                canvas.save();
+                canvas.translate(g - g3, f15 - g3);
+                canvas.scale(g3 / gl.L(21.0f), g3 / gl.L(21.0f));
+                zk0 zk0Var4 = sx8Var2.e;
+                zk0Var4.i = (int) (interpolation * 255.0f);
+                zk0Var4.draw(canvas);
+                canvas.restore();
+                return;
+            }
+            return;
+        }
+        float f16 = !z ? 1.0f - vx8Var.I : i / 255.0f;
+        float g4 = g(0.3f, 0.075f, ux8.k.getInterpolation(vx8Var.H));
+        Matrix matrix = vx8Var.d;
+        matrix.reset();
+        matrix.setScale(g4, g4);
+        matrix.postTranslate(0.0f, rectF3.bottom);
+        vx8Var.f.setLocalMatrix(matrix);
+        int interpolation3 = (int) (ux8.j.getInterpolation(vx8Var.H) * 255.0f * f16);
+        Paint paint = vx8Var.c;
+        paint.setAlpha(interpolation3);
+        RectF rectF4 = c0;
+        rectF4.set(rectF3);
+        float f17 = 8.0f;
+        rectF4.inset(-gl.L(8.0f), -gl.L(8.0f));
+        Rect rect = d0;
+        rectF4.round(rect);
+        Drawable drawable = vx8Var.y;
+        drawable.setAlpha((int) (f16 * 255.0f));
+        drawable.setBounds(rect);
+        drawable.draw(canvas);
+        boolean z3 = vx8Var.N;
+        RectF rectF5 = vx8Var.n;
+        if (z3) {
+            f = 16.0f;
+        } else {
+            f = 16.0f;
+            float interpolation4 = (ux8.f.getInterpolation(vx8Var.H) - ux8.g.getInterpolation(vx8Var.H)) * (-40.0f);
+            canvas.save();
+            canvas.translate(rectF5.left, rectF5.top);
+            canvas.rotate(interpolation4, gl.L(16.0f), gl.L(16.0f));
+            canvas.translate(-gb2Var.getSideButtonStartX(), -gb2Var.getSideButtonStartY());
+            gb2Var.x1(canvas, true);
+            canvas.restore();
+        }
+        if (!vx8Var.R || vx8Var.N) {
+            float min2 = Math.min(rectF3.width(), rectF3.height()) / 2.0f;
+            float min3 = Math.min(rectF5.width(), rectF5.height()) / 2.0f;
+            canvas.drawRoundRect(rectF3, min2, min2, paint);
+            if (!vx8Var.N) {
+                canvas.drawRoundRect(rectF5, min3, min3, paint);
+            }
+        } else {
+            canvas.drawPath(vx8Var.e, paint);
+        }
+        float interpolation5 = ux8.t.getInterpolation(vx8Var.H) * gl.L(2.0f);
+        float interpolation6 = ((ux8.q.getInterpolation(vx8Var.H) * gl.L(44.0f)) / 2.0f) - interpolation5;
+        float interpolation7 = ((ux8.r.getInterpolation(vx8Var.H) * gl.L(44.0f)) / 2.0f) - interpolation5;
+        float interpolation8 = ((ux8.s.getInterpolation(vx8Var.H) * gl.L(44.0f)) / 2.0f) - interpolation5;
+        int i10 = 0;
+        while (i10 < i9) {
+            int i11 = b2;
+            while (i11 < sx8VarArr.length) {
+                if (!(i10 == 0 && i11 == vx8Var.S) && (i10 != 1 || i11 == vx8Var.S)) {
+                    f2 = f17;
+                    float length = i11 - ((sx8VarArr.length / 2.0f) - 0.5f);
+                    float f18 = i11 == i9 ? interpolation6 : (i11 == 1 || i11 == 3) ? interpolation7 : interpolation8;
+                    float L3 = (gl.L(f11) * length) + rectF3.centerX();
+                    float centerY2 = rectF3.centerY();
+                    sx8 sx8Var3 = sx8VarArr[i11];
+                    float L4 = gl.L(f);
+                    float measuredWidth = wx8Var2.getMeasuredWidth() - gl.L(f);
+                    wx8Var = wx8Var2;
+                    float f19 = rectF3.left;
+                    f3 = interpolation8;
+                    float f20 = rectF3.right;
+                    if (i11 == vx8Var.S && vx8Var.P) {
+                        f4 = L3;
+                        i2 = i11;
+                        sx8Var = sx8Var3;
+                        f5 = measuredWidth;
+                        i3 = 2;
+                        rectF = rectF3;
+                        f6 = f16;
+                    } else {
+                        sx8Var3.getClass();
+                        float L5 = (gl.L(2.0f) * sx8Var3.o) + f18;
+                        i2 = i11;
+                        sx8Var = sx8Var3;
+                        f5 = measuredWidth;
+                        i3 = 2;
+                        rectF = rectF3;
+                        f6 = f16;
+                        f4 = L3;
+                        sx8Var.a(f4, centerY2, L5, f6, canvas);
+                    }
+                    float f21 = sx8Var.o;
+                    i4 = i2;
+                    if (f21 <= 0.0f || sx8Var.h == null) {
+                        b = 0;
+                    } else {
+                        float f22 = (f21 * 0.15f) + 0.85f;
+                        canvas.save();
+                        canvas.scale(f22, f22, f4, centerY2);
+                        float f23 = sx8Var.o * f6;
+                        float width = sx8Var.h.getWidth() + (gl.L(f2) << 1);
+                        sx8Var.i = sx8.b(sx8.b(f4, width, f19, f20), width, L4, f5) - (width / 2.0f);
+                        sx8Var.j = centerY2 - gl.L(58.0f);
+                        if (sx8Var.f == null) {
+                            vx8 vx8Var2 = sx8Var.a;
+                            if (!vx8Var2.U) {
+                                sx8Var.g = vx8Var2.M;
+                                b = 0;
+                                zk0 zk0Var5 = new zk0(new yk0() { // from class: rx8
+                                    @Override // yk0
+                                    public final void s(Canvas canvas2, int i102) {
+                                        switch (b) {
+                                            case 0:
+                                                sx8 sx8Var32 = sx8Var;
+                                                sx8Var32.getClass();
+                                                canvas2.save();
+                                                canvas2.translate(-sx8Var32.i, -sx8Var32.j);
+                                                float f162 = sx8Var32.i;
+                                                float f172 = sx8Var32.j;
+                                                float f182 = i102 / 255.0f;
+                                                RectF rectF42 = gl.P;
+                                                float L32 = gl.L(21.0f) / 2.0f;
+                                                rectF42.set(f162, f172, sx8Var32.h.getWidth() + f162 + (gl.L(8.0f) << 1), gl.L(21.0f) + f172);
+                                                gb2 gb2Var2 = sx8Var32.b;
+                                                boolean i22 = gb2Var2.i2();
+                                                Paint paint2 = sx8Var32.g;
+                                                if (paint2 != null) {
+                                                    int alpha = paint2.getAlpha();
+                                                    paint2.setAlpha((int) (255.0f * f182));
+                                                    canvas2.drawRoundRect(rectF42, L32, L32, paint2);
+                                                    paint2.setAlpha(alpha);
+                                                } else {
+                                                    Point point = gl.q;
+                                                    gb2Var2.A(0.0f, 0.0f, point.x, point.y);
+                                                    Paint c2 = gb2Var2.c2("paintChatActionBackground");
+                                                    int alpha2 = c2.getAlpha();
+                                                    c2.setAlpha((int) ((i22 ? alpha2 : 229.5f) * f182));
+                                                    canvas2.drawRoundRect(rectF42, L32, L32, c2);
+                                                    c2.setAlpha(alpha2);
+                                                }
+                                                if (i22 || paint2 != null) {
+                                                    int alpha3 = bkb.g2.getAlpha();
+                                                    bkb.g2.setAlpha((int) (alpha3 * f182));
+                                                    canvas2.drawRoundRect(rectF42, L32, L32, bkb.g2);
+                                                    bkb.g2.setAlpha(alpha3);
+                                                }
+                                                canvas2.save();
+                                                canvas2.translate(f162 + gl.L(8.0f), ((gl.L(21.0f) - sx8Var32.h.getHeight()) / 2.0f) + f172);
+                                                int alpha4 = sx8Var32.h.getPaint().getAlpha();
+                                                sx8Var32.h.getPaint().setAlpha((int) (alpha4 * f182));
+                                                sx8Var32.h.draw(canvas2);
+                                                sx8Var32.h.getPaint().setAlpha(alpha4);
+                                                canvas2.restore();
+                                                canvas2.restore();
+                                                break;
+                                            default:
+                                                float L42 = gl.L(21.0f);
+                                                sx8Var.a(L42, L42, L42, i102 / 255.0f, canvas2);
+                                                break;
+                                        }
+                                    }
+                                });
+                                sx8Var.f = zk0Var5;
+                                zk0Var5.a((int) width, gl.L(21.0f), 3.0f, gl.L(4.0f));
+                                zk0Var = sx8Var.f;
+                                if (zk0Var != null) {
+                                    float f24 = sx8Var.i;
+                                    float f25 = sx8Var.j;
+                                    zk0Var.setBounds((int) f24, (int) f25, (int) (f24 + width), (int) (f25 + gl.L(21.0f)));
+                                    zk0 zk0Var6 = sx8Var.f;
+                                    zk0Var6.i = (int) (f23 * 255.0f);
+                                    zk0Var6.draw(canvas);
+                                }
+                                canvas.restore();
+                            }
+                        }
+                        b = 0;
+                        zk0Var = sx8Var.f;
+                        if (zk0Var != null) {
+                        }
+                        canvas.restore();
+                    }
+                } else {
+                    i4 = i11;
+                    i3 = i9;
+                    rectF = rectF3;
+                    wx8Var = wx8Var2;
+                    f3 = interpolation8;
+                    b = b2;
+                    f2 = f17;
+                    f6 = f16;
+                }
+                i11 = i4 + 1;
+                vx8Var = this;
+                f17 = f2;
+                f16 = f6;
+                b2 = b;
+                rectF3 = rectF;
+                i9 = i3;
+                wx8Var2 = wx8Var;
+                interpolation8 = f3;
+                f11 = 53.0f;
+            }
+            i10++;
+            vx8Var = this;
+            rectF3 = rectF3;
+            wx8Var2 = wx8Var2;
+            f11 = 53.0f;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    public final int h() {
+        return gl.L((53 * this.x.length) + 7);
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ObjectAnimator objectAnimator = this.a0;
+        lw8 lw8Var = this.b;
+        if (animator == objectAnimator) {
+            this.E.setHideSideButtonByQuickShare(false);
+            this.N = true;
+            invalidateSelf();
+            if (this.O) {
+                lw8Var.run();
+                return;
+            }
+            return;
+        }
+        if (animator == this.b0) {
+            this.O = true;
+            invalidateSelf();
+            t11 t11Var = this.X;
+            if (t11Var != null) {
+                t11Var.a.setVisibility(0);
+            }
+            if (this.N) {
+                lw8Var.run();
             }
         }
-        return true;
     }
 
-    public static void b(Canvas canvas, RectF rectF, float f2) {
-        float f3 = rectF.left;
-        float f4 = rectF.top;
-        float f5 = rectF.right;
-        float min = Math.min(rectF.height(), gm.L(40.0f)) + f4;
-        RectF rectF2 = e;
-        rectF2.set(f3, f4, f5, min);
-        int max = (int) (Math.max(0.0f, Math.min(1.0f, f2)) * 255.0f * 0.3125f);
-        Paint paint = c;
-        paint.setAlpha(max);
-        canvas.drawBitmap(d(), (Rect) null, rectF2, paint);
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
     }
 
-    public static void c(Canvas canvas, RectF rectF, float f2, float f3) {
-        Bitmap d2 = d();
-        BitmapShader bitmapShader = b;
-        Paint paint = d;
-        if (bitmapShader == null) {
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader2 = new BitmapShader(d2, tileMode, tileMode);
-            b = bitmapShader2;
-            paint.setShader(bitmapShader2);
-        }
-        float width = rectF.width() / d2.getWidth();
-        float min = Math.min(rectF.height(), gm.L(40.0f)) / d2.getHeight();
-        Matrix matrix = f;
-        matrix.setScale(width, min);
-        matrix.postTranslate(rectF.left, rectF.top);
-        b.setLocalMatrix(matrix);
-        paint.setAlpha((int) (Math.max(0.0f, Math.min(1.0f, f3)) * 255.0f * 0.3125f));
-        canvas.drawRoundRect(rectF, f2, f2, paint);
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationRepeat(Animator animator) {
     }
 
-    public static Bitmap d() {
-        Bitmap bitmap = a;
-        if (bitmap != null) {
-            return bitmap;
-        }
-        int[] iArr = new int[64];
-        for (int i2 = 0; i2 < 64; i2++) {
-            iArr[i2] = (((int) (((1.0f - ((i2 + 0.5f) / 64.0f)) * 64.0f) + 0.5f)) << 24) | 16777215;
-        }
-        Bitmap createBitmap = Bitmap.createBitmap(iArr, 1, 64, Bitmap.Config.ARGB_8888);
-        a = createBitmap;
-        return createBitmap;
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

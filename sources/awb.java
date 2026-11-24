@@ -1,74 +1,40 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import j$.util.Objects;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class awb extends View {
-    public final bwb a;
-    public qac b;
-    public final ylb c;
-    public int d;
+public final /* synthetic */ class awb implements k8c {
+    public final /* synthetic */ lwb a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Boolean d;
 
-    public awb(int i, ylb ylbVar, Context context) {
-        super(context);
-        this.c = ylbVar;
-        bwb bwbVar = new bwb(i, this, ylbVar, false);
-        this.a = bwbVar;
-        bwbVar.s = new zcb(this, (byte) 19);
+    public /* synthetic */ awb(lwb lwbVar, String str, long j, Boolean bool) {
+        this.a = lwbVar;
+        this.b = str;
+        this.c = j;
+        this.d = bool;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        ylb ylbVar = this.c;
-        if (ylbVar != null) {
-            ylbVar.b(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        } else {
-            cmb.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    @Override // k8c
+    public final void a(Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = (ArrayList) obj;
+        oub oubVar = (oub) obj2;
+        Integer num = (Integer) obj3;
+        lwb lwbVar = this.a;
+        ArrayList arrayList2 = lwbVar.N;
+        lwbVar.O = 0;
+        if (this.b.equals(lwbVar.M)) {
+            if (this.c == lwbVar.V) {
+                if (Objects.equals(this.d, lwbVar.W)) {
+                    arrayList2.addAll(arrayList);
+                    lwbVar.Q = oubVar;
+                    lwbVar.R = oubVar == null || arrayList2.size() >= num.intValue();
+                    lwbVar.n();
+                }
+            }
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(33.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(k47 k47Var) {
-        bwb bwbVar = this.a;
-        bwbVar.e(k47Var);
-        if (isAttachedToWindow()) {
-            bwbVar.a();
-        }
-    }
-
-    public void setBackgroundHeight(int i) {
-        this.d = i;
-    }
-
-    public void setOnTopicClickListener(qac qacVar) {
-        this.b = qacVar;
     }
 }

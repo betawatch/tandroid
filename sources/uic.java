@@ -1,82 +1,127 @@
 // default package
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.transition.TransitionSet;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class uic extends LinearLayout {
-    public HashMap a;
-    public ArrayList b;
-    public ArrayList c;
-    public TransitionSet d;
-    public boolean e;
-    public boolean f;
-    public Runnable h;
-    public lhc n;
-    public TextPaint r;
+public final /* synthetic */ class uic implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yic b;
 
-    public final void a(int i, String str, String str2) {
-        HashMap hashMap = this.a;
-        if (hashMap.get(str2) != null) {
-            return;
-        }
-        tic ticVar = new tic(getContext(), this.n, i);
-        ticVar.a = str2;
-        int L = gm.q.x - gm.L(120.0f);
-        TextView textView = ticVar.c;
-        StaticLayout c = oya.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
-        if (c != null) {
-            L = 0;
-            for (int i2 = 0; i2 < c.getLineCount(); i2++) {
-                L = (int) Math.max(L, Math.ceil(c.getLineWidth(i2)));
-            }
-        }
-        textView.setMaxWidth(L);
-        textView.setText(str);
-        ticVar.b.setImageResource(i);
-        hashMap.put(str2, ticVar);
-        if (this.e) {
-            this.b.add(ticVar);
-        } else {
-            this.f = true;
-            addView(ticVar, qoe.t(-2, -2, 1, 4, 0, 0, 4));
-        }
+    public /* synthetic */ uic(yic yicVar, byte b) {
+        this.a = b;
+        this.b = yicVar;
     }
 
-    public final CharSequence b(String str) {
-        return str == null ? "" : TextUtils.ellipsize(str, this.r, gm.L(300.0f), TextUtils.TruncateAt.END);
-    }
-
-    public final void c(String str) {
-        tic ticVar = (tic) this.a.remove(str);
-        this.n.m.remove(ticVar);
-        if (ticVar != null) {
-            if (!this.e) {
-                this.f = true;
-                removeView(ticVar);
-            } else {
-                if (this.b.remove(ticVar)) {
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        yic yicVar;
+        byte b = this.a;
+        yic yicVar2 = this.b;
+        switch (b) {
+            case 0:
+                if (!yicVar2.R && yicVar2.W <= 0.0f && (yicVar = ((gjc) yicVar2.a.e).K) != null) {
+                    gl.B2(yicVar);
+                    break;
                 }
-                this.c.add(ticVar);
-            }
+                break;
+            default:
+                if (yicVar2.f0 == 0) {
+                    yicVar2.f0 = -1;
+                    yicVar2.invalidate();
+                    byte b2 = 3;
+                    try {
+                        yicVar2.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    gjc gjcVar = (gjc) yicVar2.a.e;
+                    String trim = gjcVar.n.trim();
+                    if (!trim.isEmpty() && gjcVar.c == 4) {
+                        c cVar = gjcVar.b;
+                        bjc bjcVar = new bjc(gjcVar, b2);
+                        yic yicVar3 = gjcVar.K;
+                        ChatActivityEnterView chatActivityEnterView = cVar.a;
+                        int i = ChatActivityEnterView.r7;
+                        wjb wjbVar = chatActivityEnterView.L4;
+                        mu1 mu1Var = chatActivityEnterView.F3;
+                        ow1 ow1Var = chatActivityEnterView.K0;
+                        if (ow1Var != null && ow1Var.getWidth() > 0) {
+                            j47 j47Var = chatActivityEnterView.M0;
+                            if (j47Var != null) {
+                                j47Var.f(false);
+                            }
+                            gl.r(chatActivityEnterView.e6);
+                            ix1 ix1Var = new ix1(chatActivityEnterView, chatActivityEnterView.getContext(), wjbVar, yicVar3);
+                            chatActivityEnterView.M0 = ix1Var;
+                            ix1Var.setOnDismissListener(new dv1(chatActivityEnterView, (byte) 0));
+                            qx qxVar = yicVar3 != null ? new qx(yicVar3) : null;
+                            boolean[] zArr = new boolean[1];
+                            if (qxVar != null) {
+                                j47 j47Var2 = chatActivityEnterView.M0;
+                                xf4 xf4Var = new xf4();
+                                xf4Var.c = zArr;
+                                xf4Var.d = qxVar;
+                                xf4Var.b = new float[4];
+                                j47Var2.m0 = xf4Var;
+                                j47Var2.n0 = qxVar;
+                            }
+                            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                            tL_message.out = true;
+                            tL_message.peer_id = na7.q1(chatActivityEnterView.R).w1(chatActivityEnterView.G3);
+                            tL_message.from_id = na7.q1(chatActivityEnterView.R).w1(y6c.h(chatActivityEnterView.R).e());
+                            CharSequence[] charSequenceArr = {new SpannableStringBuilder(trim)};
+                            k27.d(charSequenceArr[0], true);
+                            tL_message.entities.addAll(hq6.d0(chatActivityEnterView.R).Y(charSequenceArr, true, true));
+                            tL_message.message = charSequenceArr[0].toString();
+                            k27 k27Var = chatActivityEnterView.J3;
+                            if (k27Var != null && !k27Var.p) {
+                                TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
+                                k27 k27Var2 = chatActivityEnterView.K3;
+                                if (k27Var2 != null) {
+                                    tL_messageReplyHeader.flags |= 2;
+                                    tL_messageReplyHeader.reply_to_top_id = k27Var2.e1();
+                                }
+                                tL_messageReplyHeader.flags |= 16;
+                                tL_messageReplyHeader.reply_to_msg_id = chatActivityEnterView.J3.e1();
+                                tL_message.reply_to = tL_messageReplyHeader;
+                            }
+                            k27 k27Var3 = new k27(chatActivityEnterView.R, tL_message, false, false);
+                            k27 k27Var4 = chatActivityEnterView.J3;
+                            if (k27Var4 != null && !k27Var4.p) {
+                                k27Var3.C = k27Var4;
+                            }
+                            k27Var3.B0 = true;
+                            k27Var3.W2 = Boolean.TRUE;
+                            k27Var3.D = 0;
+                            k27Var3.n0(null);
+                            k27Var3.w1 = true;
+                            chatActivityEnterView.M0.r(tb4.t(k27Var3));
+                            ev1 ev1Var = new ev1(chatActivityEnterView, zArr, bjcVar, trim, (byte) 0);
+                            chatActivityEnterView.M0.s(ow1Var, true, new x91(ev1Var, (byte) 8));
+                            if (chatActivityEnterView.G3 >= 0) {
+                                chatActivityEnterView.M0.a(mu1Var);
+                                chatActivityEnterView.M0.p(chatActivityEnterView.O6);
+                            }
+                            cs5 G = cs5.G(chatActivityEnterView, wjbVar, ow1Var);
+                            boolean z = mu1Var != null && l7c.D(mu1Var.h());
+                            if (mu1Var != null && mu1Var.H4()) {
+                                G.b(R.drawable.msg_calendar2, k96.M0(z ? 2131745322 : 2131745667, null), new aj1(chatActivityEnterView, ev1Var, (byte) 25), false);
+                            }
+                            if (!z && (chatActivityEnterView.H0 <= 0 || chatActivityEnterView.c())) {
+                                G.b(R.drawable.input_notify_off, k96.M0(2131745391, null), new hq1(ev1Var, (byte) 7), false);
+                            }
+                            G.Z();
+                            chatActivityEnterView.M0.q(G);
+                            chatActivityEnterView.M0.show();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-    }
-
-    public int getChildsHight() {
-        int childCount = getChildCount();
-        return hg9.y(32.0f, childCount, childCount > 0 ? gm.L(16.0f) : 0);
-    }
-
-    public void setOnViewsUpdated(Runnable runnable) {
-        this.h = runnable;
     }
 }

@@ -1,44 +1,30 @@
 // default package
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class z51 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class z51 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ b61 b;
+    public final /* synthetic */ r61 b;
+    public final /* synthetic */ p c;
+    public final /* synthetic */ h61 d;
 
-    public /* synthetic */ z51(b61 b61Var, byte b) {
+    public /* synthetic */ z51(r61 r61Var, p pVar, h61 h61Var, byte b) {
         this.a = b;
-        this.b = b61Var;
+        this.b = r61Var;
+        this.c = pVar;
+        this.d = h61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        b61 b61Var = this.b;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                b61Var.U = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                b61Var.invalidate();
-                break;
-            case 1:
-                b61Var.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b61Var.invalidate();
-                break;
-            case 2:
-                b61Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b61Var.invalidate();
-                break;
-            case 3:
-                b61Var.getClass();
-                b61Var.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b61Var.invalidate();
+                Utilities.e.c(new z51(this.b, this.c, this.d, (byte) 1));
                 break;
             default:
-                b61Var.getClass();
-                b61Var.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b61Var.invalidate();
+                this.b.f0(this.c, this.d);
                 break;
         }
     }

@@ -1,84 +1,118 @@
 // default package
 
-import android.util.SparseIntArray;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class sj6 extends age {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public final SparseIntArray h = new SparseIntArray();
-    public final SparseIntArray i = new SparseIntArray();
-    public final ArrayList j = new ArrayList();
-    public final ArrayList k = new ArrayList();
-    public final /* synthetic */ ak6 l;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class sj6 implements jd7 {
+    public final String a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
 
-    public sj6(ak6 ak6Var) {
-        this.l = ak6Var;
-    }
-
-    public static void f(int i, int i2, SparseIntArray sparseIntArray) {
-        if (i2 >= 0) {
-            sparseIntArray.put(i2, i);
+    public sj6(String str, byte[] bArr, int i, int i2) {
+        boolean z;
+        byte b;
+        str.getClass();
+        switch (str) {
+            case "com.android.capture.fps":
+                if (i2 == 23 && bArr.length == 4) {
+                    z = true;
+                }
+                gre.f(z);
+                break;
+            case "auxiliary.tracks.interleaved":
+                if (i2 == 75 && bArr.length == 1 && ((b = bArr[0]) == 0 || b == 1)) {
+                    z = true;
+                }
+                gre.f(z);
+                break;
+            case "auxiliary.tracks.length":
+            case "auxiliary.tracks.offset":
+                if (i2 == 78 && bArr.length == 8) {
+                    z = true;
+                }
+                gre.f(z);
+                break;
+            case "auxiliary.tracks.map":
+                gre.f(i2 == 0);
+                break;
         }
+        this.a = str;
+        this.b = bArr;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // age
-    public final boolean a(int i, int i2) {
-        return b(i, i2);
+    @Override // jd7
+    public final fm4 a() {
+        return null;
     }
 
-    @Override // age
-    public final boolean b(int i, int i2) {
-        int i3;
-        int i4;
-        int i5 = this.b;
-        ak6 ak6Var = this.l;
-        if (((i >= i5 && i < this.c) || (i >= this.d && i < this.e)) && ((i2 >= (i4 = ak6Var.E) && i2 < ak6Var.F) || (i2 >= ak6Var.I && i2 < ak6Var.J))) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i2 < i4 || i2 >= ak6Var.F) ? (TLRPC.TL_chatInviteExported) ak6Var.k0.get(i2 - ak6Var.I) : (TLRPC.TL_chatInviteExported) ak6Var.j0.get(i2 - i4);
-            int i6 = this.b;
-            return ((i < i6 || i >= this.c) ? (TLRPC.TL_chatInviteExported) this.k.get(i - this.d) : (TLRPC.TL_chatInviteExported) this.j.get(i - i6)).link.equals(tL_chatInviteExported.link);
+    @Override // jd7
+    public final byte[] c() {
+        return null;
+    }
+
+    public final ArrayList d() {
+        gre.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
+        byte[] bArr = this.b;
+        byte b = bArr[1];
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < b; i = tb4.g(bArr[i + 2] & 255, i, 1, arrayList)) {
         }
-        int i7 = this.f;
-        if (i >= i7 && i < this.g && i2 >= (i3 = ak6Var.V) && i2 < ak6Var.W) {
-            return i - i7 == i2 - i3;
+        return arrayList;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        int i8 = this.h.get(i, -1);
-        return i8 >= 0 && i8 == this.i.get(i2, -1);
+        if (obj == null || sj6.class != obj.getClass()) {
+            return false;
+        }
+        sj6 sj6Var = (sj6) obj;
+        return this.a.equals(sj6Var.a) && Arrays.equals(this.b, sj6Var.b) && this.c == sj6Var.c && this.d == sj6Var.d;
     }
 
-    @Override // age
-    public final int c() {
-        return this.l.Y;
+    public final int hashCode() {
+        return ((((Arrays.hashCode(this.b) + ir2.j(527, 31, this.a)) * 31) + this.c) * 31) + this.d;
     }
 
-    @Override // age
-    public final int d() {
-        return this.a;
+    public final String toString() {
+        String sb;
+        String str = this.a;
+        byte[] bArr = this.b;
+        int i = this.d;
+        if (i == 0) {
+            if (str.equals("auxiliary.tracks.map")) {
+                ArrayList d = d();
+                StringBuilder r = tb4.r("track types = ");
+                new zb3(String.valueOf(',')).a(r, d.iterator());
+                sb = r.toString();
+            }
+            sb = g8c.g0(bArr);
+        } else if (i == 1) {
+            sb = g8c.r(bArr);
+        } else if (i == 23) {
+            gre.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb = String.valueOf(Float.intBitsToFloat(gle.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+        } else if (i == 67) {
+            gre.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb = String.valueOf(gle.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+        } else if (i != 75) {
+            if (i == 78) {
+                sb = String.valueOf(new xu7(bArr).G());
+            }
+            sb = g8c.g0(bArr);
+        } else {
+            sb = String.valueOf(bArr[0] & 255);
+        }
+        return tb4.q("mdta: key=", str, ", value=", sb);
     }
 
-    public final void e(SparseIntArray sparseIntArray) {
-        sparseIntArray.clear();
-        ak6 ak6Var = this.l;
-        f(1, ak6Var.r, sparseIntArray);
-        f(2, ak6Var.s, sparseIntArray);
-        f(3, ak6Var.w, sparseIntArray);
-        f(4, ak6Var.x, sparseIntArray);
-        f(5, ak6Var.y, sparseIntArray);
-        f(6, ak6Var.M, sparseIntArray);
-        f(7, ak6Var.O, sparseIntArray);
-        f(8, ak6Var.P, sparseIntArray);
-        f(9, ak6Var.R, sparseIntArray);
-        f(10, ak6Var.S, sparseIntArray);
-        f(11, ak6Var.T, sparseIntArray);
-        f(12, ak6Var.Q, sparseIntArray);
-        f(13, ak6Var.G, sparseIntArray);
+    @Override // jd7
+    public final void b(hr6 hr6Var) {
     }
 }

@@ -1,40 +1,49 @@
 // default package
 
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b7d implements lr2, OnSuccessListener, OnFailureListener {
-    public final /* synthetic */ byte a;
+public final class b7d implements i8d {
+    public final byte a;
 
-    public /* synthetic */ b7d(ie1 ie1Var) {
-        this.a = (byte) 3;
+    /* JADX WARN: Multi-variable type inference failed */
+    public b7d(int i) {
+        this.a = i;
     }
 
-    @Override // lr2
-    public final Object X(sm2 sm2Var) {
-        switch (this.a) {
-            case 0:
-                return new kg7((byte) 0);
-            default:
-                return new n89(sm2Var.N(m89.class));
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return i8d.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof i8d)) {
+            return false;
+        }
+        i8d i8dVar = (i8d) obj;
+        return this.a == i8dVar.zza() && c8d.a.equals(i8dVar.zzb());
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        Log.e("OptionalModuleUtils", "Failed to request modules install request", exc);
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (c8d.a.hashCode() ^ 2041407134);
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        e1f.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + c8d.a + ')';
     }
 
-    public /* synthetic */ b7d(byte b) {
-        this.a = b;
+    @Override // i8d
+    public final int zza() {
+        return this.a;
+    }
+
+    @Override // i8d
+    public final c8d zzb() {
+        return c8d.a;
     }
 }

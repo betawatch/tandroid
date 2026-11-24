@@ -32,12 +32,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class PopupNotificationActivity extends Activity implements jm7 {
+public class PopupNotificationActivity extends Activity implements gk7 {
     public static final /* synthetic */ int c0 = 0;
     public LinearLayout E;
-    public nh8 F;
+    public lf8 F;
     public int L;
     public TLRPC.User N;
     public TLRPC.Chat O;
@@ -45,12 +45,12 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     public org.telegram.ui.ActionBar.a a;
     public boolean a0;
     public ChatActivityEnterView b;
-    public bf0 c;
+    public be0 c;
     public TextView d;
     public TextView e;
     public FrameLayout f;
     public TextView h;
-    public ne6 n;
+    public oc6 n;
     public ViewGroup r;
     public ViewGroup s;
     public ViewGroup w;
@@ -60,11 +60,11 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     public final ArrayList H = new ArrayList();
     public final ArrayList I = new ArrayList();
     public VelocityTracker J = null;
-    public final e0b[] K = new e0b[5];
+    public final bya[] K = new bya[5];
     public int M = -1;
     public boolean P = false;
-    public k47 R = null;
-    public final k47[] S = new k47[3];
+    public k27 R = null;
+    public final k27[] S = new k27[3];
     public int T = 0;
     public PowerManager.WakeLock U = null;
     public boolean V = false;
@@ -75,7 +75,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     public final ArrayList b0 = new ArrayList();
 
     public final void a(int i) {
-        int L = gm.q.x - gm.L(24.0f);
+        int L = gl.q.x - gl.L(24.0f);
         ViewGroup viewGroup = this.s;
         if (viewGroup != null) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewGroup.getLayoutParams();
@@ -119,28 +119,28 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     }
 
     public final void b() {
-        TLRPC.User W1;
-        k47 k47Var = this.R;
-        if (k47Var != null) {
-            int i = k47Var.K1;
+        TLRPC.User V1;
+        k27 k27Var = this.R;
+        if (k27Var != null) {
+            int i = k27Var.K1;
             if (this.O != null) {
-                TLRPC.Chat L0 = oc7.r1(i).L0(Long.valueOf(this.O.id));
-                if (L0 != null) {
-                    this.O = L0;
+                TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(this.O.id));
+                if (K0 != null) {
+                    this.O = K0;
                     if (this.c != null) {
-                        this.c.f(L0, new pc0(this.O));
+                        this.c.f(K0, new pb0(this.O));
                         return;
                     }
                     return;
                 }
                 return;
             }
-            if (this.N == null || (W1 = oc7.r1(i).W1(Long.valueOf(this.N.id))) == null) {
+            if (this.N == null || (V1 = na7.q1(i).V1(Long.valueOf(this.N.id))) == null) {
                 return;
             }
-            this.N = W1;
+            this.N = V1;
             if (this.c != null) {
-                this.c.f(W1, new pc0(0, this.N));
+                this.c.f(V1, new pb0(0, this.N));
             }
         }
     }
@@ -160,24 +160,24 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     public final void d() {
         FrameLayout frameLayout = this.f;
         if (frameLayout != null) {
-            frameLayout.getViewTreeObserver().addOnPreDrawListener(new ph8(this, (byte) 0));
+            frameLayout.getViewTreeObserver().addOnPreDrawListener(new nf8(this, (byte) 0));
         }
-        ne6 ne6Var = this.n;
-        if (ne6Var != null) {
-            ne6Var.getViewTreeObserver().addOnPreDrawListener(new ph8(this, (byte) 1));
+        oc6 oc6Var = this.n;
+        if (oc6Var != null) {
+            oc6Var.getViewTreeObserver().addOnPreDrawListener(new nf8(this, (byte) 1));
         }
     }
 
-    @Override // jm7
+    @Override // gk7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
         TextView textView;
-        kh8 kh8Var;
-        k47 messageObject;
-        kh8 kh8Var2;
-        k47 messageObject2;
-        k47 k47Var;
-        Integer valueOf = Integer.valueOf(nm7.W4);
-        if (i == nm7.I2) {
+        if8 if8Var;
+        k27 messageObject;
+        if8 if8Var2;
+        k27 messageObject2;
+        k27 k27Var;
+        Integer valueOf = Integer.valueOf(kk7.W4);
+        if (i == kk7.H2) {
             if (i2 == this.M) {
                 i();
                 finish();
@@ -186,15 +186,15 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             return;
         }
         int i3 = 0;
-        if (i == nm7.h4) {
+        if (i == kk7.f4) {
             if (this.a0) {
                 return;
             }
             ArrayList arrayList = this.b0;
             arrayList.clear();
             for (int i4 = 0; i4 < 4; i4++) {
-                if (z8c.h(i4).o()) {
-                    arrayList.addAll(lo7.n(i4).w);
+                if (y6c.h(i4).o()) {
+                    arrayList.addAll(im7.n(i4).w);
                 }
             }
             f();
@@ -209,11 +209,11 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     } else if (i6 == arrayList.size()) {
                         i6 = 0;
                     }
-                    k47Var = (k47) arrayList.get(i6);
+                    k27Var = (k27) arrayList.get(i6);
                 } else {
-                    k47Var = null;
+                    k27Var = null;
                 }
-                if (this.S[i5] != k47Var) {
+                if (this.S[i5] != k27Var) {
                     q(0);
                 }
             }
@@ -224,7 +224,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 return;
             }
             int intValue = ((Integer) objArr[0]).intValue();
-            int i7 = oc7.s5;
+            int i7 = na7.q5;
             if ((intValue & 1) != 0 || (intValue & 4) != 0 || (intValue & 16) != 0 || (intValue & 32) != 0) {
                 r();
             }
@@ -232,13 +232,13 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 b();
             }
             if ((intValue & 64) != 0) {
-                CharSequence B1 = oc7.r1(this.R.K1).B1(k47.B0(this.R.k), 0L, false);
+                CharSequence A1 = na7.q1(this.R.K1).A1(k27.B0(this.R.k), 0L, false);
                 CharSequence charSequence = this.Q;
                 if (charSequence != null) {
-                    if (B1 != null && charSequence.equals(B1)) {
+                    if (A1 != null && charSequence.equals(A1)) {
                         return;
                     }
-                } else if (B1 == null) {
+                } else if (A1 == null) {
                     return;
                 }
                 r();
@@ -246,15 +246,15 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             }
             return;
         }
-        if (i == nm7.f2) {
+        if (i == kk7.e2) {
             Integer num = (Integer) objArr[0];
-            ne6 ne6Var = this.n;
-            if (ne6Var != null) {
-                int childCount = ne6Var.getChildCount();
+            oc6 oc6Var = this.n;
+            if (oc6Var != null) {
+                int childCount = oc6Var.getChildCount();
                 while (i3 < childCount) {
                     View childAt = this.n.getChildAt(i3);
-                    if (((Integer) childAt.getTag()).intValue() == 3 && (messageObject2 = (kh8Var2 = (kh8) childAt.findViewWithTag(valueOf)).getMessageObject()) != null && messageObject2.K1 == i2 && messageObject2.e1() == num.intValue()) {
-                        kh8Var2.v();
+                    if (((Integer) childAt.getTag()).intValue() == 3 && (messageObject2 = (if8Var2 = (if8) childAt.findViewWithTag(valueOf)).getMessageObject()) != null && messageObject2.K1 == i2 && messageObject2.e1() == num.intValue()) {
+                        if8Var2.x();
                         return;
                     }
                     i3++;
@@ -263,15 +263,15 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             }
             return;
         }
-        if (i == nm7.e2) {
+        if (i == kk7.d2) {
             Integer num2 = (Integer) objArr[0];
-            ne6 ne6Var2 = this.n;
-            if (ne6Var2 != null) {
-                int childCount2 = ne6Var2.getChildCount();
+            oc6 oc6Var2 = this.n;
+            if (oc6Var2 != null) {
+                int childCount2 = oc6Var2.getChildCount();
                 while (i3 < childCount2) {
                     View childAt2 = this.n.getChildAt(i3);
-                    if (((Integer) childAt2.getTag()).intValue() == 3 && (messageObject = (kh8Var = (kh8) childAt2.findViewWithTag(valueOf)).getMessageObject()) != null && messageObject.K1 == i2 && messageObject.e1() == num2.intValue()) {
-                        kh8Var.w();
+                    if (((Integer) childAt2.getTag()).intValue() == 3 && (messageObject = (if8Var = (if8) childAt2.findViewWithTag(valueOf)).getMessageObject()) != null && messageObject.K1 == i2 && messageObject.e1() == num2.intValue()) {
+                        if8Var.y();
                         return;
                     }
                     i3++;
@@ -280,19 +280,19 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             }
             return;
         }
-        if (i != nm7.m4) {
-            if (i == nm7.N && i2 == this.M) {
+        if (i != kk7.k4) {
+            if (i == kk7.N && i2 == this.M) {
                 r();
                 return;
             }
             return;
         }
-        ne6 ne6Var3 = this.n;
-        if (ne6Var3 != null) {
-            int childCount3 = ne6Var3.getChildCount();
+        oc6 oc6Var3 = this.n;
+        if (oc6Var3 != null) {
+            int childCount3 = oc6Var3.getChildCount();
             while (i3 < childCount3) {
                 View childAt3 = this.n.getChildAt(i3);
-                if (((Integer) childAt3.getTag()).intValue() == 1 && (textView = (TextView) childAt3.findViewWithTag(Integer.valueOf(nm7.X4))) != null) {
+                if (((Integer) childAt3.getTag()).intValue() == 1 && (textView = (TextView) childAt3.findViewWithTag(Integer.valueOf(kk7.X4))) != null) {
                     textView.invalidate();
                 }
                 i3++;
@@ -315,10 +315,10 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         } else if (i3 == arrayList2.size()) {
             i3 = 0;
         }
-        k47 k47Var = (k47) arrayList2.get(i3);
-        TLRPC.Message message = k47Var.k;
+        k27 k27Var = (k27) arrayList2.get(i3);
+        TLRPC.Message message = k27Var.k;
         TLRPC.ReplyMarkup replyMarkup = message.reply_markup;
-        if (k47.B0(message) == 777000 && (replyMarkup instanceof TLRPC.TL_replyInlineMarkup)) {
+        if (k27.B0(message) == 777000 && (replyMarkup instanceof TLRPC.TL_replyInlineMarkup)) {
             ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList3 = ((TLRPC.TL_replyInlineMarkup) replyMarkup).rows;
             int size = arrayList3.size();
             i2 = 0;
@@ -326,7 +326,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = arrayList3.get(i5);
                 int size2 = keyboardInlineButtonRow.buttons.size();
                 for (int i6 = 0; i6 < size2; i6++) {
-                    if (kfb.c(keyboardInlineButtonRow.buttons.get(i6), TL_keyboard.TL_inlineButtonTypeCallback.class)) {
+                    if (jdb.c(keyboardInlineButtonRow.buttons.get(i6), TL_keyboard.TL_inlineButtonTypeCallback.class)) {
                         i2++;
                     }
                 }
@@ -334,7 +334,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         } else {
             i2 = 0;
         }
-        int i7 = k47Var.K1;
+        int i7 = k27Var.K1;
         if (i2 > 0 && (replyMarkup instanceof TLRPC.TL_replyInlineMarkup)) {
             ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList4 = ((TLRPC.TL_replyInlineMarkup) replyMarkup).rows;
             int size3 = arrayList4.size();
@@ -346,28 +346,28 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 int i9 = i4;
                 while (i9 < size4) {
                     TL_keyboard.KeyboardInlineButton keyboardInlineButton = keyboardInlineButtonRow2.buttons.get(i9);
-                    if (kfb.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class)) {
+                    if (jdb.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class)) {
                         if (linearLayout2 == null) {
                             linearLayout2 = new LinearLayout(this);
                             linearLayout2.setOrientation(i4);
                             arrayList = arrayList4;
-                            anb.h(cmb.c6, null, linearLayout2);
+                            zkb.h(bkb.c6, null, linearLayout2);
                             linearLayout2.setWeightSum(100.0f);
                             linearLayout2.setTag("b");
-                            linearLayout2.setOnTouchListener(new w02((byte) 21));
+                            linearLayout2.setOnTouchListener(new jz1((byte) 21));
                         } else {
                             arrayList = arrayList4;
                         }
                         TextView textView = new TextView(this);
                         textView.setTextSize(1, 16.0f);
-                        anb.X(textView, cmb.m6, null);
-                        textView.setTypeface(gm.o());
+                        zkb.X(textView, bkb.m6, null);
+                        textView.setTypeface(gl.o());
                         textView.setText(keyboardInlineButton.text.toUpperCase());
                         textView.setTag(keyboardInlineButton);
                         textView.setGravity(17);
-                        textView.setBackgroundDrawable(cmb.L0(true));
-                        linearLayout2.addView(textView, qoe.l(100.0f / i2, -1, -1));
-                        textView.setOnClickListener(new v0(i7, k47Var));
+                        textView.setBackgroundDrawable(bkb.L0(true));
+                        linearLayout2.addView(textView, nme.l(100.0f / i2, -1, -1));
+                        textView.setOnClickListener(new v0(i7, k27Var));
                     } else {
                         arrayList = arrayList4;
                     }
@@ -381,7 +381,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             linearLayout = linearLayout2;
         }
         if (linearLayout != null) {
-            int L = gm.q.x - gm.L(24.0f);
+            int L = gl.q.x - gl.L(24.0f);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
             layoutParams.addRule(12);
             if (z) {
@@ -409,8 +409,8 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         if ((this.T != 0 || this.b.H0() || this.Y) && this.R != null) {
             int size = arrayList.size();
             for (int i = 0; i < size; i++) {
-                k47 k47Var = (k47) arrayList.get(i);
-                if (k47Var.K1 == this.R.K1 && k47.B0(k47Var.k) == k47.B0(this.R.k) && k47Var.e1() == this.R.e1()) {
+                k27 k27Var = (k27) arrayList.get(i);
+                if (k27Var.K1 == this.R.K1 && k27.B0(k27Var.k) == k27.B0(this.R.k) && k27Var.e1() == this.R.e1()) {
                     this.T = i;
                     if (this.Y) {
                         if (i == arrayList.size() - 1) {
@@ -424,7 +424,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             }
         }
         this.T = 0;
-        this.R = (k47) arrayList.get(0);
+        this.R = (k27) arrayList.get(0);
         q(0);
         this.h.setText(String.format("%d/%d", Integer.valueOf(this.T + 1), Integer.valueOf(arrayList.size())));
     }
@@ -438,17 +438,17 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         int i2;
         ViewGroup viewGroup;
         float f;
-        k47 k47Var;
+        k27 k27Var;
         boolean z2;
         ViewGroup viewGroup2;
         ViewGroup viewGroup3;
         ViewGroup viewGroup4;
-        kh8 kh8Var;
+        if8 if8Var;
         int i3 = i;
-        Integer valueOf = Integer.valueOf(nm7.X4);
-        Integer valueOf2 = Integer.valueOf(nm7.W4);
-        Integer valueOf3 = Integer.valueOf(nm7.i5);
-        Integer valueOf4 = Integer.valueOf(nm7.h5);
+        Integer valueOf = Integer.valueOf(kk7.X4);
+        Integer valueOf2 = Integer.valueOf(kk7.W4);
+        Integer valueOf3 = Integer.valueOf(kk7.i5);
+        Integer valueOf4 = Integer.valueOf(kk7.h5);
         ArrayList arrayList = this.b0;
         if (arrayList.size() == 1 && (i3 < 0 || i3 >= arrayList.size())) {
             return null;
@@ -459,10 +459,10 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         } else if (i3 == arrayList.size()) {
             i3 = 0;
         }
-        k47 k47Var2 = (k47) arrayList.get(i3);
-        int i4 = k47Var2.D;
-        int i5 = k47Var2.K1;
-        if ((i4 == 1 || i4 == 4) && !k47Var2.k4()) {
+        k27 k27Var2 = (k27) arrayList.get(i3);
+        int i4 = k27Var2.D;
+        int i5 = k27Var2.K1;
+        if ((i4 == 1 || i4 == 4) && !k27Var2.k4()) {
             ArrayList arrayList2 = this.H;
             if (arrayList2.size() > 0) {
                 ViewGroup viewGroup5 = (ViewGroup) arrayList2.get(0);
@@ -473,20 +473,20 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 FrameLayout frameLayout = new FrameLayout(this);
                 FrameLayout frameLayout2 = new FrameLayout(this);
                 i2 = 2;
-                frameLayout2.setPadding(gm.L(10.0f), gm.L(10.0f), gm.L(10.0f), gm.L(10.0f));
-                frameLayout2.setBackgroundDrawable(cmb.L0(false));
-                frameLayout.addView(frameLayout2, qoe.c(-1.0f, -1));
-                bf0 bf0Var = new bf0(this);
-                bf0Var.setTag(valueOf4);
-                frameLayout2.addView(bf0Var, qoe.c(-1.0f, -1));
+                frameLayout2.setPadding(gl.L(10.0f), gl.L(10.0f), gl.L(10.0f), gl.L(10.0f));
+                frameLayout2.setBackgroundDrawable(bkb.L0(false));
+                frameLayout.addView(frameLayout2, nme.c(-1.0f, -1));
+                be0 be0Var = new be0(this);
+                be0Var.setTag(valueOf4);
+                frameLayout2.addView(be0Var, nme.c(-1.0f, -1));
                 TextView textView = new TextView(this);
-                anb.X(textView, cmb.F6, null);
+                zkb.X(textView, bkb.F6, null);
                 textView.setTextSize(1, 16.0f);
                 textView.setGravity(17);
                 textView.setTag(valueOf3);
-                frameLayout2.addView(textView, qoe.e(-1, -2, 17));
+                frameLayout2.addView(textView, nme.e(-1, -2, 17));
                 frameLayout.setTag(2);
-                frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: mh8
+                frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: kf8
                     public final /* synthetic */ PopupNotificationActivity b;
 
                     {
@@ -516,114 +516,114 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 viewGroup = frameLayout;
             }
             TextView textView2 = (TextView) viewGroup.findViewWithTag(valueOf3);
-            bf0 bf0Var2 = (bf0) viewGroup.findViewWithTag(valueOf4);
-            bf0Var2.setAspectFit(true);
-            int i6 = k47Var2.D;
+            be0 be0Var2 = (be0) viewGroup.findViewWithTag(valueOf4);
+            be0Var2.setAspectFit(true);
+            int i6 = k27Var2.D;
             if (i6 == 1) {
                 int i7 = 0;
-                TLRPC.PhotoSize w = bc4.w(k47Var2.p0, gm.Y0(false), false, null, false);
-                TLRPC.PhotoSize w2 = bc4.w(k47Var2.p0, 100, false, null, false);
+                TLRPC.PhotoSize w = ba4.w(k27Var2.p0, gl.Y0(false), false, null, false);
+                TLRPC.PhotoSize w2 = ba4.w(k27Var2.p0, 100, false, null, false);
                 if (w != null) {
-                    if (k47Var2.D == 1) {
-                        bc4.G(z8c.t0);
-                        if (!bc4.M(k47Var2.k, false, true).exists()) {
+                    if (k27Var2.D == 1) {
+                        ba4.G(y6c.t0);
+                        if (!ba4.M(k27Var2.k, false, true).exists()) {
                             z2 = false;
-                            if (k47Var2.l5()) {
-                                if (z2 || er3.q(i5).d(k47Var2)) {
+                            if (k27Var2.l5()) {
+                                if (z2 || up3.q(i5).d(k27Var2)) {
                                     f = 0.0f;
-                                    bf0Var2.h(gn5.f(w, k47Var2.n0), "100_100", gn5.f(w2, k47Var2.n0), "100_100_b", w.size, k47Var2);
+                                    be0Var2.h(gl5.f(w, k27Var2.n0), "100_100", gl5.f(w2, k27Var2.n0), "100_100_b", w.size, k27Var2);
                                 } else if (w2 != null) {
-                                    gn5 f2 = gn5.f(w2, k47Var2.n0);
+                                    gl5 f2 = gl5.f(w2, k27Var2.n0);
                                     f = 0.0f;
-                                    bf0Var2.n(f2, "100_100_b", null, null, k47Var2);
+                                    be0Var2.n(f2, "100_100_b", null, null, k27Var2);
                                 } else {
                                     f = 0.0f;
-                                    k47Var = k47Var2;
+                                    k27Var = k27Var2;
                                 }
-                                bf0Var2.setVisibility(0);
+                                be0Var2.setVisibility(0);
                                 textView2.setVisibility(8);
                                 viewGroup2 = viewGroup;
                             } else {
-                                k47Var = k47Var2;
+                                k27Var = k27Var2;
                                 f = 0.0f;
                             }
                             i7 = 0;
                         }
                     }
                     z2 = true;
-                    if (k47Var2.l5()) {
+                    if (k27Var2.l5()) {
                     }
                     i7 = 0;
                 } else {
-                    k47Var = k47Var2;
+                    k27Var = k27Var2;
                     f = 0.0f;
                 }
-                bf0Var2.setVisibility(8);
+                be0Var2.setVisibility(8);
                 textView2.setVisibility(i7);
-                textView2.setTextSize(i2, gda.S0);
-                textView2.setText(k47Var.v);
+                textView2.setTextSize(i2, gba.S0);
+                textView2.setText(k27Var.v);
                 viewGroup2 = viewGroup;
             } else {
                 f = 0.0f;
                 viewGroup2 = viewGroup;
                 if (i6 == 4) {
                     textView2.setVisibility(8);
-                    textView2.setText(k47Var2.v);
-                    bf0Var2.setVisibility(0);
-                    TLRPC.GeoPoint geoPoint = k47Var2.k.media.geo;
+                    textView2.setText(k27Var2.v);
+                    be0Var2.setVisibility(0);
+                    TLRPC.GeoPoint geoPoint = k27Var2.k.media.geo;
                     double d = geoPoint.lat;
                     double d2 = geoPoint._long;
-                    if (oc7.r1(i5).f3 == 2) {
-                        int min = Math.min(2, (int) Math.ceil(gm.p));
-                        int i8 = vuc.i;
-                        bf0Var2.n(gn5.p(vuc.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 100, 100, 15, min)), null, null, null, k47Var2);
+                    if (na7.q1(i5).f3 == 2) {
+                        int min = Math.min(2, (int) Math.ceil(gl.p));
+                        int i8 = usc.i;
+                        be0Var2.n(gl5.p(usc.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 100, 100, 15, min)), null, null, null, k27Var2);
                         viewGroup2 = viewGroup;
                     } else {
-                        bf0Var2.o(gm.e0(k47Var2.K1, d, d2, 100, 100, true, 15, -1), null, null);
+                        be0Var2.o(gl.e0(k27Var2.K1, d, d2, 100, 100, true, 15, -1), null, null);
                         viewGroup2 = viewGroup;
                     }
                 }
             }
         } else {
             f = 0.0f;
-            if (k47Var2.D == 2) {
+            if (k27Var2.D == 2) {
                 ArrayList arrayList3 = this.I;
                 if (arrayList3.size() > 0) {
                     ViewGroup viewGroup6 = (ViewGroup) arrayList3.get(0);
                     arrayList3.remove(0);
-                    kh8Var = (kh8) viewGroup6.findViewWithTag(valueOf2);
+                    if8Var = (if8) viewGroup6.findViewWithTag(valueOf2);
                     viewGroup4 = viewGroup6;
                 } else {
                     FrameLayout frameLayout3 = new FrameLayout(this);
                     FrameLayout frameLayout4 = new FrameLayout(this);
-                    frameLayout4.setPadding(gm.L(10.0f), gm.L(10.0f), gm.L(10.0f), gm.L(10.0f));
-                    frameLayout4.setBackgroundDrawable(cmb.L0(false));
-                    frameLayout3.addView(frameLayout4, qoe.c(-1.0f, -1));
+                    frameLayout4.setPadding(gl.L(10.0f), gl.L(10.0f), gl.L(10.0f), gl.L(10.0f));
+                    frameLayout4.setBackgroundDrawable(bkb.L0(false));
+                    frameLayout3.addView(frameLayout4, nme.c(-1.0f, -1));
                     FrameLayout frameLayout5 = new FrameLayout(this);
-                    frameLayout4.addView(frameLayout5, qoe.d(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
-                    kh8 kh8Var2 = new kh8(this);
-                    kh8Var2.f = false;
-                    kh8Var2.E = (byte) 0;
-                    kh8Var2.H = false;
-                    kh8Var2.K = 0;
+                    frameLayout4.addView(frameLayout5, nme.d(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
+                    if8 if8Var2 = new if8(this);
+                    if8Var2.f = false;
+                    if8Var2.E = (byte) 0;
+                    if8Var2.H = false;
+                    if8Var2.K = 0;
                     TextPaint textPaint = new TextPaint(1);
-                    kh8Var2.r = textPaint;
-                    textPaint.setTextSize(gm.L(16.0f));
-                    kh8Var2.L = er3.q(kh8Var2.n).k();
-                    ax9 ax9Var = new ax9(kh8Var2);
-                    kh8Var2.s = ax9Var;
-                    ax9Var.h = kh8Var2;
-                    nu8 nu8Var = new nu8();
-                    nu8Var.c = 0.0f;
-                    nu8Var.f = gm.L(2.0f);
-                    nu8Var.a = new Paint();
-                    nu8Var.b = new Paint();
-                    kh8Var2.w = nu8Var;
-                    kh8Var2.setTag(valueOf2);
-                    frameLayout5.addView(kh8Var2);
+                    if8Var2.r = textPaint;
+                    textPaint.setTextSize(gl.L(16.0f));
+                    if8Var2.L = up3.q(if8Var2.n).k();
+                    xu9 xu9Var = new xu9(if8Var2);
+                    if8Var2.s = xu9Var;
+                    xu9Var.h = if8Var2;
+                    ms8 ms8Var = new ms8();
+                    ms8Var.c = 0.0f;
+                    ms8Var.f = gl.L(2.0f);
+                    ms8Var.a = new Paint();
+                    ms8Var.b = new Paint();
+                    if8Var2.w = ms8Var;
+                    if8Var2.setTag(valueOf2);
+                    frameLayout5.addView(if8Var2);
                     frameLayout3.setTag(3);
                     final byte b2 = 1;
-                    frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: mh8
+                    frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: kf8
                         public final /* synthetic */ PopupNotificationActivity b;
 
                         {
@@ -651,16 +651,16 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                         }
                     });
                     viewGroup4 = frameLayout3;
-                    kh8Var = kh8Var2;
+                    if8Var = if8Var2;
                 }
-                kh8Var.setMessageObject(k47Var2);
+                if8Var.setMessageObject(k27Var2);
                 viewGroup2 = viewGroup4;
-                if (er3.q(i5).d(k47Var2)) {
+                if (up3.q(i5).d(k27Var2)) {
                     viewGroup2 = viewGroup4;
-                    if (kh8Var.E == 2) {
-                        bc4.G(kh8Var.n).X(kh8Var.h.F0(), kh8Var.h, 1, 0);
-                        kh8Var.E = (byte) 3;
-                        kh8Var.invalidate();
+                    if (if8Var.E == 2) {
+                        ba4.G(if8Var.n).X(if8Var.h.F0(), if8Var.h, 1, 0);
+                        if8Var.E = (byte) 3;
+                        if8Var.invalidate();
                         viewGroup2 = viewGroup4;
                     }
                 }
@@ -674,14 +674,14 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     FrameLayout frameLayout6 = new FrameLayout(this);
                     ScrollView scrollView = new ScrollView(this);
                     scrollView.setFillViewport(true);
-                    frameLayout6.addView(scrollView, qoe.c(-1.0f, -1));
+                    frameLayout6.addView(scrollView, nme.c(-1.0f, -1));
                     LinearLayout linearLayout = new LinearLayout(this);
                     linearLayout.setOrientation(0);
-                    linearLayout.setBackgroundDrawable(cmb.L0(false));
-                    scrollView.addView(linearLayout, qoe.x(-1, -2, 1));
-                    linearLayout.setPadding(gm.L(10.0f), gm.L(10.0f), gm.L(10.0f), gm.L(10.0f));
+                    linearLayout.setBackgroundDrawable(bkb.L0(false));
+                    scrollView.addView(linearLayout, nme.x(-1, -2, 1));
+                    linearLayout.setPadding(gl.L(10.0f), gl.L(10.0f), gl.L(10.0f), gl.L(10.0f));
                     final byte b3 = 2;
-                    linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: mh8
+                    linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: kf8
                         public final /* synthetic */ PopupNotificationActivity b;
 
                         {
@@ -711,17 +711,17 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     TextView textView3 = new TextView(this);
                     textView3.setTextSize(1, 16.0f);
                     textView3.setTag(valueOf);
-                    int i9 = cmb.F6;
-                    anb.X(textView3, i9, null);
-                    anb.G(textView3, i9, null);
+                    int i9 = bkb.F6;
+                    zkb.X(textView3, i9, null);
+                    zkb.G(textView3, i9, null);
                     textView3.setGravity(17);
-                    linearLayout.addView(textView3, qoe.r(-1, -2, 17));
+                    linearLayout.addView(textView3, nme.r(-1, -2, 17));
                     frameLayout6.setTag(1);
                     viewGroup3 = frameLayout6;
                 }
                 TextView textView4 = (TextView) viewGroup3.findViewWithTag(valueOf);
-                textView4.setTextSize(2, gda.S0);
-                textView4.setText(k47Var2.v);
+                textView4.setTextSize(2, gba.S0);
+                textView4.setText(k27Var2.v);
                 viewGroup2 = viewGroup3;
             }
         }
@@ -730,7 +730,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         }
         viewGroup2.setVisibility(0);
         if (z) {
-            int L = gm.q.x - gm.L(24.0f);
+            int L = gl.q.x - gl.L(24.0f);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewGroup2.getLayoutParams();
             layoutParams.gravity = 51;
             layoutParams.height = -1;
@@ -753,19 +753,19 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         this.a0 = intent != null && intent.getBooleanExtra("force", false);
         this.b0.clear();
         if (this.a0) {
-            int i = z8c.t0;
+            int i = y6c.t0;
             if (intent != null) {
                 i = intent.getIntExtra("currentAccount", i);
             }
-            if (!z8c.q(i)) {
+            if (!y6c.q(i)) {
                 return;
             } else {
-                this.b0.addAll(lo7.n(i).x);
+                this.b0.addAll(im7.n(i).x);
             }
         } else {
             for (int i2 = 0; i2 < 4; i2++) {
-                if (z8c.h(i2).o()) {
-                    this.b0.addAll(lo7.n(i2).w);
+                if (y6c.h(i2).o()) {
+                    this.b0.addAll(im7.n(i2).w);
                 }
             }
         }
@@ -790,17 +790,17 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             this.b0.clear();
         }
         for (int i = 0; i < 4; i++) {
-            nm7.f(i).n(this, nm7.I2);
-            nm7.f(i).n(this, 2);
-            nm7.f(i).n(this, nm7.e2);
-            nm7.f(i).n(this, nm7.f2);
-            nm7.f(i).n(this, nm7.N);
+            kk7.f(i).n(this, kk7.H2);
+            kk7.f(i).n(this, 2);
+            kk7.f(i).n(this, kk7.d2);
+            kk7.f(i).n(this, kk7.e2);
+            kk7.f(i).n(this, kk7.N);
         }
-        nm7.e().n(this, nm7.h4);
-        nm7.e().n(this, nm7.m4);
+        kk7.e().n(this, kk7.f4);
+        kk7.e().n(this, kk7.k4);
         ChatActivityEnterView chatActivityEnterView = this.b;
         if (chatActivityEnterView != null) {
-            chatActivityEnterView.d1();
+            chatActivityEnterView.b1();
         }
         if (this.U.isHeld()) {
             this.U.release();
@@ -841,10 +841,10 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     if (!this.Y) {
                         int abs = Math.abs(i);
                         b3 = i;
-                        if (abs > gm.L(10.0f)) {
+                        if (abs > gl.L(10.0f)) {
                             this.Y = true;
                             this.X = x;
-                            gm.d2(this);
+                            gl.d2(this);
                             VelocityTracker velocityTracker = this.J;
                             if (velocityTracker == null) {
                                 this.J = VelocityTracker.obtain();
@@ -876,7 +876,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             a(0);
         } else {
             int x2 = (int) (motionEvent.getX() - this.X);
-            int L = gm.q.x - gm.L(24.0f);
+            int L = gl.q.x - gl.L(24.0f);
             VelocityTracker velocityTracker3 = this.J;
             if (velocityTracker3 != null) {
                 velocityTracker3.computeCurrentVelocity(1000);
@@ -889,7 +889,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     translationX = L - this.r.getTranslationX();
                     viewGroup = this.s;
                     linearLayout = this.y;
-                    this.Z = new Runnable(this) { // from class: lh8
+                    this.Z = new Runnable(this) { // from class: jf8
                         public final /* synthetic */ PopupNotificationActivity b;
 
                         {
@@ -915,23 +915,23 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                                             size = arrayList.size() - 1;
                                             popupNotificationActivity.T = size;
                                         }
-                                        popupNotificationActivity.R = (k47) arrayList.get(size);
+                                        popupNotificationActivity.R = (k27) arrayList.get(size);
                                         popupNotificationActivity.q(1);
                                         popupNotificationActivity.h.setText(String.format("%d/%d", Integer.valueOf(popupNotificationActivity.T + 1), Integer.valueOf(arrayList.size())));
                                     }
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                                 case 1:
                                     int i4 = PopupNotificationActivity.c0;
                                     popupNotificationActivity.V = false;
                                     popupNotificationActivity.p();
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                                 default:
                                     int i5 = PopupNotificationActivity.c0;
                                     popupNotificationActivity.V = false;
                                     popupNotificationActivity.a(0);
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                             }
                         }
@@ -940,7 +940,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     translationX = (-L) - this.r.getTranslationX();
                     viewGroup = this.w;
                     linearLayout = this.E;
-                    this.Z = new Runnable(this) { // from class: lh8
+                    this.Z = new Runnable(this) { // from class: jf8
                         public final /* synthetic */ PopupNotificationActivity b;
 
                         {
@@ -966,23 +966,23 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                                             size = arrayList.size() - 1;
                                             popupNotificationActivity.T = size;
                                         }
-                                        popupNotificationActivity.R = (k47) arrayList.get(size);
+                                        popupNotificationActivity.R = (k27) arrayList.get(size);
                                         popupNotificationActivity.q(1);
                                         popupNotificationActivity.h.setText(String.format("%d/%d", Integer.valueOf(popupNotificationActivity.T + 1), Integer.valueOf(arrayList.size())));
                                     }
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                                 case 1:
                                     int i4 = PopupNotificationActivity.c0;
                                     popupNotificationActivity.V = false;
                                     popupNotificationActivity.p();
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                                 default:
                                     int i5 = PopupNotificationActivity.c0;
                                     popupNotificationActivity.V = false;
                                     popupNotificationActivity.a(0);
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                             }
                         }
@@ -996,7 +996,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                         viewGroup2 = this.w;
                         linearLayout2 = this.E;
                     }
-                    this.Z = new Runnable(this) { // from class: lh8
+                    this.Z = new Runnable(this) { // from class: jf8
                         public final /* synthetic */ PopupNotificationActivity b;
 
                         {
@@ -1022,23 +1022,23 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                                             size = arrayList.size() - 1;
                                             popupNotificationActivity.T = size;
                                         }
-                                        popupNotificationActivity.R = (k47) arrayList.get(size);
+                                        popupNotificationActivity.R = (k27) arrayList.get(size);
                                         popupNotificationActivity.q(1);
                                         popupNotificationActivity.h.setText(String.format("%d/%d", Integer.valueOf(popupNotificationActivity.T + 1), Integer.valueOf(arrayList.size())));
                                     }
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                                 case 1:
                                     int i4 = PopupNotificationActivity.c0;
                                     popupNotificationActivity.V = false;
                                     popupNotificationActivity.p();
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                                 default:
                                     int i5 = PopupNotificationActivity.c0;
                                     popupNotificationActivity.V = false;
                                     popupNotificationActivity.a(0);
-                                    gm.K3(popupNotificationActivity);
+                                    gl.K3(popupNotificationActivity);
                                     break;
                             }
                         }
@@ -1069,7 +1069,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                     AnimatorSet animatorSet = new AnimatorSet();
                     animatorSet.playTogether(arrayList);
                     animatorSet.setDuration(abs2);
-                    animatorSet.addListener(new s38(this, (byte) 17));
+                    animatorSet.addListener(new l48(this, (byte) 15));
                     animatorSet.start();
                     this.V = true;
                     this.W = System.currentTimeMillis();
@@ -1081,7 +1081,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             translationX = L - this.r.getTranslationX();
             viewGroup = this.s;
             linearLayout = this.y;
-            this.Z = new Runnable(this) { // from class: lh8
+            this.Z = new Runnable(this) { // from class: jf8
                 public final /* synthetic */ PopupNotificationActivity b;
 
                 {
@@ -1107,23 +1107,23 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                                     size = arrayList2.size() - 1;
                                     popupNotificationActivity.T = size;
                                 }
-                                popupNotificationActivity.R = (k47) arrayList2.get(size);
+                                popupNotificationActivity.R = (k27) arrayList2.get(size);
                                 popupNotificationActivity.q(1);
                                 popupNotificationActivity.h.setText(String.format("%d/%d", Integer.valueOf(popupNotificationActivity.T + 1), Integer.valueOf(arrayList2.size())));
                             }
-                            gm.K3(popupNotificationActivity);
+                            gl.K3(popupNotificationActivity);
                             break;
                         case 1:
                             int i4 = PopupNotificationActivity.c0;
                             popupNotificationActivity.V = false;
                             popupNotificationActivity.p();
-                            gm.K3(popupNotificationActivity);
+                            gl.K3(popupNotificationActivity);
                             break;
                         default:
                             int i5 = PopupNotificationActivity.c0;
                             popupNotificationActivity.V = false;
                             popupNotificationActivity.a(0);
-                            gm.K3(popupNotificationActivity);
+                            gl.K3(popupNotificationActivity);
                             break;
                     }
                 }
@@ -1146,12 +1146,12 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             return;
         }
         Intent intent = new Intent(org.telegram.messenger.a.b, (Class<?>) LaunchActivity.class);
-        long B0 = k47.B0(this.R.k);
-        if (pg3.B(B0)) {
+        long B0 = k27.B0(this.R.k);
+        if (cf3.B(B0)) {
             intent.putExtra("encId", (int) (B0 & 4294967295L));
-        } else if (pg3.D(B0)) {
+        } else if (cf3.D(B0)) {
             intent.putExtra("userId", B0);
-        } else if (pg3.y(B0)) {
+        } else if (cf3.y(B0)) {
             intent.putExtra("chatId", -B0);
         }
         intent.putExtra("currentAccount", this.R.K1);
@@ -1163,8 +1163,8 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     }
 
     public final void l(int i) {
-        k47 k47Var;
-        int L = gm.q.x - gm.L(24.0f);
+        k27 k27Var;
+        int L = gl.q.x - gl.L(24.0f);
         if (i == 0) {
             n(this.r);
             n(this.s);
@@ -1268,11 +1268,11 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 } else if (i5 == arrayList.size()) {
                     i5 = 0;
                 }
-                k47Var = (k47) arrayList.get(i5);
+                k27Var = (k27) arrayList.get(i5);
             } else {
-                k47Var = null;
+                k27Var = null;
             }
-            this.S[i4] = k47Var;
+            this.S[i4] = k27Var;
         }
     }
 
@@ -1300,37 +1300,37 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     public final void o(boolean z) {
         if (this.a != null) {
             int i = 0;
-            e0b[] e0bVarArr = this.K;
+            bya[] byaVarArr = this.K;
             if (!z) {
                 this.e.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
                 this.e.setCompoundDrawablePadding(0);
-                while (i < e0bVarArr.length) {
-                    e0bVarArr[i].e();
+                while (i < byaVarArr.length) {
+                    byaVarArr[i].e();
                     i++;
                 }
                 return;
             }
             try {
-                Integer C1 = oc7.r1(this.R.K1).C1(k47.B0(this.R.k), 0L);
-                this.e.setCompoundDrawablesWithIntrinsicBounds(e0bVarArr[C1.intValue()], (Drawable) null, (Drawable) null, (Drawable) null);
-                this.e.setCompoundDrawablePadding(gm.L(4.0f));
-                while (i < e0bVarArr.length) {
-                    if (i == C1.intValue()) {
-                        e0bVarArr[i].d();
+                Integer B1 = na7.q1(this.R.K1).B1(k27.B0(this.R.k), 0L);
+                this.e.setCompoundDrawablesWithIntrinsicBounds(byaVarArr[B1.intValue()], (Drawable) null, (Drawable) null, (Drawable) null);
+                this.e.setCompoundDrawablePadding(gl.L(4.0f));
+                while (i < byaVarArr.length) {
+                    if (i == B1.intValue()) {
+                        byaVarArr[i].d();
                     } else {
-                        e0bVarArr[i].e();
+                        byaVarArr[i].e();
                     }
                     i++;
                 }
             } catch (Exception e) {
-                fc4.g(e, true);
+                fa4.g(e, true);
             }
         }
     }
 
     @Override // android.app.Activity
     public final void onBackPressed() {
-        if (this.b.R0()) {
+        if (this.b.Q0()) {
             this.b.J0(true);
         } else {
             super.onBackPressed();
@@ -1340,95 +1340,95 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     @Override // android.app.Activity, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        gm.v(this, configuration);
-        gm.r3(getWindow());
+        gl.v(this, configuration);
+        gl.r3(getWindow());
         d();
     }
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        cmb.S(this);
-        cmb.J(this, false);
-        Typeface typeface = gm.a;
+        bkb.S(this);
+        bkb.J(this, false);
+        Typeface typeface = gl.a;
         for (int i = 0; i < 4; i++) {
-            nm7.f(i).b(this, nm7.I2);
-            nm7.f(i).b(this, 2);
-            nm7.f(i).b(this, nm7.e2);
-            nm7.f(i).b(this, nm7.f2);
-            nm7.f(i).b(this, nm7.N);
+            kk7.f(i).b(this, kk7.H2);
+            kk7.f(i).b(this, 2);
+            kk7.f(i).b(this, kk7.d2);
+            kk7.f(i).b(this, kk7.e2);
+            kk7.f(i).b(this, kk7.N);
         }
-        nm7.e().b(this, nm7.h4);
-        nm7.e().b(this, nm7.m4);
+        kk7.e().b(this, kk7.f4);
+        kk7.e().b(this, kk7.k4);
         this.L = ConnectionsManager.generateClassGuid();
-        this.K[0] = new a6c(false);
-        this.K[1] = new di2(false);
-        this.K[2] = new o6a(false);
-        this.K[3] = new df8(null, false);
-        this.K[4] = new ql9(false);
-        w91 w91Var = new w91((byte) 7, this, this);
-        setContentView(w91Var);
-        w91Var.setBackgroundColor(-1728053248);
+        this.K[0] = new a4c(false);
+        this.K[1] = new pg2(false);
+        this.K[2] = new m4a(false);
+        this.K[3] = new bd8(null, false);
+        this.K[4] = new oj9(false);
+        n81 n81Var = new n81((byte) 7, this, this);
+        setContentView(n81Var);
+        n81Var.setBackgroundColor(-1728053248);
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        w91Var.addView(relativeLayout, qoe.c(-1.0f, -1));
-        nh8 nh8Var = new nh8(this, this);
-        this.F = nh8Var;
-        anb.h(cmb.c6, null, nh8Var);
-        relativeLayout.addView(this.F, qoe.v(12, -1.0f, 12, 240.0f, 13));
+        n81Var.addView(relativeLayout, nme.c(-1.0f, -1));
+        lf8 lf8Var = new lf8(this, this);
+        this.F = lf8Var;
+        zkb.h(bkb.c6, null, lf8Var);
+        relativeLayout.addView(this.F, nme.v(12, -1.0f, 12, 240.0f, 13));
         ChatActivityEnterView chatActivityEnterView = this.b;
         if (chatActivityEnterView != null) {
-            chatActivityEnterView.d1();
+            chatActivityEnterView.b1();
         }
-        ChatActivityEnterView chatActivityEnterView2 = new ChatActivityEnterView(this, w91Var, null, false, null);
+        ChatActivityEnterView chatActivityEnterView2 = new ChatActivityEnterView(this, n81Var, null, false, null);
         this.b = chatActivityEnterView2;
         chatActivityEnterView2.setId(1000);
-        this.F.addView(this.b, qoe.v(0, -1.0f, 0, -2.0f, 12));
-        this.b.setDelegate(new oh8(this));
-        ne6 ne6Var = new ne6((byte) 10, this, this);
-        this.n = ne6Var;
-        this.F.addView(ne6Var, 0);
+        this.F.addView(this.b, nme.v(0, -1.0f, 0, -2.0f, 12));
+        this.b.setDelegate(new mf8(this));
+        oc6 oc6Var = new oc6((byte) 10, this, this);
+        this.n = oc6Var;
+        this.F.addView(oc6Var, 0);
         org.telegram.ui.ActionBar.a aVar = new org.telegram.ui.ActionBar.a(this, null);
         this.a = aVar;
         aVar.setOccupyStatusBar(false);
         this.a.setBackButtonImage(R.drawable.ic_close_white);
-        anb.h(cmb.r8, null, this.a);
-        anb.l(this.a, 3, cmb.s8, null);
-        anb.l(this.a, 1, cmb.u8, null);
+        zkb.h(bkb.r8, null, this.a);
+        zkb.l(this.a, 3, bkb.s8, null);
+        zkb.l(this.a, 1, bkb.u8, null);
         this.F.addView(this.a);
         ViewGroup.LayoutParams layoutParams = this.a.getLayoutParams();
         layoutParams.width = -1;
         this.a.setLayoutParams(layoutParams);
-        r7 g = this.a.t().g(2, 0, gm.L(56.0f));
+        r7 g = this.a.t().g(2, 0, gl.L(56.0f));
         TextView textView = new TextView(this);
         this.h = textView;
-        int i2 = cmb.A8;
-        anb.X(textView, i2, null);
+        int i2 = bkb.A8;
+        zkb.X(textView, i2, null);
         this.h.setTextSize(1, 14.0f);
         this.h.setGravity(17);
-        g.addView(this.h, qoe.c(-1.0f, 56));
+        g.addView(this.h, nme.c(-1.0f, 56));
         FrameLayout frameLayout = new FrameLayout(this);
         this.f = frameLayout;
-        frameLayout.setPadding(gm.L(4.0f), 0, gm.L(4.0f), 0);
+        frameLayout.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
         this.a.addView(this.f);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.f.getLayoutParams();
         layoutParams2.height = -1;
         layoutParams2.width = -2;
-        layoutParams2.rightMargin = gm.L(48.0f);
-        layoutParams2.leftMargin = gm.L(60.0f);
+        layoutParams2.rightMargin = gl.L(48.0f);
+        layoutParams2.leftMargin = gl.L(60.0f);
         layoutParams2.gravity = 51;
         this.f.setLayoutParams(layoutParams2);
-        bf0 bf0Var = new bf0(this);
-        this.c = bf0Var;
-        bf0Var.setRoundRadius(gm.L(21.0f));
+        be0 be0Var = new be0(this);
+        this.c = be0Var;
+        be0Var.setRoundRadius(gl.L(21.0f));
         this.f.addView(this.c);
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.c.getLayoutParams();
-        layoutParams3.width = gm.L(42.0f);
-        layoutParams3.height = gm.L(42.0f);
-        layoutParams3.topMargin = gm.L(3.0f);
+        layoutParams3.width = gl.L(42.0f);
+        layoutParams3.height = gl.L(42.0f);
+        layoutParams3.topMargin = gl.L(3.0f);
         this.c.setLayoutParams(layoutParams3);
         TextView textView2 = new TextView(this);
         this.d = textView2;
-        anb.X(textView2, cmb.z8, null);
+        zkb.X(textView2, bkb.z8, null);
         this.d.setTextSize(1, 18.0f);
         this.d.setLines(1);
         this.d.setMaxLines(1);
@@ -1437,18 +1437,18 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView3.setEllipsize(truncateAt);
         this.d.setGravity(3);
-        this.d.setTypeface(gm.o());
+        this.d.setTypeface(gl.o());
         this.f.addView(this.d);
         FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) this.d.getLayoutParams();
         layoutParams4.width = -2;
         layoutParams4.height = -2;
-        layoutParams4.leftMargin = gm.L(54.0f);
-        layoutParams4.bottomMargin = gm.L(22.0f);
+        layoutParams4.leftMargin = gl.L(54.0f);
+        layoutParams4.bottomMargin = gl.L(22.0f);
         layoutParams4.gravity = 80;
         this.d.setLayoutParams(layoutParams4);
         TextView textView4 = new TextView(this);
         this.e = textView4;
-        anb.X(textView4, i2, null);
+        zkb.X(textView4, i2, null);
         this.e.setTextSize(1, 14.0f);
         this.e.setLines(1);
         this.e.setMaxLines(1);
@@ -1459,11 +1459,11 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
         layoutParams5.width = -2;
         layoutParams5.height = -2;
-        layoutParams5.leftMargin = gm.L(54.0f);
-        layoutParams5.bottomMargin = gm.L(4.0f);
+        layoutParams5.leftMargin = gl.L(54.0f);
+        layoutParams5.bottomMargin = gl.L(4.0f);
         layoutParams5.gravity = 80;
         this.e.setLayoutParams(layoutParams5);
-        this.a.setActionBarMenuOnItemClick(new wl5(this, (byte) 24));
+        this.a.setActionBarMenuOnItemClick(new bq5(this, (byte) 23));
         PowerManager.WakeLock newWakeLock = ((PowerManager) org.telegram.messenger.a.b.getSystemService("power")).newWakeLock(268435462, "screen");
         this.U = newWakeLock;
         newWakeLock.setReferenceCounted(false);
@@ -1481,9 +1481,9 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         if (this.U.isHeld()) {
             this.U.release();
         }
-        bf0 bf0Var = this.c;
-        if (bf0Var != null) {
-            bf0Var.setImageDrawable(null);
+        be0 be0Var = this.c;
+        if (be0Var != null) {
+            be0Var.setImageDrawable(null);
         }
     }
 
@@ -1515,12 +1515,12 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        String M0 = jb6.M0(R.string.AppName, null);
-        he heVar = alertDialog$Builder.a;
-        heVar.S = M0;
-        heVar.U = jb6.M0(2131747044, null);
-        alertDialog$Builder.g(jb6.M0(2131747033, null), new h68(this, (byte) 9));
-        alertDialog$Builder.j(jb6.M0(2131747564, null), null);
+        String M0 = k96.M0(R.string.AppName, null);
+        hd hdVar = alertDialog$Builder.a;
+        hdVar.S = M0;
+        hdVar.U = k96.M0(2131747118, null);
+        alertDialog$Builder.g(k96.M0(2131747107, null), new k88(this, (byte) 5));
+        alertDialog$Builder.j(k96.M0(2131747638, null), null);
         alertDialog$Builder.o();
     }
 
@@ -1549,7 +1549,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
                 this.T = 0;
                 i = 0;
             }
-            this.R = (k47) arrayList.get(i);
+            this.R = (k27) arrayList.get(i);
             q(2);
             this.h.setText(String.format("%d/%d", Integer.valueOf(this.T + 1), Integer.valueOf(arrayList.size())));
         }
@@ -1570,16 +1570,16 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         }
         this.O = null;
         this.N = null;
-        long B0 = k47.B0(this.R.k);
-        this.b.F1(this.R.K1, B0);
-        if (pg3.B(B0)) {
-            this.N = oc7.r1(this.R.K1).W1(Long.valueOf(oc7.r1(this.R.K1).Z0(Integer.valueOf((int) (4294967295L & B0))).user_id));
-        } else if (pg3.D(B0)) {
-            this.N = oc7.r1(this.R.K1).W1(Long.valueOf(B0));
-        } else if (pg3.y(B0)) {
-            this.O = oc7.r1(this.R.K1).L0(Long.valueOf(-B0));
+        long B0 = k27.B0(this.R.k);
+        this.b.C1(this.R.K1, B0);
+        if (cf3.B(B0)) {
+            this.N = na7.q1(this.R.K1).V1(Long.valueOf(na7.q1(this.R.K1).Y0(Integer.valueOf((int) (4294967295L & B0))).user_id));
+        } else if (cf3.D(B0)) {
+            this.N = na7.q1(this.R.K1).V1(Long.valueOf(B0));
+        } else if (cf3.y(B0)) {
+            this.O = na7.q1(this.R.K1).K0(Long.valueOf(-B0));
             if (this.R.p3()) {
-                this.N = oc7.r1(this.R.K1).W1(Long.valueOf(this.R.k.from_id.user_id));
+                this.N = na7.q1(this.R.K1).V1(Long.valueOf(this.R.k.from_id.user_id));
             }
         }
         TLRPC.Chat chat = this.O;
@@ -1588,7 +1588,7 @@ public class PopupNotificationActivity extends Activity implements jm7 {
             TLRPC.User user = this.N;
             TextView textView = this.e;
             if (user != null) {
-                textView.setText(m9c.r(user));
+                textView.setText(l7c.r(user));
             } else {
                 textView.setText((CharSequence) null);
             }
@@ -1597,12 +1597,12 @@ public class PopupNotificationActivity extends Activity implements jm7 {
         } else {
             TLRPC.User user2 = this.N;
             if (user2 != null) {
-                this.d.setText(m9c.r(user2));
-                boolean B = pg3.B(B0);
+                this.d.setText(l7c.r(user2));
+                boolean B = cf3.B(B0);
                 TextView textView2 = this.d;
                 if (B) {
                     textView2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_white, 0, 0, 0);
-                    this.d.setCompoundDrawablePadding(gm.L(4.0f));
+                    this.d.setCompoundDrawablePadding(gl.L(4.0f));
                 } else {
                     textView2.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
                     this.d.setCompoundDrawablePadding(0);
@@ -1616,46 +1616,46 @@ public class PopupNotificationActivity extends Activity implements jm7 {
     }
 
     public final void r() {
-        k47 k47Var;
+        k27 k27Var;
         TLRPC.User user;
-        if (this.a == null || (k47Var = this.R) == null || this.O != null || (user = this.N) == null) {
+        if (this.a == null || (k27Var = this.R) == null || this.O != null || (user = this.N) == null) {
             return;
         }
         long j = user.id / 1000;
-        if (j == 777 || j == 333 || bw2.r(k47Var.K1).g0.get(Long.valueOf(this.N.id)) != null || (bw2.r(this.R.K1).g0.size() == 0 && bw2.r(this.R.K1).y())) {
-            this.d.setText(m9c.r(this.N));
+        if (j == 777 || j == 333 || qu2.r(k27Var.K1).g0.get(Long.valueOf(this.N.id)) != null || (qu2.r(this.R.K1).g0.size() == 0 && qu2.r(this.R.K1).y())) {
+            this.d.setText(l7c.r(this.N));
         } else {
             String str = this.N.phone;
             if (str == null || str.length() == 0) {
-                this.d.setText(m9c.r(this.N));
+                this.d.setText(l7c.r(this.N));
             } else {
-                this.d.setText(r58.f().e("+" + this.N.phone));
+                this.d.setText(p38.f().e("+" + this.N.phone));
             }
         }
         TLRPC.User user2 = this.N;
         if (user2 != null) {
             long j2 = user2.id;
             if (j2 == 489000) {
-                this.e.setText(jb6.M0(2131743303, null));
+                this.e.setText(k96.M0(2131743377, null));
                 return;
             } else if (j2 == 777000) {
-                this.e.setText(jb6.M0(2131745295, null));
+                this.e.setText(k96.M0(2131745369, null));
                 return;
             }
         }
-        CharSequence B1 = oc7.r1(this.R.K1).B1(k47.B0(this.R.k), 0L, false);
-        if (B1 != null && B1.length() != 0) {
-            this.Q = B1;
-            this.e.setText(B1);
+        CharSequence A1 = na7.q1(this.R.K1).A1(k27.B0(this.R.k), 0L, false);
+        if (A1 != null && A1.length() != 0) {
+            this.Q = A1;
+            this.e.setText(A1);
             o(true);
         } else {
             this.Q = null;
             o(false);
-            TLRPC.User W1 = oc7.r1(this.R.K1).W1(Long.valueOf(this.N.id));
-            if (W1 != null) {
-                this.N = W1;
+            TLRPC.User V1 = na7.q1(this.R.K1).V1(Long.valueOf(this.N.id));
+            if (V1 != null) {
+                this.N = V1;
             }
-            this.e.setText(jb6.d0(this.R.K1, this.N, null, null));
+            this.e.setText(k96.d0(this.R.K1, this.N, null, null));
         }
     }
 }

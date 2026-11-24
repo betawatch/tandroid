@@ -1,61 +1,50 @@
 // default package
 
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Space;
-import android.widget.TextView;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class jw1 extends LinearLayout {
-    public ImageView a;
-    public TextView b;
-    public Space c;
-    public boolean d;
+public final class jw1 implements gj {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = imageView;
-            addView(imageView, layoutParams);
+    public /* synthetic */ jw1(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
+    }
+
+    public final void a() {
+        int i = ChatActivityEnterView.r7;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        ValueAnimator valueAnimator = chatActivityEnterView.B5;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        chatActivityEnterView.D5 = 0.0f;
+        chatActivityEnterView.C5 = 0.0f;
+        ry8 ry8Var = chatActivityEnterView.h1;
+        if (ry8Var != null) {
+            ry8Var.setRotation(0.0f);
+            chatActivityEnterView.h1.setPivotX(r1.getWidth() / 2.0f);
+            chatActivityEnterView.h1.setPivotY(r1.getHeight() / 2.0f);
+            if (chatActivityEnterView.h1.getAnimatedDrawable() == chatActivityEnterView.z5) {
+                chatActivityEnterView.h1.setProgress(0.0f);
+            }
+        }
+        kx1 kx1Var = chatActivityEnterView.y5;
+        chatActivityEnterView.y5 = null;
+        if (kx1Var != null) {
+            kx1Var.run();
         }
     }
 
-    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
-        if (this.c == null) {
-            this.c = space;
-            addView(space, layoutParams);
-        }
-    }
-
-    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = textView;
-            addView(textView, layoutParams);
-        }
-    }
-
-    public abstract void d();
-
-    public ImageView getImageView() {
-        return this.a;
-    }
-
-    public TextView getTextView() {
-        return this.b;
-    }
-
-    public void setEditButton(boolean z) {
-        this.d = z;
-    }
-
-    public void setOnlyIconMode(boolean z) {
-        TextView textView = this.b;
-        if (textView != null) {
-            textView.setVisibility(z ? 8 : 0);
-        }
-        Space space = this.c;
-        if (space != null) {
-            space.setVisibility(z ? 8 : 0);
+    @Override // gj
+    public final void s(int i, int i2, boolean z) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean v1 = chatActivityEnterView.v1(z, i, i2, 0L, true);
+        j47 j47Var = chatActivityEnterView.M0;
+        if (j47Var != null) {
+            j47Var.f(!v1);
+            chatActivityEnterView.M0 = null;
         }
     }
 }

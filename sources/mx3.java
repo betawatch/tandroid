@@ -1,118 +1,343 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Timer;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.os.SystemClock;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.regex.Pattern;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class mx3 extends jx3 {
-    public d29 i;
-    public d29 j;
-    public int k;
-    public final ln l;
-    public Timer m;
-    public final d8b n;
-    public final ArrayList o;
-    public final /* synthetic */ nx3 p;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class mx3 extends FrameLayout {
+    public final l46 a;
+    public final TextView b;
+    public final TextView c;
+    public final TextView d;
+    public final ah8 e;
+    public final r7 f;
+    public final boolean h;
+    public final hu0 n;
+    public TLRPC.TL_messages_stickerSet r;
+    public boolean s;
+    public float w;
+    public ValueAnimator x;
+    public final /* synthetic */ qx3 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mx3(nx3 nx3Var) {
-        super(nx3Var);
-        ArrayList arrayList;
-        this.p = nx3Var;
-        this.i = new d29(nx3Var);
-        this.j = new d29(nx3Var);
-        this.l = new ln(nx3Var);
-        this.n = new d8b(nx3Var);
-        this.o = new ArrayList();
-        this.a = (byte) 3;
-        this.b = gm.L(44.0f);
-        this.c = gm.L(36.0f);
-        px3 px3Var = nx3Var.f;
-        int i = px3.C1;
-        ArrayList arrayList2 = hs6.d0(px3Var.a).h;
-        int i2 = 0;
-        while (true) {
-            int min = Math.min(arrayList2.size(), 8);
-            arrayList = this.o;
-            if (i2 >= min) {
-                break;
-            }
-            arrayList.add(k39.c((TLRPC.TL_availableReaction) arrayList2.get(i2)));
-            i2++;
-        }
-        Collections.sort(arrayList, new x03((byte) 15));
-        if (!this.o.isEmpty()) {
-            this.i.e((k39) this.o.get(this.k));
-        }
-        this.l.e(true, 1.0f);
-    }
-
-    @Override // jx3
-    public final void a(Canvas canvas, float f, float f2) {
-        float L = f2 - gm.L(4.0f);
-        float f3 = (int) f;
-        float f4 = (int) L;
-        float f5 = this.b;
-        float f6 = (int) (f + f5);
-        float f7 = (int) (L + f5);
-        RectF rectF = this.f;
-        rectF.set(f3, f4, f6, f7);
-        float a = this.g.a(0.05f);
-        canvas.save();
-        canvas.scale(a, a, rectF.centerX(), rectF.centerY());
-        int i = (int) rectF.left;
-        int i2 = (int) rectF.top;
-        int i3 = (int) rectF.right;
-        int i4 = (int) rectF.bottom;
-        d8b d8bVar = this.n;
-        d8bVar.setBounds(i, i2, i3, i4);
-        d8bVar.draw(canvas);
-        float L2 = gm.L(30.0f);
-        Rect rect = gm.Q;
-        float f8 = L2 / 2.0f;
-        rect.set((int) (rectF.centerX() - f8), (int) (rectF.centerY() - f8), (int) (rectF.centerX() + f8), (int) (rectF.centerY() + f8));
-        float e = this.l.e(false, 1.0f);
-        this.j.c(rect);
-        this.i.c(rect);
-        if (e == 1.0f) {
-            this.i.a(canvas);
-        } else {
-            canvas.save();
-            float f9 = 1.0f - e;
-            canvas.scale(f9, f9, rectF.centerX(), rectF.top);
-            d29 d29Var = this.j;
-            d29Var.h = f9;
-            d29Var.a(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.scale(e, e, rectF.centerX(), rectF.bottom);
-            d29 d29Var2 = this.i;
-            d29Var2.h = e;
-            d29Var2.a(canvas);
-            canvas.restore();
-        }
-        canvas.restore();
-    }
-
-    @Override // jx3
-    public final void b(boolean z) {
-        this.i.b(z);
-        this.j.b(z);
-        Timer timer = this.m;
-        if (timer != null) {
-            timer.cancel();
-            this.m = null;
-        }
+    public mx3(qx3 qx3Var, Context context, boolean z) {
+        super(context);
+        float f;
+        float f2;
+        float f3;
+        this.y = qx3Var;
+        this.n = new hu0(this, (byte) 4);
+        final byte b = 0;
+        this.s = false;
+        this.w = 0.0f;
+        this.h = z;
+        final byte b2 = 1;
         if (z) {
-            Timer timer2 = new Timer();
-            this.m = timer2;
-            timer2.schedule(new lx3(this, (byte) 0), 2000L, 2000L);
+            f = 32.0f;
+        } else {
+            Pattern pattern = qx3.P1;
+            float f4 = 8.0f;
+            if (y6c.h(qx3Var.a).p()) {
+                f2 = 28.0f;
+                f3 = 16.0f;
+            } else {
+                f3 = 16.0f;
+                f2 = 28.0f;
+                ah8 ah8Var = new ah8(gl.L(4.0f), qx3Var.J0, context, false);
+                this.e = ah8Var;
+                ah8Var.b(k96.M0(2131743637, null), new View.OnClickListener(this) { // from class: jx3
+                    public final /* synthetic */ mx3 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        byte b3 = b;
+                        mx3 mx3Var = this.b;
+                        switch (b3) {
+                            case 0:
+                                qx3 qx3Var2 = mx3Var.y;
+                                qx3Var2.K1 = SystemClock.elapsedRealtime();
+                                qx3Var2.H0();
+                                break;
+                            case 1:
+                                qx3.E0(mx3Var.n, mx3Var.r, true, null, null);
+                                mx3Var.a(true, true);
+                                break;
+                            case 2:
+                                hu0 hu0Var = mx3Var.n;
+                                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = mx3Var.r;
+                                li3 li3Var = new li3(mx3Var, (byte) 24);
+                                Pattern pattern2 = qx3.P1;
+                                if (hu0Var != null && tL_messages_stickerSet != null && hu0Var.getFragmentView() != null) {
+                                    hq6.d0(hu0Var.getCurrentAccount()).i2(hu0Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, hu0Var, null, true, true, li3Var, true);
+                                }
+                                mx3Var.a(false, true);
+                                break;
+                            default:
+                                mx3Var.f.U(null, null);
+                                break;
+                        }
+                    }
+                }, false);
+                ah8Var.setIcon(R.raw.unlock_icon);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) ah8Var.getIconView().getLayoutParams();
+                marginLayoutParams.leftMargin = gl.L(1.0f);
+                marginLayoutParams.topMargin = gl.L(1.0f);
+                int L = gl.L(20.0f);
+                marginLayoutParams.height = L;
+                marginLayoutParams.width = L;
+                ((ViewGroup.MarginLayoutParams) ah8Var.getTextView().getLayoutParams()).leftMargin = gl.L(3.0f);
+                ah8Var.getChildAt(0).setPadding(gl.L(8.0f), 0, gl.L(8.0f), 0);
+                addView(ah8Var, nme.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+                ah8Var.measure(-2147383649, View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
+                f4 = (gl.L(16.0f) + ah8Var.getMeasuredWidth()) / gl.p;
+            }
+            float f5 = f4;
+            TextView textView = new TextView(context);
+            this.c = textView;
+            textView.setTypeface(gl.o());
+            zkb.X(textView, bkb.Ii, qx3Var.J0);
+            int i = bkb.Ei;
+            ff0 e = sjb.e(bkb.v0(i, qx3Var.J0), 14.0f);
+            vkb M = zkb.M(i);
+            vkb e2 = zkb.e(i);
+            wjb wjbVar = qx3Var.J0;
+            textView.setBackground(e);
+            zkb.j(textView, e, M, e2, wjbVar);
+            textView.setText(k96.M0(2131754483, null));
+            textView.setPadding(gl.L(18.0f), 0, gl.L(18.0f), 0);
+            textView.setGravity(17);
+            textView.setOnClickListener(new View.OnClickListener(this) { // from class: jx3
+                public final /* synthetic */ mx3 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    byte b3 = b2;
+                    mx3 mx3Var = this.b;
+                    switch (b3) {
+                        case 0:
+                            qx3 qx3Var2 = mx3Var.y;
+                            qx3Var2.K1 = SystemClock.elapsedRealtime();
+                            qx3Var2.H0();
+                            break;
+                        case 1:
+                            qx3.E0(mx3Var.n, mx3Var.r, true, null, null);
+                            mx3Var.a(true, true);
+                            break;
+                        case 2:
+                            hu0 hu0Var = mx3Var.n;
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = mx3Var.r;
+                            li3 li3Var = new li3(mx3Var, (byte) 24);
+                            Pattern pattern2 = qx3.P1;
+                            if (hu0Var != null && tL_messages_stickerSet != null && hu0Var.getFragmentView() != null) {
+                                hq6.d0(hu0Var.getCurrentAccount()).i2(hu0Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, hu0Var, null, true, true, li3Var, true);
+                            }
+                            mx3Var.a(false, true);
+                            break;
+                        default:
+                            mx3Var.f.U(null, null);
+                            break;
+                    }
+                }
+            });
+            addView(textView, nme.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            textView.measure(-2147383649, View.MeasureSpec.makeMeasureSpec(gl.L(f2), TLObject.FLAG_30));
+            float max = Math.max(f5, (gl.L(f3) + textView.getMeasuredWidth()) / gl.p);
+            TextView textView2 = new TextView(context);
+            this.d = textView2;
+            textView2.setTypeface(gl.o());
+            zkb.X(textView2, i, qx3Var.J0);
+            ff0 Y = bkb.Y(bkb.v0(i, qx3Var.J0) & 268435455, 4, 4);
+            vkb g = zkb.g(i, 15);
+            wjb wjbVar2 = qx3Var.J0;
+            textView2.setBackground(Y);
+            zkb.j(textView2, Y, null, g, wjbVar2);
+            textView2.setText(k96.M0(2131744618, null));
+            textView2.setPadding(gl.L(12.0f), 0, gl.L(12.0f), 0);
+            textView2.setGravity(17);
+            final byte b3 = 2;
+            textView2.setOnClickListener(new View.OnClickListener(this) { // from class: jx3
+                public final /* synthetic */ mx3 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    byte b32 = b3;
+                    mx3 mx3Var = this.b;
+                    switch (b32) {
+                        case 0:
+                            qx3 qx3Var2 = mx3Var.y;
+                            qx3Var2.K1 = SystemClock.elapsedRealtime();
+                            qx3Var2.H0();
+                            break;
+                        case 1:
+                            qx3.E0(mx3Var.n, mx3Var.r, true, null, null);
+                            mx3Var.a(true, true);
+                            break;
+                        case 2:
+                            hu0 hu0Var = mx3Var.n;
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = mx3Var.r;
+                            li3 li3Var = new li3(mx3Var, (byte) 24);
+                            Pattern pattern2 = qx3.P1;
+                            if (hu0Var != null && tL_messages_stickerSet != null && hu0Var.getFragmentView() != null) {
+                                hq6.d0(hu0Var.getCurrentAccount()).i2(hu0Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, hu0Var, null, true, true, li3Var, true);
+                            }
+                            mx3Var.a(false, true);
+                            break;
+                        default:
+                            mx3Var.f.U(null, null);
+                            break;
+                    }
+                }
+            });
+            textView2.setClickable(false);
+            addView(textView2, nme.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            textView2.setScaleX(0.0f);
+            textView2.setScaleY(0.0f);
+            textView2.setAlpha(0.0f);
+            textView2.measure(-2147383649, View.MeasureSpec.makeMeasureSpec(gl.L(f2), TLObject.FLAG_30));
+            f = Math.max(max, (gl.L(f3) + textView2.getMeasuredWidth()) / gl.p);
         }
+        float f6 = f;
+        Pattern pattern2 = qx3.P1;
+        l46 l46Var = new l46(context, qx3Var.J0);
+        this.a = l46Var;
+        l46Var.setPadding(gl.L(2.0f), 0, gl.L(2.0f), 0);
+        l46Var.setTypeface(gl.o());
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        l46Var.setEllipsize(truncateAt);
+        l46Var.setSingleLine(true);
+        l46Var.setLines(1);
+        zkb.G(l46Var, bkb.I6, qx3Var.J0);
+        zkb.X(l46Var, bkb.i5, qx3Var.J0);
+        if (!z) {
+            l46Var.setTextSize(1, 17.0f);
+            addView(l46Var, nme.i(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f6, 0.0f));
+            TextView textView3 = new TextView(context);
+            this.b = textView3;
+            textView3.setTextSize(1, 13.0f);
+            zkb.X(textView3, bkb.p5, qx3Var.J0);
+            textView3.setEllipsize(truncateAt);
+            textView3.setSingleLine(true);
+            textView3.setLines(1);
+            addView(textView3, nme.i(-1.0f, -2.0f, 8388659, 8.0f, 31.66f, f6, 0.0f));
+            return;
+        }
+        l46Var.setTextSize(1, 20.0f);
+        addView(l46Var, nme.i(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f6, 0.0f));
+        r7 r7Var = new r7(context, null, 0, bkb.v0(bkb.zj, qx3Var.J0), false, qx3Var.J0);
+        this.f = r7Var;
+        r7Var.setLongClickEnabled(false);
+        r7Var.setSubMenuOpenSide(2);
+        r7Var.setIcon(R.drawable.ic_ab_other);
+        int i2 = bkb.Dj;
+        ff0 f0 = bkb.f0(bkb.v0(i2, qx3Var.J0), 1, -1);
+        vkb M2 = zkb.M(i2);
+        wjb wjbVar3 = qx3Var.J0;
+        r7Var.setBackground(f0);
+        zkb.j(r7Var, f0, null, M2, wjbVar3);
+        addView(r7Var, nme.d(40, 40.0f, 53, 0.0f, 5.0f, 5.0f - (qx3Var.u0 / gl.p), 0.0f));
+        r7Var.e(1, R.drawable.msg_share, k96.M0(2131744609, null));
+        r7Var.e(2, R.drawable.msg_link, k96.M0(2131751750, null));
+        final byte b4 = 3;
+        r7Var.setOnClickListener(new View.OnClickListener(this) { // from class: jx3
+            public final /* synthetic */ mx3 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b32 = b4;
+                mx3 mx3Var = this.b;
+                switch (b32) {
+                    case 0:
+                        qx3 qx3Var2 = mx3Var.y;
+                        qx3Var2.K1 = SystemClock.elapsedRealtime();
+                        qx3Var2.H0();
+                        break;
+                    case 1:
+                        qx3.E0(mx3Var.n, mx3Var.r, true, null, null);
+                        mx3Var.a(true, true);
+                        break;
+                    case 2:
+                        hu0 hu0Var = mx3Var.n;
+                        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = mx3Var.r;
+                        li3 li3Var = new li3(mx3Var, (byte) 24);
+                        Pattern pattern22 = qx3.P1;
+                        if (hu0Var != null && tL_messages_stickerSet != null && hu0Var.getFragmentView() != null) {
+                            hq6.d0(hu0Var.getCurrentAccount()).i2(hu0Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, hu0Var, null, true, true, li3Var, true);
+                        }
+                        mx3Var.a(false, true);
+                        break;
+                    default:
+                        mx3Var.f.U(null, null);
+                        break;
+                }
+            }
+        });
+        r7Var.setDelegate(new kx3(qx3Var, b));
+        r7Var.setContentDescription(k96.M0(2131754838, null));
+    }
+
+    public final void a(boolean z, boolean z2) {
+        TextView textView;
+        if (this.s != z) {
+            this.s = z;
+            ValueAnimator valueAnimator = this.x;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.x = null;
+            }
+            TextView textView2 = this.c;
+            if (textView2 == null || (textView = this.d) == null) {
+                return;
+            }
+            textView2.setClickable(!z);
+            textView.setClickable(z);
+            if (z2) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z ? 1.0f : 0.0f);
+                this.x = ofFloat;
+                ofFloat.addUpdateListener(new uz1(this, (byte) 20));
+                this.x.setInterpolator(s33.h);
+                this.x.setDuration(250L);
+                this.x.start();
+                return;
+            }
+            this.w = z ? 1.0f : 0.0f;
+            textView2.setScaleX(z ? 0.0f : 1.0f);
+            textView2.setScaleY(z ? 0.0f : 1.0f);
+            textView2.setAlpha(z ? 0.0f : 1.0f);
+            textView.setScaleX(z ? 1.0f : 0.0f);
+            textView.setScaleY(z ? 1.0f : 0.0f);
+            textView.setAlpha(z ? 1.0f : 0.0f);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(this.h ? 42.0f : 56.0f), TLObject.FLAG_30));
     }
 }

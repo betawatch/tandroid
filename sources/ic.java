@@ -1,84 +1,72 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import j$.util.Base64;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ic extends FrameLayout {
-    public View[] a;
-    public boolean b;
-    public float c;
-    public ValueAnimator d;
+public final class ic {
+    public final int a;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public final ArrayList b = new ArrayList();
+    public int f = -1;
+    public long g = 0;
+
+    public ic(int i) {
+        this.a = i;
+    }
 
     public final void a() {
-        View[] viewArr = this.a;
-        float measuredWidth = getMeasuredWidth() > 0 ? getMeasuredWidth() : gm.q.x;
-        float f = jb6.a0 ? -1.0f : 1.0f;
-        View view = viewArr[0];
-        if (view != null) {
-            view.setTranslationX((-this.c) * measuredWidth * f);
-            viewArr[0].setVisibility(this.c < 1.0f ? 0 : 8);
-        }
-        View view2 = viewArr[1];
-        if (view2 != null) {
-            view2.setTranslationX((1.0f - this.c) * measuredWidth * f);
-            viewArr[1].setVisibility(this.c <= 0.0f ? 8 : 0);
+        this.g = 0L;
+        if (this.d) {
+            b();
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(int i, boolean z) {
-        this.b = i;
-        ValueAnimator valueAnimator = this.d;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.d = null;
-        }
+    public final void b() {
+        ArrayList arrayList = this.b;
+        boolean z = this.e;
+        int i = this.a;
         if (!z) {
-            this.c = i;
-            a();
-            requestLayout();
+            this.e = true;
+            try {
+                String string = na7.q1(i).X3.getString("ai_styles", null);
+                if (string != null) {
+                    SerializedData serializedData = new SerializedData(Base64.getDecoder().decode(string));
+                    TL_aicompose.Tones TLdeserialize = TL_aicompose.Tones.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                    if (TLdeserialize instanceof TL_aicompose.TL_tones) {
+                        this.c = ((TL_aicompose.TL_tones) TLdeserialize).hash;
+                        arrayList.clear();
+                        arrayList.addAll(((TL_aicompose.TL_tones) TLdeserialize).tones);
+                    }
+                }
+            } catch (Exception e) {
+                fa4.g(e, true);
+            }
+        }
+        if (this.f >= 0 || System.currentTimeMillis() - this.g < 1800000) {
             return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, i);
-        this.d = ofFloat;
-        ofFloat.addUpdateListener(new f0(this, (byte) 5));
-        this.d.addListener(new g0(this, (byte) 6));
-        this.d.setDuration(320L);
-        this.d.setInterpolator(d53.h);
-        this.d.start();
+        TL_aicompose.getTones gettones = new TL_aicompose.getTones();
+        gettones.hash = this.c;
+        this.f = ConnectionsManager.getInstance(i).sendRequestTyped(gettones, new hc((byte) 0), new f(this, (byte) 9));
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3;
-        View[] viewArr = this.a;
-        int i4 = 0;
-        View view = viewArr[0];
-        if (view == null || view.getVisibility() != 0) {
-            i3 = 0;
-        } else {
-            viewArr[0].measure(i, 0);
-            i3 = viewArr[0].getMeasuredHeight();
-        }
-        View view2 = viewArr[1];
-        if (view2 != null && view2.getVisibility() == 0) {
-            viewArr[1].measure(i, 0);
-            i4 = viewArr[1].getMeasuredHeight();
-        }
-        float f = this.c;
-        if (f > 0.0f) {
-            i3 = f >= 1.0f ? i4 : gm.U1(f, i3, i4);
-        }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30));
+    public final void c() {
+        kk7.f(this.a).k(kk7.a4, this);
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        a();
+    public final void d() {
+        TL_aicompose.TL_tones tL_tones = new TL_aicompose.TL_tones();
+        tL_tones.hash = this.c;
+        tL_tones.tones.addAll(this.b);
+        SerializedData serializedData = new SerializedData(tL_tones.getObjectSize());
+        tL_tones.serializeToStream(serializedData);
+        na7.q1(this.a).X3.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
     }
 }

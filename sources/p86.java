@@ -1,107 +1,45 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import org.telegram.ui.Dictation.DictationLid;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public class p86 extends odc {
+    public static final pd5 d = new pd5(21);
+    public final qka b = new qka();
+    public boolean c = false;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class p86 {
-    public final int a;
-    public int c;
-    public kn3 d;
-    public long e;
-    public long f;
-    public int g;
-    public int h;
-    public boolean i;
-    public String k;
-    public int l;
-    public String m;
-    public int n;
-    public int o;
-    public int r;
-    public int s;
-    public int t;
-    public boolean u;
-    public boolean v;
-    public int w;
-    public final /* synthetic */ q86 x;
-    public final byte[] b = new byte[od1.AUDIO_CONTENT_SAMPLING_RATE];
-    public String j = "";
-    public final ByteArrayOutputStream p = new ByteArrayOutputStream();
-    public final ByteArrayOutputStream q = new ByteArrayOutputStream();
-
-    public p86(q86 q86Var, int i) {
-        this.x = q86Var;
-        this.a = i;
-    }
-
-    public final void a() {
-        ByteArrayOutputStream byteArrayOutputStream = this.p;
-        if (this.s < 0 || this.u || this.d == null || DictationLid.c == 0) {
-            return;
-        }
-        int size = byteArrayOutputStream.size();
-        if (size - this.t >= 16000) {
-            this.t = size;
-            this.u = true;
-            int i = this.r;
-            DictationLid.h(DictationLid.j[this.s], new ji((Object) this, i, (byte) 12), null, byteArrayOutputStream.toByteArray());
-        }
-    }
-
+    @Override // odc
     public final void b() {
-        p86 p86Var;
-        if (this.j.isEmpty()) {
-            p86Var = this;
-        } else {
-            p86Var = this;
-            gm.c3(new i71((Object) p86Var, this.f, (Object) this.j, true, (byte) 2));
-            p86Var.j = "";
+        qka qkaVar = this.b;
+        int i = qkaVar.c;
+        for (int i2 = 0; i2 < i; i2++) {
+            o86 o86Var = (o86) qkaVar.b[i2];
+            v3d v3dVar = o86Var.l;
+            v3dVar.b();
+            v3dVar.c = true;
+            e31 e31Var = o86Var.n;
+            if (e31Var != null) {
+                o86Var.h(e31Var);
+            }
+            o86 o86Var2 = v3dVar.a;
+            if (o86Var2 == null) {
+                sc8.j("No listener register");
+                return;
+            }
+            if (o86Var2 != o86Var) {
+                w26.j("Attempting to unregister the wrong listener");
+                return;
+            }
+            v3dVar.a = null;
+            v3dVar.d = true;
+            v3dVar.b = false;
+            v3dVar.c = false;
+            v3dVar.e = false;
         }
-        q86 q86Var = p86Var.x;
-        long j = q86Var.f;
-        q86Var.f = 1 + j;
-        p86Var.f = j;
-        p86Var.q.reset();
-    }
-
-    public final void c(int i, int i2, byte[] bArr) {
-        ByteArrayOutputStream byteArrayOutputStream = this.q;
-        ByteArrayOutputStream byteArrayOutputStream2 = this.p;
-        if (this.s < 0 || DictationLid.c == 0) {
-            return;
+        int i3 = qkaVar.c;
+        Object[] objArr = qkaVar.b;
+        for (int i4 = 0; i4 < i3; i4++) {
+            objArr[i4] = null;
         }
-        if (byteArrayOutputStream2.size() <= 1920000) {
-            byteArrayOutputStream2.write(bArr, i, i2);
-            byteArrayOutputStream.write(bArr, i, i2);
-        } else {
-            this.s = -1;
-            byteArrayOutputStream2.reset();
-            byteArrayOutputStream.reset();
-        }
-    }
-
-    public final void d(int i, int i2, byte[] bArr) {
-        byte[] bArr2 = this.b;
-        if (i2 >= 16000) {
-            System.arraycopy(bArr, (i + i2) - od1.AUDIO_CONTENT_SAMPLING_RATE, bArr2, 0, od1.AUDIO_CONTENT_SAMPLING_RATE);
-            this.c = od1.AUDIO_CONTENT_SAMPLING_RATE;
-        } else {
-            int min = Math.min(this.c, 16000 - i2);
-            System.arraycopy(bArr2, this.c - min, bArr2, 0, min);
-            System.arraycopy(bArr, i, bArr2, min, i2);
-            this.c = min + i2;
-        }
-    }
-
-    public final void e() {
-        this.r++;
-        this.p.reset();
-        this.q.reset();
-        this.s = this.x.c ? 0 : -1;
-        this.t = 0;
-        this.o = 0;
-        this.v = false;
+        qkaVar.c = 0;
     }
 }

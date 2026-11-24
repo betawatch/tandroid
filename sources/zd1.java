@@ -1,152 +1,233 @@
 // default package
 
-import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.io.File;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicReference;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class zd1 {
-    public static final String[] o = {"34", "37"};
-    public static final String[] p = {"60", "62", "64", "65"};
-    public static final String[] q = {"35"};
-    public static final String[] r = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public static final String[] s = {"4"};
-    public static final String[] t = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55"};
-    public final Object a;
-    public final Object b;
-    public final Object c;
-    public Object d;
-    public Object e;
-    public Object f;
-    public final Object g;
-    public final Object h;
-    public final Object i;
-    public Object j;
-    public Object k;
-    public final Object l;
-    public final Object m;
-    public final Object n;
+public final class zd1 extends d {
+    public yd1 a;
+    public yd1 b;
+    public r7 c;
+    public wjb d;
 
-    public zd1(String str, Integer num, Integer num2, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15) {
-        this.a = uwe.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
-        this.m = num;
-        this.n = num2;
-        this.b = uwe.e(str2);
-        this.c = uwe.e(str3);
-        this.d = uwe.e(str4);
-        this.e = uwe.e(str5);
-        this.f = uwe.e(str6);
-        this.g = uwe.e(str7);
-        this.h = uwe.e(str8);
-        this.i = uwe.e(str9);
-        this.k = uwe.a(str10) == null ? c() : str10;
-        this.j = uwe.e(str11) == null ? d() : str11;
-        uwe.e(str12);
-        uwe.b(str13);
-        uwe.e(str14);
-        this.l = uwe.e(str15);
+    public final void Y() {
+        String str;
+        TLRPC.User f = y6c.h(this.currentAccount).f();
+        if (f == null || this.b.getText() == null || this.a.getText() == null) {
+            return;
+        }
+        String obj = this.a.getText().toString();
+        String obj2 = this.b.getText().toString();
+        String str2 = f.first_name;
+        if (str2 == null || !str2.equals(obj) || (str = f.last_name) == null || !str.equals(obj2)) {
+            TL_account.updateProfile updateprofile = new TL_account.updateProfile();
+            updateprofile.flags = 3;
+            updateprofile.first_name = obj;
+            f.first_name = obj;
+            updateprofile.last_name = obj2;
+            f.last_name = obj2;
+            TLRPC.User V1 = na7.q1(this.currentAccount).V1(Long.valueOf(y6c.h(this.currentAccount).e()));
+            if (V1 != null) {
+                V1.first_name = updateprofile.first_name;
+                V1.last_name = updateprofile.last_name;
+            }
+            y6c.h(this.currentAccount).u(true);
+            kk7.f(this.currentAccount).k(kk7.i0, new Object[0]);
+            kk7.f(this.currentAccount).k(2, 1);
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(updateprofile, new ce2((byte) 0));
+        }
     }
 
-    public final void a(ex8 ex8Var) {
-        mx6.w();
-        mx6.w();
-        ((lx6) this.d).k();
-        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
+    @Override // org.telegram.ui.ActionBar.d
+    public final void addThemeColorKeys(HashSet hashSet) {
+        super.addThemeColorKeys(hashSet);
+        hashSet.add(Integer.valueOf(bkb.s8));
+        hashSet.add(Integer.valueOf(bkb.z8));
+        hashSet.add(Integer.valueOf(bkb.r8));
+        hashSet.add(Integer.valueOf(bkb.c6));
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        wjb wjbVar = this.d;
+        zkb.l(this.actionBar, 3, bkb.e8, wjbVar);
+        final byte b = 1;
+        zkb.l(this.actionBar, 1, bkb.u8, wjbVar);
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(k96.M0(2131751252, null));
+        this.actionBar.setActionBarMenuOnItemClick(new r8(this, (byte) 17));
+        this.c = this.actionBar.t().h(1, R.drawable.ic_ab_done, gl.L(56.0f), k96.M0(2131751342, null));
+        TLRPC.User V1 = na7.q1(this.currentAccount).V1(Long.valueOf(y6c.h(this.currentAccount).e()));
+        if (V1 == null) {
+            V1 = y6c.h(this.currentAccount).f();
         }
-        try {
-            try {
-                ((rk) this.i).a(new a32((byte) 27));
-                ((nz2) this.f).i();
-            } catch (Exception e) {
-                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.fragmentView = linearLayout;
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
+        ((LinearLayout) this.fragmentView).setOrientation(1);
+        this.fragmentView.setOnTouchListener(new p8((byte) 22));
+        final byte b2 = 0;
+        yd1 yd1Var = new yd1(this, context, (byte) 0);
+        this.a = yd1Var;
+        yd1Var.setTextSize(1, 18.0f);
+        yd1 yd1Var2 = this.a;
+        int i = bkb.G6;
+        zkb.D(yd1Var2, i, wjbVar);
+        yd1 yd1Var3 = this.a;
+        int i2 = bkb.F6;
+        zkb.X(yd1Var3, i2, wjbVar);
+        this.a.setBackgroundDrawable(null);
+        yd1 yd1Var4 = this.a;
+        int i3 = bkb.j6;
+        int i4 = bkb.k6;
+        int i5 = bkb.o7;
+        zkb.F(yd1Var4, i3, i4, i5, wjbVar);
+        this.a.setMaxLines(1);
+        this.a.setLines(1);
+        this.a.setSingleLine(true);
+        this.a.setGravity(k96.a0 ? 5 : 3);
+        this.a.setInputType(49152);
+        this.a.setImeOptions(5);
+        this.a.setHint(k96.M0(2131750677, null));
+        zkb.v(this.a, i2, wjbVar);
+        this.a.setCursorSize(gl.L(20.0f));
+        this.a.setCursorWidth(1.5f);
+        linearLayout.addView(this.a, nme.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
+        this.a.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: xd1
+            public final /* synthetic */ zd1 b;
+
+            {
+                this.b = this;
             }
-            if (!ex8Var.c().b.a) {
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "Collection of crash reports disabled in Crashlytics settings.", null);
+
+            @Override // android.widget.TextView.OnEditorActionListener
+            public final boolean onEditorAction(TextView textView, int i6, KeyEvent keyEvent) {
+                byte b3 = b2;
+                zd1 zd1Var = this.b;
+                switch (b3) {
+                    case 0:
+                        if (i6 == 5) {
+                            zd1Var.b.requestFocus();
+                            yd1 yd1Var5 = zd1Var.b;
+                            yd1Var5.setSelection(yd1Var5.length());
+                            break;
+                        }
+                        break;
+                    default:
+                        if (i6 == 6) {
+                            zd1Var.c.performClick();
+                            break;
+                        }
+                        break;
                 }
-                throw new RuntimeException("Collection of crash reports disabled in Crashlytics settings.");
+                return true;
             }
-            if (!((nz2) this.f).d(ex8Var)) {
-                Log.w("FirebaseCrashlytics", "Previous sessions could not be finalized.", null);
+        });
+        yd1 yd1Var5 = new yd1(this, context, (byte) 1);
+        this.b = yd1Var5;
+        yd1Var5.setTextSize(1, 18.0f);
+        zkb.D(this.b, i, wjbVar);
+        zkb.X(this.b, i2, wjbVar);
+        this.b.setBackgroundDrawable(null);
+        zkb.F(this.b, i3, i4, i5, wjbVar);
+        this.b.setMaxLines(1);
+        this.b.setLines(1);
+        this.b.setSingleLine(true);
+        this.b.setGravity(k96.a0 ? 5 : 3);
+        this.b.setInputType(49152);
+        this.b.setImeOptions(6);
+        this.b.setHint(k96.M0(2131748840, null));
+        zkb.v(this.b, i2, wjbVar);
+        this.b.setCursorSize(gl.L(20.0f));
+        this.b.setCursorWidth(1.5f);
+        linearLayout.addView(this.b, nme.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
+        this.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: xd1
+            public final /* synthetic */ zd1 b;
+
+            {
+                this.b = this;
             }
-            ((nz2) this.f).j(((TaskCompletionSource) ((AtomicReference) ex8Var.h).get()).getTask());
-        } finally {
-            e();
-        }
-    }
 
-    public final void b(ex8 ex8Var) {
-        Future<?> submit = ((a13) ((mx6) this.n).b).a.submit(new oz2(this, ex8Var, (byte) 1));
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.", null);
-        }
-        try {
-            submit.get(3L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e);
-            Thread.currentThread().interrupt();
-        } catch (ExecutionException e2) {
-            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e2);
-        } catch (TimeoutException e3) {
-            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e3);
-        }
-    }
-
-    public final String c() {
-        String str = (String) this.a;
-        if (uwe.d((String) this.k) && !uwe.d(str)) {
-            this.k = uwe.c(str, o) ? "American Express" : uwe.c(str, p) ? "Discover" : uwe.c(str, q) ? "JCB" : uwe.c(str, r) ? "Diners Club" : uwe.c(str, s) ? "Visa" : uwe.c(str, t) ? "MasterCard" : "Unknown";
-        }
-        return (String) this.k;
-    }
-
-    public final String d() {
-        String str = (String) this.a;
-        if (!uwe.d((String) this.j)) {
-            return (String) this.j;
-        }
-        if (str == null || str.length() <= 4) {
-            return null;
-        }
-        String substring = str.substring(str.length() - 4, str.length());
-        this.j = substring;
-        return substring;
-    }
-
-    public final void e() {
-        mx6.w();
-        try {
-            lx6 lx6Var = (lx6) this.d;
-            jd4 jd4Var = (jd4) lx6Var.c;
-            if (new File((File) jd4Var.c, (String) lx6Var.b).delete()) {
-                return;
+            @Override // android.widget.TextView.OnEditorActionListener
+            public final boolean onEditorAction(TextView textView, int i6, KeyEvent keyEvent) {
+                byte b3 = b;
+                zd1 zd1Var = this.b;
+                switch (b3) {
+                    case 0:
+                        if (i6 == 5) {
+                            zd1Var.b.requestFocus();
+                            yd1 yd1Var52 = zd1Var.b;
+                            yd1Var52.setSelection(yd1Var52.length());
+                            break;
+                        }
+                        break;
+                    default:
+                        if (i6 == 6) {
+                            zd1Var.c.performClick();
+                            break;
+                        }
+                        break;
+                }
+                return true;
             }
-            Log.w("FirebaseCrashlytics", "Initialization marker file was not properly removed.", null);
-        } catch (Exception e) {
-            Log.e("FirebaseCrashlytics", "Problem encountered deleting Crashlytics initialization marker.", e);
+        });
+        if (V1 != null) {
+            this.a.setText(V1.first_name);
+            yd1 yd1Var6 = this.a;
+            yd1Var6.setSelection(yd1Var6.length());
+            this.b.setText(V1.last_name);
         }
+        return this.fragmentView;
     }
 
-    public zd1(li4 li4Var, vl5 vl5Var, qz2 qz2Var, i73 i73Var, rk rkVar, rk rkVar2, jd4 jd4Var, jz2 jz2Var, et8 et8Var, mx6 mx6Var) {
-        this.b = i73Var;
-        li4Var.a();
-        this.a = li4Var.a;
-        this.g = vl5Var;
-        this.l = qz2Var;
-        this.i = rkVar;
-        this.j = rkVar2;
-        this.h = jd4Var;
-        this.k = jz2Var;
-        this.m = et8Var;
-        this.n = mx6Var;
-        System.currentTimeMillis();
-        this.c = new mj4((byte) 13);
+    @Override // org.telegram.ui.ActionBar.d
+    public final wjb getResourceProvider() {
+        return this.d;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        yd1 yd1Var = this.a;
+        int i = bkb.j6;
+        arrayList.add(new blb(yd1Var, 32, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, i));
+        yd1 yd1Var2 = this.a;
+        int i2 = bkb.k6;
+        arrayList.add(new blb(yd1Var2, 65568, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, i2));
+        arrayList.add(new blb(this.b, 32, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, i));
+        arrayList.add(new blb(this.b, 65568, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, i2));
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onResume() {
+        super.onResume();
+        if (na7.c1().getBoolean("view_animations", true)) {
+            return;
+        }
+        this.a.requestFocus();
+        gl.E3(this.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
+        if (z) {
+            gl.d3(new nv0(this, (byte) 19), 100L);
+        }
     }
 }

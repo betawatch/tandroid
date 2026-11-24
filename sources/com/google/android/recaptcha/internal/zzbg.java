@@ -2,21 +2,21 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final class zzbg extends qx2 {
+final class zzbg extends gw2 {
     /* synthetic */ Object zza;
     final /* synthetic */ zzbo zzb;
     int zzc;
     String zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbg(zzbo zzboVar, px2 px2Var) {
-        super(px2Var);
+    public zzbg(zzbo zzboVar, fw2 fw2Var) {
+        super(fw2Var);
         this.zzb = zzboVar;
     }
 
-    @Override // og0
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         Object zzm;
         this.zza = obj;

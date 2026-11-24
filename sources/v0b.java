@@ -1,147 +1,90 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.animation.AccelerateInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
+import java.io.FileNotFoundException;
+import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class v0b extends FrameLayout {
-    public bf0 a;
-    public TLRPC.Document b;
-    public Object c;
-    public long d;
-    public boolean e;
-    public float f;
-    public boolean h;
-    public pj8 n;
-    public boolean r;
-    public boolean s;
-    public ylb w;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v0b implements ed, j8c, r8c, Vector.TLDeserializer {
+    public final /* synthetic */ byte a;
 
-    static {
-        new AccelerateInterpolator(0.5f);
+    public /* synthetic */ v0b(byte b) {
+        this.a = b;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        boolean drawChild = super.drawChild(canvas, view, j);
-        bf0 bf0Var = this.a;
-        if (view == bf0Var) {
-            boolean z = this.e;
-            float f = 1.0f;
-            float f2 = 0.8f;
-            if ((z && this.f != 0.8f) || (!z && this.f != 1.0f)) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j2 = currentTimeMillis - this.d;
-                this.d = currentTimeMillis;
-                if (this.e) {
-                    float f3 = this.f;
-                    if (f3 != 0.8f) {
-                        f = f3 - (j2 / 400.0f);
-                        this.f = f;
-                        if (f < 0.8f) {
-                            this.f = 0.8f;
-                            f = f2;
-                        }
-                        bf0Var.setScaleX(f);
-                        bf0Var.setScaleY(this.f);
-                        bf0Var.invalidate();
-                        invalidate();
-                    }
-                }
-                f2 = (j2 / 400.0f) + this.f;
-                this.f = f2;
-                if (f2 > 1.0f) {
-                    this.f = 1.0f;
-                    bf0Var.setScaleX(f);
-                    bf0Var.setScaleY(this.f);
-                    bf0Var.invalidate();
-                    invalidate();
-                }
-                f = f2;
-                bf0Var.setScaleX(f);
-                bf0Var.setScaleY(this.f);
-                bf0Var.invalidate();
-                invalidate();
-            }
+    public static /* synthetic */ void a(Object obj) {
+        throw new IllegalArgumentException(obj.toString());
+    }
+
+    public static /* synthetic */ void b(Object obj, String str) {
+        throw new FileNotFoundException(str + obj);
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+        switch (this.a) {
+            case 7:
+                return TLRPC.AttachMenuPeerType.TLdeserialize(inputSerializedData, i, z);
+            case 8:
+                return TLRPC.TL_attachMenuBotIcon.TLdeserialize(inputSerializedData, i, z);
+            case 9:
+                return TLRPC.TL_attachMenuBotIconColor.TLdeserialize(inputSerializedData, i, z);
+            case 10:
+                return TLRPC.AttachMenuBot.TLdeserialize(inputSerializedData, i, z);
+            case 11:
+                return TLRPC.User.TLdeserialize(inputSerializedData, i, z);
+            case 12:
+                return TLRPC.RestrictionReason.TLdeserialize(inputSerializedData, i, z);
+            case 13:
+                return TLRPC.TL_username.TLdeserialize(inputSerializedData, i, z);
+            case 14:
+                return TL_bots.BotInfo.TLdeserialize(inputSerializedData, i, z);
+            case 15:
+                return TLRPC.TL_messageRange.TLdeserialize(inputSerializedData, i, z);
+            case 16:
+                return TLRPC.TL_channelAdminLogEvent.TLdeserialize(inputSerializedData, i, z);
+            case 17:
+                return TLRPC.Chat.TLdeserialize(inputSerializedData, i, z);
+            case 18:
+                return TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData, i, z);
+            case 19:
+                return TLRPC.TL_sendAsPeer.TLdeserialize(inputSerializedData, i, z);
+            case 20:
+                return TLRPC.TL_sponsoredMessageReportOption.TLdeserialize(inputSerializedData, i, z);
+            case 21:
+                return TLRPC.ChatParticipant.TLdeserialize(inputSerializedData, i, z);
+            case 22:
+                return TLRPC.Reaction.TLdeserialize(inputSerializedData, i, z);
+            case 23:
+                return TLRPC.ThemeSettings.TLdeserialize(inputSerializedData, i, z);
+            case 24:
+                return TL_communities.CommunityPeer.TLdeserialize(inputSerializedData, i, z);
+            case 25:
+                return TLRPC.TL_dcOption.TLdeserialize(inputSerializedData, i, z);
+            case 26:
+                return TLRPC.TL_peerBlocked.TLdeserialize(inputSerializedData, i, z);
+            case 27:
+                return TLRPC.TL_contact.TLdeserialize(inputSerializedData, i, z);
+            case 28:
+                return TLRPC.TL_contactStatus.TLdeserialize(inputSerializedData, i, z);
+            default:
+                return TLRPC.TL_importedContact.TLdeserialize(inputSerializedData, i, z);
         }
-        return drawChild;
     }
 
-    public Object getParentObject() {
-        return this.c;
+    @Override // j8c
+    public final Object g(Integer num, Object obj) {
+        Integer num2 = (Integer) obj;
+        return num.intValue() == 0 ? num2.intValue() == 0 ? k96.M0(2131748613, null) : k96.H(',', "Stars", num2.intValue()) : String.valueOf(num2);
     }
 
-    public g47 getSendAnimationData() {
-        bf0 bf0Var = this.a;
-        ImageReceiver imageReceiver = bf0Var.getImageReceiver();
-        if (!imageReceiver.E()) {
-            return null;
-        }
-        g47 g47Var = new g47();
-        bf0Var.getLocationInWindow(new int[2]);
-        g47Var.a = imageReceiver.r() + r2[0];
-        g47Var.b = imageReceiver.s() + r2[1];
-        g47Var.c = imageReceiver.N0;
-        return g47Var;
-    }
-
-    public TLRPC.Document getSticker() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.b == null) {
-            return;
-        }
-        String str = null;
-        for (int i = 0; i < this.b.attributes.size(); i++) {
-            TLRPC.DocumentAttribute documentAttribute = this.b.attributes.get(i);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
-                String str2 = documentAttribute.alt;
-                str = (str2 == null || str2.length() <= 0) ? null : documentAttribute.alt;
-            }
-        }
-        if (str != null) {
-            StringBuilder k = b10.k(str, " ");
-            k.append(jb6.M0(2131753901, null));
-            accessibilityNodeInfo.setText(k.toString());
-        } else {
-            accessibilityNodeInfo.setText(jb6.M0(2131753901, null));
-        }
-        accessibilityNodeInfo.setEnabled(true);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + gm.L(76.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(78.0f), TLObject.FLAG_30));
-    }
-
-    public void setClearsInputField(boolean z) {
-        this.h = z;
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z) {
-        bf0 bf0Var = this.a;
-        if ((bf0Var.getImageReceiver().f1 != 0) != z) {
-            bf0Var.getImageReceiver().f1 = z ? 1 : 0;
-            bf0Var.invalidate();
-        }
-        super.setPressed(z);
-    }
-
-    public void setScaled(boolean z) {
-        this.e = z;
-        this.d = System.currentTimeMillis();
-        invalidate();
+    @Override // ed
+    public final void u(hd hdVar, int i) {
+        hdVar.dismiss();
     }
 }

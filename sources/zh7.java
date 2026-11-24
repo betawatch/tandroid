@@ -1,17 +1,36 @@
 // default package
 
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class zh7 extends Drawable.ConstantState {
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public final int getChangingConfigurations() {
-        return 0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class zh7 implements Iterable {
+    public final HashMap a = new HashMap();
+    public final ArrayList b = new ArrayList();
+
+    public zh7(HashMap hashMap) {
+        String str = (String) hashMap.get("cookie");
+        if (str != null) {
+            for (String str2 : str.split(";")) {
+                String[] split = str2.trim().split("=");
+                if (split.length == 2) {
+                    this.a.put(split[0], split[1]);
+                }
+            }
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public final Drawable newDrawable() {
-        return new ai7();
+    public final void h() {
+        Iterator it = this.b.iterator();
+        if (it.hasNext()) {
+            throw ls6.l(it);
+        }
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.keySet().iterator();
     }
 }

@@ -11,15 +11,15 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class f extends r59 implements jm7 {
+public abstract class f extends o39 implements gk7 {
     public static final byte[] q3 = new byte[1024];
     public boolean f3;
-    public final zs g3;
+    public final zr g3;
     public final HashMap h3;
     public final HashMap i3;
-    public bmb j3;
+    public akb j3;
     public final e k3;
     public final ArrayList l3;
     public final ArrayList m3;
@@ -37,39 +37,39 @@ public abstract class f extends r59 implements jm7 {
         this.n3 = i;
         this.p3 = dVar;
         if (i == 2) {
-            anb.h(cmb.g5, null, this);
+            zkb.h(bkb.g5, null, this);
         } else {
-            anb.h(cmb.c6, null, this);
+            zkb.h(bkb.c6, null, this);
         }
         setItemAnimator(null);
         setLayoutAnimation(null);
-        zs zsVar = new zs((byte) 18);
-        this.g3 = zsVar;
+        zr zrVar = new zr((byte) 18);
+        this.g3 = zrVar;
         setPadding(0, 0, 0, 0);
         setClipToPadding(false);
-        zsVar.i1(0);
-        setLayoutManager(zsVar);
+        zrVar.i1(0);
+        setLayoutManager(zrVar);
         e eVar = new e(this, context);
         this.k3 = eVar;
         setAdapter(eVar);
-        setOnItemClickListener(new f59() { // from class: org.telegram.ui.Cells.a
-            @Override // f59
-            public final void g(int i2, View view) {
-                bmb bmbVar = ((ThemesHorizontalListCell$InnerThemeView) view).b;
+        setOnItemClickListener(new c39() { // from class: org.telegram.ui.Cells.a
+            @Override // c39
+            public final void d(int i2, View view) {
+                akb akbVar = ((ThemesHorizontalListCell$InnerThemeView) view).b;
                 f fVar = f.this;
-                fVar.B1(bmbVar, view);
+                fVar.B1(akbVar, view);
                 int left = view.getLeft();
                 int right = view.getRight();
                 if (left < 0) {
-                    fVar.x0(left - gm.L(8.0f), 0, null);
+                    fVar.x0(left - gl.L(8.0f), 0, null);
                 } else if (right > fVar.getMeasuredWidth()) {
                     fVar.x0(right - fVar.getMeasuredWidth(), 0, null);
                 }
             }
         });
-        setOnItemLongClickListener(new h59() { // from class: org.telegram.ui.Cells.b
-            @Override // h59
-            public final boolean g(int i2, View view) {
+        setOnItemLongClickListener(new e39() { // from class: org.telegram.ui.Cells.b
+            @Override // e39
+            public final boolean d(int i2, View view) {
                 f.this.C1(((ThemesHorizontalListCell$InnerThemeView) view).b);
                 return true;
             }
@@ -82,47 +82,47 @@ public abstract class f extends r59 implements jm7 {
             i = view.getMeasuredWidth();
         }
         if (i != 0) {
-            bmb B0 = this.n3 == 1 ? cmb.J : cmb.B0();
+            akb B0 = this.n3 == 1 ? bkb.J : bkb.B0();
             this.j3 = B0;
             ArrayList arrayList = this.m3;
             int indexOf = arrayList.indexOf(B0);
             if (indexOf >= 0 || (indexOf = this.l3.indexOf(this.j3) + arrayList.size()) >= 0) {
-                this.g3.g1(indexOf, (i - gm.L(76.0f)) / 2);
+                this.g3.g1(indexOf, (i - gl.L(76.0f)) / 2);
             }
         }
     }
 
-    public final void B1(bmb bmbVar, View view) {
-        TLRPC.TL_theme tL_theme = bmbVar.G;
+    public final void B1(akb akbVar, View view) {
+        TLRPC.TL_theme tL_theme = akbVar.G;
         if (tL_theme != null) {
-            if (!bmbVar.V) {
+            if (!akbVar.V) {
                 return;
             }
             if (tL_theme.document == null) {
                 org.telegram.ui.ActionBar.d dVar = this.p3;
                 if (dVar != null) {
-                    dVar.presentFragment(new zob(bmbVar, null, true));
+                    dVar.presentFragment(new ymb(akbVar, null, true));
                     return;
                 }
                 return;
             }
         }
         SharedPreferences.Editor edit = org.telegram.messenger.a.b.getSharedPreferences("themeconfig", 0).edit();
-        edit.putString((this.n3 == 1 || bmbVar.o()) ? "lastDarkTheme" : "lastDayTheme", bmbVar.k());
+        edit.putString((this.n3 == 1 || akbVar.o()) ? "lastDarkTheme" : "lastDayTheme", akbVar.k());
         edit.commit();
         if (this.n3 == 1) {
-            if (bmbVar == cmb.J) {
+            if (akbVar == bkb.J) {
                 return;
             }
-            boolean z = cmb.I == cmb.J;
-            cmb.J = bmbVar;
+            boolean z = bkb.I == bkb.J;
+            bkb.J = akbVar;
             if (z) {
-                cmb.l(true);
+                bkb.l(true);
             }
-        } else if (bmbVar == cmb.B0()) {
+        } else if (akbVar == bkb.B0()) {
             return;
         } else {
-            cmb.I1(bmbVar, false, -1, view);
+            bkb.I1(akbVar, false, -1, view);
         }
         D1();
         int childCount = getChildCount();
@@ -130,21 +130,21 @@ public abstract class f extends r59 implements jm7 {
             View childAt = getChildAt(i);
             if (childAt instanceof ThemesHorizontalListCell$InnerThemeView) {
                 ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) childAt;
-                themesHorizontalListCell$InnerThemeView.a.a(themesHorizontalListCell$InnerThemeView.b == (themesHorizontalListCell$InnerThemeView.b0.n3 == 1 ? cmb.J : cmb.B0()), true);
+                themesHorizontalListCell$InnerThemeView.a.a(themesHorizontalListCell$InnerThemeView.b == (themesHorizontalListCell$InnerThemeView.b0.n3 == 1 ? bkb.J : bkb.B0()), true);
             }
         }
-        tz3.q(bmbVar, bmbVar.Z);
+        jy3.q(akbVar, akbVar.Z);
         if (this.n3 != 1) {
-            cmb.K1(this.p3);
+            bkb.K1(this.p3);
         }
     }
 
     public abstract void D1();
 
-    @Override // jm7
+    @Override // gk7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i != nm7.Y1) {
-            if (i == nm7.Z1) {
+        if (i != kk7.X1) {
+            if (i == kk7.Y1) {
                 this.h3.remove((String) objArr[0]);
                 return;
             }
@@ -152,32 +152,32 @@ public abstract class f extends r59 implements jm7 {
         }
         String str = (String) objArr[0];
         File file = (File) objArr[1];
-        bmb bmbVar = (bmb) this.h3.get(str);
-        if (bmbVar != null) {
+        akb akbVar = (akb) this.h3.get(str);
+        if (akbVar != null) {
             this.h3.remove(str);
-            if (this.i3.remove(bmbVar) != null) {
-                Utilities.e.c(new j2b(this, bmbVar, file, (byte) 17));
+            if (this.i3.remove(akbVar) != null) {
+                Utilities.e.c(new r1b(this, akbVar, file, (byte) 14));
             } else {
-                z1(bmbVar);
+                z1(akbVar);
             }
         }
     }
 
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i = 0; i < 4; i++) {
-            nm7.f(i).b(this, nm7.Y1);
-            nm7.f(i).b(this, nm7.Z1);
+            kk7.f(i).b(this, kk7.X1);
+            kk7.f(i).b(this, kk7.Y1);
         }
     }
 
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i = 0; i < 4; i++) {
-            nm7.f(i).n(this, nm7.Y1);
-            nm7.f(i).n(this, nm7.Z1);
+            kk7.f(i).n(this, kk7.X1);
+            kk7.f(i).n(this, kk7.Y1);
         }
     }
 
@@ -185,11 +185,11 @@ public abstract class f extends r59 implements jm7 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.f3) {
-            canvas.drawLine(jb6.a0 ? 0.0f : gm.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (jb6.a0 ? gm.L(20.0f) : 0), getMeasuredHeight() - 1, cmb.j0);
+            canvas.drawLine(k96.a0 ? 0.0f : gl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(20.0f) : 0), getMeasuredHeight() - 1, bkb.j0);
         }
     }
 
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (getParent() != null && getParent().getParent() != null) {
             getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
@@ -207,13 +207,13 @@ public abstract class f extends r59 implements jm7 {
         this.f3 = z;
     }
 
-    public final void z1(bmb bmbVar) {
+    public final void z1(akb akbVar) {
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View childAt = getChildAt(i);
             if (childAt instanceof ThemesHorizontalListCell$InnerThemeView) {
                 ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) childAt;
-                if (themesHorizontalListCell$InnerThemeView.b == bmbVar && themesHorizontalListCell$InnerThemeView.c()) {
+                if (themesHorizontalListCell$InnerThemeView.b == akbVar && themesHorizontalListCell$InnerThemeView.c()) {
                     themesHorizontalListCell$InnerThemeView.b.V = true;
                     themesHorizontalListCell$InnerThemeView.a();
                 }
@@ -221,6 +221,6 @@ public abstract class f extends r59 implements jm7 {
         }
     }
 
-    public void C1(bmb bmbVar) {
+    public void C1(akb akbVar) {
     }
 }

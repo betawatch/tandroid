@@ -1,32 +1,55 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public class yc9 implements Parcelable {
-    public static final Parcelable.Creator<yc9> CREATOR = new hx6(18);
-    public zk5 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class yc9 implements t22 {
+    public final /* synthetic */ x02 a;
+    public final /* synthetic */ hd9 b;
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public yc9(hd9 hd9Var, x02 x02Var) {
+        this.b = hd9Var;
+        this.a = x02Var;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        synchronized (this) {
-            zk5 zk5Var = this.a;
-            if (zk5Var == null) {
-                zk5Var = new xc9(this);
-                this.a = zk5Var;
+    @Override // t22
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2) {
+        boolean isEmpty = arrayList.isEmpty();
+        hd9 hd9Var = this.b;
+        if (!isEmpty) {
+            hd9Var.Q.X1((String) arrayList.get(0));
+        } else if (!arrayList3.isEmpty()) {
+            ye9 ye9Var = hd9Var.Q;
+            k27 k27Var = (k27) arrayList3.get(0);
+            ye9Var.getClass();
+            if (k27Var != null && k27Var.F0() != null) {
+                TLRPC.Document F0 = k27Var.F0();
+                TLRPC.Message message = k27Var.k;
+                ye9Var.Y1(F0, message != null ? message.attachPath : null);
             }
-            parcel.writeStrongBinder(zk5Var.asBinder());
+        }
+        this.a.a(true);
+    }
+
+    @Override // t22
+    public final void z() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.b.startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
-    public void a(int i, Bundle bundle) {
+    @Override // t22
+    public final void S() {
+    }
+
+    @Override // t22
+    public final void m(ArrayList arrayList, boolean z, int i, long j) {
     }
 }

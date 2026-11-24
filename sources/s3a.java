@@ -1,38 +1,26 @@
 // default package
 
-import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final /* synthetic */ class s3a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ a6a b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class s3a {
+    public String a;
+    public String b;
+    public boolean c;
+    public String d;
+    public boolean e;
+    public TLRPC.TL_inputStickerSetItem f;
+    public oac g;
 
-    public /* synthetic */ s3a(a6a a6aVar, long j, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.b = a6aVar;
-        this.c = j;
-        this.d = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ArrayList arrayList = this.d;
-        long j = this.c;
-        a6a a6aVar = this.b;
-        switch (b) {
-            case 0:
-                a6aVar.getMessagesController().p3(arrayList, j);
-                break;
-            case 1:
-                a6aVar.getMessagesController().p3(arrayList, j);
-                break;
-            default:
-                a6aVar.getMessagesController().p3(arrayList, j);
-                break;
-        }
+    public final void a(int i, TLRPC.InputFile inputFile, Runnable runnable) {
+        TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
+        tL_messages_uploadMedia.peer = new TLRPC.TL_inputPeerSelf();
+        TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
+        tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
+        tL_inputMediaUploadedDocument.file = inputFile;
+        tL_inputMediaUploadedDocument.mime_type = this.d;
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_uploadMedia, new r3a(this, runnable), 2);
     }
 }

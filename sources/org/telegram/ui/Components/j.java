@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class j extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -21,10 +21,10 @@ public final class j extends AnimatorListenerAdapter {
         ChatActivityEnterView chatActivityEnterView = this.b;
         if (animator.equals(chatActivityEnterView.j3)) {
             byte b = this.a;
-            if (b != 3 && chatActivityEnterView.F0 != null && !gm.A1()) {
+            if (b != 3 && chatActivityEnterView.F0 != null && !gl.A1()) {
                 chatActivityEnterView.F0.requestFocus();
             }
-            chatActivityEnterView.C();
+            chatActivityEnterView.D();
             if (b != 3) {
                 l lVar = chatActivityEnterView.E2;
                 if (lVar != null) {

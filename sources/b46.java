@@ -1,14 +1,154 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class b46 extends c46 {
-    public final int g;
-    public final boolean h;
+import android.graphics.CornerPathEffect;
+import android.graphics.Path;
+import android.os.Build;
+import android.text.Layout;
 
-    public b46(int i, boolean z) {
-        super(-1, -1, -1, null, null);
-        this.g = i;
-        this.h = z;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class b46 extends pw2 {
+    public static CornerPathEffect w;
+    public static int x;
+    public Layout h;
+    public int i;
+    public float j;
+    public float k;
+    public float l;
+    public final boolean m;
+    public boolean n;
+    public int o;
+    public int p;
+    public float q;
+    public float r;
+    public float s;
+    public float t;
+    public float u;
+    public float v;
+
+    public b46(int i) {
+        this.j = -1.0f;
+        this.n = true;
+        this.s = Float.MAX_VALUE;
+        this.u = Float.MAX_VALUE;
+        this.m = true;
+        this.c = false;
+    }
+
+    public static CornerPathEffect c() {
+        if (w == null || x != gl.L(5.0f)) {
+            int L = gl.L(5.0f);
+            x = L;
+            w = new CornerPathEffect(L);
+        }
+        return w;
+    }
+
+    @Override // pw2, android.graphics.Path
+    public final void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
+        Layout layout = this.h;
+        if (layout == null) {
+            f(f, f2, f3, f4, direction);
+            return;
+        }
+        try {
+            float f5 = this.l;
+            float f6 = f2 + f5;
+            float f7 = f4 + f5;
+            float f8 = this.j;
+            if (f8 == -1.0f) {
+                this.j = f6;
+            } else if (f8 != f6) {
+                this.j = f6;
+                this.i++;
+            }
+            float lineRight = layout.getLineRight(this.i);
+            float lineLeft = this.h.getLineLeft(this.i);
+            if (f < lineRight) {
+                if (f > lineLeft || f3 > lineLeft) {
+                    if (f3 > lineRight) {
+                        f3 = lineRight;
+                    }
+                    if (f < lineLeft) {
+                        f = lineLeft;
+                    }
+                    float f9 = this.k;
+                    float f10 = f + f9;
+                    float f11 = f3 + f9;
+                    if (Build.VERSION.SDK_INT < 28) {
+                        f7 -= f7 != ((float) this.h.getHeight()) ? this.h.getSpacingAdd() : 0.0f;
+                    } else if (f7 - f6 > this.p) {
+                        f7 = this.l + (f7 != ((float) this.h.getHeight()) ? this.h.getLineBottom(this.i) - this.h.getSpacingAdd() : 0.0f);
+                    }
+                    int i = this.o;
+                    if (i < 0) {
+                        f7 += i;
+                    } else if (i > 0) {
+                        f6 += i;
+                    }
+                    if (this.m) {
+                        f(f10 - (gl.L(5.0f) / 2.0f), f6, f11 + (gl.L(5.0f) / 2.0f), f7, direction);
+                    } else {
+                        f(f10, f6, f11, f7, direction);
+                    }
+                }
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    public final void d(Layout layout, int i, float f) {
+        e(layout, i, 0.0f, f);
+    }
+
+    public final void e(Layout layout, int i, float f, float f2) {
+        int lineCount;
+        if (layout == null) {
+            this.h = null;
+            this.i = 0;
+            this.j = -1.0f;
+            this.k = f;
+            this.l = f2;
+            return;
+        }
+        this.h = layout;
+        this.i = layout.getLineForOffset(i);
+        this.j = -1.0f;
+        this.k = f;
+        this.l = f2;
+        if (Build.VERSION.SDK_INT < 28 || (lineCount = layout.getLineCount()) <= 0) {
+            return;
+        }
+        int i2 = lineCount - 1;
+        this.p = layout.getLineBottom(i2) - layout.getLineTop(i2);
+    }
+
+    public final void f(float f, float f2, float f3, float f4, Path.Direction direction) {
+        float f5 = this.r;
+        float f6 = f - f5;
+        float f7 = this.q;
+        float f8 = f2 - f7;
+        float f9 = f3 + f5;
+        float f10 = f4 + f7;
+        this.s = Math.min(this.s, Math.min(f6, f9));
+        this.u = Math.min(this.u, Math.min(f8, f10));
+        this.t = Math.max(this.t, Math.max(f6, f9));
+        this.v = Math.max(this.v, Math.max(f8, f10));
+        super.addRect(f6, f8, f9, f10, direction);
+    }
+
+    @Override // pw2, android.graphics.Path
+    public final void reset() {
+        if (this.n) {
+            super.reset();
+        }
+    }
+
+    public b46() {
+        this.j = -1.0f;
+        this.n = true;
+        this.s = Float.MAX_VALUE;
+        this.u = Float.MAX_VALUE;
+        this.c = false;
     }
 }

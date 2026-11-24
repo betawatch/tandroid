@@ -1,34 +1,103 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class oxa implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eya b;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-    public /* synthetic */ oxa(eya eyaVar, byte b) {
-        this.a = b;
-        this.b = eyaVar;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class oxa extends LinearLayout implements tjb {
+    public final TextView[] a;
+    public final TextView[] b;
+    public final TextView[] c;
+
+    public oxa(Context context, int i) {
+        super(context);
+        int i2 = i << 1;
+        this.a = new TextView[i2];
+        this.b = new TextView[i2];
+        this.c = new TextView[i2];
+        setOrientation(1);
+        setPadding(gl.L(16.0f), 0, gl.L(16.0f), 0);
+        for (int i3 = 0; i3 < i; i3++) {
+            LinearLayout j = de9.j(context, 0);
+            for (int i4 = 0; i4 < 2; i4++) {
+                LinearLayout j2 = de9.j(context, 1);
+                LinearLayout j3 = de9.j(context, 0);
+                int i5 = (i3 << 1) + i4;
+                this.a[i5] = new TextView(context);
+                this.b[i5] = new TextView(context);
+                this.c[i5] = new TextView(context);
+                this.a[i5].setTypeface(gl.o());
+                this.a[i5].setTextSize(1, 17.0f);
+                this.c[i5].setTextSize(1, 13.0f);
+                this.c[i5].setGravity(3);
+                this.b[i5].setTextSize(1, 13.0f);
+                this.b[i5].setPadding(gl.L(4.0f), 0, 0, 0);
+                j3.addView(this.a[i5]);
+                j3.addView(this.b[i5]);
+                j2.addView(j3);
+                j2.addView(this.c[i5]);
+                j.addView(j2, nme.l(1.0f, -1, -2));
+            }
+            addView(j, nme.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 16.0f));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        eya eyaVar = this.b;
-        switch (b) {
-            case 0:
-                eyaVar.N1 = true;
-                eyaVar.E0(null);
-                gm.d3(new oxa(eyaVar, (byte) 1), 240L);
-                break;
-            case 1:
-                eyaVar.dismiss();
-                break;
-            default:
-                txa txaVar = eyaVar.s1;
-                txaVar.G = false;
-                txaVar.invalidate();
-                break;
+    public final void a(String str, int i, String str2, String str3) {
+        this.a[i].setText(str);
+        this.b[i].setText(str2);
+        this.c[i].setText(str3);
+        updateColors();
+    }
+
+    public void setData(qxa qxaVar) {
+        TextView[] textViewArr = this.a;
+        textViewArr[0].setText(qxaVar.b);
+        textViewArr[1].setText(qxaVar.f);
+        textViewArr[2].setText(qxaVar.j);
+        textViewArr[3].setText(qxaVar.n);
+        TextView[] textViewArr2 = this.b;
+        textViewArr2[0].setText(qxaVar.c);
+        textViewArr2[0].setTag(Integer.valueOf(qxaVar.d ? bkb.w6 : bkb.o7));
+        textViewArr2[1].setText(qxaVar.g);
+        textViewArr2[1].setTag(Integer.valueOf(qxaVar.h ? bkb.w6 : bkb.o7));
+        textViewArr2[2].setText(qxaVar.k);
+        textViewArr2[2].setTag(Integer.valueOf(qxaVar.l ? bkb.w6 : bkb.o7));
+        textViewArr2[3].setText(qxaVar.o);
+        textViewArr2[3].setTag(Integer.valueOf(qxaVar.p ? bkb.w6 : bkb.o7));
+        TextView[] textViewArr3 = this.c;
+        textViewArr3[0].setText(qxaVar.a);
+        textViewArr3[1].setText(qxaVar.e);
+        textViewArr3[2].setText(qxaVar.i);
+        textViewArr3[3].setText(qxaVar.m);
+        updateColors();
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        TextView[] textViewArr;
+        TextView[] textViewArr2;
+        TextView[] textViewArr3 = this.a;
+        if (textViewArr3 == null || (textViewArr = this.b) == null || (textViewArr2 = this.c) == null) {
+            return;
         }
+        for (int i = 0; i < textViewArr3.length; i++) {
+            TextView textView = textViewArr3[i];
+            int i2 = bkb.F6;
+            textView.setTextColor(bkb.w0(null, i2, false));
+            textViewArr2[i].setTextColor(bkb.w0(null, bkb.y6, false));
+            Integer num = (Integer) textViewArr[i].getTag();
+            if (num != null) {
+                textViewArr[i].setTextColor(bkb.w0(null, num.intValue(), false));
+            } else {
+                textViewArr[i].setTextColor(bkb.w0(null, i2, false));
+            }
+        }
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

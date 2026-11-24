@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class f6e implements cq7 {
-    public static final f6e a = new f6e();
+import android.os.Bundle;
 
-    static {
-        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class f6e extends n4d {
+    public final /* synthetic */ gg0 g;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f6e(gg0 gg0Var, int i, Bundle bundle) {
+        super(gg0Var, i, bundle);
+        this.g = gg0Var;
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // n4d
+    public final boolean a() {
+        this.g.o.a(ds2.f);
+        return true;
+    }
+
+    @Override // n4d
+    public final void b(ds2 ds2Var) {
+        gg0 gg0Var = this.g;
+        gg0Var.o.a(ds2Var);
+        gg0Var.s(ds2Var);
     }
 }

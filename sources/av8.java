@@ -1,57 +1,116 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.PointF;
+import android.text.TextUtils;
+import android.util.SparseArray;
+import android.view.TextureView;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class av8 extends sa1 implements bx5 {
-    public final boolean a;
+public final /* synthetic */ class av8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ dv8 b;
 
-    public av8(Object obj, Class cls, String str, String str2, int i) {
-        super(obj, cls, str, str2, (i & 1) == 1);
-        this.a = false;
+    public /* synthetic */ av8(dv8 dv8Var, byte b) {
+        this.a = b;
+        this.b = dv8Var;
     }
 
-    @Override // sa1
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final bx5 getReflected() {
-        if (this.a) {
-            rjb.j("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
-            return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i;
+        ye0 ye0Var;
+        byte b = this.a;
+        bv8 bv8Var = null;
+        dv8 dv8Var = this.b;
+        switch (b) {
+            case 0:
+                if (dv8Var.a.get() != null && ((y6b) dv8Var.f) != null && !((AtomicBoolean) dv8Var.b).get()) {
+                    TextureView textureView = ((y6b) dv8Var.f).getTextureView();
+                    if (textureView != null) {
+                        int width = textureView.getWidth();
+                        int height = textureView.getHeight();
+                        if (width > 720 || height > 720) {
+                            float f = width;
+                            float f2 = height;
+                            float min = Math.min(720.0f / f, 720.0f / f2);
+                            width = (int) (f * min);
+                            height = (int) (f2 * min);
+                        }
+                        int max = Math.max(1, width);
+                        int max2 = Math.max(1, height);
+                        Bitmap bitmap = (Bitmap) dv8Var.g;
+                        if (bitmap == null || max != bitmap.getWidth() || max2 != ((Bitmap) dv8Var.g).getHeight()) {
+                            dv8Var.g = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
+                        }
+                        textureView.getBitmap((Bitmap) dv8Var.g);
+                        Bitmap bitmap2 = (Bitmap) dv8Var.g;
+                        String str = (String) dv8Var.e;
+                        if (bitmap2 != null && (ye0Var = (ye0) dv8Var.a.get()) != null && ye0Var.b.k()) {
+                            int width2 = bitmap2.getWidth();
+                            int height2 = bitmap2.getHeight();
+                            xl3 xl3Var = new xl3((byte) 4);
+                            int width3 = bitmap2.getWidth();
+                            int height3 = bitmap2.getHeight();
+                            xl3Var.d = bitmap2;
+                            pc0 pc0Var = (pc0) xl3Var.b;
+                            pc0Var.a = width3;
+                            pc0Var.b = height3;
+                            SparseArray h = ye0Var.h(xl3Var);
+                            for (int i2 = 0; i2 < h.size(); i2++) {
+                                xe0 xe0Var = (xe0) h.valueAt(i2);
+                                String str2 = xe0Var.b;
+                                Point[] pointArr = xe0Var.e;
+                                if (str2 != null) {
+                                    String trim = str2.trim();
+                                    if (!trim.startsWith(str)) {
+                                        if (!trim.startsWith("https://" + str)) {
+                                            if (!trim.startsWith("http://" + str)) {
+                                            }
+                                        }
+                                    }
+                                    PointF[] pointFArr = new PointF[pointArr.length];
+                                    for (int i3 = 0; i3 < pointArr.length; i3++) {
+                                        Point point = pointArr[i3];
+                                        pointFArr[i3] = new PointF(point.x / width2, point.y / height2);
+                                    }
+                                    bv8Var = new bv8(trim, pointFArr);
+                                }
+                            }
+                        }
+                        bv8 bv8Var2 = (bv8) dv8Var.d;
+                        if ((bv8Var2 != null) == (bv8Var != null)) {
+                            if (bv8Var != null && bv8Var2 != null) {
+                                PointF[] pointFArr2 = bv8Var.b;
+                                PointF[] pointFArr3 = bv8Var2.b;
+                                if (TextUtils.equals(bv8Var.a, bv8Var2.a)) {
+                                    if (pointFArr2 != pointFArr3) {
+                                        if (pointFArr2.length == pointFArr3.length) {
+                                            while (i < pointFArr2.length) {
+                                                i = (Math.abs(pointFArr2[i].x - pointFArr3[i].x) <= 0.001f && Math.abs(pointFArr2[i].y - pointFArr3[i].y) <= 0.001f) ? i + 1 : 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        dv8Var.d = bv8Var;
+                        gl.c3(new ll8(dv8Var, bv8Var, (byte) 21));
+                    }
+                    if (!((AtomicBoolean) dv8Var.b).get()) {
+                        Utilities.e.a((av8) dv8Var.h);
+                        Utilities.e.d((av8) dv8Var.h, dv8Var.d());
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((e6b) dv8Var.c).a(null);
+                break;
         }
-        yw5 compute = compute();
-        if (compute != this) {
-            return (bx5) compute;
-        }
-        throw new oy2("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
-    }
-
-    @Override // sa1
-    public final yw5 compute() {
-        return this.a ? this : super.compute();
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof av8) {
-            av8 av8Var = (av8) obj;
-            return getOwner().equals(av8Var.getOwner()) && getName().equals(av8Var.getName()) && getSignature().equals(av8Var.getSignature()) && rr5.a(getBoundReceiver(), av8Var.getBoundReceiver());
-        }
-        if (obj instanceof bx5) {
-            return obj.equals(compute());
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return getSignature().hashCode() + ((getName().hashCode() + (getOwner().hashCode() * 31)) * 31);
-    }
-
-    public final String toString() {
-        yw5 compute = compute();
-        if (compute != this) {
-            return compute.toString();
-        }
-        return "property " + getName() + " (Kotlin reflection is not available)";
     }
 }

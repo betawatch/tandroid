@@ -1,55 +1,32 @@
 // default package
 
-import android.os.IInterface;
-import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.SuccessContinuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class e6d extends e1d implements IInterface {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ h6d c;
+public final /* synthetic */ class e6d implements SuccessContinuation, ohe, OnFailureListener {
+    public static final /* synthetic */ e6d a = new e6d();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e6d(h6d h6dVar, byte b) {
-        super("com.google.android.gms.auth.api.signin.internal.ISignInCallbacks", (byte) 2);
-        this.b = b;
-        this.c = h6dVar;
+    @Override // ohe
+    public final byte[] a(int i, int i2, byte[] bArr) {
+        return Arrays.copyOfRange(bArr, i, i2 + i);
     }
 
-    @Override // e1d
-    public final boolean c(int i, Parcel parcel, Parcel parcel2) {
-        h6d h6dVar = this.c;
-        byte b = this.b;
-        switch (i) {
-            case 101:
-                y5d.b(parcel);
-                gxc.b();
-                return false;
-            case nm7.m1 /* 102 */:
-                Status status = (Status) y5d.a(parcel, Status.CREATOR);
-                y5d.b(parcel);
-                switch (b) {
-                    case 0:
-                        h6dVar.a(status);
-                        break;
-                    default:
-                        throw new UnsupportedOperationException();
-                }
-            case nm7.n1 /* 103 */:
-                Status status2 = (Status) y5d.a(parcel, Status.CREATOR);
-                y5d.b(parcel);
-                switch (b) {
-                    case 1:
-                        h6dVar.a(status2);
-                        break;
-                    default:
-                        throw new UnsupportedOperationException();
-                }
-            default:
-                return false;
-        }
-        parcel2.writeNoException();
-        return true;
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        Log.e("OptionalModuleUtils", "Failed to check feature availability", exc);
+    }
+
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public final Task then(Object obj) {
+        Bundle bundle = (Bundle) obj;
+        int i = fm9.h;
+        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
     }
 }

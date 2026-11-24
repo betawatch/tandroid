@@ -1,19 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class nt5 extends yh0 {
-    static {
-        be6.a(nt5.class);
-    }
+public final /* synthetic */ class nt5 extends qq4 implements gq4 {
+    public static final nt5 a = new nt5(3, pt5.class, "onAwaitInternalProcessResFunc", "onAwaitInternalProcessResFunc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", 0);
 
-    public static byte[] d(String str) {
-        byte[] bArr = new byte[4];
-        if (str != null) {
-            for (int i = 0; i < Math.min(4, str.length()); i++) {
-                bArr[i] = (byte) str.charAt(i);
-            }
+    @Override // gq4
+    public final Object a(Object obj, Object obj2, Object obj3) {
+        int i = pt5.c;
+        ((pt5) obj).getClass();
+        if (obj3 instanceof fp2) {
+            throw ((fp2) obj3).a;
         }
-        return bArr;
+        return obj3;
     }
 }

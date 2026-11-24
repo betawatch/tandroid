@@ -5,17 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnContentRefreshListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public class OnContentRefreshDelegateImpl implements dr7 {
+public class OnContentRefreshDelegateImpl implements ap7 {
     private final IOnContentRefreshListener mListener;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class OnContentRefreshListenerStub extends IOnContentRefreshListener.Stub {
-        private final er7 mOnContentRefreshListener;
+        private final bp7 mOnContentRefreshListener;
 
-        public OnContentRefreshListenerStub(er7 er7Var) {
+        public OnContentRefreshListenerStub(bp7 bp7Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -29,21 +29,21 @@ public class OnContentRefreshDelegateImpl implements dr7 {
         }
     }
 
-    private OnContentRefreshDelegateImpl(er7 er7Var) {
-        this.mListener = new OnContentRefreshListenerStub(er7Var);
+    private OnContentRefreshDelegateImpl(bp7 bp7Var) {
+        this.mListener = new OnContentRefreshListenerStub(bp7Var);
     }
 
-    public static dr7 create(er7 er7Var) {
-        return new OnContentRefreshDelegateImpl(er7Var);
+    public static ap7 create(bp7 bp7Var) {
+        return new OnContentRefreshDelegateImpl(bp7Var);
     }
 
-    public void sendContentRefreshRequested(fr7 fr7Var) {
+    public void sendContentRefreshRequested(cp7 cp7Var) {
         try {
             IOnContentRefreshListener iOnContentRefreshListener = this.mListener;
             Objects.requireNonNull(iOnContentRefreshListener);
             iOnContentRefreshListener.onContentRefreshRequested(androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            rjb.m(e);
+            sdb.b(e);
         }
     }
 

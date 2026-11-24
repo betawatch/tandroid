@@ -1,36 +1,73 @@
 // default package
 
-import android.graphics.Canvas;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class cba {
-    public final ud a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final class cba extends FrameLayout {
+    public final be0 a;
+    public final uaa b;
+    public final TextView c;
+    public long d;
+    public long e;
+    public final int f;
+    public final wjb h;
 
-    public cba(View view) {
-        ud udVar = new ud(view, (byte) 5);
-        this.b = System.currentTimeMillis();
-        this.a = udVar;
-        z0d z0dVar = Utilities.c;
-        this.c = gm.R1(5.0f, 9.0f, Utilities.l(z0dVar.nextFloat()));
-        this.d = gm.R1(2.5f, 5.0f, Utilities.l(z0dVar.nextFloat()));
-        this.e = gm.R1(2.5f, 5.2f, Utilities.l(z0dVar.nextFloat()));
+    public cba(Context context, wjb wjbVar) {
+        super(context);
+        this.f = y6c.t0;
+        this.h = wjbVar;
+        setWillNotDraw(false);
+        be0 be0Var = new be0(context);
+        this.a = be0Var;
+        be0Var.setRoundRadius(gl.L(28.0f));
+        addView(be0Var, nme.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        zkb.X(textView, bkb.i5, wjbVar);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(2);
+        textView.setGravity(49);
+        textView.setLines(2);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, nme.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
+        this.b = new uaa(this, wjbVar, (byte) 1);
+        int i = bkb.h6;
+        Drawable Y = bkb.Y(bkb.w0(null, i, false), gl.L(2.0f), gl.L(2.0f));
+        vkb M = zkb.M(i);
+        setBackground(Y);
+        zkb.j(this, Y, null, M, null);
     }
 
-    public final void a(Canvas canvas, float f) {
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * gm.L(0.5f) * f, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * gm.L(0.5f) * f);
-        canvas.translate(-0.0f, -0.0f);
-        if (f > 0.0f) {
-            this.a.run();
-        }
+    public long getCurrentDialog() {
+        return this.d;
+    }
+
+    public long getCurrentTopic() {
+        return this.e;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(103.0f), TLObject.FLAG_30));
+    }
+
+    public void setAsNewBotForumTopic(boolean z) {
+        this.c.setText(k96.M0(z ? 2131745243 : 2131745242, null));
+        be0 be0Var = this.a;
+        be0Var.setAnimatedEmojiDrawable(null);
+        jm4 jm4Var = new jm4(jm4.k[0]);
+        o06 o06Var = new o06(1, null);
+        o06Var.a("");
+        o06Var.i = 1.8f;
+        fm2 fm2Var = new fm2(jm4Var, o06Var, 0, 0);
+        fm2Var.x = true;
+        be0Var.setImageDrawable(fm2Var);
     }
 }

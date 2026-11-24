@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class a {
     public final MediaController a;
@@ -40,13 +40,13 @@ public class a {
         while (i < size) {
             Object obj = arrayList.get(i);
             i++;
-            tu6 tu6Var = (tu6) obj;
-            so6 so6Var = new so6(tu6Var);
-            this.d.put(tu6Var, so6Var);
-            tu6Var.c = so6Var;
+            ts6 ts6Var = (ts6) obj;
+            sm6 sm6Var = new sm6(ts6Var);
+            this.d.put(ts6Var, sm6Var);
+            ts6Var.c = sm6Var;
             try {
-                mediaSessionCompat$Token.a().F(so6Var);
-                tu6Var.e(13, null, null);
+                mediaSessionCompat$Token.a().F(sm6Var);
+                ts6Var.e(13, null, null);
             } catch (RemoteException e) {
                 Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
             }
@@ -54,21 +54,21 @@ public class a {
         arrayList.clear();
     }
 
-    public final void b(tu6 tu6Var) {
-        this.a.unregisterCallback(tu6Var.a);
+    public final void b(ts6 ts6Var) {
+        this.a.unregisterCallback(ts6Var.a);
         synchronized (this.b) {
             if (this.e.a() != null) {
                 try {
-                    so6 so6Var = (so6) this.d.remove(tu6Var);
-                    if (so6Var != null) {
-                        tu6Var.c = null;
-                        this.e.a().C(so6Var);
+                    sm6 sm6Var = (sm6) this.d.remove(ts6Var);
+                    if (sm6Var != null) {
+                        ts6Var.c = null;
+                        this.e.a().C(sm6Var);
                     }
                 } catch (RemoteException e) {
                     Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
                 }
             } else {
-                this.c.remove(tu6Var);
+                this.c.remove(ts6Var);
             }
         }
     }

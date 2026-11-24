@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class qs3 {
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final long e;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-    public qs3(String str, int i, int i2, int i3, long j) {
-        this.a = str;
-        this.c = i;
-        this.b = i2;
-        this.d = i3;
-        this.e = j;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class qs3 extends a49 {
+    public final ps3[] a = new ps3[4];
+    public final ArrayList b = new ArrayList();
+
+    @Override // a49
+    public final EdgeEffect a(RecyclerView recyclerView, int i) {
+        ps3 ps3Var = new ps3(recyclerView, i, new os3(this, (byte) 0));
+        this.a[i] = ps3Var;
+        return ps3Var;
+    }
+
+    public final float b(int i) {
+        ps3 ps3Var = this.a[i];
+        if (Build.VERSION.SDK_INT < 31 || ps3Var == null || ps3Var.isFinished()) {
+            return 0.0f;
+        }
+        return ps3Var.getDistance();
     }
 }

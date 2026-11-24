@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -77,7 +77,7 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -102,7 +102,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -131,7 +131,7 @@ public class FastDateParser implements DateParser, Serializable {
                 calendar.set(this.field, num.intValue());
                 return;
             }
-            StringBuilder k = b10.k(str, " not in (");
+            StringBuilder k = b00.k(str, " not in (");
             Iterator<String> it = this.keyValues.keySet().iterator();
             while (it.hasNext()) {
                 k.append(it.next());
@@ -142,7 +142,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -174,13 +174,13 @@ public class FastDateParser implements DateParser, Serializable {
                     }
                 }
             }
-            StringBuilder s = td4.s("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
+            StringBuilder r = tb4.r("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
             Iterator<String> it = this.tzNames.keySet().iterator();
             while (it.hasNext()) {
-                FastDateParser.escapeRegex(s, it.next(), false).append('|');
+                FastDateParser.escapeRegex(r, it.next(), false).append('|');
             }
-            s.setCharAt(s.length() - 1, ')');
-            this.validTimeZoneChars = s.toString();
+            r.setCharAt(r.length() - 1, ')');
+            this.validTimeZoneChars = r.toString();
         }
 
         @Override // org.telegram.messenger.time.FastDateParser.Strategy
@@ -199,7 +199,7 @@ public class FastDateParser implements DateParser, Serializable {
             } else {
                 timeZone = this.tzNames.get(str);
                 if (timeZone == null) {
-                    u36.j(str.concat(" is not a supported timezone name"));
+                    w26.j(str.concat(" is not a supported timezone name"));
                     return;
                 }
             }
@@ -325,47 +325,47 @@ public class FastDateParser implements DateParser, Serializable {
             switch (charAt) {
                 case '\'':
                     if (str.length() > 2) {
-                        return new CopyQuotedStrategy(ts2.m(1, 1, str));
+                        return new CopyQuotedStrategy(ir2.n(1, 1, str));
                     }
                     break;
-                case nm7.T0 /* 83 */:
+                case kk7.T0 /* 83 */:
                     return MILLISECOND_STRATEGY;
-                case nm7.X0 /* 87 */:
+                case kk7.X0 /* 87 */:
                     return WEEK_OF_MONTH_STRATEGY;
-                case nm7.a1 /* 90 */:
+                case kk7.a1 /* 90 */:
                     break;
-                case nm7.h1 /* 97 */:
+                case kk7.h1 /* 97 */:
                     return getLocaleSpecificStrategy(9, calendar);
-                case nm7.k1 /* 100 */:
+                case kk7.k1 /* 100 */:
                     return DAY_OF_MONTH_STRATEGY;
-                case nm7.o1 /* 104 */:
+                case kk7.o1 /* 104 */:
                     return MODULO_HOUR_STRATEGY;
-                case nm7.r1 /* 107 */:
+                case kk7.r1 /* 107 */:
                     return HOUR_OF_DAY_STRATEGY;
-                case nm7.t1 /* 109 */:
+                case kk7.t1 /* 109 */:
                     return MINUTE_STRATEGY;
-                case nm7.z1 /* 115 */:
+                case kk7.z1 /* 115 */:
                     return SECOND_STRATEGY;
-                case nm7.D1 /* 119 */:
+                case kk7.D1 /* 119 */:
                     return WEEK_OF_YEAR_STRATEGY;
                 default:
                     switch (charAt) {
-                        case nm7.E0 /* 68 */:
+                        case kk7.E0 /* 68 */:
                             return DAY_OF_YEAR_STRATEGY;
-                        case nm7.F0 /* 69 */:
+                        case kk7.F0 /* 69 */:
                             return getLocaleSpecificStrategy(7, calendar);
-                        case nm7.G0 /* 70 */:
+                        case kk7.G0 /* 70 */:
                             return DAY_OF_WEEK_IN_MONTH_STRATEGY;
-                        case nm7.H0 /* 71 */:
+                        case kk7.H0 /* 71 */:
                             return getLocaleSpecificStrategy(0, calendar);
-                        case nm7.I0 /* 72 */:
+                        case kk7.I0 /* 72 */:
                             return MODULO_HOUR_OF_DAY_STRATEGY;
                         default:
                             switch (charAt) {
-                                case nm7.L0 /* 75 */:
+                                case kk7.L0 /* 75 */:
                                     return HOUR_STRATEGY;
-                                case nm7.M0 /* 76 */:
-                                case nm7.N0 /* 77 */:
+                                case kk7.M0 /* 76 */:
+                                case kk7.N0 /* 77 */:
                                     return str.length() >= 3 ? getLocaleSpecificStrategy(2, calendar) : NUMBER_MONTH_STRATEGY;
                             }
                     }
@@ -474,7 +474,7 @@ public class FastDateParser implements DateParser, Serializable {
             return parse;
         }
         if (!this.locale.equals(JAPANESE_IMPERIAL)) {
-            StringBuilder p = wi8.p("Unparseable date: \"", str, "\" does not match ");
+            StringBuilder p = ug8.p("Unparseable date: \"", str, "\" does not match ");
             p.append(this.parsePattern.pattern());
             throw new ParseException(p.toString(), 0);
         }
@@ -502,7 +502,7 @@ public class FastDateParser implements DateParser, Serializable {
         return parse(str, parsePosition);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -547,7 +547,7 @@ public class FastDateParser implements DateParser, Serializable {
         this(str, timeZone, locale, null);
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     private static abstract class Strategy {
         private Strategy() {
         }

@@ -1,97 +1,202 @@
 // default package
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class qb6 {
-    public static SparseIntArray b;
-    public static final qb6 c = new qb6();
-    public final SparseArray a;
+public abstract class qb6 {
+    public static final /* synthetic */ long a;
+    public static final /* synthetic */ long b;
+    public static final /* synthetic */ long c;
+    private volatile /* synthetic */ Object _next$volatile = this;
+    private volatile /* synthetic */ Object _prev$volatile = this;
+    private volatile /* synthetic */ Object _removedRef$volatile;
 
-    public qb6(pb6 pb6Var) {
-        SparseArray sparseArray = pb6Var.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
+    static {
+        Unsafe unsafe = ex.a;
+        a = unsafe.objectFieldOffset(qb6.class.getDeclaredField("_next$volatile"));
+        b = unsafe.objectFieldOffset(qb6.class.getDeclaredField("_prev$volatile"));
+        c = unsafe.objectFieldOffset(qb6.class.getDeclaredField("_removedRef$volatile"));
     }
 
-    public static SparseArray c(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i++;
-                }
-            } else {
-                while (i < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i++;
-                }
+    public final boolean c(qb6 qb6Var, int i) {
+        qb6 qb6Var2;
+        qb6 qb6Var3;
+        while (true) {
+            qb6 h = this.h();
+            if (h instanceof c56) {
+                return (((c56) h).d & i) == 0 && h.c(qb6Var, i);
             }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th2) {
-                th.addSuppressed(th2);
+            Unsafe unsafe = ex.a;
+            unsafe.putObjectVolatile(qb6Var, b, h);
+            long j = a;
+            unsafe.putObjectVolatile(qb6Var, j, this);
+            while (true) {
+                Unsafe unsafe2 = ex.a;
+                qb6Var2 = this;
+                qb6Var3 = qb6Var;
+                if (unsafe2.compareAndSwapObject(h, a, qb6Var2, qb6Var3)) {
+                    qb6Var3.e(qb6Var2);
+                    return true;
+                }
+                if (unsafe2.getObjectVolatile(h, j) != qb6Var2) {
+                    break;
+                }
+                this = qb6Var2;
+                qb6Var = qb6Var3;
             }
-            throw th;
+            this = qb6Var2;
+            qb6Var = qb6Var3;
         }
     }
 
-    public final String a(String str) {
-        if (str == null) {
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0029, code lost:
+    
+        return r8;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final qb6 d() {
+        qb6 qb6Var;
+        Unsafe unsafe;
+        loop0: while (true) {
+            Unsafe unsafe2 = ex.a;
+            long j = b;
+            qb6 qb6Var2 = (qb6) unsafe2.getObjectVolatile(this, j);
+            qb6 qb6Var3 = null;
+            qb6 qb6Var4 = qb6Var2;
+            while (qb6Var4 != null) {
+                Unsafe unsafe3 = ex.a;
+                long j2 = a;
+                Object objectVolatile = unsafe3.getObjectVolatile(qb6Var4, j2);
+                if (objectVolatile != this) {
+                    qb6 qb6Var5 = qb6Var2;
+                    qb6Var = this;
+                    if (qb6Var.i()) {
+                        return null;
+                    }
+                    if (!(objectVolatile instanceof s69)) {
+                        objectVolatile.getClass();
+                        qb6Var3 = qb6Var4;
+                        qb6Var4 = (qb6) objectVolatile;
+                    } else if (qb6Var3 != null) {
+                        qb6 qb6Var6 = ((s69) objectVolatile).a;
+                        do {
+                            qb6 qb6Var7 = qb6Var4;
+                            unsafe = ex.a;
+                            boolean compareAndSwapObject = unsafe.compareAndSwapObject(qb6Var3, a, qb6Var7, qb6Var6);
+                            qb6Var4 = qb6Var7;
+                            if (compareAndSwapObject) {
+                                this = qb6Var;
+                                qb6Var4 = qb6Var3;
+                                qb6Var2 = qb6Var5;
+                                qb6Var3 = null;
+                            }
+                        } while (unsafe.getObjectVolatile(qb6Var3, j2) == qb6Var4);
+                    } else {
+                        if (qb6Var4 == null) {
+                            fyb.g();
+                            return null;
+                        }
+                        qb6Var4 = (qb6) unsafe3.getObjectVolatile(qb6Var4, j);
+                    }
+                    this = qb6Var;
+                    qb6Var2 = qb6Var5;
+                } else {
+                    if (qb6Var2 == qb6Var4) {
+                        break;
+                    }
+                    while (true) {
+                        Unsafe unsafe4 = ex.a;
+                        qb6 qb6Var8 = this;
+                        boolean compareAndSwapObject2 = unsafe4.compareAndSwapObject(qb6Var8, b, qb6Var2, qb6Var4);
+                        qb6 qb6Var9 = qb6Var2;
+                        qb6Var = qb6Var8;
+                        if (compareAndSwapObject2) {
+                            break loop0;
+                        }
+                        if (unsafe4.getObjectVolatile(qb6Var, j) == qb6Var9) {
+                            this = qb6Var;
+                            qb6Var2 = qb6Var9;
+                        }
+                    }
+                }
+                this = qb6Var;
+            }
+            fyb.g();
             return null;
         }
-        return (String) this.a.get(str.hashCode());
     }
 
-    public final String b(int i, Context context, String str) {
-        String a = str != null ? a(str) : null;
-        if (a != null || i == 0) {
-            return a;
-        }
-        if (context != null && i != 0) {
-            SparseIntArray sparseIntArray = b;
-            if (sparseIntArray == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                    try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray2 = new SparseIntArray(readInt32);
-                        for (int i2 = 0; i2 < readInt32; i2++) {
-                            sparseIntArray2.append(serializedData.readInt32(true), serializedData.readInt32(true));
-                        }
-                        bufferedInputStream.close();
-                        b = sparseIntArray2;
-                        sparseIntArray = sparseIntArray2;
-                    } finally {
+    public final void e(qb6 qb6Var) {
+        qb6 qb6Var2;
+        while (true) {
+            Unsafe unsafe = ex.a;
+            long j = b;
+            qb6 qb6Var3 = (qb6) unsafe.getObjectVolatile(qb6Var, j);
+            if (this.f() != qb6Var) {
+                return;
+            }
+            while (true) {
+                Unsafe unsafe2 = ex.a;
+                qb6Var2 = this;
+                qb6 qb6Var4 = qb6Var;
+                if (unsafe2.compareAndSwapObject(qb6Var4, b, qb6Var3, qb6Var2)) {
+                    if (qb6Var2.i()) {
+                        qb6Var4.d();
+                        return;
                     }
-                } catch (IOException e) {
-                    rjb.m(e);
-                    return null;
+                    return;
+                } else {
+                    qb6Var = qb6Var4;
+                    if (unsafe2.getObjectVolatile(qb6Var4, j) != qb6Var3) {
+                        break;
+                    } else {
+                        this = qb6Var2;
+                    }
                 }
             }
-            int i3 = sparseIntArray.get(i);
-            if (i3 != 0) {
-                return (String) this.a.get(i3);
-            }
+            this = qb6Var2;
         }
-        return null;
     }
 
-    public qb6() {
-        this.a = new SparseArray();
+    public final Object f() {
+        return ex.a.getObjectVolatile(this, a);
+    }
+
+    public final qb6 g() {
+        Object f = f();
+        s69 s69Var = f instanceof s69 ? (s69) f : null;
+        if (s69Var != null) {
+            return s69Var.a;
+        }
+        f.getClass();
+        return (qb6) f;
+    }
+
+    public final qb6 h() {
+        qb6 d = d();
+        if (d != null) {
+            return d;
+        }
+        Unsafe unsafe = ex.a;
+        long j = b;
+        Object objectVolatile = unsafe.getObjectVolatile(this, j);
+        while (true) {
+            qb6 qb6Var = (qb6) objectVolatile;
+            if (!qb6Var.i()) {
+                return qb6Var;
+            }
+            objectVolatile = ex.a.getObjectVolatile(qb6Var, j);
+        }
+    }
+
+    public boolean i() {
+        return f() instanceof s69;
+    }
+
+    public String toString() {
+        return new pb6(this, s83.class, "classSimpleName", "getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;", 1) + '@' + s83.a(this);
     }
 }

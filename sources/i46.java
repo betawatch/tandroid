@@ -1,1558 +1,276 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
+import android.graphics.Canvas;
+import android.os.SystemClock;
+import android.text.Layout;
+import android.text.Spanned;
 import android.text.TextUtils;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.text.style.CharacterStyle;
+import android.util.Pair;
+import android.view.View;
+import java.io.Serializable;
+import java.net.IDN;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public class i46 extends mz0 implements jm7 {
-    public static final /* synthetic */ int R2 = 0;
-    public final TextView A2;
-    public b61 B2;
-    public Runnable C2;
-    public boolean D2;
-    public w49 E2;
-    public final d F2;
-    public sb G2;
-    public h46 H2;
-    public boolean I2;
-    public TLRPC.Chat J2;
-    public final uj4 K2;
-    public Runnable L2;
-    public int M2;
-    public final b61 N2;
-    public int O2;
-    public int P2;
-    public String Q2;
-    public int S1;
-    public boolean T1;
-    public int U1;
-    public long V1;
-    public TL_stories.TL_premium_boostsStatus W1;
-    public vh1 X1;
-    public g46 Y1;
-    public boolean Z1;
-    public boolean a2;
-    public rc2 b2;
-    public final int c2;
-    public final ArrayList d2;
-    public boolean e2;
-    public int f2;
-    public int g2;
-    public int h2;
-    public int i2;
-    public int j2;
-    public int k2;
-    public int l2;
-    public int m2;
-    public int n2;
-    public int o2;
-    public ArrayList p2;
-    public boolean q2;
-    public int r2;
-    public f46 s2;
-    public final HashSet t2;
-    public final ArrayList u2;
-    public final ArrayList v2;
-    public ArrayList w2;
-    public ArrayList x2;
-    public ArrayList y2;
-    public x36 z2;
+public final class i46 {
+    public Object c;
+    public Object d;
+    public Serializable e = new ArrayList();
+    public int a = 0;
+    public Serializable f = new ArrayList();
+    public int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i46(int i, int i2, ylb ylbVar, Context context, d dVar) {
-        super(context, dVar, false, g1(i), ylbVar);
-        byte b = 0;
-        this.U1 = -1;
-        this.a2 = false;
-        this.d2 = new ArrayList();
-        this.g2 = -1;
-        this.h2 = -1;
-        this.i2 = -1;
-        this.j2 = -1;
-        this.k2 = -1;
-        this.l2 = -1;
-        this.m2 = -1;
-        this.n2 = -1;
-        this.o2 = -1;
-        this.r2 = -1;
-        this.t2 = new HashSet();
-        this.u2 = new ArrayList();
-        this.v2 = new ArrayList();
-        this.w2 = new ArrayList();
-        this.x2 = new ArrayList();
-        this.y2 = new ArrayList();
-        this.D2 = false;
-        this.M2 = 0;
-        this.P2 = -4;
-        K(cmb.v0(cmb.g5, this.J0));
-        this.O2 = this.H0;
-        this.F2 = dVar;
-        this.a = i2;
-        this.c2 = i;
-        W0();
-        x1();
-        byte b2 = 1;
-        byte b3 = 2;
-        if (i == 2) {
-            this.D2 = true;
-            x1();
-            ConnectionsManager.getInstance(this.a).sendRequest(new TLRPC.TL_channels_getAdminedPublicChannels(), new r36(this, b));
-        } else if (i == 5) {
-            this.D2 = true;
-            x1();
-            ConnectionsManager.getInstance(this.a).sendRequest(new TLRPC.TL_channels_getInactiveChannels(), new r36(this, b3));
-        }
-        w1();
-        if (i == 32 || h1()) {
-            uj4 uj4Var = new uj4(getContext());
-            this.K2 = uj4Var;
-            this.c.addView(uj4Var, qoe.c(-1.0f, -1));
-        }
-        if (i == 18 || i == 20 || i == 24 || i == 25 || i == 26 || i == 29 || i == 22 || i == 23 || i == 21 || i == 27 || i == 28 || i == 30 || i == 35 || i == 31) {
-            ((ViewGroup) this.z2.getParent()).removeView(this.z2);
-            sb sbVar = this.G2;
-            if (sbVar != null) {
-                ((ViewGroup) sbVar.getParent()).removeView(this.G2);
-            }
-            this.n1.setPadding(0, 0, 0, 0);
-            TextView textView = new TextView(context);
-            this.A2 = textView;
-            textView.setGravity(17);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setSingleLine(true);
-            textView.setTextSize(1, 14.0f);
-            textView.setTypeface(gm.o());
-            textView.setText(this.z2.getTextView().getText());
-            anb.X(textView, cmb.Ii, ylbVar);
-            textView.setOnClickListener(new q36(this, b));
-            int L = gm.L(8.0f);
-            int i3 = cmb.Ei;
-            int v0 = cmb.v0(i3, ylbVar);
-            int i4 = cmb.c6;
-            int p = on2.p(cmb.v0(i4, ylbVar), nm7.E1);
-            fg0 i0 = cmb.i0(L, L, L, L, v0, p, p);
-            wmb M = anb.M(i3);
-            wmb g = anb.g(i4, nm7.E1);
-            textView.setBackground(i0);
-            anb.j(textView, i0, M, g, ylbVar);
-        }
-        if (i == 32) {
-            ((ViewGroup) this.z2.getParent()).removeView(this.z2);
-            b61 b61Var = new b61(ylbVar, context, true);
-            this.N2 = b61Var;
-            b61Var.k();
-            b61Var.i(jb6.M0(2131753590, null), false, true);
-            b61Var.setOnClickListener(new q36(this, b2));
-            this.b.addView(b61Var, qoe.d(-1, 48.0f, 80, 16.0f, 2.0f, 16.0f, 12.0f));
-            this.b.post(new s36(this, (byte) 3));
-        }
-        if (i == 19 || i == 18) {
-            this.b.post(new s36(this, (byte) 4));
-        }
+    public i46(View view) {
+        this.c = view;
     }
 
-    public static h46 f1(int i, int i2) {
-        h46 h46Var = new h46();
-        h46Var.a = 0;
-        h46Var.b = null;
-        h46Var.c = null;
-        h46Var.d = null;
-        h46Var.e = 0;
-        h46Var.f = 0;
-        if (i == 0) {
-            h46Var.e = oc7.r1(i2).l4.d1.f();
-            h46Var.f = oc7.r1(i2).l4.e1.f();
-            h46Var.a = R.drawable.msg_limit_pin;
-            h46Var.b = jb6.a0("LimitReachedPinDialogs", null, 2131748711, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedPinDialogsPremium", null, 2131748709, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedPinDialogsLocked", null, 2131748710, Integer.valueOf(h46Var.e));
-            return h46Var;
+    public static r86 j(Layout layout, CharacterStyle characterStyle, float f) {
+        if (layout == null || characterStyle == null || !(layout.getText() instanceof Spanned)) {
+            return null;
         }
-        if (i == 33) {
-            h46Var.e = oc7.r1(i2).l4.h2.f();
-            h46Var.f = oc7.r1(i2).l4.i2.f();
-            h46Var.a = R.drawable.msg_limit_pin;
-            h46Var.b = jb6.a0(null, null, 2131748708, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0(null, null, 2131748706, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0(null, null, 2131748707, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 2) {
-            h46Var.e = oc7.r1(i2).l4.h3.f();
-            h46Var.f = oc7.r1(i2).l4.f1.f();
-            h46Var.a = R.drawable.msg_limit_links;
-            h46Var.b = jb6.a0("LimitReachedPublicLinks", null, 2131748704, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedPublicLinksPremium", null, 2131748702, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedPublicLinksLocked", null, 2131748703, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 12) {
-            h46Var.e = oc7.r1(i2).l4.u1.f();
-            h46Var.f = oc7.r1(i2).l4.t3.f();
-            h46Var.a = R.drawable.msg_limit_links;
-            h46Var.b = jb6.a0("LimitReachedFolderLinks", null, 2131748717, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedFolderLinksPremium", null, 2131748715, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedFolderLinksLocked", null, 2131748716, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 13) {
-            h46Var.e = oc7.r1(i2).l4.D1.f();
-            h46Var.f = oc7.r1(i2).l4.u3.f();
-            h46Var.a = R.drawable.msg_limit_folder;
-            h46Var.b = jb6.a0("LimitReachedSharedFolders", null, 2131748700, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedSharedFoldersPremium", null, 2131748698, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedSharedFoldersLocked", null, 2131748699, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 3) {
-            h46Var.e = oc7.r1(i2).l4.Z0.f();
-            h46Var.f = oc7.r1(i2).l4.a1.f();
-            h46Var.a = R.drawable.msg_limit_folder;
-            h46Var.b = jb6.a0("LimitReachedFolders", null, 2131748714, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedFoldersPremium", null, 2131748712, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedFoldersLocked", null, 2131748713, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 4) {
-            h46Var.e = oc7.r1(i2).l4.b1.f();
-            h46Var.f = oc7.r1(i2).l4.c1.f();
-            h46Var.a = R.drawable.msg_limit_chats;
-            h46Var.b = jb6.a0("LimitReachedChatInFolders", null, 2131748732, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedChatInFoldersPremium", null, 2131748730, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedChatInFoldersLocked", null, 2131748731, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 5) {
-            h46Var.e = oc7.r1(i2).l4.l3.f();
-            h46Var.f = oc7.r1(i2).l4.m3.f();
-            h46Var.a = R.drawable.msg_limit_groups;
-            h46Var.b = jb6.a0("LimitReachedCommunities", null, 2131748729, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedCommunitiesPremium", null, 2131748727, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedCommunitiesLocked", null, 2131748728, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 6) {
-            h46Var.e = 100;
-            h46Var.f = nm7.d3;
-            h46Var.a = R.drawable.msg_limit_folder;
-            h46Var.b = jb6.a0("LimitReachedFileSize", null, 2131748720, "2 GB", "4 GB");
-            h46Var.c = jb6.a0("LimitReachedFileSizePremium", null, 2131748718, "4 GB");
-            h46Var.d = jb6.a0("LimitReachedFileSizeLocked", null, 2131748719, "2 GB");
-            return h46Var;
-        }
-        if (i == 7) {
-            h46Var.e = 3;
-            h46Var.f = 4;
-            h46Var.a = R.drawable.msg_limit_accounts;
-            h46Var.b = jb6.a0("LimitReachedAccounts", null, 2131748734, 3, Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedAccountsPremium", null, 2131748733, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedAccountsPremium", null, 2131748733, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 11) {
-            h46Var.e = 0;
-            h46Var.f = 0;
-            h46Var.a = R.drawable.msg_limit_links;
-            h46Var.b = jb6.a0("LimitReachedAccounts", null, 2131748734, 0, Integer.valueOf(h46Var.f));
-            h46Var.c = "";
-            h46Var.d = "";
-            return h46Var;
-        }
-        if (i == 14) {
-            h46Var.e = oc7.r1(i2).l4.v1.f();
-            h46Var.f = oc7.r1(i2).l4.w1.f();
-            h46Var.a = R.drawable.msg_limit_stories;
-            h46Var.b = jb6.H(',', "LimitReachedStoriesCount2First", h46Var.e) + "\n" + jb6.H(',', "LimitReachedStoriesCount2Second", h46Var.f);
-            h46Var.c = jb6.H(',', "LimitReachedStoriesCount2Premium", h46Var.f);
-            h46Var.d = jb6.H(',', "LimitReachedStoriesCount2Premium", h46Var.e);
-            return h46Var;
-        }
-        if (i == 15) {
-            h46Var.e = oc7.r1(i2).l4.z1.f();
-            h46Var.f = oc7.r1(i2).l4.A1.f();
-            h46Var.a = R.drawable.msg_limit_stories;
-            h46Var.b = jb6.a0("LimitReachedStoriesWeekly", null, 2131748686, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedStoriesWeeklyPremium", null, 2131748685, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedStoriesWeeklyPremium", null, 2131748685, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i == 16) {
-            h46Var.e = oc7.r1(i2).l4.B1.f();
-            h46Var.f = oc7.r1(i2).l4.C1.f();
-            h46Var.a = R.drawable.msg_limit_stories;
-            h46Var.b = jb6.a0("LimitReachedStoriesMonthly", null, 2131748688, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-            h46Var.c = jb6.a0("LimitReachedStoriesMonthlyPremium", null, 2131748687, Integer.valueOf(h46Var.f));
-            h46Var.d = jb6.a0("LimitReachedStoriesMonthlyPremium", null, 2131748687, Integer.valueOf(h46Var.e));
-            return h46Var;
-        }
-        if (i != 18 && i != 32 && i != 20 && i != 24 && i != 27 && i != 28 && i != 25 && i != 30 && i != 35 && i != 29 && i != 22 && i != 23 && i != 19 && i != 21 && i != 26) {
-            return h46Var;
-        }
-        h46Var.e = oc7.r1(i2).l4.B1.f();
-        h46Var.f = oc7.r1(i2).l4.C1.f();
-        h46Var.a = R.drawable.filled_limit_boost;
-        h46Var.b = jb6.a0("LimitReachedStoriesMonthly", null, 2131748688, Integer.valueOf(h46Var.e), Integer.valueOf(h46Var.f));
-        h46Var.c = jb6.a0("LimitReachedStoriesMonthlyPremium", null, 2131748687, Integer.valueOf(h46Var.f));
-        h46Var.d = jb6.a0("LimitReachedStoriesMonthlyPremium", null, 2131748687, Integer.valueOf(h46Var.e));
-        return h46Var;
+        Spanned spanned = (Spanned) layout.getText();
+        b46 b46Var = new b46(0);
+        int spanStart = spanned.getSpanStart(characterStyle);
+        int spanEnd = spanned.getSpanEnd(characterStyle);
+        b46Var.d(layout, spanStart, f);
+        layout.getSelectionPath(spanStart, spanEnd, b46Var);
+        r86 r86Var = new r86();
+        r86Var.y = b46Var;
+        r86Var.D = true;
+        r86Var.j(4.0f);
+        r86Var.k();
+        return r86Var;
     }
 
-    public static boolean g1(int i) {
-        return i == 0 || i == 33 || i == 3 || i == 4 || i == 6 || i == 7 || i == 12 || i == 13 || i == 14 || i == 15 || i == 16;
+    public final void a(m46 m46Var, Object obj) {
+        ((ArrayList) this.e).add(new Pair(m46Var, obj));
+        this.a++;
+        i(obj, true);
     }
 
-    public static String l1(int i) {
-        switch (i) {
-            case 0:
-                return "double_limits__dialog_pinned";
-            case 1:
-            case 7:
-            case 11:
-            default:
-                return null;
-            case 2:
-                return "double_limits__channels_public";
-            case 3:
-                return "double_limits__dialog_filters";
-            case 4:
-                return "double_limits__dialog_filters_chats";
-            case 5:
-                return "double_limits__channels";
-            case 6:
-                return "double_limits__upload_max_fileparts";
-            case 8:
-                return "double_limits__caption_length";
-            case 9:
-                return "double_limits__saved_gifs";
-            case 10:
-                return "double_limits__stickers_faved";
-            case 12:
-                return "double_limits__chatlist_invites";
-            case 13:
-                return "double_limits__chatlists_joined";
-        }
+    public final void b(r86 r86Var, Object obj) {
+        ((ArrayList) this.f).add(new Pair(r86Var, obj));
+        this.b++;
+        i(obj, true);
     }
 
-    public static void n1(d dVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, vh1 vh1Var, long j, boolean z) {
-        if (tL_premium_boostsStatus == null || vh1Var == null || dVar.getContext() == null) {
-            return;
-        }
-        i46 i46Var = new i46(32, dVar.getCurrentAccount(), dVar.getResourceProvider(), dVar.getContext(), dVar);
-        i46Var.r1(vh1Var);
-        i46Var.q1(tL_premium_boostsStatus, true);
-        i46Var.s1(j);
-        if (z) {
-            dVar.showDialog(i46Var);
-        } else {
-            i46Var.show();
-        }
-    }
-
-    @Override // mz0
-    public final q59 G0(r59 r59Var) {
-        return new a46(this);
-    }
-
-    @Override // mz0
-    public final CharSequence J0() {
-        int i = this.c2;
-        if (i == 11) {
-            return jb6.M0(2131752345, null);
-        }
-        if (i == 34) {
-            return jb6.M0(2131752575, null);
-        }
-        if (i == 35) {
-            return jb6.M0(2131743561, null);
-        }
-        switch (i) {
-            case 18:
-            case 20:
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-            case 26:
-            case 27:
-            case 28:
-            case 29:
-                return jb6.M0(2131743561, null);
-            case 19:
-            case nm7.S /* 30 */:
-                return jb6.M0(i1() ? 2131753590 : 2131753628, null);
-            case 31:
-                return jb6.M0(2131753565, null);
-            case 32:
-                return jb6.M0(2131753590, null);
-            default:
-                return jb6.M0(2131748735, null);
-        }
-    }
-
-    @Override // mz0
-    public final void P0(ela elaVar) {
-        int i;
-        Context context = elaVar.getContext();
-        byte b = 1;
-        b61 b61Var = new b61(this.J0, context, true);
-        this.B2 = b61Var;
-        b61Var.setFlickeringLoading(true);
-        this.B2.i(jb6.M0(2131753629, null), false, true);
-        byte b2 = 2;
-        this.B2.setOnClickListener(new q36(this, b2));
-        x36 x36Var = new x36(this, context, this.J0);
-        this.z2 = x36Var;
-        rve.b(x36Var, 0.02f, 1.2f);
-        if (!this.s1 && (i = this.c2) != 18) {
-            byte b3 = 20;
-            if (i != 20 && i != 24 && i != 25 && i != 26 && i != 29 && i != 22 && i != 23 && i != 21 && i != 27 && i != 28 && i != 30 && i != 35) {
-                sb sbVar = new sb(b3, context, this);
-                this.G2 = sbVar;
-                anb.h(cmb.g5, this.J0, sbVar);
-                elaVar.addView(this.G2, qoe.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-            }
-        }
-        x36 x36Var2 = this.z2;
-        float f = (this.u0 / gm.p) + 16.0f;
-        elaVar.addView(x36Var2, qoe.d(-1, 48.0f, 80, f, 0.0f, f, 12.0f));
-        int L = gm.L(72.0f);
-        r59 r59Var = this.n1;
-        r59Var.setPadding(0, 0, 0, L);
-        r59Var.setClipToPadding(false);
-        r59Var.setClipChildren(false);
-        r59Var.setOnItemClickListener(new kg4(this, (byte) 10));
-        r59Var.setOnItemLongClickListener(new t36(this, b2));
-        this.z2.w.setOnClickListener(new n06(this, context, b));
-        this.z2.h.setOnClickListener(new q36(this, (byte) 3));
-        this.E2 = new w49(r59Var, true);
-    }
-
-    public final void Y0(final fa6 fa6Var, boolean z) {
-        if (!fa6Var.a() || z) {
-            final byte b = 1;
-            fa6Var.setLoading(true);
-            oc7.r1(this.a).F0();
-            long j = this.V1;
-            int i = this.X1.g;
-            final byte b2 = 0;
-            oo0.a(-j, Arrays.asList(Integer.valueOf(i)), new qac(this) { // from class: w36
-                public final /* synthetic */ i46 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // qac
-                public final void a(Object obj) {
-                    byte b3 = b2;
-                    fa6 fa6Var2 = fa6Var;
-                    i46 i46Var = this.b;
-                    switch (b3) {
-                        case 0:
-                            oc7.r1(i46Var.a).F0().a(i46Var.V1, new iu(i46Var, fa6Var2, (TL_stories.TL_premium_myBoosts) obj, (byte) 24));
-                            break;
-                        default:
-                            TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                            if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                                int intValue = Utilities.z(tL_error.text).intValue();
-                                if (intValue <= 5) {
-                                    gm.d3(new k16(i46Var, fa6Var2, (byte) 3), intValue * 1000);
-                                    break;
-                                } else {
-                                    yn0.g(intValue);
-                                }
-                            }
-                            fa6Var2.setLoading(false);
-                            break;
-                    }
-                }
-            }, new qac(this) { // from class: w36
-                public final /* synthetic */ i46 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // qac
-                public final void a(Object obj) {
-                    byte b3 = b;
-                    fa6 fa6Var2 = fa6Var;
-                    i46 i46Var = this.b;
-                    switch (b3) {
-                        case 0:
-                            oc7.r1(i46Var.a).F0().a(i46Var.V1, new iu(i46Var, fa6Var2, (TL_stories.TL_premium_myBoosts) obj, (byte) 24));
-                            break;
-                        default:
-                            TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                            if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                                int intValue = Utilities.z(tL_error.text).intValue();
-                                if (intValue <= 5) {
-                                    gm.d3(new k16(i46Var, fa6Var2, (byte) 3), intValue * 1000);
-                                    break;
-                                } else {
-                                    yn0.g(intValue);
-                                }
-                            }
-                            fa6Var2.setLoading(false);
-                            break;
-                    }
-                }
-            });
-        }
-    }
-
-    public final void Z0() {
-        if (this.B2.isAttachedToWindow()) {
-            Y0(this.B2, false);
-            return;
-        }
-        b61 b61Var = this.N2;
-        if (b61Var == null || !b61Var.isAttachedToWindow()) {
-            Y0(this.z2, false);
-        } else {
-            Y0(b61Var, false);
-        }
-    }
-
-    public int a1() {
-        return 0;
-    }
-
-    public final String b1() {
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.W1;
-        if (tL_premium_boostsStatus != null && !TextUtils.isEmpty(tL_premium_boostsStatus.boost_url)) {
-            return this.W1.boost_url;
-        }
-        int i = this.a;
-        long j = this.V1;
-        oc7 r1 = oc7.r1(i);
-        long j2 = -j;
-        TLRPC.Chat L0 = r1.L0(Long.valueOf(j2));
-        if (TextUtils.isEmpty(sd2.K(L0, false))) {
-            return kt6.n(j2, "https://t.me/boost/?c=");
-        }
-        return "https://t.me/boost/" + sd2.K(L0, false);
-    }
-
-    public final String c1(boolean z) {
+    public final au8 c() {
         String str;
-        int i;
-        if (this.c2 == 32) {
-            TLRPC.Chat e1 = e1();
-            TLRPC.ChatFull M0 = oc7.r1(this.a).M0(-this.V1);
-            return jb6.G(Math.max(M0.boosts_unrestrict - M0.boosts_applied, 0), "BoostingRemoveRestrictionsSubtitle", e1 == null ? "" : e1.title);
-        }
-        TLRPC.Chat L0 = oc7.r1(this.a).L0(Long.valueOf(-this.V1));
-        if (L0 == null) {
-            str = jb6.M0(i1() ? 2131754876 : 2131754904, null);
-        } else {
-            str = L0.title;
-        }
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.W1;
-        boolean z2 = tL_premium_boostsStatus.boosts == tL_premium_boostsStatus.current_level_boosts;
-        if (j1() && this.W1.next_level_boosts != 0 && z) {
-            i = i1() ? 2131749177 : 2131752296;
-            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = this.W1;
-            int i2 = tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts;
-            return jb6.a0(null, null, i, str, jb6.G(i2, "MoreBoosts", Integer.valueOf(i2)));
-        }
-        if (z2 && this.X1.d) {
-            if (this.W1.level == 1) {
-                return jb6.a0(null, null, i1() ? 2131749250 : 2131752396, new Object[0]);
-            }
-            return jb6.a0(null, null, i1() ? 2131749249 : 2131752395, Integer.valueOf(this.W1.level), jb6.G(this.W1.level, "BoostStories", new Object[0]));
-        }
-        boolean z3 = this.X1.d;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus3 = this.W1;
-        if (z3) {
-            if (tL_premium_boostsStatus3.level == 0) {
-                i = i1() ? 2131749177 : 2131752296;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus4 = this.W1;
-                int i3 = tL_premium_boostsStatus4.next_level_boosts - tL_premium_boostsStatus4.boosts;
-                return jb6.a0(null, null, i, str, jb6.G(i3, "MoreBoosts", Integer.valueOf(i3)));
-            }
-            if (tL_premium_boostsStatus3.next_level_boosts == 0) {
-                return jb6.a0(null, null, i1() ? 2131749249 : 2131752395, Integer.valueOf(this.W1.level), jb6.G(this.W1.level + 1, "BoostStories", new Object[0]));
-            }
-            i = i1() ? 2131749177 : 2131752296;
-            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus5 = this.W1;
-            int i4 = tL_premium_boostsStatus5.next_level_boosts - tL_premium_boostsStatus5.boosts;
-            return jb6.a0(null, null, i, str, jb6.G(i4, "MoreBoosts", Integer.valueOf(i4)));
-        }
-        if (tL_premium_boostsStatus3.level == 0) {
-            i = i1() ? 2131749177 : 2131752296;
-            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus6 = this.W1;
-            int i5 = tL_premium_boostsStatus6.next_level_boosts - tL_premium_boostsStatus6.boosts;
-            return jb6.a0(null, null, i, str, jb6.G(i5, "MoreBoosts", Integer.valueOf(i5)));
-        }
-        if (tL_premium_boostsStatus3.next_level_boosts == 0) {
-            return jb6.a0(null, null, i1() ? 2131749249 : 2131752395, Integer.valueOf(this.W1.level), jb6.G(this.W1.level + 1, "BoostStories", new Object[0]));
-        }
-        i = i1() ? 2131749177 : 2131752296;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus7 = this.W1;
-        int i6 = tL_premium_boostsStatus7.next_level_boosts - tL_premium_boostsStatus7.boosts;
-        return jb6.a0(null, null, i, str, jb6.G(i6, "MoreBoosts", Integer.valueOf(i6)));
-    }
-
-    public final String d1() {
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.W1;
-        if (tL_premium_boostsStatus.next_level_boosts == 0) {
-            return jb6.a0("BoostsMaxLevelReached", null, 2131753123, new Object[0]);
-        }
-        if (tL_premium_boostsStatus.level > 0 && !this.X1.d) {
-            return jb6.M0(i1() ? 2131753590 : 2131753628, null);
-        }
-        boolean z = this.Z1;
-        int i = this.c2;
-        if (!z) {
-            if (i == 32) {
-                return jb6.M0(i1() ? 2131753590 : 2131753628, null);
-            }
-            if (this.X1.d) {
-                return jb6.M0(i1() ? 2131742502 : 2131742504, null);
-            }
-            return jb6.M0(i1() ? 2131753492 : 2131753493, null);
-        }
-        if (i == 32) {
-            return jb6.M0(i1() ? 2131753590 : 2131753628, null);
-        }
-        TLRPC.Chat L0 = oc7.r1(this.a).L0(Long.valueOf(-this.V1));
-        if (this.X1.d) {
-            return jb6.a0("YouBoostedChannel2", null, 2131742503, L0.title);
-        }
-        return jb6.M0(i1() ? 2131753590 : 2131753628, null);
-    }
-
-    @Override // jm7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        TLRPC.ChatFull M0;
-        if (i != nm7.X2) {
-            if (i != nm7.W2) {
-                if (i == nm7.V2) {
-                    dismiss();
-                    return;
-                }
-                return;
-            }
-            TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) objArr[0];
-            int intValue = ((Integer) objArr[1]).intValue();
-            int intValue2 = ((Integer) objArr[2]).intValue();
-            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) objArr[3];
-            if (tL_premium_boostsStatus == null || this.X1 == null) {
-                return;
-            }
-            this.W1.boosts += intValue;
-            if (this.c2 == 32 && (M0 = oc7.r1(this.a).M0(-this.V1)) != null) {
-                M0.boosts_applied += intValue;
-            }
-            k1();
-            q1(tL_premium_boostsStatus, this.Z1);
-            vh1 vh1Var = this.X1;
-            vh1Var.m = this.W1.next_level_boosts <= 0;
-            vh1Var.l = true;
-            vh1Var.a(tL_premium_myBoosts);
-            if (m1()) {
-                u31 Q = new c41(this.c, this.J0).Q(R.raw.ic_boosts_replace, 30, jb6.G(intValue, "BoostingReassignedFromPlural", jb6.G(intValue2, "BoostingFromOtherChannel", new Object[0])));
-                Q.j = 4000;
-                Q.k(true);
-                return;
-            }
-            return;
-        }
-        TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
-        boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
-        d dVar = this.r1;
-        d lastFragment = dVar.getParentLayout().getLastFragment();
-        if (lastFragment instanceof n92) {
-            List fragmentStack = dVar.getParentLayout().getFragmentStack();
-            d dVar2 = fragmentStack.size() >= 2 ? (d) aq1.m(2, fragmentStack) : null;
-            d dVar3 = fragmentStack.size() >= 3 ? (d) aq1.m(3, fragmentStack) : null;
-            r6 = fragmentStack.size() >= 4 ? (d) aq1.m(4, fragmentStack) : null;
-            if (dVar2 instanceof ba2) {
-                ((ActionBarLayout) dVar.getParentLayout()).c0(dVar2, false);
-            }
-            dismiss();
-            if (!booleanValue) {
-                lastFragment.finishFragment();
-                yn0.f(dVar3, chat, false);
-                return;
+        String str2;
+        if (this.a == 3) {
+            String str3 = (String) this.c;
+            if (TextUtils.isEmpty(str3)) {
+                str3 = "";
             } else {
-                if (dVar3 instanceof ProfileActivity) {
-                    ((ActionBarLayout) dVar.getParentLayout()).c0(dVar3, false);
-                }
-                lastFragment.finishFragment();
-                yn0.f(r6, chat, true);
-                return;
-            }
-        }
-        if ((lastFragment instanceof yv1) && booleanValue) {
-            yn0.f(lastFragment, chat, true);
-            return;
-        }
-        if ((lastFragment instanceof vi1) && booleanValue) {
-            List fragmentStack2 = dVar.getParentLayout().getFragmentStack();
-            ArrayList arrayList = new ArrayList();
-            for (int size = fragmentStack2.size() - 2; size >= 0; size--) {
-                d dVar4 = (d) fragmentStack2.get(size);
-                if ((dVar4 instanceof yv1) || (dVar4 instanceof nk3)) {
-                    r6 = dVar4;
-                    break;
-                }
-                arrayList.add(dVar4);
-            }
-            if (r6 != null) {
-                int size2 = arrayList.size();
-                int i3 = 0;
-                while (i3 < size2) {
-                    Object obj = arrayList.get(i3);
-                    i3++;
-                    ((ActionBarLayout) dVar.getParentLayout()).c0((d) obj, false);
-                }
-                dVar.finishFragment();
-                dismiss();
-                yn0.f(r6, chat, true);
-                return;
-            }
-            return;
-        }
-        v9b v9bVar = v9b.G2;
-        if (!booleanValue) {
-            if (v9bVar == null || !v9bVar.d) {
-                dismiss();
-                yn0.f(LaunchActivity.Q(), chat, false);
-                return;
-            }
-            yv1 ga = yv1.ga(-chat.id);
-            LaunchActivity.Q().presentFragment(ga, false, false);
-            v9b.v();
-            dismiss();
-            yn0.f(ga, chat, false);
-            return;
-        }
-        if (v9bVar != null && v9bVar.d) {
-            yv1 ga2 = yv1.ga(-chat.id);
-            LaunchActivity.Q().presentFragment(ga2, false, false);
-            v9b.v();
-            dismiss();
-            yn0.f(ga2, chat, true);
-            return;
-        }
-        List fragmentStack3 = dVar.getParentLayout().getFragmentStack();
-        r6 = fragmentStack3.size() >= 2 ? (d) aq1.m(2, fragmentStack3) : null;
-        dVar.finishFragment();
-        dismiss();
-        if (r6 instanceof yv1) {
-            yn0.f(r6, chat, true);
-        }
-    }
-
-    public final TLRPC.Chat e1() {
-        return oc7.r1(this.a).L0(Long.valueOf(-this.V1));
-    }
-
-    public final boolean h1() {
-        int i = this.c2;
-        return i == 19 || i == 18 || i == 20 || i == 24 || i == 25 || i == 26 || i == 29 || i == 22 || i == 27 || i == 28 || i == 23 || i == 30 || i == 35;
-    }
-
-    public final boolean i1() {
-        return !sd2.V(oc7.r1(this.a).L0(Long.valueOf(-this.V1)));
-    }
-
-    public final boolean j1() {
-        return h1() && sd2.N(e1());
-    }
-
-    public final void k1() {
-        f46 f46Var = this.s2;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.W1;
-        int i = tL_premium_boostsStatus.boosts;
-        int i2 = tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.current_level_boosts;
-        f46Var.b++;
-        f46Var.a = pqe.a((i - r2) / i2, 0.0f, 1.0f);
-        f46Var.a0 = true;
-        f46Var.b0 = f46Var.n;
-        f46Var.j(i, true);
-        f46Var.J.requestLayout();
-        f46Var.requestLayout();
-    }
-
-    public final boolean m1() {
-        int f;
-        int i;
-        int f2;
-        int i2;
-        int f3;
-        int i3;
-        int f4;
-        int i4;
-        int f5;
-        int i5;
-        nm7 f6 = nm7.f(this.a);
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.W1;
-        vh1 vh1Var = this.X1;
-        vh1Var.getClass();
-        vh1 vh1Var2 = new vh1();
-        vh1Var2.a = vh1Var.a;
-        vh1Var2.b = vh1Var.b;
-        vh1Var2.c = vh1Var.c;
-        vh1Var2.d = vh1Var.d;
-        vh1Var2.e = vh1Var.e;
-        vh1Var2.g = vh1Var.g;
-        vh1Var2.h = vh1Var.h;
-        vh1Var2.i = vh1Var.i;
-        vh1Var2.j = vh1Var.j;
-        vh1Var2.k = vh1Var.k;
-        vh1Var2.m = vh1Var.m;
-        byte b = 2;
-        f6.m(nm7.r3, tL_premium_boostsStatus, vh1Var2, Long.valueOf(this.V1));
-        b61 b61Var = this.N2;
-        if (b61Var != null) {
-            TLRPC.ChatFull M0 = oc7.r1(this.a).M0(-this.V1);
-            int max = Math.max(M0.boosts_unrestrict - M0.boosts_applied, 0);
-            if (max == 0) {
-                nm7.f(this.a).m(nm7.q3, new Object[0]);
-                dismiss();
-                return false;
-            }
-            b61Var.c(max, true);
-        }
-        TransitionSet transitionSet = new TransitionSet();
-        transitionSet.addTransition(new h7(b));
-        transitionSet.setOrdering(0);
-        TransitionManager.beginDelayedTransition(this.Y1, transitionSet);
-        g46 g46Var = this.Y1;
-        mn0 mn0Var = g46Var.c;
-        int indexOfChild = g46Var.indexOfChild(g46Var.b);
-        i46 i46Var = g46Var.e;
-        if (i46Var.Z1) {
-            int indexOfChild2 = g46Var.indexOfChild(g46Var.d);
-            g46Var.removeView(g46Var.d);
-            g46Var.d.removeView(g46Var.a);
-            g46Var.d.removeView(mn0Var);
-            LinearLayout linearLayout = new LinearLayout(g46Var.getContext());
-            g46Var.d = linearLayout;
-            linearLayout.setOrientation(0);
-            g46Var.d.setWeightSum(1.0f);
-            g46Var.d.addView(g46Var.a, qoe.p(-2, -2, 1.0f, 0));
-            g46Var.d.addView(mn0Var, qoe.t(-2, -2, 48, 0, 2, 0, 0));
-            g46Var.addView(g46Var.d, indexOfChild2, qoe.t(-2, -2, 1, 25, 22, 12, 9));
-        } else {
-            int indexOfChild3 = g46Var.indexOfChild(g46Var.a);
-            g46Var.removeView(g46Var.a);
-            TextView textView = new TextView(g46Var.getContext());
-            g46Var.a = textView;
-            textView.setTypeface(gm.o());
-            g46Var.a.setTextSize(1, 20.0f);
-            anb.X(g46Var.a, cmb.F6, i46Var.J0);
-            g46Var.a.setGravity(17);
-            g46Var.addView(g46Var.a, indexOfChild3, qoe.t(-2, -2, 1, 0, 22, 0, 0));
-        }
-        g46Var.removeView(g46Var.b);
-        TextView textView2 = new TextView(g46Var.getContext());
-        g46Var.b = textView2;
-        textView2.setTextSize(1, 14.0f);
-        TextView textView3 = g46Var.b;
-        textView3.setLineSpacing(textView3.getLineSpacingExtra(), g46Var.b.getLineSpacingMultiplier() * 1.1f);
-        g46Var.b.setGravity(1);
-        anb.X(g46Var.b, cmb.F6, i46Var.J0);
-        g46Var.addView(g46Var.b, indexOfChild, qoe.t(-2, -2, 1, 24, -2, 24, 17));
-        this.Y1.a.setText(d1());
-        TextView textView4 = this.Y1.b;
-        gs gsVar = oc7.r1(this.a).l4;
-        boolean i1 = i1();
-        int i6 = this.c2;
-        String str = null;
-        if (i6 == 20) {
-            str = jb6.a0(null, null, i1 ? 2131749175 : 2131752293, Integer.valueOf(a1()));
-        } else if (i6 == 24) {
-            str = jb6.a0(null, null, i1 ? 2131749171 : 2131752290, Integer.valueOf(a1()));
-        } else if (i6 == 29) {
-            str = jb6.a0(null, null, 2131749174, Integer.valueOf(gsVar.d2.f()));
-        } else if (i6 == 30) {
-            str = jb6.a0(null, null, 2131752287, Integer.valueOf(gsVar.T1.f()));
-        } else if (i6 == 35) {
-            str = jb6.a0(null, null, 2131752294, Integer.valueOf(gsVar.U1.f()));
-        } else if (i6 == 25) {
-            if (i1) {
-                f5 = gsVar.c2.f();
-                i5 = 2131749172;
-            } else {
-                f5 = gsVar.X1.f();
-                i5 = 2131752291;
-            }
-            str = jb6.a0(null, null, i5, Integer.valueOf(f5));
-        } else if (i6 == 26) {
-            if (i1) {
-                f4 = gsVar.c2.f();
-                i4 = 2131749167;
-            } else {
-                f4 = gsVar.X1.f();
-                i4 = 2131752285;
-            }
-            str = jb6.a0(null, null, i4, Integer.valueOf(f4));
-        } else if (i6 == 27) {
-            str = jb6.a0(null, null, i1 ? 2131749169 : 2131752288, Integer.valueOf(gsVar.V1.f()));
-        } else if (i6 == 28) {
-            if (i1) {
-                f3 = gsVar.e2.f();
-                i3 = 2131749170;
-            } else {
-                f3 = gsVar.W1.f();
-                i3 = 2131752289;
-            }
-            str = jb6.a0(null, null, i3, Integer.valueOf(f3));
-        } else if (i6 == 22) {
-            if (i1) {
-                f2 = gsVar.b2.f();
-                i2 = 2131749168;
-            } else {
-                f2 = gsVar.f2.f();
-                i2 = 2131752286;
-            }
-            str = jb6.a0(null, null, i2, Integer.valueOf(f2));
-        } else if (i6 == 23) {
-            if (i1) {
-                f = gsVar.Y1.f();
-                i = 2131749173;
-            } else {
-                f = gsVar.g2.f();
-                i = 2131752292;
-            }
-            str = jb6.a0(null, null, i, Integer.valueOf(f));
-        }
-        if (str == null) {
-            str = c1(false);
-        }
-        textView4.setText(gm.S2(str));
-        v1();
-        uj4 uj4Var = this.K2;
-        uj4Var.c(false);
-        try {
-            uj4Var.performHapticFeedback(3);
-        } catch (Exception unused) {
-        }
-        this.Y1.c.a(this.X1.i, true);
-        this.n1.z0(0);
-        if (i6 == 32) {
-            this.Y1.c.setVisibility(8);
-        }
-        return true;
-    }
-
-    public final void o1(ArrayList arrayList) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.J0, getContext());
-        String G = jb6.G(arrayList.size(), "RevokeLinks", new Object[0]);
-        he heVar = alertDialog$Builder.a;
-        heVar.S = G;
-        if (arrayList.size() == 1) {
-            TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(0);
-            boolean z = this.q2;
-            int i = this.a;
-            if (z) {
-                heVar.U = gm.S2(jb6.a0("RevokeLinkAlertChannel", null, 2131745754, oc7.r1(i).N2 + "/" + sd2.K(chat, false), chat.title));
-            } else {
-                heVar.U = gm.S2(jb6.a0("RevokeLinkAlert", null, 2131745755, oc7.r1(i).N2 + "/" + sd2.K(chat, false), chat.title));
-            }
-        } else if (this.q2) {
-            heVar.U = gm.S2(jb6.a0("RevokeLinksAlertChannel", null, 2131745751, new Object[0]));
-        } else {
-            heVar.U = gm.S2(jb6.a0("RevokeLinksAlert", null, 2131745752, new Object[0]));
-        }
-        alertDialog$Builder.g(jb6.M0(2131752542, null), null);
-        alertDialog$Builder.j(jb6.M0(2131745757, null), new nv4(this, arrayList, (byte) 13));
-        heVar.show();
-        TextView textView = (TextView) heVar.c(-1);
-        if (textView != null) {
-            anb.X(textView, cmb.p7, this.J0);
-        }
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        nm7.f(this.a).b(this, nm7.X2);
-        nm7.f(this.a).b(this, nm7.W2);
-        nm7.f(this.a).b(this, nm7.V2);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        nm7.f(this.a).n(this, nm7.X2);
-        nm7.f(this.a).n(this, nm7.W2);
-        nm7.f(this.a).n(this, nm7.V2);
-    }
-
-    @Override // my0
-    public final void p0() {
-        int v0;
-        super.p0();
-        try {
-            if (this.G0 >= 0 || this.H0 != this.O2 || (v0 = cmb.v0(cmb.g5, this.J0)) == this.H0) {
-                return;
-            }
-            this.H0 = v0;
-            this.O2 = v0;
-            x0(v0);
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
-    }
-
-    public final void p1(HashMap hashMap) {
-        String str;
-        HashMap hashMap2 = hashMap;
-        if (TextUtils.isEmpty(this.Q2)) {
-            TLRPC.ChatFull M0 = oc7.r1(this.a).M0(this.J2.id);
-            if (M0 == null) {
-                dismiss();
-                return;
-            }
-            if (this.J2.username != null) {
-                str = "@" + this.J2.username;
-            } else {
-                TLRPC.TL_chatInviteExported tL_chatInviteExported = M0.exported_invite;
-                if (tL_chatInviteExported == null) {
-                    dismiss();
-                    return;
-                }
-                str = tL_chatInviteExported.link;
-            }
-        } else {
-            str = this.Q2;
-        }
-        String str2 = str;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        HashSet hashSet = this.t2;
-        Iterator it = hashSet.iterator();
-        while (it.hasNext()) {
-            TLRPC.User user = (TLRPC.User) it.next();
-            long L1 = oc7.r1(this.a).L1(user.id);
-            if (L1 <= 0) {
-                L1 = pg3.j(oc7.r1(this.a).L2(user.id));
-            }
-            (L1 >= 0 ? arrayList : arrayList2).add(user);
-        }
-        int i = 0;
-        boolean z = true;
-        if (hashMap2 == null && !arrayList.isEmpty()) {
-            ArrayList arrayList3 = new ArrayList();
-            int size = arrayList.size();
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                arrayList3.add(Long.valueOf(((TLRPC.User) obj).id));
-            }
-            ik.Z(this.a, arrayList3, 1, new sk3(this, (byte) 21));
-            return;
-        }
-        Iterator it2 = hashSet.iterator();
-        boolean z2 = false;
-        while (it2.hasNext()) {
-            TLRPC.User user2 = (TLRPC.User) it2.next();
-            long longValue = hashMap2 == null ? 0L : ((Long) hashMap2.get(Long.valueOf(user2.id))).longValue();
-            boolean z3 = z;
-            Iterator it3 = it2;
-            y5a b = y5a.b(str2, user2.id, null, null, null, true, null, null, null, false, 0, 0, null, false);
-            b.Q = longValue;
-            a6a.B(this.a).q0(b);
-            if (b.Q > 0) {
-                z2 = z3;
-            }
-            hashMap2 = hashMap;
-            z = z3;
-            it2 = it3;
-        }
-        if (!z2) {
-            gm.c3(new s36(this, (byte) 2));
-        }
-        dismiss();
-    }
-
-    public final void q1(TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, boolean z) {
-        this.W1 = tL_premium_boostsStatus;
-        this.Z1 = z;
-        x1();
-    }
-
-    public final void r1(vh1 vh1Var) {
-        this.X1 = vh1Var;
-        v1();
-        w1();
-    }
-
-    public final void s1(long j) {
-        this.V1 = j;
-        x1();
-    }
-
-    public final void t1(TLRPC.Chat chat, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, String str) {
-        this.J2 = chat;
-        this.Q2 = str;
-        this.T1 = !TextUtils.isEmpty(str) || sd2.y(3, chat);
-        this.w2 = new ArrayList(arrayList);
-        this.x2 = arrayList2;
-        this.y2 = arrayList3;
-        HashSet hashSet = this.t2;
-        hashSet.clear();
-        if (this.T1) {
-            ArrayList arrayList4 = this.w2;
-            int size = arrayList4.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = arrayList4.get(i);
-                i++;
-                TLRPC.User user = (TLRPC.User) obj;
-                if (arrayList2 == null || !arrayList2.contains(Long.valueOf(user.id))) {
-                    hashSet.add(user);
-                }
-            }
-        }
-        x1();
-        v1();
-        int i2 = this.c2;
-        if ((i2 == 11 || i2 == 34) && !oc7.r1(this.a).H3()) {
-            if (((arrayList3 == null || arrayList3.isEmpty()) && (arrayList2 == null || arrayList2.size() < this.w2.size())) || arrayList3 == null || arrayList2 == null) {
-                return;
-            }
-            if (!(arrayList3.size() == 1 && arrayList2.size() == 1) && arrayList2.size() < arrayList3.size()) {
-                return;
-            }
-            x36 x36Var = this.z2;
-            if (x36Var != null && x36Var.getParent() != null) {
-                ((ViewGroup) this.z2.getParent()).removeView(this.z2);
-            }
-            sb sbVar = this.G2;
-            if (sbVar != null && sbVar.getParent() != null) {
-                ((ViewGroup) this.G2.getParent()).removeView(this.G2);
-            }
-            r59 r59Var = this.n1;
-            if (r59Var != null) {
-                r59Var.setPadding(0, 0, 0, 0);
-            }
-        }
-    }
-
-    public final void u1() {
-        int i;
-        this.p2 = new ArrayList();
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.W1;
-        int i2 = tL_premium_boostsStatus != null ? tL_premium_boostsStatus.level + 1 : 1;
-        if (this.c2 == 31) {
-            i2 = 1;
-        }
-        oc7 r1 = oc7.r1(this.a);
-        gs gsVar = r1.l4;
-        fc7 fc7Var = r1.E3;
-        int max = Math.max(10, fc7Var != null ? fc7Var.e(i1()) : 0);
-        fc7 fc7Var2 = r1.F3;
-        int max2 = Math.max(max, fc7Var2 != null ? fc7Var2.e(i1()) : 0);
-        int max3 = i1() ? Math.max(Math.max(Math.max(Math.max(Math.max(max2, gsVar.Z1.f()), gsVar.b2.f()), gsVar.Y1.f()), gsVar.c2.f()), gsVar.e2.f()) : Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(max2, gsVar.V1.f()), gsVar.W1.f()), gsVar.X1.f()), gsVar.f2.f()), gsVar.g2.f()), gsVar.T1.f()), gsVar.U1.f());
-        ArrayList arrayList = null;
-        while (i2 <= max3) {
-            boolean i1 = i1();
-            ArrayList arrayList2 = new ArrayList();
-            oc7 r12 = oc7.r1(this.a);
-            gs gsVar2 = r12.l4;
-            if (!i1 && i2 >= gsVar2.U1.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_translate, 2131753625));
-            }
-            c46 b = c46.b(R.drawable.menu_feature_stories, i2, "BoostFeatureStoriesPerDay");
-            b.f = true;
-            arrayList2.add(b);
-            if (!i1) {
-                c46 b2 = c46.b(R.drawable.menu_feature_reactions, i2, "BoostFeatureCustomReaction");
-                b2.f = true;
-                arrayList2.add(b2);
-            }
-            fc7 fc7Var3 = r12.E3;
-            int a = fc7Var3 != null ? fc7Var3.a(i2, false) : 0;
-            fc7 fc7Var4 = r12.F3;
-            int a2 = fc7Var4 != null ? fc7Var4.a(i2, i1) : 0;
-            if (!i1 && a > 0) {
-                arrayList2.add(c46.b(R.drawable.menu_feature_color_name, 7, "BoostFeatureNameColor"));
-            }
-            if (!i1 && a > 0) {
-                arrayList2.add(c46.b(R.drawable.menu_feature_links, a, "BoostFeatureReplyColor"));
-            }
-            if (!i1 && i2 >= gsVar2.V1.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_links2, 2131753598));
-            }
-            if (a2 > 0) {
-                arrayList2.add(c46.b(R.drawable.menu_feature_color_profile, a2, i1 ? "BoostFeatureProfileColorGroup" : "BoostFeatureProfileColor"));
-            }
-            if (i1 && i2 >= gsVar2.d2.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_pack, 2131753616));
-            }
-            if (i1 ? i2 >= gsVar2.e2.f() : i2 >= gsVar2.W1.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_cover, i1 ? 2131753602 : 2131753603));
-            }
-            if (i1 && i2 >= gsVar2.Z1.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_voice, 2131753593));
-            }
-            if (i1 ? i2 >= gsVar2.c2.f() : i2 >= gsVar2.X1.f()) {
-                arrayList2.add(new c46(R.drawable.menu_feature_status, 2131753612, -1, "1000+", null));
-            }
-            if (i1 ? i2 >= gsVar2.b2.f() : i2 >= gsVar2.f2.f()) {
-                arrayList2.add(c46.b(R.drawable.menu_feature_wallpaper, 8, i1 ? "BoostFeatureBackgroundGroup" : "BoostFeatureBackground"));
-            }
-            if (i1 ? i2 >= gsVar2.Y1.f() : i2 >= gsVar2.g2.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_custombg, i1 ? 2131753617 : 2131753618));
-            }
-            if (!i1 && i2 >= gsVar2.T1.f()) {
-                arrayList2.add(c46.a(R.drawable.menu_feature_noads, 2131753594));
-            }
-            Collections.reverse(arrayList2);
-            if (arrayList != null && arrayList.size() == arrayList2.size()) {
-                for (0; i < arrayList.size(); i + 1) {
-                    c46 c46Var = (c46) arrayList.get(i);
-                    c46 c46Var2 = (c46) arrayList2.get(i);
-                    int i3 = c46Var.e;
-                    i = (c46Var2 != null && ((c46Var.f && i3 > 2) || (c46Var.a == c46Var2.a && c46Var.b == c46Var2.b && TextUtils.equals(c46Var.c, c46Var2.c) && TextUtils.equals(c46Var.d, c46Var2.d) && i3 == c46Var2.e))) ? i + 1 : 0;
-                }
-                i2++;
-            }
-            ArrayList arrayList3 = this.p2;
-            arrayList3.add(new b46(i2, arrayList3.isEmpty()));
-            this.p2.addAll(arrayList2);
-            arrayList = arrayList2;
-            i2++;
-        }
-    }
-
-    public final void v1() {
-        String str = null;
-        if (this.e2) {
-            this.z2.c(jb6.M0(2131748887, null), false, false);
-            return;
-        }
-        int i = this.c2;
-        if (i != 19 && i != 32 && !j1()) {
-            HashSet hashSet = this.t2;
-            if (i != 11 && i != 34) {
-                if (hashSet.size() <= 0) {
-                    x36 x36Var = this.z2;
-                    x36Var.r = false;
-                    x36Var.d(true);
-                    return;
+                int indexOf = str3.indexOf(47);
+                if (indexOf >= 0) {
+                    str2 = str3.substring(0, indexOf);
+                    str = str3.substring(indexOf + 1);
                 } else {
-                    if (i == 2) {
-                        str = jb6.G(hashSet.size(), "RevokeLinks", new Object[0]);
-                    } else if (i == 5) {
-                        str = jb6.G(hashSet.size(), "LeaveCommunities", new Object[0]);
-                    }
-                    this.z2.c(str, true, true);
-                    return;
+                    str = null;
+                    str2 = str3;
                 }
-            }
-            x36 x36Var2 = this.z2;
-            if (x36Var2.J == null) {
-                uy2 uy2Var = new uy2(x36Var2.getContext(), null);
-                x36Var2.J = uy2Var;
-                uy2Var.setGravity(3);
-                uy2 uy2Var2 = x36Var2.J;
-                int i2 = cmb.Ei;
-                int i3 = cmb.Ii;
-                ty2 ty2Var = uy2Var2.a;
-                ty2Var.v = i2;
-                ty2Var.w = i3;
-                ty2Var.b = 0.8f;
-                x36Var2.setClipChildren(false);
-                x36Var2.addView(x36Var2.J, qoe.e(-1, 24, 16));
-            }
-            if (this.T1) {
-                int size = hashSet.size();
-                x36 x36Var3 = this.z2;
-                if (size > 0) {
-                    x36Var3.c(jb6.M0(2131745353, null), true, true);
-                } else {
-                    x36Var3.c(jb6.M0(2131754554, null), true, true);
-                }
-            } else {
-                this.z2.c(jb6.M0(2131751978, null), true, true);
-            }
-            this.z2.J.a.c(hashSet.size(), true);
-            this.z2.invalidate();
-            return;
-        }
-        vh1 vh1Var = this.X1;
-        boolean z = vh1Var.a;
-        if ((z || vh1Var.b) && !vh1Var.l && !vh1Var.d) {
-            boolean z2 = vh1Var.m;
-            x36 x36Var4 = this.z2;
-            if (z2) {
-                x36Var4.c(jb6.M0(2131747564, null), true, true);
-                return;
-            } else {
-                x36Var4.r = false;
-                x36Var4.d(true);
-                return;
-            }
-        }
-        b61 b61Var = this.N2;
-        if (z) {
-            boolean k = oo0.k();
-            x36 x36Var5 = this.z2;
-            if (k) {
-                x36Var5.c(jb6.M0(2131753556, null), true, true);
-            } else {
-                x36Var5.c(jb6.M0(i1() ? 2131753590 : 2131753628, null), true, true);
-            }
-            this.B2.i(jb6.M0(2131753629, null), true, true);
-            if (b61Var != null) {
-                b61Var.i(jb6.M0(2131753590, null), true, true);
-                return;
-            }
-            return;
-        }
-        if (vh1Var.m) {
-            this.B2.i(jb6.M0(2131747564, null), true, true);
-            if (b61Var != null) {
-                b61Var.i(jb6.M0(2131747564, null), true, true);
-            }
-            this.z2.c(jb6.M0(2131747564, null), true, true);
-            return;
-        }
-        if (oo0.k()) {
-            if (b61Var != null) {
-                b61Var.i(jb6.M0(2131753590, null), true, true);
-            }
-            this.B2.i(jb6.M0(2131753629, null), true, true);
-            this.z2.c(jb6.M0(2131753556, null), true, true);
-            return;
-        }
-        if (b61Var != null) {
-            b61Var.i(jb6.M0(2131747564, null), true, true);
-        }
-        this.B2.i(jb6.M0(2131747564, null), true, true);
-        this.z2.c(jb6.M0(2131747564, null), true, true);
-    }
-
-    public final void w1() {
-        String M0;
-        if (this.e2) {
-            this.z2.c(jb6.M0(2131748887, null), false, false);
-            return;
-        }
-        int i = this.c2;
-        if (i == 19 || i == 32 || j1()) {
-            boolean k = oo0.k();
-            x36 x36Var = this.z2;
-            if (!k) {
-                x36Var.f.setText(jb6.M0(i1() ? 2131753590 : 2131753628, null));
-                return;
-            }
-            aj8 aj8Var = x36Var.f;
-            vh1 vh1Var = this.X1;
-            if (vh1Var == null || !vh1Var.d) {
-                M0 = jb6.M0(i1() ? 2131753590 : 2131753628, null);
-            } else {
-                M0 = jb6.M0(2131753556, null);
-            }
-            aj8Var.setText(M0);
-            vh1 vh1Var2 = this.X1;
-            if (vh1Var2 == null || !vh1Var2.m) {
-                return;
-            }
-            this.z2.f.setText(jb6.M0(2131747564, null));
-            return;
-        }
-        if (i == 18 || i == 20 || i == 24 || i == 25 || i == 26 || i == 29 || i == 22 || i == 23 || i == 21 || i == 27 || i == 28 || i == 30 || i == 35) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d ");
-            spannableStringBuilder.setSpan(new pn2(R.drawable.msg_copy_filled, 0), 0, 1, 0);
-            spannableStringBuilder.append((CharSequence) jb6.M0(2131751699, null));
-            this.z2.f.setText(spannableStringBuilder);
-            return;
-        }
-        if (z8c.h(this.a).p() || oc7.r1(this.a).H3() || this.I2) {
-            this.z2.f.setText(jb6.M0(2131747564, null));
-            x36 x36Var2 = this.z2;
-            x36Var2.E.p = null;
-            x36Var2.G.setVisibility(8);
-            return;
-        }
-        this.z2.f.setText(jb6.M0(2131748956, null));
-        h46 h46Var = this.H2;
-        if (h46Var == null) {
-            x36 x36Var3 = this.z2;
-            x36Var3.E.p = null;
-            x36Var3.G.setVisibility(8);
-            return;
-        }
-        int i2 = h46Var.e;
-        int i3 = i2 + 1;
-        int i4 = h46Var.f;
-        if (i3 == i4) {
-            this.z2.setIcon(R.raw.addone_icon);
-            return;
-        }
-        if (i2 != 0 && i4 != 0) {
-            float f = i4 / i2;
-            if (f >= 1.6f && f <= 2.5f) {
-                this.z2.setIcon(R.raw.double_icon);
-                return;
-            }
-        }
-        x36 x36Var4 = this.z2;
-        x36Var4.E.p = null;
-        x36Var4.G.setVisibility(8);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00a1, code lost:
-    
-        if (r1.isEmpty() == false) goto L57;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00b3, code lost:
-    
-        r1 = r6.y2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x00b5, code lost:
-    
-        if (r1 == null) goto L67;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x00bb, code lost:
-    
-        if (r1.size() != 1) goto L67;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x00bd, code lost:
-    
-        r1 = r6.x2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x00bf, code lost:
-    
-        if (r1 == null) goto L67;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00c5, code lost:
-    
-        if (r1.size() != 1) goto L67;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00c9, code lost:
-    
-        if (r6.T1 == false) goto L67;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x00b1, code lost:
-    
-        if (r1.size() >= r6.w2.size()) goto L57;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void x1() {
-        int size;
-        this.h2 = -1;
-        this.j2 = -1;
-        this.k2 = -1;
-        this.l2 = -1;
-        this.U1 = -1;
-        this.m2 = -1;
-        this.o2 = -1;
-        this.f2 = 1;
-        this.g2 = 0;
-        int i = this.c2;
-        if (i == 19 || i == 18 || i == 20 || i == 24 || i == 27 || i == 28 || i == 22 || i == 23 || i == 25 || i == 26 || i == 29 || i == 21 || i == 30 || i == 35) {
-            if (i != 19 || sd2.N(e1())) {
-                this.u1 = 0.24f;
-                int i2 = this.f2;
-                this.f2 = i2 + 1;
-                this.U1 = i2;
-                if (oc7.r1(this.a).l4.O1.f) {
-                    int i3 = this.f2;
-                    this.f2 = i3 + 1;
-                    this.n2 = i3;
-                }
-            }
-            u1();
-            int i4 = this.f2;
-            int i5 = i4 + 1;
-            this.f2 = i5;
-            this.o2 = i4;
-            this.f2 = (this.p2.size() - 1) + i5;
-        } else if (i == 31 || i == 32) {
-            this.u1 = 0.24f;
-            u1();
-            int i6 = this.f2;
-            this.j2 = i6;
-            int i7 = i6 + 1;
-            this.f2 = i7;
-            this.o2 = i6;
-            int size2 = (this.p2.size() - 1) + i7;
-            this.f2 = size2;
-            this.k2 = size2;
-        } else if (!g1(i)) {
-            int i8 = this.c2;
-            if (i8 == 11 || i8 == 34) {
-                this.u1 = 0.24f;
-            } else {
-                int i9 = this.f2;
-                this.h2 = i9;
-                this.f2 = i9 + 2;
-                this.i2 = i9 + 1;
-            }
-            if (this.D2) {
-                int i10 = this.f2;
-                this.f2 = i10 + 1;
-                this.l2 = i10;
-            } else {
-                if (i8 == 11) {
-                    if (this.T1) {
-                        if (!oc7.r1(this.a).H3()) {
-                            ArrayList arrayList = this.y2;
-                            if (arrayList != null) {
-                            }
-                            ArrayList arrayList2 = this.x2;
-                            if (arrayList2 != null) {
-                            }
+                if (!TextUtils.isEmpty(str2) && str2.indexOf(58) < 0 && str2.indexOf(63) < 0 && str2.indexOf(35) < 0 && (str == null || (str.length() <= 128 && au8.g.matcher(str).matches()))) {
+                    try {
+                        String lowerCase = IDN.toASCII(str2, 3).toLowerCase(Locale.US);
+                        if (str == null) {
+                            str3 = lowerCase;
+                        } else {
+                            str3 = lowerCase + '/' + str;
                         }
+                    } catch (IllegalArgumentException unused) {
                     }
                 }
-                int i11 = this.f2;
-                this.j2 = i11;
-                int i12 = this.c2;
-                if (i12 == 11 || i12 == 34) {
-                    size = this.w2.size() + i11;
-                    this.f2 = size;
-                } else if (i12 == 5) {
-                    size = this.u2.size() + i11;
-                    this.f2 = size;
-                } else {
-                    size = this.d2.size() + i11;
-                    this.f2 = size;
+            }
+            this.c = str3;
+            boolean z = str3 != null && str3.indexOf(47) >= 0;
+            String str4 = (String) this.f;
+            if (z) {
+                String b = au8.b(str4);
+                if (b == null) {
+                    b = ((String) this.f).toLowerCase(Locale.US);
                 }
-                this.k2 = size;
-                if (this.k2 - this.j2 > 1) {
-                    int i13 = this.f2;
-                    this.f2 = i13 + 1;
-                    this.m2 = i13;
+                this.f = b;
+            } else {
+                this.f = str4.toLowerCase(Locale.US);
+            }
+        }
+        return new au8(this);
+    }
+
+    public final void d() {
+        e(true);
+    }
+
+    public final void e(boolean z) {
+        ArrayList arrayList = (ArrayList) this.e;
+        if (z) {
+            for (int i = 0; i < this.a; i++) {
+                k(i);
+            }
+        } else if (this.a > 0) {
+            for (int i2 = 0; i2 < this.a; i2++) {
+                ((m46) ((Pair) arrayList.get(i2)).first).c();
+                i(((Pair) arrayList.get(i2)).second, false);
+            }
+            arrayList.clear();
+            this.a = 0;
+            i(null, true);
+        }
+    }
+
+    public final void f() {
+        for (int i = 0; i < this.b; i++) {
+            n(i, true);
+        }
+    }
+
+    public final boolean g(Canvas canvas) {
+        int i = 0;
+        boolean z = false;
+        while (i < this.b) {
+            ((r86) ((Pair) ((ArrayList) this.f).get(i)).first).draw(canvas);
+            i++;
+            z = true;
+        }
+        for (int i2 = 0; i2 < this.a; i2++) {
+            z = ((m46) ((Pair) ((ArrayList) this.e).get(i2)).first).a(canvas) || z;
+        }
+        return z;
+    }
+
+    public final boolean h(Canvas canvas, Object obj) {
+        ArrayList arrayList = (ArrayList) this.e;
+        ArrayList arrayList2 = (ArrayList) this.f;
+        boolean z = false;
+        for (int i = 0; i < this.b; i++) {
+            if (((Pair) arrayList2.get(i)).second == obj) {
+                ((r86) ((Pair) arrayList2.get(i)).first).draw(canvas);
+                z = true;
+            }
+        }
+        for (int i2 = 0; i2 < this.a; i2++) {
+            if (((Pair) arrayList.get(i2)).second == obj) {
+                z = ((m46) ((Pair) arrayList.get(i2)).first).a(canvas) || z;
+            }
+        }
+        i(obj, false);
+        return z;
+    }
+
+    public final void i(Object obj, boolean z) {
+        View view;
+        View view2;
+        if (obj instanceof View) {
+            ((View) obj).invalidate();
+        } else if (obj instanceof bw) {
+            bw bwVar = (bw) obj;
+            if (!bwVar.c && (view2 = bwVar.b) != null) {
+                view2.invalidate();
+            }
+        } else if (z && (view = (View) this.c) != null) {
+            view.invalidate();
+        }
+        sa2 sa2Var = (sa2) this.d;
+        if (sa2Var != null) {
+            sa2Var.run();
+        }
+    }
+
+    public final void k(int i) {
+        ArrayList arrayList = (ArrayList) this.e;
+        if (i < 0 || i >= this.a) {
+            return;
+        }
+        Pair pair = (Pair) arrayList.get(i);
+        m46 m46Var = (m46) pair.first;
+        if (m46Var.p < 0) {
+            m46Var.p = Math.max(m46Var.o + m46Var.q, SystemClock.elapsedRealtime());
+            i(pair.second, true);
+            gl.d3(new h46(this, m46Var, (byte) 1), Math.max(0L, (m46Var.p - SystemClock.elapsedRealtime()) + 175));
+        }
+    }
+
+    public final void l(m46 m46Var, boolean z) {
+        Pair pair;
+        ArrayList arrayList = (ArrayList) this.e;
+        if (m46Var != null) {
+            int i = 0;
+            while (true) {
+                if (i >= this.a) {
+                    pair = null;
+                    break;
+                } else {
+                    if (((Pair) arrayList.get(i)).first == m46Var) {
+                        pair = (Pair) arrayList.get(i);
+                        break;
+                    }
+                    i++;
+                }
+            }
+            if (pair != null) {
+                if (!z) {
+                    arrayList.remove(pair);
+                    m46Var.c();
+                    this.a = arrayList.size();
+                    i(pair.second, true);
+                    return;
+                }
+                if (m46Var.p < 0) {
+                    m46Var.p = Math.max(m46Var.o + m46Var.q, SystemClock.elapsedRealtime());
+                    i(pair.second, true);
+                    gl.d3(new h46(this, m46Var, (byte) 0), Math.max(0L, (m46Var.p - SystemClock.elapsedRealtime()) + 175));
                 }
             }
         }
-        this.n1.getAdapter().f();
+    }
+
+    public final void m(r86 r86Var, boolean z) {
+        if (r86Var != null) {
+            for (int i = 0; i < this.b; i++) {
+                if (((Pair) ((ArrayList) this.f).get(i)).first == r86Var) {
+                    n(i, z);
+                    return;
+                }
+            }
+        }
+    }
+
+    public final void n(int i, boolean z) {
+        Pair pair;
+        ArrayList arrayList = (ArrayList) this.f;
+        if (i < 0 || i >= this.b || (pair = (Pair) arrayList.get(i)) == null) {
+            return;
+        }
+        r86 r86Var = (r86) pair.first;
+        if (!z) {
+            arrayList.remove(pair);
+            r86Var.b = -1L;
+            r86Var.c = -1L;
+            this.b = arrayList.size();
+            i(pair.second, true);
+            return;
+        }
+        if (r86Var.c()) {
+            m(r86Var, false);
+            return;
+        }
+        if (!r86Var.d()) {
+            r86Var.a();
+        }
+        gl.d3(new kz5(this, r86Var, (byte) 6), r86Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - r86Var.c) : 0L);
+    }
+
+    public final void o(int i) {
+        if (i == 0) {
+            i = 1;
+        }
+        this.a = i;
+    }
+
+    public i46() {
     }
 }

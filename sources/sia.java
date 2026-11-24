@@ -1,24 +1,26 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class sia {
-    public Object a(List list) {
-        return null;
+public final class sia implements fv9 {
+    @Override // fv9
+    public final boolean c() {
+        return true;
     }
 
-    public List b() {
-        return new ArrayList();
+    @Override // fv9
+    public final boolean d() {
+        return false;
     }
 
-    public Object c() {
-        return null;
+    @Override // fv9
+    public final ev9 f(long j) {
+        hv9 hv9Var = new hv9(j, 0L);
+        return new ev9(hv9Var, hv9Var);
     }
 
-    public Object d(List list) {
-        return null;
+    @Override // fv9
+    public final long h() {
+        return -9223372036854775807L;
     }
 }

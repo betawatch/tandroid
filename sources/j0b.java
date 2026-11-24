@@ -1,35 +1,241 @@
 // default package
 
-import j$.util.Objects;
-import java.util.HashMap;
+import android.view.ViewGroup;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class j0b {
-    public final String a;
-    public final qo5 b;
-    public final qo5 c;
-    public final qo5 d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class j0b implements vv2 {
+    public final /* synthetic */ u0b a;
 
-    public j0b(String str, HashMap hashMap, HashMap hashMap2, HashMap hashMap3) {
-        this.a = str;
-        this.b = qo5.b(hashMap);
-        this.c = qo5.b(hashMap2);
-        this.d = qo5.b(hashMap3);
+    public j0b(u0b u0bVar) {
+        this.a = u0bVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof j0b)) {
-            return false;
-        }
-        j0b j0bVar = (j0b) obj;
-        return Objects.equals(this.a, j0bVar.a) && this.b.equals(j0bVar.b) && this.c.equals(j0bVar.c) && this.d.equals(j0bVar.d);
+    @Override // vv2
+    public final boolean A(TLRPC.Document document) {
+        return false;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c, this.d);
+    @Override // vv2
+    public final void B(TLRPC.Document document) {
+        u0b u0bVar = this.a;
+        u0bVar.M1.documents.remove(document);
+        boolean isEmpty = u0bVar.M1.documents.isEmpty();
+        if (isEmpty) {
+            u0bVar.dismiss();
+        }
+        u0bVar.n1.f();
+        hd hdVar = new hd(3, u0bVar.J0, u0bVar.getContext());
+        hdVar.q(350L);
+        TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
+        tL_stickers_removeStickerFromSet.sticker = hq6.c0(document, "").document;
+        ConnectionsManager.getInstance(u0bVar.a).sendRequest(tL_stickers_removeStickerFromSet, new mi1((Object) this, isEmpty, (Object) hdVar, (byte) 13));
+    }
+
+    @Override // vv2
+    public final String C(boolean z) {
+        return null;
+    }
+
+    @Override // vv2
+    public final boolean F() {
+        return true;
+    }
+
+    @Override // vv2
+    public final cs5 G(ViewGroup viewGroup) {
+        return null;
+    }
+
+    @Override // vv2
+    public final void I(s3a s3aVar) {
+        this.a.M0(s3aVar);
+    }
+
+    @Override // vv2
+    public final boolean K() {
+        return false;
+    }
+
+    @Override // vv2
+    public final boolean P(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // vv2
+    public final Boolean S(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // vv2
+    public final boolean T() {
+        return false;
+    }
+
+    @Override // vv2
+    public final long a() {
+        d dVar = this.a.F1;
+        if (dVar instanceof mu1) {
+            return ((mu1) dVar).a();
+        }
+        return 0L;
+    }
+
+    @Override // vv2
+    public final boolean b() {
+        r0b r0bVar = this.a.V1;
+        return r0bVar != null && r0bVar.b();
+    }
+
+    @Override // vv2
+    public final boolean c() {
+        r0b r0bVar = this.a.V1;
+        return r0bVar != null && r0bVar.c();
+    }
+
+    @Override // vv2
+    public final TLRPC.TL_messageMediaPoll d() {
+        return null;
+    }
+
+    @Override // vv2
+    public final boolean e(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // vv2
+    public final boolean f() {
+        return this.a.R1 != null;
+    }
+
+    @Override // vv2
+    public final TLRPC.PollAnswer g() {
+        return null;
+    }
+
+    @Override // vv2
+    public final boolean h() {
+        TLRPC.StickerSet stickerSet;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.a.M1;
+        return tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || !stickerSet.emojis;
+    }
+
+    @Override // vv2
+    public final boolean i() {
+        return false;
+    }
+
+    @Override // vv2
+    public final boolean j(int i) {
+        return this.a.V1 != null;
+    }
+
+    @Override // vv2
+    public final void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
+        u0b u0bVar = this.a;
+        r0b r0bVar = u0bVar.V1;
+        if (r0bVar == null) {
+            return;
+        }
+        r0bVar.e(document, str, obj, null, u0bVar.c2, z, i, 0);
+        u0bVar.dismiss();
+    }
+
+    @Override // vv2
+    public final void m(TLRPC.Document document) {
+        u0b u0bVar = this.a;
+        u0b.G0(u0bVar.F1, u0bVar.M1, document);
+    }
+
+    @Override // vv2
+    public final boolean n() {
+        return false;
+    }
+
+    @Override // vv2
+    public final boolean t() {
+        return true;
+    }
+
+    @Override // vv2
+    public final k27 w() {
+        return null;
+    }
+
+    @Override // vv2
+    public final boolean x() {
+        return false;
+    }
+
+    @Override // vv2
+    public final boolean z() {
+        return true;
+    }
+
+    @Override // vv2
+    public final void L() {
+    }
+
+    @Override // vv2
+    public final void N() {
+    }
+
+    @Override // vv2
+    public final void p() {
+    }
+
+    @Override // vv2
+    public final void q() {
+    }
+
+    @Override // vv2
+    public final void E(TLRPC.Document document) {
+    }
+
+    @Override // vv2
+    public final void Q(String str) {
+    }
+
+    @Override // vv2
+    public final void l(String str) {
+    }
+
+    @Override // vv2
+    public final void o(TLRPC.Document document) {
+    }
+
+    @Override // vv2
+    public final void r(TLRPC.Document document) {
+    }
+
+    @Override // vv2
+    public final void v(String str) {
+    }
+
+    @Override // vv2
+    public final void y(TLRPC.Document document) {
+    }
+
+    @Override // vv2
+    public final void J(Object obj, Object obj2) {
+    }
+
+    @Override // vv2
+    public final void O(TLRPC.InputStickerSet inputStickerSet, boolean z) {
+    }
+
+    @Override // vv2
+    public final void s(TLRPC.StickerSet stickerSet, String str) {
+    }
+
+    @Override // vv2
+    public final void R(CharSequence charSequence, String str, pz1 pz1Var) {
+    }
+
+    @Override // vv2
+    public final void u(Object obj, Object obj2, boolean z, int i, int i2) {
     }
 }

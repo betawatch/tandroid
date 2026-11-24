@@ -1,72 +1,137 @@
 // default package
 
 import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.a;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public abstract class gw1 extends FrameLayout {
-    public final fw1 a;
-    public final tk5 b;
-    public View c;
-    public int d;
-    public boolean e;
+public final class gw1 extends ImageView {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public gw1(Context context, tk5 tk5Var, Bundle bundle) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gw1(ChatActivityEnterView chatActivityEnterView, Context context, byte b) {
         super(context);
-        this.e = true;
-        this.b = tk5Var;
-        fw1 fw1Var = new fw1(this, bundle);
-        this.a = fw1Var;
-        fw1Var.mb = true;
+        this.a = b;
+        this.b = chatActivityEnterView;
     }
 
-    public void a() {
-        int i;
-        fw1 fw1Var = this.a;
-        if (fw1Var.onFragmentCreate()) {
-            this.c = fw1Var.fragmentView;
-            fw1Var.setParentLayout(this.b);
-            View view = this.c;
-            if (view == null) {
-                this.c = fw1Var.createView(getContext());
-            } else {
-                ViewGroup viewGroup = (ViewGroup) view.getParent();
-                if (viewGroup != null) {
-                    fw1Var.onRemoveFromParent();
-                    viewGroup.removeView(this.c);
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (getAlpha() < 0.5f || this.b.y1 > 0.0f) {
+                    return false;
                 }
-            }
-            vr1 vr1Var = fw1Var.A0;
-            if (vr1Var != null && (i = this.d) != 0) {
-                vr1Var.setPadding(0, i, 0, 0);
-            }
-            fw1Var.Ga();
-            addView(this.c, qoe.c(-1.0f, -1));
-            if (this.e) {
-                fw1Var.onResume();
-            }
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                float f = chatActivityEnterView.y1;
+                if (f < 1.0f) {
+                    if (f <= 0.0f) {
+                        super.draw(canvas);
+                        break;
+                    } else {
+                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.y1) * 255.0f));
+                        super.draw(canvas);
+                        canvas.restoreToCount(saveLayerAlpha);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.draw(canvas);
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
+    @Override // android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 1:
+                super.onLayout(z, i, i2, i3, i4);
+                post(new uv1(this.b, (byte) 16));
+                break;
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+        }
     }
 
-    public void setTopPadding(int i) {
-        this.d = i;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 3:
+                if (getAlpha() <= 0.0f) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
     }
 
-    public void b(boolean z) {
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (b) {
+            case 1:
+                super.setAlpha(f);
+                pw1 pw1Var = chatActivityEnterView.z2;
+                if (pw1Var != null) {
+                    pw1Var.setTranslationX(pw1Var.a);
+                    break;
+                }
+                break;
+            case 2:
+                super.setAlpha(f);
+                pw1 pw1Var2 = chatActivityEnterView.z2;
+                if (pw1Var2 != null) {
+                    pw1Var2.setTranslationX(pw1Var2.a);
+                    break;
+                }
+                break;
+            case 3:
+                super.setAlpha(f);
+                a aVar = chatActivityEnterView.a1;
+                if (aVar != null) {
+                    aVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setAlpha(f);
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void setVisibility(int i) {
+        switch (this.a) {
+            case 3:
+                super.setVisibility(i);
+                a aVar = this.b.a1;
+                if (aVar != null) {
+                    aVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
     }
 }

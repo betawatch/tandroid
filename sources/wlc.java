@@ -1,172 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class wlc implements lf7 {
-    public final String a;
-    public final String b;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 
-    public wlc(String str, String str2) {
-        this.a = vod.d(str);
-        this.b = str2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class wlc extends FrameLayout {
+    public View a;
+    public float b;
+    public int c;
+    public final qr1 d;
+    public final /* synthetic */ hmc e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wlc(hmc hmcVar, Context context) {
+        super(context);
+        this.e = hmcVar;
+        this.d = new qr1(this, (byte) 8);
     }
 
-    @Override // lf7
-    public final go4 a() {
-        return null;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.d);
     }
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // lf7
-    public final void b(ht6 ht6Var) {
-        String str = this.a;
-        str.getClass();
-        char c = 65535;
-        switch (str.hashCode()) {
-            case -1935137620:
-                if (str.equals("TOTALTRACKS")) {
-                    c = 0;
-                    break;
-                }
-                break;
-            case -215998278:
-                if (str.equals("TOTALDISCS")) {
-                    c = 1;
-                    break;
-                }
-                break;
-            case -113312716:
-                if (str.equals("TRACKNUMBER")) {
-                    c = 2;
-                    break;
-                }
-                break;
-            case 62359119:
-                if (str.equals("ALBUM")) {
-                    c = 3;
-                    break;
-                }
-                break;
-            case 67703139:
-                if (str.equals("GENRE")) {
-                    c = 4;
-                    break;
-                }
-                break;
-            case 79833656:
-                if (str.equals("TITLE")) {
-                    c = 5;
-                    break;
-                }
-                break;
-            case 428414940:
-                if (str.equals("DESCRIPTION")) {
-                    c = 6;
-                    break;
-                }
-                break;
-            case 905239725:
-                if (str.equals("DISCSUBTITLE")) {
-                    c = 7;
-                    break;
-                }
-                break;
-            case 993300766:
-                if (str.equals("DISCNUMBER")) {
-                    c = '\b';
-                    break;
-                }
-                break;
-            case 1746739798:
-                if (str.equals("ALBUMARTIST")) {
-                    c = '\t';
-                    break;
-                }
-                break;
-            case 1939198791:
-                if (str.equals("ARTIST")) {
-                    c = '\n';
-                    break;
-                }
-                break;
-        }
-        String str2 = this.b;
-        switch (c) {
-            case 0:
-                Integer f = ine.f(str2);
-                if (f != null) {
-                    ht6Var.p = f;
-                    break;
-                }
-                break;
-            case 1:
-                Integer f2 = ine.f(str2);
-                if (f2 != null) {
-                    ht6Var.E = f2;
-                    break;
-                }
-                break;
-            case 2:
-                Integer f3 = ine.f(str2);
-                if (f3 != null) {
-                    ht6Var.o = f3;
-                    break;
-                }
-                break;
-            case 3:
-                ht6Var.c = str2;
-                break;
-            case 4:
-                ht6Var.F = str2;
-                break;
-            case 5:
-                ht6Var.a = str2;
-                break;
-            case 6:
-                ht6Var.g = str2;
-                break;
-            case 7:
-                ht6Var.C = str2;
-                break;
-            case '\b':
-                Integer f4 = ine.f(str2);
-                if (f4 != null) {
-                    ht6Var.D = f4;
-                    break;
-                }
-                break;
-            case '\t':
-                ht6Var.d = str2;
-                break;
-            case '\n':
-                ht6Var.b = str2;
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.d);
+        super.onDetachedFromWindow();
     }
 
-    @Override // lf7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && wlc.class == obj.getClass()) {
-            wlc wlcVar = (wlc) obj;
-            if (this.a.equals(wlcVar.a) && this.b.equals(wlcVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + ts2.j(527, 31, this.a);
-    }
-
-    public final String toString() {
-        return "VC: " + this.a + "=" + this.b;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.e.X0();
     }
 }

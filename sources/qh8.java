@@ -1,31 +1,33 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qh8 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class qh8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ th8 b;
+    public final /* synthetic */ xh8 b;
 
-    public /* synthetic */ qh8(th8 th8Var, byte b) {
+    public /* synthetic */ qh8(xh8 xh8Var, byte b) {
         this.a = b;
-        this.b = th8Var;
+        this.b = xh8Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        th8 th8Var = this.b;
+        xh8 xh8Var = this.b;
         switch (b) {
             case 0:
-                th8Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                th8Var.c(true);
+                d01.t(xh8Var.getContext(), "https://" + na7.q1(xh8Var.T1).N2 + "/nft/" + xh8Var.y2.slug);
+                break;
+            case 1:
+                try {
+                    xh8Var.c.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                xh8Var.j2.c(xh8Var.F2);
                 break;
             default:
-                th8Var.getClass();
-                th8Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                th8Var.c(true);
+                xh8Var.J2[0].setVisibility(8);
                 break;
         }
     }

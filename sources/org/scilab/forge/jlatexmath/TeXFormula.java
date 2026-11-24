@@ -14,7 +14,7 @@ import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.GraphicsEnvironment;
 import ru.noties.jlatexmath.awt.Toolkit;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class TeXFormula {
     public static final int BOLD = 2;
@@ -33,14 +33,14 @@ public class TeXFormula {
     private TeXParser parser;
     public Atom root;
     public String textStyle;
-    public static Map<String, TeXFormula> predefinedTeXFormulas = new HashMap(nm7.f2);
-    public static Map<String, String> predefinedTeXFormulasAsString = new HashMap(nm7.f2);
+    public static Map<String, TeXFormula> predefinedTeXFormulas = new HashMap(kk7.f2);
+    public static Map<String, String> predefinedTeXFormulasAsString = new HashMap(kk7.f2);
     public static String[] symbolMappings = new String[65536];
     public static String[] symbolTextMappings = new String[65536];
     public static String[] symbolFormulaMappings = new String[65536];
     public static Map<Character.UnicodeBlock, FontInfos> externalFontMap = new HashMap();
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     static class FontInfos {
         String sansserif;
         String serif;
@@ -51,7 +51,7 @@ public class TeXFormula {
         }
     }
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public class TeXIconBuilder {
         private Integer align;
         private Color fgcolor;
@@ -73,12 +73,12 @@ public class TeXFormula {
             HorizontalBox horizontalBox;
             Box.resetBoxBudget();
             if (this.style == null) {
-                dq9.m("A style is required. Use setStyle()");
+                sc8.j("A style is required. Use setStyle()");
                 return null;
             }
             Float f = this.size;
             if (f == null) {
-                dq9.m("A size is required. Use setStyle()");
+                sc8.j("A size is required. Use setStyle()");
                 return null;
             }
             DefaultTeXFont defaultTeXFont = this.type == null ? new DefaultTeXFont(this.size.floatValue()) : TeXFormula.this.createFont(f.floatValue(), this.type.intValue());
@@ -116,7 +116,7 @@ public class TeXFormula {
 
         public TeXIconBuilder setInterLineSpacing(int i, float f) {
             if (this.widthUnit == null) {
-                dq9.m("Cannot set inter line spacing without having specified a width!");
+                sc8.j("Cannot set inter line spacing without having specified a width!");
                 return null;
             }
             this.interLineUnit = Integer.valueOf(i);
@@ -126,7 +126,7 @@ public class TeXFormula {
 
         public TeXIconBuilder setIsMaxWidth(boolean z) {
             if (this.widthUnit == null) {
-                dq9.m("Cannot set 'isMaxWidth' without having specified a width!");
+                sc8.j("Cannot set 'isMaxWidth' without having specified a width!");
                 return null;
             }
             if (z) {

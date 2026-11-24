@@ -1,195 +1,119 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import java.nio.charset.StandardCharsets;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class a52 extends EditTextBoldCursor {
-    public final /* synthetic */ byte M1 = 2;
-    public final km N1;
-    public int O1;
-    public final ho P1;
-    public final /* synthetic */ Object Q1;
+public abstract class a52 extends i98 {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a52(rrc rrcVar, Activity activity) {
-        super(activity);
-        this.Q1 = rrcVar;
-        this.O1 = 960;
-        this.N1 = new km(this);
-        ho hoVar = new ho(false, true, true);
-        this.P1 = hoVar;
-        hoVar.n(0.2f, 160L, d53.h);
-        hoVar.w(gm.L(15.33f));
-        hoVar.b = 5;
-        hoVar.setCallback(this);
+    public a52(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        byte b = this.M1;
-        Object obj = this.Q1;
-        km kmVar = this.N1;
-        ho hoVar = this.P1;
-        switch (b) {
-            case 0:
-                super.dispatchDraw(canvas);
-                hoVar.u(kmVar.a(cmb.v0(this.O1 <= 0 ? cmb.o7 : cmb.O5, ((c52) obj).a), false));
-                int L = gm.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-                int height = getHeight() + getScrollY();
-                hoVar.setBounds(L - gm.L(48.0f), height - Math.min(gm.L(44.0f), getHeight()), L, height);
-                hoVar.draw(canvas);
-                break;
-            case 1:
-                super.dispatchDraw(canvas);
-                hoVar.u(kmVar.a(cmb.v0(this.O1 < 0 ? cmb.o7 : cmb.O5, ((oc6) obj).getResourceProvider()), false));
-                hoVar.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-                hoVar.draw(canvas);
-                break;
-            case 2:
-                super.dispatchDraw(canvas);
-                hoVar.u(kmVar.a(cmb.v0(this.O1 < 0 ? cmb.o7 : cmb.O5, (ylb) obj), false));
-                hoVar.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-                hoVar.draw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                hoVar.u(kmVar.a(cmb.v0(this.O1 <= 0 ? cmb.o7 : cmb.O5, ((rrc) obj).getResourceProvider()), false));
-                int L2 = gm.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-                int height2 = getHeight() + getScrollY();
-                hoVar.setBounds(L2 - gm.L(48.0f), height2 - Math.min(gm.L(44.0f), getHeight()), L2, height2);
-                hoVar.draw(canvas);
-                break;
+    @Override // i98, o98
+    public final int D(int i, oac oacVar) {
+        boolean z;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        s42 s42Var = chatAttachAlertPhotoLayout.r;
+        s42 s42Var2 = chatAttachAlertPhotoLayout.F;
+        x02 x02Var = chatAttachAlertPhotoLayout.b;
+        if (x02Var.P3 < 0 || ChatAttachAlertPhotoLayout.t1.size() < x02Var.P3 || w(i)) {
+            boolean z2 = ChatAttachAlertPhotoLayout.r1;
+            jm6 d0 = chatAttachAlertPhotoLayout.d0(i);
+            if (d0 != null && !chatAttachAlertPhotoLayout.Y(d0)) {
+                if (ChatAttachAlertPhotoLayout.t1.size() + 1 <= chatAttachAlertPhotoLayout.i0()) {
+                    int R = chatAttachAlertPhotoLayout.R(d0, -1);
+                    if (R == -1) {
+                        R = ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(d0.C));
+                        z = true;
+                    } else {
+                        d0.s = null;
+                        z = false;
+                    }
+                    d0.s = oacVar;
+                    int childCount = s42Var2.getChildCount();
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 >= childCount) {
+                            break;
+                        }
+                        View childAt = s42Var2.getChildAt(i2);
+                        if (!(childAt instanceof o48) || ((Integer) childAt.getTag()).intValue() != i) {
+                            i2++;
+                        } else if ((x02Var.Z1 instanceof mu1) && x02Var.Q3) {
+                            ((o48) childAt).b(R, z, false);
+                        } else {
+                            ((o48) childAt).b(-1, z, false);
+                        }
+                    }
+                    int childCount2 = s42Var.getChildCount();
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= childCount2) {
+                            break;
+                        }
+                        View childAt2 = s42Var.getChildAt(i3);
+                        if (!(childAt2 instanceof o48) || ((Integer) childAt2.getTag()).intValue() != i) {
+                            i3++;
+                        } else if ((x02Var.Z1 instanceof mu1) && x02Var.Q3) {
+                            ((o48) childAt2).b(R, z, false);
+                        } else {
+                            ((o48) childAt2).b(-1, z, false);
+                        }
+                    }
+                    x02Var.F1(z ? 1 : 2);
+                    return R;
+                }
+            }
         }
+        return -1;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.M1) {
-            case 2:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(36.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i, i2);
-                break;
+    @Override // i98, o98
+    public final int G() {
+        return ChatAttachAlertPhotoLayout.t1.size();
+    }
+
+    @Override // i98, o98
+    public final boolean O() {
+        x02 x02Var = this.a.b;
+        return x02Var != null && x02Var.c2;
+    }
+
+    @Override // i98, o98
+    public final int S(int i) {
+        boolean z = ChatAttachAlertPhotoLayout.r1;
+        jm6 d0 = this.a.d0(i);
+        if (d0 == null) {
+            return -1;
         }
+        return ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(d0.C));
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, vu3, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.M1;
-        ho hoVar = this.P1;
-        switch (b) {
-            case 0:
-                super.onTextChanged(charSequence, i, i2, i3);
-                if (hoVar != null) {
-                    this.O1 = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    hoVar.a();
-                    int i4 = this.O1;
-                    hoVar.t(i4 <= 100 ? Integer.toString(i4) : "", isAttachedToWindow(), true);
-                    invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                super.onTextChanged(charSequence, i, i2, i3);
-                if (hoVar != null) {
-                    this.O1 = 96 - charSequence.length();
-                    hoVar.a();
-                    hoVar.t(this.O1 <= 12 ? String.valueOf(this.O1) : "", true, true);
-                    break;
-                }
-                break;
-            case 2:
-                super.onTextChanged(charSequence, i, i2, i3);
-                if (hoVar != null) {
-                    this.O1 = 32 - charSequence.length();
-                    hoVar.a();
-                    hoVar.t(this.O1 <= 4 ? String.valueOf(this.O1) : "", true, true);
-                    break;
-                }
-                break;
-            default:
-                super.onTextChanged(charSequence, i, i2, i3);
-                if (hoVar != null) {
-                    this.O1 = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    hoVar.a();
-                    int i5 = this.O1;
-                    hoVar.t(i5 <= 100 ? Integer.toString(i5) : "", isAttachedToWindow(), true);
-                    invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // i98, o98
+    public final ArrayList d() {
+        return ChatAttachAlertPhotoLayout.u1;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        switch (this.M1) {
-            case 0:
-                if (drawable == this.P1 || super.verifyDrawable(drawable)) {
-                }
-                break;
-            case 1:
-                if (drawable == this.P1 || super.verifyDrawable(drawable)) {
-                }
-                break;
-            case 2:
-                if (drawable == this.P1 || super.verifyDrawable(drawable)) {
-                }
-                break;
-            default:
-                if (drawable == this.P1 || super.verifyDrawable(drawable)) {
-                }
-                break;
-        }
-        return true;
+    @Override // i98, o98
+    public final void m() {
+        boolean z = ChatAttachAlertPhotoLayout.r1;
+        this.a.y0();
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a52(Activity activity, ylb ylbVar) {
-        super(activity);
-        this.Q1 = ylbVar;
-        this.N1 = new km(this);
-        ho hoVar = new ho(false, true, true);
-        this.P1 = hoVar;
-        hoVar.n(0.2f, 160L, d53.h);
-        hoVar.w(gm.L(15.33f));
-        hoVar.setCallback(this);
-        hoVar.b = 5;
+    @Override // i98, o98
+    public final HashMap u() {
+        return ChatAttachAlertPhotoLayout.t1;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a52(c52 c52Var, Context context) {
-        super(context);
-        this.Q1 = c52Var;
-        this.O1 = 960;
-        this.N1 = new km(this);
-        ho hoVar = new ho(false, true, true);
-        this.P1 = hoVar;
-        hoVar.n(0.2f, 160L, d53.h);
-        hoVar.w(gm.L(15.33f));
-        hoVar.b = 5;
-        hoVar.setCallback(this);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a52(oc6 oc6Var, Activity activity) {
-        super(activity);
-        this.Q1 = oc6Var;
-        this.N1 = new km(this);
-        ho hoVar = new ho(false, true, true);
-        this.P1 = hoVar;
-        hoVar.n(0.2f, 160L, d53.h);
-        hoVar.w(gm.L(15.33f));
-        hoVar.setCallback(this);
-        hoVar.b = 5;
+    @Override // i98, o98
+    public final boolean w(int i) {
+        boolean z = ChatAttachAlertPhotoLayout.r1;
+        jm6 d0 = this.a.d0(i);
+        return d0 != null && ChatAttachAlertPhotoLayout.t1.containsKey(Integer.valueOf(d0.C));
     }
 }

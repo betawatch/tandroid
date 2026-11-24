@@ -1,33 +1,120 @@
 // default package
 
-import android.window.BackEvent;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.util.SparseIntArray;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class yo {
-    public static final yo a = new yo();
+public abstract class yo {
+    public Object a;
+    public Object b;
 
-    public final BackEvent a(float f, float f2, float f3, int i) {
-        return new BackEvent(f, f2, f3, i);
+    public yo() {
+        this.a = new SparseIntArray();
+        this.b = new SparseIntArray();
     }
 
-    public final float b(BackEvent backEvent) {
-        backEvent.getClass();
-        return backEvent.getProgress();
+    public final void c() {
+        zj zjVar = (zj) this.a;
+        if (zjVar != null) {
+            try {
+                ((bp) this.b).e.unregisterReceiver(zjVar);
+            } catch (IllegalArgumentException unused) {
+            }
+            this.a = null;
+        }
     }
 
-    public final int c(BackEvent backEvent) {
-        backEvent.getClass();
-        return backEvent.getSwipeEdge();
+    public abstract IntentFilter d();
+
+    public abstract int e();
+
+    public final MenuItem f(MenuItem menuItem) {
+        if (!(menuItem instanceof ybb)) {
+            return menuItem;
+        }
+        ybb ybbVar = (ybb) menuItem;
+        aia aiaVar = (aia) this.b;
+        if (aiaVar == null) {
+            aiaVar = new aia(0);
+            this.b = aiaVar;
+        }
+        MenuItem menuItem2 = (MenuItem) aiaVar.get(ybbVar);
+        if (menuItem2 != null) {
+            return menuItem2;
+        }
+        g07 g07Var = new g07((Context) this.a, ybbVar);
+        ((aia) this.b).put(ybbVar, g07Var);
+        return g07Var;
     }
 
-    public final float d(BackEvent backEvent) {
-        backEvent.getClass();
-        return backEvent.getTouchX();
+    public final int g(int i, int i2) {
+        int i3 = i(i);
+        int i4 = 0;
+        int i5 = 0;
+        for (int i6 = 0; i6 < i; i6++) {
+            int i7 = i(i6);
+            i4 += i7;
+            if (i4 == i2) {
+                i5++;
+                i4 = 0;
+            } else if (i4 > i2) {
+                i5++;
+                i4 = i7;
+            }
+        }
+        return i4 + i3 > i2 ? i5 + 1 : i5;
     }
 
-    public final float e(BackEvent backEvent) {
-        backEvent.getClass();
-        return backEvent.getTouchY();
+    public int h(int i, int i2) {
+        int i3 = i(i);
+        if (i3 != i2) {
+            int i4 = 0;
+            for (int i5 = 0; i5 < i; i5++) {
+                int i6 = i(i5);
+                i4 += i6;
+                if (i4 == i2) {
+                    i4 = 0;
+                } else if (i4 > i2) {
+                    i4 = i6;
+                }
+            }
+            if (i3 + i4 <= i2) {
+                return i4;
+            }
+        }
+        return 0;
+    }
+
+    public abstract int i(int i);
+
+    public final void j() {
+        ((SparseIntArray) this.a).clear();
+    }
+
+    public abstract void k();
+
+    public final void l() {
+        c();
+        IntentFilter d = d();
+        if (d.countActions() == 0) {
+            return;
+        }
+        zj zjVar = (zj) this.a;
+        if (zjVar == null) {
+            zjVar = new zj(this, (byte) 1);
+            this.a = zjVar;
+        }
+        ((bp) this.b).e.registerReceiver(zjVar, d);
+    }
+
+    public yo(Context context) {
+        this.a = context;
+    }
+
+    public yo(bp bpVar) {
+        this.b = bpVar;
     }
 }

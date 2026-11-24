@@ -1,138 +1,99 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.SystemClock;
-import android.view.View;
-import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class fl6 extends TextView {
-    public final Matrix a;
-    public LinearGradient b;
-    public int c;
-    public boolean d;
-    public boolean e;
-    public float f;
-    public long h;
-    public final pg6 n;
-    public boolean r;
-    public int s;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class fl6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ gk7 d;
 
-    public fl6(Context context) {
-        super(context);
-        this.a = new Matrix();
-        this.n = new pg6(this, (byte) 5);
+    public /* synthetic */ fl6(gk7 gk7Var, int i, int i2, byte b) {
+        this.a = b;
+        this.d = gk7Var;
+        this.b = i;
+        this.c = i2;
     }
 
-    public final void a() {
-        float min = Math.min(gm.L(10.0f) / this.c, 0.49f);
-        int currentTextColor = getCurrentTextColor();
-        int i = 1048575 & currentTextColor;
-        this.b = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{i, currentTextColor, currentTextColor, i}, new float[]{0.0f, min, 1.0f - min, 1.0f}, Shader.TileMode.CLAMP);
-        if (this.d) {
-            getPaint().setShader(this.b);
-        } else {
-            getPaint().setShader(null);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        gk7 gk7Var = this.d;
+        switch (b) {
+            case 0:
+                String[] strArr = MediaController.W1;
+                gl.c3(new zy0((MediaController) gk7Var, this.b, tL_error, tLObject, this.c));
+                break;
+            case 1:
+                na7 na7Var = (na7) gk7Var;
+                LongSparseIntArray longSparseIntArray = na7Var.P0;
+                int i = 0;
+                if (tL_error == null) {
+                    TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) tLObject;
+                    if (updates_difference instanceof TLRPC.TL_updates_differenceTooLong) {
+                        gl.c3(new mp1(na7Var, updates_difference, this.b, this.c, (byte) 7));
+                        break;
+                    } else {
+                        if (updates_difference instanceof TLRPC.TL_updates_differenceSlice) {
+                            TLRPC.TL_updates_state tL_updates_state = updates_difference.intermediate_state;
+                            na7Var.W0(tL_updates_state.pts, tL_updates_state.date, tL_updates_state.qts, true);
+                        }
+                        vf6 vf6Var = new vf6();
+                        vf6 vf6Var2 = new vf6();
+                        for (int i2 = 0; i2 < updates_difference.users.size(); i2++) {
+                            TLRPC.User user = updates_difference.users.get(i2);
+                            vf6Var.k(user, user.id);
+                        }
+                        for (int i3 = 0; i3 < updates_difference.chats.size(); i3++) {
+                            TLRPC.Chat chat = updates_difference.chats.get(i3);
+                            vf6Var2.k(chat, chat.id);
+                        }
+                        ArrayList arrayList = new ArrayList();
+                        if (!updates_difference.other_updates.isEmpty()) {
+                            while (i < updates_difference.other_updates.size()) {
+                                TLRPC.Update update = updates_difference.other_updates.get(i);
+                                if (update instanceof TL_update.TL_updateMessageID) {
+                                    arrayList.add((TL_update.TL_updateMessageID) update);
+                                    updates_difference.other_updates.remove(i);
+                                } else {
+                                    if (na7.T1(update) == 2) {
+                                        long Q1 = na7.Q1(update);
+                                        int i4 = longSparseIntArray.get(Q1);
+                                        if (i4 == 0 && (i4 = na7Var.getMessagesStorage().M(Q1)) != 0) {
+                                            longSparseIntArray.put(Q1, i4);
+                                        }
+                                        if (i4 != 0 && na7.R1(update) <= i4) {
+                                            updates_difference.other_updates.remove(i);
+                                        }
+                                    }
+                                    i++;
+                                }
+                                i--;
+                                i++;
+                            }
+                        }
+                        gl.c3(new oh6((Object) na7Var, (Object) updates_difference, (byte) 23));
+                        na7Var.getMessagesStorage().a.c(new vz4((Object) na7Var, (Object) updates_difference, (Object) arrayList, (Object) vf6Var, (Object) vf6Var2, (byte) 21));
+                        break;
+                    }
+                } else {
+                    na7Var.Y1 = false;
+                    na7Var.getConnectionsManager().setIsUpdating(false);
+                    fa4.b("received: isUpdating = false");
+                    break;
+                }
+                break;
+            default:
+                gl.c3(new tba((nfa) gk7Var, tL_error, this.b, this.c, tLObject, (byte) 0));
+                break;
         }
-        this.b.setLocalMatrix(this.a);
-        invalidate();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        boolean z;
-        int measuredWidth = getMeasuredWidth();
-        int L = gm.L(40.0f);
-        float f = this.f;
-        float f2 = measuredWidth;
-        float a = f < f2 ? pqe.a(f / gm.L(10.0f), 0.0f, 1.0f) : 0.0f;
-        Matrix matrix = this.a;
-        matrix.reset();
-        float L2 = gm.L(10.0f);
-        float f3 = this.c;
-        matrix.postScale(td4.A(1.0f, a, L2 / f3, 1.0f), 1.0f, f3, 0.0f);
-        matrix.postScale(1.0f - (this.s / this.c), 1.0f, 0.0f, 0.0f);
-        matrix.postTranslate(this.f, 0.0f);
-        this.b.setLocalMatrix(matrix);
-        canvas.save();
-        canvas.translate(-this.f, 0.0f);
-        super.onDraw(canvas);
-        canvas.restore();
-        if (measuredWidth > 0) {
-            float f4 = this.f;
-            if (f4 > 0.0f && f4 + getWidth() > f2 && this.d && this.e) {
-                float f5 = -this.f;
-                float f6 = L;
-                matrix.postTranslate(f5 - ((f5 + f2) + f6), 0.0f);
-                this.b.setLocalMatrix(matrix);
-                canvas.save();
-                canvas.translate((-this.f) + f2 + f6, 0.0f);
-                super.onDraw(canvas);
-                canvas.restore();
-            }
-        }
-        boolean z2 = ((double) this.f) < 1.0E-4d;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        long j = this.h;
-        long min = (j == 0 || z2) ? 16L : Math.min(uptimeMillis - j, 120L);
-        this.h = uptimeMillis;
-        boolean z3 = this.d;
-        pg6 pg6Var = this.n;
-        if ((z3 && this.e) || !z2) {
-            float A = b10.A(min, 1000.0f, gm.L(60.0f), this.f);
-            this.f = A;
-            if (A > measuredWidth + L) {
-                gm.r(pg6Var);
-                this.r = false;
-                this.e = false;
-                this.f = 0.0f;
-            }
-            invalidate();
-        }
-        if (!this.d || this.e || (z = this.r) || z) {
-            return;
-        }
-        this.r = true;
-        gm.d3(pg6Var, 1500L);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(0, i2);
-        this.c = View.MeasureSpec.getSize(i);
-        this.d = getMeasuredWidth() > this.c - this.s;
-        a();
-    }
-
-    public void setCustomPaddingRight(int i) {
-        this.s = i;
-        boolean z = getMeasuredWidth() > this.c - this.s;
-        this.d = z;
-        if (z) {
-            getPaint().setShader(this.b);
-        } else {
-            getPaint().setShader(null);
-        }
-        invalidate();
-    }
-
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        gm.r(this.n);
-        this.r = false;
-        this.e = false;
-        this.f = 0.0f;
-    }
-
-    @Override // android.widget.TextView
-    public void setTextColor(int i) {
-        super.setTextColor(i);
-        a();
     }
 }

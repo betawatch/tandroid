@@ -1,82 +1,35 @@
 // default package
 
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.appcompat.widget.SearchView;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class ix0 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public abstract class ix0 extends fy0 {
+    public final LinearLayout S1;
+    public FrameLayout T1;
+    public u41 U1;
 
-    public /* synthetic */ ix0(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public ix0(Context context, wjb wjbVar) {
+        super(context, null, false, false, wjbVar);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.S1 = linearLayout;
+        linearLayout.setOrientation(1);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        byte b = this.a;
-        Object[] objArr = 0;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                view.removeOnLayoutChangeListener(this);
-                wx0 wx0Var = (wx0) obj;
-                yq0 yq0Var = wx0Var.o0;
-                nx0 nx0Var = wx0Var.x;
-                nx0Var.setSwipeOffsetY(nx0Var.getHeight());
-                wx0Var.f.setAlpha(1.0f);
-                if (wx0Var.I0 != Float.MAX_VALUE) {
-                    nx0Var.setSwipeOffsetAnimationDisallowed(true);
-                    nx0Var.setOffsetY(wx0Var.I0);
-                    nx0Var.setSwipeOffsetAnimationDisallowed(false);
-                }
-                wx0Var.E.l(true, true);
-                po poVar = new po(null);
-                poVar.d();
-                if (wx0Var.H0 || wx0Var.p()) {
-                    nx0Var.e(nx0Var.getTopActionBarOffsetY() + (-nx0Var.getOffsetY()), false, new yt0(poVar, (byte) 4));
-                } else {
-                    zna znaVar = new zna((Object) nx0Var, (vk4) d32.c0, 0.0f);
-                    aoa aoaVar = new aoa(0.0f);
-                    aoaVar.a(0.75f);
-                    aoaVar.b(500.0f);
-                    znaVar.m = aoaVar;
-                    znaVar.a(new hx0(poVar, objArr == true ? 1 : 0));
-                    znaVar.h();
-                }
-                nx0Var.L = true;
-                if (wx0Var.f0 && yq0Var != null) {
-                    yq0Var.setAlpha(0.0f);
-                    yq0Var.animate().alpha(1.0f).setDuration(220L).start();
-                    break;
-                }
-                break;
-            case 1:
-                ((f51) obj).m0();
-                break;
-            default:
-                SearchView searchView = (SearchView) obj;
-                SearchView.SearchAutoComplete searchAutoComplete = searchView.G;
-                View view2 = searchView.O;
-                if (view2.getWidth() > 1) {
-                    Resources resources = searchView.getContext().getResources();
-                    int paddingLeft = searchView.I.getPaddingLeft();
-                    Rect rect = new Rect();
-                    boolean a = ghc.a(searchView);
-                    int dimensionPixelSize = searchView.g0 ? resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_icon_width) + resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_text_padding_left) : 0;
-                    searchAutoComplete.getDropDownBackground().getPadding(rect);
-                    int i9 = rect.left;
-                    searchAutoComplete.setDropDownHorizontalOffset(a ? -i9 : paddingLeft - (i9 + dimensionPixelSize));
-                    searchAutoComplete.setDropDownWidth((((view2.getWidth() + rect.left) + rect.right) + dimensionPixelSize) - paddingLeft);
-                    break;
-                }
-                break;
-        }
+    @Override // fy0
+    public final n39 G0(o39 o39Var) {
+        return new gx0(this, (byte) 0);
+    }
+
+    @Override // fy0
+    public final CharSequence J0() {
+        return null;
+    }
+
+    @Override // fx0, android.app.Dialog
+    public final void setTitle(CharSequence charSequence) {
+        this.o1.setTitle(charSequence);
     }
 }

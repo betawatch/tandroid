@@ -1,9 +1,92 @@
 // default package
 
-import android.graphics.Canvas;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public interface yl0 {
-    void n(Canvas canvas, int i);
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class yl0 implements j74 {
+    public final /* synthetic */ byte a;
+    public final qia b;
+
+    public yl0(byte b) {
+        this.a = b;
+        switch (b) {
+            case 1:
+                this.b = new qia(35152, 2, "image/png");
+                break;
+            default:
+                this.b = new qia(16973, 2, "image/bmp");
+                break;
+        }
+    }
+
+    @Override // j74
+    public final j74 a() {
+        byte b = this.a;
+        return this;
+    }
+
+    @Override // j74
+    public final int b(k74 k74Var, m11 m11Var) {
+        byte b = this.a;
+        qia qiaVar = this.b;
+        switch (b) {
+        }
+        return qiaVar.b(k74Var, m11Var);
+    }
+
+    @Override // j74
+    public final boolean c(k74 k74Var) {
+        byte b = this.a;
+        qia qiaVar = this.b;
+        switch (b) {
+        }
+        return qiaVar.c(k74Var);
+    }
+
+    @Override // j74
+    public final void d(long j, long j2) {
+        byte b = this.a;
+        qia qiaVar = this.b;
+        switch (b) {
+            case 0:
+                qiaVar.d(j, j2);
+                break;
+            default:
+                qiaVar.d(j, j2);
+                break;
+        }
+    }
+
+    @Override // j74
+    public final List e() {
+        byte b = this.a;
+        km5 km5Var = mm5.b;
+        return w59.e;
+    }
+
+    @Override // j74
+    public final void f(l74 l74Var) {
+        byte b = this.a;
+        qia qiaVar = this.b;
+        switch (b) {
+            case 0:
+                qiaVar.f(l74Var);
+                break;
+            default:
+                qiaVar.f(l74Var);
+                break;
+        }
+    }
+
+    @Override // j74
+    public final void release() {
+        byte b = this.a;
+    }
+
+    private final void g() {
+    }
+
+    private final void h() {
+    }
 }

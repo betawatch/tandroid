@@ -5,18 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class b0 extends q59 {
+public final class b0 extends n39 {
     public Context c;
     public ArrayList d;
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
+    @Override // n39
+    public final boolean D(s49 s49Var) {
         return true;
     }
 
-    @Override // y59
+    @Override // w39
     public final int b() {
         ArrayList arrayList = this.d;
         if (arrayList.isEmpty()) {
@@ -25,35 +25,35 @@ public final class b0 extends q59 {
         return arrayList.size() + 1;
     }
 
-    @Override // y59
+    @Override // w39
     public final int d(int i) {
         return i == 0 ? 1 : 0;
     }
 
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        if (u69Var.f == 0) {
-            cnb cnbVar = (cnb) ((ArrayList) this.d.get(i - 1)).get(0);
-            int c = cnbVar.e == cmb.De ? 0 : cnbVar.c();
-            ejb ejbVar = (ejb) u69Var.a;
-            ejbVar.a.setText(nxe.c(cnbVar.e));
-            ejbVar.b = c;
-            ejbVar.setWillNotDraw(c == 0);
-            ejbVar.invalidate();
+    @Override // w39
+    public final void t(s49 s49Var, int i) {
+        if (s49Var.f == 0) {
+            blb blbVar = (blb) ((ArrayList) this.d.get(i - 1)).get(0);
+            int c = blbVar.e == bkb.De ? 0 : blbVar.c();
+            dhb dhbVar = (dhb) s49Var.a;
+            dhbVar.a.setText(lve.c(blbVar.e));
+            dhbVar.b = c;
+            dhbVar.setWillNotDraw(c == 0);
+            dhbVar.invalidate();
         }
     }
 
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        View ejbVar;
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        View dhbVar;
         Context context = this.c;
         if (i != 0) {
-            ejbVar = new View(context);
-            ejbVar.setLayoutParams(new g69(-1, gm.L(56.0f)));
+            dhbVar = new View(context);
+            dhbVar.setLayoutParams(new e49(-1, gl.L(56.0f)));
         } else {
-            ejbVar = new ejb(context);
-            ejbVar.setLayoutParams(new g69(-1, -2));
+            dhbVar = new dhb(context);
+            dhbVar.setLayoutParams(new e49(-1, -2));
         }
-        return new b59(ejbVar);
+        return new y29(dhbVar);
     }
 }

@@ -1,49 +1,49 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class g4d {
-    static {
-        g4d.class.getClassLoader();
+public final class g4d extends e4d {
+    public static final g4d w = new g4d(0, new Object[0]);
+    public final transient Object[] r;
+    public final transient boolean s;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public g4d(int i, Object[] objArr) {
+        super((byte) 1);
+        this.r = objArr;
+        this.s = i;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
+    @Override // java.util.List
+    public final Object get(int i) {
+        yye.a(i, this.s ? 1 : 0);
+        Object obj = this.r[i];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    public static void b(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
+    @Override // e4d, kzc
+    public final int l(Object[] objArr) {
+        Object[] objArr2 = this.r;
+        boolean z = this.s;
+        System.arraycopy(objArr2, 0, objArr, 0, z ? 1 : 0);
+        return z ? 1 : 0;
     }
 
-    public static void c(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
-        }
+    @Override // kzc
+    public final int m() {
+        return this.s ? 1 : 0;
     }
 
-    public static void d(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail <= 0) {
-            return;
-        }
-        StringBuilder sb = new StringBuilder(String.valueOf(dataAvail).length() + 45);
-        sb.append("Parcel data not fully consumed, unread size: ");
-        sb.append(dataAvail);
-        throw new BadParcelableException(sb.toString());
+    @Override // kzc
+    public final Object[] o() {
+        return this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s ? 1 : 0;
     }
 }

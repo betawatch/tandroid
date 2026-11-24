@@ -1,9 +1,32 @@
 // default package
 
-import java.util.Set;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public interface x81 {
-    Set b();
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class x81 extends b4c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        b4c.h(new x81());
+    }
+
+    @Override // b4c
+    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+        y81 y81Var = (y81) view;
+        TLRPC.Chat chat = (TLRPC.Chat) c4cVar.H;
+        View.OnClickListener onClickListener = c4cVar.E;
+        y81Var.c = chat;
+        ls8 ls8Var = y81Var.b;
+        ls8Var.setTag(Long.valueOf(chat.id));
+        y81Var.a.z(chat, null, null, (!hc2.T(chat) || chat.megagroup) ? chat.has_geo ? k96.M0(2131748450, null) : !hc2.t0(chat) ? k96.M0(2131748449, null).toLowerCase() : k96.M0(2131748446, null).toLowerCase() : !hc2.t0(chat) ? k96.M0(2131752317, null).toLowerCase() : k96.M0(2131752306, null).toLowerCase(), false, false);
+        ls8Var.setOnClickListener(onClickListener);
+    }
+
+    @Override // b4c
+    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+        return new y81(context);
+    }
 }

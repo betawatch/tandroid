@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-final /* synthetic */ class zzfw extends rs4 implements rr4 {
+final /* synthetic */ class zzfw extends qq4 implements qp4 {
     public zzfw(Object obj) {
         super(1, obj, zzgb.class, "isRetriable", "isRetriable(Ljava/lang/Exception;)Z", 0);
     }
 
-    @Override // rr4
+    @Override // qp4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
         return Boolean.valueOf(zzgb.zzo((zzgb) this.receiver, (Exception) obj));
     }

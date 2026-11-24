@@ -1,167 +1,129 @@
 // default package
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import java.io.File;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class pj9 extends cj9 {
-    public final TL_iv.pageBlockVideo r0;
-    public final TLRPC.Document s0;
-    public final TLRPC.PhotoSize t0;
-    public final TLRPC.TL_photoStrippedSize u0;
-    public final boolean v0;
-    public final boolean w0;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class pj9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ak9 b;
 
-    public pj9(uj9 uj9Var, Rect rect, int i, TL_iv.pageBlockVideo pageblockvideo, boolean z) {
-        super(uj9Var, rect, i, z);
-        int i2;
-        int i3;
-        int i4;
-        this.r0 = pageblockvideo;
-        TLRPC.Document s = uj9Var.s(pageblockvideo.video_id);
-        this.s0 = s;
-        boolean J4 = k47.J4(s);
-        this.w0 = J4;
-        int i5 = 0;
-        this.v0 = J4 || k47.s3(s, false);
-        int i6 = 100;
-        if (s != null) {
-            this.t0 = bc4.w(s.thumbs, nm7.q5, false, null, true);
-            this.u0 = bc4.Q(s.thumbs);
-            while (true) {
-                if (i5 >= this.s0.attributes.size()) {
-                    i2 = 100;
-                    i3 = 100;
-                    break;
+    public /* synthetic */ pj9(ak9 ak9Var, byte b) {
+        this.a = b;
+        this.b = ak9Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        jk9 jk9Var;
+        dk9 dk9Var;
+        boolean z;
+        byte b = this.a;
+        byte b2 = 0;
+        ak9 ak9Var = this.b;
+        switch (b) {
+            case 0:
+                ak9Var.q();
+                return;
+            case 1:
+                int w = ak9Var.w();
+                if (w == ak9Var.B0 || (jk9Var = ak9Var.v) == null) {
+                    return;
                 }
-                TLRPC.DocumentAttribute documentAttribute = this.s0.attributes.get(i5);
-                if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                    i3 = documentAttribute.w;
-                    i2 = documentAttribute.h;
-                    break;
+                ak9Var.B0 = w;
+                jk9Var.s0 = w;
+                Handler handler = jk9Var.u;
+                if (jk9Var.r0 && handler != null) {
+                    handler.post(new on7((Object) jk9Var, w, (byte) 12));
                 }
-                i5++;
-            }
-            if (i3 <= 0 || i2 <= 0) {
-                TLRPC.PhotoSize photoSize = this.t0;
-                if (photoSize != null) {
-                    int i7 = photoSize.w;
-                    i6 = photoSize.h;
-                    i4 = i7;
+                ak9Var.j.b("display rotation applied: degrees=" + w);
+                return;
+            case 2:
+                ak9Var.a0();
+                return;
+            case 3:
+                Handler handler2 = ak9Var.n;
+                if (handler2 != null) {
+                    handler2.post(new pj9(ak9Var, (byte) 4));
+                    return;
+                }
+                return;
+            case 4:
+                if (!ak9Var.U || ak9Var.z == null || (dk9Var = ak9Var.w) == null) {
+                    return;
+                }
+                synchronized (dk9Var) {
+                    z = dk9Var.E;
+                }
+                if (z) {
+                    return;
+                }
+                try {
+                    dk9 dk9Var2 = ak9Var.w;
+                    ak9Var.x = dk9Var2;
+                    Handler handler3 = ak9Var.n;
+                    if (handler3 != null) {
+                        handler3.removeCallbacks(ak9Var.k1);
+                        handler3.postDelayed(ak9Var.k1, 3000L);
+                    }
+                    dk9Var2.t(new sj9(ak9Var, dk9Var2, b2), new sj9(ak9Var, dk9Var2, (byte) 1));
+                    ak9Var.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + ak9.x(ak9Var.C0));
+                    return;
+                } catch (RuntimeException e) {
+                    ak9Var.f();
+                    ak9Var.M(e);
+                    return;
+                }
+            case 5:
+                dk9 dk9Var3 = ak9Var.x;
+                if (!ak9Var.U || ak9Var.Y || dk9Var3 == null || ak9Var.w != dk9Var3) {
+                    return;
+                }
+                ak9Var.x = null;
+                ak9Var.M(new IllegalStateException("Timed out waiting for synchronized audio and video start"));
+                return;
+            case 6:
+                if (!ak9Var.k0 || ak9Var.M <= 0.0f) {
+                    ak9Var.a();
+                    return;
                 } else {
-                    i4 = 100;
+                    if (!ak9Var.U || ak9Var.V || ak9Var.z == null || !ak9Var.l0) {
+                        return;
+                    }
+                    ak9Var.v("zoom requested", null, 5);
+                    return;
                 }
-                int i8 = i6;
-                i6 = i4;
-                i2 = i8;
-            } else {
-                i6 = i3;
-            }
-        } else {
-            this.t0 = null;
-            this.u0 = null;
-            i2 = 100;
+            case 7:
+                ak9Var.U = false;
+                ak9Var.f();
+                dk9 dk9Var4 = ak9Var.w;
+                if (dk9Var4 != null) {
+                    long p = dk9Var4.p();
+                    jk9 jk9Var2 = ak9Var.v;
+                    if (jk9Var2 != null && p != Long.MAX_VALUE) {
+                        jk9Var2.q = Math.max(0L, p) * 1000;
+                        Handler handler4 = jk9Var2.u;
+                        if (handler4 != null) {
+                            handler4.removeCallbacks(jk9Var2.y0);
+                        }
+                    }
+                }
+                ak9Var.j();
+                dk9 dk9Var5 = ak9Var.w;
+                if (dk9Var5 != null) {
+                    dk9Var5.u();
+                    ak9Var.w = null;
+                }
+                ak9Var.Y = false;
+                ul9 ul9Var = (ul9) ak9Var.k.b;
+                ul9Var.i.post(new il9(ul9Var, (byte) 3));
+                return;
+            case 8:
+                ak9Var.G();
+                return;
+            default:
+                ak9Var.a0();
+                return;
         }
-        int i9 = this.c;
-        int max = (int) ((i9 / Math.max(1, i6)) * i2);
-        Point point = gm.q;
-        int max2 = (int) (Math.max(point.x, point.y) * 0.55f);
-        if (max > max2) {
-            i9 = (int) ((max2 / Math.max(1, i2)) * i6);
-            max = max2;
-        }
-        this.c0 = i9;
-        this.d0 = max;
-        l0();
-    }
-
-    @Override // cj9
-    public final boolean h0() {
-        if (this.w0) {
-            boolean z = gda.a;
-            return e86.e(1024);
-        }
-        boolean z2 = gda.a;
-        return e86.e(2048);
-    }
-
-    @Override // cj9
-    public final void i0(boolean z) {
-        TLRPC.Document document = this.s0;
-        if (document == null) {
-            return;
-        }
-        TLRPC.TL_photoStrippedSize tL_photoStrippedSize = this.u0;
-        gn5 c = tL_photoStrippedSize != null ? gn5.c(tL_photoStrippedSize, document) : null;
-        TLRPC.PhotoSize photoSize = this.t0;
-        gn5 c2 = photoSize != null ? gn5.c(photoSize, document) : null;
-        ImageReceiver imageReceiver = this.Y;
-        uj9 uj9Var = this.a;
-        if (!z || !this.v0 || (!h0() && !this.m0)) {
-            imageReceiver.Y(null, null, c2, null, c, "b1", null, document.size, "mp4", uj9Var.b, 1);
-            return;
-        }
-        imageReceiver.u0 = true;
-        imageReceiver.M(1);
-        imageReceiver.Y(gn5.b(document), "g", c2, null, c, "b1", null, document.size, "mp4", uj9Var.b, 1);
-    }
-
-    @Override // cj9
-    public final boolean j0() {
-        TLRPC.Document document = this.s0;
-        if (document == null) {
-            return false;
-        }
-        if (this.v0) {
-            return h0() && er3.q(this.a.a).c(4, document.size);
-        }
-        return true;
-    }
-
-    @Override // cj9
-    public final boolean k0() {
-        TLRPC.Document document = this.s0;
-        if (document != null) {
-            uj9 uj9Var = this.a;
-            bc4.G(uj9Var.a);
-            File I = bc4.I(document);
-            bc4.G(uj9Var.a);
-            File J = bc4.J(document, null, true, true);
-            if ((I == null || !I.exists()) && (J == null || !J.exists())) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // cj9
-    public final TL_iv.PageBlock m0() {
-        return this.r0;
-    }
-
-    @Override // cj9
-    public final String n0() {
-        return bc4.r(null, this.s0);
-    }
-
-    @Override // cj9
-    public final boolean o0() {
-        return this.v0;
-    }
-
-    @Override // cj9
-    public final boolean p0() {
-        return this.w0;
-    }
-
-    @Override // cj9
-    public final boolean q0() {
-        TL_iv.pageBlockVideo pageblockvideo = this.r0;
-        return pageblockvideo != null && pageblockvideo.spoiler;
     }
 }

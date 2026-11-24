@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -75,8 +75,8 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            valueOf = hg9.j(this.f, "#");
-            valueOf2 = hg9.j(i, "#");
+            valueOf = de9.k(this.f, "#");
+            valueOf2 = de9.k(i, "#");
         } else {
             Locale locale2 = Locale.US;
             valueOf = String.valueOf(this.f);
@@ -121,7 +121,7 @@ public class NumberTextView extends View {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z2 ? -1.0f : 1.0f, f3);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new v85(this, (byte) 23));
+            this.d.addListener(new v85(this, (byte) 21));
             this.d.start();
         }
         invalidate();
@@ -148,7 +148,7 @@ public class NumberTextView extends View {
             return;
         }
         float height = ((StaticLayout) arrayList.get(0)).getHeight();
-        float L = this.h ? gm.L(4.0f) : height;
+        float L = this.h ? gl.L(4.0f) : height;
         if (this.n) {
             f = (getMeasuredWidth() - this.r) / 2.0f;
             f2 = ((getMeasuredWidth() - this.s) / 2.0f) - f;
@@ -180,7 +180,7 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(nm7.d4);
+                    textPaint.setAlpha(kk7.d4);
                 }
             } else if (f3 < 0.0f) {
                 if (staticLayout != null) {
@@ -195,17 +195,17 @@ public class NumberTextView extends View {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(nm7.d4);
+                        textPaint.setAlpha(kk7.d4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(nm7.d4);
+                textPaint.setAlpha(kk7.d4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);
             }
             canvas.restore();
-            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + gm.L(1.0f), 0.0f);
+            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + gl.L(1.0f), 0.0f);
             if (staticLayout2 != null && staticLayout != null) {
                 f2 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f2;
             }
@@ -232,7 +232,7 @@ public class NumberTextView extends View {
     }
 
     public void setTextSize(int i) {
-        this.c.setTextSize(gm.L(i));
+        this.c.setTextSize(gl.L(i));
         this.b.clear();
         this.a.clear();
         a(this.f, false);
@@ -245,6 +245,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(mp7 mp7Var) {
+    public void setOnTextWidthProgressChangedListener(in7 in7Var) {
     }
 }

@@ -1,28 +1,36 @@
 // default package
 
-import android.opengl.GLES20;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
-public class pm9 extends pd0 {
-    public final int d;
+public final /* synthetic */ class pm9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ Runnable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pm9(String str, byte b) {
-        super("uniform mat4 uTextureMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvarying vec2 vScreenTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = (uTextureMatrix * vec4(aTextureCoord.xy, 0.0, 1.0)).xy;\n    vScreenTextureCoord = aPosition.xy * 0.5 + 0.5;\n}\n", str);
-        switch (b) {
-            case 1:
-                super("attribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = aTextureCoord.xy;\n}\n", str);
-                this.d = GLES20.glGetUniformLocation(this.a, "texOffset");
-                break;
-            default:
-                this.d = GLES20.glGetUniformLocation(this.a, "uTextureMatrix");
-                break;
-        }
+    public /* synthetic */ pm9(int[] iArr, Runnable runnable, byte b) {
+        this.a = b;
+        this.b = iArr;
+        this.c = runnable;
     }
 
-    public pm9() {
-        super("attribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = aTextureCoord.xy;\n}\n", um9.G);
-        this.d = GLES20.glGetUniformLocation(this.a, "texOffset");
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 1;
+        Runnable runnable = this.c;
+        int[] iArr = this.b;
+        switch (b) {
+            case 0:
+                gl.c3(new pm9(iArr, runnable, b2));
+                break;
+            default:
+                int i = iArr[0] - 1;
+                iArr[0] = i;
+                if (i == 0 && runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+        }
     }
 }

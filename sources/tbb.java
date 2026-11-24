@@ -1,295 +1,104 @@
 // default package
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.security.Security;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import javax.net.ssl.HttpsURLConnection;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class tbb {
-    public static final vbb a = new vbb();
+public final class tbb extends ActionMode {
+    public final Context a;
+    public final f9 b;
 
-    public static HttpURLConnection a(String str, jw5 jw5Var) {
-        Throwable th;
-        OutputStream outputStream;
-        HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://api.stripe.com/v1/tokens").openConnection();
-        httpURLConnection.setConnectTimeout(30000);
-        httpURLConnection.setReadTimeout(80000);
-        httpURLConnection.setUseCaches(false);
-        HashMap hashMap = new HashMap();
-        hashMap.put("Accept-Charset", "UTF-8");
-        hashMap.put("Accept", "application/json");
-        hashMap.put("User-Agent", "Stripe/v1 JavaBindings/3.5.0");
-        hashMap.put("Authorization", "Bearer " + jw5Var.a);
-        String[] strArr = {"os.name", "os.version", "os.arch", "java.version", "java.vendor", "java.vm.version", "java.vm.vendor"};
-        HashMap hashMap2 = new HashMap();
-        for (int i = 0; i < 7; i++) {
-            String str2 = strArr[i];
-            hashMap2.put(str2, System.getProperty(str2));
-        }
-        hashMap2.put("bindings.version", "3.5.0");
-        hashMap2.put("lang", "Java");
-        hashMap2.put("publisher", "Stripe");
-        hashMap.put("X-Stripe-Client-User-Agent", new JSONObject(hashMap2).toString());
-        for (Map.Entry entry : hashMap.entrySet()) {
-            httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-        }
-        if (httpURLConnection instanceof HttpsURLConnection) {
-            ((HttpsURLConnection) httpURLConnection).setSSLSocketFactory(a);
-        }
-        httpURLConnection.setDoOutput(true);
-        httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-        try {
-            outputStream = httpURLConnection.getOutputStream();
-            try {
-                outputStream.write(str.getBytes("UTF-8"));
-                outputStream.close();
-                return httpURLConnection;
-            } catch (Throwable th2) {
-                th = th2;
-                if (outputStream == null) {
-                    throw th;
-                }
-                outputStream.close();
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            outputStream = null;
-        }
+    public tbb(Context context, f9 f9Var) {
+        this.a = context;
+        this.b = f9Var;
     }
 
-    public static String b(HashMap hashMap) {
-        StringBuilder sb = new StringBuilder();
-        for (sbb sbbVar : d(null, hashMap)) {
-            if (sb.length() > 0) {
-                sb.append("&");
-            }
-            String str = sbbVar.a;
-            String str2 = sbbVar.b;
-            sb.append((str == null ? null : URLEncoder.encode(str, "UTF-8")) + "=" + (str2 == null ? null : URLEncoder.encode(str2, "UTF-8")));
-        }
-        return sb.toString();
+    @Override // android.view.ActionMode
+    public final void finish() {
+        this.b.b();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x005d, code lost:
-    
-        if (r4 == null) goto L40;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0081, code lost:
-    
-        java.security.Security.setProperty("networkaddress.cache.ttl", r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x007d, code lost:
-    
-        java.security.Security.setProperty("networkaddress.cache.ttl", "-1");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x007b, code lost:
-    
-        if (r4 == null) goto L40;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0020 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0085  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static wm9 c(HashMap hashMap, jw5 jw5Var) {
-        String str;
-        int i;
-        String str2;
-        String str3;
-        Boolean bool = Boolean.TRUE;
-        wm9 wm9Var = null;
-        try {
-            str = Security.getProperty("networkaddress.cache.ttl");
-        } catch (SecurityException unused) {
-            str = null;
-        }
-        try {
-            Security.setProperty("networkaddress.cache.ttl", "0");
-        } catch (SecurityException unused2) {
-            bool = Boolean.FALSE;
-            if (!jw5Var.a.trim().isEmpty()) {
-            }
-        }
-        if (!jw5Var.a.trim().isEmpty()) {
-            throw new v50("No API key provided. (HINT: set your API key using 'Stripe.apiKey = <API-KEY>'. You can generate API keys from the Stripe web interface. See https://stripe.com/api for details or email support@stripe.com if you have questions.", null);
-        }
-        try {
-            kq f = f(hashMap, jw5Var);
-            i = f.b;
-            str2 = (String) f.c;
-            Map map = (Map) f.d;
-            List list = map == null ? null : (List) map.get("Request-Id");
-            str3 = (list == null || list.size() <= 0) ? null : (String) list.get(0);
-        } catch (JSONException unused3) {
-            if (bool.booleanValue()) {
-            }
-        } catch (Throwable th) {
-            if (bool.booleanValue()) {
-                if (str == null) {
-                    Security.setProperty("networkaddress.cache.ttl", "-1");
-                } else {
-                    Security.setProperty("networkaddress.cache.ttl", str);
-                }
-            }
-            throw th;
-        }
-        if (i < 200 || i >= 300) {
-            g(i, str2, str3);
-            throw null;
-        }
-        wm9Var = sxe.a(str2);
-        if (bool.booleanValue()) {
-        }
-        return wm9Var;
+    @Override // android.view.ActionMode
+    public final View getCustomView() {
+        return this.b.c();
     }
 
-    public static LinkedList d(String str, Map map) {
-        LinkedList linkedList = new LinkedList();
-        for (Map.Entry entry : map.entrySet()) {
-            String str2 = (String) entry.getKey();
-            Object value = entry.getValue();
-            if (str != null) {
-                str2 = td4.r(str, "[", str2, "]");
-            }
-            linkedList.addAll(e(value, str2));
-        }
-        return linkedList;
+    @Override // android.view.ActionMode
+    public final Menu getMenu() {
+        return new w07(this.a, this.b.d());
     }
 
-    public static List e(Object obj, String str) {
-        if (obj instanceof Map) {
-            return d(str, (Map) obj);
-        }
-        if (!(obj instanceof List)) {
-            if ("".equals(obj)) {
-                throw new ae1(b10.i("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
-            }
-            if (obj == null) {
-                LinkedList linkedList = new LinkedList();
-                linkedList.add(new sbb(str, ""));
-                return linkedList;
-            }
-            LinkedList linkedList2 = new LinkedList();
-            linkedList2.add(new sbb(str, obj.toString()));
-            return linkedList2;
-        }
-        List list = (List) obj;
-        LinkedList linkedList3 = new LinkedList();
-        Iterator it = list.iterator();
-        String p = td4.p(str, "[]");
-        if (list.isEmpty()) {
-            linkedList3.add(new sbb(str, ""));
-            return linkedList3;
-        }
-        while (it.hasNext()) {
-            linkedList3.addAll(e(it.next(), p));
-        }
-        return linkedList3;
+    @Override // android.view.ActionMode
+    public final MenuInflater getMenuInflater() {
+        return this.b.e();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0081  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static kq f(HashMap hashMap, jw5 jw5Var) {
-        HttpURLConnection httpURLConnection;
-        String next;
-        HttpURLConnection httpURLConnection2 = null;
-        try {
-            try {
-                httpURLConnection = a(b(hashMap), jw5Var);
-                try {
-                    try {
-                        int responseCode = httpURLConnection.getResponseCode();
-                        if (responseCode < 200 || responseCode >= 300) {
-                            InputStream errorStream = httpURLConnection.getErrorStream();
-                            next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
-                            errorStream.close();
-                        } else {
-                            InputStream inputStream = httpURLConnection.getInputStream();
-                            next = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
-                            inputStream.close();
-                        }
-                        Map<String, List<String>> headerFields = httpURLConnection.getHeaderFields();
-                        kq kqVar = new kq((byte) 15, false);
-                        kqVar.b = responseCode;
-                        kqVar.c = next;
-                        kqVar.d = headerFields;
-                        httpURLConnection.disconnect();
-                        return kqVar;
-                    } catch (IOException e) {
-                        e = e;
-                        throw new e1("IOException during API request to Stripe (https://api.stripe.com/v1/tokens): " + e.getMessage() + " Please check your internet connection and try again. If this problem persists, you should check Stripe's service status at https://twitter.com/stripestatus, or let us know at support@stripe.com.", null, e);
-                    }
-                } catch (Throwable th) {
-                    th = th;
-                    httpURLConnection2 = httpURLConnection;
-                    if (httpURLConnection2 != null) {
-                        httpURLConnection2.disconnect();
-                    }
-                    throw th;
-                }
-            } catch (IOException e2) {
-                e = e2;
-                httpURLConnection = null;
-            } catch (Throwable th2) {
-                th = th2;
-                if (httpURLConnection2 != null) {
-                }
-                throw th;
-            }
-        } catch (UnsupportedEncodingException e3) {
-            throw new ae1("Unable to encode parameters to UTF-8. Please contact support@stripe.com for assistance.", null, e3);
-        }
+    @Override // android.view.ActionMode
+    public final CharSequence getSubtitle() {
+        return this.b.f();
     }
 
-    public static void g(int i, String str, String str2) {
-        String str3;
-        try {
-            JSONObject jSONObject = new JSONObject(str).getJSONObject("error");
-            qwe.a(jSONObject.optString("charge"));
-            qwe.a(jSONObject.optString("code"));
-            qwe.a(jSONObject.optString("decline_code"));
-            str3 = qwe.a(jSONObject.optString("message"));
-            qwe.a(jSONObject.optString("param"));
-            qwe.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
-        } catch (JSONException unused) {
-            str3 = "An improperly formatted error response was found.";
-        }
-        if (i == 429) {
-            throw new f19(str3, str2, null);
-        }
-        switch (i) {
-            case 400:
-                throw new ae1(str3, str2, null);
-            case 401:
-                throw new v50(str3, str2);
-            case 402:
-                throw new ae1(str3, str2, null);
-            case 403:
-                throw new j58(str3, str2);
-            case 404:
-                throw new ae1(str3, str2, null);
-            default:
-                throw new f1(str3, str2, null);
-        }
+    @Override // android.view.ActionMode
+    public final Object getTag() {
+        return this.b.b;
+    }
+
+    @Override // android.view.ActionMode
+    public final CharSequence getTitle() {
+        return this.b.g();
+    }
+
+    @Override // android.view.ActionMode
+    public final boolean getTitleOptionalHint() {
+        return this.b.a;
+    }
+
+    @Override // android.view.ActionMode
+    public final void invalidate() {
+        this.b.h();
+    }
+
+    @Override // android.view.ActionMode
+    public final boolean isTitleOptional() {
+        return this.b.i();
+    }
+
+    @Override // android.view.ActionMode
+    public final void setCustomView(View view) {
+        this.b.l(view);
+    }
+
+    @Override // android.view.ActionMode
+    public final void setSubtitle(CharSequence charSequence) {
+        this.b.n(charSequence);
+    }
+
+    @Override // android.view.ActionMode
+    public final void setTag(Object obj) {
+        this.b.b = obj;
+    }
+
+    @Override // android.view.ActionMode
+    public final void setTitle(CharSequence charSequence) {
+        this.b.p(charSequence);
+    }
+
+    @Override // android.view.ActionMode
+    public final void setTitleOptionalHint(boolean z) {
+        this.b.q(z);
+    }
+
+    @Override // android.view.ActionMode
+    public final void setSubtitle(int i) {
+        this.b.m(i);
+    }
+
+    @Override // android.view.ActionMode
+    public final void setTitle(int i) {
+        this.b.o(i);
     }
 }

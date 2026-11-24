@@ -1,16 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class p45 extends vqd {
-    public final /* synthetic */ b61 a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class p45 extends gb3 {
+    public final /* synthetic */ h75 F;
 
-    public p45(b61 b61Var) {
-        this.a = b61Var;
+    public p45(h75 h75Var) {
+        this.F = h75Var;
     }
 
-    @Override // vqd, hy0
-    public final boolean x() {
-        return !this.a.R;
+    @Override // gb3
+    public final void P(s49 s49Var) {
+        h75 h75Var = this.F;
+        h75Var.J1.invalidate();
+        h75Var.T3.invalidate();
+        h75Var.b.invalidate();
+        h75Var.F1();
     }
 }

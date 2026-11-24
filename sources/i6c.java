@@ -1,38 +1,68 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
+import android.content.Context;
 import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import android.widget.LinearLayout;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class i6c extends URLSpan {
-    public final wkb a;
-    public boolean b;
+public final class i6c extends NestedScrollView {
+    public boolean W;
+    public final /* synthetic */ j6c a0;
 
-    public i6c(String str, wkb wkbVar) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = wkbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i6c(j6c j6cVar, Context context) {
+        super(context);
+        this.a0 = j6cVar;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        if (this.b && (view.getContext() instanceof LaunchActivity)) {
-            ((LaunchActivity) view.getContext()).X0 = true;
-        }
-        l11.r(view.getContext(), Uri.parse(getURL()), true, true);
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.a0.E0();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        wkb wkbVar = this.a;
-        if (wkbVar != null) {
-            wkbVar.a(textPaint);
-            textPaint.setUnderlineText(textPaint.linkColor == color);
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002b, code lost:
+    
+        if (r8 < (gl.L(90.0f) + (r0 / 2))) goto L6;
+     */
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i2);
+        LinearLayout linearLayout = this.a0.p1;
+        measureChildWithMargins(linearLayout, i, 0, i2, 0);
+        int measuredHeight = linearLayout.getMeasuredHeight();
+        int i3 = (size / 5) << 1;
+        if (measuredHeight - (size - i3) >= gl.L(90.0f)) {
         }
+        i3 = size - measuredHeight;
+        if (i3 < 0) {
+            i3 = 0;
+        }
+        if (getPaddingTop() != i3) {
+            this.W = true;
+            setPadding(0, i3, 0, 0);
+            this.W = false;
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final void onScrollChanged(int i, int i2, int i3, int i4) {
+        super.onScrollChanged(i, i2, i3, i4);
+        this.a0.E0();
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.W) {
+            return;
+        }
+        super.requestLayout();
     }
 }

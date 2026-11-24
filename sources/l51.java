@@ -1,24 +1,67 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.tl.TL_account;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class l51 {
-    public TL_account.TL_businessChatLink a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class l51 implements Parcelable {
+    public static final Parcelable.Creator<l51> CREATOR = new c0f(15);
+    public final jj a;
 
-    public final boolean equals(Object obj) {
-        TL_account.TL_businessChatLink tL_businessChatLink = this.a;
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && l51.class == obj.getClass()) {
-            TL_account.TL_businessChatLink tL_businessChatLink2 = ((l51) obj).a;
-            if (tL_businessChatLink.views == tL_businessChatLink2.views && TextUtils.equals(tL_businessChatLink.link, tL_businessChatLink2.link) && TextUtils.equals(tL_businessChatLink.title, tL_businessChatLink2.title) && TextUtils.equals(tL_businessChatLink.message, tL_businessChatLink2.message) && hs6.M(tL_businessChatLink.entities, tL_businessChatLink2.entities)) {
-                return true;
+    public l51(jj jjVar) {
+        this.a = jjVar;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static l51 a(int i) {
+        sy8 sy8Var;
+        if (i == -262) {
+            sy8Var = sy8.b;
+        } else {
+            sy8[] values = sy8.values();
+            int length = values.length;
+            int i2 = 0;
+            while (true) {
+                if (i2 >= length) {
+                    for (es3 es3Var : es3.values()) {
+                        if (es3Var.a == i) {
+                            sy8Var = es3Var;
+                        }
+                    }
+                    throw new k51(tb4.n(i, "Algorithm with COSE value ", " not supported"));
+                }
+                sy8 sy8Var2 = values[i2];
+                if (sy8Var2.a == i) {
+                    sy8Var = sy8Var2;
+                    break;
+                }
+                i2++;
             }
         }
-        return false;
+        return new l51(sy8Var);
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof l51) && this.a.a() == ((l51) obj).a.a();
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    public final String toString() {
+        return tb4.y("COSEAlgorithmIdentifier{algorithm=", String.valueOf(this.a), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a.a());
     }
 }

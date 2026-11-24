@@ -1,18 +1,31 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class st1 extends jb8 {
-    public final /* synthetic */ yv1 a;
+public final class st1 extends c01 {
+    public final /* synthetic */ gb2 d;
+    public final /* synthetic */ wt1 e;
 
-    public st1(yv1 yv1Var) {
-        this.a = yv1Var;
+    public st1(wt1 wt1Var, gb2 gb2Var) {
+        this.e = wt1Var;
+        this.d = gb2Var;
     }
 
-    @Override // jb8, pb8
-    public final qb8 N(k47 k47Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        return this.a.d7(k47Var, fileLocation, i, z, false);
+    @Override // c01
+    public final void c(boolean z) {
+        if (z) {
+            return;
+        }
+        gl.d3(new ho1(this.e.a, (byte) 11), 250L);
+    }
+
+    @Override // c01
+    public final void d() {
+        mu1 mu1Var = this.e.a;
+        gb2 gb2Var = this.d;
+        mu1Var.ac = gb2Var.getMessageObject().e1();
+        mu1Var.bc = 2;
+        mu1Var.cc = null;
+        gb2Var.invalidate();
     }
 }

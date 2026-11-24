@@ -1,19 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class and implements cq7 {
-    public static final and a = new and();
+import android.os.IBinder;
+import android.os.IInterface;
 
-    static {
-        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)), 4)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class and extends xx4 {
+    @Override // gg0
+    public final /* synthetic */ IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cloudmessaging.internal.ICloudMessagingService");
+        return queryLocalInterface instanceof ctd ? (ctd) queryLocalInterface : new ctd(iBinder);
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // gg0
+    public final f84[] f() {
+        return ohd.b;
+    }
+
+    @Override // gg0
+    public final int i() {
+        return 261200000;
+    }
+
+    @Override // gg0
+    public final String l() {
+        return "com.google.android.gms.cloudmessaging.internal.ICloudMessagingService";
+    }
+
+    @Override // gg0
+    public final String n() {
+        return "com.google.android.gms.cloudmessaging.service.START";
+    }
+
+    @Override // gg0
+    public final boolean x() {
+        return true;
     }
 }

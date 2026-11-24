@@ -1,113 +1,190 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class m0b extends q59 {
-    public int c;
-    public final /* synthetic */ u0b d;
+public final class m0b extends FrameLayout {
+    public int a;
+    public final RectF b;
+    public boolean c;
+    public Boolean d;
+    public final /* synthetic */ u0b e;
 
-    public m0b(u0b u0bVar) {
-        this.d = u0bVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0b(u0b u0bVar, Context context) {
+        super(context);
+        this.e = u0bVar;
+        this.b = new RectF();
     }
 
-    @Override // q59
-    public final boolean D(u69 u69Var) {
-        return u69Var.f == 1;
-    }
-
-    @Override // y59
-    public final int b() {
-        u0b u0bVar = this.d;
-        r0b[] r0bVarArr = u0bVar.g3;
-        int length = (r0bVarArr == null ? 0 : r0bVarArr.length) + 1;
-        if (length != this.c) {
-            xd9 xd9Var = u0bVar.t3;
-            if (xd9Var != null) {
-                xd9Var.requestLayout();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i;
+        float f;
+        u0b u0bVar = this.e;
+        int L = gl.L(6.0f) + (u0bVar.Y1 - u0bVar.t0);
+        int L2 = (u0bVar.Y1 - u0bVar.t0) - gl.L(13.0f);
+        int i2 = gl.m;
+        int i3 = L2 + i2;
+        int i4 = L + i2;
+        if (this.c) {
+            int i5 = u0bVar.t0;
+            int i6 = i2 << 1;
+            if (i3 + i5 < i6) {
+                i3 -= Math.min(i2, (i6 - i3) - i5);
+                f = 1.0f - Math.min(1.0f, (r3 << 1) / gl.m);
+            } else {
+                f = 1.0f;
             }
-            this.c = length;
+            int i7 = u0bVar.t0;
+            int i8 = i3 + i7;
+            int i9 = gl.m;
+            i = i8 < i9 ? Math.min(i9, (i9 - i3) - i7) : 0;
+        } else {
+            i = 0;
+            f = 1.0f;
         }
-        return length;
+        u0bVar.s0.setBounds(0, i3, getMeasuredWidth(), getMeasuredHeight());
+        u0bVar.s0.draw(canvas);
+        RectF rectF = this.b;
+        if (f != 1.0f) {
+            bkb.s0.setColor(bkb.v0(bkb.g5, u0bVar.J0));
+            rectF.set(u0bVar.u0, u0bVar.t0 + i3, getMeasuredWidth() - u0bVar.u0, gl.L(24.0f) + u0bVar.t0 + i3);
+            canvas.drawRoundRect(rectF, gl.L(12.0f) * f, gl.L(12.0f) * f, bkb.s0);
+        }
+        int L3 = gl.L(36.0f);
+        rectF.set((getMeasuredWidth() - L3) / 2, i4, (getMeasuredWidth() + L3) / 2, gl.L(4.0f) + i4);
+        bkb.s0.setColor(bkb.v0(bkb.yj, u0bVar.J0));
+        bkb.s0.setAlpha((int) (Math.max(0.0f, Math.min(1.0f, (i4 - gl.m) / gl.L(16.0f))) * r1.getAlpha()));
+        canvas.drawRoundRect(rectF, gl.L(2.0f), gl.L(2.0f), bkb.s0);
+        boolean z = i > gl.m / 2;
+        Boolean bool = this.d;
+        if (bool == null || bool.booleanValue() != z) {
+            boolean z2 = gl.B(bkb.v0(bkb.g5, u0bVar.J0)) > 0.721f;
+            boolean z3 = gl.B(bkb.v(bkb.v0(bkb.r8, u0bVar.J0), 855638016)) > 0.721f;
+            this.d = Boolean.valueOf(z);
+            if (!z) {
+                z2 = z3;
+            }
+            gl.n3(u0bVar.getWindow(), z2);
+        }
+        if (i > 0) {
+            bkb.s0.setColor(bkb.v0(bkb.g5, u0bVar.J0));
+            canvas.drawRect(u0bVar.u0, gl.m - i, getMeasuredWidth() - u0bVar.u0, gl.m, bkb.s0);
+        }
     }
 
-    @Override // y59
-    public final int d(int i) {
-        return i == 0 ? 0 : 1;
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            u0b u0bVar = this.e;
+            if (u0bVar.Y1 != 0 && motionEvent.getY() < u0bVar.Y1) {
+                u0bVar.dismiss();
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // y59
-    public final void t(u69 u69Var, int i) {
-        u0b u0bVar;
-        r0b[] r0bVarArr;
-        if (u69Var.f != 1 || (r0bVarArr = (u0bVar = this.d).g3) == null) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5 = this.a;
+        int i6 = i3 - i;
+        u0b u0bVar = this.e;
+        if (i5 != i6) {
+            this.a = i6;
+            q0b q0bVar = u0bVar.n1;
+            if (q0bVar != null && u0bVar.Q1 != null) {
+                q0bVar.f();
+            }
+        }
+        super.onLayout(z, i, i2, i3, i4);
+        u0bVar.U0();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int max;
+        int i3;
+        int i4;
+        int size = View.MeasureSpec.getSize(i2);
+        u0b u0bVar = this.e;
+        ArrayList arrayList = u0bVar.R1;
+        u0bVar.a2 = true;
+        int i5 = u0bVar.u0;
+        setPadding(i5, gl.m, i5, 0);
+        u0bVar.a2 = false;
+        if (u0bVar.K0()) {
+            int measuredWidth = u0bVar.m1.getMeasuredWidth();
+            if (measuredWidth == 0) {
+                measuredWidth = gl.q.x;
+            }
+            u0bVar.n1.d = Math.max(1, measuredWidth / gl.L(gl.O1() ? 60.0f : 45.0f));
+            int size2 = (View.MeasureSpec.getSize(i) - gl.L(36.0f)) / u0bVar.n1.d;
+            u0bVar.I1 = size2;
+            u0bVar.J1 = size2;
+        } else {
+            u0bVar.n1.d = 5;
+            u0bVar.I1 = (View.MeasureSpec.getSize(i) - gl.L(36.0f)) / u0bVar.n1.d;
+            u0bVar.J1 = gl.L(82.0f);
+        }
+        float f = u0bVar.n1.d;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) u0bVar.m1.getLayoutParams();
+        if (arrayList != null) {
+            i4 = (Math.max(3, (int) Math.ceil(arrayList.size() / f)) * u0bVar.J1) + gl.L(48.0f) + marginLayoutParams.bottomMargin + u0bVar.t0 + gl.m;
+        } else {
+            if (u0bVar.Q1 != null) {
+                i3 = (u0bVar.n1.n * u0bVar.J1) + (u0bVar.Q1.size() * gl.L(60.0f)) + gl.L(8.0f) + marginLayoutParams.bottomMargin + u0bVar.t0;
+                max = gl.L(24.0f);
+            } else {
+                max = (Math.max(u0bVar.K0() ? 2 : 3, u0bVar.M1 != null ? (int) Math.ceil(r4.documents.size() / f) : 0) * u0bVar.J1) + gl.L(48.0f) + marginLayoutParams.bottomMargin + u0bVar.t0;
+                i3 = gl.m;
+            }
+            i4 = i3 + max;
+        }
+        if (u0bVar.K0()) {
+            i4 = (int) ((u0bVar.J1 * 0.15f) + i4);
+        }
+        float f2 = size / 5.0f;
+        int i6 = ((double) i4) < ((double) f2) * 3.2d ? 0 : (int) (f2 * 2.0f);
+        if (i6 != 0 && i4 < size) {
+            i6 -= size - i4;
+        }
+        if (i6 == 0) {
+            i6 = u0bVar.t0;
+        }
+        if (u0bVar.Q1 != null) {
+            i6 += gl.L(8.0f);
+        }
+        if (u0bVar.m1.getPaddingTop() != i6) {
+            u0bVar.a2 = true;
+            u0bVar.m1.setPadding(gl.L(10.0f), i6, gl.L(10.0f), gl.L(8.0f));
+            u0bVar.E1.setPadding(0, i6, 0, 0);
+            u0bVar.a2 = false;
+        }
+        this.c = i4 >= size;
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(i4, size), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.e.J && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.e.a2) {
             return;
         }
-        int i2 = i - 1;
-        r0b r0bVar = r0bVarArr[i2];
-        final q0b q0bVar = (q0b) u69Var.a;
-        boolean z = u0bVar.u3 == i2;
-        q0bVar.getClass();
-        if (!TextUtils.isEmpty(r0bVar.d)) {
-            q0bVar.setContentDescription(r0bVar.d);
-        } else if (TextUtils.isEmpty(r0bVar.a)) {
-            q0bVar.setContentDescription(null);
-        } else {
-            q0bVar.setContentDescription(r0bVar.a);
-        }
-        ValueAnimator valueAnimator = q0bVar.H;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            q0bVar.H = null;
-        }
-        q0bVar.setImageResource(0);
-        q0bVar.a();
-        final boolean B1 = q0bVar.I.B1();
-        q0bVar.x = false;
-        q0bVar.E = 1.0f;
-        vm.g(z8c.t0).b(r0bVar.c, new sm() { // from class: o0b
-            @Override // sm
-            public final void a(TLRPC.Document document) {
-                boolean z2 = !B1;
-                q0b q0bVar2 = q0b.this;
-                q0bVar2.setOnlyLastFrame(z2);
-                q0bVar2.g(24, 24, document);
-                q0bVar2.d();
-            }
-        });
-        gm.d3(new nsa((Object) q0bVar, (byte) 9), 60L);
-        q0bVar.l(z, false);
-        q0bVar.setAlpha(u0bVar.w3);
-        q0bVar.setScaleX(u0bVar.w3);
-        q0bVar.setScaleY(u0bVar.w3);
-        q0bVar.j();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // y59
-    public final u69 x(ViewGroup viewGroup, int i) {
-        q0b q0bVar;
-        u0b u0bVar = this.d;
-        if (i == 0) {
-            xd9 xd9Var = new xd9((byte) 10, u0bVar.getContext(), this);
-            u0bVar.t3 = xd9Var;
-            q0bVar = xd9Var;
-        } else {
-            q0bVar = new q0b(u0bVar, u0bVar.getContext());
-        }
-        return new b59(q0bVar);
-    }
-
-    @Override // y59
-    public final void y(u69 u69Var) {
-        if (u69Var.f == 1) {
-            q0b q0bVar = (q0b) u69Var.a;
-            q0bVar.l(this.d.u3 == u69Var.b() - 1, false);
-            q0bVar.j();
-        }
+        super.requestLayout();
     }
 }

@@ -3,7 +3,7 @@
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final class q6 {
     public r6 a;
@@ -13,7 +13,7 @@ public final class q6 {
     public int e;
     public Drawable f;
     public int g;
-    public ylb h;
+    public wjb h;
     public float i;
     public Boolean j;
     public Boolean k;
@@ -66,17 +66,17 @@ public final class q6 {
                 while (i < size) {
                     Object obj = arrayList2.get(i);
                     i++;
-                    ((qac) obj).a(this.m);
+                    ((p8c) obj).a(this.m);
                 }
                 this.n = null;
             }
         }
     }
 
-    public final void b(qm1 qm1Var) {
+    public final void b(hl1 hl1Var) {
         r7 r7Var = this.m;
         if (r7Var != null) {
-            qm1Var.a(r7Var);
+            hl1Var.a(r7Var);
             return;
         }
         ArrayList arrayList = this.n;
@@ -84,7 +84,7 @@ public final class q6 {
             arrayList = new ArrayList();
             this.n = arrayList;
         }
-        arrayList.add(qm1Var);
+        arrayList.add(hl1Var);
     }
 
     public final void c() {

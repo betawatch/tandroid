@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class i6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class i6 implements Runnable {
             case 3:
                 Drawable drawable2 = ActionBarLayout.w1;
                 if (actionBarLayout.a && actionBarLayout.getLastFragment() != null && actionBarLayout.s.getChildCount() == 0) {
-                    boolean z = e21.a;
-                    fc4.g(new RuntimeException(TextUtils.join(", ", actionBarLayout.p1)), true);
+                    boolean z = w01.a;
+                    fa4.g(new RuntimeException(TextUtils.join(", ", actionBarLayout.p1)), true);
                     actionBarLayout.W(true, true);
                     break;
                 }

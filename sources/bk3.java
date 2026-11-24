@@ -1,40 +1,44 @@
 // default package
 
-import org.telegram.ui.FiltersSetupActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bk3 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ dk3 b;
-    public final /* synthetic */ ub7 c;
-    public final /* synthetic */ boolean d;
+public final class bk3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ck3 b;
 
-    public /* synthetic */ bk3(dk3 dk3Var, ub7 ub7Var, boolean z) {
-        this.b = dk3Var;
-        this.c = ub7Var;
-        this.d = z;
+    public /* synthetic */ bk3(ck3 ck3Var, byte b) {
+        this.a = b;
+        this.b = ck3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        boolean z = this.d;
-        ub7 ub7Var = this.c;
-        dk3 dk3Var = this.b;
+        ck3 ck3Var = this.b;
         switch (b) {
             case 0:
-                dk3Var.b.presentFragment(z ? new FiltersSetupActivity() : new qf4(ub7Var, null));
+                Runnable runnable = ck3Var.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                if (animator == ck3Var.e) {
+                    ck3Var.e = null;
+                    break;
+                }
                 break;
             default:
-                dk3Var.b.getMessagesController().Q4(ub7Var, !z);
+                Runnable runnable2 = ck3Var.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                }
+                if (animator == ck3Var.e) {
+                    ck3Var.e = null;
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ bk3(dk3 dk3Var, boolean z, ub7 ub7Var) {
-        this.b = dk3Var;
-        this.d = z;
-        this.c = ub7Var;
     }
 }

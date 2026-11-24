@@ -1,27 +1,42 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ok {
-    public static final ok a;
-    public static final ok b;
-    public static final /* synthetic */ ok[] c;
+import android.graphics.Bitmap;
+import android.view.PixelCopy;
+import java.util.concurrent.CountDownLatch;
 
-    static {
-        ok okVar = new ok("STARS", 0);
-        a = okVar;
-        ok okVar2 = new ok("TON", 1);
-        b = okVar2;
-        c = new ok[]{okVar, okVar2};
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ok implements PixelCopy.OnPixelCopyFinishedListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ ok(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public static ok valueOf(String str) {
-        return (ok) Enum.valueOf(ok.class, str);
-    }
-
-    public static ok[] values() {
-        return (ok[]) c.clone();
+    @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
+    public final void onPixelCopyFinished(int i) {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = (boolean[]) this.b;
+                CountDownLatch countDownLatch = (CountDownLatch) this.c;
+                zArr[0] = i == 0;
+                countDownLatch.countDown();
+                break;
+            default:
+                fi6 fi6Var = (fi6) this.b;
+                Bitmap bitmap = (Bitmap) this.c;
+                fi6Var.h = false;
+                if (!fi6Var.i && i == 0) {
+                    fi6Var.f = fi6Var.e;
+                    fi6Var.e = bitmap;
+                    fi6Var.a.run();
+                    break;
+                }
+                break;
+        }
     }
 }

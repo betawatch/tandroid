@@ -1,31 +1,22 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class z1d {
-    public static final /* synthetic */ int a = 0;
+public interface z1d {
+    void a();
 
-    static {
-        z1d.class.getClassLoader();
-    }
+    boolean b(v3d v3dVar);
 
-    public static Parcelable a(Parcel parcel) {
-        Parcelable.Creator creator = Bundle.CREATOR;
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
+    void c();
 
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(hg9.j(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
-    }
+    void d(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
+
+    ig0 e(ig0 ig0Var);
+
+    void f();
+
+    boolean g();
 }

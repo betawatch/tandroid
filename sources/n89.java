@@ -1,24 +1,47 @@
 // default package
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class n89 {
-    public final HashMap a = new HashMap();
+    public static final /* synthetic */ Throwable a;
+    public static final /* synthetic */ n89 b;
 
-    public n89(Set set) {
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            m89 m89Var = (m89) it.next();
-            HashMap hashMap = this.a;
-            m89Var.getClass();
-            hashMap.put(g63.class, m89Var.a);
+    static {
+        try {
+            b = new n89();
+        } catch (Throwable th) {
+            a = th;
         }
     }
 
-    public n89() {
+    public static n89 a() {
+        String stringBuffer;
+        n89 n89Var = b;
+        if (n89Var != null) {
+            return n89Var;
+        }
+        Throwable th = a;
+        if (th == null) {
+            stringBuffer = "com.googlecode.mp4parser.RequiresParseDetailAspect";
+        } else {
+            StringBuffer stringBuffer2 = new StringBuffer("Exception while initializing com.googlecode.mp4parser.RequiresParseDetailAspect: ");
+            stringBuffer2.append(th);
+            stringBuffer = stringBuffer2.toString();
+        }
+        nj7 nj7Var = new nj7(stringBuffer);
+        nj7Var.a = th;
+        throw nj7Var;
+    }
+
+    public static void b(c5a c5aVar) {
+        Object obj = c5aVar.c;
+        if (obj instanceof y1) {
+            if (((y1) obj).isParsed()) {
+                return;
+            }
+            ((y1) obj).parseDetails();
+        } else {
+            throw new RuntimeException("Only methods in subclasses of " + y1.class.getName() + " can  be annotated with ParseDetail");
+        }
     }
 }

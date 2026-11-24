@@ -1,43 +1,42 @@
 // default package
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n4d extends q79 {
-    public final Context a;
-    public final /* synthetic */ d05 b;
+public abstract class n4d {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ gg0 c;
+    public final int d;
+    public final Bundle e;
+    public final /* synthetic */ gg0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n4d(d05 d05Var, Context context) {
-        super(Looper.myLooper() == null ? Looper.getMainLooper() : Looper.myLooper(), (byte) 1);
-        this.b = d05Var;
-        this.a = context.getApplicationContext();
+    public n4d(gg0 gg0Var, int i, Bundle bundle) {
+        this.f = gg0Var;
+        Boolean bool = Boolean.TRUE;
+        this.c = gg0Var;
+        this.a = bool;
+        this.b = false;
+        this.d = i;
+        this.e = bundle;
     }
 
-    @Override // android.os.Handler
-    public final void handleMessage(Message message) {
-        int i = message.what;
-        if (i != 1) {
-            StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 39);
-            sb.append("Don't know how to handle this message: ");
-            sb.append(i);
-            Log.w("GoogleApiAvailability", sb.toString());
-            return;
+    public abstract boolean a();
+
+    public abstract void b(ds2 ds2Var);
+
+    public final void c() {
+        d();
+        gg0 gg0Var = this.c;
+        synchronized (gg0Var.q) {
+            gg0Var.q.remove(this);
         }
-        int i2 = e05.a;
-        d05 d05Var = this.b;
-        Context context = this.a;
-        int c = d05Var.c(context, i2);
-        int i3 = x05.e;
-        if (c == 1 || c == 2 || c == 3 || c == 9) {
-            Intent a = d05Var.a(c, context, "n");
-            d05Var.g(context, c, a == null ? null : PendingIntent.getActivity(context, 0, a, 201326592));
+    }
+
+    public final void d() {
+        synchronized (this) {
+            this.a = null;
         }
     }
 }

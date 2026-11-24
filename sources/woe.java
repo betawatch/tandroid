@@ -1,95 +1,47 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.util.Log;
-import android.util.SparseArray;
-import java.util.ArrayDeque;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class woe implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ n9f b;
-
-    public /* synthetic */ woe(n9f n9fVar, byte b) {
-        this.a = b;
-        this.b = n9fVar;
-    }
-
-    private final void a() {
-        while (true) {
-            n9f n9fVar = this.b;
-            synchronized (n9fVar) {
-                if (n9fVar.a != 2) {
-                    return;
-                }
-                ArrayDeque arrayDeque = n9fVar.d;
-                if (arrayDeque.isEmpty()) {
-                    n9fVar.d();
-                    return;
-                }
-                fdf fdfVar = (fdf) arrayDeque.poll();
-                SparseArray sparseArray = n9fVar.e;
-                int i = fdfVar.a;
-                sparseArray.put(i, fdfVar);
-                ((ScheduledExecutorService) n9fVar.f.c).schedule(new us4((Object) n9fVar, (Object) fdfVar, (byte) 22), 30L, TimeUnit.SECONDS);
-                if (Log.isLoggable("MessengerIpcClient", 3)) {
-                    Log.d("MessengerIpcClient", "Sending ".concat(String.valueOf(fdfVar)));
-                }
-                jif jifVar = n9fVar.f;
-                Messenger messenger = n9fVar.b;
-                byte b = fdfVar.c;
-                Message obtain = Message.obtain();
-                obtain.what = b;
-                obtain.arg1 = i;
-                obtain.replyTo = messenger;
-                Bundle bundle = new Bundle();
-                bundle.putBoolean("oneWay", fdfVar.a());
-                bundle.putString("pkg", ((Context) jifVar.b).getPackageName());
-                bundle.putBundle("data", fdfVar.d);
-                obtain.setData(bundle);
-                try {
-                    rhb rhbVar = n9fVar.c;
-                    Messenger messenger2 = (Messenger) rhbVar.b;
-                    if (messenger2 != null) {
-                        messenger2.send(obtain);
-                    } else {
-                        kpd kpdVar = (kpd) rhbVar.c;
-                        if (kpdVar == null) {
-                            throw new IllegalStateException("Both messengers are null");
-                        }
-                        kpdVar.a.send(obtain);
+public abstract class woe {
+    public static kc8 a(kc8 kc8Var, kc8 kc8Var2) {
+        if (kc8Var != null) {
+            gi4 gi4Var = kc8Var.a;
+            if (kc8Var2 != null) {
+                jc8 jc8Var = new jc8();
+                for (int i = 0; i < gi4Var.a.size(); i++) {
+                    if (kc8Var2.a(gi4Var.a(i))) {
+                        jc8Var.a.b(gi4Var.a(i));
                     }
-                } catch (RemoteException e) {
-                    n9fVar.b(e.getMessage());
                 }
+                return jc8Var.b();
             }
         }
+        return kc8.b;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n9f n9fVar = this.b;
-                synchronized (n9fVar) {
-                    if (n9fVar.a == 1) {
-                        n9fVar.b("Timed out while binding");
-                    }
+    public static void b(oc8 oc8Var, tu6 tu6Var) {
+        int i = tu6Var.b;
+        long j = tu6Var.c;
+        mm5 mm5Var = tu6Var.a;
+        if (i == -1) {
+            if (oc8Var.m0(20)) {
+                oc8Var.N0(mm5Var);
+                return;
+            } else {
+                if (mm5Var.isEmpty()) {
+                    return;
                 }
+                oc8Var.D0((br6) mm5Var.get(0));
                 return;
-            case 1:
-                a();
+            }
+        }
+        if (oc8Var.m0(20)) {
+            oc8Var.T(mm5Var, tu6Var.b, j);
+        } else {
+            if (mm5Var.isEmpty()) {
                 return;
-            default:
-                this.b.b("Service disconnected");
-                return;
+            }
+            oc8Var.r((br6) mm5Var.get(0), j);
         }
     }
 }

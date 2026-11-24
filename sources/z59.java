@@ -1,41 +1,44 @@
 // default package
 
-import android.database.Observable;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class z59 extends Observable {
-    public final boolean a() {
-        return !((Observable) this).mObservers.isEmpty();
+public final class z59 extends ym5 {
+    public final transient qm5 d;
+    public final transient a69 e;
+
+    public z59(qm5 qm5Var, a69 a69Var) {
+        this.d = qm5Var;
+        this.e = a69Var;
     }
 
-    public final void b() {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((a69) ((Observable) this).mObservers.get(size)).a();
-        }
+    @Override // gm5, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.get(obj) != null;
     }
 
-    public final void c(int i, int i2) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((a69) ((Observable) this).mObservers.get(size)).e(i, i2);
-        }
+    @Override // ym5, gm5
+    public final mm5 h() {
+        return this.e;
     }
 
-    public final void d(int i, int i2, Object obj) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((a69) ((Observable) this).mObservers.get(size)).c(i, i2, obj);
-        }
+    @Override // gm5
+    public final int i(int i, Object[] objArr) {
+        return this.e.i(i, objArr);
     }
 
-    public final void e(int i, int i2) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((a69) ((Observable) this).mObservers.get(size)).d(i, i2);
-        }
+    @Override // gm5
+    public final boolean m() {
+        return true;
     }
 
-    public final void f(int i, int i2) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((a69) ((Observable) this).mObservers.get(size)).f(i, i2);
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    /* renamed from: n */
+    public final v5c iterator() {
+        return this.e.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.d.size();
     }
 }

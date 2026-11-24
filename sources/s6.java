@@ -5,7 +5,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class s6 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -30,8 +30,8 @@ public final /* synthetic */ class s6 implements View.OnClickListener {
                 } else if (r7Var.s()) {
                     r7Var.e.m();
                     for (int i = 0; i < arrayList.size(); i++) {
-                        if (r7Var.I != null && ((sh4) arrayList.get(i)).h) {
-                            r7Var.I.j((sh4) arrayList.get(i));
+                        if (r7Var.I != null && ((rf4) arrayList.get(i)).h) {
+                            r7Var.I.j((rf4) arrayList.get(i));
                         }
                     }
                     r7Var.n();
@@ -46,7 +46,7 @@ public final /* synthetic */ class s6 implements View.OnClickListener {
                     }
                 }
                 r7Var.e.requestFocus();
-                gm.E3(r7Var.e);
+                gl.E3(r7Var.e);
                 break;
             case 1:
                 if (r7Var.y()) {

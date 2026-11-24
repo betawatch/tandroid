@@ -1,66 +1,20 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import java.io.Serializable;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class a99 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ sm0 a;
-    public final /* synthetic */ e99 b;
+public final /* synthetic */ class a99 implements ipa, n8c {
+    public final /* synthetic */ z99 a;
 
-    public a99(e99 e99Var, sm0 sm0Var) {
-        this.b = e99Var;
-        this.a = sm0Var;
+    @Override // ipa
+    public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z) {
+        this.a.e0(tL_starGiftUnique, j, z);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-        if (surfaceTexture != null) {
-            e99 e99Var = this.b;
-            if (e99Var.d == null) {
-                c99 c99Var = new c99(e99Var, surfaceTexture, this.a);
-                e99Var.d = c99Var;
-                c99Var.n = i;
-                c99Var.r = i2;
-                e99Var.i();
-                e99Var.post(new z89(this, (byte) 1));
-                hw7 hw7Var = e99Var.c;
-                if (hw7Var.v) {
-                    hw7Var.f.f(new fw7(hw7Var, hw7Var.w, (byte) 0));
-                    hw7Var.w = null;
-                    hw7Var.v = false;
-                }
-            }
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        e99 e99Var = this.b;
-        if (e99Var.d != null && !e99Var.E) {
-            hw7 hw7Var = e99Var.c;
-            hw7Var.f.f(new bl7(hw7Var, new z89(this, (byte) 2), (byte) 17));
-        }
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
-        e99 e99Var = this.b;
-        c99 c99Var = e99Var.d;
-        if (c99Var == null) {
-            return;
-        }
-        c99Var.n = i;
-        c99Var.r = i2;
-        e99Var.i();
-        c99 c99Var2 = e99Var.d;
-        c99Var2.postRunnable(c99Var2.x);
-        e99Var.d.postRunnable(new z89(this, (byte) 0));
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    @Override // n8c
+    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.f0((c4c) obj);
     }
 }

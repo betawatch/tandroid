@@ -1,35 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public enum ktb extends rub {
-    public ktb() {
-        super("AfterAttributeValue_quoted", 40);
-    }
+import android.view.View;
 
-    @Override // rub
-    public final void c(bsb bsbVar, hl1 hl1Var) {
-        char d = hl1Var.d();
-        ctb ctbVar = rub.X;
-        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            bsbVar.c = ctbVar;
-            return;
-        }
-        if (d == '/') {
-            bsbVar.c = rub.f0;
-            return;
-        }
-        msb msbVar = rub.a;
-        if (d == '>') {
-            bsbVar.k();
-            bsbVar.c = msbVar;
-        } else if (d == 65535) {
-            bsbVar.l(this);
-            bsbVar.c = msbVar;
-        } else {
-            bsbVar.m(this);
-            hl1Var.q();
-            bsbVar.c = ctbVar;
-        }
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class ktb {
+    public static void a(View view, CharSequence charSequence) {
+        view.setTooltipText(charSequence);
     }
 }

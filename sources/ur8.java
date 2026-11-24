@@ -1,50 +1,29 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ur8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ lea b;
+    public final /* synthetic */ xr8 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ur8(lea leaVar, byte b) {
+    public /* synthetic */ ur8(xr8 xr8Var, int i, byte b) {
         this.a = b;
-        this.b = leaVar;
+        this.b = xr8Var;
+        this.c = i;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        lea leaVar = this.b;
+        int i = this.c;
+        xr8 xr8Var = this.b;
         switch (b) {
             case 0:
-                yua yuaVar = leaVar.e;
-                yuaVar.getClass();
-                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
-                int i = yuaVar.a;
-                reorderstargiftcollections.peer = oc7.r1(i).i1(yuaVar.b);
-                ArrayList arrayList = yuaVar.e;
-                int size = arrayList.size();
-                int i2 = 0;
-                while (i2 < size) {
-                    Object obj = arrayList.get(i2);
-                    i2++;
-                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
-                }
-                ConnectionsManager.getInstance(i).sendRequest(reorderstargiftcollections, null);
-                yuaVar.j();
-                break;
-            case 1:
-                leaVar.setReorderingCollections(true);
-                break;
-            case 2:
-                leaVar.a();
+                xr8Var.b.e(i, xr8Var.d.i(i));
                 break;
             default:
-                leaVar.p();
+                xr8Var.b.e(i, xr8Var.d.i(i));
                 break;
         }
     }

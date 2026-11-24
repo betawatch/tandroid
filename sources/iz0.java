@@ -1,42 +1,33 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class iz0 {
+    public final /* synthetic */ byte a = 1;
+    public int b;
+    public long c;
+    public int d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class iz0 extends a {
-    public final /* synthetic */ ela G1;
-    public final /* synthetic */ mz0 H1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iz0(mz0 mz0Var, Context context, ela elaVar) {
-        super(context, null);
-        this.H1 = mz0Var;
-        this.G1 = elaVar;
+    public iz0(long j, int i, int i2) {
+        this.c = j;
+        this.b = i;
+        this.d = i2;
     }
 
-    @Override // org.telegram.ui.ActionBar.a, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        mz0 mz0Var = this.H1;
-        if (mz0Var.F1 && mz0Var.G1) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        if (getAlpha() != f) {
-            super.setAlpha(f);
-            this.G1.invalidate();
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                StringBuilder sb = new StringBuilder("part{");
+                sb.append(this.c);
+                sb.append(", ch=");
+                sb.append(this.b);
+                sb.append(", q=");
+                return de9.l(sb, this.d, "}");
+            default:
+                return super.toString();
         }
     }
 
-    @Override // android.view.View
-    public final void setTag(Object obj) {
-        super.setTag(obj);
-        this.H1.V0();
+    public /* synthetic */ iz0() {
     }
 }

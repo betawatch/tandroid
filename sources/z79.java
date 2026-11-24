@@ -1,38 +1,26 @@
 // default package
 
-import j$.util.Objects;
-import java.util.AbstractMap;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class z79 extends mo5 {
-    public final /* synthetic */ a89 c;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class z79 extends it3 {
+    public final /* synthetic */ a89 F;
 
-    public z79(a89 a89Var) {
-        this.c = a89Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z79(a89 a89Var, Context context, wjb wjbVar) {
+        super(context, "", true, false, 1024, wjbVar);
+        this.F = a89Var;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        a89 a89Var = this.c;
-        jte.j(i, a89Var.h);
-        Object[] objArr = a89Var.e;
-        int i2 = i << 1;
-        boolean z = a89Var.f;
-        Object obj = objArr[i2 + (z ? 1 : 0)];
-        Objects.requireNonNull(obj);
-        Object obj2 = objArr[i2 + (!z ? 1 : 0)];
-        Objects.requireNonNull(obj2);
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
-    }
-
-    @Override // go5
-    public final boolean m() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c.h;
+    @Override // it3
+    public final void b(Editable editable) {
+        a89 a89Var = this.F;
+        u41 u41Var = a89Var.s;
+        if (u41Var != null) {
+            u41Var.setEnabled(a89Var.d.optional || !TextUtils.isEmpty(a89Var.n.getText()));
+        }
     }
 }

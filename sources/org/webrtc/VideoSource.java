@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,7 +11,7 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
@@ -75,7 +75,7 @@ public class VideoSource extends MediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setVideoProcessor$1(VideoFrame videoFrame) {
-        runWithReference(new x4c(this, videoFrame, (byte) 29));
+        runWithReference(new l3c(this, videoFrame, (byte) 27));
     }
 
     public void adaptOutputFormat(int i, int i2, int i3, int i4, int i5) {
@@ -111,7 +111,7 @@ public class VideoSource extends MediaSource {
             }
             this.videoProcessor = videoProcessor;
             if (videoProcessor != null) {
-                videoProcessor.setSink(new b11(this, (byte) 2));
+                videoProcessor.setSink(new uz0(this, (byte) 2));
                 if (this.isCapturerRunning) {
                     videoProcessor.onCapturerStarted(true);
                 }

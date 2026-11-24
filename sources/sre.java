@@ -1,24 +1,16 @@
 // default package
 
-import java.io.Serializable;
+import android.content.Context;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum sre {
-    b(Void.class, null),
-    c(Integer.class, 0),
-    d(Long.class, 0L),
-    e(Float.class, Float.valueOf(0.0f)),
-    f(Double.class, Double.valueOf(0.0d)),
-    h(Boolean.class, Boolean.FALSE),
-    n(String.class, ""),
-    r(tke.class, tke.c),
-    s(Integer.class, null),
-    w(Object.class, null);
-
-    public final Class a;
-
-    sre(Class cls, Serializable serializable) {
-        this.a = cls;
+public abstract class sre {
+    public static SharedPreferences a(Context context) {
+        Context applicationContext = context.getApplicationContext();
+        if (applicationContext != null) {
+            context = applicationContext;
+        }
+        return context.getSharedPreferences("com.google.firebase.messaging", 0);
     }
 }

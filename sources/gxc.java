@@ -1,18 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Build;
+import android.view.animation.Interpolator;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gxc {
-    public static /* synthetic */ void b() {
-        throw new UnsupportedOperationException();
-    }
+public final class gxc {
+    public fxc a;
 
-    public static /* synthetic */ void c(int i, StringBuilder sb) {
-        sb.append(i);
-        throw new IllegalArgumentException(sb.toString());
-    }
-
-    public static /* synthetic */ void d(String str) {
-        throw new NullPointerException(str);
+    public gxc(int i, Interpolator interpolator, long j) {
+        if (Build.VERSION.SDK_INT >= 30) {
+            this.a = new exc(bc3.b(i, interpolator, j));
+        } else {
+            this.a = new cxc(i, interpolator, j);
+        }
     }
 }

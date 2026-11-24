@@ -1,30 +1,52 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class uub extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vub b;
+public final class uub extends i49 {
+    public int a;
+    public int b;
+    public final /* synthetic */ qvb c;
 
-    public /* synthetic */ uub(vub vubVar, byte b) {
-        this.a = b;
-        this.b = vubVar;
+    public uub(qvb qvbVar) {
+        this.c = qvbVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        vub vubVar = this.b;
-        switch (b) {
-            case 0:
-                vubVar.b.s.setVisibility(8);
-                break;
-            default:
-                vubVar.b.a.setVisibility(8);
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0038  */
+    @Override // i49
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        boolean z;
+        boolean z2;
+        qvb qvbVar = this.c;
+        int K0 = qvbVar.G.K0();
+        if (K0 != -1) {
+            s49 K = recyclerView.K(K0);
+            int top = K != null ? K.a.getTop() : 0;
+            int i3 = this.a;
+            if (i3 == K0) {
+                int i4 = this.b;
+                int i5 = i4 - top;
+                z = top < i4;
+                if (Math.abs(i5) <= 1) {
+                    z2 = false;
+                    if (z2) {
+                        qvbVar.G0(z || !qvbVar.L, true);
+                    }
+                    this.a = K0;
+                    this.b = top;
+                }
+            } else {
+                z = K0 > i3;
+            }
+            z2 = true;
+            if (z2) {
+            }
+            this.a = K0;
+            this.b = top;
         }
     }
 }

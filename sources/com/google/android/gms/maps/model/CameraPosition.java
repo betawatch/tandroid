@@ -5,18 +5,18 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class CameraPosition extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<CameraPosition> CREATOR = new d3d((byte) 29);
+    public static final Parcelable.Creator<CameraPosition> CREATOR = new b1d((byte) 29);
     public final LatLng a;
     public final float b;
     public final float c;
     public final float d;
 
     public CameraPosition(LatLng latLng, float f, float f2, float f3) {
-        ite.i(latLng, "camera target must not be null.");
-        ite.c(f2 >= 0.0f && f2 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f2));
+        fre.i(latLng, "camera target must not be null.");
+        fre.c(f2 >= 0.0f && f2 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f2));
         this.a = latLng;
         this.b = f;
         this.c = f2 + 0.0f;
@@ -39,24 +39,24 @@ public final class CameraPosition extends b4 implements ReflectedParcelable {
     }
 
     public final String toString() {
-        wm4 wm4Var = new wm4(this);
-        wm4Var.a(this.a, "target");
-        wm4Var.a(Float.valueOf(this.b), "zoom");
-        wm4Var.a(Float.valueOf(this.c), "tilt");
-        wm4Var.a(Float.valueOf(this.d), "bearing");
-        return wm4Var.toString();
+        wk4 wk4Var = new wk4(this);
+        wk4Var.a(this.a, "target");
+        wk4Var.a(Float.valueOf(this.b), "zoom");
+        wk4Var.a(Float.valueOf(this.c), "tilt");
+        wk4Var.a(Float.valueOf(this.d), "bearing");
+        return wk4Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.k(parcel, 2, this.a, i);
-        mve.q(parcel, 3, 4);
+        int r = jte.r(parcel, 20293);
+        jte.k(parcel, 2, this.a, i);
+        jte.q(parcel, 3, 4);
         parcel.writeFloat(this.b);
-        mve.q(parcel, 4, 4);
+        jte.q(parcel, 4, 4);
         parcel.writeFloat(this.c);
-        mve.q(parcel, 5, 4);
+        jte.q(parcel, 5, 4);
         parcel.writeFloat(this.d);
-        mve.s(parcel, r);
+        jte.s(parcel, r);
     }
 }

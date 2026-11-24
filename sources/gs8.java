@@ -1,36 +1,31 @@
 // default package
 
-import org.telegram.ui.ProfileActivity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class gs8 implements Runnable {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gs8 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ js8 b;
 
-    public /* synthetic */ gs8(ProfileActivity profileActivity, byte b) {
+    public /* synthetic */ gs8(js8 js8Var, byte b) {
         this.a = b;
-        this.b = profileActivity;
+        this.b = js8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        ProfileActivity profileActivity = this.b;
+        js8 js8Var = this.b;
         switch (b) {
             case 0:
-                profileActivity.n3(true);
-                break;
-            case 1:
-                profileActivity.n3(true);
+                js8Var.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                js8Var.e();
                 break;
             default:
-                wp8 wp8Var = profileActivity.O;
-                if (wp8Var != null) {
-                    wp8Var.f1(14);
-                    profileActivity.n3(false);
-                    break;
-                }
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                js8Var.R = floatValue;
+                js8Var.r.setUseGyroscope(floatValue);
                 break;
         }
     }

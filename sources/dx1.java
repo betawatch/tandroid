@@ -1,46 +1,34 @@
 // default package
 
-import android.view.KeyEvent;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class dx1 implements lr0, ee, ou3, k8 {
+public final class dx1 implements c39 {
     public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ dx1(ChatActivityEnterView chatActivityEnterView) {
+    public dx1(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // ou3
-    public final void m() {
-        int i = ChatActivityEnterView.z7;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.F0.f();
-        uz1 uz1Var = chatActivityEnterView.P3;
-        if (uz1Var != null) {
-            uz1Var.c1(chatActivityEnterView.F0.getTextToUse());
-        }
-    }
-
-    @Override // k8
-    public final void q(KeyEvent keyEvent) {
-        ChatActivityEnterView chatActivityEnterView;
-        my1 my1Var;
-        int i = ChatActivityEnterView.z7;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (my1Var = (chatActivityEnterView = this.a).O0) != null && my1Var.isShowing()) {
-            chatActivityEnterView.O0.dismiss();
-        }
-    }
-
-    @Override // ee
-    public final void r(he heVar, int i) {
-        int i2 = ChatActivityEnterView.z7;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.Q();
-        sy1 sy1Var = chatActivityEnterView.F0;
-        if (sy1Var != null) {
-            sy1Var.setText("");
+    @Override // c39
+    public final void d(int i, View view) {
+        if (view instanceof cp0) {
+            String command = ((cp0) view).getCommand();
+            if (TextUtils.isEmpty(command)) {
+                return;
+            }
+            ChatActivityEnterView chatActivityEnterView = this.a;
+            if (chatActivityEnterView.c()) {
+                ij.J(chatActivityEnterView.E3, chatActivityEnterView.G3, new q31(this, command, (byte) 20), chatActivityEnterView.L4);
+                return;
+            }
+            mu1 mu1Var = chatActivityEnterView.F3;
+            if (mu1Var == null || !mu1Var.k5(view)) {
+                ij.X(chatActivityEnterView.R, chatActivityEnterView.G3, 1, new x0(this, command, (byte) 29));
+            }
         }
     }
 }

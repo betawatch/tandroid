@@ -1,120 +1,24 @@
 // default package
 
-import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class dve extends LinkedHashMap {
-    public static final dve b;
-    public boolean a = true;
-
-    static {
-        dve dveVar = new dve();
-        b = dveVar;
-        dveVar.a = false;
+public abstract class dve {
+    public static void a(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        if (status.b()) {
+            taskCompletionSource.setResult(obj);
+        } else {
+            taskCompletionSource.setException(bmd.a(status));
+        }
     }
 
-    public static int b(Object obj) {
-        if (!(obj instanceof byte[])) {
-            if (!(obj instanceof eqe)) {
-                return obj.hashCode();
-            }
-            gxc.b();
-            return 0;
+    public static void b(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        if (status.b()) {
+            taskCompletionSource.trySetResult(obj);
+        } else {
+            taskCompletionSource.trySetException(bmd.a(status));
         }
-        byte[] bArr = (byte[]) obj;
-        int length = bArr.length;
-        Charset charset = iqe.a;
-        int i = length;
-        for (byte b2 : bArr) {
-            i = (i * 31) + b2;
-        }
-        if (i == 0) {
-            return 1;
-        }
-        return i;
-    }
-
-    public final void c() {
-        if (this.a) {
-            return;
-        }
-        gxc.b();
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        c();
-        super.clear();
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Map)) {
-            return false;
-        }
-        Map map = (Map) obj;
-        if (this == map) {
-            return true;
-        }
-        if (size() != map.size()) {
-            return false;
-        }
-        for (Map.Entry entry : entrySet()) {
-            if (!map.containsKey(entry.getKey())) {
-                return false;
-            }
-            Object value = entry.getValue();
-            Object obj2 = map.get(entry.getKey());
-            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        int i = 0;
-        for (Map.Entry entry : entrySet()) {
-            i += b(entry.getKey()) ^ b(entry.getValue());
-        }
-        return i;
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        c();
-        Charset charset = iqe.a;
-        obj.getClass();
-        obj2.getClass();
-        return super.put(obj, obj2);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void putAll(Map map) {
-        c();
-        for (Object obj : map.keySet()) {
-            Charset charset = iqe.a;
-            obj.getClass();
-            map.get(obj).getClass();
-        }
-        super.putAll(map);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        c();
-        return super.remove(obj);
     }
 }

@@ -15,190 +15,190 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class CredentialProviderPlayServicesImpl implements d33 {
-    public static final w33 Companion = new w33();
+public final class CredentialProviderPlayServicesImpl implements s13 {
+    public static final l23 Companion = new l23();
     public static final int MIN_GMS_APK_VERSION = 230815045;
     public static final int MIN_GMS_APK_VERSION_DIGITAL_CRED = 243100000;
     public static final int MIN_GMS_APK_VERSION_RESTORE_CRED = 242200000;
     public static final int PRE_U_MIN_GMS_APK_VERSION = 252400000;
     private static final String TAG = "PlayServicesImpl";
     private final Context context;
-    private d05 googleApiAvailability;
+    private cy4 googleApiAvailability;
 
     public CredentialProviderPlayServicesImpl(Context context) {
         context.getClass();
         this.context = context;
-        this.googleApiAvailability = d05.e;
+        this.googleApiAvailability = cy4.e;
     }
 
     private final int isGooglePlayServicesAvailable(Context context, int i) {
         return this.googleApiAvailability.c(context, i);
     }
 
-    private static final g7c onClearCredential$lambda$10(CancellationSignal cancellationSignal, Executor executor, a33 a33Var, Boolean bool) {
+    private static final g5c onClearCredential$lambda$10(CancellationSignal cancellationSignal, Executor executor, o13 o13Var, Boolean bool) {
         Companion.getClass();
-        if (!w33.a(cancellationSignal)) {
-            onClearCredential$lambda$10$lambda$9(executor, a33Var);
+        if (!l23.a(cancellationSignal)) {
+            onClearCredential$lambda$10$lambda$9(executor, o13Var);
         }
-        return g7c.a;
+        return g5c.a;
     }
 
-    private static final g7c onClearCredential$lambda$10$lambda$9(Executor executor, a33 a33Var) {
+    private static final g5c onClearCredential$lambda$10$lambda$9(Executor executor, o13 o13Var) {
         Log.i(TAG, "Cleared restore credential successfully!");
-        executor.execute(new d23(a33Var, (byte) 2));
-        return g7c.a;
+        executor.execute(new r03(o13Var, (byte) 2));
+        return g5c.a;
     }
 
-    private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, a33 a33Var, Exception exc) {
+    private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, o13 o13Var, Exception exc) {
         exc.getClass();
         Log.w(TAG, "Clearing restore credential failed", exc);
-        e79 e79Var = new e79();
-        e79Var.a = new jj2("Clear restore credential failed for unknown reason.");
-        if ((exc instanceof ap) && ((ap) exc).getStatusCode() == 40201) {
-            e79Var.a = new jj2("The restore credential internal service had a failure.");
+        c59 c59Var = new c59();
+        c59Var.a = new vh2("Clear restore credential failed for unknown reason.");
+        if ((exc instanceof zn) && ((zn) exc).getStatusCode() == 40201) {
+            c59Var.a = new vh2("The restore credential internal service had a failure.");
         }
         Companion.getClass();
-        if (w33.a(cancellationSignal)) {
+        if (l23.a(cancellationSignal)) {
             return;
         }
-        onClearCredential$lambda$14$lambda$13(executor, a33Var, e79Var);
+        onClearCredential$lambda$14$lambda$13(executor, o13Var, c59Var);
     }
 
-    private static final g7c onClearCredential$lambda$14$lambda$13(Executor executor, a33 a33Var, e79 e79Var) {
-        executor.execute(new mv2((Object) a33Var, (Object) e79Var, (byte) 23));
-        return g7c.a;
+    private static final g5c onClearCredential$lambda$14$lambda$13(Executor executor, o13 o13Var, c59 c59Var) {
+        executor.execute(new gu2((Object) o13Var, (Object) c59Var, (byte) 22));
+        return g5c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onClearCredential$lambda$14$lambda$13$lambda$12(a33 a33Var, e79 e79Var) {
-        a33Var.A(e79Var.a);
+    public static final void onClearCredential$lambda$14$lambda$13$lambda$12(o13 o13Var, c59 c59Var) {
+        o13Var.M(c59Var.a);
     }
 
-    private static final g7c onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, a33 a33Var, lj2 lj2Var) {
+    private static final g5c onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, o13 o13Var, xh2 xh2Var) {
         Companion.getClass();
-        if (!w33.a(cancellationSignal)) {
-            onClearCredential$lambda$17$lambda$16(executor, a33Var);
+        if (!l23.a(cancellationSignal)) {
+            onClearCredential$lambda$17$lambda$16(executor, o13Var);
         }
-        return g7c.a;
+        return g5c.a;
     }
 
-    private static final g7c onClearCredential$lambda$17$lambda$16(Executor executor, a33 a33Var) {
+    private static final g5c onClearCredential$lambda$17$lambda$16(Executor executor, o13 o13Var) {
         Log.i(TAG, "During clear credential, signed out successfully!");
-        executor.execute(new d23(a33Var, (byte) 6));
-        return g7c.a;
+        executor.execute(new r03(o13Var, (byte) 6));
+        return g5c.a;
     }
 
-    private static final void onClearCredential$lambda$19(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, kj2 kj2Var, CancellationSignal cancellationSignal, Executor executor, a33 a33Var, Exception exc) {
+    private static final void onClearCredential$lambda$19(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, wh2 wh2Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var, Exception exc) {
         exc.getClass();
         Log.e(TAG, "GMS Clear credential flow failed, calling fallback");
-        credentialProviderPlayServicesImpl.runFallbackClearCredFlow(kj2Var, cancellationSignal, executor, a33Var);
+        credentialProviderPlayServicesImpl.runFallbackClearCredFlow(wh2Var, cancellationSignal, executor, o13Var);
     }
 
-    private static final g7c onClearCredential$lambda$7(Executor executor, a33 a33Var) {
-        executor.execute(new d23(a33Var, (byte) 7));
-        return g7c.a;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onClearCredential$lambda$7$lambda$6(a33 a33Var) {
-        a33Var.A(new jj2("androidx.credentials.TYPE_CLEAR_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION", "clearCredentialStateAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
-    }
-
-    private static final g7c onCreateCredential$lambda$5(Executor executor, a33 a33Var) {
-        executor.execute(new d23(a33Var, (byte) 3));
-        return g7c.a;
+    private static final g5c onClearCredential$lambda$7(Executor executor, o13 o13Var) {
+        executor.execute(new r03(o13Var, (byte) 7));
+        return g5c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onCreateCredential$lambda$5$lambda$4(a33 a33Var) {
-        a33Var.A(new n13("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", (byte) 1));
+    public static final void onClearCredential$lambda$7$lambda$6(o13 o13Var) {
+        o13Var.M(new vh2("androidx.credentials.TYPE_CLEAR_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION", "clearCredentialStateAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
     }
 
-    private static final g7c onGetCredential$lambda$1(Executor executor, a33 a33Var) {
-        executor.execute(new d23(a33Var, (byte) 5));
-        return g7c.a;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onGetCredential$lambda$1$lambda$0(a33 a33Var) {
-        a33Var.A(new uu4("this device requires a Google Play Services update for the given feature to be supported", (byte) 1));
-    }
-
-    private static final g7c onGetCredential$lambda$3(Executor executor, a33 a33Var) {
-        executor.execute(new d23(a33Var, (byte) 4));
-        return g7c.a;
+    private static final g5c onCreateCredential$lambda$5(Executor executor, o13 o13Var) {
+        executor.execute(new r03(o13Var, (byte) 3));
+        return g5c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onGetCredential$lambda$3$lambda$2(a33 a33Var) {
-        a33Var.A(new uu4("getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", (byte) 1));
+    public static final void onCreateCredential$lambda$5$lambda$4(o13 o13Var) {
+        o13Var.M(new c03("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", (byte) 1));
     }
 
-    private final void runFallbackClearCredFlow(kj2 kj2Var, final CancellationSignal cancellationSignal, final Executor executor, final a33 a33Var) {
-        s5d a = ume.a(this.context);
+    private static final g5c onGetCredential$lambda$1(Executor executor, o13 o13Var) {
+        executor.execute(new r03(o13Var, (byte) 5));
+        return g5c.a;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void onGetCredential$lambda$1$lambda$0(o13 o13Var) {
+        o13Var.M(new ts4("this device requires a Google Play Services update for the given feature to be supported", (byte) 1));
+    }
+
+    private static final g5c onGetCredential$lambda$3(Executor executor, o13 o13Var) {
+        executor.execute(new r03(o13Var, (byte) 4));
+        return g5c.a;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void onGetCredential$lambda$3$lambda$2(o13 o13Var) {
+        o13Var.M(new ts4("getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", (byte) 1));
+    }
+
+    private final void runFallbackClearCredFlow(wh2 wh2Var, final CancellationSignal cancellationSignal, final Executor executor, final o13 o13Var) {
+        q3d a = ske.a(this.context);
         a.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
-        Set set = h05.a;
+        Set set = gy4.a;
         synchronized (set) {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((h05) it.next()).b();
+            ((gy4) it.next()).b();
         }
-        i05.a();
-        bib b = cib.b();
-        b.c = new o94[]{bgd.a};
-        b.a = new x59(a, (byte) 26);
+        hy4.a();
+        agb b = bgb.b();
+        b.c = new f84[]{aed.a};
+        b.a = new u39(a, (byte) 26);
         b.b = false;
         b.d = (char) 1554;
-        a.e(1, b.a()).addOnSuccessListener(new wm2(new rr4() { // from class: v33
-            @Override // rr4
+        a.e(1, b.a()).addOnSuccessListener(new vu2(new qp4() { // from class: k23
+            @Override // qp4
             public final Object invoke(Object obj) {
-                g7c runFallbackClearCredFlow$lambda$22;
-                runFallbackClearCredFlow$lambda$22 = CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$22(cancellationSignal, executor, a33Var, (Void) obj);
+                g5c runFallbackClearCredFlow$lambda$22;
+                runFallbackClearCredFlow$lambda$22 = CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$22(cancellationSignal, executor, o13Var, (Void) obj);
                 return runFallbackClearCredFlow$lambda$22;
             }
-        }, (byte) 12)).addOnFailureListener(new lu((Object) this, (Object) cancellationSignal, (Object) executor, (Object) a33Var, (byte) 10));
+        }, (byte) 9)).addOnFailureListener(new lt((Object) this, (Object) cancellationSignal, (Object) executor, (Object) o13Var, (byte) 10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final g7c runFallbackClearCredFlow$lambda$22(CancellationSignal cancellationSignal, Executor executor, a33 a33Var, Void r3) {
+    public static final g5c runFallbackClearCredFlow$lambda$22(CancellationSignal cancellationSignal, Executor executor, o13 o13Var, Void r3) {
         Companion.getClass();
-        if (!w33.a(cancellationSignal)) {
-            runFallbackClearCredFlow$lambda$22$lambda$21(executor, a33Var);
+        if (!l23.a(cancellationSignal)) {
+            runFallbackClearCredFlow$lambda$22$lambda$21(executor, o13Var);
         }
-        return g7c.a;
+        return g5c.a;
     }
 
-    private static final g7c runFallbackClearCredFlow$lambda$22$lambda$21(Executor executor, a33 a33Var) {
+    private static final g5c runFallbackClearCredFlow$lambda$22$lambda$21(Executor executor, o13 o13Var) {
         Log.i(TAG, "During clear credential, signed out successfully!");
-        executor.execute(new d23(a33Var, (byte) 8));
-        return g7c.a;
+        executor.execute(new r03(o13Var, (byte) 8));
+        return g5c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, a33 a33Var, Exception exc) {
+    public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, o13 o13Var, Exception exc) {
         exc.getClass();
         Companion.getClass();
-        if (w33.a(cancellationSignal)) {
+        if (l23.a(cancellationSignal)) {
             return;
         }
-        runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(exc, executor, a33Var);
+        runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(exc, executor, o13Var);
     }
 
-    private static final g7c runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(Exception exc, Executor executor, a33 a33Var) {
+    private static final g5c runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(Exception exc, Executor executor, o13 o13Var) {
         Log.w(TAG, "During clear credential sign out failed with " + exc);
-        executor.execute(new mv2((Object) a33Var, (Object) exc, (byte) 22));
-        return g7c.a;
+        executor.execute(new gu2((Object) o13Var, (Object) exc, (byte) 21));
+        return g5c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24(a33 a33Var, Exception exc) {
-        a33Var.A(new jj2(exc.getMessage()));
+    public static final void runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24(o13 o13Var, Exception exc) {
+        o13Var.M(new vh2(exc.getMessage()));
     }
 
-    public final d05 getGoogleApiAvailability() {
+    public final cy4 getGoogleApiAvailability() {
         return this.googleApiAvailability;
     }
 
@@ -206,171 +206,171 @@ public final class CredentialProviderPlayServicesImpl implements d33 {
         int isGooglePlayServicesAvailable = isGooglePlayServicesAvailable(this.context, i);
         boolean z = isGooglePlayServicesAvailable == 0;
         if (!z) {
-            Log.w(TAG, "Connection with Google Play Services was not successful. Connection result is: " + new ot2(isGooglePlayServicesAvailable, null, null));
+            Log.w(TAG, "Connection with Google Play Services was not successful. Connection result is: " + new ds2(isGooglePlayServicesAvailable, null, null));
         }
         return z;
     }
 
-    public void onClearCredential(kj2 kj2Var, CancellationSignal cancellationSignal, Executor executor, a33 a33Var) {
+    public void onClearCredential(wh2 wh2Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var) {
         throw null;
     }
 
-    @Override // d33
-    public void onCreateCredential(Context context, u13 u13Var, CancellationSignal cancellationSignal, Executor executor, a33 a33Var) {
+    @Override // s13
+    public void onCreateCredential(Context context, i03 i03Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var) {
         context.getClass();
-        u13Var.getClass();
+        i03Var.getClass();
         executor.getClass();
-        a33Var.getClass();
-        w33 w33Var = Companion;
-        w33Var.getClass();
-        if (w33.a(cancellationSignal)) {
+        o13Var.getClass();
+        l23 l23Var = Companion;
+        l23Var.getClass();
+        if (l23.a(cancellationSignal)) {
             return;
         }
-        if (!(u13Var instanceof m23)) {
-            rjb.j("Create Credential request is unsupported, not password or publickeycredential");
+        if (!(i03Var instanceof a13)) {
+            fyb.i("Create Credential request is unsupported, not password or publickeycredential");
             return;
         }
         boolean isAvailableOnDevice = isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION);
-        byte b = 1;
-        vo voVar = wo.g;
+        byte b = 0;
+        byte b2 = 1;
+        un unVar = vn.g;
         if (isAvailableOnDevice) {
-            k23 k23Var = new k23(context);
-            m23 m23Var = (m23) u13Var;
-            k23Var.h = cancellationSignal;
-            k23Var.f = a33Var;
-            k23Var.g = executor;
-            w33Var.getClass();
-            if (w33.a(cancellationSignal)) {
+            y03 y03Var = new y03(context);
+            a13 a13Var = (a13) i03Var;
+            y03Var.h = cancellationSignal;
+            y03Var.f = o13Var;
+            y03Var.g = executor;
+            l23Var.getClass();
+            if (l23.a(cancellationSignal)) {
                 return;
             }
-            t13 t13Var = new t13("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", m23Var.a, m23Var.b, null, m23Var.d, null);
-            ua4 ua4Var = new ua4(context, ua4.m, voVar, b05.c);
-            bib b2 = cib.b();
-            b2.c = new o94[]{mgd.b};
-            b2.a = new eod((Object) t13Var, (byte) 2);
-            b2.d = (char) 32704;
-            Task e = ua4Var.e(1, b2.a());
+            h03 h03Var = new h03("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", a13Var.a, a13Var.b, null, a13Var.d, null);
+            u84 u84Var = new u84(context, u84.m, unVar, ay4.c);
+            agb b3 = bgb.b();
+            b3.c = new f84[]{led.b};
+            b3.a = new g6e(h03Var, b);
+            b3.d = (char) 32704;
+            Task e = u84Var.e(1, b3.a());
             e.getClass();
-            e.addOnSuccessListener(new wm2(new f23(cancellationSignal, k23Var, executor, a33Var, (byte) 0), (byte) 8)).addOnFailureListener(new lu((Object) cancellationSignal, (Object) k23Var, (Object) executor, (Object) a33Var, (byte) 9));
+            e.addOnSuccessListener(new vu2(new t03(cancellationSignal, y03Var, executor, o13Var, (byte) 0), (byte) 5)).addOnFailureListener(new lt((Object) cancellationSignal, (Object) y03Var, (Object) executor, (Object) o13Var, (byte) 9));
             return;
         }
-        m23 m23Var2 = (m23) u13Var;
-        o33 o33Var = new o33(context);
-        o33Var.h = cancellationSignal;
-        o33Var.f = a33Var;
-        o33Var.g = executor;
+        a13 a13Var2 = (a13) i03Var;
+        d23 d23Var = new d23(context);
+        d23Var.h = cancellationSignal;
+        d23Var.f = o13Var;
+        d23Var.g = executor;
         try {
-            nw8 d = o33Var.d(m23Var2);
-            w33Var.getClass();
-            if (w33.a(cancellationSignal)) {
+            mu8 d = d23Var.d(a13Var2);
+            l23Var.getClass();
+            if (l23.a(cancellationSignal)) {
                 return;
             }
-            byte b3 = 13;
-            ua4 ua4Var2 = new ua4(context, ua4.l, voVar, new fgf(b3));
-            bib b4 = cib.b();
-            b4.a = new et8(ua4Var2, d);
+            u84 u84Var2 = new u84(context, u84.l, unVar, new eef((byte) 13));
+            agb b4 = bgb.b();
+            b4.a = new g29(u84Var2, d);
             b4.d = (char) 5407;
-            ua4Var2.e(0, b4.a()).addOnSuccessListener(new wm2(new f33(cancellationSignal, o33Var, b), (byte) 10)).addOnFailureListener(new x92(o33Var, cancellationSignal, b3));
+            u84Var2.e(0, b4.a()).addOnSuccessListener(new vu2(new u13(cancellationSignal, d23Var, b2), (byte) 7)).addOnFailureListener(new v82((Object) d23Var, (Object) cancellationSignal, (byte) 12));
         } catch (JSONException e2) {
             Companion.getClass();
-            if (w33.a(cancellationSignal)) {
+            if (l23.a(cancellationSignal)) {
                 return;
             }
-            Executor executor2 = o33Var.g;
+            Executor executor2 = d23Var.g;
             if (executor2 != null) {
-                executor2.execute(new k33(o33Var, e2, b));
+                executor2.execute(new z13(d23Var, e2, b2));
             } else {
-                rr5.e("executor");
+                rp5.e("executor");
                 throw null;
             }
         } catch (Throwable th) {
             Companion.getClass();
-            if (w33.a(cancellationSignal)) {
+            if (l23.a(cancellationSignal)) {
                 return;
             }
-            Executor executor3 = o33Var.g;
+            Executor executor3 = d23Var.g;
             if (executor3 != null) {
-                executor3.execute(new l33(o33Var, th, b));
+                executor3.execute(new a23(d23Var, th, b2));
             } else {
-                rr5.e("executor");
+                rp5.e("executor");
                 throw null;
             }
         }
     }
 
-    @Override // d33
-    public void onGetCredential(Context context, xu4 xu4Var, CancellationSignal cancellationSignal, Executor executor, a33 a33Var) {
-        vo voVar;
-        zo zoVar = ua4.m;
+    @Override // s13
+    public void onGetCredential(Context context, ws4 ws4Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var) {
+        un unVar;
+        yn ynVar = u84.m;
         context.getClass();
-        xu4Var.getClass();
-        boolean z = xu4Var.b;
-        List<c33> list = xu4Var.a;
+        ws4Var.getClass();
+        boolean z = ws4Var.b;
+        List<r13> list = ws4Var.a;
         executor.getClass();
-        a33Var.getClass();
+        o13Var.getClass();
         Companion.getClass();
-        if (w33.a(cancellationSignal)) {
+        if (l23.a(cancellationSignal)) {
             return;
         }
         Iterator it = list.iterator();
         do {
             boolean hasNext = it.hasNext();
-            voVar = wo.g;
+            unVar = vn.g;
             if (!hasNext) {
                 Companion.getClass();
-                for (c33 c33Var : list) {
+                for (r13 r13Var : list) {
                 }
                 if (!isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION)) {
                     Companion.getClass();
-                    for (c33 c33Var2 : list) {
+                    for (r13 r13Var2 : list) {
                     }
-                    new h33(context).g(xu4Var, cancellationSignal, executor, a33Var);
+                    new w13(context).g(ws4Var, cancellationSignal, executor, o13Var);
                     return;
                 }
-                tu4 tu4Var = new tu4(context);
-                tu4Var.h = cancellationSignal;
-                tu4Var.f = a33Var;
-                tu4Var.g = executor;
+                ss4 ss4Var = new ss4(context);
+                ss4Var.h = cancellationSignal;
+                ss4Var.f = o13Var;
+                ss4Var.g = executor;
                 Companion.getClass();
-                if (w33.a(cancellationSignal)) {
+                if (l23.a(cancellationSignal)) {
                     return;
                 }
                 Bundle bundle = new Bundle();
                 bundle.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
                 bundle.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", z);
                 bundle.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
-                List<c33> list2 = list;
-                ArrayList arrayList = new ArrayList(mm2.c(list2, 10));
-                for (c33 c33Var3 : list2) {
-                    arrayList.add(new b33(c33Var3.a, c33Var3.b, c33Var3.c, "", "", ""));
+                List<r13> list2 = list;
+                ArrayList arrayList = new ArrayList(al2.c(list2, 10));
+                for (r13 r13Var3 : list2) {
+                    arrayList.add(new q13(r13Var3.a, r13Var3.b, r13Var3.c, "", "", ""));
                 }
                 GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, bundle, null, new ResultReceiver(null));
-                Context context2 = tu4Var.e;
+                Context context2 = ss4Var.e;
                 context2.getClass();
-                new ua4(context2, zoVar, voVar, b05.c).g(getCredentialRequest).addOnSuccessListener(new yu3(new f23(cancellationSignal, tu4Var, executor, a33Var, (byte) 1), (byte) 26)).addOnFailureListener(new ki(xu4Var, tu4Var, a33Var, executor, cancellationSignal));
+                new u84(context2, ynVar, unVar, ay4.c).g(getCredentialRequest).addOnSuccessListener(new kx3(new t03(cancellationSignal, ss4Var, executor, o13Var, (byte) 1), (byte) 23)).addOnFailureListener(new kh(ws4Var, ss4Var, o13Var, executor, cancellationSignal));
                 return;
             }
-        } while (!(((c33) it.next()) instanceof zu4));
+        } while (!(((r13) it.next()) instanceof ys4));
         if (!isAvailableOnDevice(MIN_GMS_APK_VERSION_DIGITAL_CRED)) {
             Companion.getClass();
-            if (w33.a(cancellationSignal)) {
+            if (l23.a(cancellationSignal)) {
                 return;
             }
-            onGetCredential$lambda$1(executor, a33Var);
+            onGetCredential$lambda$1(executor, o13Var);
             return;
         }
-        t33 t33Var = new t33(context);
-        t33Var.h = cancellationSignal;
-        t33Var.f = a33Var;
-        t33Var.g = executor;
+        i23 i23Var = new i23(context);
+        i23Var.h = cancellationSignal;
+        i23Var.f = o13Var;
+        i23Var.g = executor;
         Companion.getClass();
-        if (w33.a(cancellationSignal)) {
+        if (l23.a(cancellationSignal)) {
             return;
         }
         ArrayList arrayList2 = new ArrayList();
-        for (c33 c33Var4 : list) {
-            if (c33Var4 instanceof zu4) {
-                arrayList2.add(new b33(c33Var4.a, c33Var4.b, c33Var4.c, ((zu4) c33Var4).e, "", ""));
+        for (r13 r13Var4 : list) {
+            if (r13Var4 instanceof ys4) {
+                arrayList2.add(new q13(r13Var4.a, r13Var4.b, r13Var4.c, ((ys4) r13Var4).e, "", ""));
             }
         }
         Bundle bundle2 = new Bundle();
@@ -378,35 +378,35 @@ public final class CredentialProviderPlayServicesImpl implements d33 {
         bundle2.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", z);
         bundle2.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
         GetCredentialRequest getCredentialRequest2 = new GetCredentialRequest(arrayList2, bundle2, null, new ResultReceiver(null));
-        Context context3 = t33Var.e;
+        Context context3 = i23Var.e;
         context3.getClass();
-        new ua4(context3, zoVar, voVar, b05.c).g(getCredentialRequest2).addOnSuccessListener(new wm2(new f33(cancellationSignal, t33Var, (byte) 2), (byte) 11)).addOnFailureListener(new wu2(t33Var, cancellationSignal, executor, a33Var));
+        new u84(context3, ynVar, unVar, ay4.c).g(getCredentialRequest2).addOnSuccessListener(new vu2(new u13(cancellationSignal, i23Var, (byte) 2), (byte) 8)).addOnFailureListener(new lt2(i23Var, cancellationSignal, executor, o13Var));
     }
 
-    @Override // d33
-    public /* bridge */ /* synthetic */ void onPrepareCredential(xu4 xu4Var, CancellationSignal cancellationSignal, Executor executor, a33 a33Var) {
-        super.onPrepareCredential(xu4Var, cancellationSignal, executor, a33Var);
+    @Override // s13
+    public /* bridge */ /* synthetic */ void onPrepareCredential(ws4 ws4Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var) {
+        super.onPrepareCredential(ws4Var, cancellationSignal, executor, o13Var);
     }
 
-    public void onSignalCredentialState(lja ljaVar, Executor executor, a33 a33Var) {
+    public void onSignalCredentialState(jha jhaVar, Executor executor, o13 o13Var) {
         throw null;
     }
 
-    public final void setGoogleApiAvailability(d05 d05Var) {
-        d05Var.getClass();
-        this.googleApiAvailability = d05Var;
+    public final void setGoogleApiAvailability(cy4 cy4Var) {
+        cy4Var.getClass();
+        this.googleApiAvailability = cy4Var;
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {
     }
 
-    @Override // d33
+    @Override // s13
     public boolean isAvailableOnDevice() {
         return isAvailableOnDevice(MIN_GMS_APK_VERSION);
     }
 
-    @Override // d33
-    public /* bridge */ /* synthetic */ void onGetCredential(Context context, uk8 uk8Var, CancellationSignal cancellationSignal, Executor executor, a33 a33Var) {
-        super.onGetCredential(context, uk8Var, cancellationSignal, executor, a33Var);
+    @Override // s13
+    public /* bridge */ /* synthetic */ void onGetCredential(Context context, si8 si8Var, CancellationSignal cancellationSignal, Executor executor, o13 o13Var) {
+        super.onGetCredential(context, si8Var, cancellationSignal, executor, o13Var);
     }
 }

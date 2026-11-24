@@ -1,614 +1,269 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewPropertyAnimator;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class s1b extends FrameLayout implements vlb {
-    public final TextView E;
-    public final TextView F;
-    public final cj8 G;
-    public final ImageView H;
-    public AnimatorSet I;
-    public final byte a;
-    public final qz8 b;
-    public final TextView c;
-    public final bf0 d;
-    public final jh2 e;
-    public boolean f;
-    public final ImageView h;
-    public final ImageView n;
-    public TLRPC.TL_messages_stickerSet r;
-    public boolean s;
-    public final Rect w;
-    public boolean x;
-    public final FrameLayout y;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class s1b extends y1b {
+    public boolean C;
+    public boolean D;
+    public final String E;
+    public int F;
+    public final ArrayList G;
+    public final ArrayList H;
+    public int I;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public s1b(Context context, int i) {
-        super(context);
-        this.w = new Rect();
-        this.a = i;
-        bf0 bf0Var = new bf0(context);
-        this.d = bf0Var;
-        bf0Var.setAspectFit(true);
-        bf0Var.setLayerNum(1);
-        boolean z = jb6.a0;
-        addView(bf0Var, qoe.d(40, 40.0f, (z ? 5 : 3) | 48, z ? 0.0f : 13.0f, 9.0f, z ? 13.0f : 0.0f, 0.0f));
-        if (i != 0) {
-            ImageView imageView = new ImageView(context);
-            this.h = imageView;
-            imageView.setFocusable(false);
-            ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-            imageView.setScaleType(scaleType);
-            if (i != 3) {
-                int i2 = cmb.Li;
-                fg0 f0 = cmb.f0(cmb.w0(null, i2, false), 1, -1);
-                wmb M = anb.M(i2);
-                imageView.setBackground(f0);
-                anb.j(imageView, f0, null, M, null);
-            }
-            if (i == 1) {
-                int i3 = cmb.Ki;
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                anb.s(imageView, i3, null, mode);
-                imageView.setImageResource(R.drawable.msg_actions);
-                imageView.setContentDescription(jb6.M0(2131754838, null));
-                addView(imageView, qoe.e(40, 40, (jb6.a0 ? 3 : 5) | 16));
-                ImageView imageView2 = new ImageView(context);
-                this.n = imageView2;
-                imageView2.setAlpha(0.0f);
-                imageView2.setVisibility(8);
-                imageView2.setScaleType(scaleType);
-                imageView2.setImageResource(R.drawable.list_reorder);
-                anb.s(imageView2, i3, null, mode);
-                addView(imageView2, qoe.h(58.0f, 58.0f, 8388613));
-                jh2 jh2Var = new jh2(21, null, context);
-                this.e = jh2Var;
-                jh2Var.b(-1, cmb.c6, cmb.j7);
-                jh2Var.setDrawUnchecked(false);
-                jh2Var.setDrawBackgroundAsArc(3);
-                addView(jh2Var, qoe.i(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
-            } else if (i == 3) {
-                anb.s(imageView, cmb.Ci, null, PorterDuff.Mode.MULTIPLY);
-                imageView.setImageResource(R.drawable.floating_check);
-                boolean z2 = jb6.a0;
-                addView(imageView, qoe.d(40, 40.0f, (z2 ? 3 : 5) | 48, z2 ? 10 : 0, 9.0f, z2 ? 0 : 10, 0.0f));
-            }
-        }
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        this.y = frameLayout;
-        TextView textView = new TextView(context);
-        this.E = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(gm.o());
-        textView.setText(jb6.M0(2131754483, null));
-        anb.X(textView, cmb.Ii, null);
-        int i4 = cmb.Ei;
-        int w0 = cmb.w0(null, i4, false);
-        int i5 = cmb.Gi;
-        fg0 d = ulb.d(w0, cmb.w0(null, i5, false), 14.0f);
-        wmb M2 = anb.M(i4);
-        wmb M3 = anb.M(i5);
-        textView.setBackground(d);
-        anb.j(textView, d, M2, M3, null);
-        textView.setPadding(gm.L(14.0f), 0, gm.L(14.0f), 0);
-        textView.setGravity(17);
-        byte b = 15;
-        textView.setOnClickListener(new x10(this, b));
-        frameLayout.addView(textView, qoe.h(-2.0f, 28.0f, (jb6.a0 ? 3 : 5) | 16));
-        rve.a(textView);
-        TextView textView2 = new TextView(context);
-        this.F = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(gm.o());
-        textView2.setText(jb6.M0(2131744544, null));
-        anb.X(textView2, cmb.Hi, null);
-        fg0 d2 = ulb.d(0, cmb.w0(null, i4, false) & 452984831, 14.0f);
-        wmb g = anb.g(i4, 26);
-        textView2.setBackground(d2);
-        anb.j(textView2, d2, null, g, null);
-        textView2.setPadding(gm.L(12.0f), 0, gm.L(12.0f), 0);
-        textView2.setGravity(17);
-        textView2.setOnClickListener(new x10(this, b));
-        frameLayout.addView(textView2, qoe.i(-2.0f, 32.0f, (jb6.a0 ? 3 : 5) | 16, 0.0f, -2.0f, 0.0f, 0.0f));
-        rve.a(textView2);
-        cj8 cj8Var = new cj8(gm.L(4.0f), null, context, false);
-        this.G = cj8Var;
-        cj8Var.setIcon(R.raw.unlock_icon);
-        cj8Var.b(jb6.M0(2131743563, null), new x10(this, b), false);
-        try {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) cj8Var.getIconView().getLayoutParams();
-            marginLayoutParams.leftMargin = gm.L(1.0f);
-            marginLayoutParams.topMargin = gm.L(1.0f);
-            int L = gm.L(20.0f);
-            marginLayoutParams.height = L;
-            marginLayoutParams.width = L;
-            ((ViewGroup.MarginLayoutParams) cj8Var.getTextView().getLayoutParams()).leftMargin = gm.L(3.0f);
-            cj8Var.getChildAt(0).setPadding(gm.L(8.0f), 0, gm.L(8.0f), 0);
-        } catch (Exception unused) {
-        }
-        this.y.addView(this.G, qoe.h(-2.0f, 28.0f, (jb6.a0 ? 3 : 5) | 16));
-        rve.a(this.G);
-        this.y.setPadding(gm.L(10.0f), 0, gm.L(10.0f), 0);
-        addView(this.y, qoe.d(-2, -1.0f, jb6.a0 ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.y.setOnClickListener(new oha(this, (byte) 13));
-        qz8 qz8Var = new qz8(context, (byte) 4);
-        this.b = qz8Var;
-        nm7.i(qz8Var);
-        anb.X(qz8Var, cmb.F6, null);
-        qz8Var.setTextSize(1, 16.0f);
-        qz8Var.setTypeface(gm.o());
-        qz8Var.setLines(1);
-        qz8Var.setMaxLines(1);
-        qz8Var.setSingleLine(true);
-        qz8Var.setEllipsize(TextUtils.TruncateAt.END);
-        qz8Var.setGravity(qoe.y());
-        addView(qz8Var, qoe.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
-        TextView textView3 = new TextView(context);
-        this.c = textView3;
-        anb.X(textView3, cmb.y6, null);
-        wi8.w(textView3, 1, 13.0f, 1, 1);
-        textView3.setSingleLine(true);
-        textView3.setGravity(qoe.y());
-        addView(textView3, qoe.i(-2.0f, -2.0f, 8388611, 71.0f, 32.0f, 70.0f, 0.0f));
-        if (i == 3) {
-            ImageView imageView3 = new ImageView(context);
-            this.H = imageView3;
-            imageView3.setImageResource(R.drawable.msg_close);
-            imageView3.setPadding(gm.L(8.0f), gm.L(8.0f), gm.L(8.0f), gm.L(8.0f));
-            anb.s(imageView3, cmb.x6, null, PorterDuff.Mode.SRC_IN);
-            int i6 = cmb.h6;
-            fg0 f02 = cmb.f0(cmb.w0(null, i6, false), 1, -1);
-            wmb M4 = anb.M(i6);
-            imageView3.setBackground(f02);
-            anb.j(imageView3, f02, null, M4, null);
-            imageView3.setVisibility(8);
-            boolean z3 = jb6.a0;
-            addView(imageView3, qoe.d(-2, -2.0f, (z3 ? 3 : 5) | 16, z3 ? 4.0f : 0.0f, 0.0f, z3 ? 0.0f : 4.0f, 0.0f));
-        }
-        e(0);
+    public s1b(int i, long j, String str, l1b l1bVar) {
+        super(i, j, 4, -1, l1bVar);
+        this.G = new ArrayList();
+        this.H = new ArrayList();
+        this.I = 0;
+        this.E = str;
     }
 
-    public final boolean a() {
-        byte b = this.a;
-        if (b == 1) {
-            return this.e.a.q;
-        }
-        if (b == 3) {
-            if (this.h.getVisibility() != 0) {
-                return false;
+    @Override // y1b
+    public final void C(ArrayList arrayList, boolean z) {
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        TL_bots.reorderPreviewMedias reorderpreviewmedias = new TL_bots.reorderPreviewMedias();
+        int i = this.c;
+        reorderpreviewmedias.bot = na7.q1(i).m1(this.d);
+        reorderpreviewmedias.lang_code = this.E;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            Integer num = (Integer) obj;
+            k27 f = f(num.intValue());
+            if (f != null) {
+                reorderpreviewmedias.order.add(na7.f5(f.l.media));
+                arrayList2.add(f);
+                arrayList3.add(num);
             }
-        } else if (!this.x || this.y.getVisibility() != 0) {
+        }
+        ConnectionsManager.getInstance(i).sendRequest(reorderpreviewmedias, null);
+        ArrayList arrayList4 = this.H;
+        if (arrayList4.isEmpty()) {
+            arrayList4.add(new ArrayList());
+        }
+        ((ArrayList) arrayList4.get(0)).clear();
+        ((ArrayList) arrayList4.get(0)).addAll(arrayList3);
+        ArrayList arrayList5 = this.i;
+        arrayList5.clear();
+        arrayList5.addAll(arrayList2);
+    }
+
+    public final void F(ArrayList arrayList) {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList2 = this.i;
+            if (i >= arrayList2.size()) {
+                break;
+            }
+            k27 k27Var = (k27) arrayList2.get(i);
+            int i2 = 0;
+            while (true) {
+                if (i2 >= arrayList.size()) {
+                    break;
+                }
+                if (na7.q0(k27Var.l.media, (TLRPC.MessageMedia) arrayList.get(i2))) {
+                    arrayList2.remove(i);
+                    ArrayList arrayList3 = this.H;
+                    if (!arrayList3.isEmpty() && k27Var.e1() < ((ArrayList) arrayList3.get(0)).size()) {
+                        ((ArrayList) arrayList3.get(0)).remove(k27Var.e1());
+                    }
+                    i--;
+                } else {
+                    i2++;
+                }
+            }
+            i++;
+        }
+        TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
+        int i3 = this.c;
+        deletepreviewmedia.bot = na7.q1(i3).m1(this.d);
+        for (int i4 = 0; i4 < arrayList.size(); i4++) {
+            deletepreviewmedia.media.add(na7.f5((TLRPC.MessageMedia) arrayList.get(i4)));
+        }
+        ConnectionsManager.getInstance(i3).sendRequest(deletepreviewmedia, null);
+        v1b v1bVar = this.q;
+        gl.r(v1bVar);
+        gl.c3(v1bVar);
+    }
+
+    public final void G(TLRPC.InputMedia inputMedia, TL_bots.botPreviewMedia botpreviewmedia) {
+        ArrayList arrayList;
+        k27 k27Var;
+        int e1;
+        TL_stories.StoryItem storyItem;
+        TLRPC.MessageMedia messageMedia;
+        TLRPC.Document document;
+        int i = 0;
+        while (true) {
+            arrayList = this.i;
+            if (i >= arrayList.size()) {
+                k27Var = null;
+                i = 0;
+                break;
+            }
+            k27Var = (k27) arrayList.get(i);
+            if (inputMedia != null && (storyItem = k27Var.l) != null && (messageMedia = storyItem.media) != null) {
+                if (!(inputMedia instanceof TLRPC.TL_inputMediaPhoto)) {
+                    if ((inputMedia instanceof TLRPC.TL_inputMediaDocument) && (document = messageMedia.document) != null && document.id == ((TLRPC.TL_inputMediaDocument) inputMedia).id.id) {
+                        break;
+                    }
+                } else {
+                    TLRPC.Photo photo = messageMedia.photo;
+                    if (photo != null && photo.id == ((TLRPC.TL_inputMediaPhoto) inputMedia).id.id) {
+                        break;
+                    }
+                }
+            }
+            i++;
+        }
+        ArrayList arrayList2 = this.H;
+        if (k27Var != null) {
+            arrayList.remove(k27Var);
+            if (arrayList2.isEmpty()) {
+                arrayList2.add(new ArrayList());
+            }
+            if (i > 0 && i < ((ArrayList) arrayList2.get(0)).size()) {
+                ((ArrayList) arrayList2.get(0)).remove(i);
+            }
+        }
+        q1b q1bVar = new q1b(this, this.d, botpreviewmedia);
+        k27 k27Var2 = new k27(this.c, q1bVar);
+        TLRPC.Message message = k27Var2.k;
+        if (k27Var == null) {
+            e1 = this.I;
+            this.I = e1 + 1;
+        } else {
+            e1 = k27Var.e1();
+        }
+        message.id = e1;
+        q1bVar.id = e1;
+        k27Var2.j = this;
+        k27Var2.r0(false);
+        if (arrayList2.isEmpty()) {
+            arrayList2.add(new ArrayList());
+        }
+        ((ArrayList) arrayList2.get(0)).add(i, Integer.valueOf(k27Var2.e1()));
+        arrayList.add(i, k27Var2);
+        v1b v1bVar = this.q;
+        gl.r(v1bVar);
+        gl.c3(v1bVar);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final boolean H(Runnable runnable) {
+        TL_bots.getPreviewMedias getpreviewmedias;
+        if (this.C || this.D) {
             return false;
         }
+        long j = this.d;
+        String str = this.E;
+        int i = this.c;
+        if (str != null) {
+            TL_bots.getPreviewInfo getpreviewinfo = new TL_bots.getPreviewInfo();
+            getpreviewinfo.bot = na7.q1(i).m1(j);
+            getpreviewinfo.lang_code = str;
+            getpreviewmedias = getpreviewinfo;
+        } else {
+            TL_bots.getPreviewMedias getpreviewmedias2 = new TL_bots.getPreviewMedias();
+            getpreviewmedias2.bot = na7.q1(i).m1(j);
+            getpreviewmedias = getpreviewmedias2;
+        }
+        this.C = true;
+        this.F = ConnectionsManager.getInstance(i).sendRequest(getpreviewmedias, new apa(this, runnable, (byte) 8));
         return true;
     }
 
-    @Override // vlb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(cmb.l6));
+    public final void I(TL_bots.botPreviewMedia botpreviewmedia) {
+        q1b q1bVar = new q1b(this, this.d, botpreviewmedia);
+        k27 k27Var = new k27(this.c, q1bVar);
+        TLRPC.Message message = k27Var.k;
+        int i = this.I;
+        this.I = i + 1;
+        message.id = i;
+        q1bVar.id = i;
+        k27Var.j = this;
+        k27Var.r0(false);
+        ArrayList arrayList = this.H;
+        if (arrayList.isEmpty()) {
+            arrayList.add(new ArrayList());
+        }
+        ((ArrayList) arrayList.get(0)).add(0, Integer.valueOf(k27Var.e1()));
+        this.i.add(0, k27Var);
+        v1b v1bVar = this.q;
+        gl.r(v1bVar);
+        gl.c3(v1bVar);
     }
 
-    public final void b(boolean z, boolean z2) {
-        byte b = this.a;
-        if (b == 1) {
-            this.e.a(z, z2);
-            return;
-        }
-        if (b == 3) {
-            ImageView imageView = this.h;
-            if (z2) {
-                imageView.animate().cancel();
-                imageView.animate().setListener(new q1b(this, z, (byte) 0)).alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.1f).scaleY(z ? 1.0f : 0.1f).setDuration(150L).start();
-                return;
+    @Override // y1b
+    public final k27 f(int i) {
+        int i2 = 0;
+        while (true) {
+            ArrayList arrayList = this.i;
+            if (i2 >= arrayList.size()) {
+                return null;
             }
-            imageView.setVisibility(z ? 0 : 4);
-            if (z) {
-                imageView.setAlpha(1.0f);
-                imageView.setScaleX(1.0f);
-                imageView.setScaleY(1.0f);
-                return;
-            } else {
-                imageView.setAlpha(0.0f);
-                imageView.setScaleX(0.1f);
-                imageView.setScaleY(0.1f);
-                return;
+            if (((k27) arrayList.get(i2)).e1() == i) {
+                return (k27) arrayList.get(i2);
             }
-        }
-        if (this.x) {
-            FrameLayout frameLayout = this.y;
-            if (z2) {
-                frameLayout.animate().cancel();
-                frameLayout.animate().setListener(new q1b(this, z, (byte) 1)).alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.1f).scaleY(z ? 1.0f : 0.1f).setDuration(150L).start();
-                return;
-            }
-            frameLayout.setVisibility(z ? 0 : 4);
-            if (z) {
-                frameLayout.setAlpha(1.0f);
-                frameLayout.setScaleX(1.0f);
-                frameLayout.setScaleY(1.0f);
-            } else {
-                frameLayout.setAlpha(0.0f);
-                frameLayout.setScaleX(0.1f);
-                frameLayout.setScaleY(0.1f);
-            }
+            i2++;
         }
     }
 
-    public final void c(final boolean z) {
-        float f;
-        final byte b = 1;
-        if (this.a == 1) {
-            float f2 = 0.0f;
-            float f3 = 1.0f;
-            if (z) {
-                f = 1.0f;
-            } else {
-                f = 0.0f;
-                f2 = 1.0f;
-            }
-            final byte b2 = 2;
-            final byte b3 = 0;
-            float[] fArr = {f, f2};
-            float f4 = 0.66f;
-            if (z) {
-                f3 = 0.66f;
-                f4 = 1.0f;
-            }
-            float[] fArr2 = {f4, f3};
-            ImageView imageView = this.n;
-            imageView.setVisibility(0);
-            ViewPropertyAnimator duration = imageView.animate().alpha(fArr[0]).scaleX(fArr2[0]).scaleY(fArr2[0]).setDuration(200L);
-            d53 d53Var = vt3.a;
-            duration.setInterpolator(d53Var).withEndAction(new Runnable(this) { // from class: p1b
-                public final /* synthetic */ s1b b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    byte b4 = b3;
-                    boolean z2 = z;
-                    s1b s1bVar = this.b;
-                    switch (b4) {
-                        case 0:
-                            if (!z2) {
-                                s1bVar.n.setVisibility(8);
-                                break;
-                            }
-                            break;
-                        case 1:
-                            if (z2) {
-                                s1bVar.y.setVisibility(8);
-                                break;
-                            }
-                            break;
-                        default:
-                            if (z2) {
-                                s1bVar.h.setVisibility(8);
-                                break;
-                            }
-                            break;
-                    }
-                }
-            }).start();
-            if (this.x) {
-                FrameLayout frameLayout = this.y;
-                frameLayout.setVisibility(0);
-                frameLayout.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(d53Var).withEndAction(new Runnable(this) { // from class: p1b
-                    public final /* synthetic */ s1b b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b4 = b;
-                        boolean z2 = z;
-                        s1b s1bVar = this.b;
-                        switch (b4) {
-                            case 0:
-                                if (!z2) {
-                                    s1bVar.n.setVisibility(8);
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                if (z2) {
-                                    s1bVar.y.setVisibility(8);
-                                    break;
-                                }
-                                break;
-                            default:
-                                if (z2) {
-                                    s1bVar.h.setVisibility(8);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                }).start();
-            } else {
-                ImageView imageView2 = this.h;
-                imageView2.setVisibility(0);
-                imageView2.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(d53Var).withEndAction(new Runnable(this) { // from class: p1b
-                    public final /* synthetic */ s1b b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b4 = b2;
-                        boolean z2 = z;
-                        s1b s1bVar = this.b;
-                        switch (b4) {
-                            case 0:
-                                if (!z2) {
-                                    s1bVar.n.setVisibility(8);
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                if (z2) {
-                                    s1bVar.y.setVisibility(8);
-                                    break;
-                                }
-                                break;
-                            default:
-                                if (z2) {
-                                    s1bVar.h.setVisibility(8);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                }).start();
-            }
-        }
+    @Override // y1b
+    public final int g() {
+        return this.i.size();
     }
 
-    public final void d(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, boolean z, boolean z2) {
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2;
-        TLRPC.Document document;
-        this.f = z;
-        this.r = tL_messages_stickerSet;
-        this.s = z2;
-        bf0 bf0Var = this.d;
-        bf0Var.setVisibility(0);
-        qz8 qz8Var = this.b;
-        qz8Var.setTranslationY(0.0f);
-        qz8Var.setText(this.r.set.title);
-        boolean z3 = this.r.set.archived;
-        TextView textView = this.c;
-        if (z3) {
-            qz8Var.setAlpha(0.5f);
-            textView.setAlpha(0.5f);
-            bf0Var.setAlpha(0.5f);
-        } else {
-            qz8Var.setAlpha(1.0f);
-            textView.setAlpha(1.0f);
-            bf0Var.setAlpha(1.0f);
-        }
-        boolean z4 = tL_messages_stickerSet.set.emojis;
-        this.x = z4;
-        this.y.setVisibility(z4 ? 0 : 8);
-        this.h.setVisibility(this.x ? 8 : 0);
-        bf0Var.setColorFilter(null);
-        ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
-        if (arrayList == null || arrayList.isEmpty()) {
-            tL_messages_stickerSet2 = tL_messages_stickerSet;
-            textView.setText(jb6.G(0, tL_messages_stickerSet2.set.emojis ? "EmojiCount" : "Stickers", new Object[0]));
-            bf0Var.setImageDrawable(null);
-            if (tL_messages_stickerSet2.set.thumb_document_id != 0) {
-                vm.g(z8c.t0).b(tL_messages_stickerSet2.set.thumb_document_id, new a47(this, (byte) 2));
-            }
-        } else {
-            textView.setText(jb6.G(arrayList.size(), this.x ? "EmojiCount" : "Stickers", new Object[0]));
-            int i = 0;
-            while (true) {
-                if (i >= arrayList.size()) {
-                    document = null;
-                    break;
-                }
-                document = arrayList.get(i);
-                if (document != null && document.id == tL_messages_stickerSet.set.thumb_document_id) {
-                    break;
-                } else {
-                    i++;
-                }
-            }
-            if (document == null) {
-                document = arrayList.get(0);
-            }
-            TLRPC.Document document2 = document;
-            e86.e(1);
-            TLObject w = bc4.w(tL_messages_stickerSet.set.thumbs, 90, false, null, false);
-            if (w == null) {
-                w = document2;
-            }
-            meb d = eq3.d(tL_messages_stickerSet.set.thumbs, cmb.Z6, 1.0f, false);
-            boolean z5 = w instanceof TLRPC.Document;
-            gn5 c = z5 ? gn5.c(bc4.w(document2.thumbs, 90, false, null, false), document2) : gn5.k((TLRPC.PhotoSize) w, document2, tL_messages_stickerSet.set.thumb_version);
-            String concat = "50_50".concat(!e86.e(this.x ? 16388 : 1) ? "_firstframe" : "");
-            if (z5 && (k47.K2(document2, true) || k47.M4(document2))) {
-                if (d != null) {
-                    bf0Var.p(gn5.b(document2), concat, d, tL_messages_stickerSet);
-                    tL_messages_stickerSet2 = tL_messages_stickerSet;
-                } else {
-                    bf0Var.h(gn5.b(document2), concat, c, null, 0, tL_messages_stickerSet);
-                    tL_messages_stickerSet2 = tL_messages_stickerSet;
-                }
-                if (k47.B4(document2)) {
-                    bf0Var.setColorFilter(cmb.u3);
-                }
-            } else {
-                tL_messages_stickerSet2 = tL_messages_stickerSet;
-                if (c == null || c.p != 1) {
-                    bf0Var.n(c, concat, "webp", d, tL_messages_stickerSet2);
-                } else {
-                    bf0Var.n(c, concat, "tgs", d, tL_messages_stickerSet2);
-                }
-            }
-        }
-        if (this.s) {
-            textView.setText((tL_messages_stickerSet2.set.emojis ? "t.me/addemoji/" : "t.me/addstickers/") + tL_messages_stickerSet2.set.short_name);
-        }
+    @Override // y1b
+    public final ArrayList h() {
+        return this.H;
     }
 
-    public final void e(int i) {
-        AnimatorSet animatorSet = this.I;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.I = null;
-        }
-        byte b = 15;
-        cj8 cj8Var = this.G;
-        if (i == 1) {
-            cj8Var.b(jb6.M0(2131743563, null), new x10(this, b), false);
-        } else if (i == 2) {
-            cj8Var.b(jb6.M0(2131745815, null), new x10(this, b), false);
-        }
-        cj8Var.setEnabled(i == 1 || i == 2);
-        boolean z = i == 3;
-        TextView textView = this.E;
-        textView.setEnabled(z);
-        boolean z2 = i == 4;
-        TextView textView2 = this.F;
-        textView2.setEnabled(z2);
-        cj8Var.setAlpha((i == 1 || i == 2) ? 1.0f : 0.0f);
-        cj8Var.setScaleX((i == 1 || i == 2) ? 1.0f : 0.6f);
-        cj8Var.setScaleY((i == 1 || i == 2) ? 1.0f : 0.6f);
-        cj8Var.setVisibility((i == 1 || i == 2) ? 0 : 8);
-        textView.setAlpha(i == 3 ? 1.0f : 0.0f);
-        textView.setScaleX(i == 3 ? 1.0f : 0.6f);
-        textView.setScaleY(i == 3 ? 1.0f : 0.6f);
-        textView.setVisibility(i == 3 ? 0 : 8);
-        textView2.setAlpha(i == 4 ? 1.0f : 0.0f);
-        textView2.setScaleX(i == 4 ? 1.0f : 0.6f);
-        textView2.setScaleY(i != 4 ? 0.6f : 1.0f);
-        textView2.setVisibility(i != 4 ? 8 : 0);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(gm.L(58.0f), TLObject.FLAG_30);
-        FrameLayout frameLayout = this.y;
-        frameLayout.measure(-2146483649, makeMeasureSpec);
-        int measuredWidth = frameLayout.getMeasuredWidth() + gm.L(26.0f);
-        boolean z3 = jb6.a0;
-        TextView textView3 = this.c;
-        qz8 qz8Var = this.b;
-        if (z3) {
-            ((ViewGroup.MarginLayoutParams) qz8Var.getLayoutParams()).leftMargin = measuredWidth;
-            ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).leftMargin = measuredWidth;
-        } else {
-            ((ViewGroup.MarginLayoutParams) qz8Var.getLayoutParams()).rightMargin = measuredWidth;
-            ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).rightMargin = measuredWidth;
-        }
+    @Override // y1b
+    public final int i() {
+        return this.i.size();
     }
 
-    public TLRPC.TL_messages_stickerSet getStickersSet() {
-        return this.r;
+    @Override // y1b
+    public final boolean k() {
+        return this.C;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.f) {
-            canvas.drawLine(jb6.a0 ? 0.0f : gm.L(71.0f), getHeight() - 1, (getWidth() - getPaddingRight()) - (jb6.a0 ? gm.L(71.0f) : 0), getHeight() - 1, cmb.j0);
-        }
+    @Override // y1b
+    public final boolean l() {
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        jh2 jh2Var = this.e;
-        if (jh2Var == null || !jh2Var.a.q) {
-            return;
-        }
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(true);
+    @Override // y1b
+    public final boolean q(int i, List list, boolean z) {
+        return H(null);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(58.0f) + (this.f ? 1 : 0), TLObject.FLAG_30));
+    @Override // y1b
+    public final boolean r(int i) {
+        return false;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        FrameLayout frameLayout;
-        ImageView imageView;
-        Drawable background = getBackground();
-        Rect rect = this.w;
-        if (background != null && (imageView = this.h) != null) {
-            imageView.getHitRect(rect);
-            if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                return true;
-            }
-        }
-        if (getBackground() != null && this.x && (frameLayout = this.y) != null) {
-            frameLayout.getHitRect(rect);
-            if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                return true;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // y1b
+    public final void j() {
     }
 
-    public void setChecked(boolean z) {
-        b(z, true);
+    @Override // y1b
+    public final void s() {
     }
 
-    public void setDeleteAction(View.OnClickListener onClickListener) {
-        ImageView imageView = this.H;
-        if (imageView != null) {
-            imageView.setVisibility(onClickListener == null ? 8 : 0);
-            imageView.setOnClickListener(onClickListener);
-        }
-    }
-
-    public void setNeedDivider(boolean z) {
-        this.f = z;
-    }
-
-    public void setOnOptionsClick(View.OnClickListener onClickListener) {
-        ImageView imageView = this.h;
-        if (imageView == null) {
-            return;
-        }
-        imageView.setOnClickListener(onClickListener);
-    }
-
-    public void setOnReorderButtonTouchListener(View.OnTouchListener onTouchListener) {
-        this.n.setOnTouchListener(onTouchListener);
-    }
-
-    public void setReorderable(boolean z) {
-        c(z);
-    }
-
-    @Override // vlb
-    public final void updateColors() {
+    @Override // y1b
+    public final void x() {
     }
 }

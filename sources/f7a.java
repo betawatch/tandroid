@@ -1,130 +1,64 @@
 // default package
 
-import android.content.Context;
-import android.os.Parcel;
-import android.os.RemoteException;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public abstract class f7a {
-    public static final ce6 b = new ce6("Session", null);
-    public final icd a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class f7a implements ca1 {
+    public TLObject a = null;
+    public TLRPC.TL_error b = null;
+    public final /* synthetic */ SessionsActivity c;
 
-    public f7a(Context context, String str, String str2) {
-        icd icdVar;
-        try {
-            icdVar = v8d.b(context).b0(str, str2, new t7d(this));
-        } catch (RemoteException | sg7 e) {
-            v8d.a.a(e, "Unable to call %s on %s.", "newSessionImpl", q9d.class.getSimpleName());
-            icdVar = null;
-        }
-        this.a = icdVar;
+    public f7a(SessionsActivity sessionsActivity) {
+        this.c = sessionsActivity;
     }
 
-    public final String a() {
-        ite.e("Must be called from the main thread.");
-        icd icdVar = this.a;
-        if (icdVar != null) {
-            try {
-                vbd vbdVar = (vbd) icdVar;
-                Parcel T = vbdVar.T(vbdVar.R(), 3);
-                String readString = T.readString();
-                T.recycle();
-                return readString;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "getSessionId", icd.class.getSimpleName());
+    @Override // ca1
+    public final void H(String str) {
+        TLObject tLObject = this.a;
+        byte b = 0;
+        if (!(tLObject instanceof TLRPC.TL_authorization)) {
+            if (this.b != null) {
+                gl.c3(new e7a(this, b));
+                return;
             }
-        }
-        return null;
-    }
-
-    public final boolean b() {
-        ite.e("Must be called from the main thread.");
-        icd icdVar = this.a;
-        if (icdVar != null) {
-            try {
-                vbd vbdVar = (vbd) icdVar;
-                Parcel T = vbdVar.T(vbdVar.R(), 5);
-                int i = kid.a;
-                boolean z = T.readInt() != 0;
-                T.recycle();
-                return z;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "isConnected", icd.class.getSimpleName());
-            }
-        }
-        return false;
-    }
-
-    public final boolean c() {
-        ite.e("Must be called from the main thread.");
-        icd icdVar = this.a;
-        if (icdVar != null) {
-            try {
-                vbd vbdVar = (vbd) icdVar;
-                Parcel T = vbdVar.T(vbdVar.R(), 6);
-                int i = kid.a;
-                boolean z = T.readInt() != 0;
-                T.recycle();
-                return z;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "isConnecting", icd.class.getSimpleName());
-            }
-        }
-        return false;
-    }
-
-    public final void d(int i) {
-        icd icdVar = this.a;
-        if (icdVar == null) {
             return;
         }
-        try {
-            vbd vbdVar = (vbd) icdVar;
-            Parcel R = vbdVar.R();
-            R.writeInt(i);
-            vbdVar.V(R, 13);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "notifySessionEnded", icd.class.getSimpleName());
+        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
+        boolean z = tL_authorization.password_pending;
+        SessionsActivity sessionsActivity = this.c;
+        if (z) {
+            sessionsActivity.e.add(0, tL_authorization);
+            sessionsActivity.V = 4;
+            sessionsActivity.o0(false);
+        } else {
+            sessionsActivity.d.add(0, tL_authorization);
         }
+        sessionsActivity.q0();
+        sessionsActivity.a.f();
+        sessionsActivity.r.m(this.a, 11, 0L);
     }
 
-    public final int e() {
-        ite.e("Must be called from the main thread.");
-        icd icdVar = this.a;
-        if (icdVar != null) {
-            try {
-                vbd vbdVar = (vbd) icdVar;
-                Parcel T = vbdVar.T(vbdVar.R(), 17);
-                int readInt = T.readInt();
-                T.recycle();
-                if (readInt >= 211100000) {
-                    vbd vbdVar2 = (vbd) icdVar;
-                    Parcel T2 = vbdVar2.T(vbdVar2.R(), 18);
-                    int readInt2 = T2.readInt();
-                    T2.recycle();
-                    return readInt2;
-                }
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "getSessionStartType", icd.class.getSimpleName());
-            }
-        }
-        return 0;
+    @Override // ca1
+    public final boolean W0(String str, u91 u91Var) {
+        this.a = null;
+        this.b = null;
+        gl.d3(new q3a((Object) this, (Object) str, (Object) u91Var, (byte) 3), 750L);
+        return true;
     }
 
-    public final xk5 f() {
-        icd icdVar = this.a;
-        if (icdVar != null) {
-            try {
-                vbd vbdVar = (vbd) icdVar;
-                Parcel T = vbdVar.T(vbdVar.R(), 1);
-                xk5 T2 = eq7.T(T.readStrongBinder());
-                T.recycle();
-                return T2;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "getWrappedObject", icd.class.getSimpleName());
-            }
-        }
+    @Override // ca1
+    public final String Z0() {
         return null;
+    }
+
+    @Override // ca1
+    public final void onDismiss() {
+    }
+
+    @Override // ca1
+    public final void Q1(vf7 vf7Var) {
     }
 }

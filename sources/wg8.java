@@ -1,59 +1,32 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class wg8 extends rc2 {
-    public final /* synthetic */ byte Ld;
-    public final /* synthetic */ int Md;
-    public final /* synthetic */ int Nd;
+public final class wg8 extends mr {
+    public bra e;
+    public Paint f;
+    public float h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wg8(Context context, int i, ylb ylbVar, int i2, int i3, byte b) {
-        super(context, i, false, null, ylbVar);
-        this.Ld = b;
-        this.Md = i2;
-        this.Nd = i3;
-    }
-
-    @Override // rc2
-    public final void j1(Canvas canvas) {
-        switch (this.Ld) {
-            case 0:
-                this.S4 = 0;
-                this.T4 = this.Q4.size() - 1;
-                super.j1(canvas);
-                break;
-            default:
-                this.S4 = 0;
-                this.T4 = this.Q4.size() - 1;
-                super.j1(canvas);
-                break;
-        }
-    }
-
-    @Override // rc2, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.Ld) {
-            case 0:
-                setMeasuredDimension(this.Md, this.Nd);
-                break;
-            default:
-                setMeasuredDimension(this.Md, this.Nd);
-                break;
-        }
-    }
-
-    @Override // rc2, android.view.View
-    public final void setPressed(boolean z) {
-        byte b = this.Ld;
-    }
-
-    private final void h4(boolean z) {
-    }
-
-    private final void i4(boolean z) {
+    @Override // mr, android.view.View
+    public final void draw(Canvas canvas) {
+        int L = gl.L(10.0f);
+        bra braVar = this.e;
+        braVar.c.set(gl.L(5.0f), gl.L(5.0f), getMeasuredWidth() - gl.L(5.0f), getMeasuredHeight() - gl.L(5.0f));
+        float f = -L;
+        braVar.a.set(f, f, getWidth() + L, getHeight() + L);
+        canvas.save();
+        float f2 = 1.0f - this.h;
+        canvas.scale(f2, f2, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        braVar.d(canvas);
+        canvas.restore();
+        invalidate();
+        RectF rectF = gl.P;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        canvas.drawRoundRect(rectF, gl.L(18.0f), gl.L(18.0f), this.f);
+        super.draw(canvas);
     }
 }

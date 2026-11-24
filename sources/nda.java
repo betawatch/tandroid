@@ -1,28 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nda implements qac {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ nha b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ nda(nha nhaVar, byte b) {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class nda extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nfa b;
+
+    public /* synthetic */ nda(nfa nfaVar, byte b) {
         this.a = b;
-        this.b = nhaVar;
+        this.b = nfaVar;
     }
 
-    @Override // qac
-    public final void a(Object obj) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        nha nhaVar = this.b;
-        a4b a4bVar = (a4b) obj;
+        nfa nfaVar = this.b;
         switch (b) {
             case 0:
-                gm.d3(new e6a(nhaVar, a4bVar, (byte) 4), 100L);
+                nfaVar.O0 = null;
                 break;
             default:
-                int[] iArr = nha.t2;
-                gm.d3(new e6a(nhaVar, a4bVar, (byte) 4), 100L);
+                r7 r7Var = nfaVar.q0;
+                nfaVar.i1 = null;
+                boolean z = nfaVar.l1;
+                iea[] ieaVarArr = nfaVar.n0;
+                if (z) {
+                    ieaVarArr[1].setVisibility(8);
+                    if (r7Var == null || nfaVar.q()) {
+                        nfaVar.r0 = nfaVar.V(0.0f);
+                        nfaVar.K1(0.0f);
+                    } else {
+                        nfaVar.setSearchItemVisibility(nfaVar.s0() ? 8 : 4);
+                        nfaVar.r0 = 0.0f;
+                    }
+                    nfaVar.G1(false);
+                    nfaVar.A0 = (byte) 0;
+                } else {
+                    iea ieaVar = ieaVarArr[0];
+                    ieaVarArr[0] = ieaVarArr[1];
+                    ieaVarArr[1] = ieaVar;
+                    ieaVar.setVisibility(8);
+                    if (r7Var != null && nfaVar.A0 == 2) {
+                        nfaVar.setSearchItemVisibility(nfaVar.s0() ? 8 : 4);
+                    }
+                    nfaVar.A0 = (byte) 0;
+                    nfaVar.g1(1.0f, ieaVarArr[0].F);
+                    nfaVar.S0();
+                    nfaVar.q1();
+                }
+                nfaVar.j1 = false;
+                nfaVar.B1 = false;
+                nfaVar.A1 = false;
+                nfaVar.setHeaderEnabled(true);
+                nfaVar.L0.setEnabled(true);
                 break;
         }
     }

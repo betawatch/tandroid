@@ -1,34 +1,60 @@
 // default package
 
-import android.graphics.Canvas;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public abstract class pxc {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public class pxc extends oxc {
+    public io5 o;
+    public io5 p;
+    public io5 q;
 
-    public pxc(int i, int i2, int i3, int i4) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
+    public pxc(vxc vxcVar, WindowInsets windowInsets) {
+        super(vxcVar, windowInsets);
+        this.o = null;
+        this.p = null;
+        this.q = null;
     }
 
-    public abstract Canvas a();
-
-    public abstract void b();
-
-    public abstract void c(Canvas canvas, float f);
-
-    public abstract void d();
-
-    public boolean e() {
-        return true;
+    @Override // sxc
+    public io5 h() {
+        io5 io5Var = this.p;
+        if (io5Var != null) {
+            return io5Var;
+        }
+        io5 c = io5.c(this.c.getMandatorySystemGestureInsets());
+        this.p = c;
+        return c;
     }
 
-    public void f() {
+    @Override // sxc
+    public io5 j() {
+        io5 io5Var = this.o;
+        if (io5Var != null) {
+            return io5Var;
+        }
+        io5 c = io5.c(this.c.getSystemGestureInsets());
+        this.o = c;
+        return c;
+    }
+
+    @Override // sxc
+    public io5 l() {
+        io5 io5Var = this.q;
+        if (io5Var != null) {
+            return io5Var;
+        }
+        io5 c = io5.c(this.c.getTappableElementInsets());
+        this.q = c;
+        return c;
+    }
+
+    @Override // mxc, sxc
+    public vxc m(int i, int i2, int i3, int i4) {
+        return vxc.h(null, this.c.inset(i, i2, i3, i4));
+    }
+
+    @Override // nxc, sxc
+    public void s(io5 io5Var) {
     }
 }

@@ -1,40 +1,82 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.view.WindowManager;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yw0 implements qac {
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final class yw0 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ wx0 b;
+    public final /* synthetic */ fx0 b;
 
-    public /* synthetic */ yw0(wx0 wx0Var, byte b) {
+    public /* synthetic */ yw0(fx0 fx0Var, byte b) {
         this.a = b;
-        this.b = wx0Var;
+        this.b = fx0Var;
     }
 
-    @Override // qac
-    public final void a(Object obj) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
         byte b = this.a;
-        wx0 wx0Var = this.b;
+        fx0 fx0Var = this.b;
         switch (b) {
             case 0:
-                Boolean bool = (Boolean) obj;
-                ox0 ox0Var = wx0Var.E;
-                if (ox0Var != null) {
-                    if (!bool.booleanValue()) {
-                        ox0Var.Q = System.currentTimeMillis();
-                        ox0Var.v("secondary_button_pressed", null);
-                        break;
-                    } else {
-                        ox0Var.Q = System.currentTimeMillis();
-                        ox0Var.v("main_button_pressed", null);
-                        break;
-                    }
+                AnimatorSet animatorSet = fx0Var.A0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fx0Var.A0 = null;
+                    fx0Var.B0 = (byte) 0;
+                    break;
                 }
                 break;
             default:
-                gm.c3(new x30(wx0Var, (TLRPC.UserFull) obj, (byte) 21));
+                AnimatorSet animatorSet2 = fx0Var.A0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fx0Var.A0 = null;
+                    fx0Var.B0 = (byte) 0;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        fx0 fx0Var = this.b;
+        switch (b) {
+            case 0:
+                AnimatorSet animatorSet = fx0Var.A0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fx0Var.A0 = null;
+                    fx0Var.B0 = (byte) 0;
+                    fx0Var.x();
+                    ax0 ax0Var = fx0Var.z0;
+                    if (ax0Var != null) {
+                        ax0Var.x();
+                    }
+                    if (fx0Var.K) {
+                        fx0Var.c.setLayerType(0, null);
+                    }
+                    if (fx0Var.W) {
+                        WindowManager.LayoutParams attributes = fx0Var.getWindow().getAttributes();
+                        attributes.flags &= -1025;
+                        fx0Var.getWindow().setAttributes(attributes);
+                    }
+                }
+                if (fx0Var.L0) {
+                    kk7.e().k(99, 512);
+                }
+                fx0Var.M0.e();
+                break;
+            default:
+                AnimatorSet animatorSet2 = fx0Var.A0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fx0Var.A0 = null;
+                    fx0Var.B0 = (byte) 0;
+                    gl.c3(new nv0(this, (byte) 3));
+                }
+                kk7.e().k(99, 512);
                 break;
         }
     }

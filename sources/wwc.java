@@ -1,35 +1,11 @@
 // default package
 
-import java.util.Set;
+import android.view.Window;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class wwc {
-    public String a;
-    public String b;
-    public Set c;
-    public String d;
-    public String e;
-    public int f;
-    public boolean g;
-    public int h;
-    public boolean i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public float o;
-    public int p;
-    public boolean q;
-
-    public static int a(int i, int i2, String str, String str2) {
-        if (str.isEmpty() || i == -1) {
-            return i;
-        }
-        if (str.equals(str2)) {
-            return i + i2;
-        }
-        return -1;
+public abstract class wwc {
+    public static void a(Window.Callback callback, boolean z) {
+        callback.onPointerCaptureChanged(z);
     }
 }

@@ -11,7 +11,7 @@ import java.security.MessageDigest;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class a extends b {
     @Override // org.telegram.utils.twidget.b
@@ -21,21 +21,21 @@ public final class a extends b {
         int i2;
         AssetManager assetManager;
         if (!WidgetSandboxNative.available()) {
-            dq9.m("libtwidget is missing");
+            sc8.j("libtwidget is missing");
             return 0L;
         }
         int i3 = 0;
         WidgetSandboxNative.conformance(false);
         WidgetSandboxNative.attackScan(false);
         WidgetSandboxNative.limits(null);
-        ExecutorService executorService = iyc.a;
-        synchronized (iyc.class) {
-            file = iyc.b;
+        ExecutorService executorService = hwc.a;
+        synchronized (hwc.class) {
+            file = hwc.b;
             if (file == null) {
                 AssetManager assets = context.getApplicationContext().getAssets();
                 InputStream open = assets.open("WidgetSandbox/manifest.txt");
                 try {
-                    String a = iyc.a(open);
+                    String a = hwc.a(open);
                     open.close();
                     byte[] digest = MessageDigest.getInstance("SHA-256").digest(a.getBytes(StandardCharsets.UTF_8));
                     StringBuilder sb = new StringBuilder();
@@ -128,7 +128,7 @@ public final class a extends b {
                         } finally {
                         }
                     }
-                    iyc.b = file2;
+                    hwc.b = file2;
                     file = file2;
                 } finally {
                 }

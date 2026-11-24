@@ -1,19 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ufe implements cq7 {
-    public static final ufe a = new ufe();
+import java.io.Serializable;
 
-    static {
-        mlb.z(mlb.r(mmd.class, new eld(1)));
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class ufe {
+    public static String a(byte[] bArr) {
+        StringBuilder sb = new StringBuilder(bArr.length << 1);
+        for (byte b : bArr) {
+            sb.append(String.format("%02x", Byte.valueOf(b)));
+        }
+        return sb.toString();
     }
 
-    @Override // b44
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    /* JADX WARN: Multi-variable type inference failed */
+    public static long[] b(Serializable serializable) {
+        if (!(serializable instanceof int[])) {
+            if (serializable instanceof long[]) {
+                return (long[]) serializable;
+            }
+            return null;
         }
-        throw null;
+        int[] iArr = (int[]) serializable;
+        long[] jArr = new long[iArr.length];
+        for (int i = 0; i < iArr.length; i++) {
+            jArr[i] = iArr[i];
+        }
+        return jArr;
     }
 }

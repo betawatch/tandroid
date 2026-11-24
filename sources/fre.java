@@ -1,33 +1,87 @@
 // default package
 
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public abstract class fre {
-    public static String a(ArrayList arrayList) {
-        int size = arrayList.size();
-        boolean z = false;
-        String str = null;
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            String str2 = ((zzb) obj).a.g.t;
-            if (wf7.m(str2)) {
-                return "video/mp4";
-            }
-            if (wf7.i(str2)) {
-                z = true;
-            } else if (wf7.k(str2)) {
-                if (Objects.equals(str2, "image/heic")) {
-                    str = "image/heif";
-                } else if (Objects.equals(str2, "image/avif")) {
-                    str = "image/avif";
-                }
-            }
+    public static void a(String str, boolean z) {
+        if (z) {
+            return;
         }
-        return z ? "audio/mp4" : str != null ? str : "application/mp4";
+        w26.j(str);
+    }
+
+    public static void b(boolean z) {
+        if (z) {
+            return;
+        }
+        sc8.e();
+    }
+
+    public static void c(boolean z, String str, Object... objArr) {
+        if (!z) {
+            throw new IllegalArgumentException(String.format(str, objArr));
+        }
+    }
+
+    public static void d(Handler handler) {
+        Looper myLooper = Looper.myLooper();
+        if (myLooper != handler.getLooper()) {
+            String name = myLooper != null ? myLooper.getThread().getName() : "null current looper";
+            String name2 = handler.getLooper().getThread().getName();
+            StringBuilder sb = new StringBuilder(String.valueOf(name).length() + String.valueOf(name2).length() + 35 + 1);
+            ls6.u(sb, "Must be called on ", name2, " thread, but got ", name);
+            fyb.k(sb, ".");
+        }
+    }
+
+    public static void e(String str) {
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            return;
+        }
+        sc8.j(str);
+    }
+
+    public static void f(String str) {
+        if (TextUtils.isEmpty(str)) {
+            w26.j("Given String is empty or null");
+        }
+    }
+
+    public static void g(String str, String str2) {
+        if (TextUtils.isEmpty(str)) {
+            w26.j(str2);
+        }
+    }
+
+    public static void h(Object obj) {
+        if (obj != null) {
+            return;
+        }
+        fvc.f("null reference");
+    }
+
+    public static void i(Object obj, String str) {
+        if (obj != null) {
+            return;
+        }
+        fvc.f(str);
+    }
+
+    public static void j(String str, boolean z) {
+        if (z) {
+            return;
+        }
+        sc8.j(str);
+    }
+
+    public static void k(boolean z) {
+        if (z) {
+            return;
+        }
+        sdb.a();
     }
 }

@@ -1,7 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface kk4 {
-    boolean run();
+public final class kk4 extends gw2 {
+    public Throwable a;
+    public /* synthetic */ Object b;
+    public int c;
+
+    @Override // of0
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.c |= TLObject.FLAG_31;
+        return che.a(null, null, null, this);
+    }
 }

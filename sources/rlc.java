@@ -1,31 +1,15 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
-import java.security.SecureRandom;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class rlc extends AnimatorListenerAdapter {
-    public final /* synthetic */ slc a;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class rlc {
+    public final /* synthetic */ TL_wallet.nftItem a;
+    public final /* synthetic */ hmc b;
 
-    public rlc(slc slcVar) {
-        this.a = slcVar;
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator, boolean z) {
-        slc slcVar = this.a;
-        slcVar.e = slcVar.c;
-        slcVar.f = slcVar.d;
-        SecureRandom secureRandom = Utilities.b;
-        slcVar.c = gm.L(12.0f) + secureRandom.nextInt(gm.L(16.0f));
-        slcVar.d = gm.L(12.0f) + secureRandom.nextInt(gm.L(16.0f));
-        ValueAnimator valueAnimator = slcVar.b;
-        if (valueAnimator != null) {
-            valueAnimator.start();
-        }
+    public rlc(hmc hmcVar, TL_wallet.nftItem nftitem) {
+        this.b = hmcVar;
+        this.a = nftitem;
     }
 }

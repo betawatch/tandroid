@@ -1,39 +1,24 @@
 // default package
 
-import android.text.SpannableStringBuilder;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class zk2 extends yk2 {
-    public SpannableStringBuilder c;
-
-    @Override // yk2, android.text.SpannableString, android.text.Spanned
-    public final int getSpanEnd(Object obj) {
-        SpannableStringBuilder spannableStringBuilder;
-        return (this.a || (spannableStringBuilder = this.c) == null) ? super.getSpanEnd(obj) : spannableStringBuilder.getSpanEnd(obj);
+public abstract class zk2 {
+    public static List a(Object obj) {
+        List singletonList = Collections.singletonList(obj);
+        singletonList.getClass();
+        return singletonList;
     }
 
-    @Override // yk2, android.text.SpannableString, android.text.Spanned
-    public final int getSpanFlags(Object obj) {
-        SpannableStringBuilder spannableStringBuilder;
-        return (this.a || (spannableStringBuilder = this.c) == null) ? super.getSpanFlags(obj) : spannableStringBuilder.getSpanFlags(obj);
-    }
-
-    @Override // yk2, android.text.SpannableString, android.text.Spanned
-    public final int getSpanStart(Object obj) {
-        SpannableStringBuilder spannableStringBuilder;
-        return (this.a || (spannableStringBuilder = this.c) == null) ? super.getSpanStart(obj) : spannableStringBuilder.getSpanStart(obj);
-    }
-
-    @Override // yk2, android.text.SpannableString, android.text.Spanned
-    public final Object[] getSpans(int i, int i2, Class cls) {
-        SpannableStringBuilder spannableStringBuilder;
-        return (this.a || (spannableStringBuilder = this.c) == null) ? super.getSpans(i, i2, cls) : spannableStringBuilder.getSpans(i, i2, cls);
-    }
-
-    @Override // yk2, android.text.SpannableString, android.text.Spanned
-    public final int nextSpanTransition(int i, int i2, Class cls) {
-        SpannableStringBuilder spannableStringBuilder;
-        return (this.a || (spannableStringBuilder = this.c) == null) ? super.nextSpanTransition(i, i2, cls) : spannableStringBuilder.nextSpanTransition(i, i2, cls);
+    public static List b(Object... objArr) {
+        if (objArr.length <= 0) {
+            return c24.a;
+        }
+        List asList = Arrays.asList(objArr);
+        asList.getClass();
+        return asList;
     }
 }

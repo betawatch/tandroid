@@ -1,1228 +1,1163 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.Locale;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class yc2 {
-    public boolean A;
-    public boolean A1;
-    public float A2;
-    public boolean B;
-    public int[] B0;
-    public int B1;
-    public float B2;
-    public boolean C;
-    public boolean C0;
-    public boolean C1;
-    public int C2;
-    public float D;
-    public boolean D0;
-    public boolean D1;
-    public int D2;
-    public float E;
-    public boolean E1;
-    public boolean E2;
-    public int F;
-    public boolean F0;
-    public boolean F1;
-    public StaticLayout F2;
-    public boolean G;
-    public boolean G0;
-    public boolean G1;
-    public boolean G2;
-    public StaticLayout H;
-    public boolean H0;
-    public int H1;
-    public int H2;
-    public StaticLayout I;
-    public ArrayList I0;
-    public int I1;
-    public int I2;
-    public float J;
-    public ArrayList J0;
-    public boolean J1;
-    public int J2;
-    public float K;
-    public int K0;
-    public boolean K1;
-    public float K2;
-    public float L;
-    public boolean L0;
-    public boolean L2;
-    public float M;
-    public uj9 M0;
-    public boolean M2;
-    public int N;
-    public uj9 N0;
-    public boolean N2;
-    public int O;
-    public float O0;
-    public boolean O1;
-    public boolean O2;
-    public int P;
-    public cn P0;
-    public int P1;
-    public boolean P2;
-    public int Q;
-    public float Q0;
-    public int Q1;
-    public boolean Q2;
-    public boolean R;
-    public float R0;
-    public boolean R2;
-    public float S;
-    public StaticLayout S0;
-    public boolean S2;
-    public boolean T;
-    public cn T0;
-    public float T1;
-    public int T2;
-    public StaticLayout U;
-    public boolean U0;
-    public float U1;
-    public int U2;
-    public boolean V;
-    public StaticLayout V0;
-    public float V1;
-    public boolean V2;
-    public StaticLayout W;
-    public StaticLayout W0;
-    public float W1;
-    public int W2;
-    public float X;
-    public int X0;
-    public boolean X1;
-    public int X2;
-    public int Y;
-    public int Y0;
-    public int Y1;
-    public boolean Y2;
-    public int Z;
-    public int Z0;
-    public int Z1;
-    public boolean Z2;
-    public final rc2 a;
-    public int a0;
-    public boolean a1;
-    public boolean a2;
-    public boolean a3;
-    public float b;
-    public boolean b0;
-    public boolean b1;
-    public boolean b3;
-    public float c;
-    public boolean c0;
-    public i47 c1;
-    public int c2;
-    public boolean c3;
-    public float d;
-    public boolean d0;
-    public i47 d1;
-    public StaticLayout d2;
-    public HashSet d3;
-    public float e;
-    public float e0;
-    public boolean e1;
-    public StaticLayout e2;
-    public HashSet e3;
-    public float f;
-    public String f0;
-    public boolean f1;
-    public boolean f2;
-    public boolean f3;
-    public float g;
-    public boolean g0;
-    public int g1;
-    public boolean g2;
-    public boolean g3;
-    public boolean h;
-    public float h0;
-    public int h1;
-    public boolean h2;
-    public boolean h3;
-    public boolean i;
-    public float i0;
-    public boolean i1;
-    public boolean i2;
-    public boolean i3;
-    public boolean j;
-    public float j0;
-    public int j1;
-    public StaticLayout j2;
-    public boolean j3;
-    public boolean k;
-    public float k0;
-    public int k1;
-    public boolean k2;
-    public StaticLayout k3;
-    public String l;
-    public float l0;
-    public boolean l1;
-    public boolean l2;
-    public StaticLayout l3;
-    public float m;
-    public float m0;
-    public boolean m1;
-    public boolean m2;
-    public cn m3;
-    public StaticLayout n;
-    public float n0;
-    public boolean n1;
-    public float n2;
-    public StaticLayout o;
-    public float o0;
-    public boolean o1;
-    public float o2;
-    public boolean p;
-    public float p0;
-    public float p1;
-    public float p2;
-    public boolean q;
-    public float q0;
-    public float q1;
-    public int q2;
-    public float r;
-    public float r0;
-    public float r1;
-    public int r2;
-    public float s;
-    public float s0;
-    public float s1;
-    public boolean s2;
-    public float t;
-    public boolean t0;
-    public boolean t1;
-    public int t2;
-    public float u;
-    public int u1;
-    public boolean u2;
-    public boolean v;
-    public boolean v1;
-    public int v2;
-    public int w;
-    public boolean w0;
-    public boolean w1;
-    public int w2;
-    public int x;
-    public boolean x0;
-    public boolean x1;
-    public boolean x2;
-    public int y;
-    public boolean y0;
-    public int y1;
-    public boolean z;
-    public boolean z0;
-    public boolean z1;
-    public final int[] u0 = new int[4];
-    public float v0 = 1.0f;
-    public float A0 = 1.0f;
-    public final Rect E0 = new Rect();
-    public float L1 = 1.0f;
-    public final ArrayList M1 = new ArrayList();
-    public final ArrayList N1 = new ArrayList();
-    public float R1 = 0.0f;
-    public float S1 = 1.0f;
-    public int b2 = -1;
-    public final StaticLayout[] y2 = new StaticLayout[2];
-    public final StaticLayout[] z2 = new StaticLayout[2];
+public final class yc2 extends n39 {
+    public final Context c;
+    public boolean d;
+    public final /* synthetic */ zc2 e;
 
-    public yc2(rc2 rc2Var) {
-        this.a = rc2Var;
+    public yc2(zc2 zc2Var, Context context) {
+        this.e = zc2Var;
+        if (zc2Var.E == 2) {
+            C(true);
+        }
+        this.c = context;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x03aa, code lost:
-    
-        if (r6 == (r11 == null ? 0 : r11.c)) goto L212;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0187, code lost:
-    
-        if (android.text.TextUtils.equals(((al9) r1).X.url, ((al9) r3).X.url) != false) goto L95;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x05cd  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x05d5  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x05dd  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x05e9  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x05f4  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x05ff  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x060a  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0610  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x062a  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0635  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x063e  */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x0647  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x064b  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x0655  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0657  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0672  */
-    /* JADX WARN: Removed duplicated region for block: B:311:0x067b  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0682  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x06ba  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x06c3  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x06ec  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x0701  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x070c  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x06ac  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x064f  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x060d  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00e1 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0104  */
+    @Override // n39
+    public final boolean D(s49 s49Var) {
+        TLRPC.Chat chat;
+        int i = s49Var.f;
+        zc2 zc2Var = this.e;
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = zc2Var.Q;
+        int i2 = zc2Var.E;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = zc2Var.O;
+        if (!zc2Var.x.creator || ((i2 != 0 && (i2 != 2 || !zc2Var.L)) || i != 4 || s49Var.b() != zc2Var.f0)) {
+            if (!zc2Var.J) {
+                return false;
+            }
+            if ((i2 == 0 || i2 == 2) && i == 4) {
+                int b = s49Var.b();
+                if (b == zc2Var.X) {
+                    if (!tL_chatAdminRights.add_admins && ((chat = zc2Var.x) == null || !chat.creator)) {
+                        return false;
+                    }
+                } else {
+                    if (i2 == 2 && !zc2Var.L) {
+                        return false;
+                    }
+                    if (b == zc2Var.Y) {
+                        if (!tL_chatAdminRights.change_info) {
+                            return false;
+                        }
+                        if (tL_chatBannedRights != null && !tL_chatBannedRights.change_info && !zc2Var.F) {
+                            return false;
+                        }
+                    } else {
+                        if (b == zc2Var.Z) {
+                            return tL_chatAdminRights.post_messages;
+                        }
+                        if (b == zc2Var.a0) {
+                            return tL_chatAdminRights.manage_direct_messages;
+                        }
+                        if (b == zc2Var.b0) {
+                            return tL_chatAdminRights.manage_welcome_messages;
+                        }
+                        if (b == zc2Var.c0) {
+                            return tL_chatAdminRights.edit_messages;
+                        }
+                        if (b == zc2Var.d0) {
+                            return tL_chatAdminRights.delete_messages;
+                        }
+                        if (b == zc2Var.L0) {
+                            return tL_chatAdminRights.manage_call;
+                        }
+                        if (b == zc2Var.e0) {
+                            return tL_chatAdminRights.add_admins;
+                        }
+                        if (b == zc2Var.f0) {
+                            return tL_chatAdminRights.anonymous;
+                        }
+                        if (b == zc2Var.g0) {
+                            return tL_chatAdminRights.ban_users;
+                        }
+                        if (b == zc2Var.h0) {
+                            return tL_chatAdminRights.invite_users;
+                        }
+                        if (b == zc2Var.i0) {
+                            if (!tL_chatAdminRights.pin_messages) {
+                                return false;
+                            }
+                            if (tL_chatBannedRights != null && !tL_chatBannedRights.pin_messages) {
+                                return false;
+                            }
+                        } else {
+                            if (b == zc2Var.j0) {
+                                return tL_chatAdminRights.manage_ranks;
+                            }
+                            if (b == zc2Var.n0) {
+                                return tL_chatAdminRights.manage_topics;
+                            }
+                            if (b == zc2Var.V0) {
+                                return tL_chatAdminRights.post_stories;
+                            }
+                            if (b == zc2Var.W0) {
+                                return tL_chatAdminRights.edit_stories;
+                            }
+                            if (b == zc2Var.X0) {
+                                return tL_chatAdminRights.delete_stories;
+                            }
+                            if (b == zc2Var.o0) {
+                                return tL_chatAdminRights.manage_linked_peers;
+                            }
+                        }
+                    }
+                }
+            }
+            if (i == 3 || i == 1 || i == 5 || i == 8 || i == 11) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // w39
+    public final int b() {
+        return this.e.W;
+    }
+
+    @Override // w39
+    public final long c(int i) {
+        zc2 zc2Var = this.e;
+        if (zc2Var.E != 2) {
+            return -1L;
+        }
+        if (i == zc2Var.X) {
+            return 1L;
+        }
+        if (i == zc2Var.Y) {
+            return 2L;
+        }
+        if (i == zc2Var.Z) {
+            return 3L;
+        }
+        if (i == zc2Var.c0) {
+            return 4L;
+        }
+        if (i == zc2Var.d0) {
+            return 5L;
+        }
+        if (i == zc2Var.e0) {
+            return 6L;
+        }
+        if (i == zc2Var.f0) {
+            return 7L;
+        }
+        if (i == zc2Var.g0) {
+            return 8L;
+        }
+        if (i == zc2Var.h0) {
+            return 9L;
+        }
+        if (i == zc2Var.i0) {
+            return 10L;
+        }
+        if (i == zc2Var.p0) {
+            return 11L;
+        }
+        if (i == zc2Var.q0) {
+            return 12L;
+        }
+        if (i == zc2Var.r0) {
+            return 13L;
+        }
+        if (i == zc2Var.s0) {
+            return 14L;
+        }
+        if (i == zc2Var.t0) {
+            return 15L;
+        }
+        if (i == zc2Var.u0) {
+            return 16L;
+        }
+        if (i == zc2Var.v0) {
+            return 17L;
+        }
+        if (i == zc2Var.w0) {
+            return 18L;
+        }
+        if (i == zc2Var.x0) {
+            return 19L;
+        }
+        if (i == zc2Var.z0) {
+            return 20L;
+        }
+        if (i == zc2Var.C0) {
+            return 21L;
+        }
+        if (i == zc2Var.I0) {
+            return 22L;
+        }
+        if (i == zc2Var.J0) {
+            return 23L;
+        }
+        if (i == zc2Var.K0) {
+            return 24L;
+        }
+        if (i == zc2Var.L0) {
+            return 25L;
+        }
+        if (i == zc2Var.M0) {
+            return 26L;
+        }
+        if (i == zc2Var.N0) {
+            return 27L;
+        }
+        if (i == zc2Var.y0) {
+            return 28L;
+        }
+        if (i == zc2Var.n0) {
+            return 29L;
+        }
+        if (i == zc2Var.D0) {
+            return 30L;
+        }
+        if (i == zc2Var.F0) {
+            return 31L;
+        }
+        if (i == zc2Var.E0) {
+            return 32L;
+        }
+        if (i == zc2Var.G0) {
+            return 33L;
+        }
+        if (i == zc2Var.H0) {
+            return 34L;
+        }
+        if (i == zc2Var.A0) {
+            return 35L;
+        }
+        if (i == zc2Var.O0) {
+            return 36L;
+        }
+        if (i == zc2Var.Q0) {
+            return 37L;
+        }
+        if (i == zc2Var.R0) {
+            return 38L;
+        }
+        if (i == zc2Var.S0) {
+            return 39L;
+        }
+        if (i == zc2Var.T0) {
+            return 40L;
+        }
+        if (i == zc2Var.V0) {
+            return 41L;
+        }
+        if (i == zc2Var.W0) {
+            return 42L;
+        }
+        if (i == zc2Var.X0) {
+            return 43L;
+        }
+        if (i == zc2Var.a0) {
+            return 44L;
+        }
+        if (i == zc2Var.j0) {
+            return 45L;
+        }
+        if (i == zc2Var.k0) {
+            return 46L;
+        }
+        if (i == zc2Var.l0) {
+            return 47L;
+        }
+        if (i == zc2Var.m0) {
+            return 48L;
+        }
+        if (i == zc2Var.o0) {
+            return 49L;
+        }
+        return i == zc2Var.b0 ? 50L : 0L;
+    }
+
+    @Override // w39
+    public final int d(int i) {
+        zc2 zc2Var = this.e;
+        if (i == zc2Var.I0 || i == zc2Var.K0 || i == zc2Var.J0 || i == zc2Var.C0 || i == zc2Var.D0 || i == zc2Var.F0 || i == zc2Var.E0 || i == zc2Var.H0 || i == zc2Var.G0 || i == zc2Var.k0 || i == zc2Var.Q0 || i == zc2Var.R0 || i == zc2Var.S0 || i == zc2Var.V0 || i == zc2Var.W0 || i == zc2Var.X0) {
+            return 10;
+        }
+        if (i == zc2Var.A0 || i == zc2Var.O0 || i == zc2Var.T0) {
+            return 9;
+        }
+        if (i == 0) {
+            return 0;
+        }
+        if (i == 1 || i == zc2Var.p0 || i == zc2Var.r0 || i == zc2Var.M0 || i == zc2Var.t0) {
+            return 5;
+        }
+        if (i == 2 || i == zc2Var.v0) {
+            return 3;
+        }
+        if (i == zc2Var.Y || i == zc2Var.Z || i == zc2Var.a0 || i == zc2Var.c0 || i == zc2Var.d0 || i == zc2Var.e0 || i == zc2Var.g0 || i == zc2Var.h0 || i == zc2Var.i0 || i == zc2Var.j0 || i == zc2Var.z0 || i == zc2Var.f0 || i == zc2Var.L0 || i == zc2Var.X || i == zc2Var.n0 || i == zc2Var.l0 || i == zc2Var.o0 || i == zc2Var.b0) {
+            return 4;
+        }
+        if (i == zc2Var.s0 || i == zc2Var.x0 || i == zc2Var.m0) {
+            return 1;
+        }
+        if (i == zc2Var.N0) {
+            return 6;
+        }
+        if (i == zc2Var.w0) {
+            return 11;
+        }
+        return i == zc2Var.y0 ? 8 : 2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:286:0x08ff  */
+    /* JADX WARN: Removed duplicated region for block: B:563:0x06b2  */
+    /* JADX WARN: Type inference failed for: r4v118, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r4v124, types: [boolean, int] */
+    @Override // w39
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean a() {
-        boolean z;
-        boolean z2;
-        float f;
-        int i;
+    public final void t(s49 s49Var, int i) {
         int i2;
-        int i3;
-        tc2 tc2Var;
-        HashSet hashSet;
-        HashSet hashSet2;
-        int size;
-        boolean z3;
-        k47 k47Var;
-        int i4;
-        k47 k47Var2;
-        StaticLayout staticLayout;
-        lk1 lk1Var;
-        uj9 uj9Var;
-        en enVar;
-        rc2 rc2Var = this.a;
-        l39 l39Var = rc2Var.O;
-        ArrayList arrayList = rc2Var.I5;
-        if (!this.w0) {
-            return false;
-        }
-        this.w1 = false;
-        this.G0 = false;
-        boolean z4 = this.F0;
-        boolean z5 = rc2Var.Y6;
-        byte b = 1;
-        if (z4 != z5) {
-            this.G0 = true;
-            z = true;
-        } else {
-            z = false;
-        }
-        this.H0 = false;
-        k47 k47Var3 = rc2Var.Q5;
-        ArrayList arrayList2 = k47Var3.B2;
-        ArrayList arrayList3 = this.J0;
-        if (arrayList2 != arrayList3) {
-            boolean z6 = k47Var3.v2 == this.K0 || z4 == z5;
-            if (arrayList2 != null && arrayList3 != null && arrayList2.size() == this.J0.size()) {
-                for (int i5 = 0; i5 < this.J0.size(); i5++) {
-                    String charSequence = ((h47) rc2Var.Q5.B2.get(i5)).e == null ? null : ((h47) rc2Var.Q5.B2.get(i5)).e.getText().toString();
-                    String charSequence2 = ((h47) this.J0.get(i5)).e == null ? null : ((h47) this.J0.get(i5)).e.getText().toString();
-                    if (charSequence == null) {
-                        if (charSequence2 != null) {
-                        }
-                        if (!charSequence.equals(charSequence2)) {
-                            cn cnVar = rc2Var.Ma;
-                            if (cnVar != null) {
-                                StaticLayout staticLayout2 = ((h47) rc2Var.Q5.B2.get(i5)).e;
-                                StaticLayout staticLayout3 = ((h47) this.J0.get(i5)).e;
-                                HashMap hashMap = cnVar.b;
-                                if (staticLayout3 != null && (enVar = (en) hashMap.remove(staticLayout3)) != null) {
-                                    ArrayList arrayList4 = enVar.b;
-                                    enVar.a = staticLayout2;
-                                    for (int i6 = 0; i6 < arrayList4.size(); i6++) {
-                                        ((bn) arrayList4.get(i6)).c = staticLayout2;
-                                    }
-                                    hashMap.put(staticLayout2, enVar);
-                                }
-                            }
+        boolean z;
+        zc2 zc2Var = this.e;
+        boolean z2 = zc2Var.V;
+        boolean z3 = zc2Var.G;
+        boolean z4 = zc2Var.F;
+        TLRPC.User user = zc2Var.w;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = zc2Var.O;
+        int i3 = zc2Var.E;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights2 = zc2Var.N;
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = zc2Var.Q;
+        int i4 = s49Var.f;
+        View view = s49Var.a;
+        switch (i4) {
+            case 0:
+                ((u6c) view).a(i3 == 2 ? k96.L0(2131753153) : null, user);
+                break;
+            case 1:
+                mhb mhbVar = (mhb) view;
+                if (i != zc2Var.m0) {
+                    if (i != zc2Var.s0) {
+                        if (i == zc2Var.x0) {
+                            mhbVar.setText(i3 == 0 ? k96.Z(2131751294, (l7c.D(user) && zc2Var.x.creator) ? k96.L0(2131752411) : k96.L0(2131752508)) : k96.Z(2131751264, l7c.r(user)));
+                            break;
                         }
                     } else {
-                        if (charSequence2 == null) {
-                        }
-                        if (!charSequence.equals(charSequence2)) {
+                        mhbVar.setText(k96.L0(2131751313));
+                        break;
+                    }
+                } else {
+                    mhbVar.setText(k96.L0(2131751297));
+                    break;
+                }
+                break;
+            case 2:
+                uib uibVar = (uib) view;
+                if (i != zc2Var.q0) {
+                    if (i == zc2Var.u0) {
+                        TextView textView = uibVar.getTextView();
+                        int i5 = bkb.F6;
+                        zkb.X(textView, i5, null);
+                        uibVar.setTag(Integer.valueOf(i5));
+                        if (!z4) {
+                            uibVar.b(k96.L0(2131751303), false);
+                            break;
+                        } else {
+                            uibVar.b(k96.L0(2131751310), false);
+                            break;
                         }
                     }
-                }
-                if (z6) {
-                    this.H0 = true;
-                    ArrayList arrayList5 = this.J0;
-                    this.I0 = arrayList5;
-                    this.O0 = this.p2;
-                    this.P0 = gn.update(0, (View) rc2Var, this.P0, (ArrayList<h47>) arrayList5, true);
-                    rc2Var.Ma = gn.update(0, rc2Var, rc2Var.Ma, (ArrayList<h47>) rc2Var.Q5.B2);
-                    z = true;
                 } else {
-                    rc2Var.Ma = gn.update(0, rc2Var, rc2Var.Ma, (ArrayList<h47>) rc2Var.Q5.B2);
-                }
-            }
-            z6 = false;
-            if (z6) {
-            }
-        }
-        uj9 uj9Var2 = rc2Var.Q5.y2;
-        if (uj9Var2 != null && (uj9Var2.s || uj9Var2.u)) {
-            this.w1 = true;
-            z = true;
-        }
-        this.L0 = false;
-        if (uj9Var2 != this.N0) {
-            oi7 oi7Var = rc2Var.Mc;
-            boolean z7 = oi7Var != null && oi7Var.h;
-            uj9 uj9Var3 = this.M0;
-            if (uj9Var3 != null) {
-                uj9Var3.f(rc2Var);
-                this.M0 = null;
-            }
-            k47 k47Var4 = rc2Var.Q5;
-            if (z7) {
-                uj9 uj9Var4 = k47Var4.y2;
-                if (uj9Var4 != null && (uj9Var = this.N0) != null) {
-                    uj9Var4.I(uj9Var);
-                }
-            } else {
-                uj9 uj9Var5 = k47Var4.y2;
-                if (uj9Var5 != null) {
-                    uj9 uj9Var6 = this.N0;
-                    ArrayList arrayList6 = uj9Var5.g;
-                    if (uj9Var6 != null) {
-                        ArrayList arrayList7 = uj9Var6.g;
-                        if (arrayList6.size() == 1 && arrayList7.size() == 1) {
-                            qi9 qi9Var = (qi9) arrayList6.get(0);
-                            qi9 qi9Var2 = (qi9) arrayList7.get(0);
-                            if (qi9Var instanceof al9) {
-                                if (qi9Var2 instanceof al9) {
-                                }
-                            }
+                    TextView textView2 = uibVar.getTextView();
+                    int i6 = bkb.o7;
+                    zkb.X(textView2, i6, null);
+                    uibVar.setTag(Integer.valueOf(i6));
+                    if (i3 != 0) {
+                        if (i3 == 1) {
+                            uibVar.b(k96.L0(2131743485), false);
+                            break;
                         }
-                    }
-                }
-                this.L0 = true;
-                uj9 uj9Var7 = this.N0;
-                this.M0 = uj9Var7;
-                if (uj9Var7 != null) {
-                    uj9Var7.b(rc2Var);
-                }
-            }
-        }
-        this.P2 = false;
-        if (rc2Var.w9 != this.N2) {
-            this.P2 = true;
-            z = true;
-        }
-        this.Q2 = false;
-        if (rc2Var.x9 != this.O2) {
-            this.Q2 = true;
-            z = true;
-        }
-        StaticLayout staticLayout4 = rc2Var.R7;
-        if (staticLayout4 != this.F2) {
-            CharSequence text = staticLayout4 != null ? staticLayout4.getText() : null;
-            StaticLayout staticLayout5 = this.F2;
-            if (!TextUtils.equals(text, staticLayout5 != null ? staticLayout5.getText() : null)) {
-                this.R0 = this.Q0;
-                StaticLayout staticLayout6 = this.F2;
-                this.S0 = staticLayout6;
-                this.K2 = this.J2;
-                this.T0 = gn.update(0, (View) rc2Var, false, this.T0, true, staticLayout6);
-                z = true;
-            }
-        }
-        boolean z8 = rc2Var.vb;
-        if (z8 && !this.a1 && rc2Var.L9 != null) {
-            String M0 = jb6.M0(2131751147, "EditedMessage");
-            CharSequence text2 = rc2Var.L9.getText();
-            int indexOf = text2.toString().indexOf(M0);
-            if (indexOf >= 0) {
-                if (indexOf == 0) {
-                    TextPaint textPaint = cmb.S2;
-                    int L = gm.L(100.0f) + rc2Var.N9;
-                    Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    this.V0 = new StaticLayout(M0, textPaint, L, alignment, 1.0f, 0.0f, false);
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) M0);
-                    spannableStringBuilder.append(text2.subSequence(M0.length(), text2.length()));
-                    spannableStringBuilder.setSpan(new vy2(b), 0, M0.length(), 0);
-                    this.W0 = new StaticLayout(spannableStringBuilder, cmb.S2, gm.L(100.0f) + rc2Var.N9, alignment, 1.0f, 0.0f, false);
-                    this.Z0 = rc2Var.M9 - this.Y0;
-                } else {
-                    this.Z0 = 0;
-                    this.V0 = null;
-                    this.W0 = this.j2;
-                }
-                this.U0 = true;
-                this.X0 = this.Y0;
-                this.h1 = this.g1;
-                this.i1 = true;
-                z = true;
-            }
-            rc2Var.P2 = null;
-        } else if (!z8 && this.a1 && rc2Var.L9 != null) {
-            this.W0 = this.j2;
-            int i7 = rc2Var.M9;
-            int i8 = this.Y0;
-            this.Z0 = i7 - i8;
-            this.U0 = true;
-            this.X0 = i8;
-            this.h1 = this.g1;
-            this.i1 = true;
-            z = true;
-        }
-        this.m1 = false;
-        if (rc2Var.I6 != this.l1) {
-            this.m1 = true;
-            z = true;
-        }
-        this.t1 = false;
-        if (rc2Var.x1 != this.v) {
-            this.t1 = true;
-            float f2 = this.d;
-            this.p1 = f2;
-            float f3 = this.e;
-            this.q1 = f3;
-            this.r1 = (f2 / 2.0f) + this.b;
-            this.s1 = (f3 / 2.0f) + this.c;
-            z = true;
-        }
-        this.v1 = false;
-        int i9 = rc2Var.g0;
-        int i10 = this.w;
-        if (i9 != i10) {
-            this.w1 = true;
-            this.u1 = i10;
-            this.v1 = true;
-            z = true;
-        }
-        this.z1 = false;
-        int i11 = rc2Var.W;
-        int i12 = this.x;
-        if (i11 != i12) {
-            this.y1 = i12;
-            this.z1 = true;
-            z = true;
-        }
-        this.x1 = false;
-        if ((rc2Var.T != null) != this.z) {
-            this.x1 = true;
-            z = true;
-        }
-        this.C1 = false;
-        int i13 = rc2Var.e0;
-        int i14 = this.y;
-        if (i13 != i14) {
-            this.B1 = i14;
-            this.C1 = true;
-            z = true;
-        }
-        this.A1 = false;
-        if ((rc2Var.b0 != null) != this.A) {
-            this.A1 = true;
-            z = true;
-        }
-        this.M2 = false;
-        if ((rc2Var.Q5.D == 27 && (lk1Var = rc2Var.w) != null && lk1Var.d()) != this.L2) {
-            this.M2 = true;
-            z = true;
-        }
-        this.E1 = false;
-        if (rc2Var.v1 != this.D1) {
-            this.E1 = true;
-            z = true;
-        }
-        this.G1 = false;
-        if (rc2Var.w1 != this.F1) {
-            this.G1 = true;
-            z = true;
-        }
-        this.J1 = false;
-        if (rc2Var.R1) {
-            int i15 = rc2Var.W1;
-            int i16 = this.H1;
-            if (i15 != i16) {
-                this.J1 = true;
-                this.I1 = i16;
-                z = true;
-            }
-        }
-        this.o1 = false;
-        if (rc2Var.I4 != this.n1) {
-            this.o1 = true;
-            z = true;
-        }
-        k47 k47Var5 = rc2Var.Q5;
-        boolean z9 = k47Var5 != null ? k47Var5.M2 : false;
-        i47 i47Var = rc2Var.m3;
-        i47 i47Var2 = this.d1;
-        if (i47Var != i47Var2) {
-            String charSequence3 = i47Var2 == null ? null : i47Var2.a.toString();
-            i47 i47Var3 = rc2Var.m3;
-            String charSequence4 = i47Var3 == null ? null : i47Var3.a.toString();
-            if (this.F0 != rc2Var.Y6 || this.e1 != z9) {
-                i47 i47Var4 = rc2Var.m3;
-                int i17 = i47Var4 == null ? 0 : i47Var4.c;
-                i47 i47Var5 = this.d1;
-            }
-            if ((charSequence4 == null) == (charSequence3 == null) && (charSequence3 == null || charSequence3.equals(charSequence4))) {
-                rc2Var.S3();
-                float f4 = this.f;
-                if (f4 != rc2Var.s3 || this.g != rc2Var.t3) {
-                    this.t0 = true;
-                    this.r0 = f4;
-                    this.s0 = this.g;
-                    z = true;
-                }
-            }
-            this.b1 = true;
-            i47 i47Var6 = this.d1;
-            this.c1 = i47Var6;
-            this.P0 = gn.update(0, rc2Var, (cn) null, (ArrayList<h47>) (i47Var6 == null ? null : i47Var6.e));
-            cn cnVar2 = rc2Var.Ma;
-            i47 i47Var7 = rc2Var.m3;
-            rc2Var.Ma = gn.update(0, rc2Var, cnVar2, (ArrayList<h47>) (i47Var7 == null ? null : i47Var7.e));
-            if (this.F0 != rc2Var.Y6 || this.e1 != z9) {
-                this.t0 = true;
-                this.r0 = this.f;
-                this.s0 = this.g;
-            }
-            z = true;
-        } else if (i47Var != null && i47Var2 != null) {
-            rc2Var.S3();
-            float f5 = this.f;
-            if (f5 != rc2Var.s3 || this.g != rc2Var.t3) {
-                this.t0 = true;
-                this.r0 = f5;
-                this.s0 = this.g;
-                z = true;
-            }
-        }
-        ArrayList arrayList8 = this.M1;
-        if (!arrayList8.isEmpty() || !arrayList.isEmpty()) {
-            if (arrayList8.size() != arrayList.size()) {
-                this.E2 = true;
-            }
-            if (!this.E2) {
-                for (int i18 = 0; i18 < arrayList.size(); i18++) {
-                    wp0 wp0Var = (wp0) arrayList.get(i18);
-                    wp0 wp0Var2 = (wp0) arrayList8.get(i18);
-                    if (!wp0Var.b && !wp0Var2.b && (Math.abs(wp0Var.c - wp0Var2.c) > 0.01f || Math.abs(wp0Var.e - wp0Var2.e) > 0.01f || !TextUtils.equals(wp0Var.h.i(), wp0Var2.h.i()))) {
-                        this.E2 = true;
+                    } else {
+                        uibVar.b(k96.L0(2131751293), false);
                         break;
                     }
                 }
-            }
-            if (this.E2) {
-                this.N1.addAll(arrayList8);
-            }
-        }
-        int i19 = this.Q1;
-        if (i19 != rc2Var.K5) {
-            this.P1 = i19;
-            this.O1 = true;
-        }
-        byte b2 = rc2Var.M1;
-        if (b2 == 5 || b2 == 3 || b2 == 1) {
-            float f6 = rc2Var.K3;
-            float f7 = this.T1;
-            if (f6 != f7 || rc2Var.L3 != this.U1) {
-                this.V1 = f7;
-                this.W1 = this.U1;
-                this.X1 = true;
-                z = true;
-            }
-        }
-        int i20 = rc2Var.X1;
-        int i21 = this.Y1;
-        if (i20 != i21) {
-            this.Z1 = i21;
-            this.a2 = true;
-            z = true;
-        }
-        if (this.B != rc2Var.q6) {
-            this.C = true;
-            rc2Var.P2 = null;
-            z2 = true;
-            z = true;
-        } else {
-            z2 = false;
-        }
-        if ((this.H != null || rc2Var.sa != null) && this.F != rc2Var.getRepliesCount()) {
-            this.I = this.H;
-            this.G = true;
-            rc2Var.P2 = null;
-            z2 = true;
-            z = true;
-        }
-        if (this.d2 != null && this.c2 != rc2Var.getMessageObject().k.views) {
-            this.e2 = this.d2;
-            rc2Var.P2 = null;
-            z2 = true;
-            z = true;
-        }
-        if (rc2Var.n7 != null && this.N != rc2Var.getRepliesCount()) {
-            StaticLayout staticLayout7 = this.U;
-            if (staticLayout7 == null || TextUtils.equals(staticLayout7.getText(), rc2Var.n7.getText())) {
-                this.W = null;
-            } else {
-                this.W = this.U;
-            }
-            this.Y = this.O;
-            this.X = this.S;
-            this.Z = this.P;
-            this.a0 = this.Q;
-            this.b0 = this.R;
-            this.c0 = this.T;
-            this.V = true;
-            z = true;
-        }
-        if (!TextUtils.equals(this.f0, rc2Var.z5)) {
-            this.d0 = true;
-            this.e0 = rc2Var.t9;
-            z = true;
-        }
-        if (this.f1 == rc2Var.S9) {
-            this.K1 = true;
-            this.e2 = null;
-        } else {
-            if (this.f2 == rc2Var.I3()) {
-                if (z2 || (Math.abs(rc2Var.O9 - this.g1) > 1 && this.F0 == rc2Var.Y6)) {
-                    this.i1 = true;
-                    this.X0 = this.Y0;
-                    this.h1 = this.g1;
-                    this.L = this.M;
-                    this.J = this.K;
-                    this.E = this.D;
-                }
-                if (this.h2 != rc2Var.H3()) {
-                    this.i2 = true;
-                }
-                if (this.k != rc2Var.h3) {
-                    this.j = true;
-                }
-                if (this.k2 != rc2Var.Lb) {
-                    this.l2 = true;
-                    z = true;
-                }
-                f = this.n2;
-                if (f != rc2Var.u0) {
-                    this.m2 = true;
-                    this.o2 = f;
-                    z = true;
-                }
-                i = this.q2;
-                if (i != rc2Var.q0) {
-                    this.s2 = true;
-                    this.r2 = i;
-                    z = true;
-                }
-                i2 = this.W2;
-                if (i2 != rc2Var.Q1) {
-                    this.V2 = true;
-                    this.X2 = i2;
-                    z = true;
-                }
-                i3 = this.T2;
-                tc2Var = rc2Var.s0;
-                if (i3 != (tc2Var == null ? tc2Var.r : 0)) {
-                    this.Y2 = true;
-                    this.U2 = i3;
-                    z = true;
-                }
-                if (this.Z2 != (rc2Var.getPrimaryMessageObject() == null && rc2Var.getPrimaryMessageObject().c3)) {
-                    this.a3 = true;
-                    z = true;
-                }
-                if (this.R2 != rc2Var.h2()) {
-                    this.S2 = true;
-                    z = true;
-                }
-                if (this.b3 != rc2Var.s8) {
-                    this.c3 = true;
-                    z = true;
-                }
-                hashSet = this.d3;
-                k47 k47Var6 = rc2Var.Q5;
-                hashSet2 = k47Var6 != null ? k47Var6.K0 : null;
-                if (hashSet != null) {
-                    if (hashSet2 != null) {
-                        size = 0;
+                break;
+            case 3:
+                ld5 ld5Var = (ld5) view;
+                if (i != 2) {
+                    if (i == zc2Var.v0) {
+                        ld5Var.setText(k96.L0(2131751295));
+                        break;
                     }
-                    z3 = this.g3;
-                    k47Var = rc2Var.Q5;
-                    if (z3 != (k47Var == null && k47Var.L0)) {
-                        this.i3 = true;
-                        this.h3 = z3;
-                        z = true;
-                    }
-                    if (k47Var != null || this.x2 == k47Var.m5()) {
-                        i4 = this.I2;
-                        if (i4 != rc2Var.gb) {
-                            this.G2 = true;
-                            this.H2 = i4;
+                } else if (i3 != 2 && (user == null || !user.bot)) {
+                    if (i3 != 0) {
+                        if (i3 == 1) {
+                            ld5Var.setText(k96.L0(2131743484));
+                            break;
                         }
-                        rc2Var.Y3();
-                        if (l39Var.a()) {
+                    } else {
+                        ld5Var.setText(k96.L0(2131751277));
+                        break;
+                    }
+                } else {
+                    ld5Var.setText(k96.L0(2131752977));
+                    break;
+                }
+                break;
+            case 4:
+            case 9:
+                final zgb zgbVar = (zgb) view;
+                boolean z5 = i3 != 2 || zc2Var.L;
+                TLRPC.Chat chat = zc2Var.x;
+                boolean z6 = chat != null && chat.creator;
+                if (i == zc2Var.A0) {
+                    TLRPC.TL_chatBannedRights tL_chatBannedRights2 = zc2Var.P;
+                    int i7 = (tL_chatBannedRights2.send_photos || tL_chatBannedRights.send_photos) ? 0 : 1;
+                    if (!tL_chatBannedRights2.send_videos && !tL_chatBannedRights.send_videos) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_stickers && !tL_chatBannedRights.send_stickers) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_audios && !tL_chatBannedRights.send_audios) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_docs && !tL_chatBannedRights.send_docs) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_voices && !tL_chatBannedRights.send_voices) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_roundvideos && !tL_chatBannedRights.send_roundvideos) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.embed_links && !tL_chatBannedRights.embed_links && !tL_chatBannedRights2.send_plain && !tL_chatBannedRights.send_plain) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_polls && !tL_chatBannedRights.send_polls) {
+                        i7++;
+                    }
+                    if (!tL_chatBannedRights2.send_reactions && !tL_chatBannedRights.send_reactions) {
+                        i7++;
+                    }
+                    zgbVar.d(k96.M0(2131743451, null), i7 > 0, true, true);
+                    Locale locale = Locale.US;
+                    final byte b = 0;
+                    zgbVar.a(new Runnable(this) { // from class: xc2
+                        public final /* synthetic */ yc2 b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b2 = b;
+                            zgb zgbVar2 = zgbVar;
+                            yc2 yc2Var = this.b;
+                            switch (b2) {
+                                case 0:
+                                    zc2 zc2Var2 = yc2Var.e;
+                                    if (zgbVar2.isEnabled()) {
+                                        if (!zc2Var2.a0()) {
+                                            boolean z7 = zgbVar2.d.h;
+                                            zgbVar2.setChecked(!z7);
+                                            TLRPC.TL_chatBannedRights tL_chatBannedRights3 = zc2Var2.P;
+                                            tL_chatBannedRights3.send_media = z7;
+                                            tL_chatBannedRights3.send_photos = z7;
+                                            tL_chatBannedRights3.send_videos = z7;
+                                            tL_chatBannedRights3.send_stickers = z7;
+                                            tL_chatBannedRights3.send_gifs = z7;
+                                            tL_chatBannedRights3.send_games = z7;
+                                            tL_chatBannedRights3.send_inline = z7;
+                                            tL_chatBannedRights3.send_audios = z7;
+                                            tL_chatBannedRights3.send_docs = z7;
+                                            tL_chatBannedRights3.send_voices = z7;
+                                            tL_chatBannedRights3.send_roundvideos = z7;
+                                            tL_chatBannedRights3.embed_links = z7;
+                                            tL_chatBannedRights3.send_polls = z7;
+                                            tL_chatBannedRights3.send_reactions = z7;
+                                            gl.V3(zc2Var2.b);
+                                            break;
+                                        } else {
+                                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zc2Var2.getParentActivity());
+                                            String M0 = k96.M0(2131743480, null);
+                                            hd hdVar = alertDialog$Builder.a;
+                                            hdVar.S = M0;
+                                            hdVar.U = k96.M0(2131743478, null);
+                                            alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                                            hdVar.show();
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                case 1:
+                                    if (zgbVar2.isEnabled()) {
+                                        boolean z8 = zgbVar2.d.h;
+                                        zgbVar2.setChecked(z8);
+                                        zc2 zc2Var3 = yc2Var.e;
+                                        TLRPC.TL_chatAdminRights tL_chatAdminRights3 = zc2Var3.N;
+                                        boolean z9 = !z8;
+                                        tL_chatAdminRights3.post_messages = z9;
+                                        tL_chatAdminRights3.edit_messages = z9;
+                                        tL_chatAdminRights3.delete_messages = z9;
+                                        gl.V3(zc2Var3.b);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    if (zgbVar2.isEnabled()) {
+                                        boolean z10 = zgbVar2.d.h;
+                                        zgbVar2.setChecked(z10);
+                                        zc2 zc2Var4 = yc2Var.e;
+                                        TLRPC.TL_chatAdminRights tL_chatAdminRights4 = zc2Var4.N;
+                                        boolean z11 = !z10;
+                                        tL_chatAdminRights4.post_stories = z11;
+                                        tL_chatAdminRights4.edit_stories = z11;
+                                        tL_chatAdminRights4.delete_stories = z11;
+                                        gl.V3(zc2Var4.b);
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    }, oo1.n(i7, "/10"), !zc2Var.B0);
+                    zgbVar.setIcon(zc2Var.a0() ? R.drawable.permission_locked : 0);
+                } else if (i == zc2Var.O0) {
+                    ?? r4 = tL_chatAdminRights2.post_messages;
+                    int i8 = r4;
+                    if (tL_chatAdminRights2.edit_messages) {
+                        i8 = r4 + 1;
+                    }
+                    int i9 = i8;
+                    if (tL_chatAdminRights2.delete_messages) {
+                        i9 = i8 + 1;
+                    }
+                    zgbVar.d(k96.M0(2131752370, null), i9 > 0, true, true);
+                    Locale locale2 = Locale.US;
+                    final byte b2 = 1;
+                    zgbVar.a(new Runnable(this) { // from class: xc2
+                        public final /* synthetic */ yc2 b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b22 = b2;
+                            zgb zgbVar2 = zgbVar;
+                            yc2 yc2Var = this.b;
+                            switch (b22) {
+                                case 0:
+                                    zc2 zc2Var2 = yc2Var.e;
+                                    if (zgbVar2.isEnabled()) {
+                                        if (!zc2Var2.a0()) {
+                                            boolean z7 = zgbVar2.d.h;
+                                            zgbVar2.setChecked(!z7);
+                                            TLRPC.TL_chatBannedRights tL_chatBannedRights3 = zc2Var2.P;
+                                            tL_chatBannedRights3.send_media = z7;
+                                            tL_chatBannedRights3.send_photos = z7;
+                                            tL_chatBannedRights3.send_videos = z7;
+                                            tL_chatBannedRights3.send_stickers = z7;
+                                            tL_chatBannedRights3.send_gifs = z7;
+                                            tL_chatBannedRights3.send_games = z7;
+                                            tL_chatBannedRights3.send_inline = z7;
+                                            tL_chatBannedRights3.send_audios = z7;
+                                            tL_chatBannedRights3.send_docs = z7;
+                                            tL_chatBannedRights3.send_voices = z7;
+                                            tL_chatBannedRights3.send_roundvideos = z7;
+                                            tL_chatBannedRights3.embed_links = z7;
+                                            tL_chatBannedRights3.send_polls = z7;
+                                            tL_chatBannedRights3.send_reactions = z7;
+                                            gl.V3(zc2Var2.b);
+                                            break;
+                                        } else {
+                                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zc2Var2.getParentActivity());
+                                            String M0 = k96.M0(2131743480, null);
+                                            hd hdVar = alertDialog$Builder.a;
+                                            hdVar.S = M0;
+                                            hdVar.U = k96.M0(2131743478, null);
+                                            alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                                            hdVar.show();
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                case 1:
+                                    if (zgbVar2.isEnabled()) {
+                                        boolean z8 = zgbVar2.d.h;
+                                        zgbVar2.setChecked(z8);
+                                        zc2 zc2Var3 = yc2Var.e;
+                                        TLRPC.TL_chatAdminRights tL_chatAdminRights3 = zc2Var3.N;
+                                        boolean z9 = !z8;
+                                        tL_chatAdminRights3.post_messages = z9;
+                                        tL_chatAdminRights3.edit_messages = z9;
+                                        tL_chatAdminRights3.delete_messages = z9;
+                                        gl.V3(zc2Var3.b);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    if (zgbVar2.isEnabled()) {
+                                        boolean z10 = zgbVar2.d.h;
+                                        zgbVar2.setChecked(z10);
+                                        zc2 zc2Var4 = yc2Var.e;
+                                        TLRPC.TL_chatAdminRights tL_chatAdminRights4 = zc2Var4.N;
+                                        boolean z11 = !z10;
+                                        tL_chatAdminRights4.post_stories = z11;
+                                        tL_chatAdminRights4.edit_stories = z11;
+                                        tL_chatAdminRights4.delete_stories = z11;
+                                        gl.V3(zc2Var4.b);
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    }, oo1.n(i9, "/3"), !zc2Var.P0);
+                } else if (i == zc2Var.T0) {
+                    ?? r42 = tL_chatAdminRights2.post_stories;
+                    int i10 = r42;
+                    if (tL_chatAdminRights2.edit_stories) {
+                        i10 = r42 + 1;
+                    }
+                    int i11 = i10;
+                    if (tL_chatAdminRights2.delete_stories) {
+                        i11 = i10 + 1;
+                    }
+                    zgbVar.d(k96.L0(2131752369), i11 > 0, true, true);
+                    Locale locale3 = Locale.US;
+                    final byte b3 = 2;
+                    zgbVar.a(new Runnable(this) { // from class: xc2
+                        public final /* synthetic */ yc2 b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b22 = b3;
+                            zgb zgbVar2 = zgbVar;
+                            yc2 yc2Var = this.b;
+                            switch (b22) {
+                                case 0:
+                                    zc2 zc2Var2 = yc2Var.e;
+                                    if (zgbVar2.isEnabled()) {
+                                        if (!zc2Var2.a0()) {
+                                            boolean z7 = zgbVar2.d.h;
+                                            zgbVar2.setChecked(!z7);
+                                            TLRPC.TL_chatBannedRights tL_chatBannedRights3 = zc2Var2.P;
+                                            tL_chatBannedRights3.send_media = z7;
+                                            tL_chatBannedRights3.send_photos = z7;
+                                            tL_chatBannedRights3.send_videos = z7;
+                                            tL_chatBannedRights3.send_stickers = z7;
+                                            tL_chatBannedRights3.send_gifs = z7;
+                                            tL_chatBannedRights3.send_games = z7;
+                                            tL_chatBannedRights3.send_inline = z7;
+                                            tL_chatBannedRights3.send_audios = z7;
+                                            tL_chatBannedRights3.send_docs = z7;
+                                            tL_chatBannedRights3.send_voices = z7;
+                                            tL_chatBannedRights3.send_roundvideos = z7;
+                                            tL_chatBannedRights3.embed_links = z7;
+                                            tL_chatBannedRights3.send_polls = z7;
+                                            tL_chatBannedRights3.send_reactions = z7;
+                                            gl.V3(zc2Var2.b);
+                                            break;
+                                        } else {
+                                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zc2Var2.getParentActivity());
+                                            String M0 = k96.M0(2131743480, null);
+                                            hd hdVar = alertDialog$Builder.a;
+                                            hdVar.S = M0;
+                                            hdVar.U = k96.M0(2131743478, null);
+                                            alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                                            hdVar.show();
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                case 1:
+                                    if (zgbVar2.isEnabled()) {
+                                        boolean z8 = zgbVar2.d.h;
+                                        zgbVar2.setChecked(z8);
+                                        zc2 zc2Var3 = yc2Var.e;
+                                        TLRPC.TL_chatAdminRights tL_chatAdminRights3 = zc2Var3.N;
+                                        boolean z9 = !z8;
+                                        tL_chatAdminRights3.post_messages = z9;
+                                        tL_chatAdminRights3.edit_messages = z9;
+                                        tL_chatAdminRights3.delete_messages = z9;
+                                        gl.V3(zc2Var3.b);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    if (zgbVar2.isEnabled()) {
+                                        boolean z10 = zgbVar2.d.h;
+                                        zgbVar2.setChecked(z10);
+                                        zc2 zc2Var4 = yc2Var.e;
+                                        TLRPC.TL_chatAdminRights tL_chatAdminRights4 = zc2Var4.N;
+                                        boolean z11 = !z10;
+                                        tL_chatAdminRights4.post_stories = z11;
+                                        tL_chatAdminRights4.edit_stories = z11;
+                                        tL_chatAdminRights4.delete_stories = z11;
+                                        gl.V3(zc2Var4.b);
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    }, oo1.n(i11, "/3"), !zc2Var.U0);
+                } else if (i == zc2Var.X) {
+                    zgbVar.c(k96.L0(2131748504), zc2Var.L, true);
+                    zgbVar.setIcon((tL_chatAdminRights.add_admins || z6) ? 0 : R.drawable.permission_locked);
+                } else if (i == zc2Var.Y) {
+                    if (i3 == 0 || i3 == 2) {
+                        if (z3) {
+                            zgbVar.c(k96.L0(2131751955), z5 && tL_chatAdminRights2.change_info, true);
+                        } else if (z4) {
+                            zgbVar.c(k96.L0(2131751312), z5 && tL_chatAdminRights2.change_info, true);
+                        } else {
+                            zgbVar.c(k96.L0(2131751311), (z5 && tL_chatAdminRights2.change_info) || !tL_chatBannedRights.change_info, true);
+                        }
+                        i2 = 2;
+                        if (i3 == 2) {
+                            zgbVar.setIcon((tL_chatAdminRights.change_info || z6) ? 0 : R.drawable.permission_locked);
+                        }
+                        if (i3 == i2 && i == zc2Var.z0) {
+                            zgbVar.setEnabled((zc2Var.P.view_messages || tL_chatBannedRights.view_messages) ? false : true);
+                            break;
+                        }
+                    } else if (i3 == 1) {
+                        zgbVar.c(k96.L0(z3 ? 2131751955 : 2131743477), (zc2Var.P.change_info || tL_chatBannedRights.change_info) ? false : true, zc2Var.n0 != -1);
+                        zgbVar.setIcon(tL_chatBannedRights.change_info ? R.drawable.permission_locked : 0);
+                    }
+                } else if (i == zc2Var.Z) {
+                    zgbVar.c(k96.L0(2131751300), z5 && tL_chatAdminRights2.post_messages, true);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.post_messages || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.b0) {
+                    if (l7c.v(user)) {
+                        zgbVar.c(k96.L0(z4 ? 2131751315 : 2131751314), z5 && tL_chatAdminRights2.manage_welcome_messages, true);
+                    } else {
+                        zgbVar.c(k96.L0(2131751278), z5 && tL_chatAdminRights2.manage_welcome_messages, true);
+                    }
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.manage_welcome_messages || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.a0) {
+                    zgbVar.c(k96.L0(2131751302), z5 && tL_chatAdminRights2.manage_direct_messages, true);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.manage_direct_messages || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.c0) {
+                    zgbVar.c(k96.L0(2131751307), z5 && tL_chatAdminRights2.edit_messages, true);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.edit_messages || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.d0) {
+                    if (z4) {
+                        zgbVar.c(k96.L0(2131751309), z5 && tL_chatAdminRights2.delete_messages, true);
+                    } else {
+                        zgbVar.c(k96.L0(2131751304), z5 && tL_chatAdminRights2.delete_messages, true);
+                    }
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.delete_messages || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.e0) {
+                    zgbVar.c(k96.L0(2131751319), z5 && tL_chatAdminRights2.add_admins, (zc2Var.g0 != -1 && z4) || zc2Var.f0 != -1);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.add_admins || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.f0) {
+                    zgbVar.c(k96.L0(2131751291), z5 && tL_chatAdminRights2.anonymous, zc2Var.n0 != -1 || z2);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.anonymous || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.l0) {
+                    String L0 = k96.L0(2131751298);
+                    TLRPC.ChatFull chatFull = zc2Var.y;
+                    if (chatFull != null && user != null) {
+                        if ((zc2Var.r ? zc2Var.n : chatFull.guard_bot_id) == user.id) {
                             z = true;
-                        }
-                        if (rc2Var.Q5.g4()) {
-                            float L2 = rc2Var.e7 - gm.L(28 - (rc2Var.K ? 2 : 0));
-                            if (!l39Var.p) {
-                                L2 -= l39Var.n;
+                            zgbVar.c(L0, z, false);
+                            i2 = 2;
+                            if (i3 == 2) {
+                                zgbVar.setIcon(0);
                             }
-                            float f8 = this.r;
-                            if (L2 != f8) {
-                                this.q = true;
-                                this.s = f8;
-                                z = true;
+                            if (i3 == i2) {
                             }
                         }
-                        if (rc2Var.Q7 != null) {
-                            float f9 = rc2Var.U7;
-                            float f10 = this.t;
-                            if (f9 != f10 && f10 != 0.0f) {
-                                this.u = f10;
-                                z = true;
+                    }
+                    z = false;
+                    zgbVar.c(L0, z, false);
+                    i2 = 2;
+                    if (i3 == 2) {
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.g0) {
+                    zgbVar.c(k96.L0(z3 ? 2131751956 : 2131751316), z5 && tL_chatAdminRights2.ban_users, !z3);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.ban_users || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.o0) {
+                    zgbVar.c(k96.L0(2131751954), z5 && tL_chatAdminRights2.manage_linked_peers, true);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.manage_linked_peers || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.L0) {
+                    zgbVar.c(k96.L0(2131744664), z5 && tL_chatAdminRights2.manage_call, true);
+                    i2 = 2;
+                    if (i3 == 2) {
+                        zgbVar.setIcon((tL_chatAdminRights.manage_call || z6) ? 0 : R.drawable.permission_locked);
+                    }
+                    if (i3 == i2) {
+                    }
+                } else if (i == zc2Var.n0) {
+                    if (i3 == 0) {
+                        zgbVar.c(k96.L0(2131748500), z5 && tL_chatAdminRights2.manage_topics, z2);
+                    } else if (i3 == 1) {
+                        zgbVar.c(k96.L0(2131751688), (zc2Var.P.manage_topics || tL_chatBannedRights.manage_topics) ? false : true, z2);
+                        zgbVar.setIcon(tL_chatBannedRights.manage_topics ? R.drawable.permission_locked : 0);
+                    } else {
+                        i2 = 2;
+                        if (i3 == 2) {
+                            zgbVar.c(k96.L0(2131748500), z5 && tL_chatAdminRights2.manage_topics, z2);
+                            zgbVar.setIcon((tL_chatAdminRights.manage_topics || z6) ? 0 : R.drawable.permission_locked);
+                        }
+                        if (i3 == i2) {
+                        }
+                    }
+                } else if (i == zc2Var.h0) {
+                    if (i3 == 0) {
+                        if (hc2.P(3, chat)) {
+                            zgbVar.c(k96.L0(2131751318), tL_chatAdminRights2.invite_users, true);
+                        } else {
+                            zgbVar.c(k96.L0(2131751317), tL_chatAdminRights2.invite_users, true);
+                        }
+                    } else if (i3 == 1) {
+                        zgbVar.c(k96.L0(2131743472), (zc2Var.P.invite_users || tL_chatBannedRights.invite_users) ? false : true, true);
+                        zgbVar.setIcon(tL_chatBannedRights.invite_users ? R.drawable.permission_locked : 0);
+                    } else {
+                        i2 = 2;
+                        if (i3 == 2) {
+                            zgbVar.c(k96.L0(2131751317), z5 && tL_chatAdminRights2.invite_users, true);
+                            zgbVar.setIcon((tL_chatAdminRights.invite_users || z6) ? 0 : R.drawable.permission_locked);
+                        }
+                        if (i3 == i2) {
+                        }
+                    }
+                } else if (i == zc2Var.i0) {
+                    if (i3 == 0 || i3 == 2) {
+                        zgbVar.c(k96.L0(2131751301), (z5 && tL_chatAdminRights2.pin_messages) || !tL_chatBannedRights.pin_messages, true);
+                        i2 = 2;
+                        if (i3 == 2) {
+                            zgbVar.setIcon((tL_chatAdminRights.pin_messages || z6) ? 0 : R.drawable.permission_locked);
+                        }
+                        if (i3 == i2) {
+                        }
+                    } else if (i3 == 1) {
+                        zgbVar.c(k96.L0(2131743453), (zc2Var.P.pin_messages || tL_chatBannedRights.pin_messages) ? false : true, true);
+                        zgbVar.setIcon(tL_chatBannedRights.pin_messages ? R.drawable.permission_locked : 0);
+                    }
+                } else if (i == zc2Var.j0) {
+                    if (i3 == 0 || i3 == 2) {
+                        zgbVar.c(k96.L0(2131751305), z5 && tL_chatAdminRights2.manage_ranks, true);
+                        i2 = 2;
+                        if (i3 == 2) {
+                            zgbVar.setIcon((tL_chatAdminRights.manage_ranks || z6) ? 0 : R.drawable.permission_locked);
+                        }
+                        if (i3 == i2) {
+                        }
+                    } else if (i3 == 1) {
+                        zgbVar.c(k96.L0(2131743474), (zc2Var.P.edit_rank || tL_chatBannedRights.edit_rank) ? false : true, true);
+                        zgbVar.setIcon(tL_chatBannedRights.edit_rank ? R.drawable.permission_locked : 0);
+                    }
+                } else if (i == zc2Var.z0) {
+                    zgbVar.c(k96.L0(2131743452), (zc2Var.P.send_plain || tL_chatBannedRights.send_plain) ? false : true, true);
+                    zgbVar.setIcon(tL_chatBannedRights.send_plain ? R.drawable.permission_locked : 0);
+                }
+                i2 = 2;
+                if (i3 == i2) {
+                }
+                break;
+            case 5:
+                b9a b9aVar = (b9a) view;
+                if (i3 != 2 || (i != zc2Var.p0 && i != zc2Var.x0)) {
+                    b9aVar.setAlpha(1.0f);
+                    break;
+                } else {
+                    b9aVar.setAlpha(zc2Var.K);
+                    break;
+                }
+                break;
+            case 6:
+                ghb ghbVar = (ghb) view;
+                if (i == zc2Var.N0) {
+                    int i12 = zc2Var.P.until_date;
+                    ghbVar.c(k96.M0(2131743475, null), (i12 == 0 || Math.abs(((long) i12) - (System.currentTimeMillis() / 1000)) > 315360000) ? k96.M0(2131743445, null) : k96.v(zc2Var.P.until_date), false);
+                    break;
+                }
+                break;
+            case 7:
+                le8 le8Var = (le8) view;
+                String M0 = (l7c.D(user) && zc2Var.x.creator) ? k96.M0(2131752411, null) : k96.M0(2131752508, null);
+                this.d = true;
+                le8Var.getTextView().setEnabled(zc2Var.J || zc2Var.x.creator);
+                le8Var.getTextView().setSingleLine(true);
+                le8Var.getTextView().setImeOptions(6);
+                le8Var.o(zc2Var.T, M0, false);
+                this.d = false;
+                break;
+            case 10:
+                ag2 ag2Var = (ag2) view;
+                boolean z7 = ag2Var.getTag() != null && ((Integer) ag2Var.getTag()).intValue() == i;
+                ag2Var.setTag(Integer.valueOf(i));
+                if (i != zc2Var.I0) {
+                    if (i != zc2Var.K0) {
+                        if (i != zc2Var.J0) {
+                            if (i != zc2Var.C0) {
+                                if (i != zc2Var.D0) {
+                                    if (i != zc2Var.k0) {
+                                        if (i != zc2Var.E0) {
+                                            if (i != zc2Var.F0) {
+                                                if (i != zc2Var.G0) {
+                                                    if (i != zc2Var.H0) {
+                                                        if (i != zc2Var.Q0) {
+                                                            if (i != zc2Var.R0) {
+                                                                if (i != zc2Var.S0) {
+                                                                    if (i != zc2Var.V0) {
+                                                                        if (i != zc2Var.W0) {
+                                                                            if (i == zc2Var.X0) {
+                                                                                ag2Var.e(k96.M0(2131751308, null), "", tL_chatAdminRights2.delete_stories, true, z7);
+                                                                                break;
+                                                                            }
+                                                                        } else {
+                                                                            ag2Var.e(k96.M0(2131751306, null), "", tL_chatAdminRights2.edit_stories, true, z7);
+                                                                            break;
+                                                                        }
+                                                                    } else {
+                                                                        ag2Var.e(k96.M0(2131751299, null), "", tL_chatAdminRights2.post_stories, true, z7);
+                                                                        break;
+                                                                    }
+                                                                } else {
+                                                                    ag2Var.e(k96.M0(2131751309, null), "", tL_chatAdminRights2.delete_messages, true, z7);
+                                                                    break;
+                                                                }
+                                                            } else {
+                                                                ag2Var.e(k96.M0(2131751307, null), "", tL_chatAdminRights2.edit_messages, true, z7);
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            ag2Var.e(k96.M0(2131751300, null), "", tL_chatAdminRights2.post_messages, true, z7);
+                                                            break;
+                                                        }
+                                                    } else {
+                                                        ag2Var.e(k96.M0(2131745414, null), "", (zc2Var.P.send_roundvideos || tL_chatBannedRights.send_roundvideos) ? false : true, true, z7);
+                                                        ag2Var.setIcon(tL_chatBannedRights.send_roundvideos ? R.drawable.permission_locked : 0);
+                                                        break;
+                                                    }
+                                                } else {
+                                                    ag2Var.e(k96.M0(2131745411, null), "", (zc2Var.P.send_voices || tL_chatBannedRights.send_voices) ? false : true, true, z7);
+                                                    ag2Var.setIcon(tL_chatBannedRights.send_voices ? R.drawable.permission_locked : 0);
+                                                    break;
+                                                }
+                                            } else {
+                                                ag2Var.e(k96.M0(2131745417, null), "", (zc2Var.P.send_docs || tL_chatBannedRights.send_docs) ? false : true, true, z7);
+                                                ag2Var.setIcon(tL_chatBannedRights.send_docs ? R.drawable.permission_locked : 0);
+                                                break;
+                                            }
+                                        } else {
+                                            ag2Var.e(k96.M0(2131745416, null), "", (zc2Var.P.send_audios || tL_chatBannedRights.send_audios) ? false : true, true, z7);
+                                            ag2Var.setIcon(tL_chatBannedRights.send_audios ? R.drawable.permission_locked : 0);
+                                            break;
+                                        }
+                                    } else {
+                                        ag2Var.e(k96.M0(2131743448, null), "", (zc2Var.P.send_reactions || tL_chatBannedRights.send_reactions) ? false : true, true, false);
+                                        ag2Var.setIcon(tL_chatBannedRights.send_reactions ? R.drawable.permission_locked : 0);
+                                        break;
+                                    }
+                                } else {
+                                    ag2Var.e(k96.M0(2131745412, null), "", (zc2Var.P.send_videos || tL_chatBannedRights.send_videos) ? false : true, true, z7);
+                                    ag2Var.setIcon(tL_chatBannedRights.send_videos ? R.drawable.permission_locked : 0);
+                                    break;
+                                }
+                            } else {
+                                ag2Var.e(k96.M0(2131745415, null), "", (zc2Var.P.send_photos || tL_chatBannedRights.send_photos) ? false : true, true, z7);
+                                ag2Var.setIcon(tL_chatBannedRights.send_photos ? R.drawable.permission_locked : 0);
+                                break;
                             }
+                        } else {
+                            ag2Var.e(k96.M0(2131745410, null), "", (zc2Var.P.send_polls || tL_chatBannedRights.send_polls) ? false : true, true, z7);
+                            ag2Var.setIcon(tL_chatBannedRights.send_polls ? R.drawable.permission_locked : 0);
+                            break;
                         }
-                        k47Var2 = rc2Var.Q5;
-                        if ((k47Var2 == null && k47Var2.L2) != this.j3 || rc2Var.o2 == null || (staticLayout = this.k3) == null) {
-                            return z;
-                        }
-                        this.l3 = staticLayout;
-                        this.m3 = gn.update(0, (View) rc2Var, false, this.m3, staticLayout);
-                        return true;
+                    } else {
+                        String M02 = k96.M0(2131743473, null);
+                        TLRPC.TL_chatBannedRights tL_chatBannedRights3 = zc2Var.P;
+                        ag2Var.e(M02, "", (tL_chatBannedRights3.embed_links || tL_chatBannedRights.embed_links || tL_chatBannedRights3.send_plain || tL_chatBannedRights.send_plain) ? false : true, true, z7);
+                        ag2Var.setIcon(tL_chatBannedRights.embed_links ? R.drawable.permission_locked : 0);
+                        break;
                     }
-                    this.u2 = true;
-                    StaticLayout[] staticLayoutArr = this.y2;
-                    StaticLayout staticLayout8 = staticLayoutArr[0];
-                    StaticLayout[] staticLayoutArr2 = this.z2;
-                    staticLayoutArr2[0] = staticLayout8;
-                    staticLayoutArr2[1] = staticLayoutArr[1];
-                    this.A2 = this.B2;
-                    this.v2 = this.w2;
-                    this.C2 = this.D2;
-                    z = true;
-                    rc2Var.Y3();
-                    if (l39Var.a()) {
-                    }
-                    if (rc2Var.Q5.g4()) {
-                    }
-                    if (rc2Var.Q7 != null) {
-                    }
-                    k47Var2 = rc2Var.Q5;
-                    if ((k47Var2 == null && k47Var2.L2) != this.j3) {
-                    }
-                    return z;
+                } else {
+                    ag2Var.e(k96.M0(2131745413, null), "", (zc2Var.P.send_stickers || tL_chatBannedRights.send_stickers) ? false : true, true, z7);
+                    ag2Var.setIcon(tL_chatBannedRights.send_stickers ? R.drawable.permission_locked : 0);
+                    break;
                 }
-                size = hashSet.size();
-                if (size == (hashSet2 != null ? 0 : hashSet2.size()) || hashSet == null || !hashSet.equals(hashSet2)) {
-                    this.f3 = true;
-                    this.e3 = this.d3;
-                    z = true;
-                }
-                z3 = this.g3;
-                k47Var = rc2Var.Q5;
-                if (z3 != (k47Var == null && k47Var.L0)) {
-                }
-                if (k47Var != null) {
-                }
-                i4 = this.I2;
-                if (i4 != rc2Var.gb) {
-                }
-                rc2Var.Y3();
-                if (l39Var.a()) {
-                }
-                if (rc2Var.Q5.g4()) {
-                }
-                if (rc2Var.Q7 != null) {
-                }
-                k47Var2 = rc2Var.Q5;
-                if ((k47Var2 == null && k47Var2.L2) != this.j3) {
-                }
-                return z;
-            }
-            this.U0 = false;
-            this.g2 = true;
-            this.h1 = this.g1;
-            this.W0 = this.j2;
-            this.X0 = this.Y0;
+                break;
+            case 11:
+                ((wfb) view).a(zc2Var.w, zc2Var.T, i3 == 0, false, new be2(this, (byte) 22));
+                break;
         }
-        z = true;
-        if (this.h2 != rc2Var.H3()) {
-        }
-        if (this.k != rc2Var.h3) {
-        }
-        if (this.k2 != rc2Var.Lb) {
-        }
-        f = this.n2;
-        if (f != rc2Var.u0) {
-        }
-        i = this.q2;
-        if (i != rc2Var.q0) {
-        }
-        i2 = this.W2;
-        if (i2 != rc2Var.Q1) {
-        }
-        i3 = this.T2;
-        tc2Var = rc2Var.s0;
-        if (i3 != (tc2Var == null ? tc2Var.r : 0)) {
-        }
-        if (this.Z2 != (rc2Var.getPrimaryMessageObject() == null && rc2Var.getPrimaryMessageObject().c3)) {
-        }
-        if (this.R2 != rc2Var.h2()) {
-        }
-        if (this.b3 != rc2Var.s8) {
-        }
-        hashSet = this.d3;
-        k47 k47Var62 = rc2Var.Q5;
-        if (k47Var62 != null) {
-        }
-        if (hashSet != null) {
-        }
-        if (size == (hashSet2 != null ? 0 : hashSet2.size())) {
-        }
-        this.f3 = true;
-        this.e3 = this.d3;
-        z = true;
-        z3 = this.g3;
-        k47Var = rc2Var.Q5;
-        if (z3 != (k47Var == null && k47Var.L0)) {
-        }
-        if (k47Var != null) {
-        }
-        i4 = this.I2;
-        if (i4 != rc2Var.gb) {
-        }
-        rc2Var.Y3();
-        if (l39Var.a()) {
-        }
-        if (rc2Var.Q5.g4()) {
-        }
-        if (rc2Var.Q7 != null) {
-        }
-        k47Var2 = rc2Var.Q5;
-        if ((k47Var2 == null && k47Var2.L2) != this.j3) {
-        }
-        return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0064  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int b() {
-        boolean z;
-        int i;
-        boolean z2;
-        k47 k47Var;
-        rc2 rc2Var = this.a;
-        boolean O3 = rc2Var.Q5.O3();
-        k47 k47Var2 = rc2Var.Q5;
-        boolean z3 = true;
-        if (!O3) {
-            if (!k47Var2.n4() && !rc2Var.Q5.Y2()) {
-                z3 = false;
-            }
-            return (z3 ? 4 : 0) | (rc2Var.Q5.m4() ? 8 : 0);
+    @Override // w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        View u6cVar;
+        View ld5Var;
+        int i2;
+        wjb wjbVar;
+        Context context = this.c;
+        zc2 zc2Var = this.e;
+        switch (i) {
+            case 0:
+                u6cVar = new u6c(context, null);
+                zkb.h(bkb.c6, null, u6cVar);
+                break;
+            case 1:
+                u6cVar = new mhb(context);
+                break;
+            case 2:
+            default:
+                u6cVar = new uib(context);
+                zkb.h(bkb.c6, null, u6cVar);
+                break;
+            case 3:
+                ld5Var = new ld5(this.c, bkb.K6, 21, 15, true, null);
+                zkb.h(bkb.c6, null, ld5Var);
+                u6cVar = ld5Var;
+                break;
+            case 4:
+            case 9:
+                u6cVar = new zgb(context);
+                zkb.h(bkb.c6, null, u6cVar);
+                break;
+            case 5:
+                u6cVar = new b9a(context, (de9) null);
+                break;
+            case 6:
+                u6cVar = new ghb(null, context, false);
+                zkb.h(bkb.c6, null, u6cVar);
+                break;
+            case 7:
+                le8 le8Var = new le8(context, 0, null, null);
+                zkb.h(bkb.c6, null, le8Var);
+                le8Var.c(new b7(this, (byte) 12));
+                u6cVar = le8Var;
+                break;
+            case 8:
+                FrameLayout frameLayout = new FrameLayout(context);
+                zc2Var.d = frameLayout;
+                int i3 = bkb.Z6;
+                zkb.h(i3, null, frameLayout);
+                zc2Var.e = new FrameLayout(context);
+                hn hnVar = new hn(context, true, false, false);
+                zc2Var.f = hnVar;
+                hnVar.setTypeface(gl.o());
+                zc2Var.f.setTextColor(-1);
+                zc2Var.f.setTextSize(gl.L(14.0f));
+                zc2Var.f.setGravity(17);
+                hn hnVar2 = zc2Var.f;
+                StringBuilder sb = new StringBuilder(k96.M0(2131754456, null));
+                sb.append(" ");
+                sb.append(k96.M0(zc2Var.L ? 2131754455 : 2131754454, null));
+                hnVar2.setText(sb.toString());
+                zc2Var.e.addView(zc2Var.f, nme.e(-2, -2, 17));
+                zc2Var.e.setBackground(sjb.f(bkb.Ei, 4.0f));
+                zc2Var.e.setOnClickListener(new x91(this, (byte) 12));
+                zc2Var.d.addView(zc2Var.e, nme.d(-1, 48.0f, kk7.D1, 14.0f, 28.0f, 14.0f, 14.0f));
+                zc2Var.d.setLayoutParams(new e49(-1, -2));
+                View view = new View(context);
+                zkb.h(i3, null, view);
+                zc2Var.d.setClipChildren(false);
+                zc2Var.d.setClipToPadding(false);
+                zc2Var.d.addView(view, nme.d(-1, 800.0f, 87, 0.0f, 0.0f, 0.0f, -800.0f));
+                u6cVar = zc2Var.d;
+                break;
+            case 10:
+                ag2 ag2Var = new ag2(this.c, 4, 21, false, zc2Var.getResourceProvider());
+                ag2Var.setPad(1);
+                ag2Var.getCheckBoxRound().setDrawBackgroundAsArc(14);
+                ag2Var.getCheckBoxRound().b(bkb.U6, bkb.f7, bkb.j7);
+                ag2Var.setEnabled(true);
+                zkb.h(bkb.c6, null, ag2Var);
+                u6cVar = ag2Var;
+                break;
+            case 11:
+                i2 = ((d) zc2Var).currentAccount;
+                long j = -zc2Var.s;
+                wjbVar = ((d) zc2Var).resourceProvider;
+                ld5Var = new wfb(i2, j, wjbVar, this.c);
+                u6cVar = ld5Var;
+                break;
         }
-        if (!k47Var2.n4() && !rc2Var.Q5.Y2()) {
-            if (rc2Var.Q5.m4()) {
-                z2 = true;
-                i = 0;
-                z = false;
-                z3 = false;
-            } else if (rc2Var.Q5.p4()) {
-                k47 k47Var3 = rc2Var.Q5;
-                i = (k47Var3.r1 || k47Var3.E4()) ? 0 : 1;
-                z = false;
-                z2 = false;
-            } else {
-                i = 0;
-                z = false;
-                z3 = false;
-            }
-            k47Var = rc2Var.Q5;
-            if (!k47Var.w1 || k47.a4(k47Var.k)) {
-                i = 0;
-                z = false;
-                z3 = false;
-            }
-            return i | (!z3 ? 2 : 0) | (z ? 4 : 0) | (z2 ? 8 : 0);
-        }
-        z = true;
-        i = 0;
-        z3 = false;
-        z2 = z3;
-        k47Var = rc2Var.Q5;
-        if (!k47Var.w1) {
-        }
-        i = 0;
-        z = false;
-        z3 = false;
-        return i | (!z3 ? 2 : 0) | (z ? 4 : 0) | (z2 ? 8 : 0);
+        return new y29(u6cVar);
     }
 
-    public final void c() {
-        lk1 lk1Var;
-        this.w0 = true;
-        rc2 rc2Var = this.a;
-        ArrayList arrayList = rc2Var.I5;
-        mm mmVar = rc2Var.U0;
-        this.b = mmVar.L0;
-        this.c = mmVar.M0;
-        this.d = mmVar.N0;
-        this.e = mmVar.O0;
-        System.arraycopy(mmVar.X0, 0, this.u0, 0, 4);
-        m37 m37Var = rc2Var.L6;
-        if (m37Var != null) {
-            this.E0.set(m37Var.getBounds());
+    @Override // w39
+    public final void y(s49 s49Var) {
+        int b = s49Var.b();
+        zc2 zc2Var = this.e;
+        if (b == zc2Var.v0) {
+            zc2Var.q0(s49Var.a);
         }
-        this.F0 = rc2Var.Y6;
-        k47 k47Var = rc2Var.Q5;
-        this.J0 = k47Var != null ? k47Var.B2 : null;
-        this.K0 = k47Var != null ? k47Var.v2 : 0;
-        this.a1 = rc2Var.vb;
-        this.N0 = k47Var != null ? k47Var.y2 : null;
-        this.f = rc2Var.s3;
-        this.g = rc2Var.t3;
-        this.d1 = rc2Var.m3;
-        this.e1 = k47Var != null ? k47Var.M2 : false;
-        ArrayList arrayList2 = this.M1;
-        arrayList2.clear();
-        if (!arrayList.isEmpty()) {
-            arrayList2.addAll(arrayList);
-        }
-        this.v = rc2Var.x1;
-        this.w = rc2Var.g0;
-        this.x = rc2Var.W;
-        this.y = rc2Var.e0;
-        this.z = rc2Var.T != null;
-        this.A = rc2Var.b0 != null;
-        this.H1 = rc2Var.W1;
-        this.D1 = rc2Var.v1;
-        this.F1 = rc2Var.w1;
-        k47 k47Var2 = rc2Var.Q5;
-        this.L2 = k47Var2 != null && k47Var2.D == 27 && (lk1Var = rc2Var.w) != null && lk1Var.d();
-        if (rc2Var.n7 != null) {
-            this.N = rc2Var.getRepliesCount();
-            this.O = rc2Var.v7;
-            this.U = rc2Var.n7;
-            this.P = rc2Var.q7;
-            this.Q = rc2Var.r7;
-            this.R = rc2Var.s7;
-            this.S = rc2Var.u7;
-            this.T = rc2Var.p7;
-        }
-        this.F = rc2Var.getRepliesCount();
-        this.c2 = rc2Var.getMessageObject().k.views;
-        this.H = rc2Var.sa;
-        this.d2 = rc2Var.pa;
-        this.B = rc2Var.q6;
-        this.f0 = rc2Var.z5;
-        this.l1 = rc2Var.I6;
-        this.n1 = rc2Var.I4;
-        this.T1 = rc2Var.K3;
-        this.U1 = rc2Var.L3;
-        this.Y1 = rc2Var.X1;
-        this.f1 = !rc2Var.S9;
-        this.g1 = rc2Var.O9;
-        this.j2 = rc2Var.L9;
-        this.Y0 = rc2Var.M9;
-        this.f2 = rc2Var.I3();
-        this.t2 = rc2Var.getTopMediaOffset();
-        this.h2 = rc2Var.H3();
-        this.k = rc2Var.h3;
-        this.k2 = rc2Var.Lb;
-        this.n2 = rc2Var.u0;
-        this.q2 = rc2Var.q0;
-        this.Q1 = rc2Var.K5;
-        StaticLayout[] staticLayoutArr = rc2Var.C9;
-        StaticLayout staticLayout = staticLayoutArr[0];
-        StaticLayout[] staticLayoutArr2 = this.y2;
-        staticLayoutArr2[0] = staticLayout;
-        staticLayoutArr2[1] = staticLayoutArr[1];
-        k47 k47Var3 = rc2Var.Q5;
-        this.x2 = k47Var3 != null && k47Var3.m5();
-        this.B2 = rc2Var.F9;
-        int i = rc2Var.gb;
-        this.w2 = i;
-        this.I2 = i;
-        this.D2 = rc2Var.D9;
-        this.j1 = rc2Var.getCurrentBackgroundLeft();
-        m37 m37Var2 = rc2Var.L6;
-        if (m37Var2 != null) {
-            this.k1 = m37Var2.getBounds().right;
-        }
-        k47 k47Var4 = rc2Var.Q5;
-        this.p2 = k47Var4 != null ? k47Var4.x2 : 0.0f;
-        this.Q0 = rc2Var.a8;
-        this.F2 = rc2Var.R7;
-        this.J2 = rc2Var.b8;
-        rc2Var.O.q();
-        if (rc2Var.Q7 != null) {
-            this.t = rc2Var.V7;
-        } else {
-            this.t = 0.0f;
-        }
-        this.N2 = rc2Var.w9;
-        this.O2 = rc2Var.x9;
-        tc2 tc2Var = rc2Var.s0;
-        this.T2 = tc2Var != null ? tc2Var.r : 0;
-        this.Z2 = rc2Var.getPrimaryMessageObject() != null && rc2Var.getPrimaryMessageObject().c3;
-        this.R2 = rc2Var.h2();
-        this.W2 = rc2Var.Q1;
-        this.b3 = rc2Var.s8;
-        this.d3 = rc2Var.getPrimaryMessageObject() != null ? rc2Var.getPrimaryMessageObject().K0 : null;
-        k47 k47Var5 = rc2Var.Q5;
-        this.g3 = k47Var5 != null && k47Var5.L0;
-        this.j3 = k47Var5 != null && k47Var5.L2;
-        this.k3 = rc2Var.o2;
     }
 
-    public final void d() {
-        rc2 rc2Var = this.a;
-        StaticLayout[] staticLayoutArr = rc2Var.C9;
-        StaticLayout staticLayout = staticLayoutArr[0];
-        StaticLayout[] staticLayoutArr2 = this.y2;
-        staticLayoutArr2[0] = staticLayout;
-        staticLayoutArr2[1] = staticLayoutArr[1];
-        this.x2 = rc2Var.Q5.m5();
-        this.B2 = rc2Var.F9;
-        int i = rc2Var.gb;
-        this.w2 = i;
-        this.I2 = i;
-        this.D2 = rc2Var.D9;
-    }
-
-    public final void e() {
-        rc2 rc2Var = this.a;
-        mm mmVar = rc2Var.U0;
-        this.h = false;
-        this.C = false;
-        this.x0 = false;
-        this.h0 = 0.0f;
-        this.i0 = 0.0f;
-        this.j0 = 0.0f;
-        this.k0 = 0.0f;
-        this.l0 = 0.0f;
-        this.m0 = 0.0f;
-        if (this.g0) {
-            float f = this.p0;
-            if (f != 0.0f) {
-                float f2 = this.q0;
-                if (f2 != 0.0f) {
-                    mmVar.i0(this.n0, this.o0, f, f2);
-                }
-            }
+    @Override // w39
+    public final void z(s49 s49Var) {
+        int b = s49Var.b();
+        zc2 zc2Var = this.e;
+        if (b != zc2Var.w0 || zc2Var.getParentActivity() == null) {
+            return;
         }
-        if (this.C0) {
-            mmVar.s0(this.B0);
-        }
-        this.n0 = 0.0f;
-        this.o0 = 0.0f;
-        this.p0 = 0.0f;
-        this.q0 = 0.0f;
-        this.g0 = false;
-        this.A0 = 1.0f;
-        this.v0 = 1.0f;
-        this.C0 = false;
-        this.L1 = 1.0f;
-        this.R1 = 0.0f;
-        this.S1 = 1.0f;
-        this.H0 = false;
-        this.L0 = false;
-        this.G0 = false;
-        this.P2 = false;
-        this.Q2 = false;
-        this.I0 = null;
-        uj9 uj9Var = this.M0;
-        if (uj9Var != null) {
-            uj9Var.f(rc2Var);
-        }
-        this.M0 = null;
-        this.V0 = null;
-        this.W0 = null;
-        this.U0 = false;
-        this.b1 = false;
-        this.D0 = false;
-        this.c1 = null;
-        gn.release(rc2Var, this.P0);
-        this.P0 = null;
-        this.t0 = false;
-        this.K1 = false;
-        this.N1.clear();
-        this.X1 = false;
-        this.E2 = false;
-        this.O1 = false;
-        this.a2 = false;
-        this.S0 = null;
-        this.G = false;
-        this.I = null;
-        this.V = false;
-        this.W = null;
-        this.e2 = null;
-        this.g2 = false;
-        this.i2 = false;
-        this.i1 = false;
-        this.m1 = false;
-        this.d0 = false;
-        this.t1 = false;
-        this.v1 = false;
-        this.z1 = false;
-        this.x1 = false;
-        this.A1 = false;
-        this.C1 = false;
-        this.w1 = false;
-        this.E1 = false;
-        this.G1 = false;
-        this.M2 = false;
-        this.K1 = false;
-        this.j = false;
-        this.l2 = false;
-        this.m2 = false;
-        this.s2 = false;
-        this.Y2 = false;
-        this.a3 = false;
-        this.f3 = false;
-        this.i3 = false;
-        this.S2 = false;
-        this.c3 = false;
-        this.u2 = false;
-        this.G2 = false;
-        StaticLayout[] staticLayoutArr = this.z2;
-        staticLayoutArr[0] = null;
-        staticLayoutArr[1] = null;
-        this.q = false;
-        l39 l39Var = rc2Var.O;
-        ArrayList arrayList = l39Var.s;
-        ArrayList arrayList2 = l39Var.t;
-        for (int i = 0; i < arrayList2.size(); i++) {
-            ((i39) arrayList2.get(i)).b();
-        }
-        arrayList2.clear();
-        l39Var.i = false;
-        l39Var.j = false;
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            ((i39) arrayList.get(i2)).b = (byte) 0;
-        }
-        this.l3 = null;
-        gn.release(rc2Var, this.m3);
-    }
-
-    public final void f() {
-        float max = Math.max(0.0f, Math.min(1.0f, this.L1));
-        this.R1 = (float) Math.pow(1.0f - max, 0.5d);
-        this.S1 = (float) Math.pow(max, 0.5d);
+        gl.t1(zc2Var.getParentActivity().getCurrentFocus());
     }
 }

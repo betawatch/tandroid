@@ -1,53 +1,44 @@
 // default package
 
-import android.app.Activity;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class x29 extends vz9 {
-    public final /* synthetic */ z29 f2;
-    public final /* synthetic */ mz9[] g2;
-    public final /* synthetic */ a39 h2;
+public final class x29 implements View.OnTouchListener {
+    public float a;
+    public float b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x29(a39 a39Var, a39 a39Var2, Activity activity, Integer num, z29 z29Var, mz9[] mz9VarArr) {
-        super(a39Var2, activity, false, num, 2, null);
-        this.h2 = a39Var;
-        this.f2 = z29Var;
-        this.g2 = mz9VarArr;
-    }
-
-    @Override // vz9
-    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i;
-        if (l != null) {
-            a39 a39Var = this.h2;
-            i = ((d) a39Var).currentAccount;
-            hs6.d0(i).c2("animated_" + l);
-            this.f2.a(true);
-            mz9 mz9Var = this.g2[0];
-            if (mz9Var != null) {
-                a39Var.n = null;
-                mz9Var.dismiss();
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        ViewParent parent = view.getParent();
+        if (parent != null) {
+            if (motionEvent.getAction() == 0) {
+                this.a = motionEvent.getX();
+                this.b = motionEvent.getY();
+                this.c = true;
+                parent.requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction() == 2) {
+                float x = this.a - motionEvent.getX();
+                float y = this.b - motionEvent.getY();
+                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+                if (this.c) {
+                    if (Math.sqrt((y * y) + (x * x)) > scaledTouchSlop) {
+                        this.c = false;
+                        parent.requestDisallowInterceptTouchEvent(false);
+                        return false;
+                    }
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.c = false;
+                parent.requestDisallowInterceptTouchEvent(false);
+                return false;
             }
         }
-    }
-
-    @Override // vz9
-    public final void q(fz9 fz9Var, k39 k39Var) {
-        int i;
-        a39 a39Var = this.h2;
-        i = ((d) a39Var).currentAccount;
-        hs6.d0(i).c2(k39Var.f);
-        this.f2.a(true);
-        mz9 mz9Var = this.g2[0];
-        if (mz9Var != null) {
-            a39Var.n = null;
-            mz9Var.dismiss();
-        }
+        return false;
     }
 }

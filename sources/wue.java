@@ -1,25 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.ResolveInfo;
+import java.util.Iterator;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public enum wue implements amd {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3);
-
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    wue(int i) {
-        this.a = i;
-    }
-
-    @Override // amd
-    public final int zza() {
-        return this.a;
+public abstract class wue {
+    public static boolean a(Context context) {
+        ApplicationInfo applicationInfo;
+        Intent putExtra = new Intent().addFlags(TLObject.FLAG_28).setAction("com.android.settings.panel.action.MEDIA_OUTPUT").putExtra("com.android.settings.panel.extra.PACKAGE_NAME", context.getPackageName());
+        Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
+        while (it.hasNext()) {
+            ActivityInfo activityInfo = it.next().activityInfo;
+            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & kk7.M1) != 0) {
+                context.startActivity(putExtra);
+                return true;
+            }
+        }
+        return false;
     }
 }

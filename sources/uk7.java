@@ -1,17 +1,25 @@
 // default package
 
-import android.view.View;
+import android.app.Notification;
+import android.app.PendingIntent;
+import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface uk7 {
-    void k(int i, View view);
-
-    void m(View view, int i, int i2, int i3, int i4, int i5);
-
-    boolean n(View view, View view2, int i, int i2);
-
-    void q(View view, View view2, int i, int i2);
-
-    void r(View view, int i, int i2, int[] iArr, int i3);
+public abstract class uk7 {
+    public static Notification.BubbleMetadata a(vk7 vk7Var) {
+        if (vk7Var == null) {
+            return null;
+        }
+        PendingIntent pendingIntent = vk7Var.a;
+        IconCompat iconCompat = vk7Var.b;
+        iconCompat.getClass();
+        Notification.BubbleMetadata.Builder builder = new Notification.BubbleMetadata.Builder(pendingIntent, nke.a(iconCompat, null));
+        builder.setDeleteIntent(null).setAutoExpandBubble((vk7Var.d & 1) != 0).setSuppressNotification((vk7Var.d & 2) != 0);
+        int i = vk7Var.c;
+        if (i != 0) {
+            builder.setDesiredHeight(i);
+        }
+        return builder.build();
+    }
 }

@@ -1,65 +1,90 @@
 // default package
 
-import android.os.RemoteException;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nx6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tx6 b;
+public final class nx6 extends aob {
+    public final aob e;
+    public final cm5 f;
+    public final cm5 g;
 
-    public /* synthetic */ nx6(tx6 tx6Var, byte b) {
-        this.a = b;
-        this.b = tx6Var;
+    public nx6(aob aobVar, cm5 cm5Var, cm5 cm5Var2) {
+        this.e = aobVar;
+        this.f = cm5Var;
+        this.g = cm5Var2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        tx6 tx6Var = this.b;
-        switch (b) {
-            case 0:
-                tx6Var.getClass();
-                return;
-            case 1:
-                synchronized (tx6Var.a) {
-                    if (tx6Var.v) {
-                        return;
-                    }
-                    final n8a R0 = tx6Var.t.R0();
-                    if (!tx6Var.c.hasMessages(1)) {
-                        n8a n8aVar = tx6Var.s.c;
-                        qe8 qe8Var = R0.a;
-                        int i = qe8Var.b;
-                        qe8 qe8Var2 = n8aVar.a;
-                        if (i == qe8Var2.b && qe8Var.e == qe8Var2.e && qe8Var.h == qe8Var2.h && qe8Var.i == qe8Var2.i) {
-                            mx6 mx6Var = tx6Var.g.b;
-                            mo5 M = mx6Var.M();
-                            for (int i2 = 0; i2 < M.size(); i2++) {
-                                final sw6 sw6Var = (sw6) M.get(i2);
-                                mx6Var.C0();
-                                final boolean Z = mx6Var.Z(sw6Var, 16);
-                                final boolean Z2 = mx6Var.Z(sw6Var, 17);
-                                tx6Var.c(sw6Var, new sx6() { // from class: ox6
-                                    @Override // sx6
-                                    public final void d(rw6 rw6Var, int i3) {
-                                        rw6Var.i(i3, n8a.this, Z, Z2, sw6Var.c);
-                                    }
-                                });
-                            }
-                            try {
-                                tx6Var.h.l.i(0, R0, true, true, 0);
-                            } catch (RemoteException e) {
-                                ncd.d("MediaSessionImpl", "Exception in using media1 API", e);
-                            }
-                        }
-                    }
-                    tx6Var.r();
-                    return;
-                }
-            default:
-                tx6Var.r();
-                return;
+    @Override // aob
+    public final int a(boolean z) {
+        return this.e.a(z);
+    }
+
+    @Override // aob
+    public final int b(Object obj) {
+        Object obj2;
+        boolean z = obj instanceof String;
+        aob aobVar = this.e;
+        return (!z || (obj2 = ((v59) this.g).n.get(obj)) == null) ? aobVar.b(obj) : aobVar.b(obj2);
+    }
+
+    @Override // aob
+    public final int c(boolean z) {
+        return this.e.c(z);
+    }
+
+    @Override // aob
+    public final int e(int i, int i2, boolean z) {
+        return this.e.e(i, i2, z);
+    }
+
+    @Override // aob
+    public final xnb f(int i, xnb xnbVar, boolean z) {
+        String str;
+        String str2;
+        this.e.f(i, xnbVar, z);
+        if (z) {
+            Object obj = xnbVar.a;
+            cm5 cm5Var = this.g;
+            if (obj != null && (str2 = (String) cm5Var.get(obj)) != null) {
+                xnbVar.a = str2;
+            }
+            Object obj2 = xnbVar.b;
+            if (obj2 != null && (str = (String) cm5Var.get(obj2)) != null) {
+                xnbVar.b = str;
+            }
         }
+        return xnbVar;
+    }
+
+    @Override // aob
+    public final int h() {
+        return this.e.h();
+    }
+
+    @Override // aob
+    public final int k(int i, int i2, boolean z) {
+        return this.e.k(i, i2, z);
+    }
+
+    @Override // aob
+    public final Object l(int i) {
+        Object l = this.e.l(i);
+        String str = (String) this.g.get(l);
+        return str == null ? l : str;
+    }
+
+    @Override // aob
+    public final znb m(int i, znb znbVar, long j) {
+        String str;
+        this.e.m(i, znbVar, j);
+        Object obj = znbVar.a;
+        if (obj != null && (str = (String) this.f.get(obj)) != null) {
+            znbVar.a = str;
+        }
+        return znbVar;
+    }
+
+    @Override // aob
+    public final int o() {
+        return this.e.o();
     }
 }

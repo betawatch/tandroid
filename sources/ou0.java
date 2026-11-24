@@ -1,395 +1,1382 @@
 // default package
 
-import android.security.keystore.KeyGenParameterSpec;
-import android.text.TextUtils;
-import android.util.Pair;
-import j$.util.Collection;
-import j$.util.stream.Collectors;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.security.KeyStore;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.GCMParameterSpec;
-import org.json.JSONObject;
-import org.telegram.messenger.a;
+import android.app.DownloadManager;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
+import android.view.View;
+import android.webkit.URLUtil;
+import android.webkit.WebView;
+import java.net.URLDecoder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ou0 {
-    public final int a;
-    public final long b;
-    public final long c;
-    public final boolean d;
-    public String e;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes3.dex */
+public final class ou0 implements View.OnLongClickListener {
+    public final /* synthetic */ cv0 a;
 
-    public ou0(int i, long j, long j2, boolean z) {
-        this.a = i;
-        this.b = j2;
-        this.c = j;
-        this.d = z;
+    public ou0(cv0 cv0Var) {
+        this.a = cv0Var;
     }
 
-    public static File b() {
-        try {
-            File filesDir = a.b.getFilesDir();
-            if (filesDir != null) {
-                File file = new File(filesDir, "apps_storage/");
-                file.mkdirs();
-                if (filesDir.exists() || filesDir.mkdirs()) {
-                    if (filesDir.canWrite()) {
-                        return file;
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        WebView.HitTestResult hitTestResult = this.a.getHitTestResult();
+        final byte b = 0;
+        final byte b2 = 1;
+        if (hitTestResult.getType() == 7) {
+            final String extra = hitTestResult.getExtra();
+            gl.c3(new Runnable(this) { // from class: mu0
+                public final /* synthetic */ ou0 b;
+
+                {
+                    this.b = this;
+                }
+
+                /* JADX WARN: Can't wrap try/catch for region: R(8:22|23|24|(4:28|30|31|32)|37|30|31|32) */
+                /* JADX WARN: Code restructure failed: missing block: B:35:0x00ae, code lost:
+                
+                    r4 = e;
+                 */
+                @Override // java.lang.Runnable
+                /*
+                    Code decompiled incorrectly, please refer to instructions dump.
+                */
+                public final void run() {
+                    String str;
+                    String str2;
+                    Uri parse;
+                    String str3;
+                    String str4;
+                    byte b3 = b;
+                    final String str5 = extra;
+                    final ou0 ou0Var = this.b;
+                    final byte b4 = 0;
+                    final byte b5 = 1;
+                    switch (b3) {
+                        case 0:
+                            cv0 cv0Var = ou0Var.a;
+                            fx0 h = de9.h(1, null, cv0Var.getContext(), false);
+                            try {
+                                parse = Uri.parse(str5);
+                            } catch (Exception e) {
+                                try {
+                                    fa4.g(e, false);
+                                } catch (Exception e2) {
+                                    e = e2;
+                                    str = str5;
+                                    fa4.g(e, true);
+                                    str2 = str;
+                                    h.R = true;
+                                    h.P = str2;
+                                    h.Q = false;
+                                    CharSequence[] charSequenceArr = {k96.M0(2131747599, null), k96.M0(2131747601, null), k96.M0(2131751755, null)};
+                                    DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: nu0
+                                        @Override // android.content.DialogInterface.OnClickListener
+                                        public final void onClick(DialogInterface dialogInterface, int i) {
+                                            byte b6 = b5;
+                                            String str6 = str5;
+                                            ou0 ou0Var2 = ou0Var;
+                                            switch (b6) {
+                                                case 0:
+                                                    cv0 cv0Var2 = ou0Var2.a;
+                                                    if (i != 0) {
+                                                        if (i != 1) {
+                                                            if (i == 2) {
+                                                                gl.g(str6);
+                                                                hv0 hv0Var = cv0Var2.R;
+                                                                if (hv0Var != null) {
+                                                                    new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                                if (guessFileName == null) {
+                                                                    guessFileName = "image.png";
+                                                                }
+                                                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                                request.setMimeType("image/*");
+                                                                request.setDescription(k96.M0(2131742665, null));
+                                                                request.setNotificationVisibility(1);
+                                                                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                                DownloadManager downloadManager = (DownloadManager) cv0Var2.getContext().getSystemService("download");
+                                                                if (downloadManager != null) {
+                                                                    downloadManager.enqueue(request);
+                                                                }
+                                                                hv0 hv0Var2 = cv0Var2.R;
+                                                                if (hv0Var2 != null) {
+                                                                    new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                                    break;
+                                                                }
+                                                            } catch (Exception e3) {
+                                                                fa4.g(e3, true);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent.putExtra("create_new_tab", true);
+                                                            intent.putExtra("com.android.browser.application_id", cv0Var2.getContext().getPackageName());
+                                                            cv0Var2.getContext().startActivity(intent);
+                                                            break;
+                                                        } catch (Exception e4) {
+                                                            fa4.g(e4, true);
+                                                            cv0Var2.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                    break;
+                                                default:
+                                                    cv0 cv0Var3 = ou0Var2.a;
+                                                    if (i != 0) {
+                                                        if (i != 1) {
+                                                            if (i == 2) {
+                                                                gl.g(str6);
+                                                                hv0 hv0Var3 = cv0Var3.R;
+                                                                if (hv0Var3 != null) {
+                                                                    new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                                intent2.putExtra("create_new_tab", true);
+                                                                intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                                cv0Var3.getContext().startActivity(intent2);
+                                                                break;
+                                                            } catch (Exception e5) {
+                                                                fa4.g(e5, true);
+                                                                cv0Var3.loadUrl(str6);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        cv0Var3.loadUrl(str6);
+                                                        break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    };
+                                    h.M = charSequenceArr;
+                                    h.L = onClickListener;
+                                    h.show();
+                                    cv0Var.G = h;
+                                    return;
+                                }
+                            }
+                            if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
+                                str = d01.w(parse, null, null, d01.a(parse.getHost()), null);
+                                str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                                h.R = true;
+                                h.P = str2;
+                                h.Q = false;
+                                CharSequence[] charSequenceArr2 = {k96.M0(2131747599, null), k96.M0(2131747601, null), k96.M0(2131751755, null)};
+                                DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: nu0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i) {
+                                        byte b6 = b5;
+                                        String str6 = str5;
+                                        ou0 ou0Var2 = ou0Var;
+                                        switch (b6) {
+                                            case 0:
+                                                cv0 cv0Var2 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var = cv0Var2.R;
+                                                            if (hv0Var != null) {
+                                                                new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(k96.M0(2131742665, null));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) cv0Var2.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            hv0 hv0Var2 = cv0Var2.R;
+                                                            if (hv0Var2 != null) {
+                                                                new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e3) {
+                                                            fa4.g(e3, true);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", cv0Var2.getContext().getPackageName());
+                                                        cv0Var2.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e4) {
+                                                        fa4.g(e4, true);
+                                                        cv0Var2.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                cv0 cv0Var3 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var3 = cv0Var3.R;
+                                                            if (hv0Var3 != null) {
+                                                                new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                            cv0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e5) {
+                                                            fa4.g(e5, true);
+                                                            cv0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    cv0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                h.M = charSequenceArr2;
+                                h.L = onClickListener2;
+                                h.show();
+                                cv0Var.G = h;
+                            }
+                            str = str5;
+                            str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                            h.R = true;
+                            h.P = str2;
+                            h.Q = false;
+                            CharSequence[] charSequenceArr22 = {k96.M0(2131747599, null), k96.M0(2131747601, null), k96.M0(2131751755, null)};
+                            DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: nu0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i) {
+                                    byte b6 = b5;
+                                    String str6 = str5;
+                                    ou0 ou0Var2 = ou0Var;
+                                    switch (b6) {
+                                        case 0:
+                                            cv0 cv0Var2 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var = cv0Var2.R;
+                                                        if (hv0Var != null) {
+                                                            new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(k96.M0(2131742665, null));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) cv0Var2.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        hv0 hv0Var2 = cv0Var2.R;
+                                                        if (hv0Var2 != null) {
+                                                            new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e3) {
+                                                        fa4.g(e3, true);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", cv0Var2.getContext().getPackageName());
+                                                    cv0Var2.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e4) {
+                                                    fa4.g(e4, true);
+                                                    cv0Var2.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            cv0 cv0Var3 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var3 = cv0Var3.R;
+                                                        if (hv0Var3 != null) {
+                                                            new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                        cv0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e5) {
+                                                        fa4.g(e5, true);
+                                                        cv0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                cv0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            h.M = charSequenceArr22;
+                            h.L = onClickListener22;
+                            h.show();
+                            cv0Var.G = h;
+                            break;
+                        default:
+                            cv0 cv0Var2 = ou0Var.a;
+                            fx0 h2 = de9.h(1, null, cv0Var2.getContext(), false);
+                            try {
+                                Uri parse2 = Uri.parse(str5);
+                                str3 = d01.w(parse2, null, null, d01.a(parse2.getHost()), null);
+                            } catch (Exception e3) {
+                                try {
+                                    fa4.g(e3, false);
+                                    str3 = str5;
+                                } catch (Exception e4) {
+                                    e = e4;
+                                    str3 = str5;
+                                    fa4.g(e, true);
+                                    str4 = str3;
+                                    h2.R = true;
+                                    h2.P = str4;
+                                    h2.Q = false;
+                                    CharSequence[] charSequenceArr3 = {k96.M0(2131747601, null), k96.M0(2131754938, null), k96.M0(2131751750, null)};
+                                    DialogInterface.OnClickListener onClickListener3 = new DialogInterface.OnClickListener() { // from class: nu0
+                                        @Override // android.content.DialogInterface.OnClickListener
+                                        public final void onClick(DialogInterface dialogInterface, int i) {
+                                            byte b6 = b4;
+                                            String str6 = str5;
+                                            ou0 ou0Var2 = ou0Var;
+                                            switch (b6) {
+                                                case 0:
+                                                    cv0 cv0Var22 = ou0Var2.a;
+                                                    if (i != 0) {
+                                                        if (i != 1) {
+                                                            if (i == 2) {
+                                                                gl.g(str6);
+                                                                hv0 hv0Var = cv0Var22.R;
+                                                                if (hv0Var != null) {
+                                                                    new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                                if (guessFileName == null) {
+                                                                    guessFileName = "image.png";
+                                                                }
+                                                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                                request.setMimeType("image/*");
+                                                                request.setDescription(k96.M0(2131742665, null));
+                                                                request.setNotificationVisibility(1);
+                                                                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                                DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                                if (downloadManager != null) {
+                                                                    downloadManager.enqueue(request);
+                                                                }
+                                                                hv0 hv0Var2 = cv0Var22.R;
+                                                                if (hv0Var2 != null) {
+                                                                    new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                                    break;
+                                                                }
+                                                            } catch (Exception e32) {
+                                                                fa4.g(e32, true);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent.putExtra("create_new_tab", true);
+                                                            intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                            cv0Var22.getContext().startActivity(intent);
+                                                            break;
+                                                        } catch (Exception e42) {
+                                                            fa4.g(e42, true);
+                                                            cv0Var22.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                    break;
+                                                default:
+                                                    cv0 cv0Var3 = ou0Var2.a;
+                                                    if (i != 0) {
+                                                        if (i != 1) {
+                                                            if (i == 2) {
+                                                                gl.g(str6);
+                                                                hv0 hv0Var3 = cv0Var3.R;
+                                                                if (hv0Var3 != null) {
+                                                                    new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                                intent2.putExtra("create_new_tab", true);
+                                                                intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                                cv0Var3.getContext().startActivity(intent2);
+                                                                break;
+                                                            } catch (Exception e5) {
+                                                                fa4.g(e5, true);
+                                                                cv0Var3.loadUrl(str6);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        cv0Var3.loadUrl(str6);
+                                                        break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    };
+                                    h2.M = charSequenceArr3;
+                                    h2.L = onClickListener3;
+                                    h2.show();
+                                    cv0Var2.G = h2;
+                                }
+                            }
+                            try {
+                                str4 = URLDecoder.decode(str3.replaceAll("\\+", "%2b"), "UTF-8");
+                            } catch (Exception e5) {
+                                e = e5;
+                                fa4.g(e, true);
+                                str4 = str3;
+                                h2.R = true;
+                                h2.P = str4;
+                                h2.Q = false;
+                                CharSequence[] charSequenceArr32 = {k96.M0(2131747601, null), k96.M0(2131754938, null), k96.M0(2131751750, null)};
+                                DialogInterface.OnClickListener onClickListener32 = new DialogInterface.OnClickListener() { // from class: nu0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i) {
+                                        byte b6 = b4;
+                                        String str6 = str5;
+                                        ou0 ou0Var2 = ou0Var;
+                                        switch (b6) {
+                                            case 0:
+                                                cv0 cv0Var22 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var = cv0Var22.R;
+                                                            if (hv0Var != null) {
+                                                                new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(k96.M0(2131742665, null));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            hv0 hv0Var2 = cv0Var22.R;
+                                                            if (hv0Var2 != null) {
+                                                                new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e32) {
+                                                            fa4.g(e32, true);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                        cv0Var22.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e42) {
+                                                        fa4.g(e42, true);
+                                                        cv0Var22.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                cv0 cv0Var3 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var3 = cv0Var3.R;
+                                                            if (hv0Var3 != null) {
+                                                                new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                            cv0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e52) {
+                                                            fa4.g(e52, true);
+                                                            cv0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    cv0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                h2.M = charSequenceArr32;
+                                h2.L = onClickListener32;
+                                h2.show();
+                                cv0Var2.G = h2;
+                            }
+                            h2.R = true;
+                            h2.P = str4;
+                            h2.Q = false;
+                            CharSequence[] charSequenceArr322 = {k96.M0(2131747601, null), k96.M0(2131754938, null), k96.M0(2131751750, null)};
+                            DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: nu0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i) {
+                                    byte b6 = b4;
+                                    String str6 = str5;
+                                    ou0 ou0Var2 = ou0Var;
+                                    switch (b6) {
+                                        case 0:
+                                            cv0 cv0Var22 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var = cv0Var22.R;
+                                                        if (hv0Var != null) {
+                                                            new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(k96.M0(2131742665, null));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        hv0 hv0Var2 = cv0Var22.R;
+                                                        if (hv0Var2 != null) {
+                                                            new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e32) {
+                                                        fa4.g(e32, true);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                    cv0Var22.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e42) {
+                                                    fa4.g(e42, true);
+                                                    cv0Var22.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            cv0 cv0Var3 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var3 = cv0Var3.R;
+                                                        if (hv0Var3 != null) {
+                                                            new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                        cv0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e52) {
+                                                        fa4.g(e52, true);
+                                                        cv0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                cv0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            h2.M = charSequenceArr322;
+                            h2.L = onClickListener322;
+                            h2.show();
+                            cv0Var2.G = h2;
                     }
                 }
-            }
-        } catch (Exception unused) {
+            });
+            return true;
         }
-        return new File("");
-    }
+        if (hitTestResult.getType() != 5) {
+            return false;
+        }
+        final String extra2 = hitTestResult.getExtra();
+        gl.c3(new Runnable(this) { // from class: mu0
+            public final /* synthetic */ ou0 b;
 
-    public static SecretKey g() {
-        KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-        keyStore.load(null);
-        if (!keyStore.containsAlias("MiniAppsKey")) {
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
-            keyGenerator.init(new KeyGenParameterSpec.Builder("MiniAppsKey", 3).setBlockModes("GCM").setEncryptionPaddings("NoPadding").setUserAuthenticationRequired(false).build());
-            keyGenerator.generateKey();
-        }
-        return (SecretKey) keyStore.getKey("MiniAppsKey", null);
-    }
+            {
+                this.b = this;
+            }
 
-    public static HashMap i() {
-        HashMap hashMap = new HashMap();
-        try {
-            File file = new File(b(), "secure_config.json");
-            FileInputStream fileInputStream = new FileInputStream(file);
-            try {
-                byte[] bArr = new byte[(int) file.length()];
-                fileInputStream.read(bArr);
-                fileInputStream.close();
-                JSONObject jSONObject = new JSONObject(new String(bArr));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    JSONObject jSONObject2 = jSONObject.getJSONObject(next);
-                    nu0 nu0Var = new nu0();
-                    nu0Var.a = next;
-                    nu0Var.b = jSONObject2.getLong("user_id");
-                    nu0Var.c = jSONObject2.getString("user_name");
-                    nu0Var.d = jSONObject2.getLong("created_at");
-                    nu0Var.e = jSONObject2.getLong("edited_at");
-                    hashMap.put(next, nu0Var);
-                }
-                return hashMap;
-            } catch (OutOfMemoryError e) {
-                fc4.g(e, true);
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-        } catch (Exception e2) {
-            fc4.g(e2, true);
-            return hashMap;
-        }
-    }
-
-    public static void k(HashMap hashMap) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            for (Map.Entry entry : hashMap.entrySet()) {
-                JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("user_id", ((nu0) entry.getValue()).b);
-                jSONObject2.put("user_name", ((nu0) entry.getValue()).c);
-                jSONObject2.put("created_at", ((nu0) entry.getValue()).d);
-                jSONObject2.put("edited_at", ((nu0) entry.getValue()).e);
-                jSONObject.put((String) entry.getKey(), jSONObject2);
-            }
-            File file = new File(b(), "secure_config.json");
-            byte[] bytes = jSONObject.toString().getBytes();
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(bytes);
-            fileOutputStream.close();
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
-    }
-
-    public final byte[] a(File file) {
-        byte[] bArr;
-        FileInputStream fileInputStream = new FileInputStream(file);
-        int length = (int) file.length();
-        boolean z = this.d;
-        if (z) {
-            int read = fileInputStream.read();
-            bArr = new byte[read];
-            length = (length - 1) - read;
-            fileInputStream.read(bArr);
-        } else {
-            bArr = null;
-        }
-        try {
-            byte[] bArr2 = new byte[length];
-            fileInputStream.read(bArr2);
-            fileInputStream.close();
-            if (!z) {
-                return bArr2;
-            }
-            try {
-                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-                cipher.init(2, g(), new GCMParameterSpec(128, bArr));
-                return cipher.doFinal(bArr2);
-            } catch (Exception e) {
-                fc4.g(e, true);
-                this.l(file, "{}".getBytes());
-                zo4.k("UNKNOWN_ERROR");
-                return null;
-            }
-        } catch (OutOfMemoryError e2) {
-            fc4.g(e2, true);
-            zo4.k("QUOTA_EXCEEDED");
-            return null;
-        }
-    }
-
-    public final File c() {
-        long j;
-        if (this.d && TextUtils.isEmpty(this.e)) {
-            HashMap i = i();
-            Iterator it = i.entrySet().iterator();
-            while (true) {
-                boolean hasNext = it.hasNext();
-                j = this.c;
-                if (!hasNext) {
-                    break;
-                }
-                Map.Entry entry = (Map.Entry) it.next();
-                if (((nu0) entry.getValue()).b == j) {
-                    this.e = (String) entry.getKey();
-                    break;
-                }
-            }
-            if (TextUtils.isEmpty(this.e)) {
-                String uuid = UUID.randomUUID().toString();
-                this.e = uuid;
-                nu0 nu0Var = new nu0();
-                nu0Var.a = uuid;
-                nu0Var.b = j;
-                nu0Var.c = pg3.l(z8c.h(this.a).f());
-                long currentTimeMillis = System.currentTimeMillis();
-                nu0Var.e = currentTimeMillis;
-                nu0Var.d = currentTimeMillis;
-                i.put(this.e, nu0Var);
-                k(i);
-            }
-        }
-        return d(this.e);
-    }
-
-    public final File d(String str) {
-        File b = b();
-        StringBuilder sb = new StringBuilder();
-        long j = this.c;
-        boolean z = this.d;
-        Object obj = str;
-        if (!z) {
-            obj = Long.valueOf(j);
-        }
-        sb.append(obj);
-        sb.append("_");
-        long j2 = this.b;
-        sb.append(j2);
-        sb.append(z ? "_s" : "");
-        File file = new File(b, sb.toString());
-        File b2 = b();
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(j2);
-        sb2.append(z ? "_s" : "");
-        File file2 = new File(b2, sb2.toString());
-        if (!file.exists() && file2.exists()) {
-            file2.renameTo(file);
-            return file;
-        }
-        if (z) {
-            File file3 = new File(b(), j + "_" + j2 + "_s");
-            if (!file.exists() && file3.exists()) {
-                file3.renameTo(file);
-            }
-        }
-        return file;
-    }
-
-    public final JSONObject e(File file) {
-        if (!file.exists() || file.length() > 5242880) {
-            return new JSONObject();
-        }
-        try {
-            return new JSONObject(new String(a(file)));
-        } catch (Exception e) {
-            fc4.g(e, true);
-            return new JSONObject();
-        }
-    }
-
-    public final Pair f(String str) {
-        JSONObject e = e(c());
-        String optString = e.optString(str);
-        boolean z = false;
-        if (this.d && optString == null && !e.keys().hasNext()) {
-            HashSet hashSet = new HashSet();
-            for (int i = 0; i < 4; i++) {
-                z8c h = z8c.h(i);
-                if (h.o()) {
-                    hashSet.add(Long.valueOf(h.e()));
-                }
-            }
-            Iterator it = ((Set) Collection.-EL.stream(i().values()).filter(new lu0(hashSet, (byte) 0)).collect(Collectors.toSet())).iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                try {
-                    File d = d(((nu0) it.next()).a);
-                    if (d.exists() && e(d).has(str)) {
-                        z = true;
+            /* JADX WARN: Can't wrap try/catch for region: R(8:22|23|24|(4:28|30|31|32)|37|30|31|32) */
+            /* JADX WARN: Code restructure failed: missing block: B:35:0x00ae, code lost:
+            
+                r4 = e;
+             */
+            @Override // java.lang.Runnable
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
+            public final void run() {
+                String str;
+                String str2;
+                Uri parse;
+                String str3;
+                String str4;
+                byte b3 = b2;
+                final String str5 = extra2;
+                final ou0 ou0Var = this.b;
+                final byte b4 = 0;
+                final byte b5 = 1;
+                switch (b3) {
+                    case 0:
+                        cv0 cv0Var = ou0Var.a;
+                        fx0 h = de9.h(1, null, cv0Var.getContext(), false);
+                        try {
+                            parse = Uri.parse(str5);
+                        } catch (Exception e) {
+                            try {
+                                fa4.g(e, false);
+                            } catch (Exception e2) {
+                                e = e2;
+                                str = str5;
+                                fa4.g(e, true);
+                                str2 = str;
+                                h.R = true;
+                                h.P = str2;
+                                h.Q = false;
+                                CharSequence[] charSequenceArr22 = {k96.M0(2131747599, null), k96.M0(2131747601, null), k96.M0(2131751755, null)};
+                                DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: nu0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i) {
+                                        byte b6 = b5;
+                                        String str6 = str5;
+                                        ou0 ou0Var2 = ou0Var;
+                                        switch (b6) {
+                                            case 0:
+                                                cv0 cv0Var22 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var = cv0Var22.R;
+                                                            if (hv0Var != null) {
+                                                                new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(k96.M0(2131742665, null));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            hv0 hv0Var2 = cv0Var22.R;
+                                                            if (hv0Var2 != null) {
+                                                                new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e32) {
+                                                            fa4.g(e32, true);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                        cv0Var22.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e42) {
+                                                        fa4.g(e42, true);
+                                                        cv0Var22.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                cv0 cv0Var3 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var3 = cv0Var3.R;
+                                                            if (hv0Var3 != null) {
+                                                                new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                            cv0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e52) {
+                                                            fa4.g(e52, true);
+                                                            cv0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    cv0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                h.M = charSequenceArr22;
+                                h.L = onClickListener22;
+                                h.show();
+                                cv0Var.G = h;
+                                return;
+                            }
+                        }
+                        if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
+                            str = d01.w(parse, null, null, d01.a(parse.getHost()), null);
+                            str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                            h.R = true;
+                            h.P = str2;
+                            h.Q = false;
+                            CharSequence[] charSequenceArr222 = {k96.M0(2131747599, null), k96.M0(2131747601, null), k96.M0(2131751755, null)};
+                            DialogInterface.OnClickListener onClickListener222 = new DialogInterface.OnClickListener() { // from class: nu0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i) {
+                                    byte b6 = b5;
+                                    String str6 = str5;
+                                    ou0 ou0Var2 = ou0Var;
+                                    switch (b6) {
+                                        case 0:
+                                            cv0 cv0Var22 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var = cv0Var22.R;
+                                                        if (hv0Var != null) {
+                                                            new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(k96.M0(2131742665, null));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        hv0 hv0Var2 = cv0Var22.R;
+                                                        if (hv0Var2 != null) {
+                                                            new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e32) {
+                                                        fa4.g(e32, true);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                    cv0Var22.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e42) {
+                                                    fa4.g(e42, true);
+                                                    cv0Var22.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            cv0 cv0Var3 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var3 = cv0Var3.R;
+                                                        if (hv0Var3 != null) {
+                                                            new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                        cv0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e52) {
+                                                        fa4.g(e52, true);
+                                                        cv0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                cv0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            h.M = charSequenceArr222;
+                            h.L = onClickListener222;
+                            h.show();
+                            cv0Var.G = h;
+                        }
+                        str = str5;
+                        str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                        h.R = true;
+                        h.P = str2;
+                        h.Q = false;
+                        CharSequence[] charSequenceArr2222 = {k96.M0(2131747599, null), k96.M0(2131747601, null), k96.M0(2131751755, null)};
+                        DialogInterface.OnClickListener onClickListener2222 = new DialogInterface.OnClickListener() { // from class: nu0
+                            @Override // android.content.DialogInterface.OnClickListener
+                            public final void onClick(DialogInterface dialogInterface, int i) {
+                                byte b6 = b5;
+                                String str6 = str5;
+                                ou0 ou0Var2 = ou0Var;
+                                switch (b6) {
+                                    case 0:
+                                        cv0 cv0Var22 = ou0Var2.a;
+                                        if (i != 0) {
+                                            if (i != 1) {
+                                                if (i == 2) {
+                                                    gl.g(str6);
+                                                    hv0 hv0Var = cv0Var22.R;
+                                                    if (hv0Var != null) {
+                                                        new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                    if (guessFileName == null) {
+                                                        guessFileName = "image.png";
+                                                    }
+                                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                    request.setMimeType("image/*");
+                                                    request.setDescription(k96.M0(2131742665, null));
+                                                    request.setNotificationVisibility(1);
+                                                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                    DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                    if (downloadManager != null) {
+                                                        downloadManager.enqueue(request);
+                                                    }
+                                                    hv0 hv0Var2 = cv0Var22.R;
+                                                    if (hv0Var2 != null) {
+                                                        new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                        break;
+                                                    }
+                                                } catch (Exception e32) {
+                                                    fa4.g(e32, true);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            try {
+                                                Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                intent.putExtra("create_new_tab", true);
+                                                intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                cv0Var22.getContext().startActivity(intent);
+                                                break;
+                                            } catch (Exception e42) {
+                                                fa4.g(e42, true);
+                                                cv0Var22.loadUrl(str6);
+                                                return;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        cv0 cv0Var3 = ou0Var2.a;
+                                        if (i != 0) {
+                                            if (i != 1) {
+                                                if (i == 2) {
+                                                    gl.g(str6);
+                                                    hv0 hv0Var3 = cv0Var3.R;
+                                                    if (hv0Var3 != null) {
+                                                        new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent2.putExtra("create_new_tab", true);
+                                                    intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                    cv0Var3.getContext().startActivity(intent2);
+                                                    break;
+                                                } catch (Exception e52) {
+                                                    fa4.g(e52, true);
+                                                    cv0Var3.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            cv0Var3.loadUrl(str6);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        };
+                        h.M = charSequenceArr2222;
+                        h.L = onClickListener2222;
+                        h.show();
+                        cv0Var.G = h;
                         break;
-                    }
-                } catch (Exception e2) {
-                    fc4.g(e2, true);
+                    default:
+                        cv0 cv0Var2 = ou0Var.a;
+                        fx0 h2 = de9.h(1, null, cv0Var2.getContext(), false);
+                        try {
+                            Uri parse2 = Uri.parse(str5);
+                            str3 = d01.w(parse2, null, null, d01.a(parse2.getHost()), null);
+                        } catch (Exception e3) {
+                            try {
+                                fa4.g(e3, false);
+                                str3 = str5;
+                            } catch (Exception e4) {
+                                e = e4;
+                                str3 = str5;
+                                fa4.g(e, true);
+                                str4 = str3;
+                                h2.R = true;
+                                h2.P = str4;
+                                h2.Q = false;
+                                CharSequence[] charSequenceArr322 = {k96.M0(2131747601, null), k96.M0(2131754938, null), k96.M0(2131751750, null)};
+                                DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: nu0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i) {
+                                        byte b6 = b4;
+                                        String str6 = str5;
+                                        ou0 ou0Var2 = ou0Var;
+                                        switch (b6) {
+                                            case 0:
+                                                cv0 cv0Var22 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var = cv0Var22.R;
+                                                            if (hv0Var != null) {
+                                                                new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(k96.M0(2131742665, null));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            hv0 hv0Var2 = cv0Var22.R;
+                                                            if (hv0Var2 != null) {
+                                                                new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e32) {
+                                                            fa4.g(e32, true);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                        cv0Var22.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e42) {
+                                                        fa4.g(e42, true);
+                                                        cv0Var22.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                cv0 cv0Var3 = ou0Var2.a;
+                                                if (i != 0) {
+                                                    if (i != 1) {
+                                                        if (i == 2) {
+                                                            gl.g(str6);
+                                                            hv0 hv0Var3 = cv0Var3.R;
+                                                            if (hv0Var3 != null) {
+                                                                new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                            cv0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e52) {
+                                                            fa4.g(e52, true);
+                                                            cv0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    cv0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                h2.M = charSequenceArr322;
+                                h2.L = onClickListener322;
+                                h2.show();
+                                cv0Var2.G = h2;
+                            }
+                        }
+                        try {
+                            str4 = URLDecoder.decode(str3.replaceAll("\\+", "%2b"), "UTF-8");
+                        } catch (Exception e5) {
+                            e = e5;
+                            fa4.g(e, true);
+                            str4 = str3;
+                            h2.R = true;
+                            h2.P = str4;
+                            h2.Q = false;
+                            CharSequence[] charSequenceArr3222 = {k96.M0(2131747601, null), k96.M0(2131754938, null), k96.M0(2131751750, null)};
+                            DialogInterface.OnClickListener onClickListener3222 = new DialogInterface.OnClickListener() { // from class: nu0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i) {
+                                    byte b6 = b4;
+                                    String str6 = str5;
+                                    ou0 ou0Var2 = ou0Var;
+                                    switch (b6) {
+                                        case 0:
+                                            cv0 cv0Var22 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var = cv0Var22.R;
+                                                        if (hv0Var != null) {
+                                                            new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(k96.M0(2131742665, null));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        hv0 hv0Var2 = cv0Var22.R;
+                                                        if (hv0Var2 != null) {
+                                                            new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e32) {
+                                                        fa4.g(e32, true);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                    cv0Var22.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e42) {
+                                                    fa4.g(e42, true);
+                                                    cv0Var22.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            cv0 cv0Var3 = ou0Var2.a;
+                                            if (i != 0) {
+                                                if (i != 1) {
+                                                    if (i == 2) {
+                                                        gl.g(str6);
+                                                        hv0 hv0Var3 = cv0Var3.R;
+                                                        if (hv0Var3 != null) {
+                                                            new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                        cv0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e52) {
+                                                        fa4.g(e52, true);
+                                                        cv0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                cv0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            h2.M = charSequenceArr3222;
+                            h2.L = onClickListener3222;
+                            h2.show();
+                            cv0Var2.G = h2;
+                        }
+                        h2.R = true;
+                        h2.P = str4;
+                        h2.Q = false;
+                        CharSequence[] charSequenceArr32222 = {k96.M0(2131747601, null), k96.M0(2131754938, null), k96.M0(2131751750, null)};
+                        DialogInterface.OnClickListener onClickListener32222 = new DialogInterface.OnClickListener() { // from class: nu0
+                            @Override // android.content.DialogInterface.OnClickListener
+                            public final void onClick(DialogInterface dialogInterface, int i) {
+                                byte b6 = b4;
+                                String str6 = str5;
+                                ou0 ou0Var2 = ou0Var;
+                                switch (b6) {
+                                    case 0:
+                                        cv0 cv0Var22 = ou0Var2.a;
+                                        if (i != 0) {
+                                            if (i != 1) {
+                                                if (i == 2) {
+                                                    gl.g(str6);
+                                                    hv0 hv0Var = cv0Var22.R;
+                                                    if (hv0Var != null) {
+                                                        new u21(hv0Var, hv0Var.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                    if (guessFileName == null) {
+                                                        guessFileName = "image.png";
+                                                    }
+                                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                    request.setMimeType("image/*");
+                                                    request.setDescription(k96.M0(2131742665, null));
+                                                    request.setNotificationVisibility(1);
+                                                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                    DownloadManager downloadManager = (DownloadManager) cv0Var22.getContext().getSystemService("download");
+                                                    if (downloadManager != null) {
+                                                        downloadManager.enqueue(request);
+                                                    }
+                                                    hv0 hv0Var2 = cv0Var22.R;
+                                                    if (hv0Var2 != null) {
+                                                        new u21(hv0Var2, hv0Var2.e).Q(R.raw.ic_download, 36, gl.S2(k96.a0(null, null, 2131742664, guessFileName))).k(true);
+                                                        break;
+                                                    }
+                                                } catch (Exception e32) {
+                                                    fa4.g(e32, true);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            try {
+                                                Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                intent.putExtra("create_new_tab", true);
+                                                intent.putExtra("com.android.browser.application_id", cv0Var22.getContext().getPackageName());
+                                                cv0Var22.getContext().startActivity(intent);
+                                                break;
+                                            } catch (Exception e42) {
+                                                fa4.g(e42, true);
+                                                cv0Var22.loadUrl(str6);
+                                                return;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        cv0 cv0Var3 = ou0Var2.a;
+                                        if (i != 0) {
+                                            if (i != 1) {
+                                                if (i == 2) {
+                                                    gl.g(str6);
+                                                    hv0 hv0Var3 = cv0Var3.R;
+                                                    if (hv0Var3 != null) {
+                                                        new u21(hv0Var3, hv0Var3.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent2.putExtra("create_new_tab", true);
+                                                    intent2.putExtra("com.android.browser.application_id", cv0Var3.getContext().getPackageName());
+                                                    cv0Var3.getContext().startActivity(intent2);
+                                                    break;
+                                                } catch (Exception e52) {
+                                                    fa4.g(e52, true);
+                                                    cv0Var3.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            cv0Var3.loadUrl(str6);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        };
+                        h2.M = charSequenceArr32222;
+                        h2.L = onClickListener32222;
+                        h2.show();
+                        cv0Var2.G = h2;
                 }
             }
-        }
-        return new Pair(optString, Boolean.valueOf(z));
-    }
-
-    public final ArrayList h(String str) {
-        if (e(c()).keys().hasNext()) {
-            zo4.k("STORAGE_NOT_EMPTY");
-            return null;
-        }
-        ArrayList arrayList = new ArrayList();
-        HashSet hashSet = new HashSet();
-        for (int i = 0; i < 4; i++) {
-            z8c h = z8c.h(i);
-            if (h.o()) {
-                hashSet.add(Long.valueOf(h.e()));
-            }
-        }
-        for (nu0 nu0Var : (Set) Collection.-EL.stream(i().values()).filter(new lu0(hashSet, (byte) 1)).collect(Collectors.toSet())) {
-            try {
-                File d = d(nu0Var.a);
-                if (d.exists() && e(d).has(str)) {
-                    arrayList.add(nu0Var);
-                }
-            } catch (Exception e) {
-                fc4.g(e, true);
-            }
-        }
-        return arrayList;
-    }
-
-    public final void j(String str) {
-        if (e(c()).keys().hasNext()) {
-            zo4.k("STORAGE_NOT_EMPTY");
-            return;
-        }
-        HashSet hashSet = new HashSet();
-        for (int i = 0; i < 4; i++) {
-            z8c h = z8c.h(i);
-            if (h.o()) {
-                hashSet.add(Long.valueOf(h.e()));
-            }
-        }
-        HashMap i2 = i();
-        nu0 nu0Var = (nu0) i2.get(str);
-        if (nu0Var == null) {
-            zo4.k("STORAGE_NOT_FOUND");
-            return;
-        }
-        nu0Var.b = this.c;
-        nu0Var.c = pg3.l(z8c.h(this.a).f());
-        nu0Var.e = System.currentTimeMillis();
-        k(i2);
-        this.e = nu0Var.a;
-    }
-
-    public final void l(File file, byte[] bArr) {
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-        if (this.d) {
-            try {
-                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-                cipher.init(1, g());
-                byte[] iv = cipher.getIV();
-                fileOutputStream.write(iv.length);
-                fileOutputStream.write(iv);
-                bArr = cipher.doFinal(bArr);
-            } catch (Exception e) {
-                fc4.g(e, true);
-                zo4.k("UNKNOWN_ERROR");
-                return;
-            }
-        }
-        fileOutputStream.write(bArr);
-        fileOutputStream.close();
-    }
-
-    public final void m(JSONObject jSONObject) {
-        try {
-            byte[] bytes = jSONObject.toString().getBytes();
-            if (bytes.length > 5242880) {
-                zo4.k("QUOTA_EXCEEDED");
-                return;
-            }
-            try {
-                l(c(), bytes);
-            } catch (Exception e) {
-                fc4.g(e, true);
-                zo4.k("UNKNOWN_ERROR");
-            }
-        } catch (Exception e2) {
-            fc4.g(e2, true);
-            zo4.k("UNKNOWN_ERROR");
-        } catch (OutOfMemoryError e3) {
-            fc4.g(e3, true);
-            zo4.k("QUOTA_EXCEEDED");
-        }
-    }
-
-    public final void n(String str, String str2) {
-        if (str2.length() + str.length() > 5242880) {
-            zo4.k("QUOTA_EXCEEDED");
-            return;
-        }
-        JSONObject e = e(c());
-        try {
-            e.put(str, str2);
-            int length = e.length();
-            boolean z = this.d;
-            if (length > 10 && z) {
-                zo4.k("QUOTA_EXCEEDED");
-                return;
-            }
-            m(e);
-            if (z) {
-                try {
-                    HashMap i = i();
-                    nu0 nu0Var = (nu0) i.get(this.e);
-                    if (nu0Var != null) {
-                        nu0Var.e = System.currentTimeMillis();
-                        k(i);
-                    }
-                } catch (Exception unused) {
-                }
-            }
-        } catch (Exception e2) {
-            fc4.g(e2, true);
-            zo4.k("UNKNOWN_ERROR");
-        }
+        });
+        return true;
     }
 }

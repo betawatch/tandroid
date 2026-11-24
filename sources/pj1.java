@@ -1,41 +1,23 @@
 // default package
 
-import org.telegram.ui.TwoStepVerificationActivity;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class pj1 extends wj1 {
+    public final wj1 a;
+    public final wj1 b;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class pj1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ik1 b;
-    public final /* synthetic */ xza c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
-
-    public /* synthetic */ pj1(ik1 ik1Var, xza xzaVar, TwoStepVerificationActivity twoStepVerificationActivity, byte b) {
-        this.a = b;
-        this.b = ik1Var;
-        this.c = xzaVar;
-        this.d = twoStepVerificationActivity;
+    public pj1(wj1 wj1Var, wj1 wj1Var2) {
+        this.a = wj1Var;
+        wj1Var2.getClass();
+        this.b = wj1Var2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-        xza xzaVar = this.c;
-        ik1 ik1Var = this.b;
-        switch (b) {
-            case 0:
-                ik1Var.A0.setLoading(false);
-                xzaVar.presentFragment(twoStepVerificationActivity);
-                break;
-            case 1:
-                ik1Var.G0.setLoading(false);
-                xzaVar.presentFragment(twoStepVerificationActivity);
-                break;
-            default:
-                ik1Var.G0.setLoading(false);
-                xzaVar.presentFragment(twoStepVerificationActivity);
-                break;
-        }
+    @Override // wj1
+    public final boolean b(char c) {
+        return this.a.b(c) && this.b.b(c);
+    }
+
+    public final String toString() {
+        return "CharMatcher.and(" + this.a + ", " + this.b + ")";
     }
 }

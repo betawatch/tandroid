@@ -1,21 +1,43 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.function.Supplier;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tn1 implements Supplier {
+public final /* synthetic */ class tn1 implements p8c {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Long d;
+    public final /* synthetic */ Object e;
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        switch (this.a) {
+    public /* synthetic */ tn1(Object obj, long j, long j2, Long l, byte b) {
+        this.a = b;
+        this.e = obj;
+        this.b = j;
+        this.c = j2;
+        this.d = l;
+    }
+
+    @Override // p8c
+    public final void a(Object obj) {
+        int i;
+        byte b = this.a;
+        Object obj2 = this.e;
+        switch (b) {
             case 0:
-                return new ArrayList();
+                ((mu1) obj2).I9(this.b, this.c, this.d, (Boolean) obj);
+                break;
             default:
-                return new HashSet();
+                Boolean bool = (Boolean) obj;
+                i = ((d) ((aq1) obj2).b).currentAccount;
+                boolean z = false;
+                gta v = gta.v(i, false);
+                if (this.d.longValue() > 0 && bool.booleanValue()) {
+                    z = true;
+                }
+                v.g0(this.b, this.c, z, true);
+                break;
         }
     }
 }

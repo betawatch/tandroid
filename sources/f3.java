@@ -11,15 +11,15 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public final class f3 extends i3 implements NavigableMap {
-    public final /* synthetic */ zi7 n;
+    public final /* synthetic */ wg7 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f3(zi7 zi7Var, NavigableMap navigableMap) {
-        super(zi7Var, navigableMap);
-        this.n = zi7Var;
+    public f3(wg7 wg7Var, NavigableMap navigableMap) {
+        super(wg7Var, navigableMap);
+        this.n = wg7Var;
     }
 
     @Override // i3
@@ -57,7 +57,7 @@ public final class f3 extends i3 implements NavigableMap {
         return new f3(this.n, e().descendingMap());
     }
 
-    public final ho5 f(Iterator it) {
+    public final hm5 f(Iterator it) {
         if (!it.hasNext()) {
             return null;
         }
@@ -65,7 +65,7 @@ public final class f3 extends i3 implements NavigableMap {
         Collection m = this.n.m();
         m.addAll((Collection) entry.getValue());
         it.remove();
-        return new ho5(entry.getKey(), DesugarCollections.unmodifiableList((List) m));
+        return new hm5(entry.getKey(), DesugarCollections.unmodifiableList((List) m));
     }
 
     @Override // java.util.NavigableMap

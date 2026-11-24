@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
 public class CommonWalletObject extends b4 {
-    public static final Parcelable.Creator<CommonWalletObject> CREATOR = new jid(5);
+    public static final Parcelable.Creator<CommonWalletObject> CREATOR = new igd(5);
     public String E;
     public boolean G;
     public String a;
@@ -19,7 +19,7 @@ public class CommonWalletObject extends b4 {
     public String h;
     public String n;
     public int r;
-    public qpb w;
+    public pnb w;
     public String y;
     public ArrayList s = new ArrayList();
     public ArrayList x = new ArrayList();
@@ -30,30 +30,30 @@ public class CommonWalletObject extends b4 {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = mve.r(parcel, 20293);
-        mve.l(parcel, 2, this.a);
-        mve.l(parcel, 3, this.b);
-        mve.l(parcel, 4, this.c);
-        mve.l(parcel, 5, this.d);
-        mve.l(parcel, 6, this.e);
-        mve.l(parcel, 7, this.f);
-        mve.l(parcel, 8, this.h);
-        mve.l(parcel, 9, this.n);
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.l(parcel, 3, this.b);
+        jte.l(parcel, 4, this.c);
+        jte.l(parcel, 5, this.d);
+        jte.l(parcel, 6, this.e);
+        jte.l(parcel, 7, this.f);
+        jte.l(parcel, 8, this.h);
+        jte.l(parcel, 9, this.n);
         int i2 = this.r;
-        mve.q(parcel, 10, 4);
+        jte.q(parcel, 10, 4);
         parcel.writeInt(i2);
-        mve.p(parcel, 11, this.s);
-        mve.k(parcel, 12, this.w, i);
-        mve.p(parcel, 13, this.x);
-        mve.l(parcel, 14, this.y);
-        mve.l(parcel, 15, this.E);
-        mve.p(parcel, 16, this.F);
+        jte.p(parcel, 11, this.s);
+        jte.k(parcel, 12, this.w, i);
+        jte.p(parcel, 13, this.x);
+        jte.l(parcel, 14, this.y);
+        jte.l(parcel, 15, this.E);
+        jte.p(parcel, 16, this.F);
         boolean z = this.G;
-        mve.q(parcel, 17, 4);
+        jte.q(parcel, 17, 4);
         parcel.writeInt(z ? 1 : 0);
-        mve.p(parcel, 18, this.H);
-        mve.p(parcel, 19, this.I);
-        mve.p(parcel, 20, this.J);
-        mve.s(parcel, r);
+        jte.p(parcel, 18, this.H);
+        jte.p(parcel, 19, this.I);
+        jte.p(parcel, 20, this.J);
+        jte.s(parcel, r);
     }
 }

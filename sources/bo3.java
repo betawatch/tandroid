@@ -1,83 +1,16 @@
 // default package
 
-import android.content.Context;
-import android.icu.util.ULocale;
-import android.os.Build;
-import android.provider.Settings;
-import android.text.TextUtils;
-import android.view.inputmethod.InputMethodInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.view.inputmethod.InputMethodSubtype;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Locale;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class bo3 {
+    public final boolean a;
+    public final Runnable b;
+    public final long c;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public abstract class bo3 {
-    public static final HashMap a = new HashMap();
-
-    public static void a(LinkedHashMap linkedHashMap, Locale locale) {
-        if (locale != null) {
-            String language = locale.getLanguage();
-            if (TextUtils.isEmpty(language) || "und".equals(language) || linkedHashMap.containsKey(language)) {
-                return;
-            }
-            String country = locale.getCountry();
-            if (TextUtils.isEmpty(country) && Build.VERSION.SDK_INT >= 24) {
-                country = ULocale.addLikelySubtags(z2.a(language)).getCountry();
-            }
-            if (country == null) {
-                country = "";
-            }
-            linkedHashMap.put(language, new Locale(language, country).toLanguageTag());
-        }
-    }
-
-    public static void b(LinkedHashMap linkedHashMap, Context context) {
-        try {
-            InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService("input_method");
-            if (inputMethodManager != null) {
-                a(linkedHashMap, d(inputMethodManager.getCurrentInputMethodSubtype()));
-                String string = Settings.Secure.getString(context.getContentResolver(), "default_input_method");
-                for (InputMethodInfo inputMethodInfo : inputMethodManager.getEnabledInputMethodList()) {
-                    if (TextUtils.equals(inputMethodInfo.getId(), string)) {
-                        Iterator<InputMethodSubtype> it = inputMethodManager.getEnabledInputMethodSubtypeList(inputMethodInfo, true).iterator();
-                        while (it.hasNext()) {
-                            a(linkedHashMap, d(it.next()));
-                        }
-                    }
-                }
-            }
-        } catch (Exception e) {
-            fc4.g(e, true);
-        }
-    }
-
-    public static ArrayList c(Context context, long j) {
-        ArrayList arrayList = (ArrayList) a.get(Long.valueOf(j));
-        if (arrayList != null && !arrayList.isEmpty()) {
-            return new ArrayList(arrayList);
-        }
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        b(linkedHashMap, context);
-        return new ArrayList(linkedHashMap.values());
-    }
-
-    public static Locale d(InputMethodSubtype inputMethodSubtype) {
-        if (inputMethodSubtype == null || !"keyboard".equals(inputMethodSubtype.getMode())) {
-            return null;
-        }
-        String languageTag = Build.VERSION.SDK_INT >= 24 ? inputMethodSubtype.getLanguageTag() : null;
-        if (TextUtils.isEmpty(languageTag)) {
-            String locale = inputMethodSubtype.getLocale();
-            languageTag = locale == null ? null : locale.replace('_', '-');
-        }
-        if (TextUtils.isEmpty(languageTag)) {
-            return null;
-        }
-        return Locale.forLanguageTag(languageTag);
+    /* JADX WARN: Multi-variable type inference failed */
+    public bo3(int i, long j, Runnable runnable) {
+        this.a = i;
+        this.b = runnable;
+        this.c = j;
     }
 }

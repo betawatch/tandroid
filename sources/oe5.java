@@ -1,52 +1,29 @@
 // default package
 
-import android.content.Context;
-import android.util.SparseArray;
+import java.util.List;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class oe5 extends nha {
-    public final /* synthetic */ re5 x2;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class oe5 extends pg0 {
+    public final List d;
+    public final long e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oe5(re5 re5Var, Context context, fha fhaVar, re5 re5Var2, ne5 ne5Var, ylb ylbVar) {
-        super(context, 0L, fhaVar, 0, null, null, null, 8, 0, re5Var2, ne5Var, 0, ylbVar, null);
-        this.x2 = re5Var;
+    public oe5(long j, List list) {
+        super(0L, list.size() - 1);
+        this.e = j;
+        this.d = list;
     }
 
-    @Override // nha
-    public final int getInitialTab() {
-        return 8;
+    @Override // bk6
+    public final long a() {
+        b();
+        return this.e + ((bf5) this.d.get((int) this.c)).e;
     }
 
-    @Override // nha
-    public final String getStoriesHashtag() {
-        return this.x2.b;
-    }
-
-    @Override // nha
-    public final String getStoriesHashtagUsername() {
-        return this.x2.c;
-    }
-
-    @Override // nha
-    public final boolean q0() {
-        return true;
-    }
-
-    @Override // nha
-    public final void J0(SparseArray sparseArray) {
-    }
-
-    @Override // nha
-    public final void R0(boolean z) {
-    }
-
-    @Override // nha
-    public final void T0(float f) {
-    }
-
-    @Override // nha
-    public final void l1(boolean z) {
+    @Override // bk6
+    public final long h() {
+        b();
+        bf5 bf5Var = (bf5) this.d.get((int) this.c);
+        return this.e + bf5Var.e + bf5Var.c;
     }
 }

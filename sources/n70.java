@@ -1,17 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class n70 implements cq7 {
-    public static final n70 a = new n70();
-    public static final wa4 b = wa4.c("rolloutId");
-    public static final wa4 c = wa4.c("variantId");
+public final class n70 {
+    public short a;
+    public short b;
+    public float c;
+    public long d;
+    public long e;
+    public long f;
+    public float g;
+    public int h;
 
-    @Override // b44
-    public final void a(Object obj, Object obj2) {
-        l03 l03Var = (l03) obj;
-        dq7 dq7Var = (dq7) obj2;
-        dq7Var.a(b, ((ha0) l03Var).a);
-        dq7Var.a(c, ((ha0) l03Var).b);
+    public final float a(long j) {
+        if (j < this.d) {
+            return 0.0f;
+        }
+        long j2 = this.f;
+        if (j2 < 0 || j < j2) {
+            return s56.b((j - r0) / this.a, 0.0f, 1.0f) * 0.5f;
+        }
+        float f = this.g;
+        return (s56.b((j - j2) / this.h, 0.0f, 1.0f) * f) + (1.0f - f);
     }
 }

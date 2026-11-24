@@ -1,22 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class l23 extends o13 {
-    public static final /* synthetic */ int b = 0;
-    public static final /* synthetic */ int c = 0;
+import android.os.CancellationSignal;
+import android.util.Log;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public l23(h1 h1Var, String str) {
-        super(str, r2);
-        String concat = "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/".concat(h1Var.a);
-        if (concat.length() > 0) {
-            return;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final class l23 {
+    public static boolean a(CancellationSignal cancellationSignal) {
+        if (cancellationSignal == null) {
+            Log.i("PlayServicesImpl", "No cancellationSignal found");
+            return false;
         }
-        u36.j("type must not be empty");
-        throw null;
+        if (!cancellationSignal.isCanceled()) {
+            return false;
+        }
+        Log.i("PlayServicesImpl", "the flow has been canceled");
+        return true;
     }
 }

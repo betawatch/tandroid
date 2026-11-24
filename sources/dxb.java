@@ -1,28 +1,33 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class dxb extends qxb {
-    public final /* synthetic */ sxb p3;
+public final /* synthetic */ class dxb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ fxb b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dxb(sxb sxbVar, Context context) {
-        super(sxbVar, context);
-        this.p3 = sxbVar;
+    public /* synthetic */ dxb(fxb fxbVar, byte b) {
+        this.a = b;
+        this.b = fxbVar;
     }
 
-    @Override // r59
-    public final boolean S0() {
-        ArrayList arrayList = this.p3.b;
-        return (getAdapter() == null || this.W1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((jxb) arrayList.get(0)).c == null || ((jxb) arrayList.get(0)).c.id != 1 ? getAdapter().b() > 1 : getAdapter().b() > 2)) ? false : true;
-    }
-
-    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.p3.z0();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        fxb fxbVar = this.b;
+        switch (b) {
+            case 0:
+                rj4 rj4Var = fxbVar.f;
+                rj4Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                rj4Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                rj4Var.invalidate();
+                break;
+            default:
+                fxbVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fxbVar.h();
+                break;
+        }
     }
 }

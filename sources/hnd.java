@@ -1,43 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.IBinder;
+import android.os.Messenger;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class hnd {
-    public boolean a(a4 a4Var, v3 v3Var, v3 v3Var2) {
-        synchronized (a4Var) {
-            if (a4Var.b != v3Var) {
-                return false;
-            }
-            a4Var.b = v3Var2;
-            return true;
+public final class hnd implements Parcelable {
+    public static final Parcelable.Creator<hnd> CREATOR = new j9d(17);
+    public final Messenger a;
+
+    public hnd(IBinder iBinder) {
+        this.a = new Messenger(iBinder);
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        try {
+            return this.a.getBinder().equals(((hnd) obj).a.getBinder());
+        } catch (ClassCastException unused) {
+            return false;
         }
     }
 
-    public boolean b(a4 a4Var, Object obj, Object obj2) {
-        synchronized (a4Var) {
-            if (a4Var.a != obj) {
-                return false;
-            }
-            a4Var.a = obj2;
-            return true;
-        }
+    public final int hashCode() {
+        return this.a.getBinder().hashCode();
     }
 
-    public boolean c(a4 a4Var, z3 z3Var, z3 z3Var2) {
-        synchronized (a4Var) {
-            if (a4Var.c != z3Var) {
-                return false;
-            }
-            a4Var.c = z3Var2;
-            return true;
-        }
-    }
-
-    public void d(z3 z3Var, z3 z3Var2) {
-        z3Var.b = z3Var2;
-    }
-
-    public void e(z3 z3Var, Thread thread) {
-        z3Var.a = thread;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeStrongBinder(this.a.getBinder());
     }
 }

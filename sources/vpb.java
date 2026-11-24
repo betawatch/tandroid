@@ -1,52 +1,159 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class vpb extends g2 {
-    public static final /* synthetic */ ai4 f;
-    public static final /* synthetic */ ai4 h;
-    public List e;
+public abstract class vpb extends fs5 {
+    public String e;
+    public String f;
+    public String g;
+    public final StringBuilder h;
+    public String i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public fy m;
 
-    static {
-        i94 i94Var = new i94(vpb.class, "TimeToSampleBox.java");
-        i94Var.e(i94Var.d("getEntries", "com.coremedia.iso.boxes.TimeToSampleBox", "", "", "java.util.List"));
-        f = i94Var.e(i94Var.d("setEntries", "com.coremedia.iso.boxes.TimeToSampleBox", "java.util.List", "entries", "void"));
-        h = i94Var.e(i94Var.d("toString", "com.coremedia.iso.boxes.TimeToSampleBox", "", "", "java.lang.String"));
+    public vpb(int i) {
+        super(i, (byte) 2);
+        this.h = new StringBuilder();
+        this.j = false;
+        this.k = false;
+        this.l = false;
     }
 
-    @Override // g2, y1
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        f(byteBuffer);
-        int a = psd.a(jne.g(byteBuffer));
-        this.e = new ArrayList(a);
-        for (int i = 0; i < a; i++) {
-            this.e.add(new upb(jne.g(byteBuffer), jne.g(byteBuffer)));
+    public final void A() {
+        if (this.m == null) {
+            this.m = new fy();
+        }
+        String str = this.g;
+        StringBuilder sb = this.h;
+        if (str != null) {
+            String trim = str.trim();
+            this.g = trim;
+            if (trim.length() > 0) {
+                String sb2 = this.k ? sb.length() > 0 ? sb.toString() : this.i : this.j ? "" : null;
+                fy fyVar = this.m;
+                String str2 = this.g;
+                int h = fyVar.h(str2);
+                if (h != -1) {
+                    fyVar.c[h] = sb2;
+                } else {
+                    int i = fyVar.a;
+                    int i2 = i + 1;
+                    if (i2 < i) {
+                        w26.j("Must be true");
+                        return;
+                    }
+                    String[] strArr = fyVar.b;
+                    int length = strArr.length;
+                    if (length < i2) {
+                        int i3 = length >= 4 ? i << 1 : 4;
+                        if (i2 <= i3) {
+                            i2 = i3;
+                        }
+                        String[] strArr2 = new String[i2];
+                        System.arraycopy(strArr, 0, strArr2, 0, Math.min(strArr.length, i2));
+                        fyVar.b = strArr2;
+                        String[] strArr3 = fyVar.c;
+                        String[] strArr4 = new String[i2];
+                        System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i2));
+                        fyVar.c = strArr4;
+                    }
+                    String[] strArr5 = fyVar.b;
+                    int i4 = fyVar.a;
+                    strArr5[i4] = str2;
+                    fyVar.c[i4] = sb2;
+                    fyVar.a = i4 + 1;
+                }
+            }
+        }
+        this.g = null;
+        this.j = false;
+        this.k = false;
+        fs5.t(sb);
+        this.i = null;
+    }
+
+    @Override // fs5
+    /* renamed from: B, reason: merged with bridge method [inline-methods] */
+    public vpb s() {
+        this.e = null;
+        this.f = null;
+        this.g = null;
+        fs5.t(this.h);
+        this.i = null;
+        this.j = false;
+        this.k = false;
+        this.l = false;
+        this.m = null;
+        return this;
+    }
+
+    public final void u(char c) {
+        String valueOf = String.valueOf(c);
+        String str = this.g;
+        if (str != null) {
+            valueOf = str.concat(valueOf);
+        }
+        this.g = valueOf;
+    }
+
+    public final void v(char c) {
+        this.k = true;
+        String str = this.i;
+        StringBuilder sb = this.h;
+        if (str != null) {
+            sb.append(str);
+            this.i = null;
+        }
+        sb.append(c);
+    }
+
+    public final void w(String str) {
+        this.k = true;
+        String str2 = this.i;
+        StringBuilder sb = this.h;
+        if (str2 != null) {
+            sb.append(str2);
+            this.i = null;
+        }
+        if (sb.length() == 0) {
+            this.i = str;
+        } else {
+            sb.append(str);
         }
     }
 
-    @Override // g2, y1
-    public final void getContent(ByteBuffer byteBuffer) {
-        i(byteBuffer);
-        byteBuffer.putInt(this.e.size());
-        for (upb upbVar : this.e) {
-            byteBuffer.putInt((int) upbVar.a);
-            byteBuffer.putInt((int) upbVar.b);
+    public final void x(int[] iArr) {
+        this.k = true;
+        String str = this.i;
+        StringBuilder sb = this.h;
+        if (str != null) {
+            sb.append(str);
+            this.i = null;
+        }
+        for (int i : iArr) {
+            sb.appendCodePoint(i);
         }
     }
 
-    @Override // y1
-    public final long getContentSize() {
-        return (this.e.size() << 3) + 8;
+    public final void y(String str) {
+        String str2 = this.e;
+        if (str2 != null) {
+            str = str2.concat(str);
+        }
+        this.e = str;
+        this.f = str != null ? str.toLowerCase(Locale.ENGLISH) : "";
     }
 
-    public final String toString() {
-        xvc b = i94.b(h, this, this);
-        pa9.a().getClass();
-        pa9.b(b);
-        return "TimeToSampleBox[entryCount=" + this.e.size() + "]";
+    public final String z() {
+        String str = this.e;
+        if (str != null && str.length() != 0) {
+            return this.e;
+        }
+        w26.j("Must be false");
+        return null;
     }
 }

@@ -2,16 +2,16 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class GridItem implements ot5 {
+public final class GridItem implements pr5 {
     public static final int IMAGE_TYPE_ICON = 1;
     public static final int IMAGE_TYPE_LARGE = 2;
     private final Badge mBadge;
     private final CarIcon mImage;
     private final int mImageType;
     private final boolean mIsLoading;
-    private final br7 mOnClickDelegate;
+    private final yo7 mOnClickDelegate;
     private final CarText mText;
     private final CarText mTitle;
 
@@ -53,7 +53,7 @@ public final class GridItem implements ot5 {
         return this.mImageType;
     }
 
-    public br7 getOnClickDelegate() {
+    public yo7 getOnClickDelegate() {
         return this.mOnClickDelegate;
     }
 
@@ -77,7 +77,7 @@ public final class GridItem implements ot5 {
         return "[title: " + CarText.toShortString(this.mTitle) + ", text: " + CarText.toShortString(this.mText) + ", image: " + this.mImage + ", isLoading: " + this.mIsLoading + ", badge: " + this.mBadge + "]";
     }
 
-    public GridItem(o55 o55Var) {
+    public GridItem(p35 p35Var) {
         throw null;
     }
 }

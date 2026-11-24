@@ -1,20 +1,13 @@
 // default package
 
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final class f39 {
-    public ImageReceiver a;
-    public int b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public boolean k;
-    public float l;
+public interface f39 {
+    boolean e(float f, float f2, int i, View view);
+
+    void f();
+
+    void g(float f);
 }

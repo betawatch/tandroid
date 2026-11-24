@@ -1,35 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class qsd extends f4e {
-    private static final qsd zzb;
-    private int zzd;
-    private String zze = "";
+public final class qsd implements zn7 {
+    public static final qsd a = new qsd();
 
     static {
-        qsd qsdVar = new qsd();
-        zzb = qsdVar;
-        f4e.k(qsd.class, qsdVar);
+        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)), 5)), 6)));
     }
 
-    @Override // f4e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new wce(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001ဈ\u0000", new Object[]{"zzd", "zze"});
-        }
-        if (i2 == 3) {
-            return new qsd();
-        }
-        if (i2 == 4) {
-            return new hrd(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
+    @Override // q24
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
         throw null;
     }

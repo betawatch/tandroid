@@ -1,26 +1,9 @@
 // default package
 
-import java.util.HashSet;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public abstract class ct6 {
-    public static final HashSet a = new HashSet();
-    public static String b = "media3.common";
-
-    public static synchronized void a(String str) {
-        synchronized (ct6.class) {
-            if (a.add(str)) {
-                b += ", " + str;
-            }
-        }
-    }
-
-    public static synchronized String b() {
-        String str;
-        synchronized (ct6.class) {
-            str = b;
-        }
-        return str;
-    }
+public final class ct6 extends s49 {
+    public TextView v;
 }

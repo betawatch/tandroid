@@ -1,29 +1,29 @@
 // default package
 
-import android.view.animation.Interpolator;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class uz8 implements Interpolator {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Interpolator d;
+public final class uz8 extends i49 {
+    public final /* synthetic */ t26 a;
+    public final /* synthetic */ a09 b;
 
-    public /* synthetic */ uz8(boolean z, float f, float f2, Interpolator interpolator) {
-        this.a = z;
-        this.b = f;
-        this.c = f2;
-        this.d = interpolator;
+    public uz8(a09 a09Var, t26 t26Var) {
+        this.b = a09Var;
+        this.a = t26Var;
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f) {
-        boolean z = this.a;
-        float f2 = this.b;
-        float f3 = this.c;
-        Interpolator interpolator = this.d;
-        float f4 = (f - f2) / (f3 - f2);
-        return z ? 1.0f - interpolator.getInterpolation(1.0f - pqe.a(f4, 0.0f, 1.0f)) : interpolator.getInterpolation(pqe.a(f4, 0.0f, 1.0f));
+    @Override // i49
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        int loadCount;
+        a09 a09Var = this.b;
+        if (a09Var.x && a09Var.y && !a09Var.w) {
+            int M0 = this.a.M0();
+            int b = a09Var.f.b() - 1;
+            loadCount = a09Var.getLoadCount();
+            if (M0 >= b - loadCount) {
+                a09Var.c();
+            }
+        }
     }
 }

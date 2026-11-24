@@ -1,21 +1,27 @@
 // default package
 
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h0c implements zw5, yw5 {
+    public final /* synthetic */ b1c a;
+    public final /* synthetic */ k27 b;
+    public final /* synthetic */ m11 c;
+    public final /* synthetic */ go2 d;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes3.dex */
-public final class h0c extends ShapeDrawable.ShaderFactory {
-    public final /* synthetic */ ll5 a;
-
-    public h0c(ll5 ll5Var) {
-        this.a = ll5Var;
+    public /* synthetic */ h0c(b1c b1cVar, k27 k27Var, m11 m11Var, go2 go2Var) {
+        this.a = b1cVar;
+        this.b = k27Var;
+        this.c = m11Var;
+        this.d = go2Var;
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
-    public final Shader resize(int i, int i2) {
-        ll5 ll5Var = this.a;
-        return new LinearGradient(0.0f, 0.0f, 0.0f, i2, ll5Var.a, ll5Var.b, Shader.TileMode.CLAMP);
+    @Override // zw5
+    public final void a(String str) {
+        gl.c3(new tsa(this.a, this.b, str, this.c, this.d, (byte) 7));
+    }
+
+    @Override // yw5
+    public final void n(Exception exc) {
+        gl.c3(new exa((Object) this.a, (Object) this.b, (Object) this.c, (Object) this.d, (byte) 15));
     }
 }

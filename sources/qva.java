@@ -1,103 +1,46 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qva implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ my0[] b;
-    public final /* synthetic */ TL_stars.StarsTransaction c;
-    public final /* synthetic */ long d;
+public final class qva extends yva {
+    public final /* synthetic */ boolean n0;
+    public final /* synthetic */ int o0;
+    public final /* synthetic */ bwa p0;
 
-    public /* synthetic */ qva(my0[] my0VarArr, long j, TL_stars.StarsTransaction starsTransaction) {
-        this.a = (byte) 3;
-        this.b = my0VarArr;
-        this.d = j;
-        this.c = starsTransaction;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qva(bwa bwaVar, Context context, wjb wjbVar, boolean z, int i) {
+        super(context, wjbVar);
+        this.p0 = bwaVar;
+        this.n0 = z;
+        this.o0 = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        TL_stars.StarsTransaction starsTransaction = this.c;
-        my0[] my0VarArr = this.b;
-        switch (b) {
-            case 0:
-                my0VarArr[0].dismiss();
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S.presentFragment(yv1.ga(j));
-                        break;
-                    } else {
-                        S.presentFragment(yv1.fa(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                my0VarArr[0].dismiss();
-                d S2 = LaunchActivity.S();
-                if (S2 != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S2.presentFragment(yv1.ga(j));
-                        break;
-                    } else {
-                        S2.presentFragment(yv1.fa(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                my0VarArr[0].dismiss();
-                d S3 = LaunchActivity.S();
-                if (S3 != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S3.presentFragment(yv1.ga(j));
-                        break;
-                    } else {
-                        S3.presentFragment(yv1.fa(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                my0VarArr[0].dismiss();
-                d S4 = LaunchActivity.S();
-                if (S4 != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", -j);
-                    bundle.putInt("message_id", starsTransaction.msg_id);
-                    S4.presentFragment(new yv1(bundle));
-                    break;
-                }
-                break;
-            default:
-                my0VarArr[0].dismiss();
-                d S5 = LaunchActivity.S();
-                if (S5 != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S5.presentFragment(yv1.ga(j));
-                        break;
-                    } else {
-                        S5.presentFragment(yv1.fa(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
+    @Override // yva
+    public final void e(int i) {
+        long j = i;
+        bwa bwaVar = this.p0;
+        bwaVar.I0(j);
+        u41 u41Var = bwaVar.w1;
+        if (u41Var != null) {
+            u41Var.i(jva.Y0(false, k96.a0(null, null, 2131744810, k96.E(j, ',')), bwaVar.M1), true, true);
+        }
+        if (this.n0) {
+            i76 i76Var = bwaVar.A1;
+            i76Var.g = j;
+            bwaVar.B1.set(i76Var);
+            int i2 = this.o0;
+            f(de5.b(i2, i, 3), de5.b(i2, i, 4), true);
         }
     }
 
-    public /* synthetic */ qva(my0[] my0VarArr, TL_stars.StarsTransaction starsTransaction, long j, byte b) {
-        this.a = b;
-        this.b = my0VarArr;
-        this.c = starsTransaction;
-        this.d = j;
+    @Override // yva
+    public final void setValue(int i) {
+        super.setValue(i);
+        if (this.n0) {
+            int i2 = this.o0;
+            f(de5.b(i2, i, 3), de5.b(i2, i, 4), true);
+        }
     }
 }

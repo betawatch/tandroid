@@ -1,51 +1,22 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes2.dex */
-public final class cc6 extends k69 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pc6 b;
-
-    public /* synthetic */ cc6(pc6 pc6Var, byte b) {
-        this.a = b;
-        this.b = pc6Var;
-    }
-
-    @Override // k69
-    public final void a(RecyclerView recyclerView, int i) {
-        byte b = this.a;
-        pc6 pc6Var = this.b;
-        switch (b) {
-            case 0:
-                if (i == 1 && pc6Var.u0 && pc6Var.v0) {
-                    gm.t1(pc6Var.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                boolean z = i != 0;
-                pc6Var.N = z;
-                if (!z && pc6Var.I != null) {
-                    pc6Var.I = null;
-                    break;
-                }
-                break;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes.dex */
+public abstract class cc6 {
+    public static cc6 a(Class cls) {
+        if (System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik")) {
+            String simpleName = cls.getSimpleName();
+            ek ekVar = new ek((byte) 0);
+            ekVar.b = simpleName;
+            return ekVar;
         }
+        String simpleName2 = cls.getSimpleName();
+        ek ekVar2 = new ek((byte) 1);
+        ekVar2.b = Logger.getLogger(simpleName2);
+        return ekVar2;
     }
 
-    @Override // k69
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        switch (this.a) {
-            case 1:
-                pc6 pc6Var = this.b;
-                pc6Var.N0(false);
-                if (pc6Var.I != null) {
-                    pc6Var.K += i2;
-                    break;
-                }
-                break;
-        }
-    }
+    public abstract void b(String str);
 }

@@ -1,245 +1,245 @@
 // default package
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.LinkProperties;
-import android.net.Network;
-import android.net.NetworkRequest;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.RemoteException;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.Log;
-import j$.util.DesugarCollections;
-import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.messenger.chromecast.ChromecastOptionsProvider;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class ie1 {
-    public static final ce6 l = new ce6("CastContext", null);
-    public static final Object m = new Object();
-    public static volatile ie1 n;
-    public final Context a;
-    public final o9d b;
-    public final l8a c;
-    public final y7d d;
-    public final le1 e;
-    public final ua4 f;
-    public final r8d g;
-    public final tcd h;
-    public final List i;
-    public final zfd j;
-    public final g9d k;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public abstract class ie1 extends FrameLayout implements tjb {
+    public final lm E;
+    public float F;
+    public ValueAnimator G;
+    public boolean H;
+    public boolean I;
+    public final lm J;
+    public boolean a;
+    public final wjb b;
+    public final jia c;
+    public final ImageView d;
+    public final ih2 e;
+    public final hn f;
+    public final Drawable[] h;
+    public float n;
+    public boolean r;
+    public ValueAnimator s;
+    public TLRPC.TL_username w;
+    public boolean x;
+    public long y;
 
-    public ie1(Context context, le1 le1Var, List list, qed qedVar, ua4 ua4Var) {
-        sad sadVar;
-        pcd pcdVar;
-        LinkProperties linkProperties;
-        this.a = context;
-        this.e = le1Var;
-        this.f = ua4Var;
-        this.i = list;
-        this.h = new tcd(context);
-        this.j = qedVar.e;
-        if (TextUtils.isEmpty(le1Var.a)) {
-            this.k = null;
-        } else {
-            this.k = new g9d(context, le1Var, qedVar);
+    public ie1(Context context, wjb wjbVar) {
+        super(context);
+        this.a = false;
+        this.E = new lm(300L, this, s33.f);
+        this.J = new lm(400L, this, s33.h);
+        this.b = wjbVar;
+        zkb.h(bkb.c6, wjbVar, this);
+        jia jiaVar = new jia(getContext());
+        this.c = jiaVar;
+        jiaVar.setTextSize(16);
+        zkb.W(jiaVar, bkb.F6, wjbVar);
+        jiaVar.setEllipsizeByGradient(true);
+        addView(jiaVar, nme.d(-1, -2.0f, 48, 70.0f, 9.0f, 0.0f, 50.0f));
+        ImageView imageView = new ImageView(getContext());
+        this.d = imageView;
+        ih2 ih2Var = new ih2(gl.L(7.0f), gl.L(1.35f), bkb.v0(bkb.m6, wjbVar));
+        this.e = ih2Var;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageDrawable(ih2Var);
+        imageView.setAlpha(0.0f);
+        imageView.setVisibility(0);
+        ih2Var.setBounds(0, 0, gl.L(14.0f), gl.L(14.0f));
+        addView(imageView, nme.d(14, 14.0f, 48, 70.0f, 35.0f, 0.0f, 0.0f));
+        hn hnVar = new hn(getContext(), false, true, true);
+        this.f = hnVar;
+        hnVar.setTextColor(bkb.v0(bkb.y6, wjbVar));
+        hnVar.b(0.4f, 120L, s33.g);
+        hnVar.setTextSize(gl.L(13.0f));
+        addView(hnVar, nme.d(-1, -2.0f, 48, 70.0f, 23.0f, 0.0f, 0.0f));
+        Drawable[] drawableArr = {context.getDrawable(R.drawable.msg_link_1).mutate(), context.getDrawable(R.drawable.msg_link_2).mutate()};
+        this.h = drawableArr;
+        Drawable drawable = drawableArr[0];
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        drawable.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        drawableArr[1].setColorFilter(new PorterDuffColorFilter(-1, mode));
+        me1.I.setColor(bkb.v0(bkb.Ei, wjbVar));
+        me1.J.setColor(bkb.v0(bkb.U8, wjbVar));
+    }
+
+    public final void a(TLRPC.TL_username tL_username, boolean z, boolean z2, long j) {
+        this.w = tL_username;
+        this.x = z;
+        this.y = j;
+        invalidate();
+        if (this.w == null) {
+            this.H = false;
+            this.I = false;
+            return;
         }
-        HashMap hashMap = new HashMap();
-        g9d g9dVar = this.k;
-        if (g9dVar != null) {
-            hashMap.put(g9dVar.b, g9dVar.c);
-        }
+        this.H = tL_username.active;
         byte b = 1;
-        if (list != null) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                g9d g9dVar2 = (g9d) it.next();
-                ite.i(g9dVar2, "Additional SessionProvider must not be null.");
-                String str = g9dVar2.b;
-                ite.g(str, "Category for SessionProvider must not be null or empty string.");
-                ite.a("SessionProvider for category " + str + " already added", !hashMap.containsKey(str));
-                hashMap.put(str, g9dVar2.c);
-            }
+        this.I = j == 0 && tL_username.editable;
+        b(tL_username.username);
+        boolean z3 = this.a;
+        boolean z4 = this.I;
+        hn hnVar = this.f;
+        if (z3) {
+            hnVar.c(k96.M0(z4 ? 2131743407 : this.H ? 2131743408 : 2131743406, null), z2, !this.H);
+        } else {
+            hnVar.c(k96.M0(z4 ? 2131743411 : this.H ? 2131743412 : 2131743410, null), z2, !this.H);
         }
-        le1Var.G = new qye(1);
+        boolean z5 = this.H || this.I;
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
+        }
+        if (z2) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.F, z5 ? 1.0f : 0.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new he1(this, b));
+            this.G.setDuration(120L);
+            this.G.setInterpolator(s33.g);
+            this.G.start();
+            return;
+        }
+        this.F = z5 ? 1.0f : 0.0f;
+        int i = bkb.y6;
+        wjb wjbVar = this.b;
+        int f = bm2.f(this.F, bkb.v0(i, wjbVar), bkb.v0(bkb.m6, wjbVar));
+        this.e.b(f);
+        hnVar.setTextColor(f);
+    }
+
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(bkb.Ei));
+        hashSet.add(Integer.valueOf(bkb.U8));
+        hashSet.add(Integer.valueOf(bkb.y6));
+        hashSet.add(Integer.valueOf(bkb.m6));
+    }
+
+    public final void b(String str) {
+        if (this.I) {
+            str = getUsernameEditable();
+        }
+        boolean isEmpty = TextUtils.isEmpty(str);
+        jia jiaVar = this.c;
+        if (!isEmpty) {
+            jiaVar.l("@" + str, false);
+        } else {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("@");
+            SpannableString spannableString = new SpannableString(k96.M0(2131743409, null));
+            spannableString.setSpan(new cm4(bkb.G6, this.b), 0, spannableString.length(), 33);
+            spannableStringBuilder.append((CharSequence) spannableString);
+            jiaVar.l(spannableStringBuilder, false);
+        }
+    }
+
+    public String getUsernameEditable() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f;
+        float f2;
+        super.onDraw(canvas);
+        float e = this.J.e(false, this.H ? 1.0f : 0.0f);
+        Drawable[] drawableArr = this.h;
+        if (e < 1.0f) {
+            f2 = 0.0f;
+            canvas.drawCircle(gl.L(35.0f), gl.L(29.0f), gl.L(16.0f), me1.J);
+            drawableArr[1].setAlpha((int) ((1.0f - e) * 255.0f));
+            f = 255.0f;
+            drawableArr[1].setBounds(oo1.A(2, gl.L(35.0f), drawableArr[1]), oo1.y(2, gl.L(29.0f), drawableArr[1]), oo1.w(2, gl.L(35.0f), drawableArr[1]), oo1.i(2, gl.L(29.0f), drawableArr[1]));
+            drawableArr[1].draw(canvas);
+        } else {
+            f = 255.0f;
+            f2 = 0.0f;
+        }
+        if (e > f2) {
+            Paint paint = me1.I;
+            int i = (int) (e * f);
+            paint.setAlpha(i);
+            canvas.drawCircle(gl.L(35.0f), gl.L(29.0f), gl.L(16.0f) * e, paint);
+            drawableArr[0].setAlpha(i);
+            drawableArr[0].setBounds(oo1.A(2, gl.L(35.0f), drawableArr[0]), oo1.y(2, gl.L(29.0f), drawableArr[0]), oo1.w(2, gl.L(35.0f), drawableArr[0]), oo1.i(2, gl.L(29.0f), drawableArr[0]));
+            drawableArr[0].draw(canvas);
+        }
+        float e2 = this.E.e(false, this.x ? 1.0f : f2);
+        if (e2 > f2) {
+            int alpha = bkb.j0.getAlpha();
+            bkb.j0.setAlpha((int) (alpha * e2));
+            canvas.drawRect(gl.L(70.0f), getHeight() - 1, getWidth(), getHeight(), bkb.j0);
+            bkb.j0.setAlpha(alpha);
+        }
+        Paint paint2 = me1.K;
+        paint2.setColor(bkb.w0(null, bkb.Ki, false));
+        paint2.setAlpha((int) (paint2.getAlpha() * e));
+        RectF rectF = gl.P;
+        rectF.set(getWidth() - gl.L(37.0f), gl.L(25.0f), getWidth() - gl.L(21.0f), gl.L(27.0f));
+        canvas.drawRoundRect(rectF, gl.L(0.3f), gl.L(0.3f), paint2);
+        rectF.set(getWidth() - gl.L(37.0f), gl.L(31.0f), getWidth() - gl.L(21.0f), gl.L(33.0f));
+        canvas.drawRoundRect(rectF, gl.L(0.3f), gl.L(0.3f), paint2);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(58.0f), TLObject.FLAG_30));
+    }
+
+    public void setLoading(boolean z) {
+        if (this.r != z) {
+            this.r = z;
+            ValueAnimator valueAnimator = this.s;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            byte b = 0;
+            this.d.setVisibility(0);
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z ? 1.0f : 0.0f);
+            this.s = ofFloat;
+            ofFloat.addUpdateListener(new he1(this, b));
+            this.s.addListener(new y7((byte) 12, this, z));
+            this.s.setInterpolator(s33.g);
+            this.s.setDuration(200L);
+            this.s.start();
+        }
+    }
+
+    @Override // tjb
+    public final void updateColors() {
+        ih2 ih2Var;
+        hn hnVar;
+        wjb wjbVar = this.b;
         try {
-            o9d a = v8d.a(context, le1Var, qedVar, hashMap);
-            this.b = a;
-            try {
-                e9d e9dVar = (e9d) a;
-                Parcel T = e9dVar.T(e9dVar.R(), 6);
-                IBinder readStrongBinder = T.readStrongBinder();
-                if (readStrongBinder == null) {
-                    sadVar = null;
-                } else {
-                    IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.IDiscoveryManager");
-                    sadVar = queryLocalInterface instanceof sad ? (sad) queryLocalInterface : new sad(readStrongBinder, "com.google.android.gms.cast.framework.IDiscoveryManager", (byte) 3);
-                }
-                T.recycle();
-                this.d = new y7d(sadVar);
-                try {
-                    e9d e9dVar2 = (e9d) a;
-                    Parcel T2 = e9dVar2.T(e9dVar2.R(), 5);
-                    IBinder readStrongBinder2 = T2.readStrongBinder();
-                    if (readStrongBinder2 == null) {
-                        pcdVar = null;
-                    } else {
-                        IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("com.google.android.gms.cast.framework.ISessionManager");
-                        pcdVar = queryLocalInterface2 instanceof pcd ? (pcd) queryLocalInterface2 : new pcd(readStrongBinder2, "com.google.android.gms.cast.framework.ISessionManager", (byte) 3);
-                    }
-                    T2.recycle();
-                    l8a l8aVar = new l8a(pcdVar, context);
-                    this.c = l8aVar;
-                    ite.g("PrecacheManager", "The log tag cannot be null or empty.");
-                    zfd zfdVar = this.j;
-                    if (zfdVar != null) {
-                        zfdVar.f = l8aVar;
-                        zfdVar.c.post(new kfd(zfdVar, b));
-                    }
-                    ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(3);
-                    rqd rqdVar = new rqd(context, newFixedThreadPool instanceof oef ? (oef) newFixedThreadPool : newFixedThreadPool instanceof ScheduledExecutorService ? new bff((ScheduledExecutorService) newFixedThreadPool) : new oef(newFixedThreadPool));
-                    ite.g("BaseNetUtils", "The log tag cannot be null or empty.");
-                    ConnectivityManager connectivityManager = rqdVar.c;
-                    rqd.j.b("Start monitoring connectivity changes", new Object[0]);
-                    if (!rqdVar.f && connectivityManager != null && rs.b(rqdVar.g, "android.permission.ACCESS_NETWORK_STATE") == 0) {
-                        Network activeNetwork = connectivityManager.getActiveNetwork();
-                        if (activeNetwork != null && (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) != null) {
-                            rqdVar.a(activeNetwork, linkProperties);
-                        }
-                        connectivityManager.registerNetworkCallback(new NetworkRequest.Builder().addTransportType(1).build(), rqdVar.b);
-                        rqdVar.f = true;
-                    }
-                    r8d r8dVar = new r8d();
-                    this.g = r8dVar;
-                    try {
-                        e9d e9dVar3 = (e9d) a;
-                        Parcel R = e9dVar3.R();
-                        kid.d(R, r8dVar);
-                        e9dVar3.V(R, 3);
-                        r8dVar.b.add(this.h.a);
-                        if (!DesugarCollections.unmodifiableList(le1Var.x).isEmpty()) {
-                            ce6 ce6Var = l;
-                            Log.i(ce6Var.a, ce6Var.d("Setting Route Discovery for appIds: ".concat(String.valueOf(DesugarCollections.unmodifiableList(this.e.x))), new Object[0]));
-                            tcd tcdVar = this.h;
-                            List unmodifiableList = DesugarCollections.unmodifiableList(this.e.x);
-                            tcdVar.getClass();
-                            tcd.f.b(td4.o(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
-                            LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
-                            Iterator it2 = unmodifiableList.iterator();
-                            while (it2.hasNext()) {
-                                linkedHashSet.add(p3f.a((String) it2.next()));
-                            }
-                            tcd.f.b("resetting routes. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(tcdVar.c.keySet())), new Object[0]);
-                            HashMap hashMap2 = new HashMap();
-                            synchronized (tcdVar.c) {
-                                for (String str2 : linkedHashSet) {
-                                    kcd kcdVar = (kcd) tcdVar.c.get(p3f.a(str2));
-                                    if (kcdVar != null) {
-                                        hashMap2.put(str2, kcdVar);
-                                    }
-                                }
-                                tcdVar.c.clear();
-                                tcdVar.c.putAll(hashMap2);
-                            }
-                            tcd.f.b("Routes reset. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(tcdVar.c.keySet())), new Object[0]);
-                            synchronized (tcdVar.d) {
-                                tcdVar.d.clear();
-                                tcdVar.d.addAll(linkedHashSet);
-                            }
-                            tcdVar.m();
-                        }
-                        ua4Var.m(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new und(this));
-                        bib b2 = cib.b();
-                        b2.a = new eod(ua4Var, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"});
-                        b2.c = new o94[]{jgd.d};
-                        b2.b = false;
-                        b2.d = (char) 8427;
-                        ua4Var.e(0, b2.a()).addOnSuccessListener(new b7d(this));
-                    } catch (RemoteException e) {
-                        wa3.h("Failed to call addAppVisibilityListener", e);
-                        throw null;
-                    }
-                } catch (RemoteException e2) {
-                    wa3.h("Failed to call getSessionManagerImpl", e2);
-                    throw null;
-                }
-            } catch (RemoteException e3) {
-                wa3.h("Failed to call getDiscoveryManagerImpl", e3);
-                throw null;
+            me1.I.setColor(bkb.v0(bkb.Ei, wjbVar));
+            me1.J.setColor(bkb.v0(bkb.U8, wjbVar));
+            ValueAnimator valueAnimator = this.G;
+            if ((valueAnimator == null || !valueAnimator.isRunning()) && (ih2Var = this.e) != null && (hnVar = this.f) != null) {
+                int f = bm2.f(this.F, bkb.v0(bkb.y6, wjbVar), bkb.v0(bkb.m6, wjbVar));
+                ih2Var.b(f);
+                hnVar.setTextColor(f);
             }
-        } catch (RemoteException e4) {
-            wa3.h("Failed to call newCastContextImpl", e4);
-            throw null;
+            invalidate();
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
-    }
-
-    public static ie1 c(Context context) {
-        ite.e("Must be called from the main thread.");
-        if (n == null) {
-            synchronized (m) {
-                if (n == null) {
-                    Context applicationContext = context.getApplicationContext();
-                    ChromecastOptionsProvider d = d(applicationContext);
-                    le1 castOptions = d.getCastOptions(applicationContext);
-                    ua4 ua4Var = new ua4(applicationContext, ua4.u, wo.g, b05.c);
-                    try {
-                        n = new ie1(applicationContext, castOptions, d.getAdditionalSessionProviders(applicationContext), new qed(applicationContext, gw6.d(applicationContext), castOptions, ua4Var), ua4Var);
-                    } catch (sg7 e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
-        }
-        return n;
-    }
-
-    public static ChromecastOptionsProvider d(Context context) {
-        try {
-            n63 a = s0d.a(context);
-            Bundle bundle = a.a.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
-            if (bundle == null) {
-                l.c(new Object[0]);
-            }
-            String string = bundle.getString("com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME");
-            if (string != null) {
-                return (ChromecastOptionsProvider) Class.forName(string).asSubclass(ChromecastOptionsProvider.class).getDeclaredConstructor(null).newInstance(null);
-            }
-            throw new IllegalStateException("The fully qualified name of the implementation of OptionsProvider must be provided as a metadata in the AndroidManifest.xml with key com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME.");
-        } catch (PackageManager.NameNotFoundException | ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | NullPointerException | InvocationTargetException e) {
-            wa3.h("Failed to initialize CastContext.", e);
-            return null;
-        }
-    }
-
-    public final yv6 a() {
-        ite.e("Must be called from the main thread.");
-        try {
-            e9d e9dVar = (e9d) this.b;
-            Parcel T = e9dVar.T(e9dVar.R(), 1);
-            Bundle bundle = (Bundle) kid.a(T, Bundle.CREATOR);
-            T.recycle();
-            return yv6.b(bundle);
-        } catch (RemoteException e) {
-            l.a(e, "Unable to call %s on %s.", "getMergedSelectorAsBundle", o9d.class.getSimpleName());
-            return null;
-        }
-    }
-
-    public final l8a b() {
-        ite.e("Must be called from the main thread.");
-        return this.c;
     }
 }

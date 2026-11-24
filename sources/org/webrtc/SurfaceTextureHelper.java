@@ -9,7 +9,7 @@ import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes3.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -31,7 +31,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -80,7 +80,7 @@ public class SurfaceTextureHelper {
             }
         };
         if (handler.getLooper().getThread() != Thread.currentThread()) {
-            dq9.m("SurfaceTextureHelper must be created on the handler thread");
+            sc8.j("SurfaceTextureHelper must be created on the handler thread");
             throw null;
         }
         this.handler = handler;
@@ -96,7 +96,7 @@ public class SurfaceTextureHelper {
             this.oesTextureId = generateTexture;
             SurfaceTexture surfaceTexture = new SurfaceTexture(generateTexture);
             this.surfaceTexture = surfaceTexture;
-            setOnFrameAvailableListener(surfaceTexture, new pb1(this, (byte) 3), handler);
+            setOnFrameAvailableListener(surfaceTexture, new ha1(this, (byte) 3), handler);
         } catch (RuntimeException e) {
             this.eglBase.release();
             handler.getLooper().quit();
@@ -175,11 +175,11 @@ public class SurfaceTextureHelper {
 
     private void release() {
         if (this.handler.getLooper().getThread() != Thread.currentThread()) {
-            dq9.m("Wrong thread.");
+            sc8.j("Wrong thread.");
             return;
         }
         if (this.isTextureInUse || !this.isQuitting) {
-            dq9.m("Unexpected release.");
+            sc8.j("Unexpected release.");
             return;
         }
         this.yuvConverter.release();
@@ -195,7 +195,7 @@ public class SurfaceTextureHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void returnTextureFrame() {
-        this.handler.post(new deb(this, (byte) 2));
+        this.handler.post(new bcb(this, (byte) 2));
     }
 
     private static void setOnFrameAvailableListener(SurfaceTexture surfaceTexture, SurfaceTexture.OnFrameAvailableListener onFrameAvailableListener, Handler handler) {
@@ -204,7 +204,7 @@ public class SurfaceTextureHelper {
 
     private void tryDeliverTextureFrame() {
         if (this.handler.getLooper().getThread() != Thread.currentThread()) {
-            dq9.m("Wrong thread.");
+            sc8.j("Wrong thread.");
             return;
         }
         if (this.isQuitting || !this.hasPendingTexture || this.isTextureInUse || this.listener == null) {
@@ -246,11 +246,11 @@ public class SurfaceTextureHelper {
 
     public void dispose() {
         Logging.d(TAG, "dispose()");
-        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new deb(this, (byte) 1));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new bcb(this, (byte) 1));
     }
 
     public void forceFrame() {
-        this.handler.post(new deb(this, (byte) 3));
+        this.handler.post(new bcb(this, (byte) 3));
     }
 
     public Handler getHandler() {
@@ -266,23 +266,23 @@ public class SurfaceTextureHelper {
     }
 
     public void setFrameRotation(int i) {
-        this.handler.post(new ge7((Object) this, i, (byte) 21));
+        this.handler.post(new on7((Object) this, i, (byte) 19));
     }
 
     public void setTextureSize(int i, int i2) {
         if (i <= 0) {
-            u36.j(hg9.j(i, "Texture width must be positive, but was "));
+            w26.j(de9.k(i, "Texture width must be positive, but was "));
         } else if (i2 <= 0) {
-            u36.j(hg9.j(i2, "Texture height must be positive, but was "));
+            w26.j(de9.k(i2, "Texture height must be positive, but was "));
         } else {
             this.surfaceTexture.setDefaultBufferSize(i, i2);
-            this.handler.post(new cu((Object) this, i, i2, (byte) 15));
+            this.handler.post(new bt((Object) this, i, i2, (byte) 15));
         }
     }
 
     public void startListening(VideoSink videoSink) {
         if (this.listener != null || this.pendingListener != null) {
-            dq9.m("SurfaceTextureHelper listener has already been set.");
+            sc8.j("SurfaceTextureHelper listener has already been set.");
         } else {
             this.pendingListener = videoSink;
             this.handler.post(this.setListenerRunnable);
@@ -292,7 +292,7 @@ public class SurfaceTextureHelper {
     public void stopListening() {
         Logging.d(TAG, "stopListening()");
         this.handler.removeCallbacks(this.setListenerRunnable);
-        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new deb(this, (byte) 0));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new bcb(this, (byte) 0));
     }
 
     @Deprecated

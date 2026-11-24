@@ -1,61 +1,45 @@
 // default package
 
-import android.util.Log;
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Iterator;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
-/* loaded from: classes.dex */
-public final class s41 implements AutoCloseable {
-    public final String[] a;
-    public final ArrayDeque b;
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class s41 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ u41 b;
 
-    public s41(Object obj, String str, ArrayDeque arrayDeque) {
-        this.b = arrayDeque;
-        if (obj != null) {
-            arrayDeque.addFirst(new r41(obj, str));
-            if (Log.isLoggable("CarApp.Bun", 2)) {
-                int min = Math.min(arrayDeque.size(), 11);
-                String[] strArr = this.a;
-                if (strArr == null) {
-                    strArr = new String[12];
-                    this.a = strArr;
-                }
-                String str2 = strArr[min];
-                if (str2 == null) {
-                    char[] cArr = new char[min];
-                    Arrays.fill(cArr, ' ');
-                    String str3 = new String(cArr);
-                    str2 = min == 11 ? str3.concat("...") : str3;
-                    this.a[min] = str2;
-                }
-                Log.v("CarApp.Bun", str2.concat(u41.i(obj.getClass()) + " " + str));
-            }
-        }
+    public /* synthetic */ s41(u41 u41Var, byte b) {
+        this.a = b;
+        this.b = u41Var;
     }
 
-    public final String a() {
-        StringBuilder sb = new StringBuilder();
-        ArrayDeque arrayDeque = this.b;
-        int min = Math.min(arrayDeque.size(), 8);
-        Iterator descendingIterator = arrayDeque.descendingIterator();
-        while (descendingIterator.hasNext()) {
-            int i = min - 1;
-            if (min <= 0) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        u41 u41Var = this.b;
+        switch (b) {
+            case 0:
+                u41Var.U = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                u41Var.invalidate();
                 break;
-            }
-            sb.append(((r41) descendingIterator.next()).a());
-            min = i;
+            case 1:
+                u41Var.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u41Var.invalidate();
+                break;
+            case 2:
+                u41Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u41Var.invalidate();
+                break;
+            case 3:
+                u41Var.getClass();
+                u41Var.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u41Var.invalidate();
+                break;
+            default:
+                u41Var.getClass();
+                u41Var.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u41Var.invalidate();
+                break;
         }
-        if (descendingIterator.hasNext()) {
-            sb.append("[...]");
-        }
-        return sb.toString();
-    }
-
-    @Override // java.lang.AutoCloseable
-    public final void close() {
-        this.b.removeFirst();
     }
 }

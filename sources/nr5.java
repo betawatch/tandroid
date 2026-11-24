@@ -1,36 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class nr5 extends tl5 {
-    public final String b;
-    public final String c;
-    public final String d;
+public final class nr5 extends b4 {
+    public static final Parcelable.Creator<nr5> CREATOR = new c0f((byte) 16);
+    public ArrayList a;
+    public String b;
+    public String c;
+    public ArrayList d;
+    public boolean e;
+    public String f;
 
-    public nr5(String str, String str2, String str3) {
-        super("----");
-        this.b = str;
-        this.c = str2;
-        this.d = str3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || nr5.class != obj.getClass()) {
-            return false;
-        }
-        nr5 nr5Var = (nr5) obj;
-        return this.c.equals(nr5Var.c) && this.b.equals(nr5Var.b) && this.d.equals(nr5Var.d);
-    }
-
-    public final int hashCode() {
-        return this.d.hashCode() + ts2.j(ts2.j(527, 31, this.b), 31, this.c);
-    }
-
-    @Override // tl5
-    public final String toString() {
-        return this.a + ": domain=" + this.b + ", description=" + this.c;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.h(parcel, 2, this.a);
+        jte.l(parcel, 4, this.b);
+        jte.l(parcel, 5, this.c);
+        jte.h(parcel, 6, this.d);
+        boolean z = this.e;
+        jte.q(parcel, 7, 4);
+        parcel.writeInt(z ? 1 : 0);
+        jte.l(parcel, 8, this.f);
+        jte.s(parcel, r);
     }
 }

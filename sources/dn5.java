@@ -1,14 +1,21 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class dn5 {
-    public TLRPC.Document a;
-    public String b;
-    public ArrayList c;
-    public ArrayList d;
-    public boolean e;
+public final class dn5 implements en5 {
+    public final rj7 a;
+
+    public dn5(rj7 rj7Var) {
+        this.a = rj7Var;
+    }
+
+    @Override // en5
+    public final rj7 b() {
+        return this.a;
+    }
+
+    @Override // en5
+    public final boolean isActive() {
+        return false;
+    }
 }
