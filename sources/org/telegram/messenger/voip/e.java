@@ -1,31 +1,32 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+import android.media.AudioManager;
+import org.telegram.messenger.voip.VoIPService;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ GroupCallMessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ GroupCallMessage d;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ e(GroupCallMessagesController groupCallMessagesController, long j3, GroupCallMessage groupCallMessage, int i7) {
-        this.a = i7;
-        this.b = groupCallMessagesController;
-        this.c = j3;
-        this.d = groupCallMessage;
+    public /* synthetic */ e(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
             case 0:
-                this.b.lambda$processUpdate$0(this.c, this.d);
+                ((VoIPService.1) obj).lambda$run$0();
                 break;
             case 1:
-                this.b.lambda$processUpdate$1(this.c, this.d);
+                VoIPService.1.lambda$run$1((AudioManager) obj);
                 break;
             default:
-                this.b.lambda$processUpdate$2(this.c, this.d);
+                ((VoIPService.10) obj).lambda$run$0();
                 break;
         }
     }

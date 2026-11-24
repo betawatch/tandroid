@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class XMLResourceParseException extends ResourceParseException {
     private static final long serialVersionUID = 2091302779298293946L;
@@ -11,38 +11,38 @@ public class XMLResourceParseException extends ResourceParseException {
     */
     public XMLResourceParseException(String str, String str2, String str3, String str4) {
         super(r0.toString());
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(str);
-        sb2.append(": invalid <");
-        sb2.append(str2);
-        sb2.append(">-element found: attribute '");
-        sb2.append(str3);
-        sb2.append("' ");
-        sb2.append(str4 == null ? "is required!" : str4);
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        sb.append(": invalid <");
+        sb.append(str2);
+        sb.append(">-element found: attribute '");
+        sb.append(str3);
+        sb.append("' ");
+        sb.append(str4 == null ? "is required!" : str4);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public XMLResourceParseException(String str, String str2, String str3, String str4, Throwable th2) {
-        super(r0.toString(), th2);
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(str);
-        sb2.append(": invalid <");
-        sb2.append(str2);
-        sb2.append(">-element found: attribute '");
-        sb2.append(str3);
-        sb2.append("' ");
-        sb2.append(str4 == null ? "is required!" : str4);
+    public XMLResourceParseException(String str, String str2, String str3, String str4, Throwable th) {
+        super(r0.toString(), th);
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        sb.append(": invalid <");
+        sb.append(str2);
+        sb.append(">-element found: attribute '");
+        sb.append(str3);
+        sb.append("' ");
+        sb.append(str4 == null ? "is required!" : str4);
     }
 
     public XMLResourceParseException(String str, String str2) {
         super(str + ": the required <" + str2 + ">-element is not found!");
     }
 
-    public XMLResourceParseException(String str, Throwable th2) {
-        super(str, th2);
+    public XMLResourceParseException(String str, Throwable th) {
+        super(str, th);
     }
 
     public XMLResourceParseException(String str) {

@@ -3,7 +3,6 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import hi.x7;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,29 +13,26 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.i10;
-import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private w10 doneCallback;
+    private p8c doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private w10 progressCallback;
+    private p8c progressCallback;
 
-    public HttpGetFileTask(w10 w10Var, w10 w10Var2) {
-        this.doneCallback = w10Var;
-        this.progressCallback = w10Var2;
+    public HttpGetFileTask(p8c p8cVar, p8c p8cVar2) {
+        this.doneCallback = p8cVar;
+        this.progressCallback = p8cVar2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$doInBackground$0(float f10) {
-        this.progressCallback.a(Float.valueOf(f10));
+    public /* synthetic */ void lambda$doInBackground$0(float f) {
+        this.progressCallback.a(Float.valueOf(f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -44,32 +40,17 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         this.progressCallback.a(Float.valueOf(1.0f));
     }
 
-    public HttpGetFileTask setDestFile(File file) {
-        this.file = file;
-        return this;
-    }
-
-    public HttpGetFileTask setMaxSize(long j3) {
-        this.max_size = j3;
-        return this;
-    }
-
-    public HttpGetFileTask setOverrideExtension(String str) {
-        this.overrideExt = str;
-        return this;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0100, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x00ef, code lost:
     
         r18.file.delete();
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x019d A[LOOP:0: B:2:0x0008->B:36:0x019d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x01a9 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x018f A[LOOP:0: B:2:0x0008->B:35:0x018f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x019b A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v32 */
     /* JADX WARN: Type inference failed for: r0v34 */
-    /* JADX WARN: Type inference failed for: r0v36 */
-    /* JADX WARN: Type inference failed for: r0v37 */
-    /* JADX WARN: Type inference failed for: r0v8, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v35 */
+    /* JADX WARN: Type inference failed for: r0v7, types: [boolean] */
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v10 */
@@ -77,9 +58,9 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     /* JADX WARN: Type inference failed for: r17v13 */
     /* JADX WARN: Type inference failed for: r17v14 */
     /* JADX WARN: Type inference failed for: r17v15 */
-    /* JADX WARN: Type inference failed for: r17v2 */
+    /* JADX WARN: Type inference failed for: r17v2, types: [int] */
     /* JADX WARN: Type inference failed for: r17v3 */
-    /* JADX WARN: Type inference failed for: r17v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r17v4 */
     /* JADX WARN: Type inference failed for: r17v5 */
     /* JADX WARN: Type inference failed for: r17v6 */
     /* JADX WARN: Type inference failed for: r17v7 */
@@ -108,35 +89,37 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     public File doInBackground(String... strArr) {
         ?? r17;
         BufferedInputStream bufferedInputStream;
+        Throwable th;
         FileOutputStream fileOutputStream;
+        Throwable th2;
         FileChannel channel;
-        int i7 = 0;
+        int i = 0;
         String str = strArr[0];
-        int i10 = 0;
-        long j3 = 0;
+        int i2 = 0;
+        long j = 0;
         ?? r19 = strArr;
         while (true) {
             Object obj = null;
-            if (i10 >= 5) {
+            if (i2 >= 5) {
                 this.exception = new RuntimeException("too many retries");
                 return null;
             }
-            int i11 = i10 > 0 ? 1 : i7;
+            int i3 = i2 > 0 ? 1 : i;
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
                 httpURLConnection.setRequestMethod("GET");
-                if (i11 != 0) {
-                    httpURLConnection.setRequestProperty("Range", "bytes=" + j3 + "-");
+                if (i3 != 0) {
+                    httpURLConnection.setRequestProperty("Range", "bytes=" + j + "-");
                 }
                 httpURLConnection.setDoInput(true);
                 int responseCode = httpURLConnection.getResponseCode();
                 InputStream errorStream = (responseCode < 200 || responseCode >= 300) ? httpURLConnection.getErrorStream() : httpURLConnection.getInputStream();
                 int responseCode2 = httpURLConnection.getResponseCode();
-                ?? r02 = i11;
-                if (i11 != 0) {
-                    r02 = i11;
+                ?? r0 = i3;
+                if (i3 != 0) {
+                    r0 = i3;
                     if (responseCode2 != 206) {
-                        a8.b("failed to resume, server doesn't support partial content. downloading from the beginning");
+                        fa4.b("failed to resume, server doesn't support partial content. downloading from the beginning");
                         try {
                             File file = this.file;
                             if (file != null) {
@@ -146,165 +129,165 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                 }
                                 this.file = null;
                             }
-                            r02 = i7;
-                            j3 = 0;
-                        } catch (Exception e10) {
-                            e = e10;
+                            r0 = i;
+                            j = 0;
+                        } catch (Exception e) {
+                            e = e;
                             r17 = str;
                             r19 = 0;
-                            j3 = 0;
+                            j = 0;
                             if (e instanceof ProtocolException) {
+                                this.exception = e;
+                                fa4.g(e, true);
+                                return r19;
                             }
+                            fa4.b("got unexpected end of stream, lets try to resume");
+                            i2++;
+                            str = r17;
+                            i = 0;
+                            r19 = r19;
                         }
                     }
                 }
                 long contentLengthLong = Build.VERSION.SDK_INT >= 24 ? httpURLConnection.getContentLengthLong() : httpURLConnection.getContentLength();
+                long j2 = this.max_size;
+                r17 = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
+                if (r17 > 0 && contentLengthLong > j2) {
+                    errorStream.close();
+                    if (this.file != null) {
+                        this.file = null;
+                    }
+                    return null;
+                }
+                if (this.file == null) {
+                    String str2 = this.overrideExt;
+                    if (str2 == null) {
+                        str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
+                    }
+                    this.file = f4b.w(y6c.t0, str2);
+                }
                 try {
-                    long j10 = this.max_size;
-                    r17 = (j10 > 0L ? 1 : (j10 == 0L ? 0 : -1));
-                    if (r17 > 0 && contentLengthLong > j10) {
-                        errorStream.close();
-                        if (this.file != null) {
-                            this.file = null;
-                        }
-                        return null;
-                    }
-                    if (this.file == null) {
-                        String str2 = this.overrideExt;
-                        if (str2 == null) {
-                            str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
-                        }
-                        this.file = x7.w(i10.t0, str2);
-                    }
+                    bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
                     try {
-                        bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
                         try {
-                            fileOutputStream = new FileOutputStream(this.file, (boolean) r02);
+                            fileOutputStream = new FileOutputStream(this.file, (boolean) r0);
                             try {
-                                channel = fileOutputStream.getChannel();
                                 try {
-                                    byte[] bArr = new byte[TLObject.FLAG_14];
-                                    while (true) {
-                                        int read = bufferedInputStream.read(bArr);
-                                        r19 = obj;
-                                        if (read == -1) {
-                                            if (this.progressCallback != null) {
-                                                org.telegram.messenger.g0.g3(new z0(this, 0));
-                                            }
-                                            if (channel != null) {
-                                                channel.close();
-                                            }
-                                            fileOutputStream.close();
-                                            bufferedInputStream.close();
-                                            return isCancelled() ? r19 : this.file;
-                                        }
-                                        try {
-                                            channel.write(ByteBuffer.wrap(bArr, i7, read));
-                                            r17 = str;
-                                            j3 += read;
-                                        } catch (Throwable th2) {
-                                            th = th2;
-                                            r17 = str;
-                                        }
-                                        try {
-                                            if (isCancelled()) {
-                                                try {
-                                                    break;
-                                                } catch (Exception e11) {
-                                                    a8.g(e11, true);
+                                    channel = fileOutputStream.getChannel();
+                                    try {
+                                        byte[] bArr = new byte[TLObject.FLAG_14];
+                                        while (true) {
+                                            int read = bufferedInputStream.read(bArr);
+                                            r19 = obj;
+                                            if (read == -1) {
+                                                if (this.progressCallback != null) {
+                                                    gl.d3(new iu4(this, (byte) 25));
                                                 }
-                                            } else {
-                                                if (contentLengthLong > 0) {
-                                                    float l10 = Utilities.l(j3 / contentLengthLong);
-                                                    if (this.progressCallback != null) {
-                                                        org.telegram.messenger.g0.g3(new org.telegram.ui.a0(this, l10, 3));
-                                                    }
+                                                if (channel != null) {
+                                                    channel.close();
                                                 }
-                                                obj = r19;
-                                                str = r17;
-                                                i7 = 0;
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            Throwable th4 = th;
-                                            if (channel == null) {
-                                                throw th4;
+                                                fileOutputStream.close();
+                                                bufferedInputStream.close();
+                                                return isCancelled() ? r19 : this.file;
                                             }
                                             try {
+                                                channel.write(ByteBuffer.wrap(bArr, i, read));
+                                                r17 = str;
+                                                j += read;
+                                            } catch (Throwable th3) {
+                                                th = th3;
+                                                r17 = str;
+                                            }
+                                            try {
+                                                if (isCancelled()) {
+                                                    try {
+                                                        break;
+                                                    } catch (Exception e2) {
+                                                        fa4.g(e2, true);
+                                                    }
+                                                } else {
+                                                    if (contentLengthLong > 0) {
+                                                        float l = Utilities.l(j / contentLengthLong);
+                                                        if (this.progressCallback != null) {
+                                                            gl.d3(new kt(this, l, (byte) 2));
+                                                        }
+                                                    }
+                                                    obj = r19;
+                                                    str = r17;
+                                                    i = 0;
+                                                }
+                                            } catch (Throwable th4) {
+                                                th = th4;
+                                                Throwable th5 = th;
+                                                if (channel == null) {
+                                                    throw th5;
+                                                }
                                                 try {
                                                     channel.close();
-                                                    throw th4;
-                                                } catch (Throwable th5) {
-                                                    th4.addSuppressed(th5);
-                                                    throw th4;
-                                                }
-                                            } catch (Throwable th6) {
-                                                th = th6;
-                                                Throwable th7 = th;
-                                                try {
-                                                    try {
-                                                        fileOutputStream.close();
-                                                        throw th7;
-                                                    } catch (Throwable th8) {
-                                                        th7.addSuppressed(th8);
-                                                        throw th7;
-                                                    }
-                                                } catch (Throwable th9) {
-                                                    th = th9;
-                                                    Throwable th10 = th;
-                                                    try {
-                                                        bufferedInputStream.close();
-                                                        throw th10;
-                                                    } catch (Throwable th11) {
-                                                        th10.addSuppressed(th11);
-                                                        throw th10;
-                                                    }
+                                                    throw th5;
+                                                } catch (Throwable th6) {
+                                                    th5.addSuppressed(th6);
+                                                    throw th5;
                                                 }
                                             }
                                         }
+                                    } catch (Throwable th7) {
+                                        th = th7;
+                                        r17 = str;
+                                        r19 = obj;
                                     }
-                                } catch (Throwable th12) {
-                                    th = th12;
-                                    r17 = str;
-                                    r19 = obj;
+                                } catch (Throwable th8) {
+                                    th = th8;
+                                    th2 = th;
+                                    try {
+                                        fileOutputStream.close();
+                                        throw th2;
+                                    } catch (Throwable th9) {
+                                        th2.addSuppressed(th9);
+                                        throw th2;
+                                    }
                                 }
-                            } catch (Throwable th13) {
-                                th = th13;
+                            } catch (Throwable th10) {
+                                th = th10;
                                 r17 = str;
                                 r19 = 0;
+                                th2 = th;
+                                fileOutputStream.close();
+                                throw th2;
                             }
-                        } catch (Throwable th14) {
-                            th = th14;
-                            r17 = str;
-                            r19 = 0;
+                        } catch (Throwable th11) {
+                            th = th11;
+                            th = th;
+                            try {
+                                bufferedInputStream.close();
+                                throw th;
+                            } catch (Throwable th12) {
+                                th.addSuppressed(th12);
+                                throw th;
+                            }
                         }
-                    } catch (Exception e12) {
-                        e = e12;
-                        if (e instanceof ProtocolException) {
-                            this.exception = e;
-                            a8.g(e, true);
-                            return r19;
-                        }
-                        a8.b("got unexpected end of stream, lets try to resume");
-                        i10++;
-                        str = r17;
-                        i7 = 0;
-                        r19 = r19;
+                    } catch (Throwable th13) {
+                        th = th13;
+                        r17 = str;
+                        r19 = 0;
+                        th = th;
+                        bufferedInputStream.close();
+                        throw th;
                     }
-                } catch (Exception e13) {
-                    e = e13;
-                    r17 = str;
-                    r19 = 0;
+                } catch (Exception e3) {
+                    e = e3;
+                    if (e instanceof ProtocolException) {
+                    }
                 }
-            } catch (Exception e14) {
-                e = e14;
+            } catch (Exception e4) {
+                e = e4;
                 r17 = str;
                 r19 = 0;
             }
-            a8.b("got unexpected end of stream, lets try to resume");
-            i10++;
+            fa4.b("got unexpected end of stream, lets try to resume");
+            i2++;
             str = r17;
-            i7 = 0;
+            i = 0;
             r19 = r19;
         }
         channel.close();
@@ -315,13 +298,28 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        w10 w10Var = this.doneCallback;
-        if (w10Var != null) {
+        p8c p8cVar = this.doneCallback;
+        if (p8cVar != null) {
             if (this.exception == null) {
-                w10Var.a(file);
+                p8cVar.a(file);
             } else {
-                w10Var.a(null);
+                p8cVar.a(null);
             }
         }
+    }
+
+    public HttpGetFileTask setDestFile(File file) {
+        this.file = file;
+        return this;
+    }
+
+    public HttpGetFileTask setMaxSize(long j) {
+        this.max_size = j;
+        return this;
+    }
+
+    public HttpGetFileTask setOverrideExtension(String str) {
+        this.overrideExt = str;
+        return this;
     }
 }

@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 import java.lang.reflect.InvocationHandler;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface WebViewProviderBoundaryInterface {
     InvocationHandler addDocumentStartJavaScript(String str, String[] strArr);
@@ -30,7 +30,7 @@ public interface WebViewProviderBoundaryInterface {
 
     InvocationHandler getWebViewRendererClient();
 
-    void insertVisualStateCallback(long j3, InvocationHandler invocationHandler);
+    void insertVisualStateCallback(long j, InvocationHandler invocationHandler);
 
     boolean isAudioMuted();
 
@@ -42,9 +42,9 @@ public interface WebViewProviderBoundaryInterface {
 
     void removeWebMessageListener(String str);
 
-    void saveState(Bundle bundle, int i7, boolean z10);
+    void saveState(Bundle bundle, int i, boolean z);
 
-    void setAudioMuted(boolean z10);
+    void setAudioMuted(boolean z);
 
     void setProfile(String str);
 

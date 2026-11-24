@@ -1,39 +1,43 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzmd {
-    public static void zza(boolean z10) {
-        if (!z10) {
-            throw new IllegalArgumentException();
+    public static void zza(boolean z) {
+        if (z) {
+            return;
+        }
+        sc8.e();
+    }
+
+    public static void zzb(boolean z, Object obj) {
+        if (z) {
+            return;
+        }
+        w26.j((String) obj);
+    }
+
+    public static void zzc(boolean z, String str, char c) {
+        if (z) {
+            return;
+        }
+        w26.j(zzmg.zza(str, Character.valueOf(c)));
+    }
+
+    public static void zzd(int i, int i2, int i3) {
+        if (i < 0 || i2 < i || i2 > i3) {
+            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? zzf(i, i3, "start index") : (i2 < 0 || i2 > i3) ? zzf(i2, i3, "end index") : zzmg.zza("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
         }
     }
 
-    public static void zzb(boolean z10, Object obj) {
-        if (!z10) {
-            throw new IllegalArgumentException((String) obj);
+    public static void zze(boolean z, Object obj) {
+        if (z) {
+            return;
         }
+        sc8.j((String) obj);
     }
 
-    public static void zzc(boolean z10, String str, char c10) {
-        if (!z10) {
-            throw new IllegalArgumentException(zzmg.zza(str, Character.valueOf(c10)));
-        }
-    }
-
-    public static void zzd(int i7, int i10, int i11) {
-        if (i7 < 0 || i10 < i7 || i10 > i11) {
-            throw new IndexOutOfBoundsException((i7 < 0 || i7 > i11) ? zzf(i7, i11, "start index") : (i10 < 0 || i10 > i11) ? zzf(i10, i11, "end index") : zzmg.zza("end index (%s) must not be less than start index (%s)", Integer.valueOf(i10), Integer.valueOf(i7)));
-        }
-    }
-
-    public static void zze(boolean z10, Object obj) {
-        if (!z10) {
-            throw new IllegalStateException((String) obj);
-        }
-    }
-
-    private static String zzf(int i7, int i10, String str) {
-        return i7 < 0 ? zzmg.zza("%s (%s) must not be negative", str, Integer.valueOf(i7)) : zzmg.zza("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
+    private static String zzf(int i, int i2, String str) {
+        return i < 0 ? zzmg.zza("%s (%s) must not be negative", str, Integer.valueOf(i)) : zzmg.zza("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
     }
 }

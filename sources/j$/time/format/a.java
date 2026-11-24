@@ -19,20 +19,89 @@ import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
-import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleFunction;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
+import java.util.function.ToDoubleFunction;
 
-/* loaded from: classes2.dex */
-public final /* synthetic */ class a implements IntFunction, Supplier, BiConsumer, BinaryOperator, Function, DoubleBinaryOperator {
-    public final /* synthetic */ int a;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class a implements IntFunction, Supplier, BiConsumer, BinaryOperator, Function, DoubleFunction, ToDoubleFunction {
+    public final /* synthetic */ byte a;
 
-    public /* synthetic */ a(int i7) {
-        this.a = i7;
+    public /* synthetic */ a(byte b) {
+        this.a = b;
     }
 
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+    public final Object a(j$.time.temporal.l lVar) {
+        byte b = this.a;
+        a aVar = j$.time.temporal.p.a;
+        switch (b) {
+            case 0:
+                ZoneId zoneId = (ZoneId) lVar.r(aVar);
+                if (zoneId == null || (zoneId instanceof ZoneOffset)) {
+                    return null;
+                }
+                return zoneId;
+            case 1:
+                return (ZoneId) lVar.r(aVar);
+            case 2:
+                return (j$.time.chrono.a) lVar.r(j$.time.temporal.p.b);
+            case 3:
+                return (j$.time.temporal.q) lVar.r(j$.time.temporal.p.c);
+            case 4:
+                j$.time.temporal.a aVar2 = j$.time.temporal.a.OFFSET_SECONDS;
+                if (lVar.e(aVar2)) {
+                    return ZoneOffset.H(lVar.j(aVar2));
+                }
+                return null;
+            case 5:
+                ZoneId zoneId2 = (ZoneId) lVar.r(aVar);
+                return zoneId2 == null ? (ZoneId) lVar.r(j$.time.temporal.p.d) : zoneId2;
+            case 6:
+                j$.time.temporal.a aVar3 = j$.time.temporal.a.EPOCH_DAY;
+                if (lVar.e(aVar3)) {
+                    return LocalDate.K(lVar.y(aVar3));
+                }
+                return null;
+            default:
+                j$.time.temporal.a aVar4 = j$.time.temporal.a.NANO_OF_DAY;
+                if (lVar.e(aVar4)) {
+                    return j$.time.j.x(lVar.y(aVar4));
+                }
+                return null;
+        }
+    }
+
+    @Override // java.util.function.BiConsumer
+    public final void accept(Object obj, Object obj2) {
+        switch (this.a) {
+            case 10:
+                ((Collection) obj).add(obj2);
+                break;
+            case 13:
+                ((List) obj).add(obj2);
+                break;
+            case 16:
+                ((Set) obj).add(obj2);
+                break;
+            case 20:
+                ((s1) obj).a((CharSequence) obj2);
+                break;
+            case 25:
+                ((LinkedHashSet) obj).add(obj2);
+                break;
+            case 26:
+                ((LinkedHashSet) obj).addAll((LinkedHashSet) obj2);
+                break;
+            default:
+                ((j$.util.w) obj).a((j$.util.w) obj2);
+                break;
+        }
+    }
+
+    public final /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
         switch (this.a) {
             case 10:
                 break;
@@ -50,48 +119,8 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
         return BiConsumer$-CC.$default$andThen(this, biConsumer);
     }
 
-    public /* synthetic */ BiFunction andThen(Function function) {
-        switch (this.a) {
-            case 11:
-                break;
-            case 18:
-                break;
-            case 21:
-                break;
-        }
-        return BiFunction$-CC.$default$andThen(this, function);
-    }
-
-    public /* synthetic */ Function andThen(Function function) {
-        switch (this.a) {
-        }
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public Object apply(Object obj) {
-        switch (this.a) {
-            case 19:
-                Set set = Collectors.a;
-                return obj;
-            default:
-                return ((s1) obj).toString();
-        }
-    }
-
-    @Override // java.util.function.DoubleBinaryOperator
-    public double applyAsDouble(double d, double d2) {
-        return Math.min(d, d2);
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        switch (this.a) {
-        }
-        return Function$-CC.$default$compose(this, function);
-    }
-
     @Override // java.util.function.BiFunction
-    public Object apply(Object obj, Object obj2) {
+    public final Object apply(Object obj, Object obj2) {
         switch (this.a) {
             case 11:
                 Collection collection = (Collection) obj;
@@ -126,76 +155,40 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
         }
     }
 
-    @Override // java.util.function.BiConsumer
-    public void accept(Object obj, Object obj2) {
+    @Override // java.util.function.ToDoubleFunction
+    public final double applyAsDouble(Object obj) {
+        return ((Double) obj).doubleValue();
+    }
+
+    public final /* synthetic */ Function compose(Function function) {
         switch (this.a) {
+        }
+        return Function$-CC.$default$compose(this, function);
+    }
+
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        switch (this.a) {
+            case 9:
+                return new j$.util.w();
             case 10:
-                ((Collection) obj).add(obj2);
-                break;
+            case 11:
             case 13:
-                ((List) obj).add(obj2);
-                break;
             case 16:
-                ((Set) obj).add(obj2);
-                break;
-            case 20:
-                ((s1) obj).a((CharSequence) obj2);
-                break;
-            case 25:
-                ((LinkedHashSet) obj).add(obj2);
-                break;
-            case 26:
-                ((LinkedHashSet) obj).addAll((LinkedHashSet) obj2);
-                break;
             default:
-                double[] dArr = (double[]) obj;
-                double[] dArr2 = (double[]) obj2;
-                Collectors.a(dArr, dArr2[0]);
-                Collectors.a(dArr, dArr2[1]);
-                dArr[2] = dArr[2] + dArr2[2];
-                break;
+                return new LinkedHashSet();
+            case 12:
+                return new ArrayList();
+            case 14:
+                return new j$.util.x();
+            case 15:
+                return new HashSet();
+            case 17:
+                return new z();
         }
     }
 
-    public Object a(j$.time.temporal.l lVar) {
-        switch (this.a) {
-            case 0:
-                ZoneId zoneId = (ZoneId) lVar.m(j$.time.temporal.p.a);
-                if (zoneId == null || (zoneId instanceof ZoneOffset)) {
-                    return null;
-                }
-                return zoneId;
-            case 1:
-                return (ZoneId) lVar.m(j$.time.temporal.p.a);
-            case 2:
-                return (j$.time.chrono.k) lVar.m(j$.time.temporal.p.b);
-            case 3:
-                return (j$.time.temporal.q) lVar.m(j$.time.temporal.p.c);
-            case 4:
-                j$.time.temporal.a aVar = j$.time.temporal.a.OFFSET_SECONDS;
-                if (lVar.e(aVar)) {
-                    return ZoneOffset.O(lVar.j(aVar));
-                }
-                return null;
-            case 5:
-                ZoneId zoneId2 = (ZoneId) lVar.m(j$.time.temporal.p.a);
-                return zoneId2 != null ? zoneId2 : (ZoneId) lVar.m(j$.time.temporal.p.d);
-            case 6:
-                j$.time.temporal.a aVar2 = j$.time.temporal.a.EPOCH_DAY;
-                if (lVar.e(aVar2)) {
-                    return LocalDate.R(lVar.y(aVar2));
-                }
-                return null;
-            default:
-                j$.time.temporal.a aVar3 = j$.time.temporal.a.NANO_OF_DAY;
-                if (lVar.e(aVar3)) {
-                    return j$.time.h.K(lVar.y(aVar3));
-                }
-                return null;
-        }
-    }
-
-    public String toString() {
+    public final String toString() {
         switch (this.a) {
             case 1:
                 return "ZoneId";
@@ -216,28 +209,42 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
         }
     }
 
-    @Override // java.util.function.Supplier
-    public Object get() {
+    public final /* synthetic */ BiFunction andThen(Function function) {
         switch (this.a) {
-            case 9:
-                return new j$.util.w();
-            case 12:
-                return new ArrayList();
-            case 14:
-                return new j$.util.x();
-            case 15:
-                return new HashSet();
-            case 17:
-                return new z();
-            case 24:
-                return new LinkedHashSet();
+            case 11:
+                break;
+            case 18:
+                break;
+            case 21:
+                break;
+        }
+        return BiFunction$-CC.$default$andThen(this, function);
+    }
+
+    public final /* synthetic */ Function andThen(Function function) {
+        switch (this.a) {
+        }
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        switch (this.a) {
+            case 19:
+                Set set = Collectors.a;
+                return obj;
             default:
-                return new double[4];
+                return ((s1) obj).toString();
         }
     }
 
+    @Override // java.util.function.DoubleFunction
+    public final Object apply(double d) {
+        return Double.valueOf(d);
+    }
+
     @Override // java.util.function.IntFunction
-    public Object apply(int i7) {
-        return new Object[i7];
+    public final Object apply(int i) {
+        return new Object[i];
     }
 }

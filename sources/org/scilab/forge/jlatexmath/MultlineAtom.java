@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class MultlineAtom extends Atom {
     public static final int GATHER = 1;
@@ -11,53 +11,53 @@ public class MultlineAtom extends Atom {
     private boolean isPartial;
     private int type;
 
-    public MultlineAtom(boolean z10, ArrayOfAtoms arrayOfAtoms, int i7) {
-        this.isPartial = z10;
+    public MultlineAtom(boolean z, ArrayOfAtoms arrayOfAtoms, int i) {
+        this.isPartial = z;
         this.column = arrayOfAtoms;
-        this.type = i7;
+        this.type = i;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         ArrayOfAtoms arrayOfAtoms;
-        int i7;
+        int i;
         float textwidth = teXEnvironment.getTextwidth();
         if (textwidth != Float.POSITIVE_INFINITY) {
             if (this.type != 2) {
                 VerticalBox verticalBox = new VerticalBox();
                 Atom atom = this.column.array.get(0).get(0);
-                int i10 = this.type == 1 ? 2 : 0;
-                int i11 = atom.alignment;
-                if (i11 != -1) {
-                    i10 = i11;
+                int i2 = this.type == 1 ? 2 : 0;
+                int i3 = atom.alignment;
+                if (i3 != -1) {
+                    i2 = i3;
                 }
-                verticalBox.add(new HorizontalBox(atom.createBox(teXEnvironment), textwidth, i10));
+                verticalBox.add(new HorizontalBox(atom.createBox(teXEnvironment), textwidth, i2));
                 Box createBox = vsep_in.createBox(teXEnvironment);
-                int i12 = 1;
+                int i4 = 1;
                 while (true) {
                     arrayOfAtoms = this.column;
-                    i7 = arrayOfAtoms.row;
-                    if (i12 >= i7 - 1) {
+                    i = arrayOfAtoms.row;
+                    if (i4 >= i - 1) {
                         break;
                     }
-                    Atom atom2 = arrayOfAtoms.array.get(i12).get(0);
-                    int i13 = atom2.alignment;
-                    if (i13 == -1) {
-                        i13 = 2;
+                    Atom atom2 = arrayOfAtoms.array.get(i4).get(0);
+                    int i5 = atom2.alignment;
+                    if (i5 == -1) {
+                        i5 = 2;
                     }
                     verticalBox.add(createBox);
-                    verticalBox.add(new HorizontalBox(atom2.createBox(teXEnvironment), textwidth, i13));
-                    i12++;
+                    verticalBox.add(new HorizontalBox(atom2.createBox(teXEnvironment), textwidth, i5));
+                    i4++;
                 }
-                if (i7 > 1) {
-                    Atom atom3 = arrayOfAtoms.array.get(i7 - 1).get(0);
-                    int i14 = this.type != 1 ? 1 : 2;
-                    int i15 = atom3.alignment;
-                    if (i15 != -1) {
-                        i14 = i15;
+                if (i > 1) {
+                    Atom atom3 = arrayOfAtoms.array.get(i - 1).get(0);
+                    int i6 = this.type != 1 ? 1 : 2;
+                    int i7 = atom3.alignment;
+                    if (i7 != -1) {
+                        i6 = i7;
                     }
                     verticalBox.add(createBox);
-                    verticalBox.add(new HorizontalBox(atom3.createBox(teXEnvironment), textwidth, i14));
+                    verticalBox.add(new HorizontalBox(atom3.createBox(teXEnvironment), textwidth, i6));
                 }
                 float depth = (verticalBox.getDepth() + verticalBox.getHeight()) / 2.0f;
                 verticalBox.setHeight(depth);
@@ -68,7 +68,7 @@ public class MultlineAtom extends Atom {
         return new MatrixAtom(this.isPartial, this.column, "").createBox(teXEnvironment);
     }
 
-    public MultlineAtom(ArrayOfAtoms arrayOfAtoms, int i7) {
-        this(false, arrayOfAtoms, i7);
+    public MultlineAtom(ArrayOfAtoms arrayOfAtoms, int i) {
+        this(false, arrayOfAtoms, i);
     }
 }

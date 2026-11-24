@@ -1,16 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final class e0 extends v4.l {
-    public final /* synthetic */ h0 F;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.ThemeEditorView;
 
-    public e0(h0 h0Var) {
-        this.F = h0Var;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class e0 extends EditTextBoldCursor {
+    public final /* synthetic */ g0 M1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e0(g0 g0Var, Context context) {
+        super(context);
+        this.M1 = g0Var;
     }
 
-    @Override // v4.l
-    public final void P(v4.f1 f1Var) {
-        this.F.b.invalidate();
+    @Override // lt3, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        MotionEvent obtain = MotionEvent.obtain(motionEvent);
+        float rawX = obtain.getRawX();
+        float rawY = obtain.getRawY();
+        ThemeEditorView.EditorAlert editorAlert = this.M1.c;
+        int i = ThemeEditorView.EditorAlert.G1;
+        obtain.setLocation(rawX, rawY - editorAlert.b.getTranslationY());
+        editorAlert.m1.dispatchTouchEvent(obtain);
+        obtain.recycle();
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class a implements View.OnClickListener {
     public final /* synthetic */ SearchView a;
@@ -48,22 +48,21 @@ public final class a implements View.OnClickListener {
             return;
         }
         SearchableInfo searchableInfo = searchView.s0;
-        if (searchableInfo == null) {
-            return;
-        }
-        try {
-            if (!searchableInfo.getVoiceSearchLaunchWebSearch()) {
-                if (searchableInfo.getVoiceSearchLaunchRecognizer()) {
-                    searchView.getContext().startActivity(searchView.j(searchView.c0, searchableInfo));
+        if (searchableInfo != null) {
+            try {
+                if (!searchableInfo.getVoiceSearchLaunchWebSearch()) {
+                    if (searchableInfo.getVoiceSearchLaunchRecognizer()) {
+                        searchView.getContext().startActivity(searchView.j(searchView.c0, searchableInfo));
+                    }
+                } else {
+                    Intent intent = new Intent(searchView.b0);
+                    ComponentName searchActivity = searchableInfo.getSearchActivity();
+                    intent.putExtra("calling_package", searchActivity == null ? null : searchActivity.flattenToShortString());
+                    searchView.getContext().startActivity(intent);
                 }
-            } else {
-                Intent intent = new Intent(searchView.b0);
-                ComponentName searchActivity = searchableInfo.getSearchActivity();
-                intent.putExtra("calling_package", searchActivity == null ? null : searchActivity.flattenToShortString());
-                searchView.getContext().startActivity(intent);
+            } catch (ActivityNotFoundException unused) {
+                Log.w("SearchView", "Could not find voice search activity");
             }
-        } catch (ActivityNotFoundException unused) {
-            Log.w("SearchView", "Could not find voice search activity");
         }
     }
 }

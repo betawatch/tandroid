@@ -13,8 +13,8 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
     private static final String TAG = "EglBase10Impl";
@@ -25,8 +25,8 @@ class EglBase10Impl implements EglBase10 {
     private EGLDisplay eglDisplay;
     private EGLSurface eglSurface;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class Context implements EglBase10.Context {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
         private final EGLConfig eglContextConfig;
@@ -54,18 +54,12 @@ class EglBase10Impl implements EglBase10 {
                         throw new RuntimeException("Failed to make temporary EGL surface active: " + this.egl.eglGetError());
                     }
                 }
-                long nativeGetCurrentNativeEGLContext = EglBase10Impl.nativeGetCurrentNativeEGLContext();
-                if (eGLSurface != null) {
-                    this.egl.eglMakeCurrent(eglGetCurrentDisplay, eglGetCurrentSurface, eglGetCurrentSurface2, eglGetCurrentContext);
-                    this.egl.eglDestroySurface(eglGetCurrentDisplay, eGLSurface);
-                }
-                return nativeGetCurrentNativeEGLContext;
-            } catch (Throwable th2) {
+                return EglBase10Impl.nativeGetCurrentNativeEGLContext();
+            } finally {
                 if (0 != 0) {
                     this.egl.eglMakeCurrent(eglGetCurrentDisplay, eglGetCurrentSurface, eglGetCurrentSurface2, eglGetCurrentContext);
                     this.egl.eglDestroySurface(eglGetCurrentDisplay, null);
                 }
-                throw th2;
             }
         }
 
@@ -75,8 +69,270 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public class FakeSurfaceHolder implements SurfaceHolder {
+    public EglBase10Impl(EGLContext eGLContext, int[] iArr) {
+        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+        this.eglSurface = eGLSurface;
+        this.eglBackgroundSurface = eGLSurface;
+        EGL10 egl10 = (EGL10) EGLContext.getEGL();
+        this.egl = egl10;
+        EGLDisplay eglDisplay = getEglDisplay();
+        this.eglDisplay = eglDisplay;
+        this.eglConfig = getEglConfig(egl10, eglDisplay, iArr);
+        int b = c.b(iArr);
+        Logging.d(TAG, "Using OpenGL ES version " + b);
+        this.eglContext = createEglContext(eGLContext, this.eglDisplay, this.eglConfig, b);
+    }
+
+    private void checkIsNotReleased() {
+        if (this.eglDisplay == EGL10.EGL_NO_DISPLAY || this.eglContext == EGL10.EGL_NO_CONTEXT || this.eglConfig == null) {
+            wn4.j("This object has been released");
+        }
+    }
+
+    private EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i) {
+        EGLContext eglCreateContext;
+        if (eGLContext != null && eGLContext == EGL10.EGL_NO_CONTEXT) {
+            wn4.j("Invalid sharedContext");
+            return null;
+        }
+        int[] iArr = {EGL_CONTEXT_CLIENT_VERSION, i, 12344};
+        if (eGLContext == null) {
+            eGLContext = EGL10.EGL_NO_CONTEXT;
+        }
+        synchronized (EglBase.lock) {
+            eglCreateContext = this.egl.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, iArr);
+        }
+        if (eglCreateContext != EGL10.EGL_NO_CONTEXT) {
+            return eglCreateContext;
+        }
+        k93.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create EGL context: 0x");
+        return null;
+    }
+
+    private void createSurfaceInternal(Object obj, boolean z) {
+        if (!(obj instanceof SurfaceHolder) && !(obj instanceof SurfaceTexture)) {
+            sc8.j("Input must be either a SurfaceHolder or SurfaceTexture");
+            return;
+        }
+        checkIsNotReleased();
+        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+        if (z) {
+            if (this.eglBackgroundSurface != eGLSurface) {
+                wn4.j("Already has an EGLSurface");
+                return;
+            }
+            EGLSurface eglCreateWindowSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
+            this.eglBackgroundSurface = eglCreateWindowSurface;
+            if (eglCreateWindowSurface == eGLSurface) {
+                k93.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create window surface: 0x");
+                return;
+            }
+            return;
+        }
+        if (this.eglSurface != eGLSurface) {
+            wn4.j("Already has an EGLSurface");
+            return;
+        }
+        EGLSurface eglCreateWindowSurface2 = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
+        this.eglSurface = eglCreateWindowSurface2;
+        if (eglCreateWindowSurface2 != eGLSurface) {
+            return;
+        }
+        k93.c(Integer.toHexString(this.egl.eglGetError()), "Failed to create window surface: 0x");
+    }
+
+    private static EGLConfig getEglConfig(EGL10 egl10, EGLDisplay eGLDisplay, int[] iArr) {
+        EGLConfig[] eGLConfigArr = new EGLConfig[1];
+        int[] iArr2 = new int[1];
+        if (!egl10.eglChooseConfig(eGLDisplay, iArr, eGLConfigArr, 1, iArr2)) {
+            k93.c(Integer.toHexString(egl10.eglGetError()), "eglChooseConfig failed: 0x");
+            return null;
+        }
+        if (iArr2[0] <= 0) {
+            wn4.j("Unable to find any matching EGL config");
+            return null;
+        }
+        EGLConfig eGLConfig = eGLConfigArr[0];
+        if (eGLConfig != null) {
+            return eGLConfig;
+        }
+        wn4.j("eglChooseConfig returned null");
+        return null;
+    }
+
+    private EGLDisplay getEglDisplay() {
+        EGLDisplay eglGetDisplay = this.egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+        EGL10 egl10 = this.egl;
+        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+            k93.c(Integer.toHexString(egl10.eglGetError()), "Unable to get EGL10 display: 0x");
+            return null;
+        }
+        if (egl10.eglInitialize(eglGetDisplay, new int[2])) {
+            return eglGetDisplay;
+        }
+        k93.c(Integer.toHexString(this.egl.eglGetError()), "Unable to initialize EGL10: 0x");
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static native long nativeGetCurrentNativeEGLContext();
+
+    @Override // org.webrtc.EglBase
+    public void createBackgroundSurface(SurfaceTexture surfaceTexture) {
+        createSurfaceInternal(surfaceTexture, true);
+    }
+
+    @Override // org.webrtc.EglBase
+    public void createDummyPbufferSurface() {
+        createPbufferSurface(1, 1);
+    }
+
+    @Override // org.webrtc.EglBase
+    public void createPbufferSurface(int i, int i2) {
+        checkIsNotReleased();
+        EGLSurface eGLSurface = this.eglSurface;
+        EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
+        if (eGLSurface != eGLSurface2) {
+            wn4.j("Already has an EGLSurface");
+            return;
+        }
+        EGLSurface eglCreatePbufferSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i, 12374, i2, 12344});
+        this.eglSurface = eglCreatePbufferSurface;
+        if (eglCreatePbufferSurface != eGLSurface2) {
+            return;
+        }
+        StringBuilder p = ir2.p("Failed to create pixel buffer surface with size ", i, "x", i2, ": 0x");
+        p.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(p.toString());
+    }
+
+    @Override // org.webrtc.EglBase
+    public void createSurface(Surface surface) {
+        createSurfaceInternal(new FakeSurfaceHolder(surface), false);
+    }
+
+    @Override // org.webrtc.EglBase
+    public void detachCurrent() {
+        synchronized (EglBase.lock) {
+            EGL10 egl10 = this.egl;
+            EGLDisplay eGLDisplay = this.eglDisplay;
+            EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+            if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT)) {
+                throw new RuntimeException("eglDetachCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
+            }
+        }
+    }
+
+    @Override // org.webrtc.EglBase
+    public EglBase.Context getEglBaseContext() {
+        return new Context(this.egl, this.eglContext, this.eglConfig);
+    }
+
+    @Override // org.webrtc.EglBase
+    public boolean hasBackgroundSurface() {
+        return this.eglBackgroundSurface != EGL10.EGL_NO_SURFACE;
+    }
+
+    @Override // org.webrtc.EglBase
+    public boolean hasSurface() {
+        return this.eglSurface != EGL10.EGL_NO_SURFACE;
+    }
+
+    @Override // org.webrtc.EglBase
+    public void makeBackgroundCurrent() {
+        checkIsNotReleased();
+        if (this.eglBackgroundSurface == EGL10.EGL_NO_SURFACE) {
+            wn4.j("No EGLSurface - can't make current");
+            return;
+        }
+        synchronized (EglBase.lock) {
+            EGL10 egl10 = this.egl;
+            EGLDisplay eGLDisplay = this.eglDisplay;
+            EGLSurface eGLSurface = this.eglBackgroundSurface;
+            if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.eglContext)) {
+                throw new RuntimeException("eglMakeCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
+            }
+        }
+    }
+
+    @Override // org.webrtc.EglBase
+    public void makeCurrent() {
+        checkIsNotReleased();
+        if (this.eglSurface == EGL10.EGL_NO_SURFACE) {
+            wn4.j("No EGLSurface - can't make current");
+            return;
+        }
+        synchronized (EglBase.lock) {
+            EGL10 egl10 = this.egl;
+            EGLDisplay eGLDisplay = this.eglDisplay;
+            EGLSurface eGLSurface = this.eglSurface;
+            if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.eglContext)) {
+                throw new RuntimeException("eglMakeCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
+            }
+        }
+    }
+
+    @Override // org.webrtc.EglBase
+    public void release() {
+        checkIsNotReleased();
+        releaseSurface(false);
+        releaseSurface(true);
+        detachCurrent();
+        this.egl.eglDestroyContext(this.eglDisplay, this.eglContext);
+        this.egl.eglTerminate(this.eglDisplay);
+        this.eglContext = EGL10.EGL_NO_CONTEXT;
+        this.eglDisplay = EGL10.EGL_NO_DISPLAY;
+        this.eglConfig = null;
+    }
+
+    @Override // org.webrtc.EglBase
+    public void releaseSurface(boolean z) {
+        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+        if (z) {
+            EGLSurface eGLSurface2 = this.eglBackgroundSurface;
+            if (eGLSurface2 != eGLSurface) {
+                this.egl.eglDestroySurface(this.eglDisplay, eGLSurface2);
+                this.eglBackgroundSurface = eGLSurface;
+                return;
+            }
+            return;
+        }
+        EGLSurface eGLSurface3 = this.eglSurface;
+        if (eGLSurface3 != eGLSurface) {
+            this.egl.eglDestroySurface(this.eglDisplay, eGLSurface3);
+            this.eglSurface = eGLSurface;
+        }
+    }
+
+    @Override // org.webrtc.EglBase
+    public int surfaceHeight() {
+        int[] iArr = new int[1];
+        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12374, iArr);
+        return iArr[0];
+    }
+
+    @Override // org.webrtc.EglBase
+    public int surfaceWidth() {
+        int[] iArr = new int[1];
+        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12375, iArr);
+        return iArr[0];
+    }
+
+    @Override // org.webrtc.EglBase
+    public void swapBuffers(boolean z) {
+        EGLSurface eGLSurface = z ? this.eglBackgroundSurface : this.eglSurface;
+        checkIsNotReleased();
+        if (eGLSurface == EGL10.EGL_NO_SURFACE) {
+            wn4.j("No EGLSurface - can't swap buffers");
+        } else {
+            synchronized (EglBase.lock) {
+                this.egl.eglSwapBuffers(this.eglDisplay, eGLSurface);
+            }
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 
         public FakeSurfaceHolder(Surface surface) {
@@ -121,16 +377,16 @@ class EglBase10Impl implements EglBase10 {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setFormat(int i7) {
+        public void setFormat(int i) {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setKeepScreenOn(boolean z10) {
+        public void setKeepScreenOn(boolean z) {
         }
 
         @Override // android.view.SurfaceHolder
         @Deprecated
-        public void setType(int i7) {
+        public void setType(int i) {
         }
 
         @Override // android.view.SurfaceHolder
@@ -138,265 +394,7 @@ class EglBase10Impl implements EglBase10 {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setFixedSize(int i7, int i10) {
-        }
-    }
-
-    public EglBase10Impl(EGLContext eGLContext, int[] iArr) {
-        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-        this.eglSurface = eGLSurface;
-        this.eglBackgroundSurface = eGLSurface;
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        this.egl = egl10;
-        EGLDisplay eglDisplay = getEglDisplay();
-        this.eglDisplay = eglDisplay;
-        this.eglConfig = getEglConfig(egl10, eglDisplay, iArr);
-        int k10 = e.k(iArr);
-        Logging.d(TAG, "Using OpenGL ES version " + k10);
-        this.eglContext = createEglContext(eGLContext, this.eglDisplay, this.eglConfig, k10);
-    }
-
-    private void checkIsNotReleased() {
-        if (this.eglDisplay == EGL10.EGL_NO_DISPLAY || this.eglContext == EGL10.EGL_NO_CONTEXT || this.eglConfig == null) {
-            throw new RuntimeException("This object has been released");
-        }
-    }
-
-    private EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i7) {
-        EGLContext eglCreateContext;
-        if (eGLContext != null && eGLContext == EGL10.EGL_NO_CONTEXT) {
-            throw new RuntimeException("Invalid sharedContext");
-        }
-        int[] iArr = {EGL_CONTEXT_CLIENT_VERSION, i7, 12344};
-        if (eGLContext == null) {
-            eGLContext = EGL10.EGL_NO_CONTEXT;
-        }
-        synchronized (EglBase.lock) {
-            eglCreateContext = this.egl.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, iArr);
-        }
-        if (eglCreateContext != EGL10.EGL_NO_CONTEXT) {
-            return eglCreateContext;
-        }
-        throw new RuntimeException("Failed to create EGL context: 0x" + Integer.toHexString(this.egl.eglGetError()));
-    }
-
-    private void createSurfaceInternal(Object obj, boolean z10) {
-        if (!(obj instanceof SurfaceHolder) && !(obj instanceof SurfaceTexture)) {
-            throw new IllegalStateException("Input must be either a SurfaceHolder or SurfaceTexture");
-        }
-        checkIsNotReleased();
-        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-        if (z10) {
-            if (this.eglBackgroundSurface != eGLSurface) {
-                throw new RuntimeException("Already has an EGLSurface");
-            }
-            EGLSurface eglCreateWindowSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
-            this.eglBackgroundSurface = eglCreateWindowSurface;
-            if (eglCreateWindowSurface != eGLSurface) {
-                return;
-            }
-            throw new RuntimeException("Failed to create window surface: 0x" + Integer.toHexString(this.egl.eglGetError()));
-        }
-        if (this.eglSurface != eGLSurface) {
-            throw new RuntimeException("Already has an EGLSurface");
-        }
-        EGLSurface eglCreateWindowSurface2 = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
-        this.eglSurface = eglCreateWindowSurface2;
-        if (eglCreateWindowSurface2 != eGLSurface) {
-            return;
-        }
-        throw new RuntimeException("Failed to create window surface: 0x" + Integer.toHexString(this.egl.eglGetError()));
-    }
-
-    private static EGLConfig getEglConfig(EGL10 egl10, EGLDisplay eGLDisplay, int[] iArr) {
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = new int[1];
-        if (!egl10.eglChooseConfig(eGLDisplay, iArr, eGLConfigArr, 1, iArr2)) {
-            throw new RuntimeException("eglChooseConfig failed: 0x" + Integer.toHexString(egl10.eglGetError()));
-        }
-        if (iArr2[0] <= 0) {
-            throw new RuntimeException("Unable to find any matching EGL config");
-        }
-        EGLConfig eGLConfig = eGLConfigArr[0];
-        if (eGLConfig != null) {
-            return eGLConfig;
-        }
-        throw new RuntimeException("eglChooseConfig returned null");
-    }
-
-    private EGLDisplay getEglDisplay() {
-        EGLDisplay eglGetDisplay = this.egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
-            throw new RuntimeException("Unable to get EGL10 display: 0x" + Integer.toHexString(this.egl.eglGetError()));
-        }
-        if (this.egl.eglInitialize(eglGetDisplay, new int[2])) {
-            return eglGetDisplay;
-        }
-        throw new RuntimeException("Unable to initialize EGL10: 0x" + Integer.toHexString(this.egl.eglGetError()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static native long nativeGetCurrentNativeEGLContext();
-
-    @Override // org.webrtc.EglBase
-    public void createBackgroundSurface(SurfaceTexture surfaceTexture) {
-        createSurfaceInternal(surfaceTexture, true);
-    }
-
-    @Override // org.webrtc.EglBase
-    public void createDummyPbufferSurface() {
-        createPbufferSurface(1, 1);
-    }
-
-    @Override // org.webrtc.EglBase
-    public void createPbufferSurface(int i7, int i10) {
-        checkIsNotReleased();
-        EGLSurface eGLSurface = this.eglSurface;
-        EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
-        if (eGLSurface != eGLSurface2) {
-            throw new RuntimeException("Already has an EGLSurface");
-        }
-        EGLSurface eglCreatePbufferSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i7, 12374, i10, 12344});
-        this.eglSurface = eglCreatePbufferSurface;
-        if (eglCreatePbufferSurface != eGLSurface2) {
-            return;
-        }
-        StringBuilder n10 = i5.c.n("Failed to create pixel buffer surface with size ", i7, "x", i10, ": 0x");
-        n10.append(Integer.toHexString(this.egl.eglGetError()));
-        throw new RuntimeException(n10.toString());
-    }
-
-    @Override // org.webrtc.EglBase
-    public void createSurface(Surface surface) {
-        createSurfaceInternal(new FakeSurfaceHolder(surface), false);
-    }
-
-    @Override // org.webrtc.EglBase
-    public void detachCurrent() {
-        synchronized (EglBase.lock) {
-            try {
-                EGL10 egl10 = this.egl;
-                EGLDisplay eGLDisplay = this.eglDisplay;
-                EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-                if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT)) {
-                    throw new RuntimeException("eglDetachCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // org.webrtc.EglBase
-    public EglBase.Context getEglBaseContext() {
-        return new Context(this.egl, this.eglContext, this.eglConfig);
-    }
-
-    @Override // org.webrtc.EglBase
-    public boolean hasBackgroundSurface() {
-        return this.eglBackgroundSurface != EGL10.EGL_NO_SURFACE;
-    }
-
-    @Override // org.webrtc.EglBase
-    public boolean hasSurface() {
-        return this.eglSurface != EGL10.EGL_NO_SURFACE;
-    }
-
-    @Override // org.webrtc.EglBase
-    public void makeBackgroundCurrent() {
-        checkIsNotReleased();
-        if (this.eglBackgroundSurface == EGL10.EGL_NO_SURFACE) {
-            throw new RuntimeException("No EGLSurface - can't make current");
-        }
-        synchronized (EglBase.lock) {
-            try {
-                EGL10 egl10 = this.egl;
-                EGLDisplay eGLDisplay = this.eglDisplay;
-                EGLSurface eGLSurface = this.eglBackgroundSurface;
-                if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.eglContext)) {
-                    throw new RuntimeException("eglMakeCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // org.webrtc.EglBase
-    public void makeCurrent() {
-        checkIsNotReleased();
-        if (this.eglSurface == EGL10.EGL_NO_SURFACE) {
-            throw new RuntimeException("No EGLSurface - can't make current");
-        }
-        synchronized (EglBase.lock) {
-            try {
-                EGL10 egl10 = this.egl;
-                EGLDisplay eGLDisplay = this.eglDisplay;
-                EGLSurface eGLSurface = this.eglSurface;
-                if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.eglContext)) {
-                    throw new RuntimeException("eglMakeCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // org.webrtc.EglBase
-    public void release() {
-        checkIsNotReleased();
-        releaseSurface(false);
-        releaseSurface(true);
-        detachCurrent();
-        this.egl.eglDestroyContext(this.eglDisplay, this.eglContext);
-        this.egl.eglTerminate(this.eglDisplay);
-        this.eglContext = EGL10.EGL_NO_CONTEXT;
-        this.eglDisplay = EGL10.EGL_NO_DISPLAY;
-        this.eglConfig = null;
-    }
-
-    @Override // org.webrtc.EglBase
-    public void releaseSurface(boolean z10) {
-        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-        if (z10) {
-            EGLSurface eGLSurface2 = this.eglBackgroundSurface;
-            if (eGLSurface2 != eGLSurface) {
-                this.egl.eglDestroySurface(this.eglDisplay, eGLSurface2);
-                this.eglBackgroundSurface = eGLSurface;
-                return;
-            }
-            return;
-        }
-        EGLSurface eGLSurface3 = this.eglSurface;
-        if (eGLSurface3 != eGLSurface) {
-            this.egl.eglDestroySurface(this.eglDisplay, eGLSurface3);
-            this.eglSurface = eGLSurface;
-        }
-    }
-
-    @Override // org.webrtc.EglBase
-    public int surfaceHeight() {
-        int[] iArr = new int[1];
-        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12374, iArr);
-        return iArr[0];
-    }
-
-    @Override // org.webrtc.EglBase
-    public int surfaceWidth() {
-        int[] iArr = new int[1];
-        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12375, iArr);
-        return iArr[0];
-    }
-
-    @Override // org.webrtc.EglBase
-    public void swapBuffers(boolean z10) {
-        EGLSurface eGLSurface = z10 ? this.eglBackgroundSurface : this.eglSurface;
-        checkIsNotReleased();
-        if (eGLSurface == EGL10.EGL_NO_SURFACE) {
-            throw new RuntimeException("No EGLSurface - can't swap buffers");
-        }
-        synchronized (EglBase.lock) {
-            this.egl.eglSwapBuffers(this.eglDisplay, eGLSurface);
+        public void setFixedSize(int i, int i2) {
         }
     }
 
@@ -406,7 +404,7 @@ class EglBase10Impl implements EglBase10 {
     }
 
     @Override // org.webrtc.EglBase
-    public void swapBuffers(long j3, boolean z10) {
-        swapBuffers(z10);
+    public void swapBuffers(long j, boolean z) {
+        swapBuffers(z);
     }
 }

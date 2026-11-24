@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzpb extends zzpc implements Serializable {
     final byte[] zza;
@@ -16,15 +16,16 @@ final class zzpb extends zzpc implements Serializable {
     public final int zza() {
         byte[] bArr = this.zza;
         int length = bArr.length;
-        if (length < 4) {
-            throw new IllegalStateException(zzmg.zza("HashCode#asInt() requires >= 4 bytes (it only has %s bytes).", Integer.valueOf(length)));
+        if (length >= 4) {
+            return (bArr[0] & 255) | ((bArr[1] & 255) << 8) | ((bArr[2] & 255) << 16) | ((bArr[3] & 255) << 24);
         }
-        return ((bArr[3] & 255) << 24) | (bArr[0] & 255) | ((bArr[1] & 255) << 8) | ((bArr[2] & 255) << 16);
+        sc8.j(zzmg.zza("HashCode#asInt() requires >= 4 bytes (it only has %s bytes).", Integer.valueOf(length)));
+        return 0;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpc
     public final int zzb() {
-        return this.zza.length * 8;
+        return this.zza.length << 3;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpc
@@ -34,11 +35,11 @@ final class zzpb extends zzpc implements Serializable {
         if (bArr.length != length) {
             return false;
         }
-        boolean z10 = true;
-        for (int i7 = 0; i7 < bArr.length; i7++) {
-            z10 &= bArr[i7] == zzpcVar.zze()[i7];
+        boolean z = true;
+        for (int i = 0; i < bArr.length; i++) {
+            z &= bArr[i] == zzpcVar.zze()[i];
         }
-        return z10;
+        return z;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpc

@@ -1,83 +1,76 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzlw extends j implements p {
+final class zzlw extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
     final /* synthetic */ zzgr zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlw(zzly zzlyVar, zzgr zzgrVar, c cVar) {
-        super(2, cVar);
+    public zzlw(zzly zzlyVar, zzgr zzgrVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzlyVar;
         this.zzd = zzgrVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzlw(this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzlw(this.zzc, this.zzd, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlw) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzlw) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x003e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003b, code lost:
     
-        if (zd.b0.z(20000, r10, r9) == r1) goto L23;
+        if (mve.a(20000, r12, r11) != r3) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x006f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x006d, code lost:
     
-        return r1;
+        return r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x002a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0027, code lost:
     
-        if (r10.zzw(r9) != r1) goto L16;
+        if (r12.zzw(r11) != r3) goto L14;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zzb;
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                c8.z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzly zzlyVar = this.zzc;
                 this.zzb = 1;
             } else {
-                if (i7 != 1) {
-                    if (i7 == 2) {
-                        c8.z.b(obj);
-                        return k.a;
+                if (i != 1) {
+                    if (i == 2) {
+                        qse.b(obj);
+                        return g5c.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zza;
-                    c8.z.b(obj);
+                    qse.b(obj);
                     throw zzcgVar;
                 }
-                c8.z.b(obj);
+                qse.b(obj);
             }
             zzlv zzlvVar = new zzlv(this.zzc, this.zzd, null);
             this.zzb = 2;
-        } catch (Exception e10) {
-            e10.getMessage();
-            zzcg zza = zzh.zza(e10, new zzcg(zzce.zzb, zzcd.zzV, e10.getMessage(), null, 8, null));
+        } catch (Exception e) {
+            e.getMessage();
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzV, e.getMessage(), null, 8, null));
             zzdj zzn = this.zzc.zzn();
             zzmc zzmcVar = zzmc.zza;
             this.zza = zza;
             this.zzb = 3;
-            if (zzn.zzc(zzmcVar, this) != aVar) {
+            if (zzn.zzc(zzmcVar, this) != bx2Var) {
                 throw zza;
             }
         }

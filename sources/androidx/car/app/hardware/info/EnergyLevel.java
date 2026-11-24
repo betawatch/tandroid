@@ -2,9 +2,8 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
-import s.c;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class EnergyLevel {
     private final CarValue<Float> mBatteryPercent;
@@ -14,9 +13,15 @@ public final class EnergyLevel {
     private final CarValue<Integer> mFuelVolumeDisplayUnit;
     private final CarValue<Float> mRangeRemainingMeters;
 
-    public EnergyLevel(c cVar) {
-        cVar.getClass();
-        throw null;
+    private EnergyLevel() {
+        CarValue<Float> carValue = CarValue.UNKNOWN_FLOAT;
+        this.mBatteryPercent = carValue;
+        this.mFuelPercent = carValue;
+        this.mEnergyIsLow = CarValue.UNKNOWN_BOOLEAN;
+        this.mRangeRemainingMeters = carValue;
+        CarValue<Integer> carValue2 = CarValue.UNKNOWN_INTEGER;
+        this.mDistanceDisplayUnit = carValue2;
+        this.mFuelVolumeDisplayUnit = carValue2;
     }
 
     public boolean equals(Object obj) {
@@ -74,14 +79,8 @@ public final class EnergyLevel {
         return "[ battery percent: " + this.mBatteryPercent + ", fuel percent: " + this.mFuelPercent + ", energyIsLow: " + this.mEnergyIsLow + ", range remaining: " + getRangeRemainingMeters() + ", distance display unit: " + this.mDistanceDisplayUnit + ", fuel volume display unit: " + this.mFuelVolumeDisplayUnit + "]";
     }
 
-    private EnergyLevel() {
-        CarValue<Float> carValue = CarValue.UNKNOWN_FLOAT;
-        this.mBatteryPercent = carValue;
-        this.mFuelPercent = carValue;
-        this.mEnergyIsLow = CarValue.UNKNOWN_BOOLEAN;
-        this.mRangeRemainingMeters = carValue;
-        CarValue<Integer> carValue2 = CarValue.UNKNOWN_INTEGER;
-        this.mDistanceDisplayUnit = carValue2;
-        this.mFuelVolumeDisplayUnit = carValue2;
+    public EnergyLevel(x24 x24Var) {
+        x24Var.getClass();
+        throw null;
     }
 }

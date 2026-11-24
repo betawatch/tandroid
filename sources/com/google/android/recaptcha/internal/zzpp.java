@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzpp {
     private static final zzpp zza = new zzpm("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", '=');
@@ -12,15 +12,15 @@ public abstract class zzpp {
         char[] cArr;
         new zzpo("base32()", "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567", '=');
         new zzpo("base32Hex()", "0123456789ABCDEFGHIJKLMNOPQRSTUV", '=');
-        int i7 = zzpl.zza;
-        zzpk zzpkVar = new zzpk("base16()", "0123456789ABCDEF".toCharArray());
+        int i = zzpl.zza;
+        zzpk zzpkVar = new zzpk("base16()", new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'});
         new zzpo(zzpkVar, null);
         char[] cArr2 = new char[512];
         cArr = zzpkVar.zzf;
         zzmd.zza(cArr.length == 16);
-        for (int i10 = 0; i10 < 256; i10++) {
-            cArr2[i10] = zzpkVar.zza(i10 >>> 4);
-            cArr2[i10 | 256] = zzpkVar.zza(i10 & 15);
+        for (int i2 = 0; i2 < 256; i2++) {
+            cArr2[i2] = zzpkVar.zza(i2 >>> 4);
+            cArr2[i2 | 256] = zzpkVar.zza(i2 & 15);
         }
     }
 
@@ -34,24 +34,25 @@ public abstract class zzpp {
 
     public abstract int zza(byte[] bArr, CharSequence charSequence);
 
-    public abstract void zzb(Appendable appendable, byte[] bArr, int i7, int i10);
+    public abstract void zzb(Appendable appendable, byte[] bArr, int i, int i2);
 
-    public abstract int zzc(int i7);
+    public abstract int zzc(int i);
 
-    public abstract int zzd(int i7);
+    public abstract int zzd(int i);
 
     public CharSequence zze(CharSequence charSequence) {
         throw null;
     }
 
-    public final String zzi(byte[] bArr, int i7, int i10) {
-        zzmd.zzd(0, i10, bArr.length);
-        StringBuilder sb2 = new StringBuilder(zzd(i10));
+    public final String zzi(byte[] bArr, int i, int i2) {
+        zzmd.zzd(0, i2, bArr.length);
+        StringBuilder sb = new StringBuilder(zzd(i2));
         try {
-            zzb(sb2, bArr, 0, i10);
-            return sb2.toString();
-        } catch (IOException e10) {
-            throw new AssertionError(e10);
+            zzb(sb, bArr, 0, i2);
+            return sb.toString();
+        } catch (IOException e) {
+            fi7.g(e);
+            return null;
         }
     }
 
@@ -67,8 +68,8 @@ public abstract class zzpp {
             byte[] bArr2 = new byte[zza2];
             System.arraycopy(bArr, 0, bArr2, 0, zza2);
             return bArr2;
-        } catch (zzpn e10) {
-            throw new IllegalArgumentException(e10);
+        } catch (zzpn e) {
+            throw new IllegalArgumentException(e);
         }
     }
 }

@@ -3,7 +3,7 @@ package androidx.car.app.model;
 import androidx.core.graphics.drawable.IconCompat;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class CarIcon {
     public static final int TYPE_ALERT = 4;
@@ -25,29 +25,29 @@ public final class CarIcon {
     public static final CarIcon PAN = forStandardType(7);
     public static final CarIcon COMPOSE_MESSAGE = forStandardType(8);
 
-    public CarIcon(IconCompat iconCompat, CarColor carColor, int i7) {
-        this.mType = i7;
-        this.mIcon = iconCompat;
-        this.mTint = carColor;
+    private CarIcon() {
+        this.mType = 1;
+        this.mIcon = null;
+        this.mTint = null;
     }
 
-    private static CarIcon forStandardType(int i7) {
-        return forStandardType(i7, CarColor.DEFAULT);
+    private static CarIcon forStandardType(int i) {
+        return forStandardType(i, CarColor.DEFAULT);
     }
 
     private boolean iconCompatEquals(IconCompat iconCompat) {
-        int i7;
+        int i;
         IconCompat iconCompat2 = this.mIcon;
         if (iconCompat2 == null) {
             return iconCompat == null;
         }
-        if (iconCompat == null || (i7 = iconCompat2.i()) != iconCompat.i()) {
+        if (iconCompat == null || (i = iconCompat2.i()) != iconCompat.i()) {
             return false;
         }
-        if (i7 == 2) {
+        if (i == 2) {
             return Objects.equals(this.mIcon.h(), iconCompat.h()) && this.mIcon.g() == iconCompat.g();
         }
-        if (i7 == 4) {
+        if (i == 4) {
             return Objects.equals(this.mIcon.j(), iconCompat.j());
         }
         return true;
@@ -58,15 +58,15 @@ public final class CarIcon {
         if (iconCompat == null) {
             return null;
         }
-        int i7 = iconCompat.i();
-        if (i7 != 2) {
-            return i7 == 4 ? this.mIcon.j() : Integer.valueOf(i7);
+        int i = iconCompat.i();
+        if (i != 2) {
+            return i == 4 ? this.mIcon.j() : Integer.valueOf(i);
         }
         return this.mIcon.h() + this.mIcon.g();
     }
 
-    private static String typeToString(int i7) {
-        switch (i7) {
+    private static String typeToString(int i) {
+        switch (i) {
             case 1:
                 return "CUSTOM";
             case 2:
@@ -118,13 +118,13 @@ public final class CarIcon {
         return "[type: " + typeToString(this.mType) + ", tint: " + this.mTint + "]";
     }
 
-    private static CarIcon forStandardType(int i7, CarColor carColor) {
-        return new CarIcon(null, carColor, i7);
+    private static CarIcon forStandardType(int i, CarColor carColor) {
+        return new CarIcon(null, carColor, i);
     }
 
-    private CarIcon() {
-        this.mType = 1;
-        this.mIcon = null;
-        this.mTint = null;
+    public CarIcon(IconCompat iconCompat, CarColor carColor, int i) {
+        this.mType = i;
+        this.mIcon = iconCompat;
+        this.mTint = carColor;
     }
 }

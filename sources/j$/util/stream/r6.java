@@ -1,183 +1,83 @@
 package j$.util.stream;
 
 import j$.util.Objects;
-import java.util.Comparator;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
-import java.util.function.IntConsumer;
-import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class r6 implements j$.util.d1 {
-    public int a;
-    public final int b;
-    public int c;
-    public final int d;
-    public Object e;
-    public final /* synthetic */ s6 f;
-
-    public abstract void a(int i7, Object obj, Object obj2);
-
-    public abstract j$.util.d1 b(Object obj, int i7, int i10);
-
-    public abstract j$.util.d1 c(int i7, int i10, int i11, int i12);
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return 16464;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public class r6 extends x6 implements DoubleConsumer {
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        p();
+        double[] dArr = (double[]) this.e;
+        int i = this.b;
+        this.b = i + 1;
+        dArr[i] = d;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.m(this);
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return j$.com.android.tools.r8.a.o(this, i7);
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    public r6(s6 s6Var, int i7, int i10, int i11, int i12) {
-        this.f = s6Var;
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        Object[] objArr = s6Var.f;
-        this.e = objArr == null ? s6Var.e : objArr[i7];
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        int i7 = this.a;
-        int i10 = this.d;
-        int i11 = this.b;
-        if (i7 == i11) {
-            return i10 - this.c;
-        }
-        long[] jArr = this.f.d;
-        return ((jArr[i11] + i10) - jArr[i7]) - this.c;
-    }
-
-    @Override // j$.util.d1
-    public final boolean tryAdvance(Object obj) {
-        Objects.requireNonNull(obj);
-        int i7 = this.a;
-        int i10 = this.b;
-        if (i7 >= i10 && (i7 != i10 || this.c >= this.d)) {
-            return false;
-        }
-        Object obj2 = this.e;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        a(i11, obj2, obj);
-        int i12 = this.c;
-        Object obj3 = this.e;
-        s6 s6Var = this.f;
-        if (i12 == s6Var.j(obj3)) {
-            this.c = 0;
-            int i13 = this.a + 1;
-            this.a = i13;
-            Object[] objArr = s6Var.f;
-            if (objArr != null && i13 <= i10) {
-                this.e = objArr[i13];
+    @Override // java.lang.Iterable
+    public final void forEach(Consumer consumer) {
+        if (consumer instanceof DoubleConsumer) {
+            d((DoubleConsumer) consumer);
+        } else {
+            if (j8.a) {
+                j8.a(getClass(), "{0} calling SpinedBuffer.OfDouble.forEach(Consumer)");
+                throw null;
             }
-        }
-        return true;
-    }
-
-    @Override // j$.util.d1
-    public final void forEachRemaining(Object obj) {
-        s6 s6Var;
-        Objects.requireNonNull(obj);
-        int i7 = this.a;
-        int i10 = this.d;
-        int i11 = this.b;
-        if (i7 < i11 || (i7 == i11 && this.c < i10)) {
-            int i12 = this.c;
-            while (true) {
-                s6Var = this.f;
-                if (i7 >= i11) {
-                    break;
-                }
-                Object obj2 = s6Var.f[i7];
-                s6Var.i(obj2, i12, s6Var.j(obj2), obj);
-                i7++;
-                i12 = 0;
-            }
-            s6Var.i(this.a == i11 ? this.e : s6Var.f[i11], i12, i10, obj);
-            this.a = i11;
-            this.c = i10;
+            j$.time.a.h((q6) spliterator(), consumer);
         }
     }
 
-    @Override // j$.util.Spliterator
-    public final j$.util.d1 trySplit() {
-        int i7 = this.a;
-        int i10 = this.b;
-        if (i7 < i10) {
-            int i11 = i10 - 1;
-            int i12 = this.c;
-            s6 s6Var = this.f;
-            j$.util.d1 c10 = c(i7, i11, i12, s6Var.j(s6Var.f[i11]));
-            this.a = i10;
-            this.c = 0;
-            this.e = s6Var.f[i10];
-            return c10;
+    @Override // j$.util.stream.x6
+    public final void i(Object obj, int i, int i2, Object obj2) {
+        double[] dArr = (double[]) obj;
+        DoubleConsumer doubleConsumer = (DoubleConsumer) obj2;
+        while (i < i2) {
+            doubleConsumer.accept(dArr[i]);
+            i++;
         }
-        if (i7 != i10) {
-            return null;
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        j$.util.u0 spliterator = spliterator();
+        Objects.requireNonNull(spliterator);
+        return new j$.util.i1(spliterator);
+    }
+
+    @Override // j$.util.stream.x6
+    public final int j(Object obj) {
+        return ((double[]) obj).length;
+    }
+
+    @Override // j$.util.stream.x6
+    public final Object[] m() {
+        return new double[8][];
+    }
+
+    @Override // j$.util.stream.x6
+    public final Object newArray(int i) {
+        return new double[i];
+    }
+
+    @Override // j$.util.stream.x6, java.lang.Iterable, j$.util.stream.h2
+    /* renamed from: r, reason: merged with bridge method [inline-methods] */
+    public j$.util.u0 spliterator() {
+        return new q6(this, 0, this.c, 0, this.b);
+    }
+
+    public final String toString() {
+        double[] dArr = (double[]) b();
+        if (dArr.length < 200) {
+            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(dArr));
         }
-        int i13 = this.c;
-        int i14 = (this.d - i13) / 2;
-        if (i14 == 0) {
-            return null;
-        }
-        j$.util.d1 b10 = b(this.e, i13, i14);
-        this.c += i14;
-        return b10;
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        forEachRemaining((Object) intConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return tryAdvance((Object) intConsumer);
-    }
-
-    @Override // j$.util.d1, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.x0 trySplit() {
-        return (j$.util.x0) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        forEachRemaining((Object) longConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
-        return tryAdvance((Object) longConsumer);
-    }
-
-    @Override // j$.util.d1, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.a1 trySplit() {
-        return (j$.util.a1) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        forEachRemaining((Object) doubleConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return tryAdvance((Object) doubleConsumer);
-    }
-
-    @Override // j$.util.d1, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.u0 trySplit() {
-        return (j$.util.u0) trySplit();
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(dArr, kk7.d3)));
     }
 }

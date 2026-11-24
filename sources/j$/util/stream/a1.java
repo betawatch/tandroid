@@ -1,169 +1,40 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer$-CC;
-import j$.util.function.BiFunction$-CC;
-import j$.util.function.Consumer$-CC;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.function.LongBinaryOperator;
-import java.util.function.LongFunction;
-import java.util.function.ObjLongConsumer;
-import java.util.function.Supplier;
-import java.util.function.ToLongFunction;
+import j$.util.Spliterator;
+import java.util.Iterator;
 
-/* loaded from: classes2.dex */
-public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOperator, ToLongFunction, BiConsumer, IntFunction, LongFunction, Supplier, Consumer, BinaryOperator {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ a1(int i7) {
-        this.a = i7;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class a1 extends c1 {
+    @Override // j$.util.stream.a
+    public final boolean L() {
+        return true;
     }
 
-    private final void accept$j$$util$stream$Node$$ExternalSyntheticLambda0(Object obj) {
+    @Override // j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ Iterator iterator() {
+        return iterator();
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfRef$$ExternalSyntheticLambda0(Object obj) {
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final IntStream parallel() {
+        this.a.k = true;
+        return this;
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfRef$$ExternalSyntheticLambda1(Object obj) {
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final IntStream sequential() {
+        this.a.k = false;
+        return this;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public void x(Object obj) {
-        int i7 = this.a;
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
+        return spliterator();
     }
 
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-        switch (this.a) {
-        }
-        return BiConsumer$-CC.$default$andThen(this, biConsumer);
-    }
-
-    public /* synthetic */ BiFunction andThen(Function function) {
-        switch (this.a) {
-        }
-        return BiFunction$-CC.$default$andThen(this, function);
-    }
-
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-            case 11:
-                break;
-            case 24:
-                break;
-        }
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // java.util.function.LongFunction
-    public Object apply(long j3) {
-        switch (this.a) {
-            case 5:
-                return Long.valueOf(j3);
-            case 13:
-                return t3.h0(j3);
-            case 15:
-                return t3.s0(j3);
-            default:
-                return t3.t0(j3);
-        }
-    }
-
-    @Override // java.util.function.LongBinaryOperator
-    public long applyAsLong(long j3, long j10) {
-        switch (this.a) {
-            case 1:
-                return Math.min(j3, j10);
-            case 9:
-                return Math.max(j3, j10);
-            default:
-                return j3 + j10;
-        }
-    }
-
-    @Override // java.util.function.ToLongFunction
-    public long applyAsLong(Object obj) {
-        return ((Long) obj).longValue();
-    }
-
-    @Override // java.util.function.Supplier
-    public Object get() {
-        return new long[2];
-    }
-
-    @Override // java.util.function.ObjLongConsumer
-    public void accept(Object obj, long j3) {
-        switch (this.a) {
-            case 0:
-                ((j$.util.z) obj).accept(j3);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + j3;
-                break;
-        }
-    }
-
-    @Override // java.util.function.BiConsumer
-    public void accept(Object obj, Object obj2) {
-        switch (this.a) {
-            case 3:
-                ((j$.util.z) obj).a((j$.util.z) obj2);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                long[] jArr2 = (long[]) obj2;
-                jArr[0] = jArr[0] + jArr2[0];
-                jArr[1] = jArr[1] + jArr2[1];
-                break;
-        }
-    }
-
-    @Override // java.util.function.IntFunction
-    public Object apply(int i7) {
-        switch (this.a) {
-            case 4:
-                return new Long[i7];
-            case 12:
-                return new Object[i7];
-            case 20:
-                return new Object[i7];
-            case 21:
-                return new Integer[i7];
-            case 22:
-                return new Long[i7];
-            case 23:
-                return new Double[i7];
-            case 26:
-                return new Integer[i7];
-            case 27:
-                return new Integer[i7];
-            case 28:
-                return new Long[i7];
-            default:
-                return new Long[i7];
-        }
-    }
-
-    @Override // java.util.function.BiFunction
-    public Object apply(Object obj, Object obj2) {
-        switch (this.a) {
-            case 14:
-                return new l2((y1) obj, (y1) obj2);
-            case 15:
-            case 17:
-            default:
-                return new p2((e2) obj, (e2) obj2);
-            case 16:
-                return new m2((a2) obj, (a2) obj2);
-            case 18:
-                return new n2((c2) obj, (c2) obj2);
-        }
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        return !b7.ORDERED.n(this.f) ? this : new v(this, b7.r, (byte) 1);
     }
 }

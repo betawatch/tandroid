@@ -3,19 +3,21 @@ package com.google.android.play.core.integrity;
 import com.google.android.gms.common.api.Status;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class IntegrityServiceException extends com.google.android.gms.common.api.f {
+public class IntegrityServiceException extends zn {
     private final Throwable a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public IntegrityServiceException(int i7, Throwable th2) {
-        super(new Status(i7, "Integrity API error (" + i7 + "): " + com.google.android.play.core.integrity.model.a.a(i7) + ".", null, null));
+    public IntegrityServiceException(int i, Throwable th) {
+        super(new Status(i, "Integrity API error (" + i + "): " + com.google.android.play.core.integrity.model.a.a(i) + ".", null, null));
         Locale locale = Locale.ROOT;
-        if (i7 == 0) {
-            throw new IllegalArgumentException("ErrorCode should not be 0.");
+        if (i != 0) {
+            this.a = th;
+        } else {
+            w26.j("ErrorCode should not be 0.");
+            throw null;
         }
-        this.a = th2;
     }
 
     @Override // java.lang.Throwable

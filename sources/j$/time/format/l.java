@@ -1,6 +1,7 @@
 package j$.time.format;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class l implements f {
     public final String a;
 
@@ -9,8 +10,8 @@ public final class l implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
-        sb2.append(this.a);
+    public final boolean j(r rVar, StringBuilder sb) {
+        sb.append(this.a);
         return true;
     }
 

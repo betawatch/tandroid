@@ -1,35 +1,89 @@
 package org.webrtc;
 
 import android.graphics.ImageFormat;
-import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class CameraEnumerationAndroid {
-    static final ArrayList<Size> COMMON_RESOLUTIONS = new ArrayList<>(Arrays.asList(new Size(ks.q2, 120), new Size(ks.P3, ks.q2), new Size(ks.r5, ks.P3), new Size(400, ks.P3), new Size(480, ks.r5), new Size(640, 360), new Size(640, 480), new Size(768, 480), new Size(854, 480), new Size(800, 600), new Size(960, 540), new Size(960, 640), new Size(1024, 576), new Size(1024, 600), new Size(1280, 720), new Size(1280, 1024), new Size(1920, 1080), new Size(1920, 1440), new Size(2560, 1440), new Size(3840, 2160)));
+    static final ArrayList<Size> COMMON_RESOLUTIONS = new ArrayList<>(Arrays.asList(new Size(kk7.p2, 120), new Size(kk7.O3, kk7.p2), new Size(kk7.q5, kk7.O3), new Size(400, kk7.O3), new Size(480, kk7.q5), new Size(640, 360), new Size(640, 480), new Size(768, 480), new Size(854, 480), new Size(800, 600), new Size(960, 540), new Size(960, 640), new Size(1024, 576), new Size(1024, 600), new Size(1280, 720), new Size(1280, 1024), new Size(1920, 1080), new Size(1920, 1440), new Size(2560, 1440), new Size(3840, 2160)));
     private static final String TAG = "CameraEnumerationAndroid";
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static abstract class ClosestComparator<T> implements Comparator<T> {
+        private ClosestComparator() {
+        }
+
+        @Override // java.util.Comparator
+        public int compare(T t, T t2) {
+            return diff(t) - diff(t2);
+        }
+
+        public abstract int diff(T t);
+    }
+
+    public static CaptureFormat.FramerateRange getClosestSupportedFramerateRange(List<CaptureFormat.FramerateRange> list, final int i) {
+        return (CaptureFormat.FramerateRange) Collections.min(list, new ClosestComparator<CaptureFormat.FramerateRange>() { // from class: org.webrtc.CameraEnumerationAndroid.1
+            private static final int MAX_FPS_DIFF_THRESHOLD = 5000;
+            private static final int MAX_FPS_HIGH_DIFF_WEIGHT = 3;
+            private static final int MAX_FPS_LOW_DIFF_WEIGHT = 1;
+            private static final int MIN_FPS_HIGH_VALUE_WEIGHT = 4;
+            private static final int MIN_FPS_LOW_VALUE_WEIGHT = 1;
+            private static final int MIN_FPS_THRESHOLD = 8000;
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super();
+            }
+
+            private int progressivePenalty(int i2, int i3, int i4, int i5) {
+                return i2 < i3 ? i2 * i4 : oo1.h(i2, i3, i5, i4 * i3);
+            }
+
+            @Override // org.webrtc.CameraEnumerationAndroid.ClosestComparator
+            public int diff(CaptureFormat.FramerateRange framerateRange) {
+                return progressivePenalty(framerateRange.min, MIN_FPS_THRESHOLD, 1, 4) + progressivePenalty(Math.abs((i * 1000) - framerateRange.max), MAX_FPS_DIFF_THRESHOLD, 1, 3);
+            }
+        });
+    }
+
+    public static Size getClosestSupportedSize(List<Size> list, final int i, final int i2) {
+        return (Size) Collections.min(list, new ClosestComparator<Size>() { // from class: org.webrtc.CameraEnumerationAndroid.2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super();
+            }
+
+            @Override // org.webrtc.CameraEnumerationAndroid.ClosestComparator
+            public int diff(Size size) {
+                return Math.abs(i2 - size.height) + Math.abs(i - size.width);
+            }
+        });
+    }
+
+    public static void reportCameraResolution(Histogram histogram, Size size) {
+        histogram.addSample(COMMON_RESOLUTIONS.indexOf(size) + 1);
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class CaptureFormat {
         public final FramerateRange framerate;
         public final int height;
         public final int imageFormat = 17;
         public final int width;
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
         public static class FramerateRange {
             public int max;
             public int min;
 
-            public FramerateRange(int i7, int i10) {
-                this.min = i7;
-                this.max = i10;
+            public FramerateRange(int i, int i2) {
+                this.min = i;
+                this.max = i2;
             }
 
             public boolean equals(Object obj) {
@@ -49,10 +103,18 @@ public class CameraEnumerationAndroid {
             }
         }
 
-        public CaptureFormat(int i7, int i10, int i11, int i12) {
-            this.width = i7;
-            this.height = i10;
-            this.framerate = new FramerateRange(i11, i12);
+        public CaptureFormat(int i, int i2, int i3, int i4) {
+            this.width = i;
+            this.height = i2;
+            this.framerate = new FramerateRange(i3, i4);
+        }
+
+        public static int frameSize(int i, int i2, int i3) {
+            if (i3 == 17) {
+                return (ImageFormat.getBitsPerPixel(i3) * (i * i2)) / 8;
+            }
+            fyb.i("Don't know how to calculate the frame size of non-NV21 image formats.");
+            return 0;
         }
 
         public boolean equals(Object obj) {
@@ -63,85 +125,22 @@ public class CameraEnumerationAndroid {
             return this.width == captureFormat.width && this.height == captureFormat.height && this.framerate.equals(captureFormat.framerate);
         }
 
-        public int frameSize() {
-            return frameSize(this.width, this.height, 17);
-        }
-
         public int hashCode() {
-            return this.framerate.hashCode() + (((this.width * 65497) + this.height) * ks.a4) + 1;
+            return this.framerate.hashCode() + (((this.width * 65497) + this.height) * kk7.Z3) + 1;
         }
 
         public String toString() {
             return this.width + "x" + this.height + "@" + this.framerate;
         }
 
-        public static int frameSize(int i7, int i10, int i11) {
-            if (i11 != 17) {
-                throw new UnsupportedOperationException("Don't know how to calculate the frame size of non-NV21 image formats.");
-            }
-            return (ImageFormat.getBitsPerPixel(i11) * (i7 * i10)) / 8;
-        }
-
-        public CaptureFormat(int i7, int i10, FramerateRange framerateRange) {
-            this.width = i7;
-            this.height = i10;
+        public CaptureFormat(int i, int i2, FramerateRange framerateRange) {
+            this.width = i;
+            this.height = i2;
             this.framerate = framerateRange;
         }
-    }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static abstract class ClosestComparator<T> implements Comparator<T> {
-        private ClosestComparator() {
+        public int frameSize() {
+            return frameSize(this.width, this.height, 17);
         }
-
-        @Override // java.util.Comparator
-        public int compare(T t6, T t10) {
-            return diff(t6) - diff(t10);
-        }
-
-        public abstract int diff(T t6);
-    }
-
-    public static CaptureFormat.FramerateRange getClosestSupportedFramerateRange(List<CaptureFormat.FramerateRange> list, final int i7) {
-        return (CaptureFormat.FramerateRange) Collections.min(list, new ClosestComparator<CaptureFormat.FramerateRange>() { // from class: org.webrtc.CameraEnumerationAndroid.1
-            private static final int MAX_FPS_DIFF_THRESHOLD = 5000;
-            private static final int MAX_FPS_HIGH_DIFF_WEIGHT = 3;
-            private static final int MAX_FPS_LOW_DIFF_WEIGHT = 1;
-            private static final int MIN_FPS_HIGH_VALUE_WEIGHT = 4;
-            private static final int MIN_FPS_LOW_VALUE_WEIGHT = 1;
-            private static final int MIN_FPS_THRESHOLD = 8000;
-
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super();
-            }
-
-            private int progressivePenalty(int i10, int i11, int i12, int i13) {
-                return i10 < i11 ? i10 * i12 : e2.v(i10, i11, i13, i12 * i11);
-            }
-
-            @Override // org.webrtc.CameraEnumerationAndroid.ClosestComparator
-            public int diff(CaptureFormat.FramerateRange framerateRange) {
-                return progressivePenalty(framerateRange.min, MIN_FPS_THRESHOLD, 1, 4) + progressivePenalty(Math.abs((i7 * 1000) - framerateRange.max), MAX_FPS_DIFF_THRESHOLD, 1, 3);
-            }
-        });
-    }
-
-    public static Size getClosestSupportedSize(List<Size> list, final int i7, final int i10) {
-        return (Size) Collections.min(list, new ClosestComparator<Size>() { // from class: org.webrtc.CameraEnumerationAndroid.2
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super();
-            }
-
-            @Override // org.webrtc.CameraEnumerationAndroid.ClosestComparator
-            public int diff(Size size) {
-                return Math.abs(i10 - size.height) + Math.abs(i7 - size.width);
-            }
-        });
-    }
-
-    public static void reportCameraResolution(Histogram histogram, Size size) {
-        histogram.addSample(COMMON_RESOLUTIONS.indexOf(size) + 1);
     }
 }

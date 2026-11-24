@@ -2,123 +2,109 @@ package com.google.android.gms.vision.clearcut;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import c8.nc;
-import com.google.android.gms.internal.vision.d0;
-import com.google.android.gms.internal.vision.e0;
-import com.google.android.gms.internal.vision.f;
-import com.google.android.gms.internal.vision.f0;
-import com.google.android.gms.internal.vision.g;
-import com.google.android.gms.internal.vision.g3;
-import com.google.android.gms.internal.vision.o;
-import com.google.android.gms.internal.vision.p;
-import com.google.android.gms.internal.vision.v;
-import com.google.android.gms.internal.vision.w;
-import com.google.android.gms.internal.vision.y;
-import com.google.android.gms.internal.vision.z;
 import java.util.ArrayList;
 import java.util.List;
-import z6.b;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class LogUtils {
-    public static f0 zza(long j3, int i7, String str, String str2, List<d0> list, g3 g3Var) {
-        v l10 = w.l();
-        o m10 = p.m();
-        if (m10.c) {
-            m10.d();
-            m10.c = false;
+    public static x1e zza(long j, int i, String str, String str2, List<v1e> list, vcf vcfVar) {
+        n1e l = o1e.l();
+        g1e m = h1e.m();
+        if (m.c) {
+            m.d();
+            m.c = false;
         }
-        p.k((p) m10.b, str2);
-        if (m10.c) {
-            m10.d();
-            m10.c = false;
+        ((h1e) m.b).l(str2);
+        if (m.c) {
+            m.d();
+            m.c = false;
         }
-        p.j((p) m10.b, j3);
-        long j10 = i7;
-        if (m10.c) {
-            m10.d();
-            m10.c = false;
+        ((h1e) m.b).j(j);
+        long j2 = i;
+        if (m.c) {
+            m.d();
+            m.c = false;
         }
-        p.n((p) m10.b, j10);
-        if (m10.c) {
-            m10.d();
-            m10.c = false;
+        ((h1e) m.b).n(j2);
+        if (m.c) {
+            m.d();
+            m.c = false;
         }
-        p.l((p) m10.b, list);
+        ((h1e) m.b).k(list);
         ArrayList arrayList = new ArrayList();
-        arrayList.add((p) m10.f());
-        if (l10.c) {
-            l10.d();
-            l10.c = false;
+        arrayList.add((h1e) m.f());
+        if (l.c) {
+            l.d();
+            l.c = false;
         }
-        w.k((w) l10.b, arrayList);
-        y k10 = z.k();
-        long j11 = g3Var.b;
-        if (k10.c) {
-            k10.d();
-            k10.c = false;
+        ((o1e) l.b).k(arrayList);
+        q1e j3 = r1e.j();
+        long j4 = vcfVar.b;
+        if (j3.c) {
+            j3.d();
+            j3.c = false;
         }
-        z.l((z) k10.b, j11);
-        long j12 = g3Var.a;
-        if (k10.c) {
-            k10.d();
-            k10.c = false;
+        ((r1e) j3.b).l(j4);
+        long j5 = vcfVar.a;
+        if (j3.c) {
+            j3.d();
+            j3.c = false;
         }
-        z.j((z) k10.b, j12);
-        long j13 = g3Var.c;
-        if (k10.c) {
-            k10.d();
-            k10.c = false;
+        ((r1e) j3.b).k(j5);
+        long j6 = vcfVar.c;
+        if (j3.c) {
+            j3.d();
+            j3.c = false;
         }
-        z.m((z) k10.b, j13);
-        long j14 = g3Var.d;
-        if (k10.c) {
-            k10.d();
-            k10.c = false;
+        ((r1e) j3.b).m(j6);
+        long j7 = vcfVar.d;
+        if (j3.c) {
+            j3.d();
+            j3.c = false;
         }
-        z.n((z) k10.b, j14);
-        z zVar = (z) k10.f();
-        if (l10.c) {
-            l10.d();
-            l10.c = false;
+        ((r1e) j3.b).n(j7);
+        r1e r1eVar = (r1e) j3.f();
+        if (l.c) {
+            l.d();
+            l.c = false;
         }
-        w.j((w) l10.b, zVar);
-        w wVar = (w) l10.f();
-        e0 k11 = f0.k();
-        if (k11.c) {
-            k11.d();
-            k11.c = false;
+        ((o1e) l.b).j(r1eVar);
+        o1e o1eVar = (o1e) l.f();
+        w1e k = x1e.k();
+        if (k.c) {
+            k.d();
+            k.c = false;
         }
-        f0.j((f0) k11.b, wVar);
-        return (f0) k11.f();
+        ((x1e) k.b).j(o1eVar);
+        return (x1e) k.f();
     }
 
     private static String zzb(Context context) {
         try {
-            return b.a(context).c(0, context.getPackageName()).versionName;
-        } catch (PackageManager.NameNotFoundException e10) {
-            nc.a(e10, "Unable to find calling package info for %s", context.getPackageName());
+            return ryc.a(context).e(0, context.getPackageName()).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            ame.a(e, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }
 
-    public static g zza(Context context) {
-        f k10 = g.k();
+    public static y0e zza(Context context) {
+        x0e k = y0e.k();
         String packageName = context.getPackageName();
-        if (k10.c) {
-            k10.d();
-            k10.c = false;
+        if (k.c) {
+            k.d();
+            k.c = false;
         }
-        g.j((g) k10.b, packageName);
+        ((y0e) k.b).j(packageName);
         String zzb = zzb(context);
         if (zzb != null) {
-            if (k10.c) {
-                k10.d();
-                k10.c = false;
+            if (k.c) {
+                k.d();
+                k.c = false;
             }
-            g.m((g) k10.b, zzb);
+            ((y0e) k.b).m(zzb);
         }
-        return (g) k10.f();
+        return (y0e) k.f();
     }
 }

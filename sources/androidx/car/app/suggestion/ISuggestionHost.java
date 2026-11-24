@@ -4,21 +4,20 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import w.b;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface ISuggestionHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$suggestion$ISuggestionHost".replace('$', '.');
 
-    void updateSuggestions(b bVar);
+    void updateSuggestions(y21 y21Var);
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class Stub extends Binder implements ISuggestionHost {
         static final int TRANSACTION_updateSuggestions = 2;
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-        public static class Proxy implements ISuggestionHost {
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        private static class Proxy implements ISuggestionHost {
             private IBinder mRemote;
 
             public Proxy(IBinder iBinder) {
@@ -35,14 +34,14 @@ public interface ISuggestionHost extends IInterface {
             }
 
             @Override // androidx.car.app.suggestion.ISuggestionHost
-            public void updateSuggestions(b bVar) {
+            public void updateSuggestions(y21 y21Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ISuggestionHost.DESCRIPTOR);
-                    if (bVar != null) {
+                    if (y21Var != null) {
                         obtain.writeInt(1);
-                        bVar.writeToParcel(obtain, 0);
+                        obtain.writeBundle(y21Var.a);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -68,19 +67,19 @@ public interface ISuggestionHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             String str = ISuggestionHost.DESCRIPTOR;
-            if (i7 >= 1 && i7 <= 16777215) {
+            if (i >= 1 && i <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i7 == 1598968902) {
+            if (i == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i7 != 2) {
-                return super.onTransact(i7, parcel, parcel2, i10);
+            if (i != 2) {
+                return super.onTransact(i, parcel, parcel2, i2);
             }
-            updateSuggestions(parcel.readInt() != 0 ? b.CREATOR.createFromParcel(parcel) : null);
+            updateSuggestions(parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null);
             parcel2.writeNoException();
             return true;
         }
@@ -91,7 +90,7 @@ public interface ISuggestionHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Default implements ISuggestionHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -99,7 +98,7 @@ public interface ISuggestionHost extends IInterface {
         }
 
         @Override // androidx.car.app.suggestion.ISuggestionHost
-        public void updateSuggestions(b bVar) {
+        public void updateSuggestions(y21 y21Var) {
         }
     }
 }

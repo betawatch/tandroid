@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.Closeable;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzov implements Closeable {
     private static final ThreadLocal zza = new zzou();
@@ -14,10 +14,11 @@ public final class zzov implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
-        int i7 = this.zzb;
-        if (i7 <= 0) {
-            throw new AssertionError("Mismatched calls to RecursionDepth (possible error in core library)");
+        int i = this.zzb;
+        if (i > 0) {
+            this.zzb = i - 1;
+        } else {
+            fi7.g("Mismatched calls to RecursionDepth (possible error in core library)");
         }
-        this.zzb = i7 - 1;
     }
 }

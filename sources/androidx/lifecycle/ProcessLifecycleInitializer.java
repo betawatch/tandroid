@@ -3,36 +3,38 @@ package androidx.lifecycle;
 import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
+import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class ProcessLifecycleInitializer implements y4.b {
-    @Override // y4.b
+public final class ProcessLifecycleInitializer implements pn5 {
+    @Override // pn5
     public final List a() {
-        return hd.n.a;
+        return c24.a;
     }
 
-    @Override // y4.b
+    @Override // pn5
     public final Object b(Context context) {
-        kotlin.jvm.internal.j.e(context, "context");
-        y4.a c10 = y4.a.c(context);
-        kotlin.jvm.internal.j.d(c10, "getInstance(context)");
-        if (!c10.b.contains(ProcessLifecycleInitializer.class)) {
-            throw new IllegalStateException("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
+        context.getClass();
+        mv6 N = mv6.N(context);
+        N.getClass();
+        if (!((HashSet) N.c).contains(ProcessLifecycleInitializer.class)) {
+            sc8.j("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
+            return null;
         }
-        if (!q.a.getAndSet(true)) {
+        if (!a16.a.getAndSet(true)) {
             Context applicationContext = context.getApplicationContext();
-            kotlin.jvm.internal.j.c(applicationContext, "null cannot be cast to non-null type android.app.Application");
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(new p());
+            applicationContext.getClass();
+            ((Application) applicationContext).registerActivityLifecycleCallbacks(new z06());
         }
-        e0 e0Var = e0.r;
-        e0Var.getClass();
-        e0Var.e = new Handler();
-        e0Var.f.e(m.ON_CREATE);
+        dl8 dl8Var = dl8.r;
+        dl8Var.getClass();
+        dl8Var.e = new Handler();
+        dl8Var.f.e(u06.ON_CREATE);
         Context applicationContext2 = context.getApplicationContext();
-        kotlin.jvm.internal.j.c(applicationContext2, "null cannot be cast to non-null type android.app.Application");
-        ((Application) applicationContext2).registerActivityLifecycleCallbacks(new d0(e0Var));
-        return e0Var;
+        applicationContext2.getClass();
+        ((Application) applicationContext2).registerActivityLifecycleCallbacks(new cl8(dl8Var));
+        return dl8Var;
     }
 }

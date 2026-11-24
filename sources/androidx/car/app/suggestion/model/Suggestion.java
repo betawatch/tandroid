@@ -4,9 +4,8 @@ import android.app.PendingIntent;
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
-import x.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Suggestion {
     private final PendingIntent mAction;
@@ -15,8 +14,12 @@ public final class Suggestion {
     private final CarText mSubtitle;
     private final CarText mTitle;
 
-    public Suggestion(a aVar) {
-        throw null;
+    private Suggestion() {
+        this.mIdentifier = "";
+        this.mTitle = CarText.create("");
+        this.mSubtitle = null;
+        this.mIcon = null;
+        this.mAction = null;
     }
 
     public boolean equals(Object obj) {
@@ -58,11 +61,7 @@ public final class Suggestion {
         return "[id: " + this.mIdentifier + ", title: " + CarText.toShortString(this.mTitle) + ", subtitle: " + CarText.toShortString(this.mSubtitle) + ", pendingIntent: " + this.mAction + ", icon: " + this.mIcon + "]";
     }
 
-    private Suggestion() {
-        this.mIdentifier = "";
-        this.mTitle = CarText.create("");
-        this.mSubtitle = null;
-        this.mIcon = null;
-        this.mAction = null;
+    public Suggestion(gbb gbbVar) {
+        throw null;
     }
 }

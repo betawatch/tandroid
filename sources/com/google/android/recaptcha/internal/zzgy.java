@@ -1,39 +1,32 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.ContentValues;
-import gd.k;
-import hd.f;
-import id.c;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzgy extends j implements p {
+final class zzgy extends ccb implements eq4 {
     final /* synthetic */ zzgz zza;
     final /* synthetic */ zzzm zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzgy(zzgz zzgzVar, zzzm zzzmVar, c cVar) {
-        super(2, cVar);
+    public zzgy(zzgz zzgzVar, zzzm zzzmVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzgzVar;
         this.zzb = zzzmVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzgy(this.zza, this.zzb, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzgy(this.zza, this.zzb, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgy) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzgy) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzgo zzgoVar;
         zzgo zzgoVar2;
@@ -41,38 +34,33 @@ final class zzgy extends j implements p {
         zzgo zzgoVar4;
         zzgo zzgoVar5;
         zzgo zzgoVar6;
-        a aVar = a.a;
-        c8.z.b(obj);
+        qse.b(obj);
         zzzm zzzmVar = this.zzb;
         zzgz zzgzVar = this.zza;
         synchronized (zzgs.class) {
-            try {
-                zzgoVar = zzgzVar.zzc;
-                if (zzgoVar != null) {
-                    byte[] zzd = zzzmVar.zzd();
-                    zzgp zzgpVar = new zzgp(zzpp.zzg().zzi(zzd, 0, zzd.length), System.currentTimeMillis(), 0);
-                    zzgoVar2 = zzgzVar.zzc;
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put("ss", zzgpVar.zzc());
-                    contentValues.put("ts", Long.valueOf(zzgpVar.zzb()));
-                    zzgoVar2.getWritableDatabase().insert("ce", null, contentValues);
-                    zzgoVar3 = zzgzVar.zzc;
-                    int zzb = zzgoVar3.zzb() - 500;
-                    if (zzb > 0) {
-                        zzgoVar5 = zzgzVar.zzc;
-                        List h = f.h(zzgoVar5.zzd(), zzb);
-                        zzgoVar6 = zzgzVar.zzc;
-                        zzgoVar6.zza(h);
-                    }
-                    zzgoVar4 = zzgzVar.zzc;
-                    if (zzgoVar4.zzb() >= 20) {
-                        zzgzVar.zzf();
-                    }
+            zzgoVar = zzgzVar.zzc;
+            if (zzgoVar != null) {
+                byte[] zzd = zzzmVar.zzd();
+                zzgp zzgpVar = new zzgp(zzpp.zzg().zzi(zzd, 0, zzd.length), System.currentTimeMillis(), 0);
+                zzgoVar2 = zzgzVar.zzc;
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("ss", zzgpVar.zzc());
+                contentValues.put("ts", Long.valueOf(zzgpVar.zzb()));
+                zzgoVar2.getWritableDatabase().insert("ce", null, contentValues);
+                zzgoVar3 = zzgzVar.zzc;
+                int zzb = zzgoVar3.zzb() - 500;
+                if (zzb > 0) {
+                    zzgoVar5 = zzgzVar.zzc;
+                    List g = yk2.g(zzgoVar5.zzd(), zzb);
+                    zzgoVar6 = zzgzVar.zzc;
+                    zzgoVar6.zza(g);
                 }
-            } catch (Throwable th2) {
-                throw th2;
+                zzgoVar4 = zzgzVar.zzc;
+                if (zzgoVar4.zzb() >= 20) {
+                    zzgzVar.zzf();
+                }
             }
         }
-        return k.a;
+        return g5c.a;
     }
 }

@@ -1,18 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.internal.j;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzgp {
     private final String zza;
     private final long zzb;
     private final int zzc;
 
-    public zzgp(String str, long j3, int i7) {
+    public zzgp(String str, long j, int i) {
         this.zza = str;
-        this.zzb = j3;
-        this.zzc = i7;
+        this.zzb = j;
+        this.zzc = i;
     }
 
     public final boolean equals(Object obj) {
@@ -20,7 +18,7 @@ public final class zzgp {
             return false;
         }
         zzgp zzgpVar = (zzgp) obj;
-        return j.a(zzgpVar.zza, this.zza) && zzgpVar.zzb == this.zzb && zzgpVar.zzc == this.zzc;
+        return rp5.a(zzgpVar.zza, this.zza) && zzgpVar.zzb == this.zzb && zzgpVar.zzc == this.zzc;
     }
 
     public final int zza() {

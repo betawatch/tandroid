@@ -1,6 +1,6 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class a extends ap {
     private String a;
@@ -25,13 +25,14 @@ final class a extends ap {
         if (str != null && (yVar = this.b) != null) {
             return new aq(str, yVar);
         }
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         if (this.a == null) {
-            sb2.append(" token");
+            sb.append(" token");
         }
         if (this.b == null) {
-            sb2.append(" integrityDialogWrapper");
+            sb.append(" integrityDialogWrapper");
         }
-        throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
+        sc8.j("Missing required properties:".concat(sb.toString()));
+        return null;
     }
 }

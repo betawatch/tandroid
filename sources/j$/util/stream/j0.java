@@ -1,100 +1,36 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public final class j0 extends b {
-    public final d0 j;
-    public final boolean k;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class j0 extends l0 implements m5 {
+    public static final g0 c;
+    public static final g0 d;
 
-    public j0(d0 d0Var, boolean z10, a aVar, Spliterator spliterator) {
-        super(aVar, spliterator);
-        this.k = z10;
-        this.j = d0Var;
+    static {
+        c7 c7Var = c7.LONG_VALUE;
+        q qVar = new q((byte) 14);
+        q qVar2 = new q((byte) 15);
+        j$.util.d0 d0Var = j$.util.d0.c;
+        c = new g0(true, c7Var, d0Var, qVar, qVar2);
+        d = new g0(false, c7Var, d0Var, new q((byte) 14), new q((byte) 15));
     }
 
-    public j0(j0 j0Var, Spliterator spliterator) {
-        super(j0Var, spliterator);
-        this.k = j0Var.k;
-        this.j = j0Var.j;
+    @Override // j$.util.stream.l0, j$.util.stream.n5
+    public final void accept(long j) {
+        x(Long.valueOf(j));
     }
 
-    @Override // j$.util.stream.d
-    public final d c(Spliterator spliterator) {
-        return new j0(this, spliterator);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.time.a.c(this, longConsumer);
     }
 
-    @Override // j$.util.stream.b
-    public final Object h() {
-        return this.j.b;
-    }
-
-    @Override // j$.util.stream.d
-    public final Object a() {
-        t3 t3Var = this.a;
-        c8 c8Var = (c8) this.j.d.get();
-        t3Var.F0(this.b, c8Var);
-        Object obj = c8Var.get();
-        if (this.k) {
-            if (obj != null) {
-                d dVar = this;
-                while (dVar != null) {
-                    d dVar2 = (d) dVar.getCompleter();
-                    if (dVar2 != null && dVar2.d != dVar) {
-                        g();
-                        return obj;
-                    }
-                    dVar = dVar2;
-                }
-                AtomicReference atomicReference = this.h;
-                while (!atomicReference.compareAndSet(null, obj) && atomicReference.get() == null) {
-                }
-                return obj;
-            }
-        } else if (obj != null) {
-            AtomicReference atomicReference2 = this.h;
-            while (!atomicReference2.compareAndSet(null, obj) && atomicReference2.get() == null) {
-            }
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        if (this.a) {
+            return new j$.util.d0(((Long) this.b).longValue());
         }
         return null;
-    }
-
-    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        if (this.k) {
-            j0 j0Var = (j0) this.d;
-            j0 j0Var2 = null;
-            while (true) {
-                if (j0Var != j0Var2) {
-                    Object i7 = j0Var.i();
-                    if (i7 != null && this.j.c.test(i7)) {
-                        d(i7);
-                        d dVar = this;
-                        while (true) {
-                            if (dVar != null) {
-                                d dVar2 = (d) dVar.getCompleter();
-                                if (dVar2 != null && dVar2.d != dVar) {
-                                    g();
-                                    break;
-                                }
-                                dVar = dVar2;
-                            } else {
-                                AtomicReference atomicReference = this.h;
-                                while (!atomicReference.compareAndSet(null, i7) && atomicReference.get() == null) {
-                                }
-                            }
-                        }
-                    } else {
-                        j0Var2 = j0Var;
-                        j0Var = (j0) this.e;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-        super.onCompletion(countedCompleter);
     }
 }

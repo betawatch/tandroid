@@ -1,15 +1,12 @@
 package androidx.media3.decoder;
 
-import e2.u;
 import java.nio.ByteBuffer;
-import k2.i;
-import k2.j;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class VideoDecoderOutputBuffer extends j {
+public class VideoDecoderOutputBuffer extends b93 {
     public static final int COLORSPACE_BT2020 = 3;
     public static final int COLORSPACE_BT601 = 1;
     public static final int COLORSPACE_BT709 = 2;
@@ -17,10 +14,10 @@ public class VideoDecoderOutputBuffer extends j {
     public int colorspace;
     public ByteBuffer data;
     public long decoderPrivate;
-    public u format;
+    public fm4 format;
     public int height;
     public int mode;
-    private final i owner;
+    private final a93 owner;
     public ByteBuffer supplementalData;
     public int uvStride;
     public int width;
@@ -28,20 +25,20 @@ public class VideoDecoderOutputBuffer extends j {
     public ByteBuffer[] yuvPlanes;
     public int[] yuvStrides;
 
-    public VideoDecoderOutputBuffer(i iVar) {
-        this.owner = iVar;
+    public VideoDecoderOutputBuffer(a93 a93Var) {
+        this.owner = a93Var;
     }
 
-    private static boolean isSafeToMultiply(int i7, int i10) {
-        if (i7 < 0 || i10 < 0) {
+    private static boolean isSafeToMultiply(int i, int i2) {
+        if (i < 0 || i2 < 0) {
             return false;
         }
-        return i10 <= 0 || i7 < ConnectionsManager.DEFAULT_DATACENTER_ID / i10;
+        return i2 <= 0 || i < ConnectionsManager.DEFAULT_DATACENTER_ID / i2;
     }
 
-    public void init(long j3, int i7, ByteBuffer byteBuffer) {
-        this.timeUs = j3;
-        this.mode = i7;
+    public void init(long j, int i, ByteBuffer byteBuffer) {
+        this.timeUs = j;
+        this.mode = i;
         if (byteBuffer == null || !byteBuffer.hasRemaining()) {
             this.supplementalData = null;
             return;
@@ -59,98 +56,102 @@ public class VideoDecoderOutputBuffer extends j {
         byteBuffer.position(0);
     }
 
-    public boolean initForOffsetFrames(int i7, int i10, int i11, int i12, int i13, int i14, int i15) {
-        if (this.yuvPlanes == null) {
-            this.yuvPlanes = new ByteBuffer[3];
+    public boolean initForOffsetFrames(int i, int i2, int i3, int i4, int i5, int i6, int i7) {
+        ByteBuffer[] byteBufferArr = this.yuvPlanes;
+        if (byteBufferArr == null) {
+            byteBufferArr = new ByteBuffer[3];
+            this.yuvPlanes = byteBufferArr;
         }
         ByteBuffer byteBuffer = this.data;
         if (byteBuffer == null) {
             return false;
         }
-        this.width = i10;
-        this.height = i11;
-        this.colorspace = i14;
-        ByteBuffer[] byteBufferArr = this.yuvPlanes;
-        int i16 = i12 * i11;
-        int i17 = (i11 >> 1) * i13;
-        int i18 = i12 * i15;
-        byteBuffer.position(i7);
+        this.width = i2;
+        this.height = i3;
+        this.colorspace = i6;
+        int i8 = i4 * i3;
+        int i9 = (i3 >> 1) * i5;
+        int i10 = i4 * i7;
+        byteBuffer.position(i);
         ByteBuffer slice = byteBuffer.slice();
         byteBufferArr[0] = slice;
-        slice.limit(i16);
-        byteBuffer.position(i18 + i7);
+        slice.limit(i8);
+        byteBuffer.position(i10 + i);
         ByteBuffer slice2 = byteBuffer.slice();
         byteBufferArr[1] = slice2;
-        slice2.limit(i17);
-        byteBuffer.position(i18 + ((i15 >> 1) * i13) + i7);
+        slice2.limit(i9);
+        byteBuffer.position(i10 + ((i7 >> 1) * i5) + i);
         ByteBuffer slice3 = byteBuffer.slice();
         byteBufferArr[2] = slice3;
-        slice3.limit(i17);
-        if (this.yuvStrides == null) {
-            this.yuvStrides = new int[3];
-        }
+        slice3.limit(i9);
         int[] iArr = this.yuvStrides;
-        iArr[0] = i12;
-        iArr[1] = i13;
-        iArr[2] = i13;
+        if (iArr == null) {
+            iArr = new int[3];
+            this.yuvStrides = iArr;
+        }
+        iArr[0] = i4;
+        iArr[1] = i5;
+        iArr[2] = i5;
         return true;
     }
 
-    public void initForPrivateFrame(int i7, int i10) {
-        this.width = i7;
-        this.height = i10;
+    public void initForPrivateFrame(int i, int i2) {
+        this.width = i;
+        this.height = i2;
     }
 
-    public boolean initForYuvFrame(int i7, int i10, int i11, int i12, int i13) {
-        this.width = i7;
-        this.height = i10;
-        this.colorspace = i13;
-        this.yStride = i11;
-        this.uvStride = i12;
-        int i14 = (int) ((i10 + 1) / 2);
-        if (isSafeToMultiply(i11, i10) && isSafeToMultiply(i12, i14)) {
-            int i15 = i10 * i11;
-            int i16 = i14 * i12;
-            int i17 = (i16 * 2) + i15;
-            if (isSafeToMultiply(i16, 2) && i17 >= i15) {
+    public boolean initForYuvFrame(int i, int i2, int i3, int i4, int i5) {
+        this.width = i;
+        this.height = i2;
+        this.colorspace = i5;
+        this.yStride = i3;
+        this.uvStride = i4;
+        int i6 = (int) ((i2 + 1) / 2);
+        if (isSafeToMultiply(i3, i2) && isSafeToMultiply(i4, i6)) {
+            int i7 = i2 * i3;
+            int i8 = i6 * i4;
+            int i9 = (i8 << 1) + i7;
+            if (isSafeToMultiply(i8, 2) && i9 >= i7) {
                 ByteBuffer byteBuffer = this.data;
-                if (byteBuffer == null || byteBuffer.capacity() < i17) {
-                    this.data = ByteBuffer.allocateDirect(i17);
+                if (byteBuffer == null || byteBuffer.capacity() < i9) {
+                    this.data = ByteBuffer.allocateDirect(i9);
                 } else {
                     this.data.position(0);
-                    this.data.limit(i17);
+                    this.data.limit(i9);
                 }
-                if (this.yuvPlanes == null) {
-                    this.yuvPlanes = new ByteBuffer[3];
+                ByteBuffer[] byteBufferArr = this.yuvPlanes;
+                if (byteBufferArr == null) {
+                    byteBufferArr = new ByteBuffer[3];
+                    this.yuvPlanes = byteBufferArr;
                 }
                 ByteBuffer byteBuffer2 = this.data;
-                ByteBuffer[] byteBufferArr = this.yuvPlanes;
                 ByteBuffer slice = byteBuffer2.slice();
                 byteBufferArr[0] = slice;
-                slice.limit(i15);
-                byteBuffer2.position(i15);
+                slice.limit(i7);
+                byteBuffer2.position(i7);
                 ByteBuffer slice2 = byteBuffer2.slice();
                 byteBufferArr[1] = slice2;
-                slice2.limit(i16);
-                byteBuffer2.position(i15 + i16);
+                slice2.limit(i8);
+                byteBuffer2.position(i7 + i8);
                 ByteBuffer slice3 = byteBuffer2.slice();
                 byteBufferArr[2] = slice3;
-                slice3.limit(i16);
-                if (this.yuvStrides == null) {
-                    this.yuvStrides = new int[3];
-                }
+                slice3.limit(i8);
                 int[] iArr = this.yuvStrides;
-                iArr[0] = i11;
-                iArr[1] = i12;
-                iArr[2] = i12;
+                if (iArr == null) {
+                    iArr = new int[3];
+                    this.yuvStrides = iArr;
+                }
+                iArr[0] = i3;
+                iArr[1] = i4;
+                iArr[2] = i4;
                 return true;
             }
         }
         return false;
     }
 
-    @Override // k2.j
+    @Override // b93
     public void release() {
-        this.owner.c(this);
+        this.owner.a(this);
     }
 }

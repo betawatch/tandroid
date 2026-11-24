@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public enum zzzk implements zzsp {
     zza(0),
@@ -17,12 +17,12 @@ public enum zzzk implements zzsp {
 
     private final int zzm;
 
-    zzzk(int i7) {
-        this.zzm = i7;
+    zzzk(int i) {
+        this.zzm = i;
     }
 
-    public static zzzk zzb(int i7) {
-        switch (i7) {
+    public static zzzk zzb(int i) {
+        switch (i) {
             case 0:
                 return zza;
             case 1:
@@ -58,6 +58,7 @@ public enum zzzk implements zzsp {
         if (this != zzk) {
             return this.zzm;
         }
-        throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        w26.j("Can't get the number of an unknown enum value.");
+        return 0;
     }
 }

@@ -1,153 +1,84 @@
 package j$.util.stream;
 
 import j$.util.Objects;
-import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
-import java.util.ArrayList;
+import j$.util.function.IntConsumer$-CC;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Spliterator;
 import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public class t6 extends c implements Consumer, Iterable {
-    public Object[] e = new Object[1 << 4];
-    public Object[][] f;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public class t6 extends x6 implements IntConsumer {
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i) {
+        p();
+        int[] iArr = (int[]) this.e;
+        int i2 = this.b;
+        this.b = i2 + 1;
+        iArr[i2] = i;
+    }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    public final void i(long j3) {
-        long length;
-        int i7 = this.c;
-        if (i7 == 0) {
-            length = this.e.length;
+    public final void forEach(Consumer consumer) {
+        if (consumer instanceof IntConsumer) {
+            d((IntConsumer) consumer);
         } else {
-            length = this.d[i7] + this.f[i7].length;
-        }
-        if (j3 > length) {
-            if (this.f == null) {
-                Object[][] objArr = new Object[8][];
-                this.f = objArr;
-                this.d = new long[8];
-                objArr[0] = this.e;
+            if (j8.a) {
+                j8.a(getClass(), "{0} calling SpinedBuffer.OfInt.forEach(Consumer)");
+                throw null;
             }
-            int i10 = i7 + 1;
-            while (j3 > length) {
-                Object[][] objArr2 = this.f;
-                if (i10 >= objArr2.length) {
-                    int length2 = objArr2.length * 2;
-                    this.f = (Object[][]) Arrays.copyOf(objArr2, length2);
-                    this.d = Arrays.copyOf(this.d, length2);
-                }
-                int i11 = this.a;
-                if (i10 != 0 && i10 != 1) {
-                    i11 = Math.min((i11 + i10) - 1, 30);
-                }
-                int i12 = 1 << i11;
-                this.f[i10] = new Object[i12];
-                long[] jArr = this.d;
-                jArr[i10] = jArr[i10 - 1] + r5[r7].length;
-                length += i12;
-                i10++;
-            }
+            j$.time.a.i((s6) spliterator(), consumer);
         }
     }
 
-    @Override // j$.util.stream.c
-    public final void clear() {
-        Object[][] objArr = this.f;
-        if (objArr != null) {
-            this.e = objArr[0];
-            int i7 = 0;
-            while (true) {
-                Object[] objArr2 = this.e;
-                if (i7 >= objArr2.length) {
-                    break;
-                }
-                objArr2[i7] = null;
-                i7++;
-            }
-            this.f = null;
-            this.d = null;
-        } else {
-            for (int i10 = 0; i10 < this.b; i10++) {
-                this.e[i10] = null;
-            }
+    @Override // j$.util.stream.x6
+    public final void i(Object obj, int i, int i2, Object obj2) {
+        int[] iArr = (int[]) obj;
+        IntConsumer intConsumer = (IntConsumer) obj2;
+        while (i < i2) {
+            intConsumer.accept(iArr[i]);
+            i++;
         }
-        this.b = 0;
-        this.c = 0;
     }
 
     @Override // java.lang.Iterable
     public final Iterator iterator() {
-        j$.util.Spliterator spliterator = spliterator();
+        j$.util.x0 spliterator = spliterator();
         Objects.requireNonNull(spliterator);
-        return new j$.util.f1(spliterator);
+        return new j$.util.g1(spliterator);
     }
 
-    @Override // java.lang.Iterable
-    public void forEach(Consumer consumer) {
-        for (int i7 = 0; i7 < this.c; i7++) {
-            for (Object obj : this.f[i7]) {
-                consumer.x(obj);
-            }
-        }
-        for (int i10 = 0; i10 < this.b; i10++) {
-            consumer.x(this.e[i10]);
-        }
+    @Override // j$.util.stream.x6
+    public final int j(Object obj) {
+        return ((int[]) obj).length;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public void x(Object obj) {
-        long length;
-        int i7 = this.b;
-        Object[] objArr = this.e;
-        if (i7 == objArr.length) {
-            if (this.f == null) {
-                Object[][] objArr2 = new Object[8][];
-                this.f = objArr2;
-                this.d = new long[8];
-                objArr2[0] = objArr;
-            }
-            int i10 = this.c;
-            int i11 = i10 + 1;
-            Object[][] objArr3 = this.f;
-            if (i11 >= objArr3.length || objArr3[i11] == null) {
-                if (i10 == 0) {
-                    length = objArr.length;
-                } else {
-                    length = objArr3[i10].length + this.d[i10];
-                }
-                i(length + 1);
-            }
-            this.b = 0;
-            int i12 = this.c + 1;
-            this.c = i12;
-            this.e = this.f[i12];
-        }
-        Object[] objArr4 = this.e;
-        int i13 = this.b;
-        this.b = i13 + 1;
-        objArr4[i13] = obj;
+    @Override // j$.util.stream.x6
+    public final Object[] m() {
+        return new int[8][];
+    }
+
+    @Override // j$.util.stream.x6
+    public final Object newArray(int i) {
+        return new int[i];
+    }
+
+    @Override // j$.util.stream.x6, java.lang.Iterable, j$.util.stream.h2
+    /* renamed from: r, reason: merged with bridge method [inline-methods] */
+    public j$.util.x0 spliterator() {
+        return new s6(this, 0, this.c, 0, this.b);
     }
 
     public final String toString() {
-        ArrayList arrayList = new ArrayList();
-        Objects.requireNonNull(arrayList);
-        forEach(new j$.time.t(10, arrayList));
-        return "SpinedBuffer:" + arrayList.toString();
-    }
-
-    @Override // java.lang.Iterable
-    public j$.util.Spliterator spliterator() {
-        return new k6(this, 0, this.c, 0, this.b);
+        int[] iArr = (int[]) b();
+        if (iArr.length < 200) {
+            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(iArr));
+        }
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, kk7.d3)));
     }
 }

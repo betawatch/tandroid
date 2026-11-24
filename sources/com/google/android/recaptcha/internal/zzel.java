@@ -1,17 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
 import com.google.android.recaptcha.RecaptchaAction;
-import gd.g;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzel extends j implements p {
+final class zzel extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzeq zzb;
     final /* synthetic */ long zzc;
@@ -19,65 +12,65 @@ final class zzel extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzel(zzeq zzeqVar, long j3, RecaptchaAction recaptchaAction, c cVar) {
-        super(2, cVar);
+    public zzel(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzeqVar;
-        this.zzc = j3;
+        this.zzc = j;
         this.zzd = recaptchaAction;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzel zzelVar = new zzel(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzel zzelVar = new zzel(this.zzb, this.zzc, this.zzd, fw2Var);
         zzelVar.zze = obj;
         return zzelVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzel) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzel) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0045, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0042, code lost:
     
-        if (r11 == r0) goto L17;
+        if (r11 == r3) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
     
-        return r0;
+        return r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0038, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0035, code lost:
     
-        if (r11 != r0) goto L15;
+        if (r11 != r3) goto L13;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-        } catch (zzcg e10) {
-            obj = z.a(e10.zzc());
+        } catch (zzcg e) {
+            obj = qse.a(e.zzc());
         }
-        if (i7 == 0) {
-            z.b(obj);
+        if (i == 0) {
+            qse.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzeq zzeqVar = this.zzb;
-            long j3 = this.zzc;
+            long j = this.zzc;
             RecaptchaAction recaptchaAction = this.zzd;
             this.zze = zzhkVar;
             this.zza = 1;
-            obj = new zzhf(9, new zzeo(zzeqVar, j3, recaptchaAction, null), null);
+            obj = new zzhf(9, new zzeo(zzeqVar, j, recaptchaAction, null), null);
         } else {
-            if (i7 != 1) {
-                z.b(obj);
-                return new g(obj);
+            if (i != 1) {
+                qse.b(obj);
+                return new ta9(obj);
             }
             zzhkVar = (zzhk) this.zze;
-            z.b(obj);
+            qse.b(obj);
         }
         this.zze = null;
         this.zza = 2;

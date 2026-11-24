@@ -1,17 +1,11 @@
 package androidx.sharetarget;
 
-import a0.f;
-import a2.b;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
-import c0.m;
-import e0.j0;
-import g0.c;
-import g0.e;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,17 +15,15 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import pb.l;
-import vb.d;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class ShortcutInfoCompatSaverImpl extends e {
+public class ShortcutInfoCompatSaverImpl extends qga {
     public static final Object h = new Object();
     public static volatile ShortcutInfoCompatSaverImpl i;
     public final Context a;
-    public final f b = new f(0);
-    public final f c = new f(0);
+    public final ps b = new ps(0);
+    public final ps c = new ps(0);
     public final ThreadPoolExecutor d;
     public final ThreadPoolExecutor e;
     public final File f;
@@ -44,7 +36,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new l(this, file, false, 9));
+        threadPoolExecutor.submit(new rld((Object) this, (Object) file, false, (byte) 10));
     }
 
     public static void f(File file) {
@@ -56,92 +48,91 @@ public class ShortcutInfoCompatSaverImpl extends e {
     public static ShortcutInfoCompatSaverImpl getInstance(Context context) {
         if (i == null) {
             synchronized (h) {
-                try {
-                    if (i == null) {
-                        TimeUnit timeUnit = TimeUnit.SECONDS;
-                        i = new ShortcutInfoCompatSaverImpl(context, new ThreadPoolExecutor(0, 1, 20L, timeUnit, new LinkedBlockingQueue()), new ThreadPoolExecutor(0, 1, 20L, timeUnit, new LinkedBlockingQueue()));
-                    }
-                } finally {
+                if (i == null) {
+                    TimeUnit timeUnit = TimeUnit.SECONDS;
+                    i = new ShortcutInfoCompatSaverImpl(context, new ThreadPoolExecutor(0, 1, 20L, timeUnit, new LinkedBlockingQueue()), new ThreadPoolExecutor(0, 1, 20L, timeUnit, new LinkedBlockingQueue()));
                 }
             }
         }
         return i;
     }
 
-    @Override // g0.e
+    @Override // qga
     public final Object a(List list) {
         ArrayList arrayList = new ArrayList(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            c cVar = (c) it.next();
-            c cVar2 = new c();
-            cVar2.a = cVar.a;
-            cVar2.b = cVar.b;
-            Intent[] intentArr = cVar.c;
-            cVar2.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-            cVar2.d = cVar.d;
-            cVar2.e = cVar.e;
-            cVar2.f = cVar.f;
-            cVar2.g = cVar.g;
-            cVar2.h = cVar.h;
-            cVar2.k = cVar.k;
-            cVar2.l = cVar.l;
-            cVar2.m = cVar.m;
-            j0[] j0VarArr = cVar.i;
-            if (j0VarArr != null) {
-                cVar2.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
+            oga ogaVar = (oga) it.next();
+            oga ogaVar2 = new oga();
+            ogaVar2.a = ogaVar.a;
+            ogaVar2.b = ogaVar.b;
+            Intent[] intentArr = ogaVar.c;
+            ogaVar2.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
+            ogaVar2.d = ogaVar.d;
+            ogaVar2.e = ogaVar.e;
+            ogaVar2.f = ogaVar.f;
+            ogaVar2.g = ogaVar.g;
+            ogaVar2.h = ogaVar.h;
+            ogaVar2.k = ogaVar.k;
+            ogaVar2.l = ogaVar.l;
+            ogaVar2.m = ogaVar.m;
+            l38[] l38VarArr = ogaVar.i;
+            if (l38VarArr != null) {
+                ogaVar2.i = (l38[]) Arrays.copyOf(l38VarArr, l38VarArr.length);
             }
-            if (cVar.j != null) {
-                cVar2.j = new HashSet(cVar.j);
+            if (ogaVar.j != null) {
+                ogaVar2.j = new HashSet(ogaVar.j);
             }
-            PersistableBundle persistableBundle = cVar.n;
+            PersistableBundle persistableBundle = ogaVar.n;
             if (persistableBundle != null) {
-                cVar2.n = persistableBundle;
+                ogaVar2.n = persistableBundle;
             }
-            if (TextUtils.isEmpty(cVar2.e)) {
-                throw new IllegalArgumentException("Shortcut must have a non-empty label");
+            if (TextUtils.isEmpty(ogaVar2.e)) {
+                w26.j("Shortcut must have a non-empty label");
+                return null;
             }
-            Intent[] intentArr2 = cVar2.c;
+            Intent[] intentArr2 = ogaVar2.c;
             if (intentArr2 == null || intentArr2.length == 0) {
-                throw new IllegalArgumentException("Shortcut must have an intent");
+                w26.j("Shortcut must have an intent");
+                return null;
             }
-            arrayList.add(cVar2);
+            arrayList.add(ogaVar2);
         }
-        m mVar = new m();
-        this.d.submit(new x4.e(this, arrayList, mVar, 1));
-        return mVar;
+        ea9 ea9Var = new ea9();
+        this.d.submit(new rga(this, arrayList, ea9Var, (byte) 1));
+        return ea9Var;
     }
 
-    @Override // g0.e
+    @Override // qga
     public final List b() {
-        return (List) this.d.submit(new b(this, 6)).get();
+        return (List) this.d.submit(new ke7(this, (byte) 1)).get();
     }
 
-    @Override // g0.e
+    @Override // qga
     public final Object c() {
-        m mVar = new m();
-        this.d.submit(new l(this, mVar, false, 10));
-        return mVar;
+        ea9 ea9Var = new ea9();
+        this.d.submit(new tq4(this, ea9Var, false, (byte) 13));
+        return ea9Var;
     }
 
-    @Override // g0.e
+    @Override // qga
     public final Object d(List list) {
         ArrayList arrayList = new ArrayList(list);
-        m mVar = new m();
-        this.d.submit(new x4.e(this, arrayList, mVar, 0));
-        return mVar;
+        ea9 ea9Var = new ea9();
+        this.d.submit(new rga(this, arrayList, ea9Var, (byte) 0));
+        return ea9Var;
     }
 
     public final void e(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            x4.f fVar = (x4.f) obj;
-            if (!TextUtils.isEmpty(fVar.b)) {
-                arrayList2.add(fVar.b);
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            uga ugaVar = (uga) obj;
+            if (!TextUtils.isEmpty(ugaVar.b)) {
+                arrayList2.add(ugaVar.b);
             }
         }
         for (File file : this.g.listFiles()) {
@@ -152,37 +143,37 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final IconCompat g(String str) {
-        int i7;
+        int i2;
         Context context = this.a;
-        x4.f fVar = (x4.f) this.d.submit(new d(this, str)).get();
-        if (fVar == null) {
+        uga ugaVar = (uga) this.d.submit(new sga(this, str)).get();
+        if (ugaVar == null) {
             return null;
         }
-        String str2 = fVar.a;
+        String str2 = ugaVar.a;
         if (!TextUtils.isEmpty(str2)) {
             try {
-                i7 = context.getResources().getIdentifier(str2, null, null);
+                i2 = context.getResources().getIdentifier(str2, null, null);
             } catch (Exception unused) {
-                i7 = 0;
+                i2 = 0;
             }
-            if (i7 != 0) {
-                return IconCompat.d(context, i7);
+            if (i2 != 0) {
+                return IconCompat.d(context, i2);
             }
         }
-        if (TextUtils.isEmpty(fVar.b)) {
+        if (TextUtils.isEmpty(ugaVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new b(fVar, 7)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new ke7(ugaVar, (byte) 2)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }
         return null;
     }
 
-    public final void h(m mVar) {
-        l lVar = new l(this, new ArrayList(this.b.values()), false, 7);
-        m mVar2 = new m();
-        this.e.submit(new l(11, mVar2, lVar));
-        mVar2.b(new l(8, mVar2, mVar), this.d);
+    public final void h(ea9 ea9Var) {
+        rld rldVar = new rld((Object) this, (Object) new ArrayList(this.b.values()), false, (byte) 9);
+        ea9 ea9Var2 = new ea9();
+        this.e.submit(new tq4((Object) ea9Var2, (Object) rldVar, (byte) 14));
+        ea9Var2.b(new tq4((Object) ea9Var2, (Object) ea9Var, (byte) 12), this.d);
     }
 }

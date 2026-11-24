@@ -1,56 +1,46 @@
 package com.google.android.gms.tasks;
 
 import android.app.Activity;
-import com.google.android.gms.common.api.internal.k;
-import com.google.android.gms.common.api.internal.l;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzv extends k {
+final class zzv extends y06 {
     private final List zza;
 
-    private zzv(l lVar) {
-        super(lVar);
+    private zzv(c16 c16Var) {
+        super(c16Var);
         this.zza = new ArrayList();
         this.mLifecycleFragment.a("TaskOnStopCallback", this);
     }
 
     public static zzv zza(Activity activity) {
         zzv zzvVar;
-        l fragment = k.getFragment(activity);
+        c16 fragment = y06.getFragment(activity);
         synchronized (fragment) {
-            try {
-                zzvVar = (zzv) fragment.b(zzv.class, "TaskOnStopCallback");
-                if (zzvVar == null) {
-                    zzvVar = new zzv(fragment);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzvVar = (zzv) fragment.b(zzv.class, "TaskOnStopCallback");
+            if (zzvVar == null) {
+                zzvVar = new zzv(fragment);
             }
         }
         return zzvVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.k
+    @Override // y06
     public final void onStop() {
         List list = this.zza;
         synchronized (list) {
-            try {
-                Iterator it = list.iterator();
-                while (it.hasNext()) {
-                    zzq zzqVar = (zzq) ((WeakReference) it.next()).get();
-                    if (zzqVar != null) {
-                        zzqVar.zzb();
-                    }
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                zzq zzqVar = (zzq) ((WeakReference) it.next()).get();
+                if (zzqVar != null) {
+                    zzqVar.zzb();
                 }
-                list.clear();
-            } catch (Throwable th2) {
-                throw th2;
             }
+            list.clear();
         }
     }
 

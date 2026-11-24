@@ -1,35 +1,39 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
+import j$.util.Spliterator;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public final class g0 extends i0 implements i5 {
-    public static final d0 c;
-    public static final d0 d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class g0 implements h8 {
+    public final int a;
+    public final Object b;
+    public final Predicate c;
+    public final Supplier d;
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    public g0(boolean z, c7 c7Var, Object obj, Predicate predicate, Supplier supplier) {
+        this.a = b7.u | (z ? 0 : b7.r);
+        this.b = obj;
+        this.c = predicate;
+        this.d = supplier;
     }
 
-    @Override // j$.util.stream.i0, j$.util.stream.j5
-    public final void accept(long j3) {
-        x(Long.valueOf(j3));
+    @Override // j$.util.stream.h8
+    public final Object a(a aVar, Spliterator spliterator) {
+        i8 i8Var = (i8) this.d.get();
+        aVar.Q(spliterator, i8Var);
+        Object obj = i8Var.get();
+        return obj != null ? obj : this.b;
     }
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        if (this.a) {
-            return new j$.util.d0(((Long) this.b).longValue());
-        }
-        return null;
+    @Override // j$.util.stream.h8
+    public final Object b(a aVar, Spliterator spliterator) {
+        return new m0(this, b7.ORDERED.n(aVar.f), aVar, spliterator).invoke();
     }
 
-    static {
-        w6 w6Var = w6.LONG_VALUE;
-        n nVar = new n(14);
-        n nVar2 = new n(15);
-        j$.util.d0 d0Var = j$.util.d0.c;
-        c = new d0(true, w6Var, d0Var, nVar, nVar2);
-        d = new d0(false, w6Var, d0Var, new n(14), new n(15));
+    @Override // j$.util.stream.h8
+    public final int c() {
+        return this.a;
     }
 }

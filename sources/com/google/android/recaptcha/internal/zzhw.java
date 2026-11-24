@@ -1,15 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzhw extends j implements p {
+final class zzhw extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzib zzc;
@@ -18,41 +11,41 @@ final class zzhw extends j implements p {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzhw(zzib zzibVar, String str, String str2, c cVar) {
-        super(2, cVar);
+    public zzhw(zzib zzibVar, String str, String str2, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzibVar;
         this.zzd = str;
         this.zze = str2;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzhw zzhwVar = new zzhw(this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzhw zzhwVar = new zzhw(this.zzc, this.zzd, this.zze, fw2Var);
         zzhwVar.zzf = obj;
         return zzhwVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhw) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzhw) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0087, code lost:
     
-        if (r11 != r0) goto L27;
+        if (r11 != r7) goto L27;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:15:0x00e6 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00d5  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x00ba  */
-    /* JADX WARN: Type inference failed for: r1v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v1 */
-    /* JADX WARN: Type inference failed for: r1v10 */
-    /* JADX WARN: Type inference failed for: r1v13 */
-    /* JADX WARN: Type inference failed for: r1v2, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r1v25 */
-    /* JADX WARN: Type inference failed for: r1v26 */
-    @Override // kd.a
+    /* JADX WARN: Type inference failed for: r0v0, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v1 */
+    /* JADX WARN: Type inference failed for: r0v10 */
+    /* JADX WARN: Type inference failed for: r0v13 */
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v25 */
+    /* JADX WARN: Type inference failed for: r0v26 */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -64,10 +57,10 @@ final class zzhw extends j implements p {
         String str;
         zzhk zzhkVar4;
         zzhk zzhkVar5;
-        a aVar = a.a;
-        ?? r12 = this.zzb;
-        if (r12 == 0) {
-            z.b(obj);
+        ?? r0 = this.zzb;
+        bx2 bx2Var = bx2.a;
+        if (r0 == 0) {
+            qse.b(obj);
             zzhk zzhkVar6 = (zzhk) this.zzf;
             zzib zzibVar = this.zzc;
             String str2 = this.zzd;
@@ -75,28 +68,28 @@ final class zzhw extends j implements p {
             this.zza = zzhkVar6;
             this.zzb = 1;
             obj = new zzhf(25, new zzhx(zzibVar, str2, null), null);
-            if (obj != aVar) {
+            if (obj != bx2Var) {
                 zzhkVar4 = zzhkVar6;
                 zzhkVar5 = zzhkVar6;
             }
         }
-        if (r12 != 1) {
-            if (r12 == 2) {
+        if (r0 != 1) {
+            if (r0 == 2) {
                 zzhk zzhkVar7 = (zzhk) this.zzf;
-                z.b(obj);
-                r12 = zzhkVar7;
+                qse.b(obj);
+                r0 = zzhkVar7;
                 return (String) obj;
             }
-            if (r12 == 3) {
+            if (r0 == 3) {
                 zzhk zzhkVar8 = (zzhk) this.zza;
                 zzhkVar = (zzhk) this.zzf;
-                z.b(obj);
+                qse.b(obj);
                 zzhkVar2 = zzhkVar8;
                 this.zzf = zzhkVar;
                 this.zza = null;
                 this.zzb = 4;
                 obj = ((zzhf) obj).zza(zzhkVar2, this);
-                if (obj != aVar) {
+                if (obj != bx2Var) {
                     zzhkVar3 = zzhkVar;
                     zzib zzibVar2 = this.zzc;
                     String str3 = this.zzd;
@@ -105,26 +98,26 @@ final class zzhw extends j implements p {
                     this.zza = zzhkVar3;
                     this.zzb = 5;
                     zzhfVar = new zzhf(24, new zzhy(zzibVar2, str3, str4, null), null);
-                    if (zzhfVar != aVar) {
+                    if (zzhfVar != bx2Var) {
                     }
                 }
             }
-            if (r12 != 4) {
-                if (r12 != 5) {
+            if (r0 != 4) {
+                if (r0 != 5) {
                     String str5 = (String) this.zzf;
-                    z.b(obj);
+                    qse.b(obj);
                     return str5;
                 }
                 zzhkVar3 = (zzhk) this.zza;
                 str = (String) this.zzf;
-                z.b(obj);
+                qse.b(obj);
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
-                return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar ? str : aVar;
+                return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == bx2Var ? str : bx2Var;
             }
             zzhkVar3 = (zzhk) this.zzf;
-            z.b(obj);
+            qse.b(obj);
             zzib zzibVar22 = this.zzc;
             String str32 = this.zzd;
             String str42 = (String) obj;
@@ -132,39 +125,39 @@ final class zzhw extends j implements p {
             this.zza = zzhkVar3;
             this.zzb = 5;
             zzhfVar = new zzhf(24, new zzhy(zzibVar22, str32, str42, null), null);
-            if (zzhfVar != aVar) {
+            if (zzhfVar != bx2Var) {
                 str = str42;
                 obj = zzhfVar;
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
-                if (zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar) {
+                if (zzhj.zzb(zzhkVar3, (zzhf) obj, this) == bx2Var) {
                 }
             }
         }
         zzhk zzhkVar9 = (zzhk) this.zza;
         zzhk zzhkVar10 = (zzhk) this.zzf;
         try {
-            z.b(obj);
+            qse.b(obj);
             zzhkVar4 = zzhkVar9;
             zzhkVar5 = zzhkVar10;
         } catch (Exception unused) {
-            r12 = zzhkVar10;
+            r0 = zzhkVar10;
             zzib zzibVar3 = this.zzc;
             zzib.zza(zzibVar3).zzb();
             String str6 = this.zze;
-            this.zzf = r12;
-            this.zza = r12;
+            this.zzf = r0;
+            this.zza = r0;
             this.zzb = 3;
             obj = new zzhf(23, new zzhu(zzibVar3, str6, null), null);
-            if (obj != aVar) {
-                zzhkVar = r12;
-                zzhkVar2 = r12;
+            if (obj != bx2Var) {
+                zzhkVar = r0;
+                zzhkVar2 = r0;
                 this.zzf = zzhkVar;
                 this.zza = null;
                 this.zzb = 4;
                 obj = ((zzhf) obj).zza(zzhkVar2, this);
-                if (obj != aVar) {
+                if (obj != bx2Var) {
                 }
             }
         }
@@ -172,6 +165,6 @@ final class zzhw extends j implements p {
         this.zza = null;
         this.zzb = 2;
         obj = ((zzhf) obj).zza(zzhkVar4, this);
-        r12 = zzhkVar5;
+        r0 = zzhkVar5;
     }
 }

@@ -2,12 +2,32 @@ package j$.util;
 
 import java.util.Map;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class q implements Map.Entry {
     public final Map.Entry a;
 
     public q(Map.Entry entry) {
         this.a = (Map.Entry) Objects.requireNonNull(entry);
+    }
+
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = this.a.getKey();
+                Object key2 = entry.getKey();
+                if (key == null ? key2 == null : key.equals(key2)) {
+                    Object value = this.a.getValue();
+                    Object value2 = entry.getValue();
+                    if (value == null ? value2 == null : value.equals(value2)) {
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
     @Override // java.util.Map.Entry
@@ -21,44 +41,13 @@ public final class q implements Map.Entry {
     }
 
     @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map.Entry
     public final int hashCode() {
         return this.a.hashCode();
     }
 
     @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        boolean equals;
-        boolean equals2;
-        if (this != obj) {
-            if (obj instanceof Map.Entry) {
-                Map.Entry entry = (Map.Entry) obj;
-                Object key = this.a.getKey();
-                Object key2 = entry.getKey();
-                if (key == null) {
-                    equals = key2 == null;
-                } else {
-                    equals = key.equals(key2);
-                }
-                if (equals) {
-                    Object value = this.a.getValue();
-                    Object value2 = entry.getValue();
-                    if (value == null) {
-                        equals2 = value2 == null;
-                    } else {
-                        equals2 = value.equals(value2);
-                    }
-                    if (equals2) {
-                    }
-                }
-            }
-            return false;
-        }
-        return true;
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
     public final String toString() {

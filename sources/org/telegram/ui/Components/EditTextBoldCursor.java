@@ -42,9 +42,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public class EditTextBoldCursor extends pt {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public class EditTextBoldCursor extends lt3 {
     public static Field E1;
     public static Field F1;
     public static Field G1;
@@ -81,19 +81,19 @@ public class EditTextBoldCursor extends pt {
     public boolean V0;
     public AnimatorSet W0;
     public float X0;
-    public org.telegram.ui.ActionBar.l4 Y0;
-    public org.telegram.ui.ActionBar.x3 Z0;
-    public fl a1;
+    public gk4 Y0;
+    public yi4 Z0;
+    public qr1 a1;
     public Object b0;
     public View b1;
     public final GradientDrawable c0;
     public View c1;
-    public tw0 d0;
+    public jab d0;
     public int d1;
     public float e0;
     public boolean e1;
-    public final a6 f0;
-    public final ft f1;
+    public final jm f0;
+    public final ys3 f1;
     public final Paint g0;
     public final ArrayList g1;
     public final Paint h0;
@@ -119,12 +119,12 @@ public class EditTextBoldCursor extends pt {
     public boolean r0;
     public Rect r1;
     public boolean s0;
-    public dh.c s1;
-    public bi.b t0;
+    public kl0 s1;
+    public f t0;
     public Drawable t1;
-    public et u0;
+    public xs3 u0;
     public Drawable u1;
-    public et v0;
+    public xs3 v0;
     public Drawable v1;
     public CharSequence w0;
     public PorterDuffColorFilter w1;
@@ -135,9 +135,11 @@ public class EditTextBoldCursor extends pt {
     public int z0;
     public boolean z1;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EditTextBoldCursor(Context context) {
         super(context, null, 0, R.style.EditTextNoBackgroundStyle);
         String str;
+        byte b = 0;
         ArrayList arrayList = new ArrayList();
         this.a = arrayList;
         this.b = new Stack();
@@ -146,17 +148,19 @@ public class EditTextBoldCursor extends pt {
         this.n = new Path();
         this.H = true;
         this.I = null;
-        this.K = new i(this, 1);
+        this.K = new l(this, (byte) 1);
         this.L = new Rect();
-        if (pt.a0 == null) {
+        Boolean bool = lt3.a0;
+        if (bool == null) {
             String str2 = Build.MANUFACTURER;
-            pt.a0 = Boolean.valueOf((str2 == null || !(str2.toLowerCase().contains("honor") || str2.toLowerCase().contains("huawei") || str2.toLowerCase().contains("alps") || str2.toLowerCase().contains("vivo") || str2.toLowerCase().contains("oppo") || str2.toLowerCase().contains("oneplus") || str2.toLowerCase().contains("realme"))) && ((str = Build.MODEL) == null || !str.toLowerCase().contains("mediapad")));
+            bool = Boolean.valueOf((str2 == null || !(str2.toLowerCase().contains("honor") || str2.toLowerCase().contains("huawei") || str2.toLowerCase().contains("alps") || str2.toLowerCase().contains("vivo") || str2.toLowerCase().contains("oppo") || str2.toLowerCase().contains("oneplus") || str2.toLowerCase().contains("realme"))) && ((str = Build.MODEL) == null || !str.toLowerCase().contains("mediapad")));
+            lt3.a0 = bool;
         }
-        this.Q = pt.a0.booleanValue();
+        this.Q = bool.booleanValue();
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
-            this.f = new gf.c(this, arrayList, new ot(this));
+            this.f = new mk0(this, arrayList, new kt3(this, b));
         }
-        this.f0 = new a6(this, 1);
+        this.f0 = new jm(this, (byte) 1);
         this.o0 = new Rect();
         this.A0 = true;
         this.B0 = 1.0f;
@@ -174,22 +178,22 @@ public class EditTextBoldCursor extends pt {
         this.j1 = new Rect();
         this.k1 = -1;
         this.o1 = Float.NaN;
-        int i7 = Build.VERSION.SDK_INT;
-        if (i7 >= 26) {
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 26) {
             setImportantForAutofill(2);
         }
         this.g0 = new Paint();
         this.h0 = new Paint();
         TextPaint textPaint = new TextPaint(1);
         this.i0 = textPaint;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
-        if (i7 >= 26) {
+        textPaint.setTextSize(gl.L(11.0f));
+        if (i >= 26) {
             setImportantForAutofill(2);
         }
-        if (i7 >= 29) {
-            ft ftVar = new ft(this);
-            this.f1 = ftVar;
-            ftVar.setShape(new RectShape());
+        if (i >= 29) {
+            ys3 ys3Var = new ys3(this);
+            this.f1 = ys3Var;
+            ys3Var.setShape(new RectShape());
             this.c0 = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-11230757, -11230757});
             setTextCursorDrawable(this.f1);
         }
@@ -225,8 +229,8 @@ public class EditTextBoldCursor extends pt {
                 I1 = declaredMethod2;
                 declaredMethod2.setAccessible(true);
             }
-        } catch (Throwable th2) {
-            org.telegram.messenger.a8.g(th2, true);
+        } catch (Throwable th) {
+            fa4.g(th, true);
         }
         if (this.f1 == null) {
             try {
@@ -251,7 +255,7 @@ public class EditTextBoldCursor extends pt {
             } catch (Throwable unused5) {
             }
         }
-        this.j0 = org.telegram.messenger.g0.L(24.0f);
+        this.j0 = gl.L(24.0f);
     }
 
     @Override // android.widget.TextView
@@ -286,25 +290,25 @@ public class EditTextBoldCursor extends pt {
 
     @Override // android.widget.TextView
     public int getExtendedPaddingBottom() {
-        int i7 = this.l0;
-        if (i7 == 0) {
+        int i = this.l0;
+        if (i == 0) {
             return super.getExtendedPaddingBottom();
         }
-        this.l0 = i7 - 1;
-        int i10 = this.m0;
-        if (i10 != Integer.MAX_VALUE) {
-            return -i10;
+        this.l0 = i - 1;
+        int i2 = this.m0;
+        if (i2 != Integer.MAX_VALUE) {
+            return -i2;
         }
         return 0;
     }
 
     @Override // android.widget.TextView
     public int getExtendedPaddingTop() {
-        int i7 = this.k0;
-        if (i7 == 0) {
+        int i = this.k0;
+        if (i == 0) {
             return super.getExtendedPaddingTop();
         }
-        this.k0 = i7 - 1;
+        this.k0 = i - 1;
         return 0;
     }
 
@@ -345,7 +349,7 @@ public class EditTextBoldCursor extends pt {
         return this.y1;
     }
 
-    public org.telegram.ui.ActionBar.i6 getResourcesProvider() {
+    public wjb getResourcesProvider() {
         return null;
     }
 
@@ -354,69 +358,78 @@ public class EditTextBoldCursor extends pt {
         if (this.f1 != null) {
             return super.getTextCursorDrawable();
         }
-        ft ftVar = new ft(this, new RectShape());
-        ftVar.getPaint().setColor(0);
-        return ftVar;
+        ys3 ys3Var = new ys3(this, new RectShape());
+        ys3Var.getPaint().setColor(0);
+        return ys3Var;
     }
 
     @Override // android.widget.TextView
     public Drawable getTextSelectHandle() {
-        if (this.v1 == null) {
-            this.v1 = z(super.getTextSelectHandle(), true);
+        Drawable drawable = this.v1;
+        if (drawable != null) {
+            return drawable;
         }
-        return this.v1;
+        Drawable z = z(super.getTextSelectHandle(), true);
+        this.v1 = z;
+        return z;
     }
 
     @Override // android.widget.TextView
     public Drawable getTextSelectHandleLeft() {
-        if (this.t1 == null) {
-            this.t1 = z(super.getTextSelectHandleLeft(), true);
+        Drawable drawable = this.t1;
+        if (drawable != null) {
+            return drawable;
         }
-        return this.t1;
+        Drawable z = z(super.getTextSelectHandleLeft(), true);
+        this.t1 = z;
+        return z;
     }
 
     @Override // android.widget.TextView
     public Drawable getTextSelectHandleRight() {
-        if (this.u1 == null) {
-            this.u1 = z(super.getTextSelectHandleRight(), true);
+        Drawable drawable = this.u1;
+        if (drawable != null) {
+            return drawable;
         }
-        return this.u1;
+        Drawable z = z(super.getTextSelectHandleRight(), true);
+        this.u1 = z;
+        return z;
     }
 
-    public final void l(boolean z10) {
-        boolean z11 = this.T0 && (getText().length() > 0 || (this.U0 && isFocused()));
-        if (this.V0 != z11) {
+    public final void l(boolean z) {
+        boolean z2 = this.T0 && (getText().length() > 0 || (this.U0 && isFocused()));
+        if (this.V0 != z2) {
             AnimatorSet animatorSet = this.W0;
             if (animatorSet != null) {
                 animatorSet.cancel();
                 this.W0 = null;
             }
-            this.V0 = z11;
-            if (z10) {
+            this.V0 = z2;
+            if (z) {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.W0 = animatorSet2;
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "headerAnimationProgress", z11 ? 1.0f : 0.0f));
+                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "headerAnimationProgress", z2 ? 1.0f : 0.0f));
                 this.W0.setDuration(200L);
-                this.W0.setInterpolator(kr.h);
+                this.W0.setInterpolator(s33.h);
                 this.W0.start();
             } else {
-                this.X0 = z11 ? 1.0f : 0.0f;
+                this.X0 = z2 ? 1.0f : 0.0f;
             }
             invalidate();
         }
     }
 
     public final void m() {
-        org.telegram.ui.ActionBar.l4 l4Var = this.Y0;
-        if (l4Var != null) {
-            l4Var.a.removeOnLayoutChangeListener(l4Var.l);
-            org.telegram.ui.ActionBar.j4 j4Var = l4Var.b;
-            if (!j4Var.F) {
-                j4Var.G = false;
-                j4Var.F = true;
-                j4Var.x.cancel();
-                j4Var.w.start();
-                j4Var.D.setEmpty();
+        gk4 gk4Var = this.Y0;
+        if (gk4Var != null) {
+            gk4Var.a.removeOnLayoutChangeListener(gk4Var.l);
+            ek4 ek4Var = gk4Var.b;
+            if (!ek4Var.F) {
+                ek4Var.G = false;
+                ek4Var.F = true;
+                ek4Var.x.cancel();
+                ek4Var.w.start();
+                ek4Var.D.setEmpty();
             }
             this.Y0 = null;
         }
@@ -430,135 +443,139 @@ public class EditTextBoldCursor extends pt {
         gradientDrawable.draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
+    @Override // lt3, android.widget.TextView, android.view.View
     public void onAttachedToWindow() {
         try {
             super.onAttachedToWindow();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
         this.c1 = getRootView();
         if (Build.VERSION.SDK_INT < 29) {
-            bg.k.d().b(this.f0, 2);
+            rg2.d().b(this.f0, 2);
         }
     }
 
-    @Override // org.telegram.ui.Components.pt, android.view.View
+    @Override // lt3, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.c1 = null;
         if (Build.VERSION.SDK_INT < 29) {
-            bg.k.d().g(this.f0);
+            rg2.d().f(this.f0);
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(22:0|1|(4:147|(5:151|(1:266)|155|(2:157|(1:159))(2:263|(1:265))|160)|161|(2:182|(31:188|(1:190)(1:262)|191|(1:261)(1:195)|196|(3:198|(1:(1:259))(1:202)|203)(1:260)|204|(1:208)|209|(2:254|(1:256)(1:257))(4:213|(8:215|(1:217)(1:252)|218|(1:220)|221|(5:223|(1:225)(1:250)|226|(1:228)|229)(1:251)|230|(8:232|(1:234)(1:248)|235|(1:237)(1:247)|238|(1:240)|241|242))(1:253)|249|242)|243|(1:245)|246|6|(1:8)|9|10|11|(1:13)(1:145)|14|15|16|17|18|(2:22|23)|26|(5:110|111|(1:140)(2:115|(1:139)(1:119))|120|(2:123|(6:125|(4:127|128|(1:132)|133)|135|128|(2:130|132)|133)(6:136|(4:138|128|(0)|133)|135|128|(0)|133)))(2:28|(3:32|33|(6:35|(4:37|38|(1:42)|43)|45|38|(2:40|42)|43)(6:46|(4:48|38|(0)|43)|45|38|(0)|43)))|50|(17:54|(1:56)(2:100|(1:102)(1:103))|57|(1:59)|60|(4:93|(1:95)(1:99)|96|(1:98))|69|(1:71)(1:92)|72|(1:74)(1:91)|75|76|(1:78)|79|(1:81)|82|(4:84|(1:86)|(1:88)|89)(1:90))|104|(2:106|107)(1:109)))(6:169|(2:171|(1:173)(1:180))(1:181)|174|(1:176)|177|(1:179)))|5|6|(0)|9|10|11|(0)(0)|14|15|16|17|18|(3:20|22|23)|26|(0)(0)|50|(22:52|54|(0)(0)|57|(0)|60|(2:62|64)|93|(0)(0)|96|(0)|69|(0)(0)|72|(0)(0)|75|76|(0)|79|(0)|82|(0)(0))|104|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x03a6, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(22:0|1|(4:144|(5:148|(1:161)|152|(2:154|(1:156))(2:158|(1:160))|157)|162|(2:183|(31:189|(1:191)(1:259)|192|(1:258)(1:196)|197|(3:199|(1:(1:256))(1:203)|204)(1:257)|205|(1:209)|210|(2:251|(1:253)(1:254))(4:214|(8:216|(1:218)|219|(1:221)|222|(5:224|(1:226)|227|(1:229)|230)(1:249)|231|(8:233|(1:235)|236|(1:238)|239|(1:241)|242|243))(1:250)|248|243)|244|(1:246)|247|6|(1:8)|9|10|11|(1:13)(1:142)|14|15|16|17|18|(2:22|23)|26|(5:107|108|(1:137)(2:112|(1:136)(1:116))|117|(2:120|(6:122|(4:124|125|(1:129)|130)|132|125|(2:127|129)|130)(6:133|(4:135|125|(0)|130)|132|125|(0)|130)))(2:28|(3:32|33|(6:35|(4:37|38|(1:42)|43)|45|38|(2:40|42)|43)(6:46|(4:48|38|(0)|43)|45|38|(0)|43)))|50|(21:54|(1:56)(2:97|(19:99|(1:59)|60|(2:62|(12:88|66|(1:68)(1:87)|69|(1:71)(1:86)|72|73|(1:75)|76|(1:78)|79|(3:81|(1:83)|84)(1:85))(12:64|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0)))|90|(1:92)(1:96)|93|(1:95)|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0))(1:100))|57|(0)|60|(0)|90|(0)(0)|93|(0)|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0))|101|(2:103|104)(1:106)))(6:170|(2:172|(1:174)(1:181))(1:182)|175|(1:177)|178|(1:180)))|5|6|(0)|9|10|11|(0)(0)|14|15|16|17|18|(3:20|22|23)|26|(0)(0)|50|(22:52|54|(0)(0)|57|(0)|60|(0)|90|(0)(0)|93|(0)|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0))|101|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x0394, code lost:
     
-        r2 = org.telegram.messenger.s2.a;
+        r2 = w01.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x0391, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x037e, code lost:
     
-        r4 = org.telegram.messenger.s2.a;
+        r4 = w01.a;
      */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x055e  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0690  */
-    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x03c7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x046c A[Catch: all -> 0x0490, TryCatch #0 {all -> 0x0490, blocks: (B:111:0x03c7, B:113:0x03cb, B:115:0x03cf, B:117:0x03e1, B:120:0x03ef, B:123:0x03f5, B:125:0x03fc, B:127:0x0404, B:128:0x042a, B:130:0x046c, B:132:0x046f, B:133:0x0474, B:136:0x0417, B:138:0x041f, B:140:0x03eb), top: B:110:0x03c7 }] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x037a A[Catch: Exception -> 0x0391, TryCatch #4 {Exception -> 0x0391, blocks: (B:11:0x0376, B:13:0x037a, B:145:0x038a), top: B:10:0x0376 }] */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x038a A[Catch: Exception -> 0x0391, TRY_LEAVE, TryCatch #4 {Exception -> 0x0391, blocks: (B:11:0x0376, B:13:0x037a, B:145:0x038a), top: B:10:0x0376 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0494  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0513 A[Catch: all -> 0x0538, TryCatch #1 {all -> 0x0538, blocks: (B:33:0x049c, B:35:0x04a3, B:37:0x04ab, B:38:0x04d1, B:40:0x0513, B:42:0x0516, B:43:0x051b, B:46:0x04be, B:48:0x04c6), top: B:32:0x049c }] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0552  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0572  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x05be  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x05db  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0605  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x061d  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0640  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0341  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x068a  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x05e6  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x05c0  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x05a2  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x05b5  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x05a4  */
-    @Override // org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:103:0x067a  */
+    /* JADX WARN: Removed duplicated region for block: B:106:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x03b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x045a A[Catch: all -> 0x047e, TryCatch #4 {all -> 0x047e, blocks: (B:108:0x03b5, B:110:0x03b9, B:112:0x03bd, B:114:0x03cf, B:117:0x03dd, B:120:0x03e3, B:122:0x03ea, B:124:0x03f2, B:125:0x0418, B:127:0x045a, B:129:0x045d, B:130:0x0462, B:133:0x0405, B:135:0x040d, B:137:0x03d9), top: B:107:0x03b5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0367 A[Catch: Exception -> 0x037e, TryCatch #0 {Exception -> 0x037e, blocks: (B:11:0x0363, B:13:0x0367, B:142:0x0377), top: B:10:0x0363 }] */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0377 A[Catch: Exception -> 0x037e, TRY_LEAVE, TryCatch #0 {Exception -> 0x037e, blocks: (B:11:0x0363, B:13:0x0367, B:142:0x0377), top: B:10:0x0363 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0482  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0501 A[Catch: all -> 0x0526, TryCatch #1 {all -> 0x0526, blocks: (B:33:0x048a, B:35:0x0491, B:37:0x0499, B:38:0x04bf, B:40:0x0501, B:42:0x0504, B:43:0x0509, B:46:0x04ac, B:48:0x04b4), top: B:32:0x048a }] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0540  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0561  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0579  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x05aa  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x05c7  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x05f1  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x062c  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0674  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x05d2  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x05ac  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x032e  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x058e  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x05a1  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0590  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x054d  */
+    @Override // lt3, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onDraw(Canvas canvas) {
-        float f10;
-        float f11;
+        float f;
+        float f2;
         Field field;
-        ft ftVar;
-        boolean z10;
+        ys3 ys3Var;
+        boolean z;
         int totalPaddingTop;
-        int i7;
-        float f12;
+        int i;
+        float f3;
         Object obj;
-        boolean z11;
+        boolean z2;
         boolean isEmpty;
+        boolean z3;
         float elapsedRealtime;
-        int i10;
-        float f13;
-        boolean z12;
+        int i2;
+        float f4;
         int totalPaddingTop2;
-        int i11;
-        float f14;
-        int i12;
+        int i3;
+        float f5;
+        int i4;
         Field field2;
         Canvas canvas2 = canvas;
-        int i13 = 1;
         if (length() == 0 || this.T0) {
-            boolean z13 = this.A0;
-            if ((z13 && this.B0 != 1.0f) || (!z13 && this.B0 != 0.0f)) {
+            boolean z4 = this.A0;
+            float f6 = this.B0;
+            if (!z4 ? f6 != 0.0f : f6 != 1.0f) {
                 long currentTimeMillis = System.currentTimeMillis();
-                long j3 = currentTimeMillis - this.C0;
-                if (j3 < 0 || j3 > 17) {
-                    j3 = 17;
+                long j = currentTimeMillis - this.C0;
+                if (j < 0 || j > 17) {
+                    j = 17;
                 }
                 this.C0 = currentTimeMillis;
-                if (this.A0) {
-                    float f15 = (j3 / 150.0f) + this.B0;
-                    this.B0 = f15;
-                    if (f15 > 1.0f) {
+                boolean z5 = this.A0;
+                float f7 = this.B0;
+                if (z5) {
+                    float f8 = (j / 150.0f) + f7;
+                    this.B0 = f8;
+                    if (f8 > 1.0f) {
                         this.B0 = 1.0f;
                     }
                 } else {
-                    float f16 = this.B0 - (j3 / 150.0f);
-                    this.B0 = f16;
-                    if (f16 < 0.0f) {
+                    float f9 = f7 - (j / 150.0f);
+                    this.B0 = f9;
+                    if (f9 < 0.0f) {
                         this.B0 = 0.0f;
                     }
                 }
                 invalidate();
             }
-            et etVar = this.u0;
-            if (etVar != null && !TextUtils.isEmpty(etVar.i) && (this.A0 || this.B0 != 0.0f)) {
-                if (this.v0 == null) {
-                    et etVar2 = this.u0;
-                    etVar2.O = 0.0f;
-                    etVar2.invalidateSelf();
-                } else if (this.v0.c() + this.u0.c() < getMeasuredWidth()) {
+            xs3 xs3Var = this.u0;
+            if (xs3Var != null && !TextUtils.isEmpty(xs3Var.i) && (this.A0 || this.B0 != 0.0f)) {
+                xs3 xs3Var2 = this.v0;
+                xs3 xs3Var3 = this.u0;
+                if (xs3Var2 == null) {
+                    xs3Var3.O = 0.0f;
+                    xs3Var3.invalidateSelf();
+                } else if (this.v0.c() + xs3Var3.c() < getMeasuredWidth()) {
                     canvas2.save();
                     canvas2.translate(this.u0.c() + (this.v0.c() - getMeasuredWidth()), 0.0f);
                     this.v0.C = (int) (Color.alpha(this.y0) * this.B0);
                     this.v0.draw(canvas2);
                     canvas2.restore();
-                    et etVar3 = this.u0;
-                    etVar3.O = 0.0f;
-                    etVar3.invalidateSelf();
+                    xs3 xs3Var4 = this.u0;
+                    xs3Var4.O = 0.0f;
+                    xs3Var4.invalidateSelf();
                 } else {
                     canvas2.save();
                     canvas2.translate(this.e0, 0.0f);
                     this.v0.C = (int) (Color.alpha(this.y0) * this.B0);
                     this.v0.draw(canvas2);
                     canvas2.restore();
-                    et etVar4 = this.u0;
-                    etVar4.O = (this.v0.c() + org.telegram.messenger.g0.L(2.0f)) - this.e0;
-                    etVar4.invalidateSelf();
+                    xs3 xs3Var5 = this.u0;
+                    xs3Var5.O = (this.v0.c() + gl.L(2.0f)) - this.e0;
+                    xs3Var5.invalidateSelf();
                 }
                 this.u0.C = (int) (Color.alpha(this.y0) * this.B0);
                 Shader shader = this.u0.a.getShader();
@@ -575,27 +592,27 @@ public class EditTextBoldCursor extends pt {
                 canvas2.save();
                 float lineLeft = this.p0.getLineLeft(0);
                 float lineWidth = this.p0.getLineWidth(0);
-                int i14 = lineLeft != 0.0f ? (int) (0 - lineLeft) : 0;
-                if (this.G0 && org.telegram.messenger.gd.a0) {
-                    float scrollX = getScrollX() + i14 + (getMeasuredWidth() - lineWidth);
+                int i5 = lineLeft != 0.0f ? (int) (0.0f - lineLeft) : 0;
+                if (this.G0 && k96.a0) {
+                    float scrollX = getScrollX() + i5 + (getMeasuredWidth() - lineWidth);
                     this.q0 = scrollX;
-                    canvas2.translate(scrollX, (this.M0 - this.p0.getHeight()) - org.telegram.messenger.g0.L(7.0f));
+                    canvas2.translate(scrollX, (this.M0 - this.p0.getHeight()) - gl.L(7.0f));
                 } else {
-                    float scrollX2 = getScrollX() + i14 + this.l1;
+                    float scrollX2 = getScrollX() + i5 + this.l1;
                     this.q0 = scrollX2;
-                    canvas2.translate(scrollX2, (this.M0 - this.p0.getHeight()) - org.telegram.messenger.g0.M(7.0f));
+                    canvas2.translate(scrollX2, (this.M0 - this.p0.getHeight()) - gl.M(7.0f));
                 }
                 if (this.T0) {
-                    float f17 = 1.0f - (this.X0 * 0.3f);
-                    if (this.G0 && org.telegram.messenger.gd.a0) {
-                        float f18 = lineWidth + lineLeft;
-                        canvas2.translate(f18 - (f18 * f17), 0.0f);
+                    float f10 = 1.0f - (this.X0 * 0.3f);
+                    if (this.G0 && k96.a0) {
+                        float f11 = lineWidth + lineLeft;
+                        canvas2.translate(f11 - (f11 * f10), 0.0f);
                     } else if (lineLeft != 0.0f) {
-                        canvas2.translate((1.0f - f17) * lineLeft, 0.0f);
+                        canvas2.translate((1.0f - f10) * lineLeft, 0.0f);
                     }
-                    canvas2.scale(f17, f17);
-                    canvas2.translate(0.0f, (-org.telegram.messenger.g0.L(22.0f)) * this.X0);
-                    getPaint().setColor(i0.a.f(this.X0, this.y0, this.z0));
+                    canvas2.scale(f10, f10);
+                    canvas2.translate(0.0f, (-gl.L(22.0f)) * this.X0);
+                    getPaint().setColor(bm2.f(this.X0, this.y0, this.z0));
                 } else {
                     getPaint().setColor(this.y0);
                     getPaint().setAlpha((int) ((Color.alpha(this.y0) / 255.0f) * this.B0 * 255.0f));
@@ -604,66 +621,86 @@ public class EditTextBoldCursor extends pt {
                 if (this.m1 != null && !this.T0) {
                     getPaint().setShader(this.m1);
                 }
-                tw0 tw0Var = this.d0;
-                if (tw0Var == null || !tw0Var.e) {
-                    f10 = 2.0f;
-                    f11 = 150.0f;
-                    bi.b bVar = this.t0;
-                    if (bVar != null) {
-                        bVar.a(canvas2, new bt(i13, this, canvas2));
+                jab jabVar = this.d0;
+                if (jabVar == null || !jabVar.e) {
+                    f = 2.0f;
+                    f2 = 150.0f;
+                    f fVar = this.t0;
+                    if (fVar != null) {
+                        fVar.a(canvas2, new wc3(this, canvas2, (byte) 27));
                     } else {
                         this.p0.draw(canvas2);
                     }
                 } else {
                     canvas2.save();
                     canvas2.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    tw0 tw0Var2 = this.d0;
+                    jab jabVar2 = this.d0;
                     TextPaint paint = getPaint();
-                    EditTextBoldCursor editTextBoldCursor = tw0Var2.a;
-                    if (tw0Var2.e) {
-                        float f19 = tw0Var2.h * (tw0Var2.f ? tw0Var2.i : 1.0f - tw0Var2.i);
+                    EditTextBoldCursor editTextBoldCursor = jabVar2.a;
+                    if (jabVar2.e) {
+                        float f12 = jabVar2.h;
+                        boolean z6 = jabVar2.f;
+                        float f13 = jabVar2.i;
+                        if (!z6) {
+                            f13 = 1.0f - f13;
+                        }
+                        float f14 = f12 * f13;
                         int alpha = paint.getAlpha();
-                        if (tw0Var2.d != null) {
+                        if (jabVar2.d != null) {
                             canvas2.save();
-                            canvas2.translate(f19, 0.0f);
-                            tw0Var2.d.draw(canvas2);
+                            canvas2.translate(f14, 0.0f);
+                            jabVar2.d.draw(canvas2);
                             canvas2.restore();
                         }
-                        if (tw0Var2.b != null) {
-                            float f20 = tw0Var2.f ? 1.0f - tw0Var2.i : tw0Var2.i;
-                            canvas2.save();
-                            f10 = 2.0f;
-                            paint.setAlpha((int) (alpha * f20));
-                            canvas2.translate(f19, 0.0f);
-                            if (tw0Var2.g) {
-                                float f21 = (f20 * 0.1f) + 0.9f;
-                                canvas2.scale(f21, f21, f19, editTextBoldCursor.getMeasuredHeight() / 2.0f);
+                        if (jabVar2.b != null) {
+                            boolean z7 = jabVar2.f;
+                            f = 2.0f;
+                            float f15 = jabVar2.i;
+                            if (z7) {
+                                f15 = 1.0f - f15;
                             }
-                            tw0Var2.b.draw(canvas2);
+                            canvas2.save();
+                            paint.setAlpha((int) (alpha * f15));
+                            canvas2.translate(f14, 0.0f);
+                            if (jabVar2.g) {
+                                float f16 = (f15 * 0.1f) + 0.9f;
+                                canvas2.scale(f16, f16, f14, editTextBoldCursor.getMeasuredHeight() / 2.0f);
+                            }
+                            jabVar2.b.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                         } else {
-                            f10 = 2.0f;
+                            f = 2.0f;
                         }
-                        if (tw0Var2.c != null) {
-                            float f22 = tw0Var2.f ? tw0Var2.i : 1.0f - tw0Var2.i;
-                            canvas2.save();
-                            f11 = 150.0f;
-                            paint.setAlpha((int) (alpha * (tw0Var2.f ? tw0Var2.i : 1.0f - tw0Var2.i)));
-                            canvas2.translate(f19, 0.0f);
-                            if (tw0Var2.g) {
-                                float f23 = (f22 * 0.1f) + 0.9f;
-                                canvas2.scale(f23, f23, f19, editTextBoldCursor.getMeasuredHeight() / f10);
+                        if (jabVar2.c != null) {
+                            boolean z8 = jabVar2.f;
+                            float f17 = jabVar2.i;
+                            if (!z8) {
+                                f17 = 1.0f - f17;
                             }
-                            tw0Var2.c.draw(canvas2);
+                            canvas2.save();
+                            float f18 = alpha;
+                            f2 = 150.0f;
+                            boolean z9 = jabVar2.f;
+                            float f19 = jabVar2.i;
+                            if (!z9) {
+                                f19 = 1.0f - f19;
+                            }
+                            paint.setAlpha((int) (f18 * f19));
+                            canvas2.translate(f14, 0.0f);
+                            if (jabVar2.g) {
+                                float f20 = (f17 * 0.1f) + 0.9f;
+                                canvas2.scale(f20, f20, f14, editTextBoldCursor.getMeasuredHeight() / f);
+                            }
+                            jabVar2.c.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                             canvas2.restore();
                         }
                     } else {
-                        f10 = 2.0f;
+                        f = 2.0f;
                     }
-                    f11 = 150.0f;
+                    f2 = 150.0f;
                     canvas2.restore();
                 }
                 if (this.m1 != null) {
@@ -672,7 +709,7 @@ public class EditTextBoldCursor extends pt {
                 getPaint().setColor(color);
                 canvas2.restore();
                 if (this.z1) {
-                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.D1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.D1, getHeight(), org.telegram.messenger.ks.e4, 31);
+                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.D1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.D1, getHeight(), kk7.d4, 31);
                 }
                 int extendedPaddingTop = getExtendedPaddingTop();
                 this.m0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -691,30 +728,30 @@ public class EditTextBoldCursor extends pt {
                 super.onDraw(canvas);
                 this.e1 = false;
                 field = G1;
-                if (field != null && (i12 = this.m0) != Integer.MAX_VALUE) {
+                if (field != null && (i4 = this.m0) != Integer.MAX_VALUE) {
                     try {
-                        field.set(this, Integer.valueOf(i12));
+                        field.set(this, Integer.valueOf(i4));
                     } catch (Exception unused) {
-                        boolean z14 = org.telegram.messenger.s2.a;
+                        boolean z10 = w01.a;
                     }
                 }
                 canvas2.restore();
-                ftVar = this.f1;
+                ys3Var = this.f1;
                 GradientDrawable gradientDrawable = this.c0;
                 Rect rect = this.o0;
-                if (ftVar != null) {
+                if (ys3Var != null) {
                     try {
                         Field field3 = F1;
                         if (field3 == null || (obj = this.b0) == null) {
-                            z10 = this.H0;
+                            z = this.H0;
                             this.H0 = false;
                         } else {
-                            z10 = (SystemClock.uptimeMillis() - field3.getLong(obj)) % 1000 < 500 && isFocused();
+                            z = (SystemClock.uptimeMillis() - field3.getLong(obj)) % 1000 < 500 && isFocused();
                         }
-                        if (this.D0 && z10) {
+                        if (this.D0 && z) {
                             canvas2.save();
                             if (I1 != null) {
-                                if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                                if ((getGravity() & kk7.w1) != 48) {
                                     totalPaddingTop = ((Integer) I1.invoke(this, Boolean.TRUE)).intValue();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout = getLayout();
@@ -723,19 +760,19 @@ public class EditTextBoldCursor extends pt {
                                     y();
                                     Rect bounds = gradientDrawable.getBounds();
                                     rect.left = bounds.left;
-                                    rect.right = bounds.left + org.telegram.messenger.g0.L(this.F0);
-                                    i7 = bounds.bottom;
-                                    rect.bottom = i7;
+                                    rect.right = bounds.left + gl.L(this.F0);
+                                    i = bounds.bottom;
+                                    rect.bottom = i;
                                     rect.top = bounds.top;
-                                    f12 = this.n0;
-                                    if (f12 != 0.0f && lineForOffset < lineCount - 1) {
-                                        rect.bottom = (int) (i7 - f12);
+                                    f3 = this.n0;
+                                    if (f3 != 0.0f && lineForOffset < lineCount - 1) {
+                                        rect.bottom = (int) (i - f3);
                                     }
                                     int centerY = rect.centerY();
-                                    int i15 = this.j0;
-                                    int i16 = centerY - (i15 / 2);
-                                    rect.top = i16;
-                                    rect.bottom = i16 + i15;
+                                    int i6 = this.j0;
+                                    int i7 = centerY - (i6 / 2);
+                                    rect.top = i7;
+                                    rect.bottom = i7 + i6;
                                     gradientDrawable.setBounds(rect);
                                     x(canvas2, rect);
                                     n(canvas2, gradientDrawable);
@@ -749,25 +786,25 @@ public class EditTextBoldCursor extends pt {
                                 y();
                                 Rect bounds2 = gradientDrawable.getBounds();
                                 rect.left = bounds2.left;
-                                rect.right = bounds2.left + org.telegram.messenger.g0.L(this.F0);
-                                i7 = bounds2.bottom;
-                                rect.bottom = i7;
+                                rect.right = bounds2.left + gl.L(this.F0);
+                                i = bounds2.bottom;
+                                rect.bottom = i;
                                 rect.top = bounds2.top;
-                                f12 = this.n0;
-                                if (f12 != 0.0f) {
-                                    rect.bottom = (int) (i7 - f12);
+                                f3 = this.n0;
+                                if (f3 != 0.0f) {
+                                    rect.bottom = (int) (i - f3);
                                 }
                                 int centerY2 = rect.centerY();
-                                int i152 = this.j0;
-                                int i162 = centerY2 - (i152 / 2);
-                                rect.top = i162;
-                                rect.bottom = i162 + i152;
+                                int i62 = this.j0;
+                                int i72 = centerY2 - (i62 / 2);
+                                rect.top = i72;
+                                rect.bottom = i72 + i62;
                                 gradientDrawable.setBounds(rect);
                                 x(canvas2, rect);
                                 n(canvas2, gradientDrawable);
                                 canvas2.restore();
                             } else {
-                                if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                                if ((getGravity() & kk7.w1) != 48) {
                                     totalPaddingTop = getTotalPaddingTop() - getExtendedPaddingTop();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout22 = getLayout();
@@ -776,18 +813,18 @@ public class EditTextBoldCursor extends pt {
                                     y();
                                     Rect bounds22 = gradientDrawable.getBounds();
                                     rect.left = bounds22.left;
-                                    rect.right = bounds22.left + org.telegram.messenger.g0.L(this.F0);
-                                    i7 = bounds22.bottom;
-                                    rect.bottom = i7;
+                                    rect.right = bounds22.left + gl.L(this.F0);
+                                    i = bounds22.bottom;
+                                    rect.bottom = i;
                                     rect.top = bounds22.top;
-                                    f12 = this.n0;
-                                    if (f12 != 0.0f) {
+                                    f3 = this.n0;
+                                    if (f3 != 0.0f) {
                                     }
                                     int centerY22 = rect.centerY();
-                                    int i1522 = this.j0;
-                                    int i1622 = centerY22 - (i1522 / 2);
-                                    rect.top = i1622;
-                                    rect.bottom = i1622 + i1522;
+                                    int i622 = this.j0;
+                                    int i722 = centerY22 - (i622 / 2);
+                                    rect.top = i722;
+                                    rect.bottom = i722 + i622;
                                     gradientDrawable.setBounds(rect);
                                     x(canvas2, rect);
                                     n(canvas2, gradientDrawable);
@@ -801,18 +838,18 @@ public class EditTextBoldCursor extends pt {
                                 y();
                                 Rect bounds222 = gradientDrawable.getBounds();
                                 rect.left = bounds222.left;
-                                rect.right = bounds222.left + org.telegram.messenger.g0.L(this.F0);
-                                i7 = bounds222.bottom;
-                                rect.bottom = i7;
+                                rect.right = bounds222.left + gl.L(this.F0);
+                                i = bounds222.bottom;
+                                rect.bottom = i;
                                 rect.top = bounds222.top;
-                                f12 = this.n0;
-                                if (f12 != 0.0f) {
+                                f3 = this.n0;
+                                if (f3 != 0.0f) {
                                 }
                                 int centerY222 = rect.centerY();
-                                int i15222 = this.j0;
-                                int i16222 = centerY222 - (i15222 / 2);
-                                rect.top = i16222;
-                                rect.bottom = i16222 + i15222;
+                                int i6222 = this.j0;
+                                int i7222 = centerY222 - (i6222 / 2);
+                                rect.top = i7222;
+                                rect.bottom = i7222 + i6222;
                                 gradientDrawable.setBounds(rect);
                                 x(canvas2, rect);
                                 n(canvas2, gradientDrawable);
@@ -820,13 +857,13 @@ public class EditTextBoldCursor extends pt {
                             }
                         }
                     } catch (Throwable unused2) {
-                        boolean z15 = org.telegram.messenger.s2.a;
+                        boolean z11 = w01.a;
                     }
                 } else if (this.H0 && this.D0) {
                     try {
                         canvas2.save();
                         if (I1 != null) {
-                            if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                            if ((getGravity() & kk7.w1) != 48) {
                                 totalPaddingTop2 = ((Integer) I1.invoke(this, Boolean.TRUE)).intValue();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout3 = getLayout();
@@ -835,19 +872,19 @@ public class EditTextBoldCursor extends pt {
                                 y();
                                 Rect bounds3 = gradientDrawable.getBounds();
                                 rect.left = bounds3.left;
-                                rect.right = bounds3.left + org.telegram.messenger.g0.L(this.F0);
-                                i11 = bounds3.bottom;
-                                rect.bottom = i11;
+                                rect.right = bounds3.left + gl.L(this.F0);
+                                i3 = bounds3.bottom;
+                                rect.bottom = i3;
                                 rect.top = bounds3.top;
-                                f14 = this.n0;
-                                if (f14 != 0.0f && lineForOffset3 < lineCount3 - 1) {
-                                    rect.bottom = (int) (i11 - f14);
+                                f5 = this.n0;
+                                if (f5 != 0.0f && lineForOffset3 < lineCount3 - 1) {
+                                    rect.bottom = (int) (i3 - f5);
                                 }
                                 int centerY3 = rect.centerY();
-                                int i17 = this.j0;
-                                int i18 = centerY3 - (i17 / 2);
-                                rect.top = i18;
-                                rect.bottom = i18 + i17;
+                                int i8 = this.j0;
+                                int i9 = centerY3 - (i8 / 2);
+                                rect.top = i9;
+                                rect.bottom = i9 + i8;
                                 gradientDrawable.setBounds(rect);
                                 x(canvas2, rect);
                                 n(canvas2, gradientDrawable);
@@ -862,26 +899,26 @@ public class EditTextBoldCursor extends pt {
                             y();
                             Rect bounds32 = gradientDrawable.getBounds();
                             rect.left = bounds32.left;
-                            rect.right = bounds32.left + org.telegram.messenger.g0.L(this.F0);
-                            i11 = bounds32.bottom;
-                            rect.bottom = i11;
+                            rect.right = bounds32.left + gl.L(this.F0);
+                            i3 = bounds32.bottom;
+                            rect.bottom = i3;
                             rect.top = bounds32.top;
-                            f14 = this.n0;
-                            if (f14 != 0.0f) {
-                                rect.bottom = (int) (i11 - f14);
+                            f5 = this.n0;
+                            if (f5 != 0.0f) {
+                                rect.bottom = (int) (i3 - f5);
                             }
                             int centerY32 = rect.centerY();
-                            int i172 = this.j0;
-                            int i182 = centerY32 - (i172 / 2);
-                            rect.top = i182;
-                            rect.bottom = i182 + i172;
+                            int i82 = this.j0;
+                            int i92 = centerY32 - (i82 / 2);
+                            rect.top = i92;
+                            rect.bottom = i92 + i82;
                             gradientDrawable.setBounds(rect);
                             x(canvas2, rect);
                             n(canvas2, gradientDrawable);
                             canvas2.restore();
                             this.H0 = false;
                         } else {
-                            if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                            if ((getGravity() & kk7.w1) != 48) {
                                 totalPaddingTop2 = getTotalPaddingTop() - getExtendedPaddingTop();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout322 = getLayout();
@@ -890,18 +927,18 @@ public class EditTextBoldCursor extends pt {
                                 y();
                                 Rect bounds322 = gradientDrawable.getBounds();
                                 rect.left = bounds322.left;
-                                rect.right = bounds322.left + org.telegram.messenger.g0.L(this.F0);
-                                i11 = bounds322.bottom;
-                                rect.bottom = i11;
+                                rect.right = bounds322.left + gl.L(this.F0);
+                                i3 = bounds322.bottom;
+                                rect.bottom = i3;
                                 rect.top = bounds322.top;
-                                f14 = this.n0;
-                                if (f14 != 0.0f) {
+                                f5 = this.n0;
+                                if (f5 != 0.0f) {
                                 }
                                 int centerY322 = rect.centerY();
-                                int i1722 = this.j0;
-                                int i1822 = centerY322 - (i1722 / 2);
-                                rect.top = i1822;
-                                rect.bottom = i1822 + i1722;
+                                int i822 = this.j0;
+                                int i922 = centerY322 - (i822 / 2);
+                                rect.top = i922;
+                                rect.bottom = i922 + i822;
                                 gradientDrawable.setBounds(rect);
                                 x(canvas2, rect);
                                 n(canvas2, gradientDrawable);
@@ -916,18 +953,18 @@ public class EditTextBoldCursor extends pt {
                             y();
                             Rect bounds3222 = gradientDrawable.getBounds();
                             rect.left = bounds3222.left;
-                            rect.right = bounds3222.left + org.telegram.messenger.g0.L(this.F0);
-                            i11 = bounds3222.bottom;
-                            rect.bottom = i11;
+                            rect.right = bounds3222.left + gl.L(this.F0);
+                            i3 = bounds3222.bottom;
+                            rect.bottom = i3;
                             rect.top = bounds3222.top;
-                            f14 = this.n0;
-                            if (f14 != 0.0f) {
+                            f5 = this.n0;
+                            if (f5 != 0.0f) {
                             }
                             int centerY3222 = rect.centerY();
-                            int i17222 = this.j0;
-                            int i18222 = centerY3222 - (i17222 / 2);
-                            rect.top = i18222;
-                            rect.bottom = i18222 + i17222;
+                            int i8222 = this.j0;
+                            int i9222 = centerY3222 - (i8222 / 2);
+                            rect.top = i9222;
+                            rect.bottom = i9222 + i8222;
                             gradientDrawable.setBounds(rect);
                             x(canvas2, rect);
                             n(canvas2, gradientDrawable);
@@ -935,61 +972,106 @@ public class EditTextBoldCursor extends pt {
                             this.H0 = false;
                         }
                     } catch (Throwable unused3) {
-                        boolean z16 = org.telegram.messenger.s2.a;
+                        boolean z12 = w01.a;
                     }
                 }
                 if (this.I0 && this.J0 != 0) {
-                    int L = org.telegram.messenger.g0.L(1.0f);
-                    z11 = this.N0;
+                    int L = gl.L(1.0f);
+                    z2 = this.N0;
                     isEmpty = TextUtils.isEmpty(this.x0);
                     Paint paint2 = this.g0;
                     if (isEmpty) {
                         paint2.setColor(this.L0);
-                        L = org.telegram.messenger.g0.L(f10);
+                        L = gl.L(f);
                         this.N0 = false;
                     } else if (isFocused()) {
                         this.N0 = true;
+                        z3 = true;
+                        if (z3 != z2) {
+                            this.P0 = SystemClock.elapsedRealtime();
+                            this.Q0 = this.O0;
+                        }
+                        elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f2;
+                        if (elapsedRealtime >= 1.0f) {
+                            boolean z13 = this.N0;
+                            float f21 = this.O0;
+                            if (z13) {
+                                int measuredHeight = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                                i2 = this.k1;
+                                if (i2 < 0) {
+                                }
+                                int i10 = i2;
+                                int max = Math.max(i10, getMeasuredWidth() - i10) << 1;
+                                if (this.O0 < 1.0f) {
+                                }
+                                f4 = this.O0;
+                                if (f4 > 0.0f) {
+                                }
+                            } else {
+                                int measuredHeight2 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                                i2 = this.k1;
+                                if (i2 < 0) {
+                                    i2 = getMeasuredWidth() / 2;
+                                }
+                                int i102 = i2;
+                                int max2 = Math.max(i102, getMeasuredWidth() - i102) << 1;
+                                if (this.O0 < 1.0f) {
+                                    canvas2.drawRect(getScrollX(), measuredHeight2 - L, getMeasuredWidth() + getScrollX(), measuredHeight2, this.g0);
+                                }
+                                f4 = this.O0;
+                                if (f4 > 0.0f) {
+                                    float interpolation = s33.j.getInterpolation(f4);
+                                    if (this.N0) {
+                                        this.R0 = max2 * interpolation;
+                                        interpolation = 1.0f;
+                                    }
+                                    int L2 = (int) (interpolation * gl.L(f));
+                                    float f22 = i102;
+                                    canvas2 = canvas;
+                                    canvas2.drawRect(getScrollX() + Math.max(0.0f, f22 - (this.R0 / f)), measuredHeight2 - L2, getScrollX() + Math.min((this.R0 / f) + f22, getMeasuredWidth()), measuredHeight2, this.h0);
+                                } else {
+                                    canvas2 = canvas;
+                                }
+                            }
+                        }
+                        this.O0 = gl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
+                        if (elapsedRealtime < 1.0f) {
+                            invalidate();
+                        }
+                        int measuredHeight22 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                        i2 = this.k1;
+                        if (i2 < 0) {
+                        }
+                        int i1022 = i2;
+                        int max22 = Math.max(i1022, getMeasuredWidth() - i1022) << 1;
+                        if (this.O0 < 1.0f) {
+                        }
+                        f4 = this.O0;
+                        if (f4 > 0.0f) {
+                        }
                     } else {
                         paint2.setColor(this.J0);
                         this.N0 = false;
                     }
-                    if (this.N0 != z11) {
-                        this.P0 = SystemClock.elapsedRealtime();
-                        this.Q0 = this.O0;
+                    z3 = false;
+                    if (z3 != z2) {
                     }
-                    elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f11;
-                    if (elapsedRealtime >= 1.0f || (((z12 = this.N0) && this.O0 != 1.0f) || (!z12 && this.O0 != 0.0f))) {
-                        this.O0 = org.telegram.messenger.g0.T1(this.Q0, !this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
-                        if (elapsedRealtime < 1.0f) {
-                            invalidate();
-                        }
+                    elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f2;
+                    if (elapsedRealtime >= 1.0f) {
                     }
-                    int measuredHeight = !this.s0 ? getMeasuredHeight() - org.telegram.messenger.g0.L(f10) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() != null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), org.telegram.messenger.g0.L(f10)) + getScrollY() + ((int) this.M0);
-                    i10 = this.k1;
-                    if (i10 < 0) {
-                        i10 = getMeasuredWidth() / 2;
+                    this.O0 = gl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
+                    if (elapsedRealtime < 1.0f) {
                     }
-                    int i19 = i10;
-                    int max = Math.max(i19, getMeasuredWidth() - i19) * 2;
+                    int measuredHeight222 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                    i2 = this.k1;
+                    if (i2 < 0) {
+                    }
+                    int i10222 = i2;
+                    int max222 = Math.max(i10222, getMeasuredWidth() - i10222) << 1;
                     if (this.O0 < 1.0f) {
-                        canvas2.drawRect(getScrollX(), measuredHeight - L, getMeasuredWidth() + getScrollX(), measuredHeight, this.g0);
                     }
-                    f13 = this.O0;
-                    if (f13 <= 0.0f) {
-                        float interpolation = kr.j.getInterpolation(f13);
-                        boolean z17 = this.N0;
-                        if (z17) {
-                            this.R0 = max * interpolation;
-                        }
-                        if (z17) {
-                            interpolation = 1.0f;
-                        }
-                        int L2 = (int) (interpolation * org.telegram.messenger.g0.L(f10));
-                        float f24 = i19;
-                        canvas2 = canvas;
-                        canvas2.drawRect(getScrollX() + Math.max(0.0f, f24 - (this.R0 / f10)), measuredHeight - L2, getScrollX() + Math.min((this.R0 / f10) + f24, getMeasuredWidth()), measuredHeight, this.h0);
-                    } else {
-                        canvas2 = canvas;
+                    f4 = this.O0;
+                    if (f4 > 0.0f) {
                     }
                 }
                 if (this.z1) {
@@ -1002,7 +1084,7 @@ public class EditTextBoldCursor extends pt {
                 this.B1.setLocalMatrix(this.C1);
                 canvas2.drawRect(getPaddingLeft() - this.D1, 0.0f, getPaddingLeft(), getHeight(), this.A1);
                 this.C1.reset();
-                this.C1.postScale(-1.0f, 1.0f, this.D1 / f10, 0.0f);
+                this.C1.postScale(-1.0f, 1.0f, this.D1 / f, 0.0f);
                 this.C1.postTranslate(getWidth() - getPaddingRight(), 0.0f);
                 this.B1.setLocalMatrix(this.C1);
                 canvas.drawRect(getWidth() - getPaddingRight(), 0.0f, (getWidth() - getPaddingRight()) + this.D1, getHeight(), this.A1);
@@ -1011,8 +1093,8 @@ public class EditTextBoldCursor extends pt {
                 return;
             }
         }
-        f10 = 2.0f;
-        f11 = 150.0f;
+        f = 2.0f;
+        f2 = 150.0f;
         if (this.z1) {
         }
         int extendedPaddingTop2 = getExtendedPaddingTop();
@@ -1029,39 +1111,40 @@ public class EditTextBoldCursor extends pt {
         this.e1 = false;
         field = G1;
         if (field != null) {
-            field.set(this, Integer.valueOf(i12));
+            field.set(this, Integer.valueOf(i4));
         }
         canvas2.restore();
-        ftVar = this.f1;
+        ys3Var = this.f1;
         GradientDrawable gradientDrawable2 = this.c0;
         Rect rect2 = this.o0;
-        if (ftVar != null) {
+        if (ys3Var != null) {
         }
         if (this.I0) {
-            int L3 = org.telegram.messenger.g0.L(1.0f);
-            z11 = this.N0;
+            int L3 = gl.L(1.0f);
+            z2 = this.N0;
             isEmpty = TextUtils.isEmpty(this.x0);
             Paint paint22 = this.g0;
             if (isEmpty) {
             }
-            if (this.N0 != z11) {
+            z3 = false;
+            if (z3 != z2) {
             }
-            elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f11;
+            elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f2;
             if (elapsedRealtime >= 1.0f) {
             }
-            this.O0 = org.telegram.messenger.g0.T1(this.Q0, !this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
+            this.O0 = gl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
             if (elapsedRealtime < 1.0f) {
             }
-            int measuredHeight2 = !this.s0 ? getMeasuredHeight() - org.telegram.messenger.g0.L(f10) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() != null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), org.telegram.messenger.g0.L(f10)) + getScrollY() + ((int) this.M0);
-            i10 = this.k1;
-            if (i10 < 0) {
+            int measuredHeight2222 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+            i2 = this.k1;
+            if (i2 < 0) {
             }
-            int i192 = i10;
-            int max2 = Math.max(i192, getMeasuredWidth() - i192) * 2;
+            int i102222 = i2;
+            int max2222 = Math.max(i102222, getMeasuredWidth() - i102222) << 1;
             if (this.O0 < 1.0f) {
             }
-            f13 = this.O0;
-            if (f13 <= 0.0f) {
+            f4 = this.O0;
+            if (f4 > 0.0f) {
             }
         }
         if (this.z1) {
@@ -1069,11 +1152,11 @@ public class EditTextBoldCursor extends pt {
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z10, int i7, Rect rect) {
+    public void onFocusChanged(boolean z, int i, Rect rect) {
         try {
-            super.onFocusChanged(z10, i7, rect);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+            super.onFocusChanged(z, i, rect);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
         l(true);
     }
@@ -1086,50 +1169,50 @@ public class EditTextBoldCursor extends pt {
             if (getText().length() <= 0) {
                 accessibilityNodeInfo.setText(this.p0.getText());
             } else {
-                new s0.c(accessibilityNodeInfo).l(this.p0.getText());
+                new u4(accessibilityNodeInfo).l(this.p0.getText());
             }
         }
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
         int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
-        et etVar = this.u0;
-        if (etVar != null) {
-            etVar.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        xs3 xs3Var = this.u0;
+        if (xs3Var != null) {
+            xs3Var.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         }
-        et etVar2 = this.v0;
-        if (etVar2 != null) {
-            etVar2.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        xs3 xs3Var2 = this.v0;
+        if (xs3Var2 != null) {
+            xs3Var2.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         }
         StaticLayout staticLayout = this.p0;
         if (staticLayout == null || this.u0 != null) {
-            this.M0 = getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f);
+            this.M0 = getMeasuredHeight() - gl.L(2.0f);
         } else {
             if (this.d1 != measuredHeight) {
                 s(this.w0, false, staticLayout.getPaint());
             }
             if (this.r0) {
-                this.M0 = ((((((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - this.p0.getHeight()) / 2.0f) + (getPaddingTop() + getExtendedPaddingTop())) + this.p0.getHeight()) - org.telegram.messenger.g0.L(1.0f);
+                this.M0 = ((((((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - this.p0.getHeight()) / 2.0f) + (getPaddingTop() + getExtendedPaddingTop())) + this.p0.getHeight()) - gl.L(1.0f);
             } else {
-                this.M0 = ((getMeasuredHeight() - this.p0.getHeight()) / 2.0f) + this.p0.getHeight() + org.telegram.messenger.g0.L(6.0f);
+                this.M0 = ((getMeasuredHeight() - this.p0.getHeight()) / 2.0f) + this.p0.getHeight() + gl.L(6.0f);
             }
         }
         this.d1 = measuredHeight;
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onScrollChanged(int i7, int i10, int i11, int i12) {
-        super.onScrollChanged(i7, i10, i11, i12);
-        if (i7 != i11) {
+    public void onScrollChanged(int i, int i2, int i3, int i4) {
+        super.onScrollChanged(i, i2, i3, i4);
+        if (i != i3) {
             getParent().requestDisallowInterceptTouchEvent(true);
         }
     }
 
-    @Override // org.telegram.ui.Components.pt, android.widget.TextView
-    public void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        super.onTextChanged(charSequence, i7, i10, i11);
+    @Override // lt3, android.widget.TextView
+    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        super.onTextChanged(charSequence, i, i2, i3);
         if (!this.T0 || this.U0) {
             return;
         }
@@ -1144,28 +1227,28 @@ public class EditTextBoldCursor extends pt {
         return super.onTouchEvent(motionEvent);
     }
 
-    public final StaticLayout p(int i7) {
+    public final StaticLayout p(int i) {
         if (TextUtils.isEmpty(this.x0)) {
             return null;
         }
-        return new StaticLayout(this.x0, this.i0, i7, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        return new StaticLayout(this.x0, this.i0, i, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
     }
 
     @Override // android.view.View
-    public final boolean postDelayed(Runnable runnable, long j3) {
-        if (Build.VERSION.SDK_INT < 29 || runnable == null || j3 != 500 || !"android.widget.Editor$Blink".equals(runnable.getClass().getName()) || Looper.myLooper() != Looper.getMainLooper()) {
-            return super.postDelayed(runnable, j3);
+    public final boolean postDelayed(Runnable runnable, long j) {
+        if (Build.VERSION.SDK_INT < 29 || runnable == null || j != 500 || !"android.widget.Editor$Blink".equals(runnable.getClass().getName()) || Looper.myLooper() != Looper.getMainLooper()) {
+            return super.postDelayed(runnable, j);
         }
-        bg.k d = bg.k.d();
-        d.getClass();
-        bg.k.c();
-        int max = Math.max(1, Math.min(2, 60));
+        rg2 d = rg2.d();
+        rg2.c();
         d.h(runnable);
-        bg.j e10 = d.e(max);
-        if (e10.d == null) {
-            e10.d = new xe.b();
+        qg2 e = d.e(2);
+        e59 e59Var = e.d;
+        if (e59Var == null) {
+            e59Var = new e59(0, false);
+            e.d = e59Var;
         }
-        e10.d.add(runnable);
+        e59Var.add(runnable);
         return true;
     }
 
@@ -1174,10 +1257,11 @@ public class EditTextBoldCursor extends pt {
         if (isHardwareAccelerated()) {
             try {
                 if (L1 != null) {
-                    if (this.b0 == null) {
-                        this.b0 = E1.get(this);
-                    }
                     Object obj = this.b0;
+                    if (obj == null) {
+                        obj = E1.get(this);
+                        this.b0 = obj;
+                    }
                     if (obj != null) {
                         L1.invoke(obj, null);
                     }
@@ -1187,14 +1271,14 @@ public class EditTextBoldCursor extends pt {
         }
     }
 
-    public final void r(CharSequence charSequence, boolean z10) {
-        s(charSequence, z10, getPaint());
+    public final void r(CharSequence charSequence, boolean z) {
+        s(charSequence, z, getPaint());
     }
 
     @Override // android.view.View
     public final boolean removeCallbacks(Runnable runnable) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
-            bg.k.d().h(runnable);
+            rg2.d().h(runnable);
         }
         return super.removeCallbacks(runnable);
     }
@@ -1208,93 +1292,93 @@ public class EditTextBoldCursor extends pt {
         super.removeTextChangedListener(textWatcher);
     }
 
-    public final void s(CharSequence charSequence, boolean z10, TextPaint textPaint) {
+    public final void s(CharSequence charSequence, boolean z, TextPaint textPaint) {
         TextPaint textPaint2;
         String charSequence2;
         String charSequence3;
-        boolean z11;
+        boolean z2;
         CharSequence charSequence4 = charSequence;
-        et etVar = this.u0;
-        if (etVar != null) {
-            etVar.t(charSequence4, !org.telegram.messenger.gd.a0, true);
+        xs3 xs3Var = this.u0;
+        byte b = 1;
+        if (xs3Var != null) {
+            xs3Var.t(charSequence4, !k96.a0, true);
             return;
         }
         if (charSequence4 == null) {
             charSequence4 = "";
         }
         CharSequence charSequence5 = charSequence4;
-        boolean z12 = false;
-        if (getMeasuredWidth() == 0 ? false : z10) {
-            if (this.d0 == null) {
-                this.d0 = new tw0(this);
+        byte b2 = 0;
+        boolean z3 = getMeasuredWidth() == 0 ? false : z;
+        jab jabVar = this.d0;
+        if (z3) {
+            if (jabVar == null) {
+                jabVar = new jab(this);
+                this.d0 = jabVar;
             }
-            tw0 tw0Var = this.d0;
+            jab jabVar2 = jabVar;
             StaticLayout staticLayout = this.p0;
             CharSequence charSequence6 = this.w0;
-            tw0Var.getClass();
             if (staticLayout != null && !charSequence6.equals(charSequence5)) {
-                ValueAnimator valueAnimator = tw0Var.j;
+                ValueAnimator valueAnimator = jabVar2.j;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
                 if (charSequence6.length() > charSequence5.length()) {
                     charSequence2 = charSequence6.toString();
                     charSequence3 = charSequence5.toString();
-                    z11 = true;
+                    z2 = true;
                 } else {
                     charSequence2 = charSequence5.toString();
                     charSequence3 = charSequence6.toString();
-                    z11 = false;
+                    z2 = false;
                 }
                 int indexOf = charSequence2.indexOf(charSequence3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence2);
                     if (indexOf != 0) {
-                        spannableStringBuilder2.setSpan(new ry(z12), 0, indexOf, 0);
+                        spannableStringBuilder2.setSpan(new lx2(b), 0, indexOf, 0);
                     }
                     if (charSequence3.length() + indexOf != charSequence2.length()) {
-                        spannableStringBuilder2.setSpan(new ry(z12), charSequence3.length() + indexOf, charSequence2.length(), 0);
+                        spannableStringBuilder2.setSpan(new lx2(b), charSequence3.length() + indexOf, charSequence2.length(), 0);
                     }
-                    spannableStringBuilder.setSpan(new ry(z12), indexOf, charSequence3.length() + indexOf, 0);
-                    int L = org.telegram.messenger.g0.L(400.0f);
+                    spannableStringBuilder.setSpan(new lx2(b), indexOf, charSequence3.length() + indexOf, 0);
+                    int L = gl.L(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    tw0Var.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
-                    StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, org.telegram.messenger.g0.L(400.0f), alignment, 1.0f, 0.0f, false);
-                    tw0Var.d = staticLayout2;
-                    tw0Var.e = true;
-                    tw0Var.f = z11;
-                    tw0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
-                    tw0Var.c = null;
-                    tw0Var.g = false;
+                    jabVar2.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
+                    StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, gl.L(400.0f), alignment, 1.0f, 0.0f, false);
+                    jabVar2.d = staticLayout2;
+                    jabVar2.e = true;
+                    jabVar2.f = z2;
+                    jabVar2.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
+                    jabVar2.c = null;
+                    jabVar2.g = false;
                 } else {
-                    int L2 = org.telegram.messenger.g0.L(400.0f);
+                    int L2 = gl.L(400.0f);
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    tw0Var.b = new StaticLayout(charSequence5, textPaint, L2, alignment2, 1.0f, 0.0f, false);
-                    tw0Var.c = new StaticLayout(charSequence6, textPaint, org.telegram.messenger.g0.L(400.0f), alignment2, 1.0f, 0.0f, false);
-                    tw0Var.d = null;
-                    tw0Var.e = true;
-                    tw0Var.g = true;
-                    tw0Var.h = 0.0f;
+                    jabVar2.b = new StaticLayout(charSequence5, textPaint, L2, alignment2, 1.0f, 0.0f, false);
+                    jabVar2.c = new StaticLayout(charSequence6, textPaint, gl.L(400.0f), alignment2, 1.0f, 0.0f, false);
+                    jabVar2.d = null;
+                    jabVar2.e = true;
+                    jabVar2.g = true;
+                    jabVar2.h = 0.0f;
                 }
-                tw0Var.i = 0.0f;
+                jabVar2.i = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                tw0Var.j = ofFloat;
-                ofFloat.addUpdateListener(new e60(tw0Var, 26));
-                tw0Var.j.addListener(new p60(tw0Var, 27));
-                tw0Var.j.setDuration(150L);
-                tw0Var.j.setInterpolator(kr.f);
-                tw0Var.j.start();
+                jabVar2.j = ofFloat;
+                ofFloat.addUpdateListener(new gja(jabVar2, (byte) 19));
+                jabVar2.j.addListener(new iab(jabVar2, b2));
+                jabVar2.j.setDuration(150L);
+                jabVar2.j.setInterpolator(s33.f);
+                jabVar2.j.start();
             }
-        } else {
-            tw0 tw0Var2 = this.d0;
-            if (tw0Var2 != null) {
-                ValueAnimator valueAnimator2 = tw0Var2.j;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.cancel();
-                }
-                tw0Var2.e = false;
+        } else if (jabVar != null) {
+            ValueAnimator valueAnimator2 = jabVar.j;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
             }
+            jabVar.e = false;
         }
         this.w0 = charSequence5;
         if (getMeasuredWidth() != 0) {
@@ -1307,50 +1391,50 @@ public class EditTextBoldCursor extends pt {
         } else {
             textPaint2 = textPaint;
         }
-        this.p0 = new StaticLayout(charSequence5, textPaint2, org.telegram.messenger.g0.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.p0 = new StaticLayout(charSequence5, textPaint2, gl.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         invalidate();
     }
 
-    public void setActiveLineColor(int i7) {
-        this.K0 = i7;
-        this.h0.setColor(i7);
+    public void setActiveLineColor(int i) {
+        this.K0 = i;
+        this.h0.setColor(i);
         invalidate();
     }
 
-    public void setAllowDrawCursor(boolean z10) {
-        this.D0 = z10;
+    public void setAllowDrawCursor(boolean z) {
+        this.D0 = z;
         invalidate();
     }
 
-    public void setBlurredBackgroundDrawableViewFactory(dh.c cVar) {
-        this.s1 = cVar;
+    public void setBlurredBackgroundDrawableViewFactory(kl0 kl0Var) {
+        this.s1 = kl0Var;
     }
 
-    public void setCursorColor(int i7) {
-        this.i1 = i7;
-        ft ftVar = this.f1;
-        if (ftVar != null) {
-            ftVar.getPaint().setColor(i7);
+    public void setCursorColor(int i) {
+        this.i1 = i;
+        ys3 ys3Var = this.f1;
+        if (ys3Var != null) {
+            ys3Var.getPaint().setColor(i);
         }
         GradientDrawable gradientDrawable = this.c0;
         if (gradientDrawable != null) {
-            gradientDrawable.setColor(i7);
+            gradientDrawable.setColor(i);
         }
         invalidate();
     }
 
-    public void setCursorSize(int i7) {
-        this.j0 = i7;
+    public void setCursorSize(int i) {
+        this.j0 = i;
     }
 
-    public void setCursorWidth(float f10) {
-        this.F0 = f10;
+    public void setCursorWidth(float f) {
+        this.F0 = f;
     }
 
-    public void setEllipsizeByGradient(boolean z10) {
-        this.z1 = z10;
-        if (z10) {
-            this.D1 = org.telegram.messenger.g0.L(12.0f);
+    public void setEllipsizeByGradient(boolean z) {
+        this.z1 = z;
+        if (z) {
+            this.D1 = gl.L(12.0f);
             this.A1 = new Paint(1);
             LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.D1, 0.0f, new int[]{-1, 16777215}, new float[]{0.4f, 1.0f}, Shader.TileMode.CLAMP);
             this.B1 = linearGradient;
@@ -1359,9 +1443,9 @@ public class EditTextBoldCursor extends pt {
         }
     }
 
-    public void setErrorLineColor(int i7) {
-        this.L0 = i7;
-        this.i0.setColor(i7);
+    public void setErrorLineColor(int i) {
+        this.L0 = i;
+        this.i0.setColor(i);
         invalidate();
     }
 
@@ -1373,51 +1457,51 @@ public class EditTextBoldCursor extends pt {
         requestLayout();
     }
 
-    public void setForceCursorEnd(boolean z10) {
-        this.E0 = z10;
+    public void setForceCursorEnd(boolean z) {
+        this.E0 = z;
         invalidate();
     }
 
-    public void setHandlesColor(int i7) {
-        if (Build.VERSION.SDK_INT < 29 || org.telegram.messenger.c6.i() || this.x1 == i7) {
+    public void setHandlesColor(int i) {
+        if (Build.VERSION.SDK_INT < 29 || nye.b() || this.x1 == i) {
             return;
         }
-        this.x1 = i7;
-        this.w1 = new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN);
+        this.x1 = i;
+        this.w1 = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
         z(this.t1, false);
         z(this.u1, false);
         z(this.v1, false);
     }
 
-    public void setHeaderAnimationProgress(float f10) {
-        this.X0 = f10;
+    public void setHeaderAnimationProgress(float f) {
+        this.X0 = f;
         invalidate();
     }
 
-    public void setHeaderHintColor(int i7) {
-        this.z0 = i7;
+    public void setHeaderHintColor(int i) {
+        this.z0 = i;
         invalidate();
     }
 
-    public void setHintColor(int i7) {
-        this.y0 = i7;
-        et etVar = this.u0;
-        if (etVar != null) {
-            etVar.u(i7);
+    public void setHintColor(int i) {
+        this.y0 = i;
+        xs3 xs3Var = this.u0;
+        if (xs3Var != null) {
+            xs3Var.u(i);
         }
-        et etVar2 = this.v0;
-        if (etVar2 != null) {
-            etVar2.u(this.y0);
+        xs3 xs3Var2 = this.v0;
+        if (xs3Var2 != null) {
+            xs3Var2.u(this.y0);
         }
         invalidate();
     }
 
-    public void setHintRightOffset(int i7) {
-        float f10 = i7;
-        if (this.e0 == f10) {
+    public void setHintRightOffset(int i) {
+        float f = i;
+        if (this.e0 == f) {
             return;
         }
-        this.e0 = f10;
+        this.e0 = f;
         invalidate();
     }
 
@@ -1425,19 +1509,19 @@ public class EditTextBoldCursor extends pt {
         s(charSequence, false, getPaint());
     }
 
-    public void setLineColor(int i7) {
-        this.J0 = i7;
+    public void setLineColor(int i) {
+        this.J0 = i;
         invalidate();
     }
 
     @Override // android.widget.TextView
-    public final void setLineSpacing(float f10, float f11) {
-        super.setLineSpacing(f10, f11);
-        this.n0 = f10;
+    public final void setLineSpacing(float f, float f2) {
+        super.setLineSpacing(f, f2);
+        this.n0 = f;
     }
 
-    public void setNextSetTextAnimated(boolean z10) {
-        this.S0 = z10;
+    public void setNextSetTextAnimated(boolean z) {
+        this.S0 = z;
     }
 
     public void setOnPremiumMenuLockClickListener(Runnable runnable) {
@@ -1445,19 +1529,19 @@ public class EditTextBoldCursor extends pt {
     }
 
     @Override // android.widget.EditText
-    public final void setSelection(int i7, int i10) {
+    public final void setSelection(int i, int i2) {
         try {
-            super.setSelection(i7, i10);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+            super.setSelection(i, i2);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
-    public void setSupportRtlHint(boolean z10) {
-        this.G0 = z10;
+    public void setSupportRtlHint(boolean z) {
+        this.G0 = z;
     }
 
-    @Override // org.telegram.ui.Components.pt, android.widget.EditText, android.widget.TextView
+    @Override // lt3, android.widget.EditText, android.widget.TextView
     public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         l(this.S0);
@@ -1466,55 +1550,54 @@ public class EditTextBoldCursor extends pt {
 
     @Override // android.widget.TextView
     public void setTextSelectHandle(Drawable drawable) {
-        Drawable z10 = z(drawable, true);
-        this.v1 = z10;
-        super.setTextSelectHandle(z10);
+        Drawable z = z(drawable, true);
+        this.v1 = z;
+        super.setTextSelectHandle(z);
     }
 
     @Override // android.widget.TextView
     public void setTextSelectHandleLeft(Drawable drawable) {
-        Drawable z10 = z(drawable, true);
-        this.t1 = z10;
-        super.setTextSelectHandleLeft(z10);
+        Drawable z = z(drawable, true);
+        this.t1 = z;
+        super.setTextSelectHandleLeft(z);
     }
 
     @Override // android.widget.TextView
     public void setTextSelectHandleRight(Drawable drawable) {
-        Drawable z10 = z(drawable, true);
-        this.u1 = z10;
-        super.setTextSelectHandleRight(z10);
+        Drawable z = z(drawable, true);
+        this.u1 = z;
+        super.setTextSelectHandleRight(z);
     }
 
     @Override // android.widget.TextView
-    public void setTextSize(int i7, float f10) {
-        et etVar = this.u0;
-        if (etVar != null) {
-            etVar.w(org.telegram.messenger.g0.L(f10));
+    public void setTextSize(int i, float f) {
+        xs3 xs3Var = this.u0;
+        if (xs3Var != null) {
+            xs3Var.w(gl.L(f));
         }
-        et etVar2 = this.v0;
-        if (etVar2 != null) {
-            etVar2.w(org.telegram.messenger.g0.L(f10));
+        xs3 xs3Var2 = this.v0;
+        if (xs3Var2 != null) {
+            xs3Var2.w(gl.L(f));
         }
-        super.setTextSize(i7, f10);
+        super.setTextSize(i, f);
     }
 
-    public void setTransformHintToHeader(boolean z10) {
-        if (this.T0 == z10) {
-            return;
-        }
-        this.T0 = z10;
-        AnimatorSet animatorSet = this.W0;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.W0 = null;
+    public void setTransformHintToHeader(boolean z) {
+        if (this.T0 != z) {
+            this.T0 = z;
+            AnimatorSet animatorSet = this.W0;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+                this.W0 = null;
+            }
         }
     }
 
-    public void setTransformHintToHeaderOnFocus(boolean z10) {
-        if (this.U0 == z10) {
+    public void setTransformHintToHeaderOnFocus(boolean z) {
+        if (this.U0 == z) {
             return;
         }
-        this.U0 = z10;
+        this.U0 = z;
         l(false);
     }
 
@@ -1527,9 +1610,9 @@ public class EditTextBoldCursor extends pt {
         if (this.b1 == null && this.c1 == null) {
             return super.startActionMode(callback);
         }
-        org.telegram.ui.ActionBar.x3 x3Var = this.Z0;
-        if (x3Var != null) {
-            x3Var.finish();
+        yi4 yi4Var = this.Z0;
+        if (yi4Var != null) {
+            yi4Var.finish();
         }
         m();
         Context context = getContext();
@@ -1537,75 +1620,74 @@ public class EditTextBoldCursor extends pt {
         if (view == null) {
             view = this.c1;
         }
-        org.telegram.ui.ActionBar.l4 l4Var = new org.telegram.ui.ActionBar.l4(context, view, getActionModeStyle(), getResourcesProvider(), this.s1);
-        this.Y0 = l4Var;
-        l4Var.j = this.y1;
-        l4Var.k = new dt(this, 0);
-        org.telegram.ui.ActionBar.x3 x3Var2 = new org.telegram.ui.ActionBar.x3(getContext(), new org.telegram.ui.Cells.g9(this, callback), this, this.Y0);
-        this.Z0 = x3Var2;
-        this.a1 = new fl(1, this);
-        callback.onCreateActionMode(x3Var2, x3Var2.c);
-        org.telegram.ui.ActionBar.x3 x3Var3 = this.Z0;
-        o(x3Var3, x3Var3.c);
+        gk4 gk4Var = new gk4(context, view, getActionModeStyle(), getResourcesProvider(), this.s1);
+        this.Y0 = gk4Var;
+        gk4Var.j = this.y1;
+        gk4Var.k = new wf0(this, (byte) 1);
+        yi4 yi4Var2 = new yi4(getContext(), new zs3(this, callback), this, this.Y0);
+        this.Z0 = yi4Var2;
+        this.a1 = new qr1(this, (byte) 2);
+        callback.onCreateActionMode(yi4Var2, yi4Var2.c);
+        yi4 yi4Var3 = this.Z0;
+        o(yi4Var3, yi4Var3.c);
         this.Z0.invalidate();
         getViewTreeObserver().addOnPreDrawListener(this.a1);
         invalidate();
         return this.Z0;
     }
 
-    public final void t(boolean z10, boolean z11) {
-        if (this.A0 == z10) {
+    public final void t(boolean z, boolean z2) {
+        if (this.A0 == z) {
             return;
         }
         this.C0 = System.currentTimeMillis();
-        this.A0 = z10;
-        if (!z11) {
-            this.B0 = z10 ? 1.0f : 0.0f;
+        this.A0 = z;
+        if (!z2) {
+            this.B0 = z ? 1.0f : 0.0f;
         }
         invalidate();
     }
 
-    public final void u(int i7, int i10, int i11) {
+    public final void u(int i, int i2, int i3) {
         this.I0 = true;
         Drawable drawable = getContext().getResources().getDrawable(R.drawable.search_dark);
         Rect rect = this.j1;
         drawable.getPadding(rect);
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        this.J0 = i7;
-        this.K0 = i10;
-        this.h0.setColor(i10);
-        this.L0 = i11;
-        this.i0.setColor(i11);
+        this.J0 = i;
+        this.K0 = i2;
+        this.h0.setColor(i2);
+        this.L0 = i3;
+        this.i0.setColor(i3);
         invalidate();
     }
 
-    public final void v(boolean z10, boolean z11) {
-        if (this.h1 == z10) {
-            return;
-        }
-        this.h1 = z10;
-        ArrayList arrayList = this.g1;
-        int i7 = 0;
-        if (z10) {
-            int size = arrayList.size();
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                super.removeTextChangedListener((TextWatcher) obj);
+    public final void v(boolean z, boolean z2) {
+        if (this.h1 != z) {
+            this.h1 = z;
+            int i = 0;
+            ArrayList arrayList = this.g1;
+            if (z) {
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    super.removeTextChangedListener((TextWatcher) obj);
+                }
+                return;
             }
-            return;
-        }
-        int size2 = arrayList.size();
-        int i10 = 0;
-        while (i10 < size2) {
-            Object obj2 = arrayList.get(i10);
-            i10++;
-            TextWatcher textWatcher = (TextWatcher) obj2;
-            super.addTextChangedListener(textWatcher);
-            if (z11) {
-                textWatcher.beforeTextChanged("", 0, length(), length());
-                textWatcher.onTextChanged(getText(), 0, length(), length());
-                textWatcher.afterTextChanged(getText());
+            int size2 = arrayList.size();
+            int i2 = 0;
+            while (i2 < size2) {
+                Object obj2 = arrayList.get(i2);
+                i2++;
+                TextWatcher textWatcher = (TextWatcher) obj2;
+                super.addTextChangedListener(textWatcher);
+                if (z2) {
+                    textWatcher.beforeTextChanged("", 0, length(), length());
+                    textWatcher.onTextChanged(getText(), 0, length(), length());
+                    textWatcher.afterTextChanged(getText());
+                }
             }
         }
     }
@@ -1615,8 +1697,8 @@ public class EditTextBoldCursor extends pt {
         if (!hasSelection() || getSelectionStart() < 0 || getSelectionEnd() < 0 || getSelectionStart() == getSelectionEnd() || (text = getText()) == null) {
             return false;
         }
-        hh0[] hh0VarArr = (hh0[]) text.getSpans(getSelectionStart(), getSelectionEnd(), hh0.class);
-        return hh0VarArr == null || hh0VarArr.length == 0;
+        dy8[] dy8VarArr = (dy8[]) text.getSpans(getSelectionStart(), getSelectionEnd(), dy8.class);
+        return dy8VarArr == null || dy8VarArr.length == 0;
     }
 
     public final void x(Canvas canvas, Rect rect) {
@@ -1630,13 +1712,13 @@ public class EditTextBoldCursor extends pt {
             this.p1 = rect.top;
         } else {
             float exp = 1.0f - ((float) Math.exp((-Math.min(64L, uptimeMillis - this.q1)) / 60.0f));
-            float f10 = this.o1;
-            float f11 = rect.left;
-            float z10 = com.google.android.gms.internal.vision.e2.z(f11, f10, exp, f10);
-            this.o1 = z10;
-            float f12 = this.p1;
-            this.p1 = com.google.android.gms.internal.vision.e2.z(rect.top, f12, exp, f12);
-            if (Math.abs(f11 - z10) >= 0.5f || Math.abs(rect.top - this.p1) >= 0.5f) {
+            float f = this.o1;
+            float f2 = rect.left;
+            float A = tb4.A(f2, f, exp, f);
+            this.o1 = A;
+            float f3 = this.p1;
+            this.p1 = tb4.A(rect.top, f3, exp, f3);
+            if (Math.abs(f2 - A) >= 0.5f || Math.abs(rect.top - this.p1) >= 0.5f) {
                 postInvalidateOnAnimation();
             } else {
                 this.o1 = rect.left;
@@ -1648,38 +1730,40 @@ public class EditTextBoldCursor extends pt {
     }
 
     public final void y() {
-        int i7;
+        int i;
         Layout layout = getLayout();
         int length = this.E0 ? layout.getText().length() : getSelectionStart();
         int lineForOffset = layout.getLineForOffset(length);
         int lineTop = layout.getLineTop(lineForOffset);
         int lineTop2 = layout.getLineTop(lineForOffset + 1);
         float max = Math.max(0.5f, layout.getPrimaryHorizontal(length) - 0.5f);
-        if (this.r1 == null) {
-            this.r1 = new Rect();
+        Rect rect = this.r1;
+        if (rect == null) {
+            rect = new Rect();
+            this.r1 = rect;
         }
         GradientDrawable gradientDrawable = this.c0;
         if (gradientDrawable != null) {
-            gradientDrawable.getPadding(this.r1);
-            i7 = gradientDrawable.getIntrinsicWidth();
+            gradientDrawable.getPadding(rect);
+            i = gradientDrawable.getIntrinsicWidth();
         } else {
-            this.r1.setEmpty();
-            i7 = 0;
+            rect.setEmpty();
+            i = 0;
         }
         int scrollX = getScrollX();
-        float f10 = max - scrollX;
+        float f = max - scrollX;
         int width = (getWidth() - getCompoundPaddingLeft()) - getCompoundPaddingRight();
-        float f11 = width;
-        int i10 = f10 >= f11 - 1.0f ? (width + scrollX) - (i7 - this.r1.right) : (Math.abs(f10) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (TLObject.FLAG_20 - scrollX)) <= f11 + 1.0f && max <= 1.0f)) ? scrollX - this.r1.left : ((int) max) - this.r1.left;
-        int L = org.telegram.messenger.g0.L(this.F0);
-        Rect rect = this.r1;
-        this.c0.setBounds(i10, lineTop - rect.top, L + i10, lineTop2 + rect.bottom);
+        float f2 = width;
+        int i2 = f >= f2 - 1.0f ? (width + scrollX) - (i - this.r1.right) : (Math.abs(f) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (TLObject.FLAG_20 - scrollX)) <= f2 + 1.0f && max <= 1.0f)) ? scrollX - this.r1.left : ((int) max) - this.r1.left;
+        int L = gl.L(this.F0);
+        Rect rect2 = this.r1;
+        gradientDrawable.setBounds(i2, lineTop - rect2.top, L + i2, lineTop2 + rect2.bottom);
         layout.getText();
     }
 
-    public final Drawable z(Drawable drawable, boolean z10) {
+    public final Drawable z(Drawable drawable, boolean z) {
         if (drawable != null) {
-            if (z10) {
+            if (z) {
                 drawable = drawable.mutate();
             }
             PorterDuffColorFilter porterDuffColorFilter = this.w1;
@@ -1691,22 +1775,22 @@ public class EditTextBoldCursor extends pt {
     }
 
     @Override // android.widget.EditText
-    public void setSelection(int i7) {
+    public void setSelection(int i) {
         try {
-            super.setSelection(i7);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+            super.setSelection(i);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
-    }
-
-    @Override // android.view.View
-    public ActionMode startActionMode(ActionMode.Callback callback, int i7) {
-        if (this.b1 == null && this.c1 == null) {
-            return super.startActionMode(callback, i7);
-        }
-        return startActionMode(callback);
     }
 
     public void o(ActionMode actionMode, Menu menu) {
+    }
+
+    @Override // android.view.View
+    public ActionMode startActionMode(ActionMode.Callback callback, int i) {
+        if (this.b1 == null && this.c1 == null) {
+            return super.startActionMode(callback, i);
+        }
+        return startActionMode(callback);
     }
 }

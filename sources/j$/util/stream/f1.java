@@ -1,57 +1,78 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.LongConsumer;
+import java.util.function.LongPredicate;
+import java.util.function.LongToDoubleFunction;
+import java.util.function.LongToIntFunction;
+import java.util.function.LongUnaryOperator;
 
-/* loaded from: classes2.dex */
-public final class f1 extends i1 {
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream sequential() {
-        this.h.r = false;
-        return this;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class f1 extends i5 {
+    public final /* synthetic */ byte b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f1(n5 n5Var) {
+        super(n5Var);
+        this.b = (byte) 0;
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream parallel() {
-        this.h.r = true;
-        return this;
-    }
-
-    @Override // j$.util.stream.i1, j$.util.stream.LongStream
-    public final void forEach(LongConsumer longConsumer) {
-        if (this.h.r) {
-            super.forEach(longConsumer);
-        } else {
-            i1.U0(S0()).forEachRemaining(longConsumer);
+    @Override // j$.util.stream.m5, j$.util.stream.n5
+    public final void accept(long j) {
+        switch (this.b) {
+            case 0:
+                this.a.accept(j);
+                return;
+            case 1:
+                LongUnaryOperator longUnaryOperator = null;
+                longUnaryOperator.applyAsLong(j);
+                throw null;
+            case 2:
+                LongToIntFunction longToIntFunction = null;
+                longToIntFunction.applyAsInt(j);
+                throw null;
+            case 3:
+                LongToDoubleFunction longToDoubleFunction = null;
+                longToDoubleFunction.applyAsDouble(j);
+                throw null;
+            case 4:
+                LongPredicate longPredicate = null;
+                longPredicate.test(j);
+                throw null;
+            default:
+                LongPredicate longPredicate2 = null;
+                longPredicate2.test(j);
+                throw null;
         }
     }
 
-    @Override // j$.util.stream.i1, j$.util.stream.LongStream
-    public final void forEachOrdered(LongConsumer longConsumer) {
-        if (this.h.r) {
-            super.forEachOrdered(longConsumer);
-        } else {
-            i1.U0(S0()).forEachRemaining(longConsumer);
+    @Override // j$.util.stream.i5, j$.util.stream.n5
+    public final void n(long j) {
+        switch (this.b) {
+            case 4:
+                this.a.n(-1L);
+                break;
+            case 5:
+                this.a.n(-1L);
+                break;
+            default:
+                super.n(j);
+                break;
         }
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new t(this, v6.r, 4);
+    @Override // j$.util.stream.i5, j$.util.stream.n5
+    public final boolean q() {
+        switch (this.b) {
+            case 5:
+                return this.a.q();
+            default:
+                return super.q();
+        }
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
-    }
-
-    @Override // j$.util.stream.a
-    public final boolean P0() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        throw new UnsupportedOperationException();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f1(a aVar, n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
     }
 }

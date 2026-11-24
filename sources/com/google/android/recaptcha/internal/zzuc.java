@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzuc {
     public static final /* synthetic */ int zza = 0;
@@ -22,14 +22,12 @@ final class zzuc {
         zzsv.zzc(cls, "messageType");
         ConcurrentMap concurrentMap = this.zzd;
         zzug zzugVar = (zzug) concurrentMap.get(cls);
-        if (zzugVar == null) {
-            zzugVar = this.zzc.zza(cls);
-            zzsv.zzc(cls, "messageType");
-            zzug zzugVar2 = (zzug) concurrentMap.putIfAbsent(cls, zzugVar);
-            if (zzugVar2 != null) {
-                return zzugVar2;
-            }
+        if (zzugVar != null) {
+            return zzugVar;
         }
-        return zzugVar;
+        zzug zza2 = this.zzc.zza(cls);
+        zzsv.zzc(cls, "messageType");
+        zzug zzugVar2 = (zzug) concurrentMap.putIfAbsent(cls, zza2);
+        return zzugVar2 != null ? zzugVar2 : zza2;
     }
 }

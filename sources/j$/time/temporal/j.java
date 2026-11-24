@@ -1,6 +1,7 @@
 package j$.time.temporal;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public enum j implements o {
     JULIAN_DAY("JulianDay", 2440588),
     MODIFIED_JULIAN_DAY("ModifiedJulianDay", 40587),
@@ -9,34 +10,21 @@ public enum j implements o {
     private static final long serialVersionUID = -7501623920830201812L;
     public final transient String a;
     public final transient s b;
-    public final transient long c;
-
-    @Override // j$.time.temporal.o
-    public final boolean isDateBased() {
-        return true;
-    }
+    public final transient int c;
 
     static {
         ChronoUnit chronoUnit = ChronoUnit.NANOS;
     }
 
-    j(String str, long j3) {
+    j(String str, long j) {
         this.a = str;
-        this.b = s.e((-365243219162L) + j3, 365241780471L + j3);
-        this.c = j3;
+        this.b = s.e((-365243219162L) + j, 365241780471L + j);
+        this.c = (int) j;
     }
 
     @Override // j$.time.temporal.o
-    public final s l() {
-        return this.b;
-    }
-
-    @Override // j$.time.temporal.o
-    public final Temporal q(Temporal temporal, long j3) {
-        if (!this.b.d(j3)) {
-            throw new j$.time.b("Invalid value: " + this.a + " " + j3);
-        }
-        return temporal.c(j$.com.android.tools.r8.a.T(j3, this.c), a.EPOCH_DAY);
+    public final boolean isDateBased() {
+        return true;
     }
 
     @Override // j$.time.temporal.o
@@ -49,12 +37,26 @@ public enum j implements o {
         if (lVar.e(a.EPOCH_DAY)) {
             return this.b;
         }
-        throw new j$.time.b("Unsupported field: " + this);
+        j$.time.g.i(this, "Unsupported field: ");
+        return null;
     }
 
     @Override // j$.time.temporal.o
-    public final long m(l lVar) {
+    public final long l(l lVar) {
         return lVar.y(a.EPOCH_DAY) + this.c;
+    }
+
+    @Override // j$.time.temporal.o
+    public final Temporal n(Temporal temporal, long j) {
+        if (this.b.d(j)) {
+            return temporal.c(j$.time.a.S(j, this.c), a.EPOCH_DAY);
+        }
+        throw new j$.time.c("Invalid value: " + this.a + " " + j);
+    }
+
+    @Override // j$.time.temporal.o
+    public final s range() {
+        return this.b;
     }
 
     @Override // java.lang.Enum

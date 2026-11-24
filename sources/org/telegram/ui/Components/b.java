@@ -1,29 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b implements org.telegram.messenger.nc {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+import android.util.Property;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-    public /* synthetic */ b(m0 m0Var, int i7) {
-        this.a = i7;
-        this.b = m0Var;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class b extends Property {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((ChatActivityEnterView.RecordCircle) obj).getScale());
     }
 
-    @Override // org.telegram.messenger.nc
-    public final void a(String str) {
-        switch (this.a) {
-            case 0:
-                m0 m0Var = this.b;
-                m0Var.n2 = str;
-                m0Var.P2.O(true);
-                break;
-            default:
-                m0 m0Var2 = this.b;
-                m0Var2.n2 = str;
-                m0Var2.P2.O(true);
-                break;
-        }
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        ((ChatActivityEnterView.RecordCircle) obj).setScale(((Float) obj2).floatValue());
     }
 }

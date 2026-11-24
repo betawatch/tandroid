@@ -1,24 +1,25 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import b7.h;
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import gd.c;
 import java.nio.charset.StandardCharsets;
-import kotlin.jvm.internal.f;
-import n6.e;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
     private final zzda zzb;
     private boolean zzc;
     private String zzd;
-    private final c zze;
+    private final d06 zze;
 
-    public zzba() {
-        this(null, null, 3, null);
+    public zzba(zzbo zzboVar, zzda zzdaVar) {
+        this.zza = zzboVar;
+        this.zzb = zzdaVar;
+        this.zzc = true;
+        this.zzd = "";
+        int i = zzby.zza;
+        this.zze = cne.b(zzaz.zza);
     }
 
     public static final /* synthetic */ Application zzb(zzba zzbaVar) {
@@ -42,30 +43,30 @@ public final class zzba implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, id.c cVar) {
-        return zzam.zza(this, str, cVar);
+    public final /* synthetic */ Object zzc(String str, fw2 fw2Var) {
+        return zzam.zza(this, str, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, id.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, fw2 fw2Var) {
         Object zzd;
-        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), fw2Var);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, id.c cVar) {
+    public final Object zze(String str, fw2 fw2Var) {
         return new zzhg(new zzax(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, id.c cVar) {
+    public final Object zzf(zzxp zzxpVar, fw2 fw2Var) {
         return new zzhg(new zzay(this, zzxpVar, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, id.c cVar) {
-        int i7;
+    public final Object zzg(Exception exc, fw2 fw2Var) {
+        int i;
         Throwable cause = exc.getCause();
         if (cause != null) {
             exc = cause;
@@ -73,63 +74,63 @@ public final class zzba implements zzar {
         if (exc instanceof StandardIntegrityException) {
             int errorCode = ((StandardIntegrityException) exc).getErrorCode();
             if (errorCode == -100) {
-                i7 = 44;
+                i = 44;
             } else if (errorCode == -12) {
-                i7 = 39;
+                i = 39;
             } else if (errorCode == -3) {
-                i7 = 30;
+                i = 30;
             } else if (errorCode == -2) {
-                i7 = 29;
+                i = 29;
             } else if (errorCode != -1) {
                 switch (errorCode) {
                     case -19:
-                        i7 = 54;
+                        i = 54;
                         break;
                     case -18:
-                        i7 = 53;
+                        i = 53;
                         break;
                     case -17:
-                        i7 = 52;
+                        i = 52;
                         break;
                     case -16:
-                        i7 = 43;
+                        i = 43;
                         break;
                     case -15:
-                        i7 = 42;
+                        i = 42;
                         break;
                     case -14:
-                        i7 = 41;
+                        i = 41;
                         break;
                     default:
                         switch (errorCode) {
                             case -9:
-                                i7 = 36;
+                                i = 36;
                                 break;
                             case -8:
-                                i7 = 35;
+                                i = 35;
                                 break;
                             case -7:
-                                i7 = 34;
+                                i = 34;
                                 break;
                             case -6:
-                                i7 = 33;
+                                i = 33;
                                 break;
                             case -5:
-                                i7 = 32;
+                                i = 32;
                                 break;
                             default:
-                                i7 = 2;
+                                i = 2;
                                 break;
                         }
                 }
             } else {
-                i7 = 28;
+                i = 28;
             }
         } else {
-            i7 = 45;
+            i = 45;
         }
         zzys zzf = zzyt.zzf();
-        zzf.zzq(i7);
+        zzf.zzq(i);
         zzf.zzr(15);
         return zzas.zza(this, (zzyt) zzf.zzk());
     }
@@ -144,20 +145,15 @@ public final class zzba implements zzar {
         return this.zzc;
     }
 
-    public final void zzo(boolean z10) {
+    public final void zzo(boolean z) {
         this.zzc = false;
     }
 
-    public zzba(zzbo zzboVar, zzda zzdaVar) {
-        this.zza = zzboVar;
-        this.zzb = zzdaVar;
-        this.zzc = true;
-        this.zzd = "";
-        int i7 = zzby.zza;
-        this.zze = h.b(zzaz.zza);
+    public zzba() {
+        this(null, null, 3, null);
     }
 
-    public zzba(zzbo zzboVar, zzda zzdaVar, int i7, f fVar) {
-        this(new zzbo(28800000L), new zzcz(e.b));
+    public zzba(zzbo zzboVar, zzda zzdaVar, int i, t93 t93Var) {
+        this(new zzbo(28800000L), new zzcz(dy4.b));
     }
 }

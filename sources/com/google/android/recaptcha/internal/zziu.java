@@ -1,28 +1,25 @@
 package com.google.android.recaptcha.internal;
 
-import hd.n;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import kotlin.jvm.internal.j;
-import rd.p;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zziu extends zzit {
-    private final p zza;
+    private final eq4 zza;
     private final String zzb;
 
-    public zziu(p pVar, String str, Object obj) {
+    public zziu(eq4 eq4Var, String str, Object obj) {
         super(obj);
-        this.zza = pVar;
+        this.zza = eq4Var;
         this.zzb = str;
     }
 
     @Override // com.google.android.recaptcha.internal.zzit
     public final boolean zza(Object obj, Method method, Object[] objArr) {
         List list;
-        if (!j.a(method.getName(), this.zzb)) {
+        if (!rp5.a(method.getName(), this.zzb)) {
             return false;
         }
         zzyu zzf = zzyx.zzf();
@@ -34,13 +31,13 @@ public final class zziu extends zzit {
                 list.add((zzyw) zzf2.zzk());
             }
         } else {
-            list = n.a;
+            list = c24.a;
         }
         zzf.zze(list);
         zzyx zzyxVar = (zzyx) zzf.zzk();
-        p pVar = this.zza;
+        eq4 eq4Var = this.zza;
         byte[] zzd = zzyxVar.zzd();
-        pVar.invoke(objArr, zzpp.zzh().zzi(zzd, 0, zzd.length));
+        eq4Var.invoke(objArr, zzpp.zzh().zzi(zzd, 0, zzd.length));
         return true;
     }
 }

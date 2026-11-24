@@ -4,7 +4,8 @@ import java.util.Comparator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements d1 {
     public final /* synthetic */ Spliterator.OfPrimitive a;
 
@@ -43,11 +44,6 @@ public final /* synthetic */ class b1 implements d1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // j$.util.Spliterator
     public final /* synthetic */ Comparator getComparator() {
         return this.a.getComparator();
     }
@@ -58,8 +54,8 @@ public final /* synthetic */ class b1 implements d1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return this.a.hasCharacteristics(i7);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
     }
 
     public final /* synthetic */ int hashCode() {
@@ -71,6 +67,16 @@ public final /* synthetic */ class b1 implements d1 {
         return this.a.tryAdvance((Spliterator.OfPrimitive) obj);
     }
 
+    @Override // j$.util.d1, j$.util.Spliterator
+    public final /* synthetic */ d1 trySplit() {
+        return a(this.a.trySplit());
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
         return this.a.tryAdvance(consumer);
@@ -79,10 +85,5 @@ public final /* synthetic */ class b1 implements d1 {
     @Override // j$.util.Spliterator
     public final /* synthetic */ Spliterator trySplit() {
         return e1.a(this.a.trySplit());
-    }
-
-    @Override // j$.util.d1, j$.util.Spliterator
-    public final /* synthetic */ d1 trySplit() {
-        return a(this.a.trySplit());
     }
 }

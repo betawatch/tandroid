@@ -1,82 +1,78 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import id.c;
-import jd.a;
 import org.telegram.tgnet.TLObject;
-import rd.p;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzhf {
-    private final p zza;
+    private final eq4 zza;
     private final Integer zzb;
     private final int zzc;
 
-    public zzhf(int i7, p pVar, Integer num) {
-        this.zzc = i7;
-        this.zza = pVar;
+    public zzhf(int i, eq4 eq4Var, Integer num) {
+        this.zzc = i;
+        this.zza = eq4Var;
         this.zzb = num;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zza(zzhk zzhkVar, c cVar) {
+    public final Object zza(zzhk zzhkVar, fw2 fw2Var) {
         zzhe zzheVar;
-        int i7;
-        zzcg e10;
+        int i;
+        zzcg e;
         zzgr zzgrVar;
-        if (cVar instanceof zzhe) {
-            zzheVar = (zzhe) cVar;
-            int i10 = zzheVar.zzc;
-            if ((i10 & TLObject.FLAG_31) != 0) {
-                zzheVar.zzc = i10 - TLObject.FLAG_31;
+        if (fw2Var instanceof zzhe) {
+            zzheVar = (zzhe) fw2Var;
+            int i2 = zzheVar.zzc;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzheVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzheVar.zza;
-                a aVar = a.a;
-                i7 = zzheVar.zzc;
-                if (i7 != 0) {
-                    z.b(obj);
+                i = zzheVar.zzc;
+                if (i != 0) {
+                    qse.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
-                        p pVar = this.zza;
+                        eq4 eq4Var = this.zza;
                         zzheVar.zzd = zzgrVar2;
                         zzheVar.zzc = 1;
-                        obj = pVar.invoke(zzgrVar2, zzheVar);
-                        if (obj == aVar) {
-                            return aVar;
+                        obj = eq4Var.invoke(zzgrVar2, zzheVar);
+                        bx2 bx2Var = bx2.a;
+                        if (obj == bx2Var) {
+                            return bx2Var;
                         }
                         zzgrVar = zzgrVar2;
-                    } catch (zzcg e11) {
-                        e10 = e11;
+                    } catch (zzcg e2) {
+                        e = e2;
                         zzgrVar = zzgrVar2;
-                        zzgrVar.zzc(e10);
-                        throw e10;
+                        zzgrVar.zzc(e);
+                        throw e;
                     }
                 } else {
-                    if (i7 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    if (i != 1) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        z.b(obj);
-                    } catch (zzcg e12) {
-                        e10 = e12;
-                        zzgrVar.zzc(e10);
-                        throw e10;
+                        qse.b(obj);
+                    } catch (zzcg e3) {
+                        e = e3;
+                        zzgrVar.zzc(e);
+                        throw e;
                     }
                 }
                 zzgrVar.zzb();
                 return obj;
             }
         }
-        zzheVar = new zzhe(this, cVar);
+        zzheVar = new zzhe(this, fw2Var);
         Object obj2 = zzheVar.zza;
-        a aVar2 = a.a;
-        i7 = zzheVar.zzc;
-        if (i7 != 0) {
+        i = zzheVar.zzc;
+        if (i != 0) {
         }
         zzgrVar.zzb();
         return obj2;

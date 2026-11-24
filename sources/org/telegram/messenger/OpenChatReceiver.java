@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class OpenChatReceiver extends Activity {
     @Override // android.app.Activity
@@ -32,8 +32,8 @@ public class OpenChatReceiver extends Activity {
             intent2.putExtras(intent);
             startActivity(intent2);
             finish();
-        } catch (Throwable th2) {
-            a8.g(th2, true);
+        } catch (Throwable th) {
+            fa4.g(th, true);
         }
     }
 }

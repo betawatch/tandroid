@@ -1,79 +1,76 @@
 package j$.util.stream;
 
-import j$.util.Optional;
 import j$.util.function.Consumer$-CC;
-import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public final class e4 implements o4 {
-    public boolean a;
-    public Object b;
-    public final /* synthetic */ BinaryOperator c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class e4 extends s4 implements r4, k5 {
+    public final /* synthetic */ Supplier b;
+    public final /* synthetic */ ObjDoubleConsumer c;
+    public final /* synthetic */ r d;
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    public e4(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, r rVar) {
+        this.b = supplier;
+        this.c = objDoubleConsumer;
+        this.d = rVar;
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    @Override // j$.util.stream.k5
+    public final /* synthetic */ void C(Double d) {
+        w3.e(this, d);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        this.c.accept(this.a, d);
     }
 
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        this.a = this.b.get();
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
+    @Override // j$.util.stream.n5
+    public final boolean q() {
         return false;
     }
 
-    public e4(BinaryOperator binaryOperator) {
-        this.c = binaryOperator;
+    @Override // j$.util.stream.r4
+    public final void w(r4 r4Var) {
+        this.a = this.d.apply(this.a, ((e4) r4Var).a);
     }
 
-    @Override // j$.util.stream.o4
-    public final void u(o4 o4Var) {
-        e4 e4Var = (e4) o4Var;
-        if (e4Var.a) {
-            return;
-        }
-        x(e4Var.b);
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.a = true;
-        this.b = null;
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(long j) {
+        w3.l();
+        throw null;
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final void x(Object obj) {
-        if (this.a) {
-            this.a = false;
-            this.b = obj;
-        } else {
-            this.b = this.c.apply(this.b, obj);
-        }
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        C((Double) obj);
     }
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        return this.a ? Optional.empty() : Optional.of(this.b);
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(int i) {
+        w3.k();
+        throw null;
+    }
+
+    @Override // j$.util.stream.n5
+    public final void end() {
     }
 }

@@ -4,18 +4,18 @@ import android.app.Activity;
 import com.google.android.gms.tasks.Task;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface StandardIntegrityManager {
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class PrepareIntegrityTokenRequest {
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
         public static abstract class Builder {
             public abstract PrepareIntegrityTokenRequest build();
 
-            public abstract Builder setCloudProjectNumber(long j3);
+            public abstract Builder setCloudProjectNumber(long j);
         }
 
         public static Builder builder() {
@@ -29,22 +29,22 @@ public interface StandardIntegrityManager {
         public abstract long b();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class StandardIntegrityToken {
-        public abstract Task<Integer> showDialog(Activity activity, int i7);
+        public abstract Task<Integer> showDialog(Activity activity, int i);
 
         public abstract String token();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface StandardIntegrityTokenProvider {
         Task<StandardIntegrityToken> request(StandardIntegrityTokenRequest standardIntegrityTokenRequest);
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class StandardIntegrityTokenRequest {
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
         public static abstract class Builder {
             public abstract StandardIntegrityTokenRequest build();
 
@@ -55,8 +55,7 @@ public interface StandardIntegrityManager {
 
         public static Builder builder() {
             f fVar = new f();
-            int i7 = d9.j.c;
-            fVar.setVerdictOptOut(d9.l.h);
+            fVar.setVerdictOptOut(pzc.x);
             return fVar;
         }
 

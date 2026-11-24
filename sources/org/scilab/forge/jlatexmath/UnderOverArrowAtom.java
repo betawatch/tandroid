@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class UnderOverArrowAtom extends Atom {
     private Atom base;
@@ -8,26 +8,26 @@ public class UnderOverArrowAtom extends Atom {
     private boolean left;
     private boolean over;
 
-    public UnderOverArrowAtom(Atom atom, boolean z10, boolean z11) {
-        this.dble = false;
+    public UnderOverArrowAtom(Atom atom, boolean z) {
+        this.left = false;
         this.base = atom;
-        this.left = z10;
-        this.over = z11;
+        this.over = z;
+        this.dble = true;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         Box create;
-        float f10;
+        float f;
         Atom atom = this.base;
         Box createBox = atom != null ? atom.createBox(teXEnvironment) : new StrutBox(0.0f, 0.0f, 0.0f, 0.0f);
         float width = new SpaceAtom(3, 1.0f, 0.0f, 0.0f).createBox(teXEnvironment).getWidth();
         if (this.dble) {
             create = XLeftRightArrowFactory.create(teXEnvironment, createBox.getWidth());
-            f10 = width * 4.0f;
+            f = width * 4.0f;
         } else {
             create = XLeftRightArrowFactory.create(this.left, teXEnvironment, createBox.getWidth());
-            f10 = -width;
+            f = -width;
         }
         VerticalBox verticalBox = new VerticalBox();
         if (this.over) {
@@ -39,17 +39,17 @@ public class UnderOverArrowAtom extends Atom {
             return verticalBox;
         }
         verticalBox.add(new HorizontalBox(createBox, create.getWidth(), 2));
-        verticalBox.add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
+        verticalBox.add(new StrutBox(0.0f, f, 0.0f, 0.0f));
         verticalBox.add(create);
         verticalBox.setDepth((verticalBox.getHeight() + verticalBox.getDepth()) - createBox.getHeight());
         verticalBox.setHeight(createBox.getHeight());
         return verticalBox;
     }
 
-    public UnderOverArrowAtom(Atom atom, boolean z10) {
-        this.left = false;
+    public UnderOverArrowAtom(Atom atom, boolean z, boolean z2) {
+        this.dble = false;
         this.base = atom;
-        this.over = z10;
-        this.dble = true;
+        this.left = z;
+        this.over = z2;
     }
 }

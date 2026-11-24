@@ -1,41 +1,49 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.Arrays;
 
-/* loaded from: classes2.dex */
-public final class n6 extends r6 implements j$.util.x0 {
-    public final /* synthetic */ o6 g;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class n6 extends b6 {
+    public Object[] d;
+    public int e;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        Object[] objArr = this.d;
+        int i = this.e;
+        this.e = i + 1;
+        objArr[i] = obj;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final void end() {
+        int i = 0;
+        Arrays.sort(this.d, 0, this.e, this.b);
+        long j = this.e;
+        n5 n5Var = this.a;
+        n5Var.n(j);
+        if (this.c) {
+            while (i < this.e && !n5Var.q()) {
+                n5Var.accept((n5) this.d[i]);
+                i++;
+            }
+        } else {
+            while (i < this.e) {
+                n5Var.accept((n5) this.d[i]);
+                i++;
+            }
+        }
+        n5Var.end();
+        this.d = null;
     }
 
-    @Override // j$.util.stream.r6
-    public final void a(int i7, Object obj, Object obj2) {
-        ((IntConsumer) obj2).accept(((int[]) obj)[i7]);
-    }
-
-    @Override // j$.util.stream.r6
-    public final j$.util.d1 b(Object obj, int i7, int i10) {
-        return DesugarArrays.b((int[]) obj, i7, i10 + i7);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n6(o6 o6Var, int i7, int i10, int i11, int i12) {
-        super(o6Var, i7, i10, i11, i12);
-        this.g = o6Var;
-    }
-
-    @Override // j$.util.stream.r6
-    public final j$.util.d1 c(int i7, int i10, int i11, int i12) {
-        return new n6(this.g, i7, i10, i11, i12);
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final void n(long j) {
+        if (j < 2147483639) {
+            this.d = new Object[(int) j];
+        } else {
+            j$.time.g.c("Stream size exceeds max array size");
+        }
     }
 }

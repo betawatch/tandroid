@@ -5,7 +5,8 @@ import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements a1 {
     public final /* synthetic */ Spliterator.OfLong a;
 
@@ -44,16 +45,6 @@ public final /* synthetic */ class y0 implements a1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining((Consumer<? super Long>) consumer);
-    }
-
-    @Override // j$.util.a1
-    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        this.a.forEachRemaining(longConsumer);
-    }
-
-    @Override // j$.util.Spliterator
     public final /* synthetic */ Comparator getComparator() {
         return this.a.getComparator();
     }
@@ -64,8 +55,8 @@ public final /* synthetic */ class y0 implements a1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return this.a.hasCharacteristics(i7);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
     }
 
     public final /* synthetic */ int hashCode() {
@@ -75,6 +66,21 @@ public final /* synthetic */ class y0 implements a1 {
     @Override // j$.util.d1
     public final /* synthetic */ boolean tryAdvance(Object obj) {
         return this.a.tryAdvance((Spliterator.OfLong) obj);
+    }
+
+    @Override // j$.util.a1, j$.util.d1, j$.util.Spliterator
+    public final /* synthetic */ a1 trySplit() {
+        return a(this.a.trySplit());
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining((Consumer<? super Long>) consumer);
+    }
+
+    @Override // j$.util.a1
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining(longConsumer);
     }
 
     @Override // j$.util.Spliterator
@@ -87,18 +93,13 @@ public final /* synthetic */ class y0 implements a1 {
         return this.a.tryAdvance(longConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Spliterator trySplit() {
-        return e1.a(this.a.trySplit());
-    }
-
-    @Override // j$.util.a1, j$.util.d1, j$.util.Spliterator
-    public final /* synthetic */ a1 trySplit() {
-        return a(this.a.trySplit());
-    }
-
     @Override // j$.util.d1, j$.util.Spliterator
     public final /* synthetic */ d1 trySplit() {
         return b1.a(this.a.trySplit());
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ Spliterator trySplit() {
+        return e1.a(this.a.trySplit());
     }
 }

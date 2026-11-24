@@ -8,10 +8,17 @@ import java.util.function.ToLongFunction;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* loaded from: classes2.dex */
-public final class f implements Comparator, e {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class f implements Comparator {
     public static final f INSTANCE;
     public static final /* synthetic */ f[] a;
+
+    static {
+        f fVar = new f("INSTANCE", 0);
+        INSTANCE = fVar;
+        a = new f[]{fVar};
+    }
 
     public static f valueOf(String str) {
         return (f) Enum.valueOf(f.class, str);
@@ -26,26 +33,21 @@ public final class f implements Comparator, e {
         return ((Comparable) obj).compareTo((Comparable) obj2);
     }
 
-    static {
-        f fVar = new f("INSTANCE", 0);
-        INSTANCE = fVar;
-        a = new f[]{fVar};
-    }
-
     @Override // java.util.Comparator
     public final Comparator reversed() {
         return Comparator$-CC.reverseOrder();
     }
 
     @Override // java.util.Comparator
-    public final Comparator thenComparing(Comparator comparator) {
+    public final Comparator thenComparing(Function function, Comparator comparator) {
+        Objects.requireNonNull(function);
         Objects.requireNonNull(comparator);
-        return new d(this, comparator, 0);
+        return Comparator$-EL.a(this, new e(function, comparator));
     }
 
     @Override // java.util.Comparator
-    public final Comparator thenComparing(Function function) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparing(function));
+    public final Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
+        return Comparator$-EL.a(this, Comparator$-CC.comparingDouble(toDoubleFunction));
     }
 
     @Override // java.util.Comparator
@@ -59,14 +61,13 @@ public final class f implements Comparator, e {
     }
 
     @Override // java.util.Comparator
-    public final Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingDouble(toDoubleFunction));
+    public final Comparator thenComparing(Function function) {
+        return Comparator$-EL.a(this, Comparator$-CC.comparing(function));
     }
 
     @Override // java.util.Comparator
-    public final Comparator thenComparing(Function function, Comparator comparator) {
-        Objects.requireNonNull(function);
+    public final Comparator thenComparing(Comparator comparator) {
         Objects.requireNonNull(comparator);
-        return Comparator$-EL.a(this, new d(comparator, function, 1));
+        return new d(this, comparator);
     }
 }

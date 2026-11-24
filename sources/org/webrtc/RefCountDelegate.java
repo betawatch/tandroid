@@ -2,8 +2,8 @@ package org.webrtc;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class RefCountDelegate implements RefCounted {
     private final AtomicInteger refCount = new AtomicInteger(1);
     private final Runnable releaseCallback;
@@ -17,28 +17,30 @@ class RefCountDelegate implements RefCounted {
         Runnable runnable;
         int decrementAndGet = this.refCount.decrementAndGet();
         if (decrementAndGet < 0) {
-            throw new IllegalStateException("release() called on an object with refcount < 1");
+            sc8.j("release() called on an object with refcount < 1");
+        } else {
+            if (decrementAndGet != 0 || (runnable = this.releaseCallback) == null) {
+                return;
+            }
+            runnable.run();
         }
-        if (decrementAndGet != 0 || (runnable = this.releaseCallback) == null) {
-            return;
-        }
-        runnable.run();
     }
 
     @Override // org.webrtc.RefCounted
     public void retain() {
-        if (this.refCount.incrementAndGet() < 2) {
-            throw new IllegalStateException("retain() called on an object with refcount < 1");
+        if (this.refCount.incrementAndGet() >= 2) {
+            return;
         }
+        sc8.j("retain() called on an object with refcount < 1");
     }
 
     public boolean safeRetain() {
-        int i7 = this.refCount.get();
-        while (i7 != 0) {
-            if (this.refCount.weakCompareAndSet(i7, i7 + 1)) {
+        int i = this.refCount.get();
+        while (i != 0) {
+            if (this.refCount.weakCompareAndSet(i, i + 1)) {
                 return true;
             }
-            i7 = this.refCount.get();
+            i = this.refCount.get();
         }
         return false;
     }

@@ -10,8 +10,8 @@ import org.webrtc.JniCommon;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class JavaAudioDeviceModule implements AudioDeviceModule {
     private static final String TAG = "JavaAudioDeviceModule";
     private final WebRtcAudioRecord audioInput;
@@ -25,7 +25,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
     private final boolean useStereoInput;
     private final boolean useStereoOutput;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface AudioRecordErrorCallback {
         void onWebRtcAudioRecordError(String str);
 
@@ -34,30 +34,30 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         void onWebRtcAudioRecordStartError(AudioRecordStartErrorCode audioRecordStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public enum AudioRecordStartErrorCode {
         AUDIO_RECORD_START_EXCEPTION,
         AUDIO_RECORD_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface AudioRecordStateCallback {
         void onWebRtcAudioRecordStart();
 
         void onWebRtcAudioRecordStop();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class AudioSamples {
         private final int audioFormat;
         private final int channelCount;
         private final byte[] data;
         private final int sampleRate;
 
-        public AudioSamples(int i7, int i10, int i11, byte[] bArr) {
-            this.audioFormat = i7;
-            this.channelCount = i10;
-            this.sampleRate = i11;
+        public AudioSamples(int i, int i2, int i3, byte[] bArr) {
+            this.audioFormat = i;
+            this.channelCount = i2;
+            this.sampleRate = i3;
             this.data = bArr;
         }
 
@@ -78,7 +78,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface AudioTrackErrorCallback {
         void onWebRtcAudioTrackError(String str);
 
@@ -87,20 +87,20 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         void onWebRtcAudioTrackStartError(AudioTrackStartErrorCode audioTrackStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public enum AudioTrackStartErrorCode {
         AUDIO_TRACK_START_EXCEPTION,
         AUDIO_TRACK_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface AudioTrackStateCallback {
         void onWebRtcAudioTrackStart();
 
         void onWebRtcAudioTrackStop();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Builder {
         private AudioAttributes audioAttributes;
         private int audioFormat;
@@ -121,6 +121,20 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         private boolean useLowLatency;
         private boolean useStereoInput;
         private boolean useStereoOutput;
+
+        private Builder(Context context) {
+            this.audioSource = 7;
+            this.audioFormat = 2;
+            this.useHardwareAcousticEchoCanceler = JavaAudioDeviceModule.isBuiltInAcousticEchoCancelerSupported();
+            this.useHardwareNoiseSuppressor = JavaAudioDeviceModule.isBuiltInNoiseSuppressorSupported();
+            this.context = context;
+            AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+            this.audioManager = audioManager;
+            this.inputSampleRate = WebRtcAudioManager.getSampleRate(audioManager);
+            this.outputSampleRate = WebRtcAudioManager.getSampleRate(audioManager);
+            this.useLowLatency = false;
+            this.enableVolumeLogger = true;
+        }
 
         public JavaAudioDeviceModule createAudioDeviceModule() {
             Logging.d(JavaAudioDeviceModule.TAG, "createAudioDeviceModule");
@@ -155,8 +169,8 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
             return this;
         }
 
-        public Builder setAudioFormat(int i7) {
-            this.audioFormat = i7;
+        public Builder setAudioFormat(int i) {
+            this.audioFormat = i;
             return this;
         }
 
@@ -170,8 +184,8 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
             return this;
         }
 
-        public Builder setAudioSource(int i7) {
-            this.audioSource = i7;
+        public Builder setAudioSource(int i) {
+            this.audioSource = i;
             return this;
         }
 
@@ -185,27 +199,27 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
             return this;
         }
 
-        public Builder setEnableVolumeLogger(boolean z10) {
-            this.enableVolumeLogger = z10;
+        public Builder setEnableVolumeLogger(boolean z) {
+            this.enableVolumeLogger = z;
             return this;
         }
 
-        public Builder setInputSampleRate(int i7) {
-            Logging.d(JavaAudioDeviceModule.TAG, "Input sample rate overridden to: " + i7);
-            this.inputSampleRate = i7;
+        public Builder setInputSampleRate(int i) {
+            Logging.d(JavaAudioDeviceModule.TAG, "Input sample rate overridden to: " + i);
+            this.inputSampleRate = i;
             return this;
         }
 
-        public Builder setOutputSampleRate(int i7) {
-            Logging.d(JavaAudioDeviceModule.TAG, "Output sample rate overridden to: " + i7);
-            this.outputSampleRate = i7;
+        public Builder setOutputSampleRate(int i) {
+            Logging.d(JavaAudioDeviceModule.TAG, "Output sample rate overridden to: " + i);
+            this.outputSampleRate = i;
             return this;
         }
 
-        public Builder setSampleRate(int i7) {
-            Logging.d(JavaAudioDeviceModule.TAG, "Input/Output sample rate overridden to: " + i7);
-            this.inputSampleRate = i7;
-            this.outputSampleRate = i7;
+        public Builder setSampleRate(int i) {
+            Logging.d(JavaAudioDeviceModule.TAG, "Input/Output sample rate overridden to: " + i);
+            this.inputSampleRate = i;
+            this.outputSampleRate = i;
             return this;
         }
 
@@ -219,57 +233,55 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
             return this;
         }
 
-        public Builder setUseHardwareAcousticEchoCanceler(boolean z10) {
-            if (z10 && !JavaAudioDeviceModule.isBuiltInAcousticEchoCancelerSupported()) {
+        public Builder setUseHardwareAcousticEchoCanceler(boolean z) {
+            if (z && !JavaAudioDeviceModule.isBuiltInAcousticEchoCancelerSupported()) {
                 Logging.e(JavaAudioDeviceModule.TAG, "HW AEC not supported");
-                z10 = false;
+                z = false;
             }
-            this.useHardwareAcousticEchoCanceler = z10;
+            this.useHardwareAcousticEchoCanceler = z;
             return this;
         }
 
-        public Builder setUseHardwareNoiseSuppressor(boolean z10) {
-            if (z10 && !JavaAudioDeviceModule.isBuiltInNoiseSuppressorSupported()) {
+        public Builder setUseHardwareNoiseSuppressor(boolean z) {
+            if (z && !JavaAudioDeviceModule.isBuiltInNoiseSuppressorSupported()) {
                 Logging.e(JavaAudioDeviceModule.TAG, "HW NS not supported");
-                z10 = false;
+                z = false;
             }
-            this.useHardwareNoiseSuppressor = z10;
+            this.useHardwareNoiseSuppressor = z;
             return this;
         }
 
-        public Builder setUseLowLatency(boolean z10) {
-            this.useLowLatency = z10;
+        public Builder setUseLowLatency(boolean z) {
+            this.useLowLatency = z;
             return this;
         }
 
-        public Builder setUseStereoInput(boolean z10) {
-            this.useStereoInput = z10;
+        public Builder setUseStereoInput(boolean z) {
+            this.useStereoInput = z;
             return this;
         }
 
-        public Builder setUseStereoOutput(boolean z10) {
-            this.useStereoOutput = z10;
+        public Builder setUseStereoOutput(boolean z) {
+            this.useStereoOutput = z;
             return this;
-        }
-
-        private Builder(Context context) {
-            this.audioSource = 7;
-            this.audioFormat = 2;
-            this.useHardwareAcousticEchoCanceler = JavaAudioDeviceModule.isBuiltInAcousticEchoCancelerSupported();
-            this.useHardwareNoiseSuppressor = JavaAudioDeviceModule.isBuiltInNoiseSuppressorSupported();
-            this.context = context;
-            AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-            this.audioManager = audioManager;
-            this.inputSampleRate = WebRtcAudioManager.getSampleRate(audioManager);
-            this.outputSampleRate = WebRtcAudioManager.getSampleRate(audioManager);
-            this.useLowLatency = false;
-            this.enableVolumeLogger = true;
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface SamplesReadyCallback {
         void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
+    }
+
+    private JavaAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i, int i2, boolean z, boolean z2) {
+        this.nativeLock = new Object();
+        this.context = context;
+        this.audioManager = audioManager;
+        this.audioInput = webRtcAudioRecord;
+        this.audioOutput = webRtcAudioTrack;
+        this.inputSampleRate = i;
+        this.outputSampleRate = i2;
+        this.useStereoInput = z;
+        this.useStereoOutput = z2;
     }
 
     public static Builder builder(Context context) {
@@ -284,49 +296,42 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         return WebRtcAudioEffects.isNoiseSuppressorSupported();
     }
 
-    private static native long nativeCreateAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i7, int i10, boolean z10, boolean z11);
+    private static native long nativeCreateAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i, int i2, boolean z, boolean z2);
 
     @Override // org.webrtc.audio.AudioDeviceModule
     public long getNativeAudioDeviceModulePointer() {
-        long j3;
+        long j;
         synchronized (this.nativeLock) {
-            try {
-                if (this.nativeAudioDeviceModule == 0) {
-                    this.nativeAudioDeviceModule = nativeCreateAudioDeviceModule(this.context, this.audioManager, this.audioInput, this.audioOutput, this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput);
-                }
-                j3 = this.nativeAudioDeviceModule;
-            } catch (Throwable th2) {
-                throw th2;
+            j = this.nativeAudioDeviceModule;
+            if (j == 0) {
+                j = nativeCreateAudioDeviceModule(this.context, this.audioManager, this.audioInput, this.audioOutput, this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput);
+                this.nativeAudioDeviceModule = j;
             }
         }
-        return j3;
+        return j;
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
     public void release() {
         synchronized (this.nativeLock) {
-            try {
-                long j3 = this.nativeAudioDeviceModule;
-                if (j3 != 0) {
-                    JniCommon.nativeReleaseRef(j3);
-                    this.nativeAudioDeviceModule = 0L;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            long j = this.nativeAudioDeviceModule;
+            if (j != 0) {
+                JniCommon.nativeReleaseRef(j);
+                this.nativeAudioDeviceModule = 0L;
             }
         }
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public void setMicrophoneMute(boolean z10) {
-        Logging.d(TAG, "setMicrophoneMute: " + z10);
-        this.audioInput.setMicrophoneMute(z10);
+    public void setMicrophoneMute(boolean z) {
+        Logging.d(TAG, "setMicrophoneMute: " + z);
+        this.audioInput.setMicrophoneMute(z);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public boolean setNoiseSuppressorEnabled(boolean z10) {
-        Logging.d(TAG, "setNoiseSuppressorEnabled: " + z10);
-        return this.audioInput.setNoiseSuppressorEnabled(z10);
+    public boolean setNoiseSuppressorEnabled(boolean z) {
+        Logging.d(TAG, "setNoiseSuppressorEnabled: " + z);
+        return this.audioInput.setNoiseSuppressorEnabled(z);
     }
 
     public void setPreferredInputDevice(AudioDeviceInfo audioDeviceInfo) {
@@ -335,25 +340,13 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public final /* synthetic */ boolean setPreferredMicrophoneFieldDimension(float f10) {
-        return a.b(this, f10);
+    public final boolean setPreferredMicrophoneFieldDimension(float f) {
+        return false;
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public void setSpeakerMute(boolean z10) {
-        Logging.d(TAG, "setSpeakerMute: " + z10);
-        this.audioOutput.setSpeakerMute(z10);
-    }
-
-    private JavaAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i7, int i10, boolean z10, boolean z11) {
-        this.nativeLock = new Object();
-        this.context = context;
-        this.audioManager = audioManager;
-        this.audioInput = webRtcAudioRecord;
-        this.audioOutput = webRtcAudioTrack;
-        this.inputSampleRate = i7;
-        this.outputSampleRate = i10;
-        this.useStereoInput = z10;
-        this.useStereoOutput = z11;
+    public void setSpeakerMute(boolean z) {
+        Logging.d(TAG, "setSpeakerMute: " + z);
+        this.audioOutput.setSpeakerMute(z);
     }
 }

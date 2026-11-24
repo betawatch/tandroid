@@ -1,29 +1,22 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.car.app.j;
-import hd.g;
-import hd.h;
-import hd.o;
-import hd.r;
-import id.c;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
     private zzqm zzb;
     private final Map zzc;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public zzaj() {
-        this(null, 1, 0 == true ? 1 : 0);
+    public /* synthetic */ zzaj(List list, int i, t93 t93Var) {
+        this.zza = zk2.b(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
+        this.zzc = new LinkedHashMap();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,16 +25,16 @@ public final class zzaj extends zzg {
         List list = (List) this.zzc.remove(str);
         if (list != null) {
             List<zzat> list2 = list;
-            int b10 = r.b(h.d(list2, 10));
-            if (b10 < 16) {
-                b10 = 16;
+            int b = qi6.b(al2.c(list2, 10));
+            if (b < 16) {
+                b = 16;
             }
-            map = new LinkedHashMap(b10);
+            map = new LinkedHashMap(b);
             for (zzat zzatVar : list2) {
                 map.put(Integer.valueOf(zzatVar.zzb()), zzatVar);
             }
         } else {
-            map = o.a;
+            map = d24.a;
         }
         zzyo zzr = zzr(map, str);
         zzxw zzf = zzxx.zzf();
@@ -65,7 +58,7 @@ public final class zzaj extends zzg {
             zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
         } else {
             if (!(zzatVar instanceof zzak)) {
-                throw new j();
+                throw new gp2();
             }
             zzyt zza2 = ((zzak) zzatVar).zza();
             zzqm zzqmVar3 = this.zzb;
@@ -87,10 +80,10 @@ public final class zzaj extends zzg {
             }
         }
         int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj2 = arrayList.get(i7);
-            i7++;
+        int i = 0;
+        while (i < size) {
+            Object obj2 = arrayList.get(i);
+            i++;
             zzar zzarVar = (zzar) obj2;
             if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
                 int zza = zzarVar.zza();
@@ -102,7 +95,7 @@ public final class zzaj extends zzg {
             }
         }
         Collection values = map.values();
-        ArrayList arrayList2 = new ArrayList(h.d(values, 10));
+        ArrayList arrayList2 = new ArrayList(al2.c(values, 10));
         Iterator it = values.iterator();
         while (it.hasNext()) {
             arrayList2.add(zzq((zzat) it.next()));
@@ -112,17 +105,17 @@ public final class zzaj extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, c cVar) {
+    public final Object zza(String str, fw2 fw2Var) {
         return zzp(str);
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, c cVar) {
+    public final Object zzb(String str, fw2 fw2Var) {
         return new zzhg(new zzag(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, c cVar) {
+    public final Object zzd(zzxn zzxnVar, fw2 fw2Var) {
         return new zzhg(new zzai(zzxnVar, this, null));
     }
 
@@ -148,8 +141,8 @@ public final class zzaj extends zzg {
         return this.zzc;
     }
 
-    public /* synthetic */ zzaj(List list, int i7, f fVar) {
-        this.zza = g.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
-        this.zzc = new LinkedHashMap();
+    /* JADX WARN: Multi-variable type inference failed */
+    public zzaj() {
+        this(null, 1, 0 == true ? 1 : 0);
     }
 }

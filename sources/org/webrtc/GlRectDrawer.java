@@ -2,8 +2,8 @@ package org.webrtc;
 
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class GlRectDrawer extends GlGenericDrawer {
     private static final String FRAGMENT_SHADER = "void main() {\n  gl_FragColor = sample(tc);\n}\n";
 
@@ -11,8 +11,8 @@ public class GlRectDrawer extends GlGenericDrawer {
         super(FRAGMENT_SHADER, new ShaderCallbacks());
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
         private ShaderCallbacks() {
         }
 
@@ -21,7 +21,7 @@ public class GlRectDrawer extends GlGenericDrawer {
         }
 
         @Override // org.webrtc.GlGenericDrawer.ShaderCallbacks
-        public void onPrepareShader(GlShader glShader, float[] fArr, int i7, int i10, int i11, int i12) {
+        public void onPrepareShader(GlShader glShader, float[] fArr, int i, int i2, int i3, int i4) {
         }
     }
 }

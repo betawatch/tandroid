@@ -1,51 +1,45 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzlj extends j implements p {
+final class zzlj extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzly zzb;
     final /* synthetic */ String zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlj(zzly zzlyVar, String str, c cVar) {
-        super(2, cVar);
+    public zzlj(zzly zzlyVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzlyVar;
         this.zzc = str;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzlj(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzlj(this.zzb, this.zzc, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlj) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzlj) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zza;
-        c8.z.b(obj);
-        if (i7 == 0) {
+        int i = this.zza;
+        qse.b(obj);
+        if (i == 0) {
             zzly zzlyVar = this.zzb;
             this.zza = 1;
             obj = zzlyVar.zzv(this);
-            if (obj == aVar) {
-                return aVar;
+            bx2 bx2Var = bx2.a;
+            if (obj == bx2Var) {
+                return bx2Var;
             }
         }
         ((WebView) obj).evaluateJavascript("recaptcha.m.Main.execute(\"" + this.zzc + "\")", null);
-        return k.a;
+        return g5c.a;
     }
 }

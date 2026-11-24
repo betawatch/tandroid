@@ -1,0 +1,76 @@
+// default package
+
+import java.util.HashMap;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.PhotoViewer;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class n42 implements p8c {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ a52 e;
+
+    public /* synthetic */ n42(t42 t42Var, boolean z, boolean z2, int i) {
+        this.e = t42Var;
+        this.b = z;
+        this.c = z2;
+        this.d = i;
+    }
+
+    @Override // p8c
+    public final void a(Object obj) {
+        byte b = this.a;
+        a52 a52Var = this.e;
+        switch (b) {
+            case 0:
+                Long l = (Long) obj;
+                x02 x02Var = ((v42) a52Var).b.b;
+                if (x02Var != null) {
+                    x02Var.F3 = true;
+                }
+                x02Var.W3.B1(7, true, this.b, this.d, 0, 0L, x02Var.a1(), this.c, l.longValue());
+                HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
+                hashMap.clear();
+                ChatAttachAlertPhotoLayout.s1.clear();
+                ChatAttachAlertPhotoLayout.u1.clear();
+                hashMap.clear();
+                PhotoViewer.r0();
+                PhotoViewer.r0().B(PhotoViewer.r0().Q, false);
+                PhotoViewer.r0().v2 = true;
+                break;
+            default:
+                Long l2 = (Long) obj;
+                PhotoViewer.r0();
+                PhotoViewer.r0().P = false;
+                PhotoViewer.r0().v2 = false;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((t42) a52Var).c;
+                x02 x02Var2 = chatAttachAlertPhotoLayout.b;
+                x02Var2.s4 = true;
+                x02Var2.F3 = true;
+                chatAttachAlertPhotoLayout.b0(false);
+                v02 v02Var = x02Var2.W3;
+                boolean z = this.b;
+                v02Var.B1(z ? 4 : 8, true, this.c, this.d, 0, 0L, x02Var2.a1(), z, l2.longValue());
+                ChatAttachAlertPhotoLayout.s1.clear();
+                ChatAttachAlertPhotoLayout.u1.clear();
+                ChatAttachAlertPhotoLayout.t1.clear();
+                chatAttachAlertPhotoLayout.H.f();
+                chatAttachAlertPhotoLayout.w.f();
+                x02Var2.a(true);
+                PhotoViewer.r0();
+                PhotoViewer.r0().B(PhotoViewer.r0().Q, false);
+                PhotoViewer.r0().v2 = true;
+                break;
+        }
+    }
+
+    public /* synthetic */ n42(v42 v42Var, boolean z, int i, boolean z2) {
+        this.e = v42Var;
+        this.b = z;
+        this.d = i;
+        this.c = z2;
+    }
+}

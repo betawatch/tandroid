@@ -1,47 +1,55 @@
 package j$.util.stream;
 
-import java.util.Arrays;
+import j$.util.Collection;
+import j$.util.List;
+import j$.util.Objects;
+import java.util.ArrayList;
 
-/* loaded from: classes2.dex */
-public final class j6 extends x5 {
-    public Object[] d;
-    public int e;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class j6 extends b6 {
+    public ArrayList d;
 
-    @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j3) {
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.d = new Object[(int) j3];
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        this.d.add(obj);
     }
 
-    @Override // j$.util.stream.f5, j$.util.stream.j5
+    @Override // j$.util.stream.j5, j$.util.stream.n5
     public final void end() {
-        int i7 = 0;
-        Arrays.sort(this.d, 0, this.e, this.b);
-        long j3 = this.e;
-        j5 j5Var = this.a;
-        j5Var.o(j3);
-        if (!this.c) {
-            while (i7 < this.e) {
-                j5Var.accept((j5) this.d[i7]);
-                i7++;
+        List.-EL.sort(this.d, this.b);
+        long size = this.d.size();
+        n5 n5Var = this.a;
+        n5Var.n(size);
+        boolean z = this.c;
+        ArrayList arrayList = this.d;
+        if (z) {
+            int size2 = arrayList.size();
+            int i = 0;
+            while (i < size2) {
+                Object obj = arrayList.get(i);
+                i++;
+                if (n5Var.q()) {
+                    break;
+                } else {
+                    n5Var.x((n5) obj);
+                }
             }
         } else {
-            while (i7 < this.e && !j5Var.q()) {
-                j5Var.accept((j5) this.d[i7]);
-                i7++;
-            }
+            Objects.requireNonNull(n5Var);
+            Collection.-EL.a(arrayList, new j$.time.v((byte) 8, n5Var));
         }
-        j5Var.end();
+        n5Var.end();
         this.d = null;
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        Object[] objArr = this.d;
-        int i7 = this.e;
-        this.e = i7 + 1;
-        objArr[i7] = obj;
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final void n(long j) {
+        if (j < 2147483639) {
+            this.d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
+        } else {
+            j$.time.g.c("Stream size exceeds max array size");
+        }
     }
 }

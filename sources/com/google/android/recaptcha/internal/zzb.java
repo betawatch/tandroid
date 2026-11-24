@@ -1,16 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.g;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzb extends j implements p {
+final class zzb extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzg zzb;
     final /* synthetic */ String zzc;
@@ -18,41 +10,41 @@ final class zzb extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzb(zzg zzgVar, String str, long j3, c cVar) {
-        super(2, cVar);
+    public zzb(zzg zzgVar, String str, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzgVar;
         this.zzc = str;
-        this.zzd = j3;
+        this.zzd = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzb zzbVar = new zzb(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzb zzbVar = new zzb(this.zzb, this.zzc, this.zzd, fw2Var);
         zzbVar.zze = obj;
         return zzbVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzb) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzb) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
     
-        if (r12 != r0) goto L18;
+        if (r12 != r4) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x005d, code lost:
     
-        if (r12 != r0) goto L23;
+        if (r12 != r4) goto L23;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
         } catch (Exception unused) {
             zzg zzgVar = this.zzb;
@@ -61,31 +53,31 @@ final class zzb extends j implements p {
             this.zza = 3;
             obj = zzgVar.zza(str, this);
         }
-        if (i7 == 0) {
-            z.b(obj);
+        if (i == 0) {
+            qse.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzg zzgVar2 = this.zzb;
             String str2 = this.zzc;
-            long j3 = this.zzd;
+            long j = this.zzd;
             this.zze = zzhkVar;
             this.zza = 1;
-            zzhf zzhfVar = new zzhf(zzgVar2.zzj(), new zzf(j3, zzgVar2, str2, null), null);
-            if (zzhfVar != aVar) {
+            zzhf zzhfVar = new zzhf(zzgVar2.zzj(), new zzf(j, zzgVar2, str2, null), null);
+            if (zzhfVar != bx2Var) {
                 obj = zzhfVar;
             }
-            return aVar;
+            return bx2Var;
         }
-        if (i7 != 1) {
-            if (i7 != 2) {
-                z.b(obj);
-                return new g(obj);
+        if (i != 1) {
+            if (i != 2) {
+                qse.b(obj);
+                return new ta9(obj);
             }
-            z.b(obj);
+            qse.b(obj);
             obj = (zzxx) obj;
-            return new g(obj);
+            return new ta9(obj);
         }
         zzhkVar = (zzhk) this.zze;
-        z.b(obj);
+        qse.b(obj);
         this.zze = null;
         this.zza = 2;
         obj = ((zzhf) obj).zza(zzhkVar, this);

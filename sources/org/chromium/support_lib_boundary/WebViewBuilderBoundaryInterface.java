@@ -12,22 +12,28 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface WebViewBuilderBoundaryInterface {
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface Baseline {
         public static final int DEFAULT = 0;
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Config implements Consumer<BiConsumer<Integer, Object>> {
         public int baseline = 0;
         public final ArrayList a = new ArrayList();
         public final ArrayList b = new ArrayList();
         public final ArrayList c = new ArrayList();
+
+        @Override // java.util.function.Consumer
+        public void accept(BiConsumer<Integer, Object> biConsumer) {
+            biConsumer.accept(0, Integer.valueOf(this.baseline));
+            biConsumer.accept(1, new Object[]{this.a, this.b, this.c});
+        }
 
         public void addJavascriptInterface(Object obj, String str, List<String> list) {
             this.a.add(obj);
@@ -35,18 +41,12 @@ public interface WebViewBuilderBoundaryInterface {
             this.c.add(list);
         }
 
-        public /* synthetic */ Consumer andThen(Consumer consumer) {
+        public final /* synthetic */ Consumer andThen(Consumer consumer) {
             return Consumer$-CC.$default$andThen(this, consumer);
-        }
-
-        @Override // java.util.function.Consumer
-        public void accept(BiConsumer<Integer, Object> biConsumer) {
-            biConsumer.accept(0, Integer.valueOf(this.baseline));
-            biConsumer.accept(1, new Object[]{this.a, this.b, this.c});
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Target({ElementType.TYPE_USE})
     @Retention(RetentionPolicy.SOURCE)
     public @interface ConfigField {

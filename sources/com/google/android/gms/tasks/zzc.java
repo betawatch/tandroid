@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzc implements Runnable {
     final /* synthetic */ Task zza;
@@ -23,15 +23,16 @@ final class zzc implements Runnable {
         }
         try {
             this.zzb.zzd().zza(this.zzb.zzc().then(task));
-        } catch (RuntimeExecutionException e10) {
-            if (!(e10.getCause() instanceof Exception)) {
-                this.zzb.zzd().zzc(e10);
-                return;
-            }
+        } catch (RuntimeExecutionException e) {
+            boolean z = e.getCause() instanceof Exception;
             zzd zzdVar = this.zzb;
-            zzdVar.zzd().zzc((Exception) e10.getCause());
-        } catch (Exception e11) {
-            this.zzb.zzd().zzc(e11);
+            if (!z) {
+                zzdVar.zzd().zzc(e);
+            } else {
+                zzdVar.zzd().zzc((Exception) e.getCause());
+            }
+        } catch (Exception e2) {
+            this.zzb.zzd().zzc(e2);
         }
     }
 }

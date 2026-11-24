@@ -1,53 +1,101 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
-public final class e8 extends z4 implements n8 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ Predicate t;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class e8 implements n5 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Consumer b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e8(b5 b5Var, int i7, Predicate predicate, int i10) {
-        super(b5Var, i7);
-        this.s = i10;
-        this.t = predicate;
+    public /* synthetic */ e8(Consumer consumer, byte b) {
+        this.a = b;
+        this.b = consumer;
     }
 
-    @Override // j$.util.stream.a
-    public final Spliterator O0(a aVar, Spliterator spliterator) {
-        switch (this.s) {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        byte b = this.a;
+        Consumer consumer = this.b;
+        switch (b) {
             case 0:
-                return v6.ORDERED.m(aVar.m) ? N0(aVar, spliterator, new a1(12)).spliterator() : new u8(aVar.H0(spliterator), this.t, 1);
+                ((y6) consumer).x(obj);
+                break;
             default:
-                return v6.ORDERED.m(aVar.m) ? N0(aVar, spliterator, new a1(12)).spliterator() : new u8(aVar.H0(spliterator), this.t, 0);
+                consumer.x(obj);
+                break;
         }
     }
 
-    @Override // j$.util.stream.a
-    public final e2 N0(t3 t3Var, Spliterator spliterator, IntFunction intFunction) {
-        switch (this.s) {
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.stream.n5
+    public final void end() {
+        byte b = this.a;
+    }
+
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        byte b = this.a;
+    }
+
+    @Override // j$.util.stream.n5
+    public final boolean q() {
+        byte b = this.a;
+        return false;
+    }
+
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(int i) {
+        switch (this.a) {
             case 0:
-                return (e2) new q8(this, t3Var, spliterator, intFunction).invoke();
+                w3.k();
+                throw null;
             default:
-                return (e2) new p8(this, t3Var, spliterator, intFunction).invoke();
+                w3.k();
+                throw null;
         }
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        switch (this.s) {
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(long j) {
+        switch (this.a) {
             case 0:
-                return new k(this, j5Var);
+                w3.l();
+                throw null;
             default:
-                return new f8(this, j5Var, false);
+                w3.l();
+                throw null;
         }
     }
 
-    @Override // j$.util.stream.n8
-    public o8 h(w1 w1Var, boolean z10) {
-        return new f8(this, w1Var, z10);
+    @Override // j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        switch (this.a) {
+            case 0:
+                w3.d();
+                throw null;
+            default:
+                w3.d();
+                throw null;
+        }
+    }
+
+    private final void a(long j) {
+    }
+
+    private final void b(long j) {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

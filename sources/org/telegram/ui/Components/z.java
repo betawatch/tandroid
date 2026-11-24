@@ -1,73 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.text.style.ReplacementSpan;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final class z extends ReplacementSpan {
-    public final Paint a;
-    public final Path b;
-    public final Rect c;
-    public float d;
-    public float e;
-    public float f;
-    public float h;
-    public float n;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class z implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a0 b;
 
-    public z() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        this.c = new Rect();
-        this.d = -1.0f;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
+    public z(a0 a0Var, int i) {
+        this.b = a0Var;
+        this.a = i;
     }
 
-    public final void a(Paint paint) {
-        float textSize = paint.getTextSize();
-        if (textSize == this.d) {
+    /* JADX WARN: Removed duplicated region for block: B:15:0x007f A[LOOP:0: B:13:0x0075->B:15:0x007f, LOOP_END] */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        int i;
+        int i2;
+        int i3;
+        a0 a0Var = this.b;
+        EditTextBoldCursor[] editTextBoldCursorArr = a0Var.n;
+        ThemeEditorView.EditorAlert editorAlert = a0Var.J;
+        if (editorAlert.E1) {
             return;
         }
-        this.d = textSize;
-        this.e = 0.62f * textSize;
-        this.f = 0.1f * textSize;
-        this.h = textSize * 0.3f;
-        paint.getTextBounds("x", 0, 1, this.c);
-        this.n = r3.height();
-        float f10 = this.e;
-        float f11 = 0.475f * f10;
-        float f12 = f10 * 0.46f;
-        Path path = this.b;
-        path.rewind();
-        path.moveTo(0.0f, 0.0f);
-        path.lineTo(this.e, 0.0f);
-        path.moveTo(this.e - f11, -f12);
-        path.lineTo(this.e, 0.0f);
-        path.lineTo(this.e - f11, f12);
-        this.a.setStrokeWidth(this.f);
+        editorAlert.E1 = true;
+        int intValue = Utilities.z(editable.toString()).intValue();
+        int i4 = this.a;
+        if (intValue < 0) {
+            editTextBoldCursorArr[i4].setText("0");
+            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i4];
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            intValue = 0;
+        } else if (intValue > 255) {
+            editTextBoldCursorArr[i4].setText("255");
+            EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursorArr[i4];
+            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
+            intValue = 255;
+        }
+        int b = a0Var.b();
+        if (i4 == 2) {
+            i = b & (-256);
+            i2 = intValue & kk7.d4;
+        } else if (i4 == 1) {
+            i = b & (-65281);
+            i2 = (intValue & kk7.d4) << 8;
+        } else {
+            if (i4 != 0) {
+                if (i4 == 3) {
+                    i = b & 16777215;
+                    i2 = (intValue & kk7.d4) << 24;
+                }
+                a0Var.c(b);
+                for (i3 = 0; i3 < ThemeEditorView.this.e.size(); i3++) {
+                    ((blb) ThemeEditorView.this.e.get(i3)).e(a0Var.b(), false, true);
+                }
+                ThemeEditorView.this.c();
+                editorAlert.E1 = false;
+            }
+            i = b & (-16711681);
+            i2 = (intValue & kk7.d4) << 16;
+        }
+        b = i | i2;
+        a0Var.c(b);
+        while (i3 < ThemeEditorView.this.e.size()) {
+        }
+        ThemeEditorView.this.c();
+        editorAlert.E1 = false;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        a(paint);
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        paint2.setColor(color);
-        canvas.save();
-        org.telegram.messenger.m10.k(this.n, 2.0f, i12, (this.f / 2.0f) + f10, canvas);
-        canvas.drawPath(this.b, paint2);
-        canvas.restore();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        a(paint);
-        return (int) Math.ceil(this.f + this.e + this.h);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

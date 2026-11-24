@@ -1,30 +1,30 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public abstract class c {
     public final int a;
     public int b;
     public int c;
     public long[] d;
 
+    public c(int i) {
+        if (i >= 0) {
+            this.a = Math.max(4, 32 - Integer.numberOfLeadingZeros(i - 1));
+        } else {
+            j$.time.g.j("Illegal Capacity: ", i);
+            throw null;
+        }
+    }
+
     public abstract void clear();
+
+    public final long count() {
+        int i = this.c;
+        return i == 0 ? this.b : this.d[i] + this.b;
+    }
 
     public c() {
         this.a = 4;
-    }
-
-    public c(int i7) {
-        if (i7 < 0) {
-            throw new IllegalArgumentException("Illegal Capacity: " + i7);
-        }
-        this.a = Math.max(4, 32 - Integer.numberOfLeadingZeros(i7 - 1));
-    }
-
-    public final long count() {
-        int i7 = this.c;
-        if (i7 == 0) {
-            return this.b;
-        }
-        return this.d[i7] + this.b;
     }
 }

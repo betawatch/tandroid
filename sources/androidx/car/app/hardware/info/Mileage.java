@@ -2,17 +2,16 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
-import s.f;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Mileage {
     private final CarValue<Integer> mDistanceDisplayUnit;
     private final CarValue<Float> mOdometerMeters;
 
-    public Mileage(f fVar) {
-        fVar.getClass();
-        throw null;
+    private Mileage() {
+        this.mOdometerMeters = CarValue.UNKNOWN_FLOAT;
+        this.mDistanceDisplayUnit = CarValue.UNKNOWN_INTEGER;
     }
 
     public boolean equals(Object obj) {
@@ -46,8 +45,8 @@ public final class Mileage {
         return "[ odometer: " + getOdometerMeters() + ", distance display unit: " + this.mDistanceDisplayUnit + "]";
     }
 
-    private Mileage() {
-        this.mOdometerMeters = CarValue.UNKNOWN_FLOAT;
-        this.mDistanceDisplayUnit = CarValue.UNKNOWN_INTEGER;
+    public Mileage(td7 td7Var) {
+        td7Var.getClass();
+        throw null;
     }
 }

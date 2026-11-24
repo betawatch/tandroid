@@ -9,9 +9,10 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-class ColorPicker$RadioButton extends View {
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public class ColorPicker$RadioButton extends View {
     public final Paint a;
     public ObjectAnimator b;
     public float c;
@@ -23,21 +24,22 @@ class ColorPicker$RadioButton extends View {
         this.a = new Paint(1);
     }
 
-    public final void a(int i7) {
-        this.e = i7;
+    public final void a(int i) {
+        this.e = i;
         invalidate();
     }
 
-    public final void b(boolean z10) {
+    public final void b(boolean z) {
         ObjectAnimator objectAnimator = this.b;
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        if (!z10) {
-            setCheckedState(this.d ? 1.0f : 0.0f);
+        boolean z2 = this.d;
+        if (!z) {
+            setCheckedState(z2 ? 1.0f : 0.0f);
             return;
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "checkedState", this.d ? 1.0f : 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "checkedState", z2 ? 1.0f : 0.0f);
         this.b = ofFloat;
         ofFloat.setDuration(200L);
         this.b.start();
@@ -55,25 +57,25 @@ class ColorPicker$RadioButton extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float L = org.telegram.messenger.g0.L(15.0f);
+        float L = gl.L(15.0f);
         float measuredWidth = getMeasuredWidth() * 0.5f;
         float measuredHeight = getMeasuredHeight() * 0.5f;
-        int i7 = this.e;
+        int i = this.e;
         Paint paint = this.a;
-        paint.setColor(i7);
+        paint.setColor(i);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
+        paint.setStrokeWidth(gl.L(3.0f));
         paint.setAlpha(Math.round(this.c * 255.0f));
         canvas.drawCircle(measuredWidth, measuredHeight, L - (paint.getStrokeWidth() * 0.5f), paint);
-        paint.setAlpha(org.telegram.messenger.ks.e4);
+        paint.setAlpha(kk7.d4);
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(measuredWidth, measuredHeight, L - (org.telegram.messenger.g0.L(5.0f) * this.c), paint);
+        canvas.drawCircle(measuredWidth, measuredHeight, L - (gl.L(5.0f) * this.c), paint);
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(org.telegram.messenger.gd.N0(2131752003, null));
+        accessibilityNodeInfo.setText(k96.M0(2131752003, null));
         accessibilityNodeInfo.setClassName(Button.class.getName());
         accessibilityNodeInfo.setChecked(this.d);
         accessibilityNodeInfo.setCheckable(true);
@@ -81,12 +83,12 @@ class ColorPicker$RadioButton extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
     }
 
-    public void setCheckedState(float f10) {
-        this.c = f10;
+    public void setCheckedState(float f) {
+        this.c = f;
         invalidate();
     }
 }

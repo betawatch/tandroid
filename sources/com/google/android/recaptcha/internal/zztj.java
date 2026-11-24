@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zztj implements zztq {
     private final zztq[] zza;
@@ -11,19 +11,20 @@ final class zztj implements zztq {
 
     @Override // com.google.android.recaptcha.internal.zztq
     public final zztp zzb(Class cls) {
-        for (int i7 = 0; i7 < 2; i7++) {
-            zztq zztqVar = this.zza[i7];
+        for (int i = 0; i < 2; i++) {
+            zztq zztqVar = this.zza[i];
             if (zztqVar.zzc(cls)) {
                 return zztqVar.zzb(cls);
             }
         }
-        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
+        fyb.i("No factory is available for message type: ".concat(cls.getName()));
+        return null;
     }
 
     @Override // com.google.android.recaptcha.internal.zztq
     public final boolean zzc(Class cls) {
-        for (int i7 = 0; i7 < 2; i7++) {
-            if (this.zza[i7].zzc(cls)) {
+        for (int i = 0; i < 2; i++) {
+            if (this.zza[i].zzc(cls)) {
                 return true;
             }
         }

@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class b implements View.OnKeyListener {
     public final /* synthetic */ SearchView a;
@@ -15,32 +15,35 @@ public final class b implements View.OnKeyListener {
     }
 
     @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
+    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
+        int i2;
         SearchView searchView = this.a;
         SearchView.SearchAutoComplete searchAutoComplete = searchView.G;
         if (searchView.s0 != null) {
             if (!searchAutoComplete.isPopupShowing() || searchAutoComplete.getListSelection() == -1) {
-                if (TextUtils.getTrimmedLength(searchAutoComplete.getText()) != 0 && keyEvent.hasNoModifiers() && keyEvent.getAction() == 1 && i7 == 66) {
+                if (TextUtils.getTrimmedLength(searchAutoComplete.getText()) != 0 && keyEvent.hasNoModifiers() && keyEvent.getAction() == 1 && i == 66) {
                     view.cancelLongPress();
                     searchView.getContext().startActivity(searchView.i("android.intent.action.SEARCH", null, null, searchAutoComplete.getText().toString()));
                     return true;
                 }
             } else if (searchView.s0 != null && searchView.i0 != null && keyEvent.getAction() == 0 && keyEvent.hasNoModifiers()) {
-                if (i7 == 66 || i7 == 84 || i7 == 61) {
+                if (i == 66 || i == 84 || i == 61) {
                     searchView.m(searchAutoComplete.getListSelection());
                     return true;
                 }
-                if (i7 == 21 || i7 == 22) {
-                    searchAutoComplete.setSelection(i7 == 21 ? 0 : searchAutoComplete.length());
-                    searchAutoComplete.setListSelection(0);
-                    searchAutoComplete.clearListSelection();
-                    searchAutoComplete.a();
-                    return true;
-                }
-                if (i7 == 19) {
+                if (i == 21) {
+                    i2 = 0;
+                } else if (i == 22) {
+                    i2 = searchAutoComplete.length();
+                } else if (i == 19) {
                     searchAutoComplete.getListSelection();
                     return false;
                 }
+                searchAutoComplete.setSelection(i2);
+                searchAutoComplete.setListSelection(0);
+                searchAutoComplete.clearListSelection();
+                searchAutoComplete.a();
+                return true;
             }
         }
         return false;

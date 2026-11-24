@@ -1,87 +1,80 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzbb extends j implements p {
+final class zzbb extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzbo zzb;
     final /* synthetic */ String zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbb(zzbo zzboVar, String str, c cVar) {
-        super(2, cVar);
+    public zzbb(zzbo zzboVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzboVar;
         this.zzc = str;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzbb zzbbVar = new zzbb(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzbb zzbbVar = new zzbb(this.zzb, this.zzc, fw2Var);
         zzbbVar.zzd = obj;
         return zzbbVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzbb) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0065, code lost:
     
-        return r0;
+        return r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0064, code lost:
     
         return (java.lang.String) r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0054, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0053, code lost:
     
-        if (((com.google.android.recaptcha.internal.zzhg) r7).zza(r1, r6) != r0) goto L23;
+        if (((com.google.android.recaptcha.internal.zzhg) r7).zza(r0, r6) != r4) goto L22;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0037, code lost:
     
-        if (r7 != r0) goto L16;
+        if (r7 != r4) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0046, code lost:
     
-        if (r7 != r0) goto L21;
+        if (r7 == r4) goto L26;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0010, code lost:
     
-        if (r1 != 3) goto L26;
+        if (r0 != 3) goto L24;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0056, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0055, code lost:
     
         r7 = r6.zzb;
-        r1 = r6.zzc;
+        r0 = r6.zzc;
         r6.zza = 4;
-        r7 = r7.zzm(r1, r6);
+        r7 = r7.zzm(r0, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0060, code lost:
     
-        if (r7 != r0) goto L26;
+        if (r7 == r4) goto L26;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v13 */
-    /* JADX WARN: Type inference failed for: r1v14 */
-    /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // kd.a
+    /* JADX WARN: Type inference failed for: r0v0, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v13 */
+    /* JADX WARN: Type inference failed for: r0v14 */
+    /* JADX WARN: Type inference failed for: r0v6 */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
         Object obj2 = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
         } catch (Exception unused) {
             zzbo zzboVar = this.zzb;
@@ -91,7 +84,7 @@ final class zzbb extends j implements p {
             zzhkVar = obj2;
         }
         if (obj2 == 0) {
-            z.b(obj);
+            qse.b(obj);
             zzhk zzhkVar2 = (zzhk) this.zzd;
             zzbo zzboVar2 = this.zzb;
             String str = this.zzc;
@@ -101,13 +94,13 @@ final class zzbb extends j implements p {
             obj2 = zzhkVar2;
         } else if (obj2 == 1) {
             zzhk zzhkVar3 = (zzhk) this.zzd;
-            z.b(obj);
+            qse.b(obj);
             obj2 = zzhkVar3;
         } else if (obj2 != 2) {
-            z.b(obj);
+            qse.b(obj);
         } else {
             zzhk zzhkVar4 = (zzhk) this.zzd;
-            z.b(obj);
+            qse.b(obj);
             zzhkVar = zzhkVar4;
             this.zzd = null;
             this.zza = 3;

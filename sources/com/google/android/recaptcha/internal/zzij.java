@@ -1,13 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import gd.e;
-import hd.r;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzij {
     public static final Map zza() {
-        return r.d(new e(39, zzjl.zza), new e(34, zzkd.zza), new e(35, zzkp.zza), new e(25, zzju.zza), new e(37, zzkn.zza), new e(21, zzjc.zza), new e(22, zzkm.zza), new e(23, zzke.zza), new e(24, zzjr.zza), new e(1, zzkh.zza), new e(2, zzjk.zza), new e(38, zzkl.zza), new e(3, zzjv.zza), new e(41, zzji.zza), new e(4, zzjw.zza), new e(17, zzjq.zza), new e(32, zzjd.zza), new e(5, zzjy.zza), new e(31, zzje.zza), new e(36, zzjf.zza), new e(16, zzjm.zza), new e(26, zzki.zza), new e(6, zzjx.zza), new e(27, zzkg.zza), new e(8, zzkb.zza), new e(9, zzkc.zza), new e(10, zzjz.zza), new e(11, zzka.zza), new e(12, zzkj.zza), new e(13, zzkk.zza), new e(30, zzjg.zza), new e(15, zzjh.zza), new e(20, zzjj.zza), new e(7, zzkf.zza), new e(18, zzjo.zza), new e(19, zzjp.zza), new e(40, zzko.zza));
+        return qi6.c(new ku7(39, zzjl.zza), new ku7(34, zzkd.zza), new ku7(35, zzkp.zza), new ku7(25, zzju.zza), new ku7(37, zzkn.zza), new ku7(21, zzjc.zza), new ku7(22, zzkm.zza), new ku7(23, zzke.zza), new ku7(24, zzjr.zza), new ku7(1, zzkh.zza), new ku7(2, zzjk.zza), new ku7(38, zzkl.zza), new ku7(3, zzjv.zza), new ku7(41, zzji.zza), new ku7(4, zzjw.zza), new ku7(17, zzjq.zza), new ku7(32, zzjd.zza), new ku7(5, zzjy.zza), new ku7(31, zzje.zza), new ku7(36, zzjf.zza), new ku7(16, zzjm.zza), new ku7(26, zzki.zza), new ku7(6, zzjx.zza), new ku7(27, zzkg.zza), new ku7(8, zzkb.zza), new ku7(9, zzkc.zza), new ku7(10, zzjz.zza), new ku7(11, zzka.zza), new ku7(12, zzkj.zza), new ku7(13, zzkk.zza), new ku7(30, zzjg.zza), new ku7(15, zzjh.zza), new ku7(20, zzjj.zza), new ku7(7, zzkf.zza), new ku7(18, zzjo.zza), new ku7(19, zzjp.zza), new ku7(40, zzko.zza));
     }
 }

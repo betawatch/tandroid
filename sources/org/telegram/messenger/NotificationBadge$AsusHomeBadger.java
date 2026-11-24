@@ -4,22 +4,22 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NotificationBadge$AsusHomeBadger implements wr {
-    @Override // org.telegram.messenger.wr
-    public final void a(int i7) {
+public class NotificationBadge$AsusHomeBadger implements yj7 {
+    @Override // yj7
+    public final void a(int i) {
         Intent intent = new Intent("android.intent.action.BADGE_COUNT_UPDATE");
-        intent.putExtra("badge_count", i7);
-        intent.putExtra("badge_count_package_name", zr.d.getPackageName());
-        intent.putExtra("badge_count_class_name", zr.d.getClassName());
+        intent.putExtra("badge_count", i);
+        intent.putExtra("badge_count_package_name", ak7.d.getPackageName());
+        intent.putExtra("badge_count_class_name", ak7.d.getClassName());
         intent.putExtra("badge_vip_count", 0);
-        if (zr.a(intent)) {
-            g0.g3(new s(intent, 3));
+        if (ak7.a(intent)) {
+            gl.d3(new hk(intent, (byte) 3));
         }
     }
 
-    @Override // org.telegram.messenger.wr
+    @Override // yj7
     public final List b() {
         return Arrays.asList("com.asus.launcher");
     }

@@ -1,97 +1,83 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.g;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzll extends j implements p {
+final class zzll extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzxn zzb;
     final /* synthetic */ zzly zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzll(zzxn zzxnVar, zzly zzlyVar, c cVar) {
-        super(2, cVar);
+    public zzll(zzxn zzxnVar, zzly zzlyVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzxnVar;
         this.zzc = zzlyVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzll zzllVar = new zzll(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzll zzllVar = new zzll(this.zzb, this.zzc, fw2Var);
         zzllVar.zzd = obj;
         return zzllVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzll) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzll) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0053, code lost:
+    
+        if (((com.google.android.recaptcha.internal.zzhg) r12).zza(r0, r11) != r3) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0045, code lost:
+    
+        if (r12 != r3) goto L17;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0066, code lost:
+    
+        if (r12.zzc(r0, r11) != r3) goto L22;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object a10;
-        a aVar = a.a;
-        int i7 = this.zza;
-        if (i7 != 0) {
-            if (i7 == 1) {
-                z.b(obj);
-                a10 = z.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
-                return new g(a10);
-            }
-            if (i7 != 2) {
-                z.b(obj);
-                a10 = k.a;
-                return new g(a10);
-            }
+        Object sa9Var;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
             zzhkVar = (zzhk) this.zzd;
-            z.b(obj);
-            this.zzd = null;
-            this.zza = 3;
-            if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
-                return aVar;
+            zzxn zzxnVar = this.zzb;
+            if (zzxnVar.zzV() && zzxnVar.zzT() && zzxnVar.zzS()) {
+                zzly zzlyVar = this.zzc;
+                zzlyVar.zze = zzxnVar;
+                this.zzd = zzhkVar;
+                this.zza = 2;
+                obj = zzly.zzu(zzlyVar, this);
+            } else {
+                zzdj zzn = this.zzc.zzn();
+                zzmc zzmcVar = zzmc.zzd;
+                this.zza = 1;
             }
-            a10 = k.a;
-            return new g(a10);
+            return bx2Var;
         }
-        z.b(obj);
+        if (i == 1) {
+            qse.b(obj);
+            sa9Var = new sa9(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+            return new ta9(sa9Var);
+        }
+        if (i != 2) {
+            qse.b(obj);
+            sa9Var = g5c.a;
+            return new ta9(sa9Var);
+        }
         zzhkVar = (zzhk) this.zzd;
-        zzxn zzxnVar = this.zzb;
-        if (!zzxnVar.zzV() || !zzxnVar.zzT() || !zzxnVar.zzS()) {
-            zzdj zzn = this.zzc.zzn();
-            zzmc zzmcVar = zzmc.zzd;
-            this.zza = 1;
-            if (zzn.zzc(zzmcVar, this) == aVar) {
-                return aVar;
-            }
-            a10 = z.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
-            return new g(a10);
-        }
-        zzly zzlyVar = this.zzc;
-        zzlyVar.zze = zzxnVar;
-        this.zzd = zzhkVar;
-        this.zza = 2;
-        obj = zzly.zzu(zzlyVar, this);
-        if (obj == aVar) {
-            return aVar;
-        }
+        qse.b(obj);
         this.zzd = null;
         this.zza = 3;
-        if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
-        }
-        a10 = k.a;
-        return new g(a10);
     }
 }

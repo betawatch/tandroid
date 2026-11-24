@@ -1,137 +1,89 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.IntConsumer$-CC;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
-import java.util.function.IntPredicate;
+import java.util.concurrent.CountedCompleter;
+import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class s8 extends v8 implements IntConsumer, j$.util.x0 {
-    public int e;
-    public final /* synthetic */ int f;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class s8 extends d {
+    public final a h;
+    public final IntFunction i;
+    public final boolean j;
+    public long k;
+    public long l;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s8(Spliterator spliterator, int i7) {
-        super(spliterator);
-        this.f = i7;
+    public s8(a aVar, a aVar2, Spliterator spliterator, IntFunction intFunction) {
+        super(aVar2, spliterator);
+        this.h = aVar;
+        this.i = intFunction;
+        this.j = b7.ORDERED.n(aVar2.f);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s8(Spliterator spliterator, v8 v8Var, int i7) {
-        super(spliterator, v8Var);
-        this.f = i7;
-    }
-
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
-    }
-
-    @Override // j$.util.stream.v8, j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
-    }
-
-    @Override // j$.util.d1
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        while (tryAdvance(intConsumer)) {
+    @Override // j$.util.stream.d
+    public final Object a() {
+        long j;
+        boolean b = b();
+        if (!b && this.j) {
+            b7 b7Var = b7.SIZED;
+            a aVar = this.h;
+            int i = aVar.c;
+            int i2 = b7Var.e;
+            if ((i & i2) == i2) {
+                j = aVar.F(this.b);
+                z1 I = this.a.I(j, this.i);
+                r8 g = ((q8) this.h).g(I, (this.j || b) ? false : true);
+                this.a.Q(this.b, g);
+                h2 build = I.build();
+                this.k = build.count();
+                this.l = g.v();
+                return build;
+            }
         }
+        j = -1;
+        z1 I2 = this.a.I(j, this.i);
+        r8 g2 = ((q8) this.h).g(I2, (this.j || b) ? false : true);
+        this.a.Q(this.b, g2);
+        h2 build2 = I2.build();
+        this.k = build2.count();
+        this.l = g2.v();
+        return build2;
     }
 
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i7) {
-        this.d = (this.d + 1) & 63;
-        this.e = i7;
+    @Override // j$.util.stream.d
+    public final d c(Spliterator spliterator) {
+        return new s8(this, spliterator);
     }
 
-    @Override // j$.util.stream.v8
-    public final Spliterator b(Spliterator spliterator) {
-        switch (this.f) {
-            case 0:
-                return new s8((j$.util.x0) spliterator, this, 0);
-            default:
-                return new s8((j$.util.x0) spliterator, this, 1);
-        }
-    }
-
-    @Override // j$.util.stream.v8, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ Spliterator trySplit() {
-        switch (this.f) {
-            case 1:
-                return trySplit();
-            default:
-                return super.trySplit();
-        }
-    }
-
-    @Override // j$.util.stream.v8, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.d1 trySplit() {
-        switch (this.f) {
-            case 1:
-                return trySplit();
-            default:
-                return super.trySplit();
-        }
-    }
-
-    @Override // j$.util.x0
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        switch (this.f) {
-            case 0:
-                boolean z10 = this.c;
-                Spliterator spliterator = this.a;
-                if (z10) {
-                    this.c = false;
-                    boolean tryAdvance = ((j$.util.x0) spliterator).tryAdvance((IntConsumer) this);
-                    if (tryAdvance && a()) {
-                        IntPredicate intPredicate = null;
-                        intPredicate.test(this.e);
-                        throw null;
-                    }
-                    if (!tryAdvance) {
-                        return tryAdvance;
-                    }
-                    intConsumer.accept(this.e);
-                    return tryAdvance;
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        d dVar = this.d;
+        if (dVar != null) {
+            if (this.j) {
+                s8 s8Var = (s8) dVar;
+                long j = s8Var.l;
+                this.l = j;
+                if (j == s8Var.k) {
+                    this.l = j + ((s8) this.e).l;
                 }
-                return ((j$.util.x0) spliterator).tryAdvance(intConsumer);
-            default:
-                if (this.c && a() && ((j$.util.x0) this.a).tryAdvance((IntConsumer) this)) {
-                    IntPredicate intPredicate2 = null;
-                    intPredicate2.test(this.e);
-                    throw null;
-                }
-                this.c = false;
-                return false;
+            }
+            s8 s8Var2 = (s8) dVar;
+            long j2 = s8Var2.k;
+            s8 s8Var3 = (s8) this.e;
+            this.k = j2 + s8Var3.k;
+            h2 E = s8Var2.k == 0 ? (h2) s8Var3.f : s8Var3.k == 0 ? (h2) s8Var2.f : w3.E(this.h.H(), (h2) ((s8) this.d).f, (h2) ((s8) this.e).f);
+            if (b() && this.j) {
+                E = E.e(this.l, E.count(), this.i);
+            }
+            this.f = E;
         }
+        super.onCompletion(countedCompleter);
     }
 
-    @Override // j$.util.stream.v8, j$.util.Spliterator
-    public j$.util.x0 trySplit() {
-        switch (this.f) {
-            case 1:
-                if (this.b.get()) {
-                    return null;
-                }
-                return (j$.util.x0) super.trySplit();
-            default:
-                return super.trySplit();
-        }
-    }
-
-    @Override // j$.util.d1
-    public /* bridge */ /* synthetic */ boolean tryAdvance(Object obj) {
-        switch (this.f) {
-            case 1:
-                tryAdvance((IntConsumer) obj);
-                return false;
-            default:
-                return tryAdvance((IntConsumer) obj);
-        }
+    public s8(s8 s8Var, Spliterator spliterator) {
+        super(s8Var, spliterator);
+        this.h = s8Var.h;
+        this.i = s8Var.i;
+        this.j = s8Var.j;
     }
 }

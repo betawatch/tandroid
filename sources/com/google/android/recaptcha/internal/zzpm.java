@@ -1,17 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import i5.c;
-import org.telegram.messenger.ks;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzpm extends zzpo {
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public zzpm(String str, String str2, Character ch2) {
-        super(r0, ch2);
+    public zzpm(String str, String str2, Character ch) {
+        super(r0, ch);
         char[] cArr;
         zzpk zzpkVar = new zzpk(str, str2.toCharArray());
         cArr = zzpkVar.zzf;
@@ -24,54 +21,54 @@ final class zzpm extends zzpo {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(c.i(zze.length(), "Invalid input length "));
+            throw new zzpn(de9.k(zze.length(), "Invalid input length "));
         }
-        int i7 = 0;
-        int i10 = 0;
-        while (i7 < zze.length()) {
-            int i11 = i10 + 1;
-            int zzb = (zzpkVar.zzb(zze.charAt(i7 + 1)) << 12) | (zzpkVar.zzb(zze.charAt(i7)) << 18);
-            bArr[i10] = (byte) (zzb >>> 16);
-            int i12 = i7 + 2;
-            if (i12 < zze.length()) {
-                int i13 = i7 + 3;
-                int zzb2 = zzb | (zzpkVar.zzb(zze.charAt(i12)) << 6);
-                int i14 = i10 + 2;
-                bArr[i11] = (byte) ((zzb2 >>> 8) & ks.e4);
-                if (i13 < zze.length()) {
-                    i7 += 4;
-                    i10 += 3;
-                    bArr[i14] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i13))) & ks.e4);
+        int i = 0;
+        int i2 = 0;
+        while (i < zze.length()) {
+            int i3 = i2 + 1;
+            int zzb = (zzpkVar.zzb(zze.charAt(i)) << 18) | (zzpkVar.zzb(zze.charAt(i + 1)) << 12);
+            bArr[i2] = (byte) (zzb >>> 16);
+            int i4 = i + 2;
+            if (i4 < zze.length()) {
+                int i5 = i + 3;
+                int zzb2 = zzb | (zzpkVar.zzb(zze.charAt(i4)) << 6);
+                int i6 = i2 + 2;
+                bArr[i3] = (byte) ((zzb2 >>> 8) & kk7.d4);
+                if (i5 < zze.length()) {
+                    i += 4;
+                    i2 += 3;
+                    bArr[i6] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i5))) & kk7.d4);
                 } else {
-                    i10 = i14;
-                    i7 = i13;
+                    i2 = i6;
+                    i = i5;
                 }
             } else {
-                i7 = i12;
-                i10 = i11;
+                i = i4;
+                i2 = i3;
             }
         }
-        return i10;
+        return i2;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpo, com.google.android.recaptcha.internal.zzpp
-    public final void zzb(Appendable appendable, byte[] bArr, int i7, int i10) {
-        int i11 = 0;
-        zzmd.zzd(0, i10, bArr.length);
-        for (int i12 = i10; i12 >= 3; i12 -= 3) {
-            int i13 = bArr[i11] & 255;
-            int i14 = bArr[i11 + 1] & 255;
-            int i15 = bArr[i11 + 2] & 255;
+    public final void zzb(Appendable appendable, byte[] bArr, int i, int i2) {
+        int i3 = 0;
+        zzmd.zzd(0, i2, bArr.length);
+        for (int i4 = i2; i4 >= 3; i4 -= 3) {
+            int i5 = bArr[i3] & 255;
+            int i6 = bArr[i3 + 1] & 255;
+            int i7 = bArr[i3 + 2] & 255;
             zzpk zzpkVar = this.zza;
-            int i16 = (i14 << 8) | (i13 << 16) | i15;
-            appendable.append(zzpkVar.zza(i16 >>> 18));
-            appendable.append(zzpkVar.zza((i16 >>> 12) & 63));
-            appendable.append(zzpkVar.zza((i16 >>> 6) & 63));
-            appendable.append(zzpkVar.zza(i16 & 63));
-            i11 += 3;
+            int i8 = (i5 << 16) | (i6 << 8) | i7;
+            appendable.append(zzpkVar.zza(i8 >>> 18));
+            appendable.append(zzpkVar.zza((i8 >>> 12) & 63));
+            appendable.append(zzpkVar.zza((i8 >>> 6) & 63));
+            appendable.append(zzpkVar.zza(i8 & 63));
+            i3 += 3;
         }
-        if (i11 < i10) {
-            zzf(appendable, bArr, i11, i10 - i11);
+        if (i3 < i2) {
+            zzf(appendable, bArr, i3, i2 - i3);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 abstract class zzuv {
     private static volatile int zza = 100;
@@ -11,61 +11,65 @@ abstract class zzuv {
 
     public abstract Object zzc(Object obj);
 
-    public abstract void zzd(Object obj, int i7, int i10);
+    public abstract void zzd(Object obj, int i, int i2);
 
-    public abstract void zze(Object obj, int i7, long j3);
+    public abstract void zze(Object obj, int i, long j);
 
-    public abstract void zzf(Object obj, int i7, Object obj2);
+    public abstract void zzf(Object obj, int i, Object obj2);
 
-    public abstract void zzg(Object obj, int i7, zzqm zzqmVar);
+    public abstract void zzg(Object obj, int i, zzqm zzqmVar);
 
-    public abstract void zzh(Object obj, int i7, long j3);
+    public abstract void zzh(Object obj, int i, long j);
 
     public abstract void zzi(Object obj);
 
     public abstract void zzj(Object obj, Object obj2);
 
-    public final boolean zzk(Object obj, zzuf zzufVar, int i7) {
+    public final boolean zzk(Object obj, zzuf zzufVar, int i) {
         int zzd = zzufVar.zzd();
-        int i10 = zzd >>> 3;
-        int i11 = zzd & 7;
-        if (i11 == 0) {
-            zzh(obj, i10, zzufVar.zzl());
+        int i2 = zzd >>> 3;
+        int i3 = zzd & 7;
+        if (i3 == 0) {
+            zzh(obj, i2, zzufVar.zzl());
             return true;
         }
-        if (i11 == 1) {
-            zze(obj, i10, zzufVar.zzk());
+        if (i3 == 1) {
+            zze(obj, i2, zzufVar.zzk());
             return true;
         }
-        if (i11 == 2) {
-            zzg(obj, i10, zzufVar.zzp());
+        if (i3 == 2) {
+            zzg(obj, i2, zzufVar.zzp());
             return true;
         }
-        if (i11 != 3) {
-            if (i11 == 4) {
-                if (i7 != 0) {
+        if (i3 != 3) {
+            if (i3 == 4) {
+                if (i != 0) {
                     return false;
                 }
-                throw new zzsx("Protocol message end-group tag did not match expected tag.");
+                fvc.i("Protocol message end-group tag did not match expected tag.");
+                return false;
             }
-            if (i11 != 5) {
-                throw new zzsw("Protocol message tag had invalid wire type.");
+            if (i3 == 5) {
+                zzd(obj, i2, zzufVar.zzf());
+                return true;
             }
-            zzd(obj, i10, zzufVar.zzf());
-            return true;
+            haf.a();
+            return false;
         }
         Object zzb = zzb();
-        int i12 = i10 << 3;
-        int i13 = i7 + 1;
-        if (i13 >= zza) {
-            throw new zzsx("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+        int i4 = i2 << 3;
+        int i5 = i + 1;
+        if (i5 >= zza) {
+            fvc.i("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+            return false;
         }
-        while (zzufVar.zzc() != Integer.MAX_VALUE && zzk(zzb, zzufVar, i13)) {
+        while (zzufVar.zzc() != Integer.MAX_VALUE && zzk(zzb, zzufVar, i5)) {
         }
-        if ((i12 | 4) != zzufVar.zzd()) {
-            throw new zzsx("Protocol message end-group tag did not match expected tag.");
+        if ((i4 | 4) == zzufVar.zzd()) {
+            zzf(obj, i2, zzc(zzb));
+            return true;
         }
-        zzf(obj, i10, zzc(zzb));
-        return true;
+        fvc.i("Protocol message end-group tag did not match expected tag.");
+        return false;
     }
 }

@@ -1,0 +1,46 @@
+// default package
+
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class sib implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tib b;
+
+    public /* synthetic */ sib(tib tibVar, byte b) {
+        this.a = b;
+        this.b = tibVar;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        tib tibVar = this.b;
+        switch (b) {
+            case 0:
+                tibVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tibVar.invalidate();
+                break;
+            case 1:
+                tibVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tibVar.invalidate();
+                break;
+            case 2:
+                tibVar.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tibVar.invalidate();
+                break;
+            case 3:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tibVar.s = floatValue;
+                tibVar.x = (int) ((tibVar.h * floatValue) + 0.0f);
+                tibVar.invalidate();
+                break;
+            default:
+                tibVar.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tibVar.y = tibVar.r + ((int) Math.ceil((tibVar.n - r0) * r4));
+                tibVar.invalidate();
+                break;
+        }
+    }
+}

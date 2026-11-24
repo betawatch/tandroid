@@ -1,27 +1,6 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public abstract /* synthetic */ class f2 {
-    public static final /* synthetic */ int[] a;
-
-    static {
-        int[] iArr = new int[w6.values().length];
-        a = iArr;
-        try {
-            iArr[w6.REFERENCE.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            a[w6.INT_VALUE.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[w6.LONG_VALUE.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[w6.DOUBLE_VALUE.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface f2 extends g2 {
 }

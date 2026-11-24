@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface ICarHardwareResultTypes extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$hardware$ICarHardwareResultTypes".replace('$', '.');
@@ -22,7 +22,7 @@ public interface ICarHardwareResultTypes extends IInterface {
     public static final int TYPE_SENSOR_GYROSCOPE = 22;
     public static final int TYPE_UNKNOWN = 0;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Default implements ICarHardwareResultTypes {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -30,11 +30,11 @@ public interface ICarHardwareResultTypes extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class Stub extends Binder implements ICarHardwareResultTypes {
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-        public static class Proxy implements ICarHardwareResultTypes {
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        private static class Proxy implements ICarHardwareResultTypes {
             private IBinder mRemote;
 
             public Proxy(IBinder iBinder) {
@@ -64,10 +64,10 @@ public interface ICarHardwareResultTypes extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             String str = ICarHardwareResultTypes.DESCRIPTOR;
-            if (i7 != 1598968902) {
-                return super.onTransact(i7, parcel, parcel2, i10);
+            if (i != 1598968902) {
+                return super.onTransact(i, parcel, parcel2, i2);
             }
             parcel2.writeString(str);
             return true;

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class MusicPlayerReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -17,59 +17,59 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
             }
             int keyCode = keyEvent.getKeyCode();
             if (keyCode == 79 || keyCode == 85) {
-                if (MediaController.B().H()) {
-                    MediaController.B().S(MediaController.B().v0);
+                if (MediaController.w().C()) {
+                    MediaController.w().R(MediaController.w().v0);
                     return;
                 } else {
-                    MediaController.B().R(MediaController.B().v0, true);
+                    MediaController.w().Q(MediaController.w().v0, true);
                     return;
                 }
             }
             if (keyCode == 87) {
-                MediaController.B().U(false);
+                MediaController.w().T(false);
                 return;
             }
             if (keyCode == 88) {
-                MediaController.B().V();
+                MediaController.w().U();
                 return;
             } else if (keyCode == 126) {
-                MediaController.B().S(MediaController.B().v0);
+                MediaController.w().R(MediaController.w().v0);
                 return;
             } else {
-                if (keyCode != 127) {
-                    return;
+                if (keyCode == 127) {
+                    MediaController.w().Q(MediaController.w().v0, true);
                 }
-                MediaController.B().R(MediaController.B().v0, true);
+                return;
             }
         }
         String action = intent.getAction();
         action.getClass();
         switch (action) {
             case "org.telegram.android.musicplayer.repeat":
-                bz.E((bz.S0 + 1) % 3);
+                gba.D((gba.P0 + 1) % 3);
                 break;
             case "org.telegram.android.musicplayer.close":
-                MediaController.B().q(true, true, false, false);
+                MediaController.w().l(true, true, false, false);
                 break;
             case "org.telegram.android.musicplayer.pause":
             case "android.media.AUDIO_BECOMING_NOISY":
-                MediaController.B().R(MediaController.B().v0, true);
+                MediaController.w().Q(MediaController.w().v0, true);
                 break;
             case "org.telegram.android.musicplayer.next":
-                MediaController.B().U(false);
+                MediaController.w().T(false);
                 break;
             case "org.telegram.android.musicplayer.play":
-                MediaController.B().S(MediaController.B().v0);
+                MediaController.w().R(MediaController.w().v0);
                 break;
             case "org.telegram.android.musicplayer.previous":
-                MediaController.B().V();
+                MediaController.w().U();
                 break;
             case "org.telegram.android.musicplayer.shuffle":
-                if (!bz.N0) {
-                    MediaController.B().l0(2);
+                if (!gba.K0) {
+                    MediaController.w().k0(2);
                     break;
                 } else {
-                    MediaController.B().l0(0);
+                    MediaController.w().k0(0);
                     break;
                 }
         }

@@ -1,63 +1,154 @@
 package j$.time.chrono;
 
-import j$.time.temporal.Temporal;
+import j$.time.LocalDate;
+import j$.time.ZoneId;
+import j$.time.ZoneOffset;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.Externalizable;
+import java.io.InvalidClassException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+import java.io.StreamCorruptedException;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* loaded from: classes2.dex */
-public final class c0 implements l {
-    public static final c0 BEFORE_ROC;
-    public static final c0 ROC;
-    public static final /* synthetic */ c0[] a;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class c0 implements Externalizable {
+    private static final long serialVersionUID = -6103370247208168577L;
+    public byte a;
+    public Object b;
 
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ boolean e(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.q(this, oVar);
+    public c0(byte b, Object obj) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ int j(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.l(this, oVar);
+    private Object readResolve() {
+        return this.b;
     }
 
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ Object m(j$.time.format.a aVar) {
-        return j$.com.android.tools.r8.a.u(this, aVar);
+    @Override // java.io.Externalizable
+    public final void readExternal(ObjectInput objectInput) {
+        Object q;
+        byte readByte = objectInput.readByte();
+        this.a = readByte;
+        switch (readByte) {
+            case 1:
+                ConcurrentHashMap concurrentHashMap = a.a;
+                q = a.q(objectInput.readUTF());
+                break;
+            case 2:
+                q = ((b) objectInput.readObject()).A((j$.time.j) objectInput.readObject());
+                break;
+            case 3:
+                q = ((ChronoLocalDateTime) objectInput.readObject()).m((ZoneOffset) objectInput.readObject()).t((ZoneId) objectInput.readObject());
+                break;
+            case 4:
+                LocalDate localDate = v.d;
+                int readInt = objectInput.readInt();
+                byte readByte2 = objectInput.readByte();
+                byte readByte3 = objectInput.readByte();
+                t.c.getClass();
+                q = new v(LocalDate.of(readInt, readByte2, readByte3));
+                break;
+            case 5:
+                w wVar = w.d;
+                q = w.v(objectInput.readByte());
+                break;
+            case 6:
+                m mVar = (m) objectInput.readObject();
+                int readInt2 = objectInput.readInt();
+                byte readByte4 = objectInput.readByte();
+                byte readByte5 = objectInput.readByte();
+                mVar.getClass();
+                q = new o(mVar, readInt2, readByte4, readByte5);
+                break;
+            case 7:
+                int readInt3 = objectInput.readInt();
+                byte readByte6 = objectInput.readByte();
+                byte readByte7 = objectInput.readByte();
+                y.c.getClass();
+                q = new a0(LocalDate.of(readInt3 + 1911, readByte6, readByte7));
+                break;
+            case 8:
+                int readInt4 = objectInput.readInt();
+                byte readByte8 = objectInput.readByte();
+                byte readByte9 = objectInput.readByte();
+                e0.c.getClass();
+                q = new g0(LocalDate.of(readInt4 - 543, readByte8, readByte9));
+                break;
+            case 9:
+                int i = g.e;
+                q = new g(a.q(objectInput.readUTF()), objectInput.readInt(), objectInput.readInt(), objectInput.readInt());
+                break;
+            default:
+                throw new StreamCorruptedException("Unknown serialized type");
+        }
+        this.b = q;
     }
 
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ long y(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.n(this, oVar);
+    @Override // java.io.Externalizable
+    public final void writeExternal(ObjectOutput objectOutput) {
+        byte b = this.a;
+        Object obj = this.b;
+        objectOutput.writeByte(b);
+        switch (b) {
+            case 1:
+                objectOutput.writeUTF(((a) obj).n());
+                return;
+            case 2:
+                f fVar = (f) obj;
+                objectOutput.writeObject(fVar.a);
+                objectOutput.writeObject(fVar.b);
+                return;
+            case 3:
+                j jVar = (j) obj;
+                objectOutput.writeObject(jVar.a);
+                objectOutput.writeObject(jVar.b);
+                objectOutput.writeObject(jVar.c);
+                return;
+            case 4:
+                v vVar = (v) obj;
+                vVar.getClass();
+                objectOutput.writeInt(j$.time.temporal.p.a(vVar, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(vVar, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(vVar, j$.time.temporal.a.DAY_OF_MONTH));
+                return;
+            case 5:
+                objectOutput.writeByte(((w) obj).a);
+                return;
+            case 6:
+                o oVar = (o) obj;
+                objectOutput.writeObject(oVar.a);
+                objectOutput.writeInt(j$.time.temporal.p.a(oVar, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(oVar, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(oVar, j$.time.temporal.a.DAY_OF_MONTH));
+                return;
+            case 7:
+                a0 a0Var = (a0) obj;
+                a0Var.getClass();
+                objectOutput.writeInt(j$.time.temporal.p.a(a0Var, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(a0Var, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(a0Var, j$.time.temporal.a.DAY_OF_MONTH));
+                return;
+            case 8:
+                g0 g0Var = (g0) obj;
+                g0Var.getClass();
+                objectOutput.writeInt(j$.time.temporal.p.a(g0Var, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(g0Var, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.p.a(g0Var, j$.time.temporal.a.DAY_OF_MONTH));
+                return;
+            case 9:
+                g gVar = (g) obj;
+                objectOutput.writeUTF(gVar.a.n());
+                objectOutput.writeInt(gVar.b);
+                objectOutput.writeInt(gVar.c);
+                objectOutput.writeInt(gVar.d);
+                return;
+            default:
+                throw new InvalidClassException("Unknown serialized type");
+        }
     }
 
-    public static c0 valueOf(String str) {
-        return (c0) Enum.valueOf(c0.class, str);
-    }
-
-    public static c0[] values() {
-        return (c0[]) a.clone();
-    }
-
-    static {
-        c0 c0Var = new c0("BEFORE_ROC", 0);
-        BEFORE_ROC = c0Var;
-        c0 c0Var2 = new c0("ROC", 1);
-        ROC = c0Var2;
-        a = new c0[]{c0Var, c0Var2};
-    }
-
-    @Override // j$.time.chrono.l
-    public final int getValue() {
-        return ordinal();
-    }
-
-    @Override // j$.time.temporal.l
-    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
-        return j$.time.temporal.p.d(this, oVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final Temporal q(Temporal temporal) {
-        return temporal.c(getValue(), j$.time.temporal.a.ERA);
+    public c0() {
     }
 }

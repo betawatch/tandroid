@@ -1,0 +1,41 @@
+// default package
+
+import org.telegram.ui.Wallet.WalletEngine2;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class onc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ byte[] c;
+    public final /* synthetic */ v25 d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ i8c f;
+
+    public /* synthetic */ onc(WalletEngine2 walletEngine2, byte[] bArr, v25 v25Var, String str, i8c i8cVar, byte b) {
+        this.a = b;
+        this.b = walletEngine2;
+        this.c = bArr;
+        this.d = v25Var;
+        this.e = str;
+        this.f = i8cVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        i8c i8cVar = this.f;
+        String str = this.e;
+        v25 v25Var = this.d;
+        byte[] bArr = this.c;
+        WalletEngine2 walletEngine2 = this.b;
+        switch (b) {
+            case 0:
+                walletEngine2.lambda$signMessage$14(bArr, v25Var, str, i8cVar);
+                break;
+            default:
+                walletEngine2.lambda$prepareTonConnectTransfer$5(bArr, v25Var, str, i8cVar);
+                break;
+        }
+    }
+}

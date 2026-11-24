@@ -1,34 +1,38 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzot {
     public static Object zza(Object obj, String str) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException(str.concat(" must not be null"));
+        fvc.f(str.concat(" must not be null"));
+        return null;
     }
 
     public static String zzb(String str) {
         if (str.isEmpty()) {
-            throw new IllegalArgumentException("identifier must not be empty");
+            w26.j("identifier must not be empty");
+            return null;
         }
         if (!zzc(str.charAt(0))) {
-            throw new IllegalArgumentException("identifier must start with an ASCII letter: ".concat(str));
+            w26.j("identifier must start with an ASCII letter: ".concat(str));
+            return null;
         }
-        for (int i7 = 1; i7 < str.length(); i7++) {
-            char charAt = str.charAt(i7);
+        for (int i = 1; i < str.length(); i++) {
+            char charAt = str.charAt(i);
             if (!zzc(charAt) && ((charAt < '0' || charAt > '9') && charAt != '_')) {
-                throw new IllegalArgumentException("identifier must contain only ASCII letters, digits or underscore: ".concat(str));
+                w26.j("identifier must contain only ASCII letters, digits or underscore: ".concat(str));
+                return null;
             }
         }
         return str;
     }
 
-    private static boolean zzc(char c10) {
-        if (c10 < 'a' || c10 > 'z') {
-            return c10 >= 'A' && c10 <= 'Z';
+    private static boolean zzc(char c) {
+        if (c < 'a' || c > 'z') {
+            return c >= 'A' && c <= 'Z';
         }
         return true;
     }

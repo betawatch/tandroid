@@ -1,11 +1,10 @@
 package androidx.media;
 
 import android.util.SparseIntArray;
-import b5.d;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class AudioAttributesCompat implements d {
+public class AudioAttributesCompat implements aac {
     public static final /* synthetic */ int b = 0;
     public AudioAttributesImpl a;
 
@@ -23,9 +22,9 @@ public class AudioAttributesCompat implements d {
         if (!(obj instanceof AudioAttributesCompat)) {
             return false;
         }
-        AudioAttributesCompat audioAttributesCompat = (AudioAttributesCompat) obj;
         AudioAttributesImpl audioAttributesImpl = this.a;
-        return audioAttributesImpl == null ? audioAttributesCompat.a == null : audioAttributesImpl.equals(audioAttributesCompat.a);
+        AudioAttributesImpl audioAttributesImpl2 = ((AudioAttributesCompat) obj).a;
+        return audioAttributesImpl == null ? audioAttributesImpl2 == null : audioAttributesImpl.equals(audioAttributesImpl2);
     }
 
     public final int hashCode() {

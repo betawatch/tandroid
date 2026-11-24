@@ -3,14 +3,14 @@ package org.telegram.utils.recorder.audio;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 final class AudioNoiseSuppressor {
     public long a;
     public final AtomicBoolean b = new AtomicBoolean(false);
 
-    public AudioNoiseSuppressor(long j3) {
-        this.a = j3;
+    public AudioNoiseSuppressor(long j) {
+        this.a = j;
     }
 
     public static AudioNoiseSuppressor a() {
@@ -23,23 +23,24 @@ final class AudioNoiseSuppressor {
 
     private static native long nCreate();
 
-    private static native void nDestroy(long j3);
+    private static native void nDestroy(long j);
 
-    private static native boolean nProcess(long j3, ByteBuffer byteBuffer, int i7);
+    private static native boolean nProcess(long j, ByteBuffer byteBuffer, int i);
 
-    public final boolean b(int i7, ByteBuffer byteBuffer) {
-        if (this.b.get()) {
-            throw new IllegalStateException("Native noise suppressor is already released");
+    public final boolean b(int i, ByteBuffer byteBuffer) {
+        if (!this.b.get()) {
+            return nProcess(this.a, byteBuffer, i);
         }
-        return nProcess(this.a, byteBuffer, i7);
+        sc8.j("Native noise suppressor is already released");
+        return false;
     }
 
     public final void c() {
         if (this.b.compareAndSet(false, true)) {
-            long j3 = this.a;
+            long j = this.a;
             this.a = 0L;
-            if (j3 != 0) {
-                nDestroy(j3);
+            if (j != 0) {
+                nDestroy(j);
             }
         }
     }

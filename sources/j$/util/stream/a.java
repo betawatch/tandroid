@@ -5,274 +5,291 @@ import j$.util.Spliterator;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public abstract class a extends t3 implements BaseStream {
-    public final a h;
-    public final a i;
-    public final int j;
-    public final a k;
-    public int l;
-    public int m;
-    public Spliterator n;
-    public boolean o;
-    public final boolean p;
-    public Runnable q;
-    public boolean r;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class a implements BaseStream {
+    public final a a;
+    public final a b;
+    public final int c;
+    public final a d;
+    public int e;
+    public int f;
+    public Spliterator g;
+    public boolean h;
+    public final boolean i;
+    public Runnable j;
+    public boolean k;
 
-    public abstract e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction);
-
-    public abstract boolean L0(Spliterator spliterator, j5 j5Var);
-
-    public abstract w6 M0();
-
-    public abstract boolean P0();
-
-    public abstract j5 Q0(int i7, j5 j5Var);
-
-    public abstract Spliterator T0(a aVar, Supplier supplier, boolean z10);
-
-    public a(Spliterator spliterator, int i7, boolean z10) {
-        this.i = null;
-        this.n = spliterator;
-        this.h = this;
-        int i10 = v6.g & i7;
-        this.j = i10;
-        this.m = (~(i10 << 1)) & v6.l;
-        this.l = 0;
-        this.r = z10;
-    }
-
-    public a(a aVar, int i7) {
-        if (aVar.o) {
+    public a(a aVar, int i) {
+        if (aVar.h) {
             throw new IllegalStateException("stream has already been operated upon or closed");
         }
-        aVar.o = true;
-        aVar.k = this;
-        this.i = aVar;
-        this.j = v6.h & i7;
-        this.m = v6.j(i7, aVar.m);
-        a aVar2 = aVar.h;
-        this.h = aVar2;
-        if (P0()) {
-            aVar2.p = true;
+        aVar.h = true;
+        aVar.d = this;
+        this.b = aVar;
+        this.c = b7.h & i;
+        this.f = b7.j(i, aVar.f);
+        a aVar2 = aVar.a;
+        this.a = aVar2;
+        if (L()) {
+            aVar2.i = true;
         }
-        this.l = aVar.l + 1;
+        this.e = aVar.e + 1;
     }
 
-    public final Object I0(b8 b8Var) {
-        if (this.o) {
+    public final boolean A(Spliterator spliterator, n5 n5Var) {
+        while (this.e > 0) {
+            this = this.b;
+        }
+        n5Var.n(spliterator.getExactSizeIfKnown());
+        boolean G = this.G(spliterator, n5Var);
+        n5Var.end();
+        return G;
+    }
+
+    public final h2 B(Spliterator spliterator, boolean z, IntFunction intFunction) {
+        if (this.a.k) {
+            return E(this, spliterator, z, intFunction);
+        }
+        z1 I = I(F(spliterator), intFunction);
+        Q(spliterator, I);
+        return I.build();
+    }
+
+    public final Object C(h8 h8Var) {
+        if (this.h) {
             throw new IllegalStateException("stream has already been operated upon or closed");
         }
-        this.o = true;
-        if (this.h.r) {
-            return b8Var.i(this, R0(b8Var.v()));
-        }
-        return b8Var.f(this, R0(b8Var.v()));
+        this.h = true;
+        return this.a.k ? h8Var.b(this, N(h8Var.c())) : h8Var.a(this, N(h8Var.c()));
     }
 
-    public final e2 J0(IntFunction intFunction) {
-        if (this.o) {
+    public final h2 D(IntFunction intFunction) {
+        if (this.h) {
             throw new IllegalStateException("stream has already been operated upon or closed");
         }
-        this.o = true;
-        if (this.h.r && this.i != null && P0()) {
-            this.l = 0;
-            a aVar = this.i;
-            return N0(aVar, aVar.R0(0), intFunction);
+        this.h = true;
+        if (!this.a.k || this.b == null || !L()) {
+            return B(N(0), true, intFunction);
         }
-        return j0(R0(0), true, intFunction);
+        this.e = 0;
+        a aVar = this.b;
+        return J(aVar, aVar.N(0), intFunction);
     }
 
-    public final Spliterator S0() {
-        a aVar = this.h;
-        if (this != aVar) {
-            throw new IllegalStateException();
-        }
-        if (this.o) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        this.o = true;
-        Spliterator spliterator = aVar.n;
-        if (spliterator != null) {
-            aVar.n = null;
-            return spliterator;
-        }
-        throw new IllegalStateException("source already consumed or closed");
+    public h2 E(a aVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        return w3.B(aVar, spliterator, z);
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream sequential() {
-        this.h.r = false;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream parallel() {
-        this.h.r = true;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
-    public final void close() {
-        this.o = true;
-        this.n = null;
-        a aVar = this.h;
-        Runnable runnable = aVar.q;
-        if (runnable != null) {
-            aVar.q = null;
-            runnable.run();
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream onClose(Runnable runnable) {
-        if (this.o) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        Objects.requireNonNull(runnable);
-        a aVar = this.h;
-        Runnable runnable2 = aVar.q;
-        if (runnable2 != null) {
-            runnable = new a8(runnable2, runnable);
-        }
-        aVar.q = runnable;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public Spliterator spliterator() {
-        if (this.o) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        this.o = true;
-        a aVar = this.h;
-        if (this == aVar) {
-            Spliterator spliterator = aVar.n;
-            if (spliterator != null) {
-                aVar.n = null;
-                return spliterator;
-            }
-            throw new IllegalStateException("source already consumed or closed");
-        }
-        return T0(this, new j$.time.t(3, this), aVar.r);
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final boolean isParallel() {
-        return this.h.r;
-    }
-
-    @Override // j$.util.stream.t3
-    public final e2 j0(Spliterator spliterator, boolean z10, IntFunction intFunction) {
-        if (this.h.r) {
-            return K0(this, spliterator, z10, intFunction);
-        }
-        w1 A0 = A0(k0(spliterator), intFunction);
-        F0(spliterator, A0);
-        return A0.build();
-    }
-
-    public final Spliterator R0(int i7) {
-        int i10;
-        int i11;
-        a aVar = this.h;
-        Spliterator spliterator = aVar.n;
-        if (spliterator != null) {
-            aVar.n = null;
-            if (aVar.r && aVar.p) {
-                a aVar2 = aVar.k;
-                int i12 = 1;
-                while (aVar != this) {
-                    int i13 = aVar2.j;
-                    if (aVar2.P0()) {
-                        if (v6.SHORT_CIRCUIT.m(i13)) {
-                            i13 &= ~v6.u;
-                        }
-                        spliterator = aVar2.O0(aVar, spliterator);
-                        if (spliterator.hasCharacteristics(64)) {
-                            i10 = (~v6.t) & i13;
-                            i11 = v6.s;
-                        } else {
-                            i10 = (~v6.s) & i13;
-                            i11 = v6.t;
-                        }
-                        i13 = i10 | i11;
-                        i12 = 0;
-                    }
-                    int i14 = i12 + 1;
-                    aVar2.l = i12;
-                    aVar2.m = v6.j(i13, aVar.m);
-                    a aVar3 = aVar2;
-                    aVar2 = aVar2.k;
-                    aVar = aVar3;
-                    i12 = i14;
-                }
-            }
-            if (i7 != 0) {
-                this.m = v6.j(i7, this.m);
-            }
-            return spliterator;
-        }
-        throw new IllegalStateException("source already consumed or closed");
-    }
-
-    @Override // j$.util.stream.t3
-    public final long k0(Spliterator spliterator) {
-        if (v6.SIZED.m(this.m)) {
+    public final long F(Spliterator spliterator) {
+        if (b7.SIZED.n(this.f)) {
             return spliterator.getExactSizeIfKnown();
         }
         return -1L;
     }
 
-    @Override // j$.util.stream.t3
-    public final j5 F0(Spliterator spliterator, j5 j5Var) {
-        f0(spliterator, G0((j5) Objects.requireNonNull(j5Var)));
-        return j5Var;
+    public boolean G(Spliterator spliterator, n5 n5Var) {
+        boolean q;
+        do {
+            q = n5Var.q();
+            if (q) {
+                break;
+            }
+        } while (spliterator.tryAdvance(n5Var));
+        return q;
     }
 
-    @Override // j$.util.stream.t3
-    public final void f0(Spliterator spliterator, j5 j5Var) {
-        Objects.requireNonNull(j5Var);
-        if (!v6.SHORT_CIRCUIT.m(this.m)) {
-            j5Var.o(spliterator.getExactSizeIfKnown());
-            spliterator.forEachRemaining(j5Var);
-            j5Var.end();
-            return;
-        }
-        g0(spliterator, j5Var);
+    public c7 H() {
+        return c7.DOUBLE_VALUE;
     }
 
-    @Override // j$.util.stream.t3
-    public final boolean g0(Spliterator spliterator, j5 j5Var) {
-        a aVar = this;
-        while (aVar.l > 0) {
-            aVar = aVar.i;
-        }
-        j5Var.o(spliterator.getExactSizeIfKnown());
-        boolean L0 = aVar.L0(spliterator, j5Var);
-        j5Var.end();
-        return L0;
+    public z1 I(long j, IntFunction intFunction) {
+        return w3.F(j);
     }
 
-    @Override // j$.util.stream.t3
-    public final j5 G0(j5 j5Var) {
-        Objects.requireNonNull(j5Var);
-        for (a aVar = this; aVar.l > 0; aVar = aVar.i) {
-            j5Var = aVar.Q0(aVar.i.m, j5Var);
-        }
-        return j5Var;
-    }
-
-    @Override // j$.util.stream.t3
-    public final Spliterator H0(Spliterator spliterator) {
-        return this.l == 0 ? spliterator : T0(this, new j$.time.t(4, spliterator), this.h.r);
-    }
-
-    public e2 N0(t3 t3Var, Spliterator spliterator, IntFunction intFunction) {
+    public h2 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
         throw new UnsupportedOperationException("Parallel evaluation is not supported");
     }
 
-    public Spliterator O0(a aVar, Spliterator spliterator) {
-        return N0(aVar, spliterator, new j$.time.format.a(8)).spliterator();
+    public Spliterator K(a aVar, Spliterator spliterator) {
+        return J(aVar, spliterator, new j$.time.format.a((byte) 8)).spliterator();
+    }
+
+    public boolean L() {
+        throw new UnsupportedOperationException();
+    }
+
+    public n5 M(int i, n5 n5Var) {
+        throw new UnsupportedOperationException();
+    }
+
+    public final Spliterator N(int i) {
+        int i2;
+        int i3;
+        a aVar = this.a;
+        Spliterator spliterator = aVar.g;
+        if (spliterator == null) {
+            throw new IllegalStateException("source already consumed or closed");
+        }
+        aVar.g = null;
+        if (aVar.k && aVar.i) {
+            int i4 = 1;
+            Spliterator spliterator2 = spliterator;
+            a aVar2 = aVar;
+            while (true) {
+                aVar2 = aVar2.d;
+                if (aVar == this) {
+                    break;
+                }
+                int i5 = aVar2.c;
+                if (aVar2.L()) {
+                    if (b7.SHORT_CIRCUIT.n(i5)) {
+                        i5 &= ~b7.u;
+                    }
+                    spliterator2 = aVar2.K(aVar, spliterator2);
+                    if (spliterator2.hasCharacteristics(64)) {
+                        i2 = i5 & (~b7.t);
+                        i3 = b7.s;
+                    } else {
+                        i2 = i5 & (~b7.s);
+                        i3 = b7.t;
+                    }
+                    i5 = i2 | i3;
+                    i4 = 0;
+                }
+                aVar2.e = i4;
+                aVar2.f = b7.j(i5, aVar.f);
+                aVar = aVar2;
+                i4++;
+            }
+            spliterator = spliterator2;
+        }
+        if (i != 0) {
+            this.f = b7.j(i, this.f);
+        }
+        return spliterator;
+    }
+
+    public final Spliterator O() {
+        a aVar = this.a;
+        if (this != aVar) {
+            throw new IllegalStateException();
+        }
+        if (this.h) {
+            throw new IllegalStateException("stream has already been operated upon or closed");
+        }
+        this.h = true;
+        Spliterator spliterator = aVar.g;
+        if (spliterator == null) {
+            throw new IllegalStateException("source already consumed or closed");
+        }
+        aVar.g = null;
+        return spliterator;
+    }
+
+    public Spliterator P(a aVar, Supplier supplier, boolean z) {
+        return new m7(aVar, supplier, z);
+    }
+
+    public final n5 Q(Spliterator spliterator, n5 n5Var) {
+        z(spliterator, R((n5) Objects.requireNonNull(n5Var)));
+        return n5Var;
+    }
+
+    public final n5 R(n5 n5Var) {
+        Objects.requireNonNull(n5Var);
+        while (this.e > 0) {
+            n5Var = this.M(this.b.f, n5Var);
+            this = this.b;
+        }
+        return n5Var;
+    }
+
+    public final Spliterator S(Spliterator spliterator) {
+        return this.e == 0 ? spliterator : P(this, new j$.time.v((byte) 4, spliterator), this.a.k);
+    }
+
+    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
+    public final void close() {
+        this.h = true;
+        this.g = null;
+        a aVar = this.a;
+        Runnable runnable = aVar.j;
+        if (runnable != null) {
+            aVar.j = null;
+            runnable.run();
+        }
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final boolean isParallel() {
+        return this.a.k;
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream onClose(Runnable runnable) {
+        if (this.h) {
+            throw new IllegalStateException("stream has already been operated upon or closed");
+        }
+        Objects.requireNonNull(runnable);
+        a aVar = this.a;
+        Runnable runnable2 = aVar.j;
+        if (runnable2 != null) {
+            runnable = new g8(runnable2, runnable);
+        }
+        aVar.j = runnable;
+        return this;
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream parallel() {
+        this.a.k = true;
+        return this;
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream sequential() {
+        this.a.k = false;
+        return this;
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public Spliterator spliterator() {
+        if (this.h) {
+            throw new IllegalStateException("stream has already been operated upon or closed");
+        }
+        this.h = true;
+        a aVar = this.a;
+        if (this != aVar) {
+            return P(this, new j$.time.v((byte) 3, this), aVar.k);
+        }
+        Spliterator spliterator = aVar.g;
+        if (spliterator == null) {
+            throw new IllegalStateException("source already consumed or closed");
+        }
+        aVar.g = null;
+        return spliterator;
+    }
+
+    public final void z(Spliterator spliterator, n5 n5Var) {
+        Objects.requireNonNull(n5Var);
+        if (b7.SHORT_CIRCUIT.n(this.f)) {
+            A(spliterator, n5Var);
+            return;
+        }
+        n5Var.n(spliterator.getExactSizeIfKnown());
+        spliterator.forEachRemaining(n5Var);
+        n5Var.end();
+    }
+
+    public a(Spliterator spliterator, int i, boolean z) {
+        this.b = null;
+        this.g = spliterator;
+        this.a = this;
+        int i2 = i & b7.g;
+        this.c = i2;
+        this.f = (~(i2 << 1)) & b7.l;
+        this.e = 0;
+        this.k = z;
     }
 }

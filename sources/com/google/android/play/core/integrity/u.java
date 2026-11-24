@@ -2,13 +2,12 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class u implements av {
     private Context a;
 
-    private u() {
-        throw null;
+    public /* synthetic */ u(t tVar) {
     }
 
     public final u a(Context context) {
@@ -23,9 +22,11 @@ final class u implements av {
         if (context != null) {
             return new w(context, null);
         }
-        throw new IllegalStateException(String.valueOf(Context.class.getCanonicalName()).concat(" must be set"));
+        sc8.j(String.valueOf(Context.class.getCanonicalName()).concat(" must be set"));
+        return null;
     }
 
-    public /* synthetic */ u(t tVar) {
+    private u() {
+        throw null;
     }
 }

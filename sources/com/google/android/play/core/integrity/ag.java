@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d9.b0;
-import d9.g0;
-import d9.h0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class ag extends h0 {
+final class ag extends s0d {
     final /* synthetic */ Bundle a;
     final /* synthetic */ Activity b;
     final /* synthetic */ TaskCompletionSource c;
@@ -19,40 +16,40 @@ final class ag extends h0 {
     final /* synthetic */ aj e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ag(aj ajVar, TaskCompletionSource taskCompletionSource, Bundle bundle, Activity activity, TaskCompletionSource taskCompletionSource2, int i7) {
+    public ag(aj ajVar, TaskCompletionSource taskCompletionSource, Bundle bundle, Activity activity, TaskCompletionSource taskCompletionSource2, int i) {
         super(taskCompletionSource);
         this.a = bundle;
         this.b = activity;
         this.c = taskCompletionSource2;
-        this.d = i7;
+        this.d = i;
         this.e = ajVar;
     }
 
-    @Override // d9.h0
+    @Override // s0d
     public final void b() {
-        g0 g0Var;
+        q0d q0dVar;
         at atVar;
         try {
             aj ajVar = this.e;
-            b0 b0Var = (b0) ajVar.a.n;
+            m0d m0dVar = (m0d) ajVar.a.n;
             Bundle bundle = this.a;
             atVar = ajVar.e;
-            as a10 = atVar.a(this.b, this.c, ajVar.a);
-            d9.z zVar = (d9.z) b0Var;
-            zVar.getClass();
+            as a = atVar.a(this.b, this.c, ajVar.a);
+            i0d i0dVar = (i0d) m0dVar;
+            i0dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(zVar.c);
-            int i7 = d9.s.a;
+            obtain.writeInterfaceToken(i0dVar.c);
+            int i = yzc.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
-            obtain.writeStrongBinder(a10);
-            zVar.i1(obtain, 3);
-        } catch (RemoteException e10) {
+            obtain.writeStrongBinder(a);
+            i0dVar.b(obtain, 3);
+        } catch (RemoteException e) {
             aj ajVar2 = this.e;
-            int i10 = this.d;
-            g0Var = ajVar2.b;
-            g0Var.a(e10, "requestAndShowDialog(%s)", Integer.valueOf(i10));
-            this.c.trySetException(new IntegrityServiceException(-100, e10));
+            int i2 = this.d;
+            q0dVar = ajVar2.b;
+            q0dVar.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i2));
+            this.c.trySetException(new IntegrityServiceException(-100, e));
         }
     }
 }

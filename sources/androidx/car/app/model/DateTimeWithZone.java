@@ -4,12 +4,11 @@ import j$.time.ZonedDateTime;
 import j$.util.Objects;
 import java.util.Date;
 import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class DateTimeWithZone {
-    private static final long MAX_ZONE_OFFSET_SECONDS = TimeUnit.HOURS.toSeconds(1) * 18;
+    private static final long MAX_ZONE_OFFSET_SECONDS = 64800;
     private final long mTimeSinceEpochMillis;
     private final int mZoneOffsetSeconds;
     private final String mZoneShortName;
@@ -20,18 +19,21 @@ public final class DateTimeWithZone {
         this.mZoneShortName = null;
     }
 
-    public static DateTimeWithZone create(long j3, int i7, String str) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Time since epoch must be greater than or equal to zero");
+    public static DateTimeWithZone create(long j, int i, String str) {
+        if (j < 0) {
+            w26.j("Time since epoch must be greater than or equal to zero");
+            return null;
         }
-        if (Math.abs(i7) > MAX_ZONE_OFFSET_SECONDS) {
-            throw new IllegalArgumentException("Zone offset not in valid range: -18:00 to +18:00");
+        if (Math.abs(i) > MAX_ZONE_OFFSET_SECONDS) {
+            w26.j("Zone offset not in valid range: -18:00 to +18:00");
+            return null;
         }
         Objects.requireNonNull(str);
-        if (str.isEmpty()) {
-            throw new IllegalArgumentException("The time zone short name can not be null or empty");
+        if (!str.isEmpty()) {
+            return new DateTimeWithZone(j, i, str);
         }
-        return new DateTimeWithZone(j3, i7, str);
+        w26.j("The time zone short name can not be null or empty");
+        return null;
     }
 
     public boolean equals(Object obj) {
@@ -62,32 +64,32 @@ public final class DateTimeWithZone {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[time since epoch (ms): ");
-        sb2.append(this.mTimeSinceEpochMillis);
-        sb2.append("( ");
-        sb2.append(new Date(this.mTimeSinceEpochMillis));
-        sb2.append(")  zone offset (s): ");
-        sb2.append(this.mZoneOffsetSeconds);
-        sb2.append(", zone: ");
-        return a8.p0.s(sb2, this.mZoneShortName, "]");
+        StringBuilder sb = new StringBuilder("[time since epoch (ms): ");
+        sb.append(this.mTimeSinceEpochMillis);
+        sb.append("( ");
+        sb.append(new Date(this.mTimeSinceEpochMillis));
+        sb.append(")  zone offset (s): ");
+        sb.append(this.mZoneOffsetSeconds);
+        sb.append(", zone: ");
+        return b00.j(sb, this.mZoneShortName, "]");
     }
 
-    private DateTimeWithZone(long j3, int i7, String str) {
-        this.mTimeSinceEpochMillis = j3;
-        this.mZoneOffsetSeconds = i7;
+    private DateTimeWithZone(long j, int i, String str) {
+        this.mTimeSinceEpochMillis = j;
+        this.mZoneOffsetSeconds = i;
         this.mZoneShortName = str;
     }
 
-    public static DateTimeWithZone create(long j3, TimeZone timeZone) {
-        if (j3 >= 0) {
-            TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+    public static DateTimeWithZone create(long j, TimeZone timeZone) {
+        if (j >= 0) {
             Objects.requireNonNull(timeZone);
-            return create(j3, (int) timeUnit.toSeconds(timeZone.getOffset(j3)), timeZone.getDisplayName(false, 0));
+            return create(j, (int) (timeZone.getOffset(j) / 1000), timeZone.getDisplayName(false, 0));
         }
-        throw new IllegalArgumentException("timeSinceEpochMillis must be greater than or equal to zero");
+        w26.j("timeSinceEpochMillis must be greater than or equal to zero");
+        return null;
     }
 
     public static DateTimeWithZone create(ZonedDateTime zonedDateTime) {
-        return i.a(zonedDateTime);
+        return m83.a(zonedDateTime);
     }
 }

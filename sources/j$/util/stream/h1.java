@@ -1,33 +1,38 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class h1 extends i1 {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class h1 extends k1 {
+    public final /* synthetic */ byte l;
+    public final /* synthetic */ Object m;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h1(l1 l1Var, LongConsumer longConsumer) {
+        super(l1Var, 0);
+        this.l = (byte) 1;
+        this.m = longConsumer;
+    }
+
     @Override // j$.util.stream.a
-    public final boolean P0() {
-        return false;
+    public final n5 M(int i, n5 n5Var) {
+        switch (this.l) {
+            case 0:
+                return new g1(this, n5Var);
+            case 1:
+                return new e1(this, n5Var, (byte) 1);
+            case 2:
+                return new z4(this, n5Var);
+            default:
+                return new a5(this, n5Var, (byte) 4);
+        }
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream sequential() {
-        this.h.r = false;
-        return this;
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream parallel() {
-        this.h.r = true;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new t(this, v6.r, 4);
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h1(a aVar, int i, Object obj, byte b) {
+        super(aVar, i);
+        this.l = b;
+        this.m = obj;
     }
 }

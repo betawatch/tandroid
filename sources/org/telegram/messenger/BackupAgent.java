@@ -4,16 +4,18 @@ import android.app.backup.BackupAgentHelper;
 import android.app.backup.BackupManager;
 import android.app.backup.SharedPreferencesBackupHelper;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class BackupAgent extends BackupAgentHelper {
     public static BackupManager a;
 
     public static void a() {
-        if (a == null) {
-            a = new BackupManager(t0.b);
+        BackupManager backupManager = a;
+        if (backupManager == null) {
+            backupManager = new BackupManager(a.b);
+            a = backupManager;
         }
-        a.dataChanged();
+        backupManager.dataChanged();
     }
 
     @Override // android.app.backup.BackupAgent

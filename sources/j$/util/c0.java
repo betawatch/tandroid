@@ -1,6 +1,7 @@
 package j$.util;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class c0 {
     public static final c0 c = new c0();
     public final boolean a;
@@ -11,11 +12,6 @@ public final class c0 {
         this.b = 0;
     }
 
-    public c0(int i7) {
-        this.a = true;
-        this.b = i7;
-    }
-
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -24,9 +20,9 @@ public final class c0 {
             return false;
         }
         c0 c0Var = (c0) obj;
-        boolean z10 = c0Var.a;
-        boolean z11 = this.a;
-        return (z11 && z10) ? this.b == c0Var.b : z11 == z10;
+        boolean z = c0Var.a;
+        boolean z2 = this.a;
+        return (z2 && z) ? this.b == c0Var.b : z2 == z;
     }
 
     public final int hashCode() {
@@ -37,9 +33,14 @@ public final class c0 {
     }
 
     public final String toString() {
-        if (this.a) {
-            return "OptionalInt[" + this.b + "]";
+        if (!this.a) {
+            return "OptionalInt.empty";
         }
-        return "OptionalInt.empty";
+        return "OptionalInt[" + this.b + "]";
+    }
+
+    public c0(int i) {
+        this.a = true;
+        this.b = i;
     }
 }

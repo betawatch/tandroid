@@ -1,69 +1,61 @@
 package j$.time;
 
-import j$.time.zone.ZoneRules;
-import j$.util.Objects;
-import java.io.DataOutput;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
+import j$.time.temporal.ChronoUnit;
 
-/* loaded from: classes2.dex */
-public final class u extends ZoneId {
-    public static final /* synthetic */ int d = 0;
-    private static final long serialVersionUID = 8386373296231747096L;
-    public final String b;
-    public final transient ZoneRules c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract /* synthetic */ class u {
+    public static final /* synthetic */ int[] a;
+    public static final /* synthetic */ int[] b;
 
-    public static u L(String str, boolean z10) {
-        ZoneRules zoneRules;
-        Objects.requireNonNull(str, "zoneId");
-        int length = str.length();
-        if (length >= 2) {
-            for (int i7 = 0; i7 < length; i7++) {
-                char charAt = str.charAt(i7);
-                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i7 == 0) && ((charAt < '0' || charAt > '9' || i7 == 0) && ((charAt != '~' || i7 == 0) && ((charAt != '.' || i7 == 0) && ((charAt != '_' || i7 == 0) && ((charAt != '+' || i7 == 0) && (charAt != '-' || i7 == 0))))))))) {
-                    throw new b("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
-                }
-            }
-            try {
-                zoneRules = j$.time.zone.h.a(str);
-            } catch (j$.time.zone.f e10) {
-                if (z10) {
-                    throw e10;
-                }
-                zoneRules = null;
-            }
-            return new u(str, zoneRules);
+    static {
+        int[] iArr = new int[ChronoUnit.values().length];
+        b = iArr;
+        try {
+            iArr[ChronoUnit.MONTHS.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        throw new b("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
-    }
-
-    public u(String str, ZoneRules zoneRules) {
-        this.b = str;
-        this.c = zoneRules;
-    }
-
-    @Override // j$.time.ZoneId
-    public final String getId() {
-        return this.b;
-    }
-
-    @Override // j$.time.ZoneId
-    public final ZoneRules getRules() {
-        ZoneRules zoneRules = this.c;
-        return zoneRules != null ? zoneRules : j$.time.zone.h.a(this.b);
-    }
-
-    private Object writeReplace() {
-        return new p((byte) 7, this);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    @Override // j$.time.ZoneId
-    public final void K(DataOutput dataOutput) {
-        dataOutput.writeByte(7);
-        dataOutput.writeUTF(this.b);
+        try {
+            b[ChronoUnit.YEARS.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            b[ChronoUnit.DECADES.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            b[ChronoUnit.CENTURIES.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            b[ChronoUnit.MILLENNIA.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            b[ChronoUnit.ERAS.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        int[] iArr2 = new int[j$.time.temporal.a.values().length];
+        a = iArr2;
+        try {
+            iArr2[j$.time.temporal.a.MONTH_OF_YEAR.ordinal()] = 1;
+        } catch (NoSuchFieldError unused7) {
+        }
+        try {
+            a[j$.time.temporal.a.PROLEPTIC_MONTH.ordinal()] = 2;
+        } catch (NoSuchFieldError unused8) {
+        }
+        try {
+            a[j$.time.temporal.a.YEAR_OF_ERA.ordinal()] = 3;
+        } catch (NoSuchFieldError unused9) {
+        }
+        try {
+            a[j$.time.temporal.a.YEAR.ordinal()] = 4;
+        } catch (NoSuchFieldError unused10) {
+        }
+        try {
+            a[j$.time.temporal.a.ERA.ordinal()] = 5;
+        } catch (NoSuchFieldError unused11) {
+        }
     }
 }

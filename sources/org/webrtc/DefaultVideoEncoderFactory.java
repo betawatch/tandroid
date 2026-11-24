@@ -5,31 +5,31 @@ import java.util.LinkedHashSet;
 import org.webrtc.EglBase;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
     private final VideoEncoderFactory hardwareVideoEncoderFactory;
     private final VideoEncoderFactory softwareVideoEncoderFactory = new SoftwareVideoEncoderFactory();
 
-    public DefaultVideoEncoderFactory(EglBase.Context context, boolean z10, boolean z11) {
-        this.hardwareVideoEncoderFactory = new HardwareVideoEncoderFactory(context, z10, z11);
+    public DefaultVideoEncoderFactory(EglBase.Context context, boolean z, boolean z2) {
+        this.hardwareVideoEncoderFactory = new HardwareVideoEncoderFactory(context, z, z2);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public VideoEncoder createEncoder(VideoCodecInfo videoCodecInfo) {
         VideoEncoder createEncoder = this.softwareVideoEncoderFactory.createEncoder(videoCodecInfo);
         VideoEncoder createEncoder2 = this.hardwareVideoEncoderFactory.createEncoder(videoCodecInfo);
-        return (createEncoder2 == null || createEncoder == null) ? createEncoder2 != null ? createEncoder2 : createEncoder : new VideoEncoderFallback(createEncoder, createEncoder2);
+        return createEncoder2 != null ? createEncoder != null ? new VideoEncoderFallback(createEncoder, createEncoder2) : createEncoder2 : createEncoder;
     }
 
     @Override // org.webrtc.VideoEncoderFactory
-    public final /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return x.a(this);
+    public final VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
+        return null;
     }
 
     @Override // org.webrtc.VideoEncoderFactory
-    public final /* synthetic */ VideoCodecInfo[] getImplementations() {
-        return x.b(this);
+    public final VideoCodecInfo[] getImplementations() {
+        return getSupportedCodecs();
     }
 
     @Override // org.webrtc.VideoEncoderFactory

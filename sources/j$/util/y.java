@@ -2,7 +2,8 @@ package j$.util;
 
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface y {
     void forEachRemaining(Consumer consumer);
 }

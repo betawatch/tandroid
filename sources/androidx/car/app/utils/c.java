@@ -1,29 +1,34 @@
 package androidx.car.app.utils;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c implements a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
-    public final /* synthetic */ w.b c;
+import android.graphics.Rect;
 
-    public /* synthetic */ c(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, w.b bVar, int i7) {
-        this.a = i7;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c implements q69 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
+    public final /* synthetic */ Rect c;
+
+    public /* synthetic */ c(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, Rect rect, byte b) {
+        this.a = b;
         this.b = remoteUtils$SurfaceCallbackStub;
-        this.c = bVar;
+        this.c = rect;
     }
 
-    @Override // androidx.car.app.utils.a
+    @Override // q69
     public final Object a() {
-        Object lambda$onSurfaceDestroyed$3;
-        Object lambda$onSurfaceAvailable$0;
-        switch (this.a) {
+        Object lambda$onVisibleAreaChanged$1;
+        Object lambda$onStableAreaChanged$2;
+        byte b = this.a;
+        Rect rect = this.c;
+        RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub = this.b;
+        switch (b) {
             case 0:
-                lambda$onSurfaceDestroyed$3 = this.b.lambda$onSurfaceDestroyed$3(this.c);
-                return lambda$onSurfaceDestroyed$3;
+                lambda$onVisibleAreaChanged$1 = remoteUtils$SurfaceCallbackStub.lambda$onVisibleAreaChanged$1(rect);
+                return lambda$onVisibleAreaChanged$1;
             default:
-                lambda$onSurfaceAvailable$0 = this.b.lambda$onSurfaceAvailable$0(this.c);
-                return lambda$onSurfaceAvailable$0;
+                lambda$onStableAreaChanged$2 = remoteUtils$SurfaceCallbackStub.lambda$onStableAreaChanged$2(rect);
+                return lambda$onStableAreaChanged$2;
         }
     }
 }

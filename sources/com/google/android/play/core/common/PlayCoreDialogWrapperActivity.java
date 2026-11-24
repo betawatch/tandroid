@@ -7,19 +7,19 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class PlayCoreDialogWrapperActivity extends Activity {
     public ResultReceiver a;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i7, int i10, Intent intent) {
+    public final void onActivityResult(int i, int i2, Intent intent) {
         ResultReceiver resultReceiver;
-        super.onActivityResult(i7, i10, intent);
-        if (i7 == 0 && (resultReceiver = this.a) != null) {
-            if (i10 == -1) {
+        super.onActivityResult(i, i2, intent);
+        if (i == 0 && (resultReceiver = this.a) != null) {
+            if (i2 == -1) {
                 resultReceiver.send(1, new Bundle());
-            } else if (i10 == 0) {
+            } else if (i2 == 0) {
                 resultReceiver.send(2, new Bundle());
             }
         }
@@ -64,7 +64,7 @@ public class PlayCoreDialogWrapperActivity extends Activity {
                 if (resultReceiver2 != null) {
                     resultReceiver2.send(3, new Bundle());
                 }
-                finish();
+                playCoreDialogWrapperActivity.finish();
             }
         } catch (IntentSender.SendIntentException unused2) {
             playCoreDialogWrapperActivity = this;

@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import hd.f;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zziv {
     private final zzmj zza;
 
-    public zziv() {
-        this(1);
+    public zziv(int i) {
+        this.zza = zzmj.zza(i);
     }
 
     public final List zwk() {
@@ -17,7 +16,7 @@ public final class zziv {
     }
 
     public final List zza() {
-        return f.l(this.zza);
+        return yk2.k(this.zza);
     }
 
     public final boolean zzb(List list) {
@@ -25,7 +24,7 @@ public final class zziv {
         return true;
     }
 
-    public zziv(int i7) {
-        this.zza = zzmj.zza(i7);
+    public zziv() {
+        this(1);
     }
 }

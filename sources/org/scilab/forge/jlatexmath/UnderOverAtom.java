@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class UnderOverAtom extends Atom {
     private final Atom base;
@@ -13,32 +13,32 @@ public class UnderOverAtom extends Atom {
     private final float underSpace;
     private final int underUnit;
 
-    public UnderOverAtom(Atom atom, Atom atom2, int i7, float f10, boolean z10, boolean z11) {
-        SpaceAtom.checkUnit(i7);
+    public UnderOverAtom(Atom atom, Atom atom2, int i, float f, boolean z, boolean z2) {
+        SpaceAtom.checkUnit(i);
         this.base = atom;
-        if (z11) {
+        if (z2) {
             this.under = null;
             this.underSpace = 0.0f;
             this.underUnit = 0;
             this.underScriptSize = false;
             this.over = atom2;
-            this.overUnit = i7;
-            this.overSpace = f10;
-            this.overScriptSize = z10;
+            this.overUnit = i;
+            this.overSpace = f;
+            this.overScriptSize = z;
             return;
         }
         this.under = atom2;
-        this.underUnit = i7;
-        this.underSpace = f10;
-        this.underScriptSize = z10;
+        this.underUnit = i;
+        this.underSpace = f;
+        this.underScriptSize = z;
         this.overSpace = 0.0f;
         this.over = null;
         this.overUnit = 0;
         this.overScriptSize = false;
     }
 
-    private static Box changeWidth(Box box, float f10) {
-        return (box == null || Math.abs(f10 - box.getWidth()) <= 1.0E-7f) ? box : new HorizontalBox(box, f10, 2);
+    private static Box changeWidth(Box box, float f) {
+        return (box == null || Math.abs(f - box.getWidth()) <= 1.0E-7f) ? box : new HorizontalBox(box, f, 2);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -88,17 +88,17 @@ public class UnderOverAtom extends Atom {
         return this.base.getRightType();
     }
 
-    public UnderOverAtom(Atom atom, Atom atom2, int i7, float f10, boolean z10, Atom atom3, int i10, float f11, boolean z11) {
-        SpaceAtom.checkUnit(i7);
-        SpaceAtom.checkUnit(i10);
+    public UnderOverAtom(Atom atom, Atom atom2, int i, float f, boolean z, Atom atom3, int i2, float f2, boolean z2) {
+        SpaceAtom.checkUnit(i);
+        SpaceAtom.checkUnit(i2);
         this.base = atom;
         this.under = atom2;
-        this.underUnit = i7;
-        this.underSpace = f10;
-        this.underScriptSize = z10;
+        this.underUnit = i;
+        this.underSpace = f;
+        this.underScriptSize = z;
         this.over = atom3;
-        this.overUnit = i10;
-        this.overSpace = f11;
-        this.overScriptSize = z11;
+        this.overUnit = i2;
+        this.overSpace = f2;
+        this.overScriptSize = z2;
     }
 }

@@ -1,33 +1,27 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.internal.f;
-import kotlin.jvm.internal.j;
-import xd.d;
-import xd.l;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzgn {
-    private zzgn() {
-        throw null;
+    public /* synthetic */ zzgn(t93 t93Var) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final int zzc(String str) {
-        String c10 = l.c("18.7.1", ".", "");
-        int i7 = d.i(0, 6, c10, "-");
-        if (i7 != -1) {
-            c10 = c10.substring(0, i7);
-            j.d(c10, "substring(...)");
+        String c = n9b.c("18.7.1", ".", "");
+        int f = f9b.f(0, 6, c, "-");
+        if (f != -1) {
+            c = c.substring(0, f);
         }
-        return Integer.parseInt(c10);
+        return Integer.parseInt(c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final String zzd(String str) {
-        return "cesdb".concat(d.l("18.7.1", "-", ""));
+        return "cesdb".concat(f9b.j("18.7.1", "-", ""));
     }
 
-    public /* synthetic */ zzgn(f fVar) {
+    private zzgn() {
+        throw null;
     }
 }

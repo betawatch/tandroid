@@ -5,8 +5,8 @@ import android.os.Build;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class MediaCodecUtils {
     static final String EXYNOS_PREFIX = "OMX.Exynos.";
     static final String INTEL_PREFIX = "OMX.Intel.";
@@ -22,8 +22,8 @@ class MediaCodecUtils {
     static final int[] ENCODER_COLOR_FORMATS = {19, 21, 2141391872, COLOR_QCOM_FORMATYUV420PackedSemiPlanar32m};
     static final int[] TEXTURE_COLOR_FORMATS = {2130708361};
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static /* synthetic */ class 1 {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {
@@ -64,15 +64,16 @@ class MediaCodecUtils {
         return false;
     }
 
-    public static Map<String, String> getCodecProperties(VideoCodecMimeType videoCodecMimeType, boolean z10) {
-        int i7 = 1.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
-        if (i7 == 1 || i7 == 2 || i7 == 3 || i7 == 4) {
+    public static Map<String, String> getCodecProperties(VideoCodecMimeType videoCodecMimeType, boolean z) {
+        int i = 1.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+        if (i == 1 || i == 2 || i == 3 || i == 4) {
             return new HashMap();
         }
-        if (i7 == 5) {
-            return H264Utils.getDefaultH264Params(z10);
+        if (i == 5) {
+            return H264Utils.getDefaultH264Params(z);
         }
-        throw new IllegalArgumentException("Unsupported codec: " + videoCodecMimeType);
+        w26.i(videoCodecMimeType, "Unsupported codec: ");
+        return null;
     }
 
     public static boolean isHardwareAccelerated(MediaCodecInfo mediaCodecInfo) {
@@ -101,10 +102,10 @@ class MediaCodecUtils {
     }
 
     public static Integer selectColorFormat(int[] iArr, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        for (int i7 : iArr) {
-            for (int i10 : codecCapabilities.colorFormats) {
-                if (i10 == i7) {
-                    return Integer.valueOf(i10);
+        for (int i : iArr) {
+            for (int i2 : codecCapabilities.colorFormats) {
+                if (i2 == i) {
+                    return Integer.valueOf(i2);
                 }
             }
         }

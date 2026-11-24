@@ -1,0 +1,45 @@
+// default package
+
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public class ajb extends ViewSwitcher {
+    public final void a(CharSequence charSequence, boolean z, boolean z2) {
+        if (z2 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z) {
+                getCurrentView().setText(charSequence);
+            } else {
+                getNextView().setText(charSequence);
+                showNext();
+            }
+        }
+    }
+
+    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
+    public final void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
+        if (view instanceof TextView) {
+            super.addView(view, i, layoutParams);
+        } else {
+            sc8.e();
+        }
+    }
+
+    @Override // android.widget.ViewAnimator
+    public TextView getCurrentView() {
+        return (TextView) super.getCurrentView();
+    }
+
+    @Override // android.widget.ViewSwitcher
+    public TextView getNextView() {
+        return (TextView) super.getNextView();
+    }
+
+    public void setText(CharSequence charSequence) {
+        a(charSequence, true, false);
+    }
+}

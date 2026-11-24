@@ -1,33 +1,20 @@
 package j$.util.stream;
 
-import java.util.function.BiConsumer;
-import java.util.function.BinaryOperator;
-import java.util.function.Supplier;
+import java.util.function.DoubleBinaryOperator;
 
-/* loaded from: classes2.dex */
-public final class f4 extends t3 {
-    public final /* synthetic */ BinaryOperator h;
-    public final /* synthetic */ BiConsumer i;
-    public final /* synthetic */ Supplier j;
-    public final /* synthetic */ Collector k;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class f4 extends w3 {
+    public final /* synthetic */ DoubleBinaryOperator h;
+    public final /* synthetic */ double i;
 
-    @Override // j$.util.stream.t3
-    public final o4 D0() {
-        return new g4(this.j, this.i, this.h);
+    public f4(c7 c7Var, DoubleBinaryOperator doubleBinaryOperator, double d) {
+        this.h = doubleBinaryOperator;
+        this.i = d;
     }
 
-    @Override // j$.util.stream.t3, j$.util.stream.b8
-    public final int v() {
-        if (this.k.characteristics().contains(g.UNORDERED)) {
-            return v6.r;
-        }
-        return 0;
-    }
-
-    public f4(w6 w6Var, BinaryOperator binaryOperator, BiConsumer biConsumer, Supplier supplier, Collector collector) {
-        this.h = binaryOperator;
-        this.i = biConsumer;
-        this.j = supplier;
-        this.k = collector;
+    @Override // j$.util.stream.w3
+    public final r4 Y() {
+        return new a4(this.i, this.h);
     }
 }

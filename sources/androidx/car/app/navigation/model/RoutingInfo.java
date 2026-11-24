@@ -4,17 +4,21 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.Distance;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class RoutingInfo implements f {
+public final class RoutingInfo implements mi7 {
     private final Distance mCurrentDistance;
     private final Step mCurrentStep;
     private final boolean mIsLoading;
     private final CarIcon mJunctionImage;
     private final Step mNextStep;
 
-    public RoutingInfo(l lVar) {
-        throw null;
+    private RoutingInfo() {
+        this.mCurrentStep = null;
+        this.mCurrentDistance = null;
+        this.mNextStep = null;
+        this.mJunctionImage = null;
+        this.mIsLoading = false;
     }
 
     public boolean equals(Object obj) {
@@ -56,11 +60,7 @@ public final class RoutingInfo implements f {
         return "RoutingInfo";
     }
 
-    private RoutingInfo() {
-        this.mCurrentStep = null;
-        this.mCurrentDistance = null;
-        this.mNextStep = null;
-        this.mJunctionImage = null;
-        this.mIsLoading = false;
+    public RoutingInfo(dm9 dm9Var) {
+        throw null;
     }
 }

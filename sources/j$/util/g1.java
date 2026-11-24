@@ -5,31 +5,25 @@ import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class g1 implements l0, IntConsumer, y {
     public boolean a = false;
     public int b;
     public final /* synthetic */ x0 c;
 
+    public g1(x0 x0Var) {
+        this.c = x0Var;
+    }
+
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i) {
+        this.a = true;
+        this.b = i;
+    }
+
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
         return IntConsumer$-CC.$default$andThen(this, intConsumer);
-    }
-
-    @Override // j$.util.q0
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
-        while (hasNext()) {
-            intConsumer.accept(nextInt());
-        }
-    }
-
-    @Override // java.util.Iterator
-    public final Integer next() {
-        if (u1.a) {
-            u1.a(g1.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
-            throw null;
-        }
-        return Integer.valueOf(nextInt());
     }
 
     @Override // j$.util.l0, java.util.Iterator, j$.util.y
@@ -44,17 +38,7 @@ public final class g1 implements l0, IntConsumer, y {
             throw null;
         }
         Objects.requireNonNull(consumer);
-        forEachRemaining((IntConsumer) new i0(consumer, 0));
-    }
-
-    public g1(x0 x0Var) {
-        this.c = x0Var;
-    }
-
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i7) {
-        this.a = true;
-        this.b = i7;
+        forEachRemaining((IntConsumer) new i0(consumer, (byte) 0));
     }
 
     @Override // java.util.Iterator
@@ -65,6 +49,15 @@ public final class g1 implements l0, IntConsumer, y {
         return this.a;
     }
 
+    @Override // java.util.Iterator
+    public final Integer next() {
+        if (!u1.a) {
+            return Integer.valueOf(nextInt());
+        }
+        u1.a(g1.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
+        throw null;
+    }
+
     @Override // j$.util.l0
     public final int nextInt() {
         if (!this.a && !hasNext()) {
@@ -72,5 +65,13 @@ public final class g1 implements l0, IntConsumer, y {
         }
         this.a = false;
         return this.b;
+    }
+
+    @Override // j$.util.q0
+    public final void forEachRemaining(IntConsumer intConsumer) {
+        Objects.requireNonNull(intConsumer);
+        while (hasNext()) {
+            intConsumer.accept(nextInt());
+        }
     }
 }

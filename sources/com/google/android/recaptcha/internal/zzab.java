@@ -1,47 +1,45 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.e;
-import gd.k;
-import hd.r;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzab extends j implements p {
+final class zzab extends ccb implements eq4 {
     final /* synthetic */ zzxp zza;
     final /* synthetic */ zzad zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzab(zzxp zzxpVar, zzad zzadVar, c cVar) {
-        super(2, cVar);
+    public zzab(zzxp zzxpVar, zzad zzadVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzxpVar;
         this.zzb = zzadVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzab(this.zza, this.zzb, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzab(this.zza, this.zzb, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzab) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzab) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        z.b(obj);
+        qse.b(obj);
         zzxp zzxpVar = this.zza;
-        if (zzxpVar.zzl().length() != 0) {
-            zzad.zzb(this.zzb).zzb(r.c(new e("_GRECAPTCHA_KC", zzxpVar.zzl())));
-            return k.a;
+        int length = zzxpVar.zzl().length();
+        zzad zzadVar = this.zzb;
+        if (length == 0) {
+            zzadVar.zzj(false);
+            throw new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null);
         }
-        this.zzb.zzj(false);
-        throw new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null);
+        zzci zzb = zzad.zzb(zzadVar);
+        Map singletonMap = Collections.singletonMap("_GRECAPTCHA_KC", zzxpVar.zzl());
+        singletonMap.getClass();
+        zzb.zzb(singletonMap);
+        return g5c.a;
     }
 }

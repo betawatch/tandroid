@@ -9,65 +9,54 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
-import org.telegram.messenger.ks;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class a implements Externalizable {
     private static final long serialVersionUID = -8885321777449118786L;
     public byte a;
     public Object b;
 
-    public a() {
-    }
-
-    public a(byte b10, Object obj) {
-        this.a = b10;
+    public a(byte b, Object obj) {
+        this.a = b;
         this.b = obj;
     }
 
-    @Override // java.io.Externalizable
-    public final void writeExternal(ObjectOutput objectOutput) {
-        byte b10 = this.a;
-        Object obj = this.b;
-        objectOutput.writeByte(b10);
-        if (b10 != 1) {
-            if (b10 == 2) {
-                b bVar = (b) obj;
-                c(bVar.a, objectOutput);
-                d(bVar.c, objectOutput);
-                d(bVar.d, objectOutput);
-                return;
-            }
-            if (b10 == 3) {
-                ((e) obj).b(objectOutput);
-                return;
-            } else {
-                if (b10 != 100) {
-                    throw new InvalidClassException("Unknown serialized type");
-                }
-                objectOutput.writeUTF(((ZoneRules) obj).g.getID());
-                return;
-            }
+    public static long a(DataInput dataInput) {
+        if ((dataInput.readByte() & 255) == 255) {
+            return dataInput.readLong();
         }
-        ZoneRules zoneRules = (ZoneRules) obj;
-        objectOutput.writeInt(zoneRules.a.length);
-        for (long j3 : zoneRules.a) {
-            c(j3, objectOutput);
+        return ((((r0 << 16) + ((dataInput.readByte() & 255) << 8)) + (dataInput.readByte() & 255)) * 900) - 4575744000L;
+    }
+
+    public static ZoneOffset b(DataInput dataInput) {
+        byte readByte = dataInput.readByte();
+        return readByte == Byte.MAX_VALUE ? ZoneOffset.H(dataInput.readInt()) : ZoneOffset.H(readByte * 900);
+    }
+
+    public static void c(long j, DataOutput dataOutput) {
+        if (j < -4575744000L || j >= 10413792000L || j % 900 != 0) {
+            dataOutput.writeByte(kk7.d4);
+            dataOutput.writeLong(j);
+        } else {
+            int i = (int) ((j + 4575744000L) / 900);
+            dataOutput.writeByte((i >>> 16) & kk7.d4);
+            dataOutput.writeByte((i >>> 8) & kk7.d4);
+            dataOutput.writeByte(i & kk7.d4);
         }
-        for (ZoneOffset zoneOffset : zoneRules.b) {
-            d(zoneOffset, objectOutput);
+    }
+
+    public static void d(ZoneOffset zoneOffset, DataOutput dataOutput) {
+        int totalSeconds = zoneOffset.getTotalSeconds();
+        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : 127;
+        dataOutput.writeByte(i);
+        if (i == 127) {
+            dataOutput.writeInt(totalSeconds);
         }
-        objectOutput.writeInt(zoneRules.c.length);
-        for (long j10 : zoneRules.c) {
-            c(j10, objectOutput);
-        }
-        for (ZoneOffset zoneOffset2 : zoneRules.e) {
-            d(zoneOffset2, objectOutput);
-        }
-        objectOutput.writeByte(zoneRules.f.length);
-        for (e eVar : zoneRules.f) {
-            eVar.b(objectOutput);
-        }
+    }
+
+    private Object readResolve() {
+        return this.b;
     }
 
     @Override // java.io.Externalizable
@@ -79,42 +68,42 @@ public final class a implements Externalizable {
             long[] jArr = ZoneRules.i;
             int readInt = objectInput.readInt();
             long[] jArr2 = readInt == 0 ? jArr : new long[readInt];
-            for (int i7 = 0; i7 < readInt; i7++) {
-                jArr2[i7] = a(objectInput);
+            for (int i = 0; i < readInt; i++) {
+                jArr2[i] = a(objectInput);
             }
-            int i10 = readInt + 1;
-            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i10];
-            for (int i11 = 0; i11 < i10; i11++) {
-                zoneOffsetArr[i11] = b(objectInput);
+            int i2 = readInt + 1;
+            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i2];
+            for (int i3 = 0; i3 < i2; i3++) {
+                zoneOffsetArr[i3] = b(objectInput);
             }
             int readInt2 = objectInput.readInt();
             if (readInt2 != 0) {
                 jArr = new long[readInt2];
             }
             long[] jArr3 = jArr;
-            for (int i12 = 0; i12 < readInt2; i12++) {
-                jArr3[i12] = a(objectInput);
+            for (int i4 = 0; i4 < readInt2; i4++) {
+                jArr3[i4] = a(objectInput);
             }
-            int i13 = readInt2 + 1;
-            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i13];
-            for (int i14 = 0; i14 < i13; i14++) {
-                zoneOffsetArr2[i14] = b(objectInput);
+            int i5 = readInt2 + 1;
+            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i5];
+            for (int i6 = 0; i6 < i5; i6++) {
+                zoneOffsetArr2[i6] = b(objectInput);
             }
             int readByte2 = objectInput.readByte();
             e[] eVarArr = readByte2 == 0 ? ZoneRules.j : new e[readByte2];
-            for (int i15 = 0; i15 < readByte2; i15++) {
-                eVarArr[i15] = e.a(objectInput);
+            for (int i7 = 0; i7 < readByte2; i7++) {
+                eVarArr[i7] = e.a(objectInput);
             }
             zoneRules = new ZoneRules(jArr2, zoneOffsetArr, jArr3, zoneOffsetArr2, eVarArr);
         } else if (readByte == 2) {
-            int i16 = b.e;
-            long a10 = a(objectInput);
-            ZoneOffset b10 = b(objectInput);
-            ZoneOffset b11 = b(objectInput);
-            if (b10.equals(b11)) {
-                throw new IllegalArgumentException("Offsets must not be equal");
+            long a = a(objectInput);
+            ZoneOffset b = b(objectInput);
+            ZoneOffset b2 = b(objectInput);
+            if (b.equals(b2)) {
+                j$.time.g.c("Offsets must not be equal");
+                return;
             }
-            zoneRules = new b(a10, b10, b11);
+            zoneRules = new b(a, b, b2);
         } else if (readByte == 3) {
             zoneRules = e.a(objectInput);
         } else {
@@ -126,40 +115,51 @@ public final class a implements Externalizable {
         this.b = zoneRules;
     }
 
-    private Object readResolve() {
-        return this.b;
-    }
-
-    public static void d(ZoneOffset zoneOffset, DataOutput dataOutput) {
-        int totalSeconds = zoneOffset.getTotalSeconds();
-        int i7 = totalSeconds % 900 == 0 ? totalSeconds / 900 : 127;
-        dataOutput.writeByte(i7);
-        if (i7 == 127) {
-            dataOutput.writeInt(totalSeconds);
+    @Override // java.io.Externalizable
+    public final void writeExternal(ObjectOutput objectOutput) {
+        byte b = this.a;
+        Object obj = this.b;
+        objectOutput.writeByte(b);
+        if (b != 1) {
+            if (b == 2) {
+                b bVar = (b) obj;
+                c(bVar.a, objectOutput);
+                d(bVar.c, objectOutput);
+                d(bVar.d, objectOutput);
+                return;
+            }
+            if (b == 3) {
+                ((e) obj).b(objectOutput);
+                return;
+            } else {
+                if (b != 100) {
+                    throw new InvalidClassException("Unknown serialized type");
+                }
+                objectOutput.writeUTF(((ZoneRules) obj).g.getID());
+                return;
+            }
+        }
+        ZoneRules zoneRules = (ZoneRules) obj;
+        objectOutput.writeInt(zoneRules.a.length);
+        for (long j : zoneRules.a) {
+            c(j, objectOutput);
+        }
+        for (ZoneOffset zoneOffset : zoneRules.b) {
+            d(zoneOffset, objectOutput);
+        }
+        objectOutput.writeInt(zoneRules.c.length);
+        for (long j2 : zoneRules.c) {
+            c(j2, objectOutput);
+        }
+        for (ZoneOffset zoneOffset2 : zoneRules.e) {
+            d(zoneOffset2, objectOutput);
+        }
+        objectOutput.writeByte(zoneRules.f.length);
+        for (e eVar : zoneRules.f) {
+            eVar.b(objectOutput);
         }
     }
 
-    public static ZoneOffset b(DataInput dataInput) {
-        byte readByte = dataInput.readByte();
-        return readByte == Byte.MAX_VALUE ? ZoneOffset.O(dataInput.readInt()) : ZoneOffset.O(readByte * 900);
-    }
-
-    public static void c(long j3, DataOutput dataOutput) {
-        if (j3 >= -4575744000L && j3 < 10413792000L && j3 % 900 == 0) {
-            int i7 = (int) ((j3 + 4575744000L) / 900);
-            dataOutput.writeByte((i7 >>> 16) & ks.e4);
-            dataOutput.writeByte((i7 >>> 8) & ks.e4);
-            dataOutput.writeByte(i7 & ks.e4);
-            return;
-        }
-        dataOutput.writeByte(ks.e4);
-        dataOutput.writeLong(j3);
-    }
-
-    public static long a(DataInput dataInput) {
-        if ((dataInput.readByte() & 255) == 255) {
-            return dataInput.readLong();
-        }
-        return ((((r0 << 16) + ((dataInput.readByte() & 255) << 8)) + (dataInput.readByte() & 255)) * 900) - 4575744000L;
+    public a() {
     }
 }

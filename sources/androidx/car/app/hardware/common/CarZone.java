@@ -1,10 +1,8 @@
 package androidx.car.app.hardware.common;
 
 import j$.util.Objects;
-import p5.c;
-import r.b;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class CarZone {
     public static final int CAR_ZONE_COLUMN_ALL = 16;
@@ -13,7 +11,7 @@ public final class CarZone {
     public static final int CAR_ZONE_COLUMN_LEFT = 32;
     public static final int CAR_ZONE_COLUMN_PASSENGER = 96;
     public static final int CAR_ZONE_COLUMN_RIGHT = 64;
-    public static final CarZone CAR_ZONE_GLOBAL = new CarZone(new b());
+    public static final CarZone CAR_ZONE_GLOBAL = new CarZone(new qc1());
     public static final int CAR_ZONE_ROW_ALL = 0;
     public static final int CAR_ZONE_ROW_EXCLUDE_FIRST = 4;
     public static final int CAR_ZONE_ROW_FIRST = 1;
@@ -22,8 +20,8 @@ public final class CarZone {
     private final int mColumn;
     private final int mRow;
 
-    public CarZone(b bVar) {
-        bVar.getClass();
+    public CarZone(qc1 qc1Var) {
+        qc1Var.getClass();
         this.mRow = 0;
         this.mColumn = 16;
     }
@@ -52,24 +50,24 @@ public final class CarZone {
     }
 
     public String toString() {
-        int i7 = this.mRow;
+        int i = this.mRow;
         String str = "UNKNOWN";
-        String str2 = i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
-        int i10 = this.mColumn;
-        if (i10 == 16) {
+        String str2 = i != 0 ? i != 1 ? i != 2 ? i != 3 ? i != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
+        int i2 = this.mColumn;
+        if (i2 == 16) {
             str = "CAR_ZONE_COLUMN_ALL";
-        } else if (i10 == 32) {
+        } else if (i2 == 32) {
             str = "CAR_ZONE_COLUMN_LEFT";
-        } else if (i10 == 48) {
+        } else if (i2 == 48) {
             str = "CAR_ZONE_COLUMN_CENTER";
-        } else if (i10 == 64) {
+        } else if (i2 == 64) {
             str = "CAR_ZONE_COLUMN_RIGHT";
-        } else if (i10 == 80) {
+        } else if (i2 == 80) {
             str = "CAR_ZONE_COLUMN_DRIVER";
-        } else if (i10 == 96) {
+        } else if (i2 == 96) {
             str = "CAR_ZONE_COLUMN_PASSENGER";
         }
-        return c.l("[CarZone row value: ", str2, ", column value: ", str, "]");
+        return b00.i("[CarZone row value: ", str2, ", column value: ", str, "]");
     }
 
     private CarZone() {

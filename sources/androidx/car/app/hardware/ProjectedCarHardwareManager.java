@@ -1,29 +1,27 @@
 package androidx.car.app.hardware;
 
-import q.a;
-import s.b;
-import s.h;
-import s.i;
+import androidx.car.app.g;
+import androidx.car.app.h;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ProjectedCarHardwareManager {
-    private final h mVehicleInfo;
-    private final i mVehicleSensors;
+    private final ws8 mVehicleInfo;
+    private final xs8 mVehicleSensors;
 
-    public ProjectedCarHardwareManager(androidx.car.app.h hVar, androidx.car.app.i iVar) {
+    public ProjectedCarHardwareManager(g gVar, h hVar) {
         throw null;
     }
 
-    public a getCarClimate() {
+    public hc1 getCarClimate() {
         throw new UnsupportedOperationException();
     }
 
-    public s.a getCarInfo() {
+    public mc1 getCarInfo() {
         return this.mVehicleInfo;
     }
 
-    public b getCarSensors() {
+    public oc1 getCarSensors() {
         return this.mVehicleSensors;
     }
 }

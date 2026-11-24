@@ -1,59 +1,38 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import java.util.function.IntConsumer;
+import java.util.function.IntFunction;
+import java.util.function.IntUnaryOperator;
 
-/* loaded from: classes2.dex */
-public final class v0 extends d5 {
-    public boolean b;
-    public final j$.util.i0 c;
-    public final /* synthetic */ t0 d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class v0 extends h5 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v0(t0 t0Var, j5 j5Var) {
-        super(j5Var);
-        this.d = t0Var;
-        j5 j5Var2 = this.a;
-        Objects.requireNonNull(j5Var2);
-        this.c = new j$.util.i0(j5Var2, 1);
+    public /* synthetic */ v0(a aVar, n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
+        this.c = aVar;
     }
 
-    @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j3) {
-        this.a.o(-1L);
-    }
-
-    @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i7);
-        if (intStream != null) {
-            try {
-                boolean z10 = this.b;
-                j$.util.i0 i0Var = this.c;
-                if (!z10) {
-                    intStream.sequential().forEach(i0Var);
-                } else {
-                    j$.util.x0 spliterator = intStream.sequential().spliterator();
-                    while (!this.a.q() && spliterator.tryAdvance((IntConsumer) i0Var)) {
-                    }
-                }
-            } catch (Throwable th2) {
-                try {
-                    intStream.close();
-                } catch (Throwable th3) {
-                    th2.addSuppressed(th3);
-                }
-                throw th2;
-            }
+    @Override // j$.util.stream.l5, j$.util.stream.n5
+    public final void accept(int i) {
+        byte b = this.b;
+        a aVar = this.c;
+        n5 n5Var = this.a;
+        switch (b) {
+            case 0:
+                n5Var.accept((n5) ((IntFunction) ((s) aVar).m).apply(i));
+                break;
+            case 1:
+                ((IntConsumer) ((w0) aVar).m).accept(i);
+                n5Var.accept(i);
+                break;
+            default:
+                n5Var.accept(((IntUnaryOperator) ((w0) aVar).m).applyAsInt(i));
+                break;
         }
-        if (intStream != null) {
-            intStream.close();
-        }
-    }
-
-    @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final boolean q() {
-        this.b = true;
-        return this.a.q();
     }
 }

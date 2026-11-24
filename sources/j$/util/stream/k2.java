@@ -1,49 +1,79 @@
 package j$.util.stream;
 
+import j$.util.DesugarArrays;
 import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
-import java.util.function.BinaryOperator;
-import java.util.function.LongFunction;
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public class k2 extends d {
-    public final t3 h;
-    public final LongFunction i;
-    public final BinaryOperator j;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public class k2 implements h2 {
+    public final Object[] a;
+    public int b;
 
-    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        d dVar = this.d;
-        if (dVar != null) {
-            this.f = (e2) this.j.apply((e2) ((k2) dVar).f, (e2) ((k2) this.e).f);
+    public k2(long j, IntFunction intFunction) {
+        if (j >= 2147483639) {
+            j$.time.g.c("Stream size exceeds max array size");
+            throw null;
         }
-        super.onCompletion(countedCompleter);
+        this.a = (Object[]) intFunction.apply((int) j);
+        this.b = 0;
     }
 
-    public k2(t3 t3Var, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator) {
-        super(t3Var, spliterator);
-        this.h = t3Var;
-        this.i = longFunction;
-        this.j = binaryOperator;
+    @Override // j$.util.stream.h2
+    public final h2 a(int i) {
+        throw new IndexOutOfBoundsException();
     }
 
-    public k2(k2 k2Var, Spliterator spliterator) {
-        super(k2Var, spliterator);
-        this.h = k2Var.h;
-        this.i = k2Var.i;
-        this.j = k2Var.j;
+    @Override // j$.util.stream.h2
+    public final long count() {
+        return this.b;
     }
 
-    @Override // j$.util.stream.d
-    public d c(Spliterator spliterator) {
-        return new k2(this, spliterator);
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.w(this, j, j2, intFunction);
     }
 
-    @Override // j$.util.stream.d
-    /* renamed from: f, reason: merged with bridge method [inline-methods] */
-    public final e2 a() {
-        w1 w1Var = (w1) this.i.apply(this.h.k0(this.b));
-        this.h.F0(this.b, w1Var);
-        return w1Var.build();
+    @Override // j$.util.stream.h2
+    public final void f(Object[] objArr, int i) {
+        System.arraycopy(this.a, 0, objArr, i, this.b);
+    }
+
+    @Override // j$.util.stream.h2
+    public final void forEach(Consumer consumer) {
+        for (int i = 0; i < this.b; i++) {
+            consumer.x(this.a[i]);
+        }
+    }
+
+    @Override // j$.util.stream.h2
+    public final Object[] g(IntFunction intFunction) {
+        Object[] objArr = this.a;
+        if (objArr.length == this.b) {
+            return objArr;
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.stream.h2
+    public final int h() {
+        return 0;
+    }
+
+    @Override // j$.util.stream.h2
+    public final Spliterator spliterator() {
+        return DesugarArrays.a(this.a, 0, this.b);
+    }
+
+    public String toString() {
+        Object[] objArr = this.a;
+        return String.format("ArrayNode[%d][%s]", Integer.valueOf(objArr.length - this.b), Arrays.toString(objArr));
+    }
+
+    public k2(Object[] objArr) {
+        this.a = objArr;
+        this.b = objArr.length;
     }
 }

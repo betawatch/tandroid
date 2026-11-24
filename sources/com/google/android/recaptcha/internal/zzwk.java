@@ -1,27 +1,33 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzwk extends zzsh implements zztt {
-    private zzwk() {
-        throw null;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzwk(zzwm zzwmVar) {
+        super(r1);
+        zzwn zzwnVar;
+        zzwnVar = zzwn.zzb;
     }
 
-    public final zzwk zzA(int i7) {
+    public final zzwk zzA(int i) {
         zzn();
-        ((zzwn) this.zza).zzh = zzwl.zza(i7);
+        ((zzwn) this.zza).zzh = zzwl.zza(i);
         return this;
     }
 
-    public final zzwk zzB(int i7) {
+    public final zzwk zzB(int i) {
         zzn();
-        ((zzwn) this.zza).zzi = i7 - 2;
+        ((zzwn) this.zza).zzi = i - 2;
         return this;
     }
 
-    public final zzwk zzC(int i7) {
+    public final zzwk zzC(int i) {
         zzn();
-        ((zzwn) this.zza).zzp = i7 - 2;
+        ((zzwn) this.zza).zzp = i - 2;
         return this;
     }
 
@@ -38,7 +44,7 @@ public final class zzwk extends zzsh implements zztt {
         return ((zzwn) this.zza).zzg();
     }
 
-    public final zzwk zzq(int i7) {
+    public final zzwk zzq(int i) {
         zzn();
         zzwn.zzP((zzwn) this.zza, 0);
         return this;
@@ -51,9 +57,9 @@ public final class zzwk extends zzsh implements zztt {
     }
 
     @Deprecated
-    public final zzwk zzs(long j3) {
+    public final zzwk zzs(long j) {
         zzn();
-        ((zzwn) this.zza).zzn = j3;
+        ((zzwn) this.zza).zzn = j;
         return this;
     }
 
@@ -75,9 +81,9 @@ public final class zzwk extends zzsh implements zztt {
         return this;
     }
 
-    public final zzwk zzw(int i7) {
+    public final zzwk zzw(int i) {
         zzn();
-        zzwn.zzV((zzwn) this.zza, i7);
+        zzwn.zzV((zzwn) this.zza, i);
         return this;
     }
 
@@ -98,13 +104,7 @@ public final class zzwk extends zzsh implements zztt {
         return ((zzwn) this.zza).zzZ();
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public /* synthetic */ zzwk(zzwm zzwmVar) {
-        super(r1);
-        zzwn zzwnVar;
-        zzwnVar = zzwn.zzb;
+    private zzwk() {
+        throw null;
     }
 }

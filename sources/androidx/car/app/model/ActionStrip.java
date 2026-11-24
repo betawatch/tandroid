@@ -4,13 +4,13 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class ActionStrip {
     private final List<Action> mActions;
 
-    public ActionStrip(b bVar) {
-        throw null;
+    private ActionStrip() {
+        this.mActions = Collections.EMPTY_LIST;
     }
 
     public boolean equals(Object obj) {
@@ -28,11 +28,11 @@ public final class ActionStrip {
         return list != null ? list : Collections.EMPTY_LIST;
     }
 
-    public Action getFirstActionOfType(int i7) {
+    public Action getFirstActionOfType(int i) {
         for (Action action : this.mActions) {
             if (action instanceof Action) {
                 Action action2 = action;
-                if (action2.getType() == i7) {
+                if (action2.getType() == i) {
                     return action2;
                 }
             }
@@ -48,7 +48,7 @@ public final class ActionStrip {
         return "[action count: " + this.mActions.size() + "]";
     }
 
-    private ActionStrip() {
-        this.mActions = Collections.EMPTY_LIST;
+    public ActionStrip(g9 g9Var) {
+        throw null;
     }
 }

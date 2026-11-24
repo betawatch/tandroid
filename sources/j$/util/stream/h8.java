@@ -1,22 +1,13 @@
 package j$.util.stream;
 
-import java.util.function.IntPredicate;
+import j$.util.Spliterator;
 
-/* loaded from: classes2.dex */
-public final class h8 extends d5 implements o8 {
-    @Override // j$.util.stream.o8
-    public final long s() {
-        return 0L;
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface h8 {
+    Object a(a aVar, Spliterator spliterator);
 
-    public h8(c6 c6Var, j5 j5Var, boolean z10) {
-        super(j5Var);
-    }
+    Object b(a aVar, Spliterator spliterator);
 
-    @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        IntPredicate intPredicate = null;
-        intPredicate.test(i7);
-        throw null;
-    }
+    int c();
 }

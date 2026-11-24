@@ -2,18 +2,19 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
-import s.g;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Model {
     private final CarValue<String> mManufacturer;
     private final CarValue<String> mName;
     private final CarValue<Integer> mYear;
 
-    public Model(g gVar) {
-        gVar.getClass();
-        throw null;
+    private Model() {
+        CarValue<String> carValue = CarValue.UNKNOWN_STRING;
+        this.mName = carValue;
+        this.mManufacturer = carValue;
+        this.mYear = CarValue.UNKNOWN_INTEGER;
     }
 
     public boolean equals(Object obj) {
@@ -53,10 +54,8 @@ public final class Model {
         return "[ name: " + this.mName + ", year: " + this.mYear + ", manufacturer: " + this.mManufacturer + "]";
     }
 
-    private Model() {
-        CarValue<String> carValue = CarValue.UNKNOWN_STRING;
-        this.mName = carValue;
-        this.mManufacturer = carValue;
-        this.mYear = CarValue.UNKNOWN_INTEGER;
+    public Model(he7 he7Var) {
+        he7Var.getClass();
+        throw null;
     }
 }

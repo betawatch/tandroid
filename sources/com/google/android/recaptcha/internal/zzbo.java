@@ -1,29 +1,25 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
-import c8.z;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import gd.c;
-import ie.a;
-import ie.d;
 import org.telegram.tgnet.TLObject;
-import zd.e0;
-import zd.s;
-import zd.t;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzbo {
-    public s zza;
-    private final c zzb;
+    public bp2 zza;
+    private final d06 zzb;
     private zzbp zzc;
-    private final c zzd;
+    private final d06 zzd;
     private long zze;
-    private final a zzf;
+    private final lh7 zzf;
     private boolean zzg;
 
-    public zzbo() {
-        this(28800000L);
+    public zzbo(long j) {
+        int i = zzby.zza;
+        this.zzb = cne.b(zzbk.zza);
+        this.zzc = zzbp.zza;
+        this.zzd = cne.b(zzbl.zza);
+        this.zzf = new nh7();
     }
 
     public static final /* synthetic */ zzcr zzb(zzbo zzboVar) {
@@ -31,129 +27,126 @@ public final class zzbo {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x002f  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzl(id.c cVar) {
+    public final Object zzl(fw2 fw2Var) {
         zzbc zzbcVar;
-        int i7;
-        if (cVar instanceof zzbc) {
-            zzbcVar = (zzbc) cVar;
-            int i10 = zzbcVar.zzc;
-            if ((i10 & TLObject.FLAG_31) != 0) {
-                zzbcVar.zzc = i10 - TLObject.FLAG_31;
+        int i;
+        if (fw2Var instanceof zzbc) {
+            zzbcVar = (zzbc) fw2Var;
+            int i2 = zzbcVar.zzc;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzbcVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzbcVar.zza;
-                jd.a aVar = jd.a.a;
-                i7 = zzbcVar.zzc;
-                if (i7 == 0) {
-                    if (i7 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                i = zzbcVar.zzc;
+                if (i == 0) {
+                    if (i == 1) {
+                        qse.b(obj);
+                        return obj;
                     }
-                    z.b(obj);
-                    return obj;
+                    sc8.j("call to 'resume' before 'invoke' with coroutine");
+                    return null;
                 }
-                z.b(obj);
-                e0 zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
+                qse.b(obj);
+                zc3 zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
                 zzbcVar.zzc = 1;
                 Object await = zza.await(zzbcVar);
-                return await == aVar ? aVar : await;
+                bx2 bx2Var = bx2.a;
+                return await == bx2Var ? bx2Var : await;
             }
         }
-        zzbcVar = new zzbc(this, cVar);
+        zzbcVar = new zzbc(this, fw2Var);
         Object obj2 = zzbcVar.zza;
-        jd.a aVar2 = jd.a.a;
-        i7 = zzbcVar.zzc;
-        if (i7 == 0) {
+        i = zzbcVar.zzc;
+        if (i == 0) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x006a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0068, code lost:
     
-        if (r7 != r1) goto L21;
+        if (r8 == r5) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0074, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0071, code lost:
     
-        return r1;
+        return r5;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0049, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0048, code lost:
     
-        if (r7 != r1) goto L18;
+        if (r8 != r5) goto L18;
      */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzm(String str, id.c cVar) {
+    public final Object zzm(String str, fw2 fw2Var) {
         zzbg zzbgVar;
-        int i7;
-        if (cVar instanceof zzbg) {
-            zzbgVar = (zzbg) cVar;
-            int i10 = zzbgVar.zzc;
-            if ((i10 & TLObject.FLAG_31) != 0) {
-                zzbgVar.zzc = i10 - TLObject.FLAG_31;
+        int i;
+        if (fw2Var instanceof zzbg) {
+            zzbgVar = (zzbg) fw2Var;
+            int i2 = zzbgVar.zzc;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzbgVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzbgVar.zza;
-                jd.a aVar = jd.a.a;
-                i7 = zzbgVar.zzc;
-                if (i7 != 0) {
-                    z.b(obj);
-                    s zzf = zzf();
+                i = zzbgVar.zzc;
+                bx2 bx2Var = bx2.a;
+                if (i != 0) {
+                    qse.b(obj);
+                    bp2 zzf = zzf();
                     zzbgVar.zzd = str;
                     zzbgVar.zzc = 1;
-                    obj = ((t) zzf).i(zzbgVar);
+                    obj = ((cp2) zzf).h(zzbgVar);
                 } else {
-                    if (i7 != 1) {
-                        if (i7 != 2) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    if (i != 1) {
+                        if (i == 2) {
+                            qse.b(obj);
+                            return ((StandardIntegrityManager.StandardIntegrityToken) obj).token();
                         }
-                        z.b(obj);
-                        return ((StandardIntegrityManager.StandardIntegrityToken) obj).token();
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
                     }
                     str = zzbgVar.zzd;
-                    z.b(obj);
+                    qse.b(obj);
                 }
-                e0 zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
+                zc3 zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
                 zzbgVar.zzd = null;
                 zzbgVar.zzc = 2;
                 obj = zza.await(zzbgVar);
             }
         }
-        zzbgVar = new zzbg(this, cVar);
+        zzbgVar = new zzbg(this, fw2Var);
         Object obj2 = zzbgVar.zza;
-        jd.a aVar2 = jd.a.a;
-        i7 = zzbgVar.zzc;
-        if (i7 != 0) {
+        i = zzbgVar.zzc;
+        bx2 bx2Var2 = bx2.a;
+        if (i != 0) {
         }
-        e0 zza2 = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj2).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
+        zc3 zza2 = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj2).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
         zzbgVar.zzd = null;
         zzbgVar.zzc = 2;
         obj2 = zza2.await(zzbgVar);
     }
 
-    public final Object zze(id.c cVar) {
+    public final Object zze(fw2 fw2Var) {
         return new zzhg(new zzbn(this, null));
     }
 
-    public final s zzf() {
-        s sVar = this.zza;
-        if (sVar != null) {
-            return sVar;
+    public final bp2 zzf() {
+        bp2 bp2Var = this.zza;
+        if (bp2Var != null) {
+            return bp2Var;
         }
         return null;
     }
 
-    public final void zzj(long j3) {
-        this.zze = j3;
+    public final void zzj(long j) {
+        this.zze = j;
     }
 
-    public zzbo(long j3) {
-        int i7 = zzby.zza;
-        this.zzb = h.b(zzbk.zza);
-        this.zzc = zzbp.zza;
-        this.zzd = h.b(zzbl.zza);
-        this.zzf = new d();
+    public zzbo() {
+        this(28800000L);
     }
 }

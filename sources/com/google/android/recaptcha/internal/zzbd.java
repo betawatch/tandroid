@@ -2,106 +2,98 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import kotlin.jvm.internal.r;
-import rd.p;
-import zd.t;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzbd extends j implements p {
+final class zzbd extends ccb implements eq4 {
     long zza;
     boolean zzb;
     int zzc;
     final /* synthetic */ zzbo zzd;
-    final /* synthetic */ r zze;
+    final /* synthetic */ c59 zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbd(zzbo zzboVar, r rVar, c cVar) {
-        super(2, cVar);
+    public zzbd(zzbo zzboVar, c59 c59Var, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzd = zzboVar;
-        this.zze = rVar;
+        this.zze = c59Var;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzbd(this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzbd(this.zzd, this.zze, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbd) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzbd) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x007a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0079, code lost:
     
-        return r0;
+        return r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0075, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0074, code lost:
     
-        if (zd.b0.f(r4, r7) != r0) goto L6;
+        if (jde.a(r4, r7) != r3) goto L6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x002e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x002c, code lost:
     
-        if (r8 != r0) goto L16;
+        if (r8 != r3) goto L14;
      */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0024 A[Catch: Exception -> 0x001a, TRY_ENTER, TryCatch #0 {Exception -> 0x001a, blocks: (B:8:0x0024, B:10:0x0030, B:38:0x0016), top: B:37:0x0016 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0042 -> B:7:0x0022). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0075 -> B:5:0x0011). Please report as a decompilation issue!!! */
-    @Override // kd.a
+    /* JADX WARN: Removed duplicated region for block: B:34:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0022 A[Catch: Exception -> 0x0042, TRY_ENTER, TryCatch #0 {Exception -> 0x0042, blocks: (B:8:0x0022, B:10:0x002e, B:38:0x0016), top: B:37:0x0016 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0040 -> B:7:0x0020). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0074 -> B:5:0x0011). Please report as a decompilation issue!!! */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        long j3;
-        boolean z10;
-        boolean z11;
+        long j;
+        boolean z;
+        boolean z2;
         int errorCode;
-        a aVar = a.a;
-        int i7 = this.zzc;
-        if (i7 == 0) {
-            c8.z.b(obj);
-            j3 = 1000;
-            z10 = true;
-            if (!z10) {
+        int i = this.zzc;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
+            j = 1000;
+            z = true;
+            if (!z) {
             }
-        } else if (i7 != 1) {
-            z11 = this.zzb;
-            j3 = this.zza;
-            c8.z.b(obj);
-            z10 = z11;
-            j3 += j3;
-            if (!z10) {
-                return k.a;
+        } else if (i != 1) {
+            z2 = this.zzb;
+            j = this.zza;
+            qse.b(obj);
+            z = z2;
+            j <<= 1;
+            if (!z) {
+                return g5c.a;
             }
             zzbo zzboVar = this.zzd;
-            this.zza = j3;
+            this.zza = j;
             this.zzc = 1;
             obj = zzboVar.zzl(this);
         } else {
-            j3 = this.zza;
+            j = this.zza;
             try {
-                c8.z.b(obj);
-            } catch (Exception e10) {
-                this.zze.a = e10;
-                z11 = (e10 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e10).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
-                if (!z11) {
-                    throw e10;
+                qse.b(obj);
+            } catch (Exception e) {
+                this.zze.a = e;
+                z2 = (e instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
+                if (!z2) {
+                    throw e;
                 }
-                this.zza = j3;
+                this.zza = j;
                 this.zzb = true;
                 this.zzc = 2;
             }
             zzbo zzboVar2 = this.zzd;
-            ((t) zzboVar2.zzf()).C((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
+            ((cp2) zzboVar2.zzf()).B((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
             zzboVar2.zzc = zzbp.zzc;
-            z10 = false;
-            if (!z10) {
+            z = false;
+            if (!z) {
             }
         }
     }

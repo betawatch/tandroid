@@ -2,7 +2,8 @@ package j$.time.temporal;
 
 import j$.time.Duration;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public enum ChronoUnit implements q {
     NANOS("Nanos"),
     MICROS("Micros"),
@@ -39,7 +40,7 @@ public enum ChronoUnit implements q {
         Duration.j(3155695200L, 0);
         Duration.j(31556952000L, 0);
         Duration.j(31556952000000000L, 0);
-        Duration.j(j$.com.android.tools.r8.a.N(Long.MAX_VALUE, j$.com.android.tools.r8.a.R(999999999L, 1000000000L)), (int) j$.com.android.tools.r8.a.Q(999999999L, 1000000000L));
+        Duration.j(j$.time.a.N(Long.MAX_VALUE, j$.time.a.Q(999999999L, 1000000000L)), (int) j$.time.a.P(999999999L, 1000000000L));
     }
 
     ChronoUnit(String str) {
@@ -47,13 +48,13 @@ public enum ChronoUnit implements q {
     }
 
     @Override // j$.time.temporal.q
-    public final Temporal j(Temporal temporal, long j3) {
-        return temporal.d(j3, this);
+    public long between(Temporal temporal, Temporal temporal2) {
+        return temporal.g(temporal2, this);
     }
 
     @Override // j$.time.temporal.q
-    public long between(Temporal temporal, Temporal temporal2) {
-        return temporal.g(temporal2, this);
+    public final Temporal j(Temporal temporal, long j) {
+        return temporal.d(j, this);
     }
 
     @Override // java.lang.Enum

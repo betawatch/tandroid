@@ -1,66 +1,28 @@
 package j$.util.stream;
 
-import j$.util.Collection;
-import j$.util.Spliterator;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract /* synthetic */ class i2 {
+    public static final /* synthetic */ int[] a;
 
-/* loaded from: classes2.dex */
-public final class i2 implements e2 {
-    public final Collection a;
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.V(this, j3, j10, intFunction);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ int h() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.e2
-    public final e2 a(int i7) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    public i2(Collection collection) {
-        this.a = collection;
-    }
-
-    @Override // j$.util.stream.e2
-    public final Spliterator spliterator() {
-        return Collection.-EL.stream(this.a).spliterator();
-    }
-
-    @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i7) {
-        Iterator it = this.a.iterator();
-        while (it.hasNext()) {
-            objArr[i7] = it.next();
-            i7++;
+    static {
+        int[] iArr = new int[c7.values().length];
+        a = iArr;
+        try {
+            iArr[c7.REFERENCE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-    }
-
-    @Override // j$.util.stream.e2
-    public final Object[] g(IntFunction intFunction) {
-        java.util.Collection collection = this.a;
-        return collection.toArray((Object[]) intFunction.apply(collection.size()));
-    }
-
-    @Override // j$.util.stream.e2
-    public final long count() {
-        return this.a.size();
-    }
-
-    @Override // j$.util.stream.e2
-    public final void forEach(Consumer consumer) {
-        Collection.-EL.a(this.a, consumer);
-    }
-
-    public final String toString() {
-        return String.format("CollectionNode[%d][%s]", Integer.valueOf(this.a.size()), this.a);
+        try {
+            a[c7.INT_VALUE.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[c7.LONG_VALUE.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[c7.DOUBLE_VALUE.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
     }
 }

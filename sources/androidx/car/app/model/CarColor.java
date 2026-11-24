@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class CarColor {
     public static final int TYPE_BLUE = 6;
@@ -30,16 +30,16 @@ public final class CarColor {
         this.mColorDark = 0;
     }
 
-    private static CarColor create(int i7) {
-        return new CarColor(i7, 0, 0);
+    private static CarColor create(int i) {
+        return new CarColor(i, 0, 0);
     }
 
-    public static CarColor createCustom(int i7, int i10) {
-        return new CarColor(0, i7, i10);
+    public static CarColor createCustom(int i, int i2) {
+        return new CarColor(0, i, i2);
     }
 
-    private static String typeToString(int i7) {
-        switch (i7) {
+    private static String typeToString(int i) {
+        switch (i) {
             case 0:
                 return "CUSTOM";
             case 1:
@@ -89,17 +89,17 @@ public final class CarColor {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[type: ");
-        sb2.append(typeToString(this.mType));
-        sb2.append(", color: ");
-        sb2.append(this.mColor);
-        sb2.append(", dark: ");
-        return a8.p0.n(this.mColorDark, "]", sb2);
+        StringBuilder sb = new StringBuilder("[type: ");
+        sb.append(typeToString(this.mType));
+        sb.append(", color: ");
+        sb.append(this.mColor);
+        sb.append(", dark: ");
+        return de9.l(sb, this.mColorDark, "]");
     }
 
-    private CarColor(int i7, int i10, int i11) {
-        this.mType = i7;
-        this.mColor = i10;
-        this.mColorDark = i11;
+    private CarColor(int i, int i2, int i3) {
+        this.mType = i;
+        this.mColor = i2;
+        this.mColorDark = i3;
     }
 }

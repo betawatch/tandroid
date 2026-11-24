@@ -1,82 +1,21 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public final class i7 extends x6 implements j$.util.x0 {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class i7 extends j7 implements Consumer {
+    public final Object[] b = new Object[128];
+
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        int i = this.a;
+        this.a = i + 1;
+        this.b[i] = obj;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
-    }
-
-    @Override // j$.util.stream.x6
-    public final x6 e(Spliterator spliterator) {
-        return new i7(this.b, spliterator, this.a);
-    }
-
-    @Override // j$.util.stream.x6
-    public final void d() {
-        o6 o6Var = new o6();
-        this.h = o6Var;
-        Objects.requireNonNull(o6Var);
-        this.e = this.b.G0(new h7(o6Var, 1));
-        this.f = new j$.time.t(13, this);
-    }
-
-    @Override // j$.util.stream.x6, j$.util.Spliterator
-    public final Spliterator trySplit() {
-        return (j$.util.x0) super.trySplit();
-    }
-
-    @Override // j$.util.stream.x6, j$.util.Spliterator
-    public final j$.util.d1 trySplit() {
-        return (j$.util.x0) super.trySplit();
-    }
-
-    @Override // j$.util.stream.x6, j$.util.Spliterator
-    public final j$.util.x0 trySplit() {
-        return (j$.util.x0) super.trySplit();
-    }
-
-    @Override // j$.util.d1
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        int i7;
-        Objects.requireNonNull(intConsumer);
-        boolean a10 = a();
-        if (a10) {
-            o6 o6Var = (o6) this.h;
-            long j3 = this.g;
-            int k10 = o6Var.k(j3);
-            if (o6Var.c == 0 && k10 == 0) {
-                i7 = ((int[]) o6Var.e)[(int) j3];
-            } else {
-                i7 = ((int[][]) o6Var.f)[k10][(int) (j3 - o6Var.d[k10])];
-            }
-            intConsumer.accept(i7);
-        }
-        return a10;
-    }
-
-    @Override // j$.util.d1
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        if (this.h == null && !this.i) {
-            Objects.requireNonNull(intConsumer);
-            c();
-            Objects.requireNonNull(intConsumer);
-            h7 h7Var = new h7(intConsumer, 0);
-            this.b.F0(this.d, h7Var);
-            this.i = true;
-            return;
-        }
-        while (tryAdvance(intConsumer)) {
-        }
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

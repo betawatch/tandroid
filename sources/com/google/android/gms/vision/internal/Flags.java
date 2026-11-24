@@ -1,23 +1,19 @@
 package com.google.android.gms.vision.internal;
 
-import g7.a;
-import g7.b;
-import g7.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class Flags {
-    private static final b zza;
+    private static final ei4 zza;
 
     static {
-        c cVar;
-        a aVar = new a();
-        c cVar2 = c.b;
-        synchronized (c.class) {
-            cVar = c.b;
+        uia uiaVar;
+        di4 di4Var = new di4();
+        uia uiaVar2 = uia.b;
+        synchronized (uia.class) {
+            uiaVar = uia.b;
         }
-        cVar.a.a.add(aVar);
-        zza = aVar;
+        uiaVar.a.b.add(di4Var);
+        zza = di4Var;
     }
 
     private Flags() {

@@ -1,22 +1,13 @@
 package j$.util.stream;
 
-import java.util.function.LongPredicate;
+import java.security.AccessController;
 
-/* loaded from: classes2.dex */
-public final class j8 extends e5 implements o8 {
-    @Override // j$.util.stream.o8
-    public final long s() {
-        return 0L;
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class j8 {
+    public static final boolean a = ((Boolean) AccessController.doPrivileged(new j$.util.t1((byte) 2))).booleanValue();
 
-    public j8(d6 d6Var, j5 j5Var, boolean z10) {
-        super(j5Var);
-    }
-
-    @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
-        LongPredicate longPredicate = null;
-        longPredicate.test(j3);
-        throw null;
+    public static void a(Class cls, String str) {
+        throw new UnsupportedOperationException(cls + " tripwire tripped but logging not supported: " + str);
     }
 }

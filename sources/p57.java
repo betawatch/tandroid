@@ -1,0 +1,43 @@
+// default package
+
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.tl.TL_update;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class p57 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ na7 b;
+    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
+
+    public /* synthetic */ p57(na7 na7Var, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, byte b) {
+        this.a = b;
+        this.b = na7Var;
+        this.c = tL_updatePeerBlocked;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 1;
+        TL_update.TL_updatePeerBlocked tL_updatePeerBlocked = this.c;
+        na7 na7Var = this.b;
+        switch (b) {
+            case 0:
+                gl.d3(new p57(na7Var, tL_updatePeerBlocked, b2));
+                break;
+            default:
+                long B1 = k27.B1(tL_updatePeerBlocked.peer_id);
+                boolean z = tL_updatePeerBlocked.blocked;
+                LongSparseIntArray longSparseIntArray = na7Var.x0;
+                if (!z) {
+                    longSparseIntArray.delete(B1);
+                } else if (longSparseIntArray.indexOfKey(B1) < 0) {
+                    longSparseIntArray.put(B1, 1);
+                }
+                na7Var.getNotificationCenter().k(43, new Object[0]);
+                na7Var.M1().m0(B1, tL_updatePeerBlocked.blocked_my_stories_from, false);
+                break;
+        }
+    }
+}

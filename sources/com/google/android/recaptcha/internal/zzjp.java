@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Proxy;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzjp implements zzjt {
     public static final zzjp zza = new zzjp();
@@ -11,10 +11,11 @@ public final class zzjp implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length != 4 && length != 5) {
-            throw new zzdm(4, 3, null);
+            fvc.c(4, 3, null);
+            return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
         if (true != (zza2 instanceof Integer)) {
@@ -22,7 +23,8 @@ public final class zzjp implements zzjt {
         }
         Integer num = (Integer) zza2;
         if (num == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         int intValue = num.intValue();
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -31,7 +33,8 @@ public final class zzjp implements zzjt {
         }
         Integer num2 = (Integer) zza3;
         if (num2 == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         int intValue2 = num2.intValue();
         Object zza4 = zzizVar.zzc().zza(zzztVarArr[2]);
@@ -40,7 +43,8 @@ public final class zzjp implements zzjt {
         }
         String str = (String) zza4;
         if (str == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         String zza5 = zzizVar.zzh().zza(str);
         Object zza6 = zzizVar.zzc().zza(zzztVarArr[3]);
@@ -49,7 +53,8 @@ public final class zzjp implements zzjt {
         }
         String str2 = (String) zza6;
         if (str2 == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         String zza7 = zzizVar.zzh().zza(str2);
         Object zza8 = length == 5 ? zzizVar.zzc().zza(zzztVarArr[4]) : null;
@@ -57,9 +62,9 @@ public final class zzjp implements zzjt {
         try {
             Class zza9 = zziy.zza(zza5);
             zzizVar.zzc().zze(intValue, Proxy.newProxyInstance(zza9.getClassLoader(), new Class[]{zza9}, new zziw(zzivVar, zza7, zza8)));
-            zzizVar.zzc().zze(i7, zzivVar);
-        } catch (Exception e10) {
-            throw new zzdm(6, 20, e10);
+            zzizVar.zzc().zze(i, zzivVar);
+        } catch (Exception e) {
+            fvc.c(6, 20, e);
         }
     }
 }

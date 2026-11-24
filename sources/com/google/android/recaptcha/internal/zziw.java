@@ -1,12 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import hd.n;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
-import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zziw extends zzit {
     private final zziv zza;
@@ -21,15 +19,15 @@ public final class zziw extends zzit {
     @Override // com.google.android.recaptcha.internal.zzit
     public final boolean zza(Object obj, Method method, Object[] objArr) {
         List list;
-        if (!j.a(method.getName(), this.zzb)) {
+        if (!rp5.a(method.getName(), this.zzb)) {
             return false;
         }
         zziv zzivVar = this.zza;
         if (objArr != null) {
             list = Arrays.asList(objArr);
-            j.d(list, "asList(...)");
+            list.getClass();
         } else {
-            list = n.a;
+            list = c24.a;
         }
         zzivVar.zzb(list);
         return true;

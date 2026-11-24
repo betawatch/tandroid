@@ -1,16 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.x1;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzet extends j implements p {
+final class zzet extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ String zzc;
@@ -18,68 +10,72 @@ final class zzet extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzet(zzfp zzfpVar, String str, long j3, c cVar) {
-        super(2, cVar);
+    public zzet(zzfp zzfpVar, String str, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzfpVar;
         this.zzc = str;
-        this.zzd = j3;
+        this.zzd = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, fw2Var);
         zzetVar.zze = obj;
         return zzetVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzet) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzet) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0038, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0041, code lost:
     
-        if (r8 != r0) goto L19;
+        if (r8 != r2) goto L15;
      */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0046, code lost:
+    
+        return r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x002f, code lost:
+    
+        if (r8 != r2) goto L13;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzgrVar = (zzgr) this.zze;
                 zzq zzb = zzfp.zzb(this.zzb);
                 String str = this.zzc;
-                long j3 = this.zzd;
+                long j = this.zzd;
                 this.zze = zzgrVar;
                 this.zza = 1;
-                obj = zzb.zzb(str, j3, this);
+                obj = zzb.zzb(str, j, this);
             } else {
-                if (i7 != 1) {
-                    z.b(obj);
+                if (i != 1) {
+                    qse.b(obj);
                     return (zzxx) obj;
                 }
                 zzgrVar = (zzgr) this.zze;
-                z.b(obj);
+                qse.b(obj);
             }
             this.zze = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
-            if (obj == aVar) {
-                return aVar;
-            }
-            return (zzxx) obj;
-        } catch (zzcg e10) {
-            throw e10;
-        } catch (x1 e11) {
-            throw new zzcg(zzce.zzb, zzcd.zzb, e11.getMessage(), null, 8, null);
-        } catch (Exception e12) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e12.getMessage(), null, 8, null);
+        } catch (zzcg e) {
+            throw e;
+        } catch (mob e2) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e2.getMessage(), null, 8, null);
+        } catch (Exception e3) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e3.getMessage(), null, 8, null);
         }
     }
 }

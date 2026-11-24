@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g4 b;
-    public final /* synthetic */ String c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class w extends AnimatorListenerAdapter {
+    public final /* synthetic */ x a;
 
-    public /* synthetic */ w(g4 g4Var, String str, int i7) {
-        this.a = i7;
-        this.b = g4Var;
-        this.c = str;
+    public w(x xVar) {
+        this.a = xVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g4 g4Var = this.b;
-                di.q qVar = g4Var.i0.c0;
-                String str = this.c;
-                if (TextUtils.isEmpty(str)) {
-                    str = "about:blank";
-                }
-                qVar.setText(str);
-                di.q qVar2 = g4Var.i0.c0;
-                qVar2.setSelection(qVar2.getText().length());
-                org.telegram.messenger.g0.I3(g4Var.i0.c0);
-                break;
-            default:
-                vf.c.n(this.b.M, this.c, false, null);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        x xVar = this.a;
+        PhotoViewer photoViewer = xVar.c;
+        photoViewer.n4 = (byte) 0;
+        photoViewer.G0();
+        photoViewer.M0.setAlpha(kk7.d4);
+        photoViewer.f0.invalidate();
+        photoViewer.Q0.setTranslationY(0.0f);
+        if (photoViewer.t4) {
+            photoViewer.F0(xVar.b.intValue());
+        }
+        o98 o98Var = xVar.a;
+        if (o98Var != null) {
+            o98Var.e();
         }
     }
 }

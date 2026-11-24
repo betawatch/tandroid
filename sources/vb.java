@@ -1,0 +1,147 @@
+// default package
+
+import android.app.Activity;
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.ui.ActionBar.d;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class vb extends l5c {
+    public final /* synthetic */ byte Q;
+    public final /* synthetic */ Object R;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vb(KeyEvent.Callback callback, o39 o39Var, Context context, int i, i8c i8cVar, wjb wjbVar, byte b) {
+        super(o39Var, context, i, 0, false, i8cVar, wjbVar);
+        this.Q = b;
+        this.R = callback;
+    }
+
+    @Override // l5c, w39
+    public final void t(s49 s49Var, int i) {
+        d76 d76Var;
+        i76 i76Var;
+        switch (this.Q) {
+            case 2:
+                super.t(s49Var, i);
+                l18 l18Var = (l18) this.R;
+                if (l18Var.E) {
+                    View view = s49Var.a;
+                    if ((view instanceof d76) && (i76Var = (d76Var = (d76) view).L) != null && i76Var.a == l18Var.y) {
+                        d76Var.a();
+                        l18Var.E = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.t(s49Var, i);
+                break;
+        }
+    }
+
+    @Override // l5c, w39
+    public final s49 x(ViewGroup viewGroup, int i) {
+        wjb wjbVar;
+        wjb wjbVar2;
+        wjb wjbVar3;
+        wjb wjbVar4;
+        byte b = this.Q;
+        Object obj = this.R;
+        switch (b) {
+            case 0:
+                bc bcVar = (bc) obj;
+                if (i != 42) {
+                    break;
+                } else {
+                    Activity parentActivity = bcVar.getParentActivity();
+                    int i2 = bkb.K6;
+                    wjbVar = ((d) bcVar).resourceProvider;
+                    ld5 ld5Var = new ld5(parentActivity, i2, 21, 0, false, wjbVar);
+                    ld5Var.setHeight(25);
+                    break;
+                }
+            case 1:
+                eg1 eg1Var = (eg1) obj;
+                if (i != 42) {
+                    break;
+                } else {
+                    Activity parentActivity2 = eg1Var.getParentActivity();
+                    int i3 = bkb.K6;
+                    wjbVar2 = ((d) eg1Var).resourceProvider;
+                    ld5 ld5Var2 = new ld5(parentActivity2, i3, 21, 0, false, wjbVar2);
+                    ld5Var2.setHeight(25);
+                    break;
+                }
+            case 3:
+                y99 y99Var = (y99) obj;
+                if (i != 0) {
+                    if (i != 42) {
+                        break;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            case 4:
+                jva jvaVar = (jva) obj;
+                if (i != 42) {
+                    break;
+                } else {
+                    Activity parentActivity3 = jvaVar.getParentActivity();
+                    int i4 = bkb.K6;
+                    wjbVar3 = ((d) jvaVar).resourceProvider;
+                    ld5 ld5Var3 = new ld5(parentActivity3, i4, 21, 0, false, wjbVar3);
+                    ld5Var3.setHeight(25);
+                    break;
+                }
+            case 5:
+                ydb ydbVar = (ydb) obj;
+                if (i != 42) {
+                    break;
+                } else {
+                    Activity parentActivity4 = ydbVar.getParentActivity();
+                    int i5 = bkb.K6;
+                    wjbVar4 = ((d) ydbVar).resourceProvider;
+                    ld5 ld5Var4 = new ld5(parentActivity4, i5, 21, 0, false, wjbVar4);
+                    ld5Var4.setHeight(25);
+                    break;
+                }
+        }
+        return super.x(viewGroup, i);
+    }
+
+    @Override // l5c, w39
+    public final void y(s49 s49Var) {
+        d76 d76Var;
+        i76 i76Var;
+        switch (this.Q) {
+            case 2:
+                super.y(s49Var);
+                l18 l18Var = (l18) this.R;
+                if (l18Var.E) {
+                    View view = s49Var.a;
+                    if ((view instanceof d76) && (i76Var = (d76Var = (d76) view).L) != null && i76Var.a == l18Var.y) {
+                        d76Var.a();
+                        l18Var.E = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.y(s49Var);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vb(iz4 iz4Var, o39 o39Var, Activity activity, int i, int i2, i8c i8cVar, wjb wjbVar, byte b) {
+        super(o39Var, activity, i, i2, true, i8cVar, wjbVar);
+        this.Q = b;
+        this.R = iz4Var;
+    }
+}

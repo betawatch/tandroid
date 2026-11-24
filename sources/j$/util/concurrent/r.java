@@ -4,50 +4,60 @@ import j$.util.Collection;
 import j$.util.Spliterator;
 import j$.util.stream.Stream;
 import java.util.Iterator;
-import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class r extends b implements Collection {
     private static final long serialVersionUID = 2249069246763182397L;
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        return Collection.-CC.$default$parallelStream(this);
+    @Override // java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$parallelStream(this));
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.concurrent.b, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
         return this.a.containsValue(obj);
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public final void forEach(Consumer consumer) {
+        consumer.getClass();
+        k[] kVarArr = this.a.a;
+        if (kVarArr == null) {
+            return;
+        }
+        o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
+        while (true) {
+            k a = oVar.a();
+            if (a == null) {
+                return;
+            } else {
+                consumer.x(a.c);
+            }
+        }
+    }
+
+    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        ConcurrentHashMap concurrentHashMap = this.a;
+        k[] kVarArr = concurrentHashMap.a;
+        int length = kVarArr == null ? 0 : kVarArr.length;
+        return new h(kVarArr, length, length, concurrentHashMap, (byte) 1);
+    }
+
+    @Override // java.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(Collection.-CC.$default$parallelStream(this));
     }
 
     @Override // j$.util.concurrent.b, java.util.Collection, java.util.Set
@@ -67,37 +77,19 @@ public final class r extends b implements Collection {
         return true;
     }
 
-    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        k[] kVarArr = concurrentHashMap.a;
-        int length = kVarArr == null ? 0 : kVarArr.length;
-        return new h(kVarArr, length, length, concurrentHashMap, 1);
-    }
-
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
     @Override // j$.util.concurrent.b, java.util.Collection
     public final boolean removeAll(java.util.Collection collection) {
         collection.getClass();
         Object it = iterator();
-        boolean z10 = false;
+        boolean z = false;
         while (true) {
             a aVar = (a) it;
             if (!aVar.hasNext()) {
-                return z10;
+                return z;
             }
             if (collection.contains(((h) it).next())) {
                 aVar.remove();
-                z10 = true;
+                z = true;
             }
         }
     }
@@ -107,48 +99,57 @@ public final class r extends b implements Collection {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
         k[] kVarArr = concurrentHashMap.a;
-        boolean z10 = false;
+        boolean z = false;
         if (kVarArr != null) {
             o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
             while (true) {
-                k a10 = oVar.a();
-                if (a10 == null) {
+                k a = oVar.a();
+                if (a == null) {
                     break;
                 }
-                Object obj = a10.b;
-                Object obj2 = a10.c;
+                Object obj = a.b;
+                Object obj2 = a.c;
                 if (predicate.test(obj2) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z10 = true;
+                    z = true;
                 }
             }
         }
-        return z10;
+        return z;
     }
 
     @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final j$.util.Spliterator spliterator() {
+    public final Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j3 = concurrentHashMap.j();
+        long j = concurrentHashMap.j();
         k[] kVarArr = concurrentHashMap.a;
         int length = kVarArr == null ? 0 : kVarArr.length;
-        return new i(kVarArr, length, 0, length, j3 < 0 ? 0L : j3, 1);
+        return new i(kVarArr, length, 0, length, j < 0 ? 0L : j, (byte) 1);
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection
-    public final void forEach(Consumer consumer) {
-        consumer.getClass();
-        k[] kVarArr = this.a.a;
-        if (kVarArr == null) {
-            return;
-        }
-        o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
-        while (true) {
-            k a10 = oVar.a();
-            if (a10 == null) {
-                return;
-            } else {
-                consumer.x(a10.c);
-            }
-        }
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 }

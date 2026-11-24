@@ -1,55 +1,55 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import xd.l;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzhv extends j implements p {
+final class zzhv extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzib zzb;
     final /* synthetic */ zzxn zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzhv(zzib zzibVar, zzxn zzxnVar, c cVar) {
-        super(2, cVar);
+    public zzhv(zzib zzibVar, zzxn zzxnVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzibVar;
         this.zzc = zzxnVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzhv zzhvVar = new zzhv(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzhv zzhvVar = new zzhv(this.zzb, this.zzc, fw2Var);
         zzhvVar.zzd = obj;
         return zzhvVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhv) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzhv) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x003b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0045, code lost:
     
-        if (r9 != r0) goto L15;
+        if (r8 != r3) goto L15;
      */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0056, code lost:
+    
+        return r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0038, code lost:
+    
+        if (r8 != r3) goto L13;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzib zzibVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -59,25 +59,21 @@ final class zzhv extends j implements p {
                 this.zza = 1;
                 obj = new zzhg(new zzhw(zzibVar, zzN, zzM, null));
             } else {
-                if (i7 != 1) {
-                    z.b(obj);
-                    return l.c(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
+                if (i != 1) {
+                    qse.b(obj);
+                    return n9b.c(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
                 }
                 zzhkVar = (zzhk) this.zzd;
-                z.b(obj);
+                qse.b(obj);
             }
             this.zzd = null;
             this.zza = 2;
             obj = ((zzhg) obj).zza(zzhkVar, this);
-            if (obj == aVar) {
-                return aVar;
+        } catch (Exception e) {
+            if (e instanceof zzcg) {
+                throw e;
             }
-            return l.c(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
-        } catch (Exception e10) {
-            if (e10 instanceof zzcg) {
-                throw e10;
-            }
-            throw new zzcg(zzce.zzb, zzcd.zzL, e10.getMessage(), null, 8, null);
+            throw new zzcg(zzce.zzb, zzcd.zzL, e.getMessage(), null, 8, null);
         }
     }
 }

@@ -1,66 +1,59 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzao extends j implements p {
+final class zzao extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzar zzb;
     final /* synthetic */ String zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzao(zzar zzarVar, String str, c cVar) {
-        super(2, cVar);
+    public zzao(zzar zzarVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzarVar;
         this.zzc = str;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzao zzaoVar = new zzao(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzao zzaoVar = new zzao(this.zzb, this.zzc, fw2Var);
         zzaoVar.zzd = obj;
         return zzaoVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzao) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzao) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0038, code lost:
     
-        if (r8 != r0) goto L13;
+        if (r8 != r2) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x004a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0049, code lost:
     
-        return r0;
+        return r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0048, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0047, code lost:
     
-        if (r8 != r0) goto L18;
+        if (r8 != r2) goto L17;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-        } catch (Exception e10) {
+        } catch (Exception e) {
             zzar zzarVar = this.zzb;
             this.zza = 2;
-            obj = zzarVar.zzg(e10, this);
+            obj = zzarVar.zzg(e, this);
         }
-        if (i7 == 0) {
-            z.b(obj);
+        if (i == 0) {
+            qse.b(obj);
             zzhk zzhkVar = (zzhk) this.zzd;
             zzar zzarVar2 = this.zzb;
             int zza = zzarVar2.zza();
@@ -68,11 +61,11 @@ final class zzao extends j implements p {
             this.zza = 1;
             obj = new zzhf(37, zzanVar, new Integer(zza)).zza(zzhkVar, this);
         } else {
-            if (i7 != 1) {
-                z.b(obj);
+            if (i != 1) {
+                qse.b(obj);
                 return (zzat) obj;
             }
-            z.b(obj);
+            qse.b(obj);
         }
         return (zzat) obj;
     }

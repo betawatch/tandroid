@@ -25,8 +25,8 @@ import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
     private static final String TAG = "NetworkMonitorAutoDetect";
@@ -42,20 +42,20 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     private WifiManagerDelegate wifiManagerDelegate;
     private String wifiSSID;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class NetworkState {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class NetworkState {
         private final boolean connected;
         private final int subtype;
         private final int type;
         private final int underlyingNetworkSubtypeForVpn;
         private final int underlyingNetworkTypeForVpn;
 
-        public NetworkState(boolean z10, int i7, int i10, int i11, int i12) {
-            this.connected = z10;
-            this.type = i7;
-            this.subtype = i10;
-            this.underlyingNetworkTypeForVpn = i11;
-            this.underlyingNetworkSubtypeForVpn = i12;
+        public NetworkState(boolean z, int i, int i2, int i3, int i4) {
+            this.connected = z;
+            this.type = i;
+            this.subtype = i2;
+            this.underlyingNetworkTypeForVpn = i3;
+            this.underlyingNetworkSubtypeForVpn = i4;
         }
 
         public int getNetworkSubType() {
@@ -79,8 +79,8 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public class SimpleNetworkCallback extends ConnectivityManager.NetworkCallback {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private class SimpleNetworkCallback extends ConnectivityManager.NetworkCallback {
         private SimpleNetworkCallback() {
         }
 
@@ -110,8 +110,8 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
-        public void onLosing(Network network, int i7) {
-            Logging.d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is about to lose in " + i7 + "ms");
+        public void onLosing(Network network, int i) {
+            Logging.d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is about to lose in " + i + "ms");
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
@@ -121,8 +121,8 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class WifiDirectManagerDelegate extends BroadcastReceiver {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class WifiDirectManagerDelegate extends BroadcastReceiver {
         private static final int WIFI_P2P_NETWORK_HANDLE = 0;
         private final Context context;
         private final NetworkChangeDetector.Observer observer;
@@ -134,15 +134,15 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction("android.net.wifi.p2p.STATE_CHANGED");
             intentFilter.addAction("android.net.wifi.p2p.CONNECTION_STATE_CHANGE");
-            int i7 = Build.VERSION.SDK_INT;
-            if (i7 >= 33) {
+            int i = Build.VERSION.SDK_INT;
+            if (i >= 33) {
                 context.registerReceiver(this, intentFilter, 4);
             } else {
                 context.registerReceiver(this, intentFilter);
             }
-            if (i7 > 28) {
+            if (i > 28) {
                 WifiP2pManager wifiP2pManager = (WifiP2pManager) context.getSystemService("wifip2p");
-                wifiP2pManager.requestGroupInfo(wifiP2pManager.initialize(context, context.getMainLooper(), null), new WifiP2pManager.GroupInfoListener() { // from class: org.webrtc.l
+                wifiP2pManager.requestGroupInfo(wifiP2pManager.initialize(context, context.getMainLooper(), null), new WifiP2pManager.GroupInfoListener() { // from class: org.webrtc.e
                     @Override // android.net.wifi.p2p.WifiP2pManager.GroupInfoListener
                     public final void onGroupInfoAvailable(WifiP2pGroup wifiP2pGroup) {
                         NetworkMonitorAutoDetect.WifiDirectManagerDelegate.this.lambda$new$0(wifiP2pGroup);
@@ -160,19 +160,19 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             try {
                 ArrayList list = Collections.list(NetworkInterface.getByName(wifiP2pGroup.getInterface()).getInetAddresses());
                 NetworkChangeDetector.IPAddress[] iPAddressArr = new NetworkChangeDetector.IPAddress[list.size()];
-                for (int i7 = 0; i7 < list.size(); i7++) {
-                    iPAddressArr[i7] = new NetworkChangeDetector.IPAddress(((InetAddress) list.get(i7)).getAddress());
+                for (int i = 0; i < list.size(); i++) {
+                    iPAddressArr[i] = new NetworkChangeDetector.IPAddress(((InetAddress) list.get(i)).getAddress());
                 }
                 NetworkChangeDetector.NetworkInformation networkInformation = new NetworkChangeDetector.NetworkInformation(wifiP2pGroup.getInterface(), NetworkChangeDetector.ConnectionType.CONNECTION_WIFI, NetworkChangeDetector.ConnectionType.CONNECTION_NONE, 0L, iPAddressArr);
                 this.wifiP2pNetworkInfo = networkInformation;
                 this.observer.onNetworkConnect(networkInformation);
-            } catch (SocketException e10) {
-                Logging.e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e10);
+            } catch (SocketException e) {
+                Logging.e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e);
             }
         }
 
-        private void onWifiP2pStateChange(int i7) {
-            if (i7 == 1) {
+        private void onWifiP2pStateChange(int i) {
+            if (i == 1) {
                 this.wifiP2pNetworkInfo = null;
                 this.observer.onNetworkDisconnect(0L);
             }
@@ -240,14 +240,14 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         this.observer.onConnectionTypeChanged(connectionType);
     }
 
-    private static NetworkChangeDetector.ConnectionType getConnectionType(boolean z10, int i7, int i10) {
-        if (!z10) {
+    private static NetworkChangeDetector.ConnectionType getConnectionType(boolean z, int i, int i2) {
+        if (!z) {
             return NetworkChangeDetector.ConnectionType.CONNECTION_NONE;
         }
-        if (i7 != 0) {
-            return i7 != 1 ? i7 != 6 ? i7 != 7 ? i7 != 9 ? i7 != 17 ? NetworkChangeDetector.ConnectionType.CONNECTION_UNKNOWN : NetworkChangeDetector.ConnectionType.CONNECTION_VPN : NetworkChangeDetector.ConnectionType.CONNECTION_ETHERNET : NetworkChangeDetector.ConnectionType.CONNECTION_BLUETOOTH : NetworkChangeDetector.ConnectionType.CONNECTION_4G : NetworkChangeDetector.ConnectionType.CONNECTION_WIFI;
+        if (i != 0) {
+            return i != 1 ? i != 6 ? i != 7 ? i != 9 ? i != 17 ? NetworkChangeDetector.ConnectionType.CONNECTION_UNKNOWN : NetworkChangeDetector.ConnectionType.CONNECTION_VPN : NetworkChangeDetector.ConnectionType.CONNECTION_ETHERNET : NetworkChangeDetector.ConnectionType.CONNECTION_BLUETOOTH : NetworkChangeDetector.ConnectionType.CONNECTION_4G : NetworkChangeDetector.ConnectionType.CONNECTION_WIFI;
         }
-        switch (i10) {
+        switch (i2) {
             case 1:
             case 2:
             case 4:
@@ -296,10 +296,12 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             return;
         }
         this.isRegistered = true;
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.context.registerReceiver(this, this.intentFilter, 4);
+        int i = Build.VERSION.SDK_INT;
+        Context context = this.context;
+        if (i >= 33) {
+            context.registerReceiver(this, this.intentFilter, 4);
         } else {
-            this.context.registerReceiver(this, this.intentFilter);
+            context.registerReceiver(this, this.intentFilter);
         }
     }
 
@@ -379,28 +381,30 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         return this.connectivityManagerDelegate.supportNetworkCallback();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class WifiManagerDelegate {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class WifiManagerDelegate {
         private final Context context;
 
-        public WifiManagerDelegate(Context context) {
-            this.context = context;
+        public WifiManagerDelegate() {
+            this.context = null;
         }
 
         public String getWifiSSID() {
             WifiInfo wifiInfo;
             String ssid;
-            Intent registerReceiver = Build.VERSION.SDK_INT >= 33 ? this.context.registerReceiver(null, new IntentFilter("android.net.wifi.STATE_CHANGE"), 4) : this.context.registerReceiver(null, new IntentFilter("android.net.wifi.STATE_CHANGE"));
+            int i = Build.VERSION.SDK_INT;
+            Context context = this.context;
+            Intent registerReceiver = i >= 33 ? context.registerReceiver(null, new IntentFilter("android.net.wifi.STATE_CHANGE"), 4) : context.registerReceiver(null, new IntentFilter("android.net.wifi.STATE_CHANGE"));
             return (registerReceiver == null || (wifiInfo = (WifiInfo) registerReceiver.getParcelableExtra("wifiInfo")) == null || (ssid = wifiInfo.getSSID()) == null) ? "" : ssid;
         }
 
-        public WifiManagerDelegate() {
-            this.context = null;
+        public WifiManagerDelegate(Context context) {
+            this.context = context;
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class ConnectivityManagerDelegate {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class ConnectivityManagerDelegate {
         private final ConnectivityManager connectivityManager;
 
         public ConnectivityManagerDelegate(Context context) {
@@ -459,32 +463,46 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             if (!supportNetworkCallback() || (activeNetworkInfo = this.connectivityManager.getActiveNetworkInfo()) == null) {
                 return -1L;
             }
-            long j3 = -1;
+            long j = -1;
             for (Network network : getAllNetworks()) {
                 if (hasInternetCapability(network) && (networkInfo = this.connectivityManager.getNetworkInfo(network)) != null && networkInfo.getType() == activeNetworkInfo.getType()) {
-                    if (j3 != -1) {
-                        throw new RuntimeException("Multiple connected networks of same type are not supported.");
+                    if (j != -1) {
+                        wn4.j("Multiple connected networks of same type are not supported.");
+                        return 0L;
                     }
-                    j3 = NetworkMonitorAutoDetect.networkToNetId(network);
+                    j = NetworkMonitorAutoDetect.networkToNetId(network);
                 }
             }
-            return j3;
+            return j;
         }
 
         public NetworkChangeDetector.IPAddress[] getIPAddresses(LinkProperties linkProperties) {
             NetworkChangeDetector.IPAddress[] iPAddressArr = new NetworkChangeDetector.IPAddress[linkProperties.getLinkAddresses().size()];
             Iterator<LinkAddress> it = linkProperties.getLinkAddresses().iterator();
-            int i7 = 0;
+            int i = 0;
             while (it.hasNext()) {
-                iPAddressArr[i7] = new NetworkChangeDetector.IPAddress(it.next().getAddress().getAddress());
-                i7++;
+                iPAddressArr[i] = new NetworkChangeDetector.IPAddress(it.next().getAddress().getAddress());
+                i++;
             }
             return iPAddressArr;
         }
 
-        public NetworkState getNetworkState() {
-            ConnectivityManager connectivityManager = this.connectivityManager;
-            return connectivityManager == null ? new NetworkState(false, -1, -1, -1, -1) : getNetworkState(connectivityManager.getActiveNetworkInfo());
+        public NetworkState getNetworkState(Network network) {
+            ConnectivityManager connectivityManager;
+            NetworkInfo activeNetworkInfo;
+            if (network == null || (connectivityManager = this.connectivityManager) == null) {
+                return new NetworkState(false, -1, -1, -1, -1);
+            }
+            NetworkInfo networkInfo = connectivityManager.getNetworkInfo(network);
+            if (networkInfo == null) {
+                Logging.w(NetworkMonitorAutoDetect.TAG, "Couldn't retrieve information from network " + network.toString());
+                return new NetworkState(false, -1, -1, -1, -1);
+            }
+            if (networkInfo.getType() == 17) {
+                return networkInfo.getType() == 17 ? (!network.equals(this.connectivityManager.getActiveNetwork()) || (activeNetworkInfo = this.connectivityManager.getActiveNetworkInfo()) == null || activeNetworkInfo.getType() == 17) ? new NetworkState(networkInfo.isConnected(), 17, -1, -1, -1) : new NetworkState(networkInfo.isConnected(), 17, -1, activeNetworkInfo.getType(), activeNetworkInfo.getSubtype()) : getNetworkState(networkInfo);
+            }
+            NetworkCapabilities networkCapabilities = this.connectivityManager.getNetworkCapabilities(network);
+            return (networkCapabilities == null || !networkCapabilities.hasTransport(4)) ? getNetworkState(networkInfo) : new NetworkState(networkInfo.isConnected(), 17, -1, networkInfo.getType(), networkInfo.getSubtype());
         }
 
         public boolean hasInternetCapability(Network network) {
@@ -518,31 +536,12 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             this.connectivityManager = null;
         }
 
-        public NetworkState getNetworkState(Network network) {
-            ConnectivityManager connectivityManager;
-            NetworkInfo activeNetworkInfo;
-            if (network != null && (connectivityManager = this.connectivityManager) != null) {
-                NetworkInfo networkInfo = connectivityManager.getNetworkInfo(network);
-                if (networkInfo == null) {
-                    Logging.w(NetworkMonitorAutoDetect.TAG, "Couldn't retrieve information from network " + network.toString());
-                    return new NetworkState(false, -1, -1, -1, -1);
-                }
-                if (networkInfo.getType() != 17) {
-                    NetworkCapabilities networkCapabilities = this.connectivityManager.getNetworkCapabilities(network);
-                    if (networkCapabilities != null && networkCapabilities.hasTransport(4)) {
-                        return new NetworkState(networkInfo.isConnected(), 17, -1, networkInfo.getType(), networkInfo.getSubtype());
-                    }
-                    return getNetworkState(networkInfo);
-                }
-                if (networkInfo.getType() == 17) {
-                    if (network.equals(this.connectivityManager.getActiveNetwork()) && (activeNetworkInfo = this.connectivityManager.getActiveNetworkInfo()) != null && activeNetworkInfo.getType() != 17) {
-                        return new NetworkState(networkInfo.isConnected(), 17, -1, activeNetworkInfo.getType(), activeNetworkInfo.getSubtype());
-                    }
-                    return new NetworkState(networkInfo.isConnected(), 17, -1, -1, -1);
-                }
-                return getNetworkState(networkInfo);
+        public NetworkState getNetworkState() {
+            ConnectivityManager connectivityManager = this.connectivityManager;
+            if (connectivityManager == null) {
+                return new NetworkState(false, -1, -1, -1, -1);
             }
-            return new NetworkState(false, -1, -1, -1, -1);
+            return getNetworkState(connectivityManager.getActiveNetworkInfo());
         }
 
         private NetworkState getNetworkState(NetworkInfo networkInfo) {

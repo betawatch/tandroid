@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Action {
     public static final int FLAG_DEFAULT = 4;
@@ -15,7 +15,7 @@ public final class Action {
     private final int mFlags;
     private final CarIcon mIcon;
     private final boolean mIsEnabled;
-    private final b0 mOnClickDelegate;
+    private final yo7 mOnClickDelegate;
     private final CarText mTitle;
     private final int mType;
     public static final Action APP_ICON = new Action(65538);
@@ -26,28 +26,29 @@ public final class Action {
     public static final int TYPE_PAN = 65540;
     public static final Action PAN = new Action(TYPE_PAN);
 
-    private Action(int i7) {
-        if (i7 == 1) {
-            throw new IllegalArgumentException("Standard action constructor used with non standard type");
+    private Action(int i) {
+        if (i == 1) {
+            w26.j("Standard action constructor used with non standard type");
+            throw null;
         }
         this.mTitle = null;
         this.mIcon = null;
         this.mBackgroundColor = CarColor.DEFAULT;
         this.mOnClickDelegate = null;
-        this.mType = i7;
+        this.mType = i;
         this.mFlags = 0;
         this.mIsEnabled = true;
     }
 
-    public static boolean isStandardActionType(int i7) {
-        return (i7 & 65536) != 0;
+    public static boolean isStandardActionType(int i) {
+        return (i & 65536) != 0;
     }
 
-    public static String typeToString(int i7) {
-        if (i7 == 1) {
+    public static String typeToString(int i) {
+        if (i == 1) {
             return "CUSTOM";
         }
-        switch (i7) {
+        switch (i) {
             case 65538:
                 return "APP_ICON";
             case TYPE_BACK /* 65539 */:
@@ -89,7 +90,7 @@ public final class Action {
         return this.mIcon;
     }
 
-    public b0 getOnClickDelegate() {
+    public yo7 getOnClickDelegate() {
         return this.mOnClickDelegate;
     }
 
@@ -117,7 +118,7 @@ public final class Action {
         return "[type: " + typeToString(this.mType) + ", icon: " + this.mIcon + ", bkg: " + this.mBackgroundColor + ", isEnabled: " + this.mIsEnabled + "]";
     }
 
-    public Action(a aVar) {
+    public Action(p5 p5Var) {
         throw null;
     }
 

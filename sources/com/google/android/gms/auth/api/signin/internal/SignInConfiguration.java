@@ -2,21 +2,18 @@ package com.google.android.gms.auth.api.signin.internal;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.cc;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import q6.m;
-import r6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class SignInConfiguration extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<SignInConfiguration> CREATOR = new w.a(27);
+public final class SignInConfiguration extends b4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<SignInConfiguration> CREATOR = new b1d((byte) 23);
     public final String a;
     public final GoogleSignInOptions b;
 
     public SignInConfiguration(String str, GoogleSignInOptions googleSignInOptions) {
-        m.f(str);
+        fre.f(str);
         this.a = str;
         this.b = googleSignInOptions;
     }
@@ -26,8 +23,8 @@ public final class SignInConfiguration extends a implements ReflectedParcelable 
             return false;
         }
         SignInConfiguration signInConfiguration = (SignInConfiguration) obj;
-        GoogleSignInOptions googleSignInOptions = signInConfiguration.b;
         if (this.a.equals(signInConfiguration.a)) {
+            GoogleSignInOptions googleSignInOptions = signInConfiguration.b;
             GoogleSignInOptions googleSignInOptions2 = this.b;
             if (googleSignInOptions2 == null) {
                 if (googleSignInOptions == null) {
@@ -41,18 +38,18 @@ public final class SignInConfiguration extends a implements ReflectedParcelable 
     }
 
     public final int hashCode() {
-        int i7 = 1 * 31;
+        int i = 1 * 31;
         String str = this.a;
-        int hashCode = (i7 + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (i + (str == null ? 0 : str.hashCode())) * 31;
         GoogleSignInOptions googleSignInOptions = this.b;
         return hashCode + (googleSignInOptions != null ? googleSignInOptions.hashCode() : 0);
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = cc.r(parcel, 20293);
-        cc.l(parcel, 2, this.a);
-        cc.k(parcel, 5, this.b, i7);
-        cc.s(parcel, r10);
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.k(parcel, 5, this.b, i);
+        jte.s(parcel, r);
     }
 }

@@ -1,69 +1,39 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
 import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public final class z7 extends x6 {
-    @Override // j$.util.stream.x6
-    public final x6 e(Spliterator spliterator) {
-        return new z7(this.b, spliterator, this.a);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class z7 extends a8 implements j$.util.a1, LongConsumer {
+    public long e;
+
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        this.e = j;
     }
 
-    @Override // j$.util.stream.x6
-    public final void d() {
-        t6 t6Var = new t6();
-        this.h = t6Var;
-        Objects.requireNonNull(t6Var);
-        this.e = this.b.G0(new y7(t6Var, 0));
-        this.f = new j$.time.t(15, this);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.time.a.c(this, longConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        Object obj;
-        Objects.requireNonNull(consumer);
-        boolean a10 = a();
-        if (!a10) {
-            return a10;
-        }
-        t6 t6Var = (t6) this.h;
-        long j3 = this.g;
-        if (t6Var.c != 0) {
-            if (j3 >= t6Var.count()) {
-                throw new IndexOutOfBoundsException(Long.toString(j3));
-            }
-            for (int i7 = 0; i7 <= t6Var.c; i7++) {
-                long j10 = t6Var.d[i7];
-                Object[] objArr = t6Var.f[i7];
-                if (j3 < objArr.length + j10) {
-                    obj = objArr[(int) (j3 - j10)];
-                }
-            }
-            throw new IndexOutOfBoundsException(Long.toString(j3));
-        }
-        if (j3 < t6Var.b) {
-            obj = t6Var.e[(int) j3];
-        } else {
-            throw new IndexOutOfBoundsException(Long.toString(j3));
-        }
-        consumer.x(obj);
-        return a10;
+    @Override // j$.util.stream.a8
+    public final void d(Object obj) {
+        ((LongConsumer) obj).accept(this.e);
     }
 
     @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        if (this.h == null && !this.i) {
-            Objects.requireNonNull(consumer);
-            c();
-            Objects.requireNonNull(consumer);
-            y7 y7Var = new y7(consumer, 1);
-            this.b.F0(this.d, y7Var);
-            this.i = true;
-            return;
-        }
-        while (tryAdvance(consumer)) {
-        }
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.j(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.A(this, consumer);
+    }
+
+    @Override // j$.util.stream.a8, j$.util.stream.d8, j$.util.d1, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ j$.util.a1 trySplit() {
+        return (j$.util.a1) trySplit();
     }
 }

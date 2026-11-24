@@ -1,32 +1,31 @@
 package j$.util.stream;
 
-import java.util.function.IntPredicate;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class g8 implements Runnable {
+    public final /* synthetic */ Runnable a;
+    public final /* synthetic */ Runnable b;
 
-/* loaded from: classes2.dex */
-public final class g8 extends d5 {
-    public final boolean b;
-
-    public g8(c6 c6Var, j5 j5Var) {
-        super(j5Var);
-        this.b = true;
+    public g8(Runnable runnable, Runnable runnable2) {
+        this.a = runnable;
+        this.b = runnable2;
     }
 
-    @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j3) {
-        this.a.o(-1L);
-    }
-
-    @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        if (this.b) {
-            IntPredicate intPredicate = null;
-            intPredicate.test(i7);
-            throw null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        try {
+            this.a.run();
+            this.b.run();
+        } catch (Throwable th) {
+            try {
+                this.b.run();
+            } catch (Throwable th2) {
+                try {
+                    th.addSuppressed(th2);
+                } catch (Throwable unused) {
+                }
+            }
+            throw th;
         }
-    }
-
-    @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final boolean q() {
-        return !this.b || this.a.q();
     }
 }

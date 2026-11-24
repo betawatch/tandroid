@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Trip {
     private final CarText mCurrentRoad;
@@ -15,8 +15,14 @@ public final class Trip {
     private final List<TravelEstimate> mStepTravelEstimates;
     private final List<Step> mSteps;
 
-    public Trip(n nVar) {
-        throw null;
+    private Trip() {
+        List list = Collections.EMPTY_LIST;
+        this.mDestinations = list;
+        this.mSteps = list;
+        this.mDestinationTravelEstimates = list;
+        this.mStepTravelEstimates = list;
+        this.mCurrentRoad = null;
+        this.mIsLoading = false;
     }
 
     public boolean equals(Object obj) {
@@ -66,13 +72,7 @@ public final class Trip {
         return "[ destinations : " + this.mDestinations.toString() + ", steps: " + this.mSteps.toString() + ", dest estimates: " + this.mDestinationTravelEstimates.toString() + ", step estimates: " + this.mStepTravelEstimates.toString() + ", road: " + CarText.toShortString(this.mCurrentRoad) + ", isLoading: " + this.mIsLoading + "]";
     }
 
-    private Trip() {
-        List list = Collections.EMPTY_LIST;
-        this.mDestinations = list;
-        this.mSteps = list;
-        this.mDestinationTravelEstimates = list;
-        this.mStepTravelEstimates = list;
-        this.mCurrentRoad = null;
-        this.mIsLoading = false;
+    public Trip(f2c f2cVar) {
+        throw null;
     }
 }

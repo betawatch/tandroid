@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 abstract class zzvb {
     final Unsafe zza;
@@ -11,17 +11,17 @@ abstract class zzvb {
         this.zza = unsafe;
     }
 
-    public abstract double zza(Object obj, long j3);
+    public abstract double zza(Object obj, long j);
 
-    public abstract float zzb(Object obj, long j3);
+    public abstract float zzb(Object obj, long j);
 
-    public abstract void zzc(Object obj, long j3, boolean z10);
+    public abstract void zzc(Object obj, long j, boolean z);
 
-    public abstract void zzd(Object obj, long j3, byte b10);
+    public abstract void zzd(Object obj, long j, byte b);
 
-    public abstract void zze(Object obj, long j3, double d);
+    public abstract void zze(Object obj, long j, double d);
 
-    public abstract void zzf(Object obj, long j3, float f10);
+    public abstract void zzf(Object obj, long j, float f);
 
-    public abstract boolean zzg(Object obj, long j3);
+    public abstract boolean zzg(Object obj, long j);
 }

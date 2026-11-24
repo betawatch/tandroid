@@ -2,7 +2,8 @@ package j$.util.concurrent;
 
 import java.util.Map;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class j implements Map.Entry {
     public final Object a;
     public Object b;
@@ -12,25 +13,6 @@ public final class j implements Map.Entry {
         this.a = obj;
         this.b = obj2;
         this.c = concurrentHashMap;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.a;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        return this.a.hashCode() ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        return j$.com.android.tools.r8.a.U(this.a, this.b);
     }
 
     @Override // java.util.Map.Entry
@@ -50,11 +32,30 @@ public final class j implements Map.Entry {
     }
 
     @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.a;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        return this.a.hashCode() ^ this.b.hashCode();
+    }
+
+    @Override // java.util.Map.Entry
     public final Object setValue(Object obj) {
         obj.getClass();
         Object obj2 = this.b;
         this.b = obj;
         this.c.put(this.a, obj);
         return obj2;
+    }
+
+    public final String toString() {
+        return j$.time.a.T(this.a, this.b);
     }
 }

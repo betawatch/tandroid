@@ -8,8 +8,8 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
@@ -33,28 +33,28 @@ public class VoIPPermissionActivity extends Activity {
             return;
         }
         try {
-            requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? org.telegram.messenger.ks.n1 : 101);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+            requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? kk7.m1 : 101);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
     @Override // android.app.Activity
-    public final void onRequestPermissionsResult(int i7, String[] strArr, int[] iArr) {
-        if (i7 == 101 || i7 == 102) {
-            boolean z10 = false;
-            int i10 = 0;
+    public final void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
+        if (i == 101 || i == 102) {
+            boolean z = false;
+            int i2 = 0;
             while (true) {
-                if (i10 >= iArr.length) {
-                    z10 = true;
+                if (i2 >= iArr.length) {
+                    z = true;
                     break;
-                } else if (iArr[i10] != 0) {
+                } else if (iArr[i2] != 0) {
                     break;
                 } else {
-                    i10++;
+                    i2++;
                 }
             }
-            if (iArr.length > 0 && z10) {
+            if (iArr.length > 0 && z) {
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().acceptIncomingCall();
                 } else {
@@ -73,7 +73,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.c2.h(this, new qu0(this, 28), i7);
+            rgc.h(this, new kbc(this, (byte) 12), i);
         }
     }
 }

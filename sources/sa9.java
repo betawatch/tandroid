@@ -1,0 +1,29 @@
+// default package
+
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final class sa9 implements Serializable {
+    public final Throwable a;
+
+    public sa9(Throwable th) {
+        th.getClass();
+        this.a = th;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof sa9) {
+            return rp5.a(this.a, ((sa9) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "Failure(" + this.a + ')';
+    }
+}

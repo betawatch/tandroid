@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -20,89 +20,88 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 return;
             }
             String[] split = stringExtra.split("_");
-            if (split.length < 3) {
-                return;
+            if (split.length >= 3) {
+                a.v();
+                int intValue = Utilities.z(split[0]).intValue();
+                if (intValue < 0 || intValue >= 4) {
+                    return;
+                }
+                if (w01.a) {
+                    fa4.b("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
+                }
+                if (SystemClock.elapsedRealtime() - im7.n(j5.a(intValue).a).P <= 1000) {
+                    if (w01.a) {
+                        fa4.b("received disable notification event right after creating notification channel, ignoring");
+                        return;
+                    }
+                    return;
+                }
+                SharedPreferences d = j5.a(intValue).d();
+                boolean startsWith = split[1].startsWith("channel");
+                int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                if (startsWith) {
+                    if (!stringExtra.equals(d.getString("channels", null))) {
+                        return;
+                    }
+                    if (w01.a) {
+                        fa4.b("apply channel{channel} " + stringExtra + " state");
+                    }
+                    d.edit().putInt(im7.k(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                    im7.n(j5.a(intValue).a).b0(2);
+                } else if (split[1].startsWith("groups")) {
+                    if (!stringExtra.equals(d.getString("groups", null))) {
+                        return;
+                    }
+                    if (w01.a) {
+                        fa4.b("apply channel{groups} " + stringExtra + " state");
+                    }
+                    SharedPreferences.Editor edit = d.edit();
+                    String k = im7.k(0);
+                    if (!booleanExtra) {
+                        i = 0;
+                    }
+                    edit.putInt(k, i).commit();
+                    im7.n(j5.a(intValue).a).b0(0);
+                } else if (split[1].startsWith("private")) {
+                    if (!stringExtra.equals(d.getString("private", null))) {
+                        return;
+                    }
+                    if (w01.a) {
+                        fa4.b("apply channel{private} " + stringExtra + " state");
+                    }
+                    d.edit().putInt(im7.k(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                    im7.n(j5.a(intValue).a).b0(1);
+                } else if (!split[1].startsWith("stories")) {
+                    long longValue = Utilities.A(split[1]).longValue();
+                    if (longValue == 0) {
+                        return;
+                    }
+                    String p = im7.p(longValue, 0L, false);
+                    if (!stringExtra.equals(d.getString("org.telegram.key" + longValue, null))) {
+                        return;
+                    }
+                    if (w01.a) {
+                        fa4.b("apply channel{else} " + stringExtra + " state");
+                    }
+                    SharedPreferences.Editor edit2 = d.edit();
+                    edit2.putInt(b00.h("notify2_", p), booleanExtra ? 2 : 0);
+                    if (!booleanExtra) {
+                        edit2.remove("notifyuntil_" + p);
+                    }
+                    edit2.commit();
+                    im7.n(j5.a(intValue).a).c0(longValue, 0L, true);
+                } else {
+                    if (!stringExtra.equals(d.getString("stories", null))) {
+                        return;
+                    }
+                    if (w01.a) {
+                        fa4.b("apply channel{stories} " + stringExtra + " state");
+                    }
+                    d.edit().putBoolean(im7.k(3), !booleanExtra).commit();
+                    im7.n(j5.a(intValue).a).b0(1);
+                }
+                ConnectionsManager.getInstance(j5.a(intValue).a).resumeNetworkMaybe();
             }
-            t0.w();
-            int intValue = Utilities.z(split[0]).intValue();
-            if (intValue < 0 || intValue >= 4) {
-                return;
-            }
-            if (s2.a) {
-                a8.b("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
-            }
-            if (SystemClock.elapsedRealtime() - xs.t(c.a(intValue).a).P <= 1000) {
-                if (s2.a) {
-                    a8.b("received disable notification event right after creating notification channel, ignoring");
-                    return;
-                }
-                return;
-            }
-            SharedPreferences d = c.a(intValue).d();
-            boolean startsWith = split[1].startsWith("channel");
-            int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (startsWith) {
-                if (!stringExtra.equals(d.getString("channels", null))) {
-                    return;
-                }
-                if (s2.a) {
-                    a8.b("apply channel{channel} " + stringExtra + " state");
-                }
-                d.edit().putInt(xs.q(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
-                xs.t(c.a(intValue).a).b0(2);
-            } else if (split[1].startsWith("groups")) {
-                if (!stringExtra.equals(d.getString("groups", null))) {
-                    return;
-                }
-                if (s2.a) {
-                    a8.b("apply channel{groups} " + stringExtra + " state");
-                }
-                SharedPreferences.Editor edit = d.edit();
-                String q10 = xs.q(0);
-                if (!booleanExtra) {
-                    i7 = 0;
-                }
-                edit.putInt(q10, i7).commit();
-                xs.t(c.a(intValue).a).b0(0);
-            } else if (split[1].startsWith("private")) {
-                if (!stringExtra.equals(d.getString("private", null))) {
-                    return;
-                }
-                if (s2.a) {
-                    a8.b("apply channel{private} " + stringExtra + " state");
-                }
-                d.edit().putInt(xs.q(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
-                xs.t(c.a(intValue).a).b0(1);
-            } else if (!split[1].startsWith("stories")) {
-                long longValue = Utilities.A(split[1]).longValue();
-                if (longValue == 0) {
-                    return;
-                }
-                String v = xs.v(longValue, 0, false);
-                if (!stringExtra.equals(d.getString("org.telegram.key" + longValue, null))) {
-                    return;
-                }
-                if (s2.a) {
-                    a8.b("apply channel{else} " + stringExtra + " state");
-                }
-                SharedPreferences.Editor edit2 = d.edit();
-                edit2.putInt(p5.c.k("notify2_", v), booleanExtra ? 2 : 0);
-                if (!booleanExtra) {
-                    edit2.remove("notifyuntil_" + v);
-                }
-                edit2.commit();
-                xs.t(c.a(intValue).a).c0(longValue, 0L, true);
-            } else {
-                if (!stringExtra.equals(d.getString("stories", null))) {
-                    return;
-                }
-                if (s2.a) {
-                    a8.b("apply channel{stories} " + stringExtra + " state");
-                }
-                d.edit().putBoolean(xs.q(3), !booleanExtra).commit();
-                xs.t(c.a(intValue).a).b0(1);
-            }
-            ConnectionsManager.getInstance(c.a(intValue).a).resumeNetworkMaybe();
         }
     }
 }

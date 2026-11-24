@@ -2,65 +2,33 @@ package j$.util.stream;
 
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleFunction;
-import java.util.function.DoublePredicate;
-import java.util.function.DoubleToIntFunction;
-import java.util.function.DoubleToLongFunction;
-import java.util.function.DoubleUnaryOperator;
 
-/* loaded from: classes2.dex */
-public final class p extends c5 {
-    public final /* synthetic */ int b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class p extends g5 {
+    public final /* synthetic */ byte b;
     public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(a aVar, j5 j5Var, int i7) {
-        super(j5Var);
-        this.b = i7;
+    public /* synthetic */ p(a aVar, n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
         this.c = aVar;
     }
 
-    @Override // j$.util.stream.c5, j$.util.stream.j5
-    public void o(long j3) {
-        switch (this.b) {
-            case 4:
-                this.a.o(-1L);
-                break;
-            default:
-                super.o(j3);
-                break;
-        }
-    }
-
-    @Override // j$.util.stream.g5, j$.util.stream.j5
+    @Override // j$.util.stream.k5, java.util.function.DoubleConsumer
     public final void accept(double d) {
-        switch (this.b) {
+        byte b = this.b;
+        n5 n5Var = this.a;
+        a aVar = this.c;
+        switch (b) {
             case 0:
-                this.a.accept((j5) ((DoubleFunction) ((q) this.c).t).apply(d));
-                return;
-            case 1:
-                ((r) this.c).getClass();
-                DoubleUnaryOperator doubleUnaryOperator = null;
-                doubleUnaryOperator.applyAsDouble(d);
-                throw null;
-            case 2:
-                ((s) this.c).getClass();
-                DoubleToIntFunction doubleToIntFunction = null;
-                doubleToIntFunction.applyAsInt(d);
-                throw null;
-            case 3:
-                ((t) this.c).getClass();
-                DoubleToLongFunction doubleToLongFunction = null;
-                doubleToLongFunction.applyAsLong(d);
-                throw null;
-            case 4:
-                ((r) this.c).getClass();
-                DoublePredicate doublePredicate = null;
-                doublePredicate.test(d);
-                throw null;
+                n5Var.accept((n5) ((DoubleFunction) ((s) aVar).m).apply(d));
+                break;
             default:
-                ((DoubleConsumer) ((v) this.c).t).accept(d);
-                this.a.accept(d);
-                return;
+                ((DoubleConsumer) ((y) aVar).m).accept(d);
+                n5Var.accept(d);
+                break;
         }
     }
 }

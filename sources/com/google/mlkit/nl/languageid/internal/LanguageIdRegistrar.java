@@ -2,40 +2,31 @@ package com.google.mlkit.nl.languageid.internal;
 
 import android.content.Context;
 import com.google.firebase.components.ComponentRegistrar;
-import e2.j0;
-import i5.c;
 import java.util.List;
-import pb.d;
-import tb.b;
-import tb.e;
-import u9.a;
-import u9.i;
-import y7.j9;
-import y7.l9;
-import y7.n9;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        j0 a10 = a.a(e.class);
-        a10.a(i.a(Context.class));
-        a10.a(new i(2, 0, sb.a.class));
-        a10.f = b.b;
-        a b10 = a10.b();
-        j0 a11 = a.a(tb.a.class);
-        a11.a(i.a(e.class));
-        a11.a(i.a(d.class));
-        a11.f = b.c;
-        Object[] objArr = {b10, a11.b()};
-        for (int i7 = 0; i7 < 2; i7++) {
-            j9 j9Var = l9.b;
-            if (objArr[i7] == null) {
-                throw new NullPointerException(c.i(i7, "at index "));
+        lp2 b = mp2.b(d6e.class);
+        b.a(wd3.b(Context.class));
+        b.a(new wd3(2, 0, u3d.class));
+        b.f = i2f.e;
+        mp2 b2 = b.b();
+        lp2 b3 = mp2.b(cx5.class);
+        b3.a(wd3.b(d6e.class));
+        b3.a(wd3.b(u44.class));
+        b3.f = cff.f;
+        Object[] objArr = {b2, b3.b()};
+        for (int i = 0; i < 2; i++) {
+            scf scfVar = jff.f;
+            if (objArr[i] == null) {
+                fvc.f(de9.k(i, "at index "));
+                return null;
             }
         }
-        j9 j9Var2 = l9.b;
-        return new n9(2, objArr);
+        scf scfVar2 = jff.f;
+        return new shf(2, objArr);
     }
 }

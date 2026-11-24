@@ -1,0 +1,49 @@
+// default package
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class zp0 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ zp0(long j, long j2, long j3, w72 w72Var) {
+        this.b = j;
+        this.c = j2;
+        this.d = j3;
+        this.e = w72Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                bq0 bq0Var = (bq0) obj;
+                long j = this.d;
+                long j2 = this.b;
+                long j3 = this.c;
+                bq0Var.c(j2, j3, j, true);
+                bue.c(bq0Var.currentAccount, j3);
+                break;
+            default:
+                long j4 = this.b;
+                long j5 = this.c;
+                r61.l0 = Long.valueOf(j4 * j5);
+                Long valueOf = Long.valueOf(this.d * j5);
+                r61.m0 = valueOf;
+                ((w72) obj).a(r61.l0, valueOf);
+                break;
+        }
+    }
+
+    public /* synthetic */ zp0(bq0 bq0Var, long j, long j2, long j3) {
+        this.e = bq0Var;
+        this.b = j;
+        this.c = j2;
+        this.d = j3;
+    }
+}

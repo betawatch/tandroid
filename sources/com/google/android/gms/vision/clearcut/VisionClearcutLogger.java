@@ -2,52 +2,38 @@ package com.google.android.gms.vision.clearcut;
 
 import android.content.Context;
 import android.util.Log;
-import c8.nc;
-import com.google.android.gms.common.api.internal.p;
-import com.google.android.gms.internal.clearcut.v1;
-import com.google.android.gms.internal.vision.c;
-import com.google.android.gms.internal.vision.e0;
-import com.google.android.gms.internal.vision.f0;
-import com.google.android.gms.internal.vision.l2;
-import com.google.android.gms.internal.vision.o2;
-import com.google.android.gms.internal.vision.r0;
-import com.google.android.gms.internal.vision.u0;
-import com.google.android.gms.internal.vision.y1;
-import com.google.android.gms.internal.vision.z0;
 import java.io.IOException;
-import l6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
-    private final a zza;
+    private final fi2 zza;
     private boolean zzb = true;
 
     public VisionClearcutLogger(Context context) {
-        this.zza = new a(context);
+        this.zza = new fi2(context);
     }
 
-    public final void zza(int i7, f0 f0Var) {
-        u0 u0Var;
-        f0Var.getClass();
+    public final void zza(int i, x1e x1eVar) {
+        rke rkeVar;
+        x1eVar.getClass();
         try {
-            int h = f0Var.h();
+            int h = x1eVar.h();
             byte[] bArr = new byte[h];
-            r0 r0Var = new r0(bArr, h);
-            f0Var.getClass();
-            l2 l2Var = l2.c;
-            l2Var.getClass();
-            o2 a10 = l2Var.a(f0Var.getClass());
-            y1 y1Var = r0Var.b;
-            if (y1Var == null) {
-                y1Var = new y1(r0Var);
+            lje ljeVar = new lje(h, bArr);
+            fwe fweVar = fwe.c;
+            fweVar.getClass();
+            xwe a = fweVar.a(x1eVar.getClass());
+            g6e g6eVar = ljeVar.a;
+            if (g6eVar == null) {
+                g6eVar = new g6e(ljeVar);
             }
-            a10.c(f0Var, y1Var);
-            if (r0Var.F() != 0) {
+            a.d(x1eVar, g6eVar);
+            if (ljeVar.e() != 0) {
                 throw new IllegalStateException("Did not write as much data as expected.");
             }
-            if (i7 < 0 || i7 > 3) {
-                Object[] objArr = {Integer.valueOf(i7)};
+            if (i < 0 || i > 3) {
+                Object[] objArr = {Integer.valueOf(i)};
                 if (Log.isLoggable("Vision", 4)) {
                     Log.i("Vision", String.format("Illegal event code: %d", objArr));
                     return;
@@ -56,48 +42,45 @@ public class VisionClearcutLogger {
             }
             try {
                 if (this.zzb) {
-                    a aVar = this.zza;
-                    aVar.getClass();
-                    p pVar = new p(aVar, bArr);
-                    ((v1) pVar.e).c = i7;
-                    pVar.b();
+                    fi2 fi2Var = this.zza;
+                    fi2Var.getClass();
+                    ee0 ee0Var = new ee0(fi2Var, bArr);
+                    ((tce) ee0Var.e).c = i;
+                    ee0Var.a();
                     return;
                 }
-                e0 k10 = f0.k();
+                w1e k = x1e.k();
                 try {
-                    u0 u0Var2 = u0.b;
-                    if (u0Var2 == null) {
-                        synchronized (u0.class) {
-                            try {
-                                u0Var = u0.b;
-                                if (u0Var == null) {
-                                    u0Var = z0.a();
-                                    u0.b = u0Var;
-                                }
-                            } finally {
+                    rke rkeVar2 = rke.b;
+                    if (rkeVar2 == null) {
+                        synchronized (rke.class) {
+                            rkeVar = rke.b;
+                            if (rkeVar == null) {
+                                rkeVar = mme.a();
+                                rke.b = rkeVar;
                             }
                         }
-                        u0Var2 = u0Var;
+                        rkeVar2 = rkeVar;
                     }
-                    k10.c(bArr, h, u0Var2);
-                    String obj = k10.toString();
+                    k.c(bArr, h, rkeVar2);
+                    String obj = k.toString();
                     if (Log.isLoggable("Vision", 6)) {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
-                } catch (Exception e10) {
-                    nc.a(e10, "Parsing error", new Object[0]);
+                } catch (Exception e) {
+                    ame.a(e, "Parsing error", new Object[0]);
                 }
-            } catch (Exception e11) {
-                c.a.q(e11);
-                nc.a(e11, "Failed to log", new Object[0]);
+            } catch (Exception e2) {
+                f0e.a.a(e2);
+                ame.a(e2, "Failed to log", new Object[0]);
             }
-        } catch (IOException e12) {
-            String name = f0.class.getName();
-            StringBuilder sb2 = new StringBuilder(name.length() + 72);
-            sb2.append("Serializing ");
-            sb2.append(name);
-            sb2.append(" to a byte array threw an IOException (should never happen).");
-            throw new RuntimeException(sb2.toString(), e12);
+        } catch (IOException e3) {
+            String name = x1e.class.getName();
+            StringBuilder sb = new StringBuilder(name.length() + 72);
+            sb.append("Serializing ");
+            sb.append(name);
+            sb.append(" to a byte array threw an IOException (should never happen).");
+            throw new RuntimeException(sb.toString(), e3);
         }
     }
 }

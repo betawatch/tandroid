@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzsg implements zztq {
     private static final zzsg zza = new zzsg();
@@ -15,12 +15,14 @@ final class zzsg implements zztq {
     @Override // com.google.android.recaptcha.internal.zztq
     public final zztp zzb(Class cls) {
         if (!zzsn.class.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+            w26.j("Unsupported message type: ".concat(cls.getName()));
+            return null;
         }
         try {
             return (zztp) zzsn.zzu(cls.asSubclass(zzsn.class)).zzh(3, null, null);
-        } catch (Exception e10) {
-            throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
+        } catch (Exception e) {
+            fyb.j("Unable to get message info for ".concat(cls.getName()), e);
+            return null;
         }
     }
 

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzvj {
     static {
@@ -15,30 +15,31 @@ public final class zzvj {
         zzi3.zze(0);
     }
 
-    public static zzrv zza(long j3) {
-        int i7 = (int) (j3 % 1000000000);
-        long j10 = j3 / 1000000000;
-        if (i7 <= -1000000000 || i7 >= 1000000000) {
-            j10 = zzps.zza(j10, i7 / 1000000000);
-            i7 %= 1000000000;
+    public static zzrv zza(long j) {
+        int i = (int) (j % 1000000000);
+        long j2 = j / 1000000000;
+        if (i <= -1000000000 || i >= 1000000000) {
+            j2 = zzps.zza(j2, i / 1000000000);
+            i %= 1000000000;
         }
-        if (j10 > 0 && i7 < 0) {
-            i7 += 1000000000;
-            j10--;
+        if (j2 > 0 && i < 0) {
+            i += 1000000000;
+            j2--;
         }
-        if (j10 < 0 && i7 > 0) {
-            i7 -= 1000000000;
-            j10++;
+        if (j2 < 0 && i > 0) {
+            i -= 1000000000;
+            j2++;
         }
         zzrt zzi = zzrv.zzi();
-        zzi.zzf(j10);
-        zzi.zze(i7);
+        zzi.zzf(j2);
+        zzi.zze(i);
         zzrv zzrvVar = (zzrv) zzi.zzk();
         long zzg = zzrvVar.zzg();
         int zzf = zzrvVar.zzf();
-        if (zzg < -315576000000L || zzg > 315576000000L || zzf < -999999999 || zzf >= 1000000000 || ((zzg < 0 || zzf < 0) && (zzg > 0 || zzf > 0))) {
-            throw new IllegalArgumentException(zzmg.zza("Duration is not valid. See proto definition for valid values. Seconds (%s) must be in range [-315,576,000,000, +315,576,000,000]. Nanos (%s) must be in range [-999,999,999, +999,999,999]. Nanos must have the same sign as seconds", Long.valueOf(zzg), Integer.valueOf(zzf)));
+        if (zzg >= -315576000000L && zzg <= 315576000000L && zzf >= -999999999 && zzf < 1000000000 && ((zzg >= 0 && zzf >= 0) || (zzg <= 0 && zzf <= 0))) {
+            return zzrvVar;
         }
-        return zzrvVar;
+        w26.j(zzmg.zza("Duration is not valid. See proto definition for valid values. Seconds (%s) must be in range [-315,576,000,000, +315,576,000,000]. Nanos (%s) must be in range [-999,999,999, +999,999,999]. Nanos must have the same sign as seconds", Long.valueOf(zzg), Integer.valueOf(zzf)));
+        return null;
     }
 }

@@ -1,0 +1,156 @@
+// default package
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import android.graphics.Typeface;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public class e08 extends View {
+    public final Paint E;
+    public boolean F;
+    public boolean G;
+    public int a;
+    public final wjb b;
+    public float c;
+    public boolean d;
+    public int e;
+    public int f;
+    public final kl h;
+    public final kl n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public RadialGradient y;
+
+    public e08(Context context, wjb wjbVar) {
+        super(context);
+        this.c = 0.0f;
+        s33 s33Var = s33.h;
+        this.h = new kl(this, 350L, s33Var);
+        this.n = new kl(this, 350L, s33Var);
+        this.E = new Paint(1);
+        this.b = wjbVar;
+        this.a = bkb.v0(bkb.r8, wjbVar);
+        b(-1, -1, false);
+    }
+
+    public final void b(int i, int i2, boolean z) {
+        ea7 ea7Var;
+        da7 da7Var = null;
+        if (i2 >= 0 && i >= 0 && (ea7Var = na7.q1(i).F3) != null) {
+            da7Var = ea7Var.d(i2);
+        }
+        c(da7Var, z);
+    }
+
+    public final void c(da7 da7Var, boolean z) {
+        this.d = false;
+        wjb wjbVar = this.b;
+        if (da7Var == null) {
+            this.d = true;
+            int v0 = bkb.v0(bkb.r8, wjbVar);
+            this.f = v0;
+            this.e = v0;
+        } else {
+            boolean a = wjbVar != null ? wjbVar.a() : bkb.I.o();
+            this.e = da7Var.c(a);
+            this.f = da7Var.d(a);
+        }
+        if (!z) {
+            this.h.a(this.e, true);
+            this.n.a(this.f, true);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        int v0;
+        boolean z = this.d;
+        kl klVar = this.n;
+        kl klVar2 = this.h;
+        if (z && (this.e != (v0 = bkb.v0(bkb.r8, this.b)) || this.f != v0)) {
+            this.f = v0;
+            this.e = v0;
+            klVar2.a(v0, true);
+            klVar.a(v0, true);
+        }
+        int a = klVar2.a(this.e, false);
+        int a2 = klVar.a(this.f, false);
+        RadialGradient radialGradient = this.y;
+        Paint paint = this.E;
+        if (radialGradient == null || this.r != a || this.s != a2 || this.w != getWidth() || this.x != getHeight()) {
+            this.w = getWidth();
+            this.x = getHeight();
+            float f = this.w;
+            float f2 = f / 2.0f;
+            float f3 = this.x;
+            float f4 = f3 * 0.4f;
+            Typeface typeface = gl.a;
+            float f5 = f - 0.0f;
+            float f6 = f3 - 0.0f;
+            float sqrt = ((float) Math.sqrt((f6 * f6) + (f5 * f5))) * 0.75f;
+            this.s = a2;
+            this.r = a;
+            RadialGradient radialGradient2 = new RadialGradient(f2, f4, sqrt, new int[]{a2, a}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            this.y = radialGradient2;
+            paint.setShader(radialGradient2);
+            a();
+        }
+        if (this.c >= 1.0f || this.F) {
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawColor(this.a);
+        }
+        paint.setAlpha(this.F ? kk7.d4 : (int) (this.c * 255.0f));
+        canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    }
+
+    public int getActionBarButtonColor() {
+        int i = bkb.u8;
+        wjb wjbVar = this.b;
+        return bm2.f(this.c, bkb.v0(i, wjbVar), this.d ? bkb.v0(i, wjbVar) : -1);
+    }
+
+    public int getColor() {
+        return bm2.f(this.c, bkb.v0(bkb.r8, this.b), bm2.f(0.75f, this.h.c, this.n.c));
+    }
+
+    public int getTabsViewBackgroundColor() {
+        int i = bkb.r8;
+        wjb wjbVar = this.b;
+        int v0 = gl.B(bkb.v0(i, wjbVar)) > 0.721f ? bkb.v0(bkb.u8, wjbVar) : bkb.a(0.08f, -0.08f, bkb.v0(i, wjbVar));
+        kl klVar = this.h;
+        int i2 = klVar.c;
+        kl klVar2 = this.n;
+        return bm2.f(this.c, v0, gl.B(bm2.f(0.75f, i2, klVar2.c)) > 0.721f ? bkb.v0(bkb.u6, wjbVar) : bkb.a(0.08f, -0.08f, bm2.f(0.75f, klVar.c, klVar2.c)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (!this.G) {
+            i2 = ug8.E(230.0f, gl.m, TLObject.FLAG_30);
+        }
+        super.onMeasure(i, i2);
+    }
+
+    public void setProgressToGradient(float f) {
+        if (Math.abs(this.c - f) > 0.001f) {
+            this.c = f;
+            a();
+            invalidate();
+        }
+    }
+
+    public void a() {
+    }
+}

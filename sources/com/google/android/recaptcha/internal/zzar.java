@@ -1,21 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import id.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface zzar {
     int zza();
 
-    Object zzc(String str, c cVar);
+    Object zzc(String str, fw2 fw2Var);
 
-    Object zzd(zzxp zzxpVar, c cVar);
+    Object zzd(zzxp zzxpVar, fw2 fw2Var);
 
-    Object zze(String str, c cVar);
+    Object zze(String str, fw2 fw2Var);
 
-    Object zzf(zzxp zzxpVar, c cVar);
+    Object zzf(zzxp zzxpVar, fw2 fw2Var);
 
-    Object zzg(Exception exc, c cVar);
+    Object zzg(Exception exc, fw2 fw2Var);
 
     void zzh(zzyg zzygVar);
 

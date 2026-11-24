@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzqq {
     public static final /* synthetic */ int zze = 0;
@@ -13,36 +13,37 @@ public abstract class zzqq {
     private zzqq() {
     }
 
-    public static int zzF(int i7) {
-        return (i7 >>> 1) ^ (-(i7 & 1));
+    public static int zzF(int i) {
+        return (i >>> 1) ^ (-(i & 1));
     }
 
-    public static long zzG(long j3) {
-        return (j3 >>> 1) ^ (-(1 & j3));
+    public static long zzG(long j) {
+        return (j >>> 1) ^ (-(1 & j));
     }
 
-    public static zzqq zzH(byte[] bArr, int i7, int i10, boolean z10) {
+    public static zzqq zzH(byte[] bArr, int i, int i2, boolean z) {
         zzqn zzqnVar = new zzqn(bArr, 0, 0, false, null);
         try {
             zzqnVar.zze(0);
             return zzqnVar;
-        } catch (zzsx e10) {
-            throw new IllegalArgumentException(e10);
+        } catch (zzsx e) {
+            throw new IllegalArgumentException(e);
         }
     }
 
-    public abstract void zzA(int i7);
+    public abstract void zzA(int i);
 
     public abstract boolean zzC();
 
     public abstract boolean zzD();
 
-    public abstract boolean zzE(int i7);
+    public abstract boolean zzE(int i);
 
     public final void zzI() {
-        if (this.zza + this.zzb >= this.zzc) {
-            throw new zzsx("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+        if (this.zza + this.zzb < this.zzc) {
+            return;
         }
+        fvc.i("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
     }
 
     public final void zzJ() {
@@ -70,7 +71,7 @@ public abstract class zzqq {
 
     public abstract int zzd();
 
-    public abstract int zze(int i7);
+    public abstract int zze(int i);
 
     public abstract int zzf();
 
@@ -102,7 +103,7 @@ public abstract class zzqq {
 
     public abstract String zzy();
 
-    public abstract void zzz(int i7);
+    public abstract void zzz(int i);
 
     public /* synthetic */ zzqq(zzqp zzqpVar) {
     }

@@ -1,27 +1,34 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.webkit.WebView;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final class i extends rg.a {
-    public final CharSequence c;
-    public final int d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class i extends WebView {
+    public final /* synthetic */ j a;
 
-    public i(int i7, int i10, String str) {
-        super(i7, false);
-        this.d = i10;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(j jVar, Activity activity) {
+        super(activity);
+        this.a = jVar;
+        setFocusable(false);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j jVar = this.a;
+        jVar.s = true;
+        TL_iv.pageBlockEmbed pageblockembed = jVar.w;
+        if (pageblockembed != null) {
+            if (pageblockembed.allow_scrolling) {
+                requestDisallowInterceptTouchEvent(true);
+            } else {
+                jVar.y.g0.requestDisallowInterceptTouchEvent(true);
+            }
         }
-        if (obj == null || i.class != obj.getClass()) {
-            return false;
-        }
-        i iVar = (i) obj;
-        return this.d == iVar.d && Objects.equals(this.c, iVar.c);
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -6,22 +6,21 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.car.app.IOnRequestPermissionsListener;
-import androidx.fragment.app.e0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class CarAppPermissionActivity extends androidx.activity.l {
+public class CarAppPermissionActivity extends wp2 {
     public static final /* synthetic */ int K = 0;
 
-    @Override // androidx.activity.l, e0.e, android.app.Activity
+    @Override // wp2, vp2, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
             Bundle bundle2 = getPackageManager().getApplicationInfo(getPackageName(), 128).metaData;
-            int i7 = bundle2 != null ? bundle2.getInt("androidx.car.app.theme") : 0;
+            int i = bundle2 != null ? bundle2.getInt("androidx.car.app.theme") : 0;
             Context createConfigurationContext = createConfigurationContext(getResources().getConfiguration());
-            if (i7 != 0) {
-                createConfigurationContext.setTheme(i7);
+            if (i != 0) {
+                createConfigurationContext.setTheme(i);
             }
             int identifier = createConfigurationContext.getResources().getIdentifier("carPermissionActivityLayout", "attr", getPackageName());
             if (identifier != 0) {
@@ -34,9 +33,9 @@ public class CarAppPermissionActivity extends androidx.activity.l {
         }
         Intent intent = getIntent();
         if (intent == null || !"androidx.car.app.action.REQUEST_PERMISSIONS".equals(intent.getAction())) {
-            StringBuilder sb2 = new StringBuilder("Unexpected intent action for CarAppPermissionActivity: ");
-            sb2.append(intent == null ? "null Intent" : intent.getAction());
-            Log.e("CarApp", sb2.toString());
+            StringBuilder sb = new StringBuilder("Unexpected intent action for CarAppPermissionActivity: ");
+            sb.append(intent == null ? "null Intent" : intent.getAction());
+            Log.e("CarApp", sb.toString());
             finish();
             return;
         }
@@ -44,7 +43,7 @@ public class CarAppPermissionActivity extends androidx.activity.l {
         IOnRequestPermissionsListener asInterface = IOnRequestPermissionsListener.Stub.asInterface(extras.getBinder("androidx.car.app.action.EXTRA_ON_REQUEST_PERMISSIONS_RESULT_LISTENER_KEY"));
         String[] stringArray = extras.getStringArray("androidx.car.app.action.EXTRA_PERMISSIONS_KEY");
         if (asInterface != null && stringArray != null) {
-            r(new b(2, this, asInterface), new e0(1)).a(stringArray);
+            s(new q31(this, asInterface, (byte) 4), new s9((byte) 0)).a(stringArray);
         } else {
             Log.e("CarApp", "Intent to request permissions is missing the callback binder");
             finish();

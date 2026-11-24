@@ -1,15 +1,15 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class TypedAtom extends Atom {
     private final Atom atom;
     private final int leftType;
     private final int rightType;
 
-    public TypedAtom(int i7, int i10, Atom atom) {
-        this.leftType = i7;
-        this.rightType = i10;
+    public TypedAtom(int i, int i2, Atom atom) {
+        this.leftType = i;
+        this.rightType = i2;
         this.atom = atom;
         this.type_limits = atom.type_limits;
     }

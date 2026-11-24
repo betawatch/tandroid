@@ -1,0 +1,88 @@
+// default package
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import java.util.concurrent.CancellationException;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class gf6 implements px2, OnSuccessListener, OnFailureListener {
+    public final /* synthetic */ lf6 a;
+
+    public /* synthetic */ gf6(lf6 lf6Var) {
+        this.a = lf6Var;
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        int i;
+        lf6 lf6Var = this.a;
+        mf6 mf6Var = lf6Var.h0;
+        if (lf6Var.a0) {
+            return;
+        }
+        byte b = 1;
+        if (exc instanceof ConnectionsManager.RequestException) {
+            String message = exc.getMessage();
+            if (message != null) {
+                if (message.contains("SESSION_PASSWORD_NEEDED")) {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    i = ((d) mf6Var).currentAccount;
+                    ConnectionsManager.getInstance(i).sendRequest(getpassword, new ff6(lf6Var, b), 10);
+                    return;
+                }
+                boolean z = w01.a;
+                new u21(mf6Var.a0, null).f0(message, false);
+            }
+        } else if (!(exc instanceof CancellationException)) {
+            fa4.g(exc, true);
+        }
+        if (lf6Var.o()) {
+            lf6Var.t(false);
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
+        lf6 lf6Var = this.a;
+        mf6 mf6Var = lf6Var.h0;
+        if (lf6Var.a0) {
+            return;
+        }
+        if (auth_authorization instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+            TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) auth_authorization).terms_of_service;
+            if (tL_help_termsOfService != null) {
+                mf6Var.s0 = tL_help_termsOfService;
+            }
+            mf6Var.I1(5, true, ir2.l("fromFirebasePhoneNumberVerification", true), false);
+            return;
+        }
+        if (auth_authorization instanceof TLRPC.TL_auth_authorization) {
+            mf6Var.B1((TLRPC.TL_auth_authorization) auth_authorization, false);
+        } else {
+            lf6Var.t(false);
+        }
+    }
+
+    @Override // px2
+    public final void y(mx2 mx2Var) {
+        lf6 lf6Var = this.a;
+        lf6Var.L = true;
+        String str = mx2Var.c;
+        lf6Var.a.setText(str);
+        lf6Var.u(str, mx2Var);
+        lf6Var.G = mx2Var;
+        lf6Var.F = (byte) 0;
+        lf6Var.L = false;
+        na7.c1().edit().putString("phone_code_last_matched_" + mx2Var.c, mx2Var.d).apply();
+        gl.e3(new bf6(lf6Var, (byte) 4), 300L);
+        if6 if6Var = lf6Var.b;
+        if6Var.requestFocus();
+        if6Var.setSelection(if6Var.length());
+    }
+}

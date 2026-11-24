@@ -24,41 +24,19 @@ import android.view.animation.AnimationUtils;
 import android.widget.EdgeEffect;
 import android.widget.FrameLayout;
 import android.widget.OverScroller;
-import c8.pc;
-import com.google.android.gms.internal.vision.e2;
-import e2.r0;
-import h1.a;
 import j$.util.Objects;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.aa;
-import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.jm;
-import r0.a0;
-import r0.i0;
-import r0.j;
-import r0.j0;
-import r0.l;
-import r0.r;
-import r0.s;
-import r0.t;
-import u0.c;
-import u0.e;
-import u0.f;
-import u0.g;
-import u0.h;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NestedScrollView extends FrameLayout implements l {
-    public static final float U = (float) (Math.log(0.78d) / Math.log(0.9d));
-    public static final e V = new e();
-    public static final int[] W = {R.attr.fillViewport};
+public class NestedScrollView extends FrameLayout implements ti7 {
+    public static final ni7 U = new ni7();
+    public static final int[] V = {R.attr.fillViewport};
     public boolean E;
     public boolean F;
     public final int G;
@@ -69,19 +47,19 @@ public class NestedScrollView extends FrameLayout implements l {
     public final int[] L;
     public int M;
     public int N;
-    public h O;
-    public final r0 P;
-    public final j Q;
+    public qi7 O;
+    public final zw8 P;
+    public final ri7 Q;
     public float R;
-    public g S;
-    public final jm T;
+    public pi7 S;
+    public final g52 T;
     public final float a;
     public long b;
     public final Rect c;
     public OverScroller d;
     public final EdgeEffect e;
     public final EdgeEffect f;
-    public r h;
+    public xq9 h;
     public int n;
     public boolean r;
     public boolean s;
@@ -89,48 +67,80 @@ public class NestedScrollView extends FrameLayout implements l {
     public boolean x;
     public VelocityTracker y;
 
-    public NestedScrollView(Context context) {
-        this(context, null);
+    public NestedScrollView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, org.telegram.messenger.beta.R.attr.nestedScrollViewStyle);
+        this.c = new Rect();
+        this.r = true;
+        this.s = false;
+        this.w = null;
+        this.x = false;
+        this.F = true;
+        this.J = -1;
+        this.K = new int[2];
+        this.L = new int[2];
+        this.T = new g52(getContext(), new s34((Object) this, (byte) 18));
+        int i = Build.VERSION.SDK_INT;
+        this.e = i >= 31 ? ns3.a(context, attributeSet) : new EdgeEffect(context);
+        this.f = i >= 31 ? ns3.a(context, attributeSet) : new EdgeEffect(context);
+        this.a = yjb.C(context.getResources().getDisplayMetrics().density, 160.0f, 386.0878f, 0.84f);
+        this.d = new OverScroller(getContext());
+        setFocusable(true);
+        setDescendantFocusability(262144);
+        setWillNotDraw(false);
+        ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
+        this.G = viewConfiguration.getScaledTouchSlop();
+        this.H = viewConfiguration.getScaledMinimumFlingVelocity();
+        this.I = viewConfiguration.getScaledMaximumFlingVelocity();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, V, org.telegram.messenger.beta.R.attr.nestedScrollViewStyle, 0);
+        setFillViewport(obtainStyledAttributes.getBoolean(0, false));
+        obtainStyledAttributes.recycle();
+        this.P = new zw8((byte) 3);
+        this.Q = new ri7(this);
+        setNestedScrollingEnabled(true);
+        jdc.k(this, U);
     }
 
-    private r getScrollFeedbackProvider() {
-        if (this.h == null) {
-            this.h = new r(this);
+    private xq9 getScrollFeedbackProvider() {
+        xq9 xq9Var = this.h;
+        if (xq9Var != null) {
+            return xq9Var;
         }
-        return this.h;
+        xq9 xq9Var2 = new xq9(this);
+        this.h = xq9Var2;
+        return xq9Var2;
     }
 
-    public static boolean n(View view, NestedScrollView nestedScrollView) {
+    public static boolean o(View view, NestedScrollView nestedScrollView) {
         if (view == nestedScrollView) {
             return true;
         }
         Object parent = view.getParent();
-        return (parent instanceof ViewGroup) && n((View) parent, nestedScrollView);
+        return (parent instanceof ViewGroup) && o((View) parent, nestedScrollView);
     }
 
-    public boolean A(int i7, int i10) {
-        return this.Q.g(i7, i10);
+    public boolean A(int i, int i2) {
+        return this.Q.g(i, i2);
     }
 
     public final boolean B(MotionEvent motionEvent) {
-        boolean z10;
+        boolean z;
         EdgeEffect edgeEffect = this.e;
-        if (pc.a(edgeEffect) != 0.0f) {
-            pc.b(edgeEffect, 0.0f, motionEvent.getX() / getWidth());
-            z10 = true;
+        if (wee.a(edgeEffect) != 0.0f) {
+            wee.b(edgeEffect, 0.0f, motionEvent.getX() / getWidth());
+            z = true;
         } else {
-            z10 = false;
+            z = false;
         }
         EdgeEffect edgeEffect2 = this.f;
-        if (pc.a(edgeEffect2) == 0.0f) {
-            return z10;
+        if (wee.a(edgeEffect2) == 0.0f) {
+            return z;
         }
-        pc.b(edgeEffect2, 0.0f, 1.0f - (motionEvent.getX() / getWidth()));
+        wee.b(edgeEffect2, 0.0f, 1.0f - (motionEvent.getX() / getWidth()));
         return true;
     }
 
-    public void C(int i7) {
-        this.Q.h(i7);
+    public void C(int i) {
+        this.Q.h(i);
     }
 
     public final void a() {
@@ -140,31 +150,32 @@ public class NestedScrollView extends FrameLayout implements l {
 
     @Override // android.view.ViewGroup
     public final void addView(View view) {
-        if (getChildCount() > 0) {
-            throw new IllegalStateException("ScrollView can host only one direct child");
+        if (getChildCount() <= 0) {
+            super.addView(view);
+        } else {
+            sc8.j("ScrollView can host only one direct child");
         }
-        super.addView(view);
     }
 
-    public final boolean b(int i7) {
+    public final boolean b(int i) {
         View findFocus = findFocus();
         if (findFocus == this) {
             findFocus = null;
         }
         View view = findFocus;
-        View findNextFocus = FocusFinder.getInstance().findNextFocus(this, view, i7);
+        View findNextFocus = FocusFinder.getInstance().findNextFocus(this, view, i);
         int maxScrollAmount = getMaxScrollAmount();
         if (findNextFocus == null || !p(findNextFocus, maxScrollAmount, getHeight())) {
-            if (i7 == 33 && getScrollY() < maxScrollAmount) {
+            if (i == 33 && getScrollY() < maxScrollAmount) {
                 maxScrollAmount = getScrollY();
-            } else if (i7 == 130 && getChildCount() > 0) {
+            } else if (i == 130 && getChildCount() > 0) {
                 View childAt = getChildAt(0);
                 maxScrollAmount = Math.min((childAt.getBottom() + ((FrameLayout.LayoutParams) childAt.getLayoutParams()).bottomMargin) - ((getHeight() + getScrollY()) - getPaddingBottom()), maxScrollAmount);
             }
             if (maxScrollAmount == 0) {
                 return false;
             }
-            if (i7 != 130) {
+            if (i != 130) {
                 maxScrollAmount = -maxScrollAmount;
             }
             x(maxScrollAmount, -1, null, 0, 1, true);
@@ -173,7 +184,7 @@ public class NestedScrollView extends FrameLayout implements l {
             findNextFocus.getDrawingRect(rect);
             offsetDescendantRectToMyCoords(findNextFocus, rect);
             x(c(rect), -1, null, 0, 1, true);
-            findNextFocus.requestFocus(i7);
+            findNextFocus.requestFocus(i);
         }
         if (view != null && view.isFocused() && !p(view, 0, getHeight())) {
             int descendantFocusability = getDescendantFocusability();
@@ -190,22 +201,22 @@ public class NestedScrollView extends FrameLayout implements l {
         }
         int height = getHeight();
         int scrollY = getScrollY();
-        int i7 = scrollY + height;
+        int i = scrollY + height;
         int verticalFadingEdgeLength = getVerticalFadingEdgeLength();
         if (rect.top > 0) {
             scrollY += verticalFadingEdgeLength;
         }
         View childAt = getChildAt(0);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-        int i10 = rect.bottom < (childAt.getHeight() + layoutParams.topMargin) + layoutParams.bottomMargin ? i7 - verticalFadingEdgeLength : i7;
-        int i11 = rect.bottom;
-        if (i11 > i10 && rect.top > scrollY) {
-            return Math.min(rect.height() > height ? rect.top - scrollY : rect.bottom - i10, (childAt.getBottom() + layoutParams.bottomMargin) - i7);
+        int i2 = rect.bottom < (childAt.getHeight() + layoutParams.topMargin) + layoutParams.bottomMargin ? i - verticalFadingEdgeLength : i;
+        int i3 = rect.bottom;
+        if (i3 > i2 && rect.top > scrollY) {
+            return Math.min(rect.height() > height ? rect.top - scrollY : rect.bottom - i2, (childAt.getBottom() + layoutParams.bottomMargin) - i);
         }
-        if (rect.top >= scrollY || i11 >= i10) {
+        if (rect.top >= scrollY || i3 >= i2) {
             return 0;
         }
-        return Math.max(rect.height() > height ? 0 - (i10 - rect.bottom) : 0 - (scrollY - rect.top), -getScrollY());
+        return Math.max(rect.height() > height ? 0 - (i2 - rect.bottom) : 0 - (scrollY - rect.top), -getScrollY());
     }
 
     @Override // android.view.View
@@ -223,57 +234,57 @@ public class NestedScrollView extends FrameLayout implements l {
         return super.computeHorizontalScrollRange();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00f0  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void computeScroll() {
         int round;
-        int i7;
+        int i;
         if (this.d.isFinished()) {
             return;
         }
         this.d.computeScrollOffset();
         int currY = this.d.getCurrY();
-        int i10 = currY - this.N;
+        int i2 = currY - this.N;
         int height = getHeight();
         EdgeEffect edgeEffect = this.e;
         EdgeEffect edgeEffect2 = this.f;
-        if (i10 <= 0 || pc.a(edgeEffect) == 0.0f) {
-            if (i10 < 0 && pc.a(edgeEffect2) != 0.0f) {
-                float f10 = height;
-                round = Math.round(pc.b(edgeEffect2, (i10 * 4.0f) / f10, 0.5f) * (f10 / 4.0f));
-                if (round != i10) {
+        if (i2 <= 0 || wee.a(edgeEffect) == 0.0f) {
+            if (i2 < 0 && wee.a(edgeEffect2) != 0.0f) {
+                float f = height;
+                round = Math.round(wee.b(edgeEffect2, (i2 * 4.0f) / f, 0.5f) * (f / 4.0f));
+                if (round != i2) {
                     edgeEffect2.finish();
                 }
             }
             this.N = currY;
             int[] iArr = this.L;
             iArr[1] = 0;
-            d(0, i10, 1, iArr, null);
-            i7 = i10 - iArr[1];
+            d(0, i2, 1, iArr, null);
+            i = i2 - iArr[1];
             int scrollRange = getScrollRange();
             if (Build.VERSION.SDK_INT >= 35) {
-                f.a(this, Math.abs(this.d.getCurrVelocity()));
+                oi7.a(this, Math.abs(this.d.getCurrVelocity()));
             }
-            if (i7 != 0) {
+            if (i != 0) {
                 int scrollY = getScrollY();
-                u(i7, getScrollX(), scrollY, scrollRange);
+                u(i, getScrollX(), scrollY, scrollRange);
                 int scrollY2 = getScrollY() - scrollY;
-                int i11 = i7 - scrollY2;
+                int i3 = i - scrollY2;
                 iArr[1] = 0;
-                e(0, scrollY2, 0, i11, this.K, 1, iArr);
-                i7 = i11 - iArr[1];
+                f(0, scrollY2, 0, i3, this.K, 1, iArr);
+                i = i3 - iArr[1];
             }
-            if (i7 != 0) {
+            if (i != 0) {
                 int overScrollMode = getOverScrollMode();
                 if (overScrollMode == 0 || (overScrollMode == 1 && scrollRange > 0)) {
-                    if (i7 < 0) {
+                    if (i < 0) {
                         if (edgeEffect.isFinished()) {
                             edgeEffect.onAbsorb((int) this.d.getCurrVelocity());
                         }
@@ -291,22 +302,22 @@ public class NestedScrollView extends FrameLayout implements l {
                 return;
             }
         }
-        round = Math.round(pc.b(edgeEffect, ((-i10) * 4.0f) / height, 0.5f) * ((-height) / 4.0f));
-        if (round != i10) {
+        round = Math.round(wee.b(edgeEffect, ((-i2) * 4.0f) / height, 0.5f) * ((-height) / 4.0f));
+        if (round != i2) {
             edgeEffect.finish();
         }
-        i10 -= round;
+        i2 -= round;
         this.N = currY;
         int[] iArr2 = this.L;
         iArr2[1] = 0;
-        d(0, i10, 1, iArr2, null);
-        i7 = i10 - iArr2[1];
+        d(0, i2, 1, iArr2, null);
+        i = i2 - iArr2[1];
         int scrollRange2 = getScrollRange();
         if (Build.VERSION.SDK_INT >= 35) {
         }
-        if (i7 != 0) {
+        if (i != 0) {
         }
-        if (i7 != 0) {
+        if (i != 0) {
         }
         if (this.d.isFinished()) {
         }
@@ -336,8 +347,8 @@ public class NestedScrollView extends FrameLayout implements l {
         return scrollY < 0 ? bottom - scrollY : scrollY > max ? (scrollY - max) + bottom : bottom;
     }
 
-    public boolean d(int i7, int i10, int i11, int[] iArr, int[] iArr2) {
-        return this.Q.c(i7, i10, i11, iArr, iArr2);
+    public boolean d(int i, int i2, int i3, int[] iArr, int[] iArr2) {
+        return this.Q.c(i, i2, i3, iArr, iArr2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -346,32 +357,32 @@ public class NestedScrollView extends FrameLayout implements l {
     }
 
     @Override // android.view.View
-    public final boolean dispatchNestedFling(float f10, float f11, boolean z10) {
-        return this.Q.a(f10, f11, z10);
+    public final boolean dispatchNestedFling(float f, float f2, boolean z) {
+        return this.Q.a(f, f2, z);
     }
 
     @Override // android.view.View
-    public final boolean dispatchNestedPreFling(float f10, float f11) {
-        return this.Q.b(f10, f11);
+    public final boolean dispatchNestedPreFling(float f, float f2) {
+        return this.Q.b(f, f2);
     }
 
     @Override // android.view.View
-    public final boolean dispatchNestedPreScroll(int i7, int i10, int[] iArr, int[] iArr2) {
-        return d(i7, i10, 0, iArr, iArr2);
+    public final boolean dispatchNestedPreScroll(int i, int i2, int[] iArr, int[] iArr2) {
+        return d(i, i2, 0, iArr, iArr2);
     }
 
     @Override // android.view.View
-    public final boolean dispatchNestedScroll(int i7, int i10, int i11, int i12, int[] iArr) {
-        return this.Q.d(i7, i10, i11, i12, iArr, 0, null);
+    public final boolean dispatchNestedScroll(int i, int i2, int i3, int i4, int[] iArr) {
+        return this.Q.d(i, i2, i3, i4, iArr, 0, null);
     }
 
     @Override // android.view.View
     public void draw(Canvas canvas) {
-        int i7;
+        int i;
         super.draw(canvas);
         int scrollY = getScrollY();
         EdgeEffect edgeEffect = this.e;
-        int i10 = 0;
+        int i2 = 0;
         if (!edgeEffect.isFinished()) {
             int save = canvas.save();
             int width = getWidth();
@@ -379,15 +390,15 @@ public class NestedScrollView extends FrameLayout implements l {
             int min = Math.min(0, scrollY);
             if (getClipToPadding()) {
                 width -= getPaddingRight() + getPaddingLeft();
-                i7 = getPaddingLeft();
+                i = getPaddingLeft();
             } else {
-                i7 = 0;
+                i = 0;
             }
             if (getClipToPadding()) {
                 height -= getPaddingBottom() + getPaddingTop();
                 min += getPaddingTop();
             }
-            canvas.translate(i7, min);
+            canvas.translate(i, min);
             edgeEffect.setSize(width, height);
             if (edgeEffect.draw(canvas)) {
                 postInvalidateOnAnimation();
@@ -404,13 +415,13 @@ public class NestedScrollView extends FrameLayout implements l {
         int max = Math.max(getScrollRange(), scrollY) + height2;
         if (getClipToPadding()) {
             width2 -= getPaddingRight() + getPaddingLeft();
-            i10 = getPaddingLeft();
+            i2 = getPaddingLeft();
         }
         if (getClipToPadding()) {
             height2 -= getPaddingBottom() + getPaddingTop();
             max -= getPaddingBottom();
         }
-        canvas.translate(i10 - width2, max);
+        canvas.translate(i2 - width2, max);
         canvas.rotate(180.0f, width2, 0.0f);
         edgeEffect2.setSize(width2, height2);
         if (edgeEffect2.draw(canvas)) {
@@ -419,8 +430,8 @@ public class NestedScrollView extends FrameLayout implements l {
         canvas.restoreToCount(save2);
     }
 
-    public void e(int i7, int i10, int i11, int i12, int[] iArr, int i13, int[] iArr2) {
-        this.Q.d(0, i10, 0, i12, iArr, i13, iArr2);
+    public void f(int i, int i2, int i3, int i4, int[] iArr, int i5, int[] iArr2) {
+        this.Q.d(0, i2, 0, i4, iArr, i5, iArr2);
     }
 
     @Override // android.view.View
@@ -470,21 +481,25 @@ public class NestedScrollView extends FrameLayout implements l {
     }
 
     public float getVerticalScrollFactorCompat() {
-        if (this.R == 0.0f) {
-            TypedValue typedValue = new TypedValue();
-            Context context = getContext();
-            if (!context.getTheme().resolveAttribute(R.attr.listPreferredItemHeight, typedValue, true)) {
-                throw new IllegalStateException("Expected theme to define listPreferredItemHeight.");
-            }
-            this.R = typedValue.getDimension(context.getResources().getDisplayMetrics());
+        float f = this.R;
+        if (f != 0.0f) {
+            return f;
         }
-        return this.R;
+        TypedValue typedValue = new TypedValue();
+        Context context = getContext();
+        if (!context.getTheme().resolveAttribute(R.attr.listPreferredItemHeight, typedValue, true)) {
+            sc8.j("Expected theme to define listPreferredItemHeight.");
+            return 0.0f;
+        }
+        float dimension = typedValue.getDimension(context.getResources().getDisplayMetrics());
+        this.R = dimension;
+        return dimension;
     }
 
     public final boolean h(KeyEvent keyEvent) {
         this.c.setEmpty();
         int childCount = getChildCount();
-        int i7 = ks.O1;
+        int i = kk7.N1;
         if (childCount > 0) {
             View childAt = getChildAt(0);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
@@ -495,27 +510,27 @@ public class NestedScrollView extends FrameLayout implements l {
                         return keyEvent.isAltPressed() ? j(33) : b(33);
                     }
                     if (keyCode == 20) {
-                        return keyEvent.isAltPressed() ? j(ks.O1) : b(ks.O1);
+                        return keyEvent.isAltPressed() ? j(kk7.N1) : b(kk7.N1);
                     }
                     if (keyCode == 62) {
                         if (keyEvent.isShiftPressed()) {
-                            i7 = 33;
+                            i = 33;
                         }
-                        v(i7);
+                        v(i);
                         return false;
                     }
                     if (keyCode == 92) {
                         return j(33);
                     }
                     if (keyCode == 93) {
-                        return j(ks.O1);
+                        return j(kk7.N1);
                     }
                     if (keyCode == 122) {
                         v(33);
                         return false;
                     }
                     if (keyCode == 123) {
-                        v(ks.O1);
+                        v(kk7.N1);
                         return false;
                     }
                 }
@@ -527,8 +542,8 @@ public class NestedScrollView extends FrameLayout implements l {
             if (findFocus == this) {
                 findFocus = null;
             }
-            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, ks.O1);
-            if (findNextFocus != null && findNextFocus != this && findNextFocus.requestFocus(ks.O1)) {
+            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, kk7.N1);
+            if (findNextFocus != null && findNextFocus != this && findNextFocus.requestFocus(kk7.N1)) {
                 return true;
             }
         }
@@ -540,14 +555,14 @@ public class NestedScrollView extends FrameLayout implements l {
         return this.Q.f(0);
     }
 
-    public void i(int i7) {
+    public void i(int i) {
         if (getChildCount() > 0) {
-            this.d.fling(getScrollX(), getScrollY(), 0, i7, 0, 0, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, 0);
+            this.d.fling(getScrollX(), getScrollY(), 0, i, 0, 0, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, 0);
             A(2, 1);
             this.N = getScrollY();
             postInvalidateOnAnimation();
             if (Build.VERSION.SDK_INT >= 35) {
-                f.a(this, Math.abs(this.d.getCurrVelocity()));
+                oi7.a(this, Math.abs(this.d.getCurrVelocity()));
             }
         }
     }
@@ -557,58 +572,58 @@ public class NestedScrollView extends FrameLayout implements l {
         return this.Q.d;
     }
 
-    public final boolean j(int i7) {
+    public final boolean j(int i) {
         int childCount;
-        boolean z10 = i7 == 130;
+        boolean z = i == 130;
         int height = getHeight();
         Rect rect = this.c;
         rect.top = 0;
         rect.bottom = height;
-        if (z10 && (childCount = getChildCount()) > 0) {
+        if (z && (childCount = getChildCount()) > 0) {
             View childAt = getChildAt(childCount - 1);
             int paddingBottom = getPaddingBottom() + childAt.getBottom() + ((FrameLayout.LayoutParams) childAt.getLayoutParams()).bottomMargin;
             rect.bottom = paddingBottom;
             rect.top = paddingBottom - height;
         }
-        return w(i7, rect.top, rect.bottom);
+        return w(i, rect.top, rect.bottom);
     }
 
-    @Override // r0.k
-    public final void k(int i7, View view) {
-        r0 r0Var = this.P;
-        if (i7 == 1) {
-            r0Var.b = 0;
+    @Override // si7
+    public final void k(int i, View view) {
+        zw8 zw8Var = this.P;
+        if (i == 1) {
+            zw8Var.c = 0;
         } else {
-            r0Var.a = 0;
+            zw8Var.b = 0;
         }
-        C(i7);
+        C(i);
     }
 
-    @Override // r0.l
-    public final void l(View view, int i7, int i10, int i11, int i12, int i13, int[] iArr) {
-        q(i12, i13, iArr);
+    @Override // ti7
+    public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
+        s(i4, i5, iArr);
     }
 
-    @Override // r0.k
-    public final void m(View view, int i7, int i10, int i11, int i12, int i13) {
-        q(i12, i13, null);
+    @Override // si7
+    public final void m(View view, int i, int i2, int i3, int i4, int i5) {
+        s(i4, i5, null);
     }
 
     @Override // android.view.ViewGroup
-    public final void measureChild(View view, int i7, int i10) {
+    public final void measureChild(View view, int i, int i2) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        view.measure(ViewGroup.getChildMeasureSpec(i7, getPaddingRight() + getPaddingLeft(), layoutParams.width), View.MeasureSpec.makeMeasureSpec(0, 0));
+        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft(), layoutParams.width), 0);
     }
 
     @Override // android.view.ViewGroup
-    public final void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
+    public final void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        view.measure(ViewGroup.getChildMeasureSpec(i7, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i10, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(marginLayoutParams.topMargin + marginLayoutParams.bottomMargin, 0));
+        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i2, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(marginLayoutParams.topMargin + marginLayoutParams.bottomMargin, 0));
     }
 
-    @Override // r0.k
-    public final boolean o(View view, View view2, int i7, int i10) {
-        return (i7 & 2) != 0;
+    @Override // si7
+    public final boolean n(View view, View view2, int i, int i2) {
+        return (i & 2) != 0;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -617,267 +632,267 @@ public class NestedScrollView extends FrameLayout implements l {
         this.s = false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x0128, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:142:0x0129, code lost:
     
-        if (r0 >= 0) goto L71;
+        if (r7 >= 0) goto L70;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x00dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x00de, code lost:
     
-        if (r7 >= 0) goto L50;
+        if (r8 >= 0) goto L49;
      */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x02af  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x02a2  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x02a5  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onGenericMotionEvent(MotionEvent motionEvent) {
-        float f10;
-        int i7;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        boolean z10;
-        NestedScrollView nestedScrollView;
-        float f11;
-        NestedScrollView nestedScrollView2;
-        float f12;
-        long j3;
-        float f13;
+        float f;
+        int i;
+        int i2;
+        boolean z;
+        int i3;
+        int i4;
+        int i5;
+        boolean z2;
+        int[] iArr;
+        float f2;
+        float f3;
+        long j;
+        int i6;
+        float f4;
         float sqrt;
-        int i14;
-        NestedScrollView nestedScrollView3;
-        float f14;
+        int[] iArr2;
+        float f5;
         if (motionEvent.getAction() != 8 || this.x) {
             return false;
         }
         if ((motionEvent.getSource() & 2) == 2) {
             float axisValue = motionEvent.getAxisValue(9);
-            i10 = (int) motionEvent.getX();
-            i7 = 9;
-            f10 = axisValue;
+            i2 = (int) motionEvent.getX();
+            i = 9;
+            f = axisValue;
         } else if ((motionEvent.getSource() & TLObject.FLAG_22) == 4194304) {
             float axisValue2 = motionEvent.getAxisValue(26);
-            i10 = getWidth() / 2;
-            f10 = axisValue2;
-            i7 = 26;
+            i2 = getWidth() / 2;
+            f = axisValue2;
+            i = 26;
         } else {
-            f10 = 0.0f;
-            i7 = 0;
-            i10 = 0;
+            f = 0.0f;
+            i = 0;
+            i2 = 0;
         }
-        if (f10 == 0.0f) {
+        if (f == 0.0f) {
             return false;
         }
-        x(-((int) (getVerticalScrollFactorCompat() * f10)), i7, motionEvent, i10, 1, (motionEvent.getSource() & 8194) == 8194);
-        if (i7 != 0) {
-            jm jmVar = this.T;
-            NestedScrollView nestedScrollView4 = (NestedScrollView) ((aa) jmVar.f).b;
-            int[] iArr = (int[]) jmVar.h;
+        x(-((int) (getVerticalScrollFactorCompat() * f)), i, motionEvent, i2, 1, (motionEvent.getSource() & 8194) == 8194);
+        if (i != 0) {
+            g52 g52Var = this.T;
+            NestedScrollView nestedScrollView = (NestedScrollView) ((s34) g52Var.f).b;
+            int[] iArr3 = (int[]) g52Var.h;
             int source = motionEvent.getSource();
             int deviceId = motionEvent.getDeviceId();
-            int i15 = 1;
-            if (jmVar.c == source && jmVar.d == deviceId && jmVar.b == i7) {
-                z10 = false;
-                i11 = 0;
+            if (g52Var.c == source && g52Var.d == deviceId && g52Var.b == i) {
+                z2 = false;
+                z = true;
+                i3 = 0;
             } else {
-                Context context = (Context) jmVar.e;
+                Context context = (Context) g52Var.e;
+                z = true;
                 ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
                 int deviceId2 = motionEvent.getDeviceId();
-                i11 = 0;
                 int source2 = motionEvent.getSource();
-                int i16 = Build.VERSION.SDK_INT;
-                if (i16 >= 34) {
-                    Method method = j0.a;
-                    i12 = a.j(viewConfiguration, deviceId2, i7, source2);
+                i3 = 0;
+                int i7 = Build.VERSION.SDK_INT;
+                if (i7 >= 34) {
+                    Method method = kdc.a;
+                    i4 = t4.j(viewConfiguration, deviceId2, i, source2);
                 } else {
-                    Method method2 = j0.a;
+                    Method method2 = kdc.a;
                     InputDevice device = InputDevice.getDevice(deviceId2);
-                    if (device != null && device.getMotionRange(i7, source2) != null) {
+                    if (device != null && device.getMotionRange(i, source2) != null) {
                         Resources resources = context.getResources();
-                        int identifier = (source2 == 4194304 && i7 == 26) ? resources.getIdentifier("config_viewMinRotaryEncoderFlingVelocity", "dimen", "android") : -1;
+                        int identifier = (source2 == 4194304 && i == 26) ? resources.getIdentifier("config_viewMinRotaryEncoderFlingVelocity", "dimen", "android") : -1;
                         Objects.requireNonNull(viewConfiguration);
                         if (identifier == -1) {
-                            i12 = viewConfiguration.getScaledMinimumFlingVelocity();
+                            i4 = viewConfiguration.getScaledMinimumFlingVelocity();
                         } else if (identifier != 0) {
-                            i12 = resources.getDimensionPixelSize(identifier);
+                            i4 = resources.getDimensionPixelSize(identifier);
                         }
                     }
-                    i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 }
-                iArr[0] = i12;
+                iArr3[0] = i4;
                 int deviceId3 = motionEvent.getDeviceId();
                 int source3 = motionEvent.getSource();
-                if (i16 >= 34) {
-                    i13 = a.i(viewConfiguration, deviceId3, i7, source3);
+                if (i7 >= 34) {
+                    i5 = t4.i(viewConfiguration, deviceId3, i, source3);
                 } else {
                     InputDevice device2 = InputDevice.getDevice(deviceId3);
-                    if (device2 != null && device2.getMotionRange(i7, source3) != null) {
+                    if (device2 != null && device2.getMotionRange(i, source3) != null) {
                         Resources resources2 = context.getResources();
-                        int identifier2 = (source3 == 4194304 && i7 == 26) ? resources2.getIdentifier("config_viewMaxRotaryEncoderFlingVelocity", "dimen", "android") : -1;
+                        int identifier2 = (source3 == 4194304 && i == 26) ? resources2.getIdentifier("config_viewMaxRotaryEncoderFlingVelocity", "dimen", "android") : -1;
                         Objects.requireNonNull(viewConfiguration);
                         if (identifier2 == -1) {
-                            i13 = viewConfiguration.getScaledMaximumFlingVelocity();
+                            i5 = viewConfiguration.getScaledMaximumFlingVelocity();
                         } else if (identifier2 != 0) {
-                            i13 = resources2.getDimensionPixelSize(identifier2);
+                            i5 = resources2.getDimensionPixelSize(identifier2);
                         }
                     }
-                    i13 = Integer.MIN_VALUE;
+                    i5 = Integer.MIN_VALUE;
                 }
-                iArr[1] = i13;
-                jmVar.c = source;
-                jmVar.d = deviceId;
-                jmVar.b = i7;
-                z10 = true;
+                iArr3[1] = i5;
+                g52Var.c = source;
+                g52Var.d = deviceId;
+                g52Var.b = i;
+                z2 = true;
             }
-            if (iArr[i11] == Integer.MAX_VALUE) {
-                VelocityTracker velocityTracker = (VelocityTracker) jmVar.g;
+            int i8 = iArr3[i3];
+            VelocityTracker velocityTracker = (VelocityTracker) g52Var.g;
+            if (i8 == Integer.MAX_VALUE) {
                 if (velocityTracker == null) {
-                    return true;
+                    return z;
                 }
                 velocityTracker.recycle();
-                jmVar.g = null;
-                return true;
+                g52Var.g = null;
+                return z;
             }
-            if (((VelocityTracker) jmVar.g) == null) {
-                jmVar.g = VelocityTracker.obtain();
+            if (velocityTracker == null) {
+                velocityTracker = VelocityTracker.obtain();
+                g52Var.g = velocityTracker;
             }
-            VelocityTracker velocityTracker2 = (VelocityTracker) jmVar.g;
-            Map map = s.a;
-            velocityTracker2.addMovement(motionEvent);
-            int i17 = 20;
+            Map map = t9c.a;
+            velocityTracker.addMovement(motionEvent);
+            char c = 20;
             if (Build.VERSION.SDK_INT < 34 && motionEvent.getSource() == 4194304) {
-                Map map2 = s.a;
-                if (!map2.containsKey(velocityTracker2)) {
-                    map2.put(velocityTracker2, new t());
+                Map map2 = t9c.a;
+                if (!map2.containsKey(velocityTracker)) {
+                    map2.put(velocityTracker, new u9c());
                 }
-                t tVar = (t) map2.get(velocityTracker2);
-                long[] jArr = tVar.b;
+                u9c u9cVar = (u9c) map2.get(velocityTracker);
+                long[] jArr = u9cVar.b;
                 long eventTime = motionEvent.getEventTime();
-                if (tVar.d != 0 && eventTime - jArr[tVar.e] > 40) {
-                    tVar.d = i11;
-                    tVar.c = 0.0f;
+                int i9 = u9cVar.d;
+                if (i9 != 0 && eventTime - jArr[u9cVar.e] > 40) {
+                    u9cVar.d = i3;
+                    u9cVar.c = 0.0f;
+                    i9 = 0;
                 }
-                int i18 = (tVar.e + 1) % 20;
-                tVar.e = i18;
-                int i19 = tVar.d;
-                if (i19 != 20) {
-                    tVar.d = i19 + 1;
+                int i10 = (u9cVar.e + 1) % 20;
+                u9cVar.e = i10;
+                if (i9 != 20) {
+                    u9cVar.d = i9 + 1;
                 }
-                tVar.a[i18] = motionEvent.getAxisValue(26);
-                jArr[tVar.e] = eventTime;
+                u9cVar.a[i10] = motionEvent.getAxisValue(26);
+                jArr[u9cVar.e] = eventTime;
             }
-            velocityTracker2.computeCurrentVelocity(1000, Float.MAX_VALUE);
-            t tVar2 = (t) s.a.get(velocityTracker2);
-            if (tVar2 != null) {
-                float[] fArr = tVar2.a;
-                long[] jArr2 = tVar2.b;
-                int i20 = tVar2.d;
-                if (i20 >= 2) {
-                    int i21 = tVar2.e;
-                    int i22 = ((i21 + 20) - (i20 - 1)) % 20;
-                    long j10 = jArr2[i21];
+            velocityTracker.computeCurrentVelocity(1000, Float.MAX_VALUE);
+            u9c u9cVar2 = (u9c) t9c.a.get(velocityTracker);
+            if (u9cVar2 != null) {
+                float[] fArr = u9cVar2.a;
+                long[] jArr2 = u9cVar2.b;
+                int i11 = u9cVar2.d;
+                if (i11 < 2) {
+                    iArr = iArr3;
+                    f4 = Float.MAX_VALUE;
+                } else {
+                    int i12 = u9cVar2.e;
+                    int i13 = ((i12 + 20) - (i11 - 1)) % 20;
+                    long j2 = jArr2[i12];
                     while (true) {
-                        j3 = jArr2[i22];
-                        if (j10 - j3 <= 100) {
+                        j = jArr2[i13];
+                        long j3 = j2 - j;
+                        char c2 = c;
+                        i6 = u9cVar2.d;
+                        if (j3 <= 100) {
                             break;
                         }
-                        tVar2.d--;
-                        i22 = (i22 + 1) % 20;
+                        u9cVar2.d = i6 - 1;
+                        i13 = (i13 + 1) % 20;
+                        c = c2;
                     }
-                    int i23 = tVar2.d;
-                    if (i23 >= 2) {
-                        if (i23 == 2) {
-                            int i24 = (i22 + 1) % 20;
-                            if (j3 != jArr2[i24]) {
-                                nestedScrollView = nestedScrollView4;
-                                f13 = Float.MAX_VALUE;
-                                i14 = 1000;
-                                sqrt = fArr[i24] / (r12 - j3);
+                    f4 = Float.MAX_VALUE;
+                    if (i6 >= 2) {
+                        if (i6 == 2) {
+                            int i14 = (i13 + 1) % 20;
+                            if (j != jArr2[i14]) {
+                                iArr = iArr3;
+                                sqrt = fArr[i14] / (r11 - j);
                             }
                         } else {
-                            f13 = Float.MAX_VALUE;
-                            float f15 = 0.0f;
-                            int i25 = 0;
-                            int i26 = 0;
+                            float f6 = 0.0f;
+                            int i15 = 0;
+                            int i16 = 0;
                             while (true) {
-                                if (i25 >= tVar2.d - 1) {
+                                if (i15 >= u9cVar2.d - 1) {
                                     break;
                                 }
-                                int i27 = i25 + i22;
-                                long j11 = jArr2[i27 % 20];
-                                int i28 = (i27 + 1) % i17;
-                                if (jArr2[i28] == j11) {
-                                    nestedScrollView3 = nestedScrollView4;
+                                int i17 = i15 + i13;
+                                long j4 = jArr2[i17 % 20];
+                                int i18 = (i17 + 1) % 20;
+                                if (jArr2[i18] == j4) {
+                                    iArr2 = iArr3;
                                 } else {
-                                    i26++;
-                                    nestedScrollView3 = nestedScrollView4;
-                                    float sqrt2 = (f15 < 0.0f ? -1.0f : 1.0f) * ((float) Math.sqrt(Math.abs(f15) * 2.0f));
-                                    float f16 = fArr[i28] / (jArr2[i28] - j11);
-                                    float abs = (Math.abs(f16) * (f16 - sqrt2)) + f15;
-                                    if (i26 == i15) {
+                                    i16++;
+                                    iArr2 = iArr3;
+                                    float sqrt2 = (f6 < 0.0f ? -1.0f : 1.0f) * ((float) Math.sqrt(2.0f * Math.abs(f6)));
+                                    float f7 = fArr[i18] / (jArr2[i18] - j4);
+                                    float abs = (Math.abs(f7) * (f7 - sqrt2)) + f6;
+                                    if (i16 == z) {
                                         abs *= 0.5f;
                                     }
-                                    f15 = abs;
+                                    f6 = abs;
                                 }
-                                i25++;
-                                nestedScrollView4 = nestedScrollView3;
-                                i17 = 20;
-                                i15 = 1;
+                                i15++;
+                                iArr3 = iArr2;
+                                z = true;
                             }
-                            nestedScrollView = nestedScrollView4;
-                            sqrt = ((float) Math.sqrt(Math.abs(f15) * 2.0f)) * (f15 < 0.0f ? -1.0f : 1.0f);
-                            i14 = 1000;
+                            iArr = iArr3;
+                            sqrt = ((float) Math.sqrt(Math.abs(r24) * 2.0f)) * (f6 < 0.0f ? -1.0f : 1.0f);
                         }
-                        f14 = sqrt * i14;
-                        tVar2.c = f14;
-                        if (f14 >= (-Math.abs(f13))) {
-                            tVar2.c = -Math.abs(f13);
-                        } else if (tVar2.c > Math.abs(f13)) {
-                            tVar2.c = Math.abs(f13);
+                        f5 = sqrt * 1000.0f;
+                        u9cVar2.c = f5;
+                        if (f5 >= -3.4028235E38f) {
+                            u9cVar2.c = -3.4028235E38f;
+                        } else if (f5 > f4) {
+                            u9cVar2.c = f4;
                         }
                     }
+                    iArr = iArr3;
                 }
-                nestedScrollView = nestedScrollView4;
-                f13 = Float.MAX_VALUE;
-                i14 = 1000;
                 sqrt = 0.0f;
-                f14 = sqrt * i14;
-                tVar2.c = f14;
-                if (f14 >= (-Math.abs(f13))) {
+                f5 = sqrt * 1000.0f;
+                u9cVar2.c = f5;
+                if (f5 >= -3.4028235E38f) {
                 }
             } else {
-                nestedScrollView = nestedScrollView4;
+                iArr = iArr3;
             }
             if (Build.VERSION.SDK_INT >= 34) {
-                f11 = a.f(velocityTracker2, i7);
-            } else if (i7 == 0) {
-                f11 = velocityTracker2.getXVelocity();
-            } else if (i7 == 1) {
-                f11 = velocityTracker2.getYVelocity();
+                f2 = t4.f(velocityTracker, i);
+            } else if (i == 0) {
+                f2 = velocityTracker.getXVelocity();
+            } else if (i == 1) {
+                f2 = velocityTracker.getYVelocity();
             } else {
-                t tVar3 = (t) s.a.get(velocityTracker2);
-                f11 = (tVar3 == null || i7 != 26) ? 0.0f : tVar3.c;
+                u9c u9cVar3 = (u9c) t9c.a.get(velocityTracker);
+                f2 = (u9cVar3 == null || i != 26) ? 0.0f : u9cVar3.c;
             }
-            float f17 = f11 * (-nestedScrollView.getVerticalScrollFactorCompat());
-            float signum = Math.signum(f17);
-            if (z10 || !(signum == Math.signum(jmVar.a) || signum == 0.0f)) {
-                nestedScrollView2 = nestedScrollView;
-                nestedScrollView2.d.abortAnimation();
-            } else {
-                nestedScrollView2 = nestedScrollView;
+            float f8 = f2 * (-nestedScrollView.getVerticalScrollFactorCompat());
+            float signum = Math.signum(f8);
+            if (z2 || (signum != Math.signum(g52Var.a) && signum != 0.0f)) {
+                nestedScrollView.d.abortAnimation();
             }
-            if (Math.abs(f17) >= iArr[0]) {
-                float max = Math.max(-r2, Math.min(f17, iArr[1]));
+            if (Math.abs(f8) >= iArr[0]) {
+                float max = Math.max(-r3, Math.min(f8, iArr[1]));
                 if (max == 0.0f) {
-                    f12 = 0.0f;
+                    f3 = 0.0f;
                 } else {
-                    nestedScrollView2.d.abortAnimation();
-                    nestedScrollView2.i((int) max);
-                    f12 = max;
+                    nestedScrollView.d.abortAnimation();
+                    nestedScrollView.i((int) max);
+                    f3 = max;
                 }
-                jmVar.a = f12;
+                g52Var.a = f3;
                 return true;
             }
         }
@@ -887,28 +902,30 @@ public class NestedScrollView extends FrameLayout implements l {
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
-        boolean z10 = true;
+        boolean z = true;
         if (action == 2 && this.x) {
             return true;
         }
-        int i7 = action & ks.e4;
-        if (i7 != 0) {
-            if (i7 != 1) {
-                if (i7 == 2) {
-                    int i10 = this.J;
-                    if (i10 != -1) {
-                        int findPointerIndex = motionEvent.findPointerIndex(i10);
+        int i = action & kk7.d4;
+        if (i != 0) {
+            if (i != 1) {
+                if (i == 2) {
+                    int i2 = this.J;
+                    if (i2 != -1) {
+                        int findPointerIndex = motionEvent.findPointerIndex(i2);
                         if (findPointerIndex == -1) {
-                            Log.e("NestedScrollView", "Invalid pointerId=" + i10 + " in onInterceptTouchEvent");
+                            Log.e("NestedScrollView", "Invalid pointerId=" + i2 + " in onInterceptTouchEvent");
                         } else {
-                            int y10 = (int) motionEvent.getY(findPointerIndex);
-                            if (Math.abs(y10 - this.n) > this.G && (2 & getNestedScrollAxes()) == 0) {
+                            int y = (int) motionEvent.getY(findPointerIndex);
+                            if (Math.abs(y - this.n) > this.G && (getNestedScrollAxes() & 2) == 0) {
                                 this.x = true;
-                                this.n = y10;
-                                if (this.y == null) {
-                                    this.y = VelocityTracker.obtain();
+                                this.n = y;
+                                VelocityTracker velocityTracker = this.y;
+                                if (velocityTracker == null) {
+                                    velocityTracker = VelocityTracker.obtain();
+                                    this.y = velocityTracker;
                                 }
-                                this.y.addMovement(motionEvent);
+                                velocityTracker.addMovement(motionEvent);
                                 this.M = 0;
                                 ViewParent parent = getParent();
                                 if (parent != null) {
@@ -917,17 +934,17 @@ public class NestedScrollView extends FrameLayout implements l {
                             }
                         }
                     }
-                } else if (i7 != 3) {
-                    if (i7 == 6) {
+                } else if (i != 3) {
+                    if (i == 6) {
                         t(motionEvent);
                     }
                 }
             }
             this.x = false;
             this.J = -1;
-            VelocityTracker velocityTracker = this.y;
-            if (velocityTracker != null) {
-                velocityTracker.recycle();
+            VelocityTracker velocityTracker2 = this.y;
+            if (velocityTracker2 != null) {
+                velocityTracker2.recycle();
                 this.y = null;
             }
             if (this.d.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
@@ -935,36 +952,36 @@ public class NestedScrollView extends FrameLayout implements l {
             }
             C(0);
         } else {
-            int y11 = (int) motionEvent.getY();
-            int x10 = (int) motionEvent.getX();
+            int y2 = (int) motionEvent.getY();
+            int x = (int) motionEvent.getX();
             if (getChildCount() > 0) {
                 int scrollY = getScrollY();
                 View childAt = getChildAt(0);
-                if (y11 >= childAt.getTop() - scrollY && y11 < childAt.getBottom() - scrollY && x10 >= childAt.getLeft() && x10 < childAt.getRight()) {
-                    this.n = y11;
+                if (y2 >= childAt.getTop() - scrollY && y2 < childAt.getBottom() - scrollY && x >= childAt.getLeft() && x < childAt.getRight()) {
+                    this.n = y2;
                     this.J = motionEvent.getPointerId(0);
-                    VelocityTracker velocityTracker2 = this.y;
-                    if (velocityTracker2 == null) {
+                    VelocityTracker velocityTracker3 = this.y;
+                    if (velocityTracker3 == null) {
                         this.y = VelocityTracker.obtain();
                     } else {
-                        velocityTracker2.clear();
+                        velocityTracker3.clear();
                     }
                     this.y.addMovement(motionEvent);
                     this.d.computeScrollOffset();
                     if (!B(motionEvent) && this.d.isFinished()) {
-                        z10 = false;
+                        z = false;
                     }
-                    this.x = z10;
+                    this.x = z;
                     A(2, 0);
                 }
             }
             if (!B(motionEvent) && this.d.isFinished()) {
-                z10 = false;
+                z = false;
             }
-            this.x = z10;
-            VelocityTracker velocityTracker3 = this.y;
-            if (velocityTracker3 != null) {
-                velocityTracker3.recycle();
+            this.x = z;
+            VelocityTracker velocityTracker4 = this.y;
+            if (velocityTracker4 != null) {
+                velocityTracker4.recycle();
                 this.y = null;
             }
         }
@@ -972,20 +989,20 @@ public class NestedScrollView extends FrameLayout implements l {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        int i13;
-        super.onLayout(z10, i7, i10, i11, i12);
-        int i14 = 0;
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5;
+        super.onLayout(z, i, i2, i3, i4);
+        int i6 = 0;
         this.r = false;
         View view = this.w;
-        if (view != null && n(view, this)) {
+        if (view != null && o(view, this)) {
             View view2 = this.w;
             Rect rect = this.c;
             view2.getDrawingRect(rect);
             offsetDescendantRectToMyCoords(view2, rect);
-            int c10 = c(rect);
-            if (c10 != 0) {
-                scrollBy(0, c10);
+            int c = c(rect);
+            if (c != 0) {
+                scrollBy(0, c);
             }
         }
         this.w = null;
@@ -997,17 +1014,17 @@ public class NestedScrollView extends FrameLayout implements l {
             if (getChildCount() > 0) {
                 View childAt = getChildAt(0);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                i13 = childAt.getMeasuredHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
+                i5 = childAt.getMeasuredHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
             } else {
-                i13 = 0;
+                i5 = 0;
             }
-            int paddingTop = ((i12 - i10) - getPaddingTop()) - getPaddingBottom();
+            int paddingTop = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
             int scrollY = getScrollY();
-            if (paddingTop < i13 && scrollY >= 0) {
-                i14 = paddingTop + scrollY > i13 ? i13 - paddingTop : scrollY;
+            if (paddingTop < i5 && scrollY >= 0) {
+                i6 = paddingTop + scrollY > i5 ? i5 - paddingTop : scrollY;
             }
-            if (i14 != scrollY) {
-                scrollTo(getScrollX(), i14);
+            if (i6 != scrollY) {
+                scrollTo(getScrollX(), i6);
             }
         }
         scrollTo(getScrollX(), getScrollY());
@@ -1015,119 +1032,120 @@ public class NestedScrollView extends FrameLayout implements l {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        if (this.E && View.MeasureSpec.getMode(i10) != 0 && getChildCount() > 0) {
-            View childAt = getChildAt(0);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-            int measuredHeight = childAt.getMeasuredHeight();
-            int measuredHeight2 = (((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - layoutParams.topMargin) - layoutParams.bottomMargin;
-            if (measuredHeight < measuredHeight2) {
-                childAt.measure(ViewGroup.getChildMeasureSpec(i7, getPaddingRight() + getPaddingLeft() + layoutParams.leftMargin + layoutParams.rightMargin, layoutParams.width), View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_30));
-            }
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        if (!this.E || View.MeasureSpec.getMode(i2) == 0 || getChildCount() <= 0) {
+            return;
+        }
+        View childAt = getChildAt(0);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+        int measuredHeight = childAt.getMeasuredHeight();
+        int measuredHeight2 = (((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - layoutParams.topMargin) - layoutParams.bottomMargin;
+        if (measuredHeight < measuredHeight2) {
+            childAt.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + layoutParams.leftMargin + layoutParams.rightMargin, layoutParams.width), View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_30));
         }
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onNestedFling(View view, float f10, float f11, boolean z10) {
-        if (z10) {
+    public final boolean onNestedFling(View view, float f, float f2, boolean z) {
+        if (z) {
             return false;
         }
-        dispatchNestedFling(0.0f, f11, true);
-        i((int) f11);
+        dispatchNestedFling(0.0f, f2, true);
+        i((int) f2);
         return true;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onNestedPreFling(View view, float f10, float f11) {
-        return this.Q.b(f10, f11);
+    public final boolean onNestedPreFling(View view, float f, float f2) {
+        return this.Q.b(f, f2);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedPreScroll(View view, int i7, int i10, int[] iArr) {
-        d(i7, i10, 0, iArr, null);
+    public final void onNestedPreScroll(View view, int i, int i2, int[] iArr) {
+        d(i, i2, 0, iArr, null);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i7, int i10, int i11, int i12) {
-        q(i12, 0, null);
+    public final void onNestedScroll(View view, int i, int i2, int i3, int i4) {
+        s(i4, 0, null);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScrollAccepted(View view, View view2, int i7) {
-        r(view, view2, i7, 0);
+    public final void onNestedScrollAccepted(View view, View view2, int i) {
+        q(view, view2, i, 0);
     }
 
     @Override // android.view.View
-    public final void onOverScrolled(int i7, int i10, boolean z10, boolean z11) {
-        super.scrollTo(i7, i10);
+    public final void onOverScrolled(int i, int i2, boolean z, boolean z2) {
+        super.scrollTo(i, i2);
     }
 
     @Override // android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i7, Rect rect) {
-        if (i7 == 2) {
-            i7 = ks.O1;
-        } else if (i7 == 1) {
-            i7 = 33;
+    public final boolean onRequestFocusInDescendants(int i, Rect rect) {
+        if (i == 2) {
+            i = kk7.N1;
+        } else if (i == 1) {
+            i = 33;
         }
-        View findNextFocus = rect == null ? FocusFinder.getInstance().findNextFocus(this, null, i7) : FocusFinder.getInstance().findNextFocusFromRect(this, rect, i7);
-        if (findNextFocus != null && p(findNextFocus, 0, getHeight())) {
-            return findNextFocus.requestFocus(i7, rect);
+        View findNextFocus = rect == null ? FocusFinder.getInstance().findNextFocus(this, null, i) : FocusFinder.getInstance().findNextFocusFromRect(this, rect, i);
+        if (findNextFocus == null || !p(findNextFocus, 0, getHeight())) {
+            return false;
         }
-        return false;
+        return findNextFocus.requestFocus(i, rect);
     }
 
     @Override // android.view.View
     public final void onRestoreInstanceState(Parcelable parcelable) {
-        if (!(parcelable instanceof h)) {
+        if (!(parcelable instanceof qi7)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        h hVar = (h) parcelable;
-        super.onRestoreInstanceState(hVar.getSuperState());
-        this.O = hVar;
+        qi7 qi7Var = (qi7) parcelable;
+        super.onRestoreInstanceState(qi7Var.getSuperState());
+        this.O = qi7Var;
         requestLayout();
     }
 
     @Override // android.view.View
     public final Parcelable onSaveInstanceState() {
-        h hVar = new h(super.onSaveInstanceState());
-        hVar.a = getScrollY();
-        return hVar;
+        qi7 qi7Var = new qi7(super.onSaveInstanceState());
+        qi7Var.a = getScrollY();
+        return qi7Var;
     }
 
     @Override // android.view.View
-    public void onScrollChanged(int i7, int i10, int i11, int i12) {
-        super.onScrollChanged(i7, i10, i11, i12);
-        g gVar = this.S;
-        if (gVar != null) {
-            ((ad0) gVar).a.K0(!r1.u1);
+    public void onScrollChanged(int i, int i2, int i3, int i4) {
+        super.onScrollChanged(i, i2, i3, i4);
+        pi7 pi7Var = this.S;
+        if (pi7Var != null) {
+            ((r38) pi7Var).a.E0(!r0.t1);
         }
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        super.onSizeChanged(i7, i10, i11, i12);
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
         View findFocus = findFocus();
-        if (findFocus == null || this == findFocus || !p(findFocus, 0, i12)) {
+        if (findFocus == null || this == findFocus || !p(findFocus, 0, i4)) {
             return;
         }
         Rect rect = this.c;
         findFocus.getDrawingRect(rect);
         offsetDescendantRectToMyCoords(findFocus, rect);
-        int c10 = c(rect);
-        if (c10 != 0) {
+        int c = c(rect);
+        if (c != 0) {
             if (this.F) {
-                z(0, c10, false);
+                z(0, c, false);
             } else {
-                scrollBy(0, c10);
+                scrollBy(0, c);
             }
         }
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onStartNestedScroll(View view, View view2, int i7) {
-        return o(view, view2, i7, 0);
+    public final boolean onStartNestedScroll(View view, View view2, int i) {
+        return n(view, view2, i, 0);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -1135,21 +1153,17 @@ public class NestedScrollView extends FrameLayout implements l {
         k(0, view);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:48:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x013e  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean onTouchEvent(MotionEvent motionEvent) {
         ViewParent parent;
-        float b10;
+        float b;
         int round;
-        int i7;
-        ViewParent parent2;
         if (this.y == null) {
             this.y = VelocityTracker.obtain();
         }
@@ -1158,7 +1172,7 @@ public class NestedScrollView extends FrameLayout implements l {
             this.M = 0;
         }
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
-        float f10 = 0.0f;
+        float f = 0.0f;
         obtain.offsetLocation(0.0f, this.M);
         if (actionMasked != 0) {
             EdgeEffect edgeEffect = this.e;
@@ -1168,26 +1182,23 @@ public class NestedScrollView extends FrameLayout implements l {
                 velocityTracker.computeCurrentVelocity(1000, this.I);
                 int yVelocity = (int) velocityTracker.getYVelocity(this.J);
                 if (Math.abs(yVelocity) >= this.H) {
-                    if (pc.a(edgeEffect) != 0.0f) {
-                        if (y(edgeEffect, yVelocity)) {
-                            edgeEffect.onAbsorb(yVelocity);
+                    if (wee.a(edgeEffect) == 0.0f) {
+                        int i = -yVelocity;
+                        if (wee.a(edgeEffect2) == 0.0f) {
+                            float f2 = i;
+                            if (!this.Q.b(0.0f, f2)) {
+                                dispatchNestedFling(0.0f, f2, true);
+                                i(i);
+                            }
+                        } else if (y(edgeEffect2, i)) {
+                            edgeEffect2.onAbsorb(i);
                         } else {
-                            i(-yVelocity);
+                            i(i);
                         }
-                    } else if (pc.a(edgeEffect2) != 0.0f) {
-                        int i10 = -yVelocity;
-                        if (y(edgeEffect2, i10)) {
-                            edgeEffect2.onAbsorb(i10);
-                        } else {
-                            i(i10);
-                        }
+                    } else if (y(edgeEffect, yVelocity)) {
+                        edgeEffect.onAbsorb(yVelocity);
                     } else {
-                        int i11 = -yVelocity;
-                        float f11 = i11;
-                        if (!this.Q.b(0.0f, f11)) {
-                            dispatchNestedFling(0.0f, f11, true);
-                            i(i11);
-                        }
+                        i(-yVelocity);
                     }
                 } else if (this.d.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
                     postInvalidateOnAnimation();
@@ -1207,53 +1218,51 @@ public class NestedScrollView extends FrameLayout implements l {
                 if (findPointerIndex == -1) {
                     Log.e("NestedScrollView", "Invalid pointerId=" + this.J + " in onTouchEvent");
                 } else {
-                    int y10 = (int) motionEvent.getY(findPointerIndex);
-                    int i12 = this.n - y10;
-                    float x10 = motionEvent.getX(findPointerIndex) / getWidth();
-                    float height = i12 / getHeight();
-                    if (pc.a(edgeEffect) != 0.0f) {
-                        b10 = -pc.b(edgeEffect, -height, x10);
-                        if (pc.a(edgeEffect) == 0.0f) {
+                    int y = (int) motionEvent.getY(findPointerIndex);
+                    int i2 = this.n - y;
+                    float x = motionEvent.getX(findPointerIndex) / getWidth();
+                    float height = i2 / getHeight();
+                    if (wee.a(edgeEffect) != 0.0f) {
+                        b = -wee.b(edgeEffect, -height, x);
+                        if (wee.a(edgeEffect) == 0.0f) {
                             edgeEffect.onRelease();
                         }
                     } else {
-                        if (pc.a(edgeEffect2) != 0.0f) {
-                            b10 = pc.b(edgeEffect2, height, 1.0f - x10);
-                            if (pc.a(edgeEffect2) == 0.0f) {
+                        if (wee.a(edgeEffect2) != 0.0f) {
+                            b = wee.b(edgeEffect2, height, 1.0f - x);
+                            if (wee.a(edgeEffect2) == 0.0f) {
                                 edgeEffect2.onRelease();
                             }
                         }
-                        round = Math.round(f10 * getHeight());
+                        round = Math.round(f * getHeight());
                         if (round != 0) {
                             invalidate();
                         }
-                        i7 = i12 - round;
-                        if (!this.x && Math.abs(i7) > this.G) {
-                            parent2 = getParent();
-                            if (parent2 != null) {
-                                parent2.requestDisallowInterceptTouchEvent(true);
+                        int i3 = i2 - round;
+                        if (!this.x) {
+                            int abs = Math.abs(i3);
+                            int i4 = this.G;
+                            if (abs > i4) {
+                                ViewParent parent2 = getParent();
+                                if (parent2 != null) {
+                                    parent2.requestDisallowInterceptTouchEvent(true);
+                                }
+                                this.x = true;
+                                i3 = i3 > 0 ? i3 - i4 : i3 + i4;
                             }
-                            this.x = true;
-                            i7 = i7 <= 0 ? i7 - this.G : i7 + this.G;
                         }
                         if (this.x) {
-                            int x11 = x(i7, 1, motionEvent, (int) motionEvent.getX(findPointerIndex), 0, false);
-                            this.n = y10 - x11;
-                            this.M += x11;
+                            int x2 = x(i3, 1, motionEvent, (int) motionEvent.getX(findPointerIndex), 0, false);
+                            this.n = y - x2;
+                            this.M += x2;
                         }
                     }
-                    f10 = b10;
-                    round = Math.round(f10 * getHeight());
+                    f = b;
+                    round = Math.round(f * getHeight());
                     if (round != 0) {
                     }
-                    i7 = i12 - round;
+                    int i32 = i2 - round;
                     if (!this.x) {
-                        parent2 = getParent();
-                        if (parent2 != null) {
-                        }
-                        this.x = true;
-                        if (i7 <= 0) {
-                        }
                     }
                     if (this.x) {
                     }
@@ -1290,9 +1299,9 @@ public class NestedScrollView extends FrameLayout implements l {
             if (!this.d.isFinished()) {
                 a();
             }
-            int y11 = (int) motionEvent.getY();
+            int y2 = (int) motionEvent.getY();
             int pointerId = motionEvent.getPointerId(0);
-            this.n = y11;
+            this.n = y2;
             this.J = pointerId;
             A(2, 0);
         }
@@ -1304,32 +1313,27 @@ public class NestedScrollView extends FrameLayout implements l {
         return true;
     }
 
-    public final boolean p(View view, int i7, int i10) {
+    public final boolean p(View view, int i, int i2) {
         Rect rect = this.c;
         view.getDrawingRect(rect);
         offsetDescendantRectToMyCoords(view, rect);
-        return rect.bottom + i7 >= getScrollY() && rect.top - i7 <= getScrollY() + i10;
+        return rect.bottom + i >= getScrollY() && rect.top - i <= getScrollY() + i2;
     }
 
-    public final void q(int i7, int i10, int[] iArr) {
-        int scrollY = getScrollY();
-        scrollBy(0, i7);
-        int scrollY2 = getScrollY() - scrollY;
-        if (iArr != null) {
-            iArr[1] = iArr[1] + scrollY2;
-        }
-        this.Q.d(0, scrollY2, 0, i7 - scrollY2, null, i10, iArr);
-    }
-
-    @Override // r0.k
-    public final void r(View view, View view2, int i7, int i10) {
-        r0 r0Var = this.P;
-        if (i10 == 1) {
-            r0Var.b = i7;
+    @Override // si7
+    public final void q(View view, View view2, int i, int i2) {
+        zw8 zw8Var = this.P;
+        if (i2 == 1) {
+            zw8Var.c = i;
         } else {
-            r0Var.a = i7;
+            zw8Var.b = i;
         }
-        A(2, i10);
+        A(2, i2);
+    }
+
+    @Override // si7
+    public final void r(View view, int i, int i2, int[] iArr, int i3) {
+        d(i, i2, i3, iArr, null);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -1340,37 +1344,37 @@ public class NestedScrollView extends FrameLayout implements l {
             Rect rect = this.c;
             view2.getDrawingRect(rect);
             offsetDescendantRectToMyCoords(view2, rect);
-            int c10 = c(rect);
-            if (c10 != 0) {
-                scrollBy(0, c10);
+            int c = c(rect);
+            if (c != 0) {
+                scrollBy(0, c);
             }
         }
         super.requestChildFocus(view, view2);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        int c10 = c(rect);
-        boolean z11 = c10 != 0;
-        if (z11) {
-            if (z10) {
-                scrollBy(0, c10);
-                return z11;
+        int c = c(rect);
+        boolean z2 = c != 0;
+        if (z2) {
+            if (z) {
+                scrollBy(0, c);
+                return z2;
             }
-            z(0, c10, false);
+            z(0, c, false);
         }
-        return z11;
+        return z2;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void requestDisallowInterceptTouchEvent(boolean z10) {
+    public final void requestDisallowInterceptTouchEvent(boolean z) {
         VelocityTracker velocityTracker;
-        if (z10 && (velocityTracker = this.y) != null) {
+        if (z && (velocityTracker = this.y) != null) {
             velocityTracker.recycle();
             this.y = null;
         }
-        super.requestDisallowInterceptTouchEvent(z10);
+        super.requestDisallowInterceptTouchEvent(z);
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -1379,13 +1383,18 @@ public class NestedScrollView extends FrameLayout implements l {
         super.requestLayout();
     }
 
-    @Override // r0.k
-    public final void s(View view, int i7, int i10, int[] iArr, int i11) {
-        d(i7, i10, i11, iArr, null);
+    public final void s(int i, int i2, int[] iArr) {
+        int scrollY = getScrollY();
+        scrollBy(0, i);
+        int scrollY2 = getScrollY() - scrollY;
+        if (iArr != null) {
+            iArr[1] = iArr[1] + scrollY2;
+        }
+        this.Q.d(0, scrollY2, 0, i - scrollY2, null, i2, iArr);
     }
 
     @Override // android.view.View
-    public final void scrollTo(int i7, int i10) {
+    public final void scrollTo(int i, int i2) {
         if (getChildCount() > 0) {
             View childAt = getChildAt(0);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
@@ -1393,47 +1402,47 @@ public class NestedScrollView extends FrameLayout implements l {
             int width2 = childAt.getWidth() + layoutParams.leftMargin + layoutParams.rightMargin;
             int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
             int height2 = childAt.getHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
-            if (width >= width2 || i7 < 0) {
-                i7 = 0;
-            } else if (width + i7 > width2) {
-                i7 = width2 - width;
+            if (width >= width2 || i < 0) {
+                i = 0;
+            } else if (width + i > width2) {
+                i = width2 - width;
             }
-            if (height >= height2 || i10 < 0) {
-                i10 = 0;
-            } else if (height + i10 > height2) {
-                i10 = height2 - height;
+            if (height >= height2 || i2 < 0) {
+                i2 = 0;
+            } else if (height + i2 > height2) {
+                i2 = height2 - height;
             }
-            if (i7 == getScrollX() && i10 == getScrollY()) {
+            if (i == getScrollX() && i2 == getScrollY()) {
                 return;
             }
-            super.scrollTo(i7, i10);
+            super.scrollTo(i, i2);
         }
     }
 
-    public void setFillViewport(boolean z10) {
-        if (z10 != this.E) {
-            this.E = z10;
+    public void setFillViewport(boolean z) {
+        if (z != this.E) {
+            this.E = z;
             requestLayout();
         }
     }
 
     @Override // android.view.View
-    public void setNestedScrollingEnabled(boolean z10) {
-        j jVar = this.Q;
-        if (jVar.d) {
-            ViewGroup viewGroup = jVar.c;
-            WeakHashMap weakHashMap = i0.a;
-            a0.j(viewGroup);
+    public void setNestedScrollingEnabled(boolean z) {
+        ri7 ri7Var = this.Q;
+        if (ri7Var.d) {
+            ViewGroup viewGroup = ri7Var.c;
+            WeakHashMap weakHashMap = jdc.a;
+            bdc.j(viewGroup);
         }
-        jVar.d = z10;
+        ri7Var.d = z;
     }
 
-    public void setOnScrollChangeListener(g gVar) {
-        this.S = gVar;
+    public void setOnScrollChangeListener(pi7 pi7Var) {
+        this.S = pi7Var;
     }
 
-    public void setSmoothScrollingEnabled(boolean z10) {
-        this.F = z10;
+    public void setSmoothScrollingEnabled(boolean z) {
+        this.F = z;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup
@@ -1442,8 +1451,8 @@ public class NestedScrollView extends FrameLayout implements l {
     }
 
     @Override // android.view.View
-    public final boolean startNestedScroll(int i7) {
-        return A(i7, 0);
+    public final boolean startNestedScroll(int i) {
+        return A(i, 0);
     }
 
     @Override // android.view.View
@@ -1454,9 +1463,9 @@ public class NestedScrollView extends FrameLayout implements l {
     public final void t(MotionEvent motionEvent) {
         int actionIndex = motionEvent.getActionIndex();
         if (motionEvent.getPointerId(actionIndex) == this.J) {
-            int i7 = actionIndex == 0 ? 1 : 0;
-            this.n = (int) motionEvent.getY(i7);
-            this.J = motionEvent.getPointerId(i7);
+            int i = actionIndex == 0 ? 1 : 0;
+            this.n = (int) motionEvent.getY(i);
+            this.J = motionEvent.getPointerId(i);
             VelocityTracker velocityTracker = this.y;
             if (velocityTracker != null) {
                 velocityTracker.clear();
@@ -1464,52 +1473,52 @@ public class NestedScrollView extends FrameLayout implements l {
         }
     }
 
-    public final boolean u(int i7, int i10, int i11, int i12) {
-        int i13;
-        boolean z10;
-        int i14;
-        boolean z11;
+    public final boolean u(int i, int i2, int i3, int i4) {
+        int i5;
+        boolean z;
+        int i6;
+        boolean z2;
         getOverScrollMode();
         super.computeHorizontalScrollRange();
         super.computeHorizontalScrollExtent();
         computeVerticalScrollRange();
         super.computeVerticalScrollExtent();
-        int i15 = i11 + i7;
-        if (i10 <= 0 && i10 >= 0) {
-            i13 = i10;
-            z10 = false;
+        int i7 = i3 + i;
+        if (i2 > 0 || i2 < 0) {
+            i5 = 0;
+            z = true;
         } else {
-            i13 = 0;
-            z10 = true;
+            i5 = i2;
+            z = false;
         }
-        if (i15 > i12) {
-            i14 = i12;
+        if (i7 > i4) {
+            i6 = i4;
         } else {
-            if (i15 >= 0) {
-                i14 = i15;
-                z11 = false;
-                if (z11 && !this.Q.f(1)) {
-                    this.d.springBack(i13, i14, 0, 0, 0, getScrollRange());
+            if (i7 >= 0) {
+                i6 = i7;
+                z2 = false;
+                if (z2 && !this.Q.f(1)) {
+                    this.d.springBack(i5, i6, 0, 0, 0, getScrollRange());
                 }
-                super.scrollTo(i13, i14);
-                return !z10 || z11;
+                super.scrollTo(i5, i6);
+                return !z || z2;
             }
-            i14 = 0;
+            i6 = 0;
         }
-        z11 = true;
-        if (z11) {
-            this.d.springBack(i13, i14, 0, 0, 0, getScrollRange());
+        z2 = true;
+        if (z2) {
+            this.d.springBack(i5, i6, 0, 0, 0, getScrollRange());
         }
-        super.scrollTo(i13, i14);
-        if (z10) {
+        super.scrollTo(i5, i6);
+        if (z) {
         }
     }
 
-    public final void v(int i7) {
-        boolean z10 = i7 == 130;
+    public final void v(int i) {
+        boolean z = i == 130;
         int height = getHeight();
         Rect rect = this.c;
-        if (z10) {
+        if (z) {
             rect.top = getScrollY() + height;
             int childCount = getChildCount();
             if (childCount > 0) {
@@ -1526,44 +1535,41 @@ public class NestedScrollView extends FrameLayout implements l {
                 rect.top = 0;
             }
         }
-        int i10 = rect.top;
-        int i11 = height + i10;
-        rect.bottom = i11;
-        w(i7, i10, i11);
+        int i2 = rect.top;
+        int i3 = height + i2;
+        rect.bottom = i3;
+        w(i, i2, i3);
     }
 
-    public final boolean w(int i7, int i10, int i11) {
-        boolean z10;
+    public final boolean w(int i, int i2, int i3) {
+        boolean z;
         int height = getHeight();
         int scrollY = getScrollY();
-        int i12 = height + scrollY;
-        boolean z11 = i7 == 33;
+        int i4 = height + scrollY;
+        boolean z2 = i == 33;
         ArrayList<View> focusables = getFocusables(2);
         int size = focusables.size();
         View view = null;
-        boolean z12 = false;
-        for (int i13 = 0; i13 < size; i13++) {
-            View view2 = focusables.get(i13);
+        boolean z3 = false;
+        for (int i5 = 0; i5 < size; i5++) {
+            View view2 = focusables.get(i5);
             int top = view2.getTop();
             int bottom = view2.getBottom();
-            if (i10 < bottom && top < i11) {
-                boolean z13 = i10 < top && bottom < i11;
+            if (i2 < bottom && top < i3) {
+                boolean z4 = i2 < top && bottom < i3;
                 if (view == null) {
                     view = view2;
-                    z12 = z13;
+                    z3 = z4;
                 } else {
-                    boolean z14 = (z11 && top < view.getTop()) || (!z11 && bottom > view.getBottom());
-                    if (z12) {
-                        if (z13) {
-                            if (!z14) {
-                            }
-                            view = view2;
+                    boolean z5 = !z2 ? bottom <= view.getBottom() : top >= view.getTop();
+                    if (!z3) {
+                        if (z4) {
+                            z3 = true;
+                        } else if (!z5) {
                         }
-                    } else if (z13) {
                         view = view2;
-                        z12 = true;
-                    } else {
-                        if (!z14) {
+                    } else if (z4) {
+                        if (!z5) {
                         }
                         view = view2;
                     }
@@ -1571,120 +1577,118 @@ public class NestedScrollView extends FrameLayout implements l {
             }
         }
         View view3 = view == null ? this : view;
-        if (i10 < scrollY || i11 > i12) {
-            x(z11 ? i10 - scrollY : i11 - i12, -1, null, 0, 1, true);
-            z10 = true;
+        if (i2 < scrollY || i3 > i4) {
+            x(z2 ? i2 - scrollY : i3 - i4, -1, null, 0, 1, true);
+            z = true;
         } else {
-            z10 = false;
+            z = false;
         }
         if (view3 != findFocus()) {
-            view3.requestFocus(i7);
+            view3.requestFocus(i);
         }
-        return z10;
+        return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x011d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int x(int i7, int i10, MotionEvent motionEvent, int i11, int i12, boolean z10) {
-        int i13;
-        int i14;
-        boolean z11;
-        boolean z12;
+    public final int x(int i, int i2, MotionEvent motionEvent, int i3, int i4, boolean z) {
+        int i5;
+        int i6;
+        boolean z2;
+        boolean z3;
         VelocityTracker velocityTracker;
-        if (i12 == 1) {
-            A(2, i12);
+        if (i4 == 1) {
+            A(2, i4);
         }
-        boolean d = d(0, i7, i12, this.L, this.K);
+        boolean d = d(0, i, i4, this.L, this.K);
         int[] iArr = this.K;
         int[] iArr2 = this.L;
         if (d) {
-            i13 = i7 - iArr2[1];
-            i14 = iArr[1];
+            i5 = i - iArr2[1];
+            i6 = iArr[1];
         } else {
-            i13 = i7;
-            i14 = 0;
+            i5 = i;
+            i6 = 0;
         }
         int scrollY = getScrollY();
         int scrollRange = getScrollRange();
         int overScrollMode = getOverScrollMode();
-        boolean z13 = (overScrollMode == 0 || (overScrollMode == 1 && getScrollRange() > 0)) && !z10;
-        boolean z14 = u(i13, 0, scrollY, scrollRange) && !this.Q.f(i12);
+        boolean z4 = (overScrollMode == 0 || (overScrollMode == 1 && getScrollRange() > 0)) && !z;
+        boolean z5 = u(i5, 0, scrollY, scrollRange) && !this.Q.f(i4);
         int scrollY2 = getScrollY() - scrollY;
         if (motionEvent != null && scrollY2 != 0) {
-            getScrollFeedbackProvider().a.onScrollProgress(motionEvent.getDeviceId(), motionEvent.getSource(), i10, scrollY2);
+            getScrollFeedbackProvider().a.onScrollProgress(motionEvent.getDeviceId(), motionEvent.getSource(), i2, scrollY2);
         }
         iArr2[1] = 0;
-        e(0, scrollY2, 0, i13 - scrollY2, this.K, i12, iArr2);
-        int i15 = i14 + iArr[1];
-        int i16 = i13 - iArr2[1];
-        int i17 = scrollY + i16;
+        f(0, scrollY2, 0, i5 - scrollY2, this.K, i4, iArr2);
+        int i7 = i6 + iArr[1];
+        int i8 = i5 - iArr2[1];
+        int i9 = scrollY + i8;
         EdgeEffect edgeEffect = this.f;
         EdgeEffect edgeEffect2 = this.e;
-        if (i17 < 0) {
-            if (z13) {
-                pc.b(edgeEffect2, (-i16) / getHeight(), i11 / getWidth());
+        if (i9 < 0) {
+            if (z4) {
+                wee.b(edgeEffect2, (-i8) / getHeight(), i3 / getWidth());
                 if (motionEvent != null) {
-                    getScrollFeedbackProvider().a.onScrollLimit(motionEvent.getDeviceId(), motionEvent.getSource(), i10, true);
+                    getScrollFeedbackProvider().a.onScrollLimit(motionEvent.getDeviceId(), motionEvent.getSource(), i2, true);
                 }
                 if (!edgeEffect.isFinished()) {
                     edgeEffect.onRelease();
                 }
             }
-        } else if (i17 > scrollRange && z13) {
-            pc.b(edgeEffect, i16 / getHeight(), 1.0f - (i11 / getWidth()));
+        } else if (i9 > scrollRange && z4) {
+            wee.b(edgeEffect, i8 / getHeight(), 1.0f - (i3 / getWidth()));
             if (motionEvent != null) {
-                z11 = false;
-                getScrollFeedbackProvider().a.onScrollLimit(motionEvent.getDeviceId(), motionEvent.getSource(), i10, false);
+                z2 = false;
+                getScrollFeedbackProvider().a.onScrollLimit(motionEvent.getDeviceId(), motionEvent.getSource(), i2, false);
             } else {
-                z11 = false;
+                z2 = false;
             }
             if (!edgeEffect2.isFinished()) {
                 edgeEffect2.onRelease();
             }
             if (edgeEffect2.isFinished() || !edgeEffect.isFinished()) {
                 postInvalidateOnAnimation();
-                z12 = z11;
+                z3 = z2;
             } else {
-                z12 = z14;
+                z3 = z5;
             }
-            if (z12 && i12 == 0 && (velocityTracker = this.y) != null) {
+            if (z3 && i4 == 0 && (velocityTracker = this.y) != null) {
                 velocityTracker.clear();
             }
-            if (i12 == 1) {
-                C(i12);
+            if (i4 == 1) {
+                C(i4);
                 edgeEffect2.onRelease();
                 edgeEffect.onRelease();
             }
-            return i15;
+            return i7;
         }
-        z11 = false;
+        z2 = false;
         if (edgeEffect2.isFinished()) {
         }
         postInvalidateOnAnimation();
-        z12 = z11;
-        if (z12) {
+        z3 = z2;
+        if (z3) {
             velocityTracker.clear();
         }
-        if (i12 == 1) {
+        if (i4 == 1) {
         }
-        return i15;
+        return i7;
     }
 
-    public final boolean y(EdgeEffect edgeEffect, int i7) {
-        if (i7 > 0) {
+    public final boolean y(EdgeEffect edgeEffect, int i) {
+        if (i > 0) {
             return true;
         }
-        float a10 = pc.a(edgeEffect) * getHeight();
-        float abs = Math.abs(-i7) * 0.35f;
-        float f10 = this.a * 0.015f;
-        double log = Math.log(abs / f10);
-        double d = U;
-        return ((float) (Math.exp((d / (d - 1.0d)) * log) * ((double) f10))) < a10;
+        float a = wee.a(edgeEffect) * getHeight();
+        float abs = Math.abs(-i) * 0.35f;
+        float f = this.a * 0.015f;
+        return ((float) (Math.exp(1.7362676463664735d * Math.log((double) (abs / f))) * ((double) f))) < a;
     }
 
-    public final void z(int i7, int i10, boolean z10) {
+    public final void z(int i, int i2, boolean z) {
         if (getChildCount() == 0) {
             return;
         }
@@ -1694,8 +1698,8 @@ public class NestedScrollView extends FrameLayout implements l {
             int height = childAt.getHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
             int height2 = (getHeight() - getPaddingTop()) - getPaddingBottom();
             int scrollY = getScrollY();
-            this.d.startScroll(getScrollX(), scrollY, 0, Math.max(0, Math.min(i10 + scrollY, Math.max(0, height - height2))) - scrollY, ks.Z3);
-            if (z10) {
+            this.d.startScroll(getScrollX(), scrollY, 0, Math.max(0, Math.min(i2 + scrollY, Math.max(0, height - height2))) - scrollY, kk7.Y3);
+            if (z) {
                 A(2, 1);
             } else {
                 C(1);
@@ -1706,84 +1710,39 @@ public class NestedScrollView extends FrameLayout implements l {
             if (!this.d.isFinished()) {
                 a();
             }
-            scrollBy(i7, i10);
+            scrollBy(i, i2);
         }
         this.b = AnimationUtils.currentAnimationTimeMillis();
     }
 
-    public NestedScrollView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, org.telegram.messenger.beta.R.attr.nestedScrollViewStyle);
-    }
-
-    public NestedScrollView(Context context, AttributeSet attributeSet, int i7) {
-        super(context, attributeSet, i7);
-        EdgeEffect edgeEffect;
-        EdgeEffect edgeEffect2;
-        this.c = new Rect();
-        this.r = true;
-        this.s = false;
-        this.w = null;
-        this.x = false;
-        this.F = true;
-        this.J = -1;
-        this.K = new int[2];
-        this.L = new int[2];
-        this.T = new jm(getContext(), new aa(this, 22));
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 31) {
-            edgeEffect = c.a(context, attributeSet);
-        } else {
-            edgeEffect = new EdgeEffect(context);
-        }
-        this.e = edgeEffect;
-        if (i10 >= 31) {
-            edgeEffect2 = c.a(context, attributeSet);
-        } else {
-            edgeEffect2 = new EdgeEffect(context);
-        }
-        this.f = edgeEffect2;
-        this.a = e2.D(context.getResources().getDisplayMetrics().density, 160.0f, 386.0878f, 0.84f);
-        this.d = new OverScroller(getContext());
-        setFocusable(true);
-        setDescendantFocusability(262144);
-        setWillNotDraw(false);
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
-        this.G = viewConfiguration.getScaledTouchSlop();
-        this.H = viewConfiguration.getScaledMinimumFlingVelocity();
-        this.I = viewConfiguration.getScaledMaximumFlingVelocity();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, W, i7, 0);
-        setFillViewport(obtainStyledAttributes.getBoolean(0, false));
-        obtainStyledAttributes.recycle();
-        this.P = new r0();
-        this.Q = new j(this);
-        setNestedScrollingEnabled(true);
-        i0.j(this, V);
-    }
-
     @Override // android.view.ViewGroup
-    public final void addView(View view, int i7) {
+    public final void addView(View view, int i) {
         if (getChildCount() <= 0) {
-            super.addView(view, i7);
-            return;
+            super.addView(view, i);
+        } else {
+            sc8.j("ScrollView can host only one direct child");
         }
-        throw new IllegalStateException("ScrollView can host only one direct child");
     }
 
     @Override // android.view.ViewGroup, android.view.ViewManager
     public final void addView(View view, ViewGroup.LayoutParams layoutParams) {
         if (getChildCount() <= 0) {
             super.addView(view, layoutParams);
-            return;
+        } else {
+            sc8.j("ScrollView can host only one direct child");
         }
-        throw new IllegalStateException("ScrollView can host only one direct child");
     }
 
     @Override // android.view.ViewGroup
-    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
+    public final void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
         if (getChildCount() <= 0) {
-            super.addView(view, i7, layoutParams);
-            return;
+            super.addView(view, i, layoutParams);
+        } else {
+            sc8.j("ScrollView can host only one direct child");
         }
-        throw new IllegalStateException("ScrollView can host only one direct child");
+    }
+
+    public NestedScrollView(Context context) {
+        this(context, null);
     }
 }

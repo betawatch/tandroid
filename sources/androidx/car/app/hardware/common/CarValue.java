@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class CarValue<T> {
     public static final int STATUS_SUCCESS = 1;
@@ -24,10 +24,10 @@ public final class CarValue<T> {
     public static final CarValue<List<Float>> UNKNOWN_FLOAT_LIST = unknown();
     public static final CarValue<List<Integer>> UNKNOWN_INTEGER_LIST = unknown();
 
-    public CarValue(T t6, long j3, int i7) {
-        this.mValue = t6;
-        this.mTimestampMillis = j3;
-        this.mStatus = i7;
+    public CarValue(T t, long j, int i) {
+        this.mValue = t;
+        this.mTimestampMillis = j;
+        this.mStatus = i;
         this.mCarZones = Collections.singletonList(CarZone.CAR_ZONE_GLOBAL);
     }
 
@@ -74,10 +74,10 @@ public final class CarValue<T> {
         return "[value: " + this.mValue + ", timestamp: " + this.mTimestampMillis + ", Status: " + this.mStatus + ", CarZones: " + this.mCarZones + "]";
     }
 
-    public CarValue(T t6, long j3, int i7, List<CarZone> list) {
-        this.mValue = t6;
-        this.mTimestampMillis = j3;
-        this.mStatus = i7;
+    public CarValue(T t, long j, int i, List<CarZone> list) {
+        this.mValue = t;
+        this.mTimestampMillis = j;
+        this.mStatus = i;
         this.mCarZones = list;
     }
 

@@ -1,18 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import gd.g;
-import gd.k;
-import id.c;
 import java.util.Iterator;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzah extends j implements p {
+final class zzah extends ccb implements eq4 {
     Object zza;
     Object zzb;
     Object zzc;
@@ -22,26 +15,26 @@ final class zzah extends j implements p {
     final /* synthetic */ zzhk zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzah(zzxn zzxnVar, zzaj zzajVar, zzhk zzhkVar, c cVar) {
-        super(2, cVar);
+    public zzah(zzxn zzxnVar, zzaj zzajVar, zzhk zzhkVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zze = zzxnVar;
         this.zzf = zzajVar;
         this.zzg = zzhkVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzah(this.zze, this.zzf, this.zzg, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzah(this.zze, this.zzf, this.zzg, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzah) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzah) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00b2  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x00b2 -> B:5:0x0080). Please report as a decompilation issue!!! */
-    @Override // kd.a
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b4  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x00b4 -> B:5:0x0082). Please report as a decompilation issue!!! */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,44 +45,44 @@ final class zzah extends j implements p {
         zzxp zzxpVar;
         Iterator it2;
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zzd;
-        if (i7 == 0) {
-            c8.z.b(obj);
+        int i = this.zzd;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
             zzxn zzxnVar = this.zze;
             if (!zzxnVar.zzU()) {
-                return new g(c8.z.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new ta9(new sa9(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzk = zzxnVar.zzk();
             if (zzk.zzi().zzn()) {
-                return new g(c8.z.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new ta9(new sa9(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzaj zzajVar = this.zzf;
             zzajVar.zzb = zzk.zzi();
             list = zzajVar.zza;
             it = list.iterator();
         } else {
-            if (i7 == 1) {
+            if (i == 1) {
                 zzhkVar = (zzhk) this.zzc;
                 it2 = (Iterator) this.zzb;
                 zzxpVar = (zzxp) this.zza;
-                c8.z.b(obj);
+                qse.b(obj);
                 this.zza = zzxpVar;
                 this.zzb = it2;
                 this.zzc = null;
                 this.zzd = 2;
-                if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != aVar) {
+                if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != bx2Var) {
                     it = it2;
                     zzk = zzxpVar;
                 }
-                return aVar;
+                return bx2Var;
             }
             it = (Iterator) this.zzb;
             zzk = (zzxp) this.zza;
-            c8.z.b(obj);
+            qse.b(obj);
         }
         if (!it.hasNext()) {
-            return new g(k.a);
+            return new ta9(g5c.a);
         }
         zzar zzarVar = (zzar) it.next();
         zzhk zzhkVar2 = this.zzg;
@@ -98,7 +91,7 @@ final class zzah extends j implements p {
         this.zzc = zzhkVar2;
         this.zzd = 1;
         obj = zzarVar.zzd(zzk, this);
-        if (obj != aVar) {
+        if (obj != bx2Var) {
             zzxp zzxpVar2 = zzk;
             it2 = it;
             zzhkVar = zzhkVar2;
@@ -107,9 +100,9 @@ final class zzah extends j implements p {
             this.zzb = it2;
             this.zzc = null;
             this.zzd = 2;
-            if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != aVar) {
+            if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != bx2Var) {
             }
         }
-        return aVar;
+        return bx2Var;
     }
 }

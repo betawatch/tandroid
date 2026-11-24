@@ -7,10 +7,8 @@ import android.webkit.WebViewClient;
 import java.io.ByteArrayInputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import kotlin.jvm.internal.j;
-import zd.t;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzle extends WebViewClient {
     final /* synthetic */ zzly zza;
@@ -29,25 +27,25 @@ public final class zzle extends WebViewClient {
         zzmf zzmfVar;
         zzmfVar = this.zza.zzg;
         long zza = zzmfVar.zza(TimeUnit.MICROSECONDS);
-        int i7 = zzco.zza;
+        int i = zzco.zza;
         zzco.zza(zzcp.zzb.zza(), zza);
     }
 
     @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, int i7, String str, String str2) {
+    public final void onReceivedError(WebView webView, int i, String str, String str2) {
         Map map;
-        super.onReceivedError(webView, i7, str, str2);
+        super.onReceivedError(webView, i, str, str2);
         zzly zzlyVar = this.zza;
         zzce zzceVar = zzce.zzc;
         map = zzlyVar.zzc;
-        zzcd zzcdVar = (zzcd) map.get(Integer.valueOf(i7));
+        zzcd zzcdVar = (zzcd) map.get(Integer.valueOf(i));
         if (zzcdVar == null) {
             zzcdVar = zzcd.zzM;
         }
         zzcg zzcgVar = new zzcg(zzceVar, zzcdVar, null, null, 12, null);
         zzlyVar.zzz().hashCode();
         zzcgVar.getMessage();
-        ((t) zzlyVar.zzz()).Q(zzcgVar);
+        ((cp2) zzlyVar.zzz()).P(zzcgVar);
     }
 
     @Override // android.webkit.WebViewClient
@@ -55,14 +53,14 @@ public final class zzle extends WebViewClient {
         zzly zzlyVar = this.zza;
         Uri parse = Uri.parse(str);
         zzly.zzq(zzlyVar);
-        j.b(parse);
+        parse.getClass();
         if (!zzig.zzc(parse) || zzly.zzq(zzlyVar).zza(parse)) {
             return super.shouldInterceptRequest(webView, str);
         }
         zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzQ, null, null, 12, null);
         zzlyVar.zzz().hashCode();
         parse.toString();
-        ((t) zzlyVar.zzz()).Q(zzcgVar);
+        ((cp2) zzlyVar.zzz()).P(zzcgVar);
         return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
     }
 }

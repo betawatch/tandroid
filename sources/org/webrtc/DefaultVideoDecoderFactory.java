@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class DefaultVideoDecoderFactory implements VideoDecoderFactory {
     private final VideoDecoderFactory hardwareVideoDecoderFactory;
     private final VideoDecoderFactory platformSoftwareVideoDecoderFactory;
@@ -25,7 +25,7 @@ public class DefaultVideoDecoderFactory implements VideoDecoderFactory {
         if (createDecoder == null && (videoDecoderFactory = this.platformSoftwareVideoDecoderFactory) != null) {
             createDecoder = videoDecoderFactory.createDecoder(videoCodecInfo);
         }
-        return (createDecoder2 == null || createDecoder == null) ? createDecoder2 != null ? createDecoder2 : createDecoder : new VideoDecoderFallback(createDecoder, createDecoder2);
+        return createDecoder2 != null ? createDecoder != null ? new VideoDecoderFallback(createDecoder, createDecoder2) : createDecoder2 : createDecoder;
     }
 
     @Override // org.webrtc.VideoDecoderFactory

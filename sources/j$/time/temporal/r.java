@@ -1,6 +1,7 @@
 package j$.time.temporal;
 
-/* loaded from: classes2.dex */
-public final class r extends j$.time.b {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class r extends j$.time.c {
     private static final long serialVersionUID = -6158898438688206006L;
 }

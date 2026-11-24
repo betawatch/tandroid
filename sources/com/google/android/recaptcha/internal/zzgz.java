@@ -1,20 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import b7.h;
-import c8.y0;
-import hd.m;
-import hd.u;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
-import kotlin.jvm.internal.j;
-import wd.c;
-import zd.b0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -43,43 +36,43 @@ public final class zzgz implements zzgs {
         zzgo zzgoVar = this.zzc;
         if (zzgoVar != null) {
             List zzd = zzgoVar.zzd();
-            j.e(zzd, "<this>");
-            int i7 = 0;
+            zzd.getClass();
+            int i = 0;
             if ((zzd instanceof RandomAccess) && (zzd instanceof List)) {
                 List list = zzd;
                 int size = list.size();
                 arrayList = new ArrayList((size / 20) + (size % 20 == 0 ? 0 : 1));
-                for (int i10 = 0; i10 >= 0 && i10 < size; i10 += 20) {
-                    int i11 = size - i10;
-                    if (20 <= i11) {
-                        i11 = 20;
+                for (int i2 = 0; i2 >= 0 && i2 < size; i2 += 20) {
+                    int i3 = size - i2;
+                    if (20 <= i3) {
+                        i3 = 20;
                     }
-                    ArrayList arrayList2 = new ArrayList(i11);
-                    for (int i12 = 0; i12 < i11; i12++) {
-                        arrayList2.add(list.get(i12 + i10));
+                    ArrayList arrayList2 = new ArrayList(i3);
+                    for (int i4 = 0; i4 < i3; i4++) {
+                        arrayList2.add(list.get(i4 + i2));
                     }
                     arrayList.add(arrayList2);
                 }
             } else {
                 arrayList = new ArrayList();
-                Iterator iterator = zzd.iterator();
-                j.e(iterator, "iterator");
-                if (iterator.hasNext()) {
-                    u uVar = new u(iterator, null);
-                    c cVar = new c();
-                    cVar.c = y0.a(cVar, cVar, uVar);
-                    it = cVar;
+                Iterator it2 = zzd.iterator();
+                it2.getClass();
+                if (it2.hasNext()) {
+                    oja ojaVar = new oja(it2, null);
+                    o4a o4aVar = new o4a();
+                    o4aVar.c = ojaVar.create(o4aVar, o4aVar);
+                    it = o4aVar;
                 } else {
-                    it = m.a;
+                    it = b24.a;
                 }
                 while (it.hasNext()) {
                     arrayList.add((List) it.next());
                 }
             }
             int size2 = arrayList.size();
-            while (i7 < size2) {
-                Object obj = arrayList.get(i7);
-                i7++;
+            while (i < size2) {
+                Object obj = arrayList.get(i);
+                i++;
                 zzg((List) obj);
             }
         }
@@ -89,7 +82,7 @@ public final class zzgz implements zzgs {
         zzgo zzgoVar;
         zzzm zzk;
         int zzN;
-        int i7;
+        int i;
         zzwo zzi = zzwq.zzi();
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
@@ -98,7 +91,7 @@ public final class zzgz implements zzgs {
             try {
                 zzk = zzzm.zzk(zzpp.zzg().zzj(zzgpVar.zzc()));
                 zzN = zzk.zzN();
-                i7 = zzN - 1;
+                i = zzN - 1;
             } catch (Exception unused) {
                 zzgo zzgoVar2 = this.zzc;
                 if (zzgoVar2 != null) {
@@ -108,26 +101,25 @@ public final class zzgz implements zzgs {
             if (zzN == 0) {
                 throw null;
             }
-            if (i7 == 0) {
+            if (i == 0) {
                 zzi.zzq(zzk.zzf());
-            } else if (i7 == 1) {
+            } else if (i == 1) {
                 zzi.zzr(zzk.zzg());
-            } else if (i7 != 2) {
-                throw new androidx.car.app.j();
+            } else if (i != 2) {
+                throw new gp2();
             }
             arrayList.add(zzgpVar);
         }
-        if (zzi.zzf() + zzi.zze() == 0) {
-            return;
-        }
-        byte[] zzd = ((zzwq) zzi.zzk()).zzd();
-        try {
-            int i10 = zzby.zza;
-            if (!((zzha) h.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
-                return;
+        if (zzi.zzf() + zzi.zze() != 0) {
+            byte[] zzd = ((zzwq) zzi.zzk()).zzd();
+            try {
+                int i2 = zzby.zza;
+                if (!((zzha) cne.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+                    return;
+                }
+                zzgoVar.zza(arrayList);
+            } catch (Exception unused2) {
             }
-            zzgoVar.zza(arrayList);
-        } catch (Exception unused2) {
         }
     }
 
@@ -142,8 +134,8 @@ public final class zzgz implements zzgs {
     @Override // com.google.android.recaptcha.internal.zzgs
     public final void zza(zzzm zzzmVar) {
         try {
-            int i7 = zzby.zza;
-            b0.q(((zzcr) h.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
+            int i = zzby.zza;
+            ppd.b(((zzcr) cne.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

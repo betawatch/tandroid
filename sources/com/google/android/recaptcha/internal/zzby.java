@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import hd.r;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzby {
     public static final /* synthetic */ int zza = 0;
@@ -15,14 +14,14 @@ public final class zzby {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Map zzf() {
         Map map = zzc;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(r.b(map.size()));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(qi6.b(map.size()));
         for (Map.Entry entry : map.entrySet()) {
             linkedHashMap.put(entry.getKey(), ((zzbz) entry.getValue()).zzb());
         }
         return linkedHashMap;
     }
 
-    public final Object zzb(int i7) {
-        return this.zzd.get(Integer.valueOf(i7));
+    public final Object zzb(int i) {
+        return this.zzd.get(Integer.valueOf(i));
     }
 }

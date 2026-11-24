@@ -2,17 +2,17 @@ package androidx.car.app.model;
 
 import j$.time.Duration;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class DurationSpan extends CarSpan {
     private final long mDurationSeconds;
 
-    public DurationSpan(long j3) {
-        this.mDurationSeconds = j3;
+    private DurationSpan() {
+        this.mDurationSeconds = 0L;
     }
 
-    public static DurationSpan create(long j3) {
-        return new DurationSpan(j3);
+    public static DurationSpan create(long j) {
+        return new DurationSpan(j);
     }
 
     public boolean equals(Object obj) {
@@ -27,19 +27,19 @@ public final class DurationSpan extends CarSpan {
     }
 
     public int hashCode() {
-        long j3 = this.mDurationSeconds;
-        return (int) (j3 ^ (j3 >>> 32));
+        long j = this.mDurationSeconds;
+        return (int) (j ^ (j >>> 32));
     }
 
     public String toString() {
-        return a8.p0.r(new StringBuilder("[seconds: "), this.mDurationSeconds, "]");
+        return ls6.p(new StringBuilder("[seconds: "), this.mDurationSeconds, "]");
     }
 
     public static DurationSpan create(Duration duration) {
-        return j.a(duration);
+        return mr3.a(duration);
     }
 
-    private DurationSpan() {
-        this.mDurationSeconds = 0L;
+    public DurationSpan(long j) {
+        this.mDurationSeconds = j;
     }
 }

@@ -3,7 +3,8 @@ package j$.time.format;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class e implements f {
     public final f[] a;
     public final boolean b;
@@ -12,62 +13,65 @@ public final class e implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(List list, boolean z10) {
-        this((f[]) r2.toArray(new f[r2.size()]), z10);
+    public e(List list, boolean z) {
+        this((f[]) r2.toArray(new f[r2.size()]), z);
         ArrayList arrayList = (ArrayList) list;
     }
 
-    public e(f[] fVarArr, boolean z10) {
-        this.a = fVarArr;
-        this.b = z10;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0026, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x001c, code lost:
     
-        return true;
+        r8.setLength(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x002f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x001f, code lost:
     
-        return true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x002c, code lost:
-    
-        if (r2 != false) goto L11;
+        if (r2 == false) goto L15;
      */
     @Override // j$.time.format.f
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean j(r rVar, StringBuilder sb2) {
-        int length = sb2.length();
-        boolean z10 = this.b;
-        if (z10) {
+    public final boolean j(r rVar, StringBuilder sb) {
+        int length = sb.length();
+        boolean z = this.b;
+        if (z) {
             rVar.c++;
         }
         try {
-            for (f fVar : this.a) {
-                if (!fVar.j(rVar, sb2)) {
-                    sb2.setLength(length);
+            f[] fVarArr = this.a;
+            int length2 = fVarArr.length;
+            int i = 0;
+            while (true) {
+                if (i < length2) {
+                    if (!fVarArr[i].j(rVar, sb)) {
+                        break;
+                    }
+                    i++;
                 }
             }
+            return true;
         } finally {
-            if (z10) {
+            if (z) {
                 rVar.c--;
             }
         }
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         f[] fVarArr = this.a;
         if (fVarArr != null) {
-            boolean z10 = this.b;
-            sb2.append(z10 ? "[" : "(");
+            boolean z = this.b;
+            sb.append(z ? "[" : "(");
             for (f fVar : fVarArr) {
-                sb2.append(fVar);
+                sb.append(fVar);
             }
-            sb2.append(z10 ? "]" : ")");
+            sb.append(z ? "]" : ")");
         }
-        return sb2.toString();
+        return sb.toString();
+    }
+
+    public e(f[] fVarArr, boolean z) {
+        this.a = fVarArr;
+        this.b = z;
     }
 }

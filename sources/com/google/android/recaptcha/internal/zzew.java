@@ -1,16 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import kotlin.jvm.internal.r;
-import rd.p;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzew extends j implements p {
+final class zzew extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ long zzc;
@@ -19,74 +11,74 @@ final class zzew extends j implements p {
     final /* synthetic */ zzye zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzew(long j3, zzfp zzfpVar, zzgr zzgrVar, zzye zzyeVar, c cVar) {
-        super(2, cVar);
-        this.zzc = j3;
+    public zzew(long j, zzfp zzfpVar, zzgr zzgrVar, zzye zzyeVar, fw2 fw2Var) {
+        super(2, fw2Var);
+        this.zzc = j;
         this.zzd = zzfpVar;
         this.zze = zzgrVar;
         this.zzf = zzyeVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzew(this.zzc, this.zzd, this.zze, this.zzf, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzew(this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzew) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzew) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0055  */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        r rVar;
-        r rVar2;
-        long j3;
+        c59 c59Var;
+        c59 c59Var2;
+        long j;
         zzev zzevVar;
         Object zzc;
         zzcg zzcgVar;
-        a aVar = a.a;
         if (this.zzb != 0) {
-            rVar2 = (r) this.zza;
+            c59Var2 = (c59) this.zza;
             try {
-                c8.z.b(obj);
+                qse.b(obj);
                 zzc = obj;
-            } catch (Exception e10) {
-                e = e10;
-                zzcgVar = (zzcg) rVar2.a;
+            } catch (Exception e) {
+                e = e;
+                zzcgVar = (zzcg) c59Var2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
                 }
                 throw zzcgVar;
             }
         } else {
-            c8.z.b(obj);
-            r rVar3 = new r();
+            qse.b(obj);
+            c59 c59Var3 = new c59();
             try {
-                j3 = this.zzc;
-                zzevVar = new zzev(this.zze, this.zzd, this.zzf, rVar3, null);
-                rVar = rVar3;
-            } catch (Exception e11) {
-                e = e11;
-                rVar = rVar3;
+                j = this.zzc;
+                zzevVar = new zzev(this.zze, this.zzd, this.zzf, c59Var3, null);
+                c59Var = c59Var3;
+            } catch (Exception e2) {
+                e = e2;
+                c59Var = c59Var3;
             }
             try {
-                this.zza = rVar;
+                this.zza = c59Var;
                 this.zzb = 1;
-                zzc = zzcx.zzc(j3, 20, 100L, 1000L, 2.0d, zzevVar, this);
-                if (zzc == aVar) {
-                    return aVar;
+                zzc = zzcx.zzc(j, 20, 100L, 1000L, 2.0d, zzevVar, this);
+                bx2 bx2Var = bx2.a;
+                if (zzc == bx2Var) {
+                    return bx2Var;
                 }
-                rVar2 = rVar;
-            } catch (Exception e12) {
-                e = e12;
-                rVar2 = rVar;
-                zzcgVar = (zzcg) rVar2.a;
+                c59Var2 = c59Var;
+            } catch (Exception e3) {
+                e = e3;
+                c59Var2 = c59Var;
+                zzcgVar = (zzcg) c59Var2.a;
                 if (zzcgVar != null) {
                 }
             }

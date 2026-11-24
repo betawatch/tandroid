@@ -3,7 +3,8 @@ package j$.util;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class r implements Spliterator {
     public final Spliterator a;
 
@@ -12,15 +13,40 @@ public final class r implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        Objects.requireNonNull(consumer);
-        return this.a.tryAdvance(new j$.time.t(1, consumer));
+    public final int characteristics() {
+        return this.a.characteristics();
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.a.estimateSize();
     }
 
     @Override // j$.util.Spliterator
     public final void forEachRemaining(Consumer consumer) {
         Objects.requireNonNull(consumer);
-        this.a.forEachRemaining(new j$.time.t(1, consumer));
+        this.a.forEachRemaining(new j$.time.v((byte) 1, consumer));
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        return this.a.getComparator();
+    }
+
+    @Override // j$.util.Spliterator
+    public final long getExactSizeIfKnown() {
+        return this.a.getExactSizeIfKnown();
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        Objects.requireNonNull(consumer);
+        return this.a.tryAdvance(new j$.time.v((byte) 1, consumer));
     }
 
     @Override // j$.util.Spliterator
@@ -30,30 +56,5 @@ public final class r implements Spliterator {
             return null;
         }
         return new r(trySplit);
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.a.estimateSize();
-    }
-
-    @Override // j$.util.Spliterator
-    public final long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.a.characteristics();
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean hasCharacteristics(int i7) {
-        return this.a.hasCharacteristics(i7);
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        return this.a.getComparator();
     }
 }

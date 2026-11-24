@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Purchase {
     public final String a;
@@ -26,25 +26,25 @@ public final class Purchase {
         return optString;
     }
 
-    public final ArrayList b() {
+    public final String b() {
+        JSONObject jSONObject = this.c;
+        return jSONObject.optString("token", jSONObject.optString("purchaseToken"));
+    }
+
+    public final ArrayList c() {
         ArrayList arrayList = new ArrayList();
         JSONObject jSONObject = this.c;
         if (jSONObject.has("productIds")) {
             JSONArray optJSONArray = jSONObject.optJSONArray("productIds");
             if (optJSONArray != null) {
-                for (int i7 = 0; i7 < optJSONArray.length(); i7++) {
-                    arrayList.add(optJSONArray.optString(i7));
+                for (int i = 0; i < optJSONArray.length(); i++) {
+                    arrayList.add(optJSONArray.optString(i));
                 }
             }
         } else if (jSONObject.has("productId")) {
             arrayList.add(jSONObject.optString("productId"));
         }
         return arrayList;
-    }
-
-    public final String c() {
-        JSONObject jSONObject = this.c;
-        return jSONObject.optString("token", jSONObject.optString("purchaseToken"));
     }
 
     public final boolean equals(Object obj) {

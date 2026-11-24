@@ -1,5 +1,27 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public interface c2 extends d2 {
+import j$.util.function.IntConsumer$-CC;
+import java.util.function.IntConsumer;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class c2 implements IntConsumer {
+    public final /* synthetic */ byte a;
+
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i) {
+        byte b = this.a;
+    }
+
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        switch (this.a) {
+        }
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
+    }
+
+    private final void accept$j$$util$stream$Node$OfInt$0(int i) {
+    }
+
+    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfInt$0(int i) {
+    }
 }

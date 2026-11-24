@@ -1,8 +1,6 @@
 package androidx.media3.decoder.ffmpeg;
 
-import e2.m0;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class FfmpegLibrary {
     public static String a;
@@ -10,7 +8,7 @@ public final class FfmpegLibrary {
     public static String c;
 
     static {
-        m0.a("media3.decoder.ffmpeg");
+        cr6.a("media3.decoder.ffmpeg");
         b = -1;
     }
 
@@ -26,10 +24,13 @@ public final class FfmpegLibrary {
             case "video/3gpp":
                 return "h263";
             case "video/av01":
-                if (c == null) {
-                    c = ffmpegGetAv1DecoderName();
+                String str2 = c;
+                if (str2 != null) {
+                    return str2;
                 }
-                return c;
+                String ffmpegGetAv1DecoderName = ffmpegGetAv1DecoderName();
+                c = ffmpegGetAv1DecoderName;
+                return ffmpegGetAv1DecoderName;
             case "video/divx":
             case "video/mp4v-es":
                 return "mpeg4";
@@ -95,28 +96,34 @@ public final class FfmpegLibrary {
     }
 
     public static int b() {
-        if (b == -1) {
-            b = ffmpegGetInputBufferPaddingSize();
+        int i = b;
+        if (i != -1) {
+            return i;
         }
-        return b;
+        int ffmpegGetInputBufferPaddingSize = ffmpegGetInputBufferPaddingSize();
+        b = ffmpegGetInputBufferPaddingSize;
+        return ffmpegGetInputBufferPaddingSize;
     }
 
     public static String c() {
-        if (a == null) {
-            a = ffmpegGetVersion();
+        String str = a;
+        if (str != null) {
+            return str;
         }
-        return a;
+        String ffmpegGetVersion = ffmpegGetVersion();
+        a = ffmpegGetVersion;
+        return ffmpegGetVersion;
     }
 
     public static boolean d(String str) {
-        String a10;
-        if (str == null || (a10 = a(str)) == null) {
+        String a2;
+        if (str == null || (a2 = a(str)) == null) {
             return false;
         }
-        if (ffmpegHasDecoder(a10)) {
+        if (ffmpegHasDecoder(a2)) {
             return true;
         }
-        h2.a.l("FfmpegLibrary", "No " + a10 + " decoder available. Check the FFmpeg build configuration.");
+        lad.f("FfmpegLibrary", "No " + a2 + " decoder available. Check the FFmpeg build configuration.");
         return false;
     }
 

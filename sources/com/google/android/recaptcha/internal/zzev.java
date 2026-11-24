@@ -1,57 +1,57 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import kotlin.jvm.internal.r;
-import rd.l;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzev extends j implements l {
+final class zzev extends ccb implements qp4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzgr zzc;
     final /* synthetic */ zzfp zzd;
     final /* synthetic */ zzye zze;
-    final /* synthetic */ r zzf;
+    final /* synthetic */ c59 zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzev(zzgr zzgrVar, zzfp zzfpVar, zzye zzyeVar, r rVar, c cVar) {
-        super(1, cVar);
+    public zzev(zzgr zzgrVar, zzfp zzfpVar, zzye zzyeVar, c59 c59Var, fw2 fw2Var) {
+        super(1, fw2Var);
         this.zzc = zzgrVar;
         this.zzd = zzfpVar;
         this.zze = zzyeVar;
-        this.zzf = rVar;
+        this.zzf = c59Var;
     }
 
-    @Override // kd.a
-    public final c create(c cVar) {
-        return new zzev(this.zzc, this.zzd, this.zze, this.zzf, cVar);
+    @Override // of0
+    public final fw2 create(fw2 fw2Var) {
+        return new zzev(this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
     }
 
-    @Override // rd.l
+    @Override // qp4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzev) create((c) obj)).invokeSuspend(k.a);
+        return ((zzev) create((fw2) obj)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0040, code lost:
     
-        if (r6 != r0) goto L15;
+        if (r6 != r3) goto L15;
      */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0045, code lost:
+    
+        return r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x002f, code lost:
+    
+        if (r6 != r3) goto L13;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        a aVar = a.a;
-        int i7 = this.zzb;
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzgrVar = this.zzc;
                 zzfp zzfpVar = this.zzd;
                 zzye zzyeVar = this.zze;
@@ -59,23 +59,19 @@ final class zzev extends j implements l {
                 this.zzb = 1;
                 obj = new zzhf(48, new zzes(zzfpVar, zzyeVar, null), null);
             } else {
-                if (i7 != 1) {
-                    z.b(obj);
+                if (i != 1) {
+                    qse.b(obj);
                     return (zzyg) obj;
                 }
                 zzgrVar = (zzgr) this.zza;
-                z.b(obj);
+                qse.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
-            if (obj == aVar) {
-                return aVar;
-            }
-            return (zzyg) obj;
-        } catch (zzcg e10) {
-            this.zzf.a = e10;
-            throw e10;
+        } catch (zzcg e) {
+            this.zzf.a = e;
+            throw e;
         }
     }
 }

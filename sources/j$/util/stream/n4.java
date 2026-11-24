@@ -1,87 +1,89 @@
 package j$.util.stream;
 
 import j$.util.function.Consumer$-CC;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
-import java.util.function.LongBinaryOperator;
-import java.util.function.LongConsumer;
+import java.util.function.IntBinaryOperator;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public final class n4 implements o4, i5 {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class n4 implements r4, l5 {
     public boolean a;
-    public long b;
-    public final /* synthetic */ LongBinaryOperator c;
+    public int b;
+    public final /* synthetic */ IntBinaryOperator c;
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    public n4(IntBinaryOperator intBinaryOperator) {
+        this.c = intBinaryOperator;
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        x((Long) obj);
+    @Override // j$.util.stream.n5
+    public final void accept(int i) {
+        if (!this.a) {
+            this.b = this.c.applyAsInt(this.b, i);
+        } else {
+            this.a = false;
+            this.b = i;
+        }
     }
 
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return this.a ? j$.util.c0.c : new j$.util.c0(this.b);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        this.a = true;
+        this.b = 0;
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
+    @Override // j$.util.stream.l5
+    public final /* synthetic */ void o(Integer num) {
+        w3.g(this, num);
+    }
+
+    @Override // j$.util.stream.n5
+    public final boolean q() {
         return false;
     }
 
-    @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
-    }
-
-    public n4(LongBinaryOperator longBinaryOperator) {
-        this.c = longBinaryOperator;
-    }
-
-    @Override // j$.util.stream.o4
-    public final void u(o4 o4Var) {
-        n4 n4Var = (n4) o4Var;
+    @Override // j$.util.stream.r4
+    public final void w(r4 r4Var) {
+        n4 n4Var = (n4) r4Var;
         if (n4Var.a) {
             return;
         }
         accept(n4Var.b);
     }
 
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.a = true;
-        this.b = 0L;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
-    @Override // j$.util.stream.j5
-    public final void accept(long j3) {
-        if (this.a) {
-            this.a = false;
-            this.b = j3;
-        } else {
-            this.b = this.c.applyAsLong(this.b, j3);
-        }
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(long j) {
+        w3.l();
+        throw null;
     }
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        return this.a ? j$.util.d0.c : new j$.util.d0(this.b);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        o((Integer) obj);
+    }
+
+    @Override // j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w3.d();
+        throw null;
+    }
+
+    @Override // j$.util.stream.n5
+    public final void end() {
     }
 }

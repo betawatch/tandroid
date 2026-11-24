@@ -1,24 +1,67 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public final class u0 extends d5 {
-    public final /* synthetic */ int b;
+import j$.util.Spliterator;
+import java.util.concurrent.CountedCompleter;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u0(int i7, j5 j5Var) {
-        super(j5Var);
-        this.b = i7;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class u0 extends CountedCompleter {
+    public Spliterator a;
+    public final n5 b;
+    public final a c;
+    public long d;
+
+    public u0(u0 u0Var, Spliterator spliterator) {
+        super(u0Var);
+        this.a = spliterator;
+        this.b = u0Var.b;
+        this.d = u0Var.d;
+        this.c = u0Var.c;
     }
 
-    @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        switch (this.b) {
-            case 0:
-                this.a.accept(i7);
-                break;
-            default:
-                this.a.accept(i7);
-                break;
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.a;
+        long estimateSize = spliterator.estimateSize();
+        long j = this.d;
+        if (j == 0) {
+            j = d.e(estimateSize);
+            this.d = j;
         }
+        boolean n = b7.SHORT_CIRCUIT.n(this.c.f);
+        n5 n5Var = this.b;
+        boolean z = false;
+        while (true) {
+            if (n && n5Var.q()) {
+                break;
+            }
+            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
+                break;
+            }
+            u0 u0Var = new u0(this, trySplit);
+            this.addToPendingCount(1);
+            if (z) {
+                spliterator = trySplit;
+            } else {
+                u0Var = this;
+                this = u0Var;
+            }
+            z = !z;
+            this.fork();
+            this = u0Var;
+            estimateSize = spliterator.estimateSize();
+        }
+        this.c.z(spliterator, n5Var);
+        this.a = null;
+        this.propagateCompletion();
+    }
+
+    public u0(a aVar, Spliterator spliterator, n5 n5Var) {
+        super(null);
+        this.b = n5Var;
+        this.c = aVar;
+        this.a = spliterator;
+        this.d = 0L;
     }
 }

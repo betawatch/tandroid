@@ -4,17 +4,17 @@ import android.os.RemoteException;
 import androidx.car.app.media.ICarAudioCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class CarAudioCallbackDelegate {
     private final ICarAudioCallback mCallback;
 
-    private CarAudioCallbackDelegate(a aVar) {
-        this.mCallback = new CarAudioCallbackStub(aVar);
+    private CarAudioCallbackDelegate(fc1 fc1Var) {
+        this.mCallback = new CarAudioCallbackStub(fc1Var);
     }
 
-    public static CarAudioCallbackDelegate create(a aVar) {
-        return new CarAudioCallbackDelegate(aVar);
+    public static CarAudioCallbackDelegate create(fc1 fc1Var) {
+        return new CarAudioCallbackDelegate(fc1Var);
     }
 
     public void onStopRecording() {
@@ -22,17 +22,17 @@ public class CarAudioCallbackDelegate {
             ICarAudioCallback iCarAudioCallback = this.mCallback;
             Objects.requireNonNull(iCarAudioCallback);
             iCarAudioCallback.onStopRecording();
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+        } catch (RemoteException e) {
+            sdb.b(e);
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class CarAudioCallbackStub extends ICarAudioCallback.Stub {
-        private final a mCarAudioCallback;
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class CarAudioCallbackStub extends ICarAudioCallback.Stub {
+        private final fc1 mCarAudioCallback;
 
-        public CarAudioCallbackStub(a aVar) {
-            this.mCarAudioCallback = aVar;
+        public CarAudioCallbackStub() {
+            this.mCarAudioCallback = null;
         }
 
         @Override // androidx.car.app.media.ICarAudioCallback
@@ -40,8 +40,8 @@ public class CarAudioCallbackDelegate {
             Objects.requireNonNull(this.mCarAudioCallback);
         }
 
-        public CarAudioCallbackStub() {
-            this.mCarAudioCallback = null;
+        public CarAudioCallbackStub(fc1 fc1Var) {
+            this.mCarAudioCallback = fc1Var;
         }
     }
 

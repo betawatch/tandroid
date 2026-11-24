@@ -1,14 +1,14 @@
 package org.telegram.messenger.video;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class Sample {
     private long offset;
     private long size;
 
-    public Sample(long j3, long j10) {
-        this.offset = j3;
-        this.size = j10;
+    public Sample(long j, long j2) {
+        this.offset = j;
+        this.size = j2;
     }
 
     public long getOffset() {

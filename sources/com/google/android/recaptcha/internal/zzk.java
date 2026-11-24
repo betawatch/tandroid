@@ -1,23 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import gd.f;
-import gd.g;
-import gd.k;
-import id.c;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.b0;
-import zd.e0;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzk extends j implements p {
+final class zzk extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzq zzb;
     final /* synthetic */ String zzc;
@@ -26,45 +16,45 @@ final class zzk extends j implements p {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzk(zzq zzqVar, String str, zzgr zzgrVar, long j3, c cVar) {
-        super(2, cVar);
+    public zzk(zzq zzqVar, String str, zzgr zzgrVar, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzqVar;
         this.zzc = str;
         this.zzd = zzgrVar;
-        this.zze = j3;
+        this.zze = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzk zzkVar = new zzk(this.zzb, this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzk zzkVar = new zzk(this.zzb, this.zzc, this.zzd, this.zze, fw2Var);
         zzkVar.zzf = obj;
         return zzkVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzk) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzk) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zza;
-        c8.z.b(obj);
-        if (i7 == 0) {
-            z zVar = (z) this.zzf;
+        int i = this.zza;
+        qse.b(obj);
+        if (i == 0) {
+            ax2 ax2Var = (ax2) this.zzf;
             ArrayList arrayList = new ArrayList();
             for (zzg zzgVar : this.zzb.zzd()) {
                 if (zzgVar.zzi()) {
-                    arrayList.add(b0.c(zVar, new zzj(this.zzd, zzgVar, this.zzc, this.zze, null)));
+                    arrayList.add(ppd.a(ax2Var, new zzj(this.zzd, zzgVar, this.zzc, this.zze, null)));
                 }
             }
-            e0[] e0VarArr = (e0[]) arrayList.toArray(new e0[0]);
-            e0[] e0VarArr2 = (e0[]) Arrays.copyOf(e0VarArr, e0VarArr.length);
+            zc3[] zc3VarArr = (zc3[]) arrayList.toArray(new zc3[0]);
+            zc3[] zc3VarArr2 = (zc3[]) Arrays.copyOf(zc3VarArr, zc3VarArr.length);
             this.zza = 1;
-            obj = b0.d(e0VarArr2, this);
-            if (obj == aVar) {
-                return aVar;
+            obj = xmd.a(zc3VarArr2, this);
+            bx2 bx2Var = bx2.a;
+            if (obj == bx2Var) {
+                return bx2Var;
             }
         }
         String str = this.zzc;
@@ -72,8 +62,8 @@ final class zzk extends j implements p {
         zzf.zze(str);
         Iterator it = ((List) obj).iterator();
         while (it.hasNext()) {
-            Object obj2 = ((g) it.next()).a;
-            if (!(obj2 instanceof f)) {
+            Object obj2 = ((ta9) it.next()).a;
+            if (!(obj2 instanceof sa9)) {
                 zzf.zzh((zzxx) obj2);
             }
         }

@@ -1,105 +1,22 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
 import j$.util.Spliterator;
-import java.util.Arrays;
+import j$.util.Spliterators;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
-import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public class z2 implements a2 {
-    public final int[] a;
-    public int b;
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.T(this, j3, j10);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        t3.Q(this, consumer);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ Object[] g(IntFunction intFunction) {
-        return t3.L(this, intFunction);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ int h() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i7) {
-        a(i7);
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i7) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i7) {
-        t3.N(this, (Integer[]) objArr, i7);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void c(int i7, Object obj) {
-        int i10 = this.b;
-        System.arraycopy(this.a, 0, (int[]) obj, i7, i10);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void d(Object obj) {
-        IntConsumer intConsumer = (IntConsumer) obj;
-        for (int i7 = 0; i7 < this.b; i7++) {
-            intConsumer.accept(this.a[i7]);
-        }
-    }
-
-    public z2(long j3) {
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.a = new int[(int) j3];
-        this.b = 0;
-    }
-
-    public z2(int[] iArr) {
-        this.a = iArr;
-        this.b = iArr.length;
-    }
-
-    @Override // j$.util.stream.e2
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class z2 extends a3 {
+    @Override // j$.util.stream.h2
     public final Spliterator spliterator() {
-        return DesugarArrays.b(this.a, 0, this.b);
+        return Spliterators.a;
     }
 
-    @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final j$.util.d1 spliterator() {
-        return DesugarArrays.b(this.a, 0, this.b);
+    @Override // j$.util.stream.h2
+    public final /* bridge */ /* synthetic */ void forEach(Consumer consumer) {
     }
 
-    @Override // j$.util.stream.d2
-    public final Object b() {
-        int[] iArr = this.a;
-        int length = iArr.length;
-        int i7 = this.b;
-        return length == i7 ? iArr : Arrays.copyOf(iArr, i7);
-    }
-
-    @Override // j$.util.stream.e2
-    public final long count() {
-        return this.b;
-    }
-
-    public String toString() {
-        int[] iArr = this.a;
-        return String.format("IntArrayNode[%d][%s]", Integer.valueOf(iArr.length - this.b), Arrays.toString(iArr));
+    @Override // j$.util.stream.h2
+    public final /* bridge */ /* synthetic */ void f(Object[] objArr, int i) {
     }
 }

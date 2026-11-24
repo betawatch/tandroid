@@ -1,9 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzuw {
     private static final zzuw zza = new zzuw(0, new int[0], new Object[0], false);
@@ -13,12 +12,12 @@ public final class zzuw {
     private int zze;
     private boolean zzf;
 
-    private zzuw(int i7, int[] iArr, Object[] objArr, boolean z10) {
+    private zzuw(int i, int[] iArr, Object[] objArr, boolean z) {
         this.zze = -1;
-        this.zzb = i7;
+        this.zzb = i;
         this.zzc = iArr;
         this.zzd = objArr;
-        this.zzf = z10;
+        this.zzf = z;
     }
 
     public static zzuw zzc() {
@@ -26,31 +25,31 @@ public final class zzuw {
     }
 
     public static zzuw zze(zzuw zzuwVar, zzuw zzuwVar2) {
-        int i7 = zzuwVar.zzb + zzuwVar2.zzb;
-        int[] copyOf = Arrays.copyOf(zzuwVar.zzc, i7);
+        int i = zzuwVar.zzb + zzuwVar2.zzb;
+        int[] copyOf = Arrays.copyOf(zzuwVar.zzc, i);
         System.arraycopy(zzuwVar2.zzc, 0, copyOf, zzuwVar.zzb, zzuwVar2.zzb);
-        Object[] copyOf2 = Arrays.copyOf(zzuwVar.zzd, i7);
+        Object[] copyOf2 = Arrays.copyOf(zzuwVar.zzd, i);
         System.arraycopy(zzuwVar2.zzd, 0, copyOf2, zzuwVar.zzb, zzuwVar2.zzb);
-        return new zzuw(i7, copyOf, copyOf2, true);
+        return new zzuw(i, copyOf, copyOf2, true);
     }
 
     public static zzuw zzf() {
         return new zzuw(0, new int[8], new Object[8], true);
     }
 
-    private final void zzm(int i7) {
+    private final void zzm(int i) {
         int[] iArr = this.zzc;
-        if (i7 > iArr.length) {
-            int i10 = this.zzb;
-            int i11 = (i10 / 2) + i10;
-            if (i11 >= i7) {
-                i7 = i11;
+        if (i > iArr.length) {
+            int i2 = this.zzb;
+            int i3 = (i2 / 2) + i2;
+            if (i3 >= i) {
+                i = i3;
             }
-            if (i7 < 8) {
-                i7 = 8;
+            if (i < 8) {
+                i = 8;
             }
-            this.zzc = Arrays.copyOf(iArr, i7);
-            this.zzd = Arrays.copyOf(this.zzd, i7);
+            this.zzc = Arrays.copyOf(iArr, i);
+            this.zzd = Arrays.copyOf(this.zzd, i);
         }
     }
 
@@ -62,113 +61,111 @@ public final class zzuw {
             return false;
         }
         zzuw zzuwVar = (zzuw) obj;
-        int i7 = this.zzb;
-        if (i7 == zzuwVar.zzb) {
+        int i = this.zzb;
+        if (i == zzuwVar.zzb) {
             int[] iArr = this.zzc;
             int[] iArr2 = zzuwVar.zzc;
-            int i10 = 0;
+            int i2 = 0;
             while (true) {
-                if (i10 >= i7) {
+                if (i2 >= i) {
                     Object[] objArr = this.zzd;
                     Object[] objArr2 = zzuwVar.zzd;
-                    int i11 = this.zzb;
-                    for (int i12 = 0; i12 < i11; i12++) {
-                        if (objArr[i12].equals(objArr2[i12])) {
+                    int i3 = this.zzb;
+                    for (int i4 = 0; i4 < i3; i4++) {
+                        if (objArr[i4].equals(objArr2[i4])) {
                         }
                     }
                     return true;
                 }
-                if (iArr[i10] != iArr2[i10]) {
+                if (iArr[i2] != iArr2[i2]) {
                     break;
                 }
-                i10++;
+                i2++;
             }
         }
         return false;
     }
 
     public final int hashCode() {
-        int i7 = this.zzb;
-        int i10 = i7 + 527;
+        int i = this.zzb;
+        int i2 = i + 527;
         int[] iArr = this.zzc;
-        int i11 = 17;
-        int i12 = 17;
-        for (int i13 = 0; i13 < i7; i13++) {
-            i12 = (i12 * 31) + iArr[i13];
+        int i3 = 17;
+        int i4 = 17;
+        for (int i5 = 0; i5 < i; i5++) {
+            i4 = (i4 * 31) + iArr[i5];
         }
-        int i14 = ((i10 * 31) + i12) * 31;
+        int i6 = ((i2 * 31) + i4) * 31;
         Object[] objArr = this.zzd;
-        int i15 = this.zzb;
-        for (int i16 = 0; i16 < i15; i16++) {
-            i11 = (i11 * 31) + objArr[i16].hashCode();
+        int i7 = this.zzb;
+        for (int i8 = 0; i8 < i7; i8++) {
+            i3 = (i3 * 31) + objArr[i8].hashCode();
         }
-        return i14 + i11;
+        return i6 + i3;
     }
 
     public final int zza() {
         int zzA;
         int zzB;
         int zzA2;
-        int i7 = this.zze;
-        if (i7 != -1) {
-            return i7;
+        int i = this.zze;
+        if (i != -1) {
+            return i;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.zzb; i11++) {
-            int i12 = this.zzc[i11];
-            int i13 = i12 >>> 3;
-            int i14 = i12 & 7;
-            if (i14 != 0) {
-                if (i14 == 1) {
-                    ((Long) this.zzd[i11]).getClass();
-                    zzA2 = zzqv.zzA(i13 << 3) + 8;
-                } else if (i14 == 2) {
-                    int i15 = i13 << 3;
-                    zzqm zzqmVar = (zzqm) this.zzd[i11];
-                    int zzA3 = zzqv.zzA(i15);
+        int i2 = 0;
+        for (int i3 = 0; i3 < this.zzb; i3++) {
+            int i4 = this.zzc[i3];
+            int i5 = i4 >>> 3;
+            int i6 = i4 & 7;
+            if (i6 != 0) {
+                if (i6 == 1) {
+                    ((Long) this.zzd[i3]).getClass();
+                    zzA2 = zzqv.zzA(i5 << 3) + 8;
+                } else if (i6 == 2) {
+                    zzqm zzqmVar = (zzqm) this.zzd[i3];
+                    int zzA3 = zzqv.zzA(i5 << 3);
                     int zzd = zzqmVar.zzd();
-                    i10 = zzqv.zzA(zzd) + zzd + zzA3 + i10;
-                } else if (i14 == 3) {
-                    int zzA4 = zzqv.zzA(i13 << 3);
-                    zzA = zzA4 + zzA4;
-                    zzB = ((zzuw) this.zzd[i11]).zza();
+                    i2 = zzqv.zzA(zzd) + zzd + zzA3 + i2;
+                } else if (i6 == 3) {
+                    zzA = zzqv.zzA(i5 << 3) << 1;
+                    zzB = ((zzuw) this.zzd[i3]).zza();
                 } else {
-                    if (i14 != 5) {
-                        throw new IllegalStateException(new zzsw("Protocol message tag had invalid wire type."));
+                    if (i6 != 5) {
+                        ho9.n(new zzsw("Protocol message tag had invalid wire type."));
+                        return 0;
                     }
-                    ((Integer) this.zzd[i11]).getClass();
-                    zzA2 = zzqv.zzA(i13 << 3) + 4;
+                    ((Integer) this.zzd[i3]).getClass();
+                    zzA2 = zzqv.zzA(i5 << 3) + 4;
                 }
-                i10 = zzA2 + i10;
+                i2 = zzA2 + i2;
             } else {
-                int i16 = i13 << 3;
-                long longValue = ((Long) this.zzd[i11]).longValue();
-                zzA = zzqv.zzA(i16);
+                long longValue = ((Long) this.zzd[i3]).longValue();
+                zzA = zzqv.zzA(i5 << 3);
                 zzB = zzqv.zzB(longValue);
             }
-            i10 = zzB + zzA + i10;
+            i2 = zzB + zzA + i2;
         }
-        this.zze = i10;
-        return i10;
+        this.zze = i2;
+        return i2;
     }
 
     public final int zzb() {
-        int i7 = this.zze;
-        if (i7 != -1) {
-            return i7;
+        int i = this.zze;
+        if (i != -1) {
+            return i;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.zzb; i11++) {
-            int i12 = this.zzc[i11] >>> 3;
-            zzqm zzqmVar = (zzqm) this.zzd[i11];
-            int zzA = zzqv.zzA(8);
-            int zzA2 = zzqv.zzA(i12) + zzqv.zzA(16);
+        int i2 = 0;
+        for (int i3 = 0; i3 < this.zzb; i3++) {
+            int i4 = this.zzc[i3] >>> 3;
+            zzqm zzqmVar = (zzqm) this.zzd[i3];
+            int zzA = zzqv.zzA(8) << 1;
+            int zzA2 = zzqv.zzA(i4) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zzd = zzqmVar.zzd();
-            i10 += zzA + zzA + zzA2 + e2.u(zzd, zzd, zzA3);
+            i2 += zzA + zzA2 + mue.e(zzd, zzd, zzA3);
         }
-        this.zze = i10;
-        return i10;
+        this.zze = i2;
+        return i2;
     }
 
     public final zzuw zzd(zzuw zzuwVar) {
@@ -176,18 +173,19 @@ public final class zzuw {
             return this;
         }
         zzg();
-        int i7 = this.zzb + zzuwVar.zzb;
-        zzm(i7);
+        int i = this.zzb + zzuwVar.zzb;
+        zzm(i);
         System.arraycopy(zzuwVar.zzc, 0, this.zzc, this.zzb, zzuwVar.zzb);
         System.arraycopy(zzuwVar.zzd, 0, this.zzd, this.zzb, zzuwVar.zzb);
-        this.zzb = i7;
+        this.zzb = i;
         return this;
     }
 
     public final void zzg() {
-        if (!this.zzf) {
-            throw new UnsupportedOperationException();
+        if (this.zzf) {
+            return;
         }
+        fvc.b();
     }
 
     public final void zzh() {
@@ -196,50 +194,51 @@ public final class zzuw {
         }
     }
 
-    public final void zzi(StringBuilder sb2, int i7) {
-        for (int i10 = 0; i10 < this.zzb; i10++) {
-            zztu.zzb(sb2, i7, String.valueOf(this.zzc[i10] >>> 3), this.zzd[i10]);
+    public final void zzi(StringBuilder sb, int i) {
+        for (int i2 = 0; i2 < this.zzb; i2++) {
+            zztu.zzb(sb, i, String.valueOf(this.zzc[i2] >>> 3), this.zzd[i2]);
         }
     }
 
-    public final void zzj(int i7, Object obj) {
+    public final void zzj(int i, Object obj) {
         zzg();
         zzm(this.zzb + 1);
         int[] iArr = this.zzc;
-        int i10 = this.zzb;
-        iArr[i10] = i7;
-        this.zzd[i10] = obj;
-        this.zzb = i10 + 1;
+        int i2 = this.zzb;
+        iArr[i2] = i;
+        this.zzd[i2] = obj;
+        this.zzb = i2 + 1;
     }
 
     public final void zzk(zzvi zzviVar) {
-        for (int i7 = 0; i7 < this.zzb; i7++) {
-            zzviVar.zzw(this.zzc[i7] >>> 3, this.zzd[i7]);
+        for (int i = 0; i < this.zzb; i++) {
+            zzviVar.zzw(this.zzc[i] >>> 3, this.zzd[i]);
         }
     }
 
     public final void zzl(zzvi zzviVar) {
         if (this.zzb != 0) {
-            for (int i7 = 0; i7 < this.zzb; i7++) {
-                int i10 = this.zzc[i7];
-                Object obj = this.zzd[i7];
-                int i11 = i10 & 7;
-                int i12 = i10 >>> 3;
-                if (i11 == 0) {
-                    zzviVar.zzt(i12, ((Long) obj).longValue());
-                } else if (i11 == 1) {
-                    zzviVar.zzm(i12, ((Long) obj).longValue());
-                } else if (i11 == 2) {
-                    zzviVar.zzd(i12, (zzqm) obj);
-                } else if (i11 == 3) {
-                    zzviVar.zzF(i12);
+            for (int i = 0; i < this.zzb; i++) {
+                int i2 = this.zzc[i];
+                Object obj = this.zzd[i];
+                int i3 = i2 & 7;
+                int i4 = i2 >>> 3;
+                if (i3 == 0) {
+                    zzviVar.zzt(i4, ((Long) obj).longValue());
+                } else if (i3 == 1) {
+                    zzviVar.zzm(i4, ((Long) obj).longValue());
+                } else if (i3 == 2) {
+                    zzviVar.zzd(i4, (zzqm) obj);
+                } else if (i3 == 3) {
+                    zzviVar.zzF(i4);
                     ((zzuw) obj).zzl(zzviVar);
-                    zzviVar.zzh(i12);
+                    zzviVar.zzh(i4);
                 } else {
-                    if (i11 != 5) {
-                        throw new RuntimeException(new zzsw("Protocol message tag had invalid wire type."));
+                    if (i3 != 5) {
+                        sdb.b(new zzsw("Protocol message tag had invalid wire type."));
+                        return;
                     }
-                    zzviVar.zzk(i12, ((Integer) obj).intValue());
+                    zzviVar.zzk(i4, ((Integer) obj).intValue());
                 }
             }
         }

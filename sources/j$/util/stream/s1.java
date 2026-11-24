@@ -1,45 +1,32 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Supplier;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoublePredicate;
 
-/* loaded from: classes2.dex */
-public final class s1 extends b {
-    public final j$.util.concurrent.s j;
-
-    public s1(j$.util.concurrent.s sVar, a aVar, Spliterator spliterator) {
-        super(aVar, spliterator);
-        this.j = sVar;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class s1 extends t1 implements k5 {
+    @Override // j$.util.stream.k5
+    public final /* synthetic */ void C(Double d) {
+        w3.e(this, d);
     }
 
-    public s1(s1 s1Var, Spliterator spliterator) {
-        super(s1Var, spliterator);
-        this.j = s1Var.j;
-    }
-
-    @Override // j$.util.stream.d
-    public final d c(Spliterator spliterator) {
-        return new s1(this, spliterator);
-    }
-
-    @Override // j$.util.stream.d
-    public final Object a() {
-        t3 t3Var = this.a;
-        q1 q1Var = (q1) ((Supplier) this.j.c).get();
-        t3Var.F0(this.b, q1Var);
-        boolean z10 = q1Var.b;
-        if (z10 == ((r1) this.j.b).b) {
-            Boolean valueOf = Boolean.valueOf(z10);
-            AtomicReference atomicReference = this.h;
-            while (!atomicReference.compareAndSet(null, valueOf) && atomicReference.get() == null) {
-            }
+    @Override // j$.util.stream.t1, j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        if (this.a) {
+            return;
         }
-        return null;
+        DoublePredicate doublePredicate = null;
+        doublePredicate.test(d);
+        throw null;
     }
 
-    @Override // j$.util.stream.b
-    public final Object h() {
-        return Boolean.valueOf(!((r1) this.j.b).b);
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
+    }
+
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        C((Double) obj);
     }
 }

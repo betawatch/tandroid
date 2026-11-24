@@ -11,7 +11,8 @@ import java.util.Set;
 import java.util.TimeZone;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class h {
     public static final CopyOnWriteArrayList b;
     public static final ConcurrentHashMap c;
@@ -24,6 +25,14 @@ public final class h {
         ArrayList arrayList = new ArrayList();
         AccessController.doPrivileged(new g(arrayList));
         copyOnWriteArrayList.addAll(arrayList);
+    }
+
+    public h() {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        for (String str : TimeZone.getAvailableIDs()) {
+            linkedHashSet.add(str);
+        }
+        this.a = Collections.unmodifiableSet(linkedHashSet);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -47,26 +56,14 @@ public final class h {
     public static void b(h hVar) {
         Objects.requireNonNull(hVar, "provider");
         synchronized (h.class) {
-            try {
-                for (String str : hVar.a) {
-                    Objects.requireNonNull(str, "zoneId");
-                    if (((h) c.putIfAbsent(str, hVar)) != null) {
-                        throw new f("Unable to register zone as one already registered with that ID: " + str + ", currently loading from provider: " + hVar);
-                    }
+            for (String str : hVar.a) {
+                Objects.requireNonNull(str, "zoneId");
+                if (((h) c.putIfAbsent(str, hVar)) != null) {
+                    throw new f("Unable to register zone as one already registered with that ID: " + str + ", currently loading from provider: " + hVar);
                 }
-                Collections.unmodifiableSet(new HashSet(c.keySet()));
-            } catch (Throwable th2) {
-                throw th2;
             }
+            Collections.unmodifiableSet(new HashSet(c.keySet()));
         }
         b.add(hVar);
-    }
-
-    public h() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        for (String str : TimeZone.getAvailableIDs()) {
-            linkedHashSet.add(str);
-        }
-        this.a = Collections.unmodifiableSet(linkedHashSet);
     }
 }

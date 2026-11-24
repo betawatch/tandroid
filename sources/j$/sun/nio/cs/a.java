@@ -5,83 +5,82 @@ import java.nio.CharBuffer;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CoderResult;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class a extends CharsetDecoder {
     public a(c cVar) {
         super(cVar, 1.0f, 1.0f);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r9v0, types: [java.nio.ByteBuffer] */
-    /* JADX WARN: Type inference failed for: r9v10, types: [java.nio.CharBuffer] */
-    /* JADX WARN: Type inference failed for: r9v11, types: [java.nio.ByteBuffer] */
-    /* JADX WARN: Type inference failed for: r9v5 */
+    /* JADX WARN: Type inference failed for: r8v0, types: [java.nio.ByteBuffer] */
+    /* JADX WARN: Type inference failed for: r8v1 */
+    /* JADX WARN: Type inference failed for: r8v6, types: [java.nio.CharBuffer] */
+    /* JADX WARN: Type inference failed for: r8v7, types: [java.nio.ByteBuffer] */
     @Override // java.nio.charset.CharsetDecoder
     public final CoderResult decodeLoop(ByteBuffer byteBuffer, CharBuffer charBuffer) {
         CoderResult coderResult;
         CoderResult coderResult2;
-        if (byteBuffer.hasArray() && charBuffer.hasArray()) {
-            byte[] array = byteBuffer.array();
-            int position = byteBuffer.position() + byteBuffer.arrayOffset();
-            int limit = byteBuffer.limit() + byteBuffer.arrayOffset();
-            if (position > limit) {
-                position = limit;
-            }
-            char[] array2 = charBuffer.array();
-            int position2 = charBuffer.position() + charBuffer.arrayOffset();
-            int limit2 = charBuffer.limit() + charBuffer.arrayOffset();
-            if (position2 > limit2) {
-                position2 = limit2;
-            }
+        if (!byteBuffer.hasArray() || !charBuffer.hasArray()) {
+            int position = byteBuffer.position();
             while (true) {
-                if (position < limit) {
-                    try {
-                        byte b10 = array[position];
-                        if (position2 >= limit2) {
-                            coderResult2 = CoderResult.OVERFLOW;
-                            break;
-                        }
-                        int i7 = position2 + 1;
-                        try {
-                            array2[position2] = (char) (b10 & 255);
-                            position++;
-                            position2 = i7;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            position2 = i7;
-                            throw th;
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
+                try {
+                    if (!byteBuffer.hasRemaining()) {
+                        coderResult = CoderResult.UNDERFLOW;
+                        break;
                     }
-                } else {
-                    coderResult2 = CoderResult.UNDERFLOW;
-                    break;
-                }
-            }
-            position -= byteBuffer.arrayOffset();
-            position2 -= charBuffer.arrayOffset();
-            byteBuffer = (CharBuffer) charBuffer.position(position2);
-            return coderResult2;
-        }
-        int position3 = byteBuffer.position();
-        while (true) {
-            try {
-                if (byteBuffer.hasRemaining()) {
-                    byte b11 = byteBuffer.get();
+                    byte b = byteBuffer.get();
                     if (!charBuffer.hasRemaining()) {
                         coderResult = CoderResult.OVERFLOW;
                         break;
                     }
-                    charBuffer.put((char) (b11 & 255));
-                    position3++;
-                } else {
-                    coderResult = CoderResult.UNDERFLOW;
+                    charBuffer.put((char) (b & 255));
+                    position++;
+                } finally {
+                }
+            }
+            return coderResult;
+        }
+        byte[] array = byteBuffer.array();
+        int position2 = byteBuffer.position() + byteBuffer.arrayOffset();
+        int limit = byteBuffer.limit() + byteBuffer.arrayOffset();
+        if (position2 > limit) {
+            position2 = limit;
+        }
+        char[] array2 = charBuffer.array();
+        int position3 = charBuffer.position() + charBuffer.arrayOffset();
+        int limit2 = charBuffer.limit() + charBuffer.arrayOffset();
+        if (position3 > limit2) {
+            position3 = limit2;
+        }
+        while (true) {
+            if (position2 >= limit) {
+                coderResult2 = CoderResult.UNDERFLOW;
+                break;
+            }
+            try {
+                byte b2 = array[position2];
+                if (position3 >= limit2) {
+                    coderResult2 = CoderResult.OVERFLOW;
                     break;
                 }
-            } finally {
+                int i = position3 + 1;
+                try {
+                    array2[position3] = (char) (b2 & 255);
+                    position2++;
+                    position3 = i;
+                } catch (Throwable th) {
+                    th = th;
+                    position3 = i;
+                    throw th;
+                }
+            } catch (Throwable th2) {
+                th = th2;
             }
         }
-        return coderResult;
+        position2 -= byteBuffer.arrayOffset();
+        position3 -= charBuffer.arrayOffset();
+        byteBuffer = (CharBuffer) charBuffer.position(position3);
+        return coderResult2;
     }
 }

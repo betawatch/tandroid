@@ -1,8 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.ks;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzyt extends zzsn implements zztt {
     private static final zzyt zzb;
@@ -25,18 +23,20 @@ public final class zzyt extends zzsn implements zztt {
     private zzyt() {
     }
 
-    public static /* synthetic */ void zzM(zzyt zzytVar, int i7) {
-        if (i7 == 1) {
-            throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+    public static /* synthetic */ void zzM(zzyt zzytVar, int i) {
+        if (i != 1) {
+            zzytVar.zzh = i - 2;
+        } else {
+            w26.j("Can't get the number of an unknown enum value.");
         }
-        zzytVar.zzh = i7 - 2;
     }
 
-    public static /* synthetic */ void zzN(zzyt zzytVar, int i7) {
-        if (i7 == 1) {
-            throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+    public static /* synthetic */ void zzN(zzyt zzytVar, int i) {
+        if (i != 1) {
+            zzytVar.zzf = i - 2;
+        } else {
+            w26.j("Can't get the number of an unknown enum value.");
         }
-        zzytVar.zzf = i7 - 2;
     }
 
     public static zzys zzf() {
@@ -44,26 +44,26 @@ public final class zzyt extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i7, Object obj, Object obj2) {
+    public final Object zzh(int i, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i7 - 1;
-        if (i10 == 0) {
+        int i2 = i - 1;
+        if (i2 == 0) {
             return (byte) 1;
         }
-        if (i10 == 2) {
+        if (i2 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001\f\u0002\u000b\u0003\f\u0004\f\u0005ဉ\u0000\u0006\u000b\u0007ဉ\u0001", new Object[]{"zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk", "zzl"});
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             return new zzyt();
         }
         zzyy zzyyVar = null;
-        if (i10 == 4) {
+        if (i2 == 4) {
             return new zzys(zzyyVar);
         }
-        if (i10 == 5) {
+        if (i2 == 5) {
             return zzb;
         }
-        if (i10 != 6) {
+        if (i2 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;
@@ -71,261 +71,257 @@ public final class zzyt extends zzsn implements zztt {
             return zzuaVar2;
         }
         synchronized (zzyt.class) {
-            try {
-                zzuaVar = zzd;
-                if (zzuaVar == null) {
-                    zzuaVar = new zzsi(zzb);
-                    zzd = zzuaVar;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzuaVar = zzd;
+            if (zzuaVar == null) {
+                zzuaVar = new zzsi(zzb);
+                zzd = zzuaVar;
             }
         }
         return zzuaVar;
     }
 
     public final int zzk() {
-        int i7;
+        int i;
         switch (this.zzh) {
             case 0:
-                i7 = 2;
+                i = 2;
                 break;
             case 1:
-                i7 = 3;
+                i = 3;
                 break;
             case 2:
-                i7 = 4;
+                i = 4;
                 break;
             case 3:
-                i7 = 5;
+                i = 5;
                 break;
             case 4:
-                i7 = 6;
+                i = 6;
                 break;
             case 5:
-                i7 = 7;
+                i = 7;
                 break;
             case 6:
-                i7 = 8;
+                i = 8;
                 break;
             case 7:
-                i7 = 9;
+                i = 9;
                 break;
             case 8:
-                i7 = 10;
+                i = 10;
                 break;
             case 9:
-                i7 = 11;
+                i = 11;
                 break;
             case 10:
-                i7 = 12;
+                i = 12;
                 break;
             case 11:
-                i7 = 13;
+                i = 13;
                 break;
             case 12:
-                i7 = 14;
+                i = 14;
                 break;
             case 13:
-                i7 = 15;
+                i = 15;
                 break;
             case 14:
-                i7 = 16;
+                i = 16;
                 break;
             case 15:
-                i7 = 17;
+                i = 17;
                 break;
             case 16:
-                i7 = 18;
+                i = 18;
                 break;
             case 17:
-                i7 = 19;
+                i = 19;
                 break;
             case 18:
-                i7 = 20;
+                i = 20;
                 break;
             case 19:
-                i7 = 21;
+                i = 21;
                 break;
             case 20:
-                i7 = 22;
+                i = 22;
                 break;
             case 21:
-                i7 = 23;
+                i = 23;
                 break;
             case 22:
-                i7 = 24;
+                i = 24;
                 break;
             case 23:
-                i7 = 25;
+                i = 25;
                 break;
             case 24:
-                i7 = 26;
+                i = 26;
                 break;
             case 25:
-                i7 = 27;
+                i = 27;
                 break;
             case 26:
-                i7 = 28;
+                i = 28;
                 break;
             case 27:
-                i7 = 29;
+                i = 29;
                 break;
             case 28:
-                i7 = 30;
+                i = 30;
                 break;
             case 29:
-                i7 = 31;
+                i = 31;
                 break;
-            case ks.T /* 30 */:
-                i7 = 32;
+            case kk7.S /* 30 */:
+                i = 32;
                 break;
-            case ks.U /* 31 */:
-                i7 = 33;
+            case 31:
+                i = 33;
                 break;
             case 32:
-                i7 = 34;
+                i = 34;
                 break;
             case 33:
-                i7 = 35;
+                i = 35;
                 break;
             case 34:
-                i7 = 36;
+                i = 36;
                 break;
             case 35:
-                i7 = 37;
+                i = 37;
                 break;
             case 36:
-                i7 = 38;
+                i = 38;
                 break;
             case 37:
-                i7 = 39;
+                i = 39;
                 break;
             case 38:
-                i7 = 40;
+                i = 40;
                 break;
             case 39:
-                i7 = 41;
+                i = 41;
                 break;
             case 40:
-                i7 = 42;
+                i = 42;
                 break;
             case 41:
-                i7 = 43;
+                i = 43;
                 break;
             case 42:
-                i7 = 44;
+                i = 44;
                 break;
             case 43:
-                i7 = 45;
+                i = 45;
                 break;
             case 44:
-                i7 = 46;
+                i = 46;
                 break;
             case 45:
-                i7 = 47;
+                i = 47;
                 break;
             case 46:
-                i7 = 48;
+                i = 48;
                 break;
             case 47:
-                i7 = 49;
+                i = 49;
                 break;
             case 48:
-                i7 = 50;
+                i = 50;
                 break;
             case 49:
-                i7 = 51;
+                i = 51;
                 break;
             case 50:
-                i7 = 52;
+                i = 52;
                 break;
-            case ks.o0 /* 51 */:
-                i7 = 53;
+            case kk7.n0 /* 51 */:
+                i = 53;
                 break;
-            case ks.p0 /* 52 */:
-                i7 = 54;
+            case kk7.o0 /* 52 */:
+                i = 54;
                 break;
-            case ks.q0 /* 53 */:
-                i7 = 55;
+            case kk7.p0 /* 53 */:
+                i = 55;
                 break;
-            case ks.r0 /* 54 */:
-                i7 = 56;
+            case kk7.q0 /* 54 */:
+                i = 56;
                 break;
-            case ks.s0 /* 55 */:
-                i7 = 57;
+            case kk7.r0 /* 55 */:
+                i = 57;
                 break;
-            case ks.t0 /* 56 */:
-                i7 = 58;
+            case 56:
+                i = 58;
                 break;
-            case ks.u0 /* 57 */:
-                i7 = 59;
+            case kk7.t0 /* 57 */:
+                i = 59;
                 break;
             default:
-                i7 = 0;
+                i = 0;
                 break;
         }
-        if (i7 == 0) {
+        if (i == 0) {
             return 1;
         }
-        return i7;
+        return i;
     }
 
     public final int zzl() {
-        int i7;
+        int i;
         switch (this.zzf) {
             case 0:
-                i7 = 2;
+                i = 2;
                 break;
             case 1:
-                i7 = 3;
+                i = 3;
                 break;
             case 2:
-                i7 = 4;
+                i = 4;
                 break;
             case 3:
-                i7 = 5;
+                i = 5;
                 break;
             case 4:
-                i7 = 6;
+                i = 6;
                 break;
             case 5:
-                i7 = 7;
+                i = 7;
                 break;
             case 6:
-                i7 = 8;
+                i = 8;
                 break;
             case 7:
-                i7 = 9;
+                i = 9;
                 break;
             case 8:
-                i7 = 10;
+                i = 10;
                 break;
             case 9:
-                i7 = 11;
+                i = 11;
                 break;
             case 10:
-                i7 = 12;
+                i = 12;
                 break;
             case 11:
-                i7 = 13;
+                i = 13;
                 break;
             case 12:
-                i7 = 14;
+                i = 14;
                 break;
             case 13:
-                i7 = 15;
+                i = 15;
                 break;
             case 14:
-                i7 = 16;
+                i = 16;
                 break;
             default:
-                i7 = 0;
+                i = 0;
                 break;
         }
-        if (i7 == 0) {
+        if (i == 0) {
             return 1;
         }
-        return i7;
+        return i;
     }
 }

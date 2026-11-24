@@ -1,16 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import gd.e;
-import hd.r;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzlc implements zzlb {
     private final Context zza;
-    private final Map zzb = r.d(new e(2, "activity"), new e(3, "phone"), new e(4, "input_method"), new e(5, MediaStreamTrack.AUDIO_TRACK_KIND));
+    private final Map zzb = qi6.c(new ku7(2, "activity"), new ku7(3, "phone"), new ku7(4, "input_method"), new ku7(5, MediaStreamTrack.AUDIO_TRACK_KIND));
 
     public zzlc(Context context) {
         this.zza = context;
@@ -29,7 +27,8 @@ public final class zzlc implements zzlb {
         }
         Integer num = (Integer) obj;
         if (num == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return null;
         }
         Object obj2 = this.zzb.get(Integer.valueOf(num.intValue()));
         if (obj2 != null) {

@@ -1,43 +1,37 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public final class v4 extends d {
-    public final t3 h;
-
-    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        d dVar = this.d;
-        if (dVar != null) {
-            o4 o4Var = (o4) ((v4) dVar).f;
-            o4Var.u((o4) ((v4) this.e).f);
-            this.f = o4Var;
-        }
-        super.onCompletion(countedCompleter);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class v4 extends x4 implements m5 {
+    @Override // j$.util.stream.x4, j$.util.stream.n5
+    public final void accept(long j) {
+        this.b++;
     }
 
-    public v4(t3 t3Var, t3 t3Var2, Spliterator spliterator) {
-        super(t3Var2, spliterator);
-        this.h = t3Var;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.time.a.c(this, longConsumer);
     }
 
-    public v4(v4 v4Var, Spliterator spliterator) {
-        super(v4Var, spliterator);
-        this.h = v4Var.h;
+    @Override // j$.util.stream.s4, java.util.function.Supplier
+    public final Object get() {
+        return Long.valueOf(this.b);
     }
 
-    @Override // j$.util.stream.d
-    public final d c(Spliterator spliterator) {
-        return new v4(this, spliterator);
+    @Override // j$.util.stream.r4
+    public final void w(r4 r4Var) {
+        this.b += ((x4) r4Var).b;
     }
 
-    @Override // j$.util.stream.d
-    public final Object a() {
-        t3 t3Var = this.a;
-        o4 D0 = this.h.D0();
-        t3Var.F0(this.b, D0);
-        return D0;
+    @Override // j$.util.stream.m5
+    public final /* synthetic */ void x(Long l) {
+        w3.i(this, l);
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        x((Long) obj);
     }
 }

@@ -1,7 +1,32 @@
 package androidx.car.app.utils;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public interface a {
-    Object a();
+public final /* synthetic */ class a implements q69 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
+    public final /* synthetic */ y21 c;
+
+    public /* synthetic */ a(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, y21 y21Var, byte b) {
+        this.a = b;
+        this.b = remoteUtils$SurfaceCallbackStub;
+        this.c = y21Var;
+    }
+
+    @Override // q69
+    public final Object a() {
+        Object lambda$onSurfaceDestroyed$3;
+        Object lambda$onSurfaceAvailable$0;
+        byte b = this.a;
+        y21 y21Var = this.c;
+        RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub = this.b;
+        switch (b) {
+            case 0:
+                lambda$onSurfaceDestroyed$3 = remoteUtils$SurfaceCallbackStub.lambda$onSurfaceDestroyed$3(y21Var);
+                return lambda$onSurfaceDestroyed$3;
+            default:
+                lambda$onSurfaceAvailable$0 = remoteUtils$SurfaceCallbackStub.lambda$onSurfaceAvailable$0(y21Var);
+                return lambda$onSurfaceAvailable$0;
+        }
+    }
 }

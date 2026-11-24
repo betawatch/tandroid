@@ -1,17 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.g;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.b0;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzd extends j implements p {
+final class zzd extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzg zzb;
     final /* synthetic */ long zzc;
@@ -19,80 +10,80 @@ final class zzd extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzd(zzg zzgVar, long j3, zzxn zzxnVar, c cVar) {
-        super(2, cVar);
+    public zzd(zzg zzgVar, long j, zzxn zzxnVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzgVar;
-        this.zzc = j3;
+        this.zzc = j;
         this.zzd = zzxnVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzd zzdVar = new zzd(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzd zzdVar = new zzd(this.zzb, this.zzc, this.zzd, fw2Var);
         zzdVar.zze = obj;
         return zzdVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzd) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzd) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0040, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x003e, code lost:
     
-        if (r11 != r0) goto L17;
+        if (r11 != r4) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x005b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x005a, code lost:
     
-        if (r11 != r0) goto L22;
+        if (r11 == r4) goto L22;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zza;
-        k kVar = k.a;
+        int i = this.zza;
+        g5c g5cVar = g5c.a;
+        bx2 bx2Var = bx2.a;
         try {
-        } catch (Exception e10) {
+        } catch (Exception e) {
             zzg zzgVar = this.zzb;
             zzgVar.zza = false;
             this.zza = 2;
-            obj = zzgVar.zzf(e10, this);
+            obj = zzgVar.zzf(e, this);
         }
-        if (i7 == 0) {
-            z.b(obj);
+        if (i == 0) {
+            qse.b(obj);
             zzgr zzgrVar = (zzgr) this.zze;
             zzg zzgVar2 = this.zzb;
             if (zzgVar2.zzi()) {
-                return kVar;
+                return g5cVar;
             }
-            long j3 = this.zzc;
+            long j = this.zzc;
             zzc zzcVar = new zzc(zzgrVar, zzgVar2, this.zzd, null);
             this.zza = 1;
-            obj = b0.z(j3, zzcVar, this);
+            obj = mve.a(j, zzcVar, this);
         } else {
-            if (i7 != 1) {
-                if (i7 != 2) {
+            if (i != 1) {
+                if (i != 2) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    z.b(obj);
+                    qse.b(obj);
                     throw zzcgVar;
                 }
-                z.b(obj);
+                qse.b(obj);
                 zzg zzgVar3 = this.zzb;
                 zzcg zzcgVar2 = (zzcg) obj;
                 this.zze = zzcgVar2;
                 this.zza = 3;
-                if (zzgVar3.zzc(zzcgVar2, this) != aVar) {
+                if (zzgVar3.zzc(zzcgVar2, this) != bx2Var) {
                     throw zzcgVar2;
                 }
-                return aVar;
+                return bx2Var;
             }
-            z.b(obj);
+            qse.b(obj);
         }
-        z.b(((g) obj).a);
+        qse.b(((ta9) obj).a);
         this.zzb.zza = true;
-        return kVar;
+        return g5cVar;
     }
 }

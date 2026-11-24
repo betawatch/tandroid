@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class ChatsWidgetConfigActivity extends ExternalActionActivity {
     public static final /* synthetic */ int G = 0;
     public int F = 0;
 
     @Override // org.telegram.ui.ExternalActionActivity
-    public final void e(Intent intent, boolean z10, boolean z11, boolean z12, int i7, int i10) {
-        if (d(intent, z10, z11, z12, i7, i10)) {
+    public final void d(Intent intent, boolean z, boolean z2, boolean z3, int i, int i2) {
+        if (c(intent, z, z2, z3, i, i2)) {
             Bundle extras = intent.getExtras();
             if (extras != null) {
                 this.F = extras.getInt("appWidgetId", 0);
@@ -20,22 +20,22 @@ public class ChatsWidgetConfigActivity extends ExternalActionActivity {
                 finish();
                 return;
             }
-            org.telegram.ui.Cells.c0.l(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
-            jx jxVar = new jx(0, this.F);
-            jxVar.E = new w0(this, 28);
-            if (org.telegram.messenger.g0.Q1()) {
+            tb4.j(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            zt3 zt3Var = new zt3(0, this.F);
+            zt3Var.E = new rh1(this, (byte) 26);
+            if (gl.O1()) {
                 if (this.d.getFragmentStack().isEmpty()) {
-                    this.d.c(-1, jxVar);
+                    this.d.b(-1, zt3Var);
                 }
             } else if (this.c.getFragmentStack().isEmpty()) {
-                this.c.c(-1, jxVar);
+                this.c.b(-1, zt3Var);
             }
-            if (!org.telegram.messenger.g0.Q1()) {
+            if (!gl.O1()) {
                 this.e.setVisibility(8);
             }
-            this.c.f0();
-            if (org.telegram.messenger.g0.Q1()) {
-                this.d.f0();
+            this.c.e0();
+            if (gl.O1()) {
+                this.d.e0();
             }
             intent.setAction(null);
         }

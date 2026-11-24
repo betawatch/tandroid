@@ -1,40 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c implements org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class c extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ o b;
 
-    public /* synthetic */ c(g gVar, int i7) {
-        this.a = i7;
-        this.b = gVar;
+    /* JADX WARN: Multi-variable type inference failed */
+    public c(o oVar, int i) {
+        this.b = oVar;
+        this.a = i;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                g gVar = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    gVar.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            default:
-                g gVar2 = this.b;
-                gVar2.getClass();
-                de0 de0Var = new de0();
-                de0Var.G = 2;
-                gVar2.presentFragment(de0Var, true);
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        o oVar = this.b;
+        oVar.v0[1].a();
+        oVar.v0[1].setVisibility(8);
+        oVar.Q0.Q(oVar.v0[0].b);
+        fib fibVar = oVar.Q0;
+        m[] mVarArr = oVar.v0;
+        fibVar.z0 = mVarArr[0].d;
+        boolean z = this.a;
+        mVarArr[z ? 1 : 0].setBackgroundDrawable(null);
+        oVar.v0[z ? 1 : 0].setLayerType(0, null);
+        oVar.w0 = null;
+        oVar.g0.f = false;
     }
 }

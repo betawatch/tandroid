@@ -1,15 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzyv extends zzsh implements zztt {
-    private zzyv() {
-        throw null;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzyv(zzyy zzyyVar) {
+        super(r1);
+        zzyw zzywVar;
+        zzywVar = zzyw.zzb;
     }
 
-    public final zzyv zze(boolean z10) {
+    public final zzyv zze(boolean z) {
         zzn();
-        zzyw.zzi((zzyw) this.zza, z10);
+        zzyw.zzi((zzyw) this.zza, z);
         return this;
     }
 
@@ -31,27 +37,27 @@ public final class zzyv extends zzsh implements zztt {
         return this;
     }
 
-    public final zzyv zzs(float f10) {
+    public final zzyv zzs(float f) {
         zzn();
-        zzyw.zzM((zzyw) this.zza, f10);
+        zzyw.zzM((zzyw) this.zza, f);
         return this;
     }
 
-    public final zzyv zzt(int i7) {
+    public final zzyv zzt(int i) {
         zzn();
-        zzyw.zzN((zzyw) this.zza, i7);
+        zzyw.zzN((zzyw) this.zza, i);
         return this;
     }
 
-    public final zzyv zzu(int i7) {
+    public final zzyv zzu(int i) {
         zzn();
-        zzyw.zzO((zzyw) this.zza, i7);
+        zzyw.zzO((zzyw) this.zza, i);
         return this;
     }
 
-    public final zzyv zzv(long j3) {
+    public final zzyv zzv(long j) {
         zzn();
-        zzyw.zzP((zzyw) this.zza, j3);
+        zzyw.zzP((zzyw) this.zza, j);
         return this;
     }
 
@@ -61,13 +67,7 @@ public final class zzyv extends zzsh implements zztt {
         return this;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public /* synthetic */ zzyv(zzyy zzyyVar) {
-        super(r1);
-        zzyw zzywVar;
-        zzywVar = zzyw.zzb;
+    private zzyv() {
+        throw null;
     }
 }

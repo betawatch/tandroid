@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zztm extends LinkedHashMap {
     private static final zztm zza;
@@ -29,10 +29,11 @@ public final class zztm extends LinkedHashMap {
 
     private static int zzf(Object obj) {
         if (!(obj instanceof byte[])) {
-            if (obj instanceof zzsp) {
-                throw new UnsupportedOperationException();
+            if (!(obj instanceof zzsp)) {
+                return obj.hashCode();
             }
-            return obj.hashCode();
+            fvc.b();
+            return 0;
         }
         byte[] bArr = (byte[]) obj;
         int length = bArr.length;
@@ -44,9 +45,10 @@ public final class zztm extends LinkedHashMap {
     }
 
     private final void zzg() {
-        if (!this.zzb) {
-            throw new UnsupportedOperationException();
+        if (this.zzb) {
+            return;
         }
+        fvc.b();
     }
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
@@ -90,12 +92,12 @@ public final class zztm extends LinkedHashMap {
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
         Iterator it = entrySet().iterator();
-        int i7 = 0;
+        int i = 0;
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            i7 += zzf(entry.getValue()) ^ zzf(entry.getKey());
+            i += zzf(entry.getKey()) ^ zzf(entry.getValue());
         }
-        return i7;
+        return i;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

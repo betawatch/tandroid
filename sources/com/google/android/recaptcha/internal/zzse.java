@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'zza' uses e
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzse {
     public static final zzse zzA;
@@ -188,15 +188,15 @@ public final class zzse {
         }
     }
 
-    private zzse(String str, int i7, int i10, int i11, zzsy zzsyVar) {
-        this.zzab = i10;
-        int i12 = i11 - 1;
-        if (i12 == 1) {
+    private zzse(String str, int i, int i2, int i3, zzsy zzsyVar) {
+        this.zzab = i2;
+        int i4 = i3 - 1;
+        if (i4 == 1) {
             zzsyVar.zza();
-        } else if (i12 == 3) {
+        } else if (i4 == 3) {
             zzsyVar.zza();
         }
-        if (i11 == 1) {
+        if (i3 == 1) {
             zzsy zzsyVar2 = zzsy.zza;
             zzsyVar.ordinal();
         }

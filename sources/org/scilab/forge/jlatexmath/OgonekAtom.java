@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class OgonekAtom extends Atom {
     private Atom base;
@@ -15,9 +15,9 @@ public class OgonekAtom extends Atom {
         Box createBox = this.base.createBox(teXEnvironment);
         VerticalBox verticalBox = new VerticalBox();
         verticalBox.add(createBox);
-        Char r82 = teXEnvironment.getTeXFont().getChar("ogonek", teXEnvironment.getStyle());
-        float italic = r82.getItalic();
-        CharBox charBox = new CharBox(r82);
+        Char r7 = teXEnvironment.getTeXFont().getChar("ogonek", teXEnvironment.getStyle());
+        float italic = r7.getItalic();
+        CharBox charBox = new CharBox(r7);
         if (Math.abs(italic) > 1.0E-7f) {
             box = new HorizontalBox(new StrutBox(-italic, 0.0f, 0.0f, 0.0f));
             box.add(charBox);

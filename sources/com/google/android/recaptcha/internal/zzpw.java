@@ -1,12 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import a8.p0;
 import com.google.android.recaptcha.internal.zzpv;
 import com.google.android.recaptcha.internal.zzpw;
 import java.io.IOException;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zzts {
     protected int zza = 0;
@@ -25,13 +24,14 @@ public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, B
             int zzo = zzo();
             zzqm zzqmVar = zzqm.zzb;
             byte[] bArr = new byte[zzo];
-            int i7 = zzqv.zzb;
+            int i = zzqv.zzb;
             zzqs zzqsVar = new zzqs(bArr, 0, zzo);
             zze(zzqsVar);
             zzqsVar.zzC();
             return new zzqk(bArr);
-        } catch (IOException e10) {
-            throw new RuntimeException(p0.p("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e10);
+        } catch (IOException e) {
+            fyb.j(tb4.y("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e);
+            return null;
         }
     }
 
@@ -39,13 +39,14 @@ public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, B
         try {
             int zzo = zzo();
             byte[] bArr = new byte[zzo];
-            int i7 = zzqv.zzb;
+            int i = zzqv.zzb;
             zzqs zzqsVar = new zzqs(bArr, 0, zzo);
             zze(zzqsVar);
             zzqsVar.zzC();
             return bArr;
-        } catch (IOException e10) {
-            throw new RuntimeException(p0.p("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
+        } catch (IOException e) {
+            fyb.j(tb4.y("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e);
+            return null;
         }
     }
 }

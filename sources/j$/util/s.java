@@ -2,66 +2,16 @@ package j$.util;
 
 import j$.util.Collection;
 import j$.util.stream.Stream;
-import j$.util.stream.t3;
+import j$.util.stream.w3;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class s extends v {
     private static final long serialVersionUID = 7854390611657943733L;
-
-    @Override // j$.util.n, java.lang.Iterable, j$.util.Collection
-    public final void forEach(Consumer consumer) {
-        Objects.requireNonNull(consumer);
-        Collection.-EL.a(this.a, new j$.time.t(1, consumer));
-    }
-
-    @Override // j$.util.n, java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final Spliterator spliterator() {
-        return new r(Collection.-EL.c(this.a));
-    }
-
-    @Override // j$.util.n, java.util.Collection, j$.util.Collection
-    public final Stream stream() {
-        return t3.E0(spliterator(), false);
-    }
-
-    @Override // j$.util.n, java.util.Collection, j$.util.Collection
-    public final Stream parallelStream() {
-        return t3.E0(spliterator(), true);
-    }
-
-    @Override // j$.util.n, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return new m(this);
-    }
-
-    @Override // j$.util.n, java.util.Collection
-    public final Object[] toArray() {
-        Object[] array = this.a.toArray();
-        for (int i7 = 0; i7 < array.length; i7++) {
-            array[i7] = new q((Map.Entry) array[i7]);
-        }
-        return array;
-    }
-
-    @Override // j$.util.n, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        Object[] array = this.a.toArray(objArr.length == 0 ? objArr : Arrays.copyOf(objArr, 0));
-        for (int i7 = 0; i7 < array.length; i7++) {
-            array[i7] = new q((Map.Entry) array[i7]);
-        }
-        if (array.length > objArr.length) {
-            return array;
-        }
-        System.arraycopy(array, 0, objArr, 0, array.length);
-        if (objArr.length > array.length) {
-            objArr[array.length] = null;
-        }
-        return objArr;
-    }
 
     @Override // j$.util.n, java.util.Collection
     public final boolean contains(Object obj) {
@@ -95,5 +45,56 @@ public final class s extends v {
             return false;
         }
         return containsAll(set);
+    }
+
+    @Override // j$.util.n, java.lang.Iterable, j$.util.Collection
+    public final void forEach(Consumer consumer) {
+        Objects.requireNonNull(consumer);
+        Collection.-EL.a(this.a, new j$.time.v((byte) 1, consumer));
+    }
+
+    @Override // j$.util.n, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return new m(this);
+    }
+
+    @Override // j$.util.n, java.util.Collection, j$.util.Collection
+    public final Stream parallelStream() {
+        return w3.a0(spliterator(), true);
+    }
+
+    @Override // j$.util.n, java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final Spliterator spliterator() {
+        return new r(Collection.-EL.c(this.a));
+    }
+
+    @Override // j$.util.n, java.util.Collection, j$.util.Collection
+    public final Stream stream() {
+        return w3.a0(spliterator(), false);
+    }
+
+    @Override // j$.util.n, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        Object[] array = this.a.toArray(objArr.length == 0 ? objArr : Arrays.copyOf(objArr, 0));
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new q((Map.Entry) array[i]);
+        }
+        if (array.length > objArr.length) {
+            return array;
+        }
+        System.arraycopy(array, 0, objArr, 0, array.length);
+        if (objArr.length > array.length) {
+            objArr[array.length] = null;
+        }
+        return objArr;
+    }
+
+    @Override // j$.util.n, java.util.Collection
+    public final Object[] toArray() {
+        Object[] array = this.a.toArray();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new q((Map.Entry) array[i]);
+        }
+        return array;
     }
 }

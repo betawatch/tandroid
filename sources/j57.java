@@ -1,0 +1,54 @@
+// default package
+
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j57 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ na7 b;
+    public final /* synthetic */ q34 c;
+    public final /* synthetic */ ConcurrentHashMap d;
+    public final /* synthetic */ ConcurrentHashMap e;
+
+    public /* synthetic */ j57(na7 na7Var, q34 q34Var, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, byte b) {
+        this.a = b;
+        this.b = na7Var;
+        this.c = q34Var;
+        this.d = concurrentHashMap;
+        this.e = concurrentHashMap2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ConcurrentHashMap concurrentHashMap = this.e;
+        ConcurrentHashMap concurrentHashMap2 = this.d;
+        q34 q34Var = this.c;
+        na7 na7Var = this.b;
+        byte b2 = 0;
+        switch (b) {
+            case 0:
+                q34Var.b(na7Var.currentAccount, concurrentHashMap2, concurrentHashMap, 0);
+                gl.d3(new h77(na7Var, q34Var, b2));
+                break;
+            case 1:
+                q34Var.b(na7Var.currentAccount, concurrentHashMap2, concurrentHashMap, 0);
+                gl.d3(new h77(na7Var, q34Var, (byte) 2));
+                break;
+            default:
+                na7 na7Var2 = this.b;
+                ad7 messagesStorage = na7Var2.getMessagesStorage();
+                q34 q34Var2 = this.c;
+                ArrayList arrayList = q34Var2.a;
+                j57 j57Var = new j57(na7Var2, q34Var2, this.d, this.e, (byte) 1);
+                messagesStorage.getClass();
+                if (!arrayList.isEmpty()) {
+                    messagesStorage.H(new nn6(messagesStorage, arrayList, j57Var, (byte) 3));
+                    break;
+                }
+                break;
+        }
+    }
+}

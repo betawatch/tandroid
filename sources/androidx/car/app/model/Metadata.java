@@ -2,14 +2,14 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Metadata {
-    public static final Metadata EMPTY_METADATA = new Metadata(new y());
+    public static final Metadata EMPTY_METADATA = new Metadata(new id7());
     private final Place mPlace;
 
-    public Metadata(y yVar) {
-        yVar.getClass();
+    public Metadata(id7 id7Var) {
+        id7Var.getClass();
         this.mPlace = null;
     }
 

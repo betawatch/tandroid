@@ -1,49 +1,89 @@
 package org.telegram.ui.web;
 
-import java.io.Serializable;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.u10;
-import org.telegram.ui.Components.n41;
+import android.R;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import java.io.InputStream;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, u10 {
-    public final /* synthetic */ k a;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class a implements p8c {
+    public final /* synthetic */ pob a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ qob c;
+    public final /* synthetic */ ctc d;
+    public final /* synthetic */ p8c e;
 
-    public /* synthetic */ a(k kVar) {
-        this.a = kVar;
+    public /* synthetic */ a(pob pobVar, boolean[] zArr, qob qobVar, ctc ctcVar, p8c p8cVar) {
+        this.a = pobVar;
+        this.b = zArr;
+        this.c = qobVar;
+        this.d = ctcVar;
+        this.e = p8cVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void i(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        k kVar = this.a;
-        kVar.getContext().getSharedPreferences("webhistory", 0).edit().remove("queries_json").apply();
-        kVar.x.g3.O(true);
-    }
-
-    @Override // org.telegram.messenger.u10
-    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        org.telegram.ui.q qVar;
-        n41 n41Var = (n41) obj;
-        boolean H = n41Var.H(d.class);
-        k kVar = this.a;
-        if (H) {
-            String charSequence = n41Var.m.toString();
-            org.telegram.ui.x xVar = kVar.M;
-            if (xVar != null) {
-                xVar.a(charSequence);
-                return;
+    @Override // p8c
+    public final void a(Object obj) {
+        pob pobVar = this.a;
+        boolean[] zArr = this.b;
+        qob qobVar = this.c;
+        ctc ctcVar = this.d;
+        p8c p8cVar = this.e;
+        InputStream inputStream = (InputStream) obj;
+        qob.a(pobVar);
+        if (zArr[0]) {
+            return;
+        }
+        pob d = qob.d(qobVar, "readHTML");
+        String str = ctcVar.a;
+        final yt0 yt0Var = new yt0(d, zArr, qobVar, ctcVar, p8cVar, (byte) 9);
+        if (inputStream == null) {
+            yt0Var.a(null);
+            return;
+        }
+        Context context = LaunchActivity.H1;
+        if (context == null) {
+            context = org.telegram.messenger.a.b;
+        }
+        Activity W = gl.W(context);
+        if (W == null) {
+            yt0Var.a(null);
+            return;
+        }
+        View rootView = W.findViewById(R.id.content).getRootView();
+        if (!(rootView instanceof ViewGroup)) {
+            yt0Var.a(null);
+            return;
+        }
+        final ar8 ar8Var = new ar8(context, (byte) 22);
+        ((ViewGroup) rootView).addView(ar8Var);
+        final WebView webView = new WebView(context);
+        WebSettings settings = webView.getSettings();
+        settings.setAllowContentAccess(false);
+        settings.setDatabaseEnabled(false);
+        settings.setAllowFileAccess(false);
+        settings.setJavaScriptEnabled(true);
+        settings.setSaveFormData(false);
+        settings.setGeolocationEnabled(false);
+        settings.setDomStorageEnabled(false);
+        settings.setAllowFileAccessFromFileURLs(false);
+        settings.setAllowUniversalAccessFromFileURLs(false);
+        webView.setWebViewClient(new xsc(ctcVar, inputStream));
+        webView.setWebChromeClient(new ysc());
+        ar8Var.addView(webView, nme.c(-1.0f, -1));
+        final boolean[] zArr2 = {false};
+        webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
+            @JavascriptInterface
+            public void done(String str2) {
+                gl.d3(new tsa(zArr2, webView, ar8Var, str2, yt0Var, (byte) 10));
             }
-            return;
-        }
-        if (!n41Var.H(g.class) || (qVar = kVar.O) == null) {
-            return;
-        }
-        try {
-            qVar.a(k.a((fj) n41Var.I));
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
+        }, "Instant");
+        webView.loadUrl(str);
     }
 }

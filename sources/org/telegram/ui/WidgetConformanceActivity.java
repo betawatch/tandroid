@@ -5,14 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public final class WidgetConformanceActivity extends Activity {
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
-        org.telegram.messenger.t0.w();
+        org.telegram.messenger.a.v();
         super.onCreate(bundle);
-        boolean z10 = org.telegram.messenger.s2.a;
+        boolean z = w01.a;
         finish();
     }
 
@@ -25,10 +25,10 @@ public final class WidgetConformanceActivity extends Activity {
     public final void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (intent.getBooleanExtra("clearHeights", false)) {
-            for (int i7 = 0; i7 < 4; i7++) {
-                if (org.telegram.messenger.i10.i(i7).p()) {
-                    org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(i7);
-                    a02.a.c(new org.telegram.messenger.pq(a02, 1));
+            for (int i = 0; i < 4; i++) {
+                if (y6c.h(i).o()) {
+                    ad7 Y = ad7.Y(i);
+                    Y.a.c(new vb7(Y, (byte) 1));
                 }
             }
             Log.i("WidgetConformance", "widget heights cleared");

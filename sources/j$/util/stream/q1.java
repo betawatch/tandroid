@@ -1,49 +1,33 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
+import j$.util.function.IntConsumer$-CC;
+import java.util.function.IntConsumer;
+import java.util.function.IntPredicate;
 
-/* loaded from: classes2.dex */
-public abstract class q1 implements j5 {
-    public boolean a;
-    public boolean b;
-
-    @Override // j$.util.stream.j5
-    public /* synthetic */ void accept(double d) {
-        t3.C();
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class q1 extends t1 implements l5 {
+    @Override // j$.util.stream.t1, j$.util.stream.n5
+    public final void accept(int i) {
+        if (this.a) {
+            return;
+        }
+        IntPredicate intPredicate = null;
+        intPredicate.test(i);
         throw null;
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
-    @Override // j$.util.stream.j5
-    public /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.l5
+    public final /* synthetic */ void o(Integer num) {
+        w3.g(this, num);
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j3) {
-    }
-
-    public q1(r1 r1Var) {
-        this.b = !r1Var.b;
-    }
-
-    @Override // j$.util.stream.j5
-    public final boolean q() {
-        return this.a;
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        o((Integer) obj);
     }
 }

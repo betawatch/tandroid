@@ -7,10 +7,9 @@ import android.media.projection.MediaProjection;
 import android.media.projection.MediaProjectionManager;
 import android.os.Build;
 import android.view.Surface;
-import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
     private static final int VIRTUAL_DISPLAY_DPI = 400;
@@ -33,7 +32,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
 
     private void checkNotDisposed() {
         if (this.isDisposed) {
-            throw new RuntimeException("capturer is disposed.");
+            wn4.j("capturer is disposed.");
         }
     }
 
@@ -41,13 +40,13 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         this.surfaceTextureHelper.setTextureSize(this.width, this.height);
         try {
             this.virtualDisplay = this.mediaProjection.createVirtualDisplay("WebRTC_ScreenCapture", this.width, this.height, VIRTUAL_DISPLAY_DPI, 3, new Surface(this.surfaceTextureHelper.getSurfaceTexture()), null, null);
-        } catch (Throwable th2) {
-            a8.g(th2, true);
+        } catch (Throwable th) {
+            fa4.g(th, true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$changeCaptureFormat$1(int i7, int i10) {
+    public /* synthetic */ void lambda$changeCaptureFormat$1(int i, int i2) {
         VirtualDisplay virtualDisplay = this.virtualDisplay;
         if (virtualDisplay == null) {
             return;
@@ -56,8 +55,8 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
             virtualDisplay.release();
             createVirtualDisplay();
         } else {
-            this.surfaceTextureHelper.setTextureSize(i7, i10);
-            this.virtualDisplay.resize(i7, i10, VIRTUAL_DISPLAY_DPI);
+            this.surfaceTextureHelper.setTextureSize(i, i2);
+            this.virtualDisplay.resize(i, i2, VIRTUAL_DISPLAY_DPI);
             this.virtualDisplay.setSurface(new Surface(this.surfaceTextureHelper.getSurfaceTexture()));
         }
     }
@@ -80,14 +79,14 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public synchronized void changeCaptureFormat(int i7, int i10, int i11) {
+    public synchronized void changeCaptureFormat(int i, int i2, int i3) {
         checkNotDisposed();
-        this.width = i7;
-        this.height = i10;
+        this.width = i;
+        this.height = i2;
         if (this.virtualDisplay == null) {
             return;
         }
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new jg.q(this, i7, i10, 15));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new bt((Object) this, i, i2, (byte) 14));
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -128,35 +127,34 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         this.capturerObserver.onFrameCaptured(videoFrame);
     }
 
-    @Override // org.webrtc.VideoSink
-    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        d0.a(this, videoSink);
-    }
-
     @Override // org.webrtc.VideoCapturer
-    public synchronized void startCapture(int i7, int i10, int i11) {
+    public synchronized void startCapture(int i, int i2, int i3) {
         if (this.mediaProjection != null || this.mediaProjectionManager == null) {
             return;
         }
         try {
             checkNotDisposed();
-            this.width = i7;
-            this.height = i10;
+            this.width = i;
+            this.height = i2;
             MediaProjection mediaProjection = this.mediaProjectionManager.getMediaProjection(-1, this.mediaProjectionPermissionResultData);
             this.mediaProjection = mediaProjection;
             mediaProjection.registerCallback(this.mediaProjectionCallback, this.surfaceTextureHelper.getHandler());
             createVirtualDisplay();
             this.capturerObserver.onCapturerStarted(true);
             this.surfaceTextureHelper.startListening(this);
-        } catch (Throwable th2) {
+        } catch (Throwable th) {
             this.mediaProjectionCallback.onStop();
-            a8.g(th2, true);
+            fa4.g(th, true);
         }
     }
 
     @Override // org.webrtc.VideoCapturer
     public synchronized void stopCapture() {
         checkNotDisposed();
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new h(this, 2));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new zk9(this, (byte) 8));
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final void setParentSink(VideoSink videoSink) {
     }
 }

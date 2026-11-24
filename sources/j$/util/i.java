@@ -6,7 +6,8 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public class i extends h implements java.util.List, List {
     private static final long serialVersionUID = -7754090372962971524L;
     public final java.util.List c;
@@ -16,9 +17,25 @@ public class i extends h implements java.util.List, List {
         this.c = list;
     }
 
-    public i(java.util.List list, Object obj) {
-        super(list, obj);
-        this.c = list;
+    private Object readResolve() {
+        java.util.List list = this.c;
+        return list instanceof RandomAccess ? new k(list) : this;
+    }
+
+    @Override // java.util.List
+    public final void add(int i, Object obj) {
+        synchronized (this.b) {
+            this.c.add(i, obj);
+        }
+    }
+
+    @Override // java.util.List
+    public final boolean addAll(int i, java.util.Collection collection) {
+        boolean addAll;
+        synchronized (this.b) {
+            addAll = this.c.addAll(i, collection);
+        }
+        return addAll;
     }
 
     @Override // java.util.Collection, java.util.List
@@ -33,6 +50,15 @@ public class i extends h implements java.util.List, List {
         return equals;
     }
 
+    @Override // java.util.List
+    public final Object get(int i) {
+        Object obj;
+        synchronized (this.b) {
+            obj = this.c.get(i);
+        }
+        return obj;
+    }
+
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int hashCode;
@@ -40,40 +66,6 @@ public class i extends h implements java.util.List, List {
             hashCode = this.c.hashCode();
         }
         return hashCode;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i7) {
-        Object obj;
-        synchronized (this.b) {
-            obj = this.c.get(i7);
-        }
-        return obj;
-    }
-
-    @Override // java.util.List
-    public final Object set(int i7, Object obj) {
-        Object obj2;
-        synchronized (this.b) {
-            obj2 = this.c.set(i7, obj);
-        }
-        return obj2;
-    }
-
-    @Override // java.util.List
-    public final void add(int i7, Object obj) {
-        synchronized (this.b) {
-            this.c.add(i7, obj);
-        }
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i7) {
-        Object remove;
-        synchronized (this.b) {
-            remove = this.c.remove(i7);
-        }
-        return remove;
     }
 
     @Override // java.util.List
@@ -95,31 +87,17 @@ public class i extends h implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final boolean addAll(int i7, java.util.Collection collection) {
-        boolean addAll;
-        synchronized (this.b) {
-            addAll = this.c.addAll(i7, collection);
-        }
-        return addAll;
-    }
-
-    @Override // java.util.List
     public final ListIterator listIterator() {
         return this.c.listIterator();
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator(int i7) {
-        return this.c.listIterator(i7);
-    }
-
-    @Override // java.util.List
-    public java.util.List subList(int i7, int i10) {
-        i iVar;
+    public final Object remove(int i) {
+        Object remove;
         synchronized (this.b) {
-            iVar = new i(this.c.subList(i7, i10), this.b);
+            remove = this.c.remove(i);
         }
-        return iVar;
+        return remove;
     }
 
     @Override // java.util.List, j$.util.List
@@ -134,6 +112,15 @@ public class i extends h implements java.util.List, List {
         }
     }
 
+    @Override // java.util.List
+    public final Object set(int i, Object obj) {
+        Object obj2;
+        synchronized (this.b) {
+            obj2 = this.c.set(i, obj);
+        }
+        return obj2;
+    }
+
     @Override // java.util.List, j$.util.List
     public final void sort(Comparator comparator) {
         synchronized (this.b) {
@@ -141,8 +128,22 @@ public class i extends h implements java.util.List, List {
         }
     }
 
-    private Object readResolve() {
-        java.util.List list = this.c;
-        return list instanceof RandomAccess ? new k(list) : this;
+    @Override // java.util.List
+    public java.util.List subList(int i, int i2) {
+        i iVar;
+        synchronized (this.b) {
+            iVar = new i(this.c.subList(i, i2), this.b);
+        }
+        return iVar;
+    }
+
+    public i(java.util.List list, Object obj) {
+        super(list, obj);
+        this.c = list;
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        return this.c.listIterator(i);
     }
 }

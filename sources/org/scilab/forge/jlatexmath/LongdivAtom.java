@@ -2,32 +2,32 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class LongdivAtom extends VRowAtom {
-    public LongdivAtom(long j3, long j10) {
+    public LongdivAtom(long j, long j2) {
         setHalign(1);
         setVtop(true);
-        String[] makeResults = makeResults(j3, j10);
+        String[] makeResults = makeResults(j, j2);
         RuleAtom ruleAtom = new RuleAtom(1, 0.0f, 1, 2.6f, 1, 0.5f);
-        for (int i7 = 0; i7 < makeResults.length; i7++) {
-            Atom atom = new TeXFormula(makeResults[i7]).root;
-            if (i7 % 2 == 0) {
+        for (int i = 0; i < makeResults.length; i++) {
+            Atom atom = new TeXFormula(makeResults[i]).root;
+            if (i % 2 == 0) {
                 RowAtom rowAtom = new RowAtom(atom);
                 rowAtom.add(ruleAtom);
-                if (i7 == 0) {
+                if (i == 0) {
                     append(rowAtom);
                 } else {
                     append(new UnderlinedAtom(rowAtom));
                 }
-            } else if (i7 == 1) {
-                String l10 = Long.toString(j3);
+            } else if (i == 1) {
+                String l = Long.toString(j);
                 BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom(SymbolAtom.get(TeXFormula.symbolMappings[41]), 1);
                 RowAtom rowAtom2 = new RowAtom(new PhantomAtom(bigDelimiterAtom, false, true, true));
                 rowAtom2.add(new SmashedAtom(new RaiseAtom(bigDelimiterAtom, 13, 3.5f, 13, 0.0f, 13, 0.0f)));
                 rowAtom2.add(atom);
                 OverlinedAtom overlinedAtom = new OverlinedAtom(rowAtom2);
-                RowAtom rowAtom3 = new RowAtom(new TeXFormula(l10).root);
+                RowAtom rowAtom3 = new RowAtom(new TeXFormula(l).root);
                 rowAtom3.add(new SpaceAtom(1));
                 rowAtom3.add(overlinedAtom);
                 append(rowAtom3);
@@ -39,17 +39,17 @@ public class LongdivAtom extends VRowAtom {
         }
     }
 
-    private String[] makeResults(long j3, long j10) {
+    private String[] makeResults(long j, long j2) {
         ArrayList arrayList = new ArrayList();
-        long j11 = j10 / j3;
-        arrayList.add(Long.toString(j11));
-        arrayList.add(Long.toString(j10));
-        int length = Long.toString(j11).length();
-        for (int i7 = 0; i7 < length; i7++) {
-            long charAt = (r1.charAt(i7) - '0') * ((long) Math.pow(10.0d, (length - i7) - 1)) * j3;
-            j10 -= charAt;
+        long j3 = j2 / j;
+        arrayList.add(Long.toString(j3));
+        arrayList.add(Long.toString(j2));
+        int length = Long.toString(j3).length();
+        for (int i = 0; i < length; i++) {
+            long charAt = (r0.charAt(i) - '0') * ((long) Math.pow(10.0d, (length - i) - 1)) * j;
+            j2 -= charAt;
             arrayList.add(Long.toString(charAt));
-            arrayList.add(Long.toString(j10));
+            arrayList.add(Long.toString(j2));
         }
         return (String[]) arrayList.toArray(new String[arrayList.size()]);
     }

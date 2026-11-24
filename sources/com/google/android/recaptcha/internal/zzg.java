@@ -1,28 +1,25 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzg {
     private boolean zza;
 
-    public abstract Object zza(String str, c cVar);
+    public abstract Object zza(String str, fw2 fw2Var);
 
-    public abstract Object zzb(String str, c cVar);
+    public abstract Object zzb(String str, fw2 fw2Var);
 
-    public Object zzc(zzcg zzcgVar, c cVar) {
-        return k.a;
+    public Object zzc(zzcg zzcgVar, fw2 fw2Var) {
+        return g5c.a;
     }
 
-    public abstract Object zzd(zzxn zzxnVar, c cVar);
+    public abstract Object zzd(zzxn zzxnVar, fw2 fw2Var);
 
-    public Object zze(String str, long j3, Exception exc, c cVar) {
-        return k.a;
+    public Object zze(String str, long j, Exception exc, fw2 fw2Var) {
+        return g5c.a;
     }
 
-    public Object zzf(Exception exc, c cVar) {
+    public Object zzf(Exception exc, fw2 fw2Var) {
         return zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzap, exc.getMessage(), null, 8, null));
     }
 

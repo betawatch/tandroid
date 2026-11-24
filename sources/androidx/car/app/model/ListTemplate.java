@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class ListTemplate implements x0 {
+public final class ListTemplate implements ogb {
     static final int MAX_ALLOWED_ITEMS = 100;
     static final int MAX_MESSAGES_PER_CONVERSATION = 10;
     private final ActionStrip mActionStrip;
@@ -19,81 +19,84 @@ public final class ListTemplate implements x0 {
     private final ItemList mSingleList;
     private final CarText mTitle;
 
-    public ListTemplate(u uVar) {
-        this.mIsLoading = uVar.a;
-        this.mTitle = uVar.d;
-        this.mHeaderAction = uVar.e;
-        this.mSingleList = uVar.b;
-        this.mSectionedLists = androidx.car.app.utils.g.g(uVar.c);
-        this.mActionStrip = uVar.f;
-        this.mActions = androidx.car.app.utils.g.g(uVar.g);
+    public ListTemplate(p56 p56Var) {
+        this.mIsLoading = p56Var.a;
+        this.mTitle = p56Var.d;
+        this.mHeaderAction = p56Var.e;
+        this.mSingleList = p56Var.b;
+        this.mSectionedLists = qrd.a(p56Var.c);
+        this.mActionStrip = p56Var.f;
+        this.mActions = qrd.a(p56Var.g);
     }
 
     public static List<SectionedItemList> getTruncatedCopy(List<SectionedItemList> list) {
-        v vVar = new v();
-        vVar.a = 100;
+        q56 q56Var = new q56();
+        q56Var.a = 100;
         ArrayList arrayList = new ArrayList();
         for (SectionedItemList sectionedItemList : list) {
-            arrayList.add(SectionedItemList.create(truncate(sectionedItemList.getItemList(), vVar), sectionedItemList.getHeader().toCharSequence()));
-            if (vVar.a <= 0) {
+            arrayList.add(SectionedItemList.create(truncate(sectionedItemList.getItemList(), q56Var), sectionedItemList.getHeader().toCharSequence()));
+            if (q56Var.a <= 0) {
                 break;
             }
         }
         return arrayList;
     }
 
-    public static ItemList truncate(ItemList itemList, v vVar) {
-        r rVar = new r(itemList);
-        ArrayList arrayList = rVar.a;
+    public static ItemList truncate(ItemList itemList, q56 q56Var) {
+        qr5 qr5Var = new qr5(itemList);
+        ArrayList arrayList = qr5Var.a;
         arrayList.clear();
-        for (q qVar : itemList.getItems()) {
-            if (!(qVar instanceof ConversationItem)) {
-                if (vVar.a < 1) {
+        for (pr5 pr5Var : itemList.getItems()) {
+            if (!(pr5Var instanceof ConversationItem)) {
+                if (q56Var.a < 1) {
                     break;
                 }
-                Objects.requireNonNull(qVar);
-                arrayList.add(qVar);
-                vVar.a--;
+                Objects.requireNonNull(pr5Var);
+                arrayList.add(pr5Var);
+                q56Var.a--;
             } else {
-                ConversationItem conversationItem = (ConversationItem) qVar;
-                if (vVar.a < 2) {
+                ConversationItem conversationItem = (ConversationItem) pr5Var;
+                if (q56Var.a < 2) {
                     break;
                 }
-                androidx.car.app.messaging.model.f fVar = new androidx.car.app.messaging.model.f(conversationItem);
-                int i7 = vVar.a - 1;
-                vVar.a = i7;
-                int min = Math.min(i7, 10);
+                jw2 jw2Var = new jw2(conversationItem);
+                int i = q56Var.a - 1;
+                q56Var.a = i;
+                int min = Math.min(i, 10);
                 int size = conversationItem.getMessages().size();
                 int min2 = Math.min(size, min);
-                fVar.f = conversationItem.getMessages().subList(size - min2, size);
-                arrayList.add(new ConversationItem(fVar));
-                vVar.a -= min2;
+                jw2Var.f = conversationItem.getMessages().subList(size - min2, size);
+                arrayList.add(new ConversationItem(jw2Var));
+                q56Var.a -= min2;
             }
         }
-        if (rVar.c != null) {
+        if (qr5Var.c != null) {
             int size2 = arrayList.size();
             if (size2 == 0) {
-                throw new IllegalStateException("A selectable list cannot be empty");
+                sc8.j("A selectable list cannot be empty");
+                return null;
             }
-            int i10 = rVar.b;
-            if (i10 >= size2) {
-                throw new IllegalStateException("The selected item index (" + i10 + ") is larger than the size of the list (" + size2 + ")");
+            int i2 = qr5Var.b;
+            if (i2 >= size2) {
+                throw new IllegalStateException("The selected item index (" + i2 + ") is larger than the size of the list (" + size2 + ")");
             }
             int size3 = arrayList.size();
-            int i11 = 0;
-            while (i11 < size3) {
-                Object obj = arrayList.get(i11);
-                i11++;
-                q qVar2 = (q) obj;
-                if (ItemList.getOnClickDelegate(qVar2) != null) {
-                    throw new IllegalStateException("Items that belong to selectable lists can't have an onClickListener. Use the OnSelectedListener of the list instead");
+            int i3 = 0;
+            while (i3 < size3) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                pr5 pr5Var2 = (pr5) obj;
+                if (ItemList.getOnClickDelegate(pr5Var2) != null) {
+                    sc8.j("Items that belong to selectable lists can't have an onClickListener. Use the OnSelectedListener of the list instead");
+                    return null;
                 }
-                if (ItemList.getToggle(qVar2) != null) {
-                    throw new IllegalStateException("Items that belong to selectable lists can't have a toggle");
+                if (ItemList.getToggle(pr5Var2) != null) {
+                    sc8.j("Items that belong to selectable lists can't have a toggle");
+                    return null;
                 }
             }
         }
-        return new ItemList(rVar);
+        return new ItemList(qr5Var);
     }
 
     public boolean equals(Object obj) {
@@ -140,8 +143,8 @@ public final class ListTemplate implements x0 {
         return this.mIsLoading;
     }
 
-    public u toBuilder() {
-        return new u(this);
+    public p56 toBuilder() {
+        return new p56(this);
     }
 
     public String toString() {

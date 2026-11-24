@@ -1,28 +1,29 @@
 package android.support.v4.media.session;
 
-import a8.p0;
 import android.media.session.MediaSession;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.MediaDescriptionCompat;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$QueueItem implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new z(1);
+    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new hv6((byte) 1);
     public final MediaDescriptionCompat a;
     public final long b;
     public MediaSession.QueueItem c;
 
-    public MediaSessionCompat$QueueItem(MediaSession.QueueItem queueItem, MediaDescriptionCompat mediaDescriptionCompat, long j3) {
+    public MediaSessionCompat$QueueItem(MediaSession.QueueItem queueItem, MediaDescriptionCompat mediaDescriptionCompat, long j) {
         if (mediaDescriptionCompat == null) {
-            throw new IllegalArgumentException("Description cannot be null");
+            w26.j("Description cannot be null");
+            throw null;
         }
-        if (j3 == -1) {
-            throw new IllegalArgumentException("Id cannot be QueueItem.UNKNOWN_ID");
+        if (j == -1) {
+            w26.j("Id cannot be QueueItem.UNKNOWN_ID");
+            throw null;
         }
         this.a = mediaDescriptionCompat;
-        this.b = j3;
+        this.b = j;
         this.c = queueItem;
     }
 
@@ -32,15 +33,15 @@ public final class MediaSessionCompat$QueueItem implements Parcelable {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem {Description=");
-        sb2.append(this.a);
-        sb2.append(", Id=");
-        return p0.r(sb2, this.b, " }");
+        StringBuilder sb = new StringBuilder("MediaSession.QueueItem {Description=");
+        sb.append(this.a);
+        sb.append(", Id=");
+        return ls6.p(sb, this.b, " }");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        this.a.writeToParcel(parcel, i7);
+    public final void writeToParcel(Parcel parcel, int i) {
+        this.a.writeToParcel(parcel, i);
         parcel.writeLong(this.b);
     }
 

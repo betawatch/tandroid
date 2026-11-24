@@ -1,37 +1,34 @@
 package j$.util.stream;
 
 import java.util.function.LongConsumer;
+import java.util.function.LongFunction;
 
-/* loaded from: classes2.dex */
-public final class e1 extends h1 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ Object t;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class e1 extends i5 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e1(a aVar, int i7, Object obj, int i10) {
-        super(aVar, i7);
-        this.s = i10;
-        this.t = obj;
+    public /* synthetic */ e1(a aVar, n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
+        this.c = aVar;
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        switch (this.s) {
+    @Override // j$.util.stream.m5, j$.util.stream.n5
+    public final void accept(long j) {
+        byte b = this.b;
+        n5 n5Var = this.a;
+        a aVar = this.c;
+        switch (b) {
             case 0:
-                return new d1(this, j5Var);
-            case 1:
-                return new b1(this, j5Var, 5);
-            case 2:
-                return new w4(this, j5Var);
+                n5Var.accept((n5) ((LongFunction) ((s) aVar).m).apply(j));
+                break;
             default:
-                return new l(this, j5Var, 5);
+                ((LongConsumer) ((h1) aVar).m).accept(j);
+                n5Var.accept(j);
+                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e1(i1 i1Var, LongConsumer longConsumer) {
-        super(i1Var, 0);
-        this.s = 1;
-        this.t = longConsumer;
     }
 }

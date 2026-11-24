@@ -5,44 +5,45 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnSelectedListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class OnSelectedDelegateImpl implements h0 {
+public class OnSelectedDelegateImpl implements hp7 {
     private final IOnSelectedListener mStub;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class OnSelectedListenerStub extends IOnSelectedListener.Stub {
-        private final t mListener;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class OnSelectedListenerStub extends IOnSelectedListener.Stub {
+        private final sr5 mListener;
 
-        public OnSelectedListenerStub(t tVar) {
+        public OnSelectedListenerStub(sr5 sr5Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSelected$0(int i7) {
+        public /* synthetic */ Object lambda$onSelected$0(int i) {
             throw null;
         }
 
         @Override // androidx.car.app.model.IOnSelectedListener
-        public void onSelected(int i7, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onSelectedListener", new g(this, i7, 1));
+        public void onSelected(int i, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.e.c(iOnDoneCallback, "onSelectedListener", new b(this, i, (byte) 1));
         }
     }
 
-    private OnSelectedDelegateImpl(t tVar) {
-        this.mStub = new OnSelectedListenerStub(tVar);
+    private OnSelectedDelegateImpl(sr5 sr5Var) {
+        this.mStub = new OnSelectedListenerStub(sr5Var);
     }
 
-    public static h0 create(t tVar) {
-        return new OnSelectedDelegateImpl(tVar);
+    public static hp7 create(sr5 sr5Var) {
+        return new OnSelectedDelegateImpl(sr5Var);
     }
 
-    public void sendSelected(int i7, androidx.car.app.k kVar) {
+    public void sendSelected(int i, cp7 cp7Var) {
         try {
             IOnSelectedListener iOnSelectedListener = this.mStub;
             Objects.requireNonNull(iOnSelectedListener);
-            iOnSelectedListener.onSelected(i7, androidx.car.app.utils.g.a());
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+            iOnSelectedListener.onSelected(i, androidx.car.app.utils.e.a());
+        } catch (RemoteException e) {
+            sdb.b(e);
         }
     }
 

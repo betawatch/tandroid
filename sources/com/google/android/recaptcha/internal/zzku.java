@@ -1,45 +1,42 @@
 package com.google.android.recaptcha.internal;
 
-import hd.e;
-import hd.l;
-import hd.n;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzku {
-    private List zza = n.a;
+    private List zza = c24.a;
 
     public final long zza(long[] jArr) {
         ArrayList arrayList;
         List list = this.zza;
-        List g10 = e.g(jArr);
-        j.e(list, "<this>");
-        if (g10 instanceof Collection) {
-            List list2 = g10;
+        List g = ss.g(jArr);
+        list.getClass();
+        if (g instanceof Collection) {
+            List list2 = g;
             arrayList = new ArrayList(list2.size() + list.size());
             arrayList.addAll(list);
             arrayList.addAll(list2);
         } else {
             arrayList = new ArrayList(list);
-            l.e(g10, arrayList);
+            el2.d(g, arrayList);
         }
         Iterator it = arrayList.iterator();
         if (!it.hasNext()) {
-            throw new UnsupportedOperationException("Empty collection can't be reduced.");
+            fyb.i("Empty collection can't be reduced.");
+            return 0L;
         }
         Object next = it.next();
         while (it.hasNext()) {
-            next = Long.valueOf(((Number) it.next()).longValue() ^ ((Number) next).longValue());
+            next = Long.valueOf(((Number) next).longValue() ^ ((Number) it.next()).longValue());
         }
         return ((Number) next).longValue();
     }
 
     public final void zzb(long[] jArr) {
-        this.zza = e.g(jArr);
+        this.zza = ss.g(jArr);
     }
 }

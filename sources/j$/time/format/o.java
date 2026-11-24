@@ -9,81 +9,73 @@ import j$.time.ZonedDateTime;
 import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.lang.ref.SoftReference;
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class o extends n {
     public static final ConcurrentHashMap d = new ConcurrentHashMap();
     public final TextStyle c;
 
     public o(TextStyle textStyle) {
         super(j$.time.temporal.p.e, "ZoneText(" + textStyle + ")");
-        new HashMap();
-        new HashMap();
         this.c = (TextStyle) Objects.requireNonNull(textStyle, "textStyle");
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j$.time.format.n, j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
-        boolean z10;
+    public final boolean j(r rVar, StringBuilder sb) {
+        boolean z;
         String[] strArr;
         ZoneId zoneId = (ZoneId) rVar.b(j$.time.temporal.p.a);
         if (zoneId == null) {
             return false;
         }
-        String id2 = zoneId.getId();
+        String id = zoneId.getId();
         if (!(zoneId instanceof ZoneOffset)) {
             j$.time.temporal.l lVar = rVar.a;
             String str = null;
             Map map = null;
             if (lVar.e(j$.time.temporal.a.INSTANT_SECONDS)) {
-                z10 = zoneId.getRules().g(Instant.H(lVar));
+                z = zoneId.getRules().g(Instant.q(lVar));
             } else {
                 j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
                 if (lVar.e(aVar)) {
                     j$.time.temporal.a aVar2 = j$.time.temporal.a.NANO_OF_DAY;
                     if (lVar.e(aVar2)) {
-                        LocalDateTime J = LocalDateTime.J(LocalDate.R(lVar.y(aVar)), j$.time.h.K(lVar.y(aVar2)));
-                        if (zoneId.getRules().e(J) == null) {
-                            z10 = zoneId.getRules().g(Instant.I(ZonedDateTime.H(J, zoneId, null).F(), r0.b().d));
+                        LocalDateTime w = LocalDateTime.w(LocalDate.K(lVar.y(aVar)), j$.time.j.x(lVar.y(aVar2)));
+                        if (zoneId.getRules().e(w) == null) {
+                            z = zoneId.getRules().g(Instant.v(ZonedDateTime.q(w, zoneId, null).E(), r0.b().d));
                         }
                     }
                 }
-                z10 = 2;
+                z = 2;
             }
             Locale locale = rVar.b.b;
             TextStyle textStyle = TextStyle.NARROW;
             TextStyle textStyle2 = this.c;
             if (textStyle2 != textStyle) {
                 ConcurrentHashMap concurrentHashMap = d;
-                SoftReference softReference = (SoftReference) concurrentHashMap.get(id2);
+                SoftReference softReference = (SoftReference) concurrentHashMap.get(id);
                 if (softReference == null || (map = (Map) softReference.get()) == null || (strArr = (String[]) map.get(locale)) == null) {
-                    TimeZone timeZone = TimeZone.getTimeZone(id2);
-                    String[] strArr2 = {id2, timeZone.getDisplayName(false, 1, locale), timeZone.getDisplayName(false, 0, locale), timeZone.getDisplayName(true, 1, locale), timeZone.getDisplayName(true, 0, locale), id2, id2};
+                    TimeZone timeZone = TimeZone.getTimeZone(id);
+                    String[] strArr2 = {id, timeZone.getDisplayName(false, 1, locale), timeZone.getDisplayName(false, 0, locale), timeZone.getDisplayName(true, 1, locale), timeZone.getDisplayName(true, 0, locale), id, id};
                     if (map == null) {
                         map = new ConcurrentHashMap();
                     }
                     map.put(locale, strArr2);
-                    concurrentHashMap.put(id2, new SoftReference(map));
+                    concurrentHashMap.put(id, new SoftReference(map));
                     strArr = strArr2;
                 }
-                if (!z10) {
-                    str = strArr[textStyle2.a + 1];
-                } else if (z10) {
-                    str = strArr[textStyle2.a + 3];
-                } else {
-                    str = strArr[textStyle2.a + 5];
-                }
+                str = z ? !z ? strArr[(textStyle2.a ? 1 : 0) + 5] : strArr[(textStyle2.a ? 1 : 0) + 3] : strArr[(textStyle2.a ? 1 : 0) + 1];
             }
             if (str != null) {
-                id2 = str;
+                id = str;
             }
         }
-        sb2.append(id2);
+        sb.append(id);
         return true;
     }
 }

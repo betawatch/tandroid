@@ -1,97 +1,42 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.Arrays;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class r2 extends q2 implements t1 {
-    @Override // j$.util.stream.g5
-    public final /* synthetic */ void B(Double d) {
-        t3.D(this, d);
-    }
-
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        B((Double) obj);
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.w1
-    public final /* bridge */ /* synthetic */ e2 build() {
-        build();
-        return this;
-    }
-
-    @Override // j$.util.stream.t1, j$.util.stream.w1
-    public final y1 build() {
-        int i7 = this.b;
-        double[] dArr = this.a;
-        if (i7 >= dArr.length) {
-            return this;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class r2 extends j2 implements g2 {
+    @Override // j$.util.stream.g2
+    public final Object b() {
+        long j = this.c;
+        if (j >= 2147483639) {
+            j$.time.g.c("Stream size exceeds max array size");
+            return null;
         }
-        throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(dArr.length)));
+        Object newArray = newArray((int) j);
+        c(0, newArray);
+        return newArray;
     }
 
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        double[] dArr = this.a;
-        if (j3 != dArr.length) {
-            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j3), Integer.valueOf(dArr.length)));
-        }
-        this.b = 0;
+    @Override // j$.util.stream.g2
+    public final void c(int i, Object obj) {
+        h2 h2Var = this.a;
+        ((g2) h2Var).c(i, obj);
+        ((g2) this.b).c(i + ((int) ((g2) h2Var).count()), obj);
     }
 
-    @Override // j$.util.stream.j5
-    public final void accept(double d) {
-        int i7 = this.b;
-        double[] dArr = this.a;
-        if (i7 < dArr.length) {
-            this.b = i7 + 1;
-            dArr[i7] = d;
-            return;
-        }
-        throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(dArr.length)));
+    @Override // j$.util.stream.g2
+    public final void d(Object obj) {
+        ((g2) this.a).d(obj);
+        ((g2) this.b).d(obj);
     }
 
-    @Override // j$.util.stream.j5
-    public final void end() {
-        int i7 = this.b;
-        double[] dArr = this.a;
-        if (i7 < dArr.length) {
-            throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(dArr.length)));
-        }
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ Object[] g(IntFunction intFunction) {
+        return w3.m(this, intFunction);
     }
 
-    @Override // j$.util.stream.q2
     public final String toString() {
-        double[] dArr = this.a;
-        return String.format("DoubleFixedNodeBuilder[%d][%s]", Integer.valueOf(dArr.length - this.b), Arrays.toString(dArr));
+        long j = this.c;
+        return j < 32 ? String.format("%s[%s.%s]", getClass().getName(), this.a, this.b) : String.format("%s[size=%d]", getClass().getName(), Long.valueOf(j));
     }
 }

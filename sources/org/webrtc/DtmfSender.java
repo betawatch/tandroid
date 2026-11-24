@@ -1,29 +1,30 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class DtmfSender {
     private long nativeDtmfSender;
 
-    public DtmfSender(long j3) {
-        this.nativeDtmfSender = j3;
+    public DtmfSender(long j) {
+        this.nativeDtmfSender = j;
     }
 
     private void checkDtmfSenderExists() {
-        if (this.nativeDtmfSender == 0) {
-            throw new IllegalStateException("DtmfSender has been disposed.");
+        if (this.nativeDtmfSender != 0) {
+            return;
         }
+        sc8.j("DtmfSender has been disposed.");
     }
 
-    private static native boolean nativeCanInsertDtmf(long j3);
+    private static native boolean nativeCanInsertDtmf(long j);
 
-    private static native int nativeDuration(long j3);
+    private static native int nativeDuration(long j);
 
-    private static native boolean nativeInsertDtmf(long j3, String str, int i7, int i10);
+    private static native boolean nativeInsertDtmf(long j, String str, int i, int i2);
 
-    private static native int nativeInterToneGap(long j3);
+    private static native int nativeInterToneGap(long j);
 
-    private static native String nativeTones(long j3);
+    private static native String nativeTones(long j);
 
     public boolean canInsertDtmf() {
         checkDtmfSenderExists();
@@ -41,9 +42,9 @@ public class DtmfSender {
         return nativeDuration(this.nativeDtmfSender);
     }
 
-    public boolean insertDtmf(String str, int i7, int i10) {
+    public boolean insertDtmf(String str, int i, int i2) {
         checkDtmfSenderExists();
-        return nativeInsertDtmf(this.nativeDtmfSender, str, i7, i10);
+        return nativeInsertDtmf(this.nativeDtmfSender, str, i, i2);
     }
 
     public int interToneGap() {

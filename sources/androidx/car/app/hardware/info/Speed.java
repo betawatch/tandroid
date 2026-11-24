@@ -2,18 +2,19 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
-import s.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Speed {
     private final CarValue<Float> mDisplaySpeedMetersPerSecond;
     private final CarValue<Float> mRawSpeedMetersPerSecond;
     private final CarValue<Integer> mSpeedDisplayUnit;
 
-    public Speed(j jVar) {
-        jVar.getClass();
-        throw null;
+    private Speed() {
+        CarValue<Float> carValue = CarValue.UNKNOWN_FLOAT;
+        this.mRawSpeedMetersPerSecond = carValue;
+        this.mDisplaySpeedMetersPerSecond = carValue;
+        this.mSpeedDisplayUnit = CarValue.UNKNOWN_INTEGER;
     }
 
     public boolean equals(Object obj) {
@@ -53,10 +54,8 @@ public final class Speed {
         return "[ raw speed: " + getRawSpeedMetersPerSecond() + ", display speed: " + getDisplaySpeedMetersPerSecond() + ", speed display unit: " + this.mSpeedDisplayUnit + "]";
     }
 
-    private Speed() {
-        CarValue<Float> carValue = CarValue.UNKNOWN_FLOAT;
-        this.mRawSpeedMetersPerSecond = carValue;
-        this.mDisplaySpeedMetersPerSecond = carValue;
-        this.mSpeedDisplayUnit = CarValue.UNKNOWN_INTEGER;
+    public Speed(ala alaVar) {
+        alaVar.getClass();
+        throw null;
     }
 }

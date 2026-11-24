@@ -4,53 +4,55 @@ import android.os.RemoteException;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.navigation.model.IPanModeListener;
 import androidx.car.app.navigation.model.PanModeDelegateImpl;
+import androidx.car.app.utils.e;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class PanModeDelegateImpl implements g {
+public class PanModeDelegateImpl implements pu7 {
     private final IPanModeListener mStub;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class PanModeListenerStub extends IPanModeListener.Stub {
-        private final i mListener;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class PanModeListenerStub extends IPanModeListener.Stub {
+        private final qu7 mListener;
 
-        public PanModeListenerStub(i iVar) {
+        public PanModeListenerStub(qu7 qu7Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onPanModeChanged$0(boolean z10) {
+        public /* synthetic */ Object lambda$onPanModeChanged$0(boolean z) {
             throw null;
         }
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
-        public void onPanModeChanged(final boolean z10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.a() { // from class: androidx.car.app.navigation.model.h
-                @Override // androidx.car.app.utils.a
+        public void onPanModeChanged(final boolean z, IOnDoneCallback iOnDoneCallback) {
+            e.c(iOnDoneCallback, "onPanModeChanged", new q69() { // from class: androidx.car.app.navigation.model.a
+                @Override // q69
                 public final Object a() {
                     Object lambda$onPanModeChanged$0;
-                    lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z10);
+                    lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z);
                     return lambda$onPanModeChanged$0;
                 }
             });
         }
     }
 
-    private PanModeDelegateImpl(i iVar) {
-        this.mStub = new PanModeListenerStub(iVar);
+    private PanModeDelegateImpl(qu7 qu7Var) {
+        this.mStub = new PanModeListenerStub(qu7Var);
     }
 
-    public static g create(i iVar) {
-        return new PanModeDelegateImpl(iVar);
+    public static pu7 create(qu7 qu7Var) {
+        return new PanModeDelegateImpl(qu7Var);
     }
 
-    public void sendPanModeChanged(boolean z10, androidx.car.app.k kVar) {
+    public void sendPanModeChanged(boolean z, cp7 cp7Var) {
         try {
             IPanModeListener iPanModeListener = this.mStub;
             Objects.requireNonNull(iPanModeListener);
-            iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.g.a());
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+            iPanModeListener.onPanModeChanged(z, e.a());
+        } catch (RemoteException e) {
+            sdb.b(e);
         }
     }
 

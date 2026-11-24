@@ -3,9 +3,8 @@ package androidx.car.app.hardware.info;
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 import java.util.List;
-import s.d;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class EnergyProfile {
     public static final int EVCONNECTOR_TYPE_CHADEMO = 3;
@@ -37,9 +36,10 @@ public final class EnergyProfile {
     private final CarValue<List<Integer>> mEvConnectorTypes;
     private final CarValue<List<Integer>> mFuelTypes;
 
-    public EnergyProfile(d dVar) {
-        dVar.getClass();
-        throw null;
+    private EnergyProfile() {
+        CarValue<List<Integer>> carValue = CarValue.UNKNOWN_INTEGER_LIST;
+        this.mEvConnectorTypes = carValue;
+        this.mFuelTypes = carValue;
     }
 
     public boolean equals(Object obj) {
@@ -73,9 +73,8 @@ public final class EnergyProfile {
         return "[ evConnectorTypes: " + this.mEvConnectorTypes + ", fuelTypes: " + this.mFuelTypes + "]";
     }
 
-    private EnergyProfile() {
-        CarValue<List<Integer>> carValue = CarValue.UNKNOWN_INTEGER_LIST;
-        this.mEvConnectorTypes = carValue;
-        this.mFuelTypes = carValue;
+    public EnergyProfile(y24 y24Var) {
+        y24Var.getClass();
+        throw null;
     }
 }

@@ -1,6 +1,7 @@
 package j$.util;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class b0 {
     public static final b0 c = new b0();
     public final boolean a;
@@ -11,11 +12,6 @@ public final class b0 {
         this.b = Double.NaN;
     }
 
-    public b0(double d) {
-        this.a = true;
-        this.b = d;
-    }
-
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -24,9 +20,9 @@ public final class b0 {
             return false;
         }
         b0 b0Var = (b0) obj;
-        boolean z10 = b0Var.a;
-        boolean z11 = this.a;
-        return (z11 && z10) ? Double.compare(this.b, b0Var.b) == 0 : z11 == z10;
+        boolean z = b0Var.a;
+        boolean z2 = this.a;
+        return (z2 && z) ? Double.compare(this.b, b0Var.b) == 0 : z2 == z;
     }
 
     public final int hashCode() {
@@ -38,9 +34,14 @@ public final class b0 {
     }
 
     public final String toString() {
-        if (this.a) {
-            return "OptionalDouble[" + this.b + "]";
+        if (!this.a) {
+            return "OptionalDouble.empty";
         }
-        return "OptionalDouble.empty";
+        return "OptionalDouble[" + this.b + "]";
+    }
+
+    public b0(double d) {
+        this.a = true;
+        this.b = d;
     }
 }

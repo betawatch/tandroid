@@ -4,20 +4,20 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public interface EglBase {
+    public static final int[] CONFIG_PIXEL_BUFFER;
+    public static final int[] CONFIG_PIXEL_RGBA_BUFFER;
+    public static final int[] CONFIG_PLAIN;
+    public static final int[] CONFIG_RECORDABLE;
+    public static final int[] CONFIG_RGBA;
     public static final int EGL_OPENGL_ES2_BIT = 4;
     public static final int EGL_OPENGL_ES3_BIT = 64;
     public static final int EGL_RECORDABLE_ANDROID = 12610;
     public static final Object lock = new Object();
-    public static final int[] CONFIG_PLAIN = e.a().createConfigAttributes();
-    public static final int[] CONFIG_RGBA = e.a().setHasAlphaChannel(true).createConfigAttributes();
-    public static final int[] CONFIG_PIXEL_BUFFER = e.a().setSupportsPixelBuffer(true).createConfigAttributes();
-    public static final int[] CONFIG_PIXEL_RGBA_BUFFER = e.a().setHasAlphaChannel(true).setSupportsPixelBuffer(true).createConfigAttributes();
-    public static final int[] CONFIG_RECORDABLE = e.a().setIsRecordable(true).createConfigAttributes();
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class ConfigBuilder {
         private boolean hasAlphaChannel;
         private boolean isRecordable;
@@ -36,8 +36,8 @@ public interface EglBase {
                 arrayList.add(12321);
                 arrayList.add(8);
             }
-            int i7 = this.openGlesVersion;
-            if (i7 == 2 || i7 == 3) {
+            int i = this.openGlesVersion;
+            if (i == 2 || i == 3) {
                 arrayList.add(12352);
                 arrayList.add(Integer.valueOf(this.openGlesVersion == 3 ? 64 : 4));
             }
@@ -51,48 +51,58 @@ public interface EglBase {
             }
             arrayList.add(12344);
             int[] iArr = new int[arrayList.size()];
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                iArr[i10] = ((Integer) arrayList.get(i10)).intValue();
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                iArr[i2] = ((Integer) arrayList.get(i2)).intValue();
             }
             return iArr;
         }
 
-        public ConfigBuilder setHasAlphaChannel(boolean z10) {
-            this.hasAlphaChannel = z10;
+        public ConfigBuilder setHasAlphaChannel(boolean z) {
+            this.hasAlphaChannel = z;
             return this;
         }
 
-        public ConfigBuilder setIsRecordable(boolean z10) {
-            this.isRecordable = z10;
+        public ConfigBuilder setIsRecordable(boolean z) {
+            this.isRecordable = z;
             return this;
         }
 
-        public ConfigBuilder setOpenGlesVersion(int i7) {
-            if (i7 < 1 || i7 > 3) {
-                throw new IllegalArgumentException(i5.c.j(i7, "OpenGL ES version ", " not supported"));
+        public ConfigBuilder setOpenGlesVersion(int i) {
+            if (i < 1 || i > 3) {
+                w26.j(tb4.n(i, "OpenGL ES version ", " not supported"));
+                return null;
             }
-            this.openGlesVersion = i7;
+            this.openGlesVersion = i;
             return this;
         }
 
-        public ConfigBuilder setSupportsPixelBuffer(boolean z10) {
-            this.supportsPixelBuffer = z10;
+        public ConfigBuilder setSupportsPixelBuffer(boolean z) {
+            this.supportsPixelBuffer = z;
             return this;
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface Context {
         public static final long NO_CONTEXT = 0;
 
         long getNativeEglContext();
     }
 
+    static {
+        int i = c.a;
+        CONFIG_PLAIN = new ConfigBuilder().createConfigAttributes();
+        CONFIG_RGBA = new ConfigBuilder().setHasAlphaChannel(true).createConfigAttributes();
+        CONFIG_PIXEL_BUFFER = new ConfigBuilder().setSupportsPixelBuffer(true).createConfigAttributes();
+        CONFIG_PIXEL_RGBA_BUFFER = new ConfigBuilder().setHasAlphaChannel(true).setSupportsPixelBuffer(true).createConfigAttributes();
+        CONFIG_RECORDABLE = new ConfigBuilder().setIsRecordable(true).createConfigAttributes();
+    }
+
     void createBackgroundSurface(SurfaceTexture surfaceTexture);
 
     void createDummyPbufferSurface();
 
-    void createPbufferSurface(int i7, int i10);
+    void createPbufferSurface(int i, int i2);
 
     void createSurface(SurfaceTexture surfaceTexture);
 
@@ -112,13 +122,13 @@ public interface EglBase {
 
     void release();
 
-    void releaseSurface(boolean z10);
+    void releaseSurface(boolean z);
 
     int surfaceHeight();
 
     int surfaceWidth();
 
-    void swapBuffers(long j3, boolean z10);
+    void swapBuffers(long j, boolean z);
 
-    void swapBuffers(boolean z10);
+    void swapBuffers(boolean z);
 }

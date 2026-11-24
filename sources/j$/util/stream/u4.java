@@ -1,42 +1,38 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
+import j$.util.function.IntConsumer$-CC;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class u4 extends p4 implements o4 {
-    public long b;
-
-    public /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class u4 extends x4 implements l5 {
+    @Override // j$.util.stream.x4, j$.util.stream.n5
+    public final void accept(int i) {
+        this.b++;
     }
 
-    public /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
-    public /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.s4, java.util.function.Supplier
+    public final Object get() {
+        return Long.valueOf(this.b);
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // j$.util.stream.l5
+    public final /* synthetic */ void o(Integer num) {
+        w3.g(this, num);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
+    @Override // j$.util.stream.r4
+    public final void w(r4 r4Var) {
+        this.b += ((x4) r4Var).b;
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.b = 0L;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        o((Integer) obj);
     }
 }

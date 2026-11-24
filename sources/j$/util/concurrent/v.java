@@ -5,46 +5,17 @@ import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class v implements u0 {
     public long a;
     public final long b;
     public final double c;
     public final double d;
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return 17728;
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.h(this, consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.m(this);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return j$.com.android.tools.r8.a.o(this, i7);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.y(this, consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    public v(long j3, long j10, double d, double d2) {
-        this.a = j3;
-        this.b = j10;
+    public v(long j, long j2, double d, double d2) {
+        this.a = j;
+        this.b = j2;
         this.c = d;
         this.d = d2;
     }
@@ -52,13 +23,18 @@ public final class v implements u0 {
     @Override // j$.util.u0, j$.util.d1, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final v trySplit() {
-        long j3 = this.a;
-        long j10 = (this.b + j3) >>> 1;
-        if (j10 <= j3) {
+        long j = this.a;
+        long j2 = (this.b + j) >>> 1;
+        if (j2 <= j) {
             return null;
         }
-        this.a = j10;
-        return new v(j3, j10, this.c, this.d);
+        this.a = j2;
+        return new v(j, j2, this.c, this.d);
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 17728;
     }
 
     @Override // j$.util.Spliterator
@@ -67,29 +43,54 @@ public final class v implements u0 {
     }
 
     @Override // j$.util.d1
-    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        doubleConsumer.getClass();
-        long j3 = this.a;
-        if (j3 >= this.b) {
-            return false;
-        }
-        doubleConsumer.accept(ThreadLocalRandom.current().a(this.c, this.d));
-        this.a = j3 + 1;
-        return true;
-    }
-
-    @Override // j$.util.d1
     public final void forEachRemaining(DoubleConsumer doubleConsumer) {
         doubleConsumer.getClass();
-        long j3 = this.a;
-        long j10 = this.b;
-        if (j3 < j10) {
-            this.a = j10;
+        long j = this.a;
+        long j2 = this.b;
+        if (j < j2) {
+            this.a = j2;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
                 doubleConsumer.accept(current.a(this.c, this.d));
-                j3++;
-            } while (j3 < j10);
+                j++;
+            } while (j < j2);
         }
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.time.a.m(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.time.a.o(this, i);
+    }
+
+    @Override // j$.util.d1
+    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        doubleConsumer.getClass();
+        long j = this.a;
+        if (j >= this.b) {
+            return false;
+        }
+        doubleConsumer.accept(ThreadLocalRandom.current().a(this.c, this.d));
+        this.a = j + 1;
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.y(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.h(this, consumer);
     }
 }

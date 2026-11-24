@@ -2,11 +2,11 @@ package org.webrtc;
 
 import android.media.MediaRecorder;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public interface CameraVideoCapturer extends VideoCapturer {
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface CameraEventsHandler {
         void onCameraClosed();
 
@@ -21,7 +21,7 @@ public interface CameraVideoCapturer extends VideoCapturer {
         void onFirstFrameAvailable();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class CameraStatistics {
         private static final int CAMERA_FREEZE_REPORT_TIMOUT_MS = 4000;
         private static final int CAMERA_OBSERVER_PERIOD_MS = 2000;
@@ -37,20 +37,24 @@ public interface CameraVideoCapturer extends VideoCapturer {
                 @Override // java.lang.Runnable
                 public void run() {
                     Logging.d(CameraStatistics.TAG, "Camera fps: " + Math.round((CameraStatistics.this.frameCount * 1000.0f) / 2000.0f) + ".");
-                    if (CameraStatistics.this.frameCount == 0) {
-                        CameraStatistics.access$104(CameraStatistics.this);
+                    int i = CameraStatistics.this.frameCount;
+                    CameraStatistics cameraStatistics = CameraStatistics.this;
+                    if (i == 0) {
+                        CameraStatistics.access$104(cameraStatistics);
                         if (CameraStatistics.this.freezePeriodCount * CameraStatistics.CAMERA_OBSERVER_PERIOD_MS >= CameraStatistics.CAMERA_FREEZE_REPORT_TIMOUT_MS && CameraStatistics.this.eventsHandler != null) {
                             Logging.e(CameraStatistics.TAG, "Camera freezed.");
-                            if (CameraStatistics.this.surfaceTextureHelper.isTextureInUse()) {
-                                CameraStatistics.this.eventsHandler.onCameraFreezed("Camera failure. Client must return video buffers.");
+                            boolean isTextureInUse = CameraStatistics.this.surfaceTextureHelper.isTextureInUse();
+                            CameraStatistics cameraStatistics2 = CameraStatistics.this;
+                            if (isTextureInUse) {
+                                cameraStatistics2.eventsHandler.onCameraFreezed("Camera failure. Client must return video buffers.");
                                 return;
                             } else {
-                                CameraStatistics.this.eventsHandler.onCameraFreezed("Camera failure.");
+                                cameraStatistics2.eventsHandler.onCameraFreezed("Camera failure.");
                                 return;
                             }
                         }
                     } else {
-                        CameraStatistics.this.freezePeriodCount = 0;
+                        cameraStatistics.freezePeriodCount = 0;
                     }
                     CameraStatistics.this.frameCount = 0;
                     CameraStatistics.this.surfaceTextureHelper.getHandler().postDelayed(this, 2000L);
@@ -58,7 +62,8 @@ public interface CameraVideoCapturer extends VideoCapturer {
             };
             this.cameraObserver = runnable;
             if (surfaceTextureHelper == null) {
-                throw new IllegalArgumentException("SurfaceTextureHelper is null");
+                w26.j("SurfaceTextureHelper is null");
+                throw null;
             }
             this.surfaceTextureHelper = surfaceTextureHelper;
             this.eventsHandler = cameraEventsHandler;
@@ -68,15 +73,16 @@ public interface CameraVideoCapturer extends VideoCapturer {
         }
 
         public static /* synthetic */ int access$104(CameraStatistics cameraStatistics) {
-            int i7 = cameraStatistics.freezePeriodCount + 1;
-            cameraStatistics.freezePeriodCount = i7;
-            return i7;
+            int i = cameraStatistics.freezePeriodCount + 1;
+            cameraStatistics.freezePeriodCount = i;
+            return i;
         }
 
         private void checkThread() {
-            if (Thread.currentThread() != this.surfaceTextureHelper.getHandler().getLooper().getThread()) {
-                throw new IllegalStateException("Wrong thread");
+            if (Thread.currentThread() == this.surfaceTextureHelper.getHandler().getLooper().getThread()) {
+                return;
             }
+            sc8.j("Wrong thread");
         }
 
         public void addFrame() {
@@ -89,14 +95,14 @@ public interface CameraVideoCapturer extends VideoCapturer {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface CameraSwitchHandler {
-        void onCameraSwitchDone(boolean z10);
+        void onCameraSwitchDone(boolean z);
 
         void onCameraSwitchError(String str);
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Deprecated
     public interface MediaRecorderHandler {
         void onMediaRecorderError(String str);

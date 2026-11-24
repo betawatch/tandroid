@@ -1,41 +1,33 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzid extends j implements p {
+final class zzid extends ccb implements eq4 {
     final /* synthetic */ zzif zza;
     final /* synthetic */ zzcy zzb;
     final /* synthetic */ zzye zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzid(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, c cVar) {
-        super(2, cVar);
+    public zzid(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzifVar;
         this.zzb = zzcyVar;
         this.zzc = zzyeVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzid(this.zza, this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzid(this.zza, this.zzb, this.zzc, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzid) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzid) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        c8.z.b(obj);
+        qse.b(obj);
         zzhl zzhlVar = null;
         try {
             try {
@@ -45,16 +37,12 @@ final class zzid extends j implements p {
                 zzyg zzygVar = (zzyg) zzhlVar.zza(zzyg.zzi());
                 zzhlVar.zzd();
                 return zzygVar;
-            } catch (zzcg e10) {
-                throw e10;
-            } catch (Exception e11) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
+            } catch (zzcg e) {
+                throw e;
+            } catch (Exception e2) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e2.getMessage(), null, 8, null);
             }
-        } catch (Throwable th2) {
-            if (zzhlVar != null) {
-                zzhlVar.zzd();
-            }
-            throw th2;
+        } finally {
         }
     }
 }

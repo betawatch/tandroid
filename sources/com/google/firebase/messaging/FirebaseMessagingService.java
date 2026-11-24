@@ -1,42 +1,66 @@
 package com.google.firebase.messaging;
 
-import a8.b1;
-import ab.b0;
-import ab.h;
-import ab.w;
+import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.media.session.a0;
+import android.os.IBinder;
 import android.text.TextUtils;
 import android.util.Log;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import f5.s;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import m6.c;
-import m6.m;
-import m6.n;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class FirebaseMessagingService extends h {
+public class FirebaseMessagingService extends Service {
     public static final ArrayDeque h = new ArrayDeque(10);
-    public c f;
+    public final ExecutorService a;
+    public myc b;
+    public final Object c;
+    public int d;
+    public int e;
+    public fm9 f;
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0180  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01c5  */
-    @Override // ab.h
+    public FirebaseMessagingService() {
+        kn7 kn7Var = new kn7("Firebase-Messaging-Intent-Handle");
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), kn7Var);
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        this.a = Executors.unconfigurableExecutorService(threadPoolExecutor);
+        this.c = new Object();
+        this.e = 0;
+    }
+
+    public final void a(Intent intent) {
+        if (intent != null) {
+            kdd.b(intent);
+        }
+        synchronized (this.c) {
+            int i = this.e - 1;
+            this.e = i;
+            if (i == 0) {
+                stopSelfResult(this.d);
+            }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:29:0x015c  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01b8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(Intent intent) {
         String stringExtra;
-        c cVar;
-        int i7;
+        fm9 fm9Var;
+        int i;
         String action = intent.getAction();
         if (!"com.google.android.c2dm.intent.RECEIVE".equals(action) && !"com.google.firebase.messaging.RECEIVE_DIRECT_BOOT".equals(action)) {
             if ("com.google.firebase.messaging.NEW_TOKEN".equals(action)) {
@@ -62,11 +86,12 @@ public class FirebaseMessagingService extends h {
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Received duplicate message: " + stringExtra2);
                 }
-                if (this.f == null) {
-                    this.f = new c(getApplicationContext());
+                fm9Var = this.f;
+                if (fm9Var == null) {
+                    fm9Var = new fm9(getApplicationContext());
+                    this.f = fm9Var;
                 }
-                cVar = this.f;
-                if (cVar.c.i() >= 233700000) {
+                if (fm9Var.c.b() >= 233700000) {
                     Tasks.forException(new IOException("SERVICE_NOT_AVAILABLE"));
                     return;
                 }
@@ -80,12 +105,12 @@ public class FirebaseMessagingService extends h {
                 if (valueOf != null) {
                     bundle.putInt("google.product_id", valueOf.intValue());
                 }
-                n i10 = n.i(cVar.b);
-                synchronized (i10) {
-                    i7 = i10.a;
-                    i10.a = i7 + 1;
+                igf t = igf.t(fm9Var.b);
+                synchronized (t) {
+                    i = t.a;
+                    t.a = i + 1;
                 }
-                i10.k(new m(i7, 3, bundle, 0));
+                t.u(new ebf(i, 3, bundle, (byte) 0));
                 return;
             }
             if (arrayDeque.size() >= 10) {
@@ -101,36 +126,33 @@ public class FirebaseMessagingService extends h {
             case "deleted_messages":
                 break;
             case "gcm":
-                b1.b(intent);
+                xoe.b(intent);
                 Bundle extras = intent.getExtras();
                 if (extras == null) {
                     extras = new Bundle();
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (w.f(extras)) {
-                    w wVar = new w(extras);
-                    ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new s("Firebase-Messaging-Network-Io"));
+                if (z24.U(extras)) {
+                    z24 z24Var = new z24(extras);
+                    ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new kn7("Firebase-Messaging-Network-Io"));
                     try {
-                        if (new a0(this, wVar, newSingleThreadExecutor, 5).l()) {
-                            break;
-                        } else {
-                            newSingleThreadExecutor.shutdown();
-                            if (b1.d(intent)) {
-                                b1.c("_nf", intent.getExtras());
+                        if (!new xl3(this, z24Var, newSingleThreadExecutor).z()) {
+                            if (xoe.d(intent)) {
+                                xoe.c("_nf", intent.getExtras());
                             }
                         }
                     } finally {
                         newSingleThreadExecutor.shutdown();
                     }
                 }
-                c(new ab.a0(extras));
+                c(new j69(extras));
                 break;
             case "send_error":
                 if (intent.getStringExtra("google.message_id") == null) {
                     intent.getStringExtra("message_id");
                 }
                 String stringExtra4 = intent.getStringExtra("error");
-                new b0(stringExtra4);
+                new v30(stringExtra4);
                 if (stringExtra4 != null) {
                     stringExtra4.toLowerCase(Locale.US).getClass();
                     break;
@@ -143,14 +165,56 @@ public class FirebaseMessagingService extends h {
                 Log.w("FirebaseMessaging", "Received message with unknown type: ".concat(stringExtra));
                 break;
         }
-        if (this.f == null) {
+        fm9Var = this.f;
+        if (fm9Var == null) {
         }
-        cVar = this.f;
-        if (cVar.c.i() >= 233700000) {
+        if (fm9Var.c.b() >= 233700000) {
         }
     }
 
-    public void c(ab.a0 a0Var) {
+    @Override // android.app.Service
+    public final synchronized IBinder onBind(Intent intent) {
+        myc mycVar;
+        if (Log.isLoggable("EnhancedIntentService", 3)) {
+            Log.d("EnhancedIntentService", "Service received bind request");
+        }
+        mycVar = this.b;
+        if (mycVar == null) {
+            mycVar = new myc(new z24(this, (byte) 0));
+            this.b = mycVar;
+        }
+        return mycVar;
+    }
+
+    @Override // android.app.Service
+    public final void onDestroy() {
+        this.a.shutdown();
+        super.onDestroy();
+    }
+
+    @Override // android.app.Service
+    public final int onStartCommand(Intent intent, int i, int i2) {
+        synchronized (this.c) {
+            this.d = i2;
+            this.e++;
+        }
+        Intent intent2 = (Intent) ((ArrayDeque) c5a.t().e).poll();
+        if (intent2 == null) {
+            a(intent);
+            return 2;
+        }
+        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        this.a.execute(new mg3(this, intent2, taskCompletionSource, (byte) 18));
+        Task task = taskCompletionSource.getTask();
+        if (task.isComplete()) {
+            a(intent);
+            return 2;
+        }
+        task.addOnCompleteListener(new hc((byte) 1), new v82((Object) this, (Object) intent, (byte) 26));
+        return 3;
+    }
+
+    public void c(j69 j69Var) {
     }
 
     public void d(String str) {

@@ -1,6 +1,5 @@
 package org.webrtc.audio;
 
-import ab.i;
 import android.content.Context;
 import android.media.AudioDeviceInfo;
 import android.media.AudioFormat;
@@ -10,7 +9,6 @@ import android.media.AudioRecordingConfiguration;
 import android.media.AudioTimestamp;
 import android.os.Build;
 import android.os.Process;
-import i5.c;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -22,13 +20,12 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.utils.twidget.f;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
     private static final int AUDIO_RECORD_STOP = 1;
@@ -62,8 +59,8 @@ public class WebRtcAudioRecord {
     private AudioDeviceInfo preferredDevice;
     private final JavaAudioDeviceModule.AudioRecordStateCallback stateCallback;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public class AudioRecordThread extends Thread {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
         public AudioRecordThread(String str) {
@@ -87,9 +84,9 @@ public class WebRtcAudioRecord {
                         WebRtcAudioRecord.this.byteBuffer.put(WebRtcAudioRecord.this.emptyBytes);
                     }
                     if (this.keepAlive) {
-                        long j3 = (Build.VERSION.SDK_INT < 24 || WebRtcAudioRecord.this.audioRecord.getTimestamp(audioTimestamp, 0) != 0) ? 0L : audioTimestamp.nanoTime;
+                        long j = (Build.VERSION.SDK_INT < 24 || WebRtcAudioRecord.this.audioRecord.getTimestamp(audioTimestamp, 0) != 0) ? 0L : audioTimestamp.nanoTime;
                         WebRtcAudioRecord webRtcAudioRecord = WebRtcAudioRecord.this;
-                        webRtcAudioRecord.nativeDataIsRecorded(webRtcAudioRecord.nativeAudioRecord, read, j3);
+                        webRtcAudioRecord.nativeDataIsRecorded(webRtcAudioRecord.nativeAudioRecord, read, j);
                     }
                     if (WebRtcAudioRecord.this.audioSamplesReadyCallback != null) {
                         WebRtcAudioRecord.this.audioSamplesReadyCallback.onWebRtcAudioRecordSamplesReady(new JavaAudioDeviceModule.AudioSamples(WebRtcAudioRecord.this.audioRecord.getAudioFormat(), WebRtcAudioRecord.this.audioRecord.getChannelCount(), WebRtcAudioRecord.this.audioRecord.getSampleRate(), Arrays.copyOfRange(WebRtcAudioRecord.this.byteBuffer.array(), WebRtcAudioRecord.this.byteBuffer.arrayOffset(), WebRtcAudioRecord.this.byteBuffer.arrayOffset() + WebRtcAudioRecord.this.byteBuffer.capacity())));
@@ -108,8 +105,8 @@ public class WebRtcAudioRecord {
                     WebRtcAudioRecord.this.audioRecord.stop();
                     WebRtcAudioRecord.this.doAudioRecordStateCallback(1);
                 }
-            } catch (IllegalStateException e10) {
-                Logging.e(WebRtcAudioRecord.TAG, "AudioRecord.stop failed: " + e10.getMessage());
+            } catch (IllegalStateException e) {
+                Logging.e(WebRtcAudioRecord.TAG, "AudioRecord.stop failed: " + e.getMessage());
             }
         }
 
@@ -119,47 +116,68 @@ public class WebRtcAudioRecord {
         }
     }
 
-    public WebRtcAudioRecord(Context context, AudioManager audioManager) {
-        this(context, newDefaultScheduler(), audioManager, 7, 2, null, null, null, WebRtcAudioEffects.isAcousticEchoCancelerSupported(), WebRtcAudioEffects.isNoiseSuppressorSupported());
+    public WebRtcAudioRecord(Context context, ScheduledExecutorService scheduledExecutorService, AudioManager audioManager, int i, int i2, JavaAudioDeviceModule.AudioRecordErrorCallback audioRecordErrorCallback, JavaAudioDeviceModule.AudioRecordStateCallback audioRecordStateCallback, JavaAudioDeviceModule.SamplesReadyCallback samplesReadyCallback, boolean z, boolean z2) {
+        this.effects = new WebRtcAudioEffects();
+        this.audioSourceMatchesRecordingSessionRef = new AtomicReference<>();
+        if (z && !WebRtcAudioEffects.isAcousticEchoCancelerSupported()) {
+            w26.j("HW AEC not supported");
+            throw null;
+        }
+        if (z2 && !WebRtcAudioEffects.isNoiseSuppressorSupported()) {
+            w26.j("HW NS not supported");
+            throw null;
+        }
+        this.context = context;
+        this.executor = scheduledExecutorService;
+        this.audioManager = audioManager;
+        this.audioSource = i;
+        this.audioFormat = i2;
+        this.errorCallback = audioRecordErrorCallback;
+        this.stateCallback = audioRecordStateCallback;
+        this.audioSamplesReadyCallback = samplesReadyCallback;
+        this.isAcousticEchoCancelerSupported = z;
+        this.isNoiseSuppressorSupported = z2;
+        Logging.d(TAG, "ctor" + WebRtcAudioUtils.getThreadInfo());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void assertTrue(boolean z10) {
-        if (!z10) {
-            throw new AssertionError("Expected condition to be true");
+    public static void assertTrue(boolean z) {
+        if (z) {
+            return;
         }
+        fi7.g("Expected condition to be true");
     }
 
-    private static String audioStateToString(int i7) {
-        return i7 != 0 ? i7 != 1 ? "INVALID" : "STOP" : "START";
+    private static String audioStateToString(int i) {
+        return i != 0 ? i != 1 ? "INVALID" : "STOP" : "START";
     }
 
-    private int channelCountToConfiguration(int i7) {
-        return i7 == 1 ? 16 : 12;
+    private int channelCountToConfiguration(int i) {
+        return i == 1 ? 16 : 12;
     }
 
     private static boolean checkDeviceMatch(AudioDeviceInfo audioDeviceInfo, AudioDeviceInfo audioDeviceInfo2) {
         return audioDeviceInfo.getId() == audioDeviceInfo2.getId() && audioDeviceInfo.getType() == audioDeviceInfo2.getType();
     }
 
-    private static AudioRecord createAudioRecordOnLowerThanM(int i7, int i10, int i11, int i12, int i13) {
+    private static AudioRecord createAudioRecordOnLowerThanM(int i, int i2, int i3, int i4, int i5) {
         Logging.d(TAG, "createAudioRecordOnLowerThanM");
-        return new AudioRecord(i7, i10, i11, i12, i13);
+        return new AudioRecord(i, i2, i3, i4, i5);
     }
 
-    private static AudioRecord createAudioRecordOnMOrHigher(int i7, int i10, int i11, int i12, int i13) {
+    private static AudioRecord createAudioRecordOnMOrHigher(int i, int i2, int i3, int i4, int i5) {
         Logging.d(TAG, "createAudioRecordOnMOrHigher");
-        return new AudioRecord.Builder().setAudioSource(i7).setAudioFormat(new AudioFormat.Builder().setEncoding(i12).setSampleRate(i10).setChannelMask(i11).build()).setBufferSizeInBytes(i13).build();
+        return new AudioRecord.Builder().setAudioSource(i).setAudioFormat(new AudioFormat.Builder().setEncoding(i4).setSampleRate(i2).setChannelMask(i3).build()).setBufferSizeInBytes(i5).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void doAudioRecordStateCallback(int i7) {
-        Logging.d(TAG, "doAudioRecordStateCallback: " + audioStateToString(i7));
+    public void doAudioRecordStateCallback(int i) {
+        Logging.d(TAG, "doAudioRecordStateCallback: " + audioStateToString(i));
         JavaAudioDeviceModule.AudioRecordStateCallback audioRecordStateCallback = this.stateCallback;
         if (audioRecordStateCallback != null) {
-            if (i7 == 0) {
+            if (i == 0) {
                 audioRecordStateCallback.onWebRtcAudioRecordStart();
-            } else if (i7 == 1) {
+            } else if (i == 1) {
                 audioRecordStateCallback.onWebRtcAudioRecordStop();
             } else {
                 Logging.e(TAG, "Invalid audio state");
@@ -167,40 +185,41 @@ public class WebRtcAudioRecord {
         }
     }
 
-    private boolean enableBuiltInAEC(boolean z10) {
-        Logging.d(TAG, "enableBuiltInAEC(" + z10 + ")");
-        return this.effects.setAEC(z10);
+    private boolean enableBuiltInAEC(boolean z) {
+        Logging.d(TAG, "enableBuiltInAEC(" + z + ")");
+        return this.effects.setAEC(z);
     }
 
-    private boolean enableBuiltInNS(boolean z10) {
-        Logging.d(TAG, "enableBuiltInNS(" + z10 + ")");
-        return this.effects.setNS(z10);
+    private boolean enableBuiltInNS(boolean z) {
+        Logging.d(TAG, "enableBuiltInNS(" + z + ")");
+        return this.effects.setNS(z);
     }
 
-    private static int getBytesPerSample(int i7) {
-        int i10 = 1;
-        if (i7 != 1 && i7 != 2) {
-            if (i7 != 3) {
-                i10 = 4;
-                if (i7 != 4) {
-                    if (i7 != 13) {
-                        throw new IllegalArgumentException(c.i(i7, "Bad audio format "));
+    private static int getBytesPerSample(int i) {
+        int i2 = 1;
+        if (i != 1 && i != 2) {
+            if (i != 3) {
+                i2 = 4;
+                if (i != 4) {
+                    if (i != 13) {
+                        w26.j(de9.k(i, "Bad audio format "));
+                        return 0;
                     }
                 }
             }
-            return i10;
+            return i2;
         }
         return 2;
     }
 
-    private int initRecording(int i7, int i10) {
-        Logging.d(TAG, "initRecording(sampleRate=" + i7 + ", channels=" + i10 + ")");
+    private int initRecording(int i, int i2) {
+        Logging.d(TAG, "initRecording(sampleRate=" + i + ", channels=" + i2 + ")");
         if (this.audioRecord != null) {
             reportWebRtcAudioRecordInitError("InitRecording called twice without StopRecording.");
             return -1;
         }
-        int i11 = i7 / 100;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(getBytesPerSample(this.audioFormat) * i10 * i11);
+        int i3 = i / 100;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(getBytesPerSample(this.audioFormat) * i2 * i3);
         this.byteBuffer = allocateDirect;
         if (!allocateDirect.hasArray()) {
             reportWebRtcAudioRecordInitError("ByteBuffer does not have backing array.");
@@ -209,17 +228,17 @@ public class WebRtcAudioRecord {
         Logging.d(TAG, "byteBuffer.capacity: " + this.byteBuffer.capacity());
         this.emptyBytes = new byte[this.byteBuffer.capacity()];
         nativeCacheDirectBufferAddress(this.nativeAudioRecord, this.byteBuffer);
-        int channelCountToConfiguration = channelCountToConfiguration(i10);
-        int minBufferSize = AudioRecord.getMinBufferSize(i7, channelCountToConfiguration, this.audioFormat);
+        int channelCountToConfiguration = channelCountToConfiguration(i2);
+        int minBufferSize = AudioRecord.getMinBufferSize(i, channelCountToConfiguration, this.audioFormat);
         if (minBufferSize == -1 || minBufferSize == -2) {
-            reportWebRtcAudioRecordInitError(c.i(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+            reportWebRtcAudioRecordInitError(de9.k(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
             return -1;
         }
         Logging.d(TAG, "AudioRecord.getMinBufferSize: " + minBufferSize);
-        int max = Math.max(minBufferSize * 2, this.byteBuffer.capacity());
+        int max = Math.max(minBufferSize << 1, this.byteBuffer.capacity());
         Logging.d(TAG, "bufferSizeInBytes: " + max);
         try {
-            this.audioRecord = createAudioRecordOnMOrHigher(this.audioSource, i7, channelCountToConfiguration, this.audioFormat, max);
+            this.audioRecord = createAudioRecordOnMOrHigher(this.audioSource, i, channelCountToConfiguration, this.audioFormat, max);
             this.audioSourceMatchesRecordingSessionRef.set(null);
             AudioDeviceInfo audioDeviceInfo = this.preferredDevice;
             if (audioDeviceInfo != null) {
@@ -238,9 +257,9 @@ public class WebRtcAudioRecord {
             if (logRecordingConfigurations != 0) {
                 Logging.w(TAG, "Potential microphone conflict. Active sessions: " + logRecordingConfigurations);
             }
-            return i11;
-        } catch (IllegalArgumentException | UnsupportedOperationException e10) {
-            reportWebRtcAudioRecordInitError(e10.getMessage());
+            return i3;
+        } catch (IllegalArgumentException | UnsupportedOperationException e) {
+            reportWebRtcAudioRecordInitError(e.getMessage());
             releaseAudioResources();
             return -1;
         }
@@ -256,50 +275,50 @@ public class WebRtcAudioRecord {
         return "Scheduled task is done";
     }
 
-    private static boolean logActiveRecordingConfigs(int i7, List<AudioRecordingConfiguration> list) {
+    private static boolean logActiveRecordingConfigs(int i, List<AudioRecordingConfiguration> list) {
         assertTrue(!list.isEmpty());
         Iterator<AudioRecordingConfiguration> it = list.iterator();
         Logging.d(TAG, "AudioRecordingConfigurations: ");
         while (it.hasNext()) {
-            AudioRecordingConfiguration a10 = f.a(it.next());
-            StringBuilder sb2 = new StringBuilder("  client audio source=");
-            sb2.append(WebRtcAudioUtils.audioSourceToString(a10.getClientAudioSource()));
-            sb2.append(", client session id=");
-            sb2.append(a10.getClientAudioSessionId());
-            sb2.append(" (");
-            sb2.append(i7);
-            sb2.append(")\n  Device AudioFormat: channel count=");
-            AudioFormat format = a10.getFormat();
-            sb2.append(format.getChannelCount());
-            sb2.append(", channel index mask=");
-            sb2.append(format.getChannelIndexMask());
-            sb2.append(", channel mask=");
-            sb2.append(WebRtcAudioUtils.channelMaskToString(format.getChannelMask()));
-            sb2.append(", encoding=");
-            sb2.append(WebRtcAudioUtils.audioEncodingToString(format.getEncoding()));
-            sb2.append(", sample rate=");
-            sb2.append(format.getSampleRate());
-            sb2.append("\n  Client AudioFormat: channel count=");
-            AudioFormat clientFormat = a10.getClientFormat();
-            sb2.append(clientFormat.getChannelCount());
-            sb2.append(", channel index mask=");
-            sb2.append(clientFormat.getChannelIndexMask());
-            sb2.append(", channel mask=");
-            sb2.append(WebRtcAudioUtils.channelMaskToString(clientFormat.getChannelMask()));
-            sb2.append(", encoding=");
-            sb2.append(WebRtcAudioUtils.audioEncodingToString(clientFormat.getEncoding()));
-            sb2.append(", sample rate=");
-            sb2.append(clientFormat.getSampleRate());
-            sb2.append("\n");
-            AudioDeviceInfo audioDevice = a10.getAudioDevice();
+            AudioRecordingConfiguration c = fyb.c(it.next());
+            StringBuilder sb = new StringBuilder("  client audio source=");
+            sb.append(WebRtcAudioUtils.audioSourceToString(c.getClientAudioSource()));
+            sb.append(", client session id=");
+            sb.append(c.getClientAudioSessionId());
+            sb.append(" (");
+            sb.append(i);
+            sb.append(")\n  Device AudioFormat: channel count=");
+            AudioFormat format = c.getFormat();
+            sb.append(format.getChannelCount());
+            sb.append(", channel index mask=");
+            sb.append(format.getChannelIndexMask());
+            sb.append(", channel mask=");
+            sb.append(WebRtcAudioUtils.channelMaskToString(format.getChannelMask()));
+            sb.append(", encoding=");
+            sb.append(WebRtcAudioUtils.audioEncodingToString(format.getEncoding()));
+            sb.append(", sample rate=");
+            sb.append(format.getSampleRate());
+            sb.append("\n  Client AudioFormat: channel count=");
+            AudioFormat clientFormat = c.getClientFormat();
+            sb.append(clientFormat.getChannelCount());
+            sb.append(", channel index mask=");
+            sb.append(clientFormat.getChannelIndexMask());
+            sb.append(", channel mask=");
+            sb.append(WebRtcAudioUtils.channelMaskToString(clientFormat.getChannelMask()));
+            sb.append(", encoding=");
+            sb.append(WebRtcAudioUtils.audioEncodingToString(clientFormat.getEncoding()));
+            sb.append(", sample rate=");
+            sb.append(clientFormat.getSampleRate());
+            sb.append("\n");
+            AudioDeviceInfo audioDevice = c.getAudioDevice();
             if (audioDevice != null) {
                 assertTrue(audioDevice.isSource());
-                sb2.append("  AudioDevice: type=");
-                sb2.append(WebRtcAudioUtils.deviceTypeToString(audioDevice.getType()));
-                sb2.append(", id=");
-                sb2.append(audioDevice.getId());
+                sb.append("  AudioDevice: type=");
+                sb.append(WebRtcAudioUtils.deviceTypeToString(audioDevice.getType()));
+                sb.append(", id=");
+                sb.append(audioDevice.getId());
             }
-            Logging.d(TAG, sb2.toString());
+            Logging.d(TAG, sb.toString());
         }
         return true;
     }
@@ -312,7 +331,7 @@ public class WebRtcAudioRecord {
         Logging.d(TAG, "AudioRecord: buffer size in frames: " + this.audioRecord.getBufferSizeInFrames());
     }
 
-    private int logRecordingConfigurations(AudioRecord audioRecord, boolean z10) {
+    private int logRecordingConfigurations(AudioRecord audioRecord, boolean z) {
         if (Build.VERSION.SDK_INT < 24) {
             Logging.w(TAG, "AudioManager#getActiveRecordingConfigurations() requires N or higher");
             return 0;
@@ -325,17 +344,17 @@ public class WebRtcAudioRecord {
         Logging.d(TAG, "Number of active recording sessions: " + size);
         if (size > 0) {
             logActiveRecordingConfigs(audioRecord.getAudioSessionId(), activeRecordingConfigurations);
-            if (z10) {
+            if (z) {
                 this.audioSourceMatchesRecordingSessionRef.set(Boolean.valueOf(verifyAudioConfig(audioRecord.getAudioSource(), audioRecord.getAudioSessionId(), audioRecord.getFormat(), audioRecord.getRoutedDevice(), activeRecordingConfigurations)));
             }
         }
         return size;
     }
 
-    private native void nativeCacheDirectBufferAddress(long j3, ByteBuffer byteBuffer);
+    private native void nativeCacheDirectBufferAddress(long j, ByteBuffer byteBuffer);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public native void nativeDataIsRecorded(long j3, int i7, long j10);
+    public native void nativeDataIsRecorded(long j, int i, long j2);
 
     public static ScheduledExecutorService newDefaultScheduler() {
         final AtomicInteger atomicInteger = new AtomicInteger(0);
@@ -394,12 +413,12 @@ public class WebRtcAudioRecord {
         if (Build.VERSION.SDK_INT < 24) {
             return;
         }
-        i iVar = new i(4, this, audioRecord);
+        p63 p63Var = new p63(this, audioRecord, (byte) 4);
         ScheduledFuture<String> scheduledFuture = this.future;
         if (scheduledFuture != null && !scheduledFuture.isDone()) {
             this.future.cancel(true);
         }
-        this.future = this.executor.schedule(iVar, 100L, TimeUnit.MILLISECONDS);
+        this.future = this.executor.schedule(p63Var, 100L, TimeUnit.MILLISECONDS);
     }
 
     private boolean startRecording() {
@@ -417,8 +436,8 @@ public class WebRtcAudioRecord {
             audioRecordThread.start();
             scheduleLogRecordingConfigurationsTask(this.audioRecord);
             return true;
-        } catch (IllegalStateException e10) {
-            reportWebRtcAudioRecordStartError(JavaAudioDeviceModule.AudioRecordStartErrorCode.AUDIO_RECORD_START_EXCEPTION, "AudioRecord.startRecording failed: " + e10.getMessage());
+        } catch (IllegalStateException e) {
+            reportWebRtcAudioRecordStartError(JavaAudioDeviceModule.AudioRecordStartErrorCode.AUDIO_RECORD_START_EXCEPTION, "AudioRecord.startRecording failed: " + e.getMessage());
             return false;
         }
     }
@@ -444,13 +463,13 @@ public class WebRtcAudioRecord {
         return true;
     }
 
-    private static boolean verifyAudioConfig(int i7, int i10, AudioFormat audioFormat, AudioDeviceInfo audioDeviceInfo, List<AudioRecordingConfiguration> list) {
+    private static boolean verifyAudioConfig(int i, int i2, AudioFormat audioFormat, AudioDeviceInfo audioDeviceInfo, List<AudioRecordingConfiguration> list) {
         assertTrue(!list.isEmpty());
         Iterator<AudioRecordingConfiguration> it = list.iterator();
         while (it.hasNext()) {
-            AudioRecordingConfiguration a10 = f.a(it.next());
-            AudioDeviceInfo audioDevice = a10.getAudioDevice();
-            if (audioDevice != null && a10.getClientAudioSource() == i7 && a10.getClientAudioSessionId() == i10 && a10.getClientFormat().getEncoding() == audioFormat.getEncoding() && a10.getClientFormat().getSampleRate() == audioFormat.getSampleRate() && a10.getClientFormat().getChannelMask() == audioFormat.getChannelMask() && a10.getClientFormat().getChannelIndexMask() == audioFormat.getChannelIndexMask() && a10.getFormat().getEncoding() != 0 && a10.getFormat().getSampleRate() > 0 && (a10.getFormat().getChannelMask() != 0 || a10.getFormat().getChannelIndexMask() != 0)) {
+            AudioRecordingConfiguration c = fyb.c(it.next());
+            AudioDeviceInfo audioDevice = c.getAudioDevice();
+            if (audioDevice != null && c.getClientAudioSource() == i && c.getClientAudioSessionId() == i2 && c.getClientFormat().getEncoding() == audioFormat.getEncoding() && c.getClientFormat().getSampleRate() == audioFormat.getSampleRate() && c.getClientFormat().getChannelMask() == audioFormat.getChannelMask() && c.getClientFormat().getChannelIndexMask() == audioFormat.getChannelIndexMask() && c.getFormat().getEncoding() != 0 && c.getFormat().getSampleRate() > 0 && (c.getFormat().getChannelMask() != 0 || c.getFormat().getChannelIndexMask() != 0)) {
                 if (checkDeviceMatch(audioDevice, audioDeviceInfo)) {
                     Logging.d(TAG, "verifyAudioConfig: PASS");
                     return true;
@@ -482,28 +501,28 @@ public class WebRtcAudioRecord {
         return this.isNoiseSuppressorSupported;
     }
 
-    public void setMicrophoneMute(boolean z10) {
-        Logging.w(TAG, "setMicrophoneMute(" + z10 + ")");
-        this.microphoneMute = z10;
+    public void setMicrophoneMute(boolean z) {
+        Logging.w(TAG, "setMicrophoneMute(" + z + ")");
+        this.microphoneMute = z;
     }
 
-    public void setNativeAudioRecord(long j3) {
-        this.nativeAudioRecord = j3;
+    public void setNativeAudioRecord(long j) {
+        this.nativeAudioRecord = j;
     }
 
-    public boolean setNoiseSuppressorEnabled(boolean z10) {
+    public boolean setNoiseSuppressorEnabled(boolean z) {
         if (!WebRtcAudioEffects.isNoiseSuppressorSupported()) {
             Logging.e(TAG, "Noise suppressor is not supported.");
             return false;
         }
-        Logging.w(TAG, "SetNoiseSuppressorEnabled(" + z10 + ")");
-        return this.effects.toggleNS(z10);
+        Logging.w(TAG, "SetNoiseSuppressorEnabled(" + z + ")");
+        return this.effects.toggleNS(z);
     }
 
     public void setPreferredDevice(AudioDeviceInfo audioDeviceInfo) {
-        StringBuilder sb2 = new StringBuilder("setPreferredDevice ");
-        sb2.append(audioDeviceInfo != null ? Integer.valueOf(audioDeviceInfo.getId()) : null);
-        Logging.d(TAG, sb2.toString());
+        StringBuilder sb = new StringBuilder("setPreferredDevice ");
+        sb.append(audioDeviceInfo != null ? Integer.valueOf(audioDeviceInfo.getId()) : null);
+        Logging.d(TAG, sb.toString());
         this.preferredDevice = audioDeviceInfo;
         AudioRecord audioRecord = this.audioRecord;
         if (audioRecord == null || audioRecord.setPreferredDevice(audioDeviceInfo)) {
@@ -512,25 +531,7 @@ public class WebRtcAudioRecord {
         Logging.e(TAG, "setPreferredDevice failed");
     }
 
-    public WebRtcAudioRecord(Context context, ScheduledExecutorService scheduledExecutorService, AudioManager audioManager, int i7, int i10, JavaAudioDeviceModule.AudioRecordErrorCallback audioRecordErrorCallback, JavaAudioDeviceModule.AudioRecordStateCallback audioRecordStateCallback, JavaAudioDeviceModule.SamplesReadyCallback samplesReadyCallback, boolean z10, boolean z11) {
-        this.effects = new WebRtcAudioEffects();
-        this.audioSourceMatchesRecordingSessionRef = new AtomicReference<>();
-        if (z10 && !WebRtcAudioEffects.isAcousticEchoCancelerSupported()) {
-            throw new IllegalArgumentException("HW AEC not supported");
-        }
-        if (z11 && !WebRtcAudioEffects.isNoiseSuppressorSupported()) {
-            throw new IllegalArgumentException("HW NS not supported");
-        }
-        this.context = context;
-        this.executor = scheduledExecutorService;
-        this.audioManager = audioManager;
-        this.audioSource = i7;
-        this.audioFormat = i10;
-        this.errorCallback = audioRecordErrorCallback;
-        this.stateCallback = audioRecordStateCallback;
-        this.audioSamplesReadyCallback = samplesReadyCallback;
-        this.isAcousticEchoCancelerSupported = z10;
-        this.isNoiseSuppressorSupported = z11;
-        Logging.d(TAG, "ctor" + WebRtcAudioUtils.getThreadInfo());
+    public WebRtcAudioRecord(Context context, AudioManager audioManager) {
+        this(context, newDefaultScheduler(), audioManager, 7, 2, null, null, null, WebRtcAudioEffects.isAcousticEchoCancelerSupported(), WebRtcAudioEffects.isNoiseSuppressorSupported());
     }
 }

@@ -1,19 +1,16 @@
 package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
-import org.telegram.ui.Components.i61;
-import y7.r0;
-import y7.s2;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
     public final float b;
 
-    public IdentifiedLanguage(String str, float f10) {
+    public IdentifiedLanguage(String str, float f) {
         this.a = str;
-        this.b = f10;
+        this.b = f;
     }
 
     public final boolean equals(Object obj) {
@@ -40,18 +37,20 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        s2 s2Var = new s2("IdentifiedLanguage");
-        i61 i61Var = new i61(29, false);
-        ((i61) s2Var.d).d = i61Var;
-        s2Var.d = i61Var;
-        i61Var.c = this.a;
-        i61Var.b = "languageTag";
+        rod rodVar = new rod("IdentifiedLanguage");
+        byte b = 28;
+        boolean z = false;
+        vk9 vk9Var = new vk9(b, z);
+        ((vk9) rodVar.d).d = vk9Var;
+        rodVar.d = vk9Var;
+        vk9Var.c = this.a;
+        vk9Var.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        r0 r0Var = new r0(29, false);
-        ((i61) s2Var.d).d = r0Var;
-        s2Var.d = r0Var;
-        r0Var.c = valueOf;
-        r0Var.b = "confidence";
-        return s2Var.toString();
+        ugd ugdVar = new ugd(b, z);
+        ((vk9) rodVar.d).d = ugdVar;
+        rodVar.d = ugdVar;
+        ugdVar.c = valueOf;
+        ugdVar.b = "confidence";
+        return rodVar.toString();
     }
 }

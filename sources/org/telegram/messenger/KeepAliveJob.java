@@ -4,31 +4,27 @@ import android.content.Intent;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.support.JobIntentService;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class KeepAliveJob extends JobIntentService {
     public static volatile CountDownLatch a;
     public static volatile boolean b;
     public static final Object c = new Object();
-    public static final j2 d = new j2(3);
+    public static final ql3 d = new ql3((byte) 16);
 
     public static void a() {
         synchronized (c) {
-            try {
-                if (a != null) {
-                    if (s2.a) {
-                        a8.b("finish keep-alive job");
-                    }
-                    a.countDown();
+            if (a != null) {
+                if (w01.a) {
+                    fa4.b("finish keep-alive job");
                 }
-                if (b) {
-                    if (s2.a) {
-                        a8.b("finish queued keep-alive job");
-                    }
-                    b = false;
+                a.countDown();
+            }
+            if (b) {
+                if (w01.a) {
+                    fa4.b("finish queued keep-alive job");
                 }
-            } catch (Throwable th2) {
-                throw th2;
+                b = false;
             }
         }
     }
@@ -36,27 +32,23 @@ public class KeepAliveJob extends JobIntentService {
     @Override // org.telegram.messenger.support.JobIntentService
     public final void onHandleWork(Intent intent) {
         synchronized (c) {
-            try {
-                if (b) {
-                    a = new CountDownLatch(1);
-                    if (s2.a) {
-                        a8.b("started keep-alive job");
-                    }
-                    Utilities.e.d(d, 60000L);
-                    try {
-                        a.await();
-                    } catch (Throwable unused) {
-                    }
-                    Utilities.e.a(d);
-                    synchronized (c) {
-                        a = null;
-                    }
-                    if (s2.a) {
-                        a8.b("ended keep-alive job");
-                    }
+            if (b) {
+                a = new CountDownLatch(1);
+                if (w01.a) {
+                    fa4.b("started keep-alive job");
                 }
-            } catch (Throwable th2) {
-                throw th2;
+                Utilities.e.d(d, 60000L);
+                try {
+                    a.await();
+                } catch (Throwable unused) {
+                }
+                Utilities.e.a(d);
+                synchronized (c) {
+                    a = null;
+                }
+                if (w01.a) {
+                    fa4.b("ended keep-alive job");
+                }
             }
         }
     }

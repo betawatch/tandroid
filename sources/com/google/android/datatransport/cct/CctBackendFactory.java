@@ -1,15 +1,13 @@
 package com.google.android.datatransport.cct;
 
-import m5.c;
-import p5.b;
-import p5.d;
-import p5.f;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class CctBackendFactory {
-    public f create(d dVar) {
-        b bVar = (b) dVar;
-        return new c(bVar.a, bVar.b, bVar.c);
+    public e1c create(h13 h13Var) {
+        Context context = ((m90) h13Var).a;
+        m90 m90Var = (m90) h13Var;
+        return new kd1(context, m90Var.b, m90Var.c);
     }
 }

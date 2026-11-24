@@ -2,13 +2,11 @@ package org.telegram.messenger.camera;
 
 import android.graphics.Rect;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class CameraSessionWrapper {
     public CameraSession camera1Session;
-    public Camera2Session camera2Session;
 
     public static CameraSessionWrapper of(CameraSession cameraSession) {
         CameraSessionWrapper cameraSessionWrapper = new CameraSessionWrapper();
@@ -16,14 +14,9 @@ public class CameraSessionWrapper {
         return cameraSessionWrapper;
     }
 
-    public void destroy(boolean z10, Runnable runnable, Runnable runnable2) {
-        if (this.camera2Session != null) {
-            if (runnable != null) {
-                runnable.run();
-            }
-            this.camera2Session.destroy(z10, runnable2);
-        } else if (this.camera1Session != null) {
-            CameraController.getInstance().close(this.camera1Session, !z10 ? new CountDownLatch(1) : null, runnable, runnable2);
+    public void destroy(boolean z, Runnable runnable, Runnable runnable2) {
+        if (this.camera1Session != null) {
+            CameraController.getInstance().close(this.camera1Session, !z ? new CountDownLatch(1) : null, runnable, runnable2);
         }
     }
 
@@ -31,29 +24,22 @@ public class CameraSessionWrapper {
         if (obj instanceof CameraSession) {
             return obj == this.camera1Session;
         }
-        if (obj instanceof Camera2Session) {
-            return obj == this.camera2Session;
-        }
         if (!(obj instanceof CameraSessionWrapper)) {
             return false;
         }
         CameraSessionWrapper cameraSessionWrapper = (CameraSessionWrapper) obj;
-        return cameraSessionWrapper == this || (cameraSessionWrapper.camera1Session == this.camera1Session && cameraSessionWrapper.camera2Session == this.camera2Session);
+        return cameraSessionWrapper == this || cameraSessionWrapper.camera1Session == this.camera1Session;
     }
 
     public void focusToRect(Rect rect, Rect rect2) {
-        CameraSession cameraSession;
-        if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
+        CameraSession cameraSession = this.camera1Session;
+        if (cameraSession != null) {
             cameraSession.focusToRect(rect, rect2);
         }
     }
 
     @Deprecated
     public int getCameraId() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            return camera2Session.cameraId.hashCode();
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             return cameraSession.cameraInfo.cameraId;
@@ -62,9 +48,6 @@ public class CameraSessionWrapper {
     }
 
     public String getCurrentFlashMode() {
-        if (this.camera2Session != null) {
-            return "off";
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             return cameraSession.getCurrentFlashMode();
@@ -73,10 +56,6 @@ public class CameraSessionWrapper {
     }
 
     public int getCurrentOrientation() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            return camera2Session.getCurrentOrientation();
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             return cameraSession.getCurrentOrientation();
@@ -85,10 +64,6 @@ public class CameraSessionWrapper {
     }
 
     public int getDisplayOrientation() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            return camera2Session.getDisplayOrientation();
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             return cameraSession.getDisplayOrientation();
@@ -97,9 +72,6 @@ public class CameraSessionWrapper {
     }
 
     public String getNextFlashMode() {
-        if (this.camera2Session != null) {
-            return "off";
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             return cameraSession.getNextFlashMode();
@@ -108,22 +80,10 @@ public class CameraSessionWrapper {
     }
 
     public Object getObject() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            return camera2Session;
-        }
-        CameraSession cameraSession = this.camera1Session;
-        if (cameraSession != null) {
-            return cameraSession;
-        }
-        return null;
+        return this.camera1Session;
     }
 
     public int getWorldAngle() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            return camera2Session.getWorldAngle();
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             return cameraSession.getWorldAngle();
@@ -132,77 +92,49 @@ public class CameraSessionWrapper {
     }
 
     public boolean hasFlashModes() {
-        CameraSession cameraSession;
-        if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
-            return !cameraSession.availableFlashModes.isEmpty();
-        }
-        return false;
+        CameraSession cameraSession = this.camera1Session;
+        return (cameraSession == null || cameraSession.availableFlashModes.isEmpty()) ? false : true;
     }
 
     public boolean isInitiated() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            return camera2Session.isInitiated();
-        }
         CameraSession cameraSession = this.camera1Session;
-        if (cameraSession != null) {
-            return cameraSession.isInitied();
-        }
-        return false;
+        return cameraSession != null && cameraSession.isInitied();
     }
 
     public boolean isSameTakePictureOrientation() {
-        CameraSession cameraSession;
-        if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
-            return cameraSession.isSameTakePictureOrientation();
-        }
-        return true;
+        CameraSession cameraSession = this.camera1Session;
+        return cameraSession == null || cameraSession.isSameTakePictureOrientation();
     }
 
     public void setCurrentFlashMode(String str) {
-        CameraSession cameraSession;
-        if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
+        CameraSession cameraSession = this.camera1Session;
+        if (cameraSession != null) {
             cameraSession.setCurrentFlashMode(str);
         }
     }
 
-    public void setFlipFront(boolean z10) {
-        CameraSession cameraSession;
-        if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
-            cameraSession.setFlipFront(z10);
+    public void setFlipFront(boolean z) {
+        CameraSession cameraSession = this.camera1Session;
+        if (cameraSession != null) {
+            cameraSession.setFlipFront(z);
         }
     }
 
-    public void setOptimizeForBarcode(boolean z10) {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            camera2Session.setScanningBarcode(z10);
-            return;
-        }
+    public void setOptimizeForBarcode(boolean z) {
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
-            cameraSession.setOptimizeForBarcode(z10);
+            cameraSession.setOptimizeForBarcode(z);
         }
     }
 
-    public void setZoom(float f10) {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            camera2Session.setZoom(g0.T1(camera2Session.getMinZoom(), this.camera2Session.getMaxZoom(), f10));
-            return;
-        }
+    public void setZoom(float f) {
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
-            cameraSession.setZoom(f10);
+            cameraSession.setZoom(f);
         }
     }
 
     public void stopVideoRecording() {
-        Camera2Session camera2Session = this.camera2Session;
-        if (camera2Session != null) {
-            camera2Session.setRecordingVideo(false);
-            return;
-        }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
             cameraSession.stopVideoRecording();
@@ -210,15 +142,9 @@ public class CameraSessionWrapper {
     }
 
     public void updateRotation() {
-        CameraSession cameraSession;
-        if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
+        CameraSession cameraSession = this.camera1Session;
+        if (cameraSession != null) {
             cameraSession.updateRotation();
         }
-    }
-
-    public static CameraSessionWrapper of(Camera2Session camera2Session) {
-        CameraSessionWrapper cameraSessionWrapper = new CameraSessionWrapper();
-        cameraSessionWrapper.camera2Session = camera2Session;
-        return cameraSessionWrapper;
     }
 }

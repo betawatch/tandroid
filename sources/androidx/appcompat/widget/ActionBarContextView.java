@@ -14,20 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.mediarouter.app.w;
-import bg.w0;
-import c8.a0;
 import java.util.WeakHashMap;
-import l.k;
-import l.z;
-import m.h;
-import m.r3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import r0.i0;
-import r0.l0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public LinearLayout E;
@@ -37,12 +28,12 @@ public class ActionBarContextView extends ViewGroup {
     public final int I;
     public boolean J;
     public final int K;
-    public final w0 a;
+    public final pa3 a;
     public final Context b;
     public ActionMenuView c;
-    public h d;
+    public b9 d;
     public int e;
-    public l0 f;
+    public afc f;
     public boolean h;
     public boolean n;
     public CharSequence r;
@@ -51,29 +42,50 @@ public class ActionBarContextView extends ViewGroup {
     public View x;
     public View y;
 
-    public ActionBarContextView(Context context) {
-        this(context, null);
+    public ActionBarContextView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.actionModeStyle);
+        int resourceId;
+        pa3 pa3Var = new pa3();
+        pa3Var.c = this;
+        pa3Var.a = false;
+        this.a = pa3Var;
+        TypedValue typedValue = new TypedValue();
+        if (!context.getTheme().resolveAttribute(R.attr.actionBarPopupTheme, typedValue, true) || typedValue.resourceId == 0) {
+            this.b = context;
+        } else {
+            this.b = new ContextThemeWrapper(context, typedValue.resourceId);
+        }
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, jy8.d, R.attr.actionModeStyle, 0);
+        Drawable drawable = (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0) ? obtainStyledAttributes.getDrawable(0) : hmd.a(context, resourceId);
+        WeakHashMap weakHashMap = jdc.a;
+        setBackground(drawable);
+        this.H = obtainStyledAttributes.getResourceId(5, 0);
+        this.I = obtainStyledAttributes.getResourceId(4, 0);
+        this.e = obtainStyledAttributes.getLayoutDimension(3, 0);
+        this.K = obtainStyledAttributes.getResourceId(2, R.layout.abc_action_mode_close_item_material);
+        obtainStyledAttributes.recycle();
     }
 
-    public static int f(View view, int i7, int i10) {
-        view.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_31), i10);
-        return Math.max(0, i7 - view.getMeasuredWidth());
+    public static int f(View view, int i, int i2) {
+        view.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_31), i2);
+        return Math.max(0, i - view.getMeasuredWidth());
     }
 
-    public static int g(int i7, int i10, int i11, View view, boolean z10) {
+    public static int g(int i, int i2, int i3, View view, boolean z) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int e10 = i5.c.e(i11, measuredHeight, 2, i10);
-        if (z10) {
-            view.layout(i7 - measuredWidth, e10, i7, measuredHeight + e10);
-        } else {
-            view.layout(i7, e10, i7 + measuredWidth, measuredHeight + e10);
+        int g = ug8.g(i3, measuredHeight, 2, i2);
+        if (z) {
+            view.layout(i - measuredWidth, g, i, measuredHeight + g);
+            return -measuredWidth;
         }
-        return z10 ? -measuredWidth : measuredWidth;
+        view.layout(i, g, i + measuredWidth, measuredHeight + g);
+        return measuredWidth;
     }
 
-    public final void c(k.a aVar) {
+    public final void c(f9 f9Var) {
         View view = this.w;
+        byte b = 0;
         if (view == null) {
             View inflate = LayoutInflater.from(getContext()).inflate(this.K, (ViewGroup) this, false);
             this.w = inflate;
@@ -83,37 +95,37 @@ public class ActionBarContextView extends ViewGroup {
         }
         View findViewById = this.w.findViewById(R.id.action_mode_close_button);
         this.x = findViewById;
-        findViewById.setOnClickListener(new w(aVar, 6));
-        k d = aVar.d();
-        h hVar = this.d;
-        if (hVar != null) {
-            hVar.e();
-            m.d dVar = hVar.K;
-            if (dVar != null && dVar.b()) {
-                dVar.i.dismiss();
+        findViewById.setOnClickListener(new g6(f9Var, b));
+        yz6 d = f9Var.d();
+        b9 b9Var = this.d;
+        if (b9Var != null) {
+            b9Var.e();
+            y8 y8Var = b9Var.K;
+            if (y8Var != null && y8Var.b()) {
+                y8Var.i.dismiss();
             }
         }
-        h hVar2 = new h(getContext());
-        this.d = hVar2;
-        hVar2.x = true;
-        hVar2.y = true;
+        b9 b9Var2 = new b9(getContext());
+        this.d = b9Var2;
+        b9Var2.x = true;
+        b9Var2.y = true;
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
         d.b(this.d, this.b);
-        h hVar3 = this.d;
-        z zVar = hVar3.n;
-        if (zVar == null) {
-            z zVar2 = (z) hVar3.d.inflate(hVar3.f, (ViewGroup) this, false);
-            hVar3.n = zVar2;
-            zVar2.b(hVar3.c);
-            hVar3.d();
+        b9 b9Var3 = this.d;
+        v07 v07Var = b9Var3.n;
+        if (v07Var == null) {
+            v07 v07Var2 = (v07) b9Var3.d.inflate(b9Var3.f, (ViewGroup) this, false);
+            b9Var3.n = v07Var2;
+            v07Var2.b(b9Var3.c);
+            b9Var3.j();
         }
-        z zVar3 = hVar3.n;
-        if (zVar != zVar3) {
-            ((ActionMenuView) zVar3).setPresenter(hVar3);
+        v07 v07Var3 = b9Var3.n;
+        if (v07Var != v07Var3) {
+            ((ActionMenuView) v07Var3).setPresenter(b9Var3);
         }
-        ActionMenuView actionMenuView = (ActionMenuView) zVar3;
+        ActionMenuView actionMenuView = (ActionMenuView) v07Var3;
         this.c = actionMenuView;
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = jdc.a;
         actionMenuView.setBackground(null);
         addView(this.c, layoutParams);
     }
@@ -125,13 +137,13 @@ public class ActionBarContextView extends ViewGroup {
             this.E = linearLayout;
             this.F = (TextView) linearLayout.findViewById(R.id.action_bar_title);
             this.G = (TextView) this.E.findViewById(R.id.action_bar_subtitle);
-            int i7 = this.H;
-            if (i7 != 0) {
-                this.F.setTextAppearance(getContext(), i7);
+            int i = this.H;
+            if (i != 0) {
+                this.F.setTextAppearance(getContext(), i);
             }
-            int i10 = this.I;
-            if (i10 != 0) {
-                this.G.setTextAppearance(getContext(), i10);
+            int i2 = this.I;
+            if (i2 != 0) {
+                this.G.setTextAppearance(getContext(), i2);
             }
         }
         this.F.setText(this.r);
@@ -184,58 +196,59 @@ public class ActionBarContextView extends ViewGroup {
 
     @Override // android.view.View
     /* renamed from: h, reason: merged with bridge method [inline-methods] */
-    public final void setVisibility(int i7) {
-        if (i7 != getVisibility()) {
-            l0 l0Var = this.f;
-            if (l0Var != null) {
-                l0Var.b();
+    public final void setVisibility(int i) {
+        if (i != getVisibility()) {
+            afc afcVar = this.f;
+            if (afcVar != null) {
+                afcVar.b();
             }
-            super.setVisibility(i7);
+            super.setVisibility(i);
         }
     }
 
-    public final l0 i(int i7, long j3) {
-        l0 l0Var = this.f;
-        if (l0Var != null) {
-            l0Var.b();
+    /* JADX WARN: Multi-variable type inference failed */
+    public final afc i(int i, long j) {
+        afc afcVar = this.f;
+        if (afcVar != null) {
+            afcVar.b();
         }
-        w0 w0Var = this.a;
-        if (i7 != 0) {
-            l0 a10 = i0.a(this);
-            a10.a(0.0f);
-            a10.c(j3);
-            ((ActionBarContextView) w0Var.c).f = a10;
-            w0Var.b = i7;
-            a10.d(w0Var);
-            return a10;
+        pa3 pa3Var = this.a;
+        if (i != 0) {
+            afc a = jdc.a(this);
+            a.a(0.0f);
+            a.c(j);
+            ((ActionBarContextView) pa3Var.c).f = a;
+            pa3Var.b = i;
+            a.d(pa3Var);
+            return a;
         }
         if (getVisibility() != 0) {
             setAlpha(0.0f);
         }
-        l0 a11 = i0.a(this);
-        a11.a(1.0f);
-        a11.c(j3);
-        ((ActionBarContextView) w0Var.c).f = a11;
-        w0Var.b = i7;
-        a11.d(w0Var);
-        return a11;
+        afc a2 = jdc.a(this);
+        a2.a(1.0f);
+        a2.c(j);
+        ((ActionBarContextView) pa3Var.c).f = a2;
+        pa3Var.b = i;
+        a2.d(pa3Var);
+        return a2;
     }
 
     @Override // android.view.View
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, f.a.a, R.attr.actionBarStyle, 0);
+        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, jy8.a, R.attr.actionBarStyle, 0);
         setContentHeight(obtainStyledAttributes.getLayoutDimension(13, 0));
         obtainStyledAttributes.recycle();
-        h hVar = this.d;
-        if (hVar != null) {
-            Configuration configuration2 = hVar.b.getResources().getConfiguration();
-            int i7 = configuration2.screenWidthDp;
-            int i10 = configuration2.screenHeightDp;
-            hVar.G = (configuration2.smallestScreenWidthDp > 600 || i7 > 600 || (i7 > 960 && i10 > 720) || (i7 > 720 && i10 > 960)) ? 5 : (i7 >= 500 || (i7 > 640 && i10 > 480) || (i7 > 480 && i10 > 640)) ? 4 : i7 >= 360 ? 3 : 2;
-            k kVar = hVar.c;
-            if (kVar != null) {
-                kVar.p(true);
+        b9 b9Var = this.d;
+        if (b9Var != null) {
+            Configuration configuration2 = b9Var.b.getResources().getConfiguration();
+            int i = configuration2.screenWidthDp;
+            int i2 = configuration2.screenHeightDp;
+            b9Var.G = (configuration2.smallestScreenWidthDp > 600 || i > 600 || (i > 960 && i2 > 720) || (i > 720 && i2 > 960)) ? 5 : (i >= 500 || (i > 640 && i2 > 480) || (i > 480 && i2 > 640)) ? 4 : i >= 360 ? 3 : 2;
+            yz6 yz6Var = b9Var.c;
+            if (yz6Var != null) {
+                yz6Var.p(true);
             }
         }
     }
@@ -243,14 +256,14 @@ public class ActionBarContextView extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        h hVar = this.d;
-        if (hVar != null) {
-            hVar.e();
-            m.d dVar = this.d.K;
-            if (dVar == null || !dVar.b()) {
+        b9 b9Var = this.d;
+        if (b9Var != null) {
+            b9Var.e();
+            y8 y8Var = this.d.K;
+            if (y8Var == null || !y8Var.b()) {
                 return;
             }
-            dVar.i.dismiss();
+            y8Var.i.dismiss();
         }
     }
 
@@ -274,59 +287,69 @@ public class ActionBarContextView extends ViewGroup {
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        boolean a10 = r3.a(this);
-        int paddingRight = a10 ? (i11 - i7) - getPaddingRight() : getPaddingLeft();
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5;
+        int i6;
+        boolean a = gfc.a(this);
+        int paddingRight = a ? (i3 - i) - getPaddingRight() : getPaddingLeft();
         int paddingTop = getPaddingTop();
-        int paddingTop2 = ((i12 - i10) - getPaddingTop()) - getPaddingBottom();
+        int paddingTop2 = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
         View view = this.w;
         if (view != null && view.getVisibility() != 8) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.w.getLayoutParams();
-            int i13 = a10 ? marginLayoutParams.rightMargin : marginLayoutParams.leftMargin;
-            int i14 = a10 ? marginLayoutParams.leftMargin : marginLayoutParams.rightMargin;
-            int i15 = a10 ? paddingRight - i13 : paddingRight + i13;
-            int g10 = g(i15, paddingTop, paddingTop2, this.w, a10) + i15;
-            paddingRight = a10 ? g10 - i14 : g10 + i14;
+            if (a) {
+                int i7 = marginLayoutParams.rightMargin;
+                i5 = marginLayoutParams.leftMargin;
+                i6 = paddingRight - i7;
+            } else {
+                int i8 = marginLayoutParams.leftMargin;
+                i5 = marginLayoutParams.rightMargin;
+                i6 = paddingRight + i8;
+            }
+            int g = g(i6, paddingTop, paddingTop2, this.w, a) + i6;
+            paddingRight = a ? g - i5 : g + i5;
         }
         LinearLayout linearLayout = this.E;
         if (linearLayout != null && this.y == null && linearLayout.getVisibility() != 8) {
-            paddingRight += g(paddingRight, paddingTop, paddingTop2, this.E, a10);
+            paddingRight += g(paddingRight, paddingTop, paddingTop2, this.E, a);
         }
         View view2 = this.y;
         if (view2 != null) {
-            g(paddingRight, paddingTop, paddingTop2, view2, a10);
+            g(paddingRight, paddingTop, paddingTop2, view2, a);
         }
-        int paddingLeft = a10 ? getPaddingLeft() : (i11 - i7) - getPaddingRight();
+        int paddingLeft = a ? getPaddingLeft() : (i3 - i) - getPaddingRight();
         ActionMenuView actionMenuView = this.c;
         if (actionMenuView != null) {
-            g(paddingLeft, paddingTop, paddingTop2, actionMenuView, !a10);
+            g(paddingLeft, paddingTop, paddingTop2, actionMenuView, !a);
         }
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int mode = View.MeasureSpec.getMode(i7);
-        int i11 = TLObject.FLAG_30;
+    public final void onMeasure(int i, int i2) {
+        int mode = View.MeasureSpec.getMode(i);
+        int i3 = TLObject.FLAG_30;
         if (mode != 1073741824) {
-            throw new IllegalStateException(getClass().getSimpleName().concat(" can only be used with android:layout_width=\"match_parent\" (or fill_parent)"));
+            sc8.j(getClass().getSimpleName().concat(" can only be used with android:layout_width=\"match_parent\" (or fill_parent)"));
+            return;
         }
-        if (View.MeasureSpec.getMode(i10) == 0) {
-            throw new IllegalStateException(getClass().getSimpleName().concat(" can only be used with android:layout_height=\"wrap_content\""));
+        if (View.MeasureSpec.getMode(i2) == 0) {
+            sc8.j(getClass().getSimpleName().concat(" can only be used with android:layout_height=\"wrap_content\""));
+            return;
         }
-        int size = View.MeasureSpec.getSize(i7);
-        int i12 = this.e;
-        if (i12 <= 0) {
-            i12 = View.MeasureSpec.getSize(i10);
+        int size = View.MeasureSpec.getSize(i);
+        int i4 = this.e;
+        if (i4 <= 0) {
+            i4 = View.MeasureSpec.getSize(i2);
         }
         int paddingBottom = getPaddingBottom() + getPaddingTop();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int i13 = i12 - paddingBottom;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31);
+        int i5 = i4 - paddingBottom;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_31);
         View view = this.w;
         if (view != null) {
-            int f10 = f(view, paddingLeft, makeMeasureSpec);
+            int f = f(view, paddingLeft, makeMeasureSpec);
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.w.getLayoutParams();
-            paddingLeft = f10 - (marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
+            paddingLeft = f - (marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
         }
         ActionMenuView actionMenuView = this.c;
         if (actionMenuView != null && actionMenuView.getParent() == this) {
@@ -335,13 +358,13 @@ public class ActionBarContextView extends ViewGroup {
         LinearLayout linearLayout = this.E;
         if (linearLayout != null && this.y == null) {
             if (this.J) {
-                this.E.measure(View.MeasureSpec.makeMeasureSpec(0, 0), makeMeasureSpec);
+                linearLayout.measure(0, makeMeasureSpec);
                 int measuredWidth = this.E.getMeasuredWidth();
-                boolean z10 = measuredWidth <= paddingLeft;
-                if (z10) {
+                boolean z = measuredWidth <= paddingLeft;
+                if (z) {
                     paddingLeft -= measuredWidth;
                 }
-                this.E.setVisibility(z10 ? 0 : 8);
+                this.E.setVisibility(z ? 0 : 8);
             } else {
                 paddingLeft = f(linearLayout, paddingLeft, makeMeasureSpec);
             }
@@ -349,33 +372,33 @@ public class ActionBarContextView extends ViewGroup {
         View view2 = this.y;
         if (view2 != null) {
             ViewGroup.LayoutParams layoutParams = view2.getLayoutParams();
-            int i14 = layoutParams.width;
-            int i15 = i14 != -2 ? 1073741824 : Integer.MIN_VALUE;
-            if (i14 >= 0) {
-                paddingLeft = Math.min(i14, paddingLeft);
+            int i6 = layoutParams.width;
+            int i7 = i6 != -2 ? 1073741824 : Integer.MIN_VALUE;
+            if (i6 >= 0) {
+                paddingLeft = Math.min(i6, paddingLeft);
             }
-            int i16 = layoutParams.height;
-            if (i16 == -2) {
-                i11 = Integer.MIN_VALUE;
+            int i8 = layoutParams.height;
+            if (i8 == -2) {
+                i3 = Integer.MIN_VALUE;
             }
-            if (i16 >= 0) {
-                i13 = Math.min(i16, i13);
+            if (i8 >= 0) {
+                i5 = Math.min(i8, i5);
             }
-            this.y.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, i15), View.MeasureSpec.makeMeasureSpec(i13, i11));
+            this.y.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, i7), View.MeasureSpec.makeMeasureSpec(i5, i3));
         }
         if (this.e > 0) {
-            setMeasuredDimension(size, i12);
+            setMeasuredDimension(size, i4);
             return;
         }
         int childCount = getChildCount();
-        int i17 = 0;
-        for (int i18 = 0; i18 < childCount; i18++) {
-            int measuredHeight = getChildAt(i18).getMeasuredHeight() + paddingBottom;
-            if (measuredHeight > i17) {
-                i17 = measuredHeight;
+        int i9 = 0;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            int measuredHeight = getChildAt(i10).getMeasuredHeight() + paddingBottom;
+            if (measuredHeight > i9) {
+                i9 = measuredHeight;
             }
         }
-        setMeasuredDimension(size, i17);
+        setMeasuredDimension(size, i9);
     }
 
     @Override // android.view.View
@@ -397,8 +420,8 @@ public class ActionBarContextView extends ViewGroup {
         return true;
     }
 
-    public void setContentHeight(int i7) {
-        this.e = i7;
+    public void setContentHeight(int i) {
+        this.e = i;
     }
 
     public void setCustomView(View view) {
@@ -426,14 +449,14 @@ public class ActionBarContextView extends ViewGroup {
     public void setTitle(CharSequence charSequence) {
         this.r = charSequence;
         d();
-        i0.k(this, charSequence);
+        jdc.l(this, charSequence);
     }
 
-    public void setTitleOptional(boolean z10) {
-        if (z10 != this.J) {
+    public void setTitleOptional(boolean z) {
+        if (z != this.J) {
             requestLayout();
         }
-        this.J = z10;
+        this.J = z;
     }
 
     @Override // android.view.ViewGroup
@@ -441,36 +464,7 @@ public class ActionBarContextView extends ViewGroup {
         return false;
     }
 
-    public ActionBarContextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.actionModeStyle);
-    }
-
-    public ActionBarContextView(Context context, AttributeSet attributeSet, int i7) {
-        super(context, attributeSet, i7);
-        Drawable drawable;
-        int resourceId;
-        w0 w0Var = new w0();
-        w0Var.c = this;
-        w0Var.a = false;
-        this.a = w0Var;
-        TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(R.attr.actionBarPopupTheme, typedValue, true) && typedValue.resourceId != 0) {
-            this.b = new ContextThemeWrapper(context, typedValue.resourceId);
-        } else {
-            this.b = context;
-        }
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.d, i7, 0);
-        if (obtainStyledAttributes.hasValue(0) && (resourceId = obtainStyledAttributes.getResourceId(0, 0)) != 0) {
-            drawable = a0.b(context, resourceId);
-        } else {
-            drawable = obtainStyledAttributes.getDrawable(0);
-        }
-        WeakHashMap weakHashMap = i0.a;
-        setBackground(drawable);
-        this.H = obtainStyledAttributes.getResourceId(5, 0);
-        this.I = obtainStyledAttributes.getResourceId(4, 0);
-        this.e = obtainStyledAttributes.getLayoutDimension(3, 0);
-        this.K = obtainStyledAttributes.getResourceId(2, R.layout.abc_action_mode_close_item_material);
-        obtainStyledAttributes.recycle();
+    public ActionBarContextView(Context context) {
+        this(context, null);
     }
 }

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzry {
     static final zzry zza = new zzry(true);
@@ -16,11 +16,11 @@ public final class zzry {
         this.zzd = new HashMap();
     }
 
-    public final zzsm zza(zzts zztsVar, int i7) {
-        return (zzsm) this.zzd.get(new zzrx(zztsVar, i7));
+    public final zzsm zza(zzts zztsVar, int i) {
+        return (zzsm) this.zzd.get(new zzrx(zztsVar, i));
     }
 
-    public zzry(boolean z10) {
+    public zzry(boolean z) {
         this.zzd = Collections.EMPTY_MAP;
     }
 }

@@ -1,50 +1,106 @@
 package j$.util.stream;
 
+import j$.util.DesugarArrays;
 import j$.util.Spliterator;
-import java.util.function.DoubleConsumer;
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public final class l3 extends p3 implements g5 {
-    public final double[] h;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public class l3 implements f2 {
+    public final long[] a;
+    public int b;
 
-    @Override // j$.util.stream.g5
-    public final /* synthetic */ void B(Double d) {
-        t3.D(this, d);
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        B((Double) obj);
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
-    }
-
-    public l3(Spliterator spliterator, t3 t3Var, double[] dArr) {
-        super(spliterator, t3Var, dArr.length);
-        this.h = dArr;
-    }
-
-    public l3(l3 l3Var, Spliterator spliterator, long j3, long j10) {
-        super(l3Var, spliterator, j3, j10, l3Var.h.length);
-        this.h = l3Var.h;
-    }
-
-    @Override // j$.util.stream.p3
-    public final p3 a(Spliterator spliterator, long j3, long j10) {
-        return new l3(this, spliterator, j3, j10);
-    }
-
-    @Override // j$.util.stream.p3, j$.util.stream.j5
-    public final void accept(double d) {
-        int i7 = this.f;
-        if (i7 >= this.g) {
-            throw new IndexOutOfBoundsException(Integer.toString(this.f));
+    public l3(long j) {
+        if (j >= 2147483639) {
+            j$.time.g.c("Stream size exceeds max array size");
+            throw null;
         }
-        double[] dArr = this.h;
-        this.f = i7 + 1;
-        dArr[i7] = d;
+        this.a = new long[(int) j];
+        this.b = 0;
+    }
+
+    @Override // j$.util.stream.g2, j$.util.stream.h2
+    public final g2 a(int i) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j$.util.stream.g2
+    public final Object b() {
+        long[] jArr = this.a;
+        int length = jArr.length;
+        int i = this.b;
+        return length == i ? jArr : Arrays.copyOf(jArr, i);
+    }
+
+    @Override // j$.util.stream.g2
+    public final void c(int i, Object obj) {
+        int i2 = this.b;
+        System.arraycopy(this.a, 0, (long[]) obj, i, i2);
+    }
+
+    @Override // j$.util.stream.h2
+    public final long count() {
+        return this.b;
+    }
+
+    @Override // j$.util.stream.g2
+    public final void d(Object obj) {
+        LongConsumer longConsumer = (LongConsumer) obj;
+        for (int i = 0; i < this.b; i++) {
+            longConsumer.accept(this.a[i]);
+        }
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.v(this, j, j2);
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void f(Object[] objArr, int i) {
+        w3.p(this, (Long[]) objArr, i);
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        w3.s(this, consumer);
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ Object[] g(IntFunction intFunction) {
+        return w3.m(this, intFunction);
+    }
+
+    @Override // j$.util.stream.h2
+    public final int h() {
+        return 0;
+    }
+
+    @Override // j$.util.stream.g2, j$.util.stream.h2
+    public final j$.util.d1 spliterator() {
+        return DesugarArrays.c(this.a, 0, this.b);
+    }
+
+    public String toString() {
+        long[] jArr = this.a;
+        return String.format("LongArrayNode[%d][%s]", Integer.valueOf(jArr.length - this.b), Arrays.toString(jArr));
+    }
+
+    @Override // j$.util.stream.h2
+    public final h2 a(int i) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j$.util.stream.h2
+    public final Spliterator spliterator() {
+        return DesugarArrays.c(this.a, 0, this.b);
+    }
+
+    public l3(long[] jArr) {
+        this.a = jArr;
+        this.b = jArr.length;
     }
 }

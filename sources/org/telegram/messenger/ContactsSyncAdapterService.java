@@ -4,16 +4,18 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ContactsSyncAdapterService extends Service {
-    public static l5 a;
+    public static uu2 a;
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
-        if (a == null) {
-            a = new l5(this, true);
+        uu2 uu2Var = a;
+        if (uu2Var == null) {
+            uu2Var = new uu2(this, true);
+            a = uu2Var;
         }
-        return a.getSyncAdapterBinder();
+        return uu2Var.getSyncAdapterBinder();
     }
 }

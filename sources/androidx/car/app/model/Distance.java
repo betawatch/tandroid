@@ -3,7 +3,7 @@ package androidx.car.app.model;
 import j$.util.Objects;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Distance {
     public static final int UNIT_FEET = 6;
@@ -16,20 +16,21 @@ public final class Distance {
     private final double mDisplayDistance;
     private final int mDisplayUnit;
 
-    private Distance(double d, int i7) {
-        this.mDisplayDistance = d;
-        this.mDisplayUnit = i7;
+    private Distance() {
+        this.mDisplayDistance = 0.0d;
+        this.mDisplayUnit = 1;
     }
 
-    public static Distance create(double d, int i7) {
+    public static Distance create(double d, int i) {
         if (d >= 0.0d) {
-            return new Distance(d, i7);
+            return new Distance(d, i);
         }
-        throw new IllegalArgumentException("displayDistance must be a positive value");
+        w26.j("displayDistance must be a positive value");
+        return null;
     }
 
-    private static String unitToString(int i7) {
-        switch (i7) {
+    private static String unitToString(int i) {
+        switch (i) {
             case 1:
                 return "m";
             case 2:
@@ -76,8 +77,8 @@ public final class Distance {
         return String.format(Locale.US, "%.04f%s", Double.valueOf(this.mDisplayDistance), unitToString(this.mDisplayUnit));
     }
 
-    private Distance() {
-        this.mDisplayDistance = 0.0d;
-        this.mDisplayUnit = 1;
+    private Distance(double d, int i) {
+        this.mDisplayDistance = d;
+        this.mDisplayUnit = i;
     }
 }

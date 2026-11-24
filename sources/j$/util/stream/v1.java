@@ -1,7 +1,46 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public interface v1 extends w1, i5 {
-    @Override // j$.util.stream.w1
-    c2 build();
+import j$.util.Spliterator;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Supplier;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class v1 extends b {
+    public final j$.util.function.a j;
+
+    public v1(v1 v1Var, Spliterator spliterator) {
+        super(v1Var, spliterator);
+        this.j = v1Var.j;
+    }
+
+    @Override // j$.util.stream.d
+    public final Object a() {
+        a aVar = this.a;
+        t1 t1Var = (t1) ((Supplier) this.j.c).get();
+        aVar.Q(this.b, t1Var);
+        boolean z = t1Var.b;
+        if (z == ((u1) this.j.b).b) {
+            Boolean valueOf = Boolean.valueOf(z);
+            AtomicReference atomicReference = this.h;
+            while (!atomicReference.compareAndSet(null, valueOf) && atomicReference.get() == null) {
+            }
+        }
+        return null;
+    }
+
+    @Override // j$.util.stream.d
+    public final d c(Spliterator spliterator) {
+        return new v1(this, spliterator);
+    }
+
+    @Override // j$.util.stream.b
+    public final Object h() {
+        return Boolean.valueOf(!((u1) this.j.b).b);
+    }
+
+    public v1(j$.util.function.a aVar, a aVar2, Spliterator spliterator) {
+        super(aVar2, spliterator);
+        this.j = aVar;
+    }
 }

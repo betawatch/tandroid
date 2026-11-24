@@ -1,53 +1,90 @@
 package j$.util.stream;
 
-import j$.util.Collection;
-import j$.util.List;
 import j$.util.Objects;
-import java.util.ArrayList;
+import j$.util.Spliterator;
+import java.util.Arrays;
+import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class f6 extends x5 {
-    public ArrayList d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class f6 extends a0 implements q8 {
+    public final /* synthetic */ byte l;
 
-    @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j3) {
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.d = j3 >= 0 ? new ArrayList((int) j3) : new ArrayList();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f6(a aVar, int i, byte b) {
+        super(aVar, i);
+        this.l = b;
     }
 
-    @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void end() {
-        List.-EL.sort(this.d, this.b);
-        long size = this.d.size();
-        j5 j5Var = this.a;
-        j5Var.o(size);
-        if (!this.c) {
-            ArrayList arrayList = this.d;
-            Objects.requireNonNull(j5Var);
-            Collection.-EL.a(arrayList, new j$.time.t(9, j5Var));
-        } else {
-            ArrayList arrayList2 = this.d;
-            int size2 = arrayList2.size();
-            int i7 = 0;
-            while (i7 < size2) {
-                Object obj = arrayList2.get(i7);
-                i7++;
-                if (j5Var.q()) {
-                    break;
-                } else {
-                    j5Var.x((j5) obj);
+    @Override // j$.util.stream.a
+    public final h2 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+        switch (this.l) {
+            case 0:
+                if (b7.SORTED.n(aVar.f)) {
+                    return aVar.B(spliterator, false, intFunction);
                 }
-            }
+                double[] dArr = (double[]) ((b2) aVar.B(spliterator, true, intFunction)).b();
+                Arrays.sort(dArr);
+                return new t2(dArr);
+            case 1:
+                return (h2) new t8(this, aVar, spliterator, intFunction).invoke();
+            default:
+                return (h2) new s8(this, aVar, spliterator, intFunction).invoke();
         }
-        j5Var.end();
-        this.d = null;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        this.d.add(obj);
+    @Override // j$.util.stream.a
+    public final Spliterator K(a aVar, Spliterator spliterator) {
+        final byte b = 0;
+        final byte b2 = 1;
+        switch (this.l) {
+            case 1:
+                return b7.ORDERED.n(aVar.f) ? J(aVar, spliterator, new IntFunction() { // from class: j$.util.stream.o8
+                    @Override // java.util.function.IntFunction
+                    public final Object apply(int i) {
+                        switch (b) {
+                            case 0:
+                                return new Double[i];
+                            default:
+                                return new Double[i];
+                        }
+                    }
+                }).spliterator() : new u8((j$.util.u0) aVar.S(spliterator), b2);
+            case 2:
+                return b7.ORDERED.n(aVar.f) ? J(aVar, spliterator, new IntFunction() { // from class: j$.util.stream.o8
+                    @Override // java.util.function.IntFunction
+                    public final Object apply(int i) {
+                        switch (b2) {
+                            case 0:
+                                return new Double[i];
+                            default:
+                                return new Double[i];
+                        }
+                    }
+                }).spliterator() : new u8((j$.util.u0) aVar.S(spliterator), b);
+            default:
+                return super.K(aVar, spliterator);
+        }
+    }
+
+    @Override // j$.util.stream.a
+    public final n5 M(int i, n5 n5Var) {
+        switch (this.l) {
+            case 0:
+                Objects.requireNonNull(n5Var);
+                if (b7.SORTED.n(i)) {
+                    return n5Var;
+                }
+                return b7.SIZED.n(i) ? new k6(n5Var) : new c6(n5Var);
+            case 1:
+                return new t(this, n5Var, (byte) 4);
+            default:
+                return new p8(this, n5Var, false);
+        }
+    }
+
+    @Override // j$.util.stream.q8
+    public final r8 g(z1 z1Var, boolean z) {
+        return new p8(this, z1Var, z);
     }
 }

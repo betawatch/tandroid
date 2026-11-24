@@ -1,14 +1,11 @@
 package com.google.android.recaptcha;
 
-import c8.h9;
-import ld.a;
-
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class RecaptchaErrorCode {
-    private static final /* synthetic */ a $ENTRIES;
+    private static final /* synthetic */ m34 $ENTRIES;
     private static final /* synthetic */ RecaptchaErrorCode[] $VALUES;
     private final int errorCode;
     private final String errorMessage;
@@ -29,15 +26,16 @@ public final class RecaptchaErrorCode {
     static {
         RecaptchaErrorCode[] $values = $values();
         $VALUES = $values;
-        $ENTRIES = h9.a($values);
+        $values.getClass();
+        $ENTRIES = new n34($values);
     }
 
-    private RecaptchaErrorCode(String str, int i7, int i10, String str2) {
-        this.errorCode = i10;
+    private RecaptchaErrorCode(String str, int i, int i2, String str2) {
+        this.errorCode = i2;
         this.errorMessage = str2;
     }
 
-    public static a getEntries() {
+    public static m34 getEntries() {
         return $ENTRIES;
     }
 

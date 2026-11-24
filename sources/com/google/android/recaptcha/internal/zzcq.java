@@ -1,20 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import hd.f;
-import hd.h;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
-import kotlin.jvm.internal.j;
-import ud.b;
-import ud.c;
-import xd.l;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzcq implements zzbt {
     private final Context zza;
@@ -40,16 +33,16 @@ public final class zzcq implements zzbt {
             File[] listFiles = this.zza.getCacheDir().listFiles();
             if (listFiles != null) {
                 ArrayList arrayList = new ArrayList();
-                int i7 = 0;
+                int i = 0;
                 for (File file : listFiles) {
-                    if (l.d(file.getName(), this.zzb)) {
+                    if (n9b.d(file.getName(), this.zzb)) {
                         arrayList.add(file);
                     }
                 }
                 int size = arrayList.size();
-                while (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
                     ((File) obj).delete();
                 }
             }
@@ -59,33 +52,34 @@ public final class zzcq implements zzbt {
 
     @Override // com.google.android.recaptcha.internal.zzbt
     public final void zzc(String str, String str2) {
-        c cVar = new c('A', 'z');
-        ArrayList arrayList = new ArrayList(h.d(cVar, 10));
-        Iterator it = cVar.iterator();
+        yj1 yj1Var = new yj1('A', 'z');
+        ArrayList arrayList = new ArrayList(al2.c(yj1Var, 10));
+        Iterator it = yj1Var.iterator();
         while (true) {
-            b bVar = (b) it;
-            boolean z10 = bVar.d;
-            if (!z10) {
-                ArrayList n10 = f.n(arrayList);
-                Collections.shuffle(n10);
-                String g10 = f.g(n10.subList(0, 8), "", null, null, null, 62);
+            xj1 xj1Var = (xj1) it;
+            boolean z = xj1Var.b;
+            if (!z) {
+                ArrayList arrayList2 = new ArrayList(arrayList);
+                Collections.shuffle(arrayList2);
+                String f = yk2.f(arrayList2.subList(0, 8), "", null, null, null, 62);
                 Context context = this.zza;
                 String str3 = this.zzb;
-                File file = new File(context.getCacheDir(), str3.concat(String.valueOf(g10)));
+                File file = new File(context.getCacheDir(), str3.concat(f));
                 zzdl.zzb(file, String.valueOf(str2).getBytes(StandardCharsets.UTF_8));
                 file.renameTo(new File(context.getCacheDir(), str3.concat(String.valueOf(str))));
                 return;
             }
-            int i7 = bVar.e;
-            if (i7 != bVar.c) {
-                bVar.e = bVar.b + i7;
+            int i = xj1Var.c;
+            if (i != xj1Var.a) {
+                xj1Var.c = i + 1;
             } else {
-                if (!z10) {
-                    throw new NoSuchElementException();
+                if (!z) {
+                    w26.g();
+                    return;
                 }
-                bVar.d = false;
+                xj1Var.b = false;
             }
-            arrayList.add(Character.valueOf((char) i7));
+            arrayList.add(Character.valueOf((char) i));
         }
     }
 
@@ -97,17 +91,17 @@ public final class zzcq implements zzbt {
             file = null;
             if (listFiles != null) {
                 int length = listFiles.length;
-                int i7 = 0;
+                int i = 0;
                 while (true) {
-                    if (i7 >= length) {
+                    if (i >= length) {
                         break;
                     }
-                    File file2 = listFiles[i7];
-                    if (j.a(file2.getName(), this.zzb + str)) {
+                    File file2 = listFiles[i];
+                    if (rp5.a(file2.getName(), this.zzb + str)) {
                         file = file2;
                         break;
                     }
-                    i7++;
+                    i++;
                 }
             }
         } catch (Exception unused) {

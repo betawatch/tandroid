@@ -1,15 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import c8.g0;
-import com.google.android.gms.internal.vision.e2;
-import hd.e;
-import hd.h;
-import hd.n;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -18,23 +13,23 @@ public final class zzju implements zzjt {
     }
 
     private static final List zzc(Object obj) {
-        boolean z10 = obj instanceof byte[];
-        n nVar = n.a;
-        int i7 = 0;
-        if (z10) {
+        boolean z = obj instanceof byte[];
+        c24 c24Var = c24.a;
+        int i = 0;
+        if (z) {
             byte[] bArr = (byte[]) obj;
             int length = bArr.length;
             if (length == 0) {
-                return nVar;
+                return c24Var;
             }
             if (length == 1) {
-                return g0.a(Byte.valueOf(bArr[0]));
+                return zk2.a(Byte.valueOf(bArr[0]));
             }
             ArrayList arrayList = new ArrayList(bArr.length);
             int length2 = bArr.length;
-            while (i7 < length2) {
-                arrayList.add(Byte.valueOf(bArr[i7]));
-                i7++;
+            while (i < length2) {
+                arrayList.add(Byte.valueOf(bArr[i]));
+                i++;
             }
             return arrayList;
         }
@@ -42,16 +37,16 @@ public final class zzju implements zzjt {
             short[] sArr = (short[]) obj;
             int length3 = sArr.length;
             if (length3 == 0) {
-                return nVar;
+                return c24Var;
             }
             if (length3 == 1) {
-                return g0.a(Short.valueOf(sArr[0]));
+                return zk2.a(Short.valueOf(sArr[0]));
             }
             ArrayList arrayList2 = new ArrayList(sArr.length);
             int length4 = sArr.length;
-            while (i7 < length4) {
-                arrayList2.add(Short.valueOf(sArr[i7]));
-                i7++;
+            while (i < length4) {
+                arrayList2.add(Short.valueOf(sArr[i]));
+                i++;
             }
             return arrayList2;
         }
@@ -59,35 +54,35 @@ public final class zzju implements zzjt {
             int[] iArr = (int[]) obj;
             int length5 = iArr.length;
             if (length5 == 0) {
-                return nVar;
+                return c24Var;
             }
             if (length5 == 1) {
-                return g0.a(Integer.valueOf(iArr[0]));
+                return zk2.a(Integer.valueOf(iArr[0]));
             }
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
-            while (i7 < length6) {
-                i7 = e2.f(iArr[i7], i7, 1, arrayList3);
+            while (i < length6) {
+                i = tb4.g(iArr[i], i, 1, arrayList3);
             }
             return arrayList3;
         }
         if (obj instanceof long[]) {
-            return e.g((long[]) obj);
+            return ss.g((long[]) obj);
         }
         if (obj instanceof float[]) {
             float[] fArr = (float[]) obj;
             int length7 = fArr.length;
             if (length7 == 0) {
-                return nVar;
+                return c24Var;
             }
             if (length7 == 1) {
-                return g0.a(Float.valueOf(fArr[0]));
+                return zk2.a(Float.valueOf(fArr[0]));
             }
             ArrayList arrayList4 = new ArrayList(fArr.length);
             int length8 = fArr.length;
-            while (i7 < length8) {
-                arrayList4.add(Float.valueOf(fArr[i7]));
-                i7++;
+            while (i < length8) {
+                arrayList4.add(Float.valueOf(fArr[i]));
+                i++;
             }
             return arrayList4;
         }
@@ -97,40 +92,43 @@ public final class zzju implements zzjt {
         double[] dArr = (double[]) obj;
         int length9 = dArr.length;
         if (length9 == 0) {
-            return nVar;
+            return c24Var;
         }
         if (length9 == 1) {
-            return g0.a(Double.valueOf(dArr[0]));
+            return zk2.a(Double.valueOf(dArr[0]));
         }
         ArrayList arrayList5 = new ArrayList(dArr.length);
         int length10 = dArr.length;
-        while (i7 < length10) {
-            arrayList5.add(Double.valueOf(dArr[i7]));
-            i7++;
+        while (i < length10) {
+            arrayList5.add(Double.valueOf(dArr[i]));
+            i++;
         }
         return arrayList5;
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 2) {
-            throw new zzdm(4, 3, null);
+            fvc.c(4, 3, null);
+            return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
         if (zza2 == null) {
             zza2 = null;
         }
         if (zza2 == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
         if (zza3 == null) {
             zza3 = null;
         }
-        if (zza3 == null) {
-            throw new zzdm(4, 5, null);
+        if (zza3 != null) {
+            zzizVar.zzc().zze(i, zzb(zza2, zza3));
+        } else {
+            fvc.c(4, 5, null);
         }
-        zzizVar.zzc().zze(i7, zzb(zza2, zza3));
     }
 
     public final Object zzb(Object obj, Object obj2) {
@@ -142,7 +140,7 @@ public final class zzju implements zzjt {
             }
             if (zzc2 != null) {
                 List list = zzc2;
-                ArrayList arrayList = new ArrayList(h.d(list, 10));
+                ArrayList arrayList = new ArrayList(al2.c(list, 10));
                 Iterator it = list.iterator();
                 while (it.hasNext()) {
                     arrayList.add(Double.valueOf(Math.pow(((Number) it.next()).doubleValue(), ((Number) obj).doubleValue())));
@@ -150,24 +148,27 @@ public final class zzju implements zzjt {
                 return arrayList.toArray(new Double[0]);
             }
         }
-        if (zzc != null && (obj2 instanceof Number)) {
-            List list2 = zzc;
-            ArrayList arrayList2 = new ArrayList(h.d(list2, 10));
-            Iterator it2 = list2.iterator();
-            while (it2.hasNext()) {
-                arrayList2.add(Double.valueOf(Math.pow(((Number) it2.next()).doubleValue(), ((Number) obj2).doubleValue())));
+        if (zzc != null) {
+            if (obj2 instanceof Number) {
+                List list2 = zzc;
+                ArrayList arrayList2 = new ArrayList(al2.c(list2, 10));
+                Iterator it2 = list2.iterator();
+                while (it2.hasNext()) {
+                    arrayList2.add(Double.valueOf(Math.pow(((Number) it2.next()).doubleValue(), ((Number) obj2).doubleValue())));
+                }
+                return arrayList2.toArray(new Double[0]);
             }
-            return arrayList2.toArray(new Double[0]);
+            if (zzc2 != null) {
+                zzjs.zza(this, zzc.size(), zzc2.size());
+                int size = zzc.size();
+                Double[] dArr = new Double[size];
+                for (int i = 0; i < size; i++) {
+                    dArr[i] = Double.valueOf(Math.pow(((Number) zzc.get(i)).doubleValue(), ((Number) zzc2.get(i)).doubleValue()));
+                }
+                return dArr;
+            }
         }
-        if (zzc == null || zzc2 == null) {
-            throw new zzdm(4, 5, null);
-        }
-        zzjs.zza(this, zzc.size(), zzc2.size());
-        int size = zzc.size();
-        Double[] dArr = new Double[size];
-        for (int i7 = 0; i7 < size; i7++) {
-            dArr[i7] = Double.valueOf(Math.pow(((Number) zzc.get(i7)).doubleValue(), ((Number) zzc2.get(i7)).doubleValue()));
-        }
-        return dArr;
+        fvc.c(4, 5, null);
+        return null;
     }
 }

@@ -2,18 +2,17 @@ package org.webrtc;
 
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;
     private final long timestampNs;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface Buffer extends RefCounted {
-        Buffer cropAndScale(int i7, int i10, int i11, int i12, int i13, int i14);
+        Buffer cropAndScale(int i, int i2, int i3, int i4, int i5, int i6);
 
         int getBufferType();
 
@@ -30,7 +29,7 @@ public class VideoFrame implements RefCounted {
         I420Buffer toI420();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface I420Buffer extends Buffer {
         @Override // org.webrtc.VideoFrame.Buffer
         int getBufferType();
@@ -48,18 +47,18 @@ public class VideoFrame implements RefCounted {
         int getStrideY();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface TextureBuffer extends Buffer {
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
         public enum Type {
             OES(36197),
             RGB(3553);
 
             private final int glTarget;
 
-            Type(int i7) {
-                this.glTarget = i7;
+            Type(int i) {
+                this.glTarget = i;
             }
 
             public int getGlTarget() {
@@ -67,7 +66,7 @@ public class VideoFrame implements RefCounted {
             }
         }
 
-        TextureBuffer applyTransformMatrix(Matrix matrix, int i7, int i10);
+        TextureBuffer applyTransformMatrix(Matrix matrix, int i, int i2);
 
         int getTextureId();
 
@@ -80,16 +79,18 @@ public class VideoFrame implements RefCounted {
         int getUnscaledWidth();
     }
 
-    public VideoFrame(Buffer buffer, int i7, long j3) {
+    public VideoFrame(Buffer buffer, int i, long j) {
         if (buffer == null) {
-            throw new IllegalArgumentException("buffer not allowed to be null");
+            w26.j("buffer not allowed to be null");
+            throw null;
         }
-        if (i7 % 90 != 0) {
-            throw new IllegalArgumentException("rotation must be a multiple of 90");
+        if (i % 90 != 0) {
+            w26.j("rotation must be a multiple of 90");
+            throw null;
         }
         this.buffer = buffer;
-        this.rotation = i7;
-        this.timestampNs = j3;
+        this.rotation = i;
+        this.timestampNs = j;
     }
 
     public Buffer getBuffer() {
@@ -97,11 +98,15 @@ public class VideoFrame implements RefCounted {
     }
 
     public int getRotatedHeight() {
-        return this.rotation % ks.K2 == 0 ? this.buffer.getHeight() : this.buffer.getWidth();
+        int i = this.rotation % kk7.J2;
+        Buffer buffer = this.buffer;
+        return i == 0 ? buffer.getHeight() : buffer.getWidth();
     }
 
     public int getRotatedWidth() {
-        return this.rotation % ks.K2 == 0 ? this.buffer.getWidth() : this.buffer.getHeight();
+        int i = this.rotation % kk7.J2;
+        Buffer buffer = this.buffer;
+        return i == 0 ? buffer.getWidth() : buffer.getHeight();
     }
 
     public int getRotation() {

@@ -3,37 +3,37 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$Token implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new z(2);
-    public final Object b;
-    public d c;
+    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new hv6(3);
+    public final Parcelable b;
+    public mi5 c;
     public final Object a = new Object();
-    public b5.d d = null;
+    public aac d = null;
 
-    public MediaSessionCompat$Token(Object obj, t tVar) {
-        this.b = obj;
-        this.c = tVar;
+    public MediaSessionCompat$Token(Parcelable parcelable, d dVar) {
+        this.b = parcelable;
+        this.c = dVar;
     }
 
-    public final d a() {
-        d dVar;
+    public final mi5 a() {
+        mi5 mi5Var;
         synchronized (this.a) {
-            dVar = this.c;
+            mi5Var = this.c;
         }
-        return dVar;
+        return mi5Var;
     }
 
-    public final void b(d dVar) {
+    public final void b(mi5 mi5Var) {
         synchronized (this.a) {
-            this.c = dVar;
+            this.c = mi5Var;
         }
     }
 
-    public final void c(b5.d dVar) {
+    public final void c(aac aacVar) {
         synchronized (this.a) {
-            this.d = dVar;
+            this.d = aacVar;
         }
     }
 
@@ -49,27 +49,27 @@ public final class MediaSessionCompat$Token implements Parcelable {
         if (!(obj instanceof MediaSessionCompat$Token)) {
             return false;
         }
-        Object obj2 = ((MediaSessionCompat$Token) obj).b;
-        Object obj3 = this.b;
-        if (obj3 == null) {
-            return obj2 == null;
+        Parcelable parcelable = ((MediaSessionCompat$Token) obj).b;
+        Parcelable parcelable2 = this.b;
+        if (parcelable2 == null) {
+            return parcelable == null;
         }
-        if (obj2 == null) {
+        if (parcelable == null) {
             return false;
         }
-        return obj3.equals(obj2);
+        return parcelable2.equals(parcelable);
     }
 
     public final int hashCode() {
-        Object obj = this.b;
-        if (obj == null) {
+        Parcelable parcelable = this.b;
+        if (parcelable == null) {
             return 0;
         }
-        return obj.hashCode();
+        return parcelable.hashCode();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        parcel.writeParcelable((Parcelable) this.b, i7);
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeParcelable(this.b, i);
     }
 }

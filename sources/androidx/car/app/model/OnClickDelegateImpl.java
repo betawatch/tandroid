@@ -5,18 +5,19 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnClickListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class OnClickDelegateImpl implements b0 {
+public class OnClickDelegateImpl implements yo7 {
     private final boolean mIsParkedOnly;
     private final IOnClickListener mListener;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class OnClickListenerStub extends IOnClickListener.Stub {
-        private final c0 mOnClickListener;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class OnClickListenerStub extends IOnClickListener.Stub {
+        private final zo7 mOnClickListener;
 
-        public OnClickListenerStub(c0 c0Var) {
-            this.mOnClickListener = c0Var;
+        public OnClickListenerStub(zo7 zo7Var) {
+            this.mOnClickListener = zo7Var;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -27,31 +28,31 @@ public class OnClickDelegateImpl implements b0 {
 
         @Override // androidx.car.app.model.IOnClickListener
         public void onClick(IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onClick", new f(this, 1));
+            androidx.car.app.utils.e.c(iOnDoneCallback, "onClick", new a(this, (byte) 1));
         }
     }
 
-    private OnClickDelegateImpl(c0 c0Var, boolean z10) {
-        this.mListener = new OnClickListenerStub(c0Var);
-        this.mIsParkedOnly = z10;
+    private OnClickDelegateImpl(zo7 zo7Var, boolean z) {
+        this.mListener = new OnClickListenerStub(zo7Var);
+        this.mIsParkedOnly = z;
     }
 
-    public static b0 create(c0 c0Var) {
-        return new OnClickDelegateImpl(c0Var, c0Var instanceof ParkedOnlyOnClickListener);
+    public static yo7 create(zo7 zo7Var) {
+        return new OnClickDelegateImpl(zo7Var, zo7Var instanceof ParkedOnlyOnClickListener);
     }
 
-    @Override // androidx.car.app.model.b0
+    @Override // yo7
     public boolean isParkedOnly() {
         return this.mIsParkedOnly;
     }
 
-    public void sendClick(androidx.car.app.k kVar) {
+    public void sendClick(cp7 cp7Var) {
         try {
             IOnClickListener iOnClickListener = this.mListener;
             Objects.requireNonNull(iOnClickListener);
-            iOnClickListener.onClick(androidx.car.app.utils.g.a());
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+            iOnClickListener.onClick(androidx.car.app.utils.e.a());
+        } catch (RemoteException e) {
+            sdb.b(e);
         }
     }
 

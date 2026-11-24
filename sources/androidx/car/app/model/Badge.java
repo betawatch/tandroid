@@ -2,15 +2,17 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class Badge {
     private final CarColor mBackgroundColor;
     private final boolean mHasDot;
     private final CarIcon mIcon;
 
-    public Badge(h hVar) {
-        throw null;
+    private Badge() {
+        this.mHasDot = false;
+        this.mBackgroundColor = null;
+        this.mIcon = null;
     }
 
     public boolean equals(Object obj) {
@@ -44,9 +46,7 @@ public class Badge {
         return "[hasDot: " + this.mHasDot + ", backgroundColor: " + this.mBackgroundColor + ", icon: " + this.mIcon + "]";
     }
 
-    private Badge() {
-        this.mHasDot = false;
-        this.mBackgroundColor = null;
-        this.mIcon = null;
+    public Badge(ce0 ce0Var) {
+        throw null;
     }
 }

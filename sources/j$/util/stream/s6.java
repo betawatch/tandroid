@@ -1,167 +1,42 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.Arrays;
+import j$.util.DesugarArrays;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class s6 extends c implements Iterable {
-    public Object e;
-    public Object[] f;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class s6 extends w6 implements j$.util.x0 {
+    public final /* synthetic */ t6 g;
 
-    public abstract void i(Object obj, int i7, int i10, Object obj2);
-
-    public abstract int j(Object obj);
-
-    public abstract Object[] m();
-
-    public abstract Object newArray(int i7);
-
-    public abstract Spliterator spliterator();
-
-    @Override // java.lang.Iterable
-    public final /* synthetic */ java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s6(t6 t6Var, int i, int i2, int i3, int i4) {
+        super(t6Var, i, i2, i3, i4);
+        this.g = t6Var;
     }
 
-    public s6(int i7) {
-        super(i7);
-        this.e = newArray(1 << this.a);
+    @Override // j$.util.stream.w6
+    public final void a(int i, Object obj, Object obj2) {
+        ((IntConsumer) obj2).accept(((int[]) obj)[i]);
     }
 
-    public s6() {
-        this.e = newArray(16);
+    @Override // j$.util.stream.w6
+    public final j$.util.d1 b(Object obj, int i, int i2) {
+        return DesugarArrays.b((int[]) obj, i, i2 + i);
     }
 
-    public final void l(long j3) {
-        long j10;
-        int i7 = this.c;
-        if (i7 == 0) {
-            j10 = j(this.e);
-        } else {
-            j10 = j(this.f[i7]) + this.d[i7];
-        }
-        if (j3 > j10) {
-            if (this.f == null) {
-                Object[] m10 = m();
-                this.f = m10;
-                this.d = new long[8];
-                m10[0] = this.e;
-            }
-            int i10 = this.c + 1;
-            while (j3 > j10) {
-                Object[] objArr = this.f;
-                if (i10 >= objArr.length) {
-                    int length = objArr.length * 2;
-                    this.f = Arrays.copyOf(objArr, length);
-                    this.d = Arrays.copyOf(this.d, length);
-                }
-                int i11 = this.a;
-                if (i10 != 0 && i10 != 1) {
-                    i11 = Math.min((i11 + i10) - 1, 30);
-                }
-                int i12 = 1 << i11;
-                this.f[i10] = newArray(i12);
-                long[] jArr = this.d;
-                jArr[i10] = jArr[i10 - 1] + j(this.f[r6]);
-                j10 += i12;
-                i10++;
-            }
-        }
+    @Override // j$.util.stream.w6
+    public final j$.util.d1 c(int i, int i2, int i3, int i4) {
+        return new s6(this.g, i, i2, i3, i4);
     }
 
-    public final int k(long j3) {
-        if (this.c == 0) {
-            if (j3 < this.b) {
-                return 0;
-            }
-            throw new IndexOutOfBoundsException(Long.toString(j3));
-        }
-        if (j3 >= count()) {
-            throw new IndexOutOfBoundsException(Long.toString(j3));
-        }
-        for (int i7 = 0; i7 <= this.c; i7++) {
-            if (j3 < this.d[i7] + j(this.f[i7])) {
-                return i7;
-            }
-        }
-        throw new IndexOutOfBoundsException(Long.toString(j3));
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.i(this, consumer);
     }
 
-    public void c(int i7, Object obj) {
-        long j3 = i7;
-        long count = count() + j3;
-        if (count > j(obj) || count < j3) {
-            throw new IndexOutOfBoundsException("does not fit");
-        }
-        if (this.c == 0) {
-            System.arraycopy(this.e, 0, obj, i7, this.b);
-            return;
-        }
-        for (int i10 = 0; i10 < this.c; i10++) {
-            Object obj2 = this.f[i10];
-            System.arraycopy(obj2, 0, obj, i7, j(obj2));
-            i7 += j(this.f[i10]);
-        }
-        int i11 = this.b;
-        if (i11 > 0) {
-            System.arraycopy(this.e, 0, obj, i7, i11);
-        }
-    }
-
-    public Object b() {
-        long count = count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        Object newArray = newArray((int) count);
-        c(0, newArray);
-        return newArray;
-    }
-
-    public final void n() {
-        long j3;
-        if (this.b == j(this.e)) {
-            if (this.f == null) {
-                Object[] m10 = m();
-                this.f = m10;
-                this.d = new long[8];
-                m10[0] = this.e;
-            }
-            int i7 = this.c;
-            int i10 = i7 + 1;
-            Object[] objArr = this.f;
-            if (i10 >= objArr.length || objArr[i10] == null) {
-                if (i7 == 0) {
-                    j3 = j(this.e);
-                } else {
-                    j3 = j(objArr[i7]) + this.d[i7];
-                }
-                l(j3 + 1);
-            }
-            this.b = 0;
-            int i11 = this.c + 1;
-            this.c = i11;
-            this.e = this.f[i11];
-        }
-    }
-
-    @Override // j$.util.stream.c
-    public final void clear() {
-        Object[] objArr = this.f;
-        if (objArr != null) {
-            this.e = objArr[0];
-            this.f = null;
-            this.d = null;
-        }
-        this.b = 0;
-        this.c = 0;
-    }
-
-    public void d(Object obj) {
-        for (int i7 = 0; i7 < this.c; i7++) {
-            Object obj2 = this.f[i7];
-            i(obj2, 0, j(obj2), obj);
-        }
-        i(this.e, 0, this.b, obj);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.z(this, consumer);
     }
 }

@@ -4,20 +4,23 @@ import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
 import androidx.car.app.model.Pane;
-import androidx.car.app.model.x0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class MapTemplate implements x0 {
+public final class MapTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
     private final ItemList mItemList;
     private final MapController mMapController;
     private final Pane mPane;
 
-    public MapTemplate(c cVar) {
-        throw null;
+    private MapTemplate() {
+        this.mMapController = null;
+        this.mPane = null;
+        this.mItemList = null;
+        this.mHeader = null;
+        this.mActionStrip = null;
     }
 
     public boolean equals(Object obj) {
@@ -55,11 +58,7 @@ public final class MapTemplate implements x0 {
         return Objects.hash(this.mMapController, this.mPane, this.mItemList, this.mHeader, this.mActionStrip);
     }
 
-    private MapTemplate() {
-        this.mMapController = null;
-        this.mPane = null;
-        this.mItemList = null;
-        this.mHeader = null;
-        this.mActionStrip = null;
+    public MapTemplate(hi6 hi6Var) {
+        throw null;
     }
 }

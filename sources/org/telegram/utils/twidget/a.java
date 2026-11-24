@@ -1,208 +1,141 @@
 package org.telegram.utils.twidget;
 
-import android.os.IBinder;
-import android.os.Parcel;
+import android.content.Context;
+import android.content.res.AssetManager;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.concurrent.ExecutorService;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
-public final class a implements b {
-    public IBinder a;
-
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final class a extends b {
     @Override // org.telegram.utils.twidget.b
-    public final void G0(long j3, float f10) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeFloat(f10);
-            this.a.transact(5, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    public final long b(Context context, String str, String str2, float f, float f2, int i, String str3, String str4, String str5, String str6, boolean z, WidgetSandboxBackend widgetSandboxBackend) {
+        File file;
+        char c;
+        int i2;
+        AssetManager assetManager;
+        if (!WidgetSandboxNative.available()) {
+            sc8.j("libtwidget is missing");
+            return 0L;
         }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void J(long j3) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            this.a.transact(2, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+        int i3 = 0;
+        WidgetSandboxNative.conformance(false);
+        WidgetSandboxNative.attackScan(false);
+        WidgetSandboxNative.limits(null);
+        ExecutorService executorService = hwc.a;
+        synchronized (hwc.class) {
+            file = hwc.b;
+            if (file == null) {
+                AssetManager assets = context.getApplicationContext().getAssets();
+                InputStream open = assets.open("WidgetSandbox/manifest.txt");
+                try {
+                    String a = hwc.a(open);
+                    open.close();
+                    byte[] digest = MessageDigest.getInstance("SHA-256").digest(a.getBytes(StandardCharsets.UTF_8));
+                    StringBuilder sb = new StringBuilder();
+                    int i4 = 0;
+                    while (true) {
+                        c = 1;
+                        if (i4 >= 12) {
+                            break;
+                        }
+                        sb.append(String.format("%02x", Integer.valueOf(digest[i4] & 255)));
+                        i4++;
+                    }
+                    File file2 = new File(context.getFilesDir(), "widget-sandbox/" + ((Object) sb));
+                    File file3 = new File(file2, "ready");
+                    if (!file3.isFile()) {
+                        String[] split = a.split("\n");
+                        int length = split.length;
+                        int i5 = 0;
+                        while (i5 < length) {
+                            String str7 = split[i5];
+                            if (str7.isEmpty()) {
+                                i2 = i3;
+                                assetManager = assets;
+                            } else {
+                                String[] split2 = str7.split(" ", 2);
+                                String str8 = split2[c];
+                                if (str8.contains("..") || str8.startsWith("/")) {
+                                    throw new IllegalArgumentException("Invalid bundle path");
+                                }
+                                File file4 = new File(file2, str8);
+                                if (!file4.getParentFile().isDirectory() && !file4.getParentFile().mkdirs()) {
+                                    throw new IllegalStateException("Cannot create bundle directory");
+                                }
+                                MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+                                open = assets.open("WidgetSandbox/WidgetJS/" + str8);
+                                try {
+                                    FileOutputStream fileOutputStream = new FileOutputStream(file4);
+                                    try {
+                                        byte[] bArr = new byte[TLObject.FLAG_14];
+                                        while (true) {
+                                            int read = open.read(bArr);
+                                            if (read == -1) {
+                                                break;
+                                            }
+                                            messageDigest.update(bArr, i3, read);
+                                            fileOutputStream.write(bArr, i3, read);
+                                        }
+                                        fileOutputStream.close();
+                                        open.close();
+                                        StringBuilder sb2 = new StringBuilder();
+                                        byte[] digest2 = messageDigest.digest();
+                                        int length2 = digest2.length;
+                                        int i6 = i3;
+                                        while (i6 < length2) {
+                                            int i7 = i3;
+                                            AssetManager assetManager2 = assets;
+                                            Object[] objArr = new Object[1];
+                                            objArr[i7] = Integer.valueOf(digest2[i6] & 255);
+                                            sb2.append(String.format("%02x", objArr));
+                                            i6++;
+                                            i3 = i7;
+                                            assets = assetManager2;
+                                        }
+                                        i2 = i3;
+                                        assetManager = assets;
+                                        if (!split2[i2].equals(sb2.toString())) {
+                                            throw new IllegalStateException("Bundle checksum mismatch: " + str8);
+                                        }
+                                    } catch (Throwable th) {
+                                        try {
+                                            fileOutputStream.close();
+                                            throw th;
+                                        } catch (Throwable th2) {
+                                            th.addSuppressed(th2);
+                                            throw th;
+                                        }
+                                    }
+                                } finally {
+                                }
+                            }
+                            i5++;
+                            i3 = i2;
+                            assets = assetManager;
+                            c = 1;
+                        }
+                        FileOutputStream fileOutputStream2 = new FileOutputStream(file3);
+                        try {
+                            fileOutputStream2.write(1);
+                            fileOutputStream2.close();
+                        } finally {
+                        }
+                    }
+                    hwc.b = file2;
+                    file = file2;
+                } finally {
+                }
+            }
         }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void M0(long j3) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            this.a.transact(9, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void R(long j3, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeByteArray(bArr);
-            this.a.transact(6, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void Z0(long j3, int i7, float f10, float f11, int i10) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeInt(i7);
-            obtain.writeFloat(f10);
-            obtain.writeFloat(f11);
-            obtain.writeInt(i10);
-            this.a.transact(12, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void b1() {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            this.a.transact(13, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void d1(long j3, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeByteArray(bArr);
-            this.a.transact(7, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void e0(long j3, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeByteArray(bArr);
-            this.a.transact(4, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void j0(long j3, int i7, float f10, float f11, int i10, boolean z10, boolean z11, int i11, int i12) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeInt(i7);
-            obtain.writeFloat(f10);
-            obtain.writeFloat(f11);
-            obtain.writeInt(i10);
-            obtain.writeInt(z10 ? 1 : 0);
-            obtain.writeInt(z11 ? 1 : 0);
-            obtain.writeInt(i11);
-            obtain.writeInt(i12);
-            this.a.transact(11, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void s(long j3, float f10, boolean z10, boolean z11, boolean z12) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeFloat(f10);
-            obtain.writeInt(z10 ? 1 : 0);
-            obtain.writeInt(z11 ? 1 : 0);
-            obtain.writeInt(z12 ? 1 : 0);
-            this.a.transact(10, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final long t(byte[] bArr, byte[] bArr2, float f10, float f11, int i7, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z10, d dVar) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeByteArray(bArr);
-            obtain.writeByteArray(bArr2);
-            obtain.writeFloat(f10);
-            obtain.writeFloat(f11);
-            obtain.writeInt(i7);
-            obtain.writeByteArray(bArr3);
-            obtain.writeByteArray(bArr4);
-            obtain.writeByteArray(bArr5);
-            obtain.writeByteArray(bArr6);
-            obtain.writeInt(z10 ? 1 : 0);
-            obtain.writeStrongInterface(dVar);
-            this.a.transact(1, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readLong();
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void u(long j3, long j10, int i7, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeLong(j10);
-            obtain.writeInt(i7);
-            obtain.writeByteArray(bArr);
-            this.a.transact(8, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // org.telegram.utils.twidget.b
-    public final void u0(long j3, boolean z10) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j3);
-            obtain.writeInt(z10 ? 1 : 0);
-            this.a.transact(3, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
+        String absolutePath = file.getAbsolutePath();
+        Charset charset = StandardCharsets.UTF_8;
+        return WidgetSandboxNative.create(absolutePath.getBytes(charset), str.getBytes(charset), str2.getBytes(charset), f, f2, i, str3.getBytes(charset), str4.getBytes(charset), str5.getBytes(charset), str6.getBytes(charset), z, widgetSandboxBackend);
     }
 }

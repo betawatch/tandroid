@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzjr implements zzjt {
     public static final zzjr zza = new zzjr();
@@ -11,17 +11,19 @@ public final class zzjr implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         Object array;
         if (zzztVarArr.length != 2) {
-            throw new zzdm(4, 3, null);
+            fvc.c(4, 3, null);
+            return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
         if (zza2 == null) {
             zza2 = null;
         }
         if (zza2 == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
         if (true != (zza3 instanceof Integer)) {
@@ -29,7 +31,8 @@ public final class zzjr implements zzjt {
         }
         Integer num = (Integer) zza3;
         if (num == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         int intValue = num.intValue();
         try {
@@ -41,14 +44,14 @@ public final class zzjr implements zzjt {
                 }
                 int[] iArr = (int[]) zza2;
                 ArrayList arrayList = new ArrayList(iArr.length);
-                for (int i10 : iArr) {
-                    arrayList.add(Integer.valueOf(i10 / intValue));
+                for (int i2 : iArr) {
+                    arrayList.add(Integer.valueOf(i2 / intValue));
                 }
                 array = arrayList.toArray(new Integer[0]);
             }
-            zzizVar.zzc().zze(i7, array);
-        } catch (ArithmeticException e10) {
-            throw new zzdm(4, 6, e10);
+            zzizVar.zzc().zze(i, array);
+        } catch (ArithmeticException e) {
+            fvc.c(4, 6, e);
         }
     }
 }

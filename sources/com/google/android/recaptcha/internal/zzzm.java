@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzzm extends zzsn implements zztt {
     private static final zzzm zzb;
@@ -38,18 +38,18 @@ public final class zzzm extends zzsn implements zztt {
     }
 
     public final int zzN() {
-        int i7 = this.zze;
-        if (i7 == 0) {
+        int i = this.zze;
+        if (i == 0) {
             return 3;
         }
-        int i10 = 1;
-        if (i7 != 1) {
-            i10 = 2;
-            if (i7 != 2) {
+        int i2 = 1;
+        if (i != 1) {
+            i2 = 2;
+            if (i != 2) {
                 return 0;
             }
         }
-        return i10;
+        return i2;
     }
 
     public final zzwn zzf() {
@@ -61,26 +61,26 @@ public final class zzzm extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i7, Object obj, Object obj2) {
+    public final Object zzh(int i, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i7 - 1;
-        if (i10 == 0) {
+        int i2 = i - 1;
+        if (i2 == 0) {
             return (byte) 1;
         }
-        if (i10 == 2) {
+        if (i2 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0002\u0001\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001<\u0000\u0002<\u0000", new Object[]{"zzf", "zze", zzwn.class, zzxc.class});
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             return new zzzm();
         }
         zzzv zzzvVar = null;
-        if (i10 == 4) {
+        if (i2 == 4) {
             return new zzzl(zzzvVar);
         }
-        if (i10 == 5) {
+        if (i2 == 5) {
             return zzb;
         }
-        if (i10 != 6) {
+        if (i2 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;
@@ -88,14 +88,10 @@ public final class zzzm extends zzsn implements zztt {
             return zzuaVar2;
         }
         synchronized (zzzm.class) {
-            try {
-                zzuaVar = zzd;
-                if (zzuaVar == null) {
-                    zzuaVar = new zzsi(zzb);
-                    zzd = zzuaVar;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzuaVar = zzd;
+            if (zzuaVar == null) {
+                zzuaVar = new zzsi(zzb);
+                zzd = zzuaVar;
             }
         }
         return zzuaVar;

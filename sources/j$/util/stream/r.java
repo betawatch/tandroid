@@ -1,32 +1,43 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public final class r extends y {
-    public final /* synthetic */ int s;
+import j$.util.function.BiFunction$-CC;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r(a aVar, int i7, int i10) {
-        super(aVar, i7);
-        this.s = i10;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class r implements BinaryOperator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ BiConsumer b;
+
+    public /* synthetic */ r(BiConsumer biConsumer, byte b) {
+        this.a = b;
+        this.b = biConsumer;
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        switch (this.s) {
-            case 0:
-                return new p(this, j5Var, 1);
-            case 1:
-                return j5Var;
-            case 2:
-                return new p(this, j5Var, 4);
-            case 3:
-                return new u0(1, j5Var);
-            case 4:
-                return new s0(this, j5Var, 4);
-            case 5:
-                return new c1(j5Var);
-            default:
-                return new b1(this, j5Var, 3);
+    public final /* synthetic */ BiFunction andThen(Function function) {
+        switch (this.a) {
         }
+        return BiFunction$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.BiFunction
+    public final Object apply(Object obj, Object obj2) {
+        byte b = this.a;
+        BiConsumer biConsumer = this.b;
+        switch (b) {
+            case 0:
+                biConsumer.accept(obj, obj2);
+                break;
+            case 1:
+                biConsumer.accept(obj, obj2);
+                break;
+            default:
+                biConsumer.accept(obj, obj2);
+                break;
+        }
+        return obj;
     }
 }

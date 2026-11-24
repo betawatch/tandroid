@@ -6,27 +6,27 @@ import android.content.SharedPreferences;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ContactsWidgetService extends RemoteViewsService {
     @Override // android.widget.RemoteViewsService
     public final RemoteViewsService.RemoteViewsFactory onGetViewFactory(Intent intent) {
         Context applicationContext = getApplicationContext();
-        k5 k5Var = new k5();
-        k5Var.a = new ArrayList();
-        k5Var.g = new a0.h();
-        k5Var.b = applicationContext;
-        org.telegram.ui.ActionBar.n6.T(applicationContext);
+        tu2 tu2Var = new tu2();
+        tu2Var.a = new ArrayList();
+        tu2Var.g = new vf6();
+        tu2Var.b = applicationContext;
+        bkb.S(applicationContext);
         int intExtra = intent.getIntExtra("appWidgetId", 0);
-        k5Var.c = intExtra;
+        tu2Var.c = intExtra;
         SharedPreferences sharedPreferences = applicationContext.getSharedPreferences("shortcut_widget", 0);
-        int i7 = sharedPreferences.getInt("account" + intExtra, -1);
-        if (i7 >= 0) {
-            k5Var.d = c.a(i7);
+        int i = sharedPreferences.getInt("account" + intExtra, -1);
+        if (i >= 0) {
+            tu2Var.d = j5.a(i);
         }
-        StringBuilder sb2 = new StringBuilder("deleted");
-        sb2.append(intExtra);
-        k5Var.h = sharedPreferences.getBoolean(sb2.toString(), false) || k5Var.d == null;
-        return k5Var;
+        StringBuilder sb = new StringBuilder("deleted");
+        sb.append(intExtra);
+        tu2Var.h = sharedPreferences.getBoolean(sb.toString(), false) || tu2Var.d == null;
+        return tu2Var;
     }
 }

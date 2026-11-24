@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class CarIconSpan extends CarSpan {
     public static final int ALIGN_BASELINE = 1;
@@ -11,17 +11,23 @@ public final class CarIconSpan extends CarSpan {
     private final int mAlignment;
     private final CarIcon mIcon;
 
-    private CarIconSpan(CarIcon carIcon, int i7) {
-        this.mIcon = carIcon;
-        this.mAlignment = i7;
+    private CarIconSpan() {
+        this.mIcon = null;
+        this.mAlignment = 1;
     }
 
-    private static String alignmentToString(int i7) {
-        return i7 != 0 ? i7 != 1 ? i7 != 2 ? "unknown" : "center" : "baseline" : "bottom";
+    private static String alignmentToString(int i) {
+        return i != 0 ? i != 1 ? i != 2 ? "unknown" : "center" : "baseline" : "bottom";
     }
 
-    public static CarIconSpan create(CarIcon carIcon) {
-        return create(carIcon, 1);
+    public static CarIconSpan create(CarIcon carIcon, int i) {
+        lc1.b.b(carIcon);
+        if (i == 1 || i == 0 || i == 2) {
+            Objects.requireNonNull(carIcon);
+            return new CarIconSpan(carIcon, i);
+        }
+        sc8.j(de9.k(i, "Invalid alignment value: "));
+        return null;
     }
 
     public boolean equals(Object obj) {
@@ -49,23 +55,18 @@ public final class CarIconSpan extends CarSpan {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[icon: ");
-        sb2.append(this.mIcon);
-        sb2.append(", alignment: ");
-        return a8.p0.s(sb2, alignmentToString(this.mAlignment), "]");
+        StringBuilder sb = new StringBuilder("[icon: ");
+        sb.append(this.mIcon);
+        sb.append(", alignment: ");
+        return b00.j(sb, alignmentToString(this.mAlignment), "]");
     }
 
-    public static CarIconSpan create(CarIcon carIcon, int i7) {
-        t.b.b.a(carIcon);
-        if (i7 != 1 && i7 != 0 && i7 != 2) {
-            throw new IllegalStateException(i5.c.i(i7, "Invalid alignment value: "));
-        }
-        Objects.requireNonNull(carIcon);
-        return new CarIconSpan(carIcon, i7);
+    private CarIconSpan(CarIcon carIcon, int i) {
+        this.mIcon = carIcon;
+        this.mAlignment = i;
     }
 
-    private CarIconSpan() {
-        this.mIcon = null;
-        this.mAlignment = 1;
+    public static CarIconSpan create(CarIcon carIcon) {
+        return create(carIcon, 1);
     }
 }

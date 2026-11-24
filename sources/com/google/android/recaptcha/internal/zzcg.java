@@ -2,13 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaErrorCode;
 import com.google.android.recaptcha.RecaptchaException;
-import gd.e;
-import hd.r;
 import java.util.Map;
-import kotlin.jvm.internal.f;
-import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzcg extends Exception {
     public static final /* synthetic */ int zza = 0;
@@ -21,12 +17,12 @@ public final class zzcg extends Exception {
 
     /* JADX WARN: Multi-variable type inference failed */
     static {
-        e eVar = new e(zzzk.zzc, new zzcg(zzce.zzc, zzcd.zzd, null, null, 12, null));
+        ku7 ku7Var = new ku7(zzzk.zzc, new zzcg(zzce.zzc, zzcd.zzd, null, null, 12, null));
         zzzk zzzkVar = zzzk.zzd;
         zzce zzceVar = zzce.zzb;
-        int i7 = 12;
-        f fVar = null;
-        zzb = r.d(eVar, new e(zzzkVar, new zzcg(zzceVar, zzcd.zzc, null, 0 == true ? 1 : 0, 12, null)), new e(zzzk.zze, new zzcg(zzce.zzd, zzcd.zze, null, 0 == true ? 1 : 0, i7, fVar)), new e(zzzk.zzf, new zzcg(zzce.zze, zzcd.zzf, 0 == true ? 1 : 0, 0 == true ? 1 : 0, i7, fVar)), new e(zzzk.zzi, new zzcg(zzce.zzf, zzcd.zzg, null, null, 12, null)), new e(zzzk.zzh, new zzcg(zzce.zzg, zzcd.zzh, null, 0 == true ? 1 : 0, 12, null)), new e(zzzk.zzj, new zzcg(zzceVar, zzcd.zzj, null, 0 == true ? 1 : 0, 12, null)));
+        int i = 12;
+        t93 t93Var = null;
+        zzb = qi6.c(ku7Var, new ku7(zzzkVar, new zzcg(zzceVar, zzcd.zzc, null, 0 == true ? 1 : 0, 12, null)), new ku7(zzzk.zze, new zzcg(zzce.zzd, zzcd.zze, null, 0 == true ? 1 : 0, i, t93Var)), new ku7(zzzk.zzf, new zzcg(zzce.zze, zzcd.zzf, 0 == true ? 1 : 0, 0 == true ? 1 : 0, i, t93Var)), new ku7(zzzk.zzi, new zzcg(zzce.zzf, zzcd.zzg, null, null, 12, null)), new ku7(zzzk.zzh, new zzcg(zzce.zzg, zzcd.zzh, null, 0 == true ? 1 : 0, 12, null)), new ku7(zzzk.zzj, new zzcg(zzceVar, zzcd.zzj, null, 0 == true ? 1 : 0, 12, null)));
     }
 
     public zzcg(zzce zzceVar, zzcd zzcdVar, String str, Exception exc) {
@@ -36,7 +32,7 @@ public final class zzcg extends Exception {
         this.zzf = exc;
         zzce zzceVar2 = zzce.zzc;
         RecaptchaErrorCode recaptchaErrorCode = RecaptchaErrorCode.NETWORK_ERROR;
-        this.zzg = r.d(new e(zzceVar2, new RecaptchaException(recaptchaErrorCode, null, 2, null)), new e(zzce.zzh, new RecaptchaException(recaptchaErrorCode, null, 2, null)), new e(zzce.zzi, new RecaptchaException(recaptchaErrorCode, null, 2, null)), new e(zzce.zzd, new RecaptchaException(RecaptchaErrorCode.INVALID_SITEKEY, null, 2, null)), new e(zzce.zze, new RecaptchaException(RecaptchaErrorCode.INVALID_KEYTYPE, null, 2, null)), new e(zzce.zzf, new RecaptchaException(RecaptchaErrorCode.INVALID_PACKAGE_NAME, null, 2, null)), new e(zzce.zzg, new RecaptchaException(RecaptchaErrorCode.INVALID_ACTION, null, 2, null)), new e(zzce.zzb, new RecaptchaException(RecaptchaErrorCode.INTERNAL_ERROR, null, 2, null)), new e(zzce.zzj, new RecaptchaException(RecaptchaErrorCode.INVALID_TIMEOUT, null, 2, null)));
+        this.zzg = qi6.c(new ku7(zzceVar2, new RecaptchaException(recaptchaErrorCode, null, 2, null)), new ku7(zzce.zzh, new RecaptchaException(recaptchaErrorCode, null, 2, null)), new ku7(zzce.zzi, new RecaptchaException(recaptchaErrorCode, null, 2, null)), new ku7(zzce.zzd, new RecaptchaException(RecaptchaErrorCode.INVALID_SITEKEY, null, 2, null)), new ku7(zzce.zze, new RecaptchaException(RecaptchaErrorCode.INVALID_KEYTYPE, null, 2, null)), new ku7(zzce.zzf, new RecaptchaException(RecaptchaErrorCode.INVALID_PACKAGE_NAME, null, 2, null)), new ku7(zzce.zzg, new RecaptchaException(RecaptchaErrorCode.INVALID_ACTION, null, 2, null)), new ku7(zzce.zzb, new RecaptchaException(RecaptchaErrorCode.INTERNAL_ERROR, null, 2, null)), new ku7(zzce.zzj, new RecaptchaException(RecaptchaErrorCode.INVALID_TIMEOUT, null, 2, null)));
     }
 
     @Override // java.lang.Throwable
@@ -54,10 +50,10 @@ public final class zzcg extends Exception {
 
     public final RecaptchaException zzc() {
         zzcd zzcdVar = this.zzd;
-        if (j.a(zzcdVar, zzcd.zzI)) {
+        if (rp5.a(zzcdVar, zzcd.zzI)) {
             return new RecaptchaException(RecaptchaErrorCode.INVALID_TIMEOUT, null, 2, null);
         }
-        if (j.a(zzcdVar, zzcd.zzao)) {
+        if (rp5.a(zzcdVar, zzcd.zzao)) {
             return new RecaptchaException(RecaptchaErrorCode.NO_NETWORK_FOUND, null, 2, null);
         }
         RecaptchaException recaptchaException = (RecaptchaException) this.zzg.get(this.zzc);
@@ -68,7 +64,7 @@ public final class zzcg extends Exception {
         return this.zze;
     }
 
-    public /* synthetic */ zzcg(zzce zzceVar, zzcd zzcdVar, String str, Exception exc, int i7, f fVar) {
-        this(zzceVar, zzcdVar, (i7 & 4) != 0 ? null : str, null);
+    public /* synthetic */ zzcg(zzce zzceVar, zzcd zzcdVar, String str, Exception exc, int i, t93 t93Var) {
+        this(zzceVar, zzcdVar, (i & 4) != 0 ? null : str, null);
     }
 }

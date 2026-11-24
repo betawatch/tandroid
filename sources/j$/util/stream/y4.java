@@ -1,39 +1,44 @@
 package j$.util.stream;
 
-import java.util.function.Consumer;
+import j$.util.Spliterator;
+import java.util.concurrent.CountedCompleter;
 
-/* loaded from: classes2.dex */
-public final class y4 extends b5 {
-    @Override // j$.util.stream.b5, j$.util.stream.Stream
-    public final void forEach(Consumer consumer) {
-        if (!this.h.r) {
-            S0().forEachRemaining(consumer);
-        } else {
-            super.forEach(consumer);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class y4 extends d {
+    public final w3 h;
+
+    public y4(y4 y4Var, Spliterator spliterator) {
+        super(y4Var, spliterator);
+        this.h = y4Var.h;
+    }
+
+    @Override // j$.util.stream.d
+    public final Object a() {
+        a aVar = this.a;
+        r4 Y = this.h.Y();
+        aVar.Q(this.b, Y);
+        return Y;
+    }
+
+    @Override // j$.util.stream.d
+    public final d c(Spliterator spliterator) {
+        return new y4(this, spliterator);
+    }
+
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        d dVar = this.d;
+        if (dVar != null) {
+            r4 r4Var = (r4) ((y4) dVar).f;
+            r4Var.w((r4) ((y4) this.e).f);
+            this.f = r4Var;
         }
+        super.onCompletion(countedCompleter);
     }
 
-    @Override // j$.util.stream.b5, j$.util.stream.Stream
-    public final void forEachOrdered(Consumer consumer) {
-        if (!this.h.r) {
-            S0().forEachRemaining(consumer);
-        } else {
-            super.forEachOrdered(consumer);
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new x4(this, v6.r);
-    }
-
-    @Override // j$.util.stream.a
-    public final boolean P0() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        throw new UnsupportedOperationException();
+    public y4(w3 w3Var, a aVar, Spliterator spliterator) {
+        super(aVar, spliterator);
+        this.h = w3Var;
     }
 }

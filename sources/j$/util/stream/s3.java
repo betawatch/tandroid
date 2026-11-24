@@ -1,73 +1,94 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
 import java.util.concurrent.CountedCompleter;
+import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
-public class s3 extends CountedCompleter {
-    public final e2 a;
-    public final int b;
-    public final /* synthetic */ int c;
-    public final Object d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class s3 extends CountedCompleter implements n5 {
+    public final Spliterator a;
+    public final a b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public int f;
+    public int g;
 
-    public s3(e2 e2Var, Object obj, int i7) {
-        this.c = i7;
-        this.a = e2Var;
-        this.b = 0;
-        this.d = obj;
+    public s3(s3 s3Var, Spliterator spliterator, long j, long j2, int i) {
+        super(s3Var);
+        this.a = spliterator;
+        this.b = s3Var.b;
+        this.c = s3Var.c;
+        this.d = j;
+        this.e = j2;
+        if (j < 0 || j2 < 0 || (j + j2) - 1 >= i) {
+            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j), Long.valueOf(j), Long.valueOf(j2), Integer.valueOf(i)));
+        }
     }
 
-    public s3(s3 s3Var, e2 e2Var, int i7, byte b10) {
-        super(s3Var);
-        this.a = e2Var;
-        this.b = i7;
+    public abstract s3 a(Spliterator spliterator, long j, long j2);
+
+    public /* synthetic */ void accept(double d) {
+        w3.d();
+        throw null;
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
     @Override // java.util.concurrent.CountedCompleter
     public final void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.a;
         s3 s3Var = this;
-        while (s3Var.a.h() != 0) {
-            s3Var.setPendingCount(s3Var.a.h() - 1);
-            int i7 = 0;
-            int i10 = 0;
-            while (i7 < s3Var.a.h() - 1) {
-                s3 a10 = s3Var.a(i7, s3Var.b + i10);
-                i10 = (int) (a10.a.count() + i10);
-                a10.fork();
-                i7++;
-            }
-            s3Var = s3Var.a(i7, s3Var.b + i10);
+        while (spliterator.estimateSize() > s3Var.c && (trySplit = spliterator.trySplit()) != null) {
+            s3Var.setPendingCount(1);
+            long estimateSize = trySplit.estimateSize();
+            s3Var.a(trySplit, s3Var.d, estimateSize).fork();
+            s3Var = s3Var.a(spliterator, s3Var.d + estimateSize, s3Var.e - estimateSize);
         }
-        switch (s3Var.c) {
-            case 0:
-                ((d2) s3Var.a).c(s3Var.b, s3Var.d);
-                break;
-            default:
-                s3Var.a.f((Object[]) s3Var.d, s3Var.b);
-                break;
-        }
+        s3Var.b.Q(spliterator, s3Var);
         s3Var.propagateCompletion();
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public s3(s3 s3Var, e2 e2Var, int i7) {
-        this(s3Var, e2Var, i7, (byte) 0);
-        this.c = 1;
-        this.d = (Object[]) s3Var.d;
-    }
-
-    public final s3 a(int i7, int i10) {
-        switch (this.c) {
-            case 0:
-                return new s3(this, ((d2) this.a).a(i7), i10);
-            default:
-                return new s3(this, this.a.a(i7), i10);
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        long j2 = this.e;
+        if (j > j2) {
+            throw new IllegalStateException("size passed to Sink.begin exceeds array length");
         }
+        int i = (int) this.d;
+        this.f = i;
+        this.g = i + ((int) j2);
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public s3(s3 s3Var, d2 d2Var, int i7) {
-        this(s3Var, d2Var, i7, (byte) 0);
-        this.c = 0;
-        this.d = s3Var.d;
+    @Override // j$.util.stream.n5
+    public final boolean q() {
+        return false;
+    }
+
+    public /* synthetic */ void accept(int i) {
+        w3.k();
+        throw null;
+    }
+
+    public /* synthetic */ void accept(long j) {
+        w3.l();
+        throw null;
+    }
+
+    public s3(Spliterator spliterator, a aVar, int i) {
+        this.a = spliterator;
+        this.b = aVar;
+        this.c = d.e(spliterator.estimateSize());
+        this.d = 0L;
+        this.e = i;
+    }
+
+    @Override // j$.util.stream.n5
+    public final void end() {
     }
 }

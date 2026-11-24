@@ -1,55 +1,13 @@
 package j$.util.stream;
 
-import java.util.Arrays;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class z5 extends h5 {
+    public boolean b;
 
-/* loaded from: classes2.dex */
-public final class z5 extends v5 {
-    public o6 c;
-
-    @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j3) {
-        o6 o6Var;
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        if (j3 <= 0) {
-            o6Var = new o6();
-        } else {
-            o6Var = new o6((int) j3);
-        }
-        this.c = o6Var;
-    }
-
-    @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void end() {
-        int[] iArr = (int[]) this.c.b();
-        Arrays.sort(iArr);
-        long length = iArr.length;
-        j5 j5Var = this.a;
-        j5Var.o(length);
-        int i7 = 0;
-        if (!this.b) {
-            int length2 = iArr.length;
-            while (i7 < length2) {
-                j5Var.accept(iArr[i7]);
-                i7++;
-            }
-        } else {
-            int length3 = iArr.length;
-            while (i7 < length3) {
-                int i10 = iArr[i7];
-                if (j5Var.q()) {
-                    break;
-                }
-                j5Var.accept(i10);
-                i7++;
-            }
-        }
-        j5Var.end();
-    }
-
-    @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        this.c.accept(i7);
+    @Override // j$.util.stream.h5, j$.util.stream.n5
+    public final boolean q() {
+        this.b = true;
+        return false;
     }
 }

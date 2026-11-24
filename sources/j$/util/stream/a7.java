@@ -1,31 +1,36 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class a7 {
+    public static final a7 OP;
+    public static final a7 SPLITERATOR;
+    public static final a7 STREAM;
+    public static final a7 TERMINAL_OP;
+    public static final a7 UPSTREAM_TERMINAL_OP;
+    public static final /* synthetic */ a7[] a;
 
-/* loaded from: classes2.dex */
-public final class a7 extends b7 implements LongConsumer {
-    public final long[] c;
-
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    static {
+        a7 a7Var = new a7("SPLITERATOR", 0);
+        SPLITERATOR = a7Var;
+        a7 a7Var2 = new a7("STREAM", 1);
+        STREAM = a7Var2;
+        a7 a7Var3 = new a7("OP", 2);
+        OP = a7Var3;
+        a7 a7Var4 = new a7("TERMINAL_OP", 3);
+        TERMINAL_OP = a7Var4;
+        a7 a7Var5 = new a7("UPSTREAM_TERMINAL_OP", 4);
+        UPSTREAM_TERMINAL_OP = a7Var5;
+        a = new a7[]{a7Var, a7Var2, a7Var3, a7Var4, a7Var5};
     }
 
-    public a7(int i7) {
-        this.c = new long[i7];
+    public static a7 valueOf(String str) {
+        return (a7) Enum.valueOf(a7.class, str);
     }
 
-    @Override // j$.util.stream.b7
-    public final void a(Object obj, long j3) {
-        LongConsumer longConsumer = (LongConsumer) obj;
-        for (int i7 = 0; i7 < j3; i7++) {
-            longConsumer.accept(this.c[i7]);
-        }
-    }
-
-    @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
-        int i7 = this.b;
-        this.b = i7 + 1;
-        this.c[i7] = j3;
+    public static a7[] values() {
+        return (a7[]) a.clone();
     }
 }

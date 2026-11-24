@@ -5,8 +5,8 @@ import android.graphics.Typeface;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
 public abstract class JLatexMathAndroid {
     private static final String BASE = "org/scilab/forge/jlatexmath/";
     private static Context sContext;
@@ -19,14 +19,16 @@ public abstract class JLatexMathAndroid {
         if (context != null) {
             return context;
         }
-        throw new NullPointerException("Please call `#init(Context)` method to initialize jLatexMath");
+        fvc.f("Please call `#init(Context)` method to initialize jLatexMath");
+        return null;
     }
 
     public static InputStream getResourceAsStream(String str) {
         try {
             return context().getAssets().open(BASE + str);
-        } catch (IOException e10) {
-            throw new RuntimeException(e10);
+        } catch (IOException e) {
+            sdb.b(e);
+            return null;
         }
     }
 

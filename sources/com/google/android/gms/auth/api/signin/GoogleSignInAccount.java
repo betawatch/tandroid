@@ -4,22 +4,18 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.cc;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import q6.m;
-import r6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 @Deprecated
 /* loaded from: classes.dex */
-public class GoogleSignInAccount extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new w.a(23);
+public class GoogleSignInAccount extends b4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new b1d((byte) 3);
     public final String a;
     public final String b;
     public final String c;
@@ -28,19 +24,19 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     public String f;
     public final long h;
     public final String n;
-    public final List r;
+    public final ArrayList r;
     public final String s;
     public final String w;
     public final HashSet x = new HashSet();
 
-    public GoogleSignInAccount(String str, String str2, String str3, String str4, Uri uri, String str5, long j3, String str6, ArrayList arrayList, String str7, String str8) {
+    public GoogleSignInAccount(String str, String str2, String str3, String str4, Uri uri, String str5, long j, String str6, ArrayList arrayList, String str7, String str8) {
         this.a = str;
         this.b = str2;
         this.c = str3;
         this.d = str4;
         this.e = uri;
         this.f = str5;
-        this.h = j3;
+        this.h = j;
         this.n = str6;
         this.r = arrayList;
         this.s = str7;
@@ -58,8 +54,8 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         HashSet hashSet = new HashSet();
         JSONArray jSONArray = jSONObject.getJSONArray("grantedScopes");
         int length = jSONArray.length();
-        for (int i7 = 0; i7 < length; i7++) {
-            hashSet.add(new Scope(1, jSONArray.getString(i7)));
+        for (int i = 0; i < length; i++) {
+            hashSet.add(new Scope(1, jSONArray.getString(i)));
         }
         String optString2 = jSONObject.optString("id");
         String optString3 = jSONObject.has("tokenId") ? jSONObject.optString("tokenId") : null;
@@ -68,7 +64,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         String optString6 = jSONObject.has("givenName") ? jSONObject.optString("givenName") : null;
         String optString7 = jSONObject.has("familyName") ? jSONObject.optString("familyName") : null;
         String string = jSONObject.getString("obfuscatedIdentifier");
-        m.f(string);
+        fre.f(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(optString2, optString3, optString4, optString5, parse, null, parseLong, string, new ArrayList(hashSet), optString6, optString7);
         googleSignInAccount.f = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
@@ -103,20 +99,20 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = cc.r(parcel, 20293);
-        cc.l(parcel, 2, this.a);
-        cc.l(parcel, 3, this.b);
-        cc.l(parcel, 4, this.c);
-        cc.l(parcel, 5, this.d);
-        cc.k(parcel, 6, this.e, i7);
-        cc.l(parcel, 7, this.f);
-        cc.q(parcel, 8, 8);
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.l(parcel, 2, this.a);
+        jte.l(parcel, 3, this.b);
+        jte.l(parcel, 4, this.c);
+        jte.l(parcel, 5, this.d);
+        jte.k(parcel, 6, this.e, i);
+        jte.l(parcel, 7, this.f);
+        jte.q(parcel, 8, 8);
         parcel.writeLong(this.h);
-        cc.l(parcel, 9, this.n);
-        cc.p(parcel, 10, this.r);
-        cc.l(parcel, 11, this.s);
-        cc.l(parcel, 12, this.w);
-        cc.s(parcel, r10);
+        jte.l(parcel, 9, this.n);
+        jte.p(parcel, 10, this.r);
+        jte.l(parcel, 11, this.s);
+        jte.l(parcel, 12, this.w);
+        jte.s(parcel, r);
     }
 }

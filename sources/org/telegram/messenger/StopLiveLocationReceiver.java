@@ -4,13 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class StopLiveLocationReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public final void onReceive(Context context, Intent intent) {
-        for (int i7 = 0; i7 < 4; i7++) {
-            Utilities.d.c(new hd(qd.f(i7), 6));
+        for (int i = 0; i < 4; i++) {
+            Utilities.d.c(new va6(eb6.f(i), (byte) 6));
         }
     }
 }

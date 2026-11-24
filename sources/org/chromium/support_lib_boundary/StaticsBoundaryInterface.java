@@ -6,7 +6,7 @@ import android.webkit.ValueCallback;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface StaticsBoundaryInterface {
     Uri getSafeBrowsingPrivacyPolicyUrl();
@@ -17,9 +17,9 @@ public interface StaticsBoundaryInterface {
 
     boolean isMultiProcessEnabled();
 
-    void setDefaultTrafficStatsTag(int i7);
+    void setDefaultTrafficStatsTag(int i);
 
-    void setDefaultTrafficStatsUid(int i7);
+    void setDefaultTrafficStatsUid(int i);
 
     void setSafeBrowsingAllowlist(Set<String> set, ValueCallback<Boolean> valueCallback);
 

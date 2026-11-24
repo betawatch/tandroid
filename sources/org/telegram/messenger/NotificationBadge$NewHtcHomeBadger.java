@@ -4,23 +4,23 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NotificationBadge$NewHtcHomeBadger implements wr {
-    @Override // org.telegram.messenger.wr
-    public final void a(int i7) {
+public class NotificationBadge$NewHtcHomeBadger implements yj7 {
+    @Override // yj7
+    public final void a(int i) {
         Intent intent = new Intent("com.htc.launcher.action.SET_NOTIFICATION");
-        intent.putExtra("com.htc.launcher.extra.COMPONENT", zr.d.flattenToShortString());
-        intent.putExtra("com.htc.launcher.extra.COUNT", i7);
+        intent.putExtra("com.htc.launcher.extra.COMPONENT", ak7.d.flattenToShortString());
+        intent.putExtra("com.htc.launcher.extra.COUNT", i);
         Intent intent2 = new Intent("com.htc.launcher.action.UPDATE_SHORTCUT");
-        intent2.putExtra("packagename", zr.d.getPackageName());
-        intent2.putExtra("count", i7);
-        if (zr.a(intent) || zr.a(intent2)) {
-            g0.g3(new rq(11, intent, intent2));
+        intent2.putExtra("packagename", ak7.d.getPackageName());
+        intent2.putExtra("count", i);
+        if (ak7.a(intent) || ak7.a(intent2)) {
+            gl.d3(new bj7(intent, intent2, (byte) 4));
         }
     }
 
-    @Override // org.telegram.messenger.wr
+    @Override // yj7
     public final List b() {
         return Arrays.asList("com.htc.launcher");
     }

@@ -4,26 +4,16 @@ import j$.util.Spliterator;
 import java.util.concurrent.CountedCompleter;
 import java.util.concurrent.ForkJoinPool;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public abstract class d extends CountedCompleter {
     public static final int g = ForkJoinPool.getCommonPoolParallelism() << 2;
-    public final t3 a;
+    public final a a;
     public Spliterator b;
     public long c;
     public d d;
     public d e;
     public Object f;
-
-    public abstract Object a();
-
-    public abstract d c(Spliterator spliterator);
-
-    public d(t3 t3Var, Spliterator spliterator) {
-        super(null);
-        this.a = t3Var;
-        this.b = spliterator;
-        this.c = 0L;
-    }
 
     public d(d dVar, Spliterator spliterator) {
         super(dVar);
@@ -32,17 +22,68 @@ public abstract class d extends CountedCompleter {
         this.c = dVar.c;
     }
 
-    public static long e(long j3) {
-        long j10 = j3 / g;
-        if (j10 > 0) {
-            return j10;
+    public static long e(long j) {
+        long j2 = j / g;
+        if (j2 > 0) {
+            return j2;
         }
         return 1L;
+    }
+
+    public abstract Object a();
+
+    public final boolean b() {
+        return ((d) getCompleter()) == null;
+    }
+
+    public abstract d c(Spliterator spliterator);
+
+    @Override // java.util.concurrent.CountedCompleter
+    public void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.b;
+        long estimateSize = spliterator.estimateSize();
+        long j = this.c;
+        if (j == 0) {
+            j = e(estimateSize);
+            this.c = j;
+        }
+        boolean z = false;
+        while (estimateSize > j && (trySplit = spliterator.trySplit()) != null) {
+            d c = this.c(trySplit);
+            this.d = c;
+            d c2 = this.c(spliterator);
+            this.e = c2;
+            this.setPendingCount(1);
+            if (z) {
+                spliterator = trySplit;
+                this = c;
+                c = c2;
+            } else {
+                this = c2;
+            }
+            z = !z;
+            c.fork();
+            estimateSize = spliterator.estimateSize();
+        }
+        this.d(this.a());
+        this.tryComplete();
+    }
+
+    public void d(Object obj) {
+        this.f = obj;
     }
 
     @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
     public Object getRawResult() {
         return this.f;
+    }
+
+    @Override // java.util.concurrent.CountedCompleter
+    public void onCompletion(CountedCompleter countedCompleter) {
+        this.b = null;
+        this.e = null;
+        this.d = null;
     }
 
     @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
@@ -52,51 +93,10 @@ public abstract class d extends CountedCompleter {
         }
     }
 
-    public void d(Object obj) {
-        this.f = obj;
-    }
-
-    public final boolean b() {
-        return ((d) getCompleter()) == null;
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.b;
-        long estimateSize = spliterator.estimateSize();
-        long j3 = this.c;
-        if (j3 == 0) {
-            j3 = e(estimateSize);
-            this.c = j3;
-        }
-        boolean z10 = false;
-        d dVar = this;
-        while (estimateSize > j3 && (trySplit = spliterator.trySplit()) != null) {
-            d c10 = dVar.c(trySplit);
-            dVar.d = c10;
-            d c11 = dVar.c(spliterator);
-            dVar.e = c11;
-            dVar.setPendingCount(1);
-            if (z10) {
-                spliterator = trySplit;
-                dVar = c10;
-                c10 = c11;
-            } else {
-                dVar = c11;
-            }
-            z10 = !z10;
-            c10.fork();
-            estimateSize = spliterator.estimateSize();
-        }
-        dVar.d(dVar.a());
-        dVar.tryComplete();
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public void onCompletion(CountedCompleter countedCompleter) {
-        this.b = null;
-        this.e = null;
-        this.d = null;
+    public d(a aVar, Spliterator spliterator) {
+        super(null);
+        this.a = aVar;
+        this.b = spliterator;
+        this.c = 0L;
     }
 }

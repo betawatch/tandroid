@@ -1,83 +1,36 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.function.Consumer;
-import java.util.function.LongConsumer;
-import org.telegram.messenger.ks;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public class q6 extends s6 implements LongConsumer {
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class q6 extends w6 implements j$.util.u0 {
+    public final /* synthetic */ r6 g;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q6(r6 r6Var, int i, int i2, int i3, int i4) {
+        super(r6Var, i, i2, i3, i4);
+        this.g = r6Var;
     }
 
-    @Override // j$.util.stream.s6
-    public final void i(Object obj, int i7, int i10, Object obj2) {
-        long[] jArr = (long[]) obj;
-        LongConsumer longConsumer = (LongConsumer) obj2;
-        while (i7 < i10) {
-            longConsumer.accept(jArr[i7]);
-            i7++;
-        }
+    @Override // j$.util.stream.w6
+    public final void a(int i, Object obj, Object obj2) {
+        ((DoubleConsumer) obj2).accept(((double[]) obj)[i]);
     }
 
-    @Override // j$.util.stream.s6
-    public final int j(Object obj) {
-        return ((long[]) obj).length;
+    @Override // j$.util.stream.w6
+    public final j$.util.d1 c(int i, int i2, int i3, int i4) {
+        return new q6(this.g, i, i2, i3, i4);
     }
 
-    @Override // java.lang.Iterable
-    public final void forEach(Consumer consumer) {
-        if (consumer instanceof LongConsumer) {
-            d((LongConsumer) consumer);
-        } else {
-            if (d8.a) {
-                d8.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
-                throw null;
-            }
-            j$.com.android.tools.r8.a.j((p6) spliterator(), consumer);
-        }
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.h(this, consumer);
     }
 
-    @Override // j$.util.stream.s6
-    public final Object[] m() {
-        return new long[8][];
-    }
-
-    @Override // j$.util.stream.s6
-    public final Object newArray(int i7) {
-        return new long[i7];
-    }
-
-    @Override // java.util.function.LongConsumer
-    public void accept(long j3) {
-        n();
-        long[] jArr = (long[]) this.e;
-        int i7 = this.b;
-        this.b = i7 + 1;
-        jArr[i7] = j3;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        j$.util.a1 spliterator = spliterator();
-        Objects.requireNonNull(spliterator);
-        return new j$.util.h1(spliterator);
-    }
-
-    @Override // j$.util.stream.s6, java.lang.Iterable, j$.util.stream.e2
-    /* renamed from: r, reason: merged with bridge method [inline-methods] */
-    public j$.util.a1 spliterator() {
-        return new p6(this, 0, this.c, 0, this.b);
-    }
-
-    public final String toString() {
-        long[] jArr = (long[]) b();
-        if (jArr.length < 200) {
-            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(jArr));
-        }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, ks.e3)));
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.y(this, consumer);
     }
 }

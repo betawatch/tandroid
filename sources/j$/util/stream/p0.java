@@ -1,62 +1,53 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
+import j$.util.function.IntConsumer$-CC;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class p0 implements b8, c8 {
-    public final boolean a;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class p0 extends s0 implements l5 {
+    public final IntConsumer b;
 
-    public /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    public p0(IntConsumer intConsumer, boolean z) {
+        super(z);
+        this.b = intConsumer;
     }
 
-    public /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    @Override // j$.util.stream.h8
+    public final Object a(a aVar, Spliterator spliterator) {
+        aVar.Q(spliterator, this);
+        return null;
     }
 
-    public /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.s0, j$.util.stream.n5
+    public final void accept(int i) {
+        this.b.accept(i);
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
+    @Override // j$.util.stream.h8
+    public final /* bridge */ /* synthetic */ Object b(a aVar, Spliterator spliterator) {
+        d(aVar, spliterator);
+        return null;
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j3) {
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return null;
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // j$.util.stream.l5
+    public final /* synthetic */ void o(Integer num) {
+        w3.g(this, num);
     }
 
-    public p0(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // j$.util.stream.b8
-    public final int v() {
-        if (this.a) {
-            return 0;
-        }
-        return v6.r;
-    }
-
-    public final void a(t3 t3Var, Spliterator spliterator) {
-        if (this.a) {
-            new q0(t3Var, spliterator, this).invoke();
-        } else {
-            new r0(t3Var, spliterator, t3Var.G0(this)).invoke();
-        }
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        o((Integer) obj);
     }
 }

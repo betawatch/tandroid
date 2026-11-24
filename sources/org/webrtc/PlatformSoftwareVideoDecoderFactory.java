@@ -4,23 +4,23 @@ import android.media.MediaCodecInfo;
 import org.webrtc.EglBase;
 import org.webrtc.Predicate;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class PlatformSoftwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
     private static final Predicate<MediaCodecInfo> defaultAllowedPredicate = new Predicate<MediaCodecInfo>() { // from class: org.webrtc.PlatformSoftwareVideoDecoderFactory.1
         @Override // org.webrtc.Predicate
-        public final /* synthetic */ Predicate<MediaCodecInfo> and(Predicate<? super MediaCodecInfo> predicate) {
-            return Predicate.-CC.a(this, predicate);
+        public final Predicate<MediaCodecInfo> and(Predicate<? super MediaCodecInfo> predicate) {
+            return new Predicate.2(predicate);
         }
 
         @Override // org.webrtc.Predicate
-        public final /* synthetic */ Predicate<MediaCodecInfo> negate() {
-            return Predicate.-CC.b(this);
+        public final Predicate<MediaCodecInfo> negate() {
+            return new Predicate.3();
         }
 
         @Override // org.webrtc.Predicate
-        public final /* synthetic */ Predicate<MediaCodecInfo> or(Predicate<? super MediaCodecInfo> predicate) {
-            return Predicate.-CC.c(this, predicate);
+        public final Predicate<MediaCodecInfo> or(Predicate<? super MediaCodecInfo> predicate) {
+            return new Predicate.1(predicate);
         }
 
         @Override // org.webrtc.Predicate

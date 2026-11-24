@@ -1,15 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzc extends j implements p {
+final class zzc extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzgr zzc;
@@ -17,37 +10,37 @@ final class zzc extends j implements p {
     final /* synthetic */ zzxn zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzc(zzgr zzgrVar, zzg zzgVar, zzxn zzxnVar, c cVar) {
-        super(2, cVar);
+    public zzc(zzgr zzgrVar, zzg zzgVar, zzxn zzxnVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzgrVar;
         this.zzd = zzgVar;
         this.zze = zzxnVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzc(this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzc(this.zzc, this.zzd, this.zze, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzc) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzc) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0026, code lost:
     
-        if (r5 != r0) goto L10;
+        if (r5 != r2) goto L10;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        a aVar = a.a;
-        int i7 = this.zzb;
-        if (i7 == 0) {
-            c8.z.b(obj);
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
             zzgrVar = this.zzc;
             zzg zzgVar = this.zzd;
             zzxn zzxnVar = this.zze;
@@ -55,16 +48,16 @@ final class zzc extends j implements p {
             this.zzb = 1;
             obj = zzgVar.zzd(zzxnVar, this);
         } else {
-            if (i7 != 1) {
-                c8.z.b(obj);
+            if (i != 1) {
+                qse.b(obj);
                 return obj;
             }
             zzgrVar = (zzgr) this.zza;
-            c8.z.b(obj);
+            qse.b(obj);
         }
         this.zza = null;
         this.zzb = 2;
         Object zza = ((zzhg) obj).zza(zzgrVar.zza(), this);
-        return zza == aVar ? aVar : zza;
+        return zza != bx2Var ? zza : bx2Var;
     }
 }

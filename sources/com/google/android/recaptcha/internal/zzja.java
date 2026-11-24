@@ -1,6 +1,5 @@
 package com.google.android.recaptcha.internal;
 
-import hd.h;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -8,9 +7,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzja {
     private final Map zza = new LinkedHashMap();
@@ -18,7 +16,7 @@ public final class zzja {
 
     private final List zzh(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(h.d(list2, 10));
+        ArrayList arrayList = new ArrayList(al2.c(list2, 10));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add(zza((zzzt) it.next()));
@@ -28,11 +26,11 @@ public final class zzja {
 
     public final Object zza(zzzt zzztVar) {
         int zzS = zzztVar.zzS();
-        int i7 = zzS - 1;
+        int i = zzS - 1;
         if (zzS == 0) {
             throw null;
         }
-        switch (i7) {
+        switch (i) {
             case 0:
                 return this.zza.get(Integer.valueOf(zzztVar.zzi()));
             case 1:
@@ -42,24 +40,28 @@ public final class zzja {
                 if (zzo.length == 1) {
                     return Byte.valueOf(zzo[0]);
                 }
-                throw new zzdm(4, 6, null);
+                fvc.c(4, 6, null);
+                return null;
             case 3:
                 String zzO = zzztVar.zzO();
                 if (zzO.length() == 1) {
                     return Character.valueOf(zzO.charAt(0));
                 }
-                throw new zzdm(4, 6, null);
+                fvc.c(4, 6, null);
+                return null;
             case 4:
                 int zzj = zzztVar.zzj();
-                if (zzj < -32768 || zzj > 32767) {
-                    throw new zzdm(4, 6, null);
+                if (zzj >= -32768 && zzj <= 32767) {
+                    return Short.valueOf((short) zzj);
                 }
-                return Short.valueOf((short) zzj);
+                fvc.c(4, 6, null);
+                return null;
             case 5:
                 return Integer.valueOf(zzztVar.zzk());
             case 6:
             case 8:
-                throw new zzdm(4, 6, null);
+                fvc.c(4, 6, null);
+                return null;
             case 7:
                 return Long.valueOf(zzztVar.zzl());
             case 9:
@@ -68,33 +70,33 @@ public final class zzja {
                 return Double.valueOf(zzztVar.zzf());
             case 11:
                 return zzztVar.zzP();
+            default:
+                fvc.c(4, 5, null);
             case 12:
                 return null;
-            default:
-                throw new zzdm(4, 5, null);
         }
     }
 
-    public final Object zzb(int i7) {
-        return this.zza.remove(Integer.valueOf(i7));
+    public final Object zzb(int i) {
+        return this.zza.remove(Integer.valueOf(i));
     }
 
     public final void zzc() {
         this.zza.clear();
     }
 
-    public final void zzd(int i7, Object obj) {
-        zze(ks.D2, obj);
-        this.zzb.add(Integer.valueOf(ks.D2));
+    public final void zzd(int i, Object obj) {
+        zze(kk7.C2, obj);
+        this.zzb.add(Integer.valueOf(kk7.C2));
     }
 
-    public final void zze(int i7, Object obj) {
-        this.zza.put(Integer.valueOf(i7), obj);
+    public final void zze(int i, Object obj) {
+        this.zza.put(Integer.valueOf(i), obj);
     }
 
     public final Class[] zzf(List list) {
         List zzh = zzh(list);
-        ArrayList arrayList = new ArrayList(h.d(zzh, 10));
+        ArrayList arrayList = new ArrayList(al2.c(zzh, 10));
         Iterator it = zzh.iterator();
         while (it.hasNext()) {
             arrayList.add(zziy.zza(it.next()));

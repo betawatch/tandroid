@@ -1,58 +1,48 @@
 package com.google.firebase.crashlytics;
 
-import a8.j8;
 import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
-import e2.j0;
-import hb.d;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
-import o9.g;
-import q9.a;
-import q9.b;
-import q9.c;
-import tg.s;
-import u9.i;
-import u9.q;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
-    public final q a = new q(a.class, ExecutorService.class);
-    public final q b = new q(b.class, ExecutorService.class);
-    public final q c = new q(c.class, ExecutorService.class);
+    public final xw8 a = new xw8(md0.class, ExecutorService.class);
+    public final xw8 b = new xw8(nk0.class, ExecutorService.class);
+    public final xw8 c = new xw8(i16.class, ExecutorService.class);
 
     static {
-        d dVar = d.a;
-        Map map = hb.c.b;
-        if (map.containsKey(dVar)) {
-            Log.d("FirebaseSessions", "Dependency " + dVar + " already added.");
+        Map map = lh4.b;
+        q6a q6aVar = q6a.a;
+        if (map.containsKey(q6aVar)) {
+            Log.d("FirebaseSessions", "Dependency " + q6aVar + " already added.");
             return;
         }
-        map.put(dVar, new hb.a(new CountDownLatch(1)));
-        StringBuilder sb2 = new StringBuilder("Dependency to ");
-        sb2.append(dVar);
-        p5.c.t(sb2, " added.", "FirebaseSessions");
+        map.put(q6aVar, new jh4(new CountDownLatch(1)));
+        StringBuilder sb = new StringBuilder("Dependency to ");
+        sb.append(q6aVar);
+        ir2.x(sb, " added.", "FirebaseSessions");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        j0 a10 = u9.a.a(w9.b.class);
-        a10.d = "fire-cls";
-        a10.a(i.a(g.class));
-        a10.a(i.a(va.d.class));
-        a10.a(new i(this.a, 1, 0));
-        a10.a(new i(this.b, 1, 0));
-        a10.a(new i(this.c, 1, 0));
-        a10.a(new i(0, 2, x9.a.class));
-        a10.a(new i(0, 2, p9.a.class));
-        a10.a(new i(0, 2, fb.a.class));
-        a10.f = new s(this, 11);
-        a10.c(2);
-        return Arrays.asList(a10.b(), j8.a("fire-cls", "20.1.1"));
+        lp2 b = mp2.b(lg4.class);
+        b.a = "fire-cls";
+        b.a(wd3.b(jg4.class));
+        b.a(wd3.b(rg4.class));
+        b.a(new wd3(this.a, 1, 0));
+        b.a(new wd3(this.b, 1, 0));
+        b.a(new wd3(this.c, 1, 0));
+        b.a(new wd3(0, 2, fy2.class));
+        b.a(new wd3(0, 2, qj.class));
+        b.a(new wd3(0, 2, dh4.class));
+        b.f = new vu2(this, (byte) 2);
+        b.c(2);
+        return Arrays.asList(b.b(), one.a("fire-cls", "20.1.1"));
     }
 }

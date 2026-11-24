@@ -1,23 +1,22 @@
 package com.google.android.play.core.integrity;
 
 import android.content.Context;
-import d9.g0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class al implements d9.n {
-    private final d9.r a;
-    private final d9.r b;
-    private final d9.r c;
+public final class al implements rzc {
+    private final vzc a;
+    private final vzc b;
+    private final vzc c;
 
-    public al(d9.r rVar, d9.r rVar2, d9.r rVar3, d9.r rVar4) {
-        this.a = rVar;
-        this.b = rVar2;
-        this.c = rVar3;
+    public al(vzc vzcVar, vzc vzcVar2, vzc vzcVar3, vzc vzcVar4) {
+        this.a = vzcVar;
+        this.b = vzcVar2;
+        this.c = vzcVar3;
     }
 
-    @Override // d9.r
+    @Override // vzc
     public final /* bridge */ /* synthetic */ Object a() {
-        return new aj((Context) this.a.a(), (g0) this.b.a(), ((au) this.c).a(), new i());
+        return new aj((Context) this.a.a(), (q0d) this.b.a(), ((au) this.c).a(), new i());
     }
 }

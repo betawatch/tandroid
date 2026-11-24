@@ -2,11 +2,10 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d9.h0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class be extends h0 {
+final class be extends s0d {
     final /* synthetic */ Context a;
     final /* synthetic */ bn b;
 
@@ -17,11 +16,11 @@ final class be extends h0 {
         this.b = bnVar;
     }
 
-    @Override // d9.h0
+    @Override // s0d
     public final void b() {
         TaskCompletionSource taskCompletionSource;
         Context context = this.a;
         taskCompletionSource = this.b.d;
-        taskCompletionSource.trySetResult(Integer.valueOf(d9.e.a(context)));
+        taskCompletionSource.trySetResult(Integer.valueOf(jzc.a(context)));
     }
 }

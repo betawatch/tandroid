@@ -8,47 +8,49 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NotificationBadge$SamsungHomeBadger implements wr {
+public class NotificationBadge$SamsungHomeBadger implements yj7 {
     public static final String[] a = {"_id", "class"};
     public static NotificationBadge$DefaultBadger b;
 
-    public static ContentValues c(ComponentName componentName, int i7, boolean z10) {
+    public static ContentValues c(ComponentName componentName, int i, boolean z) {
         ContentValues contentValues = new ContentValues();
-        if (z10) {
+        if (z) {
             contentValues.put("package", componentName.getPackageName());
             contentValues.put("class", componentName.getClassName());
         }
-        contentValues.put("badgecount", Integer.valueOf(i7));
+        contentValues.put("badgecount", Integer.valueOf(i));
         return contentValues;
     }
 
-    @Override // org.telegram.messenger.wr
-    public final void a(int i7) {
+    @Override // yj7
+    public final void a(int i) {
         try {
-            if (b == null) {
-                b = new NotificationBadge$DefaultBadger();
+            NotificationBadge$DefaultBadger notificationBadge$DefaultBadger = b;
+            if (notificationBadge$DefaultBadger == null) {
+                notificationBadge$DefaultBadger = new NotificationBadge$DefaultBadger();
+                b = notificationBadge$DefaultBadger;
             }
-            b.a(i7);
+            notificationBadge$DefaultBadger.a(i);
         } catch (Exception unused) {
         }
         Uri parse = Uri.parse("content://com.sec.badge/apps?notify=true");
-        ContentResolver contentResolver = t0.b.getContentResolver();
+        ContentResolver contentResolver = a.b.getContentResolver();
         Cursor cursor = null;
         try {
-            cursor = contentResolver.query(parse, a, "package=?", new String[]{zr.d.getPackageName()}, null);
+            cursor = contentResolver.query(parse, a, "package=?", new String[]{ak7.d.getPackageName()}, null);
             if (cursor != null) {
-                String className = zr.d.getClassName();
-                boolean z10 = false;
+                String className = ak7.d.getClassName();
+                boolean z = false;
                 while (cursor.moveToNext()) {
-                    contentResolver.update(parse, c(zr.d, i7, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
+                    contentResolver.update(parse, c(ak7.d, i, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
                     if (className.equals(cursor.getString(cursor.getColumnIndex("class")))) {
-                        z10 = true;
+                        z = true;
                     }
                 }
-                if (!z10) {
-                    contentResolver.insert(parse, c(zr.d, i7, true));
+                if (!z) {
+                    contentResolver.insert(parse, c(ak7.d, i, true));
                 }
             }
             if (cursor == null || cursor.isClosed()) {
@@ -59,7 +61,7 @@ public class NotificationBadge$SamsungHomeBadger implements wr {
         }
     }
 
-    @Override // org.telegram.messenger.wr
+    @Override // yj7
     public final List b() {
         return Arrays.asList("com.sec.android.app.launcher", "com.sec.android.app.twlauncher");
     }

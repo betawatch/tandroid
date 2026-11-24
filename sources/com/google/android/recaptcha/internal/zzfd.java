@@ -1,17 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.b0;
-import zd.x1;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfd extends j implements p {
+final class zzfd extends ccb implements eq4 {
     int zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ zzfp zzc;
@@ -19,48 +10,49 @@ final class zzfd extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfd(long j3, zzfp zzfpVar, zzxn zzxnVar, c cVar) {
-        super(2, cVar);
-        this.zzb = j3;
+    public zzfd(long j, zzfp zzfpVar, zzxn zzxnVar, fw2 fw2Var) {
+        super(2, fw2Var);
+        this.zzb = j;
         this.zzc = zzfpVar;
         this.zzd = zzxnVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzfd zzfdVar = new zzfd(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzfd zzfdVar = new zzfd(this.zzb, this.zzc, this.zzd, fw2Var);
         zzfdVar.zze = obj;
         return zzfdVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfd) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfd) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
         try {
             if (this.zza != 0) {
-                z.b(obj);
+                qse.b(obj);
             } else {
-                z.b(obj);
+                qse.b(obj);
                 zzhk zzhkVar = (zzhk) this.zze;
-                long j3 = this.zzb;
-                zzfc zzfcVar = new zzfc(zzhkVar, this.zzc, this.zzd, j3, null);
+                long j = this.zzb;
+                zzfc zzfcVar = new zzfc(zzhkVar, this.zzc, this.zzd, j, null);
                 this.zza = 1;
-                if (b0.z(j3, zzfcVar, this) == aVar) {
-                    return aVar;
+                Object a = mve.a(j, zzfcVar, this);
+                bx2 bx2Var = bx2.a;
+                if (a == bx2Var) {
+                    return bx2Var;
                 }
             }
-            return k.a;
-        } catch (zzcg e10) {
-            throw e10;
-        } catch (x1 e11) {
-            throw new zzcg(zzce.zzb, zzcd.zzb, e11.getMessage(), null, 8, null);
-        } catch (Exception e12) {
-            throw new zzcg(zzce.zzb, zzcd.zzap, e12.getMessage(), null, 8, null);
+            return g5c.a;
+        } catch (zzcg e) {
+            throw e;
+        } catch (mob e2) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e2.getMessage(), null, 8, null);
+        } catch (Exception e3) {
+            throw new zzcg(zzce.zzb, zzcd.zzap, e3.getMessage(), null, 8, null);
         }
     }
 }

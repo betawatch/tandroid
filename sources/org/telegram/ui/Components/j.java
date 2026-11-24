@@ -1,40 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_aicompose;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j implements org.telegram.messenger.w10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
-    public final /* synthetic */ l0 c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class j extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ j(m0 m0Var, l0 l0Var, int i7) {
-        this.a = i7;
-        this.b = m0Var;
-        this.c = l0Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public j(ChatActivityEnterView chatActivityEnterView, int i) {
+        this.b = chatActivityEnterView;
+        this.a = i;
     }
 
-    @Override // org.telegram.messenger.w10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                m0 m0Var = this.b;
-                if (m0Var.q2 != null) {
-                    this.c.c(0, true);
-                    m0Var.y1(null);
-                    break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.j3)) {
+            byte b = this.a;
+            if (b != 3 && chatActivityEnterView.F0 != null && !gl.A1()) {
+                chatActivityEnterView.F0.requestFocus();
+            }
+            chatActivityEnterView.E();
+            if (b != 3) {
+                l lVar = chatActivityEnterView.E2;
+                if (lVar != null) {
+                    lVar.setVisibility(8);
                 }
-                break;
-            default:
-                TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
-                m0 m0Var2 = this.b;
-                if (m0Var2.q2 != aiComposeTone) {
-                    this.c.d(aiComposeTone, true);
-                    m0Var2.y1(aiComposeTone);
-                    break;
+                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
+                if (recordCircle != null) {
+                    recordCircle.g();
                 }
-                break;
+            }
         }
     }
 }

@@ -1,15 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzee extends j implements p {
+final class zzee extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ long zzc;
@@ -19,72 +12,74 @@ final class zzee extends j implements p {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzee(zzeh zzehVar, long j3, zzdw zzdwVar, String str, zzhh zzhhVar, c cVar) {
-        super(2, cVar);
+    public zzee(zzeh zzehVar, long j, zzdw zzdwVar, String str, zzhh zzhhVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzehVar;
-        this.zzc = j3;
+        this.zzc = j;
         this.zzd = zzdwVar;
         this.zze = str;
         this.zzf = zzhhVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
         zzeeVar.zzg = obj;
         return zzeeVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzee) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzee) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
     
-        if (r8 != r0) goto L17;
+        if (((com.google.android.recaptcha.internal.zzhg) r8).zza(r0, r7) != r2) goto L15;
      */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x004f, code lost:
+    
+        return r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x002e, code lost:
+    
+        if (r8 != r2) goto L13;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzhkVar = (zzhk) this.zzg;
                 zzeh zzehVar = this.zzb;
-                long j3 = this.zzc;
-                zzeh.zzf(zzehVar, j3);
+                long j = this.zzc;
+                zzeh.zzf(zzehVar, j);
                 zzdw zzdwVar = this.zzd;
                 this.zzg = zzhkVar;
                 this.zza = 1;
-                obj = zzdwVar.zzb(j3, this);
+                obj = zzdwVar.zzb(j, this);
             } else {
-                if (i7 != 1) {
-                    z.b(obj);
+                if (i != 1) {
+                    qse.b(obj);
                     zzeq zzeqVar = new zzeq(this.zzd, this.zze, this.zzf);
                     this.zzb.zzc = zzeqVar;
                     return zzeqVar;
                 }
                 zzhkVar = (zzhk) this.zzg;
-                z.b(obj);
+                qse.b(obj);
             }
             this.zzg = null;
             this.zza = 2;
-            if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
-                return aVar;
-            }
-            zzeq zzeqVar2 = new zzeq(this.zzd, this.zze, this.zzf);
-            this.zzb.zzc = zzeqVar2;
-            return zzeqVar2;
-        } catch (zzcg e10) {
-            throw e10;
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e11.getMessage(), null, 8, null);
+        } catch (zzcg e) {
+            throw e;
+        } catch (Exception e2) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e2.getMessage(), null, 8, null);
         }
     }
 }

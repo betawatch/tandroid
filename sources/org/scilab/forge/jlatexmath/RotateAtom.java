@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class RotateAtom extends Atom {
     private double angle;
@@ -12,22 +12,6 @@ public class RotateAtom extends Atom {
     private int xunit;
     private float y;
     private int yunit;
-
-    public RotateAtom(Atom atom, String str, String str2) {
-        this.option = -1;
-        this.type = atom.type;
-        this.base = atom;
-        this.angle = Double.parseDouble(str);
-        this.option = RotateBox.getOrigin(str2);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public Box createBox(TeXEnvironment teXEnvironment) {
-        if (this.option != -1) {
-            return new RotateBox(this.base.createBox(teXEnvironment), this.angle, this.option);
-        }
-        return new RotateBox(this.base.createBox(teXEnvironment), this.angle, SpaceAtom.getFactor(this.xunit, teXEnvironment) * this.x, SpaceAtom.getFactor(this.yunit, teXEnvironment) * this.y);
-    }
 
     public RotateAtom(Atom atom, double d, String str) {
         this.option = -1;
@@ -47,13 +31,31 @@ public class RotateAtom extends Atom {
             this.xunit = 3;
             this.x = 0.0f;
         }
-        if (parseMap.containsKey("y")) {
+        if (!parseMap.containsKey("y")) {
+            this.yunit = 3;
+            this.y = 0.0f;
+        } else {
             float[] length2 = SpaceAtom.getLength(parseMap.get("y"));
             this.yunit = (int) length2[0];
             this.y = length2[1];
-        } else {
-            this.yunit = 3;
-            this.y = 0.0f;
         }
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public Box createBox(TeXEnvironment teXEnvironment) {
+        int i = this.option;
+        Atom atom = this.base;
+        if (i != -1) {
+            return new RotateBox(atom.createBox(teXEnvironment), this.angle, this.option);
+        }
+        return new RotateBox(atom.createBox(teXEnvironment), this.angle, SpaceAtom.getFactor(this.xunit, teXEnvironment) * this.x, SpaceAtom.getFactor(this.yunit, teXEnvironment) * this.y);
+    }
+
+    public RotateAtom(Atom atom, String str, String str2) {
+        this.option = -1;
+        this.type = atom.type;
+        this.base = atom;
+        this.angle = Double.parseDouble(str);
+        this.option = RotateBox.getOrigin(str2);
     }
 }

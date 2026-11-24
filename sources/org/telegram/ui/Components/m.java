@@ -1,90 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class m extends s64 {
+    public final int[] o;
+    public final /* synthetic */ ChatActivityEnterView.RecordCircle p;
 
-    public /* synthetic */ m(Object obj, Object obj2, Object obj3, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m(ChatActivityEnterView.RecordCircle recordCircle, ChatActivityEnterView.RecordCircle recordCircle2) {
+        super(recordCircle2);
+        this.p = recordCircle;
+        this.o = new int[2];
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        hf hfVar;
-        int i7 = this.a;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
-        switch (i7) {
-            case 0:
-                m0 m0Var = (m0) obj3;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
-                Context context = (Context) obj;
-                if (!m0Var.i2) {
-                    if (m0Var.k2 != null) {
-                        if (m0Var.o1() == null) {
-                        }
-                    } else if (m0Var.j2 == null || m0Var.p1() == null) {
-                    }
-                    boolean z10 = m0Var.h2 == org.telegram.messenger.i10.i(m0Var.a).e();
-                    x60 G = x60.G(m0Var.c, i6Var, m0Var.D2);
-                    G.l(R.drawable.input_notify_off, org.telegram.messenger.gd.N0(2131745387, null), new a(m0Var, 4), !z10);
-                    G.c(R.drawable.msg_calendar2, org.telegram.messenger.gd.N0(z10 ? 2131745318 : 2131745663, null), new org.telegram.ui.Cells.fa(m0Var, context, i6Var, 1), false);
-                    G.a0();
-                    break;
-                }
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj2;
-                org.telegram.messenger.aj ajVar = (org.telegram.messenger.aj) obj;
-                org.telegram.ui.ActionBar.i6 i6Var2 = chatActivityEnterView.M4;
-                if (!fjVar.F3() && (hfVar = chatActivityEnterView.F0) != null && !TextUtils.isEmpty(hfVar.getTextToUse())) {
-                    if (ajVar == null || (ajVar.c && !ajVar.i)) {
-                        int i10 = fjVar.D;
-                        if (i10 == 1 || i10 == 3 || i10 == 8) {
-                            org.telegram.ui.dg0 dg0Var = new org.telegram.ui.dg0(chatActivityEnterView.getContext(), i6Var2);
-                            dg0Var.h0 = true;
-                            ArrayList arrayList = new ArrayList();
-                            if (ajVar != null) {
-                                ArrayList arrayList2 = ajVar.d;
-                                int i11 = 0;
-                                while (i11 < arrayList2.size()) {
-                                    arrayList.add(chatActivityEnterView.y0((org.telegram.messenger.fj) arrayList2.get(i11), i11 == 0));
-                                    i11++;
-                                }
-                            } else {
-                                arrayList.add(chatActivityEnterView.y0(fjVar, true));
-                            }
-                            dg0Var.r(arrayList);
-                            x60 G2 = x60.G(chatActivityEnterView.c2, i6Var2, chatActivityEnterView.v2);
-                            sa0 sa0Var = new sa0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.gd.N0(2131752548, null), R.raw.position_above, org.telegram.messenger.gd.N0(2131752547, null), chatActivityEnterView.M4);
-                            sa0Var.a(!chatActivityEnterView.O6, false);
-                            sa0Var.setOnClickListener(new bi.s6(chatActivityEnterView, arrayList, sa0Var, dg0Var, 11));
-                            G2.q(sa0Var);
-                            G2.Z();
-                            dg0Var.q(G2);
-                            dg0Var.s(chatActivityEnterView.v2, false, new bi.s6(chatActivityEnterView, ajVar, fjVar, dg0Var, 12));
-                            dg0Var.show();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // s64
+    public final int g(float f, float f2) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (!chatActivityEnterView.h5 || chatActivityEnterView.D2 == null) {
+            return -1;
         }
+        if (chatActivityEnterView.I4.contains((int) f, (int) f2)) {
+            return 1;
+        }
+        if (chatActivityEnterView.H4.contains(f, f2)) {
+            return 2;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.a2;
+        if (slideTextView == null || (rect = slideTextView.I) == null) {
+            return -1;
+        }
+        RectF rectF = gl.P;
+        rectF.set(rect);
+        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.a2;
+        int[] iArr = this.o;
+        slideTextView2.getLocationOnScreen(iArr);
+        rectF.offset(iArr[0], iArr[1]);
+        chatActivityEnterView.D2.getLocationOnScreen(iArr);
+        rectF.offset(-iArr[0], -iArr[1]);
+        return rectF.contains(f, f2) ? 3 : -1;
+    }
+
+    @Override // s64
+    public final void h(ArrayList arrayList) {
+        if (ChatActivityEnterView.this.h5) {
+            arrayList.add(1);
+            arrayList.add(3);
+        }
+    }
+
+    @Override // s64
+    public final boolean k(int i, int i2) {
         return true;
+    }
+
+    @Override // s64
+    public final void l(int i, u4 u4Var) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (i == 1) {
+            u4Var.h(chatActivityEnterView.I4);
+            u4Var.o(k96.M0(2131745448, "Send"));
+            return;
+        }
+        if (i == 2) {
+            Rect rect2 = chatActivityEnterView.J4;
+            RectF rectF = chatActivityEnterView.H4;
+            rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            u4Var.h(chatActivityEnterView.J4);
+            u4Var.o(k96.M0(2131744604, null));
+            return;
+        }
+        if (i != 3 || chatActivityEnterView.D2 == null) {
+            return;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.a2;
+        if (slideTextView != null && (rect = slideTextView.I) != null) {
+            Rect rect3 = gl.Q;
+            rect3.set(rect);
+            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.a2;
+            int[] iArr = this.o;
+            slideTextView2.getLocationOnScreen(iArr);
+            rect3.offset(iArr[0], iArr[1]);
+            chatActivityEnterView.D2.getLocationOnScreen(iArr);
+            rect3.offset(-iArr[0], -iArr[1]);
+            u4Var.h(rect3);
+        }
+        u4Var.o(k96.M0(2131752577, "Cancel"));
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class z {
     private static s a;
@@ -10,19 +10,16 @@ final class z {
     public static synchronized s a(Context context) {
         s sVar;
         synchronized (z.class) {
-            try {
-                if (a == null) {
-                    q qVar = new q(null);
-                    Context applicationContext = context.getApplicationContext();
-                    if (applicationContext != null) {
-                        context = applicationContext;
-                    }
-                    qVar.a(context);
-                    a = qVar.b();
+            sVar = a;
+            if (sVar == null) {
+                q qVar = new q(null);
+                Context applicationContext = context.getApplicationContext();
+                if (applicationContext != null) {
+                    context = applicationContext;
                 }
-                sVar = a;
-            } catch (Throwable th2) {
-                throw th2;
+                qVar.a(context);
+                sVar = qVar.b();
+                a = sVar;
             }
         }
         return sVar;

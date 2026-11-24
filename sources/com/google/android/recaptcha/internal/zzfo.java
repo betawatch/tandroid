@@ -1,73 +1,64 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.b0;
-import zd.x1;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfo extends j implements p {
+final class zzfo extends ccb implements eq4 {
     int zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ zzfp zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfo(long j3, zzfp zzfpVar, c cVar) {
-        super(2, cVar);
-        this.zzb = j3;
+    public zzfo(long j, zzfp zzfpVar, fw2 fw2Var) {
+        super(2, fw2Var);
+        this.zzb = j;
         this.zzc = zzfpVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzfo zzfoVar = new zzfo(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzfo zzfoVar = new zzfo(this.zzb, this.zzc, fw2Var);
         zzfoVar.zzd = obj;
         return zzfoVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfo) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfo) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzcg zzt;
         zzcg zzt2;
         zzcg zzt3;
-        a aVar = a.a;
         try {
             if (this.zza != 0) {
-                z.b(obj);
+                qse.b(obj);
             } else {
-                z.b(obj);
+                qse.b(obj);
                 zzgr zzgrVar = (zzgr) this.zzd;
-                long j3 = this.zzb;
+                long j = this.zzb;
                 zzfn zzfnVar = new zzfn(zzgrVar, this.zzc, null);
                 this.zza = 1;
-                obj = b0.z(j3, zzfnVar, this);
-                if (obj == aVar) {
-                    return aVar;
+                obj = mve.a(j, zzfnVar, this);
+                bx2 bx2Var = bx2.a;
+                if (obj == bx2Var) {
+                    return bx2Var;
                 }
             }
             return (zzxn) obj;
-        } catch (zzcg e10) {
-            if (!kotlin.jvm.internal.j.a(e10.zzb(), zzce.zzc)) {
-                throw e10;
+        } catch (zzcg e) {
+            if (!rp5.a(e.zzb(), zzce.zzc)) {
+                throw e;
             }
-            zzt3 = this.zzc.zzt(e10, e10);
+            zzt3 = this.zzc.zzt(e, e);
             throw zzt3;
-        } catch (x1 e11) {
-            zzt2 = this.zzc.zzt(e11, new zzcg(zzce.zzc, zzcd.zzb, e11.getMessage(), null, 8, null));
+        } catch (mob e2) {
+            zzt2 = this.zzc.zzt(e2, new zzcg(zzce.zzc, zzcd.zzb, e2.getMessage(), null, 8, null));
             throw zzt2;
-        } catch (Exception e12) {
-            zzt = this.zzc.zzt(e12, new zzcg(zzce.zzc, zzcd.zzaz, e12.getMessage(), null, 8, null));
+        } catch (Exception e3) {
+            zzt = this.zzc.zzt(e3, new zzcg(zzce.zzc, zzcd.zzaz, e3.getMessage(), null, 8, null));
             throw zzt;
         }
     }

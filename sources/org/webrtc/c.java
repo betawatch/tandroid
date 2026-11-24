@@ -1,36 +1,42 @@
 package org.webrtc;
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.view.WindowManager;
-import org.telegram.messenger.ks;
-import org.webrtc.VideoFrame;
+import org.webrtc.EglBase;
+import org.webrtc.EglBase10;
+import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class c {
-    public static VideoFrame.TextureBuffer a(TextureBufferImpl textureBufferImpl, boolean z10, int i7) {
-        Matrix matrix = new Matrix();
-        matrix.preTranslate(0.5f, 0.5f);
-        if (z10) {
-            matrix.preScale(-1.0f, 1.0f);
-        }
-        matrix.preRotate(i7);
-        matrix.preTranslate(-0.5f, -0.5f);
-        return textureBufferImpl.applyTransformMatrix(matrix, textureBufferImpl.getWidth(), textureBufferImpl.getHeight());
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        Object obj = EglBase.lock;
     }
 
-    public static int b(Context context) {
-        int rotation = ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRotation();
-        if (rotation == 1) {
-            return 90;
+    public static EglBase a(EglBase.Context context, int[] iArr) {
+        if (context == null) {
+            return EglBase14Impl.isEGL14Supported() ? new EglBase14Impl(null, iArr) : new EglBase10Impl(null, iArr);
         }
-        if (rotation == 2) {
-            return ks.K2;
+        if (context instanceof EglBase14.Context) {
+            return new EglBase14Impl(((EglBase14.Context) context).getRawContext(), iArr);
         }
-        if (rotation != 3) {
-            return 0;
+        if (context instanceof EglBase10.Context) {
+            return new EglBase10Impl(((EglBase10.Context) context).getRawContext(), iArr);
         }
-        return ks.t4;
+        w26.j("Unrecognized Context");
+        return null;
+    }
+
+    public static int b(int[] iArr) {
+        for (int i = 0; i < iArr.length - 1; i++) {
+            if (iArr[i] == 12352) {
+                int i2 = iArr[i + 1];
+                if (i2 != 4) {
+                    return i2 != 64 ? 1 : 3;
+                }
+                return 2;
+            }
+        }
+        return 1;
     }
 }

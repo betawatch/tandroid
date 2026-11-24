@@ -5,12 +5,12 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface IConstraintHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$constraints$IConstraintHost".replace('$', '.');
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Default implements IConstraintHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -18,7 +18,7 @@ public interface IConstraintHost extends IInterface {
         }
 
         @Override // androidx.car.app.constraints.IConstraintHost
-        public int getContentLimit(int i7) {
+        public int getContentLimit(int i) {
             return 0;
         }
 
@@ -28,17 +28,17 @@ public interface IConstraintHost extends IInterface {
         }
     }
 
-    int getContentLimit(int i7);
+    int getContentLimit(int i);
 
     boolean isAppDrivenRefreshEnabled();
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class Stub extends Binder implements IConstraintHost {
         static final int TRANSACTION_getContentLimit = 2;
         static final int TRANSACTION_isAppDrivenRefreshEnabled = 3;
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-        public static class Proxy implements IConstraintHost {
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        private static class Proxy implements IConstraintHost {
             private IBinder mRemote;
 
             public Proxy(IBinder iBinder) {
@@ -51,12 +51,12 @@ public interface IConstraintHost extends IInterface {
             }
 
             @Override // androidx.car.app.constraints.IConstraintHost
-            public int getContentLimit(int i7) {
+            public int getContentLimit(int i) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IConstraintHost.DESCRIPTOR);
-                    obtain.writeInt(i7);
+                    obtain.writeInt(i);
                     this.mRemote.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readInt();
@@ -99,22 +99,22 @@ public interface IConstraintHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             String str = IConstraintHost.DESCRIPTOR;
-            if (i7 >= 1 && i7 <= 16777215) {
+            if (i >= 1 && i <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i7 == 1598968902) {
+            if (i == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i7 == 2) {
+            if (i == 2) {
                 int contentLimit = getContentLimit(parcel.readInt());
                 parcel2.writeNoException();
                 parcel2.writeInt(contentLimit);
             } else {
-                if (i7 != 3) {
-                    return super.onTransact(i7, parcel, parcel2, i10);
+                if (i != 3) {
+                    return super.onTransact(i, parcel, parcel2, i2);
                 }
                 boolean isAppDrivenRefreshEnabled = isAppDrivenRefreshEnabled();
                 parcel2.writeNoException();

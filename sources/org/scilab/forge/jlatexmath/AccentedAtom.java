@@ -1,8 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-import a8.p0;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class AccentedAtom extends Atom {
     private boolean acc;
@@ -11,21 +9,25 @@ public class AccentedAtom extends Atom {
     private boolean changeSize;
     protected Atom underbase;
 
-    public AccentedAtom(Atom atom, Atom atom2) {
+    public AccentedAtom(Atom atom, TeXFormula teXFormula) {
         this.acc = false;
         this.changeSize = true;
+        this.base = null;
         this.underbase = null;
-        this.base = atom;
-        if (atom instanceof AccentedAtom) {
-            this.underbase = ((AccentedAtom) atom).underbase;
-        } else {
-            this.underbase = atom;
+        if (teXFormula == null) {
+            throw new InvalidTeXFormulaException("The accent TeXFormula can't be null!");
         }
+        Atom atom2 = teXFormula.root;
         if (!(atom2 instanceof SymbolAtom)) {
-            throw new InvalidSymbolTypeException("Invalid accent");
+            throw new InvalidTeXFormulaException("The accent TeXFormula does not represent a single symbol!");
         }
-        this.accent = (SymbolAtom) atom2;
-        this.acc = true;
+        SymbolAtom symbolAtom = (SymbolAtom) atom2;
+        this.accent = symbolAtom;
+        if (symbolAtom.type == 10) {
+            this.base = atom;
+            return;
+        }
+        throw new InvalidSymbolTypeException("The accent TeXFormula represents a single symbol with the name '" + symbolAtom.getName() + "', but this symbol is not defined as an accent (type='acc') in 'TeXSymbols.xml'!");
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -37,21 +39,21 @@ public class AccentedAtom extends Atom {
         float width = strutBox.getWidth();
         Atom atom2 = this.underbase;
         float skew = atom2 instanceof CharSymbol ? teXFont.getSkew(((CharSymbol) atom2).getCharFont(teXFont), style) : 0.0f;
-        Char r62 = teXFont.getChar(this.accent.getName(), style);
-        while (teXFont.hasNextLarger(r62)) {
-            Char nextLarger = teXFont.getNextLarger(r62, style);
+        Char r6 = teXFont.getChar(this.accent.getName(), style);
+        while (teXFont.hasNextLarger(r6)) {
+            Char nextLarger = teXFont.getNextLarger(r6, style);
             if (nextLarger.getWidth() > width) {
                 break;
             }
-            r62 = nextLarger;
+            r6 = nextLarger;
         }
-        float f10 = -SpaceAtom.getFactor(5, teXEnvironment);
+        float f = -SpaceAtom.getFactor(5, teXEnvironment);
         if (!this.acc) {
-            f10 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r62.getFontCode()));
+            f = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r6.getFontCode()));
         }
         VerticalBox verticalBox = new VerticalBox();
-        float italic = r62.getItalic();
-        Box charBox = new CharBox(r62);
+        float italic = r6.getItalic();
+        Box charBox = new CharBox(r6);
         if (this.acc) {
             SymbolAtom symbolAtom = this.accent;
             if (this.changeSize) {
@@ -70,7 +72,7 @@ public class AccentedAtom extends Atom {
             strutBox = new HorizontalBox(strutBox, charBox.getWidth(), 2);
         }
         verticalBox.add(charBox);
-        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f10 : -strutBox.getHeight(), 0.0f, 0.0f));
+        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f : -strutBox.getHeight(), 0.0f, 0.0f));
         verticalBox.add(strutBox);
         float depth = verticalBox.getDepth() + verticalBox.getHeight();
         float depth2 = strutBox.getDepth();
@@ -85,9 +87,9 @@ public class AccentedAtom extends Atom {
         return horizontalBox2;
     }
 
-    public AccentedAtom(Atom atom, Atom atom2, boolean z10) {
+    public AccentedAtom(Atom atom, Atom atom2, boolean z) {
         this(atom, atom2);
-        this.changeSize = z10;
+        this.changeSize = z;
     }
 
     public AccentedAtom(Atom atom, String str) {
@@ -107,27 +109,24 @@ public class AccentedAtom extends Atom {
                 return;
             }
         }
-        throw new InvalidSymbolTypeException(p0.p("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
+        throw new InvalidSymbolTypeException(tb4.y("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
     }
 
-    public AccentedAtom(Atom atom, TeXFormula teXFormula) {
+    public AccentedAtom(Atom atom, Atom atom2) {
         this.acc = false;
         this.changeSize = true;
-        this.base = null;
         this.underbase = null;
-        if (teXFormula != null) {
-            Atom atom2 = teXFormula.root;
-            if (atom2 instanceof SymbolAtom) {
-                SymbolAtom symbolAtom = (SymbolAtom) atom2;
-                this.accent = symbolAtom;
-                if (symbolAtom.type == 10) {
-                    this.base = atom;
-                    return;
-                }
-                throw new InvalidSymbolTypeException("The accent TeXFormula represents a single symbol with the name '" + symbolAtom.getName() + "', but this symbol is not defined as an accent (type='acc') in 'TeXSymbols.xml'!");
-            }
-            throw new InvalidTeXFormulaException("The accent TeXFormula does not represent a single symbol!");
+        this.base = atom;
+        if (atom instanceof AccentedAtom) {
+            this.underbase = ((AccentedAtom) atom).underbase;
+        } else {
+            this.underbase = atom;
         }
-        throw new InvalidTeXFormulaException("The accent TeXFormula can't be null!");
+        if (atom2 instanceof SymbolAtom) {
+            this.accent = (SymbolAtom) atom2;
+            this.acc = true;
+            return;
+        }
+        throw new InvalidSymbolTypeException("Invalid accent");
     }
 }

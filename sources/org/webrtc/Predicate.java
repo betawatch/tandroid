@@ -1,81 +1,90 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public interface Predicate<T> {
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public abstract /* synthetic */ class -CC {
-        public static Predicate a(final Predicate predicate, final Predicate predicate2) {
-            return new Predicate() { // from class: org.webrtc.Predicate.2
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate and(Predicate predicate3) {
-                    return -CC.a(this, predicate3);
-                }
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    class 1 implements Predicate {
+        final /* synthetic */ Predicate val$other;
 
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate negate() {
-                    return -CC.b(this);
-                }
-
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate or(Predicate predicate3) {
-                    return -CC.c(this, predicate3);
-                }
-
-                @Override // org.webrtc.Predicate
-                public boolean test(Object obj) {
-                    return Predicate.this.test(obj) && predicate2.test(obj);
-                }
-            };
+        public 1(Predicate predicate) {
+            this.val$other = predicate;
         }
 
-        public static Predicate b(final Predicate predicate) {
-            return new Predicate() { // from class: org.webrtc.Predicate.3
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate and(Predicate predicate2) {
-                    return -CC.a(this, predicate2);
-                }
-
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate negate() {
-                    return -CC.b(this);
-                }
-
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate or(Predicate predicate2) {
-                    return -CC.c(this, predicate2);
-                }
-
-                @Override // org.webrtc.Predicate
-                public boolean test(Object obj) {
-                    return !Predicate.this.test(obj);
-                }
-            };
+        @Override // org.webrtc.Predicate
+        public final Predicate and(Predicate predicate) {
+            return new 2(predicate);
         }
 
-        public static Predicate c(final Predicate predicate, final Predicate predicate2) {
-            return new Predicate() { // from class: org.webrtc.Predicate.1
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate and(Predicate predicate3) {
-                    return -CC.a(this, predicate3);
-                }
+        @Override // org.webrtc.Predicate
+        public final Predicate negate() {
+            return new 3();
+        }
 
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate negate() {
-                    return -CC.b(this);
-                }
+        @Override // org.webrtc.Predicate
+        public final Predicate or(Predicate predicate) {
+            return new 1(predicate);
+        }
 
-                @Override // org.webrtc.Predicate
-                public final /* synthetic */ Predicate or(Predicate predicate3) {
-                    return -CC.c(this, predicate3);
-                }
+        @Override // org.webrtc.Predicate
+        public boolean test(Object obj) {
+            return Predicate.this.test(obj) || this.val$other.test(obj);
+        }
+    }
 
-                @Override // org.webrtc.Predicate
-                public boolean test(Object obj) {
-                    return Predicate.this.test(obj) || predicate2.test(obj);
-                }
-            };
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    class 2 implements Predicate {
+        final /* synthetic */ Predicate val$other;
+
+        public 2(Predicate predicate) {
+            this.val$other = predicate;
+        }
+
+        @Override // org.webrtc.Predicate
+        public final Predicate and(Predicate predicate) {
+            return new 2(predicate);
+        }
+
+        @Override // org.webrtc.Predicate
+        public final Predicate negate() {
+            return new 3();
+        }
+
+        @Override // org.webrtc.Predicate
+        public final Predicate or(Predicate predicate) {
+            return new 1(predicate);
+        }
+
+        @Override // org.webrtc.Predicate
+        public boolean test(Object obj) {
+            return Predicate.this.test(obj) && this.val$other.test(obj);
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    class 3 implements Predicate {
+        public 3() {
+        }
+
+        @Override // org.webrtc.Predicate
+        public final Predicate and(Predicate predicate) {
+            return new 2(predicate);
+        }
+
+        @Override // org.webrtc.Predicate
+        public final Predicate negate() {
+            return new 3();
+        }
+
+        @Override // org.webrtc.Predicate
+        public final Predicate or(Predicate predicate) {
+            return new 1(predicate);
+        }
+
+        @Override // org.webrtc.Predicate
+        public boolean test(Object obj) {
+            return !Predicate.this.test(obj);
         }
     }
 
@@ -85,5 +94,5 @@ public interface Predicate<T> {
 
     Predicate<T> or(Predicate<? super T> predicate);
 
-    boolean test(T t6);
+    boolean test(T t);
 }

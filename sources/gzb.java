@@ -1,0 +1,106 @@
+// default package
+
+import android.net.Uri;
+import android.util.Log;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import org.json.JSONArray;
+import org.json.JSONTokener;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class gzb extends Thread {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ i8c d;
+
+    public gzb(String str, String str2, String str3, i8c i8cVar) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = i8cVar;
+    }
+
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        HttpURLConnection httpURLConnection;
+        String str;
+        i8c i8cVar = this.d;
+        String str2 = this.c;
+        boolean z = false;
+        try {
+            httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
+        } catch (Exception e) {
+            e = e;
+            httpURLConnection = null;
+        }
+        try {
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setRequestProperty("User-Agent", rzb.R1[(int) Math.round(Math.random() * 5.0d)]);
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            StringBuilder sb = new StringBuilder();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), ck1.a));
+            while (true) {
+                try {
+                    int read = bufferedReader.read();
+                    if (read == -1) {
+                        break;
+                    } else {
+                        sb.append((char) read);
+                    }
+                } finally {
+                }
+            }
+            bufferedReader.close();
+            JSONArray jSONArray = new JSONArray(new JSONTokener(sb.toString()));
+            JSONArray jSONArray2 = jSONArray.getJSONArray(0);
+            try {
+                str = jSONArray.getString(2);
+            } catch (Exception unused) {
+                str = null;
+            }
+            if (str != null && str.contains("-")) {
+                str.substring(0, str.indexOf("-"));
+            }
+            String str3 = "";
+            for (int i = 0; i < jSONArray2.length(); i++) {
+                String string = jSONArray2.getJSONArray(i).getString(0);
+                if (string != null && !string.equals("null")) {
+                    str3 = str3 + string;
+                }
+            }
+            if (str2.length() > 0 && str2.charAt(0) == '\n') {
+                str3 = "\n" + str3;
+            }
+            gl.d3(new fzb(i8cVar, str3, (byte) 0));
+        } catch (Exception e2) {
+            e = e2;
+            try {
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append("failed to translate a text ");
+                sb2.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
+                sb2.append(" ");
+                sb2.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
+                Log.e("translate", sb2.toString());
+            } catch (IOException e3) {
+                e3.printStackTrace();
+            }
+            e.printStackTrace();
+            if (httpURLConnection != null) {
+                try {
+                    if (httpURLConnection.getResponseCode() == 429) {
+                        z = true;
+                    }
+                } catch (Exception unused2) {
+                    gl.d3(new c05(i8cVar, (byte) 7));
+                    return;
+                }
+            }
+            gl.d3(new k08((byte) 23, (Object) i8cVar, z));
+        }
+    }
+}

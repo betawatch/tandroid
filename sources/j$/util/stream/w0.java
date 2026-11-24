@@ -1,57 +1,40 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
 import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public final class w0 extends z0 {
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final IntStream sequential() {
-        this.h.r = false;
-        return this;
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class w0 extends b1 {
+    public final /* synthetic */ byte l;
+    public final /* synthetic */ Object m;
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final IntStream parallel() {
-        this.h.r = true;
-        return this;
-    }
-
-    @Override // j$.util.stream.z0, j$.util.stream.IntStream
-    public final void forEach(IntConsumer intConsumer) {
-        if (this.h.r) {
-            super.forEach(intConsumer);
-        } else {
-            z0.U0(S0()).forEachRemaining(intConsumer);
-        }
-    }
-
-    @Override // j$.util.stream.z0, j$.util.stream.IntStream
-    public final void forEachOrdered(IntConsumer intConsumer) {
-        if (this.h.r) {
-            super.forEachOrdered(intConsumer);
-        } else {
-            z0.U0(S0()).forEachRemaining(intConsumer);
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new s(this, v6.r, 1);
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w0(c1 c1Var, IntConsumer intConsumer) {
+        super(c1Var, 0);
+        this.l = (byte) 0;
+        this.m = intConsumer;
     }
 
     @Override // j$.util.stream.a
-    public final boolean P0() {
-        throw new UnsupportedOperationException();
+    public final n5 M(int i, n5 n5Var) {
+        switch (this.l) {
+            case 0:
+                return new v0(this, n5Var, (byte) 1);
+            case 1:
+                return new v0(this, n5Var, (byte) 2);
+            case 2:
+                return new y0(this, n5Var);
+            case 3:
+                return new a5(this, n5Var, (byte) 3);
+            default:
+                return new z4(this, n5Var);
+        }
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        throw new UnsupportedOperationException();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w0(a aVar, int i, Object obj, byte b) {
+        super(aVar, i);
+        this.l = b;
+        this.m = obj;
     }
 }

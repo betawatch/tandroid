@@ -1,50 +1,69 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public final class f8 extends f5 implements o8 {
-    public long b;
-    public boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ e8 e;
+import j$.util.Objects;
+import j$.util.Spliterator;
+import java.util.function.Consumer;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f8(e8 e8Var, j5 j5Var, boolean z10) {
-        super(j5Var);
-        this.e = e8Var;
-        this.d = z10;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class f8 extends d7 {
+    @Override // j$.util.stream.d7
+    public final void d() {
+        y6 y6Var = new y6();
+        this.h = y6Var;
+        Objects.requireNonNull(y6Var);
+        this.e = this.b.R(new e8(y6Var, (byte) 0));
+        this.f = new j$.time.v((byte) 12, this);
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        boolean z10;
-        boolean z11;
-        if (!this.c) {
-            boolean test = this.e.t.test(obj);
-            this.c = !test;
-            if (test) {
-                z10 = false;
-                z11 = this.d;
-                if (z11 && !z10) {
-                    this.b++;
-                }
-                if (!z11 || z10) {
-                    this.a.accept((j5) obj);
-                }
-                return;
+    @Override // j$.util.stream.d7
+    public final d7 e(Spliterator spliterator) {
+        return new f8(this.b, spliterator, this.a);
+    }
+
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        if (this.h != null || this.i) {
+            while (tryAdvance(consumer)) {
             }
+            return;
         }
-        z10 = true;
-        z11 = this.d;
-        if (z11) {
-            this.b++;
-        }
-        if (z11) {
-        }
-        this.a.accept((j5) obj);
+        Objects.requireNonNull(consumer);
+        c();
+        Objects.requireNonNull(consumer);
+        e8 e8Var = new e8(consumer, (byte) 1);
+        this.b.Q(this.d, e8Var);
+        this.i = true;
     }
 
-    @Override // j$.util.stream.o8
-    public final long s() {
-        return this.b;
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        Object obj;
+        Objects.requireNonNull(consumer);
+        boolean a = a();
+        if (!a) {
+            return a;
+        }
+        y6 y6Var = (y6) this.h;
+        long j = this.g;
+        if (y6Var.c != 0) {
+            if (j >= y6Var.count()) {
+                throw new IndexOutOfBoundsException(Long.toString(j));
+            }
+            for (int i = 0; i <= y6Var.c; i++) {
+                long j2 = y6Var.d[i];
+                Object[] objArr = y6Var.f[i];
+                if (j < objArr.length + j2) {
+                    obj = objArr[(int) (j - j2)];
+                }
+            }
+            throw new IndexOutOfBoundsException(Long.toString(j));
+        }
+        if (j >= y6Var.b) {
+            throw new IndexOutOfBoundsException(Long.toString(j));
+        }
+        obj = y6Var.e[(int) j];
+        consumer.x(obj);
+        return a;
     }
 }

@@ -1,68 +1,37 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
+import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
-public final class r0 extends CountedCompleter {
-    public Spliterator a;
-    public final j5 b;
-    public final t3 c;
-    public long d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class r0 extends s0 {
+    public final Consumer b;
 
-    public r0(t3 t3Var, Spliterator spliterator, j5 j5Var) {
-        super(null);
-        this.b = j5Var;
-        this.c = t3Var;
-        this.a = spliterator;
-        this.d = 0L;
+    public r0(Consumer consumer, boolean z) {
+        super(z);
+        this.b = consumer;
     }
 
-    public r0(r0 r0Var, Spliterator spliterator) {
-        super(r0Var);
-        this.a = spliterator;
-        this.b = r0Var.b;
-        this.d = r0Var.d;
-        this.c = r0Var.c;
+    @Override // j$.util.stream.h8
+    public final Object a(a aVar, Spliterator spliterator) {
+        aVar.Q(spliterator, this);
+        return null;
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.a;
-        long estimateSize = spliterator.estimateSize();
-        long j3 = this.d;
-        if (j3 == 0) {
-            j3 = d.e(estimateSize);
-            this.d = j3;
-        }
-        boolean m10 = v6.SHORT_CIRCUIT.m(((a) this.c).m);
-        j5 j5Var = this.b;
-        boolean z10 = false;
-        r0 r0Var = this;
-        while (true) {
-            if (m10 && j5Var.q()) {
-                break;
-            }
-            if (estimateSize <= j3 || (trySplit = spliterator.trySplit()) == null) {
-                break;
-            }
-            r0 r0Var2 = new r0(r0Var, trySplit);
-            r0Var.addToPendingCount(1);
-            if (z10) {
-                spliterator = trySplit;
-            } else {
-                r0 r0Var3 = r0Var;
-                r0Var = r0Var2;
-                r0Var2 = r0Var3;
-            }
-            z10 = !z10;
-            r0Var.fork();
-            r0Var = r0Var2;
-            estimateSize = spliterator.estimateSize();
-        }
-        r0Var.c.f0(spliterator, j5Var);
-        r0Var.a = null;
-        r0Var.propagateCompletion();
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        this.b.accept(obj);
+    }
+
+    @Override // j$.util.stream.h8
+    public final /* bridge */ /* synthetic */ Object b(a aVar, Spliterator spliterator) {
+        d(aVar, spliterator);
+        return null;
+    }
+
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return null;
     }
 }

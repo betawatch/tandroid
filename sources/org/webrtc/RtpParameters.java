@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class RtpParameters {
     public final List<Codec> codecs;
     public DegradationPreference degradationPreference;
@@ -14,7 +14,7 @@ public class RtpParameters {
     private final Rtcp rtcp;
     public final String transactionId;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Codec {
         public Integer clockRate;
         MediaStreamTrack.MediaType kind;
@@ -23,8 +23,8 @@ public class RtpParameters {
         public Map<String, String> parameters;
         public int payloadType;
 
-        public Codec(int i7, String str, MediaStreamTrack.MediaType mediaType, Integer num, Integer num2, Map<String, String> map) {
-            this.payloadType = i7;
+        public Codec(int i, String str, MediaStreamTrack.MediaType mediaType, Integer num, Integer num2, Map<String, String> map) {
+            this.payloadType = i;
             this.name = str;
             this.kind = mediaType;
             this.clockRate = num;
@@ -57,28 +57,28 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public enum DegradationPreference {
         DISABLED,
         MAINTAIN_FRAMERATE,
         MAINTAIN_RESOLUTION,
         BALANCED;
 
-        public static DegradationPreference fromNativeIndex(int i7) {
-            return values()[i7];
+        public static DegradationPreference fromNativeIndex(int i) {
+            return values()[i];
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class HeaderExtension {
         private final boolean encrypted;
         private final int id;
         private final String uri;
 
-        public HeaderExtension(String str, int i7, boolean z10) {
+        public HeaderExtension(String str, int i, boolean z) {
             this.uri = str;
-            this.id = i7;
-            this.encrypted = z10;
+            this.id = i;
+            this.encrypted = z;
         }
 
         public boolean getEncrypted() {
@@ -94,14 +94,14 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Rtcp {
         private final String cname;
         private final boolean reducedSize;
 
-        public Rtcp(String str, boolean z10) {
+        public Rtcp(String str, boolean z) {
             this.cname = str;
-            this.reducedSize = z10;
+            this.reducedSize = z;
         }
 
         public String getCname() {
@@ -146,7 +146,7 @@ public class RtpParameters {
         return this.transactionId;
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Encoding {
         public boolean active;
         public boolean adaptiveAudioPacketTime;
@@ -160,12 +160,18 @@ public class RtpParameters {
         public Double scaleResolutionDownBy;
         public Long ssrc;
 
-        public Encoding(String str, boolean z10, Double d) {
-            this.bitratePriority = 1.0d;
-            this.networkPriority = 0;
+        public Encoding(String str, boolean z, double d, int i, Integer num, Integer num2, Integer num3, Integer num4, Double d2, Long l, boolean z2) {
             this.rid = str;
-            this.active = z10;
-            this.scaleResolutionDownBy = d;
+            this.active = z;
+            this.bitratePriority = d;
+            this.networkPriority = i;
+            this.maxBitrateBps = num;
+            this.minBitrateBps = num2;
+            this.maxFramerate = num3;
+            this.numTemporalLayers = num4;
+            this.scaleResolutionDownBy = d2;
+            this.ssrc = l;
+            this.adaptiveAudioPacketTime = z2;
         }
 
         public boolean getActive() {
@@ -212,18 +218,12 @@ public class RtpParameters {
             return this.ssrc;
         }
 
-        public Encoding(String str, boolean z10, double d, int i7, Integer num, Integer num2, Integer num3, Integer num4, Double d2, Long l10, boolean z11) {
+        public Encoding(String str, boolean z, Double d) {
+            this.bitratePriority = 1.0d;
+            this.networkPriority = 0;
             this.rid = str;
-            this.active = z10;
-            this.bitratePriority = d;
-            this.networkPriority = i7;
-            this.maxBitrateBps = num;
-            this.minBitrateBps = num2;
-            this.maxFramerate = num3;
-            this.numTemporalLayers = num4;
-            this.scaleResolutionDownBy = d2;
-            this.ssrc = l10;
-            this.adaptiveAudioPacketTime = z11;
+            this.active = z;
+            this.scaleResolutionDownBy = d;
         }
     }
 }

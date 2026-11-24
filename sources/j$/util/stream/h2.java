@@ -1,77 +1,25 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
 import j$.util.Spliterator;
-import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public class h2 implements e2 {
-    public final Object[] a;
-    public int b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface h2 {
+    h2 a(int i);
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.V(this, j3, j10, intFunction);
-    }
+    long count();
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ int h() {
-        return 0;
-    }
+    h2 e(long j, long j2, IntFunction intFunction);
 
-    @Override // j$.util.stream.e2
-    public final e2 a(int i7) {
-        throw new IndexOutOfBoundsException();
-    }
+    void f(Object[] objArr, int i);
 
-    public h2(long j3, IntFunction intFunction) {
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.a = (Object[]) intFunction.apply((int) j3);
-        this.b = 0;
-    }
+    void forEach(Consumer consumer);
 
-    public h2(Object[] objArr) {
-        this.a = objArr;
-        this.b = objArr.length;
-    }
+    Object[] g(IntFunction intFunction);
 
-    @Override // j$.util.stream.e2
-    public final Spliterator spliterator() {
-        return DesugarArrays.a(this.a, 0, this.b);
-    }
+    int h();
 
-    @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i7) {
-        System.arraycopy(this.a, 0, objArr, i7, this.b);
-    }
-
-    @Override // j$.util.stream.e2
-    public final Object[] g(IntFunction intFunction) {
-        Object[] objArr = this.a;
-        if (objArr.length == this.b) {
-            return objArr;
-        }
-        throw new IllegalStateException();
-    }
-
-    @Override // j$.util.stream.e2
-    public final long count() {
-        return this.b;
-    }
-
-    @Override // j$.util.stream.e2
-    public final void forEach(Consumer consumer) {
-        for (int i7 = 0; i7 < this.b; i7++) {
-            consumer.x(this.a[i7]);
-        }
-    }
-
-    public String toString() {
-        Object[] objArr = this.a;
-        return String.format("ArrayNode[%d][%s]", Integer.valueOf(objArr.length - this.b), Arrays.toString(objArr));
-    }
+    Spliterator spliterator();
 }

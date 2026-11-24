@@ -1,33 +1,60 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.Objects;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class x extends z {
-    @Override // j$.util.stream.a
-    public final boolean P0() {
-        return true;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class x extends g5 {
+    public boolean b;
+    public final j$.util.e0 c;
+    public final /* synthetic */ y d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(y yVar, n5 n5Var) {
+        super(n5Var);
+        this.d = yVar;
+        n5 n5Var2 = this.a;
+        Objects.requireNonNull(n5Var2);
+        this.c = new j$.util.e0(n5Var2, (byte) 1);
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final c0 sequential() {
-        this.h.r = false;
-        return this;
+    @Override // j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        f0 f0Var = (f0) ((j$.time.v) this.d.m).apply(d);
+        if (f0Var != null) {
+            try {
+                boolean z = this.b;
+                j$.util.e0 e0Var = this.c;
+                if (z) {
+                    j$.util.u0 spliterator = f0Var.sequential().spliterator();
+                    while (!this.a.q() && spliterator.tryAdvance((DoubleConsumer) e0Var)) {
+                    }
+                } else {
+                    f0Var.sequential().forEach(e0Var);
+                }
+            } catch (Throwable th) {
+                try {
+                    f0Var.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
+            }
+        }
+        if (f0Var != null) {
+            f0Var.close();
+        }
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final c0 parallel() {
-        this.h.r = true;
-        return this;
+    @Override // j$.util.stream.g5, j$.util.stream.n5
+    public final void n(long j) {
+        this.a.n(-1L);
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new r(this, v6.r, 1);
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
+    @Override // j$.util.stream.g5, j$.util.stream.n5
+    public final boolean q() {
+        this.b = true;
+        return this.a.q();
     }
 }

@@ -1,29 +1,8 @@
 package j$.util.stream;
 
-import java.util.function.DoubleConsumer;
-
-/* loaded from: classes2.dex */
-public final /* synthetic */ class x1 implements DoubleConsumer {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ x1(int i7) {
-        this.a = i7;
-    }
-
-    private final void accept$j$$util$stream$Node$OfDouble$$ExternalSyntheticLambda0(double d) {
-    }
-
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfDouble$$ExternalSyntheticLambda0(double d) {
-    }
-
-    @Override // java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        int i7 = this.a;
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface x1 extends z1, l5 {
+    @Override // j$.util.stream.z1
+    d2 build();
 }

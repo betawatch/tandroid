@@ -5,7 +5,8 @@ import java.util.Iterator;
 import java.util.function.Consumer;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public class q1 implements Spliterator {
     public final java.util.Collection a;
     public Iterator b = null;
@@ -13,58 +14,25 @@ public class q1 implements Spliterator {
     public long d;
     public int e;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.m(this);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return j$.com.android.tools.r8.a.o(this, i7);
-    }
-
-    public q1(java.util.Collection collection, int i7) {
+    public q1(java.util.Collection collection, int i) {
         this.a = collection;
-        this.c = (i7 & TLObject.FLAG_12) == 0 ? i7 | 16448 : i7;
+        this.c = (i & TLObject.FLAG_12) == 0 ? i | 16448 : i;
     }
 
     @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        long j3;
-        Iterator it = this.b;
-        if (it == null) {
-            it = this.a.iterator();
-            this.b = it;
-            j3 = this.a.size();
-            this.d = j3;
-        } else {
-            j3 = this.d;
+    public final int characteristics() {
+        return this.c;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        if (this.b != null) {
+            return this.d;
         }
-        if (j3 <= 1 || !it.hasNext()) {
-            return null;
-        }
-        int i7 = this.e + 1024;
-        if (i7 > j3) {
-            i7 = (int) j3;
-        }
-        if (i7 > 33554432) {
-            i7 = 33554432;
-        }
-        Object[] objArr = new Object[i7];
-        int i10 = 0;
-        do {
-            objArr[i10] = it.next();
-            i10++;
-            if (i10 >= i7) {
-                break;
-            }
-        } while (it.hasNext());
-        this.e = i10;
-        long j10 = this.d;
-        if (j10 != Long.MAX_VALUE) {
-            this.d = j10 - i10;
-        }
-        return new j1(objArr, 0, i10, this.c);
+        this.b = this.a.iterator();
+        long size = this.a.size();
+        this.d = size;
+        return size;
     }
 
     @Override // j$.util.Spliterator
@@ -76,7 +44,25 @@ public class q1 implements Spliterator {
             this.b = it;
             this.d = this.a.size();
         }
-        j$.com.android.tools.r8.a.L(it, consumer);
+        j$.time.a.L(it, consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public Comparator getComparator() {
+        if (j$.time.a.o(this, 4)) {
+            return null;
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.time.a.m(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.time.a.o(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -94,26 +80,41 @@ public class q1 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        if (this.b == null) {
-            this.b = this.a.iterator();
-            long size = this.a.size();
-            this.d = size;
-            return size;
+    public final Spliterator trySplit() {
+        long j;
+        Iterator it = this.b;
+        if (it == null) {
+            it = this.a.iterator();
+            this.b = it;
+            j = this.a.size();
+            this.d = j;
+        } else {
+            j = this.d;
         }
-        return this.d;
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.c;
-    }
-
-    @Override // j$.util.Spliterator
-    public Comparator getComparator() {
-        if (j$.com.android.tools.r8.a.o(this, 4)) {
+        if (j <= 1 || !it.hasNext()) {
             return null;
         }
-        throw new IllegalStateException();
+        int i = this.e + 1024;
+        if (i > j) {
+            i = (int) j;
+        }
+        if (i > 33554432) {
+            i = 33554432;
+        }
+        Object[] objArr = new Object[i];
+        int i2 = 0;
+        do {
+            objArr[i2] = it.next();
+            i2++;
+            if (i2 >= i) {
+                break;
+            }
+        } while (it.hasNext());
+        this.e = i2;
+        long j2 = this.d;
+        if (j2 != Long.MAX_VALUE) {
+            this.d = j2 - i2;
+        }
+        return new j1(objArr, 0, i2, this.c);
     }
 }

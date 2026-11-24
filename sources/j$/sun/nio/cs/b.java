@@ -6,19 +6,10 @@ import java.nio.CharBuffer;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class b extends CharsetEncoder {
     public final e a;
-
-    @Override // java.nio.charset.CharsetEncoder
-    public final boolean canEncode(char c10) {
-        return c10 <= 255;
-    }
-
-    @Override // java.nio.charset.CharsetEncoder
-    public final boolean isLegalReplacement(byte[] bArr) {
-        return true;
-    }
 
     public b(c cVar) {
         super(cVar, 1.0f, 1.0f);
@@ -27,46 +18,50 @@ public final class b extends CharsetEncoder {
         this.a = eVar;
     }
 
-    public static int a(char[] cArr, int i7, byte[] bArr, int i10, int i11) {
-        int i12 = 0;
-        if (i11 <= 0) {
+    public static int a(char[] cArr, int i, byte[] bArr, int i2, int i3) {
+        int i4 = 0;
+        if (i3 <= 0) {
             return 0;
         }
         Objects.requireNonNull(cArr);
         Objects.requireNonNull(bArr);
-        if (i7 < 0 || i7 >= cArr.length) {
-            throw new ArrayIndexOutOfBoundsException(i7);
+        if (i < 0 || i >= cArr.length) {
+            throw new ArrayIndexOutOfBoundsException(i);
         }
-        if (i10 < 0 || i10 >= bArr.length) {
-            throw new ArrayIndexOutOfBoundsException(i10);
+        if (i2 < 0 || i2 >= bArr.length) {
+            throw new ArrayIndexOutOfBoundsException(i2);
         }
-        int i13 = (i7 + i11) - 1;
-        if (i13 < 0 || i13 >= cArr.length) {
-            throw new ArrayIndexOutOfBoundsException(i13);
+        int i5 = (i + i3) - 1;
+        if (i5 < 0 || i5 >= cArr.length) {
+            throw new ArrayIndexOutOfBoundsException(i5);
         }
-        int i14 = (i10 + i11) - 1;
-        if (i14 < 0 || i14 >= bArr.length) {
-            throw new ArrayIndexOutOfBoundsException(i14);
+        int i6 = (i2 + i3) - 1;
+        if (i6 < 0 || i6 >= bArr.length) {
+            throw new ArrayIndexOutOfBoundsException(i6);
         }
-        while (i12 < i11) {
-            int i15 = i7 + 1;
-            char c10 = cArr[i7];
-            if (c10 > 255) {
+        while (i4 < i3) {
+            int i7 = i + 1;
+            char c = cArr[i];
+            if (c > 255) {
                 break;
             }
-            bArr[i10] = (byte) c10;
-            i12++;
-            i7 = i15;
-            i10++;
+            bArr[i2] = (byte) c;
+            i4++;
+            i = i7;
+            i2++;
         }
-        return i12;
+        return i4;
+    }
+
+    @Override // java.nio.charset.CharsetEncoder
+    public final boolean canEncode(char c) {
+        return c <= 255;
     }
 
     @Override // java.nio.charset.CharsetEncoder
     public final CoderResult encodeLoop(CharBuffer charBuffer, ByteBuffer byteBuffer) {
         CoderResult coderResult;
         CoderResult coderResult2;
-        int i7 = 2;
         if (!charBuffer.hasArray() || !byteBuffer.hasArray()) {
             int position = charBuffer.position();
             while (true) {
@@ -75,21 +70,22 @@ public final class b extends CharsetEncoder {
                         coderResult = CoderResult.UNDERFLOW;
                         break;
                     }
-                    char c10 = charBuffer.get();
-                    if (c10 <= 255) {
+                    char c = charBuffer.get();
+                    if (c > 255) {
+                        int a = this.a.a(c, charBuffer);
+                        e eVar = this.a;
+                        if (a < 0) {
+                            coderResult = eVar.a;
+                        } else {
+                            coderResult = CoderResult.unmappableForLength(eVar.b ? 2 : 1);
+                        }
+                    } else {
                         if (!byteBuffer.hasRemaining()) {
                             coderResult = CoderResult.OVERFLOW;
                             break;
                         }
-                        byteBuffer.put((byte) c10);
+                        byteBuffer.put((byte) c);
                         position++;
-                    } else if (this.a.a(c10, charBuffer) < 0) {
-                        coderResult = this.a.a;
-                    } else {
-                        if (!this.a.b) {
-                            i7 = 1;
-                        }
-                        coderResult = CoderResult.unmappableForLength(i7);
                     }
                 } finally {
                 }
@@ -110,28 +106,34 @@ public final class b extends CharsetEncoder {
         if (position3 > limit2) {
             position3 = limit2;
         }
-        int i10 = limit2 - position3;
-        int i11 = limit - position2;
-        if (i10 >= i11) {
-            i10 = i11;
+        int i = limit2 - position3;
+        int i2 = limit - position2;
+        if (i >= i2) {
+            i = i2;
         }
         try {
-            int a10 = a(array, position2, array2, position3, i10);
-            int i12 = position2 + a10;
-            int i13 = position3 + a10;
-            if (a10 == i10) {
-                coderResult2 = i10 < i11 ? CoderResult.OVERFLOW : CoderResult.UNDERFLOW;
-            } else if (this.a.b(array[i12], array, i12, limit) < 0) {
-                coderResult2 = this.a.a;
-            } else {
-                if (!this.a.b) {
-                    i7 = 1;
+            int a2 = a(array, position2, array2, position3, i);
+            int i3 = position2 + a2;
+            int i4 = position3 + a2;
+            if (a2 != i) {
+                int b = this.a.b(array[i3], array, i3, limit);
+                e eVar2 = this.a;
+                if (b < 0) {
+                    coderResult2 = eVar2.a;
+                } else {
+                    coderResult2 = CoderResult.unmappableForLength(eVar2.b ? 2 : 1);
                 }
-                coderResult2 = CoderResult.unmappableForLength(i7);
+            } else {
+                coderResult2 = i < i2 ? CoderResult.OVERFLOW : CoderResult.UNDERFLOW;
             }
             return coderResult2;
-        } catch (Throwable th2) {
-            throw th2;
+        } catch (Throwable th) {
+            throw th;
         }
+    }
+
+    @Override // java.nio.charset.CharsetEncoder
+    public final boolean isLegalReplacement(byte[] bArr) {
+        return true;
     }
 }

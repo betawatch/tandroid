@@ -6,31 +6,19 @@ import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class b implements Comparable, Serializable {
-    public static final /* synthetic */ int e = 0;
     private static final long serialVersionUID = -6946044323557704546L;
     public final long a;
     public final LocalDateTime b;
     public final ZoneOffset c;
     public final ZoneOffset d;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.a, ((b) obj).a);
-    }
-
     public b(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
         localDateTime.getClass();
-        this.a = j$.com.android.tools.r8.a.v(localDateTime, zoneOffset);
+        this.a = j$.time.a.v(localDateTime, zoneOffset);
         this.b = localDateTime;
-        this.c = zoneOffset;
-        this.d = zoneOffset2;
-    }
-
-    public b(long j3, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = j3;
-        this.b = LocalDateTime.K(j3, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
@@ -43,8 +31,9 @@ public final class b implements Comparable, Serializable {
         return new a((byte) 2, this);
     }
 
-    public final boolean j() {
-        return this.d.getTotalSeconds() > this.c.getTotalSeconds();
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Long.compare(this.a, ((b) obj).a);
     }
 
     public final boolean equals(Object obj) {
@@ -64,15 +53,26 @@ public final class b implements Comparable, Serializable {
         return (this.b.hashCode() ^ this.c.b) ^ Integer.rotateLeft(this.d.b, 16);
     }
 
+    public final boolean j() {
+        return this.d.getTotalSeconds() > this.c.getTotalSeconds();
+    }
+
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("Transition[");
-        sb2.append(j() ? "Gap" : "Overlap");
-        sb2.append(" at ");
-        sb2.append(this.b);
-        sb2.append(this.c);
-        sb2.append(" to ");
-        sb2.append(this.d);
-        sb2.append(']');
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder("Transition[");
+        sb.append(j() ? "Gap" : "Overlap");
+        sb.append(" at ");
+        sb.append(this.b);
+        sb.append(this.c);
+        sb.append(" to ");
+        sb.append(this.d);
+        sb.append(']');
+        return sb.toString();
+    }
+
+    public b(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+        this.a = j;
+        this.b = LocalDateTime.x(j, 0, zoneOffset);
+        this.c = zoneOffset;
+        this.d = zoneOffset2;
     }
 }

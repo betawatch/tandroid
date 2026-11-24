@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzop extends AbstractMap {
     private static final Comparator zza = new zzom();
@@ -45,17 +45,22 @@ final class zzop extends AbstractMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
-        if (this.zze == null) {
-            this.zze = Integer.valueOf(super.hashCode());
+        Integer num = this.zze;
+        if (num == null) {
+            num = Integer.valueOf(super.hashCode());
+            this.zze = num;
         }
-        return this.zze.intValue();
+        return num.intValue();
     }
 
     @Override // java.util.AbstractMap
     public final String toString() {
-        if (this.zzf == null) {
-            this.zzf = super.toString();
+        String str = this.zzf;
+        if (str != null) {
+            return str;
         }
-        return this.zzf;
+        String abstractMap = super.toString();
+        this.zzf = abstractMap;
+        return abstractMap;
     }
 }

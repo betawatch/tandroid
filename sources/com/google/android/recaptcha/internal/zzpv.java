@@ -2,13 +2,12 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzpv;
 import com.google.android.recaptcha.internal.zzpw;
-import i5.c;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zztr {
     public static void zzd(Iterable iterable, List list) {
@@ -20,12 +19,13 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
             int size = list.size();
             for (Object obj : zza) {
                 if (obj == null) {
-                    String j3 = c.j(zzteVar.size() - size, "Element at index ", " is null.");
+                    String n = tb4.n(zzteVar.size() - size, "Element at index ", " is null.");
                     int size2 = zzteVar.size();
                     while (true) {
                         size2--;
                         if (size2 < size) {
-                            throw new NullPointerException(j3);
+                            fvc.f(n);
+                            return;
                         }
                         zzteVar.remove(size2);
                     }
@@ -65,8 +65,8 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         }
         List list2 = (List) iterable;
         int size5 = list2.size();
-        for (int i7 = 0; i7 < size5; i7++) {
-            Object obj3 = list2.get(i7);
+        for (int i = 0; i < size5; i++) {
+            Object obj3 = list2.get(i);
             if (obj3 == null) {
                 zze(list, size4);
             }
@@ -74,13 +74,13 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         }
     }
 
-    private static void zze(List list, int i7) {
-        String j3 = c.j(list.size() - i7, "Element at index ", " is null.");
+    private static void zze(List list, int i) {
+        String n = tb4.n(list.size() - i, "Element at index ", " is null.");
         int size = list.size();
         while (true) {
             size--;
-            if (size < i7) {
-                throw new NullPointerException(j3);
+            if (size < i) {
+                throw new NullPointerException(n);
             }
             list.remove(size);
         }
@@ -96,6 +96,7 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         if (zzm().getClass().isInstance(zztsVar)) {
             return zzb((zzpw) zztsVar);
         }
-        throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
+        w26.j("mergeFrom(MessageLite) can only merge messages of the same type.");
+        return null;
     }
 }

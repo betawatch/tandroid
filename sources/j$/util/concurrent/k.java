@@ -2,46 +2,29 @@ package j$.util.concurrent;
 
 import java.util.Map;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public class k implements Map.Entry {
     public final int a;
     public final Object b;
     public volatile Object c;
     public volatile k d;
 
-    public k(int i7, Object obj, Object obj2) {
-        this.a = i7;
+    public k(int i, Object obj, Object obj2) {
+        this.a = i;
         this.b = obj;
         this.c = obj2;
     }
 
-    public k(int i7, Object obj, Object obj2, k kVar) {
-        this(i7, obj, obj2);
-        this.d = kVar;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.c;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        return this.b.hashCode() ^ this.c.hashCode();
-    }
-
-    public final String toString() {
-        return j$.com.android.tools.r8.a.U(this.b, this.c);
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+    public k a(int i, Object obj) {
+        Object obj2;
+        do {
+            if (this.a == i && ((obj2 = this.b) == obj || (obj2 != null && obj.equals(obj2)))) {
+                return this;
+            }
+            this = this.d;
+        } while (this != null);
+        return null;
     }
 
     @Override // java.util.Map.Entry
@@ -60,15 +43,32 @@ public class k implements Map.Entry {
         return value == obj3 || value.equals(obj3);
     }
 
-    public k a(int i7, Object obj) {
-        Object obj2;
-        k kVar = this;
-        do {
-            if (kVar.a == i7 && ((obj2 = kVar.b) == obj || (obj2 != null && obj.equals(obj2)))) {
-                return kVar;
-            }
-            kVar = kVar.d;
-        } while (kVar != null);
-        return null;
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.c;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        return this.b.hashCode() ^ this.c.hashCode();
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    public final String toString() {
+        return j$.time.a.T(this.b, this.c);
+    }
+
+    public k(int i, Object obj, Object obj2, k kVar) {
+        this(i, obj, obj2);
+        this.d = kVar;
     }
 }

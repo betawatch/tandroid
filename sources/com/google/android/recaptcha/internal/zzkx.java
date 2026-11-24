@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzkx implements zzlb {
     private final Context zza;
@@ -22,9 +22,12 @@ public final class zzkx implements zzlb {
     @Override // com.google.android.recaptcha.internal.zzlb
     public final Object zza(Object... objArr) {
         IntentFilter intentFilter = new IntentFilter("android.intent.action.BATTERY_CHANGED");
-        Intent registerReceiver = Build.VERSION.SDK_INT >= 33 ? this.zza.registerReceiver(null, intentFilter, 4) : this.zza.registerReceiver(null, intentFilter);
+        int i = Build.VERSION.SDK_INT;
+        Context context = this.zza;
+        Intent registerReceiver = i >= 33 ? context.registerReceiver(null, intentFilter, 4) : context.registerReceiver(null, intentFilter);
         if (registerReceiver == null) {
-            throw new zzdm(7, 19, null);
+            fvc.c(7, 19, null);
+            return null;
         }
         int intExtra = registerReceiver.getIntExtra("health", -1);
         int intExtra2 = registerReceiver.getIntExtra("level", -1);

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzqn extends zzqq {
     private final byte[] zzf;
@@ -13,7 +13,7 @@ final class zzqn extends zzqq {
     private int zzj;
     private int zzk;
 
-    public /* synthetic */ zzqn(byte[] bArr, int i7, int i10, boolean z10, zzqp zzqpVar) {
+    public /* synthetic */ zzqn(byte[] bArr, int i, int i2, boolean z, zzqp zzqpVar) {
         super(null);
         this.zzk = ConnectionsManager.DEFAULT_DATACENTER_ID;
         this.zzf = bArr;
@@ -22,37 +22,36 @@ final class zzqn extends zzqq {
     }
 
     private final void zzL() {
-        int i7 = this.zzg + this.zzh;
-        this.zzg = i7;
-        int i10 = this.zzk;
-        if (i7 <= i10) {
+        int i = this.zzg + this.zzh;
+        this.zzg = i;
+        int i2 = this.zzk;
+        if (i <= i2) {
             this.zzh = 0;
             return;
         }
-        int i11 = i7 - i10;
-        this.zzh = i11;
-        this.zzg = i7 - i11;
+        int i3 = i - i2;
+        this.zzh = i3;
+        this.zzg = i - i3;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
-    public final void zzA(int i7) {
-        this.zzk = i7;
+    public final void zzA(int i) {
+        this.zzk = i;
         zzL();
     }
 
-    public final void zzB(int i7) {
-        if (i7 >= 0) {
-            int i10 = this.zzg;
-            int i11 = this.zzi;
-            if (i7 <= i10 - i11) {
-                this.zzi = i11 + i7;
-                return;
-            }
+    public final void zzB(int i) {
+        if (i < 0) {
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            return;
         }
-        if (i7 >= 0) {
-            throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        int i2 = this.zzg;
+        int i3 = this.zzi;
+        if (i <= i2 - i3) {
+            this.zzi = i3 + i;
+        } else {
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         }
-        throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
@@ -66,61 +65,62 @@ final class zzqn extends zzqq {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
-    public final boolean zzE(int i7) {
-        int i10 = i7 & 7;
-        int i11 = 0;
-        if (i10 == 0) {
+    public final boolean zzE(int i) {
+        int i2 = i & 7;
+        if (i2 == 0) {
             if (this.zzg - this.zzi < 10) {
-                while (i11 < 10) {
+                for (int i3 = 0; i3 < 10; i3++) {
                     if (zza() < 0) {
-                        i11++;
                     }
                 }
-                throw new zzsx("CodedInputStream encountered a malformed varint.");
+                fvc.i("CodedInputStream encountered a malformed varint.");
+                return false;
             }
-            while (i11 < 10) {
+            for (int i4 = 0; i4 < 10; i4++) {
                 byte[] bArr = this.zzf;
-                int i12 = this.zzi;
-                this.zzi = i12 + 1;
-                if (bArr[i12] < 0) {
-                    i11++;
+                int i5 = this.zzi;
+                this.zzi = i5 + 1;
+                if (bArr[i5] < 0) {
                 }
             }
-            throw new zzsx("CodedInputStream encountered a malformed varint.");
+            fvc.i("CodedInputStream encountered a malformed varint.");
+            return false;
             return true;
         }
-        if (i10 == 1) {
+        if (i2 == 1) {
             zzB(8);
             return true;
         }
-        if (i10 == 2) {
+        if (i2 == 2) {
             zzB(zzj());
             return true;
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             zzK();
-            zzz(((i7 >>> 3) << 3) | 4);
+            zzz(((i >>> 3) << 3) | 4);
             return true;
         }
-        if (i10 == 4) {
+        if (i2 == 4) {
             zzJ();
             return false;
         }
-        if (i10 != 5) {
-            throw new zzsw("Protocol message tag had invalid wire type.");
+        if (i2 == 5) {
+            zzB(4);
+            return true;
         }
-        zzB(4);
-        return true;
+        haf.a();
+        return false;
     }
 
     public final byte zza() {
-        int i7 = this.zzi;
-        if (i7 == this.zzg) {
-            throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        int i = this.zzi;
+        if (i == this.zzg) {
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            return (byte) 0;
         }
         byte[] bArr = this.zzf;
-        this.zzi = i7 + 1;
-        return bArr[i7];
+        this.zzi = i + 1;
+        return bArr[i];
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
@@ -139,21 +139,24 @@ final class zzqn extends zzqq {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
-    public final int zze(int i7) {
-        if (i7 < 0) {
-            throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+    public final int zze(int i) {
+        if (i < 0) {
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            return 0;
         }
-        int i10 = i7 + this.zzi;
-        if (i10 < 0) {
-            throw new zzsx("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
+        int i2 = i + this.zzi;
+        if (i2 < 0) {
+            fvc.i("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit. If reading multiple messages, consider resetting the counter between each message using CodedInputStream.resetSizeCounter().");
+            return 0;
         }
-        int i11 = this.zzk;
-        if (i10 > i11) {
-            throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        int i3 = this.zzk;
+        if (i2 > i3) {
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            return 0;
         }
-        this.zzk = i10;
+        this.zzk = i2;
         zzL();
-        return i11;
+        return i3;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
@@ -172,77 +175,75 @@ final class zzqn extends zzqq {
     }
 
     public final int zzi() {
-        int i7 = this.zzi;
-        if (this.zzg - i7 < 4) {
-            throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        int i = this.zzi;
+        if (this.zzg - i < 4) {
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            return 0;
         }
         byte[] bArr = this.zzf;
-        this.zzi = i7 + 4;
-        int i10 = bArr[i7] & 255;
-        int i11 = bArr[i7 + 1] & 255;
-        int i12 = bArr[i7 + 2] & 255;
-        return ((bArr[i7 + 3] & 255) << 24) | (i11 << 8) | i10 | (i12 << 16);
+        this.zzi = i + 4;
+        return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0066, code lost:
+    
+        if (r2[r3] >= 0) goto L32;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final int zzj() {
-        int i7;
-        int i10 = this.zzi;
-        int i11 = this.zzg;
-        if (i11 != i10) {
+        int i;
+        int i2 = this.zzi;
+        int i3 = this.zzg;
+        if (i3 != i2) {
             byte[] bArr = this.zzf;
-            int i12 = i10 + 1;
-            byte b10 = bArr[i10];
-            if (b10 >= 0) {
-                this.zzi = i12;
-                return b10;
+            int i4 = i2 + 1;
+            byte b = bArr[i2];
+            if (b >= 0) {
+                this.zzi = i4;
+                return b;
             }
-            if (i11 - i12 >= 9) {
-                int i13 = i10 + 2;
-                int i14 = (bArr[i12] << 7) ^ b10;
-                if (i14 < 0) {
-                    i7 = i14 ^ (-128);
+            if (i3 - i4 >= 9) {
+                int i5 = i2 + 2;
+                int i6 = b ^ (bArr[i4] << 7);
+                if (i6 < 0) {
+                    i = i6 ^ (-128);
                 } else {
-                    int i15 = i10 + 3;
-                    int i16 = (bArr[i13] << 14) ^ i14;
-                    if (i16 >= 0) {
-                        i7 = i16 ^ 16256;
+                    int i7 = i2 + 3;
+                    int i8 = i6 ^ (bArr[i5] << 14);
+                    if (i8 >= 0) {
+                        i = i8 ^ 16256;
                     } else {
-                        int i17 = i10 + 4;
-                        int i18 = i16 ^ (bArr[i15] << 21);
-                        if (i18 < 0) {
-                            i7 = (-2080896) ^ i18;
+                        i5 = i2 + 4;
+                        int i9 = i8 ^ (bArr[i7] << 21);
+                        if (i9 < 0) {
+                            i = i9 ^ (-2080896);
                         } else {
-                            i15 = i10 + 5;
-                            byte b11 = bArr[i17];
-                            int i19 = (i18 ^ (b11 << 28)) ^ 266354560;
-                            if (b11 < 0) {
-                                i17 = i10 + 6;
-                                if (bArr[i15] < 0) {
-                                    i15 = i10 + 7;
-                                    if (bArr[i17] < 0) {
-                                        i17 = i10 + 8;
-                                        if (bArr[i15] < 0) {
-                                            i15 = i10 + 9;
-                                            if (bArr[i17] < 0) {
-                                                int i20 = i10 + 10;
-                                                if (bArr[i15] >= 0) {
-                                                    i13 = i20;
-                                                    i7 = i19;
-                                                }
+                            i7 = i2 + 5;
+                            byte b2 = bArr[i5];
+                            i = (i9 ^ (b2 << 28)) ^ 266354560;
+                            if (b2 < 0) {
+                                i5 = i2 + 6;
+                                if (bArr[i7] < 0) {
+                                    i7 = i2 + 7;
+                                    if (bArr[i5] < 0) {
+                                        i5 = i2 + 8;
+                                        if (bArr[i7] < 0) {
+                                            i7 = i2 + 9;
+                                            if (bArr[i5] < 0) {
+                                                i5 = i2 + 10;
                                             }
                                         }
                                     }
                                 }
-                                i7 = i19;
                             }
-                            i7 = i19;
                         }
-                        i13 = i17;
                     }
-                    i13 = i15;
+                    i5 = i7;
                 }
-                this.zzi = i13;
-                return i7;
+                this.zzi = i5;
+                return i;
             }
         }
         return (int) zzs();
@@ -269,7 +270,8 @@ final class zzqn extends zzqq {
         if ((zzj >>> 3) != 0) {
             return zzj;
         }
-        throw new zzsx("Protocol message contained an invalid tag (zero).");
+        fvc.i("Protocol message contained an invalid tag (zero).");
+        return 0;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
@@ -288,111 +290,110 @@ final class zzqn extends zzqq {
     }
 
     public final long zzq() {
-        int i7 = this.zzi;
-        if (this.zzg - i7 < 8) {
-            throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        int i = this.zzi;
+        if (this.zzg - i < 8) {
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            return 0L;
         }
         byte[] bArr = this.zzf;
-        this.zzi = i7 + 8;
-        long j3 = bArr[i7];
-        long j10 = bArr[i7 + 2];
-        long j11 = bArr[i7 + 3];
-        return ((bArr[i7 + 6] & 255) << 48) | (j3 & 255) | ((bArr[i7 + 1] & 255) << 8) | ((j10 & 255) << 16) | ((j11 & 255) << 24) | ((bArr[i7 + 4] & 255) << 32) | ((bArr[i7 + 5] & 255) << 40) | ((bArr[i7 + 7] & 255) << 56);
+        this.zzi = i + 8;
+        return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24) | ((bArr[i + 4] & 255) << 32) | ((bArr[i + 5] & 255) << 40) | ((bArr[i + 6] & 255) << 48) | ((bArr[i + 7] & 255) << 56);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00ad, code lost:
     
-        if (r2[r5] >= 0) goto L28;
+        if (r2[r3] >= 0) goto L39;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final long zzr() {
+        long j;
+        long j2;
         long j3;
-        long j10;
-        long j11;
-        int i7 = this.zzi;
-        int i10 = this.zzg;
-        if (i10 != i7) {
+        long j4;
+        int i;
+        int i2 = this.zzi;
+        int i3 = this.zzg;
+        if (i3 != i2) {
             byte[] bArr = this.zzf;
-            int i11 = i7 + 1;
-            byte b10 = bArr[i7];
-            if (b10 >= 0) {
-                this.zzi = i11;
-                return b10;
+            int i4 = i2 + 1;
+            byte b = bArr[i2];
+            if (b >= 0) {
+                this.zzi = i4;
+                return b;
             }
-            if (i10 - i11 >= 9) {
-                int i12 = i7 + 2;
-                int i13 = (bArr[i11] << 7) ^ b10;
-                if (i13 < 0) {
-                    j10 = i13 ^ (-128);
-                } else {
-                    int i14 = i7 + 3;
-                    int i15 = (bArr[i12] << 14) ^ i13;
-                    if (i15 >= 0) {
-                        j10 = i15 ^ 16256;
+            if (i3 - i4 >= 9) {
+                int i5 = i2 + 2;
+                int i6 = b ^ (bArr[i4] << 7);
+                if (i6 >= 0) {
+                    int i7 = i2 + 3;
+                    int i8 = i6 ^ (bArr[i5] << 14);
+                    if (i8 >= 0) {
+                        j4 = i8 ^ 16256;
                     } else {
-                        int i16 = i7 + 4;
-                        int i17 = i15 ^ (bArr[i14] << 21);
-                        if (i17 < 0) {
-                            long j12 = (-2080896) ^ i17;
-                            i12 = i16;
-                            j10 = j12;
+                        i5 = i2 + 4;
+                        int i9 = i8 ^ (bArr[i7] << 21);
+                        if (i9 < 0) {
+                            i = i9 ^ (-2080896);
                         } else {
-                            i14 = i7 + 5;
-                            long j13 = (bArr[i16] << 28) ^ i17;
-                            if (j13 >= 0) {
-                                j10 = j13 ^ 266354560;
-                            } else {
-                                i12 = i7 + 6;
-                                long j14 = (bArr[i14] << 35) ^ j13;
-                                if (j14 < 0) {
-                                    j11 = -34093383808L;
+                            i7 = i2 + 5;
+                            long j5 = i9 ^ (bArr[i5] << 28);
+                            if (j5 < 0) {
+                                i5 = i2 + 6;
+                                long j6 = j5 ^ (bArr[i7] << 35);
+                                if (j6 < 0) {
+                                    j2 = -34093383808L;
                                 } else {
-                                    int i18 = i7 + 7;
-                                    long j15 = j14 ^ (bArr[i12] << 42);
-                                    if (j15 >= 0) {
-                                        j10 = 4363953127296L ^ j15;
+                                    i7 = i2 + 7;
+                                    j5 = j6 ^ (bArr[i5] << 42);
+                                    if (j5 >= 0) {
+                                        j3 = 4363953127296L;
                                     } else {
-                                        i12 = i7 + 8;
-                                        j14 = j15 ^ (bArr[i18] << 49);
-                                        if (j14 < 0) {
-                                            j11 = -558586000294016L;
-                                        } else {
-                                            i18 = i7 + 9;
-                                            j3 = (j14 ^ (bArr[i12] << 56)) ^ 71499008037633920L;
-                                            if (j3 < 0) {
-                                                i12 = i7 + 10;
-                                            } else {
-                                                j10 = j3;
-                                            }
+                                        i5 = i2 + 8;
+                                        j6 = j5 ^ (bArr[i7] << 49);
+                                        if (j6 >= 0) {
+                                            long j7 = (j6 ^ (bArr[i5] << 56)) ^ 71499008037633920L;
+                                            i5 = j7 < 0 ? i2 + 10 : i2 + 9;
+                                            j = j7;
+                                            this.zzi = i5;
+                                            return j;
                                         }
+                                        j2 = -558586000294016L;
                                     }
-                                    i12 = i18;
                                 }
-                                j3 = j14 ^ j11;
-                                j10 = j3;
+                                j = j2 ^ j6;
+                                this.zzi = i5;
+                                return j;
                             }
+                            j3 = 266354560;
+                            j4 = j3 ^ j5;
                         }
                     }
-                    i12 = i14;
+                    i5 = i7;
+                    j = j4;
+                    this.zzi = i5;
+                    return j;
                 }
-                this.zzi = i12;
-                return j10;
+                i = i6 ^ (-128);
+                j = i;
+                this.zzi = i5;
+                return j;
             }
         }
         return zzs();
     }
 
     public final long zzs() {
-        long j3 = 0;
-        for (int i7 = 0; i7 < 64; i7 += 7) {
-            j3 |= (r3 & Byte.MAX_VALUE) << i7;
+        long j = 0;
+        for (int i = 0; i < 64; i += 7) {
+            j |= (r5 & Byte.MAX_VALUE) << i;
             if ((zza() & 128) == 0) {
-                return j3;
+                return j;
             }
         }
-        throw new zzsx("CodedInputStream encountered a malformed varint.");
+        fvc.i("CodedInputStream encountered a malformed varint.");
+        return 0L;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
@@ -414,10 +415,10 @@ final class zzqn extends zzqq {
     public final zzqm zzw() {
         int zzj = zzj();
         if (zzj > 0) {
-            int i7 = this.zzg;
-            int i10 = this.zzi;
-            if (zzj <= i7 - i10) {
-                zzqm zzl = zzqm.zzl(this.zzf, i10, zzj);
+            int i = this.zzg;
+            int i2 = this.zzi;
+            if (zzj <= i - i2) {
+                zzqm zzl = zzqm.zzl(this.zzf, i2, zzj);
                 this.zzi += zzj;
                 return zzl;
             }
@@ -425,31 +426,31 @@ final class zzqn extends zzqq {
         if (zzj == 0) {
             return zzqm.zzb;
         }
-        if (zzj > 0) {
-            int i11 = this.zzg;
-            int i12 = this.zzi;
-            if (zzj <= i11 - i12) {
-                int i13 = zzj + i12;
-                this.zzi = i13;
-                byte[] copyOfRange = Arrays.copyOfRange(this.zzf, i12, i13);
-                zzqm zzqmVar = zzqm.zzb;
-                return new zzqk(copyOfRange);
-            }
-        }
         if (zzj <= 0) {
-            throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            return null;
         }
-        throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        int i3 = this.zzg;
+        int i4 = this.zzi;
+        if (zzj > i3 - i4) {
+            fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+            return null;
+        }
+        int i5 = zzj + i4;
+        this.zzi = i5;
+        byte[] copyOfRange = Arrays.copyOfRange(this.zzf, i4, i5);
+        zzqm zzqmVar = zzqm.zzb;
+        return new zzqk(copyOfRange);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
     public final String zzx() {
         int zzj = zzj();
         if (zzj > 0) {
-            int i7 = this.zzg;
-            int i10 = this.zzi;
-            if (zzj <= i7 - i10) {
-                String str = new String(this.zzf, i10, zzj, zzsv.zza);
+            int i = this.zzg;
+            int i2 = this.zzi;
+            if (zzj <= i - i2) {
+                String str = new String(this.zzf, i2, zzj, zzsv.zza);
                 this.zzi += zzj;
                 return str;
             }
@@ -458,19 +459,21 @@ final class zzqn extends zzqq {
             return "";
         }
         if (zzj < 0) {
-            throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            return null;
         }
-        throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        return null;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
     public final String zzy() {
         int zzj = zzj();
         if (zzj > 0) {
-            int i7 = this.zzg;
-            int i10 = this.zzi;
-            if (zzj <= i7 - i10) {
-                String zzd = zzvf.zzd(this.zzf, i10, zzj);
+            int i = this.zzg;
+            int i2 = this.zzi;
+            if (zzj <= i - i2) {
+                String zzd = zzvf.zzd(this.zzf, i2, zzj);
                 this.zzi += zzj;
                 return zzd;
             }
@@ -479,15 +482,18 @@ final class zzqn extends zzqq {
             return "";
         }
         if (zzj <= 0) {
-            throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            fvc.i("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+            return null;
         }
-        throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        return null;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqq
-    public final void zzz(int i7) {
-        if (this.zzj != i7) {
-            throw new zzsx("Protocol message end-group tag did not match expected tag.");
+    public final void zzz(int i) {
+        if (this.zzj == i) {
+            return;
         }
+        fvc.i("Protocol message end-group tag did not match expected tag.");
     }
 }

@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class RaiseAtom extends Atom {
     private Atom base;
@@ -11,36 +11,36 @@ public class RaiseAtom extends Atom {
     private float r;
     private int runit;
 
-    public RaiseAtom(Atom atom, int i7, float f10, int i10, float f11, int i11, float f12) {
+    public RaiseAtom(Atom atom, int i, float f, int i2, float f2, int i3, float f3) {
         this.base = atom;
-        this.runit = i7;
-        this.r = f10;
-        this.hunit = i10;
-        this.h = f11;
-        this.dunit = i11;
-        this.d = f12;
+        this.runit = i;
+        this.r = f;
+        this.hunit = i2;
+        this.h = f2;
+        this.dunit = i3;
+        this.d = f3;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         Box createBox = this.base.createBox(teXEnvironment);
-        int i7 = this.runit;
-        if (i7 == -1) {
+        int i = this.runit;
+        if (i == -1) {
             createBox.setShift(0.0f);
         } else {
-            createBox.setShift(SpaceAtom.getFactor(i7, teXEnvironment) * (-this.r));
+            createBox.setShift(SpaceAtom.getFactor(i, teXEnvironment) * (-this.r));
         }
         if (this.hunit == -1) {
             return createBox;
         }
         HorizontalBox horizontalBox = new HorizontalBox(createBox);
         horizontalBox.setHeight(SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h);
-        int i10 = this.dunit;
-        if (i10 == -1) {
+        int i2 = this.dunit;
+        if (i2 == -1) {
             horizontalBox.setDepth(0.0f);
             return horizontalBox;
         }
-        horizontalBox.setDepth(SpaceAtom.getFactor(i10, teXEnvironment) * this.d);
+        horizontalBox.setDepth(SpaceAtom.getFactor(i2, teXEnvironment) * this.d);
         return horizontalBox;
     }
 

@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzo implements Runnable {
     final /* synthetic */ Task zza;
@@ -20,25 +20,27 @@ final class zzo implements Runnable {
     public final void run() {
         try {
             Task then = this.zzb.zzc().then(this.zza.getResult());
+            zzp zzpVar = this.zzb;
             if (then == null) {
-                this.zzb.onFailure(new NullPointerException("Continuation returned null"));
+                zzpVar.onFailure(new NullPointerException("Continuation returned null"));
                 return;
             }
-            zzp zzpVar = this.zzb;
             Executor executor = TaskExecutors.zza;
             then.addOnSuccessListener(executor, zzpVar);
             then.addOnFailureListener(executor, zzpVar);
             then.addOnCanceledListener(executor, zzpVar);
-        } catch (RuntimeExecutionException e10) {
-            if (e10.getCause() instanceof Exception) {
-                this.zzb.onFailure((Exception) e10.getCause());
+        } catch (RuntimeExecutionException e) {
+            boolean z = e.getCause() instanceof Exception;
+            zzp zzpVar2 = this.zzb;
+            if (z) {
+                zzpVar2.onFailure((Exception) e.getCause());
             } else {
-                this.zzb.onFailure(e10);
+                zzpVar2.onFailure(e);
             }
         } catch (CancellationException unused) {
             this.zzb.onCanceled();
-        } catch (Exception e11) {
-            this.zzb.onFailure(e11);
+        } catch (Exception e2) {
+            this.zzb.onFailure(e2);
         }
     }
 }

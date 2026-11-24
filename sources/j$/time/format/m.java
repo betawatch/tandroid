@@ -1,48 +1,44 @@
 package j$.time.format;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class m implements f {
-    public final j$.time.temporal.o a;
+    public final j$.time.temporal.a a;
     public final TextStyle b;
     public final u c;
     public volatile i d;
 
-    public m(j$.time.temporal.o oVar, TextStyle textStyle, u uVar) {
-        this.a = oVar;
+    public m(j$.time.temporal.a aVar, TextStyle textStyle, u uVar) {
+        this.a = aVar;
         this.b = textStyle;
         this.c = uVar;
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
-        String b10;
-        Long a10 = rVar.a(this.a);
-        if (a10 == null) {
+    public final boolean j(r rVar, StringBuilder sb) {
+        Long a = rVar.a(this.a);
+        if (a == null) {
             return false;
         }
-        j$.time.chrono.k kVar = (j$.time.chrono.k) rVar.a.m(j$.time.temporal.p.b);
-        if (kVar == null || kVar == j$.time.chrono.r.c) {
-            b10 = this.c.b(this.a, a10.longValue(), this.b, rVar.b.b);
-        } else {
-            b10 = this.c.a(kVar, this.a, a10.longValue(), this.b, rVar.b.b);
-        }
-        if (b10 != null) {
-            sb2.append(b10);
+        j$.time.chrono.a aVar = (j$.time.chrono.a) rVar.a.r(j$.time.temporal.p.b);
+        String b = (aVar == null || aVar == j$.time.chrono.q.c) ? this.c.b(this.a, a.longValue(), this.b, rVar.b.b) : this.c.a(aVar, this.a, a.longValue(), this.b, rVar.b.b);
+        if (b != null) {
+            sb.append(b);
             return true;
         }
         if (this.d == null) {
             this.d = new i(this.a, 1, 19, x.NORMAL);
         }
-        return this.d.j(rVar, sb2);
+        return this.d.j(rVar, sb);
     }
 
     public final String toString() {
         TextStyle textStyle = TextStyle.FULL;
-        j$.time.temporal.o oVar = this.a;
         TextStyle textStyle2 = this.b;
+        j$.time.temporal.a aVar = this.a;
         if (textStyle2 == textStyle) {
-            return "Text(" + oVar + ")";
+            return "Text(" + aVar + ")";
         }
-        return "Text(" + oVar + "," + textStyle2 + ")";
+        return "Text(" + aVar + "," + textStyle2 + ")";
     }
 }

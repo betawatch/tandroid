@@ -5,23 +5,22 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import b1.a;
-import b1.d;
-import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class IdentityCredentialApiHiddenActivity extends Activity {
     public ResultReceiver a;
     public boolean b;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i7, int i10, Intent intent) {
-        super.onActivityResult(i7, i10, intent);
+    public final void onActivityResult(int i, int i2, Intent intent) {
+        super.onActivityResult(i, i2, intent);
         ResultReceiver resultReceiver = this.a;
         if (resultReceiver != null) {
-            int i11 = d.d;
-            a.d(resultReceiver, i7, i10, intent);
+            t13 t13Var = y13.a;
+            Bundle j = tb4.j(i, "FAILURE_RESPONSE", "ACTIVITY_REQUEST_CODE", false);
+            j.putParcelable("RESULT_DATA", intent);
+            resultReceiver.send(i2, j);
         }
         this.b = false;
         finish();
@@ -50,21 +49,21 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
         PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("EXTRA_FLOW_PENDING_INTENT");
         if (pendingIntent != null) {
             this.b = true;
-            startIntentSenderForResult(pendingIntent.getIntentSender(), d.c, null, 0, 0, 0, null);
+            startIntentSenderForResult(pendingIntent.getIntentSender(), y13.c ? 1 : 0, null, 0, 0, 0, null);
             return;
         }
         ResultReceiver resultReceiver2 = this.a;
         if (resultReceiver2 != null) {
-            int i7 = d.d;
-            a.c(resultReceiver2, stringExtra, "Internal error");
+            t13 t13Var = y13.a;
+            t13.c(resultReceiver2, stringExtra, "Internal error");
         }
         finish();
     }
 
     @Override // android.app.Activity
-    public final void onSaveInstanceState(Bundle outState) {
-        j.e(outState, "outState");
-        outState.putBoolean("androidx.credentials.playservices.AWAITING_RESULT", this.b);
-        super.onSaveInstanceState(outState);
+    public final void onSaveInstanceState(Bundle bundle) {
+        bundle.getClass();
+        bundle.putBoolean("androidx.credentials.playservices.AWAITING_RESULT", this.b);
+        super.onSaveInstanceState(bundle);
     }
 }

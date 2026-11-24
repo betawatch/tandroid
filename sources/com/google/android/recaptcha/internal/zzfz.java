@@ -1,67 +1,57 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.s;
-import zd.t;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfz extends j implements p {
+final class zzfz extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzgb zzb;
-    final /* synthetic */ s zzc;
+    final /* synthetic */ bp2 zzc;
     final /* synthetic */ zzhk zzd;
     final /* synthetic */ long zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfz(zzgb zzgbVar, s sVar, zzhk zzhkVar, long j3, c cVar) {
-        super(2, cVar);
+    public zzfz(zzgb zzgbVar, bp2 bp2Var, zzhk zzhkVar, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzgbVar;
-        this.zzc = sVar;
+        this.zzc = bp2Var;
         this.zzd = zzhkVar;
-        this.zze = j3;
+        this.zze = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzfz(this.zzb, this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzfz(this.zzb, this.zzc, this.zzd, this.zze, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfz) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfz) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzcg zzcgVar;
         zzfz zzfzVar;
         zzdr zzdrVar;
-        zzcg e10;
+        zzcg e;
         zzcx zzcxVar;
         zzfw zzfwVar;
         zzfy zzfyVar;
-        a aVar = a.a;
         if (this.zza != 0) {
             try {
-                c8.z.b(obj);
+                qse.b(obj);
                 zzfzVar = this;
-            } catch (zzcg e11) {
-                zzcgVar = e11;
+            } catch (zzcg e2) {
+                zzcgVar = e2;
                 zzfzVar = this;
                 zzgb zzgbVar = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar.zzf = zzdrVar;
-                ((t) zzfzVar.zzc).Q(zzcgVar);
-                return k.a;
+                ((cp2) zzfzVar.zzc).P(zzcgVar);
+                return g5c.a;
             }
         } else {
-            c8.z.b(obj);
+            qse.b(obj);
             try {
                 zzcxVar = zzcx.zza;
                 zzgb zzgbVar2 = this.zzb;
@@ -69,32 +59,33 @@ final class zzfz extends j implements p {
                 zzfyVar = new zzfy(this.zzd, zzgbVar2, this.zze, this.zzc, null);
                 this.zza = 1;
                 zzfzVar = this;
-            } catch (zzcg e12) {
-                e10 = e12;
+            } catch (zzcg e3) {
+                e = e3;
                 zzfzVar = this;
-                zzcgVar = e10;
+                zzcgVar = e;
                 zzgb zzgbVar3 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar3.zzf = zzdrVar;
-                ((t) zzfzVar.zzc).Q(zzcgVar);
-                return k.a;
+                ((cp2) zzfzVar.zzc).P(zzcgVar);
+                return g5c.a;
             }
             try {
                 obj = zzcxVar.zzb(zzfwVar, 100L, 1000L, 2.0d, zzfyVar, zzfzVar);
-                if (obj == aVar) {
-                    return aVar;
+                bx2 bx2Var = bx2.a;
+                if (obj == bx2Var) {
+                    return bx2Var;
                 }
-            } catch (zzcg e13) {
-                e10 = e13;
-                zzcgVar = e10;
+            } catch (zzcg e4) {
+                e = e4;
+                zzcgVar = e;
                 zzgb zzgbVar32 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar32.zzf = zzdrVar;
-                ((t) zzfzVar.zzc).Q(zzcgVar);
-                return k.a;
+                ((cp2) zzfzVar.zzc).P(zzcgVar);
+                return g5c.a;
             }
         }
         ((Boolean) obj).getClass();
-        return k.a;
+        return g5c.a;
     }
 }

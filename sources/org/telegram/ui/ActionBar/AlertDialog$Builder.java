@@ -7,136 +7,133 @@ import android.widget.TextView;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class AlertDialog$Builder {
-    public final t1 a;
+    public final hd a;
     public final boolean[] b;
 
-    public AlertDialog$Builder(Context context) {
-        this(0, context, null);
+    public AlertDialog$Builder(int i, wjb wjbVar, Context context) {
+        this.b = new boolean[3];
+        if (context == null && (context = gl.W(LaunchActivity.H1)) == null) {
+            context = org.telegram.messenger.a.b;
+        }
+        this.a = a(i, wjbVar, context);
     }
 
-    public final t1 a() {
-        return this.a;
+    public hd a(int i, wjb wjbVar, Context context) {
+        return new hd(i, wjbVar, context);
     }
 
-    public t1 b(int i7, Context context, i6 i6Var) {
-        return new t1(i7, context, i6Var);
-    }
-
-    public final void c() {
-        int i7 = t1.k1;
+    public final void b() {
+        int i = hd.k1;
         this.a.getClass();
     }
 
-    public final void d(int i7) {
-        int i10 = (-i7) - 1;
-        if (i10 >= 0) {
+    public final void c(int i) {
+        int i2 = (-i) - 1;
+        if (i2 >= 0) {
             boolean[] zArr = this.b;
-            if (i10 < zArr.length) {
-                zArr[i10] = true;
+            if (i2 < zArr.length) {
+                zArr[i2] = true;
             }
         }
     }
 
-    public final void e() {
+    public final void d() {
         this.a.R0 = 0.5f;
     }
 
-    public final void f(CharSequence[] charSequenceArr, DialogInterface.OnClickListener onClickListener) {
-        t1 t1Var = this.a;
-        t1Var.Q = charSequenceArr;
-        t1Var.N = onClickListener;
+    public final void e(CharSequence[] charSequenceArr, DialogInterface.OnClickListener onClickListener) {
+        hd hdVar = this.a;
+        hdVar.Q = charSequenceArr;
+        hdVar.N = onClickListener;
     }
 
-    public final void g(CharSequence charSequence) {
+    public final void f(CharSequence charSequence) {
         this.a.U = charSequence;
     }
 
-    public final void h(String str, q1 q1Var) {
-        t1 t1Var = this.a;
-        t1Var.o0 = str;
-        t1Var.p0 = q1Var;
+    public final void g(String str, ed edVar) {
+        hd hdVar = this.a;
+        hdVar.o0 = str;
+        hdVar.p0 = edVar;
     }
 
-    public final void i(String str, q1 q1Var) {
-        t1 t1Var = this.a;
-        t1Var.s0 = str;
-        t1Var.t0 = q1Var;
+    public final void h(String str, ed edVar) {
+        hd hdVar = this.a;
+        hdVar.s0 = str;
+        hdVar.t0 = edVar;
     }
 
-    public final void j(DialogInterface.OnDismissListener onDismissListener) {
+    public final void i(DialogInterface.OnDismissListener onDismissListener) {
         this.a.setOnDismissListener(onDismissListener);
     }
 
-    public final void k(CharSequence charSequence, q1 q1Var) {
-        t1 t1Var = this.a;
-        t1Var.m0 = charSequence;
-        t1Var.n0 = q1Var;
+    public final void j(CharSequence charSequence, ed edVar) {
+        hd hdVar = this.a;
+        hdVar.m0 = charSequence;
+        hdVar.n0 = edVar;
     }
 
-    public final void l(CharSequence charSequence) {
+    public final void k(CharSequence charSequence) {
         this.a.S = charSequence;
     }
 
-    public final void m(int i7, int i10, int i11, HashMap hashMap) {
-        t1 t1Var = this.a;
-        t1Var.Y = i7;
-        t1Var.Z = i10;
-        t1Var.T0 = false;
-        t1Var.d0 = i11;
-        t1Var.e0 = -1;
-        t1Var.a0 = hashMap;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void l(int i, int i2, int i3, HashMap hashMap) {
+        hd hdVar = this.a;
+        hdVar.Y = i;
+        hdVar.Z = i2;
+        hdVar.T0 = false;
+        hdVar.d0 = i3;
+        hdVar.e0 = -1;
+        hdVar.a0 = hashMap;
     }
 
-    public final void n(int i7, i6 i6Var) {
-        t1 t1Var = this.a;
-        t1Var.e0 = i7;
-        t1Var.f0 = i6Var;
-        t1Var.d0 = n6.w0(i7, i6Var);
+    public final void m(int i, wjb wjbVar) {
+        hd hdVar = this.a;
+        hdVar.e0 = i;
+        hdVar.f0 = wjbVar;
+        hdVar.d0 = bkb.v0(i, wjbVar);
     }
 
-    public final void o(View view) {
-        t1 t1Var = this.a;
-        t1Var.b = view;
-        t1Var.e = -2;
+    public final void n(View view) {
+        hd hdVar = this.a;
+        hdVar.b = view;
+        hdVar.e = -2;
     }
 
-    public final t1 p() {
+    public final hd o() {
         TextView textView;
-        t1 t1Var = this.a;
-        t1Var.show();
-        int i7 = 0;
+        hd hdVar = this.a;
+        hdVar.show();
+        int i = 0;
         while (true) {
             boolean[] zArr = this.b;
-            if (i7 >= zArr.length) {
-                return t1Var;
+            if (i >= zArr.length) {
+                return hdVar;
             }
-            if (zArr[i7] && (textView = (TextView) t1Var.d(-(i7 + 1))) != null) {
-                u6.U(textView, n6.q7, t1Var.j1);
+            if (zArr[i] && (textView = (TextView) hdVar.c(-(i + 1))) != null) {
+                zkb.X(textView, bkb.p7, hdVar.j1);
             }
-            i7++;
+            i++;
         }
     }
 
-    public AlertDialog$Builder setTopImage(int i7, int i10) {
-        t1 t1Var = this.a;
-        t1Var.V = i7;
-        t1Var.d0 = i10;
-        t1Var.e0 = -1;
+    public AlertDialog$Builder setTopImage(int i, int i2) {
+        hd hdVar = this.a;
+        hdVar.V = i;
+        hdVar.d0 = i2;
+        hdVar.e0 = -1;
         return this;
     }
 
-    public AlertDialog$Builder(Context context, i6 i6Var) {
-        this(0, context, i6Var);
+    public AlertDialog$Builder(Context context, wjb wjbVar) {
+        this(0, wjbVar, context);
     }
 
-    public AlertDialog$Builder(int i7, Context context, i6 i6Var) {
-        this.b = new boolean[3];
-        if (context == null && (context = org.telegram.messenger.g0.W(LaunchActivity.H1)) == null) {
-            context = org.telegram.messenger.t0.b;
-        }
-        this.a = b(i7, context, i6Var);
+    public AlertDialog$Builder(Context context) {
+        this(0, null, context);
     }
 }

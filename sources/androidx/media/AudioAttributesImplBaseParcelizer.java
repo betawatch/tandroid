@@ -1,24 +1,22 @@
 package androidx.media;
 
-import b5.b;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBaseParcelizer {
-    public static AudioAttributesImplBase read(b bVar) {
+    public static AudioAttributesImplBase read(y9c y9cVar) {
         AudioAttributesImplBase audioAttributesImplBase = new AudioAttributesImplBase();
-        audioAttributesImplBase.a = bVar.f(audioAttributesImplBase.a, 1);
-        audioAttributesImplBase.b = bVar.f(audioAttributesImplBase.b, 2);
-        audioAttributesImplBase.c = bVar.f(audioAttributesImplBase.c, 3);
-        audioAttributesImplBase.d = bVar.f(audioAttributesImplBase.d, 4);
+        audioAttributesImplBase.a = y9cVar.f(audioAttributesImplBase.a, 1);
+        audioAttributesImplBase.b = y9cVar.f(audioAttributesImplBase.b, 2);
+        audioAttributesImplBase.c = y9cVar.f(audioAttributesImplBase.c, 3);
+        audioAttributesImplBase.d = y9cVar.f(audioAttributesImplBase.d, 4);
         return audioAttributesImplBase;
     }
 
-    public static void write(AudioAttributesImplBase audioAttributesImplBase, b bVar) {
-        bVar.getClass();
-        bVar.j(audioAttributesImplBase.a, 1);
-        bVar.j(audioAttributesImplBase.b, 2);
-        bVar.j(audioAttributesImplBase.c, 3);
-        bVar.j(audioAttributesImplBase.d, 4);
+    public static void write(AudioAttributesImplBase audioAttributesImplBase, y9c y9cVar) {
+        y9cVar.getClass();
+        y9cVar.j(audioAttributesImplBase.a, 1);
+        y9cVar.j(audioAttributesImplBase.b, 2);
+        y9cVar.j(audioAttributesImplBase.c, 3);
+        y9cVar.j(audioAttributesImplBase.d, 4);
     }
 }

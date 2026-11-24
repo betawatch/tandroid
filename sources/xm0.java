@@ -1,0 +1,10 @@
+// default package
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class xm0 extends hn7 {
+    @Override // hn7
+    public final CharSequence d(int i) {
+        return k96.G(i, "Minutes", new Object[0]);
+    }
+}

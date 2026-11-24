@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.regex.Pattern;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class Period implements Serializable {
     public static final Period d = new Period(0, 0, 0);
     private static final long serialVersionUID = -3587258372562876L;
@@ -21,41 +22,45 @@ public final class Period implements Serializable {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i7 = 0; i7 < 3; i7++) {
-            arrayList.add(Objects.requireNonNull(objArr[i7]));
+        for (int i = 0; i < 3; i++) {
+            arrayList.add(Objects.requireNonNull(objArr[i]));
         }
         Collections.unmodifiableList(arrayList);
     }
 
+    public Period(int i, int i2, int i3) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+    }
+
     public static Period between(LocalDate localDate, LocalDate localDate2) {
         localDate.getClass();
-        LocalDate I = LocalDate.I(localDate2);
-        long M = I.M() - localDate.M();
-        int i7 = I.c - localDate.c;
-        if (M > 0 && i7 < 0) {
-            M--;
-            i7 = (int) (I.z() - localDate.T(M).z());
-        } else if (M < 0 && i7 > 0) {
-            M++;
-            i7 -= I.P();
+        LocalDate v = LocalDate.v(localDate2);
+        long F = v.F() - localDate.F();
+        int i = v.c - localDate.c;
+        if (F > 0 && i < 0) {
+            F--;
+            i = (int) (v.z() - localDate.M(F).z());
+        } else if (F < 0 && i > 0) {
+            F++;
+            i -= v.I();
         }
-        long j3 = M / 12;
-        int i10 = (int) (M % 12);
-        int i11 = (int) j3;
-        if (j3 == i11) {
-            return ((i11 | i10) | i7) == 0 ? d : new Period(i11, i10, i7);
+        long j = F / 12;
+        int i2 = (int) (F % 12);
+        int i3 = (int) j;
+        if (j == i3) {
+            return ((i3 | i2) | i) == 0 ? d : new Period(i3, i2, i);
         }
         throw new ArithmeticException();
     }
 
-    public Period(int i7, int i10, int i11) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
     }
 
-    public int getYears() {
-        return this.a;
+    private Object writeReplace() {
+        return new r((byte) 14, this);
     }
 
     public final boolean equals(Object obj) {
@@ -71,6 +76,10 @@ public final class Period implements Serializable {
         return false;
     }
 
+    public int getYears() {
+        return this.a;
+    }
+
     public final int hashCode() {
         return Integer.rotateLeft(this.c, 16) + Integer.rotateLeft(this.b, 8) + this.a;
     }
@@ -79,30 +88,22 @@ public final class Period implements Serializable {
         if (this == d) {
             return "P0D";
         }
-        StringBuilder sb2 = new StringBuilder("P");
-        int i7 = this.a;
-        if (i7 != 0) {
-            sb2.append(i7);
-            sb2.append('Y');
+        StringBuilder sb = new StringBuilder("P");
+        int i = this.a;
+        if (i != 0) {
+            sb.append(i);
+            sb.append('Y');
         }
-        int i10 = this.b;
-        if (i10 != 0) {
-            sb2.append(i10);
-            sb2.append('M');
+        int i2 = this.b;
+        if (i2 != 0) {
+            sb.append(i2);
+            sb.append('M');
         }
-        int i11 = this.c;
-        if (i11 != 0) {
-            sb2.append(i11);
-            sb2.append('D');
+        int i3 = this.c;
+        if (i3 != 0) {
+            sb.append(i3);
+            sb.append('D');
         }
-        return sb2.toString();
-    }
-
-    private Object writeReplace() {
-        return new p((byte) 14, this);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
+        return sb.toString();
     }
 }

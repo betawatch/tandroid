@@ -2,24 +2,24 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class OverBar extends VerticalBox {
-    public OverBar(Box box, float f10, float f11) {
-        add(new StrutBox(0.0f, f11, 0.0f, 0.0f));
-        add(new HorizontalRule(f11, box.getWidth(), 0.0f));
-        add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
+    public OverBar(Box box, float f, float f2) {
+        add(new StrutBox(0.0f, f2, 0.0f, 0.0f));
+        add(new HorizontalRule(f2, box.getWidth(), 0.0f));
+        add(new StrutBox(0.0f, f, 0.0f, 0.0f));
         add(box);
     }
 
     @Override // org.scilab.forge.jlatexmath.VerticalBox, org.scilab.forge.jlatexmath.Box
-    public /* bridge */ /* synthetic */ void add(int i7, Box box) {
-        super.add(i7, box);
+    public /* bridge */ /* synthetic */ void add(int i, Box box) {
+        super.add(i, box);
     }
 
     @Override // org.scilab.forge.jlatexmath.VerticalBox, org.scilab.forge.jlatexmath.Box
-    public /* bridge */ /* synthetic */ void draw(Graphics2D graphics2D, float f10, float f11) {
-        super.draw(graphics2D, f10, f11);
+    public /* bridge */ /* synthetic */ void draw(Graphics2D graphics2D, float f, float f2) {
+        super.draw(graphics2D, f, f2);
     }
 
     @Override // org.scilab.forge.jlatexmath.VerticalBox, org.scilab.forge.jlatexmath.Box

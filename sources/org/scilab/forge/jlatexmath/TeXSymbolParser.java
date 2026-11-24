@@ -1,6 +1,5 @@
 package org.scilab.forge.jlatexmath;
 
-import a8.p0;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class TeXSymbolParser {
     public static final String DELIMITER_ATTR = "del";
@@ -18,16 +17,25 @@ public class TeXSymbolParser {
     private static Map<String, Integer> typeMappings = new HashMap();
     private Element root;
 
-    public TeXSymbolParser() {
-        this(JLatexMathAndroid.getResourceAsStream(RESOURCE_NAME), RESOURCE_NAME);
+    public TeXSymbolParser(InputStream inputStream, String str) {
+        try {
+            DocumentBuilderFactory newInstance = DocumentBuilderFactory.newInstance();
+            newInstance.setIgnoringElementContentWhitespace(true);
+            newInstance.setIgnoringComments(true);
+            this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
+            setTypeMappings();
+        } catch (Exception e) {
+            throw new XMLResourceParseException(str, e);
+        }
     }
 
     private static String getAttrValueAndCheckIfNotNull(String str, Element element) {
         String attribute = element.getAttribute(str);
-        if (attribute.equals("")) {
-            throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), str, null);
+        if (!attribute.equals("")) {
+            return attribute;
         }
-        return attribute;
+        k93.g(RESOURCE_NAME, element.getTagName(), str, null);
+        return null;
     }
 
     private void setTypeMappings() {
@@ -44,30 +52,23 @@ public class TeXSymbolParser {
     public Map<String, SymbolAtom> readSymbols() {
         HashMap hashMap = new HashMap();
         NodeList elementsByTagName = this.root.getElementsByTagName("Symbol");
-        for (int i7 = 0; i7 < elementsByTagName.getLength(); i7++) {
-            Element element = (Element) elementsByTagName.item(i7);
+        for (int i = 0; i < elementsByTagName.getLength(); i++) {
+            Element element = (Element) elementsByTagName.item(i);
             String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
             String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull(TYPE_ATTR, element);
             String attribute = element.getAttribute(DELIMITER_ATTR);
-            boolean z10 = attribute != null && attribute.equals("true");
+            boolean z = attribute != null && attribute.equals("true");
             Integer num = typeMappings.get(attrValueAndCheckIfNotNull2);
             if (num == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, p0.p("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                k93.g(RESOURCE_NAME, "Symbol", TYPE_ATTR, tb4.y("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                return null;
             }
-            hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z10));
+            hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z));
         }
         return hashMap;
     }
 
-    public TeXSymbolParser(InputStream inputStream, String str) {
-        try {
-            DocumentBuilderFactory newInstance = DocumentBuilderFactory.newInstance();
-            newInstance.setIgnoringElementContentWhitespace(true);
-            newInstance.setIgnoringComments(true);
-            this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
-            setTypeMappings();
-        } catch (Exception e10) {
-            throw new XMLResourceParseException(str, e10);
-        }
+    public TeXSymbolParser() {
+        this(JLatexMathAndroid.getResourceAsStream(RESOURCE_NAME), RESOURCE_NAME);
     }
 }

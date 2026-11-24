@@ -1,45 +1,21 @@
 package org.telegram.utils.twidget;
 
-import android.graphics.BlendMode;
-import android.graphics.Paint;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g implements lvc, kvc {
+    public final /* synthetic */ Object a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
-public abstract class g {
-    public static final BlendMode[] a;
-
-    static {
-        BlendMode blendMode;
-        BlendMode blendMode2;
-        BlendMode blendMode3;
-        BlendMode blendMode4;
-        BlendMode blendMode5;
-        BlendMode blendMode6;
-        BlendMode blendMode7;
-        BlendMode blendMode8;
-        BlendMode blendMode9;
-        blendMode = BlendMode.SRC_OVER;
-        blendMode2 = BlendMode.SRC_IN;
-        blendMode3 = BlendMode.DST_IN;
-        blendMode4 = BlendMode.PLUS;
-        blendMode5 = BlendMode.SCREEN;
-        blendMode6 = BlendMode.OVERLAY;
-        blendMode7 = BlendMode.COLOR_DODGE;
-        blendMode8 = BlendMode.COLOR_BURN;
-        blendMode9 = BlendMode.SOFT_LIGHT;
-        a = new BlendMode[]{blendMode, blendMode2, BlendMode.SRC_OUT, BlendMode.SRC_ATOP, BlendMode.DST_OVER, blendMode3, BlendMode.DST_OUT, BlendMode.DST_ATOP, blendMode4, BlendMode.SRC, BlendMode.XOR, BlendMode.MULTIPLY, blendMode5, blendMode6, BlendMode.DARKEN, BlendMode.LIGHTEN, blendMode7, blendMode8, BlendMode.HARD_LIGHT, blendMode9, BlendMode.DIFFERENCE, BlendMode.EXCLUSION, BlendMode.HUE, BlendMode.SATURATION, BlendMode.COLOR, BlendMode.LUMINOSITY};
+    public /* synthetic */ g(Object obj) {
+        this.a = obj;
     }
 
-    public static void a(int i7, Paint paint) {
-        BlendMode blendMode;
-        if (i7 > 0) {
-            BlendMode[] blendModeArr = a;
-            if (i7 < blendModeArr.length) {
-                blendMode = blendModeArr[i7];
-                paint.setBlendMode(blendMode);
-            }
-        }
-        blendMode = null;
-        paint.setBlendMode(blendMode);
+    @Override // lvc
+    public final void a(byte[] bArr) {
+        ((WidgetEngineBackend) this.a).lambda$selectableText$5(bArr);
+    }
+
+    @Override // kvc
+    public final void run() {
+        ((lvc) this.a).a(null);
     }
 }

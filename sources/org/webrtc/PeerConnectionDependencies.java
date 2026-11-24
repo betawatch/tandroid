@@ -2,16 +2,20 @@ package org.webrtc;
 
 import org.webrtc.PeerConnection;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public final class PeerConnectionDependencies {
     private final PeerConnection.Observer observer;
     private final SSLCertificateVerifier sslCertificateVerifier;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Builder {
         private PeerConnection.Observer observer;
         private SSLCertificateVerifier sslCertificateVerifier;
+
+        private Builder(PeerConnection.Observer observer) {
+            this.observer = observer;
+        }
 
         public PeerConnectionDependencies createPeerConnectionDependencies() {
             return new PeerConnectionDependencies(this.observer, this.sslCertificateVerifier);
@@ -21,10 +25,11 @@ public final class PeerConnectionDependencies {
             this.sslCertificateVerifier = sSLCertificateVerifier;
             return this;
         }
+    }
 
-        private Builder(PeerConnection.Observer observer) {
-            this.observer = observer;
-        }
+    private PeerConnectionDependencies(PeerConnection.Observer observer, SSLCertificateVerifier sSLCertificateVerifier) {
+        this.observer = observer;
+        this.sslCertificateVerifier = sSLCertificateVerifier;
     }
 
     public static Builder builder(PeerConnection.Observer observer) {
@@ -37,10 +42,5 @@ public final class PeerConnectionDependencies {
 
     public SSLCertificateVerifier getSSLCertificateVerifier() {
         return this.sslCertificateVerifier;
-    }
-
-    private PeerConnectionDependencies(PeerConnection.Observer observer, SSLCertificateVerifier sSLCertificateVerifier) {
-        this.observer = observer;
-        this.sslCertificateVerifier = sSLCertificateVerifier;
     }
 }

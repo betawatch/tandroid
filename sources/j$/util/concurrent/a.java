@@ -1,21 +1,22 @@
 package j$.util.concurrent;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public abstract class a extends o {
     public final ConcurrentHashMap i;
     public k j;
 
-    public a(k[] kVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap) {
-        super(kVarArr, i7, 0, i10);
+    public a(k[] kVarArr, int i, int i2, ConcurrentHashMap concurrentHashMap) {
+        super(kVarArr, i, 0, i2);
         this.i = concurrentHashMap;
         a();
     }
 
-    public final boolean hasNext() {
+    public final boolean hasMoreElements() {
         return this.b != null;
     }
 
-    public final boolean hasMoreElements() {
+    public final boolean hasNext() {
         return this.b != null;
     }
 

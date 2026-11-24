@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class PredefinedTeXFormulaParser {
     public static final String RESOURCE_NAME = "PredefinedTeXFormulas.xml";
@@ -21,24 +21,25 @@ public class PredefinedTeXFormulaParser {
             newInstance.setIgnoringElementContentWhitespace(true);
             newInstance.setIgnoringComments(true);
             this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
-        } catch (Exception e10) {
-            throw new XMLResourceParseException("", e10);
+        } catch (Exception e) {
+            throw new XMLResourceParseException("", e);
         }
     }
 
     private static String getAttrValueAndCheckIfNotNull(String str, Element element) {
         String attribute = element.getAttribute(str);
-        if (attribute.equals("")) {
-            throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), str, null);
+        if (!attribute.equals("")) {
+            return attribute;
         }
-        return attribute;
+        k93.g(RESOURCE_NAME, element.getTagName(), str, null);
+        return null;
     }
 
     public void parse(Map map) {
         if ("true".equals(getAttrValueAndCheckIfNotNull("enabled", this.root))) {
             NodeList elementsByTagName = this.root.getElementsByTagName(this.type);
-            for (int i7 = 0; i7 < elementsByTagName.getLength(); i7++) {
-                Element element = (Element) elementsByTagName.item(i7);
+            for (int i = 0; i < elementsByTagName.getLength(); i++) {
+                Element element = (Element) elementsByTagName.item(i);
                 if ("true".equals(getAttrValueAndCheckIfNotNull("enabled", element))) {
                     String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
                     if ("TeXFormula".equals(this.type)) {

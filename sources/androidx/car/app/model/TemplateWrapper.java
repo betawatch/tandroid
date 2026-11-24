@@ -6,19 +6,19 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class TemplateWrapper {
     private int mCurrentTaskStep;
     private String mId;
     private boolean mIsRefresh;
-    private x0 mTemplate;
+    private ogb mTemplate;
     private List<TemplateInfo> mTemplateInfoForScreenStack;
 
-    private TemplateWrapper(x0 x0Var, String str) {
+    private TemplateWrapper() {
         this.mTemplateInfoForScreenStack = new ArrayList();
-        this.mTemplate = x0Var;
-        this.mId = str;
+        this.mTemplate = null;
+        this.mId = "";
     }
 
     public static TemplateWrapper copyOf(TemplateWrapper templateWrapper) {
@@ -36,8 +36,10 @@ public final class TemplateWrapper {
         return UUID.randomUUID().toString();
     }
 
-    public static TemplateWrapper wrap(x0 x0Var) {
-        return wrap(x0Var, createRandomId());
+    public static TemplateWrapper wrap(ogb ogbVar, String str) {
+        Objects.requireNonNull(ogbVar);
+        Objects.requireNonNull(str);
+        return new TemplateWrapper(ogbVar, str);
     }
 
     public int getCurrentTaskStep() {
@@ -50,10 +52,10 @@ public final class TemplateWrapper {
         return str;
     }
 
-    public x0 getTemplate() {
-        x0 x0Var = this.mTemplate;
-        Objects.requireNonNull(x0Var);
-        return x0Var;
+    public ogb getTemplate() {
+        ogb ogbVar = this.mTemplate;
+        Objects.requireNonNull(ogbVar);
+        return ogbVar;
     }
 
     public List<TemplateInfo> getTemplateInfosForScreenStack() {
@@ -65,20 +67,20 @@ public final class TemplateWrapper {
         return this.mIsRefresh;
     }
 
-    public void setCurrentTaskStep(int i7) {
-        this.mCurrentTaskStep = i7;
+    public void setCurrentTaskStep(int i) {
+        this.mCurrentTaskStep = i;
     }
 
     public void setId(String str) {
         this.mId = str;
     }
 
-    public void setRefresh(boolean z10) {
-        this.mIsRefresh = z10;
+    public void setRefresh(boolean z) {
+        this.mIsRefresh = z;
     }
 
-    public void setTemplate(x0 x0Var) {
-        this.mTemplate = x0Var;
+    public void setTemplate(ogb ogbVar) {
+        this.mTemplate = ogbVar;
     }
 
     public void setTemplateInfosForScreenStack(List<TemplateInfo> list) {
@@ -86,21 +88,19 @@ public final class TemplateWrapper {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[template: ");
-        sb2.append(this.mTemplate);
-        sb2.append(", ID: ");
-        return a8.p0.s(sb2, this.mId, "]");
+        StringBuilder sb = new StringBuilder("[template: ");
+        sb.append(this.mTemplate);
+        sb.append(", ID: ");
+        return b00.j(sb, this.mId, "]");
     }
 
-    public static TemplateWrapper wrap(x0 x0Var, String str) {
-        Objects.requireNonNull(x0Var);
-        Objects.requireNonNull(str);
-        return new TemplateWrapper(x0Var, str);
+    public static TemplateWrapper wrap(ogb ogbVar) {
+        return wrap(ogbVar, createRandomId());
     }
 
-    private TemplateWrapper() {
+    private TemplateWrapper(ogb ogbVar, String str) {
         this.mTemplateInfoForScreenStack = new ArrayList();
-        this.mTemplate = null;
-        this.mId = "";
+        this.mTemplate = ogbVar;
+        this.mId = str;
     }
 }

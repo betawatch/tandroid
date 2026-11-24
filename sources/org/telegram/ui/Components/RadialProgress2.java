@@ -14,15 +14,15 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class RadialProgress2 {
     public float A;
     public boolean B;
     public Bitmap C;
     public Canvas D;
     public float E;
-    public org.telegram.ui.ActionBar.i6 F;
+    public wjb F;
     public int G;
     public float H;
     public float I;
@@ -32,8 +32,8 @@ public class RadialProgress2 {
     public final Paint f;
     public final Paint g;
     public final Paint h;
-    public final c90 i;
-    public final c90 j;
+    public final tj6 i;
+    public final tj6 j;
     public float k;
     public int l;
     public int m;
@@ -53,7 +53,7 @@ public class RadialProgress2 {
     public final RectF a = new RectF();
     public int d = -1;
 
-    public RadialProgress2(View view, org.telegram.ui.ActionBar.i6 i6Var) {
+    public RadialProgress2(View view, wjb wjbVar) {
         Paint paint = new Paint(1);
         this.f = paint;
         this.g = new Paint(1);
@@ -70,26 +70,26 @@ public class RadialProgress2 {
         this.E = 1.0f;
         this.H = 1.0f;
         this.I = 1.0f;
-        this.F = i6Var;
+        this.F = wjbVar;
         this.e = new Paint(1);
         this.b = view;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.w = imageReceiver;
         imageReceiver.K0 = true;
-        c90 c90Var = new c90();
-        this.i = c90Var;
-        c90 c90Var2 = new c90();
-        this.j = c90Var2;
-        c90Var2.j = true;
-        c90Var2.b.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        c90Var2.d(4, false);
-        int L = org.telegram.messenger.g0.L(22.0f);
+        tj6 tj6Var = new tj6();
+        this.i = tj6Var;
+        tj6 tj6Var2 = new tj6();
+        this.j = tj6Var2;
+        tj6Var2.j = true;
+        tj6Var2.b.setStrokeWidth(gl.L(2.0f));
+        tj6Var2.d(4, false);
+        int L = gl.L(22.0f);
         this.x = L;
-        imageReceiver.K0(L);
+        imageReceiver.q0(L);
         paint.setColor(1677721600);
         if (view != null) {
-            c90Var.A = new hy(view, 13);
-            c90Var2.A = new hy(view, 13);
+            tj6Var.A = new em0(view);
+            tj6Var2.A = new em0(view);
         }
     }
 
@@ -98,22 +98,22 @@ public class RadialProgress2 {
     }
 
     public final float b() {
-        c90 c90Var = this.i;
-        int i7 = c90Var.q;
-        int i10 = c90Var.p;
-        if ((i7 == 3 || i7 == 6 || i7 == 10 || i7 == 8 || i7 == 0) && i10 == 4) {
-            return c90Var.b();
+        tj6 tj6Var = this.i;
+        int i = tj6Var.q;
+        int i2 = tj6Var.p;
+        if ((i == 3 || i == 6 || i == 10 || i == 8 || i == 0) && i2 == 4) {
+            return tj6Var.b();
         }
-        if (i7 != 4) {
+        if (i != 4) {
             return 1.0f;
         }
-        return 1.0f - c90Var.b();
+        return 1.0f - tj6Var.b();
     }
 
     public final void c() {
         if (this.C == null) {
             try {
-                this.C = Bitmap.createBitmap(org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), Bitmap.Config.ARGB_8888);
+                this.C = Bitmap.createBitmap(gl.L(48.0f), gl.L(48.0f), Bitmap.Config.ARGB_8888);
                 this.D = new Canvas(this.C);
             } catch (Throwable unused) {
             }
@@ -121,107 +121,113 @@ public class RadialProgress2 {
     }
 
     public final void d() {
-        int L = org.telegram.messenger.g0.L(2.0f);
+        int L = gl.L(2.0f);
         View view = this.b;
         RectF rectF = this.a;
-        int i7 = ((int) rectF.left) - L;
-        int i10 = ((int) rectF.top) - L;
-        int i11 = L * 2;
-        view.invalidate(i7, i10, ((int) rectF.right) + i11, ((int) rectF.bottom) + i11);
+        int i = ((int) rectF.left) - L;
+        int i2 = ((int) rectF.top) - L;
+        int i3 = L << 1;
+        view.invalidate(i, i2, ((int) rectF.right) + i3, ((int) rectF.bottom) + i3);
     }
 
     public void draw(Canvas canvas) {
-        int i7;
+        int i;
         int ceil;
         int ceil2;
-        float f10;
-        float f11;
+        float f;
+        float f2;
         Paint paint;
-        int i10;
+        int i2;
         float centerX;
+        int i3;
+        int i4;
         float centerY;
-        int i11;
-        float f12;
-        int i12;
+        float f3;
+        int i5;
         Canvas canvas2;
         Canvas canvas3;
         Canvas canvas4;
         int argb;
-        c90 c90Var = this.i;
-        int i13 = c90Var.q;
-        Paint paint2 = c90Var.c;
-        if (i13 != 4 || c90Var.b() < 1.0f) {
+        boolean z;
+        tj6 tj6Var = this.i;
+        int i6 = tj6Var.q;
+        Paint paint2 = tj6Var.c;
+        if (i6 != 4 || tj6Var.b() < 1.0f) {
             RectF rectF = this.a;
             if (rectF.isEmpty()) {
                 return;
             }
-            int i14 = c90Var.q;
-            float b10 = b();
-            boolean z10 = this.z;
-            c90 c90Var2 = this.j;
+            int i7 = tj6Var.q;
+            float b = b();
+            boolean z2 = this.z;
+            tj6 tj6Var2 = this.j;
             Paint paint3 = this.h;
-            if (!z10 || this.q >= 0) {
-                int i15 = this.u;
-                if (i15 >= 0) {
-                    c90Var2.c(org.telegram.ui.ActionBar.n6.w0(i15, this.F));
+            if (!z2 || this.q >= 0) {
+                int i8 = this.u;
+                if (i8 >= 0) {
+                    tj6Var2.c(bkb.v0(i8, this.F));
                 } else {
-                    c90Var2.c(this.n);
+                    tj6Var2.c(this.n);
                 }
-                int i16 = this.p;
-                if (i16 < 0) {
-                    paint3.setColor(this.l);
-                } else if (this.q >= 0) {
-                    paint3.setColor(org.telegram.messenger.g0.S0(this.r, this.s, org.telegram.ui.ActionBar.n6.w0(i16, this.F), org.telegram.ui.ActionBar.n6.w0(this.q, this.F)));
+                int i9 = this.p;
+                if (i9 >= 0) {
+                    int i10 = this.q;
+                    wjb wjbVar = this.F;
+                    if (i10 >= 0) {
+                        paint3.setColor(gl.R0(this.r, this.s, bkb.v0(i9, wjbVar), bkb.v0(this.q, this.F)));
+                    } else {
+                        paint3.setColor(bkb.v0(i9, wjbVar));
+                    }
                 } else {
-                    paint3.setColor(org.telegram.ui.ActionBar.n6.w0(i16, this.F));
+                    paint3.setColor(this.l);
                 }
             } else {
-                int i17 = this.v;
-                if (i17 >= 0) {
-                    c90Var2.c(org.telegram.ui.ActionBar.n6.w0(i17, this.F));
+                int i11 = this.v;
+                if (i11 >= 0) {
+                    tj6Var2.c(bkb.v0(i11, this.F));
                 } else {
-                    c90Var2.c(this.o);
+                    tj6Var2.c(this.o);
                 }
-                int i18 = this.t;
-                if (i18 >= 0) {
-                    paint3.setColor(org.telegram.ui.ActionBar.n6.w0(i18, this.F));
+                int i12 = this.t;
+                if (i12 >= 0) {
+                    paint3.setColor(bkb.v0(i12, this.F));
                 } else {
                     paint3.setColor(this.m);
                 }
             }
-            boolean z11 = this.y;
+            boolean z3 = this.y;
             Paint paint4 = this.g;
-            if (z11) {
-                int i19 = this.v;
-                if (i19 >= 0) {
-                    i7 = org.telegram.ui.ActionBar.n6.w0(i19, this.F);
-                    c90Var.c(i7);
-                    paint2.setColor((-16777216) | org.telegram.ui.ActionBar.n6.w0(this.t, this.F));
+            if (z3) {
+                int i13 = this.v;
+                if (i13 >= 0) {
+                    i = bkb.v0(i13, this.F);
+                    tj6Var.c(i);
+                    paint2.setColor(bkb.v0(this.t, this.F) | (-16777216));
                 } else {
-                    i7 = this.o;
-                    c90Var.c(i7);
-                    paint2.setColor((-16777216) | this.m);
+                    i = this.o;
+                    tj6Var.c(i);
+                    paint2.setColor(this.m | (-16777216));
                 }
-                int i20 = this.t;
-                if (i20 >= 0) {
-                    paint4.setColor(org.telegram.ui.ActionBar.n6.w0(i20, this.F));
+                int i14 = this.t;
+                if (i14 >= 0) {
+                    paint4.setColor(bkb.v0(i14, this.F));
                 } else {
                     paint4.setColor(this.m);
                 }
             } else {
-                int i21 = this.u;
-                if (i21 >= 0) {
-                    i7 = org.telegram.ui.ActionBar.n6.w0(i21, this.F);
-                    c90Var.c(i7);
-                    paint2.setColor((-16777216) | org.telegram.ui.ActionBar.n6.w0(this.p, this.F));
+                int i15 = this.u;
+                if (i15 >= 0) {
+                    i = bkb.v0(i15, this.F);
+                    tj6Var.c(i);
+                    paint2.setColor(bkb.v0(this.p, this.F) | (-16777216));
                 } else {
-                    i7 = this.n;
-                    c90Var.c(i7);
-                    paint2.setColor((-16777216) | this.l);
+                    i = this.n;
+                    tj6Var.c(i);
+                    paint2.setColor(this.l | (-16777216));
                 }
-                int i22 = this.p;
-                if (i22 >= 0) {
-                    paint4.setColor(org.telegram.ui.ActionBar.n6.w0(i22, this.F));
+                int i16 = this.p;
+                if (i16 >= 0) {
+                    paint4.setColor(bkb.v0(i16, this.F));
                 } else {
                     paint4.setColor(this.l);
                 }
@@ -229,8 +235,8 @@ public class RadialProgress2 {
             if ((this.c || this.q >= 0) && this.D != null) {
                 this.C.eraseColor(0);
             }
-            paint4.setAlpha((int) (paint4.getAlpha() * b10 * this.E * this.A));
-            paint3.setAlpha((int) (paint3.getAlpha() * b10 * this.E));
+            paint4.setAlpha((int) (paint4.getAlpha() * b * this.E * this.A));
+            paint3.setAlpha((int) (paint3.getAlpha() * b * this.E));
             if ((this.c || this.q >= 0) && this.D != null) {
                 ceil = (int) Math.ceil(rectF.width() / 2.0f);
                 ceil2 = (int) Math.ceil(rectF.height() / 2.0f);
@@ -239,56 +245,57 @@ public class RadialProgress2 {
                 ceil2 = (int) rectF.centerY();
             }
             ImageReceiver imageReceiver = this.w;
-            boolean J = imageReceiver.J();
-            boolean z12 = true;
+            boolean B = imageReceiver.B();
             Paint paint5 = this.f;
-            int i23 = 2;
-            if (J) {
-                float f13 = imageReceiver.i1;
-                f10 = 1.0f;
-                paint5.setAlpha((int) (this.E * 100.0f * f13 * b10));
-                if (f13 >= 1.0f) {
+            boolean z4 = true;
+            if (B) {
+                float f4 = imageReceiver.i1;
+                f = 1.0f;
+                paint5.setAlpha((int) (this.E * 100.0f * f4 * b));
+                if (f4 >= 1.0f) {
                     argb = -1;
-                    f11 = b10;
+                    f2 = b;
                     paint = paint3;
-                    z12 = false;
+                    z = false;
                 } else {
-                    int red = Color.red(i7);
-                    int green = Color.green(i7);
-                    f11 = b10;
-                    int blue = Color.blue(i7);
+                    int red = Color.red(i);
+                    int green = Color.green(i);
+                    f2 = b;
+                    int blue = Color.blue(i);
                     paint = paint3;
-                    argb = Color.argb(Color.alpha(i7) + ((int) ((255 - r9) * f13)), red + ((int) ((255 - red) * f13)), green + ((int) ((255 - green) * f13)), blue + ((int) ((255 - blue) * f13)));
+                    argb = Color.argb(Color.alpha(i) + ((int) ((255 - r9) * f4)), red + ((int) ((255 - red) * f4)), green + ((int) ((255 - green) * f4)), blue + ((int) ((255 - blue) * f4)));
+                    z = true;
                 }
-                c90Var.c(argb);
-                int i24 = this.x;
-                float f14 = ceil - i24;
-                float f15 = ceil2 - i24;
-                float f16 = i24 * 2;
-                imageReceiver.z0(f14, f15, f16, f16);
+                tj6Var.c(argb);
+                int i17 = this.x;
+                float f5 = ceil - i17;
+                float f6 = ceil2 - i17;
+                float f7 = i17 << 1;
+                imageReceiver.i0(f5, f6, f7, f7);
+                z4 = z;
             } else {
-                f10 = 1.0f;
-                f11 = b10;
+                f = 1.0f;
+                f2 = b;
                 paint = paint3;
             }
             Canvas canvas5 = this.D;
-            if (canvas5 == null || this.q < 0 || this.s == f10) {
-                i10 = TLObject.FLAG_31;
+            if (canvas5 == null || this.q < 0 || this.s == f) {
+                i2 = TLObject.FLAG_31;
             } else {
-                i10 = canvas5.save();
-                float f17 = f10;
-                float t6 = com.google.android.gms.internal.vision.e2.t(f17, this.s, 0.1f, f17);
-                this.D.scale(t6, t6, ceil, ceil2);
+                i2 = canvas5.save();
+                float f8 = f;
+                float B2 = ls6.B(f8, this.s, 0.1f, f8);
+                this.D.scale(B2, B2, ceil, ceil2);
             }
-            if (z12 && this.B) {
+            if (z4 && this.B) {
                 if ((this.c || this.q >= 0) && (canvas4 = this.D) != null) {
                     canvas4.drawCircle(ceil, ceil2, this.x, paint4);
-                } else if (i14 != 4 || f11 != 0.0f) {
+                } else if (i7 != 4 || f2 != 0.0f) {
                     canvas.drawCircle(ceil, ceil2, this.x, paint4);
                 }
             }
-            if (imageReceiver.J()) {
-                imageReceiver.setAlpha(this.E * f11 * this.H);
+            if (imageReceiver.B()) {
+                imageReceiver.setAlpha(this.E * f2 * this.H);
                 if ((this.c || this.q >= 0) && (canvas3 = this.D) != null) {
                     imageReceiver.h(canvas3, null);
                     this.D.drawCircle(ceil, ceil2, this.x, paint5);
@@ -297,82 +304,81 @@ public class RadialProgress2 {
                     canvas.drawCircle(ceil, ceil2, this.x, paint5);
                 }
             }
-            int i25 = this.x;
-            int i26 = this.G;
-            if (i26 > 0 && i25 > i26) {
-                i25 = i26;
+            int i18 = this.x;
+            int i19 = this.G;
+            if (i19 > 0 && i18 > i19) {
+                i18 = i19;
             }
             if (this.I != 1.0f) {
                 canvas.save();
-                float f18 = this.I;
-                canvas.scale(f18, f18, ceil, ceil2);
+                float f9 = this.I;
+                canvas.scale(f9, f9, ceil, ceil2);
             }
-            c90Var.setBounds(ceil - i25, ceil2 - i25, ceil + i25, ceil2 + i25);
-            c90Var.E = imageReceiver.J();
+            tj6Var.setBounds(ceil - i18, ceil2 - i18, ceil + i18, ceil2 + i18);
+            tj6Var.E = imageReceiver.B();
             if (this.c || this.q >= 0) {
                 Canvas canvas6 = this.D;
                 if (canvas6 != null) {
-                    c90Var.draw(canvas6);
+                    tj6Var.draw(canvas6);
                 } else {
-                    c90Var.draw(canvas);
+                    tj6Var.draw(canvas);
                 }
             } else {
-                c90Var.o = this.E;
-                c90Var.draw(canvas);
+                tj6Var.o = this.E;
+                tj6Var.draw(canvas);
             }
-            if (i10 != Integer.MIN_VALUE && (canvas2 = this.D) != null) {
-                canvas2.restoreToCount(i10);
+            if (i2 != Integer.MIN_VALUE && (canvas2 = this.D) != null) {
+                canvas2.restoreToCount(i2);
             }
             if (this.c || this.q >= 0) {
-                if (Math.abs(rectF.width() - org.telegram.messenger.g0.L(44.0f)) < org.telegram.messenger.g0.p) {
-                    float f19 = 16;
-                    centerX = rectF.centerX() + org.telegram.messenger.g0.L(f19);
-                    centerY = rectF.centerY() + org.telegram.messenger.g0.L(f19);
-                    i11 = 20;
-                    i23 = 0;
+                if (Math.abs(rectF.width() - gl.L(44.0f)) < gl.p) {
+                    centerX = rectF.centerX() + gl.L(16.0f);
+                    i4 = 20;
+                    centerY = rectF.centerY() + gl.L(16.0f);
+                    i3 = 0;
                 } else {
-                    centerX = rectF.centerX() + org.telegram.messenger.g0.L(18.0f);
-                    centerY = rectF.centerY() + org.telegram.messenger.g0.L(18.0f);
-                    i11 = 22;
+                    centerX = rectF.centerX() + gl.L(18.0f);
+                    i3 = 2;
+                    i4 = 22;
+                    centerY = rectF.centerY() + gl.L(18.0f);
                 }
-                int i27 = i11 / 2;
+                int i20 = i4 / 2;
                 if (this.c) {
-                    float b11 = c90Var2.q != 4 ? 1.0f : 1.0f - c90Var2.b();
-                    if (b11 == 0.0f) {
+                    f3 = tj6Var2.q != 4 ? 1.0f : 1.0f - tj6Var2.b();
+                    if (f3 == 0.0f) {
                         this.c = false;
                     }
-                    f12 = b11;
                 } else {
-                    f12 = 1.0f;
+                    f3 = 1.0f;
                 }
                 Canvas canvas7 = this.D;
                 if (canvas7 != null) {
-                    float f20 = i11 + 18 + i23;
-                    canvas7.drawCircle(org.telegram.messenger.g0.L(f20), org.telegram.messenger.g0.L(f20), org.telegram.messenger.g0.L(i27 + 1) * f12 * this.k, org.telegram.ui.ActionBar.n6.n0);
+                    float f10 = i4 + 18 + i3;
+                    canvas7.drawCircle(gl.L(f10), gl.L(f10), gl.L(i20 + 1) * f3 * this.k, bkb.m0);
                 } else {
-                    int i28 = this.d;
+                    int i21 = this.d;
                     Paint paint6 = this.e;
-                    paint6.setColor(i28);
-                    canvas.drawCircle(centerX, centerY, org.telegram.messenger.g0.L(12.0f), paint6);
+                    paint6.setColor(i21);
+                    canvas.drawCircle(centerX, centerY, gl.L(12.0f), paint6);
                 }
                 if (this.D != null) {
                     canvas.drawBitmap(this.C, (int) rectF.left, (int) rectF.top, (Paint) null);
                 }
                 if (this.k < 1.0f) {
-                    i12 = canvas.save();
-                    float f21 = this.k;
-                    canvas.scale(f21, f21, centerX, centerY);
+                    i5 = canvas.save();
+                    float f11 = this.k;
+                    canvas.scale(f11, f11, centerX, centerY);
                 } else {
-                    i12 = TLObject.FLAG_31;
+                    i5 = TLObject.FLAG_31;
                 }
-                float f22 = i27;
-                canvas.drawCircle(centerX, centerY, com.google.android.gms.internal.vision.e2.z(1.0f, this.s, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(f22) * f12), paint);
+                float f12 = i20;
+                canvas.drawCircle(centerX, centerY, tb4.A(1.0f, this.s, gl.L(1.0f), gl.L(f12) * f3), paint);
                 if (this.c) {
-                    c90Var2.setBounds((int) (centerX - (org.telegram.messenger.g0.L(f22) * f12)), (int) (centerY - (org.telegram.messenger.g0.L(f22) * f12)), (int) ((org.telegram.messenger.g0.L(f22) * f12) + centerX), (int) ((org.telegram.messenger.g0.L(f22) * f12) + centerY));
-                    c90Var2.draw(canvas);
+                    tj6Var2.setBounds((int) (centerX - (gl.L(f12) * f3)), (int) (centerY - (gl.L(f12) * f3)), (int) ((gl.L(f12) * f3) + centerX), (int) ((gl.L(f12) * f3) + centerY));
+                    tj6Var2.draw(canvas);
                 }
-                if (i12 != Integer.MIN_VALUE) {
-                    canvas.restoreToCount(i12);
+                if (i5 != Integer.MIN_VALUE) {
+                    canvas.restoreToCount(i5);
                 }
             }
             if (this.I != 1.0f) {
@@ -382,57 +388,57 @@ public class RadialProgress2 {
     }
 
     public final void e() {
-        this.w.Q();
+        this.w.I();
     }
 
     public final void f() {
-        this.w.S();
+        this.w.K();
     }
 
-    public final void g(int i7, int i10, int i11, int i12) {
-        this.p = i7;
-        this.t = i10;
-        this.u = i11;
-        this.v = i12;
+    public final void g(int i, int i2, int i3, int i4) {
+        this.p = i;
+        this.t = i2;
+        this.u = i3;
+        this.v = i4;
     }
 
     public final void h(String str) {
         String str2;
         if (str != null) {
             Locale locale = Locale.US;
-            str2 = com.google.android.gms.internal.vision.e2.j(this.x * 2, "_", this.x * 2);
+            str2 = tb4.m(this.x << 1, this.x << 1, "_");
         } else {
             str2 = null;
         }
-        this.w.p0(str, str2, null, null, -1L);
+        this.w.e0(str, str2, null, null, -1L);
     }
 
-    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.fj fjVar) {
+    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, k27 k27Var) {
         Locale locale = Locale.US;
-        org.telegram.messenger.fc c10 = org.telegram.messenger.fc.c(photoSize, document);
-        int i7 = this.x;
-        this.w.r0(c10, com.google.android.gms.internal.vision.e2.j(i7 * 2, "_", i7 * 2), null, null, fjVar, 1);
+        gl5 c = gl5.c(photoSize, document);
+        int i = this.x;
+        this.w.d0(c, tb4.m(i << 1, i << 1, "_"), null, null, k27Var, 1);
     }
 
     public final void j(TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, TLRPC.Document document, Object obj) {
         Locale locale = Locale.US;
-        String j3 = com.google.android.gms.internal.vision.e2.j(this.x * 2, "_", this.x * 2);
-        this.w.s0(photoSize == null ? null : org.telegram.messenger.fc.c(photoSize, document), j3, photoSize2 != null ? org.telegram.messenger.fc.c(photoSize2, document) : null, j3, null, 0L, null, obj, 1);
+        String m = tb4.m(this.x << 1, this.x << 1, "_");
+        this.w.Z(photoSize == null ? null : gl5.c(photoSize, document), m, photoSize2 != null ? gl5.c(photoSize2, document) : null, m, null, 0L, null, obj, 1);
     }
 
-    public final void k(int i7, boolean z10, boolean z11) {
-        if (i7 == 2 || i7 == 3 || i7 == 4) {
-            c90 c90Var = this.j;
-            if (z10 && i7 == c90Var.q) {
+    public final void k(int i, boolean z, boolean z2) {
+        if (i == 2 || i == 3 || i == 4) {
+            tj6 tj6Var = this.j;
+            if (z && i == tj6Var.q) {
                 return;
             }
-            c90Var.d(i7, z11);
-            boolean z12 = i7 != 4 || c90Var.b() < 1.0f;
-            this.c = z12;
-            if (z12) {
+            tj6Var.d(i, z2);
+            boolean z3 = i != 4 || tj6Var.b() < 1.0f;
+            this.c = z3;
+            if (z3) {
                 c();
             }
-            if (z11) {
+            if (z2) {
                 d();
             } else {
                 this.b.invalidate();
@@ -440,87 +446,79 @@ public class RadialProgress2 {
         }
     }
 
-    public final void l(float f10) {
-        this.k = f10;
+    public final void l(int i) {
+        this.e.setColor(i);
     }
 
-    public final void m(int i7) {
-        this.e.setColor(i7);
-    }
-
-    public final void n(View view) {
+    public final void m(View view) {
         this.b = view;
-        this.w.I0(view);
+        this.w.p0(view);
         Objects.requireNonNull(view);
-        this.i.A = new hy(view, 13);
-        this.j.A = new hy(view, 13);
+        this.i.A = new em0(view);
+        this.j.A = new em0(view);
     }
 
-    public final void o(boolean z10, boolean z11) {
-        if (z11) {
-            this.z = z10;
+    public final void n(boolean z, boolean z2) {
+        if (z2) {
+            this.z = z;
         } else {
-            this.y = z10;
+            this.y = z;
         }
         d();
     }
 
-    public final void p(boolean z10, float f10) {
+    public final void o(boolean z, float f) {
         if (this.c) {
-            this.j.e(z10, f10);
+            this.j.e(z, f);
         } else {
-            this.i.e(z10, f10);
+            this.i.e(z, f);
         }
     }
 
-    public final void q(int i7) {
-        this.d = i7;
-    }
-
-    public final void r(int i7, int i10, int i11, int i12) {
-        this.a.set(i7, i10, i11, i12);
+    public final void p(int i, int i2, int i3, int i4) {
+        this.a.set(i, i2, i3, i4);
     }
 
     public void setAsMini() {
-        c90 c90Var = this.i;
-        c90Var.j = true;
-        c90Var.b.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        tj6 tj6Var = this.i;
+        tj6Var.j = true;
+        tj6Var.b.setStrokeWidth(gl.L(2.0f));
     }
 
     public void setBackgroundGradientDrawable(LinearGradient linearGradient) {
-        c90 c90Var = this.i;
-        c90Var.C = linearGradient;
-        c90Var.D = new Matrix();
-        c90 c90Var2 = this.j;
-        c90Var2.C = linearGradient;
-        c90Var2.D = new Matrix();
+        tj6 tj6Var = this.i;
+        tj6Var.C = linearGradient;
+        tj6Var.D = new Matrix();
+        tj6 tj6Var2 = this.j;
+        tj6Var2.C = linearGradient;
+        tj6Var2.D = new Matrix();
     }
 
-    public void setCircleRadius(int i7) {
-        this.x = i7;
-        this.w.K0(i7);
+    public void setCircleRadius(int i) {
+        this.x = i;
+        this.w.q0(i);
     }
 
-    public void setColors(int i7, int i10, int i11, int i12) {
-        this.l = i7;
-        this.m = i10;
-        this.n = i11;
-        this.o = i12;
+    public void setColors(int i, int i2, int i3, int i4) {
+        this.l = i;
+        this.m = i2;
+        this.n = i3;
+        this.o = i4;
         this.p = -1;
         this.t = -1;
         this.u = -1;
         this.v = -1;
     }
 
-    public void setIcon(int i7, boolean z10, boolean z11) {
-        c90 c90Var = this.i;
-        if (z10 && i7 == c90Var.q) {
+    public void setIcon(int i, boolean z, boolean z2) {
+        tj6 tj6Var = this.i;
+        if (z && i == tj6Var.q) {
             return;
         }
-        c90Var.d(i7, z11);
+        tj6Var.d(i, z2);
         View view = this.b;
         if (view != null) {
-            if (z11) {
+            if (z2) {
                 d();
             } else {
                 view.invalidate();

@@ -1,36 +1,86 @@
 package j$.util.stream;
 
-import j$.util.function.IntConsumer$-CC;
-import java.util.function.IntConsumer;
+import java.util.function.BiConsumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public final class f0 extends i0 implements h5 {
-    public static final d0 c;
-    public static final d0 d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface f0 extends BaseStream {
+    f0 a();
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
-    }
+    j$.util.b0 average();
 
-    @Override // j$.util.stream.i0, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        x(Integer.valueOf(i7));
-    }
+    f0 b();
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        if (this.a) {
-            return new j$.util.c0(((Integer) this.b).intValue());
-        }
-        return null;
-    }
+    Stream boxed();
 
-    static {
-        w6 w6Var = w6.INT_VALUE;
-        n nVar = new n(12);
-        n nVar2 = new n(13);
-        j$.util.c0 c0Var = j$.util.c0.c;
-        c = new d0(true, w6Var, c0Var, nVar, nVar2);
-        d = new d0(false, w6Var, c0Var, new n(12), new n(13));
-    }
+    f0 c();
+
+    Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer);
+
+    long count();
+
+    f0 d(j$.time.v vVar);
+
+    f0 distinct();
+
+    f0 e();
+
+    j$.util.b0 findAny();
+
+    j$.util.b0 findFirst();
+
+    void forEach(DoubleConsumer doubleConsumer);
+
+    void forEachOrdered(DoubleConsumer doubleConsumer);
+
+    @Override // j$.util.stream.BaseStream
+    j$.util.h0 iterator();
+
+    boolean k();
+
+    f0 limit(long j);
+
+    Stream mapToObj(DoubleFunction doubleFunction);
+
+    j$.util.b0 max();
+
+    j$.util.b0 min();
+
+    @Override // j$.util.stream.BaseStream
+    f0 parallel();
+
+    f0 peek(DoubleConsumer doubleConsumer);
+
+    boolean q();
+
+    LongStream r();
+
+    double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
+
+    j$.util.b0 reduce(DoubleBinaryOperator doubleBinaryOperator);
+
+    @Override // j$.util.stream.BaseStream
+    f0 sequential();
+
+    f0 skip(long j);
+
+    f0 sorted();
+
+    @Override // j$.util.stream.BaseStream
+    j$.util.u0 spliterator();
+
+    double sum();
+
+    j$.util.w summaryStatistics();
+
+    double[] toArray();
+
+    IntStream w();
+
+    boolean y();
 }

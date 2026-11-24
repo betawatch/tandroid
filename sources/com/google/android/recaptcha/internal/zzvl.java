@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzvl {
     public static final /* synthetic */ int zza = 0;
@@ -31,29 +31,31 @@ public final class zzvl {
         long zzg = zzutVar.zzg();
         boolean zze = zze(zzg);
         int zzf = zzutVar.zzf();
-        if (!zze || zzf < 0 || zzf >= 1000000000) {
-            throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. See proto definition for valid values. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. Nanos (%s) must be in range [0, +999,999,999].", Long.valueOf(zzg), Integer.valueOf(zzf)));
+        if (zze && zzf >= 0 && zzf < 1000000000) {
+            return zzutVar;
         }
-        return zzutVar;
+        w26.j(zzmg.zza("Timestamp is not valid. See proto definition for valid values. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. Nanos (%s) must be in range [0, +999,999,999].", Long.valueOf(zzg), Integer.valueOf(zzf)));
+        return null;
     }
 
-    public static zzut zzb(long j3) {
-        long j10 = j3 / 1000;
-        if (!zze(j10)) {
-            throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j10)));
+    public static zzut zzb(long j) {
+        long j2 = j / 1000;
+        if (!zze(j2)) {
+            w26.j(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j2)));
+            return null;
         }
-        int i7 = (int) ((j3 % 1000) * 1000000);
-        if (i7 <= -1000000000 || i7 >= 1000000000) {
-            j10 = zzps.zza(j10, i7 / 1000000000);
-            i7 %= 1000000000;
+        int i = (int) ((j % 1000) * 1000000);
+        if (i <= -1000000000 || i >= 1000000000) {
+            j2 = zzps.zza(j2, i / 1000000000);
+            i %= 1000000000;
         }
-        if (i7 < 0) {
-            i7 += 1000000000;
-            j10 = zzps.zzb(j10, 1L);
+        if (i < 0) {
+            i += 1000000000;
+            j2 = zzps.zzb(j2, 1L);
         }
         zzur zzi = zzut.zzi();
-        zzi.zzf(j10);
-        zzi.zze(i7);
+        zzi.zzf(j2);
+        zzi.zze(i);
         zzut zzutVar = (zzut) zzi.zzk();
         zza(zzutVar);
         return zzutVar;
@@ -63,14 +65,14 @@ public final class zzvl {
         zza(zzutVar);
         long zzg = zzutVar.zzg();
         int zzf = zzutVar.zzf();
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(((SimpleDateFormat) zzb.get()).format(new Date(zzg * 1000)));
+        StringBuilder sb = new StringBuilder();
+        sb.append(((SimpleDateFormat) zzb.get()).format(new Date(zzg * 1000)));
         if (zzf != 0) {
-            sb2.append(".");
-            sb2.append(zzf % 1000000 == 0 ? String.format(Locale.ENGLISH, "%1$03d", Integer.valueOf(zzf / 1000000)) : zzf % 1000 == 0 ? String.format(Locale.ENGLISH, "%1$06d", Integer.valueOf(zzf / 1000)) : String.format(Locale.ENGLISH, "%1$09d", Integer.valueOf(zzf)));
+            sb.append(".");
+            sb.append(zzf % 1000000 == 0 ? String.format(Locale.ENGLISH, "%1$03d", Integer.valueOf(zzf / 1000000)) : zzf % 1000 == 0 ? String.format(Locale.ENGLISH, "%1$06d", Integer.valueOf(zzf / 1000)) : String.format(Locale.ENGLISH, "%1$09d", Integer.valueOf(zzf)));
         }
-        sb2.append("Z");
-        return sb2.toString();
+        sb.append("Z");
+        return sb.toString();
     }
 
     private static Method zzd(String str) {
@@ -81,7 +83,7 @@ public final class zzvl {
         }
     }
 
-    private static boolean zze(long j3) {
-        return j3 >= -62135596800L && j3 <= 253402300799L;
+    private static boolean zze(long j) {
+        return j >= -62135596800L && j <= 253402300799L;
     }
 }

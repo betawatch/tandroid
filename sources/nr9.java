@@ -1,0 +1,24 @@
+// default package
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import org.telegram.messenger.GoogleVoiceClientService;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public abstract class nr9 extends Activity {
+    @Override // android.app.Activity
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Intent intent = new Intent(this, (Class<?>) GoogleVoiceClientService.class);
+        intent.putExtra("SearchActionVerificationClientExtraIntent", getIntent());
+        if (Build.VERSION.SDK_INT >= 26) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
+        }
+        finish();
+    }
+}

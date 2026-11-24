@@ -1,68 +1,134 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class m extends z4 {
-    public static i2 U0(t3 t3Var, Spliterator spliterator) {
-        j$.time.format.a aVar = new j$.time.format.a(24);
-        j$.time.format.a aVar2 = new j$.time.format.a(25);
-        j$.time.format.a aVar3 = new j$.time.format.a(26);
-        Objects.requireNonNull(aVar);
-        Objects.requireNonNull(aVar2);
-        Objects.requireNonNull(aVar3);
-        return new i2((Collection) new y3(w6.REFERENCE, aVar3, aVar2, aVar, 3).i(t3Var, spliterator));
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class m extends j5 {
+    public final /* synthetic */ byte b = 2;
+    public boolean c;
+    public Object d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m(k8 k8Var, n5 n5Var) {
+        super(n5Var);
+        this.d = k8Var;
+        this.c = true;
     }
 
-    @Override // j$.util.stream.a
-    public final e2 N0(t3 t3Var, Spliterator spliterator, IntFunction intFunction) {
-        a aVar = (a) t3Var;
-        if (v6.DISTINCT.m(aVar.m)) {
-            return t3Var.j0(spliterator, false, intFunction);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        byte b = this.b;
+        n5 n5Var = this.a;
+        switch (b) {
+            case 0:
+                if (obj == null) {
+                    if (this.c) {
+                        return;
+                    }
+                    this.c = true;
+                    this.d = null;
+                    n5Var.x((n5) null);
+                    return;
+                }
+                Object obj2 = this.d;
+                if (obj2 == null || !obj.equals(obj2)) {
+                    this.d = obj;
+                    n5Var.x((n5) obj);
+                    return;
+                }
+                return;
+            case 1:
+                Stream stream = (Stream) ((j$.time.v) ((s) this.d).m).apply((j$.time.v) obj);
+                if (stream != null) {
+                    try {
+                        if (this.c) {
+                            Spliterator spliterator = ((Stream) stream.sequential()).spliterator();
+                            while (!n5Var.q() && spliterator.tryAdvance(n5Var)) {
+                            }
+                        } else {
+                            ((Stream) stream.sequential()).forEach(n5Var);
+                        }
+                    } catch (Throwable th) {
+                        try {
+                            stream.close();
+                        } catch (Throwable th2) {
+                            th.addSuppressed(th2);
+                        }
+                        throw th;
+                    }
+                }
+                if (stream != null) {
+                    stream.close();
+                    return;
+                }
+                return;
+            default:
+                if (this.c) {
+                    boolean test = ((k8) this.d).m.test(obj);
+                    this.c = test;
+                    if (test) {
+                        n5Var.x((n5) obj);
+                        return;
+                    }
+                    return;
+                }
+                return;
         }
-        if (v6.ORDERED.m(aVar.m)) {
-            return U0(t3Var, spliterator);
-        }
-        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        j$.util.concurrent.s sVar = new j$.util.concurrent.s(4, atomicBoolean, concurrentHashMap);
-        Objects.requireNonNull(sVar);
-        new o0(sVar, false).a(t3Var, spliterator);
-        Collection keySet = concurrentHashMap.keySet();
-        if (atomicBoolean.get()) {
-            HashSet hashSet = new HashSet(keySet);
-            hashSet.add(null);
-            keySet = hashSet;
-        }
-        return new i2(keySet);
     }
 
-    @Override // j$.util.stream.a
-    public final Spliterator O0(a aVar, Spliterator spliterator) {
-        if (v6.DISTINCT.m(aVar.m)) {
-            return aVar.H0(spliterator);
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final void end() {
+        switch (this.b) {
+            case 0:
+                this.c = false;
+                this.d = null;
+                this.a.end();
+                break;
+            default:
+                super.end();
+                break;
         }
-        if (v6.ORDERED.m(aVar.m)) {
-            return U0(aVar, spliterator).spliterator();
-        }
-        return new e7(aVar.H0(spliterator), new ConcurrentHashMap());
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        Objects.requireNonNull(j5Var);
-        if (v6.DISTINCT.m(i7)) {
-            return j5Var;
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final void n(long j) {
+        switch (this.b) {
+            case 0:
+                this.c = false;
+                this.d = null;
+                this.a.n(-1L);
+                break;
+            case 1:
+                this.a.n(-1L);
+                break;
+            default:
+                this.a.n(-1L);
+                break;
         }
-        if (v6.SORTED.m(i7)) {
-            return new k(j5Var);
+    }
+
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final boolean q() {
+        switch (this.b) {
+            case 1:
+                this.c = true;
+                return this.a.q();
+            case 2:
+                return !this.c || this.a.q();
+            default:
+                return super.q();
         }
-        return new l(j5Var);
+    }
+
+    public /* synthetic */ m(n5 n5Var) {
+        super(n5Var);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m(s sVar, n5 n5Var) {
+        super(n5Var);
+        this.d = sVar;
     }
 }

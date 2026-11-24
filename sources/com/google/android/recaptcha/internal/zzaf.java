@@ -1,21 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import gd.g;
-import gd.k;
-import id.c;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.a1;
-import zd.b0;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzaf extends j implements p {
+final class zzaf extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzaj zzb;
     final /* synthetic */ String zzc;
@@ -23,34 +14,33 @@ final class zzaf extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzaf(zzaj zzajVar, String str, zzhk zzhkVar, c cVar) {
-        super(2, cVar);
+    public zzaf(zzaj zzajVar, String str, zzhk zzhkVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzajVar;
         this.zzc = str;
         this.zzd = zzhkVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, fw2Var);
         zzafVar.zze = obj;
         return zzafVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaf) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzaf) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzxx zzp;
         List list;
-        a aVar = a.a;
-        int i7 = this.zza;
-        c8.z.b(obj);
-        if (i7 == 0) {
-            z zVar = (z) this.zze;
+        int i = this.zza;
+        qse.b(obj);
+        if (i == 0) {
+            ax2 ax2Var = (ax2) this.zze;
             ArrayList arrayList = new ArrayList();
             zzaj zzajVar = this.zzb;
             String str = this.zzc;
@@ -64,17 +54,19 @@ final class zzaf extends j implements p {
                 }
             }
             int size = arrayList3.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                arrayList2.add(b0.q(zVar, new zzae(this.zzd, (zzar) arrayList3.get(i10), str, arrayList, null)));
+            for (int i2 = 0; i2 < size; i2++) {
+                arrayList2.add(ppd.b(ax2Var, new zzae(this.zzd, (zzar) arrayList3.get(i2), str, arrayList, null)));
             }
-            a1[] a1VarArr = (a1[]) arrayList2.toArray(new a1[0]);
-            a1[] a1VarArr2 = (a1[]) Arrays.copyOf(a1VarArr, a1VarArr.length);
+            bt5[] bt5VarArr = (bt5[]) arrayList2.toArray(new bt5[0]);
+            bt5[] bt5VarArr2 = (bt5[]) Arrays.copyOf(bt5VarArr, bt5VarArr.length);
             this.zza = 1;
-            if (b0.p(a1VarArr2, this) == aVar) {
-                return aVar;
+            Object c = xmd.c(bt5VarArr2, this);
+            bx2 bx2Var = bx2.a;
+            if (c == bx2Var) {
+                return bx2Var;
             }
         }
         zzp = this.zzb.zzp(this.zzc);
-        return new g(zzp);
+        return new ta9(zzp);
     }
 }

@@ -6,22 +6,22 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface IAlertCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IAlertCallback".replace('$', '.');
 
-    void onAlertCancelled(int i7, IOnDoneCallback iOnDoneCallback);
+    void onAlertCancelled(int i, IOnDoneCallback iOnDoneCallback);
 
     void onAlertDismissed(IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class Stub extends Binder implements IAlertCallback {
         static final int TRANSACTION_onAlertCancelled = 2;
         static final int TRANSACTION_onAlertDismissed = 3;
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-        public static class Proxy implements IAlertCallback {
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        private static class Proxy implements IAlertCallback {
             private IBinder mRemote;
 
             public Proxy(IBinder iBinder) {
@@ -38,11 +38,11 @@ public interface IAlertCallback extends IInterface {
             }
 
             @Override // androidx.car.app.model.IAlertCallback
-            public void onAlertCancelled(int i7, IOnDoneCallback iOnDoneCallback) {
+            public void onAlertCancelled(int i, IOnDoneCallback iOnDoneCallback) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAlertCallback.DESCRIPTOR);
-                    obtain.writeInt(i7);
+                    obtain.writeInt(i);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -76,20 +76,20 @@ public interface IAlertCallback extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             String str = IAlertCallback.DESCRIPTOR;
-            if (i7 >= 1 && i7 <= 16777215) {
+            if (i >= 1 && i <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i7 == 1598968902) {
+            if (i == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i7 == 2) {
+            if (i == 2) {
                 onAlertCancelled(parcel.readInt(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             } else {
-                if (i7 != 3) {
-                    return super.onTransact(i7, parcel, parcel2, i10);
+                if (i != 3) {
+                    return super.onTransact(i, parcel, parcel2, i2);
                 }
                 onAlertDismissed(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             }
@@ -102,7 +102,7 @@ public interface IAlertCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Default implements IAlertCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -114,7 +114,7 @@ public interface IAlertCallback extends IInterface {
         }
 
         @Override // androidx.car.app.model.IAlertCallback
-        public void onAlertCancelled(int i7, IOnDoneCallback iOnDoneCallback) {
+        public void onAlertCancelled(int i, IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

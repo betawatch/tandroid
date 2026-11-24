@@ -6,37 +6,37 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
 
     @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i7, Bundle bundle) {
-        d dVar;
-        h hVar = (h) this.a.get();
-        if (hVar == null || bundle == null) {
+    public final void onReceiveResult(int i, Bundle bundle) {
+        mi5 mi5Var;
+        a aVar = (a) this.a.get();
+        if (aVar == null || bundle == null) {
             return;
         }
-        synchronized (hVar.b) {
-            MediaSessionCompat$Token mediaSessionCompat$Token = hVar.e;
+        synchronized (aVar.b) {
+            MediaSessionCompat$Token mediaSessionCompat$Token = aVar.e;
             IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
-            int i10 = t.b;
+            int i2 = d.b;
             if (binder == null) {
-                dVar = null;
+                mi5Var = null;
             } else {
                 IInterface queryLocalInterface = binder.queryLocalInterface("android.support.v4.media.session.IMediaSession");
-                if (queryLocalInterface == null || !(queryLocalInterface instanceof d)) {
-                    c cVar = new c();
-                    cVar.a = binder;
-                    dVar = cVar;
+                if (queryLocalInterface == null || !(queryLocalInterface instanceof mi5)) {
+                    ki5 ki5Var = new ki5();
+                    ki5Var.a = binder;
+                    mi5Var = ki5Var;
                 } else {
-                    dVar = (d) queryLocalInterface;
+                    mi5Var = (mi5) queryLocalInterface;
                 }
             }
-            mediaSessionCompat$Token.b(dVar);
-            hVar.e.c(b5.a.b(bundle));
-            hVar.a();
+            mediaSessionCompat$Token.b(mi5Var);
+            aVar.e.c(vu7.b(bundle));
+            aVar.a();
         }
     }
 }

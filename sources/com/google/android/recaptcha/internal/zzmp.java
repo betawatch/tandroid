@@ -3,15 +3,15 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzmp extends zzmk {
     final /* synthetic */ Iterable zza;
     final /* synthetic */ int zzb;
 
-    public zzmp(Iterable iterable, int i7) {
+    public zzmp(Iterable iterable, int i) {
         this.zza = iterable;
-        this.zzb = i7;
+        this.zzb = i;
     }
 
     @Override // java.lang.Iterable
@@ -21,11 +21,11 @@ final class zzmp extends zzmk {
             List list = (List) iterable;
             return list.subList(Math.min(list.size(), this.zzb), list.size()).iterator();
         }
-        int i7 = this.zzb;
+        int i = this.zzb;
         Iterator it = iterable.iterator();
         it.getClass();
-        zzmd.zzb(i7 >= 0, "numberToAdvance must be nonnegative");
-        for (int i10 = 0; i10 < i7 && it.hasNext(); i10++) {
+        zzmd.zzb(i >= 0, "numberToAdvance must be nonnegative");
+        for (int i2 = 0; i2 < i && it.hasNext(); i2++) {
             it.next();
         }
         return new zzmo(this, it);

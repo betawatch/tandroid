@@ -7,8 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class FabBackgroundDrawable extends Drawable {
     public final Paint a = new Paint(1);
     public final Paint b;
@@ -30,8 +30,8 @@ public class FabBackgroundDrawable extends Drawable {
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, getBounds().centerX() - (this.c.getWidth() / 2), getBounds().centerY() - (this.c.getHeight() / 2), this.b);
         }
-        float f10 = min / 2;
-        canvas.drawCircle(f10, f10, r0 - org.telegram.messenger.g0.L(4.0f), this.a);
+        float f = min / 2;
+        canvas.drawCircle(f, f, r0 - gl.L(4.0f), this.a);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -41,7 +41,7 @@ public class FabBackgroundDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean getPadding(Rect rect) {
-        int L = org.telegram.messenger.g0.L(4.0f);
+        int L = gl.L(4.0f);
         rect.set(L, L, L, L);
         return true;
     }
@@ -54,17 +54,17 @@ public class FabBackgroundDrawable extends Drawable {
             return;
         }
         this.c = Bitmap.createBitmap(min, min, Bitmap.Config.ALPHA_8);
-        float f10 = min / 2;
-        new Canvas(this.c).drawCircle(f10, f10, r5 - org.telegram.messenger.g0.L(4.0f), new Paint(1));
+        float f = min / 2;
+        new Canvas(this.c).drawCircle(f, f, r4 - gl.L(4.0f), new Paint(1));
     }
 
-    public void setColor(int i7) {
-        this.a.setColor(i7);
+    public void setColor(int i) {
+        this.a.setColor(i);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
+    public final void setAlpha(int i) {
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -1,35 +1,42 @@
 package j$.util.stream;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* loaded from: classes2.dex */
-public final class u6 {
-    public static final u6 OP;
-    public static final u6 SPLITERATOR;
-    public static final u6 STREAM;
-    public static final u6 TERMINAL_OP;
-    public static final u6 UPSTREAM_TERMINAL_OP;
-    public static final /* synthetic */ u6[] a;
+import j$.util.DesugarArrays;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
-    public static u6 valueOf(String str) {
-        return (u6) Enum.valueOf(u6.class, str);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class u6 extends w6 implements j$.util.a1 {
+    public final /* synthetic */ v6 g;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u6(v6 v6Var, int i, int i2, int i3, int i4) {
+        super(v6Var, i, i2, i3, i4);
+        this.g = v6Var;
     }
 
-    public static u6[] values() {
-        return (u6[]) a.clone();
+    @Override // j$.util.stream.w6
+    public final void a(int i, Object obj, Object obj2) {
+        ((LongConsumer) obj2).accept(((long[]) obj)[i]);
     }
 
-    static {
-        u6 u6Var = new u6("SPLITERATOR", 0);
-        SPLITERATOR = u6Var;
-        u6 u6Var2 = new u6("STREAM", 1);
-        STREAM = u6Var2;
-        u6 u6Var3 = new u6("OP", 2);
-        OP = u6Var3;
-        u6 u6Var4 = new u6("TERMINAL_OP", 3);
-        TERMINAL_OP = u6Var4;
-        u6 u6Var5 = new u6("UPSTREAM_TERMINAL_OP", 4);
-        UPSTREAM_TERMINAL_OP = u6Var5;
-        a = new u6[]{u6Var, u6Var2, u6Var3, u6Var4, u6Var5};
+    @Override // j$.util.stream.w6
+    public final j$.util.d1 b(Object obj, int i, int i2) {
+        return DesugarArrays.c((long[]) obj, i, i2 + i);
+    }
+
+    @Override // j$.util.stream.w6
+    public final j$.util.d1 c(int i, int i2, int i3, int i4) {
+        return new u6(this.g, i, i2, i3, i4);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.j(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.A(this, consumer);
     }
 }

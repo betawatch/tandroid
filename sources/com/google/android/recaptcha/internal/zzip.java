@@ -1,25 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import jd.a;
-import zd.b0;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzip implements zzik {
-    private final z zza;
+    private final ax2 zza;
     private final zzjb zzb;
     private final zzkt zzc;
     private final Map zzd;
 
-    public zzip(z zVar, zzjb zzjbVar, zzkt zzktVar, Map map) {
-        this.zza = zVar;
+    public zzip(ax2 ax2Var, zzjb zzjbVar, zzkt zzktVar, Map map) {
+        this.zza = ax2Var;
         this.zzb = zzjbVar;
         this.zzc = zzktVar;
         this.zzd = map;
@@ -30,7 +25,8 @@ public final class zzip implements zzik {
         int zza = zzizVar.zza();
         zzjt zzjtVar = (zzjt) zzipVar.zzd.get(Integer.valueOf(zzzuVar.zzf()));
         if (zzjtVar == null) {
-            throw new zzdm(5, 2, null);
+            fvc.c(5, 2, null);
+            return;
         }
         int zzg = zzzuVar.zzg();
         zzzt[] zzztVarArr = (zzzt[]) zzzuVar.zzj().toArray(new zzzt[0]);
@@ -40,28 +36,29 @@ public final class zzip implements zzik {
         }
         zzb.zzf();
         long zza2 = zzb.zza(TimeUnit.MICROSECONDS);
-        int i7 = zzco.zza;
+        int i = zzco.zza;
         int zzk = zzzuVar.zzk();
-        if (zzk == 1) {
-            throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        if (zzk != 1) {
+            zzco.zza(zzk - 2, zza2);
+        } else {
+            w26.j("Can't get the number of an unknown enum value.");
         }
-        zzco.zza(zzk - 2, zza2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzg(List list, zziz zzizVar, c cVar) {
-        Object e10 = b0.e(new zzim(zzizVar, list, this, null), cVar);
-        return e10 == a.a ? e10 : k.a;
+    public final Object zzg(List list, zziz zzizVar, fw2 fw2Var) {
+        Object b = h9e.b(new zzim(zzizVar, list, this, null), fw2Var);
+        return b == bx2.a ? b : g5c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzh(Exception exc, zziz zzizVar, c cVar) {
-        Object e10 = b0.e(new zzin(exc, zzizVar, this, null), cVar);
-        return e10 == a.a ? e10 : k.a;
+    public final Object zzh(Exception exc, zziz zzizVar, fw2 fw2Var) {
+        Object b = h9e.b(new zzin(exc, zzizVar, this, null), fw2Var);
+        return b == bx2.a ? b : g5c.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzik
     public final void zza(String str) {
-        b0.q(this.zza, new zzio(new zziz(this.zzb), this, str, null));
+        ppd.b(this.zza, new zzio(new zziz(this.zzb), this, str, null));
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.IntegrityTokenRequest;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class am extends IntegrityTokenRequest.Builder {
     private String a;
@@ -11,25 +11,27 @@ final class am extends IntegrityTokenRequest.Builder {
     @Override // com.google.android.play.core.integrity.IntegrityTokenRequest.Builder
     public final IntegrityTokenRequest build() {
         String str = this.a;
-        if (str == null) {
-            throw new IllegalStateException("Missing required properties: nonce");
-        }
         an anVar = null;
-        return new ao(str, this.b, anVar, anVar);
+        if (str != null) {
+            return new ao(str, this.b, anVar, anVar);
+        }
+        sc8.j("Missing required properties: nonce");
+        return null;
     }
 
     @Override // com.google.android.play.core.integrity.IntegrityTokenRequest.Builder
-    public final IntegrityTokenRequest.Builder setCloudProjectNumber(long j3) {
-        this.b = Long.valueOf(j3);
+    public final IntegrityTokenRequest.Builder setCloudProjectNumber(long j) {
+        this.b = Long.valueOf(j);
         return this;
     }
 
     @Override // com.google.android.play.core.integrity.IntegrityTokenRequest.Builder
     public final IntegrityTokenRequest.Builder setNonce(String str) {
-        if (str == null) {
-            throw new NullPointerException("Null nonce");
+        if (str != null) {
+            this.a = str;
+            return this;
         }
-        this.a = str;
-        return this;
+        fvc.f("Null nonce");
+        return null;
     }
 }

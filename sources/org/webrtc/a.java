@@ -2,35 +2,39 @@ package org.webrtc;
 
 import org.webrtc.Camera2Session;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class a implements VideoSink {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ a(Object obj, int i7) {
-        this.a = i7;
+    public /* synthetic */ a(Object obj, byte b) {
+        this.a = b;
         this.b = obj;
     }
 
     @Override // org.webrtc.VideoSink
     public final void onFrame(VideoFrame videoFrame) {
-        switch (this.a) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
             case 0:
-                ((Camera1Session) this.b).lambda$listenForTextureFrames$0(videoFrame);
-                break;
-            case 1:
-                ((Camera2Session.CaptureSessionCallback) this.b).lambda$onConfigured$0(videoFrame);
+                ((Camera1Session) obj).lambda$listenForTextureFrames$0(videoFrame);
                 break;
             default:
-                ((VideoSource) this.b).lambda$setVideoProcessor$1(videoFrame);
+                ((Camera2Session.CaptureSessionCallback) obj).lambda$onConfigured$0(videoFrame);
                 break;
         }
     }
 
     @Override // org.webrtc.VideoSink
-    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        int i7 = this.a;
-        d0.a(this, videoSink);
+    public final void setParentSink(VideoSink videoSink) {
+        byte b = this.a;
+    }
+
+    private final void a(VideoSink videoSink) {
+    }
+
+    private final void b(VideoSink videoSink) {
     }
 }

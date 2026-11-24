@@ -1,32 +1,16 @@
 package org.telegram.tgnet.tl;
 
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public abstract /* synthetic */ class a {
-    public static byte[] a(TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        TL_keyboard.ButtonTypeProto type = keyboardButtonProto.getType();
-        if (type instanceof TL_keyboard.TL_inlineButtonTypeCallback) {
-            return ((TL_keyboard.TL_inlineButtonTypeCallback) type).data;
-        }
-        return null;
-    }
-
-    public static String b(TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        TL_keyboard.ButtonTypeProto type = keyboardButtonProto.getType();
-        if (type instanceof TL_keyboard.TL_inlineButtonTypeUrl) {
-            return ((TL_keyboard.TL_inlineButtonTypeUrl) type).url;
-        }
-        if (type instanceof TL_keyboard.TL_inlineButtonTypeUrlAuth) {
-            return ((TL_keyboard.TL_inlineButtonTypeUrlAuth) type).url;
-        }
-        if (type instanceof TL_keyboard.TL_inlineButtonTypeWebView) {
-            return ((TL_keyboard.TL_inlineButtonTypeWebView) type).url;
-        }
-        if (type instanceof TL_keyboard.TL_buttonTypeSimpleWebView) {
-            return ((TL_keyboard.TL_buttonTypeSimpleWebView) type).url;
-        }
-        return null;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class a implements Vector.TLDeserializer {
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+        TLObject access$400;
+        access$400 = TL_keyboard.access$400(inputSerializedData, i, z);
+        return access$400;
     }
 }

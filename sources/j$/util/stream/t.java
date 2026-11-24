@@ -1,30 +1,69 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public final class t extends h1 {
-    public final /* synthetic */ int s;
+import java.util.function.DoublePredicate;
+import java.util.function.DoubleToIntFunction;
+import java.util.function.DoubleToLongFunction;
+import java.util.function.DoubleUnaryOperator;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class t extends g5 {
+    public final /* synthetic */ byte b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t(a aVar, int i7, int i10) {
-        super(aVar, i7);
-        this.s = i10;
+    public /* synthetic */ t(a aVar, n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        switch (this.s) {
+    @Override // j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        switch (this.b) {
             case 0:
-                return new p(this, j5Var, 3);
+                DoubleUnaryOperator doubleUnaryOperator = null;
+                doubleUnaryOperator.applyAsDouble(d);
+                throw null;
             case 1:
-                return new u0(0, j5Var);
+                DoubleToIntFunction doubleToIntFunction = null;
+                doubleToIntFunction.applyAsInt(d);
+                throw null;
             case 2:
-                return new s0(this, j5Var, 3);
+                DoubleToLongFunction doubleToLongFunction = null;
+                doubleToLongFunction.applyAsLong(d);
+                throw null;
             case 3:
-                return new b1(this, j5Var, 1);
-            case 4:
-                return j5Var;
+                DoublePredicate doublePredicate = null;
+                doublePredicate.test(d);
+                throw null;
             default:
-                return new b1(this, j5Var, 4);
+                DoublePredicate doublePredicate2 = null;
+                doublePredicate2.test(d);
+                throw null;
+        }
+    }
+
+    @Override // j$.util.stream.g5, j$.util.stream.n5
+    public final void n(long j) {
+        switch (this.b) {
+            case 3:
+                this.a.n(-1L);
+                break;
+            case 4:
+                this.a.n(-1L);
+                break;
+            default:
+                super.n(j);
+                break;
+        }
+    }
+
+    @Override // j$.util.stream.g5, j$.util.stream.n5
+    public final boolean q() {
+        switch (this.b) {
+            case 4:
+                return this.a.q();
+            default:
+                return super.q();
         }
     }
 }

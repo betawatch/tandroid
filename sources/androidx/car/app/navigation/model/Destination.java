@@ -4,15 +4,17 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Destination {
     private final CarText mAddress;
     private final CarIcon mImage;
     private final CarText mName;
 
-    public Destination(a aVar) {
-        throw null;
+    private Destination() {
+        this.mName = null;
+        this.mAddress = null;
+        this.mImage = null;
     }
 
     public boolean equals(Object obj) {
@@ -46,9 +48,7 @@ public final class Destination {
         return "[name: " + CarText.toShortString(this.mName) + ", address: " + CarText.toShortString(this.mAddress) + ", image: " + this.mImage + "]";
     }
 
-    private Destination() {
-        this.mName = null;
-        this.mAddress = null;
-        this.mImage = null;
+    public Destination(ae3 ae3Var) {
+        throw null;
     }
 }

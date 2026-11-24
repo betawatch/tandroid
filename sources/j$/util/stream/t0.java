@@ -1,39 +1,97 @@
 package j$.util.stream;
 
-import java.util.function.IntConsumer;
+import j$.util.Spliterator;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountedCompleter;
 
-/* loaded from: classes2.dex */
-public final class t0 extends y0 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ Object t;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class t0 extends CountedCompleter {
+    public final a a;
+    public Spliterator b;
+    public final long c;
+    public final ConcurrentHashMap d;
+    public final s0 e;
+    public final t0 f;
+    public h2 g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t0(a aVar, int i7, Object obj, int i10) {
-        super(aVar, i7);
-        this.s = i10;
-        this.t = obj;
+    public t0(a aVar, Spliterator spliterator, s0 s0Var) {
+        super(null);
+        this.a = aVar;
+        this.b = spliterator;
+        this.c = d.e(spliterator.estimateSize());
+        this.d = new ConcurrentHashMap(Math.max(16, d.g << 1));
+        this.e = s0Var;
+        this.f = null;
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        switch (this.s) {
-            case 0:
-                return new s0(this, j5Var, 1);
-            case 1:
-                return new s0(this, j5Var, 2);
-            case 2:
-                return new v0(this, j5Var);
-            case 3:
-                return new l(this, j5Var, 4);
-            default:
-                return new w4(this, j5Var);
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.b;
+        long j = this.c;
+        boolean z = false;
+        while (spliterator.estimateSize() > j && (trySplit = spliterator.trySplit()) != null) {
+            t0 t0Var = new t0(this, trySplit, this.f);
+            t0 t0Var2 = new t0(this, spliterator, t0Var);
+            this.addToPendingCount(1);
+            t0Var2.addToPendingCount(1);
+            this.d.put(t0Var, t0Var2);
+            if (this.f != null) {
+                t0Var.addToPendingCount(1);
+                if (this.d.replace(this.f, this, t0Var)) {
+                    this.addToPendingCount(-1);
+                } else {
+                    t0Var.addToPendingCount(-1);
+                }
+            }
+            if (z) {
+                spliterator = trySplit;
+                this = t0Var;
+                t0Var = t0Var2;
+            } else {
+                this = t0Var2;
+            }
+            z = !z;
+            t0Var.fork();
+        }
+        if (this.getPendingCount() > 0) {
+            q qVar = new q((byte) 18);
+            a aVar = this.a;
+            z1 I = aVar.I(aVar.F(spliterator), qVar);
+            this.a.Q(spliterator, I);
+            this.g = I.build();
+            this.b = null;
+        }
+        this.tryComplete();
+    }
+
+    @Override // java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        h2 h2Var = this.g;
+        if (h2Var != null) {
+            h2Var.forEach(this.e);
+            this.g = null;
+        } else {
+            Spliterator spliterator = this.b;
+            if (spliterator != null) {
+                this.a.Q(spliterator, this.e);
+                this.b = null;
+            }
+        }
+        t0 t0Var = (t0) this.d.remove(this);
+        if (t0Var != null) {
+            t0Var.tryComplete();
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t0(z0 z0Var, IntConsumer intConsumer) {
-        super(z0Var, 0);
-        this.s = 0;
-        this.t = intConsumer;
+    public t0(t0 t0Var, Spliterator spliterator, t0 t0Var2) {
+        super(t0Var);
+        this.a = t0Var.a;
+        this.b = spliterator;
+        this.c = t0Var.c;
+        this.d = t0Var.d;
+        this.e = t0Var.e;
+        this.f = t0Var2;
     }
 }

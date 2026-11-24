@@ -1,78 +1,20 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-import java.util.function.LongBinaryOperator;
-import java.util.function.LongConsumer;
+import java.util.function.IntBinaryOperator;
 
-/* loaded from: classes2.dex */
-public final class m4 implements o4, i5 {
-    public long a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ LongBinaryOperator c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class m4 extends w3 {
+    public final /* synthetic */ IntBinaryOperator h;
+    public final /* synthetic */ int i;
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    public m4(c7 c7Var, IntBinaryOperator intBinaryOperator, int i) {
+        this.h = intBinaryOperator;
+        this.i = i;
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        x((Long) obj);
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
-    }
-
-    public m4(long j3, LongBinaryOperator longBinaryOperator) {
-        this.b = j3;
-        this.c = longBinaryOperator;
-    }
-
-    @Override // j$.util.stream.o4
-    public final void u(o4 o4Var) {
-        accept(((m4) o4Var).a);
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.j5
-    public final void accept(long j3) {
-        this.a = this.c.applyAsLong(this.a, j3);
-    }
-
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        return Long.valueOf(this.a);
+    @Override // j$.util.stream.w3
+    public final r4 Y() {
+        return new l4(this.i, this.h);
     }
 }

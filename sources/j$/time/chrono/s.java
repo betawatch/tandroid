@@ -1,63 +1,44 @@
 package j$.time.chrono;
 
-import j$.time.temporal.Temporal;
-
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* loaded from: classes2.dex */
-public final class s implements l {
-    public static final s BCE;
-    public static final s CE;
-    public static final /* synthetic */ s[] a;
-
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ boolean e(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.q(this, oVar);
-    }
-
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ int j(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.l(this, oVar);
-    }
-
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ Object m(j$.time.format.a aVar) {
-        return j$.com.android.tools.r8.a.u(this, aVar);
-    }
-
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ long y(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.n(this, oVar);
-    }
-
-    public static s valueOf(String str) {
-        return (s) Enum.valueOf(s.class, str);
-    }
-
-    public static s[] values() {
-        return (s[]) a.clone();
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract /* synthetic */ class s {
+    public static final /* synthetic */ int[] a;
 
     static {
-        s sVar = new s("BCE", 0);
-        BCE = sVar;
-        s sVar2 = new s("CE", 1);
-        CE = sVar2;
-        a = new s[]{sVar, sVar2};
-    }
-
-    @Override // j$.time.chrono.l
-    public final int getValue() {
-        return ordinal();
-    }
-
-    @Override // j$.time.temporal.l
-    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
-        return j$.time.temporal.p.d(this, oVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final Temporal q(Temporal temporal) {
-        return temporal.c(getValue(), j$.time.temporal.a.ERA);
+        int[] iArr = new int[j$.time.temporal.a.values().length];
+        a = iArr;
+        try {
+            iArr[j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_MONTH.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_YEAR.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_YEAR.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[j$.time.temporal.a.YEAR_OF_ERA.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[j$.time.temporal.a.DAY_OF_YEAR.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            a[j$.time.temporal.a.YEAR.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        try {
+            a[j$.time.temporal.a.ERA.ordinal()] = 8;
+        } catch (NoSuchFieldError unused8) {
+        }
     }
 }

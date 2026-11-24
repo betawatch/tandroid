@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import hd.e;
 import java.lang.reflect.Constructor;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzkf implements zzjt {
     public static final zzkf zza = new zzkf();
@@ -13,24 +12,26 @@ public final class zzkf implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length == 0) {
-            throw new zzdm(4, 3, null);
+            fvc.c(4, 3, null);
+            return;
         }
         Constructor<?> zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
         if (zza2 == null) {
             zza2 = null;
         }
         if (zza2 == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         Constructor<?> constructor = zza2 instanceof Constructor ? zza2 : zza2.getClass().getConstructor(null);
-        Object[] zzg = zzizVar.zzc().zzg(e.h(zzztVarArr).subList(1, length));
+        Object[] zzg = zzizVar.zzc().zzg(ss.h(zzztVarArr).subList(1, length));
         try {
-            zzizVar.zzc().zze(i7, constructor.newInstance(Arrays.copyOf(zzg, zzg.length)));
-        } catch (Exception e10) {
-            throw new zzdm(6, 14, e10);
+            zzizVar.zzc().zze(i, constructor.newInstance(Arrays.copyOf(zzg, zzg.length)));
+        } catch (Exception e) {
+            fvc.c(6, 14, e);
         }
     }
 }

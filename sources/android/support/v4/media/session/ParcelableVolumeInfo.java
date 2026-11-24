@@ -3,10 +3,10 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ParcelableVolumeInfo implements Parcelable {
-    public static final Parcelable.Creator<ParcelableVolumeInfo> CREATOR = new z(3);
+    public static final Parcelable.Creator<ParcelableVolumeInfo> CREATOR = new hv6((byte) 6);
     public int a;
     public int b;
     public int c;
@@ -19,7 +19,7 @@ public class ParcelableVolumeInfo implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
+    public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(this.a);
         parcel.writeInt(this.c);
         parcel.writeInt(this.d);

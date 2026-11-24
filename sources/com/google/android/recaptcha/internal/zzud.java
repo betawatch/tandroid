@@ -1,11 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import a8.p0;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzud extends zzpz implements RandomAccess {
     private static final Object[] zza;
@@ -27,57 +26,58 @@ final class zzud extends zzpz implements RandomAccess {
         return zzb;
     }
 
-    private static int zzg(int i7) {
-        return Math.max(((i7 * 3) / 2) + 1, 10);
+    private static int zzg(int i) {
+        return Math.max(((i * 3) / 2) + 1, 10);
     }
 
-    private final String zzh(int i7) {
-        return p0.m(i7, this.zzd, "Index:", ", Size:");
+    private final String zzh(int i) {
+        return b00.g(i, this.zzd, "Index:", ", Size:");
     }
 
-    private final void zzi(int i7) {
-        if (i7 < 0 || i7 >= this.zzd) {
-            throw new IndexOutOfBoundsException(zzh(i7));
+    private final void zzi(int i) {
+        if (i < 0 || i >= this.zzd) {
+            k93.i(zzh(i));
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.List
-    public final void add(int i7, Object obj) {
-        int i10;
+    public final void add(int i, Object obj) {
+        int i2;
         zza();
-        if (i7 < 0 || i7 > (i10 = this.zzd)) {
-            throw new IndexOutOfBoundsException(zzh(i7));
+        if (i < 0 || i > (i2 = this.zzd)) {
+            k93.i(zzh(i));
+            return;
         }
-        int i11 = i7 + 1;
+        int i3 = i + 1;
         Object[] objArr = this.zzc;
         int length = objArr.length;
-        if (i10 < length) {
-            System.arraycopy(objArr, i7, objArr, i11, i10 - i7);
+        if (i2 < length) {
+            System.arraycopy(objArr, i, objArr, i3, i2 - i);
         } else {
             Object[] objArr2 = new Object[zzg(length)];
-            System.arraycopy(this.zzc, 0, objArr2, 0, i7);
-            System.arraycopy(this.zzc, i7, objArr2, i11, this.zzd - i7);
+            System.arraycopy(this.zzc, 0, objArr2, 0, i);
+            System.arraycopy(this.zzc, i, objArr2, i3, this.zzd - i);
             this.zzc = objArr2;
         }
-        this.zzc[i7] = obj;
+        this.zzc[i] = obj;
         this.zzd++;
         ((AbstractList) this).modCount++;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i7) {
-        zzi(i7);
-        return this.zzc[i7];
+    public final Object get(int i) {
+        zzi(i);
+        return this.zzc[i];
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.List
-    public final Object remove(int i7) {
+    public final Object remove(int i) {
         zza();
-        zzi(i7);
+        zzi(i);
         Object[] objArr = this.zzc;
-        Object obj = objArr[i7];
-        if (i7 < this.zzd - 1) {
-            System.arraycopy(objArr, i7 + 1, objArr, i7, (r2 - i7) - 1);
+        Object obj = objArr[i];
+        if (i < this.zzd - 1) {
+            System.arraycopy(objArr, i + 1, objArr, i, (r2 - i) - 1);
         }
         this.zzd--;
         ((AbstractList) this).modCount++;
@@ -85,12 +85,12 @@ final class zzud extends zzpz implements RandomAccess {
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.List
-    public final Object set(int i7, Object obj) {
+    public final Object set(int i, Object obj) {
         zza();
-        zzi(i7);
+        zzi(i);
         Object[] objArr = this.zzc;
-        Object obj2 = objArr[i7];
-        objArr[i7] = obj;
+        Object obj2 = objArr[i];
+        objArr[i] = obj;
         ((AbstractList) this).modCount++;
         return obj2;
     }
@@ -101,46 +101,48 @@ final class zzud extends zzpz implements RandomAccess {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsu
-    public final /* bridge */ /* synthetic */ zzsu zzd(int i7) {
-        if (i7 >= this.zzd) {
-            return new zzud(i7 == 0 ? zza : Arrays.copyOf(this.zzc, i7), this.zzd, true);
+    public final /* bridge */ /* synthetic */ zzsu zzd(int i) {
+        if (i >= this.zzd) {
+            return new zzud(i == 0 ? zza : Arrays.copyOf(this.zzc, i), this.zzd, true);
         }
-        throw new IllegalArgumentException();
+        sc8.e();
+        return null;
     }
 
-    public final void zzf(int i7) {
+    public final void zzf(int i) {
         int length = this.zzc.length;
-        if (i7 <= length) {
+        if (i <= length) {
             return;
         }
         if (length == 0) {
-            this.zzc = new Object[Math.max(i7, 10)];
+            this.zzc = new Object[Math.max(i, 10)];
             return;
         }
-        while (length < i7) {
+        while (length < i) {
             length = zzg(length);
         }
         this.zzc = Arrays.copyOf(this.zzc, length);
     }
 
-    private zzud(Object[] objArr, int i7, boolean z10) {
-        super(z10);
+    private zzud(Object[] objArr, int i, boolean z) {
+        super(z);
         this.zzc = objArr;
-        this.zzd = i7;
+        this.zzd = i;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
         zza();
-        int i7 = this.zzd;
-        int length = this.zzc.length;
-        if (i7 == length) {
-            this.zzc = Arrays.copyOf(this.zzc, zzg(length));
-        }
+        int i = this.zzd;
         Object[] objArr = this.zzc;
-        int i10 = this.zzd;
-        this.zzd = i10 + 1;
-        objArr[i10] = obj;
+        int length = objArr.length;
+        if (i == length) {
+            objArr = Arrays.copyOf(this.zzc, zzg(length));
+            this.zzc = objArr;
+        }
+        int i2 = this.zzd;
+        this.zzd = i2 + 1;
+        objArr[i2] = obj;
         ((AbstractList) this).modCount++;
         return true;
     }

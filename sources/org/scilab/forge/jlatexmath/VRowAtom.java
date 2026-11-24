@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class VRowAtom extends Atom {
     protected LinkedList<Atom> elements = new LinkedList<>();
@@ -12,7 +12,16 @@ public class VRowAtom extends Atom {
     protected boolean vtop = false;
     protected int halign = 5;
 
-    public VRowAtom() {
+    public VRowAtom(Atom atom) {
+        if (atom != null) {
+            boolean z = atom instanceof VRowAtom;
+            LinkedList<Atom> linkedList = this.elements;
+            if (z) {
+                linkedList.addAll(((VRowAtom) atom).elements);
+            } else {
+                linkedList.add(atom);
+            }
+        }
     }
 
     public final void add(Atom atom) {
@@ -34,18 +43,18 @@ public class VRowAtom extends Atom {
         if (this.halign != 5) {
             LinkedList linkedList = new LinkedList();
             ListIterator<Atom> listIterator = this.elements.listIterator();
-            float f10 = Float.NEGATIVE_INFINITY;
+            float f = Float.NEGATIVE_INFINITY;
             while (listIterator.hasNext()) {
                 Box createBox = listIterator.next().createBox(teXEnvironment);
                 linkedList.add(createBox);
-                if (f10 < createBox.getWidth()) {
-                    f10 = createBox.getWidth();
+                if (f < createBox.getWidth()) {
+                    f = createBox.getWidth();
                 }
             }
             StrutBox strutBox = new StrutBox(0.0f, teXEnvironment.getInterline(), 0.0f, 0.0f);
             ListIterator listIterator2 = linkedList.listIterator();
             while (listIterator2.hasNext()) {
-                verticalBox.add(new HorizontalBox((Box) listIterator2.next(), f10, this.halign));
+                verticalBox.add(new HorizontalBox((Box) listIterator2.next(), f, this.halign));
                 if (this.addInterline && listIterator2.hasNext()) {
                     verticalBox.add(strutBox);
                 }
@@ -89,29 +98,22 @@ public class VRowAtom extends Atom {
         return this.vtop;
     }
 
-    public void setAddInterline(boolean z10) {
-        this.addInterline = z10;
+    public void setAddInterline(boolean z) {
+        this.addInterline = z;
     }
 
-    public void setHalign(int i7) {
-        this.halign = i7;
+    public void setHalign(int i) {
+        this.halign = i;
     }
 
-    public void setRaise(int i7, float f10) {
-        this.raise = new SpaceAtom(i7, f10, 0.0f, 0.0f);
+    public void setRaise(int i, float f) {
+        this.raise = new SpaceAtom(i, f, 0.0f, 0.0f);
     }
 
-    public void setVtop(boolean z10) {
-        this.vtop = z10;
+    public void setVtop(boolean z) {
+        this.vtop = z;
     }
 
-    public VRowAtom(Atom atom) {
-        if (atom != null) {
-            if (atom instanceof VRowAtom) {
-                this.elements.addAll(((VRowAtom) atom).elements);
-            } else {
-                this.elements.add(atom);
-            }
-        }
+    public VRowAtom() {
     }
 }

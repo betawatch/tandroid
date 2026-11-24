@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
-import org.telegram.messenger.ks;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class FastDatePrinter implements DatePrinter, Serializable {
     public static final int FULL = 0;
@@ -30,12 +30,12 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     private transient Rule[] mRules;
     private final TimeZone mTimeZone;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class CharacterLiteral implements Rule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class CharacterLiteral implements Rule {
         private final char mValue;
 
-        public CharacterLiteral(char c10) {
-            this.mValue = c10;
+        public CharacterLiteral(char c) {
+            this.mValue = c;
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
@@ -49,71 +49,20 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public interface NumberRule extends Rule {
-        void appendTo(StringBuffer stringBuffer, int i7);
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private interface NumberRule extends Rule {
+        void appendTo(StringBuffer stringBuffer, int i);
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class PaddedNumberField implements NumberRule {
-        private final int mField;
-        private final int mSize;
-
-        public PaddedNumberField(int i7, int i10) {
-            if (i10 < 3) {
-                throw new IllegalArgumentException();
-            }
-            this.mField = i7;
-            this.mSize = i10;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            appendTo(stringBuffer, calendar.get(this.mField));
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public int estimateLength() {
-            return 4;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public final void appendTo(StringBuffer stringBuffer, int i7) {
-            if (i7 < 100) {
-                int i10 = this.mSize;
-                while (true) {
-                    i10--;
-                    if (i10 < 2) {
-                        stringBuffer.append((char) ((i7 / 10) + 48));
-                        stringBuffer.append((char) ((i7 % 10) + 48));
-                        return;
-                    }
-                    stringBuffer.append('0');
-                }
-            } else {
-                int length = i7 < 1000 ? 3 : Integer.toString(i7).length();
-                int i11 = this.mSize;
-                while (true) {
-                    i11--;
-                    if (i11 < length) {
-                        stringBuffer.append(Integer.toString(i7));
-                        return;
-                    }
-                    stringBuffer.append('0');
-                }
-            }
-        }
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public interface Rule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private interface Rule {
         void appendTo(StringBuffer stringBuffer, Calendar calendar);
 
         int estimateLength();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class StringLiteral implements Rule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class StringLiteral implements Rule {
         private final String mValue;
 
         public StringLiteral(String str) {
@@ -131,13 +80,13 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TextField implements Rule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TextField implements Rule {
         private final int mField;
         private final String[] mValues;
 
-        public TextField(int i7, String[] strArr) {
-            this.mField = i7;
+        public TextField(int i, String[] strArr) {
+            this.mField = i;
             this.mValues = strArr;
         }
 
@@ -149,32 +98,32 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
         public int estimateLength() {
             int length = this.mValues.length;
-            int i7 = 0;
+            int i = 0;
             while (true) {
                 length--;
                 if (length < 0) {
-                    return i7;
+                    return i;
                 }
                 int length2 = this.mValues[length].length();
-                if (length2 > i7) {
-                    i7 = length2;
+                if (length2 > i) {
+                    i = length2;
                 }
             }
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TimeZoneDisplayKey {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TimeZoneDisplayKey {
         private final Locale mLocale;
         private final int mStyle;
         private final TimeZone mTimeZone;
 
-        public TimeZoneDisplayKey(TimeZone timeZone, boolean z10, int i7, Locale locale) {
+        public TimeZoneDisplayKey(TimeZone timeZone, boolean z, int i, Locale locale) {
             this.mTimeZone = timeZone;
-            if (z10) {
-                this.mStyle = Integer.MIN_VALUE | i7;
+            if (z) {
+                this.mStyle = i | TLObject.FLAG_31;
             } else {
-                this.mStyle = i7;
+                this.mStyle = i;
             }
             this.mLocale = locale;
         }
@@ -197,18 +146,18 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TimeZoneNameRule implements Rule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TimeZoneNameRule implements Rule {
         private final String mDaylight;
         private final Locale mLocale;
         private final String mStandard;
         private final int mStyle;
 
-        public TimeZoneNameRule(TimeZone timeZone, Locale locale, int i7) {
+        public TimeZoneNameRule(TimeZone timeZone, Locale locale, int i) {
             this.mLocale = locale;
-            this.mStyle = i7;
-            this.mStandard = FastDatePrinter.getTimeZoneDisplay(timeZone, false, i7, locale);
-            this.mDaylight = FastDatePrinter.getTimeZoneDisplay(timeZone, true, i7, locale);
+            this.mStyle = i;
+            this.mStandard = FastDatePrinter.getTimeZoneDisplay(timeZone, false, i, locale);
+            this.mDaylight = FastDatePrinter.getTimeZoneDisplay(timeZone, true, i, locale);
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
@@ -227,166 +176,39 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TimeZoneNumberRule implements Rule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TimeZoneNumberRule implements Rule {
         static final TimeZoneNumberRule INSTANCE_COLON = new TimeZoneNumberRule(true);
         static final TimeZoneNumberRule INSTANCE_NO_COLON = new TimeZoneNumberRule(false);
         final boolean mColon;
 
-        public TimeZoneNumberRule(boolean z10) {
-            this.mColon = z10;
+        public TimeZoneNumberRule(boolean z) {
+            this.mColon = z;
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
         public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            int i7 = calendar.get(16) + calendar.get(15);
-            if (i7 < 0) {
+            int i = calendar.get(16) + calendar.get(15);
+            if (i < 0) {
                 stringBuffer.append('-');
-                i7 = -i7;
+                i = -i;
             } else {
                 stringBuffer.append('+');
             }
-            int i10 = i7 / 3600000;
-            stringBuffer.append((char) ((i10 / 10) + 48));
-            stringBuffer.append((char) ((i10 % 10) + 48));
+            int i2 = i / 3600000;
+            stringBuffer.append((char) ((i2 / 10) + 48));
+            stringBuffer.append((char) ((i2 % 10) + 48));
             if (this.mColon) {
                 stringBuffer.append(':');
             }
-            int i11 = (i7 / 60000) - (i10 * 60);
-            stringBuffer.append((char) ((i11 / 10) + 48));
-            stringBuffer.append((char) ((i11 % 10) + 48));
+            int i3 = (i / 60000) - (i2 * 60);
+            stringBuffer.append((char) ((i3 / 10) + 48));
+            stringBuffer.append((char) ((i3 % 10) + 48));
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
         public int estimateLength() {
             return 5;
-        }
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TwoDigitMonthField implements NumberRule {
-        static final TwoDigitMonthField INSTANCE = new TwoDigitMonthField();
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            appendTo(stringBuffer, calendar.get(2) + 1);
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public int estimateLength() {
-            return 2;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public final void appendTo(StringBuffer stringBuffer, int i7) {
-            stringBuffer.append((char) ((i7 / 10) + 48));
-            stringBuffer.append((char) ((i7 % 10) + 48));
-        }
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TwoDigitNumberField implements NumberRule {
-        private final int mField;
-
-        public TwoDigitNumberField(int i7) {
-            this.mField = i7;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            appendTo(stringBuffer, calendar.get(this.mField));
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public int estimateLength() {
-            return 2;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public final void appendTo(StringBuffer stringBuffer, int i7) {
-            if (i7 >= 100) {
-                stringBuffer.append(Integer.toString(i7));
-            } else {
-                stringBuffer.append((char) ((i7 / 10) + 48));
-                stringBuffer.append((char) ((i7 % 10) + 48));
-            }
-        }
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TwoDigitYearField implements NumberRule {
-        static final TwoDigitYearField INSTANCE = new TwoDigitYearField();
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            appendTo(stringBuffer, calendar.get(1) % 100);
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public int estimateLength() {
-            return 2;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public final void appendTo(StringBuffer stringBuffer, int i7) {
-            stringBuffer.append((char) ((i7 / 10) + 48));
-            stringBuffer.append((char) ((i7 % 10) + 48));
-        }
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class UnpaddedMonthField implements NumberRule {
-        static final UnpaddedMonthField INSTANCE = new UnpaddedMonthField();
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            appendTo(stringBuffer, calendar.get(2) + 1);
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public int estimateLength() {
-            return 2;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public final void appendTo(StringBuffer stringBuffer, int i7) {
-            if (i7 < 10) {
-                stringBuffer.append((char) (i7 + 48));
-            } else {
-                stringBuffer.append((char) ((i7 / 10) + 48));
-                stringBuffer.append((char) ((i7 % 10) + 48));
-            }
-        }
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class UnpaddedNumberField implements NumberRule {
-        private final int mField;
-
-        public UnpaddedNumberField(int i7) {
-            this.mField = i7;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            appendTo(stringBuffer, calendar.get(this.mField));
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
-        public int estimateLength() {
-            return 4;
-        }
-
-        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public final void appendTo(StringBuffer stringBuffer, int i7) {
-            if (i7 < 10) {
-                stringBuffer.append((char) (i7 + 48));
-            } else if (i7 >= 100) {
-                stringBuffer.append(Integer.toString(i7));
-            } else {
-                stringBuffer.append((char) ((i7 / 10) + 48));
-                stringBuffer.append((char) ((i7 % 10) + 48));
-            }
         }
     }
 
@@ -401,14 +223,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         return applyRules(calendar, new StringBuffer(this.mMaxLengthEstimate)).toString();
     }
 
-    public static String getTimeZoneDisplay(TimeZone timeZone, boolean z10, int i7, Locale locale) {
-        TimeZoneDisplayKey timeZoneDisplayKey = new TimeZoneDisplayKey(timeZone, z10, i7, locale);
+    public static String getTimeZoneDisplay(TimeZone timeZone, boolean z, int i, Locale locale) {
+        TimeZoneDisplayKey timeZoneDisplayKey = new TimeZoneDisplayKey(timeZone, z, i, locale);
         ConcurrentMap<TimeZoneDisplayKey, String> concurrentMap = cTimeZoneDisplayCache;
         String str = concurrentMap.get(timeZoneDisplayKey);
         if (str != null) {
             return str;
         }
-        String displayName = timeZone.getDisplayName(z10, i7, locale);
+        String displayName = timeZone.getDisplayName(z, i, locale);
         String putIfAbsent = concurrentMap.putIfAbsent(timeZoneDisplayKey, displayName);
         return putIfAbsent != null ? putIfAbsent : displayName;
     }
@@ -418,14 +240,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         Rule[] ruleArr = (Rule[]) parsePattern.toArray(new Rule[parsePattern.size()]);
         this.mRules = ruleArr;
         int length = ruleArr.length;
-        int i7 = 0;
+        int i = 0;
         while (true) {
             length--;
             if (length < 0) {
-                this.mMaxLengthEstimate = i7;
+                this.mMaxLengthEstimate = i;
                 return;
             }
-            i7 += this.mRules[length].estimateLength();
+            i += this.mRules[length].estimateLength();
         }
     }
 
@@ -491,12 +313,12 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     }
 
     public List<Rule> parsePattern() {
-        int i7;
-        int i10;
+        int i;
+        int i2;
         Rule selectNumberRule;
         Rule rule;
         Rule timeZoneNameRule;
-        int i11;
+        int i3;
         Rule textField;
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(this.mLocale);
         ArrayList arrayList = new ArrayList();
@@ -507,28 +329,28 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         String[] shortWeekdays = dateFormatSymbols.getShortWeekdays();
         String[] amPmStrings = dateFormatSymbols.getAmPmStrings();
         int length = this.mPattern.length();
-        int i12 = 0;
-        int i13 = 0;
-        while (i13 < length) {
-            int[] iArr = {i13};
+        int i4 = 0;
+        int i5 = 0;
+        while (i5 < length) {
+            int[] iArr = {i5};
             String parseToken = parseToken(this.mPattern, iArr);
-            int i14 = iArr[i12];
+            int i6 = iArr[i4];
             int length2 = parseToken.length();
             if (length2 == 0) {
                 return arrayList;
             }
-            char charAt = parseToken.charAt(i12);
+            char charAt = parseToken.charAt(i4);
             if (charAt == 'y') {
-                i7 = 0;
+                i = 0;
                 if (length2 == 2) {
                     rule = TwoDigitYearField.INSTANCE;
                     selectNumberRule = rule;
-                    i10 = 1;
+                    i2 = 1;
                 } else {
                     if (length2 < 4) {
                         length2 = 4;
                     }
-                    i10 = 1;
+                    i2 = 1;
                     selectNumberRule = selectNumberRule(1, length2);
                 }
             } else if (charAt != 'z') {
@@ -536,109 +358,109 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                     case '\'':
                         String substring = parseToken.substring(1);
                         selectNumberRule = substring.length() == 1 ? new CharacterLiteral(substring.charAt(0)) : new StringLiteral(substring);
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.U0 /* 83 */:
-                        i11 = 1;
+                    case kk7.T0 /* 83 */:
+                        i3 = 1;
                         timeZoneNameRule = selectNumberRule(14, length2);
                         selectNumberRule = timeZoneNameRule;
-                        i10 = i11;
-                        i7 = 0;
+                        i2 = i3;
+                        i = 0;
                         break;
-                    case ks.Y0 /* 87 */:
-                        i11 = 1;
+                    case kk7.X0 /* 87 */:
+                        i3 = 1;
                         timeZoneNameRule = selectNumberRule(4, length2);
                         selectNumberRule = timeZoneNameRule;
-                        i10 = i11;
-                        i7 = 0;
+                        i2 = i3;
+                        i = 0;
                         break;
-                    case ks.b1 /* 90 */:
-                        i11 = 1;
+                    case kk7.a1 /* 90 */:
+                        i3 = 1;
                         timeZoneNameRule = length2 == 1 ? TimeZoneNumberRule.INSTANCE_NO_COLON : TimeZoneNumberRule.INSTANCE_COLON;
                         selectNumberRule = timeZoneNameRule;
-                        i10 = i11;
-                        i7 = 0;
+                        i2 = i3;
+                        i = 0;
                         break;
-                    case ks.i1 /* 97 */:
+                    case kk7.h1 /* 97 */:
                         textField = new TextField(9, amPmStrings);
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.l1 /* 100 */:
+                    case kk7.k1 /* 100 */:
                         textField = selectNumberRule(5, length2);
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.p1 /* 104 */:
+                    case kk7.o1 /* 104 */:
                         textField = new TwelveHourField(selectNumberRule(10, length2));
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.s1 /* 107 */:
+                    case kk7.r1 /* 107 */:
                         textField = new TwentyFourHourField(selectNumberRule(11, length2));
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.u1 /* 109 */:
+                    case kk7.t1 /* 109 */:
                         textField = selectNumberRule(12, length2);
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.A1 /* 115 */:
+                    case kk7.z1 /* 115 */:
                         textField = selectNumberRule(13, length2);
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
-                    case ks.E1 /* 119 */:
+                    case kk7.D1 /* 119 */:
                         textField = selectNumberRule(3, length2);
                         selectNumberRule = textField;
-                        i10 = 1;
-                        i7 = 0;
+                        i2 = 1;
+                        i = 0;
                         break;
                     default:
                         switch (charAt) {
-                            case ks.F0 /* 68 */:
+                            case kk7.E0 /* 68 */:
                                 textField = selectNumberRule(6, length2);
                                 selectNumberRule = textField;
-                                i10 = 1;
-                                i7 = 0;
+                                i2 = 1;
+                                i = 0;
                                 break;
-                            case ks.G0 /* 69 */:
+                            case kk7.F0 /* 69 */:
                                 selectNumberRule = new TextField(7, length2 < 4 ? shortWeekdays : weekdays);
-                                i10 = 1;
-                                i7 = 0;
+                                i2 = 1;
+                                i = 0;
                                 break;
-                            case ks.H0 /* 70 */:
+                            case kk7.G0 /* 70 */:
                                 textField = selectNumberRule(8, length2);
                                 selectNumberRule = textField;
-                                i10 = 1;
-                                i7 = 0;
+                                i2 = 1;
+                                i = 0;
                                 break;
-                            case ks.I0 /* 71 */:
+                            case kk7.H0 /* 71 */:
                                 rule = new TextField(0, eras);
-                                i7 = 0;
+                                i = 0;
                                 selectNumberRule = rule;
-                                i10 = 1;
+                                i2 = 1;
                                 break;
-                            case ks.J0 /* 72 */:
+                            case kk7.I0 /* 72 */:
                                 textField = selectNumberRule(11, length2);
                                 selectNumberRule = textField;
-                                i10 = 1;
-                                i7 = 0;
+                                i2 = 1;
+                                i = 0;
                                 break;
                             default:
                                 switch (charAt) {
-                                    case ks.M0 /* 75 */:
+                                    case kk7.L0 /* 75 */:
                                         textField = selectNumberRule(10, length2);
                                         break;
-                                    case ks.N0 /* 76 */:
+                                    case kk7.M0 /* 76 */:
                                         if (length2 < 4) {
                                             if (length2 != 3) {
                                                 if (length2 != 2) {
@@ -656,7 +478,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                                             textField = new TextField(2, months);
                                             break;
                                         }
-                                    case ks.O0 /* 77 */:
+                                    case kk7.N0 /* 77 */:
                                         if (length2 < 4) {
                                             if (length2 != 3) {
                                                 if (length2 != 2) {
@@ -675,85 +497,131 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                                             break;
                                         }
                                     default:
-                                        throw new IllegalArgumentException("Illegal pattern component: ".concat(parseToken));
+                                        w26.j("Illegal pattern component: ".concat(parseToken));
+                                        return null;
                                 }
                                 selectNumberRule = textField;
-                                i10 = 1;
-                                i7 = 0;
+                                i2 = 1;
+                                i = 0;
                                 break;
                         }
                 }
-            } else if (length2 >= 4) {
-                i11 = 1;
-                timeZoneNameRule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 1);
-                selectNumberRule = timeZoneNameRule;
-                i10 = i11;
-                i7 = 0;
             } else {
-                i7 = 0;
-                rule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 0);
-                selectNumberRule = rule;
-                i10 = 1;
+                TimeZone timeZone = this.mTimeZone;
+                if (length2 >= 4) {
+                    i3 = 1;
+                    timeZoneNameRule = new TimeZoneNameRule(timeZone, this.mLocale, 1);
+                    selectNumberRule = timeZoneNameRule;
+                    i2 = i3;
+                    i = 0;
+                } else {
+                    i = 0;
+                    rule = new TimeZoneNameRule(timeZone, this.mLocale, 0);
+                    selectNumberRule = rule;
+                    i2 = 1;
+                }
             }
             arrayList.add(selectNumberRule);
-            i13 = i14 + i10;
-            i12 = i7;
+            i5 = i6 + i2;
+            i4 = i;
         }
         return arrayList;
     }
 
     public String parseToken(String str, int[] iArr) {
-        StringBuilder sb2 = new StringBuilder();
-        int i7 = iArr[0];
+        StringBuilder sb = new StringBuilder();
+        int i = iArr[0];
         int length = str.length();
-        char charAt = str.charAt(i7);
+        char charAt = str.charAt(i);
         if ((charAt >= 'A' && charAt <= 'Z') || (charAt >= 'a' && charAt <= 'z')) {
-            sb2.append(charAt);
+            sb.append(charAt);
             while (true) {
-                int i10 = i7 + 1;
-                if (i10 >= length || str.charAt(i10) != charAt) {
+                int i2 = i + 1;
+                if (i2 >= length || str.charAt(i2) != charAt) {
                     break;
                 }
-                sb2.append(charAt);
-                i7 = i10;
+                sb.append(charAt);
+                i = i2;
             }
         } else {
-            sb2.append('\'');
-            boolean z10 = false;
-            while (i7 < length) {
-                char charAt2 = str.charAt(i7);
+            sb.append('\'');
+            boolean z = false;
+            while (i < length) {
+                char charAt2 = str.charAt(i);
                 if (charAt2 != '\'') {
-                    if (!z10 && ((charAt2 >= 'A' && charAt2 <= 'Z') || (charAt2 >= 'a' && charAt2 <= 'z'))) {
-                        i7--;
+                    if (!z && ((charAt2 >= 'A' && charAt2 <= 'Z') || (charAt2 >= 'a' && charAt2 <= 'z'))) {
+                        i--;
                         break;
                     }
-                    sb2.append(charAt2);
+                    sb.append(charAt2);
                 } else {
-                    int i11 = i7 + 1;
-                    if (i11 >= length || str.charAt(i11) != '\'') {
-                        z10 = !z10;
+                    int i3 = i + 1;
+                    if (i3 >= length || str.charAt(i3) != '\'') {
+                        z = !z;
                     } else {
-                        sb2.append(charAt2);
-                        i7 = i11;
+                        sb.append(charAt2);
+                        i = i3;
                     }
                 }
-                i7++;
+                i++;
             }
         }
-        iArr[0] = i7;
-        return sb2.toString();
+        iArr[0] = i;
+        return sb.toString();
     }
 
-    public NumberRule selectNumberRule(int i7, int i10) {
-        return i10 != 1 ? i10 != 2 ? new PaddedNumberField(i7, i10) : new TwoDigitNumberField(i7) : new UnpaddedNumberField(i7);
+    public NumberRule selectNumberRule(int i, int i2) {
+        return i2 != 1 ? i2 != 2 ? new PaddedNumberField(i, i2) : new TwoDigitNumberField(i) : new UnpaddedNumberField(i);
     }
 
     public String toString() {
         return "FastDatePrinter[" + this.mPattern + "," + this.mLocale + "," + this.mTimeZone.getID() + "]";
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TwelveHourField implements NumberRule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TwoDigitMonthField implements NumberRule {
+        static final TwoDigitMonthField INSTANCE = new TwoDigitMonthField();
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
+        public final void appendTo(StringBuffer stringBuffer, int i) {
+            stringBuffer.append((char) ((i / 10) + 48));
+            stringBuffer.append((char) ((i % 10) + 48));
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public int estimateLength() {
+            return 2;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
+            appendTo(stringBuffer, calendar.get(2) + 1);
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TwoDigitYearField implements NumberRule {
+        static final TwoDigitYearField INSTANCE = new TwoDigitYearField();
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
+        public final void appendTo(StringBuffer stringBuffer, int i) {
+            stringBuffer.append((char) ((i / 10) + 48));
+            stringBuffer.append((char) ((i % 10) + 48));
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public int estimateLength() {
+            return 2;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
+            appendTo(stringBuffer, calendar.get(1) % 100);
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TwelveHourField implements NumberRule {
         private final NumberRule mRule;
 
         public TwelveHourField(NumberRule numberRule) {
@@ -762,11 +630,11 @@ public class FastDatePrinter implements DatePrinter, Serializable {
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
         public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            int i7 = calendar.get(10);
-            if (i7 == 0) {
-                i7 = calendar.getLeastMaximum(10) + 1;
+            int i = calendar.get(10);
+            if (i == 0) {
+                i = calendar.getLeastMaximum(10) + 1;
             }
-            this.mRule.appendTo(stringBuffer, i7);
+            this.mRule.appendTo(stringBuffer, i);
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
@@ -775,13 +643,13 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public void appendTo(StringBuffer stringBuffer, int i7) {
-            this.mRule.appendTo(stringBuffer, i7);
+        public void appendTo(StringBuffer stringBuffer, int i) {
+            this.mRule.appendTo(stringBuffer, i);
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TwentyFourHourField implements NumberRule {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TwentyFourHourField implements NumberRule {
         private final NumberRule mRule;
 
         public TwentyFourHourField(NumberRule numberRule) {
@@ -790,11 +658,11 @@ public class FastDatePrinter implements DatePrinter, Serializable {
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
         public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
-            int i7 = calendar.get(11);
-            if (i7 == 0) {
-                i7 = calendar.getMaximum(11) + 1;
+            int i = calendar.get(11);
+            if (i == 0) {
+                i = calendar.getMaximum(11) + 1;
             }
-            this.mRule.appendTo(stringBuffer, i7);
+            this.mRule.appendTo(stringBuffer, i);
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
@@ -803,16 +671,153 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
-        public void appendTo(StringBuffer stringBuffer, int i7) {
-            this.mRule.appendTo(stringBuffer, i7);
+        public void appendTo(StringBuffer stringBuffer, int i) {
+            this.mRule.appendTo(stringBuffer, i);
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class UnpaddedMonthField implements NumberRule {
+        static final UnpaddedMonthField INSTANCE = new UnpaddedMonthField();
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
+        public final void appendTo(StringBuffer stringBuffer, int i) {
+            if (i < 10) {
+                stringBuffer.append((char) (i + 48));
+            } else {
+                stringBuffer.append((char) ((i / 10) + 48));
+                stringBuffer.append((char) ((i % 10) + 48));
+            }
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public int estimateLength() {
+            return 2;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
+            appendTo(stringBuffer, calendar.get(2) + 1);
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class TwoDigitNumberField implements NumberRule {
+        private final int mField;
+
+        public TwoDigitNumberField(int i) {
+            this.mField = i;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
+        public final void appendTo(StringBuffer stringBuffer, int i) {
+            if (i >= 100) {
+                stringBuffer.append(Integer.toString(i));
+            } else {
+                stringBuffer.append((char) ((i / 10) + 48));
+                stringBuffer.append((char) ((i % 10) + 48));
+            }
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public int estimateLength() {
+            return 2;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
+            appendTo(stringBuffer, calendar.get(this.mField));
+        }
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class UnpaddedNumberField implements NumberRule {
+        private final int mField;
+
+        public UnpaddedNumberField(int i) {
+            this.mField = i;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
+        public final void appendTo(StringBuffer stringBuffer, int i) {
+            if (i < 10) {
+                stringBuffer.append((char) (i + 48));
+            } else if (i >= 100) {
+                stringBuffer.append(Integer.toString(i));
+            } else {
+                stringBuffer.append((char) ((i / 10) + 48));
+                stringBuffer.append((char) ((i % 10) + 48));
+            }
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public int estimateLength() {
+            return 4;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
+            appendTo(stringBuffer, calendar.get(this.mField));
         }
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
-    public String format(long j3) {
+    public String format(long j) {
         GregorianCalendar newCalendar = newCalendar();
-        newCalendar.setTimeInMillis(j3);
+        newCalendar.setTimeInMillis(j);
         return applyRulesToString(newCalendar);
+    }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class PaddedNumberField implements NumberRule {
+        private final int mField;
+        private final int mSize;
+
+        public PaddedNumberField(int i, int i2) {
+            if (i2 < 3) {
+                sc8.e();
+                throw null;
+            }
+            this.mField = i;
+            this.mSize = i2;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.NumberRule
+        public final void appendTo(StringBuffer stringBuffer, int i) {
+            if (i < 100) {
+                int i2 = this.mSize;
+                while (true) {
+                    i2--;
+                    if (i2 < 2) {
+                        stringBuffer.append((char) ((i / 10) + 48));
+                        stringBuffer.append((char) ((i % 10) + 48));
+                        return;
+                    }
+                    stringBuffer.append('0');
+                }
+            } else {
+                int length = i < 1000 ? 3 : Integer.toString(i).length();
+                int i3 = this.mSize;
+                while (true) {
+                    i3--;
+                    if (i3 < length) {
+                        stringBuffer.append(Integer.toString(i));
+                        return;
+                    }
+                    stringBuffer.append('0');
+                }
+            }
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public int estimateLength() {
+            return 4;
+        }
+
+        @Override // org.telegram.messenger.time.FastDatePrinter.Rule
+        public void appendTo(StringBuffer stringBuffer, Calendar calendar) {
+            appendTo(stringBuffer, calendar.get(this.mField));
+        }
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
@@ -828,8 +833,8 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
-    public StringBuffer format(long j3, StringBuffer stringBuffer) {
-        return format(new Date(j3), stringBuffer);
+    public StringBuffer format(long j, StringBuffer stringBuffer) {
+        return format(new Date(j), stringBuffer);
     }
 
     @Override // org.telegram.messenger.time.DatePrinter

@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class p {
     public static final a f = new a(0);
     public p a;
@@ -59,73 +60,26 @@ public final class p {
         this.d = false;
     }
 
-    public p(p pVar) {
-        this.a = this;
-        this.c = new ArrayList();
-        this.e = -1;
-        this.b = pVar;
-        this.d = true;
+    public final void a(DateTimeFormatter dateTimeFormatter) {
+        Objects.requireNonNull(dateTimeFormatter, "formatter");
+        e eVar = dateTimeFormatter.a;
+        if (eVar.b) {
+            eVar = new e(eVar.a, false);
+        }
+        b(eVar);
     }
 
-    public final void g(j$.time.temporal.o oVar, int i7) {
-        Objects.requireNonNull(oVar, "field");
-        if (i7 < 1 || i7 > 19) {
-            throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i7);
-        }
-        f(new i(oVar, i7, i7, x.NOT_NEGATIVE));
-    }
-
-    public final void h(j$.time.temporal.o oVar, int i7, int i10, x xVar) {
-        if (i7 == i10 && xVar == x.NOT_NEGATIVE) {
-            g(oVar, i10);
-            return;
-        }
-        Objects.requireNonNull(oVar, "field");
-        Objects.requireNonNull(xVar, "signStyle");
-        if (i7 < 1 || i7 > 19) {
-            throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i7);
-        }
-        if (i10 < 1 || i10 > 19) {
-            throw new IllegalArgumentException("The maximum width must be from 1 to 19 inclusive but was " + i10);
-        }
-        if (i10 < i7) {
-            throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i10 + " < " + i7);
-        }
-        f(new i(oVar, i7, i10, xVar));
-    }
-
-    public final void f(i iVar) {
-        i a10;
+    public final int b(f fVar) {
+        Objects.requireNonNull(fVar, "pp");
         p pVar = this.a;
-        int i7 = pVar.e;
-        if (i7 < 0) {
-            pVar.e = b(iVar);
-            return;
-        }
-        i iVar2 = (i) ((ArrayList) pVar.c).get(i7);
-        int i10 = iVar.b;
-        int i11 = iVar.c;
-        if (i10 == i11 && iVar.d == x.NOT_NEGATIVE) {
-            a10 = iVar2.b(i11);
-            b(iVar.a());
-            this.a.e = i7;
-        } else {
-            a10 = iVar2.a();
-            this.a.e = b(iVar);
-        }
-        ((ArrayList) this.a.c).set(i7, a10);
+        pVar.getClass();
+        ((ArrayList) pVar.c).add(fVar);
+        this.a.e = -1;
+        return ((ArrayList) r1.c).size() - 1;
     }
 
-    public final void e(j$.time.temporal.a aVar, Map map) {
-        Objects.requireNonNull(aVar, "field");
-        Objects.requireNonNull(map, "textLookup");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(map);
-        TextStyle textStyle = TextStyle.FULL;
-        b(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
-    }
-
-    public final void c(char c10) {
-        b(new d(c10));
+    public final void c(char c) {
+        b(new d(c));
     }
 
     public final void d(String str) {
@@ -140,12 +94,80 @@ public final class p {
         }
     }
 
-    public final void a(DateTimeFormatter dateTimeFormatter) {
-        Objects.requireNonNull(dateTimeFormatter, "formatter");
-        e eVar = dateTimeFormatter.a;
-        if (eVar.b) {
-            eVar = new e(eVar.a, false);
+    public final void e(j$.time.temporal.a aVar, Map map) {
+        Objects.requireNonNull(aVar, "field");
+        Objects.requireNonNull(map, "textLookup");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(map);
+        TextStyle textStyle = TextStyle.FULL;
+        b(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
+    }
+
+    public final void f(i iVar) {
+        i a;
+        p pVar = this.a;
+        int i = pVar.e;
+        if (i < 0) {
+            pVar.e = b(iVar);
+            return;
         }
+        i iVar2 = (i) ((ArrayList) pVar.c).get(i);
+        byte b = iVar.b;
+        byte b2 = iVar.c;
+        if (b == b2 && iVar.d == x.NOT_NEGATIVE) {
+            a = iVar2.b(b2);
+            b(iVar.a());
+            this.a.e = i;
+        } else {
+            a = iVar2.a();
+            this.a.e = b(iVar);
+        }
+        ((ArrayList) this.a.c).set(i, a);
+    }
+
+    public final void g(j$.time.temporal.o oVar, int i) {
+        Objects.requireNonNull(oVar, "field");
+        if (i < 1 || i > 19) {
+            j$.time.g.j("The width must be from 1 to 19 inclusive but was ", i);
+        } else {
+            f(new i(oVar, i, i, x.NOT_NEGATIVE));
+        }
+    }
+
+    public final void h(j$.time.temporal.o oVar, int i, int i2, x xVar) {
+        if (i == i2 && xVar == x.NOT_NEGATIVE) {
+            g(oVar, i2);
+            return;
+        }
+        Objects.requireNonNull(oVar, "field");
+        Objects.requireNonNull(xVar, "signStyle");
+        if (i < 1 || i > 19) {
+            j$.time.g.j("The minimum width must be from 1 to 19 inclusive but was ", i);
+            return;
+        }
+        if (i2 < 1 || i2 > 19) {
+            j$.time.g.j("The maximum width must be from 1 to 19 inclusive but was ", i2);
+            return;
+        }
+        if (i2 >= i) {
+            f(new i(oVar, i, i2, xVar));
+            return;
+        }
+        throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i2 + " < " + i);
+    }
+
+    public final void i() {
+        p pVar = this.a;
+        if (pVar.b == null) {
+            throw new IllegalStateException("Cannot call optionalEnd() as there was no previous call to optionalStart()");
+        }
+        int size = ((ArrayList) pVar.c).size();
+        p pVar2 = this.a;
+        if (size <= 0) {
+            this.a = pVar2.b;
+            return;
+        }
+        e eVar = new e(pVar2.c, pVar2.d);
+        this.a = this.a.b;
         b(eVar);
     }
 
@@ -155,41 +177,25 @@ public final class p {
         this.a = new p(pVar);
     }
 
-    public final void i() {
-        p pVar = this.a;
-        if (pVar.b == null) {
-            throw new IllegalStateException("Cannot call optionalEnd() as there was no previous call to optionalStart()");
-        }
-        if (((ArrayList) pVar.c).size() > 0) {
-            p pVar2 = this.a;
-            e eVar = new e(pVar2.c, pVar2.d);
-            this.a = this.a.b;
-            b(eVar);
-            return;
-        }
-        this.a = this.a.b;
+    public final DateTimeFormatter k(w wVar, j$.time.chrono.q qVar) {
+        return l(Locale.getDefault(), wVar, qVar);
     }
 
-    public final int b(f fVar) {
-        Objects.requireNonNull(fVar, "pp");
-        p pVar = this.a;
-        pVar.getClass();
-        ((ArrayList) pVar.c).add(fVar);
-        this.a.e = -1;
-        return ((ArrayList) r2.c).size() - 1;
-    }
-
-    public final DateTimeFormatter k(w wVar, j$.time.chrono.k kVar) {
-        return l(Locale.getDefault(), wVar, kVar);
-    }
-
-    public final DateTimeFormatter l(Locale locale, w wVar, j$.time.chrono.k kVar) {
+    public final DateTimeFormatter l(Locale locale, w wVar, j$.time.chrono.q qVar) {
         Objects.requireNonNull(locale, "locale");
         while (this.a.b != null) {
             i();
         }
         e eVar = new e(this.c, false);
         v vVar = v.a;
-        return new DateTimeFormatter(eVar, locale, wVar, kVar);
+        return new DateTimeFormatter(eVar, locale, wVar, qVar);
+    }
+
+    public p(p pVar) {
+        this.a = this;
+        this.c = new ArrayList();
+        this.e = -1;
+        this.b = pVar;
+        this.d = true;
     }
 }

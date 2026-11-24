@@ -1,54 +1,53 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.vision.e2;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzui {
     public static final /* synthetic */ int zza = 0;
     private static final zzuv zzb;
 
     static {
-        int i7 = zzuc.zza;
+        int i = zzuc.zza;
         zzb = new zzux();
     }
 
-    public static void zzA(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzA(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzA(i7, list, z10);
+        zzviVar.zzA(i, list, z);
     }
 
-    public static void zzB(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzB(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzC(i7, list, z10);
+        zzviVar.zzC(i, list, z);
     }
 
-    public static void zzC(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzC(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzE(i7, list, z10);
+        zzviVar.zzE(i, list, z);
     }
 
-    public static void zzD(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzD(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzJ(i7, list, z10);
+        zzviVar.zzJ(i, list, z);
     }
 
-    public static void zzE(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzE(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzL(i7, list, z10);
+        zzviVar.zzL(i, list, z);
     }
 
     public static boolean zzF(Object obj, Object obj2) {
@@ -60,208 +59,208 @@ final class zzui {
 
     public static int zza(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzso)) {
-            int i10 = 0;
-            while (i7 < size) {
-                i10 += zzqv.zzB(((Integer) list.get(i7)).intValue());
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Integer) list.get(i)).intValue());
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzso zzsoVar = (zzso) list;
-        int i11 = 0;
-        while (i7 < size) {
-            i11 += zzqv.zzB(zzsoVar.zze(i7));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzsoVar.zze(i));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
-    public static int zzb(int i7, List list, boolean z10) {
+    public static int zzb(int i, List list, boolean z) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        return (zzqv.zzA(i7 << 3) + 4) * size;
+        return (zzqv.zzA(i << 3) + 4) * size;
     }
 
     public static int zzc(List list) {
-        return list.size() * 4;
+        return list.size() << 2;
     }
 
-    public static int zzd(int i7, List list, boolean z10) {
+    public static int zzd(int i, List list, boolean z) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        return (zzqv.zzA(i7 << 3) + 8) * size;
+        return (zzqv.zzA(i << 3) + 8) * size;
     }
 
     public static int zze(List list) {
-        return list.size() * 8;
+        return list.size() << 3;
     }
 
     public static int zzf(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzso)) {
-            int i10 = 0;
-            while (i7 < size) {
-                i10 += zzqv.zzB(((Integer) list.get(i7)).intValue());
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Integer) list.get(i)).intValue());
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzso zzsoVar = (zzso) list;
-        int i11 = 0;
-        while (i7 < size) {
-            i11 += zzqv.zzB(zzsoVar.zze(i7));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzsoVar.zze(i));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
     public static int zzg(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzth)) {
-            int i10 = 0;
-            while (i7 < size) {
-                i10 += zzqv.zzB(((Long) list.get(i7)).longValue());
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Long) list.get(i)).longValue());
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzth zzthVar = (zzth) list;
-        int i11 = 0;
-        while (i7 < size) {
-            i11 += zzqv.zzB(zzthVar.zze(i7));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzthVar.zze(i));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
-    public static int zzh(int i7, Object obj, zzug zzugVar) {
-        int i10 = i7 << 3;
+    public static int zzh(int i, Object obj, zzug zzugVar) {
+        int i2 = i << 3;
         if (!(obj instanceof zztd)) {
-            return zzqv.zzy((zzts) obj, zzugVar) + zzqv.zzA(i10);
+            return zzqv.zzy((zzts) obj, zzugVar) + zzqv.zzA(i2);
         }
-        int zzA = zzqv.zzA(i10);
+        int zzA = zzqv.zzA(i2);
         int zza2 = ((zztd) obj).zza();
-        return e2.u(zza2, zza2, zzA);
+        return mue.e(zza2, zza2, zzA);
     }
 
     public static int zzi(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzso)) {
-            int i10 = 0;
-            while (i7 < size) {
-                int intValue = ((Integer) list.get(i7)).intValue();
-                i10 += zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                int intValue = ((Integer) list.get(i)).intValue();
+                i2 += zzqv.zzA((intValue << 1) ^ (intValue >> 31));
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzso zzsoVar = (zzso) list;
-        int i11 = 0;
-        while (i7 < size) {
-            int zze = zzsoVar.zze(i7);
-            i11 += zzqv.zzA((zze >> 31) ^ (zze + zze));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            int zze = zzsoVar.zze(i);
+            i3 += zzqv.zzA((zze << 1) ^ (zze >> 31));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
     public static int zzj(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzth)) {
-            int i10 = 0;
-            while (i7 < size) {
-                long longValue = ((Long) list.get(i7)).longValue();
-                i10 += zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                long longValue = ((Long) list.get(i)).longValue();
+                i2 += zzqv.zzB((longValue << 1) ^ (longValue >> 63));
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzth zzthVar = (zzth) list;
-        int i11 = 0;
-        while (i7 < size) {
-            long zze = zzthVar.zze(i7);
-            i11 += zzqv.zzB((zze >> 63) ^ (zze + zze));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            long zze = zzthVar.zze(i);
+            i3 += zzqv.zzB((zze << 1) ^ (zze >> 63));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
     public static int zzk(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzso)) {
-            int i10 = 0;
-            while (i7 < size) {
-                i10 += zzqv.zzA(((Integer) list.get(i7)).intValue());
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzA(((Integer) list.get(i)).intValue());
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzso zzsoVar = (zzso) list;
-        int i11 = 0;
-        while (i7 < size) {
-            i11 += zzqv.zzA(zzsoVar.zze(i7));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzA(zzsoVar.zze(i));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
     public static int zzl(List list) {
         int size = list.size();
-        int i7 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof zzth)) {
-            int i10 = 0;
-            while (i7 < size) {
-                i10 += zzqv.zzB(((Long) list.get(i7)).longValue());
-                i7++;
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Long) list.get(i)).longValue());
+                i++;
             }
-            return i10;
+            return i2;
         }
         zzth zzthVar = (zzth) list;
-        int i11 = 0;
-        while (i7 < size) {
-            i11 += zzqv.zzB(zzthVar.zze(i7));
-            i7++;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzthVar.zze(i));
+            i++;
         }
-        return i11;
+        return i3;
     }
 
     public static zzuv zzm() {
         return zzb;
     }
 
-    public static Object zzn(Object obj, int i7, List list, zzsr zzsrVar, Object obj2, zzuv zzuvVar) {
+    public static Object zzn(Object obj, int i, List list, zzsr zzsrVar, Object obj2, zzuv zzuvVar) {
         if (zzsrVar == null) {
             return obj2;
         }
@@ -270,37 +269,37 @@ final class zzui {
             while (it.hasNext()) {
                 int intValue = ((Integer) it.next()).intValue();
                 if (!zzsrVar.zza(intValue)) {
-                    obj2 = zzo(obj, i7, intValue, obj2, zzuvVar);
+                    obj2 = zzo(obj, i, intValue, obj2, zzuvVar);
                     it.remove();
                 }
             }
             return obj2;
         }
         int size = list.size();
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            Integer num = (Integer) list.get(i11);
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            Integer num = (Integer) list.get(i3);
             int intValue2 = num.intValue();
             if (zzsrVar.zza(intValue2)) {
-                if (i11 != i10) {
-                    list.set(i10, num);
+                if (i3 != i2) {
+                    list.set(i2, num);
                 }
-                i10++;
+                i2++;
             } else {
-                obj2 = zzo(obj, i7, intValue2, obj2, zzuvVar);
+                obj2 = zzo(obj, i, intValue2, obj2, zzuvVar);
             }
         }
-        if (i10 != size) {
-            list.subList(i10, size).clear();
+        if (i2 != size) {
+            list.subList(i2, size).clear();
         }
         return obj2;
     }
 
-    public static Object zzo(Object obj, int i7, int i10, Object obj2, zzuv zzuvVar) {
+    public static Object zzo(Object obj, int i, int i2, Object obj2, zzuv zzuvVar) {
         if (obj2 == null) {
             obj2 = zzuvVar.zza(obj);
         }
-        zzuvVar.zzh(obj2, i7, i10);
+        zzuvVar.zzh(obj2, i, i2);
         return obj2;
     }
 
@@ -326,66 +325,66 @@ final class zzui {
         zzsnVar.zzc = zzuwVar;
     }
 
-    public static void zzr(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzr(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzc(i7, list, z10);
+        zzviVar.zzc(i, list, z);
     }
 
-    public static void zzs(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzs(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzg(i7, list, z10);
+        zzviVar.zzg(i, list, z);
     }
 
-    public static void zzt(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzt(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzj(i7, list, z10);
+        zzviVar.zzj(i, list, z);
     }
 
-    public static void zzu(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzu(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzl(i7, list, z10);
+        zzviVar.zzl(i, list, z);
     }
 
-    public static void zzv(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzv(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzn(i7, list, z10);
+        zzviVar.zzn(i, list, z);
     }
 
-    public static void zzw(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzw(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzp(i7, list, z10);
+        zzviVar.zzp(i, list, z);
     }
 
-    public static void zzx(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzx(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzs(i7, list, z10);
+        zzviVar.zzs(i, list, z);
     }
 
-    public static void zzy(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzy(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzu(i7, list, z10);
+        zzviVar.zzu(i, list, z);
     }
 
-    public static void zzz(int i7, List list, zzvi zzviVar, boolean z10) {
+    public static void zzz(int i, List list, zzvi zzviVar, boolean z) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzy(i7, list, z10);
+        zzviVar.zzy(i, list, z);
     }
 }

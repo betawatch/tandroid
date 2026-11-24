@@ -4,74 +4,72 @@ import j$.util.Spliterator;
 import java.util.function.IntFunction;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes2.dex */
-public final class r5 extends x {
-    public final /* synthetic */ long s;
-    public final /* synthetic */ long t;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class r5 extends a1 {
+    public final /* synthetic */ long l;
+    public final /* synthetic */ long m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r5(z zVar, int i7, long j3, long j10) {
-        super(zVar, i7);
-        this.s = j3;
-        this.t = j10;
+    public r5(c1 c1Var, int i, long j, long j2) {
+        super(c1Var, i);
+        this.l = j;
+        this.m = j2;
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator O0(a aVar, Spliterator spliterator) {
-        long k02 = aVar.k0(spliterator);
-        if (k02 > 0 && spliterator.hasCharacteristics(TLObject.FLAG_14)) {
-            j$.util.u0 u0Var = (j$.util.u0) aVar.H0(spliterator);
-            long j3 = this.s;
-            return new l7(u0Var, j3, t3.Z(j3, this.t));
-        }
-        if (v6.ORDERED.m(aVar.m)) {
-            return ((e2) new t5(this, aVar, spliterator, new a1(23), this.s, this.t).invoke()).spliterator();
-        }
-        j$.util.u0 u0Var2 = (j$.util.u0) aVar.H0(spliterator);
-        long j10 = this.s;
-        long j11 = this.t;
-        if (j10 <= k02) {
-            long j12 = k02 - j10;
-            if (j11 >= 0) {
-                j12 = Math.min(j11, j12);
+    public final h2 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+        long j;
+        long j2;
+        long F = aVar.F(spliterator);
+        if (F > 0 && spliterator.hasCharacteristics(TLObject.FLAG_14)) {
+            a aVar2 = aVar;
+            while (aVar2.e > 0) {
+                aVar2 = aVar2.b;
             }
-            j11 = j12;
-            j10 = 0;
+            return w3.C(aVar, w3.Z(aVar2.H(), spliterator, this.l, this.m), true);
         }
-        return new r7(u0Var2, j10, j11);
+        if (b7.ORDERED.n(aVar.f)) {
+            return (h2) new x5(this, aVar, spliterator, intFunction, this.l, this.m).invoke();
+        }
+        j$.util.x0 x0Var = (j$.util.x0) aVar.S(spliterator);
+        long j3 = this.l;
+        long j4 = this.m;
+        if (j3 <= F) {
+            long j5 = F - j3;
+            j = j4 >= 0 ? Math.min(j4, j5) : j5;
+            j2 = 0;
+        } else {
+            j = j4;
+            j2 = j3;
+        }
+        return w3.C(this, new y7(x0Var, j2, j), true);
     }
 
     @Override // j$.util.stream.a
-    public final e2 N0(t3 t3Var, Spliterator spliterator, IntFunction intFunction) {
-        long j3;
-        long j10;
-        long k02 = t3Var.k0(spliterator);
-        if (k02 > 0 && spliterator.hasCharacteristics(TLObject.FLAG_14)) {
-            a aVar = (a) t3Var;
-            while (aVar.l > 0) {
-                aVar = aVar.i;
-            }
-            return t3.b0(t3Var, t3.X(aVar.M0(), spliterator, this.s, this.t), true);
+    public final Spliterator K(a aVar, Spliterator spliterator) {
+        long F = aVar.F(spliterator);
+        if (F > 0 && spliterator.hasCharacteristics(TLObject.FLAG_14)) {
+            j$.util.x0 x0Var = (j$.util.x0) aVar.S(spliterator);
+            long j = this.l;
+            return new s7(x0Var, j, w3.z(j, this.m));
         }
-        if (!v6.ORDERED.m(((a) t3Var).m)) {
-            j$.util.u0 u0Var = (j$.util.u0) t3Var.H0(spliterator);
-            long j11 = this.s;
-            long j12 = this.t;
-            if (j11 <= k02) {
-                long j13 = k02 - j11;
-                j3 = j12 >= 0 ? Math.min(j12, j13) : j13;
-                j10 = 0;
-            } else {
-                j3 = j12;
-                j10 = j11;
-            }
-            return t3.b0(this, new r7(u0Var, j10, j3), true);
+        if (b7.ORDERED.n(aVar.f)) {
+            return ((h2) new x5(this, aVar, spliterator, new d1((byte) 21), this.l, this.m).invoke()).spliterator();
         }
-        return (e2) new t5(this, t3Var, spliterator, intFunction, this.s, this.t).invoke();
+        j$.util.x0 x0Var2 = (j$.util.x0) aVar.S(spliterator);
+        long j2 = this.l;
+        long j3 = this.m;
+        if (j2 <= F) {
+            long j4 = F - j2;
+            j3 = j3 >= 0 ? Math.min(j3, j4) : j4;
+            j2 = 0;
+        }
+        return new y7(x0Var2, j2, j3);
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        return new q5(this, j5Var);
+    public final n5 M(int i, n5 n5Var) {
+        return new q5(this, n5Var);
     }
 }

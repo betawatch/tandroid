@@ -1,0 +1,803 @@
+// default package
+
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public abstract class hc2 {
+    public static boolean A(int i, TLRPC.Chat chat, int i2) {
+        return y(i2, E(i, chat));
+    }
+
+    public static boolean B(TLRPC.Chat chat) {
+        if (!T(chat) || chat.creator) {
+            return true;
+        }
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = chat.admin_rights;
+        if (tL_chatAdminRights != null && tL_chatAdminRights.post_messages) {
+            return true;
+        }
+        if (chat.broadcast || chat.gigagroup) {
+            return chat.gigagroup && N(chat);
+        }
+        return true;
+    }
+
+    public static boolean C(TLRPC.TL_chatBannedRights tL_chatBannedRights, int i) {
+        if (tL_chatBannedRights == null) {
+            return false;
+        }
+        if (i == 0) {
+            return tL_chatBannedRights.pin_messages;
+        }
+        if (i == 1) {
+            return tL_chatBannedRights.change_info;
+        }
+        if (i == 3) {
+            return tL_chatBannedRights.invite_users;
+        }
+        if (i == 26) {
+            return tL_chatBannedRights.send_reactions;
+        }
+        if (i == 27) {
+            return tL_chatBannedRights.manage_linked_peers;
+        }
+        switch (i) {
+            case 6:
+                return tL_chatBannedRights.send_messages;
+            case 7:
+                return tL_chatBannedRights.send_media;
+            case 8:
+                return tL_chatBannedRights.send_stickers;
+            case 9:
+                return tL_chatBannedRights.embed_links;
+            case 10:
+                return tL_chatBannedRights.send_polls;
+            case 11:
+                return tL_chatBannedRights.view_messages;
+            default:
+                switch (i) {
+                    case 15:
+                        return tL_chatBannedRights.manage_topics;
+                    case 16:
+                        return tL_chatBannedRights.send_photos;
+                    case 17:
+                        return tL_chatBannedRights.send_videos;
+                    case 18:
+                        return tL_chatBannedRights.send_audios;
+                    case 19:
+                        return tL_chatBannedRights.send_docs;
+                    case 20:
+                        return tL_chatBannedRights.send_voices;
+                    case 21:
+                        return tL_chatBannedRights.send_roundvideos;
+                    case 22:
+                        return tL_chatBannedRights.send_plain;
+                    default:
+                        return false;
+                }
+        }
+    }
+
+    public static String D(TLRPC.TL_chatBannedRights tL_chatBannedRights) {
+        StringBuilder sb = new StringBuilder(String.valueOf(tL_chatBannedRights.view_messages ? 1 : 0) + (tL_chatBannedRights.send_messages ? 1 : 0));
+        sb.append(tL_chatBannedRights.send_media ? 1 : 0);
+        StringBuilder sb2 = new StringBuilder(sb.toString() + (tL_chatBannedRights.send_stickers ? 1 : 0));
+        sb2.append(tL_chatBannedRights.send_gifs ? 1 : 0);
+        StringBuilder sb3 = new StringBuilder(sb2.toString() + (tL_chatBannedRights.send_games ? 1 : 0));
+        sb3.append(tL_chatBannedRights.send_inline ? 1 : 0);
+        StringBuilder sb4 = new StringBuilder(sb3.toString() + (tL_chatBannedRights.embed_links ? 1 : 0));
+        sb4.append(tL_chatBannedRights.send_polls ? 1 : 0);
+        StringBuilder sb5 = new StringBuilder(sb4.toString() + (tL_chatBannedRights.invite_users ? 1 : 0));
+        sb5.append(tL_chatBannedRights.change_info ? 1 : 0);
+        StringBuilder sb6 = new StringBuilder(sb5.toString() + (tL_chatBannedRights.pin_messages ? 1 : 0));
+        sb6.append(tL_chatBannedRights.manage_topics ? 1 : 0);
+        StringBuilder sb7 = new StringBuilder(sb6.toString() + (tL_chatBannedRights.send_photos ? 1 : 0));
+        sb7.append(tL_chatBannedRights.send_videos ? 1 : 0);
+        StringBuilder sb8 = new StringBuilder(sb7.toString() + (tL_chatBannedRights.send_roundvideos ? 1 : 0));
+        sb8.append(tL_chatBannedRights.send_voices ? 1 : 0);
+        StringBuilder sb9 = new StringBuilder(sb8.toString() + (tL_chatBannedRights.send_audios ? 1 : 0));
+        sb9.append(tL_chatBannedRights.send_docs ? 1 : 0);
+        StringBuilder sb10 = new StringBuilder(sb9.toString() + (tL_chatBannedRights.send_plain ? 1 : 0));
+        sb10.append(tL_chatBannedRights.edit_rank ? 1 : 0);
+        StringBuilder sb11 = new StringBuilder(sb10.toString() + (tL_chatBannedRights.send_reactions ? 1 : 0));
+        sb11.append(tL_chatBannedRights.manage_linked_peers ? 1 : 0);
+        return sb11.toString() + tL_chatBannedRights.until_date;
+    }
+
+    public static TLRPC.Chat E(int i, TLRPC.Chat chat) {
+        if (chat == null || chat.linked_monoforum_id == 0) {
+            return null;
+        }
+        return chat.monoforum ? na7.q1(i).K0(Long.valueOf(chat.linked_monoforum_id)) : chat;
+    }
+
+    public static int F(TLRPC.Chat chat) {
+        if (chat == null) {
+            return 0;
+        }
+        TLRPC.PeerColor peerColor = chat.color;
+        return (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 1) == 0) ? (int) (chat.id % 7) : peerColor.color;
+    }
+
+    public static long G(TLRPC.Chat chat) {
+        if (chat == null) {
+            return 0L;
+        }
+        TLRPC.PeerColor peerColor = chat.color;
+        if (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 2) == 0) {
+            return 0L;
+        }
+        return peerColor.background_emoji_id;
+    }
+
+    public static int H(TLRPC.GroupCallParticipant groupCallParticipant) {
+        if ((groupCallParticipant.flags & 128) != 0) {
+            return groupCallParticipant.volume;
+        }
+        return 10000;
+    }
+
+    public static int I(TLRPC.Chat chat) {
+        if (chat == null) {
+            return 0;
+        }
+        TLRPC.PeerColor peerColor = chat.profile_color;
+        if (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 1) == 0) {
+            return -1;
+        }
+        return peerColor.color;
+    }
+
+    public static long J(TLRPC.Chat chat) {
+        if (chat == null) {
+            return 0L;
+        }
+        TLRPC.EmojiStatus emojiStatus = chat.emoji_status;
+        if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
+            return ((TLRPC.TL_emojiStatusCollectible) emojiStatus).pattern_document_id;
+        }
+        TLRPC.PeerColor peerColor = chat.profile_color;
+        if (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 2) == 0) {
+            return 0L;
+        }
+        return peerColor.background_emoji_id;
+    }
+
+    public static String K(TLRPC.Chat chat, boolean z) {
+        if (chat == null) {
+            return null;
+        }
+        if (!TextUtils.isEmpty(chat.username) && !z) {
+            return chat.username;
+        }
+        if (chat.usernames != null) {
+            for (int i = 0; i < chat.usernames.size(); i++) {
+                TLRPC.TL_username tL_username = chat.usernames.get(i);
+                if (tL_username != null && (((tL_username.active && !z) || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
+                    return tL_username.username;
+                }
+            }
+        }
+        if (TextUtils.isEmpty(chat.username) || !z) {
+            return null;
+        }
+        ArrayList<TLRPC.TL_username> arrayList = chat.usernames;
+        if (arrayList == null || arrayList.size() <= 0) {
+            return chat.username;
+        }
+        return null;
+    }
+
+    public static String L(int i, TLRPC.Chat chat) {
+        return i == 23 ? (chat == null || P(i, chat)) ? k96.M0(2131749370, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachGifRestrictedForever", null, 2131753966, new Object[0]) : k96.a0("AttachGifRestricted", null, 2131753967, k96.v(chat.banned_rights.until_date)) : i == 8 ? (chat == null || P(i, chat)) ? k96.M0(2131749364, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachStickersRestrictedForever", null, 2131753931, new Object[0]) : k96.a0("AttachStickersRestricted", null, 2131753932, k96.v(chat.banned_rights.until_date)) : i == 16 ? (chat == null || P(i, chat)) ? k96.M0(2131749367, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachPhotoRestrictedForever", null, 2131753942, new Object[0]) : k96.a0("AttachPhotoRestricted", null, 2131753943, k96.v(chat.banned_rights.until_date)) : i == 17 ? (chat == null || P(i, chat)) ? k96.M0(2131749363, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachVideoRestrictedForever", null, 2131753927, new Object[0]) : k96.a0("AttachVideoRestricted", null, 2131753928, k96.v(chat.banned_rights.until_date)) : i == 19 ? (chat == null || P(i, chat)) ? k96.M0(2131749372, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachDocumentsRestrictedForever", null, 2131753970, new Object[0]) : k96.a0("AttachDocumentsRestricted", null, 2131753971, k96.v(chat.banned_rights.until_date)) : i == 7 ? (chat == null || P(i, chat)) ? k96.M0(2131749368, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachMediaRestrictedForever", null, 2131753952, new Object[0]) : k96.a0("AttachMediaRestricted", null, 2131753953, k96.v(chat.banned_rights.until_date)) : i == 18 ? (chat == null || P(i, chat)) ? k96.M0(2131749373, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachAudioRestrictedForever", null, 2131753977, new Object[0]) : k96.a0("AttachAudioRestricted", null, 2131753978, k96.v(chat.banned_rights.until_date)) : i == 22 ? (chat == null || P(i, chat)) ? k96.M0(2131749366, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachPlainRestrictedForever", null, 2131753940, new Object[0]) : k96.a0("AttachPlainRestricted", null, 2131753941, k96.v(chat.banned_rights.until_date)) : i == 21 ? (chat == null || P(i, chat)) ? k96.M0(2131749365, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachRoundRestrictedForever", null, 2131753935, new Object[0]) : k96.a0("AttachRoundRestricted", null, 2131753936, k96.v(chat.banned_rights.until_date)) : i == 20 ? (chat == null || P(i, chat)) ? k96.M0(2131749362, null) : gl.B1(chat.banned_rights) ? k96.a0("AttachVoiceRestrictedForever", null, 2131753924, new Object[0]) : k96.a0("AttachVoiceRestricted", null, 2131753925, k96.v(chat.banned_rights.until_date)) : "";
+    }
+
+    public static long M(TLRPC.Chat chat, TLRPC.ChatFull chatFull, boolean z) {
+        long j;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        TLRPC.Peer peer;
+        if (chat != null && chatFull != null && (peer = chatFull.default_send_as) != null) {
+            long j2 = peer.user_id;
+            if (j2 != 0) {
+                return j2;
+            }
+            j = peer.channel_id;
+            if (!z) {
+                return j;
+            }
+        } else if (chat != null && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.anonymous) {
+            j = chat.id;
+            if (!z) {
+                return j;
+            }
+        } else {
+            if (chat == null || !V(chat) || chat.signatures) {
+                return y6c.h(y6c.t0).e();
+            }
+            j = chat.id;
+            if (!z) {
+                return j;
+            }
+        }
+        return -j;
+    }
+
+    public static boolean N(TLRPC.Chat chat) {
+        if (chat == null) {
+            return false;
+        }
+        if (chat.creator) {
+            return true;
+        }
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = chat.admin_rights;
+        return (tL_chatAdminRights == null || tL_chatAdminRights.flags == 0) ? false : true;
+    }
+
+    public static boolean O(String str, TLRPC.Chat chat) {
+        if (chat == null) {
+            return false;
+        }
+        if (!TextUtils.isEmpty(chat.username)) {
+            return chat.username.equalsIgnoreCase(str);
+        }
+        if (chat.usernames != null) {
+            for (int i = 0; i < chat.usernames.size(); i++) {
+                TLRPC.TL_username tL_username = chat.usernames.get(i);
+                if (tL_username != null && tL_username.active && !TextUtils.isEmpty(tL_username.username) && tL_username.username.equalsIgnoreCase(str)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean P(int i, TLRPC.Chat chat) {
+        if (chat == null) {
+            return false;
+        }
+        if (C(chat.banned_rights, i) && C(chat.default_banned_rights, i)) {
+            return true;
+        }
+        return C(chat.default_banned_rights, i);
+    }
+
+    public static boolean Q(int i) {
+        return i == 0 || i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 12 || i == 13 || i == 15;
+    }
+
+    public static boolean R(TLRPC.Chat chat) {
+        return (V(chat) || n0(chat)) && !p0(chat);
+    }
+
+    public static boolean S(int i, long j) {
+        return T(na7.q1(i).K0(Long.valueOf(j)));
+    }
+
+    public static boolean T(TLRPC.Chat chat) {
+        return (chat instanceof TLRPC.TL_channel) || (chat instanceof TLRPC.TL_channelForbidden) || Y(chat);
+    }
+
+    public static boolean U(int i, long j) {
+        return V(na7.q1(i).K0(Long.valueOf(j)));
+    }
+
+    public static boolean V(TLRPC.Chat chat) {
+        return T(chat) && !n0(chat);
+    }
+
+    public static boolean W(TLRPC.Chat chat) {
+        if (T(chat)) {
+            return !chat.megagroup || chat.gigagroup;
+        }
+        return false;
+    }
+
+    public static boolean X(int i, TLRPC.Chat chat) {
+        TLRPC.Chat K0;
+        return (chat == null || chat.linked_community_id == 0 || (K0 = na7.q1(i).K0(Long.valueOf(chat.linked_community_id))) == null || !K0.collapsed_in_dialogs) ? false : true;
+    }
+
+    public static boolean Y(TLRPC.Chat chat) {
+        return (chat instanceof TLRPC.TL_community) || (chat instanceof TLRPC.TL_communityForbidden);
+    }
+
+    public static boolean Z(int i, long j) {
+        na7 q1 = na7.q1(i);
+        TLRPC.Chat K0 = q1.K0(Long.valueOf(j));
+        TLRPC.ChatFull L0 = q1.L0(j);
+        return (!n0(K0) || L0 == null || L0.linked_chat_id == 0) ? false : true;
+    }
+
+    public static boolean a(TLRPC.Chat chat) {
+        if (gba.m) {
+            return true;
+        }
+        return chat != null && chat.forum_tabs;
+    }
+
+    public static boolean a0(TLRPC.Chat chat) {
+        return (chat instanceof TLRPC.TL_chatForbidden) || (chat instanceof TLRPC.TL_channelForbidden) || (chat instanceof TLRPC.TL_communityForbidden);
+    }
+
+    public static boolean b(TLRPC.Chat chat) {
+        if (!T(chat)) {
+            return chat.migrated_to == null;
+        }
+        if (!chat.megagroup) {
+            return false;
+        }
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = chat.admin_rights;
+        return (tL_chatAdminRights != null && (tL_chatAdminRights.post_messages || tL_chatAdminRights.add_admins)) || chat.creator;
+    }
+
+    public static boolean b0(int i, long j) {
+        TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-j));
+        if (K0 != null) {
+            return K0.forum;
+        }
+        return false;
+    }
+
+    public static boolean c(TLRPC.Chat chat) {
+        return w(27, chat);
+    }
+
+    public static boolean c0(TLRPC.Chat chat) {
+        return chat != null && chat.forum;
+    }
+
+    public static boolean d(TLRPC.Chat chat) {
+        return w(1, chat);
+    }
+
+    public static boolean d0(int i, long j) {
+        return j > 0 ? f0(i, na7.q1(i).V1(Long.valueOf(j))) : e0(i, na7.q1(i).K0(Long.valueOf(-j)));
+    }
+
+    public static boolean e(int i, TLRPC.Chat chat, TLRPC.TL_forumTopic tL_forumTopic) {
+        TLRPC.Message message;
+        TLRPC.Message message2;
+        if (tL_forumTopic == null || tL_forumTopic.id != 1) {
+            if (!w(13, chat)) {
+                if (q0(i, tL_forumTopic) && (message = tL_forumTopic.topMessage) != null && (message2 = tL_forumTopic.topicStartMessage) != null) {
+                    int i2 = message.id - message2.id;
+                    ArrayList<k27> arrayList = tL_forumTopic.groupedMessages;
+                    if (i2 > Math.max(1, arrayList == null ? 0 : arrayList.size()) || !k27.u5(tL_forumTopic.from_id, tL_forumTopic.topMessage.from_id)) {
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean e0(int i, TLRPC.Chat chat) {
+        return chat != null && g0(chat.linked_community_id, i, -chat.id);
+    }
+
+    public static boolean f(TLRPC.Chat chat) {
+        return w(14, chat);
+    }
+
+    public static boolean f0(int i, TLRPC.User user) {
+        return user != null && g0(user.linked_community_id, i, user.id);
+    }
+
+    public static boolean g(int i, TLRPC.Chat chat) {
+        return A(i, chat, 24);
+    }
+
+    public static boolean g0(long j, int i, long j2) {
+        TLRPC.ChatFull L0;
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        if (j != 0 && j2 != 0 && (L0 = na7.q1(i).L0(j)) != null && (arrayList = L0.linked_peers) != null) {
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i2 < size) {
+                TL_communities.CommunityPeer communityPeer = arrayList.get(i2);
+                i2++;
+                TL_communities.CommunityPeer communityPeer2 = communityPeer;
+                if (cf3.n(communityPeer2.peer) == j2 && fod.a(communityPeer2.flags, 1) && !communityPeer2.visible) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean h(TLRPC.Chat chat) {
+        boolean z;
+        if (chat == null) {
+            return false;
+        }
+        if (chat.creator) {
+            return true;
+        }
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = chat.banned_rights;
+        if (tL_chatBannedRights == null) {
+            TLRPC.TL_chatBannedRights tL_chatBannedRights2 = chat.default_banned_rights;
+            if (tL_chatBannedRights2 == null) {
+                return true;
+            }
+            z = tL_chatBannedRights2.edit_rank;
+        } else {
+            z = tL_chatBannedRights.edit_rank;
+        }
+        return !z;
+    }
+
+    public static boolean h0(TLRPC.Chat chat) {
+        if (chat != null) {
+            return i0(na7.q1(y6c.t0).L0(chat.id));
+        }
+        return false;
+    }
+
+    public static boolean i(int i, TLRPC.Chat chat, TLRPC.TL_forumTopic tL_forumTopic) {
+        return y(15, chat) || q0(i, tL_forumTopic);
+    }
+
+    public static boolean i0(TLRPC.ChatFull chatFull) {
+        int i;
+        return chatFull != null && (i = chatFull.boosts_unrestrict) > 0 && chatFull.boosts_applied - i >= 0;
+    }
+
+    public static boolean j(TLRPC.Chat chat) {
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        if (w(0, chat)) {
+            return true;
+        }
+        return T(chat) && !chat.megagroup && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.edit_messages;
+    }
+
+    public static boolean j0(TLRPC.Chat chat) {
+        return (chat == null || (chat instanceof TLRPC.TL_chatEmpty) || a0(chat) || chat.left || chat.kicked || chat.deactivated) ? false : true;
+    }
+
+    public static boolean k(TLRPC.Chat chat) {
+        if (!T(chat)) {
+            return false;
+        }
+        if (!chat.megagroup && chat.signatures && N(chat) && B(chat)) {
+            return true;
+        }
+        if (chat.megagroup) {
+            return t0(chat) || chat.has_geo || chat.has_link;
+        }
+        return false;
+    }
+
+    public static boolean k0(TLRPC.Chat chat) {
+        if (chat == null || (chat instanceof TLRPC.TL_chatEmpty) || a0(chat) || chat.kicked || chat.deactivated) {
+            return true;
+        }
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = chat.banned_rights;
+        return tL_chatBannedRights != null && tL_chatBannedRights.view_messages;
+    }
+
+    public static boolean l(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(19, chat);
+    }
+
+    public static boolean l0(TLRPC.Chat chat) {
+        return chat == null || (chat instanceof TLRPC.TL_chatEmpty) || a0(chat) || chat.left || chat.deactivated;
+    }
+
+    public static boolean m(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(9, chat);
+    }
+
+    public static boolean m0(int i, long j) {
+        TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(j));
+        return T(K0) && K0.megagroup;
+    }
+
+    public static boolean n(TLRPC.Chat chat) {
+        if (r0(chat) && chat != null && chat.join_to_send) {
+            return false;
+        }
+        if (h0(chat)) {
+            return true;
+        }
+        return w(6, chat);
+    }
+
+    public static boolean n0(TLRPC.Chat chat) {
+        return T(chat) && chat.megagroup;
+    }
+
+    public static boolean o(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(18, chat);
+    }
+
+    public static boolean o0(int i, long j) {
+        TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-j));
+        if (K0 != null) {
+            return K0.monoforum;
+        }
+        return false;
+    }
+
+    public static boolean p(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(16, chat);
+    }
+
+    public static boolean p0(TLRPC.Chat chat) {
+        return chat != null && chat.monoforum;
+    }
+
+    public static boolean q(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(22, chat);
+    }
+
+    public static boolean q0(int i, TLRPC.TL_forumTopic tL_forumTopic) {
+        if (tL_forumTopic == null) {
+            return false;
+        }
+        if (tL_forumTopic.my) {
+            return true;
+        }
+        TLRPC.Peer peer = tL_forumTopic.from_id;
+        return (peer instanceof TLRPC.TL_peerUser) && peer.user_id == y6c.h(i).n;
+    }
+
+    public static boolean r(TLRPC.Chat chat) {
+        if (p0(chat)) {
+            return false;
+        }
+        if (h0(chat)) {
+            return true;
+        }
+        return w(10, chat);
+    }
+
+    public static boolean r0(TLRPC.Chat chat) {
+        return chat == null || (chat instanceof TLRPC.TL_chatEmpty) || a0(chat) || chat.left || chat.kicked || chat.deactivated;
+    }
+
+    public static boolean s(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(21, chat);
+    }
+
+    public static boolean s0(TLRPC.Chat chat) {
+        TLRPC.ChatFull L0;
+        return (chat == null || (L0 = na7.q1(y6c.t0).L0(chat.id)) == null || L0.boosts_unrestrict <= 0) ? false : true;
+    }
+
+    public static boolean t(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(8, chat);
+    }
+
+    public static boolean t0(TLRPC.Chat chat) {
+        return !TextUtils.isEmpty(K(chat, false));
+    }
+
+    public static boolean u(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(17, chat);
+    }
+
+    public static boolean u0(TLRPC.Chat chat) {
+        if (chat != null) {
+            return (chat.forum && chat.forum_sidebar) || chat.monoforum;
+        }
+        return false;
+    }
+
+    public static boolean v(TLRPC.Chat chat) {
+        if (h0(chat)) {
+            return true;
+        }
+        return w(20, chat);
+    }
+
+    public static boolean v0(int i, TLRPC.User user) {
+        TLRPC.Chat K0;
+        return (user == null || user.linked_community_id == 0 || (K0 = na7.q1(i).K0(Long.valueOf(user.linked_community_id))) == null || !K0.collapsed_in_dialogs) ? false : true;
+    }
+
+    public static boolean w(int i, TLRPC.Chat chat) {
+        TLRPC.TL_chatBannedRights tL_chatBannedRights;
+        if (chat != null && !y(i, chat)) {
+            if (!C(chat.banned_rights, i)) {
+                if (i != 0 && i != 1 && i != 3 && i != 26 && i != 27) {
+                    switch (i) {
+                        default:
+                            switch (i) {
+                            }
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                        case 11:
+                            if ((chat.admin_rights != null || Q(i)) && ((tL_chatBannedRights = chat.default_banned_rights) != null ? C(tL_chatBannedRights, i) : !((chat instanceof TLRPC.TL_chat_layer92) || (chat instanceof TLRPC.TL_chat_old) || (chat instanceof TLRPC.TL_chat_old2) || (chat instanceof TLRPC.TL_channel_layer92) || (chat instanceof TLRPC.TL_channel_layer77) || (chat instanceof TLRPC.TL_channel_layer72) || (chat instanceof TLRPC.TL_channel_layer67) || (chat instanceof TLRPC.TL_channel_layer48) || (chat instanceof TLRPC.TL_channel_old)))) {
+                            }
+                            break;
+                    }
+                    return false;
+                }
+                if (chat.admin_rights != null) {
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean w0(TLRPC.ChatFull chatFull, String str) {
+        TLRPC.ChatReactions chatReactions = chatFull.available_reactions;
+        if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
+            return true;
+        }
+        if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
+            TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
+            for (int i = 0; i < tL_chatReactionsSome.reactions.size(); i++) {
+                if ((tL_chatReactionsSome.reactions.get(i) instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i)).emoticon, str)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0043, code lost:
+    
+        if (r2 == false) goto L32;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean x(TLRPC.Chat chat, TLRPC.ChannelParticipant channelParticipant, int i) {
+        TLRPC.TL_chatBannedRights tL_chatBannedRights;
+        boolean z;
+        if (chat != null) {
+            if (channelParticipant != null) {
+                TLRPC.TL_chatAdminRights tL_chatAdminRights = channelParticipant.admin_rights;
+                if (tL_chatAdminRights != null) {
+                    if (i == 0) {
+                        z = tL_chatAdminRights.pin_messages;
+                    } else if (i == 1) {
+                        z = tL_chatAdminRights.change_info;
+                    } else if (i == 2) {
+                        z = tL_chatAdminRights.ban_users;
+                    } else if (i == 3) {
+                        z = tL_chatAdminRights.invite_users;
+                    } else if (i == 4) {
+                        z = tL_chatAdminRights.add_admins;
+                    } else if (i == 5) {
+                        z = tL_chatAdminRights.post_messages;
+                    } else if (i != 27) {
+                        switch (i) {
+                            case 12:
+                                z = tL_chatAdminRights.edit_messages;
+                                break;
+                            case 13:
+                                z = tL_chatAdminRights.delete_messages;
+                                break;
+                            case 14:
+                                z = tL_chatAdminRights.manage_call;
+                                break;
+                            case 15:
+                                z = tL_chatAdminRights.manage_topics;
+                                break;
+                            default:
+                                z = false;
+                                break;
+                        }
+                    } else {
+                        z = tL_chatAdminRights.manage_linked_peers;
+                    }
+                }
+                if (!C(channelParticipant.banned_rights, i)) {
+                    if (i != 0 && i != 1 && i != 3 && i != 26 && i != 27) {
+                        switch (i) {
+                            default:
+                                switch (i) {
+                                }
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                            case 10:
+                            case 11:
+                                if ((channelParticipant.admin_rights != null || Q(i)) && ((tL_chatBannedRights = chat.default_banned_rights) != null ? C(tL_chatBannedRights, i) : !((chat instanceof TLRPC.TL_chat_layer92) || (chat instanceof TLRPC.TL_chat_old) || (chat instanceof TLRPC.TL_chat_old2) || (chat instanceof TLRPC.TL_channel_layer92) || (chat instanceof TLRPC.TL_channel_layer77) || (chat instanceof TLRPC.TL_channel_layer72) || (chat instanceof TLRPC.TL_channel_layer67) || (chat instanceof TLRPC.TL_channel_layer48) || (chat instanceof TLRPC.TL_channel_old)))) {
+                                }
+                                break;
+                        }
+                        return false;
+                    }
+                    if (channelParticipant.admin_rights != null) {
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean y(int i, TLRPC.Chat chat) {
+        boolean z;
+        if (chat != null) {
+            if (!chat.creator) {
+                TLRPC.TL_chatAdminRights tL_chatAdminRights = chat.admin_rights;
+                if (tL_chatAdminRights != null) {
+                    if (i == 0) {
+                        z = tL_chatAdminRights.pin_messages;
+                    } else if (i == 1) {
+                        z = tL_chatAdminRights.change_info;
+                    } else if (i == 2) {
+                        z = tL_chatAdminRights.ban_users;
+                    } else if (i == 3) {
+                        z = tL_chatAdminRights.invite_users;
+                    } else if (i == 4) {
+                        z = tL_chatAdminRights.add_admins;
+                    } else if (i == 5) {
+                        z = tL_chatAdminRights.post_messages;
+                    } else if (i == 24) {
+                        z = tL_chatAdminRights.manage_direct_messages;
+                    } else if (i == 25) {
+                        z = tL_chatAdminRights.manage_ranks;
+                    } else if (i == 27) {
+                        z = tL_chatAdminRights.manage_linked_peers;
+                    } else if (i != 28) {
+                        switch (i) {
+                            case 12:
+                                z = tL_chatAdminRights.edit_messages;
+                                break;
+                            case 13:
+                                z = tL_chatAdminRights.delete_messages;
+                                break;
+                            case 14:
+                                z = tL_chatAdminRights.manage_call;
+                                break;
+                            case 15:
+                                z = tL_chatAdminRights.manage_topics;
+                                break;
+                            default:
+                                z = false;
+                                break;
+                        }
+                    } else {
+                        z = tL_chatAdminRights.manage_welcome_messages;
+                    }
+                    if (z) {
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean z(int i, int i2, long j) {
+        return y(i2, E(i, na7.q1(i).K0(Long.valueOf(-j))));
+    }
+}

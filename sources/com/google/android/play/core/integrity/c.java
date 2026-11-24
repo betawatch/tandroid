@@ -2,35 +2,37 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder {
     private long a;
     private byte b;
 
-    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder a(int i7) {
+    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder a(int i) {
         this.b = (byte) (this.b | 2);
         return this;
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder
     public final StandardIntegrityManager.PrepareIntegrityTokenRequest build() {
+        d dVar = null;
         if (this.b == 3) {
-            return new e(this.a, 0, null);
+            return new e(this.a, 0, dVar);
         }
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         if ((this.b & 1) == 0) {
-            sb2.append(" cloudProjectNumber");
+            sb.append(" cloudProjectNumber");
         }
         if ((this.b & 2) == 0) {
-            sb2.append(" webViewRequestMode");
+            sb.append(" webViewRequestMode");
         }
-        throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
+        sc8.j("Missing required properties:".concat(sb.toString()));
+        return null;
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder
-    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder setCloudProjectNumber(long j3) {
-        this.a = j3;
+    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder setCloudProjectNumber(long j) {
+        this.a = j;
         this.b = (byte) (this.b | 1);
         return this;
     }

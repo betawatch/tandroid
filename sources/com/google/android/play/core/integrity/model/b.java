@@ -3,7 +3,7 @@ package com.google.android.play.core.integrity.model;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class b {
     private static final Map a;
@@ -48,9 +48,9 @@ public final class b {
         hashMap2.put(-100, "INTERNAL_ERROR");
     }
 
-    public static String a(int i7) {
+    public static String a(int i) {
         Map map = a;
-        Integer valueOf = Integer.valueOf(i7);
+        Integer valueOf = Integer.valueOf(i);
         if (!map.containsKey(valueOf)) {
             return "";
         }

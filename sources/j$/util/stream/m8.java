@@ -1,22 +1,23 @@
 package j$.util.stream;
 
-import java.util.function.DoublePredicate;
+import java.util.function.IntPredicate;
 
-/* loaded from: classes2.dex */
-public final class m8 extends c5 implements o8 {
-    @Override // j$.util.stream.o8
-    public final long s() {
-        return 0L;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class m8 extends h5 implements r8 {
+    public m8(g6 g6Var, n5 n5Var, boolean z) {
+        super(n5Var);
     }
 
-    public m8(b6 b6Var, j5 j5Var, boolean z10) {
-        super(j5Var);
-    }
-
-    @Override // j$.util.stream.g5, j$.util.stream.j5
-    public final void accept(double d) {
-        DoublePredicate doublePredicate = null;
-        doublePredicate.test(d);
+    @Override // j$.util.stream.l5, j$.util.stream.n5
+    public final void accept(int i) {
+        IntPredicate intPredicate = null;
+        intPredicate.test(i);
         throw null;
+    }
+
+    @Override // j$.util.stream.r8
+    public final long v() {
+        return 0L;
     }
 }

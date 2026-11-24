@@ -9,23 +9,21 @@ import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
-import o9.a;
-import o9.g;
-import q6.m;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class FirebaseInitProvider extends ContentProvider {
-    public static final a a = new a(System.currentTimeMillis(), SystemClock.elapsedRealtime(), SystemClock.uptimeMillis());
+    public static final la0 a = new la0(System.currentTimeMillis(), SystemClock.elapsedRealtime(), SystemClock.uptimeMillis());
     public static final AtomicBoolean b = new AtomicBoolean(false);
 
     @Override // android.content.ContentProvider
     public final void attachInfo(Context context, ProviderInfo providerInfo) {
-        m.i(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
+        fre.i(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
         if ("com.google.firebase.firebaseinitprovider".equals(providerInfo.authority)) {
-            throw new IllegalStateException("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
+            sc8.j("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
+        } else {
+            super.attachInfo(context, providerInfo);
         }
-        super.attachInfo(context, providerInfo);
     }
 
     @Override // android.content.ContentProvider
@@ -48,16 +46,14 @@ public class FirebaseInitProvider extends ContentProvider {
         AtomicBoolean atomicBoolean = b;
         try {
             atomicBoolean.set(true);
-            if (g.f(getContext()) == null) {
+            if (jg4.f(getContext()) == null) {
                 Log.i("FirebaseInitProvider", "FirebaseApp initialization unsuccessful");
             } else {
                 Log.i("FirebaseInitProvider", "FirebaseApp initialization successful");
             }
-            atomicBoolean.set(false);
             return false;
-        } catch (Throwable th2) {
+        } finally {
             atomicBoolean.set(false);
-            throw th2;
         }
     }
 

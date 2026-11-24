@@ -1,16 +1,14 @@
 package org.webrtc;
 
-import a8.p0;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class StatsReport {
     public final String id;
     public final double timestamp;
     public final String type;
     public final Value[] values;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Value {
         public final String name;
         public final String value;
@@ -21,10 +19,10 @@ public class StatsReport {
         }
 
         public String toString() {
-            StringBuilder sb2 = new StringBuilder("[");
-            sb2.append(this.name);
-            sb2.append(": ");
-            return p0.s(sb2, this.value, "]");
+            StringBuilder sb = new StringBuilder("[");
+            sb.append(this.name);
+            sb.append(": ");
+            return b00.j(sb, this.value, "]");
         }
     }
 
@@ -36,22 +34,22 @@ public class StatsReport {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("id: ");
-        sb2.append(this.id);
-        sb2.append(", type: ");
-        sb2.append(this.type);
-        sb2.append(", timestamp: ");
-        sb2.append(this.timestamp);
-        sb2.append(", values: ");
-        int i7 = 0;
+        StringBuilder sb = new StringBuilder("id: ");
+        sb.append(this.id);
+        sb.append(", type: ");
+        sb.append(this.type);
+        sb.append(", timestamp: ");
+        sb.append(this.timestamp);
+        sb.append(", values: ");
+        int i = 0;
         while (true) {
             Value[] valueArr = this.values;
-            if (i7 >= valueArr.length) {
-                return sb2.toString();
+            if (i >= valueArr.length) {
+                return sb.toString();
             }
-            sb2.append(valueArr[i7].toString());
-            sb2.append(", ");
-            i7++;
+            sb.append(valueArr[i].toString());
+            sb.append(", ");
+            i++;
         }
     }
 }

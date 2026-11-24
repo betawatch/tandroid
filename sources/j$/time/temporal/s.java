@@ -4,7 +4,8 @@ import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class s implements Serializable {
     private static final long serialVersionUID = -7317881728594519368L;
     public final long a;
@@ -12,69 +13,72 @@ public final class s implements Serializable {
     public final long c;
     public final long d;
 
-    public static s e(long j3, long j10) {
-        if (j3 > j10) {
-            throw new IllegalArgumentException("Minimum value must be less than maximum value");
-        }
-        return new s(j3, j3, j10, j10);
+    public s(long j, long j2, long j3, long j4) {
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
+        this.d = j4;
     }
 
-    public static s f(long j3, long j10) {
-        if (j3 > j10) {
-            throw new IllegalArgumentException("Smallest maximum value must be less than largest maximum value");
+    public static s e(long j, long j2) {
+        if (j <= j2) {
+            return new s(j, j, j2, j2);
         }
-        if (1 > j10) {
-            throw new IllegalArgumentException("Minimum value must be less than maximum value");
-        }
-        return new s(1L, 1L, j3, j10);
+        j$.time.g.c("Minimum value must be less than maximum value");
+        return null;
     }
 
-    public s(long j3, long j10, long j11, long j12) {
-        this.a = j3;
-        this.b = j10;
-        this.c = j11;
-        this.d = j12;
-    }
-
-    public final int a(long j3, o oVar) {
-        if (this.a < -2147483648L || this.d > 2147483647L || !d(j3)) {
-            throw new j$.time.b(c(j3, oVar));
+    public static s f(long j, long j2) {
+        if (j > j2) {
+            j$.time.g.c("Smallest maximum value must be less than largest maximum value");
+            return null;
         }
-        return (int) j3;
-    }
-
-    public final boolean d(long j3) {
-        return j3 >= this.a && j3 <= this.d;
-    }
-
-    public final void b(long j3, o oVar) {
-        if (!d(j3)) {
-            throw new j$.time.b(c(j3, oVar));
+        if (1 <= j2) {
+            return new s(1L, 1L, j, j2);
         }
-    }
-
-    public final String c(long j3, o oVar) {
-        if (oVar != null) {
-            return "Invalid value for " + oVar + " (valid values " + this + "): " + j3;
-        }
-        return "Invalid value (valid values " + this + "): " + j3;
+        j$.time.g.c("Minimum value must be less than maximum value");
+        return null;
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         objectInputStream.defaultReadObject();
-        long j3 = this.a;
-        long j10 = this.b;
-        if (j3 > j10) {
+        long j = this.a;
+        long j2 = this.b;
+        if (j > j2) {
             throw new InvalidObjectException("Smallest minimum value must be less than largest minimum value");
         }
-        long j11 = this.c;
-        long j12 = this.d;
-        if (j11 > j12) {
+        long j3 = this.c;
+        long j4 = this.d;
+        if (j3 > j4) {
             throw new InvalidObjectException("Smallest maximum value must be less than largest maximum value");
         }
-        if (j10 > j12) {
+        if (j2 > j4) {
             throw new InvalidObjectException("Minimum value must be less than maximum value");
         }
+    }
+
+    public final int a(long j, o oVar) {
+        if (this.a < -2147483648L || this.d > 2147483647L || !d(j)) {
+            throw new j$.time.c(c(j, oVar));
+        }
+        return (int) j;
+    }
+
+    public final void b(long j, o oVar) {
+        if (!d(j)) {
+            throw new j$.time.c(c(j, oVar));
+        }
+    }
+
+    public final String c(long j, o oVar) {
+        if (oVar == null) {
+            return "Invalid value (valid values " + this + "): " + j;
+        }
+        return "Invalid value for " + oVar + " (valid values " + this + "): " + j;
+    }
+
+    public final boolean d(long j) {
+        return j >= this.a && j <= this.d;
     }
 
     public final boolean equals(Object obj) {
@@ -91,29 +95,29 @@ public final class s implements Serializable {
     }
 
     public final int hashCode() {
-        long j3 = this.a;
-        long j10 = this.b;
-        long j11 = j3 + (j10 << 16) + (j10 >> 48);
-        long j12 = this.c;
-        long j13 = j11 + (j12 << 32) + (j12 >> 32);
-        long j14 = this.d;
-        long j15 = j13 + (j14 << 48) + (j14 >> 16);
-        return (int) (j15 ^ (j15 >>> 32));
+        long j = this.a;
+        long j2 = this.b;
+        long j3 = j + (j2 << 16) + (j2 >> 48);
+        long j4 = this.c;
+        long j5 = j3 + (j4 << 32) + (j4 >> 32);
+        long j6 = this.d;
+        long j7 = j5 + (j6 << 48) + (j6 >> 16);
+        return (int) (j7 ^ (j7 >>> 32));
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.a);
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.a);
         if (this.a != this.b) {
-            sb2.append('/');
-            sb2.append(this.b);
+            sb.append('/');
+            sb.append(this.b);
         }
-        sb2.append(" - ");
-        sb2.append(this.c);
+        sb.append(" - ");
+        sb.append(this.c);
         if (this.c != this.d) {
-            sb2.append('/');
-            sb2.append(this.d);
+            sb.append('/');
+            sb.append(this.d);
         }
-        return sb2.toString();
+        return sb.toString();
     }
 }

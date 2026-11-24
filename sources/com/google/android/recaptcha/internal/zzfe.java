@@ -1,62 +1,53 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import hd.h;
-import hd.r;
-import id.c;
 import java.util.LinkedHashMap;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfe extends j implements p {
+final class zzfe extends ccb implements eq4 {
     final /* synthetic */ zzyg zza;
     final /* synthetic */ zzfp zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfe(zzyg zzygVar, zzfp zzfpVar, c cVar) {
-        super(2, cVar);
+    public zzfe(zzyg zzygVar, zzfp zzfpVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzygVar;
         this.zzb = zzfpVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzfe(this.zza, this.zzb, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzfe(this.zza, this.zzb, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfe) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfe) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        z.b(obj);
+        qse.b(obj);
         try {
             zzyg zzygVar = this.zza;
             List<zzyi> zzk = zzygVar.zzk();
-            int b10 = r.b(h.d(zzk, 10));
-            if (b10 < 16) {
-                b10 = 16;
+            int b = qi6.b(al2.c(zzk, 10));
+            if (b < 16) {
+                b = 16;
             }
-            LinkedHashMap linkedHashMap = new LinkedHashMap(b10);
+            LinkedHashMap linkedHashMap = new LinkedHashMap(b);
             for (zzyi zzyiVar : zzk) {
                 linkedHashMap.put(zzyiVar.zzg(), zzyiVar.zzi());
             }
             zzfp zzfpVar = this.zzb;
             zzfp.zze(zzfpVar).zzb(linkedHashMap);
             zzfp.zzb(zzfpVar).zze(zzygVar);
-            return k.a;
-        } catch (zzcg e10) {
-            throw e10;
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzb, zzcd.zzav, e11.getMessage(), null, 8, null);
+            return g5c.a;
+        } catch (zzcg e) {
+            throw e;
+        } catch (Exception e2) {
+            throw new zzcg(zzce.zzb, zzcd.zzav, e2.getMessage(), null, 8, null);
         }
     }
 }

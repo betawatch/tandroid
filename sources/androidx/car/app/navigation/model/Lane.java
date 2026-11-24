@@ -1,17 +1,16 @@
 package androidx.car.app.navigation.model;
 
-import a8.p0;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Lane {
     private final List<LaneDirection> mDirections;
 
     public Lane(List<LaneDirection> list) {
-        this.mDirections = androidx.car.app.utils.g.g(list);
+        this.mDirections = qrd.a(list);
     }
 
     public boolean equals(Object obj) {
@@ -34,9 +33,9 @@ public final class Lane {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[direction count: ");
+        StringBuilder sb = new StringBuilder("[direction count: ");
         List<LaneDirection> list = this.mDirections;
-        return p0.n(list != null ? list.size() : 0, "]", sb2);
+        return de9.l(sb, list != null ? list.size() : 0, "]");
     }
 
     private Lane() {

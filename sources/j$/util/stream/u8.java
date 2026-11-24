@@ -1,116 +1,138 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoublePredicate;
 
-/* loaded from: classes2.dex */
-public final class u8 extends v8 implements Consumer {
-    public final Predicate e;
-    public Object f;
-    public final /* synthetic */ int g;
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class u8 extends y8 implements DoubleConsumer, j$.util.u0 {
+    public double e;
+    public final /* synthetic */ byte f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u8(Spliterator spliterator, Predicate predicate, int i7) {
+    public /* synthetic */ u8(Spliterator spliterator, byte b) {
         super(spliterator);
-        this.g = i7;
-        this.e = predicate;
+        this.f = b;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u8(Spliterator spliterator, u8 u8Var, int i7) {
-        super(spliterator, u8Var);
-        this.g = i7;
-        this.e = u8Var.e;
-    }
-
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
         this.d = (this.d + 1) & 63;
-        this.f = obj;
+        this.e = d;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0059, code lost:
-    
-        if (r0 == false) goto L32;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x005b, code lost:
-    
-        r6.b.set(true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0060, code lost:
-    
-        r7.accept(r6.f);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:?, code lost:
-    
-        return r2;
-     */
-    @Override // j$.util.Spliterator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean tryAdvance(Consumer consumer) {
-        boolean tryAdvance;
-        boolean z10;
-        switch (this.g) {
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
+    }
+
+    @Override // j$.util.stream.y8
+    public final Spliterator b(Spliterator spliterator) {
+        switch (this.f) {
             case 0:
-                boolean z11 = this.c;
-                Spliterator spliterator = this.a;
-                if (z11) {
-                    boolean z12 = false;
-                    this.c = false;
-                    while (true) {
-                        tryAdvance = spliterator.tryAdvance(this);
-                        if (tryAdvance && a() && this.e.test(this.f)) {
-                            z12 = true;
-                        }
-                    }
-                    return tryAdvance;
-                }
-                return spliterator.tryAdvance(consumer);
+                return new u8((j$.util.u0) spliterator, this, (byte) 0);
             default:
-                if (this.c && a() && this.a.tryAdvance(this)) {
-                    z10 = this.e.test(this.f);
-                    if (z10) {
-                        consumer.accept(this.f);
-                        return true;
-                    }
-                } else {
-                    z10 = true;
+                return new u8((j$.util.u0) spliterator, this, (byte) 1);
+        }
+    }
+
+    @Override // j$.util.d1
+    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
+        while (tryAdvance(doubleConsumer)) {
+        }
+    }
+
+    @Override // j$.util.u0
+    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        byte b = this.f;
+        Spliterator spliterator = this.a;
+        DoublePredicate doublePredicate = null;
+        switch (b) {
+            case 0:
+                if (!this.c) {
+                    return ((j$.util.u0) spliterator).tryAdvance(doubleConsumer);
                 }
                 this.c = false;
-                if (!z10) {
-                    this.b.set(true);
+                boolean tryAdvance = ((j$.util.u0) spliterator).tryAdvance((DoubleConsumer) this);
+                if (!tryAdvance) {
+                    return tryAdvance;
                 }
+                boolean a = a();
+                double d = this.e;
+                if (a) {
+                    doublePredicate.test(d);
+                    throw null;
+                }
+                doubleConsumer.accept(d);
+                return tryAdvance;
+            default:
+                if (this.c && a() && ((j$.util.u0) spliterator).tryAdvance((DoubleConsumer) this)) {
+                    doublePredicate.test(this.e);
+                    throw null;
+                }
+                this.c = false;
                 return false;
         }
     }
 
-    @Override // j$.util.stream.v8, j$.util.Spliterator
-    public Spliterator trySplit() {
-        switch (this.g) {
-            case 1:
-                if (!this.b.get()) {
-                    break;
+    @Override // j$.util.stream.y8, j$.util.Spliterator
+    public final j$.util.u0 trySplit() {
+        switch (this.f) {
+            case 0:
+                return (j$.util.u0) trySplit();
+            default:
+                if (this.b.get()) {
+                    return null;
                 }
-                break;
+                return (j$.util.u0) super.trySplit();
         }
-        return super.trySplit();
     }
 
-    @Override // j$.util.stream.v8
-    public final Spliterator b(Spliterator spliterator) {
-        switch (this.g) {
-            case 0:
-                return new u8(spliterator, this, 0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u8(Spliterator spliterator, y8 y8Var, byte b) {
+        super(spliterator, y8Var);
+        this.f = b;
+    }
+
+    @Override // j$.util.stream.y8, j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.h(this, consumer);
+    }
+
+    @Override // j$.util.stream.y8, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ Spliterator trySplit() {
+        switch (this.f) {
+            case 1:
+                return trySplit();
             default:
-                return new u8(spliterator, this, 1);
+                return super.trySplit();
+        }
+    }
+
+    @Override // j$.util.stream.y8, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ j$.util.d1 trySplit() {
+        switch (this.f) {
+            case 0:
+                return (j$.util.d1) trySplit();
+            default:
+                return trySplit();
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.y(this, consumer);
+    }
+
+    @Override // j$.util.d1
+    public final /* bridge */ /* synthetic */ boolean tryAdvance(Object obj) {
+        switch (this.f) {
+            case 1:
+                tryAdvance((DoubleConsumer) obj);
+                return false;
+            default:
+                return tryAdvance((DoubleConsumer) obj);
         }
     }
 }

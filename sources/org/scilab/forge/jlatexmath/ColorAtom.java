@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ColorAtom extends Atom implements Row {
     public static Map<String, Color> Colors = new HashMap();
@@ -17,15 +17,15 @@ public class ColorAtom extends Atom implements Row {
         initColors();
     }
 
-    public ColorAtom(Atom atom, Color color, Color color2) {
-        this.elements = new RowAtom(atom);
-        this.background = color;
-        this.color = color2;
+    public ColorAtom(Color color, Color color2, ColorAtom colorAtom) {
+        this.elements = new RowAtom(colorAtom.elements);
+        this.background = color == null ? colorAtom.background : color;
+        this.color = color2 == null ? colorAtom.color : color2;
     }
 
-    private static Color convColor(float f10, float f11, float f12, float f13) {
-        float f14 = 1.0f - f13;
-        return new Color((1.0f - f10) * f14, (1.0f - f11) * f14, (1.0f - f12) * f14);
+    private static Color convColor(float f, float f2, float f3, float f4) {
+        float f5 = 1.0f - f4;
+        return new Color((1.0f - f) * f5, (1.0f - f2) * f5, (1.0f - f3) * f5);
     }
 
     public static Color getColor(String str) {
@@ -178,9 +178,9 @@ public class ColorAtom extends Atom implements Row {
         this.elements.setPreviousAtom(dummy);
     }
 
-    public ColorAtom(Color color, Color color2, ColorAtom colorAtom) {
-        this.elements = new RowAtom(colorAtom.elements);
-        this.background = color == null ? colorAtom.background : color;
-        this.color = color2 == null ? colorAtom.color : color2;
+    public ColorAtom(Atom atom, Color color, Color color2) {
+        this.elements = new RowAtom(atom);
+        this.background = color;
+        this.color = color2;
     }
 }

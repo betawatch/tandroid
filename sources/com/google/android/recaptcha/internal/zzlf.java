@@ -1,93 +1,87 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzlf extends j implements p {
+final class zzlf extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlf(zzly zzlyVar, c cVar) {
-        super(2, cVar);
+    public zzlf(zzly zzlyVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzlyVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzlf(this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzlf(this.zzc, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlf) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzlf) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x006a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0069, code lost:
     
         ((android.webkit.WebView) r7).setWebViewClient(new com.google.android.recaptcha.internal.zzle(r6.zzc));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0078, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0077, code lost:
     
-        return gd.k.a;
+        return g5c.a;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0053, code lost:
     
-        if (r7 != r0) goto L17;
+        if (r7 != r5) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x003d, code lost:
     
-        if (r7 != r0) goto L15;
+        if (r7 != r5) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x002c, code lost:
     
-        if (r7 != r0) goto L13;
+        if (r7 != r5) goto L13;
      */
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0012, code lost:
     
-        if (r1 != 3) goto L20;
+        if (r0 != 3) goto L19;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0055, code lost:
     
-        r1 = r6.zzc;
-        ((android.webkit.WebView) r7).addJavascriptInterface(r1.zzr(), "RN");
+        r0 = r6.zzc;
+        ((android.webkit.WebView) r7).addJavascriptInterface(r0.zzr(), "RN");
         r6.zzb = 4;
-        r7 = r1.zzv(r6);
+        r7 = r0.zzv(r6);
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0067, code lost:
     
-        if (r7 != r0) goto L20;
+        if (r7 == r5) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0079, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0078, code lost:
     
-        return r0;
+        return r5;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zzb;
-        if (i7 == 0) {
-            c8.z.b(obj);
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
-        } else if (i7 == 1) {
-            c8.z.b(obj);
-        } else if (i7 != 2) {
-            c8.z.b(obj);
+        } else if (i == 1) {
+            qse.b(obj);
+        } else if (i != 2) {
+            qse.b(obj);
         } else {
-            c8.z.b(obj);
+            qse.b(obj);
             ((WebView) obj).getSettings().setJavaScriptEnabled(true);
             zzly zzlyVar2 = this.zzc;
             this.zza = null;

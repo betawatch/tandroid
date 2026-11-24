@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class RowAtom extends Atom implements Row {
     private static BitSet binSet;
@@ -33,10 +33,18 @@ public class RowAtom extends Atom implements Row {
         ligKernSet.set(6);
     }
 
-    public RowAtom() {
-        this.elements = new LinkedList<>();
+    public RowAtom(Atom atom) {
+        LinkedList<Atom> linkedList = new LinkedList<>();
+        this.elements = linkedList;
         this.lookAtLastAtom = false;
         this.previousAtom = null;
+        if (atom != null) {
+            if (atom instanceof RowAtom) {
+                linkedList.addAll(((RowAtom) atom).elements);
+            } else {
+                linkedList.add(atom);
+            }
+        }
     }
 
     private void changeToOrd(Dummy dummy, Dummy dummy2, Atom atom) {
@@ -61,13 +69,13 @@ public class RowAtom extends Atom implements Row {
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
-        float f10;
+        float f;
         Dummy dummy;
         TeXFont teXFont = teXEnvironment.getTeXFont();
         HorizontalBox horizontalBox = new HorizontalBox(teXEnvironment.getColor(), teXEnvironment.getBackground());
         teXEnvironment.reset();
         ListIterator<Atom> listIterator = this.elements.listIterator();
-        int i7 = 0;
+        int i = 0;
         while (true) {
             Atom atom = null;
             if (!listIterator.hasNext()) {
@@ -75,27 +83,27 @@ public class RowAtom extends Atom implements Row {
                 return horizontalBox;
             }
             Atom next = listIterator.next();
-            i7++;
-            boolean z10 = false;
+            i++;
+            boolean z = false;
             while (next instanceof BreakMarkAtom) {
-                if (!z10) {
-                    z10 = true;
+                if (!z) {
+                    z = true;
                 }
                 if (!listIterator.hasNext()) {
                     break;
                 }
                 next = listIterator.next();
-                i7++;
+                i++;
             }
             if (next instanceof DynamicAtom) {
                 DynamicAtom dynamicAtom = (DynamicAtom) next;
                 if (dynamicAtom.getInsertMode()) {
                     next = dynamicAtom.getAtom();
                     if (next instanceof RowAtom) {
-                        int i10 = i7 - 1;
-                        this.elements.remove(i10);
-                        this.elements.addAll(i10, ((RowAtom) next).elements);
-                        listIterator = this.elements.listIterator(i10);
+                        int i2 = i - 1;
+                        this.elements.remove(i2);
+                        this.elements.addAll(i2, ((RowAtom) next).elements);
+                        listIterator = this.elements.listIterator(i2);
                         next = listIterator.next();
                     }
                 }
@@ -108,7 +116,7 @@ public class RowAtom extends Atom implements Row {
             changeToOrd(dummy2, this.previousAtom, atom);
             while (listIterator.hasNext() && dummy2.getRightType() == 0 && dummy2.isCharSymbol()) {
                 Atom next2 = listIterator.next();
-                int i11 = i7 + 1;
+                int i3 = i + 1;
                 if (!(next2 instanceof CharSymbol) || !ligKernSet.get(next2.getLeftType())) {
                     listIterator.previous();
                     break;
@@ -118,14 +126,14 @@ public class RowAtom extends Atom implements Row {
                 CharFont charFont2 = ((CharSymbol) next2).getCharFont(teXFont);
                 CharFont ligature = teXFont.getLigature(charFont, charFont2);
                 if (ligature == null) {
-                    f10 = teXFont.getKern(charFont, charFont2, teXEnvironment.getStyle());
+                    f = teXFont.getKern(charFont, charFont2, teXEnvironment.getStyle());
                     listIterator.previous();
                     break;
                 }
                 dummy2.changeAtom(new FixedCharAtom(ligature));
-                i7 = i11;
+                i = i3;
             }
-            f10 = 0.0f;
+            f = 0.0f;
             if (listIterator.previousIndex() != 0 && (dummy = this.previousAtom) != null && !dummy.isKern() && !dummy2.isKern()) {
                 horizontalBox.add(Glue.get(this.previousAtom.getRightType(), dummy2.getLeftType(), teXEnvironment));
             }
@@ -134,13 +142,13 @@ public class RowAtom extends Atom implements Row {
             if (dummy2.isCharInMathMode() && (createBox instanceof CharBox)) {
                 ((CharBox) createBox).addItalicCorrectionToWidth();
             }
-            if (z10 || ((next instanceof CharAtom) && Character.isDigit(((CharAtom) next).getCharacter()))) {
+            if (z || ((next instanceof CharAtom) && Character.isDigit(((CharAtom) next).getCharacter()))) {
                 horizontalBox.addBreakPosition(horizontalBox.children.size());
             }
             horizontalBox.add(createBox);
             teXEnvironment.setLastFontId(createBox.getLastFontId());
-            if (Math.abs(f10) > 1.0E-7f) {
-                horizontalBox.add(new StrutBox(f10, 0.0f, 0.0f, 0.0f));
+            if (Math.abs(f) > 1.0E-7f) {
+                horizontalBox.add(new StrutBox(f, 0.0f, 0.0f, 0.0f));
             }
             if (!dummy2.isKern()) {
                 this.previousAtom = dummy2;
@@ -165,7 +173,7 @@ public class RowAtom extends Atom implements Row {
         if (this.elements.size() == 0) {
             return 0;
         }
-        return this.elements.get(r0.size() - 1).getRightType();
+        return this.elements.get(r1.size() - 1).getRightType();
     }
 
     @Override // org.scilab.forge.jlatexmath.Row
@@ -173,17 +181,9 @@ public class RowAtom extends Atom implements Row {
         this.previousAtom = dummy;
     }
 
-    public RowAtom(Atom atom) {
-        LinkedList<Atom> linkedList = new LinkedList<>();
-        this.elements = linkedList;
+    public RowAtom() {
+        this.elements = new LinkedList<>();
         this.lookAtLastAtom = false;
         this.previousAtom = null;
-        if (atom != null) {
-            if (atom instanceof RowAtom) {
-                linkedList.addAll(((RowAtom) atom).elements);
-            } else {
-                linkedList.add(atom);
-            }
-        }
     }
 }

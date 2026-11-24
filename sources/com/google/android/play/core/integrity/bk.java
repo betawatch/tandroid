@@ -2,38 +2,37 @@ package com.google.android.play.core.integrity;
 
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d9.g0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class bk extends bi {
     final /* synthetic */ bn c;
-    private final g0 d;
+    private final q0d d;
     private final long e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bk(bn bnVar, TaskCompletionSource taskCompletionSource, long j3) {
+    public bk(bn bnVar, TaskCompletionSource taskCompletionSource, long j) {
         super(bnVar, taskCompletionSource);
         this.c = bnVar;
-        this.d = new g0("OnRequestIntegrityTokenCallback");
-        this.e = j3;
+        this.d = new q0d("OnRequestIntegrityTokenCallback");
+        this.e = j;
     }
 
-    @Override // com.google.android.play.core.integrity.bi, d9.y
+    @Override // com.google.android.play.core.integrity.bi, g0d
     public final void c(Bundle bundle) {
         k kVar;
         String str;
         super.c(bundle);
         this.d.b("onRequestExpressIntegrityToken", new Object[0]);
         kVar = this.c.f;
-        com.google.android.gms.common.api.f a10 = kVar.a(bundle);
-        if (a10 != null) {
-            this.a.trySetException(a10);
+        zn a = kVar.a(bundle);
+        if (a != null) {
+            this.a.trySetException(a);
             return;
         }
-        long j3 = bundle.getLong("request.token.sid");
+        long j = bundle.getLong("request.token.sid");
         str = this.c.c;
-        bj bjVar = new bj(this, str, j3);
+        bj bjVar = new bj(this, str, j);
         TaskCompletionSource taskCompletionSource = this.a;
         b bVar = new b();
         bVar.b(bundle.getString("token"));

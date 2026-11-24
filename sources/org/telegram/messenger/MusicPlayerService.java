@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
@@ -15,9 +16,11 @@ import android.media.RemoteControlClient;
 import android.media.session.MediaSession;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.support.v4.media.session.f;
 import android.text.TextUtils;
 import java.io.File;
 import org.telegram.messenger.beta.R;
@@ -26,420 +29,416 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class MusicPlayerService extends Service implements fs {
+public class MusicPlayerService extends Service implements gk7 {
     public static final boolean s;
-    public static android.support.v4.media.session.a0 w;
+    public static mv6 w;
     public RemoteControlClient a;
     public AudioManager b;
-    public android.support.v4.media.session.d0 c;
+    public f c;
     public Bitmap d;
     public int e;
     public ImageReceiver f;
     public boolean h;
     public String n;
-    public final q0 r = new q0(2);
+    public final tr r = new tr(2);
 
     static {
-        s = Build.VERSION.SDK_INT < 29 && !TextUtils.isEmpty(g0.k1("ro.miui.ui.version.code"));
+        s = Build.VERSION.SDK_INT < 29 && !TextUtils.isEmpty(gl.j1("ro.miui.ui.version.code"));
     }
 
-    public static int b(int i7) {
-        return (Build.VERSION.SDK_INT >= 31 || !c6.i()) ? i7 : i7 & (-100663297);
+    public static int b(int i) {
+        return (Build.VERSION.SDK_INT >= 31 || !nye.b()) ? i : i & (-100663297);
     }
 
-    public static float d(fj fjVar, boolean z10) {
-        if (!z10) {
+    public static float d(k27 k27Var, boolean z) {
+        if (!z) {
             return 0.0f;
         }
-        if (fjVar == null) {
+        if (k27Var == null) {
             return 1.0f;
         }
-        if (fj.R4(fjVar.k) || fjVar.h4()) {
-            return MediaController.B().q0;
+        if (k27.Q4(k27Var.k) || k27Var.g4()) {
+            return MediaController.w().q0;
         }
         return 1.0f;
     }
 
     public static void g() {
         if (w != null) {
-            int i7 = bz.S0;
-            w.w(i7 != 1 ? i7 != 2 ? 0 : 1 : 2);
+            int i = gba.P0;
+            w.p0(i != 1 ? i != 2 ? 0 : 1 : 2);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:200:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x051a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0580  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x05ab  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0549  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0574  */
     /* JADX WARN: Removed duplicated region for block: B:96:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x055d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(fj fjVar, boolean z10) {
+    public final void a(k27 k27Var, boolean z) {
         Bitmap bitmap;
         Bitmap bitmap2;
-        Bitmap c10;
+        Bitmap c;
         PendingIntent pendingIntent;
         PendingIntent pendingIntent2;
         String str;
-        long j3;
+        long j;
         String str2;
         String str3;
-        rf.a aVar;
+        g00 g00Var;
+        int i;
         String str4;
-        int i7;
         String str5;
-        int i10;
+        mv6 mv6Var;
+        g00 g00Var2;
         String str6;
-        int i11;
-        android.support.v4.media.session.a0 a0Var;
-        rf.a aVar2;
-        String str7;
         Bitmap bitmap3;
-        int i12;
-        String y12 = fjVar.y1(true);
-        String w12 = fjVar.w1(true);
-        rf.a aVar3 = MediaController.B().E0;
-        Intent intent = new Intent(t0.b, (Class<?>) LaunchActivity.class);
-        if (fjVar.I3()) {
+        int i2;
+        byte b;
+        String y1 = k27Var.y1(true);
+        String w1 = k27Var.w1(true);
+        g00 g00Var3 = MediaController.w().E0;
+        Intent intent = new Intent(a.b, (Class<?>) LaunchActivity.class);
+        if (k27Var.I3()) {
             intent.setAction("com.tmessages.openplayer");
             intent.addCategory("android.intent.category.LAUNCHER");
-        } else if (fj.R4(fjVar.k) || fjVar.h4()) {
+        } else if (k27.Q4(k27Var.k) || k27Var.g4()) {
             intent.setAction("android.intent.action.VIEW");
-            TLRPC.Peer peer = fjVar.k.peer_id;
-            boolean z11 = peer instanceof TLRPC.TL_peerUser;
-            long j10 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
-            if (j10 != 0) {
-                if (z11) {
-                    StringBuilder t6 = a8.p0.t(j10, "tg://openmessage?user_id=", "&message_id=");
-                    t6.append(fjVar.e1());
-                    intent.setData(Uri.parse(t6.toString()));
+            TLRPC.Peer peer = k27Var.k.peer_id;
+            boolean z2 = peer instanceof TLRPC.TL_peerUser;
+            long j2 = z2 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
+            if (j2 != 0) {
+                if (z2) {
+                    StringBuilder o = ug8.o(j2, "tg://openmessage?user_id=", "&message_id=");
+                    o.append(k27Var.e1());
+                    intent.setData(Uri.parse(o.toString()));
                 } else {
-                    StringBuilder t10 = a8.p0.t(j10, "tg://openmessage?chat_id=", "&message_id=");
-                    t10.append(fjVar.e1());
-                    intent.setData(Uri.parse(t10.toString()));
+                    StringBuilder o2 = ug8.o(j2, "tg://openmessage?chat_id=", "&message_id=");
+                    o2.append(k27Var.e1());
+                    intent.setData(Uri.parse(o2.toString()));
                 }
             }
         }
-        PendingIntent activity = PendingIntent.getActivity(t0.b, 0, intent, b(33554432));
-        long L0 = (long) (fjVar.L0() * 1000.0d);
-        if (fjVar.I3()) {
-            String u02 = fjVar.u0(true);
-            String u03 = fjVar.u0(false);
-            bitmap2 = aVar3 != null ? aVar3.p : null;
-            bitmap = aVar3 != null ? aVar3.o : null;
-            this.n = null;
-            this.f.x0(null);
-            if (bitmap2 != null || TextUtils.isEmpty(u02)) {
-                w7.G(i10.t0);
-                this.n = w7.I(fjVar.F0()).getAbsolutePath();
+        PendingIntent activity = PendingIntent.getActivity(a.b, 0, intent, b(33554432));
+        long L0 = (long) (k27Var.L0() * 1000.0d);
+        if (k27Var.I3()) {
+            String u0 = k27Var.u0(true);
+            String u02 = k27Var.u0(false);
+            if (g00Var3 != null) {
+                bitmap2 = g00Var3.p;
+                bitmap = g00Var3.o;
             } else {
-                boolean z12 = !z10;
-                Bitmap e10 = e(u03, true, z12);
-                if (e10 == null) {
-                    bitmap2 = e(u02, false, z12);
-                    bitmap = bitmap2;
+                bitmap = null;
+                bitmap2 = null;
+            }
+            this.n = null;
+            this.f.g0(null);
+            if (bitmap2 != null || TextUtils.isEmpty(u0)) {
+                ba4.G(y6c.t0);
+                this.n = ba4.I(k27Var.F0()).getAbsolutePath();
+            } else {
+                boolean z3 = !z;
+                Bitmap e = e(u02, true, z3);
+                if (e == null) {
+                    bitmap = e(u0, false, z3);
+                    bitmap2 = bitmap;
                 } else {
-                    bitmap2 = e(u03, false, z12);
-                    bitmap = e10;
+                    bitmap2 = e(u02, false, z3);
+                    bitmap = e;
                 }
             }
-        } else if (fj.R4(fjVar.k) || fjVar.h4()) {
-            long R1 = fjVar.R1();
-            if (fjVar.p3()) {
-                TLRPC.User c22 = mp.u1(i10.t0).c2(Long.valueOf(R1));
-                if (c22 != null) {
-                    y12 = n10.q(c22);
-                    boolean z13 = !z10;
-                    bitmap = c(c22, true, z13);
-                    c10 = c(c22, false, z13);
+        } else if (k27.Q4(k27Var.k) || k27Var.g4()) {
+            long R1 = k27Var.R1();
+            boolean p3 = k27Var.p3();
+            int i3 = y6c.t0;
+            if (p3) {
+                TLRPC.User V1 = na7.q1(i3).V1(Long.valueOf(R1));
+                if (V1 != null) {
+                    y1 = l7c.q(V1);
+                    boolean z4 = !z;
+                    bitmap = c(V1, true, z4);
+                    c = c(V1, false, z4);
                 } else {
-                    c10 = null;
+                    c = null;
                     bitmap = null;
                 }
             } else {
-                TLRPC.Chat O0 = mp.u1(i10.t0).O0(Long.valueOf(-R1));
-                if (O0 != null) {
-                    y12 = O0.title;
-                    boolean z14 = !z10;
-                    bitmap = c(O0, true, z14);
-                    c10 = c(O0, false, z14);
+                TLRPC.Chat K0 = na7.q1(i3).K0(Long.valueOf(-R1));
+                if (K0 != null) {
+                    y1 = K0.title;
+                    boolean z5 = !z;
+                    bitmap = c(K0, true, z5);
+                    c = c(K0, false, z5);
                 } else {
                     bitmap = null;
                     bitmap2 = null;
                     if (bitmap == null && bitmap2 != null) {
                         bitmap = bitmap2;
                     }
-                    w12 = !fj.R4(fjVar.k) ? gd.N0(2131753979, null) : gd.N0(2131753938, null);
+                    w1 = !k27.Q4(k27Var.k) ? k96.M0(2131753979, null) : k96.M0(2131753938, null);
                 }
             }
-            bitmap2 = c10;
+            bitmap2 = c;
             if (bitmap == null) {
                 bitmap = bitmap2;
             }
-            if (!fj.R4(fjVar.k)) {
+            if (!k27.Q4(k27Var.k)) {
             }
         } else {
             bitmap = null;
-            bitmap2 = null;
+            bitmap2 = bitmap;
         }
-        int i13 = Build.VERSION.SDK_INT;
-        boolean H = MediaController.B().H();
-        boolean z15 = !H;
-        Bitmap bitmap4 = bitmap;
+        boolean C = MediaController.w().C();
+        boolean z6 = !C;
         PendingIntent broadcast = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.previous").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
-        PendingIntent service = PendingIntent.getService(getApplicationContext(), 0, new Intent(this, getClass()).setAction(getPackageName() + ".STOP_PLAYER"), b(301989888));
-        PendingIntent broadcast2 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(!H ? "org.telegram.android.musicplayer.pause" : "org.telegram.android.musicplayer.play").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
+        Context applicationContext = getApplicationContext();
+        Intent intent2 = new Intent(this, getClass());
+        StringBuilder sb = new StringBuilder();
+        Bitmap bitmap4 = bitmap;
+        sb.append(getPackageName());
+        sb.append(".STOP_PLAYER");
+        PendingIntent service = PendingIntent.getService(applicationContext, 0, intent2.setAction(sb.toString()), b(301989888));
+        PendingIntent broadcast2 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(!C ? "org.telegram.android.musicplayer.pause" : "org.telegram.android.musicplayer.play").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast3 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.next").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.seek").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast4 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.repeat").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast5 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.shuffle").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
-        Notification.MediaStyle mediaSession = new Notification.MediaStyle().setMediaSession((MediaSession.Token) ((android.support.v4.media.session.u) w.b).c.b);
-        if (fjVar.I3()) {
-            pendingIntent = broadcast;
-            pendingIntent2 = broadcast5;
+        Notification.MediaStyle mediaSession = new Notification.MediaStyle().setMediaSession((MediaSession.Token) ((zu6) w.b).c.b);
+        if (k27Var.I3()) {
+            pendingIntent = broadcast5;
+            pendingIntent2 = broadcast3;
             str = "org.telegram.android.musicplayer.shuffle";
             mediaSession.setShowActionsInCompactView(0, 1, 2, 3, 4);
         } else {
-            pendingIntent = broadcast;
-            pendingIntent2 = broadcast5;
+            pendingIntent = broadcast5;
+            pendingIntent2 = broadcast3;
             str = "org.telegram.android.musicplayer.shuffle";
-            if (fj.R4(fjVar.k) || fjVar.h4()) {
+            if (k27.Q4(k27Var.k) || k27Var.g4()) {
                 mediaSession.setShowActionsInCompactView(0);
             }
         }
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setSmallIcon(R.drawable.player).setOngoing(z15).setContentTitle(y12).setContentText(w12).setSubText((aVar3 == null || !fjVar.I3()) ? null : aVar3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
-        if (i13 >= 26) {
-            xs.i();
-            builder.setChannelId(xs.k0);
+        builder.setSmallIcon(R.drawable.player).setOngoing(z6).setContentTitle(y1).setContentText(w1).setSubText((g00Var3 == null || !k27Var.I3()) ? null : g00Var3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
+        int i4 = Build.VERSION.SDK_INT;
+        if (i4 >= 26) {
+            im7.c();
+            builder.setChannelId(im7.k0);
         }
         if (bitmap2 != null) {
             builder.setLargeIcon(bitmap2);
         } else {
             builder.setLargeIcon(this.d);
         }
-        String N0 = gd.N0(2131748057, null);
-        String N02 = gd.N0(2131754799, null);
-        this.c = new android.support.v4.media.session.d0();
-        if (MediaController.B().B0) {
-            android.support.v4.media.session.d0 d0Var = this.c;
-            j3 = 1000;
-            d0Var.c(6, 0L, 1.0f);
-            d0Var.e = 0L;
-            if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, N02, pendingIntent).build());
+        String M0 = k96.M0(2131748058, null);
+        String M02 = k96.M0(2131754799, null);
+        this.c = new f();
+        if (MediaController.w().B0) {
+            f fVar = this.c;
+            j = 1000;
+            fVar.c(6, 0L, 1.0f);
+            fVar.e = 0L;
+            if (k27Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M02, broadcast).build());
             }
-            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, gd.N0(2131748586, null), (PendingIntent) null).build());
-            if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, N0, broadcast3).build());
+            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, k96.M0(2131748587, null), (PendingIntent) null).build());
+            if (k27Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M0, pendingIntent2).build());
             }
-            str2 = y12;
-            str3 = w12;
-            aVar = aVar3;
-            i7 = i13;
+            str2 = y1;
+            str3 = w1;
+            g00Var = g00Var3;
+            i = i4;
         } else {
-            PendingIntent pendingIntent3 = pendingIntent;
-            j3 = 1000;
-            long j11 = fjVar.I3() ? 2360118L : 2360070L;
-            if (fjVar.I3()) {
-                if (bz.N0) {
-                    i7 = i13;
-                    i11 = R.drawable.player_new_shuffle;
+            PendingIntent pendingIntent3 = pendingIntent2;
+            j = 1000;
+            long j3 = k27Var.I3() ? 2360118L : 2360070L;
+            if (k27Var.I3()) {
+                int i5 = gba.K0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
+                i = i4;
+                f fVar2 = this.c;
+                str2 = y1;
+                g00Var = g00Var3;
+                String M03 = k96.M0(2131745130, null);
+                if (TextUtils.isEmpty(M03)) {
+                    w26.j("You must specify a name to build a CustomAction");
+                    return;
                 } else {
-                    i7 = i13;
-                    i11 = R.drawable.player_new_shuffle_off;
+                    str3 = w1;
+                    fVar2.a(new PlaybackStateCompat.CustomAction(str, M03, i5, null));
                 }
-                aVar = aVar3;
-                android.support.v4.media.session.d0 d0Var2 = this.c;
-                str2 = y12;
-                str3 = w12;
-                String N03 = gd.N0(2131745126, null);
-                if (TextUtils.isEmpty(str)) {
-                    throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                }
-                if (TextUtils.isEmpty(N03)) {
-                    throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                }
-                str4 = N0;
-                d0Var2.a(new PlaybackStateCompat.CustomAction(str, N03, i11, null));
             } else {
-                str2 = y12;
-                str3 = w12;
-                aVar = aVar3;
-                str4 = N0;
-                i7 = i13;
+                str2 = y1;
+                str3 = w1;
+                g00Var = g00Var3;
+                i = i4;
             }
-            android.support.v4.media.session.d0 d0Var3 = this.c;
-            d0Var3.c(!H ? 3 : 2, MediaController.B().v0.i0 * 1000, d(fjVar, z15));
-            d0Var3.e = j11;
-            boolean I3 = fjVar.I3();
-            int i14 = R.drawable.player_new_repeatall;
-            if (I3) {
-                int i15 = bz.S0;
-                int i16 = i15 != 1 ? i15 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
-                android.support.v4.media.session.d0 d0Var4 = this.c;
-                String N04 = gd.N0(2131746077, null);
-                if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
-                    throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+            f fVar3 = this.c;
+            fVar3.c(!C ? 3 : 2, MediaController.w().v0.i0 * 1000, d(k27Var, z6));
+            fVar3.e = j3;
+            if (k27Var.I3()) {
+                int i6 = gba.P0;
+                int i7 = i6 != 1 ? i6 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
+                f fVar4 = this.c;
+                str4 = null;
+                String M04 = k96.M0(2131746080, null);
+                if (TextUtils.isEmpty(M04)) {
+                    w26.j("You must specify a name to build a CustomAction");
+                    return;
                 }
-                if (TextUtils.isEmpty(N04)) {
-                    throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                }
-                d0Var4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", N04, i16, null));
-            }
-            if (H) {
-                str5 = null;
-                i10 = 2131754929;
+                fVar4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M04, i7, null));
             } else {
-                i10 = 2131754930;
+                str4 = null;
+            }
+            String M05 = k96.M0(!C ? 2131754930 : 2131754929, str4);
+            if (k27Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(gba.K0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, k96.M0(2131745130, str4), pendingIntent).build());
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M02, broadcast).build());
+            }
+            builder.addAction(new Notification.Action.Builder(!C ? R.drawable.ic_action_pause : R.drawable.ic_action_play, M05, broadcast2).build());
+            if (k27Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M0, pendingIntent3).build());
+                int i8 = gba.P0;
                 str5 = null;
-            }
-            String N05 = gd.N0(i10, str5);
-            if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(bz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, gd.N0(2131745126, str5), pendingIntent2).build());
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, N02, pendingIntent3).build());
-            }
-            builder.addAction(new Notification.Action.Builder(!H ? R.drawable.ic_action_pause : R.drawable.ic_action_play, N05, broadcast2).build());
-            if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, str4, broadcast3).build());
-                int i17 = bz.S0;
-                if (i17 != 1) {
-                    i14 = i17 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone;
-                }
-                str6 = null;
-                builder.addAction(new Notification.Action.Builder(i14, gd.N0(2131746077, null), broadcast4).build());
-                w.u(this.c.b());
+                builder.addAction(new Notification.Action.Builder(i8 != 1 ? i8 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall, k96.M0(2131746080, null), broadcast4).build());
+                w.n0(this.c.b());
                 g();
-                a0Var = w;
-                if (a0Var != null) {
-                    a0Var.x(bz.N0 ? 1 : 0);
+                mv6Var = w;
+                if (mv6Var != null) {
+                    mv6Var.q0(gba.K0 ? 1 : 0);
                 }
-                ab.w wVar = new ab.w();
-                String str8 = str3;
-                wVar.j("android.media.metadata.ALBUM_ARTIST", str8);
-                wVar.j("android.media.metadata.ARTIST", str8);
-                wVar.i(L0);
-                String str9 = str2;
-                wVar.j("android.media.metadata.TITLE", str9);
-                if (aVar == null && fjVar.I3()) {
-                    aVar2 = aVar;
-                    str7 = aVar2.f;
+                pj4 pj4Var = new pj4((byte) 15);
+                String str7 = str3;
+                pj4Var.Y("android.media.metadata.ALBUM_ARTIST", str7);
+                pj4Var.Y("android.media.metadata.ARTIST", str7);
+                pj4Var.X(L0);
+                String str8 = str2;
+                pj4Var.Y("android.media.metadata.TITLE", str8);
+                if (g00Var == null && k27Var.I3()) {
+                    g00Var2 = g00Var;
+                    str6 = g00Var2.f;
                 } else {
-                    aVar2 = aVar;
-                    str7 = str6;
+                    g00Var2 = g00Var;
+                    str6 = str5;
                 }
-                wVar.j("android.media.metadata.ALBUM", str7);
+                pj4Var.Y("android.media.metadata.ALBUM", str6);
                 if (bitmap4 != null || bitmap4.isRecycled()) {
                     bitmap3 = bitmap4;
                 } else {
                     bitmap3 = bitmap4;
-                    wVar.h("android.media.metadata.ALBUM_ART", bitmap3);
+                    pj4Var.W("android.media.metadata.ALBUM_ART", bitmap3);
                 }
-                w.s(new MediaMetadataCompat(wVar.a));
+                w.m0(new MediaMetadataCompat((Bundle) pj4Var.b));
                 builder.setVisibility(1);
                 Notification build = builder.build();
-                if (i7 < 31) {
+                if (i < 31) {
                     if (this.h) {
                         ((NotificationManager) getSystemService("notification")).notify(5, build);
                     } else {
                         this.h = true;
                         startForeground(5, build);
                     }
-                } else if (H) {
+                } else if (C) {
                     stopForeground(false);
                     ((NotificationManager) getSystemService("notification")).notify(5, build);
                 } else {
                     startForeground(5, build);
                 }
                 if (this.a == null) {
-                    int e12 = MediaController.B().v0.e1();
-                    if (this.e != e12) {
-                        this.e = e12;
+                    int e1 = MediaController.w().v0.e1();
+                    if (this.e != e1) {
+                        this.e = e1;
                         RemoteControlClient.MetadataEditor editMetadata = this.a.editMetadata(true);
-                        i12 = 2;
-                        editMetadata.putString(2, str8);
-                        editMetadata.putString(7, str9);
-                        if (aVar2 != null && !TextUtils.isEmpty(aVar2.f)) {
-                            editMetadata.putString(1, aVar2.f);
+                        i2 = 2;
+                        editMetadata.putString(2, str7);
+                        editMetadata.putString(7, str8);
+                        if (g00Var2 != null && !TextUtils.isEmpty(g00Var2.f)) {
+                            editMetadata.putString(1, g00Var2.f);
                         }
-                        editMetadata.putLong(9, MediaController.B().v0.j0 * j3);
+                        editMetadata.putLong(9, MediaController.w().v0.j0 * j);
                         if (bitmap3 != null) {
                             try {
                                 editMetadata.putBitmap(100, bitmap3);
-                            } catch (Throwable th2) {
-                                a8.g(th2, true);
+                            } catch (Throwable th) {
+                                b = 1;
+                                fa4.g(th, true);
                             }
                         }
+                        b = 1;
                         editMetadata.apply();
-                        g0.h3(new i6.g(this, 12), j3);
+                        gl.e3(new bg7(this, b), j);
                     } else {
-                        i12 = 2;
+                        i2 = 2;
                     }
-                    if (MediaController.B().B0) {
-                        this.a.setPlaybackState(8);
+                    boolean z7 = MediaController.w().B0;
+                    RemoteControlClient remoteControlClient = this.a;
+                    if (z7) {
+                        remoteControlClient.setPlaybackState(8);
                         return;
                     }
-                    RemoteControlClient.MetadataEditor editMetadata2 = this.a.editMetadata(false);
-                    editMetadata2.putLong(9, MediaController.B().v0.j0 * 1000);
+                    RemoteControlClient.MetadataEditor editMetadata2 = remoteControlClient.editMetadata(false);
+                    editMetadata2.putLong(9, MediaController.w().v0.j0 * 1000);
                     editMetadata2.apply();
-                    this.a.setPlaybackState(MediaController.B().H() ? i12 : 3, Math.max(MediaController.B().v0.i0 * 1000, 100L), MediaController.B().H() ? 0.0f : 1.0f);
+                    this.a.setPlaybackState(MediaController.w().C() ? i2 : 3, Math.max(MediaController.w().v0.i0 * 1000, 100L), MediaController.w().C() ? 0.0f : 1.0f);
                     return;
                 }
                 return;
             }
         }
-        str6 = null;
-        w.u(this.c.b());
+        str5 = null;
+        w.n0(this.c.b());
         g();
-        a0Var = w;
-        if (a0Var != null) {
+        mv6Var = w;
+        if (mv6Var != null) {
         }
-        ab.w wVar2 = new ab.w();
-        String str82 = str3;
-        wVar2.j("android.media.metadata.ALBUM_ARTIST", str82);
-        wVar2.j("android.media.metadata.ARTIST", str82);
-        wVar2.i(L0);
-        String str92 = str2;
-        wVar2.j("android.media.metadata.TITLE", str92);
-        if (aVar == null) {
+        pj4 pj4Var2 = new pj4((byte) 15);
+        String str72 = str3;
+        pj4Var2.Y("android.media.metadata.ALBUM_ARTIST", str72);
+        pj4Var2.Y("android.media.metadata.ARTIST", str72);
+        pj4Var2.X(L0);
+        String str82 = str2;
+        pj4Var2.Y("android.media.metadata.TITLE", str82);
+        if (g00Var == null) {
         }
-        aVar2 = aVar;
-        str7 = str6;
-        wVar2.j("android.media.metadata.ALBUM", str7);
+        g00Var2 = g00Var;
+        str6 = str5;
+        pj4Var2.Y("android.media.metadata.ALBUM", str6);
         if (bitmap4 != null) {
         }
         bitmap3 = bitmap4;
-        w.s(new MediaMetadataCompat(wVar2.a));
+        w.m0(new MediaMetadataCompat((Bundle) pj4Var2.b));
         builder.setVisibility(1);
         Notification build2 = builder.build();
-        if (i7 < 31) {
+        if (i < 31) {
         }
         if (this.a == null) {
         }
     }
 
-    public final Bitmap c(TLObject tLObject, boolean z10, boolean z11) {
-        int i7 = z10 ? 600 : 100;
+    public final Bitmap c(TLObject tLObject, boolean z, boolean z2) {
+        int i = z ? 600 : 100;
         try {
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
-                TLRPC.FileLocation fileLocation = z10 ? user.photo.photo_big : user.photo.photo_small;
+                TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
+                TLRPC.FileLocation fileLocation = z ? userProfilePhoto.photo_big : userProfilePhoto.photo_small;
                 if (fileLocation != null) {
-                    w7.G(i10.t0);
-                    File J = w7.J(fileLocation, null, true, true);
+                    ba4.G(y6c.t0);
+                    File J = ba4.J(fileLocation, null, true, true);
                     if (J.exists()) {
-                        float f10 = i7;
-                        return ec.K(J.getAbsolutePath(), null, f10, f10, false);
+                        float f = i;
+                        return fl5.G(J.getAbsolutePath(), null, f, f, false);
                     }
-                    if (z10) {
-                        if (z11) {
-                            this.n = w7.r(null, fileLocation);
-                            this.f.r0(fc.l(i10.t0, 0, user), "", null, null, null, 0);
+                    if (z) {
+                        if (z2) {
+                            this.n = ba4.r(null, fileLocation);
+                            this.f.d0(gl5.l(y6c.t0, 0, user), "", null, null, null, 0);
                         } else {
                             this.n = null;
                         }
@@ -447,146 +446,146 @@ public class MusicPlayerService extends Service implements fs {
                 }
             } else {
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                TLRPC.FileLocation fileLocation2 = z10 ? chat.photo.photo_big : chat.photo.photo_small;
+                TLRPC.ChatPhoto chatPhoto = chat.photo;
+                TLRPC.FileLocation fileLocation2 = z ? chatPhoto.photo_big : chatPhoto.photo_small;
                 if (fileLocation2 != null) {
-                    w7.G(i10.t0);
-                    File J2 = w7.J(fileLocation2, null, true, true);
+                    ba4.G(y6c.t0);
+                    File J2 = ba4.J(fileLocation2, null, true, true);
                     if (J2.exists()) {
-                        float f11 = i7;
-                        return ec.K(J2.getAbsolutePath(), null, f11, f11, false);
+                        float f2 = i;
+                        return fl5.G(J2.getAbsolutePath(), null, f2, f2, false);
                     }
-                    if (z10) {
-                        if (z11) {
-                            this.n = w7.r(null, fileLocation2);
-                            this.f.r0(fc.a(0, chat), "", null, null, null, 0);
+                    if (z) {
+                        if (z2) {
+                            this.n = ba4.r(null, fileLocation2);
+                            this.f.d0(gl5.a(0, chat), "", null, null, null, 0);
                         } else {
                             this.n = null;
                         }
                     }
                 }
             }
-        } catch (Throwable th2) {
-            a8.g(th2, true);
+        } catch (Throwable th) {
+            fa4.g(th, true);
         }
-        if (z10) {
+        if (z) {
             return null;
         }
-        org.telegram.ui.ActionBar.n6.T(this);
-        org.telegram.ui.Components.a9 a9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.a9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.a9((TLRPC.Chat) tLObject);
-        a9Var.r = 1;
-        float f12 = i7;
-        Bitmap createBitmap = Bitmap.createBitmap(g0.L(f12), g0.L(f12), Bitmap.Config.ARGB_8888);
-        a9Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-        a9Var.draw(new Canvas(createBitmap));
+        bkb.S(this);
+        pb0 pb0Var = tLObject instanceof TLRPC.User ? new pb0(0, (TLRPC.User) tLObject) : new pb0((TLRPC.Chat) tLObject);
+        pb0Var.r = 1;
+        float f3 = i;
+        Bitmap createBitmap = Bitmap.createBitmap(gl.L(f3), gl.L(f3), Bitmap.Config.ARGB_8888);
+        pb0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+        pb0Var.draw(new Canvas(createBitmap));
         return createBitmap;
     }
 
-    @Override // org.telegram.messenger.fs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+    @Override // gk7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
         String str;
         String str2;
-        if (i7 == ks.g2) {
-            fj fjVar = MediaController.B().v0;
-            if (fjVar != null) {
-                a(fjVar, false);
+        if (i == kk7.f2) {
+            k27 k27Var = MediaController.w().v0;
+            if (k27Var != null) {
+                a(k27Var, false);
                 return;
             } else {
                 stopSelf();
                 return;
             }
         }
-        if (i7 == ks.i2) {
-            if (MediaController.B().v0 == null) {
-                return;
-            }
-            long round = Math.round(((Float) objArr[1]).floatValue() * r3.j0) * 1000;
-            f(round);
-            RemoteControlClient remoteControlClient = this.a;
-            if (remoteControlClient != null) {
-                remoteControlClient.setPlaybackState(MediaController.B().H() ? 2 : 3, round, MediaController.B().H() ? 0.0f : 1.0f);
+        if (i == kk7.h2) {
+            if (MediaController.w().v0 != null) {
+                long round = Math.round(((Float) objArr[1]).floatValue() * r3.j0) * 1000;
+                f(round);
+                RemoteControlClient remoteControlClient = this.a;
+                if (remoteControlClient != null) {
+                    remoteControlClient.setPlaybackState(MediaController.w().C() ? 2 : 3, round, MediaController.w().C() ? 0.0f : 1.0f);
+                    return;
+                }
                 return;
             }
             return;
         }
-        if (i7 == ks.R1) {
+        if (i == kk7.Q1) {
             String str3 = (String) objArr[0];
-            fj fjVar2 = MediaController.B().v0;
-            if (fjVar2 == null || (str2 = this.n) == null || !str2.equals(str3)) {
+            k27 k27Var2 = MediaController.w().v0;
+            if (k27Var2 == null || (str2 = this.n) == null || !str2.equals(str3)) {
                 return;
             }
-            a(fjVar2, false);
+            a(k27Var2, false);
             return;
         }
-        if (i7 == ks.Y1) {
+        if (i == kk7.X1) {
             String str4 = (String) objArr[0];
-            fj fjVar3 = MediaController.B().v0;
-            if (fjVar3 == null || (str = this.n) == null || !str.equals(str4)) {
+            k27 k27Var3 = MediaController.w().v0;
+            if (k27Var3 == null || (str = this.n) == null || !str.equals(str4)) {
                 return;
             }
-            a(fjVar3, false);
+            a(k27Var3, false);
         }
     }
 
-    public final Bitmap e(String str, boolean z10, boolean z11) {
-        File A = ec.A(str);
-        if (A.exists()) {
-            return ec.K(A.getAbsolutePath(), null, z10 ? 600.0f : 100.0f, z10 ? 600.0f : 100.0f, false);
+    public final Bitmap e(String str, boolean z, boolean z2) {
+        File w2 = fl5.w(str);
+        if (w2.exists()) {
+            String absolutePath = w2.getAbsolutePath();
+            float f = z ? 600.0f : 100.0f;
+            return fl5.G(absolutePath, null, f, f, false);
         }
-        if (!z11) {
+        if (!z2) {
             this.n = null;
             return null;
         }
-        this.n = A.getAbsolutePath();
-        if (!z10) {
-            this.f.p0(str, "48_48", null, null, 0L);
+        this.n = w2.getAbsolutePath();
+        if (!z) {
+            this.f.e0(str, "48_48", null, null, 0L);
         }
         return null;
     }
 
-    public final void f(long j3) {
-        long j10;
-        this.c = new android.support.v4.media.session.d0();
-        boolean H = MediaController.B().H();
-        boolean z10 = !H;
-        if (MediaController.B().B0) {
-            android.support.v4.media.session.d0 d0Var = this.c;
-            d0Var.c(6, 0L, 1.0f);
-            d0Var.e = 0L;
+    public final void f(long j) {
+        long j2;
+        this.c = new f();
+        boolean C = MediaController.w().C();
+        boolean z = !C;
+        if (MediaController.w().B0) {
+            f fVar = this.c;
+            fVar.c(6, 0L, 1.0f);
+            fVar.e = 0L;
         } else {
-            fj fjVar = MediaController.B().v0;
-            if (fjVar == null || !fjVar.I3()) {
-                j10 = 2360070;
+            k27 k27Var = MediaController.w().v0;
+            if (k27Var == null || !k27Var.I3()) {
+                j2 = 2360070;
             } else {
-                int i7 = bz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
-                android.support.v4.media.session.d0 d0Var2 = this.c;
-                String N0 = gd.N0(2131745126, null);
-                if (TextUtils.isEmpty("org.telegram.android.musicplayer.shuffle")) {
-                    throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+                int i = gba.K0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
+                f fVar2 = this.c;
+                String M0 = k96.M0(2131745130, null);
+                if (TextUtils.isEmpty(M0)) {
+                    w26.j("You must specify a name to build a CustomAction");
+                    return;
+                } else {
+                    fVar2.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.shuffle", M0, i, null));
+                    j2 = 2360118;
                 }
-                if (TextUtils.isEmpty(N0)) {
-                    throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                }
-                d0Var2.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.shuffle", N0, i7, null));
-                j10 = 2360118;
             }
-            android.support.v4.media.session.d0 d0Var3 = this.c;
-            d0Var3.c(!H ? 3 : 2, j3, d(fjVar, z10));
-            d0Var3.e = j10;
-            if (fjVar != null && fjVar.I3()) {
-                int i10 = bz.S0;
-                int i11 = i10 != 1 ? i10 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
-                android.support.v4.media.session.d0 d0Var4 = this.c;
-                String N02 = gd.N0(2131746077, null);
-                if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
-                    throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+            f fVar3 = this.c;
+            fVar3.c(!C ? 3 : 2, j, d(k27Var, z));
+            fVar3.e = j2;
+            if (k27Var != null && k27Var.I3()) {
+                int i2 = gba.P0;
+                int i3 = i2 != 1 ? i2 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
+                f fVar4 = this.c;
+                String M02 = k96.M0(2131746080, null);
+                if (TextUtils.isEmpty(M02)) {
+                    w26.j("You must specify a name to build a CustomAction");
+                    return;
                 }
-                if (TextUtils.isEmpty(N02)) {
-                    throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                }
-                d0Var4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", N02, i11, null));
+                fVar4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M02, i3, null));
             }
         }
-        w.u(this.c.b());
+        w.n0(this.c.b());
     }
 
     @Override // android.app.Service
@@ -597,29 +596,30 @@ public class MusicPlayerService extends Service implements fs {
     @Override // android.app.Service
     public final void onCreate() {
         this.b = (AudioManager) getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        for (int i7 = 0; i7 < 4; i7++) {
-            ks.f(i7).b(this, ks.i2);
-            ks.f(i7).b(this, ks.g2);
-            ks.f(i7).b(this, ks.R1);
-            ks.f(i7).b(this, ks.Y1);
+        byte b = 0;
+        for (int i = 0; i < 4; i++) {
+            kk7.f(i).a(this, kk7.h2);
+            kk7.f(i).a(this, kk7.f2);
+            kk7.f(i).a(this, kk7.Q1);
+            kk7.f(i).a(this, kk7.X1);
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.f = imageReceiver;
-        imageReceiver.h1 = new j1(this, 14);
+        imageReceiver.h1 = new im6(this, (byte) 13);
         if (w == null) {
-            w = new android.support.v4.media.session.a0(getApplicationContext(), "telegramAudioPlayer", (ComponentName) null, (PendingIntent) null);
+            w = new mv6(getApplicationContext(), "telegramAudioPlayer", (ComponentName) null, (PendingIntent) null);
         }
-        this.c = new android.support.v4.media.session.d0();
-        this.d = Bitmap.createBitmap(g0.L(102.0f), g0.L(102.0f), Bitmap.Config.ARGB_8888);
+        this.c = new f();
+        this.d = Bitmap.createBitmap(gl.L(102.0f), gl.L(102.0f), Bitmap.Config.ARGB_8888);
         Drawable drawable = getResources().getDrawable(R.drawable.nocover_big);
         drawable.setBounds(0, 0, this.d.getWidth(), this.d.getHeight());
         drawable.draw(new Canvas(this.d));
-        w.r(new i6.h(this, 1), null);
-        w.q(true);
+        w.k0(new eh7(this, b), null);
+        w.i0(true);
         g();
-        android.support.v4.media.session.a0 a0Var = w;
-        if (a0Var != null) {
-            a0Var.x(bz.N0 ? 1 : 0);
+        mv6 mv6Var = w;
+        if (mv6Var != null) {
+            mv6Var.q0(gba.K0 ? 1 : 0);
         }
         registerReceiver(this.r, new IntentFilter("android.media.AUDIO_BECOMING_NOISY"));
         super.onCreate();
@@ -637,34 +637,34 @@ public class MusicPlayerService extends Service implements fs {
             editMetadata.apply();
             this.b.unregisterRemoteControlClient(this.a);
         }
-        android.support.v4.media.session.a0 a0Var = w;
-        if (a0Var != null) {
-            a0Var.r(null, null);
-            w.q(false);
+        mv6 mv6Var = w;
+        if (mv6Var != null) {
+            mv6Var.k0(null, null);
+            w.i0(false);
         }
-        for (int i7 = 0; i7 < 4; i7++) {
-            ks.f(i7).n(this, ks.i2);
-            ks.f(i7).n(this, ks.g2);
-            ks.f(i7).n(this, ks.R1);
-            ks.f(i7).n(this, ks.Y1);
+        for (int i = 0; i < 4; i++) {
+            kk7.f(i).n(this, kk7.h2);
+            kk7.f(i).n(this, kk7.f2);
+            kk7.f(i).n(this, kk7.Q1);
+            kk7.f(i).n(this, kk7.X1);
         }
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i7, int i10) {
+    public final int onStartCommand(Intent intent, int i, int i2) {
         if (intent != null) {
             try {
                 if ((getPackageName() + ".STOP_PLAYER").equals(intent.getAction())) {
-                    MediaController.B().q(true, true, false, false);
+                    MediaController.w().l(true, true, false, false);
                     return 2;
                 }
-            } catch (Exception e10) {
-                e10.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
-        fj fjVar = MediaController.B().v0;
-        if (fjVar == null) {
-            g0.g3(new a(this, 29));
+        k27 k27Var = MediaController.w().v0;
+        if (k27Var == null) {
+            gl.d3(new vl6(this, (byte) 20));
             return 1;
         }
         if (s) {
@@ -678,12 +678,12 @@ public class MusicPlayerService extends Service implements fs {
                     this.a = remoteControlClient;
                     this.b.registerRemoteControlClient(remoteControlClient);
                 }
-                this.a.setTransportControlFlags(ks.T2);
-            } catch (Exception e11) {
-                a8.g(e11, true);
+                this.a.setTransportControlFlags(kk7.S2);
+            } catch (Exception e2) {
+                fa4.g(e2, true);
             }
         }
-        a(fjVar, false);
+        a(k27Var, false);
         return 1;
     }
 }

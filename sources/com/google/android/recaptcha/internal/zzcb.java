@@ -2,13 +2,11 @@ package com.google.android.recaptcha.internal;
 
 import java.util.ArrayList;
 import java.util.List;
-import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzcb {
-    private zzcb() {
-        throw null;
+    public /* synthetic */ zzcb(t93 t93Var) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -16,6 +14,7 @@ public final class zzcb {
         return new ArrayList();
     }
 
-    public /* synthetic */ zzcb(f fVar) {
+    private zzcb() {
+        throw null;
     }
 }

@@ -1,16 +1,16 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class XArrowAtom extends Atom {
     private boolean left;
     private Atom over;
     private Atom under;
 
-    public XArrowAtom(Atom atom, Atom atom2, boolean z10) {
+    public XArrowAtom(Atom atom, Atom atom2, boolean z) {
         this.over = atom;
         this.under = atom2;
-        this.left = z10;
+        this.left = z;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

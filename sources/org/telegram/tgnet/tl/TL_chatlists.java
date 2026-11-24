@@ -1,19 +1,17 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import org.telegram.messenger.ed;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.n;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class TL_chatlists {
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_chatlistInvite extends chatlist_ChatlistInvite {
         public static final int constructor = -250687953;
         public String emoticon;
@@ -25,25 +23,27 @@ public class TL_chatlists {
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
             this.title_noanimate = TLObject.hasFlag(readInt32, 2);
-            this.title = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.title = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             if ((this.flags & 1) > 0) {
-                this.emoticon = inputSerializedData.readString(z10);
+                this.emoticon = inputSerializedData.readString(z);
             }
-            this.peers = Vector.deserialize(inputSerializedData, new ed(7), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+            this.peers = Vector.deserialize(inputSerializedData, new yw6((byte) 23), z);
+            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
+            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i7 = this.title_noanimate ? this.flags | 2 : this.flags & (-3);
-            this.flags = i7;
-            outputSerializedData.writeInt32(i7);
+            boolean z = this.title_noanimate;
+            int i = this.flags;
+            int i2 = z ? i | 2 : i & (-3);
+            this.flags = i2;
+            outputSerializedData.writeInt32(i2);
             this.title.serializeToStream(outputSerializedData);
             if ((this.flags & 1) > 0) {
                 outputSerializedData.writeString(this.emoticon);
@@ -54,7 +54,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_chatlistInviteAlready extends chatlist_ChatlistInvite {
         public static final int constructor = -91752871;
         public int filter_id;
@@ -64,13 +64,13 @@ public class TL_chatlists {
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.filter_id = inputSerializedData.readInt32(z10);
-            int i7 = 7;
-            this.missing_peers = Vector.deserialize(inputSerializedData, new ed(i7), z10);
-            this.already_peers = Vector.deserialize(inputSerializedData, new ed(i7), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.filter_id = inputSerializedData.readInt32(z);
+            byte b = 23;
+            this.missing_peers = Vector.deserialize(inputSerializedData, new yw6(b), z);
+            this.already_peers = Vector.deserialize(inputSerializedData, new yw6(b), z);
+            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
+            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -84,22 +84,22 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_chatlistInvite_layer195 extends TL_chatlists_chatlistInvite {
         public static final int constructor = 500007837;
 
         @Override // org.telegram.tgnet.tl.TL_chatlists.TL_chatlists_chatlistInvite, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.flags = inputSerializedData.readInt32(z);
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             this.title = tL_textWithEntities;
-            tL_textWithEntities.text = inputSerializedData.readString(z10);
+            tL_textWithEntities.text = inputSerializedData.readString(z);
             if ((this.flags & 1) > 0) {
-                this.emoticon = inputSerializedData.readString(z10);
+                this.emoticon = inputSerializedData.readString(z);
             }
-            this.peers = Vector.deserialize(inputSerializedData, new ed(7), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+            this.peers = Vector.deserialize(inputSerializedData, new yw6((byte) 23), z);
+            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
+            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
         }
 
         @Override // org.telegram.tgnet.tl.TL_chatlists.TL_chatlists_chatlistInvite, org.telegram.tgnet.TLObject
@@ -116,22 +116,22 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_chatlistUpdates extends TLObject {
         public static final int constructor = -1816295539;
         public ArrayList<TLRPC.Peer> missing_peers = new ArrayList<>();
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static TL_chatlists_chatlistUpdates TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return (TL_chatlists_chatlistUpdates) TLObject.TLdeserialize(TL_chatlists_chatlistUpdates.class, -1816295539 != i7 ? null : new TL_chatlists_chatlistUpdates(), inputSerializedData, i7, z10);
+        public static TL_chatlists_chatlistUpdates TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_chatlists_chatlistUpdates) TLObject.TLdeserialize(TL_chatlists_chatlistUpdates.class, -1816295539 != i ? null : new TL_chatlists_chatlistUpdates(), inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.missing_peers = Vector.deserialize(inputSerializedData, new ed(7), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.missing_peers = Vector.deserialize(inputSerializedData, new yw6((byte) 23), z);
+            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
+            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -143,14 +143,14 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_checkChatlistInvite extends TLObject {
         public static final int constructor = 1103171583;
         public String slug;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return chatlist_ChatlistInvite.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return chatlist_ChatlistInvite.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -160,15 +160,15 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_deleteExportedInvite extends TLObject {
         public static final int constructor = 1906072670;
         public TL_inputChatlistDialogFilter chatlist;
         public String slug;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -179,7 +179,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_editExportedInvite extends TLObject {
         public static final int constructor = 1698543165;
         public TL_inputChatlistDialogFilter chatlist;
@@ -190,8 +190,8 @@ public class TL_chatlists {
         public String title;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -211,7 +211,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_exportChatlistInvite extends TLObject {
         public static final int constructor = -2072885362;
         public TL_inputChatlistDialogFilter chatlist;
@@ -219,8 +219,8 @@ public class TL_chatlists {
         public String title;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TL_chatlists_exportedChatlistInvite.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_chatlists_exportedChatlistInvite.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -232,20 +232,20 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_exportedChatlistInvite extends TLObject {
         public static final int constructor = 283567014;
         public TLRPC.DialogFilter filter;
         public TL_exportedChatlistInvite invite;
 
-        public static TL_chatlists_exportedChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return (TL_chatlists_exportedChatlistInvite) TLObject.TLdeserialize(TL_chatlists_exportedChatlistInvite.class, 283567014 != i7 ? null : new TL_chatlists_exportedChatlistInvite(), inputSerializedData, i7, z10);
+        public static TL_chatlists_exportedChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_chatlists_exportedChatlistInvite) TLObject.TLdeserialize(TL_chatlists_exportedChatlistInvite.class, 283567014 != i ? null : new TL_chatlists_exportedChatlistInvite(), inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.filter = TLRPC.DialogFilter.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.invite = TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.filter = TLRPC.DialogFilter.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.invite = TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -256,22 +256,22 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_exportedInvites extends TLObject {
         public static final int constructor = 279670215;
         public ArrayList<TL_exportedChatlistInvite> invites = new ArrayList<>();
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static TL_chatlists_exportedInvites TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return (TL_chatlists_exportedInvites) TLObject.TLdeserialize(TL_chatlists_exportedInvites.class, 279670215 != i7 ? null : new TL_chatlists_exportedInvites(), inputSerializedData, i7, z10);
+        public static TL_chatlists_exportedInvites TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_chatlists_exportedInvites) TLObject.TLdeserialize(TL_chatlists_exportedInvites.class, 279670215 != i ? null : new TL_chatlists_exportedInvites(), inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.invites = Vector.deserialize(inputSerializedData, new c(20), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.invites = Vector.deserialize(inputSerializedData, new qdb((byte) 16), z);
+            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
+            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -283,14 +283,14 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_getChatlistUpdates extends TLObject {
         public static final int constructor = -1992190687;
         public TL_inputChatlistDialogFilter chatlist;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TL_chatlists_chatlistUpdates.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_chatlists_chatlistUpdates.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -300,14 +300,14 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_getExportedInvites extends TLObject {
         public static final int constructor = -838608253;
         public TL_inputChatlistDialogFilter chatlist;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TL_chatlists_exportedInvites.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_chatlists_exportedInvites.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -317,14 +317,14 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_getLeaveChatlistSuggestions extends TLObject {
         public static final int constructor = -37955820;
         public TL_inputChatlistDialogFilter chatlist;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return Vector.TLDeserialize(inputSerializedData, i7, z10, new ed(7));
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Vector.TLDeserialize(inputSerializedData, i, z, new yw6((byte) 23));
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -334,14 +334,14 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_hideChatlistUpdates extends TLObject {
         public static final int constructor = 1726252795;
         public TL_inputChatlistDialogFilter chatlist;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -351,15 +351,15 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_joinChatlistInvite extends TLObject {
         public static final int constructor = -1498291302;
         public ArrayList<TLRPC.InputPeer> peers = new ArrayList<>();
         public String slug;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -370,15 +370,15 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_joinChatlistUpdates extends TLObject {
         public static final int constructor = -527828747;
         public TL_inputChatlistDialogFilter chatlist;
         public ArrayList<TLRPC.InputPeer> peers = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -389,15 +389,15 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_chatlists_leaveChatlist extends TLObject {
         public static final int constructor = 1962598714;
         public TL_inputChatlistDialogFilter chatlist;
         public ArrayList<TLRPC.InputPeer> peers = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i7, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -408,7 +408,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_exportedChatlistInvite extends TLObject {
         public static final int constructor = 206668204;
         public int flags;
@@ -417,44 +417,46 @@ public class TL_chatlists {
         public String title;
         public String url;
 
-        public static TL_exportedChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return (TL_exportedChatlistInvite) TLObject.TLdeserialize(TL_exportedChatlistInvite.class, 206668204 != i7 ? null : new TL_exportedChatlistInvite(), inputSerializedData, i7, z10);
+        public static TL_exportedChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_exportedChatlistInvite) TLObject.TLdeserialize(TL_exportedChatlistInvite.class, 206668204 != i ? null : new TL_exportedChatlistInvite(), inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
             this.revoked = TLObject.hasFlag(readInt32, 1);
-            this.title = inputSerializedData.readString(z10);
-            this.url = inputSerializedData.readString(z10);
-            this.peers = Vector.deserialize(inputSerializedData, new ed(7), z10);
+            this.title = inputSerializedData.readString(z);
+            this.url = inputSerializedData.readString(z);
+            this.peers = Vector.deserialize(inputSerializedData, new yw6((byte) 23), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i7 = this.revoked ? this.flags | 1 : this.flags & (-2);
-            this.flags = i7;
-            outputSerializedData.writeInt32(i7);
+            boolean z = this.revoked;
+            int i = this.flags;
+            int i2 = z ? i | 1 : i & (-2);
+            this.flags = i2;
+            outputSerializedData.writeInt32(i2);
             outputSerializedData.writeString(this.title);
             outputSerializedData.writeString(this.url);
             Vector.serialize(outputSerializedData, this.peers);
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class TL_inputChatlistDialogFilter extends TLObject {
         public static final int constructor = -203367885;
         public int filter_id;
 
-        public static TL_inputChatlistDialogFilter TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return (TL_inputChatlistDialogFilter) TLObject.TLdeserialize(TL_inputChatlistDialogFilter.class, -203367885 != i7 ? null : new TL_inputChatlistDialogFilter(), inputSerializedData, i7, z10);
+        public static TL_inputChatlistDialogFilter TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_inputChatlistDialogFilter) TLObject.TLdeserialize(TL_inputChatlistDialogFilter.class, -203367885 != i ? null : new TL_inputChatlistDialogFilter(), inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.filter_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.filter_id = inputSerializedData.readInt32(z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -464,10 +466,10 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class chatlist_ChatlistInvite extends TLObject {
-        public static chatlist_ChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
-            return (chatlist_ChatlistInvite) TLObject.TLdeserialize(chatlist_ChatlistInvite.class, i7 != -250687953 ? i7 != -91752871 ? i7 != 500007837 ? null : new TL_chatlists_chatlistInvite_layer195() : new TL_chatlists_chatlistInviteAlready() : new TL_chatlists_chatlistInvite(), inputSerializedData, i7, z10);
+        public static chatlist_ChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (chatlist_ChatlistInvite) TLObject.TLdeserialize(chatlist_ChatlistInvite.class, i != -250687953 ? i != -91752871 ? i != 500007837 ? null : new TL_chatlists_chatlistInvite_layer195() : new TL_chatlists_chatlistInviteAlready() : new TL_chatlists_chatlistInvite(), inputSerializedData, i, z);
         }
     }
 }

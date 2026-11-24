@@ -1,45 +1,36 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.b0;
-import zd.t;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzga extends j implements p {
+final class zzga extends ccb implements eq4 {
     final /* synthetic */ zzgb zza;
     final /* synthetic */ long zzb;
     private /* synthetic */ Object zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzga(zzgb zzgbVar, long j3, c cVar) {
-        super(2, cVar);
+    public zzga(zzgb zzgbVar, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzgbVar;
-        this.zzb = j3;
+        this.zzb = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzga zzgaVar = new zzga(this.zza, this.zzb, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzga zzgaVar = new zzga(this.zza, this.zzb, fw2Var);
         zzgaVar.zzc = obj;
         return zzgaVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzga) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzga) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0041, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x003e, code lost:
     
-        if (com.google.android.recaptcha.internal.zzgb.zzo(r1, r9) == false) goto L13;
+        if (com.google.android.recaptcha.internal.zzgb.zzo(r1, r9) != false) goto L10;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -49,30 +40,29 @@ final class zzga extends j implements p {
         zzdr zzdrVar;
         zzdt zzdtVar2;
         zzcg zzcgVar;
-        a aVar = a.a;
-        z.b(obj);
+        qse.b(obj);
         zzhk zzhkVar = (zzhk) this.zzc;
         zzgb zzgbVar = this.zza;
         zzdv zze = zzgbVar.zze();
         zzdsVar = zzdv.zzb;
-        boolean a10 = kotlin.jvm.internal.j.a(zze, zzdsVar);
-        k kVar = k.a;
-        if (!a10) {
+        boolean a = rp5.a(zze, zzdsVar);
+        g5c g5cVar = g5c.a;
+        if (!a) {
             zzdv zze2 = zzgbVar.zze();
             zzdtVar = zzdv.zzc;
-            if (!kotlin.jvm.internal.j.a(zze2, zzdtVar)) {
+            if (!rp5.a(zze2, zzdtVar)) {
                 zzdv zze3 = zzgbVar.zze();
                 zzdrVar = zzdv.zzd;
-                if (kotlin.jvm.internal.j.a(zze3, zzdrVar)) {
+                if (rp5.a(zze3, zzdrVar)) {
                     zzcgVar = zzgbVar.zzd;
                 }
                 zzdtVar2 = zzdv.zzc;
                 zzgbVar.zzf = zzdtVar2;
-                t a11 = b0.a();
-                zzgbVar.zzb = a11;
-                b0.q(zzgb.zzd(zzgbVar).zza(), new zzfz(zzgbVar, a11, zzhkVar, this.zzb, null));
+                cp2 a2 = hsd.a();
+                zzgbVar.zzb = a2;
+                ppd.b(zzgb.zzd(zzgbVar).zza(), new zzfz(zzgbVar, a2, zzhkVar, this.zzb, null));
             }
         }
-        return kVar;
+        return g5cVar;
     }
 }

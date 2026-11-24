@@ -7,11 +7,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.animation.Interpolator;
 import android.widget.ListView;
-import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -23,48 +22,48 @@ public final class OverlayListView extends ListView {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        boolean z10;
+        boolean z;
         super.onDraw(canvas);
         ArrayList arrayList = this.a;
         if (arrayList.size() > 0) {
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                o0 o0Var = (o0) it.next();
-                BitmapDrawable bitmapDrawable = o0Var.a;
+                hr7 hr7Var = (hr7) it.next();
+                BitmapDrawable bitmapDrawable = hr7Var.a;
                 if (bitmapDrawable != null) {
                     bitmapDrawable.draw(canvas);
                 }
                 long drawingTime = getDrawingTime();
-                BitmapDrawable bitmapDrawable2 = o0Var.a;
-                Rect rect = o0Var.c;
-                if (o0Var.k) {
-                    z10 = false;
+                BitmapDrawable bitmapDrawable2 = hr7Var.a;
+                Rect rect = hr7Var.c;
+                if (hr7Var.k) {
+                    z = false;
                 } else {
-                    float C = o0Var.j ? a8.p0.C(drawingTime - o0Var.i, o0Var.e, 1.0f, 0.0f) : 0.0f;
-                    Interpolator interpolator = o0Var.d;
-                    float interpolation = interpolator == null ? C : interpolator.getInterpolation(C);
-                    int i7 = (int) (o0Var.g * interpolation);
-                    Rect rect2 = o0Var.f;
-                    rect.top = rect2.top + i7;
-                    rect.bottom = rect2.bottom + i7;
-                    float z11 = e2.z(o0Var.h, 1.0f, interpolation, 1.0f);
-                    o0Var.b = z11;
+                    float w = hr7Var.j ? ls6.w(drawingTime - hr7Var.i, hr7Var.e, 1.0f, 0.0f) : 0.0f;
+                    Interpolator interpolator = hr7Var.d;
+                    float interpolation = interpolator == null ? w : interpolator.getInterpolation(w);
+                    int i = (int) (hr7Var.g * interpolation);
+                    Rect rect2 = hr7Var.f;
+                    rect.top = rect2.top + i;
+                    rect.bottom = rect2.bottom + i;
+                    float A = tb4.A(hr7Var.h, 1.0f, interpolation, 1.0f);
+                    hr7Var.b = A;
                     if (bitmapDrawable2 != null) {
-                        bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
+                        bitmapDrawable2.setAlpha((int) (A * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
-                    if (o0Var.j && C >= 1.0f) {
-                        o0Var.k = true;
-                        q4.q qVar = o0Var.l;
-                        if (qVar != null) {
-                            t tVar = (t) qVar.c;
-                            tVar.a0.remove((s4.v) qVar.b);
-                            tVar.W.notifyDataSetChanged();
+                    if (hr7Var.j && w >= 1.0f) {
+                        hr7Var.k = true;
+                        wk4 wk4Var = hr7Var.l;
+                        if (wk4Var != null) {
+                            ws6 ws6Var = (ws6) wk4Var.c;
+                            ws6Var.a0.remove((eu6) wk4Var.b);
+                            ws6Var.W.notifyDataSetChanged();
                         }
                     }
-                    z10 = !o0Var.k;
+                    z = !hr7Var.k;
                 }
-                if (!z10) {
+                if (!z) {
                     it.remove();
                 }
             }
@@ -73,11 +72,6 @@ public final class OverlayListView extends ListView {
 
     public OverlayListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.a = new ArrayList();
-    }
-
-    public OverlayListView(Context context, AttributeSet attributeSet, int i7) {
-        super(context, attributeSet, i7);
         this.a = new ArrayList();
     }
 }

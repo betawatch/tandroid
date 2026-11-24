@@ -6,7 +6,8 @@ import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements Spliterator.OfInt {
     public final /* synthetic */ x0 a;
 
@@ -44,16 +45,6 @@ public final /* synthetic */ class w0 implements Spliterator.OfInt {
         this.a.forEachRemaining((Object) intConsumer);
     }
 
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.Spliterator.OfInt
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining(intConsumer);
-    }
-
     @Override // java.util.Spliterator
     public final /* synthetic */ Comparator getComparator() {
         return this.a.getComparator();
@@ -65,8 +56,8 @@ public final /* synthetic */ class w0 implements Spliterator.OfInt {
     }
 
     @Override // java.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return this.a.hasCharacteristics(i7);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
     }
 
     public final /* synthetic */ int hashCode() {
@@ -78,6 +69,21 @@ public final /* synthetic */ class w0 implements Spliterator.OfInt {
         return this.a.tryAdvance((Object) intConsumer);
     }
 
+    @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ Spliterator.OfInt trySplit() {
+        return a(this.a.trySplit());
+    }
+
+    @Override // java.util.Spliterator.OfInt, java.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // java.util.Spliterator.OfInt
+    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
+        this.a.forEachRemaining(intConsumer);
+    }
+
     @Override // java.util.Spliterator.OfInt, java.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
         return this.a.tryAdvance(consumer);
@@ -86,11 +92,6 @@ public final /* synthetic */ class w0 implements Spliterator.OfInt {
     @Override // java.util.Spliterator.OfInt
     public final /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
         return this.a.tryAdvance(intConsumer);
-    }
-
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfInt trySplit() {
-        return a(this.a.trySplit());
     }
 
     @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator

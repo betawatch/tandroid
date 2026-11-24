@@ -1,10 +1,6 @@
 package com.google.android.recaptcha;
 
-import a8.p0;
-import kotlin.jvm.internal.f;
-import kotlin.jvm.internal.j;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class RecaptchaAction {
     public static final Companion Companion = new Companion(null);
@@ -12,26 +8,12 @@ public final class RecaptchaAction {
     public static final RecaptchaAction SIGNUP = new RecaptchaAction("signup");
     private final String action;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public final RecaptchaAction custom(String str) {
-            return new RecaptchaAction(str, null);
-        }
-
-        public /* synthetic */ Companion(f fVar) {
-            this();
-        }
-    }
-
     private RecaptchaAction(String str) {
         this.action = str;
     }
 
-    public static /* synthetic */ RecaptchaAction copy$default(RecaptchaAction recaptchaAction, String str, int i7, Object obj) {
-        if ((i7 & 1) != 0) {
+    public static /* synthetic */ RecaptchaAction copy$default(RecaptchaAction recaptchaAction, String str, int i, Object obj) {
+        if ((i & 1) != 0) {
             str = recaptchaAction.action;
         }
         return recaptchaAction.copy(str);
@@ -53,7 +35,7 @@ public final class RecaptchaAction {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof RecaptchaAction) && j.a(this.action, ((RecaptchaAction) obj).action);
+        return (obj instanceof RecaptchaAction) && rp5.a(this.action, ((RecaptchaAction) obj).action);
     }
 
     public final String getAction() {
@@ -65,10 +47,24 @@ public final class RecaptchaAction {
     }
 
     public String toString() {
-        return p0.s(new StringBuilder("RecaptchaAction(action="), this.action, ")");
+        return b00.j(new StringBuilder("RecaptchaAction(action="), this.action, ")");
     }
 
-    public /* synthetic */ RecaptchaAction(String str, f fVar) {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    public static final class Companion {
+        private Companion() {
+        }
+
+        public final RecaptchaAction custom(String str) {
+            return new RecaptchaAction(str, null);
+        }
+
+        public /* synthetic */ Companion(t93 t93Var) {
+            this();
+        }
+    }
+
+    public /* synthetic */ RecaptchaAction(String str, t93 t93Var) {
         this(str);
     }
 }

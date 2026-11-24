@@ -4,18 +4,23 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class TabTemplate implements x0 {
+public class TabTemplate implements ogb {
     private final String mActiveTabContentId;
     private final Action mHeaderAction;
     private final boolean mIsLoading;
-    private final t0 mTabCallbackDelegate;
+    private final aeb mTabCallbackDelegate;
     private final TabContents mTabContents;
     private final List<Tab> mTabs;
 
-    public TabTemplate(v0 v0Var) {
-        throw null;
+    private TabTemplate() {
+        this.mIsLoading = false;
+        this.mHeaderAction = null;
+        this.mTabs = Collections.EMPTY_LIST;
+        this.mTabContents = null;
+        this.mTabCallbackDelegate = null;
+        this.mActiveTabContentId = null;
     }
 
     public boolean equals(Object obj) {
@@ -41,10 +46,10 @@ public class TabTemplate implements x0 {
         return action;
     }
 
-    public t0 getTabCallbackDelegate() {
-        t0 t0Var = this.mTabCallbackDelegate;
-        Objects.requireNonNull(t0Var);
-        return t0Var;
+    public aeb getTabCallbackDelegate() {
+        aeb aebVar = this.mTabCallbackDelegate;
+        Objects.requireNonNull(aebVar);
+        return aebVar;
     }
 
     public TabContents getTabContents() {
@@ -70,12 +75,7 @@ public class TabTemplate implements x0 {
         return "TabTemplate";
     }
 
-    private TabTemplate() {
-        this.mIsLoading = false;
-        this.mHeaderAction = null;
-        this.mTabs = Collections.EMPTY_LIST;
-        this.mTabContents = null;
-        this.mTabCallbackDelegate = null;
-        this.mActiveTabContentId = null;
+    public TabTemplate(ceb cebVar) {
+        throw null;
     }
 }

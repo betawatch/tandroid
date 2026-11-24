@@ -1,47 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_aicompose;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import java.io.File;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class s implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class s implements crc {
+    public final /* synthetic */ ThemeEditorView a;
 
-    public /* synthetic */ s(v vVar, int i7) {
-        this.a = i7;
-        this.b = vVar;
+    public s(ThemeEditorView themeEditorView) {
+        this.a = themeEditorView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            default:
-                v vVar = this.b;
-                TL_aicompose.AiComposeTone aiComposeTone = vVar.T1;
-                if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
-                    int i7 = vVar.d2 + 1;
-                    vVar.d2 = i7;
-                    TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = vVar.e2;
-                    if (i7 >= aicomposetoneexampleArr.length) {
-                        vVar.d2 = 0;
-                    }
-                    int i10 = vVar.d2;
-                    if (aicomposetoneexampleArr[i10] == null) {
-                        TL_aicompose.getToneExample gettoneexample = new TL_aicompose.getToneExample();
-                        gettoneexample.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
-                        gettoneexample.num = i10;
-                        ConnectionsManager.getInstance(vVar.a).sendRequestTyped(gettoneexample, new d3.b(1), new t(vVar, i10, 0));
-                    }
-                    vVar.c2.O(true);
-                    break;
+    @Override // crc
+    public final void a() {
+        int i = 0;
+        while (true) {
+            ThemeEditorView themeEditorView = this.a;
+            if (i >= themeEditorView.e.size()) {
+                ThemeEditorView.EditorAlert editorAlert = themeEditorView.n;
+                int i2 = ThemeEditorView.EditorAlert.G1;
+                editorAlert.F0(true);
+                return;
+            } else {
+                blb blbVar = (blb) themeEditorView.e.get(i);
+                int w0 = bkb.w0(blbVar.i, blbVar.e, false);
+                blbVar.h = w0;
+                if (i == 0) {
+                    themeEditorView.n.l1.c(w0);
                 }
-                break;
+                i++;
+            }
         }
+    }
+
+    @Override // crc
+    public final void b(File file, Bitmap bitmap, boolean z) {
+        akb akbVar = this.a.o;
+        bkb.km.delete(bkb.De);
+        bkb.km.delete(bkb.Ee);
+        bkb.km.delete(bkb.Fe);
+        bkb.km.delete(bkb.Ge);
+        bkb.km.delete(bkb.He);
+        bkb.g0 = null;
+        akbVar.v(null);
+        if (bitmap == null) {
+            bkb.e0 = null;
+            bkb.d0 = null;
+            bkb.v1(akbVar, false, false, false);
+            bkb.s1(true);
+            return;
+        }
+        bkb.e0 = new BitmapDrawable(bitmap);
+        bkb.v1(akbVar, false, false, false);
+        int[] q = gl.q(bkb.e0);
+        int i = q[0];
+        bkb.b0 = i;
+        bkb.W = i;
+        int i2 = q[1];
+        bkb.c0 = i2;
+        bkb.a0 = i2;
+        bkb.h();
+        bkb.g(bkb.d0);
+        kk7.e().k(kk7.B4, new Object[0]);
     }
 }

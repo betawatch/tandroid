@@ -1,32 +1,18 @@
 package j$.util.stream;
 
-import j$.util.function.IntConsumer$-CC;
-import java.util.function.IntConsumer;
+import java.util.EnumMap;
+import java.util.Map;
 
-/* loaded from: classes2.dex */
-public final class z6 extends b7 implements IntConsumer {
-    public final int[] c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class z6 {
+    public final Map a;
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
+    public z6(Map map) {
+        this.a = map;
     }
 
-    public z6(int i7) {
-        this.c = new int[i7];
-    }
-
-    @Override // j$.util.stream.b7
-    public final void a(Object obj, long j3) {
-        IntConsumer intConsumer = (IntConsumer) obj;
-        for (int i7 = 0; i7 < j3; i7++) {
-            intConsumer.accept(this.c[i7]);
-        }
-    }
-
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i7) {
-        int i10 = this.b;
-        this.b = i10 + 1;
-        this.c[i10] = i7;
+    public final void a(a7 a7Var) {
+        ((EnumMap) this.a).put((EnumMap) a7Var, (a7) 1);
     }
 }

@@ -1,10 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzyk extends zzsh implements zztt {
-    private zzyk() {
-        throw null;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzyk(zzyp zzypVar) {
+        super(r1);
+        zzym zzymVar;
+        zzymVar = zzym.zzb;
     }
 
     public final zzyk zze(String str) {
@@ -19,19 +25,13 @@ public final class zzyk extends zzsh implements zztt {
         return this;
     }
 
-    public final zzyk zzq(int i7) {
+    public final zzyk zzq(int i) {
         zzn();
         zzym.zzk((zzym) this.zza, 3);
         return this;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public /* synthetic */ zzyk(zzyp zzypVar) {
-        super(r1);
-        zzym zzymVar;
-        zzymVar = zzym.zzb;
+    private zzyk() {
+        throw null;
     }
 }

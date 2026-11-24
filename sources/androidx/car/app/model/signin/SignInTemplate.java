@@ -3,27 +3,31 @@ package androidx.car.app.model.signin;
 import androidx.car.app.model.Action;
 import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarText;
-import androidx.car.app.model.x0;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
-import u.b;
-import u.c;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class SignInTemplate implements x0 {
+public final class SignInTemplate implements ogb {
     private final List<Action> mActionList;
     private final ActionStrip mActionStrip;
     private final CarText mAdditionalText;
     private final Action mHeaderAction;
     private final CarText mInstructions;
     private final boolean mIsLoading;
-    private final c mSignInMethod;
+    private final iha mSignInMethod;
     private final CarText mTitle;
 
-    public SignInTemplate(b bVar) {
-        throw null;
+    private SignInTemplate() {
+        this.mIsLoading = false;
+        this.mHeaderAction = null;
+        this.mTitle = null;
+        this.mInstructions = null;
+        this.mAdditionalText = null;
+        this.mActionStrip = null;
+        this.mActionList = Collections.EMPTY_LIST;
+        this.mSignInMethod = null;
     }
 
     public boolean equals(Object obj) {
@@ -58,10 +62,10 @@ public final class SignInTemplate implements x0 {
         return this.mInstructions;
     }
 
-    public c getSignInMethod() {
-        c cVar = this.mSignInMethod;
-        Objects.requireNonNull(cVar);
-        return cVar;
+    public iha getSignInMethod() {
+        iha ihaVar = this.mSignInMethod;
+        Objects.requireNonNull(ihaVar);
+        return ihaVar;
     }
 
     public CarText getTitle() {
@@ -80,14 +84,7 @@ public final class SignInTemplate implements x0 {
         return "SignInTemplate";
     }
 
-    private SignInTemplate() {
-        this.mIsLoading = false;
-        this.mHeaderAction = null;
-        this.mTitle = null;
-        this.mInstructions = null;
-        this.mAdditionalText = null;
-        this.mActionStrip = null;
-        this.mActionList = Collections.EMPTY_LIST;
-        this.mSignInMethod = null;
+    public SignInTemplate(hha hhaVar) {
+        throw null;
     }
 }

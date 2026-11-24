@@ -4,9 +4,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class MessageTemplate implements x0 {
+public final class MessageTemplate implements ogb {
     private final List<Action> mActionList;
     private final ActionStrip mActionStrip;
     private final CarText mDebugMessage;
@@ -16,8 +16,15 @@ public final class MessageTemplate implements x0 {
     private final CarText mMessage;
     private final CarText mTitle;
 
-    public MessageTemplate(x xVar) {
-        throw null;
+    private MessageTemplate() {
+        this.mIsLoading = false;
+        this.mTitle = null;
+        this.mMessage = null;
+        this.mDebugMessage = null;
+        this.mIcon = null;
+        this.mHeaderAction = null;
+        this.mActionStrip = null;
+        this.mActionList = Collections.EMPTY_LIST;
     }
 
     public boolean equals(Object obj) {
@@ -74,14 +81,7 @@ public final class MessageTemplate implements x0 {
         return "MessageTemplate";
     }
 
-    private MessageTemplate() {
-        this.mIsLoading = false;
-        this.mTitle = null;
-        this.mMessage = null;
-        this.mDebugMessage = null;
-        this.mIcon = null;
-        this.mHeaderAction = null;
-        this.mActionStrip = null;
-        this.mActionList = Collections.EMPTY_LIST;
+    public MessageTemplate(v47 v47Var) {
+        throw null;
     }
 }

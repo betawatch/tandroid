@@ -1,118 +1,61 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
 import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class s2 extends m6 implements y1, t1 {
-    @Override // j$.util.stream.g5
-    public final /* synthetic */ void B(Double d) {
-        t3.D(this, d);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class s2 extends j2 {
+    @Override // j$.util.stream.h2
+    public final h2 e(long j, long j2, IntFunction intFunction) {
+        if (j == 0 && j2 == this.c) {
+            return this;
+        }
+        long count = this.a.count();
+        if (j >= count) {
+            return this.b.e(j - count, j2 - count, intFunction);
+        }
+        if (j2 <= count) {
+            return this.a.e(j, j2, intFunction);
+        }
+        return w3.E(c7.REFERENCE, this.a.e(j, count, intFunction), this.b.e(0L, j2 - count, intFunction));
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    @Override // j$.util.stream.h2
+    public final void f(Object[] objArr, int i) {
+        Objects.requireNonNull(objArr);
+        h2 h2Var = this.a;
+        h2Var.f(objArr, i);
+        this.b.f(objArr, i + ((int) h2Var.count()));
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.h2
+    public final void forEach(Consumer consumer) {
+        this.a.forEach(consumer);
+        this.b.forEach(consumer);
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        B((Double) obj);
+    @Override // j$.util.stream.h2
+    public final Object[] g(IntFunction intFunction) {
+        long j = this.c;
+        if (j >= 2147483639) {
+            j$.time.g.c("Stream size exceeds max array size");
+            return null;
+        }
+        Object[] objArr = (Object[]) intFunction.apply((int) j);
+        f(objArr, 0);
+        return objArr;
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.w1
-    public final e2 build() {
-        return this;
-    }
-
-    @Override // j$.util.stream.t1, j$.util.stream.w1
-    public final y1 build() {
-        return this;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.S(this, j3, j10);
-    }
-
-    @Override // j$.util.stream.j5
-    public final void end() {
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ Object[] g(IntFunction intFunction) {
-        return t3.L(this, intFunction);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ int h() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i7) {
-        a(i7);
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i7) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i7) {
-        t3.M(this, (Double[]) objArr, i7);
-    }
-
-    @Override // j$.util.stream.s6, j$.util.stream.d2
-    public final void c(int i7, Object obj) {
-        super.c(i7, (double[]) obj);
-    }
-
-    @Override // j$.util.stream.s6, j$.util.stream.d2
-    public final void d(Object obj) {
-        super.d((DoubleConsumer) obj);
-    }
-
-    @Override // j$.util.stream.m6, j$.util.stream.s6, java.lang.Iterable, j$.util.stream.e2
+    @Override // j$.util.stream.h2
     public final Spliterator spliterator() {
-        return super.spliterator();
+        return new j3(this);
     }
 
-    @Override // j$.util.stream.m6, j$.util.stream.s6, java.lang.Iterable, j$.util.stream.e2
-    public final j$.util.d1 spliterator() {
-        return super.spliterator();
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        clear();
-        l(j3);
-    }
-
-    @Override // j$.util.stream.s6, j$.util.stream.d2
-    public final Object b() {
-        return (double[]) super.b();
+    public final String toString() {
+        long j = this.c;
+        return j < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(j));
     }
 }

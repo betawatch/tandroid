@@ -1,52 +1,101 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.IntConsumer$-CC;
-import java.util.function.IntConsumer;
+import java.util.concurrent.CountedCompleter;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* loaded from: classes2.dex */
-public final class m0 extends p0 implements h5 {
-    public final IntConsumer b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class m0 extends b {
+    public final g0 j;
+    public final boolean k;
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        p((Integer) obj);
+    public m0(m0 m0Var, Spliterator spliterator) {
+        super(m0Var, spliterator);
+        this.k = m0Var.k;
+        this.j = m0Var.j;
     }
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
-    }
-
-    @Override // java.util.function.Supplier
-    public final /* bridge */ /* synthetic */ Object get() {
+    @Override // j$.util.stream.d
+    public final Object a() {
+        a aVar = this.a;
+        i8 i8Var = (i8) this.j.d.get();
+        aVar.Q(this.b, i8Var);
+        Object obj = i8Var.get();
+        if (this.k) {
+            if (obj != null) {
+                d dVar = this;
+                while (dVar != null) {
+                    d dVar2 = (d) dVar.getCompleter();
+                    if (dVar2 != null && dVar2.d != dVar) {
+                        g();
+                        return obj;
+                    }
+                    dVar = dVar2;
+                }
+                AtomicReference atomicReference = this.h;
+                while (!atomicReference.compareAndSet(null, obj) && atomicReference.get() == null) {
+                }
+                return obj;
+            }
+        } else if (obj != null) {
+            AtomicReference atomicReference2 = this.h;
+            while (!atomicReference2.compareAndSet(null, obj) && atomicReference2.get() == null) {
+            }
+        }
         return null;
     }
 
-    @Override // j$.util.stream.h5
-    public final /* synthetic */ void p(Integer num) {
-        t3.F(this, num);
+    @Override // j$.util.stream.d
+    public final d c(Spliterator spliterator) {
+        return new m0(this, spliterator);
     }
 
-    @Override // j$.util.stream.b8
-    public final Object f(a aVar, Spliterator spliterator) {
-        aVar.F0(spliterator, this);
-        return null;
+    @Override // j$.util.stream.b
+    public final Object h() {
+        return this.j.b;
     }
 
-    @Override // j$.util.stream.b8
-    public final /* bridge */ /* synthetic */ Object i(t3 t3Var, Spliterator spliterator) {
-        a(t3Var, spliterator);
-        return null;
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        if (this.k) {
+            m0 m0Var = (m0) this.d;
+            m0 m0Var2 = null;
+            while (true) {
+                if (m0Var != m0Var2) {
+                    Object i = m0Var.i();
+                    if (i != null && this.j.c.test(i)) {
+                        d(i);
+                        d dVar = this;
+                        while (true) {
+                            if (dVar != null) {
+                                d dVar2 = (d) dVar.getCompleter();
+                                if (dVar2 != null && dVar2.d != dVar) {
+                                    g();
+                                    break;
+                                }
+                                dVar = dVar2;
+                            } else {
+                                AtomicReference atomicReference = this.h;
+                                while (!atomicReference.compareAndSet(null, i) && atomicReference.get() == null) {
+                                }
+                            }
+                        }
+                    } else {
+                        m0Var2 = m0Var;
+                        m0Var = (m0) this.e;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        super.onCompletion(countedCompleter);
     }
 
-    public m0(IntConsumer intConsumer, boolean z10) {
-        super(z10);
-        this.b = intConsumer;
-    }
-
-    @Override // j$.util.stream.p0, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        this.b.accept(i7);
+    public m0(g0 g0Var, boolean z, a aVar, Spliterator spliterator) {
+        super(aVar, spliterator);
+        this.k = z;
+        this.j = g0Var;
     }
 }

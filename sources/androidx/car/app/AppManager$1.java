@@ -2,24 +2,24 @@ package androidx.car.app;
 
 import androidx.car.app.IAppManager;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 class AppManager$1 extends IAppManager.Stub {
     final /* synthetic */ a this$0;
-    final /* synthetic */ h val$carContext;
+    final /* synthetic */ g val$carContext;
 
-    public AppManager$1(a aVar, h hVar) {
+    public AppManager$1(a aVar, g gVar) {
     }
 
-    private static /* synthetic */ Object lambda$onBackPressed$0(h hVar) {
+    private static /* synthetic */ Object lambda$onBackPressed$0(g gVar) {
         throw null;
     }
 
-    private static /* synthetic */ Object lambda$startLocationUpdates$1(h hVar) {
+    private static /* synthetic */ Object lambda$startLocationUpdates$1(g gVar) {
         throw null;
     }
 
-    private static /* synthetic */ Object lambda$stopLocationUpdates$2(h hVar) {
+    private static /* synthetic */ Object lambda$stopLocationUpdates$2(g gVar) {
         throw null;
     }
 

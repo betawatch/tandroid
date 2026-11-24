@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzsi extends zzpy {
     private final zzsn zza;
@@ -10,9 +10,9 @@ public final class zzsi extends zzpy {
     }
 
     @Override // com.google.android.recaptcha.internal.zzpy
-    public final /* bridge */ /* synthetic */ zzts zza(byte[] bArr, int i7, int i10, zzry zzryVar) {
+    public final /* bridge */ /* synthetic */ zzts zza(byte[] bArr, int i, int i2, zzry zzryVar) {
         zzsn zzi;
-        zzi = zzsn.zzi(this.zza, bArr, 0, i10, zzryVar);
+        zzi = zzsn.zzi(this.zza, bArr, 0, i2, zzryVar);
         return zzi;
     }
 }

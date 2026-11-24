@@ -5,7 +5,8 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public class p extends n implements java.util.List, List {
     private static final long serialVersionUID = -283967356065247728L;
     public final java.util.List b;
@@ -15,34 +16,34 @@ public class p extends n implements java.util.List, List {
         this.b = list;
     }
 
+    private Object readResolve() {
+        java.util.List list = this.b;
+        return list instanceof RandomAccess ? new u(list) : this;
+    }
+
+    @Override // java.util.List
+    public final void add(int i, Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List
+    public final boolean addAll(int i, java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
     @Override // java.util.Collection, java.util.List
     public final boolean equals(Object obj) {
         return obj == this || this.b.equals(obj);
     }
 
+    @Override // java.util.List
+    public final Object get(int i) {
+        return this.b.get(i);
+    }
+
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         return this.b.hashCode();
-    }
-
-    @Override // java.util.List
-    public final Object get(int i7) {
-        return this.b.get(i7);
-    }
-
-    @Override // java.util.List
-    public final Object set(int i7, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final void add(int i7, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i7) {
-        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.List
@@ -56,12 +57,22 @@ public class p extends n implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final boolean addAll(int i7, java.util.Collection collection) {
+    public final ListIterator listIterator() {
+        return new o(this, 0);
+    }
+
+    @Override // java.util.List
+    public final Object remove(int i) {
         throw new UnsupportedOperationException();
     }
 
     @Override // java.util.List, j$.util.List
     public final void replaceAll(UnaryOperator unaryOperator) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List
+    public final Object set(int i, Object obj) {
         throw new UnsupportedOperationException();
     }
 
@@ -71,22 +82,12 @@ public class p extends n implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator() {
-        return new o(this, 0);
+    public java.util.List subList(int i, int i2) {
+        return new p(this.b.subList(i, i2));
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator(int i7) {
-        return new o(this, i7);
-    }
-
-    @Override // java.util.List
-    public java.util.List subList(int i7, int i10) {
-        return new p(this.b.subList(i7, i10));
-    }
-
-    private Object readResolve() {
-        java.util.List list = this.b;
-        return list instanceof RandomAccess ? new u(list) : this;
+    public final ListIterator listIterator(int i) {
+        return new o(this, i);
     }
 }

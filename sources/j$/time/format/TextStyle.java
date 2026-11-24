@@ -1,6 +1,7 @@
 package j$.time.format;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public enum TextStyle {
     FULL(0),
     FULL_STANDALONE(0),
@@ -9,9 +10,10 @@ public enum TextStyle {
     NARROW(1),
     NARROW_STANDALONE(1);
 
-    public final int a;
+    public final boolean a;
 
-    TextStyle(int i7) {
-        this.a = i7;
+    /* JADX WARN: Multi-variable type inference failed */
+    TextStyle(int i) {
+        this.a = i;
     }
 }

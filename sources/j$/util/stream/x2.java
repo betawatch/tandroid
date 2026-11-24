@@ -1,37 +1,50 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public abstract class x2 implements e2 {
-    @Override // j$.util.stream.e2
-    public final long count() {
-        return 0L;
-    }
-
-    public final void d(Object obj) {
-    }
-
-    @Override // j$.util.stream.e2
-    public /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.V(this, j3, j10, intFunction);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ int h() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.e2
-    public e2 a(int i7) {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class x2 extends a3 implements d2 {
+    @Override // j$.util.stream.a3, j$.util.stream.h2
+    public final g2 a(int i) {
         throw new IndexOutOfBoundsException();
     }
 
-    @Override // j$.util.stream.e2
-    public final Object[] g(IntFunction intFunction) {
-        return (Object[]) intFunction.apply(0);
+    @Override // j$.util.stream.g2
+    public final Object b() {
+        return w3.e;
     }
 
-    public final void c(int i7, Object obj) {
+    @Override // j$.util.stream.a3, j$.util.stream.h2
+    public final /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.u(this, j, j2);
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void f(Object[] objArr, int i) {
+        w3.o(this, (Integer[]) objArr, i);
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        w3.r(this, consumer);
+    }
+
+    @Override // j$.util.stream.h2
+    public final j$.util.d1 spliterator() {
+        return Spliterators.b;
+    }
+
+    @Override // j$.util.stream.h2
+    public final Spliterator spliterator() {
+        return Spliterators.b;
+    }
+
+    @Override // j$.util.stream.a3, j$.util.stream.h2
+    public final h2 a(int i) {
+        throw new IndexOutOfBoundsException();
     }
 }

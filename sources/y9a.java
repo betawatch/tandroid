@@ -1,0 +1,116 @@
+// default package
+
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class y9a extends FrameLayout {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ taa b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y9a(taa taaVar, Context context, byte b) {
+        super(context);
+        this.a = b;
+        this.b = taaVar;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                taa taaVar = this.b;
+                il0 il0Var = taaVar.R2;
+                il0Var.setBounds(0, (int) taaVar.p2, getMeasuredWidth(), getMeasuredHeight());
+                il0Var.draw(canvas);
+                canvas.save();
+                canvas.clipRect(0.0f, taaVar.p2, getMeasuredWidth(), getMeasuredHeight());
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                taa taaVar = this.b;
+                y9a y9aVar = taaVar.m1;
+                float f = taaVar.q2;
+                if (f != 0.0f && f != y9aVar.getTop() + taaVar.q2) {
+                    ValueAnimator valueAnimator = taaVar.r2;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    float top = taaVar.q2 - (y9aVar.getTop() + taaVar.p2);
+                    taaVar.p2 = top;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
+                    taaVar.r2 = ofFloat;
+                    ofFloat.addUpdateListener(new x89(this, (byte) 24));
+                    taaVar.r2.setInterpolator(s33.f);
+                    taaVar.r2.setDuration(200L);
+                    taaVar.r2.start();
+                    taaVar.q2 = 0.0f;
+                }
+                taaVar.N1[1].setTranslationY((-(y9aVar.getMeasuredHeight() - gl.L(48.0f))) + taaVar.p2 + taaVar.o2 + ((1.0f - getAlpha()) * (y9aVar.getMeasuredHeight() - gl.L(48.0f))));
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 1:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(k96.G(this.b.P1.m(), "AccDescrShareInChats", new Object[0]));
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f);
+                invalidate();
+                break;
+            default:
+                super.setAlpha(f);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i);
+                if (i != 0) {
+                    this.b.N1[1].setTranslationY(0.0f);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
+    }
+}

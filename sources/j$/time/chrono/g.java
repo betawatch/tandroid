@@ -8,11 +8,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class g implements Serializable {
     public static final /* synthetic */ int e = 0;
     private static final long serialVersionUID = 57387258289L;
-    public final k a;
+    public final a a;
     public final int b;
     public final int c;
     public final int d;
@@ -20,67 +21,65 @@ public final class g implements Serializable {
     static {
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i7 = 0; i7 < 3; i7++) {
-            arrayList.add(Objects.requireNonNull(objArr[i7]));
+        for (int i = 0; i < 3; i++) {
+            arrayList.add(Objects.requireNonNull(objArr[i]));
         }
         Collections.unmodifiableList(arrayList);
     }
 
-    public g(k kVar, int i7, int i10, int i11) {
-        Objects.requireNonNull(kVar, "chrono");
-        this.a = kVar;
-        this.b = i7;
-        this.c = i10;
-        this.d = i11;
+    public g(a aVar, int i, int i2, int i3) {
+        Objects.requireNonNull(aVar, "chrono");
+        this.a = aVar;
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
     }
 
-    public final String toString() {
-        if (this.b == 0 && this.c == 0 && this.d == 0) {
-            return this.a.toString() + " P0D";
-        }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.a.toString());
-        sb2.append(" P");
-        int i7 = this.b;
-        if (i7 != 0) {
-            sb2.append(i7);
-            sb2.append('Y');
-        }
-        int i10 = this.c;
-        if (i10 != 0) {
-            sb2.append(i10);
-            sb2.append('M');
-        }
-        int i11 = this.d;
-        if (i11 != 0) {
-            sb2.append(i11);
-            sb2.append('D');
-        }
-        return sb2.toString();
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof g) {
-            g gVar = (g) obj;
-            if (this.b == gVar.b && this.c == gVar.c && this.d == gVar.d && this.a.equals(gVar.a)) {
-                return true;
-            }
+        if (!(obj instanceof g)) {
+            return false;
         }
-        return false;
+        g gVar = (g) obj;
+        return this.b == gVar.b && this.c == gVar.c && this.d == gVar.d && this.a.equals(gVar.a);
     }
 
     public final int hashCode() {
         return (Integer.rotateLeft(this.d, 16) + (Integer.rotateLeft(this.c, 8) + this.b)) ^ this.a.hashCode();
     }
 
-    public Object writeReplace() {
-        return new d0((byte) 9, this);
+    public final String toString() {
+        if (this.b == 0 && this.c == 0 && this.d == 0) {
+            return this.a.toString() + " P0D";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.a.toString());
+        sb.append(" P");
+        int i = this.b;
+        if (i != 0) {
+            sb.append(i);
+            sb.append('Y');
+        }
+        int i2 = this.c;
+        if (i2 != 0) {
+            sb.append(i2);
+            sb.append('M');
+        }
+        int i3 = this.d;
+        if (i3 != 0) {
+            sb.append(i3);
+            sb.append('D');
+        }
+        return sb.toString();
     }
 
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
+    public Object writeReplace() {
+        return new c0((byte) 9, this);
     }
 }

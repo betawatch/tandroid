@@ -1,95 +1,79 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public final class a4 extends t3 {
-    public final /* synthetic */ int h;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class a4 implements r4, k5 {
+    public double a;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ DoubleBinaryOperator c;
 
-    public /* synthetic */ a4(int i7) {
-        this.h = i7;
+    public a4(double d, DoubleBinaryOperator doubleBinaryOperator) {
+        this.b = d;
+        this.c = doubleBinaryOperator;
     }
 
-    @Override // j$.util.stream.t3
-    public final o4 D0() {
-        switch (this.h) {
-            case 0:
-                return new s4();
-            case 1:
-                return new q4();
-            case 2:
-                return new t4();
-            default:
-                return new r4();
-        }
+    @Override // j$.util.stream.k5
+    public final /* synthetic */ void C(Double d) {
+        w3.e(this, d);
     }
 
-    @Override // j$.util.stream.t3, j$.util.stream.b8
-    public final Object f(a aVar, Spliterator spliterator) {
-        switch (this.h) {
-            case 0:
-                if (!v6.SIZED.m(aVar.m)) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                if (!v6.SIZED.m(aVar.m)) {
-                    break;
-                } else {
-                    break;
-                }
-            case 2:
-                if (!v6.SIZED.m(aVar.m)) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!v6.SIZED.m(aVar.m)) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return (Long) super.f(aVar, spliterator);
+    @Override // j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        this.a = this.c.applyAsDouble(this.a, d);
     }
 
-    @Override // j$.util.stream.t3, j$.util.stream.b8
-    public final Object i(t3 t3Var, Spliterator spliterator) {
-        switch (this.h) {
-            case 0:
-                if (!v6.SIZED.m(((a) t3Var).m)) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                if (!v6.SIZED.m(((a) t3Var).m)) {
-                    break;
-                } else {
-                    break;
-                }
-            case 2:
-                if (!v6.SIZED.m(((a) t3Var).m)) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!v6.SIZED.m(((a) t3Var).m)) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return (Long) super.i(t3Var, spliterator);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.t3, j$.util.stream.b8
-    public final int v() {
-        switch (this.h) {
-        }
-        return v6.r;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return Double.valueOf(this.a);
+    }
+
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        this.a = this.b;
+    }
+
+    @Override // j$.util.stream.n5
+    public final boolean q() {
+        return false;
+    }
+
+    @Override // j$.util.stream.r4
+    public final void w(r4 r4Var) {
+        accept(((a4) r4Var).a);
+    }
+
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
+    }
+
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(long j) {
+        w3.l();
+        throw null;
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        C((Double) obj);
+    }
+
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(int i) {
+        w3.k();
+        throw null;
+    }
+
+    @Override // j$.util.stream.n5
+    public final void end() {
     }
 }

@@ -1,30 +1,29 @@
 package com.google.android.recaptcha.internal;
 
-import a8.p0;
 import java.io.IOException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzqt extends IOException {
-    public zzqt() {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.");
-    }
-
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public zzqt(long j3, long j10, int i7, Throwable th2) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), th2);
+    public zzqt(long j, long j2, int i, Throwable th) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), th);
         Locale locale = Locale.US;
-        StringBuilder t6 = p0.t(j3, "Pos: ", ", limit: ");
-        t6.append(j10);
-        t6.append(", len: ");
-        t6.append(i7);
+        StringBuilder o = ug8.o(j, "Pos: ", ", limit: ");
+        o.append(j2);
+        o.append(", len: ");
+        o.append(i);
     }
 
-    public zzqt(Throwable th2) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.", th2);
+    public zzqt() {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.");
+    }
+
+    public zzqt(Throwable th) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.", th);
     }
 }

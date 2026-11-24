@@ -1,98 +1,38 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import j$.util.function.IntConsumer$-CC;
-import java.util.Arrays;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class a3 extends z2 implements u1 {
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class a3 implements h2 {
+    @Override // j$.util.stream.h2
+    public h2 a(int i) {
+        throw new IndexOutOfBoundsException();
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.h2
+    public final long count() {
+        return 0L;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        p((Integer) obj);
+    @Override // j$.util.stream.h2
+    public /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.w(this, j, j2, intFunction);
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // j$.util.stream.h2
+    public final Object[] g(IntFunction intFunction) {
+        return (Object[]) intFunction.apply(0);
     }
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
+    @Override // j$.util.stream.h2
+    public final int h() {
+        return 0;
     }
 
-    @Override // j$.util.stream.h5
-    public final /* synthetic */ void p(Integer num) {
-        t3.F(this, num);
+    public final void d(Object obj) {
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.w1
-    public final /* bridge */ /* synthetic */ e2 build() {
-        build();
-        return this;
-    }
-
-    @Override // j$.util.stream.u1, j$.util.stream.w1
-    public final a2 build() {
-        int i7 = this.b;
-        int[] iArr = this.a;
-        if (i7 >= iArr.length) {
-            return this;
-        }
-        throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(iArr.length)));
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        int[] iArr = this.a;
-        if (j3 != iArr.length) {
-            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j3), Integer.valueOf(iArr.length)));
-        }
-        this.b = 0;
-    }
-
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        int i10 = this.b;
-        int[] iArr = this.a;
-        if (i10 < iArr.length) {
-            this.b = i10 + 1;
-            iArr[i10] = i7;
-            return;
-        }
-        throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(iArr.length)));
-    }
-
-    @Override // j$.util.stream.j5
-    public final void end() {
-        int i7 = this.b;
-        int[] iArr = this.a;
-        if (i7 < iArr.length) {
-            throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(iArr.length)));
-        }
-    }
-
-    @Override // j$.util.stream.z2
-    public final String toString() {
-        int[] iArr = this.a;
-        return String.format("IntFixedNodeBuilder[%d][%s]", Integer.valueOf(iArr.length - this.b), Arrays.toString(iArr));
+    public final void c(int i, Object obj) {
     }
 }

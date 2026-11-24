@@ -1,37 +1,52 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public final class o0 extends p0 {
-    public final Consumer b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class o0 extends s0 implements k5 {
+    public final DoubleConsumer b;
+
+    public o0(DoubleConsumer doubleConsumer, boolean z) {
+        super(z);
+        this.b = doubleConsumer;
+    }
+
+    @Override // j$.util.stream.k5
+    public final /* synthetic */ void C(Double d) {
+        w3.e(this, d);
+    }
+
+    @Override // j$.util.stream.h8
+    public final Object a(a aVar, Spliterator spliterator) {
+        aVar.Q(spliterator, this);
+        return null;
+    }
+
+    @Override // j$.util.stream.s0, j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        this.b.accept(d);
+    }
+
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
+    }
+
+    @Override // j$.util.stream.h8
+    public final /* bridge */ /* synthetic */ Object b(a aVar, Spliterator spliterator) {
+        d(aVar, spliterator);
+        return null;
+    }
 
     @Override // java.util.function.Supplier
-    public final /* bridge */ /* synthetic */ Object get() {
+    public final Object get() {
         return null;
-    }
-
-    @Override // j$.util.stream.b8
-    public final Object f(a aVar, Spliterator spliterator) {
-        aVar.F0(spliterator, this);
-        return null;
-    }
-
-    @Override // j$.util.stream.b8
-    public final /* bridge */ /* synthetic */ Object i(t3 t3Var, Spliterator spliterator) {
-        a(t3Var, spliterator);
-        return null;
-    }
-
-    public o0(Consumer consumer, boolean z10) {
-        super(z10);
-        this.b = consumer;
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final void x(Object obj) {
-        this.b.x(obj);
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        C((Double) obj);
     }
 }

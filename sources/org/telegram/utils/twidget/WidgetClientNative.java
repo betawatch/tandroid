@@ -2,24 +2,26 @@ package org.telegram.utils.twidget;
 
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 final class WidgetClientNative {
-    public static native void arbiterCancel(long j3);
+    public static native void arbiterCancel(long j);
 
     public static native long arbiterCreate();
 
-    public static native void arbiterDestroy(long j3);
+    public static native void arbiterDestroy(long j);
 
-    public static native int arbiterDown(long j3, double d, double d2, double d10, boolean z10, boolean z11, boolean z12, boolean z13, int i7);
+    public static native int arbiterDown(long j, double d, double d2, double d3, boolean z, boolean z2, boolean z3, boolean z4, int i);
 
-    public static native double arbiterHoldDeadline(long j3);
+    public static native double arbiterHoldDeadline(long j);
 
-    public static native int arbiterMove(long j3, double d, double d2, double d10);
+    public static native int arbiterMove(long j, double d, double d2, double d3);
 
-    public static native int arbiterTick(long j3, double d);
+    public static native int arbiterTick(long j, double d);
 
-    public static native int arbiterUp(long j3, double d, double d2, double d10);
+    public static native int arbiterUp(long j, double d, double d2, double d3);
 
-    public static native void filterPixels(Bitmap bitmap, int[] iArr, float[] fArr, float[] fArr2, float[] fArr3, int[] iArr2, float f10);
+    public static native void filterPixels(Bitmap bitmap, int[] iArr, float[] fArr, float[] fArr2, float[] fArr3, int[] iArr2, float f);
+
+    public static native byte[] statPath(String str, int i, int i2, int i3, int[] iArr);
 }

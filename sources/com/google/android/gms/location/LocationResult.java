@@ -4,22 +4,18 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.b;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import q6.m;
-import r6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class LocationResult extends a implements ReflectedParcelable {
+public final class LocationResult extends b4 implements ReflectedParcelable {
     public final List a;
     public static final List b = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new b(24);
+    public static final Parcelable.Creator<LocationResult> CREATOR = new xff((byte) 12);
 
     public LocationResult(List list) {
         this.a = list;
@@ -30,9 +26,9 @@ public final class LocationResult extends a implements ReflectedParcelable {
             return false;
         }
         List list = ((LocationResult) obj).a;
-        int i7 = Build.VERSION.SDK_INT;
+        int i = Build.VERSION.SDK_INT;
         List<Location> list2 = this.a;
-        if (i7 >= 31) {
+        if (i >= 31) {
             return list2.equals(list);
         }
         if (list2.size() != list.size()) {
@@ -41,7 +37,7 @@ public final class LocationResult extends a implements ReflectedParcelable {
         Iterator it = list.iterator();
         for (Location location : list2) {
             Location location2 = (Location) it.next();
-            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !m.l(location.getProvider(), location2.getProvider())) {
+            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !cqe.a(location.getProvider(), location2.getProvider())) {
                 return false;
             }
         }
@@ -57,9 +53,9 @@ public final class LocationResult extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = cc.r(parcel, 20293);
-        cc.p(parcel, 1, this.a);
-        cc.s(parcel, r10);
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.p(parcel, 1, this.a);
+        jte.s(parcel, r);
     }
 }

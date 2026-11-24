@@ -2,32 +2,23 @@ package j$.util;
 
 import java.io.Serializable;
 import java.util.Comparator;
-import java.util.function.Function;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Comparator, Serializable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ Comparator a;
     public final /* synthetic */ Comparator b;
-    public final /* synthetic */ Object c;
 
-    public /* synthetic */ d(Comparator comparator, Object obj, int i7) {
-        this.a = i7;
-        this.b = comparator;
-        this.c = obj;
+    public /* synthetic */ d(Comparator comparator, Comparator comparator2) {
+        this.a = comparator;
+        this.b = comparator2;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Comparator comparator = this.b;
-                Comparator comparator2 = (Comparator) this.c;
-                int compare = comparator.compare(obj, obj2);
-                return compare != 0 ? compare : comparator2.compare(obj, obj2);
-            default:
-                Comparator comparator3 = this.b;
-                Function function = (Function) this.c;
-                return comparator3.compare(function.apply(obj), function.apply(obj2));
-        }
+        Comparator comparator = this.a;
+        Comparator comparator2 = this.b;
+        int compare = comparator.compare(obj, obj2);
+        return compare != 0 ? compare : comparator2.compare(obj, obj2);
     }
 }

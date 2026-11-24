@@ -1,45 +1,49 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterators;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.Arrays;
 
-/* loaded from: classes2.dex */
-public final class l6 extends r6 implements j$.util.u0 {
-    public final /* synthetic */ m6 g;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class l6 extends z5 {
+    public int[] c;
+    public int d;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.h(this, consumer);
+    @Override // j$.util.stream.l5, j$.util.stream.n5
+    public final void accept(int i) {
+        int[] iArr = this.c;
+        int i2 = this.d;
+        this.d = i2 + 1;
+        iArr[i2] = i;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.y(this, consumer);
+    @Override // j$.util.stream.h5, j$.util.stream.n5
+    public final void end() {
+        int i = 0;
+        Arrays.sort(this.c, 0, this.d);
+        long j = this.d;
+        n5 n5Var = this.a;
+        n5Var.n(j);
+        if (this.b) {
+            while (i < this.d && !n5Var.q()) {
+                n5Var.accept(this.c[i]);
+                i++;
+            }
+        } else {
+            while (i < this.d) {
+                n5Var.accept(this.c[i]);
+                i++;
+            }
+        }
+        n5Var.end();
+        this.c = null;
     }
 
-    @Override // j$.util.stream.r6
-    public final void a(int i7, Object obj, Object obj2) {
-        ((DoubleConsumer) obj2).accept(((double[]) obj)[i7]);
-    }
-
-    @Override // j$.util.stream.r6
-    public final j$.util.d1 b(Object obj, int i7, int i10) {
-        double[] dArr = (double[]) obj;
-        int i11 = i10 + i7;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, i7, i11);
-        return new j$.util.k1(dArr, i7, i11, 1040);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(m6 m6Var, int i7, int i10, int i11, int i12) {
-        super(m6Var, i7, i10, i11, i12);
-        this.g = m6Var;
-    }
-
-    @Override // j$.util.stream.r6
-    public final j$.util.d1 c(int i7, int i10, int i11, int i12) {
-        return new l6(this.g, i7, i10, i11, i12);
+    @Override // j$.util.stream.h5, j$.util.stream.n5
+    public final void n(long j) {
+        if (j < 2147483639) {
+            this.c = new int[(int) j];
+        } else {
+            j$.time.g.c("Stream size exceeds max array size");
+        }
     }
 }

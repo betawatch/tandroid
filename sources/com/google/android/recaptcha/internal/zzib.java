@@ -1,18 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
-import gd.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzib {
-    private final c zza;
-    private final c zzb;
+    private final d06 zza;
+    private final d06 zzb;
 
     public zzib() {
-        int i7 = zzby.zza;
-        this.zza = h.b(zzhz.zza);
-        this.zzb = h.b(zzia.zza);
+        int i = zzby.zza;
+        this.zza = cne.b(zzhz.zza);
+        this.zzb = cne.b(zzia.zza);
     }
 
     public static final /* synthetic */ zzbt zza(zzib zzibVar) {
@@ -23,7 +20,7 @@ public final class zzib {
         return (zzhn) zzibVar.zzb.getValue();
     }
 
-    public final Object zzc(zzxn zzxnVar, id.c cVar) {
+    public final Object zzc(zzxn zzxnVar, fw2 fw2Var) {
         return new zzhg(new zzhv(this, zzxnVar, null));
     }
 }

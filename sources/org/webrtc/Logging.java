@@ -5,18 +5,17 @@ import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
     private static Loggable loggable;
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -25,7 +24,7 @@ public class Logging {
         LS_NONE
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),
@@ -34,7 +33,7 @@ public class Logging {
         TRACE_ERROR(4),
         TRACE_CRITICAL(8),
         TRACE_APICALL(16),
-        TRACE_DEFAULT(ks.e4),
+        TRACE_DEFAULT(kk7.d4),
         TRACE_MODULECALL(32),
         TRACE_MEMORY(256),
         TRACE_TIMER(512),
@@ -46,8 +45,8 @@ public class Logging {
 
         public final int level;
 
-        TraceLevel(int i7) {
-            this.level = i7;
+        TraceLevel(int i) {
+            this.level = i;
         }
     }
 
@@ -65,8 +64,11 @@ public class Logging {
         loggable = null;
     }
 
-    public static void e(String str, String str2) {
-        log(Severity.LS_ERROR, str, str2);
+    public static void e(String str, String str2, Throwable th) {
+        Severity severity = Severity.LS_ERROR;
+        log(severity, str, str2);
+        log(severity, str, th.toString());
+        log(severity, str, getStackTraceString(th));
     }
 
     public static void enableLogThreads() {
@@ -87,12 +89,12 @@ public class Logging {
         }
     }
 
-    private static String getStackTraceString(Throwable th2) {
-        if (th2 == null) {
+    private static String getStackTraceString(Throwable th) {
+        if (th == null) {
             return "";
         }
         StringWriter stringWriter = new StringWriter();
-        th2.printStackTrace(new PrintWriter(stringWriter));
+        th.printStackTrace(new PrintWriter(stringWriter));
         return stringWriter.toString();
     }
 
@@ -105,7 +107,8 @@ public class Logging {
 
     public static void log(Severity severity, String str, String str2) {
         if (str == null || str2 == null) {
-            throw new IllegalArgumentException("Logging tag or message may not be null.");
+            w26.j("Logging tag or message may not be null.");
+            return;
         }
         if (loggable != null) {
             if (severity.ordinal() < loggableSeverity.ordinal()) {
@@ -127,30 +130,27 @@ public class Logging {
 
     private static native void nativeEnableLogTimeStamps();
 
-    private static native void nativeEnableLogToDebugOutput(int i7);
+    private static native void nativeEnableLogToDebugOutput(int i);
 
-    private static native void nativeLog(int i7, String str, String str2);
+    private static native void nativeLog(int i, String str, String str2);
 
     public static void v(String str, String str2) {
         log(Severity.LS_VERBOSE, str, str2);
     }
 
-    public static void w(String str, String str2) {
-        log(Severity.LS_WARNING, str, str2);
-    }
-
-    public static void e(String str, String str2, Throwable th2) {
-        Severity severity = Severity.LS_ERROR;
-        log(severity, str, str2);
-        log(severity, str, th2.toString());
-        log(severity, str, getStackTraceString(th2));
-    }
-
-    public static void w(String str, String str2, Throwable th2) {
+    public static void w(String str, String str2, Throwable th) {
         Severity severity = Severity.LS_WARNING;
         log(severity, str, str2);
-        log(severity, str, th2.toString());
-        log(severity, str, getStackTraceString(th2));
+        log(severity, str, th.toString());
+        log(severity, str, getStackTraceString(th));
+    }
+
+    public static void e(String str, String str2) {
+        log(Severity.LS_ERROR, str, str2);
+    }
+
+    public static void w(String str, String str2) {
+        log(Severity.LS_WARNING, str, str2);
     }
 
     @Deprecated

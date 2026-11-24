@@ -1,11 +1,8 @@
 package org.telegram.SQLite;
 
-import org.telegram.messenger.a8;
-import org.telegram.messenger.s2;
-import org.telegram.messenger.t0;
-import p5.c;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class SQLiteDatabase {
     private boolean inTransaction;
@@ -13,19 +10,19 @@ public class SQLiteDatabase {
     private final long sqliteHandle;
 
     public SQLiteDatabase(String str) {
-        this.sqliteHandle = opendb(str, t0.h().getPath());
+        this.sqliteHandle = opendb(str, a.h().getPath());
     }
 
     public void beginTransaction() {
         if (this.inTransaction) {
-            boolean z10 = s2.a;
+            boolean z = w01.a;
             commitTransaction();
         }
         this.inTransaction = true;
         beginTransaction(this.sqliteHandle);
     }
 
-    public native void beginTransaction(long j3);
+    public native void beginTransaction(long j);
 
     public void checkOpened() {
         if (!this.isOpen) {
@@ -38,16 +35,16 @@ public class SQLiteDatabase {
             try {
                 commitTransaction();
                 closedb(this.sqliteHandle);
-            } catch (SQLiteException e10) {
-                if (s2.a) {
-                    a8.e(e10.getMessage(), e10);
+            } catch (SQLiteException e) {
+                if (w01.a) {
+                    fa4.e(e.getMessage(), e);
                 }
             }
             this.isOpen = false;
         }
     }
 
-    public native void closedb(long j3);
+    public native void closedb(long j);
 
     public void commitTransaction() {
         if (this.inTransaction) {
@@ -56,7 +53,7 @@ public class SQLiteDatabase {
         }
     }
 
-    public native void commitTransaction(long j3);
+    public native void commitTransaction(long j);
 
     public SQLitePreparedStatement executeFast(String str) {
         return new SQLitePreparedStatement(this, str);
@@ -78,15 +75,15 @@ public class SQLiteDatabase {
 
     public void explainQuery(String str, Object... objArr) {
         checkOpened();
-        SQLiteCursor query = new SQLitePreparedStatement(this, c.k("EXPLAIN QUERY PLAN ", str)).query(objArr);
+        SQLiteCursor query = new SQLitePreparedStatement(this, b00.h("EXPLAIN QUERY PLAN ", str)).query(objArr);
         while (query.next()) {
             int columnCount = query.getColumnCount();
-            StringBuilder sb2 = new StringBuilder();
-            for (int i7 = 0; i7 < columnCount; i7++) {
-                sb2.append(query.stringValue(i7));
-                sb2.append(", ");
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < columnCount; i++) {
+                sb.append(query.stringValue(i));
+                sb.append(", ");
             }
-            a8.b("EXPLAIN QUERY PLAN " + sb2.toString());
+            fa4.b("EXPLAIN QUERY PLAN ".concat(sb.toString()));
         }
         query.dispose();
     }

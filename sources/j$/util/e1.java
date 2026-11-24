@@ -5,7 +5,8 @@ import java.util.Comparator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements Spliterator {
     public final /* synthetic */ java.util.Spliterator a;
 
@@ -54,8 +55,8 @@ public final /* synthetic */ class e1 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return this.a.hasCharacteristics(i7);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
     }
 
     public final /* synthetic */ int hashCode() {

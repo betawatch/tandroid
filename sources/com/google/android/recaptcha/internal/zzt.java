@@ -1,16 +1,15 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import rd.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class zzt implements a {
+public final class zzt implements op4 {
     public static final zzt zza = new zzt();
 
-    @Override // rd.a
+    @Override // op4
     public final Object invoke() {
-        int i7 = zzby.zza;
+        int i = zzby.zza;
         Object zzb = zzbx.zza().zzb(735120228);
         if (zzb != null) {
             return (Application) zzb;

@@ -4,7 +4,8 @@ import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class g implements PrivilegedAction {
     public final /* synthetic */ List a;
 
@@ -15,17 +16,17 @@ public final class g implements PrivilegedAction {
     @Override // java.security.PrivilegedAction
     public final Object run() {
         String property = System.getProperty("java.time.zone.DefaultZoneRulesProvider");
-        if (property != null) {
-            try {
-                h hVar = (h) h.class.cast(Class.forName(property, true, h.class.getClassLoader()).newInstance());
-                h.b(hVar);
-                ((ArrayList) this.a).add(hVar);
-                return null;
-            } catch (Exception e10) {
-                throw new Error(e10);
-            }
+        if (property == null) {
+            h.b(new h());
+            return null;
         }
-        h.b(new h());
-        return null;
+        try {
+            h hVar = (h) h.class.cast(Class.forName(property, true, h.class.getClassLoader()).newInstance());
+            h.b(hVar);
+            ((ArrayList) this.a).add(hVar);
+            return null;
+        } catch (Exception e) {
+            throw new Error(e);
+        }
     }
 }

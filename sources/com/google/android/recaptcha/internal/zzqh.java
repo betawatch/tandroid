@@ -1,34 +1,31 @@
 package com.google.android.recaptcha.internal;
 
-import a8.p0;
-import i5.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzqh extends zzqk {
     private final int zzc;
 
-    public zzqh(byte[] bArr, int i7, int i10) {
+    public zzqh(byte[] bArr, int i, int i2) {
         super(bArr);
-        zzqm.zzj(0, i10, bArr.length);
-        this.zzc = i10;
+        zzqm.zzj(0, i2, bArr.length);
+        this.zzc = i2;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final byte zza(int i7) {
-        int i10 = this.zzc;
-        if (((i10 - (i7 + 1)) | i7) >= 0) {
-            return ((zzqk) this).zza[i7];
+    public final byte zza(int i) {
+        int i2 = this.zzc;
+        if (((i2 - (i + 1)) | i) >= 0) {
+            return ((zzqk) this).zza[i];
         }
-        if (i7 < 0) {
-            throw new ArrayIndexOutOfBoundsException(c.i(i7, "Index < 0: "));
+        if (i < 0) {
+            throw new ArrayIndexOutOfBoundsException(de9.k(i, "Index < 0: "));
         }
-        throw new ArrayIndexOutOfBoundsException(p0.m(i7, i10, "Index > length: ", ", "));
+        throw new ArrayIndexOutOfBoundsException(b00.g(i, i2, "Index > length: ", ", "));
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final byte zzb(int i7) {
-        return ((zzqk) this).zza[i7];
+    public final byte zzb(int i) {
+        return ((zzqk) this).zza[i];
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk
@@ -42,7 +39,7 @@ final class zzqh extends zzqk {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final void zze(byte[] bArr, int i7, int i10, int i11) {
-        System.arraycopy(((zzqk) this).zza, 0, bArr, 0, i11);
+    public final void zze(byte[] bArr, int i, int i2, int i3) {
+        System.arraycopy(((zzqk) this).zza, 0, bArr, 0, i3);
     }
 }

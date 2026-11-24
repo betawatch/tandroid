@@ -1,15 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzec extends j implements p {
+final class zzec extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ String zzc;
@@ -20,49 +13,49 @@ final class zzec extends j implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j3, zzhh zzhhVar, c cVar) {
-        super(2, cVar);
+    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, zzhh zzhhVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
         this.zze = zzdqVar;
-        this.zzf = j3;
+        this.zzf = j;
         this.zzg = zzhhVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, fw2Var);
         zzecVar.zzh = obj;
         return zzecVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzec) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
         try {
             if (this.zza != 0) {
-                z.b(obj);
+                qse.b(obj);
             } else {
-                z.b(obj);
+                qse.b(obj);
                 zzhk zzhkVar = (zzhk) this.zzh;
                 zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, null);
                 this.zza = 1;
                 obj = zzhj.zze(zzhkVar, 6, zzebVar, this);
-                if (obj == aVar) {
-                    return aVar;
+                bx2 bx2Var = bx2.a;
+                if (obj == bx2Var) {
+                    return bx2Var;
                 }
             }
             return (zzeq) obj;
-        } catch (zzcg e10) {
-            throw e10.zzc();
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e11.getMessage(), null, 8, null).zzc();
+        } catch (zzcg e) {
+            throw e.zzc();
+        } catch (Exception e2) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e2.getMessage(), null, 8, null).zzc();
         }
     }
 }

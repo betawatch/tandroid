@@ -1,17 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzio extends j implements p {
+final class zzio extends ccb implements eq4 {
     Object zza;
     Object zzb;
     int zzc;
@@ -20,28 +14,28 @@ final class zzio extends j implements p {
     final /* synthetic */ String zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzio(zziz zzizVar, zzip zzipVar, String str, c cVar) {
-        super(2, cVar);
+    public zzio(zziz zzizVar, zzip zzipVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzd = zzizVar;
         this.zze = zzipVar;
         this.zzf = str;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzio(this.zzd, this.zze, this.zzf, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzio(this.zzd, this.zze, this.zzf, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzio) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzio) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x007a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0079, code lost:
     
-        if (r7 != r0) goto L20;
+        if (r6 != r2) goto L19;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -51,19 +45,19 @@ final class zzio extends j implements p {
         Object zzg;
         zzzq zzzqVar;
         zzmf zzmfVar;
-        a aVar = a.a;
-        int i7 = this.zzc;
+        int i = this.zzc;
+        bx2 bx2Var = bx2.a;
         try {
-        } catch (Exception e10) {
+        } catch (Exception e) {
             zzip zzipVar = this.zze;
             zziz zzizVar = this.zzd;
             this.zza = null;
             this.zzb = null;
             this.zzc = 2;
-            zzh = zzipVar.zzh(e10, zzizVar, this);
+            zzh = zzipVar.zzh(e, zzizVar, this);
         }
-        if (i7 == 0) {
-            c8.z.b(obj);
+        if (i == 0) {
+            qse.b(obj);
             zziz zzizVar2 = this.zzd;
             zzizVar2.zza = new zzcs();
             zzzq zzi = zzzq.zzi(zzpp.zzh().zzj(this.zzf));
@@ -77,22 +71,22 @@ final class zzio extends j implements p {
             this.zzb = zzb;
             this.zzc = 1;
             zzg = zzipVar2.zzg(zzi2, zzizVar2, this);
-            if (zzg != aVar) {
+            if (zzg != bx2Var) {
                 zzzqVar = zzi;
                 zzmfVar = zzb;
             }
-            return aVar;
+            return bx2Var;
         }
-        if (i7 != 1) {
-            c8.z.b(obj);
-            return k.a;
+        if (i != 1) {
+            qse.b(obj);
+            return g5c.a;
         }
         zzmfVar = (zzmf) this.zzb;
         zzzqVar = (zzzq) this.zza;
-        c8.z.b(obj);
+        qse.b(obj);
         zzmfVar.zzf();
         new Long(zzmfVar.zza(TimeUnit.MICROSECONDS));
         zzzqVar.zzf();
-        return k.a;
+        return g5c.a;
     }
 }

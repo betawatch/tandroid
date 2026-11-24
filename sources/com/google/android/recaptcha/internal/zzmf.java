@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import a8.p0;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzmf {
     private boolean zza;
@@ -28,27 +27,8 @@ public final class zzmf {
     public final String toString() {
         String str;
         long zzg = zzg();
-        TimeUnit timeUnit = TimeUnit.DAYS;
-        TimeUnit timeUnit2 = TimeUnit.NANOSECONDS;
-        if (timeUnit.convert(zzg, timeUnit2) <= 0) {
-            timeUnit = TimeUnit.HOURS;
-            if (timeUnit.convert(zzg, timeUnit2) <= 0) {
-                timeUnit = TimeUnit.MINUTES;
-                if (timeUnit.convert(zzg, timeUnit2) <= 0) {
-                    timeUnit = TimeUnit.SECONDS;
-                    if (timeUnit.convert(zzg, timeUnit2) <= 0) {
-                        timeUnit = TimeUnit.MILLISECONDS;
-                        if (timeUnit.convert(zzg, timeUnit2) <= 0) {
-                            timeUnit = TimeUnit.MICROSECONDS;
-                            if (timeUnit.convert(zzg, timeUnit2) <= 0) {
-                                timeUnit = timeUnit2;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        String format = String.format(Locale.ROOT, "%.4g", Double.valueOf(zzg / timeUnit2.convert(1L, timeUnit)));
+        TimeUnit timeUnit = zzg / 86400000000000L > 0 ? TimeUnit.DAYS : zzg / 3600000000000L > 0 ? TimeUnit.HOURS : zzg / 60000000000L > 0 ? TimeUnit.MINUTES : zzg / 1000000000 > 0 ? TimeUnit.SECONDS : zzg / 1000000 > 0 ? TimeUnit.MILLISECONDS : zzg / 1000 > 0 ? TimeUnit.MICROSECONDS : TimeUnit.NANOSECONDS;
+        String format = String.format(Locale.ROOT, "%.4g", Double.valueOf(zzg / r2.convert(1L, timeUnit)));
         switch (zzme.zza[timeUnit.ordinal()]) {
             case 1:
                 str = "ns";
@@ -72,9 +52,10 @@ public final class zzmf {
                 str = "d";
                 break;
             default:
-                throw new AssertionError();
+                wn4.f();
+                return null;
         }
-        return p0.E(format, " ", str);
+        return tb4.y(format, " ", str);
     }
 
     public final long zza(TimeUnit timeUnit) {

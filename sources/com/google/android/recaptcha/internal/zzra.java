@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzra extends zzsk implements zztt {
     private static final zzra zzd;
@@ -27,26 +27,26 @@ public final class zzra extends zzsk implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i7, Object obj, Object obj2) {
+    public final Object zzh(int i, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i7 - 1;
-        if (i10 == 0) {
+        int i2 = i - 1;
+        if (i2 == 0) {
             return Byte.valueOf(this.zzl);
         }
-        if (i10 == 2) {
+        if (i2 == 2) {
             return new zzue(zzd, "\u0001\u0005\u0000\u0001\u0001ϧ\u0005\u0000\u0001\u0002\u0001ဇ\u0000\u0002ᐉ\u0001\u0003ဇ\u0002\u0004ဉ\u0003ϧЛ", new Object[]{"zzf", "zzg", "zzh", "zzi", "zzj", "zzk", zzrq.class});
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             return new zzra();
         }
         zzrr zzrrVar = null;
-        if (i10 == 4) {
+        if (i2 == 4) {
             return new zzqz(zzrrVar);
         }
-        if (i10 == 5) {
+        if (i2 == 5) {
             return zzd;
         }
-        if (i10 != 6) {
+        if (i2 != 6) {
             this.zzl = obj == null ? (byte) 0 : (byte) 1;
             return null;
         }
@@ -55,14 +55,10 @@ public final class zzra extends zzsk implements zztt {
             return zzuaVar2;
         }
         synchronized (zzra.class) {
-            try {
-                zzuaVar = zze;
-                if (zzuaVar == null) {
-                    zzuaVar = new zzsi(zzd);
-                    zze = zzuaVar;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzuaVar = zze;
+            if (zzuaVar == null) {
+                zzuaVar = new zzsi(zzd);
+                zze = zzuaVar;
             }
         }
         return zzuaVar;

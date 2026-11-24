@@ -5,26 +5,26 @@ import j$.util.Objects;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class SectionedItemList {
     private final CarText mHeader;
     private final ItemList mItemList;
 
-    private SectionedItemList(ItemList itemList, CarText carText) {
-        this.mItemList = itemList;
-        this.mHeader = carText;
+    private SectionedItemList() {
+        this.mItemList = null;
+        this.mHeader = null;
     }
 
     public static SectionedItemList create(ItemList itemList, CharSequence charSequence) {
         Objects.requireNonNull(charSequence);
         CarText create = CarText.create(charSequence);
-        t.c cVar = t.c.b;
-        cVar.getClass();
-        cVar.a(create.getSpans());
+        pc1 pc1Var = pc1.b;
+        pc1Var.getClass();
+        pc1Var.a(create.getSpans());
         Iterator<List<CarText.SpanWrapper>> it = create.getSpansForVariants().iterator();
         while (it.hasNext()) {
-            cVar.a(it.next());
+            pc1Var.a(it.next());
         }
         Objects.requireNonNull(itemList);
         return new SectionedItemList(itemList, create);
@@ -58,16 +58,16 @@ public final class SectionedItemList {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[ items: ");
-        sb2.append(this.mItemList);
-        sb2.append(", has header: ");
-        sb2.append(this.mHeader != null);
-        sb2.append("]");
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder("[ items: ");
+        sb.append(this.mItemList);
+        sb.append(", has header: ");
+        sb.append(this.mHeader != null);
+        sb.append("]");
+        return sb.toString();
     }
 
-    private SectionedItemList() {
-        this.mItemList = null;
-        this.mHeader = null;
+    private SectionedItemList(ItemList itemList, CarText carText) {
+        this.mItemList = itemList;
+        this.mHeader = carText;
     }
 }

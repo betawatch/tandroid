@@ -1,96 +1,50 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class x7 {
-    public final Spliterator a;
-    public final boolean b;
-    public final int c;
-    public final long d;
-    public final AtomicLong e;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class x7 extends a8 implements j$.util.u0, DoubleConsumer {
+    public double e;
 
-    public abstract Spliterator b(Spliterator spliterator);
-
-    public x7(Spliterator spliterator, long j3, long j10) {
-        this.a = spliterator;
-        this.b = j10 < 0;
-        this.d = j10 >= 0 ? j10 : 0L;
-        this.c = 128;
-        this.e = new AtomicLong(j10 >= 0 ? j3 + j10 : j3);
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        this.e = d;
     }
 
-    public x7(Spliterator spliterator, x7 x7Var) {
-        this.a = spliterator;
-        this.b = x7Var.b;
-        this.e = x7Var.e;
-        this.d = x7Var.d;
-        this.c = x7Var.c;
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
     }
 
-    public final long a(long j3) {
-        long j10;
-        boolean z10;
-        long min;
-        do {
-            j10 = this.e.get();
-            z10 = this.b;
-            if (j10 != 0) {
-                min = Math.min(j10, j3);
-                if (min <= 0) {
-                    break;
-                }
-            } else {
-                if (z10) {
-                    return j3;
-                }
-                return 0L;
-            }
-        } while (!this.e.compareAndSet(j10, j10 - min));
-        if (z10) {
-            return Math.max(j3 - min, 0L);
-        }
-        long j11 = this.d;
-        return j10 > j11 ? Math.max(min - (j10 - j11), 0L) : min;
+    @Override // j$.util.stream.d8
+    public final Spliterator b(Spliterator spliterator) {
+        return new x7((j$.util.u0) spliterator, this);
     }
 
-    public final w7 c() {
-        if (this.e.get() > 0) {
-            return w7.MAYBE_MORE;
-        }
-        return this.b ? w7.UNLIMITED : w7.NO_MORE;
+    @Override // j$.util.stream.a8
+    public final void d(Object obj) {
+        ((DoubleConsumer) obj).accept(this.e);
     }
 
-    public final Spliterator trySplit() {
-        Spliterator trySplit;
-        if (this.e.get() == 0 || (trySplit = this.a.trySplit()) == null) {
-            return null;
-        }
-        return b(trySplit);
+    @Override // j$.util.stream.a8
+    public final h7 e() {
+        return new e7();
     }
 
-    public final long estimateSize() {
-        return this.a.estimateSize();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.h(this, consumer);
     }
 
-    public final int characteristics() {
-        return this.a.characteristics() & (-16465);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.y(this, consumer);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.d1 trySplit() {
-        return (j$.util.d1) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.x0 trySplit() {
-        return (j$.util.x0) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.a1 trySplit() {
-        return (j$.util.a1) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.u0 trySplit() {
+    @Override // j$.util.stream.a8, j$.util.stream.d8, j$.util.d1, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ j$.util.u0 trySplit() {
         return (j$.util.u0) trySplit();
     }
 }

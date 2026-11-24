@@ -4,9 +4,8 @@ import android.util.Base64;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
-import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzvm {
     protected static final Charset zza = StandardCharsets.UTF_16;
@@ -17,14 +16,47 @@ public final class zzvm {
     private byte[] zzf;
     private int zzg;
 
-    public zzvm() {
+    public zzvm(byte[] bArr, byte[] bArr2) {
+        int i;
+        int[] iArr;
+        if (bArr.length != 32) {
+            sc8.e();
+            throw null;
+        }
+        this.zze = bArr;
+        this.zzg = 1;
+        this.zzf = bArr2;
+        this.zzb = new int[16];
+        int i2 = 0;
+        while (true) {
+            i = 4;
+            if (i2 >= 4) {
+                break;
+            }
+            this.zzb[i2] = zza(this.zzd[i2], 2131181306);
+            i2++;
+        }
+        while (true) {
+            iArr = this.zzb;
+            if (i >= 12) {
+                break;
+            }
+            iArr[i] = zzg(this.zze, (i - 4) << 2);
+            i++;
+        }
+        iArr[12] = this.zzg;
+        for (int i3 = 13; i3 < 16; i3++) {
+            this.zzb[i3] = zzg(this.zzf, (i3 - 13) << 2);
+        }
+        int[] iArr2 = new int[16];
+        this.zzc = iArr2;
+        int[] iArr3 = this.zzb;
+        int length = iArr3.length;
+        System.arraycopy(iArr3, 0, iArr2, 0, 16);
     }
 
-    public static int zza(int i7, int i10) {
-        if (i7 % 2 != 0) {
-            return (i7 | i10) - (i7 & i10);
-        }
-        return ((~i7) & i10) | ((~i10) & i7);
+    public static int zza(int i, int i2) {
+        return i % 2 == 0 ? ((~i2) & i) | ((~i) & i2) : (i | i2) - (i & i2);
     }
 
     public static String zze(String str, byte[] bArr, zzvn zzvnVar) {
@@ -48,43 +80,41 @@ public final class zzvm {
         return Base64.encodeToString(bArr3, 2);
     }
 
-    private static final int zzg(byte[] bArr, int i7) {
-        int i10 = bArr[i7] & 255;
-        int i11 = bArr[i7 + 1] & 255;
-        int i12 = bArr[i7 + 2] & 255;
-        return ((bArr[i7 + 3] & 255) << 24) | (i11 << 8) | i10 | (i12 << 16);
+    private static final int zzg(byte[] bArr, int i) {
+        return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24);
     }
 
-    public final void zzb(int i7, int i10, int i11, int i12) {
-        zzc(i7, i10, i12, 16);
-        zzc(i11, i12, i10, 12);
-        zzc(i7, i10, i12, 8);
-        zzc(i11, i12, i10, 7);
+    public final void zzb(int i, int i2, int i3, int i4) {
+        zzc(i, i2, i4, 16);
+        zzc(i3, i4, i2, 12);
+        zzc(i, i2, i4, 8);
+        zzc(i3, i4, i2, 7);
     }
 
-    public final void zzc(int i7, int i10, int i11, int i12) {
+    public final void zzc(int i, int i2, int i3, int i4) {
         int[] iArr = this.zzb;
-        int i13 = iArr[i7] + iArr[i10];
-        iArr[i7] = i13;
-        int zza2 = zza(iArr[i11], i13);
-        iArr[i11] = zza2;
-        iArr[i11] = (zza2 << i12) | (zza2 >>> (32 - i12));
+        int i5 = iArr[i] + iArr[i2];
+        iArr[i] = i5;
+        int zza2 = zza(iArr[i3], i5);
+        iArr[i3] = zza2;
+        iArr[i3] = (zza2 >>> (32 - i4)) | (zza2 << i4);
     }
 
     public final byte[] zzd(byte[] bArr) {
         if (this.zzg != 1) {
-            throw new IllegalStateException();
+            sdb.a();
+            return null;
         }
         int length = bArr.length;
         byte[] bArr2 = new byte[length];
-        int i7 = 0;
+        int i = 0;
         while (length > 0) {
             int[] iArr = this.zzc;
             int[] iArr2 = this.zzb;
             int length2 = iArr.length;
             System.arraycopy(iArr, 0, iArr2, 0, 16);
             this.zzb[12] = this.zzg;
-            for (int i10 = 0; i10 < 10; i10++) {
+            for (int i2 = 0; i2 < 10; i2++) {
                 zzb(0, 4, 8, 12);
                 zzb(1, 5, 9, 13);
                 zzb(2, 6, 10, 14);
@@ -95,47 +125,25 @@ public final class zzvm {
                 zzb(3, 4, 9, 14);
             }
             byte[] bArr3 = new byte[64];
-            for (int i11 = 0; i11 < 16; i11++) {
-                int i12 = this.zzb[i11];
-                int i13 = i11 * 4;
-                bArr3[i13] = (byte) (i12 & ks.e4);
-                bArr3[i13 + 1] = (byte) ((i12 >> 8) & ks.e4);
-                bArr3[i13 + 2] = (byte) ((i12 >> 16) & ks.e4);
-                bArr3[i13 + 3] = (byte) ((i12 >> 24) & ks.e4);
+            for (int i3 = 0; i3 < 16; i3++) {
+                int i4 = this.zzb[i3];
+                int i5 = i3 << 2;
+                bArr3[i5] = (byte) (i4 & kk7.d4);
+                bArr3[i5 + 1] = (byte) ((i4 >> 8) & kk7.d4);
+                bArr3[i5 + 2] = (byte) ((i4 >> 16) & kk7.d4);
+                bArr3[i5 + 3] = (byte) ((i4 >> 24) & kk7.d4);
             }
-            for (int i14 = 0; i14 < Math.min(64, length); i14++) {
-                int i15 = i7 + i14;
-                bArr2[i15] = (byte) zza(bArr3[i14], bArr[i15]);
+            for (int i6 = 0; i6 < Math.min(64, length); i6++) {
+                int i7 = i + i6;
+                bArr2[i7] = (byte) zza(bArr3[i6], bArr[i7]);
             }
             this.zzg++;
             length -= 64;
-            i7 += 64;
+            i += 64;
         }
         return bArr2;
     }
 
-    public zzvm(byte[] bArr, byte[] bArr2) {
-        if (bArr.length != 32) {
-            throw new IllegalArgumentException();
-        }
-        this.zze = bArr;
-        this.zzg = 1;
-        this.zzf = bArr2;
-        this.zzb = new int[16];
-        for (int i7 = 0; i7 < 4; i7++) {
-            this.zzb[i7] = zza(this.zzd[i7], 2131181306);
-        }
-        for (int i10 = 4; i10 < 12; i10++) {
-            this.zzb[i10] = zzg(this.zze, (i10 - 4) * 4);
-        }
-        this.zzb[12] = this.zzg;
-        for (int i11 = 13; i11 < 16; i11++) {
-            this.zzb[i11] = zzg(this.zzf, (i11 - 13) * 4);
-        }
-        int[] iArr = new int[16];
-        this.zzc = iArr;
-        int[] iArr2 = this.zzb;
-        int length = iArr2.length;
-        System.arraycopy(iArr2, 0, iArr, 0, 16);
+    public zzvm() {
     }
 }

@@ -4,16 +4,17 @@ import j$.util.Spliterator;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class i extends o implements Spliterator {
-    public final /* synthetic */ int i;
+    public final /* synthetic */ byte i;
     public long j;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(k[] kVarArr, int i7, int i10, int i11, long j3, int i12) {
-        super(kVarArr, i7, i10, i11);
-        this.i = i12;
-        this.j = j3;
+    public /* synthetic */ i(k[] kVarArr, int i, int i2, int i3, long j, byte b) {
+        super(kVarArr, i, i2, i3);
+        this.i = b;
+        this.j = j;
     }
 
     @Override // j$.util.Spliterator
@@ -27,17 +28,36 @@ public final class i extends o implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
+    public final long estimateSize() {
         switch (this.i) {
         }
-        return j$.com.android.tools.r8.a.m(this);
+        return this.j;
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+    public final void forEachRemaining(Consumer consumer) {
         switch (this.i) {
+            case 0:
+                consumer.getClass();
+                while (true) {
+                    k a = a();
+                    if (a == null) {
+                        break;
+                    } else {
+                        consumer.x(a.b);
+                    }
+                }
+            default:
+                consumer.getClass();
+                while (true) {
+                    k a2 = a();
+                    if (a2 == null) {
+                        break;
+                    } else {
+                        consumer.x(a2.c);
+                    }
+                }
         }
-        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -51,59 +71,17 @@ public final class i extends o implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
+    public final /* synthetic */ long getExactSizeIfKnown() {
         switch (this.i) {
-            case 0:
-                int i7 = this.f;
-                int i10 = this.g;
-                int i11 = (i7 + i10) >>> 1;
-                if (i11 <= i7) {
-                    return null;
-                }
-                k[] kVarArr = this.a;
-                this.g = i11;
-                long j3 = this.j >>> 1;
-                this.j = j3;
-                return new i(kVarArr, this.h, i11, i10, j3, 0);
-            default:
-                int i12 = this.f;
-                int i13 = this.g;
-                int i14 = (i12 + i13) >>> 1;
-                if (i14 <= i12) {
-                    return null;
-                }
-                k[] kVarArr2 = this.a;
-                this.g = i14;
-                long j10 = this.j >>> 1;
-                this.j = j10;
-                return new i(kVarArr2, this.h, i14, i13, j10, 1);
         }
+        return j$.time.a.m(this);
     }
 
     @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
         switch (this.i) {
-            case 0:
-                consumer.getClass();
-                while (true) {
-                    k a10 = a();
-                    if (a10 == null) {
-                        break;
-                    } else {
-                        consumer.x(a10.b);
-                    }
-                }
-            default:
-                consumer.getClass();
-                while (true) {
-                    k a11 = a();
-                    if (a11 == null) {
-                        break;
-                    } else {
-                        consumer.x(a11.c);
-                    }
-                }
         }
+        return j$.time.a.o(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -111,28 +89,53 @@ public final class i extends o implements Spliterator {
         switch (this.i) {
             case 0:
                 consumer.getClass();
-                k a10 = a();
-                if (a10 != null) {
-                    consumer.x(a10.b);
+                k a = a();
+                if (a != null) {
+                    consumer.x(a.b);
+                    break;
+                } else {
                     break;
                 }
-                break;
             default:
                 consumer.getClass();
-                k a11 = a();
-                if (a11 != null) {
-                    consumer.x(a11.c);
+                k a2 = a();
+                if (a2 != null) {
+                    consumer.x(a2.c);
+                    break;
+                } else {
                     break;
                 }
-                break;
         }
         return true;
     }
 
     @Override // j$.util.Spliterator
-    public final long estimateSize() {
+    public final Spliterator trySplit() {
         switch (this.i) {
+            case 0:
+                int i = this.f;
+                int i2 = this.g;
+                int i3 = (i + i2) >>> 1;
+                if (i3 <= i) {
+                    return null;
+                }
+                k[] kVarArr = this.a;
+                this.g = i3;
+                long j = this.j >>> 1;
+                this.j = j;
+                return new i(kVarArr, this.h, i3, i2, j, (byte) 0);
+            default:
+                int i4 = this.f;
+                int i5 = this.g;
+                int i6 = (i4 + i5) >>> 1;
+                if (i6 <= i4) {
+                    return null;
+                }
+                k[] kVarArr2 = this.a;
+                this.g = i6;
+                long j2 = this.j >>> 1;
+                this.j = j2;
+                return new i(kVarArr2, this.h, i6, i5, j2, (byte) 1);
         }
-        return this.j;
     }
 }

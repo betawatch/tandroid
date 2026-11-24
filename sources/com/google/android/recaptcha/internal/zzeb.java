@@ -1,15 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzeb extends j implements p {
+final class zzeb extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ String zzc;
@@ -20,55 +13,55 @@ final class zzeb extends j implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzeb(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j3, zzhh zzhhVar, c cVar) {
-        super(2, cVar);
+    public zzeb(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, zzhh zzhhVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
         this.zze = zzdqVar;
-        this.zzf = j3;
+        this.zzf = j;
         this.zzg = zzhhVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, fw2Var);
         zzebVar.zzh = obj;
         return zzebVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzeb) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzeb) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00ae, code lost:
     
-        if (r15 == r0) goto L33;
+        if (r15 != r5) goto L30;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x005c, code lost:
     
-        if (r15 != r0) goto L17;
+        if (r15 != r5) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x004c, code lost:
     
-        if (r15 != r0) goto L15;
+        if (r15 != r5) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:32:0x009d, code lost:
     
-        if (r15 != r0) goto L28;
+        if (r15 != r5) goto L28;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         zzeq zzeqVar;
-        a aVar = a.a;
-        int i7 = this.zza;
-        if (i7 == 0) {
-            z.b(obj);
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
@@ -83,35 +76,35 @@ final class zzeb extends j implements p {
                     String str2 = this.zzc;
                     zzdq zzdqVar = this.zze;
                     zzfp zzfpVar = new zzfp(str2);
-                    zzdwVar = kotlin.jvm.internal.j.a(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
+                    zzdwVar = rp5.a(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
                 }
                 zzdw zzdwVar2 = zzdwVar;
                 String str3 = this.zzc;
-                long j3 = this.zzf;
+                long j = this.zzf;
                 zzhh zzhhVar = this.zzg;
                 this.zzh = zzgrVar;
                 this.zza = 3;
-                obj = new zzhg(new zzee(zzehVar, j3, zzdwVar2, str3, zzhhVar, null));
+                obj = new zzhg(new zzee(zzehVar, j, zzdwVar2, str3, zzhhVar, null));
             }
-            return aVar;
+            return bx2Var;
         }
-        if (i7 == 1) {
+        if (i == 1) {
             zzgrVar = (zzgr) this.zzh;
-            z.b(obj);
+            qse.b(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } else {
-            if (i7 == 2) {
-                z.b(obj);
+            if (i == 2) {
+                qse.b(obj);
                 return (zzeq) obj;
             }
-            if (i7 != 3) {
-                z.b(obj);
+            if (i != 3) {
+                qse.b(obj);
                 return (zzeq) obj;
             }
             zzgrVar = (zzgr) this.zzh;
-            z.b(obj);
+            qse.b(obj);
             this.zzh = null;
             this.zza = 4;
             obj = ((zzhg) obj).zza(zzgrVar.zza(), this);

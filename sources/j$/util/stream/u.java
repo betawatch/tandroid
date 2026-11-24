@@ -1,59 +1,33 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import java.util.function.DoubleConsumer;
-
-/* loaded from: classes2.dex */
-public final class u extends c5 {
-    public boolean b;
-    public final j$.util.e0 c;
-    public final /* synthetic */ v d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class u extends b0 {
+    public final /* synthetic */ byte l;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(v vVar, j5 j5Var) {
-        super(j5Var);
-        this.d = vVar;
-        j5 j5Var2 = this.a;
-        Objects.requireNonNull(j5Var2);
-        this.c = new j$.util.e0(j5Var2, 1);
+    public /* synthetic */ u(a aVar, int i, byte b) {
+        super(aVar, i);
+        this.l = b;
     }
 
-    @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final void o(long j3) {
-        this.a.o(-1L);
-    }
-
-    @Override // j$.util.stream.g5, j$.util.stream.j5
-    public final void accept(double d) {
-        c0 c0Var = (c0) ((j$.time.t) this.d.t).apply(d);
-        if (c0Var != null) {
-            try {
-                boolean z10 = this.b;
-                j$.util.e0 e0Var = this.c;
-                if (!z10) {
-                    c0Var.sequential().forEach(e0Var);
-                } else {
-                    j$.util.u0 spliterator = c0Var.sequential().spliterator();
-                    while (!this.a.q() && spliterator.tryAdvance((DoubleConsumer) e0Var)) {
-                    }
-                }
-            } catch (Throwable th2) {
-                try {
-                    c0Var.close();
-                } catch (Throwable th3) {
-                    th2.addSuppressed(th3);
-                }
-                throw th2;
-            }
+    @Override // j$.util.stream.a
+    public final n5 M(int i, n5 n5Var) {
+        switch (this.l) {
+            case 0:
+                return new t(this, n5Var, (byte) 0);
+            case 1:
+                return n5Var;
+            case 2:
+                return new t(this, n5Var, (byte) 3);
+            case 3:
+                return new x0(n5Var, (byte) 1);
+            case 4:
+                return new x0(this, n5Var, (byte) 3);
+            case 5:
+                return new f1(n5Var);
+            default:
+                return new f1(this, n5Var, (byte) 3);
         }
-        if (c0Var != null) {
-            c0Var.close();
-        }
-    }
-
-    @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final boolean q() {
-        this.b = true;
-        return this.a.q();
     }
 }

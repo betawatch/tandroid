@@ -2,7 +2,8 @@ package j$.time.format;
 
 import j$.util.Objects;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class j implements f {
     public static final String[] d = {"+HH", "+HHmm", "+HH:mm", "+HHMM", "+HH:MM", "+HHMMss", "+HH:MM:ss", "+HHMMSS", "+HH:MM:SS", "+HHmmss", "+HH:mm:ss", "+H", "+Hmm", "+H:mm", "+HMM", "+H:MM", "+HMMss", "+H:MM:ss", "+HMMSS", "+H:MM:SS", "+Hmmss", "+H:mm:ss"};
     public static final j e = new j("+HH:MM:ss", "Z");
@@ -17,67 +18,68 @@ public final class j implements f {
     public j(String str, String str2) {
         Objects.requireNonNull(str, "pattern");
         Objects.requireNonNull(str2, "noOffsetText");
-        for (int i7 = 0; i7 < 22; i7++) {
-            if (d[i7].equals(str)) {
-                this.b = i7;
-                this.c = i7 % 11;
+        for (int i = 0; i < 22; i++) {
+            if (d[i].equals(str)) {
+                this.b = i;
+                this.c = i % 11;
                 this.a = str2;
                 return;
             }
         }
-        throw new IllegalArgumentException("Invalid zone offset pattern: ".concat(str));
+        j$.time.g.c("Invalid zone offset pattern: ".concat(str));
+        throw null;
+    }
+
+    public static void a(boolean z, int i, StringBuilder sb) {
+        sb.append(z ? ":" : "");
+        sb.append((char) ((i / 10) + 48));
+        sb.append((char) ((i % 10) + 48));
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
-        Long a10 = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
-        boolean z10 = false;
-        if (a10 == null) {
+    public final boolean j(r rVar, StringBuilder sb) {
+        Long a = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
+        boolean z = false;
+        if (a == null) {
             return false;
         }
-        long longValue = a10.longValue();
-        int i7 = (int) longValue;
-        if (longValue != i7) {
+        long longValue = a.longValue();
+        int i = (int) longValue;
+        if (longValue != i) {
             throw new ArithmeticException();
         }
         String str = this.a;
-        if (i7 == 0) {
-            sb2.append(str);
+        if (i == 0) {
+            sb.append(str);
             return true;
         }
-        int abs = Math.abs((i7 / 3600) % 100);
-        int abs2 = Math.abs((i7 / 60) % 60);
-        int abs3 = Math.abs(i7 % 60);
-        int length = sb2.length();
-        sb2.append(i7 < 0 ? "-" : "+");
-        if (this.b >= 11 && abs < 10) {
-            sb2.append((char) (abs + 48));
+        int abs = Math.abs((i / 3600) % 100);
+        int abs2 = Math.abs((i / 60) % 60);
+        int abs3 = Math.abs(i % 60);
+        int length = sb.length();
+        sb.append(i < 0 ? "-" : "+");
+        if (this.b < 11 || abs >= 10) {
+            a(false, abs, sb);
         } else {
-            a(false, abs, sb2);
+            sb.append((char) (abs + 48));
         }
-        int i10 = this.c;
-        if ((i10 >= 3 && i10 <= 8) || ((i10 >= 9 && abs3 > 0) || (i10 >= 1 && abs2 > 0))) {
-            a(i10 > 0 && i10 % 2 == 0, abs2, sb2);
+        int i2 = this.c;
+        if ((i2 >= 3 && i2 <= 8) || ((i2 >= 9 && abs3 > 0) || (i2 >= 1 && abs2 > 0))) {
+            a(i2 > 0 && i2 % 2 == 0, abs2, sb);
             abs += abs2;
-            if (i10 == 7 || i10 == 8 || (i10 >= 5 && abs3 > 0)) {
-                if (i10 > 0 && i10 % 2 == 0) {
-                    z10 = true;
+            if (i2 == 7 || i2 == 8 || (i2 >= 5 && abs3 > 0)) {
+                if (i2 > 0 && i2 % 2 == 0) {
+                    z = true;
                 }
-                a(z10, abs3, sb2);
+                a(z, abs3, sb);
                 abs += abs3;
             }
         }
         if (abs == 0) {
-            sb2.setLength(length);
-            sb2.append(str);
+            sb.setLength(length);
+            sb.append(str);
         }
         return true;
-    }
-
-    public static void a(boolean z10, int i7, StringBuilder sb2) {
-        sb2.append(z10 ? ":" : "");
-        sb2.append((char) ((i7 / 10) + 48));
-        sb2.append((char) ((i7 % 10) + 48));
     }
 
     public final String toString() {

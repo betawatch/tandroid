@@ -4,20 +4,26 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Alert {
     private static final int MAX_ACTION_COUNT = 2;
     private final List<Action> mActions;
-    private final e mCallbackDelegate;
+    private final nc mCallbackDelegate;
     private final long mDuration;
     private final CarIcon mIcon;
     private final int mId;
     private final CarText mSubtitle;
     private final CarText mTitle;
 
-    public Alert(c cVar) {
-        throw null;
+    private Alert() {
+        this.mId = 0;
+        this.mTitle = CarText.create("");
+        this.mSubtitle = null;
+        this.mIcon = null;
+        this.mActions = new ArrayList();
+        this.mDuration = 0L;
+        this.mCallbackDelegate = null;
     }
 
     public boolean equals(Object obj) {
@@ -31,7 +37,7 @@ public final class Alert {
         return this.mActions;
     }
 
-    public e getCallbackDelegate() {
+    public nc getCallbackDelegate() {
         return this.mCallbackDelegate;
     }
 
@@ -63,13 +69,7 @@ public final class Alert {
         return "[id: " + this.mId + ", title: " + this.mTitle + ", icon: " + this.mIcon + "]";
     }
 
-    private Alert() {
-        this.mId = 0;
-        this.mTitle = CarText.create("");
-        this.mSubtitle = null;
-        this.mIcon = null;
-        this.mActions = new ArrayList();
-        this.mDuration = 0L;
-        this.mCallbackDelegate = null;
+    public Alert(lc lcVar) {
+        throw null;
     }
 }

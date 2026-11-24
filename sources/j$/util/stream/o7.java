@@ -1,106 +1,77 @@
 package j$.util.stream;
 
 import j$.util.Objects;
-import java.util.Comparator;
-import java.util.function.DoubleConsumer;
+import j$.util.Spliterator;
+import java.util.function.Consumer;
 import java.util.function.IntConsumer;
-import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class o7 extends q7 implements j$.util.d1 {
-    public abstract Object b();
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.m(this);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class o7 extends d7 implements j$.util.x0 {
+    @Override // j$.util.stream.d7
+    public final void d() {
+        t6 t6Var = new t6();
+        this.h = t6Var;
+        Objects.requireNonNull(t6Var);
+        this.e = this.b.R(new n7(t6Var, (byte) 1));
+        this.f = new j$.time.v((byte) 10, this);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return j$.com.android.tools.r8.a.o(this, i7);
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    public o7(j$.util.d1 d1Var, long j3, long j10) {
-        super(d1Var, j3, j10, 0L, Math.min(d1Var.estimateSize(), j10));
+    @Override // j$.util.stream.d7
+    public final d7 e(Spliterator spliterator) {
+        return new o7(this.b, spliterator, this.a);
     }
 
     @Override // j$.util.d1
-    public final boolean tryAdvance(Object obj) {
-        long j3;
-        Objects.requireNonNull(obj);
-        long j10 = this.e;
-        long j11 = this.a;
-        if (j11 >= j10) {
-            return false;
-        }
-        while (true) {
-            j3 = this.d;
-            if (j11 <= j3) {
-                break;
+    public final void forEachRemaining(IntConsumer intConsumer) {
+        if (this.h != null || this.i) {
+            while (tryAdvance(intConsumer)) {
             }
-            ((j$.util.d1) this.c).tryAdvance(b());
-            this.d++;
+            return;
         }
-        if (j3 >= this.e) {
-            return false;
-        }
-        this.d = j3 + 1;
-        return ((j$.util.d1) this.c).tryAdvance(obj);
+        Objects.requireNonNull(intConsumer);
+        c();
+        Objects.requireNonNull(intConsumer);
+        n7 n7Var = new n7(intConsumer, (byte) 0);
+        this.b.Q(this.d, n7Var);
+        this.i = true;
     }
 
     @Override // j$.util.d1
-    public final void forEachRemaining(Object obj) {
-        Objects.requireNonNull(obj);
-        long j3 = this.e;
-        long j10 = this.a;
-        if (j10 >= j3) {
-            return;
+    public final boolean tryAdvance(IntConsumer intConsumer) {
+        Objects.requireNonNull(intConsumer);
+        boolean a = a();
+        if (a) {
+            t6 t6Var = (t6) this.h;
+            long j = this.g;
+            int k = t6Var.k(j);
+            intConsumer.accept((t6Var.c == 0 && k == 0) ? ((int[]) t6Var.e)[(int) j] : ((int[][]) t6Var.f)[k][(int) (j - t6Var.d[k])]);
         }
-        long j11 = this.d;
-        if (j11 >= j3) {
-            return;
-        }
-        if (j11 >= j10 && ((j$.util.d1) this.c).estimateSize() + j11 <= this.b) {
-            ((j$.util.d1) this.c).forEachRemaining(obj);
-            this.d = this.e;
-            return;
-        }
-        while (j10 > this.d) {
-            ((j$.util.d1) this.c).tryAdvance(b());
-            this.d++;
-        }
-        while (this.d < this.e) {
-            ((j$.util.d1) this.c).tryAdvance(obj);
-            this.d++;
-        }
+        return a;
     }
 
-    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        forEachRemaining((Object) intConsumer);
+    @Override // j$.util.stream.d7, j$.util.Spliterator
+    public final j$.util.x0 trySplit() {
+        return (j$.util.x0) super.trySplit();
     }
 
-    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return tryAdvance((Object) intConsumer);
+    @Override // j$.util.stream.d7, j$.util.Spliterator
+    public final j$.util.d1 trySplit() {
+        return (j$.util.x0) super.trySplit();
     }
 
-    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        forEachRemaining((Object) longConsumer);
+    @Override // j$.util.stream.d7, j$.util.Spliterator
+    public final Spliterator trySplit() {
+        return (j$.util.x0) super.trySplit();
     }
 
-    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
-        return tryAdvance((Object) longConsumer);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.i(this, consumer);
     }
 
-    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        forEachRemaining((Object) doubleConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return tryAdvance((Object) doubleConsumer);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.z(this, consumer);
     }
 }

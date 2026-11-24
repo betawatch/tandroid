@@ -1,24 +1,30 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public interface e2 {
-    e2 a(int i7);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class e2 implements LongConsumer {
+    public final /* synthetic */ byte a;
 
-    long count();
+    public /* synthetic */ e2(byte b) {
+        this.a = b;
+    }
 
-    e2 e(long j3, long j10, IntFunction intFunction);
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        byte b = this.a;
+    }
 
-    void f(Object[] objArr, int i7);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        switch (this.a) {
+        }
+        return j$.time.a.c(this, longConsumer);
+    }
 
-    void forEach(Consumer consumer);
+    private final void accept$j$$util$stream$Node$OfLong$0(long j) {
+    }
 
-    Object[] g(IntFunction intFunction);
-
-    int h();
-
-    Spliterator spliterator();
+    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfLong$0(long j) {
+    }
 }

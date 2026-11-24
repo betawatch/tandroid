@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.BitSet;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class SymbolAtom extends CharSymbol {
     public static Map<String, SymbolAtom> symbols = new TeXSymbolParser().readSymbols();
@@ -28,13 +28,13 @@ public class SymbolAtom extends CharSymbol {
         validSymbolTypes.set(10);
     }
 
-    public SymbolAtom(SymbolAtom symbolAtom, int i7) {
-        if (!validSymbolTypes.get(i7)) {
+    public SymbolAtom(SymbolAtom symbolAtom, int i) {
+        if (!validSymbolTypes.get(i)) {
             throw new InvalidSymbolTypeException("The symbol type was not valid! Use one of the symbol type constants from the class 'TeXConstants'.");
         }
         this.name = symbolAtom.name;
-        this.type = i7;
-        if (i7 == 1) {
+        this.type = i;
+        if (i == 1) {
             this.type_limits = 0;
         }
         this.delimiter = symbolAtom.delimiter;
@@ -43,8 +43,8 @@ public class SymbolAtom extends CharSymbol {
     public static void addSymbolAtom(String str) {
         try {
             addSymbolAtom(new FileInputStream(str), str);
-        } catch (FileNotFoundException e10) {
-            throw new ResourceParseException(str, e10);
+        } catch (FileNotFoundException e) {
+            throw new ResourceParseException(str, e);
         }
     }
 
@@ -58,12 +58,12 @@ public class SymbolAtom extends CharSymbol {
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
-        char c10;
+        char c;
         TeXFont teXFont = teXEnvironment.getTeXFont();
         int style = teXEnvironment.getStyle();
-        Char r22 = teXFont.getChar(this.name, style);
-        Box charBox = new CharBox(r22);
-        if (teXEnvironment.getSmallCap() && (c10 = this.unicode) != 0 && Character.isLowerCase(c10)) {
+        Char r2 = teXFont.getChar(this.name, style);
+        Box charBox = new CharBox(r2);
+        if (teXEnvironment.getSmallCap() && (c = this.unicode) != 0 && Character.isLowerCase(c)) {
             try {
                 charBox = new ScaleBox(new CharBox(teXFont.getChar(TeXFormula.symbolTextMappings[Character.toUpperCase(this.unicode)], style)), 0.8d, 0.8d);
             } catch (SymbolMappingNotFoundException unused) {
@@ -72,12 +72,12 @@ public class SymbolAtom extends CharSymbol {
         if (this.type != 1) {
             return charBox;
         }
-        if (style < 2 && teXFont.hasNextLarger(r22)) {
-            r22 = teXFont.getNextLarger(r22, style);
+        if (style < 2 && teXFont.hasNextLarger(r2)) {
+            r2 = teXFont.getNextLarger(r2, style);
         }
-        CharBox charBox2 = new CharBox(r22);
+        CharBox charBox2 = new CharBox(r2);
         charBox2.setShift(((-(charBox2.getDepth() + charBox2.getHeight())) / 2.0f) - teXEnvironment.getTeXFont().getAxisHeight(teXEnvironment.getStyle()));
-        float italic = r22.getItalic();
+        float italic = r2.getItalic();
         HorizontalBox horizontalBox = new HorizontalBox(charBox2);
         if (italic > 1.0E-7f) {
             horizontalBox.add(new StrutBox(italic, 0.0f, 0.0f, 0.0f));
@@ -102,8 +102,8 @@ public class SymbolAtom extends CharSymbol {
         return this.delimiter;
     }
 
-    public SymbolAtom setUnicode(char c10) {
-        this.unicode = c10;
+    public SymbolAtom setUnicode(char c) {
+        this.unicode = c;
         return this;
     }
 
@@ -115,12 +115,12 @@ public class SymbolAtom extends CharSymbol {
         symbols.put(symbolAtom.name, symbolAtom);
     }
 
-    public SymbolAtom(String str, int i7, boolean z10) {
+    public SymbolAtom(String str, int i, boolean z) {
         this.name = str;
-        this.type = i7;
-        if (i7 == 1) {
+        this.type = i;
+        if (i == 1) {
             this.type_limits = 0;
         }
-        this.delimiter = z10;
+        this.delimiter = z;
     }
 }

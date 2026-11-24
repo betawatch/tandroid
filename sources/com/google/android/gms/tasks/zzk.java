@@ -1,9 +1,8 @@
 package com.google.android.gms.tasks;
 
 import j$.util.Objects;
-import q6.m;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzk implements Runnable {
     final /* synthetic */ Task zza;
@@ -19,15 +18,11 @@ final class zzk implements Runnable {
     public final void run() {
         zzl zzlVar = this.zzb;
         synchronized (zzlVar.zzc()) {
-            try {
-                if (zzlVar.zzd() != null) {
-                    OnFailureListener zzd = zzlVar.zzd();
-                    Exception exception = this.zza.getException();
-                    m.h(exception);
-                    zzd.onFailure(exception);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            if (zzlVar.zzd() != null) {
+                OnFailureListener zzd = zzlVar.zzd();
+                Exception exception = this.zza.getException();
+                fre.h(exception);
+                zzd.onFailure(exception);
             }
         }
     }

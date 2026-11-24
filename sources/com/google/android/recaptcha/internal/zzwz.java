@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzwz extends zzsn implements zztt {
     private static final zzwz zzb;
@@ -48,26 +48,26 @@ public final class zzwz extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i7, Object obj, Object obj2) {
+    public final Object zzh(int i, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i7 - 1;
-        if (i10 == 0) {
+        int i2 = i - 1;
+        if (i2 == 0) {
             return (byte) 1;
         }
-        if (i10 == 2) {
+        if (i2 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001Ȉ\u0002ဉ\u0000\u0003ဉ\u0001\u0004ဉ\u0002\u0005Ȉ\u0006Ȉ", new Object[]{"zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk"});
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             return new zzwz();
         }
         zzwy zzwyVar = null;
-        if (i10 == 4) {
+        if (i2 == 4) {
             return new zzwx(zzwyVar);
         }
-        if (i10 == 5) {
+        if (i2 == 5) {
             return zzb;
         }
-        if (i10 != 6) {
+        if (i2 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;
@@ -75,14 +75,10 @@ public final class zzwz extends zzsn implements zztt {
             return zzuaVar2;
         }
         synchronized (zzwz.class) {
-            try {
-                zzuaVar = zzd;
-                if (zzuaVar == null) {
-                    zzuaVar = new zzsi(zzb);
-                    zzd = zzuaVar;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzuaVar = zzd;
+            if (zzuaVar == null) {
+                zzuaVar = new zzsi(zzb);
+                zzd = zzuaVar;
             }
         }
         return zzuaVar;

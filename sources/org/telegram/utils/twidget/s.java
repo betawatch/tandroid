@@ -1,47 +1,56 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class s implements x, p0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+import android.os.SystemClock;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class s implements xvc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ w b;
+    public final /* synthetic */ byte[] c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
 
-    public /* synthetic */ s(Object obj, int i7, int i10, int i11, Object obj2, int i12) {
-        this.a = i12;
-        this.e = obj;
-        this.b = i7;
-        this.c = i10;
-        this.d = i11;
-        this.f = obj2;
+    public /* synthetic */ s(w wVar, byte[] bArr, int i, byte b) {
+        this.a = b;
+        this.b = wVar;
+        this.c = bArr;
+        this.d = i;
     }
 
-    @Override // org.telegram.utils.twidget.x
-    public void run() {
-        ((WidgetEngineBackend) this.e).lambda$canvasRun$8(this.b, this.c, this.d, (int[]) this.f);
-    }
-
-    @Override // org.telegram.utils.twidget.p0
-    public Object run() {
+    @Override // xvc
+    public final Object run() {
         switch (this.a) {
-            case 1:
-                x0 x0Var = (x0) this.e;
-                byte[] bArr = (byte[]) this.f;
-                x0Var.b.defineImage(this.b, this.c, this.d, x0Var.i1(bArr));
-                break;
-            default:
-                x0 x0Var2 = (x0) this.e;
-                int[] iArr = (int[]) this.f;
-                WidgetSandboxBackend widgetSandboxBackend = x0Var2.b;
-                if (iArr == null) {
-                    iArr = new int[0];
+            case 0:
+                w wVar = this.b;
+                byte[] bArr = this.c;
+                int i = this.d;
+                byte[] b = wVar.b(bArr);
+                if (b.length <= 1048576) {
+                    synchronized (wVar) {
+                        long elapsedRealtime = SystemClock.elapsedRealtime();
+                        double min = Math.min(2000.0d, ((elapsedRealtime - wVar.i) * 1.0d) + wVar.f);
+                        wVar.f = min;
+                        wVar.i = elapsedRealtime;
+                        if (min >= 1.0d) {
+                            wVar.f = min - 1.0d;
+                            wVar.b.signal(i, b);
+                        } else {
+                            sc8.j("Widget engine: too many signals");
+                        }
+                    }
+                } else {
+                    w26.j("Signal too long");
                 }
-                widgetSandboxBackend.canvasRun(this.b, this.c, this.d, iArr);
-                break;
+                return null;
+            default:
+                w wVar2 = this.b;
+                byte[] bArr2 = this.c;
+                int i2 = this.d;
+                if (bArr2 != null && bArr2.length <= 262144) {
+                    return Float.valueOf(wVar2.b.textWidth(i2, bArr2));
+                }
+                w26.j("Text too long");
+                return null;
         }
-        return null;
     }
 }

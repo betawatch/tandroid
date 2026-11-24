@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d9.g0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class bf extends bm {
     final /* synthetic */ long a;
@@ -14,16 +13,16 @@ final class bf extends bm {
     final /* synthetic */ bn c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i7, long j3, TaskCompletionSource taskCompletionSource2) {
+    public bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i, long j, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
-        this.a = j3;
+        this.a = j;
         this.b = taskCompletionSource2;
         this.c = bnVar;
     }
 
-    @Override // d9.h0
+    @Override // s0d
     public final void b() {
-        g0 g0Var;
+        q0d q0dVar;
         if (bn.l(this.c)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -34,24 +33,24 @@ final class bf extends bm {
         }
         try {
             bn bnVar = this.c;
-            d9.w wVar = (d9.w) bnVar.a.n;
-            Bundle b10 = bn.b(bnVar, this.a, 0);
+            e0d e0dVar = (e0d) bnVar.a.n;
+            Bundle b = bn.b(bnVar, this.a, 0);
             bl blVar = new bl(this.c, this.b);
-            d9.u uVar = (d9.u) wVar;
-            uVar.getClass();
+            c0d c0dVar = (c0d) e0dVar;
+            c0dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(uVar.c);
-            int i7 = d9.s.a;
+            obtain.writeInterfaceToken(c0dVar.c);
+            int i = yzc.a;
             obtain.writeInt(1);
-            b10.writeToParcel(obtain, 0);
+            b.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(blVar);
-            uVar.i1(obtain, 2);
-        } catch (RemoteException e10) {
+            c0dVar.b(obtain, 2);
+        } catch (RemoteException e) {
             bn bnVar2 = this.c;
-            long j3 = this.a;
-            g0Var = bnVar2.b;
-            g0Var.a(e10, "warmUpIntegrityToken(%s)", Long.valueOf(j3));
-            this.b.trySetException(new StandardIntegrityException(-100, e10));
+            long j = this.a;
+            q0dVar = bnVar2.b;
+            q0dVar.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j));
+            this.b.trySetException(new StandardIntegrityException(-100, e));
         }
     }
 }

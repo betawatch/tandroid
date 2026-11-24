@@ -2,15 +2,12 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.cc;
-import r6.a;
-import u8.o;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class FaceParcel extends a {
-    public static final Parcelable.Creator<FaceParcel> CREATOR = new o(16);
-    public final x8.a[] E;
+public class FaceParcel extends b4 {
+    public static final Parcelable.Creator<FaceParcel> CREATOR = new igd((byte) 21);
+    public final u4d[] E;
     public final float F;
     public final int a;
     public final int b;
@@ -26,59 +23,59 @@ public class FaceParcel extends a {
     public final float x;
     public final float y;
 
-    public FaceParcel(int i7, int i10, float f10, float f11, float f12, float f13, float f14, float f15, float f16, LandmarkParcel[] landmarkParcelArr, float f17, float f18, float f19, x8.a[] aVarArr, float f20) {
-        this.a = i7;
-        this.b = i10;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
-        this.f = f13;
-        this.h = f14;
-        this.n = f15;
-        this.r = f16;
-        this.s = landmarkParcelArr;
-        this.w = f17;
-        this.x = f18;
-        this.y = f19;
-        this.E = aVarArr;
-        this.F = f20;
+    public FaceParcel(int i, int i2, float f, float f2, float f3, float f4, float f5, float f6, LandmarkParcel[] landmarkParcelArr, float f7, float f8, float f9) {
+        this(i, i2, f, f2, f3, f4, f5, f6, 0.0f, landmarkParcelArr, f7, f8, f9, new u4d[0], -1.0f);
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = cc.r(parcel, 20293);
-        cc.q(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        cc.q(parcel, 2, 4);
+        jte.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        cc.q(parcel, 3, 4);
+        jte.q(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        cc.q(parcel, 4, 4);
+        jte.q(parcel, 4, 4);
         parcel.writeFloat(this.d);
-        cc.q(parcel, 5, 4);
+        jte.q(parcel, 5, 4);
         parcel.writeFloat(this.e);
-        cc.q(parcel, 6, 4);
+        jte.q(parcel, 6, 4);
         parcel.writeFloat(this.f);
-        cc.q(parcel, 7, 4);
+        jte.q(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        cc.q(parcel, 8, 4);
+        jte.q(parcel, 8, 4);
         parcel.writeFloat(this.n);
-        cc.o(parcel, 9, this.s, i7);
-        cc.q(parcel, 10, 4);
+        jte.o(parcel, 9, this.s, i);
+        jte.q(parcel, 10, 4);
         parcel.writeFloat(this.w);
-        cc.q(parcel, 11, 4);
+        jte.q(parcel, 11, 4);
         parcel.writeFloat(this.x);
-        cc.q(parcel, 12, 4);
+        jte.q(parcel, 12, 4);
         parcel.writeFloat(this.y);
-        cc.o(parcel, 13, this.E, i7);
-        cc.q(parcel, 14, 4);
+        jte.o(parcel, 13, this.E, i);
+        jte.q(parcel, 14, 4);
         parcel.writeFloat(this.r);
-        cc.q(parcel, 15, 4);
+        jte.q(parcel, 15, 4);
         parcel.writeFloat(this.F);
-        cc.s(parcel, r10);
+        jte.s(parcel, r);
     }
 
-    public FaceParcel(int i7, int i10, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18) {
-        this(i7, i10, f10, f11, f12, f13, f14, f15, 0.0f, landmarkParcelArr, f16, f17, f18, new x8.a[0], -1.0f);
+    public FaceParcel(int i, int i2, float f, float f2, float f3, float f4, float f5, float f6, float f7, LandmarkParcel[] landmarkParcelArr, float f8, float f9, float f10, u4d[] u4dVarArr, float f11) {
+        this.a = i;
+        this.b = i2;
+        this.c = f;
+        this.d = f2;
+        this.e = f3;
+        this.f = f4;
+        this.h = f5;
+        this.n = f6;
+        this.r = f7;
+        this.s = landmarkParcelArr;
+        this.w = f8;
+        this.x = f9;
+        this.y = f10;
+        this.E = u4dVarArr;
+        this.F = f11;
     }
 }

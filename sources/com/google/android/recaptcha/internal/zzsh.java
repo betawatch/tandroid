@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import com.google.android.recaptcha.internal.zzsh;
 import com.google.android.recaptcha.internal.zzsn;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class zzsh<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpv<MessageType, BuilderType> {
     protected zzsn zza;
@@ -12,7 +12,8 @@ public class zzsh<MessageType extends zzsn<MessageType, BuilderType>, BuilderTyp
     public zzsh(MessageType messagetype) {
         this.zzb = messagetype;
         if (messagetype.zzL()) {
-            throw new IllegalArgumentException("Default instance must be immutable.");
+            w26.j("Default instance must be immutable.");
+            throw null;
         }
         this.zza = messagetype.zzv();
     }
@@ -58,10 +59,12 @@ public class zzsh<MessageType extends zzsn<MessageType, BuilderType>, BuilderTyp
     @Override // com.google.android.recaptcha.internal.zztr
     /* renamed from: zzj, reason: merged with bridge method [inline-methods] */
     public MessageType zzl() {
-        if (!this.zza.zzL()) {
-            return (MessageType) this.zza;
+        boolean zzL = this.zza.zzL();
+        MessageType messagetype = (MessageType) this.zza;
+        if (!zzL) {
+            return messagetype;
         }
-        this.zza.zzG();
+        messagetype.zzG();
         return (MessageType) this.zza;
     }
 

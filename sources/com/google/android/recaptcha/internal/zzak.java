@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzak extends zzat {
     private final zzyt zza;
 
-    public zzak(int i7, zzyt zzytVar) {
-        super(i7, null);
+    public zzak(int i, zzyt zzytVar) {
+        super(i, null);
         this.zza = zzytVar;
     }
 

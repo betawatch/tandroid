@@ -1,79 +1,34 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import j$.util.function.IntConsumer$-CC;
-import java.util.function.Consumer;
-import java.util.function.IntBinaryOperator;
-import java.util.function.IntConsumer;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public final class i4 implements o4, h5 {
-    public int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ IntBinaryOperator c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class i4 extends w3 {
+    public final /* synthetic */ BinaryOperator h;
+    public final /* synthetic */ BiConsumer i;
+    public final /* synthetic */ Supplier j;
+    public final /* synthetic */ Collector k;
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    public i4(c7 c7Var, BinaryOperator binaryOperator, BiConsumer biConsumer, Supplier supplier, Collector collector) {
+        this.h = binaryOperator;
+        this.i = biConsumer;
+        this.j = supplier;
+        this.k = collector;
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.w3
+    public final r4 Y() {
+        return new j4(this.j, this.i, this.h);
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        p((Integer) obj);
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-    }
-
-    @Override // j$.util.stream.h5
-    public final /* synthetic */ void p(Integer num) {
-        t3.F(this, num);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    public i4(int i7, IntBinaryOperator intBinaryOperator) {
-        this.b = i7;
-        this.c = intBinaryOperator;
-    }
-
-    @Override // j$.util.stream.o4
-    public final void u(o4 o4Var) {
-        accept(((i4) o4Var).a);
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i7) {
-        this.a = this.c.applyAsInt(this.a, i7);
-    }
-
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        return Integer.valueOf(this.a);
+    @Override // j$.util.stream.w3, j$.util.stream.h8
+    public final int c() {
+        if (this.k.characteristics().contains(g.UNORDERED)) {
+            return b7.r;
+        }
+        return 0;
     }
 }

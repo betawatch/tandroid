@@ -3,67 +3,68 @@ package j$.time.format;
 import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class h implements f {
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
-        Long a10 = rVar.a(j$.time.temporal.a.INSTANT_SECONDS);
+    public final boolean j(r rVar, StringBuilder sb) {
+        Long a = rVar.a(j$.time.temporal.a.INSTANT_SECONDS);
         j$.time.temporal.l lVar = rVar.a;
         j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
         Long valueOf = lVar.e(aVar) ? Long.valueOf(lVar.y(aVar)) : null;
-        int i7 = 0;
-        if (a10 == null) {
+        int i = 0;
+        if (a == null) {
             return false;
         }
-        long longValue = a10.longValue();
-        int a11 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
+        long longValue = a.longValue();
+        int a2 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
         if (longValue >= -62167219200L) {
-            long j3 = longValue - 253402300800L;
-            long R = j$.com.android.tools.r8.a.R(j3, 315569520000L) + 1;
-            LocalDateTime K = LocalDateTime.K(j$.com.android.tools.r8.a.Q(j3, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
-            if (R > 0) {
-                sb2.append('+');
-                sb2.append(R);
+            long j = longValue - 253402300800L;
+            long Q = j$.time.a.Q(j, 315569520000L) + 1;
+            LocalDateTime x = LocalDateTime.x(j$.time.a.P(j, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
+            if (Q > 0) {
+                sb.append('+');
+                sb.append(Q);
             }
-            sb2.append(K);
-            if (K.b.c == 0) {
-                sb2.append(":00");
+            sb.append(x);
+            if (x.b.c == 0) {
+                sb.append(":00");
             }
         } else {
-            long j10 = longValue + 62167219200L;
-            long j11 = j10 / 315569520000L;
-            long j12 = j10 % 315569520000L;
-            LocalDateTime K2 = LocalDateTime.K(j12 - 62167219200L, 0, ZoneOffset.UTC);
-            int length = sb2.length();
-            sb2.append(K2);
-            if (K2.b.c == 0) {
-                sb2.append(":00");
+            long j2 = longValue + 62167219200L;
+            long j3 = j2 / 315569520000L;
+            long j4 = j2 % 315569520000L;
+            LocalDateTime x2 = LocalDateTime.x(j4 - 62167219200L, 0, ZoneOffset.UTC);
+            int length = sb.length();
+            sb.append(x2);
+            if (x2.b.c == 0) {
+                sb.append(":00");
             }
-            if (j11 < 0) {
-                if (K2.a.getYear() == -10000) {
-                    sb2.replace(length, length + 2, Long.toString(j11 - 1));
-                } else if (j12 == 0) {
-                    sb2.insert(length, j11);
+            if (j3 < 0) {
+                if (x2.a.getYear() == -10000) {
+                    sb.replace(length, length + 2, Long.toString(j3 - 1));
+                } else if (j4 == 0) {
+                    sb.insert(length, j3);
                 } else {
-                    sb2.insert(length + 1, Math.abs(j11));
+                    sb.insert(length + 1, Math.abs(j3));
                 }
             }
         }
-        if (a11 > 0) {
-            sb2.append('.');
-            int i10 = 100000000;
+        if (a2 > 0) {
+            sb.append('.');
+            int i2 = 100000000;
             while (true) {
-                if (a11 <= 0 && i7 % 3 == 0 && i7 >= -2) {
+                if (a2 <= 0 && i % 3 == 0 && i >= -2) {
                     break;
                 }
-                int i11 = a11 / i10;
-                sb2.append((char) (i11 + 48));
-                a11 -= i11 * i10;
-                i10 /= 10;
-                i7++;
+                int i3 = a2 / i2;
+                sb.append((char) (i3 + 48));
+                a2 -= i3 * i2;
+                i2 /= 10;
+                i++;
             }
         }
-        sb2.append('Z');
+        sb.append('Z');
         return true;
     }
 

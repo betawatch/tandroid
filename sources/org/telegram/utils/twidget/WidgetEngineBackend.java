@@ -11,16 +11,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 final class WidgetEngineBackend {
     private static final int MAX_CACHED_TEXT = 1024;
     private static final int MAX_CACHED_WIDTHS = 8192;
     private static final int PART = 262144;
     private static final int TEXT_PIECE = 65536;
-    private static final LinkedHashMap<String, Float> WIDTHS = new w(0.75f, TLObject.FLAG_12, 0, true);
+    private static final LinkedHashMap<String, Float> WIDTHS = new np4(TLObject.FLAG_12, 0.75f, true, (byte) 3);
     private static volatile boolean localFonts = true;
-    private final d client;
+    private final jj5 client;
     private final float density;
     private long imageBytes;
     private int nextFont;
@@ -28,194 +28,190 @@ final class WidgetEngineBackend {
     private final ConcurrentHashMap<Integer, String> fontKeys = new ConcurrentHashMap<>();
     private final Object largeLock = new Object();
 
-    public WidgetEngineBackend(d dVar, float f10) {
-        this.client = dVar;
-        this.density = f10;
+    public WidgetEngineBackend(jj5 jj5Var, float f) {
+        this.client = jj5Var;
+        this.density = f;
     }
 
-    private static void call(x xVar) {
+    private static void call(kvc kvcVar) {
         try {
-            xVar.run();
-        } catch (RemoteException e10) {
-            throw new IllegalStateException("Widget client: " + e10);
+            kvcVar.run();
+        } catch (RemoteException e) {
+            wn4.i(e, "Widget client: ");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$canvasRead$9(byte[][] bArr, int i7, int i10, int i11, int i12, int i13) {
-        bArr[0] = this.client.A(i7, i10, i11, i12, i13);
+    public /* synthetic */ void lambda$canvasRead$9(byte[][] bArr, int i, int i2, int i3, int i4, int i5) {
+        bArr[0] = this.client.n(i, i2, i3, i4, i5);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$canvasRun$8(int i7, int i10, int i11, int[] iArr) {
-        this.client.t0(i7, i10, i11, iArr);
+    public /* synthetic */ void lambda$canvasRun$8(int i, int i2, int i3, int[] iArr) {
+        this.client.A(i, i2, i3, iArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createFont$0(float[][] fArr, int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2) {
-        fArr[0] = this.client.G(i7, bArr, f10, i10, z10, bArr2);
+    public /* synthetic */ void lambda$createFont$0(float[][] fArr, int i, byte[] bArr, float f, int i2, boolean z, byte[] bArr2) {
+        fArr[0] = this.client.q(i, bArr, f, i2, z, bArr2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadImage$2(int i7, int i10, int i11, byte[] bArr) {
-        this.client.x(i7, i10, i11, bArr);
+    public /* synthetic */ void lambda$loadImage$2(int i, int i2, int i3, byte[] bArr) {
+        this.client.m(i, i2, i3, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$record$7(byte[] bArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, byte[] bArr2) {
-        this.client.F(bArr2, bArr, d, i7, i10, f10, f11, i11, i12);
+    public /* synthetic */ void lambda$record$7(byte[] bArr, double d, int i, int i2, float f, float f2, int i3, int i4, byte[] bArr2) {
+        this.client.p(bArr2, bArr, d, i, i2, f, f2, i3, i4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$recordLayer$6(int i7, int i10, byte[] bArr) {
-        this.client.J0(i7, i10, bArr);
+    public /* synthetic */ void lambda$recordLayer$6(int i, int i2, byte[] bArr) {
+        this.client.F(i, i2, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$remoteWidth$1(float[] fArr, int i7, byte[] bArr) {
-        fArr[0] = this.client.p0(i7, bArr);
+    public /* synthetic */ void lambda$remoteWidth$1(float[] fArr, int i, byte[] bArr) {
+        fArr[0] = this.client.z(i, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$selectableText$5(byte[] bArr) {
-        this.client.h0(bArr);
+        this.client.x(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$send$11(byte[] bArr) {
-        this.client.Q0(bArr);
+        this.client.J(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$signal$3(int i7, byte[] bArr) {
-        this.client.v0(i7, bArr);
+    public /* synthetic */ void lambda$signal$3(int i, byte[] bArr) {
+        this.client.C(i, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$state$4(int i7, float f10) {
-        this.client.R0(i7, f10);
+    public /* synthetic */ void lambda$state$4(int i, float f) {
+        this.client.K(i, f);
     }
 
-    private Paint localFont(byte[] bArr, float f10, int i7, boolean z10, byte[] bArr2) {
+    private Paint localFont(byte[] bArr, float f, int i, boolean z, byte[] bArr2) {
         try {
-            return WidgetSandboxBackend.paints(WidgetSandboxBackend.text(bArr), f10, i7, z10, WidgetSandboxBackend.text(bArr2), this.density)[1];
-        } catch (RuntimeException e10) {
+            return WidgetSandboxBackend.paints(WidgetSandboxBackend.text(bArr), f, i, z, WidgetSandboxBackend.text(bArr2), this.density)[1];
+        } catch (RuntimeException e) {
             localFonts = false;
-            Log.w("WidgetEngine", "no fonts in this process (" + e10.getClass().getSimpleName() + "): widths come from the client");
+            Log.w("WidgetEngine", "no fonts in this process (" + e.getClass().getSimpleName() + "): widths come from the client");
             return null;
         }
     }
 
-    private float remoteWidth(final int i7, final byte[] bArr) {
+    private float remoteWidth(final int i, final byte[] bArr) {
         final float[] fArr = new float[1];
-        call(new x() { // from class: org.telegram.utils.twidget.t
-            @Override // org.telegram.utils.twidget.x
+        call(new kvc() { // from class: org.telegram.utils.twidget.j
+            @Override // kvc
             public final void run() {
-                WidgetEngineBackend.this.lambda$remoteWidth$1(fArr, i7, bArr);
+                WidgetEngineBackend.this.lambda$remoteWidth$1(fArr, i, bArr);
             }
         });
         return fArr[0];
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v0, types: [byte[], java.io.Serializable, java.lang.Object] */
-    private void send(byte[] bArr, y yVar) {
-        if (bArr == 0 || bArr.length <= 262144) {
-            call(new v(0, bArr, yVar));
+    private void send(byte[] bArr, lvc lvcVar) {
+        byte b = 0;
+        if (bArr == null || bArr.length <= 262144) {
+            call(new l(lvcVar, bArr, b));
             return;
         }
         synchronized (this.largeLock) {
-            for (int i7 = 0; i7 < bArr.length; i7 += 262144) {
-                try {
-                    int min = Math.min(262144, bArr.length - i7);
-                    ?? r52 = new byte[min];
-                    System.arraycopy(bArr, i7, r52, 0, min);
-                    call(new v(1, r52, this));
-                } catch (Throwable th2) {
-                    throw th2;
-                }
+            for (int i = 0; i < bArr.length; i += 262144) {
+                int min = Math.min(262144, bArr.length - i);
+                byte[] bArr2 = new byte[min];
+                System.arraycopy(bArr, i, bArr2, 0, min);
+                call(new l(this, bArr2, (byte) 1));
             }
-            call(new q(yVar, 1));
+            call(new g(lvcVar));
         }
     }
 
-    public static void warmFonts(float f10) {
+    public static void warmFonts(float f) {
         try {
             Rect rect = new Rect();
             int[] iArr = {400, 700};
-            int i7 = 0;
-            while (i7 < 2) {
-                float f11 = f10;
-                Paint paint = WidgetSandboxBackend.paints("sans-serif", 14.0f, iArr[i7], false, "", f11)[1];
-                WidgetSandboxBackend.metrics(0, paint, f11, rect);
+            int i = 0;
+            while (i < 2) {
+                float f2 = f;
+                Paint paint = WidgetSandboxBackend.paints("sans-serif", 14.0f, iArr[i], false, "", f2)[1];
+                WidgetSandboxBackend.metrics(0, paint, f2, rect);
                 paint.measureText("Widget 0123");
-                i7++;
-                f10 = f11;
+                i++;
+                f = f2;
             }
         } catch (RuntimeException unused) {
             localFonts = false;
         }
     }
 
-    public byte[] canvasRead(final int i7, final int i10, final int i11, final int i12, final int i13) {
+    public byte[] canvasRead(final int i, final int i2, final int i3, final int i4, final int i5) {
         final byte[][] bArr = new byte[1][];
-        call(new x() { // from class: org.telegram.utils.twidget.o
-            @Override // org.telegram.utils.twidget.x
+        call(new kvc() { // from class: org.telegram.utils.twidget.e
+            @Override // kvc
             public final void run() {
-                WidgetEngineBackend.this.lambda$canvasRead$9(bArr, i7, i10, i11, i12, i13);
+                WidgetEngineBackend.this.lambda$canvasRead$9(bArr, i, i2, i3, i4, i5);
             }
         });
         return bArr[0];
     }
 
-    public void canvasRelease(int i7) {
+    public void canvasRelease(int i) {
         try {
-            this.client.D(i7);
+            this.client.o(i);
         } catch (RemoteException unused) {
         }
     }
 
-    public void canvasRun(int i7, int i10, int i11, int[] iArr) {
-        call(new s(this, i7, i10, i11, iArr, 0));
+    public void canvasRun(int i, int i2, int i3, int[] iArr) {
+        call(new i(this, i, i2, i3, iArr, (byte) 0));
     }
 
-    public float[] createFont(final byte[] bArr, final float f10, final int i7, final boolean z10, final byte[] bArr2) {
-        final int i10 = this.nextFont + 1;
-        this.nextFont = i10;
+    public float[] createFont(final byte[] bArr, final float f, final int i, final boolean z, final byte[] bArr2) {
+        final int i2 = this.nextFont + 1;
+        this.nextFont = i2;
         final float[][] fArr = new float[1][];
-        call(new x() { // from class: org.telegram.utils.twidget.n
-            @Override // org.telegram.utils.twidget.x
+        call(new kvc() { // from class: org.telegram.utils.twidget.d
+            @Override // kvc
             public final void run() {
-                WidgetEngineBackend.this.lambda$createFont$0(fArr, i10, bArr, f10, i7, z10, bArr2);
+                WidgetEngineBackend.this.lambda$createFont$0(fArr, i2, bArr, f, i, z, bArr2);
             }
         });
         float[] fArr2 = fArr[0];
         if (fArr2 == null || fArr2.length != 6) {
-            throw new IllegalStateException("Widget client: font");
+            sc8.j("Widget client: font");
+            return null;
         }
-        Paint localFont = localFonts ? localFont(bArr, f10, i7, z10, bArr2) : null;
+        Paint localFont = localFonts ? localFont(bArr, f, i, z, bArr2) : null;
         if (localFont != null) {
-            this.deviceFonts.put(Integer.valueOf(i10), localFont);
+            this.deviceFonts.put(Integer.valueOf(i2), localFont);
         } else {
-            this.fontKeys.put(Integer.valueOf(i10), WidgetSandboxBackend.text(bArr) + (char) 1 + f10 + (char) 1 + i7 + (char) 1 + z10 + (char) 1 + WidgetSandboxBackend.text(bArr2) + (char) 1);
+            this.fontKeys.put(Integer.valueOf(i2), WidgetSandboxBackend.text(bArr) + (char) 1 + f + (char) 1 + i + (char) 1 + z + (char) 1 + WidgetSandboxBackend.text(bArr2) + (char) 1);
         }
         return fArr[0];
     }
 
-    public void deleteFont(int i7) {
-        this.deviceFonts.remove(Integer.valueOf(i7));
-        this.fontKeys.remove(Integer.valueOf(i7));
+    public void deleteFont(int i) {
+        this.deviceFonts.remove(Integer.valueOf(i));
+        this.fontKeys.remove(Integer.valueOf(i));
         try {
-            this.client.f1(i7);
+            this.client.O(i);
         } catch (RemoteException unused) {
         }
     }
 
     public byte[] formatIntl(byte[] bArr) {
-        return b1.b(WidgetSandboxBackend.text(bArr)).getBytes(StandardCharsets.UTF_8);
+        return i00.d(WidgetSandboxBackend.text(bArr)).getBytes(StandardCharsets.UTF_8);
     }
 
-    public float[] loadImage(final int i7, byte[] bArr) {
+    public float[] loadImage(final int i, byte[] bArr) {
         Bitmap decodeImage = WidgetSandboxBackend.decodeImage(WidgetSandboxBackend.text(bArr), this.imageBytes);
         if (decodeImage == null) {
             return null;
@@ -229,100 +225,97 @@ final class WidgetEngineBackend {
         if (decodeImage == null) {
             return null;
         }
-        ByteBuffer allocate = ByteBuffer.allocate(decodeImage.getHeight() * decodeImage.getWidth() * 4);
+        ByteBuffer allocate = ByteBuffer.allocate((decodeImage.getHeight() * decodeImage.getWidth()) << 2);
         decodeImage.copyPixelsToBuffer(allocate);
         final int width = decodeImage.getWidth();
         final int height = decodeImage.getHeight();
-        send(allocate.array(), new y() { // from class: org.telegram.utils.twidget.m
-            @Override // org.telegram.utils.twidget.y
+        send(allocate.array(), new lvc() { // from class: org.telegram.utils.twidget.c
+            @Override // lvc
             public final void a(byte[] bArr2) {
-                WidgetEngineBackend.this.lambda$loadImage$2(i7, width, height, bArr2);
+                WidgetEngineBackend.this.lambda$loadImage$2(i, width, height, bArr2);
             }
         });
         return new float[]{width, height};
     }
 
-    public void record(byte[] bArr, final byte[] bArr2, final double d, final int i7, final int i10, final float f10, final float f11, final int i11, final int i12) {
-        send(bArr, new y() { // from class: org.telegram.utils.twidget.u
-            @Override // org.telegram.utils.twidget.y
+    public void record(byte[] bArr, final byte[] bArr2, final double d, final int i, final int i2, final float f, final float f2, final int i3, final int i4) {
+        send(bArr, new lvc() { // from class: org.telegram.utils.twidget.k
+            @Override // lvc
             public final void a(byte[] bArr3) {
-                WidgetEngineBackend.this.lambda$record$7(bArr2, d, i7, i10, f10, f11, i11, i12, bArr3);
+                WidgetEngineBackend.this.lambda$record$7(bArr2, d, i, i2, f, f2, i3, i4, bArr3);
             }
         });
     }
 
-    public void recordLayer(final int i7, final int i10, byte[] bArr) {
-        send(bArr, new y() { // from class: org.telegram.utils.twidget.p
-            @Override // org.telegram.utils.twidget.y
+    public void recordLayer(final int i, final int i2, byte[] bArr) {
+        send(bArr, new lvc() { // from class: org.telegram.utils.twidget.f
+            @Override // lvc
             public final void a(byte[] bArr2) {
-                WidgetEngineBackend.this.lambda$recordLayer$6(i7, i10, bArr2);
+                WidgetEngineBackend.this.lambda$recordLayer$6(i, i2, bArr2);
             }
         });
     }
 
     public void selectableText(byte[] bArr) {
-        send(bArr, new q(this, 0));
+        send(bArr, new g(this));
     }
 
-    public void signal(int i7, byte[] bArr) {
-        send(bArr, new q0(this, i7, 2));
+    public void signal(int i, byte[] bArr) {
+        send(bArr, new q(this, i, (byte) 2));
     }
 
-    public void state(final int i7, final float f10) {
-        call(new x() { // from class: org.telegram.utils.twidget.r
-            @Override // org.telegram.utils.twidget.x
+    public void state(final int i, final float f) {
+        call(new kvc() { // from class: org.telegram.utils.twidget.h
+            @Override // kvc
             public final void run() {
-                WidgetEngineBackend.this.lambda$state$4(i7, f10);
+                WidgetEngineBackend.this.lambda$state$4(i, f);
             }
         });
     }
 
-    public float textWidth(int i7, byte[] bArr) {
-        float f10;
-        Paint paint = this.deviceFonts.get(Integer.valueOf(i7));
+    public float textWidth(int i, byte[] bArr) {
+        float f;
+        Paint paint = this.deviceFonts.get(Integer.valueOf(i));
         if (paint != null) {
             return paint.measureText(WidgetSandboxBackend.text(bArr)) / this.density;
         }
-        float f11 = 0.0f;
+        float f2 = 0.0f;
         if (bArr == null || bArr.length == 0) {
             return 0.0f;
         }
         String text = WidgetSandboxBackend.text(bArr);
-        String str = this.fontKeys.get(Integer.valueOf(i7));
+        String str = this.fontKeys.get(Integer.valueOf(i));
         String concat = (str == null || text.length() > 1024) ? null : str.concat(text);
         if (concat != null) {
             LinkedHashMap<String, Float> linkedHashMap = WIDTHS;
             synchronized (linkedHashMap) {
-                try {
-                    Float f12 = linkedHashMap.get(concat);
-                    if (f12 != null) {
-                        return f12.floatValue();
-                    }
-                } finally {
+                Float f3 = linkedHashMap.get(concat);
+                if (f3 != null) {
+                    return f3.floatValue();
                 }
             }
         }
         if (bArr.length <= 262144) {
-            f10 = remoteWidth(i7, bArr);
+            f = remoteWidth(i, bArr);
         } else {
-            int i10 = 0;
-            while (i10 < text.length()) {
-                int min = Math.min(text.length(), 65536 + i10);
+            int i2 = 0;
+            while (i2 < text.length()) {
+                int min = Math.min(text.length(), 65536 + i2);
                 if (min < text.length() && Character.isHighSurrogate(text.charAt(min - 1))) {
                     min--;
                 }
-                f11 += remoteWidth(i7, text.substring(i10, min).getBytes(StandardCharsets.UTF_8));
-                i10 = min;
+                f2 += remoteWidth(i, text.substring(i2, min).getBytes(StandardCharsets.UTF_8));
+                i2 = min;
             }
-            f10 = f11;
+            f = f2;
         }
         if (concat == null) {
-            return f10;
+            return f;
         }
         LinkedHashMap<String, Float> linkedHashMap2 = WIDTHS;
         synchronized (linkedHashMap2) {
-            linkedHashMap2.put(concat, Float.valueOf(f10));
+            linkedHashMap2.put(concat, Float.valueOf(f));
         }
-        return f10;
+        return f;
     }
 }

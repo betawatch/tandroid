@@ -1,43 +1,42 @@
 package org.telegram.messenger.secretmedia;
 
 import android.net.Uri;
-import j2.c;
-import j2.c0;
-import j2.j;
-import j2.m;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.regex.Pattern;
-import org.telegram.messenger.t0;
-import org.telegram.messenger.w7;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class EncryptedFileDataSource extends c {
+public final class EncryptedFileDataSource extends qf0 {
     private int bytesRemaining;
     EncryptedFileInputStream fileInputStream;
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class EncryptedFileDataSourceException extends IOException {
-        public EncryptedFileDataSourceException(Throwable th2) {
-            super(th2);
+        public EncryptedFileDataSourceException(Throwable th) {
+            super(th);
         }
     }
 
-    public EncryptedFileDataSource() {
-        super(false);
+    @Deprecated
+    public EncryptedFileDataSource(vyb vybVar) {
+        this();
+        if (vybVar != null) {
+            addTransferListener(vybVar);
+        }
     }
 
-    @Override // j2.h
+    @Override // o63
     public void close() {
         try {
             this.fileInputStream.close();
-        } catch (IOException e10) {
-            e10.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         if (this.opened) {
             this.opened = false;
@@ -47,69 +46,65 @@ public final class EncryptedFileDataSource extends c {
         this.uri = null;
     }
 
-    @Override // j2.c, j2.h
+    @Override // qf0, o63
     public Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // j2.h
+    @Override // o63
     public Uri getUri() {
         return this.uri;
     }
 
-    @Override // j2.h
-    public long open(m mVar) {
-        this.uri = mVar.a;
-        File file = new File(mVar.a.getPath());
+    @Override // o63
+    public long open(u63 u63Var) {
+        this.uri = u63Var.a;
+        File file = new File(u63Var.a.getPath());
         String name = file.getName();
-        Pattern pattern = w7.J;
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), p5.c.v(name, ".key")));
+        Pattern pattern = ba4.J;
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(a.b.getCacheDir(), tb4.o(name, ".key")));
         this.fileInputStream = encryptedFileInputStream;
-        encryptedFileInputStream.skip(mVar.e);
+        encryptedFileInputStream.skip(u63Var.e);
         int length = (int) file.length();
-        transferInitializing(mVar);
-        long j3 = mVar.e;
-        long j10 = length;
-        if (j3 > j10) {
-            throw new j(2008);
+        transferInitializing(u63Var);
+        long j = u63Var.e;
+        long j2 = length;
+        if (j > j2) {
+            throw new r63(2008);
         }
-        int i7 = (int) (j10 - j3);
-        this.bytesRemaining = i7;
-        long j11 = mVar.f;
-        if (j11 != -1) {
-            this.bytesRemaining = (int) Math.min(i7, j11);
+        int i = (int) (j2 - j);
+        this.bytesRemaining = i;
+        long j3 = u63Var.f;
+        if (j3 != -1) {
+            this.bytesRemaining = (int) Math.min(i, j3);
         }
         this.opened = true;
-        transferStarted(mVar);
-        long j12 = mVar.f;
-        return j12 != -1 ? j12 : this.bytesRemaining;
+        transferStarted(u63Var);
+        long j4 = u63Var.f;
+        return j4 != -1 ? j4 : this.bytesRemaining;
     }
 
-    @Override // e2.n
-    public int read(byte[] bArr, int i7, int i10) {
-        if (i10 == 0) {
+    @Override // g63
+    public int read(byte[] bArr, int i, int i2) {
+        if (i2 == 0) {
             return 0;
         }
-        int i11 = this.bytesRemaining;
-        if (i11 == 0) {
+        int i3 = this.bytesRemaining;
+        if (i3 == 0) {
             return -1;
         }
-        int min = Math.min(i10, i11);
+        int min = Math.min(i2, i3);
         try {
-            this.fileInputStream.read(bArr, i7, min);
-        } catch (IOException e10) {
-            e10.printStackTrace();
+            this.fileInputStream.read(bArr, i, min);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         this.bytesRemaining -= min;
         bytesTransferred(min);
         return min;
     }
 
-    @Deprecated
-    public EncryptedFileDataSource(c0 c0Var) {
-        this();
-        if (c0Var != null) {
-            addTransferListener(c0Var);
-        }
+    public EncryptedFileDataSource() {
+        super(false);
     }
 }

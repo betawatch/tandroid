@@ -1,6 +1,7 @@
 package j$.util.concurrent;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class g extends k {
     public final k[] e;
 
@@ -10,31 +11,30 @@ public final class g extends k {
     }
 
     @Override // j$.util.concurrent.k
-    public final k a(int i7, Object obj) {
-        k k10;
+    public final k a(int i, Object obj) {
+        int length;
+        k k;
         Object obj2;
-        k[] kVarArr = this.e;
         loop0: while (true) {
-            int length = kVarArr.length;
-            if (length == 0 || (k10 = ConcurrentHashMap.k(kVarArr, (length - 1) & i7)) == null) {
+            k[] kVarArr = this.e;
+            if (kVarArr == null || (length = kVarArr.length) == 0 || (k = ConcurrentHashMap.k(kVarArr, (length - 1) & i)) == null) {
                 return null;
             }
             do {
-                int i10 = k10.a;
-                if (i10 != i7 || ((obj2 = k10.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
-                    if (i10 < 0) {
-                        if (k10 instanceof g) {
-                            kVarArr = ((g) k10).e;
-                        } else {
-                            return k10.a(i7, obj);
-                        }
+                int i2 = k.a;
+                if (i2 != i || ((obj2 = k.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
+                    if (i2 >= 0) {
+                        k = k.d;
                     } else {
-                        k10 = k10.d;
+                        if (!(k instanceof g)) {
+                            return k.a(i, obj);
+                        }
+                        this = (g) k;
                     }
                 }
-            } while (k10 != null);
+            } while (k != null);
             return null;
         }
-        return k10;
+        return k;
     }
 }

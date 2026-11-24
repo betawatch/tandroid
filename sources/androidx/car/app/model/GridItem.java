@@ -2,21 +2,27 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class GridItem implements q {
+public final class GridItem implements pr5 {
     public static final int IMAGE_TYPE_ICON = 1;
     public static final int IMAGE_TYPE_LARGE = 2;
     private final Badge mBadge;
     private final CarIcon mImage;
     private final int mImageType;
     private final boolean mIsLoading;
-    private final b0 mOnClickDelegate;
+    private final yo7 mOnClickDelegate;
     private final CarText mText;
     private final CarText mTitle;
 
-    public GridItem(k kVar) {
-        throw null;
+    private GridItem() {
+        this.mIsLoading = false;
+        this.mTitle = null;
+        this.mText = null;
+        this.mImage = null;
+        this.mImageType = 2;
+        this.mOnClickDelegate = null;
+        this.mBadge = null;
     }
 
     public boolean equals(Object obj) {
@@ -47,7 +53,7 @@ public final class GridItem implements q {
         return this.mImageType;
     }
 
-    public b0 getOnClickDelegate() {
+    public yo7 getOnClickDelegate() {
         return this.mOnClickDelegate;
     }
 
@@ -71,13 +77,7 @@ public final class GridItem implements q {
         return "[title: " + CarText.toShortString(this.mTitle) + ", text: " + CarText.toShortString(this.mText) + ", image: " + this.mImage + ", isLoading: " + this.mIsLoading + ", badge: " + this.mBadge + "]";
     }
 
-    private GridItem() {
-        this.mIsLoading = false;
-        this.mTitle = null;
-        this.mText = null;
-        this.mImage = null;
-        this.mImageType = 2;
-        this.mOnClickDelegate = null;
-        this.mBadge = null;
+    public GridItem(p35 p35Var) {
+        throw null;
     }
 }

@@ -1,66 +1,40 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
-import java.util.function.LongFunction;
-import java.util.function.LongPredicate;
-import java.util.function.LongToDoubleFunction;
-import java.util.function.LongToIntFunction;
-import java.util.function.LongUnaryOperator;
+import j$.util.Spliterator;
+import java.util.Iterator;
 
-/* loaded from: classes2.dex */
-public final class b1 extends e5 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ a c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b1(a aVar, j5 j5Var, int i7) {
-        super(j5Var);
-        this.b = i7;
-        this.c = aVar;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class b1 extends c1 {
+    @Override // j$.util.stream.a
+    public final boolean L() {
+        return false;
     }
 
-    @Override // j$.util.stream.e5, j$.util.stream.j5
-    public void o(long j3) {
-        switch (this.b) {
-            case 4:
-                this.a.o(-1L);
-                break;
-            default:
-                super.o(j3);
-                break;
-        }
+    @Override // j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ Iterator iterator() {
+        return iterator();
     }
 
-    @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
-        switch (this.b) {
-            case 0:
-                this.a.accept((j5) ((LongFunction) ((q) this.c).t).apply(j3));
-                return;
-            case 1:
-                ((t) this.c).getClass();
-                LongUnaryOperator longUnaryOperator = null;
-                longUnaryOperator.applyAsLong(j3);
-                throw null;
-            case 2:
-                ((s) this.c).getClass();
-                LongToIntFunction longToIntFunction = null;
-                longToIntFunction.applyAsInt(j3);
-                throw null;
-            case 3:
-                ((r) this.c).getClass();
-                LongToDoubleFunction longToDoubleFunction = null;
-                longToDoubleFunction.applyAsDouble(j3);
-                throw null;
-            case 4:
-                ((t) this.c).getClass();
-                LongPredicate longPredicate = null;
-                longPredicate.test(j3);
-                throw null;
-            default:
-                ((LongConsumer) ((e1) this.c).t).accept(j3);
-                this.a.accept(j3);
-                return;
-        }
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final IntStream parallel() {
+        this.a.k = true;
+        return this;
+    }
+
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final IntStream sequential() {
+        this.a.k = false;
+        return this;
+    }
+
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
+        return spliterator();
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        return !b7.ORDERED.n(this.f) ? this : new v(this, b7.r, (byte) 1);
     }
 }

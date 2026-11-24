@@ -1,65 +1,60 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
-import c8.z;
-import gd.c;
-import jd.a;
 import org.telegram.tgnet.TLObject;
-import zd.b0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzif {
-    private final c zza;
+    private final d06 zza;
 
     public zzif() {
-        int i7 = zzby.zza;
-        this.zza = h.b(zzie.zza);
+        int i = zzby.zza;
+        this.zza = cne.b(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
         return (zzhm) zzifVar.zza.getValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x002f  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, id.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, fw2 fw2Var) {
         zzic zzicVar;
-        int i7;
-        if (cVar instanceof zzic) {
-            zzicVar = (zzic) cVar;
-            int i10 = zzicVar.zzc;
-            if ((i10 & TLObject.FLAG_31) != 0) {
-                zzicVar.zzc = i10 - TLObject.FLAG_31;
+        int i;
+        if (fw2Var instanceof zzic) {
+            zzicVar = (zzic) fw2Var;
+            int i2 = zzicVar.zzc;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzicVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzicVar.zza;
-                a aVar = a.a;
-                i7 = zzicVar.zzc;
-                if (i7 == 0) {
-                    if (i7 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                i = zzicVar.zzc;
+                if (i == 0) {
+                    if (i == 1) {
+                        qse.b(obj);
+                        return obj;
                     }
-                    z.b(obj);
-                    return obj;
+                    sc8.j("call to 'resume' before 'invoke' with coroutine");
+                    return null;
                 }
-                z.b(obj);
+                qse.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
-                Object e10 = b0.e(zzidVar, zzicVar);
-                return e10 == aVar ? aVar : e10;
+                Object b = h9e.b(zzidVar, zzicVar);
+                bx2 bx2Var = bx2.a;
+                return b == bx2Var ? bx2Var : b;
             }
         }
-        zzicVar = new zzic(zzifVar, cVar);
+        zzicVar = new zzic(zzifVar, fw2Var);
         Object obj2 = zzicVar.zza;
-        a aVar2 = a.a;
-        i7 = zzicVar.zzc;
-        if (i7 == 0) {
+        i = zzicVar.zzc;
+        if (i == 0) {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, id.c cVar) {
-        return zzc(this, zzcyVar, zzyeVar, cVar);
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, fw2 fw2Var) {
+        return zzc(this, zzcyVar, zzyeVar, fw2Var);
     }
 }

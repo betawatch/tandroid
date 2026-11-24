@@ -1,85 +1,28 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.concurrent.ConcurrentHashMap;
-import j$.util.function.Consumer$-CC;
-import java.util.Comparator;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public final class e7 implements Spliterator, Consumer {
-    public static final Object d = new Object();
-    public final Spliterator a;
-    public final ConcurrentHashMap b;
-    public Object c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class e7 extends h7 implements DoubleConsumer {
+    public final double[] c = new double[128];
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.m(this);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return j$.com.android.tools.r8.a.o(this, i7);
-    }
-
-    public e7(Spliterator spliterator, ConcurrentHashMap concurrentHashMap) {
-        this.a = spliterator;
-        this.b = concurrentHashMap;
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        this.c = obj;
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        while (this.a.tryAdvance(this)) {
-            Object obj = this.c;
-            if (obj == null) {
-                obj = d;
-            }
-            if (this.b.putIfAbsent(obj, Boolean.TRUE) == null) {
-                consumer.x(this.c);
-                this.c = null;
-                return true;
-            }
+    @Override // j$.util.stream.h7
+    public final void a(Object obj, long j) {
+        DoubleConsumer doubleConsumer = (DoubleConsumer) obj;
+        for (int i = 0; i < j; i++) {
+            doubleConsumer.accept(this.c[i]);
         }
-        return false;
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(new j$.util.concurrent.s(8, this, consumer));
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        int i = this.b;
+        this.b = i + 1;
+        this.c[i] = d;
     }
 
-    @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        Spliterator trySplit = this.a.trySplit();
-        if (trySplit != null) {
-            return new e7(trySplit, this.b);
-        }
-        return null;
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.a.estimateSize();
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return (this.a.characteristics() & (-16469)) | 1;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        return this.a.getComparator();
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
     }
 }

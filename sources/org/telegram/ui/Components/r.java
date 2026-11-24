@@ -1,84 +1,313 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final class r implements TextWatcher {
-    public final /* synthetic */ ImageView a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ TextView f;
-    public final /* synthetic */ ScrollView h;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class r extends FrameLayout {
+    public float a;
+    public float b;
+    public boolean c;
+    public final /* synthetic */ ThemeEditorView d;
 
-    public r(ImageView imageView, int i7, int i10, LinearLayout linearLayout, ArrayList arrayList, TextView textView, ScrollView scrollView) {
-        this.a = imageView;
-        this.b = i7;
-        this.c = i10;
-        this.d = linearLayout;
-        this.e = arrayList;
-        this.f = textView;
-        this.h = scrollView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(ThemeEditorView themeEditorView, Activity activity) {
+        super(activity);
+        this.d = themeEditorView;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        LinearLayout linearLayout;
-        int i7;
-        String str;
-        String lowerCase = editable.toString().trim().toLowerCase();
-        boolean isEmpty = lowerCase.isEmpty();
-        int i10 = 8;
-        this.a.setVisibility(editable.length() > 0 ? 0 : 8);
-        int i11 = this.b;
-        while (true) {
-            linearLayout = this.d;
-            i7 = this.c;
-            if (i11 >= i7) {
-                break;
-            }
-            linearLayout.getChildAt(i11).setVisibility(!isEmpty ? 8 : 0);
-            i11++;
-        }
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i12 >= arrayList.size() || i7 + i12 >= linearLayout.getChildCount()) {
-                break;
-            }
-            org.telegram.messenger.r00 r00Var = (org.telegram.messenger.r00) arrayList.get(i12);
-            String str2 = r00Var.d;
-            if (str2 == null) {
-                str2 = (r00Var.b + " " + r00Var.c).toLowerCase();
-            }
-            boolean z10 = isEmpty || str2.contains(lowerCase) || ((str = r00Var.a) != null && str.toLowerCase().startsWith(lowerCase));
-            linearLayout.getChildAt(i7 + i12).setVisibility(z10 ? 0 : 8);
-            if (z10) {
-                i13++;
-            }
-            i12++;
-        }
-        if (!isEmpty && i13 == 0) {
-            i10 = 0;
-        }
-        this.f.setVisibility(i10);
-        this.h.scrollTo(0, 0);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    /* JADX WARN: Code restructure failed: missing block: B:118:0x0088, code lost:
+    
+        if (r14.getFragmentStack().isEmpty() != false) goto L32;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0216  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0221  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x01fa  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x034b  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x03b5  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x03f2 A[ORIG_RETURN, RETURN] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ui5 ui5Var;
+        ArrayList<blb> arrayList;
+        ArrayList arrayList2;
+        boolean z;
+        boolean z2;
+        int i;
+        float f;
+        int i2;
+        ThemeEditorView themeEditorView = this.d;
+        int i3 = themeEditorView.g;
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        Property property = View.ALPHA;
+        Object[] objArr = 0;
+        if (action == 0) {
+            this.a = rawX;
+            this.b = rawY;
+        } else if (motionEvent.getAction() != 2 || this.c) {
+            if (motionEvent.getAction() == 1 && !this.c && themeEditorView.n == null) {
+                LaunchActivity launchActivity = (LaunchActivity) themeEditorView.d;
+                if (gl.O1()) {
+                    ui5Var = launchActivity.q0;
+                    if (ui5Var != null && ui5Var.getFragmentStack().isEmpty()) {
+                        ui5Var = null;
+                    }
+                    if (ui5Var == null) {
+                        ui5Var = launchActivity.r0;
+                        if (ui5Var != null) {
+                        }
+                    }
+                    if (ui5Var == null) {
+                        ui5Var = launchActivity.N();
+                    }
+                    if (ui5Var != null) {
+                        org.telegram.ui.ActionBar.d dVar = !ui5Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.d) ui5Var.getFragmentStack().get(ui5Var.getFragmentStack().size() - 1) : null;
+                        if (dVar != null) {
+                            ArrayList arrayList3 = new ArrayList();
+                            HashSet hashSet = new HashSet();
+                            try {
+                                arrayList = dVar.getThemeDescriptions();
+                            } catch (Exception e) {
+                                fa4.g(e, true);
+                                arrayList = null;
+                            }
+                            if (arrayList != null) {
+                                for (int i4 = 0; i4 < arrayList.size(); i4++) {
+                                    blb blbVar = arrayList.get(i4);
+                                    if (blbVar != null) {
+                                        arrayList3.add(blbVar);
+                                        hashSet.add(Integer.valueOf(blbVar.e));
+                                    }
+                                }
+                            }
+                            HashSet<Integer> r = zkb.r();
+                            try {
+                                dVar.addThemeColorKeys(r);
+                            } catch (Exception e2) {
+                                fa4.g(e2, true);
+                            }
+                            ArrayList arrayList4 = new ArrayList(r);
+                            Collections.sort(arrayList4, new pva((byte) 5));
+                            for (int i5 = 0; i5 < arrayList4.size(); i5++) {
+                                Integer num = (Integer) arrayList4.get(i5);
+                                int intValue = num.intValue();
+                                if (intValue >= 0 && intValue < bkb.e5 && hashSet.add(num)) {
+                                    arrayList3.add(new blb((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, intValue));
+                                }
+                            }
+                            if (!arrayList3.isEmpty()) {
+                                ThemeEditorView.EditorAlert editorAlert = themeEditorView.new EditorAlert(themeEditorView.d, arrayList3);
+                                themeEditorView.n = editorAlert;
+                                editorAlert.setOnDismissListener(new g5((byte) 6));
+                                themeEditorView.n.setOnDismissListener(new ph8(this, (byte) 12));
+                                themeEditorView.n.show();
+                                if (themeEditorView.d != null) {
+                                    try {
+                                        AnimatorSet animatorSet = new AnimatorSet();
+                                        animatorSet.playTogether(ObjectAnimator.ofFloat(themeEditorView.c, (Property<r, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(themeEditorView.c, (Property<r, Float>) View.SCALE_X, 1.0f, 0.0f), ObjectAnimator.ofFloat(themeEditorView.c, (Property<r, Float>) View.SCALE_Y, 1.0f, 0.0f));
+                                        animatorSet.setInterpolator(themeEditorView.k);
+                                        animatorSet.setDuration(150L);
+                                        animatorSet.addListener(new clb(themeEditorView, objArr == true ? 1 : 0));
+                                        animatorSet.start();
+                                    } catch (Exception unused) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                ui5Var = null;
+                if (ui5Var == null) {
+                }
+                if (ui5Var != null) {
+                }
+            }
+        } else if (Math.abs(this.a - rawX) >= gl.Z0(true, 0.3f) || Math.abs(this.b - rawY) >= gl.Z0(false, 0.3f)) {
+            this.c = true;
+            this.a = rawX;
+            this.b = rawY;
+        }
+        if (this.c) {
+            float f2 = 1.0f;
+            if (motionEvent.getAction() == 2) {
+                float f3 = rawX - this.a;
+                float f4 = rawY - this.b;
+                WindowManager.LayoutParams layoutParams = themeEditorView.i;
+                int i6 = (int) (layoutParams.x + f3);
+                layoutParams.x = i6;
+                layoutParams.y = (int) (layoutParams.y + f4);
+                int i7 = i3 / 2;
+                int i8 = -i7;
+                if (i6 < i8) {
+                    layoutParams.x = i8;
+                } else {
+                    i8 = (gl.q.x - layoutParams.width) + i7;
+                    if (i6 > i8) {
+                        layoutParams.x = i8;
+                    }
+                    if (i6 >= 0) {
+                        f2 = b00.A(i6, i7, 0.5f, 1.0f);
+                    } else {
+                        if (i6 > gl.q.x - layoutParams.width) {
+                            f2 = de9.x((i6 - r9) + r8, i7, 0.5f, 1.0f);
+                        }
+                    }
+                    if (themeEditorView.c.getAlpha() != f2) {
+                        themeEditorView.c.setAlpha(f2);
+                    }
+                    WindowManager.LayoutParams layoutParams2 = themeEditorView.i;
+                    i2 = layoutParams2.y;
+                    if (i2 >= 0) {
+                        layoutParams2.y = 0;
+                    } else {
+                        int i9 = gl.q.y - layoutParams2.height;
+                        if (i2 > i9) {
+                            layoutParams2.y = i9;
+                        }
+                    }
+                    themeEditorView.j.updateViewLayout(themeEditorView.c, layoutParams2);
+                    this.a = rawX;
+                    this.b = rawY;
+                }
+                i6 = i8;
+                if (i6 >= 0) {
+                }
+                if (themeEditorView.c.getAlpha() != f2) {
+                }
+                WindowManager.LayoutParams layoutParams22 = themeEditorView.i;
+                i2 = layoutParams22.y;
+                if (i2 >= 0) {
+                }
+                themeEditorView.j.updateViewLayout(themeEditorView.c, layoutParams22);
+                this.a = rawX;
+                this.b = rawY;
+            } else if (motionEvent.getAction() == 1) {
+                this.c = false;
+                int b = ThemeEditorView.b(0.0f, 0, i3, true);
+                int b2 = ThemeEditorView.b(0.0f, 1, i3, true);
+                int i10 = themeEditorView.h;
+                int b3 = ThemeEditorView.b(0.0f, 0, i10, false);
+                int b4 = ThemeEditorView.b(0.0f, 1, i10, false);
+                SharedPreferences.Editor edit = themeEditorView.l.edit();
+                int L = gl.L(20.0f);
+                if (Math.abs(b - themeEditorView.i.x) <= L || ((i = themeEditorView.i.x) < 0 && i > (-i3) / 4)) {
+                    ArrayList arrayList5 = new ArrayList();
+                    edit.putInt("sidex", 0);
+                    if (themeEditorView.c.getAlpha() != 1.0f) {
+                        arrayList5.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<r, Float>) property, 1.0f));
+                    }
+                    arrayList5.add(ObjectAnimator.ofInt(themeEditorView, "x", b));
+                    arrayList2 = arrayList5;
+                } else {
+                    if (Math.abs(b2 - i) > L) {
+                        int i11 = themeEditorView.i.x;
+                        Point point = gl.q;
+                        f = 1.0f;
+                        int i12 = point.x;
+                        if (i11 <= i12 - i3 || i11 >= i12 - ((i3 / 4) * 3)) {
+                            if (themeEditorView.c.getAlpha() != 1.0f) {
+                                arrayList2 = new ArrayList();
+                                if (themeEditorView.i.x < 0) {
+                                    arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", -i3));
+                                } else {
+                                    arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", point.x));
+                                }
+                                z = true;
+                            } else {
+                                edit.putFloat("px", (themeEditorView.i.x - b) / (b2 - b));
+                                edit.putInt("sidex", 2);
+                                z = false;
+                                arrayList2 = null;
+                            }
+                            if (!z) {
+                                if (Math.abs(b3 - themeEditorView.i.y) <= L || themeEditorView.i.y <= org.telegram.ui.ActionBar.a.getCurrentActionBarHeight()) {
+                                    if (arrayList2 == null) {
+                                        arrayList2 = new ArrayList();
+                                    }
+                                    edit.putInt("sidey", 0);
+                                    arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", b3));
+                                } else if (Math.abs(b4 - themeEditorView.i.y) <= L) {
+                                    if (arrayList2 == null) {
+                                        arrayList2 = new ArrayList();
+                                    }
+                                    edit.putInt("sidey", 1);
+                                    arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", b4));
+                                } else {
+                                    edit.putFloat("py", (themeEditorView.i.y - b3) / (b4 - b3));
+                                    edit.putInt("sidey", 2);
+                                }
+                                edit.commit();
+                            }
+                            if (arrayList2 != null) {
+                                return true;
+                            }
+                            if (themeEditorView.k == null) {
+                                themeEditorView.k = new DecelerateInterpolator();
+                            }
+                            AnimatorSet animatorSet2 = new AnimatorSet();
+                            animatorSet2.setInterpolator(themeEditorView.k);
+                            animatorSet2.setDuration(150L);
+                            if (z) {
+                                z2 = true;
+                                arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<r, Float>) property, 0.0f));
+                                animatorSet2.addListener(new clb(themeEditorView, 1 == true ? 1 : 0));
+                            } else {
+                                z2 = true;
+                            }
+                            animatorSet2.playTogether(arrayList2);
+                            animatorSet2.start();
+                            return z2;
+                        }
+                    } else {
+                        f = 1.0f;
+                    }
+                    arrayList2 = new ArrayList();
+                    edit.putInt("sidex", 1);
+                    if (themeEditorView.c.getAlpha() != f) {
+                        arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<r, Float>) property, f));
+                    }
+                    arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", b2));
+                }
+                z = false;
+                if (!z) {
+                }
+                if (arrayList2 != null) {
+                }
+            }
+        }
+        return true;
     }
 }

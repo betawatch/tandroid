@@ -2,81 +2,84 @@ package com.google.android.recaptcha.internal;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzpr {
-    public static int zza(int i7, int i10, RoundingMode roundingMode) {
+    public static int zza(int i, int i2, RoundingMode roundingMode) {
         roundingMode.getClass();
-        if (i10 == 0) {
+        if (i2 == 0) {
             throw new ArithmeticException("/ by zero");
         }
-        int i11 = i7 / i10;
-        int i12 = i7 - (i10 * i11);
-        if (i12 == 0) {
-            return i11;
+        int i3 = i / i2;
+        int i4 = i - (i2 * i3);
+        if (i4 == 0) {
+            return i3;
         }
-        int i13 = ((i7 ^ i10) >> 31) | 1;
+        int i5 = ((i ^ i2) >> 31) | 1;
         switch (zzpq.zza[roundingMode.ordinal()]) {
             case 1:
                 zzpt.zzb(false);
-                return i11;
+                return i3;
             case 2:
-                return i11;
+                return i3;
             case 3:
-                if (i13 >= 0) {
-                    return i11;
+                if (i5 >= 0) {
+                    return i3;
                 }
                 break;
             case 4:
                 break;
             case 5:
-                if (i13 <= 0) {
-                    return i11;
+                if (i5 <= 0) {
+                    return i3;
                 }
                 break;
             case 6:
             case 7:
             case 8:
-                int abs = Math.abs(i12);
-                int abs2 = abs - (Math.abs(i10) - abs);
+                int abs = Math.abs(i4);
+                int abs2 = abs - (Math.abs(i2) - abs);
                 if (abs2 == 0) {
                     if (roundingMode != RoundingMode.HALF_UP) {
-                        if ((i11 & 1 & (roundingMode != RoundingMode.HALF_EVEN ? 0 : 1)) == 0) {
-                            return i11;
+                        if (((roundingMode != RoundingMode.HALF_EVEN ? 0 : 1) & i3 & 1) == 0) {
+                            return i3;
                         }
                     }
                 } else if (abs2 <= 0) {
-                    return i11;
+                    return i3;
                 }
                 break;
             default:
-                throw new AssertionError();
+                wn4.f();
+                return 0;
         }
-        return i11 + i13;
+        return i3 + i5;
     }
 
-    public static int zzb(int i7, RoundingMode roundingMode) {
-        if (i7 <= 0) {
-            throw new IllegalArgumentException("x (0) must be > 0");
+    public static int zzb(int i, RoundingMode roundingMode) {
+        if (i <= 0) {
+            w26.j("x (0) must be > 0");
+            return 0;
         }
         switch (zzpq.zza[roundingMode.ordinal()]) {
             case 1:
-                zzpt.zzb(((i7 + (-1)) & i7) == 0);
+                zzpt.zzb(((i + (-1)) & i) == 0);
                 break;
             case 2:
             case 3:
                 break;
             case 4:
             case 5:
-                return 32 - Integer.numberOfLeadingZeros(i7 - 1);
+                return 32 - Integer.numberOfLeadingZeros(i - 1);
             case 6:
             case 7:
             case 8:
-                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i7);
-                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i7) >>> 31);
+                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i);
+                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i) >>> 31);
             default:
-                throw new AssertionError();
+                wn4.f();
+                return 0;
         }
-        return 31 - Integer.numberOfLeadingZeros(i7);
+        return 31 - Integer.numberOfLeadingZeros(i);
     }
 }

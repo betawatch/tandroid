@@ -1,119 +1,152 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class t implements org.telegram.messenger.p10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class t extends FrameLayout {
+    public boolean a;
+    public final RectF b;
+    public Boolean c;
+    public final /* synthetic */ ThemeEditorView.EditorAlert d;
 
-    public /* synthetic */ t(Object obj, int i7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context);
+        this.d = editorAlert;
+        this.a = false;
+        this.b = new RectF();
     }
 
-    @Override // org.telegram.messenger.p10
-    public final void a(Object obj, Object obj2) {
-        String str;
-        int i7 = this.a;
-        int i10 = this.b;
-        Object obj3 = this.c;
-        switch (i7) {
-            case 0:
-                v vVar = (v) obj3;
-                TL_aicompose.aiComposeToneExample aicomposetoneexample = (TL_aicompose.aiComposeToneExample) obj;
-                if (aicomposetoneexample != null) {
-                    vVar.e2[i10] = aicomposetoneexample;
-                    vVar.c2.O(true);
-                    break;
-                } else {
-                    vVar.getClass();
-                    break;
-                }
-            default:
-                ArrayList arrayList = (ArrayList) obj;
-                b51 b51Var = (b51) obj2;
-                org.telegram.ui.Wallet.o6 o6Var = (org.telegram.ui.Wallet.o6) ((di.i4) obj3).c;
-                if (i10 == 0) {
-                    b51Var.V();
-                    org.telegram.ui.Wallet.u0 u0Var = o6Var.G0;
-                    boolean z10 = (u0Var == null || u0Var.c.isEmpty()) ? false : true;
-                    if (z10) {
-                        for (int i11 = 0; i11 < o6Var.G0.c.size(); i11++) {
-                            arrayList.add(org.telegram.ui.Wallet.e4.i((TL_wallet.walletTransaction) o6Var.G0.c.get(i11), o6Var.G0.a));
-                        }
-                    }
-                    org.telegram.ui.Wallet.u0 u0Var2 = o6Var.G0;
-                    if (u0Var2 != null && (u0Var2.k || !u0Var2.h)) {
-                        arrayList.add(n41.q(-1, 37));
-                        arrayList.add(n41.q(-2, 37));
-                        arrayList.add(n41.q(-3, 37));
-                    }
-                    b51Var.U();
-                    if (z10) {
-                        long j3 = ((org.telegram.messenger.l0) o6Var.getMessagesController().A7.r0.b).c;
-                        if (j3 > 0) {
-                            arrayList.add(n41.C(org.telegram.messenger.gd.V(null, null, 2131742846, org.telegram.ui.Wallet.v0.x(j3, false))));
-                            break;
-                        }
-                    }
-                } else {
-                    org.telegram.ui.Wallet.m0 m0Var = o6Var.H0;
-                    if (m0Var != null) {
-                        ArrayList arrayList2 = m0Var.a;
-                        int size = arrayList2.size();
-                        int i12 = 0;
-                        while (i12 < size) {
-                            Object obj4 = arrayList2.get(i12);
-                            i12++;
-                            TL_wallet.nftItem nftitem = (TL_wallet.nftItem) obj4;
-                            if (o6Var.l0.isEmpty() || ((str = nftitem.name) != null && str.toLowerCase(Locale.ROOT).contains(o6Var.l0))) {
-                                if (nftitem.gift != null) {
-                                    org.telegram.ui.Wallet.s8 s8Var = o6Var.k0;
-                                    int i13 = org.telegram.ui.Wallet.e8.b;
-                                    n41 K = n41.K(org.telegram.ui.Wallet.e8.class);
-                                    K.v = 1;
-                                    K.H = nftitem;
-                                    K.I = s8Var;
-                                    arrayList.add(K);
-                                } else {
-                                    int i14 = org.telegram.ui.Wallet.b.b;
-                                    n41 K2 = n41.K(org.telegram.ui.Wallet.b.class);
-                                    K2.H = nftitem;
-                                    K2.v = 1;
-                                    arrayList.add(K2);
-                                }
-                            }
-                        }
-                        if (arrayList.isEmpty() && !o6Var.l0.isEmpty()) {
-                            org.telegram.ui.Wallet.m0 m0Var2 = o6Var.H0;
-                            if (!m0Var2.i && m0Var2.g) {
-                                arrayList.add(n41.r(org.telegram.messenger.gd.N0(2131747974, null)));
-                            }
-                        }
-                        org.telegram.ui.Wallet.m0 m0Var3 = o6Var.H0;
-                        if (m0Var3.i) {
-                            for (int i15 = 0; i15 < 3; i15++) {
-                                int i16 = org.telegram.ui.Wallet.d.b;
-                                n41 K3 = n41.K(org.telegram.ui.Wallet.d.class);
-                                K3.v = 1;
-                                K3.d = (-1) - i15;
-                                arrayList.add(K3);
-                            }
-                            break;
-                        } else if (m0Var3.m != null) {
-                            arrayList.add(n41.e(-10001, org.telegram.messenger.gd.N0(2131745856, null)));
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i;
+        float f;
+        ThemeEditorView.EditorAlert editorAlert = this.d;
+        Drawable drawable = editorAlert.x1;
+        int L = gl.L(6.0f) + (editorAlert.y1 - editorAlert.t0);
+        int L2 = (editorAlert.y1 - editorAlert.t0) - gl.L(13.0f);
+        int L3 = gl.L(30.0f) + getMeasuredHeight();
+        int i2 = editorAlert.t0;
+        int i3 = L3 + i2;
+        if (editorAlert.W) {
+            i = 0;
+            f = 1.0f;
+        } else {
+            int i4 = gl.m;
+            L2 += i4;
+            L += i4;
+            i3 -= i4;
+            int i5 = i4 << 1;
+            if (L2 + i2 < i5) {
+                int min = Math.min(i4, (i5 - L2) - i2);
+                L2 -= min;
+                i3 += min;
+                f = 1.0f - Math.min(1.0f, (min << 1) / gl.m);
+            } else {
+                f = 1.0f;
+            }
+            int i6 = editorAlert.t0;
+            int i7 = L2 + i6;
+            int i8 = gl.m;
+            i = i7 < i8 ? Math.min(i8, (i8 - L2) - i6) : 0;
         }
+        drawable.setBounds(0, L2, getMeasuredWidth(), i3);
+        drawable.draw(canvas);
+        RectF rectF = this.b;
+        if (f != 1.0f) {
+            bkb.s0.setColor(-1);
+            rectF.set(editorAlert.u0, editorAlert.t0 + L2, getMeasuredWidth() - editorAlert.u0, gl.L(24.0f) + editorAlert.t0 + L2);
+            canvas.drawRoundRect(rectF, gl.L(12.0f) * f, gl.L(12.0f) * f, bkb.s0);
+        }
+        int L4 = gl.L(36.0f);
+        rectF.set((getMeasuredWidth() - L4) / 2, L, (getMeasuredWidth() + L4) / 2, gl.L(4.0f) + L);
+        bkb.s0.setColor(-1973016);
+        bkb.s0.setAlpha((int) (editorAlert.m1.getAlpha() * 255.0f));
+        canvas.drawRoundRect(rectF, gl.L(2.0f), gl.L(2.0f), bkb.s0);
+        if (i > 0) {
+            bkb.s0.setColor(bkb.w0(null, bkb.g5, false));
+            canvas.drawRect(editorAlert.u0, gl.m - i, getMeasuredWidth() - editorAlert.u0, gl.m, bkb.s0);
+        }
+        boolean z = i > gl.m / 2;
+        Boolean bool = this.c;
+        if (bool == null || bool.booleanValue() != z) {
+            int i9 = bkb.g5;
+            int i10 = ThemeEditorView.EditorAlert.G1;
+            boolean z2 = gl.B(bkb.v0(i9, editorAlert.J0)) > 0.721f;
+            boolean z3 = gl.B(bkb.v(bkb.v0(bkb.r8, editorAlert.J0), 855638016)) > 0.721f;
+            this.c = Boolean.valueOf(z);
+            if (!z) {
+                z2 = z3;
+            }
+            gl.o3(editorAlert.getWindow(), z2);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            ThemeEditorView.EditorAlert editorAlert = this.d;
+            if (editorAlert.y1 != 0 && motionEvent.getY() < editorAlert.y1) {
+                editorAlert.dismiss();
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        int i5 = ThemeEditorView.EditorAlert.G1;
+        this.d.G0();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        ThemeEditorView.EditorAlert editorAlert = this.d;
+        u uVar = editorAlert.m1;
+        int i3 = ThemeEditorView.EditorAlert.G1;
+        if (!editorAlert.W) {
+            this.a = true;
+            int i4 = editorAlert.u0;
+            setPadding(i4, gl.m, i4, 0);
+            this.a = false;
+        }
+        int L = (gl.L(8.0f) + (size2 - gl.m)) - Math.min(size, size2 - gl.m);
+        if (uVar.getPaddingTop() != L) {
+            this.a = true;
+            uVar.getPaddingTop();
+            uVar.setPadding(0, L, 0, gl.L(48.0f));
+            if (editorAlert.l1.getVisibility() == 0) {
+                editorAlert.setScrollOffsetY(uVar.getPaddingTop());
+                editorAlert.A1 = 0;
+            }
+            this.a = false;
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.d.J && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

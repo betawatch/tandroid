@@ -4,14 +4,15 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class h extends a implements Iterator, Enumeration {
-    public final /* synthetic */ int k;
+    public final /* synthetic */ byte k;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(k[] kVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap, int i11) {
-        super(kVarArr, i7, i10, concurrentHashMap);
-        this.k = i11;
+    public /* synthetic */ h(k[] kVarArr, int i, int i2, ConcurrentHashMap concurrentHashMap, byte b) {
+        super(kVarArr, i, i2, concurrentHashMap);
+        this.k = b;
     }
 
     @Override // java.util.Iterator

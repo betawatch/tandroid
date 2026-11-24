@@ -1,229 +1,197 @@
 package j$.time;
 
-import j$.time.format.w;
-import j$.time.format.x;
-import j$.time.temporal.ChronoUnit;
-import j$.time.temporal.Temporal;
 import j$.util.Objects;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
-import java.util.Locale;
+import java.io.Externalizable;
+import java.io.InvalidClassException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+import java.io.StreamCorruptedException;
 
-/* loaded from: classes2.dex */
-public final class r implements Temporal, j$.time.temporal.m, Comparable, Serializable {
-    public static final /* synthetic */ int b = 0;
-    private static final long serialVersionUID = -23038383694477807L;
-    public final int a;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class r implements Externalizable {
+    private static final long serialVersionUID = -7683839454370182990L;
+    public byte a;
+    public Object b;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return this.a - ((r) obj).a;
+    public r(byte b, Object obj) {
+        this.a = b;
+        this.b = obj;
     }
 
-    static {
-        j$.time.format.p pVar = new j$.time.format.p();
-        pVar.h(j$.time.temporal.a.YEAR, 4, 10, x.EXCEEDS_PAD);
-        pVar.l(Locale.getDefault(), w.SMART, null);
-    }
-
-    public static r G(int i7) {
-        j$.time.temporal.a.YEAR.w(i7);
-        return new r(i7);
-    }
-
-    @Override // j$.time.temporal.Temporal
-    public final long g(Temporal temporal, j$.time.temporal.q qVar) {
-        r G;
-        if (temporal instanceof r) {
-            G = (r) temporal;
-        } else {
-            Objects.requireNonNull(temporal, "temporal");
-            try {
-                if (!j$.time.chrono.r.c.equals(j$.com.android.tools.r8.a.M(temporal))) {
-                    temporal = LocalDate.I(temporal);
+    public static Object a(byte b, ObjectInput objectInput) {
+        switch (b) {
+            case 1:
+                Duration duration = Duration.c;
+                long readLong = objectInput.readLong();
+                long readInt = objectInput.readInt();
+                return Duration.j(a.N(readLong, a.Q(readInt, 1000000000L)), (int) a.P(readInt, 1000000000L));
+            case 2:
+                Instant instant = Instant.c;
+                return Instant.v(objectInput.readLong(), objectInput.readInt());
+            case 3:
+                LocalDate localDate = LocalDate.d;
+                return LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte());
+            case 4:
+                return j.J(objectInput);
+            case 5:
+                LocalDateTime localDateTime = LocalDateTime.c;
+                LocalDate localDate2 = LocalDate.d;
+                return LocalDateTime.w(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), j.J(objectInput));
+            case 6:
+                LocalDateTime localDateTime2 = LocalDateTime.c;
+                LocalDate localDate3 = LocalDate.d;
+                LocalDateTime w = LocalDateTime.w(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), j.J(objectInput));
+                ZoneOffset J = ZoneOffset.J(objectInput);
+                ZoneId zoneId = (ZoneId) a(objectInput.readByte(), objectInput);
+                Objects.requireNonNull(w, "localDateTime");
+                Objects.requireNonNull(J, "offset");
+                Objects.requireNonNull(zoneId, "zone");
+                if (!(zoneId instanceof ZoneOffset) || J.equals(zoneId)) {
+                    return new ZonedDateTime(w, zoneId, J);
                 }
-                G = G(temporal.j(j$.time.temporal.a.YEAR));
-            } catch (b e10) {
-                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e10);
-            }
+                g.c("ZoneId must match ZoneOffset");
+                return null;
+            case 7:
+                int i = w.d;
+                return ZoneId.q(objectInput.readUTF(), false);
+            case 8:
+                return ZoneOffset.J(objectInput);
+            case 9:
+                int i2 = q.c;
+                return new q(j.J(objectInput), ZoneOffset.J(objectInput));
+            case 10:
+                int i3 = OffsetDateTime.c;
+                LocalDate localDate4 = LocalDate.d;
+                return new OffsetDateTime(LocalDateTime.w(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), j.J(objectInput)), ZoneOffset.J(objectInput));
+            case 11:
+                int i4 = t.b;
+                return t.o(objectInput.readInt());
+            case 12:
+                int i5 = YearMonth.c;
+                return YearMonth.of(objectInput.readInt(), objectInput.readByte());
+            case 13:
+                int i6 = n.c;
+                byte readByte = objectInput.readByte();
+                byte readByte2 = objectInput.readByte();
+                l w2 = l.w(readByte);
+                Objects.requireNonNull(w2, "month");
+                j$.time.temporal.a.DAY_OF_MONTH.o(readByte2);
+                if (readByte2 <= w2.v()) {
+                    return new n(w2.getValue(), readByte2);
+                }
+                throw new c("Illegal value for DayOfMonth field, value " + ((int) readByte2) + " is not valid for month " + w2.name());
+            case 14:
+                Period period = Period.d;
+                int readInt2 = objectInput.readInt();
+                int readInt3 = objectInput.readInt();
+                int readInt4 = objectInput.readInt();
+                return ((readInt2 | readInt3) | readInt4) == 0 ? Period.d : new Period(readInt2, readInt3, readInt4);
+            default:
+                throw new StreamCorruptedException("Unknown serialized type");
         }
-        if (qVar instanceof ChronoUnit) {
-            long j3 = G.a - this.a;
-            int i7 = q.b[((ChronoUnit) qVar).ordinal()];
-            if (i7 == 1) {
-                return j3;
-            }
-            if (i7 == 2) {
-                return j3 / 10;
-            }
-            if (i7 == 3) {
-                return j3 / 100;
-            }
-            if (i7 == 4) {
-                return j3 / 1000;
-            }
-            if (i7 == 5) {
-                j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return G.y(aVar) - y(aVar);
-            }
-            throw new j$.time.temporal.r("Unsupported unit: " + qVar);
-        }
-        return qVar.between(this, G);
     }
 
-    public r(int i7) {
-        this.a = i7;
+    private Object readResolve() {
+        return this.b;
     }
 
-    @Override // j$.time.temporal.l
-    public final boolean e(j$.time.temporal.o oVar) {
-        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.YEAR || oVar == j$.time.temporal.a.YEAR_OF_ERA || oVar == j$.time.temporal.a.ERA : oVar != null && oVar.j(this);
+    @Override // java.io.Externalizable
+    public final void readExternal(ObjectInput objectInput) {
+        byte readByte = objectInput.readByte();
+        this.a = readByte;
+        this.b = a(readByte, objectInput);
     }
 
-    @Override // j$.time.temporal.l
-    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
-        if (oVar == j$.time.temporal.a.YEAR_OF_ERA) {
-            return j$.time.temporal.s.e(1L, this.a <= 0 ? 1000000000L : 999999999L);
+    @Override // java.io.Externalizable
+    public final void writeExternal(ObjectOutput objectOutput) {
+        byte b = this.a;
+        Object obj = this.b;
+        objectOutput.writeByte(b);
+        switch (b) {
+            case 1:
+                Duration duration = (Duration) obj;
+                objectOutput.writeLong(duration.a);
+                objectOutput.writeInt(duration.b);
+                return;
+            case 2:
+                Instant instant = (Instant) obj;
+                objectOutput.writeLong(instant.a);
+                objectOutput.writeInt(instant.b);
+                return;
+            case 3:
+                LocalDate localDate = (LocalDate) obj;
+                objectOutput.writeInt(localDate.a);
+                objectOutput.writeByte(localDate.b);
+                objectOutput.writeByte(localDate.c);
+                return;
+            case 4:
+                ((j) obj).O(objectOutput);
+                return;
+            case 5:
+                LocalDateTime localDateTime = (LocalDateTime) obj;
+                LocalDate localDate2 = localDateTime.a;
+                objectOutput.writeInt(localDate2.a);
+                objectOutput.writeByte(localDate2.b);
+                objectOutput.writeByte(localDate2.c);
+                localDateTime.b.O(objectOutput);
+                return;
+            case 6:
+                ZonedDateTime zonedDateTime = (ZonedDateTime) obj;
+                LocalDateTime localDateTime2 = zonedDateTime.a;
+                LocalDate localDate3 = localDateTime2.a;
+                objectOutput.writeInt(localDate3.a);
+                objectOutput.writeByte(localDate3.b);
+                objectOutput.writeByte(localDate3.c);
+                localDateTime2.b.O(objectOutput);
+                zonedDateTime.b.K(objectOutput);
+                zonedDateTime.c.x(objectOutput);
+                return;
+            case 7:
+                objectOutput.writeUTF(((w) obj).b);
+                return;
+            case 8:
+                ((ZoneOffset) obj).K(objectOutput);
+                return;
+            case 9:
+                q qVar = (q) obj;
+                qVar.a.O(objectOutput);
+                qVar.b.K(objectOutput);
+                return;
+            case 10:
+                OffsetDateTime offsetDateTime = (OffsetDateTime) obj;
+                LocalDateTime localDateTime3 = offsetDateTime.a;
+                LocalDate localDate4 = localDateTime3.a;
+                objectOutput.writeInt(localDate4.a);
+                objectOutput.writeByte(localDate4.b);
+                objectOutput.writeByte(localDate4.c);
+                localDateTime3.b.O(objectOutput);
+                offsetDateTime.b.K(objectOutput);
+                return;
+            case 11:
+                objectOutput.writeInt(((t) obj).a);
+                return;
+            case 12:
+                YearMonth yearMonth = (YearMonth) obj;
+                objectOutput.writeInt(yearMonth.a);
+                objectOutput.writeByte(yearMonth.b);
+                return;
+            case 13:
+                n nVar = (n) obj;
+                objectOutput.writeByte(nVar.a);
+                objectOutput.writeByte(nVar.b);
+                return;
+            case 14:
+                Period period = (Period) obj;
+                objectOutput.writeInt(period.a);
+                objectOutput.writeInt(period.b);
+                objectOutput.writeInt(period.c);
+                return;
+            default:
+                throw new InvalidClassException("Unknown serialized type");
         }
-        return j$.time.temporal.p.d(this, oVar);
     }
 
-    @Override // j$.time.temporal.l
-    public final int j(j$.time.temporal.o oVar) {
-        return l(oVar).a(y(oVar), oVar);
-    }
-
-    @Override // j$.time.temporal.l
-    public final long y(j$.time.temporal.o oVar) {
-        if (!(oVar instanceof j$.time.temporal.a)) {
-            return oVar.m(this);
-        }
-        int i7 = q.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i7 == 1) {
-            int i10 = this.a;
-            if (i10 < 1) {
-                i10 = 1 - i10;
-            }
-            return i10;
-        }
-        if (i7 == 2) {
-            return this.a;
-        }
-        if (i7 == 3) {
-            return this.a < 1 ? 0 : 1;
-        }
-        throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
-    }
-
-    @Override // j$.time.temporal.Temporal
-    public final Temporal k(LocalDate localDate) {
-        localDate.getClass();
-        return (r) j$.com.android.tools.r8.a.a(localDate, this);
-    }
-
-    @Override // j$.time.temporal.Temporal
-    /* renamed from: J, reason: merged with bridge method [inline-methods] */
-    public final r c(long j3, j$.time.temporal.o oVar) {
-        if (!(oVar instanceof j$.time.temporal.a)) {
-            return (r) oVar.q(this, j3);
-        }
-        j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        aVar.w(j3);
-        int i7 = q.a[aVar.ordinal()];
-        if (i7 == 1) {
-            if (this.a < 1) {
-                j3 = 1 - j3;
-            }
-            return G((int) j3);
-        }
-        if (i7 == 2) {
-            return G((int) j3);
-        }
-        if (i7 == 3) {
-            return y(j$.time.temporal.a.ERA) == j3 ? this : G(1 - this.a);
-        }
-        throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
-    }
-
-    @Override // j$.time.temporal.Temporal
-    /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final r d(long j3, j$.time.temporal.q qVar) {
-        if (!(qVar instanceof ChronoUnit)) {
-            return (r) qVar.j(this, j3);
-        }
-        int i7 = q.b[((ChronoUnit) qVar).ordinal()];
-        if (i7 == 1) {
-            return I(j3);
-        }
-        if (i7 == 2) {
-            return I(j$.com.android.tools.r8.a.S(j3, 10));
-        }
-        if (i7 == 3) {
-            return I(j$.com.android.tools.r8.a.S(j3, 100));
-        }
-        if (i7 == 4) {
-            return I(j$.com.android.tools.r8.a.S(j3, 1000));
-        }
-        if (i7 == 5) {
-            j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-            return c(j$.com.android.tools.r8.a.N(y(aVar), j3), aVar);
-        }
-        throw new j$.time.temporal.r("Unsupported unit: " + qVar);
-    }
-
-    public final r I(long j3) {
-        if (j3 == 0) {
-            return this;
-        }
-        j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        return G(aVar.b.a(this.a + j3, aVar));
-    }
-
-    @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j3, ChronoUnit chronoUnit) {
-        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
-    }
-
-    @Override // j$.time.temporal.l
-    public final Object m(j$.time.format.a aVar) {
-        if (aVar == j$.time.temporal.p.b) {
-            return j$.time.chrono.r.c;
-        }
-        if (aVar == j$.time.temporal.p.c) {
-            return ChronoUnit.YEARS;
-        }
-        return j$.time.temporal.p.c(this, aVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final Temporal q(Temporal temporal) {
-        if (!j$.com.android.tools.r8.a.M(temporal).equals(j$.time.chrono.r.c)) {
-            throw new b("Adjustment only supported on ISO date-time");
-        }
-        return temporal.c(this.a, j$.time.temporal.a.YEAR);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof r) && this.a == ((r) obj).a;
-    }
-
-    public final int hashCode() {
-        return this.a;
-    }
-
-    public final String toString() {
-        return Integer.toString(this.a);
-    }
-
-    private Object writeReplace() {
-        return new p((byte) 11, this);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
+    public r() {
     }
 }

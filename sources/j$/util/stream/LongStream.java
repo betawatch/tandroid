@@ -7,13 +7,12 @@ import java.util.function.LongFunction;
 import java.util.function.ObjLongConsumer;
 import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface LongStream extends BaseStream<Long, LongStream> {
-    IntStream A();
-
     LongStream a();
 
-    c0 asDoubleStream();
+    f0 asDoubleStream();
 
     j$.util.b0 average();
 
@@ -27,7 +26,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     long count();
 
-    LongStream d(j$.time.t tVar);
+    LongStream d(j$.time.v vVar);
 
     LongStream distinct();
 
@@ -41,14 +40,16 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     void forEachOrdered(LongConsumer longConsumer);
 
+    f0 h();
+
     @Override // j$.util.stream.BaseStream
     j$.util.p0 iterator();
 
-    c0 j();
+    boolean j();
 
-    boolean l();
+    LongStream limit(long j);
 
-    LongStream limit(long j3);
+    boolean m();
 
     <U> Stream<U> mapToObj(LongFunction<? extends U> longFunction);
 
@@ -56,21 +57,19 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     j$.util.d0 min();
 
-    boolean o();
-
     @Override // j$.util.stream.BaseStream
     LongStream parallel();
 
     LongStream peek(LongConsumer longConsumer);
 
-    long reduce(long j3, LongBinaryOperator longBinaryOperator);
+    long reduce(long j, LongBinaryOperator longBinaryOperator);
 
     j$.util.d0 reduce(LongBinaryOperator longBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     LongStream sequential();
 
-    LongStream skip(long j3);
+    LongStream skip(long j);
 
     LongStream sorted();
 
@@ -81,7 +80,9 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     j$.util.z summaryStatistics();
 
+    boolean t();
+
     long[] toArray();
 
-    boolean w();
+    IntStream x();
 }

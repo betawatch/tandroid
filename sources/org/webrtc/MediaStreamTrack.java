@@ -1,30 +1,31 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
     private long nativeTrack;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
 
         private final int nativeIndex;
 
-        MediaType(int i7) {
-            this.nativeIndex = i7;
+        MediaType(int i) {
+            this.nativeIndex = i;
         }
 
-        public static MediaType fromNativeIndex(int i7) {
+        public static MediaType fromNativeIndex(int i) {
             for (MediaType mediaType : values()) {
-                if (mediaType.getNative() == i7) {
+                if (mediaType.getNative() == i) {
                     return mediaType;
                 }
             }
-            throw new IllegalArgumentException(i5.c.i(i7, "Unknown native media type: "));
+            w26.j(de9.k(i, "Unknown native media type: "));
+            return null;
         }
 
         public int getNative() {
@@ -32,52 +33,55 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public enum State {
         LIVE,
         ENDED;
 
-        public static State fromNativeIndex(int i7) {
-            return values()[i7];
+        public static State fromNativeIndex(int i) {
+            return values()[i];
         }
     }
 
-    public MediaStreamTrack(long j3) {
-        if (j3 == 0) {
-            throw new IllegalArgumentException("nativeTrack may not be null");
+    public MediaStreamTrack(long j) {
+        if (j != 0) {
+            this.nativeTrack = j;
+        } else {
+            w26.j("nativeTrack may not be null");
+            throw null;
         }
-        this.nativeTrack = j3;
     }
 
     private void checkMediaStreamTrackExists() {
-        if (this.nativeTrack == 0) {
-            throw new IllegalStateException("MediaStreamTrack has been disposed.");
+        if (this.nativeTrack != 0) {
+            return;
         }
+        sc8.j("MediaStreamTrack has been disposed.");
     }
 
-    public static MediaStreamTrack createMediaStreamTrack(long j3) {
-        if (j3 == 0) {
+    public static MediaStreamTrack createMediaStreamTrack(long j) {
+        if (j == 0) {
             return null;
         }
-        String nativeGetKind = nativeGetKind(j3);
+        String nativeGetKind = nativeGetKind(j);
         if (nativeGetKind.equals(AUDIO_TRACK_KIND)) {
-            return new AudioTrack(j3);
+            return new AudioTrack(j);
         }
         if (nativeGetKind.equals(VIDEO_TRACK_KIND)) {
-            return new VideoTrack(j3);
+            return new VideoTrack(j);
         }
         return null;
     }
 
-    private static native boolean nativeGetEnabled(long j3);
+    private static native boolean nativeGetEnabled(long j);
 
-    private static native String nativeGetId(long j3);
+    private static native String nativeGetId(long j);
 
-    private static native String nativeGetKind(long j3);
+    private static native String nativeGetKind(long j);
 
-    private static native State nativeGetState(long j3);
+    private static native State nativeGetState(long j);
 
-    private static native boolean nativeSetEnabled(long j3, boolean z10);
+    private static native boolean nativeSetEnabled(long j, boolean z);
 
     public void dispose() {
         checkMediaStreamTrackExists();
@@ -105,9 +109,9 @@ public class MediaStreamTrack {
         return nativeGetKind(this.nativeTrack);
     }
 
-    public boolean setEnabled(boolean z10) {
+    public boolean setEnabled(boolean z) {
         checkMediaStreamTrackExists();
-        return nativeSetEnabled(this.nativeTrack, z10);
+        return nativeSetEnabled(this.nativeTrack, z);
     }
 
     public State state() {

@@ -1,12 +1,13 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
+import android.graphics.Typeface;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
-public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionBar.c6 {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public class GroupCreateCheckBox extends View implements tjb {
     public float a;
 
     public float getProgress() {
@@ -27,35 +28,36 @@ public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionB
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (getVisibility() == 0 && this.a != 0.0f) {
-            getMeasuredWidth();
-            getMeasuredHeight();
-            org.telegram.messenger.g0.L(30.0f);
-            throw null;
-        }
-    }
-
-    public void setProgress(float f10) {
-        if (this.a == f10) {
+        if (getVisibility() != 0 || this.a == 0.0f) {
             return;
         }
-        this.a = f10;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        org.telegram.ui.ActionBar.n6.v0(0);
+        getMeasuredWidth();
+        getMeasuredHeight();
+        Typeface typeface = gl.a;
         throw null;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public void setProgress(float f) {
+        if (this.a == f) {
+            return;
+        }
+        this.a = f;
+        invalidate();
     }
 
-    public void setCheckScale(float f10) {
+    @Override // tjb
+    public final void updateColors() {
+        bkb.u0(0);
+        throw null;
     }
 
-    public void setInnerRadDiff(int i7) {
+    @Override // tjb
+    public final void addColorKeys(HashSet hashSet) {
+    }
+
+    public void setCheckScale(float f) {
+    }
+
+    public void setInnerRadDiff(int i) {
     }
 }

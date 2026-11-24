@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class PlaceMarker {
     private static final int MAX_LABEL_LENGTH = 3;
@@ -13,8 +13,11 @@ public final class PlaceMarker {
     private final int mIconType;
     private final CarText mLabel;
 
-    public PlaceMarker(m0 m0Var) {
-        throw null;
+    private PlaceMarker() {
+        this.mIcon = null;
+        this.mIconType = 0;
+        this.mLabel = null;
+        this.mColor = null;
     }
 
     public boolean equals(Object obj) {
@@ -50,7 +53,7 @@ public final class PlaceMarker {
 
     public String toString() {
         String shortString;
-        StringBuilder sb2 = new StringBuilder("[");
+        StringBuilder sb = new StringBuilder("[");
         CarIcon carIcon = this.mIcon;
         if (carIcon != null) {
             shortString = carIcon.toString();
@@ -58,13 +61,10 @@ public final class PlaceMarker {
             CarText carText = this.mLabel;
             shortString = carText != null ? CarText.toShortString(carText) : super.toString();
         }
-        return a8.p0.s(sb2, shortString, "]");
+        return b00.j(sb, shortString, "]");
     }
 
-    private PlaceMarker() {
-        this.mIcon = null;
-        this.mIconType = 0;
-        this.mLabel = null;
-        this.mColor = null;
+    public PlaceMarker(mb8 mb8Var) {
+        throw null;
     }
 }

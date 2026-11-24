@@ -1,18 +1,6 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public interface d2 extends e2 {
-    @Override // j$.util.stream.e2
-    d2 a(int i7);
-
-    Object b();
-
-    void c(int i7, Object obj);
-
-    void d(Object obj);
-
-    Object newArray(int i7);
-
-    @Override // j$.util.stream.e2
-    j$.util.d1 spliterator();
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface d2 extends g2 {
 }

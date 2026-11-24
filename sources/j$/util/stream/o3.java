@@ -1,35 +1,51 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
+import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
-public final class o3 extends p3 {
-    public final Object[] h;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class o3 extends s3 implements k5 {
+    public final double[] h;
 
-    public o3(Spliterator spliterator, t3 t3Var, Object[] objArr) {
-        super(spliterator, t3Var, objArr.length);
-        this.h = objArr;
-    }
-
-    public o3(o3 o3Var, Spliterator spliterator, long j3, long j10) {
-        super(o3Var, spliterator, j3, j10, o3Var.h.length);
+    public o3(o3 o3Var, Spliterator spliterator, long j, long j2) {
+        super(o3Var, spliterator, j, j2, o3Var.h.length);
         this.h = o3Var.h;
     }
 
-    @Override // j$.util.stream.p3
-    public final p3 a(Spliterator spliterator, long j3, long j10) {
-        return new o3(this, spliterator, j3, j10);
+    @Override // j$.util.stream.k5
+    public final /* synthetic */ void C(Double d) {
+        w3.e(this, d);
+    }
+
+    @Override // j$.util.stream.s3
+    public final s3 a(Spliterator spliterator, long j, long j2) {
+        return new o3(this, spliterator, j, j2);
+    }
+
+    @Override // j$.util.stream.s3, j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        int i = this.f;
+        if (i >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(i));
+        }
+        double[] dArr = this.h;
+        this.f = i + 1;
+        dArr[i] = d;
+    }
+
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.time.a.b(this, doubleConsumer);
+    }
+
+    public o3(Spliterator spliterator, a aVar, double[] dArr) {
+        super(spliterator, aVar, dArr.length);
+        this.h = dArr;
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final void x(Object obj) {
-        int i7 = this.f;
-        if (i7 >= this.g) {
-            throw new IndexOutOfBoundsException(Integer.toString(this.f));
-        }
-        Object[] objArr = this.h;
-        this.f = i7 + 1;
-        objArr[i7] = obj;
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        C((Double) obj);
     }
 }

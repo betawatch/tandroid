@@ -1,0 +1,39 @@
+// default package
+
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.widget.TextView;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final class ip {
+    public final TextView a;
+    public final gi3 b;
+
+    public ip(TextView textView) {
+        this.a = textView;
+        gi3 gi3Var = new gi3();
+        gi3Var.a = new ey3(textView);
+        this.b = gi3Var;
+    }
+
+    public final void a(AttributeSet attributeSet, int i) {
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, jy8.i, i, 0);
+        try {
+            boolean z = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+            obtainStyledAttributes.recycle();
+            c(z);
+        } catch (Throwable th) {
+            obtainStyledAttributes.recycle();
+            throw th;
+        }
+    }
+
+    public final void b(boolean z) {
+        ((efe) this.b.a).b(z);
+    }
+
+    public final void c(boolean z) {
+        ((efe) this.b.a).c(z);
+    }
+}

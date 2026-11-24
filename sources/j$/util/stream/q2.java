@@ -1,112 +1,39 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.Spliterators;
-import java.util.Arrays;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
 import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public class q2 implements y1 {
-    public final double[] a;
-    public int b;
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.S(this, j3, j10);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class q2 extends r2 implements f2 {
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.v(this, j, j2);
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void f(Object[] objArr, int i) {
+        w3.p(this, (Long[]) objArr, i);
+    }
+
+    @Override // j$.util.stream.h2
     public final /* synthetic */ void forEach(Consumer consumer) {
-        t3.P(this, consumer);
+        w3.s(this, consumer);
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ Object[] g(IntFunction intFunction) {
-        return t3.L(this, intFunction);
+    @Override // j$.util.stream.g2
+    public final Object newArray(int i) {
+        return new long[i];
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ int h() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i7) {
-        a(i7);
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i7) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i7) {
-        t3.M(this, (Double[]) objArr, i7);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void c(int i7, Object obj) {
-        int i10 = this.b;
-        System.arraycopy(this.a, 0, (double[]) obj, i7, i10);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void d(Object obj) {
-        DoubleConsumer doubleConsumer = (DoubleConsumer) obj;
-        for (int i7 = 0; i7 < this.b; i7++) {
-            doubleConsumer.accept(this.a[i7]);
-        }
-    }
-
-    public q2(long j3) {
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.a = new double[(int) j3];
-        this.b = 0;
-    }
-
-    public q2(double[] dArr) {
-        this.a = dArr;
-        this.b = dArr.length;
-    }
-
-    @Override // j$.util.stream.e2
-    public final Spliterator spliterator() {
-        int i7 = this.b;
-        double[] dArr = this.a;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i7);
-        return new j$.util.k1(dArr, 0, i7, 1040);
-    }
-
-    @Override // j$.util.stream.d2, j$.util.stream.e2
+    @Override // j$.util.stream.h2
     public final j$.util.d1 spliterator() {
-        int i7 = this.b;
-        double[] dArr = this.a;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i7);
-        return new j$.util.k1(dArr, 0, i7, 1040);
+        return new h3(this);
     }
 
-    @Override // j$.util.stream.d2
-    public final Object b() {
-        double[] dArr = this.a;
-        int length = dArr.length;
-        int i7 = this.b;
-        return length == i7 ? dArr : Arrays.copyOf(dArr, i7);
-    }
-
-    @Override // j$.util.stream.e2
-    public final long count() {
-        return this.b;
-    }
-
-    public String toString() {
-        double[] dArr = this.a;
-        return String.format("DoubleArrayNode[%d][%s]", Integer.valueOf(dArr.length - this.b), Arrays.toString(dArr));
+    @Override // j$.util.stream.h2
+    public final Spliterator spliterator() {
+        return new h3(this);
     }
 }

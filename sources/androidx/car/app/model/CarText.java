@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class CarText {
     private final List<SpanWrapper> mSpans;
@@ -16,7 +16,7 @@ public final class CarText {
     private final String mText;
     private final List<String> mTextVariants;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static final class Builder {
         CharSequence mText;
         List<CharSequence> mTextVariants = new ArrayList();
@@ -38,12 +38,19 @@ public final class CarText {
         }
     }
 
-    private CarText() {
-        this.mText = "";
-        List list = Collections.EMPTY_LIST;
-        this.mSpans = list;
-        this.mTextVariants = list;
-        this.mSpansForVariants = list;
+    public CarText(Builder builder) {
+        this.mText = builder.mText.toString();
+        this.mSpans = getSpans(builder.mText);
+        List<CharSequence> list = builder.mTextVariants;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        for (int i = 0; i < list.size(); i++) {
+            CharSequence charSequence = list.get(i);
+            arrayList.add(charSequence.toString());
+            arrayList2.add(getSpans(charSequence));
+        }
+        this.mTextVariants = qrd.a(arrayList);
+        this.mSpansForVariants = qrd.a(arrayList2);
     }
 
     public static CarText create(CharSequence charSequence) {
@@ -60,6 +67,19 @@ public final class CarText {
             spannableString.setSpan(spanWrapper.getCarSpan(), spanWrapper.getStart(), spanWrapper.getEnd(), spanWrapper.getFlags());
         }
         return spannableString;
+    }
+
+    private static List<SpanWrapper> getSpans(CharSequence charSequence) {
+        ArrayList arrayList = new ArrayList();
+        if (charSequence instanceof Spanned) {
+            Spanned spanned = (Spanned) charSequence;
+            for (Object obj : spanned.getSpans(0, charSequence.length(), Object.class)) {
+                if (obj instanceof CarSpan) {
+                    arrayList.add(new SpanWrapper(spanned, (CarSpan) obj));
+                }
+            }
+        }
+        return qrd.a(arrayList);
     }
 
     public static boolean isNullOrEmpty(CarText carText) {
@@ -88,10 +108,6 @@ public final class CarText {
         return Objects.equals(this.mText, carText.mText) && Objects.equals(this.mSpans, carText.mSpans) && Objects.equals(this.mTextVariants, carText.mTextVariants) && Objects.equals(this.mSpansForVariants, carText.mSpansForVariants);
     }
 
-    public List<SpanWrapper> getSpans() {
-        return this.mSpans;
-    }
-
     public List<List<SpanWrapper>> getSpansForVariants() {
         return this.mSpansForVariants;
     }
@@ -101,8 +117,8 @@ public final class CarText {
             return Collections.EMPTY_LIST;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i7 = 0; i7 < this.mTextVariants.size(); i7++) {
-            arrayList.add(getCharSequence(this.mTextVariants.get(i7), this.mSpansForVariants.get(i7)));
+        for (int i = 0; i < this.mTextVariants.size(); i++) {
+            arrayList.add(getCharSequence(this.mTextVariants.get(i), this.mSpansForVariants.get(i)));
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -123,20 +139,7 @@ public final class CarText {
         return this.mText;
     }
 
-    private static List<SpanWrapper> getSpans(CharSequence charSequence) {
-        ArrayList arrayList = new ArrayList();
-        if (charSequence instanceof Spanned) {
-            Spanned spanned = (Spanned) charSequence;
-            for (Object obj : spanned.getSpans(0, charSequence.length(), Object.class)) {
-                if (obj instanceof CarSpan) {
-                    arrayList.add(new SpanWrapper(spanned, (CarSpan) obj));
-                }
-            }
-        }
-        return androidx.car.app.utils.g.g(arrayList);
-    }
-
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class SpanWrapper {
         private final CarSpan mCarSpan;
         private final int mEnd;
@@ -182,14 +185,14 @@ public final class CarText {
         }
 
         public String toString() {
-            StringBuilder sb2 = new StringBuilder("[");
-            sb2.append(this.mCarSpan);
-            sb2.append(": ");
-            sb2.append(this.mStart);
-            sb2.append(", ");
-            sb2.append(this.mEnd);
-            sb2.append(", flags: ");
-            return a8.p0.n(this.mFlags, "]", sb2);
+            StringBuilder sb = new StringBuilder("[");
+            sb.append(this.mCarSpan);
+            sb.append(": ");
+            sb.append(this.mStart);
+            sb.append(", ");
+            sb.append(this.mEnd);
+            sb.append(", flags: ");
+            return de9.l(sb, this.mFlags, "]");
         }
 
         public SpanWrapper() {
@@ -200,6 +203,10 @@ public final class CarText {
         }
     }
 
+    public List<SpanWrapper> getSpans() {
+        return this.mSpans;
+    }
+
     public CarText(CharSequence charSequence) {
         this.mText = charSequence.toString();
         this.mSpans = getSpans(charSequence);
@@ -208,18 +215,11 @@ public final class CarText {
         this.mSpansForVariants = list;
     }
 
-    public CarText(Builder builder) {
-        this.mText = builder.mText.toString();
-        this.mSpans = getSpans(builder.mText);
-        List<CharSequence> list = builder.mTextVariants;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        for (int i7 = 0; i7 < list.size(); i7++) {
-            CharSequence charSequence = list.get(i7);
-            arrayList.add(charSequence.toString());
-            arrayList2.add(getSpans(charSequence));
-        }
-        this.mTextVariants = androidx.car.app.utils.g.g(arrayList);
-        this.mSpansForVariants = androidx.car.app.utils.g.g(arrayList2);
+    private CarText() {
+        this.mText = "";
+        List list = Collections.EMPTY_LIST;
+        this.mSpans = list;
+        this.mTextVariants = list;
+        this.mSpansForVariants = list;
     }
 }

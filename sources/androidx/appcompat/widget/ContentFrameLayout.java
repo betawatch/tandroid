@@ -7,16 +7,9 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
-import g.s;
-import l.k;
-import m.h;
-import m.i1;
-import m.j1;
-import m.k3;
 import org.telegram.tgnet.TLObject;
-import r0.l0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -26,100 +19,118 @@ public class ContentFrameLayout extends FrameLayout {
     public TypedValue e;
     public TypedValue f;
     public final Rect h;
-    public i1 n;
+    public av2 n;
 
-    public ContentFrameLayout(Context context) {
-        this(context, null);
+    public ContentFrameLayout(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, 0);
+        this.h = new Rect();
     }
 
     public TypedValue getFixedHeightMajor() {
-        if (this.e == null) {
-            this.e = new TypedValue();
+        TypedValue typedValue = this.e;
+        if (typedValue != null) {
+            return typedValue;
         }
-        return this.e;
+        TypedValue typedValue2 = new TypedValue();
+        this.e = typedValue2;
+        return typedValue2;
     }
 
     public TypedValue getFixedHeightMinor() {
-        if (this.f == null) {
-            this.f = new TypedValue();
+        TypedValue typedValue = this.f;
+        if (typedValue != null) {
+            return typedValue;
         }
-        return this.f;
+        TypedValue typedValue2 = new TypedValue();
+        this.f = typedValue2;
+        return typedValue2;
     }
 
     public TypedValue getFixedWidthMajor() {
-        if (this.c == null) {
-            this.c = new TypedValue();
+        TypedValue typedValue = this.c;
+        if (typedValue != null) {
+            return typedValue;
         }
-        return this.c;
+        TypedValue typedValue2 = new TypedValue();
+        this.c = typedValue2;
+        return typedValue2;
     }
 
     public TypedValue getFixedWidthMinor() {
-        if (this.d == null) {
-            this.d = new TypedValue();
+        TypedValue typedValue = this.d;
+        if (typedValue != null) {
+            return typedValue;
         }
-        return this.d;
+        TypedValue typedValue2 = new TypedValue();
+        this.d = typedValue2;
+        return typedValue2;
     }
 
     public TypedValue getMinWidthMajor() {
-        if (this.a == null) {
-            this.a = new TypedValue();
+        TypedValue typedValue = this.a;
+        if (typedValue != null) {
+            return typedValue;
         }
-        return this.a;
+        TypedValue typedValue2 = new TypedValue();
+        this.a = typedValue2;
+        return typedValue2;
     }
 
     public TypedValue getMinWidthMinor() {
-        if (this.b == null) {
-            this.b = new TypedValue();
+        TypedValue typedValue = this.b;
+        if (typedValue != null) {
+            return typedValue;
         }
-        return this.b;
+        TypedValue typedValue2 = new TypedValue();
+        this.b = typedValue2;
+        return typedValue2;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        i1 i1Var = this.n;
-        if (i1Var != null) {
-            i1Var.getClass();
+        av2 av2Var = this.n;
+        if (av2Var != null) {
+            av2Var.getClass();
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        h hVar;
+        b9 b9Var;
         super.onDetachedFromWindow();
-        i1 i1Var = this.n;
-        if (i1Var != null) {
-            s sVar = (s) ((cb.c) i1Var).b;
-            j1 j1Var = sVar.s;
-            if (j1Var != null) {
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
+        av2 av2Var = this.n;
+        if (av2Var != null) {
+            bp bpVar = (bp) ((i4d) av2Var).a;
+            ActionBarOverlayLayout actionBarOverlayLayout = bpVar.s;
+            if (actionBarOverlayLayout != null) {
                 actionBarOverlayLayout.e();
-                ActionMenuView actionMenuView = ((k3) actionBarOverlayLayout.e).a.a;
-                if (actionMenuView != null && (hVar = actionMenuView.K) != null) {
-                    hVar.e();
-                    m.d dVar = hVar.K;
-                    if (dVar != null && dVar.b()) {
-                        dVar.i.dismiss();
+                ActionMenuView actionMenuView = ((itb) actionBarOverlayLayout.e).a.a;
+                if (actionMenuView != null && (b9Var = actionMenuView.K) != null) {
+                    b9Var.e();
+                    y8 y8Var = b9Var.K;
+                    if (y8Var != null && y8Var.b()) {
+                        y8Var.i.dismiss();
                     }
                 }
             }
-            if (sVar.F != null) {
-                sVar.f.getDecorView().removeCallbacks(sVar.G);
-                if (sVar.F.isShowing()) {
+            if (bpVar.F != null) {
+                bpVar.f.getDecorView().removeCallbacks(bpVar.G);
+                if (bpVar.F.isShowing()) {
                     try {
-                        sVar.F.dismiss();
+                        bpVar.F.dismiss();
                     } catch (IllegalArgumentException unused) {
                     }
                 }
-                sVar.F = null;
+                bpVar.F = null;
             }
-            l0 l0Var = sVar.H;
-            if (l0Var != null) {
-                l0Var.b();
+            afc afcVar = bpVar.H;
+            if (afcVar != null) {
+                afcVar.b();
             }
-            k kVar = sVar.q(0).h;
-            if (kVar != null) {
-                kVar.c(true);
+            yz6 yz6Var = bpVar.o(0).h;
+            if (yz6Var != null) {
+                yz6Var.c(true);
             }
         }
     }
@@ -140,146 +151,141 @@ public class ContentFrameLayout extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onMeasure(int i7, int i10) {
-        int i11;
-        boolean z10;
-        int i12;
+    public final void onMeasure(int i, int i2) {
+        int i3;
+        boolean z;
+        int i4;
         int measuredWidth;
         TypedValue typedValue;
-        int i13;
-        int i14;
+        int i5;
+        int i6;
         float fraction;
-        int i15;
-        int i16;
+        int i7;
+        int i8;
         float fraction2;
-        int i17;
-        int i18;
+        int i9;
+        int i10;
         float fraction3;
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        boolean z11 = true;
-        boolean z12 = displayMetrics.widthPixels < displayMetrics.heightPixels;
-        int mode = View.MeasureSpec.getMode(i7);
-        int mode2 = View.MeasureSpec.getMode(i10);
+        boolean z2 = true;
+        boolean z3 = displayMetrics.widthPixels < displayMetrics.heightPixels;
+        int mode = View.MeasureSpec.getMode(i);
+        int mode2 = View.MeasureSpec.getMode(i2);
         Rect rect = this.h;
         if (mode == Integer.MIN_VALUE) {
-            TypedValue typedValue2 = z12 ? this.d : this.c;
-            if (typedValue2 != null && (i17 = typedValue2.type) != 0) {
-                if (i17 == 5) {
+            TypedValue typedValue2 = z3 ? this.d : this.c;
+            if (typedValue2 != null && (i9 = typedValue2.type) != 0) {
+                if (i9 == 5) {
                     fraction3 = typedValue2.getDimension(displayMetrics);
-                } else if (i17 == 6) {
-                    int i19 = displayMetrics.widthPixels;
-                    fraction3 = typedValue2.getFraction(i19, i19);
+                } else if (i9 == 6) {
+                    int i11 = displayMetrics.widthPixels;
+                    fraction3 = typedValue2.getFraction(i11, i11);
                 } else {
-                    i18 = 0;
-                    if (i18 > 0) {
-                        i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i18 - (rect.left + rect.right), View.MeasureSpec.getSize(i7)), TLObject.FLAG_30);
-                        z10 = true;
+                    i10 = 0;
+                    if (i10 > 0) {
+                        i3 = View.MeasureSpec.makeMeasureSpec(Math.min(i10 - (rect.left + rect.right), View.MeasureSpec.getSize(i)), TLObject.FLAG_30);
+                        z = true;
                         if (mode2 == Integer.MIN_VALUE) {
-                            TypedValue typedValue3 = z12 ? this.e : this.f;
-                            if (typedValue3 != null && (i15 = typedValue3.type) != 0) {
-                                if (i15 == 5) {
+                            TypedValue typedValue3 = z3 ? this.e : this.f;
+                            if (typedValue3 != null && (i7 = typedValue3.type) != 0) {
+                                if (i7 == 5) {
                                     fraction2 = typedValue3.getDimension(displayMetrics);
-                                } else if (i15 == 6) {
-                                    int i20 = displayMetrics.heightPixels;
-                                    fraction2 = typedValue3.getFraction(i20, i20);
+                                } else if (i7 == 6) {
+                                    int i12 = displayMetrics.heightPixels;
+                                    fraction2 = typedValue3.getFraction(i12, i12);
                                 } else {
-                                    i16 = 0;
-                                    if (i16 > 0) {
-                                        i12 = View.MeasureSpec.makeMeasureSpec(Math.min(i16 - (rect.top + rect.bottom), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30);
-                                        super.onMeasure(i11, i12);
+                                    i8 = 0;
+                                    if (i8 > 0) {
+                                        i4 = View.MeasureSpec.makeMeasureSpec(Math.min(i8 - (rect.top + rect.bottom), View.MeasureSpec.getSize(i2)), TLObject.FLAG_30);
+                                        super.onMeasure(i3, i4);
                                         measuredWidth = getMeasuredWidth();
                                         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                                        if (!z10 && mode == Integer.MIN_VALUE) {
-                                            typedValue = !z12 ? this.b : this.a;
-                                            if (typedValue != null && (i13 = typedValue.type) != 0) {
-                                                if (i13 != 5) {
+                                        if (!z && mode == Integer.MIN_VALUE) {
+                                            typedValue = !z3 ? this.b : this.a;
+                                            if (typedValue != null && (i5 = typedValue.type) != 0) {
+                                                if (i5 != 5) {
                                                     fraction = typedValue.getDimension(displayMetrics);
-                                                } else if (i13 == 6) {
-                                                    int i21 = displayMetrics.widthPixels;
-                                                    fraction = typedValue.getFraction(i21, i21);
+                                                } else if (i5 == 6) {
+                                                    int i13 = displayMetrics.widthPixels;
+                                                    fraction = typedValue.getFraction(i13, i13);
                                                 } else {
-                                                    i14 = 0;
-                                                    if (i14 > 0) {
-                                                        i14 -= rect.left + rect.right;
+                                                    i6 = 0;
+                                                    if (i6 > 0) {
+                                                        i6 -= rect.left + rect.right;
                                                     }
-                                                    if (measuredWidth < i14) {
-                                                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30);
-                                                        if (z11) {
+                                                    if (measuredWidth < i6) {
+                                                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30);
+                                                        if (z2) {
                                                             return;
                                                         }
-                                                        super.onMeasure(makeMeasureSpec, i12);
+                                                        super.onMeasure(makeMeasureSpec, i4);
                                                         return;
                                                     }
                                                 }
-                                                i14 = (int) fraction;
-                                                if (i14 > 0) {
+                                                i6 = (int) fraction;
+                                                if (i6 > 0) {
                                                 }
-                                                if (measuredWidth < i14) {
+                                                if (measuredWidth < i6) {
                                                 }
                                             }
                                         }
-                                        z11 = false;
-                                        if (z11) {
+                                        z2 = false;
+                                        if (z2) {
                                         }
                                     }
                                 }
-                                i16 = (int) fraction2;
-                                if (i16 > 0) {
+                                i8 = (int) fraction2;
+                                if (i8 > 0) {
                                 }
                             }
                         }
-                        i12 = i10;
-                        super.onMeasure(i11, i12);
+                        i4 = i2;
+                        super.onMeasure(i3, i4);
                         measuredWidth = getMeasuredWidth();
                         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                        if (!z10) {
-                            if (!z12) {
+                        if (!z) {
+                            if (!z3) {
                             }
                             if (typedValue != null) {
-                                if (i13 != 5) {
+                                if (i5 != 5) {
                                 }
-                                i14 = (int) fraction;
-                                if (i14 > 0) {
+                                i6 = (int) fraction;
+                                if (i6 > 0) {
                                 }
-                                if (measuredWidth < i14) {
+                                if (measuredWidth < i6) {
                                 }
                             }
                         }
-                        z11 = false;
-                        if (z11) {
+                        z2 = false;
+                        if (z2) {
                         }
                     }
                 }
-                i18 = (int) fraction3;
-                if (i18 > 0) {
+                i10 = (int) fraction3;
+                if (i10 > 0) {
                 }
             }
         }
-        i11 = i7;
-        z10 = false;
+        i3 = i;
+        z = false;
         if (mode2 == Integer.MIN_VALUE) {
         }
-        i12 = i10;
-        super.onMeasure(i11, i12);
+        i4 = i2;
+        super.onMeasure(i3, i4);
         measuredWidth = getMeasuredWidth();
         int makeMeasureSpec22 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-        if (!z10) {
+        if (!z) {
         }
-        z11 = false;
-        if (z11) {
+        z2 = false;
+        if (z2) {
         }
     }
 
-    public void setAttachListener(i1 i1Var) {
-        this.n = i1Var;
+    public void setAttachListener(av2 av2Var) {
+        this.n = av2Var;
     }
 
-    public ContentFrameLayout(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 0);
-    }
-
-    public ContentFrameLayout(Context context, AttributeSet attributeSet, int i7) {
-        super(context, attributeSet, i7);
-        this.h = new Rect();
+    public ContentFrameLayout(Context context) {
+        this(context, null);
     }
 }

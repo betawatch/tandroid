@@ -3,6 +3,7 @@ package j$.time.zone;
 import j$.time.DayOfWeek;
 import j$.time.ZoneOffset;
 import j$.time.j;
+import j$.time.l;
 import j$.util.Objects;
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -10,29 +11,87 @@ import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class e implements Serializable {
     private static final long serialVersionUID = 6889046316657758795L;
-    public final j a;
+    public final l a;
     public final byte b;
     public final DayOfWeek c;
-    public final j$.time.h d;
+    public final j d;
     public final boolean e;
     public final d f;
     public final ZoneOffset g;
     public final ZoneOffset h;
     public final ZoneOffset i;
 
-    public e(j jVar, int i7, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z10, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
-        this.a = jVar;
-        this.b = (byte) i7;
+    public e(l lVar, int i, DayOfWeek dayOfWeek, j jVar, boolean z, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
+        this.a = lVar;
+        this.b = (byte) i;
         this.c = dayOfWeek;
-        this.d = hVar;
-        this.e = z10;
+        this.d = jVar;
+        this.e = z;
         this.f = dVar;
         this.g = zoneOffset;
         this.h = zoneOffset2;
         this.i = zoneOffset3;
+    }
+
+    public static e a(DataInput dataInput) {
+        l lVar;
+        e eVar;
+        j jVar;
+        int readInt = dataInput.readInt();
+        l w = l.w(readInt >>> 28);
+        int i = ((264241152 & readInt) >>> 22) - 32;
+        int i2 = (3670016 & readInt) >>> 19;
+        DayOfWeek o = i2 == 0 ? null : DayOfWeek.o(i2);
+        int i3 = (507904 & readInt) >>> 14;
+        d dVar = d.values()[(readInt & 12288) >>> 12];
+        int i4 = (readInt & 4080) >>> 4;
+        int i5 = (readInt & 12) >>> 2;
+        int i6 = readInt & 3;
+        if (i3 == 31) {
+            long readInt2 = dataInput.readInt();
+            j jVar2 = j.e;
+            j$.time.temporal.a.SECOND_OF_DAY.o(readInt2);
+            int i7 = (int) (readInt2 / 3600);
+            lVar = w;
+            eVar = null;
+            long j = readInt2 - (i7 * 3600);
+            jVar = j.q(i7, (int) (j / 60), (int) (j - (r2 * 60)), 0);
+        } else {
+            lVar = w;
+            eVar = null;
+            int i8 = i3 % 24;
+            j jVar3 = j.e;
+            j$.time.temporal.a.HOUR_OF_DAY.o(i8);
+            jVar = j.h[i8];
+        }
+        ZoneOffset H = i4 == 255 ? ZoneOffset.H(dataInput.readInt()) : ZoneOffset.H((i4 - 128) * 900);
+        ZoneOffset H2 = i5 == 3 ? ZoneOffset.H(dataInput.readInt()) : ZoneOffset.H((i5 * 1800) + H.getTotalSeconds());
+        ZoneOffset H3 = ZoneOffset.H(i6 == 3 ? dataInput.readInt() : (i6 * 1800) + H.getTotalSeconds());
+        boolean z = i3 == 24;
+        l lVar2 = lVar;
+        Objects.requireNonNull(lVar2, "month");
+        Objects.requireNonNull(jVar, "time");
+        Objects.requireNonNull(dVar, "timeDefnition");
+        Objects.requireNonNull(H, "standardOffset");
+        Objects.requireNonNull(H2, "offsetBefore");
+        Objects.requireNonNull(H3, "offsetAfter");
+        if (i < -28 || i > 31 || i == 0) {
+            j$.time.g.c("Day of month indicator must be between -28 and 31 inclusive excluding zero");
+            return eVar;
+        }
+        if (z && !jVar.equals(j.g)) {
+            j$.time.g.c("Time must be midnight when end of day flag is true");
+            return eVar;
+        }
+        if (jVar.d == 0) {
+            return new e(lVar2, i, o, jVar, z, dVar, H, H2, H3);
+        }
+        j$.time.g.c("Time's nano-of-second must be zero");
+        return eVar;
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
@@ -44,144 +103,86 @@ public final class e implements Serializable {
     }
 
     public final void b(DataOutput dataOutput) {
-        byte b10;
-        int S = this.e ? 86400 : this.d.S();
+        int L = this.e ? 86400 : this.d.L();
         int totalSeconds = this.g.getTotalSeconds();
         int totalSeconds2 = this.h.getTotalSeconds() - totalSeconds;
         int totalSeconds3 = this.i.getTotalSeconds() - totalSeconds;
-        if (S % 3600 == 0) {
-            b10 = this.e ? (byte) 24 : this.d.a;
-        } else {
-            b10 = 31;
-        }
-        int i7 = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : 255;
-        int i10 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
-        int i11 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
+        byte b = L % 3600 == 0 ? this.e ? (byte) 24 : this.d.a : (byte) 31;
+        int i = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : 255;
+        int i2 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
+        int i3 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;
-        dataOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (b10 << 14) + (this.f.ordinal() << 12) + (i7 << 4) + (i10 << 2) + i11);
-        if (b10 == 31) {
-            dataOutput.writeInt(S);
+        dataOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (b << 14) + (this.f.ordinal() << 12) + (i << 4) + (i2 << 2) + i3);
+        if (b == 31) {
+            dataOutput.writeInt(L);
         }
-        if (i7 == 255) {
+        if (i == 255) {
             dataOutput.writeInt(totalSeconds);
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             dataOutput.writeInt(this.h.getTotalSeconds());
         }
-        if (i11 == 3) {
+        if (i3 == 3) {
             dataOutput.writeInt(this.i.getTotalSeconds());
         }
-    }
-
-    public static e a(DataInput dataInput) {
-        d dVar;
-        j$.time.h hVar;
-        int readInt = dataInput.readInt();
-        j J = j.J(readInt >>> 28);
-        int i7 = ((264241152 & readInt) >>> 22) - 32;
-        int i10 = (3670016 & readInt) >>> 19;
-        DayOfWeek G = i10 == 0 ? null : DayOfWeek.G(i10);
-        int i11 = (507904 & readInt) >>> 14;
-        d dVar2 = d.values()[(readInt & 12288) >>> 12];
-        int i12 = (readInt & 4080) >>> 4;
-        int i13 = (readInt & 12) >>> 2;
-        int i14 = readInt & 3;
-        if (i11 == 31) {
-            long readInt2 = dataInput.readInt();
-            j$.time.h hVar2 = j$.time.h.e;
-            j$.time.temporal.a.SECOND_OF_DAY.w(readInt2);
-            int i15 = (int) (readInt2 / 3600);
-            long j3 = readInt2 - (i15 * 3600);
-            dVar = dVar2;
-            hVar = j$.time.h.H(i15, (int) (j3 / 60), (int) (j3 - (r14 * 60)), 0);
-        } else {
-            dVar = dVar2;
-            int i16 = i11 % 24;
-            j$.time.h hVar3 = j$.time.h.e;
-            j$.time.temporal.a.HOUR_OF_DAY.w(i16);
-            hVar = j$.time.h.h[i16];
-        }
-        ZoneOffset O = ZoneOffset.O(i12 == 255 ? dataInput.readInt() : (i12 - 128) * 900);
-        ZoneOffset O2 = ZoneOffset.O(i13 == 3 ? dataInput.readInt() : (i13 * 1800) + O.getTotalSeconds());
-        ZoneOffset O3 = ZoneOffset.O(i14 == 3 ? dataInput.readInt() : (i14 * 1800) + O.getTotalSeconds());
-        boolean z10 = i11 == 24;
-        Objects.requireNonNull(J, "month");
-        Objects.requireNonNull(hVar, "time");
-        d dVar3 = dVar;
-        Objects.requireNonNull(dVar3, "timeDefnition");
-        Objects.requireNonNull(O, "standardOffset");
-        Objects.requireNonNull(O2, "offsetBefore");
-        Objects.requireNonNull(O3, "offsetAfter");
-        if (i7 < -28 || i7 > 31 || i7 == 0) {
-            throw new IllegalArgumentException("Day of month indicator must be between -28 and 31 inclusive excluding zero");
-        }
-        if (z10 && !hVar.equals(j$.time.h.g)) {
-            throw new IllegalArgumentException("Time must be midnight when end of day flag is true");
-        }
-        if (hVar.d != 0) {
-            throw new IllegalArgumentException("Time's nano-of-second must be zero");
-        }
-        return new e(J, i7, G, hVar, z10, dVar3, O, O2, O3);
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof e) {
-            e eVar = (e) obj;
-            if (this.a == eVar.a && this.b == eVar.b && this.c == eVar.c && this.f == eVar.f && this.d.equals(eVar.d) && this.e == eVar.e && this.g.equals(eVar.g) && this.h.equals(eVar.h) && this.i.equals(eVar.i)) {
-                return true;
-            }
+        if (!(obj instanceof e)) {
+            return false;
         }
-        return false;
+        e eVar = (e) obj;
+        return this.a == eVar.a && this.b == eVar.b && this.c == eVar.c && this.f == eVar.f && this.d.equals(eVar.d) && this.e == eVar.e && this.g.equals(eVar.g) && this.h.equals(eVar.h) && this.i.equals(eVar.i);
     }
 
     public final int hashCode() {
-        int S = ((this.d.S() + (this.e ? 1 : 0)) << 15) + (this.a.ordinal() << 11) + ((this.b + 32) << 5);
+        int L = ((this.d.L() + (this.e ? 1 : 0)) << 15) + (this.a.ordinal() << 11) + ((this.b + 32) << 5);
         DayOfWeek dayOfWeek = this.c;
-        return ((this.g.b ^ (this.f.ordinal() + (S + ((dayOfWeek == null ? 7 : dayOfWeek.ordinal()) << 2)))) ^ this.h.b) ^ this.i.b;
+        return (((this.f.ordinal() + (L + ((dayOfWeek == null ? 7 : dayOfWeek.ordinal()) << 2))) ^ this.g.b) ^ this.h.b) ^ this.i.b;
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("TransitionRule[");
-        sb2.append(this.i.b - this.h.b > 0 ? "Gap " : "Overlap ");
-        sb2.append(this.h);
-        sb2.append(" to ");
-        sb2.append(this.i);
-        sb2.append(", ");
+        StringBuilder sb = new StringBuilder("TransitionRule[");
+        sb.append(this.i.b - this.h.b > 0 ? "Gap " : "Overlap ");
+        sb.append(this.h);
+        sb.append(" to ");
+        sb.append(this.i);
+        sb.append(", ");
         DayOfWeek dayOfWeek = this.c;
         if (dayOfWeek != null) {
-            byte b10 = this.b;
-            if (b10 == -1) {
-                sb2.append(dayOfWeek.name());
-                sb2.append(" on or before last day of ");
-                sb2.append(this.a.name());
-            } else if (b10 < 0) {
-                sb2.append(dayOfWeek.name());
-                sb2.append(" on or before last day minus ");
-                sb2.append((-this.b) - 1);
-                sb2.append(" of ");
-                sb2.append(this.a.name());
+            byte b = this.b;
+            if (b == -1) {
+                sb.append(dayOfWeek.name());
+                sb.append(" on or before last day of ");
+                sb.append(this.a.name());
+            } else if (b < 0) {
+                sb.append(dayOfWeek.name());
+                sb.append(" on or before last day minus ");
+                sb.append((-this.b) - 1);
+                sb.append(" of ");
+                sb.append(this.a.name());
             } else {
-                sb2.append(dayOfWeek.name());
-                sb2.append(" on or after ");
-                sb2.append(this.a.name());
-                sb2.append(' ');
-                sb2.append((int) this.b);
+                sb.append(dayOfWeek.name());
+                sb.append(" on or after ");
+                sb.append(this.a.name());
+                sb.append(' ');
+                sb.append((int) this.b);
             }
         } else {
-            sb2.append(this.a.name());
-            sb2.append(' ');
-            sb2.append((int) this.b);
+            sb.append(this.a.name());
+            sb.append(' ');
+            sb.append((int) this.b);
         }
-        sb2.append(" at ");
-        sb2.append(this.e ? "24:00" : this.d.toString());
-        sb2.append(" ");
-        sb2.append(this.f);
-        sb2.append(", standard offset ");
-        sb2.append(this.g);
-        sb2.append(']');
-        return sb2.toString();
+        sb.append(" at ");
+        sb.append(this.e ? "24:00" : this.d.toString());
+        sb.append(" ");
+        sb.append(this.f);
+        sb.append(", standard offset ");
+        sb.append(this.g);
+        sb.append(']');
+        return sb.toString();
     }
 }

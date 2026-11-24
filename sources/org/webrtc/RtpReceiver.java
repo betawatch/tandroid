@@ -2,46 +2,47 @@ package org.webrtc;
 
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class RtpReceiver {
     private MediaStreamTrack cachedTrack;
     private long nativeObserver;
     private long nativeRtpReceiver;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface Observer {
         void onFirstPacketReceived(MediaStreamTrack.MediaType mediaType);
     }
 
-    public RtpReceiver(long j3) {
-        this.nativeRtpReceiver = j3;
-        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j3));
+    public RtpReceiver(long j) {
+        this.nativeRtpReceiver = j;
+        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j));
     }
 
     private void checkRtpReceiverExists() {
-        if (this.nativeRtpReceiver == 0) {
-            throw new IllegalStateException("RtpReceiver has been disposed.");
+        if (this.nativeRtpReceiver != 0) {
+            return;
         }
+        sc8.j("RtpReceiver has been disposed.");
     }
 
-    private static native String nativeGetId(long j3);
+    private static native String nativeGetId(long j);
 
-    private static native RtpParameters nativeGetParameters(long j3);
+    private static native RtpParameters nativeGetParameters(long j);
 
-    private static native long nativeGetTrack(long j3);
+    private static native long nativeGetTrack(long j);
 
-    private static native void nativeSetFrameDecryptor(long j3, long j10);
+    private static native void nativeSetFrameDecryptor(long j, long j2);
 
-    private static native long nativeSetObserver(long j3, Observer observer);
+    private static native long nativeSetObserver(long j, Observer observer);
 
-    private static native void nativeUnsetObserver(long j3, long j10);
+    private static native void nativeUnsetObserver(long j, long j2);
 
     public void SetObserver(Observer observer) {
         checkRtpReceiverExists();
-        long j3 = this.nativeObserver;
-        if (j3 != 0) {
-            nativeUnsetObserver(this.nativeRtpReceiver, j3);
+        long j = this.nativeObserver;
+        if (j != 0) {
+            nativeUnsetObserver(this.nativeRtpReceiver, j);
         }
         this.nativeObserver = nativeSetObserver(this.nativeRtpReceiver, observer);
     }
@@ -49,9 +50,9 @@ public class RtpReceiver {
     public void dispose() {
         checkRtpReceiverExists();
         this.cachedTrack.dispose();
-        long j3 = this.nativeObserver;
-        if (j3 != 0) {
-            nativeUnsetObserver(this.nativeRtpReceiver, j3);
+        long j = this.nativeObserver;
+        if (j != 0) {
+            nativeUnsetObserver(this.nativeRtpReceiver, j);
             this.nativeObserver = 0L;
         }
         JniCommon.nativeReleaseRef(this.nativeRtpReceiver);

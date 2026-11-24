@@ -1,16 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import p5.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class zzmx {
     private final String zza;
     private final Class zzb;
     private final boolean zzc;
 
-    public zzmx(String str, Class cls, boolean z10) {
-        this(str, cls, z10, true);
+    private zzmx(String str, Class cls, boolean z, boolean z2) {
+        zzot.zzb(str);
+        this.zza = str;
+        this.zzb = cls;
+        this.zzc = z;
+        System.identityHashCode(this);
+        for (int i = 0; i < 5; i++) {
+        }
     }
 
     public static zzmx zza(String str, Class cls) {
@@ -21,25 +25,19 @@ public class zzmx {
         Class cls = this.zzb;
         String name = getClass().getName();
         String name2 = cls.getName();
-        StringBuilder n10 = c.n(name, "/");
-        n10.append(this.zza);
-        n10.append("[");
-        n10.append(name2);
-        n10.append("]");
-        return n10.toString();
+        StringBuilder k = b00.k(name, "/");
+        k.append(this.zza);
+        k.append("[");
+        k.append(name2);
+        k.append("]");
+        return k.toString();
     }
 
     public final boolean zzb() {
         return this.zzc;
     }
 
-    private zzmx(String str, Class cls, boolean z10, boolean z11) {
-        zzot.zzb(str);
-        this.zza = str;
-        this.zzb = cls;
-        this.zzc = z10;
-        System.identityHashCode(this);
-        for (int i7 = 0; i7 < 5; i7++) {
-        }
+    public zzmx(String str, Class cls, boolean z) {
+        this(str, cls, z, true);
     }
 }

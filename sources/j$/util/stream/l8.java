@@ -1,32 +1,51 @@
 package j$.util.stream;
 
-import java.util.function.DoublePredicate;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class l8 extends j5 implements r8 {
+    public long b;
+    public boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ k8 e;
 
-/* loaded from: classes2.dex */
-public final class l8 extends c5 {
-    public final boolean b;
-
-    public l8(b6 b6Var, j5 j5Var) {
-        super(j5Var);
-        this.b = true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l8(k8 k8Var, n5 n5Var, boolean z) {
+        super(n5Var);
+        this.e = k8Var;
+        this.d = z;
     }
 
-    @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final void o(long j3) {
-        this.a.o(-1L);
-    }
-
-    @Override // j$.util.stream.g5, j$.util.stream.j5
-    public final void accept(double d) {
-        if (this.b) {
-            DoublePredicate doublePredicate = null;
-            doublePredicate.test(d);
-            throw null;
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        boolean z;
+        boolean z2;
+        if (!this.c) {
+            boolean test = this.e.m.test(obj);
+            this.c = !test;
+            if (test) {
+                z = false;
+                z2 = this.d;
+                if (z2 && !z) {
+                    this.b++;
+                }
+                if (!z2 || z) {
+                    this.a.accept((n5) obj);
+                }
+                return;
+            }
         }
+        z = true;
+        z2 = this.d;
+        if (z2) {
+            this.b++;
+        }
+        if (z2) {
+        }
+        this.a.accept((n5) obj);
     }
 
-    @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final boolean q() {
-        return !this.b || this.a.q();
+    @Override // j$.util.stream.r8
+    public final long v() {
+        return this.b;
     }
 }

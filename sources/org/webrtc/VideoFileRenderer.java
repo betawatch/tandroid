@@ -7,13 +7,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.ks;
-import org.telegram.ui.Components.as0;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
     private EglBase eglBase;
@@ -30,19 +28,20 @@ public class VideoFileRenderer implements VideoSink {
     private final FileOutputStream videoOutFile;
     private YuvConverter yuvConverter;
 
-    public VideoFileRenderer(String str, int i7, int i10, final EglBase.Context context) {
-        if (i7 % 2 == 1 || i10 % 2 == 1) {
-            throw new IllegalArgumentException("Does not support uneven width or height");
+    public VideoFileRenderer(String str, int i, int i2, final EglBase.Context context) {
+        if (i % 2 == 1 || i2 % 2 == 1) {
+            w26.j("Does not support uneven width or height");
+            throw null;
         }
         this.outputFileName = str;
-        this.outputFileWidth = i7;
-        this.outputFileHeight = i10;
-        int i11 = ((i7 * i10) * 3) / 2;
-        this.outputFrameSize = i11;
-        this.outputFrameBuffer = ByteBuffer.allocateDirect(i11);
+        this.outputFileWidth = i;
+        this.outputFileHeight = i2;
+        int i3 = ((i * i2) * 3) / 2;
+        this.outputFrameSize = i3;
+        this.outputFrameBuffer = ByteBuffer.allocateDirect(i3);
         FileOutputStream fileOutputStream = new FileOutputStream(str);
         this.videoOutFile = fileOutputStream;
-        fileOutputStream.write(("YUV4MPEG2 C420 W" + i7 + " H" + i10 + " Ip F30:1 A1:1\n").getBytes(Charset.forName("US-ASCII")));
+        fileOutputStream.write(("YUV4MPEG2 C420 W" + i + " H" + i2 + " Ip F30:1 A1:1\n").getBytes(Charset.forName("US-ASCII")));
         HandlerThread handlerThread = new HandlerThread("VideoFileRendererRenderThread");
         this.renderThread = handlerThread;
         handlerThread.start();
@@ -55,7 +54,7 @@ public class VideoFileRenderer implements VideoSink {
         ThreadUtils.invokeAtFrontUninterruptibly(handler, new Runnable() { // from class: org.webrtc.VideoFileRenderer.1
             @Override // java.lang.Runnable
             public void run() {
-                VideoFileRenderer.this.eglBase = e.d(context, EglBase.CONFIG_PIXEL_BUFFER);
+                VideoFileRenderer.this.eglBase = c.a(context, EglBase.CONFIG_PIXEL_BUFFER);
                 VideoFileRenderer.this.eglBase.createDummyPbufferSurface();
                 VideoFileRenderer.this.eglBase.makeCurrent();
                 VideoFileRenderer.this.yuvConverter = new YuvConverter();
@@ -77,8 +76,8 @@ public class VideoFileRenderer implements VideoSink {
             this.videoOutFile.close();
             Logging.d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
             this.fileThread.quit();
-        } catch (IOException e10) {
-            throw new RuntimeException("Error closing output file", e10);
+        } catch (IOException e) {
+            fyb.j("Error closing output file", e);
         }
     }
 
@@ -90,8 +89,8 @@ public class VideoFileRenderer implements VideoSink {
             this.videoOutFile.write("FRAME\n".getBytes(Charset.forName("US-ASCII")));
             this.videoOutFile.write(this.outputFrameBuffer.array(), this.outputFrameBuffer.arrayOffset(), this.outputFrameSize);
             this.frameCount++;
-        } catch (IOException e10) {
-            throw new RuntimeException("Error writing video to disk", e10);
+        } catch (IOException e) {
+            fyb.j("Error writing video to disk", e);
         }
     }
 
@@ -99,45 +98,44 @@ public class VideoFileRenderer implements VideoSink {
     /* renamed from: renderFrameOnRenderThread, reason: merged with bridge method [inline-methods] */
     public void lambda$onFrame$0(VideoFrame videoFrame) {
         VideoFrame.Buffer buffer = videoFrame.getBuffer();
-        int i7 = videoFrame.getRotation() % ks.K2 == 0 ? this.outputFileWidth : this.outputFileHeight;
-        int i10 = videoFrame.getRotation() % ks.K2 == 0 ? this.outputFileHeight : this.outputFileWidth;
+        int i = videoFrame.getRotation() % kk7.J2 == 0 ? this.outputFileWidth : this.outputFileHeight;
+        int i2 = videoFrame.getRotation() % kk7.J2 == 0 ? this.outputFileHeight : this.outputFileWidth;
         float width = buffer.getWidth() / buffer.getHeight();
-        float f10 = i7 / i10;
+        float f = i / i2;
         int width2 = buffer.getWidth();
         int height = buffer.getHeight();
-        if (f10 > width) {
-            height = (int) ((width / f10) * height);
+        if (f > width) {
+            height = (int) ((width / f) * height);
         } else {
-            width2 = (int) ((f10 / width) * width2);
+            width2 = (int) ((f / width) * width2);
         }
-        VideoFrame.Buffer cropAndScale = buffer.cropAndScale((buffer.getWidth() - width2) / 2, (buffer.getHeight() - height) / 2, width2, height, i7, i10);
+        VideoFrame.Buffer cropAndScale = buffer.cropAndScale((buffer.getWidth() - width2) / 2, (buffer.getHeight() - height) / 2, width2, height, i, i2);
         videoFrame.release();
         VideoFrame.I420Buffer i420 = cropAndScale.toI420();
         cropAndScale.release();
-        this.fileThreadHandler.post(new as0(this, i420, videoFrame, 20));
+        this.fileThreadHandler.post(new r1b(this, i420, videoFrame, (byte) 28));
     }
 
     @Override // org.webrtc.VideoSink
     public void onFrame(VideoFrame videoFrame) {
         videoFrame.retain();
-        this.renderThreadHandler.post(new r(4, this, videoFrame));
+        this.renderThreadHandler.post(new l3c(this, videoFrame, (byte) 14));
     }
 
     public void release() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.renderThreadHandler.post(new r(5, this, countDownLatch));
+        this.renderThreadHandler.post(new l3c(this, countDownLatch, (byte) 15));
         ThreadUtils.awaitUninterruptibly(countDownLatch);
-        this.fileThreadHandler.post(new h(this, 4));
+        this.fileThreadHandler.post(new cib(this, (byte) 26));
         try {
             this.fileThread.join();
-        } catch (InterruptedException e10) {
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            Logging.e(TAG, "Interrupted while waiting for the write to disk to complete.", e10);
+            Logging.e(TAG, "Interrupted while waiting for the write to disk to complete.", e);
         }
     }
 
     @Override // org.webrtc.VideoSink
-    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        d0.a(this, videoSink);
+    public final void setParentSink(VideoSink videoSink) {
     }
 }

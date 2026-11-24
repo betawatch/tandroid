@@ -1,17 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import b7.h;
-import gd.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzad implements zzar {
-    private final c zza;
+    private final d06 zza;
     private boolean zzb;
 
     public zzad() {
-        int i7 = zzby.zza;
-        this.zza = h.b(zzac.zza);
+        int i = zzby.zza;
+        this.zza = cne.b(zzac.zza);
         this.zzb = true;
     }
 
@@ -25,30 +22,30 @@ public final class zzad implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, id.c cVar) {
-        return zzam.zza(this, str, cVar);
+    public final /* synthetic */ Object zzc(String str, fw2 fw2Var) {
+        return zzam.zza(this, str, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, id.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, fw2 fw2Var) {
         Object zzd;
-        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), fw2Var);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, id.c cVar) {
+    public final Object zze(String str, fw2 fw2Var) {
         return new zzhg(new zzaa(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, id.c cVar) {
+    public final Object zzf(zzxp zzxpVar, fw2 fw2Var) {
         return new zzhg(new zzab(zzxpVar, this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzg(Exception exc, id.c cVar) {
-        return zzam.zzd(this, exc, cVar);
+    public final /* synthetic */ Object zzg(Exception exc, fw2 fw2Var) {
+        return zzam.zzd(this, exc, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
@@ -56,7 +53,7 @@ public final class zzad implements zzar {
         return this.zzb;
     }
 
-    public final void zzj(boolean z10) {
+    public final void zzj(boolean z) {
         this.zzb = false;
     }
 

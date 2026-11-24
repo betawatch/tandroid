@@ -1,19 +1,19 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class FcscoreAtom extends Atom {
     private int N;
 
-    public FcscoreAtom(int i7) {
-        this.N = i7;
+    public FcscoreAtom(int i) {
+        this.N = i;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         float factor = SpaceAtom.getFactor(5, teXEnvironment) * 12.0f;
-        int i7 = this.N;
-        return new FcscoreBox(i7 == 5 ? 4 : i7, 1.0f * factor, 0.07f * factor, factor * 0.125f, i7 == 5);
+        int i = this.N;
+        return new FcscoreBox(i == 5 ? 4 : i, 1.0f * factor, 0.07f * factor, 0.125f * factor, i == 5);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

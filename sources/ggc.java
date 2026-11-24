@@ -1,0 +1,56 @@
+// default package
+
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class ggc extends View {
+    public final Paint a;
+    public final gc0 b;
+    public tgb c;
+
+    public ggc(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-14538189);
+        gc0 gc0Var = new gc0(this, false);
+        this.b = gc0Var;
+        gc0Var.p = gl.L(100.0f);
+        gc0Var.o = gl.L(30.0f);
+        gc0Var.x = false;
+        gc0Var.s = gl.L(24.0f);
+        gc0Var.h(gl.L(18.0f));
+        gc0Var.t = 0.58f;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null) {
+            return;
+        }
+        float L = gl.L(4.0f);
+        gc0 gc0Var = this.b;
+        float c = gc0Var.c() + L + gl.L(7.0f) + this.c.c + gl.L(13.0f);
+        float L2 = gl.L(30.0f);
+        RectF rectF = gl.P;
+        rectF.set((getWidth() - c) / 2.0f, 0.0f, (getWidth() + c) / 2.0f, getHeight());
+        float f = L2 / 2.0f;
+        canvas.drawRoundRect(rectF, f, f, this.a);
+        canvas.save();
+        canvas.translate(rectF.left + gl.L(4.0f), 0.0f);
+        gc0Var.g(canvas);
+        canvas.translate(gc0Var.A + gl.L(7.0f), 0.0f);
+        this.c.c(0.0f, f, 1.0f, -1, canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(30.0f));
+    }
+}

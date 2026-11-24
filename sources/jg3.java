@@ -1,0 +1,46 @@
+// default package
+
+import android.app.Activity;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class jg3 implements p8c {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Activity b;
+
+    public /* synthetic */ jg3(Activity activity, byte b) {
+        this.a = b;
+        this.b = activity;
+    }
+
+    @Override // p8c
+    public final void a(Object obj) {
+        byte b = this.a;
+        Activity activity = this.b;
+        Boolean bool = (Boolean) obj;
+        switch (b) {
+            case 0:
+                if (bool.booleanValue()) {
+                    if (!rqe.a()) {
+                        rqe.f();
+                        break;
+                    } else {
+                        activity.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (bool.booleanValue()) {
+                    if (!rqe.a()) {
+                        rqe.f();
+                        break;
+                    } else {
+                        activity.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+}

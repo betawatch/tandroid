@@ -1,13 +1,11 @@
 package androidx.car.app.messaging.model;
 
-import a8.q6;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.car.app.model.CarText;
-import e0.j0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class CarMessage {
     private final CarText mBody;
@@ -17,8 +15,13 @@ public class CarMessage {
     private final long mReceivedTimeEpochMillis;
     private final Bundle mSender;
 
-    public CarMessage(a aVar) {
-        throw null;
+    private CarMessage() {
+        this.mSender = null;
+        this.mBody = null;
+        this.mMultimediaMimeType = null;
+        this.mMultimediaUri = null;
+        this.mReceivedTimeEpochMillis = 0L;
+        this.mIsRead = false;
     }
 
     public boolean equals(Object obj) {
@@ -29,7 +32,7 @@ public class CarMessage {
             return false;
         }
         CarMessage carMessage = (CarMessage) obj;
-        return q6.a(getSender(), carMessage.getSender()) && Objects.equals(this.mBody, carMessage.mBody) && this.mReceivedTimeEpochMillis == carMessage.mReceivedTimeEpochMillis && this.mIsRead == carMessage.mIsRead;
+        return sqe.a(getSender(), carMessage.getSender()) && Objects.equals(this.mBody, carMessage.mBody) && this.mReceivedTimeEpochMillis == carMessage.mReceivedTimeEpochMillis && this.mIsRead == carMessage.mIsRead;
     }
 
     public CarText getBody() {
@@ -48,28 +51,23 @@ public class CarMessage {
         return this.mReceivedTimeEpochMillis;
     }
 
-    public j0 getSender() {
+    public l38 getSender() {
         Bundle bundle = this.mSender;
         if (bundle == null) {
             return null;
         }
-        return j0.a(bundle);
+        return l38.a(bundle);
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(q6.b(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
+        return Objects.hash(Integer.valueOf(sqe.b(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
     }
 
     public boolean isRead() {
         return this.mIsRead;
     }
 
-    private CarMessage() {
-        this.mSender = null;
-        this.mBody = null;
-        this.mMultimediaMimeType = null;
-        this.mMultimediaUri = null;
-        this.mReceivedTimeEpochMillis = 0L;
-        this.mIsRead = false;
+    public CarMessage(nc1 nc1Var) {
+        throw null;
     }
 }

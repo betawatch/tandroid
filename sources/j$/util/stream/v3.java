@@ -1,75 +1,78 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-import java.util.function.LongConsumer;
-import java.util.function.ObjLongConsumer;
-import java.util.function.Supplier;
+import java.util.concurrent.CountedCompleter;
 
-/* loaded from: classes2.dex */
-public final class v3 extends p4 implements o4, i5 {
-    public final /* synthetic */ Supplier b;
-    public final /* synthetic */ ObjLongConsumer c;
-    public final /* synthetic */ o d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public class v3 extends CountedCompleter {
+    public final h2 a;
+    public final int b;
+    public final /* synthetic */ byte c;
+    public final Object d;
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public v3(v3 v3Var, h2 h2Var, int i) {
+        this(v3Var, h2Var, i, (byte) 0);
+        this.c = (byte) 1;
+        this.d = (Object[]) v3Var.d;
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    public final v3 a(int i, int i2) {
+        switch (this.c) {
+            case 0:
+                return new v3(this, ((g2) this.a).a(i), i2);
+            default:
+                return new v3(this, this.a.a(i), i2);
+        }
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void x(Object obj) {
-        x((Long) obj);
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        int i;
+        while (this.a.h() != 0) {
+            this.setPendingCount(this.a.h() - 1);
+            int i2 = 0;
+            int i3 = 0;
+            while (true) {
+                int h = this.a.h() - 1;
+                i = this.b + i3;
+                if (i2 < h) {
+                    v3 a = this.a(i2, i);
+                    i3 = (int) (a.a.count() + i3);
+                    a.fork();
+                    i2++;
+                }
+            }
+            this = this.a(i2, i);
+        }
+        switch (this.c) {
+            case 0:
+                ((g2) this.a).c(this.b, this.d);
+                break;
+            default:
+                this.a.f((Object[]) this.d, this.b);
+                break;
+        }
+        this.propagateCompletion();
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public v3(v3 v3Var, h2 h2Var, int i, byte b) {
+        super(v3Var);
+        this.a = h2Var;
+        this.b = i;
     }
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    public v3(h2 h2Var, Object obj, byte b) {
+        this.c = b;
+        this.a = h2Var;
+        this.b = 0;
+        this.d = obj;
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
-    }
-
-    @Override // j$.util.stream.o4
-    public final void u(o4 o4Var) {
-        this.a = this.d.apply(this.a, ((v3) o4Var).a);
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.a = this.b.get();
-    }
-
-    @Override // j$.util.stream.j5
-    public final void accept(long j3) {
-        this.c.accept(this.a, j3);
-    }
-
-    public v3(Supplier supplier, ObjLongConsumer objLongConsumer, o oVar) {
-        this.b = supplier;
-        this.c = objLongConsumer;
-        this.d = oVar;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public v3(v3 v3Var, g2 g2Var, int i) {
+        this(v3Var, g2Var, i, (byte) 0);
+        this.c = (byte) 0;
+        this.d = v3Var.d;
     }
 }

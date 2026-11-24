@@ -4,7 +4,8 @@ import java.util.PrimitiveIterator;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements PrimitiveIterator.OfDouble {
     public final /* synthetic */ h0 a;
 
@@ -25,16 +26,6 @@ public final /* synthetic */ class g0 implements PrimitiveIterator.OfDouble {
         this.a.forEachRemaining((Object) doubleConsumer);
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.PrimitiveIterator.OfDouble
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(doubleConsumer);
-    }
-
     @Override // java.util.Iterator
     public final /* synthetic */ boolean hasNext() {
         return this.a.hasNext();
@@ -49,11 +40,6 @@ public final /* synthetic */ class g0 implements PrimitiveIterator.OfDouble {
         return this.a.next();
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return this.a.next();
-    }
-
     @Override // java.util.PrimitiveIterator.OfDouble
     public final /* synthetic */ double nextDouble() {
         return this.a.nextDouble();
@@ -62,5 +48,20 @@ public final /* synthetic */ class g0 implements PrimitiveIterator.OfDouble {
     @Override // java.util.Iterator
     public final /* synthetic */ void remove() {
         this.a.remove();
+    }
+
+    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfDouble
+    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        this.a.forEachRemaining(doubleConsumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return this.a.next();
     }
 }

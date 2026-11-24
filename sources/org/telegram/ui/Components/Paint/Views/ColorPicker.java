@@ -7,13 +7,9 @@ import android.graphics.Shader;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import sg.g1;
-import tg.e;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
     public static final float[] e = {0.0f, 0.14f, 0.24f, 0.39f, 0.49f, 0.62f, 0.73f, 0.85f, 1.0f};
@@ -21,46 +17,46 @@ public class ColorPicker extends FrameLayout {
     public float b;
     public float c;
 
-    public static int a(float f10) {
+    public static int a(float f) {
         float[] fArr;
-        int i7;
+        int i;
         int[] iArr = d;
-        if (f10 <= 0.0f) {
+        if (f <= 0.0f) {
             return iArr[0];
         }
-        if (f10 >= 1.0f) {
+        if (f >= 1.0f) {
             return iArr[8];
         }
-        int i10 = 1;
+        int i2 = 1;
         while (true) {
             fArr = e;
-            if (i10 >= 9) {
-                i10 = -1;
-                i7 = -1;
+            if (i2 >= 9) {
+                i2 = -1;
+                i = -1;
                 break;
             }
-            if (fArr[i10] >= f10) {
-                i7 = i10 - 1;
+            if (fArr[i2] >= f) {
+                i = i2 - 1;
                 break;
             }
-            i10++;
+            i2++;
         }
-        float f11 = fArr[i7];
-        int i11 = iArr[i7];
-        float f12 = fArr[i10];
-        int i12 = iArr[i10];
-        float min = Math.min(Math.max((f10 - f11) / (f12 - f11), 0.0f), 1.0f);
-        int red = Color.red(i11);
-        int red2 = Color.red(i12);
-        int green = Color.green(i11);
-        int green2 = Color.green(i12);
-        int blue = Color.blue(i11);
-        int blue2 = Color.blue(i12);
-        return Color.argb(ks.e4, Math.min(ks.e4, (int) (((red2 - red) * min) + red)), Math.min(ks.e4, (int) (((green2 - green) * min) + green)), Math.min(ks.e4, (int) (((blue2 - blue) * min) + blue)));
+        float f2 = fArr[i];
+        int i3 = iArr[i];
+        float f3 = fArr[i2];
+        int i4 = iArr[i2];
+        float min = Math.min(Math.max((f - f2) / (f3 - f2), 0.0f), 1.0f);
+        int red = Color.red(i3);
+        int red2 = Color.red(i4);
+        int green = Color.green(i3);
+        int green2 = Color.green(i4);
+        int blue = Color.blue(i3);
+        int blue2 = Color.blue(i4);
+        return Color.argb(kk7.d4, Math.min(kk7.d4, (int) (((red2 - red) * min) + red)), Math.min(kk7.d4, (int) (((green2 - green) * min) + green)), Math.min(kk7.d4, (int) (((blue2 - blue) * min) + blue)));
     }
 
-    private void setDraggingFactor(float f10) {
-        this.c = f10;
+    private void setDraggingFactor(float f) {
+        this.c = f;
         invalidate();
     }
 
@@ -72,19 +68,19 @@ public class ColorPicker extends FrameLayout {
         return null;
     }
 
-    public g1 getSwatch() {
-        return new g1(this.a, this.b, a(this.a));
+    public mcb getSwatch() {
+        return new mcb(this.a, this.b, a(this.a));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawRoundRect(null, g0.L(6.0f), g0.L(6.0f), null);
+        canvas.drawRoundRect(null, gl.L(6.0f), gl.L(6.0f), null);
         throw null;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        new LinearGradient(g0.L(56.0f), 0.0f, (i11 - i7) - g0.L(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        new LinearGradient(gl.L(56.0f), 0.0f, (i3 - i) - gl.L(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
         throw null;
     }
 
@@ -97,30 +93,30 @@ public class ColorPicker extends FrameLayout {
         throw null;
     }
 
-    public void setLocation(float f10) {
-        this.a = f10;
-        a(f10);
+    public void setLocation(float f) {
+        this.a = f;
+        a(f);
         throw null;
     }
 
-    public void setSettingsButtonImage(int i7) {
+    public void setSettingsButtonImage(int i) {
         throw null;
     }
 
-    public void setSwatch(g1 g1Var) {
-        setLocation(g1Var.b);
-        setWeight(g1Var.c);
+    public void setSwatch(mcb mcbVar) {
+        setLocation(mcbVar.b);
+        setWeight(mcbVar.c);
     }
 
-    public void setUndoEnabled(boolean z10) {
+    public void setUndoEnabled(boolean z) {
         throw null;
     }
 
-    public void setWeight(float f10) {
-        this.b = f10;
+    public void setWeight(float f) {
+        this.b = f;
         invalidate();
     }
 
-    public void setDelegate(e eVar) {
+    public void setDelegate(ml2 ml2Var) {
     }
 }

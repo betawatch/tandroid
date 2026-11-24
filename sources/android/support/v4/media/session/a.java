@@ -1,105 +1,75 @@
 package android.support.v4.media.session;
 
-import a8.k1;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.support.v4.media.MediaMetadataCompat;
-import java.util.List;
+import android.content.Context;
+import android.media.session.MediaController;
+import android.media.session.MediaSession;
+import android.os.RemoteException;
+import android.util.Log;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public IBinder a;
+public class a {
+    public final MediaController a;
+    public final Object b = new Object();
+    public final ArrayList c = new ArrayList();
+    public final HashMap d = new HashMap();
+    public final MediaSessionCompat$Token e;
 
-    @Override // android.support.v4.media.session.b
-    public final void E(Bundle bundle) {
-        throw null;
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void L(List list) {
-        throw null;
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void e(int i7) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(i7);
-            this.a.transact(9, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    public a(Context context, MediaSessionCompat$Token mediaSessionCompat$Token) {
+        this.e = mediaSessionCompat$Token;
+        MediaController mediaController = new MediaController(context, (MediaSession.Token) mediaSessionCompat$Token.b);
+        this.a = mediaController;
+        if (mediaSessionCompat$Token.a() == null) {
+            MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver mediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver = new MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver(null);
+            mediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver.a = new WeakReference(this);
+            mediaController.sendCommand("android.support.v4.media.session.command.GET_EXTRA_BINDER", null, mediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver);
         }
     }
 
-    @Override // android.support.v4.media.session.b
-    public final void e1(PlaybackStateCompat playbackStateCompat) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            k1.b(obtain, playbackStateCompat);
-            this.a.transact(3, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    public final void a() {
+        MediaSessionCompat$Token mediaSessionCompat$Token = this.e;
+        if (mediaSessionCompat$Token.a() == null) {
+            return;
         }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void g1(ParcelableVolumeInfo parcelableVolumeInfo) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            k1.b(obtain, parcelableVolumeInfo);
-            this.a.transact(8, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ts6 ts6Var = (ts6) obj;
+            sm6 sm6Var = new sm6(ts6Var);
+            this.d.put(ts6Var, sm6Var);
+            ts6Var.c = sm6Var;
+            try {
+                mediaSessionCompat$Token.a().G(sm6Var);
+                ts6Var.e(13, null, null);
+            } catch (RemoteException e) {
+                Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
+            }
         }
+        arrayList.clear();
     }
 
-    @Override // android.support.v4.media.session.b
-    public final void j(int i7) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(i7);
-            this.a.transact(12, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void k0(CharSequence charSequence) {
-        throw null;
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void m0() {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            this.a.transact(2, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void o0(MediaMetadataCompat mediaMetadataCompat) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            k1.b(obtain, mediaMetadataCompat);
-            this.a.transact(4, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    public final void b(ts6 ts6Var) {
+        this.a.unregisterCallback(ts6Var.a);
+        synchronized (this.b) {
+            if (this.e.a() != null) {
+                try {
+                    sm6 sm6Var = (sm6) this.d.remove(ts6Var);
+                    if (sm6Var != null) {
+                        ts6Var.c = null;
+                        this.e.a().D(sm6Var);
+                    }
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
+                }
+            } else {
+                this.c.remove(ts6Var);
+            }
         }
     }
 }

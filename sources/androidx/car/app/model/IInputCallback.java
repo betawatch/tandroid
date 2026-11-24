@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface IInputCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IInputCallback".replace('$', '.');
@@ -15,13 +15,13 @@ public interface IInputCallback extends IInterface {
 
     void onInputTextChanged(String str, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class Stub extends Binder implements IInputCallback {
         static final int TRANSACTION_onInputSubmitted = 3;
         static final int TRANSACTION_onInputTextChanged = 2;
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-        public static class Proxy implements IInputCallback {
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        private static class Proxy implements IInputCallback {
             private IBinder mRemote;
 
             public Proxy(IBinder iBinder) {
@@ -77,20 +77,20 @@ public interface IInputCallback extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             String str = IInputCallback.DESCRIPTOR;
-            if (i7 >= 1 && i7 <= 16777215) {
+            if (i >= 1 && i <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i7 == 1598968902) {
+            if (i == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i7 == 2) {
+            if (i == 2) {
                 onInputTextChanged(parcel.readString(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             } else {
-                if (i7 != 3) {
-                    return super.onTransact(i7, parcel, parcel2, i10);
+                if (i != 3) {
+                    return super.onTransact(i, parcel, parcel2, i2);
                 }
                 onInputSubmitted(parcel.readString(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             }
@@ -103,7 +103,7 @@ public interface IInputCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Default implements IInputCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzue implements zztp {
     private final zzts zza;
@@ -17,19 +17,19 @@ final class zzue implements zztp {
             this.zzd = charAt;
             return;
         }
-        int i7 = charAt & 8191;
-        int i10 = 1;
-        int i11 = 13;
+        int i = charAt & 8191;
+        int i2 = 1;
+        int i3 = 13;
         while (true) {
-            int i12 = i10 + 1;
-            char charAt2 = str.charAt(i10);
+            int i4 = i2 + 1;
+            char charAt2 = str.charAt(i2);
             if (charAt2 < 55296) {
-                this.zzd = i7 | (charAt2 << i11);
+                this.zzd = i | (charAt2 << i3);
                 return;
             } else {
-                i7 |= (charAt2 & 8191) << i11;
-                i11 += 13;
-                i10 = i12;
+                i |= (charAt2 & 8191) << i3;
+                i3 += 13;
+                i2 = i4;
             }
         }
     }
@@ -46,11 +46,11 @@ final class zzue implements zztp {
 
     @Override // com.google.android.recaptcha.internal.zztp
     public final int zzc() {
-        int i7 = this.zzd;
-        if ((i7 & 1) != 0) {
+        int i = this.zzd;
+        if ((i & 1) != 0) {
             return 1;
         }
-        return (i7 & 4) == 4 ? 3 : 2;
+        return (i & 4) == 4 ? 3 : 2;
     }
 
     public final String zzd() {

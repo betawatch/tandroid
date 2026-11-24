@@ -1,0 +1,13 @@
+// default package
+
+import android.graphics.Canvas;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class kx4 implements gx4 {
+    public static final kx4 a = new kx4();
+
+    @Override // gx4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+    }
+}

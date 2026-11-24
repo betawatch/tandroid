@@ -1,132 +1,155 @@
 package j$.time;
 
-import j$.time.format.w;
+import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
-import java.util.Locale;
 
-/* loaded from: classes2.dex */
-public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparable, Serializable {
-    public static final /* synthetic */ int c = 0;
-    private static final long serialVersionUID = -939150713474957432L;
-    public final int a;
-    public final int b;
-
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        l lVar = (l) obj;
-        int i7 = this.a - lVar.a;
-        return i7 == 0 ? this.b - lVar.b : i7;
-    }
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class l implements j$.time.temporal.l, j$.time.temporal.m {
+    public static final l APRIL;
+    public static final l AUGUST;
+    public static final l DECEMBER;
+    public static final l FEBRUARY;
+    public static final l JANUARY;
+    public static final l JULY;
+    public static final l JUNE;
+    public static final l MARCH;
+    public static final l MAY;
+    public static final l NOVEMBER;
+    public static final l OCTOBER;
+    public static final l SEPTEMBER;
+    public static final l[] a;
+    public static final /* synthetic */ l[] b;
 
     static {
-        j$.time.format.p pVar = new j$.time.format.p();
-        pVar.d("--");
-        pVar.g(j$.time.temporal.a.MONTH_OF_YEAR, 2);
-        pVar.c('-');
-        pVar.g(j$.time.temporal.a.DAY_OF_MONTH, 2);
-        pVar.l(Locale.getDefault(), w.SMART, null);
+        l lVar = new l("JANUARY", 0);
+        JANUARY = lVar;
+        l lVar2 = new l("FEBRUARY", 1);
+        FEBRUARY = lVar2;
+        l lVar3 = new l("MARCH", 2);
+        MARCH = lVar3;
+        l lVar4 = new l("APRIL", 3);
+        APRIL = lVar4;
+        l lVar5 = new l("MAY", 4);
+        MAY = lVar5;
+        l lVar6 = new l("JUNE", 5);
+        JUNE = lVar6;
+        l lVar7 = new l("JULY", 6);
+        JULY = lVar7;
+        l lVar8 = new l("AUGUST", 7);
+        AUGUST = lVar8;
+        l lVar9 = new l("SEPTEMBER", 8);
+        SEPTEMBER = lVar9;
+        l lVar10 = new l("OCTOBER", 9);
+        OCTOBER = lVar10;
+        l lVar11 = new l("NOVEMBER", 10);
+        NOVEMBER = lVar11;
+        l lVar12 = new l("DECEMBER", 11);
+        DECEMBER = lVar12;
+        b = new l[]{lVar, lVar2, lVar3, lVar4, lVar5, lVar6, lVar7, lVar8, lVar9, lVar10, lVar11, lVar12};
+        a = values();
     }
 
-    public l(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
+    public static l valueOf(String str) {
+        return (l) Enum.valueOf(l.class, str);
+    }
+
+    public static l[] values() {
+        return (l[]) b.clone();
+    }
+
+    public static l w(int i) {
+        if (i >= 1 && i <= 12) {
+            return a[i - 1];
+        }
+        g.d("Invalid value for MonthOfYear: ", i);
+        return null;
     }
 
     @Override // j$.time.temporal.l
     public final boolean e(j$.time.temporal.o oVar) {
-        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.MONTH_OF_YEAR || oVar == j$.time.temporal.a.DAY_OF_MONTH : oVar != null && oVar.j(this);
+        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.MONTH_OF_YEAR : oVar != null && oVar.j(this);
     }
 
-    @Override // j$.time.temporal.l
-    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
-        if (oVar == j$.time.temporal.a.MONTH_OF_YEAR) {
-            return oVar.l();
-        }
-        if (oVar != j$.time.temporal.a.DAY_OF_MONTH) {
-            return j$.time.temporal.p.d(this, oVar);
-        }
-        j J = j.J(this.a);
-        J.getClass();
-        int i7 = i.a[J.ordinal()];
-        return j$.time.temporal.s.f(i7 != 1 ? (i7 == 2 || i7 == 3 || i7 == 4 || i7 == 5) ? 30 : 31 : 28, j.J(this.a).I());
+    public final int getValue() {
+        return ordinal() + 1;
     }
 
     @Override // j$.time.temporal.l
     public final int j(j$.time.temporal.o oVar) {
-        return l(oVar).a(y(oVar), oVar);
+        return oVar == j$.time.temporal.a.MONTH_OF_YEAR ? getValue() : j$.time.temporal.p.a(this, oVar);
+    }
+
+    @Override // j$.time.temporal.l
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
+        return oVar == j$.time.temporal.a.MONTH_OF_YEAR ? oVar.range() : j$.time.temporal.p.d(this, oVar);
+    }
+
+    @Override // j$.time.temporal.m
+    public final Temporal n(Temporal temporal) {
+        if (!a.M(temporal).equals(j$.time.chrono.q.c)) {
+            throw new c("Adjustment only supported on ISO date-time");
+        }
+        return temporal.c(getValue(), j$.time.temporal.a.MONTH_OF_YEAR);
+    }
+
+    public final int o(boolean z) {
+        switch (k.a[ordinal()]) {
+            case 1:
+                return 32;
+            case 2:
+                return (z ? 1 : 0) + 91;
+            case 3:
+                return (z ? 1 : 0) + kk7.h2;
+            case 4:
+                return (z ? 1 : 0) + kk7.S3;
+            case 5:
+                return (z ? 1 : 0) + kk7.b5;
+            case 6:
+                return 1;
+            case 7:
+                return (z ? 1 : 0) + 60;
+            case 8:
+                return (z ? 1 : 0) + kk7.E1;
+            case 9:
+                return (z ? 1 : 0) + kk7.L2;
+            case 10:
+                return (z ? 1 : 0) + kk7.p3;
+            case 11:
+                return (z ? 1 : 0) + kk7.w4;
+            default:
+                return (z ? 1 : 0) + kk7.F5;
+        }
+    }
+
+    public final int q(boolean z) {
+        int i = k.a[ordinal()];
+        return i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : z ? 29 : 28;
+    }
+
+    @Override // j$.time.temporal.l
+    public final Object r(j$.time.format.a aVar) {
+        return aVar == j$.time.temporal.p.b ? j$.time.chrono.q.c : aVar == j$.time.temporal.p.c ? ChronoUnit.MONTHS : j$.time.temporal.p.c(this, aVar);
+    }
+
+    public final int v() {
+        int i = k.a[ordinal()];
+        if (i != 1) {
+            return (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31;
+        }
+        return 29;
     }
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i7;
-        if (!(oVar instanceof j$.time.temporal.a)) {
-            return oVar.m(this);
+        if (oVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+            return getValue();
         }
-        int i10 = k.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i10 == 1) {
-            i7 = this.b;
-        } else {
-            if (i10 != 2) {
-                throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
-            }
-            i7 = this.a;
+        if (oVar instanceof j$.time.temporal.a) {
+            throw new j$.time.temporal.r(d.a("Unsupported field: ", oVar));
         }
-        return i7;
-    }
-
-    @Override // j$.time.temporal.l
-    public final Object m(j$.time.format.a aVar) {
-        if (aVar == j$.time.temporal.p.b) {
-            return j$.time.chrono.r.c;
-        }
-        return j$.time.temporal.p.c(this, aVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final Temporal q(Temporal temporal) {
-        if (!j$.com.android.tools.r8.a.M(temporal).equals(j$.time.chrono.r.c)) {
-            throw new b("Adjustment only supported on ISO date-time");
-        }
-        Temporal c10 = temporal.c(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
-        j$.time.temporal.a aVar = j$.time.temporal.a.DAY_OF_MONTH;
-        return c10.c(Math.min(c10.l(aVar).d, this.b), aVar);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof l) {
-            l lVar = (l) obj;
-            if (this.a == lVar.a && this.b == lVar.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (this.a << 6) + this.b;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder(10);
-        sb2.append("--");
-        sb2.append(this.a < 10 ? "0" : "");
-        sb2.append(this.a);
-        sb2.append(this.b < 10 ? "-0" : "-");
-        sb2.append(this.b);
-        return sb2.toString();
-    }
-
-    private Object writeReplace() {
-        return new p((byte) 13, this);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
+        return oVar.l(this);
     }
 }

@@ -1,0 +1,20 @@
+// default package
+
+import android.content.Context;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class fd4 extends ld5 {
+    public final ri r;
+
+    public fd4(Context context, wjb wjbVar) {
+        super(context);
+        ri riVar = new ri(context, true, true, true, (byte) 1);
+        this.r = riVar;
+        riVar.setGravity(k96.a0 ? 3 : 5);
+        zkb.U(riVar, bkb.K6, wjbVar);
+        riVar.setTextSize(gl.N(15.0f));
+        addView(riVar, nme.d(-1, 18.0f, (k96.a0 ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
+        ote.b(riVar, 0.04f, 1.2f);
+    }
+}

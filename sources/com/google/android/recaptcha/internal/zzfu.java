@@ -1,50 +1,49 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfu extends j implements p {
+final class zzfu extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzgb zzb;
     final /* synthetic */ long zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfu(zzgb zzgbVar, long j3, c cVar) {
-        super(2, cVar);
+    public zzfu(zzgb zzgbVar, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzgbVar;
-        this.zzc = j3;
+        this.zzc = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzfu zzfuVar = new zzfu(this.zzb, this.zzc, fw2Var);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfu) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0040, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x004f, code lost:
     
-        if (((com.google.android.recaptcha.internal.zzhg) r13).zza(r1, r12) != r0) goto L16;
+        if (r14 != r4) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x00ba, code lost:
     
-        if (r13 != r0) goto L14;
+        return r4;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x003d, code lost:
+    
+        if (((com.google.android.recaptcha.internal.zzhg) r14).zza(r0, r13) != r4) goto L14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0031, code lost:
+    
+        if (r14 != r4) goto L12;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,56 +52,49 @@ final class zzfu extends j implements p {
         zzcg zzcgVar;
         zzdt zzdtVar;
         zzhk zzhkVar;
-        long longValue;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
-                long j3 = this.zzc;
+                long j = this.zzc;
                 this.zzd = zzhkVar;
                 this.zza = 1;
-                obj = zzgbVar.zzq(j3, this);
-            } else if (i7 == 1) {
+                obj = zzgbVar.zzq(j, this);
+            } else if (i == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                z.b(obj);
+                qse.b(obj);
             } else {
-                if (i7 != 2) {
-                    z.b(obj);
-                    longValue = this.zzc - ((Number) obj).longValue();
-                    if (longValue < 500) {
+                if (i != 2) {
+                    qse.b(obj);
+                    long longValue = this.zzc - ((Number) obj).longValue();
+                    if (longValue >= 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                z.b(obj);
+                qse.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
                 obj = zzgbVar2.zzp(zzftVar, this);
-                if (obj == aVar) {
-                    return aVar;
-                }
-                longValue = this.zzc - ((Number) obj).longValue();
-                if (longValue < 500) {
-                }
             }
             this.zzd = null;
             this.zza = 2;
-        } catch (Exception e10) {
-            zzcg zzcgVar2 = e10 instanceof zzcg ? (zzcg) e10 : null;
+        } catch (Exception e) {
+            zzcg zzcgVar2 = e instanceof zzcg ? (zzcg) e : null;
             if (zzcgVar2 == null) {
-                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e10.getMessage(), null, 8, null);
+                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e.getMessage(), null, 8, null);
             }
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();
             zzdrVar = zzdv.zzd;
-            if (!kotlin.jvm.internal.j.a(zze, zzdrVar)) {
+            if (!rp5.a(zze, zzdrVar)) {
                 zzdv zze2 = zzgbVar3.zze();
                 zzdtVar = zzdv.zzc;
-                if (!kotlin.jvm.internal.j.a(zze2, zzdtVar)) {
+                if (!rp5.a(zze2, zzdtVar)) {
                     throw zzcgVar2;
                 }
             }

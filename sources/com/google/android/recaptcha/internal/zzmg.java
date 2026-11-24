@@ -1,62 +1,60 @@
 package com.google.android.recaptcha.internal;
 
-import a8.p0;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import p5.c;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String l10;
-        int i7 = 0;
-        int i10 = 0;
+        String i;
+        int i2 = 0;
+        int i3 = 0;
         while (true) {
             length = objArr.length;
-            if (i10 >= length) {
+            if (i3 >= length) {
                 break;
             }
-            Object obj = objArr[i10];
+            Object obj = objArr[i3];
             if (obj == null) {
-                l10 = "null";
+                i = "null";
             } else {
                 try {
-                    l10 = obj.toString();
-                } catch (Exception e10) {
-                    String E = p0.E(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(E), (Throwable) e10);
-                    l10 = c.l("<", E, " threw ", e10.getClass().getName(), ">");
+                    i = obj.toString();
+                } catch (Exception e) {
+                    String y = tb4.y(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(y), (Throwable) e);
+                    i = b00.i("<", y, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i10] = l10;
-            i10++;
+            objArr[i3] = i;
+            i3++;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i11 = 0;
+        StringBuilder sb = new StringBuilder(str.length() + (length << 4));
+        int i4 = 0;
         while (true) {
             length2 = objArr.length;
-            if (i7 >= length2 || (indexOf = str.indexOf("%s", i11)) == -1) {
+            if (i2 >= length2 || (indexOf = str.indexOf("%s", i4)) == -1) {
                 break;
             }
-            sb2.append((CharSequence) str, i11, indexOf);
-            sb2.append(objArr[i7]);
-            i7++;
-            i11 = indexOf + 2;
+            sb.append((CharSequence) str, i4, indexOf);
+            sb.append(objArr[i2]);
+            i2++;
+            i4 = indexOf + 2;
         }
-        sb2.append((CharSequence) str, i11, str.length());
-        if (i7 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i7]);
-            for (int i12 = i7 + 1; i12 < objArr.length; i12++) {
-                sb2.append(", ");
-                sb2.append(objArr[i12]);
+        sb.append((CharSequence) str, i4, str.length());
+        if (i2 < length2) {
+            sb.append(" [");
+            sb.append(objArr[i2]);
+            for (int i5 = i2 + 1; i5 < objArr.length; i5++) {
+                sb.append(", ");
+                sb.append(objArr[i5]);
             }
-            sb2.append(']');
+            sb.append(']');
         }
-        return sb2.toString();
+        return sb.toString();
     }
 }

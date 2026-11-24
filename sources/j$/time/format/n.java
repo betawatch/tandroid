@@ -2,7 +2,8 @@ package j$.time.format;
 
 import j$.time.ZoneId;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public class n implements f {
     public final a a;
     public final String b;
@@ -13,12 +14,12 @@ public class n implements f {
     }
 
     @Override // j$.time.format.f
-    public boolean j(r rVar, StringBuilder sb2) {
+    public boolean j(r rVar, StringBuilder sb) {
         ZoneId zoneId = (ZoneId) rVar.b(this.a);
         if (zoneId == null) {
             return false;
         }
-        sb2.append(zoneId.getId());
+        sb.append(zoneId.getId());
         return true;
     }
 

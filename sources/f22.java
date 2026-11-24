@@ -1,0 +1,41 @@
+// default package
+
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class f22 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ g22 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
+
+    public /* synthetic */ f22(g22 g22Var, String str, int i, byte b) {
+        this.a = b;
+        this.b = g22Var;
+        this.c = str;
+        this.d = i;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g22 g22Var = this.b;
+                String str = this.c;
+                int i = this.d;
+                g22Var.getClass();
+                gl.d3(new f22(g22Var, str, i, (byte) 1));
+                break;
+            default:
+                g22 g22Var2 = this.b;
+                String str2 = this.c;
+                int i2 = this.d;
+                g22Var2.getClass();
+                int i3 = y6c.t0;
+                Utilities.g.c(new az0(g22Var2, str2, new ArrayList(qu2.r(i3).Z.values()), new ArrayList(qu2.r(i3).f0), i3, i2));
+                break;
+        }
+    }
+}

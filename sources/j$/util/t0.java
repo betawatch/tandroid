@@ -6,7 +6,8 @@ import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class t0 implements Spliterator.OfDouble {
     public final /* synthetic */ u0 a;
 
@@ -44,16 +45,6 @@ public final /* synthetic */ class t0 implements Spliterator.OfDouble {
         this.a.forEachRemaining((Object) doubleConsumer);
     }
 
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.Spliterator.OfDouble
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(doubleConsumer);
-    }
-
     @Override // java.util.Spliterator
     public final /* synthetic */ Comparator getComparator() {
         return this.a.getComparator();
@@ -65,8 +56,8 @@ public final /* synthetic */ class t0 implements Spliterator.OfDouble {
     }
 
     @Override // java.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i7) {
-        return this.a.hasCharacteristics(i7);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
     }
 
     public final /* synthetic */ int hashCode() {
@@ -78,6 +69,21 @@ public final /* synthetic */ class t0 implements Spliterator.OfDouble {
         return this.a.tryAdvance((Object) doubleConsumer);
     }
 
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ Spliterator.OfDouble trySplit() {
+        return a(this.a.trySplit());
+    }
+
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // java.util.Spliterator.OfDouble
+    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        this.a.forEachRemaining(doubleConsumer);
+    }
+
     @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
         return this.a.tryAdvance(consumer);
@@ -86,11 +92,6 @@ public final /* synthetic */ class t0 implements Spliterator.OfDouble {
     @Override // java.util.Spliterator.OfDouble
     public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
         return this.a.tryAdvance(doubleConsumer);
-    }
-
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfDouble trySplit() {
-        return a(this.a.trySplit());
     }
 
     @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator

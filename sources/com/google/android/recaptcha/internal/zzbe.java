@@ -1,83 +1,70 @@
 package com.google.android.recaptcha.internal;
 
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import kotlin.jvm.internal.r;
-import rd.p;
-import zd.b0;
-import zd.s;
-import zd.t;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzbe extends j implements p {
+final class zzbe extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzbo zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbe(zzbo zzboVar, c cVar) {
-        super(2, cVar);
+    public zzbe(zzbo zzboVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzboVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzbe(this.zzc, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzbe(this.zzc, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbe) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzbe) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v12 */
-    /* JADX WARN: Type inference failed for: r1v13 */
-    /* JADX WARN: Type inference failed for: r1v9 */
-    @Override // kd.a
+    /* JADX WARN: Type inference failed for: r9v29, types: [g5c, java.lang.Object] */
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
         zzcd zzcdVar;
-        a aVar = a.a;
-        r rVar = this.zzb;
+        c59 c59Var;
         try {
-            if (rVar != 0) {
-                r rVar2 = (r) this.zza;
-                c8.z.b(obj);
-                rVar = rVar2;
+            if (this.zzb != 0) {
+                c59Var = (c59) this.zza;
+                qse.b(obj);
             } else {
-                c8.z.b(obj);
-                r rVar3 = new r();
-                zzbd zzbdVar = new zzbd(this.zzc, rVar3, null);
-                this.zza = rVar3;
+                qse.b(obj);
+                c59Var = new c59();
+                zzbd zzbdVar = new zzbd(this.zzc, c59Var, null);
+                this.zza = c59Var;
                 this.zzb = 1;
-                rVar = rVar3;
-                if (b0.z(60000L, zzbdVar, this) == aVar) {
-                    return aVar;
+                Object a = mve.a(60000L, zzbdVar, this);
+                bx2 bx2Var = bx2.a;
+                if (a == bx2Var) {
+                    return bx2Var;
                 }
             }
-            return k.a;
-        } catch (Exception e10) {
+            this = g5c.a;
+            return this;
+        } catch (Exception e) {
             zzbo zzboVar = this.zzc;
-            s zzf = zzboVar.zzf();
-            Throwable th2 = (Throwable) rVar.a;
-            if (th2 == null) {
-                th2 = e10;
+            bp2 zzf = zzboVar.zzf();
+            Throwable th = (Throwable) c59Var.a;
+            if (th == null) {
+                th = e;
             }
-            ((t) zzf).Q(th2);
+            ((cp2) zzf).P(th);
             zzboVar.zzc = zzbp.zza;
             zzce zzceVar = zzce.zzb;
-            Throwable th3 = (Throwable) rVar.a;
-            if (th3 == null) {
-                th3 = e10;
+            Throwable th2 = (Throwable) c59Var.a;
+            if (th2 == null) {
+                th2 = e;
             }
-            if (th3 instanceof StandardIntegrityException) {
-                int errorCode = ((StandardIntegrityException) th3).getErrorCode();
+            if (th2 instanceof StandardIntegrityException) {
+                int errorCode = ((StandardIntegrityException) th2).getErrorCode();
                 if (errorCode == -100) {
                     zzcdVar = zzcd.zzaV;
                 } else if (errorCode == -12) {
@@ -134,7 +121,7 @@ final class zzbe extends j implements p {
             } else {
                 zzcdVar = zzcd.zza;
             }
-            throw new zzcg(zzceVar, zzcdVar, e10.getMessage(), null, 8, null);
+            throw new zzcg(zzceVar, zzcdVar, e.getMessage(), null, 8, null);
         }
     }
 }

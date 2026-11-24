@@ -2,18 +2,15 @@ package androidx.versionedparcelable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import b5.c;
-import b5.d;
-import w.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ParcelImpl implements Parcelable {
-    public static final Parcelable.Creator<ParcelImpl> CREATOR = new a(21);
-    public final d a;
+    public static final Parcelable.Creator<ParcelImpl> CREATOR = new hv6((byte) 5);
+    public final aac a;
 
-    public ParcelImpl(d dVar) {
-        this.a = dVar;
+    public ParcelImpl(Parcel parcel) {
+        this.a = new z9c(parcel).h();
     }
 
     @Override // android.os.Parcelable
@@ -22,11 +19,11 @@ public class ParcelImpl implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        new c(parcel).l(this.a);
+    public final void writeToParcel(Parcel parcel, int i) {
+        new z9c(parcel).l(this.a);
     }
 
-    public ParcelImpl(Parcel parcel) {
-        this.a = new c(parcel).h();
+    public ParcelImpl(aac aacVar) {
+        this.a = aacVar;
     }
 }

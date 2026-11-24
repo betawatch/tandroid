@@ -1,38 +1,50 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
+import java.util.concurrent.CountedCompleter;
+import java.util.function.BinaryOperator;
+import java.util.function.LongFunction;
 
-/* loaded from: classes2.dex */
-public final class n2 extends o2 implements c2 {
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.U(this, j3, j10);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public class n2 extends d {
+    public final a h;
+    public final LongFunction i;
+    public final BinaryOperator j;
+
+    public n2(n2 n2Var, Spliterator spliterator) {
+        super(n2Var, spliterator);
+        this.h = n2Var.h;
+        this.i = n2Var.i;
+        this.j = n2Var.j;
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        t3.R(this, consumer);
+    @Override // j$.util.stream.d
+    public d c(Spliterator spliterator) {
+        return new n2(this, spliterator);
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i7) {
-        t3.O(this, (Long[]) objArr, i7);
+    @Override // j$.util.stream.d
+    /* renamed from: f, reason: merged with bridge method [inline-methods] */
+    public final h2 a() {
+        z1 z1Var = (z1) this.i.apply(this.h.F(this.b));
+        this.h.Q(this.b, z1Var);
+        return z1Var.build();
     }
 
-    @Override // j$.util.stream.d2
-    public final Object newArray(int i7) {
-        return new long[i7];
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        d dVar = this.d;
+        if (dVar != null) {
+            this.f = (h2) this.j.apply((h2) ((n2) dVar).f, (h2) ((n2) this.e).f);
+        }
+        super.onCompletion(countedCompleter);
     }
 
-    @Override // j$.util.stream.e2
-    public final Spliterator spliterator() {
-        return new e3(this);
-    }
-
-    @Override // j$.util.stream.e2
-    public final j$.util.d1 spliterator() {
-        return new e3(this);
+    public n2(a aVar, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator) {
+        super(aVar, spliterator);
+        this.h = aVar;
+        this.i = longFunction;
+        this.j = binaryOperator;
     }
 }

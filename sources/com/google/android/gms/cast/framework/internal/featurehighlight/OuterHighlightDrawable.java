@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 class OuterHighlightDrawable extends Drawable {
     public float a;
@@ -13,7 +13,7 @@ class OuterHighlightDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        canvas.drawCircle(this.b + 0.0f, this.c + 0.0f, this.a * 0.0f, null);
+        canvas.drawCircle(this.b + 0.0f, this.c + 0.0f, 0.0f * this.a, null);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -27,7 +27,7 @@ class OuterHighlightDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
+    public final void setAlpha(int i) {
         throw null;
     }
 
@@ -36,18 +36,18 @@ class OuterHighlightDrawable extends Drawable {
         throw null;
     }
 
-    public void setScale(float f10) {
-        this.a = f10;
+    public void setScale(float f) {
+        this.a = f;
         invalidateSelf();
     }
 
-    public void setTranslationX(float f10) {
-        this.b = f10;
+    public void setTranslationX(float f) {
+        this.b = f;
         invalidateSelf();
     }
 
-    public void setTranslationY(float f10) {
-        this.c = f10;
+    public void setTranslationY(float f) {
+        this.c = f;
         invalidateSelf();
     }
 }

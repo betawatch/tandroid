@@ -1,12 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import hd.e;
-import hd.h;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzjj implements zzjt {
     public static final zzjj zza = new zzjj();
@@ -16,7 +14,7 @@ public final class zzjj implements zzjt {
 
     private static final boolean zzb(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(h.d(list2, 10));
+        ArrayList arrayList = new ArrayList(al2.c(list2, 10));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add(Boolean.valueOf(((zzzt) it.next()).zzR()));
@@ -25,9 +23,10 @@ public final class zzjj implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
-        if (!zzb(e.h(zzztVarArr))) {
-            throw new zzdm(4, 5, null);
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (!zzb(ss.h(zzztVarArr))) {
+            fvc.c(4, 5, null);
+            return;
         }
         for (zzzt zzztVar : zzztVarArr) {
             zzizVar.zzc().zzb(zzztVar.zzi());

@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class RuleAtom extends Atom {
     private static final float MAX_LENGTH = 4096.0f;
@@ -11,13 +11,13 @@ public class RuleAtom extends Atom {
     private float w;
     private int wunit;
 
-    public RuleAtom(int i7, float f10, int i10, float f11, int i11, float f12) {
-        this.wunit = i7;
-        this.hunit = i10;
-        this.runit = i11;
-        this.w = f10;
-        this.h = f11;
-        this.r = f12;
+    public RuleAtom(int i, float f, int i2, float f2, int i3, float f3) {
+        this.wunit = i;
+        this.hunit = i2;
+        this.runit = i3;
+        this.w = f;
+        this.h = f2;
+        this.r = f3;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

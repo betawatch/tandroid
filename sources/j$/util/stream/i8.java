@@ -1,32 +1,8 @@
 package j$.util.stream;
 
-import java.util.function.LongPredicate;
+import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public final class i8 extends e5 {
-    public final boolean b;
-
-    public i8(d6 d6Var, j5 j5Var) {
-        super(j5Var);
-        this.b = true;
-    }
-
-    @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j3) {
-        this.a.o(-1L);
-    }
-
-    @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
-        if (this.b) {
-            LongPredicate longPredicate = null;
-            longPredicate.test(j3);
-            throw null;
-        }
-    }
-
-    @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final boolean q() {
-        return !this.b || this.a.q();
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface i8 extends n5, Supplier {
 }

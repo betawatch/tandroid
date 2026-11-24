@@ -4,7 +4,7 @@ import java.lang.Character;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class URLAlphabetRegistration implements AlphabetRegistration {
     private Character.UnicodeBlock[] blocks;
@@ -26,21 +26,26 @@ public class URLAlphabetRegistration implements AlphabetRegistration {
     public Object getPackage() {
         URL[] urlArr = {this.url};
         this.language = this.language.toLowerCase();
-        StringBuilder sb2 = new StringBuilder("org.scilab.forge.jlatexmath.");
-        sb2.append(this.language);
-        sb2.append(".");
-        sb2.append(Character.toString(Character.toUpperCase(this.language.charAt(0))));
+        StringBuilder sb = new StringBuilder("org.scilab.forge.jlatexmath.");
+        sb.append(this.language);
+        sb.append(".");
+        sb.append(Character.toString(Character.toUpperCase(this.language.charAt(0))));
         String str = this.language;
-        sb2.append(str.substring(1, str.length()));
-        sb2.append("Registration");
+        sb.append(str.substring(1, str.length()));
+        sb.append("Registration");
         try {
-            AlphabetRegistration alphabetRegistration = (AlphabetRegistration) Class.forName(sb2.toString(), true, new URLClassLoader(urlArr)).newInstance();
+            AlphabetRegistration alphabetRegistration = (AlphabetRegistration) Class.forName(sb.toString(), true, new URLClassLoader(urlArr)).newInstance();
             this.pack = alphabetRegistration;
             return alphabetRegistration;
         } catch (ClassNotFoundException unused) {
             throw new AlphabetRegistrationException("Class at " + this.url + " cannot be got.");
-        } catch (Exception e10) {
-            throw new AlphabetRegistrationException("Problem in loading the class at " + this.url + " :\n" + e10.getMessage());
+        } catch (Exception e) {
+            StringBuilder sb2 = new StringBuilder("Problem in loading the class at ");
+            sb2.append(this.url);
+            String message = e.getMessage();
+            sb2.append(" :\n");
+            sb2.append(message);
+            throw new AlphabetRegistrationException(sb2.toString());
         }
     }
 

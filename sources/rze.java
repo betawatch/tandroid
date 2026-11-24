@@ -1,0 +1,24 @@
+// default package
+
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public abstract class rze {
+    public static final void a(StringBuilder sb, Iterator it, hcd hcdVar) {
+        if (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            sb.append(hcd.a(entry.getKey()));
+            sb.append(" : ");
+            sb.append(hcd.a(entry.getValue()));
+            while (it.hasNext()) {
+                sb.append(",\n  ");
+                Map.Entry entry2 = (Map.Entry) it.next();
+                sb.append(hcd.a(entry2.getKey()));
+                sb.append(" : ");
+                sb.append(hcd.a(entry2.getValue()));
+            }
+        }
+    }
+}

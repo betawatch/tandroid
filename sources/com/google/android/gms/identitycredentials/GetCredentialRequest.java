@@ -4,41 +4,36 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.ResultReceiver;
-import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.b;
 import java.util.ArrayList;
-import java.util.List;
-import kotlin.jvm.internal.j;
-import r6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class GetCredentialRequest extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<GetCredentialRequest> CREATOR = new b(10);
-    public final List a;
+public final class GetCredentialRequest extends b4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<GetCredentialRequest> CREATOR = new x21((byte) 21);
+    public final ArrayList a;
     public final Bundle b;
     public final String c;
     public final ResultReceiver d;
 
-    public GetCredentialRequest(ArrayList credentialOptions, Bundle data, String str, ResultReceiver resultReceiver) {
-        j.e(credentialOptions, "credentialOptions");
-        j.e(data, "data");
-        j.e(resultReceiver, "resultReceiver");
-        this.a = credentialOptions;
-        this.b = data;
+    public GetCredentialRequest(ArrayList arrayList, Bundle bundle, String str, ResultReceiver resultReceiver) {
+        arrayList.getClass();
+        bundle.getClass();
+        resultReceiver.getClass();
+        this.a = arrayList;
+        this.b = bundle;
         this.c = str;
         this.d = resultReceiver;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i7) {
-        j.e(dest, "dest");
-        int r10 = cc.r(dest, 20293);
-        cc.p(dest, 1, this.a);
-        cc.b(dest, 2, this.b);
-        cc.l(dest, 3, this.c);
-        cc.k(dest, 4, this.d, i7);
-        cc.s(dest, r10);
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.getClass();
+        int r = jte.r(parcel, 20293);
+        jte.p(parcel, 1, this.a);
+        jte.b(parcel, 2, this.b);
+        jte.l(parcel, 3, this.c);
+        jte.k(parcel, 4, this.d, i);
+        jte.s(parcel, r);
     }
 }

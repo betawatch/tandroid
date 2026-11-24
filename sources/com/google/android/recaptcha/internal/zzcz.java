@@ -7,16 +7,14 @@ import android.os.Build;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.jvm.internal.j;
-import n6.e;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzcz implements zzda {
-    private final e zza;
+    private final dy4 zza;
 
     public zzcz() {
-        this.zza = e.b;
+        this.zza = dy4.b;
     }
 
     @Override // com.google.android.recaptcha.internal.zzda
@@ -42,30 +40,30 @@ public final class zzcz implements zzda {
 
     @Override // com.google.android.recaptcha.internal.zzda
     public final boolean zzc(Context context) {
-        List<PackageInfo> installedPackages;
         try {
-            installedPackages = context.getPackageManager().getInstalledPackages(0);
+            List<PackageInfo> installedPackages = context.getPackageManager().getInstalledPackages(0);
+            if ((installedPackages instanceof Collection) && installedPackages.isEmpty()) {
+                return false;
+            }
+            Iterator<T> it = installedPackages.iterator();
+            while (it.hasNext()) {
+                if (rp5.a(((PackageInfo) it.next()).packageName, "com.android.vending")) {
+                    return true;
+                }
+            }
+            return false;
         } catch (Exception unused) {
-        }
-        if ((installedPackages instanceof Collection) && installedPackages.isEmpty()) {
             return false;
         }
-        Iterator<T> it = installedPackages.iterator();
-        while (it.hasNext()) {
-            if (j.a(((PackageInfo) it.next()).packageName, "com.android.vending")) {
-                return true;
-            }
-        }
-        return false;
     }
 
     @Override // com.google.android.recaptcha.internal.zzda
     public final int zzd(Context context) {
-        int c10 = this.zza.c(context);
-        return (c10 == 1 || c10 == 3 || c10 == 9) ? 4 : 3;
+        int b = this.zza.b(context);
+        return (b == 1 || b == 3 || b == 9) ? 4 : 3;
     }
 
-    public zzcz(e eVar) {
-        this.zza = eVar;
+    public zzcz(dy4 dy4Var) {
+        this.zza = dy4Var;
     }
 }

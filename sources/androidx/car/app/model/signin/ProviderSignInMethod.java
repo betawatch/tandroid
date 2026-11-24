@@ -1,26 +1,27 @@
 package androidx.car.app.model.signin;
 
 import androidx.car.app.model.Action;
-import androidx.car.app.model.b0;
 import j$.util.Objects;
-import u.c;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class ProviderSignInMethod implements c {
+public final class ProviderSignInMethod implements iha {
     private final Action mAction;
 
     public ProviderSignInMethod(Action action) {
         Objects.requireNonNull(action);
         if (action.getType() != 1) {
-            throw new IllegalArgumentException("The action must not be a standard action");
+            w26.j("The action must not be a standard action");
+            throw null;
         }
-        b0 onClickDelegate = action.getOnClickDelegate();
+        yo7 onClickDelegate = action.getOnClickDelegate();
         Objects.requireNonNull(onClickDelegate);
-        if (!onClickDelegate.isParkedOnly()) {
-            throw new IllegalArgumentException("The action must use a ParkedOnlyOnClickListener");
+        if (onClickDelegate.isParkedOnly()) {
+            this.mAction = action;
+        } else {
+            w26.j("The action must use a ParkedOnlyOnClickListener");
+            throw null;
         }
-        this.mAction = action;
     }
 
     public boolean equals(Object obj) {

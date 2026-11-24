@@ -1,53 +1,17 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.Deque;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
-public final class g3 extends h3 {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class g3 extends i3 implements j$.util.x0 {
     @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        e2 a10;
-        if (!c()) {
-            return false;
-        }
-        boolean tryAdvance = this.d.tryAdvance(consumer);
-        if (!tryAdvance) {
-            if (this.c == null && (a10 = h3.a(this.e)) != null) {
-                Spliterator spliterator = a10.spliterator();
-                this.d = spliterator;
-                return spliterator.tryAdvance(consumer);
-            }
-            this.a = null;
-        }
-        return tryAdvance;
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.i(this, consumer);
     }
 
     @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        if (this.a == null) {
-            return;
-        }
-        if (this.d == null) {
-            Spliterator spliterator = this.c;
-            if (spliterator == null) {
-                Deque b10 = b();
-                while (true) {
-                    e2 a10 = h3.a(b10);
-                    if (a10 != null) {
-                        a10.forEach(consumer);
-                    } else {
-                        this.a = null;
-                        return;
-                    }
-                }
-            } else {
-                spliterator.forEachRemaining(consumer);
-            }
-        } else {
-            while (tryAdvance(consumer)) {
-            }
-        }
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.z(this, consumer);
     }
 }

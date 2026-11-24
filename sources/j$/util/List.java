@@ -5,23 +5,11 @@ import java.util.Comparator;
 import java.util.ListIterator;
 import java.util.function.UnaryOperator;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface List<E> extends Collection<E> {
 
-    public final /* synthetic */ class -EL {
-        public static /* synthetic */ void sort(java.util.List list, Comparator comparator) {
-            if (list instanceof List) {
-                ((List) list).sort(comparator);
-            } else {
-                -CC.$default$sort(list, comparator);
-            }
-        }
-    }
-
-    void replaceAll(UnaryOperator<E> unaryOperator);
-
-    void sort(Comparator<? super E> comparator);
-
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public final /* synthetic */ class -CC {
         public static void $default$replaceAll(java.util.List list, UnaryOperator unaryOperator) {
             Objects.requireNonNull(unaryOperator);
@@ -41,4 +29,19 @@ public interface List<E> extends Collection<E> {
             }
         }
     }
+
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    public final /* synthetic */ class -EL {
+        public static /* synthetic */ void sort(java.util.List list, Comparator comparator) {
+            if (list instanceof List) {
+                ((List) list).sort(comparator);
+            } else {
+                -CC.$default$sort(list, comparator);
+            }
+        }
+    }
+
+    void replaceAll(UnaryOperator<E> unaryOperator);
+
+    void sort(Comparator<? super E> comparator);
 }

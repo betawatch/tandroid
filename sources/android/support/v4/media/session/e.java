@@ -1,106 +1,21 @@
 package android.support.v4.media.session;
 
-import android.media.MediaMetadata;
-import android.media.session.MediaController;
-import android.media.session.MediaSession;
-import android.media.session.PlaybackState;
-import android.os.Build;
-import android.os.Bundle;
 import android.os.Parcel;
-import android.support.v4.media.MediaDescriptionCompat;
-import android.support.v4.media.MediaMetadataCompat;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class e extends MediaController.Callback {
-    public final WeakReference a;
-
-    public e(androidx.mediarouter.app.q qVar) {
-        this.a = new WeakReference(qVar);
+public final class e implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        MediaSessionCompat$ResultReceiverWrapper mediaSessionCompat$ResultReceiverWrapper = new MediaSessionCompat$ResultReceiverWrapper();
+        mediaSessionCompat$ResultReceiverWrapper.a = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel);
+        return mediaSessionCompat$ResultReceiverWrapper;
     }
 
-    @Override // android.media.session.MediaController.Callback
-    public final void onAudioInfoChanged(MediaController.PlaybackInfo playbackInfo) {
-        if (((androidx.mediarouter.app.q) this.a.get()) != null) {
-            playbackInfo.getPlaybackType();
-            playbackInfo.getAudioAttributes();
-            if (Build.VERSION.SDK_INT >= 26) {
-            }
-            playbackInfo.getVolumeControl();
-            playbackInfo.getMaxVolume();
-            playbackInfo.getCurrentVolume();
-        }
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onExtrasChanged(Bundle bundle) {
-        a0.g(bundle);
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onMetadataChanged(MediaMetadata mediaMetadata) {
-        MediaMetadataCompat mediaMetadataCompat;
-        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
-        if (qVar != null) {
-            a0.f fVar = MediaMetadataCompat.d;
-            if (mediaMetadata != null) {
-                Parcel obtain = Parcel.obtain();
-                mediaMetadata.writeToParcel(obtain, 0);
-                obtain.setDataPosition(0);
-                mediaMetadataCompat = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
-                obtain.recycle();
-                mediaMetadataCompat.b = mediaMetadata;
-            } else {
-                mediaMetadataCompat = null;
-            }
-            qVar.a(mediaMetadataCompat);
-        }
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onPlaybackStateChanged(PlaybackState playbackState) {
-        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
-        if (qVar == null || qVar.c != null) {
-            return;
-        }
-        qVar.b(PlaybackStateCompat.a(playbackState));
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onQueueChanged(List list) {
-        MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem;
-        if (((androidx.mediarouter.app.q) this.a.get()) == null || list == null) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList(list.size());
-        for (Object obj : list) {
-            if (obj != null) {
-                MediaSession.QueueItem queueItem = (MediaSession.QueueItem) obj;
-                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(y.b(queueItem)), y.c(queueItem));
-            } else {
-                mediaSessionCompat$QueueItem = null;
-            }
-            arrayList.add(mediaSessionCompat$QueueItem);
-        }
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onQueueTitleChanged(CharSequence charSequence) {
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onSessionDestroyed() {
-        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
-        if (qVar != null) {
-            qVar.d();
-        }
-    }
-
-    @Override // android.media.session.MediaController.Callback
-    public final void onSessionEvent(String str, Bundle bundle) {
-        a0.g(bundle);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new MediaSessionCompat$ResultReceiverWrapper[i];
     }
 }

@@ -19,42 +19,35 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import c8.na;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.jf0;
-import org.telegram.ui.Components.nd0;
-import org.telegram.ui.b61;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public final HashMap E;
     public int F;
     public int G;
     public final Rect H;
-    public f1 I;
+    public l8 I;
     public float J;
-    public final jf0 K;
+    public final rf8 K;
     public final ScrollView L;
-    public final b61 M;
+    public final pkb M;
     public int N;
     public Drawable O;
     public boolean P;
     public View Q;
-    public g1 R;
+    public m8 R;
     public Rect S;
     public Path T;
     public boolean a;
     public boolean b;
     public boolean c;
     public boolean d;
-    public e1 e;
+    public k8 e;
     public float f;
     public float h;
     public boolean n;
@@ -64,8 +57,86 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     public boolean x;
     public ArrayList y;
 
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout(Context context, i6 i6Var) {
-        this(R.drawable.popup_fixed_alert2, 0, context, i6Var);
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout(int i, int i2, wjb wjbVar, Context context) {
+        super(context);
+        this.f = 1.0f;
+        this.h = 1.0f;
+        this.n = false;
+        this.r = kk7.d4;
+        this.s = 0;
+        byte b = 1;
+        this.x = true;
+        this.E = new HashMap();
+        this.F = -1000000;
+        this.G = -1000000;
+        Rect rect = new Rect();
+        this.H = rect;
+        this.J = 1.0f;
+        this.N = -1;
+        if (i != 0) {
+            this.O = getResources().getDrawable(i).mutate();
+            setPadding(gl.L(8.0f), gl.L(8.0f), gl.L(8.0f), gl.L(8.0f));
+        }
+        Drawable drawable = this.O;
+        if (drawable != null) {
+            drawable.getPadding(rect);
+            zkb.h(bkb.F8, wjbVar, this);
+        }
+        setWillNotDraw(false);
+        if ((i2 & 2) > 0) {
+            this.w = true;
+        }
+        if ((i2 & 1) > 0) {
+            rf8 rf8Var = new rf8(context);
+            rf8Var.a = new SparseIntArray();
+            rf8Var.c = -1.0f;
+            Paint paint = new Paint(1);
+            rf8Var.n = paint;
+            rf8Var.r = new Paint();
+            rf8Var.s = 0;
+            rf8Var.w = new Path();
+            rf8Var.x = new RectF();
+            rf8Var.y = new ArrayList();
+            rf8Var.H = -1;
+            rf8Var.I = new on(null);
+            rf8Var.K = -1;
+            rf8Var.M = new Rect();
+            rf8Var.J = wjbVar;
+            rf8Var.d = new gi3(context, new p12(rf8Var, ViewConfiguration.get(context).getScaledTouchSlop(), (byte) 2));
+            paint.setColor(-16777216);
+            this.K = rf8Var;
+            addView(rf8Var, nme.c(-2.0f, -2));
+        }
+        if ((i2 & 4) == 0) {
+            try {
+                ScrollView scrollView = new ScrollView(context);
+                this.L = scrollView;
+                scrollView.getViewTreeObserver().addOnScrollChangedListener(new h8(this));
+                scrollView.setVerticalScrollBarEnabled(false);
+                rf8 rf8Var2 = this.K;
+                if (rf8Var2 != null) {
+                    rf8Var2.addView(scrollView, nme.e(-2, -2, this.w ? 80 : 48));
+                } else {
+                    addView(scrollView, nme.c(-2.0f, -2));
+                }
+            } catch (Throwable th) {
+                fa4.g(th, true);
+            }
+        }
+        pkb pkbVar = new pkb(b, context, this);
+        this.M = pkbVar;
+        pkbVar.setOrientation(1);
+        ScrollView scrollView2 = this.L;
+        if (scrollView2 != null) {
+            scrollView2.addView(pkbVar, new FrameLayout.LayoutParams(-2, -2));
+            return;
+        }
+        rf8 rf8Var3 = this.K;
+        if (rf8Var3 != null) {
+            rf8Var3.addView(pkbVar, nme.e(-2, -2, this.w ? 80 : 48));
+        } else {
+            addView(pkbVar, nme.c(-2.0f, -2));
+        }
     }
 
     public final void a(View view, LinearLayout.LayoutParams layoutParams) {
@@ -78,16 +149,16 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     }
 
     public final int b(View view) {
-        FrameLayout.LayoutParams e10 = na.e(-2, -2, this.w ? 80 : 48);
-        this.K.addView(view, e10);
-        return r1.getChildCount() - 1;
+        FrameLayout.LayoutParams e = nme.e(-2, -2, this.w ? 80 : 48);
+        this.K.addView(view, e);
+        return r2.getChildCount() - 1;
     }
 
     public final void c() {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31);
-        b61 b61Var = this.M;
-        b61Var.measure(makeMeasureSpec, makeMeasureSpec);
-        b61Var.getMeasuredHeight();
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(gl.L(1000.0f), TLObject.FLAG_31);
+        pkb pkbVar = this.M;
+        pkbVar.measure(makeMeasureSpec, makeMeasureSpec);
+        pkbVar.getMeasuredHeight();
     }
 
     public final void d() {
@@ -96,227 +167,229 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        b61 b61Var;
-        int i7;
-        boolean z10;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        float f10;
-        float f11;
+        pkb pkbVar;
+        int i;
+        boolean z;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        float f;
+        float f2;
         Canvas canvas2;
-        int i14;
+        int i6;
         Rect rect;
-        int i15;
-        int i16;
-        boolean z11 = this.c;
-        jf0 jf0Var = this.K;
-        float f12 = 16.0f;
-        float f13 = 1.0f;
-        if (z11) {
+        int i7;
+        Rect rect2;
+        int i8;
+        boolean z2 = this.c;
+        rf8 rf8Var = this.K;
+        float f3 = 16.0f;
+        float f4 = 1.0f;
+        if (z2) {
             setTranslationX((1.0f - this.f) * getMeasuredWidth());
             View view = this.Q;
             if (view != null) {
                 view.setTranslationX((1.0f - this.f) * getMeasuredWidth());
-                this.Q.setAlpha(1.0f - jf0Var.b);
-                float f14 = (-(this.Q.getMeasuredHeight() - org.telegram.messenger.g0.L(16.0f))) * jf0Var.b;
-                this.Q.setTranslationY(f14);
-                setTranslationY(f14);
+                this.Q.setAlpha(1.0f - rf8Var.b);
+                float f5 = (-(this.Q.getMeasuredHeight() - gl.L(16.0f))) * rf8Var.b;
+                this.Q.setTranslationY(f5);
+                setTranslationY(f5);
             }
         }
         if (this.d) {
             setTranslationY((1.0f - this.h) * getMeasuredHeight());
         }
         if (this.O != null) {
-            int i17 = this.F;
+            int i9 = this.F;
             ScrollView scrollView = this.L;
-            int scrollY = i17 - (scrollView == null ? 0 : scrollView.getScrollY());
+            int scrollY = i9 - (scrollView == null ? 0 : scrollView.getScrollY());
             int scrollY2 = this.G - (scrollView == null ? 0 : scrollView.getScrollY());
-            int i18 = 0;
+            int i10 = 0;
             while (true) {
-                b61Var = this.M;
-                i7 = 1;
-                if (i18 >= b61Var.getChildCount()) {
-                    z10 = false;
+                pkbVar = this.M;
+                i = 1;
+                if (i10 >= pkbVar.getChildCount()) {
+                    z = false;
                     break;
                 } else {
-                    if ((b61Var.getChildAt(i18) instanceof d1) && b61Var.getChildAt(i18).getVisibility() == 0) {
-                        z10 = true;
+                    if ((pkbVar.getChildAt(i10) instanceof j8) && pkbVar.getChildAt(i10).getVisibility() == 0) {
+                        z = true;
                         break;
                     }
-                    i18++;
+                    i10++;
                 }
             }
-            int i19 = 0;
-            while (i19 < 2 && (i19 != i7 || scrollY >= (-org.telegram.messenger.g0.L(f12)))) {
+            int i11 = 0;
+            while (i11 < 2 && (i11 != i || scrollY >= (-gl.L(f3)))) {
                 int saveCount = canvas.getSaveCount();
-                Rect rect2 = this.H;
-                if (!z10 || this.r == 255) {
-                    i10 = i19;
-                    i11 = i7;
-                    i12 = 255;
-                    i13 = -1000000;
-                    f10 = f12;
-                    f11 = f13;
+                Rect rect3 = this.H;
+                if (!z || this.r == 255) {
+                    i2 = i11;
+                    i3 = i;
+                    i4 = 255;
+                    i5 = -1000000;
+                    f = f3;
+                    f2 = f4;
                     canvas2 = canvas;
-                    i14 = saveCount;
-                    rect = rect2;
+                    i6 = saveCount;
+                    rect = rect3;
                     if (this.F != -1000000) {
                         canvas2.save();
                         canvas2.clipRect(0, rect.top, getMeasuredWidth(), getMeasuredHeight());
                     }
-                    i15 = i11;
+                    i7 = i3;
                 } else {
-                    float f15 = rect2.top;
+                    float f6 = rect3.top;
                     float measuredWidth = getMeasuredWidth();
                     float measuredHeight = getMeasuredHeight();
-                    int i20 = this.r;
-                    f10 = f12;
-                    i14 = saveCount;
-                    f11 = f13;
-                    rect = rect2;
-                    i13 = -1000000;
-                    i11 = 1;
-                    i12 = ks.e4;
-                    i10 = i19;
+                    int i12 = this.r;
+                    f = f3;
+                    i6 = saveCount;
+                    f2 = f4;
+                    rect = rect3;
+                    i5 = -1000000;
+                    i3 = 1;
+                    i4 = kk7.d4;
+                    i2 = i11;
                     canvas2 = canvas;
-                    canvas2.saveLayerAlpha(0.0f, f15, measuredWidth, measuredHeight, i20, 31);
-                    i15 = 0;
+                    canvas2.saveLayerAlpha(0.0f, f6, measuredWidth, measuredHeight, i12, 31);
+                    i7 = 0;
                 }
-                this.O.setAlpha(i15 != 0 ? this.r : i12);
+                this.O.setAlpha(i7 != 0 ? this.r : i4);
                 if (this.w) {
                     int measuredHeight2 = getMeasuredHeight();
-                    i16 = 0;
-                    org.telegram.messenger.g0.Q.set(0, (int) ((f11 - this.h) * measuredHeight2), (int) (getMeasuredWidth() * this.f), measuredHeight2);
-                } else if (scrollY > (-org.telegram.messenger.g0.L(f10))) {
-                    int measuredHeight3 = (int) (getMeasuredHeight() * this.h);
-                    if (i10 == 0) {
-                        if (jf0Var == null || !jf0Var.R) {
-                            Rect rect3 = org.telegram.messenger.g0.Q;
-                            int L = (scrollView == null ? 0 : -scrollView.getScrollY()) + (this.F != i13 ? org.telegram.messenger.g0.L(f11) : 0);
-                            int measuredWidth2 = (int) (getMeasuredWidth() * this.f);
-                            if (this.F != i13) {
-                                measuredHeight3 = Math.min(measuredHeight3, org.telegram.messenger.g0.L(f10) + scrollY);
-                            }
-                            i16 = 0;
-                            rect3.set(0, L, measuredWidth2, measuredHeight3);
-                        } else {
-                            Rect rect4 = org.telegram.messenger.g0.Q;
-                            int measuredWidth3 = getMeasuredWidth() - ((int) (getMeasuredWidth() * this.f));
-                            int L2 = (scrollView == null ? 0 : -scrollView.getScrollY()) + (this.F != i13 ? org.telegram.messenger.g0.L(f11) : 0);
-                            int measuredWidth4 = getMeasuredWidth();
-                            if (this.F != i13) {
-                                measuredHeight3 = Math.min(measuredHeight3, org.telegram.messenger.g0.L(f10) + scrollY);
-                            }
-                            rect4.set(measuredWidth3, L2, measuredWidth4, measuredHeight3);
-                            i16 = 0;
-                        }
-                    } else if (measuredHeight3 < scrollY2) {
-                        if (this.F != i13) {
-                            canvas2.restore();
-                        }
-                        i19 = i10 + 1;
-                        i7 = i11;
-                        f12 = f10;
-                        f13 = f11;
-                    } else if (jf0Var == null || !jf0Var.R) {
-                        i16 = 0;
-                        org.telegram.messenger.g0.Q.set(0, scrollY2, (int) (getMeasuredWidth() * this.f), measuredHeight3);
-                    } else {
-                        org.telegram.messenger.g0.Q.set(getMeasuredWidth() - ((int) (getMeasuredWidth() * this.f)), scrollY2, getMeasuredWidth(), measuredHeight3);
-                        i16 = 0;
-                    }
-                } else if (jf0Var == null || !jf0Var.R) {
-                    i16 = 0;
-                    org.telegram.messenger.g0.Q.set(0, this.F < 0 ? 0 : -org.telegram.messenger.g0.L(f10), (int) (getMeasuredWidth() * this.f), (int) (getMeasuredHeight() * this.h));
+                    rect2 = gl.Q;
+                    i8 = 0;
+                    rect2.set(0, (int) ((f2 - this.h) * measuredHeight2), (int) (getMeasuredWidth() * this.f), measuredHeight2);
                 } else {
-                    org.telegram.messenger.g0.Q.set(getMeasuredWidth() - ((int) (getMeasuredWidth() * this.f)), this.F < 0 ? 0 : -org.telegram.messenger.g0.L(f10), getMeasuredWidth(), (int) (getMeasuredHeight() * this.h));
-                    i16 = 0;
-                }
-                if (this.J != f11) {
-                    if (this.S == null) {
-                        this.S = new Rect();
+                    if (scrollY > (-gl.L(f))) {
+                        int measuredHeight3 = (int) (getMeasuredHeight() * this.h);
+                        if (i2 == 0) {
+                            if (rf8Var == null || !rf8Var.R) {
+                                rect2 = gl.Q;
+                                int L = (scrollView == null ? 0 : -scrollView.getScrollY()) + (this.F != i5 ? gl.L(f2) : 0);
+                                int measuredWidth2 = (int) (getMeasuredWidth() * this.f);
+                                if (this.F != i5) {
+                                    measuredHeight3 = Math.min(measuredHeight3, gl.L(f) + scrollY);
+                                }
+                                rect2.set(0, L, measuredWidth2, measuredHeight3);
+                            } else {
+                                rect2 = gl.Q;
+                                int measuredWidth3 = getMeasuredWidth() - ((int) (getMeasuredWidth() * this.f));
+                                int L2 = (scrollView == null ? 0 : -scrollView.getScrollY()) + (this.F != i5 ? gl.L(f2) : 0);
+                                int measuredWidth4 = getMeasuredWidth();
+                                if (this.F != i5) {
+                                    measuredHeight3 = Math.min(measuredHeight3, gl.L(f) + scrollY);
+                                }
+                                rect2.set(measuredWidth3, L2, measuredWidth4, measuredHeight3);
+                            }
+                        } else if (measuredHeight3 < scrollY2) {
+                            if (this.F != i5) {
+                                canvas2.restore();
+                            }
+                            i11 = i2 + 1;
+                            i = i3;
+                            f3 = f;
+                            f4 = f2;
+                        } else if (rf8Var == null || !rf8Var.R) {
+                            rect2 = gl.Q;
+                            rect2.set(0, scrollY2, (int) (getMeasuredWidth() * this.f), measuredHeight3);
+                        } else {
+                            rect2 = gl.Q;
+                            rect2.set(getMeasuredWidth() - ((int) (getMeasuredWidth() * this.f)), scrollY2, getMeasuredWidth(), measuredHeight3);
+                        }
+                    } else if (rf8Var == null || !rf8Var.R) {
+                        rect2 = gl.Q;
+                        i8 = 0;
+                        rect2.set(0, this.F < 0 ? 0 : -gl.L(f), (int) (getMeasuredWidth() * this.f), (int) (getMeasuredHeight() * this.h));
+                    } else {
+                        rect2 = gl.Q;
+                        rect2.set(getMeasuredWidth() - ((int) (getMeasuredWidth() * this.f)), this.F < 0 ? 0 : -gl.L(f), getMeasuredWidth(), (int) (getMeasuredHeight() * this.h));
                     }
-                    Rect rect5 = this.S;
-                    Rect rect6 = org.telegram.messenger.g0.Q;
-                    int i21 = rect6.right;
-                    int i22 = rect6.top;
-                    rect5.set(i21, i22, i21, i22);
-                    org.telegram.messenger.g0.X1(this.S, rect6, this.J, rect6);
+                    i8 = 0;
                 }
-                Drawable drawable = this.O;
-                Rect rect7 = org.telegram.messenger.g0.Q;
-                drawable.setBounds(rect7);
+                if (this.J != f2) {
+                    Rect rect4 = this.S;
+                    if (rect4 == null) {
+                        rect4 = new Rect();
+                        this.S = rect4;
+                    }
+                    int i13 = rect2.right;
+                    int i14 = rect2.top;
+                    rect4.set(i13, i14, i13, i14);
+                    gl.V1(this.S, rect2, this.J, rect2);
+                }
+                this.O.setBounds(rect2);
                 this.O.draw(canvas2);
                 if (this.b) {
-                    rect7.left += rect.left;
-                    rect7.top += rect.top;
-                    rect7.right -= rect.right;
-                    rect7.bottom -= rect.bottom;
-                    canvas2.clipRect(rect7);
+                    rect2.left += rect.left;
+                    rect2.top += rect.top;
+                    rect2.right -= rect.right;
+                    rect2.bottom -= rect.bottom;
+                    canvas2.clipRect(rect2);
                 }
-                if (z10) {
+                if (z) {
                     canvas2.save();
-                    RectF rectF = org.telegram.messenger.g0.P;
+                    RectF rectF = gl.P;
                     rectF.set(this.O.getBounds());
-                    rectF.inset(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
+                    rectF.inset(gl.L(8.0f), gl.L(8.0f));
                     Path path = this.T;
                     if (path == null) {
                         this.T = new Path();
                     } else {
                         path.rewind();
                     }
-                    this.T.addRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), Path.Direction.CW);
+                    this.T.addRoundRect(rectF, gl.L(12.0f), gl.L(12.0f), Path.Direction.CW);
                     canvas2.clipPath(this.T);
-                    for (int i23 = i16; i23 < b61Var.getChildCount(); i23++) {
-                        if ((b61Var.getChildAt(i23) instanceof d1) && b61Var.getChildAt(i23).getVisibility() == 0) {
+                    for (int i15 = i8; i15 < pkbVar.getChildCount(); i15++) {
+                        if ((pkbVar.getChildAt(i15) instanceof j8) && pkbVar.getChildAt(i15).getVisibility() == 0) {
                             canvas2.save();
-                            d1 d1Var = (d1) b61Var.getChildAt(i23);
-                            float f16 = 0.0f;
-                            View view2 = d1Var;
-                            float f17 = 0.0f;
+                            j8 j8Var = (j8) pkbVar.getChildAt(i15);
+                            float f7 = 0.0f;
+                            View view2 = j8Var;
+                            float f8 = 0.0f;
                             while (view2 != this) {
-                                f17 += view2.getX();
-                                f16 += view2.getY();
+                                f7 += view2.getX();
+                                f8 += view2.getY();
                                 view2 = (View) view2.getParent();
                                 if (view2 == null) {
                                     break;
                                 }
                             }
-                            canvas2.translate(f17, (f16 * (scrollView == null ? f11 : scrollView.getScaleY())) - (scrollView == null ? i16 : scrollView.getScrollY()));
-                            d1Var.draw(canvas2);
+                            canvas2.translate(f7, (f8 * (scrollView == null ? f2 : scrollView.getScaleY())) - (scrollView == null ? i8 : scrollView.getScrollY()));
+                            j8Var.draw(canvas2);
                             canvas2.restore();
                         }
                     }
                     canvas2.restore();
                 }
-                canvas2.restoreToCount(i14);
-                i19 = i10 + 1;
-                i7 = i11;
-                f12 = f10;
-                f13 = f11;
+                canvas2.restoreToCount(i6);
+                i11 = i2 + 1;
+                i = i3;
+                f3 = f;
+                f4 = f2;
             }
         }
-        float f18 = f13;
-        float f19 = this.J;
-        if (f19 == f18) {
+        float f9 = f4;
+        float f10 = this.J;
+        if (f10 == f9) {
             super.dispatchDraw(canvas);
             return;
         }
-        Rect rect8 = org.telegram.messenger.g0.Q;
-        canvas.saveLayerAlpha(rect8.left, rect8.top, rect8.right, rect8.bottom, (int) (f19 * 255.0f), 31);
-        float f20 = (this.J * 0.5f) + 0.5f;
-        canvas.scale(f20, f20, rect8.right, rect8.top);
+        Rect rect5 = gl.Q;
+        canvas.saveLayerAlpha(rect5.left, rect5.top, rect5.right, rect5.bottom, (int) (f10 * 255.0f), 31);
+        float f11 = (this.J * 0.5f) + 0.5f;
+        canvas.scale(f11, f11, rect5.right, rect5.top);
         super.dispatchDraw(canvas);
         canvas.restore();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        e1 e1Var = this.e;
-        if (e1Var != null) {
-            e1Var.m(keyEvent);
+        k8 k8Var = this.e;
+        if (k8Var != null) {
+            k8Var.r(keyEvent);
         }
         return super.dispatchKeyEvent(keyEvent);
     }
@@ -324,26 +397,28 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     public final void e(View view) {
         if (this.x) {
             AnimatorSet animatorSet = new AnimatorSet();
-            int i7 = 1;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, view.isEnabled() ? 1.0f : 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(this.w ? 6.0f : -6.0f), 0.0f));
+            byte b = 0;
+            animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, view.isEnabled() ? 1.0f : 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, gl.L(this.w ? 6.0f : -6.0f), 0.0f));
             animatorSet.setDuration(180L);
-            animatorSet.addListener(new fi.a3(this, animatorSet, view, i7));
-            animatorSet.setInterpolator(g1.m);
+            animatorSet.addListener(new i8(this, animatorSet, view, b));
+            animatorSet.setInterpolator(m8.m);
             animatorSet.start();
-            if (this.y == null) {
-                this.y = new ArrayList();
+            ArrayList arrayList = this.y;
+            if (arrayList == null) {
+                arrayList = new ArrayList();
+                this.y = arrayList;
             }
-            this.y.add(animatorSet);
+            arrayList.add(animatorSet);
         }
     }
 
     public final void f() {
-        b61 b61Var = this.M;
-        int childCount = b61Var.getChildCount();
+        pkb pkbVar = this.M;
+        int childCount = pkbVar.getChildCount();
         View view = null;
         View view2 = null;
-        for (int i7 = 0; i7 < childCount; i7++) {
-            View childAt = b61Var.getChildAt(i7);
+        for (int i = 0; i < childCount; i++) {
+            View childAt = pkbVar.getChildAt(i);
             if (childAt.getVisibility() == 0) {
                 if (view == null) {
                     view = childAt;
@@ -351,15 +426,15 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                 view2 = childAt;
             }
         }
-        boolean z10 = false;
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt2 = b61Var.getChildAt(i10);
+        boolean z = false;
+        for (int i2 = 0; i2 < childCount; i2++) {
+            View childAt2 = pkbVar.getChildAt(i2);
             if (childAt2.getVisibility() == 0) {
                 Object tag = childAt2.getTag(R.id.object_tag);
-                if (childAt2 instanceof y0) {
-                    ((y0) childAt2).m(childAt2 == view || z10, childAt2 == view2);
+                if (childAt2 instanceof a8) {
+                    ((a8) childAt2).m(childAt2 == view || z, childAt2 == view2);
                 }
-                z10 = tag != null;
+                z = tag != null;
             }
         }
     }
@@ -392,7 +467,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         return this.H;
     }
 
-    public jf0 getSwipeBack() {
+    public rf8 getSwipeBack() {
         return this.K;
     }
 
@@ -405,92 +480,92 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        jf0 jf0Var = this.K;
-        if (jf0Var != null) {
-            jf0Var.c(!this.n);
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        rf8 rf8Var = this.K;
+        if (rf8Var != null) {
+            rf8Var.c(!this.n);
         }
     }
 
-    public void setAnimationEnabled(boolean z10) {
-        this.x = z10;
+    public void setAnimationEnabled(boolean z) {
+        this.x = z;
     }
 
-    public void setBackAlpha(int i7) {
-        if (this.r != i7) {
+    public void setBackAlpha(int i) {
+        if (this.r != i) {
             invalidate();
         }
-        this.r = i7;
+        this.r = i;
     }
 
-    public void setBackScaleX(float f10) {
-        if (this.f != f10) {
-            this.f = f10;
+    public void setBackScaleX(float f) {
+        if (this.f != f) {
+            this.f = f;
             invalidate();
-            f1 f1Var = this.I;
-            if (f1Var != null) {
-                f1Var.a();
+            l8 l8Var = this.I;
+            if (l8Var != null) {
+                l8Var.b();
             }
         }
     }
 
-    public void setBackScaleY(float f10) {
-        if (this.h != f10) {
-            this.h = f10;
+    public void setBackScaleY(float f) {
+        if (this.h != f) {
+            this.h = f;
             if (this.x && this.a) {
-                int measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(16.0f);
-                boolean z10 = this.w;
+                int measuredHeight = getMeasuredHeight() - gl.L(16.0f);
+                boolean z = this.w;
                 HashMap hashMap = this.E;
-                b61 b61Var = this.M;
-                if (z10) {
-                    for (int i7 = this.s; i7 >= 0; i7--) {
-                        View childAt = b61Var.getChildAt(i7);
-                        if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof d1)) {
+                pkb pkbVar = this.M;
+                if (z) {
+                    for (int i = this.s; i >= 0; i--) {
+                        View childAt = pkbVar.getChildAt(i);
+                        if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof j8)) {
                             if (((Integer) hashMap.get(childAt)) != null) {
-                                if (m10.x(32.0f, org.telegram.messenger.g0.L(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f10) {
+                                if (ug8.B(32.0f, gl.L(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f) {
                                     break;
                                 }
                             }
-                            this.s = i7 - 1;
+                            this.s = i - 1;
                             e(childAt);
                         }
                     }
                 } else {
                     int itemsCount = getItemsCount();
-                    int i10 = 0;
-                    for (int i11 = 0; i11 < itemsCount; i11++) {
-                        View childAt2 = b61Var.getChildAt(i11);
+                    int i2 = 0;
+                    for (int i3 = 0; i3 < itemsCount; i3++) {
+                        View childAt2 = pkbVar.getChildAt(i3);
                         if (childAt2.getVisibility() == 0) {
-                            int measuredHeight2 = childAt2.getMeasuredHeight() + i10;
-                            if (i11 >= this.s) {
-                                if (((Integer) hashMap.get(childAt2)) != null && measuredHeight2 - org.telegram.messenger.g0.L(24.0f) > measuredHeight * f10) {
+                            int measuredHeight2 = childAt2.getMeasuredHeight() + i2;
+                            if (i3 >= this.s) {
+                                if (((Integer) hashMap.get(childAt2)) != null && measuredHeight2 - gl.L(24.0f) > measuredHeight * f) {
                                     break;
                                 }
-                                this.s = i11 + 1;
+                                this.s = i3 + 1;
                                 e(childAt2);
                             }
-                            i10 = measuredHeight2;
+                            i2 = measuredHeight2;
                         }
                     }
                 }
             }
             invalidate();
-            f1 f1Var = this.I;
-            if (f1Var != null) {
-                f1Var.a();
+            l8 l8Var = this.I;
+            if (l8Var != null) {
+                l8Var.b();
             }
         }
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i7) {
+    public void setBackgroundColor(int i) {
         Drawable drawable;
-        if (this.N == i7 || (drawable = this.O) == null) {
+        if (this.N == i || (drawable = this.O) == null) {
             return;
         }
-        this.N = i7;
-        drawable.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.MULTIPLY));
+        this.N = i;
+        drawable.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
     }
 
     @Override // android.view.View
@@ -505,133 +580,56 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         }
     }
 
-    public void setDispatchKeyEventListener(e1 e1Var) {
-        this.e = e1Var;
+    public void setDispatchKeyEventListener(k8 k8Var) {
+        this.e = k8Var;
     }
 
-    public void setFitItems(boolean z10) {
-        this.P = z10;
+    public void setFitItems(boolean z) {
+        this.P = z;
     }
 
-    public void setOnSizeChangedListener(f1 f1Var) {
-        this.I = f1Var;
+    public void setOnSizeChangedListener(l8 l8Var) {
+        this.I = l8Var;
     }
 
-    public void setParentWindow(g1 g1Var) {
-        this.R = g1Var;
+    public void setParentWindow(m8 m8Var) {
+        this.R = m8Var;
     }
 
-    public void setReactionsTransitionProgress(float f10) {
-        this.J = f10;
+    public void setReactionsTransitionProgress(float f) {
+        this.J = f;
         invalidate();
     }
 
-    public void setShownFromBottom(boolean z10) {
-        this.w = z10;
+    public void setShownFromBottom(boolean z) {
+        this.w = z;
     }
 
-    public void setSwipeBackForegroundColor(int i7) {
-        getSwipeBack().setForegroundColor(i7);
+    public void setSwipeBackForegroundColor(int i) {
+        getSwipeBack().setForegroundColor(i);
     }
 
     public void setTopView(View view) {
         this.Q = view;
     }
 
-    public void setupRadialSelectors(int i7) {
-        b61 b61Var = this.M;
-        int childCount = b61Var.getChildCount();
-        int i10 = 0;
-        while (i10 < childCount) {
-            View childAt = b61Var.getChildAt(i10);
-            int i11 = 6;
-            int i12 = i10 == 0 ? 6 : 0;
-            if (i10 != childCount - 1) {
-                i11 = 0;
+    public void setupRadialSelectors(int i) {
+        pkb pkbVar = this.M;
+        int childCount = pkbVar.getChildCount();
+        int i2 = 0;
+        while (i2 < childCount) {
+            View childAt = pkbVar.getChildAt(i2);
+            int i3 = 6;
+            int i4 = i2 == 0 ? 6 : 0;
+            if (i2 != childCount - 1) {
+                i3 = 0;
             }
-            childAt.setBackground(n6.a0(i7, i12, i11));
-            i10++;
+            childAt.setBackground(bkb.Y(i, i4, i3));
+            i2++;
         }
     }
 
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout(int i7, int i10, Context context, i6 i6Var) {
-        super(context);
-        this.f = 1.0f;
-        this.h = 1.0f;
-        this.n = false;
-        this.r = ks.e4;
-        this.s = 0;
-        this.x = true;
-        this.E = new HashMap();
-        this.F = -1000000;
-        this.G = -1000000;
-        Rect rect = new Rect();
-        this.H = rect;
-        this.J = 1.0f;
-        this.N = -1;
-        if (i7 != 0) {
-            this.O = getResources().getDrawable(i7).mutate();
-            setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-        }
-        Drawable drawable = this.O;
-        if (drawable != null) {
-            drawable.getPadding(rect);
-            u6.h(n6.G8, this, i6Var);
-        }
-        setWillNotDraw(false);
-        if ((i10 & 2) > 0) {
-            this.w = true;
-        }
-        if ((i10 & 1) > 0) {
-            jf0 jf0Var = new jf0(context);
-            jf0Var.a = new SparseIntArray();
-            jf0Var.c = -1.0f;
-            Paint paint = new Paint(1);
-            jf0Var.n = paint;
-            jf0Var.r = new Paint();
-            jf0Var.s = 0;
-            jf0Var.w = new Path();
-            jf0Var.x = new RectF();
-            jf0Var.y = new ArrayList();
-            jf0Var.H = -1;
-            jf0Var.I = new h2.f((int[]) null);
-            jf0Var.K = -1;
-            jf0Var.M = new Rect();
-            jf0Var.J = i6Var;
-            jf0Var.d = new nd0(context, new ki.q3(jf0Var, ViewConfiguration.get(context).getScaledTouchSlop(), 2));
-            paint.setColor(-16777216);
-            this.K = jf0Var;
-            addView(jf0Var, na.c(-2.0f, -2));
-        }
-        if ((i10 & 4) == 0) {
-            try {
-                ScrollView scrollView = new ScrollView(context);
-                this.L = scrollView;
-                scrollView.getViewTreeObserver().addOnScrollChangedListener(new c1(this));
-                scrollView.setVerticalScrollBarEnabled(false);
-                jf0 jf0Var2 = this.K;
-                if (jf0Var2 != null) {
-                    jf0Var2.addView(scrollView, na.e(-2, -2, this.w ? 80 : 48));
-                } else {
-                    addView(scrollView, na.c(-2.0f, -2));
-                }
-            } catch (Throwable th2) {
-                a8.g(th2, true);
-            }
-        }
-        b61 b61Var = new b61(8, context, this);
-        this.M = b61Var;
-        b61Var.setOrientation(1);
-        ScrollView scrollView2 = this.L;
-        if (scrollView2 != null) {
-            scrollView2.addView(b61Var, new FrameLayout.LayoutParams(-2, -2));
-            return;
-        }
-        jf0 jf0Var3 = this.K;
-        if (jf0Var3 != null) {
-            jf0Var3.addView(b61Var, na.e(-2, -2, this.w ? 80 : 48));
-        } else {
-            addView(b61Var, na.c(-2.0f, -2));
-        }
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout(Context context, wjb wjbVar) {
+        this(R.drawable.popup_fixed_alert2, 0, wjbVar, context);
     }
 }

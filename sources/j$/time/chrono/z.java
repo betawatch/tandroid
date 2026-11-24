@@ -1,77 +1,40 @@
 package j$.time.chrono;
 
-import j$.time.Instant;
-import j$.time.LocalDate;
-import j$.time.ZoneId;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract /* synthetic */ class z {
+    public static final /* synthetic */ int[] a;
 
-/* loaded from: classes2.dex */
-public final class z extends a implements Serializable {
-    public static final z c = new z();
-    private static final long serialVersionUID = 1039765215346859963L;
-
-    @Override // j$.time.chrono.k
-    public final String getId() {
-        return "Minguo";
-    }
-
-    @Override // j$.time.chrono.k
-    public final l u(int i7) {
-        if (i7 == 0) {
-            return c0.BEFORE_ROC;
+    static {
+        int[] iArr = new int[j$.time.temporal.a.values().length];
+        a = iArr;
+        try {
+            iArr[j$.time.temporal.a.DAY_OF_MONTH.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        if (i7 == 1) {
-            return c0.ROC;
+        try {
+            a[j$.time.temporal.a.DAY_OF_YEAR.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-        throw new j$.time.b("Invalid era: " + i7);
-    }
-
-    @Override // j$.time.chrono.k
-    public final String o() {
-        return "roc";
-    }
-
-    @Override // j$.time.chrono.k
-    public final b x(j$.time.temporal.l lVar) {
-        if (lVar instanceof b0) {
-            return (b0) lVar;
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
         }
-        return new b0(LocalDate.I(lVar));
-    }
-
-    @Override // j$.time.chrono.k
-    public final j$.time.temporal.s s(j$.time.temporal.a aVar) {
-        int i7 = y.a[aVar.ordinal()];
-        if (i7 == 1) {
-            j$.time.temporal.s sVar = j$.time.temporal.a.PROLEPTIC_MONTH.b;
-            return j$.time.temporal.s.e(sVar.a - 22932, sVar.d - 22932);
+        try {
+            a[j$.time.temporal.a.YEAR_OF_ERA.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
         }
-        if (i7 == 2) {
-            j$.time.temporal.s sVar2 = j$.time.temporal.a.YEAR.b;
-            return j$.time.temporal.s.f(sVar2.d - 1911, (-sVar2.a) + 1912);
+        try {
+            a[j$.time.temporal.a.PROLEPTIC_MONTH.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
         }
-        if (i7 != 3) {
-            return aVar.b;
+        try {
+            a[j$.time.temporal.a.YEAR.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
         }
-        j$.time.temporal.s sVar3 = j$.time.temporal.a.YEAR.b;
-        return j$.time.temporal.s.e(sVar3.a - 1911, sVar3.d - 1911);
-    }
-
-    private z() {
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    @Override // j$.time.chrono.k
-    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
-        return j.H(this, instant, zoneId);
-    }
-
-    public Object writeReplace() {
-        return new d0((byte) 1, this);
+        try {
+            a[j$.time.temporal.a.ERA.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
     }
 }

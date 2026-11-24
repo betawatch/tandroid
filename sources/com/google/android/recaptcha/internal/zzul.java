@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzul implements Iterator {
     final /* synthetic */ zzuo zza;
@@ -13,21 +13,24 @@ final class zzul implements Iterator {
 
     private final Iterator zza() {
         Map map;
-        if (this.zzd == null) {
-            map = this.zza.zzc;
-            this.zzd = map.entrySet().iterator();
+        Iterator it = this.zzd;
+        if (it != null) {
+            return it;
         }
-        return this.zzd;
+        map = this.zza.zzc;
+        Iterator it2 = map.entrySet().iterator();
+        this.zzd = it2;
+        return it2;
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        int i7;
+        int i;
         Map map;
-        int i10 = this.zzb + 1;
+        int i2 = this.zzb + 1;
         zzuo zzuoVar = this.zza;
-        i7 = zzuoVar.zzb;
-        if (i10 < i7) {
+        i = zzuoVar.zzb;
+        if (i2 < i) {
             return true;
         }
         map = zzuoVar.zzc;
@@ -36,36 +39,37 @@ final class zzul implements Iterator {
 
     @Override // java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
-        int i7;
+        int i;
         Object[] objArr;
         this.zzc = true;
-        int i10 = this.zzb + 1;
-        this.zzb = i10;
+        int i2 = this.zzb + 1;
+        this.zzb = i2;
         zzuo zzuoVar = this.zza;
-        i7 = zzuoVar.zzb;
-        if (i10 >= i7) {
+        i = zzuoVar.zzb;
+        if (i2 >= i) {
             return (Map.Entry) zza().next();
         }
         objArr = zzuoVar.zza;
-        return (zzuk) objArr[i10];
+        return (zzuk) objArr[i2];
     }
 
     @Override // java.util.Iterator
     public final void remove() {
-        int i7;
+        int i;
         if (!this.zzc) {
-            throw new IllegalStateException("remove() was called before next()");
+            sc8.j("remove() was called before next()");
+            return;
         }
         this.zzc = false;
         zzuo zzuoVar = this.zza;
         zzuoVar.zzo();
-        int i10 = this.zzb;
-        i7 = zzuoVar.zzb;
-        if (i10 >= i7) {
+        int i2 = this.zzb;
+        i = zzuoVar.zzb;
+        if (i2 >= i) {
             zza().remove();
         } else {
-            this.zzb = i10 - 1;
-            zzuoVar.zzm(i10);
+            this.zzb = i2 - 1;
+            zzuoVar.zzm(i2);
         }
     }
 }

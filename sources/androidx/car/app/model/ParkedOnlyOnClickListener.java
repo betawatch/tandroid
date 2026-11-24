@@ -2,21 +2,21 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class ParkedOnlyOnClickListener implements c0 {
-    private final c0 mListener;
+public final class ParkedOnlyOnClickListener implements zo7 {
+    private final zo7 mListener;
 
-    private ParkedOnlyOnClickListener(c0 c0Var) {
-        this.mListener = c0Var;
+    private ParkedOnlyOnClickListener(zo7 zo7Var) {
+        this.mListener = zo7Var;
     }
 
-    public static ParkedOnlyOnClickListener create(c0 c0Var) {
-        Objects.requireNonNull(c0Var);
-        return new ParkedOnlyOnClickListener(c0Var);
+    public static ParkedOnlyOnClickListener create(zo7 zo7Var) {
+        Objects.requireNonNull(zo7Var);
+        return new ParkedOnlyOnClickListener(zo7Var);
     }
 
-    @Override // androidx.car.app.model.c0
+    @Override // zo7
     public void onClick() {
         this.mListener.onClick();
     }

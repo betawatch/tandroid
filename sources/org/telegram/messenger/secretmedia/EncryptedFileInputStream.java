@@ -4,9 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.RandomAccessFile;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zv;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class EncryptedFileInputStream extends FileInputStream {
     private static final int MODE_CBC = 1;
@@ -27,58 +26,58 @@ public class EncryptedFileInputStream extends FileInputStream {
         randomAccessFile.close();
     }
 
-    public static void decryptBytesWithKeyFile(byte[] bArr, int i7, int i10, zv zvVar) {
-        Utilities.b(bArr, zvVar.a, zvVar.b, i7, i10, 0, 0);
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public int read(byte[] bArr, int i7, int i10) {
-        int i11;
-        if (this.currentMode == 1 && this.fileOffset == 0) {
-            super.read(new byte[32], 0, 32);
-            Utilities.b(bArr, this.key, this.iv, i7, i10, this.fileOffset, 0);
-            this.fileOffset += 32;
-            skip((r10[0] & 255) - 32);
-        }
-        int read = super.read(bArr, i7, i10);
-        int i12 = this.currentMode;
-        if (i12 == 1) {
-            i11 = i10;
-            Utilities.b(bArr, this.key, this.iv, i7, i11, this.fileOffset, 0);
-        } else {
-            i11 = i10;
-            if (i12 == 0) {
-                Utilities.aesCtrDecryptionByteArray(bArr, this.key, this.iv, i7, i11, this.fileOffset);
-            }
-        }
-        this.fileOffset += i11;
-        return read;
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public long skip(long j3) {
-        this.fileOffset = (int) (this.fileOffset + j3);
-        return super.skip(j3);
-    }
-
-    public static void decryptBytesWithKeyFile(byte[] bArr, int i7, int i10, File file) {
+    public static void decryptBytesWithKeyFile(byte[] bArr, int i, int i2, File file) {
         byte[] bArr2 = new byte[32];
         byte[] bArr3 = new byte[16];
         RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
         randomAccessFile.read(bArr2, 0, 32);
         randomAccessFile.read(bArr3, 0, 16);
         randomAccessFile.close();
-        Utilities.aesCtrDecryptionByteArray(bArr, bArr2, bArr3, i7, i10, 0);
+        Utilities.aesCtrDecryptionByteArray(bArr, bArr2, bArr3, i, i2, 0);
     }
 
-    public EncryptedFileInputStream(File file, zv zvVar) {
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public int read(byte[] bArr, int i, int i2) {
+        int i3;
+        if (this.currentMode == 1 && this.fileOffset == 0) {
+            super.read(new byte[32], 0, 32);
+            Utilities.b(bArr, this.key, this.iv, i, i2, this.fileOffset, 0);
+            this.fileOffset += 32;
+            skip((r10[0] & 255) - 32);
+        }
+        int read = super.read(bArr, i, i2);
+        int i4 = this.currentMode;
+        if (i4 == 1) {
+            i3 = i2;
+            Utilities.b(bArr, this.key, this.iv, i, i3, this.fileOffset, 0);
+        } else {
+            i3 = i2;
+            if (i4 == 0) {
+                Utilities.aesCtrDecryptionByteArray(bArr, this.key, this.iv, i, i3, this.fileOffset);
+            }
+        }
+        this.fileOffset += i3;
+        return read;
+    }
+
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public long skip(long j) {
+        this.fileOffset = (int) (this.fileOffset + j);
+        return super.skip(j);
+    }
+
+    public static void decryptBytesWithKeyFile(byte[] bArr, int i, int i2, vu9 vu9Var) {
+        Utilities.b(bArr, vu9Var.a, vu9Var.b, i, i2, 0, 0);
+    }
+
+    public EncryptedFileInputStream(File file, vu9 vu9Var) {
         super(file);
         byte[] bArr = new byte[32];
         this.key = bArr;
         this.iv = new byte[16];
         this.currentMode = 1;
-        System.arraycopy(zvVar.a, 0, bArr, 0, bArr.length);
-        byte[] bArr2 = zvVar.b;
+        System.arraycopy(vu9Var.a, 0, bArr, 0, 32);
+        byte[] bArr2 = vu9Var.b;
         byte[] bArr3 = this.iv;
         System.arraycopy(bArr2, 0, bArr3, 0, bArr3.length);
     }

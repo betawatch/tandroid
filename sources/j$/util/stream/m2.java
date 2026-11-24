@@ -1,38 +1,31 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.LongFunction;
 
-/* loaded from: classes2.dex */
-public final class m2 extends o2 implements a2 {
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
-        return t3.T(this, j3, j10);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class m2 extends n2 {
+    public final /* synthetic */ byte k;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ m2(a aVar, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator, byte b) {
+        super(aVar, spliterator, longFunction, binaryOperator);
+        this.k = b;
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        t3.Q(this, consumer);
+    @Override // j$.util.stream.n2, j$.util.stream.d
+    public final /* bridge */ /* synthetic */ Object a() {
+        switch (this.k) {
+        }
+        return a();
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i7) {
-        t3.N(this, (Integer[]) objArr, i7);
-    }
-
-    @Override // j$.util.stream.d2
-    public final Object newArray(int i7) {
-        return new int[i7];
-    }
-
-    @Override // j$.util.stream.e2
-    public final Spliterator spliterator() {
-        return new d3(this);
-    }
-
-    @Override // j$.util.stream.e2
-    public final j$.util.d1 spliterator() {
-        return new d3(this);
+    @Override // j$.util.stream.n2, j$.util.stream.d
+    public final d c(Spliterator spliterator) {
+        switch (this.k) {
+        }
+        return new n2(this, spliterator);
     }
 }

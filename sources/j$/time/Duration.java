@@ -5,48 +5,50 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.math.BigInteger;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class Duration implements Comparable<Duration>, Serializable {
     public static final Duration c = new Duration(0, 0);
     private static final long serialVersionUID = 3078945930695997490L;
     public final long a;
     public final int b;
 
+    static {
+        BigInteger.valueOf(1000000000L);
+    }
+
+    public Duration(long j, int i) {
+        this.a = j;
+        this.b = i;
+    }
+
+    public static Duration j(long j, int i) {
+        return (((long) i) | j) == 0 ? c : new Duration(j, i);
+    }
+
+    public static Duration k(long j) {
+        long j2 = j / 1000000000;
+        int i = (int) (j % 1000000000);
+        if (i < 0) {
+            i = (int) (i + 1000000000);
+            j2--;
+        }
+        return j(j2, i);
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
+    }
+
+    private Object writeReplace() {
+        return new r((byte) 1, this);
+    }
+
     @Override // java.lang.Comparable
     public final int compareTo(Duration duration) {
         Duration duration2 = duration;
         int compare = Long.compare(this.a, duration2.a);
         return compare != 0 ? compare : this.b - duration2.b;
-    }
-
-    static {
-        BigInteger.valueOf(1000000000L);
-    }
-
-    public static Duration k(long j3) {
-        long j10 = j3 / 1000000000;
-        int i7 = (int) (j3 % 1000000000);
-        if (i7 < 0) {
-            i7 = (int) (i7 + 1000000000);
-            j10--;
-        }
-        return j(j10, i7);
-    }
-
-    public static Duration j(long j3, int i7) {
-        if ((i7 | j3) == 0) {
-            return c;
-        }
-        return new Duration(j3, i7);
-    }
-
-    public Duration(long j3, int i7) {
-        this.a = j3;
-        this.b = i7;
-    }
-
-    public long getSeconds() {
-        return this.a;
     }
 
     public final boolean equals(Object obj) {
@@ -62,63 +64,61 @@ public final class Duration implements Comparable<Duration>, Serializable {
         return false;
     }
 
+    public long getSeconds() {
+        return this.a;
+    }
+
     public final int hashCode() {
-        long j3 = this.a;
-        return (this.b * 51) + ((int) (j3 ^ (j3 >>> 32)));
+        long j = this.a;
+        return (this.b * 51) + ((int) (j ^ (j >>> 32)));
     }
 
     public final String toString() {
         if (this == c) {
             return "PT0S";
         }
-        long j3 = this.a;
-        if (j3 < 0 && this.b > 0) {
-            j3++;
+        long j = this.a;
+        if (j < 0 && this.b > 0) {
+            j++;
         }
-        long j10 = j3 / 3600;
-        int i7 = (int) ((j3 % 3600) / 60);
-        int i10 = (int) (j3 % 60);
-        StringBuilder sb2 = new StringBuilder(24);
-        sb2.append("PT");
-        if (j10 != 0) {
-            sb2.append(j10);
-            sb2.append('H');
+        long j2 = j / 3600;
+        int i = (int) ((j % 3600) / 60);
+        int i2 = (int) (j % 60);
+        StringBuilder sb = new StringBuilder(24);
+        sb.append("PT");
+        if (j2 != 0) {
+            sb.append(j2);
+            sb.append('H');
         }
-        if (i7 != 0) {
-            sb2.append(i7);
-            sb2.append('M');
+        if (i != 0) {
+            sb.append(i);
+            sb.append('M');
         }
-        if (i10 == 0 && this.b == 0 && sb2.length() > 2) {
-            return sb2.toString();
+        if (i2 == 0 && this.b == 0 && sb.length() > 2) {
+            return sb.toString();
         }
         if (this.a >= 0 || this.b <= 0) {
-            sb2.append(i10);
-        } else if (i10 == 0) {
-            sb2.append("-0");
+            sb.append(i2);
+        } else if (i2 == 0) {
+            sb.append("-0");
         } else {
-            sb2.append(i10);
+            sb.append(i2);
         }
         if (this.b > 0) {
-            int length = sb2.length();
-            if (this.a < 0) {
-                sb2.append(2000000000 - this.b);
+            int length = sb.length();
+            long j3 = this.a;
+            int i3 = this.b;
+            if (j3 < 0) {
+                sb.append(2000000000 - i3);
             } else {
-                sb2.append(this.b + 1000000000);
+                sb.append(i3 + 1000000000);
             }
-            while (sb2.charAt(sb2.length() - 1) == '0') {
-                sb2.setLength(sb2.length() - 1);
+            while (sb.charAt(sb.length() - 1) == '0') {
+                sb.setLength(sb.length() - 1);
             }
-            sb2.setCharAt(length, '.');
+            sb.setCharAt(length, '.');
         }
-        sb2.append('S');
-        return sb2.toString();
-    }
-
-    private Object writeReplace() {
-        return new p((byte) 1, this);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
+        sb.append('S');
+        return sb.toString();
     }
 }

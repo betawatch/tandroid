@@ -5,25 +5,25 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
     public final int a;
     public final Context b;
     public final /* synthetic */ MediaRouteButton c;
 
-    public b(MediaRouteButton mediaRouteButton, int i7, Context context) {
+    public b(MediaRouteButton mediaRouteButton, int i, Context context) {
         this.c = mediaRouteButton;
-        this.a = i7;
+        this.a = i;
         this.b = context;
     }
 
     @Override // android.os.AsyncTask
     public final Object doInBackground(Object[] objArr) {
         SparseArray<Drawable.ConstantState> sparseArray = MediaRouteButton.sRemoteIndicatorCache;
-        int i7 = this.a;
-        if (sparseArray.get(i7) == null) {
-            return c8.a0.b(this.b, i7);
+        int i = this.a;
+        if (sparseArray.get(i) == null) {
+            return hmd.a(this.b, i);
         }
         return null;
     }
@@ -40,13 +40,13 @@ public final class b extends AsyncTask {
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
         Drawable drawable = (Drawable) obj;
-        int i7 = this.a;
+        int i = this.a;
         MediaRouteButton mediaRouteButton = this.c;
         if (drawable != null) {
-            MediaRouteButton.sRemoteIndicatorCache.put(i7, drawable.getConstantState());
+            MediaRouteButton.sRemoteIndicatorCache.put(i, drawable.getConstantState());
             mediaRouteButton.mRemoteIndicatorLoader = null;
         } else {
-            Drawable.ConstantState constantState = MediaRouteButton.sRemoteIndicatorCache.get(i7);
+            Drawable.ConstantState constantState = MediaRouteButton.sRemoteIndicatorCache.get(i);
             if (constantState != null) {
                 drawable = constantState.newDrawable();
             }

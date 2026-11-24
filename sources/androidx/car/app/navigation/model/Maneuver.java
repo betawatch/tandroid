@@ -3,7 +3,7 @@ package androidx.car.app.navigation.model;
 import androidx.car.app.model.CarIcon;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Maneuver {
     public static final int TYPE_DEPART = 1;
@@ -60,28 +60,28 @@ public final class Maneuver {
     private final int mRoundaboutExitNumber;
     private final int mType;
 
-    public Maneuver(int i7, int i10, int i11, CarIcon carIcon) {
-        this.mType = i7;
-        this.mRoundaboutExitNumber = i10;
-        this.mRoundaboutExitAngle = i11;
-        t.b.b.a(carIcon);
+    public Maneuver(int i, int i2, int i3, CarIcon carIcon) {
+        this.mType = i;
+        this.mRoundaboutExitNumber = i2;
+        this.mRoundaboutExitAngle = i3;
+        lc1.b.b(carIcon);
         this.mIcon = carIcon;
     }
 
-    public static boolean isExitNumberRequired(int i7) {
-        return i7 == 32 || i7 == 34;
+    public static boolean isExitNumberRequired(int i) {
+        return i == 32 || i == 34;
     }
 
-    public static boolean isValidType(int i7) {
-        return i7 >= 0 && i7 <= 50;
+    public static boolean isValidType(int i) {
+        return i >= 0 && i <= 50;
     }
 
-    public static boolean isValidTypeWithExitAngle(int i7) {
-        return i7 == 33 || i7 == 35;
+    public static boolean isValidTypeWithExitAngle(int i) {
+        return i == 33 || i == 35;
     }
 
-    public static boolean isValidTypeWithExitNumber(int i7) {
-        return i7 == 32 || i7 == 34 || i7 == 33 || i7 == 35;
+    public static boolean isValidTypeWithExitNumber(int i) {
+        return i == 32 || i == 34 || i == 33 || i == 35;
     }
 
     public boolean equals(Object obj) {

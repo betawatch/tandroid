@@ -1,31 +1,30 @@
 package j$.util.stream;
 
-import java.util.function.DoubleConsumer;
-import java.util.function.DoublePredicate;
+import java.util.function.Predicate;
 
-/* loaded from: classes2.dex */
-public final class p1 extends q1 implements g5 {
-    @Override // j$.util.stream.g5
-    public final /* synthetic */ void B(Double d) {
-        t3.D(this, d);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class p1 extends t1 {
+    public final /* synthetic */ u1 c;
+    public final /* synthetic */ Predicate d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p1(u1 u1Var, Predicate predicate) {
+        super(u1Var);
+        this.c = u1Var;
+        this.d = predicate;
     }
 
     @Override // java.util.function.Consumer
-    public final /* bridge */ /* synthetic */ void accept(Object obj) {
-        B((Double) obj);
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
-    }
-
-    @Override // j$.util.stream.q1, j$.util.stream.j5
-    public final void accept(double d) {
+    public final void accept(Object obj) {
         if (this.a) {
             return;
         }
-        DoublePredicate doublePredicate = null;
-        doublePredicate.test(d);
-        throw null;
+        boolean test = this.d.test(obj);
+        u1 u1Var = this.c;
+        if (test == u1Var.a) {
+            this.a = true;
+            this.b = u1Var.b;
+        }
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class zzsj extends zzsh implements zztt {
     public zzsj(zzsk zzskVar) {
@@ -10,10 +10,12 @@ public class zzsj extends zzsh implements zztt {
     @Override // com.google.android.recaptcha.internal.zzsh, com.google.android.recaptcha.internal.zztr
     /* renamed from: zze, reason: merged with bridge method [inline-methods] */
     public final zzsk zzl() {
-        if (!((zzsk) this.zza).zzL()) {
-            return (zzsk) this.zza;
+        boolean zzL = ((zzsk) this.zza).zzL();
+        zzsn zzsnVar = this.zza;
+        if (!zzL) {
+            return (zzsk) zzsnVar;
         }
-        ((zzsk) this.zza).zzb.zzg();
+        ((zzsk) zzsnVar).zzb.zzg();
         return (zzsk) super.zzl();
     }
 

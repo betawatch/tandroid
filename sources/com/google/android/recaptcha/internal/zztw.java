@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zztw implements zzug {
     private final zzts zza;
@@ -63,7 +63,7 @@ final class zztw implements zzug {
         while (zzufVar.zzc() != Integer.MAX_VALUE) {
             try {
                 int zzd = zzufVar.zzd();
-                int i7 = 0;
+                int i = 0;
                 if (zzd != 11) {
                     if ((zzd & 7) != 2) {
                         zzO = zzufVar.zzO();
@@ -93,8 +93,8 @@ final class zztw implements zzug {
                                 zzqmVar = zzufVar.zzp();
                             }
                         } else {
-                            i7 = zzufVar.zzj();
-                            zzsmVar = zzryVar.zza(this.zza, i7);
+                            i = zzufVar.zzj();
+                            zzsmVar = zzryVar.zza(this.zza, i);
                         }
                     }
                     if (zzufVar.zzd() != 12) {
@@ -106,7 +106,7 @@ final class zztw implements zzug {
                         if (zzsmVar != null) {
                             throw null;
                         }
-                        zzuvVar.zzg(zza, i7, zzqmVar);
+                        zzuvVar.zzg(zza, i, zzqmVar);
                     }
                 }
             } finally {
@@ -115,14 +115,29 @@ final class zztw implements zzug {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008b A[EDGE_INSN: B:24:0x008b->B:25:0x008b BREAK  A[LOOP:1: B:10:0x004e->B:18:0x004e], SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x008a, code lost:
+    
+        if (r12 == null) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x008c, code lost:
+    
+        r6.zzj((r11 << 3) | 2, r12);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0092, code lost:
+    
+        r12 = r13;
+        r11 = r3;
+        r13 = r5;
+        r14 = r7;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x008a A[EDGE_INSN: B:24:0x008a->B:25:0x008a BREAK  A[LOOP:1: B:10:0x004e->B:18:0x004e], SYNTHETIC] */
     @Override // com.google.android.recaptcha.internal.zzug
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzi(Object obj, byte[] bArr, int i7, int i10, zzqb zzqbVar) {
-        int i11;
+    public final void zzi(Object obj, byte[] bArr, int i, int i2, zzqb zzqbVar) {
+        int i3;
         zzsn zzsnVar = (zzsn) obj;
         zzuw zzuwVar = zzsnVar.zzc;
         if (zzuwVar == zzuw.zzc()) {
@@ -132,68 +147,62 @@ final class zztw implements zzug {
         zzuw zzuwVar2 = zzuwVar;
         ((zzsk) obj).zzi();
         zzsm zzsmVar = null;
-        while (i7 < i10) {
-            int zzi = zzqc.zzi(bArr, i7, zzqbVar);
-            int i12 = zzqbVar.zza;
-            if (i12 == 11) {
+        while (i < i2) {
+            int zzi = zzqc.zzi(bArr, i, zzqbVar);
+            int i4 = zzqbVar.zza;
+            if (i4 == 11) {
                 byte[] bArr2 = bArr;
-                int i13 = i10;
+                int i5 = i2;
                 zzqb zzqbVar2 = zzqbVar;
-                int i14 = 0;
+                int i6 = 0;
                 zzqm zzqmVar = null;
                 while (true) {
-                    if (zzi >= i13) {
-                        i11 = zzi;
+                    if (zzi >= i5) {
+                        i3 = zzi;
                         break;
                     }
-                    i11 = zzqc.zzi(bArr2, zzi, zzqbVar2);
-                    int i15 = zzqbVar2.zza;
-                    int i16 = i15 >>> 3;
-                    int i17 = i15 & 7;
-                    if (i16 != 2) {
-                        if (i16 == 3) {
+                    i3 = zzqc.zzi(bArr2, zzi, zzqbVar2);
+                    int i7 = zzqbVar2.zza;
+                    int i8 = i7 >>> 3;
+                    int i9 = i7 & 7;
+                    if (i8 != 2) {
+                        if (i8 == 3) {
                             if (zzsmVar != null) {
-                                int i18 = zzuc.zza;
+                                int i10 = zzuc.zza;
                                 throw null;
                             }
-                            if (i17 == 2) {
-                                zzi = zzqc.zza(bArr2, i11, zzqbVar2);
+                            if (i9 == 2) {
+                                zzi = zzqc.zza(bArr2, i3, zzqbVar2);
                                 zzqmVar = (zzqm) zzqbVar2.zzc;
                             }
                         }
-                        if (i15 != 12) {
+                        if (i7 != 12) {
                             break;
                         } else {
-                            zzi = zzqc.zzo(i15, bArr2, i11, i13, zzqbVar2);
+                            zzi = zzqc.zzo(i7, bArr2, i3, i5, zzqbVar2);
                         }
-                    } else if (i17 == 0) {
-                        zzi = zzqc.zzi(bArr2, i11, zzqbVar2);
-                        i14 = zzqbVar2.zza;
-                        zzsmVar = zzqbVar2.zzd.zza(this.zza, i14);
-                    } else if (i15 != 12) {
+                    } else if (i9 == 0) {
+                        zzi = zzqc.zzi(bArr2, i3, zzqbVar2);
+                        i6 = zzqbVar2.zza;
+                        zzsmVar = zzqbVar2.zzd.zza(this.zza, i6);
+                    } else if (i7 != 12) {
                     }
                 }
-                if (zzqmVar != null) {
-                    zzuwVar2.zzj((i14 << 3) | 2, zzqmVar);
-                }
-                i7 = i11;
-                bArr = bArr2;
-                i10 = i13;
-                zzqbVar = zzqbVar2;
-            } else if ((i12 & 7) == 2) {
-                zzsmVar = zzqbVar.zzd.zza(this.zza, i12 >>> 3);
+            } else if ((i4 & 7) == 2) {
+                zzsmVar = zzqbVar.zzd.zza(this.zza, i4 >>> 3);
                 if (zzsmVar != null) {
-                    int i19 = zzuc.zza;
+                    int i11 = zzuc.zza;
                     throw null;
                 }
-                i7 = zzqc.zzh(i12, bArr, zzi, i10, zzuwVar2, zzqbVar);
+                i = zzqc.zzh(i4, bArr, zzi, i2, zzuwVar2, zzqbVar);
             } else {
-                i7 = zzqc.zzo(i12, bArr, zzi, i10, zzqbVar);
+                i = zzqc.zzo(i4, bArr, zzi, i2, zzqbVar);
             }
         }
-        if (i7 != i10) {
-            throw new zzsx("Failed to parse the message.");
+        if (i == i2) {
+            return;
         }
+        fvc.i("Failed to parse the message.");
     }
 
     @Override // com.google.android.recaptcha.internal.zzug
@@ -203,7 +212,8 @@ final class zztw implements zzug {
             Map.Entry entry = (Map.Entry) zzf.next();
             zzsc zzscVar = (zzsc) entry.getKey();
             if (zzscVar.zze() != zzvh.zzi) {
-                throw new IllegalStateException("Found invalid MessageSet item.");
+                sc8.j("Found invalid MessageSet item.");
+                return;
             }
             zzscVar.zzg();
             zzscVar.zzf();

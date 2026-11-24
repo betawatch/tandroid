@@ -1,42 +1,36 @@
 package androidx.car.app.hardware.common;
 
-import ab.j;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.utils.g;
+import androidx.car.app.utils.e;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.t1;
-import p4.r0;
-import r.a;
-import r.c;
-import w.b;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
-    private final b mBundle;
-    private final a mHostDispatcher;
+    private final y21 mBundle;
+    private final kc1 mHostDispatcher;
     private final boolean mIsSingleShot;
-    private final Map<c, Executor> mListeners = new HashMap();
+    private final Map<wo7, Executor> mListeners = new HashMap();
     private final int mResultType;
     private final T mUnsupportedValue;
 
-    public CarResultStub(int i7, b bVar, boolean z10, T t6, a aVar) {
-        Objects.requireNonNull(aVar);
-        this.mHostDispatcher = aVar;
-        this.mResultType = i7;
-        this.mBundle = bVar;
-        this.mIsSingleShot = z10;
-        Objects.requireNonNull(t6);
-        this.mUnsupportedValue = t6;
+    public CarResultStub(int i, y21 y21Var, boolean z, T t, kc1 kc1Var) {
+        Objects.requireNonNull(kc1Var);
+        this.mHostDispatcher = kc1Var;
+        this.mResultType = i;
+        this.mBundle = y21Var;
+        this.mIsSingleShot = z;
+        Objects.requireNonNull(t);
+        this.mUnsupportedValue = t;
     }
 
-    private T convertAndRecast(b bVar) {
-        return (T) bVar.a();
+    private T convertAndRecast(y21 y21Var) {
+        return (T) y21Var.a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -46,47 +40,47 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z10, b bVar) {
-        notifyResults(z10, bVar);
+    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z, y21 y21Var) {
+        notifyResults(z, y21Var);
         return null;
     }
 
-    private void notifyResults(boolean z10, b bVar) {
-        T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
-        for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new t1(11, entry, convertAndRecast));
+    private void notifyResults(boolean z, y21 y21Var) {
+        T convertAndRecast = z ? convertAndRecast(y21Var) : this.mUnsupportedValue;
+        for (Map.Entry<wo7, Executor> entry : this.mListeners.entrySet()) {
+            entry.getValue().execute(new q21(entry, convertAndRecast, (byte) 16));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
         }
     }
 
-    public void addListener(Executor executor, c cVar) {
+    public void addListener(Executor executor, wo7 wo7Var) {
         this.mListeners.isEmpty();
-        Objects.requireNonNull(cVar);
+        Objects.requireNonNull(wo7Var);
         throw new ClassCastException();
     }
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
-    public void onCarHardwareResult(int i7, boolean z10, b bVar, IBinder iBinder) {
-        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new j(this, z10, bVar, 12));
+    public void onCarHardwareResult(int i, boolean z, y21 y21Var, IBinder iBinder) {
+        e.c(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new ch((Object) this, z, (Object) y21Var, (byte) 3));
     }
 
-    public boolean removeListener(c cVar) {
-        Map<c, Executor> map = this.mListeners;
-        Objects.requireNonNull(cVar);
-        map.remove(cVar);
+    public boolean removeListener(wo7 wo7Var) {
+        Map<wo7, Executor> map = this.mListeners;
+        Objects.requireNonNull(wo7Var);
+        map.remove(wo7Var);
         if (!this.mListeners.isEmpty()) {
             return false;
         }
         if (this.mIsSingleShot) {
             return true;
         }
-        a aVar = this.mHostDispatcher;
-        int i7 = this.mResultType;
-        b bVar = this.mBundle;
-        aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new r0(aVar, i7, bVar));
+        kc1 kc1Var = this.mHostDispatcher;
+        int i = this.mResultType;
+        y21 y21Var = this.mBundle;
+        kc1Var.getClass();
+        e.d("unsubscribeCarHardwareResult", new qm0(kc1Var, i, y21Var));
         return true;
     }
 }

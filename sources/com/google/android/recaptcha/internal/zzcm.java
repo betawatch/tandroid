@@ -1,56 +1,46 @@
 package com.google.android.recaptcha.internal;
 
-import c8.q0;
-import ee.c;
-import ee.n;
-import ge.d;
-import ge.e;
 import java.util.concurrent.Executors;
-import zd.b0;
-import zd.j0;
-import zd.t1;
-import zd.v0;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzcm implements zzcr {
-    private final z zza;
-    private final z zzb;
-    private final z zzc;
-    private final z zzd;
+    private final ax2 zza;
+    private final ax2 zzb;
+    private final ax2 zzc;
+    private final ax2 zzd;
 
     public zzcm() {
-        t1 t1Var = new t1();
-        e eVar = j0.a;
-        this.zza = new c(q0.c(t1Var, n.a));
-        c b10 = b0.b(new v0(Executors.newSingleThreadExecutor()));
-        b0.q(b10, new zzcl(null));
-        this.zzb = b10;
-        this.zzc = b0.b(d.c);
-        c b11 = b0.b(new v0(Executors.newSingleThreadExecutor()));
-        b0.q(b11, new zzck(null));
-        this.zzd = b11;
-        b0.q(b0.b(new v0(Executors.newSingleThreadExecutor())), new zzcj(null));
+        pbb pbbVar = new pbb();
+        xb3 xb3Var = ko3.a;
+        this.zza = new dw2(kud.c(pbbVar, ug6.a));
+        dw2 a = h9e.a(new t44(Executors.newSingleThreadExecutor()));
+        ppd.b(a, new zzcl(null));
+        this.zzb = a;
+        this.zzc = h9e.a(xa3.c);
+        dw2 a2 = h9e.a(new t44(Executors.newSingleThreadExecutor()));
+        ppd.b(a2, new zzck(null));
+        this.zzd = a2;
+        ppd.b(h9e.a(new t44(Executors.newSingleThreadExecutor())), new zzcj(null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final z zza() {
+    public final ax2 zza() {
         return this.zzc;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final z zzb() {
+    public final ax2 zzb() {
         return this.zza;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final z zzc() {
+    public final ax2 zzc() {
         return this.zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final z zzd() {
+    public final ax2 zzd() {
         return this.zzb;
     }
 }

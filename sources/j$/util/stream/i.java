@@ -6,7 +6,8 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class i implements java.util.stream.Collector {
     public final /* synthetic */ Collector a;
 
@@ -21,7 +22,7 @@ public final /* synthetic */ class i implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Set characteristics() {
-        return t3.q0(this.a.characteristics());
+        return w3.M(this.a.characteristics());
     }
 
     @Override // java.util.stream.Collector

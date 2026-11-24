@@ -6,13 +6,14 @@ import j$.time.ZoneOffset;
 import j$.time.chrono.b;
 import j$.time.temporal.Temporal;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface ChronoZonedDateTime<D extends b> extends Temporal, Comparable<ChronoZonedDateTime<?>> {
-    long F();
+    long E();
 
-    k a();
+    a a();
 
-    j$.time.h b();
+    j$.time.j b();
 
     b f();
 
@@ -22,9 +23,9 @@ public interface ChronoZonedDateTime<D extends b> extends Temporal, Comparable<C
 
     ChronoZonedDateTime i(ZoneId zoneId);
 
-    ChronoLocalDateTime r();
+    ChronoLocalDateTime p();
+
+    ChronoZonedDateTime t(ZoneId zoneId);
 
     Instant toInstant();
-
-    ChronoZonedDateTime v(ZoneId zoneId);
 }

@@ -4,15 +4,17 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Header {
     private final List<Action> mEndHeaderActions;
     private final Action mStartHeaderAction;
     private final CarText mTitle;
 
-    public Header(m mVar) {
-        throw null;
+    private Header() {
+        this.mTitle = null;
+        this.mStartHeaderAction = null;
+        this.mEndHeaderActions = new ArrayList();
     }
 
     public boolean equals(Object obj) {
@@ -46,9 +48,7 @@ public final class Header {
         return "Header: " + this.mTitle;
     }
 
-    private Header() {
-        this.mTitle = null;
-        this.mStartHeaderAction = null;
-        this.mEndHeaderActions = new ArrayList();
+    public Header(ed5 ed5Var) {
+        throw null;
     }
 }

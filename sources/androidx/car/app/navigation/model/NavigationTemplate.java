@@ -3,22 +3,27 @@ package androidx.car.app.navigation.model;
 import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarColor;
 import androidx.car.app.model.Toggle;
-import androidx.car.app.model.x0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class NavigationTemplate implements x0 {
+public final class NavigationTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final CarColor mBackgroundColor;
     private final TravelEstimate mDestinationTravelEstimate;
     private final ActionStrip mMapActionStrip;
-    private final f mNavigationInfo;
-    private final g mPanModeDelegate;
+    private final mi7 mNavigationInfo;
+    private final pu7 mPanModeDelegate;
     private final Toggle mPanModeToggle;
 
-    public NavigationTemplate(e eVar) {
-        throw null;
+    private NavigationTemplate() {
+        this.mNavigationInfo = null;
+        this.mBackgroundColor = null;
+        this.mDestinationTravelEstimate = null;
+        this.mActionStrip = null;
+        this.mMapActionStrip = null;
+        this.mPanModeToggle = null;
+        this.mPanModeDelegate = null;
     }
 
     public boolean equals(Object obj) {
@@ -55,11 +60,11 @@ public final class NavigationTemplate implements x0 {
         return this.mMapActionStrip;
     }
 
-    public f getNavigationInfo() {
+    public mi7 getNavigationInfo() {
         return this.mNavigationInfo;
     }
 
-    public g getPanModeDelegate() {
+    public pu7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -76,13 +81,7 @@ public final class NavigationTemplate implements x0 {
         return "NavigationTemplate";
     }
 
-    private NavigationTemplate() {
-        this.mNavigationInfo = null;
-        this.mBackgroundColor = null;
-        this.mDestinationTravelEstimate = null;
-        this.mActionStrip = null;
-        this.mMapActionStrip = null;
-        this.mPanModeToggle = null;
-        this.mPanModeDelegate = null;
+    public NavigationTemplate(li7 li7Var) {
+        throw null;
     }
 }

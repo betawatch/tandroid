@@ -4,21 +4,15 @@ import j$.util.Spliterator;
 import java.util.concurrent.CountedCompleter;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public abstract class b extends d {
     public final AtomicReference h;
     public volatile boolean i;
 
-    public abstract Object h();
-
-    public b(t3 t3Var, Spliterator spliterator) {
-        super(t3Var, spliterator);
+    public b(a aVar, Spliterator spliterator) {
+        super(aVar, spliterator);
         this.h = new AtomicReference(null);
-    }
-
-    public b(b bVar, Spliterator spliterator) {
-        super(bVar, spliterator);
-        this.h = bVar.h;
     }
 
     @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
@@ -27,57 +21,56 @@ public abstract class b extends d {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long estimateSize = spliterator.estimateSize();
-        long j3 = this.c;
-        if (j3 == 0) {
-            j3 = d.e(estimateSize);
-            this.c = j3;
+        long j = this.c;
+        if (j == 0) {
+            j = d.e(estimateSize);
+            this.c = j;
         }
         AtomicReference atomicReference = this.h;
-        boolean z10 = false;
-        b bVar = this;
+        boolean z = false;
         while (true) {
             obj = atomicReference.get();
             if (obj != null) {
                 break;
             }
-            boolean z11 = bVar.i;
-            if (!z11) {
-                CountedCompleter<?> completer = bVar.getCompleter();
+            boolean z2 = this.i;
+            if (!z2) {
+                CountedCompleter<?> completer = this.getCompleter();
                 while (true) {
-                    b bVar2 = (b) ((d) completer);
-                    if (z11 || bVar2 == null) {
+                    b bVar = (b) ((d) completer);
+                    if (z2 || bVar == null) {
                         break;
                     }
-                    z11 = bVar2.i;
-                    completer = bVar2.getCompleter();
+                    z2 = bVar.i;
+                    completer = bVar.getCompleter();
                 }
             }
-            if (z11) {
-                obj = bVar.h();
+            if (z2) {
+                obj = this.h();
                 break;
             }
-            if (estimateSize <= j3 || (trySplit = spliterator.trySplit()) == null) {
+            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
-            b bVar3 = (b) bVar.c(trySplit);
-            bVar.d = bVar3;
-            b bVar4 = (b) bVar.c(spliterator);
-            bVar.e = bVar4;
-            bVar.setPendingCount(1);
-            if (z10) {
+            b bVar2 = (b) this.c(trySplit);
+            this.d = bVar2;
+            b bVar3 = (b) this.c(spliterator);
+            this.e = bVar3;
+            this.setPendingCount(1);
+            if (z) {
                 spliterator = trySplit;
-                bVar = bVar3;
-                bVar3 = bVar4;
+                this = bVar2;
+                bVar2 = bVar3;
             } else {
-                bVar = bVar4;
+                this = bVar3;
             }
-            z10 = !z10;
-            bVar3.fork();
+            z = !z;
+            bVar2.fork();
             estimateSize = spliterator.estimateSize();
         }
-        obj = bVar.a();
-        bVar.d(obj);
-        bVar.tryComplete();
+        obj = this.a();
+        this.d(obj);
+        this.tryComplete();
     }
 
     @Override // j$.util.stream.d
@@ -91,33 +84,46 @@ public abstract class b extends d {
         }
     }
 
-    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
-    public final Object getRawResult() {
-        return i();
-    }
-
-    public final Object i() {
-        if (b()) {
-            Object obj = this.h.get();
-            return obj == null ? h() : obj;
-        }
-        return this.f;
-    }
-
     public void f() {
         this.i = true;
     }
 
     public final void g() {
-        b bVar = this;
-        for (b bVar2 = (b) ((d) getCompleter()); bVar2 != null; bVar2 = (b) ((d) bVar2.getCompleter())) {
-            if (bVar2.d == bVar) {
-                b bVar3 = (b) bVar2.e;
+        CountedCompleter<?> completer = getCompleter();
+        while (true) {
+            b bVar = (b) ((d) completer);
+            b bVar2 = this;
+            this = bVar;
+            if (this == null) {
+                return;
+            }
+            if (this.d == bVar2) {
+                b bVar3 = (b) this.e;
                 if (!bVar3.i) {
                     bVar3.f();
                 }
             }
-            bVar = bVar2;
+            completer = this.getCompleter();
         }
+    }
+
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
+    public final Object getRawResult() {
+        return i();
+    }
+
+    public abstract Object h();
+
+    public final Object i() {
+        if (!b()) {
+            return this.f;
+        }
+        Object obj = this.h.get();
+        return obj == null ? h() : obj;
+    }
+
+    public b(b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
+        this.h = bVar.h;
     }
 }

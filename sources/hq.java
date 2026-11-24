@@ -1,0 +1,11 @@
+// default package
+
+import android.view.textclassifier.TextClassifier;
+import android.widget.TextView;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final class hq {
+    public TextView a;
+    public TextClassifier b;
+}

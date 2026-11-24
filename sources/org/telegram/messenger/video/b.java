@@ -1,29 +1,29 @@
 package org.telegram.messenger.video;
 
-import java.util.Comparator;
-import org.telegram.messenger.video.Track;
-import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Comparator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VideoPlayerHolderBase.2 b;
 
-    public /* synthetic */ b(int i7) {
-        this.a = i7;
+    public /* synthetic */ b(VideoPlayerHolderBase.2 r1, byte b) {
+        this.a = b;
+        this.b = r1;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$prepare$0;
-        int lambda$new$0;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        VideoPlayerHolderBase.2 r1 = this.b;
+        switch (b) {
             case 0:
-                lambda$prepare$0 = Track.lambda$prepare$0((Track.SamplePresentationTime) obj, (Track.SamplePresentationTime) obj2);
-                return lambda$prepare$0;
+                r1.lambda$onRenderedFirstFrame$2();
+                break;
             default:
-                lambda$new$0 = VideoFramesRewinder.lambda$new$0((VideoFramesRewinder.Frame) obj, (VideoFramesRewinder.Frame) obj2);
-                return lambda$new$0;
+                r1.lambda$onError$1();
+                break;
         }
     }
 }

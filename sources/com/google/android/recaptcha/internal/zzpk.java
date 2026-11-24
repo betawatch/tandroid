@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import i5.c;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzpk {
     final int zza;
@@ -17,23 +16,28 @@ final class zzpk {
     private final boolean[] zzh;
     private final boolean zzi;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public zzpk(String str, char[] cArr) {
-        this(str, cArr, r1, false);
-        byte[] bArr = new byte[128];
-        Arrays.fill(bArr, (byte) -1);
-        for (int i7 = 0; i7 < cArr.length; i7++) {
-            char c10 = cArr[i7];
-            boolean z10 = true;
-            zzmd.zzc(c10 < 128, "Non-ASCII character: %s", c10);
-            if (bArr[c10] != -1) {
-                z10 = false;
+    private zzpk(String str, char[] cArr, byte[] bArr, boolean z) {
+        this.zze = str;
+        cArr.getClass();
+        this.zzf = cArr;
+        try {
+            int length = cArr.length;
+            int zzb = zzpr.zzb(length, RoundingMode.UNNECESSARY);
+            this.zzb = zzb;
+            int numberOfTrailingZeros = Integer.numberOfTrailingZeros(zzb);
+            int i = 1 << (3 - numberOfTrailingZeros);
+            this.zzc = i;
+            this.zzd = zzb >> numberOfTrailingZeros;
+            this.zza = length - 1;
+            this.zzg = bArr;
+            boolean[] zArr = new boolean[i];
+            for (int i2 = 0; i2 < this.zzd; i2++) {
+                zArr[zzpr.zza(i2 << 3, this.zzb, RoundingMode.CEILING)] = true;
             }
-            zzmd.zzc(z10, "Duplicate character: %s", c10);
-            bArr[c10] = (byte) i7;
+            this.zzh = zArr;
+            this.zzi = false;
+        } catch (ArithmeticException e) {
+            throw new IllegalArgumentException(de9.k(cArr.length, "Illegal alphabet length "), e);
         }
     }
 
@@ -49,54 +53,49 @@ final class zzpk {
         return this.zze;
     }
 
-    public final char zza(int i7) {
-        return this.zzf[i7];
+    public final char zza(int i) {
+        return this.zzf[i];
     }
 
-    public final int zzb(char c10) {
-        if (c10 > 127) {
-            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c10))));
+    public final int zzb(char c) {
+        if (c > 127) {
+            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c))));
         }
-        byte b10 = this.zzg[c10];
-        if (b10 != -1) {
-            return b10;
+        byte b = this.zzg[c];
+        if (b != -1) {
+            return b;
         }
-        if (c10 <= ' ' || c10 == 127) {
-            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c10))));
+        if (c <= ' ' || c == 127) {
+            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c))));
         }
-        throw new zzpn("Unrecognized character: " + c10);
+        throw new zzpn("Unrecognized character: " + c);
     }
 
-    public final boolean zzc(int i7) {
-        return this.zzh[i7 % this.zzc];
+    public final boolean zzc(int i) {
+        return this.zzh[i % this.zzc];
     }
 
-    public final boolean zzd(char c10) {
+    public final boolean zzd(char c) {
         return this.zzg[61] != -1;
     }
 
-    private zzpk(String str, char[] cArr, byte[] bArr, boolean z10) {
-        this.zze = str;
-        cArr.getClass();
-        this.zzf = cArr;
-        try {
-            int length = cArr.length;
-            int zzb = zzpr.zzb(length, RoundingMode.UNNECESSARY);
-            this.zzb = zzb;
-            int numberOfTrailingZeros = Integer.numberOfTrailingZeros(zzb);
-            int i7 = 1 << (3 - numberOfTrailingZeros);
-            this.zzc = i7;
-            this.zzd = zzb >> numberOfTrailingZeros;
-            this.zza = length - 1;
-            this.zzg = bArr;
-            boolean[] zArr = new boolean[i7];
-            for (int i10 = 0; i10 < this.zzd; i10++) {
-                zArr[zzpr.zza(i10 * 8, this.zzb, RoundingMode.CEILING)] = true;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public zzpk(String str, char[] cArr) {
+        this(str, cArr, r1, false);
+        byte[] bArr = new byte[128];
+        Arrays.fill(bArr, (byte) -1);
+        for (int i = 0; i < cArr.length; i++) {
+            char c = cArr[i];
+            boolean z = true;
+            zzmd.zzc(c < 128, "Non-ASCII character: %s", c);
+            if (bArr[c] != -1) {
+                z = false;
             }
-            this.zzh = zArr;
-            this.zzi = false;
-        } catch (ArithmeticException e10) {
-            throw new IllegalArgumentException(c.i(cArr.length, "Illegal alphabet length "), e10);
+            zzmd.zzc(z, "Duplicate character: %s", c);
+            bArr[c] = (byte) i;
         }
     }
 }

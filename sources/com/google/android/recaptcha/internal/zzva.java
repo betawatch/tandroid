@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzva extends zzvb {
     public zzva(Unsafe unsafe) {
@@ -10,45 +10,45 @@ final class zzva extends zzvb {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final double zza(Object obj, long j3) {
-        return Double.longBitsToDouble(this.zza.getLong(obj, j3));
+    public final double zza(Object obj, long j) {
+        return Double.longBitsToDouble(this.zza.getLong(obj, j));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final float zzb(Object obj, long j3) {
-        return Float.intBitsToFloat(this.zza.getInt(obj, j3));
+    public final float zzb(Object obj, long j) {
+        return Float.intBitsToFloat(this.zza.getInt(obj, j));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final void zzc(Object obj, long j3, boolean z10) {
+    public final void zzc(Object obj, long j, boolean z) {
         if (zzvc.zzb) {
-            zzvc.zzD(obj, j3, r3 ? (byte) 1 : (byte) 0);
+            zzvc.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
         } else {
-            zzvc.zzE(obj, j3, r3 ? (byte) 1 : (byte) 0);
+            zzvc.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final void zzd(Object obj, long j3, byte b10) {
+    public final void zzd(Object obj, long j, byte b) {
         if (zzvc.zzb) {
-            zzvc.zzD(obj, j3, b10);
+            zzvc.zzD(obj, j, b);
         } else {
-            zzvc.zzE(obj, j3, b10);
+            zzvc.zzE(obj, j, b);
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final void zze(Object obj, long j3, double d) {
-        this.zza.putLong(obj, j3, Double.doubleToLongBits(d));
+    public final void zze(Object obj, long j, double d) {
+        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final void zzf(Object obj, long j3, float f10) {
-        this.zza.putInt(obj, j3, Float.floatToIntBits(f10));
+    public final void zzf(Object obj, long j, float f) {
+        this.zza.putInt(obj, j, Float.floatToIntBits(f));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final boolean zzg(Object obj, long j3) {
-        return zzvc.zzb ? zzvc.zzt(obj, j3) : zzvc.zzu(obj, j3);
+    public final boolean zzg(Object obj, long j) {
+        return zzvc.zzb ? zzvc.zzt(obj, j) : zzvc.zzu(obj, j);
     }
 }

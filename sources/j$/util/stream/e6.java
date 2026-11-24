@@ -1,47 +1,51 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public final class e6 extends z4 {
-    public final boolean s;
-    public final Comparator t;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class e6 extends a6 {
+    public v6 c;
 
-    public e6(b5 b5Var) {
-        super(b5Var, v6.q | v6.o);
-        this.s = true;
-        this.t = j$.util.f.INSTANCE;
+    @Override // j$.util.stream.m5, j$.util.stream.n5
+    public final void accept(long j) {
+        this.c.accept(j);
     }
 
-    public e6(b5 b5Var, Comparator comparator) {
-        super(b5Var, v6.q | v6.p);
-        this.s = false;
-        this.t = (Comparator) Objects.requireNonNull(comparator);
+    @Override // j$.util.stream.i5, j$.util.stream.n5
+    public final void end() {
+        long[] jArr = (long[]) this.c.b();
+        Arrays.sort(jArr);
+        long length = jArr.length;
+        n5 n5Var = this.a;
+        n5Var.n(length);
+        int i = 0;
+        if (this.b) {
+            int length2 = jArr.length;
+            while (i < length2) {
+                long j = jArr[i];
+                if (n5Var.q()) {
+                    break;
+                }
+                n5Var.accept(j);
+                i++;
+            }
+        } else {
+            int length3 = jArr.length;
+            while (i < length3) {
+                n5Var.accept(jArr[i]);
+                i++;
+            }
+        }
+        n5Var.end();
     }
 
-    @Override // j$.util.stream.a
-    public final j5 Q0(int i7, j5 j5Var) {
-        Objects.requireNonNull(j5Var);
-        if (v6.SORTED.m(i7) && this.s) {
-            return j5Var;
+    @Override // j$.util.stream.i5, j$.util.stream.n5
+    public final void n(long j) {
+        if (j < 2147483639) {
+            this.c = j > 0 ? new v6((int) j) : new v6();
+        } else {
+            j$.time.g.c("Stream size exceeds max array size");
         }
-        if (v6.SIZED.m(i7)) {
-            return new j6(j5Var, this.t);
-        }
-        return new f6(j5Var, this.t);
-    }
-
-    @Override // j$.util.stream.a
-    public final e2 N0(t3 t3Var, Spliterator spliterator, IntFunction intFunction) {
-        if (v6.SORTED.m(((a) t3Var).m) && this.s) {
-            return t3Var.j0(spliterator, false, intFunction);
-        }
-        Object[] g10 = t3Var.j0(spliterator, true, intFunction).g(intFunction);
-        Arrays.sort(g10, this.t);
-        return new h2(g10);
     }
 }

@@ -1,39 +1,29 @@
 package com.google.firebase;
 
 import com.google.firebase.components.ComponentRegistrar;
-import e2.j0;
-import hd.g;
 import java.util.List;
 import java.util.concurrent.Executor;
-import o9.h;
-import q9.b;
-import q9.c;
-import q9.d;
-import u9.a;
-import u9.i;
-import u9.q;
-import zd.x;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class FirebaseCommonKtxRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<a> getComponents() {
-        j0 b10 = a.b(new q(q9.a.class, x.class));
-        b10.a(new i(new q(q9.a.class, Executor.class), 1, 0));
-        b10.f = h.b;
-        a b11 = b10.b();
-        j0 b12 = a.b(new q(c.class, x.class));
-        b12.a(new i(new q(c.class, Executor.class), 1, 0));
-        b12.f = h.c;
-        a b13 = b12.b();
-        j0 b14 = a.b(new q(b.class, x.class));
-        b14.a(new i(new q(b.class, Executor.class), 1, 0));
-        b14.f = h.d;
-        a b15 = b14.b();
-        j0 b16 = a.b(new q(d.class, x.class));
-        b16.a(new i(new q(d.class, Executor.class), 1, 0));
-        b16.f = h.e;
-        return g.c(b11, b13, b15, b16.b());
+    public List<mp2> getComponents() {
+        lp2 a = mp2.a(new xw8(md0.class, vw2.class));
+        a.a(new wd3(new xw8(md0.class, Executor.class), 1, 0));
+        a.f = ize.c;
+        mp2 b = a.b();
+        lp2 a2 = mp2.a(new xw8(i16.class, vw2.class));
+        a2.a(new wd3(new xw8(i16.class, Executor.class), 1, 0));
+        a2.f = i2f.c;
+        mp2 b2 = a2.b();
+        lp2 a3 = mp2.a(new xw8(nk0.class, vw2.class));
+        a3.a(new wd3(new xw8(nk0.class, Executor.class), 1, 0));
+        a3.f = o5f.c;
+        mp2 b3 = a3.b();
+        lp2 a4 = mp2.a(new xw8(n4c.class, vw2.class));
+        a4.a(new wd3(new xw8(n4c.class, Executor.class), 1, 0));
+        a4.f = eef.c;
+        return zk2.b(b, b2, b3, a4.b());
     }
 }

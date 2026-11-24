@@ -1,26 +1,31 @@
 package org.scilab.forge.jlatexmath;
 
-import a8.p0;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class NewCommandMacro {
     protected static HashMap<String, String> macrocode = new HashMap<>();
     protected static HashMap<String, String> macroreplacement = new HashMap<>();
 
-    public static void addNewCommand(String str, String str2, int i7) {
-        macrocode.put(str, str2);
-        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i7));
-    }
-
-    public static void addReNewCommand(String str, String str2, int i7) {
-        if (macrocode.get(str) == null) {
-            throw new ParseException(p0.p("Command ", str, " is not defined ! Use newcommand instead ..."));
+    public static void addNewCommand(String str, String str2, int i, String str3) {
+        if (macrocode.get(str) != null) {
+            qm0.g(tb4.y("Command ", str, " already exists ! Use renewcommand instead ..."));
+            return;
         }
         macrocode.put(str, str2);
-        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i7));
+        macroreplacement.put(str, str3);
+        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i, 1.0f));
+    }
+
+    public static void addReNewCommand(String str, String str2, int i) {
+        if (macrocode.get(str) == null) {
+            qm0.g(tb4.y("Command ", str, " is not defined ! Use newcommand instead ..."));
+        } else {
+            macrocode.put(str, str2);
+            MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i));
+        }
     }
 
     public static boolean isMacro(String str) {
@@ -37,34 +42,29 @@ public class NewCommandMacro {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public String executeMacro(TeXParser teXParser, String[] strArr) {
-        int i7 = 0;
+        int i = 0;
         String str = macrocode.get(strArr[0]);
         int length = strArr.length;
-        int i10 = length - 11;
+        int i2 = length - 11;
         String str2 = strArr[length - 10];
         if (str2 == null) {
             if (macroreplacement.get(strArr[0]) != null) {
                 str = str.replaceAll("#1", Matcher.quoteReplacement(macroreplacement.get(strArr[0])));
             }
-            for (int i11 = 1; i11 <= i10; i11++) {
-                str = str.replaceAll("#" + (i11 + i7), Matcher.quoteReplacement(strArr[i11]));
+            for (int i3 = 1; i3 <= i2; i3++) {
+                str = str.replaceAll("#" + (i3 + i), Matcher.quoteReplacement(strArr[i3]));
             }
             return str;
         }
         str = str.replaceAll("#1", Matcher.quoteReplacement(str2));
-        i7 = 1;
-        while (i11 <= i10) {
+        i = 1;
+        while (i3 <= i2) {
         }
         return str;
     }
 
-    public static void addNewCommand(String str, String str2, int i7, String str3) {
-        if (macrocode.get(str) == null) {
-            macrocode.put(str, str2);
-            macroreplacement.put(str, str3);
-            MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i7, 1.0f));
-            return;
-        }
-        throw new ParseException(p0.p("Command ", str, " already exists ! Use renewcommand instead ..."));
+    public static void addNewCommand(String str, String str2, int i) {
+        macrocode.put(str, str2);
+        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i));
     }
 }

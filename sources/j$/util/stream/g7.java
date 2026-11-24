@@ -1,82 +1,28 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
-public final class g7 extends x6 implements j$.util.u0 {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.h(this, consumer);
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class g7 extends h7 implements LongConsumer {
+    public final long[] c = new long[128];
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.y(this, consumer);
-    }
-
-    @Override // j$.util.stream.x6
-    public final x6 e(Spliterator spliterator) {
-        return new g7(this.b, spliterator, this.a);
-    }
-
-    @Override // j$.util.stream.x6
-    public final void d() {
-        m6 m6Var = new m6();
-        this.h = m6Var;
-        Objects.requireNonNull(m6Var);
-        this.e = this.b.G0(new f7(m6Var, 1));
-        this.f = new j$.time.t(12, this);
-    }
-
-    @Override // j$.util.stream.x6, j$.util.Spliterator
-    public final Spliterator trySplit() {
-        return (j$.util.u0) super.trySplit();
-    }
-
-    @Override // j$.util.stream.x6, j$.util.Spliterator
-    public final j$.util.d1 trySplit() {
-        return (j$.util.u0) super.trySplit();
-    }
-
-    @Override // j$.util.stream.x6, j$.util.Spliterator
-    public final j$.util.u0 trySplit() {
-        return (j$.util.u0) super.trySplit();
-    }
-
-    @Override // j$.util.d1
-    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        double d;
-        Objects.requireNonNull(doubleConsumer);
-        boolean a10 = a();
-        if (a10) {
-            m6 m6Var = (m6) this.h;
-            long j3 = this.g;
-            int k10 = m6Var.k(j3);
-            if (m6Var.c == 0 && k10 == 0) {
-                d = ((double[]) m6Var.e)[(int) j3];
-            } else {
-                d = ((double[][]) m6Var.f)[k10][(int) (j3 - m6Var.d[k10])];
-            }
-            doubleConsumer.accept(d);
+    @Override // j$.util.stream.h7
+    public final void a(Object obj, long j) {
+        LongConsumer longConsumer = (LongConsumer) obj;
+        for (int i = 0; i < j; i++) {
+            longConsumer.accept(this.c[i]);
         }
-        return a10;
     }
 
-    @Override // j$.util.d1
-    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
-        if (this.h == null && !this.i) {
-            Objects.requireNonNull(doubleConsumer);
-            c();
-            Objects.requireNonNull(doubleConsumer);
-            f7 f7Var = new f7(doubleConsumer, 0);
-            this.b.F0(this.d, f7Var);
-            this.i = true;
-            return;
-        }
-        while (tryAdvance(doubleConsumer)) {
-        }
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        int i = this.b;
+        this.b = i + 1;
+        this.c[i] = j;
+    }
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.time.a.c(this, longConsumer);
     }
 }

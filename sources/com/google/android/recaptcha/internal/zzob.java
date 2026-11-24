@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Set;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzob implements zznu {
     private final String zza;
@@ -11,25 +11,6 @@ public final class zzob implements zznu {
     private final Set zzc;
     private final zznl zzd;
     private final int zze;
-
-    private zzob(String str, boolean z10, int i7, Level level, boolean z11, Set set, zznl zznlVar) {
-        this.zza = "";
-        this.zze = 2;
-        this.zzb = level;
-        this.zzc = set;
-        this.zzd = zznlVar;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zznu
-    public final zznb zza(String str) {
-        return new zzoe(this.zza, str, true, 2, this.zzb, this.zzc, this.zzd, null);
-    }
-
-    public final zzob zzb(boolean z10) {
-        Set set = this.zzc;
-        zznl zznlVar = this.zzd;
-        return new zzob(this.zza, true, 2, Level.OFF, false, set, zznlVar);
-    }
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -42,6 +23,25 @@ public final class zzob implements zznu {
         Level level = Level.ALL;
         set = zzoe.zzb;
         zznlVar = zzoe.zzc;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zznu
+    public final zznb zza(String str) {
+        return new zzoe(this.zza, str, true, 2, this.zzb, this.zzc, this.zzd, null);
+    }
+
+    public final zzob zzb(boolean z) {
+        Set set = this.zzc;
+        zznl zznlVar = this.zzd;
+        return new zzob(this.zza, true, 2, Level.OFF, false, set, zznlVar);
+    }
+
+    private zzob(String str, boolean z, int i, Level level, boolean z2, Set set, zznl zznlVar) {
+        this.zza = "";
+        this.zze = 2;
+        this.zzb = level;
+        this.zzc = set;
+        this.zzd = zznlVar;
     }
 
     /* JADX WARN: Illegal instructions before constructor call */

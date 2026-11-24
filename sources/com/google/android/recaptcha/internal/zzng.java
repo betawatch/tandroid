@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzng {
     private static final zznj zza = new zzne();
@@ -30,9 +30,10 @@ public final class zzng {
         zzni zzniVar = zzb;
         zzot.zza(zzmxVar, "key");
         if (!zzmxVar.zzb()) {
-            throw new IllegalArgumentException("key must be repeating");
+            w26.j("key must be repeating");
+        } else {
+            this.zzc.remove(zzmxVar);
+            this.zzd.put(zzmxVar, zzniVar);
         }
-        this.zzc.remove(zzmxVar);
-        this.zzd.put(zzmxVar, zzniVar);
     }
 }

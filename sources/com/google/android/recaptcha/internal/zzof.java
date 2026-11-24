@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class zzof {
     public static zzof zze() {
@@ -17,7 +17,7 @@ public class zzof {
         return zzor.zza();
     }
 
-    public boolean zzd(String str, Level level, boolean z10) {
+    public boolean zzd(String str, Level level, boolean z) {
         return false;
     }
 }

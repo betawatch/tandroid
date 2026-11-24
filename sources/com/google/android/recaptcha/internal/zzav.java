@@ -1,8 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import id.c;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzav implements zzar {
     @Override // com.google.android.recaptcha.internal.zzar
@@ -11,30 +9,30 @@ public final class zzav implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, c cVar) {
-        return zzam.zza(this, str, cVar);
+    public final /* synthetic */ Object zzc(String str, fw2 fw2Var) {
+        return zzam.zza(this, str, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, fw2 fw2Var) {
         Object zzd;
-        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), fw2Var);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, c cVar) {
+    public final Object zze(String str, fw2 fw2Var) {
         return new zzhg(new zzau(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzf(zzxp zzxpVar, c cVar) {
-        return zzam.zzc(this, zzxpVar, cVar);
+    public final /* synthetic */ Object zzf(zzxp zzxpVar, fw2 fw2Var) {
+        return zzam.zzc(this, zzxpVar, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzg(Exception exc, c cVar) {
-        return zzam.zzd(this, exc, cVar);
+    public final /* synthetic */ Object zzg(Exception exc, fw2 fw2Var) {
+        return zzam.zzd(this, exc, fw2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar

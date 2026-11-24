@@ -9,33 +9,32 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import com.google.android.gms.internal.cast.y;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
     public int a = 0;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i7, int i10, Intent intent) {
-        super.onActivityResult(i7, i10, intent);
-        if (i7 == 1) {
+    public final void onActivityResult(int i, int i2, Intent intent) {
+        super.onActivityResult(i, i2, intent);
+        if (i == 1) {
             boolean booleanExtra = getIntent().getBooleanExtra("notify_manager", true);
             this.a = 0;
-            setResult(i10, intent);
+            setResult(i2, intent);
             if (booleanExtra) {
-                com.google.android.gms.common.api.internal.g e10 = com.google.android.gms.common.api.internal.g.e(this);
-                if (i10 == -1) {
-                    y yVar = e10.y;
-                    yVar.sendMessage(yVar.obtainMessage(3));
-                } else if (i10 == 0) {
-                    e10.h(new n6.a(13, null, null), getIntent().getIntExtra("failing_client_id", -1));
+                hy4 e = hy4.e(this);
+                if (i2 == -1) {
+                    o59 o59Var = e.y;
+                    o59Var.sendMessage(o59Var.obtainMessage(3));
+                } else if (i2 == 0) {
+                    e.h(new ds2(13, null, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
-        } else if (i7 == 2) {
+        } else if (i == 2) {
             this.a = 0;
-            setResult(i10, intent);
+            setResult(i2, intent);
         }
         finish();
     }
@@ -65,46 +64,48 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
         }
         PendingIntent pendingIntent = (PendingIntent) extras.get("pending_intent");
         Integer num = (Integer) extras.get("error_code");
-        if (pendingIntent == null && num == null) {
-            Log.e("GoogleApiActivity", "Activity started without resolution");
-            finish();
-            return;
-        }
         if (pendingIntent == null) {
-            q6.m.h(num);
-            n6.d.e.e(this, num.intValue(), this);
-            this.a = 1;
-            return;
+            if (num == null) {
+                Log.e("GoogleApiActivity", "Activity started without resolution");
+                finish();
+                return;
+            } else {
+                cy4.e.d(this, num.intValue(), this);
+                this.a = 1;
+                return;
+            }
         }
         try {
             googleApiActivity = this;
             try {
                 googleApiActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
                 googleApiActivity.a = 1;
-            } catch (ActivityNotFoundException e10) {
-                e = e10;
+            } catch (ActivityNotFoundException e) {
+                e = e;
+                ActivityNotFoundException activityNotFoundException = e;
                 if (extras.getBoolean("notify_manager", true)) {
-                    com.google.android.gms.common.api.internal.g.e(this).h(new n6.a(22, null, null), getIntent().getIntExtra("failing_client_id", -1));
+                    hy4.e(googleApiActivity).h(new ds2(22, null, null), googleApiActivity.getIntent().getIntExtra("failing_client_id", -1));
                 } else {
                     String obj = pendingIntent.toString();
-                    String m10 = p5.c.m("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
+                    String o = ls6.o("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
                     if (Build.FINGERPRINT.contains("generic")) {
-                        m10 = m10.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                        o = o.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }
-                    Log.e("GoogleApiActivity", m10, e);
+                    Log.e("GoogleApiActivity", o, activityNotFoundException);
                 }
                 googleApiActivity.a = 1;
-                finish();
-            } catch (IntentSender.SendIntentException e11) {
-                e = e11;
+                googleApiActivity.finish();
+            } catch (IntentSender.SendIntentException e2) {
+                e = e2;
                 Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
-                finish();
+                googleApiActivity.finish();
             }
-        } catch (ActivityNotFoundException e12) {
-            e = e12;
+        } catch (ActivityNotFoundException e3) {
+            e = e3;
             googleApiActivity = this;
-        } catch (IntentSender.SendIntentException e13) {
-            e = e13;
+        } catch (IntentSender.SendIntentException e4) {
+            e = e4;
+            googleApiActivity = this;
         }
     }
 

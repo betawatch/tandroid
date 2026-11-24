@@ -7,20 +7,19 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
-    ArrayList<dg.a> audioInputs;
+    ArrayList<h00> audioInputs;
     private final MediaCodec encoder;
     private boolean encoderDone;
     private ByteBuffer[] encoderInputBuffers;
     private ByteBuffer[] encoderOutputBuffers;
     public final MediaFormat format;
-    dg.a mainInput;
+    h00 mainInput;
     private int sampleRate;
     private long totalDurationUs;
     private final int TIMEOUT_USEC = 2500;
@@ -35,14 +34,14 @@ public class AudioRecoder {
     private int channelCount = 2;
     private long encoderInputPresentationTimeUs = 0;
 
-    public AudioRecoder(ArrayList<dg.a> arrayList, long j3) {
+    public AudioRecoder(ArrayList<h00> arrayList, long j) {
         this.sampleRate = 44100;
         this.audioInputs = arrayList;
-        this.totalDurationUs = j3;
+        this.totalDurationUs = j;
         this.mainInput = arrayList.get(0);
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (arrayList.get(i7).b() > this.sampleRate) {
-                this.sampleRate = arrayList.get(i7).b();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i).b() > this.sampleRate) {
+                this.sampleRate = arrayList.get(i).b();
             }
         }
         MediaCodec createEncoderByType = MediaCodec.createEncoderByType("audio/mp4a-latm");
@@ -54,8 +53,8 @@ public class AudioRecoder {
         createEncoderByType.start();
         this.encoderInputBuffers = createEncoderByType.getInputBuffers();
         this.encoderOutputBuffers = createEncoderByType.getOutputBuffers();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            arrayList.get(i10).e(this.sampleRate, this.channelCount);
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            arrayList.get(i2).e(this.sampleRate, this.channelCount);
         }
     }
 
@@ -68,17 +67,17 @@ public class AudioRecoder {
 
     private void mix(ShortBuffer shortBuffer) {
         int remaining = shortBuffer.remaining();
-        for (int i7 = 0; i7 < remaining && isInputAvailable(); i7++) {
-            boolean z10 = false;
-            short s5 = 0;
-            for (int i10 = 0; i10 < this.audioInputs.size() && isInputAvailable(); i10++) {
-                if (this.audioInputs.get(i10).c()) {
-                    s5 = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s5);
-                    z10 = true;
+        for (int i = 0; i < remaining && isInputAvailable(); i++) {
+            boolean z = false;
+            short s = 0;
+            for (int i2 = 0; i2 < this.audioInputs.size() && isInputAvailable(); i2++) {
+                if (this.audioInputs.get(i2).c()) {
+                    s = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s);
+                    z = true;
                 }
             }
-            if (z10) {
-                shortBuffer.put(s5);
+            if (z) {
+                shortBuffer.put(s);
             }
         }
     }
@@ -86,24 +85,26 @@ public class AudioRecoder {
     public void release() {
         try {
             this.encoder.stop();
-            for (int i7 = 0; i7 < this.audioInputs.size(); i7++) {
-                this.audioInputs.get(i7).d();
+            for (int i = 0; i < this.audioInputs.size(); i++) {
+                this.audioInputs.get(i).d();
             }
-        } catch (Exception e10) {
-            a8.g(e10, true);
+        } catch (Exception e) {
+            fa4.g(e, true);
         }
     }
 
-    public boolean step(MediaCodecVideoConvertor.Muxer muxer, int i7) {
+    public boolean step(MediaCodecVideoConvertor.Muxer muxer, int i) {
         int dequeueInputBuffer;
         if (!this.encoderInputDone && (dequeueInputBuffer = this.encoder.dequeueInputBuffer(2500L)) >= 0) {
-            if (isInputAvailable()) {
-                ShortBuffer asShortBuffer = this.encoder.getInputBuffer(dequeueInputBuffer).asShortBuffer();
+            boolean isInputAvailable = isInputAvailable();
+            MediaCodec mediaCodec = this.encoder;
+            if (isInputAvailable) {
+                ShortBuffer asShortBuffer = mediaCodec.getInputBuffer(dequeueInputBuffer).asShortBuffer();
                 mix(asShortBuffer);
-                this.encoder.queueInputBuffer(dequeueInputBuffer, 0, asShortBuffer.position() * 2, this.encoderInputPresentationTimeUs, 1);
+                this.encoder.queueInputBuffer(dequeueInputBuffer, 0, asShortBuffer.position() << 1, this.encoderInputPresentationTimeUs, 1);
                 this.encoderInputPresentationTimeUs = AudioConversions.shortsToUs(asShortBuffer.position(), this.sampleRate, this.channelCount) + this.encoderInputPresentationTimeUs;
             } else {
-                this.encoder.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
+                mediaCodec.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
                 this.encoderInputDone = true;
             }
         }
@@ -125,7 +126,7 @@ public class AudioRecoder {
                 return this.encoderDone;
             }
             if (bufferInfo.size != 0) {
-                muxer.writeSampleData(i7, byteBuffer, bufferInfo, false);
+                muxer.writeSampleData(i, byteBuffer, bufferInfo, false);
             }
             if ((this.encoderOutputBufferInfo.flags & 4) != 0) {
                 this.encoderDone = true;

@@ -1,17 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzpt {
-    public static void zza(boolean z10, String str, long j3, long j10) {
-        if (z10) {
+    public static void zza(boolean z, String str, long j, long j2) {
+        if (z) {
             return;
         }
-        throw new ArithmeticException("overflow: " + str + "(" + j3 + ", " + j10 + ")");
+        throw new ArithmeticException("overflow: " + str + "(" + j + ", " + j2 + ")");
     }
 
-    public static void zzb(boolean z10) {
-        if (!z10) {
+    public static void zzb(boolean z) {
+        if (!z) {
             throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
         }
     }

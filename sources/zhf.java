@@ -1,0 +1,33 @@
+// default package
+
+import java.util.AbstractMap;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final class zhf extends jff {
+    public final /* synthetic */ c5d h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zhf(c5d c5dVar) {
+        super((byte) 3);
+        this.h = c5dVar;
+    }
+
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i) {
+        c5d c5dVar = this.h;
+        r2f.a(i, c5dVar.r ? 1 : 0);
+        int i2 = i << 1;
+        Object[] objArr = c5dVar.n;
+        Object obj = objArr[i2];
+        obj.getClass();
+        Object obj2 = objArr[i2 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.h.r ? 1 : 0;
+    }
+}

@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class AbstractSerializedData implements InputSerializedData, OutputSerializedData {
     private TLDataSourceType dataSourceType = TLDataSourceType.UNKNOWN;
@@ -17,37 +17,37 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     public abstract int length();
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract boolean readBool(boolean z10);
+    public abstract boolean readBool(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract byte readByte(boolean z10);
+    public abstract byte readByte(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract byte[] readByteArray(boolean z10);
+    public abstract byte[] readByteArray(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract NativeByteBuffer readByteBuffer(boolean z10);
+    public abstract NativeByteBuffer readByteBuffer(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract void readBytes(byte[] bArr, boolean z10);
+    public abstract void readBytes(byte[] bArr, boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract byte[] readData(int i7, boolean z10);
+    public abstract byte[] readData(int i, boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract double readDouble(boolean z10);
+    public abstract double readDouble(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract float readFloat(boolean z10);
+    public abstract float readFloat(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract int readInt32(boolean z10);
+    public abstract int readInt32(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract long readInt64(boolean z10);
+    public abstract long readInt64(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract String readString(boolean z10);
+    public abstract String readString(boolean z);
 
     @Override // org.telegram.tgnet.InputSerializedData
     public abstract int remaining();
@@ -57,22 +57,22 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     }
 
     @Override // org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
-    public abstract void skip(int i7);
+    public abstract void skip(int i);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeBool(boolean z10);
+    public abstract void writeBool(boolean z);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeByte(byte b10);
+    public abstract void writeByte(byte b);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeByte(int i7);
+    public abstract void writeByte(int i);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeByteArray(byte[] bArr);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeByteArray(byte[] bArr, int i7, int i10);
+    public abstract void writeByteArray(byte[] bArr, int i, int i2);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeByteBuffer(NativeByteBuffer nativeByteBuffer);
@@ -81,19 +81,19 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     public abstract void writeBytes(byte[] bArr);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeBytes(byte[] bArr, int i7, int i10);
+    public abstract void writeBytes(byte[] bArr, int i, int i2);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeDouble(double d);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeFloat(float f10);
+    public abstract void writeFloat(float f);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeInt32(int i7);
+    public abstract void writeInt32(int i);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeInt64(long j3);
+    public abstract void writeInt64(long j);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeString(String str);

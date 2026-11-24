@@ -1,0 +1,161 @@
+// default package
+
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.o;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class wu extends View implements eib, dw {
+    public final vg5 a;
+    public final dx b;
+    public bw c;
+    public TL_iv.pageBlockKicker d;
+    public int e;
+    public int f;
+
+    public wu(Activity activity, vg5 vg5Var, dx dxVar) {
+        super(activity);
+        this.a = vg5Var;
+        this.b = dxVar;
+    }
+
+    @Override // dw
+    public int getBoundLeft() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.h(this.a, 18.0f, bwVar.k() + bwVar.s);
+    }
+
+    @Override // dw
+    public int getBoundRight() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.C(this.a, 18.0f, bwVar.l() + bwVar.s);
+    }
+
+    @Override // dw
+    public int getLastLineBoundRight() {
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return -1;
+        }
+        return ug8.C(this.a, 18.0f, bwVar.m() + bwVar.s);
+    }
+
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return ug8.a(this);
+    }
+
+    @Override // eib
+    public final void k(ArrayList arrayList) {
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            arrayList.add(bwVar);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.i(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        bw bwVar = this.c;
+        if (bwVar != null) {
+            bwVar.f(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d == null || this.c == null) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(this.e, this.f);
+        o.s(this.a, canvas, this, 0);
+        this.c.d(canvas, this);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setClickable(false);
+        accessibilityNodeInfo.setLongClickable(false);
+        bw bwVar = this.c;
+        if (bwVar == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(o.f(2131754860, o.g(this.a, this.b, bwVar)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        wu wuVar;
+        int i3;
+        int size = View.MeasureSpec.getSize(i);
+        vg5 vg5Var = this.a;
+        vg5Var.getClass();
+        this.e = gl.L(18.0f);
+        TL_iv.pageBlockKicker pageblockkicker = this.d;
+        if (pageblockkicker != null) {
+            if (pageblockkicker.first) {
+                this.f = gl.L(16.0f);
+                i3 = gl.L(8.0f);
+            } else {
+                this.f = gl.L(8.0f);
+                i3 = 0;
+            }
+            TL_iv.RichText richText = this.d.text;
+            vg5 vg5Var2 = this.a;
+            int h = ug8.h(vg5Var2, 36.0f, size);
+            int i4 = this.f;
+            TL_iv.pageBlockKicker pageblockkicker2 = this.d;
+            dx dxVar = this.b;
+            wuVar = this;
+            bw n = o.n(vg5Var2, wuVar, null, richText, h, i4, pageblockkicker2, (dxVar == null || !dxVar.H) ? Layout.Alignment.ALIGN_NORMAL : lwa.a(), 0, this.b);
+            wuVar.c = n;
+            if (n != null) {
+                vg5Var.getClass();
+                i3 += wuVar.c.d.getHeight() + gl.L(16.0f);
+                bw bwVar = wuVar.c;
+                bwVar.s = wuVar.e;
+                bwVar.w = wuVar.f;
+            }
+        } else {
+            wuVar = this;
+            i3 = 1;
+        }
+        wuVar.setMeasuredDimension(size, i3);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return o.i(this.a, this.b, motionEvent, this, this.c, this.e, this.f) || super.onTouchEvent(motionEvent);
+    }
+
+    public void setBlock(TL_iv.pageBlockKicker pageblockkicker) {
+        this.d = pageblockkicker;
+        requestLayout();
+    }
+}

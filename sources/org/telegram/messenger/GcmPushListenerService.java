@@ -5,30 +5,30 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     public static final /* synthetic */ int n = 0;
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
-    public final void c(ab.a0 a0Var) {
+    public final void c(j69 j69Var) {
         long parseLong;
-        Bundle bundle = a0Var.a;
+        Bundle bundle = j69Var.a;
         String string = bundle.getString("from");
-        if (a0Var.b == null) {
-            a0.f fVar = new a0.f(0);
+        if (j69Var.b == null) {
+            ps psVar = new ps(0);
             for (String str : bundle.keySet()) {
                 Object obj = bundle.get(str);
                 if (obj instanceof String) {
                     String str2 = (String) obj;
                     if (!str.startsWith("google.") && !str.startsWith("gcm.") && !str.equals("from") && !str.equals("message_type") && !str.equals("collapse_key")) {
-                        fVar.put(str, str2);
+                        psVar.put(str, str2);
                     }
                 }
             }
-            a0Var.b = fVar;
+            j69Var.b = psVar;
         }
-        HashMap hashMap = new HashMap(a0Var.b);
+        HashMap hashMap = new HashMap(j69Var.b);
         Object obj2 = bundle.get("google.sent_time");
         if (obj2 instanceof Long) {
             parseLong = ((Long) obj2).longValue();
@@ -42,14 +42,14 @@ public class GcmPushListenerService extends FirebaseMessagingService {
             }
             parseLong = 0;
         }
-        if (s2.a) {
-            a8.b("FCM received data: " + hashMap + " from: " + string);
+        if (w01.a) {
+            fa4.b("FCM received data: " + hashMap + " from: " + string);
         }
         PushListenerController.processRemoteMessage(2, (String) hashMap.get("p"), parseLong);
     }
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
     public final void d(String str) {
-        g0.g3(new n4(str, 4));
+        gl.d3(new xt2(str, (byte) 4));
     }
 }

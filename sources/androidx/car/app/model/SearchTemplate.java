@@ -2,20 +2,27 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class SearchTemplate implements x0 {
+public final class SearchTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final Action mHeaderAction;
     private final String mInitialSearchText;
     private final boolean mIsLoading;
     private final ItemList mItemList;
-    private final o0 mSearchCallbackDelegate;
+    private final as9 mSearchCallbackDelegate;
     private final String mSearchHint;
     private final boolean mShowKeyboardByDefault;
 
-    public SearchTemplate(q0 q0Var) {
-        throw null;
+    private SearchTemplate() {
+        this.mInitialSearchText = null;
+        this.mSearchHint = null;
+        this.mIsLoading = false;
+        this.mItemList = null;
+        this.mHeaderAction = null;
+        this.mActionStrip = null;
+        this.mSearchCallbackDelegate = null;
+        this.mShowKeyboardByDefault = true;
     }
 
     public boolean equals(Object obj) {
@@ -45,10 +52,10 @@ public final class SearchTemplate implements x0 {
         return this.mItemList;
     }
 
-    public o0 getSearchCallbackDelegate() {
-        o0 o0Var = this.mSearchCallbackDelegate;
-        Objects.requireNonNull(o0Var);
-        return o0Var;
+    public as9 getSearchCallbackDelegate() {
+        as9 as9Var = this.mSearchCallbackDelegate;
+        Objects.requireNonNull(as9Var);
+        return as9Var;
     }
 
     public String getSearchHint() {
@@ -71,14 +78,7 @@ public final class SearchTemplate implements x0 {
         return "SearchTemplate";
     }
 
-    private SearchTemplate() {
-        this.mInitialSearchText = null;
-        this.mSearchHint = null;
-        this.mIsLoading = false;
-        this.mItemList = null;
-        this.mHeaderAction = null;
-        this.mActionStrip = null;
-        this.mSearchCallbackDelegate = null;
-        this.mShowKeyboardByDefault = true;
+    public SearchTemplate(ws9 ws9Var) {
+        throw null;
     }
 }

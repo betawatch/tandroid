@@ -4,9 +4,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class Row implements q {
+public final class Row implements pr5 {
     public static final int IMAGE_TYPE_ICON = 4;
     public static final int IMAGE_TYPE_LARGE = 2;
     public static final int IMAGE_TYPE_SMALL = 1;
@@ -18,14 +18,25 @@ public final class Row implements q {
     private final boolean mIsEnabled;
     private final Metadata mMetadata;
     private final int mNumericDecoration;
-    private final b0 mOnClickDelegate;
+    private final yo7 mOnClickDelegate;
     private final int mRowImageType;
     private final List<CarText> mTexts;
     private final CarText mTitle;
     private final Toggle mToggle;
 
-    public Row(n0 n0Var) {
-        throw null;
+    private Row() {
+        this.mTitle = null;
+        List list = Collections.EMPTY_LIST;
+        this.mTexts = list;
+        this.mImage = null;
+        this.mActions = list;
+        this.mNumericDecoration = -1;
+        this.mToggle = null;
+        this.mOnClickDelegate = null;
+        this.mMetadata = Metadata.EMPTY_METADATA;
+        this.mIsBrowsable = false;
+        this.mRowImageType = 1;
+        this.mIsEnabled = true;
     }
 
     public boolean equals(Object obj) {
@@ -60,7 +71,7 @@ public final class Row implements q {
         return this.mNumericDecoration;
     }
 
-    public b0 getOnClickDelegate() {
+    public yo7 getOnClickDelegate() {
         return this.mOnClickDelegate;
     }
 
@@ -94,41 +105,30 @@ public final class Row implements q {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[title: ");
-        sb2.append(CarText.toShortString(this.mTitle));
-        sb2.append(", text count: ");
+        StringBuilder sb = new StringBuilder("[title: ");
+        sb.append(CarText.toShortString(this.mTitle));
+        sb.append(", text count: ");
         List<CarText> list = this.mTexts;
-        sb2.append(list != null ? list.size() : 0);
-        sb2.append(", image: ");
-        sb2.append(this.mImage);
-        sb2.append(", isBrowsable: ");
-        sb2.append(this.mIsBrowsable);
-        sb2.append(", isEnabled: ");
-        sb2.append(this.mIsEnabled);
-        sb2.append("]");
-        return sb2.toString();
+        sb.append(list != null ? list.size() : 0);
+        sb.append(", image: ");
+        sb.append(this.mImage);
+        sb.append(", isBrowsable: ");
+        sb.append(this.mIsBrowsable);
+        sb.append(", isEnabled: ");
+        sb.append(this.mIsEnabled);
+        sb.append("]");
+        return sb.toString();
     }
 
     public CharSequence yourBoat() {
         return YOUR_BOAT;
     }
 
-    private Row() {
-        this.mTitle = null;
-        List list = Collections.EMPTY_LIST;
-        this.mTexts = list;
-        this.mImage = null;
-        this.mActions = list;
-        this.mNumericDecoration = -1;
-        this.mToggle = null;
-        this.mOnClickDelegate = null;
-        this.mMetadata = Metadata.EMPTY_METADATA;
-        this.mIsBrowsable = false;
-        this.mRowImageType = 1;
-        this.mIsEnabled = true;
-    }
-
     public Row row() {
         return this;
+    }
+
+    public Row(em9 em9Var) {
+        throw null;
     }
 }

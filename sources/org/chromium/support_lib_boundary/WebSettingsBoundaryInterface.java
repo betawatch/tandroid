@@ -7,11 +7,11 @@ import java.lang.annotation.Target;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface WebSettingsBoundaryInterface {
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface AttributionBehavior {
         public static final int APP_SOURCE_AND_APP_TRIGGER = 3;
@@ -20,7 +20,7 @@ public interface WebSettingsBoundaryInterface {
         public static final int WEB_SOURCE_AND_WEB_TRIGGER = 2;
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface ForceDarkBehavior {
         public static final int FORCE_DARK_ONLY = 0;
@@ -28,14 +28,14 @@ public interface WebSettingsBoundaryInterface {
         public static final int PREFER_MEDIA_QUERY_OVER_FORCE_DARK = 2;
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface SpeculativeLoadingStatus {
         public static final int DISABLED = 0;
         public static final int PRERENDER_ENABLED = 1;
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Target({ElementType.TYPE_USE})
     @Retention(RetentionPolicy.SOURCE)
     public @interface WebViewMediaIntegrityApiStatus {
@@ -44,7 +44,7 @@ public interface WebSettingsBoundaryInterface {
         public static final int ENABLED_WITHOUT_APP_IDENTITY = 1;
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface WebauthnSupport {
         public static final int APP = 1;
@@ -90,39 +90,39 @@ public interface WebSettingsBoundaryInterface {
 
     boolean isAlgorithmicDarkeningAllowed();
 
-    void setAlgorithmicDarkeningAllowed(boolean z10);
+    void setAlgorithmicDarkeningAllowed(boolean z);
 
-    void setAttributionBehavior(int i7);
+    void setAttributionBehavior(int i);
 
-    void setBackForwardCacheEnabled(boolean z10);
+    void setBackForwardCacheEnabled(boolean z);
 
-    void setDisabledActionModeMenuItems(int i7);
+    void setDisabledActionModeMenuItems(int i);
 
-    void setEnterpriseAuthenticationAppLinkPolicyEnabled(boolean z10);
+    void setEnterpriseAuthenticationAppLinkPolicyEnabled(boolean z);
 
-    void setForceDark(int i7);
+    void setForceDark(int i);
 
-    void setForceDarkBehavior(int i7);
+    void setForceDarkBehavior(int i);
 
-    void setHasEnrolledInstrumentEnabled(boolean z10);
+    void setHasEnrolledInstrumentEnabled(boolean z);
 
-    void setIncludeCookiesOnIntercept(boolean z10);
+    void setIncludeCookiesOnIntercept(boolean z);
 
-    void setOffscreenPreRaster(boolean z10);
+    void setOffscreenPreRaster(boolean z);
 
-    void setPaymentRequestEnabled(boolean z10);
+    void setPaymentRequestEnabled(boolean z);
 
     void setRequestedWithHeaderOriginAllowList(Set<String> set);
 
-    void setSafeBrowsingEnabled(boolean z10);
+    void setSafeBrowsingEnabled(boolean z);
 
-    void setSpeculativeLoadingStatus(int i7);
+    void setSpeculativeLoadingStatus(int i);
 
     void setUserAgentMetadataFromMap(Map<String, Object> map);
 
-    void setWebViewMediaIntegrityApiStatus(int i7, Map<String, Integer> map);
+    void setWebViewMediaIntegrityApiStatus(int i, Map<String, Integer> map);
 
-    void setWebauthnSupport(int i7);
+    void setWebauthnSupport(int i);
 
-    void setWillSuppressErrorPage(boolean z10);
+    void setWillSuppressErrorPage(boolean z);
 }

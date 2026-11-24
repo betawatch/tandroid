@@ -1,7 +1,7 @@
 package j$.time;
 
 import j$.time.format.TextStyle;
-import j$.time.format.w;
+import j$.time.temporal.Temporal;
 import j$.time.zone.ZoneRules;
 import j$.util.Objects;
 import java.io.DataOutput;
@@ -14,22 +14,17 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public abstract class ZoneId implements Serializable {
     public static final Map a;
     private static final long serialVersionUID = 8352817235686L;
 
-    public abstract void K(DataOutput dataOutput);
-
-    public abstract String getId();
-
-    public abstract ZoneRules getRules();
-
     static {
-        Map.Entry[] entryArr = {j$.com.android.tools.r8.a.O("ACT", "Australia/Darwin"), j$.com.android.tools.r8.a.O("AET", "Australia/Sydney"), j$.com.android.tools.r8.a.O("AGT", "America/Argentina/Buenos_Aires"), j$.com.android.tools.r8.a.O("ART", "Africa/Cairo"), j$.com.android.tools.r8.a.O("AST", "America/Anchorage"), j$.com.android.tools.r8.a.O("BET", "America/Sao_Paulo"), j$.com.android.tools.r8.a.O("BST", "Asia/Dhaka"), j$.com.android.tools.r8.a.O("CAT", "Africa/Harare"), j$.com.android.tools.r8.a.O("CNT", "America/St_Johns"), j$.com.android.tools.r8.a.O("CST", "America/Chicago"), j$.com.android.tools.r8.a.O("CTT", "Asia/Shanghai"), j$.com.android.tools.r8.a.O("EAT", "Africa/Addis_Ababa"), j$.com.android.tools.r8.a.O("ECT", "Europe/Paris"), j$.com.android.tools.r8.a.O("IET", "America/Indiana/Indianapolis"), j$.com.android.tools.r8.a.O("IST", "Asia/Kolkata"), j$.com.android.tools.r8.a.O("JST", "Asia/Tokyo"), j$.com.android.tools.r8.a.O("MIT", "Pacific/Apia"), j$.com.android.tools.r8.a.O("NET", "Asia/Yerevan"), j$.com.android.tools.r8.a.O("NST", "Pacific/Auckland"), j$.com.android.tools.r8.a.O("PLT", "Asia/Karachi"), j$.com.android.tools.r8.a.O("PNT", "America/Phoenix"), j$.com.android.tools.r8.a.O("PRT", "America/Puerto_Rico"), j$.com.android.tools.r8.a.O("PST", "America/Los_Angeles"), j$.com.android.tools.r8.a.O("SST", "Pacific/Guadalcanal"), j$.com.android.tools.r8.a.O("VST", "Asia/Ho_Chi_Minh"), j$.com.android.tools.r8.a.O("EST", "-05:00"), j$.com.android.tools.r8.a.O("MST", "-07:00"), j$.com.android.tools.r8.a.O("HST", "-10:00")};
+        Map.Entry[] entryArr = {a.O("ACT", "Australia/Darwin"), a.O("AET", "Australia/Sydney"), a.O("AGT", "America/Argentina/Buenos_Aires"), a.O("ART", "Africa/Cairo"), a.O("AST", "America/Anchorage"), a.O("BET", "America/Sao_Paulo"), a.O("BST", "Asia/Dhaka"), a.O("CAT", "Africa/Harare"), a.O("CNT", "America/St_Johns"), a.O("CST", "America/Chicago"), a.O("CTT", "Asia/Shanghai"), a.O("EAT", "Africa/Addis_Ababa"), a.O("ECT", "Europe/Paris"), a.O("IET", "America/Indiana/Indianapolis"), a.O("IST", "Asia/Kolkata"), a.O("JST", "Asia/Tokyo"), a.O("MIT", "Pacific/Apia"), a.O("NET", "Asia/Yerevan"), a.O("NST", "Pacific/Auckland"), a.O("PLT", "Asia/Karachi"), a.O("PNT", "America/Phoenix"), a.O("PRT", "America/Puerto_Rico"), a.O("PST", "America/Los_Angeles"), a.O("SST", "Pacific/Guadalcanal"), a.O("VST", "Asia/Ho_Chi_Minh"), a.O("EST", "-05:00"), a.O("MST", "-07:00"), a.O("HST", "-10:00")};
         HashMap hashMap = new HashMap(28);
-        for (int i7 = 0; i7 < 28; i7++) {
-            Map.Entry entry = entryArr[i7];
+        for (int i = 0; i < 28; i++) {
+            Map.Entry entry = entryArr[i];
             Object requireNonNull = Objects.requireNonNull(entry.getKey());
             if (hashMap.put(requireNonNull, Objects.requireNonNull(entry.getValue())) != null) {
                 throw new IllegalArgumentException("duplicate key: " + requireNonNull);
@@ -38,88 +33,80 @@ public abstract class ZoneId implements Serializable {
         a = Collections.unmodifiableMap(hashMap);
     }
 
+    public ZoneId() {
+        if (getClass() != ZoneOffset.class && getClass() != w.class) {
+            throw new AssertionError("Invalid subclass");
+        }
+    }
+
+    public static ZoneId o(Temporal temporal) {
+        ZoneId zoneId = (ZoneId) temporal.r(j$.time.temporal.p.e);
+        if (zoneId != null) {
+            return zoneId;
+        }
+        g.f("Unable to obtain ZoneId from TemporalAccessor: ", temporal, temporal.getClass().getName());
+        return null;
+    }
+
+    public static ZoneId of(String str) {
+        return q(str, true);
+    }
+
+    public static ZoneId q(String str, boolean z) {
+        Objects.requireNonNull(str, "zoneId");
+        return (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) ? ZoneOffset.F(str) : (str.startsWith("UTC") || str.startsWith("GMT")) ? w(str, 3, z) : str.startsWith("UT") ? w(str, 2, z) : w.C(str, z);
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
+    }
+
     public static ZoneId systemDefault() {
-        String id2 = TimeZone.getDefault().getID();
+        String id = TimeZone.getDefault().getID();
         Map map = a;
-        Objects.requireNonNull(id2, "zoneId");
+        Objects.requireNonNull(id, "zoneId");
         Objects.requireNonNull(map, "aliasMap");
-        Object obj = (String) map.get(id2);
+        Object obj = (String) map.get(id);
         if (obj == null) {
-            obj = Objects.requireNonNull(id2, "defaultObj");
+            obj = Objects.requireNonNull(id, "defaultObj");
         }
         return of((String) obj);
     }
 
-    public static ZoneId of(String str) {
-        return H(str, true);
-    }
-
-    public static ZoneId I(String str, ZoneOffset zoneOffset) {
+    public static ZoneId v(String str, ZoneOffset zoneOffset) {
         Objects.requireNonNull(str, "prefix");
         Objects.requireNonNull(zoneOffset, "offset");
         if (str.isEmpty()) {
             return zoneOffset;
         }
         if (!str.equals("GMT") && !str.equals("UTC") && !str.equals("UT")) {
-            throw new IllegalArgumentException("prefix should be GMT, UTC or UT, is: ".concat(str));
+            g.c("prefix should be GMT, UTC or UT, is: ".concat(str));
+            return null;
         }
         if (zoneOffset.getTotalSeconds() != 0) {
             str = str.concat(zoneOffset.c);
         }
-        return new u(str, zoneOffset.getRules());
+        return new w(str, zoneOffset.getRules());
     }
 
-    public static ZoneId H(String str, boolean z10) {
-        Objects.requireNonNull(str, "zoneId");
-        if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
-            return ZoneOffset.M(str);
+    public static ZoneId w(String str, int i, boolean z) {
+        String substring = str.substring(0, i);
+        if (str.length() == i) {
+            return v(substring, ZoneOffset.UTC);
         }
-        if (str.startsWith("UTC") || str.startsWith("GMT")) {
-            return J(str, 3, z10);
-        }
-        if (str.startsWith("UT")) {
-            return J(str, 2, z10);
-        }
-        return u.L(str, z10);
-    }
-
-    public static ZoneId J(String str, int i7, boolean z10) {
-        String substring = str.substring(0, i7);
-        if (str.length() == i7) {
-            return I(substring, ZoneOffset.UTC);
-        }
-        if (str.charAt(i7) != '+' && str.charAt(i7) != '-') {
-            return u.L(str, z10);
+        if (str.charAt(i) != '+' && str.charAt(i) != '-') {
+            return w.C(str, z);
         }
         try {
-            ZoneOffset M = ZoneOffset.M(str.substring(i7));
-            if (M == ZoneOffset.UTC) {
-                return I(substring, M);
-            }
-            return I(substring, M);
-        } catch (b e10) {
-            throw new b("Invalid ID for offset-based ZoneId: ".concat(str), e10);
+            ZoneOffset F = ZoneOffset.F(str.substring(i));
+            return F == ZoneOffset.UTC ? v(substring, F) : v(substring, F);
+        } catch (c e) {
+            throw new c("Invalid ID for offset-based ZoneId: ".concat(str), e);
         }
     }
 
-    public static ZoneId G(j$.time.temporal.l lVar) {
-        ZoneId zoneId = (ZoneId) lVar.m(j$.time.temporal.p.e);
-        if (zoneId != null) {
-            return zoneId;
-        }
-        throw new b("Unable to obtain ZoneId from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName());
-    }
-
-    public ZoneId() {
-        if (getClass() != ZoneOffset.class && getClass() != u.class) {
-            throw new AssertionError("Invalid subclass");
-        }
-    }
-
-    public String getDisplayName(TextStyle textStyle, Locale locale) {
-        j$.time.format.p pVar = new j$.time.format.p();
-        pVar.b(new j$.time.format.o(textStyle));
-        return pVar.l(locale, w.SMART, null).a(new t(0, this));
+    private Object writeReplace() {
+        return new r((byte) 7, this);
     }
 
     public boolean equals(Object obj) {
@@ -132,19 +119,23 @@ public abstract class ZoneId implements Serializable {
         return false;
     }
 
-    public int hashCode() {
-        return getId().hashCode();
+    public String getDisplayName(TextStyle textStyle, Locale locale) {
+        j$.time.format.p pVar = new j$.time.format.p();
+        pVar.b(new j$.time.format.o(textStyle));
+        return pVar.l(locale, j$.time.format.w.SMART, null).a(new v((byte) 0, this));
     }
 
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
+    public abstract String getId();
+
+    public abstract ZoneRules getRules();
+
+    public int hashCode() {
+        return getId().hashCode();
     }
 
     public String toString() {
         return getId();
     }
 
-    private Object writeReplace() {
-        return new p((byte) 7, this);
-    }
+    public abstract void x(DataOutput dataOutput);
 }

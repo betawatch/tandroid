@@ -1,0 +1,238 @@
+// default package
+
+import android.os.IBinder;
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
+public final class ij5 implements jj5 {
+    public IBinder a;
+
+    @Override // jj5
+    public final void A(int i, int i2, int i3, int[] iArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeInt(i2);
+            obtain.writeInt(i3);
+            obtain.writeIntArray(iArr);
+            this.a.transact(11, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void C(int i, byte[] bArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeByteArray(bArr);
+            this.a.transact(9, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void F(int i, int i2, byte[] bArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeInt(i2);
+            obtain.writeByteArray(bArr);
+            this.a.transact(7, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void J(byte[] bArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeByteArray(bArr);
+            this.a.transact(5, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void K(int i, float f) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeFloat(f);
+            this.a.transact(10, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void O(int i) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            this.a.transact(3, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
+
+    @Override // jj5
+    public final void m(int i, int i2, int i3, byte[] bArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeInt(i2);
+            obtain.writeInt(i3);
+            obtain.writeByteArray(bArr);
+            this.a.transact(4, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final byte[] n(int i, int i2, int i3, int i4, int i5) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeInt(i2);
+            obtain.writeInt(i3);
+            obtain.writeInt(i4);
+            obtain.writeInt(i5);
+            this.a.transact(12, obtain, obtain2, 0);
+            obtain2.readException();
+            return obtain2.createByteArray();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void o(int i) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            this.a.transact(13, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void p(byte[] bArr, byte[] bArr2, double d, int i, int i2, float f, float f2, int i3, int i4) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeByteArray(bArr);
+            obtain.writeByteArray(bArr2);
+            obtain.writeDouble(d);
+            obtain.writeInt(i);
+            obtain.writeInt(i2);
+            obtain.writeFloat(f);
+            obtain.writeFloat(f2);
+            obtain.writeInt(i3);
+            obtain.writeInt(i4);
+            this.a.transact(6, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final float[] q(int i, byte[] bArr, float f, int i2, boolean z, byte[] bArr2) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeByteArray(bArr);
+            obtain.writeFloat(f);
+            obtain.writeInt(i2);
+            obtain.writeInt(z ? 1 : 0);
+            obtain.writeByteArray(bArr2);
+            this.a.transact(1, obtain, obtain2, 0);
+            obtain2.readException();
+            return obtain2.createFloatArray();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final void x(byte[] bArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeByteArray(bArr);
+            this.a.transact(8, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // jj5
+    public final float z(int i, byte[] bArr) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i);
+            obtain.writeByteArray(bArr);
+            this.a.transact(2, obtain, obtain2, 0);
+            obtain2.readException();
+            return obtain2.readFloat();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+}

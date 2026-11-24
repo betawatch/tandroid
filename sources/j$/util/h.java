@@ -9,78 +9,24 @@ import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public class h implements java.util.Collection, Serializable, Collection {
     private static final long serialVersionUID = 3053995032091335093L;
     public final java.util.Collection a;
     public final Object b;
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
-    }
-
-    public h(java.util.Collection collection) {
-        this.a = (java.util.Collection) Objects.requireNonNull(collection);
-        this.b = this;
-    }
 
     public h(java.util.Collection collection, Object obj) {
         this.a = (java.util.Collection) Objects.requireNonNull(collection);
         this.b = Objects.requireNonNull(obj);
     }
 
-    @Override // java.util.Collection
-    public final int size() {
-        int size;
+    private void writeObject(ObjectOutputStream objectOutputStream) {
         synchronized (this.b) {
-            size = this.a.size();
+            objectOutputStream.defaultWriteObject();
         }
-        return size;
-    }
-
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        boolean isEmpty;
-        synchronized (this.b) {
-            isEmpty = this.a.isEmpty();
-        }
-        return isEmpty;
-    }
-
-    @Override // java.util.Collection
-    public final boolean contains(Object obj) {
-        boolean contains;
-        synchronized (this.b) {
-            contains = this.a.contains(obj);
-        }
-        return contains;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray() {
-        Object[] array;
-        synchronized (this.b) {
-            array = this.a.toArray();
-        }
-        return array;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        Object[] array;
-        synchronized (this.b) {
-            array = this.a.toArray(objArr);
-        }
-        return array;
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.iterator();
     }
 
     @Override // java.util.Collection
@@ -93,12 +39,28 @@ public class h implements java.util.Collection, Serializable, Collection {
     }
 
     @Override // java.util.Collection
-    public final boolean remove(Object obj) {
-        boolean remove;
+    public final boolean addAll(java.util.Collection collection) {
+        boolean addAll;
         synchronized (this.b) {
-            remove = this.a.remove(obj);
+            addAll = this.a.addAll(collection);
         }
-        return remove;
+        return addAll;
+    }
+
+    @Override // java.util.Collection
+    public final void clear() {
+        synchronized (this.b) {
+            this.a.clear();
+        }
+    }
+
+    @Override // java.util.Collection
+    public final boolean contains(Object obj) {
+        boolean contains;
+        synchronized (this.b) {
+            contains = this.a.contains(obj);
+        }
+        return contains;
     }
 
     @Override // java.util.Collection
@@ -110,13 +72,39 @@ public class h implements java.util.Collection, Serializable, Collection {
         return containsAll;
     }
 
-    @Override // java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        boolean addAll;
+    @Override // java.lang.Iterable, j$.util.Collection
+    public final void forEach(Consumer consumer) {
         synchronized (this.b) {
-            addAll = this.a.addAll(collection);
+            Collection.-EL.a(this.a, consumer);
         }
-        return addAll;
+    }
+
+    @Override // java.util.Collection
+    public final boolean isEmpty() {
+        boolean isEmpty;
+        synchronized (this.b) {
+            isEmpty = this.a.isEmpty();
+        }
+        return isEmpty;
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.iterator();
+    }
+
+    @Override // java.util.Collection
+    public final Stream parallelStream() {
+        return Stream.Wrapper.convert(Collection.-EL.b(this.a));
+    }
+
+    @Override // java.util.Collection
+    public final boolean remove(Object obj) {
+        boolean remove;
+        synchronized (this.b) {
+            remove = this.a.remove(obj);
+        }
+        return remove;
     }
 
     @Override // java.util.Collection
@@ -126,6 +114,15 @@ public class h implements java.util.Collection, Serializable, Collection {
             removeAll = this.a.removeAll(collection);
         }
         return removeAll;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final boolean removeIf(Predicate predicate) {
+        boolean removeIf;
+        synchronized (this.b) {
+            removeIf = Collection.-EL.removeIf(this.a, predicate);
+        }
+        return removeIf;
     }
 
     @Override // java.util.Collection
@@ -138,10 +135,31 @@ public class h implements java.util.Collection, Serializable, Collection {
     }
 
     @Override // java.util.Collection
-    public final void clear() {
+    public final int size() {
+        int size;
         synchronized (this.b) {
-            this.a.clear();
+            size = this.a.size();
         }
+        return size;
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(Collection.-EL.c(this.a));
+    }
+
+    @Override // java.util.Collection
+    public final java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(Collection.-EL.stream(this.a));
+    }
+
+    @Override // java.util.Collection
+    public final Object[] toArray() {
+        Object[] array;
+        synchronized (this.b) {
+            array = this.a.toArray();
+        }
+        return array;
     }
 
     public final String toString() {
@@ -152,20 +170,9 @@ public class h implements java.util.Collection, Serializable, Collection {
         return obj;
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection
-    public final void forEach(Consumer consumer) {
-        synchronized (this.b) {
-            Collection.-EL.a(this.a, consumer);
-        }
-    }
-
     @Override // java.util.Collection, j$.util.Collection
-    public final boolean removeIf(Predicate predicate) {
-        boolean removeIf;
-        synchronized (this.b) {
-            removeIf = Collection.-EL.removeIf(this.a, predicate);
-        }
-        return removeIf;
+    public final j$.util.stream.Stream parallelStream() {
+        return Collection.-EL.b(this.a);
     }
 
     @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
@@ -173,34 +180,29 @@ public class h implements java.util.Collection, Serializable, Collection {
         return Collection.-EL.c(this.a);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
-    public final java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(Collection.-EL.c(this.a));
-    }
-
     @Override // java.util.Collection, j$.util.Collection
-    public final Stream stream() {
+    public final j$.util.stream.Stream stream() {
         return Collection.-EL.stream(this.a);
     }
 
-    @Override // java.util.Collection
-    public final java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(Collection.-EL.stream(this.a));
-    }
-
     @Override // java.util.Collection, j$.util.Collection
-    public final Stream parallelStream() {
-        return Collection.-EL.b(this.a);
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
     }
 
     @Override // java.util.Collection
-    public final java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(Collection.-EL.b(this.a));
+    public final Object[] toArray(Object[] objArr) {
+        Object[] array;
+        synchronized (this.b) {
+            array = this.a.toArray(objArr);
+        }
+        return array;
     }
 
-    private void writeObject(ObjectOutputStream objectOutputStream) {
-        synchronized (this.b) {
-            objectOutputStream.defaultWriteObject();
-        }
+    public h(java.util.Collection collection) {
+        this.a = (java.util.Collection) Objects.requireNonNull(collection);
+        this.b = this;
     }
 }

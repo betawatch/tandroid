@@ -4,9 +4,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class GridTemplate implements x0 {
+public final class GridTemplate implements ogb {
     public static final int ITEM_IMAGE_SHAPE_CIRCLE = 2;
     public static final int ITEM_IMAGE_SHAPE_UNSET = 1;
     public static final int ITEM_SIZE_LARGE = 4;
@@ -21,8 +21,15 @@ public final class GridTemplate implements x0 {
     private final ItemList mSingleList;
     private final CarText mTitle;
 
-    public GridTemplate(l lVar) {
-        throw null;
+    private GridTemplate() {
+        this.mIsLoading = false;
+        this.mTitle = null;
+        this.mHeaderAction = null;
+        this.mSingleList = null;
+        this.mActionStrip = null;
+        this.mActions = Collections.EMPTY_LIST;
+        this.mItemSize = 1;
+        this.mItemImageShape = 1;
     }
 
     public boolean equals(Object obj) {
@@ -76,14 +83,7 @@ public final class GridTemplate implements x0 {
         return "GridTemplate";
     }
 
-    private GridTemplate() {
-        this.mIsLoading = false;
-        this.mTitle = null;
-        this.mHeaderAction = null;
-        this.mSingleList = null;
-        this.mActionStrip = null;
-        this.mActions = Collections.EMPTY_LIST;
-        this.mItemSize = 1;
-        this.mItemImageShape = 1;
+    public GridTemplate(t35 t35Var) {
+        throw null;
     }
 }

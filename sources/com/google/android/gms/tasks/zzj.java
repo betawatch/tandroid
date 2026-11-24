@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzj implements zzq {
     private final Executor zza;
@@ -17,14 +17,10 @@ final class zzj implements zzq {
     @Override // com.google.android.gms.tasks.zzq
     public final void zza(Task task) {
         synchronized (this.zzb) {
-            try {
-                if (this.zzc == null) {
-                    return;
-                }
-                this.zza.execute(new zzi(this, task));
-            } catch (Throwable th2) {
-                throw th2;
+            if (this.zzc == null) {
+                return;
             }
+            this.zza.execute(new zzi(this, task));
         }
     }
 

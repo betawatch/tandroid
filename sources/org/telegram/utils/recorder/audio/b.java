@@ -1,38 +1,37 @@
 package org.telegram.utils.recorder.audio;
 
-import a8.p0;
-import ai.c0;
-import di.j2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.f80;
-import yi.h;
-import yi.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ byte a = 1;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(long j3, h hVar, j jVar) {
-        this.c = jVar;
-        this.d = hVar;
-        this.b = j3;
+    public /* synthetic */ b(h30 h30Var, f30 f30Var, long j) {
+        this.c = h30Var;
+        this.d = f30Var;
+        this.b = j;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        byte[] bArr;
-        switch (this.a) {
+        Exception a;
+        byte b = this.a;
+        AudioRecorderNative audioRecorderNative = null;
+        byte[] bArr = null;
+        Object[] objArr = 0;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        switch (b) {
             case 0:
-                d dVar = (d) this.c;
-                Exception exc = (Exception) this.d;
-                ac.e eVar = dVar.g;
-                yi.b bVar = dVar.f;
+                d dVar = (d) obj2;
+                Exception exc = (Exception) obj;
+                q20 q20Var = dVar.f;
                 File file = dVar.a;
                 ByteBuffer byteBuffer = dVar.s;
                 if (dVar.w) {
@@ -40,27 +39,27 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 dVar.w = true;
                 Exception exc2 = dVar.v;
-                if (exc2 == null) {
-                    exc2 = exc;
+                if (exc2 != null) {
+                    exc = exc2;
                 }
-                if (exc2 == null) {
+                if (exc == null) {
                     try {
                         if (dVar.t != null && byteBuffer.position() > 0) {
                             dVar.b(byteBuffer.position());
                             byteBuffer.clear();
                         }
-                    } catch (Throwable th2) {
+                    } catch (Throwable th) {
                         try {
-                            exc2 = d.a(th2);
+                            exc = d.a(th);
                             AudioNoiseSuppressor audioNoiseSuppressor = dVar.u;
                             if (audioNoiseSuppressor != null) {
                                 audioNoiseSuppressor.c();
                                 dVar.u = null;
                             }
-                            AudioRecorderNative audioRecorderNative = dVar.t;
-                            if (audioRecorderNative != null) {
+                            AudioRecorderNative audioRecorderNative2 = dVar.t;
+                            if (audioRecorderNative2 != null) {
                                 try {
-                                    audioRecorderNative.c();
+                                    audioRecorderNative2.c();
                                 } catch (Throwable unused) {
                                 }
                             }
@@ -73,60 +72,61 @@ public final /* synthetic */ class b implements Runnable {
                     audioNoiseSuppressor2.c();
                     dVar.u = null;
                 }
-                AudioRecorderNative audioRecorderNative2 = dVar.t;
-                if (audioRecorderNative2 != null) {
+                AudioRecorderNative audioRecorderNative3 = dVar.t;
+                if (audioRecorderNative3 != null) {
                     try {
-                        if (!audioRecorderNative2.c() && exc2 == null) {
-                            exc2 = new IllegalStateException("Unable to finalize native Opus recorder");
+                    } catch (Throwable th2) {
+                        if (exc == null) {
+                            a = d.a(th2);
                         }
-                    } catch (Throwable th3) {
-                        if (exc2 == null) {
-                            exc2 = d.a(th3);
-                        }
+                    }
+                    if (!audioRecorderNative3.c() && exc == null) {
+                        a = new IllegalStateException("Unable to finalize native Opus recorder");
+                        exc = a;
                     }
                     dVar.t.f();
                     dVar.t = null;
                 }
+                Exception exc3 = exc;
                 long length = file.isFile() ? file.length() : 0L;
                 if (dVar.z > 0) {
-                    bVar.b("RNNoise summary: frames=" + dVar.z + ", averageMs=" + ((dVar.A / dVar.z) / 1000000.0d) + ", maxMs=" + (dVar.B / 1000000.0d));
+                    q20Var.b("RNNoise summary: frames=" + dVar.z + ", averageMs=" + ((dVar.A / dVar.z) / 1000000.0d) + ", maxMs=" + (dVar.B / 1000000.0d));
                 }
-                Exception exc3 = exc2;
-                long j3 = this.b;
-                StringBuilder t6 = p0.t(j3, "capture stopped: samples=", ", durationMs=");
-                t6.append((1000 * j3) / 48000);
-                t6.append(", bytes=");
-                t6.append(length);
-                t6.append(", maxQueuedChunks=");
-                t6.append(dVar.y);
-                bVar.b(t6.toString());
+                long j = this.b;
+                StringBuilder o = ug8.o(j, "capture stopped: samples=", ", durationMs=");
+                o.append((1000 * j) / 48000);
+                o.append(", bytes=");
+                o.append(length);
+                o.append(", maxQueuedChunks=");
+                o.append(dVar.y);
+                q20Var.b(o.toString());
+                m20 m20Var = dVar.g;
+                h30 h30Var = (h30) m20Var.c;
                 if (exc3 == null) {
-                    j jVar = (j) eVar.c;
-                    jVar.a((h) eVar.b, length);
-                    jVar.i.post(new c0(eVar, eVar.a, j3, 5));
+                    h30Var.a((f30) m20Var.b, length);
+                    h30Var.i.post(new w20(m20Var, m20Var.a, j, (byte) 1));
                 } else {
-                    ((j) eVar.c).i.post(new f80(eVar, eVar.a, exc3, 4));
+                    h30Var.i.post(new de2(m20Var, m20Var.a, exc3, (byte) 11));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
                 return;
             default:
-                j jVar2 = (j) this.c;
-                h hVar = (h) this.d;
+                h30 h30Var2 = (h30) obj2;
+                f30 f30Var = (f30) obj;
                 try {
-                    bArr = AudioRecorderNative.e(hVar.b.getAbsolutePath());
-                } catch (Throwable th4) {
-                    jVar2.h.a("final waveform extraction failed", th4);
-                    bArr = null;
+                    bArr = AudioRecorderNative.e(f30Var.b.getAbsolutePath());
+                } catch (Throwable th3) {
+                    h30Var2.h.a("final waveform extraction failed", th3);
                 }
-                jVar2.i.post(new j2(jVar2, hVar, this.b, bArr, 26));
+                h30Var2.i.post(new m77((Object) h30Var2, (Object) f30Var, this.b, (Object) bArr, (byte) 2));
                 return;
         }
     }
 
-    public /* synthetic */ b(d dVar, long j3, Exception exc) {
+    public /* synthetic */ b(d dVar, long j, Exception exc) {
         this.c = dVar;
-        this.b = j3;
+        this.b = j;
         this.d = exc;
     }
 }

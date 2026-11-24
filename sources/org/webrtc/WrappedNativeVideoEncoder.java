@@ -2,8 +2,8 @@ package org.webrtc;
 
 import org.webrtc.VideoEncoder;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public abstract class WrappedNativeVideoEncoder implements VideoEncoder {
     @Override // org.webrtc.VideoEncoder
     public abstract long createNativeVideoEncoder();
@@ -14,8 +14,8 @@ public abstract class WrappedNativeVideoEncoder implements VideoEncoder {
     }
 
     @Override // org.webrtc.VideoEncoder
-    public final /* synthetic */ VideoEncoder.EncoderInfo getEncoderInfo() {
-        return w.b(this);
+    public final VideoEncoder.EncoderInfo getEncoderInfo() {
+        return new VideoEncoder.EncoderInfo(1, false);
     }
 
     @Override // org.webrtc.VideoEncoder
@@ -24,8 +24,8 @@ public abstract class WrappedNativeVideoEncoder implements VideoEncoder {
     }
 
     @Override // org.webrtc.VideoEncoder
-    public final /* synthetic */ VideoEncoder.ResolutionBitrateLimits[] getResolutionBitrateLimits() {
-        return w.c(this);
+    public final VideoEncoder.ResolutionBitrateLimits[] getResolutionBitrateLimits() {
+        return new VideoEncoder.ResolutionBitrateLimits[0];
     }
 
     @Override // org.webrtc.VideoEncoder
@@ -47,12 +47,12 @@ public abstract class WrappedNativeVideoEncoder implements VideoEncoder {
     }
 
     @Override // org.webrtc.VideoEncoder
-    public final VideoCodecStatus setRateAllocation(VideoEncoder.BitrateAllocation bitrateAllocation, int i7) {
+    public final VideoCodecStatus setRateAllocation(VideoEncoder.BitrateAllocation bitrateAllocation, int i) {
         throw new UnsupportedOperationException("Not implemented.");
     }
 
     @Override // org.webrtc.VideoEncoder
-    public final /* synthetic */ VideoCodecStatus setRates(VideoEncoder.RateControlParameters rateControlParameters) {
-        return w.e(this, rateControlParameters);
+    public final VideoCodecStatus setRates(VideoEncoder.RateControlParameters rateControlParameters) {
+        return setRateAllocation(rateControlParameters.bitrate, (int) Math.ceil(rateControlParameters.framerateFps));
     }
 }

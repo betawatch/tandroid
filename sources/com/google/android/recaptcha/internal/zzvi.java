@@ -2,83 +2,83 @@ package com.google.android.recaptcha.internal;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 interface zzvi {
-    void zzA(int i7, List list, boolean z10);
+    void zzA(int i, List list, boolean z);
 
-    void zzB(int i7, int i10);
+    void zzB(int i, int i2);
 
-    void zzC(int i7, List list, boolean z10);
+    void zzC(int i, List list, boolean z);
 
-    void zzD(int i7, long j3);
+    void zzD(int i, long j);
 
-    void zzE(int i7, List list, boolean z10);
-
-    @Deprecated
-    void zzF(int i7);
-
-    void zzG(int i7, String str);
-
-    void zzH(int i7, List list);
-
-    void zzI(int i7, int i10);
-
-    void zzJ(int i7, List list, boolean z10);
-
-    void zzK(int i7, long j3);
-
-    void zzL(int i7, List list, boolean z10);
-
-    void zzb(int i7, boolean z10);
-
-    void zzc(int i7, List list, boolean z10);
-
-    void zzd(int i7, zzqm zzqmVar);
-
-    void zze(int i7, List list);
-
-    void zzf(int i7, double d);
-
-    void zzg(int i7, List list, boolean z10);
+    void zzE(int i, List list, boolean z);
 
     @Deprecated
-    void zzh(int i7);
+    void zzF(int i);
 
-    void zzi(int i7, int i10);
+    void zzG(int i, String str);
 
-    void zzj(int i7, List list, boolean z10);
+    void zzH(int i, List list);
 
-    void zzk(int i7, int i10);
+    void zzI(int i, int i2);
 
-    void zzl(int i7, List list, boolean z10);
+    void zzJ(int i, List list, boolean z);
 
-    void zzm(int i7, long j3);
+    void zzK(int i, long j);
 
-    void zzn(int i7, List list, boolean z10);
+    void zzL(int i, List list, boolean z);
 
-    void zzo(int i7, float f10);
+    void zzb(int i, boolean z);
 
-    void zzp(int i7, List list, boolean z10);
+    void zzc(int i, List list, boolean z);
+
+    void zzd(int i, zzqm zzqmVar);
+
+    void zze(int i, List list);
+
+    void zzf(int i, double d);
+
+    void zzg(int i, List list, boolean z);
 
     @Deprecated
-    void zzq(int i7, Object obj, zzug zzugVar);
+    void zzh(int i);
 
-    void zzr(int i7, int i10);
+    void zzi(int i, int i2);
 
-    void zzs(int i7, List list, boolean z10);
+    void zzj(int i, List list, boolean z);
 
-    void zzt(int i7, long j3);
+    void zzk(int i, int i2);
 
-    void zzu(int i7, List list, boolean z10);
+    void zzl(int i, List list, boolean z);
 
-    void zzv(int i7, Object obj, zzug zzugVar);
+    void zzm(int i, long j);
 
-    void zzw(int i7, Object obj);
+    void zzn(int i, List list, boolean z);
 
-    void zzx(int i7, int i10);
+    void zzo(int i, float f);
 
-    void zzy(int i7, List list, boolean z10);
+    void zzp(int i, List list, boolean z);
 
-    void zzz(int i7, long j3);
+    @Deprecated
+    void zzq(int i, Object obj, zzug zzugVar);
+
+    void zzr(int i, int i2);
+
+    void zzs(int i, List list, boolean z);
+
+    void zzt(int i, long j);
+
+    void zzu(int i, List list, boolean z);
+
+    void zzv(int i, Object obj, zzug zzugVar);
+
+    void zzw(int i, Object obj);
+
+    void zzx(int i, int i2);
+
+    void zzy(int i, List list, boolean z);
+
+    void zzz(int i, long j);
 }

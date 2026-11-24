@@ -4,21 +4,21 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NotificationBadge$AdwHomeBadger implements wr {
-    @Override // org.telegram.messenger.wr
-    public final void a(int i7) {
+public class NotificationBadge$AdwHomeBadger implements yj7 {
+    @Override // yj7
+    public final void a(int i) {
         Intent intent = new Intent("org.adw.launcher.counter.SEND");
-        intent.putExtra("PNAME", zr.d.getPackageName());
-        intent.putExtra("CNAME", zr.d.getClassName());
-        intent.putExtra("COUNT", i7);
-        if (zr.a(intent)) {
-            g0.g3(new s(intent, 1));
+        intent.putExtra("PNAME", ak7.d.getPackageName());
+        intent.putExtra("CNAME", ak7.d.getClassName());
+        intent.putExtra("COUNT", i);
+        if (ak7.a(intent)) {
+            gl.d3(new hk(intent, (byte) 1));
         }
     }
 
-    @Override // org.telegram.messenger.wr
+    @Override // yj7
     public final List b() {
         return Arrays.asList("org.adw.launcher", "org.adwfreak.launcher");
     }

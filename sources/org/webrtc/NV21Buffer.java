@@ -3,33 +3,33 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class NV21Buffer implements VideoFrame.Buffer {
     private final byte[] data;
     private final int height;
     private final RefCountDelegate refCountDelegate;
     private final int width;
 
-    public NV21Buffer(byte[] bArr, int i7, int i10, Runnable runnable) {
+    public NV21Buffer(byte[] bArr, int i, int i2, Runnable runnable) {
         this.data = bArr;
-        this.width = i7;
-        this.height = i10;
+        this.width = i;
+        this.height = i2;
         this.refCountDelegate = new RefCountDelegate(runnable);
     }
 
-    private static native void nativeCropAndScale(int i7, int i10, int i11, int i12, int i13, int i14, byte[] bArr, int i15, int i16, ByteBuffer byteBuffer, int i17, ByteBuffer byteBuffer2, int i18, ByteBuffer byteBuffer3, int i19);
+    private static native void nativeCropAndScale(int i, int i2, int i3, int i4, int i5, int i6, byte[] bArr, int i7, int i8, ByteBuffer byteBuffer, int i9, ByteBuffer byteBuffer2, int i10, ByteBuffer byteBuffer3, int i11);
 
     @Override // org.webrtc.VideoFrame.Buffer
-    public VideoFrame.Buffer cropAndScale(int i7, int i10, int i11, int i12, int i13, int i14) {
-        JavaI420Buffer allocate = JavaI420Buffer.allocate(i13, i14);
-        nativeCropAndScale(i7, i10, i11, i12, i13, i14, this.data, this.width, this.height, allocate.getDataY(), allocate.getStrideY(), allocate.getDataU(), allocate.getStrideU(), allocate.getDataV(), allocate.getStrideV());
+    public VideoFrame.Buffer cropAndScale(int i, int i2, int i3, int i4, int i5, int i6) {
+        JavaI420Buffer allocate = JavaI420Buffer.allocate(i5, i6);
+        nativeCropAndScale(i, i2, i3, i4, i5, i6, this.data, this.width, this.height, allocate.getDataY(), allocate.getStrideY(), allocate.getDataU(), allocate.getStrideU(), allocate.getDataV(), allocate.getStrideV());
         return allocate;
     }
 
     @Override // org.webrtc.VideoFrame.Buffer
-    public final /* synthetic */ int getBufferType() {
-        return z.a(this);
+    public final int getBufferType() {
+        return 0;
     }
 
     @Override // org.webrtc.VideoFrame.Buffer
@@ -54,8 +54,8 @@ public class NV21Buffer implements VideoFrame.Buffer {
 
     @Override // org.webrtc.VideoFrame.Buffer
     public VideoFrame.I420Buffer toI420() {
-        int i7 = this.width;
-        int i10 = this.height;
-        return (VideoFrame.I420Buffer) cropAndScale(0, 0, i7, i10, i7, i10);
+        int i = this.width;
+        int i2 = this.height;
+        return (VideoFrame.I420Buffer) cropAndScale(0, 0, i, i2, i, i2);
     }
 }

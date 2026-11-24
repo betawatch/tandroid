@@ -1,6 +1,7 @@
 package j$.time.temporal;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface o {
     boolean isDateBased();
 
@@ -8,9 +9,9 @@ public interface o {
 
     s k(l lVar);
 
-    s l();
+    long l(l lVar);
 
-    long m(l lVar);
+    Temporal n(Temporal temporal, long j);
 
-    Temporal q(Temporal temporal, long j3);
+    s range();
 }

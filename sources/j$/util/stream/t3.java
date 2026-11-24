@@ -1,568 +1,100 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import j$.util.Spliterator;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
-import java.util.function.Function;
-import java.util.function.IntConsumer;
 import java.util.function.IntFunction;
-import java.util.function.LongConsumer;
-import java.util.function.Predicate;
-import java.util.stream.Collector;
-import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes2.dex */
-public abstract class t3 implements b8 {
-    public static final w2 a = new w2();
-    public static final u2 b = new u2();
-    public static final v2 c = new v2();
-    public static final t2 d = new t2();
-    public static final int[] e = new int[0];
-    public static final long[] f = new long[0];
-    public static final double[] g = new double[0];
-
-    public abstract w1 A0(long j3, IntFunction intFunction);
-
-    public abstract o4 D0();
-
-    public abstract j5 F0(Spliterator spliterator, j5 j5Var);
-
-    public abstract j5 G0(j5 j5Var);
-
-    public abstract Spliterator H0(Spliterator spliterator);
-
-    public abstract void f0(Spliterator spliterator, j5 j5Var);
-
-    public abstract boolean g0(Spliterator spliterator, j5 j5Var);
-
-    public abstract e2 j0(Spliterator spliterator, boolean z10, IntFunction intFunction);
-
-    public abstract long k0(Spliterator spliterator);
-
-    @Override // j$.util.stream.b8
-    public /* synthetic */ int v() {
-        return 0;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class t3 extends y6 implements h2, z1 {
+    @Override // j$.util.stream.h2
+    public final h2 a(int i) {
+        throw new IndexOutOfBoundsException();
     }
 
-    public static j$.time.t r0(Function function) {
-        j$.time.t tVar = new j$.time.t(7);
-        tVar.b = function;
-        return tVar;
+    @Override // j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w3.d();
+        throw null;
     }
 
-    public static Set q0(Set set) {
-        if (set == null || set.isEmpty()) {
-            return set;
-        }
-        HashSet hashSet = new HashSet();
-        Object next = set.iterator().next();
-        if (next instanceof g) {
-            Iterator it = set.iterator();
-            while (it.hasNext()) {
-                try {
-                    g gVar = (g) it.next();
-                    hashSet.add(gVar == null ? null : gVar == g.CONCURRENT ? Collector.Characteristics.CONCURRENT : gVar == g.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-                } catch (ClassCastException e10) {
-                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
-                    throw null;
-                }
-            }
-        } else {
-            if (!(next instanceof Collector.Characteristics)) {
-                j$.util.g.a(next.getClass(), "java.util.stream.Collector.Characteristics");
-                throw null;
-            }
-            Iterator it2 = set.iterator();
-            while (it2.hasNext()) {
-                try {
-                    Collector.Characteristics characteristics = (Collector.Characteristics) it2.next();
-                    hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? g.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? g.UNORDERED : g.IDENTITY_FINISH);
-                } catch (ClassCastException e11) {
-                    j$.util.g.a(e11, "java.util.stream.Collector.Characteristics");
-                    throw null;
-                }
-            }
-        }
-        return hashSet;
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.w(this, j, j2, intFunction);
     }
 
-    public static long W(long j3, long j10, long j11) {
-        if (j3 >= 0) {
-            return Math.max(-1L, Math.min(j3 - j10, j11));
+    @Override // j$.util.stream.h2
+    public final void f(Object[] objArr, int i) {
+        long j = i;
+        long count = count() + j;
+        if (count > objArr.length || count < j) {
+            throw new IndexOutOfBoundsException("does not fit");
         }
-        return -1L;
+        if (this.c == 0) {
+            System.arraycopy(this.e, 0, objArr, i, this.b);
+            return;
+        }
+        for (int i2 = 0; i2 < this.c; i2++) {
+            Object[] objArr2 = this.f[i2];
+            System.arraycopy(objArr2, 0, objArr, i, objArr2.length);
+            i += this.f[i2].length;
+        }
+        int i3 = this.b;
+        if (i3 > 0) {
+            System.arraycopy(this.e, 0, objArr, i, i3);
+        }
     }
 
-    public static long Z(long j3, long j10) {
-        long j11 = j10 >= 0 ? j3 + j10 : Long.MAX_VALUE;
-        if (j11 >= 0) {
-            return j11;
+    @Override // j$.util.stream.h2
+    public final Object[] g(IntFunction intFunction) {
+        long count = count();
+        if (count >= 2147483639) {
+            j$.time.g.c("Stream size exceeds max array size");
+            return null;
         }
-        return Long.MAX_VALUE;
-    }
-
-    public static y4 E0(Spliterator spliterator, boolean z10) {
-        Objects.requireNonNull(spliterator);
-        return new y4(spliterator, v6.l(spliterator), z10);
-    }
-
-    public static Spliterator X(w6 w6Var, Spliterator spliterator, long j3, long j10) {
-        long Z = Z(j3, j10);
-        int i7 = s5.a[w6Var.ordinal()];
-        if (i7 == 1) {
-            return new p7(spliterator, j3, Z);
-        }
-        if (i7 == 2) {
-            return new m7((j$.util.x0) spliterator, j3, Z);
-        }
-        if (i7 == 3) {
-            return new n7((j$.util.a1) spliterator, j3, Z);
-        }
-        if (i7 != 4) {
-            throw new IllegalStateException("Unknown shape " + w6Var);
-        }
-        return new l7((j$.util.u0) spliterator, j3, Z);
-    }
-
-    public static j$.util.concurrent.s B0(r1 r1Var, Predicate predicate) {
-        Objects.requireNonNull(predicate);
-        Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.s(w6.REFERENCE, r1Var, new j$.util.concurrent.s(5, r1Var, predicate));
-    }
-
-    public static x2 i0(w6 w6Var) {
-        int i7 = f2.a[w6Var.ordinal()];
-        if (i7 == 1) {
-            return a;
-        }
-        if (i7 == 2) {
-            return b;
-        }
-        if (i7 == 3) {
-            return c;
-        }
-        if (i7 == 4) {
-            return d;
-        }
-        throw new IllegalStateException("Unknown shape " + w6Var);
-    }
-
-    public static j$.util.concurrent.s w0(r1 r1Var) {
-        Objects.requireNonNull(null);
-        Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.s(w6.INT_VALUE, r1Var, new l1(r1Var, 1));
-    }
-
-    public static l5 C0(b5 b5Var, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
-        }
-        return new l5(b5Var, l0(j10), j3, j10);
-    }
-
-    public static e2 V(e2 e2Var, long j3, long j10, IntFunction intFunction) {
-        if (j3 == 0 && j10 == e2Var.count()) {
-            return e2Var;
-        }
-        Spliterator spliterator = e2Var.spliterator();
-        long j11 = j10 - j3;
-        w1 Y = Y(j11, intFunction);
-        Y.o(j11);
-        for (int i7 = 0; i7 < j3 && spliterator.tryAdvance(new a1(11)); i7++) {
-        }
-        if (j10 == e2Var.count()) {
-            spliterator.forEachRemaining(Y);
-        } else {
-            for (int i10 = 0; i10 < j11 && spliterator.tryAdvance(Y); i10++) {
-            }
-        }
-        Y.end();
-        return Y.build();
-    }
-
-    public static g2 e0(w6 w6Var, e2 e2Var, e2 e2Var2) {
-        int i7 = f2.a[w6Var.ordinal()];
-        if (i7 == 1) {
-            return new p2(e2Var, e2Var2);
-        }
-        if (i7 == 2) {
-            return new m2((a2) e2Var, (a2) e2Var2);
-        }
-        if (i7 == 3) {
-            return new n2((c2) e2Var, (c2) e2Var2);
-        }
-        if (i7 != 4) {
-            throw new IllegalStateException("Unknown shape " + w6Var);
-        }
-        return new l2((y1) e2Var, (y1) e2Var2);
-    }
-
-    public static j$.util.concurrent.s y0(r1 r1Var) {
-        Objects.requireNonNull(null);
-        Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.s(w6.LONG_VALUE, r1Var, new l1(r1Var, 0));
-    }
-
-    public static void J() {
-        throw new IllegalStateException("called wrong accept method");
-    }
-
-    public static j$.util.concurrent.s u0(r1 r1Var) {
-        Objects.requireNonNull(null);
-        Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.s(w6.DOUBLE_VALUE, r1Var, new l1(r1Var, 2));
-    }
-
-    public static void K() {
-        throw new IllegalStateException("called wrong accept method");
-    }
-
-    public static w1 Y(long j3, IntFunction intFunction) {
-        if (j3 >= 0 && j3 < 2147483639) {
-            return new y2(j3, intFunction);
-        }
-        return new q3();
-    }
-
-    public static void C() {
-        throw new IllegalStateException("called wrong accept method");
-    }
-
-    public static void F(h5 h5Var, Integer num) {
-        if (d8.a) {
-            d8.a(h5Var.getClass(), "{0} calling Sink.OfInt.accept(Integer)");
-            throw null;
-        }
-        h5Var.accept(num.intValue());
-    }
-
-    public static void H(i5 i5Var, Long l10) {
-        if (d8.a) {
-            d8.a(i5Var.getClass(), "{0} calling Sink.OfLong.accept(Long)");
-            throw null;
-        }
-        i5Var.accept(l10.longValue());
-    }
-
-    public static u1 s0(long j3) {
-        if (j3 < 0 || j3 >= 2147483639) {
-            return new b3();
-        }
-        return new a3(j3);
-    }
-
-    public static void D(g5 g5Var, Double d2) {
-        if (d8.a) {
-            d8.a(g5Var.getClass(), "{0} calling Sink.OfDouble.accept(Double)");
-            throw null;
-        }
-        g5Var.accept(d2.doubleValue());
-    }
-
-    public static n5 x0(z0 z0Var, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
-        }
-        return new n5(z0Var, l0(j10), j3, j10);
-    }
-
-    public static v1 t0(long j3) {
-        if (j3 < 0 || j3 >= 2147483639) {
-            return new k3();
-        }
-        return new j3(j3);
-    }
-
-    public static Object[] L(d2 d2Var, IntFunction intFunction) {
-        if (d8.a) {
-            d8.a(d2Var.getClass(), "{0} calling Node.OfPrimitive.asArray");
-            throw null;
-        }
-        if (d2Var.count() >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        Object[] objArr = (Object[]) intFunction.apply((int) d2Var.count());
-        d2Var.f(objArr, 0);
+        Object[] objArr = (Object[]) intFunction.apply((int) count);
+        f(objArr, 0);
         return objArr;
     }
 
-    public static t1 h0(long j3) {
-        if (j3 < 0 || j3 >= 2147483639) {
-            return new s2();
-        }
-        return new r2(j3);
+    @Override // j$.util.stream.h2
+    public final int h() {
+        return 0;
     }
 
-    public static e2 a0(t3 t3Var, Spliterator spliterator, boolean z10, IntFunction intFunction) {
-        long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
-            k0 k0Var = new k0();
-            k0Var.a = intFunction;
-            e2 e2Var = (e2) new j2(t3Var, spliterator, k0Var, new a1(19), 3).invoke();
-            return z10 ? m0(e2Var, intFunction) : e2Var;
-        }
-        if (k02 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        Object[] objArr = (Object[]) intFunction.apply((int) k02);
-        new o3(spliterator, t3Var, objArr).invoke();
-        return new h2(objArr);
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        clear();
+        i(j);
     }
 
-    public static void Q(a2 a2Var, Consumer consumer) {
-        if (consumer instanceof IntConsumer) {
-            a2Var.d((IntConsumer) consumer);
-        } else {
-            if (d8.a) {
-                d8.a(a2Var.getClass(), "{0} calling Node.OfInt.forEachRemaining(Consumer)");
-                throw null;
-            }
-            ((j$.util.x0) a2Var.spliterator()).forEachRemaining(consumer);
-        }
+    @Override // j$.util.stream.n5
+    public final boolean q() {
+        return false;
     }
 
-    public static p5 z0(i1 i1Var, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
-        }
-        return new p5(i1Var, l0(j10), j3, j10);
+    @Override // j$.util.stream.y6, java.lang.Iterable, j$.util.stream.h2
+    public final Spliterator spliterator() {
+        return super.spliterator();
     }
 
-    public static void N(a2 a2Var, Integer[] numArr, int i7) {
-        if (d8.a) {
-            d8.a(a2Var.getClass(), "{0} calling Node.OfInt.copyInto(Integer[], int)");
-            throw null;
-        }
-        int[] iArr = (int[]) a2Var.b();
-        for (int i10 = 0; i10 < iArr.length; i10++) {
-            numArr[i7 + i10] = Integer.valueOf(iArr[i10]);
-        }
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(int i) {
+        w3.k();
+        throw null;
     }
 
-    public static a2 T(a2 a2Var, long j3, long j10) {
-        if (j3 == 0 && j10 == a2Var.count()) {
-            return a2Var;
-        }
-        long j11 = j10 - j3;
-        j$.util.x0 x0Var = (j$.util.x0) a2Var.spliterator();
-        u1 s02 = s0(j11);
-        s02.o(j11);
-        for (int i7 = 0; i7 < j3 && x0Var.tryAdvance((IntConsumer) new z1(0)); i7++) {
-        }
-        if (j10 == a2Var.count()) {
-            x0Var.forEachRemaining((IntConsumer) s02);
-        } else {
-            for (int i10 = 0; i10 < j11 && x0Var.tryAdvance((IntConsumer) s02); i10++) {
-            }
-        }
-        s02.end();
-        return s02.build();
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(long j) {
+        w3.l();
+        throw null;
     }
 
-    public static a2 c0(t3 t3Var, Spliterator spliterator, boolean z10) {
-        long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
-            a2 a2Var = (a2) new j2(t3Var, spliterator, new a1(15), new a1(16), 1).invoke();
-            return z10 ? o0(a2Var) : a2Var;
-        }
-        if (k02 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        int[] iArr = new int[(int) k02];
-        new m3(spliterator, t3Var, iArr).invoke();
-        return new z2(iArr);
+    @Override // j$.util.stream.z1
+    public final h2 build() {
+        return this;
     }
 
-    public static c2 d0(t3 t3Var, Spliterator spliterator, boolean z10) {
-        long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
-            c2 c2Var = (c2) new j2(t3Var, spliterator, new a1(17), new a1(18), 2).invoke();
-            return z10 ? p0(c2Var) : c2Var;
-        }
-        if (k02 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        long[] jArr = new long[(int) k02];
-        new n3(spliterator, t3Var, jArr).invoke();
-        return new i3(jArr);
-    }
-
-    public static void R(c2 c2Var, Consumer consumer) {
-        if (consumer instanceof LongConsumer) {
-            c2Var.d((LongConsumer) consumer);
-        } else {
-            if (d8.a) {
-                d8.a(c2Var.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
-                throw null;
-            }
-            ((j$.util.a1) c2Var.spliterator()).forEachRemaining(consumer);
-        }
-    }
-
-    public static void O(c2 c2Var, Long[] lArr, int i7) {
-        if (d8.a) {
-            d8.a(c2Var.getClass(), "{0} calling Node.OfInt.copyInto(Long[], int)");
-            throw null;
-        }
-        long[] jArr = (long[]) c2Var.b();
-        for (int i10 = 0; i10 < jArr.length; i10++) {
-            lArr[i7 + i10] = Long.valueOf(jArr[i10]);
-        }
-    }
-
-    public static c2 U(c2 c2Var, long j3, long j10) {
-        if (j3 == 0 && j10 == c2Var.count()) {
-            return c2Var;
-        }
-        long j11 = j10 - j3;
-        j$.util.a1 a1Var = (j$.util.a1) c2Var.spliterator();
-        v1 t02 = t0(j11);
-        t02.o(j11);
-        for (int i7 = 0; i7 < j3 && a1Var.tryAdvance((LongConsumer) new b2(0)); i7++) {
-        }
-        if (j10 == c2Var.count()) {
-            a1Var.forEachRemaining((LongConsumer) t02);
-        } else {
-            for (int i10 = 0; i10 < j11 && a1Var.tryAdvance((LongConsumer) t02); i10++) {
-            }
-        }
-        t02.end();
-        return t02.build();
-    }
-
-    public static y1 b0(t3 t3Var, Spliterator spliterator, boolean z10) {
-        long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
-            y1 y1Var = (y1) new j2(t3Var, spliterator, new a1(13), new a1(14), 0).invoke();
-            return z10 ? n0(y1Var) : y1Var;
-        }
-        if (k02 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        double[] dArr = new double[(int) k02];
-        new l3(spliterator, t3Var, dArr).invoke();
-        return new q2(dArr);
-    }
-
-    public static r5 v0(z zVar, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
-        }
-        return new r5(zVar, l0(j10), j3, j10);
-    }
-
-    public static e2 m0(e2 e2Var, IntFunction intFunction) {
-        if (e2Var.h() <= 0) {
-            return e2Var;
-        }
-        long count = e2Var.count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        Object[] objArr = (Object[]) intFunction.apply((int) count);
-        new s3(e2Var, objArr, 1).invoke();
-        return new h2(objArr);
-    }
-
-    public static void P(y1 y1Var, Consumer consumer) {
-        if (consumer instanceof DoubleConsumer) {
-            y1Var.d((DoubleConsumer) consumer);
-        } else {
-            if (d8.a) {
-                d8.a(y1Var.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
-                throw null;
-            }
-            ((j$.util.u0) y1Var.spliterator()).forEachRemaining(consumer);
-        }
-    }
-
-    public static a2 o0(a2 a2Var) {
-        if (a2Var.h() <= 0) {
-            return a2Var;
-        }
-        long count = a2Var.count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        int[] iArr = new int[(int) count];
-        new r3(a2Var, iArr, 0).invoke();
-        return new z2(iArr);
-    }
-
-    public static void M(y1 y1Var, Double[] dArr, int i7) {
-        if (d8.a) {
-            d8.a(y1Var.getClass(), "{0} calling Node.OfDouble.copyInto(Double[], int)");
-            throw null;
-        }
-        double[] dArr2 = (double[]) y1Var.b();
-        for (int i10 = 0; i10 < dArr2.length; i10++) {
-            dArr[i7 + i10] = Double.valueOf(dArr2[i10]);
-        }
-    }
-
-    public static y1 S(y1 y1Var, long j3, long j10) {
-        if (j3 == 0 && j10 == y1Var.count()) {
-            return y1Var;
-        }
-        long j11 = j10 - j3;
-        j$.util.u0 u0Var = (j$.util.u0) y1Var.spliterator();
-        t1 h02 = h0(j11);
-        h02.o(j11);
-        for (int i7 = 0; i7 < j3 && u0Var.tryAdvance((DoubleConsumer) new x1(0)); i7++) {
-        }
-        if (j10 == y1Var.count()) {
-            u0Var.forEachRemaining((DoubleConsumer) h02);
-        } else {
-            for (int i10 = 0; i10 < j11 && u0Var.tryAdvance((DoubleConsumer) h02); i10++) {
-            }
-        }
-        h02.end();
-        return h02.build();
-    }
-
-    public static c2 p0(c2 c2Var) {
-        if (c2Var.h() <= 0) {
-            return c2Var;
-        }
-        long count = c2Var.count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        long[] jArr = new long[(int) count];
-        new r3(c2Var, jArr, 0).invoke();
-        return new i3(jArr);
-    }
-
-    public static int l0(long j3) {
-        return (j3 != -1 ? v6.u : 0) | v6.t;
-    }
-
-    public static y1 n0(y1 y1Var) {
-        if (y1Var.h() <= 0) {
-            return y1Var;
-        }
-        long count = y1Var.count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        double[] dArr = new double[(int) count];
-        new r3(y1Var, dArr, 0).invoke();
-        return new q2(dArr);
-    }
-
-    @Override // j$.util.stream.b8
-    public Object f(a aVar, Spliterator spliterator) {
-        o4 D0 = D0();
-        aVar.F0(spliterator, D0);
-        return D0.get();
-    }
-
-    @Override // j$.util.stream.b8
-    public Object i(t3 t3Var, Spliterator spliterator) {
-        return ((o4) new v4(this, t3Var, spliterator).invoke()).get();
+    @Override // j$.util.stream.n5
+    public final void end() {
     }
 }

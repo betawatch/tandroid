@@ -1,66 +1,96 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
+import j$.util.Spliterator;
 
-/* loaded from: classes2.dex */
-public final class d4 extends p4 implements o4 {
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ BiFunction c;
-    public final /* synthetic */ BinaryOperator d;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class d4 extends w3 {
+    public final /* synthetic */ byte h;
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    public /* synthetic */ d4(byte b) {
+        this.h = b;
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    @Override // j$.util.stream.w3
+    public final r4 Y() {
+        switch (this.h) {
+            case 0:
+                return new v4();
+            case 1:
+                return new t4();
+            case 2:
+                return new w4();
+            default:
+                return new u4();
+        }
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    @Override // j$.util.stream.w3, j$.util.stream.h8
+    public final Object a(a aVar, Spliterator spliterator) {
+        switch (this.h) {
+            case 0:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 2:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return (Long) super.a(aVar, spliterator);
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // j$.util.stream.w3, j$.util.stream.h8
+    public final Object b(a aVar, Spliterator spliterator) {
+        switch (this.h) {
+            case 0:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 2:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!b7.SIZED.n(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return (Long) super.b(aVar, spliterator);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.o4
-    public final void u(o4 o4Var) {
-        this.a = this.d.apply(this.a, ((d4) o4Var).a);
-    }
-
-    @Override // j$.util.stream.j5
-    public final void o(long j3) {
-        this.a = this.b;
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        this.a = this.c.apply(this.a, obj);
-    }
-
-    public d4(Object obj, BiFunction biFunction, BinaryOperator binaryOperator) {
-        this.b = obj;
-        this.c = biFunction;
-        this.d = binaryOperator;
+    @Override // j$.util.stream.w3, j$.util.stream.h8
+    public final int c() {
+        switch (this.h) {
+        }
+        return b7.r;
     }
 }

@@ -3,15 +3,15 @@ package com.google.android.recaptcha.internal;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzmq {
     public static boolean zza(Collection collection, Iterator it) {
         it.getClass();
-        boolean z10 = false;
+        boolean z = false;
         while (it.hasNext()) {
-            z10 |= collection.add(it.next());
+            z |= collection.add(it.next());
         }
-        return z10;
+        return z;
     }
 }

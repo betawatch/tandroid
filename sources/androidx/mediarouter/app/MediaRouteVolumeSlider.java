@@ -1,6 +1,5 @@
 package androidx.mediarouter.app;
 
-import a8.d7;
 import android.R;
 import android.content.Context;
 import android.graphics.Color;
@@ -9,53 +8,53 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class MediaRouteVolumeSlider extends m.c0 {
+public class MediaRouteVolumeSlider extends rp {
     public final float b;
     public boolean c;
     public Drawable d;
     public int e;
     public int f;
 
-    public MediaRouteVolumeSlider(Context context) {
-        this(context, null);
+    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        this.b = voe.c(context);
     }
 
-    public final void a(int i7, int i10) {
-        if (this.e != i7) {
-            if (Color.alpha(i7) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i7));
+    public final void a(int i, int i2) {
+        if (this.e != i) {
+            if (Color.alpha(i) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i));
             }
-            this.e = i7;
+            this.e = i;
         }
-        if (this.f != i10) {
-            if (Color.alpha(i10) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i10));
+        if (this.f != i2) {
+            if (Color.alpha(i2) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i2));
             }
-            this.f = i10;
+            this.f = i2;
         }
     }
 
-    public final void b(boolean z10) {
-        if (this.c == z10) {
+    public final void b(boolean z) {
+        if (this.c == z) {
             return;
         }
-        this.c = z10;
-        super.setThumb(z10 ? null : this.d);
+        this.c = z;
+        super.setThumb(z ? null : this.d);
     }
 
-    @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    @Override // rp, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i7 = isEnabled() ? ks.e4 : (int) (this.b * 255.0f);
+        int i = isEnabled() ? kk7.d4 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
-        int i10 = this.e;
+        int i2 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        drawable.setColorFilter(i10, mode);
-        this.d.setAlpha(i7);
+        drawable.setColorFilter(i2, mode);
+        this.d.setAlpha(i);
         Drawable progressDrawable = getProgressDrawable();
         if (progressDrawable instanceof LayerDrawable) {
             LayerDrawable layerDrawable = (LayerDrawable) getProgressDrawable();
@@ -64,7 +63,7 @@ public class MediaRouteVolumeSlider extends m.c0 {
             progressDrawable = findDrawableByLayerId;
         }
         progressDrawable.setColorFilter(this.e, mode);
-        progressDrawable.setAlpha(i7);
+        progressDrawable.setAlpha(i);
     }
 
     @Override // android.widget.AbsSeekBar
@@ -76,12 +75,7 @@ public class MediaRouteVolumeSlider extends m.c0 {
         super.setThumb(drawable);
     }
 
-    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, org.telegram.messenger.beta.R.attr.seekBarStyle);
-    }
-
-    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i7) {
-        super(context, attributeSet, i7);
-        this.b = d7.c(context);
+    public MediaRouteVolumeSlider(Context context) {
+        this(context, null);
     }
 }

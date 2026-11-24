@@ -1,99 +1,51 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
+import j$.util.Spliterator;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public final /* synthetic */ class y7 implements j5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Consumer b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class y7 extends a8 implements j$.util.x0, IntConsumer {
+    public int e;
 
-    public /* synthetic */ y7(Consumer consumer, int i7) {
-        this.a = i7;
-        this.b = consumer;
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i) {
+        this.e = i;
     }
 
-    private final /* synthetic */ void a(long j3) {
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
-    private final /* synthetic */ void b(long j3) {
+    @Override // j$.util.stream.d8
+    public final Spliterator b(Spliterator spliterator) {
+        return new y7((j$.util.x0) spliterator, this);
     }
 
-    private final /* synthetic */ void c() {
+    @Override // j$.util.stream.a8
+    public final void d(Object obj) {
+        ((IntConsumer) obj).accept(this.e);
     }
 
-    private final /* synthetic */ void d() {
+    @Override // j$.util.stream.a8
+    public final h7 e() {
+        return new f7();
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(double d) {
-        switch (this.a) {
-            case 0:
-                t3.C();
-                throw null;
-            default:
-                t3.C();
-                throw null;
-        }
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.time.a.i(this, consumer);
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i7) {
-        switch (this.a) {
-            case 0:
-                t3.J();
-                throw null;
-            default:
-                t3.J();
-                throw null;
-        }
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.time.a.z(this, consumer);
     }
 
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
-        switch (this.a) {
-            case 0:
-                t3.K();
-                throw null;
-            default:
-                t3.K();
-                throw null;
-        }
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((t6) this.b).x(obj);
-                break;
-            default:
-                this.b.x(obj);
-                break;
-        }
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-        }
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-        int i7 = this.a;
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j3) {
-        int i7 = this.a;
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ boolean q() {
-        switch (this.a) {
-        }
-        return false;
+    @Override // j$.util.stream.a8, j$.util.stream.d8, j$.util.d1, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ j$.util.x0 trySplit() {
+        return (j$.util.x0) trySplit();
     }
 }

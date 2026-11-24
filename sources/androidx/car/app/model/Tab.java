@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Tab {
     private static final String EMPTY_TAB_CONTENT_ID = "EMPTY_TAB_CONTENT_ID";
@@ -10,8 +10,10 @@ public final class Tab {
     private final CarIcon mIcon;
     private final CarText mTitle;
 
-    public Tab(s0 s0Var) {
-        throw null;
+    private Tab() {
+        this.mTitle = null;
+        this.mContentId = EMPTY_TAB_CONTENT_ID;
+        this.mIcon = null;
     }
 
     public boolean equals(Object obj) {
@@ -51,9 +53,7 @@ public final class Tab {
         return "[title: " + CarText.toShortString(this.mTitle) + ", contentId: " + this.mContentId + ", icon: " + this.mIcon + "]";
     }
 
-    private Tab() {
-        this.mTitle = null;
-        this.mContentId = EMPTY_TAB_CONTENT_ID;
-        this.mIcon = null;
+    public Tab(zdb zdbVar) {
+        throw null;
     }
 }

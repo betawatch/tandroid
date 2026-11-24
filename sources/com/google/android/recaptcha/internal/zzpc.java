@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzpc {
-    private static final char[] zza = "0123456789abcdef".toCharArray();
+    private static final char[] zza = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     public static final /* synthetic */ int zzb = 0;
 
     public final boolean equals(Object obj) {
@@ -21,23 +21,22 @@ public abstract class zzpc {
             return zza();
         }
         byte[] zze = zze();
-        int i7 = zze[0] & 255;
-        for (int i10 = 1; i10 < zze.length; i10++) {
-            i7 |= (zze[i10] & 255) << (i10 * 8);
+        int i = zze[0] & 255;
+        for (int i2 = 1; i2 < zze.length; i2++) {
+            i |= (zze[i2] & 255) << (i2 << 3);
         }
-        return i7;
+        return i;
     }
 
     public final String toString() {
         byte[] zze = zze();
-        int length = zze.length;
-        StringBuilder sb2 = new StringBuilder(length + length);
-        for (byte b10 : zze) {
+        StringBuilder sb = new StringBuilder(zze.length << 1);
+        for (byte b : zze) {
             char[] cArr = zza;
-            sb2.append(cArr[(b10 >> 4) & 15]);
-            sb2.append(cArr[b10 & 15]);
+            sb.append(cArr[(b >> 4) & 15]);
+            sb.append(cArr[b & 15]);
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     public abstract int zza();

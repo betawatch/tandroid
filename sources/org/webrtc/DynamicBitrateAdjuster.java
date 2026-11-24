@@ -1,7 +1,7 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class DynamicBitrateAdjuster extends BaseBitrateAdjuster {
     private static final double BITRATE_ADJUSTMENT_MAX_SCALE = 4.0d;
     private static final double BITRATE_ADJUSTMENT_SEC = 3.0d;
@@ -21,47 +21,46 @@ class DynamicBitrateAdjuster extends BaseBitrateAdjuster {
     }
 
     @Override // org.webrtc.BaseBitrateAdjuster, org.webrtc.BitrateAdjuster
-    public void reportEncodedFrame(int i7) {
+    public void reportEncodedFrame(int i) {
         double d = this.targetFramerateFps;
-        if (d == 0.0d) {
-            return;
-        }
-        int i10 = this.targetBitrateBps;
-        double d2 = (i7 - ((i10 / BITS_PER_BYTE) / d)) + this.deviationBytes;
-        this.deviationBytes = d2;
-        this.timeSinceLastAdjustmentMs = (1000.0d / d) + this.timeSinceLastAdjustmentMs;
-        double d10 = i10 / BITS_PER_BYTE;
-        double d11 = BITRATE_ADJUSTMENT_SEC * d10;
-        double min = Math.min(d2, d11);
-        this.deviationBytes = min;
-        double max = Math.max(min, -d11);
-        this.deviationBytes = max;
-        if (this.timeSinceLastAdjustmentMs <= 3000.0d) {
-            return;
-        }
-        if (max > d10) {
-            int i11 = this.bitrateAdjustmentScaleExp - ((int) ((max / d10) + 0.5d));
-            this.bitrateAdjustmentScaleExp = i11;
-            this.bitrateAdjustmentScaleExp = Math.max(i11, -20);
-            this.deviationBytes = d10;
-        } else {
-            double d12 = -d10;
-            if (max < d12) {
-                int i12 = this.bitrateAdjustmentScaleExp + ((int) (((-max) / d10) + 0.5d));
-                this.bitrateAdjustmentScaleExp = i12;
-                this.bitrateAdjustmentScaleExp = Math.min(i12, 20);
-                this.deviationBytes = d12;
+        if (d != 0.0d) {
+            int i2 = this.targetBitrateBps;
+            double d2 = (i - ((i2 / BITS_PER_BYTE) / d)) + this.deviationBytes;
+            this.deviationBytes = d2;
+            this.timeSinceLastAdjustmentMs = (1000.0d / d) + this.timeSinceLastAdjustmentMs;
+            double d3 = i2 / BITS_PER_BYTE;
+            double d4 = BITRATE_ADJUSTMENT_SEC * d3;
+            double min = Math.min(d2, d4);
+            this.deviationBytes = min;
+            double max = Math.max(min, -d4);
+            this.deviationBytes = max;
+            if (this.timeSinceLastAdjustmentMs <= 3000.0d) {
+                return;
             }
+            if (max > d3) {
+                int i3 = this.bitrateAdjustmentScaleExp - ((int) ((max / d3) + 0.5d));
+                this.bitrateAdjustmentScaleExp = i3;
+                this.bitrateAdjustmentScaleExp = Math.max(i3, -20);
+                this.deviationBytes = d3;
+            } else {
+                double d5 = -d3;
+                if (max < d5) {
+                    int i4 = this.bitrateAdjustmentScaleExp + ((int) (((-max) / d3) + 0.5d));
+                    this.bitrateAdjustmentScaleExp = i4;
+                    this.bitrateAdjustmentScaleExp = Math.min(i4, 20);
+                    this.deviationBytes = d5;
+                }
+            }
+            this.timeSinceLastAdjustmentMs = 0.0d;
         }
-        this.timeSinceLastAdjustmentMs = 0.0d;
     }
 
     @Override // org.webrtc.BaseBitrateAdjuster, org.webrtc.BitrateAdjuster
-    public void setTargets(int i7, double d) {
-        int i10 = this.targetBitrateBps;
-        if (i10 > 0 && i7 < i10) {
-            this.deviationBytes = (this.deviationBytes * i7) / i10;
+    public void setTargets(int i, double d) {
+        int i2 = this.targetBitrateBps;
+        if (i2 > 0 && i < i2) {
+            this.deviationBytes = (this.deviationBytes * i) / i2;
         }
-        super.setTargets(i7, d);
+        super.setTargets(i, d);
     }
 }

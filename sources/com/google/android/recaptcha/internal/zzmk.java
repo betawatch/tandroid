@@ -2,21 +2,21 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzmk implements Iterable {
     public final String toString() {
         Iterator it = iterator();
-        StringBuilder sb2 = new StringBuilder("[");
-        boolean z10 = true;
+        StringBuilder sb = new StringBuilder("[");
+        boolean z = true;
         while (it.hasNext()) {
-            if (!z10) {
-                sb2.append(", ");
+            if (!z) {
+                sb.append(", ");
             }
-            sb2.append(it.next());
-            z10 = false;
+            sb.append(it.next());
+            z = false;
         }
-        sb2.append(']');
-        return sb2.toString();
+        sb.append(']');
+        return sb.toString();
     }
 }

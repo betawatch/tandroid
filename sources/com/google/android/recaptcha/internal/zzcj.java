@@ -1,34 +1,26 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzcj extends j implements p {
-    public zzcj(c cVar) {
-        super(2, cVar);
+final class zzcj extends ccb implements eq4 {
+    public zzcj(fw2 fw2Var) {
+        super(2, fw2Var);
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzcj(cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzcj(fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzcj) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzcj) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        c8.z.b(obj);
+        qse.b(obj);
         Thread.currentThread().setPriority(8);
-        return k.a;
+        return g5c.a;
     }
 }

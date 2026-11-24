@@ -8,7 +8,7 @@ import android.opengl.EGLExt;
 import android.opengl.EGLSurface;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class InputSurface {
     private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -25,12 +25,12 @@ public class InputSurface {
     }
 
     private void checkEglError(String str) {
-        boolean z10 = false;
+        boolean z = false;
         while (EGL14.eglGetError() != 12288) {
-            z10 = true;
+            z = true;
         }
-        if (z10) {
-            throw new RuntimeException("EGL error encountered (see log)");
+        if (z) {
+            wn4.j("EGL error encountered (see log)");
         }
     }
 
@@ -38,27 +38,32 @@ public class InputSurface {
         EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
         this.mEGLDisplay = eglGetDisplay;
         if (eglGetDisplay == EGL14.EGL_NO_DISPLAY) {
-            throw new RuntimeException("unable to get EGL14 display");
+            wn4.j("unable to get EGL14 display");
+            return;
         }
         int[] iArr = new int[2];
         if (!EGL14.eglInitialize(eglGetDisplay, iArr, 0, iArr, 1)) {
             this.mEGLDisplay = null;
-            throw new RuntimeException("unable to initialize EGL14");
+            wn4.j("unable to initialize EGL14");
+            return;
         }
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
         if (!EGL14.eglChooseConfig(this.mEGLDisplay, new int[]{12324, 8, 12323, 8, 12322, 8, 12352, 4, 12610, 1, 12344}, 0, eGLConfigArr, 0, 1, new int[1], 0)) {
-            throw new RuntimeException("unable to find RGB888+recordable ES2 EGL config");
+            wn4.j("unable to find RGB888+recordable ES2 EGL config");
+            return;
         }
         this.mEGLContext = EGL14.eglCreateContext(this.mEGLDisplay, eGLConfigArr[0], EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, 12344}, 0);
         checkEglError("eglCreateContext");
         if (this.mEGLContext == null) {
-            throw new RuntimeException("null context");
+            wn4.j("null context");
+            return;
         }
         this.mEGLSurface = EGL14.eglCreateWindowSurface(this.mEGLDisplay, eGLConfigArr[0], this.mSurface, new int[]{12344}, 0);
         checkEglError("eglCreateWindowSurface");
-        if (this.mEGLSurface == null) {
-            throw new RuntimeException("surface was null");
+        if (this.mEGLSurface != null) {
+            return;
         }
+        wn4.j("surface was null");
     }
 
     public Surface getSurface() {
@@ -68,9 +73,10 @@ public class InputSurface {
     public void makeCurrent() {
         EGLDisplay eGLDisplay = this.mEGLDisplay;
         EGLSurface eGLSurface = this.mEGLSurface;
-        if (!EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.mEGLContext)) {
-            throw new RuntimeException("eglMakeCurrent failed");
+        if (EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.mEGLContext)) {
+            return;
         }
+        wn4.j("eglMakeCurrent failed");
     }
 
     public void release() {
@@ -88,8 +94,8 @@ public class InputSurface {
         this.mSurface = null;
     }
 
-    public void setPresentationTime(long j3) {
-        EGLExt.eglPresentationTimeANDROID(this.mEGLDisplay, this.mEGLSurface, j3);
+    public void setPresentationTime(long j) {
+        EGLExt.eglPresentationTimeANDROID(this.mEGLDisplay, this.mEGLSurface, j);
     }
 
     public boolean swapBuffers() {

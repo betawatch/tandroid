@@ -1,19 +1,19 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class VlineAtom extends Atom {
     private float height;
     private int n;
     private float shift;
 
-    public VlineAtom(int i7) {
-        this.n = i7;
+    public VlineAtom(int i) {
+        this.n = i;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
-        int i7;
+        int i;
         if (this.n == 0) {
             return new StrutBox(0.0f, 0.0f, 0.0f, 0.0f);
         }
@@ -21,17 +21,17 @@ public class VlineAtom extends Atom {
         HorizontalRule horizontalRule = new HorizontalRule(this.height, defaultRuleThickness, this.shift);
         StrutBox strutBox = new StrutBox(defaultRuleThickness * 2.0f, 0.0f, 0.0f, 0.0f);
         HorizontalBox horizontalBox = new HorizontalBox();
-        int i10 = 0;
+        int i2 = 0;
         while (true) {
-            i7 = this.n;
-            if (i10 >= i7 - 1) {
+            i = this.n;
+            if (i2 >= i - 1) {
                 break;
             }
             horizontalBox.add(horizontalRule);
             horizontalBox.add(strutBox);
-            i10++;
+            i2++;
         }
-        if (i7 > 0) {
+        if (i > 0) {
             horizontalBox.add(horizontalRule);
         }
         return horizontalBox;
@@ -44,11 +44,11 @@ public class VlineAtom extends Atom {
         return 0.0f;
     }
 
-    public void setHeight(float f10) {
-        this.height = f10;
+    public void setHeight(float f) {
+        this.height = f;
     }
 
-    public void setShift(float f10) {
-        this.shift = f10;
+    public void setShift(float f) {
+        this.shift = f;
     }
 }

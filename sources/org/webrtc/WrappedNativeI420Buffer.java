@@ -3,8 +3,8 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class WrappedNativeI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
     private final ByteBuffer dataV;
@@ -16,27 +16,27 @@ class WrappedNativeI420Buffer implements VideoFrame.I420Buffer {
     private final int strideY;
     private final int width;
 
-    public WrappedNativeI420Buffer(int i7, int i10, ByteBuffer byteBuffer, int i11, ByteBuffer byteBuffer2, int i12, ByteBuffer byteBuffer3, int i13, long j3) {
-        this.width = i7;
-        this.height = i10;
+    public WrappedNativeI420Buffer(int i, int i2, ByteBuffer byteBuffer, int i3, ByteBuffer byteBuffer2, int i4, ByteBuffer byteBuffer3, int i5, long j) {
+        this.width = i;
+        this.height = i2;
         this.dataY = byteBuffer;
-        this.strideY = i11;
+        this.strideY = i3;
         this.dataU = byteBuffer2;
-        this.strideU = i12;
+        this.strideU = i4;
         this.dataV = byteBuffer3;
-        this.strideV = i13;
-        this.nativeBuffer = j3;
+        this.strideV = i5;
+        this.nativeBuffer = j;
         retain();
     }
 
     @Override // org.webrtc.VideoFrame.Buffer
-    public VideoFrame.Buffer cropAndScale(int i7, int i10, int i11, int i12, int i13, int i14) {
-        return JavaI420Buffer.cropAndScaleI420(this, i7, i10, i11, i12, i13, i14);
+    public VideoFrame.Buffer cropAndScale(int i, int i2, int i3, int i4, int i5, int i6) {
+        return JavaI420Buffer.cropAndScaleI420(this, i, i2, i3, i4, i5, i6);
     }
 
     @Override // org.webrtc.VideoFrame.I420Buffer, org.webrtc.VideoFrame.Buffer
-    public final /* synthetic */ int getBufferType() {
-        return a0.a(this);
+    public final int getBufferType() {
+        return 1;
     }
 
     @Override // org.webrtc.VideoFrame.I420Buffer

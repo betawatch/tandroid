@@ -1,45 +1,28 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public final class s7 extends u7 implements j$.util.x0, IntConsumer {
-    public int f;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class s7 extends u7 implements j$.util.x0 {
+    @Override // j$.util.stream.w7
+    public final Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4) {
+        return new s7((j$.util.x0) spliterator, j, j2, j3, j4);
+    }
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return IntConsumer$-CC.$default$andThen(this, intConsumer);
+    @Override // j$.util.stream.u7
+    public final Object b() {
+        return new c2((byte) 1);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+        j$.time.a.i(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
-    }
-
-    @Override // j$.util.stream.x7
-    public final Spliterator b(Spliterator spliterator) {
-        return new s7((j$.util.x0) spliterator, this);
-    }
-
-    @Override // j$.util.stream.u7
-    public final void d(Object obj) {
-        ((IntConsumer) obj).accept(this.f);
-    }
-
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i7) {
-        this.f = i7;
-    }
-
-    @Override // j$.util.stream.u7
-    public final b7 e(int i7) {
-        return new z6(i7);
+        return j$.time.a.z(this, consumer);
     }
 }

@@ -2,15 +2,17 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class Toggle {
     private final boolean mIsChecked;
     private final boolean mIsEnabled;
-    private final z mOnCheckedChangeDelegate;
+    private final xo7 mOnCheckedChangeDelegate;
 
-    public Toggle(y0 y0Var) {
-        throw null;
+    private Toggle() {
+        this.mOnCheckedChangeDelegate = null;
+        this.mIsChecked = false;
+        this.mIsEnabled = true;
     }
 
     public boolean equals(Object obj) {
@@ -24,10 +26,10 @@ public final class Toggle {
         return this.mIsChecked == toggle.mIsChecked && this.mIsEnabled == toggle.mIsEnabled;
     }
 
-    public z getOnCheckedChangeDelegate() {
-        z zVar = this.mOnCheckedChangeDelegate;
-        Objects.requireNonNull(zVar);
-        return zVar;
+    public xo7 getOnCheckedChangeDelegate() {
+        xo7 xo7Var = this.mOnCheckedChangeDelegate;
+        Objects.requireNonNull(xo7Var);
+        return xo7Var;
     }
 
     public int hashCode() {
@@ -46,9 +48,7 @@ public final class Toggle {
         return "[ isChecked: " + this.mIsChecked + ", isEnabled: " + this.mIsEnabled + "]";
     }
 
-    private Toggle() {
-        this.mOnCheckedChangeDelegate = null;
-        this.mIsChecked = false;
-        this.mIsEnabled = true;
+    public Toggle(kpb kpbVar) {
+        throw null;
     }
 }

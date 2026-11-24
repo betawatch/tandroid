@@ -4,33 +4,26 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.function.ToIntFunction;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class Comparator$-EL {
-    public static Comparator reversed(Comparator comparator) {
-        if (comparator instanceof e) {
-            ((f) ((e) comparator)).getClass();
-            return Comparator$-CC.reverseOrder();
-        }
-        return Collections.reverseOrder(comparator);
-    }
-
     public static d a(Comparator comparator, Comparator comparator2) {
-        if (comparator instanceof e) {
-            f fVar = (f) ((e) comparator);
-            fVar.getClass();
+        if (comparator instanceof f) {
             Objects.requireNonNull(comparator2);
-            return new d(fVar, comparator2, 0);
+            return new d((f) comparator, comparator2);
         }
         Objects.requireNonNull(comparator2);
-        return new d(comparator, comparator2, 0);
+        return new d(comparator, comparator2);
+    }
+
+    public static Comparator reversed(Comparator comparator) {
+        if (!(comparator instanceof f)) {
+            return Collections.reverseOrder(comparator);
+        }
+        return Comparator$-CC.reverseOrder();
     }
 
     public static Comparator thenComparingInt(Comparator comparator, ToIntFunction toIntFunction) {
-        if (comparator instanceof e) {
-            f fVar = (f) ((e) comparator);
-            fVar.getClass();
-            return a(fVar, Comparator$-CC.comparingInt(toIntFunction));
-        }
-        return a(comparator, Comparator$-CC.comparingInt(toIntFunction));
+        return comparator instanceof f ? a((f) comparator, Comparator$-CC.comparingInt(toIntFunction)) : a(comparator, Comparator$-CC.comparingInt(toIntFunction));
     }
 }

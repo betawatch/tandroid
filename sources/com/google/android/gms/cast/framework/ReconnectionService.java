@@ -1,43 +1,31 @@
 package com.google.android.gms.cast.framework;
 
-import a7.a;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-import com.google.android.gms.internal.cast.d;
-import com.google.android.gms.internal.cast.f;
-import com.google.android.gms.internal.cast.t;
-import g6.g;
-import g6.k;
-import g6.r;
-import g6.s;
-import g6.u;
-import g6.y;
-import j6.b;
-import q6.m;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class ReconnectionService extends Service {
-    public static final b b = new b("ReconnectionService", null);
-    public u a;
+    public static final dc6 b = new dc6("ReconnectionService", null);
+    public n9d a;
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
-        u uVar = this.a;
-        if (uVar != null) {
+        n9d n9dVar = this.a;
+        if (n9dVar != null) {
             try {
-                s sVar = (s) uVar;
-                Parcel p12 = sVar.p1();
-                t.c(p12, intent);
-                Parcel r12 = sVar.r1(p12, 3);
-                IBinder readStrongBinder = r12.readStrongBinder();
-                r12.recycle();
+                c9d c9dVar = (c9d) n9dVar;
+                Parcel R = c9dVar.R();
+                jgd.c(R, intent);
+                Parcel T = c9dVar.T(R, 3);
+                IBinder readStrongBinder = T.readStrongBinder();
+                T.recycle();
                 return readStrongBinder;
-            } catch (RemoteException e10) {
-                b.a(e10, "Unable to call %s on %s.", "onBind", u.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "onBind", n9d.class.getSimpleName());
             }
         }
         return null;
@@ -45,48 +33,48 @@ public class ReconnectionService extends Service {
 
     @Override // android.app.Service
     public final void onCreate() {
-        a aVar;
-        a aVar2;
-        g6.a c10 = g6.a.c(this);
-        g b10 = c10.b();
-        b10.getClass();
-        u uVar = null;
+        yi5 yi5Var;
+        yi5 yi5Var2;
+        ad1 c = ad1.c(this);
+        j6a b2 = c.b();
+        b2.getClass();
+        n9d n9dVar = null;
         try {
-            y yVar = b10.a;
-            Parcel r12 = yVar.r1(yVar.p1(), 7);
-            aVar = a7.b.m1(r12.readStrongBinder());
-            r12.recycle();
-        } catch (RemoteException e10) {
-            g.c.a(e10, "Unable to call %s on %s.", "getWrappedThis", y.class.getSimpleName());
-            aVar = null;
+            nad nadVar = b2.a;
+            Parcel T = nadVar.T(nadVar.R(), 7);
+            yi5Var = bo7.T(T.readStrongBinder());
+            T.recycle();
+        } catch (RemoteException e) {
+            j6a.c.a(e, "Unable to call %s on %s.", "getWrappedThis", nad.class.getSimpleName());
+            yi5Var = null;
         }
-        m.e("Must be called from the main thread.");
-        k kVar = c10.d;
-        kVar.getClass();
+        fre.e("Must be called from the main thread.");
+        w5d w5dVar = c.d;
+        w5dVar.getClass();
         try {
-            r rVar = kVar.a;
-            Parcel r13 = rVar.r1(rVar.p1(), 5);
-            aVar2 = a7.b.m1(r13.readStrongBinder());
-            r13.recycle();
-        } catch (RemoteException e11) {
-            k.b.a(e11, "Unable to call %s on %s.", "getWrappedThis", r.class.getSimpleName());
-            aVar2 = null;
+            q8d q8dVar = w5dVar.a;
+            Parcel T2 = q8dVar.T(q8dVar.R(), 5);
+            yi5Var2 = bo7.T(T2.readStrongBinder());
+            T2.recycle();
+        } catch (RemoteException e2) {
+            w5d.b.a(e2, "Unable to call %s on %s.", "getWrappedThis", q8d.class.getSimpleName());
+            yi5Var2 = null;
         }
-        b bVar = d.a;
-        if (aVar != null && aVar2 != null) {
+        dc6 dc6Var = t6d.a;
+        if (yi5Var != null && yi5Var2 != null) {
             try {
-                uVar = d.b(getApplicationContext()).y1(new a7.b(this), aVar, aVar2);
-            } catch (RemoteException | g6.d e12) {
-                d.a.a(e12, "Unable to call %s on %s.", "newReconnectionServiceImpl", f.class.getSimpleName());
+                n9dVar = t6d.b(getApplicationContext()).a0(new bo7(this), yi5Var, yi5Var2);
+            } catch (RemoteException | qe7 e3) {
+                t6d.a.a(e3, "Unable to call %s on %s.", "newReconnectionServiceImpl", o7d.class.getSimpleName());
             }
         }
-        this.a = uVar;
-        if (uVar != null) {
+        this.a = n9dVar;
+        if (n9dVar != null) {
             try {
-                s sVar = (s) uVar;
-                sVar.t1(sVar.p1(), 1);
-            } catch (RemoteException e13) {
-                b.a(e13, "Unable to call %s on %s.", "onCreate", u.class.getSimpleName());
+                c9d c9dVar = (c9d) n9dVar;
+                c9dVar.V(c9dVar.R(), 1);
+            } catch (RemoteException e4) {
+                b.a(e4, "Unable to call %s on %s.", "onCreate", n9d.class.getSimpleName());
             }
             super.onCreate();
         }
@@ -94,34 +82,34 @@ public class ReconnectionService extends Service {
 
     @Override // android.app.Service
     public final void onDestroy() {
-        u uVar = this.a;
-        if (uVar != null) {
+        n9d n9dVar = this.a;
+        if (n9dVar != null) {
             try {
-                s sVar = (s) uVar;
-                sVar.t1(sVar.p1(), 4);
-            } catch (RemoteException e10) {
-                b.a(e10, "Unable to call %s on %s.", "onDestroy", u.class.getSimpleName());
+                c9d c9dVar = (c9d) n9dVar;
+                c9dVar.V(c9dVar.R(), 4);
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "onDestroy", n9d.class.getSimpleName());
             }
             super.onDestroy();
         }
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i7, int i10) {
-        u uVar = this.a;
-        if (uVar != null) {
+    public final int onStartCommand(Intent intent, int i, int i2) {
+        n9d n9dVar = this.a;
+        if (n9dVar != null) {
             try {
-                s sVar = (s) uVar;
-                Parcel p12 = sVar.p1();
-                t.c(p12, intent);
-                p12.writeInt(i7);
-                p12.writeInt(i10);
-                Parcel r12 = sVar.r1(p12, 2);
-                int readInt = r12.readInt();
-                r12.recycle();
+                c9d c9dVar = (c9d) n9dVar;
+                Parcel R = c9dVar.R();
+                jgd.c(R, intent);
+                R.writeInt(i);
+                R.writeInt(i2);
+                Parcel T = c9dVar.T(R, 2);
+                int readInt = T.readInt();
+                T.recycle();
                 return readInt;
-            } catch (RemoteException e10) {
-                b.a(e10, "Unable to call %s on %s.", "onStartCommand", u.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "onStartCommand", n9d.class.getSimpleName());
             }
         }
         return 2;

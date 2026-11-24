@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zznz extends zzns {
     static final boolean zza;
@@ -47,17 +47,15 @@ final class zznz extends zzns {
         int length = str.length();
         while (true) {
             length--;
-            if (length >= 0) {
-                char charAt = str.charAt(length);
-                if (charAt != '$') {
-                    if (charAt == '.') {
-                        break;
-                    }
-                } else {
-                    str = str.replace('$', '.');
-                    break;
-                }
-            } else {
+            if (length < 0) {
+                break;
+            }
+            char charAt = str.charAt(length);
+            if (charAt == '$') {
+                str = str.replace('$', '.');
+                break;
+            }
+            if (charAt == '.') {
                 break;
             }
         }

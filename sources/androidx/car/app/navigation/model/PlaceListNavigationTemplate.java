@@ -5,13 +5,11 @@ import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
-import androidx.car.app.model.d0;
-import androidx.car.app.model.x0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class PlaceListNavigationTemplate implements x0 {
+public final class PlaceListNavigationTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
 
@@ -20,14 +18,22 @@ public final class PlaceListNavigationTemplate implements x0 {
     private final boolean mIsLoading;
     private final ItemList mItemList;
     private final ActionStrip mMapActionStrip;
-    private final d0 mOnContentRefreshDelegate;
-    private final g mPanModeDelegate;
+    private final ap7 mOnContentRefreshDelegate;
+    private final pu7 mPanModeDelegate;
 
     @Deprecated
     private final CarText mTitle;
 
-    public PlaceListNavigationTemplate(j jVar) {
-        throw null;
+    private PlaceListNavigationTemplate() {
+        this.mTitle = null;
+        this.mIsLoading = false;
+        this.mItemList = null;
+        this.mHeader = null;
+        this.mHeaderAction = null;
+        this.mActionStrip = null;
+        this.mMapActionStrip = null;
+        this.mPanModeDelegate = null;
+        this.mOnContentRefreshDelegate = null;
     }
 
     public boolean equals(Object obj) {
@@ -69,11 +75,11 @@ public final class PlaceListNavigationTemplate implements x0 {
         return this.mMapActionStrip;
     }
 
-    public d0 getOnContentRefreshDelegate() {
+    public ap7 getOnContentRefreshDelegate() {
         return this.mOnContentRefreshDelegate;
     }
 
-    public g getPanModeDelegate() {
+    public pu7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -94,15 +100,7 @@ public final class PlaceListNavigationTemplate implements x0 {
         return "PlaceListNavigationTemplate";
     }
 
-    private PlaceListNavigationTemplate() {
-        this.mTitle = null;
-        this.mIsLoading = false;
-        this.mItemList = null;
-        this.mHeader = null;
-        this.mHeaderAction = null;
-        this.mActionStrip = null;
-        this.mMapActionStrip = null;
-        this.mPanModeDelegate = null;
-        this.mOnContentRefreshDelegate = null;
+    public PlaceListNavigationTemplate(lb8 lb8Var) {
+        throw null;
     }
 }

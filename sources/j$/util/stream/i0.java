@@ -1,55 +1,37 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
+import j$.util.function.IntConsumer$-CC;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public abstract class i0 implements c8 {
-    public boolean a;
-    public Object b;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class i0 extends l0 implements l5 {
+    public static final g0 c;
+    public static final g0 d;
 
-    @Override // j$.util.stream.j5
-    public /* synthetic */ void accept(double d) {
-        t3.C();
-        throw null;
+    static {
+        c7 c7Var = c7.INT_VALUE;
+        q qVar = new q((byte) 12);
+        q qVar2 = new q((byte) 13);
+        j$.util.c0 c0Var = j$.util.c0.c;
+        c = new g0(true, c7Var, c0Var, qVar, qVar2);
+        d = new g0(false, c7Var, c0Var, new q((byte) 12), new q((byte) 13));
     }
 
-    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public /* synthetic */ void accept(int i7) {
-        t3.J();
-        throw null;
+    @Override // j$.util.stream.l0, j$.util.stream.n5
+    public final void accept(int i) {
+        x(Integer.valueOf(i));
     }
 
-    @Override // j$.util.stream.j5
-    public /* synthetic */ void accept(long j3) {
-        t3.K();
-        throw null;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void end() {
-    }
-
-    @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j3) {
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void x(Object obj) {
+    @Override // java.util.function.Supplier
+    public final Object get() {
         if (this.a) {
-            return;
+            return new j$.util.c0(((Integer) this.b).intValue());
         }
-        this.a = true;
-        this.b = obj;
-    }
-
-    @Override // j$.util.stream.j5
-    public final boolean q() {
-        return this.a;
+        return null;
     }
 }

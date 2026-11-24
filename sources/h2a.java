@@ -1,0 +1,380 @@
+// default package
+
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h2a implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ z3a b;
+    public final /* synthetic */ TLRPC.InputMedia c;
+    public final /* synthetic */ k3a d;
+
+    public /* synthetic */ h2a(z3a z3aVar, TLRPC.InputMedia inputMedia, k3a k3aVar, byte b) {
+        this.a = b;
+        this.b = z3aVar;
+        this.c = inputMedia;
+        this.d = k3aVar;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final byte b = 0;
+                final z3a z3aVar = this.b;
+                final TLRPC.InputMedia inputMedia = this.c;
+                final k3a k3aVar = this.d;
+                gl.d3(new Runnable() { // from class: p2a
+                    /* JADX WARN: Multi-variable type inference failed */
+                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
+                    /* JADX WARN: Removed duplicated region for block: B:66:0x0145  */
+                    @Override // java.lang.Runnable
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                    */
+                    public final void run() {
+                        TLRPC.PhotoSize photoSize;
+                        k27 k27Var;
+                        oac oacVar;
+                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
+                        TLRPC.InputDocument inputDocument;
+                        byte b2 = b;
+                        TLRPC.InputMedia inputMedia2 = inputMedia;
+                        TLObject tLObject2 = tLObject;
+                        switch (b2) {
+                            case 0:
+                                boolean z = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
+                                k3a k3aVar2 = k3aVar;
+                                if (!z) {
+                                    k3aVar2.c();
+                                    break;
+                                } else {
+                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
+                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                                    tL_inputPhoto.id = photo.id;
+                                    tL_inputPhoto.access_hash = photo.access_hash;
+                                    tL_inputPhoto.file_reference = photo.file_reference;
+                                    if (inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia2.flags |= 64;
+                                        inputMedia2.video_cover = tL_inputPhoto;
+                                    } else if (inputMedia2 instanceof TLRPC.TL_inputMediaDocument) {
+                                        inputMedia2.flags |= 8;
+                                        inputMedia2.video_cover = tL_inputPhoto;
+                                    }
+                                    TLRPC.InputMedia inputMedia3 = k3aVar2.t;
+                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia3.flags |= 64;
+                                        inputMedia3.video_cover = tL_inputPhoto;
+                                    }
+                                    boolean z2 = k3aVar2.p;
+                                    z3a z3aVar2 = z3aVar;
+                                    if (!z2 || inputMedia2.thumb != null || (photoSize = k3aVar2.g) == null || photoSize.location == null || ((k27Var = k3aVar2.m) != null && (oacVar = k27Var.r0) != null && oacVar.N)) {
+                                        z3aVar2.M(k3aVar2.c, k3aVar2.m, k3aVar2.f, k3aVar2, k3aVar2.K, null, k3aVar2.H);
+                                        break;
+                                    } else {
+                                        z3aVar2.L(k3aVar2, -1);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                if (tLObject2 != null) {
+                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
+                                    if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
+                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia2;
+                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
+                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
+                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
+                                        TLRPC.Photo photo2 = messageMedia.photo;
+                                        tL_inputPhoto2.id = photo2.id;
+                                        tL_inputPhoto2.access_hash = photo2.access_hash;
+                                        tL_inputPhoto2.file_reference = photo2.file_reference;
+                                        tL_inputMediaPhoto.spoiler = inputMedia2.spoiler;
+                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
+                                            tL_inputMediaPhoto.live_photo = true;
+                                            tL_inputMediaPhoto.video = inputDocument;
+                                        }
+                                        boolean z3 = w01.a;
+                                        fa4.b("set uploaded photo");
+                                        tL_inputMediaDocument = tL_inputMediaPhoto;
+                                    } else if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
+                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
+                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                                        tL_inputMediaDocument2.id = tL_inputDocument;
+                                        TLRPC.Document document = messageMedia.document;
+                                        tL_inputDocument.id = document.id;
+                                        tL_inputDocument.access_hash = document.access_hash;
+                                        tL_inputDocument.file_reference = document.file_reference;
+                                        tL_inputMediaDocument2.spoiler = inputMedia2.spoiler;
+                                        TLRPC.Photo photo3 = messageMedia.video_cover;
+                                        if (photo3 != null) {
+                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
+                                            tL_inputPhoto3.id = photo3.id;
+                                            tL_inputPhoto3.access_hash = photo3.access_hash;
+                                            tL_inputPhoto3.file_reference = photo3.file_reference;
+                                            tL_inputMediaDocument2.flags |= 8;
+                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
+                                        }
+                                        boolean z4 = w01.a;
+                                        fa4.b("set uploaded document");
+                                        tL_inputMediaDocument = tL_inputMediaDocument2;
+                                    }
+                                    k3a k3aVar3 = k3aVar;
+                                    if (tL_inputMediaDocument != null) {
+                                        k3aVar3.c();
+                                        break;
+                                    } else {
+                                        int i = inputMedia2.ttl_seconds;
+                                        if (i != 0) {
+                                            tL_inputMediaDocument.ttl_seconds = i;
+                                            tL_inputMediaDocument.flags |= 1;
+                                        }
+                                        TLObject tLObject3 = k3aVar3.c;
+                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
+                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
+                                            int i2 = 0;
+                                            while (true) {
+                                                if (i2 < tL_messages_sendMultiMedia.multi_media.size()) {
+                                                    if (tL_messages_sendMultiMedia.multi_media.get(i2).media == inputMedia2) {
+                                                        tL_messages_sendMultiMedia.multi_media.get(i2).media = tL_inputMediaDocument;
+                                                    } else {
+                                                        i2++;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            if (tLObject3 instanceof TLRPC.TL_messages_sendMedia) {
+                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
+                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
+                                                    int i3 = 0;
+                                                    while (true) {
+                                                        if (i3 < tL_inputMediaPaidMedia.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia.extended_media.get(i3) == inputMedia2) {
+                                                                tL_inputMediaPaidMedia.extended_media.set(i3, tL_inputMediaDocument);
+                                                            } else {
+                                                                i3++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia4;
+                                                    ud8.k(tL_inputMediaPoll, ud8.a(tL_inputMediaPoll, inputMedia2), tL_inputMediaDocument);
+                                                }
+                                            }
+                                            if (tLObject3 instanceof TL_ephemeral.TL_sendMessage) {
+                                                TLRPC.InputMedia inputMedia5 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
+                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia5;
+                                                    int i4 = 0;
+                                                    while (true) {
+                                                        if (i4 < tL_inputMediaPaidMedia2.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i4) == inputMedia2) {
+                                                                tL_inputMediaPaidMedia2.extended_media.set(i4, tL_inputMediaDocument);
+                                                            } else {
+                                                                i4++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia5;
+                                                    ud8.k(tL_inputMediaPoll2, ud8.a(tL_inputMediaPoll2, inputMedia2), tL_inputMediaDocument);
+                                                }
+                                            }
+                                        }
+                                        z3aVar.s0(k3aVar3, false);
+                                        break;
+                                    }
+                                }
+                                tL_inputMediaDocument = null;
+                                k3a k3aVar32 = k3aVar;
+                                if (tL_inputMediaDocument != null) {
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b2 = 1;
+                final z3a z3aVar2 = this.b;
+                final TLRPC.InputMedia inputMedia2 = this.c;
+                final k3a k3aVar2 = this.d;
+                gl.d3(new Runnable() { // from class: p2a
+                    /* JADX WARN: Multi-variable type inference failed */
+                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
+                    /* JADX WARN: Removed duplicated region for block: B:66:0x0145  */
+                    @Override // java.lang.Runnable
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                    */
+                    public final void run() {
+                        TLRPC.PhotoSize photoSize;
+                        k27 k27Var;
+                        oac oacVar;
+                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
+                        TLRPC.InputDocument inputDocument;
+                        byte b22 = b2;
+                        TLRPC.InputMedia inputMedia22 = inputMedia2;
+                        TLObject tLObject2 = tLObject;
+                        switch (b22) {
+                            case 0:
+                                boolean z = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
+                                k3a k3aVar22 = k3aVar2;
+                                if (!z) {
+                                    k3aVar22.c();
+                                    break;
+                                } else {
+                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
+                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                                    tL_inputPhoto.id = photo.id;
+                                    tL_inputPhoto.access_hash = photo.access_hash;
+                                    tL_inputPhoto.file_reference = photo.file_reference;
+                                    if (inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia22.flags |= 64;
+                                        inputMedia22.video_cover = tL_inputPhoto;
+                                    } else if (inputMedia22 instanceof TLRPC.TL_inputMediaDocument) {
+                                        inputMedia22.flags |= 8;
+                                        inputMedia22.video_cover = tL_inputPhoto;
+                                    }
+                                    TLRPC.InputMedia inputMedia3 = k3aVar22.t;
+                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia3.flags |= 64;
+                                        inputMedia3.video_cover = tL_inputPhoto;
+                                    }
+                                    boolean z2 = k3aVar22.p;
+                                    z3a z3aVar22 = z3aVar2;
+                                    if (!z2 || inputMedia22.thumb != null || (photoSize = k3aVar22.g) == null || photoSize.location == null || ((k27Var = k3aVar22.m) != null && (oacVar = k27Var.r0) != null && oacVar.N)) {
+                                        z3aVar22.M(k3aVar22.c, k3aVar22.m, k3aVar22.f, k3aVar22, k3aVar22.K, null, k3aVar22.H);
+                                        break;
+                                    } else {
+                                        z3aVar22.L(k3aVar22, -1);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                if (tLObject2 != null) {
+                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
+                                    if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
+                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia22;
+                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
+                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
+                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
+                                        TLRPC.Photo photo2 = messageMedia.photo;
+                                        tL_inputPhoto2.id = photo2.id;
+                                        tL_inputPhoto2.access_hash = photo2.access_hash;
+                                        tL_inputPhoto2.file_reference = photo2.file_reference;
+                                        tL_inputMediaPhoto.spoiler = inputMedia22.spoiler;
+                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
+                                            tL_inputMediaPhoto.live_photo = true;
+                                            tL_inputMediaPhoto.video = inputDocument;
+                                        }
+                                        boolean z3 = w01.a;
+                                        fa4.b("set uploaded photo");
+                                        tL_inputMediaDocument = tL_inputMediaPhoto;
+                                    } else if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
+                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
+                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                                        tL_inputMediaDocument2.id = tL_inputDocument;
+                                        TLRPC.Document document = messageMedia.document;
+                                        tL_inputDocument.id = document.id;
+                                        tL_inputDocument.access_hash = document.access_hash;
+                                        tL_inputDocument.file_reference = document.file_reference;
+                                        tL_inputMediaDocument2.spoiler = inputMedia22.spoiler;
+                                        TLRPC.Photo photo3 = messageMedia.video_cover;
+                                        if (photo3 != null) {
+                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
+                                            tL_inputPhoto3.id = photo3.id;
+                                            tL_inputPhoto3.access_hash = photo3.access_hash;
+                                            tL_inputPhoto3.file_reference = photo3.file_reference;
+                                            tL_inputMediaDocument2.flags |= 8;
+                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
+                                        }
+                                        boolean z4 = w01.a;
+                                        fa4.b("set uploaded document");
+                                        tL_inputMediaDocument = tL_inputMediaDocument2;
+                                    }
+                                    k3a k3aVar32 = k3aVar2;
+                                    if (tL_inputMediaDocument != null) {
+                                        k3aVar32.c();
+                                        break;
+                                    } else {
+                                        int i = inputMedia22.ttl_seconds;
+                                        if (i != 0) {
+                                            tL_inputMediaDocument.ttl_seconds = i;
+                                            tL_inputMediaDocument.flags |= 1;
+                                        }
+                                        TLObject tLObject3 = k3aVar32.c;
+                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
+                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
+                                            int i2 = 0;
+                                            while (true) {
+                                                if (i2 < tL_messages_sendMultiMedia.multi_media.size()) {
+                                                    if (tL_messages_sendMultiMedia.multi_media.get(i2).media == inputMedia22) {
+                                                        tL_messages_sendMultiMedia.multi_media.get(i2).media = tL_inputMediaDocument;
+                                                    } else {
+                                                        i2++;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            if (tLObject3 instanceof TLRPC.TL_messages_sendMedia) {
+                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
+                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
+                                                    int i3 = 0;
+                                                    while (true) {
+                                                        if (i3 < tL_inputMediaPaidMedia.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia.extended_media.get(i3) == inputMedia22) {
+                                                                tL_inputMediaPaidMedia.extended_media.set(i3, tL_inputMediaDocument);
+                                                            } else {
+                                                                i3++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia4;
+                                                    ud8.k(tL_inputMediaPoll, ud8.a(tL_inputMediaPoll, inputMedia22), tL_inputMediaDocument);
+                                                }
+                                            }
+                                            if (tLObject3 instanceof TL_ephemeral.TL_sendMessage) {
+                                                TLRPC.InputMedia inputMedia5 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
+                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia5;
+                                                    int i4 = 0;
+                                                    while (true) {
+                                                        if (i4 < tL_inputMediaPaidMedia2.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i4) == inputMedia22) {
+                                                                tL_inputMediaPaidMedia2.extended_media.set(i4, tL_inputMediaDocument);
+                                                            } else {
+                                                                i4++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia5;
+                                                    ud8.k(tL_inputMediaPoll2, ud8.a(tL_inputMediaPoll2, inputMedia22), tL_inputMediaDocument);
+                                                }
+                                            }
+                                        }
+                                        z3aVar2.s0(k3aVar32, false);
+                                        break;
+                                    }
+                                }
+                                tL_inputMediaDocument = null;
+                                k3a k3aVar322 = k3aVar2;
+                                if (tL_inputMediaDocument != null) {
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
+    }
+}

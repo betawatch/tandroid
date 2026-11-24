@@ -1,42 +1,43 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzaw extends j implements p {
+final class zzaw extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzhk zzc;
     final /* synthetic */ zzba zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzaw(zzhk zzhkVar, zzba zzbaVar, c cVar) {
-        super(2, cVar);
+    public zzaw(zzhk zzhkVar, zzba zzbaVar, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzhkVar;
         this.zzd = zzbaVar;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzaw(this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzaw(this.zzc, this.zzd, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaw) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzaw) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0035, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0040, code lost:
     
-        if (r6 != r0) goto L15;
+        if (r6 != r3) goto L15;
      */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0065, code lost:
+    
+        return r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0033, code lost:
+    
+        if (r6 != r3) goto L13;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -44,11 +45,11 @@ final class zzaw extends j implements p {
         zzhk zzhkVar;
         zzbo zzboVar;
         String str;
-        a aVar = a.a;
-        int i7 = this.zzb;
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                c8.z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzhkVar = this.zzc;
                 zzba zzbaVar = this.zzd;
                 zzboVar = zzbaVar.zza;
@@ -57,8 +58,8 @@ final class zzaw extends j implements p {
                 this.zzb = 1;
                 obj = new zzhg(new zzbb(zzboVar, str, null));
             } else {
-                if (i7 != 1) {
-                    c8.z.b(obj);
+                if (i != 1) {
+                    qse.b(obj);
                     zzba zzbaVar2 = this.zzd;
                     zzyu zzf = zzyx.zzf();
                     zzyv zzf2 = zzyw.zzf();
@@ -67,22 +68,13 @@ final class zzaw extends j implements p {
                     return zzas.zzb(zzbaVar2, (zzyx) zzf.zzk());
                 }
                 zzhkVar = (zzhk) this.zza;
-                c8.z.b(obj);
+                qse.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
             obj = ((zzhg) obj).zza(zzhkVar, this);
-            if (obj == aVar) {
-                return aVar;
-            }
-            zzba zzbaVar22 = this.zzd;
-            zzyu zzf3 = zzyx.zzf();
-            zzyv zzf22 = zzyw.zzf();
-            zzf22.zzw((String) obj);
-            zzf3.zzf((zzyw) zzf22.zzk());
-            return zzas.zzb(zzbaVar22, (zzyx) zzf3.zzk());
-        } catch (Exception e10) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e10.getMessage(), e10);
+        } catch (Exception e) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), e);
         }
     }
 }

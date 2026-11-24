@@ -11,8 +11,8 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
     public final ArrayList b;
@@ -38,29 +38,29 @@ public class NumberTextView extends View {
     
         if (r22 < r21.f) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x005d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x004d, code lost:
     
         r9 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x005b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x004b, code lost:
     
         r9 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0049, code lost:
     
         if (r22 > r21.f) goto L16;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(int i7, boolean z10) {
-        String sb2;
-        String sb3;
-        boolean z11;
-        float f10;
-        int i10;
+    public final void a(int i, boolean z) {
+        String valueOf;
+        String valueOf2;
+        boolean z2;
+        float f;
+        int i2;
         String str;
-        if (this.f == i7 && z10) {
+        if (this.f == i && z) {
             return;
         }
         ObjectAnimator objectAnimator = this.d;
@@ -75,58 +75,53 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = i5.c.i(this.f, "#");
-            sb3 = i5.c.i(i7, "#");
+            valueOf = de9.k(this.f, "#");
+            valueOf2 = de9.k(i, "#");
         } else {
             Locale locale2 = Locale.US;
-            int i11 = this.f;
-            StringBuilder sb4 = new StringBuilder();
-            sb4.append(i11);
-            sb2 = sb4.toString();
-            StringBuilder sb5 = new StringBuilder();
-            sb5.append(i7);
-            sb3 = sb5.toString();
+            valueOf = String.valueOf(this.f);
+            valueOf2 = String.valueOf(i);
         }
         TextPaint textPaint = this.c;
-        this.r = textPaint.measureText(sb3);
-        float measureText = textPaint.measureText(sb2);
+        this.r = textPaint.measureText(valueOf2);
+        float measureText = textPaint.measureText(valueOf);
         this.s = measureText;
-        boolean z12 = this.n && this.r != measureText;
-        this.f = i7;
-        float f11 = 0.0f;
+        boolean z3 = this.n && this.r != measureText;
+        this.f = i;
+        float f2 = 0.0f;
         this.e = 0.0f;
-        int i12 = 0;
-        while (i12 < sb3.length()) {
-            int i13 = i12 + 1;
-            String substring = sb3.substring(i12, i13);
-            String substring2 = (arrayList.isEmpty() || i12 >= sb2.length()) ? null : sb2.substring(i12, i13);
-            if (z12 || substring2 == null || !substring2.equals(substring)) {
-                if (z12 && substring2 == null) {
-                    i10 = i13;
-                    f10 = f11;
+        int i3 = 0;
+        while (i3 < valueOf2.length()) {
+            int i4 = i3 + 1;
+            String substring = valueOf2.substring(i3, i4);
+            String substring2 = (arrayList.isEmpty() || i3 >= valueOf.length()) ? null : valueOf.substring(i3, i4);
+            if (z3 || substring2 == null || !substring2.equals(substring)) {
+                if (z3 && substring2 == null) {
+                    i2 = i4;
+                    f = f2;
                     str = substring;
                     arrayList.add(new StaticLayout("", textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                 } else {
-                    f10 = f11;
-                    i10 = i13;
+                    f = f2;
+                    i2 = i4;
                     str = substring;
                 }
                 arrayList2.add(new StaticLayout(str, textPaint, (int) Math.ceil(textPaint.measureText(str)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
             } else {
-                arrayList2.add((StaticLayout) arrayList.get(i12));
-                arrayList.set(i12, null);
-                f10 = f11;
-                i10 = i13;
+                arrayList2.add((StaticLayout) arrayList.get(i3));
+                arrayList.set(i3, null);
+                f = f2;
+                i2 = i4;
             }
-            f11 = f10;
-            i12 = i10;
+            f2 = f;
+            i3 = i2;
         }
-        float f12 = f11;
-        if (z10 && !arrayList.isEmpty()) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f12);
+        float f3 = f2;
+        if (z && !arrayList.isEmpty()) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z2 ? -1.0f : 1.0f, f3);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new p60(this, 5));
+            this.d.addListener(new v85(this, (byte) 21));
             this.d.start();
         }
         invalidate();
@@ -146,38 +141,38 @@ public class NumberTextView extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float f10;
-        float f11;
+        float f;
+        float f2;
         ArrayList arrayList = this.a;
         if (arrayList.isEmpty()) {
             return;
         }
         float height = ((StaticLayout) arrayList.get(0)).getHeight();
-        float L = this.h ? org.telegram.messenger.g0.L(4.0f) : height;
+        float L = this.h ? gl.L(4.0f) : height;
         if (this.n) {
-            f10 = (getMeasuredWidth() - this.r) / 2.0f;
-            f11 = ((getMeasuredWidth() - this.s) / 2.0f) - f10;
+            f = (getMeasuredWidth() - this.r) / 2.0f;
+            f2 = ((getMeasuredWidth() - this.s) / 2.0f) - f;
         } else {
-            f10 = 0.0f;
-            f11 = 0.0f;
+            f = 0.0f;
+            f2 = 0.0f;
         }
         canvas.save();
-        canvas.translate(getPaddingLeft() + f10, (getMeasuredHeight() - height) / 2.0f);
+        canvas.translate(getPaddingLeft() + f, (getMeasuredHeight() - height) / 2.0f);
         int size = arrayList.size();
         ArrayList arrayList2 = this.b;
         int max = Math.max(size, arrayList2.size());
-        int i7 = 0;
-        while (i7 < max) {
+        int i = 0;
+        while (i < max) {
             canvas.save();
-            StaticLayout staticLayout = i7 < arrayList2.size() ? (StaticLayout) arrayList2.get(i7) : null;
-            StaticLayout staticLayout2 = i7 < arrayList.size() ? (StaticLayout) arrayList.get(i7) : null;
-            float f12 = this.e;
+            StaticLayout staticLayout = i < arrayList2.size() ? (StaticLayout) arrayList2.get(i) : null;
+            StaticLayout staticLayout2 = i < arrayList.size() ? (StaticLayout) arrayList.get(i) : null;
+            float f3 = this.e;
             TextPaint textPaint = this.c;
-            if (f12 > 0.0f) {
+            if (f3 > 0.0f) {
                 if (staticLayout != null) {
-                    textPaint.setAlpha((int) (f12 * 255.0f));
+                    textPaint.setAlpha((int) (f3 * 255.0f));
                     canvas.save();
-                    canvas.translate(f11, (this.e - 1.0f) * L);
+                    canvas.translate(f2, (this.e - 1.0f) * L);
                     staticLayout.draw(canvas);
                     canvas.restore();
                     if (staticLayout2 != null) {
@@ -185,59 +180,59 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(org.telegram.messenger.ks.e4);
+                    textPaint.setAlpha(kk7.d4);
                 }
-            } else if (f12 < 0.0f) {
+            } else if (f3 < 0.0f) {
                 if (staticLayout != null) {
-                    textPaint.setAlpha((int) ((-f12) * 255.0f));
+                    textPaint.setAlpha((int) ((-f3) * 255.0f));
                     canvas.save();
-                    canvas.translate(f11, (this.e + 1.0f) * L);
+                    canvas.translate(f2, (this.e + 1.0f) * L);
                     staticLayout.draw(canvas);
                     canvas.restore();
                 }
                 if (staticLayout2 != null) {
-                    if (i7 == max - 1 || staticLayout != null) {
+                    if (i == max - 1 || staticLayout != null) {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(org.telegram.messenger.ks.e4);
+                        textPaint.setAlpha(kk7.d4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(org.telegram.messenger.ks.e4);
+                textPaint.setAlpha(kk7.d4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);
             }
             canvas.restore();
-            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + org.telegram.messenger.g0.L(1.0f), 0.0f);
+            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + gl.L(1.0f), 0.0f);
             if (staticLayout2 != null && staticLayout != null) {
-                f11 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f11;
+                f2 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f2;
             }
-            i7++;
+            i++;
         }
         canvas.restore();
     }
 
-    public void setCenterAlign(boolean z10) {
-        this.n = z10;
+    public void setCenterAlign(boolean z) {
+        this.n = z;
     }
 
-    public void setProgress(float f10) {
-        if (this.e == f10) {
+    public void setProgress(float f) {
+        if (this.e == f) {
             return;
         }
-        this.e = f10;
+        this.e = f;
         invalidate();
     }
 
-    public void setTextColor(int i7) {
-        this.c.setColor(i7);
+    public void setTextColor(int i) {
+        this.c.setColor(i);
         invalidate();
     }
 
-    public void setTextSize(int i7) {
-        this.c.setTextSize(org.telegram.messenger.g0.L(i7));
+    public void setTextSize(int i) {
+        this.c.setTextSize(gl.L(i));
         this.b.clear();
         this.a.clear();
         a(this.f, false);
@@ -250,6 +245,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(rb0 rb0Var) {
+    public void setOnTextWidthProgressChangedListener(in7 in7Var) {
     }
 }

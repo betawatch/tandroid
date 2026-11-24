@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'zzb' uses e
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzsy {
     public static final zzsy zza;
@@ -51,7 +51,7 @@ public final class zzsy {
         zzk = new zzsy[]{zzsyVar, zzsyVar2, zzsyVar3, zzsyVar4, zzsyVar5, zzsyVar6, zzsyVar7, zzsyVar8, zzsyVar9, zzsyVar10};
     }
 
-    private zzsy(String str, int i7, Class cls, Class cls2, Object obj) {
+    private zzsy(String str, int i, Class cls, Class cls2, Object obj) {
         this.zzl = cls2;
     }
 

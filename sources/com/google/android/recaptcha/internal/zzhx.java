@@ -1,39 +1,31 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzhx extends j implements p {
+final class zzhx extends ccb implements eq4 {
     final /* synthetic */ zzib zza;
     final /* synthetic */ String zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzhx(zzib zzibVar, String str, c cVar) {
-        super(2, cVar);
+    public zzhx(zzib zzibVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zza = zzibVar;
         this.zzb = str;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzhx(this.zza, this.zzb, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzhx(this.zza, this.zzb, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhx) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzhx) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        z.b(obj);
+        qse.b(obj);
         zzib zzibVar = this.zza;
         zzbt zza = zzib.zza(zzibVar);
         String str = this.zzb;
@@ -46,8 +38,8 @@ final class zzhx extends j implements p {
                 return zza2;
             }
             throw new zzcg(zzce.zzk, zzcd.zzS, null, null, 12, null);
-        } catch (Exception e10) {
-            throw new zzcg(zzce.zzk, zzcd.zzR, e10.getMessage(), null, 8, null);
+        } catch (Exception e) {
+            throw new zzcg(zzce.zzk, zzcd.zzR, e.getMessage(), null, 8, null);
         }
     }
 }

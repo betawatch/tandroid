@@ -3,9 +3,8 @@ package com.google.android.gms.tasks;
 import android.app.Activity;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
-import q6.m;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -16,7 +15,7 @@ final class zzw<TResult> extends Task<TResult> {
     private Exception zzf;
 
     private final void zzf() {
-        m.j("Task is not yet complete", this.zzc);
+        fre.j("Task is not yet complete", this.zzc);
     }
 
     private final void zzg() {
@@ -33,12 +32,8 @@ final class zzw<TResult> extends Task<TResult> {
 
     private final void zzi() {
         synchronized (this.zza) {
-            try {
-                if (this.zzc) {
-                    this.zzb.zzb(this);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            if (this.zzc) {
+                this.zzb.zzb(this);
             }
         }
     }
@@ -80,13 +75,19 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> continueWith(Continuation<TResult, TContinuationResult> continuation) {
-        return continueWith(TaskExecutors.MAIN_THREAD, continuation);
+    public final <TContinuationResult> Task<TContinuationResult> continueWith(Executor executor, Continuation<TResult, TContinuationResult> continuation) {
+        zzw zzwVar = new zzw();
+        this.zzb.zza(new zzd(executor, continuation, zzwVar));
+        zzi();
+        return zzwVar;
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Continuation<TResult, Task<TContinuationResult>> continuation) {
-        return continueWithTask(TaskExecutors.MAIN_THREAD, continuation);
+    public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Executor executor, Continuation<TResult, Task<TContinuationResult>> continuation) {
+        zzw zzwVar = new zzw();
+        this.zzb.zza(new zzf(executor, continuation, zzwVar));
+        zzi();
+        return zzwVar;
     }
 
     @Override // com.google.android.gms.tasks.Task
@@ -99,20 +100,20 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final TResult getResult() {
+    public final <X extends Throwable> TResult getResult(Class<X> cls) {
         TResult tresult;
         synchronized (this.zza) {
-            try {
-                zzf();
-                zzh();
-                Exception exc = this.zzf;
-                if (exc != null) {
-                    throw new RuntimeExecutionException(exc);
-                }
-                tresult = (TResult) this.zze;
-            } catch (Throwable th2) {
-                throw th2;
+            zzf();
+            zzh();
+            boolean isInstance = cls.isInstance(this.zzf);
+            Exception exc = this.zzf;
+            if (isInstance) {
+                throw cls.cast(exc);
             }
+            if (exc != null) {
+                throw new RuntimeExecutionException(exc);
+            }
+            tresult = (TResult) this.zze;
         }
         return tresult;
     }
@@ -124,26 +125,23 @@ final class zzw<TResult> extends Task<TResult> {
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isComplete() {
-        boolean z10;
+        boolean z;
         synchronized (this.zza) {
-            z10 = this.zzc;
+            z = this.zzc;
         }
-        return z10;
+        return z;
     }
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isSuccessful() {
-        boolean z10;
+        boolean z;
         synchronized (this.zza) {
-            try {
-                z10 = false;
-                if (this.zzc && !this.zzd && this.zzf == null) {
-                    z10 = true;
-                }
-            } finally {
+            z = false;
+            if (this.zzc && !this.zzd && this.zzf == null) {
+                z = true;
             }
         }
-        return z10;
+        return z;
     }
 
     @Override // com.google.android.gms.tasks.Task
@@ -166,22 +164,18 @@ final class zzw<TResult> extends Task<TResult> {
 
     public final boolean zzb(Object obj) {
         synchronized (this.zza) {
-            try {
-                if (this.zzc) {
-                    return false;
-                }
-                this.zzc = true;
-                this.zze = obj;
-                this.zzb.zzb(this);
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
+            if (this.zzc) {
+                return false;
             }
+            this.zzc = true;
+            this.zze = obj;
+            this.zzb.zzb(this);
+            return true;
         }
     }
 
     public final void zzc(Exception exc) {
-        m.i(exc, "Exception must not be null");
+        fre.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             zzg();
             this.zzc = true;
@@ -191,50 +185,44 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final boolean zzd(Exception exc) {
-        m.i(exc, "Exception must not be null");
+        fre.i(exc, "Exception must not be null");
         synchronized (this.zza) {
-            try {
-                if (this.zzc) {
-                    return false;
-                }
-                this.zzc = true;
-                this.zzf = exc;
-                this.zzb.zzb(this);
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
+            if (this.zzc) {
+                return false;
             }
+            this.zzc = true;
+            this.zzf = exc;
+            this.zzb.zzb(this);
+            return true;
         }
     }
 
     public final boolean zze() {
         synchronized (this.zza) {
-            try {
-                if (this.zzc) {
-                    return false;
-                }
-                this.zzc = true;
-                this.zzd = true;
-                this.zzb.zzb(this);
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
+            if (this.zzc) {
+                return false;
             }
+            this.zzc = true;
+            this.zzd = true;
+            this.zzb.zzb(this);
+            return true;
         }
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> continueWith(Executor executor, Continuation<TResult, TContinuationResult> continuation) {
-        zzw zzwVar = new zzw();
-        this.zzb.zza(new zzd(executor, continuation, zzwVar));
-        zzi();
-        return zzwVar;
+    public final <TContinuationResult> Task<TContinuationResult> continueWith(Continuation<TResult, TContinuationResult> continuation) {
+        return continueWith(TaskExecutors.MAIN_THREAD, continuation);
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Executor executor, Continuation<TResult, Task<TContinuationResult>> continuation) {
+    public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Continuation<TResult, Task<TContinuationResult>> continuation) {
+        return continueWithTask(TaskExecutors.MAIN_THREAD, continuation);
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final <TContinuationResult> Task<TContinuationResult> onSuccessTask(Executor executor, SuccessContinuation<TResult, TContinuationResult> successContinuation) {
         zzw zzwVar = new zzw();
-        this.zzb.zza(new zzf(executor, continuation, zzwVar));
+        this.zzb.zza(new zzp(executor, successContinuation, zzwVar));
         zzi();
         return zzwVar;
     }
@@ -262,14 +250,6 @@ final class zzw<TResult> extends Task<TResult> {
     public final Task<TResult> addOnSuccessListener(OnSuccessListener<? super TResult> onSuccessListener) {
         addOnSuccessListener(TaskExecutors.MAIN_THREAD, onSuccessListener);
         return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> onSuccessTask(Executor executor, SuccessContinuation<TResult, TContinuationResult> successContinuation) {
-        zzw zzwVar = new zzw();
-        this.zzb.zza(new zzp(executor, successContinuation, zzwVar));
-        zzi();
-        return zzwVar;
     }
 
     @Override // com.google.android.gms.tasks.Task
@@ -301,24 +281,16 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final <X extends Throwable> TResult getResult(Class<X> cls) {
+    public final TResult getResult() {
         TResult tresult;
         synchronized (this.zza) {
-            try {
-                zzf();
-                zzh();
-                if (!cls.isInstance(this.zzf)) {
-                    Exception exc = this.zzf;
-                    if (exc == null) {
-                        tresult = (TResult) this.zze;
-                    } else {
-                        throw new RuntimeExecutionException(exc);
-                    }
-                } else {
-                    throw cls.cast(this.zzf);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzf();
+            zzh();
+            Exception exc = this.zzf;
+            if (exc == null) {
+                tresult = (TResult) this.zze;
+            } else {
+                throw new RuntimeExecutionException(exc);
             }
         }
         return tresult;

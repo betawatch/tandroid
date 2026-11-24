@@ -1,41 +1,42 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public final class o5 extends e5 {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class o5 extends j5 {
     public long b;
     public long c;
     public final /* synthetic */ p5 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5(p5 p5Var, j5 j5Var) {
-        super(j5Var);
+    public o5(p5 p5Var, n5 n5Var) {
+        super(n5Var);
         this.d = p5Var;
-        this.b = p5Var.s;
-        long j3 = p5Var.t;
-        this.c = j3 < 0 ? Long.MAX_VALUE : j3;
+        this.b = p5Var.l;
+        long j = p5Var.m;
+        this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j3) {
-        this.a.o(t3.W(j3, this.d.s, this.c));
-    }
-
-    @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
-        long j10 = this.b;
-        if (j10 == 0) {
-            long j11 = this.c;
-            if (j11 > 0) {
-                this.c = j11 - 1;
-                this.a.accept(j3);
-                return;
-            }
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        long j = this.b;
+        if (j != 0) {
+            this.b = j - 1;
             return;
         }
-        this.b = j10 - 1;
+        long j2 = this.c;
+        if (j2 > 0) {
+            this.c = j2 - 1;
+            this.a.x((n5) obj);
+        }
     }
 
-    @Override // j$.util.stream.e5, j$.util.stream.j5
+    @Override // j$.util.stream.j5, j$.util.stream.n5
+    public final void n(long j) {
+        this.a.n(w3.y(j, this.d.l, this.c));
+    }
+
+    @Override // j$.util.stream.j5, j$.util.stream.n5
     public final boolean q() {
         return this.c == 0 || this.a.q();
     }

@@ -1,33 +1,76 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import java.util.function.IntPredicate;
+import java.util.function.IntToDoubleFunction;
+import java.util.function.IntToLongFunction;
 
-/* loaded from: classes2.dex */
-public abstract class x0 extends z0 {
-    @Override // j$.util.stream.a
-    public final boolean P0() {
-        return true;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class x0 extends h5 {
+    public final /* synthetic */ byte b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ x0(a aVar, n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final IntStream sequential() {
-        this.h.r = false;
-        return this;
+    @Override // j$.util.stream.l5, j$.util.stream.n5
+    public final void accept(int i) {
+        switch (this.b) {
+            case 0:
+                this.a.accept(i);
+                return;
+            case 1:
+                this.a.accept(i);
+                return;
+            case 2:
+                IntToLongFunction intToLongFunction = null;
+                intToLongFunction.applyAsLong(i);
+                throw null;
+            case 3:
+                IntToDoubleFunction intToDoubleFunction = null;
+                intToDoubleFunction.applyAsDouble(i);
+                throw null;
+            case 4:
+                IntPredicate intPredicate = null;
+                intPredicate.test(i);
+                throw null;
+            default:
+                IntPredicate intPredicate2 = null;
+                intPredicate2.test(i);
+                throw null;
+        }
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final IntStream parallel() {
-        this.h.r = true;
-        return this;
+    @Override // j$.util.stream.h5, j$.util.stream.n5
+    public final void n(long j) {
+        switch (this.b) {
+            case 4:
+                this.a.n(-1L);
+                break;
+            case 5:
+                this.a.n(-1L);
+                break;
+            default:
+                super.n(j);
+                break;
+        }
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new s(this, v6.r, 1);
+    @Override // j$.util.stream.h5, j$.util.stream.n5
+    public final boolean q() {
+        switch (this.b) {
+            case 5:
+                return this.a.q();
+            default:
+                return super.q();
+        }
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ x0(n5 n5Var, byte b) {
+        super(n5Var);
+        this.b = b;
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.app.IntentService;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class NotificationRepeat extends IntentService {
     public static final /* synthetic */ int a = 0;
@@ -14,12 +14,11 @@ public class NotificationRepeat extends IntentService {
 
     @Override // android.app.IntentService
     public final void onHandleIntent(Intent intent) {
-        if (intent == null) {
-            return;
-        }
-        int intExtra = intent.getIntExtra("currentAccount", i10.t0);
-        if (i10.r(intExtra)) {
-            g0.g3(new jg.x(intExtra, 4));
+        if (intent != null) {
+            int intExtra = intent.getIntExtra("currentAccount", y6c.t0);
+            if (y6c.q(intExtra)) {
+                gl.d3(new xv0(intExtra, (byte) 8));
+            }
         }
     }
 }

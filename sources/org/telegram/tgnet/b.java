@@ -1,39 +1,33 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+import android.os.AsyncTask;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ NativeByteBuffer b;
+    public final /* synthetic */ AsyncTask c;
 
-    public /* synthetic */ b(int i7, int i10, int i11, boolean z10) {
-        this.a = i11;
-        this.c = i7;
-        this.b = z10;
-        this.d = i10;
+    public /* synthetic */ b(AsyncTask asyncTask, NativeByteBuffer nativeByteBuffer, byte b) {
+        this.a = b;
+        this.c = asyncTask;
+        this.b = nativeByteBuffer;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        byte b = this.a;
+        NativeByteBuffer nativeByteBuffer = this.b;
+        AsyncTask asyncTask = this.c;
+        switch (b) {
             case 0:
-                ConnectionsManager.lambda$onPremiumFloodWait$24(this.c, this.b, this.d);
-                break;
-            case 1:
-                ConnectionsManager.lambda$onPremiumFloodWait$23(this.b, this.c, this.d);
+                ((ConnectionsManager.GoogleDnsLoadTask) asyncTask).lambda$onPostExecute$1(nativeByteBuffer);
                 break;
             default:
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$17(this.c, this.b, this.d);
+                ((ConnectionsManager.MozillaDnsLoadTask) asyncTask).lambda$onPostExecute$1(nativeByteBuffer);
                 break;
         }
-    }
-
-    public /* synthetic */ b(boolean z10, int i7, int i10) {
-        this.a = 1;
-        this.b = z10;
-        this.c = i7;
-        this.d = i10;
     }
 }

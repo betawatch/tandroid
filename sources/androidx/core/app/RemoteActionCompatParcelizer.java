@@ -4,65 +4,62 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
-import b5.b;
-import b5.c;
-import b5.d;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class RemoteActionCompatParcelizer {
-    public static RemoteActionCompat read(b bVar) {
+    public static RemoteActionCompat read(y9c y9cVar) {
         RemoteActionCompat remoteActionCompat = new RemoteActionCompat();
-        d dVar = remoteActionCompat.a;
-        boolean z10 = true;
-        if (bVar.e(1)) {
-            dVar = bVar.h();
+        aac aacVar = remoteActionCompat.a;
+        boolean z = true;
+        if (y9cVar.e(1)) {
+            aacVar = y9cVar.h();
         }
-        remoteActionCompat.a = (IconCompat) dVar;
+        remoteActionCompat.a = (IconCompat) aacVar;
         CharSequence charSequence = remoteActionCompat.b;
-        if (bVar.e(2)) {
-            charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((c) bVar).e);
+        if (y9cVar.e(2)) {
+            charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((z9c) y9cVar).e);
         }
         remoteActionCompat.b = charSequence;
         CharSequence charSequence2 = remoteActionCompat.c;
-        if (bVar.e(3)) {
-            charSequence2 = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((c) bVar).e);
+        if (y9cVar.e(3)) {
+            charSequence2 = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((z9c) y9cVar).e);
         }
         remoteActionCompat.c = charSequence2;
-        remoteActionCompat.d = (PendingIntent) bVar.g(remoteActionCompat.d, 4);
-        boolean z11 = remoteActionCompat.e;
-        if (bVar.e(5)) {
-            z11 = ((c) bVar).e.readInt() != 0;
+        remoteActionCompat.d = (PendingIntent) y9cVar.g(remoteActionCompat.d, 4);
+        boolean z2 = remoteActionCompat.e;
+        if (y9cVar.e(5)) {
+            z2 = ((z9c) y9cVar).e.readInt() != 0;
         }
-        remoteActionCompat.e = z11;
-        boolean z12 = remoteActionCompat.f;
-        if (!bVar.e(6)) {
-            z10 = z12;
-        } else if (((c) bVar).e.readInt() == 0) {
-            z10 = false;
+        remoteActionCompat.e = z2;
+        boolean z3 = remoteActionCompat.f;
+        if (!y9cVar.e(6)) {
+            z = z3;
+        } else if (((z9c) y9cVar).e.readInt() == 0) {
+            z = false;
         }
-        remoteActionCompat.f = z10;
+        remoteActionCompat.f = z;
         return remoteActionCompat;
     }
 
-    public static void write(RemoteActionCompat remoteActionCompat, b bVar) {
-        bVar.getClass();
+    public static void write(RemoteActionCompat remoteActionCompat, y9c y9cVar) {
+        y9cVar.getClass();
         IconCompat iconCompat = remoteActionCompat.a;
-        bVar.i(1);
-        bVar.l(iconCompat);
+        y9cVar.i(1);
+        y9cVar.l(iconCompat);
         CharSequence charSequence = remoteActionCompat.b;
-        bVar.i(2);
-        Parcel parcel = ((c) bVar).e;
+        y9cVar.i(2);
+        Parcel parcel = ((z9c) y9cVar).e;
         TextUtils.writeToParcel(charSequence, parcel, 0);
         CharSequence charSequence2 = remoteActionCompat.c;
-        bVar.i(3);
+        y9cVar.i(3);
         TextUtils.writeToParcel(charSequence2, parcel, 0);
-        bVar.k(remoteActionCompat.d, 4);
-        boolean z10 = remoteActionCompat.e;
-        bVar.i(5);
-        parcel.writeInt(z10 ? 1 : 0);
-        boolean z11 = remoteActionCompat.f;
-        bVar.i(6);
-        parcel.writeInt(z11 ? 1 : 0);
+        y9cVar.k(remoteActionCompat.d, 4);
+        boolean z = remoteActionCompat.e;
+        y9cVar.i(5);
+        parcel.writeInt(z ? 1 : 0);
+        boolean z2 = remoteActionCompat.f;
+        y9cVar.i(6);
+        parcel.writeInt(z2 ? 1 : 0);
     }
 }

@@ -2,19 +2,16 @@ package org.telegram.utils.recorder.audio;
 
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
-import wg.p;
-import yi.h;
-import yi.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ c(int i7, Object obj, Object obj2) {
-        this.a = i7;
+    public /* synthetic */ c(Object obj, Object obj2, byte b) {
+        this.a = b;
         this.b = obj;
         this.c = obj2;
     }
@@ -48,33 +45,28 @@ public final /* synthetic */ class c implements Runnable {
                             long d = dVar.t.d();
                             dVar.x = elapsedRealtime;
                             if (d >= 0) {
-                                ac.e eVar = dVar.g;
-                                ((j) eVar.c).a((h) eVar.b, d);
+                                m20 m20Var = dVar.g;
+                                ((h30) m20Var.c).a((f30) m20Var.b, d);
                             }
                         }
                     }
-                } catch (Throwable th2) {
+                } finally {
                     try {
-                        if (dVar.v == null) {
-                            dVar.f.a("encoding failed", th2);
-                            dVar.v = d.a(th2);
-                            dVar.n = true;
-                        }
+                        return;
                     } finally {
-                        dVar.c(byteBuffer);
                     }
                 }
                 return;
             default:
-                j jVar = (j) this.b;
-                h hVar = (h) this.c;
+                h30 h30Var = (h30) this.b;
+                f30 f30Var = (f30) this.c;
                 try {
-                    bArr = AudioRecorderNative.e(hVar.b.getAbsolutePath());
-                } catch (Throwable th3) {
-                    jVar.h.a("waveform extraction failed", th3);
+                    bArr = AudioRecorderNative.e(f30Var.b.getAbsolutePath());
+                } catch (Throwable th) {
+                    h30Var.h.a("waveform extraction failed", th);
                     bArr = null;
                 }
-                jVar.i.post(new p(jVar, hVar, bArr, 6));
+                h30Var.i.post(new nn6(h30Var, f30Var, bArr, (byte) 11));
                 return;
         }
     }

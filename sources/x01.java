@@ -1,0 +1,12 @@
+// default package
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public final class x01 extends y46 {
+    public char g;
+
+    @Override // y46, tg6
+    public final void a(ild ildVar) {
+        ildVar.b(this);
+    }
+}

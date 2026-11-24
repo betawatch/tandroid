@@ -1,0 +1,111 @@
+// default package
+
+import android.content.Context;
+import org.telegram.ui.ContactsActivity;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class ot2 extends tt2 {
+    public final /* synthetic */ ContactsActivity P;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ot2(ContactsActivity contactsActivity, Context context, int i, boolean z, vf6 vf6Var, int i2) {
+        super(context, i, z, vf6Var, i2);
+        this.P = contactsActivity;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005a  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
+    @Override // j39
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int R() {
+        int size;
+        boolean z;
+        boolean z2;
+        xha xhaVar;
+        boolean z3 = false;
+        this.J = false;
+        byte b = this.G;
+        int i = this.r;
+        int i2 = this.w;
+        int i3 = 2;
+        if (b != 2) {
+            size = (i2 == 2 ? qu2.r(i).k0 : qu2.r(i).i0).size();
+            if (size == 0) {
+                this.J = true;
+            }
+            if (i2 == 0) {
+                size++;
+            }
+            z = this.F;
+            if (z) {
+                size++;
+            }
+            boolean isEmpty = qu2.r(i).b0.isEmpty();
+            this.K = !isEmpty;
+            z2 = !this.J && this.x && !z && i2 == 0;
+            this.L = z2;
+            if (z2) {
+                i3 = size;
+            } else if (isEmpty) {
+                i3 = 1;
+            }
+            ContactsActivity contactsActivity = this.P;
+            contactsActivity.e0();
+            xhaVar = contactsActivity.n;
+            if (xhaVar != null) {
+                ot2 ot2Var = contactsActivity.b;
+                if (ot2Var != null && !ot2Var.J) {
+                    z3 = true;
+                }
+                xhaVar.Y(z3, true);
+            }
+            contactsActivity.f0();
+            return i3;
+        }
+        this.J = this.E.isEmpty();
+        size = 1;
+        if (i2 == 0) {
+        }
+        z = this.F;
+        if (z) {
+        }
+        boolean isEmpty2 = qu2.r(i).b0.isEmpty();
+        this.K = !isEmpty2;
+        if (this.J) {
+        }
+        this.L = z2;
+        if (z2) {
+        }
+        ContactsActivity contactsActivity2 = this.P;
+        contactsActivity2.e0();
+        xhaVar = contactsActivity2.n;
+        if (xhaVar != null) {
+        }
+        contactsActivity2.f0();
+        return i3;
+    }
+
+    @Override // j39, w39
+    public final void f() {
+        X(false);
+        ContactsActivity contactsActivity = this.P;
+        o39 o39Var = contactsActivity.d;
+        if (o39Var == null || o39Var.getAdapter() != this) {
+            return;
+        }
+        int b = b();
+        boolean z = contactsActivity.G;
+        o39 o39Var2 = contactsActivity.d;
+        if (z) {
+            o39Var2.setFastScrollVisible(b != 2);
+        } else {
+            o39Var2.setFastScrollVisible(b != 0);
+        }
+    }
+}

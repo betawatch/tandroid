@@ -4,9 +4,9 @@ import java.nio.ByteBuffer;
 import java.util.List;
 import org.telegram.messenger.video.HevcDecoderConfigurationRecord;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class HevcConfigurationBox extends com.googlecode.mp4parser.a {
+public class HevcConfigurationBox extends y1 {
     public static final String TYPE = "hvcC";
     private HevcDecoderConfigurationRecord hevcDecoderConfigurationRecord;
 
@@ -15,7 +15,7 @@ public class HevcConfigurationBox extends com.googlecode.mp4parser.a {
         this.hevcDecoderConfigurationRecord = new HevcDecoderConfigurationRecord();
     }
 
-    @Override // com.googlecode.mp4parser.a
+    @Override // y1
     public void _parseDetails(ByteBuffer byteBuffer) {
         this.hevcDecoderConfigurationRecord.parse(byteBuffer);
     }
@@ -60,12 +60,12 @@ public class HevcConfigurationBox extends com.googlecode.mp4parser.a {
         return this.hevcDecoderConfigurationRecord.constantFrameRate;
     }
 
-    @Override // com.googlecode.mp4parser.a
+    @Override // y1
     public void getContent(ByteBuffer byteBuffer) {
         this.hevcDecoderConfigurationRecord.write(byteBuffer);
     }
 
-    @Override // com.googlecode.mp4parser.a
+    @Override // y1
     public long getContentSize() {
         return this.hevcDecoderConfigurationRecord.getSize();
     }

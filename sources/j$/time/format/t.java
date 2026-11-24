@@ -7,7 +7,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class t {
     public final Map a;
 
@@ -20,9 +21,9 @@ public final class t {
             for (Map.Entry entry2 : ((Map) entry.getValue()).entrySet()) {
                 String str = (String) entry2.getValue();
                 String str2 = (String) entry2.getValue();
-                Long l10 = (Long) entry2.getKey();
+                Long l = (Long) entry2.getKey();
                 ConcurrentHashMap concurrentHashMap = u.a;
-                hashMap2.put(str, new AbstractMap.SimpleImmutableEntry(str2, l10));
+                hashMap2.put(str, new AbstractMap.SimpleImmutableEntry(str2, l));
             }
             ArrayList arrayList2 = new ArrayList(hashMap2.values());
             Collections.sort(arrayList2, u.b);
@@ -33,10 +34,10 @@ public final class t {
         Collections.sort(arrayList, u.b);
     }
 
-    public final String a(long j3, TextStyle textStyle) {
+    public final String a(long j, TextStyle textStyle) {
         Map map = (Map) this.a.get(textStyle);
         if (map != null) {
-            return (String) map.get(Long.valueOf(j3));
+            return (String) map.get(Long.valueOf(j));
         }
         return null;
     }

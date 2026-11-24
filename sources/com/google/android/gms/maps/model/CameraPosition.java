@@ -2,30 +2,25 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j6.k;
 import java.util.Arrays;
-import m6.e;
-import q6.m;
-import r6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class CameraPosition extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<CameraPosition> CREATOR = new e(2);
+public final class CameraPosition extends b4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<CameraPosition> CREATOR = new b1d((byte) 29);
     public final LatLng a;
     public final float b;
     public final float c;
     public final float d;
 
-    public CameraPosition(LatLng latLng, float f10, float f11, float f12) {
-        m.i(latLng, "camera target must not be null.");
-        m.c(f11 >= 0.0f && f11 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f11));
+    public CameraPosition(LatLng latLng, float f, float f2, float f3) {
+        fre.i(latLng, "camera target must not be null.");
+        fre.c(f2 >= 0.0f && f2 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f2));
         this.a = latLng;
-        this.b = f10;
-        this.c = f11 + 0.0f;
-        this.d = (((double) f12) <= 0.0d ? (f12 % 360.0f) + 360.0f : f12) % 360.0f;
+        this.b = f;
+        this.c = f2 + 0.0f;
+        this.d = (((double) f3) <= 0.0d ? (f3 % 360.0f) + 360.0f : f3) % 360.0f;
     }
 
     public final boolean equals(Object obj) {
@@ -44,24 +39,24 @@ public final class CameraPosition extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        k kVar = new k(this);
-        kVar.S(this.a, "target");
-        kVar.S(Float.valueOf(this.b), "zoom");
-        kVar.S(Float.valueOf(this.c), "tilt");
-        kVar.S(Float.valueOf(this.d), "bearing");
-        return kVar.toString();
+        wk4 wk4Var = new wk4(this);
+        wk4Var.a(this.a, "target");
+        wk4Var.a(Float.valueOf(this.b), "zoom");
+        wk4Var.a(Float.valueOf(this.c), "tilt");
+        wk4Var.a(Float.valueOf(this.d), "bearing");
+        return wk4Var.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = cc.r(parcel, 20293);
-        cc.k(parcel, 2, this.a, i7);
-        cc.q(parcel, 3, 4);
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.k(parcel, 2, this.a, i);
+        jte.q(parcel, 3, 4);
         parcel.writeFloat(this.b);
-        cc.q(parcel, 4, 4);
+        jte.q(parcel, 4, 4);
         parcel.writeFloat(this.c);
-        cc.q(parcel, 5, 4);
+        jte.q(parcel, 5, 4);
         parcel.writeFloat(this.d);
-        cc.s(parcel, r10);
+        jte.s(parcel, r);
     }
 }

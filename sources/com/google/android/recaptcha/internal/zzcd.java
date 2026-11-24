@@ -1,8 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.ks;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzcd {
     private final int zzaX;
@@ -92,24 +90,24 @@ public final class zzcd {
     public static final zzcd zzaF = new zzcd(99);
     public static final zzcd zzaG = new zzcd(100);
     public static final zzcd zzaH = new zzcd(101);
-    public static final zzcd zzaI = new zzcd(ks.n1);
-    public static final zzcd zzaJ = new zzcd(ks.o1);
-    public static final zzcd zzaK = new zzcd(ks.p1);
-    public static final zzcd zzaL = new zzcd(ks.q1);
-    public static final zzcd zzaM = new zzcd(ks.r1);
-    public static final zzcd zzaN = new zzcd(ks.s1);
-    public static final zzcd zzaO = new zzcd(ks.t1);
-    public static final zzcd zzaP = new zzcd(ks.u1);
-    public static final zzcd zzaQ = new zzcd(ks.v1);
-    public static final zzcd zzaR = new zzcd(ks.w1);
-    public static final zzcd zzaS = new zzcd(ks.x1);
-    public static final zzcd zzaT = new zzcd(ks.y1);
-    public static final zzcd zzaU = new zzcd(ks.z1);
-    public static final zzcd zzaV = new zzcd(ks.A1);
-    public static final zzcd zzaW = new zzcd(ks.F1);
+    public static final zzcd zzaI = new zzcd(kk7.m1);
+    public static final zzcd zzaJ = new zzcd(kk7.n1);
+    public static final zzcd zzaK = new zzcd(kk7.o1);
+    public static final zzcd zzaL = new zzcd(kk7.p1);
+    public static final zzcd zzaM = new zzcd(kk7.q1);
+    public static final zzcd zzaN = new zzcd(kk7.r1);
+    public static final zzcd zzaO = new zzcd(kk7.s1);
+    public static final zzcd zzaP = new zzcd(kk7.t1);
+    public static final zzcd zzaQ = new zzcd(kk7.u1);
+    public static final zzcd zzaR = new zzcd(kk7.v1);
+    public static final zzcd zzaS = new zzcd(kk7.w1);
+    public static final zzcd zzaT = new zzcd(kk7.x1);
+    public static final zzcd zzaU = new zzcd(kk7.y1);
+    public static final zzcd zzaV = new zzcd(kk7.z1);
+    public static final zzcd zzaW = new zzcd(kk7.E1);
 
-    public zzcd(int i7) {
-        this.zzaX = i7;
+    public zzcd(int i) {
+        this.zzaX = i;
     }
 
     public final int zza() {

@@ -1,31 +1,27 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
-import java.util.function.LongPredicate;
+import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
-public final class o1 extends q1 implements i5 {
-    @Override // java.util.function.Consumer
-    public final /* bridge */ /* synthetic */ void accept(Object obj) {
-        x((Long) obj);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class o1 implements Supplier {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ u1 b;
+
+    public /* synthetic */ o1(u1 u1Var, byte b) {
+        this.a = b;
+        this.b = u1Var;
     }
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
-    }
-
-    @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
-    }
-
-    @Override // j$.util.stream.q1, j$.util.stream.j5
-    public final void accept(long j3) {
-        if (this.a) {
-            return;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return new r1(this.b);
+            case 1:
+                return new q1(this.b);
+            default:
+                return new s1(this.b);
         }
-        LongPredicate longPredicate = null;
-        longPredicate.test(j3);
-        throw null;
     }
 }

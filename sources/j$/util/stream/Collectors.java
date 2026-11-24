@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class Collectors {
     public static final Set a;
     public static final Set b;
@@ -25,27 +26,34 @@ public final class Collectors {
         Collections.unmodifiableSet(EnumSet.of(gVar2));
     }
 
+    public static void a(double[] dArr, double d) {
+        double d2 = d - dArr[1];
+        double d3 = dArr[0];
+        double d4 = d3 + d2;
+        dArr[1] = (d4 - d3) - d2;
+        dArr[0] = d4;
+    }
+
+    public static Collector<CharSequence, ?, String> joining(final CharSequence charSequence) {
+        return new k(new Supplier() { // from class: j$.util.stream.j
+            @Override // java.util.function.Supplier
+            public final Object get() {
+                CharSequence charSequence2 = charSequence;
+                Set set = Collectors.a;
+                return new j$.util.s1(charSequence2);
+            }
+        }, new j$.time.format.a((byte) 20), new j$.time.format.a((byte) 21), new j$.time.format.a((byte) 22), c);
+    }
+
     public static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(Supplier<C> supplier) {
-        return new j(supplier, new j$.time.format.a(10), new j$.time.format.a(11), a);
+        return new k(supplier, new j$.time.format.a((byte) 10), new j$.time.format.a((byte) 11), a);
     }
 
     public static <T> Collector<T, ?, List<T>> toList() {
-        return new j(new j$.time.format.a(12), new j$.time.format.a(13), new j$.time.format.a(18), a);
+        return new k(new j$.time.format.a((byte) 12), new j$.time.format.a((byte) 13), new j$.time.format.a((byte) 18), a);
     }
 
     public static <T> Collector<T, ?, Set<T>> toSet() {
-        return new j(new j$.time.format.a(15), new j$.time.format.a(16), new j$.time.format.a(23), b);
-    }
-
-    public static Collector<CharSequence, ?, String> joining(CharSequence charSequence) {
-        return new j(new j$.time.t(5, charSequence), new j$.time.format.a(20), new j$.time.format.a(21), new j$.time.format.a(22), c);
-    }
-
-    public static void a(double[] dArr, double d) {
-        double d2 = d - dArr[1];
-        double d10 = dArr[0];
-        double d11 = d10 + d2;
-        dArr[1] = (d11 - d10) - d2;
-        dArr[0] = d11;
+        return new k(new j$.time.format.a((byte) 15), new j$.time.format.a((byte) 16), new j$.time.format.a((byte) 23), b);
     }
 }

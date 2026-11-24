@@ -1,98 +1,48 @@
 package j$.time.chrono;
 
-import j$.time.Instant;
-import j$.time.LocalDate;
-import j$.time.ZoneId;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract /* synthetic */ class u {
+    public static final /* synthetic */ int[] a;
 
-/* loaded from: classes2.dex */
-public final class u extends a implements Serializable {
-    public static final u c = new u();
-    private static final long serialVersionUID = 459996390165777884L;
-
-    @Override // j$.time.chrono.k
-    public final String getId() {
-        return "Japanese";
-    }
-
-    @Override // j$.time.chrono.k
-    public final String o() {
-        return "japanese";
-    }
-
-    @Override // j$.time.chrono.k
-    public final b x(j$.time.temporal.l lVar) {
-        if (lVar instanceof w) {
-            return (w) lVar;
+    static {
+        int[] iArr = new int[j$.time.temporal.a.values().length];
+        a = iArr;
+        try {
+            iArr[j$.time.temporal.a.DAY_OF_MONTH.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        return new w(LocalDate.I(lVar));
-    }
-
-    private u() {
-    }
-
-    @Override // j$.time.chrono.k
-    public final l u(int i7) {
-        return x.s(i7);
-    }
-
-    @Override // j$.time.chrono.k
-    public final j$.time.temporal.s s(j$.time.temporal.a aVar) {
-        switch (t.a[aVar.ordinal()]) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-                throw new j$.time.temporal.r("Unsupported field: " + aVar);
-            case 5:
-                x[] xVarArr = x.e;
-                int year = xVarArr[xVarArr.length - 1].b.getYear();
-                int year2 = 1000000000 - xVarArr[xVarArr.length - 1].b.getYear();
-                int year3 = xVarArr[0].b.getYear();
-                int i7 = 1;
-                while (true) {
-                    x[] xVarArr2 = x.e;
-                    if (i7 >= xVarArr2.length) {
-                        return j$.time.temporal.s.f(year2, 999999999 - year);
-                    }
-                    x xVar = xVarArr2[i7];
-                    year2 = Math.min(year2, (xVar.b.getYear() - year3) + 1);
-                    year3 = xVar.b.getYear();
-                    i7++;
-                }
-            case 6:
-                x xVar2 = x.d;
-                long j3 = j$.time.temporal.a.DAY_OF_YEAR.b.c;
-                for (x xVar3 : x.e) {
-                    j3 = Math.min(j3, ((xVar3.b.O() ? 366 : 365) - xVar3.b.L()) + 1);
-                    if (xVar3.p() != null) {
-                        j3 = Math.min(j3, xVar3.p().b.L() - 1);
-                    }
-                }
-                return j$.time.temporal.s.f(j3, j$.time.temporal.a.DAY_OF_YEAR.b.d);
-            case 7:
-                return j$.time.temporal.s.e(w.d.getYear(), 999999999L);
-            case 8:
-                long j10 = x.d.a;
-                x[] xVarArr3 = x.e;
-                return j$.time.temporal.s.e(j10, xVarArr3[xVarArr3.length - 1].a);
-            default:
-                return aVar.b;
+        try {
+            a[j$.time.temporal.a.DAY_OF_YEAR.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-    }
-
-    @Override // j$.time.chrono.k
-    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
-        return j.H(this, instant, zoneId);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    public Object writeReplace() {
-        return new d0((byte) 1, this);
+        try {
+            a[j$.time.temporal.a.YEAR_OF_ERA.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_MONTH.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_YEAR.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_YEAR.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        try {
+            a[j$.time.temporal.a.ERA.ordinal()] = 8;
+        } catch (NoSuchFieldError unused8) {
+        }
+        try {
+            a[j$.time.temporal.a.YEAR.ordinal()] = 9;
+        } catch (NoSuchFieldError unused9) {
+        }
     }
 }

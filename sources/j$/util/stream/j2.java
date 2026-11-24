@@ -1,30 +1,41 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.BinaryOperator;
-import java.util.function.LongFunction;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class j2 implements h2 {
+    public final h2 a;
+    public final h2 b;
+    public final long c;
 
-/* loaded from: classes2.dex */
-public final class j2 extends k2 {
-    public final /* synthetic */ int k;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j2(t3 t3Var, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator, int i7) {
-        super(t3Var, spliterator, longFunction, binaryOperator);
-        this.k = i7;
+    public j2(h2 h2Var, h2 h2Var2) {
+        this.a = h2Var;
+        this.b = h2Var2;
+        this.c = h2Var2.count() + h2Var.count();
     }
 
-    @Override // j$.util.stream.k2, j$.util.stream.d
-    public final d c(Spliterator spliterator) {
-        switch (this.k) {
+    @Override // j$.util.stream.h2
+    public final h2 a(int i) {
+        if (i == 0) {
+            return this.a;
         }
-        return new k2(this, spliterator);
+        if (i == 1) {
+            return this.b;
+        }
+        throw new IndexOutOfBoundsException();
     }
 
-    @Override // j$.util.stream.k2, j$.util.stream.d
-    public final /* bridge */ /* synthetic */ Object a() {
-        switch (this.k) {
-        }
-        return a();
+    @Override // j$.util.stream.h2
+    public final long count() {
+        return this.c;
+    }
+
+    @Override // j$.util.stream.h2
+    public final int h() {
+        return 2;
+    }
+
+    @Override // j$.util.stream.h2
+    public final /* bridge */ /* synthetic */ g2 a(int i) {
+        return (g2) a(i);
     }
 }

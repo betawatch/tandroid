@@ -2,20 +2,27 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class PlaceListMapTemplate implements x0 {
+public final class PlaceListMapTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final Place mAnchor;
     private final Action mHeaderAction;
     private final boolean mIsLoading;
     private final ItemList mItemList;
-    private final d0 mOnContentRefreshDelegate;
+    private final ap7 mOnContentRefreshDelegate;
     private final boolean mShowCurrentLocation;
     private final CarText mTitle;
 
-    public PlaceListMapTemplate(l0 l0Var) {
-        throw null;
+    private PlaceListMapTemplate() {
+        this.mShowCurrentLocation = false;
+        this.mIsLoading = false;
+        this.mTitle = null;
+        this.mItemList = null;
+        this.mHeaderAction = null;
+        this.mActionStrip = null;
+        this.mAnchor = null;
+        this.mOnContentRefreshDelegate = null;
     }
 
     public boolean equals(Object obj) {
@@ -50,7 +57,7 @@ public final class PlaceListMapTemplate implements x0 {
         return this.mItemList;
     }
 
-    public d0 getOnContentRefreshDelegate() {
+    public ap7 getOnContentRefreshDelegate() {
         return this.mOnContentRefreshDelegate;
     }
 
@@ -74,14 +81,7 @@ public final class PlaceListMapTemplate implements x0 {
         return "PlaceListMapTemplate";
     }
 
-    private PlaceListMapTemplate() {
-        this.mShowCurrentLocation = false;
-        this.mIsLoading = false;
-        this.mTitle = null;
-        this.mItemList = null;
-        this.mHeaderAction = null;
-        this.mActionStrip = null;
-        this.mAnchor = null;
-        this.mOnContentRefreshDelegate = null;
+    public PlaceListMapTemplate(kb8 kb8Var) {
+        throw null;
     }
 }

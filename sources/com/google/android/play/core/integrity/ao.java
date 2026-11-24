@@ -1,15 +1,15 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class ao extends IntegrityTokenRequest {
     private final String a;
     private final Long b;
     private final Object c = null;
 
-    public /* synthetic */ ao(String str, Long l10, Object obj, an anVar) {
+    public /* synthetic */ ao(String str, Long l, Object obj, an anVar) {
         this.a = str;
-        this.b = l10;
+        this.b = l;
     }
 
     private static boolean a() {
@@ -22,27 +22,27 @@ final class ao extends IntegrityTokenRequest {
     }
 
     public final boolean equals(Object obj) {
-        boolean z10;
-        Long l10;
+        boolean z;
+        Long l;
         if (obj == this) {
             return true;
         }
         if (obj instanceof IntegrityTokenRequest) {
             IntegrityTokenRequest integrityTokenRequest = (IntegrityTokenRequest) obj;
-            if (this.a.equals(integrityTokenRequest.nonce()) && ((l10 = this.b) != null ? l10.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
-                z10 = true;
-                return ((obj instanceof ao) || !a()) ? z10 : z10;
+            if (this.a.equals(integrityTokenRequest.nonce()) && ((l = this.b) != null ? l.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
+                z = true;
+                return ((obj instanceof ao) || !a()) ? z : z;
             }
         }
-        z10 = false;
+        z = false;
         if (obj instanceof ao) {
         }
     }
 
     public final int hashCode() {
         int hashCode = this.a.hashCode() ^ 1000003;
-        Long l10 = this.b;
-        int hashCode2 = (hashCode * 1000003) ^ (l10 == null ? 0 : l10.hashCode());
+        Long l = this.b;
+        int hashCode2 = (hashCode * 1000003) ^ (l == null ? 0 : l.hashCode());
         return a() ? hashCode2 * 1000003 : hashCode2;
     }
 

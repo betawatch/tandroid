@@ -2,34 +2,32 @@ package com.google.android.play.core.integrity;
 
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d9.c0;
-import d9.g0;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class ai extends c0 {
+final class ai extends n0d {
     final /* synthetic */ aj a;
-    private final g0 b;
+    private final q0d b;
     private final TaskCompletionSource c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ai(aj ajVar, TaskCompletionSource taskCompletionSource) {
         super("com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback");
         this.a = ajVar;
-        this.b = new g0("OnRequestIntegrityTokenCallback");
+        this.b = new q0d("OnRequestIntegrityTokenCallback");
         this.c = taskCompletionSource;
     }
 
-    @Override // d9.d0
+    @Override // n0d
     public final void b(Bundle bundle) {
         k kVar;
         String str;
         this.a.a.d(this.c);
         this.b.b("onRequestIntegrityToken", new Object[0]);
         kVar = this.a.f;
-        com.google.android.gms.common.api.f a10 = kVar.a(bundle);
-        if (a10 != null) {
-            this.c.trySetException(a10);
+        zn a = kVar.a(bundle);
+        if (a != null) {
+            this.c.trySetException(a);
             return;
         }
         String string = bundle.getString("token");
@@ -37,9 +35,9 @@ final class ai extends c0 {
             this.c.trySetException(new IntegrityServiceException(-100, null));
             return;
         }
-        long j3 = bundle.getLong("request.token.sid");
+        long j = bundle.getLong("request.token.sid");
         str = this.a.c;
-        ah ahVar = new ah(this, str, j3);
+        ah ahVar = new ah(this, str, j);
         TaskCompletionSource taskCompletionSource = this.c;
         a aVar = new a();
         aVar.b(string);

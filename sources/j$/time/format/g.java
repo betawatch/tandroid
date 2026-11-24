@@ -4,13 +4,14 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class g extends i {
     public final boolean g;
 
-    public g(j$.time.temporal.o oVar, int i7, int i10, boolean z10, int i11) {
-        super(oVar, i7, i10, x.NOT_NEGATIVE, i11);
-        this.g = z10;
+    public g(j$.time.temporal.o oVar, int i, int i2, boolean z, int i3) {
+        super(oVar, i, i2, x.NOT_NEGATIVE, i3);
+        this.g = z;
     }
 
     @Override // j$.time.format.i
@@ -22,23 +23,23 @@ public final class g extends i {
     }
 
     @Override // j$.time.format.i
-    public final i b(int i7) {
-        return new g(this.a, this.b, this.c, this.g, this.e + i7);
+    public final i b(int i) {
+        return new g(this.a, this.b, this.c, this.g, this.e + i);
     }
 
     @Override // j$.time.format.i, j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
+    public final boolean j(r rVar, StringBuilder sb) {
         j$.time.temporal.o oVar = this.a;
-        Long a10 = rVar.a(oVar);
-        if (a10 == null) {
+        Long a = rVar.a(oVar);
+        if (a == null) {
             return false;
         }
         v vVar = rVar.b.c;
-        long longValue = a10.longValue();
-        j$.time.temporal.s l10 = oVar.l();
-        l10.b(longValue, oVar);
-        BigDecimal valueOf = BigDecimal.valueOf(l10.a);
-        BigDecimal add = BigDecimal.valueOf(l10.d).subtract(valueOf).add(BigDecimal.ONE);
+        long longValue = a.longValue();
+        j$.time.temporal.s range = oVar.range();
+        range.b(longValue, oVar);
+        BigDecimal valueOf = BigDecimal.valueOf(range.a);
+        BigDecimal add = BigDecimal.valueOf(range.d).subtract(valueOf).add(BigDecimal.ONE);
         BigDecimal subtract = BigDecimal.valueOf(longValue).subtract(valueOf);
         RoundingMode roundingMode = RoundingMode.FLOOR;
         BigDecimal divide = subtract.divide(add, 9, roundingMode);
@@ -47,25 +48,25 @@ public final class g extends i {
             bigDecimal = divide.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : divide.stripTrailingZeros();
         }
         int scale = bigDecimal.scale();
-        boolean z10 = this.g;
-        int i7 = this.b;
+        boolean z = this.g;
+        byte b = this.b;
         if (scale != 0) {
-            String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i7), this.c), roundingMode).toPlainString().substring(2);
+            String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), (int) b), (int) this.c), roundingMode).toPlainString().substring(2);
             vVar.getClass();
-            if (z10) {
-                sb2.append('.');
+            if (z) {
+                sb.append('.');
             }
-            sb2.append(substring);
+            sb.append(substring);
             return true;
         }
-        if (i7 > 0) {
-            if (z10) {
+        if (b > 0) {
+            if (z) {
                 vVar.getClass();
-                sb2.append('.');
+                sb.append('.');
             }
-            for (int i10 = 0; i10 < i7; i10++) {
+            for (int i = 0; i < b; i++) {
                 vVar.getClass();
-                sb2.append('0');
+                sb.append('0');
             }
         }
         return true;
@@ -73,6 +74,6 @@ public final class g extends i {
 
     @Override // j$.time.format.i
     public final String toString() {
-        return "Fraction(" + this.a + "," + this.b + "," + this.c + (this.g ? ",DecimalPoint" : "") + ")";
+        return "Fraction(" + this.a + "," + ((int) this.b) + "," + ((int) this.c) + (this.g ? ",DecimalPoint" : "") + ")";
     }
 }

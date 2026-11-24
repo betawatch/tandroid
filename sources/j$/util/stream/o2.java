@@ -1,40 +1,39 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
-/* loaded from: classes2.dex */
-public abstract class o2 extends g2 implements d2 {
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ Object[] g(IntFunction intFunction) {
-        return t3.L(this, intFunction);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class o2 extends r2 implements b2 {
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ h2 e(long j, long j2, IntFunction intFunction) {
+        return w3.t(this, j, j2);
     }
 
-    @Override // j$.util.stream.d2
-    public final void d(Object obj) {
-        ((d2) this.a).d(obj);
-        ((d2) this.b).d(obj);
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void f(Object[] objArr, int i) {
+        w3.n(this, (Double[]) objArr, i);
     }
 
-    @Override // j$.util.stream.d2
-    public final void c(int i7, Object obj) {
-        e2 e2Var = this.a;
-        ((d2) e2Var).c(i7, obj);
-        ((d2) this.b).c(i7 + ((int) ((d2) e2Var).count()), obj);
+    @Override // j$.util.stream.h2
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        w3.q(this, consumer);
     }
 
-    @Override // j$.util.stream.d2
-    public final Object b() {
-        long j3 = this.c;
-        if (j3 >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        Object newArray = newArray((int) j3);
-        c(0, newArray);
-        return newArray;
+    @Override // j$.util.stream.g2
+    public final Object newArray(int i) {
+        return new double[i];
     }
 
-    public final String toString() {
-        long j3 = this.c;
-        return j3 < 32 ? String.format("%s[%s.%s]", getClass().getName(), this.a, this.b) : String.format("%s[size=%d]", getClass().getName(), Long.valueOf(j3));
+    @Override // j$.util.stream.h2
+    public final j$.util.d1 spliterator() {
+        return new f3(this);
+    }
+
+    @Override // j$.util.stream.h2
+    public final Spliterator spliterator() {
+        return new f3(this);
     }
 }

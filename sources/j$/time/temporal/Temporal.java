@@ -2,15 +2,16 @@ package j$.time.temporal;
 
 import j$.time.LocalDate;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface Temporal extends l {
-    Temporal c(long j3, o oVar);
+    Temporal c(long j, o oVar);
 
-    Temporal d(long j3, q qVar);
+    Temporal d(long j, q qVar);
 
     long g(Temporal temporal, q qVar);
 
     Temporal k(LocalDate localDate);
 
-    Temporal w(long j3, ChronoUnit chronoUnit);
+    Temporal u(long j, ChronoUnit chronoUnit);
 }

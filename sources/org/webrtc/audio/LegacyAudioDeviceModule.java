@@ -1,8 +1,8 @@
 package org.webrtc.audio;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class LegacyAudioDeviceModule implements AudioDeviceModule {
     @Override // org.webrtc.audio.AudioDeviceModule
     public long getNativeAudioDeviceModulePointer() {
@@ -10,23 +10,23 @@ public class LegacyAudioDeviceModule implements AudioDeviceModule {
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public void setMicrophoneMute(boolean z10) {
-        org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z10);
+    public void setMicrophoneMute(boolean z) {
+        org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public final /* synthetic */ boolean setNoiseSuppressorEnabled(boolean z10) {
-        return a.a(this, z10);
+    public final boolean setNoiseSuppressorEnabled(boolean z) {
+        return false;
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public final /* synthetic */ boolean setPreferredMicrophoneFieldDimension(float f10) {
-        return a.b(this, f10);
+    public final boolean setPreferredMicrophoneFieldDimension(float f) {
+        return false;
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public void setSpeakerMute(boolean z10) {
-        org.webrtc.voiceengine.WebRtcAudioTrack.setSpeakerMute(z10);
+    public void setSpeakerMute(boolean z) {
+        org.webrtc.voiceengine.WebRtcAudioTrack.setSpeakerMute(z);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule

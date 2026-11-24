@@ -1,28 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzur extends zzsh implements zztt {
-    private zzur() {
-        throw null;
-    }
-
-    public final zzur zze(int i7) {
-        if (!this.zza.zzL()) {
-            zzo();
-        }
-        ((zzut) this.zza).zzf = i7;
-        return this;
-    }
-
-    public final zzur zzf(long j3) {
-        if (!this.zza.zzL()) {
-            zzo();
-        }
-        ((zzut) this.zza).zze = j3;
-        return this;
-    }
-
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -31,5 +11,25 @@ public final class zzur extends zzsh implements zztt {
         super(r1);
         zzut zzutVar;
         zzutVar = zzut.zzb;
+    }
+
+    public final zzur zze(int i) {
+        if (!this.zza.zzL()) {
+            zzo();
+        }
+        ((zzut) this.zza).zzf = i;
+        return this;
+    }
+
+    public final zzur zzf(long j) {
+        if (!this.zza.zzL()) {
+            zzo();
+        }
+        ((zzut) this.zza).zze = j;
+        return this;
+    }
+
+    private zzur() {
+        throw null;
     }
 }

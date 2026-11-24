@@ -1,72 +1,68 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
 import org.telegram.tgnet.TLObject;
-import rd.p;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzhj {
-    public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
-        return pVar.invoke(new zzhk(zzhhVar), cVar);
+    public static final Object zza(zzhh zzhhVar, eq4 eq4Var, fw2 fw2Var) {
+        return eq4Var.invoke(new zzhk(zzhhVar), fw2Var);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(9:0|1|(2:3|(6:5|6|7|(1:(1:10)(2:15|16))(3:17|18|(1:20))|11|12))|22|6|7|(0)(0)|11|12) */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
+    /* JADX WARN: Can't wrap try/catch for region: R(9:0|1|(2:3|(6:5|6|7|(1:(1:10)(2:15|16))(4:17|18|19|(1:21))|11|12))|23|6|7|(0)(0)|11|12) */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0021  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, c cVar) {
+    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, fw2 fw2Var) {
         zzhi zzhiVar;
-        int i7;
-        if (cVar instanceof zzhi) {
-            zzhiVar = (zzhi) cVar;
-            int i10 = zzhiVar.zzb;
-            if ((i10 & TLObject.FLAG_31) != 0) {
-                zzhiVar.zzb = i10 - TLObject.FLAG_31;
+        int i;
+        if (fw2Var instanceof zzhi) {
+            zzhiVar = (zzhi) fw2Var;
+            int i2 = zzhiVar.zzb;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzhiVar.zzb = i2 - TLObject.FLAG_31;
                 Object obj = zzhiVar.zza;
-                Object obj2 = a.a;
-                i7 = zzhiVar.zzb;
-                k kVar = k.a;
-                if (i7 != 0) {
-                    z.b(obj);
+                i = zzhiVar.zzb;
+                g5c g5cVar = g5c.a;
+                if (i != 0) {
+                    qse.b(obj);
                     zzhiVar.zzb = 1;
-                    if (zzhfVar.zza(zzhkVar, zzhiVar) == obj2) {
+                    Object zza = zzhfVar.zza(zzhkVar, zzhiVar);
+                    Object obj2 = bx2.a;
+                    if (zza == obj2) {
                         return obj2;
                     }
                 } else {
-                    if (i7 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    if (i != 1) {
+                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        return null;
                     }
-                    z.b(obj);
+                    qse.b(obj);
                 }
-                return kVar;
+                return g5cVar;
             }
         }
-        zzhiVar = new zzhi(cVar);
+        zzhiVar = new zzhi(fw2Var);
         Object obj3 = zzhiVar.zza;
-        Object obj22 = a.a;
-        i7 = zzhiVar.zzb;
-        k kVar2 = k.a;
-        if (i7 != 0) {
+        i = zzhiVar.zzb;
+        g5c g5cVar2 = g5c.a;
+        if (i != 0) {
         }
-        return kVar2;
+        return g5cVar2;
     }
 
-    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, c cVar) {
-        Object zza = zzhgVar.zza(zzgrVar.zza(), cVar);
-        return zza == a.a ? zza : k.a;
+    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, fw2 fw2Var) {
+        Object zza = zzhgVar.zza(zzgrVar.zza(), fw2Var);
+        return zza == bx2.a ? zza : g5c.a;
     }
 
-    public static final Object zzd(int i7, int i10, p pVar, c cVar) {
-        return new zzhf(i7, pVar, new Integer(i10));
+    public static final Object zzd(int i, int i2, eq4 eq4Var, fw2 fw2Var) {
+        return new zzhf(i, eq4Var, new Integer(i2));
     }
 
-    public static final Object zze(zzhk zzhkVar, int i7, p pVar, c cVar) {
-        return new zzhf(i7, pVar, null).zza(zzhkVar, cVar);
+    public static final Object zze(zzhk zzhkVar, int i, eq4 eq4Var, fw2 fw2Var) {
+        return new zzhf(i, eq4Var, null).zza(zzhkVar, fw2Var);
     }
 }

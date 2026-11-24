@@ -1,22 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
 import java.util.Iterator;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import wd.b;
-import wd.d;
-import zd.a1;
-import zd.b0;
-import zd.y;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfb extends j implements p {
+final class zzfb extends ccb implements eq4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ zzxn zzc;
@@ -24,87 +13,87 @@ final class zzfb extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfb(zzfp zzfpVar, zzxn zzxnVar, long j3, c cVar) {
-        super(2, cVar);
+    public zzfb(zzfp zzfpVar, zzxn zzxnVar, long j, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzb = zzfpVar;
         this.zzc = zzxnVar;
-        this.zzd = j3;
+        this.zzd = j;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzfb zzfbVar = new zzfb(this.zzb, this.zzc, this.zzd, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzfb zzfbVar = new zzfb(this.zzb, this.zzc, this.zzd, fw2Var);
         zzfbVar.zze = obj;
         return zzfbVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfb) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfb) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0051, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x004f, code lost:
     
-        if (((com.google.android.recaptcha.internal.zzhf) r9).zza(r1, r8) == r0) goto L32;
+        if (((com.google.android.recaptcha.internal.zzhf) r9).zza(r0, r8) != r4) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x00ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x00ac, code lost:
     
-        return r0;
+        return r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0045, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0043, code lost:
     
-        if (r9 != r0) goto L17;
+        if (r9 != r4) goto L15;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        b children;
+        n4a children;
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zza;
+        int i = this.zza;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzfp zzfpVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
                 zzfp.zzv(zzxnVar.zzP());
                 zzq zzb = zzfp.zzb(zzfpVar);
-                long j3 = this.zzd;
+                long j = this.zzd;
                 this.zze = zzhkVar;
                 this.zza = 1;
-                obj = zzb.zzc(j3, zzxnVar, this);
+                obj = zzb.zzc(j, zzxnVar, this);
             } else {
-                if (i7 != 1) {
-                    if (i7 == 2) {
-                        z.b(obj);
-                        return k.a;
+                if (i != 1) {
+                    if (i == 2) {
+                        qse.b(obj);
+                        return g5c.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zze;
-                    z.b(obj);
+                    qse.b(obj);
                     throw zzcgVar;
                 }
                 zzhkVar = (zzhk) this.zze;
-                z.b(obj);
+                qse.b(obj);
             }
             this.zze = null;
             this.zza = 2;
-        } catch (zzcg e10) {
+        } catch (zzcg e) {
             zzfp zzfpVar2 = this.zzb;
-            a1 a1Var = (a1) zzfp.zzf(zzfpVar2).zzd().c().get(y.b);
-            if (a1Var != null && (children = a1Var.getChildren()) != null) {
+            bt5 bt5Var = (bt5) zzfp.zzf(zzfpVar2).zzd().c().get(pd5.c);
+            if (bt5Var != null && (children = bt5Var.getChildren()) != null) {
                 Iterator it = children.iterator();
                 while (it.hasNext()) {
-                    ((a1) it.next()).cancel(null);
+                    ((bt5) it.next()).cancel(null);
                 }
             }
-            List a10 = d.a(b0.k(zzfp.zzf(zzfpVar2).zzd().c()).getChildren());
-            this.zze = e10;
+            List a = s4a.a(nle.b(zzfp.zzf(zzfpVar2).zzd().c()).getChildren());
+            this.zze = e;
             this.zza = 3;
-            if (b0.o(a10, this) != aVar) {
-                throw e10;
+            if (xmd.b(a, this) != bx2Var) {
+                throw e;
             }
         }
     }

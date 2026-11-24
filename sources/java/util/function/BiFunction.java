@@ -1,6 +1,7 @@
 package java.util.function;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface BiFunction<T, U, R> {
-    R apply(T t6, U u10);
+    R apply(T t, U u);
 }

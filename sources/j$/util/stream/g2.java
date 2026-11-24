@@ -1,40 +1,19 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public abstract class g2 implements e2 {
-    public final e2 a;
-    public final e2 b;
-    public final long c;
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface g2 extends h2 {
+    @Override // j$.util.stream.h2
+    g2 a(int i);
 
-    @Override // j$.util.stream.e2
-    public final int h() {
-        return 2;
-    }
+    Object b();
 
-    public g2(e2 e2Var, e2 e2Var2) {
-        this.a = e2Var;
-        this.b = e2Var2;
-        this.c = e2Var2.count() + e2Var.count();
-    }
+    void c(int i, Object obj);
 
-    @Override // j$.util.stream.e2
-    public final e2 a(int i7) {
-        if (i7 == 0) {
-            return this.a;
-        }
-        if (i7 == 1) {
-            return this.b;
-        }
-        throw new IndexOutOfBoundsException();
-    }
+    void d(Object obj);
 
-    @Override // j$.util.stream.e2
-    public final long count() {
-        return this.c;
-    }
+    Object newArray(int i);
 
-    @Override // j$.util.stream.e2
-    public /* bridge */ /* synthetic */ d2 a(int i7) {
-        return (d2) a(i7);
-    }
+    @Override // j$.util.stream.h2
+    j$.util.d1 spliterator();
 }

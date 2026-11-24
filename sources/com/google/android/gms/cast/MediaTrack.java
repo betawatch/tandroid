@@ -3,9 +3,7 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import f6.v;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -13,13 +11,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import r6.a;
-import x6.c;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class MediaTrack extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<MediaTrack> CREATOR = new v(16);
+public final class MediaTrack extends b4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<MediaTrack> CREATOR = new igd(17);
     public final long a;
     public final int b;
     public final String c;
@@ -31,14 +27,14 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public String r;
     public final JSONObject s;
 
-    public MediaTrack(long j3, int i7, String str, String str2, String str3, String str4, int i10, List list, JSONObject jSONObject) {
-        this.a = j3;
-        this.b = i7;
+    public MediaTrack(long j, int i, String str, String str2, String str3, String str4, int i2, List list, JSONObject jSONObject) {
+        this.a = j;
+        this.b = i;
         this.c = str;
         this.d = str2;
         this.e = str3;
         this.f = str4;
-        this.h = i10;
+        this.h = i2;
         this.n = list;
         this.s = jSONObject;
     }
@@ -48,12 +44,12 @@ public final class MediaTrack extends a implements ReflectedParcelable {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("trackId", this.a);
-            int i7 = this.b;
-            if (i7 == 1) {
+            int i = this.b;
+            if (i == 1) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "TEXT");
-            } else if (i7 == 2) {
+            } else if (i == 2) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "AUDIO");
-            } else if (i7 == 3) {
+            } else if (i == 3) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "VIDEO");
             }
             String str2 = this.c;
@@ -71,16 +67,16 @@ public final class MediaTrack extends a implements ReflectedParcelable {
             if (!TextUtils.isEmpty(str)) {
                 jSONObject.put("language", str);
             }
-            int i10 = this.h;
-            if (i10 == 1) {
+            int i2 = this.h;
+            if (i2 == 1) {
                 jSONObject.put("subtype", "SUBTITLES");
-            } else if (i10 == 2) {
+            } else if (i2 == 2) {
                 jSONObject.put("subtype", "CAPTIONS");
-            } else if (i10 == 3) {
+            } else if (i2 == 3) {
                 jSONObject.put("subtype", "DESCRIPTIONS");
-            } else if (i10 == 4) {
+            } else if (i2 == 4) {
                 jSONObject.put("subtype", "CHAPTERS");
-            } else if (i10 == 5) {
+            } else if (i2 == 5) {
                 jSONObject.put("subtype", "METADATA");
             }
             List list = this.n;
@@ -105,12 +101,12 @@ public final class MediaTrack extends a implements ReflectedParcelable {
         }
         MediaTrack mediaTrack = (MediaTrack) obj;
         JSONObject jSONObject = this.s;
-        boolean z10 = jSONObject == null;
+        boolean z = jSONObject == null;
         JSONObject jSONObject2 = mediaTrack.s;
-        if (z10 != (jSONObject2 == null)) {
+        if (z != (jSONObject2 == null)) {
             return false;
         }
-        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && j6.a.d(this.c, mediaTrack.c) && j6.a.d(this.d, mediaTrack.d) && j6.a.d(this.e, mediaTrack.e) && j6.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && j6.a.d(this.n, mediaTrack.n);
+        return (jSONObject == null || jSONObject2 == null || vu5.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && id1.d(this.c, mediaTrack.c) && id1.d(this.d, mediaTrack.d) && id1.d(this.e, mediaTrack.e) && id1.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && id1.d(this.n, mediaTrack.n);
     }
 
     public final int hashCode() {
@@ -118,22 +114,22 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
+    public final void writeToParcel(Parcel parcel, int i) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int r10 = cc.r(parcel, 20293);
-        cc.q(parcel, 2, 8);
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        cc.q(parcel, 3, 4);
+        jte.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        cc.l(parcel, 4, this.c);
-        cc.l(parcel, 5, this.d);
-        cc.l(parcel, 6, this.e);
-        cc.l(parcel, 7, this.f);
-        cc.q(parcel, 8, 4);
+        jte.l(parcel, 4, this.c);
+        jte.l(parcel, 5, this.d);
+        jte.l(parcel, 6, this.e);
+        jte.l(parcel, 7, this.f);
+        jte.q(parcel, 8, 4);
         parcel.writeInt(this.h);
-        cc.n(parcel, 9, this.n);
-        cc.l(parcel, 10, this.r);
-        cc.s(parcel, r10);
+        jte.n(parcel, 9, this.n);
+        jte.l(parcel, 10, this.r);
+        jte.s(parcel, r);
     }
 }

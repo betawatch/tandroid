@@ -1,15 +1,11 @@
 package androidx.car.app.model.signin;
 
-import a8.p0;
 import androidx.car.app.model.CarText;
-import androidx.car.app.model.o;
 import j$.util.Objects;
-import u.a;
-import u.c;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class InputSignInMethod implements c {
+public final class InputSignInMethod implements iha {
     public static final int INPUT_TYPE_DEFAULT = 1;
     public static final int INPUT_TYPE_PASSWORD = 2;
     public static final int KEYBOARD_DEFAULT = 1;
@@ -19,13 +15,19 @@ public final class InputSignInMethod implements c {
     private final CarText mDefaultValue;
     private final CarText mErrorMessage;
     private final CarText mHint;
-    private final o mInputCallbackDelegate;
+    private final ao5 mInputCallbackDelegate;
     private final int mInputType;
     private final int mKeyboardType;
     private final boolean mShowKeyboardByDefault;
 
-    public InputSignInMethod(a aVar) {
-        throw null;
+    private InputSignInMethod() {
+        this.mHint = null;
+        this.mDefaultValue = null;
+        this.mInputType = 1;
+        this.mErrorMessage = null;
+        this.mKeyboardType = 1;
+        this.mInputCallbackDelegate = null;
+        this.mShowKeyboardByDefault = false;
     }
 
     public boolean equals(Object obj) {
@@ -51,10 +53,10 @@ public final class InputSignInMethod implements c {
         return this.mHint;
     }
 
-    public o getInputCallbackDelegate() {
-        o oVar = this.mInputCallbackDelegate;
-        Objects.requireNonNull(oVar);
-        return oVar;
+    public ao5 getInputCallbackDelegate() {
+        ao5 ao5Var = this.mInputCallbackDelegate;
+        Objects.requireNonNull(ao5Var);
+        return ao5Var;
     }
 
     public int getInputType() {
@@ -74,19 +76,13 @@ public final class InputSignInMethod implements c {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[inputType:");
-        sb2.append(this.mInputType);
-        sb2.append(", keyboardType: ");
-        return p0.n(this.mKeyboardType, "]", sb2);
+        StringBuilder sb = new StringBuilder("[inputType:");
+        sb.append(this.mInputType);
+        sb.append(", keyboardType: ");
+        return de9.l(sb, this.mKeyboardType, "]");
     }
 
-    private InputSignInMethod() {
-        this.mHint = null;
-        this.mDefaultValue = null;
-        this.mInputType = 1;
-        this.mErrorMessage = null;
-        this.mKeyboardType = 1;
-        this.mInputCallbackDelegate = null;
-        this.mShowKeyboardByDefault = false;
+    public InputSignInMethod(ho5 ho5Var) {
+        throw null;
     }
 }

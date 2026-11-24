@@ -2,22 +2,23 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class ForegroundCarColorSpan extends CarSpan {
     private final CarColor mCarColor;
 
-    private ForegroundCarColorSpan(CarColor carColor) {
-        this.mCarColor = carColor;
+    private ForegroundCarColorSpan() {
+        this.mCarColor = CarColor.DEFAULT;
     }
 
     public static ForegroundCarColorSpan create(CarColor carColor) {
-        t.a aVar = t.a.b;
-        aVar.getClass();
-        if (aVar.a.contains(Integer.valueOf(carColor.getType()))) {
+        jc1 jc1Var = jc1.b;
+        jc1Var.getClass();
+        if (jc1Var.a.contains(Integer.valueOf(carColor.getType()))) {
             return new ForegroundCarColorSpan(carColor);
         }
-        throw new IllegalArgumentException("Car color type is not allowed: " + carColor);
+        w26.i(carColor, "Car color type is not allowed: ");
+        return null;
     }
 
     public boolean equals(Object obj) {
@@ -42,7 +43,7 @@ public final class ForegroundCarColorSpan extends CarSpan {
         return "[color: " + this.mCarColor + "]";
     }
 
-    private ForegroundCarColorSpan() {
-        this.mCarColor = CarColor.DEFAULT;
+    private ForegroundCarColorSpan(CarColor carColor) {
+        this.mCarColor = carColor;
     }
 }

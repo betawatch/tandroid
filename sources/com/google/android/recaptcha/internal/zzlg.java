@@ -1,16 +1,10 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.z;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzlg extends j implements p {
+final class zzlg extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
@@ -18,61 +12,61 @@ final class zzlg extends j implements p {
     final /* synthetic */ String zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlg(zzly zzlyVar, zzhk zzhkVar, String str, c cVar) {
-        super(2, cVar);
+    public zzlg(zzly zzlyVar, zzhk zzhkVar, String str, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzlyVar;
         this.zzd = zzhkVar;
         this.zze = str;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        return new zzlg(this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        return new zzlg(this.zzc, this.zzd, this.zze, fw2Var);
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlg) create((z) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzlg) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0052, code lost:
     
-        if (com.google.android.recaptcha.internal.zzhj.zzb(r1, (com.google.android.recaptcha.internal.zzhf) r6, r5) == r0) goto L18;
+        if (com.google.android.recaptcha.internal.zzhj.zzb(r0, (com.google.android.recaptcha.internal.zzhf) r6, r5) != r4) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0057, code lost:
     
-        return r0;
+        return r4;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0045, code lost:
     
-        if (r6 != r0) goto L13;
+        if (r6 != r4) goto L13;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0028, code lost:
     
-        if (r6 != r0) goto L11;
+        if (r6 != r4) goto L11;
      */
-    @Override // kd.a
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i7 = this.zzb;
-        if (i7 == 0) {
-            c8.z.b(obj);
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
+        if (i == 0) {
+            qse.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
-        } else if (i7 == 1) {
-            c8.z.b(obj);
+        } else if (i == 1) {
+            qse.b(obj);
         } else {
-            if (i7 != 2) {
-                c8.z.b(obj);
-                return k.a;
+            if (i != 2) {
+                qse.b(obj);
+                return g5c.a;
             }
             zzhkVar = (zzhk) this.zza;
-            c8.z.b(obj);
+            qse.b(obj);
             this.zza = null;
             this.zzb = 3;
         }

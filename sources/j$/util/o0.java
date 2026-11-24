@@ -4,7 +4,8 @@ import java.util.PrimitiveIterator;
 import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements PrimitiveIterator.OfLong {
     public final /* synthetic */ p0 a;
 
@@ -25,16 +26,6 @@ public final /* synthetic */ class o0 implements PrimitiveIterator.OfLong {
         this.a.forEachRemaining((Object) longConsumer);
     }
 
-    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.PrimitiveIterator.OfLong
-    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        this.a.forEachRemaining(longConsumer);
-    }
-
     @Override // java.util.Iterator
     public final /* synthetic */ boolean hasNext() {
         return this.a.hasNext();
@@ -49,11 +40,6 @@ public final /* synthetic */ class o0 implements PrimitiveIterator.OfLong {
         return this.a.next();
     }
 
-    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return this.a.next();
-    }
-
     @Override // java.util.PrimitiveIterator.OfLong
     public final /* synthetic */ long nextLong() {
         return this.a.nextLong();
@@ -62,5 +48,20 @@ public final /* synthetic */ class o0 implements PrimitiveIterator.OfLong {
     @Override // java.util.Iterator
     public final /* synthetic */ void remove() {
         this.a.remove();
+    }
+
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfLong
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining(longConsumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return this.a.next();
     }
 }

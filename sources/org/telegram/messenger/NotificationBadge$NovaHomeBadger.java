@@ -5,18 +5,18 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NotificationBadge$NovaHomeBadger implements wr {
-    @Override // org.telegram.messenger.wr
-    public final void a(int i7) {
+public class NotificationBadge$NovaHomeBadger implements yj7 {
+    @Override // yj7
+    public final void a(int i) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("tag", zr.d.getPackageName() + "/" + zr.d.getClassName());
-        contentValues.put("count", Integer.valueOf(i7));
-        t0.b.getContentResolver().insert(Uri.parse("content://com.teslacoilsw.notifier/unread_count"), contentValues);
+        contentValues.put("tag", ak7.d.getPackageName() + "/" + ak7.d.getClassName());
+        contentValues.put("count", Integer.valueOf(i));
+        a.b.getContentResolver().insert(Uri.parse("content://com.teslacoilsw.notifier/unread_count"), contentValues);
     }
 
-    @Override // org.telegram.messenger.wr
+    @Override // yj7
     public final List b() {
         return Arrays.asList("com.teslacoilsw.launcher");
     }

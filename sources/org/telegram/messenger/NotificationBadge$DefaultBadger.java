@@ -4,19 +4,19 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class NotificationBadge$DefaultBadger implements wr {
-    @Override // org.telegram.messenger.wr
-    public final void a(int i7) {
+public class NotificationBadge$DefaultBadger implements yj7 {
+    @Override // yj7
+    public final void a(int i) {
         Intent intent = new Intent("android.intent.action.BADGE_COUNT_UPDATE");
-        intent.putExtra("badge_count", i7);
-        intent.putExtra("badge_count_package_name", zr.d.getPackageName());
-        intent.putExtra("badge_count_class_name", zr.d.getClassName());
-        g0.g3(new s(intent, 4));
+        intent.putExtra("badge_count", i);
+        intent.putExtra("badge_count_package_name", ak7.d.getPackageName());
+        intent.putExtra("badge_count_class_name", ak7.d.getClassName());
+        gl.d3(new hk(intent, (byte) 4));
     }
 
-    @Override // org.telegram.messenger.wr
+    @Override // yj7
     public final List b() {
         return Arrays.asList("fr.neamar.kiss", "com.quaap.launchtime", "com.quaap.launchtime_official");
     }

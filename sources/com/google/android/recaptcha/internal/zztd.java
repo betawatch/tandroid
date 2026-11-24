@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class zztd {
     protected volatile zzts zza;
@@ -17,18 +17,18 @@ public class zztd {
         zztd zztdVar = (zztd) obj;
         zzts zztsVar = this.zza;
         zzts zztsVar2 = zztdVar.zza;
-        if (zztsVar == null && zztsVar2 == null) {
-            return zzb().equals(zztdVar.zzb());
+        if (zztsVar == null) {
+            if (zztsVar2 == null) {
+                return zzb().equals(zztdVar.zzb());
+            }
+            zzd(zztsVar2.zzm());
+            return this.zza.equals(zztsVar2);
         }
-        if (zztsVar != null && zztsVar2 != null) {
+        if (zztsVar2 != null) {
             return zztsVar.equals(zztsVar2);
         }
-        if (zztsVar != null) {
-            zztdVar.zzd(zztsVar.zzm());
-            return zztsVar.equals(zztdVar.zza);
-        }
-        zzd(zztsVar2.zzm());
-        return this.zza.equals(zztsVar2);
+        zztdVar.zzd(zztsVar.zzm());
+        return zztsVar.equals(zztdVar.zza);
     }
 
     public int hashCode() {
@@ -50,19 +50,15 @@ public class zztd {
             return this.zzb;
         }
         synchronized (this) {
-            try {
-                if (this.zzb != null) {
-                    return this.zzb;
-                }
-                if (this.zza == null) {
-                    this.zzb = zzqm.zzb;
-                } else {
-                    this.zzb = this.zza.zzb();
-                }
+            if (this.zzb != null) {
                 return this.zzb;
-            } catch (Throwable th2) {
-                throw th2;
             }
+            if (this.zza == null) {
+                this.zzb = zzqm.zzb;
+            } else {
+                this.zzb = this.zza.zzb();
+            }
+            return this.zzb;
         }
     }
 
@@ -74,20 +70,19 @@ public class zztd {
     }
 
     public final void zzd(zzts zztsVar) {
-        if (this.zza != null) {
-            return;
-        }
-        synchronized (this) {
-            if (this.zza != null) {
-                return;
-            }
-            try {
-                this.zza = zztsVar;
-                this.zzb = zzqm.zzb;
-            } catch (zzsx unused) {
-                this.zzc = true;
-                this.zza = zztsVar;
-                this.zzb = zzqm.zzb;
+        if (this.zza == null) {
+            synchronized (this) {
+                if (this.zza != null) {
+                    return;
+                }
+                try {
+                    this.zza = zztsVar;
+                    this.zzb = zzqm.zzb;
+                } catch (zzsx unused) {
+                    this.zzc = true;
+                    this.zza = zztsVar;
+                    this.zzb = zzqm.zzb;
+                }
             }
         }
     }

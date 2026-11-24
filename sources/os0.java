@@ -1,0 +1,56 @@
+// default package
+
+import android.content.Context;
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public final class os0 extends er7 {
+    public final /* synthetic */ byte M;
+    public final /* synthetic */ Object N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ os0(byte b, Context context, Object obj) {
+        super(context, null);
+        this.M = b;
+        this.N = obj;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        byte b = this.M;
+        Object obj = this.N;
+        switch (b) {
+            case 0:
+                ss0 ss0Var = (ss0) obj;
+                ps0 ps0Var = ss0Var.a0;
+                if (ps0Var != null && !ps0Var.isFocusable()) {
+                    ss0Var.a0.setFocusable(true);
+                    ss0Var.a0.setFocusableInTouchMode(true);
+                    int A1 = ss0Var.e.A1(1);
+                    if (A1 >= 0 && A1 < ss0Var.e.g3.E.size()) {
+                        ss0Var.e.D0();
+                        ss0Var.e.z0(A1);
+                    }
+                    ss0Var.a0.requestFocus();
+                }
+                break;
+            default:
+                zi1 zi1Var = (zi1) obj;
+                q5c q5cVar = zi1Var.X0;
+                ps0 ps0Var2 = zi1Var.O0;
+                if (ps0Var2 != null && !ps0Var2.isFocusable()) {
+                    ps0Var2.setFocusable(true);
+                    ps0Var2.setFocusableInTouchMode(true);
+                    int A12 = q5cVar.A1(3);
+                    if (A12 >= 0 && A12 < q5cVar.g3.E.size()) {
+                        q5cVar.D0();
+                        q5cVar.z0(A12);
+                    }
+                    ps0Var2.requestFocus();
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+}

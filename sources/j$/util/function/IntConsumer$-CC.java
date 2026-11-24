@@ -3,19 +3,20 @@ package j$.util.function;
 import j$.util.Objects;
 import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class IntConsumer$-CC {
     public static IntConsumer $default$andThen(final IntConsumer intConsumer, final IntConsumer intConsumer2) {
         Objects.requireNonNull(intConsumer2);
-        return new IntConsumer() { // from class: j$.util.function.d
-            public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer3) {
-                return IntConsumer$-CC.$default$andThen(this, intConsumer3);
+        return new IntConsumer() { // from class: j$.util.function.e
+            @Override // java.util.function.IntConsumer
+            public final void accept(int i) {
+                IntConsumer.this.accept(i);
+                intConsumer2.accept(i);
             }
 
-            @Override // java.util.function.IntConsumer
-            public final void accept(int i7) {
-                IntConsumer.this.accept(i7);
-                intConsumer2.accept(i7);
+            public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer3) {
+                return IntConsumer$-CC.$default$andThen(this, intConsumer3);
             }
         };
     }

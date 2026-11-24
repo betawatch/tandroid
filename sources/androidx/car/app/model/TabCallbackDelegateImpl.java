@@ -5,16 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.ITabCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public class TabCallbackDelegateImpl implements t0 {
+public class TabCallbackDelegateImpl implements aeb {
     private final ITabCallback mStubCallback;
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class TabCallbackStub extends ITabCallback.Stub {
-        private final w0 mCallback;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    static class TabCallbackStub extends ITabCallback.Stub {
+        private final deb mCallback;
 
-        public TabCallbackStub(w0 w0Var) {
+        public TabCallbackStub(deb debVar) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -24,25 +25,25 @@ public class TabCallbackDelegateImpl implements t0 {
 
         @Override // androidx.car.app.model.ITabCallback
         public void onTabSelected(String str, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onTabSelected", new p(this, str, 2));
+            androidx.car.app.utils.e.c(iOnDoneCallback, "onTabSelected", new c(this, str, (byte) 2));
         }
     }
 
-    private TabCallbackDelegateImpl(w0 w0Var) {
-        this.mStubCallback = new TabCallbackStub(w0Var);
+    private TabCallbackDelegateImpl(deb debVar) {
+        this.mStubCallback = new TabCallbackStub(debVar);
     }
 
-    public static t0 create(w0 w0Var) {
-        return new TabCallbackDelegateImpl(w0Var);
+    public static aeb create(deb debVar) {
+        return new TabCallbackDelegateImpl(debVar);
     }
 
-    public void sendTabSelected(String str, androidx.car.app.k kVar) {
+    public void sendTabSelected(String str, cp7 cp7Var) {
         try {
             ITabCallback iTabCallback = this.mStubCallback;
             Objects.requireNonNull(iTabCallback);
-            iTabCallback.onTabSelected(str, androidx.car.app.utils.g.a());
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+            iTabCallback.onTabSelected(str, androidx.car.app.utils.e.a());
+        } catch (RemoteException e) {
+            sdb.b(e);
         }
     }
 

@@ -3,9 +3,11 @@ package j$.util;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public interface Spliterator<T> {
 
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public final /* synthetic */ class Wrapper implements java.util.Spliterator {
         public /* synthetic */ Wrapper() {
         }
@@ -51,8 +53,8 @@ public interface Spliterator<T> {
         }
 
         @Override // java.util.Spliterator
-        public final /* synthetic */ boolean hasCharacteristics(int i7) {
-            return Spliterator.this.hasCharacteristics(i7);
+        public final /* synthetic */ boolean hasCharacteristics(int i) {
+            return Spliterator.this.hasCharacteristics(i);
         }
 
         public final /* synthetic */ int hashCode() {
@@ -80,7 +82,7 @@ public interface Spliterator<T> {
 
     long getExactSizeIfKnown();
 
-    boolean hasCharacteristics(int i7);
+    boolean hasCharacteristics(int i);
 
     boolean tryAdvance(Consumer consumer);
 

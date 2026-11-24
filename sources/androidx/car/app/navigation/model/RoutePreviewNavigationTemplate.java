@@ -5,12 +5,11 @@ import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
-import androidx.car.app.model.x0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class RoutePreviewNavigationTemplate implements x0 {
+public final class RoutePreviewNavigationTemplate implements ogb {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
 
@@ -20,13 +19,21 @@ public final class RoutePreviewNavigationTemplate implements x0 {
     private final ItemList mItemList;
     private final ActionStrip mMapActionStrip;
     private final Action mNavigateAction;
-    private final g mPanModeDelegate;
+    private final pu7 mPanModeDelegate;
 
     @Deprecated
     private final CarText mTitle;
 
-    public RoutePreviewNavigationTemplate(k kVar) {
-        throw null;
+    private RoutePreviewNavigationTemplate() {
+        this.mTitle = null;
+        this.mIsLoading = false;
+        this.mNavigateAction = null;
+        this.mItemList = null;
+        this.mHeader = null;
+        this.mHeaderAction = null;
+        this.mActionStrip = null;
+        this.mMapActionStrip = null;
+        this.mPanModeDelegate = null;
     }
 
     public boolean equals(Object obj) {
@@ -70,7 +77,7 @@ public final class RoutePreviewNavigationTemplate implements x0 {
         return this.mNavigateAction;
     }
 
-    public g getPanModeDelegate() {
+    public pu7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -91,15 +98,7 @@ public final class RoutePreviewNavigationTemplate implements x0 {
         return "RoutePreviewNavigationTemplate";
     }
 
-    private RoutePreviewNavigationTemplate() {
-        this.mTitle = null;
-        this.mIsLoading = false;
-        this.mNavigateAction = null;
-        this.mItemList = null;
-        this.mHeader = null;
-        this.mHeaderAction = null;
-        this.mActionStrip = null;
-        this.mMapActionStrip = null;
-        this.mPanModeDelegate = null;
+    public RoutePreviewNavigationTemplate(cm9 cm9Var) {
+        throw null;
     }
 }

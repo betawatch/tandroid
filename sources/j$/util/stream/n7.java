@@ -1,27 +1,121 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
-/* loaded from: classes2.dex */
-public final class n7 extends o7 implements j$.util.a1 {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.j(this, consumer);
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class n7 implements l5 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ IntConsumer b;
+
+    public /* synthetic */ n7(IntConsumer intConsumer, byte b) {
+        this.a = b;
+        this.b = intConsumer;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.A(this, consumer);
+    @Override // j$.util.stream.l5, j$.util.stream.n5
+    public final void accept(int i) {
+        byte b = this.a;
+        IntConsumer intConsumer = this.b;
+        switch (b) {
+            case 0:
+                intConsumer.accept(i);
+                break;
+            default:
+                ((t6) intConsumer).accept(i);
+                break;
+        }
     }
 
-    @Override // j$.util.stream.q7
-    public final Spliterator a(Spliterator spliterator, long j3, long j10, long j11, long j12) {
-        return new n7((j$.util.a1) spliterator, j3, j10, j11, j12);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.o7
-    public final Object b() {
-        return new b2(1);
+    @Override // j$.util.stream.n5
+    public final void end() {
+        byte b = this.a;
+    }
+
+    @Override // j$.util.stream.n5
+    public final void n(long j) {
+        byte b = this.a;
+    }
+
+    @Override // j$.util.stream.l5
+    public final /* synthetic */ void o(Integer num) {
+        switch (this.a) {
+            case 0:
+                w3.g(this, num);
+                break;
+            default:
+                w3.g(this, num);
+                break;
+        }
+    }
+
+    @Override // j$.util.stream.n5
+    public final boolean q() {
+        byte b = this.a;
+        return false;
+    }
+
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        switch (this.a) {
+        }
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
+    }
+
+    @Override // j$.util.stream.n5, j$.util.stream.k5, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        switch (this.a) {
+            case 0:
+                w3.d();
+                throw null;
+            default:
+                w3.d();
+                throw null;
+        }
+    }
+
+    @Override // j$.util.stream.n5
+    public final /* synthetic */ void accept(long j) {
+        switch (this.a) {
+            case 0:
+                w3.l();
+                throw null;
+            default:
+                w3.l();
+                throw null;
+        }
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        switch (this.a) {
+            case 0:
+                o((Integer) obj);
+                break;
+            default:
+                o((Integer) obj);
+                break;
+        }
+    }
+
+    private final void a(long j) {
+    }
+
+    private final void b(long j) {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

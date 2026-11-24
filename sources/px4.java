@@ -1,0 +1,39 @@
+// default package
+
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes2.dex */
+public abstract class px4 extends FrameLayout {
+    public final LinearLayout a;
+    public float b;
+    public final Rect c;
+    public final Rect d;
+    public final Paint e;
+
+    public px4(Context context) {
+        super(context);
+        this.c = new Rect();
+        this.d = new Rect();
+        this.e = new Paint(1);
+        setPadding(gl.L(8.0f), gl.L(8.0f), gl.L(8.0f), gl.L(8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setOrientation(0);
+        addView(linearLayout, nme.c(-1.0f, -1));
+    }
+
+    public void setLensVisibility(float f) {
+        this.b = f;
+        int L = gl.L(f * 7.0f);
+        Rect rect = this.c;
+        Rect rect2 = this.d;
+        rect2.set(rect);
+        int i = -L;
+        rect2.inset(i, i);
+    }
+}

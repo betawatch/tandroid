@@ -12,9 +12,8 @@ import android.util.Base64;
 import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
-import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
     public static String a(String str) {
@@ -22,12 +21,12 @@ public class MrzRecognizer {
             return null;
         }
         char[] charArray = str.toCharArray();
-        boolean z10 = true;
-        for (int i7 = 0; i7 < charArray.length; i7++) {
-            if (z10 || !Character.isLetter(charArray[i7])) {
-                z10 = charArray[i7] == ' ';
+        boolean z = true;
+        for (int i = 0; i < charArray.length; i++) {
+            if (z || !Character.isLetter(charArray[i])) {
+                z = charArray[i] == ' ';
             } else {
-                charArray[i7] = Character.toLowerCase(charArray[i7]);
+                charArray[i] = Character.toLowerCase(charArray[i]);
             }
         }
         return new String(charArray);
@@ -36,24 +35,24 @@ public class MrzRecognizer {
     public static int b(String str) {
         char[] charArray = str.toCharArray();
         int[] iArr = {7, 3, 1};
-        int i7 = 0;
-        for (int i10 = 0; i10 < charArray.length; i10++) {
-            char c10 = charArray[i10];
-            i7 += ((c10 < '0' || c10 > '9') ? (c10 < 'A' || c10 > 'Z') ? 0 : c10 - '7' : c10 - '0') * iArr[i10 % 3];
+        int i = 0;
+        for (int i2 = 0; i2 < charArray.length; i2++) {
+            char c = charArray[i2];
+            i += ((c < '0' || c > '9') ? (c < 'A' || c > 'Z') ? 0 : c - '7' : c - '0') * iArr[i2 % 3];
         }
-        return i7 % 10;
+        return i % 10;
     }
 
     private static native Rect[][] binarizeAndFindCharacters(Bitmap bitmap, Bitmap bitmap2);
 
     public static String c(String str) {
         String[] strArr = {"A", "B", "V", "G", "D", "E", "E", "ZH", "Z", "I", "I", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "KH", "TS", "CH", "SH", "SHCH", "IE", "Y", "", "E", "IU", "IA"};
-        int i7 = 0;
+        int i = 0;
         String str2 = str;
-        while (i7 < 33) {
-            int i10 = i7 + 1;
-            str2 = str2.replace("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".substring(i7, i10), strArr[i7]);
-            i7 = i10;
+        while (i < 33) {
+            int i2 = i + 1;
+            str2 = str2.replace("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".substring(i, i2), strArr[i]);
+            i = i2;
         }
         return str2;
     }
@@ -312,139 +311,142 @@ public class MrzRecognizer {
         return hashMap;
     }
 
-    public static int e(char c10) {
-        if (c10 == 'O') {
+    public static int e(char c) {
+        if (c == 'O') {
             return 0;
         }
-        if (c10 == 'I') {
+        if (c == 'I') {
             return 1;
         }
-        if (c10 == 'B') {
+        if (c == 'B') {
             return 8;
         }
-        return c10 - '0';
+        return c - '0';
     }
 
-    public static void f(String str, ur urVar) {
+    public static void f(String str, vf7 vf7Var) {
         try {
             int parseInt = Integer.parseInt(str.substring(0, 2));
-            urVar.i = parseInt;
-            urVar.i = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? urVar.i + 2000 : urVar.i + 1900;
-            urVar.j = Integer.parseInt(str.substring(2, 4));
-            urVar.k = Integer.parseInt(str.substring(4));
+            vf7Var.i = parseInt;
+            int i = (Calendar.getInstance().get(1) % 100) - 5;
+            int i2 = vf7Var.i;
+            vf7Var.i = parseInt < i ? i2 + 2000 : i2 + 1900;
+            vf7Var.j = Integer.parseInt(str.substring(2, 4));
+            vf7Var.k = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
     private static native int[] findCornerPoints(Bitmap bitmap);
 
-    public static void g(String str, ur urVar) {
+    public static void g(String str, vf7 vf7Var) {
         try {
             if ("<<<<<<".equals(str)) {
-                urVar.o = true;
+                vf7Var.o = true;
                 return;
             }
-            urVar.f = Integer.parseInt(str.substring(0, 2)) + 2000;
-            urVar.g = Integer.parseInt(str.substring(2, 4));
-            urVar.h = Integer.parseInt(str.substring(4));
+            vf7Var.f = Integer.parseInt(str.substring(0, 2)) + 2000;
+            vf7Var.g = Integer.parseInt(str.substring(2, 4));
+            vf7Var.h = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
-    public static int h(char c10) {
-        if (c10 != 'F') {
-            return c10 != 'M' ? 0 : 1;
+    public static int h(char c) {
+        if (c != 'F') {
+            return c != 'M' ? 0 : 1;
         }
         return 2;
     }
 
-    public static ur i(Bitmap bitmap) {
-        u8.e eVar;
-        u8.n nVar = new u8.n(new com.google.android.gms.internal.vision.u2(t0.b, new com.google.android.gms.internal.vision.x1()));
+    public static vf7 i(Bitmap bitmap) {
+        pe0 pe0Var;
+        ye0 ye0Var = new ye0(new jbd(a.b, new zre()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        i61 i61Var = new i61(20);
+        int i = 4;
+        xl3 xl3Var = new xl3((byte) 4);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        i61Var.d = bitmap;
-        b7.d dVar = (b7.d) i61Var.b;
-        dVar.a = width;
-        dVar.b = height;
-        SparseArray e12 = nVar.e1(i61Var);
-        int i7 = 0;
-        for (int i10 = 0; i10 < e12.size(); i10++) {
-            u8.m mVar = (u8.m) e12.valueAt(i10);
-            int i11 = mVar.d;
-            int i12 = 6;
-            int i13 = 4;
-            if (i11 == 12 && (eVar = mVar.E) != null) {
-                ur urVar = new ur();
-                urVar.a = "ID".equals(eVar.a) ? 2 : 4;
-                String str = mVar.E.E;
+        xl3Var.d = bitmap;
+        pc0 pc0Var = (pc0) xl3Var.b;
+        pc0Var.a = width;
+        pc0Var.b = height;
+        SparseArray h = ye0Var.h(xl3Var);
+        int i2 = 0;
+        for (int i3 = 0; i3 < h.size(); i3++) {
+            xe0 xe0Var = (xe0) h.valueAt(i3);
+            int i4 = xe0Var.d;
+            int i5 = 6;
+            if (i4 == 12 && (pe0Var = xe0Var.E) != null) {
+                vf7 vf7Var = new vf7();
+                vf7Var.a = "ID".equals(pe0Var.a) ? (byte) 2 : (byte) 4;
+                String str = xe0Var.E.E;
                 str.getClass();
                 if (str.equals("CAN")) {
-                    urVar.l = "CA";
-                    urVar.m = "CA";
+                    vf7Var.l = "CA";
+                    vf7Var.m = "CA";
                 } else if (str.equals("USA")) {
-                    urVar.l = "US";
-                    urVar.m = "US";
+                    vf7Var.l = "US";
+                    vf7Var.m = "US";
                 }
-                urVar.b = a(mVar.E.b);
-                urVar.c = a(mVar.E.d);
-                urVar.d = a(mVar.E.c);
-                u8.e eVar2 = mVar.E;
-                urVar.e = eVar2.s;
-                String str2 = eVar2.e;
+                vf7Var.b = a(xe0Var.E.b);
+                vf7Var.c = a(xe0Var.E.d);
+                vf7Var.d = a(xe0Var.E.c);
+                pe0 pe0Var2 = xe0Var.E;
+                vf7Var.e = pe0Var2.s;
+                String str2 = pe0Var2.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
-                        urVar.n = 1;
+                        vf7Var.n = 1;
                     } else if (str2.equals("2")) {
-                        urVar.n = 2;
+                        vf7Var.n = 2;
                     }
                 }
-                if ("USA".equals(urVar.l)) {
-                    i13 = 0;
-                    i7 = 4;
-                    i12 = 2;
+                if ("USA".equals(vf7Var.l)) {
+                    i5 = 2;
+                } else {
+                    i = 0;
+                    i2 = 4;
                 }
                 try {
-                    String str3 = mVar.E.y;
+                    String str3 = xe0Var.E.y;
                     if (str3 != null && str3.length() == 8) {
-                        urVar.i = Integer.parseInt(mVar.E.y.substring(i7, i7 + 4));
-                        urVar.j = Integer.parseInt(mVar.E.y.substring(i13, i13 + 2));
-                        urVar.k = Integer.parseInt(mVar.E.y.substring(i12, i12 + 2));
+                        vf7Var.i = Integer.parseInt(xe0Var.E.y.substring(i, i + 4));
+                        vf7Var.j = Integer.parseInt(xe0Var.E.y.substring(i2, i2 + 2));
+                        vf7Var.k = Integer.parseInt(xe0Var.E.y.substring(i5, i5 + 2));
                     }
-                    String str4 = mVar.E.x;
+                    String str4 = xe0Var.E.x;
                     if (str4 != null && str4.length() == 8) {
-                        urVar.f = Integer.parseInt(mVar.E.x.substring(i7, i7 + 4));
-                        urVar.g = Integer.parseInt(mVar.E.x.substring(i13, i13 + 2));
-                        urVar.h = Integer.parseInt(mVar.E.x.substring(i12, i12 + 2));
+                        vf7Var.f = Integer.parseInt(xe0Var.E.x.substring(i, i + 4));
+                        vf7Var.g = Integer.parseInt(xe0Var.E.x.substring(i2, i2 + 2));
+                        vf7Var.h = Integer.parseInt(xe0Var.E.x.substring(i5, i5 + 2));
                     }
                 } catch (NumberFormatException unused) {
                 }
-                return urVar;
+                return vf7Var;
             }
-            if (i11 == 7 && mVar.a == 2048 && mVar.b.matches("^[A-Za-z0-9=]+$")) {
+            if (i4 == 7 && xe0Var.a == 2048 && xe0Var.b.matches("^[A-Za-z0-9=]+$")) {
                 try {
-                    String[] split = new String(Base64.decode(mVar.b, 0), "windows-1251").split("\\|");
+                    String[] split = new String(Base64.decode(xe0Var.b, 0), "windows-1251").split("\\|");
                     if (split.length >= 10) {
-                        ur urVar2 = new ur();
-                        urVar2.a = 4;
-                        urVar2.l = "RU";
-                        urVar2.m = "RU";
-                        urVar2.e = split[0];
-                        urVar2.f = Integer.parseInt(split[2].substring(0, 4));
-                        urVar2.g = Integer.parseInt(split[2].substring(4, 6));
-                        urVar2.h = Integer.parseInt(split[2].substring(6));
-                        urVar2.c = a(c(split[3]));
-                        urVar2.b = a(c(split[4]));
-                        urVar2.d = a(c(split[5]));
-                        urVar2.i = Integer.parseInt(split[6].substring(0, 4));
-                        urVar2.j = Integer.parseInt(split[6].substring(4, 6));
-                        urVar2.k = Integer.parseInt(split[6].substring(6));
-                        return urVar2;
+                        vf7 vf7Var2 = new vf7();
+                        vf7Var2.a = (byte) 4;
+                        vf7Var2.l = "RU";
+                        vf7Var2.m = "RU";
+                        vf7Var2.e = split[0];
+                        vf7Var2.f = Integer.parseInt(split[2].substring(0, 4));
+                        vf7Var2.g = Integer.parseInt(split[2].substring(4, 6));
+                        vf7Var2.h = Integer.parseInt(split[2].substring(6));
+                        vf7Var2.c = a(c(split[3]));
+                        vf7Var2.b = a(c(split[4]));
+                        vf7Var2.d = a(c(split[5]));
+                        vf7Var2.i = Integer.parseInt(split[6].substring(0, 4));
+                        vf7Var2.j = Integer.parseInt(split[6].substring(4, 6));
+                        vf7Var2.k = Integer.parseInt(split[6].substring(6));
+                        return vf7Var2;
                     }
                     continue;
                 } catch (Exception unused2) {
@@ -455,33 +457,37 @@ public class MrzRecognizer {
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:177:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0281 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:175:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0772 A[EDGE_INSN: B:180:0x0772->B:176:0x0772 BREAK  A[LOOP:0: B:30:0x01ee->B:178:0x026b], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x023d  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0272 A[EDGE_INSN: B:185:0x0272->B:52:0x0272 BREAK  A[LOOP:0: B:30:0x01ee->B:178:0x026b], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:32:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x02ae  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x02d9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ur j(Bitmap bitmap) {
+    public static vf7 j(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
         int i7;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
         Bitmap createScaledBitmap2;
-        int i16;
-        int i17;
+        int i8;
+        int i9;
         Rect[][] rectArr;
-        int i18;
+        int i10;
         String performRecognition;
-        int i19;
-        char c10;
+        int i11;
         Matrix matrix;
+        Matrix matrix2;
         Bitmap bitmap2 = bitmap;
         if (bitmap2.getWidth() > 512 || bitmap2.getHeight() > 512) {
             max = 512.0f / Math.max(bitmap2.getWidth(), bitmap2.getHeight());
@@ -491,11 +497,11 @@ public class MrzRecognizer {
             max = 1.0f;
         }
         int[] findCornerPoints = findCornerPoints(createScaledBitmap);
-        float f10 = 1.0f / max;
+        float f = 1.0f / max;
         if (findCornerPoints != null) {
             Point point = new Point(findCornerPoints[0], findCornerPoints[1]);
             Point point2 = new Point(findCornerPoints[2], findCornerPoints[3]);
-            i14 = 7;
+            i6 = 7;
             Point point3 = new Point(findCornerPoints[4], findCornerPoints[5]);
             Point point4 = new Point(findCornerPoints[6], findCornerPoints[7]);
             if (point2.x >= point.x) {
@@ -504,272 +510,276 @@ public class MrzRecognizer {
                 point2 = point;
                 point = point2;
             }
-            i11 = 3;
+            i3 = 3;
             double hypot = Math.hypot(point.x - point2.x, point.y - point2.y);
-            i10 = 6;
-            i7 = 1;
+            i2 = 6;
+            i = 1;
             double hypot2 = Math.hypot(point3.x - point4.x, point3.y - point4.y);
             double hypot3 = Math.hypot(point4.x - point2.x, point4.y - point2.y);
-            i12 = 5;
-            i13 = 0;
+            i4 = 5;
+            i5 = 0;
             double hypot4 = Math.hypot(point3.x - point.x, point3.y - point.y);
             double d = hypot / hypot3;
             double d2 = hypot / hypot4;
-            double d10 = hypot2 / hypot3;
-            double d11 = hypot2 / hypot4;
-            if (d >= 1.35d && d <= 1.75d && d10 >= 1.35d && d10 <= 1.75d && d2 >= 1.35d && d2 <= 1.75d && d11 >= 1.35d && d11 <= 1.75d) {
-                Bitmap createBitmap = Bitmap.createBitmap(1024, (int) Math.round(1024.0d / ((((d + d2) + d10) + d11) / 4.0d)), Bitmap.Config.ARGB_8888);
+            double d3 = hypot2 / hypot3;
+            double d4 = hypot2 / hypot4;
+            if (d >= 1.35d && d <= 1.75d && d3 >= 1.35d && d3 <= 1.75d && d2 >= 1.35d && d2 <= 1.75d && d4 >= 1.35d && d4 <= 1.75d) {
+                Bitmap createBitmap = Bitmap.createBitmap(1024, (int) Math.round(1024.0d / ((((d + d2) + d3) + d4) / 4.0d)), Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
-                Matrix matrix2 = new Matrix();
-                matrix2.setPolyToPoly(new float[]{point2.x * f10, point2.y * f10, point.x * f10, point.y * f10, point3.x * f10, point3.y * f10, point4.x * f10, point4.y * f10}, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
-                canvas.drawBitmap(bitmap2, matrix2, new Paint(2));
+                Matrix matrix3 = new Matrix();
+                matrix3.setPolyToPoly(new float[]{point2.x * f, point2.y * f, point.x * f, point.y * f, point3.x * f, point3.y * f, point4.x * f, point4.y * f}, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
+                canvas.drawBitmap(bitmap2, matrix3, new Paint(2));
                 bitmap2 = createBitmap;
             }
         } else {
-            i7 = 1;
-            i10 = 6;
-            i11 = 3;
-            i12 = 5;
-            i13 = 0;
-            i14 = 7;
+            i = 1;
+            i2 = 6;
+            i3 = 3;
+            i4 = 5;
+            i5 = 0;
+            i6 = 7;
             if (bitmap2.getWidth() > 1500 || bitmap2.getHeight() > 1500) {
                 float max2 = 1500.0f / Math.max(bitmap2.getWidth(), bitmap2.getHeight());
-                i15 = 1;
+                i7 = 1;
                 createScaledBitmap2 = Bitmap.createScaledBitmap(bitmap2, Math.round(bitmap2.getWidth() * max2), Math.round(bitmap2.getHeight() * max2), true);
-                i16 = i13;
-                i17 = i16;
-                int i20 = i17;
+                i8 = i5;
+                i9 = i8;
+                int i12 = i9;
                 Bitmap bitmap3 = null;
                 rectArr = null;
                 while (true) {
-                    if (i16 < i11) {
-                        i18 = 2;
+                    i10 = 2;
+                    if (i8 >= i3) {
                         break;
                     }
-                    if (i16 == i15) {
-                        Matrix matrix3 = new Matrix();
-                        c10 = 0;
-                        matrix3.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
-                        matrix = matrix3;
-                    } else if (i16 != 2) {
-                        c10 = 0;
-                        matrix = null;
+                    if (i8 == i7) {
+                        matrix = new Matrix();
+                        matrix.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
+                    } else if (i8 != 2) {
+                        matrix2 = null;
+                        Bitmap createBitmap2 = matrix2 == null ? Bitmap.createBitmap(createScaledBitmap2, 0, 0, createScaledBitmap2.getWidth(), createScaledBitmap2.getHeight(), matrix2, true) : createScaledBitmap2;
+                        bitmap3 = Bitmap.createBitmap(createBitmap2.getWidth(), createBitmap2.getHeight(), Bitmap.Config.ALPHA_8);
+                        rectArr = binarizeAndFindCharacters(createBitmap2, bitmap3);
+                        if (rectArr != null) {
+                            break;
+                        }
+                        int length = rectArr.length;
+                        for (int i13 = i5; i13 < length; i13++) {
+                            Rect[] rectArr2 = rectArr[i13];
+                            i9 = Math.max(rectArr2.length, i9);
+                            if (rectArr2.length > 0) {
+                                i12++;
+                            }
+                        }
+                        i10 = 2;
+                        if (i12 >= 2 && i9 >= 30) {
+                            break;
+                        }
+                        i8++;
+                        i7 = 1;
+                        i3 = 3;
                     } else {
-                        Matrix matrix4 = new Matrix();
-                        matrix4.setRotate(-1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
-                        matrix = matrix4;
-                        c10 = 0;
+                        matrix = new Matrix();
+                        matrix.setRotate(-1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
                     }
-                    Bitmap createBitmap2 = matrix != null ? Bitmap.createBitmap(createScaledBitmap2, 0, 0, createScaledBitmap2.getWidth(), createScaledBitmap2.getHeight(), matrix, true) : createScaledBitmap2;
+                    matrix2 = matrix;
+                    if (matrix2 == null) {
+                    }
                     bitmap3 = Bitmap.createBitmap(createBitmap2.getWidth(), createBitmap2.getHeight(), Bitmap.Config.ALPHA_8);
                     rectArr = binarizeAndFindCharacters(createBitmap2, bitmap3);
-                    if (rectArr == null) {
-                        break;
+                    if (rectArr != null) {
                     }
-                    int length = rectArr.length;
-                    for (int i21 = i13; i21 < length; i21++) {
-                        Rect[] rectArr2 = rectArr[i21];
-                        i17 = Math.max(rectArr2.length, i17);
-                        if (rectArr2.length > 0) {
-                            i20++;
-                        }
-                    }
-                    i18 = 2;
-                    if (i20 >= 2 && i17 >= 30) {
-                        break;
-                    }
-                    i16++;
-                    i15 = 1;
-                    i11 = 3;
                 }
-                if (i17 >= 30 && i20 >= i18) {
-                    Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[i13].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
+                if (i9 >= 30 && i12 >= i10) {
+                    Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[i5].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
                     Canvas canvas2 = new Canvas(createBitmap3);
                     Paint paint = new Paint(2);
-                    int i22 = i13;
-                    Rect rect = new Rect(i22, i22, 10, 15);
-                    int i23 = 0;
+                    int i14 = i5;
+                    Rect rect = new Rect(i14, i14, 10, 15);
+                    int i15 = 0;
                     for (Rect[] rectArr3 : rectArr) {
-                        int i24 = 0;
-                        int i25 = 0;
-                        for (int length2 = rectArr3.length; i24 < length2; length2 = length2) {
-                            Rect rect2 = rectArr3[i24];
-                            int i26 = i25 * 10;
-                            int i27 = i23 * 15;
-                            rect.set(i26, i27, i26 + 10, i27 + 15);
+                        int i16 = 0;
+                        int i17 = 0;
+                        for (int length2 = rectArr3.length; i16 < length2; length2 = length2) {
+                            Rect rect2 = rectArr3[i16];
+                            int i18 = i17 * 10;
+                            int i19 = i15 * 15;
+                            rect.set(i18, i19, i18 + 10, i19 + 15);
                             canvas2.drawBitmap(bitmap3, rect2, rect, paint);
-                            i25++;
-                            i24++;
+                            i17++;
+                            i16++;
                         }
-                        i23++;
+                        i15++;
                     }
-                    performRecognition = performRecognition(createBitmap3, rectArr.length, rectArr[0].length, t0.b.getAssets());
+                    performRecognition = performRecognition(createBitmap3, rectArr.length, rectArr[0].length, a.b.getAssets());
                     if (performRecognition != null) {
                         return null;
                     }
                     String[] split = TextUtils.split(performRecognition, "\n");
-                    ur urVar = new ur();
+                    vf7 vf7Var = new vf7();
                     if (split.length < 2 || split[0].length() < 30 || split[1].length() != split[0].length()) {
                         return null;
                     }
-                    urVar.p = TextUtils.join("\n", split);
-                    HashMap d12 = d();
+                    vf7Var.p = TextUtils.join("\n", split);
+                    HashMap d5 = d();
                     char charAt = split[0].charAt(0);
                     if (charAt == 'P') {
-                        urVar.a = 1;
+                        vf7Var.a = (byte) 1;
                         if (split[0].length() == 44) {
-                            int i28 = i12;
-                            urVar.l = split[0].substring(2, i28);
-                            int indexOf = split[0].indexOf("<<", i10);
+                            int i20 = i4;
+                            vf7Var.l = split[0].substring(2, i20);
+                            int indexOf = split[0].indexOf("<<", i2);
                             if (indexOf != -1) {
-                                urVar.c = split[0].substring(i28, indexOf).replace('<', ' ').replace('0', 'O').trim();
+                                vf7Var.c = split[0].substring(i20, indexOf).replace('<', ' ').replace('0', 'O').trim();
                                 String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
-                                urVar.b = trim;
+                                vf7Var.b = trim;
                                 if (trim.contains("   ")) {
-                                    String str = urVar.b;
-                                    i19 = 0;
-                                    urVar.b = str.substring(0, str.indexOf("   "));
+                                    String str = vf7Var.b;
+                                    i11 = 0;
+                                    vf7Var.b = str.substring(0, str.indexOf("   "));
                                 } else {
-                                    i19 = 0;
+                                    i11 = 0;
                                 }
                             } else {
-                                i19 = 0;
+                                i11 = 0;
                             }
-                            String trim2 = split[1].substring(i19, 9).replace('<', ' ').replace('O', '0').trim();
+                            String trim2 = split[1].substring(i11, 9).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim2) == e(split[1].charAt(9))) {
-                                urVar.e = trim2;
+                                vf7Var.e = trim2;
                             }
-                            urVar.m = split[1].substring(10, 13);
+                            vf7Var.m = split[1].substring(10, 13);
                             String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                             if (b(replace) == e(split[1].charAt(19))) {
-                                f(replace, urVar);
+                                f(replace, vf7Var);
                             }
-                            urVar.n = h(split[1].charAt(20));
+                            vf7Var.n = h(split[1].charAt(20));
                             String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                             if (b(replace2) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                g(replace2, urVar);
+                                g(replace2, vf7Var);
                             }
-                            if ("RUS".equals(urVar.l) && split[0].charAt(1) == 'N') {
-                                urVar.a = 3;
-                                String[] split2 = urVar.b.split(" ");
-                                urVar.b = c(k(split2[0]));
+                            if ("RUS".equals(vf7Var.l) && split[0].charAt(1) == 'N') {
+                                vf7Var.a = (byte) 3;
+                                String[] split2 = vf7Var.b.split(" ");
+                                vf7Var.b = c(k(split2[0]));
                                 if (split2.length > 1) {
-                                    urVar.d = c(k(split2[1]));
+                                    vf7Var.d = c(k(split2[1]));
                                 }
-                                urVar.c = c(k(urVar.c));
-                                if (urVar.e != null) {
-                                    urVar.e = urVar.e.substring(0, 3) + split[1].charAt(28) + urVar.e.substring(3);
+                                vf7Var.c = c(k(vf7Var.c));
+                                String str2 = vf7Var.e;
+                                if (str2 != null) {
+                                    vf7Var.e = str2.substring(0, 3) + split[1].charAt(28) + vf7Var.e.substring(3);
                                 }
                             } else {
-                                urVar.b = urVar.b.replace('8', 'B');
-                                urVar.c = urVar.c.replace('8', 'B');
+                                vf7Var.b = vf7Var.b.replace('8', 'B');
+                                vf7Var.c = vf7Var.c.replace('8', 'B');
                             }
-                            urVar.c = a(urVar.c);
-                            urVar.b = a(urVar.b);
-                            urVar.d = a(urVar.d);
+                            vf7Var.c = a(vf7Var.c);
+                            vf7Var.b = a(vf7Var.b);
+                            vf7Var.d = a(vf7Var.d);
                         }
                     } else {
                         if (charAt != 'I' && charAt != 'A' && charAt != 'C') {
                             return null;
                         }
-                        urVar.a = 2;
+                        vf7Var.a = (byte) 2;
                         if (split.length == 3 && split[0].length() == 30 && split[2].length() == 30) {
-                            urVar.l = split[0].substring(2, 5);
+                            vf7Var.l = split[0].substring(2, 5);
                             String trim3 = split[0].substring(5, 14).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim3) == split[0].charAt(14) - '0') {
-                                urVar.e = trim3;
+                                vf7Var.e = trim3;
                             }
                             String replace3 = split[1].substring(0, 6).replace('O', '0').replace('I', '1');
                             if (b(replace3) == e(split[1].charAt(6))) {
-                                f(replace3, urVar);
+                                f(replace3, vf7Var);
                             }
-                            urVar.n = h(split[1].charAt(i14));
+                            vf7Var.n = h(split[1].charAt(i6));
                             String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
                             if (b(replace4) == e(split[1].charAt(14)) || split[1].charAt(14) == '<') {
-                                g(replace4, urVar);
+                                g(replace4, vf7Var);
                             }
-                            urVar.m = split[1].substring(15, 18);
+                            vf7Var.m = split[1].substring(15, 18);
                             int indexOf2 = split[2].indexOf("<<");
                             if (indexOf2 != -1) {
-                                urVar.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
-                                urVar.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
+                                vf7Var.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
+                                vf7Var.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
                             }
                         } else if (split.length == 2 && split[0].length() == 36) {
                             String substring = split[0].substring(2, 5);
-                            urVar.l = substring;
+                            vf7Var.l = substring;
                             if ("FRA".equals(substring) && charAt == 'I' && split[0].charAt(1) == 'D') {
-                                urVar.m = "FRA";
-                                urVar.c = split[0].substring(5, 30).replace('<', ' ').trim();
-                                urVar.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
+                                vf7Var.m = "FRA";
+                                vf7Var.c = split[0].substring(5, 30).replace('<', ' ').trim();
+                                vf7Var.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
                                 String replace5 = split[1].substring(0, 12).replace('O', '0');
                                 if (b(replace5) == e(split[1].charAt(12))) {
-                                    urVar.e = replace5;
+                                    vf7Var.e = replace5;
                                 }
                                 String replace6 = split[1].substring(27, 33).replace('O', '0').replace('I', '1');
                                 if (b(replace6) == e(split[1].charAt(33))) {
-                                    f(replace6, urVar);
+                                    f(replace6, vf7Var);
                                 }
-                                urVar.n = h(split[1].charAt(34));
-                                urVar.o = true;
+                                vf7Var.n = h(split[1].charAt(34));
+                                vf7Var.o = true;
                             } else {
                                 int indexOf3 = split[0].indexOf("<<");
                                 if (indexOf3 != -1) {
-                                    urVar.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
-                                    urVar.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
+                                    vf7Var.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
+                                    vf7Var.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
                                 }
                                 String trim4 = split[1].substring(0, 9).replace('<', ' ').replace('O', '0').trim();
                                 if (b(trim4) == e(split[1].charAt(9))) {
-                                    urVar.e = trim4;
+                                    vf7Var.e = trim4;
                                 }
-                                urVar.m = split[1].substring(10, 13);
+                                vf7Var.m = split[1].substring(10, 13);
                                 String replace7 = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                                 if (b(replace7) == e(split[1].charAt(19))) {
-                                    f(replace7, urVar);
+                                    f(replace7, vf7Var);
                                 }
-                                urVar.n = h(split[1].charAt(20));
+                                vf7Var.n = h(split[1].charAt(20));
                                 String replace8 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                                 if (b(replace8) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                    g(replace8, urVar);
+                                    g(replace8, vf7Var);
                                 }
                             }
                         }
-                        urVar.b = a(urVar.b.replace('0', 'O').replace('8', 'B'));
-                        urVar.c = a(urVar.c.replace('0', 'O').replace('8', 'B'));
+                        vf7Var.b = a(vf7Var.b.replace('0', 'O').replace('8', 'B'));
+                        vf7Var.c = a(vf7Var.c.replace('0', 'O').replace('8', 'B'));
                     }
-                    if (TextUtils.isEmpty(urVar.b) && TextUtils.isEmpty(urVar.c)) {
+                    if (TextUtils.isEmpty(vf7Var.b) && TextUtils.isEmpty(vf7Var.c)) {
                         return null;
                     }
-                    urVar.l = (String) d12.get(urVar.l);
-                    urVar.m = (String) d12.get(urVar.m);
-                    return urVar;
+                    vf7Var.l = (String) d5.get(vf7Var.l);
+                    vf7Var.m = (String) d5.get(vf7Var.m);
+                    return vf7Var;
                 }
                 return null;
             }
         }
         createScaledBitmap2 = bitmap2;
-        i15 = i7;
-        i16 = i13;
-        i17 = i16;
-        int i202 = i17;
+        i7 = i;
+        i8 = i5;
+        i9 = i8;
+        int i122 = i9;
         Bitmap bitmap32 = null;
         rectArr = null;
         while (true) {
-            if (i16 < i11) {
+            i10 = 2;
+            if (i8 >= i3) {
             }
-            i16++;
-            i15 = 1;
-            i11 = 3;
+            i8++;
+            i7 = 1;
+            i3 = 3;
         }
-        if (i17 >= 30) {
-            Bitmap createBitmap32 = Bitmap.createBitmap(rectArr[i13].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
+        if (i9 >= 30) {
+            Bitmap createBitmap32 = Bitmap.createBitmap(rectArr[i5].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
             Canvas canvas22 = new Canvas(createBitmap32);
             Paint paint2 = new Paint(2);
-            int i222 = i13;
-            Rect rect3 = new Rect(i222, i222, 10, 15);
-            int i232 = 0;
+            int i142 = i5;
+            Rect rect3 = new Rect(i142, i142, 10, 15);
+            int i152 = 0;
             while (r13 < r12) {
             }
-            performRecognition = performRecognition(createBitmap32, rectArr.length, rectArr[0].length, t0.b.getAssets());
+            performRecognition = performRecognition(createBitmap32, rectArr.length, rectArr[0].length, a.b.getAssets());
             if (performRecognition != null) {
             }
         }
@@ -778,16 +788,16 @@ public class MrzRecognizer {
 
     public static String k(String str) {
         char[] charArray = str.toCharArray();
-        for (int i7 = 0; i7 < charArray.length; i7++) {
-            int indexOf = "ABVGDE2JZIQKLMNOPRSTUFHC34WXY9678".indexOf(charArray[i7]);
+        for (int i = 0; i < charArray.length; i++) {
+            int indexOf = "ABVGDE2JZIQKLMNOPRSTUFHC34WXY9678".indexOf(charArray[i]);
             if (indexOf != -1) {
-                charArray[i7] = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".charAt(indexOf);
+                charArray[i] = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".charAt(indexOf);
             }
         }
         return new String(charArray);
     }
 
-    private static native String performRecognition(Bitmap bitmap, int i7, int i10, AssetManager assetManager);
+    private static native String performRecognition(Bitmap bitmap, int i, int i2, AssetManager assetManager);
 
     private static native void setYuvBitmapPixels(Bitmap bitmap, byte[] bArr);
 }

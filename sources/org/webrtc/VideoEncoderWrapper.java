@@ -2,11 +2,11 @@ package org.webrtc;
 
 import org.webrtc.VideoEncoder;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class VideoEncoderWrapper {
-    public static VideoEncoder.Callback createEncoderCallback(long j3) {
-        return new v(j3);
+    public static VideoEncoder.Callback createEncoderCallback(long j) {
+        return new f(j);
     }
 
     public static Integer getScalingSettingsHigh(VideoEncoder.ScalingSettings scalingSettings) {
@@ -22,5 +22,5 @@ class VideoEncoderWrapper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static native void nativeOnEncodedFrame(long j3, EncodedImage encodedImage);
+    public static native void nativeOnEncodedFrame(long j, EncodedImage encodedImage);
 }

@@ -6,19 +6,19 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public interface IOnCheckedChangeListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IOnCheckedChangeListener".replace('$', '.');
 
-    void onCheckedChange(boolean z10, IOnDoneCallback iOnDoneCallback);
+    void onCheckedChange(boolean z, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static abstract class Stub extends Binder implements IOnCheckedChangeListener {
         static final int TRANSACTION_onCheckedChange = 2;
 
-        /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-        public static class Proxy implements IOnCheckedChangeListener {
+        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        private static class Proxy implements IOnCheckedChangeListener {
             private IBinder mRemote;
 
             public Proxy(IBinder iBinder) {
@@ -35,11 +35,11 @@ public interface IOnCheckedChangeListener extends IInterface {
             }
 
             @Override // androidx.car.app.model.IOnCheckedChangeListener
-            public void onCheckedChange(boolean z10, IOnDoneCallback iOnDoneCallback) {
+            public void onCheckedChange(boolean z, IOnDoneCallback iOnDoneCallback) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IOnCheckedChangeListener.DESCRIPTOR);
-                    obtain.writeInt(z10 ? 1 : 0);
+                    obtain.writeInt(z ? 1 : 0);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -61,17 +61,17 @@ public interface IOnCheckedChangeListener extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             String str = IOnCheckedChangeListener.DESCRIPTOR;
-            if (i7 >= 1 && i7 <= 16777215) {
+            if (i >= 1 && i <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i7 == 1598968902) {
+            if (i == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i7 != 2) {
-                return super.onTransact(i7, parcel, parcel2, i10);
+            if (i != 2) {
+                return super.onTransact(i, parcel, parcel2, i2);
             }
             onCheckedChange(parcel.readInt() != 0, IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             return true;
@@ -83,7 +83,7 @@ public interface IOnCheckedChangeListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public static class Default implements IOnCheckedChangeListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -91,7 +91,7 @@ public interface IOnCheckedChangeListener extends IInterface {
         }
 
         @Override // androidx.car.app.model.IOnCheckedChangeListener
-        public void onCheckedChange(boolean z10, IOnDoneCallback iOnDoneCallback) {
+        public void onCheckedChange(boolean z, IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

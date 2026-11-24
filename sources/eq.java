@@ -1,0 +1,34 @@
+// default package
+
+import android.graphics.drawable.Drawable;
+import android.widget.ListAdapter;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes.dex */
+public interface eq {
+    boolean a();
+
+    int b();
+
+    void c(int i);
+
+    CharSequence d();
+
+    void dismiss();
+
+    Drawable g();
+
+    void h(CharSequence charSequence);
+
+    void j(Drawable drawable);
+
+    void k(int i);
+
+    void l(int i);
+
+    void m(int i, int i2);
+
+    int n();
+
+    void o(ListAdapter listAdapter);
+}

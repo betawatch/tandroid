@@ -1,0 +1,283 @@
+// default package
+
+import android.os.SystemClock;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.c;
+
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
+public final class t05 {
+    public String e;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public long l;
+    public String m;
+    public final /* synthetic */ c o;
+    public final ArrayList a = new ArrayList();
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public String f = "";
+    public int n = -1;
+
+    public t05(c cVar) {
+        this.o = cVar;
+        this.e = cVar.x();
+    }
+
+    public final void a() {
+        if (this.n >= 0) {
+            ConnectionsManager.getInstance(this.o.a).cancelRequest(this.n, true);
+            this.n = -1;
+        }
+        if (this.j) {
+            this.g = false;
+            this.h = false;
+        }
+        this.j = false;
+        this.i = false;
+        this.k = false;
+    }
+
+    public final void b() {
+        a();
+        this.a.clear();
+        this.b.clear();
+        this.c.clear();
+        this.f = "";
+        this.g = false;
+        this.h = false;
+        this.m = null;
+        g();
+    }
+
+    public final boolean c(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            ArrayList arrayList = this.a;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                if (c.b(((TL_wallet.nftItem) obj).address, str)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public final void d() {
+        if (this.j) {
+            this.k = true;
+        } else {
+            a();
+            f(true);
+        }
+    }
+
+    public final void e() {
+        if (this.i || this.g) {
+            return;
+        }
+        f(!this.h);
+    }
+
+    public final void f(final boolean z) {
+        if (TextUtils.isEmpty(this.e)) {
+            return;
+        }
+        TL_wallet.getNfts getnfts = new TL_wallet.getNfts();
+        String str = z ? "" : this.f;
+        getnfts.offset = str;
+        getnfts.limit = TextUtils.isEmpty(str) ? 5 : 20;
+        this.i = true;
+        this.j = z;
+        this.m = null;
+        g();
+        final long elapsedRealtime = SystemClock.elapsedRealtime();
+        this.n = ConnectionsManager.getInstance(this.o.a).sendRequestTyped(getnfts, new hc((byte) 0), new i8c() { // from class: s05
+            @Override // i8c
+            public final void a(Object obj, Object obj2) {
+                TL_wallet.nftItems nftitems = (TL_wallet.nftItems) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                t05 t05Var = t05.this;
+                ArrayList arrayList = t05Var.b;
+                ArrayList arrayList2 = t05Var.c;
+                t05Var.n = -1;
+                t05Var.j = false;
+                t05Var.i = false;
+                boolean z2 = z;
+                if (nftitems != null) {
+                    if (z2) {
+                        arrayList.clear();
+                        t05Var.l = elapsedRealtime;
+                    }
+                    ArrayList<TL_wallet.nftItem> arrayList3 = nftitems.items;
+                    int size = arrayList3.size();
+                    int i = 0;
+                    while (i < size) {
+                        TL_wallet.nftItem nftitem = arrayList3.get(i);
+                        i++;
+                        TL_wallet.nftItem nftitem2 = nftitem;
+                        int i2 = 0;
+                        while (true) {
+                            if (i2 >= arrayList.size()) {
+                                arrayList.add(nftitem2);
+                                break;
+                            } else {
+                                if (c.b(((TL_wallet.nftItem) arrayList.get(i2)).address, nftitem2.address)) {
+                                    arrayList.set(i2, nftitem2);
+                                    break;
+                                }
+                                i2++;
+                            }
+                        }
+                    }
+                    String str2 = nftitems.next_offset;
+                    t05Var.f = str2;
+                    boolean isEmpty = TextUtils.isEmpty(str2);
+                    t05Var.g = isEmpty;
+                    t05Var.h = true;
+                    if (isEmpty) {
+                        for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
+                            TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) arrayList2.get(size2);
+                            if (!wallettransaction.pending && !wallettransaction.failed) {
+                                String str3 = wallettransaction.nft.address;
+                                int size3 = arrayList.size();
+                                int i3 = 0;
+                                while (true) {
+                                    if (i3 >= size3) {
+                                        arrayList2.remove(size2);
+                                        break;
+                                    }
+                                    Object obj3 = arrayList.get(i3);
+                                    i3++;
+                                    if (c.b(((TL_wallet.nftItem) obj3).address, str3)) {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    t05Var.j();
+                } else {
+                    if (z2) {
+                        t05Var.g = false;
+                        t05Var.h = false;
+                    }
+                    t05Var.m = tL_error == null ? "Could not load collectibles" : tL_error.text;
+                }
+                if (t05Var.k) {
+                    t05Var.k = false;
+                    t05Var.d();
+                    if (t05Var.i) {
+                        return;
+                    }
+                }
+                t05Var.g();
+            }
+        });
+    }
+
+    public final void g() {
+        ArrayList arrayList = new ArrayList(this.d);
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((Runnable) obj).run();
+        }
+    }
+
+    public final void h(TL_wallet.walletTransaction wallettransaction) {
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            if (((TL_wallet.walletTransaction) obj) == wallettransaction) {
+                if (wallettransaction.failed) {
+                    String str = wallettransaction.nft.address;
+                    ArrayList arrayList2 = this.b;
+                    int size2 = arrayList2.size();
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 >= size2) {
+                            arrayList2.add(0, wallettransaction.nft);
+                            break;
+                        }
+                        Object obj2 = arrayList2.get(i2);
+                        i2++;
+                        if (c.b(((TL_wallet.nftItem) obj2).address, str)) {
+                            break;
+                        }
+                    }
+                }
+                j();
+                g();
+                return;
+            }
+        }
+    }
+
+    public final void i(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        if (tL_starGiftUnique == null || TextUtils.isEmpty(tL_starGiftUnique.slug)) {
+            return;
+        }
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        boolean z = false;
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            TL_wallet.nftItem nftitem = (TL_wallet.nftItem) obj;
+            TL_stars.StarGift starGift = nftitem.gift;
+            if ((starGift instanceof TL_stars.TL_starGiftUnique) && starGift != tL_starGiftUnique && TextUtils.equals(((TL_stars.TL_starGiftUnique) starGift).slug, tL_starGiftUnique.slug)) {
+                nftitem.gift = tL_starGiftUnique;
+                z = true;
+            }
+        }
+        if (z) {
+            g();
+        }
+    }
+
+    public final void j() {
+        ArrayList arrayList = this.a;
+        arrayList.clear();
+        ArrayList arrayList2 = this.b;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            TL_wallet.nftItem nftitem = (TL_wallet.nftItem) obj;
+            ArrayList arrayList3 = this.c;
+            int size2 = arrayList3.size();
+            int i2 = 0;
+            while (true) {
+                if (i2 >= size2) {
+                    arrayList.add(nftitem);
+                    break;
+                }
+                Object obj2 = arrayList3.get(i2);
+                i2++;
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
+                if (wallettransaction.failed || !c.b(wallettransaction.nft.address, nftitem.address)) {
+                }
+            }
+        }
+    }
+}

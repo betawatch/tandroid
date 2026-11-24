@@ -1,16 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import c8.yc;
-import com.google.android.gms.internal.vision.e2;
-import hd.f;
-import hd.h;
 import java.util.ArrayList;
 import java.util.Iterator;
-import ud.b;
-import ud.e;
-import xd.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzkp implements zzjt {
     public static final zzkp zza = new zzkp();
@@ -19,207 +12,211 @@ public final class zzkp implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 2) {
-            throw new zzdm(4, 3, null);
+            fvc.c(4, 3, null);
+            return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
         if (zza2 == null) {
             zza2 = null;
         }
         if (zza2 == null) {
-            throw new zzdm(4, 5, null);
+            fvc.c(4, 5, null);
+            return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
         if (zza3 == null) {
             zza3 = null;
         }
-        if (zza3 == null) {
-            throw new zzdm(4, 5, null);
+        if (zza3 != null) {
+            zzizVar.zzc().zze(i, zzb(zza2, zza3));
+        } else {
+            fvc.c(4, 5, null);
         }
-        zzizVar.zzc().zze(i7, zzb(zza2, zza3));
     }
 
     public final Object zzb(Object obj, Object obj2) {
-        boolean z10 = obj instanceof Byte;
-        if (z10 && (obj2 instanceof Byte)) {
+        boolean z = obj instanceof Byte;
+        if (z && (obj2 instanceof Byte)) {
             return Byte.valueOf((byte) (((Number) obj).byteValue() ^ ((Number) obj2).byteValue()));
         }
-        boolean z11 = obj instanceof Short;
-        if (z11 && (obj2 instanceof Short)) {
+        boolean z2 = obj instanceof Short;
+        if (z2 && (obj2 instanceof Short)) {
             return Short.valueOf((short) (((Number) obj).shortValue() ^ ((Number) obj2).shortValue()));
         }
-        boolean z12 = obj instanceof Integer;
-        if (z12 && (obj2 instanceof Integer)) {
+        boolean z3 = obj instanceof Integer;
+        if (z3 && (obj2 instanceof Integer)) {
             return Integer.valueOf(((Number) obj).intValue() ^ ((Number) obj2).intValue());
         }
-        boolean z13 = obj instanceof Long;
-        if (z13 && (obj2 instanceof Long)) {
-            return Long.valueOf(((Number) obj2).longValue() ^ ((Number) obj).longValue());
+        boolean z4 = obj instanceof Long;
+        if (z4 && (obj2 instanceof Long)) {
+            return Long.valueOf(((Number) obj).longValue() ^ ((Number) obj2).longValue());
         }
-        int i7 = 0;
+        int i = 0;
         if (obj instanceof String) {
             if (obj2 instanceof Byte) {
-                byte[] bytes = ((String) obj).getBytes(a.a);
+                byte[] bytes = ((String) obj).getBytes(bk1.a);
                 int length = bytes.length;
                 ArrayList arrayList = new ArrayList(length);
-                while (i7 < length) {
-                    arrayList.add(Byte.valueOf((byte) (bytes[i7] ^ ((Number) obj2).byteValue())));
-                    i7++;
+                while (i < length) {
+                    arrayList.add(Byte.valueOf((byte) (bytes[i] ^ ((Number) obj2).byteValue())));
+                    i++;
                 }
-                return f.i(arrayList);
+                return yk2.h(arrayList);
             }
             if (obj2 instanceof Integer) {
                 char[] charArray = ((String) obj).toCharArray();
                 int length2 = charArray.length;
                 ArrayList arrayList2 = new ArrayList(length2);
-                while (i7 < length2) {
-                    i7 = e2.f(charArray[i7] ^ ((Number) obj2).intValue(), i7, 1, arrayList2);
+                while (i < length2) {
+                    i = tb4.g(charArray[i] ^ ((Number) obj2).intValue(), i, 1, arrayList2);
                 }
-                return f.k(arrayList2);
+                return yk2.j(arrayList2);
             }
         }
-        if (z10 && (obj2 instanceof byte[])) {
+        if (z && (obj2 instanceof byte[])) {
             byte[] bArr = (byte[]) obj2;
             ArrayList arrayList3 = new ArrayList(bArr.length);
-            for (byte b10 : bArr) {
-                arrayList3.add(Byte.valueOf((byte) (b10 ^ ((Number) obj).byteValue())));
+            for (byte b : bArr) {
+                arrayList3.add(Byte.valueOf((byte) (b ^ ((Number) obj).byteValue())));
             }
             return arrayList3.toArray(new Byte[0]);
         }
-        if (z11 && (obj2 instanceof short[])) {
+        if (z2 && (obj2 instanceof short[])) {
             short[] sArr = (short[]) obj2;
             ArrayList arrayList4 = new ArrayList(sArr.length);
-            for (short s5 : sArr) {
-                arrayList4.add(Short.valueOf((short) (s5 ^ ((Number) obj).shortValue())));
+            for (short s : sArr) {
+                arrayList4.add(Short.valueOf((short) (s ^ ((Number) obj).shortValue())));
             }
             return arrayList4.toArray(new Short[0]);
         }
-        if (z12 && (obj2 instanceof int[])) {
+        if (z3 && (obj2 instanceof int[])) {
             int[] iArr = (int[]) obj2;
             int length3 = iArr.length;
             ArrayList arrayList5 = new ArrayList(length3);
-            int i10 = 0;
-            while (i10 < length3) {
-                i10 = e2.f(iArr[i10] ^ ((Number) obj).intValue(), i10, 1, arrayList5);
+            int i2 = 0;
+            while (i2 < length3) {
+                i2 = tb4.g(iArr[i2] ^ ((Number) obj).intValue(), i2, 1, arrayList5);
             }
             return arrayList5.toArray(new Integer[0]);
         }
-        if (z13 && (obj2 instanceof long[])) {
+        if (z4 && (obj2 instanceof long[])) {
             long[] jArr = (long[]) obj2;
             int length4 = jArr.length;
             ArrayList arrayList6 = new ArrayList(length4);
-            int i11 = 0;
-            while (i11 < length4) {
-                i11 = e2.g(i11, 1, jArr[i11] ^ ((Number) obj).longValue(), arrayList6);
+            int i3 = 0;
+            while (i3 < length4) {
+                i3 = mue.c(i3, 1, jArr[i3] ^ ((Number) obj).longValue(), arrayList6);
             }
             return arrayList6.toArray(new Long[0]);
         }
-        boolean z14 = obj instanceof byte[];
-        if (z14 && (obj2 instanceof Byte)) {
+        boolean z5 = obj instanceof byte[];
+        if (z5 && (obj2 instanceof Byte)) {
             byte[] bArr2 = (byte[]) obj;
             ArrayList arrayList7 = new ArrayList(bArr2.length);
-            for (byte b11 : bArr2) {
-                arrayList7.add(Byte.valueOf((byte) (b11 ^ ((Number) obj2).byteValue())));
+            for (byte b2 : bArr2) {
+                arrayList7.add(Byte.valueOf((byte) (b2 ^ ((Number) obj2).byteValue())));
             }
             return arrayList7.toArray(new Byte[0]);
         }
-        boolean z15 = obj instanceof short[];
-        if (z15 && (obj2 instanceof Short)) {
+        boolean z6 = obj instanceof short[];
+        if (z6 && (obj2 instanceof Short)) {
             short[] sArr2 = (short[]) obj;
             ArrayList arrayList8 = new ArrayList(sArr2.length);
-            for (short s9 : sArr2) {
-                arrayList8.add(Short.valueOf((short) (s9 ^ ((Number) obj2).shortValue())));
+            for (short s2 : sArr2) {
+                arrayList8.add(Short.valueOf((short) (s2 ^ ((Number) obj2).shortValue())));
             }
             return arrayList8.toArray(new Short[0]);
         }
-        boolean z16 = obj instanceof int[];
-        if (z16 && (obj2 instanceof Integer)) {
+        boolean z7 = obj instanceof int[];
+        if (z7 && (obj2 instanceof Integer)) {
             int[] iArr2 = (int[]) obj;
             int length5 = iArr2.length;
             ArrayList arrayList9 = new ArrayList(length5);
-            int i12 = 0;
-            while (i12 < length5) {
-                i12 = e2.f(iArr2[i12] ^ ((Number) obj2).intValue(), i12, 1, arrayList9);
+            int i4 = 0;
+            while (i4 < length5) {
+                i4 = tb4.g(iArr2[i4] ^ ((Number) obj2).intValue(), i4, 1, arrayList9);
             }
             return arrayList9.toArray(new Integer[0]);
         }
-        boolean z17 = obj instanceof long[];
-        if (z17 && (obj2 instanceof Long)) {
+        boolean z8 = obj instanceof long[];
+        if (z8 && (obj2 instanceof Long)) {
             long[] jArr2 = (long[]) obj;
             int length6 = jArr2.length;
             ArrayList arrayList10 = new ArrayList(length6);
-            int i13 = 0;
-            while (i13 < length6) {
-                i13 = e2.g(i13, 1, jArr2[i13] ^ ((Number) obj2).longValue(), arrayList10);
+            int i5 = 0;
+            while (i5 < length6) {
+                i5 = mue.c(i5, 1, jArr2[i5] ^ ((Number) obj2).longValue(), arrayList10);
             }
             return arrayList10.toArray(new Long[0]);
         }
-        if (z14 && (obj2 instanceof byte[])) {
+        if (z5 && (obj2 instanceof byte[])) {
             byte[] bArr3 = (byte[]) obj;
             int length7 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzjs.zza(this, length7, bArr4.length);
-            e a10 = yc.a(0, length7);
-            ArrayList arrayList11 = new ArrayList(h.d(a10, 10));
-            Iterator it = a10.iterator();
+            fp5 a = ise.a(0, length7);
+            ArrayList arrayList11 = new ArrayList(al2.c(a, 10));
+            Iterator it = a.iterator();
             while (true) {
-                b bVar = (b) it;
-                if (!bVar.d) {
+                ep5 ep5Var = (ep5) it;
+                if (!ep5Var.c) {
                     return arrayList11.toArray(new Byte[0]);
                 }
-                int nextInt = bVar.nextInt();
-                arrayList11.add(Byte.valueOf((byte) (bArr4[nextInt] ^ bArr3[nextInt])));
+                int nextInt = ep5Var.nextInt();
+                arrayList11.add(Byte.valueOf((byte) (bArr3[nextInt] ^ bArr4[nextInt])));
             }
-        } else if (z15 && (obj2 instanceof short[])) {
+        } else if (z6 && (obj2 instanceof short[])) {
             short[] sArr3 = (short[]) obj;
             int length8 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzjs.zza(this, length8, sArr4.length);
-            e a11 = yc.a(0, length8);
-            ArrayList arrayList12 = new ArrayList(h.d(a11, 10));
-            Iterator it2 = a11.iterator();
+            fp5 a2 = ise.a(0, length8);
+            ArrayList arrayList12 = new ArrayList(al2.c(a2, 10));
+            Iterator it2 = a2.iterator();
             while (true) {
-                b bVar2 = (b) it2;
-                if (!bVar2.d) {
+                ep5 ep5Var2 = (ep5) it2;
+                if (!ep5Var2.c) {
                     return arrayList12.toArray(new Short[0]);
                 }
-                int nextInt2 = bVar2.nextInt();
-                arrayList12.add(Short.valueOf((short) (sArr4[nextInt2] ^ sArr3[nextInt2])));
+                int nextInt2 = ep5Var2.nextInt();
+                arrayList12.add(Short.valueOf((short) (sArr3[nextInt2] ^ sArr4[nextInt2])));
             }
-        } else if (z16 && (obj2 instanceof int[])) {
+        } else if (z7 && (obj2 instanceof int[])) {
             int[] iArr3 = (int[]) obj;
             int length9 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzjs.zza(this, length9, iArr4.length);
-            e a12 = yc.a(0, length9);
-            ArrayList arrayList13 = new ArrayList(h.d(a12, 10));
-            Iterator it3 = a12.iterator();
+            fp5 a3 = ise.a(0, length9);
+            ArrayList arrayList13 = new ArrayList(al2.c(a3, 10));
+            Iterator it3 = a3.iterator();
             while (true) {
-                b bVar3 = (b) it3;
-                if (!bVar3.d) {
+                ep5 ep5Var3 = (ep5) it3;
+                if (!ep5Var3.c) {
                     return arrayList13.toArray(new Integer[0]);
                 }
-                int nextInt3 = bVar3.nextInt();
-                arrayList13.add(Integer.valueOf(iArr4[nextInt3] ^ iArr3[nextInt3]));
+                int nextInt3 = ep5Var3.nextInt();
+                arrayList13.add(Integer.valueOf(iArr3[nextInt3] ^ iArr4[nextInt3]));
             }
         } else {
-            if (!z17 || !(obj2 instanceof long[])) {
-                throw new zzdm(4, 5, null);
+            if (!z8 || !(obj2 instanceof long[])) {
+                fvc.c(4, 5, null);
+                return null;
             }
             long[] jArr3 = (long[]) obj;
             int length10 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
             zzjs.zza(this, length10, jArr4.length);
-            e a13 = yc.a(0, length10);
-            ArrayList arrayList14 = new ArrayList(h.d(a13, 10));
-            Iterator it4 = a13.iterator();
+            fp5 a4 = ise.a(0, length10);
+            ArrayList arrayList14 = new ArrayList(al2.c(a4, 10));
+            Iterator it4 = a4.iterator();
             while (true) {
-                b bVar4 = (b) it4;
-                if (!bVar4.d) {
+                ep5 ep5Var4 = (ep5) it4;
+                if (!ep5Var4.c) {
                     return arrayList14.toArray(new Long[0]);
                 }
-                int nextInt4 = bVar4.nextInt();
+                int nextInt4 = ep5Var4.nextInt();
                 arrayList14.add(Long.valueOf(jArr3[nextInt4] ^ jArr4[nextInt4]));
             }
         }

@@ -1,49 +1,44 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import zd.s;
-import zd.t;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfx extends j implements p {
+final class zzfx extends ccb implements eq4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzgb zzc;
     final /* synthetic */ long zzd;
-    final /* synthetic */ s zze;
+    final /* synthetic */ bp2 zze;
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfx(zzgb zzgbVar, long j3, s sVar, c cVar) {
-        super(2, cVar);
+    public zzfx(zzgb zzgbVar, long j, bp2 bp2Var, fw2 fw2Var) {
+        super(2, fw2Var);
         this.zzc = zzgbVar;
-        this.zzd = j3;
-        this.zze = sVar;
+        this.zzd = j;
+        this.zze = bp2Var;
     }
 
-    @Override // kd.a
-    public final c create(Object obj, c cVar) {
-        zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(Object obj, fw2 fw2Var) {
+        zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, fw2Var);
         zzfxVar.zzf = obj;
         return zzfxVar;
     }
 
-    @Override // rd.p
+    @Override // eq4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfx) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
+        return ((zzfx) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x007a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0087, code lost:
     
-        if (r9 == r0) goto L36;
+        if (((com.google.android.recaptcha.internal.zzhg) r9).zza(r0.zza(), r8) != r5) goto L29;
      */
-    @Override // kd.a
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0076, code lost:
+    
+        if (r9 == r5) goto L32;
+     */
+    @Override // of0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -54,77 +49,70 @@ final class zzfx extends j implements p {
         zzgr zzgrVar3;
         zzfp zzfpVar2;
         zzds zzdsVar;
-        a aVar = a.a;
-        int i7 = this.zzb;
+        int i = this.zzb;
+        bx2 bx2Var = bx2.a;
         try {
-            if (i7 == 0) {
-                z.b(obj);
+            if (i == 0) {
+                qse.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
-                long j3 = this.zzd;
+                long j = this.zzd;
                 this.zzf = zzgrVar;
                 this.zza = zzgrVar;
                 this.zzb = 1;
-                obj = zzfpVar.zzp(j3, this);
-                if (obj == aVar) {
-                    return aVar;
+                obj = zzfpVar.zzp(j, this);
+                if (obj != bx2Var) {
+                    zzgrVar2 = zzgrVar;
                 }
-                zzgrVar2 = zzgrVar;
-            } else if (i7 == 1) {
+                return bx2Var;
+            }
+            if (i == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                z.b(obj);
+                qse.b(obj);
+            } else if (i == 2) {
+                zzgrVar3 = (zzgr) this.zzf;
+                qse.b(obj);
+                zzxn zzxnVar = (zzxn) obj;
+                zzgb zzgbVar = this.zzc;
+                zzgbVar.zze = zzxnVar;
+                zzfpVar2 = zzgbVar.zza;
+                long j2 = this.zzd;
+                this.zzf = zzgrVar3;
+                this.zzb = 3;
+                obj = zzfpVar2.zzn(zzxnVar, j2, this);
             } else {
-                if (i7 != 2) {
-                    if (i7 != 3) {
-                        z.b(obj);
-                        zzgb zzgbVar = this.zzc;
-                        zzdsVar = zzdv.zzb;
-                        zzgbVar.zzf = zzdsVar;
-                        return Boolean.valueOf(((t) this.zze).C(k.a));
-                    }
-                    zzgrVar3 = (zzgr) this.zzf;
-                    z.b(obj);
-                    this.zzf = null;
-                    this.zzb = 4;
-                    if (((zzhg) obj).zza(zzgrVar3.zza(), this) == aVar) {
-                        return aVar;
-                    }
+                if (i != 3) {
+                    qse.b(obj);
                     zzgb zzgbVar2 = this.zzc;
                     zzdsVar = zzdv.zzb;
                     zzgbVar2.zzf = zzdsVar;
-                    return Boolean.valueOf(((t) this.zze).C(k.a));
+                    return Boolean.valueOf(((cp2) this.zze).B(g5c.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                z.b(obj);
-                zzxn zzxnVar = (zzxn) obj;
-                zzgb zzgbVar3 = this.zzc;
-                zzgbVar3.zze = zzxnVar;
-                zzfpVar2 = zzgbVar3.zza;
-                long j10 = this.zzd;
-                this.zzf = zzgrVar3;
-                this.zzb = 3;
-                obj = zzfpVar2.zzn(zzxnVar, j10, this);
+                qse.b(obj);
+                this.zzf = null;
+                this.zzb = 4;
             }
             this.zzf = zzgrVar2;
             this.zza = null;
             this.zzb = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
-            if (obj != aVar) {
+            if (obj != bx2Var) {
                 zzgrVar3 = zzgrVar2;
                 zzxn zzxnVar2 = (zzxn) obj;
-                zzgb zzgbVar32 = this.zzc;
-                zzgbVar32.zze = zzxnVar2;
-                zzfpVar2 = zzgbVar32.zza;
-                long j102 = this.zzd;
+                zzgb zzgbVar3 = this.zzc;
+                zzgbVar3.zze = zzxnVar2;
+                zzfpVar2 = zzgbVar3.zza;
+                long j22 = this.zzd;
                 this.zzf = zzgrVar3;
                 this.zzb = 3;
-                obj = zzfpVar2.zzn(zzxnVar2, j102, this);
+                obj = zzfpVar2.zzn(zzxnVar2, j22, this);
             }
-            return aVar;
-        } catch (zzcg e10) {
-            this.zzc.zzd = e10;
-            throw e10;
+            return bx2Var;
+        } catch (zzcg e) {
+            this.zzc.zzd = e;
+            throw e;
         }
     }
 }

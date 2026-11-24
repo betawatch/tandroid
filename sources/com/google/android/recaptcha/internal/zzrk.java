@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class zzrk extends zzsk implements zztt {
     private static final zzrk zzd;
@@ -26,26 +26,26 @@ public final class zzrk extends zzsk implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i7, Object obj, Object obj2) {
+    public final Object zzh(int i, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i7 - 1;
-        if (i10 == 0) {
+        int i2 = i - 1;
+        if (i2 == 0) {
             return Byte.valueOf(this.zzo);
         }
-        if (i10 == 2) {
+        if (i2 == 2) {
             return new zzue(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007᠌\u0006\b᠌\u0007", new Object[]{"zzf", "zzg", zzre.zza, "zzh", zzrd.zza, "zzi", zzrh.zza, "zzj", zzri.zza, "zzk", zzrg.zza, "zzl", zzrf.zza, "zzm", zzrc.zza, "zzn", zzrj.zza});
         }
-        if (i10 == 3) {
+        if (i2 == 3) {
             return new zzrk();
         }
         zzrr zzrrVar = null;
-        if (i10 == 4) {
+        if (i2 == 4) {
             return new zzrb(zzrrVar);
         }
-        if (i10 == 5) {
+        if (i2 == 5) {
             return zzd;
         }
-        if (i10 != 6) {
+        if (i2 != 6) {
             this.zzo = obj == null ? (byte) 0 : (byte) 1;
             return null;
         }
@@ -54,14 +54,10 @@ public final class zzrk extends zzsk implements zztt {
             return zzuaVar2;
         }
         synchronized (zzrk.class) {
-            try {
-                zzuaVar = zze;
-                if (zzuaVar == null) {
-                    zzuaVar = new zzsi(zzd);
-                    zze = zzuaVar;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            zzuaVar = zze;
+            if (zzuaVar == null) {
+                zzuaVar = new zzsi(zzd);
+                zze = zzuaVar;
             }
         }
         return zzuaVar;

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -11,22 +11,20 @@ public abstract class zzqv extends zzqe {
     private static final boolean zzd = zzvc.zzx();
     zzqw zza;
 
-    private zzqv() {
-        throw null;
+    public /* synthetic */ zzqv(zzqu zzquVar) {
     }
 
-    public static int zzA(int i7) {
-        return (352 - (Integer.numberOfLeadingZeros(i7) * 9)) >>> 6;
+    public static int zzA(int i) {
+        return (352 - (Integer.numberOfLeadingZeros(i) * 9)) >>> 6;
     }
 
-    public static int zzB(long j3) {
-        return (640 - (Long.numberOfLeadingZeros(j3) * 9)) >>> 6;
+    public static int zzB(long j) {
+        return (640 - (Long.numberOfLeadingZeros(j) * 9)) >>> 6;
     }
 
     @Deprecated
-    public static int zzw(int i7, zzts zztsVar, zzug zzugVar) {
-        int zzA = zzA(i7 << 3);
-        return ((zzpw) zztsVar).zza(zzugVar) + zzA + zzA;
+    public static int zzw(int i, zzts zztsVar, zzug zzugVar) {
+        return ((zzpw) zztsVar).zza(zzugVar) + (zzA(i << 3) << 1);
     }
 
     public static int zzx(zzts zztsVar) {
@@ -50,9 +48,10 @@ public abstract class zzqv extends zzqe {
     }
 
     public final void zzC() {
-        if (zza() != 0) {
-            throw new IllegalStateException("Did not write as much data as expected.");
+        if (zza() == 0) {
+            return;
         }
+        sc8.j("Did not write as much data as expected.");
     }
 
     public final void zzD(String str, zzve zzveVar) {
@@ -62,51 +61,52 @@ public abstract class zzqv extends zzqe {
             int length = bytes.length;
             zzt(length);
             zzl(bytes, 0, length);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(e10);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(e);
         }
     }
 
     public abstract int zza();
 
-    public abstract void zzb(byte b10);
+    public abstract void zzb(byte b);
 
-    public abstract void zzd(int i7, boolean z10);
+    public abstract void zzd(int i, boolean z);
 
-    public abstract void zze(int i7, zzqm zzqmVar);
+    public abstract void zze(int i, zzqm zzqmVar);
 
-    public abstract void zzf(int i7, int i10);
+    public abstract void zzf(int i, int i2);
 
-    public abstract void zzg(int i7);
+    public abstract void zzg(int i);
 
-    public abstract void zzh(int i7, long j3);
+    public abstract void zzh(int i, long j);
 
-    public abstract void zzi(long j3);
+    public abstract void zzi(long j);
 
-    public abstract void zzj(int i7, int i10);
+    public abstract void zzj(int i, int i2);
 
-    public abstract void zzk(int i7);
+    public abstract void zzk(int i);
 
-    public abstract void zzl(byte[] bArr, int i7, int i10);
+    public abstract void zzl(byte[] bArr, int i, int i2);
 
-    public abstract void zzm(int i7, zzts zztsVar, zzug zzugVar);
+    public abstract void zzm(int i, zzts zztsVar, zzug zzugVar);
 
-    public abstract void zzn(int i7, zzts zztsVar);
+    public abstract void zzn(int i, zzts zztsVar);
 
-    public abstract void zzo(int i7, zzqm zzqmVar);
+    public abstract void zzo(int i, zzqm zzqmVar);
 
-    public abstract void zzp(int i7, String str);
+    public abstract void zzp(int i, String str);
 
-    public abstract void zzr(int i7, int i10);
+    public abstract void zzr(int i, int i2);
 
-    public abstract void zzs(int i7, int i10);
+    public abstract void zzs(int i, int i2);
 
-    public abstract void zzt(int i7);
+    public abstract void zzt(int i);
 
-    public abstract void zzu(int i7, long j3);
+    public abstract void zzu(int i, long j);
 
-    public abstract void zzv(long j3);
+    public abstract void zzv(long j);
 
-    public /* synthetic */ zzqv(zzqu zzquVar) {
+    private zzqv() {
+        throw null;
     }
 }

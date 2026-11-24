@@ -1,74 +1,145 @@
 package j$.time.chrono;
 
 import j$.time.Instant;
+import j$.time.LocalDate;
 import j$.time.ZoneId;
+import j$.time.temporal.Temporal;
+import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.ServiceConfigurationError;
+import java.util.ServiceLoader;
 
-/* loaded from: classes2.dex */
-public abstract class a implements k {
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public abstract class a implements Comparable {
     public static final ConcurrentHashMap a = new ConcurrentHashMap();
     public static final ConcurrentHashMap b = new ConcurrentHashMap();
-
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return getId().compareTo(((k) obj).getId());
-    }
 
     static {
         new Locale("ja", "JP", "JP");
     }
 
-    public static k j(k kVar, String str) {
-        String o4;
-        k kVar2 = (k) a.putIfAbsent(str, kVar);
-        if (kVar2 == null && (o4 = kVar.o()) != null) {
-            b.putIfAbsent(o4, kVar);
-        }
-        return kVar2;
-    }
-
-    @Override // j$.time.chrono.k
-    public ChronoLocalDateTime B(j$.time.temporal.l lVar) {
-        try {
-            return x(lVar).A(j$.time.h.I(lVar));
-        } catch (j$.time.b e10) {
-            throw new j$.time.b("Unable to obtain ChronoLocalDateTime from TemporalAccessor: " + lVar.getClass(), e10);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v6, types: [j$.time.chrono.ChronoZonedDateTime] */
-    @Override // j$.time.chrono.k
-    public ChronoZonedDateTime p(j$.time.temporal.l lVar) {
-        try {
-            ZoneId G = ZoneId.G(lVar);
-            try {
-                lVar = D(Instant.H(lVar), G);
-                return lVar;
-            } catch (j$.time.b unused) {
-                return j.G(G, null, f.G(this, B(lVar)));
+    public static a q(String str) {
+        Objects.requireNonNull(str, "id");
+        while (true) {
+            ConcurrentHashMap concurrentHashMap = a;
+            a aVar = (a) concurrentHashMap.get(str);
+            if (aVar == null) {
+                aVar = (a) b.get(str);
             }
-        } catch (j$.time.b e10) {
-            throw new j$.time.b("Unable to obtain ChronoZonedDateTime from TemporalAccessor: " + lVar.getClass(), e10);
+            if (aVar != null) {
+                return aVar;
+            }
+            if (concurrentHashMap.get("ISO") != null) {
+                Iterator it = ServiceLoader.load(a.class).iterator();
+                while (it.hasNext()) {
+                    a aVar2 = (a) it.next();
+                    if (str.equals(aVar2.n()) || str.equals(aVar2.l())) {
+                        return aVar2;
+                    }
+                }
+                j$.time.g.i(str, "Unknown chronology: ");
+                return null;
+            }
+            m mVar = m.l;
+            u(mVar, mVar.n());
+            t tVar = t.c;
+            u(tVar, tVar.n());
+            y yVar = y.c;
+            u(yVar, yVar.n());
+            e0 e0Var = e0.c;
+            u(e0Var, e0Var.n());
+            try {
+                for (a aVar3 : Arrays.asList(new a[0])) {
+                    if (!aVar3.n().equals("ISO")) {
+                        u(aVar3, aVar3.n());
+                    }
+                }
+                q qVar = q.c;
+                u(qVar, qVar.n());
+            } catch (Throwable th) {
+                throw new ServiceConfigurationError(th.getMessage(), th);
+            }
         }
     }
 
-    @Override // j$.time.chrono.k
+    public static a u(a aVar, String str) {
+        String l;
+        a aVar2 = (a) a.putIfAbsent(str, aVar);
+        if (aVar2 == null && (l = aVar.l()) != null) {
+            b.putIfAbsent(l, aVar);
+        }
+        return aVar2;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return n().compareTo(((a) obj).n());
+    }
+
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (this != obj) {
+            return (obj instanceof a) && n().compareTo(((a) obj).n()) == 0;
         }
-        return (obj instanceof a) && getId().compareTo(((a) obj).getId()) == 0;
+        return true;
     }
 
-    @Override // j$.time.chrono.k
     public final int hashCode() {
-        return getClass().hashCode() ^ getId().hashCode();
+        return getClass().hashCode() ^ n().hashCode();
     }
 
-    @Override // j$.time.chrono.k
+    public b j(j$.time.temporal.l lVar) {
+        return LocalDate.v(lVar);
+    }
+
+    public k k(int i) {
+        if (i == 1) {
+            return p.AH;
+        }
+        throw new j$.time.c("invalid Hijrah era");
+    }
+
+    public String l() {
+        return "islamic-umalqura";
+    }
+
+    public String n() {
+        return "Hijrah-umalqura";
+    }
+
+    public ChronoLocalDateTime o(Temporal temporal) {
+        try {
+            return j(temporal).A(j$.time.j.v(temporal));
+        } catch (j$.time.c e) {
+            throw new j$.time.c("Unable to obtain ChronoLocalDateTime from TemporalAccessor: " + temporal.getClass(), e);
+        }
+    }
+
+    public j$.time.temporal.s r(j$.time.temporal.a aVar) {
+        return aVar.b;
+    }
+
     public final String toString() {
-        return getId();
+        return n();
+    }
+
+    public ChronoZonedDateTime v(Instant instant, ZoneId zoneId) {
+        return j.q(this, instant, zoneId);
+    }
+
+    public ChronoZonedDateTime w(Temporal temporal) {
+        try {
+            ZoneId o = ZoneId.o(temporal);
+            try {
+                return v(Instant.q(temporal), o);
+            } catch (j$.time.c unused) {
+                return j.o(o, null, f.o(this, this.o(temporal)));
+            }
+        } catch (j$.time.c e) {
+            throw new j$.time.c("Unable to obtain ChronoZonedDateTime from TemporalAccessor: " + temporal.getClass(), e);
+        }
     }
 }

@@ -1,11 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import gd.k;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class zzit implements InvocationHandler {
     private final Object zza;
@@ -16,30 +14,34 @@ public abstract class zzit implements InvocationHandler {
 
     @Override // java.lang.reflect.InvocationHandler
     public final Object invoke(Object obj, Method method, Object[] objArr) {
-        if (j.a(method.getName(), "toString") && method.getParameterTypes().length == 0) {
+        if (rp5.a(method.getName(), "toString") && method.getParameterTypes().length == 0) {
             return "Proxy@".concat(String.valueOf(Integer.toHexString(obj.hashCode())));
         }
-        if (j.a(method.getName(), "hashCode") && method.getParameterTypes().length == 0) {
+        if (rp5.a(method.getName(), "hashCode") && method.getParameterTypes().length == 0) {
             return Integer.valueOf(System.identityHashCode(obj));
         }
-        if (j.a(method.getName(), "equals") && method.getParameterTypes().length != 0) {
-            boolean z10 = false;
+        if (rp5.a(method.getName(), "equals") && method.getParameterTypes().length != 0) {
+            boolean z = false;
             if (objArr != null && objArr.length != 0) {
                 Object obj2 = objArr[0];
                 if ((obj2 != null ? obj2.hashCode() : 0) == obj.hashCode()) {
-                    z10 = true;
+                    z = true;
                 }
             }
-            return Boolean.valueOf(z10);
+            return Boolean.valueOf(z);
         }
         boolean zza = zza(obj, method, objArr);
-        k kVar = k.a;
+        g5c g5cVar = g5c.a;
         if (!zza) {
-            return kVar;
+            return g5cVar;
         }
         Object obj3 = this.zza;
-        if ((obj3 == null && j.a(method.getReturnType(), Void.TYPE)) || (obj3 != null && j.a(zzpu.zza(obj3.getClass()), zzpu.zza(method.getReturnType())))) {
-            return obj3 == null ? kVar : obj3;
+        if (obj3 == null) {
+            if (rp5.a(method.getReturnType(), Void.TYPE)) {
+                return g5cVar;
+            }
+        } else if (rp5.a(zzpu.zza(obj3.getClass()), zzpu.zza(method.getReturnType()))) {
+            return obj3;
         }
         throw new IllegalArgumentException(obj3 + " cannot be returned from method with return type " + method.getReturnType());
     }

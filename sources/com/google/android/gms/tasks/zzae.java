@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class zzae<T> implements zzab<T> {
     private final Object zza = new Object();
@@ -14,33 +14,36 @@ final class zzae<T> implements zzab<T> {
     private Exception zzg;
     private boolean zzh;
 
-    public zzae(int i7, zzw zzwVar) {
-        this.zzb = i7;
+    public zzae(int i, zzw zzwVar) {
+        this.zzb = i;
         this.zzc = zzwVar;
     }
 
     private final void zza() {
-        int i7 = this.zzd + this.zze + this.zzf;
-        int i10 = this.zzb;
-        if (i7 == i10) {
+        int i = this.zzd;
+        int i2 = this.zze;
+        int i3 = i + i2 + this.zzf;
+        int i4 = this.zzb;
+        if (i3 == i4) {
             if (this.zzg == null) {
-                if (this.zzh) {
-                    this.zzc.zze();
+                boolean z = this.zzh;
+                zzw zzwVar = this.zzc;
+                if (z) {
+                    zzwVar.zze();
                     return;
                 } else {
-                    this.zzc.zza(null);
+                    zzwVar.zza(null);
                     return;
                 }
             }
-            zzw zzwVar = this.zzc;
-            int i11 = this.zze;
-            int length = String.valueOf(i11).length();
-            StringBuilder sb2 = new StringBuilder(String.valueOf(i10).length() + length + 8 + 24);
-            sb2.append(i11);
-            sb2.append(" out of ");
-            sb2.append(i10);
-            sb2.append(" underlying tasks failed");
-            zzwVar.zzc(new ExecutionException(sb2.toString(), this.zzg));
+            zzw zzwVar2 = this.zzc;
+            int length = String.valueOf(i2).length();
+            StringBuilder sb = new StringBuilder(String.valueOf(i4).length() + length + 8 + 24);
+            sb.append(i2);
+            sb.append(" out of ");
+            sb.append(i4);
+            sb.append(" underlying tasks failed");
+            zzwVar2.zzc(new ExecutionException(sb.toString(), this.zzg));
         }
     }
 
@@ -63,7 +66,7 @@ final class zzae<T> implements zzab<T> {
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(T t6) {
+    public final void onSuccess(T t) {
         synchronized (this.zza) {
             this.zzd++;
             zza();

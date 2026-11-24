@@ -3,7 +3,7 @@ package com.google.android.play.core.integrity;
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class bt {
     private final bn a;
@@ -12,7 +12,7 @@ final class bt {
         this.a = bnVar;
     }
 
-    public final /* synthetic */ Task a(long j3, long j10, int i7, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest) {
-        return this.a.d(standardIntegrityTokenRequest, j3, j10, 0);
+    public final /* synthetic */ Task a(long j, long j2, int i, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest) {
+        return this.a.d(standardIntegrityTokenRequest, j, j2, 0);
     }
 }

@@ -11,8 +11,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
     private CapturerObserver capturerObserver;
@@ -25,15 +25,15 @@ public class FileVideoCapturer implements VideoCapturer {
         }
     };
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public interface VideoReader {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private interface VideoReader {
         void close();
 
         VideoFrame getNextFrame();
     }
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-    public static class VideoReaderY4M implements VideoReader {
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    private static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";
         private static final String Y4M_FRAME_DELIMETER = "FRAME";
@@ -47,40 +47,43 @@ public class FileVideoCapturer implements VideoCapturer {
             RandomAccessFile randomAccessFile = new RandomAccessFile(str, "r");
             this.mediaFile = randomAccessFile;
             this.mediaFileChannel = randomAccessFile.getChannel();
-            StringBuilder sb2 = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             while (true) {
                 int read = this.mediaFile.read();
                 if (read == -1) {
-                    throw new RuntimeException(p5.c.k("Found end of file before end of header for file: ", str));
+                    wn4.j(b00.h("Found end of file before end of header for file: ", str));
+                    throw null;
                 }
                 if (read == 10) {
                     this.videoStart = this.mediaFileChannel.position();
                     String str2 = "";
-                    int i7 = 0;
-                    int i10 = 0;
-                    for (String str3 : sb2.toString().split("[ ]")) {
+                    int i = 0;
+                    int i2 = 0;
+                    for (String str3 : sb.toString().split("[ ]")) {
                         char charAt = str3.charAt(0);
                         if (charAt == 'C') {
                             str2 = str3.substring(1);
                         } else if (charAt == 'H') {
-                            i10 = Integer.parseInt(str3.substring(1));
+                            i2 = Integer.parseInt(str3.substring(1));
                         } else if (charAt == 'W') {
-                            i7 = Integer.parseInt(str3.substring(1));
+                            i = Integer.parseInt(str3.substring(1));
                         }
                     }
                     Logging.d(TAG, "Color space: " + str2);
                     if (!str2.equals("420") && !str2.equals("420mpeg2")) {
-                        throw new IllegalArgumentException("Does not support any other color space than I420 or I420mpeg2");
+                        w26.j("Does not support any other color space than I420 or I420mpeg2");
+                        throw null;
                     }
-                    if (i7 % 2 == 1 || i10 % 2 == 1) {
-                        throw new IllegalArgumentException("Does not support odd width or height");
+                    if (i % 2 == 1 || i2 % 2 == 1) {
+                        w26.j("Does not support odd width or height");
+                        throw null;
                     }
-                    this.frameWidth = i7;
-                    this.frameHeight = i10;
-                    Logging.d(TAG, "frame dim: (" + i7 + ", " + i10 + ")");
+                    this.frameWidth = i;
+                    this.frameHeight = i2;
+                    Logging.d(TAG, "frame dim: (" + i + ", " + i2 + ")");
                     return;
                 }
-                sb2.append((char) read);
+                sb.append((char) read);
             }
         }
 
@@ -88,8 +91,8 @@ public class FileVideoCapturer implements VideoCapturer {
         public void close() {
             try {
                 this.mediaFile.close();
-            } catch (IOException e10) {
-                Logging.e(TAG, "Problem closing file", e10);
+            } catch (IOException e) {
+                Logging.e(TAG, "Problem closing file", e);
             }
         }
 
@@ -104,11 +107,11 @@ public class FileVideoCapturer implements VideoCapturer {
             allocate.getStrideU();
             allocate.getStrideV();
             try {
-                int i7 = FRAME_DELIMETER_LENGTH;
-                ByteBuffer allocate2 = ByteBuffer.allocate(i7);
-                if (this.mediaFileChannel.read(allocate2) < i7) {
+                int i = FRAME_DELIMETER_LENGTH;
+                ByteBuffer allocate2 = ByteBuffer.allocate(i);
+                if (this.mediaFileChannel.read(allocate2) < i) {
                     this.mediaFileChannel.position(this.videoStart);
-                    if (this.mediaFileChannel.read(allocate2) < i7) {
+                    if (this.mediaFileChannel.read(allocate2) < i) {
                         throw new RuntimeException("Error looping video");
                     }
                 }
@@ -120,8 +123,9 @@ public class FileVideoCapturer implements VideoCapturer {
                     return new VideoFrame(allocate, 0, nanos);
                 }
                 throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
-            } catch (IOException e10) {
-                throw new RuntimeException(e10);
+            } catch (IOException e) {
+                sdb.b(e);
+                return null;
             }
         }
     }
@@ -129,9 +133,9 @@ public class FileVideoCapturer implements VideoCapturer {
     public FileVideoCapturer(String str) {
         try {
             this.videoReader = new VideoReaderY4M(str);
-        } catch (IOException e10) {
+        } catch (IOException e) {
             Logging.d(TAG, "Could not open video file: " + str);
-            throw e10;
+            throw e;
         }
     }
 
@@ -151,8 +155,8 @@ public class FileVideoCapturer implements VideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public void startCapture(int i7, int i10, int i11) {
-        this.timer.schedule(this.tickTask, 0L, 1000 / i11);
+    public void startCapture(int i, int i2, int i3) {
+        this.timer.schedule(this.tickTask, 0L, 1000 / i3);
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -167,6 +171,6 @@ public class FileVideoCapturer implements VideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public void changeCaptureFormat(int i7, int i10, int i11) {
+    public void changeCaptureFormat(int i, int i2, int i3) {
     }
 }

@@ -1,7 +1,30 @@
 package j$.util.stream;
 
-import java.util.function.Supplier;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public final class c8 {
+    public static final c8 MAYBE_MORE;
+    public static final c8 NO_MORE;
+    public static final c8 UNLIMITED;
+    public static final /* synthetic */ c8[] a;
 
-/* loaded from: classes2.dex */
-public interface c8 extends j5, Supplier {
+    static {
+        c8 c8Var = new c8("NO_MORE", 0);
+        NO_MORE = c8Var;
+        c8 c8Var2 = new c8("MAYBE_MORE", 1);
+        MAYBE_MORE = c8Var2;
+        c8 c8Var3 = new c8("UNLIMITED", 2);
+        UNLIMITED = c8Var3;
+        a = new c8[]{c8Var, c8Var2, c8Var3};
+    }
+
+    public static c8 valueOf(String str) {
+        return (c8) Enum.valueOf(c8.class, str);
+    }
+
+    public static c8[] values() {
+        return (c8[]) a.clone();
+    }
 }

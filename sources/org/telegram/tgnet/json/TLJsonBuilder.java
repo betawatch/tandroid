@@ -5,14 +5,13 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -28,8 +27,8 @@ public class TLJsonBuilder {
             TLJsonBuilder tLJsonBuilder = new TLJsonBuilder();
             serializable.serializeToJson(tLJsonBuilder);
             return tLJsonBuilder.result2;
-        } catch (Exception e10) {
-            a8.g(e10, true);
+        } catch (Exception e) {
+            fa4.g(e, true);
             return null;
         }
     }
@@ -37,21 +36,21 @@ public class TLJsonBuilder {
     private void write(String str, Object obj) {
         try {
             this.result2.putOpt(str, obj);
-        } catch (JSONException e10) {
-            a8.g(e10, true);
+        } catch (JSONException e) {
+            fa4.g(e, true);
         }
     }
 
-    public void writeBoolean(String str, boolean z10) {
-        write(str, Boolean.valueOf(z10));
+    public void writeBoolean(String str, boolean z) {
+        write(str, Boolean.valueOf(z));
     }
 
-    public void writeInt32(String str, int i7) {
-        writeString(str, Integer.toString(i7, 10));
+    public void writeInt32(String str, int i) {
+        writeString(str, Integer.toString(i, 10));
     }
 
-    public void writeInt64(String str, long j3) {
-        writeString(str, Long.toString(j3, 10));
+    public void writeInt64(String str, long j) {
+        writeString(str, Long.toString(j, 10));
     }
 
     public void writeObject(String str, Serializable serializable) {

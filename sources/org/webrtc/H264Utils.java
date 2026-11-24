@@ -3,8 +3,8 @@ package org.webrtc;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 class H264Utils {
     public static VideoCodecInfo DEFAULT_H264_BASELINE_PROFILE_CODEC = new VideoCodecInfo("H264", getDefaultH264Params(false));
     public static VideoCodecInfo DEFAULT_H264_HIGH_PROFILE_CODEC = new VideoCodecInfo("H264", getDefaultH264Params(true));
@@ -17,11 +17,11 @@ class H264Utils {
     public static final String H264_PROFILE_CONSTRAINED_BASELINE = "42e0";
     public static final String H264_PROFILE_CONSTRAINED_HIGH = "640c";
 
-    public static Map<String, String> getDefaultH264Params(boolean z10) {
+    public static Map<String, String> getDefaultH264Params(boolean z) {
         HashMap hashMap = new HashMap();
         hashMap.put("level-asymmetry-allowed", "1");
         hashMap.put("packetization-mode", "1");
-        hashMap.put("profile-level-id", z10 ? "640c1f" : "42e01f");
+        hashMap.put("profile-level-id", z ? "640c1f" : "42e01f");
         return hashMap;
     }
 

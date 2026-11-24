@@ -2,7 +2,8 @@ package j$.time.temporal;
 
 import j$.util.Objects;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public abstract class p {
     public static final j$.time.format.a a = new j$.time.format.a(1);
     public static final j$.time.format.a b = new j$.time.format.a(2);
@@ -12,27 +13,27 @@ public abstract class p {
     public static final j$.time.format.a f = new j$.time.format.a(6);
     public static final j$.time.format.a g = new j$.time.format.a(7);
 
-    public static s d(l lVar, o oVar) {
-        if (!(oVar instanceof a)) {
-            Objects.requireNonNull(oVar, "field");
-            return oVar.k(lVar);
-        }
-        if (lVar.e(oVar)) {
-            return ((a) oVar).b;
-        }
-        throw new r(j$.time.c.a("Unsupported field: ", oVar));
-    }
-
     public static int a(l lVar, o oVar) {
-        s l10 = lVar.l(oVar);
-        if (l10.a < -2147483648L || l10.d > 2147483647L) {
+        s l = lVar.l(oVar);
+        if (l.a < -2147483648L || l.d > 2147483647L) {
             throw new r("Invalid field " + oVar + " for get() method, use getLong() instead");
         }
-        long y10 = lVar.y(oVar);
-        if (l10.d(y10)) {
-            return (int) y10;
+        long y = lVar.y(oVar);
+        if (l.d(y)) {
+            return (int) y;
         }
-        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l10 + "): " + y10);
+        throw new j$.time.c("Invalid value for " + oVar + " (valid values " + l + "): " + y);
+    }
+
+    public static Temporal b(Temporal temporal, long j, q qVar) {
+        long j2;
+        if (j == Long.MIN_VALUE) {
+            temporal = temporal.d(Long.MAX_VALUE, qVar);
+            j2 = 1;
+        } else {
+            j2 = -j;
+        }
+        return temporal.d(j2, qVar);
     }
 
     public static Object c(l lVar, j$.time.format.a aVar) {
@@ -42,14 +43,14 @@ public abstract class p {
         return aVar.a(lVar);
     }
 
-    public static Temporal b(Temporal temporal, long j3, q qVar) {
-        long j10;
-        if (j3 == Long.MIN_VALUE) {
-            temporal = temporal.d(Long.MAX_VALUE, qVar);
-            j10 = 1;
-        } else {
-            j10 = -j3;
+    public static s d(l lVar, o oVar) {
+        if (!(oVar instanceof a)) {
+            Objects.requireNonNull(oVar, "field");
+            return oVar.k(lVar);
         }
-        return temporal.d(j10, qVar);
+        if (lVar.e(oVar)) {
+            return ((a) oVar).b;
+        }
+        throw new r(j$.time.d.a("Unsupported field: ", oVar));
     }
 }

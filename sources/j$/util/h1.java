@@ -4,31 +4,25 @@ import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public final class h1 implements p0, LongConsumer, y {
     public boolean a = false;
     public long b;
     public final /* synthetic */ a1 c;
 
+    public h1(a1 a1Var) {
+        this.c = a1Var;
+    }
+
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        this.a = true;
+        this.b = j;
+    }
+
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
-    }
-
-    @Override // j$.util.q0
-    public final void forEachRemaining(LongConsumer longConsumer) {
-        Objects.requireNonNull(longConsumer);
-        while (hasNext()) {
-            longConsumer.accept(nextLong());
-        }
-    }
-
-    @Override // java.util.Iterator
-    public final Long next() {
-        if (u1.a) {
-            u1.a(h1.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
-            throw null;
-        }
-        return Long.valueOf(nextLong());
+        return j$.time.a.c(this, longConsumer);
     }
 
     @Override // j$.util.p0, java.util.Iterator, j$.util.y
@@ -43,17 +37,7 @@ public final class h1 implements p0, LongConsumer, y {
             throw null;
         }
         Objects.requireNonNull(consumer);
-        forEachRemaining((LongConsumer) new m0(consumer, 0));
-    }
-
-    public h1(a1 a1Var) {
-        this.c = a1Var;
-    }
-
-    @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
-        this.a = true;
-        this.b = j3;
+        forEachRemaining((LongConsumer) new m0(consumer, (byte) 0));
     }
 
     @Override // java.util.Iterator
@@ -64,6 +48,15 @@ public final class h1 implements p0, LongConsumer, y {
         return this.a;
     }
 
+    @Override // java.util.Iterator
+    public final Long next() {
+        if (!u1.a) {
+            return Long.valueOf(nextLong());
+        }
+        u1.a(h1.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
+        throw null;
+    }
+
     @Override // j$.util.p0
     public final long nextLong() {
         if (!this.a && !hasNext()) {
@@ -71,5 +64,13 @@ public final class h1 implements p0, LongConsumer, y {
         }
         this.a = false;
         return this.b;
+    }
+
+    @Override // j$.util.q0
+    public final void forEachRemaining(LongConsumer longConsumer) {
+        Objects.requireNonNull(longConsumer);
+        while (hasNext()) {
+            longConsumer.accept(nextLong());
+        }
     }
 }

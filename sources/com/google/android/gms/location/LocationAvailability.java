@@ -2,39 +2,33 @@ package com.google.android.gms.location;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.cc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.b;
-import j8.g;
 import java.util.Arrays;
-import r6.a;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class LocationAvailability extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<LocationAvailability> CREATOR = new b(22);
+public final class LocationAvailability extends b4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<LocationAvailability> CREATOR = new xff((byte) 6);
     public final int a;
     public final int b;
     public final long c;
-    public final int d;
-    public final g[] e;
+    public final short d;
+    public final v5d[] e;
 
-    public LocationAvailability(int i7, int i10, int i11, long j3, g[] gVarArr) {
-        this.d = i7 < 1000 ? 0 : 1000;
-        this.a = i10;
-        this.b = i11;
-        this.c = j3;
-        this.e = gVarArr;
+    public LocationAvailability(int i, int i2, int i3, long j, v5d[] v5dVarArr) {
+        this.d = i < 1000 ? (short) 0 : (short) 1000;
+        this.a = i2;
+        this.b = i3;
+        this.c = j;
+        this.e = v5dVarArr;
     }
 
     public final boolean equals(Object obj) {
-        if (obj instanceof LocationAvailability) {
-            LocationAvailability locationAvailability = (LocationAvailability) obj;
-            if (this.a == locationAvailability.a && this.b == locationAvailability.b && this.c == locationAvailability.c && this.d == locationAvailability.d && Arrays.equals(this.e, locationAvailability.e)) {
-                return true;
-            }
+        if (!(obj instanceof LocationAvailability)) {
+            return false;
         }
-        return false;
+        LocationAvailability locationAvailability = (LocationAvailability) obj;
+        return this.a == locationAvailability.a && this.b == locationAvailability.b && this.c == locationAvailability.c && this.d == locationAvailability.d && Arrays.equals(this.e, locationAvailability.e);
     }
 
     public final int hashCode() {
@@ -46,21 +40,21 @@ public final class LocationAvailability extends a implements ReflectedParcelable
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = cc.r(parcel, 20293);
-        cc.q(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = jte.r(parcel, 20293);
+        jte.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        cc.q(parcel, 2, 4);
+        jte.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        cc.q(parcel, 3, 8);
+        jte.q(parcel, 3, 8);
         parcel.writeLong(this.c);
-        cc.q(parcel, 4, 4);
-        int i10 = this.d;
-        parcel.writeInt(i10);
-        cc.o(parcel, 5, this.e, i7);
-        int i11 = i10 >= 1000 ? 0 : 1;
-        cc.q(parcel, 6, 4);
-        parcel.writeInt(i11);
-        cc.s(parcel, r10);
+        jte.q(parcel, 4, 4);
+        short s = this.d;
+        parcel.writeInt(s);
+        jte.o(parcel, 5, this.e, i);
+        int i2 = s >= 1000 ? 0 : 1;
+        jte.q(parcel, 6, 4);
+        parcel.writeInt(i2);
+        jte.s(parcel, r);
     }
 }

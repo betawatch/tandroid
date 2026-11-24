@@ -3,34 +3,35 @@ package org.webrtc;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes3.dex */
 public class VideoTrack extends MediaStreamTrack {
     private final IdentityHashMap<VideoSink, Long> sinks;
 
-    public VideoTrack(long j3) {
-        super(j3);
+    public VideoTrack(long j) {
+        super(j);
         this.sinks = new IdentityHashMap<>();
     }
 
-    private static native void nativeAddSink(long j3, long j10);
+    private static native void nativeAddSink(long j, long j2);
 
-    private static native void nativeFreeSink(long j3);
+    private static native void nativeFreeSink(long j);
 
-    private static native void nativeRemoveSink(long j3, long j10);
+    private static native void nativeRemoveSink(long j, long j2);
 
     private static native long nativeWrapSink(VideoSink videoSink);
 
     public void addSink(VideoSink videoSink) {
         if (videoSink == null) {
-            throw new IllegalArgumentException("The VideoSink is not allowed to be null");
+            w26.j("The VideoSink is not allowed to be null");
+        } else {
+            if (this.sinks.containsKey(videoSink)) {
+                return;
+            }
+            long nativeWrapSink = nativeWrapSink(videoSink);
+            this.sinks.put(videoSink, Long.valueOf(nativeWrapSink));
+            nativeAddSink(getNativeMediaStreamTrack(), nativeWrapSink);
         }
-        if (this.sinks.containsKey(videoSink)) {
-            return;
-        }
-        long nativeWrapSink = nativeWrapSink(videoSink);
-        this.sinks.put(videoSink, Long.valueOf(nativeWrapSink));
-        nativeAddSink(getNativeMediaStreamTrack(), nativeWrapSink);
     }
 
     @Override // org.webrtc.MediaStreamTrack

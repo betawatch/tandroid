@@ -7,7 +7,7 @@ import androidx.car.app.model.DateTimeWithZone;
 import androidx.car.app.model.Distance;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public final class TravelEstimate {
     public static final long REMAINING_TIME_UNKNOWN = -1;
@@ -58,9 +58,9 @@ public final class TravelEstimate {
     }
 
     public long getRemainingTimeSeconds() {
-        long j3 = this.mRemainingTimeSeconds;
-        if (j3 >= 0) {
-            return j3;
+        long j = this.mRemainingTimeSeconds;
+        if (j >= 0) {
+            return j;
         }
         return -1L;
     }
@@ -81,7 +81,7 @@ public final class TravelEstimate {
         return "[ remaining distance: " + this.mRemainingDistance + ", time (s): " + this.mRemainingTimeSeconds + ", ETA: " + this.mArrivalTimeAtDestination + "]";
     }
 
-    public TravelEstimate(m mVar) {
+    public TravelEstimate(l1c l1cVar) {
         throw null;
     }
 }

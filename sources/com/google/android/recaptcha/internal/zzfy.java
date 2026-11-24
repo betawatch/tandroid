@@ -1,53 +1,45 @@
 package com.google.android.recaptcha.internal;
 
-import c8.z;
-import gd.k;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.l;
-import zd.s;
-
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-final class zzfy extends j implements l {
+final class zzfy extends ccb implements qp4 {
     int zza;
     final /* synthetic */ zzhk zzb;
     final /* synthetic */ zzgb zzc;
     final /* synthetic */ long zzd;
-    final /* synthetic */ s zze;
+    final /* synthetic */ bp2 zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfy(zzhk zzhkVar, zzgb zzgbVar, long j3, s sVar, c cVar) {
-        super(1, cVar);
+    public zzfy(zzhk zzhkVar, zzgb zzgbVar, long j, bp2 bp2Var, fw2 fw2Var) {
+        super(1, fw2Var);
         this.zzb = zzhkVar;
         this.zzc = zzgbVar;
-        this.zzd = j3;
-        this.zze = sVar;
+        this.zzd = j;
+        this.zze = bp2Var;
     }
 
-    @Override // kd.a
-    public final c create(c cVar) {
-        return new zzfy(this.zzb, this.zzc, this.zzd, this.zze, cVar);
+    @Override // of0
+    public final fw2 create(fw2 fw2Var) {
+        return new zzfy(this.zzb, this.zzc, this.zzd, this.zze, fw2Var);
     }
 
-    @Override // rd.l
+    @Override // qp4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzfy) create((c) obj)).invokeSuspend(k.a);
+        return ((zzfy) create((fw2) obj)).invokeSuspend(g5c.a);
     }
 
-    @Override // kd.a
+    @Override // of0
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i7 = this.zza;
-        z.b(obj);
-        if (i7 != 0) {
+        int i = this.zza;
+        qse.b(obj);
+        if (i != 0) {
             return obj;
         }
         zzhk zzhkVar = this.zzb;
         zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, null);
         this.zza = 1;
         Object zze = zzhj.zze(zzhkVar, 41, zzfxVar, this);
-        return zze == aVar ? aVar : zze;
+        bx2 bx2Var = bx2.a;
+        return zze == bx2Var ? bx2Var : zze;
     }
 }

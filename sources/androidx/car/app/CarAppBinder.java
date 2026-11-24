@@ -7,24 +7,24 @@ import android.os.Looper;
 import android.util.Log;
 import androidx.car.app.ICarApp;
 
-/* compiled from: r8-map-id-4133155207c006298c642c285ab3b5978923f03f939756047215603ba68bdf5b */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 final class CarAppBinder extends ICarApp.Stub {
-    private n mCurrentSession;
+    private e5a mCurrentSession;
     private final SessionInfo mCurrentSessionInfo;
     private HandshakeInfo mHandshakeInfo;
-    private y.a mHostValidator;
-    private f mService;
+    private zf5 mHostValidator;
+    private ec1 mService;
 
-    public CarAppBinder(f fVar, SessionInfo sessionInfo) {
+    public CarAppBinder(ec1 ec1Var, SessionInfo sessionInfo) {
         this.mCurrentSessionInfo = sessionInfo;
     }
 
-    private androidx.lifecycle.o getCurrentLifecycle() {
+    private w06 getCurrentLifecycle() {
         return null;
     }
 
-    private y.a getHostValidator() {
+    private zf5 getHostValidator() {
         Object obj = null;
         obj.getClass();
         return null;
@@ -70,8 +70,8 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    private void onConfigurationChangedInternal(n nVar, Configuration configuration) {
-        Handler handler = androidx.car.app.utils.h.a;
+    private void onConfigurationChangedInternal(e5a e5aVar, Configuration configuration) {
+        Handler handler = hnb.a;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Not running on main thread when it is required to");
         }
@@ -81,8 +81,8 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    private void onNewIntentInternal(n nVar, Intent intent) {
-        Handler handler = androidx.car.app.utils.h.a;
+    private void onNewIntentInternal(e5a e5aVar, Intent intent) {
+        Handler handler = hnb.a;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Not running on main thread when it is required to");
         }
@@ -99,7 +99,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    public n getCurrentSession() {
+    public e5a getCurrentSession() {
         return null;
     }
 
@@ -113,7 +113,7 @@ final class CarAppBinder extends ICarApp.Stub {
 
     @Override // androidx.car.app.ICarApp
     public void getManager(final String str, final IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.h.a(new Runnable() { // from class: androidx.car.app.e
+        hnb.a(new Runnable() { // from class: androidx.car.app.e
             @Override // java.lang.Runnable
             public final void run() {
                 CarAppBinder.this.lambda$getManager$7(str, iOnDoneCallback);
@@ -126,8 +126,8 @@ final class CarAppBinder extends ICarApp.Stub {
         if (Log.isLoggable("CarApp", 3)) {
             Log.d("CarApp", "onAppCreate intent: " + intent);
         }
-        androidx.car.app.utils.g.b(iOnDoneCallback, "onAppCreate", new androidx.car.app.utils.a() { // from class: androidx.car.app.d
-            @Override // androidx.car.app.utils.a
+        androidx.car.app.utils.e.c(iOnDoneCallback, "onAppCreate", new q69() { // from class: androidx.car.app.d
+            @Override // q69
             public final Object a() {
                 Object lambda$onAppCreate$0;
                 lambda$onAppCreate$0 = CarAppBinder.this.lambda$onAppCreate$0(iCarHost, configuration, intent);
@@ -141,45 +141,46 @@ final class CarAppBinder extends ICarApp.Stub {
 
     @Override // androidx.car.app.ICarApp
     public void onAppPause(IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.g.c(getCurrentLifecycle(), iOnDoneCallback, "onAppPause", new c(this, 0));
+        androidx.car.app.utils.e.b(getCurrentLifecycle(), iOnDoneCallback, "onAppPause", new c(this, (byte) 0));
     }
 
     @Override // androidx.car.app.ICarApp
     public void onAppResume(IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.g.c(getCurrentLifecycle(), iOnDoneCallback, "onAppResume", new c(this, 3));
+        androidx.car.app.utils.e.b(getCurrentLifecycle(), iOnDoneCallback, "onAppResume", new c(this, (byte) 3));
     }
 
     @Override // androidx.car.app.ICarApp
     public void onAppStart(IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.g.c(getCurrentLifecycle(), iOnDoneCallback, "onAppStart", new c(this, 1));
+        androidx.car.app.utils.e.b(getCurrentLifecycle(), iOnDoneCallback, "onAppStart", new c(this, (byte) 1));
     }
 
     @Override // androidx.car.app.ICarApp
     public void onAppStop(IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.g.c(getCurrentLifecycle(), iOnDoneCallback, "onAppStop", new c(this, 2));
+        androidx.car.app.utils.e.b(getCurrentLifecycle(), iOnDoneCallback, "onAppStop", new c(this, (byte) 2));
     }
 
     @Override // androidx.car.app.ICarApp
     public void onConfigurationChanged(Configuration configuration, IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.g.c(getCurrentLifecycle(), iOnDoneCallback, "onConfigurationChanged", new b(0, this, configuration));
+        androidx.car.app.utils.e.b(getCurrentLifecycle(), iOnDoneCallback, "onConfigurationChanged", new b(this, configuration, (byte) 0));
     }
 
     @Override // androidx.car.app.ICarApp
-    public void onHandshakeCompleted(w.b bVar, IOnDoneCallback iOnDoneCallback) {
+    public void onHandshakeCompleted(y21 y21Var, IOnDoneCallback iOnDoneCallback) {
         throw null;
     }
 
     @Override // androidx.car.app.ICarApp
     public void onNewIntent(Intent intent, IOnDoneCallback iOnDoneCallback) {
-        androidx.car.app.utils.g.c(getCurrentLifecycle(), iOnDoneCallback, "onNewIntent", new b(1, this, intent));
+        androidx.car.app.utils.e.b(getCurrentLifecycle(), iOnDoneCallback, "onNewIntent", new b(this, intent, (byte) 1));
     }
 
     public void setHandshakeInfo(HandshakeInfo handshakeInfo) {
         int hostCarAppApiLevel = handshakeInfo.getHostCarAppApiLevel();
-        if (hostCarAppApiLevel < 1 || hostCarAppApiLevel > z.a.a()) {
-            throw new IllegalArgumentException(i5.c.i(hostCarAppApiLevel, "Invalid Car App API level received: "));
+        if (hostCarAppApiLevel < 1 || hostCarAppApiLevel > dc1.b()) {
+            w26.j(de9.k(hostCarAppApiLevel, "Invalid Car App API level received: "));
+        } else {
+            this.mHandshakeInfo = handshakeInfo;
         }
-        this.mHandshakeInfo = handshakeInfo;
     }
 
     public void onAutoDriveEnabled() {

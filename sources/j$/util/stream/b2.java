@@ -1,29 +1,6 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
-
-/* loaded from: classes2.dex */
-public final /* synthetic */ class b2 implements LongConsumer {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ b2(int i7) {
-        this.a = i7;
-    }
-
-    private final void accept$j$$util$stream$Node$OfLong$$ExternalSyntheticLambda0(long j3) {
-    }
-
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfLong$$ExternalSyntheticLambda0(long j3) {
-    }
-
-    @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
-        int i7 = this.a;
-    }
-
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
-    }
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
+public interface b2 extends g2 {
 }

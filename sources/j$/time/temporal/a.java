@@ -1,6 +1,7 @@
 package j$.time.temporal;
 
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* loaded from: classes4.dex */
 public enum a implements o {
     NANO_OF_SECOND("NanoOfSecond", s.e(0, 999999999)),
     NANO_OF_DAY("NanoOfDay", s.e(0, 86399999999999L)),
@@ -45,27 +46,9 @@ public enum a implements o {
         this.b = sVar;
     }
 
-    a(String str, s sVar, int i7) {
-        this.a = str;
-        this.b = sVar;
-    }
-
-    @Override // j$.time.temporal.o
-    public final s l() {
-        return this.b;
-    }
-
-    public final void w(long j3) {
-        this.b.b(j3, this);
-    }
-
     @Override // j$.time.temporal.o
     public final boolean isDateBased() {
         return ordinal() >= DAY_OF_WEEK.ordinal() && ordinal() <= ERA.ordinal();
-    }
-
-    public final boolean y() {
-        return ordinal() < DAY_OF_WEEK.ordinal();
     }
 
     @Override // j$.time.temporal.o
@@ -79,17 +62,35 @@ public enum a implements o {
     }
 
     @Override // j$.time.temporal.o
-    public final long m(l lVar) {
+    public final long l(l lVar) {
         return lVar.y(this);
     }
 
     @Override // j$.time.temporal.o
-    public final Temporal q(Temporal temporal, long j3) {
-        return temporal.c(j3, this);
+    public final Temporal n(Temporal temporal, long j) {
+        return temporal.c(j, this);
+    }
+
+    public final void o(long j) {
+        this.b.b(j, this);
+    }
+
+    public final boolean q() {
+        return ordinal() < DAY_OF_WEEK.ordinal();
+    }
+
+    @Override // j$.time.temporal.o
+    public final s range() {
+        return this.b;
     }
 
     @Override // java.lang.Enum
     public final String toString() {
         return this.a;
+    }
+
+    a(String str, s sVar, int i) {
+        this.a = str;
+        this.b = sVar;
     }
 }
